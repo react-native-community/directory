@@ -1,0 +1,41 @@
+{
+  "expo": [
+    "https://github.com/react-community/react-navigation",
+    "https://github.com/ProjectSeptemberInc/gl-react",
+    "https://github.com/n4kz/react-native-pages",
+    "https://github.com/airbnb/lottie-react-native",
+    "https://github.com/airbnb/react-native-maps",
+    "https://github.com/oblador/react-native-animatable",
+    "https://github.com/wix/react-native-calendars",
+    "https://github.com/oblador/react-native-vector-icons",
+    "https://github.com/idibidiart/react-native-responsive-grid",
+    "https://github.com/24ark/react-native-step-indicator",
+    "https://github.com/jacklam718/react-native-popup-dialog",
+    "https://github.com/react-native-community/react-native-drawer-layout",
+    "https://github.com/n4kz/react-native-material-textfield",
+    "https://github.com/maxs15/react-native-modalbox",
+    "https://github.com/react-native-community/react-native-modal",
+    "https://github.com/react-native-training/react-native-elements",
+    "https://github.com/FaridSafi/react-native-gifted-chat",
+    "https://github.com/react-native-community/react-native-tab-view",
+    "https://github.com/bgryszko/react-native-circular-slider",
+    "https://github.com/archriss/react-native-snap-carousel",
+    "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
+    "https://github.com/magicismight/react-native-root-siblings"
+  ],
+  "imcompatible": [
+    "https://github.com/PeelTechnologies/react-native-tcp",
+    "https://github.com/naoufal/react-native-speech",
+    "https://github.com/EstebanFuentealba/react-native-share",
+    "https://github.com/aakashns/react-native-dialogs",
+    "https://github.com/oblador/react-native-keychain",
+    "https://github.com/joeferraro/react-native-cookies",
+    "https://github.com/doefler/react-native-social-share",
+    "https://github.com/innoveit/react-native-ble-manager",
+    "https://github.com/chirag04/react-native-mail",
+    "https://github.com/cnjon/react-native-pdf-view",
+    "https://github.com/kayla-tech/react-native-card-io",
+    "https://github.com/Kerumen/react-native-awesome-card-io",
+    "https://github.com/tolu360/react-native-google-places"
+  ]
+}

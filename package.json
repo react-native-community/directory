@@ -1,0 +1,36 @@
+{
+  "name": "react-native-libraries",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
+    "build": "next build",
+    "heroku-postbuild": "next build",
+    "start": "NODE_ENV=production babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
+    "create-data": "babel-node build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3"
+  },
+  "engines": {
+    "node": "7.2.x"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jsonfile": "^3.0.0",
+    "next": "^2.1.1",
+    "next-redux-wrapper": "^1.0.0",
+    "next-routes": "^1.0.24",
+    "postcss-cssnext": "^2.10.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "styled-jsx-postcss": "^0.2.0"
+  }
+}
