@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import data from '../build/data.json';
 
 const topics = {};
-const all = [...data.imcompatible, ...data.expo];
+const all = [...data.incompatible, ...data.expo];
 
 all.forEach(repo => {
   repo.topics.forEach(topic => {

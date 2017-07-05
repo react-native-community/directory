@@ -1,0 +1,9 @@
+{
+  "expo": [
+    "https://github.com/react-community/react-navigation",
+    "https://github.com/ProjectSeptemberInc/gl-react"
+  ],
+  "incompatible": [
+    "https://github.com/PeelTechnologies/react-native-tcp"
+  ]
+}
