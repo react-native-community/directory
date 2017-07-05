@@ -12,13 +12,13 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T14:39:02Z",
+        "updatedAt": "2017-07-05T21:08:28Z",
         "createdAt": "2017-01-26T19:51:40Z",
         "pushedAt": "2017-07-05T14:59:24Z",
         "forks": 955,
-        "issues": 760,
-        "watchers": 5506,
-        "stars": 5506
+        "issues": 759,
+        "watchers": 5505,
+        "stars": 5505
       },
       "name": "react-navigation",
       "description": "Learn once, navigate anywhere",
@@ -28,32 +28,43 @@
         "react-native",
         "react-navigation"
       ],
-      "score": 85
+      "images": [],
+      "score": 80
     },
     {
       "urls": {
-        "repo": "https://github.com/ProjectSeptemberInc/gl-react",
-        "clone": "https://github.com/ProjectSeptemberInc/gl-react.git",
-        "homepage": "https://projectseptemberinc.gitbooks.io/gl-react/content/"
+        "repo": "https://github.com/gre/gl-react",
+        "clone": "https://github.com/gre/gl-react.git",
+        "homepage": "https://gl-react-cookbook.surge.sh"
       },
       "stats": {
-        "hasIssues": false,
-        "hasWiki": false,
+        "hasIssues": true,
+        "hasWiki": true,
         "hasPages": true,
         "hasDownloads": true,
-        "hasTopics": false,
-        "updatedAt": "2017-07-02T15:47:31Z",
-        "createdAt": "2016-11-28T20:26:22Z",
-        "pushedAt": "2017-03-15T14:17:39Z",
-        "forks": 10,
-        "issues": 0,
-        "watchers": 115,
-        "stars": 115
+        "hasTopics": true,
+        "updatedAt": "2017-07-04T11:20:41Z",
+        "createdAt": "2015-08-17T15:49:51Z",
+        "pushedAt": "2017-07-05T20:57:00Z",
+        "forks": 44,
+        "issues": 26,
+        "watchers": 1172,
+        "stars": 1172
       },
       "name": "gl-react",
-      "description": "OpenGL / WebGL bindings for React to implement complex effects over images and content, in the descriptive VDOM paradigm",
-      "topics": [],
-      "score": 45
+      "description": "[gl-react v3 alpha] – a React library to write and compose WebGL shaders",
+      "topics": [
+        "glsl",
+        "react",
+        "react-native",
+        "universal",
+        "webgl"
+      ],
+      "images": [
+        "https://cloud.githubusercontent.com/assets/211411/9386550/432492c6-475c-11e5-9328-f3d5187298c1.jpg",
+        "https://cloud.githubusercontent.com/assets/211411/20623048/0527cce2-b306-11e6-85ee-5020be994c10.png"
+      ],
+      "score": 90
     },
     {
       "urls": {
@@ -83,7 +94,10 @@
         "react",
         "react-native"
       ],
-      "score": 55
+      "images": [
+        "https://cloud.githubusercontent.com/assets/2055622/25063699/68d6914e-21f4-11e7-81fe-b72d8e003530.gif"
+      ],
+      "score": 70
     },
     {
       "urls": {
@@ -114,7 +128,8 @@
         "react",
         "react-native"
       ],
-      "score": 85
+      "images": [],
+      "score": 80
     },
     {
       "urls": {
@@ -128,11 +143,11 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T17:47:51Z",
+        "updatedAt": "2017-07-05T19:43:51Z",
         "createdAt": "2015-12-29T19:54:20Z",
-        "pushedAt": "2017-07-05T19:15:22Z",
+        "pushedAt": "2017-07-05T19:43:46Z",
         "forks": 1163,
-        "issues": 610,
+        "issues": 606,
         "watchers": 4657,
         "stars": 4657
       },
@@ -143,7 +158,37 @@
         "maps",
         "react-native"
       ],
-      "score": 75
+      "images": [
+        "https://camo.githubusercontent.com/bcb60887b83b8b8b84aeacfdf8e2f20ce33bdba5/687474703a2f2f692e67697068792e636f6d2f336f365542706e63595141537532575457382e676966",
+        "https://camo.githubusercontent.com/769bc6f6acd2e736e76a6f5b7048e9558b208578/687474703a2f2f692e67697068792e636f6d2f78543737596476694c71746a6165635259412e676966",
+        "https://camo.githubusercontent.com/32d70397b08fb63aa1eb6cad31983958036b060d/687474703a2f2f692e67697068792e636f6d2f336f3655426f50534c6c494b5132647637712e676966",
+        "https://camo.githubusercontent.com/3ec3eaaa8f44a0f79694b59fa3ecf8774b371cb9/687474703a2f2f692e67697068792e636f6d2f7854373758576a7145437664676a78396f412e676966",
+        "https://camo.githubusercontent.com/efcb3b55b89229e0325651dba8f747248059f407/687474703a2f2f692e67697068792e636f6d2f336f36554237706f794236594a304b5057552e676966",
+        "https://camo.githubusercontent.com/72c43ecd54ba454cc1813e8503f8fa97b101265b/687474703a2f2f692e67697068792e636f6d2f78543737596334774b33707a5a757345626d2e676966",
+        "https://camo.githubusercontent.com/de51f0ede2cc5ba3aae8ffdabf7a5ec4dda4c5eb/687474703a2f2f692e696d6775722e636f6d2f61395771434c362e706e67",
+        "https://camo.githubusercontent.com/0ad5eac5b87f2ff78f358fca79107a45030d8490/687474703a2f2f692e67697068792e636f6d2f336f3655426373434c6f4c51746b734a78652e676966",
+        "https://camo.githubusercontent.com/dcb521223526078510b1708b97f1cdc2b5ad746a/687474703a2f2f692e67697068792e636f6d2f336f365542317147454d396a596e69334b4d2e676966",
+        "https://camo.githubusercontent.com/f9ecf127de1af38319fb46ddd4f7d421e46dc265/687474703a2f2f692e67697068792e636f6d2f78543737584d773949775336514176306e432e676966",
+        "https://camo.githubusercontent.com/9b5fcde0cb8146672f54d39fc3c34bd2e1f7891f/687474703a2f2f692e67697068792e636f6d2f336f365542644751644d31476d566f4964712e676966",
+        "https://camo.githubusercontent.com/afaf74443be872dcbae355844c1e9b2d9ddc1bbf/687474703a2f2f692e67697068792e636f6d2f7854636e54656c70314f77475075315768322e676966",
+        "https://camo.githubusercontent.com/3b7466c238ae85a21e3efcc49aff5ca76aa2d783/687474703a2f2f692e67697068792e636f6d2f7854636e5436575670776c4369516e4657382e676966",
+        "https://camo.githubusercontent.com/b4df4d4e73107561fb0ae89f4af8a3ce0e882450/687474703a2f2f692e67697068792e636f6d2f336f3655415a577151426b4f7a73384845342e676966",
+        "https://camo.githubusercontent.com/5d38df39067ce1b3d1dd1ca8e1a383a37ae8214d/687474703a2f2f692e67697068792e636f6d2f785437375856425245724e5a6c337a7957512e676966",
+        "https://camo.githubusercontent.com/11f67075f35dc9017be226886bab8063cc993091/687474703a2f2f692e67697068792e636f6d2f78543737585a4348384a7045687a56634e472e676966",
+        "https://camo.githubusercontent.com/88956dd82fe8cee43f920c6ec34155f6bc6552d3/687474703a2f2f692e67697068792e636f6d2f78543737585a7941306159654f58356a73412e676966",
+        "https://camo.githubusercontent.com/c9e1e645e2ef02fd43f511b2a764fe7eb2d6aef0/687474703a2f2f692e67697068792e636f6d2f78543737593070574b6d55556e6775484b302e676966",
+        "https://camo.githubusercontent.com/106f8bceb9242df2f730185ed29184ac97a94bdb/687474703a2f2f692e67697068792e636f6d2f336f365542666b334935385649775a6a56652e676966",
+        "https://camo.githubusercontent.com/8e4f0db4d0e615a994d1ee0aeda2806652a9d01c/687474703a2f2f692e67697068792e636f6d2f78543737584e6550476e4d49494470626e712e676966",
+        "https://camo.githubusercontent.com/d76fd1619d2318f5eabaea0b90d23998cf8de781/687474703a2f2f692e67697068792e636f6d2f785437375964553048587279766f527161512e676966",
+        "https://camo.githubusercontent.com/07ba4862bac1d54376ad52a1845b8475891b7200/687474703a2f2f692e696d6775722e636f6d2f6d7a724f6a54522e706e67",
+        "https://camo.githubusercontent.com/846e06601f841d3584c9837d301285b2ddef6e2f/687474703a2f2f692e67697068792e636f6d2f6c324a496d6e5a786476315762705166432e676966",
+        "https://camo.githubusercontent.com/a25326e6dcaa51f63eeecda39a973533ff303aac/687474703a2f2f692e67697068792e636f6d2f6c324a496876344a7836556778314547492e676966",
+        "https://camo.githubusercontent.com/75767d8f066d97193fb4230114b3efc4579e6c4c/687474703a2f2f692e67697068792e636f6d2f715a326c416631387338396e612e676966",
+        "https://camo.githubusercontent.com/e91ca06a8a16d0ff58d4812b25874dc55873a2f2/687474703a2f2f692e67697068792e636f6d2f336f377145624f516e4f30796f58714b4a322e676966",
+        "https://camo.githubusercontent.com/1a5688913a93b74e19e97b32b2666cc5f13d292a/687474703a2f2f692e67697068792e636f6d2f6c3431596472515a376d36447a346830632e676966",
+        "https://cloud.githubusercontent.com/assets/1627824/18609960/da5d9e06-7cdc-11e6-811e-34e255093df9.gif"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -157,18 +202,33 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": false,
-        "updatedAt": "2017-07-05T12:18:03Z",
+        "updatedAt": "2017-07-05T19:36:43Z",
         "createdAt": "2015-10-18T02:04:35Z",
         "pushedAt": "2017-06-11T19:10:07Z",
         "forks": 214,
-        "issues": 31,
-        "watchers": 2908,
-        "stars": 2908
+        "issues": 32,
+        "watchers": 2909,
+        "stars": 2909
       },
       "name": "react-native-animatable",
       "description": "Standard set of easy to use animations and declarative transitions for React Native",
       "topics": [],
-      "score": 75
+      "images": [
+        "https://cloud.githubusercontent.com/assets/378279/10716023/9f4a6670-7b00-11e5-944c-d52a1dcf0884.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10629128/3c373324-779a-11e5-8311-a3a489575b75.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590307/ef73b1ba-767d-11e5-8fb9-9779d3a53a50.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590306/ef572bbc-767d-11e5-8440-8e61d401537a.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590305/ef56e4cc-767d-11e5-9562-6cd3210faf34.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590304/ef4f09b4-767d-11e5-9a43-06e97e8ee2c1.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590303/ef3e9598-767d-11e5-83bc-bd48d6017131.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590296/ef3076ca-767d-11e5-9f62-6b9c696dad51.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590301/ef374c8e-767d-11e5-83ad-b249d2731f43.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590300/ef36dfe2-767d-11e5-932b-1cccce78087b.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590299/ef35a3ca-767d-11e5-94e0-441fd49b6444.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590302/ef37d438-767d-11e5-8480-a212e21c2192.gif",
+        "https://cloud.githubusercontent.com/assets/378279/10590298/ef33fa52-767d-11e5-80fe-6b8dbb5e53d0.gif"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -182,13 +242,13 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T11:01:04Z",
+        "updatedAt": "2017-07-05T21:54:00Z",
         "createdAt": "2016-11-11T12:17:27Z",
         "pushedAt": "2017-07-04T16:45:09Z",
         "forks": 94,
         "issues": 21,
-        "watchers": 905,
-        "stars": 905
+        "watchers": 907,
+        "stars": 907
       },
       "name": "react-native-calendars",
       "description": "React Native Calendar Components 📆 ",
@@ -199,7 +259,8 @@
         "react-native",
         "ui-components"
       ],
-      "score": 65
+      "images": [],
+      "score": 75
     },
     {
       "urls": {
@@ -213,13 +274,13 @@
         "hasPages": true,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T16:22:10Z",
+        "updatedAt": "2017-07-05T20:46:48Z",
         "createdAt": "2015-05-15T16:38:57Z",
-        "pushedAt": "2017-06-29T06:12:05Z",
+        "pushedAt": "2017-07-05T19:56:10Z",
         "forks": 561,
-        "issues": 88,
-        "watchers": 5293,
-        "stars": 5293
+        "issues": 75,
+        "watchers": 5292,
+        "stars": 5292
       },
       "name": "react-native-vector-icons",
       "description": "Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.",
@@ -228,6 +289,14 @@
         "icon-pack",
         "react-native",
         "ui"
+      ],
+      "images": [
+        "https://cloud.githubusercontent.com/assets/378279/12009887/33f4ae1c-ac8d-11e5-8666-7a87458753ee.png",
+        "https://cloud.githubusercontent.com/assets/378279/12421498/2db1f93a-be88-11e5-89c8-2e563ba6251a.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667570/33817554-fc0d-11e4-9ad7-4eb60139cfb7.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667569/3010dd7e-fc0d-11e4-9696-cb721fe8e98d.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667568/2e9021b2-fc0d-11e4-8e68-cf91c329a6f4.png",
+        "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
       ],
       "score": 95
     },
@@ -275,7 +344,10 @@
         "univcersal",
         "universal-app"
       ],
-      "score": 60
+      "images": [
+        "https://camo.githubusercontent.com/a30a836471086e9add89f2d28a0e615a46c14a71/68747470733a2f2f7331382e706f7374696d672e6f72672f67723839766167686c2f53637265656e5f53686f745f323031372d30342d30375f61745f362e34372e32325f504d2e706e67"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -306,7 +378,8 @@
         "step",
         "viewpager"
       ],
-      "score": 60
+      "images": [],
+      "score": 80
     },
     {
       "urls": {
@@ -323,7 +396,7 @@
         "updatedAt": "2017-07-05T16:38:10Z",
         "createdAt": "2016-09-11T00:56:21Z",
         "pushedAt": "2017-07-05T05:44:09Z",
-        "forks": 53,
+        "forks": 54,
         "issues": 16,
         "watchers": 379,
         "stars": 379
@@ -339,7 +412,12 @@
         "react-animate",
         "react-native"
       ],
-      "score": 65
+      "images": [
+        "https://camo.githubusercontent.com/91e5e19df19408ec4841f7dfac36a4db88f401b4/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f706f7075702d6469616c6f672d7363616c652d616e696d6174696f6e2e676966",
+        "https://camo.githubusercontent.com/ffe672b5dfa5755571021a08b25ae952041f52ed/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f706f7075702d6469616c6f672d736c6964652d616e696d6174696f6e2e676966",
+        "https://camo.githubusercontent.com/b6605f4b587024a874c74763cb1dc5020669739d/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f72656163742d6e61746976652d706f7075702d6469616c6f672d64656d6f2e706e67"
+      ],
+      "score": 85
     },
     {
       "urls": {
@@ -368,7 +446,10 @@
         "polyfill",
         "react-native"
       ],
-      "score": 55
+      "images": [
+        "https://raw.githubusercontent.com/react-native-community/react-native-drawer-layout/master/example.gif"
+      ],
+      "score": 70
     },
     {
       "urls": {
@@ -400,7 +481,10 @@
         "react",
         "react-native"
       ],
-      "score": 55
+      "images": [
+        "https://cloud.githubusercontent.com/assets/2055622/24325711/eaa4ff08-11af-11e7-8550-2504c1580979.gif"
+      ],
+      "score": 70
     },
     {
       "urls": {
@@ -414,17 +498,21 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": false,
-        "updatedAt": "2017-07-05T17:50:30Z",
+        "updatedAt": "2017-07-05T21:28:00Z",
         "createdAt": "2015-07-17T14:34:39Z",
         "pushedAt": "2017-06-28T22:39:00Z",
         "forks": 163,
         "issues": 41,
-        "watchers": 1059,
-        "stars": 1059
+        "watchers": 1060,
+        "stars": 1060
       },
       "name": "react-native-modalbox",
       "description": "A <Modal/> component for react-native",
       "topics": [],
+      "images": [
+        "https://camo.githubusercontent.com/5531ee3c2ffe93a2d07b1cbbfe61c59dfa066462/68747470733a2f2f692e696d6775722e636f6d2f515441596838312e676966",
+        "https://camo.githubusercontent.com/d4a496a80e4159490d873dcc37e93b71d6da7e0b/687474703a2f2f692e696d6775722e636f6d2f3358554c4c74382e676966"
+      ],
       "score": 75
     },
     {
@@ -459,7 +547,12 @@
         "react",
         "react-native"
       ],
-      "score": 60
+      "images": [
+        "https://raw.githubusercontent.com/mmazzarolo/react-native-tips/master/imgs/modal.gif",
+        "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-ios.gif",
+        "https://raw.githubusercontent.com/mmazzarolo/react-native-animated-modal/master/extras/example-modal.gif"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -473,13 +566,13 @@
         "hasPages": true,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T16:51:13Z",
+        "updatedAt": "2017-07-05T20:40:59Z",
         "createdAt": "2016-09-08T14:21:41Z",
         "pushedAt": "2017-07-05T11:01:39Z",
-        "forks": 532,
+        "forks": 531,
         "issues": 59,
-        "watchers": 5974,
-        "stars": 5974
+        "watchers": 5978,
+        "stars": 5978
       },
       "name": "react-native-elements",
       "description": "Cross Platform React Native UI Toolkit",
@@ -488,6 +581,9 @@
         "ios",
         "react-native",
         "ui-components"
+      ],
+      "images": [
+        "https://camo.githubusercontent.com/c8ed2a89d1e3f2c28dc46bc1b918b9b874ca18c3/687474703a2f2f692e696d6775722e636f6d2f555872475465472e706e67"
       ],
       "score": 95
     },
@@ -506,7 +602,7 @@
         "updatedAt": "2017-07-05T17:53:59Z",
         "createdAt": "2015-11-14T15:45:34Z",
         "pushedAt": "2017-06-22T03:26:50Z",
-        "forks": 758,
+        "forks": 759,
         "issues": 150,
         "watchers": 3097,
         "stars": 3097
@@ -518,7 +614,11 @@
         "component",
         "react-native"
       ],
-      "score": 75
+      "images": [
+        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-1.png",
+        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-2.png"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -535,7 +635,7 @@
         "updatedAt": "2017-07-05T14:32:44Z",
         "createdAt": "2016-06-15T21:38:19Z",
         "pushedAt": "2017-06-29T19:22:23Z",
-        "forks": 168,
+        "forks": 169,
         "issues": 22,
         "watchers": 1000,
         "stars": 1000
@@ -548,7 +648,8 @@
         "swipeview",
         "tabbar"
       ],
-      "score": 80
+      "images": [],
+      "score": 85
     },
     {
       "urls": {
@@ -565,7 +666,7 @@
         "updatedAt": "2017-07-05T00:38:39Z",
         "createdAt": "2016-12-30T21:42:04Z",
         "pushedAt": "2017-03-14T15:32:59Z",
-        "forks": 36,
+        "forks": 37,
         "issues": 4,
         "watchers": 311,
         "stars": 311
@@ -579,7 +680,8 @@
         "slider",
         "svg"
       ],
-      "score": 60
+      "images": [],
+      "score": 80
     },
     {
       "urls": {
@@ -593,18 +695,25 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": false,
-        "updatedAt": "2017-07-05T15:53:17Z",
+        "updatedAt": "2017-07-05T19:39:47Z",
         "createdAt": "2016-10-11T07:22:24Z",
         "pushedAt": "2017-06-30T14:20:36Z",
         "forks": 102,
         "issues": 10,
-        "watchers": 570,
-        "stars": 570
+        "watchers": 571,
+        "stars": 571
       },
       "name": "react-native-snap-carousel",
       "description": "Swiper component for React Native with previews, snapping effect and RTL support. Compatible with Android & iOS.",
       "topics": [],
-      "score": 65
+      "images": [
+        "https://camo.githubusercontent.com/42f1ad3eeebace075a9b045f6dbe733b1c748f89/687474703a2f2f692e696d6775722e636f6d2f466f706533756a2e676966",
+        "https://camo.githubusercontent.com/a26d08bfbf8a02590ba4a4f0f0433d7781b87edb/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f365a735539675757727659746f676f772f67697068792e676966",
+        "https://camo.githubusercontent.com/07ed920c4d911deab029c5b1557d9d7ef0a2237a/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f37544b55416c76693174594c4643544b2f67697068792e676966",
+        "https://camo.githubusercontent.com/f2c8da9bbe55965d112fbb4ae0ec6a8b129835b8/687474703a2f2f692e696d6775722e636f6d2f46784d67356d642e676966",
+        "https://camo.githubusercontent.com/2ceeb1115fb9b5599501d88a15a0f6ce2f83229a/687474703a2f2f692e696d6775722e636f6d2f504d69366142642e6a7067"
+      ],
+      "score": 75
     },
     {
       "urls": {
@@ -618,13 +727,13 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T09:22:32Z",
+        "updatedAt": "2017-07-05T20:55:06Z",
         "createdAt": "2016-09-14T11:27:18Z",
         "pushedAt": "2017-07-05T07:26:06Z",
         "forks": 33,
         "issues": 0,
-        "watchers": 203,
-        "stars": 203
+        "watchers": 204,
+        "stars": 204
       },
       "name": "react-native-modal-datetime-picker",
       "description": "A React-Native datetime-picker for Android and iOS",
@@ -638,7 +747,11 @@
         "react-native",
         "time"
       ],
-      "score": 60
+      "images": [
+        "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-android.gif",
+        "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-ios.gif"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -663,10 +776,11 @@
       "name": "react-native-root-siblings",
       "description": "A sibling elements manager.",
       "topics": [],
-      "score": 50
+      "images": [],
+      "score": 60
     }
   ],
-  "imcompatible": [
+  "incompatible": [
     {
       "urls": {
         "repo": "https://github.com/PeelTechnologies/react-native-tcp",
@@ -682,7 +796,7 @@
         "updatedAt": "2017-07-03T13:56:35Z",
         "createdAt": "2015-12-04T17:42:24Z",
         "pushedAt": "2017-07-05T05:32:00Z",
-        "forks": 34,
+        "forks": 35,
         "issues": 11,
         "watchers": 98,
         "stars": 98
@@ -690,7 +804,8 @@
       "name": "react-native-tcp",
       "description": "node's net api in react-native",
       "topics": [],
-      "score": 50
+      "images": [],
+      "score": 60
     },
     {
       "urls": {
@@ -715,7 +830,8 @@
       "name": "react-native-speech",
       "description": "A text-to-speech library for React Native.",
       "topics": [],
-      "score": 55
+      "images": [],
+      "score": 70
     },
     {
       "urls": {
@@ -748,7 +864,8 @@
         "share",
         "uwp"
       ],
-      "score": 70
+      "images": [],
+      "score": 85
     },
     {
       "urls": {
@@ -773,7 +890,12 @@
       "name": "react-native-dialogs",
       "description": "React Native wrappers for https://github.com/afollestad/material-dialogs",
       "topics": [],
-      "score": 55
+      "images": [
+        "https://camo.githubusercontent.com/4aef3aacdbe5e7fba835f5d4711439fa34266424/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f43537777356c6855414141453438372e706e67",
+        "https://camo.githubusercontent.com/cc7f34856383d55689ab20579a4fd75f9a3a7b1a/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f435377773568425559414137496a6f2e706e67",
+        "https://camo.githubusercontent.com/d05a03561d3fdb57902a80e179dfc6702598423e/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4353777735704d55634145727939352e706e67"
+      ],
+      "score": 70
     },
     {
       "urls": {
@@ -789,7 +911,7 @@
         "hasTopics": true,
         "updatedAt": "2017-07-05T08:45:47Z",
         "createdAt": "2015-05-20T15:33:48Z",
-        "pushedAt": "2017-06-30T11:20:52Z",
+        "pushedAt": "2017-07-05T19:33:20Z",
         "forks": 70,
         "issues": 20,
         "watchers": 355,
@@ -803,7 +925,10 @@
         "keychain-access",
         "react-native"
       ],
-      "score": 60
+      "images": [
+        "https://cloud.githubusercontent.com/assets/512692/18597833/15316342-7c50-11e6-92e7-781651e61563.png"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -828,7 +953,8 @@
       "name": "react-native-cookies",
       "description": "Cookie manager for React Native",
       "topics": [],
-      "score": 55
+      "images": [],
+      "score": 70
     },
     {
       "urls": {
@@ -860,7 +986,11 @@
         "share-popups",
         "twitter"
       ],
-      "score": 60
+      "images": [
+        "https://raw.githubusercontent.com/doefler/react-native-social-share/master/animation-looping.gif",
+        "https://raw.githubusercontent.com/doefler/react-native-social-share/master/still.png"
+      ],
+      "score": 80
     },
     {
       "urls": {
@@ -891,7 +1021,8 @@
         "ios",
         "react-native"
       ],
-      "score": 55
+      "images": [],
+      "score": 70
     },
     {
       "urls": {
@@ -905,18 +1036,21 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": false,
-        "updatedAt": "2017-07-05T18:47:44Z",
+        "updatedAt": "2017-07-05T22:02:49Z",
         "createdAt": "2015-05-10T04:53:50Z",
         "pushedAt": "2017-06-30T15:34:32Z",
         "forks": 81,
         "issues": 15,
-        "watchers": 195,
-        "stars": 195
+        "watchers": 196,
+        "stars": 196
       },
       "name": "react-native-mail",
       "description": "A wrapper on top of MFMailComposeViewController from iOS and Mail Intent on android",
       "topics": [],
-      "score": 55
+      "images": [
+        "https://github.com/chirag04/react-native-mail/raw/master/screenshot.png"
+      ],
+      "score": 70
     },
     {
       "urls": {
@@ -941,7 +1075,8 @@
       "name": "react-native-pdf-view",
       "description": "React Native PDF View",
       "topics": [],
-      "score": 55
+      "images": [],
+      "score": 70
     },
     {
       "urls": {
@@ -966,7 +1101,8 @@
       "name": "react-native-card-io",
       "description": "card.io component for React Native",
       "topics": [],
-      "score": 55
+      "images": [],
+      "score": 70
     },
     {
       "urls": {
@@ -998,7 +1134,8 @@
         "react",
         "react-native"
       ],
-      "score": 65
+      "images": [],
+      "score": 85
     },
     {
       "urls": {
@@ -1016,7 +1153,7 @@
         "createdAt": "2016-09-14T20:41:32Z",
         "pushedAt": "2017-07-05T08:11:18Z",
         "forks": 29,
-        "issues": 6,
+        "issues": 7,
         "watchers": 122,
         "stars": 122
       },
@@ -1032,7 +1169,8 @@
         "react",
         "react-native"
       ],
-      "score": 60
+      "images": [],
+      "score": 80
     }
   ]
 }

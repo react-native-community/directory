@@ -8,6 +8,7 @@
     "heroku-postbuild": "next build",
     "start": "NODE_ENV=production babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
     "create-data": "babel-node scripts/build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3",
+    "script": "babel-node --presets es2015,stage-1,stage-2,stage-3",
     "lint": "eslint .",
     "prettier": "eslint . --fix"
   },
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "cheerio": "^1.0.0-rc.2",
     "eslint": "^4.1.1",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-babel": "^4.1.1",
