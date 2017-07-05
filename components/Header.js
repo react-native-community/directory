@@ -52,16 +52,13 @@ export default class Header extends React.PureComponent {
           </div>
           <div className="header-left-text">
             <p>
-              <strong className="header-strong">Native Directory</strong>
-              {' '}
-              is a curated list of
-              {' '}
+              <strong className="header-strong">Native Directory</strong> is a
+              curated list of{' '}
               <Link
                 isStyled
                 href="https://facebook.github.io/react-native/docs/getting-started.html">
                 React Native
-              </Link>
-              {' '}
+              </Link>{' '}
               libraries to help you build your projects.
             </p>
           </div>

@@ -4,7 +4,8 @@ import React from 'react';
 export default class Document extends React.Component {
   static defaultProps = {
     title: 'Native Directory',
-    description: 'Native Directory is a curated list of React Native libraries to help you build your projects.',
+    description:
+      'Native Directory is a curated list of React Native libraries to help you build your projects.',
   };
 
   render() {
@@ -15,31 +16,99 @@ export default class Document extends React.Component {
             font-family: 'office-code';
             src: url('static/fonts/OfficeCodePro-Regular.eot');
             src: url('static/fonts/OfficeCodePro-Regular.woff2') format('woff2'),
-                 url('static/fonts/OfficeCodePro-Regular.woff') format('woff'),
-                 url('static/fonts/OfficeCodePro-Regular.ttf') format('truetype');
+              url('static/fonts/OfficeCodePro-Regular.woff') format('woff'),
+              url('static/fonts/OfficeCodePro-Regular.ttf') format('truetype');
           }
 
           @font-face {
             font-family: 'office-code-medium';
             src: url('static/fonts/OfficeCodePro-Medium.eot');
             src: url('static/fonts/OfficeCodePro-Medium.woff2') format('woff2'),
-                 url('static/fonts/OfficeCodePro-Medium.woff') format('woff'),
-                 url('static/fonts/OfficeCodePro-Medium.ttf') format('truetype');
+              url('static/fonts/OfficeCodePro-Medium.woff') format('woff'),
+              url('static/fonts/OfficeCodePro-Medium.ttf') format('truetype');
           }
 
-          html, body, div, span, applet, object, iframe,
-          h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-          a, abbr, acronym, address, big, cite, code,
-          del, dfn, em, img, ins, kbd, q, s, samp,
-          small, strike, strong, sub, sup, tt, var,
-          b, u, i, center,
-          dl, dt, dd, ol, ul, li,
-          fieldset, form, label, legend,
-          table, caption, tbody, tfoot, thead, tr, th, td,
-          article, aside, canvas, details, embed,
-          figure, figcaption, footer, header, hgroup,
-          menu, nav, output, ruby, section, summary,
-          time, mark, audio, video {
+          html,
+          body,
+          div,
+          span,
+          applet,
+          object,
+          iframe,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          blockquote,
+          pre,
+          a,
+          abbr,
+          acronym,
+          address,
+          big,
+          cite,
+          code,
+          del,
+          dfn,
+          em,
+          img,
+          ins,
+          kbd,
+          q,
+          s,
+          samp,
+          small,
+          strike,
+          strong,
+          sub,
+          sup,
+          tt,
+          var,
+          b,
+          u,
+          i,
+          center,
+          dl,
+          dt,
+          dd,
+          ol,
+          ul,
+          li,
+          fieldset,
+          form,
+          label,
+          legend,
+          table,
+          caption,
+          tbody,
+          tfoot,
+          thead,
+          tr,
+          th,
+          td,
+          article,
+          aside,
+          canvas,
+          details,
+          embed,
+          figure,
+          figcaption,
+          footer,
+          header,
+          hgroup,
+          menu,
+          nav,
+          output,
+          ruby,
+          section,
+          summary,
+          time,
+          mark,
+          audio,
+          video {
             margin: 0;
             padding: 0;
             border: 0;
@@ -49,8 +118,17 @@ export default class Document extends React.Component {
             box-sizing: border-box;
           }
 
-          article, aside, details, figcaption, figure,
-          footer, header, hgroup, menu, nav, section {
+          article,
+          aside,
+          details,
+          figcaption,
+          figure,
+          footer,
+          header,
+          hgroup,
+          menu,
+          nav,
+          section {
             display: block;
           }
 
@@ -65,15 +143,24 @@ export default class Document extends React.Component {
             }
           }
 
-          p, h1, h2, h3, h4, h5, h6 {
+          p,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
             line-height: 1.5;
           }
 
-          ol, ul {
+          ol,
+          ul {
             list-style: none;
           }
 
-          button, textarea, input {
+          button,
+          textarea,
+          input {
             resize: none;
             border: 0;
             outline: 0;
@@ -86,7 +173,8 @@ export default class Document extends React.Component {
             }
           }
 
-          blockquote, q {
+          blockquote,
+          q {
             quotes: none;
 
             &:before,

@@ -75,12 +75,13 @@ class Queries extends React.PureComponent {
           {!isEmptyOrNull(this.props.search) &&
             <li className="queries-list-item">
               <div className="queries-list-item-left">
-                Searching for <strong className="queries-emphasis">
+                Searching for{' '}
+                <strong className="queries-emphasis">
                   “
                   {this.props.search}
                   ”
-                </strong> —
-                {' '}
+                </strong>{' '}
+                —{' '}
                 <span className="queries-list-item-right">
                   <span
                     className="queries-link"
@@ -94,13 +95,12 @@ class Queries extends React.PureComponent {
           {!isEmptyOrNull(this.props.topic) &&
             <li className="queries-list-item">
               <div className="queries-list-item-left">
-                Selected
-                {' '}
+                Selected{' '}
                 <strong className="queries-emphasis">
                   “{this.props.topic}
                   ”{' '}
-                </strong> —
-                {' '}
+                </strong>{' '}
+                —{' '}
                 <span className="queries-list-item-right">
                   <span
                     className="queries-link"

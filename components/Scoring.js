@@ -61,7 +61,7 @@ const scoreList = [
 
 export default class Scoring extends React.PureComponent {
   render() {
-    const elements = scoreList.map(each => (
+    const elements = scoreList.map(each =>
       <li className="item" key={`scoring-rules-${each.text}`}>
         <style jsx>{`
           .item {
@@ -81,12 +81,11 @@ export default class Scoring extends React.PureComponent {
             flex-shrink: 0;
             width: 48px;
           }
-        `}</style>
-        {' '}
+        `}</style>{' '}
         <div className="item-right">+{each.score}</div>
         <div className="item-left">{each.text}</div>
       </li>
-    ));
+    );
 
     return (
       <header className="scoring">
@@ -99,7 +98,6 @@ export default class Scoring extends React.PureComponent {
             font-family: 'office-code-medium', monospace;
             font-weight: 400;
           }
-
         `}</style>
         <h2 className="scoring-heading">Scoring rules</h2>
         <ul>

@@ -50,6 +50,6 @@ class TopicItem extends React.PureComponent {
   }
 }
 
-export default connect(state => {
+export default connect(() => {
   return {};
 })(TopicItem);

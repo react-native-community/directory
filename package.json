@@ -7,7 +7,9 @@
     "build": "next build",
     "heroku-postbuild": "next build",
     "start": "NODE_ENV=production babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
-    "create-data": "babel-node build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3"
+    "create-data": "babel-node build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3",
+    "lint": "eslint .",
+    "prettier": "eslint . --fix"
   },
   "engines": {
     "node": "7.2.x"
@@ -32,5 +34,16 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "styled-jsx-postcss": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "prettier": "^1.5.2"
   }
 }

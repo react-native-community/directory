@@ -12,46 +12,50 @@ const renderNavigationItem = item => {
         ${!item.active ? 'navigation-interactable' : undefined}`}
       onClick={item.onClick}>
       <style jsx>{`
-          .navigation-item {
-            display: inline-flex;
-            align-items: column;
-            flex-direction: column;
-            margin-right: 36px;
-            padding-bottom: 8px;
-            box-shadow: 0 2px 0 black;
-          }
+        .navigation-item {
+          display: inline-flex;
+          align-items: column;
+          flex-direction: column;
+          margin-right: 36px;
+          padding-bottom: 8px;
+          box-shadow: 0 2px 0 black;
+        }
 
-          .navigation-interactable {
-            cursor: pointer;
-            opacity: 1;
-            transition: 200ms opacity ease;
-            &:hover {
-              opacity: 0.6;
-            }
+        .navigation-interactable {
+          cursor: pointer;
+          opacity: 1;
+          transition: 200ms opacity ease;
+          &:hover {
+            opacity: 0.6;
           }
+        }
 
-          .navigation-item-active {
-            box-shadow: 0 2px 0 rgba(65, 160, 248, 1);
-          }
+        .navigation-item-active {
+          box-shadow: 0 2px 0 rgba(65, 160, 248, 1);
+        }
 
-          .navigation-active {
-            color: rgba(65, 160, 248, 1);
-          }
+        .navigation-active {
+          color: rgba(65, 160, 248, 1);
+        }
 
-          .navigation-item-number {
-            font-size: 2.75rem;
-          }
+        .navigation-item-number {
+          font-size: 2.75rem;
+        }
 
-          .navigation-item-text {
-            margin-top: 16px;
-            font-size: 0.8rem;
-          }
-        `}</style>
+        .navigation-item-text {
+          margin-top: 16px;
+          font-size: 0.8rem;
+        }
+      `}</style>
       <span
-        className={`navigation-item-number ${item.active ? 'navigation-active' : undefined}`}>
+        className={`navigation-item-number ${item.active
+          ? 'navigation-active'
+          : undefined}`}>
         {item.top}
       </span>
-      <span className="navigation-item-text">{item.bottom}</span>
+      <span className="navigation-item-text">
+        {item.bottom}
+      </span>
     </span>
   );
 };
@@ -67,7 +71,7 @@ class Navigation extends React.PureComponent {
         <style jsx>{`
           .container {
             margin: 2rem 0 0 0;
-            border-bottom: 1px solid #ECECEC;
+            border-bottom: 1px solid #ececec;
 
             @media (max-width: 480px) {
               margin: 1rem 0 0 0;
@@ -107,8 +111,8 @@ class Navigation extends React.PureComponent {
 
             @media (max-width: 768px) {
               padding: 16px 24px 16px 24px;
-              border-top: 1px solid #ECECEC;
-              border-bottom: 1px solid #ECECEC;
+              border-top: 1px solid #ececec;
+              border-bottom: 1px solid #ececec;
             }
           }
         `}</style>

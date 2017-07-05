@@ -9,13 +9,15 @@ import { getTimeSinceToday } from '../common/datetime';
 const renderItem = item => {
   return (
     <li
-      className={`list-item ${item.isCategoryHeader ? 'list-item-mobile' : undefined}`}
+      className={`list-item ${item.isCategoryHeader
+        ? 'list-item-mobile'
+        : undefined}`}
       key={`list-item-${item.name}`}>
       <style jsx>{`
         .list-item {
           display: 'flex';
           padding: 27px 0 27px 0;
-          border-bottom: 1px solid #ECECEC;
+          border-bottom: 1px solid #ececec;
 
           &:last-child {
             border-bottom: 0;
@@ -34,7 +36,7 @@ const renderItem = item => {
         }
 
         .list-item-heading {
-          color: #24292E;
+          color: #24292e;
           font-weight: 400;
           font-family: 'office-code-medium', monospace;
         }
@@ -44,12 +46,12 @@ const renderItem = item => {
         }
 
         .list-item-paragraph {
-          color: #24292E;
+          color: #24292e;
           margin-top: 4px;
         }
 
         .list-item-faded {
-          color: #ACACAC;
+          color: #acacac;
         }
 
         .list-item-column {
@@ -80,31 +82,43 @@ const renderItem = item => {
       `}</style>
       <span className="list-item-column">
         <h2
-          className={`list-item-heading ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-heading ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column1.top}
         </h2>
         <p
-          className={`list-item-paragraph ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-paragraph ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column1.bottom}
         </p>
       </span>
       <span className="list-item-column-wide">
         <h2
-          className={`list-item-heading-weightless ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-heading-weightless ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column2.top}
         </h2>
         <p
-          className={`list-item-paragraph ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-paragraph ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column2.bottom}
         </p>
       </span>
       <span className="list-item-column">
         <h2
-          className={`list-item-heading-weightless ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-heading-weightless ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column3.top}
         </h2>
         <p
-          className={`list-item-paragraph ${item.isCategoryHeader ? 'list-item-faded' : undefined}`}>
+          className={`list-item-paragraph ${item.isCategoryHeader
+            ? 'list-item-faded'
+            : undefined}`}>
           {item.column3.bottom}
         </p>
       </span>
@@ -160,11 +174,12 @@ export default class List extends React.PureComponent {
             height="64px"
           />
           <p>
-            Can't find anything! Try another search. <br />
+            Can&39;t find anything! Try another search. <br />
             Want to contribute a library you like?<br />
-            Share it on
-            {' '}
-            <Link isStyled href="https://slack.expo.io/">Expo Slack</Link>.
+            Share it on{' '}
+            <Link isStyled href="https://slack.expo.io/">
+              Expo Slack
+            </Link>.
           </p>
         </div>
       );
@@ -173,20 +188,26 @@ export default class List extends React.PureComponent {
         return renderItem({
           name: item.name,
           column1: {
-            top: <Link isDarkStyled href={item.urls.repo}>{item.name}</Link>,
+            top: (
+              <Link isDarkStyled href={item.urls.repo}>
+                {item.name}
+              </Link>
+            ),
             bottom: item.urls.homepage
-              ? <Link isStyled href={item.urls.homepage}>homepage</Link>
+              ? <Link isStyled href={item.urls.homepage}>
+                  homepage
+                </Link>
               : undefined,
           },
           column2: {
             top: item.description,
-            bottom: item.topics.map(each => (
+            bottom: item.topics.map(each =>
               <TopicItem
                 key={`list-${item.name}-${each}`}
                 count={this.props.topics[each]}>
                 {each}
               </TopicItem>
-            )),
+            ),
           },
           column3: {
             top: getTimeSinceToday(item.stats.pushedAt),

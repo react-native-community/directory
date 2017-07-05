@@ -8,7 +8,7 @@ export default class Footer extends React.PureComponent {
       <div className="container">
         <style jsx>{`
           .container {
-            border-top: 1px solid #ECECEC;
+            border-top: 1px solid #ececec;
             width: 100%;
           }
 
@@ -29,13 +29,13 @@ export default class Footer extends React.PureComponent {
         `}</style>
         <header className="footer">
           <p className="text">
-            Want to learn more about React Native? Check out the
-            {' '}
+            Want to learn more about React Native? Check out the{' '}
             <Link
               isStyled
               href="https://facebook.github.io/react-native/docs/getting-started.html">
               offical docs
-            </Link>, and <Link isStyled href="https://expo.io">
+            </Link>, and{' '}
+            <Link isStyled href="https://expo.io">
               Expo
             </Link>.
           </p>

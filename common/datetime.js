@@ -1,3 +1,5 @@
+/* @flow */
+
 import { pluralize } from '../common/strings';
 
 const MINUTE = 60;
@@ -14,19 +16,20 @@ export const getTimeSinceToday = (date: Date) => {
   let seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
   seconds = seconds > 0 ? seconds : 1;
 
-  let [value, unit] = seconds < MINUTE
-    ? [Math.round(seconds), 'second']
-    : seconds < HOUR
+  let [value, unit] =
+    seconds < MINUTE
+      ? [Math.round(seconds), 'second']
+      : seconds < HOUR
         ? [Math.round(seconds / MINUTE), 'minute']
         : seconds < DAY
-            ? [Math.round(seconds / HOUR), 'hour']
-            : seconds < WEEK
-                ? [Math.round(seconds / DAY), 'day']
-                : seconds < MONTH
-                    ? [Math.round(seconds / WEEK), 'week']
-                    : seconds < YEAR
-                        ? [Math.round(seconds / MONTH), 'month']
-                        : [Math.round(seconds / YEAR), 'year'];
+          ? [Math.round(seconds / HOUR), 'hour']
+          : seconds < WEEK
+            ? [Math.round(seconds / DAY), 'day']
+            : seconds < MONTH
+              ? [Math.round(seconds / WEEK), 'week']
+              : seconds < YEAR
+                ? [Math.round(seconds / MONTH), 'month']
+                : [Math.round(seconds / YEAR), 'year'];
 
   unit = pluralize(unit, value);
 

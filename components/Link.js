@@ -6,43 +6,47 @@ export default class CustomLink extends React.PureComponent {
     return (
       <Link href={this.props.href}>
         <a
-          className={`${this.props.isStyled ? 'link' : undefined} ${this.props.isDarkStyled ? 'dark-link' : undefined}`}>
+          className={`${this.props.isStyled ? 'link' : undefined} ${this.props
+            .isDarkStyled
+            ? 'dark-link'
+            : undefined}`}>
           <style jsx>{`
-          .link {
-            color: rgba(65, 160, 248, 1);
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-            }
-
-            &:visited {
+            .link {
               color: rgba(65, 160, 248, 1);
-            }
-          }
+              text-decoration: none;
 
-          .dark-link {
-            color: #000000;
-            text-decoration: none;
-            transition: all 200ms ease;
-            transition-property: opacity, transform;
-            cursor: pointer;
-            overflow-wrap: break-word;
-            word-break: break-word;
+              &:hover {
+                text-decoration: underline;
+              }
 
-            &:hover {
-              opacity: 0.5;
+              &:visited {
+                color: rgba(65, 160, 248, 1);
+              }
             }
 
-            &:active {
-              transform: scale(1.2);
-            }
-
-            &:visited {
+            .dark-link {
               color: #000000;
+              text-decoration: none;
+              transition: all 200ms ease;
+              transition-property: opacity, transform;
+              cursor: pointer;
+              overflow-wrap: break-word;
+              word-break: break-word;
+
+              &:hover {
+                opacity: 0.5;
+              }
+
+              &:active {
+                transform: scale(1.2);
+              }
+
+              &:visited {
+                color: #000000;
+              }
             }
-          }
-        `}</style>{this.props.children}
+          `}</style>
+          {this.props.children}
         </a>
       </Link>
     );

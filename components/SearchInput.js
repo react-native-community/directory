@@ -55,19 +55,23 @@ class SearchInput extends React.PureComponent {
               font-size: 16px;
             }
 
-            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            &::-webkit-input-placeholder {
+              /* Chrome/Opera/Safari */
               color: rgba(143, 199, 250, 0.6);
             }
 
-            &::-moz-placeholder { /* Firefox 19+ */
+            &::-moz-placeholder {
+              /* Firefox 19+ */
               color: rgba(143, 199, 250, 0.6);
             }
 
-            &:-ms-input-placeholder { /* IE 10+ */
+            &:-ms-input-placeholder {
+              /* IE 10+ */
               color: rgba(143, 199, 250, 0.6);
             }
 
-            &:-moz-placeholder { /* Firefox 18- */
+            &:-moz-placeholder {
+              /* Firefox 18- */
               color: rgba(143, 199, 250, 0.6);
             }
           }
