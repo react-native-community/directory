@@ -1,7 +1,8 @@
 {
   "expo": [
+    {"github": "https://github.com/expo/react-native-action-sheet", "pkg": "@expo/react-native-action-sheet"},
     "https://github.com/react-community/react-navigation",
-    "https://github.com/ProjectSeptemberInc/gl-react"
+    "https://github.com/gre/gl-react"
   ],
   "incompatible": [
     "https://github.com/PeelTechnologies/react-native-tcp"

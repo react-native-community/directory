@@ -5,6 +5,7 @@ import jsonfile from 'jsonfile';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
 import fetchReadmeImages from './fetch-readme-images';
+import fetchNpmData from './fetch-npm-data';
 
 import githubRepos from '../github-repos.json';
 import debugGithubRepos from '../debug-github-repos.json';
@@ -23,13 +24,10 @@ const JSON_OPTIONS = {
 };
 
 const buildAndScoreData = async () => {
-  // Get basic data from Github API
   console.log('** Loading data from Github');
   let { expo, incompatible } = await loadRepositoryDataAsync();
 
-  // Scrape images from Github
-  console.log('');
-  console.log('** Scraping images from README');
+  console.log('\n** Scraping images from README');
   expo = await Promise.all(
     expo.map(repo => fetchReadmeImages(repo, repo.urls.repo))
   );
@@ -38,9 +36,15 @@ const buildAndScoreData = async () => {
     incompatible.map(repo => fetchReadmeImages(repo, repo.urls.repo))
   );
 
+  console.log('\n** Loading download stats from npm');
+  expo = await Promise.all(expo.map(repo => fetchNpmData(repo, repo.pkg)));
+
+  incompatible = await Promise.all(
+    incompatible.map(repo => fetchNpmData(repo, repo.pkg))
+  );
+
   // Calculate score
-  console.log('');
-  console.log('** Calculating scores');
+  console.log('\n** Calculating scores');
   expo = expo.map(calculateScore);
   incompatible = incompatible.map(calculateScore);
 

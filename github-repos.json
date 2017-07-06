@@ -21,7 +21,8 @@
     "https://github.com/bgryszko/react-native-circular-slider",
     "https://github.com/archriss/react-native-snap-carousel",
     "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
-    "https://github.com/magicismight/react-native-root-siblings"
+    "https://github.com/magicismight/react-native-root-siblings",
+    {"github": "https://github.com/expo/react-native-action-sheet", "pkg": "@expo/react-native-action-sheet"}
   ],
   "incompatible": [
     "https://github.com/PeelTechnologies/react-native-tcp",

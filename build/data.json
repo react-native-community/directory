@@ -12,13 +12,13 @@
         "hasPages": false,
         "hasDownloads": true,
         "hasTopics": true,
-        "updatedAt": "2017-07-05T21:08:28Z",
+        "updatedAt": "2017-07-05T23:41:01Z",
         "createdAt": "2017-01-26T19:51:40Z",
         "pushedAt": "2017-07-05T14:59:24Z",
         "forks": 955,
         "issues": 759,
-        "watchers": 5505,
-        "stars": 5505
+        "watchers": 5506,
+        "stars": 5506
       },
       "name": "react-navigation",
       "description": "Learn once, navigate anywhere",
@@ -28,7 +28,14 @@
         "react-native",
         "react-navigation"
       ],
+      "pkg": "react-navigation",
       "images": [],
+      "npm": {
+        "downloads": 88030,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -60,10 +67,17 @@
         "universal",
         "webgl"
       ],
+      "pkg": "gl-react",
       "images": [
         "https://cloud.githubusercontent.com/assets/211411/9386550/432492c6-475c-11e5-9328-f3d5187298c1.jpg",
         "https://cloud.githubusercontent.com/assets/211411/20623048/0527cce2-b306-11e6-85ee-5020be994c10.png"
       ],
+      "npm": {
+        "downloads": 3016,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 90
     },
     {
@@ -94,9 +108,16 @@
         "react",
         "react-native"
       ],
+      "pkg": "react-native-pages",
       "images": [
         "https://cloud.githubusercontent.com/assets/2055622/25063699/68d6914e-21f4-11e7-81fe-b72d8e003530.gif"
       ],
+      "npm": {
+        "downloads": 631,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -128,7 +149,14 @@
         "react",
         "react-native"
       ],
+      "pkg": "lottie-react-native",
       "images": [],
+      "npm": {
+        "downloads": 53021,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -158,6 +186,7 @@
         "maps",
         "react-native"
       ],
+      "pkg": "react-native-maps",
       "images": [
         "https://camo.githubusercontent.com/bcb60887b83b8b8b84aeacfdf8e2f20ce33bdba5/687474703a2f2f692e67697068792e636f6d2f336f365542706e63595141537532575457382e676966",
         "https://camo.githubusercontent.com/769bc6f6acd2e736e76a6f5b7048e9558b208578/687474703a2f2f692e67697068792e636f6d2f78543737596476694c71746a6165635259412e676966",
@@ -188,6 +217,12 @@
         "https://camo.githubusercontent.com/1a5688913a93b74e19e97b32b2666cc5f13d292a/687474703a2f2f692e67697068792e636f6d2f6c3431596472515a376d36447a346830632e676966",
         "https://cloud.githubusercontent.com/assets/1627824/18609960/da5d9e06-7cdc-11e6-811e-34e255093df9.gif"
       ],
+      "npm": {
+        "downloads": 40935,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -213,6 +248,7 @@
       "name": "react-native-animatable",
       "description": "Standard set of easy to use animations and declarative transitions for React Native",
       "topics": [],
+      "pkg": "react-native-animatable",
       "images": [
         "https://cloud.githubusercontent.com/assets/378279/10716023/9f4a6670-7b00-11e5-944c-d52a1dcf0884.gif",
         "https://cloud.githubusercontent.com/assets/378279/10629128/3c373324-779a-11e5-8311-a3a489575b75.gif",
@@ -228,6 +264,12 @@
         "https://cloud.githubusercontent.com/assets/378279/10590302/ef37d438-767d-11e5-8480-a212e21c2192.gif",
         "https://cloud.githubusercontent.com/assets/378279/10590298/ef33fa52-767d-11e5-80fe-6b8dbb5e53d0.gif"
       ],
+      "npm": {
+        "downloads": 49238,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -259,7 +301,14 @@
         "react-native",
         "ui-components"
       ],
+      "pkg": "react-native-calendars",
       "images": [],
+      "npm": {
+        "downloads": 2785,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 75
     },
     {
@@ -290,6 +339,7 @@
         "react-native",
         "ui"
       ],
+      "pkg": "react-native-vector-icons",
       "images": [
         "https://cloud.githubusercontent.com/assets/378279/12009887/33f4ae1c-ac8d-11e5-8666-7a87458753ee.png",
         "https://cloud.githubusercontent.com/assets/378279/12421498/2db1f93a-be88-11e5-89c8-2e563ba6251a.png",
@@ -298,6 +348,12 @@
         "https://cloud.githubusercontent.com/assets/378279/7667568/2e9021b2-fc0d-11e4-8e68-cf91c329a6f4.png",
         "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
       ],
+      "npm": {
+        "downloads": 184663,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 95
     },
     {
@@ -344,9 +400,16 @@
         "univcersal",
         "universal-app"
       ],
+      "pkg": "react-native-responsive-grid",
       "images": [
         "https://camo.githubusercontent.com/a30a836471086e9add89f2d28a0e615a46c14a71/68747470733a2f2f7331382e706f7374696d672e6f72672f67723839766167686c2f53637265656e5f53686f745f323031372d30342d30375f61745f362e34372e32325f504d2e706e67"
       ],
+      "npm": {
+        "downloads": 5322,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -378,7 +441,14 @@
         "step",
         "viewpager"
       ],
+      "pkg": "react-native-step-indicator",
       "images": [],
+      "npm": {
+        "downloads": 884,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -412,11 +482,18 @@
         "react-animate",
         "react-native"
       ],
+      "pkg": "react-native-popup-dialog",
       "images": [
         "https://camo.githubusercontent.com/91e5e19df19408ec4841f7dfac36a4db88f401b4/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f706f7075702d6469616c6f672d7363616c652d616e696d6174696f6e2e676966",
         "https://camo.githubusercontent.com/ffe672b5dfa5755571021a08b25ae952041f52ed/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f706f7075702d6469616c6f672d736c6964652d616e696d6174696f6e2e676966",
         "https://camo.githubusercontent.com/b6605f4b587024a874c74763cb1dc5020669739d/68747470733a2f2f6a61636b6c616d3731382e6769746875622e696f2f72656163742d6e61746976652d706f7075702d6469616c6f672f7265736f75726365732f72656163742d6e61746976652d706f7075702d6469616c6f672d64656d6f2e706e67"
       ],
+      "npm": {
+        "downloads": 3601,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 85
     },
     {
@@ -446,9 +523,16 @@
         "polyfill",
         "react-native"
       ],
+      "pkg": "react-native-drawer-layout",
       "images": [
         "https://raw.githubusercontent.com/react-native-community/react-native-drawer-layout/master/example.gif"
       ],
+      "npm": {
+        "downloads": 111609,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -481,9 +565,16 @@
         "react",
         "react-native"
       ],
+      "pkg": "react-native-material-textfield",
       "images": [
         "https://cloud.githubusercontent.com/assets/2055622/24325711/eaa4ff08-11af-11e7-8550-2504c1580979.gif"
       ],
+      "npm": {
+        "downloads": 1833,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -509,10 +600,17 @@
       "name": "react-native-modalbox",
       "description": "A <Modal/> component for react-native",
       "topics": [],
+      "pkg": "react-native-modalbox",
       "images": [
         "https://camo.githubusercontent.com/5531ee3c2ffe93a2d07b1cbbfe61c59dfa066462/68747470733a2f2f692e696d6775722e636f6d2f515441596838312e676966",
         "https://camo.githubusercontent.com/d4a496a80e4159490d873dcc37e93b71d6da7e0b/687474703a2f2f692e696d6775722e636f6d2f3358554c4c74382e676966"
       ],
+      "npm": {
+        "downloads": 17361,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 75
     },
     {
@@ -547,11 +645,18 @@
         "react",
         "react-native"
       ],
+      "pkg": "react-native-modal",
       "images": [
         "https://raw.githubusercontent.com/mmazzarolo/react-native-tips/master/imgs/modal.gif",
         "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-ios.gif",
         "https://raw.githubusercontent.com/mmazzarolo/react-native-animated-modal/master/extras/example-modal.gif"
       ],
+      "npm": {
+        "downloads": 9850,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -582,9 +687,16 @@
         "react-native",
         "ui-components"
       ],
+      "pkg": "react-native-elements",
       "images": [
         "https://camo.githubusercontent.com/c8ed2a89d1e3f2c28dc46bc1b918b9b874ca18c3/687474703a2f2f692e696d6775722e636f6d2f555872475465472e706e67"
       ],
+      "npm": {
+        "downloads": 19372,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 95
     },
     {
@@ -614,10 +726,17 @@
         "component",
         "react-native"
       ],
+      "pkg": "react-native-gifted-chat",
       "images": [
         "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-1.png",
         "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-2.png"
       ],
+      "npm": {
+        "downloads": 8041,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -648,7 +767,14 @@
         "swipeview",
         "tabbar"
       ],
+      "pkg": "react-native-tab-view",
       "images": [],
+      "npm": {
+        "downloads": 117837,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 85
     },
     {
@@ -680,7 +806,14 @@
         "slider",
         "svg"
       ],
+      "pkg": "react-native-circular-slider",
       "images": [],
+      "npm": {
+        "downloads": 582,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -706,6 +839,7 @@
       "name": "react-native-snap-carousel",
       "description": "Swiper component for React Native with previews, snapping effect and RTL support. Compatible with Android & iOS.",
       "topics": [],
+      "pkg": "react-native-snap-carousel",
       "images": [
         "https://camo.githubusercontent.com/42f1ad3eeebace075a9b045f6dbe733b1c748f89/687474703a2f2f692e696d6775722e636f6d2f466f706533756a2e676966",
         "https://camo.githubusercontent.com/a26d08bfbf8a02590ba4a4f0f0433d7781b87edb/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f365a735539675757727659746f676f772f67697068792e676966",
@@ -713,6 +847,12 @@
         "https://camo.githubusercontent.com/f2c8da9bbe55965d112fbb4ae0ec6a8b129835b8/687474703a2f2f692e696d6775722e636f6d2f46784d67356d642e676966",
         "https://camo.githubusercontent.com/2ceeb1115fb9b5599501d88a15a0f6ce2f83229a/687474703a2f2f692e696d6775722e636f6d2f504d69366142642e6a7067"
       ],
+      "npm": {
+        "downloads": 14935,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 75
     },
     {
@@ -747,10 +887,17 @@
         "react-native",
         "time"
       ],
+      "pkg": "react-native-modal-datetime-picker",
       "images": [
         "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-android.gif",
         "https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-ios.gif"
       ],
+      "npm": {
+        "downloads": 6729,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -776,8 +923,48 @@
       "name": "react-native-root-siblings",
       "description": "A sibling elements manager.",
       "topics": [],
+      "pkg": "react-native-root-siblings",
       "images": [],
+      "npm": {
+        "downloads": 7249,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 60
+    },
+    {
+      "urls": {
+        "repo": "https://github.com/expo/react-native-action-sheet",
+        "clone": "https://github.com/expo/react-native-action-sheet.git",
+        "homepage": ""
+      },
+      "stats": {
+        "hasIssues": true,
+        "hasWiki": true,
+        "hasPages": false,
+        "hasDownloads": true,
+        "hasTopics": false,
+        "updatedAt": "2017-07-04T09:18:19Z",
+        "createdAt": "2015-12-15T21:24:33Z",
+        "pushedAt": "2017-06-28T21:54:09Z",
+        "forks": 49,
+        "issues": 23,
+        "watchers": 172,
+        "stars": 172
+      },
+      "name": "react-native-action-sheet",
+      "description": "A cross-platform ActionSheet for React Native",
+      "topics": [],
+      "pkg": "@expo/react-native-action-sheet",
+      "images": [],
+      "npm": {
+        "downloads": 10408,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
+      "score": 70
     }
   ],
   "incompatible": [
@@ -804,7 +991,14 @@
       "name": "react-native-tcp",
       "description": "node's net api in react-native",
       "topics": [],
+      "pkg": "react-native-tcp",
       "images": [],
+      "npm": {
+        "downloads": 2140,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 60
     },
     {
@@ -830,7 +1024,14 @@
       "name": "react-native-speech",
       "description": "A text-to-speech library for React Native.",
       "topics": [],
+      "pkg": "react-native-speech",
       "images": [],
+      "npm": {
+        "downloads": 110,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -864,7 +1065,14 @@
         "share",
         "uwp"
       ],
+      "pkg": "react-native-share",
       "images": [],
+      "npm": {
+        "downloads": 15259,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 85
     },
     {
@@ -890,11 +1098,18 @@
       "name": "react-native-dialogs",
       "description": "React Native wrappers for https://github.com/afollestad/material-dialogs",
       "topics": [],
+      "pkg": "react-native-dialogs",
       "images": [
         "https://camo.githubusercontent.com/4aef3aacdbe5e7fba835f5d4711439fa34266424/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f43537777356c6855414141453438372e706e67",
         "https://camo.githubusercontent.com/cc7f34856383d55689ab20579a4fd75f9a3a7b1a/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f435377773568425559414137496a6f2e706e67",
         "https://camo.githubusercontent.com/d05a03561d3fdb57902a80e179dfc6702598423e/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4353777735704d55634145727939352e706e67"
       ],
+      "npm": {
+        "downloads": 1359,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -925,9 +1140,16 @@
         "keychain-access",
         "react-native"
       ],
+      "pkg": "react-native-keychain",
       "images": [
         "https://cloud.githubusercontent.com/assets/512692/18597833/15316342-7c50-11e6-92e7-781651e61563.png"
       ],
+      "npm": {
+        "downloads": 10817,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -953,7 +1175,14 @@
       "name": "react-native-cookies",
       "description": "Cookie manager for React Native",
       "topics": [],
+      "pkg": "react-native-cookies",
       "images": [],
+      "npm": {
+        "downloads": 9996,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -986,10 +1215,17 @@
         "share-popups",
         "twitter"
       ],
+      "pkg": "react-native-social-share",
       "images": [
         "https://raw.githubusercontent.com/doefler/react-native-social-share/master/animation-looping.gif",
         "https://raw.githubusercontent.com/doefler/react-native-social-share/master/still.png"
       ],
+      "npm": {
+        "downloads": 565,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     },
     {
@@ -1021,7 +1257,14 @@
         "ios",
         "react-native"
       ],
+      "pkg": "react-native-ble-manager",
       "images": [],
+      "npm": {
+        "downloads": 3257,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -1047,9 +1290,16 @@
       "name": "react-native-mail",
       "description": "A wrapper on top of MFMailComposeViewController from iOS and Mail Intent on android",
       "topics": [],
+      "pkg": "react-native-mail",
       "images": [
         "https://github.com/chirag04/react-native-mail/raw/master/screenshot.png"
       ],
+      "npm": {
+        "downloads": 4227,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -1075,7 +1325,14 @@
       "name": "react-native-pdf-view",
       "description": "React Native PDF View",
       "topics": [],
+      "pkg": "react-native-pdf-view",
       "images": [],
+      "npm": {
+        "downloads": 852,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -1101,7 +1358,14 @@
       "name": "react-native-card-io",
       "description": "card.io component for React Native",
       "topics": [],
+      "pkg": "react-native-card-io",
       "images": [],
+      "npm": {
+        "downloads": 223,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 70
     },
     {
@@ -1134,7 +1398,14 @@
         "react",
         "react-native"
       ],
+      "pkg": "react-native-awesome-card-io",
       "images": [],
+      "npm": {
+        "downloads": 2243,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 85
     },
     {
@@ -1169,7 +1440,14 @@
         "react",
         "react-native"
       ],
+      "pkg": "react-native-google-places",
       "images": [],
+      "npm": {
+        "downloads": 1365,
+        "start": "2017-06-05",
+        "end": "2017-07-04",
+        "period": "month"
+      },
       "score": 80
     }
   ]

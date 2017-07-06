@@ -3,7 +3,17 @@ import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
 
 const API = 'https://api.github.com';
 
-const fetchGithubData = async url => {
+const fetchGithubData = async urlOrObj => {
+  let url, pkg;
+  if (typeof urlOrObj === 'string') {
+    url = urlOrObj;
+    let parts = url.split('/');
+    pkg = parts[parts.length - 1];
+  } else {
+    url = urlOrObj.github;
+    pkg = urlOrObj.pkg;
+  }
+
   const requestUrl = createRequestUrl(url);
   const response = await fetch(requestUrl, {
     method: 'GET',
@@ -11,9 +21,11 @@ const fetchGithubData = async url => {
       Accept: 'application/vnd.github.mercy-preview+json',
     },
   });
-  const json = await response.json();
+  let json = await response.json();
 
-  return createRepoDataWithResponse(json);
+  let result = createRepoDataWithResponse(json);
+  result.pkg = pkg;
+  return result;
 };
 
 const createRepoDataWithResponse = json => {
