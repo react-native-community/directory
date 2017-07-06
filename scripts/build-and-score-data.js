@@ -17,7 +17,7 @@ const USE_DEBUG_REPOS = false;
 
 // Loads the Github API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
-const LOAD_GITHUB_RESULTS_FROM_DISK = true;
+const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 const JSON_OPTIONS = {

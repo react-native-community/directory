@@ -2,7 +2,11 @@
   "expo": [
     {
       "githubUrl": "https://github.com/react-community/react-navigation",
+      "ios": true,
+      "android": true,
+      "web": true,
       "expo": true,
+      "stamp": true,
       "github": {
         "urls": {
           "repo": "https://github.com/react-community/react-navigation",
@@ -19,7 +23,7 @@
           "createdAt": "2017-01-26T19:51:40Z",
           "pushedAt": "2017-07-06T06:02:49Z",
           "forks": 962,
-          "issues": 766,
+          "issues": 767,
           "watchers": 5529,
           "stars": 5529
         },
@@ -44,6 +48,8 @@
     },
     {
       "githubUrl": "https://github.com/gre/gl-react",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -90,6 +96,8 @@
     },
     {
       "githubUrl": "https://github.com/n4kz/react-native-pages",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -134,7 +142,12 @@
     },
     {
       "githubUrl": "https://github.com/airbnb/lottie-react-native",
+      "ios": true,
+      "android": true,
       "expo": true,
+      "examples": [
+        "https://snack.expo.io/SJdIbHe4b"
+      ],
       "github": {
         "urls": {
           "repo": "https://github.com/airbnb/lottie-react-native",
@@ -177,7 +190,12 @@
     },
     {
       "githubUrl": "https://github.com/airbnb/react-native-maps",
+      "ios": true,
+      "android": true,
       "expo": true,
+      "examples": [
+        "https://snack.expo.io/H1zOFxnN-"
+      ],
       "github": {
         "urls": {
           "repo": "https://github.com/airbnb/react-native-maps",
@@ -247,6 +265,8 @@
     },
     {
       "githubUrl": "https://github.com/oblador/react-native-animatable",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -298,6 +318,8 @@
     },
     {
       "githubUrl": "https://github.com/wix/react-native-calendars",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -341,6 +363,8 @@
     },
     {
       "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -390,6 +414,8 @@
     },
     {
       "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -450,6 +476,8 @@
     },
     {
       "githubUrl": "https://github.com/24ark/react-native-step-indicator",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -493,6 +521,8 @@
     },
     {
       "githubUrl": "https://github.com/jacklam718/react-native-popup-dialog",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -542,6 +572,8 @@
     },
     {
       "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -585,6 +617,8 @@
     },
     {
       "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -631,6 +665,8 @@
     },
     {
       "githubUrl": "https://github.com/maxs15/react-native-modalbox",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -671,6 +707,8 @@
     },
     {
       "githubUrl": "https://github.com/react-native-community/react-native-modal",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -721,6 +759,8 @@
     },
     {
       "githubUrl": "https://github.com/react-native-training/react-native-elements",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -734,13 +774,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T17:02:55Z",
+          "updatedAt": "2017-07-06T17:43:47Z",
           "createdAt": "2016-09-08T14:21:41Z",
           "pushedAt": "2017-07-06T07:01:59Z",
           "forks": 533,
           "issues": 55,
-          "watchers": 5994,
-          "stars": 5994
+          "watchers": 5995,
+          "stars": 5995
         },
         "name": "react-native-elements",
         "description": "Cross Platform React Native UI Toolkit",
@@ -765,6 +805,8 @@
     },
     {
       "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -809,6 +851,8 @@
     },
     {
       "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
+      "ios": true,
+      "android": true,
       "expo": true,
       "github": {
         "urls": {
@@ -851,7 +895,12 @@
     },
     {
       "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
+      "ios": true,
+      "android": false,
       "expo": true,
+      "examples": [
+        "https://expo.io/@community/bedtime"
+      ],
       "github": {
         "urls": {
           "repo": "https://github.com/bgryszko/react-native-circular-slider",
@@ -1057,11 +1106,52 @@
         "period": "month"
       },
       "score": 70
+    },
+    {
+      "githubUrl": "https://github.com/react-native-community/react-native-video",
+      "ios": true,
+      "android": true,
+      "expo": "https://docs.expo.io/versions/latest/sdk/video.html",
+      "github": {
+        "urls": {
+          "repo": "https://github.com/react-native-community/react-native-video",
+          "clone": "https://github.com/react-native-community/react-native-video.git",
+          "homepage": "https://www.npmjs.com/package/react-native-video"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-06T11:11:19Z",
+          "createdAt": "2015-03-31T05:08:38Z",
+          "pushedAt": "2017-07-05T10:26:48Z",
+          "forks": 599,
+          "issues": 264,
+          "watchers": 1915,
+          "stars": 1915
+        },
+        "name": "react-native-video",
+        "description": "A <Video /> component for react-native",
+        "topics": []
+      },
+      "images": [],
+      "npmPkg": "react-native-video",
+      "npm": {
+        "downloads": 19992,
+        "start": "2017-06-06",
+        "end": "2017-07-05",
+        "period": "month"
+      },
+      "score": 65
     }
   ],
   "incompatible": [
     {
       "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/PeelTechnologies/react-native-tcp",
@@ -1098,6 +1188,8 @@
     },
     {
       "githubUrl": "https://github.com/naoufal/react-native-speech",
+      "ios": true,
+      "android": false,
       "github": {
         "urls": {
           "repo": "https://github.com/naoufal/react-native-speech",
@@ -1134,6 +1226,8 @@
     },
     {
       "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/EstebanFuentealba/react-native-share",
@@ -1178,6 +1272,8 @@
     },
     {
       "githubUrl": "https://github.com/aakashns/react-native-dialogs",
+      "ios": false,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/aakashns/react-native-dialogs",
@@ -1218,6 +1314,8 @@
     },
     {
       "githubUrl": "https://github.com/oblador/react-native-keychain",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/oblador/react-native-keychain",
@@ -1261,6 +1359,8 @@
     },
     {
       "githubUrl": "https://github.com/joeferraro/react-native-cookies",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/joeferraro/react-native-cookies",
@@ -1297,6 +1397,8 @@
     },
     {
       "githubUrl": "https://github.com/doefler/react-native-social-share",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/doefler/react-native-social-share",
@@ -1343,6 +1445,8 @@
     },
     {
       "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/innoveit/react-native-ble-manager",
@@ -1385,6 +1489,8 @@
     },
     {
       "githubUrl": "https://github.com/chirag04/react-native-mail",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/chirag04/react-native-mail",
@@ -1423,6 +1529,8 @@
     },
     {
       "githubUrl": "https://github.com/cnjon/react-native-pdf-view",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/cnjon/react-native-pdf-view",
@@ -1459,6 +1567,8 @@
     },
     {
       "githubUrl": "https://github.com/kayla-tech/react-native-card-io",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/kayla-tech/react-native-card-io",
@@ -1495,6 +1605,8 @@
     },
     {
       "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/Kerumen/react-native-awesome-card-io",
@@ -1538,6 +1650,8 @@
     },
     {
       "githubUrl": "https://github.com/tolu360/react-native-google-places",
+      "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/tolu360/react-native-google-places",

@@ -1,61 +1,122 @@
 [
   {
     "githubUrl": "https://github.com/react-community/react-navigation",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "stamp": true
+  },
+  {
+    "githubUrl": "https://github.com/gre/gl-react",
+    "ios": true,
+    "android": true,
     "expo": true
   },
-  { "githubUrl": "https://github.com/gre/gl-react", "expo": true },
-  { "githubUrl": "https://github.com/n4kz/react-native-pages", "expo": true },
-  { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expo": true },
-  { "githubUrl": "https://github.com/airbnb/react-native-maps", "expo": true },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-pages",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/airbnb/lottie-react-native",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "examples": ["https://snack.expo.io/SJdIbHe4b"]
+  },
+  {
+    "githubUrl": "https://github.com/airbnb/react-native-maps",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "examples": ["https://snack.expo.io/H1zOFxnN-"]
+  },
   {
     "githubUrl": "https://github.com/oblador/react-native-animatable",
+    "ios": true,
+    "android": true,
     "expo": true
   },
-  { "githubUrl": "https://github.com/wix/react-native-calendars", "expo": true },
+  {
+    "githubUrl": "https://github.com/wix/react-native-calendars",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/24ark/react-native-step-indicator",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/jacklam718/react-native-popup-dialog",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
+    "ios": true,
+    "android": true,
     "expo": true
   },
-  { "githubUrl": "https://github.com/maxs15/react-native-modalbox", "expo": true },
+  {
+    "githubUrl": "https://github.com/maxs15/react-native-modalbox",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-modal",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-training/react-native-elements",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
-    "expo": true
+    "ios": true,
+    "android": false,
+    "expo": true,
+    "examples": ["https://expo.io/@community/bedtime"]
   },
   {
     "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
@@ -74,17 +135,75 @@
     "npmPkg": "@expo/react-native-action-sheet",
     "expo": true
   },
-  { "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp" },
-  { "githubUrl": "https://github.com/naoufal/react-native-speech" },
-  { "githubUrl": "https://github.com/EstebanFuentealba/react-native-share" },
-  { "githubUrl": "https://github.com/aakashns/react-native-dialogs" },
-  { "githubUrl": "https://github.com/oblador/react-native-keychain" },
-  { "githubUrl": "https://github.com/joeferraro/react-native-cookies" },
-  { "githubUrl": "https://github.com/doefler/react-native-social-share" },
-  { "githubUrl": "https://github.com/innoveit/react-native-ble-manager" },
-  { "githubUrl": "https://github.com/chirag04/react-native-mail" },
-  { "githubUrl": "https://github.com/cnjon/react-native-pdf-view" },
-  { "githubUrl": "https://github.com/kayla-tech/react-native-card-io" },
-  { "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io" },
-  { "githubUrl": "https://github.com/tolu360/react-native-google-places" }
+  {
+    "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-video",
+    "ios": true,
+    "android": true,
+    "expo": "https://docs.expo.io/versions/latest/sdk/video.html"
+  },
+  {
+    "githubUrl": "https://github.com/naoufal/react-native-speech",
+    "ios": true,
+    "android": false
+  },
+  {
+    "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/aakashns/react-native-dialogs",
+    "ios": false,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-keychain",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/joeferraro/react-native-cookies",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/doefler/react-native-social-share",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/chirag04/react-native-mail",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/cnjon/react-native-pdf-view",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kayla-tech/react-native-card-io",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tolu360/react-native-google-places",
+    "ios": true,
+    "android": true
+  }
 ]
