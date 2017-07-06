@@ -5,7 +5,7 @@
     "android": true,
     "web": true,
     "expo": true,
-    "stamp": true
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/gre/gl-react",
@@ -24,32 +24,37 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/SJdIbHe4b"]
+    "examples": ["https://snack.expo.io/SJdIbHe4b"],
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/airbnb/react-native-maps",
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/H1zOFxnN-"]
+    "examples": ["https://snack.expo.io/H1zOFxnN-"],
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-animatable",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-calendars",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-vector-icons",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
@@ -73,7 +78,8 @@
     "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
