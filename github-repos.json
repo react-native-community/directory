@@ -211,5 +211,13 @@
     "githubUrl": "https://github.com/tolu360/react-native-google-places",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/ex-navigation",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "@expo/ex-navigation",
+    "unmaintained": true
   }
 ]

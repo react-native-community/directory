@@ -210,13 +210,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T16:16:47Z",
+          "updatedAt": "2017-07-06T18:22:49Z",
           "createdAt": "2015-12-29T19:54:20Z",
           "pushedAt": "2017-07-06T16:27:23Z",
           "forks": 1166,
           "issues": 601,
-          "watchers": 4670,
-          "stars": 4670
+          "watchers": 4671,
+          "stars": 4671
         },
         "name": "react-native-maps",
         "description": "React Native Mapview component for iOS + Android",
@@ -826,13 +826,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T17:32:24Z",
+          "updatedAt": "2017-07-06T18:26:01Z",
           "createdAt": "2015-11-14T15:45:34Z",
           "pushedAt": "2017-06-22T03:26:50Z",
           "forks": 760,
           "issues": 150,
-          "watchers": 3102,
-          "stars": 3102
+          "watchers": 3103,
+          "stars": 3103
         },
         "name": "react-native-gifted-chat",
         "description": "💬 The most complete chat UI for React Native",
@@ -1151,6 +1151,43 @@
         "period": "month"
       },
       "score": 65
+    },
+    {
+      "githubUrl": "https://github.com/expo/ex-navigation",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "unmaintained": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/expo/ex-navigation",
+          "clone": "https://github.com/expo/ex-navigation.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-06T06:25:51Z",
+          "createdAt": "2016-06-03T19:09:42Z",
+          "pushedAt": "2017-06-27T11:01:18Z",
+          "forks": 183,
+          "issues": 225,
+          "watchers": 942,
+          "stars": 942
+        },
+        "name": "ex-navigation",
+        "description": "Route-centric navigation for React Native",
+        "topics": []
+      },
+      "images": [],
+      "npmPkg": "ex-navigation",
+      "npm": {
+        "period": "month"
+      },
+      "score": 75
     }
   ],
   "incompatible": [
