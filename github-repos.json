@@ -1,42 +1,90 @@
-{
-  "expo": [
-    "https://github.com/react-community/react-navigation",
-    "https://github.com/gre/gl-react",
-    "https://github.com/n4kz/react-native-pages",
-    "https://github.com/airbnb/lottie-react-native",
-    "https://github.com/airbnb/react-native-maps",
-    "https://github.com/oblador/react-native-animatable",
-    "https://github.com/wix/react-native-calendars",
-    "https://github.com/oblador/react-native-vector-icons",
-    "https://github.com/idibidiart/react-native-responsive-grid",
-    "https://github.com/24ark/react-native-step-indicator",
-    "https://github.com/jacklam718/react-native-popup-dialog",
-    "https://github.com/react-native-community/react-native-drawer-layout",
-    "https://github.com/n4kz/react-native-material-textfield",
-    "https://github.com/maxs15/react-native-modalbox",
-    "https://github.com/react-native-community/react-native-modal",
-    "https://github.com/react-native-training/react-native-elements",
-    "https://github.com/FaridSafi/react-native-gifted-chat",
-    "https://github.com/react-native-community/react-native-tab-view",
-    "https://github.com/bgryszko/react-native-circular-slider",
-    "https://github.com/archriss/react-native-snap-carousel",
-    "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
-    "https://github.com/magicismight/react-native-root-siblings",
-    {"github": "https://github.com/expo/react-native-action-sheet", "pkg": "@expo/react-native-action-sheet"}
-  ],
-  "incompatible": [
-    "https://github.com/PeelTechnologies/react-native-tcp",
-    "https://github.com/naoufal/react-native-speech",
-    "https://github.com/EstebanFuentealba/react-native-share",
-    "https://github.com/aakashns/react-native-dialogs",
-    "https://github.com/oblador/react-native-keychain",
-    "https://github.com/joeferraro/react-native-cookies",
-    "https://github.com/doefler/react-native-social-share",
-    "https://github.com/innoveit/react-native-ble-manager",
-    "https://github.com/chirag04/react-native-mail",
-    "https://github.com/cnjon/react-native-pdf-view",
-    "https://github.com/kayla-tech/react-native-card-io",
-    "https://github.com/Kerumen/react-native-awesome-card-io",
-    "https://github.com/tolu360/react-native-google-places"
-  ]
-}
+[
+  {
+    "githubUrl": "https://github.com/react-community/react-navigation",
+    "expo": true
+  },
+  { "githubUrl": "https://github.com/gre/gl-react", "expo": true },
+  { "githubUrl": "https://github.com/n4kz/react-native-pages", "expo": true },
+  { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expo": true },
+  { "githubUrl": "https://github.com/airbnb/react-native-maps", "expo": true },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-animatable",
+    "expo": true
+  },
+  { "githubUrl": "https://github.com/wix/react-native-calendars", "expo": true },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/24ark/react-native-step-indicator",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jacklam718/react-native-popup-dialog",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
+    "expo": true
+  },
+  { "githubUrl": "https://github.com/maxs15/react-native-modalbox", "expo": true },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-modal",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-training/react-native-elements",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/magicismight/react-native-root-siblings",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/react-native-action-sheet",
+    "npmPkg": "@expo/react-native-action-sheet",
+    "expo": true
+  },
+  { "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp" },
+  { "githubUrl": "https://github.com/naoufal/react-native-speech" },
+  { "githubUrl": "https://github.com/EstebanFuentealba/react-native-share" },
+  { "githubUrl": "https://github.com/aakashns/react-native-dialogs" },
+  { "githubUrl": "https://github.com/oblador/react-native-keychain" },
+  { "githubUrl": "https://github.com/joeferraro/react-native-cookies" },
+  { "githubUrl": "https://github.com/doefler/react-native-social-share" },
+  { "githubUrl": "https://github.com/innoveit/react-native-ble-manager" },
+  { "githubUrl": "https://github.com/chirag04/react-native-mail" },
+  { "githubUrl": "https://github.com/cnjon/react-native-pdf-view" },
+  { "githubUrl": "https://github.com/kayla-tech/react-native-card-io" },
+  { "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io" },
+  { "githubUrl": "https://github.com/tolu360/react-native-google-places" }
+]

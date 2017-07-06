@@ -1,10 +1,9 @@
-{
-  "expo": [
-    {"github": "https://github.com/expo/react-native-action-sheet", "pkg": "@expo/react-native-action-sheet"},
-    "https://github.com/react-community/react-navigation",
-    "https://github.com/gre/gl-react"
-  ],
-  "incompatible": [
-    "https://github.com/PeelTechnologies/react-native-tcp"
-  ]
-}
+[
+  {
+    "githubUrl": "https://github.com/react-community/react-navigation",
+    "expo": true
+  },
+  { "githubUrl": "https://github.com/gre/gl-react", "expo": true },
+  { "githubUrl": "https://github.com/n4kz/react-native-pages", "expo": true },
+  { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expo": true }
+]

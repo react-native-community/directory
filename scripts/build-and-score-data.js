@@ -2,6 +2,7 @@ import 'isomorphic-fetch';
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
+import _ from 'lodash';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
 import fetchReadmeImages from './fetch-readme-images';
@@ -16,7 +17,7 @@ const USE_DEBUG_REPOS = false;
 
 // Loads the Github API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
-const LOAD_GITHUB_RESULTS_FROM_DISK = false;
+const LOAD_GITHUB_RESULTS_FROM_DISK = true;
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 const JSON_OPTIONS = {
@@ -25,37 +26,26 @@ const JSON_OPTIONS = {
 
 const buildAndScoreData = async () => {
   console.log('** Loading data from Github');
-  let { expo, incompatible } = await loadRepositoryDataAsync();
+  let data = await loadRepositoryDataAsync();
 
   console.log('\n** Scraping images from README');
-  expo = await Promise.all(
-    expo.map(repo => fetchReadmeImages(repo, repo.urls.repo))
-  );
-
-  incompatible = await Promise.all(
-    incompatible.map(repo => fetchReadmeImages(repo, repo.urls.repo))
-  );
+  data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
 
   console.log('\n** Loading download stats from npm');
-  expo = await Promise.all(expo.map(repo => fetchNpmData(repo, repo.pkg)));
-
-  incompatible = await Promise.all(
-    incompatible.map(repo => fetchNpmData(repo, repo.pkg))
+  data = await Promise.all(
+    data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl))
   );
 
   // Calculate score
   console.log('\n** Calculating scores');
-  expo = expo.map(calculateScore);
-  incompatible = incompatible.map(calculateScore);
+  data = data.map(calculateScore);
 
-  const jsonData = {
-    expo,
-    incompatible,
-  };
+  const expo = _.filter(data, d => d.expo);
+  const incompatible = _.filter(data, d => !d.expo);
 
   return jsonfile.writeFile(
     path.resolve('build', 'data.json'),
-    jsonData,
+    { expo, incompatible },
     JSON_OPTIONS,
     err => {
       if (err) {
@@ -81,26 +71,17 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    let expo = await Promise.all(data.expo.map(fetchGithubData));
-    let incompatible = await Promise.all(
-      data.incompatible.map(fetchGithubData)
-    );
-    result = { expo, incompatible };
+    result = await Promise.all(data.map(fetchGithubData));
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {
-        jsonfile.writeFile(
-          GITHUB_RESULTS_PATH,
-          { expo, incompatible },
-          JSON_OPTIONS,
-          err => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve();
-            }
+        jsonfile.writeFile(GITHUB_RESULTS_PATH, result, JSON_OPTIONS, err => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
           }
-        );
+        });
       });
       console.log('Saved Github results from disk');
     }

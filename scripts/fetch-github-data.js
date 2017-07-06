@@ -3,16 +3,8 @@ import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
 
 const API = 'https://api.github.com';
 
-const fetchGithubData = async urlOrObj => {
-  let url, pkg;
-  if (typeof urlOrObj === 'string') {
-    url = urlOrObj;
-    let parts = url.split('/');
-    pkg = parts[parts.length - 1];
-  } else {
-    url = urlOrObj.github;
-    pkg = urlOrObj.pkg;
-  }
+const fetchGithubData = async data => {
+  let url = data.githubUrl;
 
   const requestUrl = createRequestUrl(url);
   const response = await fetch(requestUrl, {
@@ -22,10 +14,12 @@ const fetchGithubData = async urlOrObj => {
     },
   });
   let json = await response.json();
-
   let result = createRepoDataWithResponse(json);
-  result.pkg = pkg;
-  return result;
+
+  return {
+    ...data,
+    github: result,
+  };
 };
 
 const createRepoDataWithResponse = json => {

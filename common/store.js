@@ -5,8 +5,8 @@ import data from '../build/data.json';
 const topics = {};
 const all = [...data.incompatible, ...data.expo];
 
-all.forEach(repo => {
-  repo.topics.forEach(topic => {
+all.forEach(project => {
+  project.github.topics.forEach(topic => {
     if (!topics[topic]) {
       topics[topic] = 1;
       return;

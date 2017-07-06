@@ -1,13 +1,19 @@
 import 'isomorphic-fetch';
 
-const urlForPackage = pkgName => {
-  return `https://api.npmjs.org/downloads/point/last-month/${pkgName}`;
+const urlForPackage = npmPkg => {
+  return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;
 };
 
-const fetchNpmData = async (data, pkgName) => {
+const fetchNpmData = async (data, npmPkg, githubUrl) => {
+  if (!npmPkg) {
+    let parts = githubUrl.split('/');
+    npmPkg = parts[parts.length - 1];
+    data.npmPkg = npmPkg;
+  }
+
   try {
-    console.log(urlForPackage(pkgName));
-    let response = await fetch(urlForPackage(pkgName));
+    console.log(urlForPackage(npmPkg));
+    let response = await fetch(urlForPackage(npmPkg));
     let downloadData = await response.json();
 
     return {

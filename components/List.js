@@ -186,22 +186,22 @@ export default class List extends React.PureComponent {
     } else {
       elements = this.props.data.map(item => {
         return renderItem({
-          name: item.name,
+          name: item.github.name,
           column1: {
             top: (
-              <Link isDarkStyled href={item.urls.repo}>
-                {item.name}
+              <Link isDarkStyled href={item.github.urls.repo}>
+                {item.github.name}
               </Link>
             ),
-            bottom: item.urls.homepage
-              ? <Link isStyled href={item.urls.homepage}>
+            bottom: item.github.urls.homepage
+              ? <Link isStyled href={item.github.urls.homepage}>
                   homepage
                 </Link>
               : undefined,
           },
           column2: {
-            top: item.description,
-            bottom: item.topics.map(each =>
+            top: item.github.description,
+            bottom: item.github.topics.map(each =>
               <TopicItem
                 key={`list-${item.name}-${each}`}
                 count={this.props.topics[each]}>
@@ -210,8 +210,8 @@ export default class List extends React.PureComponent {
             ),
           },
           column3: {
-            top: getTimeSinceToday(item.stats.pushedAt),
-            bottom: `${item.score}/100 — ${item.stats.stars} stars`,
+            top: getTimeSinceToday(item.github.stats.pushedAt),
+            bottom: `${item.score}/100 — ${item.github.stats.stars} stars`,
           },
         });
       });

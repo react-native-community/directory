@@ -1,53 +1,55 @@
-const calculateScore = repo => {
-  repo.score = 0;
+const calculateScore = data => {
+  let { github } = data;
+  let score = 0;
 
-  const daysAgo = getDaysAgo(repo.stats.updatedAt);
+  const daysAgo = getDaysAgo(github.stats.updatedAt);
 
   if (daysAgo <= 30) {
-    repo.score += 15;
+    score += 15;
   } else if (daysAgo <= 60) {
-    repo.score += 10;
+    score += 10;
   } else if (daysAgo <= 90) {
-    repo.score += 5;
+    score += 5;
   }
 
-  if (repo.stats.hasIssues) {
-    repo.score += 10;
+  if (github.stats.hasIssues) {
+    score += 10;
   }
 
-  if (repo.stats.hasWiki) {
-    repo.score += 10;
+  if (github.stats.hasWiki) {
+    score += 10;
   }
 
-  if (repo.stats.hasPages) {
-    repo.score += 5;
+  if (github.stats.hasPages) {
+    score += 5;
   }
 
-  if (repo.stats.hasDownloads) {
-    repo.score += 10;
+  if (github.stats.hasDownloads) {
+    score += 10;
   }
 
-  if (repo.stats.hasTopics) {
-    repo.score += 10;
+  if (github.stats.hasTopics) {
+    score += 10;
   }
 
-  if (repo.stats.watchers > 10) {
-    repo.score += 5;
+  if (github.stats.watchers > 10) {
+    score += 5;
   }
 
-  if (repo.stats.forks > 5) {
-    repo.score += 10;
+  if (github.stats.forks > 5) {
+    score += 10;
   }
 
-  if (repo.stats.stars >= 2500) {
-    repo.score += 20;
-  } else if (repo.stats.stars >= 500) {
-    repo.score += 15;
-  } else if (repo.stats.stars >= 100) {
-    repo.score += 10;
+  if (github.stats.stars >= 2500) {
+    score += 20;
+  } else if (github.stats.stars >= 500) {
+    score += 15;
+  } else if (github.stats.stars >= 100) {
+    score += 10;
   }
 
-  return repo;
+  data.score = score;
+  return data;
 };
 
 const getDaysAgo = date => {
