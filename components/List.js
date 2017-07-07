@@ -5,6 +5,7 @@ import TopicItem from '../components/TopicItem';
 import Link from '../components/Link';
 import PercentageBar from '../components/PercentageBar';
 import ScorePercentageBar from '../components/ScorePercentageBar';
+import InlineImageTooltipContainer from '../components/InlineTooltipContainer';
 
 import * as SVG from '../common/svg';
 
@@ -191,6 +192,11 @@ export default class List extends React.PureComponent {
                       margin-top: 24px;
                     }
 
+                    .item-compat-progress {
+                      max-width: 180px;
+                      width: 100%;
+                    }
+
                     .item-compat-label {
                       font-family: 'office-code-medium', monospace;
 
@@ -220,10 +226,14 @@ export default class List extends React.PureComponent {
                       </div>
                     : undefined}
                   <div className="item-compat">
-                    <div className="item-compat-label">Compatability</div>
-                    <PercentageBar remaining={getPercentageRemaining(item)} />
-                    <div className="item-compat-label">Health</div>
-                    <ScorePercentageBar remaining={100 - item.score} />
+                    <div className="item-compat-progress">
+                      <div className="item-compat-label">Compatibility</div>
+                      <PercentageBar remaining={getPercentageRemaining(item)} />
+                    </div>
+                    <div className="item-compat-progress">
+                      <div className="item-compat-label">Health</div>
+                      <ScorePercentageBar remaining={100 - item.score} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -236,6 +246,10 @@ export default class List extends React.PureComponent {
                 <div className="item-supported">
                   <style jsx>{`
                     .item-supported {
+                      margin-top: 24px;
+                    }
+
+                    .item-images {
                       margin-top: 24px;
                     }
                   `}</style>
@@ -253,6 +267,19 @@ export default class List extends React.PureComponent {
 
                     return `${each}${idx !== arr.length - 1 ? ', ' : ''}`;
                   })}
+                  {item.images.length
+                    ? <div className="item-images">
+                        {item.images.map((each, index) => {
+                          return (
+                            <InlineImageTooltipContainer
+                              key={`${item.github.name}-image-${index}`}
+                              src={each}
+                              count={index}
+                            />
+                          );
+                        })}
+                      </div>
+                    : undefined}
                 </div>
                 <div className="item-topics">
                   <style jsx>{`

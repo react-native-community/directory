@@ -11,7 +11,6 @@ export default class PercentageBar extends React.PureComponent {
         <style jsx>{`
           .percentage-bar {
             width: 100%;
-            max-width: 180px;
             border-bottom: 1px solid #000000;
             position: relative;
           }
@@ -66,7 +65,6 @@ export default class PercentageBar extends React.PureComponent {
             align-items: center;
             font-size: 0.6rem;
             width: 100%;
-            max-width: 180px;
             height: 20px;
             position: relative;
           }
