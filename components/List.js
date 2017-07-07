@@ -101,7 +101,7 @@ const renderItem = item => {
 
         .list-item-body-heading {
           font-size: 0.9rem;
-          margin-top: 8px;
+          margin-top: 5px;
           line-height: 1.3rem;
           color: #24292e;
         }
@@ -277,7 +277,7 @@ export default class List extends React.PureComponent {
               <div>
                 <style jsx>{`
                   .item-meta-info {
-                    margin-top: 9px;
+                    margin-top: 6px;
                     margin-bottom: 8px;
                     display: flex;
                     align-items: center;

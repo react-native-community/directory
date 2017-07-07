@@ -39,8 +39,10 @@ class Queries extends React.PureComponent {
           }
 
           .queries-list-item {
+            font-family: 'office-code', monospace;
             display: block;
             margin-top: 8px;
+            line-height: 1.2rem;
           }
 
           .queries-list-item-left {
@@ -55,7 +57,6 @@ class Queries extends React.PureComponent {
           }
 
           .queries-link {
-            font-family: 'office-code', monospace;
             display: inline-block;
             text-decoration: underline;
             transition: all 200ms ease;

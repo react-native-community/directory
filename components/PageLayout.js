@@ -2,7 +2,6 @@ import React from 'react';
 
 import Topics from '../components/Topics';
 import Queries from '../components/Queries';
-import SearchInput from '../components/SearchInput';
 
 export default class PageLayout extends React.PureComponent {
   render() {
