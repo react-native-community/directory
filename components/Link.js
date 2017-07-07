@@ -6,6 +6,7 @@ export default class CustomLink extends React.PureComponent {
     return (
       <Link href={this.props.href}>
         <a
+          target={this.props.target}
           className={`${this.props.isStyled ? 'link' : undefined} ${this.props
             .isDarkStyled
             ? 'dark-link'

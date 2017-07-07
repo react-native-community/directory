@@ -126,7 +126,7 @@ const renderItem = item => {
           }
         }
 
-        .list-item-column-wide {
+        .list-item-column--wide {
           flex-basis: 40%;
           padding-right: 24px;
           overflow-wrap: break-word;
@@ -147,7 +147,7 @@ const renderItem = item => {
           {item.column1.bottom}
         </div>
       </span>
-      <span className="list-item-column-wide">
+      <span className="list-item-column--wide">
         <h2 className={`list-item-body-heading`}>
           {item.column2.top}
         </h2>
@@ -243,6 +243,27 @@ export default class List extends React.PureComponent {
             top: item.github.description,
             bottom: (
               <div>
+                {item.examples && item.examples.length
+                  ? <div className="item-examples">
+                      <style jsx>{`
+                        .item-examples {
+                          margin-top: 24px;
+                        }
+                      `}</style>
+                      Code Examples:{' '}
+                      {item.examples.map((each, index) => {
+                        return (
+                          <Link
+                            isStyled
+                            target="blank"
+                            key={`${item.name}-${each}-${index}`}
+                            href={each}>
+                            #{index + 1}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  : undefined}
                 <div className="item-supported">
                   <style jsx>{`
                     .item-supported {
