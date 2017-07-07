@@ -12,6 +12,7 @@ class SearchInput extends React.PureComponent {
         <style jsx>{`
           .search-input {
             width: 100%;
+            margin-top: 24px;
             padding-left: 48px;
             position: relative;
           }
@@ -34,8 +35,8 @@ class SearchInput extends React.PureComponent {
             position: absolute;
             bottom: 4px;
             right: 4px;
-            height: 16px;
-            width: 16px;
+            height: 20px;
+            width: 20px;
             background: rgba(250, 70, 83, 1);
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
             border-radius: 6px;
@@ -45,7 +46,9 @@ class SearchInput extends React.PureComponent {
           }
 
           .search-input-control {
-            font-family: 'office-code', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+              helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
+              sans-serif;
             color: rgba(65, 160, 248, 1);
             height: 40px;
             width: 100%;

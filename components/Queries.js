@@ -55,6 +55,7 @@ class Queries extends React.PureComponent {
           }
 
           .queries-link {
+            font-family: 'office-code', monospace;
             display: inline-block;
             text-decoration: underline;
             transition: all 200ms ease;
@@ -63,10 +64,6 @@ class Queries extends React.PureComponent {
 
             &:hover {
               opacity: 0.5;
-            }
-
-            &:active {
-              transform: scale(1.2);
             }
           }
         `}</style>

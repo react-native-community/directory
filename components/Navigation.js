@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import SearchInput from '../components/SearchInput';
-
 const renderNavigationItem = item => {
   return (
     <span
+      key={`navigation-${item.text}`}
       className={`navigation-item
         ${item.active ? 'navigation-item-active' : undefined}
         ${!item.active ? 'navigation-interactable' : undefined}`}
@@ -14,24 +13,28 @@ const renderNavigationItem = item => {
       <style jsx>{`
         .navigation-item {
           display: inline-flex;
-          align-items: column;
+          align-items: flex-end;
           flex-direction: column;
-          margin-right: 36px;
+          margin-right: 24px;
+          height: 32px;
           padding-bottom: 8px;
-          box-shadow: 0 2px 0 black;
+          box-shadow: 0 1px 0 black;
+          font-family: 'office-code', monospace;
         }
 
         .navigation-interactable {
           cursor: pointer;
           opacity: 1;
-          transition: 200ms opacity ease;
+          transition: 200ms all ease;
+          transition-property: opacity, transform;
+          opacity: 0.6;
           &:hover {
-            opacity: 0.6;
+            opacity: 0.8;
           }
         }
 
         .navigation-item-active {
-          box-shadow: 0 2px 0 rgba(65, 160, 248, 1);
+          box-shadow: 0 1px 0 rgba(65, 160, 248, 1);
         }
 
         .navigation-active {
@@ -43,39 +46,121 @@ const renderNavigationItem = item => {
         }
 
         .navigation-item-text {
-          margin-top: 16px;
           font-size: 0.8rem;
+          margin-top: auto;
+        }
+
+        .navigation-item-text-active {
+          color: rgba(65, 160, 248, 1);
         }
       `}</style>
       <span
-        className={`navigation-item-number ${item.active
-          ? 'navigation-active'
+        className={`navigation-item-text ${item.active
+          ? 'navigation-item-text-active'
           : undefined}`}>
-        {item.top}
-      </span>
-      <span className="navigation-item-text">
-        {item.bottom}
+        {item.text}
       </span>
     </span>
   );
 };
 
+const navigationElements = props => [
+  {
+    text: 'All',
+    active: props.sortBy === 'all',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'all',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Approved',
+    active: props.sortBy === 'approved',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'approved',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Compatibility',
+    active: props.sortBy === 'compatibility',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'compatibility',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Health',
+    active: props.sortBy === 'health',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'health',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Last Update',
+    active: props.sortBy === 'updated',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'updated',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Downloads',
+    active: props.sortBy === 'downloads',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'downloads',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Issues',
+    active: props.sortBy === 'issues',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'issues',
+        type: 'SORT_BY',
+      });
+    },
+  },
+  {
+    text: 'Stars',
+    active: props.sortBy === 'stars',
+    onClick: () => {
+      return props.dispatch({
+        sortBy: 'stars',
+        type: 'SORT_BY',
+      });
+    },
+  },
+];
+
 class Navigation extends React.PureComponent {
   static propTypes = {
-    category: PropTypes.string,
+    sortBy: PropTypes.string,
   };
 
   render() {
+    const elements = navigationElements(this.props).map(renderNavigationItem);
+
     return (
       <div className="container">
         <style jsx>{`
           .container {
             margin: 2rem 0 0 0;
             border-bottom: 1px solid #ececec;
-
-            @media (max-width: 480px) {
-              margin: 1rem 0 0 0;
-            }
           }
 
           .navigation {
@@ -86,58 +171,28 @@ class Navigation extends React.PureComponent {
             margin: 0 auto 0 auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-
-            @media (max-width: 768px) {
-              padding: 0;
-              flex-direction: column-reverse;
-            }
           }
 
-          .navigation-left {
-            flex-shrink: 0;
-
-            @media (max-width: 768px) {
-              padding: 24px 24px 0 24px;
-              display: flex;
-              flex-direction: row;
-              width: 100%;
-            }
+          .navigation-title {
+            display: inline-flex;
+            align-items: flex-end;
+            flex-direction: column;
+            margin-right: 16px;
+            height: 32px;
+            padding-bottom: 8px;
+            font-family: 'office-code-medium', monospace;
           }
 
-          .navigation-right {
-            min-width: 25%;
-            width: 100%;
-
-            @media (max-width: 768px) {
-              padding: 16px 24px 16px 24px;
-              border-top: 1px solid #ececec;
-              border-bottom: 1px solid #ececec;
-            }
+          .navigation-title-text {
+            font-size: 0.8rem;
+            margin-top: auto;
           }
         `}</style>
         <nav className="navigation">
-          <div className="navigation-left">
-            {renderNavigationItem({
-              top: this.props.all.length,
-              bottom: 'All React Native',
-              active: this.props.category === 'all',
-              onClick: () => {
-                window.location.href = '/';
-              },
-            })}
-            {renderNavigationItem({
-              top: this.props.expo.length,
-              bottom: 'Compatible with Expo',
-              active: this.props.category === 'expo',
-              onClick: () => {
-                window.location.href = '/expo';
-              },
-            })}
-          </div>
-          <div className="navigation-right">
-            <SearchInput placeholder={`“Type here to search...”`} />
-          </div>
+          <span className="navigation-title">
+            <span className="navigation-title-text">Organize By: </span>
+          </span>
+          {elements}
         </nav>
       </div>
     );

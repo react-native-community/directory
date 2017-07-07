@@ -12,9 +12,9 @@ export default class Header extends React.PureComponent {
             max-width: 1319px;
             padding: 0 24px 0 24px;
             box-sizing: border-box;
-            margin: 4rem auto 0 auto;
+            margin: 2rem auto 0 auto;
             display: flex;
-            align-items: 'center';
+            align-items: center;
             justify-content: 'space-between';
 
             @media (max-width: 600px) {
@@ -27,7 +27,7 @@ export default class Header extends React.PureComponent {
             width: 100%;
             padding-right: 24px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
           }
 
@@ -42,8 +42,7 @@ export default class Header extends React.PureComponent {
           }
 
           .header-strong {
-            font-family: 'office-code-medium', monospace;
-            font-weight: 400;
+            font-weight: 700;
           }
         `}</style>
         <div className="header-left">

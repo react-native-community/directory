@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Topics from '../components/Topics';
-import Scoring from '../components/Scoring';
 import Queries from '../components/Queries';
+import SearchInput from '../components/SearchInput';
 
 export default class PageLayout extends React.PureComponent {
   render() {
@@ -48,9 +48,9 @@ export default class PageLayout extends React.PureComponent {
             {this.props.children}
           </div>
           <div className="page-layout-right">
+            <SearchInput placeholder={`“Type here to search...”`} />
             <Queries />
             <Topics />
-            <Scoring />
           </div>
         </div>
       </div>

@@ -136,7 +136,9 @@ export default class Document extends React.Component {
             line-height: 1;
             font-size: 14px;
             color: #000000;
-            font-family: 'office-code', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+              helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
+              sans-serif;
 
             @media (max-width: 768px) {
               font-size: 12px;

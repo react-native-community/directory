@@ -19,13 +19,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T16:44:47Z",
+          "updatedAt": "2017-07-06T18:56:59Z",
           "createdAt": "2017-01-26T19:51:40Z",
           "pushedAt": "2017-07-06T06:02:49Z",
           "forks": 962,
           "issues": 767,
-          "watchers": 5529,
-          "stars": 5529
+          "watchers": 5528,
+          "stars": 5528
         },
         "name": "react-navigation",
         "description": "Learn once, navigate anywhere",
@@ -872,13 +872,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T15:26:10Z",
+          "updatedAt": "2017-07-06T18:41:59Z",
           "createdAt": "2016-06-15T21:38:19Z",
           "pushedAt": "2017-06-29T19:22:23Z",
           "forks": 170,
           "issues": 23,
-          "watchers": 1003,
-          "stars": 1003
+          "watchers": 1004,
+          "stars": 1004
         },
         "name": "react-native-tab-view",
         "description": "A cross-platform Tab View component for React Native",
@@ -1157,6 +1157,7 @@
       "ios": true,
       "android": true,
       "expo": true,
+      "npmPkg": "@expo/ex-navigation",
       "unmaintained": true,
       "github": {
         "urls": {
@@ -1183,8 +1184,10 @@
         "topics": []
       },
       "images": [],
-      "npmPkg": "ex-navigation",
       "npm": {
+        "downloads": 4316,
+        "start": "2017-06-06",
+        "end": "2017-07-05",
         "period": "month"
       },
       "score": 75

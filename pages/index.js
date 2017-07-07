@@ -15,12 +15,12 @@ class Index extends React.PureComponent {
   render() {
     const sortedData = this.props.topic
       ? handleTopicSorting({
-          data: this.props.all,
+          data: this.props.libraries,
           topic: this.props.topic,
           search: this.props.search,
         })
       : handleSearchSorting({
-          data: this.props.all,
+          data: this.props.libraries,
           topic: this.props.topic,
           search: this.props.search,
         });
@@ -28,7 +28,7 @@ class Index extends React.PureComponent {
     return (
       <Document>
         <Header />
-        <Navigation category="all" />
+        <Navigation selected={this.props.sortBy} />
         <PageLayout>
           <List topics={this.props.topics} data={sortedData} />
         </PageLayout>

@@ -20,12 +20,14 @@ class TopicItem extends React.PureComponent {
           .item {
             display: inline-block;
             margin-right: 8px;
-            text-decoration: underline;
             transition: all 200ms ease;
             transition-property: opacity, transform;
             cursor: pointer;
             overflow-wrap: break-word;
             word-break: break-word;
+            font-family: 'office-code', monospace;
+            font-size: 0.8rem;
+            line-height: 1.1rem;
 
             &:hover {
               opacity: 0.5;
