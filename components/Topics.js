@@ -6,21 +6,25 @@ import TopicItem from '../components/TopicItem';
 class Topics extends React.PureComponent {
   render() {
     const topicElements = [];
-    Object.keys(this.props.topics).forEach(key => {
-      topicElements.push(
-        <li key={`topic-list-${key}`} className="topics-item">
-          <style jsx>{`
-            .topics-item {
-              display: block;
-              margin: 6px 0 8px 0;
-            }
-          `}</style>
-          <TopicItem count={this.props.topics[key]}>
-            {key}
-          </TopicItem>
-        </li>
-      );
-    });
+    Object.keys(this.props.topics)
+      .sort((a, b) => {
+        return a === b ? 0 : a ? -1 : 1;
+      })
+      .forEach(key => {
+        topicElements.push(
+          <li key={`topic-list-${key}`} className="topics-item">
+            <style jsx>{`
+              .topics-item {
+                display: block;
+                margin: 6px 0 8px 0;
+              }
+            `}</style>
+            <TopicItem count={this.props.topics[key]}>
+              {key}
+            </TopicItem>
+          </li>
+        );
+      });
 
     return (
       <header className="topics">

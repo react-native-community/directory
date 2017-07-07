@@ -87,10 +87,12 @@ const renderItem = item => {
         .list-item-heading {
           color: #24292e;
           font-weight: 700;
+          font-size: 1.3rem;
         }
 
         .list-item-heading-weightless {
           font-weight: 400;
+          margin-top: 8px;
         }
 
         .list-item-paragraph {
@@ -112,7 +114,7 @@ const renderItem = item => {
 
         .list-item-column-wide {
           flex-basis: 40%;
-          padding-right: 40px;
+          padding-right: 24px;
           overflow-wrap: break-word;
           word-break: break-word;
 
@@ -224,7 +226,7 @@ export default class List extends React.PureComponent {
                       margin-top: 24px;
                     }
                   `}</style>
-                  Compatible with:{' '}
+                  Compatible:{' '}
                   {[
                     item.web ? 'Web' : null,
                     item.ios ? 'iOS' : null,
@@ -262,7 +264,7 @@ export default class List extends React.PureComponent {
               <div>
                 <style jsx>{`
                   .item-meta-info {
-                    margin-top: 2px;
+                    margin-top: 10px;
                     margin-bottom: 8px;
                     display: flex;
                     align-items: center;

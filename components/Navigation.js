@@ -66,11 +66,11 @@ const renderNavigationItem = item => {
 
 const navigationElements = props => [
   {
-    text: 'All',
-    active: props.sortBy === 'all',
+    text: 'Last Update',
+    active: props.sortBy === 'updated',
     onClick: () => {
       return props.dispatch({
-        sortBy: 'all',
+        sortBy: 'updated',
         type: 'SORT_BY',
       });
     },
@@ -101,16 +101,6 @@ const navigationElements = props => [
     onClick: () => {
       return props.dispatch({
         sortBy: 'health',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Last Update',
-    active: props.sortBy === 'updated',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'updated',
         type: 'SORT_BY',
       });
     },
@@ -186,6 +176,7 @@ class Navigation extends React.PureComponent {
           .navigation-title-text {
             font-size: 0.8rem;
             margin-top: auto;
+            white-space: nowrap;
           }
         `}</style>
         <nav className="navigation">

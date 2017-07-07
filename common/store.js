@@ -19,10 +19,10 @@ const originalData = [...data.incompatible, ...data.expo];
 });
 
 const INITIAL_STATE = {
-  libraries: [...originalData],
+  ...Sorting.updated({}, [...originalData], 'updated'),
   topics,
   search: '',
-  sortBy: 'all',
+  sortBy: 'updated',
   topic: undefined,
 };
 

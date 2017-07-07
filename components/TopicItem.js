@@ -26,7 +26,7 @@ class TopicItem extends React.PureComponent {
             overflow-wrap: break-word;
             word-break: break-word;
             font-family: 'office-code', monospace;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             line-height: 1.1rem;
 
             &:hover {
