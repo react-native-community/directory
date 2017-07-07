@@ -3,6 +3,7 @@ import { isEmptyOrNull } from '../common/strings';
 export const handleTopicSorting = ({ data, topic, search }) => {
   return data.filter(e => {
     let isTopicMatch;
+
     e.github.topics.forEach(t => {
       if (t.includes(topic)) {
         isTopicMatch = true;
@@ -11,7 +12,9 @@ export const handleTopicSorting = ({ data, topic, search }) => {
 
     if (!isEmptyOrNull(search)) {
       const isNameMatch = e.github.name.includes(search);
-      const isDescriptionMatch = e.github.description.includes(search);
+      const isDescriptionMatch = !isEmptyOrNull(e.github.description)
+        ? e.github.description.includes(search)
+        : undefined;
 
       return isTopicMatch && (isNameMatch || isDescriptionMatch);
     }
@@ -27,7 +30,9 @@ export const handleSearchSorting = ({ data, search }) => {
     }
 
     const isNameMatch = e.github.name.includes(search);
-    const isDescriptionMatch = e.github.description.includes(search);
+    const isDescriptionMatch = !isEmptyOrNull(e.github.description)
+      ? e.github.description.includes(search)
+      : undefined;
 
     let isTopicMatch;
     e.github.topics.forEach(t => {

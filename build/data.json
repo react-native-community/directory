@@ -19,13 +19,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-07T21:12:27Z",
+          "updatedAt": "2017-07-07T23:32:01Z",
           "createdAt": "2017-01-26T19:51:40Z",
           "pushedAt": "2017-07-07T21:56:13Z",
           "forks": 969,
           "issues": 776,
-          "watchers": 5554,
-          "stars": 5554
+          "watchers": 5556,
+          "stars": 5556
         },
         "name": "react-navigation",
         "description": "Learn once, navigate anywhere",
@@ -163,7 +163,7 @@
           "hasTopics": true,
           "updatedAt": "2017-07-07T21:45:53Z",
           "createdAt": "2017-01-27T18:24:50Z",
-          "pushedAt": "2017-07-07T17:14:22Z",
+          "pushedAt": "2017-07-07T22:37:56Z",
           "forks": 384,
           "issues": 40,
           "watchers": 5944,
@@ -383,7 +383,7 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-07T21:40:34Z",
+          "updatedAt": "2017-07-07T23:24:27Z",
           "createdAt": "2015-05-15T16:38:57Z",
           "pushedAt": "2017-07-07T21:15:47Z",
           "forks": 567,
@@ -783,7 +783,7 @@
           "updatedAt": "2017-07-07T20:33:20Z",
           "createdAt": "2016-09-08T14:21:41Z",
           "pushedAt": "2017-07-07T08:56:43Z",
-          "forks": 537,
+          "forks": 538,
           "issues": 35,
           "watchers": 6019,
           "stars": 6019
@@ -2113,13 +2113,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-07T16:15:35Z",
+          "updatedAt": "2017-07-07T23:25:16Z",
           "createdAt": "2016-04-15T11:37:23Z",
           "pushedAt": "2017-07-07T05:50:03Z",
-          "forks": 563,
+          "forks": 564,
           "issues": 95,
-          "watchers": 5353,
-          "stars": 5353
+          "watchers": 5352,
+          "stars": 5352
         },
         "name": "NativeBase",
         "description": "Essential cross-platform UI components for React Native",
@@ -2141,46 +2141,6 @@
         "period": "month"
       },
       "score": 95
-    },
-    {
-      "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "unmaintained": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/olivierlesnicki/react-native-switcher",
-          "clone": "https://github.com/olivierlesnicki/react-native-switcher.git",
-          "homepage": "https://github.com/olivierlesnicki/react-native-switcher"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-05-28T13:35:11Z",
-          "createdAt": "2015-09-21T21:19:02Z",
-          "pushedAt": "2015-09-22T22:11:58Z",
-          "forks": 0,
-          "issues": 0,
-          "watchers": 54,
-          "stars": 54
-        },
-        "name": "react-native-switcher",
-        "description": null,
-        "topics": []
-      },
-      "images": [],
-      "npmPkg": "react-native-switcher",
-      "npm": {
-        "downloads": 12,
-        "start": "2017-06-07",
-        "end": "2017-07-06",
-        "period": "month"
-      },
-      "score": 45
     },
     {
       "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
@@ -2326,13 +2286,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-06T12:06:21Z",
+          "updatedAt": "2017-07-07T23:21:49Z",
           "createdAt": "2015-08-27T15:28:01Z",
           "pushedAt": "2017-07-07T20:27:40Z",
           "forks": 80,
           "issues": 13,
-          "watchers": 434,
-          "stars": 434
+          "watchers": 433,
+          "stars": 433
         },
         "name": "react-native-button",
         "description": "A React Native button component customizable via props",
@@ -2648,13 +2608,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-07T00:19:04Z",
+          "updatedAt": "2017-07-07T23:02:09Z",
           "createdAt": "2015-10-20T20:01:55Z",
           "pushedAt": "2017-06-30T03:21:06Z",
           "forks": 168,
           "issues": 12,
-          "watchers": 975,
-          "stars": 975
+          "watchers": 976,
+          "stars": 976
         },
         "name": "react-native-action-button",
         "description": "customizable multi-action-button component for react-native",
@@ -3771,50 +3731,6 @@
         "period": "month"
       },
       "score": 70
-    },
-    {
-      "githubUrl": "https://github.com/bgryszko/react-native-circular-progress",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/bgryszko/react-native-circular-progress",
-          "clone": "https://github.com/bgryszko/react-native-circular-progress.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-05T07:24:19Z",
-          "createdAt": "2015-10-27T15:09:33Z",
-          "pushedAt": "2017-06-29T14:14:04Z",
-          "forks": 100,
-          "issues": 26,
-          "watchers": 573,
-          "stars": 573
-        },
-        "name": "react-native-circular-progress",
-        "description": "React Native component for creating animated, circular progress with ReactART",
-        "topics": [
-          "animation",
-          "circle",
-          "fill",
-          "progress",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-circular-progress",
-      "npm": {
-        "downloads": 6559,
-        "start": "2017-06-07",
-        "end": "2017-07-06",
-        "period": "month"
-      },
-      "score": 85
     },
     {
       "githubUrl": "https://github.com/bgryszko/react-native-circular-progress",
