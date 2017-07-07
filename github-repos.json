@@ -219,5 +219,293 @@
     "expo": true,
     "npmPkg": "@expo/ex-navigation",
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/benhurott/react-native-masked-text",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/timomeh/react-native-material-bottom-navigation",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/wix/react-native-autogrow-textinput",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jeanpan/react-native-camera-roll-picker",
+    "ios": true,
+    "android": true,
+    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/imagepicker.html"
+  },
+  {
+    "githubUrl": "https://github.com/mosesoak/react-native-conductor",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-image-progress",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/fuyaode/react-native-app-intro",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-lightbox",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/halilb/react-native-textinput-effects",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/deanmcpherson/react-native-sortable-listview",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jmurzy/react-native-foldview",
+    "ios": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-progress",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/zbtang/React-Native-ViewPager",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jaysoo/react-native-menu",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jacklam718/react-native-button-component",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Thomas101/react-native-fence-html",
+    "ios": true,
+    "android": true,
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/joshswan/react-native-autolink",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/obipawan/react-native-hyperlink",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/crazycodeboy/react-native-check-box",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/react-native-loading-container",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/meteor-factory/react-native-tinder-swipe-cards",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/bgryszko/react-native-circular-progress",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bgryszko/react-native-circular-progress",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-side-menu",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/leecade/react-native-swiper",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/skv-headless/react-native-scrollable-tab-view",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/aksonov/react-native-router-flux",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/GeekyAnts/NativeBase",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/dancormier/react-native-swipeout",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/appintheair/react-native-looped-carousel",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/APSL/react-native-button",
+    "npmPkg": "apsl-react-native-button",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/xgfe/react-native-datepicker",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/FaridSafi/react-native-google-places-autocomplete",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jeanregisser/react-native-slider",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/sbycrosz/react-native-credit-card-input",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/halilb/react-native-photo-browser",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mastermoo/react-native-action-button",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/FaridSafi/react-native-gifted-form",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/testshallpass/react-native-dropdownalert",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Purii/react-native-tableview-simple#examples",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/react-native-read-more-text",
+    "ios": true,
+    "android": true,
+    "examples": ["https://expo.io/@community/read-more-example"],
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/instea/react-native-popup-menu",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/mohebifar/react-native-loader",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bodyflex/react-native-simple-modal",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
