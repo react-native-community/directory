@@ -5,7 +5,7 @@ import TopicItem from '../components/TopicItem';
 import Link from '../components/Link';
 import PercentageBar from '../components/PercentageBar';
 import ScorePercentageBar from '../components/ScorePercentageBar';
-import InlineImageTooltipContainer from '../components/InlineTooltipContainer';
+import ImageTooltipContainer from '../components/ImageTooltipContainer';
 
 import * as SVG from '../common/svg';
 
@@ -180,7 +180,7 @@ export default class List extends React.PureComponent {
           name: item.github.name,
           column1: {
             top: (
-              <Link isDarkStyled href={item.github.urls.repo}>
+              <Link isDarkStyled target="blank" href={item.github.urls.repo}>
                 {item.github.name}
               </Link>
             ),
@@ -227,7 +227,9 @@ export default class List extends React.PureComponent {
                     : undefined}
                   <div className="item-compat">
                     <div className="item-compat-progress">
-                      <div className="item-compat-label">Compatibility</div>
+                      <div className="item-compat-label">
+                        Platform Compatibility
+                      </div>
                       <PercentageBar remaining={getPercentageRemaining(item)} />
                     </div>
                     <div className="item-compat-progress">
@@ -292,7 +294,7 @@ export default class List extends React.PureComponent {
                     ? <div className="item-images">
                         {item.images.map((each, index) => {
                           return (
-                            <InlineImageTooltipContainer
+                            <ImageTooltipContainer
                               key={`${item.github.name}-image-${index}`}
                               src={each}
                               count={index}
@@ -353,6 +355,7 @@ export default class List extends React.PureComponent {
                   </span>
                   <Link
                     isStyled
+                    target="blank"
                     href={`https://www.npmjs.com/package/${item.npmPkg}`}>
                     {`${item.npm.downloads}`} downloads
                   </Link>
@@ -362,7 +365,10 @@ export default class List extends React.PureComponent {
                       <span className="item-meta-info-svg">
                         {SVG.file}
                       </span>
-                      <Link isStyled href={`${item.github.urls.repo}/issues`}>
+                      <Link
+                        isStyled
+                        target="blank"
+                        href={`${item.github.urls.repo}/issues`}>
                         {`${item.github.stats.issues}`} issues
                       </Link>
                     </div>
@@ -372,7 +378,10 @@ export default class List extends React.PureComponent {
                       <span className="item-meta-info-svg">
                         {SVG.website}
                       </span>
-                      <Link isStyled href={item.github.urls.homepage}>
+                      <Link
+                        isStyled
+                        target="blank"
+                        href={item.github.urls.homepage}>
                         Visit Website
                       </Link>
                     </div>

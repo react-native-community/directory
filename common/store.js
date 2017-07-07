@@ -21,6 +21,7 @@ const originalData = [...data.incompatible, ...data.expo];
 const INITIAL_STATE = {
   ...Sorting.updated({}, [...originalData], 'updated'),
   topics,
+  tooltip: undefined,
   search: '',
   sortBy: 'updated',
   topic: undefined,
@@ -60,6 +61,10 @@ const handleSorting = (state, sortBy) => {
 
 export const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case 'CLEAR_TOOLTIP':
+      return { ...state, tooltip: action.tooltip };
+    case 'SET_TOOLTIP':
+      return { ...state, tooltip: action.tooltip };
     case 'SORT_BY':
       return handleSorting(state, action.sortBy);
     case 'SEARCH_LIBRARY':

@@ -2,6 +2,7 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 
 import Document from '../components/Document';
+import GlobalTooltip from '../components/GlobalTooltip';
 import PageLayout from '../components/PageLayout';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -32,6 +33,7 @@ class Index extends React.PureComponent {
         <PageLayout>
           <List topics={this.props.topics} data={sortedData} />
         </PageLayout>
+        <GlobalTooltip />
         <Footer />
       </Document>
     );
