@@ -115,7 +115,8 @@
     "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
@@ -126,20 +127,29 @@
   },
   {
     "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
+    "ios": true,
+    "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/magicismight/react-native-root-siblings",
-    "expo": true
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/expo/react-native-action-sheet",
-    "npmPkg": "@expo/react-native-action-sheet",
-    "expo": true
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "@expo/react-native-action-sheet"
   },
   {
     "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
@@ -362,29 +372,25 @@
     "githubUrl": "https://github.com/leecade/react-native-swiper",
     "ios": true,
     "android": true,
-    "expo": true,
-    "goldstar": true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/skv-headless/react-native-scrollable-tab-view",
     "ios": true,
     "android": true,
-    "expo": true,
-    "goldstar": true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/aksonov/react-native-router-flux",
     "ios": true,
     "android": true,
-    "expo": true,
-    "goldstar": true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/GeekyAnts/NativeBase",
     "ios": true,
     "android": true,
-    "expo": true,
-    "goldstar": true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
@@ -452,7 +458,8 @@
   {
     "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/mastermoo/react-native-action-button",
@@ -500,7 +507,8 @@
   {
     "githubUrl": "https://github.com/mohebifar/react-native-loader",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/bodyflex/react-native-simple-modal",
