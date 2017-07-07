@@ -99,6 +99,19 @@ const renderItem = item => {
           color: #24292e;
         }
 
+        .list-item-body-heading {
+          font-size: 0.9rem;
+          margin-top: 8px;
+          line-height: 1.3rem;
+          color: #24292e;
+        }
+
+        .list-item-body {
+          font-size: 0.9rem;
+          line-height: 1.3rem;
+          color: #24292e;
+        }
+
         .list-item-column {
           flex-basis: 30%;
           padding-right: 24px;
@@ -134,10 +147,10 @@ const renderItem = item => {
         </div>
       </span>
       <span className="list-item-column-wide">
-        <h2 className={`list-item-heading-weightless`}>
+        <h2 className={`list-item-body-heading`}>
           {item.column2.top}
         </h2>
-        <div className={`list-item-paragraph`}>
+        <div className={`list-item-body`}>
           {item.column2.bottom}
         </div>
       </span>
@@ -226,7 +239,7 @@ export default class List extends React.PureComponent {
                       margin-top: 24px;
                     }
                   `}</style>
-                  Compatible:{' '}
+                  Compatible with{' '}
                   {[
                     item.web ? 'Web' : null,
                     item.ios ? 'iOS' : null,
@@ -264,7 +277,7 @@ export default class List extends React.PureComponent {
               <div>
                 <style jsx>{`
                   .item-meta-info {
-                    margin-top: 10px;
+                    margin-top: 9px;
                     margin-bottom: 8px;
                     display: flex;
                     align-items: center;

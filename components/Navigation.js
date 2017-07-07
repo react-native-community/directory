@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchInput from '../components/SearchInput';
 import { connect } from 'react-redux';
 
 const renderNavigationItem = item => {
@@ -18,7 +19,6 @@ const renderNavigationItem = item => {
           margin-right: 24px;
           height: 32px;
           padding-bottom: 8px;
-          box-shadow: 0 1px 0 black;
           font-family: 'office-code', monospace;
         }
 
@@ -76,7 +76,7 @@ const navigationElements = props => [
     },
   },
   {
-    text: 'Approved',
+    text: 'Recommended',
     active: props.sortBy === 'approved',
     onClick: () => {
       return props.dispatch({
@@ -159,8 +159,14 @@ class Navigation extends React.PureComponent {
             padding: 0 24px 0 24px;
             box-sizing: border-box;
             margin: 0 auto 0 auto;
+          }
+
+          .navigation-elements {
             display: flex;
             align-items: center;
+            @media (max-width: 768px) {
+              display: none;
+            }
           }
 
           .navigation-title {
@@ -180,10 +186,13 @@ class Navigation extends React.PureComponent {
           }
         `}</style>
         <nav className="navigation">
-          <span className="navigation-title">
-            <span className="navigation-title-text">Organize By: </span>
-          </span>
-          {elements}
+          <SearchInput placeholder={`Type here...`} />
+          <div className="navigation-elements">
+            <span className="navigation-title">
+              <span className="navigation-title-text">Organize By: </span>
+            </span>
+            {elements}
+          </div>
         </nav>
       </div>
     );

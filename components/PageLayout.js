@@ -48,7 +48,6 @@ export default class PageLayout extends React.PureComponent {
             {this.props.children}
           </div>
           <div className="page-layout-right">
-            <SearchInput placeholder={`“Type here to search...”`} />
             <Queries />
             <Topics />
           </div>

@@ -27,7 +27,7 @@ export default class Header extends React.PureComponent {
             width: 100%;
             padding-right: 24px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
           }
 
