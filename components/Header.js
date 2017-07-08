@@ -62,7 +62,6 @@ export default class Header extends React.PureComponent {
             </p>
           </div>
         </div>
-        <div className="header-right" />
       </header>
     );
   }

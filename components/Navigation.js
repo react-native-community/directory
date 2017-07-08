@@ -146,9 +146,9 @@ class Navigation extends React.PureComponent {
     const elements = navigationElements(this.props).map(renderNavigationItem);
 
     return (
-      <div className="container">
+      <div className="navigation-container">
         <style jsx>{`
-          .container {
+          .navigation-container {
             margin: 2rem 0 0 0;
             border-bottom: 1px solid #ececec;
           }

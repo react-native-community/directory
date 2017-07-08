@@ -7,12 +7,12 @@ export default class CustomLink extends React.PureComponent {
       <Link href={this.props.href}>
         <a
           target={this.props.target}
-          className={`${this.props.isStyled ? 'link' : undefined} ${this.props
-            .isDarkStyled
-            ? 'dark-link'
+          className={`${this.props.isStyled ? 'link--light' : undefined} ${this
+            .props.isDarkStyled
+            ? 'link--dark'
             : undefined}`}>
           <style jsx>{`
-            .link {
+            .link--light {
               color: rgba(65, 160, 248, 1);
               text-decoration: none;
 
@@ -25,7 +25,7 @@ export default class CustomLink extends React.PureComponent {
               }
             }
 
-            .dark-link {
+            .link--dark {
               color: #000000;
               text-decoration: none;
               transition: all 200ms ease;

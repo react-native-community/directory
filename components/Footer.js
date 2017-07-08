@@ -5,13 +5,8 @@ import Link from '../components/Link';
 export default class Footer extends React.PureComponent {
   render() {
     return (
-      <div className="container">
+      <div className="footer-container">
         <style jsx>{`
-          .container {
-            border-top: 1px solid #ececec;
-            width: 100%;
-          }
-
           .footer {
             width: 100%;
             max-width: 1319px;
@@ -23,12 +18,17 @@ export default class Footer extends React.PureComponent {
             justify-content: 'space-between';
           }
 
-          .text {
+          .footer-container {
+            border-top: 1px solid #ececec;
+            width: 100%;
+          }
+
+          .footer-text {
             margin: 24px 0 24px 0;
           }
         `}</style>
-        <header className="footer">
-          <p className="text">
+        <footer className="footer">
+          <p className="footer-text">
             Want to learn more about React Native? Check out the{' '}
             <Link
               isStyled
@@ -39,7 +39,7 @@ export default class Footer extends React.PureComponent {
               Expo
             </Link>.
           </p>
-        </header>
+        </footer>
       </div>
     );
   }
