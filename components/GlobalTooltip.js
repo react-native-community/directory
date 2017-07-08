@@ -10,21 +10,32 @@ class GlobalTooltip extends React.Component {
   };
 
   state = {
-    imageLoaded: false,
+    isLoaded: false,
+    isNotFound: false,
   };
 
-  componentDidUpdate() {
-    if (!this.props.tooltip) {
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.tooltip) {
       return;
     }
 
     const img = new Image();
+
     img.onload = () => {
       this.setState({
-        imageLoaded: true,
+        isLoaded: true,
+        isNotFound: false,
       });
     };
-    img.src = this.props.tooltip.content;
+
+    img.onerror = () => {
+      this.setState({
+        isLoaded: true,
+        isNotFound: true,
+      });
+    };
+
+    img.src = nextProps.tooltip.content;
   }
 
   componentDidMount() {
@@ -46,7 +57,8 @@ class GlobalTooltip extends React.Component {
       type: 'CLEAR_TOOLTIP',
       tooltip: undefined,
     });
-    this.setState({ imageLoaded: false });
+
+    this.setState({ isLoaded: false, isNotFound: false });
   };
 
   _getArrowStyles = direction => {
@@ -74,7 +86,7 @@ class GlobalTooltip extends React.Component {
       top: -(TOOLTIP_ARROW_SIZE - 1),
       borderLeft: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
       borderRight: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
-      borderBottom: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      borderBottom: `${TOOLTIP_ARROW_SIZE}px solid #000000`,
     };
   };
 
@@ -85,7 +97,7 @@ class GlobalTooltip extends React.Component {
       left: -(TOOLTIP_ARROW_SIZE - 1),
       borderTop: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
       borderBottom: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
-      borderRight: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      borderRight: `${TOOLTIP_ARROW_SIZE}px solid #000000`,
     };
   };
 
@@ -96,7 +108,7 @@ class GlobalTooltip extends React.Component {
       bottom: -(TOOLTIP_ARROW_SIZE - 1),
       borderLeft: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
       borderRight: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
-      borderTop: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      borderTop: `${TOOLTIP_ARROW_SIZE}px solid #000000`,
     };
   };
 
@@ -107,7 +119,7 @@ class GlobalTooltip extends React.Component {
       right: -(TOOLTIP_ARROW_SIZE - 1),
       borderTop: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
       borderBottom: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
-      borderLeft: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      borderLeft: `${TOOLTIP_ARROW_SIZE}px solid #000000`,
     };
   };
 
@@ -146,7 +158,7 @@ class GlobalTooltip extends React.Component {
             animation: fadeIn 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
             position: fixed;
             pointer-events: none;
-            background-color: rgba(65, 160, 248, 1);
+            background-color: #000000;
             z-index: 1;
             flex-shrink: 0;
             width: ${TOOLTIP_WIDTH}px;
@@ -184,8 +196,17 @@ class GlobalTooltip extends React.Component {
             background-repeat: no-repeat;
             display: block;
           }
+
+          .global-tooltip-loading {
+            width: 100%;
+            height: 304px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+          }
         `}</style>
-        {this.state.imageLoaded
+        {this.state.isLoaded
           ? <div
               className="global-tooltip-image"
               style={{
@@ -193,7 +214,11 @@ class GlobalTooltip extends React.Component {
               }}
               width="100%"
             />
-          : undefined}
+          : <div className="global-tooltip-loading">
+              {this.state.isNotFound
+                ? 'Image failed to load'
+                : 'Loading image...'}
+            </div>}
         <div className="global-tooltip-arrow" style={tooltipArrowStyles} />
       </figcaption>
     );
