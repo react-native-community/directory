@@ -3,7 +3,6 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import debounce from 'lodash/debounce';
 
 import { getViewportSize } from '../common/window';
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
