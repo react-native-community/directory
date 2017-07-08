@@ -5,9 +5,11 @@ import withRedux from 'next-redux-wrapper';
 import { initStore } from '../common/store';
 import { isEmptyOrNull } from '../common/strings';
 import { handleFilterLibraries } from '../common/search';
+import { isMobileBrowser } from '../common/window';
 
 import Document from '../components/Document';
 import GlobalTooltip from '../components/GlobalTooltip';
+import GlobalModal from '../components/GlobalModal';
 import PageLayout from '../components/PageLayout';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -15,15 +17,24 @@ import Header from '../components/Header';
 import LibraryList from '../components/LibraryList';
 
 class Index extends React.PureComponent {
+  static async getInitialProps({ req }) {
+    return req
+      ? { userAgent: req.headers['user-agent'] }
+      : { userAgent: navigator.userAgent };
+  }
+
   static propTypes = {
     libraries: PropTypes.array,
     search: PropTypes.string,
     sortBy: PropTypes.string,
     topic: PropTypes.string,
     topics: PropTypes.object,
+    userAgent: PropTypes.string,
   };
 
   render() {
+    const isMobile = isMobileBrowser(this.props.userAgent);
+
     const needsFilter =
       !isEmptyOrNull(this.props.topic) || !isEmptyOrNull(this.props.search);
 
@@ -36,9 +47,13 @@ class Index extends React.PureComponent {
         <Header count={this.props.libraries.length} />
         <Navigation selected={this.props.sortBy} />
         <PageLayout>
-          <LibraryList topics={this.props.topics} libraries={libraries} />
+          <LibraryList
+            isMobile={isMobile}
+            topics={this.props.topics}
+            libraries={libraries}
+          />
         </PageLayout>
-        <GlobalTooltip />
+        {isMobile ? <GlobalModal /> : <GlobalTooltip />}
         <Footer />
       </Document>
     );

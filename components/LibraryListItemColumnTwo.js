@@ -60,6 +60,7 @@ export default props => {
             {props.library.images.map((each, index) => {
               return (
                 <ImageTooltipContainer
+                  isMobile={props.isMobile}
                   key={`${props.library.github.name}-image-${index}`}
                   src={each}
                   count={index}

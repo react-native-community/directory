@@ -55,7 +55,6 @@ class GlobalTooltip extends React.Component {
 
     this.props.dispatch({
       type: 'CLEAR_TOOLTIP',
-      tooltip: undefined,
     });
 
     this.setState({ isLoaded: false, isNotFound: false });

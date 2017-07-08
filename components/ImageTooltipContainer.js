@@ -2,12 +2,17 @@
  * @flow
  */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getViewportSize } from '../common/window';
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
 class ImageTooltipContainer extends Component {
+  static propTypes = {
+    isMobile: PropTypes.bool,
+  };
+
   _container = undefined;
   _eventsBinded = false;
 
@@ -38,6 +43,15 @@ class ImageTooltipContainer extends Component {
     }
 
     this._clearTooltip();
+  };
+
+  _handleClick = () => {
+    this.props.dispatch({
+      type: 'SET_MODAL',
+      modal: {
+        content: this.props.src,
+      },
+    });
   };
 
   _calculateTooltipPosition = () => {
@@ -88,11 +102,20 @@ class ImageTooltipContainer extends Component {
   };
 
   render() {
+    const onMouseEnter = this.props.isMobile
+      ? undefined
+      : this._handleMouseEnter;
+    const onMouseLeave = this.props.isMobile
+      ? undefined
+      : this._handleMouseLeave;
+    const onClick = this.props.isMobile ? this._handleClick : undefined;
+
     return (
       <span
         className="image-tooltip-container"
-        onMouseEnter={this._handleMouseEnter}
-        onMouseLeave={this._handleMouseLeave}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        onClick={onClick}
         ref={c => {
           this._container = c;
         }}>
@@ -100,10 +123,10 @@ class ImageTooltipContainer extends Component {
           .image-tooltip-container {
             display: inline-block;
             position: relative;
-            padding: 4px;
+            padding: 8px;
             border-radius: 3px;
             border: 1px solid #dcdcdc;
-            margin: 0 8px 8px 0;
+            margin: 0 12px 12px 0;
             color: #acacac;
             cursor: pointer;
             user-select: none;

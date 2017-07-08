@@ -9,6 +9,7 @@ export default class LibraryListItem extends React.PureComponent {
   static propTypes = {
     library: PropTypes.object,
     topics: PropTypes.object,
+    isMobile: PropTypes.bool,
   };
 
   _renderColumnThree = () => {};
@@ -63,6 +64,7 @@ export default class LibraryListItem extends React.PureComponent {
         </section>
         <section className="library-list-item-column library-list-item-column--wide library-list-item-column--body">
           <LibraryListItemColumnTwo
+            isMobile={this.props.isMobile}
             library={this.props.library}
             topics={this.props.topics}
           />

@@ -8,6 +8,7 @@ export default class LibraryList extends React.PureComponent {
   static propTypes = {
     libraries: PropTypes.array,
     topics: PropTypes.object,
+    isMobile: PropTypes.bool,
   };
 
   render() {
@@ -17,6 +18,7 @@ export default class LibraryList extends React.PureComponent {
         : this.props.libraries.map(item =>
             <LibraryListItem
               key={item.github.name}
+              isMobile={this.props.isMobile}
               library={item}
               topics={this.props.topics}
             />
