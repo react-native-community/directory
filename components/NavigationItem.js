@@ -16,9 +16,9 @@ export default props => {
           display: inline-flex;
           align-items: flex-end;
           flex-direction: column;
-          margin-right: 24px;
+          margin: 0 24px 0 0;
+          padding: 0 0 8px 0;
           height: 32px;
-          padding-bottom: 8px;
         }
 
         .navigation-item--interactable {
@@ -38,7 +38,7 @@ export default props => {
 
         .navigation-item-text {
           font-size: 0.8rem;
-          margin-top: auto;
+          margin: auto 0 0 0;
         }
 
         .navigation-item-text--active {

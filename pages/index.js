@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import withRedux from 'next-redux-wrapper';
 
 import { initStore } from '../common/store';
-import { handleTopicSorting, handleSearchSorting } from '../common/search';
+import { isEmptyOrNull } from '../common/strings';
+import { handleFilterLibraries } from '../common/search';
 
 import Document from '../components/Document';
 import GlobalTooltip from '../components/GlobalTooltip';
@@ -23,24 +24,19 @@ class Index extends React.PureComponent {
   };
 
   render() {
-    const sortedData = this.props.topic
-      ? handleTopicSorting({
-          data: this.props.libraries,
-          topic: this.props.topic,
-          search: this.props.search,
-        })
-      : handleSearchSorting({
-          data: this.props.libraries,
-          topic: this.props.topic,
-          search: this.props.search,
-        });
+    const needsFilter =
+      !isEmptyOrNull(this.props.topic) || !isEmptyOrNull(this.props.search);
+
+    const libraries = needsFilter
+      ? handleFilterLibraries(this.props)
+      : this.props.libraries;
 
     return (
       <Document>
         <Header count={this.props.libraries.length} />
         <Navigation selected={this.props.sortBy} />
         <PageLayout>
-          <LibraryList topics={this.props.topics} data={sortedData} />
+          <LibraryList topics={this.props.topics} libraries={libraries} />
         </PageLayout>
         <GlobalTooltip />
         <Footer />

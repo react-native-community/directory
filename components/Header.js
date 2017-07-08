@@ -30,7 +30,7 @@ export default class Header extends React.PureComponent {
           .header-contents {
             max-width: 420px;
             width: 100%;
-            padding-right: 24px;
+            padding: 0 24px 0 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -38,7 +38,7 @@ export default class Header extends React.PureComponent {
 
           .header-contents-logo {
             flex-shrink: 0;
-            padding-right: 8px;
+            padding: 0 8px 0 0;
           }
 
           .header-contents-text {

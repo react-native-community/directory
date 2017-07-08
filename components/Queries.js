@@ -42,7 +42,7 @@ class Queries extends React.PureComponent {
           .queries-list-item {
             font-family: 'office-code', monospace;
             display: block;
-            margin-top: 8px;
+            margin: 8px 0 0 0;
             line-height: 1.2rem;
           }
 

@@ -49,14 +49,14 @@ class Navigation extends React.PureComponent {
             display: inline-flex;
             align-items: flex-end;
             flex-direction: column;
-            margin-right: 16px;
+            margin: 0 16px 0 0;
+            padding: 0 0 8px 0;
             height: 32px;
-            padding-bottom: 8px;
           }
 
           .navigation-container-title-text {
             font-size: 0.8rem;
-            margin-top: auto;
+            margin: auto 0 0 0;
             white-space: nowrap;
           }
         `}</style>

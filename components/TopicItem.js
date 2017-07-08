@@ -24,7 +24,7 @@ class TopicItem extends React.PureComponent {
         <style jsx>{`
           .item {
             display: inline-block;
-            margin-right: 8px;
+            margin: 0 8px 0 0;
             transition: all 200ms ease;
             transition-property: opacity, transform;
             cursor: pointer;
@@ -40,7 +40,7 @@ class TopicItem extends React.PureComponent {
             }
 
             &:active {
-              transform: scale(1.2);
+              transform: scale(1.1);
             }
           }
 

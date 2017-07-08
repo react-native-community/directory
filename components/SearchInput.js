@@ -17,8 +17,7 @@ class SearchInput extends React.PureComponent {
         <style jsx>{`
           .search-input {
             width: 100%;
-            margin-top: 16px;
-            margin-bottom: 8px;
+            margin: 16px 0 8px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -28,7 +27,7 @@ class SearchInput extends React.PureComponent {
             font-size: 0.8rem;
             font-family: 'office-code-medium', monospace;
             flex-shrink: 0;
-            margin-right: 16px;
+            margin: 0 16px 0 0;
           }
 
           .search-input-control {

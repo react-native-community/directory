@@ -28,18 +28,18 @@ export default props => {
         }
 
         .page-layout-right {
-          padding-left: 32px;
-          padding-bottom: 48px;
+          padding: 0 0 48px 32px;
           border-left: 1px solid #ececec;
           flex-shrink: 0;
           flex-basis: 25%;
 
           @media (max-width: 768px) {
-            padding-left: 0;
-            border-left: 0;
+            padding: 0 0 0 0;
             border-top: 1px solid #ececec;
+            border-left: none;
             flex-shrink: unset;
             flex-basis: auto;
+            width: 100%;
           }
         }
       `}</style>
