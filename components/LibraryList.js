@@ -401,7 +401,6 @@ export default class LibraryList extends React.PureComponent {
         <style jsx>{`
           .LibraryList {
             width: 100%;
-            height: 72px;
           }
         `}</style>
         {elements}
