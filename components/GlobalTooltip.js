@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const TOOLTIP_WIDTH = 320;
-const ARROW_SIZE = 6;
+import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
-class Tooltip extends React.Component {
+class GlobalTooltip extends React.Component {
   static propTypes = {
     tooltip: PropTypes.object,
   };
@@ -72,10 +71,10 @@ class Tooltip extends React.Component {
     return {
       left: 0,
       right: 0,
-      top: -(ARROW_SIZE - 1),
-      borderLeft: `${ARROW_SIZE}px solid transparent`,
-      borderRight: `${ARROW_SIZE}px solid transparent`,
-      borderBottom: `${ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      top: -(TOOLTIP_ARROW_SIZE - 1),
+      borderLeft: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderRight: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderBottom: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
     };
   };
 
@@ -83,10 +82,10 @@ class Tooltip extends React.Component {
     return {
       top: 0,
       bottom: 0,
-      left: -(ARROW_SIZE - 1),
-      borderTop: `${ARROW_SIZE}px solid transparent`,
-      borderBottom: `${ARROW_SIZE}px solid transparent`,
-      borderRight: `${ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      left: -(TOOLTIP_ARROW_SIZE - 1),
+      borderTop: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderBottom: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderRight: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
     };
   };
 
@@ -94,10 +93,10 @@ class Tooltip extends React.Component {
     return {
       left: 0,
       right: 0,
-      bottom: -(ARROW_SIZE - 1),
-      borderLeft: `${ARROW_SIZE}px solid transparent`,
-      borderRight: `${ARROW_SIZE}px solid transparent`,
-      borderTop: `${ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      bottom: -(TOOLTIP_ARROW_SIZE - 1),
+      borderLeft: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderRight: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderTop: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
     };
   };
 
@@ -105,10 +104,10 @@ class Tooltip extends React.Component {
     return {
       top: 0,
       bottom: 0,
-      right: -(ARROW_SIZE - 1),
-      borderTop: `${ARROW_SIZE}px solid transparent`,
-      borderBottom: `${ARROW_SIZE}px solid transparent`,
-      borderLeft: `${ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
+      right: -(TOOLTIP_ARROW_SIZE - 1),
+      borderTop: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderBottom: `${TOOLTIP_ARROW_SIZE}px solid transparent`,
+      borderLeft: `${TOOLTIP_ARROW_SIZE}px solid rgba(65, 160, 248, 1)`,
     };
   };
 
@@ -203,4 +202,4 @@ class Tooltip extends React.Component {
 
 export default connect(state => {
   return { tooltip: state.tooltip };
-})(Tooltip);
+})(GlobalTooltip);

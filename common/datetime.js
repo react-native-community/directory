@@ -1,5 +1,3 @@
-/* @flow */
-
 import { pluralize } from '../common/strings';
 
 const MINUTE = 60;

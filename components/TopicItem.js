@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class TopicItem extends React.PureComponent {
+  static propTypes = {
+    count: PropTypes.number,
+  };
+
   _handleChooseTopic = () => {
     if (document) {
       document.body.scrollTop = document.documentElement.scrollTop = 0;

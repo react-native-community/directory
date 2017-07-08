@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class SearchInput extends React.PureComponent {
+  static PropTypes = {
+    search: PropTypes.string,
+  };
+
   _handleChange = e => {
     this.props.dispatch({ type: 'SEARCH_LIBRARY', value: e.target.value });
   };
@@ -19,7 +24,7 @@ class SearchInput extends React.PureComponent {
             justify-content: space-between;
           }
 
-          .search-icon {
+          .search-input-left {
             font-size: 0.8rem;
             font-family: 'office-code-medium', monospace;
             flex-shrink: 0;
@@ -29,7 +34,6 @@ class SearchInput extends React.PureComponent {
           .search-input-control {
             font-family: 'office-code', monospace;
             color: rgba(65, 160, 248, 1);
-
             width: 100%;
             font-size: 0.8rem;
 
@@ -58,7 +62,7 @@ class SearchInput extends React.PureComponent {
             }
           }
         `}</style>
-        <div className="search-icon">Search:</div>
+        <div className="search-input-left">Search:</div>
         <input
           maxLength={32}
           onChange={this._handleChange}

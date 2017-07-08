@@ -1,9 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { isEmptyOrNull } from '../common/strings';
 
 class Queries extends React.PureComponent {
+  static propTypes = {
+    topic: PropTypes.string,
+    search: PropTypes.string,
+  };
+
   _handleClearTopic = () => {
     this.props.dispatch({ type: 'CLEAR_TOPIC' });
   };
@@ -33,16 +39,16 @@ class Queries extends React.PureComponent {
             display: block;
           }
 
-          .queries-emphasis {
-            font-family: 'office-code-medium', monospace;
-            color: rgba(250, 70, 83, 1);
-          }
-
           .queries-list-item {
             font-family: 'office-code', monospace;
             display: block;
             margin-top: 8px;
             line-height: 1.2rem;
+          }
+
+          .queries-list-item-emphasis {
+            font-family: 'office-code-medium', monospace;
+            color: rgba(250, 70, 83, 1);
           }
 
           .queries-list-item-left {
@@ -56,7 +62,7 @@ class Queries extends React.PureComponent {
             flex-shrink: 0;
           }
 
-          .queries-link {
+          .queries-list-item-link {
             display: inline-block;
             text-decoration: underline;
             transition: all 200ms ease;
@@ -74,7 +80,7 @@ class Queries extends React.PureComponent {
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Searching for{' '}
-                <strong className="queries-emphasis">
+                <strong className="queries-list-item-emphasis">
                   “
                   {this.props.search}
                   ”
@@ -82,7 +88,7 @@ class Queries extends React.PureComponent {
                 —{' '}
                 <span className="queries-list-item-right">
                   <span
-                    className="queries-link"
+                    className="queries-list-item-link"
                     onClick={this._handleClearSearch}>
                     Clear search
                   </span>
@@ -94,14 +100,14 @@ class Queries extends React.PureComponent {
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Selected{' '}
-                <strong className="queries-emphasis">
+                <strong className="queries-list-item-emphasis">
                   “{this.props.topic}
                   ”{' '}
                 </strong>{' '}
                 —{' '}
                 <span className="queries-list-item-right">
                   <span
-                    className="queries-link"
+                    className="queries-list-item-link"
                     onClick={this._handleClearTopic}>
                     Clear topic
                   </span>

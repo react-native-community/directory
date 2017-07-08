@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import * as SVG from '../common/svg';
+import { getTimeSinceToday } from '../common/datetime';
+
 import TopicItem from '../components/TopicItem';
 import Link from '../components/Link';
 import PercentageBar from '../components/PercentageBar';
-import ScorePercentageBar from '../components/ScorePercentageBar';
 import ImageTooltipContainer from '../components/ImageTooltipContainer';
-
-import * as SVG from '../common/svg';
-
-import { getTimeSinceToday } from '../common/datetime';
 
 const getPercentageRemaining = item => {
   let amount = 0;
@@ -164,7 +162,7 @@ const renderItem = item => {
   );
 };
 
-export default class List extends React.PureComponent {
+export default class LibraryList extends React.PureComponent {
   static propTypes = {
     data: PropTypes.array,
     topics: PropTypes.object,
@@ -230,11 +228,16 @@ export default class List extends React.PureComponent {
                       <div className="item-compat-label">
                         Platform Compatibility
                       </div>
-                      <PercentageBar remaining={getPercentageRemaining(item)} />
+                      <PercentageBar
+                        percentageRemaining={getPercentageRemaining(item)}
+                      />
                     </div>
                     <div className="item-compat-progress">
                       <div className="item-compat-label">Health</div>
-                      <ScorePercentageBar remaining={100 - item.score} />
+                      <PercentageBar
+                        percentageRemaining={100 - item.score}
+                        gradientType="blue"
+                      />
                     </div>
                   </div>
                 </div>
@@ -357,7 +360,7 @@ export default class List extends React.PureComponent {
                     isStyled
                     target="blank"
                     href={`https://www.npmjs.com/package/${item.npmPkg}`}>
-                    {`${item.npm.downloads}`} downloads
+                    {`${item.npm.downloads}`} downloads {item.npm.period}ly
                   </Link>
                 </div>
                 {item.github.stats.issues > 0
@@ -394,9 +397,9 @@ export default class List extends React.PureComponent {
     }
 
     return (
-      <ul className="List">
+      <ul className="LibraryList">
         <style jsx>{`
-          .list {
+          .LibraryList {
             width: 100%;
             height: 72px;
           }

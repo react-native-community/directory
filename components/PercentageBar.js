@@ -1,11 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class PercentageBar extends React.PureComponent {
+  static propTypes = {
+    percentageRemaining: PropTypes.number,
+    gradientType: PropTypes.string,
+  };
+
   static defaultProps = {
-    remaining: 100,
+    percentageRemaining: 100,
+    gradientType: null,
   };
 
   render() {
+    const progressBarClasses = `percentage-bar-progress
+      ${!this.props.gradientType
+        ? 'percentage-bar-progress--gradient'
+        : undefined}
+      ${this.props.gradientType === 'blue'
+        ? 'percentage-bar-progress--gradient-blue'
+        : undefined}`;
+
     return (
       <div>
         <style jsx>{`
@@ -44,22 +59,31 @@ export default class PercentageBar extends React.PureComponent {
             top: -3px;
           }
 
-          .progress {
+          .percentage-bar-progress {
             width: 100%;
             height: 4px;
+          }
+
+          .percentage-bar-progress--gradient {
             background: #00c9ff;
             background: -webkit-linear-gradient(to right, #00c9ff, #92fe9d);
             background: linear-gradient(to right, #00c9ff, #92fe9d);
           }
 
-          .progress-remaining {
+          .percentage-bar-progress--gradient-blue {
+            background: #396afc;
+            background: -webkit-linear-gradient(to left, #396afc, #2948ff);
+            background: linear-gradient(to left, #396afc, #2948ff);
+          }
+
+          .percentage-bar-progress-remaining {
             position: absolute;
             right: 0;
             background: #ffffff;
             height: 4px;
           }
 
-          .numbers {
+          .percentage-bar-axis {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,12 +93,12 @@ export default class PercentageBar extends React.PureComponent {
             position: relative;
           }
 
-          .numbers-first {
+          .percentage-bar-axis-first {
             position: absolute;
             left: -2px;
           }
 
-          .numbers-middle {
+          .percentage-bar-axis-middle {
             position: absolute;
             left: 0;
             right: 0;
@@ -83,27 +107,27 @@ export default class PercentageBar extends React.PureComponent {
             margin: auto;
           }
 
-          .numbers-last {
+          .percentage-bar-axis-last {
             position: absolute;
             right: -8px;
           }
         `}</style>
         <div>
           <div className="percentage-bar">
-            <div className="progress">
+            <div className={progressBarClasses}>
               <div
-                className="progress-remaining"
-                style={{ width: `${this.props.remaining}%` }}
+                className="percentage-bar-progress-remaining"
+                style={{ width: `${this.props.percentageRemaining}%` }}
               />
             </div>
             <div className="percentage-bar-start" />
             <div className="percentage-bar-end" />
             <div className="percentage-bar-middle" />
           </div>
-          <div className="numbers">
-            <span className="numbers-first">0</span>
-            <span className="numbers-middle">50</span>
-            <span className="numbers-last">100</span>
+          <div className="percentage-bar-axis">
+            <span className="percentage-bar-axis-first">0</span>
+            <span className="percentage-bar-axis-middle">50</span>
+            <span className="percentage-bar-axis-last">100</span>
           </div>
         </div>
       </div>

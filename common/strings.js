@@ -1,5 +1,3 @@
-/* @flow */
-
 export const pluralize = (text: string, count: number) => {
   return count > 1 || count === 0 ? `${text}s` : text;
 };

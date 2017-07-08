@@ -1,16 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 export default class CustomLink extends React.PureComponent {
+  static propTypes = {
+    href: PropTypes.string,
+    target: PropTypes.string,
+    isStyled: PropTypes.bool,
+    isDarkStyled: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    isStyled: false,
+    isDarkStyled: false,
+  };
+
   render() {
+    const linkClassNames = `
+      ${this.props.isStyled ? 'link--light' : undefined}
+      ${this.props.isDarkStyled ? 'link--dark' : undefined}`;
+
     return (
       <Link href={this.props.href}>
-        <a
-          target={this.props.target}
-          className={`${this.props.isStyled ? 'link--light' : undefined} ${this
-            .props.isDarkStyled
-            ? 'link--dark'
-            : undefined}`}>
+        <a target={this.props.target} className={linkClassNames}>
           <style jsx>{`
             .link--light {
               color: rgba(65, 160, 248, 1);

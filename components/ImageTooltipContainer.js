@@ -6,9 +6,7 @@ import { connect } from 'react-redux';
 import debounce from 'lodash/debounce';
 
 import { getViewportSize } from '../common/window';
-
-const TOOLTIP_WIDTH = 320;
-const ARROW_SIZE = 6;
+import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
 class ImageTooltipContainer extends Component {
   _container = undefined;
@@ -49,14 +47,14 @@ class ImageTooltipContainer extends Component {
 
     let arrowDirection = 'SOUTH';
     let measurements = {
-      top: rect.top + rect.height + ARROW_SIZE * 1.5,
+      top: rect.top + rect.height + TOOLTIP_ARROW_SIZE * 1.5,
       left: rect.left - TOOLTIP_WIDTH * 0.5 + rect.width * 0.5,
     };
 
     if (rect.top > pageRect.height * 0.55) {
       arrowDirection = 'NORTH';
       measurements = {
-        top: rect.top - TOOLTIP_WIDTH - ARROW_SIZE * 1.5,
+        top: rect.top - TOOLTIP_WIDTH - TOOLTIP_ARROW_SIZE * 1.5,
         left: rect.left - TOOLTIP_WIDTH * 0.5 + rect.width * 0.5,
       };
     }
@@ -65,7 +63,7 @@ class ImageTooltipContainer extends Component {
       arrowDirection = 'WEST';
       measurements = {
         top: rect.top - TOOLTIP_WIDTH * 0.5 + rect.height * 0.5,
-        left: rect.left - TOOLTIP_WIDTH - ARROW_SIZE * 1.5,
+        left: rect.left - TOOLTIP_WIDTH - TOOLTIP_ARROW_SIZE * 1.5,
       };
     }
 
@@ -73,7 +71,7 @@ class ImageTooltipContainer extends Component {
       arrowDirection = 'EAST';
       measurements = {
         top: rect.top - TOOLTIP_WIDTH * 0.5 + rect.height * 0.5,
-        left: rect.left + rect.width + ARROW_SIZE * 1.5,
+        left: rect.left + rect.width + TOOLTIP_ARROW_SIZE * 1.5,
       };
     }
 

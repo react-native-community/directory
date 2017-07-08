@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Link from '../components/Link';
 
 export default class Header extends React.PureComponent {
+  static propTypes = {
+    count: PropTypes.number,
+  };
+
   render() {
     return (
       <header className="header">
@@ -22,7 +27,7 @@ export default class Header extends React.PureComponent {
             }
           }
 
-          .header-left {
+          .header-contents {
             max-width: 420px;
             width: 100%;
             padding-right: 24px;
@@ -31,28 +36,30 @@ export default class Header extends React.PureComponent {
             justify-content: space-between;
           }
 
-          .header-left-logo {
+          .header-contents-logo {
             flex-shrink: 0;
             padding-right: 8px;
           }
 
-          .header-left-text {
+          .header-contents-text {
             min-width: 25%;
             width: 100%;
           }
 
-          .header-strong {
+          .header-contents-text--strong {
             font-weight: 700;
           }
         `}</style>
-        <div className="header-left">
-          <div className="header-left-logo">
+        <div className="header-contents">
+          <div className="header-contents-logo">
             <img src="/static/logo.png" width="64" height="64" />
           </div>
-          <div className="header-left-text">
+          <div className="header-contents-text">
             <p>
-              <strong className="header-strong">Native Directory</strong> is a
-              curated list of{' '}
+              <strong className="header-contents-text--strong">
+                Native Directory
+              </strong>{' '}
+              is a curated list of {this.props.count}{' '}
               <Link
                 isStyled
                 href="https://facebook.github.io/react-native/docs/getting-started.html">

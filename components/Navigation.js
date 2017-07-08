@@ -1,141 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SearchInput from '../components/SearchInput';
 import { connect } from 'react-redux';
 
-const renderNavigationItem = item => {
-  return (
-    <span
-      key={`navigation-${item.text}`}
-      className={`navigation-item
-        ${item.active ? 'navigation-item-active' : undefined}
-        ${!item.active ? 'navigation-interactable' : undefined}`}
-      onClick={item.onClick}>
-      <style jsx>{`
-        .navigation-item {
-          display: inline-flex;
-          align-items: flex-end;
-          flex-direction: column;
-          margin-right: 24px;
-          height: 32px;
-          padding-bottom: 8px;
-          font-family: 'office-code', monospace;
-        }
+import { createNavigationItemsFromProps } from '../common/static-list-functions';
 
-        .navigation-interactable {
-          cursor: pointer;
-          opacity: 1;
-          transition: 200ms all ease;
-          transition-property: opacity, transform;
-          opacity: 0.6;
-          &:hover {
-            opacity: 0.8;
-          }
-        }
+import SearchInput from '../components/SearchInput';
+import NavigationItem from '../components/NavigationItem';
 
-        .navigation-item-active {
-          box-shadow: 0 1px 0 rgba(65, 160, 248, 1);
-        }
-
-        .navigation-active {
-          color: rgba(65, 160, 248, 1);
-        }
-
-        .navigation-item-number {
-          font-size: 2.75rem;
-        }
-
-        .navigation-item-text {
-          font-size: 0.8rem;
-          margin-top: auto;
-        }
-
-        .navigation-item-text-active {
-          color: rgba(65, 160, 248, 1);
-        }
-      `}</style>
-      <span
-        className={`navigation-item-text ${item.active
-          ? 'navigation-item-text-active'
-          : undefined}`}>
-        {item.text}
-      </span>
-    </span>
-  );
-};
-
-const navigationElements = props => [
-  {
-    text: 'Last Update',
-    active: props.sortBy === 'updated',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'updated',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Recommended',
-    active: props.sortBy === 'approved',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'approved',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Compatibility',
-    active: props.sortBy === 'compatibility',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'compatibility',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Health',
-    active: props.sortBy === 'health',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'health',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Downloads',
-    active: props.sortBy === 'downloads',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'downloads',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Issues',
-    active: props.sortBy === 'issues',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'issues',
-        type: 'SORT_BY',
-      });
-    },
-  },
-  {
-    text: 'Stars',
-    active: props.sortBy === 'stars',
-    onClick: () => {
-      return props.dispatch({
-        sortBy: 'stars',
-        type: 'SORT_BY',
-      });
-    },
-  },
-];
+const renderNavigationItem = data =>
+  <NavigationItem key={`navigation-${data.text}`} data={data} />;
 
 class Navigation extends React.PureComponent {
   static propTypes = {
@@ -143,17 +16,19 @@ class Navigation extends React.PureComponent {
   };
 
   render() {
-    const elements = navigationElements(this.props).map(renderNavigationItem);
+    const elements = createNavigationItemsFromProps(this.props).map(
+      renderNavigationItem
+    );
 
     return (
-      <div className="navigation-container">
+      <nav className="navigation">
         <style jsx>{`
-          .navigation-container {
+          .navigation {
             margin: 2rem 0 0 0;
             border-bottom: 1px solid #ececec;
           }
 
-          .navigation {
+          .navigation-container {
             width: 100%;
             max-width: 1319px;
             padding: 0 24px 0 24px;
@@ -161,7 +36,7 @@ class Navigation extends React.PureComponent {
             margin: 0 auto 0 auto;
           }
 
-          .navigation-elements {
+          .navigation-container-elements {
             display: flex;
             align-items: center;
             @media (max-width: 768px) {
@@ -169,32 +44,34 @@ class Navigation extends React.PureComponent {
             }
           }
 
-          .navigation-title {
+          .navigation-container-title {
+            font-family: 'office-code-medium', monospace;
             display: inline-flex;
             align-items: flex-end;
             flex-direction: column;
             margin-right: 16px;
             height: 32px;
             padding-bottom: 8px;
-            font-family: 'office-code-medium', monospace;
           }
 
-          .navigation-title-text {
+          .navigation-container-title-text {
             font-size: 0.8rem;
             margin-top: auto;
             white-space: nowrap;
           }
         `}</style>
-        <nav className="navigation">
+        <div className="navigation-container">
           <SearchInput placeholder={`Type here...`} />
-          <div className="navigation-elements">
-            <span className="navigation-title">
-              <span className="navigation-title-text">Organize By: </span>
+          <div className="navigation-container-elements">
+            <span className="navigation-container-title">
+              <span className="navigation-container-title-text">
+                Organize By:{' '}
+              </span>
             </span>
             {elements}
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     );
   }
 }

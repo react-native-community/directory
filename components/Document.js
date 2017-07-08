@@ -1,7 +1,13 @@
-import Head from 'next/head';
 import React from 'react';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
 
 export default class Document extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+  };
+
   static defaultProps = {
     title: 'Native Directory',
     description:
