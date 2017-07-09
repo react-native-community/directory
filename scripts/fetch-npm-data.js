@@ -12,8 +12,8 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
   }
 
   try {
-    console.log('processing:', url);
     const url = urlForPackage(npmPkg);
+    console.log('processing:', url);
     let response = await fetch(url);
     let downloadData = await response.json();
 

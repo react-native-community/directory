@@ -65,7 +65,7 @@ class Navigation extends React.PureComponent {
           <div className="navigation-container-elements">
             <span className="navigation-container-title">
               <span className="navigation-container-title-text">
-                Organize By:{' '}
+                Order By:{' '}
               </span>
             </span>
             {elements}

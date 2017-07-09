@@ -3,28 +3,21 @@ import { isEmptyOrNull } from '../common/strings';
 export const handleFilterLibraries = ({ libraries, topic, search }) => {
   return libraries.filter(library => {
     const viewerHasChosenTopic = !isEmptyOrNull(topic);
-    const viewerHasEnteredSearchInput = !isEmptyOrNull(search);
+    const viewerHasTypedSearch = !isEmptyOrNull(search);
 
     let isTopicMatch = false;
     let isSearchMatch = false;
 
-    if (library.github.topics) {
-      library.github.topics.forEach(t => {
-        if (viewerHasChosenTopic && t.includes(topic)) {
-          isTopicMatch = true;
-        }
-
-        if (viewerHasEnteredSearchInput && t.includes(search)) {
-          isSearchMatch = true;
-        }
-      });
+    if (viewerHasChosenTopic && library.topicSearchString.includes(topic)) {
+      isTopicMatch = true;
     }
 
-    if (!viewerHasEnteredSearchInput) {
+    if (!viewerHasTypedSearch) {
       return isTopicMatch;
     }
 
-    if (viewerHasEnteredSearchInput) {
+    if (viewerHasTypedSearch) {
+      const isTopicMatch = library.topicSearchString.includes(search);
       const isNameMatch = !isEmptyOrNull(library.github.name)
         ? library.github.name.includes(search)
         : undefined;
@@ -32,7 +25,7 @@ export const handleFilterLibraries = ({ libraries, topic, search }) => {
         ? library.github.description.includes(search)
         : undefined;
 
-      isSearchMatch = isNameMatch || isDescriptionMatch;
+      isSearchMatch = isNameMatch || isDescriptionMatch || isTopicMatch;
     }
 
     if (!viewerHasChosenTopic) {

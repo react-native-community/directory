@@ -4,15 +4,11 @@ import { connect } from 'react-redux';
 
 import TopicItem from '../components/TopicItem';
 
-const compareAlphabetically = (a, b) => {
-  return a === b ? 0 : a ? -1 : 1;
-};
-
 const generateTopicItemElements = topics => {
   const elements = [];
   const topicsArray = Object.keys(topics);
 
-  topicsArray.sort(compareAlphabetically).forEach(name => {
+  topicsArray.sort().forEach(name => {
     elements.push(
       <li key={`topic-list-${name}`} className="topics-item-wrapper">
         <style jsx>{`

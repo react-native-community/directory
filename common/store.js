@@ -3,26 +3,11 @@ import { createStore } from 'redux';
 import data from '../build/data.json';
 import * as Sorting from '../common/sorting';
 
-const topics = {};
-const originalData = [...data.incompatible, ...data.expo];
-
-[...originalData].forEach(project => {
-  if (project.github.topics) {
-    project.github.topics.forEach(topic => {
-      if (!topics[topic]) {
-        topics[topic] = 1;
-        return;
-      }
-
-      topics[topic] += 1;
-      return;
-    });
-  }
-});
+const originalData = [...data.libraries];
 
 const INITIAL_STATE = {
-  ...Sorting.updated({}, [...originalData], 'updated'),
-  topics,
+  libraries: originalData,
+  topics: data.topics,
   tooltip: null,
   modal: null,
   search: '',
@@ -31,8 +16,8 @@ const INITIAL_STATE = {
 };
 
 const handleSorting = (state, sortBy) => {
-  if (sortBy === 'approved') {
-    return Sorting.approved(state, [...originalData], sortBy);
+  if (sortBy === 'recommended') {
+    return Sorting.recommended(state, [...originalData], sortBy);
   }
 
   if (sortBy === 'compatibility') {

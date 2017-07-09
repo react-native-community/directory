@@ -7,6 +7,25 @@ const port = parseInt(process.env.PORT, 10) || 8000;
 const app = next({ dev: process.env.NODE_ENV !== 'production' });
 const customHandler = routes.getRequestHandler(app);
 
+const getAllowedSortByName = req => {
+  let sortBy = 'updated';
+
+  [
+    'recommended',
+    'compatibility',
+    'health',
+    'downloads',
+    'issues',
+    'stars',
+  ].forEach(sortName => {
+    if (req.params.order === sortName) {
+      sortBy = sortName;
+    }
+  });
+
+  return sortBy;
+};
+
 app.prepare().then(() => {
   const server = express();
 
@@ -14,27 +33,15 @@ app.prepare().then(() => {
     return app.render(req, res, '/', { search: req.params.search });
   });
 
-  server.get('/topics/:topic', (req, res) => {
-    return app.render(req, res, '/', { topic: req.params.topic });
+  server.get('/:order/:topic', (req, res) => {
+    return app.render(req, res, '/', {
+      sortBy: getAllowedSortByName(req),
+      topic: req.params.topic,
+    });
   });
 
   server.get('/:order', (req, res) => {
-    let sortBy = 'updated';
-
-    [
-      'approved',
-      'compatibility',
-      'health',
-      'downloads',
-      'issues',
-      'stars',
-    ].forEach(sortName => {
-      if (req.params.order === sortName) {
-        sortBy = sortName;
-      }
-    });
-
-    return app.render(req, res, '/', { sortBy });
+    return app.render(req, res, '/', { sortBy: getAllowedSortByName(req) });
   });
 
   server.get('*', (req, res) => {

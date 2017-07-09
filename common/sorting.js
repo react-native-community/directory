@@ -1,4 +1,4 @@
-export const approved = (state, libraries, sortBy) => {
+export const recommended = (state, libraries, sortBy) => {
   libraries.sort((a, b) => {
     return a.goldstar === b.goldstar ? 0 : a.goldstar ? -1 : 1;
   });

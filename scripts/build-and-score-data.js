@@ -11,6 +11,8 @@ import fetchNpmData from './fetch-npm-data';
 import githubRepos from '../github-repos.json';
 import debugGithubRepos from '../debug-github-repos.json';
 
+import * as Sorting from '../common/sorting';
+
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
 const USE_DEBUG_REPOS = false;
@@ -47,12 +49,33 @@ const buildAndScoreData = async () => {
   console.log('\n** Calculating scores');
   data = data.map(calculateScore);
 
-  const expo = _.filter(data, d => d.expo);
-  const incompatible = _.filter(data, d => !d.expo);
+  // Process topic counts
+  const topicCounts = {};
+  data.forEach((project, index, projectList) => {
+    let topicSearchString = '';
+
+    if (project.github.topics) {
+      project.github.topics.forEach(topic => {
+        topicSearchString = `${topicSearchString} ${topic}`;
+
+        if (!topicCounts[topic]) {
+          topicCounts[topic] = 1;
+          return;
+        }
+
+        topicCounts[topic] += 1;
+        return;
+      });
+    }
+
+    projectList[index].topicSearchString = topicSearchString;
+  });
+
+  const { libraries } = Sorting.updated({}, data, 'updated');
 
   return jsonfile.writeFile(
     path.resolve('build', 'data.json'),
-    { expo, incompatible },
+    { libraries, topics: topicCounts },
     JSON_OPTIONS,
     err => {
       if (err) {

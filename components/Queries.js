@@ -11,11 +11,11 @@ class Queries extends React.PureComponent {
   };
 
   _handleClearTopic = () => {
-    this.props.dispatch({ type: 'CLEAR_TOPIC' });
+    window.location.href = `/${this.props.sortBy}`;
   };
 
   _handleClearSearch = () => {
-    this.props.dispatch({ type: 'CLEAR_SEARCH' });
+    window.location.href = `/${this.props.sortBy}`;
   };
 
   render() {
@@ -121,5 +121,5 @@ class Queries extends React.PureComponent {
 }
 
 export default connect(state => {
-  return { topic: state.topic, search: state.search };
+  return { topic: state.topic, search: state.search, sortBy: state.sortBy };
 })(Queries);

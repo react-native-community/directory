@@ -12,10 +12,7 @@ class TopicItem extends React.PureComponent {
       document.body.scrollTop = document.documentElement.scrollTop = 0;
     }
 
-    this.props.dispatch({
-      type: 'TOPIC_PICKED',
-      value: this.props.children,
-    });
+    window.location.href = `/${this.props.sortBy}/${this.props.children}`;
   };
 
   render() {
@@ -58,6 +55,6 @@ class TopicItem extends React.PureComponent {
   }
 }
 
-export default connect(() => {
-  return {};
+export default connect(state => {
+  return { sortBy: state.sortBy };
 })(TopicItem);
