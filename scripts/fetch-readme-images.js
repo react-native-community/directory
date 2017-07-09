@@ -24,10 +24,12 @@ const scrapeImagesAsync = async githubUrl => {
   let images = $('#readme').find('img');
 
   let usefulImages = [];
-  for (let i = 0; i <= images.length - 1; i++) {
-    let image = images[i];
-    if (isLikelyUsefulImage($(image), githubUrl)) {
-      usefulImages.push(image);
+  if (images) {
+    for (let i = 0; i <= images.length - 1; i++) {
+      let image = images[i];
+      if (isLikelyUsefulImage($(image), githubUrl)) {
+        usefulImages.push(image);
+      }
     }
   }
 

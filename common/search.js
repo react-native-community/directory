@@ -8,22 +8,26 @@ export const handleFilterLibraries = ({ libraries, topic, search }) => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
-    library.github.topics.forEach(t => {
-      if (viewerHasChosenTopic && t.includes(topic)) {
-        isTopicMatch = true;
-      }
+    if (library.github.topics) {
+      library.github.topics.forEach(t => {
+        if (viewerHasChosenTopic && t.includes(topic)) {
+          isTopicMatch = true;
+        }
 
-      if (viewerHasEnteredSearchInput && t.includes(search)) {
-        isSearchMatch = true;
-      }
-    });
+        if (viewerHasEnteredSearchInput && t.includes(search)) {
+          isSearchMatch = true;
+        }
+      });
+    }
 
     if (!viewerHasEnteredSearchInput) {
       return isTopicMatch;
     }
 
     if (viewerHasEnteredSearchInput) {
-      const isNameMatch = library.github.name.includes(search);
+      const isNameMatch = !isEmptyOrNull(library.github.name)
+        ? library.github.name.includes(search)
+        : undefined;
       const isDescriptionMatch = !isEmptyOrNull(library.github.description)
         ? library.github.description.includes(search)
         : undefined;

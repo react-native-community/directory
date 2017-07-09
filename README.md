@@ -1,6 +1,8 @@
 # Native Directory
 
-This is the repository for the code that runs http://native.directory. Native Directory is a website where you can look up repositories that are compatible with React Native.
+Native Directory is a website where you can see all of the libraries that are compatible with React Native.
+
+Visit https://www.native.directory/ to check it out.
 
 You are at the right place if:
 
@@ -8,22 +10,26 @@ You are at the right place if:
 - You want to submit a pull request to improve Native Directory.
 - You want to report a bug or make a suggestion.
 
-## Setup
+## Setup and run locally
 
-You'll need the following on your computer to run this site locally
+Prerequisites
 
 - Node 7.9.0+
 
-To start the website in development mode, run:
+Commands
 
 ```sh
 npm install
 npm run dev
 ```
 
+You should be able to visit `localhost:8000` in your browser.
+
 ## Update site data
 
-To update data, you'll need to create a json file called `secrets.json` in the same folder as package.json. To get a GitHub client id and secret, you'll have to visit: https://github.com/settings/developers while logged in.
+* To update site data you need to provide a couple of keys in a file called `secrets.json`.
+* You must create your own `secrets.json` in the root directory of the repo.
+* Visit https://github.com/settings/developers to get your keys.
 
 ```json
 {
@@ -33,18 +39,18 @@ To update data, you'll need to create a json file called `secrets.json` in the s
 
 ```
 
-Once you have completed this step, run:
+This command creates site data in `./build/data.json`
 
 ```
 npm run create-data
 ```
 
-A new data set will be available in `build/data.json`.
-
 ## Deploy to production
 
-The site is hosted on Heroku, only @jimmylee can run this command at the moment to deploy to native.directory. But if you have your own Heroku server you can deploy this website too.
+* Site is hosted on Heroku.
+* Only @jimmylee (and maybe @brentvatne) can deploy to https://www.native.directory/
+* You can deploy your own.
 
-```
+```sh
 git push heroku master
 ```

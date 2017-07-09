@@ -6,10 +6,11 @@ import { isEmptyOrNull } from '../common/strings';
 import Link from '../components/Link';
 import TopicItem from '../components/TopicItem';
 import ImageTooltipContainer from '../components/ImageTooltipContainer';
+import LibraryListColumn from '../components/LibraryListColumn';
 
 export default props => {
   return (
-    <div>
+    <LibraryListColumn isWide isBodyTextStyled>
       <style jsx>{`
         .column-two-section {
           margin: 0 0 24px 0;
@@ -70,15 +71,17 @@ export default props => {
           </div>
         : undefined}
 
-      <div className="column-two-section">
-        {props.library.github.topics.map(each =>
-          <TopicItem
-            key={`list-${props.library.name}-${each}`}
-            count={props.topics[each]}>
-            {each}
-          </TopicItem>
-        )}
-      </div>
-    </div>
+      {props.library.github.topics
+        ? <div className="column-two-section">
+            {props.library.github.topics.map(each =>
+              <TopicItem
+                key={`list-${props.library.name}-${each}`}
+                count={props.topics[each]}>
+                {each}
+              </TopicItem>
+            )}
+          </div>
+        : undefined}
+    </LibraryListColumn>
   );
 };

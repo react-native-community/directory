@@ -89,7 +89,7 @@ export default class PercentageBar extends React.PureComponent {
             align-items: center;
             font-size: 0.6rem;
             width: 100%;
-            height: 20px;
+            height: 24px;
             position: relative;
           }
 
@@ -112,23 +112,22 @@ export default class PercentageBar extends React.PureComponent {
             right: -8px;
           }
         `}</style>
-        <div>
-          <div className="percentage-bar">
-            <div className={progressBarClasses}>
-              <div
-                className="percentage-bar-progress-remaining"
-                style={{ width: `${this.props.percentageRemaining}%` }}
-              />
-            </div>
-            <div className="percentage-bar-start" />
-            <div className="percentage-bar-end" />
-            <div className="percentage-bar-middle" />
+
+        <div className="percentage-bar">
+          <div className={progressBarClasses}>
+            <figure
+              className="percentage-bar-progress-remaining"
+              style={{ width: `${this.props.percentageRemaining}%` }}
+            />
           </div>
-          <div className="percentage-bar-axis">
-            <span className="percentage-bar-axis-first">0</span>
-            <span className="percentage-bar-axis-middle">50</span>
-            <span className="percentage-bar-axis-last">100</span>
-          </div>
+          <span className="percentage-bar-start" />
+          <span className="percentage-bar-end" />
+          <span className="percentage-bar-middle" />
+        </div>
+        <div className="percentage-bar-axis">
+          <span className="percentage-bar-axis-first">0</span>
+          <span className="percentage-bar-axis-middle">50</span>
+          <span className="percentage-bar-axis-last">100</span>
         </div>
       </div>
     );

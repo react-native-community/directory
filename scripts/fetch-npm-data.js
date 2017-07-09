@@ -12,9 +12,14 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
   }
 
   try {
-    console.log(urlForPackage(npmPkg));
-    let response = await fetch(urlForPackage(npmPkg));
+    console.log('processing:', url);
+    const url = urlForPackage(npmPkg);
+    let response = await fetch(url);
     let downloadData = await response.json();
+
+    if (!downloadData.downloads) {
+      console.log('Failed to grab download data', url);
+    }
 
     return {
       ...data,

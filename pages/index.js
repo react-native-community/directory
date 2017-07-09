@@ -17,7 +17,19 @@ import Header from '../components/Header';
 import LibraryList from '../components/LibraryList';
 
 class Index extends React.PureComponent {
-  static async getInitialProps({ req }) {
+  static async getInitialProps({ req, query, store }) {
+    if (query.topic) {
+      store.dispatch({ type: 'TOPIC_PICKED', value: query.topic });
+    }
+
+    if (query.search) {
+      store.dispatch({ type: 'SEARCH_LIBRARY', value: query.search });
+    }
+
+    if (query.sortBy) {
+      store.dispatch({ type: 'SORT_BY', sortBy: query.sortBy });
+    }
+
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent };

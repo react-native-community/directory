@@ -15,9 +15,9 @@ export default class LibraryList extends React.PureComponent {
     const elements =
       this.props.libraries.length < 1
         ? <LibraryListEmptyState />
-        : this.props.libraries.map(item =>
+        : this.props.libraries.map((item, index) =>
             <LibraryListItem
-              key={item.github.name}
+              key={`list-item-${index}-${item.github.name}`}
               isMobile={this.props.isMobile}
               library={item}
               topics={this.props.topics}
@@ -25,14 +25,14 @@ export default class LibraryList extends React.PureComponent {
           );
 
     return (
-      <ul className="LibraryList">
+      <div className="LibraryList">
         <style jsx>{`
           .LibraryList {
             width: 100%;
           }
         `}</style>
         {elements}
-      </ul>
+      </div>
     );
   }
 }

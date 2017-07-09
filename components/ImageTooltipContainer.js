@@ -123,13 +123,17 @@ class ImageTooltipContainer extends Component {
           .image-tooltip-container {
             display: inline-block;
             position: relative;
-            padding: 8px;
+            padding: 8px 8px 8px 8px;
             border-radius: 3px;
             border: 1px solid #dcdcdc;
             margin: 0 12px 12px 0;
             color: #acacac;
             cursor: pointer;
             user-select: none;
+            line-height: 1;
+            font-family: 'office-code', monospace;
+            font-size: 0.7rem;
+            text-align: center;
           }
 
           .image-tooltip-container:hover {
@@ -144,13 +148,7 @@ class ImageTooltipContainer extends Component {
           .image-tooltip-container-svg {
             stroke: #acacac;
             display: block;
-          }
-
-          .image-tooltip-container-count {
-            font-family: 'office-code', monospace;
-            font-size: 0.7rem;
-            text-align: center;
-            margin-bottom: -4px;
+            margin: 0 0 4px 0;
           }
         `}</style>
         <svg
@@ -167,9 +165,7 @@ class ImageTooltipContainer extends Component {
           <circle cx="8.5" cy="8.5" r="1.5" />
           <polyline points="21 15 16 10 5 21" />
         </svg>
-        <div className="image-tooltip-container-count">
-          {this.props.count}
-        </div>
+        {this.props.count}
       </span>
     );
   }

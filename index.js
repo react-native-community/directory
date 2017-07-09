@@ -10,6 +10,33 @@ const customHandler = routes.getRequestHandler(app);
 app.prepare().then(() => {
   const server = express();
 
+  server.get('/search/:search', (req, res) => {
+    return app.render(req, res, '/', { search: req.params.search });
+  });
+
+  server.get('/topics/:topic', (req, res) => {
+    return app.render(req, res, '/', { topic: req.params.topic });
+  });
+
+  server.get('/:order', (req, res) => {
+    let sortBy = 'updated';
+
+    [
+      'approved',
+      'compatibility',
+      'health',
+      'downloads',
+      'issues',
+      'stars',
+    ].forEach(sortName => {
+      if (req.params.order === sortName) {
+        sortBy = sortName;
+      }
+    });
+
+    return app.render(req, res, '/', { sortBy });
+  });
+
   server.get('*', (req, res) => {
     return customHandler(req, res);
   });

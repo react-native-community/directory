@@ -4,6 +4,7 @@ import * as SVG from '../common/svg';
 
 import Link from '../components/Link';
 import PercentageBar from '../components/PercentageBar';
+import LibraryListColumn from '../components/LibraryListColumn';
 
 const getPercentageValueRemaining = item => {
   let amount = 0;
@@ -19,7 +20,7 @@ const getPercentageValueRemaining = item => {
 
 export default props => {
   return (
-    <div>
+    <LibraryListColumn>
       <style jsx>{`
         .column-one-top {
           width: 100%;
@@ -78,6 +79,6 @@ export default props => {
           gradientType="blue"
         />
       </div>
-    </div>
+    </LibraryListColumn>
   );
 };

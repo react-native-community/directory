@@ -4,6 +4,7 @@ import * as SVG from '../common/svg';
 import { getTimeSinceToday } from '../common/datetime';
 
 import Link from '../components/Link';
+import LibraryListColumn from '../components/LibraryListColumn';
 
 const renderListItem = (data, index) => {
   return (
@@ -41,7 +42,10 @@ export default props => {
       svg: SVG.star,
       content: `${props.library.github.stats.stars} stars`,
     },
-    {
+  ];
+
+  if (props.library.npm.downloads) {
+    items.push({
       svg: SVG.download,
       content: (
         <Link
@@ -52,8 +56,8 @@ export default props => {
           {props.library.npm.period}ly
         </Link>
       ),
-    },
-  ];
+    });
+  }
 
   if (props.library.github.stats.issues > 0) {
     items.push({
@@ -83,13 +87,8 @@ export default props => {
   const elements = items.map(renderListItem);
 
   return (
-    <ul className="column-three">
-      <style jsx>{`
-        .column-three {
-          margin-bottom: 24px;
-        }
-      `}</style>
+    <LibraryListColumn>
       {elements}
-    </ul>
+    </LibraryListColumn>
   );
 };

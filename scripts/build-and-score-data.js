@@ -24,14 +24,21 @@ const JSON_OPTIONS = {
   spaces: 2,
 };
 
+function sleep(ms = 0) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 const buildAndScoreData = async () => {
   console.log('** Loading data from Github');
+  await sleep(1000);
   let data = await loadRepositoryDataAsync();
 
   console.log('\n** Scraping images from README');
+  await sleep(1000);
   data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
 
   console.log('\n** Loading download stats from npm');
+  await sleep(1000);
   data = await Promise.all(
     data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl))
   );

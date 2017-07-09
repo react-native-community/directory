@@ -7,15 +7,17 @@ const topics = {};
 const originalData = [...data.incompatible, ...data.expo];
 
 [...originalData].forEach(project => {
-  project.github.topics.forEach(topic => {
-    if (!topics[topic]) {
-      topics[topic] = 1;
-      return;
-    }
+  if (project.github.topics) {
+    project.github.topics.forEach(topic => {
+      if (!topics[topic]) {
+        topics[topic] = 1;
+        return;
+      }
 
-    topics[topic] += 1;
-    return;
-  });
+      topics[topic] += 1;
+      return;
+    });
+  }
 });
 
 const INITIAL_STATE = {

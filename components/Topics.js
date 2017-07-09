@@ -56,9 +56,7 @@ class Topics extends React.PureComponent {
           }
         `}</style>
         <h2 className="topics-heading">Topics</h2>
-        <ul className="topics-list">
-          {topicElements}
-        </ul>
+        {topicElements}
       </header>
     );
   }

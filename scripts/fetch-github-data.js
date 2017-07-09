@@ -34,7 +34,7 @@ const createRepoDataWithResponse = json => {
       hasWiki: json.has_wiki,
       hasPages: json.has_pages,
       hasDownloads: json.has_downloads,
-      hasTopics: json.topics.length > 0,
+      hasTopics: json.topics ? json.topics.length > 0 : false,
       updatedAt: json.updated_at,
       createdAt: json.created_at,
       pushedAt: json.pushed_at,

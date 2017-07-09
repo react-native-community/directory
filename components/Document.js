@@ -20,18 +20,19 @@ export default class Document extends React.Component {
         <style jsx global>{`
           @font-face {
             font-family: 'office-code';
-            src: url('static/fonts/OfficeCodePro-Regular.eot');
-            src: url('static/fonts/OfficeCodePro-Regular.woff2') format('woff2'),
-              url('static/fonts/OfficeCodePro-Regular.woff') format('woff'),
-              url('static/fonts/OfficeCodePro-Regular.ttf') format('truetype');
+            src: url('/static/fonts/OfficeCodePro-Regular.eot');
+            src: url('/static/fonts/OfficeCodePro-Regular.woff2')
+                format('woff2'),
+              url('/static/fonts/OfficeCodePro-Regular.woff') format('woff'),
+              url('/static/fonts/OfficeCodePro-Regular.ttf') format('truetype');
           }
 
           @font-face {
             font-family: 'office-code-medium';
-            src: url('static/fonts/OfficeCodePro-Medium.eot');
-            src: url('static/fonts/OfficeCodePro-Medium.woff2') format('woff2'),
-              url('static/fonts/OfficeCodePro-Medium.woff') format('woff'),
-              url('static/fonts/OfficeCodePro-Medium.ttf') format('truetype');
+            src: url('/static/fonts/OfficeCodePro-Medium.eot');
+            src: url('/static/fonts/OfficeCodePro-Medium.woff2') format('woff2'),
+              url('/static/fonts/OfficeCodePro-Medium.woff') format('woff'),
+              url('/static/fonts/OfficeCodePro-Medium.ttf') format('truetype');
           }
 
           html,
