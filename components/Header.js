@@ -62,6 +62,7 @@ class Header extends React.PureComponent {
           <div className="header-contents-logo">
             <img
               src="/static/logo.png"
+              alt="Native Directory logo"
               width="64"
               height="64"
               onClick={this._handleClick}

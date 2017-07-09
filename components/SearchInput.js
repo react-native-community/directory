@@ -61,9 +61,12 @@ class SearchInput extends React.PureComponent {
             }
           }
         `}</style>
-        <div className="search-input-left">Search:</div>
+        <label htmlFor="search" className="search-input-left">
+          Search:
+        </label>
         <input
           maxLength={32}
+          name="search"
           onChange={this._handleChange}
           className="search-input-control"
           placeholder={this.props.placeholder}

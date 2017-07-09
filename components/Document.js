@@ -201,6 +201,7 @@ export default class Document extends React.Component {
           <title>
             {this.props.title}
           </title>
+          <meta name="theme-color" content="#00C9FF" />
           <meta name="twitter:title" content={this.props.title} />
           <meta property="og:title" content={this.props.title} />
 
