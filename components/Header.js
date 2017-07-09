@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Link from '../components/Link';
 
-export default class Header extends React.PureComponent {
+class Header extends React.PureComponent {
   static propTypes = {
     count: PropTypes.number,
+  };
+
+  _handleClick = () => {
+    return this.props.dispatch({
+      sortBy: 'updated',
+      type: 'SORT_BY',
+    });
   };
 
   render() {
@@ -52,7 +60,12 @@ export default class Header extends React.PureComponent {
         `}</style>
         <div className="header-contents">
           <div className="header-contents-logo">
-            <img src="/static/logo.png" width="64" height="64" />
+            <img
+              src="/static/logo.png"
+              width="64"
+              height="64"
+              onClick={this._handleClick}
+            />
           </div>
           <div className="header-contents-text">
             <p>
@@ -73,3 +86,7 @@ export default class Header extends React.PureComponent {
     );
   }
 }
+
+export default connect(state => {
+  return {};
+})(Header);

@@ -12,7 +12,18 @@ class GlobalModal extends React.Component {
     isNotFound: false,
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
+    if (this.props.modal && !prevProps.modal) {
+      window.history.pushState(
+        null,
+        null,
+        `?modal=${this.props.modal.content}`
+      );
+      window.addEventListener('popstate', this._handlePopState);
+    }
+  }
+
+  componentWillReceiveProps(nextProps, nextState) {
     if (!nextProps.modal) {
       return;
     }
@@ -36,17 +47,25 @@ class GlobalModal extends React.Component {
     img.src = nextProps.modal.content;
   }
 
+  _handlePopState = () => {
+    this.props.dispatch({
+      type: 'CLEAR_MODAL',
+    });
+  };
+
   _dismissModal = () => {
     if (!this.props.modal) {
       return;
     }
 
-    this.props.dispatch({
-      type: 'CLEAR_MODAL',
-      modal: undefined,
-    });
+    this.setState({ isLoaded: false, isNotFound: false }, () => {
+      window.history.go(-1);
+      window.removeEventListener('popstate', this._handlePopState);
 
-    this.setState({ isLoaded: false, isNotFound: false });
+      this.props.dispatch({
+        type: 'CLEAR_MODAL',
+      });
+    });
   };
 
   render() {
