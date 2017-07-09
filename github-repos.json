@@ -456,6 +456,12 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/FormidableLabs/victory-native",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/mastermoo/react-native-action-button",
     "ios": true,
     "android": true,
@@ -527,7 +533,7 @@
     "android": true,
     "expo": true,
     "npmPkg": "@expo/react-native-action-sheet",
-    "examples":["https://expo.io/@community/react-native-action-sheet-example"]
+    "examples": ["https://expo.io/@community/react-native-action-sheet-example"]
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-image-header-scroll-view",
@@ -539,7 +545,7 @@
     "githubUrl": "https://github.com/expo/react-native-fade-in-image",
     "ios": true,
     "android": true,
-    "examples":["https://exp.host/@community/fade-in-image-example"],
+    "examples": ["https://exp.host/@community/fade-in-image-example"],
     "expo": true
   },
   {
@@ -705,8 +711,8 @@
     "githubUrl": "https://github.com/xcarpentier/react-native-country-picker-modal",
     "ios": true,
     "android": true,
-    "expo":true ,
-    "examples":["https://getexponent.com/@xcarpentier/react-native-country-picker-demo"]
+    "expo": true,
+    "examples": ["https://getexponent.com/@xcarpentier/react-native-country-picker-demo"]
   },
   {
     "githubUrl": "https://github.com/larsvinter/react-native-awesome-button",
@@ -755,7 +761,7 @@
     "githubUrl": "https://github.com/expo/react-native-responsive-image",
     "ios": true,
     "android": true,
-    "npmPkg":"@expo/react-native-responsive-image",
+    "npmPkg": "@expo/react-native-responsive-image",
     "expo": true
   },
   {
@@ -877,7 +883,10 @@
     "githubUrl": "https://github.com/xxsnakerxx/react-native-social-auth",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/facebook.html"
+    "expo": [
+      "https://docs.expo.io/versions/v18.0.0/sdk/facebook.html",
+      "https://docs.expo.io/versions/v18.0.0/sdk/google.html"
+    ]
   },
   {
     "githubUrl": "https://github.com/corbt/react-native-keep-awake",
@@ -941,7 +950,7 @@
     "ios": true,
     "android": true,
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/webbrowser.html",
-    "examples":["https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"]
+    "examples": ["https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"]
   },
   {
     "githubUrl": "https://github.com/fullstackreact/react-native-oauth",
@@ -960,7 +969,7 @@
     "ios": true,
     "android": true,
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/pedometer.html",
-    "examples":["https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"]
+    "examples": ["https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"]
   },
   {
     "githubUrl": "https://github.com/rt2zz/react-native-contacts",
@@ -1005,7 +1014,7 @@
     "githubUrl": "https://github.com/naoufal/react-native-speech",
     "ios": true,
     "android": true,
-    "unmaintained":true
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
@@ -1148,7 +1157,6 @@
     "ios": true,
     "android": true
   },
-  ----CHECK THESE----
   {
     "githubUrl": "https://github.com/joshswan/react-native-globalize",
     "ios": true,
@@ -1171,7 +1179,8 @@
     "githubUrl": "https://github.com/sabeurthabti/react-native-css",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/tachyons-css/react-native-style-tachyons",
@@ -1183,7 +1192,8 @@
     "githubUrl": "https://github.com/lwansbrough/react-native-google-analytics",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/stockulus/pouchdb-react-native",
@@ -1195,7 +1205,8 @@
     "githubUrl": "https://github.com/darkrishabh/react-native-db-models",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/adamterlson/cairn",
@@ -1219,7 +1230,8 @@
     "githubUrl": "https://github.com/DanielMSchmidt/react-native-dismiss-keyboard",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/beefe/react-native-popup",
@@ -1236,8 +1248,7 @@
   {
     "githubUrl": "https://github.com/remobile/react-native-toast",
     "ios": true,
-    "android": true,
-    "expo": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/magicismight/react-native-lazyload",
@@ -1255,15 +1266,14 @@
     "githubUrl": "https://github.com/gilbox/react-imation",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/AlbertBrand/react-native-android-tablayout",
     "ios": true,
-    "android": true,
-    "expo": true
+    "android": true
   },
-  ---DEAD---
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-listview",
     "ios": true,
@@ -1275,21 +1285,16 @@
     "githubUrl": "https://github.com/avocode/nachos-ui",
     "ios": true,
     "android": true,
-    "expo": true,
-    "unmaintained": true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-material-design/react-native-material-design",
-    "ios": true,
     "android": true,
-    "expo": true,
     "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/binggg/mrn",
-    "ios": true,
     "android": true,
-    "expo": true,
     "unmaintained": true
   },
   {
@@ -1303,7 +1308,6 @@
     "githubUrl": "https://github.com/tomauty/react-native-chart",
     "ios": true,
     "android": true,
-    "expo": true,
     "unmaintained": true
   },
   {
@@ -1322,13 +1326,6 @@
   },
   {
     "githubUrl": "https://github.com/jeanregisser/react-native-popover",
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "unmaintained": true
-  },
-  {
-    "githubUrl": "https://github.com/MichaelCereda/react-native-form-generator",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1442,7 +1439,6 @@
   {
     "githubUrl": "https://github.com/dancormier/react-native-listitem",
     "ios": true,
-    "android": true,
     "expo": true,
     "unmaintained": true
   },
