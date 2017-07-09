@@ -46,6 +46,7 @@ class Header extends React.PureComponent {
           .header-contents-logo {
             flex-shrink: 0;
             padding: 0 8px 0 0;
+            cursor: pointer;
           }
 
           .header-contents-text {
