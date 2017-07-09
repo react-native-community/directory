@@ -75,7 +75,11 @@ const buildAndScoreData = async () => {
 
   return jsonfile.writeFile(
     path.resolve('build', 'data.json'),
-    { libraries, topics: topicCounts },
+    {
+      libraries,
+      topics: topicCounts,
+      topicsList: Object.keys(topicCounts).sort(),
+    },
     JSON_OPTIONS,
     err => {
       if (err) {

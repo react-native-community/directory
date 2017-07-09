@@ -4,12 +4,9 @@ import { connect } from 'react-redux';
 
 import TopicItem from '../components/TopicItem';
 
-const generateTopicItemElements = topics => {
-  const elements = [];
-  const topicsArray = Object.keys(topics);
-
-  topicsArray.sort().forEach(name => {
-    elements.push(
+const generateTopicItemElements = (topics, list) => {
+  return list.map(name => {
+    return (
       <li key={`topic-list-${name}`} className="topics-item-wrapper">
         <style jsx>{`
           .topics-item-wrapper {
@@ -23,21 +20,24 @@ const generateTopicItemElements = topics => {
       </li>
     );
   });
-
-  return elements;
 };
 
 class Topics extends React.PureComponent {
   static propTypes = {
     topics: PropTypes.object,
+    topicsList: PropTypes.array,
   };
 
   render() {
-    const topicElements = generateTopicItemElements(this.props.topics);
+    const topicElements = generateTopicItemElements(
+      this.props.topics,
+      this.props.topicsList
+    );
     return (
-      <header className="topics">
+      <div className="topics">
         <style jsx>{`
           .topics {
+            width: 100%;
             padding: 27px 0 8px 0;
           }
 
@@ -45,17 +45,14 @@ class Topics extends React.PureComponent {
             font-family: 'office-code-medium', monospace;
             font-weight: 400;
           }
-
-          .topics-item {
-            display: block;
-            margin: 4px 0 4px 0;
-          }
         `}</style>
         <h2 className="topics-heading">Topics</h2>
         {topicElements}
-      </header>
+      </div>
     );
   }
 }
 
-export default connect(state => state)(Topics);
+export default connect(state => {
+  return { topics: state.topics, topicsList: state.topicsList };
+})(Topics);

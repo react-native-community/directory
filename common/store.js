@@ -8,6 +8,7 @@ const originalData = [...data.libraries];
 const INITIAL_STATE = {
   libraries: originalData,
   topics: data.topics,
+  topicsList: data.topicsList,
   tooltip: null,
   modal: null,
   search: '',

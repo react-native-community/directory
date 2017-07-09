@@ -10,6 +10,7 @@ export default props => {
       <style jsx>{`
         .library-list-column {
           flex-basis: 30%;
+          min-width: 30%;
           padding: 0 24px 0 0;
           overflow-wrap: break-word;
           word-break: break-word;
@@ -23,6 +24,7 @@ export default props => {
 
         .library-list-column--wide {
           flex-basis: 40%;
+          min-width: 40%;
 
           @media (max-width: 600px) {
             flex-basis: 100%;

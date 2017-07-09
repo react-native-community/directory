@@ -31,7 +31,7 @@ export default props => {
           padding: 0 0 48px 32px;
           border-left: 1px solid #ececec;
           flex-shrink: 0;
-          flex-basis: 25%;
+          width: 25%;
 
           @media (max-width: 768px) {
             padding: 0 0 0 0;

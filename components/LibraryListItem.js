@@ -18,6 +18,7 @@ export default class LibraryListItem extends React.PureComponent {
         <style jsx>{`
           .library-list-item {
             display: 'flex';
+            width: 100%;
             padding: 27px 0 27px 0;
             border-bottom: 1px solid #ececec;
 
