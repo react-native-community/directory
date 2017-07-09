@@ -15,6 +15,9 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import LibraryList from '../components/LibraryList';
+import Topics from '../components/Topics';
+import Pagination from '../components/Pagination';
+import Queries from '../components/Queries';
 
 class Index extends React.PureComponent {
   static async getInitialProps({ req, query, store }) {
@@ -42,6 +45,8 @@ class Index extends React.PureComponent {
     topic: PropTypes.string,
     topics: PropTypes.object,
     userAgent: PropTypes.string,
+    rangeStart: PropTypes.number,
+    rangeEnd: PropTypes.number,
   };
 
   render() {
@@ -54,16 +59,30 @@ class Index extends React.PureComponent {
       ? handleFilterLibraries(this.props)
       : this.props.libraries;
 
+    const paginatedLibraries = libraries.slice(
+      this.props.rangeStart,
+      Math.min(this.props.rangeEnd, libraries.length)
+    );
+
+    const rightSide = (
+      <div>
+        <Queries />
+        <Topics />
+      </div>
+    );
+
     return (
       <Document>
         <Header count={this.props.libraries.length} />
         <Navigation selected={this.props.sortBy} />
-        <PageLayout>
+        <PageLayout rightSide={rightSide}>
+          <Pagination libraries={libraries} />
           <LibraryList
             isMobile={isMobile}
             topics={this.props.topics}
-            libraries={libraries}
+            libraries={paginatedLibraries}
           />
+          <Pagination libraries={libraries} />
         </PageLayout>
         {isMobile ? <GlobalModal /> : <GlobalTooltip />}
         <Footer />
@@ -79,5 +98,7 @@ export default withRedux(initStore, state => {
     topic: state.topic,
     topics: state.topics,
     search: state.search,
+    rangeStart: state.rangeStart,
+    rangeEnd: state.rangeEnd,
   };
 })(Index);

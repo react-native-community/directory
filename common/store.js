@@ -14,6 +14,8 @@ const INITIAL_STATE = {
   search: '',
   sortBy: 'updated',
   topic: undefined,
+  rangeStart: 0,
+  rangeEnd: 50,
 };
 
 const handleSorting = (state, sortBy) => {
@@ -50,6 +52,8 @@ const handleSorting = (state, sortBy) => {
 
 export const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case 'SET_PAGINATION':
+      return { ...state, rangeStart: action.start, rangeEnd: action.end };
     case 'CLEAR_TOOLTIP':
       return { ...state, tooltip: null };
     case 'CLEAR_MODAL':

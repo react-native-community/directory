@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Topics from '../components/Topics';
-import Queries from '../components/Queries';
-
 export default props => {
   return (
     <div className="page-layout">
@@ -31,7 +28,7 @@ export default props => {
           padding: 0 0 48px 32px;
           border-left: 1px solid #ececec;
           flex-shrink: 0;
-          width: 25%;
+          width: 260px;
 
           @media (max-width: 768px) {
             padding: 0 0 0 0;
@@ -47,8 +44,7 @@ export default props => {
         {props.children}
       </div>
       <div className="page-layout-right">
-        <Queries />
-        <Topics />
+        {props.rightSide}
       </div>
     </div>
   );

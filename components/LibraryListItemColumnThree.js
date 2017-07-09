@@ -11,7 +11,7 @@ const renderListItem = (data, index) => {
     <li className="list-item" key={`list-item-${index}`}>
       <style jsx>{`
         .list-item {
-          margin: 0 0 8px 0;
+          margin: 2px 0 6px 0;
           display: flex;
           align-items: center;
           font-family: 'office-code', monospace;

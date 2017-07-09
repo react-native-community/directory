@@ -1,51 +1,53 @@
+import * as Routing from '../common/routing';
+
 export const createNavigationItemsFromProps = props => [
   {
     text: 'Last Update',
     active: props.sortBy === 'updated',
     onClick: () => {
-      window.location.href = '/updated';
+      Routing.push(`/updated${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Recommended',
     active: props.sortBy === 'recommended',
     onClick: () => {
-      window.location.href = '/recommended';
+      Routing.push(`/recommended${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Compatibility',
     active: props.sortBy === 'compatibility',
     onClick: () => {
-      window.location.href = '/compatibility';
+      Routing.push(`/compatibility${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Health',
     active: props.sortBy === 'health',
     onClick: () => {
-      window.location.href = '/health';
+      Routing.push(`/health${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Downloads',
     active: props.sortBy === 'downloads',
     onClick: () => {
-      window.location.href = '/downloads';
+      Routing.push(`/downloads${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Issues',
     active: props.sortBy === 'issues',
     onClick: () => {
-      window.location.href = '/issues';
+      Routing.push(`/issues${props.topic ? `/${props.topic}` : ''}`);
     },
   },
   {
     text: 'Stars',
     active: props.sortBy === 'stars',
     onClick: () => {
-      window.location.href = '/stars';
+      Routing.push(`/stars${props.topic ? `/${props.topic}` : ''}`);
     },
   },
 ];

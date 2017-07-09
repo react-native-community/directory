@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import * as Routing from '../common/routing';
+
 import Link from '../components/Link';
 
 class Header extends React.PureComponent {
@@ -10,10 +12,7 @@ class Header extends React.PureComponent {
   };
 
   _handleClick = () => {
-    return this.props.dispatch({
-      sortBy: 'updated',
-      type: 'SORT_BY',
-    });
+    Routing.push('/');
   };
 
   render() {
