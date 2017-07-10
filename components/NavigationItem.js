@@ -2,14 +2,14 @@ import React from 'react';
 
 export default props => {
   const parentClassNames = `navigation-item
-        ${props.data.active ? 'navigation-item--active' : undefined}
-        ${!props.data.active ? 'navigation-item--interactable' : undefined}`;
+        ${props.data.isActive ? 'navigation-item--active' : undefined}
+        ${!props.data.isActive ? 'navigation-item--interactable' : undefined}`;
 
   const childClassNames = `navigation-item-text
-        ${props.data.active ? 'navigation-item-text--active' : undefined}`;
+        ${props.data.isActive ? 'navigation-item-text--active' : undefined}`;
 
   return (
-    <span className={parentClassNames} onClick={props.data.onClick}>
+    <a className={parentClassNames} href={props.data.href}>
       <style jsx>{`
         .navigation-item {
           font-family: 'office-code', monospace;
@@ -19,6 +19,12 @@ export default props => {
           margin: 0 24px 0 0;
           padding: 0 0 8px 0;
           height: 32px;
+          text-decoration: none;
+          color: #000000;
+
+          &:visited {
+            color: inherit;
+          }
         }
 
         .navigation-item--interactable {
@@ -48,6 +54,6 @@ export default props => {
       <span className={childClassNames}>
         {props.data.text}
       </span>
-    </span>
+    </a>
   );
 };

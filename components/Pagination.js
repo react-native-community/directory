@@ -59,7 +59,7 @@ class Pagination extends React.PureComponent {
           <style jsx>{`
             .pagination-list-item {
               font-family: 'office-code', monospace;
-              color: rgba(0, 0, 0, 0.8);
+              color: rgba(0, 0, 0, 0.6);
               display: inline-flex;
               font-size: 0.8rem;
               margin: 12px 24px 12px 0;

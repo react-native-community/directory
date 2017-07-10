@@ -61,7 +61,6 @@ class Navigation extends React.PureComponent {
           }
         `}</style>
         <div className="navigation-container">
-          <SearchInput placeholder={`Type here...`} />
           <div className="navigation-container-elements">
             <span className="navigation-container-title">
               <span className="navigation-container-title-text">

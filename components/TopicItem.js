@@ -9,17 +9,9 @@ class TopicItem extends React.PureComponent {
     count: PropTypes.number,
   };
 
-  _handleChooseTopic = () => {
-    if (document) {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    }
-
-    Routing.push(`/${this.props.sortBy}/${this.props.children}`);
-  };
-
   render() {
     return (
-      <span className="item" onClick={this._handleChooseTopic}>
+      <a className="item" href={`/${this.props.sortBy}/${this.props.children}`}>
         <style jsx>{`
           .item {
             display: inline-block;
@@ -33,6 +25,10 @@ class TopicItem extends React.PureComponent {
             font-size: 0.75rem;
             line-height: 1.1rem;
             color: rgba(0, 0, 0, 0.75);
+
+            &:visited {
+              color: inherit;
+            }
 
             &:hover {
               opacity: 0.5;
@@ -52,7 +48,7 @@ class TopicItem extends React.PureComponent {
         [
         <span className="item-count">{this.props.count}</span>
         ]
-      </span>
+      </a>
     );
   }
 }
