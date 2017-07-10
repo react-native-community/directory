@@ -50,7 +50,7 @@ const buildAndScoreData = async () => {
   console.log('\n** Calculating scores');
   data = data.map(calculateScore);
 
-  data.filter(project => {
+  data = data.filter(project => {
     return !Strings.isEmptyOrNull(project.github.name);
   });
 

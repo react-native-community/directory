@@ -64,7 +64,7 @@
           "createdAt": "2015-11-14T15:45:34Z",
           "pushedAt": "2017-07-09T23:36:13Z",
           "forks": 765,
-          "issues": 148,
+          "issues": 149,
           "watchers": 3113,
           "stars": 3113
         },
@@ -2409,6 +2409,7 @@
     {
       "githubUrl": "https://github.com/oblador/react-native-keychain",
       "ios": true,
+      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/oblador/react-native-keychain",
@@ -2454,7 +2455,6 @@
     {
       "githubUrl": "https://github.com/oblador/react-native-keychain",
       "ios": true,
-      "android": true,
       "github": {
         "urls": {
           "repo": "https://github.com/oblador/react-native-keychain",
@@ -3303,6 +3303,7 @@
     },
     {
       "githubUrl": "https://github.com/aakashns/react-native-dialogs",
+      "ios": false,
       "android": true,
       "github": {
         "urls": {
@@ -3345,7 +3346,6 @@
     },
     {
       "githubUrl": "https://github.com/aakashns/react-native-dialogs",
-      "ios": false,
       "android": true,
       "github": {
         "urls": {
@@ -8431,32 +8431,6 @@
         "period": "month"
       },
       "score": 70,
-      "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/Purii/react-native-tableview-simple#examples",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {},
-        "stats": {
-          "hasTopics": false
-        }
-      },
-      "images": [
-        "https://camo.githubusercontent.com/53aa84dc5f30baede3cc45e1edee9afcc98d0935/68747470733a2f2f7261772e6769746875622e636f6d2f50757269692f72656163742d6e61746976652d7461626c65766965772d73696d706c652f6d61737465722f73637265656e73686f7441626f757453637265656e2e706e67",
-        "https://camo.githubusercontent.com/4614cf955e26ca12b0d4dd00f04c06b4bc776e75/68747470733a2f2f7261772e6769746875622e636f6d2f50757269692f72656163742d6e61746976652d7461626c65766965772d73696d706c652f6d61737465722f73637265656e73686f742e706e67",
-        "https://camo.githubusercontent.com/15bfb678c1eee92fcfbef72ec6c9e8df8932c0d4/68747470733a2f2f7261772e6769746875622e636f6d2f50757269692f72656163742d6e61746976652d7461626c65766965772d73696d706c652f6d61737465722f73637265656e73686f744e61746976652e706e67"
-      ],
-      "npmPkg": "react-native-tableview-simple#examples",
-      "npm": {
-        "downloads": 2563,
-        "start": "2017-06-09",
-        "end": "2017-07-08",
-        "period": "month"
-      },
-      "score": 0,
       "topicSearchString": ""
     },
     {
