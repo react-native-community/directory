@@ -52,10 +52,7 @@ class Index extends React.PureComponent {
   render() {
     const isMobile = isMobileBrowser(this.props.userAgent);
 
-    const needsFilter =
-      !isEmptyOrNull(this.props.topic) || !isEmptyOrNull(this.props.search);
-
-    const libraries = needsFilter
+    const libraries = !isEmptyOrNull(this.props.topic)
       ? handleFilterLibraries(this.props)
       : this.props.libraries;
 
@@ -76,13 +73,13 @@ class Index extends React.PureComponent {
         <Header count={this.props.libraries.length} />
         <Navigation selected={this.props.sortBy} />
         <PageLayout rightSide={rightSide}>
-          <Pagination libraries={libraries} />
+          <Pagination isMobile={isMobile} libraries={libraries} />
           <LibraryList
             isMobile={isMobile}
             topics={this.props.topics}
             libraries={paginatedLibraries}
           />
-          <Pagination libraries={libraries} />
+          <Pagination isMobile={isMobile} libraries={libraries} />
         </PageLayout>
         {isMobile ? <GlobalModal /> : <GlobalTooltip />}
         <Footer />

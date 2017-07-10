@@ -15,6 +15,12 @@ export default props => {
         .column-two-section {
           margin: 0 0 24px 0;
         }
+
+        .column-two-section--compat {
+          font-family: 'office-code', monospace;
+          font-size: 0.75rem;
+          white-space: pre-wrap;
+        }
       `}</style>
       {!isEmptyOrNull(props.library.github.description)
         ? <p className="column-two-section">
@@ -39,20 +45,14 @@ export default props => {
           </div>
         : undefined}
 
-      <div className="column-two-section">
-        Compatible with{' '}
+      <div className="column-two-section column-two-section--compat">
         {[
-          props.library.web ? 'Web' : null,
-          props.library.ios ? 'iOS' : null,
-          props.library.android ? 'Android' : null,
-          props.library.expo ? 'Expo' : null,
-          'React Native',
+          props.library.ios ? '✅ iOS' : '⛔ iOS',
+          props.library.android ? '✅ Android' : '⛔ Android',
+          props.library.expo ? '✅ Expo' : '⛔ Expo',
+          props.library.web ? '✅ Web' : '⛔ Web',
         ].map((each, idx, arr) => {
-          if (!each) {
-            return null;
-          }
-
-          return `${each}${idx !== arr.length - 1 ? ', ' : ''}`;
+          return `${each}   `;
         })}
       </div>
 

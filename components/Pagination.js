@@ -36,6 +36,7 @@ const getSectionsArray = props => {
 
 class Pagination extends React.PureComponent {
   static propTypes = {
+    isMobile: PropTypes.boolean,
     rangeStart: PropTypes.number,
     rangeEnd: PropTypes.number,
     libraries: PropTypes.array,
@@ -51,10 +52,14 @@ class Pagination extends React.PureComponent {
       ${s.isActive ? 'pagination-list-item--active' : undefined}
       ${!s.isActive ? 'pagination-list-item--interactable' : undefined}`;
 
+      const onClick = this.props.isMobile ? undefined : s.onClick;
+      const onTouchStart = this.props.isMobile ? s.onClick : undefined;
+
       return (
         <li
           className={paginationItemClasses}
-          onClick={s.onClick}
+          onClick={onClick}
+          onTouchStart={onTouchStart}
           key={`pagination-${s.start}-${s.end}`}>
           <style jsx>{`
             .pagination-list-item {
