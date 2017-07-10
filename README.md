@@ -10,6 +10,10 @@ You are at the right place if:
 - You want to submit a pull request to improve Native Directory.
 - You want to report a bug or make a suggestion.
 
+## How to add a library
+
+Add it to `react-native-libraries.json`. Send us a PR.
+
 ## Setup and run locally
 
 Prerequisites

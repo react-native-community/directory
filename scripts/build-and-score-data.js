@@ -8,9 +8,10 @@ import calculateScore from './calculate-score';
 import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
-import githubRepos from '../github-repos.json';
+import githubRepos from '../react-native-libraries.json';
 import debugGithubRepos from '../debug-github-repos.json';
 
+import * as Strings from '../common/strings';
 import * as Sorting from '../common/sorting';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -48,6 +49,10 @@ const buildAndScoreData = async () => {
   // Calculate score
   console.log('\n** Calculating scores');
   data = data.map(calculateScore);
+
+  data.filter(project => {
+    return !Strings.isEmptyOrNull(project.github.name);
+  });
 
   // Process topic counts
   const topicCounts = {};
