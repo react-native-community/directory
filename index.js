@@ -1,10 +1,12 @@
 import express from 'express';
 import next from 'next';
 import nextRoutes from 'next-routes';
+import compression from 'compression';
 
+const isProduction = process.env.NODE_ENV === 'production';
 const routes = nextRoutes();
 const port = parseInt(process.env.PORT, 10) || 8000;
-const app = next({ dev: process.env.NODE_ENV !== 'production' });
+const app = next({ dev: !isProduction });
 const customHandler = routes.getRequestHandler(app);
 
 const getAllowedSortByName = req => {
@@ -28,6 +30,10 @@ const getAllowedSortByName = req => {
 
 app.prepare().then(() => {
   const server = express();
+
+  if (isProduction) {
+    server.use(compression());
+  }
 
   server.get('/search/:search', (req, res) => {
     return app.render(req, res, '/', { search: req.params.search });
