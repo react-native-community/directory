@@ -40,10 +40,11 @@ class Index extends React.PureComponent {
 
   static propTypes = {
     libraries: PropTypes.array,
-    search: PropTypes.string,
+    querySearch: PropTypes.string,
+    queryTopic: PropTypes.string,
     sortBy: PropTypes.string,
-    topic: PropTypes.string,
     topics: PropTypes.object,
+    topicsList: PropTypes.array,
     userAgent: PropTypes.string,
     rangeStart: PropTypes.number,
     rangeEnd: PropTypes.number,
@@ -52,7 +53,11 @@ class Index extends React.PureComponent {
   render() {
     const isMobile = isMobileBrowser(this.props.userAgent);
 
-    const libraries = !isEmptyOrNull(this.props.topic)
+    const needsFilter =
+      !isEmptyOrNull(this.props.queryTopic) ||
+      !isEmptyOrNull(this.props.querySearch);
+
+    const libraries = needsFilter
       ? handleFilterLibraries(this.props)
       : this.props.libraries;
 
@@ -63,8 +68,11 @@ class Index extends React.PureComponent {
 
     const rightSide = (
       <div>
-        <Queries />
-        <Topics />
+        <Queries
+          topic={this.props.queryTopic}
+          search={this.props.querySearch}
+        />
+        <Topics topics={this.props.topics} topicsList={this.props.topicsList} />
       </div>
     );
 
@@ -92,9 +100,10 @@ export default withRedux(initStore, state => {
   return {
     sortBy: state.sortBy,
     libraries: state.libraries,
-    topic: state.topic,
     topics: state.topics,
-    search: state.search,
+    topicsList: state.topicsList,
+    queryTopic: state.queryTopic,
+    querySearch: state.querySearch,
     rangeStart: state.rangeStart,
     rangeEnd: state.rangeEnd,
   };

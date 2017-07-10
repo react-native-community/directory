@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { isEmptyOrNull } from '../common/strings';
 
-class Queries extends React.PureComponent {
+export default class Queries extends React.PureComponent {
   static propTypes = {
     topic: PropTypes.string,
     search: PropTypes.string,
@@ -119,7 +119,3 @@ class Queries extends React.PureComponent {
     );
   }
 }
-
-export default connect(state => {
-  return { topic: state.topic, search: state.search, sortBy: state.sortBy };
-})(Queries);

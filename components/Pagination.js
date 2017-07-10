@@ -36,7 +36,7 @@ const getSectionsArray = props => {
 
 class Pagination extends React.PureComponent {
   static propTypes = {
-    isMobile: PropTypes.boolean,
+    isMobile: PropTypes.bool,
     rangeStart: PropTypes.number,
     rangeEnd: PropTypes.number,
     libraries: PropTypes.array,

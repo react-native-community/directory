@@ -11,9 +11,9 @@ const INITIAL_STATE = {
   topicsList: data.topicsList,
   tooltip: null,
   modal: null,
-  search: '',
   sortBy: 'updated',
-  topic: undefined,
+  querySearch: '',
+  queryTopic: undefined,
   rangeStart: 0,
   rangeEnd: 50,
 };
@@ -65,13 +65,13 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case 'SORT_BY':
       return handleSorting(state, action.sortBy);
     case 'SEARCH_LIBRARY':
-      return { ...state, search: action.value };
+      return { ...state, querySearch: action.value };
     case 'TOPIC_PICKED':
-      return { ...state, topic: action.value, search: '' };
+      return { ...state, queryTopic: action.value, querySearch: '' };
     case 'CLEAR_TOPIC':
-      return { ...state, topic: '' };
+      return { ...state, queryTopic: '' };
     case 'CLEAR_SEARCH':
-      return { ...state, search: '' };
+      return { ...state, querySearch: '' };
     default:
       return state;
   }

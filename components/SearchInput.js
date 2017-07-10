@@ -8,7 +8,10 @@ class SearchInput extends React.PureComponent {
   };
 
   _handleChange = e => {
-    this.props.dispatch({ type: 'SEARCH_LIBRARY', value: e.target.value });
+    this.props.dispatch({
+      type: 'SEARCH_LIBRARY',
+      value: e.target.value.toLowerCase(),
+    });
   };
 
   render() {

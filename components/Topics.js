@@ -22,7 +22,7 @@ const generateTopicItemElements = (topics, list) => {
   });
 };
 
-class Topics extends React.PureComponent {
+export default class Topics extends React.PureComponent {
   static propTypes = {
     topics: PropTypes.object,
     topicsList: PropTypes.array,
@@ -52,7 +52,3 @@ class Topics extends React.PureComponent {
     );
   }
 }
-
-export default connect(state => {
-  return { topics: state.topics, topicsList: state.topicsList };
-})(Topics);
