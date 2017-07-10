@@ -52,7 +52,10 @@ export const stars = (state, libraries, sortBy) => {
 
 export const downloads = (state, libraries, sortBy) => {
   libraries.sort((a, b) => {
-    return b.npm.downloads - a.npm.downloads;
+    let bDownloads = b.npm.downloads ? b.npm.downloads : 0;
+    let aDownloads = a.npm.downloads ? a.npm.downloads : 0;
+
+    return bDownloads - aDownloads;
   });
 
   return { ...state, libraries, sortBy };

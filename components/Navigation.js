@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import { createNavigationItemsFromProps } from '../common/static-list-functions';
 
@@ -10,9 +9,10 @@ import NavigationItem from '../components/NavigationItem';
 const renderNavigationItem = data =>
   <NavigationItem key={`navigation-${data.text}`} data={data} />;
 
-class Navigation extends React.PureComponent {
+export default class Navigation extends React.PureComponent {
   static propTypes = {
     sortBy: PropTypes.string,
+    topic: PropTypes.string,
   };
 
   render() {
@@ -75,5 +75,3 @@ class Navigation extends React.PureComponent {
     );
   }
 }
-
-export default connect(state => state)(Navigation);

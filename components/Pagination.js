@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { PAGINATION_BREAKPOINT } from '../common/constants';
 
 const getSectionsArray = props => {
@@ -34,12 +33,13 @@ const getSectionsArray = props => {
   return sections;
 };
 
-class Pagination extends React.PureComponent {
+export default class Pagination extends React.PureComponent {
   static propTypes = {
     isMobile: PropTypes.bool,
     rangeStart: PropTypes.number,
     rangeEnd: PropTypes.number,
     libraries: PropTypes.array,
+    dispatch: PropTypes.func,
   };
 
   render() {
@@ -125,10 +125,3 @@ class Pagination extends React.PureComponent {
     );
   }
 }
-
-export default connect(state => {
-  return {
-    rangeStart: state.rangeStart,
-    rangeEnd: state.rangeEnd,
-  };
-})(Pagination);

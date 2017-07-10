@@ -1,14 +1,14 @@
 /**
  * @flow
  */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getViewportSize } from '../common/window';
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
-class ImageTooltipContainer extends Component {
+class ImageTooltipContainer extends React.Component {
   static propTypes = {
     isMobile: PropTypes.bool,
   };

@@ -39,6 +39,7 @@ class Index extends React.PureComponent {
   }
 
   static propTypes = {
+    dispatch: PropTypes.func,
     libraries: PropTypes.array,
     querySearch: PropTypes.string,
     queryTopic: PropTypes.string,
@@ -79,15 +80,27 @@ class Index extends React.PureComponent {
     return (
       <Document>
         <Header count={this.props.libraries.length} />
-        <Navigation selected={this.props.sortBy} />
+        <Navigation topic={this.props.queryTopic} sortBy={this.props.sortBy} />
         <PageLayout rightSide={rightSide}>
-          <Pagination isMobile={isMobile} libraries={libraries} />
+          <Pagination
+            dispatch={this.props.dispatch}
+            isMobile={isMobile}
+            libraries={libraries}
+            rangeStart={this.props.rangeStart}
+            rangeEnd={this.props.rangeEnd}
+          />
           <LibraryList
             isMobile={isMobile}
             topics={this.props.topics}
             libraries={paginatedLibraries}
           />
-          <Pagination isMobile={isMobile} libraries={libraries} />
+          <Pagination
+            dispatch={this.props.dispatch}
+            isMobile={isMobile}
+            libraries={libraries}
+            rangeStart={this.props.rangeStart}
+            rangeEnd={this.props.rangeEnd}
+          />
         </PageLayout>
         {isMobile ? <GlobalModal /> : <GlobalTooltip />}
         <Footer />
@@ -106,5 +119,7 @@ export default withRedux(initStore, state => {
     querySearch: state.querySearch,
     rangeStart: state.rangeStart,
     rangeEnd: state.rangeEnd,
+    modal: state.modal,
+    tooltip: state.tooltip,
   };
 })(Index);

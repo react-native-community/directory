@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import * as Routing from '../common/routing';
 
 import Link from '../components/Link';
 
-class Header extends React.PureComponent {
+export default class Header extends React.PureComponent {
   static propTypes = {
     count: PropTypes.number,
   };
@@ -47,6 +46,7 @@ class Header extends React.PureComponent {
             flex-shrink: 0;
             padding: 0 8px 0 0;
             cursor: pointer;
+            text-decoration: none;
           }
 
           .header-contents-text {
@@ -59,7 +59,7 @@ class Header extends React.PureComponent {
           }
         `}</style>
         <div className="header-contents">
-          <div className="header-contents-logo">
+          <a className="header-contents-logo" href="/">
             <img
               src="/static/logo.png"
               alt="Native Directory logo"
@@ -67,7 +67,7 @@ class Header extends React.PureComponent {
               height="64"
               onClick={this._handleClick}
             />
-          </div>
+          </a>
           <div className="header-contents-text">
             <p>
               <strong className="header-contents-text--strong">
@@ -87,7 +87,3 @@ class Header extends React.PureComponent {
     );
   }
 }
-
-export default connect(state => {
-  return {};
-})(Header);
