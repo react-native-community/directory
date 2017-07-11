@@ -60,5 +60,7 @@ npm run create-data
 * You can deploy your own.
 
 ```sh
+heroku login
+heroku git:remote -a next-expo
 git push heroku master
 ```
