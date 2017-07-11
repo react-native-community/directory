@@ -10,6 +10,10 @@ You are at the right place if:
 - You want to submit a pull request to improve Native Directory.
 - You want to report a bug or make a suggestion.
 
+## I don't like how you guys calculate the health score
+
+- If you don't like it, submit a PR with changes to `scripts/calculate-score.js`. We want the community to decide this! Please let us know what you want.
+
 ## How to add a library
 
 Add it to `react-native-libraries.json`. Send us a PR.

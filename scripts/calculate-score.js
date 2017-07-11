@@ -1,5 +1,5 @@
 const calculateScore = data => {
-  let { github } = data;
+  let { github, npm } = data;
   let score = 0;
 
   const daysAgo = getDaysAgo(github.stats.updatedAt);
@@ -13,19 +13,23 @@ const calculateScore = data => {
   }
 
   if (github.stats.hasIssues) {
-    score += 10;
+    score += 5;
   }
 
   if (github.stats.hasWiki) {
-    score += 10;
+    score += 5;
   }
 
   if (github.stats.hasPages) {
     score += 5;
   }
 
-  if (github.stats.hasDownloads) {
-    score += 10;
+  if (npm.downloads >= 2500) {
+    score += 25;
+  } else if (npm.downloads >= 500) {
+    score += 20;
+  } else if (npm.downloads >= 100) {
+    score += 15;
   }
 
   if (github.stats.hasTopics) {
