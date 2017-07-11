@@ -1,5 +1,35 @@
 [
   {
+    "githubUrl": "https://github.com/zo0r/react-native-push-notification",
+    "ios": true,
+    "android": true,
+  },
+  {
+    "githubUrl": "https://github.com/root-two/react-native-drawer",
+    "ios": true,
+    "android": true,
+  },
+  {
+    "githubUrl": "https://github.com/react-community/react-native-image-picker",
+    "ios": true,
+    "android": true,
+  },
+  {
+    "githubUrl": "https://github.com/Andr3wHur5t/react-native-keyboard-spacer",
+    "ios": true,
+    "android": true,
+  },
+  {
+    "githubUrl": "https://github.com/davodesign84/react-native-mixpanel",
+    "ios": true,
+    "android": true,
+  },
+  {
+    "githubUrl": "https://github.com/crazycodeboy/react-native-splash-screen",
+    "ios": true,
+    "android": true,
+  },
+  {
     "githubUrl": "https://github.com/react-community/react-navigation",
     "ios": true,
     "android": true,
