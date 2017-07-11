@@ -1013,11 +1013,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/aakashns/react-native-dialogs",
     "android": true
   },
@@ -1440,5 +1435,11 @@
     "android": true,
     "expo": true,
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/psicotropicos/react-native-tilt",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
