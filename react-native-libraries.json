@@ -1444,6 +1444,12 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
+    "ios": true,
+    "android": true,
+    "expo": false 
+  },
+  {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
     "ios": true,
     "android": true,
