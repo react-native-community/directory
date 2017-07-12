@@ -1448,5 +1448,11 @@
     "ios": true,
     "android": true,
     "expo": false 
+  },
+  {
+    "githubUrl": "https://github.com/mfrachet/rn-placeholder",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
