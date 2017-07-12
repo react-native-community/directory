@@ -1446,6 +1446,7 @@
   {
     "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": false 
   }
 ]
