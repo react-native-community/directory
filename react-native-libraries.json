@@ -1496,5 +1496,11 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/maicki/react-native-event-bridge",
+    "ios": true,
+    "android": true,
+    "expo": false
   }
 ]
