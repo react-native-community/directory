@@ -12,7 +12,7 @@ You are at the right place if:
 
 ## I don't like how you guys calculate the health score
 
-- Submit a PR with changes to `scripts/calculate-score.js`. 
+- Submit a PR with changes to `scripts/calculate-score.js`.
 - We want the community to decide this! Please let us know what you want.
 
 ## How to add a library
@@ -29,6 +29,11 @@ Your JSON object should look something like this.
   "expo": false
 },
 ```
+
+* `ios` - works on iOS phones.
+* `android` - works on Android phones.
+* `web` - can be used in the browser.
+* `expo` - can be used without detaching an Expo application.
 
 ## Setup and run locally
 
