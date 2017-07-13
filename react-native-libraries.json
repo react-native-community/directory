@@ -1273,7 +1273,7 @@
     "githubUrl": "https://github.com/bamlab/react-native-image-resizer",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/remobile/react-native-toast",
@@ -1489,7 +1489,7 @@
     "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
     "ios": true,
     "android": true,
-    "expo": false 
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
@@ -1504,4 +1504,10 @@
     "web": false,
     "expo": false
   },
+  {
+    "githubUrl": "https://github.com/maicki/react-native-event-bridge",
+    "ios": true,
+    "android": true,
+    "expo": false
+  }
 ]
