@@ -44,8 +44,8 @@ Prerequisites
 Commands
 
 ```sh
-npm install
-npm run dev
+yarn install
+yarn run dev
 ```
 
 You should be able to visit `localhost:8000` in your browser.
@@ -67,7 +67,7 @@ You should be able to visit `localhost:8000` in your browser.
 This command creates site data in `./build/data.json`
 
 ```
-npm run create-data
+yarn run create-data
 ```
 
 ## Deploy to production
