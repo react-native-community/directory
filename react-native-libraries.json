@@ -1498,6 +1498,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/tipsi/tipsi-stripe",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/maicki/react-native-event-bridge",
     "ios": true,
     "android": true,
