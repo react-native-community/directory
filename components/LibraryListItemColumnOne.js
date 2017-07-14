@@ -6,18 +6,6 @@ import Link from '../components/Link';
 import PercentageBar from '../components/PercentageBar';
 import LibraryListColumn from '../components/LibraryListColumn';
 
-const getPercentageValueRemaining = item => {
-  let amount = 0;
-
-  [item.ios, item.android, item.web, item.expo].forEach(v => {
-    if (v) {
-      amount += 1;
-    }
-  });
-
-  return 100 - amount / 4 * 100;
-};
-
 export default props => {
   return (
     <LibraryListColumn>
