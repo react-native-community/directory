@@ -4,7 +4,8 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": false
+    "expo": false,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/jodybrewster/react-native-linkedin-login",
