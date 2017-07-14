@@ -69,15 +69,8 @@ export default props => {
       </div>
 
       <div className="column-one-bottom">
-        <div className="column-one-bottom-label">Platform Compatibility</div>
-        <PercentageBar
-          percentageRemaining={getPercentageValueRemaining(props.library)}
-        />
         <div className="column-one-bottom-label">Health</div>
-        <PercentageBar
-          percentageRemaining={100 - props.library.score}
-          gradientType="blue"
-        />
+        <PercentageBar percentageRemaining={100 - props.library.score} />
       </div>
     </LibraryListColumn>
   );
