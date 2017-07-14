@@ -1,5 +1,13 @@
 [
-   {
+  {
+    "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "goldstar": true
+  },
+  {
     "githubUrl": "https://github.com/jodybrewster/react-native-linkedin-login",
     "ios": true,
     "android": true,
