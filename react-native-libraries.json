@@ -1524,5 +1524,12 @@
     "ios": true,
     "android": true,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
   }
 ]
