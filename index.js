@@ -59,6 +59,6 @@ app.prepare().then(() => {
       throw err;
     }
 
-    console.log(`Running on localhost:${port}`);
+    console.log(`Running on http://localhost:${port}`);
   });
 });
