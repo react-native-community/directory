@@ -1,137 +1,6 @@
 {
   "libraries": [
     {
-      "githubUrl": "https://github.com/aksonov/react-native-router-flux",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/aksonov/react-native-router-flux",
-          "clone": "https://github.com/aksonov/react-native-router-flux.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": true,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-16T22:28:14Z",
-          "createdAt": "2015-08-25T11:12:44Z",
-          "pushedAt": "2017-07-17T00:47:21Z",
-          "forks": 1259,
-          "issues": 17,
-          "watchers": 4884,
-          "stars": 4884
-        },
-        "name": "react-native-router-flux",
-        "description": "React Native Router based on new ReactNavigation.org API",
-        "topics": []
-      },
-      "images": [
-        "https://user-images.githubusercontent.com/3681859/27937441-ef61d932-626b-11e7-885f-1db7dc74b32e.gif"
-      ],
-      "npmPkg": "react-native-router-flux",
-      "npm": {
-        "downloads": 84956,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 90,
-      "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/jineshshah36/react-native-nav",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/jineshshah36/react-native-nav",
-          "clone": "https://github.com/jineshshah36/react-native-nav.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-15T06:06:55Z",
-          "createdAt": "2016-03-26T22:02:21Z",
-          "pushedAt": "2017-07-17T00:33:53Z",
-          "forks": 25,
-          "issues": 3,
-          "watchers": 203,
-          "stars": 203
-        },
-        "name": "react-native-nav",
-        "description": "A cross-platform (iOS / Android), fully customizable, React Native Navigation Bar component.",
-        "topics": []
-      },
-      "images": [
-        "https://github.com/jineshshah36/react-native-nav/raw/master/examples/assets/react-native-nav_preview_new.png"
-      ],
-      "npmPkg": "react-native-nav",
-      "npm": {
-        "downloads": 1738,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 70,
-      "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/FaridSafi/react-native-gifted-chat",
-          "clone": "https://github.com/FaridSafi/react-native-gifted-chat.git",
-          "homepage": "http://gifted.chat"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": false,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T22:56:24Z",
-          "createdAt": "2015-11-14T15:45:34Z",
-          "pushedAt": "2017-07-17T00:07:33Z",
-          "forks": 783,
-          "issues": 136,
-          "watchers": 3156,
-          "stars": 3156
-        },
-        "name": "react-native-gifted-chat",
-        "description": "💬 The most complete chat UI for React Native",
-        "topics": [
-          "chat",
-          "component",
-          "react-native"
-        ]
-      },
-      "images": [
-        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-1.png",
-        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-2.png"
-      ],
-      "npmPkg": "react-native-gifted-chat",
-      "npm": {
-        "downloads": 8448,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 90,
-      "topicSearchString": " chat component react-native"
-    },
-    {
       "githubUrl": "https://github.com/FaridSafi/react-native-gifted-form",
       "ios": true,
       "android": true,
@@ -148,13 +17,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T08:53:49Z",
+          "updatedAt": "2017-07-17T10:17:40Z",
           "createdAt": "2015-11-03T12:37:07Z",
-          "pushedAt": "2017-07-17T00:04:42Z",
-          "forks": 131,
-          "issues": 50,
-          "watchers": 869,
-          "stars": 869
+          "pushedAt": "2017-07-17T17:56:18Z",
+          "forks": 132,
+          "issues": 49,
+          "watchers": 871,
+          "stars": 871
         },
         "name": "react-native-gifted-form",
         "description": "📝 « One React-Native form component to rule them all »",
@@ -174,53 +43,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/react-native-community/react-native-side-menu",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/react-native-community/react-native-side-menu",
-          "clone": "https://github.com/react-native-community/react-native-side-menu.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": false,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-15T22:51:06Z",
-          "createdAt": "2015-04-04T21:29:42Z",
-          "pushedAt": "2017-07-16T22:48:31Z",
-          "forks": 235,
-          "issues": 26,
-          "watchers": 1265,
-          "stars": 1265
-        },
-        "name": "react-native-side-menu",
-        "description": "Side menu component for React Native",
-        "topics": [
-          "javascript",
-          "react-native",
-          "react-native-component",
-          "side-menu"
-        ]
-      },
-      "images": [
-        "https://camo.githubusercontent.com/aa4203d407bc63d3b04a08a2bcbc3b706397984a/687474703a2f2f6f6936312e74696e797069632e636f6d2f326e396c32647a2e6a7067"
-      ],
-      "npmPkg": "react-native-side-menu",
-      "npm": {
-        "downloads": 27219,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 85,
-      "topicSearchString": " javascript react-native react-native-component side-menu"
-    },
-    {
       "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
       "ios": true,
       "android": true,
@@ -238,13 +60,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T18:26:13Z",
+          "updatedAt": "2017-07-17T15:17:39Z",
           "createdAt": "2016-06-15T21:38:19Z",
-          "pushedAt": "2017-07-16T15:56:24Z",
-          "forks": 177,
-          "issues": 28,
-          "watchers": 1045,
-          "stars": 1045
+          "pushedAt": "2017-07-17T17:37:12Z",
+          "forks": 178,
+          "issues": 27,
+          "watchers": 1051,
+          "stars": 1051
         },
         "name": "react-native-tab-view",
         "description": "A cross-platform Tab View component for React Native",
@@ -267,16 +89,341 @@
       "topicSearchString": " pager-component react-native swipeview tabbar"
     },
     {
-      "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+      "githubUrl": "https://github.com/invertase/react-native-firebase",
+      "ios": true,
+      "android": true,
+      "expo": false,
+      "web": false,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/invertase/react-native-firebase",
+          "clone": "https://github.com/invertase/react-native-firebase.git",
+          "homepage": "https://invertase.io/react-native-firebase"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": true,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T13:57:05Z",
+          "createdAt": "2017-02-01T12:01:03Z",
+          "pushedAt": "2017-07-17T17:26:20Z",
+          "forks": 73,
+          "issues": 26,
+          "watchers": 573,
+          "stars": 573
+        },
+        "name": "react-native-firebase",
+        "description": "A well tested feature rich Firebase implementation for React Native, supporting iOS & Android",
+        "topics": [
+          "analytics",
+          "android",
+          "auth",
+          "database",
+          "facebook",
+          "fcm",
+          "firebase",
+          "google",
+          "ios",
+          "javascript",
+          "native-sdks",
+          "push-notifications",
+          "react",
+          "react-native",
+          "react-native-app",
+          "realtime-database",
+          "remote-config",
+          "storage",
+          "transactions",
+          "web-sdk"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-firebase",
+      "npm": {
+        "downloads": 7413,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 90,
+      "topicSearchString": " analytics android auth database facebook fcm firebase google ios javascript native-sdks push-notifications react react-native react-native-app realtime-database remote-config storage transactions web-sdk"
+    },
+    {
+      "githubUrl": "https://github.com/aksonov/react-native-router-flux",
       "ios": true,
       "android": true,
       "expo": true,
-      "goldstar": true,
       "github": {
         "urls": {
-          "repo": "https://github.com/oblador/react-native-vector-icons",
-          "clone": "https://github.com/oblador/react-native-vector-icons.git",
-          "homepage": "https://oblador.github.io/react-native-vector-icons/"
+          "repo": "https://github.com/aksonov/react-native-router-flux",
+          "clone": "https://github.com/aksonov/react-native-router-flux.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": true,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-17T15:02:13Z",
+          "createdAt": "2015-08-25T11:12:44Z",
+          "pushedAt": "2017-07-17T17:17:50Z",
+          "forks": 1259,
+          "issues": 14,
+          "watchers": 4900,
+          "stars": 4900
+        },
+        "name": "react-native-router-flux",
+        "description": "React Native Router based on new ReactNavigation.org API",
+        "topics": []
+      },
+      "images": [
+        "https://user-images.githubusercontent.com/3681859/27937441-ef61d932-626b-11e7-885f-1db7dc74b32e.gif"
+      ],
+      "npmPkg": "react-native-router-flux",
+      "npm": {
+        "downloads": 84956,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 90,
+      "topicSearchString": ""
+    },
+    {
+      "githubUrl": "https://github.com/joshswan/react-native-autolink",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/joshswan/react-native-autolink",
+          "clone": "https://github.com/joshswan/react-native-autolink.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-14T17:03:57Z",
+          "createdAt": "2016-01-28T07:47:29Z",
+          "pushedAt": "2017-07-17T16:51:56Z",
+          "forks": 17,
+          "issues": 2,
+          "watchers": 104,
+          "stars": 104
+        },
+        "name": "react-native-autolink",
+        "description": "Automatic linking of URLs, phone numbers, emails, etc. in strings for React Native",
+        "topics": [
+          "autolinker",
+          "react-native"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-autolink",
+      "npm": {
+        "downloads": 1381,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": " autolinker react-native"
+    },
+    {
+      "githubUrl": "https://github.com/gitim/react-native-sortable-list",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/gitim/react-native-sortable-list",
+          "clone": "https://github.com/gitim/react-native-sortable-list.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T09:41:42Z",
+          "createdAt": "2016-09-25T13:21:54Z",
+          "pushedAt": "2017-07-17T15:43:29Z",
+          "forks": 34,
+          "issues": 9,
+          "watchers": 151,
+          "stars": 151
+        },
+        "name": "react-native-sortable-list",
+        "description": "React Native Sortable List component",
+        "topics": [
+          "android",
+          "ios",
+          "listview",
+          "react",
+          "react-native",
+          "react-native-component",
+          "scrollview",
+          "scrollview-component"
+        ]
+      },
+      "images": [
+        "https://raw.githubusercontent.com/gitim/react-native-sortable-list/master/demo.gif"
+      ],
+      "npmPkg": "react-native-sortable-list",
+      "npm": {
+        "downloads": 1020,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": " android ios listview react react-native react-native-component scrollview scrollview-component"
+    },
+    {
+      "githubUrl": "https://github.com/joeferraro/react-native-cookies",
+      "ios": true,
+      "android": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/joeferraro/react-native-cookies",
+          "clone": "https://github.com/joeferraro/react-native-cookies.git",
+          "homepage": null
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-15T17:21:39Z",
+          "createdAt": "2015-05-28T04:33:08Z",
+          "pushedAt": "2017-07-17T15:20:54Z",
+          "forks": 70,
+          "issues": 26,
+          "watchers": 312,
+          "stars": 312
+        },
+        "name": "react-native-cookies",
+        "description": "Cookie manager for React Native",
+        "topics": []
+      },
+      "images": [],
+      "npmPkg": "react-native-cookies",
+      "npm": {
+        "downloads": 9028,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 75,
+      "topicSearchString": ""
+    },
+    {
+      "githubUrl": "https://github.com/evollu/react-native-fcm",
+      "ios": true,
+      "android": true,
+      "expo": false,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/evollu/react-native-fcm",
+          "clone": "https://github.com/evollu/react-native-fcm.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-17T16:44:24Z",
+          "createdAt": "2016-05-29T03:53:22Z",
+          "pushedAt": "2017-07-17T14:56:16Z",
+          "forks": 203,
+          "issues": 56,
+          "watchers": 730,
+          "stars": 730
+        },
+        "name": "react-native-fcm",
+        "description": "react native module for firebase cloud messaging and local notification",
+        "topics": []
+      },
+      "images": [],
+      "npmPkg": "react-native-fcm",
+      "npm": {
+        "downloads": 17536,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": ""
+    },
+    {
+      "githubUrl": "https://github.com/jineshshah36/react-native-nav",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/jineshshah36/react-native-nav",
+          "clone": "https://github.com/jineshshah36/react-native-nav.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T15:42:50Z",
+          "createdAt": "2016-03-26T22:02:21Z",
+          "pushedAt": "2017-07-17T14:40:13Z",
+          "forks": 25,
+          "issues": 2,
+          "watchers": 204,
+          "stars": 204
+        },
+        "name": "react-native-nav",
+        "description": "A cross-platform (iOS / Android), fully customizable, React Native Navigation Bar component.",
+        "topics": [
+          "android",
+          "ios",
+          "navbar",
+          "navigation",
+          "react",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://github.com/jineshshah36/react-native-nav/raw/master/examples/assets/react-native-nav_preview_new.png"
+      ],
+      "npmPkg": "react-native-nav",
+      "npm": {
+        "downloads": 1738,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": " android ios navbar navigation react react-native"
+    },
+    {
+      "githubUrl": "https://github.com/react-native-training/react-native-elements",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/react-native-training/react-native-elements",
+          "clone": "https://github.com/react-native-training/react-native-elements.git",
+          "homepage": "https://react-native-training.github.io/react-native-elements/"
         },
         "stats": {
           "hasIssues": true,
@@ -284,40 +431,324 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T22:09:08Z",
-          "createdAt": "2015-05-15T16:38:57Z",
-          "pushedAt": "2017-07-16T15:17:30Z",
-          "forks": 584,
-          "issues": 77,
-          "watchers": 5413,
-          "stars": 5413
+          "updatedAt": "2017-07-17T17:06:13Z",
+          "createdAt": "2016-09-08T14:21:41Z",
+          "pushedAt": "2017-07-17T14:33:19Z",
+          "forks": 560,
+          "issues": 49,
+          "watchers": 6175,
+          "stars": 6175
         },
-        "name": "react-native-vector-icons",
-        "description": "Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.",
+        "name": "react-native-elements",
+        "description": "Cross Platform React Native UI Toolkit",
         "topics": [
-          "icon",
-          "icon-pack",
+          "android",
+          "ios",
           "react-native",
-          "ui"
+          "ui-components"
         ]
       },
       "images": [
-        "https://cloud.githubusercontent.com/assets/378279/12009887/33f4ae1c-ac8d-11e5-8666-7a87458753ee.png",
-        "https://cloud.githubusercontent.com/assets/378279/12421498/2db1f93a-be88-11e5-89c8-2e563ba6251a.png",
-        "https://cloud.githubusercontent.com/assets/378279/7667570/33817554-fc0d-11e4-9ad7-4eb60139cfb7.png",
-        "https://cloud.githubusercontent.com/assets/378279/7667569/3010dd7e-fc0d-11e4-9696-cb721fe8e98d.png",
-        "https://cloud.githubusercontent.com/assets/378279/7667568/2e9021b2-fc0d-11e4-8e68-cf91c329a6f4.png",
-        "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
+        "https://camo.githubusercontent.com/c8ed2a89d1e3f2c28dc46bc1b918b9b874ca18c3/687474703a2f2f692e696d6775722e636f6d2f555872475465472e706e67"
       ],
-      "npmPkg": "react-native-vector-icons",
+      "npmPkg": "react-native-elements",
       "npm": {
-        "downloads": 179092,
+        "downloads": 21142,
         "start": "2017-06-17",
         "end": "2017-07-16",
         "period": "month"
       },
       "score": 100,
-      "topicSearchString": " icon icon-pack react-native ui"
+      "topicSearchString": " android ios react-native ui-components"
+    },
+    {
+      "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/n4kz/react-native-material-textfield",
+          "clone": "https://github.com/n4kz/react-native-material-textfield.git",
+          "homepage": null
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T08:27:24Z",
+          "createdAt": "2017-03-12T10:57:40Z",
+          "pushedAt": "2017-07-17T14:20:55Z",
+          "forks": 25,
+          "issues": 3,
+          "watchers": 77,
+          "stars": 77
+        },
+        "name": "react-native-material-textfield",
+        "description": "Material textfield",
+        "topics": [
+          "android",
+          "ios",
+          "material",
+          "material-design",
+          "react",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://cloud.githubusercontent.com/assets/2055622/24325711/eaa4ff08-11af-11e7-8550-2504c1580979.gif"
+      ],
+      "npmPkg": "react-native-material-textfield",
+      "npm": {
+        "downloads": 2521,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 75,
+      "topicSearchString": " android ios material material-design react react-native"
+    },
+    {
+      "githubUrl": "https://github.com/APSL/react-native-button",
+      "npmPkg": "apsl-react-native-button",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/APSL/react-native-button",
+          "clone": "https://github.com/APSL/react-native-button.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T02:13:28Z",
+          "createdAt": "2015-08-27T15:28:01Z",
+          "pushedAt": "2017-07-17T13:43:25Z",
+          "forks": 81,
+          "issues": 15,
+          "watchers": 439,
+          "stars": 439
+        },
+        "name": "react-native-button",
+        "description": "A React Native button component customizable via props",
+        "topics": [
+          "button",
+          "react",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://camo.githubusercontent.com/00b89232b7f1dda7db6bcecdade0d3aa61a7b027/68747470733a2f2f7472617669732d63692e6f72672f4150534c2f72656163742d6e61746976652d627574746f6e2e7376673f6272616e63683d6d6173746572",
+        "https://camo.githubusercontent.com/1929d4674a5d0089f49f7aa003a30dda4cf07f66/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f7665726167652d38322532352d677265656e2e737667",
+        "https://camo.githubusercontent.com/fc4f774deb4df42c2d58ee3b02c90094eb656a6c/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f6170736c2d72656163742d6e61746976652d627574746f6e2e737667",
+        "https://raw.githubusercontent.com/wiki/APSL/react-native-button/button.png",
+        "https://raw.githubusercontent.com/wiki/APSL/react-native-button/and.png"
+      ],
+      "npm": {
+        "downloads": 4601,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " button react react-native"
+    },
+    {
+      "githubUrl": "https://github.com/xinthink/react-native-material-kit",
+      "ios": true,
+      "android": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/xinthink/react-native-material-kit",
+          "clone": "https://github.com/xinthink/react-native-material-kit.git",
+          "homepage": "http://j.mp/rnmdk"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": true,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T16:21:54Z",
+          "createdAt": "2015-07-01T12:33:24Z",
+          "pushedAt": "2017-07-17T13:31:57Z",
+          "forks": 328,
+          "issues": 121,
+          "watchers": 2927,
+          "stars": 2927
+        },
+        "name": "react-native-material-kit",
+        "description": "Bringing Material Design to React Native",
+        "topics": [
+          "material-design",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://cloud.githubusercontent.com/assets/16245422/12763284/63a2dafc-c9a8-11e5-8fde-37b6f42a60c2.gif"
+      ],
+      "npmPkg": "react-native-material-kit",
+      "npm": {
+        "downloads": 10018,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 100,
+      "topicSearchString": " material-design react-native"
+    },
+    {
+      "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/archriss/react-native-snap-carousel",
+          "clone": "https://github.com/archriss/react-native-snap-carousel.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2017-07-17T18:04:16Z",
+          "createdAt": "2016-10-11T07:22:24Z",
+          "pushedAt": "2017-07-17T12:18:48Z",
+          "forks": 113,
+          "issues": 10,
+          "watchers": 610,
+          "stars": 610
+        },
+        "name": "react-native-snap-carousel",
+        "description": "Swiper component for React Native with previews, snapping effect and RTL support. Compatible with Android & iOS.",
+        "topics": []
+      },
+      "images": [
+        "https://camo.githubusercontent.com/42f1ad3eeebace075a9b045f6dbe733b1c748f89/687474703a2f2f692e696d6775722e636f6d2f466f706533756a2e676966",
+        "https://camo.githubusercontent.com/a26d08bfbf8a02590ba4a4f0f0433d7781b87edb/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f365a735539675757727659746f676f772f67697068792e676966",
+        "https://camo.githubusercontent.com/07ed920c4d911deab029c5b1557d9d7ef0a2237a/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f37544b55416c76693174594c4643544b2f67697068792e676966",
+        "https://camo.githubusercontent.com/f2c8da9bbe55965d112fbb4ae0ec6a8b129835b8/687474703a2f2f692e696d6775722e636f6d2f46784d67356d642e676966",
+        "https://camo.githubusercontent.com/2ceeb1115fb9b5599501d88a15a0f6ce2f83229a/687474703a2f2f692e696d6775722e636f6d2f504d69366142642e6a7067"
+      ],
+      "npmPkg": "react-native-snap-carousel",
+      "npm": {
+        "downloads": 15264,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": ""
+    },
+    {
+      "githubUrl": "https://github.com/tipsi/tipsi-stripe",
+      "ios": true,
+      "android": true,
+      "web": false,
+      "expo": false,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/tipsi/tipsi-stripe",
+          "clone": "https://github.com/tipsi/tipsi-stripe.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-15T07:21:26Z",
+          "createdAt": "2016-10-27T09:03:49Z",
+          "pushedAt": "2017-07-17T12:08:22Z",
+          "forks": 29,
+          "issues": 20,
+          "watchers": 181,
+          "stars": 181
+        },
+        "name": "tipsi-stripe",
+        "description": "React Native Stripe binding for iOS/Android platforms",
+        "topics": [
+          "android",
+          "apple-pay",
+          "ios",
+          "react-native",
+          "stripe"
+        ]
+      },
+      "images": [
+        "https://cloud.githubusercontent.com/assets/1177226/20272773/008e5994-aaa0-11e6-8c24-b4bedf245741.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20274560/1432abf2-aaa6-11e6-8505-0cdc3017fe22.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20572150/54192810-b1bb-11e6-9df6-5c068bf69904.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20275232/cf0f8e3e-aaa8-11e6-85bf-5e093706ea0a.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20572183/7a0a4824-b1bb-11e6-82f2-9b3f7038b1a9.gif",
+        "https://cloud.githubusercontent.com/assets/1286226/26419755/6c801f06-40c9-11e7-972e-521850eda2ef.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20276457/60680ee8-aaad-11e6-834f-007909ce6814.gif",
+        "https://cloud.githubusercontent.com/assets/1177226/20572188/82ae5bf0-b1bb-11e6-97fe-fce360208130.gif",
+        "https://cloud.githubusercontent.com/assets/1446268/23510226/1969c904-ff72-11e6-95b4-b918497b4d1b.png"
+      ],
+      "npmPkg": "tipsi-stripe",
+      "npm": {
+        "downloads": 2897,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " android apple-pay ios react-native stripe"
+    },
+    {
+      "githubUrl": "https://github.com/ArnaudRinquin/react-native-radio-buttons",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/ArnaudRinquin/react-native-radio-buttons",
+          "clone": "https://github.com/ArnaudRinquin/react-native-radio-buttons.git",
+          "homepage": "https://www.npmjs.com/package/react-native-radio-buttons"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-14T23:09:23Z",
+          "createdAt": "2015-07-29T14:35:27Z",
+          "pushedAt": "2017-07-17T12:04:14Z",
+          "forks": 69,
+          "issues": 12,
+          "watchers": 285,
+          "stars": 285
+        },
+        "name": "react-native-radio-buttons",
+        "description": "A Radio-button like logic wrapper for React Native",
+        "topics": [
+          "radio-buttons",
+          "react-native"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-radio-buttons",
+      "npm": {
+        "downloads": 5338,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " radio-buttons react-native"
     },
     {
       "githubUrl": "https://github.com/airbnb/react-native-maps",
@@ -340,13 +771,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T17:55:40Z",
+          "updatedAt": "2017-07-17T17:08:00Z",
           "createdAt": "2015-12-29T19:54:20Z",
-          "pushedAt": "2017-07-16T15:08:40Z",
-          "forks": 1194,
-          "issues": 620,
-          "watchers": 4805,
-          "stars": 4805
+          "pushedAt": "2017-07-17T11:35:22Z",
+          "forks": 1197,
+          "issues": 623,
+          "watchers": 4813,
+          "stars": 4813
         },
         "name": "react-native-maps",
         "description": "React Native Mapview component for iOS + Android",
@@ -397,6 +828,448 @@
       "topicSearchString": " google-maps maps react-native"
     },
     {
+      "githubUrl": "https://github.com/sbycrosz/react-native-credit-card-input",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/sbycrosz/react-native-credit-card-input",
+          "clone": "https://github.com/sbycrosz/react-native-credit-card-input.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T10:45:34Z",
+          "createdAt": "2016-09-01T05:39:55Z",
+          "pushedAt": "2017-07-17T09:57:34Z",
+          "forks": 87,
+          "issues": 25,
+          "watchers": 367,
+          "stars": 367
+        },
+        "name": "react-native-credit-card-input",
+        "description": "Easy, cross-platform credit-card input for your React Native Project! Start accepting payment 💰 in your app today!",
+        "topics": [
+          "android",
+          "component",
+          "credit-card",
+          "ios",
+          "payment",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-ios.gif?raw=true",
+        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-ios-lite.gif?raw=true",
+        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-android.gif?raw=true",
+        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-android-lite.gif?raw=true"
+      ],
+      "npmPkg": "react-native-credit-card-input",
+      "npm": {
+        "downloads": 1105,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 75,
+      "topicSearchString": " android component credit-card ios payment react-native"
+    },
+    {
+      "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/FaridSafi/react-native-gifted-chat",
+          "clone": "https://github.com/FaridSafi/react-native-gifted-chat.git",
+          "homepage": "http://gifted.chat"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T17:08:24Z",
+          "createdAt": "2015-11-14T15:45:34Z",
+          "pushedAt": "2017-07-17T09:43:19Z",
+          "forks": 784,
+          "issues": 137,
+          "watchers": 3162,
+          "stars": 3162
+        },
+        "name": "react-native-gifted-chat",
+        "description": "💬 The most complete chat UI for React Native",
+        "topics": [
+          "chat",
+          "component",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-1.png",
+        "https://raw.githubusercontent.com/FaridSafi/react-native-gifted-chat/master/screenshots/gifted-chat-2.png"
+      ],
+      "npmPkg": "react-native-gifted-chat",
+      "npm": {
+        "downloads": 8448,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 90,
+      "topicSearchString": " chat component react-native"
+    },
+    {
+      "githubUrl": "https://github.com/tolu360/react-native-google-places",
+      "ios": true,
+      "android": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/tolu360/react-native-google-places",
+          "clone": "https://github.com/tolu360/react-native-google-places.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T12:47:42Z",
+          "createdAt": "2016-09-14T20:41:32Z",
+          "pushedAt": "2017-07-17T08:19:46Z",
+          "forks": 32,
+          "issues": 7,
+          "watchers": 132,
+          "stars": 132
+        },
+        "name": "react-native-google-places",
+        "description": "iOS/Android Google Places Widgets (Autocomplete, Place Picker) and API Services for React Native Apps",
+        "topics": [
+          "android",
+          "google-place-api",
+          "google-place-autocomplete",
+          "google-place-picker",
+          "google-places",
+          "ios",
+          "react",
+          "react-native"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-google-places",
+      "npm": {
+        "downloads": 1407,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": " android google-place-api google-place-autocomplete google-place-picker google-places ios react react-native"
+    },
+    {
+      "githubUrl": "https://github.com/tolu360/react-native-google-places",
+      "ios": true,
+      "android": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/tolu360/react-native-google-places",
+          "clone": "https://github.com/tolu360/react-native-google-places.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T12:47:42Z",
+          "createdAt": "2016-09-14T20:41:32Z",
+          "pushedAt": "2017-07-17T08:19:46Z",
+          "forks": 32,
+          "issues": 7,
+          "watchers": 132,
+          "stars": 132
+        },
+        "name": "react-native-google-places",
+        "description": "iOS/Android Google Places Widgets (Autocomplete, Place Picker) and API Services for React Native Apps",
+        "topics": [
+          "android",
+          "google-place-api",
+          "google-place-autocomplete",
+          "google-place-picker",
+          "google-places",
+          "ios",
+          "react",
+          "react-native"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-google-places",
+      "npm": {
+        "downloads": 1407,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 80,
+      "topicSearchString": " android google-place-api google-place-autocomplete google-place-picker google-places ios react react-native"
+    },
+    {
+      "githubUrl": "https://github.com/instea/react-native-popup-menu",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/instea/react-native-popup-menu",
+          "clone": "https://github.com/instea/react-native-popup-menu.git",
+          "homepage": null
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T18:15:38Z",
+          "createdAt": "2016-05-16T14:16:31Z",
+          "pushedAt": "2017-07-17T07:50:48Z",
+          "forks": 34,
+          "issues": 1,
+          "watchers": 227,
+          "stars": 227
+        },
+        "name": "react-native-popup-menu",
+        "description": "Popup menu component for React Native",
+        "topics": [
+          "android",
+          "animation",
+          "ios",
+          "popup-menu",
+          "react-native"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-native-popup-menu",
+      "npm": {
+        "downloads": 7271,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " android animation ios popup-menu react-native"
+    },
+    {
+      "githubUrl": "https://github.com/react-community/react-navigation",
+      "ios": true,
+      "android": true,
+      "web": true,
+      "expo": true,
+      "goldstar": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/react-community/react-navigation",
+          "clone": "https://github.com/react-community/react-navigation.git",
+          "homepage": "https://reactnavigation.org"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T17:55:13Z",
+          "createdAt": "2017-01-26T19:51:40Z",
+          "pushedAt": "2017-07-17T07:19:13Z",
+          "forks": 1022,
+          "issues": 818,
+          "watchers": 5735,
+          "stars": 5735
+        },
+        "name": "react-navigation",
+        "description": "Learn once, navigate anywhere",
+        "topics": [
+          "navigation",
+          "react",
+          "react-native",
+          "react-navigation"
+        ]
+      },
+      "images": [],
+      "npmPkg": "react-navigation",
+      "npm": {
+        "downloads": 92431,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 90,
+      "topicSearchString": " navigation react react-native react-navigation"
+    },
+    {
+      "githubUrl": "https://github.com/sohobloo/react-native-modal-dropdown",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/sohobloo/react-native-modal-dropdown",
+          "clone": "https://github.com/sohobloo/react-native-modal-dropdown.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T13:42:06Z",
+          "createdAt": "2016-09-13T10:17:51Z",
+          "pushedAt": "2017-07-17T05:28:52Z",
+          "forks": 70,
+          "issues": 11,
+          "watchers": 218,
+          "stars": 218
+        },
+        "name": "react-native-modal-dropdown",
+        "description": "A react-native dropdown/picker/selector component for both Android & iOS.",
+        "topics": [
+          "dropdown",
+          "modal",
+          "option",
+          "picker",
+          "react",
+          "react-native",
+          "react-native-component",
+          "select",
+          "selector"
+        ]
+      },
+      "images": [
+        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_1.gif?raw=true",
+        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_2.gif?raw=true",
+        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_3.gif?raw=true"
+      ],
+      "npmPkg": "react-native-modal-dropdown",
+      "npm": {
+        "downloads": 6433,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " dropdown modal option picker react react-native react-native-component select selector"
+    },
+    {
+      "githubUrl": "https://github.com/react-native-community/react-native-side-menu",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/react-native-community/react-native-side-menu",
+          "clone": "https://github.com/react-native-community/react-native-side-menu.git",
+          "homepage": ""
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T10:01:47Z",
+          "createdAt": "2015-04-04T21:29:42Z",
+          "pushedAt": "2017-07-16T22:48:31Z",
+          "forks": 237,
+          "issues": 25,
+          "watchers": 1267,
+          "stars": 1267
+        },
+        "name": "react-native-side-menu",
+        "description": "Side menu component for React Native",
+        "topics": [
+          "javascript",
+          "react-native",
+          "react-native-component",
+          "side-menu"
+        ]
+      },
+      "images": [
+        "https://camo.githubusercontent.com/aa4203d407bc63d3b04a08a2bcbc3b706397984a/687474703a2f2f6f6936312e74696e797069632e636f6d2f326e396c32647a2e6a7067"
+      ],
+      "npmPkg": "react-native-side-menu",
+      "npm": {
+        "downloads": 27219,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 85,
+      "topicSearchString": " javascript react-native react-native-component side-menu"
+    },
+    {
+      "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+      "ios": true,
+      "android": true,
+      "expo": true,
+      "goldstar": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/oblador/react-native-vector-icons",
+          "clone": "https://github.com/oblador/react-native-vector-icons.git",
+          "homepage": "https://oblador.github.io/react-native-vector-icons/"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": true,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-17T16:47:05Z",
+          "createdAt": "2015-05-15T16:38:57Z",
+          "pushedAt": "2017-07-16T15:17:30Z",
+          "forks": 584,
+          "issues": 77,
+          "watchers": 5422,
+          "stars": 5422
+        },
+        "name": "react-native-vector-icons",
+        "description": "Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.",
+        "topics": [
+          "icon",
+          "icon-pack",
+          "react-native",
+          "ui"
+        ]
+      },
+      "images": [
+        "https://cloud.githubusercontent.com/assets/378279/12009887/33f4ae1c-ac8d-11e5-8666-7a87458753ee.png",
+        "https://cloud.githubusercontent.com/assets/378279/12421498/2db1f93a-be88-11e5-89c8-2e563ba6251a.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667570/33817554-fc0d-11e4-9ad7-4eb60139cfb7.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667569/3010dd7e-fc0d-11e4-9696-cb721fe8e98d.png",
+        "https://cloud.githubusercontent.com/assets/378279/7667568/2e9021b2-fc0d-11e4-8e68-cf91c329a6f4.png",
+        "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
+      ],
+      "npmPkg": "react-native-vector-icons",
+      "npm": {
+        "downloads": 179092,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 100,
+      "topicSearchString": " icon icon-pack react-native ui"
+    },
+    {
       "githubUrl": "https://github.com/react-native-community/react-native-linear-gradient",
       "ios": true,
       "android": true,
@@ -413,13 +1286,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T15:41:19Z",
+          "updatedAt": "2017-07-17T16:15:07Z",
           "createdAt": "2015-03-31T17:44:40Z",
           "pushedAt": "2017-07-16T14:53:34Z",
           "forks": 181,
           "issues": 49,
-          "watchers": 1097,
-          "stars": 1097
+          "watchers": 1101,
+          "stars": 1101
         },
         "name": "react-native-linear-gradient",
         "description": "A <LinearGradient /> component for react-native",
@@ -487,53 +1360,6 @@
       "topicSearchString": " android ios javascript react react-native"
     },
     {
-      "githubUrl": "https://github.com/react-native-training/react-native-elements",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/react-native-training/react-native-elements",
-          "clone": "https://github.com/react-native-training/react-native-elements.git",
-          "homepage": "https://react-native-training.github.io/react-native-elements/"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": true,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T22:55:00Z",
-          "createdAt": "2016-09-08T14:21:41Z",
-          "pushedAt": "2017-07-16T13:07:37Z",
-          "forks": 559,
-          "issues": 50,
-          "watchers": 6160,
-          "stars": 6160
-        },
-        "name": "react-native-elements",
-        "description": "Cross Platform React Native UI Toolkit",
-        "topics": [
-          "android",
-          "ios",
-          "react-native",
-          "ui-components"
-        ]
-      },
-      "images": [
-        "https://camo.githubusercontent.com/c8ed2a89d1e3f2c28dc46bc1b918b9b874ca18c3/687474703a2f2f692e696d6775722e636f6d2f555872475465472e706e67"
-      ],
-      "npmPkg": "react-native-elements",
-      "npm": {
-        "downloads": 21142,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 100,
-      "topicSearchString": " android ios react-native ui-components"
-    },
-    {
       "githubUrl": "https://github.com/mfrachet/rn-placeholder",
       "ios": true,
       "android": true,
@@ -550,16 +1376,16 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T21:59:04Z",
+          "updatedAt": "2017-07-17T11:39:52Z",
           "createdAt": "2017-05-07T16:22:54Z",
           "pushedAt": "2017-07-16T10:41:31Z",
           "forks": 5,
           "issues": 1,
-          "watchers": 92,
-          "stars": 92
+          "watchers": 98,
+          "stars": 98
         },
         "name": "rn-placeholder",
-        "description": "Display some placeholder stuff before rendering your text or media content in React Native",
+        "description": ":dash: :dizzy: :sparkles: Display some placeholder stuff before rendering your text or media content in React Native",
         "topics": [
           "placeholder",
           "react",
@@ -599,13 +1425,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T16:10:37Z",
+          "updatedAt": "2017-07-17T18:00:52Z",
           "createdAt": "2015-12-11T15:29:45Z",
           "pushedAt": "2017-07-16T07:12:13Z",
-          "forks": 277,
+          "forks": 276,
           "issues": 65,
-          "watchers": 2322,
-          "stars": 2322
+          "watchers": 2326,
+          "stars": 2326
         },
         "name": "react-native-material-design",
         "description": "React Native UI Components for Material Design",
@@ -627,53 +1453,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/react-community/react-navigation",
-      "ios": true,
-      "android": true,
-      "web": true,
-      "expo": true,
-      "goldstar": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/react-community/react-navigation",
-          "clone": "https://github.com/react-community/react-navigation.git",
-          "homepage": "https://reactnavigation.org"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": false,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T22:33:37Z",
-          "createdAt": "2017-01-26T19:51:40Z",
-          "pushedAt": "2017-07-16T04:28:42Z",
-          "forks": 1016,
-          "issues": 811,
-          "watchers": 5705,
-          "stars": 5705
-        },
-        "name": "react-navigation",
-        "description": "Learn once, navigate anywhere",
-        "topics": [
-          "navigation",
-          "react",
-          "react-native",
-          "react-navigation"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-navigation",
-      "npm": {
-        "downloads": 92431,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 90,
-      "topicSearchString": " navigation react react-native react-navigation"
-    },
-    {
       "githubUrl": "https://github.com/mastermoo/react-native-action-button",
       "ios": true,
       "android": true,
@@ -690,13 +1469,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T10:09:24Z",
+          "updatedAt": "2017-07-17T10:17:28Z",
           "createdAt": "2015-10-20T20:01:55Z",
           "pushedAt": "2017-07-15T18:42:17Z",
           "forks": 171,
-          "issues": 17,
-          "watchers": 990,
-          "stars": 990
+          "issues": 18,
+          "watchers": 991,
+          "stars": 991
         },
         "name": "react-native-action-button",
         "description": "customizable multi-action-button component for react-native",
@@ -740,13 +1519,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T04:12:39Z",
+          "updatedAt": "2017-07-17T15:27:45Z",
           "createdAt": "2016-02-24T07:51:37Z",
           "pushedAt": "2017-07-15T17:35:05Z",
           "forks": 175,
-          "issues": 39,
-          "watchers": 570,
-          "stars": 570
+          "issues": 40,
+          "watchers": 573,
+          "stars": 573
         },
         "name": "react-native-tinder-swipe-cards",
         "description": "Tinder-like swipe cards for your React Native app",
@@ -778,13 +1557,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T23:08:17Z",
+          "updatedAt": "2017-07-17T08:52:09Z",
           "createdAt": "2016-02-24T04:23:38Z",
           "pushedAt": "2017-07-15T12:34:22Z",
           "forks": 37,
           "issues": 8,
-          "watchers": 143,
-          "stars": 143
+          "watchers": 144,
+          "stars": 144
         },
         "name": "react-native-calendar-events",
         "description": "React Native Module for iOS and Android Calendar Events",
@@ -822,13 +1601,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T17:23:23Z",
+          "updatedAt": "2017-07-17T08:08:27Z",
           "createdAt": "2015-09-25T01:43:32Z",
           "pushedAt": "2017-07-15T06:50:10Z",
           "forks": 16,
           "issues": 1,
-          "watchers": 92,
-          "stars": 92
+          "watchers": 95,
+          "stars": 95
         },
         "name": "react-native-globalize",
         "description": "Globalization helper and components for React Native",
@@ -871,13 +1650,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T08:19:01Z",
+          "updatedAt": "2017-07-17T08:25:10Z",
           "createdAt": "2015-10-14T17:29:41Z",
           "pushedAt": "2017-07-15T01:43:08Z",
-          "forks": 186,
-          "issues": 38,
-          "watchers": 440,
-          "stars": 440
+          "forks": 187,
+          "issues": 39,
+          "watchers": 442,
+          "stars": 442
         },
         "name": "react-native-google-places-autocomplete",
         "description": "Customizable Google Places autocomplete component for iOS and Android React-Native apps",
@@ -913,13 +1692,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T15:47:08Z",
+          "updatedAt": "2017-07-17T12:12:36Z",
           "createdAt": "2015-07-16T12:22:46Z",
           "pushedAt": "2017-07-14T18:34:37Z",
           "forks": 76,
           "issues": 11,
-          "watchers": 702,
-          "stars": 702
+          "watchers": 705,
+          "stars": 705
         },
         "name": "react-native-image-progress",
         "description": "Progress indicator for networked images in React Native",
@@ -955,13 +1734,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T18:02:30Z",
+          "updatedAt": "2017-07-17T15:13:57Z",
           "createdAt": "2015-07-17T14:34:39Z",
           "pushedAt": "2017-07-14T17:53:58Z",
           "forks": 165,
           "issues": 43,
-          "watchers": 1090,
-          "stars": 1090
+          "watchers": 1094,
+          "stars": 1094
         },
         "name": "react-native-modalbox",
         "description": "A <Modal/> component for react-native",
@@ -999,13 +1778,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T19:48:33Z",
+          "updatedAt": "2017-07-17T17:05:37Z",
           "createdAt": "2016-11-11T12:17:27Z",
           "pushedAt": "2017-07-14T13:10:23Z",
-          "forks": 106,
-          "issues": 20,
-          "watchers": 955,
-          "stars": 955
+          "forks": 109,
+          "issues": 21,
+          "watchers": 957,
+          "stars": 957
         },
         "name": "react-native-calendars",
         "description": "React Native Calendar Components 📆 ",
@@ -1029,102 +1808,6 @@
       "topicSearchString": " android calendar ios react-native ui-components"
     },
     {
-      "githubUrl": "https://github.com/tolu360/react-native-google-places",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/tolu360/react-native-google-places",
-          "clone": "https://github.com/tolu360/react-native-google-places.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-13T23:33:41Z",
-          "createdAt": "2016-09-14T20:41:32Z",
-          "pushedAt": "2017-07-14T12:29:47Z",
-          "forks": 31,
-          "issues": 8,
-          "watchers": 130,
-          "stars": 130
-        },
-        "name": "react-native-google-places",
-        "description": "iOS/Android Google Places Widgets (Autocomplete, Place Picker) and API Services for React Native Apps",
-        "topics": [
-          "android",
-          "google-place-api",
-          "google-place-autocomplete",
-          "google-place-picker",
-          "google-places",
-          "ios",
-          "react",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-google-places",
-      "npm": {
-        "downloads": 1407,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 80,
-      "topicSearchString": " android google-place-api google-place-autocomplete google-place-picker google-places ios react react-native"
-    },
-    {
-      "githubUrl": "https://github.com/tolu360/react-native-google-places",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/tolu360/react-native-google-places",
-          "clone": "https://github.com/tolu360/react-native-google-places.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-13T23:33:41Z",
-          "createdAt": "2016-09-14T20:41:32Z",
-          "pushedAt": "2017-07-14T12:29:47Z",
-          "forks": 31,
-          "issues": 8,
-          "watchers": 130,
-          "stars": 130
-        },
-        "name": "react-native-google-places",
-        "description": "iOS/Android Google Places Widgets (Autocomplete, Place Picker) and API Services for React Native Apps",
-        "topics": [
-          "android",
-          "google-place-api",
-          "google-place-autocomplete",
-          "google-place-picker",
-          "google-places",
-          "ios",
-          "react",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-google-places",
-      "npm": {
-        "downloads": 1407,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 80,
-      "topicSearchString": " android google-place-api google-place-autocomplete google-place-picker google-places ios react react-native"
-    },
-    {
       "githubUrl": "https://github.com/FormidableLabs/victory-native",
       "ios": true,
       "android": true,
@@ -1141,13 +1824,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-17T00:37:33Z",
+          "updatedAt": "2017-07-17T08:49:49Z",
           "createdAt": "2016-07-22T21:45:58Z",
           "pushedAt": "2017-07-14T12:10:22Z",
           "forks": 27,
           "issues": 24,
-          "watchers": 303,
-          "stars": 303
+          "watchers": 304,
+          "stars": 304
         },
         "name": "victory-native",
         "description": "victory components for react native",
@@ -1186,13 +1869,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T17:50:35Z",
+          "updatedAt": "2017-07-17T10:33:36Z",
           "createdAt": "2016-06-17T20:57:51Z",
           "pushedAt": "2017-07-14T12:08:41Z",
           "forks": 59,
           "issues": 36,
-          "watchers": 266,
-          "stars": 266
+          "watchers": 267,
+          "stars": 267
         },
         "name": "react-native-photo-view",
         "description": "Pinch-to-zoom view for React Native (both iOS and Android)",
@@ -1226,13 +1909,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T23:14:14Z",
+          "updatedAt": "2017-07-17T10:18:47Z",
           "createdAt": "2016-06-01T12:22:28Z",
           "pushedAt": "2017-07-14T11:02:46Z",
           "forks": 90,
-          "issues": 11,
-          "watchers": 1127,
-          "stars": 1127
+          "issues": 10,
+          "watchers": 1133,
+          "stars": 1133
         },
         "name": "react-native-textinput-effects",
         "description": "Text inputs with custom label and icon animations for iOS and android. Built with react native and inspired by Codrops.",
@@ -1248,55 +1931,6 @@
       },
       "score": 80,
       "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/n4kz/react-native-material-textfield",
-          "clone": "https://github.com/n4kz/react-native-material-textfield.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T02:38:48Z",
-          "createdAt": "2017-03-12T10:57:40Z",
-          "pushedAt": "2017-07-14T08:42:31Z",
-          "forks": 24,
-          "issues": 2,
-          "watchers": 76,
-          "stars": 76
-        },
-        "name": "react-native-material-textfield",
-        "description": "Material textfield",
-        "topics": [
-          "android",
-          "ios",
-          "material",
-          "material-design",
-          "react",
-          "react-native"
-        ]
-      },
-      "images": [
-        "https://cloud.githubusercontent.com/assets/2055622/24325711/eaa4ff08-11af-11e7-8550-2504c1580979.gif"
-      ],
-      "npmPkg": "react-native-material-textfield",
-      "npm": {
-        "downloads": 2521,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 75,
-      "topicSearchString": " android ios material material-design react react-native"
     },
     {
       "githubUrl": "https://github.com/beefe/react-native-popup",
@@ -1356,13 +1990,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T14:46:20Z",
+          "updatedAt": "2017-07-17T06:48:55Z",
           "createdAt": "2015-10-12T23:29:34Z",
           "pushedAt": "2017-07-14T01:20:56Z",
-          "forks": 85,
+          "forks": 87,
           "issues": 17,
-          "watchers": 683,
-          "stars": 683
+          "watchers": 684,
+          "stars": 684
         },
         "name": "react-native-keyboard-spacer",
         "description": "Plug and play react-native keyboard spacer view.",
@@ -1408,13 +2042,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T16:28:00Z",
+          "updatedAt": "2017-07-17T15:43:07Z",
           "createdAt": "2017-01-27T18:24:50Z",
           "pushedAt": "2017-07-13T20:54:25Z",
-          "forks": 394,
+          "forks": 395,
           "issues": 39,
-          "watchers": 6045,
-          "stars": 6045
+          "watchers": 6052,
+          "stars": 6052
         },
         "name": "lottie-react-native",
         "description": "Lottie wrapper for React Native.",
@@ -1455,13 +2089,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T20:37:44Z",
+          "updatedAt": "2017-07-17T15:58:34Z",
           "createdAt": "2015-10-18T02:04:35Z",
           "pushedAt": "2017-07-13T18:14:56Z",
           "forks": 222,
           "issues": 36,
-          "watchers": 2983,
-          "stars": 2983
+          "watchers": 2993,
+          "stars": 2993
         },
         "name": "react-native-animatable",
         "description": "Standard set of easy to use animations and declarative transitions for React Native",
@@ -1493,60 +2127,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/sohobloo/react-native-modal-dropdown",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/sohobloo/react-native-modal-dropdown",
-          "clone": "https://github.com/sohobloo/react-native-modal-dropdown.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T16:43:21Z",
-          "createdAt": "2016-09-13T10:17:51Z",
-          "pushedAt": "2017-07-13T18:00:10Z",
-          "forks": 68,
-          "issues": 14,
-          "watchers": 215,
-          "stars": 215
-        },
-        "name": "react-native-modal-dropdown",
-        "description": "A react-native dropdown/picker/selector component for both Android & iOS.",
-        "topics": [
-          "dropdown",
-          "modal",
-          "option",
-          "picker",
-          "react",
-          "react-native",
-          "react-native-component",
-          "select",
-          "selector"
-        ]
-      },
-      "images": [
-        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_1.gif?raw=true",
-        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_2.gif?raw=true",
-        "https://github.com/sohobloo/react-native-modal-dropdown/raw/master/docs/demo_3.gif?raw=true"
-      ],
-      "npmPkg": "react-native-modal-dropdown",
-      "npm": {
-        "downloads": 6433,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 85,
-      "topicSearchString": " dropdown modal option picker react react-native react-native-component select selector"
-    },
-    {
       "githubUrl": "https://github.com/oblador/react-native-collapsible",
       "ios": true,
       "android": true,
@@ -1564,13 +2144,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T08:04:32Z",
+          "updatedAt": "2017-07-17T10:06:59Z",
           "createdAt": "2015-06-07T13:36:23Z",
           "pushedAt": "2017-07-13T17:47:24Z",
           "forks": 112,
           "issues": 52,
-          "watchers": 510,
-          "stars": 510
+          "watchers": 514,
+          "stars": 514
         },
         "name": "react-native-collapsible",
         "description": "Animated collapsible component for React Native, good for accordions, toggles etc",
@@ -1589,50 +2169,6 @@
       },
       "score": 80,
       "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/xinthink/react-native-material-kit",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/xinthink/react-native-material-kit",
-          "clone": "https://github.com/xinthink/react-native-material-kit.git",
-          "homepage": "http://j.mp/rnmdk"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": true,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T18:44:04Z",
-          "createdAt": "2015-07-01T12:33:24Z",
-          "pushedAt": "2017-07-13T16:47:27Z",
-          "forks": 328,
-          "issues": 120,
-          "watchers": 2922,
-          "stars": 2922
-        },
-        "name": "react-native-material-kit",
-        "description": "Bringing Material Design to React Native",
-        "topics": [
-          "material-design",
-          "react-native"
-        ]
-      },
-      "images": [
-        "https://cloud.githubusercontent.com/assets/16245422/12763284/63a2dafc-c9a8-11e5-8fde-37b6f42a60c2.gif"
-      ],
-      "npmPkg": "react-native-material-kit",
-      "npm": {
-        "downloads": 10018,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 100,
-      "topicSearchString": " material-design react-native"
     },
     {
       "githubUrl": "https://github.com/expo/react-native-invertible-scroll-view",
@@ -1771,107 +2307,55 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
+      "githubUrl": "https://github.com/douglasjunior/react-native-keyboard-manager",
       "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/archriss/react-native-snap-carousel",
-          "clone": "https://github.com/archriss/react-native-snap-carousel.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-16T20:53:11Z",
-          "createdAt": "2016-10-11T07:22:24Z",
-          "pushedAt": "2017-07-13T14:31:32Z",
-          "forks": 111,
-          "issues": 12,
-          "watchers": 607,
-          "stars": 607
-        },
-        "name": "react-native-snap-carousel",
-        "description": "Swiper component for React Native with previews, snapping effect and RTL support. Compatible with Android & iOS.",
-        "topics": []
-      },
-      "images": [
-        "https://camo.githubusercontent.com/42f1ad3eeebace075a9b045f6dbe733b1c748f89/687474703a2f2f692e696d6775722e636f6d2f466f706533756a2e676966",
-        "https://camo.githubusercontent.com/a26d08bfbf8a02590ba4a4f0f0433d7781b87edb/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f365a735539675757727659746f676f772f67697068792e676966",
-        "https://camo.githubusercontent.com/07ed920c4d911deab029c5b1557d9d7ef0a2237a/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f37544b55416c76693174594c4643544b2f67697068792e676966",
-        "https://camo.githubusercontent.com/f2c8da9bbe55965d112fbb4ae0ec6a8b129835b8/687474703a2f2f692e696d6775722e636f6d2f46784d67356d642e676966",
-        "https://camo.githubusercontent.com/2ceeb1115fb9b5599501d88a15a0f6ce2f83229a/687474703a2f2f692e696d6775722e636f6d2f504d69366142642e6a7067"
-      ],
-      "npmPkg": "react-native-snap-carousel",
-      "npm": {
-        "downloads": 15264,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 80,
-      "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/tipsi/tipsi-stripe",
-      "ios": true,
-      "android": true,
+      "android": false,
       "web": false,
       "expo": false,
       "github": {
         "urls": {
-          "repo": "https://github.com/tipsi/tipsi-stripe",
-          "clone": "https://github.com/tipsi/tipsi-stripe.git",
-          "homepage": ""
+          "repo": "https://github.com/douglasjunior/react-native-keyboard-manager",
+          "clone": "https://github.com/douglasjunior/react-native-keyboard-manager.git",
+          "homepage": "https://www.npmjs.com/package/react-native-keyboard-manager"
         },
         "stats": {
           "hasIssues": true,
-          "hasWiki": true,
+          "hasWiki": false,
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T07:21:26Z",
-          "createdAt": "2016-10-27T09:03:49Z",
-          "pushedAt": "2017-07-13T12:55:16Z",
-          "forks": 29,
-          "issues": 20,
-          "watchers": 181,
-          "stars": 181
+          "updatedAt": "2017-07-13T10:04:14Z",
+          "createdAt": "2017-06-21T11:27:21Z",
+          "pushedAt": "2017-07-13T11:46:37Z",
+          "forks": 2,
+          "issues": 0,
+          "watchers": 9,
+          "stars": 9
         },
-        "name": "tipsi-stripe",
-        "description": "React Native Stripe binding for iOS/Android platforms",
+        "name": "react-native-keyboard-manager",
+        "description": "Library that allows to prevent issues of keyboard sliding up and cover on React-Native iOS projects. ⚛",
         "topics": [
-          "android",
-          "apple-pay",
           "ios",
-          "react-native",
-          "stripe"
+          "iqkeyboardmanager",
+          "keyboard",
+          "react-native"
         ]
       },
       "images": [
-        "https://cloud.githubusercontent.com/assets/1177226/20272773/008e5994-aaa0-11e6-8c24-b4bedf245741.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20274560/1432abf2-aaa6-11e6-8505-0cdc3017fe22.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20572150/54192810-b1bb-11e6-9df6-5c068bf69904.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20275232/cf0f8e3e-aaa8-11e6-85bf-5e093706ea0a.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20572183/7a0a4824-b1bb-11e6-82f2-9b3f7038b1a9.gif",
-        "https://cloud.githubusercontent.com/assets/1286226/26419755/6c801f06-40c9-11e7-972e-521850eda2ef.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20276457/60680ee8-aaad-11e6-834f-007909ce6814.gif",
-        "https://cloud.githubusercontent.com/assets/1177226/20572188/82ae5bf0-b1bb-11e6-97fe-fce360208130.gif",
-        "https://cloud.githubusercontent.com/assets/1446268/23510226/1969c904-ff72-11e6-95b4-b918497b4d1b.png"
+        "https://raw.githubusercontent.com/douglasjunior/react-native-keyboard-manager/master/screenshots/01.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-keyboard-manager/master/screenshots/02.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-keyboard-manager/master/screenshots/03.png",
+        "https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/v3.3.0/Screenshot/IQKeyboardManager.gif"
       ],
-      "npmPkg": "tipsi-stripe",
+      "npmPkg": "react-native-keyboard-manager",
       "npm": {
-        "downloads": 2897,
+        "downloads": 196,
         "start": "2017-06-17",
         "end": "2017-07-16",
         "period": "month"
       },
-      "score": 85,
-      "topicSearchString": " android apple-pay ios react-native stripe"
+      "score": 45,
+      "topicSearchString": " ios iqkeyboardmanager keyboard react-native"
     },
     {
       "githubUrl": "https://github.com/remobile/react-native-toast",
@@ -1889,13 +2373,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-13T03:38:51Z",
+          "updatedAt": "2017-07-17T13:10:53Z",
           "createdAt": "2015-11-17T00:22:19Z",
           "pushedAt": "2017-07-13T11:43:52Z",
           "forks": 76,
           "issues": 25,
-          "watchers": 240,
-          "stars": 240
+          "watchers": 243,
+          "stars": 243
         },
         "name": "react-native-toast",
         "description": "A android like toast for android and ios, android use native toast, ios use UIView+Toast",
@@ -1930,7 +2414,7 @@
           "updatedAt": "2017-07-14T17:58:40Z",
           "createdAt": "2015-12-22T22:05:40Z",
           "pushedAt": "2017-07-13T10:21:25Z",
-          "forks": 33,
+          "forks": 34,
           "issues": 5,
           "watchers": 102,
           "stars": 102
@@ -1951,57 +2435,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/gitim/react-native-sortable-list",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/gitim/react-native-sortable-list",
-          "clone": "https://github.com/gitim/react-native-sortable-list.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-16T14:07:11Z",
-          "createdAt": "2016-09-25T13:21:54Z",
-          "pushedAt": "2017-07-13T09:25:23Z",
-          "forks": 34,
-          "issues": 9,
-          "watchers": 150,
-          "stars": 150
-        },
-        "name": "react-native-sortable-list",
-        "description": "React Native Sortable List component",
-        "topics": [
-          "android",
-          "ios",
-          "listview",
-          "react",
-          "react-native",
-          "react-native-component",
-          "scrollview",
-          "scrollview-component"
-        ]
-      },
-      "images": [
-        "https://raw.githubusercontent.com/gitim/react-native-sortable-list/master/demo.gif"
-      ],
-      "npmPkg": "react-native-sortable-list",
-      "npm": {
-        "downloads": 1020,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 80,
-      "topicSearchString": " android ios listview react react-native react-native-component scrollview scrollview-component"
-    },
-    {
       "githubUrl": "https://github.com/fullstackreact/react-native-oauth",
       "ios": true,
       "android": true,
@@ -2018,13 +2451,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T00:14:39Z",
+          "updatedAt": "2017-07-17T14:04:01Z",
           "createdAt": "2016-06-22T07:22:57Z",
           "pushedAt": "2017-07-13T09:22:04Z",
           "forks": 60,
           "issues": 52,
-          "watchers": 272,
-          "stars": 272
+          "watchers": 273,
+          "stars": 273
         },
         "name": "react-native-oauth",
         "description": "A react-native wrapper for social authentication login for both Android and iOS",
@@ -2040,52 +2473,6 @@
       },
       "score": 70,
       "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/instea/react-native-popup-menu",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/instea/react-native-popup-menu",
-          "clone": "https://github.com/instea/react-native-popup-menu.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-14T17:12:21Z",
-          "createdAt": "2016-05-16T14:16:31Z",
-          "pushedAt": "2017-07-13T08:39:56Z",
-          "forks": 34,
-          "issues": 1,
-          "watchers": 225,
-          "stars": 225
-        },
-        "name": "react-native-popup-menu",
-        "description": "Popup menu component for React Native",
-        "topics": [
-          "android",
-          "animation",
-          "ios",
-          "popup-menu",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-popup-menu",
-      "npm": {
-        "downloads": 7271,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 85,
-      "topicSearchString": " android animation ios popup-menu react-native"
     },
     {
       "githubUrl": "https://github.com/xgfe/react-native-datepicker",
@@ -2104,13 +2491,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T07:47:15Z",
+          "updatedAt": "2017-07-17T06:47:37Z",
           "createdAt": "2016-04-21T11:34:10Z",
           "pushedAt": "2017-07-13T07:05:54Z",
-          "forks": 137,
+          "forks": 139,
           "issues": 55,
-          "watchers": 553,
-          "stars": 553
+          "watchers": 554,
+          "stars": 554
         },
         "name": "react-native-datepicker",
         "description": "react native datePicker component for both Android and IOS, useing DatePikcerAndroid, TimePickerAndroid and DatePickerIOS",
@@ -2147,13 +2534,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-17T00:04:43Z",
+          "updatedAt": "2017-07-17T16:38:54Z",
           "createdAt": "2016-04-15T11:37:23Z",
           "pushedAt": "2017-07-13T06:42:42Z",
-          "forks": 571,
-          "issues": 100,
-          "watchers": 5450,
-          "stars": 5450
+          "forks": 570,
+          "issues": 101,
+          "watchers": 5460,
+          "stars": 5460
         },
         "name": "NativeBase",
         "description": "Essential cross-platform UI components for React Native",
@@ -2194,13 +2581,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T23:49:49Z",
+          "updatedAt": "2017-07-17T15:08:02Z",
           "createdAt": "2016-05-04T13:58:29Z",
           "pushedAt": "2017-07-13T06:32:30Z",
           "forks": 61,
           "issues": 13,
-          "watchers": 580,
-          "stars": 580
+          "watchers": 581,
+          "stars": 581
         },
         "name": "react-native-easy-grid",
         "description": "Easy React Native Layout & Grid for the Dumb",
@@ -2236,13 +2623,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T09:16:20Z",
+          "updatedAt": "2017-07-17T15:35:20Z",
           "createdAt": "2015-03-31T05:08:38Z",
           "pushedAt": "2017-07-13T03:23:57Z",
-          "forks": 618,
+          "forks": 619,
           "issues": 279,
-          "watchers": 1947,
-          "stars": 1947
+          "watchers": 1954,
+          "stars": 1954
         },
         "name": "react-native-video",
         "description": "A <Video /> component for react-native",
@@ -2277,13 +2664,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T17:14:30Z",
+          "updatedAt": "2017-07-17T13:57:53Z",
           "createdAt": "2015-06-08T20:25:31Z",
           "pushedAt": "2017-07-13T03:09:38Z",
-          "forks": 507,
+          "forks": 508,
           "issues": 106,
-          "watchers": 2549,
-          "stars": 2549
+          "watchers": 2555,
+          "stars": 2555
         },
         "name": "react-native-image-picker",
         "description": "A React Native module that allows you to use native UI to select media from the device library or directly from the camera",
@@ -2315,13 +2702,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T08:15:26Z",
+          "updatedAt": "2017-07-17T04:40:05Z",
           "createdAt": "2016-08-01T18:44:54Z",
           "pushedAt": "2017-07-12T19:12:18Z",
           "forks": 19,
           "issues": 6,
-          "watchers": 125,
-          "stars": 125
+          "watchers": 126,
+          "stars": 126
         },
         "name": "react-native-background-fetch",
         "description": "iOS Background Fetch API Implementation",
@@ -2394,13 +2781,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T13:29:57Z",
+          "updatedAt": "2017-07-17T15:41:56Z",
           "createdAt": "2015-07-17T14:13:57Z",
           "pushedAt": "2017-07-12T16:46:08Z",
           "forks": 115,
           "issues": 25,
-          "watchers": 455,
-          "stars": 455
+          "watchers": 457,
+          "stars": 457
         },
         "name": "react-native-slider",
         "description": "A pure JavaScript <Slider> component for react-native",
@@ -2442,7 +2829,7 @@
           "updatedAt": "2017-07-15T10:09:13Z",
           "createdAt": "2016-07-29T19:43:20Z",
           "pushedAt": "2017-07-12T14:19:10Z",
-          "forks": 125,
+          "forks": 126,
           "issues": 39,
           "watchers": 462,
           "stars": 462
@@ -2534,13 +2921,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T22:43:11Z",
+          "updatedAt": "2017-07-17T16:22:12Z",
           "createdAt": "2016-02-02T18:02:10Z",
           "pushedAt": "2017-07-12T12:56:53Z",
           "forks": 44,
           "issues": 6,
-          "watchers": 796,
-          "stars": 796
+          "watchers": 799,
+          "stars": 799
         },
         "name": "react-native-extended-stylesheet",
         "description": "Extended StyleSheets for React Native",
@@ -2581,13 +2968,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T10:17:26Z",
+          "updatedAt": "2017-07-17T14:52:31Z",
           "createdAt": "2016-11-09T07:40:08Z",
           "pushedAt": "2017-07-12T12:48:11Z",
           "forks": 44,
           "issues": 2,
-          "watchers": 144,
-          "stars": 144
+          "watchers": 146,
+          "stars": 146
         },
         "name": "react-native-searchbar",
         "description": "A pretty sweet search bar for React Native.",
@@ -2667,13 +3054,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T02:30:10Z",
+          "updatedAt": "2017-07-17T06:53:14Z",
           "createdAt": "2017-04-08T18:16:46Z",
           "pushedAt": "2017-07-12T02:27:22Z",
           "forks": 20,
           "issues": 9,
-          "watchers": 225,
-          "stars": 225
+          "watchers": 226,
+          "stars": 226
         },
         "name": "react-native-deck-swiper",
         "description": "tinder like react-native deck swiper ",
@@ -2714,13 +3101,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T15:18:26Z",
+          "updatedAt": "2017-07-17T10:59:01Z",
           "createdAt": "2015-06-11T05:01:07Z",
           "pushedAt": "2017-07-12T00:12:12Z",
-          "forks": 886,
-          "issues": 140,
-          "watchers": 3997,
-          "stars": 3997
+          "forks": 887,
+          "issues": 142,
+          "watchers": 4006,
+          "stars": 4006
         },
         "name": "react-native-scrollable-tab-view",
         "description": "Tabbed navigation that you can swipe between, each tab can have  its own ScrollView and maintain its own scroll position between swipes. Pleasantly animated. Customizable tab bar",
@@ -2744,6 +3131,62 @@
       },
       "score": 95,
       "topicSearchString": " animated react-native swipe tabs"
+    },
+    {
+      "githubUrl": "https://github.com/douglasjunior/react-native-simple-dialogs",
+      "ios": true,
+      "android": true,
+      "web": false,
+      "expo": false,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/douglasjunior/react-native-simple-dialogs",
+          "clone": "https://github.com/douglasjunior/react-native-simple-dialogs.git",
+          "homepage": "https://www.npmjs.com/package/react-native-simple-dialogs"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2017-07-13T05:55:32Z",
+          "createdAt": "2017-06-18T17:57:06Z",
+          "pushedAt": "2017-07-11T23:56:51Z",
+          "forks": 2,
+          "issues": 0,
+          "watchers": 8,
+          "stars": 8
+        },
+        "name": "react-native-simple-dialogs",
+        "description": "Cross-platform simple dialogs for React Native based on the Modal component. ⚛",
+        "topics": [
+          "android",
+          "cross-platform",
+          "dialog",
+          "ios",
+          "modal",
+          "popup",
+          "react-native"
+        ]
+      },
+      "images": [
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/android-dialog.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/ios-dialog.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/android-confirm.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/ios-confirm.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/android-progress.png",
+        "https://raw.githubusercontent.com/douglasjunior/react-native-simple-dialogs/master/screenshots/ios-progress.png"
+      ],
+      "npmPkg": "react-native-simple-dialogs",
+      "npm": {
+        "downloads": 340,
+        "start": "2017-06-17",
+        "end": "2017-07-16",
+        "period": "month"
+      },
+      "score": 45,
+      "topicSearchString": " android cross-platform dialog ios modal popup react-native"
     },
     {
       "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
@@ -2863,13 +3306,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-17T00:10:41Z",
+          "updatedAt": "2017-07-17T17:58:47Z",
           "createdAt": "2015-09-30T02:27:34Z",
           "pushedAt": "2017-07-11T15:51:44Z",
           "forks": 152,
-          "issues": 61,
-          "watchers": 658,
-          "stars": 658
+          "issues": 62,
+          "watchers": 659,
+          "stars": 659
         },
         "name": "react-native-share",
         "description": "Share Social , Sending Simple Data to Other Apps ",
@@ -2910,13 +3353,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T09:24:28Z",
+          "updatedAt": "2017-07-17T13:34:10Z",
           "createdAt": "2015-11-01T05:07:41Z",
           "pushedAt": "2017-07-11T15:03:47Z",
           "forks": 105,
           "issues": 26,
-          "watchers": 880,
-          "stars": 880
+          "watchers": 886,
+          "stars": 886
         },
         "name": "react-native-progress",
         "description": "Progress indicators and spinners for React Native using ReactART",
@@ -2951,13 +3394,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T05:27:01Z",
+          "updatedAt": "2017-07-17T17:10:05Z",
           "createdAt": "2015-06-14T10:48:33Z",
           "pushedAt": "2017-07-11T11:42:01Z",
           "forks": 80,
           "issues": 13,
-          "watchers": 759,
-          "stars": 759
+          "watchers": 762,
+          "stars": 762
         },
         "name": "react-native-i18n",
         "description": "React Native + i18n.js",
@@ -3134,13 +3577,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T17:52:47Z",
+          "updatedAt": "2017-07-17T15:37:20Z",
           "createdAt": "2016-03-18T19:14:01Z",
           "pushedAt": "2017-07-10T21:53:50Z",
           "forks": 29,
           "issues": 2,
-          "watchers": 147,
-          "stars": 147
+          "watchers": 148,
+          "stars": 148
         },
         "name": "react-native-settings-list",
         "description": "A clean and highly customizable React Native implementation of a list of settings for a settings page.",
@@ -3175,13 +3618,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T16:13:31Z",
+          "updatedAt": "2017-07-17T16:08:29Z",
           "createdAt": "2015-11-11T00:10:10Z",
           "pushedAt": "2017-07-10T16:20:48Z",
           "forks": 86,
           "issues": 9,
-          "watchers": 160,
-          "stars": 160
+          "watchers": 162,
+          "stars": 162
         },
         "name": "react-native-mixpanel",
         "description": "A React Native wrapper for Mixpanel tracking",
@@ -3214,13 +3657,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-14T03:14:49Z",
+          "updatedAt": "2017-07-17T08:00:13Z",
           "createdAt": "2016-06-22T07:09:40Z",
           "pushedAt": "2017-07-10T15:07:52Z",
           "forks": 47,
           "issues": 2,
-          "watchers": 199,
-          "stars": 199
+          "watchers": 200,
+          "stars": 200
         },
         "name": "rn-splash-screen",
         "description": "A JavaScript-controlled splash-screen for React Native designed to be run directly after the native splash-screen.",
@@ -3354,13 +3797,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T16:32:16Z",
+          "updatedAt": "2017-07-17T13:35:07Z",
           "createdAt": "2015-10-27T15:09:33Z",
           "pushedAt": "2017-07-10T09:39:18Z",
-          "forks": 103,
+          "forks": 104,
           "issues": 28,
-          "watchers": 589,
-          "stars": 589
+          "watchers": 596,
+          "stars": 596
         },
         "name": "react-native-circular-progress",
         "description": "React Native component for creating animated, circular progress with ReactART",
@@ -3399,13 +3842,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-14T06:12:13Z",
+          "updatedAt": "2017-07-17T07:53:36Z",
           "createdAt": "2016-12-14T09:49:51Z",
           "pushedAt": "2017-07-10T08:47:48Z",
           "forks": 10,
-          "issues": 4,
-          "watchers": 103,
-          "stars": 103
+          "issues": 5,
+          "watchers": 105,
+          "stars": 105
         },
         "name": "react-native-keyboard-input",
         "description": "Use your own custom input component instead of the system keyboard",
@@ -3492,13 +3935,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T12:29:59Z",
+          "updatedAt": "2017-07-17T11:20:48Z",
           "createdAt": "2016-06-27T03:09:07Z",
           "pushedAt": "2017-07-10T06:53:50Z",
           "forks": 50,
           "issues": 9,
-          "watchers": 299,
-          "stars": 299
+          "watchers": 302,
+          "stars": 302
         },
         "name": "react-native-dropdownalert",
         "description": "A simple alert to notify users about new chat messages, something went wrong or everything is ok.",
@@ -3626,13 +4069,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T15:08:31Z",
+          "updatedAt": "2017-07-17T16:26:04Z",
           "createdAt": "2015-05-28T03:00:42Z",
           "pushedAt": "2017-07-09T21:46:33Z",
-          "forks": 378,
+          "forks": 377,
           "issues": 35,
-          "watchers": 1194,
-          "stars": 1194
+          "watchers": 1197,
+          "stars": 1197
         },
         "name": "react-native-swipeout",
         "description": "iOS-style swipeout buttons behind component",
@@ -3720,13 +4163,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-12T06:29:18Z",
+          "updatedAt": "2017-07-17T15:13:04Z",
           "createdAt": "2016-09-02T09:14:42Z",
           "pushedAt": "2017-07-09T08:22:01Z",
-          "forks": 35,
+          "forks": 36,
           "issues": 7,
-          "watchers": 173,
-          "stars": 173
+          "watchers": 176,
+          "stars": 176
         },
         "name": "react-native-easy-toast",
         "description": "A react native module to show toast like android, it works on iOS and Android.",
@@ -3767,13 +4210,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T06:41:25Z",
+          "updatedAt": "2017-07-17T15:41:40Z",
           "createdAt": "2015-04-20T15:22:55Z",
           "pushedAt": "2017-07-08T21:52:01Z",
-          "forks": 809,
-          "issues": 239,
-          "watchers": 3894,
-          "stars": 3894
+          "forks": 811,
+          "issues": 241,
+          "watchers": 3902,
+          "stars": 3902
         },
         "name": "react-native-swiper",
         "description": "The best Swiper component for React Native.",
@@ -3837,56 +4280,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/APSL/react-native-button",
-      "npmPkg": "apsl-react-native-button",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/APSL/react-native-button",
-          "clone": "https://github.com/APSL/react-native-button.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-15T02:37:25Z",
-          "createdAt": "2015-08-27T15:28:01Z",
-          "pushedAt": "2017-07-08T16:27:42Z",
-          "forks": 80,
-          "issues": 14,
-          "watchers": 438,
-          "stars": 438
-        },
-        "name": "react-native-button",
-        "description": "A React Native button component customizable via props",
-        "topics": [
-          "button",
-          "react",
-          "react-native"
-        ]
-      },
-      "images": [
-        "https://camo.githubusercontent.com/00b89232b7f1dda7db6bcecdade0d3aa61a7b027/68747470733a2f2f7472617669732d63692e6f72672f4150534c2f72656163742d6e61746976652d627574746f6e2e7376673f6272616e63683d6d6173746572",
-        "https://camo.githubusercontent.com/1929d4674a5d0089f49f7aa003a30dda4cf07f66/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f7665726167652d38322532352d677265656e2e737667",
-        "https://camo.githubusercontent.com/fc4f774deb4df42c2d58ee3b02c90094eb656a6c/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f6170736c2d72656163742d6e61746976652d627574746f6e2e737667",
-        "https://raw.githubusercontent.com/wiki/APSL/react-native-button/button.png",
-        "https://raw.githubusercontent.com/wiki/APSL/react-native-button/and.png"
-      ],
-      "npm": {
-        "downloads": 4601,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 85,
-      "topicSearchString": " button react react-native"
-    },
-    {
       "githubUrl": "https://github.com/gre/gl-react",
       "ios": true,
       "android": true,
@@ -3907,7 +4300,7 @@
           "createdAt": "2015-08-17T15:49:51Z",
           "pushedAt": "2017-07-08T10:11:36Z",
           "forks": 45,
-          "issues": 24,
+          "issues": 25,
           "watchers": 1182,
           "stars": 1182
         },
@@ -4095,13 +4488,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T05:27:03Z",
+          "updatedAt": "2017-07-17T07:31:13Z",
           "createdAt": "2015-04-29T20:31:35Z",
           "pushedAt": "2017-07-07T20:28:36Z",
-          "forks": 197,
+          "forks": 198,
           "issues": 54,
-          "watchers": 1043,
-          "stars": 1043
+          "watchers": 1045,
+          "stars": 1045
         },
         "name": "react-native-chart",
         "description": ":bar_chart: Add line, area, pie, and bar charts to your React Native app",
@@ -4146,13 +4539,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T15:44:56Z",
+          "updatedAt": "2017-07-17T13:35:59Z",
           "createdAt": "2016-01-11T06:31:16Z",
           "pushedAt": "2017-07-07T19:59:15Z",
           "forks": 57,
           "issues": 12,
-          "watchers": 398,
-          "stars": 398
+          "watchers": 399,
+          "stars": 399
         },
         "name": "react-native-loading-spinner-overlay",
         "description": ":barber: The only pure React Native, Native iOS and Android loading spinner (progress bar indicator) overlay",
@@ -4200,13 +4593,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-17T00:20:24Z",
+          "updatedAt": "2017-07-17T15:50:29Z",
           "createdAt": "2015-04-02T19:56:05Z",
           "pushedAt": "2017-07-07T19:10:20Z",
           "forks": 156,
-          "issues": 34,
-          "watchers": 761,
-          "stars": 761
+          "issues": 35,
+          "watchers": 764,
+          "stars": 764
         },
         "name": "react-native-looped-carousel",
         "description": ":carousel_horse: Looped carousel for React Native",
@@ -4294,13 +4687,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-11T07:33:39Z",
+          "updatedAt": "2017-07-17T17:18:58Z",
           "createdAt": "2016-07-12T06:46:46Z",
           "pushedAt": "2017-07-07T15:23:01Z",
           "forks": 7,
           "issues": 1,
-          "watchers": 39,
-          "stars": 39
+          "watchers": 40,
+          "stars": 40
         },
         "name": "react-native-smart-badge",
         "description": "A smart badge for react-native apps",
@@ -4321,49 +4714,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/ArnaudRinquin/react-native-radio-buttons",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/ArnaudRinquin/react-native-radio-buttons",
-          "clone": "https://github.com/ArnaudRinquin/react-native-radio-buttons.git",
-          "homepage": "https://www.npmjs.com/package/react-native-radio-buttons"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-14T23:09:23Z",
-          "createdAt": "2015-07-29T14:35:27Z",
-          "pushedAt": "2017-07-07T13:27:14Z",
-          "forks": 69,
-          "issues": 13,
-          "watchers": 285,
-          "stars": 285
-        },
-        "name": "react-native-radio-buttons",
-        "description": "A Radio-button like logic wrapper for React Native",
-        "topics": [
-          "radio-buttons",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-radio-buttons",
-      "npm": {
-        "downloads": 5338,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 85,
-      "topicSearchString": " radio-buttons react-native"
-    },
-    {
       "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
       "ios": true,
       "android": true,
@@ -4380,13 +4730,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T14:56:10Z",
+          "updatedAt": "2017-07-17T16:29:27Z",
           "createdAt": "2016-07-27T10:57:27Z",
           "pushedAt": "2017-07-07T12:28:39Z",
           "forks": 37,
           "issues": 50,
-          "watchers": 326,
-          "stars": 326
+          "watchers": 327,
+          "stars": 327
         },
         "name": "react-native-ble-plx",
         "description": "React Native BLE library",
@@ -4402,58 +4752,6 @@
       },
       "score": 75,
       "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/sbycrosz/react-native-credit-card-input",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/sbycrosz/react-native-credit-card-input",
-          "clone": "https://github.com/sbycrosz/react-native-credit-card-input.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": false,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-14T15:09:59Z",
-          "createdAt": "2016-09-01T05:39:55Z",
-          "pushedAt": "2017-07-06T22:16:26Z",
-          "forks": 86,
-          "issues": 24,
-          "watchers": 366,
-          "stars": 366
-        },
-        "name": "react-native-credit-card-input",
-        "description": "Easy, cross-platform credit-card input for your React Native Project! Start accepting payment 💰 in your app today!",
-        "topics": [
-          "android",
-          "component",
-          "credit-card",
-          "ios",
-          "payment",
-          "react-native"
-        ]
-      },
-      "images": [
-        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-ios.gif?raw=true",
-        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-ios-lite.gif?raw=true",
-        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-android.gif?raw=true",
-        "https://github.com/sbycrosz/react-native-credit-card-input/raw/master/preview-android-lite.gif?raw=true"
-      ],
-      "npmPkg": "react-native-credit-card-input",
-      "npm": {
-        "downloads": 1105,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 75,
-      "topicSearchString": " android component credit-card ios payment react-native"
     },
     {
       "githubUrl": "https://github.com/BranchMetrics/react-native-branch-deep-linking",
@@ -4472,13 +4770,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-10T11:04:01Z",
+          "updatedAt": "2017-07-17T14:14:59Z",
           "createdAt": "2016-04-10T23:56:20Z",
           "pushedAt": "2017-07-06T18:38:30Z",
           "forks": 41,
           "issues": 11,
-          "watchers": 154,
-          "stars": 154
+          "watchers": 155,
+          "stars": 155
         },
         "name": "react-native-branch-deep-linking",
         "description": "NPM module for integrating Branch deep linking with React Native apps",
@@ -4521,13 +4819,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T19:31:45Z",
+          "updatedAt": "2017-07-17T15:20:22Z",
           "createdAt": "2016-03-28T09:37:19Z",
           "pushedAt": "2017-07-06T09:49:22Z",
           "forks": 63,
-          "issues": 21,
-          "watchers": 363,
-          "stars": 363
+          "issues": 22,
+          "watchers": 365,
+          "stars": 365
         },
         "name": "React-Native-ViewPager",
         "description": "ViewPager and Indicator component for react-native on both android and ios. ",
@@ -4681,13 +4979,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T03:56:46Z",
+          "updatedAt": "2017-07-17T09:18:33Z",
           "createdAt": "2016-02-01T22:24:57Z",
           "pushedAt": "2017-07-06T06:00:18Z",
-          "forks": 84,
+          "forks": 85,
           "issues": 16,
-          "watchers": 395,
-          "stars": 395
+          "watchers": 397,
+          "stars": 397
         },
         "name": "react-native-sortable-listview",
         "description": "Drag drop capable wrapper of ListView for React Native",
@@ -4761,13 +5059,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T19:19:06Z",
+          "updatedAt": "2017-07-17T09:59:51Z",
           "createdAt": "2017-03-29T07:48:32Z",
           "pushedAt": "2017-07-05T07:34:54Z",
           "forks": 8,
           "issues": 1,
-          "watchers": 85,
-          "stars": 85
+          "watchers": 86,
+          "stars": 86
         },
         "name": "react-native-pages",
         "description": "Easy to use page view component",
@@ -4808,13 +5106,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T07:05:03Z",
+          "updatedAt": "2017-07-17T03:15:09Z",
           "createdAt": "2016-09-11T00:56:21Z",
           "pushedAt": "2017-07-05T05:44:09Z",
           "forks": 56,
           "issues": 18,
-          "watchers": 401,
-          "stars": 401
+          "watchers": 402,
+          "stars": 402
         },
         "name": "react-native-popup-dialog",
         "description": "A React Native Popup Dialog Easy Use & Support Custom Animation. For IOS & Android.",
@@ -4883,45 +5181,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/PeelTechnologies/react-native-tcp",
-          "clone": "https://github.com/PeelTechnologies/react-native-tcp.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-11T08:55:55Z",
-          "createdAt": "2015-12-04T17:42:24Z",
-          "pushedAt": "2017-07-05T05:32:00Z",
-          "forks": 35,
-          "issues": 11,
-          "watchers": 100,
-          "stars": 100
-        },
-        "name": "react-native-tcp",
-        "description": "node's net api in react-native",
-        "topics": []
-      },
-      "images": [],
-      "npmPkg": "react-native-tcp",
-      "npm": {
-        "downloads": 2353,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 70,
-      "topicSearchString": ""
-    },
-    {
       "githubUrl": "https://github.com/l-urence/react-native-autocomplete-input",
       "ios": true,
       "android": true,
@@ -4938,13 +5197,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T00:46:16Z",
+          "updatedAt": "2017-07-17T09:47:44Z",
           "createdAt": "2016-02-22T14:38:28Z",
           "pushedAt": "2017-07-04T18:09:25Z",
           "forks": 48,
           "issues": 6,
-          "watchers": 159,
-          "stars": 159
+          "watchers": 160,
+          "stars": 160
         },
         "name": "react-native-autocomplete-input",
         "description": "Pure javascript autocomplete input for react-native",
@@ -4990,8 +5249,8 @@
           "updatedAt": "2017-07-11T20:07:02Z",
           "createdAt": "2016-08-19T21:58:56Z",
           "pushedAt": "2017-07-04T12:10:23Z",
-          "forks": 66,
-          "issues": 36,
+          "forks": 68,
+          "issues": 37,
           "watchers": 195,
           "stars": 195
         },
@@ -5028,13 +5287,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T20:13:39Z",
+          "updatedAt": "2017-07-17T09:43:42Z",
           "createdAt": "2015-04-12T00:34:59Z",
           "pushedAt": "2017-07-03T19:09:52Z",
           "forks": 251,
           "issues": 122,
-          "watchers": 1708,
-          "stars": 1708
+          "watchers": 1709,
+          "stars": 1709
         },
         "name": "react-native-drawer",
         "description": "React Native Drawer",
@@ -5117,13 +5376,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-12T02:44:24Z",
+          "updatedAt": "2017-07-17T09:48:07Z",
           "createdAt": "2015-10-31T14:53:37Z",
           "pushedAt": "2017-07-03T05:00:16Z",
           "forks": 72,
           "issues": 34,
-          "watchers": 317,
-          "stars": 317
+          "watchers": 318,
+          "stars": 318
         },
         "name": "react-native-dialogs",
         "description": "React Native wrappers for https://github.com/afollestad/material-dialogs",
@@ -5159,13 +5418,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-12T02:44:24Z",
+          "updatedAt": "2017-07-17T09:48:07Z",
           "createdAt": "2015-10-31T14:53:37Z",
           "pushedAt": "2017-07-03T05:00:16Z",
           "forks": 72,
           "issues": 34,
-          "watchers": 317,
-          "stars": 317
+          "watchers": 318,
+          "stars": 318
         },
         "name": "react-native-dialogs",
         "description": "React Native wrappers for https://github.com/afollestad/material-dialogs",
@@ -5203,13 +5462,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T05:03:48Z",
+          "updatedAt": "2017-07-17T16:53:28Z",
           "createdAt": "2015-05-18T21:05:16Z",
           "pushedAt": "2017-07-03T04:38:36Z",
           "forks": 215,
           "issues": 28,
-          "watchers": 470,
-          "stars": 470
+          "watchers": 471,
+          "stars": 471
         },
         "name": "react-native-calendar",
         "description": "Calendar Component for React Native",
@@ -5243,13 +5502,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T12:24:55Z",
+          "updatedAt": "2017-07-17T16:41:35Z",
           "createdAt": "2017-01-04T14:14:23Z",
           "pushedAt": "2017-07-02T19:41:17Z",
           "forks": 32,
-          "issues": 15,
-          "watchers": 237,
-          "stars": 237
+          "issues": 14,
+          "watchers": 241,
+          "stars": 241
         },
         "name": "react-native-clean-form",
         "description": "Easy react-native forms using bootstrap-like syntax with redux-form+immutablejs integration. Styled using styled-components",
@@ -5389,13 +5648,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T13:22:18Z",
+          "updatedAt": "2017-07-17T16:53:30Z",
           "createdAt": "2015-12-14T19:53:36Z",
           "pushedAt": "2017-06-30T17:58:21Z",
-          "forks": 353,
+          "forks": 352,
           "issues": 216,
-          "watchers": 1677,
-          "stars": 1677
+          "watchers": 1681,
+          "stars": 1681
         },
         "name": "react-native-push-notification",
         "description": "React Native Local and Remote Notifications",
@@ -5563,13 +5822,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T14:24:21Z",
+          "updatedAt": "2017-07-17T14:45:32Z",
           "createdAt": "2015-08-04T00:33:28Z",
           "pushedAt": "2017-06-30T09:41:44Z",
-          "forks": 178,
-          "issues": 43,
-          "watchers": 1158,
-          "stars": 1158
+          "forks": 180,
+          "issues": 44,
+          "watchers": 1161,
+          "stars": 1161
         },
         "name": "react-native-lightbox",
         "description": "Images etc in Full Screen Lightbox Popovers for React Native",
@@ -5647,13 +5906,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T17:48:27Z",
+          "updatedAt": "2017-07-17T08:00:46Z",
           "createdAt": "2016-08-27T08:55:19Z",
           "pushedAt": "2017-06-29T19:02:28Z",
           "forks": 31,
           "issues": 8,
-          "watchers": 251,
-          "stars": 251
+          "watchers": 253,
+          "stars": 253
         },
         "name": "react-native-button-component",
         "description": "A Beautiful, Customizable React Native Button component for iOS & Android",
@@ -5699,13 +5958,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T22:01:25Z",
+          "updatedAt": "2017-07-17T10:24:35Z",
           "createdAt": "2015-10-16T06:35:30Z",
           "pushedAt": "2017-06-29T14:26:02Z",
           "forks": 141,
           "issues": 43,
-          "watchers": 439,
-          "stars": 439
+          "watchers": 440,
+          "stars": 440
         },
         "name": "react-native-contacts",
         "description": "React Native Contacts",
@@ -5740,13 +5999,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T12:23:08Z",
+          "updatedAt": "2017-07-17T09:34:20Z",
           "createdAt": "2015-07-31T18:11:19Z",
           "pushedAt": "2017-06-29T13:42:33Z",
           "forks": 30,
           "issues": 17,
-          "watchers": 121,
-          "stars": 121
+          "watchers": 122,
+          "stars": 122
         },
         "name": "rn-nodeify",
         "description": "hack to allow react-native projects to use node core modules, and npm modules that use them",
@@ -5826,13 +6085,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T17:16:58Z",
+          "updatedAt": "2017-07-17T13:32:27Z",
           "createdAt": "2015-07-27T12:49:29Z",
           "pushedAt": "2017-06-29T00:33:25Z",
           "forks": 133,
-          "issues": 7,
-          "watchers": 1070,
-          "stars": 1070
+          "issues": 8,
+          "watchers": 1072,
+          "stars": 1072
         },
         "name": "react-native-storage",
         "description": "local storage wrapper for both react-native and browser. Support size controlling, auto expiring, remote data auto syncing and getting batch data in one query.",
@@ -5873,13 +6132,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T19:26:15Z",
+          "updatedAt": "2017-07-17T17:08:38Z",
           "createdAt": "2016-01-29T09:22:44Z",
           "pushedAt": "2017-06-28T20:25:21Z",
-          "forks": 67,
+          "forks": 68,
           "issues": 31,
-          "watchers": 207,
-          "stars": 207
+          "watchers": 209,
+          "stars": 209
         },
         "name": "react-native-md-textinput",
         "description": "React Native TextInput styled with Material Design.",
@@ -6015,13 +6274,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T05:42:52Z",
+          "updatedAt": "2017-07-17T11:48:12Z",
           "createdAt": "2016-05-20T09:20:14Z",
           "pushedAt": "2017-06-27T16:52:29Z",
-          "forks": 85,
+          "forks": 89,
           "issues": 10,
-          "watchers": 267,
-          "stars": 267
+          "watchers": 268,
+          "stars": 268
         },
         "name": "react-native-ble-manager",
         "description": "React Native BLE communication module",
@@ -6060,13 +6319,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T05:42:52Z",
+          "updatedAt": "2017-07-17T11:48:12Z",
           "createdAt": "2016-05-20T09:20:14Z",
           "pushedAt": "2017-06-27T16:52:29Z",
-          "forks": 85,
+          "forks": 89,
           "issues": 10,
-          "watchers": 267,
-          "stars": 267
+          "watchers": 268,
+          "stars": 268
         },
         "name": "react-native-ble-manager",
         "description": "React Native BLE communication module",
@@ -6188,13 +6447,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T05:18:13Z",
+          "updatedAt": "2017-07-17T03:06:00Z",
           "createdAt": "2015-05-20T17:53:22Z",
           "pushedAt": "2017-06-27T10:40:53Z",
           "forks": 58,
           "issues": 28,
-          "watchers": 281,
-          "stars": 281
+          "watchers": 283,
+          "stars": 283
         },
         "name": "react-native-accordion",
         "description": "An Accordion Component for React Native",
@@ -6316,13 +6575,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T22:20:55Z",
+          "updatedAt": "2017-07-17T09:03:21Z",
           "createdAt": "2016-08-30T08:46:53Z",
           "pushedAt": "2017-06-25T22:37:16Z",
           "forks": 27,
           "issues": 6,
-          "watchers": 156,
-          "stars": 156
+          "watchers": 157,
+          "stars": 157
         },
         "name": "react-native-awesome-card-io",
         "description": "A complete and cross-platform card.io component for React Native (iOS and Android).",
@@ -6362,13 +6621,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T22:20:55Z",
+          "updatedAt": "2017-07-17T09:03:21Z",
           "createdAt": "2016-08-30T08:46:53Z",
           "pushedAt": "2017-06-25T22:37:16Z",
           "forks": 27,
           "issues": 6,
-          "watchers": 156,
-          "stars": 156
+          "watchers": 157,
+          "stars": 157
         },
         "name": "react-native-awesome-card-io",
         "description": "A complete and cross-platform card.io component for React Native (iOS and Android).",
@@ -6456,13 +6715,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T10:57:56Z",
+          "updatedAt": "2017-07-17T10:26:16Z",
           "createdAt": "2015-10-10T09:10:39Z",
           "pushedAt": "2017-06-23T16:55:06Z",
           "forks": 291,
-          "issues": 88,
-          "watchers": 1069,
-          "stars": 1069
+          "issues": 89,
+          "watchers": 1071,
+          "stars": 1071
         },
         "name": "react-native-viewpager",
         "description": "ViewPager component for React Native",
@@ -6496,13 +6755,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T16:29:57Z",
+          "updatedAt": "2017-07-17T10:22:21Z",
           "createdAt": "2016-03-14T21:01:34Z",
           "pushedAt": "2017-06-23T15:22:40Z",
           "forks": 61,
           "issues": 20,
-          "watchers": 247,
-          "stars": 247
+          "watchers": 248,
+          "stars": 248
         },
         "name": "react-native-message-bar",
         "description": "A notification bar alert displayed at the top of the screen for react-native",
@@ -6587,13 +6846,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T03:36:26Z",
+          "updatedAt": "2017-07-17T06:02:57Z",
           "createdAt": "2015-12-20T07:09:42Z",
           "pushedAt": "2017-06-22T11:49:41Z",
           "forks": 10,
           "issues": 1,
-          "watchers": 63,
-          "stars": 63
+          "watchers": 65,
+          "stars": 65
         },
         "name": "react-native-animated-tabs",
         "description": "Animated Tabs for React Native. Both for iOS and Android",
@@ -6629,13 +6888,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T19:30:13Z",
+          "updatedAt": "2017-07-17T09:35:15Z",
           "createdAt": "2016-01-15T03:42:29Z",
           "pushedAt": "2017-06-22T11:40:36Z",
-          "forks": 95,
+          "forks": 97,
           "issues": 35,
-          "watchers": 286,
-          "stars": 286
+          "watchers": 289,
+          "stars": 289
         },
         "name": "react-native-menu",
         "description": "A flexible dropdown menu component for Android and iOS that is similar to Android's Spinner.",
@@ -6672,13 +6931,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T22:35:49Z",
+          "updatedAt": "2017-07-17T14:19:13Z",
           "createdAt": "2016-06-26T23:49:54Z",
           "pushedAt": "2017-06-21T18:42:52Z",
           "forks": 41,
           "issues": 20,
-          "watchers": 128,
-          "stars": 128
+          "watchers": 129,
+          "stars": 129
         },
         "name": "react-native-apple-healthkit",
         "description": "A React Native bridge module for interacting with Apple HealthKit data",
@@ -6764,13 +7023,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T18:41:54Z",
+          "updatedAt": "2017-07-17T09:42:03Z",
           "createdAt": "2017-01-31T19:05:51Z",
           "pushedAt": "2017-06-20T05:23:31Z",
           "forks": 20,
           "issues": 11,
-          "watchers": 104,
-          "stars": 104
+          "watchers": 106,
+          "stars": 106
         },
         "name": "react-native-drawer-layout",
         "description": "A platform-agnostic drawer layout for react-native",
@@ -6850,13 +7109,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T19:14:23Z",
+          "updatedAt": "2017-07-17T14:18:22Z",
           "createdAt": "2016-09-23T16:45:46Z",
           "pushedAt": "2017-06-19T07:59:18Z",
           "forks": 29,
           "issues": 6,
-          "watchers": 314,
-          "stars": 314
+          "watchers": 317,
+          "stars": 317
         },
         "name": "react-native-modal",
         "description": "An enhanced, animated and customizable react-native modal",
@@ -6903,13 +7162,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T00:38:22Z",
+          "updatedAt": "2017-07-17T13:37:54Z",
           "createdAt": "2015-03-28T18:06:13Z",
           "pushedAt": "2017-06-17T20:02:30Z",
           "forks": 223,
           "issues": 57,
-          "watchers": 1972,
-          "stars": 1972
+          "watchers": 1977,
+          "stars": 1977
         },
         "name": "tcomb-form-native",
         "description": "Forms library for react-native",
@@ -6989,13 +7248,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T19:19:08Z",
+          "updatedAt": "2017-07-17T17:22:20Z",
           "createdAt": "2017-01-20T20:59:40Z",
           "pushedAt": "2017-06-16T07:01:13Z",
           "forks": 23,
           "issues": 2,
-          "watchers": 170,
-          "stars": 170
+          "watchers": 172,
+          "stars": 172
         },
         "name": "react-native-step-indicator",
         "description": "A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView.",
@@ -7035,13 +7294,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T21:55:55Z",
+          "updatedAt": "2017-07-17T05:01:05Z",
           "createdAt": "2015-11-30T10:23:11Z",
           "pushedAt": "2017-06-14T21:31:59Z",
           "forks": 75,
           "issues": 30,
-          "watchers": 283,
-          "stars": 283
+          "watchers": 284,
+          "stars": 284
         },
         "name": "react-native-image-resizer",
         "description": "🗻 Resize local images with React Native",
@@ -7079,13 +7338,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T14:23:20Z",
+          "updatedAt": "2017-07-17T08:52:33Z",
           "createdAt": "2016-08-12T08:43:45Z",
           "pushedAt": "2017-06-14T18:17:37Z",
           "forks": 50,
-          "issues": 5,
-          "watchers": 424,
-          "stars": 424
+          "issues": 6,
+          "watchers": 427,
+          "stars": 427
         },
         "name": "react-native-bottom-sheet-behavior",
         "description": "react-native wrapper for android BottomSheetBehavior",
@@ -7160,84 +7419,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/joeferraro/react-native-cookies",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/joeferraro/react-native-cookies",
-          "clone": "https://github.com/joeferraro/react-native-cookies.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-15T17:21:39Z",
-          "createdAt": "2015-05-28T04:33:08Z",
-          "pushedAt": "2017-06-13T19:05:34Z",
-          "forks": 70,
-          "issues": 26,
-          "watchers": 312,
-          "stars": 312
-        },
-        "name": "react-native-cookies",
-        "description": "Cookie manager for React Native",
-        "topics": []
-      },
-      "images": [],
-      "npmPkg": "react-native-cookies",
-      "npm": {
-        "downloads": 9028,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 75,
-      "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/joeferraro/react-native-cookies",
-      "ios": true,
-      "android": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/joeferraro/react-native-cookies",
-          "clone": "https://github.com/joeferraro/react-native-cookies.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2017-07-15T17:21:39Z",
-          "createdAt": "2015-05-28T04:33:08Z",
-          "pushedAt": "2017-06-13T19:05:34Z",
-          "forks": 70,
-          "issues": 26,
-          "watchers": 312,
-          "stars": 312
-        },
-        "name": "react-native-cookies",
-        "description": "Cookie manager for React Native",
-        "topics": []
-      },
-      "images": [],
-      "npmPkg": "react-native-cookies",
-      "npm": {
-        "downloads": 9028,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 75,
-      "topicSearchString": ""
-    },
-    {
       "githubUrl": "https://github.com/adamterlson/cairn",
       "ios": true,
       "android": true,
@@ -7294,13 +7475,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T20:53:41Z",
+          "updatedAt": "2017-07-17T13:15:18Z",
           "createdAt": "2016-04-26T08:49:57Z",
           "pushedAt": "2017-06-11T16:44:30Z",
           "forks": 189,
           "issues": 43,
-          "watchers": 1279,
-          "stars": 1279
+          "watchers": 1282,
+          "stars": 1282
         },
         "name": "react-native-app-intro",
         "description": "react-native-app-intro is a react native component implementing a parallax effect welcome page using base on react-native-swiper , similar to the one found in Google's app like Sheet, Drive, Docs...",
@@ -7347,13 +7528,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T01:44:48Z",
+          "updatedAt": "2017-07-17T09:49:08Z",
           "createdAt": "2015-05-29T22:40:18Z",
           "pushedAt": "2017-06-10T20:14:50Z",
           "forks": 82,
           "issues": 23,
-          "watchers": 305,
-          "stars": 305
+          "watchers": 306,
+          "stars": 306
         },
         "name": "react-native-popover",
         "description": "A <Popover /> component for react-native",
@@ -7436,13 +7617,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T14:54:05Z",
+          "updatedAt": "2017-07-17T07:47:41Z",
           "createdAt": "2015-05-08T03:47:19Z",
           "pushedAt": "2017-06-08T12:20:19Z",
           "forks": 120,
           "issues": 20,
-          "watchers": 882,
-          "stars": 882
+          "watchers": 883,
+          "stars": 883
         },
         "name": "react-native-parallax-view",
         "description": "Parallax view for vertical scrollview/listviews with a header image and header content",
@@ -7563,13 +7744,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-11T19:14:27Z",
+          "updatedAt": "2017-07-17T07:21:39Z",
           "createdAt": "2016-04-22T10:40:57Z",
           "pushedAt": "2017-06-07T06:30:49Z",
           "forks": 92,
           "issues": 19,
-          "watchers": 356,
-          "stars": 356
+          "watchers": 358,
+          "stars": 358
         },
         "name": "react-native-photo-browser",
         "description": "Local and remote media gallery with captions, selections and grid view support for react native.",
@@ -7607,13 +7788,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T04:40:26Z",
+          "updatedAt": "2017-07-17T12:06:39Z",
           "createdAt": "2016-06-28T04:28:25Z",
           "pushedAt": "2017-06-07T01:31:55Z",
           "forks": 60,
           "issues": 32,
-          "watchers": 208,
-          "stars": 208
+          "watchers": 209,
+          "stars": 209
         },
         "name": "react-native-gallery",
         "description": "A pure JavaScript image gallery component for react-native apps with common gestures like pan, pinch and doubleTap, supporting both iOS and Android.",
@@ -7648,13 +7829,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-13T01:56:39Z",
+          "updatedAt": "2017-07-17T10:23:59Z",
           "createdAt": "2016-04-05T21:37:44Z",
           "pushedAt": "2017-06-05T23:09:52Z",
           "forks": 38,
           "issues": 10,
-          "watchers": 153,
-          "stars": 153
+          "watchers": 155,
+          "stars": 155
         },
         "name": "react-native-keyboard-aware-scrollview",
         "description": "Created by artald",
@@ -7727,13 +7908,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-14T18:25:30Z",
+          "updatedAt": "2017-07-17T16:15:48Z",
           "createdAt": "2016-04-17T10:04:09Z",
           "pushedAt": "2017-06-05T11:24:03Z",
-          "forks": 28,
+          "forks": 27,
           "issues": 4,
-          "watchers": 166,
-          "stars": 166
+          "watchers": 167,
+          "stars": 167
         },
         "name": "react-native-autogrow-textinput",
         "description": null,
@@ -7770,13 +7951,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T07:18:17Z",
+          "updatedAt": "2017-07-17T11:18:42Z",
           "createdAt": "2016-09-14T10:43:55Z",
           "pushedAt": "2017-05-31T10:59:25Z",
           "forks": 131,
           "issues": 41,
-          "watchers": 807,
-          "stars": 807
+          "watchers": 811,
+          "stars": 811
         },
         "name": "react-native-splash-screen",
         "description": "A splash screen for react-native, hide when application loaded ,it works on iOS and Android.",
@@ -7871,13 +8052,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-17T00:08:02Z",
+          "updatedAt": "2017-07-17T17:55:01Z",
           "createdAt": "2016-08-15T06:13:12Z",
           "pushedAt": "2017-05-29T00:38:26Z",
           "forks": 25,
           "issues": 12,
-          "watchers": 201,
-          "stars": 201
+          "watchers": 203,
+          "stars": 203
         },
         "name": "react-native-smart-splash-screen",
         "description": "A smart splash screen for React Native apps",
@@ -7912,13 +8093,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T16:21:53Z",
+          "updatedAt": "2017-07-17T02:22:57Z",
           "createdAt": "2015-06-14T00:19:53Z",
           "pushedAt": "2017-05-29T00:14:38Z",
           "forks": 129,
           "issues": 37,
-          "watchers": 486,
-          "stars": 486
+          "watchers": 487,
+          "stars": 487
         },
         "name": "react-native-search-bar",
         "description": "The high-quality iOS native search bar for react native.",
@@ -8001,13 +8182,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-06-18T17:02:30Z",
+          "updatedAt": "2017-07-17T07:47:13Z",
           "createdAt": "2017-01-23T20:25:06Z",
           "pushedAt": "2017-05-27T22:52:32Z",
           "forks": 5,
           "issues": 1,
-          "watchers": 36,
-          "stars": 36
+          "watchers": 37,
+          "stars": 37
         },
         "name": "react-native-search-header",
         "description": "Easy to use React Native search header component based on material design patterns.",
@@ -8259,13 +8440,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-13T04:38:43Z",
+          "updatedAt": "2017-07-17T05:19:24Z",
           "createdAt": "2016-09-24T12:46:21Z",
           "pushedAt": "2017-05-22T16:55:43Z",
           "forks": 22,
           "issues": 9,
-          "watchers": 125,
-          "stars": 125
+          "watchers": 126,
+          "stars": 126
         },
         "name": "react-native-fbads",
         "description": "Facebook Audience SDK integration for React Native",
@@ -8307,13 +8488,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T17:19:40Z",
+          "updatedAt": "2017-07-17T13:31:06Z",
           "createdAt": "2015-12-16T02:33:09Z",
           "pushedAt": "2017-05-19T22:25:37Z",
           "forks": 122,
           "issues": 45,
-          "watchers": 764,
-          "stars": 764
+          "watchers": 767,
+          "stars": 767
         },
         "name": "react-native-parallax-scroll-view",
         "description": "A ScrollView-like component with parallax and sticky header support.",
@@ -8428,13 +8609,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T11:11:32Z",
+          "updatedAt": "2017-07-17T14:37:53Z",
           "createdAt": "2017-02-22T01:02:18Z",
           "pushedAt": "2017-05-15T18:45:47Z",
-          "forks": 9,
+          "forks": 10,
           "issues": 7,
-          "watchers": 161,
-          "stars": 161
+          "watchers": 162,
+          "stars": 162
         },
         "name": "react-native-material-bottom-navigation",
         "description": "JS Implementation of the Material Design Guidelines' Bottom Navigation for react-native",
@@ -8601,13 +8782,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T05:32:56Z",
+          "updatedAt": "2017-07-17T12:12:00Z",
           "createdAt": "2015-08-10T15:23:48Z",
           "pushedAt": "2017-05-10T17:03:01Z",
-          "forks": 95,
+          "forks": 96,
           "issues": 35,
-          "watchers": 354,
-          "stars": 354
+          "watchers": 356,
+          "stars": 356
         },
         "name": "react-native-dropdown",
         "description": "This is simple implementation of drop down menu",
@@ -8731,13 +8912,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T05:18:08Z",
+          "updatedAt": "2017-07-17T03:46:50Z",
           "createdAt": "2016-01-14T00:49:51Z",
           "pushedAt": "2017-05-04T05:01:15Z",
           "forks": 13,
           "issues": 4,
-          "watchers": 87,
-          "stars": 87
+          "watchers": 88,
+          "stars": 88
         },
         "name": "react-native-root-siblings",
         "description": "A sibling elements manager.",
@@ -8904,13 +9085,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T01:01:34Z",
+          "updatedAt": "2017-07-17T06:41:45Z",
           "createdAt": "2016-04-17T19:33:18Z",
           "pushedAt": "2017-04-27T06:12:23Z",
           "forks": 37,
           "issues": 17,
-          "watchers": 161,
-          "stars": 161
+          "watchers": 162,
+          "stars": 162
         },
         "name": "react-native-fence-html",
         "description": "React Native component that renders HTML as native views",
@@ -9030,13 +9211,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T02:26:04Z",
+          "updatedAt": "2017-07-17T08:34:48Z",
           "createdAt": "2016-02-16T10:10:13Z",
           "pushedAt": "2017-04-20T22:19:58Z",
           "forks": 46,
           "issues": 14,
-          "watchers": 219,
-          "stars": 219
+          "watchers": 218,
+          "stars": 218
         },
         "name": "react-native-lazyload",
         "description": "lazyload for react native",
@@ -9112,13 +9293,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T05:28:11Z",
+          "updatedAt": "2017-07-17T07:32:35Z",
           "createdAt": "2016-07-04T05:31:27Z",
           "pushedAt": "2017-04-12T20:49:54Z",
-          "forks": 19,
+          "forks": 20,
           "issues": 3,
-          "watchers": 132,
-          "stars": 132
+          "watchers": 133,
+          "stars": 133
         },
         "name": "react-native-circular-action-menu",
         "description": "Path-esque circular action menu inspired by CircularFloatingActionMenu.",
@@ -9156,13 +9337,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T18:08:20Z",
+          "updatedAt": "2017-07-17T07:24:16Z",
           "createdAt": "2017-01-09T03:32:10Z",
           "pushedAt": "2017-04-11T03:46:32Z",
           "forks": 13,
           "issues": 3,
-          "watchers": 104,
-          "stars": 104
+          "watchers": 105,
+          "stars": 105
         },
         "name": "react-native-mentions",
         "description": "Mentions textbox for React Native. Works on both ios and android. :tropical_fish: :whale: ",
@@ -9250,13 +9431,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-16T10:05:00Z",
+          "updatedAt": "2017-07-17T13:29:26Z",
           "createdAt": "2015-10-23T14:50:37Z",
           "pushedAt": "2017-04-10T12:07:48Z",
           "forks": 242,
           "issues": 50,
-          "watchers": 1102,
-          "stars": 1102
+          "watchers": 1104,
+          "stars": 1104
         },
         "name": "react-native-gifted-listview",
         "description": "✌️ ListView with pull-to-refresh and infinite scrolling for Android and iOS React-Native apps",
@@ -9299,7 +9480,7 @@
           "updatedAt": "2017-07-16T10:29:12Z",
           "createdAt": "2016-09-23T22:56:14Z",
           "pushedAt": "2017-04-08T20:24:29Z",
-          "forks": 16,
+          "forks": 17,
           "issues": 7,
           "watchers": 96,
           "stars": 96
@@ -9463,13 +9644,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-16T10:11:19Z",
+          "updatedAt": "2017-07-17T15:42:51Z",
           "createdAt": "2016-10-17T04:09:51Z",
           "pushedAt": "2017-04-03T08:01:36Z",
           "forks": 109,
           "issues": 7,
-          "watchers": 1072,
-          "stars": 1072
+          "watchers": 1075,
+          "stars": 1075
         },
         "name": "react-native-foldview",
         "description": "FoldView implemented in JavaScript ⛱",
@@ -9553,13 +9734,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-08T08:10:21Z",
+          "updatedAt": "2017-07-17T12:10:38Z",
           "createdAt": "2015-10-07T03:59:00Z",
           "pushedAt": "2017-03-27T03:24:54Z",
           "forks": 10,
           "issues": 1,
-          "watchers": 69,
-          "stars": 69
+          "watchers": 70,
+          "stars": 70
         },
         "name": "react-native-privacy-snapshot",
         "description": "Obscure passwords and other sensitive personal information when a react-native app transitions to the background",
@@ -9596,13 +9777,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2017-07-15T16:38:07Z",
+          "updatedAt": "2017-07-17T05:17:58Z",
           "createdAt": "2016-12-30T21:42:04Z",
           "pushedAt": "2017-03-14T15:32:59Z",
           "forks": 38,
           "issues": 5,
-          "watchers": 323,
-          "stars": 323
+          "watchers": 325,
+          "stars": 325
         },
         "name": "react-native-circular-slider",
         "description": "React Native component for creating circular slider :radio_button:",
@@ -9829,49 +10010,6 @@
       },
       "score": 30,
       "topicSearchString": ""
-    },
-    {
-      "githubUrl": "https://github.com/joshswan/react-native-autolink",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/joshswan/react-native-autolink",
-          "clone": "https://github.com/joshswan/react-native-autolink.git",
-          "homepage": ""
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2017-07-14T17:03:57Z",
-          "createdAt": "2016-01-28T07:47:29Z",
-          "pushedAt": "2017-02-28T08:45:59Z",
-          "forks": 16,
-          "issues": 1,
-          "watchers": 104,
-          "stars": 104
-        },
-        "name": "react-native-autolink",
-        "description": "Automatic linking of URLs, phone numbers, emails, etc. in strings for React Native",
-        "topics": [
-          "autolinker",
-          "react-native"
-        ]
-      },
-      "images": [],
-      "npmPkg": "react-native-autolink",
-      "npm": {
-        "downloads": 1381,
-        "start": "2017-06-17",
-        "end": "2017-07-16",
-        "period": "month"
-      },
-      "score": 80,
-      "topicSearchString": " autolinker react-native"
     },
     {
       "githubUrl": "https://github.com/yonahforst/react-native-emoji-picker",
@@ -10517,13 +10655,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-15T06:48:30Z",
+          "updatedAt": "2017-07-17T11:02:24Z",
           "createdAt": "2015-04-11T14:15:40Z",
           "pushedAt": "2016-09-02T19:08:01Z",
           "forks": 22,
           "issues": 5,
-          "watchers": 256,
-          "stars": 256
+          "watchers": 257,
+          "stars": 257
         },
         "name": "react-native-effects-view",
         "description": "Use iOS8 UIVisualEffectViews's blur and vibrancy with ReactNative",
@@ -10560,13 +10698,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-13T01:37:44Z",
+          "updatedAt": "2017-07-17T02:43:33Z",
           "createdAt": "2015-04-05T22:44:57Z",
           "pushedAt": "2016-08-27T17:16:45Z",
           "forks": 76,
           "issues": 16,
-          "watchers": 219,
-          "stars": 219
+          "watchers": 220,
+          "stars": 220
         },
         "name": "react-native-markdown",
         "description": "Markdown component for React Native",
@@ -10601,13 +10739,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2017-07-13T05:20:27Z",
+          "updatedAt": "2017-07-17T09:49:15Z",
           "createdAt": "2015-04-08T17:51:29Z",
           "pushedAt": "2016-07-21T08:36:51Z",
           "forks": 50,
           "issues": 13,
-          "watchers": 179,
-          "stars": 179
+          "watchers": 180,
+          "stars": 180
         },
         "name": "react-native-progress-hud",
         "description": "A clean and lightweight progress HUD for your React Native app.",
@@ -10861,7 +10999,7 @@
           "updatedAt": "2017-07-13T13:16:08Z",
           "createdAt": "2016-04-12T16:16:18Z",
           "pushedAt": "2016-05-24T11:06:15Z",
-          "forks": 22,
+          "forks": 21,
           "issues": 4,
           "watchers": 142,
           "stars": 142
@@ -11261,16 +11399,16 @@
     }
   ],
   "topics": {
-    "android": 43,
-    "ios": 44,
+    "android": 46,
+    "ios": 48,
     "mobile": 1,
     "notifications": 1,
     "onesignal": 1,
     "onesignal-instructions": 1,
     "onesignal-notifications": 1,
     "push": 1,
-    "push-notifications": 2,
-    "react-native": 108,
+    "push-notifications": 3,
+    "react-native": 112,
     "react-native-onesignal": 1,
     "linkedin": 1,
     "linkedin-sdk": 1,
@@ -11278,13 +11416,13 @@
     "signin": 1,
     "clean-code": 1,
     "helper": 1,
-    "keyboard": 3,
+    "keyboard": 4,
     "launchimage": 1,
     "react-native-splashscreen": 1,
     "splash-screen": 2,
     "splashscreen": 1,
-    "navigation": 2,
-    "react": 35,
+    "navigation": 3,
+    "react": 37,
     "react-navigation": 2,
     "glsl": 1,
     "universal": 1,
@@ -11308,7 +11446,7 @@
     "flexbox": 1,
     "grid": 1,
     "ios-app": 1,
-    "javascript": 11,
+    "javascript": 12,
     "layout": 1,
     "orientation": 1,
     "percentage": 1,
@@ -11321,7 +11459,7 @@
     "step": 1,
     "viewpager": 2,
     "component": 5,
-    "dialog": 1,
+    "dialog": 2,
     "es6": 1,
     "react-animate": 1,
     "drawer": 1,
@@ -11331,7 +11469,7 @@
     "animated": 2,
     "animation": 5,
     "backdrop": 1,
-    "modal": 5,
+    "modal": 6,
     "chat": 1,
     "pager-component": 1,
     "swipeview": 1,
@@ -11346,8 +11484,8 @@
     "share": 1,
     "uwp": 1,
     "keychain-access": 1,
-    "facebook": 1,
-    "popup": 1,
+    "facebook": 2,
+    "popup": 2,
     "share-popups": 1,
     "twitter": 1,
     "ble": 2,
@@ -11392,7 +11530,7 @@
     "photos": 1,
     "bar-graphs": 1,
     "charts": 2,
-    "cross-platform": 1,
+    "cross-platform": 2,
     "graphs": 1,
     "paths-js": 1,
     "pie-graphs": 1,
@@ -11457,7 +11595,7 @@
     "search": 1,
     "facebook-sdk": 1,
     "native-ads": 1,
-    "analytics": 1,
+    "analytics": 2,
     "app-links": 1,
     "branch": 1,
     "deep-linking": 1,
@@ -11514,6 +11652,8 @@
     "tools": 1,
     "jpeg": 1,
     "resize": 1,
+    "navbar": 1,
+    "iqkeyboardmanager": 1,
     "uikit": 1,
     "chart": 1,
     "react-native-navigation": 1,
@@ -11526,7 +11666,19 @@
     "apple-pay": 1,
     "stripe": 1,
     "javascript-qrcode": 1,
-    "qrcode": 1
+    "qrcode": 1,
+    "auth": 1,
+    "database": 1,
+    "fcm": 1,
+    "firebase": 1,
+    "google": 1,
+    "native-sdks": 1,
+    "react-native-app": 1,
+    "realtime-database": 1,
+    "remote-config": 1,
+    "storage": 1,
+    "transactions": 1,
+    "web-sdk": 1
   },
   "topicsList": [
     "actionbutton",
@@ -11550,6 +11702,7 @@
     "aspect-ratio",
     "aspectratio",
     "asyncstorage",
+    "auth",
     "autocomplete",
     "autolink",
     "autolinker",
@@ -11593,6 +11746,7 @@
     "currency",
     "d3",
     "data-visualization",
+    "database",
     "date",
     "datetime",
     "debugging",
@@ -11609,12 +11763,15 @@
     "fab",
     "facebook",
     "facebook-sdk",
+    "fcm",
     "fill",
+    "firebase",
     "flatlist",
     "flexbox",
     "floatingactionbutton",
     "fuzzy-links",
     "glsl",
+    "google",
     "google-maps",
     "google-place-api",
     "google-place-autocomplete",
@@ -11641,6 +11798,7 @@
     "ios-calendar-events",
     "ios-lib",
     "iphone",
+    "iqkeyboardmanager",
     "javascript",
     "javascript-qrcode",
     "jpeg",
@@ -11672,7 +11830,9 @@
     "modal",
     "native-ads",
     "native-platforms",
+    "native-sdks",
     "nativebase",
+    "navbar",
     "navigation",
     "nestedscrollview",
     "network",
@@ -11714,6 +11874,7 @@
     "react-animate",
     "react-native",
     "react-native-animatable",
+    "react-native-app",
     "react-native-button",
     "react-native-calendar-picker",
     "react-native-checkbox",
@@ -11729,8 +11890,10 @@
     "react-toast",
     "reactjs",
     "reactnative",
+    "realtime-database",
     "redux",
     "redux-form",
+    "remote-config",
     "resize",
     "responsive",
     "responsive-grid",
@@ -11758,6 +11921,7 @@
     "splashscreen",
     "statusbar",
     "step",
+    "storage",
     "stripe",
     "styled-components",
     "stylesheet",
@@ -11777,6 +11941,7 @@
     "tinder",
     "toast",
     "tools",
+    "transactions",
     "tree",
     "twitter",
     "typography",
@@ -11794,6 +11959,7 @@
     "ux",
     "viewpager",
     "virtualizedlist",
+    "web-sdk",
     "webgl"
   ]
 }
