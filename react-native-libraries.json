@@ -1536,5 +1536,12 @@
     "android": true,
     "expo": false,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
   }
 ]
