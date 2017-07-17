@@ -1,5 +1,62 @@
 [
   {
+    "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/jodybrewster/react-native-linkedin-login",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/zo0r/react-native-push-notification",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/root-two/react-native-drawer",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/react-community/react-native-image-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/Andr3wHur5t/react-native-keyboard-spacer",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/davodesign84/react-native-mixpanel",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/crazycodeboy/react-native-splash-screen",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/react-community/react-navigation",
     "ios": true,
     "android": true,
@@ -476,7 +533,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/Purii/react-native-tableview-simple#examples",
+    "githubUrl": "https://github.com/Purii/react-native-tableview-simple",
     "ios": true,
     "android": true,
     "expo": true
@@ -550,6 +607,12 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/evollu/react-native-fcm",
+    "ios": true,
+    "android": true,
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/crazycodeboy/react-native-easy-toast",
@@ -1003,11 +1066,6 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/naoufal/react-native-speech",
     "ios": true,
     "android": true,
@@ -1015,16 +1073,6 @@
   },
   {
     "githubUrl": "https://github.com/aakashns/react-native-dialogs",
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/joeferraro/react-native-cookies",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/doefler/react-native-social-share",
-    "ios": true,
     "android": true
   },
   {
@@ -1231,7 +1279,7 @@
     "githubUrl": "https://github.com/bamlab/react-native-image-resizer",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/remobile/react-native-toast",
@@ -1268,6 +1316,20 @@
     "android": true,
     "expo": true,
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-simple-dialogs",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-keyboard-manager",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/avocode/nachos-ui",
@@ -1442,6 +1504,38 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
+    "ios": true,
+    "android": true,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/mfrachet/rn-placeholder",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/tipsi/tipsi-stripe",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/maicki/react-native-event-bridge",
+    "ios": true,
+    "android": true,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase",
