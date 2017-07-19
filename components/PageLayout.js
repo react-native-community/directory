@@ -11,6 +11,7 @@ export default props => {
           box-sizing: border-box;
           margin: 0 auto 0 auto;
           display: flex;
+          flex-direction: row-reverse;
           align-items: flex-start;
           justify-content: space-between;
 
@@ -32,7 +33,7 @@ export default props => {
 
           @media (max-width: 768px) {
             padding: 0 0 0 0;
-            border-top: 1px solid #ececec;
+            border-bottom: 1px solid #ececec;
             border-left: none;
             flex-shrink: unset;
             flex-basis: auto;
@@ -40,11 +41,11 @@ export default props => {
           }
         }
       `}</style>
-      <div className="page-layout-left">
-        {props.children}
-      </div>
       <div className="page-layout-right">
         {props.rightSide}
+      </div>
+      <div className="page-layout-left">
+        {props.children}
       </div>
     </div>
   );

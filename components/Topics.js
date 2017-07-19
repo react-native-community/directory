@@ -45,9 +45,23 @@ export default class Topics extends React.PureComponent {
             font-family: 'office-code-medium', monospace;
             font-weight: 400;
           }
+
+          ul {
+            @media (max-width: 768px) {
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              height: 114px;
+              margin: 0 -24px -10px;
+              padding: 0 24px 10px;
+              overflow-y: auto;
+            }
+          }
         `}</style>
         <h2 className="topics-heading">Topics</h2>
-        {topicElements}
+        <ul>
+          {topicElements}
+        </ul>
       </div>
     );
   }
