@@ -51,6 +51,13 @@ class Index extends React.PureComponent {
     rangeEnd: PropTypes.number,
   };
 
+  _handleEndReached = () =>
+    this.props.dispatch({
+      type: 'SET_PAGINATION',
+      start: this.props.rangeStart,
+      end: this.props.rangeEnd + 10,
+    });
+
   render() {
     const isMobile = isMobileBrowser(this.props.userAgent);
 
@@ -69,11 +76,11 @@ class Index extends React.PureComponent {
 
     const rightSide = (
       <div>
+        <Topics topics={this.props.topics} topicsList={this.props.topicsList} />
         <Queries
           topic={this.props.queryTopic}
           search={this.props.querySearch}
         />
-        <Topics topics={this.props.topics} topicsList={this.props.topicsList} />
       </div>
     );
 
@@ -82,24 +89,11 @@ class Index extends React.PureComponent {
         <Header count={this.props.libraries.length} />
         <Navigation topic={this.props.queryTopic} sortBy={this.props.sortBy} />
         <PageLayout rightSide={rightSide}>
-          <Pagination
-            dispatch={this.props.dispatch}
-            isMobile={isMobile}
-            libraries={libraries}
-            rangeStart={this.props.rangeStart}
-            rangeEnd={this.props.rangeEnd}
-          />
           <LibraryList
             isMobile={isMobile}
             topics={this.props.topics}
             libraries={paginatedLibraries}
-          />
-          <Pagination
-            dispatch={this.props.dispatch}
-            isMobile={isMobile}
-            libraries={libraries}
-            rangeStart={this.props.rangeStart}
-            rangeEnd={this.props.rangeEnd}
+            onEndReached={this._handleEndReached}
           />
         </PageLayout>
         {isMobile ? <GlobalModal /> : <GlobalTooltip />}

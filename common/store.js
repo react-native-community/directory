@@ -15,7 +15,7 @@ const INITIAL_STATE = {
   querySearch: '',
   queryTopic: undefined,
   rangeStart: 0,
-  rangeEnd: 50,
+  rangeEnd: 10,
 };
 
 const handleSorting = (state, sortBy) => {
