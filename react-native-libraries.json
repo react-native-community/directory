@@ -62,7 +62,10 @@
     "android": true,
     "web": true,
     "expo": true,
-    "goldstar": true
+    "goldstar": true,
+    "examples": [
+      "https://snack.expo.io/rJnUK4nrZ"
+    ]
   },
   {
     "githubUrl": "https://github.com/gre/gl-react",
@@ -97,14 +100,20 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "goldstar": true
+    "goldstar": true,
+    "examples": [
+      "https://snack.expo.io/SJfJguhrW"
+    ]
   },
   {
     "githubUrl": "https://github.com/wix/react-native-calendars",
     "ios": true,
     "android": true,
     "expo": true,
-    "goldstar": true
+    "goldstar": true,
+    "examples": [
+      "https://snack.expo.io/HkoXUdhr-"
+    ]
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-vector-icons",
@@ -154,7 +163,10 @@
     "githubUrl": "https://github.com/react-native-community/react-native-modal",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/ByBCD_2r-"
+    ]
   },
   {
     "githubUrl": "https://github.com/react-native-training/react-native-elements",
@@ -166,14 +178,21 @@
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+
+    ]
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
     "ios": true,
     "android": true,
     "expo": true,
-    "goldstar": true
+    "goldstar": true,
+    "examples": [
+      "https://snack.expo.io/HJjbO4nSW",
+      "https://expo.io/@satya164/react-native-tab-view-demos"
+    ]
   },
   {
     "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
@@ -384,7 +403,10 @@
     "githubUrl": "https://github.com/joshswan/react-native-autolink",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/SkRP2Ehrb"
+    ]
   },
   {
     "githubUrl": "https://github.com/obipawan/react-native-hyperlink",
@@ -470,7 +492,10 @@
     "npmPkg": "apsl-react-native-button",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rJpy3w3S-"
+    ]
   },
   {
     "githubUrl": "https://github.com/xgfe/react-native-datepicker",
@@ -482,25 +507,37 @@
     "githubUrl": "https://github.com/FaridSafi/react-native-google-places-autocomplete",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/Skd57d2r-"
+    ]
   },
   {
     "githubUrl": "https://github.com/jeanregisser/react-native-slider",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/H1cnedhBW"
+    ]
   },
   {
     "githubUrl": "https://github.com/sbycrosz/react-native-credit-card-input",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rJ7q6PhSb"
+    ]
   },
   {
     "githubUrl": "https://github.com/halilb/react-native-photo-browser",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/ryzXJOhH-"
+    ]
   },
   {
     "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
@@ -518,7 +555,10 @@
     "githubUrl": "https://github.com/mastermoo/react-native-action-button",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rkjmEd3rZ"
+    ]
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-form",
@@ -573,7 +613,11 @@
     "githubUrl": "https://github.com/gitim/react-native-sortable-list",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/Syd1a4hHW",
+      "https://snack.expo.io/r1-cTNhH-"
+    ]
   },
   {
     "githubUrl": "https://github.com/JackPu/react-native-percentage-circle",
