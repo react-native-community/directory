@@ -84,7 +84,9 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/SJdIbHe4b"],
+    "examples": [
+      "https://snack.expo.io/SJdIbHe4b"
+    ],
     "goldstar": true
   },
   {
@@ -92,7 +94,9 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/H1zOFxnN-"],
+    "examples": [
+      "https://snack.expo.io/H1zOFxnN-"
+    ],
     "goldstar": true
   },
   {
@@ -151,7 +155,10 @@
     "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/SJIOAOUIb"
+    ]
   },
   {
     "githubUrl": "https://github.com/maxs15/react-native-modalbox",
@@ -180,7 +187,7 @@
     "android": true,
     "expo": true,
     "examples": [
-
+      "https://snack.expo.io/SyOdDdL8b"
     ]
   },
   {
@@ -199,7 +206,9 @@
     "ios": true,
     "android": false,
     "expo": true,
-    "examples": ["https://expo.io/@community/bedtime"]
+    "examples": [
+      "https://expo.io/@community/bedtime"
+    ]
   },
   {
     "githubUrl": "https://github.com/archriss/react-native-snap-carousel",
@@ -351,7 +360,10 @@
     "githubUrl": "https://github.com/oblador/react-native-lightbox",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rkzzeFUIW"
+    ]
   },
   {
     "githubUrl": "https://github.com/halilb/react-native-textinput-effects",
@@ -448,7 +460,10 @@
     "githubUrl": "https://github.com/leecade/react-native-swiper",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/BkaD_dIL-"
+    ]
   },
   {
     "githubUrl": "https://github.com/skv-headless/react-native-scrollable-tab-view",
@@ -479,7 +494,10 @@
     "githubUrl": "https://github.com/dancormier/react-native-swipeout",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/HyQ25dU8Z"
+    ]
   },
   {
     "githubUrl": "https://github.com/appintheair/react-native-looped-carousel",
@@ -582,20 +600,28 @@
     "githubUrl": "https://github.com/expo/react-native-read-more-text",
     "ios": true,
     "android": true,
-    "examples": ["https://expo.io/@community/read-more-example"],
+    "examples": [
+      "https://expo.io/@community/read-more-example"
+    ],
     "expo": true
   },
   {
     "githubUrl": "https://github.com/instea/react-native-popup-menu",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rkQrMFI8W"
+    ]
   },
   {
     "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/By-aQF8LZ"
+    ]
   },
   {
     "githubUrl": "https://github.com/mohebifar/react-native-loader",
@@ -631,7 +657,9 @@
     "android": true,
     "expo": true,
     "npmPkg": "@expo/react-native-action-sheet",
-    "examples": ["https://expo.io/@community/react-native-action-sheet-example"]
+    "examples": [
+      "https://expo.io/@community/react-native-action-sheet-example"
+    ]
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-image-header-scroll-view",
@@ -643,7 +671,9 @@
     "githubUrl": "https://github.com/expo/react-native-fade-in-image",
     "ios": true,
     "android": true,
-    "examples": ["https://exp.host/@community/fade-in-image-example"],
+    "examples": [
+      "https://exp.host/@community/fade-in-image-example"
+    ],
     "expo": true
   },
   {
@@ -736,7 +766,10 @@
     "githubUrl": "https://github.com/l-urence/react-native-autocomplete-input",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rJxdeFIIb"
+    ]
   },
   {
     "githubUrl": "https://github.com/aksonov/react-native-tabs",
@@ -748,13 +781,19 @@
     "githubUrl": "https://github.com/GeekyAnts/react-native-easy-grid",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/S1QYWFILW"
+    ]
   },
   {
     "githubUrl": "https://github.com/ArnaudRinquin/react-native-radio-buttons",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/Bk8-1FILb"
+    ]
   },
   {
     "githubUrl": "https://github.com/Spikef/react-native-gesture-password",
@@ -816,7 +855,9 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://getexponent.com/@xcarpentier/react-native-country-picker-demo"]
+    "examples": [
+      "https://getexponent.com/@xcarpentier/react-native-country-picker-demo"
+    ]
   },
   {
     "githubUrl": "https://github.com/larsvinter/react-native-awesome-button",
@@ -834,7 +875,10 @@
     "githubUrl": "https://github.com/alexbrillant/react-native-deck-swiper",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/rJBRhOLU-"
+    ]
   },
   {
     "githubUrl": "https://github.com/d-a-n/react-native-webbrowser",
@@ -1054,7 +1098,9 @@
     "ios": true,
     "android": true,
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/webbrowser.html",
-    "examples": ["https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"]
+    "examples": [
+      "https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"
+    ]
   },
   {
     "githubUrl": "https://github.com/fullstackreact/react-native-oauth",
@@ -1073,7 +1119,9 @@
     "ios": true,
     "android": true,
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/pedometer.html",
-    "examples": ["https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"]
+    "examples": [
+      "https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"
+    ]
   },
   {
     "githubUrl": "https://github.com/rt2zz/react-native-contacts",
