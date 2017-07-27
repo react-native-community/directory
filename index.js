@@ -31,6 +31,7 @@ const getAllowedSortByName = req => {
 app.prepare().then(() => {
   const server = express();
 
+  server.use('/static', express.static('static'));
   if (isProduction) {
     server.use(compression());
   }
