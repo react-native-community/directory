@@ -1650,5 +1650,12 @@
     "android": true,
     "expo": false,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/malsapp/react-native-photo-upload",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
