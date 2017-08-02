@@ -28,7 +28,12 @@ export default () => {
       `}</style>
       <div className="footer-container">
         <p className="footer-container-text">
-          Want to learn more about React Native? Check out the{' '}
+          Missing a library?{' '}
+          <Link
+            isStyled
+            href="https://github.com/react-community/native-directory#how-to-add-a-library">
+            Add it to the directory
+          </Link>. Want to learn more about React Native? Check out the{' '}
           <Link
             isStyled
             href="https://facebook.github.io/react-native/docs/getting-started.html">
