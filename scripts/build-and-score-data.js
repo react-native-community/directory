@@ -5,6 +5,7 @@ import jsonfile from 'jsonfile';
 import _ from 'lodash';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
+import fetchLicense from "./fetch-license";
 import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
@@ -35,6 +36,10 @@ const buildAndScoreData = async () => {
   console.log('** Loading data from Github');
   await sleep(1000);
   let data = await loadRepositoryDataAsync();
+
+  console.log('** Fetching license type');
+  await sleep(1000);
+  data = await Promise.all(data.map(d => fetchLicense(d, d.github.fullName)));
 
   console.log('\n** Scraping images from README');
   await sleep(1000);

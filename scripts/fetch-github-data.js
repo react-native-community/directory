@@ -40,10 +40,11 @@ const createRepoDataWithResponse = json => {
       pushedAt: json.pushed_at,
       forks: json.forks,
       issues: json.open_issues,
-      watchers: json.watchers_count,
+      subscribers: json.subscribers_count,
       stars: json.stargazers_count,
     },
     name: json.name,
+    fullName: json.full_name,
     description: json.description,
     topics: json.topics,
   };
