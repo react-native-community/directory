@@ -10,7 +10,9 @@
     "create-data": "babel-node scripts/build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3",
     "script": "babel-node --presets es2015,stage-1,stage-2,stage-3",
     "lint": "eslint .",
-    "prettier": "eslint . --fix"
+    "test": "babel-node scripts/validate-libraries.js --presets es2015,stage-1,stage-2,stage-3",
+    "prettier": "eslint . --fix",
+    "precommit": "npm test"
   },
   "engines": {
     "node": "7.2.x"
@@ -48,6 +50,7 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.14.3",
     "prettier": "^1.5.2"
   }
 }

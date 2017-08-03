@@ -237,13 +237,6 @@
     "goldstar": true
   },
   {
-    "githubUrl": "https://github.com/expo/react-native-action-sheet",
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "npmPkg": "@expo/react-native-action-sheet"
-  },
-  {
     "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
     "ios": true,
     "android": true
@@ -253,11 +246,6 @@
     "ios": true,
     "android": true,
     "expo": "https://docs.expo.io/versions/latest/sdk/video.html"
-  },
-  {
-    "githubUrl": "https://github.com/naoufal/react-native-speech",
-    "ios": true,
-    "android": false
   },
   {
     "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
@@ -1174,37 +1162,8 @@
   {
     "githubUrl": "https://github.com/naoufal/react-native-speech",
     "ios": true,
-    "android": true,
+    "android": false,
     "unmaintained": true
-  },
-  {
-    "githubUrl": "https://github.com/aakashns/react-native-dialogs",
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/chirag04/react-native-mail",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/kayla-tech/react-native-card-io",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/tolu360/react-native-google-places",
-    "ios": true,
-    "android": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-wordpress-editor",
