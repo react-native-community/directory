@@ -1,4 +1,11 @@
 [
+   {
+    "githubUrl": "https://github.com/wonday/react-native-pdf",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
   {
     "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
     "ios": true,
