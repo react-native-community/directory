@@ -17,9 +17,9 @@ export const createNavigationItemsFromProps = props => [
     href: `/compatibility${props.topic ? `/${props.topic}` : ''}`,
   },
   {
-    text: 'Health',
-    isActive: props.sortBy === 'health',
-    href: `/health${props.topic ? `/${props.topic}` : ''}`,
+    text: 'Quality',
+    isActive: props.sortBy === 'quality',
+    href: `/quality${props.topic ? `/${props.topic}` : ''}`,
   },
   {
     text: 'Downloads',

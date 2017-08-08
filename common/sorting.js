@@ -71,7 +71,7 @@ export const updated = (state, libraries, sortBy) => {
   return { ...state, libraries, sortBy };
 };
 
-export const health = (state, libraries, sortBy) => {
+export const quality = (state, libraries, sortBy) => {
   libraries.sort((a, b) => {
     return b.score - a.score;
   });

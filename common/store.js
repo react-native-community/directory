@@ -43,8 +43,8 @@ const handleSorting = (state, sortBy) => {
     return Sorting.updated(state, [...originalData], sortBy);
   }
 
-  if (sortBy === 'health') {
-    return Sorting.health(state, [...originalData], sortBy);
+  if (sortBy === 'quality') {
+    return Sorting.quality(state, [...originalData], sortBy);
   }
 
   return { ...state, libraries: [...originalData], sortBy };

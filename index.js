@@ -15,7 +15,7 @@ const getAllowedSortByName = req => {
   [
     'recommended',
     'compatibility',
-    'health',
+    'quality',
     'downloads',
     'issues',
     'stars',

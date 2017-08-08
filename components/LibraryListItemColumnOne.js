@@ -25,7 +25,8 @@ export default props => {
 
         .column-one-bottom-label {
           font-family: 'office-code-medium', monospace;
-          font-size: 0.65rem;
+          font-size: 0.75rem;
+          font-weight: 600;
           text-transform: uppercase;
           margin: 16px 0 8px 0;
         }
@@ -57,7 +58,7 @@ export default props => {
       </div>
 
       <div className="column-one-bottom">
-        <div className="column-one-bottom-label">Health</div>
+        <div className="column-one-bottom-label">Quality</div>
         <PercentageBar percentageRemaining={100 - props.library.score} />
       </div>
     </LibraryListColumn>

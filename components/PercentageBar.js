@@ -102,7 +102,7 @@ export default class PercentageBar extends React.PureComponent {
             position: absolute;
             left: 0;
             right: 0;
-            width: 24px;
+            width: 48px;
             text-align: center;
             margin: auto;
           }
@@ -126,7 +126,7 @@ export default class PercentageBar extends React.PureComponent {
         </div>
         <div className="percentage-bar-axis">
           <span className="percentage-bar-axis-first">0</span>
-          <span className="percentage-bar-axis-middle">50</span>
+          <span className="percentage-bar-axis-middle">GOOD</span>
           <span className="percentage-bar-axis-last">100</span>
         </div>
       </div>

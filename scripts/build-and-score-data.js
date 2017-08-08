@@ -5,7 +5,7 @@ import jsonfile from 'jsonfile';
 import _ from 'lodash';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
-import fetchLicense from "./fetch-license";
+import fetchLicense from './fetch-license';
 import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
