@@ -85,7 +85,8 @@
     "githubUrl": "https://github.com/gre/gl-react",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/n4kz/react-native-pages",
