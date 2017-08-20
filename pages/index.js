@@ -21,16 +21,18 @@ import Queries from '../components/Queries';
 
 class Index extends React.PureComponent {
   static async getInitialProps({ req, query, store }) {
-    if (query.topic) {
-      store.dispatch({ type: 'TOPIC_PICKED', value: query.topic });
+    const { topic, search, sortBy, libraries } = query;
+
+    if (topic) {
+      store.dispatch({ type: 'TOPIC_PICKED', value: topic });
     }
 
-    if (query.search) {
-      store.dispatch({ type: 'SEARCH_LIBRARY', value: query.search });
+    if (search) {
+      store.dispatch({ type: 'SEARCH_LIBRARY', value: search });
     }
 
-    if (query.sortBy) {
-      store.dispatch({ type: 'SORT_BY', sortBy: query.sortBy });
+    if (sortBy) {
+      store.dispatch({ type: 'SORT_BY', sortBy, libraries });
     }
 
     return req

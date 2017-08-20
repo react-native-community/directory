@@ -9,25 +9,23 @@ export default props => {
     <div className={columnClassNames}>
       <style jsx>{`
         .library-list-column {
-          flex-basis: 30%;
-          min-width: 30%;
+          width: 30%;
           padding: 0 24px 0 0;
           overflow-wrap: break-word;
           word-break: break-word;
 
           @media (max-width: 600px) {
-            flex-basis: 100%;
+            width: 100%;
             padding: 0 0 0 0;
             margin: 0 0 16px 0;
           }
         }
 
         .library-list-column--wide {
-          flex-basis: 40%;
-          min-width: 40%;
+          width: 40%;
 
           @media (max-width: 600px) {
-            flex-basis: 100%;
+            width: 100%;
           }
         }
 

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import LibraryListItemColumnOne from '../components/LibraryListItemColumnOne';
 import LibraryListItemColumnTwo from '../components/LibraryListItemColumnTwo';
-import LibraryListItemColumnThree from '../components/LibraryListItemColumnThree';
+import LibraryListItemColumnThree
+  from '../components/LibraryListItemColumnThree';
 
 export default class LibraryListItem extends React.PureComponent {
   static propTypes = {
@@ -17,7 +18,7 @@ export default class LibraryListItem extends React.PureComponent {
       <div className="library-list-item">
         <style jsx>{`
           .library-list-item {
-            display: 'flex';
+            display: flex;
             width: 100%;
             padding: 27px 0 27px 0;
             border-bottom: 1px solid #ececec;

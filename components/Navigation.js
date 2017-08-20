@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { createNavigationItemsFromProps } from '../common/static-list-functions';
+import {
+  createNavigationItemsFromProps,
+} from '../common/static-list-functions';
 
 import SearchInput from '../components/SearchInput';
 import NavigationItem from '../components/NavigationItem';
 
-const renderNavigationItem = data =>
-  <NavigationItem key={`navigation-${data.text}`} data={data} />;
+const renderNavigationItem = data => (
+  <NavigationItem key={`navigation-${data.text}`} data={data} />
+);
 
 export default class Navigation extends React.PureComponent {
   static propTypes = {

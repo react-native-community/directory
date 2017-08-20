@@ -81,5 +81,5 @@ class SearchInput extends React.PureComponent {
 }
 
 export default connect(state => {
-  return { search: state.search };
+  return { search: state.querySearch };
 })(SearchInput);

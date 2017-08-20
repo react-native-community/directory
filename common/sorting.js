@@ -1,12 +1,12 @@
-export const recommended = (state, libraries, sortBy) => {
+export const recommended = libraries => {
   libraries.sort((a, b) => {
     return a.goldstar === b.goldstar ? 0 : a.goldstar ? -1 : 1;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const compatibility = (state, libraries, sortBy) => {
+export const compatibility = libraries => {
   libraries.sort((a, b) => {
     const aCompat = [
       1,
@@ -31,26 +31,26 @@ export const compatibility = (state, libraries, sortBy) => {
     return bCompat - aCompat;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const issues = (state, libraries, sortBy) => {
+export const issues = libraries => {
   libraries.sort((a, b) => {
     return b.github.stats.issues - a.github.stats.issues;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const stars = (state, libraries, sortBy) => {
+export const stars = libraries => {
   libraries.sort((a, b) => {
     return b.github.stats.stars - a.github.stats.stars;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const downloads = (state, libraries, sortBy) => {
+export const downloads = libraries => {
   libraries.sort((a, b) => {
     let bDownloads = b.npm.downloads ? b.npm.downloads : 0;
     let aDownloads = a.npm.downloads ? a.npm.downloads : 0;
@@ -58,23 +58,23 @@ export const downloads = (state, libraries, sortBy) => {
     return bDownloads - aDownloads;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const updated = (state, libraries, sortBy) => {
+export const updated = libraries => {
   libraries.sort((a, b) => {
     return (
       new Date(b.github.stats.pushedAt) - new Date(a.github.stats.pushedAt)
     );
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
 
-export const quality = (state, libraries, sortBy) => {
+export const quality = libraries => {
   libraries.sort((a, b) => {
     return b.score - a.score;
   });
 
-  return { ...state, libraries, sortBy };
+  return libraries;
 };
