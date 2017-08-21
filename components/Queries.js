@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import { isEmptyOrNull } from '../common/strings';
 
 export default class Queries extends React.PureComponent {
   static propTypes = {
-    topic: PropTypes.string,
-    search: PropTypes.string,
+    queryTopic: PropTypes.string,
+    querySearch: PropTypes.string,
+    sortBy: PropTypes.string,
   };
 
   _handleClearTopic = () => {
@@ -19,7 +19,10 @@ export default class Queries extends React.PureComponent {
   };
 
   render() {
-    if (isEmptyOrNull(this.props.search) && isEmptyOrNull(this.props.topic)) {
+    if (
+      isEmptyOrNull(this.props.querySearch) &&
+      isEmptyOrNull(this.props.queryTopic)
+    ) {
       return null;
     }
 
@@ -76,13 +79,13 @@ export default class Queries extends React.PureComponent {
         `}</style>
         <h2 className="queries-heading">Your queries</h2>
         <ul className="queries-list">
-          {!isEmptyOrNull(this.props.search) &&
+          {!isEmptyOrNull(this.props.querySearch) &&
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Searching for{' '}
                 <strong className="queries-list-item-emphasis">
                   “
-                  {this.props.search}
+                  {this.props.querySearch}
                   ”
                 </strong>{' '}
                 —{' '}
@@ -96,12 +99,12 @@ export default class Queries extends React.PureComponent {
               </div>
             </li>}
 
-          {!isEmptyOrNull(this.props.topic) &&
+          {!isEmptyOrNull(this.props.queryTopic) &&
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Selected{' '}
                 <strong className="queries-list-item-emphasis">
-                  “{this.props.topic}
+                  “{this.props.queryTopic}
                   ”{' '}
                 </strong>{' '}
                 —{' '}

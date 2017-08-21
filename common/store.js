@@ -2,11 +2,8 @@ import { createStore } from 'redux';
 import data from '../build/data.json';
 
 const defaultLibraries = [...data.libraries];
-
 const INITIAL_STATE = {
   libraries: defaultLibraries,
-  topics: data.topics,
-  topicsList: data.topicsList,
   tooltip: null,
   modal: null,
   sortBy: 'updated',
@@ -33,7 +30,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case 'SEARCH_LIBRARY':
       return { ...state, querySearch: action.value };
     case 'TOPIC_PICKED':
-      return { ...state, queryTopic: action.value, querySearch: '' };
+      return { ...state, queryTopic: action.value };
     case 'CLEAR_TOPIC':
       return { ...state, queryTopic: '' };
     case 'CLEAR_SEARCH':

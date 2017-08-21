@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
-class SearchInput extends React.PureComponent {
+export default class SearchInput extends React.PureComponent {
   static PropTypes = {
-    search: PropTypes.string,
+    query: PropTypes.string,
   };
 
   _handleChange = e => {
-    this.props.dispatch({
-      type: 'SEARCH_LIBRARY',
-      value: e.target.value.toLowerCase(),
-    });
+    this.props.onSearch(e.target.value.toLowerCase());
   };
 
   render() {
@@ -73,13 +69,9 @@ class SearchInput extends React.PureComponent {
           onChange={this._handleChange}
           className="search-input-control"
           placeholder={this.props.placeholder}
-          value={this.props.search}
+          value={this.props.query}
         />
       </div>
     );
   }
 }
-
-export default connect(state => {
-  return { search: state.querySearch };
-})(SearchInput);

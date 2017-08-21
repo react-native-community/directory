@@ -15,7 +15,8 @@ const renderNavigationItem = data => (
 export default class Navigation extends React.PureComponent {
   static propTypes = {
     sortBy: PropTypes.string,
-    topic: PropTypes.string,
+    querySearch: PropTypes.string,
+    onSearch: PropTypes.func,
   };
 
   render() {
@@ -64,7 +65,11 @@ export default class Navigation extends React.PureComponent {
           }
         `}</style>
         <div className="navigation-container">
-          <SearchInput placeholder={`Type here...`} />
+          <SearchInput
+            placeholder={`Type here...`}
+            query={this.props.querySearch}
+            onSearch={this.props.onSearch}
+          />
           <div className="navigation-container-elements">
             <span className="navigation-container-title">
               <span className="navigation-container-title-text">

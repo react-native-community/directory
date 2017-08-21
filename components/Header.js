@@ -1,17 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as Routing from '../common/routing';
-
 import Link from '../components/Link';
 
 export default class Header extends React.PureComponent {
   static propTypes = {
     count: PropTypes.number,
-  };
-
-  _handleClick = () => {
-    Routing.push('/');
   };
 
   render() {
@@ -65,7 +59,6 @@ export default class Header extends React.PureComponent {
               alt="Native Directory logo"
               width="64"
               height="64"
-              onClick={this._handleClick}
             />
           </a>
           <div className="header-contents-text">

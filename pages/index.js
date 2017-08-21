@@ -20,6 +20,17 @@ import Pagination from '../components/Pagination';
 import Queries from '../components/Queries';
 
 class Index extends React.PureComponent {
+  static propTypes = {
+    dispatch: PropTypes.func,
+    libraries: PropTypes.array,
+    querySearch: PropTypes.string,
+    queryTopic: PropTypes.string,
+    sortBy: PropTypes.string,
+    userAgent: PropTypes.string,
+    rangeStart: PropTypes.number,
+    rangeEnd: PropTypes.number,
+  };
+
   static async getInitialProps({ req, query, store }) {
     const { topic, search, sortBy, libraries } = query;
 
@@ -40,17 +51,11 @@ class Index extends React.PureComponent {
       : { userAgent: navigator.userAgent };
   }
 
-  static propTypes = {
-    dispatch: PropTypes.func,
-    libraries: PropTypes.array,
-    querySearch: PropTypes.string,
-    queryTopic: PropTypes.string,
-    sortBy: PropTypes.string,
-    topics: PropTypes.object,
-    topicsList: PropTypes.array,
-    userAgent: PropTypes.string,
-    rangeStart: PropTypes.number,
-    rangeEnd: PropTypes.number,
+  _handleSearch = value => {
+    return this.props.dispatch({
+      type: 'SEARCH_LIBRARY',
+      value,
+    });
   };
 
   render() {
@@ -72,17 +77,22 @@ class Index extends React.PureComponent {
     const rightSide = (
       <div>
         <Queries
-          topic={this.props.queryTopic}
-          search={this.props.querySearch}
+          sortBy={this.props.sortBy}
+          queryTopic={this.props.queryTopic}
+          querySearch={this.props.querySearch}
         />
-        <Topics topics={this.props.topics} topicsList={this.props.topicsList} />
+        <Topics />
       </div>
     );
 
     return (
       <Document>
         <Header count={this.props.libraries.length} />
-        <Navigation topic={this.props.queryTopic} sortBy={this.props.sortBy} />
+        <Navigation
+          onSearch={this._handleSearch}
+          querySearch={this.props.querySearch}
+          sortBy={this.props.sortBy}
+        />
         <PageLayout rightSide={rightSide}>
           <Pagination
             dispatch={this.props.dispatch}
@@ -91,11 +101,7 @@ class Index extends React.PureComponent {
             rangeStart={this.props.rangeStart}
             rangeEnd={this.props.rangeEnd}
           />
-          <LibraryList
-            isMobile={isMobile}
-            topics={this.props.topics}
-            libraries={paginatedLibraries}
-          />
+          <LibraryList isMobile={isMobile} libraries={paginatedLibraries} />
           <Pagination
             dispatch={this.props.dispatch}
             isMobile={isMobile}
@@ -115,8 +121,6 @@ export default withRedux(initStore, state => {
   return {
     sortBy: state.sortBy,
     libraries: state.libraries,
-    topics: state.topics,
-    topicsList: state.topicsList,
     queryTopic: state.queryTopic,
     querySearch: state.querySearch,
     rangeStart: state.rangeStart,

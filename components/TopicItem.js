@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import * as Routing from '../common/routing';
-
 class TopicItem extends React.PureComponent {
   static propTypes = {
     count: PropTypes.number,
   };
 
   render() {
+    const href = `/${this.props.sortBy}/${this.props.children}`;
     return (
-      <a className="item" href={`/${this.props.sortBy}/${this.props.children}`}>
+      <a className="item" href={href}>
         <style jsx>{`
           .item {
             display: inline-block;

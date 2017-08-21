@@ -7,6 +7,9 @@ import Link from '../components/Link';
 import TopicItem from '../components/TopicItem';
 import ImageTooltipContainer from '../components/ImageTooltipContainer';
 import LibraryListColumn from '../components/LibraryListColumn';
+import data from '../build/data.json';
+
+const { topics } = data;
 
 export default props => {
   return (
@@ -73,13 +76,13 @@ export default props => {
 
       {props.library.github.topics
         ? <div className="column-two-section">
-            {props.library.github.topics.map(each =>
+            {props.library.github.topics.map(each => (
               <TopicItem
                 key={`list-${props.library.name}-${each}`}
-                count={props.topics[each]}>
+                count={topics[each]}>
                 {each}
               </TopicItem>
-            )}
+            ))}
           </div>
         : undefined}
     </LibraryListColumn>
