@@ -1631,5 +1631,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/gre/react-native-webgl",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
