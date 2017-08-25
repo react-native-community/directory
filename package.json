@@ -1,5 +1,5 @@
 {
-  "name": "react-native-libraries",
+  "name": "native-directory",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jsonfile": "^3.0.1",
     "lodash": "^4.17.4",
-    "next": "^2.4.9",
+    "next": "^3.0.6",
     "next-redux-wrapper": "^1.2.0",
     "next-routes": "^1.0.40",
     "postcss-cssnext": "^2.10.0",

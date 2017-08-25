@@ -81,7 +81,7 @@ const buildAndScoreData = async () => {
     projectList[index].topicSearchString = topicSearchString;
   });
 
-  const { libraries } = Sorting.updated(data);
+  const libraries = Sorting.updated(data);
 
   return jsonfile.writeFile(
     path.resolve('build', 'data.json'),
