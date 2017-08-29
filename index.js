@@ -108,6 +108,27 @@ app.prepare().then(() => {
   });
 
   server.get('*', (req, res) => {
+    if (req.query.json) {
+      const libraries = sortedData.updated;
+      
+      if (req.query.search) {
+        return res.status(200).json(
+          handleFilterLibraries({
+            libraries,
+            querySearch: req.query.search,
+          })
+        );
+      }
+
+      return res.status(200).json(libraries);
+    }
+
+    if (req.query.search) {
+      return app.render(req, res, '/', {
+        search: req.query.search,
+      });
+    }
+
     return customHandler(req, res);
   });
 
