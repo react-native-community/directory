@@ -1638,5 +1638,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/react-native-linkedin",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
