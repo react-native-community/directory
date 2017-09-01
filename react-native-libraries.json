@@ -128,6 +128,7 @@
     "githubUrl": "https://github.com/wix/react-native-calendars",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true,
     "goldstar": true,
     "examples": [
@@ -138,6 +139,7 @@
     "githubUrl": "https://github.com/oblador/react-native-vector-icons",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true,
     "goldstar": true
   },
@@ -209,6 +211,7 @@
     "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true,
     "goldstar": true,
     "examples": [
@@ -570,6 +573,7 @@
     "githubUrl": "https://github.com/FormidableLabs/victory-native",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true
   },
   {
@@ -1645,5 +1649,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/peggyrayzis/react-native-create-bridge",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
