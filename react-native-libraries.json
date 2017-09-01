@@ -1649,5 +1649,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/peggyrayzis/react-native-create-bridge",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
