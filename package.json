@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
     "build": "NODE_ENV=production next build",
-    "heroku-postbuild": "NODE_ENV=production next build",
+    "heroku-postbuild": "chmod -R +x node_modules/next/dist/bin/next-* && NODE_ENV=production next build",
     "start": "NODE_ENV=production babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
     "create-data": "babel-node scripts/build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3",
     "script": "babel-node --presets es2015,stage-1,stage-2,stage-3",
