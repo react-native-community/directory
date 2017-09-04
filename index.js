@@ -43,6 +43,40 @@ const getAllowedOrderString = req => {
   return sortBy;
 };
 
+const processRequest = (req, res) => {
+  const sortBy = getAllowedOrderString(req);
+  const libraries = sortedData[sortBy];
+
+  if (req.query.json) {
+    return res.status(200).json(
+      handleFilterLibraries({
+        libraries,
+        queryTopic: req.params.topic,
+        querySearch: req.query.search,
+        support: {
+          ios: req.query.ios,
+          android: req.query.android,
+          expo: req.query.expo,
+          web: req.query.web
+        }
+      })
+    );
+  }
+
+  return app.render(req, res, '/', {
+    libraries,
+    sortBy,
+    topic: req.params.topic,
+    search: req.query.search,
+    support: {
+      ios: req.query.ios,
+      android: req.query.android,
+      expo: req.query.expo,
+      web: req.query.web
+    }
+  });
+}
+
 app.prepare().then(() => {
   const server = express();
 
@@ -57,80 +91,9 @@ app.prepare().then(() => {
     server.use(compression());
   }
 
-  server.get('/:order/:topic', (req, res) => {
-    const sortBy = getAllowedOrderString(req);
-    const libraries = sortedData[sortBy];
-
-    if (req.query.json) {
-      if (req.query.search) {
-        return res.status(200).json(
-          handleFilterLibraries({
-            libraries,
-            queryTopic: req.params.topic,
-            querySearch: req.query.search,
-          })
-        );
-      }
-
-      return res.status(200).json(libraries);
-    }
-
-    return app.render(req, res, '/', {
-      libraries,
-      sortBy,
-      topic: req.params.topic,
-      search: req.query.search,
-    });
-  });
-
-  server.get('/:order', (req, res) => {
-    const sortBy = getAllowedOrderString(req);
-    const libraries = sortedData[sortBy];
-
-    if (req.query.json) {
-      if (req.query.search) {
-        return res.status(200).json(
-          handleFilterLibraries({
-            libraries,
-            querySearch: req.query.search,
-          })
-        );
-      }
-
-      return res.status(200).json(libraries);
-    }
-
-    return app.render(req, res, '/', {
-      libraries,
-      sortBy,
-      search: req.query.search,
-    });
-  });
-
-  server.get('*', (req, res) => {
-    if (req.query.json) {
-      const libraries = sortedData.updated;
-      
-      if (req.query.search) {
-        return res.status(200).json(
-          handleFilterLibraries({
-            libraries,
-            querySearch: req.query.search,
-          })
-        );
-      }
-
-      return res.status(200).json(libraries);
-    }
-
-    if (req.query.search) {
-      return app.render(req, res, '/', {
-        search: req.query.search,
-      });
-    }
-
-    return customHandler(req, res);
-  });
+  server.get('/:order/:topic', processRequest);
+  server.get('/:order', processRequest);
+  server.get('*', processRequest);
 
   server.listen(port, err => {
     if (err) {

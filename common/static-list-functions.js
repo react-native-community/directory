@@ -12,11 +12,6 @@ export const createNavigationItemsFromProps = props => [
     href: `/recommended${props.topic ? `/${props.topic}` : ''}`,
   },
   {
-    text: 'Compatibility',
-    isActive: props.sortBy === 'compatibility',
-    href: `/compatibility${props.topic ? `/${props.topic}` : ''}`,
-  },
-  {
     text: 'Quality',
     isActive: props.sortBy === 'quality',
     href: `/quality${props.topic ? `/${props.topic}` : ''}`,
@@ -35,5 +30,24 @@ export const createNavigationItemsFromProps = props => [
     text: 'Stars',
     isActive: props.sortBy === 'stars',
     href: `/stars${props.topic ? `/${props.topic}` : ''}`,
+  },
+];
+
+export const createSupportItemsFromProps = props => [
+  {
+    text: 'iOS',
+    isActive: props.support.ios
+  },
+  {
+    text: 'Android',
+    isActive: props.support.android,
+  },
+  {
+    text: 'Expo',
+    isActive: props.support.expo
+  },
+  {
+    text: 'Web',
+    isActive: props.support.web,
   },
 ];

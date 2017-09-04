@@ -32,7 +32,7 @@ class Index extends React.PureComponent {
   };
 
   static async getInitialProps({ req, query, store }) {
-    const { topic, search, sortBy, libraries } = query;
+    const { topic, search, sortBy, support, libraries } = query;
 
     if (topic) {
       store.dispatch({ type: 'TOPIC_PICKED', value: topic });
@@ -44,6 +44,10 @@ class Index extends React.PureComponent {
 
     if (sortBy) {
       store.dispatch({ type: 'SORT_BY', sortBy, libraries });
+    }
+
+    if (support) {
+      store.dispatch({ type: 'UPDATE_SUPPORT_FILTER', support });
     }
 
     return req
@@ -60,15 +64,7 @@ class Index extends React.PureComponent {
 
   render() {
     const isMobile = isMobileBrowser(this.props.userAgent);
-
-    const needsFilter =
-      !isEmptyOrNull(this.props.queryTopic) ||
-      !isEmptyOrNull(this.props.querySearch);
-
-    const libraries = needsFilter
-      ? handleFilterLibraries(this.props)
-      : this.props.libraries;
-
+    const libraries = handleFilterLibraries(this.props);
     const paginatedLibraries = libraries.slice(
       this.props.rangeStart,
       Math.min(this.props.rangeEnd, libraries.length)
@@ -92,6 +88,7 @@ class Index extends React.PureComponent {
           onSearch={this._handleSearch}
           querySearch={this.props.querySearch}
           sortBy={this.props.sortBy}
+          support={this.props.support}
         />
         <PageLayout rightSide={rightSide}>
           <Pagination
@@ -127,5 +124,6 @@ export default withRedux(initStore, state => {
     rangeEnd: state.rangeEnd,
     modal: state.modal,
     tooltip: state.tooltip,
+    support: state.support
   };
 })(Index);

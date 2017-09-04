@@ -4,6 +4,7 @@ export const handleFilterLibraries = ({
   libraries,
   queryTopic,
   querySearch,
+  support
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -11,6 +12,26 @@ export const handleFilterLibraries = ({
   return libraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
+
+    if (support.ios && !library.ios) {
+      return false;
+    }
+
+    if (support.android && !library.android) {
+      return false;
+    }
+
+    if (support.web && !library.web) {
+      return false;
+    }
+
+    if (support.expo && !library.expo) {
+      return false;
+    }
+
+    if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
+      return true;
+    }
 
     if (
       viewerHasChosenTopic &&
