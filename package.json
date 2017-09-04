@@ -30,7 +30,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jsonfile": "^3.0.1",
     "lodash": "^4.17.4",
-    "next": "^3.0.6",
+    "next": "^3.2.1",
     "next-redux-wrapper": "^1.2.0",
     "next-routes": "^1.0.40",
     "postcss-cssnext": "^2.10.0",
@@ -44,14 +44,14 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "cheerio": "^1.0.0-rc.2",
-    "eslint": "^4.4.1",
-    "eslint-config-prettier": "^2.3.0",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-flowtype": "^2.35.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.2.0",
     "husky": "^0.14.3",
-    "prettier": "^1.5.3"
+    "prettier": "^1.6.1"
   }
 }

@@ -1,5 +1,6 @@
 import { createStore } from 'redux';
 import data from '../build/data.json';
+import { PAGINATION_BREAKPOINT } from '../common/constants';
 
 const defaultLibraries = [...data.libraries];
 const INITIAL_STATE = {
@@ -10,19 +11,19 @@ const INITIAL_STATE = {
   querySearch: '',
   queryTopic: undefined,
   rangeStart: 0,
-  rangeEnd: 50,
+  rangeEnd: PAGINATION_BREAKPOINT,
   support: {
     ios: false,
     expo: false,
     android: false,
-    web: false
-  }
+    web: false,
+  },
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'UPDATE_SUPPORT_FILTER':
-      return { ...state, support: {...state.support, ...action.support } };
+      return { ...state, support: { ...state.support, ...action.support } };
     case 'SET_PAGINATION':
       return { ...state, rangeStart: action.start, rangeEnd: action.end };
     case 'CLEAR_TOOLTIP':
