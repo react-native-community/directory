@@ -1656,5 +1656,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/uxman-sherwani/react-native-fa-icons",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
