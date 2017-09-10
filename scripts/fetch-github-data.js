@@ -1,7 +1,11 @@
 import 'isomorphic-fetch';
 import { createApolloFetch } from 'apollo-fetch';
 
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
+import {
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+  GITHUB_OATH_TOKEN,
+} from '../secrets.json';
 
 // OLD WAY
 
@@ -160,6 +164,15 @@ export const fetchGithubDataViaGraphQL = async data => {
   };
 
   const apolloFetch = createApolloFetch({ GRAPHQL_API });
+
+  apolloFetch.use(({ request, options }, next) => {
+    if (!options.headers) {
+      options.headers = {}; // Create the headers object if needed.
+    }
+    options.headers['Authorization'] = 'bearer ' + `${GITHUB_OATH_TOKEN}`;
+
+    next();
+  });
 
   try {
     const json = await apolloFetch({ query, variables });
