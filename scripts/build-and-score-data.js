@@ -2,7 +2,6 @@ import 'isomorphic-fetch';
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
-import _ from 'lodash';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
 import fetchLicense from './fetch-license';

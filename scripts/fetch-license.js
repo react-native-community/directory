@@ -1,7 +1,7 @@
-import "isomorphic-fetch";
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from "../secrets.json";
+import 'isomorphic-fetch';
+import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
 
-const API = "https://api.github.com";
+const API = 'https://api.github.com';
 
 const githubLicenceInfo = async repoName => {
   const requestUrl = `${API}/repos/${repoName}/license?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
@@ -15,7 +15,7 @@ const fetchLicense = async (data, repoName) => {
 
   return {
     ...data,
-    license
+    license,
   };
 };
 
