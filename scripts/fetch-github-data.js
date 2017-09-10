@@ -177,7 +177,9 @@ export const fetchGithubDataViaGraphQL = async data => {
   try {
     const json = await apolloFetch({ query, variables });
 
-    const result = createRepoDataWithResponseGraphQL(json.data.repository);
+    const result = json.data.repository
+      ? createRepoDataWithResponseGraphQL(json.data.repository)
+      : undefined;
 
     return {
       ...data,
@@ -186,4 +188,9 @@ export const fetchGithubDataViaGraphQL = async data => {
   } catch (error) {
     console.log('something went wrong: ', error);
   }
+
+  return {
+    ...data,
+    github: undefined,
+  };
 };
