@@ -74,7 +74,7 @@ export const fetchGithubData = async data => {
 const GRAPHQL_API = 'https://api.github.com/graphql';
 
 const query = `
-  query { 
+  query ($repoCreator: String!, $repoName: String!) { 
     repository(owner: $repoCreator, name: $repoName) {
       hasIssuesEnabled
       hasWikiEnabled
@@ -118,7 +118,7 @@ const query = `
   }
 `;
 
-const createRepoDataWithResponse = rawData => {
+const createRepoDataWithResponseGraphQL = rawData => {
   return {
     urls: {
       repo: rawData.url,
@@ -129,7 +129,7 @@ const createRepoDataWithResponse = rawData => {
       hasIssues: rawData.hasIssuesEnabled,
       hasWiki: rawData.hasWikiEnabled,
       hasTopics: rawData.repositoryTopics.nodes
-        ? repositoryTopics.nodes.length > 0
+        ? rawData.repositoryTopics.nodes.length > 0
         : false,
       updatedAt: rawData.updatedAt,
       createdAt: rawData.createdAt,
@@ -163,7 +163,7 @@ export const fetchGithubDataViaGraphQL = async data => {
     repoCreator,
   };
 
-  const apolloFetch = createApolloFetch({ GRAPHQL_API });
+  const apolloFetch = createApolloFetch({ uri: GRAPHQL_API });
 
   apolloFetch.use(({ request, options }, next) => {
     if (!options.headers) {
