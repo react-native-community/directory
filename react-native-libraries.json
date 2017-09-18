@@ -1129,9 +1129,9 @@
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/accelerometer.html"
   },
   {
-    "githubUrl": "https://github.com/GregWilson/react-native-apple-healthkit",
+    "githubUrl": "https://github.com/terrillo/rn-apple-healthkit",
     "ios": true,
-    "android": true,
+    "android": false,
     "expo": "https://docs.expo.io/versions/v18.0.0/sdk/pedometer.html",
     "examples": [
       "https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"
