@@ -1663,5 +1663,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/material-native/material-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
