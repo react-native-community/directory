@@ -1670,5 +1670,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ronak301/react-native-submit-button",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
