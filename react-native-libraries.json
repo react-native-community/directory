@@ -1677,5 +1677,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/mockingbot/react-native-zip-archive",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
