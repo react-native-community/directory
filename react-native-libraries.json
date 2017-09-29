@@ -82,6 +82,20 @@
     ]
   },
   {
+    "githubUrl": "https://github.com/airbnb/native-navigation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/wix/react-native-navigation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/gre/gl-react",
     "ios": true,
     "android": true,
