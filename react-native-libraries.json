@@ -1684,5 +1684,19 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/Michaelvilleneuve/react-native-document-scanner",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/Michaelvilleneuve/react-native-perspective-image-cropper",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
   }
 ]
