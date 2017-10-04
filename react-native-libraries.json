@@ -109,6 +109,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/silentcloud/react-native-page-control",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+  },
+  {
     "githubUrl": "https://github.com/airbnb/lottie-react-native",
     "ios": true,
     "android": true,
@@ -1729,6 +1736,34 @@
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-batch-push",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-paper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-fbads",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-material-palette",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-opentok",
     "ios": true,
     "android": true,
     "web": false,
