@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import GoogleAnalytics from './GoogleAnalytics';
 
 export default class Document extends React.Component {
   static propTypes = {
@@ -199,9 +200,7 @@ export default class Document extends React.Component {
           }
         `}</style>
         <Head>
-          <title>
-            {this.props.title}
-          </title>
+          <title>{this.props.title}</title>
           <meta name="theme-color" content="#00C9FF" />
           <meta name="twitter:title" content={this.props.title} />
           <meta property="og:title" content={this.props.title} />
@@ -229,6 +228,7 @@ export default class Document extends React.Component {
           <meta property="og:image" content="/static/logo.png" />
           <meta name="twitter:image" content="/static/logo.png" />
           <meta name="msapplication-TileImage" content="/static/logo.png" />
+          <GoogleAnalytics id="UA-107832480-1" />
         </Head>
         {this.props.children}
       </div>
