@@ -3,7 +3,8 @@ import data from '../build/data.json';
 import { PAGINATION_BREAKPOINT } from '../common/constants';
 
 const defaultLibraries = [...data.libraries];
-const INITIAL_STATE = {
+
+export const INITIAL_STATE = {
   libraries: defaultLibraries,
   tooltip: null,
   modal: null,

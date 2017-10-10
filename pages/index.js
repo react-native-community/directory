@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withRedux from 'next-redux-wrapper';
 
 import { initStore } from '../common/store';
 import { isEmptyOrNull } from '../common/strings';
@@ -19,6 +18,8 @@ import Topics from '../components/Topics';
 import Pagination from '../components/Pagination';
 import Queries from '../components/Queries';
 
+import withData from '../components/withData';
+
 class Index extends React.PureComponent {
   static propTypes = {
     dispatch: PropTypes.func,
@@ -30,30 +31,6 @@ class Index extends React.PureComponent {
     rangeStart: PropTypes.number,
     rangeEnd: PropTypes.number,
   };
-
-  static async getInitialProps({ req, query, store }) {
-    const { topic, search, sortBy, support, libraries } = query;
-
-    if (topic) {
-      store.dispatch({ type: 'TOPIC_PICKED', value: topic });
-    }
-
-    if (search) {
-      store.dispatch({ type: 'SEARCH_LIBRARY', value: search });
-    }
-
-    if (sortBy) {
-      store.dispatch({ type: 'SORT_BY', sortBy, libraries });
-    }
-
-    if (support) {
-      store.dispatch({ type: 'UPDATE_SUPPORT_FILTER', support });
-    }
-
-    return req
-      ? { userAgent: req.headers['user-agent'] }
-      : { userAgent: navigator.userAgent };
-  }
 
   _handleSearch = value => {
     return this.props.dispatch({
@@ -73,6 +50,7 @@ class Index extends React.PureComponent {
     const rightSide = (
       <div>
         <Queries
+          dispatch={this.props.dispatch}
           sortBy={this.props.sortBy}
           queryTopic={this.props.queryTopic}
           querySearch={this.props.querySearch}
@@ -114,7 +92,7 @@ class Index extends React.PureComponent {
   }
 }
 
-export default withRedux(initStore, state => {
+export default withData(state => {
   return {
     sortBy: state.sortBy,
     libraries: state.libraries,
@@ -124,6 +102,6 @@ export default withRedux(initStore, state => {
     rangeEnd: state.rangeEnd,
     modal: state.modal,
     tooltip: state.tooltip,
-    support: state.support
+    support: state.support,
   };
 })(Index);

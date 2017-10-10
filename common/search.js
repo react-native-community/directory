@@ -4,7 +4,7 @@ export const handleFilterLibraries = ({
   libraries,
   queryTopic,
   querySearch,
-  support
+  support,
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
