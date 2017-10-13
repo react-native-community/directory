@@ -109,6 +109,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/silentcloud/react-native-page-control",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+  },
+  {
     "githubUrl": "https://github.com/airbnb/lottie-react-native",
     "ios": true,
     "android": true,
@@ -253,6 +260,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jkomyno/react-native-universal-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/magicismight/react-native-root-siblings",
@@ -1735,6 +1749,20 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/callstack/react-native-paper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-fbads",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/SoftZen/react-native-bouncy-drawer",
     "ios": true,
     "android": true,
@@ -1745,6 +1773,13 @@
     "githubUrl": "https://github.com/matt-oakes/react-native-ios-drag-drop",
     "ios": true,
     "android": false,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-material-palette",
+    "ios": true,
+    "android": true,
     "web": false,
     "expo": false
   },
