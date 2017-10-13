@@ -1740,5 +1740,12 @@
 	"android": true,
 	"web": false,
 	"expo": true
+  },
+  {
+	"githubUrl": "https://github.com/n4kz/react-native-material-ripple",
+	"ios": true,
+	"android": true,
+	"web": false,
+	"expo": true
   }
 ]
