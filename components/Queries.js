@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Router from 'next/router';
 
 import { isEmptyOrNull } from '../common/strings';
 
 export default class Queries extends React.PureComponent {
   static propTypes = {
+    dispatch: PropTypes.func,
     queryTopic: PropTypes.string,
     querySearch: PropTypes.string,
     sortBy: PropTypes.string,
@@ -79,7 +81,7 @@ export default class Queries extends React.PureComponent {
         `}</style>
         <h2 className="queries-heading">Your queries</h2>
         <ul className="queries-list">
-          {!isEmptyOrNull(this.props.querySearch) &&
+          {!isEmptyOrNull(this.props.querySearch) && (
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Searching for{' '}
@@ -97,9 +99,10 @@ export default class Queries extends React.PureComponent {
                   </span>
                 </span>
               </div>
-            </li>}
+            </li>
+          )}
 
-          {!isEmptyOrNull(this.props.queryTopic) &&
+          {!isEmptyOrNull(this.props.queryTopic) && (
             <li className="queries-list-item">
               <div className="queries-list-item-left">
                 Selected{' '}
@@ -116,7 +119,8 @@ export default class Queries extends React.PureComponent {
                   </span>
                 </span>
               </div>
-            </li>}
+            </li>
+          )}
         </ul>
       </div>
     );

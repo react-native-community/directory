@@ -1763,10 +1763,31 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/SoftZen/react-native-bouncy-drawer",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/matt-oakes/react-native-ios-drag-drop",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/callstack/react-native-material-palette",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-material-ripple",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
