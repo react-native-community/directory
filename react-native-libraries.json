@@ -1733,5 +1733,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+	"githubUrl": "https://github.com/SoftZen/react-native-bouncy-drawer",
+	"ios": true,
+	"android": true,
+	"web": false,
+	"expo": true
   }
 ]
