@@ -1774,5 +1774,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jfilter/react-native-onboarding-swiper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
