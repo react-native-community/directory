@@ -2,8 +2,7 @@ import 'isomorphic-fetch';
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
-import _ from 'lodash';
-import fetchGithubData from './fetch-github-data';
+import { fetchGithubDataViaGraphQL } from './fetch-github-data';
 import calculateScore from './calculate-score';
 import fetchLicense from './fetch-license';
 import fetchReadmeImages from './fetch-readme-images';
@@ -36,6 +35,10 @@ const buildAndScoreData = async () => {
   console.log('** Loading data from Github');
   await sleep(1000);
   let data = await loadRepositoryDataAsync();
+
+  data = data.filter(project => {
+    return !!project.github;
+  });
 
   console.log('** Fetching license type');
   await sleep(1000);
@@ -115,7 +118,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await Promise.all(data.map(fetchGithubData));
+    result = await Promise.all(data.map(fetchGithubDataViaGraphQL));
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {
