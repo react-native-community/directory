@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import GoogleAnalytics from './GoogleAnalytics';
+import { globalStyles } from '../common/styles';
 
 export default class Document extends React.Component {
   static propTypes = {
@@ -11,194 +12,12 @@ export default class Document extends React.Component {
 
   static defaultProps = {
     title: 'Native Directory',
-    description:
-      'Native Directory is a curated list of React Native libraries to help you build your projects.',
+    description: 'Native Directory is a curated list of React Native libraries to help you build your projects.',
   };
 
   render() {
     return (
       <div>
-        <style jsx global>{`
-          @font-face {
-            font-family: 'office-code';
-            src: url('/static/fonts/OfficeCodePro-Regular.eot');
-            src: url('/static/fonts/OfficeCodePro-Regular.woff2')
-                format('woff2'),
-              url('/static/fonts/OfficeCodePro-Regular.woff') format('woff'),
-              url('/static/fonts/OfficeCodePro-Regular.ttf') format('truetype');
-          }
-
-          @font-face {
-            font-family: 'office-code-medium';
-            src: url('/static/fonts/OfficeCodePro-Medium.eot');
-            src: url('/static/fonts/OfficeCodePro-Medium.woff2') format('woff2'),
-              url('/static/fonts/OfficeCodePro-Medium.woff') format('woff'),
-              url('/static/fonts/OfficeCodePro-Medium.ttf') format('truetype');
-          }
-
-          html,
-          body,
-          div,
-          span,
-          applet,
-          object,
-          iframe,
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          p,
-          blockquote,
-          pre,
-          a,
-          abbr,
-          acronym,
-          address,
-          big,
-          cite,
-          code,
-          del,
-          dfn,
-          em,
-          img,
-          ins,
-          kbd,
-          q,
-          s,
-          samp,
-          small,
-          strike,
-          strong,
-          sub,
-          sup,
-          tt,
-          var,
-          b,
-          u,
-          i,
-          center,
-          dl,
-          dt,
-          dd,
-          ol,
-          ul,
-          li,
-          fieldset,
-          form,
-          label,
-          legend,
-          table,
-          caption,
-          tbody,
-          tfoot,
-          thead,
-          tr,
-          th,
-          td,
-          article,
-          aside,
-          canvas,
-          details,
-          embed,
-          figure,
-          figcaption,
-          footer,
-          header,
-          hgroup,
-          menu,
-          nav,
-          output,
-          ruby,
-          section,
-          summary,
-          time,
-          mark,
-          audio,
-          video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-            box-sizing: border-box;
-          }
-
-          article,
-          aside,
-          details,
-          figcaption,
-          figure,
-          footer,
-          header,
-          hgroup,
-          menu,
-          nav,
-          section {
-            display: block;
-          }
-
-          body {
-            line-height: 1;
-            font-size: 14px;
-            color: #000000;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-              helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
-              sans-serif;
-
-            @media (max-width: 768px) {
-              font-size: 12px;
-            }
-          }
-
-          p,
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6 {
-            line-height: 1.5;
-          }
-
-          ol,
-          ul {
-            list-style: none;
-          }
-
-          button,
-          textarea,
-          input {
-            resize: none;
-            border: 0;
-            outline: 0;
-            padding: 0;
-            margin: 0;
-
-            &:focus {
-              border: 0;
-              outline: 0;
-            }
-          }
-
-          blockquote,
-          q {
-            quotes: none;
-
-            &:before,
-            &:after {
-              content: '';
-              content: none;
-            }
-          }
-
-          table {
-            border-collapse: collapse;
-            border-spacing: 0;
-          }
-        `}</style>
         <Head>
           <title>{this.props.title}</title>
           <meta name="theme-color" content="#00C9FF" />
@@ -228,6 +47,7 @@ export default class Document extends React.Component {
           <meta property="og:image" content="/static/logo.png" />
           <meta name="twitter:image" content="/static/logo.png" />
           <meta name="msapplication-TileImage" content="/static/logo.png" />
+          <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
           <GoogleAnalytics id="UA-107832480-1" />
         </Head>
         {this.props.children}
