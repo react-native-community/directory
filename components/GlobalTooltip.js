@@ -140,9 +140,6 @@ class GlobalTooltip extends React.Component {
         }}
         className={css(styles.globalTooltip)}
         style={tooltipStyles}>
-        <style jsx global>{`
-
-        `}</style>
         {this.state.isLoaded
           ? <div
               className={css(styles.globalTooltipImage)}
