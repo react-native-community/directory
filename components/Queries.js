@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import { isEmptyOrNull } from '../common/strings';
 
@@ -29,100 +30,91 @@ export default class Queries extends React.PureComponent {
     }
 
     return (
-      <div className="queries">
-        <style jsx>{`
-          .queries {
-            padding: 27px 0 8px 0;
-          }
-
-          .queries-heading {
-            font-family: 'office-code-medium', monospace;
-            font-weight: 400;
-          }
-
-          .queries-list {
-            display: block;
-          }
-
-          .queries-list-item {
-            font-family: 'office-code', monospace;
-            display: block;
-            margin: 8px 0 0 0;
-            line-height: 1.2rem;
-          }
-
-          .queries-list-item-emphasis {
-            font-family: 'office-code-medium', monospace;
-            color: rgba(250, 70, 83, 1);
-          }
-
-          .queries-list-item-left {
-            overflow-wrap: break-word;
-            word-break: break-word;
-            min-width: 25%;
-            width: 100%;
-          }
-
-          .queries-list-item-right {
-            flex-shrink: 0;
-          }
-
-          .queries-list-item-link {
-            display: inline-block;
-            text-decoration: underline;
-            transition: all 200ms ease;
-            transition-property: opacity, transform;
-            cursor: pointer;
-
-            &:hover {
-              opacity: 0.5;
-            }
-          }
-        `}</style>
-        <h2 className="queries-heading">Your queries</h2>
-        <ul className="queries-list">
-          {!isEmptyOrNull(this.props.querySearch) && (
-            <li className="queries-list-item">
-              <div className="queries-list-item-left">
+      <div className={css(styles.container)}>
+        <h2 className={css(styles.heading)}>Your queries</h2>
+        <ul className={css(styles.list)}>
+          {!isEmptyOrNull(this.props.querySearch) &&
+            <li className={css(styles.item)}>
+              <div className={css(styles.itemLeft)}>
                 Searching for{' '}
-                <strong className="queries-list-item-emphasis">
+                <strong className={css(styles.itemEmphasis)}>
                   “
                   {this.props.querySearch}
                   ”
                 </strong>{' '}
                 —{' '}
-                <span className="queries-list-item-right">
+                <span className={css(styles.itemRight)}>
                   <span
-                    className="queries-list-item-link"
+                    className={css(styles.itemLink)}
                     onClick={this._handleClearSearch}>
                     Clear search
                   </span>
                 </span>
               </div>
-            </li>
-          )}
+            </li>}
 
-          {!isEmptyOrNull(this.props.queryTopic) && (
-            <li className="queries-list-item">
-              <div className="queries-list-item-left">
+          {!isEmptyOrNull(this.props.queryTopic) &&
+            <li className={css(styles.item)}>
+              <div className={css(styles.itemLeft)}>
                 Selected{' '}
-                <strong className="queries-list-item-emphasis">
+                <strong className={css(styles.itemEmphasis)}>
                   “{this.props.queryTopic}
                   ”{' '}
                 </strong>{' '}
                 —{' '}
-                <span className="queries-list-item-right">
+                <span className={css(styles.itemRight)}>
                   <span
-                    className="queries-list-item-link"
+                    className={css(styles.itemLink)}
                     onClick={this._handleClearTopic}>
                     Clear topic
                   </span>
                 </span>
               </div>
-            </li>
-          )}
+            </li>}
         </ul>
       </div>
     );
   }
 }
+
+let styles = StyleSheet.create({
+  container: {
+    padding: '27px 0 8px 0',
+  },
+  heading: {
+    fontFamily: `'office-code-medium', monospace`,
+    fontWeight: '400',
+  },
+  list: {
+    display: 'block',
+  },
+  item: {
+    fontFamily: `'office-code', monospace`,
+    display: 'block',
+    margin: '8px 0 0 0',
+    lineHeight: '1.2rem',
+  },
+  itemEmphasis: {
+    fontFamily: `'office-code-medium', monospace`,
+    color: `rgba(250, 70, 83, 1)`,
+  },
+  itemLeft: {
+    overflowWrap: 'break-word',
+    wordBreak: 'break-word',
+    minWidth: '25%',
+    width: '100%',
+  },
+  itemRight: {
+    flexShrink: 0,
+  },
+  itemLink: {
+    display: 'inline-block',
+    textDecoration: 'underline',
+    transition: 'all 200ms ease',
+    transitionProperty: 'opacity, transform',
+    cursor: 'pointer',
+    ':hover': {
+      opacity: 0.5,
+    },
+  },
+});

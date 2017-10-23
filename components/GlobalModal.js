@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { StyleSheet, css } from 'glamor/aphrodite';
+import { keyframes } from 'glamor';
 
 class GlobalModal extends React.Component {
   static propTypes = {
@@ -78,61 +80,59 @@ class GlobalModal extends React.Component {
         ref={m => {
           this._modal = m;
         }}
-        className="global-modal"
+        className={css(styles.globalModal)}
         onClick={this._dismissModal}>
-        <style jsx global>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-
-            to {
-              opacity: 1;
-            }
-          }
-
-          .fadeIn {
-            animation-name: fadeIn;
-          }
-
-          .global-modal {
-            animation: fadeIn 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-            position: fixed;
-            background: rgba(0, 0, 0, 0.9);
-            color: #ffffff;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .global-modal-content {
-            display: block;
-            max-height: 80%;
-            max-width: 80%;
-            text-align: center;
-            font-size: 1.4rem;
-          }
-
-          .global-modal-content--image {
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-          }
-        `}</style>
         {this.state.isLoaded
           ? <img
               src={this.props.modal.content}
-              className="global-modal-content global-modal-content--image"
+              className={css(
+                styles.globalModalContent,
+                styles.globalModalContentImage
+              )}
             />
-          : <div className="global-modal-content">
+          : <div className={css(styles.globalModalContent)}>
               {this.state.isNotFound ? 'Image failed to load' : 'Loading'}
             </div>}
       </div>
     );
   }
 }
+
+let fadeInKeyframes = keyframes({
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+  },
+});
+
+let styles = StyleSheet.create({
+  fadeIn: { animation: fadeInKeyframes },
+  globalModal: {
+    animation: `${fadeInKeyframes} 200ms cubic-bezier(0.645, 0.045, 0.355, 1)`,
+    position: 'fixed',
+    background: 'rgba(0, 0, 0, 0.9)',
+    color: '#FFFFFF',
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  globalModalContent: {
+    display: 'block',
+    maxHeight: '80%',
+    maxWidth: '80%',
+    textAlign: 'center',
+    fontSize: '1.4rem',
+  },
+  globalModalContentImage: {
+    boxShadow: '0 1px 4px rgba(0, 0, 0, 0.8)',
+  },
+});
 
 export default connect(state => {
   return { modal: state.modal };

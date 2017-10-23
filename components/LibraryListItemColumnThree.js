@@ -2,27 +2,15 @@ import React from 'react';
 
 import * as SVG from '../common/svg';
 import { getTimeSinceToday } from '../common/datetime';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import Link from '../components/Link';
 import LibraryListColumn from '../components/LibraryListColumn';
 
 const renderListItem = (data, index) => {
   return (
-    <li className="list-item" key={`list-item-${index}`}>
-      <style jsx>{`
-        .list-item {
-          margin: 2px 0 6px 0;
-          display: flex;
-          align-items: center;
-          font-family: 'office-code', monospace;
-          font-size: 0.75rem;
-        }
-
-        .list-item-svg {
-          margin: 0 8px 0 0;
-        }
-      `}</style>
-      <span className="list-item-svg">
+    <li className={css(styles.item)} key={`list-item-${index}`}>
+      <span className={css(styles.svg)}>
         {data.svg}
       </span>
       {data.content}
@@ -34,9 +22,7 @@ export default props => {
   const items = [
     {
       svg: SVG.calendar,
-      content: `Updated ${getTimeSinceToday(
-        props.library.github.stats.pushedAt
-      )}`,
+      content: `Updated ${getTimeSinceToday(props.library.github.stats.pushedAt)}`,
     },
     {
       svg: SVG.star,
@@ -92,3 +78,16 @@ export default props => {
     </LibraryListColumn>
   );
 };
+
+let styles = StyleSheet.create({
+  item: {
+    margin: '2px 0 6px 0',
+    display: 'flex',
+    alignItems: 'center',
+    fontFamily: `'office-code', monospace`,
+    fontSize: '0.75rem',
+  },
+  svg: {
+    margin: '0 8px 0 0',
+  },
+});

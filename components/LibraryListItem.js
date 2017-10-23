@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import LibraryListItemColumnOne from '../components/LibraryListItemColumnOne';
 import LibraryListItemColumnTwo from '../components/LibraryListItemColumnTwo';
@@ -14,23 +15,7 @@ export default class LibraryListItem extends React.PureComponent {
 
   render() {
     return (
-      <div className="library-list-item">
-        <style jsx>{`
-          .library-list-item {
-            display: flex;
-            width: 100%;
-            padding: 27px 0 27px 0;
-            border-bottom: 1px solid #ececec;
-
-            &:last-child {
-              border-bottom: 0;
-            }
-
-            @media (max-width: 640px) {
-              flex-direction: column;
-            }
-          }
-        `}</style>
+      <div className={css(styles.item)}>
         <LibraryListItemColumnOne library={this.props.library} />
         <LibraryListItemColumnTwo
           isMobile={this.props.isMobile}
@@ -41,3 +26,18 @@ export default class LibraryListItem extends React.PureComponent {
     );
   }
 }
+
+let styles = StyleSheet.create({
+  item: {
+    display: 'flex',
+    width: '100%',
+    padding: '27px 0 27px 0',
+    borderBottom: '1px solid #ECECEC',
+    ':last-child': {
+      borderBottom: 0,
+    },
+    '@media (max-width: 640px)': {
+      flexDirection: 'column',
+    },
+  },
+});

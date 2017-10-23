@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import {
   createNavigationItemsFromProps,
-  createSupportItemsFromProps
+  createSupportItemsFromProps,
 } from '../common/static-list-functions';
 
 import SearchInput from '../components/SearchInput';
@@ -35,62 +36,24 @@ export default class Navigation extends React.PureComponent {
     );
 
     return (
-      <nav className="navigation">
-        <style jsx>{`
-          .navigation {
-            margin: 2rem 0 0 0;
-            border-bottom: 1px solid #ececec;
-          }
-
-          .navigation-container {
-            width: 100%;
-            max-width: 1319px;
-            padding: 0 24px 0 24px;
-            box-sizing: border-box;
-            margin: 0 auto 0 auto;
-          }
-
-          .navigation-container-elements {
-            display: flex;
-            align-items: center;
-            @media (max-width: 768px) {
-              display: none;
-            }
-          }
-
-          .navigation-container-title {
-            font-family: 'office-code-medium', monospace;
-            display: inline-flex;
-            align-items: flex-end;
-            flex-direction: column;
-            margin: 0 16px 0 0;
-            padding: 0 0 8px 0;
-            height: 32px;
-          }
-
-          .navigation-container-title-text {
-            font-size: 0.8rem;
-            margin: auto 0 0 0;
-            white-space: nowrap;
-          }
-        `}</style>
-        <div className="navigation-container">
+      <nav className={css(styles.navigation)}>
+        <div className={css(styles.navigationContainer)}>
           <SearchInput
             placeholder={`Type here...`}
             query={this.props.querySearch}
             onSearch={this.props.onSearch}
           />
-          <div className="navigation-container-elements">
-            <span className="navigation-container-title">
-              <span className="navigation-container-title-text">
+          <div className={css(styles.elements)}>
+            <span className={css(styles.title)}>
+              <span className={css(styles.text)}>
                 Compatibility:{' '}
               </span>
             </span>
             {supportElements}
           </div>
-          <div className="navigation-container-elements">
-            <span className="navigation-container-title">
-              <span className="navigation-container-title-text">
+          <div className={css(styles.elements)}>
+            <span className={css(styles.title)}>
+              <span className={css(styles.text)}>
                 Order By:{' '}
               </span>
             </span>
@@ -101,3 +64,38 @@ export default class Navigation extends React.PureComponent {
     );
   }
 }
+
+let styles = StyleSheet.create({
+  navigation: {
+    margin: '2rem 0 0 0',
+    borderBottom: '1px solid #ececec',
+  },
+  navigationContainer: {
+    width: '100%',
+    maxWidth: '1319px',
+    padding: '0 24px 0 24px',
+    boxSizing: 'border-box',
+    margin: '0 auto 0 auto',
+  },
+  elements: {
+    display: 'flex',
+    alignItems: 'center',
+    '@media (max-width: 768px)': {
+      display: 'none',
+    },
+  },
+  title: {
+    fontFamily: `'office-code-medium', monospace`,
+    display: 'inline-flex',
+    alignItems: 'flex-end',
+    flexDirection: 'column',
+    margin: '0 16px 0 0',
+    padding: '0 0 8px 0',
+    height: '32px',
+  },
+  text: {
+    fontSize: '0.8rem',
+    margin: 'auto 0 0 0',
+    whiteSpace: 'nowrap',
+  },
+});

@@ -120,6 +120,10 @@ section {
   display: block;
 }
 
+main {
+  visibility: hidden;
+}
+
 body {
   line-height: 1;
   font-size: 14px;

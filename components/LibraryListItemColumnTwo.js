@@ -2,6 +2,7 @@ import React from 'react';
 
 import * as SVG from '../common/svg';
 import { isEmptyOrNull } from '../common/strings';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import Link from '../components/Link';
 import TopicItem from '../components/TopicItem';
@@ -14,25 +15,14 @@ const { topics } = data;
 export default props => {
   return (
     <LibraryListColumn isWide isBodyTextStyled>
-      <style jsx>{`
-        .column-two-section {
-          margin: 0 0 24px 0;
-        }
-
-        .column-two-section--compat {
-          font-family: 'office-code', monospace;
-          font-size: 0.75rem;
-          white-space: pre-wrap;
-        }
-      `}</style>
       {!isEmptyOrNull(props.library.github.description)
-        ? <p className="column-two-section">
+        ? <p className={css(styles.section)}>
             {props.library.github.description}
           </p>
         : undefined}
 
       {props.library.examples && props.library.examples.length
-        ? <div className="column-two-section">
+        ? <div className={css(styles.section)}>
             Code Examples:{' '}
             {props.library.examples.map((each, index) => {
               return (
@@ -48,7 +38,7 @@ export default props => {
           </div>
         : undefined}
 
-      <div className="column-two-section column-two-section--compat">
+      <div className={css(styles.section, styles.sectionCompact)}>
         {[
           props.library.ios ? '✅ iOS' : '⛔ iOS',
           props.library.android ? '✅ Android' : '⛔ Android',
@@ -60,7 +50,7 @@ export default props => {
       </div>
 
       {props.library.images.length
-        ? <div className="column-two-section">
+        ? <div className={css(styles.section)}>
             {props.library.images.map((each, index) => {
               return (
                 <ImageTooltipContainer
@@ -75,7 +65,7 @@ export default props => {
         : undefined}
 
       {props.library.github.topics
-        ? <div className="column-two-section">
+        ? <div className={css(styles.section)}>
             {props.library.github.topics.map(each => (
               <TopicItem
                 key={`list-${props.library.name}-${each}`}
@@ -88,3 +78,14 @@ export default props => {
     </LibraryListColumn>
   );
 };
+
+const styles = StyleSheet.create({
+  section: {
+    margin: '0 0 24px 0',
+  },
+  sectionCompact: {
+    fontFamily: `'office-code', monospace`,
+    fontSize: '0.75rem',
+    whiteSpace: 'pre-wrap',
+  },
+});

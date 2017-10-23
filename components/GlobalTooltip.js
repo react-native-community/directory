@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { StyleSheet, css } from 'glamor/aphrodite';
+import { keyframes } from 'glamor';
 
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
@@ -136,93 +138,93 @@ class GlobalTooltip extends React.Component {
         ref={t => {
           this._tooltip = t;
         }}
-        className="global-tooltip"
+        className={css(styles.globalTooltip)}
         style={tooltipStyles}>
         <style jsx global>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
 
-            to {
-              opacity: 1;
-            }
-          }
-
-          .fadeIn {
-            animation-name: fadeIn;
-          }
-
-          .global-tooltip {
-            animation: fadeIn 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-            position: fixed;
-            pointer-events: none;
-            background-color: #000000;
-            z-index: 1;
-            flex-shrink: 0;
-            width: ${TOOLTIP_WIDTH}px;
-            height: ${TOOLTIP_WIDTH}px;
-            border-radius: 4px;
-            border: 0;
-            outline: 0;
-            transition: 200ms cubic-bezier(0.645, 0.045, 0.355, 1) opacity;
-            display: block;
-            padding: 8px;
-            margin: auto;
-            box-sizing: border-box;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            transition: 150ms linear all;
-            transition-property: opacity, visbility, transform;
-            transform: translateY(0px);
-            overflow-wrap: break-word;
-            text-align: left;
-            user-select: none;
-          }
-
-          .global-tooltip-arrow {
-            width: 0;
-            height: 0;
-            margin: auto;
-            position: absolute;
-          }
-
-          .global-tooltip-image {
-            background-color: black;
-            width: 100%;
-            height: 304px;
-            background-position: 50% 50%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            display: block;
-          }
-
-          .global-tooltip-loading {
-            width: 100%;
-            height: 304px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-          }
         `}</style>
         {this.state.isLoaded
           ? <div
-              className="global-tooltip-image"
+              className={css(styles.globalTooltipImage)}
               style={{
                 backgroundImage: `url('${this.props.tooltip.content}')`,
               }}
               width="100%"
             />
-          : <div className="global-tooltip-loading">
+          : <div className={css(styles.globalTooltipLoading)}>
               {this.state.isNotFound
                 ? 'Image failed to load'
                 : 'Loading image...'}
             </div>}
-        <div className="global-tooltip-arrow" style={tooltipArrowStyles} />
+        <div
+          className={css(styles.globalTooltipArrow)}
+          style={tooltipArrowStyles}
+        />
       </figcaption>
     );
   }
 }
+
+let fadeInKeyframes = keyframes({
+  from: {
+    opacity: 0,
+  },
+  to: {
+    opacity: 1,
+  },
+});
+
+let styles = StyleSheet.create({
+  fadeIn: { animation: fadeInKeyframes },
+  globalTooltip: {
+    animation: `${fadeInKeyframes} 200ms cubic-bezier(0.645, 0.045, 0.355, 1)`,
+    position: 'fixed',
+    pointerEvents: 'none',
+    backgroundColor: '#000000',
+    zIndex: '1',
+    flexShrink: 0,
+    width: `${TOOLTIP_WIDTH}px`,
+    height: `${TOOLTIP_WIDTH}px`,
+    borderRadius: 4,
+    border: 0,
+    outline: 0,
+    transition: `200ms cubic-bezier(0.645, 0.045, 0.355, 1) opacity`,
+    display: 'block',
+    padding: '8px',
+    margin: 'auto',
+    boxSizing: 'border-box',
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
+    transition: '150ms linear all',
+    transitionProperty: 'opacity, visbility, transform',
+    transform: 'translateY(0px)',
+    overflowWrap: 'break-word',
+    textAlign: 'left',
+    userSelect: 'none',
+  },
+  globalTooltipArrow: {
+    width: 0,
+    height: 0,
+    margin: 'auto',
+    position: 'absolute',
+  },
+  globalTooltipImage: {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '304px',
+    backgroundPosition: '50% 50%',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    display: 'block',
+  },
+  globalTooltipLoading: {
+    width: '100%',
+    height: '304px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#FFFFFF',
+  },
+});
 
 export default connect(state => {
   return { tooltip: state.tooltip };
