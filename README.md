@@ -43,9 +43,18 @@ Prerequisites
 
 Commands
 
+##### With npm
+
 ```sh
 npm install
 npm run dev
+```
+
+##### With yarn
+
+```sh
+yarn add
+yarn dev
 ```
 
 You should be able to visit `localhost:8000` in your browser.
