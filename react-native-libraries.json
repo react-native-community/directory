@@ -7,6 +7,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/toystars/react-native-multiple-select",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+  },
+  {
     "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
     "ios": true,
     "android": true,
@@ -1838,4 +1845,11 @@
     "web": false,
     "expo": true
   },
+  {
+    "githubUrl": "https://github.com/xotahal/react-native-material-ui",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  }
 ]
