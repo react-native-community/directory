@@ -17,10 +17,12 @@ import LibraryList from '../components/LibraryList';
 import Topics from '../components/Topics';
 import Pagination from '../components/Pagination';
 import Queries from '../components/Queries';
+import { StyleSheet, css } from 'glamor/aphrodite';
+StyleSheet.maxLength = 1000;
 
 import withData from '../components/withData';
 
-class Index extends React.PureComponent {
+class Index extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func,
     libraries: PropTypes.array,
@@ -48,7 +50,7 @@ class Index extends React.PureComponent {
     );
 
     const rightSide = (
-      <div>
+      <div className={css(styles.placeholder)}>
         <Queries
           dispatch={this.props.dispatch}
           sortBy={this.props.sortBy}
@@ -91,6 +93,12 @@ class Index extends React.PureComponent {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  placeholder: {
+    display: 'block',
+  },
+});
 
 export default withData(state => {
   return {

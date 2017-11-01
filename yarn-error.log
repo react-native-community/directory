@@ -1,0 +1,89 @@
+Arguments: 
+  /usr/local/Cellar/node/8.7.0/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin
+
+Yarn version: 
+  1.2.1
+
+Node version: 
+  8.7.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "native-directory",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+      "dev": "babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
+      "build": "NODE_ENV=production next build",
+      "heroku-postbuild": "chmod -R +x node_modules/next/dist/bin/next-* && NODE_ENV=production next build",
+      "start": "NODE_ENV=production babel-node index.js --presets es2015,stage-1,stage-2,stage-3",
+      "create-data": "babel-node scripts/build-and-score-data.js --presets es2015,stage-1,stage-2,stage-3",
+      "script": "babel-node --presets es2015,stage-1,stage-2,stage-3",
+      "lint": "eslint .",
+      "test": "babel-node scripts/validate-libraries.js --presets es2015,stage-1,stage-2,stage-3",
+      "prettier": "eslint . --fix",
+      "precommit": "npm test"
+    },
+    "engines": {
+      "node": "8.7.x"
+    },
+    "dependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-preset-es2015": "^6.24.1",
+      "babel-preset-react": "^6.24.1",
+      "babel-preset-stage-1": "^6.24.1",
+      "babel-preset-stage-2": "^6.24.1",
+      "babel-preset-stage-3": "^6.24.1",
+      "body-parser": "^1.18.2",
+      "compression": "^1.7.1",
+      "express": "^4.16.2",
+      "glamor": "^2.20.40",
+      "isomorphic-fetch": "^2.2.1",
+      "jsonfile": "^4.0.0",
+      "lodash": "^4.17.4",
+      "next": "^4.1.2",
+      "next-routes": "^1.1.0",
+      "prop-types": "^15.6.0",
+      "react": "^16.0.0",
+      "react-dom": "^16.0.0",
+      "react-redux": "^5.0.6",
+      "redux": "^3.7.2"
+    },
+    "devDependencies": {
+      "babel-eslint": "^8.0.1",
+      "cheerio": "^1.0.0-rc.2",
+      "eslint": "^4.9.0",
+      "eslint-config-prettier": "^2.6.0",
+      "eslint-plugin-babel": "^4.1.2",
+      "eslint-plugin-import": "^2.8.0",
+      "eslint-plugin-prettier": "^2.3.1",
+      "eslint-plugin-react": "^7.4.0",
+      "husky": "^0.14.3",
+      "prettier": "^1.7.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types/node/-/node-6.0.90.tgz: Request failed "503 Service Unavailable"
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:59296:26)
+      at emitOne (events.js:115:13)
+      at Request.emit (events.js:210:7)
+      at Request.module.exports.Request.onRequestResponse (/usr/local/lib/node_modules/yarn/lib/cli.js:123897:10)
+      at emitOne (events.js:115:13)
+      at ClientRequest.emit (events.js:210:7)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:549:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:116:23)
+      at TLSSocket.socketOnData (_http_client.js:438:20)
+      at emitOne (events.js:115:13)

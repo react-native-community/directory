@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 import { getViewportSize } from '../common/window';
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
@@ -112,47 +113,15 @@ class ImageTooltipContainer extends React.Component {
 
     return (
       <span
-        className="image-tooltip-container"
+        className={css(styles.imageTooltipContainer)}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
         ref={c => {
           this._container = c;
         }}>
-        <style jsx global>{`
-          .image-tooltip-container {
-            display: inline-block;
-            position: relative;
-            padding: 8px 8px 8px 8px;
-            border-radius: 3px;
-            border: 1px solid #dcdcdc;
-            margin: 0 12px 12px 0;
-            color: #acacac;
-            cursor: pointer;
-            user-select: none;
-            line-height: 1;
-            font-family: 'office-code', monospace;
-            font-size: 0.7rem;
-            text-align: center;
-          }
-
-          .image-tooltip-container:hover {
-            color: #555555;
-            border: 1px solid #999999;
-          }
-
-          .image-tooltip-container:hover > .image-tooltip-container-svg {
-            stroke: #555555;
-          }
-
-          .image-tooltip-container-svg {
-            stroke: #acacac;
-            display: block;
-            margin: 0 0 4px 0;
-          }
-        `}</style>
         <svg
-          className="image-tooltip-container-svg"
+          className={css(svgStyles.imageTooltipContainerSVG)}
           xmlns="http://www.w3.org/2000/svg"
           width="16px"
           height="16px"
@@ -170,6 +139,39 @@ class ImageTooltipContainer extends React.Component {
     );
   }
 }
+
+let svgStyles = StyleSheet.create({
+  imageTooltipContainerSVG: {
+    stroke: '#ACACAC',
+    display: 'block',
+    margin: '0 0 4px 0',
+  },
+});
+
+let styles = StyleSheet.create({
+  imageTooltipContainer: {
+    display: 'inline-block',
+    position: 'relative',
+    padding: '8px 8px 8px 8px',
+    borderRadius: '3px',
+    border: '1px solid #DCDCDC',
+    margin: '0 12px 12px 0',
+    color: '#ACACAC',
+    cursor: 'pointer',
+    userSelect: 'none',
+    lineHeight: 1,
+    fontFamily: `'office-code', monospace`,
+    fontSize: '0.7rem',
+    textAlign: 'center',
+    ':hover': {
+      color: '#555555',
+      border: '1px solid #999999',
+      [`> .${svgStyles.imageTooltipContainerSVG}`]: {
+        stroke: '#555555',
+      },
+    },
+  },
+});
 
 export default connect(state => {
   return { tooltip: state.tooltip };

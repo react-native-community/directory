@@ -21,7 +21,7 @@ const sortedData = {
 const isProduction = process.env.NODE_ENV === 'production';
 const routes = nextRoutes();
 const port = parseInt(process.env.PORT, 10) || 8000;
-const app = next({ dev: !isProduction });
+const app = next({ dev: !isProduction, quiet: true });
 const customHandler = routes.getRequestHandler(app);
 
 const getAllowedOrderString = req => {
@@ -57,8 +57,8 @@ const processRequest = (req, res) => {
           ios: req.query.ios,
           android: req.query.android,
           expo: req.query.expo,
-          web: req.query.web
-        }
+          web: req.query.web,
+        },
       })
     );
   }
@@ -72,10 +72,10 @@ const processRequest = (req, res) => {
       ios: req.query.ios,
       android: req.query.android,
       expo: req.query.expo,
-      web: req.query.web
-    }
+      web: req.query.web,
+    },
   });
-}
+};
 
 app.prepare().then(() => {
   const server = express();

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default class SearchInput extends React.PureComponent {
   static PropTypes = {
@@ -12,62 +13,15 @@ export default class SearchInput extends React.PureComponent {
 
   render() {
     return (
-      <div className="search-input">
-        <style jsx>{`
-          .search-input {
-            width: 100%;
-            margin: 16px 0 8px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-
-          .search-input-left {
-            font-size: 0.8rem;
-            font-family: 'office-code-medium', monospace;
-            flex-shrink: 0;
-            margin: 0 16px 0 0;
-          }
-
-          .search-input-control {
-            font-family: 'office-code', monospace;
-            color: rgba(65, 160, 248, 1);
-            width: 100%;
-            font-size: 0.8rem;
-
-            @media (max-width: 768px) {
-              font-size: 16px;
-            }
-
-            &::-webkit-input-placeholder {
-              /* Chrome/Opera/Safari */
-              color: #999999;
-            }
-
-            &::-moz-placeholder {
-              /* Firefox 19+ */
-              color: #999999;
-            }
-
-            &:-ms-input-placeholder {
-              /* IE 10+ */
-              color: #999999;
-            }
-
-            &:-moz-placeholder {
-              /* Firefox 18- */
-              color: #999999;
-            }
-          }
-        `}</style>
-        <label htmlFor="search" className="search-input-left">
+      <div className={css(styles.input)}>
+        <label htmlFor="search" className={css(styles.inputLeft)}>
           Search:
         </label>
         <input
           maxLength={32}
           name="search"
           onChange={this._handleChange}
-          className="search-input-control"
+          className={css(styles.inputControl)}
           placeholder={this.props.placeholder}
           value={this.props.query}
         />
@@ -75,3 +29,49 @@ export default class SearchInput extends React.PureComponent {
     );
   }
 }
+
+let styles = StyleSheet.create({
+  input: {
+    width: '100%',
+    margin: '16px 0 8px 0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  inputLeft: {
+    fontSize: '0.8rem',
+    fontFamily: `'office-code-medium', monospace`,
+    flexShrink: 0,
+    margin: '0 16px 0 0',
+  },
+  inputControl: {
+    fontFamily: `'office-code', monospace`,
+    color: 'rgba(65, 160, 248, 1)',
+    width: '100%',
+    fontSize: '0.8rem',
+
+    '@media (max-width: 768px)': {
+      fontSize: '16px',
+    },
+
+    '::-webkit-input-placeholder': {
+      /* Chrome/Opera/Safari */
+      color: '#999999',
+    },
+
+    '::-moz-placeholder': {
+      /* Firefox 19+ */
+      color: '#999999',
+    },
+
+    ':-ms-input-placeholder': {
+      /* IE 10+ */
+      color: '#999999',
+    },
+
+    ':-moz-placeholder': {
+      /* Firefox 18- */
+      color: '#999999',
+    },
+  },
+});
