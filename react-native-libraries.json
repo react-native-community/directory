@@ -1816,5 +1816,11 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/mfrachet/rn-render-perfs",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
