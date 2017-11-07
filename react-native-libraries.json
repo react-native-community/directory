@@ -1,5 +1,19 @@
 [
   {
+    "githubUrl": "https://github.com/meinto/react-native-mirror",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/meinto/react-native-viewpager-carousel",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/meinto/react-native-event-listeners",
     "ios": true,
     "android": true,
