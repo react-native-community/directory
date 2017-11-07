@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/meinto/react-native-event-listeners",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/wonday/react-native-pdf",
     "ios": true,
     "android": true,
