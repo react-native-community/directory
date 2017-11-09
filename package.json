@@ -26,6 +26,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "body-parser": "^1.18.2",
     "compression": "^1.7.1",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "glamor": "^2.20.40",
     "isomorphic-fetch": "^2.2.1",

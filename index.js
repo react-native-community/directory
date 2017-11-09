@@ -1,5 +1,6 @@
 import express from 'express';
 import next from 'next';
+import cors from 'cors';
 import nextRoutes from 'next-routes';
 import bodyParser from 'body-parser';
 import compression from 'compression';
@@ -27,14 +28,7 @@ const customHandler = routes.getRequestHandler(app);
 const getAllowedOrderString = req => {
   let sortBy = 'updated';
 
-  [
-    'recommended',
-    'compatibility',
-    'quality',
-    'downloads',
-    'issues',
-    'stars',
-  ].forEach(sortName => {
+  ['recommended', 'compatibility', 'quality', 'downloads', 'issues', 'stars'].forEach(sortName => {
     if (req.params.order === sortName) {
       sortBy = sortName;
     }
@@ -84,6 +78,11 @@ app.prepare().then(() => {
   server.use(
     bodyParser.urlencoded({
       extended: false,
+    })
+  );
+  server.use(
+    cors({
+      origin: '*',
     })
   );
 
