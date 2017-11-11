@@ -1,11 +1,6 @@
 import { isEmptyOrNull } from '../common/strings';
 
-export const handleFilterLibraries = ({
-  libraries,
-  queryTopic,
-  querySearch,
-  support,
-}) => {
+export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, support }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
@@ -29,14 +24,15 @@ export const handleFilterLibraries = ({
       return false;
     }
 
+    if (support.expo && typeof library.expo === 'string') {
+      return false;
+    }
+
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
       return true;
     }
 
-    if (
-      viewerHasChosenTopic &&
-      library.topicSearchString.includes(queryTopic)
-    ) {
+    if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
       isTopicMatch = true;
     }
 

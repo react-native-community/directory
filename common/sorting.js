@@ -10,7 +10,7 @@ export const compatibility = libraries => {
   libraries.sort((a, b) => {
     const aCompat = [
       1,
-      a.expo,
+      a.expo && typeof a.expo !== 'string',
       a.ios,
       a.android,
       a.web,
@@ -20,7 +20,7 @@ export const compatibility = libraries => {
 
     const bCompat = [
       1,
-      b.expo,
+      b.expo && typeof b.expo !== 'string',
       b.ios,
       b.android,
       b.web,
@@ -63,9 +63,7 @@ export const downloads = libraries => {
 
 export const updated = libraries => {
   libraries.sort((a, b) => {
-    return (
-      new Date(b.github.stats.pushedAt) - new Date(a.github.stats.pushedAt)
-    );
+    return new Date(b.github.stats.pushedAt) - new Date(a.github.stats.pushedAt);
   });
 
   return libraries;
