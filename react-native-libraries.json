@@ -1893,5 +1893,12 @@
     "ios": true,
     "android": true,
     "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/thinkmill/react-native-schemes-manager",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
+  },
 ]
