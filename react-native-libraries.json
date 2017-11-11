@@ -21,6 +21,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/RepairShopr/react-native-signature-capture",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/wonday/react-native-pdf",
     "ios": true,
     "android": true,
