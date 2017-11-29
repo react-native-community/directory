@@ -165,6 +165,13 @@
     "goldstar": true
   },
   {
+    "githubUrl": "https://github.com/bramus/react-native-maps-directions",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "examples": ["https://snack.expo.io/@bramus/react-native-maps-directions"]
+  },
+  {
     "githubUrl": "https://github.com/oblador/react-native-animatable",
     "ios": true,
     "android": true,
