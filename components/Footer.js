@@ -16,7 +16,7 @@ export default () => {
           <Link
             isStyled
             href="https://facebook.github.io/react-native/docs/getting-started.html">
-            offical docs
+            official docs
           </Link>, and{' '}
           <Link isStyled href="https://expo.io">
             Expo
