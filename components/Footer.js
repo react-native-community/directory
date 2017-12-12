@@ -10,7 +10,7 @@ export default () => {
           Missing a library?{' '}
           <Link
             isStyled
-            href="https://github.com/react-community/native-directory#how-to-add-a-library">
+            href="https://github.com/react-community/native-directory#how-do-i-add-a-library">
             Add it to the directory
           </Link>. Want to learn more about React Native? Check out the{' '}
           <Link
