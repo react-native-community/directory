@@ -1,5 +1,19 @@
 [
   {
+    "githubUrl": "https://github.com/prscX/react-native-material-showcase-ios",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/prscX/react-native-taptargetview",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/hectahertz/react-native-typography",
     "ios": true,
     "android": true,
