@@ -7,6 +7,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/bietkul/react-reactive-form",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/prscX/react-native-taptargetview",
     "ios": false,
     "android": true,
