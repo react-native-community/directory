@@ -1892,5 +1892,19 @@
     "android": false,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-keyboard-manager",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-simple-dialogs",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
