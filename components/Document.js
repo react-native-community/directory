@@ -28,7 +28,7 @@ export default class Document extends React.Component {
           <meta name="description" content={this.props.description} />
           <meta property="og:description" content={this.props.description} />
           <meta name="twitter:description" content={this.props.description} />
-        </Head>,
+        </Head>
         {this.props.children}
       </main>
     );
