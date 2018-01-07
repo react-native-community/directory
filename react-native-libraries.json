@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/prscX/react-native-spruce",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/prscX/react-native-material-showcase-ios",
     "ios": true,
     "android": false,
