@@ -1920,5 +1920,19 @@
     "android": false,
     "web": false,
     "expo": false
-  }
+  },
+  {
+    "githubUrl": "https://github.com/akveo/react-native-ui-kitten",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/akveo/kittenTricks",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
 ]
