@@ -1934,5 +1934,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/lopespm/react-native-offscreen-toolbar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
