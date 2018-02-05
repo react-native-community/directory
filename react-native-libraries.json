@@ -13,6 +13,19 @@
     "web": false,
     "expo": false
   },
+    "githubUrl": "https://github.com/peterpme/react-native-face-pile",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/peterpme/react-native-asyncstorage",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/prscX/react-native-shine-button",
     "ios": true,
