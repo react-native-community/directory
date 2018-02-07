@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default class SearchInput extends React.PureComponent {
-  static PropTypes = {
+  static propTypes = {
     query: PropTypes.string,
   };
 
