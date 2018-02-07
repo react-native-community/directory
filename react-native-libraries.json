@@ -1,5 +1,40 @@
 [
   {
+    "githubUrl": "https://github.com/vonovak/react-native-simple-toast",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-navigation-header-buttons",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-native-bottom-toolbar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-navigation-props-mapper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-native-add-calendar-event",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/prscX/react-native-bottom-action-sheet",
     "ios": true,
     "android": true,
