@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/facebook/react-native-fbsdk",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/vonovak/react-native-simple-toast",
     "ios": true,
     "android": true,
