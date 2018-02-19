@@ -266,7 +266,8 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": false
+    "expo": false,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/gre/gl-react",
