@@ -2099,5 +2099,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/rajsuvariya/autocompletetextview",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
