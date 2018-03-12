@@ -2113,5 +2113,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/shokimble/react-native-google-play-game-services",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
