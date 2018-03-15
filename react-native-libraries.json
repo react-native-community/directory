@@ -2113,5 +2113,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/jaredpalmer/formik",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
   }
 ]
