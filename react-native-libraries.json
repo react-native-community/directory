@@ -2049,5 +2049,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/TaumuLu/react-scroll-paged-view",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
   }
 ]
