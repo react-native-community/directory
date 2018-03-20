@@ -2050,11 +2050,11 @@
     "web": false,
     "expo": true
   },
-+  {
-+    "githubUrl": "https://github.com/vmurin/react-native-azure-auth",
-+    "ios": true,
-+    "android": true,
-+    "web": false,
-+    "expo": true
+  {
+    "githubUrl": "https://github.com/vmurin/react-native-azure-auth",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
    }
 ]
