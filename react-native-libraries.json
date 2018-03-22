@@ -2049,5 +2049,19 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/doomsower/react-native-modal-popover",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/doomsower/react-native-vkontakte-login",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
