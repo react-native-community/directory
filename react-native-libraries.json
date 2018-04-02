@@ -2046,6 +2046,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/vmurin/react-native-azure-auth",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/doomsower/react-native-modal-popover",
     "ios": true,
     "android": true,
@@ -2059,7 +2066,7 @@
     "web": false,
     "expo": false
   },
-   {
+  {
     "githubUrl": "https://github.com/lawnstarter/react-native-picker-select",
     "ios": true,
     "android": true,
