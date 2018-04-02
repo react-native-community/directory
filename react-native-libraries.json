@@ -927,12 +927,6 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/philipshurpik/react-native-animated-tabs",
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/stephy/CalendarPicker",
     "ios": true,
     "android": true,
@@ -1236,12 +1230,6 @@
     "githubUrl": "https://github.com/mehcode/rn-splash-screen",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/react-native-community/react-native-linear-gradient",
-    "ios": true,
-    "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/linear-gradient.html"
   },
   {
     "githubUrl": "https://github.com/voronianski/react-native-effects-view",
@@ -2063,5 +2051,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+   {
+    "githubUrl": "https://github.com/lawnstarter/react-native-picker-select",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
