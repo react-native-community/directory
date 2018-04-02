@@ -2032,6 +2032,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/jaredpalmer/formik",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/shokimble/react-native-google-play-game-services",
     "ios": false,
     "android": true,
