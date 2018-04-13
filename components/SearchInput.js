@@ -7,6 +7,12 @@ export default class SearchInput extends React.PureComponent {
     query: PropTypes.string,
   };
 
+  componentDidMount() {
+    if (this._input) {
+      this._input.focus();
+    }
+  }
+
   _handleChange = e => {
     this.props.onSearch(e.target.value.toLowerCase());
   };
@@ -20,6 +26,7 @@ export default class SearchInput extends React.PureComponent {
         <input
           maxLength={32}
           name="search"
+          ref={input => this._input = input}
           onChange={this._handleChange}
           className={css(styles.inputControl)}
           placeholder={this.props.placeholder}
