@@ -2093,6 +2093,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/JimmyDaddy/react-native-image-marker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
-  
 ]
