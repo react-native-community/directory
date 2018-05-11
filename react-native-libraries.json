@@ -2190,5 +2190,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/iddan/react-native-canvas",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
