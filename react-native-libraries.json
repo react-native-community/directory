@@ -1,5 +1,26 @@
 [
   {
+    "githubUrl": "https://github.com/shoutem/ui",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/shoutem/theme",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/shoutem/animation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/prscX/react-native-file-selector",
     "ios": true,
     "android": true,
