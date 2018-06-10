@@ -2192,15 +2192,13 @@
     "web": false,
     "expo": true
   },
-    {
+  {
     "githubUrl": "https://github.com/gusgard/react-native-swiper-flatlist",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true,
-    "examples": [
-      "https://snack.expo.io/@gusgard/react-native-swiper-flatlist"
-    ]
+    "examples": ["https://snack.expo.io/@gusgard/react-native-swiper-flatlist"]
   },
   {
     "githubUrl": "https://github.com/gusgard/react-native-grid-list",
@@ -2208,9 +2206,7 @@
     "android": true,
     "web": false,
     "expo": true,
-    "examples": [
-      "https://snack.expo.io/@gusgard/react-native-grid-list"
-    ]
+    "examples": ["https://snack.expo.io/@gusgard/react-native-grid-list"]
   },
   {
     "githubUrl": "https://github.com/JimmyDaddy/react-native-image-marker",
@@ -2233,11 +2229,11 @@
     "web": false,
     "expo": true
   },
-    {
+  {
     "githubUrl": "https://github.com/SmallStoneSK/react-native-draggable-calendar",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
-  },
+  }
 ]
