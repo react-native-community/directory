@@ -1,4 +1,11 @@
 [
+    {
+    "githubUrl": "https://github.com/wonday/react-native-image-cache-wrapper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/everdrone/react-native-super-ellipse-mask",
     "ios": true,
