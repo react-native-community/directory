@@ -1,5 +1,12 @@
 [
-    {
+  {
+    "githubUrl": "https://github.com/kristerkari/react-native-css-modules",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/wonday/react-native-image-cache-wrapper",
     "ios": true,
     "android": true,
