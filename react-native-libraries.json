@@ -7,6 +7,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/Navybits/react-native-navybits-date-time-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/wonday/react-native-image-cache-wrapper",
     "ios": true,
     "android": true,
