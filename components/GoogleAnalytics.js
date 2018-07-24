@@ -1,6 +1,6 @@
 import React from 'react';
 
-const getAnalyticsScript = (id: string) => {
+const getAnalyticsScript = id => {
   return `
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -11,7 +11,7 @@ ga('send', 'pageview');
 `.replace(/\n/g, '');
 };
 
-const GoogleAnalytics = (props: { id: string }) => {
+const GoogleAnalytics = props => {
   let markup = { __html: getAnalyticsScript(props.id) };
   return <script dangerouslySetInnerHTML={markup} />;
 };

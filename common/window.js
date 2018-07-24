@@ -1,7 +1,5 @@
-const getNavigatorAgent = (userAgent?: string) => {
-  return userAgent
-    ? userAgent
-    : navigator.userAgent || navigator.vendor || window.opera;
+const getNavigatorAgent = userAgent => {
+  return userAgent ? userAgent : navigator.userAgent || navigator.vendor || window.opera;
 };
 
 export const getViewportSize = () => {
@@ -20,7 +18,7 @@ export const getViewportSize = () => {
   };
 };
 
-export const isMobileBrowser = (userAgent?: string) => {
+export const isMobileBrowser = userAgent => {
   const navigatorAgent = getNavigatorAgent(userAgent);
 
   return (

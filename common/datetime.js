@@ -7,7 +7,7 @@ const WEEK = DAY * 7;
 const MONTH = DAY * 30;
 const YEAR = DAY * 365;
 
-export const getTimeSinceToday = (date: Date) => {
+export const getTimeSinceToday = date => {
   const updateTimeSeconds = new Date(date).getTime();
   const currentTimeSeconds = new Date().getTime();
 
