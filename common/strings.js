@@ -6,6 +6,6 @@ export const elide = string => {
   return string ? `${string.substring(0, 140)}...` : '...';
 };
 
-export const isEmptyOrNull = (text: any) => {
+export const isEmptyOrNull = text => {
   return !text || !text.trim();
 };
