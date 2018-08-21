@@ -1698,5 +1698,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/zeljkoX/react-native-pseudo-localization",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
