@@ -2263,5 +2263,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+  "githubUrl": "https://github.com/xcarpentier/rn-pdf-reader-js",
+  "ios": true,
+  "android": true,
+  "web": false,
+  "expo": true
   }
 ]
