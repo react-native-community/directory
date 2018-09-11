@@ -2263,5 +2263,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/cooperka/react-native-snackbar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
