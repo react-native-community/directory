@@ -2265,6 +2265,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/xcarpentier/rn-pdf-reader-js",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/cooperka/react-native-snackbar",
     "ios": true,
     "android": true,
