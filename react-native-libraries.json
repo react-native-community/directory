@@ -2284,5 +2284,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/henninghall/react-native-date-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
