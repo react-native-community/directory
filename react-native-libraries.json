@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/kkemple/react-native-sideswipe",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/kristerkari/react-native-css-modules",
     "ios": true,
     "android": true,
