@@ -2298,5 +2298,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/FriendsOfReact/react-native-gradients",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
