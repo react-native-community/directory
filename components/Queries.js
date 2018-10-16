@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 import { isEmptyOrNull } from '../common/strings';
@@ -22,10 +23,7 @@ export default class Queries extends React.PureComponent {
   };
 
   render() {
-    if (
-      isEmptyOrNull(this.props.querySearch) &&
-      isEmptyOrNull(this.props.queryTopic)
-    ) {
+    if (isEmptyOrNull(this.props.querySearch) && isEmptyOrNull(this.props.queryTopic)) {
       return null;
     }
 
@@ -33,7 +31,7 @@ export default class Queries extends React.PureComponent {
       <div className={css(styles.container)}>
         <h2 className={css(styles.heading)}>Your queries</h2>
         <ul className={css(styles.list)}>
-          {!isEmptyOrNull(this.props.querySearch) &&
+          {!isEmptyOrNull(this.props.querySearch) && (
             <li className={css(styles.item)}>
               <div className={css(styles.itemLeft)}>
                 Searching for{' '}
@@ -44,16 +42,15 @@ export default class Queries extends React.PureComponent {
                 </strong>{' '}
                 —{' '}
                 <span className={css(styles.itemRight)}>
-                  <span
-                    className={css(styles.itemLink)}
-                    onClick={this._handleClearSearch}>
+                  <span className={css(styles.itemLink)} onClick={this._handleClearSearch}>
                     Clear search
                   </span>
                 </span>
               </div>
-            </li>}
+            </li>
+          )}
 
-          {!isEmptyOrNull(this.props.queryTopic) &&
+          {!isEmptyOrNull(this.props.queryTopic) && (
             <li className={css(styles.item)}>
               <div className={css(styles.itemLeft)}>
                 Selected{' '}
@@ -63,14 +60,13 @@ export default class Queries extends React.PureComponent {
                 </strong>{' '}
                 —{' '}
                 <span className={css(styles.itemRight)}>
-                  <span
-                    className={css(styles.itemLink)}
-                    onClick={this._handleClearTopic}>
+                  <span className={css(styles.itemLink)} onClick={this._handleClearTopic}>
                     Clear topic
                   </span>
                 </span>
               </div>
-            </li>}
+            </li>
+          )}
         </ul>
       </div>
     );

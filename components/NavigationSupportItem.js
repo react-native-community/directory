@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'glamor/aphrodite';
 
@@ -22,12 +23,10 @@ const NavigationSupportItem = props => {
   return (
     <span
       className={parentClassNames}
-      onClick={() =>
-        update(props.dispatch, props.data.text, props.data.isActive)}>
+      onClick={() => update(props.dispatch, props.data.text, props.data.isActive)}>
       <span className={childClassNames}>
-        [<span className={supportClassNames}>
-          {!props.data.isActive ? 'Optional' : 'Required'}
-        </span>]{' '}{props.data.text}
+        [<span className={supportClassNames}>{!props.data.isActive ? 'Optional' : 'Required'}</span>]{' '}
+        {props.data.text}
       </span>
     </span>
   );

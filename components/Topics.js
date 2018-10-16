@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TopicItem from '../components/TopicItem';
-import data from '../build/data.json';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
+
+import data from '../build/data.json';
 
 const { topics, topicsList } = data;
 
@@ -24,9 +26,7 @@ let styles = StyleSheet.create({
 const topicItems = topicsList.map(name => {
   return (
     <li key={`topic-list-${name}`} className={css(styles.wrapper)}>
-      <TopicItem count={topics[name]}>
-        {name}
-      </TopicItem>
+      <TopicItem count={topics[name]}>{name}</TopicItem>
     </li>
   );
 });

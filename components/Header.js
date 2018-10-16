@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 import Link from '../components/Link';
@@ -14,19 +15,12 @@ export default class Header extends React.PureComponent {
       <header className={css(styles.header)}>
         <div className={css(styles.headerContents)}>
           <a className={css(styles.headerContentsLogo)} href="/">
-            <img
-              src="/static/logo.png"
-              alt="Native Directory logo"
-              width="64"
-              height="64"
-            />
+            <img src="/static/logo.png" alt="Native Directory logo" width="64" height="64" />
           </a>
           <div className={css(styles.headerContentsText)}>
             <p>
-              <strong className={css(styles.headerContentsTextStrong)}>
-                Native Directory
-              </strong>{' '}
-              is a curated list of {this.props.count}{' '}
+              <strong className={css(styles.headerContentsTextStrong)}>Native Directory</strong> is
+              a curated list of {this.props.count}{' '}
               <Link
                 isStyled
                 href="https://facebook.github.io/react-native/docs/getting-started.html">

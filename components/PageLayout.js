@@ -1,15 +1,12 @@
 import React from 'react';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default props => {
   return (
     <div className={css(styles.layout)}>
-      <div className={css(styles.left)}>
-        {props.children}
-      </div>
-      <div className={css(styles.right)}>
-        {props.rightSide}
-      </div>
+      <div className={css(styles.left)}>{props.children}</div>
+      <div className={css(styles.right)}>{props.rightSide}</div>
     </div>
   );
 };

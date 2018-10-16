@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default class CustomLink extends React.PureComponent {

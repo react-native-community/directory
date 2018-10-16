@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default props => {
@@ -8,11 +9,7 @@ export default props => {
     props.isBodyTextStyled ? styles.columnBody : undefined
   );
 
-  return (
-    <div className={columnClassNames}>
-      {props.children}
-    </div>
-  );
+  return <div className={columnClassNames}>{props.children}</div>;
 };
 
 const styles = StyleSheet.create({

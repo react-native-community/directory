@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default class SearchInput extends React.PureComponent {
@@ -26,7 +27,7 @@ export default class SearchInput extends React.PureComponent {
         <input
           maxLength={32}
           name="search"
-          ref={input => this._input = input}
+          ref={input => (this._input = input)}
           onChange={this._handleChange}
           className={css(styles.inputControl)}
           placeholder={this.props.placeholder}

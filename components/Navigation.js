@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 import {
@@ -11,9 +12,7 @@ import SearchInput from '../components/SearchInput';
 import NavigationItem from '../components/NavigationItem';
 import NavigationSupportItem from '../components/NavigationSupportItem';
 
-const renderNavigationItem = data => (
-  <NavigationItem key={`navigation-${data.text}`} data={data} />
-);
+const renderNavigationItem = data => <NavigationItem key={`navigation-${data.text}`} data={data} />;
 
 const renderSupportItem = data => (
   <NavigationSupportItem key={`navigation-${data.text}`} data={data} />
@@ -27,13 +26,9 @@ export default class Navigation extends React.PureComponent {
   };
 
   render() {
-    const elements = createNavigationItemsFromProps(this.props).map(
-      renderNavigationItem
-    );
+    const elements = createNavigationItemsFromProps(this.props).map(renderNavigationItem);
 
-    const supportElements = createSupportItemsFromProps(this.props).map(
-      renderSupportItem
-    );
+    const supportElements = createSupportItemsFromProps(this.props).map(renderSupportItem);
 
     return (
       <nav className={css(styles.navigation)}>
@@ -45,17 +40,13 @@ export default class Navigation extends React.PureComponent {
           />
           <div className={css(styles.elements)}>
             <span className={css(styles.title)}>
-              <span className={css(styles.text)}>
-                Compatibility:{' '}
-              </span>
+              <span className={css(styles.text)}>Compatibility: </span>
             </span>
             {supportElements}
           </div>
           <div className={css(styles.elements)}>
             <span className={css(styles.title)}>
-              <span className={css(styles.text)}>
-                Order By:{' '}
-              </span>
+              <span className={css(styles.text)}>Order By: </span>
             </span>
             {elements}
           </div>

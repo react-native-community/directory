@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as SVG from '../common/svg';
+
 import { getTimeSinceToday } from '../common/datetime';
 import { StyleSheet, css } from 'glamor/aphrodite';
 
@@ -10,9 +11,7 @@ import LibraryListColumn from '../components/LibraryListColumn';
 const renderListItem = (data, index) => {
   return (
     <li className={css(styles.item)} key={`list-item-${index}`}>
-      <span className={css(styles.svg)}>
-        {data.svg}
-      </span>
+      <span className={css(styles.svg)}>{data.svg}</span>
       {data.content}
     </li>
   );
@@ -38,8 +37,7 @@ export default props => {
           isStyled
           target="blank"
           href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
-          {`${props.library.npm.downloads}`} downloads{' '}
-          {props.library.npm.period}ly
+          {`${props.library.npm.downloads}`} downloads {props.library.npm.period}ly
         </Link>
       ),
     });
@@ -49,10 +47,7 @@ export default props => {
     items.push({
       svg: SVG.file,
       content: (
-        <Link
-          isStyled
-          target="blank"
-          href={`${props.library.github.urls.repo}/issues`}>
+        <Link isStyled target="blank" href={`${props.library.github.urls.repo}/issues`}>
           {`${props.library.github.stats.issues}`} issues
         </Link>
       ),
@@ -72,11 +67,7 @@ export default props => {
 
   const elements = items.map(renderListItem);
 
-  return (
-    <LibraryListColumn>
-      {elements}
-    </LibraryListColumn>
-  );
+  return <LibraryListColumn>{elements}</LibraryListColumn>;
 };
 
 let styles = StyleSheet.create({
