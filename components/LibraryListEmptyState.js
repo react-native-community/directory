@@ -1,16 +1,12 @@
 import React from 'react';
 import Link from '../components/Link';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default () => {
   return (
     <div className={css(styles.container)}>
-      <img
-        className={css(styles.img)}
-        src="/static/notfound.png"
-        width="64px"
-        height="64px"
-      />
+      <img className={css(styles.img)} src="/static/notfound.png" width="64px" height="64px" />
       <p>
         Nothing was found! Try another search. <br />
         <br />

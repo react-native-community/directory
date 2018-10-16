@@ -7,6 +7,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/MAKARD/react-native-formawesome",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/talut/rn-secure-storage",
     "ios": true,
     "android": true,
@@ -2321,6 +2328,13 @@
   },
   {
     "githubUrl": "https://github.com/FriendsOfReact/react-native-gradients",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/thomaswangio/react-native-gradient-buttons",
     "ios": true,
     "android": true,
     "web": false,

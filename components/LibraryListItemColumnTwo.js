@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as SVG from '../common/svg';
+
 import { isEmptyOrNull } from '../common/strings';
 import { StyleSheet, css } from 'glamor/aphrodite';
 
@@ -8,6 +9,7 @@ import Link from '../components/Link';
 import TopicItem from '../components/TopicItem';
 import ImageTooltipContainer from '../components/ImageTooltipContainer';
 import LibraryListColumn from '../components/LibraryListColumn';
+
 import data from '../build/data.json';
 
 const { topics } = data;

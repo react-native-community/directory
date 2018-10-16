@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'glamor/aphrodite';
 import { keyframes } from 'glamor';
@@ -140,23 +141,20 @@ class GlobalTooltip extends React.Component {
         }}
         className={css(styles.globalTooltip)}
         style={tooltipStyles}>
-        {this.state.isLoaded
-          ? <div
-              className={css(styles.globalTooltipImage)}
-              style={{
-                backgroundImage: `url('${this.props.tooltip.content}')`,
-              }}
-              width="100%"
-            />
-          : <div className={css(styles.globalTooltipLoading)}>
-              {this.state.isNotFound
-                ? 'Image failed to load'
-                : 'Loading image...'}
-            </div>}
-        <div
-          className={css(styles.globalTooltipArrow)}
-          style={tooltipArrowStyles}
-        />
+        {this.state.isLoaded ? (
+          <div
+            className={css(styles.globalTooltipImage)}
+            style={{
+              backgroundImage: `url('${this.props.tooltip.content}')`,
+            }}
+            width="100%"
+          />
+        ) : (
+          <div className={css(styles.globalTooltipLoading)}>
+            {this.state.isNotFound ? 'Image failed to load' : 'Loading image...'}
+          </div>
+        )}
+        <div className={css(styles.globalTooltipArrow)} style={tooltipArrowStyles} />
       </figcaption>
     );
   }

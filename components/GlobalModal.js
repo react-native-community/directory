@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'glamor/aphrodite';
 import { keyframes } from 'glamor';
@@ -16,11 +17,7 @@ class GlobalModal extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.modal && !prevProps.modal) {
-      window.history.pushState(
-        null,
-        null,
-        `?modal=${this.props.modal.content}`
-      );
+      window.history.pushState(null, null, `?modal=${this.props.modal.content}`);
       window.addEventListener('popstate', this._handlePopState);
     }
   }
@@ -82,17 +79,16 @@ class GlobalModal extends React.Component {
         }}
         className={css(styles.globalModal)}
         onClick={this._dismissModal}>
-        {this.state.isLoaded
-          ? <img
-              src={this.props.modal.content}
-              className={css(
-                styles.globalModalContent,
-                styles.globalModalContentImage
-              )}
-            />
-          : <div className={css(styles.globalModalContent)}>
-              {this.state.isNotFound ? 'Image failed to load' : 'Loading'}
-            </div>}
+        {this.state.isLoaded ? (
+          <img
+            src={this.props.modal.content}
+            className={css(styles.globalModalContent, styles.globalModalContentImage)}
+          />
+        ) : (
+          <div className={css(styles.globalModalContent)}>
+            {this.state.isNotFound ? 'Image failed to load' : 'Loading'}
+          </div>
+        )}
       </div>
     );
   }

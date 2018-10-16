@@ -1,11 +1,8 @@
-/**
- * @flow
- */
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'glamor/aphrodite';
-
 import { getViewportSize } from '../common/window';
 import { TOOLTIP_WIDTH, TOOLTIP_ARROW_SIZE } from '../common/constants';
 
@@ -21,11 +18,7 @@ class ImageTooltipContainer extends React.Component {
     const { tooltip } = this.props;
     const measurements = this._calculateTooltipPosition();
 
-    if (
-      tooltip &&
-      measurements.top === tooltip.top &&
-      measurements.left === tooltip.left
-    ) {
+    if (tooltip && measurements.top === tooltip.top && measurements.left === tooltip.left) {
       return;
     }
 
@@ -103,12 +96,8 @@ class ImageTooltipContainer extends React.Component {
   };
 
   render() {
-    const onMouseEnter = this.props.isMobile
-      ? undefined
-      : this._handleMouseEnter;
-    const onMouseLeave = this.props.isMobile
-      ? undefined
-      : this._handleMouseLeave;
+    const onMouseEnter = this.props.isMobile ? undefined : this._handleMouseEnter;
+    const onMouseLeave = this.props.isMobile ? undefined : this._handleMouseLeave;
     const onClick = this.props.isMobile ? this._handleClick : undefined;
 
     return (

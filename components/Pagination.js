@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { PAGINATION_BREAKPOINT } from '../common/constants';
 import { StyleSheet, css } from 'glamor/aphrodite';
 

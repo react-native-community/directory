@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default class PercentageBar extends React.PureComponent {
@@ -17,9 +18,7 @@ export default class PercentageBar extends React.PureComponent {
     const progressBarClasses = css(
       styles.barProgress,
       !this.props.gradientType ? styles.barProgressGradientDefault : undefined,
-      this.props.gradientType === 'blue'
-        ? styles.barProgressGradientBlue
-        : undefined
+      this.props.gradientType === 'blue' ? styles.barProgressGradientBlue : undefined
     );
 
     return (

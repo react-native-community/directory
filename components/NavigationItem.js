@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default props => {
@@ -8,16 +9,11 @@ export default props => {
     !props.data.isActive ? styles.itemInteractable : undefined
   );
 
-  const childClassNames = css(
-    styles.text,
-    props.data.isActive ? styles.textActive : undefined
-  );
+  const childClassNames = css(styles.text, props.data.isActive ? styles.textActive : undefined);
 
   return (
     <a className={parentClassNames} href={props.data.href}>
-      <span className={childClassNames}>
-        {props.data.text}
-      </span>
+      <span className={childClassNames}>{props.data.text}</span>
     </a>
   );
 };

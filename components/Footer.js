@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../components/Link';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 export default () => {
@@ -13,9 +14,7 @@ export default () => {
             href="https://github.com/react-community/native-directory#how-do-i-add-a-library">
             Add it to the directory
           </Link>. Want to learn more about React Native? Check out the{' '}
-          <Link
-            isStyled
-            href="https://facebook.github.io/react-native/docs/getting-started.html">
+          <Link isStyled href="https://facebook.github.io/react-native/docs/getting-started.html">
             official docs
           </Link>, and{' '}
           <Link isStyled href="https://expo.io">

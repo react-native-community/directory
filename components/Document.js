@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import GoogleAnalytics from './GoogleAnalytics';
+
 import { globalStyles } from '../common/styles';
 import { StyleSheet, css } from 'glamor/aphrodite';
 
@@ -13,7 +14,8 @@ export default class Document extends React.Component {
 
   static defaultProps = {
     title: 'Native Directory',
-    description: 'Native Directory is a curated list of React Native libraries to help you build your projects.',
+    description:
+      'Native Directory is a curated list of React Native libraries to help you build your projects.',
   };
 
   render() {

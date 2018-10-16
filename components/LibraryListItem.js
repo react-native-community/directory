@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { StyleSheet, css } from 'glamor/aphrodite';
 
 import LibraryListItemColumnOne from '../components/LibraryListItemColumnOne';
 import LibraryListItemColumnTwo from '../components/LibraryListItemColumnTwo';
-import LibraryListItemColumnThree
-  from '../components/LibraryListItemColumnThree';
+import LibraryListItemColumnThree from '../components/LibraryListItemColumnThree';
 
 export default class LibraryListItem extends React.PureComponent {
   static propTypes = {
@@ -17,10 +17,7 @@ export default class LibraryListItem extends React.PureComponent {
     return (
       <div className={css(styles.item)}>
         <LibraryListItemColumnOne library={this.props.library} />
-        <LibraryListItemColumnTwo
-          isMobile={this.props.isMobile}
-          library={this.props.library}
-        />
+        <LibraryListItemColumnTwo isMobile={this.props.isMobile} library={this.props.library} />
         <LibraryListItemColumnThree library={this.props.library} />
       </div>
     );
