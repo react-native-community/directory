@@ -4,8 +4,11 @@ import cors from 'cors';
 import nextRoutes from 'next-routes';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+
 import * as Sorting from './common/sorting';
+
 import { handleFilterLibraries } from './common/search';
+
 import data from './build/data.json';
 
 const originalData = [...data.libraries];
