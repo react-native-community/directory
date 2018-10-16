@@ -1,6 +1,13 @@
 [
   {
-    "githubUrl": "https://github.com/minhtc/react-native-auto-scrolling",
+    "githubUrl": "https://github.com/MAKARD/react-native-formawesome",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/MAKARD/react-native-formawesome",
     "ios": true,
     "android": true,
     "web": false,
