@@ -14,13 +14,6 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/MAKARD/react-native-formawesome",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/talut/rn-secure-storage",
     "ios": true,
     "android": true,
@@ -1764,8 +1757,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-simple-router-community/react-native-simple-router",
+    "githubUrl": "https://github.com/react-native-simple-router-community/react-native-simple-router",
     "ios": true,
     "android": true,
     "expo": true,
