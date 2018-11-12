@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/kristerkari/react-native-svg-transformer",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/kenmaca/react-native-apple-ads-attribution",
     "ios": true,
     "android": false,
