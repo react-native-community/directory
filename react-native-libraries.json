@@ -2340,6 +2340,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/Nozbe/WatermelonDB",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/tessus/react-native-version-info",
     "ios": true,
     "android": true,
