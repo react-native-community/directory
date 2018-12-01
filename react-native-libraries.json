@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/kenkotch/react-native-columns",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/kristerkari/react-native-svg-transformer",
     "ios": true,
     "android": true,
