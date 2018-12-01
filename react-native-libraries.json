@@ -1,10 +1,17 @@
 [
   {
-   "githubUrl": "https://github.com/kenkotch/react-native-columns",
-   "ios": true,
-   "android": true,
-   "web": false,
-   "expo": false
+    "githubUrl": "https://github.com/kenkotch/react-native-columns",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/kristerkari/react-native-svg-transformer",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/kenmaca/react-native-apple-ads-attribution",
@@ -2345,5 +2352,19 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Nozbe/WatermelonDB",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/tessus/react-native-version-info",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
