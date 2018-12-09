@@ -2366,5 +2366,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/lawnstarter/react-native-hotspot",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
