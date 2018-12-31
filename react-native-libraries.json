@@ -2394,5 +2394,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Buglife/react-native-buglife",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
