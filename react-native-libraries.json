@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/cesarvr/react-native-pdf-generator-demo",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/jeffreymendez1993/react-native-webview-readability",
     "ios": true,
     "android": true,
