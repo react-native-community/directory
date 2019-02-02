@@ -2408,5 +2408,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/react-native-suggester",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
