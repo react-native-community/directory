@@ -2415,5 +2415,12 @@
     "android": true,
     "web": false,
     "expo": true
-},
+  },
+  {
+    "githubUrl": "https://github.com/Bruno-Furtado/react-native-sms-retriever",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
+  }
 ]
