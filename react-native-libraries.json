@@ -1,5 +1,19 @@
 [
   {
+    "githubUrl": "https://github.com/kristerkari/pinar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/react-native-super-image",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/cesarvr/react-native-pdf-generator-demo",
     "ios": true,
     "android": true,
@@ -2410,10 +2424,52 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/hungdev/react-native-customize-selected-date",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/xcarpentier/react-native-suggester",
     "ios": true,
     "android": true,
     "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/AndreYonadam/react-native-scrolling-images",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/hungdev/react-native-instagram-login",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/lfkwtz/react-native-ruler",
+    "ios": true,
+    "android": true,
+    "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/react-native-safe-image",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Bruno-Furtado/react-native-sms-retriever",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
