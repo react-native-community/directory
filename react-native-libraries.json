@@ -2410,6 +2410,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/xcarpentier/react-native-safe-image",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/Bruno-Furtado/react-native-sms-retriever",
     "ios": false,
     "android": true,
