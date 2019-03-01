@@ -53,11 +53,13 @@ Please follow this format and indentation:
 * `web` - can be used in the browser.
 * `expo` - can be used without detaching an Expo application.
 
+> *Note:* If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/blob/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
+
 ## How do I run my own version locally?
 
 Prerequisites
 
-- Node 7.9.0+
+- Node 10.7.0
 
 Commands
 
