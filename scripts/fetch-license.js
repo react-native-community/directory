@@ -11,12 +11,18 @@ const githubLicenceInfo = async repoName => {
 };
 
 const fetchLicense = async (data, repoName) => {
-  let license = await githubLicenceInfo(repoName);
+  try {
+    let license = await githubLicenceInfo(repoName);
 
-  return {
-    ...data,
-    license
-  };
+    return {
+      ...data,
+      license
+    };
+  } catch(e) {
+    console.log(`retrying license fetch for ${repoName}`);
+    console.log(data);
+    return await fetchLicense(data, repoName);
+  }
 };
 
 export default fetchLicense;

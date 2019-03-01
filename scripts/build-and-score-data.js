@@ -35,7 +35,12 @@ function sleep(ms = 0) {
 const buildAndScoreData = async () => {
   console.log('** Loading data from Github');
   await sleep(1000);
-  let data = await loadRepositoryDataAsync();
+  let data;
+  try {
+    data = await loadRepositoryDataAsync();
+  } catch(e) {
+    console.log(e);
+  }
 
   console.log('** Fetching license type');
   await sleep(1000);

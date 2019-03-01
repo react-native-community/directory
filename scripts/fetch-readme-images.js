@@ -41,12 +41,17 @@ const scrapeImagesAsync = async githubUrl => {
 };
 
 const fetchReadmeImages = async (data, githubUrl) => {
-  let images = await scrapeImagesAsync(githubUrl);
+  try {
+    let images = await scrapeImagesAsync(githubUrl);
 
-  return {
-    ...data,
-    images,
-  };
+    return {
+      ...data,
+      images,
+    };
+  } catch(e) {
+    console.log(`retrying image scrape for ${githubUrl}`);
+    return await fetchReadmeImages(data, githubUrl);
+  }
 };
 
 export default fetchReadmeImages;

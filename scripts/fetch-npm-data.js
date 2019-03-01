@@ -18,7 +18,10 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
     let downloadData = await response.json();
 
     if (!downloadData.downloads) {
-      console.log('Failed to grab download data', url);
+      console.log(
+        `${npmPkg} doesn't exist on npm registry, add npmPkg to its entry in react-native-libraries.json to clarify it`
+      );
+      return { ...data, npm: {} };
     }
 
     return {
@@ -31,12 +34,9 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       },
     };
   } catch (e) {
-    return {
-      ...data,
-      npm: {
-        dataFetchError: e.message,
-      },
-    };
+    console.log(e);
+    console.log('Failed to grab data, retrying');
+    return await fetchNpmData(data, npmPkg, githubUrl);
   }
 };
 
