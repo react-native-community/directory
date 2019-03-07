@@ -2853,5 +2853,13 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/matt-block/react-native-in-app-browser",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false,
+    "npmPkg": "@matt-block/react-native-in-app-browser"
   }
 ]
