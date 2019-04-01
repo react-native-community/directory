@@ -2853,5 +2853,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
