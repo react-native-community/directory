@@ -2853,5 +2853,12 @@
     "android": true,
     "web": false,
     "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
 ]
