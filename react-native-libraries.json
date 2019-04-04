@@ -2853,5 +2853,13 @@
     "android": true,
     "web": false,
     "expo": true
-  }
+  },
+  {
+    "githubUrl":
+      "https://github.com/leonelfaugusto/rn-option-select",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
 ]
