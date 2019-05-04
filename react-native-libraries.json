@@ -2860,5 +2860,13 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/greenfrvr/react-native-window-guard",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
