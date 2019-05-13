@@ -2860,5 +2860,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/tableau/react-native-dns-lookup",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
