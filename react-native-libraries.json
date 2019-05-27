@@ -7,7 +7,28 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/SudoPlz/react-native-shake-event",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/crazycodeboy/react-native-splash-screen",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/kristerkari/pinar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-google-photos",
     "ios": true,
     "android": true,
     "web": false,
@@ -2860,5 +2881,20 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/matt-block/react-native-in-app-browser",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false,
+    "npmPkg": "@matt-block/react-native-in-app-browser"
   }
 ]
