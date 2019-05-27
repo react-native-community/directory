@@ -2912,11 +2912,12 @@
     "web": false,
     "npmPkg": "@matt-block/react-native-in-app-browser"
   },
+  {
     "githubUrl":
       "https://github.com/greenfrvr/react-native-window-guard",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false
-  {
+  }
 ]
