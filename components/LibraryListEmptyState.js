@@ -11,12 +11,8 @@ export default () => {
         Nothing was found! Try another search. <br />
         <br />
         Want to contribute a library you like?<br />
-        Share it on{' '}
-        <Link isStyled href="https://slack.expo.io/">
-          Expo Slack
-        </Link>. <br />
-        Or submit a PR to the{' '}
-        <Link isStyled href="https://github.com/expo/react-native-libraries">
+        Submit a PR to the{' '}
+        <Link isStyled href="https://github.com/react-native-community/react-native-directory">
           Github Repo.
         </Link>
       </p>
