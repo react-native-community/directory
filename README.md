@@ -52,6 +52,7 @@ Please follow this format and indentation:
 * `android` - works on Android phones.
 * `web` - can be used in the browser.
 * `expo` - can be used without detaching an Expo application.
+* `examples` - optional array of URLs (snacks preferred) with demonstrations of the library 
 
 > *Note:* If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/blob/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
