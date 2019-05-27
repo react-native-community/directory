@@ -72,6 +72,13 @@
     "expo": false
   },
   {
+    "githubUrl": "https://github.com/aeirola/react-native-svg-asset-plugin",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl":
       "https://github.com/kenmaca/react-native-apple-ads-attribution",
     "ios": true,
