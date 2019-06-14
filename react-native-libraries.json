@@ -1,4 +1,11 @@
 [
+    {
+    "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/alexfoxy/react-native-units",
     "ios": true,
