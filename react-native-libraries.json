@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/GetStream/stream-chat-react-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/alexfoxy/react-native-units",
     "ios": true,
     "android": true,
