@@ -1,4 +1,11 @@
 [
+    {
+    "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
   {
     "githubUrl": "https://github.com/GetStream/stream-chat-react-native",
     "ios": true,
