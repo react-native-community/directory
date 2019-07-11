@@ -2748,6 +2748,14 @@
   },
   {
     "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-in-app-purchases",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-intent-launcher",
     "ios": true,
     "android": true,
