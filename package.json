@@ -15,7 +15,7 @@
     "precommit": "npm test"
   },
   "engines": {
-    "node": "10.7.0"
+    "node": "^10"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -24,14 +24,14 @@
     "express": "^4.16.3",
     "glamor": "^2.20.40",
     "isomorphic-fetch": "^2.2.1",
-    "jsonfile": "^4.0.0",
+    "jsonfile": "^5.0.0",
     "lodash": "^4.17.4",
-    "next": "9.0.0",
+    "next": "9.0.1",
     "next-routes": "^1.4.2",
     "prop-types": "^15.6.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-redux": "^5.0.7",
+    "react-redux": "^7.1.0",
     "redux": "^4.0.0"
   },
   "devDependencies": {
@@ -39,13 +39,13 @@
     "@babel/node": "7.5.0",
     "@babel/preset-env": "7.5.4",
     "cheerio": "^1.0.0-rc.2",
-    "eslint": "^4.9.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.4.0",
-    "husky": "^0.14.3",
+    "husky": "^3.0.0",
     "prettier": "^1.10.2"
   }
 }
