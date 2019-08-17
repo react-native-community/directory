@@ -2264,7 +2264,7 @@
     "githubUrl": "https://github.com/akveo/react-native-ui-kitten",
     "ios": true,
     "android": true,
-    "web": false,
+    "web": true,
     "expo": true
   },
   {
@@ -2975,6 +2975,12 @@
     "ios": true,
     "android": true,
     "web": false,
+    "expo": true
+  },
+    "githubUrl": "https://github.com/artyorsh/react-native-eva-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
     "expo": true
   }
 ]
