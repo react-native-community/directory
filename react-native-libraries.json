@@ -2264,7 +2264,7 @@
     "githubUrl": "https://github.com/akveo/react-native-ui-kitten",
     "ios": true,
     "android": true,
-    "web": false,
+    "web": true,
     "expo": true
   },
   {
@@ -2944,6 +2944,13 @@
   },
   {
     "githubUrl": "https://github.com/marcocesarato/react-native-input-spinner",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/artyorsh/react-native-eva-icons",
     "ios": true,
     "android": true,
     "web": true,
