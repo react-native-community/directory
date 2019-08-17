@@ -2950,6 +2950,33 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/keyboard-aware-scrollview",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/expandable-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/fade-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/page-slider",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
     "githubUrl": "https://github.com/artyorsh/react-native-eva-icons",
     "ios": true,
     "android": true,
