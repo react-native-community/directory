@@ -2983,5 +2983,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-wifi-p2p",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
