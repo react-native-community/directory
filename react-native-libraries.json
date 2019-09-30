@@ -2983,5 +2983,14 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/mxmzb/react-native-gesture-detector",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "react-native-gesture-detector",
+    "examples": ["https://snack.expo.io/@mxmzb/react-native-gesture-detector"]
   }
 ]
