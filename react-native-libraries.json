@@ -1,5 +1,12 @@
 [
     {
+      "githubUrl": "https://github.com/Elyx0/react-native-document-picker",
+      "ios": true,
+      "android": true,
+      "web": false,
+      "expo": false
+    },
+    {
     "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
     "ios": true,
     "android": true,
