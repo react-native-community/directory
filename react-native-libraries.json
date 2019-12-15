@@ -2997,5 +2997,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-smaato-ad",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
