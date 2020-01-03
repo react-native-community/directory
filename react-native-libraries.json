@@ -3011,5 +3011,12 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-bundle-splitter",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
