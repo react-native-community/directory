@@ -1,5 +1,19 @@
 [
-    {
+  {
+    "githubUrl": "https://github.com/wcisco17/react-native-animation-video",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true  
+  },
+  {
+    "githubUrl": "https://github.com/mediusoft/expo-analytics-google",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
     "ios": true,
     "android": true,
@@ -2934,7 +2948,7 @@
     "android": true,
     "web": false,
     "expo": false
-  },
+  },  
   {
     "githubUrl": "https://github.com/tableau/react-native-dns-lookup",
     "ios": true,
@@ -2983,6 +2997,20 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/fjmorant/react-native-nested-listview",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-wifi-p2p",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/kirillzyusko/react-native-bundle-splitter",
