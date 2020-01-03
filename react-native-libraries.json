@@ -2997,5 +2997,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/fjmorant/react-native-nested-listview",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
