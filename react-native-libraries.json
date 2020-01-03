@@ -2999,6 +2999,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/artyorsh/react-native-eva-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/fjmorant/react-native-nested-listview",
     "ios": true,
     "android": true,
@@ -3018,5 +3025,14 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/mxmzb/react-native-gesture-detector",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "react-native-gesture-detector",
+    "examples": ["https://snack.expo.io/@mxmzb/react-native-gesture-detector"]
   }
 ]
