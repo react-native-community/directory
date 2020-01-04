@@ -3034,5 +3034,12 @@
     "android": true,
     "web": false,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Elyx0/react-native-document-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
