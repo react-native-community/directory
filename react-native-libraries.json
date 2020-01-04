@@ -2999,6 +2999,71 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/fjmorant/react-native-nested-listview",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-wifi-p2p",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-bundle-splitter",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/mxmzb/react-native-gesture-detector",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "react-native-gesture-detector",
+    "examples": ["https://snack.expo.io/@mxmzb/react-native-gesture-detector"]
+  },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-indicators",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Elyx0/react-native-document-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/HosseinShabani/react-native-modern-datepicker",
+      "ios": true,
+      "android": true,
+      "web": false,
+      "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ptomasroos/react-native-multi-slider",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-smaato-ad",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/safaiyeh/react-native-cookie-store",
     "ios": true,
     "android": true,
