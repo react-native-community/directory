@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/Yasser-G/react-native-redux",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true  
+  },
+  {
     "githubUrl": "https://github.com/wcisco17/react-native-animation-video",
     "ios": true,
     "android": false,
