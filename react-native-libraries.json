@@ -3083,5 +3083,11 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
+    "ios": true,
+    "android": true,
+    "npmPkg": "emoji-mart-native"
   }
 ]
