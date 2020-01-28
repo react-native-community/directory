@@ -3083,5 +3083,20 @@
     "android": true,
     "web": false,
     "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-reanimated",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/osdnk/react-native-reanimated-bottom-sheet",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "npmPkg": "reanimated-bottom-sheet"
   }
 ]
