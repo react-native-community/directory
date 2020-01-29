@@ -14,13 +14,6 @@
     "expo": true  
   },
   {
-    "githubUrl": "https://github.com/mediusoft/expo-analytics-google",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
     "ios": true,
     "android": true,
@@ -659,6 +652,7 @@
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true,
     "examples": ["https://snack.expo.io/SyOdDdL8b"]
   },
@@ -1098,9 +1092,19 @@
     "githubUrl": "https://github.com/expo/react-native-action-sheet",
     "ios": true,
     "android": true,
+    "web": true,
     "expo": true,
     "npmPkg": "@expo/react-native-action-sheet",
     "examples": ["https://expo.io/@community/react-native-action-sheet-example"]
+  },
+  {
+    "githubUrl": "https://github.com/expo/vector-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "npmPkg": "@expo/vector-icons",
+    "examples": ["https://expo.github.io/vector-icons"]
   },
   {
     "githubUrl":
@@ -2608,12 +2612,28 @@
       "https://github.com/expo/expo/tree/master/packages/expo-analytics-segment",
     "ios": true,
     "android": true,
-    "web": true,
+    "web": false,
     "expo": true
   },
   {
     "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-app-auth",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-apple-authentication",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-application",
     "ios": true,
     "android": true,
     "web": true,
@@ -2634,6 +2654,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-background-fetch",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-barcode-scanner",
     "ios": true,
@@ -2643,10 +2670,26 @@
   },
   {
     "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-brightness",
+      "https://github.com/expo/expo/tree/master/packages/expo-battery",
     "ios": true,
     "android": true,
     "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-blur",
+    "ios": true,
+    "android": false,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-brightness",
+    "ios": true,
+    "android": true,
+    "web": false,
     "expo": true
   },
   {
@@ -2654,12 +2697,20 @@
       "https://github.com/expo/expo/tree/master/packages/expo-calendar",
     "ios": true,
     "android": true,
-    "web": true,
+    "web": false,
     "expo": true
   },
   {
     "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-camera",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-cellular",
     "ios": true,
     "android": true,
     "web": true,
@@ -2678,12 +2729,20 @@
       "https://github.com/expo/expo/tree/master/packages/expo-contacts",
     "ios": true,
     "android": true,
-    "web": true,
+    "web": false,
     "expo": true
   },
   {
     "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-crypto",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-device",
     "ios": true,
     "android": true,
     "web": true,
@@ -2699,10 +2758,18 @@
   },
   {
     "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-face-detector",
+      "https://github.com/expo/expo/tree/master/packages/expo-error-recovery",
     "ios": true,
     "android": true,
     "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-face-detector",
+    "ios": true,
+    "android": true,
+    "web": false,
     "expo": true
   },
   {
@@ -2718,7 +2785,7 @@
       "https://github.com/expo/expo/tree/master/packages/expo-file-system",
     "ios": true,
     "android": true,
-    "web": true,
+    "web": false,
     "expo": true
   },
   {
@@ -2733,6 +2800,14 @@
     "ios": true,
     "android": true,
     "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-google-app-auth",
+    "ios": true,
+    "android": true,
+    "web": false,
     "expo": true
   },
   {
@@ -2753,10 +2828,10 @@
   },
   {
     "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-image-manipulator",
+    "https://github.com/expo/expo/tree/master/packages/expo-image-manipulator",
     "ios": true,
     "android": true,
-    "web": false,
+    "web": true,
     "expo": true
   },
   {
@@ -2841,6 +2916,22 @@
   },
   {
     "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-network",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-notifications",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-payments-stripe",
     "ios": true,
     "android": true,
@@ -2850,6 +2941,14 @@
   {
     "githubUrl":
       "https://github.com/expo/expo/tree/master/packages/expo-permissions",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo-pixi",
     "ios": true,
     "android": true,
     "web": true,
@@ -2906,7 +3005,7 @@
       "https://github.com/expo/expo/tree/master/packages/expo-speech",
     "ios": true,
     "android": true,
-    "web": false,
+    "web": true,
     "expo": true
   },
   {
@@ -2919,10 +3018,66 @@
   },
   {
     "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-web-browser",
+      "https://github.com/expo/expo/tree/master/packages/expo-store-review",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-task-manager",
     "ios": true,
     "android": true,
     "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo-three",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-video-thumbnails",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/expo-web-browser",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/jest-expo",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl":
+      "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer",
+    "ios": false,
+    "android": false,
+    "web": true,
     "expo": true
   },
   {
@@ -3051,10 +3206,10 @@
   },
   {
     "githubUrl": "https://github.com/HosseinShabani/react-native-modern-datepicker",
-      "ios": true,
-      "android": true,
-      "web": false,
-      "expo": true
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/ptomasroos/react-native-multi-slider",
