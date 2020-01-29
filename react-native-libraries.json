@@ -1,4 +1,11 @@
 [
+   {
+    "githubUrl": "https://github.com/Yasser-G/react-native-scales",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true  
+  },
   {
     "githubUrl": "https://github.com/Yasser-G/react-native-redux",
     "ios": true,
