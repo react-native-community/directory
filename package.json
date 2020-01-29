@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "babel-node index.js --presets next/babel",
     "build": "NODE_ENV=production next build",
-    "heroku-postbuild": "chmod -R +x node_modules/next/dist/bin/next-* && NODE_ENV=production next build",
+    "heroku-postbuild": "NODE_ENV=production next build",
     "start": "NODE_ENV=production babel-node index.js --presets next/babel",
     "create-data": "babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
     "json-validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json",
