@@ -737,11 +737,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/joeferraro/react-native-cookies",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/doefler/react-native-social-share",
     "ios": true,
     "android": true
@@ -3233,7 +3228,7 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/safaiyeh/react-native-cookie-store",
+    "githubUrl": "https://github.com/react-native-community/cookies",
     "ios": true,
     "android": true,
     "web": false,
