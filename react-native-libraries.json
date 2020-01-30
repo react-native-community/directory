@@ -3255,5 +3255,13 @@
     "web": true,
     "expo": true,
     "npmPkg": "reanimated-bottom-sheet"
+  },
+  {
+    "githubUrl": "https://github.com/DuDigital/react-native-zoomable-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "react-native-zoomable-view"
   }
 ]
