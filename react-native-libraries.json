@@ -737,11 +737,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/joeferraro/react-native-cookies",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/doefler/react-native-social-share",
     "ios": true,
     "android": true
@@ -3233,7 +3228,7 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/safaiyeh/react-native-cookie-store",
+    "githubUrl": "https://github.com/react-native-community/cookies",
     "ios": true,
     "android": true,
     "web": false,
@@ -3260,6 +3255,14 @@
     "web": true,
     "expo": true,
     "npmPkg": "reanimated-bottom-sheet"
+  },
+  {
+    "githubUrl": "https://github.com/DuDigital/react-native-zoomable-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "react-native-zoomable-view"
   },
   {
     "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
