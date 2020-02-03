@@ -3263,5 +3263,11 @@
     "web": false,
     "expo": true,
     "npmPkg": "react-native-zoomable-view"
+  },
+  {
+    "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
+    "ios": true,
+    "android": true,
+    "npmPkg": "emoji-mart-native"
   }
 ]
