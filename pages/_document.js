@@ -33,7 +33,7 @@ export default class WebDocument extends Document {
 
           <meta name="twitter:card" content="summary" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta property="og:site_name" content="React Native Directory" />
+          <meta property="og:site_name" content="React React Native Directory" />
           <meta name="twitter:site" content="@expo_io" />
 
           <link rel="shortcut icon" href="/static/favicon.png" />

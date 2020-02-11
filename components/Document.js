@@ -13,9 +13,9 @@ export default class Document extends React.Component {
   };
 
   static defaultProps = {
-    title: 'Native Directory',
+    title: 'React Native Directory',
     description:
-      'Native Directory is a curated list of React Native libraries to help you build your projects.',
+      'React Native Directory is a curated list of React Native libraries to help you build your projects.',
   };
 
   render() {

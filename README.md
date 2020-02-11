@@ -1,13 +1,13 @@
-# Native Directory
+# React Native Directory
 
-Native Directory is a website where you can see all of the libraries that are compatible with React Native.
+React Native Directory is a website where you can see all of the libraries that are compatible with React Native.
 
 Website: https://www.native.directory/
 
 ## How do I know I'm at the right place?
 
 - You made a repository on GitHub and you want the world to know it works with React Native.
-- You want to submit a pull request to improve Native Directory.
+- You want to submit a pull request to improve React Native Directory.
 - You want to report a bug or make a suggestion.
 
 ## I don't like your website, can I hit an API instead and build my own better stuff?

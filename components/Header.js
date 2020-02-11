@@ -15,11 +15,11 @@ export default class Header extends React.PureComponent {
       <header className={css(styles.header)}>
         <div className={css(styles.headerContents)}>
           <a className={css(styles.headerContentsLogo)} href="/">
-            <img src="/static/logo.png" alt="Native Directory logo" width="64" height="64" />
+            <img src="/static/logo.png" alt="React Native Directory logo" width="64" height="64" />
           </a>
           <div className={css(styles.headerContentsText)}>
             <p>
-              <strong className={css(styles.headerContentsTextStrong)}>Native Directory</strong> is
+              <strong className={css(styles.headerContentsTextStrong)}>React Native Directory</strong> is
               a curated list of {this.props.count}{' '}
               <Link
                 isStyled
