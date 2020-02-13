@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "next dev",
-    "build": "next build",
+    "build": "yarn data:update && next build",
     "preview": "next build && next start",
     "script": "babel-node --presets @babel/preset-env",
     "lint": "eslint .",
