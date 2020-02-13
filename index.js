@@ -60,18 +60,22 @@ const processRequest = (req, res) => {
     );
   }
 
-  return app.render(req, res, '/', {
-    libraries,
-    sortBy,
-    topic: req.params.topic,
-    search: req.query.search,
-    support: {
-      ios: req.query.ios,
-      android: req.query.android,
-      expo: req.query.expo,
-      web: req.query.web,
-    },
-  });
+  // If it's not a JSON request then just redirect
+  return res.redirect(301, 'https://reactnative.directory');
+
+  // No longer render the app
+  // return app.render(req, res, '/', {
+  //   libraries,
+  //   sortBy,
+  //   topic: req.params.topic,
+  //   search: req.query.search,
+  //   support: {
+  //     ios: req.query.ios,
+  //     android: req.query.android,
+  //     expo: req.query.expo,
+  //     web: req.query.web,
+  //   },
+  // });
 };
 
 app.prepare().then(() => {
