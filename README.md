@@ -2,6 +2,8 @@
 
 React Native Directory is a website where you can see all of the libraries that are compatible with React Native.
 
+> Note: A transition in progress from https://native.directory to https://reactnative.directory, so the following links may not work for you yet!
+
 Website: https://reactnative.directory/
 
 ## How do I know I'm at the right place?
