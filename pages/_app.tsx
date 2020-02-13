@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as Sentry from '@sentry/node';
 import Head from 'next/head';
 import { View } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
@@ -12,6 +13,11 @@ import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
 import data from '../assets/data.json';
+
+Sentry.init({
+  dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
+  enabled: process.env.NODE_ENV === 'production',
+});
 
 const site = {
   title: 'React Native Directory',
