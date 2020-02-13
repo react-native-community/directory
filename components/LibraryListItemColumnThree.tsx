@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import * as SVG from '../common/svg';
-import { getTimeSinceToday } from '../common/datetime';
+import * as SVG from '../util/svg';
+import { getTimeSinceToday } from '../util/datetime';
 import ExternalLink from '../components/ExternalLink';
 import LibraryListColumn from '../components/LibraryListColumn';
 

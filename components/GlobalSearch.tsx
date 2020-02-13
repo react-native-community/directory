@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TextInput, Text, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 import Router from 'next/router';
-import urlWithQuery from '../common/urlWithQuery';
+import urlWithQuery from '../util/urlWithQuery';
 
 export default function GlobalSearch({ query }) {
   const [debouncedCallback] = useDebouncedCallback(text => {

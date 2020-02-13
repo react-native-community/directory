@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import range from 'lodash/range';
 import Link from 'next/link';
 import { A } from '@expo/html-elements';
-import urlWithQuery from '../common/urlWithQuery';
-import { NUM_PER_PAGE } from '../common/Constants';
+import urlWithQuery from '../util/urlWithQuery';
+import { NUM_PER_PAGE } from '../util/Constants';
 
 export default function PaginationControl({
   query,
@@ -16,7 +16,7 @@ export default function PaginationControl({
   style?: any;
 }) {
   let numPages = Math.ceil(total / NUM_PER_PAGE);
-  let currentOffset = parseInt(query.offset ? query.offset : 0);
+  let currentOffset = parseInt(query.offset ? query.offset : 0, 10);
 
   let links = range(0, numPages).map(page => {
     let offset = page * NUM_PER_PAGE;

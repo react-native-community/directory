@@ -10,8 +10,8 @@ import fetchNpmData from './fetch-npm-data';
 import githubRepos from '../react-native-libraries.json';
 import debugGithubRepos from '../debug-github-repos.json';
 
-import * as Strings from '../common/strings';
-import * as Sorting from '../common/sorting';
+import * as Strings from '../util/strings';
+import * as Sorting from '../util/sorting';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { isEmptyOrNull } from '../common/strings';
+import { isEmptyOrNull } from '../util/strings';
 
 import ExternalLink from './ExternalLink';
 import TopicItem from './TopicItem';
@@ -36,7 +36,9 @@ export default function LibraryListItemColumnTwo(props) {
         {[
           props.library.ios ? '✅ iOS' : '⛔ iOS',
           props.library.android ? '✅ Android' : '⛔ Android',
-          props.library.expo && typeof props.library.expo !== 'string' ? '✅ Managed Expo' : '⛔ Managed Expo',
+          props.library.expo && typeof props.library.expo !== 'string'
+            ? '✅ Managed Expo'
+            : '⛔ Managed Expo',
           props.library.web ? '✅ Web' : '⛔ Web',
         ].map(each => {
           return `${each}   `;

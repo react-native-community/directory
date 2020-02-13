@@ -1,4 +1,4 @@
-import { pluralize } from '../common/strings';
+import { pluralize } from '../util/strings';
 
 const MINUTE = 60;
 const HOUR = MINUTE * 60;

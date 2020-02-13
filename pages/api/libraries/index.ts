@@ -3,9 +3,9 @@ import Cors from 'micro-cors';
 import drop from 'lodash/drop';
 import take from 'lodash/take';
 
-import { handleFilterLibraries } from '../../../common/search';
-import * as Sorting from '../../../common/sorting';
-import { NUM_PER_PAGE } from '../../../common/Constants';
+import { handleFilterLibraries } from '../../../util/search';
+import * as Sorting from '../../../util/sorting';
+import { NUM_PER_PAGE } from '../../../util/Constants';
 import Data from '../../../assets/data.json';
 
 const originalData = [...Data.libraries];

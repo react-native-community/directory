@@ -4,8 +4,8 @@ import { NextPageContext } from 'next';
 import { StyleSheet, View } from 'react-native';
 import LibraryList from '../components/LibraryList';
 import PaginationControl from '../components/PaginationControl';
-import getApiUrl from '../common/getApiUrl';
-import urlWithQuery from '../common/urlWithQuery';
+import getApiUrl from '../util/getApiUrl';
+import urlWithQuery from '../util/urlWithQuery';
 
 export default function App(props) {
   return (

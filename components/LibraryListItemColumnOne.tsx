@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-import * as SVG from '../common/svg';
-import ExternalLink from './ExternalLink';
-import LibraryListColumn from '../components/LibraryListColumn';
-
 // TODO: fix ts types on this lib so it can pick up on regular CircularProgressExport
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+
+import * as SVG from '../util/svg';
+import ExternalLink from './ExternalLink';
+import LibraryListColumn from '../components/LibraryListColumn';
 
 export default function LibraryListColumnOne({ library }) {
   return (

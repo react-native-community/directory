@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Link from 'next/link';
 import { A } from '@expo/html-elements';
-import urlWithQuery from '../common/urlWithQuery';
+import urlWithQuery from '../util/urlWithQuery';
 
 export default function GlobalOrderControl({ query }: { query: { [key: string]: any } }) {
   const { order } = query;
