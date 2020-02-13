@@ -2,7 +2,7 @@
 
 React Native Directory is a website where you can see all of the libraries that are compatible with React Native.
 
-Website: https://www.native.directory/
+Website: https://reactnative.directory/
 
 ## How do I know I'm at the right place?
 
@@ -12,19 +12,19 @@ Website: https://www.native.directory/
 
 ## I don't like your website, can I hit an API instead and build my own better stuff?
 
-Yeah of course:
+Sure, go for it!
 
-`https://native.directory?json=true`
+`https://reactnative.directory/api/libraries`
 - Returns a list of all libraries in `JSON` format.
 
-`https://native.directory?json=true&search=webgl`
+`https://reactnative.directory?search=webgl`
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
 
-`https://native.directory?json=true&search=webgl&expo=true`
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with `expo`.
+`https://reactnative.directory?search=webgl&expo=true`
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed.
 
-`https://native.directory?json=true&search=webgl&expo=true&android=true`
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with `expo` and `android`.
+`https://reactnative.directory?search=webgl&expo=true&android=true`
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed and Android.
 
 ## I don't like how you calculate health scores.
 
@@ -51,8 +51,8 @@ Please follow this format and indentation:
 * `ios` - works on iOS phones.
 * `android` - works on Android phones.
 * `web` - can be used in the browser.
-* `expo` - can be used without detaching an Expo application.
-* `examples` - optional array of URLs (snacks preferred) with demonstrations of the library 
+* `expo` - can be used in managed workflow, without ejecting an Expo application (any library can be used if you eject).
+* `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
 
 > *Note:* If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/blob/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
@@ -60,7 +60,7 @@ Please follow this format and indentation:
 
 Prerequisites
 
-- Node 10.7.0
+- Node LTS
 
 Commands
 
@@ -68,23 +68,23 @@ Commands
 
 ```sh
 npm install
-npm run dev
+npm start
 ```
 
 ##### With yarn
 
 ```sh
-yarn add
-yarn dev
+yarn
+yarn start
 ```
 
-You should be able to visit `localhost:8000` in your browser.
+You should be able to visit `localhost:3000` in your browser.
 
-## How do I run `npm run create-data` with keys?
+## How do I run `npm run data:update` with keys?
 
 * To update site data you need to provide a couple of keys in a file called `secrets.json`.
 * You must create your own `secrets.json` in the root directory of the repo.
-* Visit https://github.com/settings/developers to get your keys.
+* Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
 
 ```json
 {
@@ -94,19 +94,23 @@ You should be able to visit `localhost:8000` in your browser.
 
 ```
 
-This command creates site data in `./build/data.json`
+This command creates site data in `./assets/data.json`
 
 ```
-npm run create-data
+npm run data:update
 ```
 
-## How do I deploy my own to production?
+## How do I deploy my own version of this?
 
-* Site is hosted on Heroku.
-* You can deploy your own with your own heroku account and remote.
+* Site is hosted on Now, and this is the easiest way to do it.
+* You can deploy your own with your own Now account
 
 ```sh
-heroku login
-heroku git:remote -a next-expo
-git push heroku master
+npm i -g now
+# log in if you need to
+now
 ```
+
+## How do I deploy to production?
+
+Get a commit on master and it will be automatically deployed.

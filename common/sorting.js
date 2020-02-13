@@ -8,25 +8,17 @@ export const recommended = libraries => {
 
 export const compatibility = libraries => {
   libraries.sort((a, b) => {
-    const aCompat = [
-      1,
-      a.expo && typeof a.expo !== 'string',
-      a.ios,
-      a.android,
-      a.web,
-    ].reduce((total, val) => {
-      return val ? total + val : total;
-    });
+    const aCompat = [1, a.expo && typeof a.expo !== 'string', a.ios, a.android, a.web].reduce(
+      (total, val) => {
+        return val ? total + val : total;
+      }
+    );
 
-    const bCompat = [
-      1,
-      b.expo && typeof b.expo !== 'string',
-      b.ios,
-      b.android,
-      b.web,
-    ].reduce((total, val) => {
-      return val ? total + val : total;
-    });
+    const bCompat = [1, b.expo && typeof b.expo !== 'string', b.ios, b.android, b.web].reduce(
+      (total, val) => {
+        return val ? total + val : total;
+      }
+    );
 
     return bCompat - aCompat;
   });

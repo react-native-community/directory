@@ -1,10 +1,10 @@
-import { isEmptyOrNull } from '../common/strings';
+import { isEmptyOrNull } from './strings';
 
 export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, support }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  return libraries.filter(library => {
+  let filtered = libraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -58,4 +58,6 @@ export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, supp
 
     return isTopicMatch && isSearchMatch;
   });
+
+  return filtered;
 };

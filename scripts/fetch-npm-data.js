@@ -1,4 +1,4 @@
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 
 const urlForPackage = npmPkg => {
   return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;

@@ -726,7 +726,7 @@
     "githubUrl": "https://github.com/react-native-community/react-native-video",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/latest/sdk/video.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
@@ -808,7 +808,7 @@
     "githubUrl": "https://github.com/jeanpan/react-native-camera-roll-picker",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/imagepicker.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/mosesoak/react-native-conductor",
@@ -1454,21 +1454,21 @@
     "githubUrl": "https://github.com/callstack-io/react-native-fbads",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/facebook-ads.html"
+    "expo": false
   },
   {
     "githubUrl":
       "https://github.com/BranchMetrics/react-native-branch-deep-linking",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/branch.html"
+    "expo": false
   },
   {
     "githubUrl":
       "https://github.com/smore-inc/react-native-segment-io-analytics",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/amplitude.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/jadsonlourenco/react-native-shake-event",
@@ -1480,30 +1480,26 @@
     "githubUrl": "https://github.com/xxsnakerxx/react-native-social-auth",
     "ios": true,
     "android": true,
-    "expo": [
-      "https://docs.expo.io/versions/v18.0.0/sdk/facebook.html",
-      "https://docs.expo.io/versions/v18.0.0/sdk/google.html"
-    ]
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/corbt/react-native-keep-awake",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/keep-awake.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/lucasferreira/react-native-send-intent",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/intent-launcher.html"
+    "expo": false
   },
   {
     "githubUrl":
       "https://github.com/NishanthShankar/react-native-android-statusbar",
     "ios": true,
     "android": true,
-    "expo":
-      "https://docs.expo.io/versions/v18.0.0/guides/configuring-statusbar.html"
+    "expo":false
   },
   {
     "githubUrl":
@@ -1519,31 +1515,31 @@
   {
     "githubUrl": "https://github.com/voronianski/react-native-effects-view",
     "ios": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/blur-view.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/timfpark/react-native-location",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/location.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/yonahforst/react-native-permissions",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/permissions.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/gre/react-native-view-shot",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/take-snapshot-async.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-safari-view",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/webbrowser.html",
+    "expo": false,
     "examples": [
       "https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"
     ]
@@ -1552,19 +1548,19 @@
     "githubUrl": "https://github.com/fullstackreact/react-native-oauth",
     "ios": true,
     "android": true,
-    "expo": "https://github.com/expo/auth0-example"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/pwmckenna/react-native-motion-manager",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/accelerometer.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/terrillo/rn-apple-healthkit",
     "ios": true,
     "android": false,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/pedometer.html",
+    "expo": false,
     "examples": [
       "https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"
     ]
@@ -1573,7 +1569,7 @@
     "githubUrl": "https://github.com/rt2zz/react-native-contacts",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/contacts.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/vikeri/react-native-background-job",
@@ -1589,12 +1585,12 @@
       "https://github.com/walmartlabs/react-native-orientation-listener",
     "ios": true,
     "android": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/screen-orientation.html"
+    "expo": false
   },
   {
     "githubUrl": "https://github.com/kkjdaniel/react-native-device-display",
     "ios": true,
-    "expo": "https://docs.expo.io/versions/v18.0.0/sdk/screen-orientation.html"
+    "expo": false
   },
   {
     "githubUrl":
@@ -3275,6 +3271,7 @@
     "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
     "ios": true,
     "android": true,
+    "expo": false,
     "npmPkg": "emoji-mart-native"
   }
 ]

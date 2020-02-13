@@ -1,4 +1,4 @@
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
 
 const API = 'https://api.github.com';
@@ -6,9 +6,7 @@ const API = 'https://api.github.com';
 // https://github.com/expo/expo/tree/master/packages/expo-camera
 const fetchPackageJson = async url => {
   try {
-    let rawUrl = url
-      .replace('github.com', 'raw.githubusercontent.com')
-      .replace('/tree', '');
+    let rawUrl = url.replace('github.com', 'raw.githubusercontent.com').replace('/tree', '');
     let packageJsonUrl = `${rawUrl}/package.json`;
     let response = await fetch(packageJsonUrl, { method: 'GET' });
     let pkg = await response.json();

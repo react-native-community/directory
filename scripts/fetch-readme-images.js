@@ -1,4 +1,4 @@
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 import cheerio from 'cheerio';
 
 const isLikelyUsefulImage = (image, githubUrl) => {
@@ -48,7 +48,7 @@ const fetchReadmeImages = async (data, githubUrl) => {
       ...data,
       images,
     };
-  } catch(e) {
+  } catch (e) {
     console.log(`retrying image scrape for ${githubUrl}`);
     return await fetchReadmeImages(data, githubUrl);
   }

@@ -1,10 +1,44 @@
-.npm
-node_modules
-.DS_Store
-.npm-cache
-.vscode
-config.js
-.next
+# Related to data scripts
 scripts/raw-github-results.json
 secrets.json
-npm-debug.log
+
+# Standard stuff
+yarn-error.log
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+
+# macOS
+.DS_Store
+
+# @generated: @expo/next-adapter@2.0.4
+/.expo/*
+# Expo Web
+/web-build/*
+/web-report/*
+# Expo Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+# Next.js
+/.next/*
+/out/
+# Next.js production
+/build/
+# Next.js dependencies
+/.pnp
+.pnp.js
+# @end @expo/next-adapter
+
+.now

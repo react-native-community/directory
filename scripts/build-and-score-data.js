@@ -1,8 +1,6 @@
-import 'isomorphic-fetch';
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
-import _ from 'lodash';
 import fetchGithubData from './fetch-github-data';
 import calculateScore from './calculate-score';
 import fetchLicense from './fetch-license';
@@ -38,7 +36,7 @@ const buildAndScoreData = async () => {
   let data;
   try {
     data = await loadRepositoryDataAsync();
-  } catch(e) {
+  } catch (e) {
     console.log(e);
   }
 
@@ -52,9 +50,7 @@ const buildAndScoreData = async () => {
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
-  data = await Promise.all(
-    data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl))
-  );
+  data = await Promise.all(data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl)));
 
   // Calculate score
   console.log('\n** Calculating scores');
@@ -79,7 +75,6 @@ const buildAndScoreData = async () => {
         }
 
         topicCounts[topic] += 1;
-        return;
       });
     }
 
@@ -89,7 +84,7 @@ const buildAndScoreData = async () => {
   const libraries = Sorting.updated(data);
 
   return jsonfile.writeFile(
-    path.resolve('build', 'data.json'),
+    path.resolve('assets', 'data.json'),
     {
       libraries,
       topics: topicCounts,
