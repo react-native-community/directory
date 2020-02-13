@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
+require('dotenv').config();
 
 const API = 'https://api.github.com';
 
@@ -102,7 +102,7 @@ const createRequestUrl = url => {
   const tokens = url.split('/');
   const repoName = tokens[tokens.length - 1];
   const repoCreator = tokens[tokens.length - 2];
-  const requestUrl = `${API}/repos/${repoCreator}/${repoName}?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
+  const requestUrl = `${API}/repos/${repoCreator}/${repoName}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
 
   return requestUrl;
 };

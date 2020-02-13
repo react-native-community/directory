@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch';
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
+require('dotenv').config();
 
 const API = 'https://api.github.com';
 
 const githubLicenceInfo = async repoName => {
-  const requestUrl = `${API}/repos/${repoName}/license?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
+  const requestUrl = `${API}/repos/${repoName}/license?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
   let response = await fetch(requestUrl);
   let json = await response.json();
   return json.license || null;
