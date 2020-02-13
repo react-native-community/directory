@@ -5,6 +5,7 @@ import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 import GlobalHeader from '../components/GlobalHeader';
 import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalPlatformControl from '../components/GlobalPlatformControl';
@@ -43,6 +44,8 @@ export default function App(props: any) {
           `,
           }}
         />
+
+        <GoogleAnalytics id="UA-107832480-1" />
 
         {injectMeta.map((value, index) => {
           return <meta key={`meta-${index}`} {...value} />;
