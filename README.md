@@ -82,6 +82,15 @@ yarn start
 
 You should be able to visit `localhost:3000` in your browser.
 
+## Wznt to try it on iOS and Android?
+
+```
+npm i -g expo-cli
+expo start
+```
+
+Then launch the iOS or Android app as usual with Expo managed projects.
+
 ## How do I run `npm run data:update` with keys?
 
 * To update site data you need to provide a couple of keys in a file called `secrets.json`.

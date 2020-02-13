@@ -36,22 +36,22 @@ export default function LibraryListItemColumnTwo(props) {
         {[
           props.library.ios ? '✅ iOS' : '⛔ iOS',
           props.library.android ? '✅ Android' : '⛔ Android',
+          props.library.web ? '✅ Web' : '⛔ Web',
           props.library.expo && typeof props.library.expo !== 'string'
             ? '✅ Managed Expo'
             : '⛔ Managed Expo',
-          props.library.web ? '✅ Web' : '⛔ Web',
         ].map(each => {
           return `${each}   `;
         })}
       </Text>
 
       {props.library.github.topics ? (
-        <View style={styles.section}>
-          <Text>
-            {props.library.github.topics.map(each => (
-              <TopicItem key={`list-${props.library.name}-${each}`}>{each}</TopicItem>
-            ))}
-          </Text>
+        <View style={[styles.section, { flexDirection: 'row' }]}>
+          {props.library.github.topics.map(each => (
+            <View style={{ marginRight: 8 }} key={each}>
+              <TopicItem>{each}</TopicItem>
+            </View>
+          ))}
         </View>
       ) : null}
     </LibraryListColumn>
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   },
   sectionCompact: {
     fontSize: 12,
+    flexDirection: 'row',
     fontFamily: 'office-code',
     marginBottom: 15,
   },

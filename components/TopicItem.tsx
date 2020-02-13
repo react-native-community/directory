@@ -2,11 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 export default function TopicItem({ children }) {
-  return (
-    <Text style={styles.item}>
-      {children}
-    </Text>
-  );
+  return <Text style={styles.item}>{children}</Text>;
 }
 
 let styles = StyleSheet.create({
@@ -15,6 +11,5 @@ let styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 20,
     color: 'rgba(0, 0, 0, 0.75)',
-    marginRight: 15,
   },
 });

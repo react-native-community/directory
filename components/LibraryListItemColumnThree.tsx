@@ -32,7 +32,9 @@ export default function LibraryListItemColumnThree(props) {
     items.push({
       IconComponent: SVG.Download,
       content: (
-        <ExternalLink target="blank" href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
+        <ExternalLink
+          href={`https://www.npmjs.com/package/${props.library.npmPkg}`}
+          style={styles.text}>
           {`${props.library.npm.downloads}`} downloads {props.library.npm.period}ly
         </ExternalLink>
       ),
@@ -43,7 +45,7 @@ export default function LibraryListItemColumnThree(props) {
     items.push({
       IconComponent: SVG.File,
       content: (
-        <ExternalLink target="blank" href={`${props.library.github.urls.repo}/issues`}>
+        <ExternalLink href={`${props.library.github.urls.repo}/issues`} style={styles.text}>
           {`${props.library.github.stats.issues}`} issues
         </ExternalLink>
       ),
@@ -53,7 +55,11 @@ export default function LibraryListItemColumnThree(props) {
   if (props.library.github.urls.homepage) {
     items.push({
       IconComponent: SVG.Website,
-      content: <ExternalLink href={props.library.github.urls.homepage}>Visit Website</ExternalLink>,
+      content: (
+        <ExternalLink href={props.library.github.urls.homepage} style={styles.text}>
+          Visit Website
+        </ExternalLink>
+      ),
     });
   }
 

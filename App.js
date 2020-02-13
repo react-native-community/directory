@@ -1,8 +1,9 @@
 import '@expo/match-media';
 import React from 'react';
 import { SplashScreen } from 'expo';
-import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, useSafeArea } from 'react-native-safe-area-context';
+import BottomSheet from 'reanimated-bottom-sheet';
 import * as Font from 'expo-font';
 import GlobalHeader from './components/GlobalHeader';
 import LibraryList from './components/LibraryList';
@@ -51,14 +52,48 @@ function App() {
   }, []);
 
   return (
-    <ScrollView style={[styles.container, { marginTop: insets.top, marinBottom: insets.bottom }]}>
-      {isReady ? (
-        <>
-          <GlobalHeader count={data.libraries.length} />
-          {libraries === null ? <LoadingView /> : <LibraryList libraries={libraries} />}
-        </>
-      ) : null}
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <ScrollView
+        style={[styles.container, { marginTop: insets.top, marinBottom: insets.bottom }]}
+        contentContainerStyle={{ paddingTop: 8, paddingBottom: 80 }}>
+        {isReady ? (
+          <>
+            <GlobalHeader count={data.libraries.length} />
+            <View
+              style={{
+                height: 1,
+                width: '100%',
+                backgroundColor: '#ececec',
+                marginTop: 10,
+                marginBottom: -10,
+              }}
+            />
+            {libraries === null ? <LoadingView /> : <LibraryList libraries={libraries} />}
+          </>
+        ) : null}
+      </ScrollView>
+      <BottomSheet
+        initialSnap={2}
+        snapPoints={[500, 200, 50]}
+        renderContent={() => (
+          <View
+            style={{
+              height: 500,
+              width: '100%',
+              backgroundColor: '#fff',
+              borderTopWidth: 1,
+              borderTopColor: '#ececec',
+            }}>
+            <Text>filters should go here</Text>
+          </View>
+        )}
+        renderHeader={() => (
+          <View style={{ height: 100, width: '100%', backgroundColor: '#eee' }}>
+            <Text>search box should go here</Text>
+          </View>
+        )}
+      />
+    </View>
   );
 }
 
