@@ -19,7 +19,7 @@ export default function GlobalHeader({ count }) {
           <Text style={styles.headerContentsTextStrong}>React Native Directory</Text> is a list of{' '}
           {count ? count : 0}{' '}
           <ExternalLink href="https://facebook.github.io/react-native/docs/getting-started.html">
-            React Native
+            React Native!
           </ExternalLink>{' '}
           libraries to help you build your projects.{' '}
         </Text>
