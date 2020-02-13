@@ -1,6 +1,7 @@
 # Related to data scripts
 scripts/raw-github-results.json
 secrets.json
+.env
 
 # Standard stuff
 yarn-error.log
