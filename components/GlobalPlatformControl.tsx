@@ -30,7 +30,9 @@ export default function GlobalPlatformControl({ query }: { query: { [key: string
       <ToggleLink query={query} paramName="ios" title="iOS" />
       <ToggleLink query={query} paramName="android" title="Android" />
       <ToggleLink query={query} paramName="web" title="Web" />
-      <ToggleLink query={query} paramName="expo" title="Managed Expo" />
+      <ToggleLink query={query} paramName="windows" title="Windows" />
+      <ToggleLink query={query} paramName="macos" title="macOS" />
+      <ToggleLink query={query} paramName="expo" title="Expo client" />
     </View>
   );
 }
