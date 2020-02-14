@@ -37,9 +37,9 @@ export default function LibraryListItemColumnTwo(props) {
           props.library.ios ? '✅ iOS' : '⛔ iOS',
           props.library.android ? '✅ Android' : '⛔ Android',
           props.library.web ? '✅ Web' : '⛔ Web',
-          props.library.expo && typeof props.library.expo !== 'string'
-            ? '✅ Managed Expo'
-            : '⛔ Managed Expo',
+          props.library.windows ? '✅ Windows' : '⛔ Windows',
+          props.library.macos ? '✅ macOS' : '⛔ macOS',
+          props.library.expo ? '✅ Expo client' : '⛔ Expo client',
         ].map(each => {
           return `${each}   `;
         })}
