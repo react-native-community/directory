@@ -38,8 +38,8 @@ export default function LibraryListItemColumnTwo(props) {
           props.library.android ? '✅ Android' : '⛔ Android',
           props.library.web ? '✅ Web' : '⛔ Web',
           props.library.expo && typeof props.library.expo !== 'string'
-            ? '✅ Managed Expo'
-            : '⛔ Managed Expo',
+            ? '✅ Expo client'
+            : '⛔ Expo client',
         ].map(each => {
           return `${each}   `;
         })}
