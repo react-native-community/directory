@@ -1,5 +1,23 @@
 [
    {
+     "githubUrl": "https://github.com/imgly/pesdk-react-native",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false,
+     "examples": ["https://github.com/imgly/pesdk-react-native-demo"],
+     "npmPkg": "react-native-photoeditorsdk"
+   },
+   {
+     "githubUrl": "https://github.com/imgly/vesdk-react-native",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false,
+     "examples": ["https://github.com/imgly/vesdk-react-native-demo"],
+     "npmPkg": "react-native-videoeditorsdk"
+   },
+   {
      "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
      "ios": true,
      "android": true,
