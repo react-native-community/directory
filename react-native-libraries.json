@@ -3293,6 +3293,14 @@
     "npmPkg": "react-native-zoomable-view"
   },
   {
+    "githubUrl": "https://github.com/Jarred-Sumner/react-native-media-clipboard",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "npmPkg": "react-native-media-clipboard"
+  },
+  {
     "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
     "ios": true,
     "android": true,
