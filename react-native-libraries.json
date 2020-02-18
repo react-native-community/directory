@@ -18,6 +18,13 @@
      "npmPkg": "react-native-videoeditorsdk"
    },
    {
+     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false
+   },
+   {
      "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
      "ios": true,
      "android": true,
