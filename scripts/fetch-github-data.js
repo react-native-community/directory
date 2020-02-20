@@ -26,6 +26,8 @@ const fetchPackageJson = async url => {
     };
   } catch (e) {
     console.log(`retrying package.json fetch for ${url}`);
+    // sleep 1000ms
+    await setTimeout(() => {}, 5000);
     return await fetchPackageJson(url);
   }
 };
