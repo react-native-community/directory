@@ -33,12 +33,7 @@ function sleep(ms = 0) {
 const buildAndScoreData = async () => {
   console.log('** Loading data from GitHub');
   await sleep(1000);
-  let data;
-  try {
-    data = await loadRepositoryDataAsync();
-  } catch (e) {
-    console.log(e);
-  }
+  let data = await loadRepositoryDataAsync();
 
   console.log('\n** Scraping images from README');
   await sleep(1000);
@@ -112,8 +107,8 @@ async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
     results = [...results, ...partialResult];
 
     if (partialResult.length !== c.length) {
-      console.error(
-        `Error in fetching data... Expected ${c.length} results but only received ${partialResult.length}`
+      throw new Error(
+        `Error in fetching data from GitHub... Expected ${c.length} results but only received ${partialResult.length}`
       );
     }
   }
@@ -149,7 +144,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = fetchGithubDataThrottled({ data, chunkSize: 150, staggerMs: 10000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 150, staggerMs: 10000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {
