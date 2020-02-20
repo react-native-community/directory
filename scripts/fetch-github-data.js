@@ -6,8 +6,7 @@ const API = 'https://api.github.com';
 // Authorization header as required by the GitHub API
 const Authorization =
   'Basic ' +
-  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString(
-    'base64'
+  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString( 'base64'
   );
 
 // https://github.com/expo/expo/tree/master/packages/expo-camera
@@ -15,7 +14,7 @@ const fetchPackageJson = async url => {
   try {
     let rawUrl = url.replace('github.com', 'raw.githubusercontent.com').replace('/tree', '');
     let packageJsonUrl = `${rawUrl}/package.json`;
-    let response = await fetch(packageJsonUrl, { method: 'GET', headers: Authorization });
+    let response = await fetch(packageJsonUrl, { method: 'GET' });
     let pkg = await response.json();
 
     return {
@@ -43,8 +42,6 @@ export const fetchGithubRateLimit = async () => {
     headers: { Authorization },
   });
 
-  console.log(Authorization);
-
   return {
     apiLimit: parseInt(result.headers.get('x-ratelimit-limit'), 10),
     apiLimitRemaining: parseInt(result.headers.get('x-ratelimit-remaining'), 10),
@@ -68,6 +65,7 @@ export const fetchGithubData = async data => {
     const response = await fetch(requestUrl, {
       method: 'GET',
       headers: {
+        Authorization,
         Accept: 'application/vnd.github.mercy-preview+json',
       },
     });
