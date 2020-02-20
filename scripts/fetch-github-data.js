@@ -27,7 +27,17 @@ function isMonorepo(url) {
   return url.includes('/tree/master/');
 }
 
-const fetchGithubData = async data => {
+export const fetchGithubRateLimit = async () => {
+  let url = `${API}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
+  let result = await fetch(url);
+
+  return {
+    apiLimit: parseInt(result.headers.get('x-ratelimit-limit'), 10),
+    apiLimitRemaining: parseInt(result.headers.get('x-ratelimit-remaining'), 10),
+  };
+};
+
+export const fetchGithubData = async data => {
   try {
     let url = data.githubUrl;
     let subrepoData;
@@ -56,6 +66,7 @@ const fetchGithubData = async data => {
       result.name = subrepoData.name;
       result.topics = subrepoData.topics;
       result.description = subrepoData.description;
+      result.license = subrepoData.license;
     }
 
     return {
@@ -93,6 +104,7 @@ const createRepoDataWithResponse = json => {
     fullName: json.full_name,
     description: json.description,
     topics: json.topics,
+    license: json.license,
   };
 };
 
@@ -106,5 +118,3 @@ const createRequestUrl = url => {
 
   return requestUrl;
 };
-
-export default fetchGithubData;

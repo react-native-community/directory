@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
-import fetchGithubData from './fetch-github-data';
+import chunk from 'lodash/chunk';
+import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
 import calculateScore from './calculate-score';
-import fetchLicense from './fetch-license';
 import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
@@ -31,7 +31,7 @@ function sleep(ms = 0) {
 }
 
 const buildAndScoreData = async () => {
-  console.log('** Loading data from Github');
+  console.log('** Loading data from GitHub');
   await sleep(1000);
   let data;
   try {
@@ -39,10 +39,6 @@ const buildAndScoreData = async () => {
   } catch (e) {
     console.log(e);
   }
-
-  console.log('** Fetching license type');
-  await sleep(1000);
-  data = await Promise.all(data.map(d => fetchLicense(d, d.github.fullName)));
 
   console.log('\n** Scraping images from README');
   await sleep(1000);
@@ -102,6 +98,29 @@ const buildAndScoreData = async () => {
   );
 };
 
+async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
+  let results = [];
+  let chunks = chunk(data, chunkSize);
+  for (let c of chunks) {
+    if (chunks.indexOf(c) > 0) {
+      console.log(`${results.length} of ${data.length} fetched`);
+      console.log(`Sleeping ${staggerMs}ms`);
+      await sleep(staggerMs);
+    }
+
+    let partialResult = await Promise.all(c.map(fetchGithubData));
+    results = [...results, ...partialResult];
+
+    if (partialResult.length !== c.length) {
+      console.error(
+        `Error in fetching data... Expected ${c.length} results but only received ${partialResult.length}`
+      );
+    }
+  }
+
+  return results;
+}
+
 async function loadRepositoryDataAsync() {
   let data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
   let githubResultsFileExists = false;
@@ -110,12 +129,27 @@ async function loadRepositoryDataAsync() {
     githubResultsFileExists = true;
   } catch (e) {}
 
+  let { apiLimit, apiLimitRemaining } = await fetchGithubRateLimit();
+  console.log({ apiLimit, apiLimitRemaining });
+
+  // 5000 requests per hour is the authenticated API request rate limi
+  if (apiLimit < 5000) {
+    throw new Error('GitHub client id and secret are not properly configured.');
+  }
+
+  // Error out if not enough remaining
+  if (apiLimitRemaining < data.length) {
+    throw new Error('Not enough requests left on GitHub API rate limiting to proceed.');
+  }
+
+  console.info(`${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour`);
+
   let result;
   if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await Promise.all(data.map(fetchGithubData));
+    result = fetchGithubDataThrottled({ data, chunkSize: 150, staggerMs: 10000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {
