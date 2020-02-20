@@ -30,7 +30,6 @@ function isMonorepo(url) {
 export const fetchGithubRateLimit = async () => {
   let url = `${API}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
   let result = await fetch(url);
-  console.log(process.env.TEST_SECRET);
 
   return {
     apiLimit: parseInt(result.headers.get('x-ratelimit-limit'), 10),
