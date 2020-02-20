@@ -3,6 +3,12 @@ require('dotenv').config();
 
 const API = 'https://api.github.com';
 
+// Authorization header as required by the GitHub API
+const Authorization =
+  'Basic ' +
+  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString( 'base64'
+  );
+
 // https://github.com/expo/expo/tree/master/packages/expo-camera
 const fetchPackageJson = async url => {
   try {
@@ -19,6 +25,8 @@ const fetchPackageJson = async url => {
     };
   } catch (e) {
     console.log(`retrying package.json fetch for ${url}`);
+    // sleep 1000ms
+    await setTimeout(() => {}, 5000);
     return await fetchPackageJson(url);
   }
 };
@@ -28,8 +36,11 @@ function isMonorepo(url) {
 }
 
 export const fetchGithubRateLimit = async () => {
-  let url = `${API}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
-  let result = await fetch(url);
+  let url = API;
+  let result = await fetch(url, {
+    method: 'GET',
+    headers: { Authorization },
+  });
 
   return {
     apiLimit: parseInt(result.headers.get('x-ratelimit-limit'), 10),
@@ -50,11 +61,11 @@ export const fetchGithubData = async data => {
       // Get data from the parent
       url = url.split('/tree/master')[0];
     }
-
     const requestUrl = createRequestUrl(url);
     const response = await fetch(requestUrl, {
       method: 'GET',
       headers: {
+        Authorization,
         Accept: 'application/vnd.github.mercy-preview+json',
       },
     });
@@ -114,7 +125,7 @@ const createRequestUrl = url => {
   const tokens = url.split('/');
   const repoName = tokens[tokens.length - 1];
   const repoCreator = tokens[tokens.length - 2];
-  const requestUrl = `${API}/repos/${repoCreator}/${repoName}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`;
+  const requestUrl = `${API}/repos/${repoCreator}/${repoName}`;
 
   return requestUrl;
 };
