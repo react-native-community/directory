@@ -1,6 +1,61 @@
 {
   "libraries": [
     {
+      "githubUrl": "https://github.com/prscX/react-native-file-selector",
+      "ios": true,
+      "android": true,
+      "web": false,
+      "expo": false,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/prscX/react-native-file-selector",
+          "clone": "https://github.com/prscX/react-native-file-selector.git",
+          "homepage": null
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": false,
+          "updatedAt": "2020-02-20T01:42:34Z",
+          "createdAt": "2018-02-22T14:41:35Z",
+          "pushedAt": "2020-02-20T01:42:32Z",
+          "forks": 29,
+          "issues": 38,
+          "subscribers": 3,
+          "stars": 194
+        },
+        "name": "react-native-file-selector",
+        "fullName": "prscX/react-native-file-selector",
+        "description": "React Native: Native File Selector",
+        "topics": [],
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0",
+          "url": "https://api.github.com/licenses/apache-2.0",
+          "node_id": "MDc6TGljZW5zZTI="
+        }
+      },
+      "images": [
+        "https://camo.githubusercontent.com/89e8e63f14922125ab7a6c5734065e24a5413efa/68747470733a2f2f692e696d6775722e636f6d2f6d6a787330356e2e706e67",
+        "https://camo.githubusercontent.com/5ea19d119a5426eeca3edbe750c280617f804aa0/687474703a2f2f692e67697068792e636f6d2f336f3667615936794c516b686a696f6b35572e676966"
+      ],
+      "npmPkg": "react-native-file-selector",
+      "npm": {
+        "downloads": 365,
+        "start": "2020-01-21",
+        "end": "2020-02-19",
+        "period": "month"
+      },
+      "score": 56,
+      "matchingScoreModifiers": [
+        "Recently updated"
+      ],
+      "topicSearchString": ""
+    },
+    {
       "githubUrl": "https://github.com/maggialejandro/react-native-calendario",
       "ios": true,
       "android": true,
@@ -258,7 +313,7 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-20T00:30:41Z",
+          "updatedAt": "2020-02-20T01:35:28Z",
           "createdAt": "2016-10-19T05:56:53Z",
           "pushedAt": "2020-02-19T23:55:53Z",
           "forks": 695,
@@ -321,7 +376,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -374,7 +429,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -426,7 +481,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -478,7 +533,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -531,7 +586,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -590,7 +645,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -643,7 +698,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -695,7 +750,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -747,7 +802,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -800,7 +855,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -854,7 +909,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -907,7 +962,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -959,7 +1014,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1011,7 +1066,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1064,7 +1119,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1117,7 +1172,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1169,7 +1224,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1221,7 +1276,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1273,7 +1328,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1325,7 +1380,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1382,7 +1437,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1434,7 +1489,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1487,7 +1542,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1540,7 +1595,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1594,7 +1649,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1646,7 +1701,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1699,7 +1754,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1751,7 +1806,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1805,7 +1860,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1857,7 +1912,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1913,7 +1968,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -1966,7 +2021,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2018,7 +2073,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2072,7 +2127,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2124,7 +2179,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2178,7 +2233,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2231,7 +2286,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2283,7 +2338,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2339,7 +2394,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2393,7 +2448,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2450,7 +2505,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2503,7 +2558,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2559,7 +2614,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2611,7 +2666,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2657,7 +2712,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2711,7 +2766,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2763,7 +2818,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2815,7 +2870,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2869,7 +2924,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2926,7 +2981,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -2980,7 +3035,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3038,7 +3093,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3090,7 +3145,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3144,7 +3199,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3198,7 +3253,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3250,7 +3305,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3304,7 +3359,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3356,7 +3411,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3410,7 +3465,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3456,7 +3511,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3512,7 +3567,7 @@
           "createdAt": "2016-08-15T17:14:25Z",
           "pushedAt": "2020-02-19T22:56:25Z",
           "forks": 1278,
-          "issues": 742,
+          "issues": 741,
           "subscribers": 195,
           "stars": 8849
         },
@@ -3718,61 +3773,6 @@
         "Recently updated"
       ],
       "topicSearchString": " date-time-picker datepicker datepicker-component react-native react-native-datepicker react-native-datetime-picker time-picker"
-    },
-    {
-      "githubUrl": "https://github.com/prscX/react-native-file-selector",
-      "ios": true,
-      "android": true,
-      "web": false,
-      "expo": false,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/prscX/react-native-file-selector",
-          "clone": "https://github.com/prscX/react-native-file-selector.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": false,
-          "updatedAt": "2020-02-12T04:04:54Z",
-          "createdAt": "2018-02-22T14:41:35Z",
-          "pushedAt": "2020-02-19T20:05:52Z",
-          "forks": 29,
-          "issues": 39,
-          "subscribers": 3,
-          "stars": 194
-        },
-        "name": "react-native-file-selector",
-        "fullName": "prscX/react-native-file-selector",
-        "description": "React Native: Native File Selector",
-        "topics": [],
-        "license": {
-          "key": "apache-2.0",
-          "name": "Apache License 2.0",
-          "spdx_id": "Apache-2.0",
-          "url": "https://api.github.com/licenses/apache-2.0",
-          "node_id": "MDc6TGljZW5zZTI="
-        }
-      },
-      "images": [
-        "https://camo.githubusercontent.com/89e8e63f14922125ab7a6c5734065e24a5413efa/68747470733a2f2f692e696d6775722e636f6d2f6d6a787330356e2e706e67",
-        "https://camo.githubusercontent.com/5ea19d119a5426eeca3edbe750c280617f804aa0/687474703a2f2f692e67697068792e636f6d2f336f3667615936794c516b686a696f6b35572e676966"
-      ],
-      "npmPkg": "react-native-file-selector",
-      "npm": {
-        "downloads": 365,
-        "start": "2020-01-21",
-        "end": "2020-02-19",
-        "period": "month"
-      },
-      "score": 56,
-      "matchingScoreModifiers": [
-        "Recently updated"
-      ],
-      "topicSearchString": ""
     },
     {
       "githubUrl": "https://github.com/wix/react-native-navigation",
@@ -4369,13 +4369,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T19:20:30Z",
+          "updatedAt": "2020-02-20T01:41:38Z",
           "createdAt": "2015-12-29T19:54:20Z",
           "pushedAt": "2020-02-19T15:55:29Z",
           "forks": 3556,
           "issues": 435,
           "subscribers": 245,
-          "stars": 10663
+          "stars": 10664
         },
         "name": "react-native-maps",
         "fullName": "react-native-community/react-native-maps",
@@ -4659,13 +4659,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T11:31:02Z",
+          "updatedAt": "2020-02-20T01:36:40Z",
           "createdAt": "2015-07-01T12:33:24Z",
           "pushedAt": "2020-02-19T11:47:52Z",
           "forks": 579,
           "issues": 156,
           "subscribers": 110,
-          "stars": 4562
+          "stars": 4561
         },
         "name": "react-native-material-kit",
         "fullName": "xinthink/react-native-material-kit",
@@ -4970,13 +4970,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T15:59:26Z",
+          "updatedAt": "2020-02-20T01:49:44Z",
           "createdAt": "2018-04-25T06:35:29Z",
           "pushedAt": "2020-02-19T07:59:56Z",
           "forks": 289,
           "issues": 98,
           "subscribers": 36,
-          "stars": 2585
+          "stars": 2586
         },
         "name": "react-native-reanimated",
         "fullName": "software-mansion/react-native-reanimated",
@@ -5207,13 +5207,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T23:17:52Z",
+          "updatedAt": "2020-02-20T01:46:21Z",
           "createdAt": "2017-06-14T19:50:59Z",
           "pushedAt": "2020-02-19T03:28:13Z",
           "forks": 1518,
           "issues": 470,
           "subscribers": 200,
-          "stars": 20725
+          "stars": 20724
         },
         "name": "formik",
         "fullName": "jaredpalmer/formik",
@@ -5646,13 +5646,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T16:45:43Z",
+          "updatedAt": "2020-02-20T01:42:48Z",
           "createdAt": "2016-12-20T08:22:38Z",
           "pushedAt": "2020-02-18T13:25:09Z",
           "forks": 671,
           "issues": 28,
           "subscribers": 125,
-          "stars": 5859
+          "stars": 5860
         },
         "name": "react-native-ui-kitten",
         "fullName": "akveo/react-native-ui-kitten",
@@ -5705,13 +5705,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2020-02-19T16:37:45Z",
+          "updatedAt": "2020-02-20T01:57:55Z",
           "createdAt": "2016-07-27T10:57:27Z",
           "pushedAt": "2020-02-18T12:05:27Z",
           "forks": 249,
           "issues": 31,
           "subscribers": 58,
-          "stars": 1572
+          "stars": 1573
         },
         "name": "react-native-ble-plx",
         "fullName": "Polidea/react-native-ble-plx",
@@ -6283,13 +6283,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T03:33:27Z",
+          "updatedAt": "2020-02-20T01:58:10Z",
           "createdAt": "2016-09-23T16:45:46Z",
           "pushedAt": "2020-02-17T02:27:14Z",
           "forks": 420,
           "issues": 36,
           "subscribers": 43,
-          "stars": 3244
+          "stars": 3245
         },
         "name": "react-native-modal",
         "fullName": "react-native-community/react-native-modal",
@@ -6899,7 +6899,7 @@
           "updatedAt": "2020-02-19T19:19:46Z",
           "createdAt": "2015-04-20T15:22:55Z",
           "pushedAt": "2020-02-14T20:13:50Z",
-          "forks": 2059,
+          "forks": 2060,
           "issues": 642,
           "subscribers": 163,
           "stars": 8592
@@ -7567,13 +7567,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-19T17:16:04Z",
+          "updatedAt": "2020-02-20T01:58:27Z",
           "createdAt": "2016-04-15T11:37:23Z",
           "pushedAt": "2020-02-12T16:26:39Z",
           "forks": 1617,
           "issues": 228,
           "subscribers": 265,
-          "stars": 13394
+          "stars": 13395
         },
         "name": "NativeBase",
         "fullName": "GeekyAnts/NativeBase",
@@ -9382,7 +9382,7 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": false,
-          "updatedAt": "2020-02-19T08:58:20Z",
+          "updatedAt": "2020-02-20T01:59:13Z",
           "createdAt": "2015-12-15T21:24:33Z",
           "pushedAt": "2020-02-04T12:13:17Z",
           "forks": 166,
@@ -12938,13 +12938,13 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-02-17T15:17:01Z",
+          "updatedAt": "2020-02-20T01:57:06Z",
           "createdAt": "2017-12-04T16:12:46Z",
           "pushedAt": "2020-01-04T15:19:00Z",
           "forks": 111,
           "issues": 15,
           "subscribers": 37,
-          "stars": 2902
+          "stars": 2903
         },
         "name": "react-native-typography",
         "fullName": "hectahertz/react-native-typography",
