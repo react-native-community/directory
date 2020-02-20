@@ -125,7 +125,6 @@ async function loadRepositoryDataAsync() {
   } catch (e) {}
 
   let { apiLimit, apiLimitRemaining } = await fetchGithubRateLimit();
-  console.log({ apiLimit, apiLimitRemaining });
 
   // 5000 requests per hour is the authenticated API request rate limi
   if (apiLimit < 5000) {
