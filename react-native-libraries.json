@@ -3306,5 +3306,12 @@
     "android": true,
     "expo": false,
     "npmPkg": "emoji-mart-native"
-  }
+  },
+  {
+     "githubUrl": "https://github.com/osamaq/react-native-image-colors",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false
+  },
 ]
