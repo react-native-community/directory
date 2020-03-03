@@ -3328,4 +3328,11 @@
     "expo": false,
     "npmPkg": "apisauce"
   },
+  {
+    "githubUrl": "https://github.com/infinitered/gluegun",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "gluegun"
+  },
 ]
