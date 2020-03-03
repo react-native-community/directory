@@ -3337,8 +3337,8 @@
   },
   {
     "githubUrl": "https://github.com/infinitered/nsfwjs",
-    "ios": true,
-    "android": true,
+    "ios": false,
+    "android": false,
     "expo": false,
     "npmPkg": "nsfwjs"
   },
