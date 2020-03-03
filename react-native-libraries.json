@@ -3306,5 +3306,12 @@
     "android": true,
     "expo": false,
     "npmPkg": "emoji-mart-native"
-  }
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/ignite",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "ignite"
+  },
 ]
