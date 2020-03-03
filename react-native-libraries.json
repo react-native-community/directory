@@ -3321,4 +3321,11 @@
     "expo": false,
     "npmPkg": "reactotron"
   },
+  {
+    "githubUrl": "https://github.com/infinitered/apisauce",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "apisauce"
+  },
 ]
