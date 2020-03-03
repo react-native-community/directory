@@ -3314,4 +3314,11 @@
     "expo": false,
     "npmPkg": "ignite"
   },
+  {
+    "githubUrl": "https://github.com/infinitered/reactotron",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "reactotron"
+  },
 ]
