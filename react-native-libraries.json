@@ -3335,4 +3335,11 @@
     "expo": false,
     "npmPkg": "gluegun"
   },
+  {
+    "githubUrl": "https://github.com/infinitered/nsfwjs",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "nsfwjs"
+  },
 ]
