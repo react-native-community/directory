@@ -3306,5 +3306,26 @@
     "android": true,
     "expo": false,
     "npmPkg": "emoji-mart-native"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/ignite",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "ignite"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/reactotron",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "reactotron"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/apisauce",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "apisauce"
   }
 ]
