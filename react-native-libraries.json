@@ -3327,5 +3327,12 @@
     "android": true,
     "expo": true,
     "npmPkg": "apisauce"
+  },
+  {
+    "githubUrl": "https://github.com/nidorx/react-native-ui-blueprint",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-ui-blueprint"
   }
 ]
