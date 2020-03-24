@@ -3,7 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { useMediaQuery } from 'react-responsive';
 
 import LibraryListItemColumnOne from './LibraryListItemColumnOne';
-import LibraryListItemColumnTwo from './LibraryListItemColumnTwo';
 import LibraryListItemColumnThree from './LibraryListItemColumnThree';
 
 export default function LibraryListItem({ library, isLastItem = false }) {
@@ -22,7 +21,6 @@ export default function LibraryListItem({ library, isLastItem = false }) {
         },
       ]}>
       <LibraryListItemColumnOne library={library} />
-      <LibraryListItemColumnTwo library={library} />
       <LibraryListItemColumnThree library={library} />
     </View>
   );

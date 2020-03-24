@@ -6,11 +6,12 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import * as SVG from '../util/svg';
 import ExternalLink from './ExternalLink';
 import LibraryListColumn from '../components/LibraryListColumn';
+import { isEmptyOrNull } from '../util/strings';
 
 export default function LibraryListColumnOne({ library }) {
   return (
     <LibraryListColumn style={{ alignItems: 'flex-start' }}>
-      <View style={styles.titleRow}>
+      <View>
         <ExternalLink href={library.github.urls.repo} isColored={false}>
           {library.github.name}
         </ExternalLink>
@@ -21,6 +22,17 @@ export default function LibraryListColumnOne({ library }) {
           </View>
         ) : null}
       </View>
+
+      <Text>
+        {[
+          library.ios ? '✅ iOS' : '⛔ iOS',
+          library.android ? '✅ Android' : '⛔ Android',
+          library.web ? '✅ Web' : '⛔ Web',
+          library.expo && typeof library.expo !== 'string' ? '✅ Expo client' : '⛔ Expo client',
+        ].map(each => {
+          return `${each}   `;
+        })}
+      </Text>
 
       <View style={styles.qualityRow}>
         <AnimatedCircularProgress
@@ -34,12 +46,34 @@ export default function LibraryListColumnOne({ library }) {
         />
         <Text style={styles.qualityRowLabel}>{library.score} Directory Score</Text>
       </View>
+
+      {!isEmptyOrNull(library.github.description) ? (
+        <Text style={styles.sectionText}>{library.github.description}</Text>
+      ) : (
+        undefined
+      )}
+
+      {library.examples && library.examples.length ? (
+        <View style={[{ flexDirection: 'row' }]}>
+          <Text>Code Examples: </Text>
+          {library.examples.map((each, index) => {
+            return (
+              <ExternalLink
+                target="blank"
+                key={`${library.name}-${each}-${index}`}
+                style={{ marginRight: 5 }}
+                href={each}>
+                #{index + 1}
+              </ExternalLink>
+            );
+          })}
+        </View>
+      ) : null}
     </LibraryListColumn>
   );
 }
 
 let styles = StyleSheet.create({
-  titleRow: {},
   qualityRow: {
     flexDirection: 'row',
     marginTop: 15,
@@ -57,5 +91,9 @@ let styles = StyleSheet.create({
   },
   awardText: {
     marginLeft: 5,
+  },
+  sectionText: {
+    lineHeight: 24,
+    marginBottom: 18,
   },
 });
