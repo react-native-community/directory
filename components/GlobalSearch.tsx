@@ -3,6 +3,7 @@ import { TextInput, Text, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 import Router from 'next/router';
 import urlWithQuery from '../util/urlWithQuery';
+import { colors } from '../common/styleguide';
 
 export default function GlobalSearch({ query }) {
   const [debouncedCallback] = useDebouncedCallback(text => {
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     alignItems: 'center',
     justifyContent: 'center',
+    // backgroundColor: colors.gray3,
   },
   title: {
     fontFamily: 'office-code-medium',

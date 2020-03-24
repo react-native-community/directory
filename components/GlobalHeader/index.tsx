@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { A, Header, H2 } from '@expo/html-elements';
-import { colors } from '../../common/colors';
+import { layout, colors } from '../../common/styleguide';
 import { Button } from '../Button';
 import { Snowflakes } from './Snowflakes';
 
@@ -36,7 +36,7 @@ let styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
-    maxWidth: 1300,
+    maxWidth: layout.maxWidth,
     paddingHorizontal: 16,
   },
   headerContentsTitle: {

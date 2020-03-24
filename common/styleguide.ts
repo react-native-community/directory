@@ -1,3 +1,7 @@
+export const layout = {
+  maxWidth: 1200,
+};
+
 export const colors = {
   primary: '#61DAFB',
   gray1: '#f7f7f7',

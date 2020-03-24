@@ -12,6 +12,7 @@ import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
+import { layout } from '../common/styleguide';
 // import data from '../assets/data.json';
 
 Sentry.init({
@@ -67,7 +68,7 @@ export default function App(props: any) {
                 style={{
                   flex: 1,
                   width: '100%',
-                  maxWidth: 1300,
+                  maxWidth: layout.maxWidth,
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}>
