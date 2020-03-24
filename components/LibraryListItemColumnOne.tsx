@@ -47,7 +47,6 @@ let styles = StyleSheet.create({
   },
   qualityRowLabel: {
     marginLeft: 7,
-    fontFamily: 'office-code',
     fontSize: 13,
   },
   award: {
@@ -57,7 +56,6 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
   },
   awardText: {
-    fontFamily: 'office-code',
     marginLeft: 5,
   },
 });

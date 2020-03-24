@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   },
   sectionCompact: {
     fontSize: 12,
-    fontFamily: 'office-code',
     marginBottom: 15,
   },
 });

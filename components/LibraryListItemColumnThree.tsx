@@ -70,7 +70,6 @@ let styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontFamily: 'office-code',
     fontSize: 12,
   },
   icon: {

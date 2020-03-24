@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, CheckBox } from 'react-native';
 import Link from 'next/link';
 import { A } from '@expo/html-elements';
 import urlWithQuery from '../util/urlWithQuery';
+import { colors } from '../common/styleguide';
 
 function ToggleLink({ query, paramName, title }) {
   let isSelected = !!query[paramName];
@@ -14,10 +15,16 @@ function ToggleLink({ query, paramName, title }) {
         [paramName]: !isSelected,
         offset: null,
       })}>
-      <A style={[styles.link]}>
-        {isSelected ? '✅' : '🤷‍♀️'}
-        {title}
-      </A>
+      <View style={styles.link}>
+        <CheckBox
+          value={isSelected}
+          {...{
+            color: colors.primaryDark,
+            style: { marginRight: 6 },
+          }}
+        />
+        <Text>{title}</Text>
+      </View>
     </Link>
   );
 }
@@ -25,8 +32,7 @@ function ToggleLink({ query, paramName, title }) {
 export default function GlobalPlatformControl({ query }: { query: { [key: string]: any } }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Compatibility:</Text>
-
+      <Text style={styles.title}>Platform</Text>
       <ToggleLink query={query} paramName="ios" title="iOS" />
       <ToggleLink query={query} paramName="android" title="Android" />
       <ToggleLink query={query} paramName="web" title="Web" />
@@ -37,25 +43,19 @@ export default function GlobalPlatformControl({ query }: { query: { [key: string
 
 let styles = StyleSheet.create({
   container: {
-    paddingLeft: 20,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    marginBottom: 10,
+    paddingHorizontal: 16,
+    marginTop: 16,
   },
   title: {
-    fontFamily: 'office-code-medium',
-    fontSize: 13,
-    marginRight: 10,
-    marginBottom: 10,
+    fontSize: 18,
+    fontWeight: '500',
+    marginBottom: 8,
   },
   link: {
-    fontFamily: 'office-code',
-    fontSize: 13,
-    marginRight: 20,
-    marginBottom: 10,
-  },
-  linkActive: {
-    color: 'rgba(65, 160, 248, 1)',
+    fontSize: 14,
+    marginBottom: 12,
+    alignItems: 'center',
+    flexDirection: 'row',
+    cursor: 'pointer',
   },
 });

@@ -34,23 +34,6 @@ export default function App(props: any) {
     <>
       <Head>
         <title>React Native Directory</title>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-            @font-face {
-              font-family: 'office-code';
-              src: url(${require('../assets/fonts/OfficeCodePro-Regular.eot')});
-              src: url(${require('../assets/fonts/OfficeCodePro-Regular.ttf')}) format('truetype');
-            }
-
-            @font-face {
-              font-family: 'office-code-medium';
-              src: url(${require('../assets/fonts/OfficeCodePro-Medium.eot')});
-              src: url(${require('../assets/fonts/OfficeCodePro-Medium.ttf')}) format('truetype');
-            }
-          `,
-          }}
-        />
 
         <GoogleAnalytics id="UA-107832480-1" />
 
@@ -70,11 +53,8 @@ export default function App(props: any) {
                   flex: 1,
                   width: '100%',
                   maxWidth: layout.maxWidth,
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
+                  margin: 'auto',
                 }}>
-                <GlobalPlatformControl query={router.query} />
-                <GlobalOrderControl query={router.query} />
                 <Component {...pageProps} />
                 <GlobalFooter />
               </View>

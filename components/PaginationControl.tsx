@@ -46,13 +46,11 @@ let styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   title: {
-    fontFamily: 'office-code-medium',
     fontSize: 13,
     marginRight: 10,
     marginBottom: 10,
   },
   link: {
-    fontFamily: 'office-code',
     fontSize: 13,
     marginRight: 20,
     marginBottom: 10,

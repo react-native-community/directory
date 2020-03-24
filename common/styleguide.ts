@@ -4,6 +4,7 @@ export const layout = {
 
 export const colors = {
   primary: '#61DAFB',
+  primaryDark: '#39BEE2',
   gray1: '#f7f7f7',
   gray2: '#ececec',
   gray3: '#CFCFD5',

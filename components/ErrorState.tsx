@@ -6,10 +6,8 @@ import ExternalLink from './ExternalLink';
 export default ({ statusCode }) => {
   return (
     <View style={styles.container}>
-      <H2 style={[styles.text, { fontFamily: 'office-code-medium' }]}>
-        Uh oh, something went wrong ({statusCode})
-      </H2>
-      <Text style={[styles.text, { fontFamily: 'office-code' }]}>
+      <H2 style={[styles.text]}>Uh oh, something went wrong ({statusCode})</H2>
+      <Text style={[styles.text]}>
         Help fix it? Submit a PR to the{' '}
         <ExternalLink href="https://github.com/react-native-community/directory">
           Github Repo.
