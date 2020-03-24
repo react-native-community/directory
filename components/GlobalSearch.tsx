@@ -30,7 +30,7 @@ export default function GlobalSearch({ query }) {
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingVertical: 32,
+    paddingVertical: 24,
     backgroundColor: colors.gray6,
     alignItems: 'center',
   },
