@@ -26,7 +26,7 @@ export default function GlobalHeader() {
 let styles = StyleSheet.create({
   header: {
     height: 60,
-    backgroundColor: colors.gray4,
+    backgroundColor: colors.gray7,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',

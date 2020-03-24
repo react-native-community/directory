@@ -64,6 +64,7 @@ export default function App(props: any) {
             <>
               <Favicon />
               <GlobalHeader />
+              <GlobalSearch query={router.query} />
               <View
                 style={{
                   flex: 1,
@@ -72,7 +73,6 @@ export default function App(props: any) {
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}>
-                <GlobalSearch query={router.query} />
                 <GlobalPlatformControl query={router.query} />
                 <GlobalOrderControl query={router.query} />
                 <Component {...pageProps} />
