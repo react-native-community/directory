@@ -4,7 +4,7 @@ import { SplashScreen } from 'expo';
 import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, useSafeArea } from 'react-native-safe-area-context';
 import * as Font from 'expo-font';
-import GlobalHeader from './components/GlobalHeader';
+import GlobalHeader from './components/GlobalHeader/GlobalHeader';
 import LibraryList from './components/LibraryList';
 import data from './assets/data.json';
 

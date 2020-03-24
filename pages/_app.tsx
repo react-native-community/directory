@@ -12,7 +12,7 @@ import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
-import data from '../assets/data.json';
+// import data from '../assets/data.json';
 
 Sentry.init({
   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
@@ -62,6 +62,7 @@ export default function App(props: any) {
           <CustomAppearanceProvider>
             <>
               <Favicon />
+              <GlobalHeader />
               <View
                 style={{
                   flex: 1,
@@ -70,7 +71,6 @@ export default function App(props: any) {
                   marginLeft: 'auto',
                   marginRight: 'auto',
                 }}>
-                <GlobalHeader count={data.libraries.length} />
                 <GlobalSearch query={router.query} />
                 <GlobalPlatformControl query={router.query} />
                 <GlobalOrderControl query={router.query} />
