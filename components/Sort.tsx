@@ -60,11 +60,13 @@ export const SortButton = (props: SortButtonProps) => {
         <SortIcon fill={colors.white} />
         <P style={styles.title}>Sort:</P>
       </View>
-      <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
-        {sorts.map(sort => (
-          <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
-        ))}
-      </Picker>
+      <View style={styles.pickerContainer}>
+        <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
+          {sorts.map(sort => (
+            <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
+          ))}
+        </Picker>
+      </View>
     </View>
   );
 };
@@ -75,7 +77,7 @@ let styles = StyleSheet.create({
     height: 24,
     marginLeft: 8,
     paddingLeft: 8,
-    paddingRight: 4,
+    paddingRight: 2,
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -84,13 +86,16 @@ let styles = StyleSheet.create({
   title: {
     color: colors.white,
     marginLeft: 6,
+    fontSize: 14,
   },
   pickerContainer: {
     top: 1,
+    left: -2,
   },
   picker: {
-    backgroundColor: colors.gray5,
+    backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
+    fontSize: 14,
   },
 });
