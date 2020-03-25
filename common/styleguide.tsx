@@ -42,7 +42,7 @@ const textStyles = StyleSheet.create({
 
 type TextProps = {
   children?: ReactNode;
-  style?: TextStyle;
+  style?: TextStyle | TextStyle[];
 };
 
 function createTextComponent(Element: any, textStyle?: TextStyle) {

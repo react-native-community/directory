@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { A, Header } from '@expo/html-elements';
-import { layout, colors, H5, P } from '../../common/styleguide';
-import { Button } from '../Button';
-import { Logo, Plus } from '../Icons';
+import { layout, colors, H5, P } from '../common/styleguide';
+import { Button } from './Button';
+import { Logo, Plus } from './Icons';
 
 export default function GlobalHeader() {
   return (

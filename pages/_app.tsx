@@ -4,13 +4,11 @@ import Head from 'next/head';
 import { View } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { H3 } from '@expo/html-elements';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import GlobalHeader from '../components/GlobalHeader';
 import GlobalOrderControl from '../components/GlobalOrderControl';
-import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
 import * as Styleguide from '../common/styleguide';
@@ -48,8 +46,8 @@ export default function App(props: any) {
             <>
               <Favicon />
               <GlobalHeader />
-              <GlobalSearch query={router.query} />
-              <View
+              <GlobalSearch query={router.query} total={pageProps.data.total} />
+              {/* <View
                 style={{
                   flexDirection: 'row',
                   justifyContent: 'space-between',
@@ -71,7 +69,7 @@ export default function App(props: any) {
                     <option>3</option>
                   </select>
                 </View>
-              </View>
+              </View> */}
               <View
                 style={{
                   flex: 1,
@@ -79,9 +77,7 @@ export default function App(props: any) {
                   maxWidth: Styleguide.layout.maxWidth,
                   margin: 'auto',
                 }}>
-                <View style={{ borderWidth: 1 }}>
-                  <Component {...pageProps} />
-                </View>
+                <Component {...pageProps} />
                 <GlobalFooter />
               </View>
             </>

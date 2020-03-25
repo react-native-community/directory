@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 import { A } from '@expo/html-elements';
 import { colors, P } from '../common/styleguide';
 
@@ -8,13 +8,14 @@ type Props = {
   href?: string;
   onPress?: () => void;
   target?: string;
+  style?: ViewStyle | ViewStyle[];
 };
 
 export function Button(props: Props) {
-  const { children, href, onPress, target } = props;
+  const { children, href, onPress, style, target } = props;
   const isString = typeof children === 'string';
   const button = (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
       {isString ? <P>{children}</P> : children}
     </TouchableOpacity>
   );
