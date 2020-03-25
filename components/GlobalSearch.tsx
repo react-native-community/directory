@@ -5,8 +5,8 @@ import Router from 'next/router';
 import urlWithQuery from '../util/urlWithQuery';
 import { layout, colors, P } from '../common/styleguide';
 import { Search } from './Icons';
-import { Button } from './Button';
 import { Filters, FilterButton } from './Filters';
+import { SortButton } from './Sort';
 
 type Props = {
   query: {
@@ -29,7 +29,7 @@ export default function GlobalSearch(props: Props) {
           <View style={styles.displayHorizontal}>
             <TextInput
               onChangeText={debouncedCallback}
-              placeholder="Search"
+              placeholder="Search libraries..."
               style={styles.textInput}
               defaultValue={query && query.search}
             />
@@ -38,14 +38,16 @@ export default function GlobalSearch(props: Props) {
             </View>
           </View>
           <View style={[styles.displayHorizontal, styles.resultsContainer]}>
-            <P style={{ color: colors.white }}>{total} results</P>
+            <P style={{ color: colors.white }}>
+              {total} {total === 1 ? 'library' : 'libraries'}
+            </P>
             <View style={styles.displayHorizontal}>
               <FilterButton
                 query={query}
                 onPress={() => setFilterVisible(!isFilterVisible)}
                 isFilterVisible={isFilterVisible}
               />
-              <Button>Sort</Button>
+              <SortButton query={query} />
             </View>
           </View>
         </View>

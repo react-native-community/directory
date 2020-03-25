@@ -8,7 +8,6 @@ import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import GlobalHeader from '../components/GlobalHeader';
-import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
 import * as Styleguide from '../common/styleguide';

@@ -136,7 +136,6 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     alignItems: 'center',
     flexDirection: 'row',
-    cursor: 'pointer',
   },
   button: {
     height: 24,
