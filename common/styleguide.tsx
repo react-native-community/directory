@@ -25,7 +25,7 @@ export const colors = {
 const baseTextStyles = {
   color: colors.black,
   marginVertical: 0,
-  fontWeight: '500' as const,
+  fontWeight: '400' as const,
 };
 
 const textStyles = StyleSheet.create({
@@ -35,9 +35,9 @@ const textStyles = StyleSheet.create({
   h4: { ...baseTextStyles, fontSize: 22 },
   h5: { ...baseTextStyles, fontSize: 20 },
   h6: { ...baseTextStyles, fontSize: 18 },
-  headline: { ...baseTextStyles, fontSize: 16 },
-  p: { ...baseTextStyles, fontSize: 16, fontWeight: '400' as const },
-  caption: { ...baseTextStyles, fontSize: 15, fontWeight: '400' as const },
+  headline: { ...baseTextStyles, fontSize: 16, fontWeight: '500' as const },
+  p: { ...baseTextStyles, fontSize: 16 },
+  caption: { ...baseTextStyles, fontSize: 15, fontWeight: '300' as const },
 });
 
 type TextProps = {

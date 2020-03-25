@@ -1,19 +1,33 @@
-import React from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { colors } from '../common/styleguide';
+import React, { ReactNode } from 'react';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { A } from '@expo/html-elements';
+import { colors, P } from '../common/styleguide';
 
 type Props = {
-  onPress: () => void;
-  title: string;
+  children?: ReactNode;
+  href?: string;
+  onPress?: () => void;
+  target?: string;
 };
 
 export function Button(props: Props) {
-  const { onPress, title } = props;
-  return (
+  const { children, href, onPress, target } = props;
+  const isString = typeof children === 'string';
+  const button = (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      {isString ? <P>{children}</P> : children}
     </TouchableOpacity>
   );
+
+  if (href) {
+    return (
+      <A href={href} target={target}>
+        {button}
+      </A>
+    );
+  }
+
+  return button;
 }
 
 const styles = StyleSheet.create({

@@ -1,23 +1,29 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { A, Header, H2 } from '@expo/html-elements';
-import { layout, colors } from '../../common/styleguide';
+import { A, Header } from '@expo/html-elements';
+import { layout, colors, H5, P } from '../../common/styleguide';
 import { Button } from '../Button';
-import { Snowflakes } from './Snowflakes';
+import { Logo, Plus } from '../Icons';
 
 export default function GlobalHeader() {
   return (
     <Header style={styles.header}>
       <View style={styles.headerContents}>
-        <View style={styles.snowflakeContainer}>
-          <Snowflakes />
+        <View style={styles.displayHorizontal}>
+          <Logo fill={colors.primary} width={29} height={26} />
+          <H5>
+            <A href="/" style={styles.headerContentsTitle}>
+              React Native Directory
+            </A>
+          </H5>
         </View>
-        <H2>
-          <A href="/" style={styles.headerContentsTitle}>
-            React Native Directory
-          </A>
-        </H2>
-        <Button title="Add a library" onPress={() => {}} />
+        <Button href="https://github.com/react-native-community/directory#how-do-i-add-a-library">
+          <View style={styles.displayHorizontal}>
+            <>
+              <Plus width={14} height={14} /> <P style={{ marginLeft: 6 }}>Add a library</P>
+            </>
+          </View>
+        </Button>
       </View>
     </Header>
   );
@@ -41,13 +47,10 @@ let styles = StyleSheet.create({
   },
   headerContentsTitle: {
     color: colors.primary,
-    fontWeight: '500',
-    fontSize: 20,
+    paddingLeft: 8,
   },
-  snowflakeContainer: {
-    opacity: 0.25,
-    position: 'absolute',
-    left: -32,
-    marginTop: 2,
+  displayHorizontal: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
