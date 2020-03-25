@@ -4,7 +4,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import Router from 'next/router';
 import urlWithQuery from '../util/urlWithQuery';
 import { layout, colors } from '../common/styleguide';
-import { Search } from './Icons/Search';
+import { Search } from './Icons';
 
 export default function GlobalSearch({ query }) {
   const [debouncedCallback] = useDebouncedCallback(text => {
