@@ -13,7 +13,7 @@ import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
-import { layout, colors } from '../common/styleguide';
+import * as Styleguide from '../common/styleguide';
 // import data from '../assets/data.json';
 
 Sentry.init({
@@ -54,7 +54,7 @@ export default function App(props: any) {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  backgroundColor: colors.gray1,
+                  backgroundColor: Styleguide.colors.gray1,
                 }}>
                 <View>
                   {router.query.search ? (
@@ -72,12 +72,11 @@ export default function App(props: any) {
                   </select>
                 </View>
               </View>
-
               <View
                 style={{
                   flex: 1,
                   width: '100%',
-                  maxWidth: layout.maxWidth,
+                  maxWidth: Styleguide.layout.maxWidth,
                   margin: 'auto',
                 }}>
                 <View style={{ borderWidth: 1 }}>
