@@ -8,19 +8,13 @@ import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
 export default function App(props) {
+  const { data, query } = props;
+
   return (
     <View style={styles.container}>
-      <PaginationControl
-        query={props.query}
-        total={props.data && props.data.total}
-        style={{ marginTop: 15 }}
-      />
-      <LibraryList libraries={props.data && props.data.libraries} />
-      <PaginationControl
-        query={props.query}
-        total={props.data && props.data.total}
-        style={{ marginTop: 15 }}
-      />
+      <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} />
+      <LibraryList libraries={data && data.libraries} />
+      <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} />
     </View>
   );
 }
@@ -39,5 +33,6 @@ App.getInitialProps = async (ctx: NextPageContext) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 16,
   },
 });

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { View } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { H3 } from '@expo/html-elements';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
@@ -12,7 +13,7 @@ import GlobalOrderControl from '../components/GlobalOrderControl';
 import GlobalPlatformControl from '../components/GlobalPlatformControl';
 import GlobalSearch from '../components/GlobalSearch';
 import GlobalFooter from '../components/GlobalFooter';
-import { layout } from '../common/styleguide';
+import { layout, colors } from '../common/styleguide';
 // import data from '../assets/data.json';
 
 Sentry.init({
@@ -50,12 +51,38 @@ export default function App(props: any) {
               <GlobalSearch query={router.query} />
               <View
                 style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  backgroundColor: colors.gray1,
+                }}>
+                <View>
+                  {router.query.search ? (
+                    <H3>
+                      {pageProps.data.total} result{pageProps.data.total === 1 ? '' : 's'} for "
+                      {router.query.search}"
+                    </H3>
+                  ) : null}
+                </View>
+                <View>
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </View>
+              </View>
+
+              <View
+                style={{
                   flex: 1,
                   width: '100%',
                   maxWidth: layout.maxWidth,
                   margin: 'auto',
                 }}>
-                <Component {...pageProps} />
+                <View style={{ borderWidth: 1 }}>
+                  <Component {...pageProps} />
+                </View>
                 <GlobalFooter />
               </View>
             </>
