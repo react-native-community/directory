@@ -4,7 +4,7 @@ import { useDebouncedCallback } from 'use-debounce';
 import Router from 'next/router';
 import urlWithQuery from '../util/urlWithQuery';
 import { layout, colors, P } from '../common/styleguide';
-import { Search } from './Icons';
+import { Search as SearchIcon } from './Icons';
 import { Filters, FilterButton } from './Filters';
 import { SortButton } from './Sort';
 
@@ -15,7 +15,7 @@ type Props = {
   total: number;
 };
 
-export default function GlobalSearch(props: Props) {
+export default function Search(props: Props) {
   const { query, total } = props;
   const [isFilterVisible, setFilterVisible] = useState(false);
   const [debouncedCallback] = useDebouncedCallback(text => {
@@ -34,7 +34,7 @@ export default function GlobalSearch(props: Props) {
               defaultValue={query && query.search}
             />
             <View style={styles.searchIcon}>
-              <Search fill={colors.white} />
+              <SearchIcon fill={colors.white} />
             </View>
           </View>
           <View style={[styles.displayHorizontal, styles.resultsContainer]}>

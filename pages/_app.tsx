@@ -7,8 +7,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
-import GlobalHeader from '../components/GlobalHeader';
-import GlobalSearch from '../components/GlobalSearch';
+import Header from '../components/Header';
+import Search from '../components/Search';
 import GlobalFooter from '../components/GlobalFooter';
 import * as Styleguide from '../common/styleguide';
 // import data from '../assets/data.json';
@@ -44,31 +44,8 @@ export default function App(props: any) {
           <CustomAppearanceProvider>
             <>
               <Favicon />
-              <GlobalHeader />
-              <GlobalSearch query={router.query} total={pageProps.data.total} />
-              {/* <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  backgroundColor: Styleguide.colors.gray1,
-                }}>
-                <View>
-                  {router.query.search ? (
-                    <H3>
-                      {pageProps.data.total} result{pageProps.data.total === 1 ? '' : 's'} for "
-                      {router.query.search}"
-                    </H3>
-                  ) : null}
-                </View>
-                <View>
-                  <select>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                  </select>
-                </View>
-              </View> */}
+              <Header />
+              <Search query={router.query} total={pageProps.data.total} />
               <View
                 style={{
                   flex: 1,
@@ -89,15 +66,15 @@ export default function App(props: any) {
 
 const injectMeta = [
   {
-    name: `description`,
+    name: 'description',
     content: site.description,
   },
   {
-    property: `og:description`,
+    property: 'og:description',
     content: site.description,
   },
   {
-    property: `og:title`,
+    property: 'og:title',
     content: site.title,
   },
   {
@@ -106,11 +83,11 @@ const injectMeta = [
   },
   {
     property: 'og:url',
-    content: `https://reactnative.directory`,
+    content: 'https://reactnative.directory',
   },
   {
-    property: `og:type`,
-    content: `website`,
+    property: 'og:type',
+    content: 'website',
   },
   {
     key: 'viewport',
@@ -126,9 +103,9 @@ const injectMeta = [
     name: 'theme-color',
     content: themeColor,
   },
-  { name: `twitter:card`, content: 'Find packages for your apps' },
-  { name: `twitter:title`, content: site.title },
-  { name: `twitter:description`, content: site.description },
+  { name: 'twitter:card', content: 'Find packages for your apps' },
+  { name: 'twitter:title', content: site.title },
+  { name: 'twitter:description', content: site.description },
 
   // Image
   // { property: 'og:image', content: image.url },

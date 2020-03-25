@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { A, Header } from '@expo/html-elements';
+import { A, Header as HtmlHeader } from '@expo/html-elements';
 import { layout, colors, H5, P } from '../common/styleguide';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
-export default function GlobalHeader() {
+export default function Header() {
   return (
-    <Header style={styles.header}>
+    <HtmlHeader style={styles.header}>
       <View style={styles.headerContents}>
         <View style={styles.displayHorizontal}>
           <Logo fill={colors.primary} width={29} height={26} />
@@ -25,7 +25,7 @@ export default function GlobalHeader() {
           </View>
         </Button>
       </View>
-    </Header>
+    </HtmlHeader>
   );
 }
 

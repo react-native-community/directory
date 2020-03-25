@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Picker } from 'react-native';
+import { StyleSheet, View, Picker } from 'react-native';
 import Router from 'next/router';
-import { A } from '@expo/html-elements';
 import { colors, P } from '../common/styleguide';
 import { Sort as SortIcon } from './Icons';
 import urlWithQuery from '../util/urlWithQuery';
