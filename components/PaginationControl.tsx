@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import range from 'lodash/range';
 import Link from 'next/link';
 import { A } from '@expo/html-elements';
+import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { NUM_PER_PAGE } from '../util/Constants';
 
@@ -11,7 +12,7 @@ export default function PaginationControl({
   total,
   style,
 }: {
-  query: { [key: string]: any };
+  query: Query;
   total: number | null;
   style?: any;
 }) {

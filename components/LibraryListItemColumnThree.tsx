@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import * as SVG from '../util/svg';
 import { getTimeSinceToday } from '../util/datetime';
-import LibraryListColumn from '../components/LibraryListColumn';
-import { A } from '../common/styleguide';
+import { colors, A } from '../common/styleguide';
+import { Calendar, Star, Download, Issue, Web } from '../components/Icons';
 
 const renderListItem = (data, index) => {
   const { IconComponent } = data;
   return (
     <View style={styles.item} key={`list-item-${index}`}>
-      <IconComponent style={styles.icon} />
+      <View style={styles.iconContainer}>
+        <IconComponent fill={colors.gray5} />
+      </View>
       <Text style={styles.text}>{data.content}</Text>
     </View>
   );
@@ -19,18 +20,18 @@ const renderListItem = (data, index) => {
 export default function LibraryListItemColumnThree(props) {
   const items = [
     {
-      IconComponent: SVG.Calendar,
+      IconComponent: Calendar,
       content: <Text>Updated {getTimeSinceToday(props.library.github.stats.pushedAt)}</Text>,
     },
     {
-      IconComponent: SVG.Star,
+      IconComponent: Star,
       content: <Text>{props.library.github.stats.stars} stars</Text>,
     },
   ];
 
   if (props.library.npm.downloads) {
     items.push({
-      IconComponent: SVG.Download,
+      IconComponent: Download,
       content: (
         <A href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
           {`${props.library.npm.downloads}`} downloads {props.library.npm.period}ly
@@ -41,7 +42,7 @@ export default function LibraryListItemColumnThree(props) {
 
   if (props.library.github.stats.issues > 0) {
     items.push({
-      IconComponent: SVG.File,
+      IconComponent: Issue,
       content: (
         <A href={`${props.library.github.urls.repo}/issues`}>
           {`${props.library.github.stats.issues}`} issues
@@ -52,14 +53,14 @@ export default function LibraryListItemColumnThree(props) {
 
   if (props.library.github.urls.homepage) {
     items.push({
-      IconComponent: SVG.Website,
+      IconComponent: Web,
       content: <A href={props.library.github.urls.homepage}>Visit Website</A>,
     });
   }
 
   const elements = items.map(renderListItem);
 
-  return <LibraryListColumn>{elements}</LibraryListColumn>;
+  return <View style={{ flex: 0.333 }}>{elements}</View>;
 }
 
 let styles = StyleSheet.create({
@@ -72,7 +73,11 @@ let styles = StyleSheet.create({
   text: {
     fontSize: 12,
   },
-  icon: {
+  iconContainer: {
     marginRight: 8,
+    width: 18,
+    height: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

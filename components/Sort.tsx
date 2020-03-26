@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Picker } from 'react-native';
 import Router from 'next/router';
+import { Query } from '../types';
 import { colors, P } from '../common/styleguide';
 import { Sort as SortIcon } from './Icons';
 import urlWithQuery from '../util/urlWithQuery';
 
 type SortButtonProps = {
-  query: { [key: string]: any };
+  query: Query;
 };
 
 const sorts = [
@@ -60,7 +61,11 @@ export const SortButton = (props: SortButtonProps) => {
         <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
-        <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
+        <Picker
+          selectedValue={sortValue}
+          style={styles.picker}
+          itemStyle={styles.pickerItem}
+          onValueChange={onPickerChange}>
           {sorts.map(sort => (
             <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
           ))}
@@ -95,6 +100,8 @@ let styles = StyleSheet.create({
     backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
+  },
+  pickerItem: {
     fontSize: 14,
   },
 });

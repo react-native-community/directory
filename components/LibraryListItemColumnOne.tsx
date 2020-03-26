@@ -4,13 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 import * as SVG from '../util/svg';
-import LibraryListColumn from '../components/LibraryListColumn';
 import { isEmptyOrNull } from '../util/strings';
 import { A } from '../common/styleguide';
 
 export default function LibraryListColumnOne({ library }) {
   return (
-    <LibraryListColumn style={{ alignItems: 'flex-start' }}>
+    <View style={{ alignItems: 'flex-start', flex: 1 }}>
       <View>
         <A href={library.github.urls.repo}>{library.github.name}</A>
         {library.goldstar ? (
@@ -67,7 +66,7 @@ export default function LibraryListColumnOne({ library }) {
           })}
         </View>
       ) : null}
-    </LibraryListColumn>
+    </View>
   );
 }
 

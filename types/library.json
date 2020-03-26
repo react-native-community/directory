@@ -1,0 +1,48 @@
+{
+  "githubUrl": "https://github.com/prscX/react-native-file-selector",
+  "ios": true,
+  "android": true,
+  "web": false,
+  "expo": false,
+  "github": {
+    "urls": {
+      "repo": "https://github.com/prscX/react-native-file-selector",
+      "clone": "https://github.com/prscX/react-native-file-selector.git",
+      "homepage": null
+    },
+    "stats": {
+      "hasIssues": true,
+      "hasWiki": true,
+      "hasPages": false,
+      "hasDownloads": true,
+      "hasTopics": false,
+      "updatedAt": "2020-02-20T01:42:34Z",
+      "createdAt": "2018-02-22T14:41:35Z",
+      "pushedAt": "2020-02-20T01:42:32Z",
+      "forks": 29,
+      "issues": 38,
+      "subscribers": 3,
+      "stars": 194
+    },
+    "name": "react-native-file-selector",
+    "fullName": "prscX/react-native-file-selector",
+    "description": "React Native: Native File Selector",
+    "topics": [],
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    }
+  },
+  "images": [
+    "https://camo.githubusercontent.com/89e8e63f14922125ab7a6c5734065e24a5413efa/68747470733a2f2f692e696d6775722e636f6d2f6d6a787330356e2e706e67",
+    "https://camo.githubusercontent.com/5ea19d119a5426eeca3edbe750c280617f804aa0/687474703a2f2f692e67697068792e636f6d2f336f3667615936794c516b686a696f6b35572e676966"
+  ],
+  "npmPkg": "react-native-file-selector",
+  "npm": { "downloads": 365, "start": "2020-01-21", "end": "2020-02-19", "period": "month" },
+  "score": 56,
+  "matchingScoreModifiers": ["Recently updated"],
+  "topicSearchString": ""
+}

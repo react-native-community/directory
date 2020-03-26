@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 
 import LibraryListItemColumnOne from './LibraryListItemColumnOne';
 import LibraryListItemColumnThree from './LibraryListItemColumnThree';
+import { Calendar, Star, Download, Issue, Web } from '../components/Icons';
 
 export default function LibraryListItem({ library, isLastItem = false }) {
   const isLargeViewport = useMediaQuery({

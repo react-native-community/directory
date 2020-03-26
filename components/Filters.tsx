@@ -1,21 +1,18 @@
 import * as React from 'react';
 import { StyleSheet, View, CheckBox } from 'react-native';
 import Link from 'next/link';
+import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { colors, P, Headline, layout } from '../common/styleguide';
 import { Button } from './Button';
 import { Filter as FilterIcon } from './Icons';
 
 type FiltersProps = {
-  query: {
-    [key: string]: any;
-  };
+  query: Query;
 };
 
 type FilterButtonProps = {
-  query: {
-    [key: string]: any;
-  };
+  query: Query;
   onPress: () => void;
   isFilterVisible: boolean;
 };

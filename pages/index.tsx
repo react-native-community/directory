@@ -12,9 +12,9 @@ export default function App(props) {
 
   return (
     <View style={styles.container}>
-      <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} />
+      {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
       <LibraryList libraries={data && data.libraries} />
-      <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} />
+      {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
     </View>
   );
 }
