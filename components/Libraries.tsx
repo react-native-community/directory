@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     marginBottom: 80,
   },
   librariesContainer: {
-    paddingTop: 32,
+    paddingTop: 8,
   },
   img: {
     marginTop: 48,

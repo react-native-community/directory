@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet, View } from 'react-native';
 import Libraries from '../components/Libraries';
-import PaginationControl from '../components/PaginationControl';
+import Pagination from '../components/Pagination';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
@@ -12,9 +12,9 @@ export default function App(props) {
 
   return (
     <View style={styles.container}>
-      {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
+      <Pagination query={query} total={data && data.total} />
       <Libraries libraries={data && data.libraries} />
-      {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
+      <Pagination query={query} total={data && data.total} />
     </View>
   );
 }
@@ -33,6 +33,6 @@ App.getInitialProps = async (ctx: NextPageContext) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 16,
+    padding: 16,
   },
 });
