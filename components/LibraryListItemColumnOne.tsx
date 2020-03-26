@@ -10,7 +10,7 @@ import { A } from '../common/styleguide';
 export default function LibraryListColumnOne({ library }) {
   return (
     <View style={{ alignItems: 'flex-start', flex: 1 }}>
-      <View>
+      {/* <View>
         <A href={library.github.urls.repo}>{library.github.name}</A>
         {library.goldstar ? (
           <View style={styles.award}>
@@ -18,9 +18,9 @@ export default function LibraryListColumnOne({ library }) {
             <Text style={styles.awardText}>Recommended library</Text>
           </View>
         ) : null}
-      </View>
+      </View> */}
 
-      <Text>
+      {/* <Text>
         {[
           library.ios ? '✅ iOS' : '⛔ iOS',
           library.android ? '✅ Android' : '⛔ Android',
@@ -29,7 +29,7 @@ export default function LibraryListColumnOne({ library }) {
         ].map(each => {
           return `${each}   `;
         })}
-      </Text>
+      </Text> */}
 
       <View style={styles.qualityRow}>
         <AnimatedCircularProgress
@@ -44,13 +44,13 @@ export default function LibraryListColumnOne({ library }) {
         <Text style={styles.qualityRowLabel}>{library.score} Directory Score</Text>
       </View>
 
-      {!isEmptyOrNull(library.github.description) ? (
+      {/* {!isEmptyOrNull(library.github.description) ? (
         <Text style={styles.sectionText}>{library.github.description}</Text>
       ) : (
         undefined
-      )}
+      )} */}
 
-      {library.examples && library.examples.length ? (
+      {/* {library.examples && library.examples.length ? (
         <View style={[{ flexDirection: 'row' }]}>
           <Text>Code Examples: </Text>
           {library.examples.map((each, index) => {
@@ -65,7 +65,7 @@ export default function LibraryListColumnOne({ library }) {
             );
           })}
         </View>
-      ) : null}
+      ) : null} */}
     </View>
   );
 }

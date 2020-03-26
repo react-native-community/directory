@@ -2,7 +2,7 @@ import * as React from 'react';
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet, View } from 'react-native';
-import Results from '../components/Results';
+import Libraries from '../components/Libraries';
 import PaginationControl from '../components/PaginationControl';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
@@ -13,7 +13,7 @@ export default function App(props) {
   return (
     <View style={styles.container}>
       {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
-      <Results libraries={data && data.libraries} />
+      <Libraries libraries={data && data.libraries} />
       {/* <PaginationControl query={query} total={data && data.total} style={{ marginTop: 15 }} /> */}
     </View>
   );

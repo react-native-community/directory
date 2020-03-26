@@ -1,14 +1,14 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { H3, A } from '../common/styleguide';
-import { Library } from '../types';
-import LibraryListItem from './LibraryListItem';
+import { Library as LibraryType } from '../types';
+import Library from './Library';
 
 type Props = {
-  libraries: Library[];
+  libraries: LibraryType[];
 };
 
-export default function Results(props: Props) {
+export default function Libraries(props: Props) {
   const { libraries } = props;
 
   if (!libraries || !libraries.length) {
@@ -27,15 +27,11 @@ export default function Results(props: Props) {
   }
 
   return (
-    <>
+    <View style={styles.librariesContainer}>
       {libraries.map((item: any, index: number) => (
-        <LibraryListItem
-          key={`list-item-${index}-${item.github.name}`}
-          library={item}
-          isLastItem={index === libraries.length - 1}
-        />
+        <Library key={`list-item-${index}-${item.github.name}`} library={item} />
       ))}
-    </>
+    </View>
   );
 }
 
@@ -46,6 +42,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     marginTop: 40,
     marginBottom: 80,
+  },
+  librariesContainer: {
+    paddingTop: 32,
   },
   img: {
     marginTop: 48,

@@ -9,6 +9,7 @@ export type Query = {
 };
 
 export type Library = {
+  goldstar: boolean;
   githubUrl: string;
   ios: boolean;
   android: boolean;
@@ -52,4 +53,5 @@ export type Library = {
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
+  examples: string[];
 };

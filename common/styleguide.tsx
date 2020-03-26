@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover } from 'react-native-web-hooks';
 import * as HtmlElements from '@expo/html-elements';
@@ -39,12 +39,14 @@ const textStyles = StyleSheet.create({
   h6: { ...baseTextStyles, fontSize: 18 },
   headline: { ...baseTextStyles, fontSize: 16, fontWeight: '500' as const },
   p: { ...baseTextStyles, fontSize: 16 },
-  caption: { ...baseTextStyles, fontSize: 15, fontWeight: '300' as const },
+  caption: { ...baseTextStyles, fontSize: 15, lineHeight: 22 },
+  label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
 });
 
 type TextProps = {
   children?: ReactNode;
   style?: TextStyle | TextStyle[];
+  ref?: RefObject<ReactNode>;
 };
 
 function createTextComponent(Element: any, textStyle?: TextStyle) {
@@ -63,15 +65,18 @@ export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
+export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = {
   style?: TextStyle;
   target?: string;
   href: string;
   children?: ReactNode;
+  hoverStyle?: TextStyle;
 };
 
-export const A = ({ href, target = 'blank', children, style }: AProps) => {
+export const A = (props: AProps) => {
+  const { href, target = 'blank', children, style, hoverStyle } = props;
   const linkRef = React.useRef();
   const isHovered = useHover(linkRef);
 
@@ -79,7 +84,7 @@ export const A = ({ href, target = 'blank', children, style }: AProps) => {
     <HtmlElements.A
       href={href}
       target={target}
-      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style]}
+      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}
       ref={linkRef}>
       {children}
     </HtmlElements.A>
