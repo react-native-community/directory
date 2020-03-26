@@ -52,7 +52,7 @@ export default function Library(props: Props) {
           </View>
         ) : null}
       </View>
-      <View style={styles.columnTwo}>
+      <View style={[styles.columnTwo, isSmallScreen && styles.columnTwoSmall]}>
         <MetaData library={library} />
       </View>
     </View>
@@ -77,6 +77,13 @@ let styles = StyleSheet.create({
   columnTwo: {
     flex: 0.35,
     padding: 16,
+    borderLeftWidth: 1,
+    borderLeftColor: colors.gray2,
+  },
+  columnTwoSmall: {
+    borderLeftWidth: 0,
+    borderTopWidth: 1,
+    borderTopColor: colors.gray2,
   },
   name: {
     backgroundColor: 'transparent',
