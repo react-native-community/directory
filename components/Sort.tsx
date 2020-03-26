@@ -61,11 +61,7 @@ export const SortButton = (props: SortButtonProps) => {
         <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={sortValue}
-          style={styles.picker}
-          itemStyle={styles.pickerItem}
-          onValueChange={onPickerChange}>
+        <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
           {sorts.map(sort => (
             <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
           ))}
@@ -81,7 +77,6 @@ let styles = StyleSheet.create({
     height: 24,
     marginLeft: 8,
     paddingLeft: 8,
-    paddingRight: 2,
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -94,14 +89,12 @@ let styles = StyleSheet.create({
   },
   pickerContainer: {
     top: 1,
-    left: -2,
+    left: -6,
   },
   picker: {
     backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
-  },
-  pickerItem: {
-    fontSize: 14,
+    transform: [{ scale: 0.95 }],
   },
 });
