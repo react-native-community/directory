@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, ViewStyle, TouchableOpacity } from 'react-native';
 import Link from 'next/link';
-import { Caption } from '@expo/html-elements';
-import { colors } from '../common/styleguide';
+import { colors, Caption } from '../common/styleguide';
 import { Query } from '../types';
 import { Arrow } from './Icons';
 import urlWithQuery from '../util/urlWithQuery';

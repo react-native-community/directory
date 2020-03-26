@@ -31,6 +31,7 @@ export default function Search(props: Props) {
               placeholder="Search libraries..."
               style={styles.textInput}
               defaultValue={query && query.search}
+              placeholderTextColor={colors.gray4}
             />
             <View style={styles.searchIcon}>
               <SearchIcon fill={colors.white} />
