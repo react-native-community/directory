@@ -1,14 +1,13 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
+// TODO:
 // import { useMediaQuery } from 'react-responsive';
-import { useHover } from 'react-native-web-hooks';
-import { Library as LibraryType } from '../types';
-import { isEmptyOrNull } from '../util/strings';
-import { colors, H5, A, Label, Caption } from '../common/styleguide';
-// import LibraryListItemColumnOne from './LibraryListItemColumnOne';
-// import LibraryListItemColumnThree from './LibraryListItemColumnThree';
-import { Calendar, Star, Download, Issue, Web, Badge } from './Icons';
-import { CompatibilityTags } from './CompatibilityTags';
+import { Library as LibraryType } from '../../types';
+import { isEmptyOrNull } from '../../util/strings';
+import { colors, A, Label, Caption } from '../../common/styleguide';
+import { Badge } from '../Icons';
+import { CompatibilityTags } from '../CompatibilityTags';
+import { MetaData } from './MetaData';
 
 type Props = {
   library: LibraryType;
@@ -51,10 +50,8 @@ export default function Library(props: Props) {
         ) : null}
       </View>
       <View style={styles.columnTwo}>
-        <H5>column two</H5>
+        <MetaData library={library} />
       </View>
-      {/* <LibraryListItemColumnOne library={library} />
-      <LibraryListItemColumnThree library={library} /> */}
     </View>
   );
 }
