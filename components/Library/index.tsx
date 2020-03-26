@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-// TODO:
-// import { useMediaQuery } from 'react-responsive';
+import { useDimensions } from 'react-native-web-hooks';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
 import { colors, A, Label, Caption } from '../../common/styleguide';
@@ -15,9 +14,13 @@ type Props = {
 
 export default function Library(props: Props) {
   const { library } = props;
+  const {
+    window: { width },
+  } = useDimensions();
+  const isSmallScreen = width < 800;
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, isSmallScreen && styles.containerColumn]}>
       <View style={styles.columnOne}>
         <View style={styles.displayHorizontal}>
           <A href="" style={styles.name} hoverStyle={styles.nameHovered}>
@@ -63,6 +66,9 @@ let styles = StyleSheet.create({
     marginBottom: 16,
     borderRadius: 4,
     flexDirection: 'row',
+  },
+  containerColumn: {
+    flexDirection: 'column',
   },
   columnOne: {
     flex: 1,
