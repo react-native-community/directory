@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Picker } from 'react-native';
 import Router from 'next/router';
 import { Query } from '../types';
-import { colors, P } from '../common/styleguide';
+import { colors, P, H1 } from '../common/styleguide';
 import { Sort as SortIcon } from './Icons';
 import urlWithQuery from '../util/urlWithQuery';
 
@@ -61,11 +61,13 @@ export const SortButton = (props: SortButtonProps) => {
         <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
-        <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
-          {sorts.map(sort => (
-            <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
-          ))}
-        </Picker>
+        <P style={styles.title}>
+          <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
+            {sorts.map(sort => (
+              <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
+            ))}
+          </Picker>
+        </P>
       </View>
     </View>
   );
@@ -95,6 +97,5 @@ let styles = StyleSheet.create({
     backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
-    transform: [{ scale: 0.95 }],
   },
 });
