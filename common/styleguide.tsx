@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
+import { useHover } from 'react-native-web-hooks';
 import * as HtmlElements from '@expo/html-elements';
 
 export const layout = {
@@ -9,6 +10,7 @@ export const layout = {
 export const colors = {
   primary: '#61DAFB',
   primaryDark: '#39BEE2',
+  sky: '#C6EEFB',
   powder: '#EEFAFE',
   pewter: '#BEC8CB',
   gray1: '#f7f7f7',
@@ -61,3 +63,38 @@ export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
+
+type AProps = {
+  style?: TextStyle;
+  target?: string;
+  href: string;
+  children?: ReactNode;
+};
+
+export const A = ({ href, target = 'blank', children, style }: AProps) => {
+  const linkRef = React.useRef();
+  const isHovered = useHover(linkRef);
+
+  return (
+    <HtmlElements.A
+      href={href}
+      target={target}
+      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style]}
+      ref={linkRef}>
+      {children}
+    </HtmlElements.A>
+  );
+};
+
+const anchorStyles = StyleSheet.create({
+  a: {
+    color: colors.black,
+    backgroundColor: colors.powder,
+    textDecorationColor: colors.pewter,
+    textDecorationLine: 'underline',
+  },
+  aHovered: {
+    backgroundColor: colors.sky,
+    textDecorationColor: colors.black,
+  },
+});

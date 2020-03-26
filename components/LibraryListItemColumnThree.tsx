@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import * as SVG from '../util/svg';
 import { getTimeSinceToday } from '../util/datetime';
-import ExternalLink from '../components/ExternalLink';
 import LibraryListColumn from '../components/LibraryListColumn';
+import { A } from '../common/styleguide';
 
 const renderListItem = (data, index) => {
   const { IconComponent } = data;
@@ -32,9 +32,9 @@ export default function LibraryListItemColumnThree(props) {
     items.push({
       IconComponent: SVG.Download,
       content: (
-        <ExternalLink target="blank" href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
+        <A href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
           {`${props.library.npm.downloads}`} downloads {props.library.npm.period}ly
-        </ExternalLink>
+        </A>
       ),
     });
   }
@@ -43,9 +43,9 @@ export default function LibraryListItemColumnThree(props) {
     items.push({
       IconComponent: SVG.File,
       content: (
-        <ExternalLink target="blank" href={`${props.library.github.urls.repo}/issues`}>
+        <A href={`${props.library.github.urls.repo}/issues`}>
           {`${props.library.github.stats.issues}`} issues
-        </ExternalLink>
+        </A>
       ),
     });
   }
@@ -53,7 +53,7 @@ export default function LibraryListItemColumnThree(props) {
   if (props.library.github.urls.homepage) {
     items.push({
       IconComponent: SVG.Website,
-      content: <ExternalLink href={props.library.github.urls.homepage}>Visit Website</ExternalLink>,
+      content: <A href={props.library.github.urls.homepage}>Visit Website</A>,
     });
   }
 

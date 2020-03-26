@@ -45,7 +45,7 @@ export default function App(props: any) {
             <>
               <Favicon />
               <Header />
-              <Search query={router.query} total={pageProps.data.total} />
+              <Search query={router.query} total={pageProps.data && pageProps.data.total} />
               <View
                 style={{
                   flex: 1,

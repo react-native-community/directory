@@ -4,17 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 import * as SVG from '../util/svg';
-import ExternalLink from './ExternalLink';
 import LibraryListColumn from '../components/LibraryListColumn';
 import { isEmptyOrNull } from '../util/strings';
+import { A } from '../common/styleguide';
 
 export default function LibraryListColumnOne({ library }) {
   return (
     <LibraryListColumn style={{ alignItems: 'flex-start' }}>
       <View>
-        <ExternalLink href={library.github.urls.repo} isColored={false}>
-          {library.github.name}
-        </ExternalLink>
+        <A href={library.github.urls.repo}>{library.github.name}</A>
         {library.goldstar ? (
           <View style={styles.award}>
             <SVG.Award />
@@ -58,13 +56,13 @@ export default function LibraryListColumnOne({ library }) {
           <Text>Code Examples: </Text>
           {library.examples.map((each, index) => {
             return (
-              <ExternalLink
+              <A
                 target="blank"
                 key={`${library.name}-${each}-${index}`}
                 style={{ marginRight: 5 }}
                 href={each}>
                 #{index + 1}
-              </ExternalLink>
+              </A>
             );
           })}
         </View>

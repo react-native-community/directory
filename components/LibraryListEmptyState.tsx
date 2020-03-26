@@ -1,18 +1,16 @@
 import * as React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import ExternalLink from './ExternalLink';
+import { H3, A } from '../common/styleguide';
 
 export default () => {
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={require('../assets/notfound.png')} />
-      <Text style={styles.text}>Nothing was found! Try another search.</Text>
-      <View style={{marginTop: 20}} />
+      <H3 style={styles.text}>Nothing was found! Try another search.</H3>
+      <View style={{ marginTop: 20 }} />
       <Text style={styles.text}>
         Want to contribute a library you like? Submit a PR to the{' '}
-        <ExternalLink href="https://github.com/react-native-community/react-native-directory">
-          Github Repo.
-        </ExternalLink>
+        <A href="https://github.com/react-native-community/react-native-directory">Github Repo</A>.
       </Text>
     </View>
   );
@@ -34,5 +32,5 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-  }
+  },
 });
