@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { A } from '../common/styleguide';
 
-export default () => {
+export default function Footer() {
   return (
     <View style={styles.container}>
       <Text style={{ lineHeight: 22 }}>
@@ -18,7 +18,7 @@ export default () => {
       </Text>
     </View>
   );
-};
+}
 
 let styles = StyleSheet.create({
   container: {

@@ -9,7 +9,7 @@ import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import Header from '../components/Header';
 import Search from '../components/Search';
-import GlobalFooter from '../components/GlobalFooter';
+import Footer from '../components/Footer';
 import * as Styleguide from '../common/styleguide';
 
 Sentry.init({
@@ -53,7 +53,7 @@ export default function App(props: any) {
                   margin: 'auto',
                 }}>
                 <Component {...pageProps} />
-                <GlobalFooter />
+                <Footer />
               </View>
             </>
           </CustomAppearanceProvider>
