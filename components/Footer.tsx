@@ -1,24 +1,24 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
-import ExternalLink from '../components/ExternalLink';
+import { A } from '../common/styleguide';
 
-export default () => {
+export default function Footer() {
   return (
     <View style={styles.container}>
       <Text style={{ lineHeight: 22 }}>
         Missing a library?{' '}
-        <ExternalLink href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
+        <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
           Add it to the directory
-        </ExternalLink>
+        </A>
         . Want to learn more about React Native? Check out the{' '}
-        <ExternalLink href="https://facebook.github.io/react-native/docs/getting-started.html">
+        <A href="https://facebook.github.io/react-native/docs/getting-started.html">
           official React Native docs
-        </ExternalLink>
-        , and <ExternalLink href="https://expo.io">Expo</ExternalLink>.
+        </A>
+        , and <A href="https://expo.io">Expo</A>.
       </Text>
     </View>
   );
-};
+}
 
 let styles = StyleSheet.create({
   container: {

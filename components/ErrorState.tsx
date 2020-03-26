@@ -1,19 +1,14 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { H2 } from '@expo/html-elements';
-import ExternalLink from './ExternalLink';
+import { H2, A } from '../common/styleguide';
 
 export default ({ statusCode }) => {
   return (
     <View style={styles.container}>
-      <H2 style={[styles.text, { fontFamily: 'office-code-medium' }]}>
-        Uh oh, something went wrong ({statusCode})
-      </H2>
-      <Text style={[styles.text, { fontFamily: 'office-code' }]}>
+      <H2 style={[styles.text]}>Uh oh, something went wrong ({statusCode})</H2>
+      <Text style={[styles.text]}>
         Help fix it? Submit a PR to the{' '}
-        <ExternalLink href="https://github.com/react-native-community/directory">
-          Github Repo.
-        </ExternalLink>
+        <A href="https://github.com/react-native-community/directory">Github Repo</A>.
       </Text>
     </View>
   );
