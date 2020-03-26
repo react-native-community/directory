@@ -23,7 +23,7 @@ export default function Library(props: Props) {
     <View style={[styles.container, isSmallScreen && styles.containerColumn]}>
       <View style={styles.columnOne}>
         <View style={styles.displayHorizontal}>
-          <A href="" style={styles.name} hoverStyle={styles.nameHovered}>
+          <A href={library.github.urls.repo} style={styles.name} hoverStyle={styles.nameHovered}>
             {library.github.name}
           </A>
           {library.goldstar && (

@@ -27,7 +27,7 @@ export function MetaData(props: Props) {
     {
       id: 'star',
       icon: <Star fill={colors.gray5} />,
-      content: `${props.library.github.stats.stars} stars`,
+      content: `${props.library.github.stats.stars.toLocaleString()} stars`,
     },
     library.npm.downloads
       ? {
@@ -47,7 +47,7 @@ export function MetaData(props: Props) {
           icon: <Issue fill={colors.gray5} />,
           content: (
             <A href={`${props.library.github.urls.repo}/issues`}>
-              {`${props.library.github.stats.issues}`} issues
+              {`${props.library.github.stats.issues.toLocaleString()}`} issues
             </A>
           ),
         }
