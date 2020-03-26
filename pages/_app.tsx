@@ -11,7 +11,6 @@ import Header from '../components/Header';
 import Search from '../components/Search';
 import GlobalFooter from '../components/GlobalFooter';
 import * as Styleguide from '../common/styleguide';
-// import data from '../assets/data.json';
 
 Sentry.init({
   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
