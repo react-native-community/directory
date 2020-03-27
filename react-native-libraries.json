@@ -3327,5 +3327,12 @@
     "android": true,
     "expo": true,
     "npmPkg": "apisauce"
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/eslint-plugin-react-native-a11y",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "eslint-plugin-react-native-a11y"
   }
 ]
