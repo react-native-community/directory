@@ -3327,5 +3327,12 @@
     "android": true,
     "expo": true,
     "npmPkg": "apisauce"
-  }
+  },
+  {
+    "githubUrl": "https://github.com/transistorsoft/react-native-background-geolocation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+},
 ]
