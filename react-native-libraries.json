@@ -3338,6 +3338,13 @@
     "npmPkg": "apisauce"
   },
   {
+    "githubUrl": "https://github.com/transistorsoft/react-native-background-geolocation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
     "githubUrl": "https://github.com/nidorx/react-native-ui-blueprint",
     "ios": true,
     "android": true,
