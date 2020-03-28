@@ -46,7 +46,9 @@ Please follow this format and indentation:
   "ios": false,
   "android": false,
   "web": false,
-  "expo": false
+  "expo": false,
+  "examples": ["<THE URL TO REPO>"],
+  "npmPkg": "<NPM PACKAGE NAME>"
 },
 ```
 
