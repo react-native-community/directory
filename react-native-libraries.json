@@ -1,5 +1,14 @@
 [
    {
+     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": true,
+     "examples": ["https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example", "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example-expo"],
+     "npmPkg": "react-native-gl-image-filters"
+   },
+   {
      "githubUrl": "https://github.com/imgly/pesdk-react-native",
      "ios": true,
      "android": true,
