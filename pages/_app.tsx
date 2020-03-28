@@ -7,12 +7,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
-import GlobalHeader from '../components/GlobalHeader';
-import GlobalOrderControl from '../components/GlobalOrderControl';
-import GlobalPlatformControl from '../components/GlobalPlatformControl';
-import GlobalSearch from '../components/GlobalSearch';
-import GlobalFooter from '../components/GlobalFooter';
-import data from '../assets/data.json';
+import Header from '../components/Header';
+import Search from '../components/Search';
+import Footer from '../components/Footer';
+import * as Styleguide from '../common/styleguide';
 
 Sentry.init({
   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
@@ -33,23 +31,6 @@ export default function App(props: any) {
     <>
       <Head>
         <title>React Native Directory</title>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-            @font-face {
-              font-family: 'office-code';
-              src: url(${require('../assets/fonts/OfficeCodePro-Regular.eot')});
-              src: url(${require('../assets/fonts/OfficeCodePro-Regular.ttf')}) format('truetype');
-            }
-
-            @font-face {
-              font-family: 'office-code-medium';
-              src: url(${require('../assets/fonts/OfficeCodePro-Medium.eot')});
-              src: url(${require('../assets/fonts/OfficeCodePro-Medium.ttf')}) format('truetype');
-            }
-          `,
-          }}
-        />
 
         <GoogleAnalytics id="UA-107832480-1" />
 
@@ -62,20 +43,17 @@ export default function App(props: any) {
           <CustomAppearanceProvider>
             <>
               <Favicon />
+              <Header />
+              <Search query={router.query} total={pageProps.data && pageProps.data.total} />
               <View
                 style={{
                   flex: 1,
                   width: '100%',
-                  maxWidth: 1300,
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
+                  maxWidth: Styleguide.layout.maxWidth,
+                  margin: 'auto',
                 }}>
-                <GlobalHeader count={data.libraries.length} />
-                <GlobalSearch query={router.query} />
-                <GlobalPlatformControl query={router.query} />
-                <GlobalOrderControl query={router.query} />
                 <Component {...pageProps} />
-                <GlobalFooter />
+                <Footer />
               </View>
             </>
           </CustomAppearanceProvider>
@@ -87,15 +65,15 @@ export default function App(props: any) {
 
 const injectMeta = [
   {
-    name: `description`,
+    name: 'description',
     content: site.description,
   },
   {
-    property: `og:description`,
+    property: 'og:description',
     content: site.description,
   },
   {
-    property: `og:title`,
+    property: 'og:title',
     content: site.title,
   },
   {
@@ -104,11 +82,11 @@ const injectMeta = [
   },
   {
     property: 'og:url',
-    content: `https://reactnative.directory`,
+    content: 'https://reactnative.directory',
   },
   {
-    property: `og:type`,
-    content: `website`,
+    property: 'og:type',
+    content: 'website',
   },
   {
     key: 'viewport',
@@ -124,9 +102,9 @@ const injectMeta = [
     name: 'theme-color',
     content: themeColor,
   },
-  { name: `twitter:card`, content: 'Find packages for your apps' },
-  { name: `twitter:title`, content: site.title },
-  { name: `twitter:description`, content: site.description },
+  { name: 'twitter:card', content: 'Find packages for your apps' },
+  { name: 'twitter:title', content: site.title },
+  { name: 'twitter:description', content: site.description },
 
   // Image
   // { property: 'og:image', content: image.url },

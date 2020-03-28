@@ -1,5 +1,14 @@
 [
    {
+     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": true,
+     "examples": ["https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example", "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example-expo"],
+     "npmPkg": "react-native-gl-image-filters"
+   },
+   {
      "githubUrl": "https://github.com/imgly/pesdk-react-native",
      "ios": true,
      "android": true,
@@ -3334,5 +3343,19 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-native-ui-blueprint"
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/eslint-plugin-react-native-a11y",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "eslint-plugin-react-native-a11y"
+  },
+  {
+    "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "rn-zendesk"
   }
 ]

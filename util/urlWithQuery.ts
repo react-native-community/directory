@@ -1,4 +1,6 @@
-function toQueryString(query: { [key: string]: any }) {
+import { Query } from '../types';
+
+function toQueryString(query: Query) {
   return new URLSearchParams(query).toString();
 }
 

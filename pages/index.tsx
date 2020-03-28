@@ -2,25 +2,19 @@ import * as React from 'react';
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet, View } from 'react-native';
-import LibraryList from '../components/LibraryList';
-import PaginationControl from '../components/PaginationControl';
+import Libraries from '../components/Libraries';
+import Pagination from '../components/Pagination';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
 export default function App(props) {
+  const { data, query } = props;
+
   return (
     <View style={styles.container}>
-      <PaginationControl
-        query={props.query}
-        total={props.data && props.data.total}
-        style={{ marginTop: 15 }}
-      />
-      <LibraryList libraries={props.data && props.data.libraries} />
-      <PaginationControl
-        query={props.query}
-        total={props.data && props.data.total}
-        style={{ marginTop: 15 }}
-      />
+      <Pagination query={query} total={data && data.total} />
+      <Libraries libraries={data && data.libraries} />
+      <Pagination query={query} total={data && data.total} />
     </View>
   );
 }
@@ -39,5 +33,6 @@ App.getInitialProps = async (ctx: NextPageContext) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 16,
   },
 });
