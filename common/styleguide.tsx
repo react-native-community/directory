@@ -1,10 +1,16 @@
 import React, { ReactNode, RefObject } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
-import { useHover } from 'react-native-web-hooks';
+import { useHover, useDimensions } from 'react-native-web-hooks';
 import * as HtmlElements from '@expo/html-elements';
 
 export const layout = {
   maxWidth: 1200,
+  isSmallScreen: () => {
+    const {
+      window: { width },
+    } = useDimensions();
+    return width < 800;
+  },
 };
 
 export const colors = {

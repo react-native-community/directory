@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
+    marginBottom: -4,
   },
   tag: {
     flexDirection: 'row',
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     paddingHorizontal: 6,
     paddingVertical: 4,
+    marginBottom: 4,
   },
   text: {
     marginLeft: 4,

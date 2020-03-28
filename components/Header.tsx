@@ -11,7 +11,7 @@ export default function Header() {
       <View style={styles.headerContents}>
         <View style={styles.displayHorizontal}>
           <Logo fill={colors.primary} width={29} height={26} />
-          <H5>
+          <H5 style={layout.isSmallScreen() && styles.smallTitle}>
             <A href="/" style={styles.headerContentsTitle}>
               React Native Directory
             </A>
@@ -20,7 +20,8 @@ export default function Header() {
         <Button href="https://github.com/react-native-community/directory#how-do-i-add-a-library">
           <View style={styles.displayHorizontal}>
             <>
-              <Plus width={14} height={14} /> <P style={{ marginLeft: 6 }}>Add a library</P>
+              <Plus width={14} height={14} />
+              {!layout.isSmallScreen() && <P style={{ marginLeft: 6 }}>Add a library</P>}
             </>
           </View>
         </Button>
@@ -52,5 +53,8 @@ let styles = StyleSheet.create({
   displayHorizontal: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  smallTitle: {
+    fontSize: 18,
   },
 });
