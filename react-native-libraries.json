@@ -3338,6 +3338,13 @@
     "npmPkg": "apisauce"
   },
   {
+    "githubUrl": "https://github.com/nidorx/react-native-ui-blueprint",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-ui-blueprint"
+  },
+  {
     "githubUrl": "https://github.com/FormidableLabs/eslint-plugin-react-native-a11y",
     "ios": true,
     "android": true,
