@@ -3338,6 +3338,13 @@
     "npmPkg": "apisauce"
   },
   {
+    "githubUrl": "https://github.com/FormidableLabs/eslint-plugin-react-native-a11y",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "eslint-plugin-react-native-a11y"
+  },
+  {
     "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
     "ios": true,
     "android": true,
