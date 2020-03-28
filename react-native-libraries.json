@@ -3336,5 +3336,12 @@
     "android": true,
     "expo": true,
     "npmPkg": "apisauce"
+  },
+  {
+    "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "rn-zendesk"
   }
 ]
