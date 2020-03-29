@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { useDimensions } from 'react-native-web-hooks';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
-import { colors, A, Label, Caption } from '../../common/styleguide';
+import { colors, layout, A, Label, Caption } from '../../common/styleguide';
 import { Badge } from '../Icons';
 import { CompatibilityTags } from '../CompatibilityTags';
 import { MetaData } from './MetaData';
@@ -14,13 +13,9 @@ type Props = {
 
 export default function Library(props: Props) {
   const { library } = props;
-  const {
-    window: { width },
-  } = useDimensions();
-  const isSmallScreen = width < 800;
 
   return (
-    <View style={[styles.container, isSmallScreen && styles.containerColumn]}>
+    <View style={[styles.container, layout.isSmallScreen() && styles.containerColumn]}>
       <View style={styles.columnOne}>
         <View style={styles.displayHorizontal}>
           <A href={library.github.urls.repo} style={styles.name} hoverStyle={styles.nameHovered}>
@@ -52,7 +47,7 @@ export default function Library(props: Props) {
           </View>
         ) : null}
       </View>
-      <View style={[styles.columnTwo, isSmallScreen && styles.columnTwoSmall]}>
+      <View style={[styles.columnTwo, layout.isSmallScreen() && styles.columnTwoSmall]}>
         <MetaData library={library} />
       </View>
     </View>

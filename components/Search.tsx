@@ -37,8 +37,13 @@ export default function Search(props: Props) {
               <SearchIcon fill={colors.white} />
             </View>
           </View>
-          <View style={[styles.displayHorizontal, styles.resultsContainer]}>
-            <P style={{ color: colors.white }}>
+          <View
+            style={[
+              styles.displayHorizontal,
+              styles.resultsContainer,
+              layout.isSmallScreen() && styles.smallResultsContainer,
+            ]}>
+            <P style={styles.totalText}>
               {total} {total === 1 ? 'library' : 'libraries'}
             </P>
             <View style={styles.displayHorizontal}>
@@ -91,5 +96,13 @@ const styles = StyleSheet.create({
   resultsContainer: {
     marginTop: 8,
     justifyContent: 'space-between',
+  },
+  smallResultsContainer: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  totalText: {
+    color: colors.white,
+    marginBottom: 8,
   },
 });
