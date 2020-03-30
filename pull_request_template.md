@@ -1,8 +1,18 @@
+<!-- Thanks for submitting a pull request! We appreciate you spending the time to work on these changes. Please follow the template so that the reviewers can easily understand what the code changes affect -->
+
 # Why
 
-_[ Does this PR add a feature? Address a bug? Add a new library? ]_
+<!--
+Does this PR add a feature? Address a bug? Add a new library?
+
+Document your changes here.
+-->
 
 # Checklist
+
+<!--
+Check completed item, when applicable, via: [X]
+-->
 
 If you added a new library:
 
