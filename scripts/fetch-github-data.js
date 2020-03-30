@@ -1,7 +1,13 @@
 import fetch from 'isomorphic-fetch';
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
+require('dotenv').config();
 
 const API = 'https://api.github.com';
+
+// Authorization header as required by the GitHub API
+const Authorization =
+  'Basic ' +
+  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString( 'base64'
+  );
 
 // https://github.com/expo/expo/tree/master/packages/expo-camera
 const fetchPackageJson = async url => {
@@ -19,6 +25,8 @@ const fetchPackageJson = async url => {
     };
   } catch (e) {
     console.log(`retrying package.json fetch for ${url}`);
+    // sleep 1000ms
+    await setTimeout(() => {}, 5000);
     return await fetchPackageJson(url);
   }
 };
@@ -27,7 +35,20 @@ function isMonorepo(url) {
   return url.includes('/tree/master/');
 }
 
-const fetchGithubData = async data => {
+export const fetchGithubRateLimit = async () => {
+  let url = API;
+  let result = await fetch(url, {
+    method: 'GET',
+    headers: { Authorization },
+  });
+
+  return {
+    apiLimit: parseInt(result.headers.get('x-ratelimit-limit'), 10),
+    apiLimitRemaining: parseInt(result.headers.get('x-ratelimit-remaining'), 10),
+  };
+};
+
+export const fetchGithubData = async data => {
   try {
     let url = data.githubUrl;
     let subrepoData;
@@ -40,11 +61,11 @@ const fetchGithubData = async data => {
       // Get data from the parent
       url = url.split('/tree/master')[0];
     }
-
     const requestUrl = createRequestUrl(url);
     const response = await fetch(requestUrl, {
       method: 'GET',
       headers: {
+        Authorization,
         Accept: 'application/vnd.github.mercy-preview+json',
       },
     });
@@ -56,6 +77,7 @@ const fetchGithubData = async data => {
       result.name = subrepoData.name;
       result.topics = subrepoData.topics;
       result.description = subrepoData.description;
+      result.license = subrepoData.license;
     }
 
     return {
@@ -93,6 +115,7 @@ const createRepoDataWithResponse = json => {
     fullName: json.full_name,
     description: json.description,
     topics: json.topics,
+    license: json.license,
   };
 };
 
@@ -102,9 +125,7 @@ const createRequestUrl = url => {
   const tokens = url.split('/');
   const repoName = tokens[tokens.length - 1];
   const repoCreator = tokens[tokens.length - 2];
-  const requestUrl = `${API}/repos/${repoCreator}/${repoName}?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
+  const requestUrl = `${API}/repos/${repoCreator}/${repoName}`;
 
   return requestUrl;
 };
-
-export default fetchGithubData;

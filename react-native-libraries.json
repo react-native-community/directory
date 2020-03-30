@@ -1,5 +1,39 @@
 [
    {
+     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": true,
+     "examples": ["https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example", "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example-expo"],
+     "npmPkg": "react-native-gl-image-filters"
+   },
+   {
+     "githubUrl": "https://github.com/imgly/pesdk-react-native",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false,
+     "examples": ["https://github.com/imgly/pesdk-react-native-demo"],
+     "npmPkg": "react-native-photoeditorsdk"
+   },
+   {
+     "githubUrl": "https://github.com/imgly/vesdk-react-native",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false,
+     "examples": ["https://github.com/imgly/vesdk-react-native-demo"],
+     "npmPkg": "react-native-videoeditorsdk"
+   },
+   {
+     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
+     "ios": true,
+     "android": true,
+     "web": false,
+     "expo": false
+   },
+   {
      "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
      "ios": true,
      "android": true,
@@ -657,7 +691,7 @@
   },
   {
     "githubUrl":
-      "https://github.com/react-native-training/react-native-elements",
+      "https://github.com/react-native-elements/react-native-elements",
     "ios": true,
     "android": true,
     "expo": true
@@ -2204,7 +2238,7 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": false
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/sonaye/react-native-animated-swiper",
@@ -3268,10 +3302,67 @@
     "npmPkg": "react-native-zoomable-view"
   },
   {
+    "githubUrl": "https://github.com/Jarred-Sumner/react-native-media-clipboard",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "npmPkg": "react-native-media-clipboard"
+  },
+  {
     "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
     "ios": true,
     "android": true,
     "expo": false,
     "npmPkg": "emoji-mart-native"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/ignite",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "ignite"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/reactotron",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "reactotron"
+  },
+  {
+    "githubUrl": "https://github.com/infinitered/apisauce",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "apisauce"
+  },
+  {
+    "githubUrl": "https://github.com/transistorsoft/react-native-background-geolocation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/nidorx/react-native-ui-blueprint",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-ui-blueprint"
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/eslint-plugin-react-native-a11y",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "eslint-plugin-react-native-a11y"
+  },
+  {
+    "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "rn-zendesk"
   }
 ]
