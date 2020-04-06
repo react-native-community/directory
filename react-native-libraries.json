@@ -3364,5 +3364,50 @@
     "android": true,
     "expo": false,
     "npmPkg": "rn-zendesk"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/progress-bar-android",
+    "ios": false,
+    "android": true,
+    "expo": false,
+    "web":false,
+    "windows": false,
+    "npmPkg": "@react-native-community/progress-bar-android"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/progress-view",
+    "ios": true,
+    "android": false,
+    "expo": false,
+    "web":false,
+    "windows": false,
+    "npmPkg": "@react-native-community/progress-view"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/clipboard",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web":false,
+    "windows": false,
+    "npmPkg": "@react-native-community/clipboard"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/segmented-control",
+    "ios": true,
+    "android": false,
+    "expo": false,
+    "web":false,
+    "windows": false,
+    "npmPkg": "@react-native-community/segmented-control"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/voice",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web":false,
+    "windows": false,
+    "npmPkg": "@react-native-community/voice"
   }
 ]
