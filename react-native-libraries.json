@@ -3409,5 +3409,18 @@
     "web":false,
     "windows": false,
     "npmPkg": "@react-native-community/voice"
+  },
+  {
+    "githubUrl": "https://github.com/tienph6m/react-native-animated-spinkit",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "examples": [
+      "https://snack.expo.io/@tienph6m/react-native-animated-spinkit",
+      "https://github.com/tienph6m/react-native-animated-spinkit/tree/master/example"
+    ],
+    "npmPkg": "react-native-animated-spinkit"
   }
 ]
