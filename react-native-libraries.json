@@ -3422,5 +3422,23 @@
       "https://github.com/tienph6m/react-native-animated-spinkit/tree/master/example"
     ],
     "npmPkg": "react-native-animated-spinkit"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-webview",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": false,
+    "windows": true,
+    "npmPkg": "react-native-webview"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-camera",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false,
+    "windows": false,
+    "npmPkg": "react-native-camera"
   }
 ]
