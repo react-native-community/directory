@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
 import { colors, layout, A, Label, Caption } from '../../common/styleguide';
@@ -66,11 +66,19 @@ let styles = StyleSheet.create({
     flexDirection: 'column',
   },
   columnOne: {
-    flex: 1,
+    ...Platform.select({
+      web: {
+        flex: 1,
+      },
+    }),
     padding: 16,
   },
   columnTwo: {
-    flex: 0.35,
+    ...Platform.select({
+      web: {
+        flex: 0.35,
+      },
+    }),
     padding: 16,
     borderLeftWidth: 1,
     borderLeftColor: colors.gray2,
