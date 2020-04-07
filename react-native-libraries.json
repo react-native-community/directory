@@ -3447,8 +3447,11 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "web": false,
+    "web": true,
     "windows": false,
+    "examples": [
+      "https://snack.expo.io/@seniv/react-native-notifer-example"
+    ],
     "npmPkg": "react-native-notifier"
   }
 ]
