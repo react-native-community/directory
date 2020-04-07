@@ -3441,5 +3441,14 @@
     "web": false,
     "windows": false,
     "npmPkg": "react-native-camera"
+  },
+  {
+    "githubUrl": "https://github.com/seniv/react-native-notifier",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": false,
+    "windows": false,
+    "npmPkg": "react-native-notifier"
   }
 ]
