@@ -3441,5 +3441,16 @@
     "web": false,
     "windows": false,
     "npmPkg": "react-native-camera"
+  },
+  {
+    "githubUrl": "https://github.com/react-ui-kit/expo-ui-kit",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "examples": ["http://expo-ui-kit.com", "http://react-ui-kit.com"],
+    "npmPkg": "expo-ui-kit",
+    "unmaintained": false
   }
 ]
