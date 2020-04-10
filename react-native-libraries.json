@@ -1,65 +1,68 @@
 [
-   {
-     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
-     "ios": true,
-     "android": true,
-     "web": false,
-     "expo": true,
-     "examples": ["https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example", "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example-expo"],
-     "npmPkg": "react-native-gl-image-filters"
-   },
-   {
-     "githubUrl": "https://github.com/imgly/pesdk-react-native",
-     "ios": true,
-     "android": true,
-     "web": false,
-     "expo": false,
-     "examples": ["https://github.com/imgly/pesdk-react-native-demo"],
-     "npmPkg": "react-native-photoeditorsdk"
-   },
-   {
-     "githubUrl": "https://github.com/imgly/vesdk-react-native",
-     "ios": true,
-     "android": true,
-     "web": false,
-     "expo": false,
-     "examples": ["https://github.com/imgly/vesdk-react-native-demo"],
-     "npmPkg": "react-native-videoeditorsdk"
-   },
-   {
-     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
-     "ios": true,
-     "android": true,
-     "web": false,
-     "expo": false
-   },
-   {
-     "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
-     "ios": true,
-     "android": true,
-     "web": false,
-     "expo": true
-   },
-   {
+  {
+    "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "examples": [
+      "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example",
+      "https://github.com/GregoryNative/react-native-gl-image-filters/tree/master/example-expo"
+    ],
+    "npmPkg": "react-native-gl-image-filters"
+  },
+  {
+    "githubUrl": "https://github.com/imgly/pesdk-react-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": ["https://github.com/imgly/pesdk-react-native-demo"],
+    "npmPkg": "react-native-photoeditorsdk"
+  },
+  {
+    "githubUrl": "https://github.com/imgly/vesdk-react-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": ["https://github.com/imgly/vesdk-react-native-demo"],
+    "npmPkg": "react-native-videoeditorsdk"
+  },
+  {
+    "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
+  },
+  {
+    "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/Yasser-G/react-native-scales",
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true  
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Yasser-G/react-native-redux",
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true  
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/wcisco17/react-native-animation-video",
     "ios": true,
     "android": false,
     "web": false,
-    "expo": true  
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/MAKARD/react-native-toastboard",
@@ -111,8 +114,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/EAT-CODE-KITE-REPEAT/react-native-super-image",
+    "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/react-native-super-image",
     "ios": true,
     "android": true,
     "web": false,
@@ -126,8 +128,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/jeffreymendez1993/react-native-webview-readability",
+    "githubUrl": "https://github.com/jeffreymendez1993/react-native-webview-readability",
     "ios": true,
     "android": true,
     "web": false,
@@ -155,8 +156,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/kenmaca/react-native-apple-ads-attribution",
+    "githubUrl": "https://github.com/kenmaca/react-native-apple-ads-attribution",
     "ios": true,
     "android": false,
     "web": false,
@@ -191,8 +191,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/Navybits/react-native-navybits-date-time-picker",
+    "githubUrl": "https://github.com/Navybits/react-native-navybits-date-time-picker",
     "ios": true,
     "android": true,
     "web": false,
@@ -318,8 +317,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/codesinghanoop/react-native-d3multiline-chart",
+    "githubUrl": "https://github.com/codesinghanoop/react-native-d3multiline-chart",
     "ios": true,
     "android": true,
     "web": false,
@@ -466,8 +464,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/RepairShopr/react-native-signature-capture",
+    "githubUrl": "https://github.com/RepairShopr/react-native-signature-capture",
     "ios": true,
     "android": true,
     "web": false,
@@ -662,8 +659,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-community/react-native-drawer-layout",
+    "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
     "ios": true,
     "android": true,
     "expo": true,
@@ -690,8 +686,7 @@
     "examples": ["https://snack.expo.io/ByBCD_2r-"]
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-elements/react-native-elements",
+    "githubUrl": "https://github.com/react-native-elements/react-native-elements",
     "ios": true,
     "android": true,
     "expo": true
@@ -705,8 +700,7 @@
     "examples": ["https://snack.expo.io/SyOdDdL8b"]
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-community/react-native-tab-view",
+    "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
     "ios": true,
     "android": true,
     "web": false,
@@ -731,8 +725,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
+    "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
     "ios": true,
     "android": true,
     "expo": true
@@ -827,8 +820,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/timomeh/react-native-material-bottom-navigation",
+    "githubUrl": "https://github.com/timomeh/react-native-material-bottom-navigation",
     "ios": true,
     "android": true,
     "expo": true
@@ -876,8 +868,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/deanmcpherson/react-native-sortable-listview",
+    "githubUrl": "https://github.com/deanmcpherson/react-native-sortable-listview",
     "ios": true,
     "android": true,
     "expo": true
@@ -942,8 +933,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/meteor-factory/react-native-tinder-swipe-cards",
+    "githubUrl": "https://github.com/meteor-factory/react-native-tinder-swipe-cards",
     "ios": true,
     "android": true,
     "expo": true
@@ -955,8 +945,7 @@
     "android": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-community/react-native-side-menu",
+    "githubUrl": "https://github.com/react-native-community/react-native-side-menu",
     "ios": true,
     "android": true,
     "expo": true
@@ -969,8 +958,7 @@
     "examples": ["https://snack.expo.io/BkaD_dIL-"]
   },
   {
-    "githubUrl":
-      "https://github.com/skv-headless/react-native-scrollable-tab-view",
+    "githubUrl": "https://github.com/skv-headless/react-native-scrollable-tab-view",
     "ios": true,
     "android": true,
     "expo": true
@@ -1022,8 +1010,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/FaridSafi/react-native-google-places-autocomplete",
+    "githubUrl": "https://github.com/FaridSafi/react-native-google-places-autocomplete",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1120,10 +1107,7 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": [
-      "https://snack.expo.io/Syd1a4hHW",
-      "https://snack.expo.io/r1-cTNhH-"
-    ]
+    "examples": ["https://snack.expo.io/Syd1a4hHW", "https://snack.expo.io/r1-cTNhH-"]
   },
   {
     "githubUrl": "https://github.com/JackPu/react-native-percentage-circle",
@@ -1150,8 +1134,7 @@
     "examples": ["https://expo.github.io/vector-icons"]
   },
   {
-    "githubUrl":
-      "https://github.com/bamlab/react-native-image-header-scroll-view",
+    "githubUrl": "https://github.com/bamlab/react-native-image-header-scroll-view",
     "ios": true,
     "android": true,
     "expo": true
@@ -1283,8 +1266,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/joinspontaneous/react-native-loading-spinner-overlay",
+    "githubUrl": "https://github.com/joinspontaneous/react-native-loading-spinner-overlay",
     "ios": true,
     "android": true,
     "expo": true
@@ -1308,8 +1290,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/eyaleizenberg/react-native-floating-label-text-input",
+    "githubUrl": "https://github.com/eyaleizenberg/react-native-floating-label-text-input",
     "ios": true,
     "android": true,
     "expo": true
@@ -1322,14 +1303,11 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/xcarpentier/react-native-country-picker-modal",
+    "githubUrl": "https://github.com/xcarpentier/react-native-country-picker-modal",
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": [
-      "https://getexponent.com/@xcarpentier/react-native-country-picker-demo"
-    ]
+    "examples": ["https://getexponent.com/@xcarpentier/react-native-country-picker-demo"]
   },
   {
     "githubUrl": "https://github.com/larsvinter/react-native-awesome-button",
@@ -1364,15 +1342,13 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/danielweinmann/react-native-stateless-form",
+    "githubUrl": "https://github.com/danielweinmann/react-native-stateless-form",
     "ios": true,
     "android": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/kirankalyan5/react-native-segmented-control-tab",
+    "githubUrl": "https://github.com/kirankalyan5/react-native-segmented-control-tab",
     "ios": true,
     "android": true,
     "web": false,
@@ -1404,8 +1380,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-component/react-native-smart-badge",
+    "githubUrl": "https://github.com/react-native-component/react-native-smart-badge",
     "ios": true,
     "android": true,
     "expo": true
@@ -1442,8 +1417,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/CharlesMangwa/react-native-simple-markdown",
+    "githubUrl": "https://github.com/CharlesMangwa/react-native-simple-markdown",
     "ios": true,
     "android": true,
     "expo": true
@@ -1491,15 +1465,13 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/BranchMetrics/react-native-branch-deep-linking",
+    "githubUrl": "https://github.com/BranchMetrics/react-native-branch-deep-linking",
     "ios": true,
     "android": true,
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/smore-inc/react-native-segment-io-analytics",
+    "githubUrl": "https://github.com/smore-inc/react-native-segment-io-analytics",
     "ios": true,
     "android": true,
     "expo": false
@@ -1529,15 +1501,13 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/NishanthShankar/react-native-android-statusbar",
+    "githubUrl": "https://github.com/NishanthShankar/react-native-android-statusbar",
     "ios": true,
     "android": true,
-    "expo":false
+    "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-component/react-native-smart-splash-screen",
+    "githubUrl": "https://github.com/react-native-component/react-native-smart-splash-screen",
     "ios": true,
     "android": true
   },
@@ -1574,9 +1544,7 @@
     "ios": true,
     "android": true,
     "expo": false,
-    "examples": [
-      "https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"
-    ]
+    "examples": ["https://snack.expo.io/r116LYJne?session_id=snack-session-rygins1kH-"]
   },
   {
     "githubUrl": "https://github.com/fullstackreact/react-native-oauth",
@@ -1595,9 +1563,7 @@
     "ios": true,
     "android": false,
     "expo": false,
-    "examples": [
-      "https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"
-    ]
+    "examples": ["https://snack.expo.io/S1gdfOb4Z?session_id=snack-session-rypa21JSW"]
   },
   {
     "githubUrl": "https://github.com/rt2zz/react-native-contacts",
@@ -1615,8 +1581,7 @@
     "android": true
   },
   {
-    "githubUrl":
-      "https://github.com/walmartlabs/react-native-orientation-listener",
+    "githubUrl": "https://github.com/walmartlabs/react-native-orientation-listener",
     "ios": true,
     "android": true,
     "expo": false
@@ -1627,8 +1592,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/transistorsoft/react-native-background-fetch",
+    "githubUrl": "https://github.com/transistorsoft/react-native-background-fetch",
     "ios": true
   },
   {
@@ -1656,8 +1620,7 @@
     "android": true
   },
   {
-    "githubUrl":
-      "https://github.com/chrisfisher/react-native-directed-scrollview",
+    "githubUrl": "https://github.com/chrisfisher/react-native-directed-scrollview",
     "ios": true,
     "android": true
   },
@@ -1671,8 +1634,7 @@
     "ios": true
   },
   {
-    "githubUrl":
-      "https://github.com/CentaurWarchief/react-native-android-sms-listener",
+    "githubUrl": "https://github.com/CentaurWarchief/react-native-android-sms-listener",
     "android": true
   },
   {
@@ -1686,8 +1648,7 @@
     "android": true
   },
   {
-    "githubUrl":
-      "https://github.com/Sunhat/react-native-extra-dimensions-android",
+    "githubUrl": "https://github.com/Sunhat/react-native-extra-dimensions-android",
     "android": true
   },
   {
@@ -1724,8 +1685,7 @@
     "ios": true
   },
   {
-    "githubUrl":
-      "https://github.com/cesardeazevedo/react-native-bottom-sheet-behavior",
+    "githubUrl": "https://github.com/cesardeazevedo/react-native-bottom-sheet-behavior",
     "android": true
   },
   {
@@ -1803,8 +1763,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/DanielMSchmidt/react-native-dismiss-keyboard",
+    "githubUrl": "https://github.com/DanielMSchmidt/react-native-dismiss-keyboard",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1847,8 +1806,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/AlbertBrand/react-native-android-tablayout",
+    "githubUrl": "https://github.com/AlbertBrand/react-native-android-tablayout",
     "ios": true,
     "android": true
   },
@@ -1867,8 +1825,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/douglasjunior/react-native-keyboard-manager",
+    "githubUrl": "https://github.com/douglasjunior/react-native-keyboard-manager",
     "ios": true,
     "android": false,
     "web": false,
@@ -1881,8 +1838,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-material-design/react-native-material-design",
+    "githubUrl": "https://github.com/react-native-material-design/react-native-material-design",
     "android": true,
     "unmaintained": true
   },
@@ -1905,8 +1861,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/lelandrichardson/react-native-parallax-view",
+    "githubUrl": "https://github.com/lelandrichardson/react-native-parallax-view",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1933,8 +1888,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-simple-router-community/react-native-simple-router",
+    "githubUrl": "https://github.com/react-native-simple-router-community/react-native-simple-router",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1955,8 +1909,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/johanneslumpe/react-native-gesture-recognizers",
+    "githubUrl": "https://github.com/johanneslumpe/react-native-gesture-recognizers",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1977,16 +1930,14 @@
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/eyaleizenberg/react-native-custom-action-sheet",
+    "githubUrl": "https://github.com/eyaleizenberg/react-native-custom-action-sheet",
     "ios": true,
     "android": true,
     "expo": true,
     "unmaintained": true
   },
   {
-    "githubUrl":
-      "https://github.com/wix/react-native-keyboard-aware-scrollview",
+    "githubUrl": "https://github.com/wix/react-native-keyboard-aware-scrollview",
     "ios": true,
     "android": true,
     "expo": true,
@@ -2176,16 +2127,14 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/Michaelvilleneuve/react-native-document-scanner",
+    "githubUrl": "https://github.com/Michaelvilleneuve/react-native-document-scanner",
     "ios": true,
     "android": false,
     "web": false,
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/Michaelvilleneuve/react-native-perspective-image-cropper",
+    "githubUrl": "https://github.com/Michaelvilleneuve/react-native-perspective-image-cropper",
     "ios": true,
     "android": false,
     "web": false,
@@ -2262,8 +2211,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/sonaye/react-native-actually-usable-prompt",
+    "githubUrl": "https://github.com/sonaye/react-native-actually-usable-prompt",
     "ios": true,
     "android": true,
     "web": false,
@@ -2353,8 +2301,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/bamlab/react-native-braintree-payments-drop-in",
+    "githubUrl": "https://github.com/bamlab/react-native-braintree-payments-drop-in",
     "ios": true,
     "android": true,
     "web": false,
@@ -2368,8 +2315,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/shokimble/react-native-google-play-game-services",
+    "githubUrl": "https://github.com/shokimble/react-native-google-play-game-services",
     "ios": false,
     "android": true,
     "web": false,
@@ -2448,8 +2394,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/CompanyCam/react-native-walkthrough-tooltip",
+    "githubUrl": "https://github.com/CompanyCam/react-native-walkthrough-tooltip",
     "ios": true,
     "android": true,
     "web": false,
@@ -2463,8 +2408,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/SmallStoneSK/react-native-draggable-calendar",
+    "githubUrl": "https://github.com/SmallStoneSK/react-native-draggable-calendar",
     "ios": true,
     "android": true,
     "web": false,
@@ -2499,8 +2443,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/ardaogulcan/react-native-keyboard-accessory",
+    "githubUrl": "https://github.com/ardaogulcan/react-native-keyboard-accessory",
     "ios": true,
     "android": true,
     "web": false,
@@ -2521,8 +2464,7 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/thomaswangio/react-native-gradient-buttons",
+    "githubUrl": "https://github.com/thomaswangio/react-native-gradient-buttons",
     "ios": true,
     "android": true,
     "web": false,
@@ -2543,8 +2485,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/react-native-kit/react-native-track-player",
+    "githubUrl": "https://github.com/react-native-kit/react-native-track-player",
     "ios": true,
     "android": true,
     "web": false,
@@ -2572,8 +2513,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/hungdev/react-native-customize-selected-date",
+    "githubUrl": "https://github.com/hungdev/react-native-customize-selected-date",
     "ios": true,
     "android": true,
     "web": false,
@@ -2587,8 +2527,7 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/AndreYonadam/react-native-scrolling-images",
+    "githubUrl": "https://github.com/AndreYonadam/react-native-scrolling-images",
     "ios": true,
     "android": true,
     "web": false,
@@ -2623,56 +2562,49 @@
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-ads-admob",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-ads-admob",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-ads-facebook",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-ads-facebook",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-analytics-amplitude",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-analytics-amplitude",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-analytics-segment",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-analytics-segment",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-app-auth",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-app-auth",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-apple-authentication",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-apple-authentication",
     "ios": true,
     "android": false,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-application",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-application",
     "ios": true,
     "android": true,
     "web": true,
@@ -2700,128 +2632,112 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-barcode-scanner",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-barcode-scanner",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-battery",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-battery",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-blur",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-blur",
     "ios": true,
     "android": false,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-brightness",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-brightness",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-calendar",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-calendar",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-camera",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-camera",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-cellular",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-cellular",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-constants",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-constants",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-contacts",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-contacts",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-crypto",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-crypto",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-device",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-device",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-document-picker",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-document-picker",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-error-recovery",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-error-recovery",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-face-detector",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-face-detector",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-facebook",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-facebook",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-file-system",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-file-system",
     "ios": true,
     "android": true,
     "web": false,
@@ -2842,152 +2758,133 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-google-app-auth",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-google-app-auth",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-google-sign-in",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-google-sign-in",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-haptics",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-haptics",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-    "https://github.com/expo/expo/tree/master/packages/expo-image-manipulator",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-image-manipulator",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-image-picker",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-image-picker",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-in-app-purchases",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-in-app-purchases",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-intent-launcher",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-intent-launcher",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-keep-awake",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-keep-awake",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-linear-gradient",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-linear-gradient",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-local-authentication",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-local-authentication",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-localization",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-localization",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-location",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-location",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-mail-composer",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-mail-composer",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-media-library",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-media-library",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-network",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-network",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-notifications",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-notifications",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-payments-stripe",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-payments-stripe",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-permissions",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-permissions",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo-pixi",
+    "githubUrl": "https://github.com/expo/expo-pixi",
     "ios": true,
     "android": true,
     "web": true,
@@ -3001,32 +2898,28 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-processing",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-processing",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-random",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-random",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-secure-store",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-secure-store",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-sensors",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sensors",
     "ios": true,
     "android": true,
     "web": true,
@@ -3040,88 +2933,77 @@
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-speech",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-speech",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-sqlite",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sqlite",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-store-review",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-store-review",
     "ios": true,
     "android": false,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-task-manager",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-task-manager",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo-three",
+    "githubUrl": "https://github.com/expo/expo-three",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-video-thumbnails",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-video-thumbnails",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/expo-web-browser",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-web-browser",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/jest-expo",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer",
     "ios": false,
     "android": false,
     "web": true,
     "expo": true
   },
   {
-    "githubUrl":
-      "https://github.com/leonelfaugusto/rn-option-select",
+    "githubUrl": "https://github.com/leonelfaugusto/rn-option-select",
     "ios": true,
     "android": true,
     "web": false,
@@ -3143,13 +3025,12 @@
     "npmPkg": "@matt-block/react-native-in-app-browser"
   },
   {
-    "githubUrl":
-      "https://github.com/greenfrvr/react-native-window-guard",
+    "githubUrl": "https://github.com/greenfrvr/react-native-window-guard",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false
-  },  
+  },
   {
     "githubUrl": "https://github.com/tableau/react-native-dns-lookup",
     "ios": true,
@@ -3371,7 +3252,7 @@
     "ios": false,
     "android": true,
     "expo": false,
-    "web":false,
+    "web": false,
     "windows": false,
     "npmPkg": "@react-native-community/progress-bar-android"
   },
@@ -3380,7 +3261,7 @@
     "ios": true,
     "android": false,
     "expo": false,
-    "web":false,
+    "web": false,
     "windows": false,
     "npmPkg": "@react-native-community/progress-view"
   },
@@ -3389,7 +3270,7 @@
     "ios": true,
     "android": true,
     "expo": false,
-    "web":false,
+    "web": false,
     "windows": false,
     "npmPkg": "@react-native-community/clipboard"
   },
@@ -3398,7 +3279,7 @@
     "ios": true,
     "android": false,
     "expo": false,
-    "web":false,
+    "web": false,
     "windows": false,
     "npmPkg": "@react-native-community/segmented-control"
   },
@@ -3407,7 +3288,7 @@
     "ios": true,
     "android": true,
     "expo": false,
-    "web":false,
+    "web": false,
     "windows": false,
     "npmPkg": "@react-native-community/voice"
   },
