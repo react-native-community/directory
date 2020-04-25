@@ -3339,7 +3339,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": false,
+    "expo": true,
     "windows": true,
     "examples": ["https://mobily.github.io/stacks"],
     "npmPkg": "@mobily/stacks",
