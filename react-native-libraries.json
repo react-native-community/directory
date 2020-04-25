@@ -3333,5 +3333,16 @@
     "examples": ["http://expo-ui-kit.com", "http://react-ui-kit.com"],
     "npmPkg": "expo-ui-kit",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mobily/stacks",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "examples": ["https://mobily.github.io/stacks"],
+    "npmPkg": "@mobily/stacks",
+    "unmaintained": false
   }
 ]
