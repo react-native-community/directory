@@ -3507,17 +3507,8 @@
     "web": false,
     "expo": false,
     "windows": false,
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/react-native-community/react-native-text-input-mask",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
     "unmaintained": false,
-    "npmPkg": "@react-native-community/voice"
+    "npmPkg": "react-native-text-input-mask"
   },
   {
     "githubUrl": "https://github.com/react-native-community/toolbar-android",
