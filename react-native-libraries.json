@@ -3330,9 +3330,7 @@
     "expo": true,
     "web": true,
     "windows": false,
-    "examples": [
-      "https://snack.expo.io/@seniv/react-native-notifer-example"
-    ],
+    "examples": ["https://snack.expo.io/@seniv/react-native-notifer-example"],
     "npmPkg": "react-native-notifier"
   },
   {
@@ -3356,5 +3354,278 @@
     "examples": ["https://mobily.github.io/stacks"],
     "npmPkg": "@mobily/stacks",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-localize",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/datetimepicker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-splash-screen",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-updates",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/react-native-appearance",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-auth-session",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-linking",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-notifications",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-screen-orientation",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/blob/master/packages/expo-sharing",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-screens",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/IjzerenHein/react-native-shared-element",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-svg",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-viewpager",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-netinfo",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/netinfo"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-text-input-mask",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-text-input-mask",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/voice"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/toolbar-android",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/toolbar-android"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/art",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": true,
+    "npmPkg": "@react-native-community/art"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/push-notification-ios",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/push-notification-ios"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-safe-area-view",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-blur",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/blur"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/async-storage",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": true,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/async-storage"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-picker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/picker"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-cameraroll",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/cameraroll"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-image-editor",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/image-editor"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-masked-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "@react-native-community/masked-view"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-linear-gradient",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": true,
+    "unmaintained": false,
+    "npmPkg": "react-native-linear-gradient"
   }
 ]
