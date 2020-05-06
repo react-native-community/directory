@@ -3679,5 +3679,15 @@
     "windows": false,
     "unmaintained": false,
     "npmPkg": "react-native-voip-push-notification"
+  },
+  {
+    "githubUrl": "https://github.com/parse-community/Parse-SDK-JS",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "parse",
+    "unmaintained": false
   }
 ]
