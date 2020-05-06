@@ -3627,5 +3627,15 @@
     "windows": true,
     "unmaintained": false,
     "npmPkg": "react-native-linear-gradient"
+  },
+  {
+  "githubUrl": "https://github.com/Kida007/react-native-medium-clap",
+  "ios": true,
+  "android": true,
+  "web": true,
+  "expo": true,
+  "windows": false,
+  "npmPkg": "react-native-medium-clap",
+  "unmaintained": false,
   }
 ]
