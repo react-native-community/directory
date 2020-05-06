@@ -3618,5 +3618,66 @@
     "windows": true,
     "unmaintained": false,
     "npmPkg": "react-native-linear-gradient"
+  },
+  {
+    "githubUrl": "https://github.com/BonnierNews/react-native-audio-session",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "react-native-audio-session"
+  },
+  {
+    "githubUrl": "https://github.com/blackuy/react-native-twilio-video-webrtc",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "https://github.com/blackuy/react-native-twilio-video-webrtc"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-webrtc/react-native-callkeep",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "examples": ["https://github.com/wazo-pbx/wazo-react-native-demo"],
+    "unmaintained": false,
+    "npmPkg": "react-native-callkeep"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-webrtc/react-native-webrtc",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "react-native-webrtc"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-webrtc/react-native-incall-manager",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "react-native-incall-manager"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-webrtc/react-native-voip-push-notification",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "react-native-voip-push-notification"
   }
 ]
