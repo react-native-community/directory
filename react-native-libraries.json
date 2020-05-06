@@ -3620,6 +3620,16 @@
     "npmPkg": "react-native-linear-gradient"
   },
   {
+    "githubUrl": "https://github.com/Kida007/react-native-medium-clap",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-medium-clap",
+    "unmaintained": false
+  },
+  {
     "githubUrl": "https://github.com/BonnierNews/react-native-audio-session",
     "ios": true,
     "android": false,
