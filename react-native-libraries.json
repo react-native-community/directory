@@ -3961,5 +3961,16 @@
     "windows": false,
     "npmPkg": "react-native-purchases",
     "unmaintained": false,
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "examples": ["https://github.com/khalisafkari/react-native-kvideo/tree/master/example"],
+    "npmPkg": "react-native-kvideo",
+    "unmaintained": false,
   }
 ]
