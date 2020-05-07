@@ -3684,8 +3684,8 @@
     "githubUrl": "https://github.com/parse-community/Parse-SDK-JS",
     "ios": true,
     "android": true,
-    "web": false,
-    "expo": false,
+    "web": true,
+    "expo": true,
     "windows": false,
     "npmPkg": "parse",
     "unmaintained": false
