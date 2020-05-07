@@ -83,6 +83,22 @@
         "examples": [
           true
         ]
+      },
+      "thumbnails": {
+        "$id": "#/items/properties/thumbnails",
+        "type": "array",
+        "title": "The Thumbnails Schema",
+        "default": [null],
+        "items": {
+          "$id": "#/items/properties/thumbnails/items",
+          "type": "string",
+          "title": "The Thumbnails Item Schema",
+          "default": "",
+          "examples": [
+            "https://reactnative.dev/img/homepage/phones.png"
+          ],
+          "pattern": "^(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png)$"
+        }
       }
     }
   }
