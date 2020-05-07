@@ -3979,5 +3979,55 @@
     "windows": false,
     "npmPkg": "react-native-navigation-hooks",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "aws-amplify",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/datastore",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@aws-amplify/datastore",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-react-native",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "aws-amplify-react-native",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/auth",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@aws-amplify/auth",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "@aws-amplify/pushnotification",
+    "unmaintained": false
   }
 ]
