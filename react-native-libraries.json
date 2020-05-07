@@ -3732,5 +3732,15 @@
     "windows": false,
     "npmPkg": "react-native-responsive-image-view",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/osamaq/react-native-image-colors",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-image-colors",
+    "unmaintained": false
   }
 ]
