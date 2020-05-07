@@ -3290,9 +3290,9 @@
   {
     "githubUrl": "https://github.com/react-native-community/segmented-control",
     "ios": true,
-    "android": false,
+    "android": true,
     "expo": false,
-    "web": false,
+    "web": true,
     "windows": false,
     "npmPkg": "@react-native-community/segmented-control"
   },
