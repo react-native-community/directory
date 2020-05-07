@@ -3785,8 +3785,8 @@
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
     "ios": true,
     "android": true,
-    "web": true,
-    "expo": true,
+    "web": false,
+    "expo": false,
     "windows": false,
     "npmPkg": "@aws-amplify/pushnotification",
     "unmaintained": false
