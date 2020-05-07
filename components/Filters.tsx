@@ -31,6 +31,14 @@ const platforms = [
     title: 'Web',
   },
   {
+    param: 'windows',
+    title: 'Windows',
+  },
+  {
+    param: 'macos',
+    title: 'macOS',
+  },
+  {
     param: 'expo',
     title: 'Expo Client',
   },
