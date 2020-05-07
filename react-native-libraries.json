@@ -12,6 +12,17 @@
     "npmPkg": "react-native-gl-image-filters"
   },
   {
+    "githubUrl": "https://github.com/Iconscout/react-native-unicons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "examples": [
+      "https://github.com/Iconscout/react-native-unicons/tree/master/example"
+    ],
+    "npmPkg": "@iconscout/react-native-unicons"
+  },
+  {
     "githubUrl": "https://github.com/imgly/pesdk-react-native",
     "ios": true,
     "android": true,
