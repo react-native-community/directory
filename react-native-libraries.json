@@ -3742,5 +3742,15 @@
     "windows": false,
     "npmPkg": "react-native-image-colors",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/restyle",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "npmPkg": "@shopify/restyle",
+    "unmaintained": false
   }
 ]
