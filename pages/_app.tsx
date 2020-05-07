@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import * as Sentry from '@sentry/node';
 import Head from 'next/head';
 import { View } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useDimensions } from 'react-native-web-hooks';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
@@ -26,6 +27,7 @@ const themeColor = '#fff';
 
 export default function App(props: any) {
   let { pageProps, Component, router } = props;
+  const screenWidth = useDimensions().window.width;
 
   return (
     <>
@@ -63,7 +65,7 @@ export default function App(props: any) {
                   }
 
                   .preview img {
-                    max-width: 640px;
+                    max-width: ${screenWidth < 640 ? screenWidth - 20 : 640}px;
                     max-height: 320px;
                   }
 
