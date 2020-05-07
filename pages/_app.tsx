@@ -54,6 +54,28 @@ export default function App(props: any) {
                 }}>
                 <Component {...pageProps} />
                 <Footer />
+                <style jsx global>{`
+                  .preview {
+                    background-color: white !important;
+                    opacity: 1 !important;
+                    padding: 10px !important;
+                    box-shadow: 0 5px 5px 0px #00000025 !important;
+                  }
+
+                  .preview img {
+                    max-width: 640px;
+                    max-height: 320px;
+                  }
+
+                  .thumbnail-link {
+                    cursor: pointer !important;
+                    margin-right: 6px !important;
+                  }
+
+                  .thumbnail-link:hover path {
+                    fill: ${Styleguide.colors.primary} !important;
+                  }
+                `}</style>
               </View>
             </>
           </CustomAppearanceProvider>

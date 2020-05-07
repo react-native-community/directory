@@ -7,7 +7,7 @@ interface ThumbnailProps {
 
 const Thumbnail = ({ url }: ThumbnailProps) => {
   return (
-    <a data-tip={url} data-for="preview">
+    <a data-tip={url} data-for="preview" className="thumbnail-link">
       <ThumbnailIcon />
     </a>
   );
