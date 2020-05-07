@@ -3711,5 +3711,15 @@
     "windows": false,
     "npmPkg": "redux-flipper",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/wKovacs64/react-native-responsive-image-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-responsive-image-view",
+    "unmaintained": false
   }
 ]
