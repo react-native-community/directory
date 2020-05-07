@@ -3961,83 +3961,223 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
+    "githubUrl": "https://github.com/GregFrench/react-native-wheel-picker",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false,
     "windows": false,
-    "npmPkg": "react-native-kvideo",
+    "npmPkg": "@gregfrench/react-native-wheel-picker",
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/underscopeio/react-native-navigation-hooks",
+    "githubUrl": "https://github.com/getsentry/sentry-react-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@sentry/react-native",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/solinor/react-native-bluetooth-status",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false,
     "windows": false,
-    "npmPkg": "react-native-navigation-hooks",
+    "npmPkg": "react-native-bluetooth-status",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-calendar-strip",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/luggit/react-native-config",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-config",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ttdung11t2/react-native-confirmation-code-input",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-confirmation-code-input",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/StasDoskalenko/react-native-google-fit",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-google-fit",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/christopherdro/react-native-html-to-pdf",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-html-to-pdf",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jsdf/react-native-htmlview",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-htmlview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/marcshilling/react-native-idle-timer",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-idle-timer",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/msalo3/react-native-image-mapper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-image-mapper",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/proyecto26/react-native-inappbrowser",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-inappbrowser-reborn",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/rafaelmotta/react-native-progress-bar-animated",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-progress-bar-animated",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/alikazemkhanloo/react-native-reanimated-slider",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-reanimated-slider",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jsoendermann/rn-section-list-get-item-layout",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-section-list-get-item-layout",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mCodex/react-native-sensitive-info",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-sensitive-info",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/naoufal/react-native-touch-id",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-touch-id",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/APSL/react-native-version-number",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-version-number",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/davidohayon669/react-native-youtube",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-youtube",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/terrillo/rn-apple-healthkit",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "rn-apple-healthkit",
     "unmaintained": false
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js",
     "ios": true,
     "android": true,
-    "web": true,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "aws-amplify",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/datastore",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "@aws-amplify/datastore",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-react-native",
-    "ios": true,
-    "android": true,
-    "web": true,
+    "web": false,
     "expo": true,
     "windows": false,
     "npmPkg": "aws-amplify-react-native",
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/auth",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "@aws-amplify/auth",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
+    "githubUrl": "https://github.com/wbroek/react-native-powerbi",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false,
     "windows": false,
-    "npmPkg": "@aws-amplify/pushnotification",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/parse-community/Parse-SDK-JS",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "parse",
+    "npmPkg": "react-native-powerbi",
     "unmaintained": false
   }
 ]
