@@ -3701,5 +3701,15 @@
     "windows": false,
     "unmaintained": false,
     "npmPkg": "react-native-bootsplash"
+  },
+  {
+    "githubUrl": "https://github.com/jk-gan/redux-flipper",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "redux-flipper",
+    "unmaintained": false
   }
 ]
