@@ -3967,8 +3967,17 @@
     "web": false,
     "expo": false,
     "windows": false,
-    "examples": ["https://github.com/khalisafkari/react-native-kvideo/tree/master/example"],
     "npmPkg": "react-native-kvideo",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/underscopeio/react-native-navigation-hooks",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-navigation-hooks",
     "unmaintained": false
   }
 ]
