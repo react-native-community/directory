@@ -54,4 +54,5 @@ export type Library = {
   matchingScoreModifiers: string[];
   topicSearchString: string;
   examples: string[];
+  thumbnails: string[];
 };
