@@ -3691,5 +3691,15 @@
     "windows": false,
     "unmaintained": false,
     "npmPkg": "react-native-voip-push-notification"
-  }
+  },
+    {
+    "githubUrl": "https://github.com/zoontek/react-native-bootsplash",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "unmaintained": false,
+    "npmPkg": "react-native-bootsplash"
+  },
 ]
