@@ -3951,5 +3951,15 @@
     "expo": true,
     "npmPkg": "@shopify/restyle",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/RevenueCat/react-native-purchases",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-purchases",
+    "unmaintained": false,
   }
 ]
