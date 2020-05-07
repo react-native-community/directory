@@ -3616,7 +3616,7 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true,
+    "expo": false,
     "windows": true,
     "unmaintained": false,
     "npmPkg": "react-native-linear-gradient"
