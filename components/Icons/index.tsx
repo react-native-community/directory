@@ -207,3 +207,23 @@ export function Sort(props: Props) {
     </Svg>
   );
 }
+
+export function Thumbnail({ width = 16, height = 16, fill = colors.gray4 }: Props) {
+  return (
+    <Svg width={width} height={height} fill="none">
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14 2H2v12h12V2zM0 0v16h16V0H0z"
+        fill={fill}
+      />
+      <Path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7 7.586l3 3 2-2 3.707 3.707-1.414 1.414L12 11.414l-.586.586 2.293 2.293-1.414 1.414L7 10.414l-5.293 5.293-1.414-1.414L7 7.586z"
+        fill={fill}
+      />
+      <Path d="M12 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill={fill} />
+    </Svg>
+  );
+}
