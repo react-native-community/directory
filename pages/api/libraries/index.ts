@@ -45,8 +45,10 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     support: {
       ios: req.query.ios,
       android: req.query.android,
-      expo: req.query.expo,
       web: req.query.web,
+      windows: req.query.windows,
+      macos: req.query.macos,
+      expo: req.query.expo,
     },
   });
 
