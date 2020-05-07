@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { View } from 'react-native';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useDimensions } from 'react-native-web-hooks';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import Favicon from '../components/Favicon';
 import GoogleAnalytics from '../components/GoogleAnalytics';
@@ -27,8 +26,6 @@ const themeColor = '#fff';
 
 export default function App(props: any) {
   let { pageProps, Component, router } = props;
-  const screenWidth = useDimensions().window.width;
-
   return (
     <>
       <Head>
@@ -56,28 +53,6 @@ export default function App(props: any) {
                 }}>
                 <Component {...pageProps} />
                 <Footer />
-                <style jsx global>{`
-                  .preview {
-                    background-color: white !important;
-                    opacity: 1 !important;
-                    padding: 10px !important;
-                    box-shadow: 0 5px 5px 0px #00000025 !important;
-                  }
-
-                  .preview img {
-                    max-width: ${screenWidth < 640 ? screenWidth - 20 : 640}px;
-                    max-height: 320px;
-                  }
-
-                  .thumbnail-link {
-                    cursor: pointer !important;
-                    margin-right: 6px !important;
-                  }
-
-                  .thumbnail-link:hover path {
-                    fill: ${Styleguide.colors.primary} !important;
-                  }
-                `}</style>
               </View>
             </>
           </CustomAppearanceProvider>

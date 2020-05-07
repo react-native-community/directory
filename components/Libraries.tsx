@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import ReactTooltip from 'react-tooltip';
 import { H3, A } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
 import Library from './Library';
+import Tooltip from './Tooltip';
 
 type Props = {
   libraries: LibraryType[];
@@ -33,24 +33,8 @@ export default function Libraries(props: Props) {
         {libraries.map((item: any, index: number) => (
           <Library key={`list-item-${index}-${item.github.name}`} library={item} />
         ))}
-        <ReactTooltip
-          className="preview"
-          id="preview"
-          place="bottom"
-          type="light"
-          effect="solid"
-          arrowColor="transparent"
-          getContent={dataTip => <img src={dataTip} />}
-          overridePosition={({ left, top }, currentEvent, currentTarget, node) => {
-            const d = document.documentElement;
-            left = Math.min(d.clientWidth - node.clientWidth, left);
-            top = Math.min(d.clientHeight - node.clientHeight, top);
-            left = Math.max(0, left);
-            top = Math.max(0, top);
-            return { top, left };
-          }}
-        />
       </View>
+      <Tooltip />
     </>
   );
 }
