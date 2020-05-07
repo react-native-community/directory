@@ -3959,5 +3959,15 @@
     "windows": false,
     "npmPkg": "react-native-purchases",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/underscopeio/react-native-navigation-hooks",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-navigation-hooks",
+    "unmaintained": false
   }
 ]
