@@ -3323,6 +3323,7 @@
     "expo": true,
     "web": false,
     "windows": true,
+    "macos": true,
     "npmPkg": "react-native-webview"
   },
   {
