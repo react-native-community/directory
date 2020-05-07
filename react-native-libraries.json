@@ -17,9 +17,7 @@
     "android": true,
     "web": true,
     "expo": true,
-    "examples": [
-      "https://github.com/Iconscout/react-native-unicons/tree/master/example"
-    ],
+    "examples": ["https://github.com/Iconscout/react-native-unicons/tree/master/example"],
     "npmPkg": "@iconscout/react-native-unicons"
   },
   {
@@ -3960,7 +3958,7 @@
     "expo": false,
     "windows": false,
     "npmPkg": "react-native-purchases",
-    "unmaintained": false,
+    "unmaintained": false
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
