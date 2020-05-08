@@ -4232,5 +4232,31 @@
     "android": true,
     "npmPkg": "react-native-deep-link",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/necolas/react-native-web",
+    "web": true,
+    "npmPkg": "react-native-web",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ptmt/react-native-macos",
+    "macos": true,
+    "npmPkg": "react-native-macos",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Microsoft/reactxp",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "npmPkg": "reactxp",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-windows",
+    "windows": true,
+    "npmPkg": "react-native-windows",
+    "unmaintained": false
   }
 ]
