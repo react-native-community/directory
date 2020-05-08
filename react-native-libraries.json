@@ -4166,5 +4166,15 @@
     "npmPkg": "react-native-platform-touchable",
     "examples": [],
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/mpiannucci/react-native-context-menu-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-context-menu-view",
+    "unmaintained": false
   }
 ]
