@@ -516,13 +516,6 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/zo0r/react-native-push-notification",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false
-  },
-  {
     "githubUrl": "https://github.com/root-two/react-native-drawer",
     "ios": true,
     "android": true,
@@ -699,14 +692,6 @@
     "ios": true,
     "android": true,
     "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "examples": ["https://snack.expo.io/SyOdDdL8b"]
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
@@ -1124,15 +1109,6 @@
     "ios": true,
     "android": true,
     "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/expo/react-native-action-sheet",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "npmPkg": "@expo/react-native-action-sheet",
-    "examples": ["https://expo.io/@community/react-native-action-sheet-example"]
   },
   {
     "githubUrl": "https://github.com/expo/vector-icons",
