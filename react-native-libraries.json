@@ -3323,6 +3323,7 @@
     "expo": true,
     "web": false,
     "windows": true,
+    "macos": true,
     "npmPkg": "react-native-webview"
   },
   {
@@ -3508,6 +3509,7 @@
     "web": true,
     "expo": true,
     "windows": true,
+    "macos": true,
     "unmaintained": false,
     "npmPkg": "@react-native-community/netinfo"
   },
@@ -3961,6 +3963,146 @@
     "unmaintained": false
   },
   {
+    "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-kvideo",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/underscopeio/react-native-navigation-hooks",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-navigation-hooks",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "aws-amplify",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/datastore",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@aws-amplify/datastore",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-react-native",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "aws-amplify-react-native",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/auth",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@aws-amplify/auth",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "@aws-amplify/pushnotification",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/parse-community/Parse-SDK-JS",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "parse",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mxck/react-native-material-menu",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-material-menu",
+    "examples": [
+      "https://snack.expo.io/@mxck/react-native-material-menu-demo"],
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jacklam718/react-native-modals",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/MaxGraey/react-native-console-time-polyfill",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-console-time-polyfill"
+  },
+  {
+    "githubUrl": "https://github.com/skb1129/react-native-change-icon",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-change-icon",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/brh55/react-native-open-maps",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-open-maps",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-store-review",
+    "ios": true,
+    "npmPkg": "react-native-store-review",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/BranchMetrics/react-native-branch-deep-linking-attribution",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-branch",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-platform-touchable",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-platform-touchable",
+    "unmaintained": true
+  },
+  {
     "githubUrl": "https://github.com/GregFrench/react-native-wheel-picker",
     "ios": true,
     "android": true,
@@ -4158,16 +4300,6 @@
     "expo": false,
     "windows": false,
     "npmPkg": "rn-apple-healthkit",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "aws-amplify-react-native",
     "unmaintained": false
   },
   {
