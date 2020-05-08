@@ -6,7 +6,8 @@ const API = 'https://api.github.com';
 // Authorization header as required by the GitHub API
 const Authorization =
   'Basic ' +
-  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString( 'base64'
+  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString(
+    'base64'
   );
 
 // https://github.com/expo/expo/tree/master/packages/expo-camera

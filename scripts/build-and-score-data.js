@@ -4,7 +4,7 @@ import jsonfile from 'jsonfile';
 import chunk from 'lodash/chunk';
 import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
 import calculateScore from './calculate-score';
-import fetchReadmeImages from './fetch-readme-images';
+// import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
 import githubRepos from '../react-native-libraries.json';
