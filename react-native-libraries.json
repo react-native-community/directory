@@ -3959,5 +3959,165 @@
     "windows": false,
     "npmPkg": "react-native-purchases",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-material-dropdown",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-material-dropdown",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/brh55/react-native-open-maps",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-open-maps",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Flipkart/recyclerlistview",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "examples": [
+      "https://snack.expo.io/@naqvitalha/rlv-demo",
+      "https://snack.expo.io/B1GYad52b",
+      "https://snack.expo.io/@arunreddy10/19bb8e"
+    ],
+    "npmPkg": "recyclerlistview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/maxs15/react-native-spinkit",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-spinkit",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/nitaliano/react-native-mapbox-gl",
+    "ios": true,
+    "android": true,
+    "npmPkg": "@mapbox/react-native-mapbox-gl",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/Trixieapp/react-virgin",
+    "ios": true,
+    "android": true,
+    "npmPkg": "",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/yamill/react-native-orientation",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-orientation",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/aksonov/react-native-tableview",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-tableview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/bolan9999/react-native-largelist",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-largelist",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/rgommezz/react-native-offline",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-offline",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/magicismight/react-native-root-toast",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-root-toast",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/brh55/react-native-masonry",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-masonry",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/sghiassy/react-native-sglistview",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-sglistview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/thegamenicorus/react-native-timeline-listview",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-timeline-listview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mohebifar/react-native-copilot",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-copilot",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/djchie/react-native-star-rating",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-star-rating",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jgrancher/react-native-sketch",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-sketch",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/galio-org/galio",
+    "ios": true,
+    "android": true,
+    "npmPkg": "galio-framework",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/saleel/react-native-super-grid",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-super-grid",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/naoufal/react-native-activity-view",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-activity-view",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/syrusakbary/react-native-refresher",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-refresher",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/nick/react-native-carousel",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-carousel",
+    "unmaintained": false
   }
 ]
