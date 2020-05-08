@@ -4119,5 +4119,83 @@
     "android": true,
     "npmPkg": "react-native-carousel",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/globocom/react-native-draftjs-render",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-draftjs-render",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/christopherdro/react-native-html-to-pdf",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-html-to-pdf",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/almost/react-native-html-webview",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "npmPkg": "react-native-html-webview",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/soliury/react-native-html-render",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-html-render",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/airamrguez/react-native-measure-text",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-measure-text",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/vinzscam/react-native-file-viewer",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-file-viewer",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/heyman333/react-native-responsive-fontsize",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-responsive-fontsize",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aMarCruz/react-native-text-size",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-text-size",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/agentcooper/react-native-hypertext",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-hypertext",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/turley/react-native-asciimage",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-asciimage",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/taskrabbit/react-native-parsed-text",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-parsed-text",
+    "unmaintained": false
   }
 ]
