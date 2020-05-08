@@ -4101,5 +4101,302 @@
     "expo": true,
     "npmPkg": "react-native-platform-touchable",
     "unmaintained": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/react-navigation/material-bottom-tabs",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-navigation-material-bottom-tabs",
+  "unmaintained": true
+},
+{
+  "githubUrl": "https://github.com/IjzerenHein/react-navigation-shared-element",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-navigation-shared-element",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/IjzerenHein/react-navigation-shared-element",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-navigation-shared-element",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/iou90/react-native-autoheight-webview",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-autoheight-webview",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/chirag04/react-native-mail",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-mail"
+},
+{
+  "githubUrl": "https://github.com/ak1394/react-native-tts",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-tts"
+},
+{
+  "githubUrl": "https://github.com/luggit/react-native-config",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-config",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/naoufal/react-native-touch-id",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-touch-id",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/luisfcofv/react-native-deep-linking",
+  "ios": true,
+  "android": true,
+  "expo": false,
+  "npmPkg": "react-native-deep-linking",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/eddieowens/react-native-boundary",
+  "ios": true,
+  "android": true,
+  "expo": false,
+  "npmPkg": "react-native-boundary",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/rhdeck/react-native-swift",
+  "ios": true,
+  "android": false,
+  "expo": false,
+  "npmPkg": "react-native-swift",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/rgommezz/react-native-offline",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "windows": true,
+  "examples": ["https://expo.io/@rgommezz/react-native-offline-example"],
+  "npmPkg": "react-native-offline",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/ovr/react-native-status-bar-height",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-status-bar-height",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/andpor/react-native-sqlite-storage",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "windows": true,
+  "npmPkg": "react-native-sqlite-storage",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/corymsmith/react-native-fabric",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-fabric",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/taskrabbit/react-native-parsed-text",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-parsed-text",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/tableflip/react-native-select-multiple",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-select-multiple",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/Richard-Cao/react-native-exceptions-manager",
+  "ios": true,
+  "android": true,
+  "expo": false,
+  "npmPkg": "react-native-exceptions-manager",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/weflex/react-native-wechat",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-wechat",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/Microsoft/react-native-code-push",
+  "ios": true,
+  "android": true,
+  "windows": true,
+  "npmPkg": "react-native-code-push",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/plmok61/react-navigation-transitions",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-navigation-transitions",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/itsnubix/react-native-video-controls",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-video-controls",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/react-navigation/redux-helpers",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-navigation-redux-helpers",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/kadiks/react-native-itunes",
+  "ios": true,
+  "android": false,
+  "expo": false,
+  "npmPkg": "react-native-itunes",
+  "unmaintained": true
+},
+{
+  "githubUrl": "https://github.com/anarchicknight/react-native-communications",
+  "ios": true,
+  "android": false,
+  "expo": false,
+  "npmPkg": "react-native-communications",
+  "unmaintained": true
+},
+{
+  "githubUrl": "https://github.com/jsdf/react-native-htmlview",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-htmlview",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/lucasferreira/react-native-flash-message",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-flash-message",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/stefalda/ReactNativeLocalization",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-localization",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/aMarCruz/react-native-photo-view-ex",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-photo-view-ex",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/maxs15/react-native-spinkit",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-spinkit",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/software-mansion/react-native-tab-view-viewpager-adapter",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-tab-view-viewpager-adapter",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/Aleksefo/react-native-webp-format",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-webp-format",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/mockingbot/react-native-zip-archive",
+  "ios": true,
+  "android": true,
+  "npmPkg": "react-native-zip-archive",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/vonovak/react-navigation-backhandler",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-navigation-backhandler",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/idehub/react-native-billing",
+  "ios": false,
+  "android": true,
+  "expo": false,
+  "npmPkg": "react-native-billing",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/idehub/react-native-billing",
+  "ios": false,
+  "android": true,
+  "expo": false,
+  "npmPkg": "react-native-billing",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/TaylorBriggs/react-native-typewriter",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "npmPkg": "react-native-typewriter",
+  "unmaintained": false
+},
+{
+  "githubUrl": "https://github.com/conorhastings/react-native-syntax-highlighter",
+  "ios": true,
+  "android": true,
+  "expo": true,
+  "examples": ["https://snack.expo.io/BypG26zdz"],
+  "npmPkg": "react-native-syntax-highlighter",
+  "unmaintained": false
+}
 ]
