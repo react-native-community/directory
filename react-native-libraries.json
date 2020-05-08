@@ -3485,15 +3485,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-svg",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": false,
-    "unmaintained": false
-  },
-  {
     "githubUrl": "https://github.com/react-native-community/react-native-viewpager",
     "ios": true,
     "android": true,
@@ -3851,6 +3842,7 @@
     "githubUrl": "https://github.com/react-native-community/react-native-svg",
     "ios": true,
     "android": true,
+    "expo": true,
     "web": true,
     "examples": ["https://snack.expo.io/@msand/react-native-svg-example"],
     "npmPkg": "react-native-svg",
@@ -3961,6 +3953,33 @@
     "windows": false,
     "npmPkg": "react-native-purchases",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-checkbox",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "@react-native-community/checkbox"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/peek-and-pop",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "@react-native-community/peek-and-pop"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/google-signin",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "@react-native-community/google-signin"
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
@@ -4094,12 +4113,69 @@
     "unmaintained": false
   },
   {
+    "githubUrl": "https://github.com/react-native-community/react-native-geolocation",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "@react-native-community/geolocation"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-template-typescript",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "react-native-template-typescript"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-audio-toolkit",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "@react-native-community/audio-toolkit"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-translucent-modal",
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": [],
+    "npmPkg": "react-native-translucent-modal"
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-navbar",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "examples": [],
+    "npmPkg": "react-native-navbar"
+  },
+  {
     "githubUrl": "https://github.com/react-native-community/react-native-platform-touchable",
     "ios": true,
     "android": true,
+    "web": false,
     "expo": true,
     "npmPkg": "react-native-platform-touchable",
+    "examples": [],
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/mpiannucci/react-native-context-menu-view",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-context-menu-view",
+    "unmaintained": false
   },
   {
     "githubUrl": "https://github.com/githuboftigran/rn-range-slider",
