@@ -4105,7 +4105,9 @@
     "githubUrl": "https://github.com/githuboftigran/rn-range-slider",
     "ios": true,
     "android": true,
+    "web": false,
     "expo": false,
+    "windows": false,
     "npmPkg": "rn-range-slider",
     "unmaintained": false
   }
