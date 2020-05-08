@@ -4175,5 +4175,18 @@
     ],
     "npmPkg": "@mohamadkh75/react-native-jalali-datepicker",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jibraniqbal666/react-native-fb-image-grid",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "examples": [
+      "https://github.com/jibraniqbal666/react-native-fb-image-grid/tree/master/example"
+    ],
+    "npmPkg": "react-native-fb-image-grid",
+    "unmaintained": false
   }
 ]
