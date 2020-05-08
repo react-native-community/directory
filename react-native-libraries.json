@@ -4107,7 +4107,7 @@
   "ios": true,
   "android": true,
   "web": false,
-  "expo": false,
+  "expo": true,
   "windows": true,
   "examples": ["https://github.com/MohamadKh75/react-native-jalali-datepicker/tree/master/example"],
   "npmPkg": "@mohamadkh75/react-native-jalali-datepicker",
