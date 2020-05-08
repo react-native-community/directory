@@ -16,6 +16,8 @@ jobs:
         node-version: '~12.16.3'
     - name: Deploy
       shell: bash
-      run: npx now --token "$VERCEL_TOKEN"
+      run: npx now --token "$VERCEL_TOKEN" --prod
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        NOW_ORG_ID: 'React Native Directory'
+        NOW_PROJECT_ID: 'react-native-directory'
