@@ -8,18 +8,14 @@
     "$id": "#/items",
     "type": "object",
     "title": "The Items Schema",
-    "required": [
-      "githubUrl"
-    ],
+    "required": ["githubUrl"],
     "properties": {
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
         "title": "The Githuburl Schema",
         "default": "",
-        "examples": [
-          "https://github.com/joshswan/react-native-autolink"
-        ],
+        "examples": ["https://github.com/joshswan/react-native-autolink"],
         "pattern": "^(.*)$"
       },
       "ios": {
@@ -27,27 +23,35 @@
         "type": "boolean",
         "title": "The Ios Schema",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "android": {
         "$id": "#/items/properties/android",
         "type": "boolean",
         "title": "The Android Schema",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
+      },
+      "windows": {
+        "$id": "#/items/properties/windows",
+        "type": "boolean",
+        "title": "The Windows Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "macos": {
+        "$id": "#/items/properties/macos",
+        "type": "boolean",
+        "title": "The macOS Schema",
+        "default": false,
+        "examples": [true]
       },
       "expo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
         "title": "The Expo Schema",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "examples": {
         "$id": "#/items/properties/examples",
@@ -59,9 +63,7 @@
           "type": "string",
           "title": "The Items Schema",
           "default": "",
-          "examples": [
-            "https://snack.expo.io/SkRP2Ehrb"
-          ],
+          "examples": ["https://snack.expo.io/SkRP2Ehrb"],
           "pattern": "^(.*)$"
         }
       },
@@ -70,9 +72,7 @@
         "type": "string",
         "title": "The Npmpkg Schema",
         "default": "",
-        "examples": [
-          "@expo/ex-navigation"
-        ],
+        "examples": ["@expo/ex-navigation"],
         "pattern": "^(.*)$"
       },
       "unmaintained": {
@@ -80,9 +80,7 @@
         "type": "boolean",
         "title": "The Unmaintained Schema",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       }
     }
   }

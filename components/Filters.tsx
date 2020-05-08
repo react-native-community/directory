@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, CheckBox } from 'react-native';
+import { Platform, StyleSheet, View, CheckBox } from 'react-native';
 import Link from 'next/link';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
@@ -29,6 +29,14 @@ const platforms = [
   {
     param: 'web',
     title: 'Web',
+  },
+  {
+    param: 'windows',
+    title: 'Windows',
+  },
+  {
+    param: 'macos',
+    title: 'macOS',
   },
   {
     param: 'expo',
@@ -128,6 +136,11 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   link: {
+    ...Platform.select({
+      web: {
+        cursor: 'pointer',
+      },
+    }),
     fontSize: 14,
     marginRight: 16,
     marginVertical: 4,
