@@ -4188,5 +4188,25 @@
     ],
     "npmPkg": "react-native-fb-image-grid",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mongodb/stitch-js-sdk",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "mongodb-stitch-react-native-sdk",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/FortAwesome/react-native-fontawesome",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "@fortawesome/react-native-fontawesome",
+    "unmaintained": false
   }
 ]
