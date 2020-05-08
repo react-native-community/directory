@@ -19,5 +19,6 @@ jobs:
       run: npx now --token "$VERCEL_TOKEN" --prod
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        NOW_ORG_ID: 'rndir'
-        NOW_PROJECT_ID: 'react-native-directory'
+        # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787
+        NOW_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
+        NOW_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'
