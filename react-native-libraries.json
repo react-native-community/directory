@@ -4258,5 +4258,38 @@
     "windows": true,
     "npmPkg": "react-native-windows",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/surialabs/react-native-geo-fencing",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-geo-fencing",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/MustansirZia/react-native-fused-location",
+    "android": true,
+    "npmPkg": "react-native-fused-location",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/yelled3/react-native-google-static-map",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-google-static-map",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/eddieowens/react-native-boundary",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-boundary",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/lxsameer/react-native-geolocation-android",
+    "android": true,
+    "npmPkg": "react-native-geolocation-android",
+    "unmaintained": true
   }
 ]
