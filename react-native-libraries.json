@@ -4101,5 +4101,16 @@
     "expo": true,
     "npmPkg": "react-native-platform-touchable",
     "unmaintained": true
+  },
+  {
+  "githubUrl": "https://github.com/MohamadKh75/react-native-jalali-datepicker",
+  "ios": true,
+  "android": true,
+  "web": false,
+  "expo": false,
+  "windows": true,
+  "examples": ["https://github.com/MohamadKh75/react-native-jalali-datepicker/tree/master/example"],
+  "npmPkg": "@mohamadkh75/react-native-jalali-datepicker",
+  "unmaintained": false
   }
 ]
