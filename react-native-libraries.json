@@ -4197,5 +4197,33 @@
     "android": true,
     "npmPkg": "react-native-parsed-text",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/corymsmith/react-native-fabric",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-fabric",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/uxcam/react-native-ux-cam",
+    "ios": true,
+    "android": true,
+    "npmPkg": "",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/quipper/react-native-td",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-td",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/flurry/react-native-flurry-sdk",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-flurry-sdk",
+    "unmaintained": false
   }
 ]
