@@ -1,0 +1,21 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ~12.16.3
+      uses: actions/setup-node@v1
+      with:
+        node-version: '~12.16.3'
+    - name: Deploy
+      shell: bash
+      run: npx now --token "$VERCEL_TOKEN"
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
