@@ -4056,13 +4056,14 @@
     "githubUrl": "https://github.com/jacklam718/react-native-modals",
     "ios": true,
     "android": true,
-    "npmPkg": "react-native-popup-dialog",
+    "expo": true,
     "unmaintained": false
   },
   {
     "githubUrl": "https://github.com/MaxGraey/react-native-console-time-polyfill",
     "ios": true,
     "android": true,
+    "expo": true,
     "npmPkg": "react-native-console-time-polyfill"
   },
   {
@@ -4076,6 +4077,7 @@
     "githubUrl": "https://github.com/brh55/react-native-open-maps",
     "ios": true,
     "android": true,
+    "expo": true,
     "npmPkg": "react-native-open-maps",
     "unmaintained": false
   },
@@ -4096,6 +4098,7 @@
     "githubUrl": "https://github.com/react-native-community/react-native-platform-touchable",
     "ios": true,
     "android": true,
+    "expo": true,
     "npmPkg": "react-native-platform-touchable",
     "unmaintained": true
   }
