@@ -4225,5 +4225,12 @@
     "android": true,
     "npmPkg": "react-native-flurry-sdk",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Starotitorov/react-native-deep-link",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-deep-link",
+    "unmaintained": false
   }
 ]
