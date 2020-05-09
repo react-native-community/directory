@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import { useDebouncedCallback } from 'use-debounce';
 import { Library } from '../types';
@@ -21,16 +20,9 @@ export function Topics(props: Props) {
   return (
     <View style={styles.container}>
       {topics.map(topic => (
-        // <Link
-        //   key={topic}
-        //   href={urlWithQuery('/', {
-        //     ...router.query,
-        //     search: topic,
-        //   })}>
         <TouchableOpacity key={topic} style={styles.tag} onPress={() => debouncedCallback(topic)}>
           <Label style={styles.text}>{topic}</Label>
         </TouchableOpacity>
-        // </Link>
       ))}
     </View>
   );
