@@ -4288,14 +4288,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/corymsmith/react-native-fabric",
-    "ios": true,
-    "android": true,
-    "expo": false,
-    "npmPkg": "react-native-fabric",
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/taskrabbit/react-native-parsed-text",
     "ios": true,
     "android": true,
@@ -4655,5 +4647,299 @@
     "expo": true,
     "npmPkg": "react-native-map-link",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-material-dropdown",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-material-dropdown",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/Flipkart/recyclerlistview",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "examples": [
+      "https://snack.expo.io/@naqvitalha/rlv-demo",
+      "https://snack.expo.io/B1GYad52b",
+      "https://snack.expo.io/@arunreddy10/19bb8e"
+    ],
+    "npmPkg": "recyclerlistview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/nitaliano/react-native-mapbox-gl",
+    "ios": true,
+    "android": true,
+    "npmPkg": "@mapbox/react-native-mapbox-gl",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/Trixieapp/react-virgin",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/yamill/react-native-orientation",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-orientation",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/aksonov/react-native-tableview",
+    "ios": true,
+    "android": false,
+    "npmPkg": "react-native-tableview",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/bolan9999/react-native-largelist",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-largelist",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/magicismight/react-native-root-toast",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-root-toast",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/brh55/react-native-masonry",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-masonry",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/sghiassy/react-native-sglistview",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-sglistview",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/thegamenicorus/react-native-timeline-listview",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-timeline-listview",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/mohebifar/react-native-copilot",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-copilot",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jgrancher/react-native-sketch",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-sketch",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/galio-org/galio",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "galio-framework",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/saleel/react-native-super-grid",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-super-grid",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/naoufal/react-native-activity-view",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-activity-view",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/syrusakbary/react-native-refresher",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-refresher",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/nick/react-native-carousel",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-carousel",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/globocom/react-native-draftjs-render",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-draftjs-render",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/christopherdro/react-native-html-to-pdf",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-html-to-pdf",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/almost/react-native-html-webview",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "npmPkg": "react-native-html-webview",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/soliury/react-native-html-render",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-html-render",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/airamrguez/react-native-measure-text",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-measure-text",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/vinzscam/react-native-file-viewer",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "npmPkg": "react-native-file-viewer",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/heyman333/react-native-responsive-fontsize",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "react-native-responsive-fontsize",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aMarCruz/react-native-text-size",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-text-size",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/agentcooper/react-native-hypertext",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-hypertext",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/turley/react-native-asciimage",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-asciimage",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/corymsmith/react-native-fabric",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-fabric",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/uxcam/react-native-ux-cam",
+    "ios": true,
+    "android": true,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/quipper/react-native-td",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-td",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/flurry/react-native-flurry-sdk",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-flurry-sdk",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/necolas/react-native-web",
+    "web": true,
+    "npmPkg": "react-native-web",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ptmt/react-native-macos",
+    "macos": true,
+    "npmPkg": "react-native-macos",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Microsoft/reactxp",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "npmPkg": "reactxp",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-windows",
+    "windows": true,
+    "npmPkg": "react-native-windows",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/surialabs/react-native-geo-fencing",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-geo-fencing",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/MustansirZia/react-native-fused-location",
+    "android": true,
+    "npmPkg": "react-native-fused-location",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/yelled3/react-native-google-static-map",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-google-static-map",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/lxsameer/react-native-geolocation-android",
+    "android": true,
+    "npmPkg": "react-native-geolocation-android",
+    "unmaintained": true
   }
 ]
