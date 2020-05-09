@@ -4231,12 +4231,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/chirag04/react-native-mail",
-    "ios": true,
-    "android": true,
-    "npmPkg": "react-native-mail"
-  },
-  {
     "githubUrl": "https://github.com/ak1394/react-native-tts",
     "ios": true,
     "android": true,
@@ -4452,13 +4446,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/mockingbot/react-native-zip-archive",
-    "ios": true,
-    "android": true,
-    "npmPkg": "react-native-zip-archive",
-    "unmaintained": false
-  },
-  {
     "githubUrl": "https://github.com/vonovak/react-navigation-backhandler",
     "ios": true,
     "android": true,
@@ -4617,14 +4604,6 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-native-swipe-list-view",
-    "unmaintained": false
-  },
-  {
-    "githubUrl": "https://github.com/stephy/CalendarPicker",
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "npmPkg": "react-native-calendar-picker",
     "unmaintained": false
   },
   {
