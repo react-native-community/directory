@@ -30,7 +30,7 @@ export default function Search(props: Props) {
               onChangeText={debouncedCallback}
               placeholder="Search libraries..."
               style={styles.textInput}
-              defaultValue={query && query.search}
+              value={query && query.search ? query.search : ''}
               placeholderTextColor={colors.gray4}
             />
             <View style={styles.searchIcon}>
