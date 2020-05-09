@@ -5094,5 +5094,16 @@
     "windows": false,
     "npmPkg": "react-native-powerbi",
     "unmaintained": false
-  }
+  },
+  {
+    "githubUrl": "https://github.com/stashenergy/react-native-msal",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "examples": ["https://github.com/stashenergy/react-native-msal/tree/master/example"],
+    "npmPkg": "react-native-msal",
+    "unmaintained": false,
+  },
 ]
