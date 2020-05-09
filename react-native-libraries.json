@@ -5266,16 +5266,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/ptelad/react-native-iphone-x-helper",
-    "ios": true,
-    "android": false,
-    "web": false,
-    "expo": true,
-    "windows": false,
-    "npmPkg": "react-native-iphone-x-helper",
-    "unmaintained": false
-  },
-  {
     "githubUrl": "https://github.com/mvayngrib/react-native-crypto",
     "ios": true,
     "android": true,
@@ -5324,5 +5314,25 @@
     "windows": false,
     "npmPkg": "rn-fetch-blob",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/realtime-framework/RCTRealtimeMessagingIOS",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-realtimemessaging-ios",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/ivanph/react-native-webintent",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-webintent",
+    "unmaintained": true
   }
 ]
