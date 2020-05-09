@@ -4210,23 +4210,10 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/react-navigation/material-bottom-tabs",
-    "ios": true,
-    "android": true,
-    "npmPkg": "react-navigation-material-bottom-tabs",
-    "unmaintained": true
-  },
-  {
-    "githubUrl": "https://github.com/IjzerenHein/react-navigation-shared-element",
-    "ios": true,
-    "android": true,
-    "npmPkg": "react-navigation-shared-element",
-    "unmaintained": false
-  },
-  {
     "githubUrl": "https://github.com/iou90/react-native-autoheight-webview",
     "ios": true,
     "android": true,
+    "expo": true,
     "npmPkg": "react-native-autoheight-webview",
     "unmaintained": false
   },
@@ -4240,7 +4227,6 @@
     "githubUrl": "https://github.com/luggit/react-native-config",
     "ios": true,
     "android": true,
-    "npmPkg": "react-native-config",
     "unmaintained": false
   },
   {
@@ -4296,7 +4282,7 @@
     "githubUrl": "https://github.com/andpor/react-native-sqlite-storage",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "windows": true,
     "npmPkg": "react-native-sqlite-storage",
     "unmaintained": false
@@ -4305,9 +4291,9 @@
     "githubUrl": "https://github.com/corymsmith/react-native-fabric",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-fabric",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/taskrabbit/react-native-parsed-text",
@@ -4315,7 +4301,7 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-native-parsed-text",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/tableflip/react-native-select-multiple",
@@ -4331,13 +4317,13 @@
     "android": true,
     "expo": false,
     "npmPkg": "react-native-exceptions-manager",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/weflex/react-native-wechat",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-wechat",
     "unmaintained": false
   },
@@ -4355,13 +4341,13 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-navigation-transitions",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/itsnubix/react-native-video-controls",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-video-controls",
     "unmaintained": false
   },
@@ -4371,7 +4357,7 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-navigation-redux-helpers",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/kadiks/react-native-itunes",
@@ -4409,7 +4395,7 @@
     "githubUrl": "https://github.com/stefalda/ReactNativeLocalization",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-localization",
     "unmaintained": false
   },
@@ -4425,7 +4411,7 @@
     "githubUrl": "https://github.com/maxs15/react-native-spinkit",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-spinkit",
     "unmaintained": false
   },
@@ -4482,7 +4468,7 @@
     "githubUrl": "https://github.com/wkh237/react-native-fetch-blob",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-fetch-blob",
     "unmaintained": false
   },
@@ -4490,7 +4476,7 @@
     "githubUrl": "https://github.com/kmend/react-native-md5",
     "ios": true,
     "android": true,
-    "expo": false,
+    "expo": true,
     "npmPkg": "react-native-md5",
     "unmaintained": true
   },
@@ -4506,7 +4492,7 @@
     "githubUrl": "https://github.com/marlove/react-native-geocoding",
     "ios": true,
     "android": true,
-    "expo": false,
+    "expo": true,
     "npmPkg": "react-native-geocoding",
     "unmaintained": false
   },
@@ -4514,7 +4500,7 @@
     "githubUrl": "https://github.com/shimohq/react-native-prompt-android",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-prompt-android",
     "unmaintained": false
   },
@@ -4524,7 +4510,7 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-native-star-rating",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/shahen94/react-native-switch",
@@ -4532,7 +4518,7 @@
     "android": true,
     "expo": true,
     "npmPkg": "react-native-switch",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/avishayil/react-native-user-avatar",
@@ -4570,7 +4556,7 @@
     "githubUrl": "https://github.com/wix/react-native-camera-kit",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-camera-kit",
     "unmaintained": false
   },
@@ -4578,7 +4564,7 @@
     "githubUrl": "https://github.com/react-native-community/react-native-google-signin",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-google-signin",
     "unmaintained": false
   },
@@ -4594,7 +4580,7 @@
     "githubUrl": "https://github.com/jordanbyron/react-native-quick-actions",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-quick-actions",
     "unmaintained": false
   },
@@ -4610,8 +4596,9 @@
     "githubUrl": "https://github.com/knowbody/react-native-platform-stylesheet",
     "ios": true,
     "android": true,
+    "expo": true,
     "npmPkg": "react-native-platform-stylesheet",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/jamesisaac/react-native-background-task",
@@ -4625,7 +4612,7 @@
     "githubUrl": "https://github.com/ocetnik/react-native-background-timer",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": false,
     "npmPkg": "react-native-background-timer",
     "unmaintained": false
   },
@@ -4641,7 +4628,7 @@
     "githubUrl": "https://github.com/pohodnya/react-native-round-flags",
     "ios": true,
     "android": true,
-    "expo": false,
+    "expo": true,
     "npmPkg": "react-native-round-flags",
     "unmaintained": true
   },
