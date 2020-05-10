@@ -5115,5 +5115,15 @@
     "windows": false,
     "npmPkg": "expo-firebase-analytics",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-auth-session",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "expo-auth-session",
+    "unmaintained": false
   }
 ]
