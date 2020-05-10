@@ -5125,5 +5125,12 @@
     "windows": false,
     "npmPkg": "expo-auth-session",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/maxkomarychev/react-native-ultimate-config",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-ultimate-config",
+    "unmaintained": false
   }
 ]
