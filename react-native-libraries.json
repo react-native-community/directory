@@ -5105,5 +5105,15 @@
     "examples": ["https://github.com/stashenergy/react-native-msal/tree/master/example"],
     "npmPkg": "react-native-msal",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-firebase-analytics",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "expo-firebase-analytics",
+    "unmaintained": false
   }
 ]
