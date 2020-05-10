@@ -5326,13 +5326,13 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/ivanph/react-native-webintent",
+    "githubUrl": "https://github.com/stashenergy/react-native-msal",
     "ios": true,
     "android": true,
     "web": false,
     "expo": false,
     "windows": false,
-    "npmPkg": "react-native-webintent",
-    "unmaintained": true
+    "npmPkg": "react-native-msal",
+    "unmaintained": false
   }
 ]
