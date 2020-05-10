@@ -5125,5 +5125,15 @@
     "windows": false,
     "npmPkg": "expo-auth-session",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/brunohkbx/react-native-material-backdrop-modal",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-material-backdrop-modal",
+    "unmaintained": false
   }
 ]
