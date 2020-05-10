@@ -3909,7 +3909,7 @@
     "android": true,
     "expo": false,
     "windows": false,
-    "npmPkg": "react-native-modal-dropdown"
+    "npmPkg": "react-native-modal-translucent"
   },
   {
     "githubUrl": "https://github.com/Shopify/restyle",
@@ -5096,16 +5096,6 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/datwheat/react-native-app-link",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
-    "npmPkg": "react-native-app-link",
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/zetachang/react-native-dotenv",
     "ios": true,
     "android": true,
@@ -5323,6 +5313,16 @@
     "expo": false,
     "windows": false,
     "npmPkg": "react-native-realtimemessaging-ios",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/ivanph/react-native-webintent",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-webintent",
     "unmaintained": true
   },
   {
