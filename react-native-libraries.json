@@ -5127,6 +5127,27 @@
     "unmaintained": false
   },
   {
+    "githubUrl": "https://github.com/netguru/sticky-parallax-header",
+    "examples": ["https://github.com/netguru/sticky-parallax-header/tree/master/example"],
+    "npmPkg": "react-native-sticky-parallax-header",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/brunohkbx/react-native-material-backdrop-modal",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-material-backdrop-modal",
+    "unmaintained": false
+  },
+  {
     "githubUrl": "https://github.com/maxkomarychev/react-native-ultimate-config",
     "ios": true,
     "android": true,
