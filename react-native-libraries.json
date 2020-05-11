@@ -5125,5 +5125,16 @@
     "windows": false,
     "npmPkg": "expo-auth-session",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/netguru/sticky-parallax-header",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "examples": ["https://github.com/netguru/sticky-parallax-header/tree/master/example"],
+    "npmPkg": "react-native-sticky-parallax-header",
+    "unmaintained": false
   }
 ]
