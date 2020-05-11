@@ -17,6 +17,7 @@ export type Library = {
   expo: boolean;
   windows: boolean;
   macos: boolean;
+  unmaintained: boolean;
   github: {
     urls: {
       repo: string;
