@@ -17,9 +17,9 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
@@ -61,7 +61,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/admob/"
         },
         "stats": {
           "hasIssues": true,
@@ -69,22 +69,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-ads-admob",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides support for the Google AdMob SDK (https://www.google.com/admob/) for mobile advertising. This module is largely based of the react-native-admob (https://github.com/sbugert/react-native-admob) module, as the documentation and questions surrounding that module may prove helpful. A simple example implementing AdMob SDK can be found at https://github.com/deadcoder0904/expo-google-admob",
         "topics": [
+          "admob",
+          "ads",
           "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo"
         ]
       },
       "npmPkg": "expo-ads-admob",
@@ -101,7 +101,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " admob ads react-native expo"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-ads-facebook",
@@ -113,7 +113,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/facebook-ads/"
         },
         "stats": {
           "hasIssues": true,
@@ -121,22 +121,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-ads-facebook",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Facebook Audience SDK integration",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-ads-facebook"
         ]
       },
       "npmPkg": "expo-ads-facebook",
@@ -153,7 +152,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-ads-facebook"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-analytics-amplitude",
@@ -165,7 +164,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/amplitude/"
         },
         "stats": {
           "hasIssues": true,
@@ -173,22 +172,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-analytics-amplitude",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to Amplitude (https://amplitude.com/) mobile analytics. This module wraps Amplitude-iOS (https://github.com/amplitude/Amplitude-iOS) and Android (https://github.com/amplitude/Amplitude-Android) SDKs.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-analytics-amplitude"
         ]
       },
       "npmPkg": "expo-analytics-amplitude",
@@ -205,7 +203,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-analytics-amplitude"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-analytics-segment",
@@ -217,7 +215,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/segment/"
         },
         "stats": {
           "hasIssues": true,
@@ -225,22 +223,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-analytics-segment",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo module that provides access to Segment mobile analytics",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "segment",
+          "analytics"
         ]
       },
       "npmPkg": "expo-analytics-segment",
@@ -257,7 +255,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo segment analytics"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-app-auth",
@@ -269,7 +267,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/app-auth/"
         },
         "stats": {
           "hasIssues": true,
@@ -277,22 +275,28 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-app-auth",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo Unimodule for interfacing with the OpenID library AppAuth",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "app-auth",
+          "oauth",
+          "openid",
+          "authentication",
+          "auth",
+          "token",
+          "ios",
+          "android"
         ]
       },
       "npmPkg": "expo-app-auth",
@@ -309,7 +313,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo app-auth oauth openid authentication auth token ios android"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-apple-authentication",
@@ -321,7 +325,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-apple-authentication"
         },
         "stats": {
           "hasIssues": true,
@@ -329,22 +333,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-apple-authentication",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A unimodule that provides SignIn With Apple",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-apple-authentiocation",
+          "apple-authentication"
         ]
       },
       "npmPkg": "expo-apple-authentication",
@@ -361,7 +365,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-apple-authentiocation apple-authentication"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-application",
@@ -373,7 +377,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-application"
         },
         "stats": {
           "hasIssues": true,
@@ -381,22 +385,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-application",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A universal module that gets native application information such as its ID, app name, and build version at runtime",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-application"
         ]
       },
       "npmPkg": "expo-application",
@@ -413,7 +416,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-application"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-asset",
@@ -425,7 +428,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/asset/"
         },
         "stats": {
           "hasIssues": true,
@@ -433,22 +436,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-asset",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "An Expo universal module to download assets and pass them into other APIs",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "asset"
         ]
       },
       "npmPkg": "expo-asset",
@@ -465,7 +467,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo asset"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-av",
@@ -477,7 +479,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/av/"
         },
         "stats": {
           "hasIssues": true,
@@ -485,22 +487,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-av",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for Audio and Video playback",
         "topics": [
-          "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "react-native",
+          "audio",
+          "video"
         ]
       },
       "npmPkg": "expo-av",
@@ -517,7 +519,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " expo react-native audio video"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-background-fetch",
@@ -529,7 +531,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/background-fetch/"
         },
         "stats": {
           "hasIssues": true,
@@ -537,22 +539,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-background-fetch",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for BackgroundFetch API",
         "topics": [
-          "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "react-native",
+          "fetch",
+          "background",
+          "background-fetch"
         ]
       },
       "npmPkg": "expo-background-fetch",
@@ -569,7 +572,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " expo react-native fetch background background-fetch"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-barcode-scanner",
@@ -581,7 +584,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/bar-code-scanner/"
         },
         "stats": {
           "hasIssues": true,
@@ -589,22 +592,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-barcode-scanner",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Allows scanning variety of supported barcodes both as standalone module and as extension for expo-camera. It also allows scanning barcodes from existing images.",
         "topics": [
+          "barcode",
+          "barcode-scanner",
           "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo"
         ]
       },
       "npmPkg": "expo-barcode-scanner",
@@ -621,7 +624,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " barcode barcode-scanner react-native expo"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-battery",
@@ -633,7 +636,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-battery"
         },
         "stats": {
           "hasIssues": true,
@@ -641,22 +644,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-battery",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides battery information for the physical device, as well as corresponding event listeners.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-battery"
         ]
       },
       "npmPkg": "expo-battery",
@@ -673,7 +675,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-battery"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-blur",
@@ -685,7 +687,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/blur-view/"
         },
         "stats": {
           "hasIssues": true,
@@ -693,22 +695,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-blur",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A component that renders a native blur view on iOS and falls back to a semi-transparent view on Android. A common usage of this is for navigation bars, tab bars, and modals.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-blur"
         ]
       },
       "npmPkg": "expo-blur",
@@ -725,7 +726,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-blur"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-brightness",
@@ -737,7 +738,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/brightness/"
         },
         "stats": {
           "hasIssues": true,
@@ -745,22 +746,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-brightness",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an API to get and set screen brightness.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-brightness",
+          "brightness"
         ]
       },
       "npmPkg": "expo-brightness",
@@ -777,7 +778,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-brightness brightness"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-calendar",
@@ -789,7 +790,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/calendar/"
         },
         "stats": {
           "hasIssues": true,
@@ -797,22 +798,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-calendar",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an API for interacting with the device's system calendars, events, reminders, and associated records.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "calendar",
+          "reminders"
         ]
       },
       "npmPkg": "expo-calendar",
@@ -829,7 +830,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo calendar reminders"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-camera",
@@ -841,7 +842,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/camera/"
         },
         "stats": {
           "hasIssues": true,
@@ -849,22 +850,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-camera",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A React component that renders a preview for the device's either front or back camera. Camera's parameters like zoom, auto focus, white balance and flash mode are adjustable. With expo-camera, one can also take photos and record videos that are saved to the app's cache. Morever, the component is also capable of detecting faces and bar codes appearing on the preview.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "camera"
         ]
       },
       "npmPkg": "expo-camera",
@@ -881,7 +881,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo camera"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-cellular",
@@ -893,7 +893,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-cellular"
         },
         "stats": {
           "hasIssues": true,
@@ -901,22 +901,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-cellular",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides information about the user’s cellular service provider",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-cellular"
         ]
       },
       "npmPkg": "expo-cellular",
@@ -933,7 +932,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-cellular"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-constants",
@@ -945,7 +944,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/constants/"
         },
         "stats": {
           "hasIssues": true,
@@ -953,22 +952,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-constants",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides system information that remains constant throughout the lifetime of your app.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "constants"
         ]
       },
       "npmPkg": "expo-constants",
@@ -985,7 +983,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo constants"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-contacts",
@@ -997,7 +995,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/contacts/"
         },
         "stats": {
           "hasIssues": true,
@@ -1005,22 +1003,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-contacts",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the phone's system contacts.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "contacts"
         ]
       },
       "npmPkg": "expo-contacts",
@@ -1037,7 +1034,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo contacts"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-crypto",
@@ -1049,7 +1046,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/crypto/"
         },
         "stats": {
           "hasIssues": true,
@@ -1057,22 +1054,26 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-crypto",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for crypto",
         "topics": [
           "react-native",
+          "react-native-web",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "crypto",
+          "ios",
+          "android",
+          "web",
+          "native"
         ]
       },
       "npmPkg": "expo-crypto",
@@ -1089,7 +1090,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native react-native-web expo crypto ios android web native"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-device",
@@ -1101,7 +1102,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-device"
         },
         "stats": {
           "hasIssues": true,
@@ -1109,22 +1110,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-device",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A universal module that gets physical information about the device running the application",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-device"
         ]
       },
       "npmPkg": "expo-device",
@@ -1141,7 +1141,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-device"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-document-picker",
@@ -1153,7 +1153,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/document-picker/"
         },
         "stats": {
           "hasIssues": true,
@@ -1161,22 +1161,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-document-picker",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the system's UI for selecting documents from the available providers on the user's device.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-document-picker",
+          "document-picker"
         ]
       },
       "npmPkg": "expo-document-picker",
@@ -1193,7 +1193,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-document-picker document-picker"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-error-recovery",
@@ -1205,7 +1205,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/error-recovery/"
         },
         "stats": {
           "hasIssues": true,
@@ -1213,22 +1213,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-error-recovery",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Utilities for helping you gracefully handle crashes due to fatal JavaScript errors.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-error-recovery",
+          "error-recovery"
         ]
       },
       "npmPkg": "expo-error-recovery",
@@ -1245,7 +1245,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-error-recovery error-recovery"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-face-detector",
@@ -1257,7 +1257,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/facedetector/"
         },
         "stats": {
           "hasIssues": true,
@@ -1265,22 +1265,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-face-detector",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Lets you use the power of Google Mobile Vision (https://developers.google.com/vision/face-detection-concepts) framework to detect faces on images.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "face-detector",
+          "face",
+          "detection"
         ]
       },
       "npmPkg": "expo-face-detector",
@@ -1297,7 +1298,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo face-detector face detection"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-facebook",
@@ -1309,7 +1310,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/facebook/"
         },
         "stats": {
           "hasIssues": true,
@@ -1317,22 +1318,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-facebook",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for Facebook SDK",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "facebook"
         ]
       },
       "npmPkg": "expo-facebook",
@@ -1349,7 +1349,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo facebook"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-file-system",
@@ -1361,7 +1361,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/filesystem/"
         },
         "stats": {
           "hasIssues": true,
@@ -1369,22 +1369,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-file-system",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the local file system on the device.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "file-system",
+          "file"
         ]
       },
       "npmPkg": "expo-file-system",
@@ -1401,7 +1401,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo file-system file"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-font",
@@ -1413,7 +1413,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/font/"
         },
         "stats": {
           "hasIssues": true,
@@ -1421,22 +1421,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-font",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Load fonts at runtime and use them in React Native components.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "font"
         ]
       },
       "npmPkg": "expo-font",
@@ -1453,7 +1452,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo font"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-gl",
@@ -1465,7 +1464,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/gl-view/"
         },
         "stats": {
           "hasIssues": true,
@@ -1473,22 +1472,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-gl",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides GLView that acts as OpenGL ES render target and gives GL context object implementing WebGL 2.0 specification.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "gl",
+          "glview",
+          "webgl"
         ]
       },
       "npmPkg": "expo-gl",
@@ -1505,7 +1505,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo gl glview webgl"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-google-app-auth",
@@ -1517,7 +1517,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/google/"
         },
         "stats": {
           "hasIssues": true,
@@ -1525,22 +1525,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-google-app-auth",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a wrapper around expo-app-auth for Google sign in.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "google"
         ]
       },
       "npmPkg": "expo-google-app-auth",
@@ -1557,7 +1556,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo google"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-google-sign-in",
@@ -1569,7 +1568,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/google-sign-in/"
         },
         "stats": {
           "hasIssues": true,
@@ -1577,22 +1576,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-google-sign-in",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Enables native Google authentication features in your app! This module can only be used in ExpoKit, or a Standalone Expo app. For in-depth setup, check out this guide: https://blog.expo.io/react-native-google-sign-in-with-expo-d1707579a7ce",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "google",
+          "firebase",
+          "auth",
+          "sign-in",
+          "oauth"
         ]
       },
       "npmPkg": "expo-google-sign-in",
@@ -1609,7 +1611,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo google firebase auth sign-in oauth"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-haptics",
@@ -1621,7 +1623,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/haptics/"
         },
         "stats": {
           "hasIssues": true,
@@ -1629,22 +1631,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-haptics",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the system's haptics engine on iOS and vibration effects on Android.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-haptics",
+          "haptics"
         ]
       },
       "npmPkg": "expo-haptics",
@@ -1661,7 +1663,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-haptics haptics"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-image-manipulator",
@@ -1673,7 +1675,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/imagemanipulator/"
         },
         "stats": {
           "hasIssues": true,
@@ -1681,22 +1683,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-image-manipulator",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides functions that let you manipulation images on the local file system, eg: resize, crop.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-image-manipulator"
         ]
       },
       "npmPkg": "expo-image-manipulator",
@@ -1713,7 +1714,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-image-manipulator"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-image-picker",
@@ -1725,7 +1726,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/imagepicker/"
         },
         "stats": {
           "hasIssues": true,
@@ -1733,22 +1734,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-image-picker",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the system's UI for selecting images and videos from the phone's library or taking a photo with the camera.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "image",
+          "picker",
+          "image-picker"
         ]
       },
       "npmPkg": "expo-image-picker",
@@ -1765,7 +1767,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo image picker image-picker"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-in-app-purchases",
@@ -1777,7 +1779,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-in-app-purchases"
         },
         "stats": {
           "hasIssues": true,
@@ -1785,22 +1787,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-in-app-purchases",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo unimodule for accepting in-app purchases",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-in-app-purchases"
         ]
       },
       "npmPkg": "expo-in-app-purchases",
@@ -1817,7 +1818,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-in-app-purchases"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-intent-launcher",
@@ -1829,7 +1830,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/intent-launcher/"
         },
         "stats": {
           "hasIssues": true,
@@ -1837,22 +1838,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-intent-launcher",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a way to launch Android intents, e.g. opening a specific activity.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-intent-launcher",
+          "intent",
+          "launcher"
         ]
       },
       "npmPkg": "expo-intent-launcher",
@@ -1869,7 +1871,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-intent-launcher intent launcher"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-keep-awake",
@@ -1881,7 +1883,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/keep-awake/"
         },
         "stats": {
           "hasIssues": true,
@@ -1889,22 +1891,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-keep-awake",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a React component that prevents the screen sleeping when rendered. It also exposes static methods to control the behavior imperatively.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "awake",
+          "keep-awake"
         ]
       },
       "npmPkg": "expo-keep-awake",
@@ -1921,7 +1923,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo awake keep-awake"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-linear-gradient",
@@ -1933,7 +1935,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/linear-gradient/"
         },
         "stats": {
           "hasIssues": true,
@@ -1941,22 +1943,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-linear-gradient",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a React component that renders a gradient view.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "gradient"
         ]
       },
       "npmPkg": "expo-linear-gradient",
@@ -1973,7 +1974,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo gradient"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-local-authentication",
@@ -1985,7 +1986,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/local-authentication/"
         },
         "stats": {
           "hasIssues": true,
@@ -1993,22 +1994,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-local-authentication",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an API for FaceID and TouchID (iOS) or the Fingerprint API (Android) to authenticate the user with a face or fingerprint scan.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "authentication",
+          "auth",
+          "touchID",
+          "faceID",
+          "fingerprint"
         ]
       },
       "npmPkg": "expo-local-authentication",
@@ -2025,7 +2029,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo authentication auth touchID faceID fingerprint"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-localization",
@@ -2037,7 +2041,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/localization/"
         },
         "stats": {
           "hasIssues": true,
@@ -2045,22 +2049,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-localization",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an interface for native user localization information.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "localization",
+          "locales",
+          "l10n"
         ]
       },
       "npmPkg": "expo-localization",
@@ -2077,7 +2082,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo localization locales l10n"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-location",
@@ -2089,7 +2094,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/location/"
         },
         "stats": {
           "hasIssues": true,
@@ -2097,22 +2102,26 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-location",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Allows reading geolocation information from the device. Your app can poll for the current location or subscribe to location update events.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "location",
+          "geolocation",
+          "coords",
+          "geocoding",
+          "compass",
+          "heading"
         ]
       },
       "npmPkg": "expo-location",
@@ -2129,7 +2138,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo location geolocation coords geocoding compass heading"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-mail-composer",
@@ -2141,7 +2150,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/mail-composer/"
         },
         "stats": {
           "hasIssues": true,
@@ -2149,22 +2158,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-mail-composer",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an API to compose mails using OS specific UI",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "mail",
+          "composer"
         ]
       },
       "npmPkg": "expo-mail-composer",
@@ -2181,7 +2190,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo mail composer"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-media-library",
@@ -2193,7 +2202,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/media-library/"
         },
         "stats": {
           "hasIssues": true,
@@ -2201,22 +2210,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-media-library",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to user's media library.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "media",
+          "library",
+          "cameraroll",
+          "photos",
+          "videos"
         ]
       },
       "npmPkg": "expo-media-library",
@@ -2233,7 +2245,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo media library cameraroll photos videos"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-network",
@@ -2245,7 +2257,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-network"
         },
         "stats": {
           "hasIssues": true,
@@ -2253,22 +2265,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-network",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides useful information about the device's network such as its IP address, MAC address, and airplane mode status",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-network"
         ]
       },
       "npmPkg": "expo-network",
@@ -2285,7 +2296,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-network"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-notifications",
@@ -2297,7 +2308,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-notifications"
         },
         "stats": {
           "hasIssues": true,
@@ -2305,22 +2316,22 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-notifications",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Notifications module",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "notifications",
+          "expo-notifications"
         ]
       },
       "npmPkg": "expo-notifications",
@@ -2337,7 +2348,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo notifications expo-notifications"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-payments-stripe",
@@ -2349,7 +2360,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/payments/"
         },
         "stats": {
           "hasIssues": true,
@@ -2357,22 +2368,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-payments-stripe",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides support for payments through Stripe and Apple Pay on iOS (in ExpoKit and bare apps), and Stripe on Android (plus Android Pay with ExpoKit and bare apps).",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "payments-stripe",
+          "payments",
+          "stripe"
         ]
       },
       "npmPkg": "expo-payments-stripe",
@@ -2389,7 +2401,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo payments-stripe payments stripe"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-permissions",
@@ -2401,7 +2413,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/permissions/"
         },
         "stats": {
           "hasIssues": true,
@@ -2409,22 +2421,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-permissions",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Allows you prompt for various permissions to access device sensors, personal data, etc.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "permissions"
         ]
       },
       "npmPkg": "expo-permissions",
@@ -2441,7 +2452,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo permissions"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-print",
@@ -2453,7 +2464,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/print/"
         },
         "stats": {
           "hasIssues": true,
@@ -2461,22 +2472,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-print",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides an API for iOS (AirPrint) and Android printing functionality.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "print"
         ]
       },
       "npmPkg": "expo-print",
@@ -2493,7 +2503,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo print"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-processing",
@@ -2505,7 +2515,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-processing"
         },
         "stats": {
           "hasIssues": true,
@@ -2513,22 +2523,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-processing",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Utilities for using Processing.js on Expo",
         "topics": [
-          "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "processing.js",
+          "graphics",
+          "opengl",
+          "gl"
         ]
       },
       "npmPkg": "expo-processing",
@@ -2545,7 +2556,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " expo processing.js graphics opengl gl"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-random",
@@ -2557,7 +2568,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-random"
         },
         "stats": {
           "hasIssues": true,
@@ -2565,22 +2576,26 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-random",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for random bytes",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "random",
+          "crypto",
+          "random-bytes",
+          "secure",
+          "generator",
+          "bytes"
         ]
       },
       "npmPkg": "expo-random",
@@ -2597,7 +2612,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo random crypto random-bytes secure generator bytes"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-secure-store",
@@ -2609,7 +2624,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/securestore/"
         },
         "stats": {
           "hasIssues": true,
@@ -2617,22 +2632,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-secure-store",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a way to encrypt and securely store key–value pairs locally on the device.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-secure-store",
+          "secure",
+          "store"
         ]
       },
       "npmPkg": "expo-secure-store",
@@ -2649,7 +2665,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-secure-store secure store"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sensors",
@@ -2661,7 +2677,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/sensors/"
         },
         "stats": {
           "hasIssues": true,
@@ -2669,22 +2685,27 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-sensors",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to a hardware device's accelerometer, gyroscope, magnetometer, and pedometer.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "sensors",
+          "accelerometer",
+          "devicemotion",
+          "gyroscope",
+          "magnetometer",
+          "pedometer",
+          "barometer"
         ]
       },
       "npmPkg": "expo-sensors",
@@ -2701,7 +2722,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo sensors accelerometer devicemotion gyroscope magnetometer pedometer barometer"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sms",
@@ -2713,7 +2734,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/sms/"
         },
         "stats": {
           "hasIssues": true,
@@ -2721,22 +2742,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-sms",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the system's UI/app for sending SMS messages.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "sms"
         ]
       },
       "npmPkg": "expo-sms",
@@ -2753,7 +2773,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo sms"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-speech",
@@ -2765,7 +2785,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/speech/"
         },
         "stats": {
           "hasIssues": true,
@@ -2773,22 +2793,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-speech",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides text-to-speech functionality.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-speech",
+          "speech",
+          "voice"
         ]
       },
       "npmPkg": "expo-speech",
@@ -2805,7 +2826,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-speech speech voice"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sqlite",
@@ -2817,7 +2838,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/sqlite/"
         },
         "stats": {
           "hasIssues": true,
@@ -2825,22 +2846,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-sqlite",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to a database that can be queried through a WebSQL-like API (https://www.w3.org/TR/webdatabase/). The database is persisted across restarts of your app.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "sqlite",
+          "websql",
+          "sql"
         ]
       },
       "npmPkg": "expo-sqlite",
@@ -2857,7 +2879,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo sqlite websql sql"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-store-review",
@@ -2869,7 +2891,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/store-review/"
         },
         "stats": {
           "hasIssues": true,
@@ -2877,22 +2899,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-store-review",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "ExpoStoreReview standalone module",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-store-review"
         ]
       },
       "npmPkg": "expo-store-review",
@@ -2909,7 +2930,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-store-review"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-task-manager",
@@ -2921,7 +2942,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/task-manager/"
         },
         "stats": {
           "hasIssues": true,
@@ -2929,22 +2950,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-task-manager",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo module that provides support for tasks that can run in the background.",
         "topics": [
-          "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "react-native",
+          "task-manager",
+          "task",
+          "background"
         ]
       },
       "npmPkg": "expo-task-manager",
@@ -2961,7 +2983,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " expo react-native task-manager task background"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-video-thumbnails",
@@ -2973,7 +2995,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-video-thumbnails"
         },
         "stats": {
           "hasIssues": true,
@@ -2981,22 +3003,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-video-thumbnails",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "ExpoVideoThumbnails standalone module",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-video-thumbnails"
         ]
       },
       "npmPkg": "expo-video-thumbnails",
@@ -3013,7 +3034,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-video-thumbnails"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-web-browser",
@@ -3025,7 +3046,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/webbrowser/"
         },
         "stats": {
           "hasIssues": true,
@@ -3033,22 +3054,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-web-browser",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides access to the system's web browser and supports handling redirects. On iOS, it uses SFSafariViewController or SFAuthenticationSession, depending on the method you call, and on Android it uses ChromeCustomTabs. As of iOS 11, SFSafariViewController no longer shares cookies with the Safari, so if you are using WebBrowser for authentication you will want to use WebBrowser.openAuthSessionAsync, and if you just want to open a webpage (such as your app privacy policy), then use WebBrowser.openBrowserAsync.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-web-browser",
+          "web",
+          "browser"
         ]
       },
       "npmPkg": "expo-web-browser",
@@ -3065,7 +3087,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-web-browser web browser"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo",
@@ -3077,7 +3099,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/jest-expo"
         },
         "stats": {
           "hasIssues": true,
@@ -3085,23 +3107,16 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
-        "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
-        "topics": [
-          "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
-        ]
+        "name": "jest-expo",
+        "fullName": "expo/expo"
       },
       "npmPkg": "jest-expo",
       "npm": {
@@ -3117,7 +3132,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": ""
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme",
@@ -3129,7 +3144,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme"
         },
         "stats": {
           "hasIssues": true,
@@ -3137,22 +3152,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "jest-expo-enzyme",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
         "topics": [
           "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
+          "react-native-web",
+          "enzyme",
+          "jest",
+          "testing",
+          "react-test-renderer",
+          "react",
+          "universal"
         ]
       },
       "npmPkg": "jest-expo-enzyme",
@@ -3169,7 +3187,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native react-native-web enzyme jest testing react-test-renderer react universal"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer",
@@ -3181,7 +3199,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer"
         },
         "stats": {
           "hasIssues": true,
@@ -3189,23 +3207,16 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
-        "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
-        "topics": [
-          "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
-        ]
+        "name": "jest-expo-puppeteer",
+        "fullName": "expo/expo"
       },
       "npmPkg": "jest-expo-puppeteer",
       "npm": {
@@ -3221,7 +3232,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": ""
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-splash-screen",
@@ -3235,7 +3246,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/packages/expo-splash-screen"
         },
         "stats": {
           "hasIssues": true,
@@ -3243,22 +3254,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-splash-screen",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Provides a module to allow keeping the native Splash Screen visible until you choose to hide it.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-splash-screen",
+          "splash-screen",
+          "splash",
+          "launch-screen",
+          "launch"
         ]
       },
       "npmPkg": "expo-splash-screen",
@@ -3275,7 +3289,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-splash-screen splash-screen splash launch-screen launch"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-updates",
@@ -3289,7 +3303,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/updates/"
         },
         "stats": {
           "hasIssues": true,
@@ -3297,22 +3311,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-updates",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Fetches and manages remotely-hosted assets and updates to your app's JS bundle.",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "updates"
         ]
       },
       "npmPkg": "expo-updates",
@@ -3329,7 +3342,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo updates"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-auth-session",
@@ -3343,7 +3356,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/auth-session"
         },
         "stats": {
           "hasIssues": true,
@@ -3351,22 +3364,25 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-auth-session",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo module for browser-based authentication",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-auth-session",
+          "auth",
+          "oauth",
+          "authentication",
+          "auth-session"
         ]
       },
       "npmPkg": "expo-auth-session",
@@ -3383,7 +3399,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-auth-session auth oauth authentication auth-session"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-linking",
@@ -3397,7 +3413,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://docs.expo.io/versions/latest/sdk/linking"
         },
         "stats": {
           "hasIssues": true,
@@ -3405,22 +3421,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-linking",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Create and open deep links universally",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-linking"
         ]
       },
       "npmPkg": "expo-linking",
@@ -3437,61 +3452,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
-    },
-    {
-      "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-notifications",
-      "ios": true,
-      "android": true,
-      "web": false,
-      "expo": true,
-      "windows": false,
-      "unmaintained": false,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/expo/expo",
-          "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
-          "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
-          "forks": 1495,
-          "issues": 867,
-          "subscribers": 199,
-          "stars": 9732
-        },
-        "name": "expo-branch",
-        "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
-        "topics": [
-          "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
-        ]
-      },
-      "npmPkg": "expo-notifications",
-      "npm": {
-        "downloads": 1290,
-        "start": "2020-04-11",
-        "end": "2020-05-10",
-        "period": "month"
-      },
-      "score": 75,
-      "matchingScoreModifiers": [
-        "Very popular",
-        "Popular",
-        "Lots of open issues",
-        "Recently updated"
-      ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-linking"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-screen-orientation",
@@ -3505,7 +3466,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-screen-orientation"
         },
         "stats": {
           "hasIssues": true,
@@ -3513,22 +3474,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-screen-orientation",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "Expo universal module for managing device's screen orientation",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-screen-orientation",
+          "orientation",
+          "screen"
         ]
       },
       "npmPkg": "expo-screen-orientation",
@@ -3545,7 +3507,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-screen-orientation orientation screen"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sharing",
@@ -3559,7 +3521,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-sharing"
         },
         "stats": {
           "hasIssues": true,
@@ -3567,22 +3529,21 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-sharing",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "ExpoSharing standalone module",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-sharing"
         ]
       },
       "npmPkg": "expo-sharing",
@@ -3599,7 +3560,7 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-sharing"
     },
     {
       "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-firebase-analytics",
@@ -3614,7 +3575,7 @@
         "urls": {
           "repo": "https://github.com/expo/expo",
           "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-firebase-analytics"
         },
         "stats": {
           "hasIssues": true,
@@ -3622,22 +3583,23 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
+          "updatedAt": "2020-05-11T23:21:11Z",
           "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
+          "pushedAt": "2020-05-11T23:21:07Z",
           "forks": 1495,
           "issues": 867,
           "subscribers": 199,
           "stars": 9732
         },
-        "name": "expo-branch",
+        "name": "expo-firebase-analytics",
         "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "description": "A universal module that interfaces with the native firebase analytics API",
         "topics": [
           "react-native",
           "expo",
-          "expo-branch",
-          "react-native-branch"
+          "expo-firebase",
+          "firebase",
+          "firebase-analytics"
         ]
       },
       "npm": {
@@ -3653,22 +3615,21 @@
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " react-native expo expo-firebase firebase firebase-analytics"
     },
     {
-      "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-auth-session",
+      "githubUrl": "https://github.com/maggialejandro/react-native-calendario",
       "ios": true,
       "android": true,
-      "web": true,
       "expo": true,
-      "windows": false,
-      "npmPkg": "expo-auth-session",
-      "unmaintained": false,
+      "examples": [
+        "https://snack.expo.io/HyEN5150M"
+      ],
       "github": {
         "urls": {
-          "repo": "https://github.com/expo/expo",
-          "clone": "https://github.com/expo/expo.git",
-          "homepage": "https://github.com/expo/expo/tree/master/packages/expo-branch"
+          "repo": "https://github.com/maggialejandro/react-native-calendario",
+          "clone": "https://github.com/maggialejandro/react-native-calendario.git",
+          "homepage": "https://react-native-components.gitbook.io/calendar/"
         },
         "stats": {
           "hasIssues": true,
@@ -3676,38 +3637,163 @@
           "hasPages": false,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T23:03:07Z",
-          "createdAt": "2016-08-15T17:14:25Z",
-          "pushedAt": "2020-05-11T23:03:03Z",
-          "forks": 1495,
-          "issues": 867,
-          "subscribers": 199,
-          "stars": 9732
+          "updatedAt": "2020-05-10T17:17:22Z",
+          "createdAt": "2018-04-11T18:56:02Z",
+          "pushedAt": "2020-05-11T23:19:32Z",
+          "forks": 26,
+          "issues": 19,
+          "subscribers": 5,
+          "stars": 173
         },
-        "name": "expo-branch",
-        "fullName": "expo/expo",
-        "description": "A unimodule wrapping react-native-branch, enabling its use in Expo managed workflow",
+        "name": "react-native-calendario",
+        "fullName": "maggialejandro/react-native-calendario",
+        "description": "📆 React Native Calendar",
         "topics": [
-          "react-native",
-          "expo",
-          "expo-branch",
-          "react-native-branch"
-        ]
+          "android",
+          "calendar",
+          "ios",
+          "react-native"
+        ],
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT",
+          "url": "https://api.github.com/licenses/mit",
+          "node_id": "MDc6TGljZW5zZTEz"
+        }
       },
+      "npmPkg": "react-native-calendario",
       "npm": {
-        "downloads": 4330,
+        "downloads": 1014,
         "start": "2020-04-11",
         "end": "2020-05-10",
         "period": "month"
       },
-      "score": 75,
+      "score": 56,
+      "matchingScoreModifiers": [
+        "Recently updated"
+      ],
+      "topicSearchString": " android calendar ios react-native"
+    },
+    {
+      "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
+      "ios": true,
+      "android": true,
+      "web": true,
+      "expo": true,
+      "examples": [
+        "https://snack.expo.io/@xcarpentier/giftedchat-playground",
+        "https://reverent-bardeen-47c862.netlify.app/"
+      ],
+      "npmPkg": "react-native-gifted-chat",
+      "github": {
+        "urls": {
+          "repo": "https://github.com/FaridSafi/react-native-gifted-chat",
+          "clone": "https://github.com/FaridSafi/react-native-gifted-chat.git",
+          "homepage": "https://gifted.chat"
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": false,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2020-05-11T17:16:02Z",
+          "createdAt": "2015-11-14T15:45:34Z",
+          "pushedAt": "2020-05-11T23:19:16Z",
+          "forks": 2707,
+          "issues": 44,
+          "subscribers": 205,
+          "stars": 9182
+        },
+        "name": "react-native-gifted-chat",
+        "fullName": "FaridSafi/react-native-gifted-chat",
+        "description": "💬 The most complete chat UI for React Native",
+        "topics": [
+          "chat",
+          "component",
+          "react-native"
+        ],
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT",
+          "url": "https://api.github.com/licenses/mit",
+          "node_id": "MDc6TGljZW5zZTEz"
+        }
+      },
+      "npm": {
+        "downloads": 66093,
+        "start": "2020-04-11",
+        "end": "2020-05-10",
+        "period": "month"
+      },
+      "score": 88,
       "matchingScoreModifiers": [
         "Very popular",
+        "Popular",
+        "Recently updated"
+      ],
+      "topicSearchString": " chat component react-native"
+    },
+    {
+      "githubUrl": "https://github.com/FormidableLabs/victory-native",
+      "ios": true,
+      "android": true,
+      "web": true,
+      "expo": true,
+      "github": {
+        "urls": {
+          "repo": "https://github.com/FormidableLabs/victory-native",
+          "clone": "https://github.com/FormidableLabs/victory-native.git",
+          "homepage": null
+        },
+        "stats": {
+          "hasIssues": true,
+          "hasWiki": true,
+          "hasPages": false,
+          "hasDownloads": true,
+          "hasTopics": true,
+          "updatedAt": "2020-05-11T06:40:42Z",
+          "createdAt": "2016-07-22T21:45:58Z",
+          "pushedAt": "2020-05-11T23:18:49Z",
+          "forks": 133,
+          "issues": 104,
+          "subscribers": 51,
+          "stars": 1672
+        },
+        "name": "victory-native",
+        "fullName": "FormidableLabs/victory-native",
+        "description": "victory components for react native",
+        "topics": [
+          "charts",
+          "d3",
+          "data-visualization",
+          "react",
+          "react-native"
+        ],
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT",
+          "url": "https://api.github.com/licenses/mit",
+          "node_id": "MDc6TGljZW5zZTEz"
+        }
+      },
+      "npmPkg": "victory-native",
+      "npm": {
+        "downloads": 77897,
+        "start": "2020-04-11",
+        "end": "2020-05-10",
+        "period": "month"
+      },
+      "score": 50,
+      "matchingScoreModifiers": [
         "Popular",
         "Lots of open issues",
         "Recently updated"
       ],
-      "topicSearchString": " react-native expo expo-branch react-native-branch"
+      "topicSearchString": " charts d3 data-visualization react react-native"
     },
     {
       "githubUrl": "https://github.com/react-community/react-navigation",
@@ -4865,64 +4951,6 @@
       "topicSearchString": ""
     },
     {
-      "githubUrl": "https://github.com/maggialejandro/react-native-calendario",
-      "ios": true,
-      "android": true,
-      "expo": true,
-      "examples": [
-        "https://snack.expo.io/HyEN5150M"
-      ],
-      "github": {
-        "urls": {
-          "repo": "https://github.com/maggialejandro/react-native-calendario",
-          "clone": "https://github.com/maggialejandro/react-native-calendario.git",
-          "homepage": "https://react-native-components.gitbook.io/calendar/"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2020-05-10T17:17:22Z",
-          "createdAt": "2018-04-11T18:56:02Z",
-          "pushedAt": "2020-05-11T19:00:38Z",
-          "forks": 26,
-          "issues": 19,
-          "subscribers": 5,
-          "stars": 173
-        },
-        "name": "react-native-calendario",
-        "fullName": "maggialejandro/react-native-calendario",
-        "description": "📆 React Native Calendar",
-        "topics": [
-          "android",
-          "calendar",
-          "ios",
-          "react-native"
-        ],
-        "license": {
-          "key": "mit",
-          "name": "MIT License",
-          "spdx_id": "MIT",
-          "url": "https://api.github.com/licenses/mit",
-          "node_id": "MDc6TGljZW5zZTEz"
-        }
-      },
-      "npmPkg": "react-native-calendario",
-      "npm": {
-        "downloads": 1014,
-        "start": "2020-04-11",
-        "end": "2020-05-10",
-        "period": "month"
-      },
-      "score": 56,
-      "matchingScoreModifiers": [
-        "Recently updated"
-      ],
-      "topicSearchString": " android calendar ios react-native"
-    },
-    {
       "githubUrl": "https://github.com/umhan35/react-native-search-bar",
       "ios": true,
       "github": {
@@ -6017,67 +6045,6 @@
         "Recently updated"
       ],
       "topicSearchString": " database persistence react react-native reactive rxjs"
-    },
-    {
-      "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
-      "ios": true,
-      "android": true,
-      "web": true,
-      "expo": true,
-      "examples": [
-        "https://snack.expo.io/@xcarpentier/giftedchat-playground",
-        "https://reverent-bardeen-47c862.netlify.app/"
-      ],
-      "npmPkg": "react-native-gifted-chat",
-      "github": {
-        "urls": {
-          "repo": "https://github.com/FaridSafi/react-native-gifted-chat",
-          "clone": "https://github.com/FaridSafi/react-native-gifted-chat.git",
-          "homepage": "https://gifted.chat"
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": false,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2020-05-11T17:16:02Z",
-          "createdAt": "2015-11-14T15:45:34Z",
-          "pushedAt": "2020-05-11T08:35:23Z",
-          "forks": 2707,
-          "issues": 44,
-          "subscribers": 205,
-          "stars": 9182
-        },
-        "name": "react-native-gifted-chat",
-        "fullName": "FaridSafi/react-native-gifted-chat",
-        "description": "💬 The most complete chat UI for React Native",
-        "topics": [
-          "chat",
-          "component",
-          "react-native"
-        ],
-        "license": {
-          "key": "mit",
-          "name": "MIT License",
-          "spdx_id": "MIT",
-          "url": "https://api.github.com/licenses/mit",
-          "node_id": "MDc6TGljZW5zZTEz"
-        }
-      },
-      "npm": {
-        "downloads": 66093,
-        "start": "2020-04-11",
-        "end": "2020-05-10",
-        "period": "month"
-      },
-      "score": 88,
-      "matchingScoreModifiers": [
-        "Very popular",
-        "Popular",
-        "Recently updated"
-      ],
-      "topicSearchString": " chat component react-native"
     },
     {
       "githubUrl": "https://github.com/react-native-community/react-native-webview",
@@ -8752,13 +8719,13 @@
           "hasPages": true,
           "hasDownloads": true,
           "hasTopics": true,
-          "updatedAt": "2020-05-11T17:55:23Z",
+          "updatedAt": "2020-05-11T23:20:49Z",
           "createdAt": "2015-06-09T19:25:38Z",
           "pushedAt": "2020-05-07T19:31:08Z",
           "forks": 1374,
           "issues": 106,
           "subscribers": 363,
-          "stars": 16502
+          "stars": 16503
         },
         "name": "react-native-web",
         "fullName": "necolas/react-native-web",
@@ -9665,7 +9632,7 @@
           "updatedAt": "2020-05-11T19:16:30Z",
           "createdAt": "2019-05-17T13:56:57Z",
           "pushedAt": "2020-05-07T02:11:37Z",
-          "forks": 101,
+          "forks": 102,
           "issues": 35,
           "subscribers": 13,
           "stars": 575
@@ -18841,65 +18808,6 @@
         "Recently updated"
       ],
       "topicSearchString": " android component credit-card ios payment react-native"
-    },
-    {
-      "githubUrl": "https://github.com/FormidableLabs/victory-native",
-      "ios": true,
-      "android": true,
-      "web": true,
-      "expo": true,
-      "github": {
-        "urls": {
-          "repo": "https://github.com/FormidableLabs/victory-native",
-          "clone": "https://github.com/FormidableLabs/victory-native.git",
-          "homepage": null
-        },
-        "stats": {
-          "hasIssues": true,
-          "hasWiki": true,
-          "hasPages": false,
-          "hasDownloads": true,
-          "hasTopics": true,
-          "updatedAt": "2020-05-11T06:40:42Z",
-          "createdAt": "2016-07-22T21:45:58Z",
-          "pushedAt": "2020-04-05T21:52:02Z",
-          "forks": 133,
-          "issues": 104,
-          "subscribers": 51,
-          "stars": 1672
-        },
-        "name": "victory-native",
-        "fullName": "FormidableLabs/victory-native",
-        "description": "victory components for react native",
-        "topics": [
-          "charts",
-          "d3",
-          "data-visualization",
-          "react",
-          "react-native"
-        ],
-        "license": {
-          "key": "mit",
-          "name": "MIT License",
-          "spdx_id": "MIT",
-          "url": "https://api.github.com/licenses/mit",
-          "node_id": "MDc6TGljZW5zZTEz"
-        }
-      },
-      "npmPkg": "victory-native",
-      "npm": {
-        "downloads": 77897,
-        "start": "2020-04-11",
-        "end": "2020-05-10",
-        "period": "month"
-      },
-      "score": 50,
-      "matchingScoreModifiers": [
-        "Popular",
-        "Lots of open issues",
-        "Recently updated"
-      ],
-      "topicSearchString": " charts d3 data-visualization react react-native"
     },
     {
       "githubUrl": "https://github.com/ptmt/react-native-macos",
@@ -37377,21 +37285,21 @@
     "gl-react": 1,
     "gl-react-native": 1,
     "image-filters": 1,
-    "react-native": 399,
+    "react-native": 394,
     "icons": 2,
     "react-native-icons": 1,
     "unicons": 1,
     "vector-icons": 1,
     "adjustment": 2,
-    "android": 108,
+    "android": 110,
     "brush": 2,
     "crop": 4,
     "filter": 2,
     "frames": 2,
-    "image": 7,
+    "image": 8,
     "image-editing": 1,
     "image-manipulation": 1,
-    "ios": 109,
+    "ios": 111,
     "overlays": 2,
     "photo": 2,
     "photo-edit-sdk": 1,
@@ -37401,13 +37309,13 @@
     "stickers": 2,
     "text": 6,
     "transform": 2,
-    "video": 4,
+    "video": 5,
     "video-edit-sdk": 1,
     "video-editing": 1,
     "video-manipulation": 1,
     "videoeditor-sdk": 1,
     "cropping": 1,
-    "react": 95,
+    "react": 96,
     "recording": 1,
     "segmented-control": 2,
     "uisegmentedcontrol": 1,
@@ -37419,7 +37327,7 @@
     "redux-persist": 1,
     "redux-store": 1,
     "redux-thunk": 1,
-    "notifications": 4,
+    "notifications": 5,
     "toast": 2,
     "toastboard": 1,
     "toaster": 1,
@@ -37430,7 +37338,7 @@
     "units": 1,
     "launchimage": 1,
     "react-native-splashscreen": 1,
-    "splash-screen": 2,
+    "splash-screen": 3,
     "splashscreen": 1,
     "a11y": 1,
     "carousel": 4,
@@ -37453,7 +37361,7 @@
     "transformer": 1,
     "class-validator": 1,
     "form": 2,
-    "native": 4,
+    "native": 5,
     "react-formawesome-core": 1,
     "ui": 7,
     "validation": 1,
@@ -37470,7 +37378,7 @@
     "instabug": 1,
     "tableview": 3,
     "uitableview": 1,
-    "localization": 2,
+    "localization": 3,
     "animation": 11,
     "chart": 2,
     "charts": 4,
@@ -37489,7 +37397,7 @@
     "menubar": 1,
     "tabbar": 3,
     "tabs": 4,
-    "calendar": 7,
+    "calendar": 8,
     "event": 2,
     "events": 1,
     "material-design": 10,
@@ -37513,7 +37421,7 @@
     "subscription": 2,
     "typography": 2,
     "typography-themes": 1,
-    "expo": 78,
+    "expo": 73,
     "mirror": 1,
     "pager-component": 2,
     "rondell": 1,
@@ -37526,7 +37434,7 @@
     "pdf": 1,
     "listener": 1,
     "locker": 1,
-    "orientation": 1,
+    "orientation": 2,
     "mobile": 3,
     "onesignal": 1,
     "onesignal-instructions": 1,
@@ -37538,8 +37446,8 @@
     "linkedin-sdk": 1,
     "login": 2,
     "signin": 1,
-    "image-picker": 1,
-    "picker": 5,
+    "image-picker": 2,
+    "picker": 6,
     "clean-code": 1,
     "helper": 1,
     "keyboard": 6,
@@ -37553,8 +37461,8 @@
     "navigator": 2,
     "react-native-navigation": 2,
     "glsl": 1,
-    "universal": 2,
-    "webgl": 3,
+    "universal": 3,
+    "webgl": 4,
     "after-effects": 1,
     "animations": 2,
     "bodymovin": 1,
@@ -37595,14 +37503,14 @@
     "dropdown": 4,
     "select": 4,
     "bridge": 2,
-    "intent": 1,
+    "intent": 2,
     "share": 1,
     "uwp": 2,
     "cross-platform": 6,
     "dialog-box": 1,
     "mobile-development": 2,
     "keychain-access": 1,
-    "facebook": 1,
+    "facebook": 2,
     "popup": 2,
     "share-popups": 1,
     "twitter": 1,
@@ -37629,7 +37537,7 @@
     "fuzzy-links": 1,
     "hyperlink": 1,
     "link": 1,
-    "react-native-web": 3,
+    "react-native-web": 5,
     "url": 1,
     "check-box": 1,
     "checkbox-component": 1,
@@ -37642,7 +37550,7 @@
     "nativebase": 1,
     "credit-card": 1,
     "payment": 1,
-    "photos": 2,
+    "photos": 3,
     "bar-graphs": 1,
     "graphs": 1,
     "paths-js": 1,
@@ -37663,7 +37571,7 @@
     "percent": 1,
     "card-component": 1,
     "fcm": 2,
-    "firebase": 2,
+    "firebase": 4,
     "local-notifications": 1,
     "react-native-toast": 1,
     "react-toast": 1,
@@ -37694,7 +37602,7 @@
     "card": 1,
     "react-native-animatable": 1,
     "tinder": 1,
-    "library": 2,
+    "library": 3,
     "markdown": 1,
     "statusbar": 1,
     "flatlist": 5,
@@ -37704,14 +37612,14 @@
     "search": 1,
     "facebook-sdk": 2,
     "native-ads": 2,
-    "analytics": 3,
+    "analytics": 4,
     "app-links": 1,
     "branch": 1,
     "deep-linking": 3,
     "metrics": 2,
     "universal-links": 1,
-    "expo-branch": 71,
-    "react-native-branch": 71,
+    "expo-branch": 1,
+    "react-native-branch": 1,
     "capture": 1,
     "snapshot": 1,
     "safari": 2,
@@ -37729,7 +37637,7 @@
     "inputaccessoryview": 1,
     "keyboard-component": 1,
     "keyboard-input": 1,
-    "sms": 1,
+    "sms": 2,
     "sms-listener": 1,
     "android-library": 1,
     "ios-lib": 1,
@@ -37761,7 +37669,7 @@
     "datetime": 1,
     "i18n": 4,
     "internationalization": 4,
-    "l10n": 1,
+    "l10n": 2,
     "language": 2,
     "localstorage": 1,
     "sync": 2,
@@ -37781,7 +37689,7 @@
     "navbar": 1,
     "iqkeyboardmanager": 1,
     "uikit": 1,
-    "web": 3,
+    "web": 5,
     "mrn": 1,
     "accordion": 2,
     "collapsible": 1,
@@ -37792,10 +37700,10 @@
     "placeholder": 3,
     "ux": 2,
     "apple-pay": 1,
-    "stripe": 1,
+    "stripe": 2,
     "node-qrcode": 1,
     "qrcode": 1,
-    "auth": 2,
+    "auth": 6,
     "crashlytics": 2,
     "database": 2,
     "firestore": 1,
@@ -37863,7 +37771,7 @@
     "highlighting": 1,
     "tooltip": 1,
     "canvas": 1,
-    "graphics": 1,
+    "graphics": 2,
     "pdf-reader": 1,
     "pdf-viewer": 1,
     "pdfjs": 1,
@@ -37882,7 +37790,7 @@
     "react-native-datepicker": 1,
     "react-native-datetime-picker": 1,
     "time-picker": 1,
-    "gradient": 1,
+    "gradient": 2,
     "persistence": 1,
     "reactive": 1,
     "rxjs": 1,
@@ -37899,12 +37807,12 @@
     "buglife": 1,
     "customize-date": 1,
     "customize-event": 1,
-    "authentication": 1,
+    "authentication": 4,
     "instagram": 1,
     "instagram-api": 1,
     "instagram-login": 1,
     "instagram-oauth": 1,
-    "oauth": 2,
+    "oauth": 5,
     "devtools": 1,
     "measure": 2,
     "ruler": 2,
@@ -37914,12 +37822,116 @@
     "phone-number-verification": 1,
     "sms-retriever": 1,
     "sms-verification": 1,
+    "admob": 1,
+    "ads": 1,
+    "expo-ads-facebook": 1,
+    "expo-analytics-amplitude": 1,
+    "segment": 1,
+    "app-auth": 1,
+    "openid": 1,
+    "token": 1,
+    "expo-apple-authentiocation": 1,
+    "apple-authentication": 1,
+    "expo-application": 1,
+    "asset": 1,
+    "audio": 1,
+    "fetch": 2,
+    "background": 2,
+    "background-fetch": 1,
+    "barcode": 1,
+    "barcode-scanner": 1,
+    "expo-battery": 1,
+    "expo-blur": 1,
+    "expo-brightness": 1,
+    "brightness": 1,
+    "reminders": 1,
+    "camera": 2,
+    "expo-cellular": 1,
+    "constants": 1,
+    "contacts": 1,
+    "crypto": 2,
+    "expo-device": 1,
+    "expo-document-picker": 1,
+    "document-picker": 1,
+    "expo-error-recovery": 1,
+    "error-recovery": 1,
+    "face-detector": 1,
+    "face": 1,
+    "detection": 2,
+    "file-system": 2,
+    "file": 2,
+    "font": 2,
+    "gl": 2,
+    "glview": 1,
+    "google": 2,
+    "sign-in": 1,
+    "expo-haptics": 1,
+    "haptics": 1,
+    "expo-image-manipulator": 1,
+    "expo-in-app-purchases": 1,
+    "expo-intent-launcher": 1,
+    "launcher": 1,
+    "awake": 1,
+    "keep-awake": 1,
+    "touchID": 1,
+    "faceID": 1,
+    "fingerprint": 1,
+    "locales": 1,
+    "location": 3,
+    "geolocation": 2,
+    "coords": 1,
+    "geocoding": 1,
+    "compass": 1,
+    "heading": 1,
+    "mail": 1,
+    "composer": 1,
+    "media": 1,
+    "cameraroll": 1,
+    "videos": 1,
+    "expo-network": 1,
+    "expo-notifications": 1,
+    "payments-stripe": 1,
+    "payments": 1,
+    "permissions": 1,
     "pixi": 1,
     "signature": 2,
+    "print": 1,
+    "processing.js": 1,
+    "opengl": 1,
+    "random": 1,
+    "random-bytes": 1,
+    "secure": 2,
+    "generator": 2,
+    "bytes": 1,
+    "expo-secure-store": 1,
+    "store": 1,
+    "sensors": 1,
+    "accelerometer": 1,
+    "devicemotion": 1,
+    "gyroscope": 1,
+    "magnetometer": 1,
+    "pedometer": 1,
+    "barometer": 1,
+    "expo-speech": 1,
+    "speech": 1,
+    "voice": 1,
+    "sqlite": 1,
+    "websql": 1,
+    "sql": 1,
+    "expo-store-review": 1,
+    "task-manager": 1,
+    "task": 1,
     "ar-session": 1,
     "arkit": 1,
     "javascript-game": 1,
     "threejs": 1,
+    "expo-video-thumbnails": 1,
+    "expo-web-browser": 1,
+    "browser": 2,
+    "enzyme": 1,
+    "jest": 2,
+    "testing": 1,
+    "react-test-renderer": 1,
     "react-component": 5,
     "ui-component": 1,
     "verification-code": 1,
@@ -37951,7 +37963,6 @@
     "ram-bundle": 1,
     "splitter": 1,
     "custom-gestures": 1,
-    "detection": 1,
     "gesture": 2,
     "smaato": 1,
     "cookies": 1,
@@ -37963,7 +37974,6 @@
     "clipboard": 1,
     "react-native-image": 1,
     "boilerplate": 2,
-    "generator": 1,
     "react-native-generator": 1,
     "desktop": 1,
     "reactotron": 1,
@@ -37993,7 +38003,6 @@
     "voice-recognition": 1,
     "spinkit": 1,
     "spinners": 1,
-    "camera": 1,
     "face-detection": 1,
     "rncamera": 1,
     "swipeable": 1,
@@ -38005,6 +38014,17 @@
     "stacks": 1,
     "globalization": 1,
     "language-detection": 1,
+    "expo-splash-screen": 1,
+    "splash": 1,
+    "launch-screen": 1,
+    "launch": 1,
+    "updates": 1,
+    "expo-auth-session": 1,
+    "auth-session": 1,
+    "expo-linking": 1,
+    "expo-screen-orientation": 1,
+    "screen": 1,
+    "expo-sharing": 1,
     "safeareainsets": 1,
     "clone": 1,
     "clone-view": 1,
@@ -38092,9 +38112,6 @@
     "appstore": 1,
     "rating": 2,
     "review": 1,
-    "geolocation": 1,
-    "location": 2,
-    "jest": 1,
     "template": 1,
     "audio-library": 1,
     "npm": 1,
@@ -38121,9 +38138,7 @@
     "html-parser": 1,
     "html-renderer": 1,
     "webp": 1,
-    "file": 1,
     "file-access": 1,
-    "file-system": 1,
     "prompt": 1,
     "custom-star": 1,
     "ratings": 1,
@@ -38141,7 +38156,6 @@
     "flip-animation": 1,
     "flip-card": 1,
     "swipelistview": 1,
-    "fetch": 1,
     "directions": 1,
     "60fps": 1,
     "flatlist-alternative": 1,
@@ -38174,7 +38188,6 @@
     "noder": 1,
     "height": 2,
     "measue": 1,
-    "font": 1,
     "fontsize": 1,
     "git": 1,
     "github": 1,
@@ -38196,7 +38209,6 @@
     "raven-js": 1,
     "sentry": 1,
     "bluetooth": 1,
-    "browser": 1,
     "chrome": 1,
     "chrome-customtabs": 1,
     "deep-links": 1,
@@ -38214,16 +38226,21 @@
     "azure-active-directory": 1,
     "azure-active-directory-b2c": 1,
     "microsoft": 1,
-    "msal": 1
+    "msal": 1,
+    "expo-firebase": 1,
+    "firebase-analytics": 1
   },
   "topicsList": [
     "60fps",
     "a11y",
+    "accelerometer",
     "accordion",
     "actionbutton",
     "actionsheet",
     "activity-indicator",
     "adjustment",
+    "admob",
+    "ads",
     "advanced-effects",
     "after-effects",
     "alarms",
@@ -38244,24 +38261,30 @@
     "animations",
     "answers",
     "api",
+    "app-auth",
     "app-links",
     "apple",
+    "apple-authentication",
     "apple-maps",
     "apple-pay",
     "appstore",
     "ar-session",
     "arkit",
+    "asset",
     "async-validation",
     "asynchronous",
     "asyncstorage",
+    "audio",
     "audio-library",
     "auth",
+    "auth-session",
     "authentication",
     "autocomplete",
     "autolink",
     "autolinker",
     "automatic-authentication",
     "avaudiosession",
+    "awake",
     "aws",
     "aws-apigateway",
     "aws-cognito",
@@ -38272,8 +38295,13 @@
     "azure-active-directory",
     "azure-active-directory-b2c",
     "backdrop",
+    "background",
+    "background-fetch",
     "background-jobs",
     "bar-graphs",
+    "barcode",
+    "barcode-scanner",
+    "barometer",
     "batch",
     "ble",
     "blogger",
@@ -38286,6 +38314,7 @@
     "bottomsheetbehavior",
     "branch",
     "bridge",
+    "brightness",
     "browser",
     "brush",
     "bug-reporter",
@@ -38293,6 +38322,7 @@
     "buglife",
     "bundle",
     "button",
+    "bytes",
     "calendar",
     "calendar-api",
     "calendar-events",
@@ -38303,6 +38333,7 @@
     "callkit",
     "camera",
     "camera-roll",
+    "cameraroll",
     "canvas",
     "capture",
     "card",
@@ -38339,12 +38370,17 @@
     "codepush",
     "cognito",
     "collapsible",
+    "compass",
     "component",
     "components",
+    "composer",
     "connection-service",
     "connectionservice",
     "console",
+    "constants",
+    "contacts",
     "cookies",
+    "coords",
     "corners",
     "countries",
     "country-picker",
@@ -38354,6 +38390,7 @@
     "crop",
     "cropping",
     "cross-platform",
+    "crypto",
     "css",
     "css-in-js",
     "css-modules",
@@ -38386,12 +38423,14 @@
     "dev-tools",
     "developer-tools",
     "device-detection",
+    "devicemotion",
     "devtools",
     "dialog",
     "dialog-box",
     "direction",
     "directions",
     "document",
+    "document-picker",
     "dom",
     "dotnet",
     "double-tap",
@@ -38404,6 +38443,8 @@
     "drawing",
     "dropdown",
     "effects",
+    "enzyme",
+    "error-recovery",
     "es6",
     "eva-icons",
     "event",
@@ -38411,11 +38452,42 @@
     "events",
     "expandable",
     "expo",
+    "expo-ads-facebook",
+    "expo-analytics-amplitude",
+    "expo-apple-authentiocation",
+    "expo-application",
+    "expo-auth-session",
+    "expo-battery",
+    "expo-blur",
     "expo-branch",
+    "expo-brightness",
+    "expo-cellular",
+    "expo-device",
+    "expo-document-picker",
+    "expo-error-recovery",
+    "expo-firebase",
+    "expo-haptics",
+    "expo-image-manipulator",
+    "expo-in-app-purchases",
+    "expo-intent-launcher",
+    "expo-linking",
+    "expo-network",
+    "expo-notifications",
+    "expo-screen-orientation",
+    "expo-secure-store",
+    "expo-sharing",
+    "expo-speech",
+    "expo-splash-screen",
+    "expo-store-review",
     "expo-ui-kit",
+    "expo-video-thumbnails",
+    "expo-web-browser",
     "fab",
     "fabric",
+    "face",
     "face-detection",
+    "face-detector",
+    "faceID",
     "facebook",
     "facebook-sdk",
     "facepile",
@@ -38430,7 +38502,9 @@
     "filesystem",
     "fill",
     "filter",
+    "fingerprint",
     "firebase",
+    "firebase-analytics",
     "firestore",
     "flatlist",
     "flatlist-alternative",
@@ -38462,17 +38536,21 @@
     "galio",
     "gallery",
     "generator",
+    "geocoding",
     "geofencing",
     "geolocation",
     "gesture",
     "gesture-password",
     "git",
     "github",
+    "gl",
     "gl-react",
     "gl-react-native",
     "glide",
     "globalization",
     "glsl",
+    "glview",
+    "google",
     "google-maps",
     "google-maps-api",
     "google-photos",
@@ -38497,7 +38575,10 @@
     "gridview",
     "gui-framework",
     "guides",
+    "gyroscope",
+    "haptics",
     "hashtag",
+    "heading",
     "healthkit",
     "height",
     "helper",
@@ -38571,6 +38652,7 @@
     "jest",
     "jpeg",
     "js",
+    "keep-awake",
     "keyboard",
     "keyboard-accessory",
     "keyboard-aware",
@@ -38585,6 +38667,9 @@
     "language",
     "language-detection",
     "largelist",
+    "launch",
+    "launch-screen",
+    "launcher",
     "launchimage",
     "layout",
     "legend",
@@ -38603,12 +38688,15 @@
     "loader",
     "loading",
     "local-notifications",
+    "locales",
     "localization",
     "localstorage",
     "location",
     "locker",
     "login",
     "magic-move",
+    "magnetometer",
+    "mail",
     "mapbox-gl",
     "mapkit",
     "maps",
@@ -38630,6 +38718,7 @@
     "measue",
     "measure",
     "measurements",
+    "media",
     "media-control",
     "mentions",
     "menu",
@@ -38684,6 +38773,8 @@
     "onesignal-instructions",
     "onesignal-notifications",
     "open-source",
+    "opengl",
+    "openid",
     "opensource",
     "option",
     "orientation",
@@ -38701,12 +38792,16 @@
     "parse-platform",
     "paths-js",
     "payment",
+    "payments",
+    "payments-stripe",
     "pdf",
     "pdf-reader",
     "pdf-viewer",
     "pdfjs",
+    "pedometer",
     "percent",
     "performance",
+    "permissions",
     "persian",
     "persistence",
     "perspective",
@@ -38734,7 +38829,9 @@
     "portal",
     "precompute",
     "predefined-props",
+    "print",
     "priority",
+    "processing.js",
     "progress",
     "progress-bar",
     "progress-circle",
@@ -38754,6 +38851,8 @@
     "radar-graphs",
     "radio-buttons",
     "ram-bundle",
+    "random",
+    "random-bytes",
     "rating",
     "ratings",
     "raven-js",
@@ -38822,6 +38921,7 @@
     "react-pdf",
     "react-redux",
     "react-router",
+    "react-test-renderer",
     "react-toast",
     "react-ui-kit",
     "react-windows",
@@ -38844,6 +38944,7 @@
     "redux-store",
     "redux-thunk",
     "region-monitoring",
+    "reminders",
     "remote-config",
     "render",
     "render-props",
@@ -38875,6 +38976,7 @@
     "scatterpoint-graph",
     "schedule",
     "scheduled-jobs",
+    "screen",
     "scroll",
     "scroll-view",
     "scrollview",
@@ -38883,12 +38985,15 @@
     "sdwebimage",
     "search",
     "secret",
+    "secure",
     "security",
+    "segment",
     "segmented-control",
     "select",
     "select-tag",
     "selector",
     "sensor",
+    "sensors",
     "sentry",
     "sg",
     "sglistview",
@@ -38903,6 +39008,7 @@
     "shoutem",
     "shoutem-ui",
     "side-menu",
+    "sign-in",
     "signature",
     "signin",
     "size",
@@ -38918,13 +39024,17 @@
     "sms-verification",
     "snackbar",
     "snapshot",
+    "speech",
     "speech-recognition",
     "spinkit",
     "spinner",
     "spinners",
+    "splash",
     "splash-screen",
     "splashscreen",
     "splitter",
+    "sql",
+    "sqlite",
     "squircle",
     "sso-authentication",
     "sso-login",
@@ -38941,6 +39051,7 @@
     "stickers",
     "sticky-views",
     "storage",
+    "store",
     "stripe",
     "style",
     "styled-components",
@@ -38964,7 +39075,10 @@
     "tablet",
     "tableview",
     "tabs",
+    "task",
+    "task-manager",
     "template",
+    "testing",
     "text",
     "text-avatar",
     "textinput",
@@ -38980,9 +39094,11 @@
     "toast",
     "toastboard",
     "toaster",
+    "token",
     "tools",
     "tooltip",
     "touch",
+    "touchID",
     "touchid",
     "transactions",
     "transform",
@@ -39013,6 +39129,7 @@
     "universal-apps",
     "universal-links",
     "unzip",
+    "updates",
     "url",
     "uwp",
     "ux",
@@ -39028,11 +39145,13 @@
     "video-player",
     "video-streaming",
     "videoeditor-sdk",
+    "videos",
     "view",
     "viewpager",
     "virtualizedlist",
     "visual-standin",
     "vkontakte",
+    "voice",
     "voice-recognition",
     "voip",
     "walkthrough",
@@ -39042,6 +39161,7 @@
     "webgl",
     "webp",
     "webrtc",
+    "websql",
     "webview",
     "wechat",
     "wechat-sdk",
