@@ -67,7 +67,7 @@ Please follow this format and indentation:
 - `npmPkg` - optional string of the package's display name.
 - `unmaintained` - optional boolean to signify that a library is or is not maintained.
 
-> _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/blob/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
+> _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 
