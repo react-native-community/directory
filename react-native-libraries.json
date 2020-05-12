@@ -636,7 +636,8 @@
     "android": true,
     "web": true,
     "expo": true,
-    "goldstar": true
+    "goldstar": true,
+    "examples": ["https://icons.expo.io"]
   },
   {
     "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
@@ -1107,15 +1108,6 @@
     "ios": true,
     "android": true,
     "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/expo/vector-icons",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "npmPkg": "@expo/vector-icons",
-    "examples": ["https://expo.github.io/vector-icons"]
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-image-header-scroll-view",
