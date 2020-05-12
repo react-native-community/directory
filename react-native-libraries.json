@@ -630,6 +630,15 @@
     "goldstar": true
   },
   {
+    "githubUrl": "https://github.com/expo/vector-icons",
+    "npmPkg": "@expo/vector-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "goldstar": true
+  },
+  {
     "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
     "ios": true,
     "android": true,
