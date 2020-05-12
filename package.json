@@ -67,7 +67,7 @@
       "prettier --write"
     ],
     "react-native-libraries.json": [
-      "ajv validate -s react-native-libraries.schema.json -d",
+      "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
       "prettier --write"
     ]
   }
