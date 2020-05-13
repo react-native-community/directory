@@ -5041,5 +5041,13 @@
     ],
     "npmPkg": "https://www.npmjs.com/package/react-context-theming",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/thodubois/react-native-woodpicker",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "examples": ["https://github.com/thodubois/react-native-woodpicker/tree/master/ExampleApp"]
   }
 ]
