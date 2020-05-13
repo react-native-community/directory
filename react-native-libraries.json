@@ -5027,5 +5027,19 @@
     "windows": false,
     "npmPkg": "react-native-material-backdrop-modal",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/christianjuth/react-context-theming",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "examples": [
+      "https://github.com/christianjuth/react-context-theming/tree/master/examples/expo",
+      "https://github.com/christianjuth/react-context-theming/tree/master/examples/cra"
+    ],
+    "npmPkg": "https://www.npmjs.com/package/react-context-theming",
+    "unmaintained": false
   }
 ]
