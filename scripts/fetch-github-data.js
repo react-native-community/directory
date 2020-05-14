@@ -49,6 +49,8 @@ export const fetchGithubRateLimit = async () => {
   };
 };
 
+// const repoRequestCache = {};
+
 export const fetchGithubData = async data => {
   try {
     let url = data.githubUrl;
@@ -63,6 +65,15 @@ export const fetchGithubData = async data => {
       url = url.split('/tree/master')[0];
     }
     const requestUrl = createRequestUrl(url);
+
+    // Use a local cache for repo requests to avoid multiple API calls for a single
+    // repo in the case where one repo has multiple packages
+    let result;
+    // if (repoRequestCache[requestUrl]) {
+    //   console.log(`using cache for ${requestUrl}`);
+    //   result = repoRequestCache[requestUrl];
+    // } else {
+    console.log(`no cache entry for ${requestUrl}`);
     const response = await fetch(requestUrl, {
       method: 'GET',
       headers: {
@@ -71,7 +82,8 @@ export const fetchGithubData = async data => {
       },
     });
     let json = await response.json();
-    let result = createRepoDataWithResponse(json);
+    // console.log(json);
+    result = createRepoDataWithResponse(json);
 
     if (subrepoData) {
       result.urls.homepage = subrepoData.homepage;
@@ -80,6 +92,9 @@ export const fetchGithubData = async data => {
       result.description = subrepoData.description;
       result.license = subrepoData.license;
     }
+
+    // repoRequestCache[requestUrl] = result;
+    // }
 
     return {
       ...data,
