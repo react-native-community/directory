@@ -17,7 +17,7 @@ export default function Header() {
             </A>
           </H5>
         </View>
-        <Button href="https://github.com/react-native-community/directory#how-do-i-add-a-library">
+        <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
           <View style={styles.displayHorizontal}>
             <>
               <Plus width={14} height={14} />
