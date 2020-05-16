@@ -37,9 +37,7 @@ const buildAndScoreData = async () => {
 
   console.log('\n** Scraping images from README');
   await sleep(1000);
-  data = await Promise.all(
-    data.filter(item => !item.images).map(d => fetchReadmeImages(d, d.githubUrl))
-  );
+  await Promise.all(data.filter(item => !item.images).map(d => fetchReadmeImages(d, d.githubUrl)));
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
