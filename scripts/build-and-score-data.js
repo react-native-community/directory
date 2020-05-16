@@ -30,10 +30,19 @@ function sleep(ms = 0) {
   return new Promise(r => setTimeout(r, ms));
 }
 
+let invalidRepos = [];
+
 const buildAndScoreData = async () => {
   console.log('** Loading data from GitHub');
-  await sleep(1000);
   let data = await loadRepositoryDataAsync();
+
+  data = data.filter(project => {
+    if (!project.github || Strings.isEmptyOrNull(project.github.name)) {
+      invalidRepos.push(project.githubUrl);
+      return false;
+    }
+    return !Strings.isEmptyOrNull(project.github.name);
+  });
 
   console.log('\n** Scraping images from README');
   await sleep(1000);
@@ -45,10 +54,14 @@ const buildAndScoreData = async () => {
 
   // Calculate score
   console.log('\n** Calculating scores');
-  data = data.map(calculateScore);
-
-  data = data.filter(project => {
-    return !Strings.isEmptyOrNull(project.github.name);
+  data = data.map(project => {
+    try {
+      return calculateScore(project);
+    } catch (e) {
+      console.log(`Failed to calculate score for ${project.github.name}`);
+      console.log(e.message);
+      console.log(project.githubUrl);
+    }
   });
 
   // Process topic counts
@@ -73,6 +86,16 @@ const buildAndScoreData = async () => {
   });
 
   const libraries = Sorting.updated(data);
+
+  if (invalidRepos.length) {
+    console.log(
+      '** The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
+    );
+    invalidRepos.forEach(repoUrl => {
+      console.log(`- ${repoUrl}`);
+    });
+    console.log('');
+  }
 
   return jsonfile.writeFile(
     path.resolve('assets', 'data.json'),
@@ -143,7 +166,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 250, staggerMs: 10000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 100, staggerMs: 10000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {

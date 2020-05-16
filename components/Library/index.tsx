@@ -19,7 +19,10 @@ export default function Library(props: Props) {
     <View style={[styles.container, layout.isSmallScreen() && styles.containerColumn]}>
       <View style={styles.columnOne}>
         <View style={styles.displayHorizontal}>
-          <A href={library.github.urls.repo} style={styles.name} hoverStyle={styles.nameHovered}>
+          <A
+            href={library.githubUrl || library.github.urls.repo}
+            style={styles.name}
+            hoverStyle={styles.nameHovered}>
             {library.github.name}
           </A>
           {library.goldstar && (
@@ -29,6 +32,11 @@ export default function Library(props: Props) {
             </View>
           )}
         </View>
+        {library.unmaintained ? (
+          <Label style={styles.unmaintainedText}>
+            🚨 This library is not actively maintained. Use it at your own risk.
+          </Label>
+        ) : null}
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
@@ -119,6 +127,11 @@ let styles = StyleSheet.create({
   },
   recommendedText: {
     marginLeft: 4,
+  },
+  unmaintainedText: {
+    marginTop: 5,
+    marginBottom: 5,
+    color: 'red',
   },
   verticalMargin: {
     marginTop: 12,

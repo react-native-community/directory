@@ -15,6 +15,9 @@ export type Library = {
   android: boolean;
   web: boolean;
   expo: boolean;
+  windows: boolean;
+  macos: boolean;
+  unmaintained: boolean;
   github: {
     urls: {
       repo: string;

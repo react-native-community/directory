@@ -20,6 +20,14 @@ export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, supp
       return false;
     }
 
+    if (support.windows && !library.windows) {
+      return false;
+    }
+
+    if (support.macos && !library.macos) {
+      return false;
+    }
+
     if (support.expo && !library.expo) {
       return false;
     }

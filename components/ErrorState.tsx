@@ -8,7 +8,7 @@ export default ({ statusCode }) => {
       <H2 style={[styles.text]}>Uh oh, something went wrong ({statusCode})</H2>
       <Text style={[styles.text]}>
         Help fix it? Submit a PR to the{' '}
-        <A href="https://github.com/react-native-community/directory">Github Repo</A>.
+        <A href="https://github.com/react-native-directory/website">Github Repo</A>.
       </Text>
     </View>
   );

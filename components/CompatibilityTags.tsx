@@ -13,6 +13,8 @@ export function CompatibilityTags(props: Props) {
   const platforms = [
     library.ios ? 'iOS' : null,
     library.android ? 'Android' : null,
+    library.windows ? 'Windows' : null,
+    library.macos ? 'macOS' : null,
     library.web ? 'Web' : null,
     library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
   ]

@@ -52,6 +52,7 @@ Please follow this format and indentation:
   "web": false,
   "expo": false,
   "windows": false,
+  "macos": false,
   "examples": ["<THE URL TO REPO>"],
   "npmPkg": "<NPM PACKAGE NAME>",
   "unmaintained": false,
@@ -63,13 +64,14 @@ Please follow this format and indentation:
 - `android` - works on Android phones.
 - `web` - can be used in the browser.
 - `expo` - can be used in managed workflow, without ejecting an Expo application (any library can be used if you eject).
-- `windows` - can be used on Windows.
+- `windows` - can be used with react-native-windows.
+- `macos` - can be used with react-native-macos.
 - `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
 - `npmPkg` - optional string of the package's display name.
 - `unmaintained` - optional boolean to signify that a library is or is not maintained.
 - `thumbnails` - optional array of thumbnails/preview of the library.
 
-> _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/blob/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
+> _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 
