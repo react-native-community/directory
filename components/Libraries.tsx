@@ -3,7 +3,6 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { H3, A } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
 import Library from './Library';
-import Tooltip from './Tooltip';
 
 type Props = {
   libraries: LibraryType[];
@@ -34,7 +33,6 @@ export default function Libraries(props: Props) {
           <Library key={`list-item-${index}-${item.github.name}`} library={item} />
         ))}
       </View>
-      <Tooltip />
     </>
   );
 }
