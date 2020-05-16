@@ -47,10 +47,10 @@ export default function Library(props: Props) {
             ))}
           </View>
         ) : null}
-        {library.thumbnails && library.thumbnails.length ? (
+        {library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.verticalMargin]}>
-            {library.thumbnails.map((thumbnail, index) => (
-              <Thumbnail key={`${thumbnail}-${index}`} url={thumbnail} />
+            {library.images.map((image, index) => (
+              <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
           </View>
         ) : null}

@@ -84,15 +84,15 @@
           true
         ]
       },
-      "thumbnails": {
-        "$id": "#/items/properties/thumbnails",
+      "images": {
+        "$id": "#/items/properties/images",
         "type": "array",
-        "title": "The Thumbnails Schema",
+        "title": "The Images Schema",
         "default": [null],
         "items": {
-          "$id": "#/items/properties/thumbnails/items",
+          "$id": "#/items/properties/images/items",
           "type": "string",
-          "title": "The Thumbnails Item Schema",
+          "title": "The Image Schema",
           "default": "",
           "examples": [
             "https://reactnative.dev/img/homepage/phones.png"
