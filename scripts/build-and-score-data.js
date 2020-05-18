@@ -4,7 +4,7 @@ import jsonfile from 'jsonfile';
 import chunk from 'lodash/chunk';
 import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
 import calculateScore from './calculate-score';
-// import fetchReadmeImages from './fetch-readme-images';
+import fetchReadmeImages from './fetch-readme-images';
 import fetchNpmData from './fetch-npm-data';
 
 import githubRepos from '../react-native-libraries.json';
@@ -44,10 +44,9 @@ const buildAndScoreData = async () => {
     return !Strings.isEmptyOrNull(project.github.name);
   });
 
-  // Skip this for now -- we aren't using images yet on the rebuild of the site
-  // console.log('\n** Scraping images from README');
-  // await sleep(1000);
-  // data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
+  console.log('\n** Scraping images from README');
+  await sleep(1000);
+  data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);

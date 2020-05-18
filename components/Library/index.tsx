@@ -6,6 +6,7 @@ import { colors, layout, A, Label, Caption } from '../../common/styleguide';
 import { Badge } from '../Icons';
 import { CompatibilityTags } from '../CompatibilityTags';
 import { MetaData } from './MetaData';
+import Thumbnail from './Thumbnail';
 
 type Props = {
   library: LibraryType;
@@ -51,6 +52,13 @@ export default function Library(props: Props) {
               <A target="blank" key={example} style={{ marginRight: 6 }} href={example}>
                 <Caption>#{index + 1}</Caption>
               </A>
+            ))}
+          </View>
+        ) : null}
+        {library.images && library.images.length ? (
+          <View style={[styles.displayHorizontal, styles.verticalMargin]}>
+            {library.images.map((image, index) => (
+              <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
           </View>
         ) : null}

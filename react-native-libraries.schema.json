@@ -81,6 +81,22 @@
         "title": "The Unmaintained Schema",
         "default": false,
         "examples": [true]
+      },
+      "images": {
+        "$id": "#/items/properties/images",
+        "type": "array",
+        "title": "The Images Schema",
+        "default": [null],
+        "items": {
+          "$id": "#/items/properties/images/items",
+          "type": "string",
+          "title": "The Image Schema",
+          "default": "",
+          "examples": [
+            "https://reactnative.dev/img/homepage/phones.png"
+          ],
+          "pattern": "^(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png)$"
+        }
       }
     }
   }

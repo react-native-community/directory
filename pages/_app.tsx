@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import * as Sentry from '@sentry/node';
 import Head from 'next/head';
 import { View } from 'react-native';
@@ -10,6 +10,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Footer from '../components/Footer';
+import PreviewStyles from '../styles/PreviewStyles';
 import * as Styleguide from '../common/styleguide';
 
 Sentry.init({
@@ -26,7 +27,6 @@ const themeColor = '#fff';
 
 export default function App(props: any) {
   let { pageProps, Component, router } = props;
-
   return (
     <>
       <Head>
@@ -38,6 +38,7 @@ export default function App(props: any) {
           return <meta key={`meta-${index}`} {...value} />;
         })}
       </Head>
+      <PreviewStyles />
       <SafeAreaProvider>
         <AppearanceProvider>
           <CustomAppearanceProvider>

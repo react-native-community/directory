@@ -82,12 +82,13 @@ type AProps = {
 };
 
 export const A = (props: AProps) => {
-  const { href, target = 'blank', children, style, hoverStyle } = props;
+  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
   const linkRef = React.useRef();
   const isHovered = useHover(linkRef);
 
   return (
     <HtmlElements.A
+      {...rest}
       href={href}
       target={target}
       style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}

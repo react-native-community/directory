@@ -41,6 +41,14 @@ const scrapeImagesAsync = async githubUrl => {
 };
 
 const fetchReadmeImages = async (data, githubUrl) => {
+  /**
+   * @DEV
+   * if images been set, we skip scraping images
+   */
+  if (data.images) {
+    return data;
+  }
+
   try {
     let images = await scrapeImagesAsync(githubUrl);
 
