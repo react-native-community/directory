@@ -3,19 +3,15 @@ import { useDimensions } from 'react-native-web-hooks';
 import { colors } from '../common/styleguide';
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
-const GITHUB_PREVIEW_MIN_HEIGHT = 320;
 
+// Note: styles must be done in this way in order to integrate with the image preview library.
+// We should migrate to a more universal approach to thumbnails, built on top of React Native Web
 const PreviewStyles = () => {
   const screenWidth = useDimensions().window.width;
   const previewWidth =
     screenWidth < GITHUB_PREVIEW_MIN_WIDTH ? screenWidth : GITHUB_PREVIEW_MIN_WIDTH;
   const previewImageWidth = previewWidth - 20;
 
-  //
-  // height: ${previewHeight}px;
-
-  // max-width: ${previewImageWidth}px;
-  // max-height: ${GITHUB_PREVIEW_MIN_HEIGHT}px;
   return (
     <style jsx global>{`
       .preview {
@@ -29,15 +25,6 @@ const PreviewStyles = () => {
 
       .preview img {
         max-width: ${previewImageWidth}px;
-      }
-
-      .thumbnail-link {
-        cursor: pointer !important;
-        margin-right: 6px !important;
-      }
-
-      .thumbnail-link:hover path {
-        fill: ${colors.primary} !important;
       }
     `}</style>
   );

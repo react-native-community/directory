@@ -1,34 +1,35 @@
-import React, { memo, useRef, useState } from 'react';
+import React, { memo, useCallback, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { usePopper } from 'react-popper';
 import { Thumbnail as ThumbnailIcon } from '../Icons';
+import { colors } from '../../common/styleguide';
 
-interface ThumbnailProps {
+type Props = {
   url: string;
-}
+};
 
-const Thumbnail = ({ url }: ThumbnailProps) => {
+const Thumbnail = ({ url }: Props) => {
   const [showPreview, setShowPreview] = useState(false);
   const iconRef = useRef();
   const previewRef = useRef();
+
   const { styles, attributes } = usePopper(iconRef.current, previewRef.current, {
-    // modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
     placement: 'bottom-end',
     strategy: 'fixed',
   });
 
-  // callbacks
-  const handleMouseEvent = () => {
+  const handleMouseEvent = useCallback(() => {
     setShowPreview(!showPreview);
-  };
+  }, [showPreview]);
+
   return (
     <>
       <a
         ref={iconRef}
         onMouseOver={handleMouseEvent}
         onMouseOut={handleMouseEvent}
-        className="thumbnail-link">
-        <ThumbnailIcon />
+        style={{ marginRight: 15 }}>
+        <ThumbnailIcon fill={showPreview ? colors.primary : undefined} />
       </a>
 
       {ReactDOM.createPortal(

@@ -47,29 +47,30 @@ Please follow this format and indentation:
 ```json
 {
   "githubUrl": "<THE GITHUB URL>",
+  "npmPkg": "<NPM PACKAGE NAME>",
+  "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
+  "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
   "android": false,
   "web": false,
   "expo": false,
   "windows": false,
   "macos": false,
-  "examples": ["<THE URL TO REPO>"],
-  "npmPkg": "<NPM PACKAGE NAME>",
-  "unmaintained": false,
-  "thumbnails": ["<THE THUMBNAIL URL>"]
+  "unmaintained": false
 },
 ```
 
+- `githubUrl` - where we can find the repository on GitHub. currently other git hosts are not supported.
+- `npmPkg` - optional string of the package's display name.
+- `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
+- `images` - optional array of images that will show up in the listing to preview the library functionality
 - `ios` - works on iOS phones.
 - `android` - works on Android phones.
 - `web` - can be used in the browser.
 - `expo` - can be used in managed workflow, without ejecting an Expo application (any library can be used if you eject).
 - `windows` - can be used with react-native-windows.
 - `macos` - can be used with react-native-macos.
-- `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
-- `npmPkg` - optional string of the package's display name.
 - `unmaintained` - optional boolean to signify that a library is or is not maintained.
-- `thumbnails` - optional array of thumbnails/preview of the library.
 
 > _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
@@ -99,31 +100,24 @@ You should be able to visit `localhost:3000` in your browser.
 
 ## How do I run `npm run data:update` with keys?
 
-- To update site data you need to provide a couple of keys in a file called `secrets.json`.
-- You must create your own `secrets.json` in the root directory of the repo.
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
-
-```json
-{
-  "GITHUB_CLIENT_ID": "YOUR CLIENT ID",
-  "GITHUB_CLIENT_SECRET": "YOUR CLIENT SECRET"
-}
-```
+- Load the GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET environment variables into your shell.
 
 This command creates site data in `./assets/data.json`
 
 ```
-npm run data:update
+GITHUB_CLIENT_ID=<*> GITHUB_CLIENT_SECRET=<*> npm run data:update
 ```
 
 ## How do I deploy my own version of this?
 
 - Site is hosted on Now, and this is the easiest way to do it.
 - You can deploy your own with your own Now account
+- You will need to provide GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET environment variables in your Vercel configuration.
 
 ```sh
+# once environment variables are configured, install now and deploy
 npm i -g now
-# log in if you need to
 now
 ```
 

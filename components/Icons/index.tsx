@@ -208,7 +208,7 @@ export function Sort(props: Props) {
   );
 }
 
-export function Thumbnail({ width = 16, height = 16, fill = colors.gray4 }: Props) {
+export function Thumbnail({ width = 16, height = 16, fill = colors.gray3 }: Props) {
   return (
     <Svg width={width} height={height} fill="none">
       <Path fillRule="evenodd" clipRule="evenodd" d="M14 2H2v12h12V2zM0 0v16h16V0H0z" fill={fill} />

@@ -56,7 +56,7 @@ export default function Library(props: Props) {
           </View>
         ) : null}
         {library.images && library.images.length ? (
-          <View style={[styles.displayHorizontal, styles.verticalMargin]}>
+          <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
@@ -135,5 +135,9 @@ let styles = StyleSheet.create({
   },
   verticalMargin: {
     marginTop: 12,
+  },
+  imagesContainer: {
+    marginVertical: 20,
+    marginLeft: 2,
   },
 });
