@@ -2848,7 +2848,7 @@
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-sqlite",
     "ios": true,
     "android": true,
-    "web": true,
+    "web": false,
     "expo": true
   },
   {
