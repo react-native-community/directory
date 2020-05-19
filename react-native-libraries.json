@@ -5049,5 +5049,12 @@
     "web": false,
     "expo": false,
     "examples": ["https://github.com/thodubois/react-native-woodpicker/tree/master/ExampleApp"]
+  },
+  {
+    "githubUrl": "https://github.com/maxkomarychev/react-native-ultimate-config",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-ultimate-config",
+    "unmaintained": false
   }
 ]
