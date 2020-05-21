@@ -5056,5 +5056,13 @@
     "android": true,
     "npmPkg": "react-native-ultimate-config",
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mythisdev/rn-font-mapping",
+    "npmPkg": "rn-font-mapping",
+    "examples": ["https://github.com/mythisdev/rn-font-mapping/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "unmaintained": false
   }
 ]
