@@ -55,7 +55,7 @@ export default function Library(props: Props) {
             ))}
           </View>
         ) : null}
-        {library.images && library.images.length ? (
+        {Platform.OS === 'web' && library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
