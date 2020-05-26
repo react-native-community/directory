@@ -64,7 +64,12 @@ export const SortButton = (props: SortButtonProps) => {
         <P style={styles.title}>
           <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
             {sorts.map(sort => (
-              <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
+              <Picker.Item
+                key={sort.param}
+                value={sort.param}
+                label={sort.label}
+                color={colors.black}
+              />
             ))}
           </Picker>
         </P>
