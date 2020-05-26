@@ -3459,6 +3459,7 @@
     "web": false,
     "expo": false,
     "windows": true,
+    "macos": true,
     "unmaintained": false,
     "npmPkg": "@react-native-community/async-storage"
   },
