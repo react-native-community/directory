@@ -5065,5 +5065,15 @@
     "ios": true,
     "android": true,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jeremybarbet/react-native-modalize",
+    "npmPkg": "react-native-modalize",
+    "examples": ["https://github.com/jeremybarbet/react-native-modalize/tree/master/examples", "https://exp.host/@jeremdsgn/react-native-modalize"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "unmaintained": false
   }
 ]
