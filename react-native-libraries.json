@@ -5070,5 +5070,15 @@
     "web": true,
     "expo": true,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/xcarpentier/rn-tourguide",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "npmPkg": "rn-tourguide",
+    "unmaintained": false,
+    "examples": ["https://github.com/xcarpentier/rn-tourguide/blob/master/App.tsx"]
   }
 ]
