@@ -3288,7 +3288,7 @@
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen",
     "android": true,
     "windows": true,
-    "npmPkg": "https://www.npmjs.com/package/react-native-dualscreeninfo"
+    "npmPkg": "react-native-dualscreeninfo"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-splash-screen",
@@ -5042,7 +5042,7 @@
       "https://github.com/christianjuth/react-context-theming/tree/master/examples/expo",
       "https://github.com/christianjuth/react-context-theming/tree/master/examples/cra"
     ],
-    "npmPkg": "https://www.npmjs.com/package/react-context-theming",
+    "npmPkg": "react-context-theming",
     "unmaintained": false
   },
   {
