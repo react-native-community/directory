@@ -5075,7 +5075,7 @@
     "githubUrl": "https://github.com/xcarpentier/rn-tourguide",
     "ios": true,
     "android": true,
-    "web": false,
+    "web": true,
     "expo": true,
     "npmPkg": "rn-tourguide",
     "unmaintained": false,
