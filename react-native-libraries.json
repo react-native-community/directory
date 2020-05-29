@@ -373,7 +373,8 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true
+    "expo": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-shine-button",
@@ -744,7 +745,8 @@
     "githubUrl": "https://github.com/react-native-community/react-native-video",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/EstebanFuentealba/react-native-share",
@@ -3230,7 +3232,7 @@
     "android": true,
     "expo": false,
     "web": false,
-    "windows": false,
+    "windows": true,
     "npmPkg": "react-native-camera"
   },
   {
@@ -3280,8 +3282,14 @@
     "android": true,
     "web": false,
     "expo": true,
-    "windows": false,
+    "windows": true,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-dualscreen",
+    "android": true,
+    "windows": true,
+    "npmPkg": "https://www.npmjs.com/package/react-native-dualscreeninfo"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-splash-screen",
