@@ -1017,7 +1017,8 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/H1cnedhBW"]
+    "examples": ["https://snack.expo.io/H1cnedhBW"],
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/sbycrosz/react-native-credit-card-input",
@@ -5088,5 +5089,16 @@
     "npmPkg": "rn-tourguide",
     "unmaintained": false,
     "examples": ["https://github.com/xcarpentier/rn-tourguide/blob/master/App.tsx"]
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-slider",
+    "npmPkg": "@react-native-community/slider",
+    "images": [
+      "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png", 
+      "https://i.postimg.cc/CKdtbVqc/Screenshot-2019-03-25-at-11-26-54.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true 
   }
 ]
