@@ -373,7 +373,8 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-shine-button",
