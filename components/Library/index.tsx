@@ -23,7 +23,7 @@ export default function Library(props: Props) {
             href={library.githubUrl || library.github.urls.repo}
             style={styles.name}
             hoverStyle={styles.nameHovered}>
-            {library.github.name}
+            {library.npmPkg || library.github.name}
           </A>
           {library.goldstar && (
             <View style={[styles.displayHorizontal, styles.recommendedContainer]}>
