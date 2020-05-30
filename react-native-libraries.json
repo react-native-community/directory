@@ -3288,7 +3288,7 @@
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen",
     "android": true,
-    "windows": true,
+    "windows": false,
     "npmPkg": "react-native-dualscreeninfo"
   },
   {
