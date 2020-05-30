@@ -11,12 +11,12 @@ type Props = {
 export function CompatibilityTags(props: Props) {
   const { library } = props;
   const platforms = [
-    library.ios ? 'iOS' : null,
     library.android ? 'Android' : null,
-    library.windows ? 'Windows' : null,
+    library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
+    library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.web ? 'Web' : null,
-    library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
+    library.windows ? 'Windows' : null,
   ]
     .map(platform => platform)
     .filter(Boolean);
