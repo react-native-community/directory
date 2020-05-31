@@ -22,21 +22,20 @@ export function MetaData(props: Props) {
     {
       id: 'calendar',
       icon: <Calendar fill={colors.gray5} />,
-      content: `Updated ${getTimeSinceToday(props.library.github.stats.pushedAt)}`,
+      content: `Updated ${getTimeSinceToday(library.github.stats.pushedAt)}`,
     },
     {
       id: 'star',
       icon: <Star fill={colors.gray5} />,
-      content: `${props.library.github.stats.stars.toLocaleString()} stars`,
+      content: `${library.github.stats.stars.toLocaleString()} stars`,
     },
     library.npm.downloads
       ? {
           id: 'downloads',
           icon: <Download fill={colors.gray5} />,
           content: (
-            <A href={`https://www.npmjs.com/package/${props.library.npmPkg}`}>
-              {`${props.library.npm.downloads.toLocaleString()}`} {props.library.npm.period}ly
-              downloads
+            <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
+              {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
             </A>
           ),
         }
@@ -46,25 +45,27 @@ export function MetaData(props: Props) {
           id: 'issues',
           icon: <Issue fill={colors.gray5} />,
           content: (
-            <A href={`${props.library.github.urls.repo}/issues`}>
-              {`${props.library.github.stats.issues.toLocaleString()}`} issues
+            <A href={`${library.github.urls.repo}/issues`}>
+              {`${library.github.stats.issues.toLocaleString()}`} issues
             </A>
           ),
         }
       : null,
-    props.library.github.urls.homepage
+    library.github.urls.homepage
       ? {
           id: 'web',
           icon: <Web fill={colors.gray5} />,
-          content: <A href={props.library.github.urls.homepage}>Visit Website</A>,
+          content: <A href={library.github.urls.homepage}>Visit Website</A>,
         }
       : null,
-  ];
+  ].filter(Boolean);
 
   return (
     <View>
-      {data.filter(Boolean).map(datum => (
-        <View key={datum.id} style={[styles.displayHorizontal, styles.datumContainer]}>
+      {data.map((datum, i) => (
+        <View
+          key={datum.id}
+          style={[styles.displayHorizontal, i + 1 !== data.length ? styles.datumContainer : {}]}>
           <View style={styles.iconContainer}>{datum.icon}</View>
           <Caption>{datum.content}</Caption>
         </View>
