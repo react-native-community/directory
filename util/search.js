@@ -53,11 +53,14 @@ export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, supp
       const isNameMatch = !isEmptyOrNull(library.github.name)
         ? library.github.name.includes(querySearch)
         : undefined;
+      const isNpmPkgNameMatch = !isEmptyOrNull(library.npmPkg)
+        ? library.npmPkg.includes(querySearch)
+        : undefined;
       const isDescriptionMatch = !isEmptyOrNull(library.github.description)
         ? library.github.description.includes(querySearch)
         : undefined;
 
-      isSearchMatch = isNameMatch || isDescriptionMatch || isTopicMatch;
+      isSearchMatch = isNameMatch || isNpmPkgNameMatch || isDescriptionMatch || isTopicMatch;
     }
 
     if (!viewerHasChosenTopic) {
