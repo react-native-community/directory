@@ -3465,8 +3465,8 @@
     "githubUrl": "https://github.com/react-native-community/async-storage",
     "ios": true,
     "android": true,
-    "web": false,
-    "expo": false,
+    "web": true,
+    "expo": true,
     "windows": true,
     "macos": true,
     "unmaintained": false,
@@ -5073,7 +5073,10 @@
   {
     "githubUrl": "https://github.com/jeremybarbet/react-native-modalize",
     "npmPkg": "react-native-modalize",
-    "examples": ["https://github.com/jeremybarbet/react-native-modalize/tree/master/examples", "https://exp.host/@jeremdsgn/react-native-modalize"],
+    "examples": [
+      "https://github.com/jeremybarbet/react-native-modalize/tree/master/examples",
+      "https://exp.host/@jeremdsgn/react-native-modalize"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -5094,11 +5097,11 @@
     "githubUrl": "https://github.com/react-native-community/react-native-slider",
     "npmPkg": "@react-native-community/slider",
     "images": [
-      "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png", 
+      "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png",
       "https://i.postimg.cc/CKdtbVqc/Screenshot-2019-03-25-at-11-26-54.png"
     ],
     "ios": true,
     "android": true,
-    "web": true 
+    "web": true
   }
 ]
