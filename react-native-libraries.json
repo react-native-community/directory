@@ -5103,5 +5103,18 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-toolkit/triangle",
+    "npmPkg": "@react-native-toolkit/triangle",
+    "examples": ["https://expo.io/@daniakash/TriangleExample", "https://react-native-toolkit.github.io/triangle/", "https://codesandbox.io/s/triangle-m0z2l"],
+    "images": ["https://raw.githubusercontent.com/react-native-toolkit/react-native-triangle-view/HEAD/assets/logo.png", "https://avatars1.githubusercontent.com/u/66295306"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "unmaintained": false
   }
 ]
