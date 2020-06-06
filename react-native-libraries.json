@@ -5103,5 +5103,16 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/moaazsidat/react-native-qrcode-scanner",
+    "images": ["https://cloud.githubusercontent.com/assets/5963656/25634528/fae4290a-2f48-11e7-899d-4c91ea079678.png"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
