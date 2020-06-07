@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Picker } from 'react-native';
 import Router from 'next/router';
 import { Query } from '../types';
-import { colors, P, H1 } from '../common/styleguide';
+import { colors, P } from '../common/styleguide';
 import { Sort as SortIcon } from './Icons';
 import urlWithQuery from '../util/urlWithQuery';
 
@@ -91,16 +91,19 @@ let styles = StyleSheet.create({
   },
   title: {
     color: colors.white,
+    fontWeight: '500',
     marginLeft: 6,
     fontSize: 14,
   },
   pickerContainer: {
     top: 1,
-    left: -6,
+    left: -4,
   },
   picker: {
     backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
+    position: 'relative',
+    top: -1,
   },
 });
