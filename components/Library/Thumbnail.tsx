@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 import { Thumbnail as ThumbnailIcon } from '../Icons';
 import { colors } from '../../common/styleguide';
@@ -28,11 +28,11 @@ const Thumbnail = ({ url }: Props) => {
         ref={iconRef}
         onMouseOver={handleMouseEvent}
         onMouseOut={handleMouseEvent}
-        style={{ marginRight: 15 }}>
+        style={{ marginRight: 15, marginBottom: 8 }}>
         <ThumbnailIcon fill={showPreview ? colors.primary : undefined} />
       </a>
 
-      {ReactDOM.createPortal(
+      {createPortal(
         <div ref={previewRef} style={styles.popper} {...attributes.popper}>
           {showPreview && (
             <div className="preview">

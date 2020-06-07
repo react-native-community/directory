@@ -137,7 +137,9 @@ let styles = StyleSheet.create({
     marginTop: 12,
   },
   imagesContainer: {
-    marginVertical: 20,
+    flexWrap: 'wrap',
+    marginTop: 20,
+    marginBottom: 12,
     marginLeft: 2,
   },
 });
