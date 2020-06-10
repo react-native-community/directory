@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.white,
     marginLeft: 6,
+    fontWeight: '500',
   },
   activeButtonText: {
     color: colors.gray7,

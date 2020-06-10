@@ -43,10 +43,14 @@ export default function Search(props: Props) {
               styles.resultsContainer,
               layout.isSmallScreen() && styles.smallResultsContainer,
             ]}>
-            <P style={styles.totalText}>
-              {total} {total === 1 ? 'library' : 'libraries'}
-            </P>
-            <View style={styles.displayHorizontal}>
+            {total ? (
+              <P style={styles.totalText}>
+                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
+              </P>
+            ) : (
+              <P />
+            )}
+            <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
               <FilterButton
                 query={query}
                 onPress={() => setFilterVisible(!isFilterVisible)}
@@ -101,8 +105,15 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
   },
+  buttonsContainer: {
+    marginTop: 6,
+  },
+  totalCount: {
+    color: colors.primary,
+    fontWeight: '600',
+  },
   totalText: {
     color: colors.white,
-    marginBottom: 8,
+    marginTop: 4,
   },
 });
