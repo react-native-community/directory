@@ -5106,6 +5106,18 @@
     "web": true
   },
   {
+    "githubUrl": "https://github.com/react-native-toolkit/triangle",
+    "npmPkg": "@react-native-toolkit/triangle",
+    "examples": ["https://expo.io/@daniakash/TriangleExample", "https://react-native-toolkit.github.io/triangle/", "https://codesandbox.io/s/triangle-m0z2l"],
+    "images": ["https://raw.githubusercontent.com/react-native-toolkit/react-native-triangle-view/HEAD/assets/logo.png", "https://pbs.twimg.com/profile_images/1268742424517439490/FCYA02Jq_400x400.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true
+  },
+  {
     "githubUrl": "https://github.com/moaazsidat/react-native-qrcode-scanner",
     "images": ["https://cloud.githubusercontent.com/assets/5963656/25634528/fae4290a-2f48-11e7-899d-4c91ea079678.png"],
     "ios": true,
@@ -5113,7 +5125,6 @@
     "web": false,
     "expo": false,
     "windows": false,
-    "macos": false,
-    "unmaintained": false
+    "macos": false
   }
 ]
