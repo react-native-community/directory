@@ -5126,5 +5126,18 @@
     "expo": false,
     "windows": false,
     "macos": false
-  }
+  },
+  {
+    "githubUrl": "https://github.com/sospedra/reinput",
+    "npmPkg": "https://www.npmjs.com/package/reinput",
+    "examples": ["https://github.com/sospedra/reinput/tree/master/example", "https://snack.expo.io/@git/github.com/sospedra/reinput:example"],
+    "images": ["https://user-images.githubusercontent.com/3116899/84693731-3d597380-af48-11ea-8614-b549211f5015.png"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
 ]
