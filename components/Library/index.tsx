@@ -39,9 +39,7 @@ export default function Library(props: Props) {
           <View style={styles.unmaintainedTextWrapper}>
             <View style={styles.unmaintainedTextContainer}>
               <Warning width={15} height={15} />
-              <Label style={styles.unmaintainedText}>
-                This library is not actively maintained.
-              </Label>
+              <Label style={styles.unmaintainedText}>This library is not actively maintained</Label>
             </View>
           </View>
         ) : null}
@@ -156,7 +154,6 @@ let styles = StyleSheet.create({
   },
   unmaintainedText: {
     marginLeft: 4,
-    // opacity: 0.75,
     color: colors.warningDark,
   },
   verticalMargin: {
