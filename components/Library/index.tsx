@@ -28,9 +28,9 @@ export default function Library(props: Props) {
           </A>
           {library.goldstar && (
             <View style={[styles.displayHorizontal, styles.recommendedContainer]}>
-              <View style={styles.recommendedText}>
+              <View style={styles.recommendedTextContainer}>
                 <Badge width={11} height={16} />
-                <Label>Recommended Library</Label>
+                <Label style={styles.recommendedText}>Recommended Library</Label>
               </View>
             </View>
           )}
@@ -132,6 +132,10 @@ let styles = StyleSheet.create({
     borderRadius: 2,
     marginLeft: 8,
     top: 1,
+  },
+  recommendedTextContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   recommendedText: {
     marginLeft: 4,
