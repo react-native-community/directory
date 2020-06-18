@@ -19,12 +19,20 @@ type FilterButtonProps = {
 
 const platforms = [
   {
+    param: 'android',
+    title: 'Android',
+  },
+  {
+    param: 'expo',
+    title: 'Expo Client',
+  },
+  {
     param: 'ios',
     title: 'iOS',
   },
   {
-    param: 'android',
-    title: 'Android',
+    param: 'macos',
+    title: 'macOS',
   },
   {
     param: 'web',
@@ -33,14 +41,6 @@ const platforms = [
   {
     param: 'windows',
     title: 'Windows',
-  },
-  {
-    param: 'macos',
-    title: 'macOS',
-  },
-  {
-    param: 'expo',
-    title: 'Expo Client',
   },
 ];
 
