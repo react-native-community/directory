@@ -1,10 +1,11 @@
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
+
+import { colors, layout, A, Label, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
-import { colors, layout, A, Label, Caption } from '../../common/styleguide';
-import { Badge } from '../Icons';
 import { CompatibilityTags } from '../CompatibilityTags';
+import { Badge, Warning } from '../Icons';
 import { MetaData } from './MetaData';
 import Thumbnail from './Thumbnail';
 
@@ -27,15 +28,22 @@ export default function Library(props: Props) {
           </A>
           {library.goldstar && (
             <View style={[styles.displayHorizontal, styles.recommendedContainer]}>
-              <Badge width={11} height={16} />
-              <Label style={styles.recommendedText}>Recommended Library</Label>
+              <View style={styles.recommendedText}>
+                <Badge width={11} height={16} />
+                <Label>Recommended Library</Label>
+              </View>
             </View>
           )}
         </View>
         {library.unmaintained ? (
-          <Label style={styles.unmaintainedText}>
-            🚨 This library is not actively maintained. Use it at your own risk.
-          </Label>
+          <View style={styles.unmaintainedTextWrapper}>
+            <View style={styles.unmaintainedTextContainer}>
+              <Warning width={15} height={15} />
+              <Label style={styles.unmaintainedText}>
+                This library is not actively maintained.
+              </Label>
+            </View>
+          </View>
         ) : null}
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -128,10 +136,24 @@ let styles = StyleSheet.create({
   recommendedText: {
     marginLeft: 4,
   },
+  unmaintainedTextWrapper: {
+    flexDirection: 'row',
+  },
+  unmaintainedTextContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 8,
+    backgroundColor: colors.warningLight,
+    borderColor: colors.warning,
+    borderWidth: 1,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+    borderRadius: 2,
+  },
   unmaintainedText: {
-    marginTop: 5,
-    marginBottom: 5,
-    color: 'red',
+    marginLeft: 4,
+    // opacity: 0.75,
+    color: colors.warningDark,
   },
   verticalMargin: {
     marginTop: 12,

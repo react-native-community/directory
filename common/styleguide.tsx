@@ -1,7 +1,7 @@
+import * as HtmlElements from '@expo/html-elements';
 import React, { ReactNode, RefObject } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
-import * as HtmlElements from '@expo/html-elements';
 
 export const layout = {
   maxWidth: 1200,
@@ -28,6 +28,9 @@ export const colors = {
   gray7: '#21232A',
   black: '#1a1a1a',
   white: '#ffffff',
+  warning: '#FFD093',
+  warningLight: '#FFE9C8',
+  warningDark: '#B77800',
 };
 
 const baseTextStyles = {

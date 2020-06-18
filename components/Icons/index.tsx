@@ -1,5 +1,6 @@
 import React from 'react';
 import { Path, Svg } from 'react-native-svg';
+
 import { colors } from '../../common/styleguide';
 
 type Props = {
@@ -219,6 +220,20 @@ export function Thumbnail({ width = 16, height = 16, fill = colors.gray3 }: Prop
         fill={fill}
       />
       <Path d="M12 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill={fill} />
+    </Svg>
+  );
+}
+
+export function Warning({ width = 17, height = 17, fill = colors.warningDark }: Props) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 25 25" fill="none">
+      <Path
+        d="M12.147 22.345c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zM12.147 8.345v4M12.147 16.345h.01"
+        stroke={fill}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </Svg>
   );
 }
