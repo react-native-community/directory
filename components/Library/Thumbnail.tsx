@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
+import { ActivityIndicator } from 'react-native';
 import { Thumbnail as ThumbnailIcon } from '../Icons';
 import { colors } from '../../common/styleguide';
 
@@ -10,6 +11,7 @@ type Props = {
 
 const Thumbnail = ({ url }: Props) => {
   const [showPreview, setShowPreview] = useState(false);
+  const [isLoaded, setLoaded] = useState(false);
   const iconRef = useRef();
   const previewRef = useRef();
 
@@ -31,12 +33,12 @@ const Thumbnail = ({ url }: Props) => {
         style={{ marginRight: 15, marginBottom: 8 }}>
         <ThumbnailIcon fill={showPreview ? colors.primary : undefined} />
       </a>
-
       {createPortal(
         <div ref={previewRef} style={styles.popper} {...attributes.popper}>
           {showPreview && (
-            <div className="preview">
-              <img src={url} />
+            <div className={'preview' + (isLoaded ? ' loaded' : '')}>
+              {isLoaded ? null : <ActivityIndicator size="small" />}
+              <img src={url} onLoad={() => setLoaded(true)} />
             </div>
           )}
         </div>,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDimensions } from 'react-native-web-hooks';
-import { colors } from '../common/styleguide';
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
@@ -24,7 +23,12 @@ const PreviewStyles = () => {
       }
 
       .preview img {
+        display: none;
         max-width: ${previewImageWidth}px;
+      }
+
+      .preview.loaded img {
+        display: block;
       }
     `}</style>
   );
