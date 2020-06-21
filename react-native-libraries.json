@@ -5139,5 +5139,21 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/alexbrazier/react-native-network-logger",
+    "npmPkg": "react-native-network-logger",
+    "examples": ["https://github.com/alexbrazier/react-native-network-logger/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/alexbrazier/react-native-network-logger/master/.github/images/ios-list.png",
+      "https://raw.githubusercontent.com/alexbrazier/react-native-network-logger/master/.github/images/ios-details.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
