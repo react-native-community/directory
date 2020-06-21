@@ -2,39 +2,90 @@ import fetch from 'isomorphic-fetch';
 require('dotenv').config();
 
 const API = 'https://api.github.com';
+const GRAPHQL_API = 'https://api.github.com/graphql';
 
-// Authorization header as required by the GitHub API
-const Authorization =
-  'Basic ' +
-  Buffer.from(`${process.env.GITHUB_CLIENT_ID}:${process.env.GITHUB_CLIENT_SECRET}`).toString(
-    'base64'
-  );
+const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
 
-// https://github.com/expo/expo/tree/master/packages/expo-camera
-const fetchPackageJson = async url => {
-  try {
-    let rawUrl = url.replace('github.com', 'raw.githubusercontent.com').replace('/tree', '');
-    let packageJsonUrl = `${rawUrl}/package.json`;
-    let response = await fetch(packageJsonUrl, { method: 'GET' });
-    let pkg = await response.json();
-
-    return {
-      name: pkg.name,
-      description: pkg.description,
-      homepage: pkg.homepage,
-      topics: pkg.keywords,
-    };
-  } catch (e) {
-    console.log(`retrying package.json fetch for ${url}`);
-    // sleep 1000ms
-    await setTimeout(() => {}, 5000);
-    return await fetchPackageJson(url);
+const query = `
+  query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
+    repository(owner: $repoOwner, name: $repoName) {
+      hasIssuesEnabled
+      hasWikiEnabled
+      issues(states: OPEN) {
+        totalCount
+      }
+      watchers {
+        totalCount
+      }
+      stargazers {
+        totalCount
+      }
+      forks {
+        totalCount
+      }
+      description
+      createdAt
+      pushedAt
+      updatedAt
+      homepageUrl
+      url
+      mirrorUrl
+      name
+      nameWithOwner
+      licenseInfo {
+        key
+        name
+        spdxId
+        url
+        id
+      }
+      deployments {
+        totalCount
+      }
+      repositoryTopics(first: 10) {
+        nodes {
+          topic {
+            name
+          }
+        }
+      }
+      defaultBranchRef {
+        target {
+          ... on Commit {
+            id
+            history(path: $packagePath, first: 1) {
+              nodes {
+                committedDate
+                message
+              }
+            }
+          }
+        }
+      }
+      packageJson:object(expression: $packageJsonPath) {
+        ... on Blob {
+          text
+        }
+      }
+    }
   }
-};
+`;
 
-function isMonorepo(url) {
-  return url.includes('/tree/master/');
-}
+const makeGraphqlQuery = async (query, variables) => {
+  const result = await fetch(GRAPHQL_API, {
+    method: 'POST',
+    headers: {
+      Authorization,
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+  const json = await result.json();
+  return json;
+};
 
 export const fetchGithubRateLimit = async () => {
   let url = API;
@@ -49,99 +100,101 @@ export const fetchGithubRateLimit = async () => {
   };
 };
 
-// const repoRequestCache = {};
-
-export const fetchGithubData = async data => {
+const getUpdatedUrl = async url => {
   try {
-    let url = data.githubUrl;
-    let subrepoData;
-
-    // https://github.com/expo/expo/tree/master/packages/expo-camera
-    if (isMonorepo(url)) {
-      // Uh oh, it's a monorepo!
-      subrepoData = await fetchPackageJson(url);
-
-      // Get data from the parent
-      url = url.split('/tree/master')[0];
-    }
-    const requestUrl = createRequestUrl(url);
-
-    // Use a local cache for repo requests to avoid multiple API calls for a single
-    // repo in the case where one repo has multiple packages
-    let result;
-    // if (repoRequestCache[requestUrl]) {
-    //   console.log(`using cache for ${requestUrl}`);
-    //   result = repoRequestCache[requestUrl];
-    // } else {
-    console.log(`no cache entry for ${requestUrl}`);
-    const response = await fetch(requestUrl, {
-      method: 'GET',
-      headers: {
-        Authorization,
-        Accept: 'application/vnd.github.mercy-preview+json',
-      },
-    });
-    let json = await response.json();
-    // console.log(json);
-    result = createRepoDataWithResponse(json);
-
-    if (subrepoData) {
-      result.urls.homepage = subrepoData.homepage;
-      result.name = subrepoData.name;
-      result.topics = subrepoData.topics;
-      result.description = subrepoData.description;
-      result.license = subrepoData.license;
-    }
-
-    // repoRequestCache[requestUrl] = result;
-    // }
-
-    return {
-      ...data,
-      github: result,
-    };
-  } catch (e) {
-    console.log(`retrying fetch for ${data.githubUrl}`);
-    return await fetchGithubData(data);
+    const result = await fetch(url);
+    return result.url;
+  } catch {
+    return url;
   }
 };
 
-const createRepoDataWithResponse = json => {
+const parseUrl = url => {
+  const [, , , repoOwner, repoName, ...path] = url.split('/');
+  const isMonorepo = !!(path && path.length);
+  const packagePath = isMonorepo ? path.slice(2).join('/') : '.';
+
   return {
-    urls: {
-      repo: json.html_url,
-      clone: json.clone_url,
-      homepage: json.homepage,
-    },
-    stats: {
-      hasIssues: json.has_issues,
-      hasWiki: json.has_wiki,
-      hasPages: json.has_pages,
-      hasDownloads: json.has_downloads,
-      hasTopics: json.topics ? json.topics.length > 0 : false,
-      updatedAt: json.updated_at,
-      createdAt: json.created_at,
-      pushedAt: json.pushed_at,
-      forks: json.forks,
-      issues: json.open_issues,
-      subscribers: json.subscribers_count,
-      stars: json.stargazers_count,
-    },
-    name: json.name,
-    fullName: json.full_name,
-    description: json.description,
-    topics: json.topics,
-    license: json.license,
+    repoOwner,
+    repoName,
+    isMonorepo,
+    packagePath,
   };
 };
 
-const createRequestUrl = url => {
-  console.log('processing: ', url);
+export const fetchGithubData = async (data, retries = 2) => {
+  if (retries < 0) {
+    console.log(`ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
+    return data;
+  }
+  try {
+    const url = data.githubUrl;
+    const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
 
-  const tokens = url.split('/');
-  const repoName = tokens[tokens.length - 1];
-  const repoCreator = tokens[tokens.length - 2];
-  const requestUrl = `${API}/repos/${repoCreator}/${repoName}`;
+    const result = await makeGraphqlQuery(query, {
+      repoOwner,
+      repoName,
+      packagePath,
+      packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+    });
 
-  return requestUrl;
+    if (!result.data.repository && result.errors && result.errors[0].type === 'NOT_FOUND') {
+      const newUrl = await getUpdatedUrl(url);
+      if (newUrl !== url) {
+        console.log(`Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+        data.githubUrl = newUrl;
+      } else {
+        console.log(`Repository ${repoOwner}/${repoName} not found`);
+      }
+      return fetchGithubData(data, retries - 1);
+    }
+
+    const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
+    return {
+      ...data,
+      github,
+    };
+  } catch (e) {
+    console.log(`retrying fetch for ${data.githubUrl}`);
+    return fetchGithubData(data, retries - 1);
+  }
+};
+
+const createRepoDataWithResponse = (json, monorepo) => {
+  if (monorepo && json.packageJson) {
+    const packageJson = JSON.parse(json.packageJson.text);
+    json.homepageUrl = packageJson.homepage;
+    json.name = packageJson.name;
+    json.topics = packageJson.topics;
+    json.description = packageJson.description;
+    json.license = packageJson.license;
+  }
+  const lastCommit = json.defaultBranchRef.target.history.nodes[0].committedDate;
+
+  return {
+    urls: {
+      repo: json.url,
+      clone: `${json.url}.git`,
+      homepage: json.homepageUrl,
+    },
+    stats: {
+      hasIssues: json.hasIssuesEnabled,
+      hasWiki: json.hasWikiEnabled,
+      hasPages: json.deployments.totalCount > 0,
+      hasDownloads: true,
+      hasTopics: json.topics ? json.repositoryTopics.nodes.length > 0 : false,
+      updatedAt: lastCommit,
+      createdAt: json.createdAt,
+      pushedAt: lastCommit,
+      forks: json.forks.totalCount,
+      issues: json.issues.totalCount,
+      subscribers: json.watchers.totalCount,
+      stars: json.stargazers.totalCount,
+    },
+    name: json.name,
+    fullName: json.nameWithOwner,
+    description: json.description,
+    topics: json.repositoryTopics.nodes.map(({ topic }) => topic.name),
+    license: json.licenseInfo,
+  };
 };
