@@ -5,7 +5,6 @@ import path from 'path';
 
 import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
-import * as Sorting from '../util/sorting';
 import * as Strings from '../util/strings';
 import calculateScore from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
@@ -84,7 +83,7 @@ const buildAndScoreData = async () => {
     projectList[index].topicSearchString = topicSearchString;
   });
 
-  const libraries = Sorting.updated(data);
+  const libraries = data;
 
   if (invalidRepos.length) {
     console.log(

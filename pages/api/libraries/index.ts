@@ -11,6 +11,7 @@ import Data from '../../../assets/data.json';
 const originalData = [...Data.libraries];
 const SortedData = {
   updated: Sorting.updated([...originalData]),
+  added: [...originalData.reverse()],
   recommended: Sorting.recommended([...originalData]),
   compatibility: Sorting.compatibility([...originalData]),
   quality: Sorting.quality([...originalData]),
