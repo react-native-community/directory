@@ -5155,5 +5155,235 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/zetachang/react-native-dotenv",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-dotenv",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/gs-akhan/react-native-select",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-selectme",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/venepe/react-native-music-metadata",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-music-metadata",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/tanguyantoine/react-native-music-control",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-music-control",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/RealOrangeOne/react-native-mock",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-mock",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/reactjs/react-timer-mixin",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-timer-mixin",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/PhilippKrone/react-native-fileupload",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-fileupload",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/tradle/react-native-udp",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-udp",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/rainbow-me/react-native-shadow-stack",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-shadow-stack",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/wcandillon/redash",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-redash",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mvayngrib/react-native-randombytes",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-randombytes",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/surajitsarkar19/react-native-radial-gradient",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-radial-gradient",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/moaazsidat/react-native-qrcode-scanner",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-qrcode-scanner",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/aprock/react-native-os",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-os",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/tradle/react-native-level-fs",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-level-fs",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ptelad/react-native-iphone-x-helper",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-iphone-x-helper",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mvayngrib/react-native-crypto",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-crypto",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/kyo504/react-native-marquee",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-marquee",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ascoders/react-native-image-zoom",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-image-pan-zoom",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/chramos/react-native-skeleton-placeholder",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "react-native-skeleton-placeholder",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/joltup/rn-fetch-blob",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "npmPkg": "rn-fetch-blob",
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/realtime-framework/RCTRealtimeMessagingIOS",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-realtimemessaging-ios",
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/ivanph/react-native-webintent",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "npmPkg": "react-native-webintent",
+    "unmaintained": true
   }
 ]
