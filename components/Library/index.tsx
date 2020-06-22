@@ -1,3 +1,4 @@
+import emoji from 'node-emoji';
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
@@ -48,7 +49,7 @@ export default function Library(props: Props) {
         </View>
         {!isEmptyOrNull(library.github.description) && (
           <View style={styles.verticalMargin}>
-            <Caption>{library.github.description}</Caption>
+            <Caption>{emoji.emojify(library.github.description)}</Caption>
           </View>
         )}
         {library.examples && library.examples.length ? (
