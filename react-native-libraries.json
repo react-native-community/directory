@@ -131,7 +131,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/jeffreymendez1993/react-native-webview-readability",
+    "githubUrl": "https://github.com/A11yWatch/react-native-reader",
     "ios": true,
     "android": true,
     "web": false,
@@ -285,7 +285,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/fabriciovergal/react-native-localizable",
+    "githubUrl": "https://github.com/fabriciovergara/react-native-localizable",
     "ios": true,
     "android": true,
     "web": false,
@@ -704,7 +704,7 @@
     ]
   },
   {
-    "githubUrl": "https://github.com/bgryszko/react-native-circular-slider",
+    "githubUrl": "https://github.com/bartgryszko/react-native-circular-slider",
     "ios": true,
     "android": false,
     "expo": true,
@@ -934,7 +934,7 @@
     "npmPkg": "react-native-swipe-cards"
   },
   {
-    "githubUrl": "https://github.com/bgryszko/react-native-circular-progress",
+    "githubUrl": "https://github.com/bartgryszko/react-native-circular-progress",
     "expo": true,
     "ios": true,
     "android": true
@@ -1094,7 +1094,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/bodyflex/react-native-simple-modal",
+    "githubUrl": "https://github.com/maxjvh/react-native-simple-modal",
     "ios": true,
     "android": true,
     "expo": true
@@ -1201,7 +1201,7 @@
     "npmPkg": "react-native-calendar-picker"
   },
   {
-    "githubUrl": "https://github.com/l-urence/react-native-autocomplete-input",
+    "githubUrl": "https://github.com/mrlaessig/react-native-autocomplete-input",
     "ios": true,
     "android": true,
     "expo": true,
@@ -1441,10 +1441,11 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/callstack-io/react-native-fbads",
+    "githubUrl": "https://github.com/callstack/react-native-fbads",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "web": false
   },
   {
     "githubUrl": "https://github.com/BranchMetrics/react-native-branch-deep-linking-attribution",
@@ -1617,7 +1618,7 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/CentaurWarchief/react-native-android-sms-listener",
+    "githubUrl": "https://github.com/andreyvital/react-native-android-sms-listener",
     "android": true
   },
   {
@@ -1968,7 +1969,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/psicotropicos/react-native-tilt",
+    "githubUrl": "https://github.com/joao-alberto/react-native-tilt",
     "ios": true,
     "android": true,
     "expo": true
@@ -2055,7 +2056,7 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/uxman-sherwani/react-native-fa-icons",
+    "githubUrl": "https://github.com/uxxman/react-native-fa-icons",
     "ios": true,
     "android": true,
     "web": false,
@@ -2118,13 +2119,6 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/callstack/react-native-fbads",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false
-  },
-  {
     "githubUrl": "https://github.com/SoftZen/react-native-bouncy-drawer",
     "ios": true,
     "android": true,
@@ -2173,7 +2167,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/thinkmill/react-native-schemes-manager",
+    "githubUrl": "https://github.com/thekevinbrown/react-native-schemes-manager",
     "ios": true,
     "android": false,
     "web": false,
@@ -2919,7 +2913,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/matt-block/react-native-in-app-browser",
+    "githubUrl": "https://github.com/matei-radu/react-native-in-app-browser",
     "ios": true,
     "android": true,
     "expo": false,
@@ -4378,7 +4372,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/connected-lab/react-native-xml2js",
+    "githubUrl": "https://github.com/connected-io/react-native-xml2js",
     "ios": true,
     "android": true,
     "expo": false,
@@ -4506,7 +4500,7 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/ElekenAgency/ReactNativeWheelPicker",
+    "githubUrl": "https://github.com/kalontech/ReactNativeWheelPicker",
     "ios": true,
     "android": true,
     "expo": true,
@@ -4538,7 +4532,7 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/includable/react-native-map-link",
+    "githubUrl": "https://github.com/tschoffelen/react-native-map-link",
     "ios": true,
     "android": true,
     "expo": true,
