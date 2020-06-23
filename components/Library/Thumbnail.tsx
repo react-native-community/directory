@@ -1,9 +1,10 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { usePopper } from 'react-popper';
 import { ActivityIndicator } from 'react-native';
-import { Thumbnail as ThumbnailIcon } from '../Icons';
+import { usePopper } from 'react-popper';
+
 import { colors } from '../../common/styleguide';
+import { Thumbnail as ThumbnailIcon } from '../Icons';
 
 type Props = {
   url: string;
