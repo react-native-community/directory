@@ -35,7 +35,7 @@ function DirectoryScore(props) {
         Libraries with a popularity score of over 10,000 meet this criterion. Popularity is measured
         by weighting and combining subscribers, forks, stars, and download counts.
       </P>
-      <Headline style={styles.criterion}>Popular (+20)</Headline>
+      <Headline style={styles.criterion}>Popular (+10)</Headline>
       <P style={styles.paragraph}>
         Libraries with a popularity score of over 2,500 meet this criterion. Popularity is measured
         by weighting and combining subscribers, forks, stars, and download counts.
