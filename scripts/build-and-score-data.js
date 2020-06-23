@@ -1,17 +1,16 @@
-import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
 import chunk from 'lodash/chunk';
-import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
-import calculateScore from './calculate-score';
-import fetchReadmeImages from './fetch-readme-images';
-import fetchNpmData from './fetch-npm-data';
+import path from 'path';
 
-import githubRepos from '../react-native-libraries.json';
 import debugGithubRepos from '../debug-github-repos.json';
-
-import * as Strings from '../util/strings';
+import githubRepos from '../react-native-libraries.json';
 import * as Sorting from '../util/sorting';
+import * as Strings from '../util/strings';
+import calculateScore from './calculate-score';
+import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
+import fetchNpmData from './fetch-npm-data';
+import fetchReadmeImages from './fetch-readme-images';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -166,7 +165,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 100, staggerMs: 10000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 50, staggerMs: 10000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {

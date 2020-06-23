@@ -101,19 +101,19 @@ You should be able to visit `localhost:3000` in your browser.
 ## How do I run `npm run data:update` with keys?
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
-- Load the GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET environment variables into your shell.
+- Load the GITHUB_TOKEN environment variable into your shell.
 
 This command creates site data in `./assets/data.json`
 
 ```
-GITHUB_CLIENT_ID=<*> GITHUB_CLIENT_SECRET=<*> npm run data:update
+GITHUB_TOKEN=<*> npm run data:update
 ```
 
 ## How do I deploy my own version of this?
 
 - Site is hosted on Now, and this is the easiest way to do it.
 - You can deploy your own with your own Now account
-- You will need to provide GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET environment variables in your Vercel configuration.
+- You will need to provide GITHUB_TOKEN environment variable in your Vercel configuration.
 
 ```sh
 # once environment variables are configured, install now and deploy

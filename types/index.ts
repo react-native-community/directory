@@ -45,9 +45,9 @@ export type Library = {
     license: {
       key: string;
       name: string;
-      spdx_id: string;
+      spdxId: string;
       url: string;
-      node_id: string;
+      id: string;
     };
   };
   images: string[];
