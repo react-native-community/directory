@@ -1,17 +1,15 @@
-import React from 'react';
 import * as Sentry from '@sentry/node';
 import Head from 'next/head';
-import { View } from 'react-native';
+import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
+
 import Favicon from '../components/Favicon';
+import Footer from '../components/Footer';
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import Header from '../components/Header';
-import Search from '../components/Search';
-import Footer from '../components/Footer';
+import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import PreviewStyles from '../styles/PreviewStyles';
-import * as Styleguide from '../common/styleguide';
 
 Sentry.init({
   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
@@ -26,7 +24,7 @@ const site = {
 const themeColor = '#fff';
 
 export default function App(props: any) {
-  let { pageProps, Component, router } = props;
+  let { pageProps, Component } = props;
   return (
     <>
       <Head>
@@ -45,17 +43,8 @@ export default function App(props: any) {
             <>
               <Favicon />
               <Header />
-              <Search query={router.query} total={pageProps.data && pageProps.data.total} />
-              <View
-                style={{
-                  flex: 1,
-                  width: '100%',
-                  maxWidth: Styleguide.layout.maxWidth,
-                  margin: 'auto',
-                }}>
-                <Component {...pageProps} />
-                <Footer />
-              </View>
+              <Component {...pageProps} />
+              <Footer />
             </>
           </CustomAppearanceProvider>
         </AppearanceProvider>

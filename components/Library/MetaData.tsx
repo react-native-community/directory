@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+
+import { colors, A, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { colors, A, Caption } from '../../common/styleguide';
 import { Calendar, Star, Download, Issue, Web } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
@@ -17,7 +18,11 @@ export function MetaData(props: Props) {
     {
       id: 'score',
       icon: <DirectoryScore score={library.score} />,
-      content: 'Directory score',
+      content: (
+        <A target="" href="/directory-score" style={styles.directoryScoreLink}>
+          Directory Score
+        </A>
+      ),
     },
     {
       id: 'calendar',
@@ -86,5 +91,8 @@ const styles = StyleSheet.create({
     marginRight: 8,
     width: 20,
     alignItems: 'center',
+  },
+  directoryScoreLink: {
+    backgroundColor: 'transparent',
   },
 });
