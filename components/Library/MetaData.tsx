@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, A, Caption } from '../../common/styleguide';
+import { colors, A, P, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { Calendar, Star, Download, Issue, Web } from '../Icons';
+import { Calendar, Star, Download, Issue, Web, License } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
@@ -61,6 +61,18 @@ export function MetaData(props: Props) {
           id: 'web',
           icon: <Web fill={colors.gray5} />,
           content: <A href={library.github.urls.homepage}>Visit Website</A>,
+        }
+      : null,
+    library.github.license
+      ? {
+          id: 'license',
+          icon: <License fill={colors.gray5} />,
+          content:
+            library.github.license.name === 'Other' ? (
+              <P>{library.github.license.name}</P>
+            ) : (
+              <A href={library.github.license.url}>{library.github.license.name}</A>
+            ),
         }
       : null,
   ].filter(Boolean);
