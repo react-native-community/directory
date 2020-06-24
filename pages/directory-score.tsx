@@ -58,7 +58,8 @@ function DirectoryScore(props) {
         No license, unrecognized license or GPL license (-20)
       </Headline>
       <P style={styles.paragraph}>
-        Libraries without a license or that include the GPL license meet this criterion.
+        Libraries without a license, libraries with non-standard license or that include the GPL
+        license meet this criterion.
       </P>
     </ContentContainer>
   );
