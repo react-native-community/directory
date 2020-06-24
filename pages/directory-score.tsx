@@ -54,7 +54,9 @@ function DirectoryScore(props) {
       </P>
       <Headline style={styles.criterion}>Lots of open issues (-20)</Headline>
       <P style={styles.paragraph}>Libraries with more than 75 open issues meet this criterion.</P>
-      <Headline style={styles.criterion}>No license or GPL license (-20)</Headline>
+      <Headline style={styles.criterion}>
+        No license, unrecognized license or GPL license (-20)
+      </Headline>
       <P style={styles.paragraph}>
         Libraries without a license or that include the GPL license meet this criterion.
       </P>
