@@ -12,8 +12,12 @@ type SortButtonProps = {
 
 const sorts = [
   {
-    param: 'last-updated',
+    param: 'updated',
     label: 'Last Updated',
+  },
+  {
+    param: 'added',
+    label: 'Recently Added',
   },
   {
     param: 'recommended',
@@ -42,15 +46,10 @@ export const SortButton = (props: SortButtonProps) => {
     query: { order },
     query,
   } = props;
-  const [sortValue, setSortValue] = useState(order || 'last-updated');
+  const [sortValue, setSortValue] = useState(order || 'updated');
 
   function onPickerChange(param: string) {
-    if (param === 'last-updated') {
-      Router.push(urlWithQuery('/', { ...query, order: null, offset: null }));
-    } else {
-      Router.push(urlWithQuery('/', { ...query, order: param, offset: null }));
-    }
-
+    Router.push(urlWithQuery('/', { ...query, order: param, offset: null }));
     setSortValue(param);
   }
 
