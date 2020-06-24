@@ -69,7 +69,7 @@ export function MetaData(props: Props) {
           icon: <License fill={colors.gray5} />,
           content:
             library.github.license.name === 'Other' ? (
-              <P>{library.github.license.name}</P>
+              <P>Unrecognized License</P>
             ) : (
               <A href={library.github.license.url}>{library.github.license.name}</A>
             ),
