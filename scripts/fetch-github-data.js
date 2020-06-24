@@ -5,6 +5,31 @@ const GRAPHQL_API = 'https://api.github.com/graphql';
 
 const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
 
+let licenses = {};
+
+/**
+ * Fetch licenses from github to be used later to parse licenses from npm
+ */
+export const loadGitHubLicenses = async () => {
+  const query = `
+    query {
+      licenses {
+        name
+        url
+        id
+        key
+        spdxId
+      }
+    }
+  `;
+
+  const result = await makeGraphqlQuery(query);
+
+  result.data.licenses.forEach(license => {
+    licenses[license.key] = license;
+  });
+};
+
 const query = `
   query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
     rateLimit {
@@ -175,7 +200,13 @@ const createRepoDataWithResponse = (json, monorepo) => {
     json.name = packageJson.name;
     json.topics = packageJson.topics;
     json.description = packageJson.description;
-    json.license = packageJson.license;
+    // Get the GitHub license spec from the npm string
+    if (packageJson.license && typeof packageJson.license === 'string') {
+      const license = licenses[packageJson.license.toLowerCase()];
+      if (license) {
+        json.licenseInfo = license;
+      }
+    }
   }
   const lastCommit = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
