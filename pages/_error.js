@@ -1,9 +1,10 @@
 // NOTE(brentvatne):
 // This is the default Sentry error page provided by https://github.com/zeit/next.js/blob/canary/examples/with-sentry-simple/
 
-import React from 'react';
-import Error from 'next/error';
 import * as Sentry from '@sentry/node';
+import Error from 'next/error';
+import React from 'react';
+
 import ErrorState from '../components/ErrorState';
 
 const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {

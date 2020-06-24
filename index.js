@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { registerRootComponent } from 'expo';
+import * as React from 'react';
 import { Platform, View, Text } from 'react-native';
 
 if (Platform.OS !== 'web') {
