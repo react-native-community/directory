@@ -5378,5 +5378,20 @@
     "windows": false,
     "npmPkg": "react-native-webintent",
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/colorfy-software/react-native-modalfy",
+    "npmPkg": "react-native-modalfy",
+    "examples": [
+      "https://github.com/colorfy-software/react-native-modalfy/tree/master/Example",
+      "https://snack.expo.io/@charles.m/react-native-modalfy"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
