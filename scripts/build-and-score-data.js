@@ -7,7 +7,7 @@ import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
 import calculateScore from './calculate-score';
-import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
+import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import fetchNpmData from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 
@@ -160,6 +160,8 @@ async function loadRepositoryDataAsync() {
   console.info(
     `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request`
   );
+
+  await loadGitHubLicenses();
 
   let result;
   if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
