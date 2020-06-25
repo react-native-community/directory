@@ -113,6 +113,12 @@ export const Filters = (props: FiltersProps) => {
           ))}
         </View>
       </View>
+      <View style={styles.container}>
+        <Headline style={styles.title}>Status</Headline>
+        <View style={styles.optionsContainer}>
+          <ToggleLink key="maintained" query={query} paramName="maintained" title="Maintained" />
+        </View>
+      </View>
     </View>
   );
 };
@@ -120,12 +126,14 @@ export const Filters = (props: FiltersProps) => {
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: colors.gray1,
+    paddingVertical: 8,
     flex: 1,
     alignItems: 'center',
   },
   container: {
     width: '100%',
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
     maxWidth: layout.maxWidth,
   },
   optionsContainer: {
