@@ -846,7 +846,8 @@
     "githubUrl": "https://github.com/fuyaode/react-native-app-intro",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-lightbox",
@@ -1261,13 +1262,15 @@
     "githubUrl": "https://github.com/alinz/react-native-tabbar",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/KBLNY/react-native-message-bar",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/eyaleizenberg/react-native-floating-label-text-input",
@@ -1464,7 +1467,8 @@
     "githubUrl": "https://github.com/smore-inc/react-native-segment-io-analytics",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/xxsnakerxx/react-native-social-auth",
@@ -1568,7 +1572,8 @@
     "githubUrl": "https://github.com/walmartlabs/react-native-orientation-listener",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/kkjdaniel/react-native-device-display",
@@ -1592,7 +1597,8 @@
   {
     "githubUrl": "https://github.com/wix/react-native-wordpress-editor",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/umhan35/react-native-search-bar",
@@ -1601,7 +1607,8 @@
   {
     "githubUrl": "https://github.com/fixt/react-native-digits",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/chrisfisher/react-native-directed-scrollview",
@@ -1662,7 +1669,8 @@
   },
   {
     "githubUrl": "https://github.com/Anthonyzou/react-native-image-zoom",
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/chirag04/react-native-tooltip",
@@ -1757,7 +1765,8 @@
     "githubUrl": "https://github.com/beefe/react-native-popup",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-image-resizer",
@@ -1774,7 +1783,8 @@
     "githubUrl": "https://github.com/magicismight/react-native-lazyload",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/jineshshah36/react-native-nav",
@@ -1792,7 +1802,8 @@
   {
     "githubUrl": "https://github.com/AlbertBrand/react-native-android-tablayout",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-listview",
