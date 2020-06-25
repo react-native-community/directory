@@ -1,12 +1,13 @@
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
-import Router from 'next/router';
+
+import { layout, colors, P } from '../common/styleguide';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { layout, colors, P } from '../common/styleguide';
-import { Search as SearchIcon } from './Icons';
 import { Filters, FilterButton } from './Filters';
+import { Search as SearchIcon } from './Icons';
 import { SortButton } from './Sort';
 
 type Props = {
