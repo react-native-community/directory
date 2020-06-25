@@ -1,6 +1,7 @@
 import emoji from 'node-emoji';
 import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
+import Linkify from 'react-simple-linkify';
 
 import { colors, layout, A, Label, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
@@ -49,7 +50,11 @@ export default function Library(props: Props) {
         </View>
         {!isEmptyOrNull(library.github.description) && (
           <View style={styles.verticalMargin}>
-            <Caption>{emoji.emojify(library.github.description)}</Caption>
+            <Caption>
+              <Linkify component={({ url }) => <A href={url}>{url}</A>}>
+                {emoji.emojify(library.github.description)}
+              </Linkify>
+            </Caption>
           </View>
         )}
         {library.examples && library.examples.length ? (
