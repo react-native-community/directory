@@ -5,7 +5,12 @@ export const handleFilterLibraries = ({
   queryTopic,
   querySearch,
   support,
-  maintained,
+  hasExample,
+  hasImage,
+  isMaintained,
+  isPopular,
+  isRecommended,
+  wasRecentlyUpdated,
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -42,7 +47,27 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (maintained && library.unmaintained) {
+    if (hasExample && (!library.examples || !library.examples.length)) {
+      return false;
+    }
+
+    if (hasImage && (!library.images || !library.images.length)) {
+      return false;
+    }
+
+    if (isMaintained && library.unmaintained) {
+      return false;
+    }
+
+    if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
+      return false;
+    }
+
+    if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
+      return false;
+    }
+
+    if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
       return false;
     }
 

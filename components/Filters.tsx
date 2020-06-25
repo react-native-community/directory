@@ -70,7 +70,15 @@ function ToggleLink({ query, paramName, title }) {
 
 export const FilterButton = (props: FilterButtonProps) => {
   const { isFilterVisible, query, onPress } = props;
-  const params = [...platforms.map(platform => platform.param), 'maintained'];
+  const params = [
+    ...platforms.map(platform => platform.param),
+    'hasExample',
+    'hasImage',
+    'isMaintained',
+    'isPopular',
+    'isRecommended',
+    'wasRecentlyUpdated',
+  ];
   const filterCount = Object.keys(query).reduce(
     (acc, q) => (params.includes(q) ? acc + 1 : acc),
     0
@@ -116,7 +124,27 @@ export const Filters = (props: FiltersProps) => {
       <View style={styles.container}>
         <Headline style={styles.title}>Status</Headline>
         <View style={styles.optionsContainer}>
-          <ToggleLink key="maintained" query={query} paramName="maintained" title="Maintained" />
+          <ToggleLink key="hasExample" query={query} paramName="hasExample" title="Has example" />
+          <ToggleLink key="hasImage" query={query} paramName="hasImage" title="Has image preview" />
+          <ToggleLink
+            key="isMaintained"
+            query={query}
+            paramName="isMaintained"
+            title="Maintained"
+          />
+          <ToggleLink key="isPopular" query={query} paramName="isPopular" title="Popular" />
+          <ToggleLink
+            key="wasRecentlyUpdated"
+            query={query}
+            paramName="wasRecentlyUpdated"
+            title="Recently updated"
+          />
+          <ToggleLink
+            key="isRecommended"
+            query={query}
+            paramName="isRecommended"
+            title="Recommended"
+          />
         </View>
       </View>
     </View>

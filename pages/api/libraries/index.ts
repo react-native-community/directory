@@ -51,7 +51,12 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
       macos: req.query.macos,
       expo: req.query.expo,
     },
-    maintained: req.query.maintained,
+    hasExample: req.query.hasExample,
+    hasImage: req.query.hasImage,
+    isMaintained: req.query.isMaintained,
+    isPopular: req.query.isPopular,
+    isRecommended: req.query.isRecommended,
+    wasRecentlyUpdated: req.query.wasRecentlyUpdated,
   });
 
   let offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
