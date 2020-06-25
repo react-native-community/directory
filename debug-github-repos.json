@@ -4,6 +4,10 @@
     "expo": true
   },
   { "githubUrl": "https://github.com/gre/gl-react", "expo": true },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-barcode-scanner",
+    "expo": true
+  },
   { "githubUrl": "https://github.com/n4kz/react-native-pages", "expo": true },
   { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expo": true }
 ]

@@ -5,10 +5,9 @@ import path from 'path';
 
 import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
-import * as Sorting from '../util/sorting';
 import * as Strings from '../util/strings';
 import calculateScore from './calculate-score';
-import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
+import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import fetchNpmData from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 
@@ -84,7 +83,7 @@ const buildAndScoreData = async () => {
     projectList[index].topicSearchString = topicSearchString;
   });
 
-  const libraries = Sorting.updated(data);
+  const libraries = data;
 
   if (invalidRepos.length) {
     console.log(
@@ -146,7 +145,7 @@ async function loadRepositoryDataAsync() {
     githubResultsFileExists = true;
   } catch (e) {}
 
-  let { apiLimit, apiLimitRemaining } = await fetchGithubRateLimit();
+  let { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
   // 5000 requests per hour is the authenticated API request rate limi
   if (apiLimit < 5000) {
@@ -154,11 +153,15 @@ async function loadRepositoryDataAsync() {
   }
 
   // Error out if not enough remaining
-  if (apiLimitRemaining < data.length) {
+  if (apiLimitRemaining < data.length * apiLimitCost) {
     throw new Error('Not enough requests left on GitHub API rate limiting to proceed.');
   }
 
-  console.info(`${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour`);
+  console.info(
+    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request`
+  );
+
+  await loadGitHubLicenses();
 
   let result;
   if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {

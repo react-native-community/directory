@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import Library from '../components/Library';
+
 import data from '../assets/data.json';
+import Library from '../components/Library';
 
 export default () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+
 import data from '../build/data.json';
 import { PAGINATION_BREAKPOINT } from '../util/constants';
 

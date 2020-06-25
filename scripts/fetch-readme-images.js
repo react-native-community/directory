@@ -1,5 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import cheerio from 'cheerio';
+import fetch from 'isomorphic-fetch';
 
 const isLikelyUsefulImage = (image, githubUrl) => {
   let parentHref = image.parent().attr('href');
