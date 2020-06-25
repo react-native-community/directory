@@ -5399,5 +5399,21 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/benevbright/react-navigation-collapsible",
+    "examples": ["https://github.com/benevbright/react-navigation-collapsible/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-1.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-2.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample2.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
