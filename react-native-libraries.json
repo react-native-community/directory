@@ -3278,6 +3278,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-community/datetimepicker",
+    "npmPkg": "@react-native-community/datetimepicker",
     "ios": true,
     "android": true,
     "web": false,
@@ -3383,6 +3384,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-viewpager",
+    "npmPkg": "@react-native-community/viewpager",
     "ios": true,
     "android": true,
     "web": true,
@@ -5437,6 +5439,74 @@
     "ios": true,
     "android": true,
     "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/auth0/react-native-auth0",
+    "examples": ["https://github.com/auth0-samples/auth0-react-native-sample/tree/master/00-Login"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/avishayil/react-native-restart",
+    "examples": ["https://github.com/avishayil/react-native-restart/tree/master/Example"],
+    "images": [
+      "https://raw.githubusercontent.com/avishayil/react-native-restart/master/gif/ios.gif",
+      "https://raw.githubusercontent.com/avishayil/react-native-restart/master/gif/android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/hooks",
+    "npmPkg": "@react-native-community/hooks",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/marudy/react-native-responsive-screen",
+    "examples": ["https://github.com/marudy/react-native-responsive-screen/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Monte9/react-native-ratings",
+    "examples": [
+      "https://github.com/Monte9/react-native-ratings/tree/master/demo",
+      "https://expo.io/@monte9/react-native-ratings"
+    ],    
+    "images": [
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/tap_rating_1.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/tap_rating_2.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/swipe_rating_1.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/swipe_rating_2.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
     "expo": true,
     "windows": false,
     "macos": false,
