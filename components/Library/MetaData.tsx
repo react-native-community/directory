@@ -56,13 +56,6 @@ export function MetaData(props: Props) {
           ),
         }
       : null,
-    library.github.urls.homepage
-      ? {
-          id: 'web',
-          icon: <Web fill={colors.gray5} />,
-          content: <A href={library.github.urls.homepage}>Visit Website</A>,
-        }
-      : null,
     library.github.license
       ? {
           id: 'license',
@@ -73,6 +66,13 @@ export function MetaData(props: Props) {
             ) : (
               <A href={library.github.license.url}>{library.github.license.name}</A>
             ),
+        }
+      : null,
+    library.github.urls.homepage
+      ? {
+          id: 'web',
+          icon: <Web fill={colors.gray5} />,
+          content: <A href={library.github.urls.homepage}>Visit Website</A>,
         }
       : null,
   ].filter(Boolean);
