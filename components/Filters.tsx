@@ -70,9 +70,9 @@ function ToggleLink({ query, paramName, title }) {
 
 export const FilterButton = (props: FilterButtonProps) => {
   const { isFilterVisible, query, onPress } = props;
-  const platformParams = platforms.map(platform => platform.param);
+  const params = [...platforms.map(platform => platform.param), 'maintained'];
   const filterCount = Object.keys(query).reduce(
-    (acc, q) => (platformParams.includes(q) ? acc + 1 : acc),
+    (acc, q) => (params.includes(q) ? acc + 1 : acc),
     0
   );
 
@@ -149,7 +149,6 @@ const styles = StyleSheet.create({
         cursor: 'pointer',
       },
     }),
-    fontSize: 14,
     marginRight: 16,
     marginVertical: 4,
     alignItems: 'center',
