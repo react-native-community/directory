@@ -1993,6 +1993,8 @@
   },
   {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
+    "examples": ["https://github.com/mfrachet/rn-placeholder/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/mfrachet/rn-placeholder/master/assets/placeholder.gif"],
     "ios": true,
     "android": true,
     "expo": true
@@ -3044,6 +3046,7 @@
   },
   {
     "githubUrl": "https://github.com/ptomasroos/react-native-multi-slider",
+    "npmPkg": "@ptomasroos/react-native-multi-slider",
     "ios": true,
     "android": true,
     "web": true,
@@ -5523,6 +5526,69 @@
     "android": true,
     "web": false,
     "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Agontuk/react-native-geolocation-service",
+    "examples": ["https://github.com/Agontuk/react-native-geolocation-service/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/react-native-sensors/react-native-sensors",
+    "examples": [
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/BasicSensors",
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/GryoscopeImage",
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/KeepTheBallGame"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/computerjazz/react-native-draggable-flatlist",
+    "images": ["https://i.imgur.com/xHCylq1.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/hieuvp/react-native-fingerprint-scanner",
+    "examples": ["https://github.com/hieuvp/react-native-fingerprint-scanner/tree/master/examples"],
+    "images": [
+      "https://raw.githubusercontent.com/hieuvp/react-native-fingerprint-scanner/master/screenshots/ios-authentication.gif",
+      "https://raw.githubusercontent.com/hieuvp/react-native-fingerprint-scanner/master/screenshots/android-authentication.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
+    "examples": ["https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
     "windows": false,
     "macos": false,
     "unmaintained": false
