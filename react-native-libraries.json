@@ -5511,5 +5511,20 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/xamous/react-native-smooth-pincode-input",
+    "npmPkg": "react-native-smooth-pincode-input",
+    "examples": [
+      "https://github.com/xamous/react-native-smooth-pincode-input#examples",
+      "https://github.com/xamous/react-native-smooth-pincode-input/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
