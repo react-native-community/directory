@@ -10135,6 +10135,11 @@ react-refresh@^0.4.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.4.3.tgz#966f1750c191672e76e16c2efa569150cc73ab53"
   integrity sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==
 
+react-simple-linkify@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-simple-linkify/-/react-simple-linkify-1.0.3.tgz#b987594dc160d8364631e62cbd820fdae4d782fb"
+  integrity sha512-rTYVHvyhDYnsaqNiDdWSHUU03IeY97e6N/6vZn1ZZurZiMqNzBe0rfUeyCqO5mY3rg1X7fpnWkwQxIOifejKKw==
+
 react-timer-mixin@^0.13.4:
   version "0.13.4"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
