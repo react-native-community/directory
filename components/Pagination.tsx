@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import * as React from 'react';
 import { StyleSheet, View, ViewStyle, TouchableOpacity } from 'react-native';
-import Link from 'next/link';
+
 import { colors, Caption } from '../common/styleguide';
 import { Query } from '../types';
-import { Arrow } from './Icons';
-import urlWithQuery from '../util/urlWithQuery';
 import { NUM_PER_PAGE } from '../util/Constants';
+import urlWithQuery from '../util/urlWithQuery';
+import { Arrow } from './Icons';
 
 type Props = {
   query: Query;

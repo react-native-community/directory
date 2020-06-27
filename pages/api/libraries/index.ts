@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import Cors from 'micro-cors';
 import drop from 'lodash/drop';
 import take from 'lodash/take';
+import Cors from 'micro-cors';
+import { NextApiRequest, NextApiResponse } from 'next';
 
+import Data from '../../../assets/data.json';
+import { NUM_PER_PAGE } from '../../../util/Constants';
 import { handleFilterLibraries } from '../../../util/search';
 import * as Sorting from '../../../util/sorting';
-import { NUM_PER_PAGE } from '../../../util/Constants';
-import Data from '../../../assets/data.json';
 
 const originalData = [...Data.libraries];
 const SortedData = {

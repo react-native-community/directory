@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { H1, H2, H3, P, Headline, A, colors } from '../common/styleguide';
+import { H1, H2, P, Headline, A, colors } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 
 // type Props = {};

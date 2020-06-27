@@ -1,10 +1,11 @@
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { StyleSheet, View, Picker } from 'react-native';
-import Router from 'next/router';
-import { Query } from '../types';
+
 import { colors, P } from '../common/styleguide';
-import { Sort as SortIcon } from './Icons';
+import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
+import { Sort as SortIcon } from './Icons';
 
 type SortButtonProps = {
   query: Query;

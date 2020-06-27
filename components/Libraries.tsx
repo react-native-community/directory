@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+
 import { H3, A } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
 import Library from './Library';

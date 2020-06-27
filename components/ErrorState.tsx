@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import { H2, A } from '../common/styleguide';
 
 export default ({ statusCode }) => {

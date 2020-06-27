@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import * as React from 'react';
 import { Platform, StyleSheet, View, CheckBox } from 'react-native';
-import Link from 'next/link';
+
+import { colors, P, Headline, layout } from '../common/styleguide';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { colors, P, Headline, layout } from '../common/styleguide';
 import { Button } from './Button';
 import { Filter as FilterIcon } from './Icons';
 
