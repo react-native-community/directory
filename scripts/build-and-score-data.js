@@ -83,8 +83,6 @@ const buildAndScoreData = async () => {
     projectList[index].topicSearchString = topicSearchString;
   });
 
-  const libraries = data;
-
   if (invalidRepos.length) {
     console.log(
       '** The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
@@ -98,7 +96,7 @@ const buildAndScoreData = async () => {
   return jsonfile.writeFile(
     path.resolve('assets', 'data.json'),
     {
-      libraries,
+      libraries: data,
       topics: topicCounts,
       topicsList: Object.keys(topicCounts).sort(),
     },

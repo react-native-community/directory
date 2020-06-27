@@ -11,10 +11,8 @@ import Search from '../components/Search';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
-export default function App(props) {
-  const { data, query } = props;
+const Index = ({ data, query }) => {
   const router = useRouter();
-
   return (
     <>
       <Search query={router.query} total={data && data.total} />
@@ -27,9 +25,9 @@ export default function App(props) {
       </ContentContainer>
     </>
   );
-}
+};
 
-App.getInitialProps = async (ctx: NextPageContext) => {
+Index.getInitialProps = async (ctx: NextPageContext) => {
   let url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
   let response = await fetch(url);
   let result = await response.json();
@@ -46,3 +44,5 @@ const styles = StyleSheet.create({
     padding: 16,
   },
 });
+
+export default Index;

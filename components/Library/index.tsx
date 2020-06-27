@@ -40,8 +40,10 @@ export default function Library(props: Props) {
         {library.unmaintained ? (
           <View style={styles.unmaintainedTextWrapper}>
             <View style={styles.unmaintainedTextContainer}>
-              <Warning width={15} height={15} />
-              <Label style={styles.unmaintainedText}>This library is not actively maintained</Label>
+              <Warning width={16} height={16} />
+              <Label style={styles.unmaintainedText}>
+                This library is not actively maintained!
+              </Label>
             </View>
           </View>
         ) : null}
@@ -61,7 +63,7 @@ export default function Library(props: Props) {
           <View style={[styles.displayHorizontal, styles.verticalMargin]}>
             <Caption>Code Examples: </Caption>
             {library.examples.map((example, index) => (
-              <A target="blank" key={example} style={{ marginRight: 6 }} href={example}>
+              <A target="blank" key={example} style={styles.exampleLink} href={example}>
                 <Caption>#{index + 1}</Caption>
               </A>
             ))}
@@ -129,12 +131,15 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  exampleLink: {
+    marginRight: 6,
+  },
   recommendedContainer: {
     paddingVertical: 4,
-    paddingHorizontal: 6,
-    backgroundColor: colors.powder,
+    paddingHorizontal: 8,
+    backgroundColor: colors.primaryLight,
     borderRadius: 2,
-    marginLeft: 8,
+    marginLeft: 10,
     top: 1,
   },
   recommendedTextContainer: {
@@ -142,7 +147,7 @@ let styles = StyleSheet.create({
     alignItems: 'center',
   },
   recommendedText: {
-    marginLeft: 4,
+    marginLeft: 6,
   },
   unmaintainedTextWrapper: {
     flexDirection: 'row',
@@ -151,15 +156,16 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 8,
+    marginLeft: -16,
+    marginBottom: 2,
     backgroundColor: colors.warningLight,
-    borderColor: colors.warning,
-    borderWidth: 1,
-    paddingHorizontal: 6,
-    paddingVertical: 4,
+    paddingLeft: 16,
+    paddingRight: 12,
+    paddingVertical: 6,
     borderRadius: 2,
   },
   unmaintainedText: {
-    marginLeft: 4,
+    marginLeft: 6,
     color: colors.warningDark,
   },
   verticalMargin: {
