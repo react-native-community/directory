@@ -4,7 +4,6 @@ import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import Favicon from '../components/Favicon';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
@@ -22,7 +21,6 @@ const App = ({ pageProps, Component }) => {
           <Head>
             <title>React Native Directory</title>
           </Head>
-          <Favicon />
           <Header />
           <Component {...pageProps} />
           <Footer />
