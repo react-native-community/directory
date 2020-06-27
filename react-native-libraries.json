@@ -846,7 +846,8 @@
     "githubUrl": "https://github.com/fuyaode/react-native-app-intro",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-lightbox",
@@ -1261,13 +1262,15 @@
     "githubUrl": "https://github.com/alinz/react-native-tabbar",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/KBLNY/react-native-message-bar",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/eyaleizenberg/react-native-floating-label-text-input",
@@ -1464,7 +1467,8 @@
     "githubUrl": "https://github.com/smore-inc/react-native-segment-io-analytics",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/xxsnakerxx/react-native-social-auth",
@@ -1568,7 +1572,8 @@
     "githubUrl": "https://github.com/walmartlabs/react-native-orientation-listener",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/kkjdaniel/react-native-device-display",
@@ -1592,7 +1597,8 @@
   {
     "githubUrl": "https://github.com/wix/react-native-wordpress-editor",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/umhan35/react-native-search-bar",
@@ -1601,7 +1607,8 @@
   {
     "githubUrl": "https://github.com/fixt/react-native-digits",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/chrisfisher/react-native-directed-scrollview",
@@ -1627,7 +1634,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mvayngrib/rn-nodeify",
+    "githubUrl": "https://github.com/tradle/rn-nodeify",
     "ios": true,
     "android": true
   },
@@ -1662,7 +1669,8 @@
   },
   {
     "githubUrl": "https://github.com/Anthonyzou/react-native-image-zoom",
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/chirag04/react-native-tooltip",
@@ -1757,7 +1765,8 @@
     "githubUrl": "https://github.com/beefe/react-native-popup",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-image-resizer",
@@ -1774,7 +1783,8 @@
     "githubUrl": "https://github.com/magicismight/react-native-lazyload",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/jineshshah36/react-native-nav",
@@ -1792,7 +1802,8 @@
   {
     "githubUrl": "https://github.com/AlbertBrand/react-native-android-tablayout",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-listview",
@@ -1982,6 +1993,8 @@
   },
   {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
+    "examples": ["https://github.com/mfrachet/rn-placeholder/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/mfrachet/rn-placeholder/master/assets/placeholder.gif"],
     "ios": true,
     "android": true,
     "expo": true
@@ -3033,6 +3046,7 @@
   },
   {
     "githubUrl": "https://github.com/ptomasroos/react-native-multi-slider",
+    "npmPkg": "@ptomasroos/react-native-multi-slider",
     "ios": true,
     "android": true,
     "web": true,
@@ -3267,6 +3281,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-community/datetimepicker",
+    "npmPkg": "@react-native-community/datetimepicker",
     "ios": true,
     "android": true,
     "web": false,
@@ -3372,6 +3387,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-community/react-native-viewpager",
+    "npmPkg": "@react-native-community/viewpager",
     "ios": true,
     "android": true,
     "web": true,
@@ -5310,7 +5326,7 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/mvayngrib/react-native-crypto",
+    "githubUrl": "https://github.com/tradle/react-native-crypto",
     "ios": true,
     "android": true,
     "web": false,
@@ -5396,6 +5412,183 @@
     "android": true,
     "web": false,
     "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/benevbright/react-navigation-collapsible",
+    "examples": ["https://github.com/benevbright/react-navigation-collapsible/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-1.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-2.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample2.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/shahnawaz/react-native-barcode-mask",
+    "npmPkg": "react-native-barcode-mask",
+    "examples": [
+      "https://github.com/shahnawaz/react-native-barcode-mask#examples",
+      "https://gist.github.com/shahnawaz/d24ae843fc3a6056bef9c752d9b35e03"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/auth0/react-native-auth0",
+    "examples": ["https://github.com/auth0-samples/auth0-react-native-sample/tree/master/00-Login"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/avishayil/react-native-restart",
+    "examples": ["https://github.com/avishayil/react-native-restart/tree/master/Example"],
+    "images": [
+      "https://raw.githubusercontent.com/avishayil/react-native-restart/master/gif/ios.gif",
+      "https://raw.githubusercontent.com/avishayil/react-native-restart/master/gif/android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/hooks",
+    "npmPkg": "@react-native-community/hooks",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/marudy/react-native-responsive-screen",
+    "examples": ["https://github.com/marudy/react-native-responsive-screen/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Monte9/react-native-ratings",
+    "examples": [
+      "https://github.com/Monte9/react-native-ratings/tree/master/demo",
+      "https://expo.io/@monte9/react-native-ratings"
+    ],    
+    "images": [
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/tap_rating_1.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/tap_rating_2.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/swipe_rating_1.png",
+      "https://raw.githubusercontent.com/Monte9/react-native-ratings/master/resources/swipe_rating_2.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/xamous/react-native-smooth-pincode-input",
+    "npmPkg": "react-native-smooth-pincode-input",
+    "examples": [
+      "https://github.com/xamous/react-native-smooth-pincode-input#examples",
+      "https://github.com/xamous/react-native-smooth-pincode-input/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Agontuk/react-native-geolocation-service",
+    "examples": ["https://github.com/Agontuk/react-native-geolocation-service/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/react-native-sensors/react-native-sensors",
+    "examples": [
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/BasicSensors",
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/GryoscopeImage",
+      "https://github.com/react-native-sensors/react-native-sensors/tree/master/examples/KeepTheBallGame"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/computerjazz/react-native-draggable-flatlist",
+    "images": ["https://i.imgur.com/xHCylq1.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/hieuvp/react-native-fingerprint-scanner",
+    "examples": ["https://github.com/hieuvp/react-native-fingerprint-scanner/tree/master/examples"],
+    "images": [
+      "https://raw.githubusercontent.com/hieuvp/react-native-fingerprint-scanner/master/screenshots/ios-authentication.gif",
+      "https://raw.githubusercontent.com/hieuvp/react-native-fingerprint-scanner/master/screenshots/android-authentication.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  }, 
+  {
+    "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
+    "examples": ["https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
     "windows": false,
     "macos": false,
     "unmaintained": false

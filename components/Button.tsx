@@ -1,6 +1,7 @@
+import { A } from '@expo/html-elements';
 import React, { ReactNode } from 'react';
 import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
-import { A } from '@expo/html-elements';
+
 import { colors, P } from '../common/styleguide';
 
 type Props = {

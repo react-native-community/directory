@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Library } from '../types';
+
 import { colors, Label } from '../common/styleguide';
+import { Library } from '../types';
 import { Check } from './Icons';
 
 type Props = {

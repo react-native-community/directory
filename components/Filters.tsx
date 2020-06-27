@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import * as React from 'react';
 import { Platform, StyleSheet, View, CheckBox } from 'react-native';
-import Link from 'next/link';
+
+import { colors, P, Headline, layout } from '../common/styleguide';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { colors, P, Headline, layout } from '../common/styleguide';
 import { Button } from './Button';
 import { Filter as FilterIcon } from './Icons';
 
@@ -70,9 +71,9 @@ function ToggleLink({ query, paramName, title }) {
 
 export const FilterButton = (props: FilterButtonProps) => {
   const { isFilterVisible, query, onPress } = props;
-  const platformParams = platforms.map(platform => platform.param);
+  const params = [...platforms.map(platform => platform.param), 'maintained'];
   const filterCount = Object.keys(query).reduce(
-    (acc, q) => (platformParams.includes(q) ? acc + 1 : acc),
+    (acc, q) => (params.includes(q) ? acc + 1 : acc),
     0
   );
 
@@ -113,6 +114,12 @@ export const Filters = (props: FiltersProps) => {
           ))}
         </View>
       </View>
+      <View style={styles.container}>
+        <Headline style={styles.title}>Status</Headline>
+        <View style={styles.optionsContainer}>
+          <ToggleLink key="maintained" query={query} paramName="maintained" title="Maintained" />
+        </View>
+      </View>
     </View>
   );
 };
@@ -120,12 +127,14 @@ export const Filters = (props: FiltersProps) => {
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: colors.gray1,
+    paddingVertical: 8,
     flex: 1,
     alignItems: 'center',
   },
   container: {
     width: '100%',
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
     maxWidth: layout.maxWidth,
   },
   optionsContainer: {
@@ -141,7 +150,6 @@ const styles = StyleSheet.create({
         cursor: 'pointer',
       },
     }),
-    fontSize: 14,
     marginRight: 16,
     marginVertical: 4,
     alignItems: 'center',

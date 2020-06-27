@@ -1,10 +1,16 @@
 import { isEmptyOrNull } from './strings';
 
-export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, support }) => {
+export const handleFilterLibraries = ({
+  libraries,
+  queryTopic,
+  querySearch,
+  support,
+  maintained,
+}) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  let filtered = libraries.filter(library => {
+  return libraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -33,6 +39,10 @@ export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, supp
     }
 
     if (support.expo && typeof library.expo === 'string') {
+      return false;
+    }
+
+    if (maintained && library.unmaintained) {
       return false;
     }
 
@@ -69,6 +79,4 @@ export const handleFilterLibraries = ({ libraries, queryTopic, querySearch, supp
 
     return isTopicMatch && isSearchMatch;
   });
-
-  return filtered;
 };

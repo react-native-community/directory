@@ -224,6 +224,17 @@ export function Thumbnail({ width = 16, height = 16, fill = colors.gray3 }: Prop
   );
 }
 
+export function License({ width = 16, height = 18, fill = colors.black }: Props) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 16 18" fill="none">
+      <Path
+        fill={fill}
+        d="M0,0v18h16V0H0z M14,15.9H2V3.1h12C14,3.1,14,15.9,14,15.9z M12,13H4v-1h8V13z M12,10.5H4v-1h8V10.5z M12,8H4V7h8V8z"
+      />
+    </Svg>
+  );
+}
+
 export function Warning({ width = 17, height = 17, fill = colors.warningDark }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 25 25" fill="none">
