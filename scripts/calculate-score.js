@@ -35,7 +35,10 @@ const modifiers = [
   {
     name: 'GPL license',
     value: -20,
-    condition: data => data.license && data.license.key && data.license.key.startsWith('gpl'),
+    condition: data =>
+      data.license &&
+      data.license.key &&
+      (data.license.key.startsWith('gpl') || data.license.key.startsWith('other')),
   },
   {
     name: 'Recently updated',
