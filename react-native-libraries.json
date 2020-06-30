@@ -3672,6 +3672,7 @@
       "https://snack.expo.io/@xcarpentier/giftedchat-playground",
       "https://reverent-bardeen-47c862.netlify.app/"
     ],
+    "images": ["https://thumbs.gfycat.com/AbsoluteSadDobermanpinscher-size_restricted.gif"],
     "npmPkg": "react-native-gifted-chat"
   },
   {
@@ -5594,13 +5595,14 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/Gil2015/react-native-table-component#readme",
+    "githubUrl": "https://github.com/Gil2015/react-native-table-component",
     "npmPkg": "react-native-table-component",
     "examples": [
       "https://github.com/Gil2015/react-native-table-component#example1",
       "https://github.com/Gil2015/react-native-table-component#example2",
       "https://github.com/Gil2015/react-native-table-component#example3"
     ],
+    "images": ["https://raw.githubusercontent.com/Gil2015/tools_file/master/img/react-native-table-component/example.jpg"],
     "ios": true,
     "android": true,
     "web": false,
