@@ -5639,5 +5639,19 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mohebifar/react-native-copilot",
+    "examples": [
+      "https://expo.io/@mohebifar/copilot-example",
+      "https://github.com/mohebifar/react-native-copilot/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
