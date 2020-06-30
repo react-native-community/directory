@@ -5621,5 +5621,23 @@
     "ios": true,
     "android": true,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/octopitus/rn-sliding-up-panel",
+    "examples": [
+      "https://expo.io/@octopitus/SlidingUpPanel",
+      "https://codesandbox.io/s/3440ox733m"
+    ],
+    "images": [
+      "https://github.com/octopitus/rn-sliding-up-panel/raw/master/demo/sliding_panel.gif",
+      "https://github.com/octopitus/rn-sliding-up-panel/raw/master/demo/bottom_sheet.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
