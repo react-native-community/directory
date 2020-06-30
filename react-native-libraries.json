@@ -3808,7 +3808,7 @@
     "ios": true,
     "android": true,
     "npmPkg": "react-native-dark-mode",
-    "unmaintained": false
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/DylanVann/react-native-fast-image",
@@ -5607,6 +5607,17 @@
     "expo": true,
     "windows": false,
     "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/codemotionapps/react-native-dynamic",
+    "examples": ["https://github.com/codemotionapps/react-native-dynamic/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.ios.gif"
+      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.android.gif"
+    ],
+    "ios": true,
+    "android": true,
     "unmaintained": false
   }
 ]
