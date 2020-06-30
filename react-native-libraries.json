@@ -5592,5 +5592,21 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Gil2015/react-native-table-component#readme",
+    "npmPkg": "react-native-table-component",
+    "examples": [
+      "https://github.com/Gil2015/react-native-table-component#example1",
+      "https://github.com/Gil2015/react-native-table-component#example2",
+      "https://github.com/Gil2015/react-native-table-component#example3"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
