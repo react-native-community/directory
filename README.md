@@ -20,17 +20,21 @@ Sure, go for it!
 
 - Returns a list of all libraries in `JSON` format.
 
-`https://reactnative.directory?search=webgl`
+`https://reactnative.directory/api/libraries?search=webgl`
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
 
-`https://reactnative.directory?search=webgl&expo=true`
+`https://reactnative.directory/api/libraries?search=webgl&expo=true`
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed.
 
-`https://reactnative.directory?search=webgl&expo=true&android=true`
+`https://reactnative.directory/api/libraries?search=webgl&expo=true&android=true`
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed and Android.
+
+`https://reactnative.directory/api/libraries?search=webgl&expo=true&android=true&isPopular=true`
+
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo managed and Android and are popular based on the scoring criterion.
 
 ## I don't like how you calculate health scores.
 
@@ -60,16 +64,16 @@ Please follow this format and indentation:
 },
 ```
 
-- `githubUrl` - where we can find the repository on GitHub. currently other git hosts are not supported.
+- `githubUrl` - where we can find the repository on GitHub (currently other git hosts are not supported).
 - `npmPkg` - optional string of the package's display name.
 - `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
-- `images` - optional array of images that will show up in the listing to preview the library functionality
+- `images` - optional array of images that will show up in the listing to preview the library functionality.
 - `ios` - works on iOS phones.
 - `android` - works on Android phones.
 - `web` - can be used in the browser.
 - `expo` - can be used in managed workflow, without ejecting an Expo application (any library can be used if you eject).
-- `windows` - can be used with react-native-windows.
-- `macos` - can be used with react-native-macos.
+- `windows` - can be used with `react-native-windows`.
+- `macos` - can be used with `react-native-macos`.
 - `unmaintained` - optional boolean to signify that a library is or is not maintained.
 
 > _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
