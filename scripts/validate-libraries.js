@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 import libraries from '../react-native-libraries.json';
 
-const GITHUB_URL_PATTERN = /https:\/\/github\.com\/[\w\d-_]*\/[\w\d-_]*/g;
+const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w-]+\/[\w-]+(\/tree\/[\w-\\/\\.]+)?$/g;
 
 const validateLibrariesFormat = libraries => {
   console.log('Checking all libraries have the correct format');
@@ -17,7 +17,7 @@ const validateLibrariesFormat = libraries => {
       libraryErrors.push('Must contain a githubUrl property');
     } else if (!library.githubUrl.match(GITHUB_URL_PATTERN)) {
       libraryErrors.push(
-        'The githubUrl must be in the format: https://github.com/react-community/react-navigation'
+        `The githubUrl of ${library.githubUrl} must be in the format: https://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
       );
     }
 
