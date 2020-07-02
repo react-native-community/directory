@@ -5639,5 +5639,20 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/react-native-app-auth",
+    "npmPkg": "react-native-app-auth",
+    "examples": [
+      "https://github.com/FormidableLabs/react-native-app-auth/tree/master/Example",
+      "https://github.com/FormidableLabs/react-native-app-auth/tree/master/Example#react-native-app-auth-example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
