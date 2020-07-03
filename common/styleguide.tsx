@@ -29,6 +29,7 @@ export const colors = {
   gray7: '#21232A',
   black: '#1a1a1a',
   white: '#ffffff',
+  warning: '#FFD093',
   warningLight: '#ffebcf',
   warningDark: '#995e00',
 };
