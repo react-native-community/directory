@@ -15,6 +15,7 @@ export const layout = {
 
 export const colors = {
   primary: '#61DAFB',
+  primaryLight: '#c1f4ff',
   primaryDark: '#39BEE2',
   sky: '#C6EEFB',
   powder: '#EEFAFE',
@@ -29,8 +30,8 @@ export const colors = {
   black: '#1a1a1a',
   white: '#ffffff',
   warning: '#FFD093',
-  warningLight: '#FFE9C8',
-  warningDark: '#B77800',
+  warningLight: '#ffebcf',
+  warningDark: '#995e00',
 };
 
 const baseTextStyles = {

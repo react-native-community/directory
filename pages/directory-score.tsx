@@ -4,9 +4,7 @@ import { StyleSheet } from 'react-native';
 import { H1, H2, P, Headline, A, colors } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 
-// type Props = {};
-
-function DirectoryScore(props) {
+const DirectoryScore = () => {
   return (
     <ContentContainer style={styles.container}>
       <H1 style={styles.header}>Directory Score</H1>
@@ -63,7 +61,7 @@ function DirectoryScore(props) {
       </P>
     </ContentContainer>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

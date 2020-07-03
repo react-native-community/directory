@@ -3,12 +3,12 @@ import take from 'lodash/take';
 import Cors from 'micro-cors';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import Data from '../../../assets/data.json';
+import { libraries } from '../../../assets/data.json';
 import { NUM_PER_PAGE } from '../../../util/Constants';
 import { handleFilterLibraries } from '../../../util/search';
 import * as Sorting from '../../../util/sorting';
 
-const originalData = [...Data.libraries];
+const originalData = [...libraries];
 const SortedData = {
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],
