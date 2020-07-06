@@ -5672,5 +5672,19 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/vadimdemedes/tailwind-rn.git",
+    "npmPkg": "tailwind-rn",
+    "examples": [
+      "https://github.com/vadimdemedes/tailwind-rn#usage"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
