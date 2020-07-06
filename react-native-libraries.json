@@ -3639,6 +3639,13 @@
   },
   {
     "githubUrl": "https://github.com/torgeadelin/react-native-animated-nav-tab-bar",
+    "examples": ["https://github.com/torgeadelin/react-native-animated-nav-tab-bar/tree/master/example"],
+    "images": [
+      "https://i.imgur.com/lRG92ds.gif",
+      "https://raw.githubusercontent.com/torgeadelin/react-native-animated-nav-tab-bar/glitch-fix-refactor/demo1.png",
+      "https://raw.githubusercontent.com/torgeadelin/react-native-animated-nav-tab-bar/glitch-fix-refactor/demo2.png",
+      "https://raw.githubusercontent.com/torgeadelin/react-native-animated-nav-tab-bar/glitch-fix-refactor/demo3.png"
+    ],
     "ios": true,
     "android": true,
     "web": false,
