@@ -3192,7 +3192,7 @@
     "githubUrl": "https://github.com/react-native-community/segmented-control",
     "ios": true,
     "android": true,
-    "expo": false,
+    "expo": true,
     "web": true,
     "windows": false,
     "npmPkg": "@react-native-community/segmented-control"
@@ -3481,7 +3481,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": false,
+    "expo": true,
     "windows": true,
     "unmaintained": false,
     "npmPkg": "@react-native-community/picker"
@@ -5108,7 +5108,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-toolkit/triangle",
