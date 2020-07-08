@@ -235,6 +235,21 @@ export function License({ width = 16, height = 18, fill = colors.black }: Props)
   );
 }
 
+export function Fork({ width = 15, height = 16, fill = colors.black }: Props) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 15 16" fill="none">
+      <Path
+        fill={fill}
+        d="M8.5,10.8V8l4.7-5l0,2.3H15V0H9.7v1.8H12L7.5,6.5L3,1.8h2.3V0H0v5.3h1.8V3l4.7,5v2.9"
+      />
+      <Path
+        fill={fill}
+        d="M10.7,12.8c0,1.8-1.4,3.2-3.2,3.2s-3.2-1.4-3.2-3.2s1.4-3.2,3.2-3.2S10.7,11.1,10.7,12.8z M7.5,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4S8.3,11.4,7.5,11.4z"
+      />
+    </Svg>
+  );
+}
+
 export function Warning({ width = 17, height = 17, fill = colors.warningDark }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 25 25" fill="none">

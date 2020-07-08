@@ -29,9 +29,23 @@ const Thumbnail = ({ url }: Props) => {
     <>
       <a
         ref={iconRef}
-        onMouseOver={handleMouseEvent}
-        onMouseOut={handleMouseEvent}
-        style={{ marginRight: 15, marginBottom: 8 }}>
+        onMouseEnter={handleMouseEvent}
+        onMouseLeave={handleMouseEvent}
+        style={{
+          marginRight: 10,
+          marginTop: 4,
+          marginBottom: 4,
+          padding: 6,
+          paddingBottom: 0,
+          minHeight: 30,
+          boxSizing: 'border-box',
+          overflow: 'hidden',
+          textAlign: 'center',
+          borderWidth: 1,
+          borderRadius: 3,
+          borderColor: colors.gray2,
+          borderStyle: 'solid',
+        }}>
         <ThumbnailIcon fill={showPreview ? colors.primary : undefined} />
       </a>
       {createPortal(
