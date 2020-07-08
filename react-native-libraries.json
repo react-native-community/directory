@@ -5686,5 +5686,15 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/charpeni/react-native-url-polyfill",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
