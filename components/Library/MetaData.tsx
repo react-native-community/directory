@@ -4,90 +4,118 @@ import { StyleSheet, View } from 'react-native';
 import { colors, A, P, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { Calendar, Star, Download, Issue, Web, License } from '../Icons';
+import { Calendar, Star, Download, Issue, Web, License, Fork } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
   library: LibraryType;
+  secondary?: boolean;
 };
 
 export function MetaData(props: Props) {
-  const { library } = props;
+  const { library, secondary } = props;
+  const { github } = library;
 
-  const data = [
-    {
-      id: 'score',
-      icon: <DirectoryScore score={library.score} />,
-      content: (
-        <A target="" href="/directory-score" style={styles.directoryScoreLink}>
-          Directory Score
-        </A>
-      ),
-    },
-    {
-      id: 'calendar',
-      icon: <Calendar fill={colors.gray5} />,
-      content: `Updated ${getTimeSinceToday(library.github.stats.pushedAt)}`,
-    },
-    {
-      id: 'star',
-      icon: <Star fill={colors.gray5} />,
-      content: `${library.github.stats.stars.toLocaleString()} stars`,
-    },
-    library.npm.downloads
-      ? {
-          id: 'downloads',
-          icon: <Download fill={colors.gray5} />,
+  const data = secondary
+    ? [
+        github.urls.homepage
+          ? {
+              id: 'web',
+              icon: <Web fill="#afb1af" width={16} height={16} />,
+              content: (
+                <A href={github.urls.homepage} style={[styles.mutedLink, styles.secondaryText]}>
+                  Website
+                </A>
+              ),
+            }
+          : null,
+        github.license
+          ? {
+              id: 'license',
+              icon: <License fill="#afb1af" width={14} height={16} />,
+              content:
+                github.license.name === 'Other' ? (
+                  <P style={styles.secondaryText}>Unrecognized License</P>
+                ) : (
+                  <A href={github.license.url} style={[styles.mutedLink, styles.secondaryText]}>
+                    {github.license.name}
+                  </A>
+                ),
+            }
+          : null,
+      ]
+    : [
+        {
+          id: 'score',
+          icon: <DirectoryScore score={library.score} />,
           content: (
-            <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
-              {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
+            <A target="" href="/directory-score" style={styles.mutedLink}>
+              Directory Score
             </A>
           ),
-        }
-      : null,
-    library.github.stats.issues
-      ? {
-          id: 'issues',
-          icon: <Issue fill={colors.gray5} />,
-          content: (
-            <A href={`${library.github.urls.repo}/issues`}>
-              {`${library.github.stats.issues.toLocaleString()}`} issues
-            </A>
-          ),
-        }
-      : null,
-    library.github.license
-      ? {
-          id: 'license',
-          icon: <License fill={colors.gray5} />,
-          content:
-            library.github.license.name === 'Other' ? (
-              <P>Unrecognized License</P>
-            ) : (
-              <A href={library.github.license.url}>{library.github.license.name}</A>
-            ),
-        }
-      : null,
-    library.github.urls.homepage
-      ? {
-          id: 'web',
-          icon: <Web fill={colors.gray5} />,
-          content: <A href={library.github.urls.homepage}>Visit Website</A>,
-        }
-      : null,
-  ].filter(Boolean);
+        },
+        {
+          id: 'calendar',
+          icon: <Calendar fill={colors.gray5} />,
+          content: `Updated ${getTimeSinceToday(github.stats.pushedAt)}`,
+        },
+        library.npm.downloads
+          ? {
+              id: 'downloads',
+              icon: <Download fill={colors.gray5} />,
+              content: (
+                <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
+                  {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
+                </A>
+              ),
+            }
+          : null,
+        {
+          id: 'star',
+          icon: <Star fill={colors.gray5} />,
+          content: `${github.stats.stars.toLocaleString()} stars`,
+        },
+        github.stats.forks
+          ? {
+              id: 'forks',
+              icon: <Fork fill={colors.gray5} width={16} height={17} />,
+              content: (
+                <A href={`${github.urls.repo}/network/members`}>
+                  {`${github.stats.forks.toLocaleString()}`} forks
+                </A>
+              ),
+            }
+          : null,
+        github.stats.issues
+          ? {
+              id: 'issues',
+              icon: <Issue fill={colors.gray5} />,
+              content: (
+                <A href={`${github.urls.repo}/issues`}>
+                  {`${github.stats.issues.toLocaleString()}`} issues
+                </A>
+              ),
+            }
+          : null,
+      ];
 
   return (
-    <View>
-      {data.map((datum, i) => (
+    <>
+      {data.filter(Boolean).map((datum, i) => (
         <View
           key={datum.id}
-          style={[styles.displayHorizontal, i + 1 !== data.length ? styles.datumContainer : {}]}>
-          <View style={styles.iconContainer}>{datum.icon}</View>
+          style={[
+            styles.displayHorizontal,
+            i + 1 !== data.length ? styles.datumContainer : {},
+            secondary ? styles.secondaryContainer : {},
+          ]}>
+          <View style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
+            {datum.icon}
+          </View>
           <Caption>{datum.content}</Caption>
         </View>
       ))}
-    </View>
+    </>
   );
 }
 
@@ -104,7 +132,18 @@ const styles = StyleSheet.create({
     width: 20,
     alignItems: 'center',
   },
-  directoryScoreLink: {
+  mutedLink: {
     backgroundColor: 'transparent',
+  },
+  secondaryText: {
+    fontSize: 13,
+    color: colors.gray5,
+  },
+  secondaryContainer: {
+    marginBottom: 0,
+    marginRight: 16,
+  },
+  secondaryIconContainer: {
+    marginRight: 6,
   },
 });

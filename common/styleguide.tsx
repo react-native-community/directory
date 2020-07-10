@@ -59,7 +59,7 @@ type TextProps = {
   ref?: RefObject<ReactNode>;
 };
 
-function createTextComponent(Element: any, textStyle?: TextStyle) {
+function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
   return (props: TextProps) => {
     const { children, style } = props;
     return <Element style={[textStyles[Element], textStyle, style]}>{children}</Element>;
@@ -78,7 +78,7 @@ export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = {
-  style?: TextStyle;
+  style?: TextStyle | TextStyle[];
   target?: string;
   href: string;
   children?: ReactNode;

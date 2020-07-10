@@ -21,6 +21,16 @@ export default function Library(props: Props) {
   return (
     <View style={[styles.container, layout.isSmallScreen() && styles.containerColumn]}>
       <View style={styles.columnOne}>
+        {library.unmaintained ? (
+          <View style={styles.unmaintainedTextWrapper}>
+            <View style={styles.unmaintainedTextContainer}>
+              <Warning width={16} height={16} />
+              <Label style={styles.unmaintainedText}>
+                This library is not actively maintained!
+              </Label>
+            </View>
+          </View>
+        ) : null}
         <View style={styles.displayHorizontal}>
           <A
             href={library.githubUrl || library.github.urls.repo}
@@ -37,16 +47,6 @@ export default function Library(props: Props) {
             </View>
           )}
         </View>
-        {library.unmaintained ? (
-          <View style={styles.unmaintainedTextWrapper}>
-            <View style={styles.unmaintainedTextContainer}>
-              <Warning width={16} height={16} />
-              <Label style={styles.unmaintainedText}>
-                This library is not actively maintained!
-              </Label>
-            </View>
-          </View>
-        ) : null}
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
@@ -76,6 +76,16 @@ export default function Library(props: Props) {
             ))}
           </View>
         ) : null}
+        {library.github.license || library.github.urls.homepage ? (
+          <>
+            <View style={styles.filler} />
+            <View style={styles.bottomBar}>
+              <View style={[styles.displayHorizontal, styles.secondaryStats]}>
+                <MetaData library={library} secondary />
+              </View>
+            </View>
+          </>
+        ) : null}
       </View>
       <View style={[styles.columnTwo, layout.isSmallScreen() && styles.columnTwoSmall]}>
         <MetaData library={library} />
@@ -91,6 +101,7 @@ let styles = StyleSheet.create({
     marginBottom: 16,
     borderRadius: 4,
     flexDirection: 'row',
+    overflow: 'hidden',
   },
   containerColumn: {
     flexDirection: 'column',
@@ -102,6 +113,7 @@ let styles = StyleSheet.create({
       },
     }),
     padding: 16,
+    paddingLeft: 20,
   },
   columnTwo: {
     ...Platform.select({
@@ -110,6 +122,7 @@ let styles = StyleSheet.create({
       },
     }),
     padding: 16,
+    paddingLeft: 18,
     borderLeftWidth: 1,
     borderLeftColor: colors.gray2,
   },
@@ -155,11 +168,10 @@ let styles = StyleSheet.create({
   unmaintainedTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 8,
-    marginLeft: -16,
-    marginBottom: 2,
+    marginLeft: -20,
+    marginBottom: 12,
     backgroundColor: colors.warningLight,
-    paddingLeft: 16,
+    paddingLeft: 20,
     paddingRight: 12,
     paddingVertical: 6,
     borderRadius: 2,
@@ -173,8 +185,28 @@ let styles = StyleSheet.create({
   },
   imagesContainer: {
     flexWrap: 'wrap',
-    marginTop: 20,
-    marginBottom: 12,
-    marginLeft: 2,
+    marginTop: 12,
+  },
+  secondaryStats: {
+    marginTop: 6,
+    flexWrap: 'wrap',
+  },
+  secondaryText: {
+    fontSize: 13,
+    color: colors.gray5,
+  },
+  bottomBar: {
+    width: '100%',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    minHeight: 42,
+    borderTopColor: colors.gray2,
+    paddingLeft: 20,
+    paddingRight: 16,
+  },
+  filler: {
+    flex: 1,
+    paddingBottom: 34,
   },
 });
