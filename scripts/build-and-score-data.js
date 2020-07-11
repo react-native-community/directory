@@ -80,7 +80,7 @@ const buildAndScoreData = async () => {
       });
     }
 
-    projectList[index].topicSearchString = topicSearchString;
+    projectList[index].topicSearchString = topicSearchString.trim();
   });
 
   if (invalidRepos.length) {
