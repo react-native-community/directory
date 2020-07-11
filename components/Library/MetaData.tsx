@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { colors, A, P, Caption } from '../../common/styleguide';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { Calendar, Star, Download, Issue, Web, License, Fork } from '../Icons';
+import { Calendar, Star, Download, Issue, Web, License, Fork, Code } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
@@ -41,6 +41,26 @@ export function MetaData(props: Props) {
                     {github.license.name}
                   </A>
                 ),
+            }
+          : null,
+        library.examples && library.examples.length
+          ? {
+              id: 'examples',
+              icon: <Code fill="#afb1af" width={16} height={16} />,
+              content: (
+                <>
+                  <Caption style={styles.secondaryText}>Examples: </Caption>
+                  {library.examples.map((example, index) => (
+                    <A
+                      key={example}
+                      href={example}
+                      target="blank"
+                      style={[styles.mutedLink, styles.secondaryText, styles.exampleLink]}>
+                      #{index + 1}
+                    </A>
+                  ))}
+                </>
+              ),
             }
           : null,
       ]
@@ -145,5 +165,9 @@ const styles = StyleSheet.create({
   },
   secondaryIconContainer: {
     marginRight: 6,
+  },
+  exampleLink: {
+    marginLeft: 2,
+    marginRight: 4,
   },
 });

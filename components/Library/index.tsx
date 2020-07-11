@@ -17,6 +17,7 @@ type Props = {
 
 export default function Library(props: Props) {
   const { library } = props;
+  const { github } = library;
 
   return (
     <View style={[styles.container, layout.isSmallScreen() && styles.containerColumn]}>
@@ -33,10 +34,10 @@ export default function Library(props: Props) {
         ) : null}
         <View style={styles.displayHorizontal}>
           <A
-            href={library.githubUrl || library.github.urls.repo}
+            href={library.githubUrl || github.urls.repo}
             style={styles.name}
             hoverStyle={styles.nameHovered}>
-            {library.npmPkg || library.github.name}
+            {library.npmPkg || github.name}
           </A>
           {library.goldstar && (
             <View style={[styles.displayHorizontal, styles.recommendedContainer]}>
@@ -50,25 +51,15 @@ export default function Library(props: Props) {
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
-        {!isEmptyOrNull(library.github.description) && (
+        {!isEmptyOrNull(github.description) && (
           <View style={styles.verticalMargin}>
             <Caption>
               <Linkify component={({ url }) => <A href={url}>{url}</A>}>
-                {emoji.emojify(library.github.description)}
+                {emoji.emojify(github.description)}
               </Linkify>
             </Caption>
           </View>
         )}
-        {library.examples && library.examples.length ? (
-          <View style={[styles.displayHorizontal, styles.verticalMargin]}>
-            <Caption>Code Examples: </Caption>
-            {library.examples.map((example, index) => (
-              <A target="blank" key={example} style={styles.exampleLink} href={example}>
-                <Caption>#{index + 1}</Caption>
-              </A>
-            ))}
-          </View>
-        ) : null}
         {Platform.OS === 'web' && library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (
@@ -76,7 +67,7 @@ export default function Library(props: Props) {
             ))}
           </View>
         ) : null}
-        {library.github.license || library.github.urls.homepage ? (
+        {github.license || github.urls.homepage || (library.examples && library.examples.length) ? (
           <>
             <View style={styles.filler} />
             <View style={styles.bottomBar}>
