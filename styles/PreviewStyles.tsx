@@ -20,11 +20,13 @@ const PreviewStyles = () => {
         box-sizing: border-box;
         box-shadow: 0 5px 5px 0px #00000025 !important;
         max-width: ${previewWidth}px;
+        max-height: 66vh;
       }
 
       .preview img {
         display: none;
         max-width: ${previewImageWidth}px;
+        max-height: calc(66vh - 20px);
       }
 
       .preview.loaded img {
