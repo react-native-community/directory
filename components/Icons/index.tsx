@@ -250,6 +250,16 @@ export function Fork({ width = 15, height = 16, fill = colors.black }: Props) {
   );
 }
 
+export function Code({ width = 16, height = 16, fill = colors.black }: Props) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
+      <Path fill={fill} d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
+      <Path fill={fill} d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
+      <Path fill={fill} d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
+    </Svg>
+  );
+}
+
 export function Warning({ width = 17, height = 17, fill = colors.warningDark }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 25 25" fill="none">
