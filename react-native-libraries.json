@@ -5696,5 +5696,18 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },  
+  {
+    "githubUrl": "https://github.com/danilowoz/react-content-loader",
+    "images": [
+      "https://user-images.githubusercontent.com/4838076/34308760-ec55df82-e735-11e7-843b-2e311fa7b7d0.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
