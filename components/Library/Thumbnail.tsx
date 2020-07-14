@@ -21,16 +21,14 @@ const Thumbnail = ({ url }: Props) => {
     strategy: 'fixed',
   });
 
-  const handleMouseEvent = useCallback(() => {
-    setShowPreview(!showPreview);
-  }, [showPreview]);
+  const handleMouseEvent = useCallback(show => setShowPreview(show), [showPreview]);
 
   return (
     <>
       <a
         ref={iconRef}
-        onMouseEnter={handleMouseEvent}
-        onMouseLeave={handleMouseEvent}
+        onMouseEnter={() => handleMouseEvent(true)}
+        onMouseLeave={() => handleMouseEvent(false)}
         style={{
           marginRight: 10,
           marginTop: 4,
