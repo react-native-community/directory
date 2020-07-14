@@ -1,20 +1,16 @@
 import cheerio from 'cheerio';
 import fetch from 'isomorphic-fetch';
 
-const isLikelyUsefulImage = (image, githubUrl) => {
+const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
   let parentHref = image.parent().attr('href');
-  let imageSrc = image.attr('src');
   let isInHeader = image.parents('h1').length > 0;
   let isFromRepo = imageSrc.includes(githubUrl);
+  let isBadge = imageSrc.includes('shields.io') || imageSrc.includes('travis-ci.com');
 
-  if (
+  return (
     (isFromRepo && !isInHeader) ||
-    (parentHref && imageSrc && parentHref === imageSrc && !isInHeader)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+    (parentHref && imageSrc && parentHref === imageSrc && !isInHeader && !isBadge)
+  );
 };
 
 const scrapeImagesAsync = async githubUrl => {
@@ -23,21 +19,19 @@ const scrapeImagesAsync = async githubUrl => {
   let $ = cheerio.load(html);
   let images = $('#readme').find('img');
 
-  let usefulImages = [];
-  if (images) {
+  if (images && images.length) {
+    let usefulImages = [];
     for (let i = 0; i <= images.length - 1; i++) {
-      let image = images[i];
-      if (isLikelyUsefulImage($(image), githubUrl)) {
-        usefulImages.push(image);
+      let image = $(images[i]);
+      let imageSrc = image.attr('data-canonical-src') || image.attr('src');
+      if (isLikelyUsefulImage(image, imageSrc, githubUrl)) {
+        usefulImages.push(imageSrc);
       }
     }
+    return usefulImages;
+  } else {
+    return [];
   }
-
-  let result = usefulImages.map(image => {
-    return $(image).attr('src');
-  });
-
-  return result;
 };
 
 const fetchReadmeImages = async (data, githubUrl) => {
