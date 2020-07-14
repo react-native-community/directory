@@ -193,21 +193,36 @@ export const fetchGithubData = async (data, retries = 2) => {
   }
 };
 
+const getLicenseFromPackageJson = packageJson => {
+  // Get the GitHub license spec from the npm string
+  if (packageJson.license && typeof packageJson.license === 'string') {
+    return licenses[packageJson.license.toLowerCase()];
+  }
+};
+
 const createRepoDataWithResponse = (json, monorepo) => {
   if (monorepo && json.packageJson) {
     const packageJson = JSON.parse(json.packageJson.text);
     json.homepageUrl = packageJson.homepage;
     json.name = packageJson.name;
-    json.topics = packageJson.topics;
+    json.topics = packageJson.keywords;
     json.description = packageJson.description;
-    // Get the GitHub license spec from the npm string
-    if (packageJson.license && typeof packageJson.license === 'string') {
-      const license = licenses[packageJson.license.toLowerCase()];
-      if (license) {
-        json.licenseInfo = license;
-      }
+    json.licenseInfo = getLicenseFromPackageJson(packageJson);
+  }
+
+  if (!monorepo && json.packageJson) {
+    const packageJson = JSON.parse(json.packageJson.text);
+    json.topics = json.repositoryTopics.nodes.map(({ topic }) => topic.name);
+
+    if (!json.description) {
+      json.description = packageJson.description;
+    }
+
+    if (json.topics.length === 0) {
+      json.topics = packageJson.keywords;
     }
   }
+
   const lastCommit = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
   return {
@@ -221,7 +236,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       hasWiki: json.hasWikiEnabled,
       hasPages: json.deployments.totalCount > 0,
       hasDownloads: true,
-      hasTopics: json.topics ? json.repositoryTopics.nodes.length > 0 : false,
+      hasTopics: json.topics.length > 0,
       updatedAt: lastCommit,
       createdAt: json.createdAt,
       pushedAt: lastCommit,
@@ -233,7 +248,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     name: json.name,
     fullName: json.nameWithOwner,
     description: json.description,
-    topics: json.repositoryTopics.nodes.map(({ topic }) => topic.name),
+    topics: json.topics,
     license: json.licenseInfo,
   };
 };
