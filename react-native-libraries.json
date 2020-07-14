@@ -2020,7 +2020,136 @@
     "web": false
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase",
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/admob",
+    "npmPkg": "@react-native-firebase/admob",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/analytics",
+    "npmPkg": "@react-native-firebase/analytics",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/app",
+    "npmPkg": "@react-native-firebase/app",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/auth",
+    "npmPkg": "@react-native-firebase/auth",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/crashlytics",
+    "npmPkg": "@react-native-firebase/crashlytics",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/database",
+    "npmPkg": "@react-native-firebase/database",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/dynamic-links",
+    "npmPkg": "@react-native-firebase/dynamic-links",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/firestore",
+    "npmPkg": "@react-native-firebase/firestore",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/functions",
+    "npmPkg": "@react-native-firebase/functions",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/iid",
+    "npmPkg": "@react-native-firebase/iid",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/in-app-messaging",
+    "npmPkg": "@react-native-firebase/in-app-messaging",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/messaging",
+    "npmPkg": "@react-native-firebase/messaging",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/ml-natural-language",
+    "npmPkg": "@react-native-firebase/ml-natural-language",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/ml-vision",
+    "npmPkg": "@react-native-firebase/ml-vision",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/perf",
+    "npmPkg": "@react-native-firebase/perf",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/remote-config",
+    "npmPkg": "@react-native-firebase/remote-config",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "web": false
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/storage",
+    "npmPkg": "@react-native-firebase/storage",
     "ios": true,
     "android": true,
     "expo": false,
