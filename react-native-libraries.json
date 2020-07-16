@@ -409,7 +409,8 @@
     "ios": true,
     "android": false,
     "web": false,
-    "expo": false
+    "expo": false,
+    "unmaintained": true    
   },
   {
     "githubUrl": "https://github.com/bietkul/react-reactive-form",
@@ -1039,7 +1040,8 @@
     "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/FormidableLabs/victory-native",
@@ -1136,7 +1138,8 @@
     "githubUrl": "https://github.com/evollu/react-native-fcm",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/crazycodeboy/react-native-easy-toast",
@@ -1226,7 +1229,8 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/Bk8-1FILb"]
+    "examples": ["https://snack.expo.io/Bk8-1FILb"],
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Spikef/react-native-gesture-password",
