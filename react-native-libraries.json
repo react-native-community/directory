@@ -124,7 +124,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/react-native-super-image",
+    "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/expo-super-image",
     "ios": true,
     "android": true,
     "web": false,
@@ -410,7 +410,7 @@
     "android": false,
     "web": false,
     "expo": false,
-    "unmaintained": true    
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/bietkul/react-reactive-form",
@@ -424,7 +424,8 @@
     "ios": false,
     "android": true,
     "web": false,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/hectahertz/react-native-typography",
@@ -512,7 +513,7 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/react-community/react-native-image-picker",
+    "githubUrl": "https://github.com/react-native-community/react-native-image-picker",
     "ios": true,
     "android": true,
     "web": false,
@@ -533,7 +534,7 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/react-community/react-navigation",
+    "githubUrl": "https://github.com/react-navigation/react-navigation",
     "ios": true,
     "android": true,
     "web": true,
@@ -1242,7 +1243,8 @@
     "githubUrl": "https://github.com/christopherdro/react-native-calendar",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/jasonmerino/react-native-simple-store",
@@ -2181,11 +2183,12 @@
     "expo": false
   },
   {
-    "githubUrl": "https://github.com/react-community/react-native-webgl",
+    "githubUrl": "https://github.com/react-native-community/react-native-webgl",
     "ios": true,
     "android": true,
     "web": false,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/xcarpentier/react-native-linkedin",
@@ -3937,7 +3940,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/unimodules/react-native-unimodules",
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/react-native-unimodules",
     "ios": true,
     "android": true,
     "expo": true,
@@ -5395,13 +5398,12 @@
     "unmaintained": false
   },
   {
-    "githubUrl": "https://github.com/wcandillon/redash",
+    "githubUrl": "https://github.com/wcandillon/react-native-redash",
     "ios": true,
     "android": true,
     "web": false,
     "expo": true,
     "windows": false,
-    "npmPkg": "react-native-redash",
     "unmaintained": false
   },
   {
