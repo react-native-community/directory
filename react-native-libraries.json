@@ -5838,5 +5838,18 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },  
+  {
+    "githubUrl": "https://github.com/n4kz/react-native-material-ripple",
+    "images": [
+      "https://cloud.githubusercontent.com/assets/2055622/24832328/459afaf0-1cb6-11e7-975d-accedb67a716.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
