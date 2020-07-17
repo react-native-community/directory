@@ -4,8 +4,8 @@ on:
   push:
     branches: [ master ]
   schedule:
-    # Run every 3 hours
-    - cron: '0 */3 * * *'
+    # Run every 1 hour - https://crontab.guru/#0_*/1_*_*_*
+    - cron: '0 */1 * * *'
 
 jobs:
   build:
