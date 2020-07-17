@@ -3,6 +3,9 @@ name: Deploy to production
 on:
   push:
     branches: [ master ]
+  schedule:
+    # Run every 1 hour - https://crontab.guru/#0_*/1_*_*_*
+    - cron: '0 */1 * * *'
 
 jobs:
   build:
