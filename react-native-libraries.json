@@ -3986,8 +3986,7 @@
     "ios": false,
     "android": true,
     "expo": false,
-    "windows": false,
-    "npmPkg": "react-native-modal-dropdown"
+    "windows": false
   },
   {
     "githubUrl": "https://github.com/Shopify/restyle",
@@ -5871,6 +5870,21 @@
     "ios": true,
     "android": true,
     "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-testing-library",
+    "examples": [
+      "https://github.com/callstack/react-native-testing-library#example",
+      "https://github.com/callstack/react-native-testing-library/tree/master/examples/reactnavigation",
+      "https://github.com/callstack/react-native-testing-library/tree/master/examples/redux"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
     "expo": false,
     "windows": false,
     "macos": false,
