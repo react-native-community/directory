@@ -24,9 +24,9 @@ const JSON_OPTIONS = {
   spaces: 2,
 };
 
-function sleep(ms = 0) {
+export const sleep = (ms = 0) => {
   return new Promise(r => setTimeout(r, ms));
-}
+};
 
 let invalidRepos = [];
 
@@ -87,10 +87,7 @@ const buildAndScoreData = async () => {
     console.log(
       '** The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
     );
-    invalidRepos.forEach(repoUrl => {
-      console.log(`- ${repoUrl}`);
-    });
-    console.log('');
+    invalidRepos.forEach(repoUrl => console.log(`- ${repoUrl}`));
   }
 
   return jsonfile.writeFile(
@@ -145,9 +142,9 @@ async function loadRepositoryDataAsync() {
 
   let { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
-  // 5000 requests per hour is the authenticated API request rate limi
-  if (apiLimit < 5000) {
-    throw new Error('GitHub client id and secret are not properly configured.');
+  // 5000 requests per hour is the authenticated API request rate limit
+  if (!apiLimit || apiLimit < 5000) {
+    throw new Error('GitHub API token is invalid or query is not properly configured.');
   }
 
   // Error out if not enough remaining
@@ -166,7 +163,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 50, staggerMs: 10000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {

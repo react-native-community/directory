@@ -125,6 +125,7 @@
   },
   {
     "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/expo-super-image",
+    "npmPkg": "react-native-super-image",
     "ios": true,
     "android": true,
     "web": false,
@@ -2000,7 +2001,9 @@
   {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
     "examples": ["https://github.com/mfrachet/rn-placeholder/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/mfrachet/rn-placeholder/master/assets/placeholder.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/mfrachet/rn-placeholder/master/assets/placeholder.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -3775,7 +3778,9 @@
   },
   {
     "githubUrl": "https://github.com/torgeadelin/react-native-animated-nav-tab-bar",
-    "examples": ["https://github.com/torgeadelin/react-native-animated-nav-tab-bar/tree/master/example"],
+    "examples": [
+      "https://github.com/torgeadelin/react-native-animated-nav-tab-bar/tree/master/example"
+    ],
     "images": [
       "https://i.imgur.com/lRG92ds.gif",
       "https://raw.githubusercontent.com/torgeadelin/react-native-animated-nav-tab-bar/glitch-fix-refactor/demo1.png",
@@ -5199,8 +5204,14 @@
   {
     "githubUrl": "https://github.com/thodubois/react-native-woodpicker",
     "npmPkg": "react-native-woodpicker",
-    "examples": ["https://snack.expo.io/@fromwood/react-native-woodpicker-example", "https://github.com/thodubois/react-native-woodpicker/tree/master/ExampleApp"],
-    "images": ["https://raw.githubusercontent.com/thodubois/react-native-woodpicker/master/assets/exampleApp-android.gif", "https://raw.githubusercontent.com/thodubois/react-native-woodpicker/master/assets/exampleApp.gif"],
+    "examples": [
+      "https://snack.expo.io/@fromwood/react-native-woodpicker-example",
+      "https://github.com/thodubois/react-native-woodpicker/tree/master/ExampleApp"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/thodubois/react-native-woodpicker/master/assets/exampleApp-android.gif",
+      "https://raw.githubusercontent.com/thodubois/react-native-woodpicker/master/assets/exampleApp.gif"
+    ],
     "ios": true,
     "android": true,
     "web": false,
@@ -5733,7 +5744,9 @@
   },
   {
     "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
-    "examples": ["https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"],
+    "examples": [
+      "https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"
+    ],
     "ios": true,
     "android": true,
     "web": false,
@@ -5750,7 +5763,9 @@
       "https://github.com/Gil2015/react-native-table-component#example2",
       "https://github.com/Gil2015/react-native-table-component#example3"
     ],
-    "images": ["https://raw.githubusercontent.com/Gil2015/tools_file/master/img/react-native-table-component/example.jpg"],
+    "images": [
+      "https://raw.githubusercontent.com/Gil2015/tools_file/master/img/react-native-table-component/example.jpg"
+    ],
     "ios": true,
     "android": true,
     "web": false,
@@ -5816,9 +5831,7 @@
   {
     "githubUrl": "https://github.com/vadimdemedes/tailwind-rn",
     "npmPkg": "tailwind-rn",
-    "examples": [
-      "https://github.com/vadimdemedes/tailwind-rn#usage"
-    ],
+    "examples": ["https://github.com/vadimdemedes/tailwind-rn#usage"],
     "ios": true,
     "android": true,
     "web": false,

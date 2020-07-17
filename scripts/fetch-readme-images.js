@@ -1,6 +1,8 @@
 import cheerio from 'cheerio';
 import fetch from 'isomorphic-fetch';
 
+import { sleep } from './build-and-score-data';
+
 const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
   let parentHref = image.parent().attr('href');
   let isInHeader = image.parents('h1').length > 0;
@@ -51,7 +53,8 @@ const fetchReadmeImages = async (data, githubUrl) => {
       images,
     };
   } catch (e) {
-    console.log(`retrying image scrape for ${githubUrl}`);
+    console.log(`Retrying image scrape for ${githubUrl}`);
+    await sleep(2000);
     return await fetchReadmeImages(data, githubUrl);
   }
 };
