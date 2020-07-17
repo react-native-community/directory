@@ -1,4 +1,7 @@
 import fetch from 'isomorphic-fetch';
+
+import { sleep } from './build-and-score-data';
+
 require('dotenv').config();
 
 const GRAPHQL_API = 'https://api.github.com/graphql';
@@ -62,6 +65,8 @@ const query = `
       mirrorUrl
       name
       nameWithOwner
+      isArchived
+      isMirror
       licenseInfo {
         key
         name
@@ -71,6 +76,14 @@ const query = `
       }
       deployments {
         totalCount
+      }
+      releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+        nodes {
+          name
+          createdAt
+          publishedAt
+          isPrerelease
+        }
       }
       repositoryTopics(first: 10) {
         nodes {
@@ -113,8 +126,7 @@ const makeGraphqlQuery = async (query, variables) => {
       variables,
     }),
   });
-  const json = await result.json();
-  return json;
+  return await result.json();
 };
 
 export const fetchGithubRateLimit = async () => {
@@ -124,13 +136,21 @@ export const fetchGithubRateLimit = async () => {
     repoOwner: 'react-native-directory',
     repoName: 'website',
   });
-  const { rateLimit } = result.data;
 
-  return {
-    apiLimit: rateLimit.limit,
-    apiLimitRemaining: rateLimit.remaining,
-    apiLimitCost: rateLimit.cost,
-  };
+  if (result.data) {
+    const { rateLimit } = result.data;
+    return {
+      apiLimit: rateLimit.limit,
+      apiLimitRemaining: rateLimit.remaining,
+      apiLimitCost: rateLimit.cost,
+    };
+  }
+
+  if (result.errors) {
+    console.log('GitHub GraphQL API error:', result.errors);
+  }
+
+  return {};
 };
 
 const getUpdatedUrl = async url => {
@@ -179,7 +199,9 @@ export const fetchGithubData = async (data, retries = 2) => {
       } else {
         console.log(`Repository ${repoOwner}/${repoName} not found`);
       }
-      return fetchGithubData(data, retries - 1);
+      console.log(`Retrying fetch for ${data.githubUrl}`);
+      await sleep(1000);
+      return await fetchGithubData(data, retries - 1);
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -188,8 +210,9 @@ export const fetchGithubData = async (data, retries = 2) => {
       github,
     };
   } catch (e) {
-    console.log(`retrying fetch for ${data.githubUrl}`);
-    return fetchGithubData(data, retries - 1);
+    console.log(`Retrying fetch for ${data.githubUrl}`, e);
+    await sleep(1000);
+    return await fetchGithubData(data, retries - 1);
   }
 };
 
@@ -223,7 +246,14 @@ const createRepoDataWithResponse = (json, monorepo) => {
     }
   }
 
-  const lastCommit = json.defaultBranchRef.target.history.nodes[0].committedDate;
+  const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
+  const lastRelease =
+    json.releases && json.releases.nodes && json.releases.nodes.length
+      ? json.releases.nodes[0]
+      : undefined;
+
+  const hasTopics = json.topics && json.topics.length;
+  const topics = hasTopics ? json.topics.map(topic => topic.toLowerCase()) : [];
 
   return {
     urls: {
@@ -236,10 +266,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
       hasWiki: json.hasWikiEnabled,
       hasPages: json.deployments.totalCount > 0,
       hasDownloads: true,
-      hasTopics: json.topics.length > 0,
-      updatedAt: lastCommit,
+      hasTopics,
+      updatedAt: lastCommitAt,
       createdAt: json.createdAt,
-      pushedAt: lastCommit,
+      pushedAt: lastCommitAt,
       forks: json.forks.totalCount,
       issues: json.issues.totalCount,
       subscribers: json.watchers.totalCount,
@@ -248,7 +278,8 @@ const createRepoDataWithResponse = (json, monorepo) => {
     name: json.name,
     fullName: json.nameWithOwner,
     description: json.description,
-    topics: json.topics,
+    topics,
     license: json.licenseInfo,
+    lastRelease,
   };
 };
