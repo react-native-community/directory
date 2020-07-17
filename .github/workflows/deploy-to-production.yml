@@ -3,6 +3,9 @@ name: Deploy to production
 on:
   push:
     branches: [ master ]
+  schedule:
+    # Run every 3 hours
+    - cron: '0 */3 * * *'
 
 jobs:
   build:
