@@ -21,7 +21,7 @@ const scrapeImagesAsync = async githubUrl => {
   let $ = cheerio.load(html);
   let images = $('#readme').find('img');
 
-  if (images) {
+  if (images && images.length) {
     let usefulImages = [];
     for (let i = 0; i <= images.length - 1; i++) {
       let image = $(images[i]);

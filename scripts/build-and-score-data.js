@@ -35,8 +35,8 @@ const buildAndScoreData = async () => {
   let data = await loadRepositoryDataAsync();
 
   data = data.filter(project => {
-    if (!project || !project.github || Strings.isEmptyOrNull(project.github.name)) {
-      invalidRepos.push(project);
+    if (!project.github || Strings.isEmptyOrNull(project.github.name)) {
+      invalidRepos.push(project.githubUrl);
       return false;
     }
     return !Strings.isEmptyOrNull(project.github.name);
