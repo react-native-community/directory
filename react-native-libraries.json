@@ -5889,5 +5889,19 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-confirmation-code-input",
+    "examples": [
+      "https://snack.expo.io/Zil!jCFft",
+      "https://github.com/retyui/react-native-confirmation-code-field/blob/master/examples/DemoCodeField"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
