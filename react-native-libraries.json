@@ -916,7 +916,8 @@
     "githubUrl": "https://github.com/obipawan/react-native-hyperlink",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/crazycodeboy/react-native-check-box",
@@ -4400,6 +4401,9 @@
   },
   {
     "githubUrl": "https://github.com/itsnubix/react-native-video-controls",
+    "images": [
+      "https://s3-us-west-2.amazonaws.com/nubix.ca/github/example.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": false,
@@ -5900,6 +5904,99 @@
     "android": true,
     "web": true,
     "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/KjellConnelly/react-native-rate",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/rh389/react-native-securerandom",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/Kishanjvaghela/react-native-cardview",
+    "images": [
+      "https://github.com/Kishanjvaghela/react-native-cardview/raw/master/docs/Example-Snapshot.png",
+      "https://github.com/Kishanjvaghela/react-native-cardview/raw/master/docs/ezgif-4-b87dbfaf72.gif"
+    ],
+    "examples": [
+      "https://github.com/Kishanjvaghela/react-native-cardview/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/wonsikin/react-native-barcode-builder",
+    "images": [
+      "https://github.com/wonsikin/react-native-barcode-builder/raw/master/images/example.png"
+    ],
+    "examples": [
+      "https://github.com/wonsikin/react-native-barcode-builder/tree/master/Example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/jacse/react-native-app-intro-slider",
+    "examples": [
+      "https://github.com/Jacse/react-native-app-intro-slider/tree/master/examples"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/pradeep1991singh/react-native-secure-key-store",
+    "examples": [
+      "https://github.com/pradeep1991singh/react-native-secure-key-store/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/react-native-mapbox-gl/maps",
+    "npmPkg": "@react-native-mapbox-gl/maps",
+    "examples": [
+      "https://github.com/react-native-mapbox-gl/maps/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
     "windows": false,
     "macos": false,
     "unmaintained": false
