@@ -40,6 +40,7 @@ export function Button(props: Props) {
 
 const styles = StyleSheet.create({
   container: {
+    maxHeight: 34,
     paddingVertical: 8,
     paddingHorizontal: 16,
     justifyContent: 'center',

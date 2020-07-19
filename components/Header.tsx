@@ -1,6 +1,6 @@
 import { A, Header as HtmlHeader } from '@expo/html-elements';
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 import { layout, colors, H5, P, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -45,11 +45,8 @@ export default function Header() {
               <View style={styles.displayHorizontal}>
                 <Button
                   onPress={() => context.setIsDark(!context.isDark)}
-                  style={[
-                    styles.themeButton,
-                    isSmallScreen ? { maxHeight: 30, paddingHorizontal: 12 } : {},
-                  ]}>
-                  {context.isDark ? '☀️' : '🌙'}
+                  style={[styles.themeButton, isSmallScreen ? styles.themeButtonSmall : {}]}>
+                  <Text style={styles.themeButtonText}>{context.isDark ? '☀️' : '🌒'}</Text>
                 </Button>
                 <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
                   <View style={styles.displayHorizontal}>
@@ -116,6 +113,14 @@ let styles = StyleSheet.create({
   },
   themeButton: {
     marginRight: 12,
-    padding: 4,
+  },
+  themeButtonText: {
+    fontSize: 18,
+    marginTop: -1,
+  },
+  themeButtonSmall: {
+    maxHeight: 30,
+    maxWidth: 46,
+    paddingHorizontal: 14,
   },
 });
