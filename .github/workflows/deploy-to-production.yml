@@ -19,7 +19,7 @@ jobs:
         node-version: '~12.16.3'
     - name: Deploy
       shell: bash
-      run: npx now --token "$VERCEL_TOKEN" --prod
+      run: npx now --force --token "$VERCEL_TOKEN" --prod
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787
