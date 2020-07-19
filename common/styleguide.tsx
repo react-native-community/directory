@@ -3,6 +3,8 @@ import React, { ReactNode, RefObject } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
 
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
+
 export const layout = {
   maxWidth: 1200,
   isSmallScreen: () => {
@@ -27,11 +29,25 @@ export const colors = {
   gray5: '#505461',
   gray6: '#2A2C33',
   gray7: '#21232A',
-  black: '#1a1a1a',
+  black: '#242424',
   white: '#ffffff',
+  secondary: '#afb1af',
   warning: '#FFD093',
   warningLight: '#ffebcf',
   warningDark: '#995e00',
+};
+
+export const darkColors = {
+  black: '#000',
+  background: '#19191f',
+  subHeader: '#14141a',
+  border: '#262930',
+  veryDark: '#0c0c0f',
+  dark: '#14141a',
+  powder: '#222f3b',
+  pewter: '#505461',
+  secondary: '#a2a7ab',
+  warning: '#995e00',
 };
 
 const baseTextStyles = {
@@ -62,7 +78,21 @@ type TextProps = {
 function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
   return (props: TextProps) => {
     const { children, style } = props;
-    return <Element style={[textStyles[Element], textStyle, style]}>{children}</Element>;
+    return (
+      <CustomAppearanceContext.Consumer>
+        {context => (
+          <Element
+            style={[
+              textStyles[Element],
+              textStyle,
+              { color: context.isDark ? colors.white : colors.black },
+              style,
+            ]}>
+            {children}
+          </Element>
+        )}
+      </CustomAppearanceContext.Consumer>
+    );
   };
 }
 
@@ -91,26 +121,40 @@ export const A = (props: AProps) => {
   const isHovered = useHover(linkRef);
 
   return (
-    <HtmlElements.A
-      {...rest}
-      href={href}
-      target={target}
-      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}
-      ref={linkRef}>
-      {children}
-    </HtmlElements.A>
+    <CustomAppearanceContext.Consumer>
+      {context => {
+        const anchorStyles = getAnchorStyles(context.isDark);
+        return (
+          <HtmlElements.A
+            {...rest}
+            href={href}
+            target={target}
+            style={[
+              anchorStyles.a,
+              isHovered && anchorStyles.aHovered,
+              style,
+              isHovered && hoverStyle,
+            ]}
+            ref={linkRef}>
+            {children}
+          </HtmlElements.A>
+        );
+      }}
+    </CustomAppearanceContext.Consumer>
   );
 };
 
-const anchorStyles = StyleSheet.create({
-  a: {
-    color: colors.black,
-    backgroundColor: colors.powder,
-    textDecorationColor: colors.pewter,
-    textDecorationLine: 'underline',
-  },
-  aHovered: {
-    backgroundColor: colors.sky,
-    textDecorationColor: colors.black,
-  },
-});
+const getAnchorStyles = isDark =>
+  StyleSheet.create({
+    a: {
+      color: isDark ? colors.white : colors.black,
+      backgroundColor: isDark ? darkColors.powder : colors.powder,
+      textDecorationColor: isDark ? darkColors.pewter : colors.pewter,
+      textDecorationLine: 'underline',
+    },
+    aHovered: {
+      backgroundColor: isDark ? colors.primaryDark : colors.sky,
+      color: isDark ? darkColors.dark : colors.black,
+      textDecorationColor: isDark ? darkColors.powder : colors.black,
+    },
+  });

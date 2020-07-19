@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDimensions } from 'react-native-web-hooks';
 
+import { colors, darkColors } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
+
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
 // Note: styles must be done in this way in order to integrate with the image preview library.
@@ -12,27 +15,31 @@ const PreviewStyles = () => {
   const previewImageWidth = previewWidth - 20;
 
   return (
-    <style jsx global>{`
-      .preview {
-        background-color: white !important;
-        opacity: 1 !important;
-        padding: 10px !important;
-        box-sizing: border-box;
-        box-shadow: 0 5px 5px 0px #00000025 !important;
-        max-width: ${previewWidth}px;
-        max-height: 66vh;
-      }
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <style jsx global>{`
+          .preview {
+            background-color: ${context.isDark ? darkColors.black : colors.white} !important;
+            opacity: 1 !important;
+            padding: 10px !important;
+            box-sizing: border-box;
+            box-shadow: 0 5px 5px 0 #00000025 !important;
+            max-width: ${previewWidth}px;
+            max-height: 66vh;
+          }
 
-      .preview img {
-        display: none;
-        max-width: ${previewImageWidth}px;
-        max-height: calc(66vh - 20px);
-      }
+          .preview img {
+            display: none;
+            max-width: ${previewImageWidth}px;
+            max-height: calc(66vh - 20px);
+          }
 
-      .preview.loaded img {
-        display: block;
-      }
-    `}</style>
+          .preview.loaded img {
+            display: block;
+          }
+        `}</style>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 };
 

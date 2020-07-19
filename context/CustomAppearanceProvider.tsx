@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import * as React from 'react';
-import { StatusBar, View, Platform } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { useColorScheme } from 'react-native-appearance';
 
 import CustomAppearanceContext from './CustomAppearanceContext';
@@ -12,9 +12,7 @@ const defaultState = { isDark: false };
 
 export default function CustomAppearanceProvider({ children }) {
   const colorScheme = useColorScheme();
-  const [isDark, setIsDark] = React.useState(
-    Platform.OS === 'web' ? false : colorScheme === 'dark'
-  );
+  const [isDark, setIsDark] = React.useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = React.useState(false);
 
   React.useEffect(() => {

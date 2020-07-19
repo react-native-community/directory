@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { colors, Label } from '../common/styleguide';
+import { colors, darkColors, Label } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library } from '../types';
 import { Check } from './Icons';
 
@@ -23,14 +24,38 @@ export function CompatibilityTags(props: Props) {
     .filter(Boolean);
 
   return (
-    <View style={styles.container}>
-      {platforms.map(platform => (
-        <View key={platform} style={styles.tag}>
-          <Check width={14} height={10} />
-          <Label style={styles.text}>{platform}</Label>
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <View style={styles.container}>
+          {platforms.map(platform => (
+            <View
+              key={platform}
+              style={[
+                styles.tag,
+                {
+                  backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
+                  borderColor: context.isDark ? darkColors.border : colors.gray2,
+                },
+              ]}>
+              <Check
+                width={14}
+                height={10}
+                fill={context.isDark ? darkColors.secondary : undefined}
+              />
+              <Label
+                style={[
+                  styles.text,
+                  {
+                    color: context.isDark ? darkColors.secondary : colors.black,
+                  },
+                ]}>
+                {platform}
+              </Label>
+            </View>
+          ))}
         </View>
-      ))}
-    </View>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 }
 
@@ -44,9 +69,7 @@ const styles = StyleSheet.create({
   tag: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: colors.gray1,
     borderWidth: 1,
-    borderColor: colors.gray2,
     marginRight: 8,
     borderRadius: 2,
     paddingHorizontal: 6,

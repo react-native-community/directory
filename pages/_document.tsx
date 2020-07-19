@@ -3,14 +3,11 @@ import React from 'react';
 
 import Favicons from '../components/Favicons';
 import GoogleAnalytics from '../components/GoogleAnalytics';
-import PreviewStyles from '../styles/PreviewStyles';
 
 const site = {
   title: 'React Native Directory',
   description: 'A directory to find packages for your React Native apps',
 };
-
-const themeColor = '#fff';
 
 class DirectoryWebsite extends Document {
   static async getInitialProps(ctx) {
@@ -18,25 +15,24 @@ class DirectoryWebsite extends Document {
     return { ...initialProps };
   }
 
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <Favicons />
-          <GoogleAnalytics id="UA-107832480-1" />
-          {injectMeta.map((value, index) => (
-            <meta key={`meta-${index}`} {...value} />
-          ))}
-        </Head>
-        <body>
-          <PreviewStyles />
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+  render = () => (
+    <Html lang="en">
+      <Head>
+        <Favicons />
+        <GoogleAnalytics id="UA-107832480-1" />
+        {injectMeta.map((value, index) => (
+          <meta key={`meta-${index}`} {...value} />
+        ))}
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
 }
+
+const themeColor = '#fff';
 
 const injectMeta = [
   {

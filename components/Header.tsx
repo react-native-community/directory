@@ -2,53 +2,77 @@ import { A, Header as HtmlHeader } from '@expo/html-elements';
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { layout, colors, H5, P } from '../common/styleguide';
+import { layout, colors, H5, P, darkColors } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
 export default function Header() {
+  const isSmallScreen = layout.isSmallScreen();
+
   return (
-    <HtmlHeader>
-      <View style={styles.bannerContainer}>
-        <P style={styles.bannerText}>
-          Black Lives Matter.{' '}
-          <A
-            target="_blank"
-            href="https://support.eji.org/give/153413/#!/donation/checkout"
-            style={styles.bannerLink}>
-            Support the Equal Justice Initiative
-          </A>
-          .
-        </P>
-      </View>
-      <View style={styles.header}>
-        <View style={styles.headerContents}>
-          <View style={styles.displayHorizontal}>
-            <Logo fill={colors.primary} width={29} height={26} />
-            <H5 style={layout.isSmallScreen() && styles.smallTitle}>
-              <A href="/" style={styles.headerContentsTitle}>
-                React Native Directory
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <HtmlHeader>
+          <View style={styles.bannerContainer}>
+            <P style={styles.bannerText}>
+              Black Lives Matter.{' '}
+              <A
+                target="_blank"
+                href="https://support.eji.org/give/153413/#!/donation/checkout"
+                style={styles.bannerLink}>
+                Support the Equal Justice Initiative
               </A>
-            </H5>
+              .
+            </P>
           </View>
-          <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
-            <View style={styles.displayHorizontal}>
-              <>
-                <Plus width={14} height={14} />
-                {!layout.isSmallScreen() && <P style={{ marginLeft: 6 }}>Add a library</P>}
-              </>
+          <View
+            style={[
+              styles.header,
+              {
+                backgroundColor: context.isDark ? darkColors.veryDark : colors.gray7,
+              },
+            ]}>
+            <View style={styles.headerContents}>
+              <View style={styles.displayHorizontal}>
+                <Logo fill={colors.primary} width={29} height={26} />
+                <H5 style={isSmallScreen && styles.smallTitle}>
+                  <A href="/" style={styles.headerContentsTitle}>
+                    React Native Directory
+                  </A>
+                </H5>
+              </View>
+              <View style={styles.displayHorizontal}>
+                <Button
+                  onPress={() => context.setIsDark(!context.isDark)}
+                  style={[
+                    styles.themeButton,
+                    isSmallScreen ? { maxHeight: 30, paddingHorizontal: 12 } : {},
+                  ]}>
+                  {context.isDark ? '☀️' : '🌙'}
+                </Button>
+                <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
+                  <View style={styles.displayHorizontal}>
+                    <Plus
+                      width={14}
+                      height={14}
+                      fill={context.isDark ? colors.white : colors.black}
+                    />
+                    {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
+                  </View>
+                </Button>
+              </View>
             </View>
-          </Button>
-        </View>
-      </View>
-    </HtmlHeader>
+          </View>
+        </HtmlHeader>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 }
 
 let styles = StyleSheet.create({
   header: {
     height: 60,
-    backgroundColor: colors.gray7,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
@@ -71,7 +95,6 @@ let styles = StyleSheet.create({
     textDecorationLine: 'underline',
     whiteSpace: 'nowrap',
   },
-
   headerContents: {
     flexDirection: 'row',
     width: '100%',
@@ -90,5 +113,9 @@ let styles = StyleSheet.create({
   },
   smallTitle: {
     fontSize: 18,
+  },
+  themeButton: {
+    marginRight: 12,
+    padding: 4,
   },
 });

@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import * as React from 'react';
-import { Platform, StyleSheet, View, CheckBox } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, P, Headline, layout } from '../common/styleguide';
+import { colors, P, Headline, layout, darkColors } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { Button } from './Button';
+import { CheckBox } from './CheckBox';
 import { Filter as FilterIcon } from './Icons';
 
 type FiltersProps = {
@@ -56,14 +58,8 @@ function ToggleLink({ query, paramName, title }) {
         offset: null,
       })}>
       <View style={styles.link}>
-        <CheckBox
-          value={isSelected}
-          {...{
-            color: colors.primaryDark,
-            style: { marginRight: 6 },
-          }}
-        />
-        <P>{title}</P>
+        <CheckBox value={isSelected} color={colors.primaryDark} />
+        <P style={{ fontSize: 14 }}>{title}</P>
       </View>
     </Link>
   );
@@ -86,77 +82,105 @@ export const FilterButton = (props: FilterButtonProps) => {
   );
 
   return (
-    <Button onPress={onPress} style={[styles.button, isFilterVisible && styles.activeButton]}>
-      <>
-        <View style={styles.displayHorizontal}>
-          <View style={styles.iconContainer}>
-            <FilterIcon
-              fill={isFilterVisible ? colors.gray7 : colors.white}
-              width={14}
-              height={12}
-            />
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <Button
+          onPress={onPress}
+          style={[
+            styles.button,
+            { backgroundColor: context.isDark ? darkColors.border : colors.gray5 },
+            isFilterVisible && styles.activeButton,
+          ]}>
+          <View style={styles.displayHorizontal}>
+            <View style={styles.iconContainer}>
+              <FilterIcon
+                fill={isFilterVisible ? colors.gray7 : colors.white}
+                width={14}
+                height={12}
+              />
+            </View>
+            <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
+              Filters{filterCount > 0 ? `: ${filterCount}` : ''}
+            </P>
           </View>
-          <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
-            Filters{filterCount > 0 ? `: ${filterCount}` : ''}
-          </P>
-        </View>
-      </>
-    </Button>
+        </Button>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 };
 
 export const Filters = (props: FiltersProps) => {
   const { query } = props;
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.container}>
-        <Headline style={styles.title}>Platform</Headline>
-        <View style={styles.optionsContainer}>
-          {platforms.map(platform => (
-            <ToggleLink
-              key={platform.param}
-              query={query}
-              paramName={platform.param}
-              title={platform.title}
-            />
-          ))}
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <View
+          style={[
+            styles.wrapper,
+            {
+              backgroundColor: context.isDark ? darkColors.veryDark : colors.gray1,
+            },
+          ]}>
+          <View style={styles.container}>
+            <Headline style={styles.title}>Platform</Headline>
+            <View style={styles.optionsContainer}>
+              {platforms.map(platform => (
+                <ToggleLink
+                  key={platform.param}
+                  query={query}
+                  paramName={platform.param}
+                  title={platform.title}
+                />
+              ))}
+            </View>
+          </View>
+          <View style={styles.container}>
+            <Headline style={styles.title}>Status</Headline>
+            <View style={styles.optionsContainer}>
+              <ToggleLink
+                key="hasExample"
+                query={query}
+                paramName="hasExample"
+                title="Has example"
+              />
+              <ToggleLink
+                key="hasImage"
+                query={query}
+                paramName="hasImage"
+                title="Has image preview"
+              />
+              <ToggleLink
+                key="isMaintained"
+                query={query}
+                paramName="isMaintained"
+                title="Maintained"
+              />
+              <ToggleLink key="isPopular" query={query} paramName="isPopular" title="Popular" />
+              <ToggleLink
+                key="wasRecentlyUpdated"
+                query={query}
+                paramName="wasRecentlyUpdated"
+                title="Recently updated"
+              />
+              <ToggleLink
+                key="isRecommended"
+                query={query}
+                paramName="isRecommended"
+                title="Recommended"
+              />
+            </View>
+          </View>
         </View>
-      </View>
-      <View style={styles.container}>
-        <Headline style={styles.title}>Status</Headline>
-        <View style={styles.optionsContainer}>
-          <ToggleLink key="hasExample" query={query} paramName="hasExample" title="Has example" />
-          <ToggleLink key="hasImage" query={query} paramName="hasImage" title="Has image preview" />
-          <ToggleLink
-            key="isMaintained"
-            query={query}
-            paramName="isMaintained"
-            title="Maintained"
-          />
-          <ToggleLink key="isPopular" query={query} paramName="isPopular" title="Popular" />
-          <ToggleLink
-            key="wasRecentlyUpdated"
-            query={query}
-            paramName="wasRecentlyUpdated"
-            title="Recently updated"
-          />
-          <ToggleLink
-            key="isRecommended"
-            query={query}
-            paramName="isRecommended"
-            title="Recommended"
-          />
-        </View>
-      </View>
-    </View>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 };
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: colors.gray1,
     paddingVertical: 8,
     flex: 1,
+    flexGrow: 0,
     alignItems: 'center',
   },
   container: {
@@ -185,7 +209,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 24,
-    backgroundColor: colors.gray5,
     paddingHorizontal: 8,
   },
   activeButton: {
