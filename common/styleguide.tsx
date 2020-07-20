@@ -32,8 +32,8 @@ export const colors = {
   black: '#242424',
   white: '#ffffff',
   secondary: '#afb1af',
-  warning: '#FFD093',
-  warningLight: '#ffebcf',
+  warning: '#FBE679',
+  warningLight: '#FEF7D6',
   warningDark: '#995e00',
 };
 
@@ -41,13 +41,14 @@ export const darkColors = {
   black: '#000',
   background: '#19191f',
   subHeader: '#14141a',
-  border: '#262930',
+  border: '#383D47',
   veryDark: '#0c0c0f',
   dark: '#14141a',
   powder: '#222f3b',
-  pewter: '#505461',
+  pewter: '#767C8E',
   secondary: '#a2a7ab',
-  warning: '#995e00',
+  warningLight: '#4B3F03',
+  warning: '#685603',
 };
 
 const baseTextStyles = {

@@ -45,16 +45,16 @@ export default function Library(props: Props) {
                   <Warning
                     width={16}
                     height={16}
-                    fill={context.isDark ? darkColors.dark : colors.warningDark}
+                    fill={context.isDark ? colors.gray2 : colors.warningDark}
                   />
                   <Label
                     style={[
                       styles.unmaintainedText,
                       {
-                        color: context.isDark ? darkColors.dark : colors.warningDark,
+                        color: context.isDark ? colors.gray2 : colors.warningDark,
                       },
                     ]}>
-                    This library is not actively maintained!
+                    This library is not actively maintained
                   </Label>
                 </View>
               </View>

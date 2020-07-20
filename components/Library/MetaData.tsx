@@ -93,13 +93,13 @@ const generateData = (library, secondary, isDark) => {
       },
       {
         id: 'calendar',
-        icon: <Calendar fill={colors.gray5} />,
+        icon: <Calendar fill={isDark ? darkColors.pewter : colors.gray5} />,
         content: `Updated ${getTimeSinceToday(github.stats.pushedAt)}`,
       },
       library.npm.downloads
         ? {
             id: 'downloads',
-            icon: <Download fill={colors.gray5} />,
+            icon: <Download fill={isDark ? darkColors.pewter : colors.gray5} />,
             content: (
               <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
                 {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
@@ -109,13 +109,13 @@ const generateData = (library, secondary, isDark) => {
         : null,
       {
         id: 'star',
-        icon: <Star fill={colors.gray5} />,
+        icon: <Star fill={isDark ? darkColors.pewter : colors.gray5} />,
         content: `${github.stats.stars.toLocaleString()} stars`,
       },
       github.stats.forks
         ? {
             id: 'forks',
-            icon: <Fork fill={colors.gray5} width={16} height={17} />,
+            icon: <Fork fill={isDark ? darkColors.pewter : colors.gray5} width={16} height={17} />,
             content: (
               <A href={`${github.urls.repo}/network/members`}>
                 {`${github.stats.forks.toLocaleString()}`} forks
@@ -126,7 +126,7 @@ const generateData = (library, secondary, isDark) => {
       github.stats.issues
         ? {
             id: 'issues',
-            icon: <Issue fill={colors.gray5} />,
+            icon: <Issue fill={isDark ? darkColors.pewter : colors.gray5} />,
             content: (
               <A href={`${github.urls.repo}/issues`}>
                 {`${github.stats.issues.toLocaleString()}`} issues
