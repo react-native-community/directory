@@ -1185,7 +1185,8 @@
     "githubUrl": "https://github.com/race604/react-native-viewpager",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/alinz/react-native-dropdown",
@@ -1488,7 +1489,8 @@
     "githubUrl": "https://github.com/corbt/react-native-keep-awake",
     "ios": true,
     "android": true,
-    "expo": false
+    "expo": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/lucasferreira/react-native-send-intent",
@@ -1621,7 +1623,8 @@
   {
     "githubUrl": "https://github.com/chrisfisher/react-native-directed-scrollview",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-keyboard-input",
@@ -1798,7 +1801,8 @@
     "githubUrl": "https://github.com/jineshshah36/react-native-nav",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/gilbox/react-imation",
@@ -2353,7 +2357,8 @@
     "ios": true,
     "android": true,
     "web": false,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-braintree-payments-drop-in",
