@@ -247,11 +247,14 @@ const createRepoDataWithResponse = (json, monorepo) => {
     }
   }
 
+  if (!monorepo) {
+    json.lastRelease =
+      json.releases && json.releases.nodes && json.releases.nodes.length
+        ? json.releases.nodes[0]
+        : undefined;
+  }
+
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
-  const lastRelease =
-    json.releases && json.releases.nodes && json.releases.nodes.length
-      ? json.releases.nodes[0]
-      : undefined;
 
   const hasTopics = json.topics && json.topics.length;
   const topics = hasTopics ? json.topics.map(topic => topic.toLowerCase()) : [];
@@ -281,6 +284,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     description: json.description,
     topics,
     license: json.licenseInfo,
-    lastRelease,
+    lastRelease: json.lastRelease,
   };
 };
