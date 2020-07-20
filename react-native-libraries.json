@@ -6005,5 +6005,54 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ak1394/react-native-tts",
+    "examples": [
+      "https://github.com/themostaza/react-native-tts-example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/halilb/react-native-textinput-effects",
+    "examples": [
+      "https://github.com/halilb/react-native-textinput-effects/tree/master/Example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/venits/react-native-map-clustering",
+    "examples": [
+      "https://github.com/venits/react-native-map-clustering/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/whitedogg13/react-native-nfc-manager",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
