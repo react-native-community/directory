@@ -2,7 +2,8 @@ import { A } from '@expo/html-elements';
 import React, { ReactNode } from 'react';
 import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 
-import { colors, P } from '../common/styleguide';
+import { colors, darkColors, P } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type Props = {
   children?: ReactNode;
@@ -15,34 +16,34 @@ type Props = {
 export function Button(props: Props) {
   const { children, href, onPress, style, target } = props;
   const isString = typeof children === 'string';
-  const button = (
-    <TouchableOpacity onPress={onPress} style={[styles.container, style]}>
-      {isString ? <P>{children}</P> : children}
-    </TouchableOpacity>
+
+  return (
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <A href={href} target={target}>
+          <TouchableOpacity
+            onPress={onPress}
+            style={[
+              styles.container,
+              {
+                backgroundColor: context.isDark ? darkColors.border : colors.white,
+              },
+              style,
+            ]}>
+            {isString ? <P>{children}</P> : children}
+          </TouchableOpacity>
+        </A>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
-
-  if (href) {
-    return (
-      <A href={href} target={target}>
-        {button}
-      </A>
-    );
-  }
-
-  return button;
 }
 
 const styles = StyleSheet.create({
   container: {
+    maxHeight: 34,
     paddingVertical: 8,
     paddingHorizontal: 16,
-    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  title: {
-    fontWeight: '400',
-    fontSize: 16,
-    color: colors.gray7,
   },
 });

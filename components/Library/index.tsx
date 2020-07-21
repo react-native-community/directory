@@ -3,7 +3,8 @@ import React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Linkify from 'react-simple-linkify';
 
-import { colors, layout, A, Label, Caption } from '../../common/styleguide';
+import { colors, layout, A, Label, Caption, darkColors } from '../../common/styleguide';
+import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
@@ -18,77 +19,133 @@ type Props = {
 export default function Library(props: Props) {
   const { library } = props;
   const { github } = library;
+  const isSmallScreen = layout.isSmallScreen();
 
   return (
-    <View style={[styles.container, layout.isSmallScreen() && styles.containerColumn]}>
-      <View style={styles.columnOne}>
-        {library.unmaintained ? (
-          <View style={styles.unmaintainedTextWrapper}>
-            <View style={styles.unmaintainedTextContainer}>
-              <Warning width={16} height={16} />
-              <Label style={styles.unmaintainedText}>
-                This library is not actively maintained!
-              </Label>
-            </View>
-          </View>
-        ) : null}
-        <View style={styles.displayHorizontal}>
-          <A
-            href={library.githubUrl || github.urls.repo}
-            style={styles.name}
-            hoverStyle={styles.nameHovered}>
-            {library.npmPkg || github.name}
-          </A>
-          {library.goldstar && (
-            <View style={[styles.displayHorizontal, styles.recommendedContainer]}>
-              <View style={styles.recommendedTextContainer}>
-                <Badge width={11} height={16} />
-                <Label style={styles.recommendedText}>Recommended Library</Label>
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <View
+          style={[
+            styles.container,
+            {
+              borderColor: context.isDark ? darkColors.border : colors.gray2,
+            },
+            isSmallScreen && styles.containerColumn,
+          ]}>
+          <View style={styles.columnOne}>
+            {library.unmaintained ? (
+              <View style={styles.unmaintainedTextWrapper}>
+                <View
+                  style={[
+                    styles.unmaintainedTextContainer,
+                    {
+                      backgroundColor: context.isDark ? darkColors.warning : colors.warningLight,
+                    },
+                  ]}>
+                  <Warning
+                    width={16}
+                    height={16}
+                    fill={context.isDark ? colors.gray2 : colors.warningDark}
+                  />
+                  <Label
+                    style={[
+                      styles.unmaintainedText,
+                      {
+                        color: context.isDark ? colors.gray2 : colors.warningDark,
+                      },
+                    ]}>
+                    This library is not actively maintained
+                  </Label>
+                </View>
               </View>
+            ) : null}
+            <View style={styles.displayHorizontal}>
+              <A
+                href={library.githubUrl || github.urls.repo}
+                style={styles.name}
+                hoverStyle={styles.nameHovered}>
+                {library.npmPkg || github.name}
+              </A>
+              {library.goldstar && (
+                <View
+                  style={[
+                    styles.displayHorizontal,
+                    styles.recommendedContainer,
+                    {
+                      backgroundColor: context.isDark ? colors.primaryDark : colors.primaryLight,
+                    },
+                  ]}>
+                  <View style={styles.recommendedTextContainer}>
+                    <Badge width={11} height={16} />
+                    <Label
+                      style={[
+                        styles.recommendedText,
+                        {
+                          color: context.isDark ? darkColors.dark : colors.black,
+                        },
+                      ]}>
+                      Recommended Library
+                    </Label>
+                  </View>
+                </View>
+              )}
             </View>
-          )}
-        </View>
-        <View style={styles.verticalMargin}>
-          <CompatibilityTags library={library} />
-        </View>
-        {!isEmptyOrNull(github.description) && (
-          <View style={styles.verticalMargin}>
-            <Caption>
-              <Linkify component={({ url }) => <A href={url}>{url}</A>}>
-                {emoji.emojify(github.description)}
-              </Linkify>
-            </Caption>
-          </View>
-        )}
-        {Platform.OS === 'web' && library.images && library.images.length ? (
-          <View style={[styles.displayHorizontal, styles.imagesContainer]}>
-            {library.images.map((image, index) => (
-              <Thumbnail key={`${image}-${index}`} url={image} />
-            ))}
-          </View>
-        ) : null}
-        {github.license || github.urls.homepage || (library.examples && library.examples.length) ? (
-          <>
-            <View style={styles.filler} />
-            <View style={styles.bottomBar}>
-              <View style={[styles.displayHorizontal, styles.secondaryStats]}>
-                <MetaData library={library} secondary />
+            <View style={styles.verticalMargin}>
+              <CompatibilityTags library={library} />
+            </View>
+            {!isEmptyOrNull(github.description) && (
+              <View style={styles.verticalMargin}>
+                <Caption>
+                  <Linkify component={({ url }) => <A href={url}>{url}</A>}>
+                    {emoji.emojify(github.description)}
+                  </Linkify>
+                </Caption>
               </View>
-            </View>
-          </>
-        ) : null}
-      </View>
-      <View style={[styles.columnTwo, layout.isSmallScreen() && styles.columnTwoSmall]}>
-        <MetaData library={library} />
-      </View>
-    </View>
+            )}
+            {Platform.OS === 'web' && library.images && library.images.length ? (
+              <View style={[styles.displayHorizontal, styles.imagesContainer]}>
+                {library.images.map((image, index) => (
+                  <Thumbnail key={`${image}-${index}`} url={image} />
+                ))}
+              </View>
+            ) : null}
+            {github.license ||
+            github.urls.homepage ||
+            (library.examples && library.examples.length) ? (
+              <>
+                <View style={styles.filler} />
+                <View style={styles.bottomBar}>
+                  <View style={[styles.displayHorizontal, styles.secondaryStats]}>
+                    <MetaData library={library} secondary />
+                  </View>
+                </View>
+              </>
+            ) : null}
+          </View>
+          <View
+            style={[
+              styles.columnTwo,
+              {
+                borderLeftColor: context.isDark ? darkColors.border : colors.gray2,
+              },
+              isSmallScreen && styles.columnTwoSmall,
+              isSmallScreen
+                ? {
+                    borderTopColor: context.isDark ? darkColors.border : colors.gray2,
+                  }
+                : undefined,
+            ]}>
+            <MetaData library={library} />
+          </View>
+        </View>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 }
 
 let styles = StyleSheet.create({
   container: {
     borderWidth: 1,
-    borderColor: colors.gray2,
     marginBottom: 16,
     borderRadius: 4,
     flexDirection: 'row',
@@ -115,12 +172,10 @@ let styles = StyleSheet.create({
     padding: 16,
     paddingLeft: 18,
     borderLeftWidth: 1,
-    borderLeftColor: colors.gray2,
   },
   columnTwoSmall: {
     borderLeftWidth: 0,
     borderTopWidth: 1,
-    borderTopColor: colors.gray2,
   },
   name: {
     backgroundColor: 'transparent',
@@ -141,7 +196,6 @@ let styles = StyleSheet.create({
   recommendedContainer: {
     paddingVertical: 4,
     paddingHorizontal: 8,
-    backgroundColor: colors.primaryLight,
     borderRadius: 2,
     marginLeft: 10,
     top: 1,
@@ -161,15 +215,14 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: -20,
     marginBottom: 12,
-    backgroundColor: colors.warningLight,
     paddingLeft: 20,
     paddingRight: 12,
     paddingVertical: 6,
-    borderRadius: 2,
+    borderTopRightRadius: 2,
+    borderBottomRightRadius: 2,
   },
   unmaintainedText: {
     marginLeft: 6,
-    color: colors.warningDark,
   },
   verticalMargin: {
     marginTop: 12,
@@ -192,7 +245,6 @@ let styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     minHeight: 42,
-    borderTopColor: colors.gray2,
     paddingLeft: 20,
     paddingRight: 16,
   },

@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { layout, colors, P } from '../common/styleguide';
+import { layout, colors, P, darkColors } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { Filters, FilterButton } from './Filters';
@@ -21,56 +22,71 @@ export default function Search(props: Props) {
   const [debouncedCallback] = useDebouncedCallback(text => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 150);
+  const isSmallScreen = layout.isSmallScreen();
 
   return (
-    <View>
-      <View style={styles.wrapper}>
-        <View style={styles.container}>
-          <View style={styles.displayHorizontal}>
-            <TextInput
-              onChangeText={debouncedCallback}
-              placeholder="Search libraries..."
-              style={styles.textInput}
-              defaultValue={query && query.search}
-              placeholderTextColor={colors.gray4}
-            />
-            <View style={styles.searchIcon}>
-              <SearchIcon fill={colors.white} />
-            </View>
-          </View>
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <>
           <View
             style={[
-              styles.displayHorizontal,
-              styles.resultsContainer,
-              layout.isSmallScreen() && styles.smallResultsContainer,
+              styles.wrapper,
+              {
+                backgroundColor: context.isDark ? darkColors.dark : colors.gray6,
+              },
             ]}>
-            {total ? (
-              <P style={styles.totalText}>
-                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
-              </P>
-            ) : (
-              <P />
-            )}
-            <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
-              <FilterButton
-                query={query}
-                onPress={() => setFilterVisible(!isFilterVisible)}
-                isFilterVisible={isFilterVisible}
-              />
-              <SortButton query={query} />
+            <View style={styles.container}>
+              <View style={styles.displayHorizontal}>
+                <TextInput
+                  onChangeText={debouncedCallback}
+                  placeholder="Search libraries..."
+                  style={[
+                    styles.textInput,
+                    {
+                      borderColor: context.isDark ? darkColors.border : colors.gray5,
+                    },
+                  ]}
+                  defaultValue={query && query.search}
+                  placeholderTextColor={colors.gray4}
+                />
+                <View style={styles.searchIcon}>
+                  <SearchIcon fill={colors.white} />
+                </View>
+              </View>
+              <View
+                style={[
+                  styles.displayHorizontal,
+                  styles.resultsContainer,
+                  isSmallScreen && styles.smallResultsContainer,
+                ]}>
+                {total ? (
+                  <P style={styles.totalText}>
+                    <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
+                  </P>
+                ) : (
+                  <P />
+                )}
+                <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
+                  <FilterButton
+                    query={query}
+                    onPress={() => setFilterVisible(!isFilterVisible)}
+                    isFilterVisible={isFilterVisible}
+                  />
+                  <SortButton query={query} />
+                </View>
+              </View>
             </View>
           </View>
-        </View>
-      </View>
-      {isFilterVisible && <Filters query={query} />}
-    </View>
+          {isFilterVisible && <Filters query={query} />}
+        </>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 }
 
 const styles = StyleSheet.create({
   wrapper: {
     paddingVertical: 16,
-    backgroundColor: colors.gray6,
     alignItems: 'center',
   },
   container: {
@@ -86,7 +102,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     borderWidth: 2,
-    borderColor: colors.gray5,
     borderRadius: 4,
     padding: 16,
     paddingLeft: 44,

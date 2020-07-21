@@ -2,7 +2,8 @@ import Link from 'next/link';
 import * as React from 'react';
 import { StyleSheet, View, ViewStyle, TouchableOpacity } from 'react-native';
 
-import { colors, Caption } from '../common/styleguide';
+import { colors, Caption, darkColors } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import { NUM_PER_PAGE } from '../util/Constants';
 import urlWithQuery from '../util/urlWithQuery';
@@ -25,43 +26,62 @@ export default function Pagination(props: Props) {
   const backDisabled = currentPage <= 1;
   const forwardDisabled = currentPage >= totalPages;
 
-  const backArrow = (
-    <View style={[styles.rotate, styles.arrowContainer, backDisabled && styles.disabled]}>
-      <Arrow height={12} width={9} />
+  const backArrow = isDark => (
+    <View
+      style={[
+        styles.rotate,
+        styles.arrowContainer,
+        {
+          backgroundColor: isDark ? darkColors.border : colors.gray2,
+        },
+        backDisabled && styles.disabled,
+      ]}>
+      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
     </View>
   );
 
-  const forwardArrow = (
-    <View style={[styles.arrowContainer, forwardDisabled && styles.disabled]}>
-      <Arrow height={12} width={9} />
+  const forwardArrow = isDark => (
+    <View
+      style={[
+        styles.arrowContainer,
+        {
+          backgroundColor: isDark ? darkColors.border : colors.gray2,
+        },
+        forwardDisabled && styles.disabled,
+      ]}>
+      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
     </View>
   );
 
   return (
-    <View style={[styles.container, style]}>
-      {backDisabled ? (
-        backArrow
-      ) : (
-        <TouchableOpacity>
-          <Link href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}>
-            {backArrow}
-          </Link>
-        </TouchableOpacity>
-      )}
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <View style={[styles.container, style]}>
+          {backDisabled ? (
+            backArrow(context.isDark)
+          ) : (
+            <TouchableOpacity>
+              <Link href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}>
+                {backArrow(context.isDark)}
+              </Link>
+            </TouchableOpacity>
+          )}
 
-      <Caption style={styles.text}>
-        {currentPage > 0 ? currentPage : '1'} of {totalPages}
-      </Caption>
-      {forwardDisabled ? (
-        forwardArrow
-      ) : (
-        <TouchableOpacity>
-          <Link href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}>
-            {forwardArrow}
-          </Link>
-        </TouchableOpacity>
+          <Caption style={styles.text}>
+            {currentPage > 0 ? currentPage : '1'} of {totalPages}
+          </Caption>
+          {forwardDisabled ? (
+            forwardArrow(context.isDark)
+          ) : (
+            <TouchableOpacity>
+              <Link href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}>
+                {forwardArrow(context.isDark)}
+              </Link>
+            </TouchableOpacity>
+          )}
+        </View>
       )}
-    </View>
+    </CustomAppearanceContext.Consumer>
   );
 }
 
@@ -71,9 +91,11 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    flexGrow: 0,
+    flexBasis: 1,
+    minHeight: 28,
   },
   arrowContainer: {
-    backgroundColor: colors.gray2,
     height: 24,
     width: 24,
     justifyContent: 'center',

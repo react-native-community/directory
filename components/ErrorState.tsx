@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { H2, A } from '../common/styleguide';
+import { H2, A, P } from '../common/styleguide';
 
 export default ({ statusCode }) => {
   return (
     <View style={styles.container}>
-      <H2 style={[styles.text]}>Uh oh, something went wrong ({statusCode})</H2>
-      <Text style={[styles.text]}>
+      <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
+      <P style={[styles.text, styles.secondLine]}>
         Help fix it? Submit a PR to the{' '}
         <A href="https://github.com/react-native-directory/website">Github Repo</A>.
-      </Text>
+      </P>
     </View>
   );
 };
@@ -31,5 +31,8 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+  },
+  secondLine: {
+    marginTop: 20,
   },
 });

@@ -2,7 +2,8 @@ import Router from 'next/router';
 import React, { useState } from 'react';
 import { StyleSheet, View, Picker } from 'react-native';
 
-import { colors, P } from '../common/styleguide';
+import { colors, darkColors, P } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { Sort as SortIcon } from './Icons';
@@ -55,26 +56,43 @@ export const SortButton = (props: SortButtonProps) => {
   }
 
   return (
-    <View style={[styles.container, styles.displayHorizontal]}>
-      <View style={styles.displayHorizontal}>
-        <SortIcon fill={colors.white} />
-        <P style={styles.title}>Sort:</P>
-      </View>
-      <View style={styles.pickerContainer}>
-        <P style={styles.title}>
-          <Picker selectedValue={sortValue} style={styles.picker} onValueChange={onPickerChange}>
-            {sorts.map(sort => (
-              <Picker.Item
-                key={sort.param}
-                value={sort.param}
-                label={sort.label}
-                color={colors.black}
-              />
-            ))}
-          </Picker>
-        </P>
-      </View>
-    </View>
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <View
+          style={[
+            styles.container,
+            styles.displayHorizontal,
+            { backgroundColor: context.isDark ? darkColors.border : colors.gray5 },
+          ]}>
+          <View style={styles.displayHorizontal}>
+            <SortIcon fill={colors.white} />
+            <P style={styles.title}>Sort:</P>
+          </View>
+          <View style={styles.pickerContainer}>
+            <P style={styles.title}>
+              <Picker
+                selectedValue={sortValue}
+                style={[
+                  styles.picker,
+                  {
+                    backgroundColor: context.isDark ? darkColors.border : 'transparent',
+                  },
+                ]}
+                onValueChange={onPickerChange}>
+                {sorts.map(sort => (
+                  <Picker.Item
+                    key={sort.param}
+                    value={sort.param}
+                    label={sort.label}
+                    color={context.isDark ? colors.white : colors.black}
+                  />
+                ))}
+              </Picker>
+            </P>
+          </View>
+        </View>
+      )}
+    </CustomAppearanceContext.Consumer>
   );
 };
 
@@ -100,7 +118,6 @@ let styles = StyleSheet.create({
     left: -4,
   },
   picker: {
-    backgroundColor: 'transparent',
     color: colors.white,
     borderWidth: 0,
     position: 'relative',

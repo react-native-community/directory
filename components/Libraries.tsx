@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
-import { H3, A } from '../common/styleguide';
+import { H3, A, P } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
 import Library from './Library';
 
@@ -18,11 +18,11 @@ export default function Libraries(props: Props) {
         <Image style={styles.img} source={require('../assets/notfound.png')} />
         <H3 style={styles.text}>Nothing was found! Try another search.</H3>
         <View style={{ marginTop: 20 }} />
-        <Text style={styles.text}>
+        <P style={styles.text}>
           Want to contribute a library you like? Submit a PR to the{' '}
           <A href="https://github.com/react-native-community/react-native-directory">Github Repo</A>
           .
-        </Text>
+        </P>
       </View>
     );
   }
