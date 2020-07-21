@@ -245,6 +245,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
     if (json.topics.length === 0) {
       json.topics = packageJson.keywords;
     }
+
+    if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+      json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+    }
   }
 
   if (!monorepo) {
