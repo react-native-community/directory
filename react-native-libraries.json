@@ -6084,5 +6084,38 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/ammarahm-ed/react-native-actions-sheet",
+    "examples": [
+      "https://github.com/ammarahm-ed/react-native-actions-sheet/tree/master/example"
+    ],
+    "images": [
+      "https://imgur.com/XdsHb6M.gif",
+      "https://imgur.com/g6LLkl4.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/prscX/react-native-photo-editor",
+    "examples": [
+      "https://github.com/prscX/react-native-photo-editor/tree/master/Example"
+    ],
+    "images": [
+      "https://github.com/prscX/react-native-photo-editor/raw/master/assets/hero.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
