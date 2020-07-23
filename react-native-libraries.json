@@ -3317,11 +3317,14 @@
   },
   {
     "githubUrl": "https://github.com/react-native-community/progress-view",
+    "examples": [
+      "https://github.com/react-native-community/progress-view/tree/master/example"
+    ],
     "ios": true,
     "android": false,
     "expo": false,
     "web": false,
-    "windows": false,
+    "windows": true,
     "npmPkg": "@react-native-community/progress-view"
   },
   {
