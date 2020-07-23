@@ -6117,5 +6117,18 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+  "githubUrl": "https://github.com/react-native-community/progress-view",
+  "examples": [
+    "https://github.com/react-native-community/progress-view/tree/master/example"
+  ],
+  "ios": true,
+  "android": false,
+  "web": false,
+  "expo": false,
+  "windows": true,
+  "macos": false,
+  "unmaintained": false
   }
 ]
