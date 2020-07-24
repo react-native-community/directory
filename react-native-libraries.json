@@ -6141,5 +6141,19 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/LonelyCpp/react-native-youtube-iframe",
+    "npmPkg": "react-native-youtube-iframe",
+    "images": [
+      "https://raw.githubusercontent.com/LonelyCpp/react-native-youtube-iframe/master/doc/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
