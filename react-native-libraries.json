@@ -407,6 +407,9 @@
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-material-showcase-ios",
+    "images": [
+      "https://raw.githubusercontent.com/aromajoin/material-showcase-ios/master/art/material-showcase.gif"
+    ],
     "ios": true,
     "android": false,
     "web": false,
@@ -422,6 +425,9 @@
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-taptargetview",
+    "images": [
+      "https://github.com/KeepSafe/TapTargetView/raw/master/.github/video.gif"
+    ],
     "ios": false,
     "android": true,
     "web": false,
@@ -627,6 +633,9 @@
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+    "images": [
+      "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -1864,6 +1873,9 @@
   },
   {
     "githubUrl": "https://github.com/tomauty/react-native-chart",
+    "images": [
+      "https://raw.githubusercontent.com/tomauty/react-native-chart/master/screenshots/README.png"
+    ],
     "ios": true,
     "android": true,
     "unmaintained": true
@@ -2526,6 +2538,9 @@
   },
   {
     "githubUrl": "https://github.com/Nozbe/WatermelonDB",
+    "images": [
+      "https://github.com/Nozbe/WatermelonDB/raw/master/assets/watermelon-demo-thumbnail.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
