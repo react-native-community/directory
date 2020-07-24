@@ -6121,5 +6121,22 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-google-nearby-messages",
+    "npmPkg": "react-native-google-nearby-messages",
+    "examples": [
+      "https://github.com/mrousavy/react-native-google-nearby-messages/tree/master/example"
+    ],
+    "images": [
+      "https://github.com/mrousavy/react-native-google-nearby-messages/raw/master/img/nearby-messages-icon.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
