@@ -6141,5 +6141,16 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/vhpoet/react-native-styling-cheat-sheet",
+    "npmPkg": "react-native-styling-cheat-sheet",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": false,
+    "unmaintained": false
   }
 ]
