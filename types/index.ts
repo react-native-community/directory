@@ -49,6 +49,14 @@ export type Library = {
       url: string;
       id: string;
     };
+    lastRelease: {
+      name: string;
+      tagName: string;
+      createdAt: Date;
+      publishedAt: Date;
+      isPrerelease: boolean;
+    };
+    hasTypes: boolean;
   };
   images: string[];
   npmPkg: string;
