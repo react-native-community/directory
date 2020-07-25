@@ -1,11 +1,20 @@
 export type Query = {
-  ios?: string;
-  expo?: string;
   android?: string;
+  expo?: string;
+  ios?: string;
+  macos?: string;
   web?: string;
+  windows?: string;
   order?: 'quality' | 'recommended' | 'issues' | 'downloads' | 'stars';
   search?: string;
   offset?: string;
+  hasExample?: string;
+  hasImage?: string;
+  hasTypes?: string;
+  isMaintained?: string;
+  isPopular?: string;
+  isRecommended?: string;
+  wasRecentlyUpdated?: string;
 };
 
 export type Library = {
