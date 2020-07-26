@@ -6170,5 +6170,22 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/vydimitrov/use-count-up",
+    "npmPkg": "use-count-up",
+    "examples": [
+      "https://use-count-up.now.sh/",
+      "https://snack.expo.io/@vydimitrov/use-count-up?platform=ios"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/10707142/82188777-ac628e80-98ee-11ea-8a10-0469713a3bbc.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true,
+    "windows": true,
+    "macos": true
   }
 ]
