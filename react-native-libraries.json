@@ -6170,5 +6170,18 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/mcodex/react-native-rooster",
+    "npmPkg": "react-native-rooster",
+    "examples": ["https://github.com/mCodex/react-native-rooster/tree/master/example"],
+    "images": ["https://github.com/mCodex/react-native-rooster/blob/master/demo.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
