@@ -6183,5 +6183,35 @@
     "windows": false,
     "macos": false,
     "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/vydimitrov/use-count-up",
+    "npmPkg": "use-count-up",
+    "examples": [
+      "https://use-count-up.now.sh/",
+      "https://snack.expo.io/@vydimitrov/use-count-up?platform=ios"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/10707142/82188777-ac628e80-98ee-11ea-8a10-0469713a3bbc.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true,
+    "windows": true,
+    "macos": true
+  },
+  {
+    "githubUrl": "https://github.com/vydimitrov/react-countdown-circle-timer/tree/master/packages/mobile",
+    "npmPkg": "react-native-countdown-circle-timer",
+    "examples": ["https://snack.expo.io/@vydimitrov/countdown-circle-timer?platform=ios"],
+    "images": [
+      "https://user-images.githubusercontent.com/10707142/66097204-ca68c200-e59d-11e9-9b70-688409755aaa.gif",
+      "https://user-images.githubusercontent.com/10707142/65935516-a0869280-e419-11e9-9bb0-40c4d1ef2bbe.gif",
+      "https://user-images.githubusercontent.com/10707142/65963815-cfbdf380-e45b-11e9-809d-970174e88914.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
