@@ -5,7 +5,7 @@ import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { Calendar, Star, Download, Issue, Web, License, Fork, Code } from '../Icons';
+import { Calendar, Star, Download, Issue, Web, License, Fork, Code, TypeScript } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
@@ -52,6 +52,13 @@ const generateData = (library, secondary, isDark) => {
                   {github.license.name}
                 </A>
               ),
+          }
+        : null,
+      github.hasTypes
+        ? {
+            id: 'types',
+            icon: <TypeScript fill={iconColor} width={16} height={16} />,
+            content: <P style={paragraphStyles}>TypeScript Types</P>,
           }
         : null,
       library.examples && library.examples.length
