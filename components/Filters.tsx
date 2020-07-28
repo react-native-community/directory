@@ -71,6 +71,7 @@ export const FilterButton = (props: FilterButtonProps) => {
     ...platforms.map(platform => platform.param),
     'hasExample',
     'hasImage',
+    'hasTypes',
     'isMaintained',
     'isPopular',
     'isRecommended',
@@ -148,6 +149,12 @@ export const Filters = (props: FiltersProps) => {
                 query={query}
                 paramName="hasImage"
                 title="Has image preview"
+              />
+              <ToggleLink
+                key="hasTypes"
+                query={query}
+                paramName="hasTypes"
+                title="Has TypeScript types"
               />
               <ToggleLink
                 key="isMaintained"

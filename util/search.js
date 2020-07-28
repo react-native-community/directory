@@ -7,6 +7,7 @@ export const handleFilterLibraries = ({
   support,
   hasExample,
   hasImage,
+  hasTypes,
   isMaintained,
   isPopular,
   isRecommended,
@@ -52,6 +53,10 @@ export const handleFilterLibraries = ({
     }
 
     if (hasImage && (!library.images || !library.images.length)) {
+      return false;
+    }
+
+    if (hasTypes && !library.github.hasTypes) {
       return false;
     }
 
