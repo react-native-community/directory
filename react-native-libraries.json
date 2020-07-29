@@ -5125,7 +5125,8 @@
     "android": true,
     "web": false,
     "expo": false,
-    "windows": false,
+    "windows": true,
+    "macos": true,
     "npmPkg": "react-native-sensitive-info",
     "unmaintained": false
   },
