@@ -6210,5 +6210,17 @@
       "windows": true,
       "macos": true,
       "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-ios-kit",
+    "npmPkg": "react-native-ios-kit",
+    "examples": ["https://github.com/callstack/react-native-ios-kit/tree/master/example"],
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
