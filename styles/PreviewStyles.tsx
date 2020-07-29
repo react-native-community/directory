@@ -18,20 +18,27 @@ const PreviewStyles = () => {
     <CustomAppearanceContext.Consumer>
       {context => (
         <style jsx global>{`
+          html,
+          body {
+            background-color: ${context.isDark ? darkColors.background : colors.white};
+          }
+
           .preview {
             background-color: ${context.isDark ? darkColors.black : colors.white} !important;
             opacity: 1 !important;
             padding: 10px !important;
             box-sizing: border-box;
-            box-shadow: 0 5px 5px 0 #00000025 !important;
+            box-shadow: 0 4px 6px 0 ${context.isDark ? '#2a2e3633' : '#00000025'} !important;
             max-width: ${previewWidth}px;
             max-height: 66vh;
+            border-radius: 3px;
           }
 
           .preview img {
             display: none;
             max-width: ${previewImageWidth}px;
             max-height: calc(66vh - 20px);
+            border-radius: 2px;
           }
 
           .preview.loaded img {
