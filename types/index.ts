@@ -74,4 +74,6 @@ export type Library = {
   matchingScoreModifiers: string[];
   topicSearchString: string;
   examples: string[];
+  /* Override name override if the name is different from the GitHub repo and npm package name */
+  nameOverride?: string;
 };

@@ -92,11 +92,17 @@
           "type": "string",
           "title": "The Image Schema",
           "default": "",
-          "examples": [
-            "https://reactnative.dev/img/homepage/phones.png"
-          ],
+          "examples": ["https://reactnative.dev/img/homepage/phones.png"],
           "pattern": "^(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png)$"
         }
+      },
+      "nameOverride": {
+        "$id": "#/items/properties/nameOverride",
+        "type": "string",
+        "title": "Optional property to override the name provided by npm and GitHub",
+        "default": "",
+        "examples": ["react-navigation"],
+        "pattern": "^(.*)$"
       }
     }
   }

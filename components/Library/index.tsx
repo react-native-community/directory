@@ -64,7 +64,7 @@ export default function Library(props: Props) {
                 href={library.githubUrl || github.urls.repo}
                 style={styles.name}
                 hoverStyle={styles.nameHovered}>
-                {library.npmPkg || github.name}
+                {library.nameOverride || library.npmPkg || github.name}
               </A>
               {library.goldstar && (
                 <View
