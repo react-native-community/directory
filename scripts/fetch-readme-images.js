@@ -6,12 +6,16 @@ import { sleep } from './build-and-score-data';
 const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
   let parentHref = image.parent().attr('href');
   let isInHeader = image.parents('h1').length > 0;
-  let isFromRepo = imageSrc.includes(githubUrl);
-  let isBadge = imageSrc.includes('shields.io') || imageSrc.includes('travis-ci.com');
+  let isFromRepo = imageSrc.includes(githubUrl) || imageSrc.startsWith('/');
+  let isAvatar = imageSrc.includes('avatars0.githubusercontent.com');
+  let isBadge =
+    imageSrc.includes('shields.io') ||
+    imageSrc.includes('travis-ci.com') ||
+    imageSrc.includes('badge.svg');
 
   return (
-    (isFromRepo && !isInHeader) ||
-    (parentHref && imageSrc && parentHref === imageSrc && !isInHeader && !isBadge)
+    (isFromRepo && !isInHeader && !isBadge && !isAvatar) ||
+    (parentHref && imageSrc && parentHref === imageSrc && !isInHeader && !isBadge && !isAvatar)
   );
 };
 
@@ -27,7 +31,8 @@ const scrapeImagesAsync = async githubUrl => {
       let image = $(images[i]);
       let imageSrc = image.attr('data-canonical-src') || image.attr('src');
       if (isLikelyUsefulImage(image, imageSrc, githubUrl)) {
-        usefulImages.push(imageSrc);
+        const finalURL = imageSrc.startsWith('/') ? `https://github.com${imageSrc}` : imageSrc;
+        usefulImages.push(finalURL);
       }
     }
     return usefulImages;
