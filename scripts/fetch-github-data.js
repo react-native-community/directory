@@ -266,7 +266,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
 
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
-  const hasTopics = json.topics && json.topics.length;
+  const hasTopics = json.topics && json.topics.length > 0;
   const topics = hasTopics ? json.topics.map(topic => topic.toLowerCase()) : [];
 
   return {
