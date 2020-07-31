@@ -3405,7 +3405,7 @@
     "images": [
       "https://user-images.githubusercontent.com/6936373/71608757-dc6ef680-2bc6-11ea-85be-aa31f25ecf36.png",
       "https://user-images.githubusercontent.com/6936373/79550655-9edd9d00-80d3-11ea-98bf-8b7c0b0798d3.png",
-      "https://user-images.githubusercontent.com/6936373/79590620-3f52b200-8112-11ea-863b-236c4465fba6.png"      
+      "https://user-images.githubusercontent.com/6936373/79590620-3f52b200-8112-11ea-863b-236c4465fba6.png"
     ],
     "ios": true,
     "android": true,
@@ -3851,9 +3851,7 @@
   },
   {
     "githubUrl": "https://github.com/wKovacs64/react-native-responsive-image-view",
-    "examples": [
-      "https://snack.expo.io/@wkovacs64/responsiveimageview"
-    ],
+    "examples": ["https://snack.expo.io/@wkovacs64/responsiveimageview"],
     "ios": true,
     "android": true,
     "web": false,
@@ -4738,12 +4736,8 @@
   },
   {
     "githubUrl": "https://github.com/jemise111/react-native-swipe-list-view",
-    "images": [
-      "https://media.giphy.com/media/WrmrvmwMnvvmzN3ZpX/giphy.gif"  
-    ],
-    "examples": [
-      "https://snack.expo.io/@jemise111/react-native-swipe-list-view"
-    ],
+    "images": ["https://media.giphy.com/media/WrmrvmwMnvvmzN3ZpX/giphy.gif"],
+    "examples": ["https://snack.expo.io/@jemise111/react-native-swipe-list-view"],
     "ios": true,
     "android": true,
     "expo": true,
@@ -6301,14 +6295,43 @@
     "expo": true
   },
   {
-      "githubUrl": "https://github.com/jordanbyron/react-native-event-source",
-      "npmPkg": "react-native-event-source",
-      "ios": true,
-      "android": true,
-      "web": true,
-      "expo": true,
-      "windows": true,
-      "macos": true,
-      "unmaintained": false
+    "githubUrl": "https://github.com/jordanbyron/react-native-event-source",
+    "npmPkg": "react-native-event-source",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/chaimPaneth/react-native-zoom-bridge",
+    "npmPkg": "https://www.npmjs.com/package/react-native-zoom-bridge",
+    "images": [
+      "https://github.com/chaimPaneth/react-native-zoom-bridge/blob/master/images/Sample.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
+    "githubUrl": "https://github.com/chaimPaneth/react-native-jw-media-player",
+    "npmPkg": "https://www.npmjs.com/package/react-native-zoom-bridge",
+    "examples": ["https://github.com/chaimPaneth/react-native-jw-media-player/tree/master/Example"],
+    "images": [
+      "https://github.com/chaimPaneth/react-native-jw-media-player/blob/master/images/1.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
