@@ -97,7 +97,7 @@ export const handleFilterLibraries = ({
         ? library.npmPkg.includes(querySearch)
         : undefined;
       const isDescriptionMatch = !isEmptyOrNull(library.github.description)
-        ? library.github.description.includes(querySearch)
+        ? library.github.description.toLowerCase().includes(querySearch)
         : undefined;
 
       isSearchMatch = isNameMatch || isNpmPkgNameMatch || isDescriptionMatch || isTopicMatch;
