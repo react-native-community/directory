@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ViewStyle } from 'react-native';
 
 import { colors, darkColors, Label } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -9,6 +9,33 @@ import { Check } from './Icons';
 type Props = {
   library: Library;
 };
+
+type TagProps = {
+  platform: string;
+  tagStyle: ViewStyle;
+  showCheck?: boolean;
+};
+
+const Tag = ({ platform, tagStyle, showCheck = true }: TagProps) => (
+  <CustomAppearanceContext.Consumer>
+    {context => (
+      <View key={platform} style={[styles.tag, tagStyle]}>
+        {showCheck ? (
+          <Check width={14} height={10} fill={context.isDark ? darkColors.secondary : undefined} />
+        ) : null}
+        <Label
+          style={[
+            styles.text,
+            {
+              color: context.isDark ? darkColors.secondary : colors.black,
+            },
+          ]}>
+          {platform}
+        </Label>
+      </View>
+    )}
+  </CustomAppearanceContext.Consumer>
+);
 
 export function CompatibilityTags(props: Props) {
   const { library } = props;
@@ -27,31 +54,24 @@ export function CompatibilityTags(props: Props) {
     <CustomAppearanceContext.Consumer>
       {context => (
         <View style={styles.container}>
+          {library.dev ? (
+            <Tag
+              platform="Development Tool"
+              tagStyle={{
+                backgroundColor: context.isDark ? '#2b1c48' : '#e3d8f8',
+                borderColor: context.isDark ? '#482f72' : '#d3c2f2',
+              }}
+              showCheck={false}
+            />
+          ) : null}
           {platforms.map(platform => (
-            <View
-              key={platform}
-              style={[
-                styles.tag,
-                {
-                  backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
-                  borderColor: context.isDark ? darkColors.border : colors.gray2,
-                },
-              ]}>
-              <Check
-                width={14}
-                height={10}
-                fill={context.isDark ? darkColors.secondary : undefined}
-              />
-              <Label
-                style={[
-                  styles.text,
-                  {
-                    color: context.isDark ? darkColors.secondary : colors.black,
-                  },
-                ]}>
-                {platform}
-              </Label>
-            </View>
+            <Tag
+              platform={platform}
+              tagStyle={{
+                backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
+                borderColor: context.isDark ? darkColors.border : colors.gray2,
+              }}
+            />
           ))}
         </View>
       )}
