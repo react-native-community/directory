@@ -27,6 +27,7 @@ export type Library = {
   windows: boolean;
   macos: boolean;
   unmaintained: boolean;
+  dev: boolean;
   github: {
     urls: {
       repo: string;
@@ -74,6 +75,5 @@ export type Library = {
   matchingScoreModifiers: string[];
   topicSearchString: string;
   examples: string[];
-  /* Override name override if the name is different from the GitHub repo and npm package name */
   nameOverride?: string;
 };
