@@ -5090,5 +5090,44 @@
     "examples": ["https://github.com/callstack/react-native-ios-kit/tree/master/example"],
     "ios": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/arronhunt/react-native-emoji-selector",
+    "examples": ["https://github.com/arronhunt/react-native-emoji-selector/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rgommezz/react-native-scroll-bottom-sheet",
+    "examples": ["https://github.com/rgommezz/react-native-scroll-bottom-sheet/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/RafaelAugustoS/react-native-popup-ui",
+    "npmPkg": "popup-ui",
+    "examples": ["https://github.com/RafaelAugustoS/react-native-popup-ui/tree/master/examples"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-header-view",
+    "npmPkg": "@freakycoder/react-native-header-view",
+    "examples": ["https://github.com/WrathChaos/react-native-header-view/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/thegamenicorus/react-native-phone-input",
+    "examples": ["https://github.com/thegamenicorus/react-native-phone-input/tree/master/examples/BasicExample"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Gustash/react-native-siri-shortcut",
+    "examples": ["https://github.com/Gustash/react-native-siri-shortcut/tree/master/example"],
+    "ios": true
   }
 ]
