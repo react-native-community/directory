@@ -2766,19 +2766,22 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-enzyme",
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/jest-expo-puppeteer",
     "web": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/leonelfaugusto/rn-option-select",
@@ -2962,7 +2965,8 @@
     "githubUrl": "https://github.com/infinitered/reactotron",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/infinitered/apisauce",
@@ -4873,7 +4877,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/retyui/react-native-confirmation-code-input",
@@ -5099,7 +5104,9 @@
   },
   {
     "githubUrl": "https://github.com/rgommezz/react-native-scroll-bottom-sheet",
-    "examples": ["https://github.com/rgommezz/react-native-scroll-bottom-sheet/tree/master/example"],
+    "examples": [
+      "https://github.com/rgommezz/react-native-scroll-bottom-sheet/tree/master/example"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -5121,7 +5128,9 @@
   },
   {
     "githubUrl": "https://github.com/thegamenicorus/react-native-phone-input",
-    "examples": ["https://github.com/thegamenicorus/react-native-phone-input/tree/master/examples/BasicExample"],
+    "examples": [
+      "https://github.com/thegamenicorus/react-native-phone-input/tree/master/examples/BasicExample"
+    ],
     "ios": true,
     "android": true
   },
