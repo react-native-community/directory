@@ -7,7 +7,8 @@
     "lint": "eslint .",
     "data:update": "babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
     "data:test": "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
-    "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json"
+    "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json",
+    "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env"
   },
   "dependencies": {
     "@expo/html-elements": "^0.0.0",
