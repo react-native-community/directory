@@ -103,6 +103,13 @@
         "default": "",
         "examples": ["react-navigation"],
         "pattern": "^(.*)$"
+      },
+      "dev": {
+        "$id": "#/items/properties/dev",
+        "type": "boolean",
+        "title": "The Development Tool Schema",
+        "default": false,
+        "examples": [true]
       }
     }
   }

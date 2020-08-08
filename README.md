@@ -52,6 +52,7 @@ Please follow this format and indentation:
 {
   "githubUrl": "<THE GITHUB URL>",
   "npmPkg": "<NPM PACKAGE NAME>",
+  "nameOverride": "<PACKAGE DISPLAY NAME>",
   "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
@@ -60,21 +61,24 @@ Please follow this format and indentation:
   "expo": false,
   "windows": false,
   "macos": false,
-  "unmaintained": false
-},
+  "unmaintained": false,
+  "dev": false
+}
 ```
 
-- `githubUrl` - where we can find the repository on GitHub (currently other git hosts are not supported).
-- `npmPkg` - optional string of the package's display name.
-- `examples` - optional array of URLs (snacks preferred) with demonstrations of the library.
-- `images` - optional array of images that will show up in the listing to preview the library functionality.
-- `ios` - works on iOS phones.
-- `android` - works on Android phones.
-- `web` - can be used in the browser.
-- `expo` - can be used in managed workflow, without ejecting an Expo application (any library can be used if you eject).
-- `windows` - can be used with `react-native-windows`.
-- `macos` - can be used with `react-native-macos`.
-- `unmaintained` - optional boolean to signify that a library is or is not maintained.
+- `githubUrl` - (**required** string) - URL to the GitHub repository (currently other git hosts are not supported).
+- `npmPkg` - (_optional_ string) - package's display name (fill only when the GitHub repository name is different from the name of package published to npm).
+- `nameOverride` - (_optional_ string) - override name if the name is different from the GitHub repo and npm package name.
+- `examples` - (_optional_ array of strings) - URLs (snacks preferred) with demonstrations of the library.
+- `images` - (_optional_ array of strings) - URLs to images that will show up in the listing to preview the library functionality.
+- `ios` - (_optional_ boolean) - works on iOS phones.
+- `android` - (_optional_ boolean) - works on Android phones.
+- `web` - (_optional_ boolean) - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
+- `expo` - (_optional_ boolean) - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
+- `windows` - (_optional_ boolean) - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
+- `macos` - (_optional_ boolean) - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
+- `unmaintained` - (_optional_ boolean) - signify that a library is not maintained.
+- `dev` - (_optional_ boolean) - signify that a library is a development tool.
 
 > _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
