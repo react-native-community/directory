@@ -5138,5 +5138,18 @@
     "githubUrl": "https://github.com/Gustash/react-native-siri-shortcut",
     "examples": ["https://github.com/Gustash/react-native-siri-shortcut/tree/master/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/safaiyeh/react-native-app-review",
+    "npmPkg": "react-native-app-review",
+    "examples": ["https://github.com/safaiyeh/react-native-app-review/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false,
+    "dev": false
   }
 ]
