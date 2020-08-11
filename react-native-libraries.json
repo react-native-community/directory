@@ -5138,5 +5138,11 @@
     "githubUrl": "https://github.com/Gustash/react-native-siri-shortcut",
     "examples": ["https://github.com/Gustash/react-native-siri-shortcut/tree/master/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Gustash/react-native-image-keyboard",
+    "examples": ["https://github.com/Gustash/react-native-image-keyboard/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
