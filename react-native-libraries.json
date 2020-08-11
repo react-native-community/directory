@@ -767,6 +767,7 @@
     "ios": true,
     "android": true,
     "expo": true,
+    "unmaintained": true,
     "examples": ["https://snack.expo.io/rkzzeFUIW"]
   },
   {
@@ -5147,8 +5148,13 @@
   },
   {
     "githubUrl": "https://github.com/ushelp/EasyQRCode-React-Native",
-    "examples": ["http://www.easyproject.cn/easyqrcodejs/tryit.html", "https://github.com/ushelp/EasyQRCode-React-Native/blob/master/demo/App.js"],
-    "images": ["https://raw.githubusercontent.com/ushelp/EasyQRCode-React-Native/master/doc/images/demo.png"],
+    "examples": [
+      "http://www.easyproject.cn/easyqrcodejs/tryit.html",
+      "https://github.com/ushelp/EasyQRCode-React-Native/blob/master/demo/App.js"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/ushelp/EasyQRCode-React-Native/master/doc/images/demo.png"
+    ],
     "ios": true,
     "android": true,
     "expo": true
