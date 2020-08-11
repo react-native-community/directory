@@ -5152,5 +5152,11 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/safaiyeh/react-native-app-review",
+    "examples": ["https://github.com/safaiyeh/react-native-app-review/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
