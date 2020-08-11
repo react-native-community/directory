@@ -5144,5 +5144,13 @@
     "examples": ["https://github.com/Gustash/react-native-image-keyboard/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ushelp/EasyQRCode-React-Native",
+    "examples": ["http://www.easyproject.cn/easyqrcodejs/tryit.html", "https://github.com/ushelp/EasyQRCode-React-Native/blob/master/demo/App.js"],
+    "images": ["https://raw.githubusercontent.com/ushelp/EasyQRCode-React-Native/master/doc/images/demo.png"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
