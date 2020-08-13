@@ -29,7 +29,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
       {context => {
         const packageNameStyles = [
           styles.platformPackageName,
-          { backgroundColor: context.isDark ? darkColors.background : colors.gray2 },
+          { backgroundColor: context.isDark ? darkColors.veryDark : colors.gray2 },
         ];
         const packageNameHoverStyle = {
           backgroundColor: context.isDark ? colors.primary : colors.sky,
