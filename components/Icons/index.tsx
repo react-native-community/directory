@@ -285,3 +285,81 @@ export function TypeScript(props: Props) {
     </Svg>
   );
 }
+
+export function PlatformTvOS(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <Path d="M3 5h18v12H3z" opacity=".3" fill={fill} />
+      <Path
+        fill={fill}
+        d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"
+      />
+    </Svg>
+  );
+}
+
+export function PlatformMacOS(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <Path d="M4 5h16v11H4z" opacity=".3" fill={fill} />
+      <Path
+        fill={fill}
+        d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
+      />
+    </Svg>
+  );
+}
+
+export function PlatformIOS(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <Path d="M7 5h10v14H7z" opacity=".3" fill={fill} />
+      <Path
+        fill={fill}
+        d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+      />
+    </Svg>
+  );
+}
+
+export function PlatformAndroid(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <Path
+        fill={fill}
+        d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71s-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"
+      />
+    </Svg>
+  );
+}
+
+export function PlatformWeb(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <rect height="3.5" opacity=".3" width="10.5" x="4" y="9" fill={fill} />
+      <rect height="3.5" opacity=".3" width="10.5" x="4" y="14.5" fill={fill} />
+      <rect height="9" opacity=".3" width="3.5" x="16.5" y="9" fill={fill} />
+      <Path
+        fill={fill}
+        d="M20,4H4C2.9,4,2.01,4.9,2.01,6L2,18c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M14.5,18L4,18v-3.5h10.5 V18z M14.5,12.5H4V9h10.5V12.5z M20,18l-3.5,0V9H20V18z"
+      />
+    </Svg>
+  );
+}
+
+export function PlatformWindows(props: Props) {
+  const { width = 18, height = 18, fill = colors.black } = props;
+  return (
+    <Svg width={width} height={height} viewBox="0 0 32 32" fill="none">
+      <path
+        fill={fill}
+        d="M0,4.5l13.1-1.8l0,12.6L0,15.5L0,4.5z M13.1,16.8l0,12.6L0,27.7l0-10.9L13.1,16.8z M14.7,2.5L32,0v15.2l-17.3,0.1L14.7,2.5z M32,17l0,15.1l-17.3-2.4l0-12.7L32,17z"
+      />
+    </Svg>
+  );
+}

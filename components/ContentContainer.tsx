@@ -5,7 +5,7 @@ import { layout } from '../common/styleguide';
 
 type Props = {
   children: ReactNode;
-  style?: ViewStyle;
+  style?: ViewStyle | ViewStyle[];
 };
 
 export default function ContentContainer(props: Props) {
