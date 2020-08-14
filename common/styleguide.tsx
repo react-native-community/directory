@@ -113,7 +113,7 @@ type AProps = {
   target?: string;
   href: string;
   children?: ReactNode;
-  hoverStyle?: TextStyle;
+  hoverStyle?: TextStyle | TextStyle[];
 };
 
 export const A = (props: AProps) => {

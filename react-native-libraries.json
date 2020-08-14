@@ -4235,18 +4235,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/necolas/react-native-web",
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/Microsoft/reactxp",
     "ios": true,
     "android": true,
     "web": true
-  },
-  {
-    "githubUrl": "https://github.com/microsoft/react-native-windows",
-    "windows": true
   },
   {
     "githubUrl": "https://github.com/surialabs/react-native-geo-fencing",
