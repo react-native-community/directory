@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 import { sleep } from './build-and-score-data';
 
 const urlForPackage = npmPkg => {
-  return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;
+  return `https://api.npmjs.org/downloads/point/last-month/${npmPkg.toLowerCase()}`;
 };
 
 const fetchNpmData = async (data, npmPkg, githubUrl) => {
