@@ -5159,17 +5159,10 @@
   },
   {
     "githubUrl": "https://github.com/N1ghtly/react-native-responsive-linechart",
-    "npmPkg": "react-native-responsive-linecahrt",
-    "nameOverride": "react-native-responsive-linecahrt",
     "examples": ["https://react-native-responsive-linechart.surge.sh/line"],
     "images": ["https://iili.io/dwGw92.png"],
     "ios": true,
     "android": true,
-    "web": false,
-    "expo": true,
-    "windows": false,
-    "macos": false,
-    "unmaintained": false,
-    "dev": false
+    "expo": true
   }
 ]
