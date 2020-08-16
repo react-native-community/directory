@@ -5156,5 +5156,13 @@
     "examples": ["https://github.com/safaiyeh/react-native-app-review/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/N1ghtly/react-native-responsive-linechart",
+    "examples": ["https://react-native-responsive-linechart.surge.sh/line"],
+    "images": ["https://iili.io/dwGw92.png"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
