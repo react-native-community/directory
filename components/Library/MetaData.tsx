@@ -45,10 +45,7 @@ const generateData = (library, secondary, isDark) => {
               github.license.name === 'Other' ? (
                 <P style={paragraphStyles}>Unrecognized License</P>
               ) : (
-                <A
-                  href={github.license.url}
-                  style={linkStyles}
-                  hoverStyle={isDark ? { color: colors.primaryDark } : undefined}>
+                <A href={github.license.url} style={linkStyles} hoverStyle={hoverStyle}>
                   {github.license.name}
                 </A>
               ),
@@ -74,7 +71,7 @@ const generateData = (library, secondary, isDark) => {
                     href={example}
                     target="blank"
                     style={[...linkStyles, styles.exampleLink]}
-                    hoverStyle={isDark ? { color: colors.primaryDark } : undefined}>
+                    hoverStyle={hoverStyle}>
                     #{index + 1}
                   </A>
                 ))}
@@ -84,6 +81,7 @@ const generateData = (library, secondary, isDark) => {
         : null,
     ];
   } else {
+    const iconColor = isDark ? darkColors.pewter : colors.gray5;
     return [
       {
         id: 'score',
@@ -100,13 +98,13 @@ const generateData = (library, secondary, isDark) => {
       },
       {
         id: 'calendar',
-        icon: <Calendar fill={isDark ? darkColors.pewter : colors.gray5} />,
+        icon: <Calendar fill={iconColor} />,
         content: `Updated ${getTimeSinceToday(github.stats.pushedAt)}`,
       },
       library.npm.downloads
         ? {
             id: 'downloads',
-            icon: <Download fill={isDark ? darkColors.pewter : colors.gray5} />,
+            icon: <Download fill={iconColor} />,
             content: (
               <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
                 {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
@@ -116,13 +114,13 @@ const generateData = (library, secondary, isDark) => {
         : null,
       {
         id: 'star',
-        icon: <Star fill={isDark ? darkColors.pewter : colors.gray5} />,
+        icon: <Star fill={iconColor} />,
         content: `${github.stats.stars.toLocaleString()} stars`,
       },
       github.stats.forks
         ? {
             id: 'forks',
-            icon: <Fork fill={isDark ? darkColors.pewter : colors.gray5} width={16} height={17} />,
+            icon: <Fork fill={iconColor} width={16} height={17} />,
             content: (
               <A href={`${github.urls.repo}/network/members`}>
                 {`${github.stats.forks.toLocaleString()}`} forks
@@ -133,7 +131,7 @@ const generateData = (library, secondary, isDark) => {
       github.stats.issues
         ? {
             id: 'issues',
-            icon: <Issue fill={isDark ? darkColors.pewter : colors.gray5} />,
+            icon: <Issue fill={iconColor} />,
             content: (
               <A href={`${github.urls.repo}/issues`}>
                 {`${github.stats.issues.toLocaleString()}`} issues

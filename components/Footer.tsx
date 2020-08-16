@@ -29,7 +29,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
       {context => {
         const packageNameStyles = [
           styles.platformPackageName,
-          { backgroundColor: context.isDark ? darkColors.veryDark : colors.gray2 },
+          { backgroundColor: context.isDark ? darkColors.powder : colors.gray2 },
         ];
         const packageNameHoverStyle = {
           backgroundColor: context.isDark ? colors.primary : colors.sky,
@@ -141,12 +141,13 @@ const Footer = () => (
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    paddingVertical: 32,
+    paddingTop: 32,
+    paddingBottom: 28,
     marginTop: 12,
   },
   footerText: {
     textAlign: 'center',
-    lineHeight: 32,
+    padding: 8,
     fontSize: 13,
   },
   platformsWrapper: {
@@ -156,6 +157,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   platformItem: {
+    minWidth: '15%',
     paddingHorizontal: 24,
     marginBottom: 28,
     alignItems: 'center',
