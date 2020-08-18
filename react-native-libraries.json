@@ -449,6 +449,8 @@
     "android": true,
     "web": true,
     "expo": true,
+    "windows": true,
+    "macos": true,
     "goldstar": true,
     "examples": ["https://snack.expo.io/rJnUK4nrZ"]
   },
