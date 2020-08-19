@@ -449,6 +449,8 @@
     "android": true,
     "web": true,
     "expo": true,
+    "windows": true,
+    "macos": true,
     "goldstar": true,
     "examples": ["https://snack.expo.io/rJnUK4nrZ"]
   },
@@ -5170,6 +5172,12 @@
     "dev": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kristerkari/react-native-sass-transformer",
+    "ios": true,
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-bigimageviewer",
