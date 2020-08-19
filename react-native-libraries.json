@@ -5173,8 +5173,7 @@
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-bigimageviewer",
-    "npmPkg": "react-native-bigimageviewer",
-    "android": true,
-    "examples":["https://github.com/khalisafkari/react-native-bigimageviewer/tree/master/example"]
+    "examples":["https://github.com/khalisafkari/react-native-bigimageviewer/tree/master/example"],
+    "android": true
   }
 ]
