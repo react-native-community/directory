@@ -5178,5 +5178,10 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-bigimageviewer",
+    "examples":["https://github.com/khalisafkari/react-native-bigimageviewer/tree/master/example"],
+    "android": true
   }
 ]
