@@ -5185,9 +5185,19 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/AndreiCalazans/rn-tooltip",
+    "examples": ["https://github.com/AndreiCalazans/rn-tooltip", "https://www.npmjs.com/package/rn-tooltip"],
+    "images": ["https://raw.githubusercontent.com/AndreiCalazans/rn-tooltip/HEAD/tooltipExample.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/rosskhanas/react-qr-code",
-    "npmPkg": "react-qr-code",
-    "examples":["https://github.com/rosskhanas/react-qr-code/tree/master/demo", "https://github.com/rosskhanas/react-qr-code/tree/master/storybooks/native"],
+    "examples":[
+      "https://github.com/rosskhanas/react-qr-code/tree/master/demo", 
+      "https://github.com/rosskhanas/react-qr-code/tree/master/storybooks/native"
+    ],
     "images": [
       "https://github.com/rosskhanas/react-qr-code/raw/master/demo-web.png",
       "https://github.com/rosskhanas/react-qr-code/raw/master/demo-android.png",
@@ -5196,5 +5206,4 @@
     "ios": true,
     "android": true,
     "web": true
-  }
 ]
