@@ -5206,5 +5206,14 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/BlackBoxVision/react-native-mercadopago-px",
+    "examples":[
+      "https://github.com/BlackBoxVision/react-native-mercadopago-px/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": false
   }
 ]
