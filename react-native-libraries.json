@@ -2321,7 +2321,8 @@
   {
     "githubUrl": "https://github.com/react-native-kit/react-native-track-player",
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/lawnstarter/react-native-hotspot",
