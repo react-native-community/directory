@@ -5230,7 +5230,7 @@
   },
   {
     "githubUrl": "https://github.com/storybookjs/react-native",
-    "npmPkg": "storybook/react-native",
+    "npmPkg": "@storybook/react-native",
     "examples": ["https://snack.expo.io/@dannyhw/expo-storybook-example"],
     "ios": true,
     "android": true,
