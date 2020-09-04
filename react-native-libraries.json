@@ -3534,9 +3534,12 @@
     "githubUrl": "https://github.com/react-native-community/react-native-checkbox",
     "images": [
       "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-android.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-ios.png"
+      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-ios.png",
+      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-windows.png"
     ],
     "android": true,
+    "ios": true,
+    "windows": true,
     "examples": [],
     "npmPkg": "@react-native-community/checkbox"
   },
@@ -4461,6 +4464,7 @@
     ],
     "ios": true,
     "android": true,
+    "windows": true,
     "web": true,
     "expo": true
   },
