@@ -5227,5 +5227,12 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-apple-card-views",
+    "images": ["https://github.com/WrathChaos/react-native-apple-card-views/blob/master/assets/Screenshots/ReactNativeAppleCardViews.gif"],
+    "ios": true,
+    "android": true,
+    "expo": false
   }
 ]
