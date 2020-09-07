@@ -5227,5 +5227,16 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/edamameldn/tape-cli",
+    "npmPkg": "tape-cli",
+    "examples": ["https://github.com/edamameldn/tape-cli", "https://i.imgur.com/ZXq25sX.gif"],
+    "images": ["https://i.imgur.com/ZXq25sX.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "dev": true
   }
 ]
