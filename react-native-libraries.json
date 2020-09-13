@@ -5249,5 +5249,13 @@
     "npmPkg": "@invertase/react-native-apple-authentication",
     "examples": ["https://github.com/invertase/react-native-apple-authentication/tree/master/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/edamameldn/tape-cli",
+    "images": ["https://i.imgur.com/ZXq25sX.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "dev": true
   }
 ]
