@@ -5272,5 +5272,17 @@
     "android": true,
     "expo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/aryella-lacerda/react-native-easy-calendar",
+    "examples": [
+      "https://github.com/aryella-lacerda/react-native-easy-calendar/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/aryella-lacerda/react-native-easy-calendar/master/docs/dark-theme1.gif",
+      "https://raw.githubusercontent.com/aryella-lacerda/react-native-easy-calendar/master/docs/light-theme.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
