@@ -5229,9 +5229,29 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/storybookjs/react-native",
+    "npmPkg": "@storybook/react-native",
+    "examples": ["https://snack.expo.io/@dannyhw/expo-storybook-example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-apple-card-views",
+    "images": ["https://github.com/WrathChaos/react-native-apple-card-views/blob/master/assets/Screenshots/ReactNativeAppleCardViews.gif"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-apple-authentication",
+    "npmPkg": "@invertase/react-native-apple-authentication",
+    "examples": ["https://github.com/invertase/react-native-apple-authentication/tree/master/example"],
+    "ios": true
+  },
+  {
     "githubUrl": "https://github.com/edamameldn/tape-cli",
-    "npmPkg": "tape-cli",
-    "examples": ["https://github.com/edamameldn/tape-cli", "https://i.imgur.com/ZXq25sX.gif"],
     "images": ["https://i.imgur.com/ZXq25sX.gif"],
     "ios": true,
     "android": true,
