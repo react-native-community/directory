@@ -5229,10 +5229,19 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/storybookjs/react-native",
+    "npmPkg": "@storybook/react-native",
+    "examples": ["https://snack.expo.io/@dannyhw/expo-storybook-example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "dev": true
+  },
+  {
     "githubUrl": "https://github.com/WrathChaos/react-native-apple-card-views",
     "images": ["https://github.com/WrathChaos/react-native-apple-card-views/blob/master/assets/Screenshots/ReactNativeAppleCardViews.gif"],
     "ios": true,
-    "android": true,
-    "expo": false
+    "android": true
   }
 ]
