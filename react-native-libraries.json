@@ -5294,5 +5294,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/smarkets/react-native-paypal",
+    "images": [
+      "https://s3-eu-west-1.amazonaws.com/smarkets-mobile/PayPal+demo+lowres.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
