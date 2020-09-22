@@ -5285,5 +5285,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/NataliaLinnik/react-native-nested-list",
+    "npmPkg": "@natalia.li/react-native-nested-list",
+    "examples": ["https://github.com/NataliaLinnik/react-native-nested-list/tree/master/examples"],
+    "images": ["https://github.com/NataliaLinnik/react-native-nested-list/blob/master/demo/nested-list_example.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
