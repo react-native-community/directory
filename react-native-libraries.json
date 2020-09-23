@@ -5302,5 +5302,18 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rainbow-me/react-native-animated-charts",
+    "npmPkg": "@rainbow-me/animated-charts",
+    "examples": [
+      "https://github.com/rainbow-me/react-native-animated-charts/tree/master/Example"
+    ],
+    "images": [
+      "https://github.com/rainbow-me/react-native-animated-charts/raw/master/gifs/ios.gif",
+      "https://github.com/rainbow-me/react-native-animated-charts/raw/master/gifs/android.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
