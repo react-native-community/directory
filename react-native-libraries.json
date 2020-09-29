@@ -426,7 +426,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-image-picker",
+    "githubUrl": "https://github.com/react-native-image-picker/react-native-image-picker",
     "ios": true,
     "android": true
   },
@@ -498,7 +498,7 @@
     "goldstar": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-maps",
+    "githubUrl": "https://github.com/react-native-maps/react-native-maps",
     "ios": true,
     "android": true,
     "expo": true,
@@ -610,7 +610,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-tab-view",
+    "githubUrl": "https://github.com/satya164/react-native-tab-view",
     "ios": true,
     "android": true,
     "expo": true,
@@ -656,7 +656,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-video",
+    "githubUrl": "https://github.com/react-native-video/react-native-video",
     "ios": true,
     "android": true,
     "windows": true
@@ -858,7 +858,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-side-menu",
+    "githubUrl": "https://github.com/rnc-archive/react-native-side-menu",
     "ios": true,
     "android": true,
     "expo": true,
@@ -2033,7 +2033,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-webgl",
+    "githubUrl": "https://github.com/rnc-archive/react-native-webgl",
     "ios": true,
     "android": true,
     "unmaintained": true
@@ -3037,7 +3037,7 @@
     "npmPkg": "@react-native-community/segmented-control"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/voice",
+    "githubUrl": "https://github.com/react-native-voice/voice",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/voice"
@@ -3056,7 +3056,7 @@
     ]
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-webview",
+    "githubUrl": "https://github.com/react-native-webview/react-native-webview",
     "ios": true,
     "android": true,
     "expo": true,
@@ -3095,7 +3095,7 @@
     "npmPkg": "@mobily/stacks"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-localize",
+    "githubUrl": "https://github.com/zoontek/react-native-localize",
     "ios": true,
     "android": true,
     "web": true
@@ -3230,7 +3230,7 @@
     "npmPkg": "@react-native-community/push-notification-ios"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-safe-area-view",
+    "githubUrl": "https://github.com/react-navigation/react-native-safe-area-view",
     "ios": true,
     "android": true,
     "web": true,
@@ -3680,7 +3680,7 @@
     "examples": []
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-platform-touchable",
+    "githubUrl": "https://github.com/rnc-archive/react-native-platform-touchable",
     "ios": true,
     "android": true,
     "expo": true,
