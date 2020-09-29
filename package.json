@@ -74,6 +74,7 @@
     ],
     "react-native-libraries.json": [
       "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
+      "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env",
       "prettier --write"
     ]
   }
