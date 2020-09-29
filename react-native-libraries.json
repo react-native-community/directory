@@ -5320,5 +5320,12 @@
     "githubUrl": "https://github.com/gevgasparyan/rn-qr-generator",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alpha0010/react-native-pdf-viewer",
+    "npmPkg": "react-native-pdf-light",
+    "examples": ["https://github.com/alpha0010/react-native-pdf-viewer/tree/master/example"],
+    "ios": true,
+    "android": true 
   }
 ]
