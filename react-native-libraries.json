@@ -5340,5 +5340,12 @@
     "githubUrl": "https://github.com/ammarahm-ed/react-native-mmkv-storage",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gorhom/react-native-bottom-sheet",
+    "images": ["https://github.com/gorhom/react-native-bottom-sheet/raw/master/preview.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
