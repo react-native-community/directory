@@ -5346,5 +5346,13 @@
     "images": ["https://github.com/WrathChaos/react-native-bouncy-checkbox/raw/master/assets/Screenshots/example.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gorhom/react-native-bottom-sheet",
+    "npmPkg": "@gorhom/bottom-sheet",
+    "images": ["https://github.com/gorhom/react-native-bottom-sheet/raw/master/preview.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
