@@ -5363,7 +5363,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/facebook/flipper",
+    "githubUrl": "https://github.com/facebook/flipper/tree/master/react-native/react-native-flipper",
+    "npmPkg": "react-native-flipper",
     "examples": ["https://github.com/facebook/flipper/tree/master/react-native/ReactNativeFlipperExample"],
     "ios": true,
     "android": true,
