@@ -5376,5 +5376,12 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/testfairy/react-native-testfairy",
+    "examples": ["https://github.com/testfairy/react-native-testfairy/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
