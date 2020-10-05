@@ -5379,13 +5379,9 @@
   },
   {
     "githubUrl": "https://github.com/testfairy/react-native-testfairy",
-    "npmPkg": "https://www.npmjs.com/package/react-native-testfairy",
-    "examples": ["https://docs.testfairy.com/Platforms/React_Native.html", "https://docs.testfairy.com/Platforms/Expo.html"],
+    "examples": ["https://github.com/testfairy/react-native-testfairy/tree/master/example"],
     "ios": true,
     "android": true,
-    "web": false,
-    "expo": true,
-    "windows": false,
-    "macos": false
+    "expo": true
   }
 ]
