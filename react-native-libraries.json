@@ -5344,7 +5344,6 @@
   {
     "githubUrl": "https://github.com/react-keycloak/react-native-keycloak",
     "npmPkg": "@react-keycloak/native",
-    "nameOverride": "react-native-keycloak",
     "examples": ["https://github.com/react-keycloak/react-native-keycloak/tree/master/example"],
     "ios": true,
     "android": true
