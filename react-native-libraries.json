@@ -5361,5 +5361,20 @@
     "examples": ["https://github.com/react-keycloak/react-native-keycloak/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/flipper/tree/master/react-native/react-native-flipper",
+    "npmPkg": "react-native-flipper",
+    "examples": ["https://github.com/facebook/flipper/tree/master/react-native/ReactNativeFlipperExample"],
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/panz3r/react-native-flipper-databases",
+    "examples": ["https://github.com/panz3r/react-native-flipper-databases/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
