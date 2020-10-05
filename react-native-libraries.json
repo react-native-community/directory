@@ -5378,11 +5378,17 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/testfairy/react-native-testfairy",
+    "examples": ["https://github.com/testfairy/react-native-testfairy/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/terrysahaidak/react-native-gallery-toolkit",
     "examples": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/tree/master/Example"],
     "images": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"],
     "ios": true,
-    "android": true,
-    "web": true
+    "android": true
   }
 ]
