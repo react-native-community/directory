@@ -5379,12 +5379,10 @@
   },
   {
     "githubUrl": "https://github.com/terrysahaidak/react-native-gallery-toolkit",
-    "npmPkg": "react-native-gallery-toolkit",
     "examples": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/tree/master/Example"],
     "images": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"],
     "ios": true,
     "android": true,
-    "web": true,
-    "expo": false
+    "web": true
   }
 ]
