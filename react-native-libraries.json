@@ -929,7 +929,8 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/Skd57d2r-"]
+    "web": true,
+    "examples": ["https://snack.expo.io/@sbell/react-native-google-places-autocomplete"]
   },
   {
     "githubUrl": "https://github.com/jeanregisser/react-native-slider",
