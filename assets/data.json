@@ -26841,8 +26841,7 @@
       "android": true,
       "expo": false,
       "web": false,
-      "windows": true,
-      "macos": true,
+      "windows": false,
       "npmPkg": "@react-native-community/clipboard",
       "github": {
         "urls": {
