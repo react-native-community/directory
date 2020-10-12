@@ -5389,7 +5389,10 @@
   {
     "githubUrl": "https://github.com/terrysahaidak/react-native-gallery-toolkit",
     "examples": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/tree/master/Example"],
-    "images": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"],
+    "images": [
+      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", 
+      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -5399,6 +5402,15 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/drophive/react-native-pkce-challenge",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true
   },
   {
     "githubUrl": "https://github.com/panz3r/react-native-toolbox",
