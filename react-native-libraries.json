@@ -5422,7 +5422,11 @@
   {
     "githubUrl":"https://github.com/Naturalclar/react-native-color-picker-ios",
     "examples": ["https://github.com/Naturalclar/react-native-color-picker-ios/tree/master/example"],
-    "npmPkg": "react-native-color-picker-ios",
+    "images": [
+      "https://user-images.githubusercontent.com/6936373/95818710-758a8a80-0d5f-11eb-8e45-fb0573049c34.jpeg",
+      "https://user-images.githubusercontent.com/6936373/95818705-73283080-0d5f-11eb-8a10-c0f166ed13a9.jpeg",
+      "https://user-images.githubusercontent.com/6936373/95818711-76232100-0d5f-11eb-802f-9cbe76454e8d.jpeg"
+    ],
     "ios":true
   }
 ]
