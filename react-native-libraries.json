@@ -5420,13 +5420,51 @@
     "dev": true
   },
   {
-    "githubUrl":"https://github.com/Naturalclar/react-native-color-picker-ios",
+    "githubUrl": "https://github.com/Naturalclar/react-native-color-picker-ios",
     "examples": ["https://github.com/Naturalclar/react-native-color-picker-ios/tree/master/example"],
     "images": [
       "https://user-images.githubusercontent.com/6936373/95818710-758a8a80-0d5f-11eb-8e45-fb0573049c34.jpeg",
       "https://user-images.githubusercontent.com/6936373/95818705-73283080-0d5f-11eb-8a10-c0f166ed13a9.jpeg",
       "https://user-images.githubusercontent.com/6936373/95818711-76232100-0d5f-11eb-802f-9cbe76454e8d.jpeg"
     ],
-    "ios":true
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/chirag04/react-native-in-app-utils",
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/mybigday/react-native-external-display",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/birkir/react-native-carplay",
+    "examples": ["https://github.com/birkir/react-native-carplay/tree/master/example"],
+    "images": [
+      "https://media.giphy.com/media/Ffa4hukA3YMLh6U8fl/giphy.gif",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/grid-template.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/list-template.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/search-template.png"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/arnnis/react-native-fast-toast",
+    "examples": ["https://github.com/arnnis/react-native-fast-toast/tree/master/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/61647712/92497391-8864e900-f20e-11ea-93d8-bacc2b856583.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/rootstrap/react-native-use-styles",
+    "examples": ["https://github.com/rootstrap/react-native-use-styles/tree/main/demo"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
