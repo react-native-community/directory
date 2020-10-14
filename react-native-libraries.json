@@ -576,11 +576,11 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-drawer-layout",
+    "githubUrl": "https://github.com/rnc-archive/react-native-drawer-layout",
     "ios": true,
     "android": true,
     "expo": true,
-    "goldstar": true
+    "unmaintened": true
   },
   {
     "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
@@ -3003,13 +3003,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/progress-bar-android",
+    "githubUrl": "https://github.com/react-native-progress-view/progress-bar-android",
     "android": true,
     "npmPkg": "@react-native-community/progress-bar-android"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/progress-view",
-    "examples": ["https://github.com/react-native-community/progress-view/tree/master/example"],
+    "githubUrl": "https://github.com/react-native-progress-view/progress-view",
+    "examples": ["https://github.com/react-native-progress-view/progress-view/tree/master/example"],
     "images": [
       "https://user-images.githubusercontent.com/6936373/73007429-e09dd500-3e4f-11ea-85dd-ce06be668975.png",
       "https://user-images.githubusercontent.com/42554868/87102503-fb4de580-c206-11ea-98f7-b9f911d115f8.gif"
@@ -3019,7 +3019,7 @@
     "npmPkg": "@react-native-community/progress-view"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/clipboard",
+    "githubUrl": "https://github.com/react-native-clipboard/clipboard",
     "ios": true,
     "android": true,
     "windows": true,
@@ -3104,15 +3104,15 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/datetimepicker",
+    "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
     "npmPkg": "@react-native-community/datetimepicker",
     "images": [
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/android_date.png",
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/android_time.png",
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/ios_date.png",
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/ios_time.png",
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/winddows_date.png",
-      "https://raw.githubusercontent.com/react-native-community/datetimepicker/master/docs/images/windows_time_2.png"
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/android_date.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/android_time.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/ios_date.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/ios_time.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/winddows_date.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/windows_time_2.png"
     ],
     "ios": true,
     "android": true,
@@ -3221,14 +3221,14 @@
     "npmPkg": "@react-native-community/toolbar-android"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/art",
+    "githubUrl": "https://github.com/react-native-art/art",
     "ios": true,
     "android": true,
     "unmaintained": true,
     "npmPkg": "@react-native-community/art"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/push-notification-ios",
+    "githubUrl": "https://github.com/react-native-push-notification-ios/push-notification-ios",
     "ios": true,
     "npmPkg": "@react-native-community/push-notification-ios"
   },
@@ -3240,13 +3240,13 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-blur",
+    "githubUrl": "https://github.com/Kureev/react-native-blur",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/blur"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/async-storage",
+    "githubUrl": "https://github.com/react-native-async-storage/async-storage",
     "ios": true,
     "android": true,
     "web": true,
@@ -3256,7 +3256,7 @@
     "npmPkg": "@react-native-community/async-storage"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-picker",
+    "githubUrl": "https://github.com/react-native-picker/react-native-picker",
     "ios": true,
     "android": true,
     "web": true,
@@ -3265,13 +3265,13 @@
     "npmPkg": "@react-native-community/picker"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-cameraroll",
+    "githubUrl": "https://github.com/react-native-cameraroll/react-native-cameraroll",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/cameraroll"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-image-editor",
+    "githubUrl": "https://github.com/react-native-image-editor/react-native-image-editor",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/image-editor"
@@ -3669,7 +3669,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-navbar",
+    "githubUrl": "https://github.com/Kureev/react-native-navbar",
     "ios": true,
     "android": true,
     "expo": true
