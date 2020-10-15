@@ -1,5 +1,32 @@
 [
   {
+    "githubUrl": "https://github.com/jhen0409/react-native-debugger",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/realm/realm-js",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "realm"
+  },
+  {
+    "githubUrl": "https://github.com/cjam/react-native-spotify-remote",
+    "ios": true,
+    "android": true,
+    "expo": false,
+    "npmPkg": "react-native-spotify-remote"
+  },
+  {
+    "githubUrl": "https://github.com/rt2zz/redux-persist",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "npmPkg": "redux-persist"
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
@@ -5389,7 +5416,7 @@
     "githubUrl": "https://github.com/terrysahaidak/react-native-gallery-toolkit",
     "examples": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/tree/master/Example"],
     "images": [
-      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", 
+      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif",
       "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"
     ],
     "ios": true,
