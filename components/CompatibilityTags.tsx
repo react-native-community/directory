@@ -67,6 +67,7 @@ export function CompatibilityTags(props: Props) {
           {platforms.map(platform => (
             <Tag
               platform={platform}
+              key={`${platform}-platform`}
               tagStyle={{
                 backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
                 borderColor: context.isDark ? darkColors.border : colors.gray2,
