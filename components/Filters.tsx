@@ -42,12 +42,12 @@ const platforms = [
     title: 'Web',
   },
   {
-    param: 'windows',
-    title: 'Windows',
-  },
-  {
     param: 'tvos',
     title: 'tvOS',
+  },
+  {
+    param: 'windows',
+    title: 'Windows',
   },
 ];
 
