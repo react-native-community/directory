@@ -58,6 +58,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
       windows: req.query.windows,
       macos: req.query.macos,
       expo: req.query.expo,
+      tvos: req.query.tvos,
     },
     hasExample: req.query.hasExample,
     hasImage: req.query.hasImage,

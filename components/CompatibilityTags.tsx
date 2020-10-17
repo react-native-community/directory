@@ -46,6 +46,7 @@ export function CompatibilityTags(props: Props) {
     library.macos ? 'macOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
+    library.tvos ? 'tvOS' : null,
   ]
     .map(platform => platform)
     .filter(Boolean);

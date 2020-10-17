@@ -45,6 +45,10 @@ const platforms = [
     param: 'windows',
     title: 'Windows',
   },
+  {
+    param: 'tvos',
+    title: 'tvOS',
+  },
 ];
 
 function ToggleLink({ query, paramName, title }) {

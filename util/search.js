@@ -40,6 +40,10 @@ export const handleFilterLibraries = ({
       return false;
     }
 
+    if (support.tvos && !library.tvos) {
+      return false;
+    }
+
     if (support.expo && !library.expo) {
       return false;
     }
