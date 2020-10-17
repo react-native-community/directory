@@ -5389,7 +5389,7 @@
     "githubUrl": "https://github.com/terrysahaidak/react-native-gallery-toolkit",
     "examples": ["https://github.com/terrysahaidak/react-native-gallery-toolkit/tree/master/Example"],
     "images": [
-      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif", 
+      "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo.gif",
       "https://github.com/terrysahaidak/react-native-gallery-toolkit/raw/master/gifs/promo_2.gif"
     ],
     "ios": true,
@@ -5462,6 +5462,24 @@
   {
     "githubUrl": "https://github.com/rootstrap/react-native-use-styles",
     "examples": ["https://github.com/rootstrap/react-native-use-styles/tree/main/demo"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jhen0409/react-native-debugger",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/cjam/react-native-spotify-remote",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rt2zz/redux-persist",
     "ios": true,
     "android": true,
     "expo": true
