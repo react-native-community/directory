@@ -38,12 +38,12 @@ const platforms = [
     title: 'macOS',
   },
   {
-    param: 'web',
-    title: 'Web',
-  },
-  {
     param: 'tvos',
     title: 'tvOS',
+  },
+  {
+    param: 'web',
+    title: 'Web',
   },
   {
     param: 'windows',
