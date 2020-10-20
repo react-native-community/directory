@@ -5483,5 +5483,16 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dominicstop/react-native-ios-modal",
+    "examples": ["https://github.com/dominicstop/react-native-ios-modal/tree/master/example"],
+    "images": [
+      "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-06-07-2.gif",
+      "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-02-03.gif",
+      "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-00-01.gif",
+      "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-04-05.gif"
+    ],
+    "ios": true
   }
 ]
