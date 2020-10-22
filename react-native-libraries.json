@@ -5494,5 +5494,16 @@
       "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-04-05.gif"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/dripsy",
+    "examples": [
+      "https://github.com/nandorojo/dripsy/tree/master/next-example", 
+      "https://github.com/nandorojo/dripsy/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
