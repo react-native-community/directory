@@ -1,19 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/nandorojo/dripsy",
-    "npmPkg": "dripsy",
-    "nameOverride": "Dripsy",
-    "examples": ["https://github.com/nandorojo/dripsy/tree/master/next-example", "https://github.com/nandorojo/dripsy/tree/master/example"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": true,
-    "macos": true,
-    "unmaintained": false,
-    "dev": false
-  },
-  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
@@ -5508,5 +5494,18 @@
       "https://github.com/dominicstop/react-native-ios-modal/raw/master/assets/ModalExample-04-05.gif"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/dripsy",
+    "examples": [
+      "https://github.com/nandorojo/dripsy/tree/master/next-example", 
+      "https://github.com/nandorojo/dripsy/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true
   }
 ]
