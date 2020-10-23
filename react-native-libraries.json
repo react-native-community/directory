@@ -485,11 +485,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/lottie-react-native",
+    "githubUrl": "https://github.com/lottie-react-native/lottie-react-native",
     "images": [
-      "https://raw.githubusercontent.com/react-native-community/lottie-react-native/master/docs/gifs/Example1.gif",
-      "https://raw.githubusercontent.com/react-native-community/lottie-react-native/master/docs/gifs/Example2.gif",
-      "https://raw.githubusercontent.com/react-native-community/lottie-react-native/master/docs/gifs/Example3.gif"
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example1.gif",
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example2.gif",
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example3.gif"
     ],
     "ios": true,
     "android": true,
@@ -596,7 +596,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-modal",
+    "githubUrl": "https://github.com/react-native-modal/react-native-modal",
     "ios": true,
     "android": true,
     "expo": true,
@@ -662,10 +662,10 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-share",
+    "githubUrl": "https://github.com/react-native-share/react-native-share",
     "images": [
-      "https://react-native-community.github.io/react-native-share/img/assets-docs/android-component.gif",
-      "https://react-native-community.github.io/react-native-share/img/assets-docs/ios-component.gif"
+      "https://react-native-share.github.io/react-native-share/img/assets-docs/android-component.gif",
+      "https://react-native-share.github.io/react-native-share/img/assets-docs/ios-component.gif"
     ],
     "ios": true,
     "android": true
@@ -2915,7 +2915,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/cookies",
+    "githubUrl": "https://github.com/react-native-cookies/cookies",
     "npmPkg": "@react-native-community/cookies",
     "ios": true,
     "android": true
@@ -3067,7 +3067,7 @@
     "macos": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-camera",
+    "githubUrl": "https://github.com/react-native-camera/react-native-camera",
     "ios": true,
     "android": true,
     "windows": true
@@ -3193,7 +3193,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-viewpager",
+    "githubUrl": "https://github.com/callstack/react-native-viewpager",
     "npmPkg": "@react-native-community/viewpager",
     "ios": true,
     "android": true,
@@ -3201,7 +3201,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-netinfo",
+    "githubUrl": "https://github.com/react-native-netinfo/react-native-netinfo",
     "ios": true,
     "android": true,
     "web": true,
@@ -3211,12 +3211,12 @@
     "npmPkg": "@react-native-community/netinfo"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-text-input-mask",
+    "githubUrl": "https://github.com/react-native-text-input-mask/react-native-text-input-mask",
     "ios": true,
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/toolbar-android",
+    "githubUrl": "https://github.com/react-native-toolbar-android/toolbar-android",
     "android": true,
     "npmPkg": "@react-native-community/toolbar-android"
   },
@@ -3277,14 +3277,14 @@
     "npmPkg": "@react-native-community/image-editor"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-masked-view",
+    "githubUrl": "https://github.com/react-native-masked-view/react-native-masked-view",
     "ios": true,
     "android": true,
     "expo": true,
     "npmPkg": "@react-native-community/masked-view"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-linear-gradient",
+    "githubUrl": "https://github.com/react-native-linear-gradient/react-native-linear-gradient",
     "ios": true,
     "android": true,
     "windows": true
@@ -3447,7 +3447,7 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-svg",
+    "githubUrl": "https://github.com/react-native-svg/react-native-svg",
     "ios": true,
     "android": true,
     "expo": true,
@@ -3470,7 +3470,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-device-info",
+    "githubUrl": "https://github.com/react-native-device-info/react-native-device-info",
     "ios": true,
     "android": true,
     "windows": true
@@ -3534,11 +3534,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-checkbox",
+    "githubUrl": "https://github.com/react-native-checkbox/react-native-checkbox",
     "images": [
-      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-android.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-ios.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-checkbox/master/screenShots/demo-windows.png"
+      "https://raw.githubusercontent.com/react-native-checkbox/react-native-checkbox/master/screenShots/demo-android.png",
+      "https://raw.githubusercontent.com/react-native-checkbox/react-native-checkbox/master/screenShots/demo-ios.png",
+      "https://raw.githubusercontent.com/react-native-checkbox/react-native-checkbox/master/screenShots/demo-windows.png"
     ],
     "android": true,
     "ios": true,
@@ -3546,12 +3546,12 @@
     "npmPkg": "@react-native-community/checkbox"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/peek-and-pop",
+    "githubUrl": "https://github.com/satya164/peek-and-pop",
     "ios": true,
     "npmPkg": "@react-native-community/peek-and-pop"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/google-signin",
+    "githubUrl": "https://github.com/react-native-google-signin/google-signin",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/google-signin"
@@ -3647,7 +3647,7 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-geolocation",
+    "githubUrl": "https://github.com/react-native-geolocation/react-native-geolocation",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/geolocation"
@@ -3658,13 +3658,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-audio-toolkit",
+    "githubUrl": "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/audio-toolkit"
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-translucent-modal",
+    "githubUrl": "https://github.com/rnc-archive/react-native-translucent-modal",
     "android": true
   },
   {
@@ -4451,7 +4451,7 @@
     "examples": ["https://github.com/xcarpentier/rn-tourguide/blob/master/App.tsx"]
   },
   {
-    "githubUrl": "https://github.com/react-native-community/react-native-slider",
+    "githubUrl": "https://github.com/callstack/react-native-slider",
     "npmPkg": "@react-native-community/slider",
     "images": [
       "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png",
