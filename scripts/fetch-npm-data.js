@@ -1,4 +1,6 @@
-import 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
+
+import { sleep } from './build-and-score-data';
 
 const urlForPackage = npmPkg => {
   return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;
@@ -7,7 +9,7 @@ const urlForPackage = npmPkg => {
 const fetchNpmData = async (data, npmPkg, githubUrl) => {
   if (!npmPkg) {
     let parts = githubUrl.split('/');
-    npmPkg = parts[parts.length - 1];
+    npmPkg = parts[parts.length - 1].toLowerCase();
     data.npmPkg = npmPkg;
   }
 
@@ -34,8 +36,8 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       },
     };
   } catch (e) {
-    console.log(e);
-    console.log('Failed to grab data, retrying');
+    console.log(`Retrying npm data fetch for ${githubUrl}`);
+    await sleep(1000);
     return await fetchNpmData(data, npmPkg, githubUrl);
   }
 };

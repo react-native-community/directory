@@ -1,0 +1,116 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": ["githubUrl"],
+    "properties": {
+      "githubUrl": {
+        "$id": "#/items/properties/githubUrl",
+        "type": "string",
+        "title": "The Githuburl Schema",
+        "default": "",
+        "examples": ["https://github.com/joshswan/react-native-autolink"],
+        "pattern": "^(.*)$"
+      },
+      "ios": {
+        "$id": "#/items/properties/ios",
+        "type": "boolean",
+        "title": "The Ios Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "android": {
+        "$id": "#/items/properties/android",
+        "type": "boolean",
+        "title": "The Android Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "windows": {
+        "$id": "#/items/properties/windows",
+        "type": "boolean",
+        "title": "The Windows Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "macos": {
+        "$id": "#/items/properties/macos",
+        "type": "boolean",
+        "title": "The macOS Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "expo": {
+        "$id": "#/items/properties/expo",
+        "type": "boolean",
+        "title": "The Expo Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "examples": {
+        "$id": "#/items/properties/examples",
+        "type": "array",
+        "title": "The Examples Schema",
+        "default": null,
+        "items": {
+          "$id": "#/items/properties/examples/items",
+          "type": "string",
+          "title": "The Items Schema",
+          "default": "",
+          "examples": ["https://snack.expo.io/SkRP2Ehrb"],
+          "pattern": "^(.*)$"
+        }
+      },
+      "npmPkg": {
+        "$id": "#/items/properties/npmPkg",
+        "type": "string",
+        "title": "The Npmpkg Schema",
+        "default": "",
+        "examples": ["@expo/ex-navigation"],
+        "pattern": "^(.*)$"
+      },
+      "unmaintained": {
+        "$id": "#/items/properties/unmaintained",
+        "type": "boolean",
+        "title": "The Unmaintained Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "images": {
+        "$id": "#/items/properties/images",
+        "type": "array",
+        "title": "The Images Schema",
+        "default": [null],
+        "items": {
+          "$id": "#/items/properties/images/items",
+          "type": "string",
+          "title": "The Image Schema",
+          "default": "",
+          "examples": ["https://reactnative.dev/img/homepage/phones.png"],
+          "pattern": "^(http(s?):)([/|.|+|\\w|\\s|-])*\\.(?:jp(e?)g|gif|png)$"
+        }
+      },
+      "nameOverride": {
+        "$id": "#/items/properties/nameOverride",
+        "type": "string",
+        "title": "Optional property to override the name provided by npm and GitHub",
+        "default": "",
+        "examples": ["react-navigation"],
+        "pattern": "^(.*)$"
+      },
+      "dev": {
+        "$id": "#/items/properties/dev",
+        "type": "boolean",
+        "title": "The Development Tool Schema",
+        "default": false,
+        "examples": [true]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+html, body {
+    min-height: 100%;
+}
+
+#__next, #__next > div {
+    min-height: 100vh;
+}

@@ -1,19 +1,15 @@
-import 'isomorphic-fetch';
-import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
-import _ from 'lodash';
-import fetchGithubData from './fetch-github-data';
-import calculateScore from './calculate-score';
-import fetchLicense from './fetch-license';
-import fetchReadmeImages from './fetch-readme-images';
-import fetchNpmData from './fetch-npm-data';
+import chunk from 'lodash/chunk';
+import path from 'path';
 
-import githubRepos from '../react-native-libraries.json';
 import debugGithubRepos from '../debug-github-repos.json';
-
-import * as Strings from '../common/strings';
-import * as Sorting from '../common/sorting';
+import githubRepos from '../react-native-libraries.json';
+import * as Strings from '../util/strings';
+import calculateScore from './calculate-score';
+import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
+import fetchNpmData from './fetch-npm-data';
+import fetchReadmeImages from './fetch-readme-images';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -28,23 +24,23 @@ const JSON_OPTIONS = {
   spaces: 2,
 };
 
-function sleep(ms = 0) {
+export const sleep = (ms = 0) => {
   return new Promise(r => setTimeout(r, ms));
-}
+};
+
+let invalidRepos = [];
 
 const buildAndScoreData = async () => {
-  console.log('** Loading data from Github');
-  await sleep(1000);
-  let data;
-  try {
-    data = await loadRepositoryDataAsync();
-  } catch(e) {
-    console.log(e);
-  }
+  console.log('** Loading data from GitHub');
+  let data = await loadRepositoryDataAsync();
 
-  console.log('** Fetching license type');
-  await sleep(1000);
-  data = await Promise.all(data.map(d => fetchLicense(d, d.github.fullName)));
+  data = data.filter(project => {
+    if (!project.github || Strings.isEmptyOrNull(project.github.name)) {
+      invalidRepos.push(project.githubUrl);
+      return false;
+    }
+    return !Strings.isEmptyOrNull(project.github.name);
+  });
 
   console.log('\n** Scraping images from README');
   await sleep(1000);
@@ -52,16 +48,18 @@ const buildAndScoreData = async () => {
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
-  data = await Promise.all(
-    data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl))
-  );
+  data = await Promise.all(data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl)));
 
   // Calculate score
   console.log('\n** Calculating scores');
-  data = data.map(calculateScore);
-
-  data = data.filter(project => {
-    return !Strings.isEmptyOrNull(project.github.name);
+  data = data.map(project => {
+    try {
+      return calculateScore(project);
+    } catch (e) {
+      console.log(`Failed to calculate score for ${project.github.name}`);
+      console.log(e.message);
+      console.log(project.githubUrl);
+    }
   });
 
   // Process topic counts
@@ -79,19 +77,23 @@ const buildAndScoreData = async () => {
         }
 
         topicCounts[topic] += 1;
-        return;
       });
     }
 
-    projectList[index].topicSearchString = topicSearchString;
+    projectList[index].topicSearchString = topicSearchString.trim();
   });
 
-  const libraries = Sorting.updated(data);
+  if (invalidRepos.length) {
+    console.log(
+      '** The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
+    );
+    invalidRepos.forEach(repoUrl => console.log(`- ${repoUrl}`));
+  }
 
   return jsonfile.writeFile(
-    path.resolve('build', 'data.json'),
+    path.resolve('assets', 'data.json'),
     {
-      libraries,
+      libraries: data,
       topics: topicCounts,
       topicsList: Object.keys(topicCounts).sort(),
     },
@@ -107,6 +109,29 @@ const buildAndScoreData = async () => {
   );
 };
 
+async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
+  let results = [];
+  let chunks = chunk(data, chunkSize);
+  for (let c of chunks) {
+    if (chunks.indexOf(c) > 0) {
+      console.log(`${results.length} of ${data.length} fetched`);
+      console.log(`Sleeping ${staggerMs}ms`);
+      await sleep(staggerMs);
+    }
+
+    let partialResult = await Promise.all(c.map(fetchGithubData));
+    results = [...results, ...partialResult];
+
+    if (partialResult.length !== c.length) {
+      throw new Error(
+        `Error in fetching data from GitHub... Expected ${c.length} results but only received ${partialResult.length}`
+      );
+    }
+  }
+
+  return results;
+}
+
 async function loadRepositoryDataAsync() {
   let data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
   let githubResultsFileExists = false;
@@ -115,12 +140,30 @@ async function loadRepositoryDataAsync() {
     githubResultsFileExists = true;
   } catch (e) {}
 
+  let { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
+
+  // 5000 requests per hour is the authenticated API request rate limit
+  if (!apiLimit || apiLimit < 5000) {
+    throw new Error('GitHub API token is invalid or query is not properly configured.');
+  }
+
+  // Error out if not enough remaining
+  if (apiLimitRemaining < data.length * apiLimitCost) {
+    throw new Error('Not enough requests left on GitHub API rate limiting to proceed.');
+  }
+
+  console.info(
+    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request`
+  );
+
+  await loadGitHubLicenses();
+
   let result;
   if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await Promise.all(data.map(fetchGithubData));
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {

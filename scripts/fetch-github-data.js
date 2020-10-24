@@ -1,112 +1,300 @@
-import 'isomorphic-fetch';
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '../secrets.json';
+import fetch from 'isomorphic-fetch';
 
-const API = 'https://api.github.com';
+import { sleep } from './build-and-score-data';
 
-// https://github.com/expo/expo/tree/master/packages/expo-camera
-const fetchPackageJson = async url => {
-  try {
-    let rawUrl = url
-      .replace('github.com', 'raw.githubusercontent.com')
-      .replace('/tree', '');
-    let packageJsonUrl = `${rawUrl}/package.json`;
-    let response = await fetch(packageJsonUrl, { method: 'GET' });
-    let pkg = await response.json();
+require('dotenv').config();
 
+const GRAPHQL_API = 'https://api.github.com/graphql';
+
+const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
+
+let licenses = {};
+
+/**
+ * Fetch licenses from github to be used later to parse licenses from npm
+ */
+export const loadGitHubLicenses = async () => {
+  const query = `
+    query {
+      licenses {
+        name
+        url
+        id
+        key
+        spdxId
+      }
+    }
+  `;
+
+  const result = await makeGraphqlQuery(query);
+
+  result.data.licenses.forEach(license => {
+    licenses[license.key] = license;
+  });
+};
+
+const query = `
+  query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
+    rateLimit {
+      limit
+      cost
+      remaining
+      resetAt
+    }
+    repository(owner: $repoOwner, name: $repoName) {
+      hasIssuesEnabled
+      hasWikiEnabled
+      issues(states: OPEN) {
+        totalCount
+      }
+      watchers {
+        totalCount
+      }
+      stargazers {
+        totalCount
+      }
+      forks {
+        totalCount
+      }
+      description
+      createdAt
+      pushedAt
+      updatedAt
+      homepageUrl
+      url
+      mirrorUrl
+      name
+      nameWithOwner
+      isArchived
+      isMirror
+      licenseInfo {
+        key
+        name
+        spdxId
+        url
+        id
+      }
+      deployments {
+        totalCount
+      }
+      releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+        nodes {
+          name
+          tagName
+          createdAt
+          publishedAt
+          isPrerelease
+        }
+      }
+      repositoryTopics(first: 10) {
+        nodes {
+          topic {
+            name
+          }
+        }
+      }
+      defaultBranchRef {
+        target {
+          ... on Commit {
+            id
+            history(path: $packagePath, first: 1) {
+              nodes {
+                committedDate
+                message
+              }
+            }
+          }
+        }
+      }
+      packageJson:object(expression: $packageJsonPath) {
+        ... on Blob {
+          text
+        }
+      }
+    }
+  }
+`;
+
+const makeGraphqlQuery = async (query, variables) => {
+  const result = await fetch(GRAPHQL_API, {
+    method: 'POST',
+    headers: {
+      Authorization,
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+  return await result.json();
+};
+
+export const fetchGithubRateLimit = async () => {
+  // Accurately fetch query rate limit and cost by making dummy request
+  // https://developer.github.com/v4/guides/resource-limitations/
+  const result = await makeGraphqlQuery(query, {
+    repoOwner: 'react-native-directory',
+    repoName: 'website',
+  });
+
+  if (result.data) {
+    const { rateLimit } = result.data;
     return {
-      name: pkg.name,
-      description: pkg.description,
-      homepage: pkg.homepage,
-      topics: pkg.keywords,
+      apiLimit: rateLimit.limit,
+      apiLimitRemaining: rateLimit.remaining,
+      apiLimitCost: rateLimit.cost,
     };
-  } catch (e) {
-    console.log(`retrying package.json fetch for ${url}`);
-    return await fetchPackageJson(url);
+  }
+
+  if (result.errors) {
+    console.log('GitHub GraphQL API error:', result.errors);
+  }
+
+  return {};
+};
+
+const getUpdatedUrl = async url => {
+  try {
+    const result = await fetch(url);
+    return result.url;
+  } catch {
+    return url;
   }
 };
 
-function isMonorepo(url) {
-  return url.includes('/tree/master/');
-}
+const parseUrl = url => {
+  const [, , , repoOwner, repoName, ...path] = url.split('/');
+  const isMonorepo = !!(path && path.length);
+  const packagePath = isMonorepo ? path.slice(2).join('/') : '.';
 
-const fetchGithubData = async data => {
-  try {
-    let url = data.githubUrl;
-    let subrepoData;
-
-    // https://github.com/expo/expo/tree/master/packages/expo-camera
-    if (isMonorepo(url)) {
-      // Uh oh, it's a monorepo!
-      subrepoData = await fetchPackageJson(url);
-
-      // Get data from the parent
-      url = url.split('/tree/master')[0];
-    }
-
-    const requestUrl = createRequestUrl(url);
-    const response = await fetch(requestUrl, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/vnd.github.mercy-preview+json',
-      },
-    });
-    let json = await response.json();
-    let result = createRepoDataWithResponse(json);
-
-    if (subrepoData) {
-      result.urls.homepage = subrepoData.homepage;
-      result.name = subrepoData.name;
-      result.topics = subrepoData.topics;
-      result.description = subrepoData.description;
-    }
-
-    return {
-      ...data,
-      github: result,
-    };
-  } catch (e) {
-    console.log(`retrying fetch for ${data.githubUrl}`);
-    return await fetchGithubData(data);
-  }
-};
-
-const createRepoDataWithResponse = json => {
   return {
-    urls: {
-      repo: json.html_url,
-      clone: json.clone_url,
-      homepage: json.homepage,
-    },
-    stats: {
-      hasIssues: json.has_issues,
-      hasWiki: json.has_wiki,
-      hasPages: json.has_pages,
-      hasDownloads: json.has_downloads,
-      hasTopics: json.topics ? json.topics.length > 0 : false,
-      updatedAt: json.updated_at,
-      createdAt: json.created_at,
-      pushedAt: json.pushed_at,
-      forks: json.forks,
-      issues: json.open_issues,
-      subscribers: json.subscribers_count,
-      stars: json.stargazers_count,
-    },
-    name: json.name,
-    fullName: json.full_name,
-    description: json.description,
-    topics: json.topics,
+    repoOwner,
+    repoName,
+    isMonorepo,
+    packagePath,
   };
 };
 
-const createRequestUrl = url => {
-  console.log('processing: ', url);
+export const fetchGithubData = async (data, retries = 2) => {
+  if (retries < 0) {
+    console.log(`ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
+    return data;
+  }
+  try {
+    const url = data.githubUrl;
+    const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
 
-  const tokens = url.split('/');
-  const repoName = tokens[tokens.length - 1];
-  const repoCreator = tokens[tokens.length - 2];
-  const requestUrl = `${API}/repos/${repoCreator}/${repoName}?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
+    const result = await makeGraphqlQuery(query, {
+      repoOwner,
+      repoName,
+      packagePath,
+      packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+    });
 
-  return requestUrl;
+    if (!result.data.repository && result.errors && result.errors[0].type === 'NOT_FOUND') {
+      const newUrl = await getUpdatedUrl(url);
+      if (newUrl !== url) {
+        console.log(`Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+        data.githubUrl = newUrl;
+      } else {
+        console.log(`Repository ${repoOwner}/${repoName} not found`);
+      }
+      console.log(`Retrying fetch for ${data.githubUrl}`);
+      await sleep(1000);
+      return await fetchGithubData(data, retries - 1);
+    }
+
+    const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
+    return {
+      ...data,
+      github,
+    };
+  } catch (e) {
+    console.log(`Retrying fetch for ${data.githubUrl}`, e);
+    await sleep(1000);
+    return await fetchGithubData(data, retries - 1);
+  }
 };
 
-export default fetchGithubData;
+const getLicenseFromPackageJson = packageJson => {
+  // Get the GitHub license spec from the npm string
+  if (packageJson.license && typeof packageJson.license === 'string') {
+    return licenses[packageJson.license.toLowerCase()];
+  }
+};
+
+const createRepoDataWithResponse = (json, monorepo) => {
+  if (json.packageJson) {
+    const packageJson = JSON.parse(json.packageJson.text);
+
+    if (monorepo) {
+      json.homepageUrl = packageJson.homepage;
+      json.name = packageJson.name;
+      json.topics = packageJson.keywords;
+      json.description = packageJson.description;
+      json.licenseInfo = getLicenseFromPackageJson(packageJson);
+    }
+
+    if (!monorepo) {
+      json.topics = json.repositoryTopics.nodes.map(({ topic }) => topic.name);
+
+      if (!json.description) {
+        json.description = packageJson.description;
+      }
+
+      if (json.topics.length === 0) {
+        json.topics = packageJson.keywords;
+      }
+
+      if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+        json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+      }
+    }
+
+    if (packageJson.types || packageJson.typings) {
+      json.types = true;
+    }
+  }
+
+  if (!monorepo) {
+    json.lastRelease =
+      json.releases && json.releases.nodes && json.releases.nodes.length
+        ? json.releases.nodes[0]
+        : undefined;
+  }
+
+  const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
+
+  const hasTopics = json.topics && json.topics.length > 0;
+  const topics = hasTopics ? json.topics.map(topic => topic.toLowerCase()) : [];
+
+  return {
+    urls: {
+      repo: json.url,
+      clone: `${json.url}.git`,
+      homepage: json.homepageUrl,
+    },
+    stats: {
+      hasIssues: json.hasIssuesEnabled,
+      hasWiki: json.hasWikiEnabled,
+      hasPages: json.deployments.totalCount > 0,
+      hasDownloads: true,
+      hasTopics,
+      updatedAt: lastCommitAt,
+      createdAt: json.createdAt,
+      pushedAt: lastCommitAt,
+      forks: json.forks.totalCount,
+      issues: json.issues.totalCount,
+      subscribers: json.watchers.totalCount,
+      stars: json.stargazers.totalCount,
+    },
+    name: json.name,
+    fullName: json.nameWithOwner,
+    description: json.description,
+    topics,
+    license: json.licenseInfo,
+    lastRelease: json.lastRelease,
+    hasTypes: json.types,
+  };
+};
