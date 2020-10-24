@@ -5506,5 +5506,11 @@
     "android": true,
     "web": true,
     "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/artxty/typed-async-storage",
+    "ios": true,
+    "android": true,
+    "expo": true,
+  },
 ]
