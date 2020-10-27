@@ -4508,10 +4508,9 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/zetachang/react-native-dotenv",
+    "githubUrl": "https://github.com/goatandsheep/react-native-dotenv",
     "ios": true,
-    "android": true,
-    "unmaintained": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/gs-akhan/react-native-select",
@@ -5522,5 +5521,30 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dooboolab/react-native-audio-recorder-player",
+    "examples": ["https://github.com/dooboolab/react-native-audio-recorder-player/tree/master/Example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/enesozturk/rn-swipeable-panel",
+    "examples": ["https://github.com/enesozturk/rn-swipeable-panel/tree/master/examples"],
+    "images": [
+      "https://user-images.githubusercontent.com/19428358/82732219-913fb680-9d14-11ea-8128-55b20b0f7d1c.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arniu/react-native-ionicons",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/shahen94/react-native-video-processing",
+    "ios": true,
+    "android": true
   }
 ]
