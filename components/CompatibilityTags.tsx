@@ -44,8 +44,8 @@ export function CompatibilityTags(props: Props) {
     library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
-    library.web ? 'Web' : null,
     library.tvos ? 'tvOS' : null,
+    library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
   ]
     .map(platform => platform)
