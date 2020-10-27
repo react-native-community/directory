@@ -659,7 +659,8 @@
     "githubUrl": "https://github.com/react-native-video/react-native-video",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "tvos": true
   },
   {
     "githubUrl": "https://github.com/react-native-share/react-native-share",
@@ -3451,6 +3452,7 @@
     "ios": true,
     "android": true,
     "expo": true,
+    "tvos": true,
     "web": true,
     "examples": ["https://snack.expo.io/@msand/react-native-svg-example"]
   },
@@ -5262,6 +5264,7 @@
     "ios": true,
     "android": true,
     "expo": true,
+    "tvos": true,
     "dev": true
   },
   {
