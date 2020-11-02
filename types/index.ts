@@ -3,6 +3,7 @@ export type Query = {
   expo?: string;
   ios?: string;
   macos?: string;
+  tvos?: string;
   web?: string;
   windows?: string;
   order?: 'quality' | 'recommended' | 'issues' | 'downloads' | 'stars';
@@ -26,6 +27,7 @@ export type Library = {
   expo: boolean;
   windows: boolean;
   macos: boolean;
+  tvos: boolean;
   unmaintained: boolean;
   dev: boolean;
   github: {

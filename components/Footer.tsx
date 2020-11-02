@@ -147,7 +147,8 @@ const styles = StyleSheet.create({
   },
   footerText: {
     textAlign: 'center',
-    padding: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
     fontSize: 13,
   },
   platformsWrapper: {

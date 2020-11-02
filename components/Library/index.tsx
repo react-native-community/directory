@@ -59,7 +59,7 @@ export default function Library(props: Props) {
                 </View>
               </View>
             ) : null}
-            <View style={styles.displayHorizontal}>
+            <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
               <A
                 href={library.githubUrl || github.urls.repo}
                 style={styles.name}
@@ -69,8 +69,8 @@ export default function Library(props: Props) {
               {library.goldstar && (
                 <View
                   style={[
-                    styles.displayHorizontal,
                     styles.recommendedContainer,
+                    isSmallScreen ? styles.recommendedContainerSmall : null,
                     {
                       backgroundColor: context.isDark ? colors.primaryDark : colors.primaryLight,
                     },
@@ -113,8 +113,8 @@ export default function Library(props: Props) {
             github.urls.homepage ||
             (library.examples && library.examples.length) ? (
               <>
-                <View style={styles.filler} />
-                <View style={styles.bottomBar}>
+                {isSmallScreen ? null : <View style={styles.filler} />}
+                <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
                   <View style={[styles.displayHorizontal, styles.secondaryStats]}>
                     <MetaData library={library} secondary />
                   </View>
@@ -200,6 +200,11 @@ let styles = StyleSheet.create({
     marginLeft: 10,
     top: 1,
   },
+  recommendedContainerSmall: {
+    marginLeft: 0,
+    marginTop: 8,
+    alignSelf: 'flex-start',
+  },
   recommendedTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -232,7 +237,7 @@ let styles = StyleSheet.create({
     marginTop: 12,
   },
   secondaryStats: {
-    marginTop: 6,
+    marginVertical: 6,
     flexWrap: 'wrap',
   },
   secondaryText: {
@@ -247,6 +252,14 @@ let styles = StyleSheet.create({
     minHeight: 42,
     paddingLeft: 20,
     paddingRight: 16,
+  },
+  bottomBarSmall: {
+    position: 'relative',
+    minHeight: 'auto',
+    paddingLeft: 0,
+    paddingRight: 0,
+    marginTop: 6,
+    marginBottom: -4,
   },
   filler: {
     flex: 1,

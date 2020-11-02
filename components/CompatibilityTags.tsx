@@ -44,6 +44,7 @@ export function CompatibilityTags(props: Props) {
     library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
+    library.tvos ? 'tvOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
   ]
@@ -67,6 +68,7 @@ export function CompatibilityTags(props: Props) {
           {platforms.map(platform => (
             <Tag
               platform={platform}
+              key={`${platform}-platform`}
               tagStyle={{
                 backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
                 borderColor: context.isDark ? darkColors.border : colors.gray2,
