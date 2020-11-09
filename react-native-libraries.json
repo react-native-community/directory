@@ -1881,12 +1881,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/joao-alberto/react-native-tilt",
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
     "ios": true,
     "android": true
@@ -3121,9 +3115,19 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/microsoft/react-native-dualscreen",
+    "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/dualscreeninfo",
     "android": true,
     "npmPkg": "react-native-dualscreeninfo"
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/twopane-navigation",
+    "android": true,
+    "npmPkg": "react-native-twopane-navigation"
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/twopaneview",
+    "android": true,
+    "npmPkg": "react-native-twopaneview"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-splash-screen",
@@ -3743,7 +3747,8 @@
   {
     "githubUrl": "https://github.com/luggit/react-native-config",
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/luisfcofv/react-native-deep-linking",
@@ -4222,7 +4227,8 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/uxcam/react-native-ux-cam",
+    "githubUrl": "https://github.com/uxcam/react-native-ux-cam/tree/master/uxcam-react-wrapper",
+    "npmPkg": "react-native-ux-cam",
     "ios": true,
     "android": true
   },
