@@ -3261,13 +3261,13 @@
     "npmPkg": "@react-native-community/async-storage"
   },
   {
-    "githubUrl": "https://github.com/react-native-picker/react-native-picker",
+    "githubUrl": "https://github.com/react-native-picker/picker",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true,
     "windows": true,
-    "npmPkg": "@react-native-community/picker"
+    "npmPkg": "@react-native-picker/picker"
   },
   {
     "githubUrl": "https://github.com/react-native-cameraroll/react-native-cameraroll",
