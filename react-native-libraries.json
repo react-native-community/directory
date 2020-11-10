@@ -5568,8 +5568,20 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/react-native-menu/menu",
+    "examples": ["https://github.com/react-native-menu/menu/tree/master/examples"],
+    "images": [
+      "https://user-images.githubusercontent.com/6936373/98471164-cf328780-222d-11eb-9cbc-7dcda474fc8a.png",
+      "https://user-images.githubusercontent.com/6936373/98471162-cb9f0080-222d-11eb-89ef-9342a1f10893.png"
+    ],
+    "ios": true,
+    "npmPkg": "@react-native-menu/menu"
+  },
+  {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-context-menu",
-    "examples": ["https://github.com/dominicstop/react-native-ios-context-menu/tree/master/example"],
+    "examples": [
+      "https://github.com/dominicstop/react-native-ios-context-menu/tree/master/example"
+    ],
     "images": [
       "https://github.com/dominicstop/react-native-ios-context-menu/blob/master/assets/context-menu-view-gifs/ContextMenuView-SimpleExample-1-2-3-4.gif",
       "https://github.com/dominicstop/react-native-ios-context-menu/blob/master/assets/context-menu-view-gifs/ContextMenuView-SimpleExample-5-6-7-8.gif",
