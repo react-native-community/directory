@@ -5606,5 +5606,10 @@
     "githubUrl": "https://github.com/srk-sharingan/sharingan-rn-modal-dropdown",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/khalisafkari/react-native-latlon",
+    "examples": ["https://github.com/khalisafkari/react-native-latlon/tree/master/examples"],
+    "android": true
   }
 ]
