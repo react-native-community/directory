@@ -5623,5 +5623,10 @@
     "githubUrl": "https://github.com/khalisafkari/react-native-latlon",
     "examples": ["https://github.com/khalisafkari/react-native-latlon/tree/master/examples"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/fasky-software/react-native-widgetkit",
+    "examples": ["https://github.com/fasky-software/react-native-widgetkit/tree/main/example"],
+    "ios": true
   }
 ]
