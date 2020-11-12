@@ -5633,5 +5633,10 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/fasky-software/react-native-widgetkit",
+    "examples": ["https://github.com/fasky-software/react-native-widgetkit/tree/main/example"],
+    "ios": true
   }
 ]
