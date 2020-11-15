@@ -5638,5 +5638,15 @@
     "githubUrl": "https://github.com/fasky-software/react-native-widgetkit",
     "examples": ["https://github.com/fasky-software/react-native-widgetkit/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/dezemand/formorama",
+    "nameOverride": "Formorama",
+    "examples": ["https://formorama.org/docs/example-reactnative"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true
   }
 ]
