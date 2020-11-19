@@ -5638,5 +5638,12 @@
     "githubUrl": "https://github.com/fasky-software/react-native-widgetkit",
     "examples": ["https://github.com/fasky-software/react-native-widgetkit/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-native-paper-dates",
+    "examples": ["https://github.com/web-ridge/react-native-paper-dates/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
