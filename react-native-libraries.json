@@ -5645,5 +5645,19 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/fbt",
+    "npmPkg": "react-native-fbt",
+    "nameOverride": "fbt",
+    "examples": [
+      "https://github.com/facebook/fbt/tree/rn-demo-app",
+      "https://github.com/facebook/fbt/tree/live-demo-app"
+    ],
+    "images": ["https://facebook.github.io/fbt/img/fbt.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
