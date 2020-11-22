@@ -4884,10 +4884,10 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/retyui/react-native-confirmation-code-input",
+    "githubUrl": "https://github.com/retyui/react-native-confirmation-code-field",
     "examples": [
       "https://snack.expo.io/Zil!jCFft",
-      "https://github.com/retyui/react-native-confirmation-code-field/blob/master/examples/DemoCodeField"
+      "https://github.com/retyui/react-native-confirmation-code-field/tree/master/examples/DemoCodeField"
     ],
     "ios": true,
     "android": true,
@@ -5645,6 +5645,14 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-stylex",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "examples": ["https://github.com/retyui/react-native-stylex/tree/master/example/AppStyleX"]
   },
   {
     "githubUrl": "https://github.com/facebook/fbt",
