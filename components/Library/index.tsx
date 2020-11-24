@@ -23,6 +23,7 @@ export default function Library(props: Props) {
   const { library, skipMeta } = props;
   const { github } = library;
   const isSmallScreen = layout.isSmallScreen();
+  const isBelowMaxWidth = layout.isBelowMaxWidth();
   const libName = library.nameOverride || library.npmPkg || github.name;
 
   return (
@@ -34,7 +35,7 @@ export default function Library(props: Props) {
         },
         isSmallScreen && styles.containerColumn,
         skipMeta && styles.noMetaContainer,
-        skipMeta && isSmallScreen && styles.noMetaColumnContainer,
+        skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
         {library.unmaintained ? (
@@ -103,16 +104,14 @@ export default function Library(props: Props) {
             </Caption>
           </View>
         )}
-        {Platform.OS === 'web' && library.images && library.images.length ? (
+        {!skipMeta && Platform.OS === 'web' && library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
           </View>
         ) : null}
-        {skipMeta ? null : github.license ||
-          github.urls.homepage ||
-          (library.examples && library.examples.length) ? (
+        {github.license || github.urls.homepage || (library.examples && library.examples.length) ? (
           <>
             {isSmallScreen ? null : <View style={styles.filler} />}
             <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
@@ -267,13 +266,13 @@ let styles = StyleSheet.create({
     paddingBottom: 34,
   },
   noMetaContainer: {
-    width: '47.5%',
-    marginHorizontal: '1.25%',
-    maxHeight: 200,
+    width: '48.5%',
+    marginHorizontal: '0.75%',
+    maxHeight: 210,
   },
   noMetaColumnContainer: {
     maxHeight: 'auto',
-    width: '97.5%',
-    maxWidth: '97.5%',
+    width: '98.5%',
+    maxWidth: '98.5%',
   },
 });

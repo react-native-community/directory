@@ -13,6 +13,12 @@ export const layout = {
     } = useDimensions();
     return width < 800;
   },
+  isBelowMaxWidth: () => {
+    const {
+      window: { width },
+    } = useDimensions();
+    return width < layout.maxWidth;
+  },
 };
 
 export const colors = {

@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
   popularityMark: {
     height: 8,
     position: 'absolute',
-    top: -6,
-    right: -6,
+    top: -7,
+    right: -7,
     borderRadius: 4,
   },
 });
