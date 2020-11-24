@@ -115,7 +115,7 @@ const Explore = ({ data }) => {
           filter={lib => lib.windows === true}
         />
         <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-          You do not see any interesting libraries in there? Check out the{' '}
+          Do not see any interesting libraries in there? Check out the{' '}
           <A href="/" target="_self">
             directory browser
           </A>{' '}

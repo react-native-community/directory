@@ -78,5 +78,5 @@ export type Library = {
   topicSearchString: string;
   examples: string[];
   nameOverride?: string;
-  popularity?: string;
+  popularity?: number;
 };
