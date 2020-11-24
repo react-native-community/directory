@@ -5668,5 +5668,14 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/thebylito/react-native-navigation-bar-color",
+    "images": [
+      "https://raw.githubusercontent.com/thebylito/react-native-navigation-bar-color/master/screenshots/screenShot1.jpg",
+      "https://raw.githubusercontent.com/thebylito/react-native-navigation-bar-color/master/screenshots/screenShot2.jpg",
+      "https://raw.githubusercontent.com/thebylito/react-native-navigation-bar-color/master/screenshots/screenShot3.jpg"
+    ],
+    "android": true
   }
 ]
