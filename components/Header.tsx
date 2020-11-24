@@ -2,7 +2,7 @@ import { A, Header as HtmlHeader } from '@expo/html-elements';
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { layout, colors, H5, P, darkColors } from '../common/styleguide';
+import { layout, colors, H5, H6, P, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
@@ -38,9 +38,14 @@ export default function Header() {
                 <Logo fill={colors.primary} width={29} height={26} />
                 <H5 style={isSmallScreen && styles.smallTitle}>
                   <A href="/" style={styles.headerContentsTitle}>
-                    React Native Directory
+                    {isSmallScreen ? 'Directory' : 'React Native Directory'}
                   </A>
                 </H5>
+                <H6 style={isSmallScreen && styles.smallTitle}>
+                  <A href="/explore" style={styles.headerSubpageTitle}>
+                    Explore <sup style={{ fontSize: 10 }}>(BETA)</sup>
+                  </A>
+                </H6>
               </View>
               <View style={styles.displayHorizontal}>
                 <Button
@@ -103,6 +108,10 @@ let styles = StyleSheet.create({
   headerContentsTitle: {
     color: colors.primary,
     paddingLeft: 8,
+  },
+  headerSubpageTitle: {
+    color: colors.white,
+    marginLeft: 24,
   },
   displayHorizontal: {
     flexDirection: 'row',

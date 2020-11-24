@@ -70,7 +70,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   });
 
   let offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
-  let limit = NUM_PER_PAGE; // UI doesn't yet support different limits req.query.limit || NUM_PER_PAGE,
+  let limit = req.query.limit || NUM_PER_PAGE;
 
   let filteredAndPaginatedLibraries = take(drop(filteredLibraries, offset), limit);
   return res.end(

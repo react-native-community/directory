@@ -14,10 +14,11 @@ import Thumbnail from './Thumbnail';
 
 type Props = {
   library: LibraryType;
+  skipMeta?: boolean;
 };
 
 export default function Library(props: Props) {
-  const { library } = props;
+  const { library, skipMeta } = props;
   const { github } = library;
   const isSmallScreen = layout.isSmallScreen();
 
@@ -31,6 +32,8 @@ export default function Library(props: Props) {
               borderColor: context.isDark ? darkColors.border : colors.gray2,
             },
             isSmallScreen && styles.containerColumn,
+            skipMeta && styles.noMetaContainer,
+            skipMeta && isSmallScreen && styles.noMetaColumnContainer,
           ]}>
           <View style={styles.columnOne}>
             {library.unmaintained ? (
@@ -109,9 +112,9 @@ export default function Library(props: Props) {
                 ))}
               </View>
             ) : null}
-            {github.license ||
-            github.urls.homepage ||
-            (library.examples && library.examples.length) ? (
+            {skipMeta ? null : github.license ||
+              github.urls.homepage ||
+              (library.examples && library.examples.length) ? (
               <>
                 {isSmallScreen ? null : <View style={styles.filler} />}
                 <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
@@ -122,21 +125,23 @@ export default function Library(props: Props) {
               </>
             ) : null}
           </View>
-          <View
-            style={[
-              styles.columnTwo,
-              {
-                borderLeftColor: context.isDark ? darkColors.border : colors.gray2,
-              },
-              isSmallScreen && styles.columnTwoSmall,
-              isSmallScreen
-                ? {
-                    borderTopColor: context.isDark ? darkColors.border : colors.gray2,
-                  }
-                : undefined,
-            ]}>
-            <MetaData library={library} />
-          </View>
+          {skipMeta ? null : (
+            <View
+              style={[
+                styles.columnTwo,
+                {
+                  borderLeftColor: context.isDark ? darkColors.border : colors.gray2,
+                },
+                isSmallScreen && styles.columnTwoSmall,
+                isSmallScreen
+                  ? {
+                      borderTopColor: context.isDark ? darkColors.border : colors.gray2,
+                    }
+                  : undefined,
+              ]}>
+              <MetaData library={library} />
+            </View>
+          )}
         </View>
       )}
     </CustomAppearanceContext.Consumer>
@@ -264,5 +269,15 @@ let styles = StyleSheet.create({
   filler: {
     flex: 1,
     paddingBottom: 34,
+  },
+  noMetaContainer: {
+    width: '47.5%',
+    marginHorizontal: '1.25%',
+    maxHeight: 200,
+  },
+  noMetaColumnContainer: {
+    maxHeight: 'auto',
+    maxWidth: '97.5%',
+    width: 'auto',
   },
 });
