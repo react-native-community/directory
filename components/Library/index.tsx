@@ -1,5 +1,5 @@
 import emoji from 'node-emoji';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Linkify from 'react-simple-linkify';
 
@@ -18,133 +18,145 @@ type Props = {
 };
 
 export default function Library(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { library, skipMeta } = props;
   const { github } = library;
   const isSmallScreen = layout.isSmallScreen();
+  const libName = library.nameOverride || library.npmPkg || github.name;
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <View
-          style={[
-            styles.container,
-            {
-              borderColor: context.isDark ? darkColors.border : colors.gray2,
-            },
-            isSmallScreen && styles.containerColumn,
-            skipMeta && styles.noMetaContainer,
-            skipMeta && isSmallScreen && styles.noMetaColumnContainer,
-          ]}>
-          <View style={styles.columnOne}>
-            {library.unmaintained ? (
-              <View style={styles.unmaintainedTextWrapper}>
-                <View
-                  style={[
-                    styles.unmaintainedTextContainer,
-                    {
-                      backgroundColor: context.isDark ? darkColors.warning : colors.warningLight,
-                    },
-                  ]}>
-                  <Warning
-                    width={16}
-                    height={16}
-                    fill={context.isDark ? colors.gray2 : colors.warningDark}
-                  />
-                  <Label
-                    style={[
-                      styles.unmaintainedText,
-                      {
-                        color: context.isDark ? colors.gray2 : colors.warningDark,
-                      },
-                    ]}>
-                    This library is not actively maintained
-                  </Label>
-                </View>
-              </View>
-            ) : null}
-            <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
-              <A
-                href={library.githubUrl || github.urls.repo}
-                style={styles.name}
-                hoverStyle={styles.nameHovered}>
-                {library.nameOverride || library.npmPkg || github.name}
-              </A>
-              {library.goldstar && (
-                <View
-                  style={[
-                    styles.recommendedContainer,
-                    isSmallScreen ? styles.recommendedContainerSmall : null,
-                    {
-                      backgroundColor: context.isDark ? colors.primaryDark : colors.primaryLight,
-                    },
-                  ]}>
-                  <View style={styles.recommendedTextContainer}>
-                    <Badge width={11} height={16} />
-                    <Label
-                      style={[
-                        styles.recommendedText,
-                        {
-                          color: context.isDark ? darkColors.dark : colors.black,
-                        },
-                      ]}>
-                      Recommended Library
-                    </Label>
-                  </View>
-                </View>
-              )}
-            </View>
-            <View style={styles.verticalMargin}>
-              <CompatibilityTags library={library} />
-            </View>
-            {!isEmptyOrNull(github.description) && (
-              <View style={styles.verticalMargin}>
-                <Caption>
-                  <Linkify component={({ url }) => <A href={url}>{url}</A>}>
-                    {emoji.emojify(github.description)}
-                  </Linkify>
-                </Caption>
-              </View>
-            )}
-            {Platform.OS === 'web' && library.images && library.images.length ? (
-              <View style={[styles.displayHorizontal, styles.imagesContainer]}>
-                {library.images.map((image, index) => (
-                  <Thumbnail key={`${image}-${index}`} url={image} />
-                ))}
-              </View>
-            ) : null}
-            {skipMeta ? null : github.license ||
-              github.urls.homepage ||
-              (library.examples && library.examples.length) ? (
-              <>
-                {isSmallScreen ? null : <View style={styles.filler} />}
-                <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
-                  <View style={[styles.displayHorizontal, styles.secondaryStats]}>
-                    <MetaData library={library} secondary />
-                  </View>
-                </View>
-              </>
-            ) : null}
-          </View>
-          {skipMeta ? null : (
+    <View
+      style={[
+        styles.container,
+        {
+          borderColor: isDark ? darkColors.border : colors.gray2,
+        },
+        isSmallScreen && styles.containerColumn,
+        skipMeta && styles.noMetaContainer,
+        skipMeta && isSmallScreen && styles.noMetaColumnContainer,
+      ]}>
+      <View style={styles.columnOne}>
+        {library.unmaintained ? (
+          <View style={styles.unmaintainedTextWrapper}>
             <View
               style={[
-                styles.columnTwo,
+                styles.unmaintainedTextContainer,
                 {
-                  borderLeftColor: context.isDark ? darkColors.border : colors.gray2,
+                  backgroundColor: isDark ? darkColors.warning : colors.warningLight,
                 },
-                isSmallScreen && styles.columnTwoSmall,
-                isSmallScreen
-                  ? {
-                      borderTopColor: context.isDark ? darkColors.border : colors.gray2,
-                    }
-                  : undefined,
               ]}>
-              <MetaData library={library} />
+              <Warning width={16} height={16} fill={isDark ? colors.gray2 : colors.warningDark} />
+              <Label
+                style={[
+                  styles.unmaintainedText,
+                  {
+                    color: isDark ? colors.gray2 : colors.warningDark,
+                  },
+                ]}>
+                This library is not actively maintained
+              </Label>
+            </View>
+          </View>
+        ) : null}
+        <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
+          <A
+            href={library.githubUrl || github.urls.repo}
+            style={styles.name}
+            hoverStyle={styles.nameHovered}>
+            {libName}
+          </A>
+          {library.goldstar && (
+            <View
+              style={[
+                styles.recommendedContainer,
+                isSmallScreen ? styles.recommendedContainerSmall : null,
+                {
+                  backgroundColor: isDark ? colors.primaryDark : colors.primaryLight,
+                },
+              ]}>
+              <View style={styles.recommendedTextContainer}>
+                <Badge width={11} height={16} />
+                <Label
+                  style={[
+                    styles.recommendedText,
+                    {
+                      color: isDark ? darkColors.dark : colors.black,
+                    },
+                  ]}>
+                  Recommended Library
+                </Label>
+              </View>
             </View>
           )}
+          {skipMeta && library.popularity ? (
+            <View
+              aria-label={`popularity score: ${(library.popularity * 100).toFixed(1)}`}
+              style={[
+                styles.popularityMark,
+                {
+                  backgroundColor:
+                    library.popularity > 0.5
+                      ? 'orangered'
+                      : library.popularity > 0.3
+                      ? 'coral'
+                      : library.popularity > 0.15
+                      ? 'orange'
+                      : 'gold',
+                },
+              ]}
+            />
+          ) : null}
+        </View>
+        <View style={styles.verticalMargin}>
+          <CompatibilityTags library={library} />
+        </View>
+        {!isEmptyOrNull(github.description) && (
+          <View style={styles.verticalMargin}>
+            <Caption>
+              <Linkify component={({ url }) => <A href={url}>{url}</A>}>
+                {emoji.emojify(github.description)}
+              </Linkify>
+            </Caption>
+          </View>
+        )}
+        {Platform.OS === 'web' && library.images && library.images.length ? (
+          <View style={[styles.displayHorizontal, styles.imagesContainer]}>
+            {library.images.map((image, index) => (
+              <Thumbnail key={`${image}-${index}`} url={image} />
+            ))}
+          </View>
+        ) : null}
+        {skipMeta ? null : github.license ||
+          github.urls.homepage ||
+          (library.examples && library.examples.length) ? (
+          <>
+            {isSmallScreen ? null : <View style={styles.filler} />}
+            <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
+              <View style={[styles.displayHorizontal, styles.secondaryStats]}>
+                <MetaData library={library} secondary />
+              </View>
+            </View>
+          </>
+        ) : null}
+      </View>
+      {skipMeta ? null : (
+        <View
+          style={[
+            styles.columnTwo,
+            {
+              borderLeftColor: isDark ? darkColors.border : colors.gray2,
+            },
+            isSmallScreen && styles.columnTwoSmall,
+            isSmallScreen
+              ? {
+                  borderTopColor: isDark ? darkColors.border : colors.gray2,
+                }
+              : undefined,
+          ]}>
+          <MetaData library={library} />
         </View>
       )}
-    </CustomAppearanceContext.Consumer>
+    </View>
   );
 }
 
@@ -277,7 +289,15 @@ let styles = StyleSheet.create({
   },
   noMetaColumnContainer: {
     maxHeight: 'auto',
+    width: '97.5%',
     maxWidth: '97.5%',
-    width: 'auto',
+  },
+  popularityMark: {
+    width: 24,
+    height: 10,
+    position: 'absolute',
+    top: -8,
+    right: -8,
+    borderRadius: 4,
   },
 });

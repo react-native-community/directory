@@ -1,9 +1,10 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { H1, H3, darkColors, colors } from '../common/styleguide';
+import { H1, H3, P, darkColors, colors, A } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import {
   PlatformAndroid,
@@ -17,6 +18,7 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
+const MIN_DOWNLOADS = 100;
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
 
 const renderLibs = (list, count = 4) => {
@@ -27,7 +29,7 @@ const renderLibs = (list, count = 4) => {
           lib =>
             !lib.unmaintained &&
             !lib.dev &&
-            lib.npm.downloads > 100 &&
+            lib.npm.downloads > MIN_DOWNLOADS &&
             new Date().getTime() - new Date(lib.github.stats.updatedAt).getTime() < UPDATED_IN
         )
         .sort((a, b) => b.popularity - a.popularity)
@@ -47,7 +49,7 @@ const ExploreSection = ({ data, title, filter, icon = undefined, count = 4 }) =>
     <>
       <H3 style={styles.subHeader}>
         <View style={styles.subHeaderIcon}>
-          {icon ? React.createElement(icon, { fill: iconColor, width: 28, height: 28 }) : null}
+          {icon ? React.createElement(icon, { fill: iconColor, width: 28, height: 30 }) : null}
         </View>
         {title}
       </H3>
@@ -68,6 +70,12 @@ const Explore = ({ data }) => {
         ]}>
         <H1 style={styles.header}>Explore trending libraries</H1>
       </View>
+      <LinearGradient
+        colors={[colors.primaryLight, colors.primaryDark]}
+        start={[0, 0]}
+        end={[1, 0]}
+        style={styles.headerSpacer}
+      />
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
@@ -106,6 +114,13 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.windows === true}
         />
+        <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+          You do not see any interesting libraries in there? Check out the{' '}
+          <A href="/" target="_self">
+            directory browser
+          </A>{' '}
+          then!
+        </P>
       </ContentContainer>
     </>
   );
@@ -133,10 +148,10 @@ Explore.getInitialProps = async (ctx: NextPageContext) => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
+    paddingBottom: 12,
   },
   librariesContainer: {
-    paddingTop: 6,
-    paddingBottom: 4,
+    paddingVertical: 4,
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -144,19 +159,31 @@ const styles = StyleSheet.create({
   headerWrapper: {
     paddingTop: 28,
     paddingBottom: 32,
-    marginBottom: 12,
   },
   header: {
     textAlign: 'center',
   },
+  headerSpacer: {
+    height: 3,
+    width: '100%',
+    backgroundColor: colors.primary,
+    marginBottom: 12,
+  },
   subHeader: {
     marginTop: 16,
     marginBottom: 8,
+    fontWeight: '700',
   },
   subHeaderIcon: {
     marginTop: 4,
     marginRight: 12,
     float: 'left',
+  },
+  note: {
+    textAlign: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    fontSize: 14,
   },
 });
 
