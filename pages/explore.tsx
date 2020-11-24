@@ -12,6 +12,8 @@ import {
   PlatformMacOS,
   PlatformWeb,
   PlatformWindows,
+  PlatformExpo,
+  ReactLogo,
 } from '../components/Icons';
 import Library from '../components/Library';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -43,13 +45,13 @@ const renderLibs = (list, count = 4) => {
 
 const ExploreSection = ({ data, title, filter, icon = undefined, count = 4 }) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+  const color = isDark ? darkColors.pewter : colors.gray5;
 
   return (
     <>
-      <H3 style={styles.subHeader}>
+      <H3 style={[styles.subHeader, { color }]}>
         <View style={styles.subHeaderIcon}>
-          {icon ? React.createElement(icon, { fill: iconColor, width: 28, height: 30 }) : null}
+          {React.createElement(icon, { fill: color, width: 28, height: 30 })}
         </View>
         {title}
       </H3>
@@ -68,7 +70,8 @@ const Explore = ({ data }) => {
           styles.headerWrapper,
           { backgroundColor: isDark ? darkColors.subHeader : colors.gray1 },
         ]}>
-        <H1 style={styles.header}>Explore trending libraries</H1>
+        <H1 style={styles.header}>Explore libraries</H1>
+        <P style={styles.headerDescription}>See which React Native libraries are trending today.</P>
       </View>
       <LinearGradient
         colors={[colors.primaryLight, colors.primaryDark]}
@@ -79,6 +82,7 @@ const Explore = ({ data }) => {
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
+          icon={ReactLogo}
           data={data}
           filter={lib => lib.android === true && lib.ios === true}
           count={8}
@@ -95,7 +99,12 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.ios === true && !lib.android}
         />
-        <ExploreSection title="Expo" data={data} filter={lib => lib.expo === true} />
+        <ExploreSection
+          title="Expo"
+          icon={PlatformExpo}
+          data={data}
+          filter={lib => lib.expo === true}
+        />
         <ExploreSection
           title="macOS"
           icon={PlatformMacOS}
@@ -162,9 +171,16 @@ const styles = StyleSheet.create({
   },
   header: {
     textAlign: 'center',
+    fontSize: 44,
+    paddingHorizontal: 20,
+  },
+  headerDescription: {
+    textAlign: 'center',
+    paddingVertical: 6,
+    paddingHorizontal: 40,
   },
   headerSpacer: {
-    height: 3,
+    height: 4,
     width: '100%',
     backgroundColor: colors.primary,
     marginBottom: 12,
@@ -181,8 +197,8 @@ const styles = StyleSheet.create({
   },
   note: {
     textAlign: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
     fontSize: 14,
   },
 });
