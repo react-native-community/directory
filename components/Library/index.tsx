@@ -10,6 +10,7 @@ import { isEmptyOrNull } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
 import { Badge, Warning } from '../Icons';
 import { MetaData } from './MetaData';
+import PopularityMark from './PopularityMark';
 import Thumbnail from './Thumbnail';
 
 type Props = {
@@ -88,24 +89,7 @@ export default function Library(props: Props) {
               </View>
             </View>
           )}
-          {skipMeta && library.popularity ? (
-            <View
-              aria-label={`popularity score: ${(library.popularity * 100).toFixed(1)}`}
-              style={[
-                styles.popularityMark,
-                {
-                  backgroundColor:
-                    library.popularity > 0.5
-                      ? 'orangered'
-                      : library.popularity > 0.3
-                      ? 'coral'
-                      : library.popularity > 0.15
-                      ? 'orange'
-                      : 'gold',
-                },
-              ]}
-            />
-          ) : null}
+          {skipMeta && library.popularity ? <PopularityMark library={library} /> : null}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -291,13 +275,5 @@ let styles = StyleSheet.create({
     maxHeight: 'auto',
     width: '97.5%',
     maxWidth: '97.5%',
-  },
-  popularityMark: {
-    width: 24,
-    height: 10,
-    position: 'absolute',
-    top: -8,
-    right: -8,
-    borderRadius: 4,
   },
 });
