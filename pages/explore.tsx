@@ -70,7 +70,10 @@ const Explore = ({ data }) => {
           styles.headerWrapper,
           { backgroundColor: isDark ? darkColors.subHeader : colors.gray1 },
         ]}>
-        <H1 style={styles.header}>Explore libraries</H1>
+        <H1 style={styles.header}>
+          Explore libraries
+          <sup style={{ fontSize: 14, top: -4, right: -6, position: 'relative' }}>(BETA)</sup>
+        </H1>
         <P style={styles.headerDescription}>See which React Native libraries are trending today.</P>
       </View>
       <LinearGradient
@@ -176,14 +179,16 @@ const styles = StyleSheet.create({
   },
   headerDescription: {
     textAlign: 'center',
-    paddingVertical: 6,
+    paddingTop: 4,
+    paddingBottom: 6,
     paddingHorizontal: 40,
   },
   headerSpacer: {
     height: 4,
     width: '100%',
     backgroundColor: colors.primary,
-    marginBottom: 12,
+    marginBottom: 16,
+    opacity: 0.75,
   },
   subHeader: {
     marginTop: 16,

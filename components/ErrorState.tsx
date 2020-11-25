@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { H2, A, P } from '../common/styleguide';
 
 export default ({ statusCode }) => {
   return (
     <View style={styles.container}>
+      <Image style={styles.img} source={require('../assets/notfound.png')} />
       <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
       <P style={[styles.text, styles.secondLine]}>
         Help fix it? Submit a PR to the{' '}
@@ -20,8 +21,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     paddingHorizontal: 24,
-    marginTop: 70,
-    marginBottom: 80,
+    paddingVertical: 72,
+    flex: 1,
   },
   img: {
     marginTop: 48,
