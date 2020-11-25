@@ -1,5 +1,5 @@
 import * as HtmlElements from '@expo/html-elements';
-import React, { ReactNode, RefObject } from 'react';
+import React, { ReactNode, RefObject, useContext } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
 
@@ -7,20 +7,16 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 export const layout = {
   maxWidth: 1200,
-  isSmallScreen: () => {
-    const {
-      window: { width },
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-    } = useDimensions();
-    return width < 800;
-  },
-  isBelowMaxWidth: () => {
-    const {
-      window: { width },
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-    } = useDimensions();
-    return width < layout.maxWidth;
-  },
+};
+
+export const useLayout = () => {
+  const {
+    window: { width },
+  } = useDimensions();
+  return {
+    isSmallScreen: width < 800,
+    isBelowMaxWidth: width < layout.maxWidth,
+  };
 };
 
 export const colors = {
@@ -87,22 +83,19 @@ type TextProps = {
 
 function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
   return (props: TextProps) => {
+    const { isDark } = useContext(CustomAppearanceContext);
     const { children, style, nativeID } = props;
     return (
-      <CustomAppearanceContext.Consumer>
-        {context => (
-          <Element
-            nativeID={nativeID}
-            style={[
-              textStyles[Element],
-              textStyle,
-              { color: context.isDark ? colors.white : colors.black },
-              style,
-            ]}>
-            {children}
-          </Element>
-        )}
-      </CustomAppearanceContext.Consumer>
+      <Element
+        nativeID={nativeID}
+        style={[
+          textStyles[Element],
+          textStyle,
+          { color: isDark ? colors.white : colors.black },
+          style,
+        ]}>
+        {children}
+      </Element>
     );
   };
 }
@@ -127,31 +120,21 @@ type AProps = {
 };
 
 export const A = (props: AProps) => {
-  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
+  const { isDark } = useContext(CustomAppearanceContext);
   const linkRef = React.useRef();
   const isHovered = useHover(linkRef);
+  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
+  const anchorStyles = getAnchorStyles(isDark);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => {
-        const anchorStyles = getAnchorStyles(context.isDark);
-        return (
-          <HtmlElements.A
-            {...rest}
-            href={href}
-            target={target}
-            style={[
-              anchorStyles.a,
-              isHovered && anchorStyles.aHovered,
-              style,
-              isHovered && hoverStyle,
-            ]}
-            ref={linkRef}>
-            {children}
-          </HtmlElements.A>
-        );
-      }}
-    </CustomAppearanceContext.Consumer>
+    <HtmlElements.A
+      {...rest}
+      href={href}
+      target={target}
+      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}
+      ref={linkRef}>
+      {children}
+    </HtmlElements.A>
   );
 };
 

@@ -124,12 +124,14 @@ const Explore = ({ data }) => {
           icon={PlatformAndroid}
           data={data}
           filter={lib => lib.android === true && !lib.ios}
+          queryParams="android=true&ios=false"
         />
         <ExploreSection
           title="iOS"
           icon={PlatformIOS}
           data={data}
           filter={lib => lib.ios === true && !lib.android}
+          queryParams="android=false&ios=true"
         />
         <ExploreSection
           title="Expo"

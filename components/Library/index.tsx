@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Linkify from 'react-simple-linkify';
 
-import { colors, layout, A, Label, Caption, darkColors } from '../../common/styleguide';
+import { colors, useLayout, A, Label, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
@@ -23,8 +23,7 @@ export default function Library(props: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { library, skipMeta, showPopularity } = props;
   const { github } = library;
-  const isSmallScreen = layout.isSmallScreen();
-  const isBelowMaxWidth = layout.isBelowMaxWidth();
+  const { isSmallScreen, isBelowMaxWidth } = useLayout();
   const libName = library.nameOverride || library.npmPkg || github.name;
 
   return (

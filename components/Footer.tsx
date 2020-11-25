@@ -1,7 +1,7 @@
 import React, { FunctionComponent, SVGAttributes } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
-import { A, P, colors, darkColors, layout } from '../common/styleguide';
+import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import {
@@ -22,7 +22,7 @@ type PlatformProps = {
 };
 
 const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
-  const isSmallScreen = layout.isSmallScreen();
+  const { isSmallScreen } = useLayout();
 
   return (
     <CustomAppearanceContext.Consumer>

@@ -2,14 +2,14 @@ import { A, Header as HtmlHeader } from '@expo/html-elements';
 import React, { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { layout, colors, H5, H6, P, darkColors } from '../common/styleguide';
+import { layout, colors, H5, H6, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
 export default function Header() {
   const { isDark, setIsDark } = useContext(CustomAppearanceContext);
-  const isSmallScreen = layout.isSmallScreen();
+  const { isSmallScreen } = useLayout();
 
   return (
     <HtmlHeader>

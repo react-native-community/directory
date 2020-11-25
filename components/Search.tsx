@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { layout, colors, P, darkColors } from '../common/styleguide';
+import { layout, colors, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
@@ -22,7 +22,7 @@ export default function Search(props: Props) {
   const [debouncedCallback] = useDebouncedCallback((text: string) => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 150);
-  const isSmallScreen = layout.isSmallScreen();
+  const { isSmallScreen } = useLayout();
 
   return (
     <CustomAppearanceContext.Consumer>
