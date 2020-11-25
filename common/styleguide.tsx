@@ -10,12 +10,14 @@ export const layout = {
   isSmallScreen: () => {
     const {
       window: { width },
+      // eslint-disable-next-line react-hooks/rules-of-hooks
     } = useDimensions();
     return width < 800;
   },
   isBelowMaxWidth: () => {
     const {
       window: { width },
+      // eslint-disable-next-line react-hooks/rules-of-hooks
     } = useDimensions();
     return width < layout.maxWidth;
   },
