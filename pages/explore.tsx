@@ -80,9 +80,9 @@ const ExploreSection = ({
       <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
         Want to see more? Explore more{' '}
         <A href={`/?${queryParams}${DEFAULT_PARAMS}`} target="_self">
-          {title}
+          {title} libraries
         </A>{' '}
-        libraries in the directory!
+        in the directory!
       </P>
     </>
   );
@@ -98,18 +98,18 @@ const Explore = ({ data }) => {
           styles.headerWrapper,
           { backgroundColor: isDark ? darkColors.subHeader : colors.gray1 },
         ]}>
+        <LinearGradient
+          colors={['#ffbe07', '#ffa200', '#ff6e29', 'orangered']}
+          start={[0.05, 0]}
+          end={[0.95, 0]}
+          style={styles.headerSpacer}
+        />
         <H1 style={styles.header}>
           Explore libraries
           <sup style={{ fontSize: 14, top: -4, right: -6, position: 'relative' }}>(BETA)</sup>
         </H1>
         <P style={styles.headerDescription}>See which React Native libraries are trending today.</P>
       </View>
-      <LinearGradient
-        colors={[colors.primaryLight, colors.primaryDark]}
-        start={[0, 0]}
-        end={[1, 0]}
-        style={styles.headerSpacer}
-      />
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   headerWrapper: {
-    paddingTop: 28,
     paddingBottom: 32,
+    marginBottom: 16,
   },
   header: {
     textAlign: 'center',
@@ -208,9 +208,8 @@ const styles = StyleSheet.create({
   headerSpacer: {
     height: 4,
     width: '100%',
-    backgroundColor: colors.primary,
-    marginBottom: 16,
-    opacity: 0.75,
+    backgroundColor: '#ffa200',
+    marginBottom: 24,
   },
   subHeader: {
     marginTop: 16,
