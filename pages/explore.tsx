@@ -22,6 +22,7 @@ import urlWithQuery from '../util/urlWithQuery';
 
 const MIN_DOWNLOADS = 100;
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
+const DEFAULT_PARAMS = '&wasRecentlyUpdated=true&isMaintained=true&order=quality';
 
 const renderLibs = (list, count = 4) => {
   return (
@@ -37,25 +38,52 @@ const renderLibs = (list, count = 4) => {
         .sort((a, b) => b.popularity - a.popularity)
         .splice(0, count)
         .map((item: any, index: number) => (
-          <Library key={`list-item-${index}-${item.github.name}`} library={item} skipMeta />
+          <Library
+            key={`list-item-${index}-${item.github.name}`}
+            library={item}
+            showPopularity
+            skipMeta
+          />
         ))}
     </View>
   );
 };
 
-const ExploreSection = ({ data, title, filter, icon = undefined, count = 4 }) => {
+const ExploreSection = ({
+  data,
+  title,
+  filter,
+  icon,
+  count = 4,
+  queryParams = `${title.toLowerCase()}=true`,
+}) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const color = isDark ? darkColors.pewter : colors.gray5;
+  const hoverColor = isDark ? colors.gray5 : colors.gray4;
+  const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
     <>
-      <H3 style={[styles.subHeader, { color }]}>
+      <H3 style={styles.subHeader} nativeID={hashLink}>
         <View style={styles.subHeaderIcon}>
           {React.createElement(icon, { fill: color, width: 28, height: 30 })}
         </View>
-        {title}
+        <A
+          href={`#${hashLink}`}
+          target="_self"
+          style={[styles.subHeaderTitle, { color }]}
+          hoverStyle={{ color: hoverColor }}>
+          {title}
+        </A>
       </H3>
       <View style={styles.librariesContainer}>{renderLibs(data.filter(filter), count)}</View>
+      <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+        Want to see more? Explore more{' '}
+        <A href={`/?${queryParams}${DEFAULT_PARAMS}`} target="_self">
+          {title}
+        </A>{' '}
+        libraries in the directory!
+      </P>
     </>
   );
 };
@@ -89,6 +117,7 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.android === true && lib.ios === true}
           count={8}
+          queryParams="android=true&ios=true"
         />
         <ExploreSection
           title="Android"
@@ -126,13 +155,6 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.windows === true}
         />
-        <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-          Do not see any interesting libraries in there? Check out the{' '}
-          <A href="/" target="_self">
-            directory browser
-          </A>{' '}
-          then!
-        </P>
       </ContentContainer>
     </>
   );
@@ -193,17 +215,23 @@ const styles = StyleSheet.create({
   subHeader: {
     marginTop: 16,
     marginBottom: 8,
-    fontWeight: '700',
   },
   subHeaderIcon: {
     marginTop: 4,
     marginRight: 12,
     float: 'left',
   },
+  subHeaderTitle: {
+    marginTop: 16,
+    fontWeight: '700',
+    textDecorationLine: 'none',
+    backgroundColor: 'transparent',
+  },
   note: {
     textAlign: 'center',
     paddingVertical: 16,
-    paddingHorizontal: 24,
+    paddingTop: 8,
+    paddingBottom: 24,
     fontSize: 14,
   },
 });

@@ -16,11 +16,12 @@ import Thumbnail from './Thumbnail';
 type Props = {
   library: LibraryType;
   skipMeta?: boolean;
+  showPopularity?: boolean;
 };
 
 export default function Library(props: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { library, skipMeta } = props;
+  const { library, skipMeta, showPopularity } = props;
   const { github } = library;
   const isSmallScreen = layout.isSmallScreen();
   const isBelowMaxWidth = layout.isBelowMaxWidth();
@@ -38,6 +39,7 @@ export default function Library(props: Props) {
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
+        {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
         {library.unmaintained ? (
           <View style={styles.unmaintainedTextWrapper}>
             <View
@@ -90,7 +92,6 @@ export default function Library(props: Props) {
               </View>
             </View>
           )}
-          {skipMeta && library.popularity ? <PopularityMark library={library} /> : null}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -268,7 +269,7 @@ let styles = StyleSheet.create({
   noMetaContainer: {
     width: '48.5%',
     marginHorizontal: '0.75%',
-    maxHeight: 210,
+    maxHeight: 232,
   },
   noMetaColumnContainer: {
     maxHeight: 'auto',

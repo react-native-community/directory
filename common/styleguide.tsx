@@ -82,15 +82,17 @@ type TextProps = {
   children?: ReactNode;
   style?: TextStyle | TextStyle[];
   ref?: RefObject<ReactNode>;
+  nativeID?: string;
 };
 
 function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
   return (props: TextProps) => {
-    const { children, style } = props;
+    const { children, style, nativeID } = props;
     return (
       <CustomAppearanceContext.Consumer>
         {context => (
           <Element
+            nativeID={nativeID}
             style={[
               textStyles[Element],
               textStyle,
