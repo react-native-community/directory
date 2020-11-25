@@ -17,12 +17,13 @@ import {
 } from '../components/Icons';
 import Library from '../components/Library';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import { Library as LibraryType, Query } from '../types';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
 const MIN_DOWNLOADS = 100;
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
-const DEFAULT_PARAMS = '&wasRecentlyUpdated=true&isMaintained=true&order=quality';
+const DEFAULT_PARAMS = { wasRecentlyUpdated: true, isMaintained: true, order: 'quality' };
 
 const renderLibs = (list, count = 4) => {
   return (
@@ -39,7 +40,7 @@ const renderLibs = (list, count = 4) => {
         .splice(0, count)
         .map((item: any, index: number) => (
           <Library
-            key={`list-item-${index}-${item.github.name}`}
+            key={`explore-item-${index}-${item.github.name}`}
             library={item}
             showPopularity
             skipMeta
@@ -49,14 +50,23 @@ const renderLibs = (list, count = 4) => {
   );
 };
 
+type ExploreSectionProps = {
+  data: LibraryType[];
+  title: string;
+  filter: (LibraryType) => boolean;
+  icon: any;
+  count?: number;
+  queryParams?: Query;
+};
+
 const ExploreSection = ({
   data,
   title,
   filter,
   icon,
   count = 4,
-  queryParams = `${title.toLowerCase()}=true`,
-}) => {
+  queryParams = { [title.toLowerCase()]: true },
+}: ExploreSectionProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const color = isDark ? darkColors.pewter : colors.gray5;
   const hoverColor = isDark ? colors.gray5 : colors.gray4;
@@ -79,7 +89,7 @@ const ExploreSection = ({
       <View style={styles.librariesContainer}>{renderLibs(data.filter(filter), count)}</View>
       <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
         Want to see more? Explore more{' '}
-        <A href={`/?${queryParams}${DEFAULT_PARAMS}`} target="_self">
+        <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries
         </A>{' '}
         in the directory!
@@ -117,21 +127,21 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.android === true && lib.ios === true}
           count={8}
-          queryParams="android=true&ios=true"
+          queryParams={{ android: 'true', ios: 'true' }}
         />
         <ExploreSection
           title="Android"
           icon={PlatformAndroid}
           data={data}
           filter={lib => lib.android === true && !lib.ios}
-          queryParams="android=true&ios=false"
+          queryParams={{ android: 'true', ios: 'false' }}
         />
         <ExploreSection
           title="iOS"
           icon={PlatformIOS}
           data={data}
           filter={lib => lib.ios === true && !lib.android}
-          queryParams="android=false&ios=true"
+          queryParams={{ android: 'false', ios: 'true' }}
         />
         <ExploreSection
           title="Expo"

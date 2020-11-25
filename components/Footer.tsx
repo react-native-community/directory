@@ -1,4 +1,4 @@
-import React, { FunctionComponent, SVGAttributes } from 'react';
+import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
@@ -22,121 +22,107 @@ type PlatformProps = {
 };
 
 const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
-  return (
-    <CustomAppearanceContext.Consumer>
-      {context => {
-        const packageNameStyles = [
-          styles.platformPackageName,
-          { backgroundColor: context.isDark ? darkColors.powder : colors.gray2 },
-        ];
-        const packageNameHoverStyle = {
-          backgroundColor: context.isDark ? colors.primary : colors.sky,
-        };
-        const iconColor = context.isDark ? darkColors.pewter : colors.gray5;
-        const borderLeftColor = context.isDark ? darkColors.border : colors.gray2;
+  const packageNameStyles = [
+    styles.platformPackageName,
+    { backgroundColor: isDark ? darkColors.powder : colors.gray2 },
+  ];
+  const packageNameHoverStyle = {
+    backgroundColor: isDark ? colors.primary : colors.sky,
+  };
+  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+  const borderLeftColor = isDark ? darkColors.border : colors.gray2;
 
-        return (
-          <View
-            style={[
-              styles.platformItem,
-              isSmallScreen
-                ? { borderLeftWidth: 0 }
-                : { borderLeftColor, borderLeftWidth: StyleSheet.hairlineWidth },
-              style,
-            ]}>
-            {React.createElement(Icon, { fill: iconColor, width: 32, height: 32 })}
-            <P style={styles.platformName}>{name}</P>
-            <A href={url} style={packageNameStyles} hoverStyle={packageNameHoverStyle}>
-              {pkgName}
-            </A>
-          </View>
-        );
-      }}
-    </CustomAppearanceContext.Consumer>
+  return (
+    <View
+      style={[
+        styles.platformItem,
+        isSmallScreen
+          ? { borderLeftWidth: 0 }
+          : { borderLeftColor, borderLeftWidth: StyleSheet.hairlineWidth },
+        style,
+      ]}>
+      {React.createElement(Icon, { fill: iconColor, width: 32, height: 32 })}
+      <P style={styles.platformName}>{name}</P>
+      <A href={url} style={packageNameStyles} hoverStyle={packageNameHoverStyle}>
+        {pkgName}
+      </A>
+    </View>
   );
 };
 
-const Footer = () => (
-  <CustomAppearanceContext.Consumer>
-    {context => (
-      <View
-        style={[
-          styles.container,
-          {
-            backgroundColor: context.isDark ? darkColors.subHeader : colors.gray1,
-          },
-        ]}>
-        <ContentContainer>
-          <View style={styles.platformsWrapper}>
-            <Platform
-              name="Android"
-              pkgName="react-native"
-              Icon={PlatformAndroid}
-              url="https://github.com/facebook/react-native#readme"
-              style={{ borderLeftWidth: 0 }}
-            />
-            <Platform
-              name="iOS"
-              pkgName="react-native"
-              Icon={PlatformIOS}
-              url="https://github.com/facebook/react-native#readme"
-            />
-            <Platform
-              name="macOS"
-              pkgName="react-native-macos"
-              Icon={PlatformMacOS}
-              url="https://github.com/microsoft/react-native-macos#readme"
-            />
-            <Platform
-              name="tvOS"
-              pkgName="react-native-tvos"
-              Icon={PlatformTvOS}
-              url="https://github.com/react-native-community/react-native-tvos#readme"
-            />
-            <Platform
-              name="Web"
-              pkgName="react-native-web"
-              Icon={PlatformWeb}
-              url="https://github.com/necolas/react-native-web#readme"
-            />
-            <Platform
-              name="Windows"
-              pkgName="react-native-windows"
-              Icon={PlatformWindows}
-              url="https://github.com/microsoft/react-native-windows#readme"
-            />
-          </View>
-          <View>
-            <P
-              style={[
-                styles.footerText,
-                { color: context.isDark ? darkColors.secondary : colors.gray5 },
-              ]}>
-              Missing a library?{' '}
-              <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
-                Add it to the directory
-              </A>
-              .
-            </P>
-            <P
-              style={[
-                styles.footerText,
-                { color: context.isDark ? darkColors.secondary : colors.gray5 },
-              ]}>
-              Want to learn more about React Native? Check out the{' '}
-              <A href="https://facebook.github.io/react-native/docs/getting-started.html">
-                official React Native docs
-              </A>
-              , and <A href="https://expo.io">Expo</A>.
-            </P>
-          </View>
-        </ContentContainer>
-      </View>
-    )}
-  </CustomAppearanceContext.Consumer>
-);
+const Footer = () => {
+  const { isDark } = useContext(CustomAppearanceContext);
+  return (
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: isDark ? darkColors.subHeader : colors.gray1,
+        },
+      ]}>
+      <ContentContainer>
+        <View style={styles.platformsWrapper}>
+          <Platform
+            name="Android"
+            pkgName="react-native"
+            Icon={PlatformAndroid}
+            url="https://github.com/facebook/react-native#readme"
+            style={{ borderLeftWidth: 0 }}
+          />
+          <Platform
+            name="iOS"
+            pkgName="react-native"
+            Icon={PlatformIOS}
+            url="https://github.com/facebook/react-native#readme"
+          />
+          <Platform
+            name="macOS"
+            pkgName="react-native-macos"
+            Icon={PlatformMacOS}
+            url="https://github.com/microsoft/react-native-macos#readme"
+          />
+          <Platform
+            name="tvOS"
+            pkgName="react-native-tvos"
+            Icon={PlatformTvOS}
+            url="https://github.com/react-native-community/react-native-tvos#readme"
+          />
+          <Platform
+            name="Web"
+            pkgName="react-native-web"
+            Icon={PlatformWeb}
+            url="https://github.com/necolas/react-native-web#readme"
+          />
+          <Platform
+            name="Windows"
+            pkgName="react-native-windows"
+            Icon={PlatformWindows}
+            url="https://github.com/microsoft/react-native-windows#readme"
+          />
+        </View>
+        <View>
+          <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+            Missing a library?{' '}
+            <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
+              Add it to the directory
+            </A>
+            .
+          </P>
+          <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+            Want to learn more about React Native? Check out the{' '}
+            <A href="https://facebook.github.io/react-native/docs/getting-started.html">
+              official React Native docs
+            </A>
+            , and <A href="https://expo.io">Expo</A>.
+          </P>
+        </View>
+      </ContentContainer>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

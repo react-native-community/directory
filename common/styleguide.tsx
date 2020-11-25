@@ -1,5 +1,5 @@
 import * as HtmlElements from '@expo/html-elements';
-import React, { ReactNode, RefObject, useContext } from 'react';
+import React, { ReactNode, RefObject, useContext, useRef } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
 
@@ -74,14 +74,16 @@ const textStyles = StyleSheet.create({
   label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
 });
 
+type TextStyles = TextStyle | TextStyle[];
+
 type TextProps = {
   children?: ReactNode;
-  style?: TextStyle | TextStyle[];
+  style?: TextStyles;
   ref?: RefObject<ReactNode>;
   nativeID?: string;
 };
 
-function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
+const createTextComponent = (Element: any, textStyle?: TextStyles) => {
   return (props: TextProps) => {
     const { isDark } = useContext(CustomAppearanceContext);
     const { children, style, nativeID } = props;
@@ -98,7 +100,7 @@ function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) 
       </Element>
     );
   };
-}
+};
 
 export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
 export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
@@ -112,16 +114,16 @@ export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = {
-  style?: TextStyle | TextStyle[];
+  style?: TextStyles;
   target?: string;
   href: string;
   children?: ReactNode;
-  hoverStyle?: TextStyle | TextStyle[];
+  hoverStyle?: TextStyles;
 };
 
 export const A = (props: AProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const linkRef = React.useRef();
+  const linkRef = useRef();
   const isHovered = useHover(linkRef);
   const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
   const anchorStyles = getAnchorStyles(isDark);

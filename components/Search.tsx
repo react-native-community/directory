@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -23,64 +23,61 @@ export default function Search(props: Props) {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 150);
   const { isSmallScreen } = useLayout();
+  const { isDark } = useContext(CustomAppearanceContext);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <>
-          <View
-            style={[
-              styles.wrapper,
-              {
-                backgroundColor: context.isDark ? darkColors.dark : colors.gray6,
-              },
-            ]}>
-            <View style={styles.container}>
-              <View style={styles.displayHorizontal}>
-                <TextInput
-                  onChangeText={debouncedCallback}
-                  placeholder="Search libraries..."
-                  style={[
-                    styles.textInput,
-                    {
-                      borderColor: context.isDark ? darkColors.border : colors.gray5,
-                    },
-                  ]}
-                  defaultValue={query && query.search}
-                  placeholderTextColor={colors.gray4}
-                />
-                <View style={styles.searchIcon}>
-                  <SearchIcon fill={colors.white} />
-                </View>
-              </View>
-              <View
-                style={[
-                  styles.displayHorizontal,
-                  styles.resultsContainer,
-                  isSmallScreen && styles.smallResultsContainer,
-                ]}>
-                {total ? (
-                  <P style={styles.totalText}>
-                    <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
-                  </P>
-                ) : (
-                  <P />
-                )}
-                <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
-                  <FilterButton
-                    query={query}
-                    onPress={() => setFilterVisible(!isFilterVisible)}
-                    isFilterVisible={isFilterVisible}
-                  />
-                  <SortButton query={query} />
-                </View>
-              </View>
+    <>
+      <View
+        style={[
+          styles.wrapper,
+          {
+            backgroundColor: isDark ? darkColors.dark : colors.gray6,
+          },
+        ]}>
+        <View style={styles.container}>
+          <View style={styles.displayHorizontal}>
+            <TextInput
+              onChangeText={debouncedCallback}
+              placeholder="Search libraries..."
+              style={[
+                styles.textInput,
+                {
+                  borderColor: isDark ? darkColors.border : colors.gray5,
+                },
+              ]}
+              defaultValue={query && query.search}
+              placeholderTextColor={colors.gray4}
+            />
+            <View style={styles.searchIcon}>
+              <SearchIcon fill={colors.white} />
             </View>
           </View>
-          {isFilterVisible && <Filters query={query} />}
-        </>
-      )}
-    </CustomAppearanceContext.Consumer>
+          <View
+            style={[
+              styles.displayHorizontal,
+              styles.resultsContainer,
+              isSmallScreen && styles.smallResultsContainer,
+            ]}>
+            {total ? (
+              <P style={styles.totalText}>
+                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
+              </P>
+            ) : (
+              <P />
+            )}
+            <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
+              <FilterButton
+                query={query}
+                onPress={() => setFilterVisible(!isFilterVisible)}
+                isFilterVisible={isFilterVisible}
+              />
+              <SortButton query={query} />
+            </View>
+          </View>
+        </View>
+      </View>
+      {isFilterVisible && <Filters query={query} />}
+    </>
   );
 }
 
