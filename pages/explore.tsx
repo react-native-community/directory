@@ -22,7 +22,11 @@ import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
-const DEFAULT_PARAMS = { wasRecentlyUpdated: true, isMaintained: true, order: 'popularity' };
+const DEFAULT_PARAMS: Query = {
+  wasRecentlyUpdated: 'true',
+  isMaintained: 'true',
+  order: 'popularity',
+};
 
 const renderLibs = (list, count = 4) => {
   return (

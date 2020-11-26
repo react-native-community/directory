@@ -18,7 +18,8 @@ export type Query = {
   windows?: string;
   order?: QueryOrder;
   search?: string;
-  offset?: string;
+  offset?: string | number;
+  limit?: string | number;
   hasExample?: string;
   hasImage?: string;
   hasTypes?: string;
