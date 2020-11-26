@@ -110,13 +110,13 @@ export const calculatePopularity = data => {
     };
   }
 
-  const popularityGain = parseFloat(
-    ((weekDownloads - Math.floor(downloads / 4)) / downloads).toFixed(3)
-  );
-  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.2 : 0;
-  const unmaintainedPenalty = unmaintained ? 0.2 : 0;
+  const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.25 : 0;
 
-  const popularity = popularityGain - downloadsPenalty - unmaintainedPenalty;
+  const popularity = parseFloat(
+    (popularityGain - downloadsPenalty - unmaintainedPenalty).toFixed(3)
+  );
 
   return {
     ...data,

@@ -20,7 +20,7 @@ export default function Pagination(props: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { query, total, style } = props;
   const totalPages = Math.ceil(total / NUM_PER_PAGE);
-  const currentOffset = parseInt(query.offset ? query.offset : '0', 10);
+  const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
   if (total < 1 || currentOffset >= total) return null;
