@@ -17,17 +17,17 @@ const getPopularityStyles = popularity => {
     };
   } else if (popularity > 0.25) {
     return {
-      width: 26,
+      width: 24,
       backgroundColor: '#ff6e29',
     };
   } else if (popularity > 0.1) {
     return {
-      width: 20,
+      width: 18,
       backgroundColor: '#ffa200',
     };
   } else {
     return {
-      width: 14,
+      width: 12,
       backgroundColor: '#ffbe07',
     };
   }
