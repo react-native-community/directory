@@ -21,22 +21,16 @@ import { Library as LibraryType, Query } from '../types';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
-const MIN_DOWNLOADS = 100;
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
-const DEFAULT_PARAMS = { wasRecentlyUpdated: true, isMaintained: true, order: 'quality' };
+const DEFAULT_PARAMS = { wasRecentlyUpdated: true, isMaintained: true, order: 'popularity' };
 
 const renderLibs = (list, count = 4) => {
   return (
     <View style={styles.librariesContainer}>
       {list
         .filter(
-          lib =>
-            !lib.unmaintained &&
-            !lib.dev &&
-            lib.npm.downloads > MIN_DOWNLOADS &&
-            new Date().getTime() - new Date(lib.github.stats.updatedAt).getTime() < UPDATED_IN
+          lib => new Date().getTime() - new Date(lib.github.stats.updatedAt).getTime() < UPDATED_IN
         )
-        .sort((a, b) => b.popularity - a.popularity)
         .splice(0, count)
         .map((item: any, index: number) => (
           <Library
@@ -173,12 +167,12 @@ const Explore = ({ data }) => {
 };
 
 Explore.getInitialProps = async (ctx: NextPageContext) => {
-  let url = getApiUrl(urlWithQuery('/libraries', { limit: 9999 }), ctx);
+  let url = getApiUrl(urlWithQuery('/libraries', { limit: 9999, order: 'popularity' }), ctx);
   let response = await fetch(url);
   let result = await response.json();
 
   return {
-    data: result.libraries.sort((a, b) => b.popularity - a.popularity),
+    data: result.libraries,
     query: ctx.query,
   };
 };

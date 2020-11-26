@@ -1,3 +1,13 @@
+export type QueryOrder =
+  | 'updated'
+  | 'added'
+  | 'recommended'
+  | 'quality'
+  | 'popularity'
+  | 'issues'
+  | 'downloads'
+  | 'stars';
+
 export type Query = {
   android?: string;
   expo?: string;
@@ -6,7 +16,7 @@ export type Query = {
   tvos?: string;
   web?: string;
   windows?: string;
-  order?: 'quality' | 'recommended' | 'issues' | 'downloads' | 'stars';
+  order?: QueryOrder;
   search?: string;
   offset?: string;
   hasExample?: string;

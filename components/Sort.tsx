@@ -4,7 +4,7 @@ import { StyleSheet, View, Picker } from 'react-native';
 
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Query } from '../types';
+import { Query, QueryOrder } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { Sort as SortIcon } from './Icons';
 
@@ -30,6 +30,10 @@ const sorts = [
     label: 'Quality',
   },
   {
+    param: 'popularity',
+    label: 'Popularity Gain',
+  },
+  {
     param: 'issues',
     label: 'Issues',
   },
@@ -51,10 +55,10 @@ export const SortButton = (props: SortButtonProps) => {
   const [sortValue, setSortValue] = useState(order || 'updated');
   const { isDark } = useContext(CustomAppearanceContext);
 
-  function onPickerChange(param: string) {
-    Router.push(urlWithQuery('/', { ...query, order: param, offset: null }));
-    setSortValue(param);
-  }
+  const onPickerChange = (order: QueryOrder) => {
+    Router.push(urlWithQuery('/', { ...query, order, offset: null }));
+    setSortValue(order);
+  };
 
   return (
     <View
@@ -93,7 +97,7 @@ export const SortButton = (props: SortButtonProps) => {
   );
 };
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.gray5,
     height: 24,

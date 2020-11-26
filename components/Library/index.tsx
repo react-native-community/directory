@@ -38,7 +38,6 @@ export default function Library(props: Props) {
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
-        {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
         {library.unmaintained ? (
           <View style={styles.unmaintainedTextWrapper}>
             <View
@@ -61,6 +60,7 @@ export default function Library(props: Props) {
             </View>
           </View>
         ) : null}
+        {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
             href={library.githubUrl || github.urls.repo}

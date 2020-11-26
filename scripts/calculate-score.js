@@ -97,12 +97,27 @@ const getUpdatedDaysAgo = data => {
   return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
 };
 
+const MIN_MONTHLY_DOWNLOADS = 250;
+
 export const calculatePopularity = data => {
-  const { downloads, weekDownloads } = data.npm;
-  const popularity =
-    downloads && weekDownloads
-      ? parseFloat(((weekDownloads - Math.floor(downloads / 4)) / downloads).toFixed(3))
-      : -100;
+  const { npm, unmaintained } = data;
+  const { downloads, weekDownloads } = npm;
+
+  if (!downloads || !weekDownloads) {
+    return {
+      ...data,
+      popularity: -1,
+    };
+  }
+
+  const popularityGain = parseFloat(
+    ((weekDownloads - Math.floor(downloads / 4)) / downloads).toFixed(3)
+  );
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.2 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.2 : 0;
+
+  const popularity = popularityGain - downloadsPenalty - unmaintainedPenalty;
+
   return {
     ...data,
     popularity,
