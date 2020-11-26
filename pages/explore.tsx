@@ -172,21 +172,13 @@ const Explore = ({ data }) => {
   );
 };
 
-const calcPopularity = npm =>
-  ((npm.weekDownloads - Math.floor(npm.downloads / 4)) / npm.downloads).toFixed(3);
-
 Explore.getInitialProps = async (ctx: NextPageContext) => {
   let url = getApiUrl(urlWithQuery('/libraries', { limit: 9999 }), ctx);
   let response = await fetch(url);
   let result = await response.json();
 
   return {
-    data: result.libraries
-      .map(lib => ({
-        ...lib,
-        popularity: calcPopularity(lib.npm),
-      }))
-      .sort((a, b) => b.popularity - a.popularity),
+    data: result.libraries.sort((a, b) => b.popularity - a.popularity),
     query: ctx.query,
   };
 };

@@ -21,15 +21,15 @@ export type Query = {
 export type Library = {
   goldstar: boolean;
   githubUrl: string;
-  ios: boolean;
-  android: boolean;
-  web: boolean;
-  expo: boolean;
-  windows: boolean;
-  macos: boolean;
-  tvos: boolean;
-  unmaintained: boolean;
-  dev: boolean;
+  ios?: boolean;
+  android?: boolean;
+  web?: boolean;
+  expo?: boolean;
+  windows?: boolean;
+  macos?: boolean;
+  tvos?: boolean;
+  unmaintained?: boolean;
+  dev?: boolean;
   github: {
     urls: {
       repo: string;
@@ -70,13 +70,19 @@ export type Library = {
     };
     hasTypes: boolean;
   };
-  images: string[];
-  npmPkg: string;
-  npm: { downloads: number; start: string; end: string; period: string };
+  npm: {
+    downloads: number;
+    weekDownloads: number;
+    start: string;
+    end: string;
+    period: string;
+  };
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
-  examples: string[];
+  examples?: string[];
+  images?: string[];
+  npmPkg?: string;
   nameOverride?: string;
-  popularity?: number;
+  popularity: number;
 };

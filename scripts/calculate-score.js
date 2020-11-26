@@ -10,12 +10,12 @@ const modifiers = [
   {
     name: 'Very popular',
     value: 40,
-    condition: data => popularityScore(data) > 10000,
+    condition: data => getCombinedPopularity(data) > 10000,
   },
   {
     name: 'Popular',
     value: 10,
-    condition: data => popularityScore(data) > 2500,
+    condition: data => getCombinedPopularity(data) > 2500,
   },
   {
     name: 'Recommended',
@@ -60,7 +60,7 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
-const calculateScore = data => {
+export const calculateScore = data => {
   // Filter the modifiers to the ones which condictions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
@@ -83,7 +83,7 @@ const calculateScore = data => {
   };
 };
 
-const popularityScore = data => {
+const getCombinedPopularity = data => {
   let { subscribers, forks, stars } = data.github.stats;
   let { downloads } = data.npm;
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
@@ -97,4 +97,14 @@ const getUpdatedDaysAgo = data => {
   return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
 };
 
-export default calculateScore;
+export const calculatePopularity = data => {
+  const { downloads, weekDownloads } = data.npm;
+  const popularity =
+    downloads && weekDownloads
+      ? parseFloat(((weekDownloads - Math.floor(downloads / 4)) / downloads).toFixed(3))
+      : -100;
+  return {
+    ...data,
+    popularity,
+  };
+};
