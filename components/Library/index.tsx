@@ -145,8 +145,8 @@ export default function Library(props: Props) {
 
 let styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
     marginBottom: 16,
+    borderWidth: 1,
     borderRadius: 4,
     flexDirection: 'row',
     overflow: 'hidden',

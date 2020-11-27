@@ -4,7 +4,7 @@ import { NextPageContext } from 'next';
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { H1, H3, P, darkColors, colors, A } from '../common/styleguide';
+import { H1, H2, H3, P, darkColors, colors, A, useLayout } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import {
   PlatformAndroid,
@@ -86,12 +86,66 @@ const ExploreSection = ({
       </H3>
       <View style={styles.librariesContainer}>{renderLibs(data.filter(filter), count)}</View>
       <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-        Want to see more? Explore more{' '}
+        Want to see more? Check out other{' '}
         <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries
         </A>{' '}
         in the directory!
       </P>
+    </>
+  );
+};
+
+const OMIT_TOPICS = [
+  'react',
+  'reactjs',
+  'react-native',
+  'android',
+  'ios',
+  'macos',
+  'tvos',
+  'expo',
+  'web',
+  'windows',
+  'javascript',
+  'typescript',
+];
+
+const TopicsSection = ({ data }) => {
+  const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
+  const topics = Object.entries(
+    data
+      .filter(lib => lib.popularity > 0.035)
+      .map(lib => lib?.github?.topics || [])
+      .flat()
+      .reduce((map, val) => {
+        map[val] = (map[val] || 0) + 1;
+        return map;
+      }, {})
+  )
+    .map(arr => (arr[1] > 1 && !OMIT_TOPICS.includes(arr[0]) ? arr[0] : null))
+    .filter(Boolean)
+    .sort();
+
+  return (
+    <>
+      <H2 style={[styles.header, styles.sectionHeader]}>Trending topics</H2>
+      <View style={[styles.topicsWrapper, isSmallScreen && styles.topicsWrapperSmall]}>
+        {topics.map(topic => (
+          <A
+            href={urlWithQuery('/', { search: topic })}
+            target="_self"
+            style={[
+              styles.topicBox,
+              {
+                borderColor: isDark ? darkColors.border : colors.gray2,
+              },
+            ]}>
+            {topic}
+          </A>
+        ))}
+      </View>
     </>
   );
 };
@@ -113,12 +167,15 @@ const Explore = ({ data }) => {
           style={styles.headerSpacer}
         />
         <H1 style={styles.header}>
-          Explore libraries
+          Explore
           <sup style={{ fontSize: 14, top: -4, right: -6, position: 'relative' }}>(BETA)</sup>
         </H1>
-        <P style={styles.headerDescription}>See which React Native libraries are trending today.</P>
+        <P style={styles.headerDescription}>
+          See which React Native libraries and topics are trending today.
+        </P>
       </View>
       <ContentContainer style={styles.container}>
+        <H2 style={[styles.header, styles.sectionHeader]}>Trending libraries</H2>
         <ExploreSection
           title="Core platforms"
           icon={ReactLogo}
@@ -163,6 +220,7 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.windows === true}
         />
+        <TopicsSection data={data} />
       </ContentContainer>
     </>
   );
@@ -211,6 +269,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffa200',
     marginBottom: 24,
   },
+  sectionHeader: {
+    marginTop: 20,
+    fontSize: 38,
+  },
   subHeader: {
     marginTop: 16,
     marginBottom: 8,
@@ -228,10 +290,30 @@ const styles = StyleSheet.create({
   },
   note: {
     textAlign: 'center',
-    paddingVertical: 16,
+    paddingHorizontal: 24,
     paddingTop: 8,
     paddingBottom: 24,
     fontSize: 14,
+  },
+  topicsWrapper: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 32,
+    marginBottom: 28,
+    paddingHorizontal: '10%',
+  },
+  topicsWrapperSmall: {
+    paddingHorizontal: 24,
+  },
+  topicBox: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderWidth: 1,
+    borderRadius: 4,
+    width: 'auto',
+    marginRight: 10,
+    marginBottom: 10,
   },
 });
 
