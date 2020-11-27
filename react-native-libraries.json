@@ -5669,5 +5669,11 @@
     "githubUrl": "https://github.com/Kamalnrf/react-native-google-play-install-referrer",
     "examples": ["https://github.com/Kamalnrf/react-native-google-play-install-referrer/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Kudo/react-native-v8",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
