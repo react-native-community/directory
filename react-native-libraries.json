@@ -5676,5 +5676,13 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/dstaley/react-native-bootstrap-icons",
+    "examples": ["https://snack.expo.io/@dstaley/react-native-bootstrap-icons"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
