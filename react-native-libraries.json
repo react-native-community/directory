@@ -5684,5 +5684,17 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Vydia/react-native-background-upload",
+    "examples": ["https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Sifir-io/react-native-tor",
+    "examples": ["https://github.com/Sifir-io/react-native-tor/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
