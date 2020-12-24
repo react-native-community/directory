@@ -5696,5 +5696,13 @@
     "examples": ["https://github.com/Sifir-io/react-native-tor/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jsartisan/react-native-magnus",
+    "examples": ["https://github.com/jsartisan/react-native-magnus/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
