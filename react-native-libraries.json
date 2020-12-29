@@ -5696,5 +5696,17 @@
     "examples": ["https://github.com/Sifir-io/react-native-tor/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
+    "npmPkg": "flat-list-mvcp",
+    "examples": ["https://github.com/GetStream/flat-list-mvcp#usage"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false
   }
 ]
