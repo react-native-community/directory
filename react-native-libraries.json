@@ -5699,14 +5699,7 @@
   },
   {
     "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
-    "npmPkg": "flat-list-mvcp",
-    "examples": ["https://github.com/GetStream/flat-list-mvcp#usage"],
     "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
-    "macos": false,
-    "unmaintained": false
+    "android": true
   }
 ]
