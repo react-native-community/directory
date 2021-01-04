@@ -5735,5 +5735,11 @@
     "examples": ["https://github.com/alpha0010/react-native-file-access/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-hook-form/react-hook-form",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
