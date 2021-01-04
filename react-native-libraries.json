@@ -2942,7 +2942,8 @@
   {
     "githubUrl": "https://github.com/tunoltd/emoji-mart-native",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/infinitered/ignite",
@@ -5703,5 +5704,36 @@
       "https://github.com/dominicstop/react-native-ios-popover/raw/master/assets/example-screenshots/PopoverViewExample08.png"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Vydia/react-native-background-upload",
+    "examples": ["https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Sifir-io/react-native-tor",
+    "examples": ["https://github.com/Sifir-io/react-native-tor/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jsartisan/react-native-magnus",
+    "examples": ["https://github.com/jsartisan/react-native-magnus/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alpha0010/react-native-file-access",
+    "examples": ["https://github.com/alpha0010/react-native-file-access/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
