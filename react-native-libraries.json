@@ -5699,6 +5699,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/jsartisan/react-native-magnus",
+    "examples": ["https://github.com/jsartisan/react-native-magnus/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
     "ios": true,
     "android": true
