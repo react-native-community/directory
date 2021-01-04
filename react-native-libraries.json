@@ -5701,5 +5701,11 @@
     "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alpha0010/react-native-file-access",
+    "examples": ["https://github.com/alpha0010/react-native-file-access/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
