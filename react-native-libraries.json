@@ -1432,7 +1432,8 @@
   {
     "githubUrl": "https://github.com/yonahforst/react-native-permissions",
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/gre/react-native-view-shot",
@@ -5669,7 +5670,9 @@
   },
   {
     "githubUrl": "https://github.com/Kamalnrf/react-native-google-play-install-referrer",
-    "examples": ["https://github.com/Kamalnrf/react-native-google-play-install-referrer/tree/main/example"],
+    "examples": [
+      "https://github.com/Kamalnrf/react-native-google-play-install-referrer/tree/main/example"
+    ],
     "android": true
   },
   {
@@ -5688,9 +5691,7 @@
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-popover",
-    "examples": [
-      "https://github.com/dominicstop/react-native-ios-popover/tree/master/example"
-    ],
+    "examples": ["https://github.com/dominicstop/react-native-ios-popover/tree/master/example"],
     "images": [
       "https://github.com/dominicstop/react-native-ios-popover/raw/master/assets/popover-view-gifs/PopoverView-Example-1-2-3-4.gif",
       "https://github.com/dominicstop/react-native-ios-popover/raw/master/assets/popover-view-gifs/PopoverView-Example-5-6-7-8.gif",
@@ -5707,7 +5708,9 @@
   },
   {
     "githubUrl": "https://github.com/Vydia/react-native-background-upload",
-    "examples": ["https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"],
+    "examples": [
+      "https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"
+    ],
     "ios": true,
     "android": true
   },
