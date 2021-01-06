@@ -5746,5 +5746,11 @@
     "ios": true,
     "android": true,
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/react-hook-form/react-hook-form",
+    "ios": true,
+    "android": true,
+    "expo": true 
   }
 ]
