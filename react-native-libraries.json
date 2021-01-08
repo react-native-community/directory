@@ -1,5 +1,12 @@
 [
   {
+    "githubUrl": "https://github.com/onubo/react-native-logs",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
