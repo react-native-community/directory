@@ -3250,7 +3250,7 @@
     "expo": true,
     "windows": true,
     "macos": true,
-    "npmPkg": "@react-native-community/async-storage"
+    "npmPkg": "@react-native-async-storage/async-storage"
   },
   {
     "githubUrl": "https://github.com/react-native-picker/picker",
