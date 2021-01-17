@@ -2218,7 +2218,8 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": ["https://snack.expo.io/@gusgard/react-native-swiper-flatlist"]
+    "web": true,
+    "examples": ["https://snack.expo.io/@gusgard/react-native-swiper-flatlist", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-show-next-screen", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children"]
   },
   {
     "githubUrl": "https://github.com/gusgard/react-native-grid-list",
