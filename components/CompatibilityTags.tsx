@@ -41,7 +41,7 @@ export function CompatibilityTags(props: Props) {
   const { library } = props;
   const platforms = [
     library.android ? 'Android' : null,
-    library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
+    library.expo && typeof library.expo !== 'string' ? 'Expo Go' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
