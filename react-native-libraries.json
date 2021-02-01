@@ -415,7 +415,8 @@
   {
     "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
