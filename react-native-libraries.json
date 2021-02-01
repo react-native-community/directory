@@ -5763,6 +5763,10 @@
   },
   {
     "githubUrl": "https://github.com/aspect-apps/react-native-navigation-drawer-extension",
+    "images": [
+      "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/left-drawer.gif",
+      "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/bottom-drawer.gif"
+    ],
     "ios": true,
     "android": true
   }
