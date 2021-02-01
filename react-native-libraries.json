@@ -5760,5 +5760,13 @@
     "ios": true,
     "android": true,
     "expo": true 
+  },
+  {
+    "githubUrl": "https://github.com/Trancever/reanimated-collapsible-helpers",
+    "examples": ["https://github.com/Trancever/reanimated-collapsible-helpers/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true 
   }
 ]
