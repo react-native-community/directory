@@ -5774,6 +5774,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/Trancever/reanimated-collapsible-helpers",
+    "examples": ["https://github.com/Trancever/reanimated-collapsible-helpers/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
     "githubUrl": "https://github.com/carloscuesta/react-native-error-boundary",
     "examples": ["https://snack.expo.io/@carloscuesta/react-native-error-boundary"],
     "images": [
@@ -5781,6 +5789,7 @@
       "https://user-images.githubusercontent.com/7629661/106904482-89d20900-66fb-11eb-80ed-71b95ebd9120.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   }
 ]
