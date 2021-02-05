@@ -5779,6 +5779,17 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "web": true 
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/carloscuesta/react-native-error-boundary",
+    "examples": ["https://snack.expo.io/@carloscuesta/react-native-error-boundary"],
+    "images": [
+      "https://user-images.githubusercontent.com/7629661/52532748-d8758400-2d29-11e9-80a0-15182517271c.gif",
+      "https://user-images.githubusercontent.com/7629661/106904482-89d20900-66fb-11eb-80ed-71b95ebd9120.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
