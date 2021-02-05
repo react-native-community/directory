@@ -415,7 +415,8 @@
   {
     "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
@@ -5739,6 +5740,7 @@
   },
   {
     "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
+    "npmPkg": "@stream-io/flat-list-mvcp",
     "ios": true,
     "android": true
   },
@@ -5760,6 +5762,16 @@
     "ios": true,
     "android": true,
     "expo": true 
+  },
+  {
+    "githubUrl": "https://github.com/aspect-apps/react-native-navigation-drawer-extension",
+    "examples": ["https://github.com/aspect-apps/react-native-navigation-drawer-extension/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/left-drawer.gif",
+      "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/bottom-drawer.gif"
+    ],
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/Trancever/reanimated-collapsible-helpers",
