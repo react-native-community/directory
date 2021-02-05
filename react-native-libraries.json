@@ -3020,7 +3020,7 @@
     "android": true,
     "windows": true,
     "macos": true,
-    "npmPkg": "@react-native-community/clipboard"
+    "npmPkg": "@react-native-clipboard/clipboard"
   },
   {
     "githubUrl": "https://github.com/react-native-segmented-control/segmented-control",
