@@ -5791,5 +5791,20 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/OsmiCSX/osmicsx",
+    "examples": ["https://snack.expo.io/@devoresyah/osmiprovider-example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/OsmiCSX/osmi",
+    "npmPkg": "osmi-cli",
+    "nameOverride": "Osmi CLI",
+    "images": ["https://i.imgur.com/Drrulsw.png"],
+    "ios": true,
+    "android": true
   }
 ]
