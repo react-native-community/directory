@@ -5795,7 +5795,6 @@
   {
     "githubUrl": "https://github.com/OsmiCSX/osmicsx",
     "examples": ["https://snack.expo.io/@devoresyah/osmiprovider-example"],
-    "images": ["https://ghcdn.rawgit.org/OsmiCSX/osmi/main/boilerplate/App/Images/logo.png"],
     "ios": true,
     "android": true,
     "expo": true
@@ -5806,7 +5805,6 @@
     "nameOverride": "Osmi CLI",
     "images": ["https://i.imgur.com/Drrulsw.png"],
     "ios": true,
-    "android": true,
-    "expo": false
+    "android": true
   }
 ]
