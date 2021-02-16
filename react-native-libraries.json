@@ -5806,5 +5806,39 @@
     "images": ["https://i.imgur.com/Drrulsw.png"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/adobe/react-native-acpmedia",
+    "npmPkg": "@adobe/react-native-acpmedia",
+    "examples": [
+      "https://github.com/adobe/react-native-acpmedia/tree/main/sample/ACPMediaSample",
+      "https://github.com/adobe/react-native-acpmedia/tree/main/sample/ReactNativeBasicPlayerSample"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/naoufal/react-native-payments",
+    "examples": [
+      "https://github.com/freeman-industries/react-native-payments-example-ios"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/1627824/27758096-9fc6bf9a-5dc1-11e7-9d8f-b2d409302fc7.gif",
+      "https://user-images.githubusercontent.com/1627824/30039983-d75d1b3e-91d8-11e7-9ac9-71d2ed12958c.png",
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/doville/rn-fitness-tracker",
+    "npmPkg": "@kilohealth/rn-fitness-tracker",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/YanYuanFE/react-native-signature-canvas",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
