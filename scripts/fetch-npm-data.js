@@ -35,7 +35,7 @@ const fetchNpmData = async (data, npmPkg, githubUrl, attemptsCount = 0) => {
       },
     };
   } catch (e) {
-    await sleep(1000 + 1000 * attemptsCount, 2000 + 1000 * attemptsCount);
+    await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmData(data, npmPkg, githubUrl, attemptsCount + 1);
   }
