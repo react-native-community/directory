@@ -1995,14 +1995,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/ml-natural-language",
-    "npmPkg": "@react-native-firebase/ml-natural-language",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/ml-vision",
-    "npmPkg": "@react-native-firebase/ml-vision",
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/ml",
+    "npmPkg": "@react-native-firebase/ml",
     "ios": true,
     "android": true
   },
@@ -3463,11 +3457,6 @@
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/Popmotion/popmotion/tree/master/packages/react-native-pose",
     "ios": true,
     "android": true
   },
