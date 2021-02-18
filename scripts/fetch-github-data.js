@@ -148,7 +148,7 @@ export const fetchGithubRateLimit = async () => {
   }
 
   if (result.errors) {
-    console.log('GitHub GraphQL API error:', result.errors);
+    console.log('[GH] GraphQL API error:', result.errors);
   }
 
   return {};
@@ -178,7 +178,7 @@ const parseUrl = url => {
 
 export const fetchGithubData = async (data, retries = 2) => {
   if (retries < 0) {
-    console.log(`ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
+    console.warn(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
   }
   try {
@@ -195,12 +195,12 @@ export const fetchGithubData = async (data, retries = 2) => {
     if (!result.data.repository && result.errors && result.errors[0].type === 'NOT_FOUND') {
       const newUrl = await getUpdatedUrl(url);
       if (newUrl !== url) {
-        console.log(`Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+        console.log(`[GH] Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
         data.githubUrl = newUrl;
       } else {
-        console.log(`Repository ${repoOwner}/${repoName} not found`);
+        console.log(`[GH] Repository ${repoOwner}/${repoName} not found`);
       }
-      console.log(`Retrying fetch for ${data.githubUrl}`);
+      console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
       await sleep(1000);
       return await fetchGithubData(data, retries - 1);
     }
@@ -211,7 +211,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       github,
     };
   } catch (e) {
-    console.log(`Retrying fetch for ${data.githubUrl}`, e);
+    console.log(`[GH] Retrying fetch for ${data.githubUrl}`, e);
     await sleep(1000);
     return await fetchGithubData(data, retries - 1);
   }
@@ -224,6 +224,9 @@ const getLicenseFromPackageJson = packageJson => {
   }
 };
 
+const processTopics = topics =>
+  (topics || []).map(topic => topic.replace(/([ _])/g, '-').toLowerCase());
+
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
     const packageJson = JSON.parse(json.packageJson.text);
@@ -231,20 +234,21 @@ const createRepoDataWithResponse = (json, monorepo) => {
     if (monorepo) {
       json.homepageUrl = packageJson.homepage;
       json.name = packageJson.name;
-      json.topics = packageJson.keywords;
+      json.topics = processTopics(packageJson.keywords);
       json.description = packageJson.description;
       json.licenseInfo = getLicenseFromPackageJson(packageJson);
     }
 
     if (!monorepo) {
-      json.topics = json.repositoryTopics.nodes.map(({ topic }) => topic.name);
+      json.topics = [
+        ...new Set([
+          ...processTopics(packageJson.keywords),
+          ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
+        ]),
+      ];
 
       if (!json.description) {
         json.description = packageJson.description;
-      }
-
-      if (json.topics.length === 0) {
-        json.topics = packageJson.keywords;
       }
 
       if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
@@ -266,9 +270,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
 
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
-  const hasTopics = json.topics && json.topics.length > 0;
-  const topics = hasTopics ? json.topics.map(topic => topic.toLowerCase()) : [];
-
   return {
     urls: {
       repo: json.url,
@@ -280,7 +281,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       hasWiki: json.hasWikiEnabled,
       hasPages: json.deployments.totalCount > 0,
       hasDownloads: true,
-      hasTopics,
+      hasTopics: json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,
@@ -292,7 +293,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     name: json.name,
     fullName: json.nameWithOwner,
     description: json.description,
-    topics,
+    topics: json.topics,
     license: json.licenseInfo,
     lastRelease: json.lastRelease,
     hasTypes: json.types,

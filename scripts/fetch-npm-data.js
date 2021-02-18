@@ -15,13 +15,12 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
 
   try {
     const url = urlForPackage(npmPkg);
-    console.log('processing:', url);
     let response = await fetch(url);
     let downloadData = await response.json();
 
     if (!downloadData.downloads) {
-      console.log(
-        `${npmPkg} doesn't exist on npm registry, add npmPkg to its entry in react-native-libraries.json to clarify it`
+      console.warn(
+        `[NPM] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { ...data, npm: {} };
     }
@@ -36,8 +35,8 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       },
     };
   } catch (e) {
-    console.log(`Retrying npm data fetch for ${githubUrl}`);
-    await sleep(1000);
+    console.log(`[NPM] Retrying fetch for ${githubUrl}`);
+    await sleep(2000);
     return await fetchNpmData(data, npmPkg, githubUrl);
   }
 };

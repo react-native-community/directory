@@ -8,7 +8,8 @@
     "data:update": "babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
     "data:test": "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose",
-    "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env"
+    "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env && yarn libraries:format",
+    "libraries:format": "prettier --write react-native-libraries.json"
   },
   "dependencies": {
     "@expo/html-elements": "^0.0.0",
