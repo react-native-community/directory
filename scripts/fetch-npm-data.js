@@ -6,7 +6,7 @@ const urlForPackage = npmPkg => {
   return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;
 };
 
-const fetchNpmData = async (data, npmPkg, githubUrl) => {
+const fetchNpmData = async (data, npmPkg, githubUrl, attemptsCount = 0) => {
   if (!npmPkg) {
     let parts = githubUrl.split('/');
     npmPkg = parts[parts.length - 1].toLowerCase();
@@ -35,9 +35,9 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       },
     };
   } catch (e) {
-    console.log(`[NPM] Retrying fetch for ${githubUrl}`);
-    await sleep(2000);
-    return await fetchNpmData(data, npmPkg, githubUrl);
+    await sleep(1000 + 1000 * attemptsCount, 2000 + 1000 * attemptsCount);
+    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
+    return await fetchNpmData(data, npmPkg, githubUrl, attemptsCount + 1);
   }
 };
 
