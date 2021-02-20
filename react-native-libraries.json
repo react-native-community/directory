@@ -5834,5 +5834,12 @@
     "githubUrl": "https://github.com/kevinresol/react-native-default-preference",
     "ios": true,
     "android": true
-  }
+  },
+{
+  "githubUrl": "https://github.com/flyskywhy/react-native-gcanvas",
+  "npmPkg": "@flyskywhy/react-native-gcanvas",
+  "nameOverride": "React Native GCanvas",
+  "ios": true,
+  "android": true
+}
 ]
