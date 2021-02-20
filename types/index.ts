@@ -82,7 +82,6 @@ export type Library = {
   };
   npm: {
     downloads: number;
-    weekDownloads: number;
     start: string;
     end: string;
     period: string;
