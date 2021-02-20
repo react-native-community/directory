@@ -10,12 +10,12 @@ const modifiers = [
   {
     name: 'Very popular',
     value: 40,
-    condition: data => getCombinedPopularity(data) > 10000,
+    condition: data => popularityScore(data) > 10000,
   },
   {
     name: 'Popular',
     value: 10,
-    condition: data => getCombinedPopularity(data) > 2500,
+    condition: data => popularityScore(data) > 2500,
   },
   {
     name: 'Recommended',
@@ -81,6 +81,12 @@ export const calculateScore = data => {
     score,
     matchingScoreModifiers: matchingModifierNames,
   };
+};
+
+const popularityScore = data => {
+  let { subscribers, forks, stars } = data.github.stats;
+  let { downloads } = data.npm;
+  return subscribers * 20 + forks * 10 + stars + downloads / 100;
 };
 
 const getUpdatedDaysAgo = data => {
