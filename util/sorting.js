@@ -48,7 +48,3 @@ export const updated = libraries => {
 export const quality = libraries => {
   return libraries.sort((a, b) => b.score - a.score);
 };
-
-export const popularity = libraries => {
-  return libraries.sort((a, b) => b.popularity - a.popularity);
-};

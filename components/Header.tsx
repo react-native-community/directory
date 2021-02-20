@@ -40,16 +40,6 @@ export default function Header() {
                 {isSmallScreen ? 'Directory' : 'React Native Directory'}
               </A>
             </H5>
-            <H6 style={isSmallScreen && styles.smallTitle}>
-              <A
-                href="/explore"
-                style={[
-                  styles.headerSubpageTitle,
-                  isSmallScreen && styles.headerSubpageTitleSmall,
-                ]}>
-                Explore {!isSmallScreen && <sup style={{ fontSize: 10 }}>(BETA)</sup>}
-              </A>
-            </H6>
           </View>
           <View style={styles.displayHorizontal}>
             <Button

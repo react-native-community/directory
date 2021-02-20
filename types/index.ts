@@ -3,7 +3,6 @@ export type QueryOrder =
   | 'added'
   | 'recommended'
   | 'quality'
-  | 'popularity'
   | 'issues'
   | 'downloads'
   | 'stars';

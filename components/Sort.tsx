@@ -30,10 +30,6 @@ const sorts = [
     label: 'Quality',
   },
   {
-    param: 'popularity',
-    label: 'Popularity Gain',
-  },
-  {
     param: 'issues',
     label: 'Issues',
   },

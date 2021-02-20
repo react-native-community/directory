@@ -15,7 +15,6 @@ const SortedData = {
   recommended: Sorting.recommended([...originalData]),
   compatibility: Sorting.compatibility([...originalData]),
   quality: Sorting.quality([...originalData]),
-  popularity: Sorting.popularity([...originalData]),
   downloads: Sorting.downloads([...originalData]),
   issues: Sorting.issues([...originalData]),
   stars: Sorting.stars([...originalData]),
