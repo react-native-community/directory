@@ -10,18 +10,16 @@ import { isEmptyOrNull } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
 import { Badge, Warning } from '../Icons';
 import { MetaData } from './MetaData';
-import PopularityMark from './PopularityMark';
 import Thumbnail from './Thumbnail';
 
 type Props = {
   library: LibraryType;
   skipMeta?: boolean;
-  showPopularity?: boolean;
 };
 
 export default function Library(props: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { library, skipMeta, showPopularity } = props;
+  const { library, skipMeta } = props;
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
   const libName = library.nameOverride || library.npmPkg || github.name;
@@ -60,7 +58,6 @@ export default function Library(props: Props) {
             </View>
           </View>
         ) : null}
-        {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
             href={library.githubUrl || github.urls.repo}
