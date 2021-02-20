@@ -26,16 +26,10 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       return { ...data, npm: {} };
     }
 
-    const weekUrl = urlForPackage(npmPkg, 'week');
-    console.log('processing:', weekUrl);
-    let weekResponse = await fetch(weekUrl);
-    let weekDownloadData = await weekResponse.json();
-
     return {
       ...data,
       npm: {
         downloads: downloadData.downloads,
-        weekDownloads: weekDownloadData.downloads,
         start: downloadData.start,
         end: downloadData.end,
         period: 'month',
