@@ -5843,16 +5843,8 @@
   },
   {
     "githubUrl": "https://github.com/asklar/react-native-xaml",
-    "npmPkg": "react-native-xaml",
     "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
     "images": ["https://github.com/asklar/react-native-xaml/blob/main/example/rnx.gif"],
-    "ios": false,
-    "android": false,
-    "web": false,
-    "expo": false,
-    "windows": true,
-    "macos": false,
-    "unmaintained": false,
-    "dev": false
+    "windows": true
   }
 ]
