@@ -5846,5 +5846,11 @@
     "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
     "images": ["https://github.com/asklar/react-native-xaml/blob/main/example/rnx.gif"],
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/edeckers/react-native-blob-courier",
+    "examples": ["https://github.com/edeckers/react-native-blob-courier/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
