@@ -5847,16 +5847,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/oblador/react-native-pinchable",
-    "npmPkg": "react-native-pinchable",
-    "examples": ["https://github.com/oblador/react-native-pinchable/tree/master/Example"],
-    "images": [
-      "https://user-images.githubusercontent.com/378279/50738295-9610d280-11d2-11e9-9dba-c0005fa9bfaf.gif"
-    ],
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/asklar/react-native-xaml",
     "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
     "images": ["https://raw.githubusercontent.com/asklar/react-native-xaml/main/example/rnx.gif"],
@@ -5867,5 +5857,14 @@
     "examples": ["https://github.com/edeckers/react-native-blob-courier/tree/main/example"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-pinchable",
+    "examples": ["https://github.com/oblador/react-native-pinchable/tree/master/Example"],
+    "images": [
+      "https://user-images.githubusercontent.com/378279/50738295-9610d280-11d2-11e9-9dba-c0005fa9bfaf.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
 ]
