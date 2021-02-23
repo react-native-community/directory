@@ -34,14 +34,14 @@ export default function Header() {
               },
             ]}>
             <View style={styles.headerContents}>
-              <View style={styles.displayHorizontal}>
-                <Logo fill={colors.primary} width={29} height={26} />
-                <H5 style={isSmallScreen && styles.smallTitle}>
-                  <A href="/" style={styles.headerContentsTitle}>
-                    React Native Directory
-                  </A>
-                </H5>
-              </View>
+              <A href="/">
+                <View style={styles.displayHorizontal}>
+                  <Logo fill={colors.primary} width={29} height={26} />
+                  <H5 style={isSmallScreen && styles.smallTitle}>
+                    <Text style={styles.headerContentsTitle}>React Native Directory</Text>
+                  </H5>
+                </View>
+              </A>
               <View style={styles.displayHorizontal}>
                 <Button
                   onPress={() => context.setIsDark(!context.isDark)}

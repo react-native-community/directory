@@ -2214,7 +2214,12 @@
     "android": true,
     "expo": true,
     "web": true,
-    "examples": ["https://snack.expo.io/@gusgard/react-native-swiper-flatlist", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-show-next-screen", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data", "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children"]
+    "examples": [
+      "https://snack.expo.io/@gusgard/react-native-swiper-flatlist",
+      "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-show-next-screen",
+      "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data",
+      "https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children"
+    ]
   },
   {
     "githubUrl": "https://github.com/gusgard/react-native-grid-list",
@@ -3542,11 +3547,6 @@
     "npmPkg": "@react-native-community/checkbox"
   },
   {
-    "githubUrl": "https://github.com/satya164/peek-and-pop",
-    "ios": true,
-    "npmPkg": "@react-native-community/peek-and-pop"
-  },
-  {
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
     "ios": true,
     "android": true,
@@ -3640,7 +3640,7 @@
   {
     "githubUrl": "https://github.com/oblador/react-native-store-review",
     "ios": true,
-    "unmaintained": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/react-native-geolocation/react-native-geolocation",
@@ -5750,11 +5750,13 @@
     "githubUrl": "https://github.com/react-hook-form/react-hook-form",
     "ios": true,
     "android": true,
-    "expo": true 
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/aspect-apps/react-native-navigation-drawer-extension",
-    "examples": ["https://github.com/aspect-apps/react-native-navigation-drawer-extension/tree/master/example"],
+    "examples": [
+      "https://github.com/aspect-apps/react-native-navigation-drawer-extension/tree/master/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/left-drawer.gif",
       "https://raw.githubusercontent.com/LukeBrandonFarrell/open-source-images/master/react-native-navigation-drawer-extension/bottom-drawer.gif"
@@ -5808,9 +5810,7 @@
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-payments",
-    "examples": [
-      "https://github.com/freeman-industries/react-native-payments-example-ios"
-    ],
+    "examples": ["https://github.com/freeman-industries/react-native-payments-example-ios"],
     "images": [
       "https://user-images.githubusercontent.com/1627824/27758096-9fc6bf9a-5dc1-11e7-9d8f-b2d409302fc7.gif",
       "https://user-images.githubusercontent.com/1627824/30039983-d75d1b3e-91d8-11e7-9ac9-71d2ed12958c.png"
@@ -5832,6 +5832,49 @@
   },
   {
     "githubUrl": "https://github.com/kevinresol/react-native-default-preference",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flyskywhy/react-native-gcanvas",
+    "npmPkg": "@flyskywhy/react-native-gcanvas",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/asklar/react-native-xaml",
+    "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/asklar/react-native-xaml/main/example/rnx.gif"],
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/edeckers/react-native-blob-courier",
+    "examples": ["https://github.com/edeckers/react-native-blob-courier/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-pinchable",
+    "examples": ["https://github.com/oblador/react-native-pinchable/tree/master/Example"],
+    "images": [
+      "https://user-images.githubusercontent.com/378279/50738295-9610d280-11d2-11e9-9dba-c0005fa9bfaf.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-performance/tree/master/packages/react-native-performance",
+    "examples": ["https://github.com/oblador/react-native-performance/tree/master/examples/vanilla"],
+    "images": [
+      "https://user-images.githubusercontent.com/378279/105892056-9f677480-6011-11eb-895a-f3f8653449c8.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/GetStream/react-native-bidirectional-infinite-scroll",
+    "examples": ["https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"],
     "ios": true,
     "android": true
   }
