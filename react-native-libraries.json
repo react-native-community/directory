@@ -5876,7 +5876,6 @@
     "githubUrl": "https://github.com/GetStream/react-native-bidirectional-infinite-scroll",
     "examples": ["https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"],
     "ios": true,
-    "android": true,
-    "expo": false
+    "android": true
   }
 ]
