@@ -1,69 +1,64 @@
 import { A, Header as HtmlHeader } from '@expo/html-elements';
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { layout, colors, H5, P, darkColors } from '../common/styleguide';
+import { layout, colors, H5, H6, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
 export default function Header() {
-  const isSmallScreen = layout.isSmallScreen();
+  const { isDark, setIsDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <HtmlHeader>
-          <View style={styles.bannerContainer}>
-            <P style={styles.bannerText}>
-              Black Lives Matter.{' '}
-              <A
-                target="_blank"
-                href="https://support.eji.org/give/153413/#!/donation/checkout"
-                style={styles.bannerLink}>
-                Support the Equal Justice Initiative
-              </A>
-              .
-            </P>
-          </View>
-          <View
-            style={[
-              styles.header,
-              {
-                backgroundColor: context.isDark ? darkColors.veryDark : colors.gray7,
-              },
-            ]}>
-            <View style={styles.headerContents}>
-              <A href="/">
-                <View style={styles.displayHorizontal}>
-                  <Logo fill={colors.primary} width={29} height={26} />
-                  <H5 style={isSmallScreen && styles.smallTitle}>
-                    <Text style={styles.headerContentsTitle}>React Native Directory</Text>
-                  </H5>
-                </View>
-              </A>
-              <View style={styles.displayHorizontal}>
-                <Button
-                  onPress={() => context.setIsDark(!context.isDark)}
-                  style={[styles.themeButton, isSmallScreen ? styles.themeButtonSmall : {}]}>
-                  <Text style={styles.themeButtonText}>{context.isDark ? '☀️' : '🌒'}</Text>
-                </Button>
-                <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
-                  <View style={styles.displayHorizontal}>
-                    <Plus
-                      width={14}
-                      height={14}
-                      fill={context.isDark ? colors.white : colors.black}
-                    />
-                    {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
-                  </View>
-                </Button>
-              </View>
+    <HtmlHeader>
+      <View style={styles.bannerContainer}>
+        <P style={styles.bannerText}>
+          Black Lives Matter.{' '}
+          <A
+            target="_blank"
+            href="https://support.eji.org/give/153413/#!/donation/checkout"
+            style={styles.bannerLink}>
+            Support the Equal Justice Initiative
+          </A>
+          .
+        </P>
+      </View>
+      <View
+        style={[
+          styles.header,
+          {
+            backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
+          },
+        ]}>
+        <View style={styles.headerContents}>
+          <A href="/">
+            <View style={styles.displayHorizontal}>
+              <Logo fill={colors.primary} width={29} height={26} />
+              <H5 style={isSmallScreen && styles.smallTitle}>
+                <Text style={styles.headerContentsTitle}>
+                  {isSmallScreen ? 'Directory' : 'React Native Directory'}
+                </Text>
+              </H5>
             </View>
+          </A>
+          <View style={styles.displayHorizontal}>
+            <Button
+              onPress={() => setIsDark(!isDark)}
+              style={[styles.themeButton, isSmallScreen && styles.themeButtonSmall]}>
+              <Text style={styles.themeButtonText}>{isDark ? '☀️' : '🌒'}</Text>
+            </Button>
+            <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
+              <View style={styles.displayHorizontal}>
+                <Plus width={14} height={14} fill={isDark ? colors.white : colors.black} />
+                {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
+              </View>
+            </Button>
           </View>
-        </HtmlHeader>
-      )}
-    </CustomAppearanceContext.Consumer>
+        </View>
+      </View>
+    </HtmlHeader>
   );
 }
 
@@ -103,6 +98,14 @@ let styles = StyleSheet.create({
   headerContentsTitle: {
     color: colors.primary,
     paddingLeft: 8,
+    fontWeight: '600',
+  },
+  headerSubpageTitle: {
+    color: colors.white,
+    marginLeft: 32,
+  },
+  headerSubpageTitleSmall: {
+    marginLeft: 20,
   },
   displayHorizontal: {
     flexDirection: 'row',

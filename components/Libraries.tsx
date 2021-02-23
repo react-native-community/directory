@@ -28,13 +28,11 @@ export default function Libraries(props: Props) {
   }
 
   return (
-    <>
-      <View style={styles.librariesContainer}>
-        {libraries.map((item: any, index: number) => (
-          <Library key={`list-item-${index}-${item.github.name}`} library={item} />
-        ))}
-      </View>
-    </>
+    <View style={styles.librariesContainer}>
+      {libraries.map((item: any, index: number) => (
+        <Library key={`list-item-${index}-${item.github.name}`} library={item} />
+      ))}
+    </View>
   );
 }
 

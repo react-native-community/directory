@@ -1,5 +1,5 @@
 // NOTE(brentvatne):
-// This is the default Sentry error page provided by https://github.com/zeit/next.js/blob/canary/examples/with-sentry-simple/
+// This is the default Sentry error page provided by https://github.com/vercel/next.js/tree/canary/examples/with-sentry/
 
 import * as Sentry from '@sentry/node';
 import Error from 'next/error';
@@ -30,12 +30,6 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //
     // Next.js will pass an err on the server if a page's `getInitialProps`
     // threw or returned a Promise that rejected
-
-    if (res.statusCode === 404) {
-      // Opinionated: do not record an exception in Sentry for 404
-      return { statusCode: 404 };
-    }
-
     if (err) {
       // Sentry.captureException(err);
 

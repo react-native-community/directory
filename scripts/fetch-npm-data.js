@@ -2,8 +2,8 @@ import fetch from 'cross-fetch';
 
 import { sleep } from './build-and-score-data';
 
-const urlForPackage = npmPkg => {
-  return `https://api.npmjs.org/downloads/point/last-month/${npmPkg}`;
+const urlForPackage = (npmPkg, period = 'month') => {
+  return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
 };
 
 const fetchNpmData = async (data, npmPkg, githubUrl, attemptsCount = 0) => {

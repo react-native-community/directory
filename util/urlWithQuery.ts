@@ -4,7 +4,7 @@ function toQueryString(query: Query) {
   return new URLSearchParams(query).toString();
 }
 
-export default function urlWithQuery(url, query) {
+export default function urlWithQuery(url, query: Query) {
   let queryWithoutEmptyParams = {};
   Object.keys(query).forEach(key => {
     if (query[key]) {

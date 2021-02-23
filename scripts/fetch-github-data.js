@@ -281,7 +281,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       hasWiki: json.hasWikiEnabled,
       hasPages: json.deployments.totalCount > 0,
       hasDownloads: true,
-      hasTopics: json.topics.length > 0,
+      hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,

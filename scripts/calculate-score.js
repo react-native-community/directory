@@ -60,7 +60,7 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
-const calculateScore = data => {
+export const calculateScore = data => {
   // Filter the modifiers to the ones which condictions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
@@ -96,5 +96,3 @@ const getUpdatedDaysAgo = data => {
 
   return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
 };
-
-export default calculateScore;
