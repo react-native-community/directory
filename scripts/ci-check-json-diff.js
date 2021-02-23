@@ -5,10 +5,11 @@ const fileExistsSync = file => {
     const data = fs.readFileSync(file, 'utf8');
     if (data.length) {
       console.log(data);
-      console.error('Please reformat the react-native-libraries.json!');
+      console.error(
+        'Please reformat the react-native-libraries.json using `yarn libraries:cleanup`!'
+      );
       process.exit(1);
     }
-    return true;
   } catch (err) {
     throw err;
     process.exit(1);

@@ -5864,7 +5864,9 @@
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-performance/tree/master/packages/react-native-performance",
-    "examples": ["https://github.com/oblador/react-native-performance/tree/master/examples/vanilla"],
+    "examples": [
+      "https://github.com/oblador/react-native-performance/tree/master/examples/vanilla"
+    ],
     "images": [
       "https://user-images.githubusercontent.com/378279/105892056-9f677480-6011-11eb-895a-f3f8653449c8.png"
     ],
@@ -5874,7 +5876,9 @@
   },
   {
     "githubUrl": "https://github.com/GetStream/react-native-bidirectional-infinite-scroll",
-    "examples": ["https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"],
+    "examples": [
+      "https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"
+    ],
     "ios": true,
     "android": true
   }
