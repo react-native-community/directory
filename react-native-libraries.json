@@ -3547,11 +3547,6 @@
     "npmPkg": "@react-native-community/checkbox"
   },
   {
-    "githubUrl": "https://github.com/satya164/peek-and-pop",
-    "ios": true,
-    "npmPkg": "@react-native-community/peek-and-pop"
-  },
-  {
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
     "ios": true,
     "android": true,
@@ -3645,7 +3640,7 @@
   {
     "githubUrl": "https://github.com/oblador/react-native-store-review",
     "ios": true,
-    "unmaintained": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/react-native-geolocation/react-native-geolocation",
@@ -5843,6 +5838,43 @@
   {
     "githubUrl": "https://github.com/flyskywhy/react-native-gcanvas",
     "npmPkg": "@flyskywhy/react-native-gcanvas",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/asklar/react-native-xaml",
+    "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/asklar/react-native-xaml/main/example/rnx.gif"],
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/edeckers/react-native-blob-courier",
+    "examples": ["https://github.com/edeckers/react-native-blob-courier/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-pinchable",
+    "examples": ["https://github.com/oblador/react-native-pinchable/tree/master/Example"],
+    "images": [
+      "https://user-images.githubusercontent.com/378279/50738295-9610d280-11d2-11e9-9dba-c0005fa9bfaf.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-performance/tree/master/packages/react-native-performance",
+    "examples": ["https://github.com/oblador/react-native-performance/tree/master/examples/vanilla"],
+    "images": [
+      "https://user-images.githubusercontent.com/378279/105892056-9f677480-6011-11eb-895a-f3f8653449c8.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/GetStream/react-native-bidirectional-infinite-scroll",
+    "examples": ["https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"],
     "ios": true,
     "android": true
   }
