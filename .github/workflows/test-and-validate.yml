@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ~12.16.3
@@ -20,3 +20,7 @@ jobs:
       run: yarn data:validate
     - name: Test react-native-libraries.json
       run: yarn data:test
+    - name: Format react-native-libraries.json
+      run: yarn libraries:cleanup && git diff --no-prefix ./react-native-libraries.json > changes.patch
+    - name: Compare react-native-libraries.json after formatting
+      run: yarn ci:checkDiff
