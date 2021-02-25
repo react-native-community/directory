@@ -129,7 +129,6 @@ export const A = (props: AProps) => {
   const anchorStyles = getAnchorStyles(isDark);
 
   return (
-    // @ts-ignore
     <HtmlElements.A
       {...rest}
       href={href}
