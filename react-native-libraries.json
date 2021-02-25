@@ -1894,7 +1894,8 @@
   {
     "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/mfrachet/rn-placeholder",
@@ -2151,6 +2152,10 @@
   },
   {
     "githubUrl": "https://github.com/lopespm/react-native-offscreen-toolbar",
+    "images": [
+      "https://lopespm.github.io/files/rn-offscreen-toolbar/simplelist_demo.gif",
+      "https://lopespm.github.io/files/rn-offscreen-toolbar/search_demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -3116,18 +3121,21 @@
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/dualscreeninfo",
-    "android": true,
-    "npmPkg": "react-native-dualscreeninfo"
+    "npmPkg": "react-native-dualscreeninfo",
+    "android": true
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/twopane-navigation",
-    "android": true,
-    "npmPkg": "react-native-twopane-navigation"
+    "npmPkg": "react-native-twopane-navigation",
+    "android": true
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/twopaneview",
-    "android": true,
-    "npmPkg": "react-native-twopaneview"
+    "npmPkg": "react-native-twopaneview",
+    "images": [
+      "https://raw.githubusercontent.com/microsoft/react-native-dualscreen/master/twopaneview/examples/paneModesDemo/auto_small.jpg"
+    ],
+    "android": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-splash-screen",
@@ -3336,6 +3344,10 @@
   },
   {
     "githubUrl": "https://github.com/zoontek/react-native-bootsplash",
+    "images": [
+      "https://raw.githubusercontent.com/zoontek/react-native-bootsplash/HEAD/docs/ios_demo.gif",
+      "https://raw.githubusercontent.com/zoontek/react-native-bootsplash/HEAD/docs/android_demo.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -3462,6 +3474,9 @@
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
+    "images": [
+      "https://user-images.githubusercontent.com/27461460/52619625-87aa8a80-2ee5-11e9-9aee-6691c34408f3.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -3523,11 +3538,15 @@
   },
   {
     "githubUrl": "https://github.com/Shopify/restyle",
+    "npmPkg": "@shopify/restyle",
+    "images": [
+      "https://user-images.githubusercontent.com/688415/75268245-91084b80-57f7-11ea-905b-2a9046aa5ca3.gif",
+      "https://user-images.githubusercontent.com/688415/75268259-95346900-57f7-11ea-8f1f-22aec4bb4f39.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
-    "npmPkg": "@shopify/restyle"
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/RevenueCat/react-native-purchases",
@@ -3639,6 +3658,9 @@
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-store-review",
+    "images": [
+      "https://cloud.githubusercontent.com/assets/378279/24377493/d22eb0b8-133f-11e7-9968-44d186a3801f.png"
+    ],
     "ios": true,
     "android": true
   },
@@ -3692,14 +3714,18 @@
   },
   {
     "githubUrl": "https://github.com/MohamadKh75/react-native-jalali-datepicker",
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "windows": true,
+    "npmPkg": "@mohamadkh75/react-native-jalali-datepicker",
     "examples": [
       "https://github.com/MohamadKh75/react-native-jalali-datepicker/tree/master/example"
     ],
-    "npmPkg": "@mohamadkh75/react-native-jalali-datepicker"
+    "images": [
+      "https://raw.githubusercontent.com/MohamadKh75/react-native-jalali-datepicker/master/assets/react-native-jalali-datepicker-1.jpg",
+      "https://raw.githubusercontent.com/MohamadKh75/react-native-jalali-datepicker/master/assets/react-native-jalali-datepicker-2.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/jibraniqbal666/react-native-fb-image-grid",
@@ -3968,6 +3994,9 @@
   },
   {
     "githubUrl": "https://github.com/teslamotors/react-native-camera-kit",
+    "images": [
+      "https://raw.githubusercontent.com/teslamotors/react-native-camera-kit/master/images/screenshot.jpg"
+    ],
     "ios": true,
     "android": true
   },
@@ -4470,10 +4499,6 @@
       "https://react-native-toolkit.github.io/triangle/",
       "https://codesandbox.io/s/triangle-m0z2l"
     ],
-    "images": [
-      "https://raw.githubusercontent.com/react-native-toolkit/react-native-triangle-view/HEAD/assets/logo.png",
-      "https://pbs.twimg.com/profile_images/1268742424517439490/FCYA02Jq_400x400.png"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -4664,9 +4689,11 @@
     "githubUrl": "https://github.com/benevbright/react-navigation-collapsible",
     "examples": ["https://github.com/benevbright/react-navigation-collapsible/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-1.gif",
-      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample1-2.gif",
-      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/master/docs/demo-sample2.gif"
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-default.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-sticky.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-background.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-subheader.gif",
+      "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-custom.gif"
     ],
     "ios": true,
     "android": true,
@@ -4796,8 +4823,8 @@
     "githubUrl": "https://github.com/codemotionapps/react-native-dynamic",
     "examples": ["https://github.com/codemotionapps/react-native-dynamic/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.ios.gif",
-      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/showcase.android.gif"
+      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.ios.gif",
+      "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.android.gif"
     ],
     "ios": true,
     "android": true
@@ -5241,7 +5268,9 @@
   {
     "githubUrl": "https://github.com/WrathChaos/react-native-apple-card-views",
     "images": [
-      "https://github.com/WrathChaos/react-native-apple-card-views/blob/master/assets/Screenshots/ReactNativeAppleCardViews.gif"
+      "https://raw.githubusercontent.com/WrathChaos/react-native-apple-card-views/master/assets/Screenshots/AppleCard.png",
+      "https://raw.githubusercontent.com/WrathChaos/react-native-apple-card-views/master/assets/Screenshots/AppOfTheDayCard.png",
+      "https://github.com/WrathChaos/react-native-apple-card-views/raw/master/assets/Screenshots/RN-Apple-Card-Views.gif"
     ],
     "ios": true,
     "android": true
@@ -5294,7 +5323,7 @@
     "npmPkg": "@natalia.li/react-native-nested-list",
     "examples": ["https://github.com/NataliaLinnik/react-native-nested-list/tree/master/examples"],
     "images": [
-      "https://github.com/NataliaLinnik/react-native-nested-list/blob/master/demo/nested-list_example.gif"
+      "https://github.com/NataliaLinnik/react-native-nested-list/raw/master/demo/nested-list_example.gif"
     ],
     "ios": true,
     "android": true,
@@ -5442,6 +5471,9 @@
   },
   {
     "githubUrl": "https://github.com/mybigday/react-native-external-display",
+    "images": [
+      "https://user-images.githubusercontent.com/3001525/75336253-c3807a00-58c5-11ea-9872-371b654c05fa.png"
+    ],
     "ios": true,
     "android": true
   },
@@ -5652,7 +5684,6 @@
       "https://github.com/facebook/fbt/tree/rn-demo-app",
       "https://github.com/facebook/fbt/tree/live-demo-app"
     ],
-    "images": ["https://facebook.github.io/fbt/img/fbt.png"],
     "ios": true,
     "android": true,
     "web": true,
@@ -5826,6 +5857,10 @@
   },
   {
     "githubUrl": "https://github.com/YanYuanFE/react-native-signature-canvas",
+    "images": [
+      "http://img.yanyuanfe.cn/signature-android.png",
+      "http://img.yanyuanfe.cn/signature-ios.png"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -5881,7 +5916,6 @@
   {
     "githubUrl": "https://github.com/mrousavy/react-native-mmkv",
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/mrousavy/react-native-mmkv/master/img/benchmark_1000_get.png"],
     "ios": true,
     "android": true
   },
@@ -5889,7 +5923,6 @@
      "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
      "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
      "images": [
-       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/11.png",
        "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/example.png",
        "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/ultra-wide-demo.gif"
      ],
