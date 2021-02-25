@@ -5879,6 +5879,13 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/mrousavy/react-native-mmkv",
+    "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/mrousavy/react-native-mmkv/master/img/benchmark_1000_get.png"],
+    "ios": true,
+    "android": true
+  },
+  {
      "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
      "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
      "images": [
