@@ -5884,5 +5884,16 @@
     "images": ["https://raw.githubusercontent.com/mrousavy/react-native-mmkv/master/img/benchmark_1000_get.png"],
     "ios": true,
     "android": true
+  },
+  {
+     "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
+     "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
+     "images": [
+       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/11.png",
+       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/example.png",
+       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/ultra-wide-demo.gif"
+     ],
+     "ios": true,
+     "android": true
   }
 ]
