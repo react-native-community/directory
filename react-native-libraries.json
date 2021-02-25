@@ -1284,6 +1284,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/react-native-link",
+    "npmPkg": "@expo/react-native-link",
     "ios": true,
     "android": true,
     "expo": true
@@ -1463,7 +1464,8 @@
   {
     "githubUrl": "https://github.com/pwmckenna/react-native-motion-manager",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/terrillo/rn-apple-healthkit",
@@ -1492,7 +1494,8 @@
   },
   {
     "githubUrl": "https://github.com/kkjdaniel/react-native-device-display",
-    "ios": true
+    "ios": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-fetch",
@@ -1536,7 +1539,8 @@
   },
   {
     "githubUrl": "https://github.com/kayla-tech/react-native-privacy-snapshot",
-    "ios": true
+    "ios": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/andreyvital/react-native-android-sms-listener",
@@ -3250,7 +3254,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Kureev/react-native-blur",
