@@ -5877,5 +5877,11 @@
     "examples": ["https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
+    "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
