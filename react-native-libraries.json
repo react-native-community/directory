@@ -5880,7 +5880,6 @@
   },
   {
      "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
-     "npmPkg": "https://www.npmjs.com/package/react-native-vision-camera",
      "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
      "images": [
        "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/11.png",
@@ -5888,7 +5887,6 @@
        "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/ultra-wide-demo.gif"
      ],
      "ios": true,
-     "android": true,
-     "unmaintained": false
+     "android": true
   }
 ]
