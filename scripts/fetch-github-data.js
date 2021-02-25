@@ -229,35 +229,40 @@ const processTopics = topics =>
 
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
-    const packageJson = JSON.parse(json.packageJson.text);
+    try {
+      const packageJson = JSON.parse(json.packageJson.text);
 
-    if (monorepo) {
-      json.homepageUrl = packageJson.homepage;
-      json.name = packageJson.name;
-      json.topics = processTopics(packageJson.keywords);
-      json.description = packageJson.description;
-      json.licenseInfo = getLicenseFromPackageJson(packageJson);
-    }
-
-    if (!monorepo) {
-      json.topics = [
-        ...new Set([
-          ...processTopics(packageJson.keywords),
-          ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
-        ]),
-      ];
-
-      if (!json.description) {
+      if (monorepo) {
+        json.homepageUrl = packageJson.homepage;
+        json.name = packageJson.name;
+        json.topics = processTopics(packageJson.keywords);
         json.description = packageJson.description;
+        json.licenseInfo = getLicenseFromPackageJson(packageJson);
       }
 
-      if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
-        json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
-      }
-    }
+      if (!monorepo) {
+        json.topics = [
+          ...new Set([
+            ...processTopics(packageJson.keywords),
+            ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
+          ]),
+        ];
 
-    if (packageJson.types || packageJson.typings) {
-      json.types = true;
+        if (!json.description) {
+          json.description = packageJson.description;
+        }
+
+        if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+          json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+        }
+      }
+
+      if (packageJson.types || packageJson.typings) {
+        json.types = true;
+      }
+    } catch (e) {
+      console.warn(`Unable to parse ${json.name} package.json file!`);
+      console.error(e);
     }
   }
 
