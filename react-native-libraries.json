@@ -5945,5 +5945,13 @@
      "ios": true,
      "android": true,
      "expo": true
+  },
+  {
+     "githubUrl": "https://github.com/Rapsssito/react-native-tcp-socket",
+     "examples": [
+       "https://github.com/Rapsssito/react-native-tcp-socket/tree/master/examples/tcpsockets"
+     ],
+     "ios": true,
+     "android": true
   }
 ]
