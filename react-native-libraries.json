@@ -5933,5 +5933,17 @@
      ],
      "ios": true,
      "android": true
+  },
+  {
+     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
+     "examples": [
+       "https://snack.expo.io/@dabakovich/mentionsapp"
+     ],
+     "images": [
+       "https://raw.githubusercontent.com/dabakovich/react-native-controlled-mentions/master/demo.gif"
+     ],
+     "ios": true,
+     "android": true,
+     "expo": true
   }
 ]
