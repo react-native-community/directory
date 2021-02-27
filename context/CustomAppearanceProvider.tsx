@@ -60,8 +60,7 @@ async function rehydrateAppearanceState() {
 
   try {
     const item = await AsyncStorage.getItem(appearanceStorageKey);
-    const data = JSON.parse(item);
-    return data;
+    return JSON.parse(item);
   } catch (ignored) {
     return defaultState;
   }
