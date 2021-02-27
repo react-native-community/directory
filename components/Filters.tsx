@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import * as React from 'react';
 import { useContext } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, P, Headline, layout, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -13,6 +13,8 @@ import { Filter as FilterIcon } from './Icons';
 
 type FiltersProps = {
   query: Query;
+  style?: ViewStyle | ViewStyle[];
+  basePath?: string;
 };
 
 type FilterButtonProps = {
@@ -52,12 +54,12 @@ const platforms = [
   },
 ];
 
-function ToggleLink({ query, paramName, title }) {
+function ToggleLink({ query, paramName, title, basePath }) {
   let isSelected = !!query[paramName];
 
   return (
     <Link
-      href={urlWithQuery('/', {
+      href={urlWithQuery(basePath, {
         ...query,
         [paramName]: !isSelected,
         offset: null,
@@ -108,9 +110,8 @@ export const FilterButton = (props: FilterButtonProps) => {
   );
 };
 
-export const Filters = (props: FiltersProps) => {
+export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { query } = props;
   return (
     <View
       style={[
@@ -118,6 +119,7 @@ export const Filters = (props: FiltersProps) => {
         {
           backgroundColor: isDark ? darkColors.veryDark : colors.gray1,
         },
+        style,
       ]}>
       <View style={styles.container}>
         <Headline style={styles.title}>Platform</Headline>
@@ -128,6 +130,7 @@ export const Filters = (props: FiltersProps) => {
               query={query}
               paramName={platform.param}
               title={platform.title}
+              basePath={basePath}
             />
           ))}
         </View>
@@ -135,32 +138,54 @@ export const Filters = (props: FiltersProps) => {
       <View style={styles.container}>
         <Headline style={styles.title}>Status</Headline>
         <View style={styles.optionsContainer}>
-          <ToggleLink key="hasExample" query={query} paramName="hasExample" title="Has example" />
-          <ToggleLink key="hasImage" query={query} paramName="hasImage" title="Has image preview" />
+          <ToggleLink
+            key="hasExample"
+            query={query}
+            paramName="hasExample"
+            title="Has example"
+            basePath={basePath}
+          />
+          <ToggleLink
+            key="hasImage"
+            query={query}
+            paramName="hasImage"
+            title="Has image preview"
+            basePath={basePath}
+          />
           <ToggleLink
             key="hasTypes"
             query={query}
             paramName="hasTypes"
             title="Has TypeScript types"
+            basePath={basePath}
           />
           <ToggleLink
             key="isMaintained"
             query={query}
             paramName="isMaintained"
             title="Maintained"
+            basePath={basePath}
           />
-          <ToggleLink key="isPopular" query={query} paramName="isPopular" title="Popular" />
+          <ToggleLink
+            key="isPopular"
+            query={query}
+            paramName="isPopular"
+            title="Popular"
+            basePath={basePath}
+          />
           <ToggleLink
             key="wasRecentlyUpdated"
             query={query}
             paramName="wasRecentlyUpdated"
             title="Recently updated"
+            basePath={basePath}
           />
           <ToggleLink
             key="isRecommended"
             query={query}
             paramName="isRecommended"
             title="Recommended"
+            basePath={basePath}
           />
         </View>
       </View>

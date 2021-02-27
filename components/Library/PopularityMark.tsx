@@ -25,10 +25,15 @@ const getPopularityStyles = popularity => {
       width: 18,
       backgroundColor: '#ffa200',
     };
-  } else {
+  } else if (popularity > 0) {
     return {
       width: 12,
       backgroundColor: '#ffbe07',
+    };
+  } else {
+    return {
+      width: 6,
+      backgroundColor: colors.gray4,
     };
   }
 };
@@ -40,8 +45,10 @@ const getPopularityGrade = popularity => {
     return 'Popular';
   } else if (popularity > 0.1) {
     return 'Quite popular';
-  } else {
+  } else if (popularity > 0) {
     return 'Trending';
+  } else {
+    return 'In shadow';
   }
 };
 

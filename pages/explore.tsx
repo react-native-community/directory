@@ -1,11 +1,11 @@
-import { LinearGradient } from 'expo-linear-gradient';
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { H1, H2, H3, P, darkColors, colors, A, useLayout } from '../common/styleguide';
+import { H3, P, darkColors, colors, A } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
+import ExploreNav from '../components/Explore/ExploreNav';
 import {
   PlatformAndroid,
   PlatformIOS,
@@ -96,86 +96,14 @@ const ExploreSection = ({
   );
 };
 
-const OMIT_TOPICS = [
-  'react',
-  'reactjs',
-  'react-native',
-  'android',
-  'ios',
-  'macos',
-  'tvos',
-  'expo',
-  'web',
-  'windows',
-  'javascript',
-  'typescript',
-];
-
-const TopicsSection = ({ data }) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const { isSmallScreen } = useLayout();
-  const topics = Object.entries(
-    data
-      .filter(lib => lib.popularity > 0.035)
-      .map(lib => lib?.github?.topics || [])
-      .flat()
-      .reduce((map, val) => {
-        map[val] = (map[val] || 0) + 1;
-        return map;
-      }, {})
-  )
-    .map(arr => (arr[1] > 1 && !OMIT_TOPICS.includes(arr[0]) ? arr[0] : null))
-    .filter(Boolean)
-    .sort();
-
-  return (
-    <>
-      <H2 style={[styles.header, styles.sectionHeader]}>Trending topics</H2>
-      <View style={[styles.topicsWrapper, isSmallScreen && styles.topicsWrapperSmall]}>
-        {topics.map(topic => (
-          <A
-            href={urlWithQuery('/', { search: topic })}
-            target="_self"
-            style={[
-              styles.topicBox,
-              {
-                borderColor: isDark ? darkColors.border : colors.gray2,
-              },
-            ]}>
-            {topic}
-          </A>
-        ))}
-      </View>
-    </>
-  );
-};
-
 const Explore = ({ data }) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-
   return (
     <>
-      <View
-        style={[
-          styles.headerWrapper,
-          { backgroundColor: isDark ? darkColors.subHeader : colors.gray1 },
-        ]}>
-        <LinearGradient
-          colors={['#ffbe07', '#ffa200', '#ff6e29', 'orangered']}
-          start={[0.05, 0]}
-          end={[0.95, 0]}
-          style={styles.headerSpacer}
-        />
-        <H1 style={styles.header}>
-          Explore
-          <sup style={{ fontSize: 14, top: -4, right: -6, position: 'relative' }}>(BETA)</sup>
-        </H1>
-        <P style={styles.headerDescription}>
-          See which React Native libraries and topics are trending today.
-        </P>
-      </View>
+      <ExploreNav
+        title="Explore"
+        description="See which libraries are popular among the community in last days."
+      />
       <ContentContainer style={styles.container}>
-        <H2 style={[styles.header, styles.sectionHeader]}>Trending libraries</H2>
         <ExploreSection
           title="Core platforms"
           icon={ReactLogo}
@@ -220,7 +148,6 @@ const Explore = ({ data }) => {
           data={data}
           filter={lib => lib.windows === true}
         />
-        <TopicsSection data={data} />
       </ContentContainer>
     </>
   );
@@ -248,31 +175,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  headerWrapper: {
-    paddingBottom: 32,
-    marginBottom: 16,
-  },
-  header: {
-    textAlign: 'center',
-    fontSize: 44,
-    paddingHorizontal: 20,
-  },
-  headerDescription: {
-    textAlign: 'center',
-    paddingTop: 4,
-    paddingBottom: 6,
-    paddingHorizontal: 40,
-  },
-  headerSpacer: {
-    height: 4,
-    width: '100%',
-    backgroundColor: '#ffa200',
-    marginBottom: 24,
-  },
-  sectionHeader: {
-    marginTop: 20,
-    fontSize: 38,
-  },
   subHeader: {
     marginTop: 16,
     marginBottom: 8,
@@ -294,26 +196,6 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 24,
     fontSize: 14,
-  },
-  topicsWrapper: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 32,
-    marginBottom: 28,
-    paddingHorizontal: '10%',
-  },
-  topicsWrapperSmall: {
-    paddingHorizontal: 24,
-  },
-  topicBox: {
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    borderWidth: 1,
-    borderRadius: 4,
-    width: 'auto',
-    marginRight: 10,
-    marginBottom: 10,
   },
 });
 
