@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as React from 'react';
 import { StatusBar, View } from 'react-native';
 import { useColorScheme } from 'react-native-appearance';
