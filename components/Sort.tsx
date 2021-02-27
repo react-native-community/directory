@@ -120,5 +120,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     position: 'relative',
     top: -1,
+    fontSize: 14,
+    fontFamily: 'System',
   },
 });
