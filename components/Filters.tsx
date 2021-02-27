@@ -28,7 +28,7 @@ const platforms = [
   },
   {
     param: 'expo',
-    title: 'Expo Client',
+    title: 'Expo Go',
   },
   {
     param: 'ios',

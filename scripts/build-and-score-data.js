@@ -24,8 +24,10 @@ const JSON_OPTIONS = {
   spaces: 2,
 };
 
-export const sleep = (ms = 0) => {
-  return new Promise(r => setTimeout(r, ms));
+export const sleep = (ms = 0, msMax = null) => {
+  return new Promise(r =>
+    setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
+  );
 };
 
 let invalidRepos = [];
@@ -56,7 +58,6 @@ const buildAndScoreData = async () => {
       return calculateScore(project);
     } catch (e) {
       console.log(`Failed to calculate score for ${project.github.name}`, e.message);
-      console.log(project.githubUrl);
     }
   });
 

@@ -1,5 +1,5 @@
 import cheerio from 'cheerio';
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 
 import { sleep } from './build-and-score-data';
 
@@ -58,7 +58,7 @@ const fetchReadmeImages = async (data, githubUrl) => {
       images,
     };
   } catch (e) {
-    console.log(`Retrying image scrape for ${githubUrl}`);
+    console.log(`[GH] Retrying image scrape for ${githubUrl}`);
     await sleep(2000);
     return await fetchReadmeImages(data, githubUrl);
   }

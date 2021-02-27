@@ -1,6 +1,7 @@
+import { Picker } from '@react-native-picker/picker';
 import Router from 'next/router';
 import React, { useContext, useState } from 'react';
-import { StyleSheet, View, Picker } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';

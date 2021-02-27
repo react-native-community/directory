@@ -1,6 +1,7 @@
 import { Query } from '../types';
 
 function toQueryString(query: Query) {
+  // @ts-ignore
   return new URLSearchParams(query).toString();
 }
 

@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 
 import { sleep } from './build-and-score-data';
 
@@ -6,7 +6,7 @@ const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
 };
 
-const fetchNpmData = async (data, npmPkg, githubUrl) => {
+const fetchNpmData = async (data, npmPkg, githubUrl, attemptsCount = 0) => {
   if (!npmPkg) {
     let parts = githubUrl.split('/');
     npmPkg = parts[parts.length - 1].toLowerCase();
@@ -15,13 +15,12 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
 
   try {
     const url = urlForPackage(npmPkg);
-    console.log('processing:', url);
     let response = await fetch(url);
     let downloadData = await response.json();
 
     if (!downloadData.downloads) {
       console.warn(
-        `${npmPkg} doesn't exist on npm registry, add npmPkg to its entry in react-native-libraries.json to clarify it`
+        `[NPM] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { ...data, npm: {} };
     }
@@ -42,9 +41,9 @@ const fetchNpmData = async (data, npmPkg, githubUrl) => {
       },
     };
   } catch (e) {
-    console.log(`Retrying npm data fetch for: ${npmPkg}`);
-    await sleep(1000);
-    return await fetchNpmData(data, npmPkg, githubUrl);
+    await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
+    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
+    return await fetchNpmData(data, npmPkg, githubUrl, attemptsCount + 1);
   }
 };
 
