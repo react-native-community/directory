@@ -3088,8 +3088,7 @@
     "githubUrl": "https://github.com/react-ui-kit/expo-ui-kit",
     "ios": true,
     "android": true,
-    "expo": true,
-    "examples": ["http://expo-ui-kit.com", "http://react-ui-kit.com"]
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/mobily/stacks",
@@ -3396,7 +3395,7 @@
   },
   {
     "githubUrl": "https://github.com/archriss/react-native-render-html",
-    "images": ["http://i.giphy.com/26tkmjBLvThP0TSak.gif"],
+    "images": ["https://i.giphy.com/26tkmjBLvThP0TSak.gif"],
     "ios": true,
     "android": true,
     "expo": true
@@ -5173,7 +5172,7 @@
   {
     "githubUrl": "https://github.com/ushelp/EasyQRCode-React-Native",
     "examples": [
-      "http://www.easyproject.cn/easyqrcodejs/tryit.html",
+      "https://www.easyproject.cn/easyqrcodejs/tryit.html",
       "https://github.com/ushelp/EasyQRCode-React-Native/blob/master/demo/App.js"
     ],
     "images": [
