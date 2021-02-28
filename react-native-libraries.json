@@ -5952,5 +5952,17 @@
      ],
      "ios": true,
      "android": true
+  },
+  {
+     "githubUrl": "https://github.com/deanhet/react-native-text-ticker",
+     "examples": [
+       "https://github.com/deanhet/react-native-text-ticker/tree/master/example"
+     ],
+     "images": [
+       "https://raw.githubusercontent.com/deanhet/react-native-text-ticker/master/example/media/example.gif",
+       "https://raw.githubusercontent.com/deanhet/react-native-text-ticker/master/example/media/example2.gif"
+     ],
+     "ios": true,
+     "android": true
   }
 ]
