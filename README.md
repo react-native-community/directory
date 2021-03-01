@@ -64,7 +64,7 @@ Please follow this format, fields order and indentation:
 }
 ```
 
-Please skip the `false` values and do not fill optional fields, unless it's required.
+Please skip the `false` values and do not fill optional fields, unless it's necessary.
 
 ### Field descriptions
 
