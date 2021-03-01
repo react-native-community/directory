@@ -1,12 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/gabrielmoncea/react-native-template",
-    "npmPkg": "@gabrielmoncea/react-native-template",
-    "ios": true,
-    "android": true,
-    "dev": true
-  },
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -5971,5 +5964,11 @@
      ],
      "ios": true,
      "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/gabrielmoncea/react-native-template",
+    "npmPkg": "@gabrielmoncea/react-native-template",
+    "ios": true,
+    "android": true
+  },
 ]
