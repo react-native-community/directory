@@ -10,8 +10,6 @@ const ExploreTab = ({ title }) => {
   const router = useRouter();
   const isActive = router.pathname === `/${title.toLowerCase()}`;
 
-  console.warn(router.pathname);
-
   return (
     <A
       href={title.toLowerCase()}

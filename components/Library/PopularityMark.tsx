@@ -13,22 +13,22 @@ const getPopularityStyles = popularity => {
   if (popularity > 0.5) {
     return {
       width: 32,
-      backgroundColor: 'orangered',
+      backgroundColor: '#fb0d9e',
     };
   } else if (popularity > 0.25) {
     return {
       width: 24,
-      backgroundColor: '#ff6e29',
+      backgroundColor: '#e20026',
     };
   } else if (popularity > 0.1) {
     return {
       width: 18,
-      backgroundColor: '#ffa200',
+      backgroundColor: '#ff5900',
     };
   } else if (popularity > 0) {
     return {
       width: 12,
-      backgroundColor: '#ffbe07',
+      backgroundColor: '#dc9a00',
     };
   } else {
     return {

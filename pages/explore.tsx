@@ -191,7 +191,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   note: {
-    textAlign: 'center',
     paddingHorizontal: 24,
     paddingTop: 8,
     paddingBottom: 24,

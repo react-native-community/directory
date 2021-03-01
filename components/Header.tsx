@@ -7,7 +7,7 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
-export default function Header() {
+const Header = () => {
   const { isDark, setIsDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -47,7 +47,7 @@ export default function Header() {
                   styles.headerSubpageTitle,
                   isSmallScreen && styles.headerSubpageTitleSmall,
                 ]}>
-                Explore {!isSmallScreen && <sup style={{ fontSize: 10 }}>(BETA)</sup>}
+                Explore
               </A>
             </H6>
           </View>
@@ -68,9 +68,9 @@ export default function Header() {
       </View>
     </HtmlHeader>
   );
-}
+};
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     height: 60,
     justifyContent: 'center',
@@ -135,3 +135,5 @@ let styles = StyleSheet.create({
     paddingHorizontal: 14,
   },
 });
+
+export default Header;

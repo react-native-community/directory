@@ -26,7 +26,6 @@ const fetchNpmData = async (data, npmPkg, githubUrl, attemptsCount = 0) => {
     }
 
     const weekUrl = urlForPackage(npmPkg, 'week');
-    console.log('processing:', weekUrl);
     let weekResponse = await fetch(weekUrl);
     let weekDownloadData = await weekResponse.json();
 

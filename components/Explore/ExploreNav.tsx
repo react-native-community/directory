@@ -16,7 +16,6 @@ const ExploreNav = ({ title, description }) => {
       }}>
       <ContentContainer style={styles.container}>
         <ExploreTab title="Explore" />
-        <ExploreTab title="Topics" />
         <ExploreTab title="Trending" />
       </ContentContainer>
       <View
@@ -37,8 +36,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   headerWrapper: {
-    paddingTop: 22,
-    paddingBottom: 32,
+    paddingVertical: 40,
     marginBottom: 16,
   },
   header: {
