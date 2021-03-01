@@ -1,10 +1,8 @@
 # React Native Directory
 
-React Native Directory is a website where you can see all of the libraries that are compatible with React Native.
+React Native Directory is a website where you can see all the libraries that are compatible with React Native.
 
-> Note: A transition in progress from https://native.directory to https://reactnative.directory, so the following links may not work for you yet!
-
-Website: https://reactnative.directory/
+### Website: https://reactnative.directory/
 
 ## How do I know I'm at the right place?
 
@@ -46,11 +44,11 @@ Sure, go for it!
 - Add it to `react-native-libraries.json`.
 - Submit a PR.
 
-Please follow this format and indentation:
+Please follow this format, fields order and indentation:
 
 ```json
 {
-  "githubUrl": "<THE GITHUB URL>",
+  "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<NPM PACKAGE NAME>",
   "nameOverride": "<PACKAGE DISPLAY NAME>",
   "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
@@ -66,13 +64,17 @@ Please follow this format and indentation:
 }
 ```
 
+Please skip the `false` values and do not fill optional fields, unless it's required.
+
+### Field descriptions
+
 - `githubUrl` - (**required** string) - URL to the GitHub repository (currently other git hosts are not supported).
-- `npmPkg` - (_optional_ string) - package's display name (fill only when the GitHub repository name is different from the name of package published to npm).
-- `nameOverride` - (_optional_ string) - override name if the name is different from the GitHub repo and npm package name.
-- `examples` - (_optional_ array of strings) - URLs (snacks preferred) with demonstrations of the library.
+- `npmPkg` - (_optional_ string) - npm package name (fill only when the GitHub repository name is different from the name of package published to npm).
+- `nameOverride` - (_optional_ string) - display name override (fill only when it is different from the GitHub repository name and npm package name).
+- `examples` - (_optional_ array of strings) - URLs to example projects (Snacks preferred) or with demonstrations of the library.
 - `images` - (_optional_ array of strings) - URLs to images that will show up in the listing to preview the library functionality.
-- `ios` - (_optional_ boolean) - works on iOS phones.
-- `android` - (_optional_ boolean) - works on Android phones.
+- `ios` - (_optional_ boolean) - works on iOS device.
+- `android` - (_optional_ boolean) - works on Android device.
 - `web` - (_optional_ boolean) - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 - `expo` - (_optional_ boolean) - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
 - `windows` - (_optional_ boolean) - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
@@ -113,7 +115,7 @@ You should be able to visit `localhost:3000` in your browser.
 
 This command creates site data in `./assets/data.json`
 
-```
+```sh
 GITHUB_TOKEN=<*> npm run data:update
 ```
 
@@ -124,11 +126,11 @@ GITHUB_TOKEN=<*> npm run data:update
 - You will need to provide GITHUB_TOKEN environment variable in your Vercel configuration.
 
 ```sh
-# once environment variables are configured, install now and deploy
-npm i -g now
-now
+# once environment variables are configured, install vercel and deploy
+npm i -g vercel
+vercel
 ```
 
 ## How do I deploy to production?
 
-Get a commit on master and it will be automatically deployed.
+Get a commit on `master` and it will be automatically deployed.
