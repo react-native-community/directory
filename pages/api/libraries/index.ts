@@ -68,6 +68,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     isPopular: req.query.isPopular,
     isRecommended: req.query.isRecommended,
     wasRecentlyUpdated: req.query.wasRecentlyUpdated,
+    minPopularity: req.query.minPopularity,
   });
 
   let offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;

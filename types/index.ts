@@ -27,6 +27,7 @@ export type Query = {
   isPopular?: string;
   isRecommended?: string;
   wasRecentlyUpdated?: string;
+  minPopularity?: string | number;
 };
 
 export type Library = {

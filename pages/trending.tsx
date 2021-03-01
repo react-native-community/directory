@@ -22,11 +22,9 @@ const Trending = ({ data, query }) => {
       />
       <ContentContainer style={styles.container}>
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
-        {data
-          .filter(lib => lib.popularity > 0.025)
-          .map((item: LibraryType, index: number) => (
-            <Library key={`list-item-${index}-${item.github.name}`} library={item} showPopularity />
-          ))}
+        {data.map((item: LibraryType, index: number) => (
+          <Library key={`list-item-${index}-${item.github.name}`} library={item} showPopularity />
+        ))}
         <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
           Unfortunately that's all, what's trending now. Want to explore more libraries? Check out
           the{' '}
@@ -42,7 +40,10 @@ const Trending = ({ data, query }) => {
 
 Trending.getInitialProps = async (ctx: NextPageContext) => {
   let url = getApiUrl(
-    urlWithQuery('/libraries', { ...ctx.query, ...{ limit: 9999, order: 'popularity' } }),
+    urlWithQuery('/libraries', {
+      ...ctx.query,
+      ...{ limit: 9999, minPopularity: 2.5, order: 'popularity' },
+    }),
     ctx
   );
   let response = await fetch(url);

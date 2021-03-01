@@ -154,7 +154,10 @@ const Explore = ({ data }) => {
 };
 
 Explore.getInitialProps = async (ctx: NextPageContext) => {
-  let url = getApiUrl(urlWithQuery('/libraries', { limit: 9999, order: 'popularity' }), ctx);
+  let url = getApiUrl(
+    urlWithQuery('/libraries', { limit: 9999, minPopularity: 0, order: 'popularity' }),
+    ctx
+  );
   let response = await fetch(url);
   let result = await response.json();
 

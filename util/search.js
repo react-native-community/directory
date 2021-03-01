@@ -12,6 +12,7 @@ export const handleFilterLibraries = ({
   isPopular,
   isRecommended,
   wasRecentlyUpdated,
+  minPopularity,
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -19,6 +20,10 @@ export const handleFilterLibraries = ({
   return libraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
+
+    if (minPopularity) {
+      return library.popularity * 100 >= parseFloat(minPopularity);
+    }
 
     if (support.ios && !library.ios) {
       return false;
