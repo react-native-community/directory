@@ -54,8 +54,8 @@ const platforms = [
   },
 ];
 
-function ToggleLink({ query, paramName, title, basePath }) {
-  let isSelected = !!query[paramName];
+const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
+  const isSelected = !!query[paramName];
 
   return (
     <Link
@@ -70,7 +70,7 @@ function ToggleLink({ query, paramName, title, basePath }) {
       </View>
     </Link>
   );
-}
+};
 
 export const FilterButton = (props: FilterButtonProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
