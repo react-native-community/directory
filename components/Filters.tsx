@@ -166,13 +166,15 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             title="Maintained"
             basePath={basePath}
           />
-          <ToggleLink
-            key="isPopular"
-            query={query}
-            paramName="isPopular"
-            title="Popular"
-            basePath={basePath}
-          />
+          {basePath === '/' ? (
+            <ToggleLink
+              key="isPopular"
+              query={query}
+              paramName="isPopular"
+              title="Popular"
+              basePath={basePath}
+            />
+          ) : null}
           <ToggleLink
             key="wasRecentlyUpdated"
             query={query}
@@ -180,13 +182,15 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             title="Recently updated"
             basePath={basePath}
           />
-          <ToggleLink
-            key="isRecommended"
-            query={query}
-            paramName="isRecommended"
-            title="Recommended"
-            basePath={basePath}
-          />
+          {basePath === '/' ? (
+            <ToggleLink
+              key="isRecommended"
+              query={query}
+              paramName="isRecommended"
+              title="Recommended"
+              basePath={basePath}
+            />
+          ) : null}
         </View>
       </View>
     </View>

@@ -21,10 +21,6 @@ export const handleFilterLibraries = ({
     let isTopicMatch = false;
     let isSearchMatch = false;
 
-    if (minPopularity) {
-      return library.popularity * 100 >= parseFloat(minPopularity);
-    }
-
     if (support.ios && !library.ios) {
       return false;
     }
@@ -83,6 +79,10 @@ export const handleFilterLibraries = ({
 
     if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
       return false;
+    }
+
+    if (minPopularity) {
+      return library.popularity * 100 >= parseFloat(minPopularity);
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {

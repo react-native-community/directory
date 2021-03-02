@@ -48,11 +48,6 @@ const styles = StyleSheet.create({
   tabActiveTitle: {
     fontWeight: '500',
   },
-  indicator: {
-    height: 3,
-    width: '100%',
-    backgroundColor: '#ffa200',
-  },
 });
 
 export default ExploreTab;

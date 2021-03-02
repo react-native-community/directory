@@ -1,8 +1,8 @@
 import { NextPageContext } from 'next';
 import React, { useContext } from 'react';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, P } from '../common/styleguide';
+import { A, H4, colors, darkColors, P } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import ExploreNav from '../components/Explore/ExploreNav';
 import { Filters } from '../components/Filters';
@@ -22,9 +22,16 @@ const Trending = ({ data, query }) => {
       />
       <ContentContainer style={styles.container}>
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
-        {data.map((item: LibraryType, index: number) => (
-          <Library key={`list-item-${index}-${item.github.name}`} library={item} showPopularity />
-        ))}
+        {data.length ? (
+          data.map((item: LibraryType, index: number) => (
+            <Library key={`list-item-${index}-${item.github.name}`} library={item} showPopularity />
+          ))
+        ) : (
+          <View style={styles.noResultWrapper}>
+            <Image style={styles.noResultImg} source={require('../assets/notfound.png')} />
+            <H4>Nothing was found!</H4>
+          </View>
+        )}
         <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
           Unfortunately that's all, what's trending now. Want to explore more libraries? Check out
           the{' '}
@@ -68,6 +75,18 @@ const styles = StyleSheet.create({
   note: {
     padding: 24,
     fontSize: 14,
+  },
+  noResultWrapper: {
+    alignItems: 'center',
+    marginTop: 24,
+    marginBottom: 42,
+  },
+  noResult: {
+    marginTop: 12,
+  },
+  noResultImg: {
+    width: 64,
+    height: 64,
   },
 });
 
