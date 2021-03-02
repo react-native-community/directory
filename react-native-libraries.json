@@ -6040,5 +6040,16 @@
     "npmPkg": "@gabrielmoncea/react-native-template",
     "ios": true,
     "android": true
+  },
+  {
+     "githubUrl": "https://github.com/smallcasetech/react-native-simple-biometrics",
+     "examples": [
+       "https://github.com/smallcasetech/react-native-simple-biometrics/tree/master/example"
+     ],
+     "images": [
+       "https://raw.githubusercontent.com/smallcasetech/react-native-simple-biometrics/master/demo.gif"
+     ],
+     "ios": true,
+     "android": true
   }
 ]
