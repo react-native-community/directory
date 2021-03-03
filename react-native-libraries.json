@@ -6051,5 +6051,16 @@
      ],
      "ios": true,
      "android": true
+  },
+  {
+     "githubUrl": "https://github.com/heineiuo/react-native-animated-linear-gradient",
+     "examples": [
+       "https://github.com/heineiuo/react-native-animated-linear-gradient/tree/master/examples/simple"
+     ],
+     "images": [
+       "https://github.com/heineiuo/react-native-animated-linear-gradient/raw/master/.github/capture.gif"
+     ],
+     "ios": true,
+     "android": true
   }
 ]
