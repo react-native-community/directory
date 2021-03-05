@@ -6062,5 +6062,21 @@
      ],
      "ios": true,
      "android": true
+  },
+  {
+     "githubUrl": "https://github.com/mateosilguero/consistencss",
+     "npmPkg": "consistencss",
+     "examples": [
+       "https://github.com/mateosilguero/consistencss/tree/master/example"
+     ],
+     "images": [
+       "https://raw.githubusercontent.com/mateosilguero/consistencss/master/website/static/img/logo.png"
+     ],
+     "ios": true,
+     "android": true,
+     "web": true,
+     "expo": true,
+     "windows": true,
+     "macos": true,
   }
 ]
