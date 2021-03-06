@@ -8,7 +8,7 @@ import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
 import { calculateScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import fetchNpmData from './fetch-npm-data';
+import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -48,9 +48,46 @@ const buildAndScoreData = async () => {
   await sleep(1000);
   data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
 
+  console.log('\n** Determining npm package name');
+  await sleep(1000);
+  data.map(project => {
+    if (!project.npmPkg) {
+      let parts = project.githubUrl.split('/');
+      project.npmPkg = parts[parts.length - 1].toLowerCase();
+    }
+    return project;
+  });
+
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
-  data = await Promise.all(data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl)));
+
+  // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
+  let bulkList = [];
+
+  // Fetch scope packages data
+  data = await Promise.all(
+    data.map(d => {
+      if (d.npmPkg.startsWith('@')) {
+        return fetchNpmData(d, d.npmPkg);
+      } else {
+        bulkList.push(d.npmPkg);
+        return d;
+      }
+    })
+  );
+
+  const CHUNK_SIZE = 64;
+  bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
+    bulkList.splice(0, CHUNK_SIZE)
+  );
+
+  // Assemble and fetch data in bulk queries
+  bulkList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(data, chunk)))).flat();
+
+  // Fill npm data from bulk queries
+  data = data.map(pkg =>
+    pkg.npm ? pkg : { ...pkg, npm: bulkList.find(d => d.pkgName === pkg.npmPkg).npm }
+  );
 
   console.log('\n** Calculating scores');
   data = data.map(project => {
