@@ -75,7 +75,7 @@ const buildAndScoreData = async () => {
   data = await Promise.all(
     data.map(project => {
       if (project.npmPkg.startsWith('@')) {
-        return fetchNpmData(project, project.npmPkg);
+        return fetchNpmData(project);
       } else {
         bulkList.push(project.npmPkg);
         return project;
@@ -88,11 +88,23 @@ const buildAndScoreData = async () => {
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
   );
-  bulkList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(data, chunk)))).flat();
+
+  const downloadsList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk)))).flat();
+  const downloadsListWeek = (
+    await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk, 'week')))
+  ).flat();
 
   // Fill npm data from bulk queries
   data = data.map(project =>
-    project.npm ? project : { ...project, npm: bulkList.find(d => d.name === project.npmPkg).npm }
+    project.npm
+      ? project
+      : {
+          ...project,
+          npm: {
+            ...(downloadsList.find(d => d.name === project.npmPkg)?.npm || {}),
+            ...(downloadsListWeek.find(d => d.name === project.npmPkg)?.npm || {}),
+          },
+        }
   );
 
   console.log('\n** Calculating scores');
