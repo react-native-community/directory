@@ -16,10 +16,7 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <>
-      <ExploreNav
-        title="Trending libraries"
-        description="See which libraries are trending today, refine the list by your needs!"
-      />
+      <ExploreNav title="Trending libraries" description="See which libraries are trending today" />
       <ContentContainer style={styles.container}>
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
         {data.length ? (

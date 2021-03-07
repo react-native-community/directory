@@ -21,10 +21,7 @@ import urlWithQuery from '../util/urlWithQuery';
 const Explore = ({ data }) => {
   return (
     <>
-      <ExploreNav
-        title="Explore"
-        description="See which libraries are popular among the community in last days."
-      />
+      <ExploreNav title="Explore" description="Browse recently popular libraries by platform" />
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
@@ -47,7 +44,7 @@ const Explore = ({ data }) => {
           filter={lib => lib.ios === true && !lib.android}
         />
         <ExploreSection
-          title="Expo"
+          title="Expo Go"
           icon={PlatformExpo}
           data={data}
           filter={lib => lib.expo === true}
