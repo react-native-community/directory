@@ -21,7 +21,7 @@ import urlWithQuery from '../util/urlWithQuery';
 const Explore = ({ data }) => {
   return (
     <>
-      <ExploreNav title="Explore" description="Browse recently popular libraries by platform" />
+      <ExploreNav title="Explore" description="Browse recently popular libraries by platform." />
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
