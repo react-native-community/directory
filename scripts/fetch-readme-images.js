@@ -41,7 +41,7 @@ const scrapeImagesAsync = async githubUrl => {
   }
 };
 
-const fetchReadmeImages = async (data, githubUrl, attemptsCount = 0) => {
+const fetchReadmeImages = async (data, attemptsCount = 0) => {
   /**
    * @DEV
    * if images been set, or max attempt count has been reached, we skip scraping images
@@ -49,6 +49,8 @@ const fetchReadmeImages = async (data, githubUrl, attemptsCount = 0) => {
   if (data.images || attemptsCount > 5) {
     return data;
   }
+
+  const { githubUrl } = data;
 
   try {
     let images = await scrapeImagesAsync(githubUrl);
@@ -60,7 +62,7 @@ const fetchReadmeImages = async (data, githubUrl, attemptsCount = 0) => {
   } catch (e) {
     console.log(`[GH] Retrying image scrape for ${githubUrl} (${attemptsCount + 1})`);
     await sleep(2000);
-    return await fetchReadmeImages(data, githubUrl, attemptsCount + 1);
+    return await fetchReadmeImages(data, attemptsCount + 1);
   }
 };
 
