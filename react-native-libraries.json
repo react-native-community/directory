@@ -5188,6 +5188,10 @@
     "githubUrl": "https://github.com/react-native-mapbox-gl/maps",
     "npmPkg": "@react-native-mapbox-gl/maps",
     "examples": ["https://github.com/react-native-mapbox-gl/maps/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/react-native-mapbox-gl/maps/master/assets/indoor_building_map_android.png",
+      "https://raw.githubusercontent.com/react-native-mapbox-gl/maps/master/assets/indoor_building_map_ios.png"
+    ],
     "ios": true,
     "android": true
   },
@@ -5253,8 +5257,8 @@
     "images": [
       "https://github.com/mrousavy/react-native-blurhash/raw/master/img/explanation.png",
       "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo.gif",
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo.ios.png",
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo.android.png"
+      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo_ios.png",
+      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo_android.png"
     ],
     "ios": true,
     "android": true
@@ -5262,7 +5266,7 @@
   {
     "githubUrl": "https://github.com/LonelyCpp/react-native-youtube-iframe",
     "images": [
-      "https://raw.githubusercontent.com/LonelyCpp/react-native-youtube-iframe/master/doc/demo.gif"
+      "https://raw.githubusercontent.com/LonelyCpp/react-native-youtube-iframe/master/website/static/img/demo.gif"
     ],
     "ios": true,
     "android": true,
@@ -6093,10 +6097,6 @@
   },
   {
     "githubUrl": "https://github.com/YanYuanFE/react-native-signature-canvas",
-    "images": [
-      "http://img.yanyuanfe.cn/signature-android.png",
-      "http://img.yanyuanfe.cn/signature-ios.png"
-    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -6159,8 +6159,8 @@
      "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
      "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
      "images": [
-       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/example.png",
-       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/img/ultra-wide-demo.gif"
+       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/docs/static/img/example.png",
+       "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/docs/static/img/demo.gif"
      ],
      "ios": true,
      "android": true
