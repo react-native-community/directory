@@ -9,13 +9,14 @@ const urlForPackage = (npmPkg, period = 'month') => {
 export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCount = 0) => {
   try {
     const url = urlForPackage(namesArray.join(','), period);
-    let response = await fetch(url);
-    let downloadData = await response.json();
+    const isMonthly = period === 'month';
+    const response = await fetch(url);
+    const downloadData = await response.json();
 
     return namesArray.map(name => {
       const pkgData = downloadData[name];
 
-      if (!pkgData.downloads) {
+      if (isMonthly && !pkgData.downloads) {
         console.warn(
           `[NPM] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
         );
@@ -24,17 +25,16 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
 
       return {
         name,
-        npm:
-          period === 'month'
-            ? {
-                downloads: pkgData.downloads,
-                start: pkgData.start,
-                end: pkgData.end,
-                period,
-              }
-            : {
-                weekDownloads: pkgData.downloads,
-              },
+        npm: isMonthly
+          ? {
+              downloads: pkgData.downloads,
+              start: pkgData.start,
+              end: pkgData.end,
+              period,
+            }
+          : {
+              weekDownloads: pkgData.downloads || 0,
+            },
       };
     });
   } catch (e) {
