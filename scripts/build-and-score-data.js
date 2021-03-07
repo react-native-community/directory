@@ -8,7 +8,7 @@ import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
 import { calculateScore, calculatePopularity } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import fetchNpmData from './fetch-npm-data';
+import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -20,6 +20,9 @@ const USE_DEBUG_REPOS = false;
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
+// If script should try to scrape images from GitHub repositories.
+const SCRAPE_GH_IMAGES = true;
+
 const JSON_OPTIONS = {
   spaces: 2,
 };
@@ -28,6 +31,14 @@ export const sleep = (ms = 0, msMax = null) => {
   return new Promise(r =>
     setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
   );
+};
+
+const fillNpmName = project => {
+  if (!project.npmPkg) {
+    const parts = project.githubUrl.split('/');
+    project.npmPkg = parts[parts.length - 1].toLowerCase();
+  }
+  return project;
 };
 
 let invalidRepos = [];
@@ -44,13 +55,45 @@ const buildAndScoreData = async () => {
     return !Strings.isEmptyOrNull(project.github.name);
   });
 
-  console.log('\n** Scraping images from README');
+  if (SCRAPE_GH_IMAGES) {
+    console.log('\n** Scraping images from README');
+    await sleep(1000);
+    data = await Promise.all(data.map(project => fetchReadmeImages(project)));
+  }
+
+  console.log('\n** Determining npm package name');
   await sleep(1000);
-  data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
+  data = data.map(fillNpmName);
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
-  data = await Promise.all(data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl)));
+
+  // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
+  let bulkList = [];
+
+  // Fetch scope packages data
+  data = await Promise.all(
+    data.map(project => {
+      if (project.npmPkg.startsWith('@')) {
+        return fetchNpmData(project, project.npmPkg);
+      } else {
+        bulkList.push(project.npmPkg);
+        return project;
+      }
+    })
+  );
+
+  // Assemble and fetch data in bulk queries
+  const CHUNK_SIZE = 64;
+  bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
+    bulkList.splice(0, CHUNK_SIZE)
+  );
+  bulkList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(data, chunk)))).flat();
+
+  // Fill npm data from bulk queries
+  data = data.map(project =>
+    project.npm ? project : { ...project, npm: bulkList.find(d => d.name === project.npmPkg).npm }
+  );
 
   console.log('\n** Calculating scores');
   data = data.map(project => {

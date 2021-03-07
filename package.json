@@ -11,12 +11,13 @@
     "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env && yarn libraries:format",
     "libraries:recalculate": "babel-node scripts/recalculate-popularity.js --presets @babel/preset-env",
     "libraries:format": "prettier --write react-native-libraries.json",
+    "libraries:images": "babel-node scripts/check-images.js --presets @babel/preset-env",
     "lock:cleanup": "npx yarn-deduplicate",
     "postinstall": "yarn lock:cleanup"
   },
   "dependencies": {
     "@expo/html-elements": "^0.0.1",
-    "@expo/match-media": "^0.0.0-beta.2",
+    "@expo/match-media": "^0.1.0",
     "@popperjs/core": "^2.8.4",
     "@react-native-async-storage/async-storage": "^1.14.1",
     "@react-native-picker/picker": "^1.9.11",
@@ -45,7 +46,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/node": "^7.13.0",
-    "@babel/preset-env": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
     "@expo/next-adapter": "^2.1.61",
     "@types/micro-cors": "^0.1.1",
     "@types/react": "^16.14.2",
@@ -55,7 +56,7 @@
     "babel-preset-expo": "^8.3.0",
     "cheerio": "^1.0.0-rc.5",
     "dotenv": "^8.2.0",
-    "eslint": "^7.20.0",
+    "eslint": "^7.21.0",
     "eslint-config-universe": "^7.0.1",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
