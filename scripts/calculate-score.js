@@ -10,12 +10,12 @@ const modifiers = [
   {
     name: 'Very popular',
     value: 40,
-    condition: data => popularityScore(data) > 10000,
+    condition: data => getCombinedPopularity(data) > 10000,
   },
   {
     name: 'Popular',
     value: 10,
-    condition: data => popularityScore(data) > 2500,
+    condition: data => getCombinedPopularity(data) > 2500,
   },
   {
     name: 'Recommended',
@@ -83,7 +83,7 @@ export const calculateScore = data => {
   };
 };
 
-const popularityScore = data => {
+const getCombinedPopularity = data => {
   let { subscribers, forks, stars } = data.github.stats;
   let { downloads } = data.npm;
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
@@ -95,4 +95,31 @@ const getUpdatedDaysAgo = data => {
   const currentDate = new Date().getTime();
 
   return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
+};
+
+const MIN_MONTHLY_DOWNLOADS = 250;
+
+export const calculatePopularity = data => {
+  const { npm, unmaintained } = data;
+  const { downloads, weekDownloads } = npm;
+
+  if (!downloads || !weekDownloads) {
+    return {
+      ...data,
+      popularity: -1,
+    };
+  }
+
+  const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.25 : 0;
+
+  const popularity = parseFloat(
+    (popularityGain - downloadsPenalty - unmaintainedPenalty).toFixed(3)
+  );
+
+  return {
+    ...data,
+    popularity,
+  };
 };

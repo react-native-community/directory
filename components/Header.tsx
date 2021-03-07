@@ -2,12 +2,12 @@ import { A, Header as HtmlHeader } from '@expo/html-elements';
 import React, { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { layout, colors, H5, P, darkColors, useLayout } from '../common/styleguide';
+import { layout, colors, H5, H6, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
-export default function Header() {
+const Header = () => {
   const { isDark, setIsDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -33,16 +33,24 @@ export default function Header() {
           },
         ]}>
         <View style={styles.headerContents}>
-          <A href="/">
-            <View style={styles.displayHorizontal}>
-              <Logo fill={colors.primary} width={29} height={26} />
-              <H5 style={isSmallScreen && styles.smallTitle}>
-                <Text style={styles.headerContentsTitle}>
-                  {isSmallScreen ? 'Directory' : 'React Native Directory'}
-                </Text>
-              </H5>
-            </View>
-          </A>
+          <View style={styles.displayHorizontal}>
+            <Logo fill={colors.primary} width={29} height={26} />
+            <H5 style={isSmallScreen && styles.smallTitle}>
+              <A href="/" style={styles.headerContentsTitle}>
+                {isSmallScreen ? 'Directory' : 'React Native Directory'}
+              </A>
+            </H5>
+            <H6 style={isSmallScreen && styles.smallTitle}>
+              <A
+                href="/explore"
+                style={[
+                  styles.headerSubpageTitle,
+                  isSmallScreen && styles.headerSubpageTitleSmall,
+                ]}>
+                Explore
+              </A>
+            </H6>
+          </View>
           <View style={styles.displayHorizontal}>
             <Button
               onPress={() => setIsDark(!isDark)}
@@ -60,9 +68,9 @@ export default function Header() {
       </View>
     </HtmlHeader>
   );
-}
+};
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     height: 60,
     justifyContent: 'center',
@@ -127,3 +135,5 @@ let styles = StyleSheet.create({
     paddingHorizontal: 14,
   },
 });
+
+export default Header;

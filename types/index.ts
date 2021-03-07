@@ -3,6 +3,7 @@ export type QueryOrder =
   | 'added'
   | 'recommended'
   | 'quality'
+  | 'popularity'
   | 'issues'
   | 'downloads'
   | 'stars';
@@ -26,6 +27,7 @@ export type Query = {
   isPopular?: string;
   isRecommended?: string;
   wasRecentlyUpdated?: string;
+  minPopularity?: string | number;
 };
 
 export type Library = {
@@ -82,6 +84,7 @@ export type Library = {
   };
   npm: {
     downloads: number;
+    weekDownloads: number;
     start: string;
     end: string;
     period: string;

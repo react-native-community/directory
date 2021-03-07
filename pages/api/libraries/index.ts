@@ -15,6 +15,7 @@ const SortedData = {
   recommended: Sorting.recommended([...originalData]),
   compatibility: Sorting.compatibility([...originalData]),
   quality: Sorting.quality([...originalData]),
+  popularity: Sorting.popularity([...originalData]),
   downloads: Sorting.downloads([...originalData]),
   issues: Sorting.issues([...originalData]),
   stars: Sorting.stars([...originalData]),
@@ -67,6 +68,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     isPopular: req.query.isPopular,
     isRecommended: req.query.isRecommended,
     wasRecentlyUpdated: req.query.wasRecentlyUpdated,
+    minPopularity: req.query.minPopularity,
   });
 
   let offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
