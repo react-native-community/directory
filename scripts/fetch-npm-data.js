@@ -6,38 +6,42 @@ const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
 };
 
-export const fetchNpmDataBulk = async (data, npmPkgs, attemptsCount = 0) => {
+export const fetchNpmDataBulk = async (data, namesArray, attemptsCount = 0) => {
   try {
-    const url = urlForPackage(npmPkgs.join(','));
+    const url = urlForPackage(namesArray.join(','));
     let response = await fetch(url);
     let downloadData = await response.json();
 
-    return npmPkgs.map(pkg => {
-      if (!downloadData[pkg].downloads) {
+    return namesArray.map(name => {
+      const pkgData = downloadData[name];
+
+      if (!pkgData.downloads) {
         console.warn(
-          `[NPM] ${pkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+          `[NPM] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
         );
         return { npm: null };
       }
 
       return {
-        pkgName: pkg,
+        name,
         npm: {
-          downloads: downloadData[pkg].downloads,
-          start: downloadData[pkg].start,
-          end: downloadData[pkg].end,
+          downloads: pkgData.downloads,
+          start: pkgData.start,
+          end: pkgData.end,
           period: 'month',
         },
       };
     });
   } catch (e) {
     await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
-    console.log(`[NPM] Retrying fetch for ${npmPkgs} (${attemptsCount + 1})`);
-    return await fetchNpmDataBulk(data, npmPkgs, attemptsCount + 1);
+    console.log(`[NPM] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
+    return await fetchNpmDataBulk(data, namesArray, attemptsCount + 1);
   }
 };
 
-export const fetchNpmData = async (data, npmPkg, attemptsCount = 0) => {
+export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
+  const { npmPkg } = pkgData;
+
   try {
     const url = urlForPackage(npmPkg);
     let response = await fetch(url);
@@ -47,11 +51,11 @@ export const fetchNpmData = async (data, npmPkg, attemptsCount = 0) => {
       console.warn(
         `[NPM] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
-      return { ...data, npm: null };
+      return { ...pkgData, npm: null };
     }
 
     return {
-      ...data,
+      ...pkgData,
       npm: {
         downloads: downloadData.downloads,
         start: downloadData.start,
@@ -62,6 +66,6 @@ export const fetchNpmData = async (data, npmPkg, attemptsCount = 0) => {
   } catch (e) {
     await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
-    return await fetchNpmData(data, npmPkg, attemptsCount + 1);
+    return await fetchNpmData(pkgData, attemptsCount + 1);
   }
 };
