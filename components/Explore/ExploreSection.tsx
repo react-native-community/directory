@@ -60,7 +60,7 @@ const ExploreSection = ({
     <>
       <H3 style={styles.subHeader} nativeID={hashLink}>
         <View style={styles.subHeaderIcon}>
-          {React.createElement(icon, { fill: color, width: 28, height: 30 })}
+          {React.createElement(icon, { fill: color, width: 30, height: 30 })}
         </View>
         <A
           href={`#${hashLink}`}
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   },
   subHeaderTitle: {
     marginTop: 16,
+    fontSize: 26,
     fontWeight: '700',
     textDecorationLine: 'none',
     backgroundColor: 'transparent',
