@@ -6246,5 +6246,18 @@
      ],
      "android": true,
      "ios": true
+  },
+  {
+     "githubUrl": "https://github.com/DieTime/react-native-date-picker",
+     "npmPkg": "@dietime/react-native-date-picker",
+     "examples": [
+       "https://github.com/DieTime/react-native-date-picker/tree/master/example"
+     ],
+     "images": [
+       "https://s8.gifyu.com/images/f6ac35ccb947417533029e8a6396095928822e57.gif"
+     ],
+     "android": true,
+     "ios": true,
+     "expo": true
   }
 ]
