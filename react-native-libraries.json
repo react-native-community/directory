@@ -6259,5 +6259,16 @@
      "android": true,
      "ios": true,
      "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/zyslife/react-native-head-tab-view",
+    "examples": [
+      "https://github.com/zyslife/react-native-head-tab-view/tree/master/Example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/zyslife/react-native-head-tab-view/master/demoGIF/demo_ios.gif"
+    ],
+    "android": true,
+    "ios": true
+ }
 ]
