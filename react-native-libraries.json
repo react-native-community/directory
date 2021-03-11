@@ -6261,6 +6261,16 @@
      "expo": true
   },
   {
+    "githubUrl": "https://github.com/Flair-Dev/react-native-awesome-gallery",
+    "examples": ["https://github.com/Flair-Dev/react-native-awesome-gallery/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true 
+  },
+  {    
     "githubUrl": "https://github.com/zyslife/react-native-head-tab-view",
     "examples": [
       "https://github.com/zyslife/react-native-head-tab-view/tree/master/Example"
