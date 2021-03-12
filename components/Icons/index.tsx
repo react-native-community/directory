@@ -315,11 +315,11 @@ export function PlatformMacOS(props: Props) {
 export function PlatformIOS(props: Props) {
   const { width = 18, height = 18, fill = colors.black } = props;
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
-      <Path d="M7 5h10v14H7z" opacity=".3" fill={fill} />
+    <Svg width={width} height={height} viewBox="0 0 18 18" fill="none">
+      <Path d="M5 2.5h8v13H5v-13z" opacity=".3" fill={fill} />
       <Path
         fill={fill}
-        d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+        d="M12.9 0H5.1c-1 0-1.6.7-1.6 1.6v14.8c0 .9.7 1.6 1.6 1.6H13c.8 0 1.6-.7 1.6-1.6V1.6C14.5.7 13.8 0 12.9 0zm.1 15.5H5v-13h8v13z"
       />
     </Svg>
   );
