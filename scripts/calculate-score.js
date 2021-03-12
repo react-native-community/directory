@@ -98,10 +98,12 @@ const getUpdatedDaysAgo = data => {
 };
 
 const MIN_MONTHLY_DOWNLOADS = 250;
+const MIN_GITHUB_STARS = 25;
 
 export const calculatePopularity = data => {
-  const { npm, unmaintained } = data;
+  const { npm, github, unmaintained } = data;
   const { downloads, weekDownloads } = npm;
+  const { stars } = github.stats;
 
   if (!downloads || !weekDownloads) {
     return {
@@ -112,10 +114,11 @@ export const calculatePopularity = data => {
 
   const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
   const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
   const unmaintainedPenalty = unmaintained ? 0.25 : 0;
 
   const popularity = parseFloat(
-    (popularityGain - downloadsPenalty - unmaintainedPenalty).toFixed(3)
+    (popularityGain - downloadsPenalty - unmaintainedPenalty - starsPenalty).toFixed(3)
   );
 
   return {
