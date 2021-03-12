@@ -6280,5 +6280,21 @@
     ],
     "android": true,
     "ios": true
- }
+ },
+ {    
+    "githubUrl": "https://github.com/Rapsssito/react-native-tcp-socket",
+    "examples": [
+      "https://github.com/Rapsssito/react-native-tcp-socket/tree/master/examples/tcpsockets"
+    ],
+    "android": true,
+    "ios": true
+ },
+ {    
+    "githubUrl": "https://github.com/Rapsssito/react-native-background-actions",
+    "examples": [
+      "https://github.com/Rapsssito/react-native-background-actions/tree/master/examples/backgroundExample"
+    ],
+    "android": true,
+    "ios": true
+ },
 ]
