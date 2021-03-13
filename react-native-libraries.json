@@ -6165,7 +6165,8 @@
       "https://github.com/Rapsssito/react-native-tcp-socket/tree/master/examples/tcpsockets"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "macos": true
   },
   {
     "githubUrl": "https://github.com/deanhet/react-native-text-ticker",
