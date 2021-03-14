@@ -4,7 +4,6 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import ContentContainer from '../components/ContentContainer';
-import ExploreNav from '../components/Explore/ExploreNav';
 import ExploreSection from '../components/Explore/ExploreSection';
 import {
   PlatformAndroid,
@@ -15,13 +14,17 @@ import {
   PlatformExpo,
   ReactLogo,
 } from '../components/Icons';
+import Navigation from '../components/Navigation';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
-const Explore = ({ data }) => {
+const Popular = ({ data }) => {
   return (
     <>
-      <ExploreNav title="Explore" description="Browse recently popular libraries by platform." />
+      <Navigation
+        title="Popular libraries"
+        description="Browse most popular recently libraries by platform."
+      />
       <ContentContainer style={styles.container}>
         <ExploreSection
           title="Core platforms"
@@ -72,7 +75,7 @@ const Explore = ({ data }) => {
   );
 };
 
-Explore.getInitialProps = async (ctx: NextPageContext) => {
+Popular.getInitialProps = async (ctx: NextPageContext) => {
   let url = getApiUrl(
     urlWithQuery('/libraries', { limit: 9999, minPopularity: 0, order: 'popularity' }),
     ctx
@@ -93,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Explore;
+export default Popular;

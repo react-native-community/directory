@@ -6,6 +6,7 @@ import { StyleSheet } from 'react-native';
 
 import ContentContainer from '../components/ContentContainer';
 import Libraries from '../components/Libraries';
+import Navigation from '../components/Navigation';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import getApiUrl from '../util/getApiUrl';
@@ -16,6 +17,7 @@ const Index = ({ data, query }) => {
   const total = data && data.total;
   return (
     <>
+      <Navigation noHeader />
       <Search query={router.query} total={total} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />
