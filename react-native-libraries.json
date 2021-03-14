@@ -6256,5 +6256,19 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/dev-yakuza/react-native-image-modal",
+    "examples": [
+      "https://github.com/dev-yakuza/react-native-image-modal/tree/develop/Example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/dev-yakuza/react-native-image-modal/develop/demo/open-and-close-image-modal.gif",
+      "https://raw.githubusercontent.com/dev-yakuza/react-native-image-modal/develop/demo/pinch-zoom-and-move.gif",
+      "https://raw.githubusercontent.com/dev-yakuza/react-native-image-modal/develop/demo/double-tap-zoom.gif",
+      "https://raw.githubusercontent.com/dev-yakuza/react-native-image-modal/develop/demo/custom-button.png"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
