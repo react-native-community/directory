@@ -2,7 +2,7 @@ name: Test deploy
 
 on:
   pull_request:
-    types: [ labeled ]
+    types: [ edited, labeled, synchronize ]
 
 jobs:
   build:
