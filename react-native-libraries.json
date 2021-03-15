@@ -6275,5 +6275,14 @@
     "examples": ["https://github.com/rawewhat/stora/tree/master/demo"],
     "android": true,
     "ios": true
-  }
+  },
+   {
+    "githubUrl": "https://github.com/shijingsh/react-native-customized-image-picker",
+     "images": [
+      "https://raw.githubusercontent.com/samad324/react-native-customized-image-picker/master/images/pic.png",
+      "https://github.com/samad324/react-native-customized-image-picker/raw/master/images/pic3.png"
+    ],    
+    "android": true,
+    "ios": true
+  } 
 ]
