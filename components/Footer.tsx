@@ -107,12 +107,11 @@ const Footer = () => {
           />
         </View>
         <View
-          style={
-            isSmallScreen
-              ? { flexDirection: 'column', paddingHorizontal: 20 }
-              : { flexDirection: 'row', paddingHorizontal: 20 }
-          }>
-          <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+          style={[
+            { paddingHorizontal: 20 },
+            isSmallScreen ? { flexDirection: 'column' } : { flexDirection: 'row' },
+          ]}>
+          <View style={styles.footerTextContainer}>
             <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
@@ -126,7 +125,7 @@ const Footer = () => {
               and <A href="https://expo.io">Expo</A>.
             </P>
           </View>
-          <View style={[styles.bannerContainer, isSmallScreen ? { marginVertical: 12 } : {}]}>
+          <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>
             <P style={styles.bannerText}>
               Black Lives Matter.{' '}
               <A
@@ -139,7 +138,7 @@ const Footer = () => {
             </P>
           </View>
         </View>
-        <View style={{ flex: 1, alignItems: 'center', paddingTop: 16, paddingBottom: 4 }}>
+        <View style={styles.logoContainer}>
           <Logo fill={isDark ? darkColors.powder : colors.gray3} width={42} height={38} />
         </View>
       </ContentContainer>
@@ -154,8 +153,13 @@ const styles = StyleSheet.create({
     paddingBottom: 28,
     marginTop: 12,
   },
+  footerTextContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
   footerText: {
-    paddingVertical: 8,
+    paddingVertical: 7,
     fontSize: 13,
   },
   platformsWrapper: {
@@ -183,12 +187,18 @@ const styles = StyleSheet.create({
   },
   bannerContainer: {
     backgroundColor: darkColors.veryDark,
-    height: 50,
+    maxHeight: 52,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 16,
+    paddingVertical: 14,
+    paddingHorizontal: 20,
     marginTop: 8,
     borderRadius: 4,
+  },
+  bannerContainerSmall: {
+    marginTop: 24,
+    paddingVertical: 12,
+    maxHeight: 64,
   },
   bannerText: {
     color: 'white',
@@ -201,6 +211,12 @@ const styles = StyleSheet.create({
     backgroundColor: darkColors.veryDark,
     textDecorationLine: 'underline',
     whiteSpace: 'nowrap',
+  },
+  logoContainer: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 48,
+    paddingBottom: 32,
   },
 });
 
