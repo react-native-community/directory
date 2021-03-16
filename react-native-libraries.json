@@ -6302,5 +6302,14 @@
   {
     "githubUrl": "https://github.com/nandorojo/expo-next-react-navigation",
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-vietnam/react-native-search-box",
+    "images": [
+      "https://media.giphy.com/media/3oKIPja49woFsDBuPC/giphy.gif",
+      "https://media.giphy.com/media/3oKIPvb7oymPsobWI8/giphy.gif"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
