@@ -6311,5 +6311,12 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/klarna-incubator/platform-colors",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "dev": true
   }
 ]
