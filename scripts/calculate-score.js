@@ -89,19 +89,25 @@ const getCombinedPopularity = data => {
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
 };
 
+const DAY_IN_MS = 864e5;
+
 const getUpdatedDaysAgo = data => {
   const { updatedAt } = data.github.stats;
   const updateDate = new Date(updatedAt).getTime();
   const currentDate = new Date().getTime();
 
-  return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
+  return (currentDate - updateDate) / DAY_IN_MS;
 };
 
 const MIN_MONTHLY_DOWNLOADS = 250;
+const MIN_GITHUB_STARS = 25;
+const DATE_NOW = Date.now();
+const WEEK_IN_MS = 6048e5;
 
 export const calculatePopularity = data => {
-  const { npm, unmaintained } = data;
+  const { npm, github, unmaintained } = data;
   const { downloads, weekDownloads } = npm;
+  const { createdAt, stars } = github.stats;
 
   if (!downloads || !weekDownloads) {
     return {
@@ -112,10 +118,12 @@ export const calculatePopularity = data => {
 
   const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
   const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
   const unmaintainedPenalty = unmaintained ? 0.25 : 0;
+  const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.3 : 0;
 
   const popularity = parseFloat(
-    (popularityGain - downloadsPenalty - unmaintainedPenalty).toFixed(3)
+    (popularityGain - downloadsPenalty - unmaintainedPenalty - starsPenalty - freshPackagePenalty).toFixed(3)
   );
 
   return {

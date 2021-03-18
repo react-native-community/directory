@@ -1,3 +1,4 @@
+import { Header as HtmlHeader } from '@expo/html-elements/build/elements/Layout';
 import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
@@ -5,6 +6,7 @@ import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import {
+  Logo,
   PlatformAndroid,
   PlatformIOS,
   PlatformMacOS,
@@ -55,6 +57,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
 
 const Footer = () => {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
   return (
     <View
       style={[
@@ -103,21 +106,40 @@ const Footer = () => {
             url="https://github.com/microsoft/react-native-windows#readme"
           />
         </View>
-        <View>
-          <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-            Missing a library?{' '}
-            <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
-              Add it to the directory
-            </A>
-            .
-          </P>
-          <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-            Want to learn more about React Native? Check out the{' '}
-            <A href="https://facebook.github.io/react-native/docs/getting-started.html">
-              official React Native docs
-            </A>
-            , and <A href="https://expo.io">Expo</A>.
-          </P>
+        <View
+          style={[
+            { paddingHorizontal: 20 },
+            isSmallScreen ? { flexDirection: 'column' } : { flexDirection: 'row' },
+          ]}>
+          <View style={styles.footerTextContainer}>
+            <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+              Missing a library?{' '}
+              <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
+                Add it to the directory
+              </A>
+              .
+            </P>
+            <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+              Want to learn more about React Native? Check out the{' '}
+              <A href="https://reactnative.dev/docs/getting-started">official React Native docs</A>,
+              and <A href="https://expo.io">Expo</A>.
+            </P>
+          </View>
+          <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>
+            <P style={styles.bannerText}>
+              Black Lives Matter.{' '}
+              <A
+                target="_blank"
+                href="https://support.eji.org/give/153413/#!/donation/checkout"
+                style={styles.bannerLink}>
+                Support the Equal Justice Initiative
+              </A>
+              .
+            </P>
+          </View>
+        </View>
+        <View style={styles.logoContainer}>
+          <Logo fill={isDark ? darkColors.powder : colors.gray3} width={42} height={38} />
         </View>
       </ContentContainer>
     </View>
@@ -131,10 +153,13 @@ const styles = StyleSheet.create({
     paddingBottom: 28,
     marginTop: 12,
   },
+  footerTextContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
   footerText: {
-    textAlign: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 20,
+    paddingVertical: 7,
     fontSize: 13,
   },
   platformsWrapper: {
@@ -159,6 +184,39 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     lineHeight: 22,
     marginTop: 8,
+  },
+  bannerContainer: {
+    backgroundColor: darkColors.veryDark,
+    maxHeight: 52,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 14,
+    paddingHorizontal: 20,
+    marginTop: 8,
+    borderRadius: 4,
+  },
+  bannerContainerSmall: {
+    marginTop: 24,
+    paddingVertical: 12,
+    maxHeight: 64,
+  },
+  bannerText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 15,
+  },
+  bannerLink: {
+    color: colors.primary,
+    backgroundColor: darkColors.veryDark,
+    textDecorationLine: 'underline',
+    whiteSpace: 'nowrap',
+  },
+  logoContainer: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 48,
+    paddingBottom: 32,
   },
 });
 

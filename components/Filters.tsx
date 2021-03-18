@@ -112,6 +112,7 @@ export const FilterButton = (props: FilterButtonProps) => {
 
 export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
+  const isMainSearch = basePath === '/';
   return (
     <View
       style={[
@@ -159,14 +160,16 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             title="Has TypeScript types"
             basePath={basePath}
           />
-          <ToggleLink
-            key="isMaintained"
-            query={query}
-            paramName="isMaintained"
-            title="Maintained"
-            basePath={basePath}
-          />
-          {basePath === '/' ? (
+          {isMainSearch ? (
+            <ToggleLink
+              key="isMaintained"
+              query={query}
+              paramName="isMaintained"
+              title="Maintained"
+              basePath={basePath}
+            />
+          ) : null}
+          {isMainSearch ? (
             <ToggleLink
               key="isPopular"
               query={query}
@@ -182,7 +185,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             title="Recently updated"
             basePath={basePath}
           />
-          {basePath === '/' ? (
+          {isMainSearch ? (
             <ToggleLink
               key="isRecommended"
               query={query}

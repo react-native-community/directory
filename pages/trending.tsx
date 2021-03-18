@@ -4,9 +4,9 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import { A, H4, colors, darkColors, P } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
-import ExploreNav from '../components/Explore/ExploreNav';
 import { Filters } from '../components/Filters';
 import Library from '../components/Library';
+import Navigation from '../components/Navigation';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../types';
 import getApiUrl from '../util/getApiUrl';
@@ -16,7 +16,7 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <>
-      <ExploreNav
+      <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today."
       />
@@ -49,7 +49,7 @@ Trending.getInitialProps = async (ctx: NextPageContext) => {
   let url = getApiUrl(
     urlWithQuery('/libraries', {
       ...ctx.query,
-      ...{ limit: 9999, minPopularity: 2.5, order: 'popularity' },
+      ...{ limit: 9999, minPopularity: 5, order: 'popularity' },
     }),
     ctx
   );
