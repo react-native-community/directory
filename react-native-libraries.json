@@ -1506,7 +1506,8 @@
   {
     "githubUrl": "https://github.com/gre/react-native-view-shot",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-safari-view",
