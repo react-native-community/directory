@@ -6334,5 +6334,15 @@
     "ios": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/reactrondev/react-native-web-swiper",
+    "examples": [
+      "https://snack.expo.io/@oxyii/react-native-web-swiper"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expo": true
   }
 ]
