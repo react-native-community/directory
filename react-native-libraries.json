@@ -6318,5 +6318,15 @@
     "ios": true,
     "web": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/eveningkid/react-native-popable",
+    "images": [
+      "https://raw.githubusercontent.com/eveningkid/react-native-popable/main/assets/popable.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expo": true
   }
 ]
