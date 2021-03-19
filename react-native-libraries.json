@@ -5840,5 +5840,11 @@
     "npmPkg": "@flyskywhy/react-native-gcanvas",
     "ios": true,
     "android": true
+  },
+    {
+    "githubUrl": "https://github.com/christopherdro/react-native-print",
+    "npmPkg": "react-native-print",
+    "ios": true,
+    "android": true
   }
 ]
