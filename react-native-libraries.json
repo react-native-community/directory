@@ -252,7 +252,8 @@
   {
     "githubUrl": "https://github.com/facebook/react-native-fbsdk",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/vonovak/react-native-simple-toast",
