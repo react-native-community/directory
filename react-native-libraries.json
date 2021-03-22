@@ -6331,5 +6331,43 @@
     "ios": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/eveningkid/react-native-popable",
+    "examples": [
+      "https://github.com/eveningkid/react-native-popable/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/eveningkid/react-native-popable/main/assets/popable.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/swushi/react-native-input-outline",
+    "examples": [
+      "https://github.com/swushi/react-native-input-outline/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/swushi/react-native-input-outline/main/mockup.png"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/ihor/react-native-scalable-image",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/homeeondemand/react-native-mapbox-navigation",
+    "npmPkg": "@homee/react-native-mapbox-navigation",
+    "images": [
+      "https://raw.githubusercontent.com/homeeondemand/react-native-mapbox-navigation/master/img/ios-nav.png"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
