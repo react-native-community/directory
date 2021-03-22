@@ -42,6 +42,7 @@ export type Library = {
   tvos?: boolean;
   unmaintained?: boolean;
   dev?: boolean;
+  template?: boolean;
   github: {
     urls: {
       repo: string;

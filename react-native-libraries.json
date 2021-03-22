@@ -3854,7 +3854,8 @@
   {
     "githubUrl": "https://github.com/react-native-community/react-native-template-typescript",
     "ios": true,
-    "android": true
+    "android": true,
+    "template": true
   },
   {
     "githubUrl": "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit",
@@ -6184,7 +6185,8 @@
     "githubUrl": "https://github.com/gabrielmoncea/react-native-template",
     "npmPkg": "@gabrielmoncea/react-native-template",
     "ios": true,
-    "android": true
+    "android": true,
+    "template": true
   },
   {
     "githubUrl": "https://github.com/smallcasetech/react-native-simple-biometrics",

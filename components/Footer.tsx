@@ -1,4 +1,3 @@
-import { Header as HtmlHeader } from '@expo/html-elements/build/elements/Layout';
 import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 

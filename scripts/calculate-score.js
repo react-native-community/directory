@@ -61,7 +61,7 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
 }, 0);
 
 export const calculateScore = data => {
-  // Filter the modifiers to the ones which condictions pass with the data
+  // Filter the modifiers to the ones which conditions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
   // Reduce the matching modifiers to find the raw score for the data
@@ -123,7 +123,13 @@ export const calculatePopularity = data => {
   const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.3 : 0;
 
   const popularity = parseFloat(
-    (popularityGain - downloadsPenalty - unmaintainedPenalty - starsPenalty - freshPackagePenalty).toFixed(3)
+    (
+      popularityGain -
+      downloadsPenalty -
+      unmaintainedPenalty -
+      starsPenalty -
+      freshPackagePenalty
+    ).toFixed(3)
   );
 
   return {
