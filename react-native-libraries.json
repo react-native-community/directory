@@ -236,6 +236,10 @@
   },
   {
     "githubUrl": "https://github.com/Purii/react-native-tableview-simple",
+    "examples": [
+      "https://snack.expo.io/@purii/react-native-tableview-simple",
+      "https://github.com/Purii/react-native-tableview-simple/tree/master/example"
+    ],
     "images": [
       "https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotStandard.png",
       "https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotDark.png"
@@ -2540,6 +2544,7 @@
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-blur",
     "ios": true,
+    "android": true,
     "web": true,
     "expo": true
   },
@@ -2821,6 +2826,7 @@
   {
     "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-store-review",
     "ios": true,
+    "android": true,
     "expo": true
   },
   {
@@ -6369,5 +6375,19 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-app-loading",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-screen-capture",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
   }
 ]
