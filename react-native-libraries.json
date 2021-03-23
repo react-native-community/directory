@@ -5818,10 +5818,12 @@
     "githubUrl": "https://github.com/react-native-menu/menu",
     "examples": ["https://github.com/react-native-menu/menu/tree/master/examples"],
     "images": [
+      "https://user-images.githubusercontent.com/6936373/112132781-52b5a980-8c0e-11eb-9604-2de6f9eb4483.png",
       "https://user-images.githubusercontent.com/6936373/98471164-cf328780-222d-11eb-9cbc-7dcda474fc8a.png",
       "https://user-images.githubusercontent.com/6936373/98471162-cb9f0080-222d-11eb-89ef-9342a1f10893.png"
     ],
     "ios": true,
+    "android":true,
     "npmPkg": "@react-native-menu/menu"
   },
   {
