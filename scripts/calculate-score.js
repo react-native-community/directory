@@ -123,7 +123,13 @@ export const calculatePopularity = data => {
   const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.3 : 0;
 
   const popularity = parseFloat(
-    (popularityGain - downloadsPenalty - unmaintainedPenalty - starsPenalty - freshPackagePenalty).toFixed(3)
+    (
+      popularityGain -
+      downloadsPenalty -
+      unmaintainedPenalty -
+      starsPenalty -
+      freshPackagePenalty
+    ).toFixed(3)
   );
 
   return {
