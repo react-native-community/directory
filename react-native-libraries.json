@@ -6383,5 +6383,12 @@
     "android": true,
     "expo": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Agaweb/react-native-stripe",
+    "npmPkg": "@agaweb/react-native-stripe",
+    "examples": ["https://github.com/Agaweb/react-native-stripe/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
