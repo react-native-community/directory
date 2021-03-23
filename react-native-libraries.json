@@ -4,7 +4,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
@@ -2186,6 +2187,11 @@
   },
   {
     "githubUrl": "https://github.com/jfilter/react-native-onboarding-swiper",
+    "images": [
+      "https://raw.githubusercontent.com/jfilter/react-native-onboarding-swiper/master/demo/simple1.png",
+      "https://raw.githubusercontent.com/jfilter/react-native-onboarding-swiper/master/demo/simple2.png",
+      "https://raw.githubusercontent.com/jfilter/react-native-onboarding-swiper/master/demo/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -2345,6 +2351,9 @@
   },
   {
     "githubUrl": "https://github.com/cooperka/react-native-snackbar",
+    "images": [
+      "https://raw.githubusercontent.com/cooperka/react-native-snackbar/main/example/screenshots/snackbar.png"
+    ],
     "ios": true,
     "android": true
   },
@@ -2408,12 +2417,23 @@
   },
   {
     "githubUrl": "https://github.com/react-native-kit/react-native-track-player",
+    "images": [
+      "https://raw.githubusercontent.com/react-native-kit/react-native-track-player/dev/example/screenshots/ios-app.png",
+      "https://raw.githubusercontent.com/react-native-kit/react-native-track-player/dev/example/screenshots/ios-lockscreen.png",
+      "https://raw.githubusercontent.com/react-native-kit/react-native-track-player/dev/example/screenshots/android-app.png",
+      "https://raw.githubusercontent.com/react-native-kit/react-native-track-player/dev/example/screenshots/android-lockscreen.png",
+      "https://raw.githubusercontent.com/react-native-kit/react-native-track-player/dev/example/screenshots/android-notification.png"
+    ],
     "ios": true,
     "android": true,
     "windows": true
   },
   {
     "githubUrl": "https://github.com/lawnstarter/react-native-hotspot",
+    "images": [
+      "https://raw.githubusercontent.com/lawnstarter/react-native-hotspot/master/example/ios-example.gif",
+      "https://raw.githubusercontent.com/lawnstarter/react-native-hotspot/master/example/android-example.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -2907,6 +2927,12 @@
   },
   {
     "githubUrl": "https://github.com/marcocesarato/react-native-input-spinner",
+    "images": [
+      "https://raw.githubusercontent.com/marcocesarato/react-native-input-spinner/master/images/example.png",
+      "https://raw.githubusercontent.com/marcocesarato/react-native-input-spinner/master/images/example_2.png",
+      "https://raw.githubusercontent.com/marcocesarato/react-native-input-spinner/master/images/skins.png",
+      "https://raw.githubusercontent.com/marcocesarato/react-native-input-spinner/master/images/customization.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -3070,7 +3096,8 @@
     "githubUrl": "https://github.com/infinitered/ignite",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/infinitered/reactotron",
@@ -3897,6 +3924,9 @@
   },
   {
     "githubUrl": "https://github.com/githuboftigran/rn-range-slider",
+    "images": [
+      "https://raw.githubusercontent.com/githuboftigran/rn-range-slider/master/demo.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -4621,6 +4651,9 @@
   },
   {
     "githubUrl": "https://github.com/brunohkbx/react-native-material-backdrop-modal",
+    "images": [
+      "https://raw.githubusercontent.com/brunohkbx/react-native-material-backdrop-modal/master/example/example.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -4654,7 +4687,8 @@
   {
     "githubUrl": "https://github.com/maxkomarychev/react-native-ultimate-config",
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/mythisdev/rn-font-mapping",
@@ -5573,6 +5607,9 @@
   },
   {
     "githubUrl": "https://github.com/gevgasparyan/rn-qr-generator",
+    "images": [
+      "https://user-images.githubusercontent.com/13519034/104821872-50268480-5858-11eb-9e5b-77190f9da71d.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -5865,6 +5902,9 @@
   },
   {
     "githubUrl": "https://github.com/srk-sharingan/sharingan-rn-modal-dropdown",
+    "images": [
+      "https://raw.githubusercontent.com/srk-sharingan/sharingan-rn-modal-dropdown/master/demo/demo.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -6392,5 +6432,15 @@
     "examples": ["https://github.com/Agaweb/react-native-stripe/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-aes-gcm-crypto",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-sqlite-2",
+    "android": true,
+    "ios": true
   }
 ]
