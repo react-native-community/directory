@@ -41,12 +41,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   let sortBy = getAllowedOrderString(req);
   let libraries = SortedData[sortBy];
 
-  let querySearch = req.query.search
-    ? req.query.search
-        .toString()
-        .toLowerCase()
-        .trim()
-    : undefined;
+  let querySearch = req.query.search ? req.query.search.toString().toLowerCase().trim() : undefined;
 
   let filteredLibraries = handleFilterLibraries({
     libraries,
