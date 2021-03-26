@@ -11,26 +11,26 @@ type Props = {
 };
 
 type TagProps = {
-  platform: string;
+  label: string;
   tagStyle: ViewStyle;
   showCheck?: boolean;
 };
 
-const Tag = ({ platform, tagStyle, showCheck = true }: TagProps) => {
+const Tag = ({ label, tagStyle, showCheck = true }: TagProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
-    <View key={platform} style={[styles.tag, tagStyle]}>
+    <View key={label} style={[styles.tag, tagStyle]}>
       {showCheck ? (
         <Check width={14} height={10} fill={isDark ? darkColors.secondary : undefined} />
       ) : null}
       <Label
         style={[
-          styles.text,
+          showCheck ? styles.textWithIcon : styles.text,
           {
             color: isDark ? darkColors.secondary : colors.black,
           },
         ]}>
-        {platform}
+        {label}
       </Label>
     </View>
   );
@@ -41,7 +41,7 @@ export function CompatibilityTags(props: Props) {
   const { library } = props;
   const platforms = [
     library.android ? 'Android' : null,
-    library.expo && typeof library.expo !== 'string' ? 'Expo Go' : null,
+    library.expo ? 'Expo Go' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
@@ -55,7 +55,7 @@ export function CompatibilityTags(props: Props) {
     <View style={styles.container}>
       {library.dev ? (
         <Tag
-          platform="Development Tool"
+          label="Development Tool"
           tagStyle={{
             backgroundColor: isDark ? '#2b1c48' : '#e3d8f8',
             borderColor: isDark ? '#482f72' : '#d3c2f2',
@@ -63,9 +63,19 @@ export function CompatibilityTags(props: Props) {
           showCheck={false}
         />
       ) : null}
+      {library.template ? (
+        <Tag
+          label="Template"
+          tagStyle={{
+            backgroundColor: isDark ? '#173137' : '#d8f8f1',
+            borderColor: isDark ? '#28555a' : '#b2ddce',
+          }}
+          showCheck={false}
+        />
+      ) : null}
       {platforms.map(platform => (
         <Tag
-          platform={platform}
+          label={platform}
           key={`${platform}-platform`}
           tagStyle={{
             backgroundColor: isDark ? darkColors.dark : colors.gray1,
@@ -94,7 +104,10 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginBottom: 4,
   },
-  text: {
+  textWithIcon: {
     marginLeft: 4,
+  },
+  text: {
+    marginHorizontal: 4,
   },
 });

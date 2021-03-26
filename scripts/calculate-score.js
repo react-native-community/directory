@@ -61,7 +61,7 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
 }, 0);
 
 export const calculateScore = data => {
-  // Filter the modifiers to the ones which condictions pass with the data
+  // Filter the modifiers to the ones which conditions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
   // Reduce the matching modifiers to find the raw score for the data

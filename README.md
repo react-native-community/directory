@@ -60,7 +60,8 @@ Please follow this format, fields order and indentation:
   "windows": false,
   "macos": false,
   "unmaintained": false,
-  "dev": false
+  "dev": false,
+  "template": false
 }
 ```
 
@@ -81,6 +82,7 @@ Please skip the `false` values and do not fill optional fields, unless it's nece
 - `macos` - (_optional_ boolean) - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
 - `unmaintained` - (_optional_ boolean) - signify that a library is not maintained.
 - `dev` - (_optional_ boolean) - signify that a library is a development tool.
+- `template` - (_optional_ boolean) - signify that a library is a project template.
 
 > _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
