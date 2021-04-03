@@ -6,9 +6,7 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "examples": [
-      "https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase",
-    ],
+    "examples": ["https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase"],
     "npmPkg": "react-native-rapi-ui",
   },
   {
