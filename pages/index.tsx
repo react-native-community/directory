@@ -1,16 +1,35 @@
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import ContentContainer from '../components/ContentContainer';
-import Libraries from '../components/Libraries';
+import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
+
+const LibrariesWithLoading = dynamic(() => import('../components/Libraries'), {
+  loading: () => (
+    <View
+      style={{
+        paddingTop: 8,
+      }}>
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+    </View>
+  ),
+});
 
 const Index = ({ data, query }) => {
   const router = useRouter();
@@ -21,7 +40,7 @@ const Index = ({ data, query }) => {
       <Search query={router.query} total={total} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />
-        <Libraries libraries={data && data.libraries} />
+        <LibrariesWithLoading libraries={data && data.libraries} />
         <Pagination query={query} total={total} />
       </ContentContainer>
     </>

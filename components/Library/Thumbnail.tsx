@@ -34,7 +34,7 @@ const Thumbnail = ({ url }: Props) => {
 
   return (
     <>
-      <a
+      <div
         ref={iconRef}
         onMouseEnter={() => handleMouseEvent(true)}
         onMouseLeave={() => handleMouseEvent(false)}
@@ -54,7 +54,7 @@ const Thumbnail = ({ url }: Props) => {
           borderStyle: 'solid',
         }}>
         <ThumbnailIcon fill={iconFill} />
-      </a>
+      </div>
       {createPortal(
         <div ref={previewRef} style={styles.popper} {...attributes.popper}>
           {showPreview && (
