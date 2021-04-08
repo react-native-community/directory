@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
 import ContentLoader from 'react-content-loader';
 
-import { colors, darkColors } from '../../common/styleguide';
+import { colors, darkColors, useLayout } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 
-const LoadingContent = () => {
+const LoadingContent = ({ width = '100%', height = 206, wrapperStyle = {} }) => {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
   return (
     <ContentLoader
       speed={2}
-      width="100%"
-      height={206}
+      width={isSmallScreen ? '100%' : width}
+      height={height}
       backgroundColor={isDark ? '#2a2e36' : '#f3f3f3'}
       foregroundColor={isDark ? '#383c42' : '#ecebeb'}
       style={{
@@ -19,6 +20,7 @@ const LoadingContent = () => {
         borderColor: isDark ? darkColors.border : colors.gray2,
         borderRadius: 4,
         marginBottom: 16,
+        ...wrapperStyle,
       }}>
       <rect x="20" y="16" rx="3" ry="3" width="251" height="25" />
       <rect x="20" y="56" rx="3" ry="3" width="62" height="16" />
