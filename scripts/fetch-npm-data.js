@@ -49,8 +49,8 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
 
   try {
     const url = urlForPackage(npmPkg);
-    let response = await fetch(url);
-    let downloadData = await response.json();
+    const response = await fetch(url);
+    const downloadData = await response.json();
 
     if (!downloadData.downloads) {
       console.warn(
@@ -60,8 +60,8 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     }
 
     const weekUrl = urlForPackage(npmPkg, 'week');
-    let weekResponse = await fetch(weekUrl);
-    let weekDownloadData = await weekResponse.json();
+    const weekResponse = await fetch(weekUrl);
+    const weekDownloadData = await weekResponse.json();
 
     return {
       ...pkgData,

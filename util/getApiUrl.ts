@@ -1,7 +1,7 @@
 import { NextPageContext } from 'next';
 
 export default function getApiUrl(path: string, ctx: NextPageContext) {
-  let { req } = ctx;
+  const { req } = ctx;
   if (!req && typeof window !== 'undefined') return `/api${path}`;
 
   const host = req ? req.headers['x-forwarded-host'] || req.headers.host : window.location.host;
