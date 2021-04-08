@@ -20,14 +20,14 @@ const LoadingContent = () => {
         borderRadius: 4,
         marginBottom: 16,
       }}>
-      <rect x="16" y="16" rx="3" ry="3" width="251" height="25" />
-      <rect x="16" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="16" y="88" rx="3" ry="3" width="410" height="10" />
-      <rect x="16" y="106" rx="3" ry="3" width="380" height="10" />
-      <rect x="16" y="124" rx="3" ry="3" width="194" height="10" />
-      <rect x="90" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="164" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="16" y="180" rx="3" ry="3" width="306" height="14" />
+      <rect x="20" y="16" rx="3" ry="3" width="251" height="25" />
+      <rect x="20" y="56" rx="3" ry="3" width="62" height="16" />
+      <rect x="20" y="88" rx="3" ry="3" width="410" height="10" />
+      <rect x="20" y="106" rx="3" ry="3" width="380" height="10" />
+      <rect x="20" y="124" rx="3" ry="3" width="194" height="10" />
+      <rect x="94" y="56" rx="3" ry="3" width="62" height="16" />
+      <rect x="168" y="56" rx="3" ry="3" width="62" height="16" />
+      <rect x="20" y="170" rx="3" ry="3" width="306" height="14" />
     </ContentLoader>
   );
 };
