@@ -1,16 +1,21 @@
 import { NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import React, { useContext } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import { A, H4, colors, darkColors, P } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import { Filters } from '../components/Filters';
-import Library from '../components/Library';
+import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../types';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
+
+const LibraryWithLoading = dynamic(() => import('../components/Library'), {
+  loading: () => <LoadingContent />,
+});
 
 const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
@@ -24,7 +29,11 @@ const Trending = ({ data, query }) => {
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
         {data.length ? (
           data.map((item: LibraryType, index: number) => (
-            <Library key={`list-item-${index}-${item.github.name}`} library={item} showPopularity />
+            <LibraryWithLoading
+              key={`list-item-${index}-${item.github.name}`}
+              library={item}
+              showPopularity
+            />
           ))
         ) : (
           <View style={styles.noResultWrapper}>
