@@ -6444,5 +6444,15 @@
     "githubUrl": "https://github.com/craftzdog/react-native-sqlite-2",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/breeffy/react-native-calendar",
+    "npmPkg": "@breeffy/react-native-calendar",
+    "examples": ["https://github.com/breeffy/react-native-calendar/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/breeffy/react-native-calendar/main/preview.gif"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
