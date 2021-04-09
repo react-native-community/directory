@@ -31,8 +31,7 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     // Next.js will pass an err on the server if a page's `getInitialProps`
     // threw or returned a Promise that rejected
     if (err) {
-      // Sentry.captureException(err);
-
+      Sentry.captureException(err);
       return errorInitialProps;
     }
   } else {
@@ -46,8 +45,7 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //    Boundary. Read more about what types of exceptions are caught by Error
     //    Boundaries: https://reactjs.org/docs/error-boundaries.html
     if (err) {
-      // Sentry.captureException(err);
-
+      Sentry.captureException(err);
       return errorInitialProps;
     }
   }

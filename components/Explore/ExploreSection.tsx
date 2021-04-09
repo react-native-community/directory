@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -5,7 +6,20 @@ import { A, colors, darkColors, H3, P } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType, Query } from '../../types';
 import urlWithQuery from '../../util/urlWithQuery';
-import Library from '../Library';
+import LoadingContent from '../Library/LoadingContent';
+
+const LibraryWithLoading = dynamic(() => import('../Library'), {
+  loading: () => (
+    <LoadingContent
+      width="48.25%"
+      height={210}
+      wrapperStyle={{
+        marginLeft: '0.75%',
+        marginRight: '0.75%',
+      }}
+    />
+  ),
+});
 
 type ExploreSectionProps = {
   data: LibraryType[];
@@ -32,7 +46,7 @@ const renderLibs = (list: LibraryType[], count = 4) => {
         .filter(lib => now - new Date(lib.github.stats.updatedAt).getTime() < UPDATED_IN)
         .splice(0, count)
         .map((item: LibraryType, index: number) => (
-          <Library
+          <LibraryWithLoading
             key={`explore-item-${index}-${item.github.name}`}
             library={item}
             showPopularity

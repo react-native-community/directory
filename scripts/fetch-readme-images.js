@@ -4,11 +4,11 @@ import fetch from 'cross-fetch';
 import { sleep } from './build-and-score-data';
 
 const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
-  let parentHref = image.parent().attr('href');
-  let isInHeader = image.parents('h1').length > 0;
-  let isFromRepo = imageSrc.includes(githubUrl) || imageSrc.startsWith('/');
-  let isAvatar = imageSrc.includes('avatars0.githubusercontent.com');
-  let isBadge =
+  const parentHref = image.parent().attr('href');
+  const isInHeader = image.parents('h1').length > 0;
+  const isFromRepo = imageSrc.includes(githubUrl) || imageSrc.startsWith('/');
+  const isAvatar = imageSrc.includes('avatars0.githubusercontent.com');
+  const isBadge =
     imageSrc.includes('shields.io') ||
     imageSrc.includes('travis-ci.com') ||
     imageSrc.includes('badge.svg');
@@ -20,16 +20,16 @@ const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
 };
 
 const scrapeImagesAsync = async githubUrl => {
-  let response = await fetch(githubUrl);
-  let html = await response.text();
-  let $ = cheerio.load(html);
-  let images = $('#readme').find('img');
+  const response = await fetch(githubUrl);
+  const html = await response.text();
+  const $ = cheerio.load(html);
+  const images = $('#readme').find('img');
 
   if (images && images.length) {
-    let usefulImages = [];
+    const usefulImages = [];
     for (let i = 0; i <= images.length - 1; i++) {
-      let image = $(images[i]);
-      let imageSrc = image.attr('data-canonical-src') || image.attr('src');
+      const image = $(images[i]);
+      const imageSrc = image.attr('data-canonical-src') || image.attr('src');
       if (isLikelyUsefulImage(image, imageSrc, githubUrl)) {
         const finalURL = imageSrc.startsWith('/') ? `https://github.com${imageSrc}` : imageSrc;
         usefulImages.push(finalURL);
@@ -53,7 +53,7 @@ const fetchReadmeImages = async (data, attemptsCount = 0) => {
   const { githubUrl } = data;
 
   try {
-    let images = await scrapeImagesAsync(githubUrl);
+    const images = await scrapeImagesAsync(githubUrl);
 
     return {
       ...data,
