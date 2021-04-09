@@ -41,7 +41,7 @@ const fillNpmName = project => {
   return project;
 };
 
-let invalidRepos = [];
+const invalidRepos = [];
 
 const buildAndScoreData = async () => {
   console.log('** Loading data from GitHub');
@@ -174,15 +174,15 @@ const buildAndScoreData = async () => {
 
 async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   let results = [];
-  let chunks = chunk(data, chunkSize);
-  for (let c of chunks) {
+  const chunks = chunk(data, chunkSize);
+  for (const c of chunks) {
     if (chunks.indexOf(c) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
       console.log(`Sleeping ${staggerMs}ms`);
       await sleep(staggerMs);
     }
 
-    let partialResult = await Promise.all(c.map(fetchGithubData));
+    const partialResult = await Promise.all(c.map(fetchGithubData));
     results = [...results, ...partialResult];
 
     if (partialResult.length !== c.length) {
@@ -196,14 +196,14 @@ async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
 }
 
 async function loadRepositoryDataAsync() {
-  let data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
+  const data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
   let githubResultsFileExists = false;
   try {
     fs.statSync(GITHUB_RESULTS_PATH);
     githubResultsFileExists = true;
   } catch (e) {}
 
-  let { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
+  const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
   // 5000 requests per hour is the authenticated API request rate limit
   if (!apiLimit || apiLimit < 5000) {

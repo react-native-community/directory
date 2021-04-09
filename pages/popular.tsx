@@ -76,12 +76,12 @@ const Popular = ({ data }) => {
 };
 
 Popular.getInitialProps = async (ctx: NextPageContext) => {
-  let url = getApiUrl(
+  const url = getApiUrl(
     urlWithQuery('/libraries', { limit: 9999, minPopularity: 0, order: 'popularity' }),
     ctx
   );
-  let response = await fetch(url);
-  let result = await response.json();
+  const response = await fetch(url);
+  const result = await response.json();
 
   return {
     data: result.libraries,

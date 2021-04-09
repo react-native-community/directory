@@ -29,9 +29,9 @@ const Index = ({ data, query }) => {
 };
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
-  let url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
-  let response = await fetch(url);
-  let result = await response.json();
+  const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
+  const response = await fetch(url);
+  const result = await response.json();
 
   return {
     data: result,

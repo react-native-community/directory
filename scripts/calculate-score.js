@@ -84,8 +84,8 @@ export const calculateScore = data => {
 };
 
 const getCombinedPopularity = data => {
-  let { subscribers, forks, stars } = data.github.stats;
-  let { downloads } = data.npm;
+  const { subscribers, forks, stars } = data.github.stats;
+  const { downloads } = data.npm;
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
 };
 

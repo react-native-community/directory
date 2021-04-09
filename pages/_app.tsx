@@ -14,10 +14,10 @@ import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import '../styles/styles.css';
 import PreviewStyles from '../styles/PreviewStyles';
 
-// Sentry.init({
-//   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
-//   enabled: process.env.NODE_ENV === 'production',
-// });
+Sentry.init({
+  dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
+  enabled: process.env.NODE_ENV === 'production',
+});
 
 const App = ({ pageProps, Component }) => {
   return (
