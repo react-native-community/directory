@@ -41,7 +41,7 @@ Sure, go for it!
 
 ## How do I add a library?
 
-- Add it to `react-native-libraries.json`.
+- Add it at the end of `react-native-libraries.json` file.
 - Submit a PR.
 
 Please follow this format, fields order and indentation:
