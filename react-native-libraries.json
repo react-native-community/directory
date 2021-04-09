@@ -1,16 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/YsnKsy/react-native-location-enabler",
-    "android": true,
-    "examples": ["https://github.com/YsnKsy/react-native-location-enabler/tree/master/example"],
-    "images": [
-      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/head.png",
-      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-1.png",
-      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-2.png",
-      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-3.png"
-    ]
-  },
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -6455,5 +6444,16 @@
     "githubUrl": "https://github.com/craftzdog/react-native-sqlite-2",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/YsnKsy/react-native-location-enabler",
+    "examples": ["https://github.com/YsnKsy/react-native-location-enabler/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/head.png",
+      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-1.png",
+      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-2.png",
+      "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-3.png"
+    ],
+    "android": true
   }
 ]
