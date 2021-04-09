@@ -6454,5 +6454,16 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/codingki/react-native-rapi-ui",
+    "examples": [
+      "https://expo.io/@kidingki/projects/react-native-rapi-ui-showcase",
+      "https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase"
+    ],
+    "images": ["https://rapi-ui.kikiding.space/img/featured.png"],
+    "android": true,
+    "ios": true,
+    "expo": true
   }
 ]
