@@ -6,7 +6,7 @@ function toQueryString(query: Query) {
 }
 
 export default function urlWithQuery(url, query: Query) {
-  let queryWithoutEmptyParams = {};
+  const queryWithoutEmptyParams = {};
   Object.keys(query).forEach(key => {
     if (query[key]) {
       queryWithoutEmptyParams[key] = query[key];

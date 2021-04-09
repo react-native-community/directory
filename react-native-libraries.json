@@ -6446,6 +6446,27 @@
     "ios": true
   },
   {
+    "githubUrl": "https://github.com/breeffy/react-native-calendar",
+    "npmPkg": "@breeffy/react-native-calendar",
+    "examples": ["https://github.com/breeffy/react-native-calendar/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/breeffy/react-native-calendar/main/preview.gif"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/codingki/react-native-rapi-ui",
+    "examples": [
+      "https://expo.io/@kidingki/projects/react-native-rapi-ui-showcase",
+      "https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase"
+    ],
+    "images": ["https://rapi-ui.kikiding.space/img/featured.png"],
+    "android": true,
+    "ios": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/YsnKsy/react-native-location-enabler",
     "examples": ["https://github.com/YsnKsy/react-native-location-enabler/tree/master/example"],
     "images": [
