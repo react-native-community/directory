@@ -1,14 +1,4 @@
-[ 
-  {
-    "githubUrl": "https://github.com/codingki/react-native-rapi-ui",
-    "nameOverride": "Rapi UI",
-    "images": ["https://rapi-ui.kikiding.space/img/featured.png"],
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "examples": ["https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase", "https://expo.io/@kidingki/projects/react-native-rapi-ui-showcase"],
-    "npmPkg": "react-native-rapi-ui"
-  },
+[
   {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
@@ -6454,5 +6444,16 @@
     "githubUrl": "https://github.com/craftzdog/react-native-sqlite-2",
     "android": true,
     "ios": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/codingki/react-native-rapi-ui",
+    "examples": [
+      "https://expo.io/@kidingki/projects/react-native-rapi-ui-showcase",
+      "https://github.com/codingki/react-native-rapi-ui/tree/master/examples/showcase"
+    ],
+    "images": ["https://rapi-ui.kikiding.space/img/featured.png"],
+    "android": true,
+    "ios": true,
+    "expo": true,
+  },
 ]
