@@ -8,6 +8,22 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/nandorojo/moti",
+    "npmPkg": "moti",
+    "nameOverride": "Moti",
+    "examples": ["https://moti.fyi/examples/hello-world", "https://github.com/nandorojo/moti/tree/master/examples"],
+    "images": ["https://moti.fyi/img/Banner%20Gradient.svg"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "unmaintained": false,
+    "dev": true,
+    "template": false
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
