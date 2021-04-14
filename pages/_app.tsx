@@ -1,4 +1,5 @@
-import * as Sentry from '@sentry/node';
+import * as Sentry from '@sentry/react';
+import { Integrations } from "@sentry/tracing";
 import Head from 'next/head';
 import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
@@ -17,6 +18,8 @@ import PreviewStyles from '../styles/PreviewStyles';
 Sentry.init({
   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
   enabled: process.env.NODE_ENV === 'production',
+  integrations: [new Integrations.BrowserTracing()],
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.5 : 1.0,
 });
 
 const App = ({ pageProps, Component }) => {
