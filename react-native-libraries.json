@@ -6476,5 +6476,16 @@
       "https://raw.githubusercontent.com/YsnKsy/react-native-location-enabler/master/example/step-3.png"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/moti",
+    "examples": [
+      "https://moti.fyi/examples/hello-world", 
+      "https://github.com/nandorojo/moti/tree/master/examples"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
