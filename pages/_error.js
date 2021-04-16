@@ -1,7 +1,7 @@
 // NOTE(brentvatne):
 // This is the default Sentry error page provided by https://github.com/vercel/next.js/tree/canary/examples/with-sentry/
 
-import * as Sentry from '@sentry/node';
+import * as Sentry from '@sentry/react';
 import Error from 'next/error';
 import React from 'react';
 
@@ -12,7 +12,7 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
     // getInitialProps is not called in case of
     // https://github.com/zeit/next.js/issues/8592. As a workaround, we pass
     // err via _app.js so it can be captured
-    // Sentry.captureException(err);
+    Sentry.captureException(err);
   }
 
   return <ErrorState statusCode={statusCode} />;
