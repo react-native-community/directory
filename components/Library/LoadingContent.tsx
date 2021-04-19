@@ -4,7 +4,7 @@ import ContentLoader from 'react-content-loader';
 import { colors, darkColors, useLayout } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 
-const LoadingContent = ({ width = '100%', height = 206, wrapperStyle = {} }) => {
+const LoadingContent = ({ width = '100%', height = 204, wrapperStyle = {} }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
   return (
