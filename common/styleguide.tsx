@@ -1,5 +1,5 @@
 import * as HtmlElements from '@expo/html-elements';
-import React, { ReactNode, RefObject } from 'react';
+import React, { ReactNode, RefObject, useContext, useRef } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
 
@@ -7,12 +7,16 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 export const layout = {
   maxWidth: 1200,
-  isSmallScreen: () => {
-    const {
-      window: { width },
-    } = useDimensions();
-    return width < 800;
-  },
+};
+
+export const useLayout = () => {
+  const {
+    window: { width },
+  } = useDimensions();
+  return {
+    isSmallScreen: width < 800,
+    isBelowMaxWidth: width < layout.maxWidth,
+  };
 };
 
 export const colors = {
@@ -70,32 +74,33 @@ const textStyles = StyleSheet.create({
   label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
 });
 
+type TextStyles = TextStyle | TextStyle[];
+
 type TextProps = {
   children?: ReactNode;
-  style?: TextStyle | TextStyle[];
+  style?: TextStyles;
   ref?: RefObject<ReactNode>;
+  nativeID?: string;
 };
 
-function createTextComponent(Element: any, textStyle?: TextStyle | TextStyle[]) {
+const createTextComponent = (Element: any, textStyle?: TextStyles) => {
   return (props: TextProps) => {
-    const { children, style } = props;
+    const { isDark } = useContext(CustomAppearanceContext);
+    const { children, style, nativeID } = props;
     return (
-      <CustomAppearanceContext.Consumer>
-        {context => (
-          <Element
-            style={[
-              textStyles[Element],
-              textStyle,
-              { color: context.isDark ? colors.white : colors.black },
-              style,
-            ]}>
-            {children}
-          </Element>
-        )}
-      </CustomAppearanceContext.Consumer>
+      <Element
+        nativeID={nativeID}
+        style={[
+          textStyles[Element],
+          textStyle,
+          { color: isDark ? colors.white : colors.black },
+          style,
+        ]}>
+        {children}
+      </Element>
     );
   };
-}
+};
 
 export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
 export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
@@ -109,39 +114,29 @@ export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = {
-  style?: TextStyle | TextStyle[];
+  style?: TextStyles;
   target?: string;
   href: string;
   children?: ReactNode;
-  hoverStyle?: TextStyle | TextStyle[];
+  hoverStyle?: TextStyles;
 };
 
 export const A = (props: AProps) => {
-  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
-  const linkRef = React.useRef();
+  const { isDark } = useContext(CustomAppearanceContext);
+  const linkRef = useRef();
   const isHovered = useHover(linkRef);
+  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
+  const anchorStyles = getAnchorStyles(isDark);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => {
-        const anchorStyles = getAnchorStyles(context.isDark);
-        return (
-          <HtmlElements.A
-            {...rest}
-            href={href}
-            target={target}
-            style={[
-              anchorStyles.a,
-              isHovered && anchorStyles.aHovered,
-              style,
-              isHovered && hoverStyle,
-            ]}
-            ref={linkRef}>
-            {children}
-          </HtmlElements.A>
-        );
-      }}
-    </CustomAppearanceContext.Consumer>
+    <HtmlElements.A
+      {...rest}
+      href={href}
+      target={target}
+      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}
+      ref={linkRef}>
+      {children}
+    </HtmlElements.A>
   );
 };
 

@@ -13,7 +13,7 @@
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
-        "title": "The Githuburl Schema",
+        "title": "The GitHub URL Schema",
         "default": "",
         "examples": ["https://github.com/joshswan/react-native-autolink"],
         "pattern": "^(.*)$"
@@ -21,7 +21,7 @@
       "ios": {
         "$id": "#/items/properties/ios",
         "type": "boolean",
-        "title": "The Ios Schema",
+        "title": "The iOS Schema",
         "default": false,
         "examples": [true]
       },
@@ -49,7 +49,7 @@
       "expo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
-        "title": "The Expo Schema",
+        "title": "The Expo Go Schema",
         "default": false,
         "examples": [true]
       },
@@ -70,7 +70,7 @@
       "npmPkg": {
         "$id": "#/items/properties/npmPkg",
         "type": "string",
-        "title": "The Npmpkg Schema",
+        "title": "The NPM Package Schema",
         "default": "",
         "examples": ["@expo/ex-navigation"],
         "pattern": "^(.*)$"
@@ -108,6 +108,13 @@
         "$id": "#/items/properties/dev",
         "type": "boolean",
         "title": "The Development Tool Schema",
+        "default": false,
+        "examples": [true]
+      },
+      "template": {
+        "$id": "#/items/properties/template",
+        "type": "boolean",
+        "title": "The Template Schema",
         "default": false,
         "examples": [true]
       }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
@@ -144,33 +144,27 @@ const generateData = (library, secondary, isDark) => {
 };
 
 export function MetaData(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { library, secondary } = props;
+  const data = generateData(library, secondary, isDark);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => {
-        const data = generateData(library, secondary, context.isDark);
-        return (
-          <>
-            {data.filter(Boolean).map((datum, i) => (
-              <View
-                key={datum.id}
-                style={[
-                  styles.displayHorizontal,
-                  i + 1 !== data.length ? styles.datumContainer : {},
-                  secondary ? styles.secondaryContainer : {},
-                ]}>
-                <View
-                  style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
-                  {datum.icon}
-                </View>
-                <Caption>{datum.content}</Caption>
-              </View>
-            ))}
-          </>
-        );
-      }}
-    </CustomAppearanceContext.Consumer>
+    <>
+      {data.filter(Boolean).map((datum, i) => (
+        <View
+          key={datum.id}
+          style={[
+            styles.displayHorizontal,
+            i + 1 !== data.length ? styles.datumContainer : {},
+            secondary ? styles.secondaryContainer : {},
+          ]}>
+          <View style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
+            {datum.icon}
+          </View>
+          <Caption>{datum.content}</Caption>
+        </View>
+      ))}
+    </>
   );
 }
 

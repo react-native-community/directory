@@ -1,3 +1,13 @@
+export type QueryOrder =
+  | 'updated'
+  | 'added'
+  | 'recommended'
+  | 'quality'
+  | 'popularity'
+  | 'issues'
+  | 'downloads'
+  | 'stars';
+
 export type Query = {
   android?: string;
   expo?: string;
@@ -6,9 +16,10 @@ export type Query = {
   tvos?: string;
   web?: string;
   windows?: string;
-  order?: 'quality' | 'recommended' | 'issues' | 'downloads' | 'stars';
+  order?: QueryOrder;
   search?: string;
-  offset?: string;
+  offset?: string | number;
+  limit?: string | number;
   hasExample?: string;
   hasImage?: string;
   hasTypes?: string;
@@ -16,20 +27,22 @@ export type Query = {
   isPopular?: string;
   isRecommended?: string;
   wasRecentlyUpdated?: string;
+  minPopularity?: string | number;
 };
 
 export type Library = {
   goldstar: boolean;
   githubUrl: string;
-  ios: boolean;
-  android: boolean;
-  web: boolean;
-  expo: boolean;
-  windows: boolean;
-  macos: boolean;
-  tvos: boolean;
-  unmaintained: boolean;
-  dev: boolean;
+  ios?: boolean;
+  android?: boolean;
+  web?: boolean;
+  expo?: boolean;
+  windows?: boolean;
+  macos?: boolean;
+  tvos?: boolean;
+  unmaintained?: boolean;
+  dev?: boolean;
+  template?: boolean;
   github: {
     urls: {
       repo: string;
@@ -70,12 +83,19 @@ export type Library = {
     };
     hasTypes: boolean;
   };
-  images: string[];
-  npmPkg: string;
-  npm: { downloads: number; start: string; end: string; period: string };
+  npm: {
+    downloads: number;
+    weekDownloads: number;
+    start: string;
+    end: string;
+    period: string;
+  };
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
-  examples: string[];
+  examples?: string[];
+  images?: string[];
+  npmPkg?: string;
   nameOverride?: string;
+  popularity: number;
 };

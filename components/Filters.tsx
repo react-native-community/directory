@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import * as React from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { useContext } from 'react';
+import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, P, Headline, layout, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -12,6 +13,8 @@ import { Filter as FilterIcon } from './Icons';
 
 type FiltersProps = {
   query: Query;
+  style?: ViewStyle | ViewStyle[];
+  basePath?: string;
 };
 
 type FilterButtonProps = {
@@ -27,7 +30,7 @@ const platforms = [
   },
   {
     param: 'expo',
-    title: 'Expo Client',
+    title: 'Expo Go',
   },
   {
     param: 'ios',
@@ -51,12 +54,12 @@ const platforms = [
   },
 ];
 
-function ToggleLink({ query, paramName, title }) {
-  let isSelected = !!query[paramName];
+const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
+  const isSelected = !!query[paramName];
 
   return (
     <Link
-      href={urlWithQuery('/', {
+      href={urlWithQuery(basePath, {
         ...query,
         [paramName]: !isSelected,
         offset: null,
@@ -67,9 +70,10 @@ function ToggleLink({ query, paramName, title }) {
       </View>
     </Link>
   );
-}
+};
 
 export const FilterButton = (props: FilterButtonProps) => {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { isFilterVisible, query, onPress } = props;
   const params = [
     ...platforms.map(platform => platform.param),
@@ -87,103 +91,112 @@ export const FilterButton = (props: FilterButtonProps) => {
   );
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <Button
-          onPress={onPress}
-          style={[
-            styles.button,
-            { backgroundColor: context.isDark ? darkColors.border : colors.gray5 },
-            isFilterVisible && styles.activeButton,
-          ]}>
-          <View style={styles.displayHorizontal}>
-            <View style={styles.iconContainer}>
-              <FilterIcon
-                fill={isFilterVisible ? colors.gray7 : colors.white}
-                width={14}
-                height={12}
-              />
-            </View>
-            <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
-              Filters{filterCount > 0 ? `: ${filterCount}` : ''}
-            </P>
-          </View>
-        </Button>
-      )}
-    </CustomAppearanceContext.Consumer>
+    <Button
+      onPress={onPress}
+      style={[
+        styles.button,
+        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
+        isFilterVisible && styles.activeButton,
+      ]}>
+      <View style={styles.displayHorizontal}>
+        <View style={styles.iconContainer}>
+          <FilterIcon fill={isFilterVisible ? colors.gray7 : colors.white} width={14} height={12} />
+        </View>
+        <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
+          Filters{filterCount > 0 ? `: ${filterCount}` : ''}
+        </P>
+      </View>
+    </Button>
   );
 };
 
-export const Filters = (props: FiltersProps) => {
-  const { query } = props;
+export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
+  const { isDark } = useContext(CustomAppearanceContext);
+  const isMainSearch = basePath === '/';
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <View
-          style={[
-            styles.wrapper,
-            {
-              backgroundColor: context.isDark ? darkColors.veryDark : colors.gray1,
-            },
-          ]}>
-          <View style={styles.container}>
-            <Headline style={styles.title}>Platform</Headline>
-            <View style={styles.optionsContainer}>
-              {platforms.map(platform => (
-                <ToggleLink
-                  key={platform.param}
-                  query={query}
-                  paramName={platform.param}
-                  title={platform.title}
-                />
-              ))}
-            </View>
-          </View>
-          <View style={styles.container}>
-            <Headline style={styles.title}>Status</Headline>
-            <View style={styles.optionsContainer}>
-              <ToggleLink
-                key="hasExample"
-                query={query}
-                paramName="hasExample"
-                title="Has example"
-              />
-              <ToggleLink
-                key="hasImage"
-                query={query}
-                paramName="hasImage"
-                title="Has image preview"
-              />
-              <ToggleLink
-                key="hasTypes"
-                query={query}
-                paramName="hasTypes"
-                title="Has TypeScript types"
-              />
-              <ToggleLink
-                key="isMaintained"
-                query={query}
-                paramName="isMaintained"
-                title="Maintained"
-              />
-              <ToggleLink key="isPopular" query={query} paramName="isPopular" title="Popular" />
-              <ToggleLink
-                key="wasRecentlyUpdated"
-                query={query}
-                paramName="wasRecentlyUpdated"
-                title="Recently updated"
-              />
-              <ToggleLink
-                key="isRecommended"
-                query={query}
-                paramName="isRecommended"
-                title="Recommended"
-              />
-            </View>
-          </View>
+    <View
+      style={[
+        styles.wrapper,
+        {
+          backgroundColor: isDark ? darkColors.veryDark : colors.gray1,
+        },
+        style,
+      ]}>
+      <View style={styles.container}>
+        <Headline style={styles.title}>Platform</Headline>
+        <View style={styles.optionsContainer}>
+          {platforms.map(platform => (
+            <ToggleLink
+              key={platform.param}
+              query={query}
+              paramName={platform.param}
+              title={platform.title}
+              basePath={basePath}
+            />
+          ))}
         </View>
-      )}
-    </CustomAppearanceContext.Consumer>
+      </View>
+      <View style={styles.container}>
+        <Headline style={styles.title}>Status</Headline>
+        <View style={styles.optionsContainer}>
+          <ToggleLink
+            key="hasExample"
+            query={query}
+            paramName="hasExample"
+            title="Has example"
+            basePath={basePath}
+          />
+          <ToggleLink
+            key="hasImage"
+            query={query}
+            paramName="hasImage"
+            title="Has image preview"
+            basePath={basePath}
+          />
+          <ToggleLink
+            key="hasTypes"
+            query={query}
+            paramName="hasTypes"
+            title="Has TypeScript types"
+            basePath={basePath}
+          />
+          {isMainSearch ? (
+            <ToggleLink
+              key="isMaintained"
+              query={query}
+              paramName="isMaintained"
+              title="Maintained"
+              basePath={basePath}
+            />
+          ) : null}
+          {isMainSearch ? (
+            <ToggleLink
+              key="isPopular"
+              query={query}
+              paramName="isPopular"
+              title="Popular"
+              basePath={basePath}
+            />
+          ) : null}
+          <ToggleLink
+            key="wasRecentlyUpdated"
+            query={query}
+            paramName="wasRecentlyUpdated"
+            title="Recently updated"
+            basePath={basePath}
+          />
+          {isMainSearch ? (
+            <ToggleLink
+              key="isRecommended"
+              query={query}
+              paramName="isRecommended"
+              title="Recommended"
+              basePath={basePath}
+            />
+          ) : null}
+        </View>
+      </View>
+    </View>
   );
 };
 

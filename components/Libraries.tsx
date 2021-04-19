@@ -1,13 +1,18 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import { H3, A, P } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
-import Library from './Library';
+import LoadingContent from './Library/LoadingContent';
 
 type Props = {
   libraries: LibraryType[];
 };
+
+const LibraryWithLoading = dynamic(() => import('../components/Library'), {
+  loading: () => <LoadingContent />,
+});
 
 export default function Libraries(props: Props) {
   const { libraries } = props;
@@ -28,13 +33,11 @@ export default function Libraries(props: Props) {
   }
 
   return (
-    <>
-      <View style={styles.librariesContainer}>
-        {libraries.map((item: any, index: number) => (
-          <Library key={`list-item-${index}-${item.github.name}`} library={item} />
-        ))}
-      </View>
-    </>
+    <View style={styles.librariesContainer}>
+      {libraries.map((item: any, index: number) => (
+        <LibraryWithLoading key={`list-item-${index}-${item.github.name}`} library={item} />
+      ))}
+    </View>
   );
 }
 

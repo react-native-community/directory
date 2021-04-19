@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 
 import { sleep } from './build-and-score-data';
 
@@ -148,7 +148,7 @@ export const fetchGithubRateLimit = async () => {
   }
 
   if (result.errors) {
-    console.log('GitHub GraphQL API error:', result.errors);
+    console.log('[GH] GraphQL API error:', result.errors);
   }
 
   return {};
@@ -178,7 +178,7 @@ const parseUrl = url => {
 
 export const fetchGithubData = async (data, retries = 2) => {
   if (retries < 0) {
-    console.log(`ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
+    console.warn(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
   }
   try {
@@ -195,12 +195,12 @@ export const fetchGithubData = async (data, retries = 2) => {
     if (!result.data.repository && result.errors && result.errors[0].type === 'NOT_FOUND') {
       const newUrl = await getUpdatedUrl(url);
       if (newUrl !== url) {
-        console.log(`Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+        console.log(`[GH] Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
         data.githubUrl = newUrl;
       } else {
-        console.log(`Repository ${repoOwner}/${repoName} not found`);
+        console.log(`[GH] Repository ${repoOwner}/${repoName} not found`);
       }
-      console.log(`Retrying fetch for ${data.githubUrl}`);
+      console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
       await sleep(1000);
       return await fetchGithubData(data, retries - 1);
     }
@@ -211,7 +211,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       github,
     };
   } catch (e) {
-    console.log(`Retrying fetch for ${data.githubUrl}`, e);
+    console.log(`[GH] Retrying fetch for ${data.githubUrl}`, e);
     await sleep(1000);
     return await fetchGithubData(data, retries - 1);
   }
@@ -229,35 +229,40 @@ const processTopics = topics =>
 
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
-    const packageJson = JSON.parse(json.packageJson.text);
+    try {
+      const packageJson = JSON.parse(json.packageJson.text);
 
-    if (monorepo) {
-      json.homepageUrl = packageJson.homepage;
-      json.name = packageJson.name;
-      json.topics = processTopics(packageJson.keywords);
-      json.description = packageJson.description;
-      json.licenseInfo = getLicenseFromPackageJson(packageJson);
-    }
-
-    if (!monorepo) {
-      json.topics = [
-        ...new Set([
-          ...processTopics(packageJson.keywords),
-          ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
-        ]),
-      ];
-
-      if (!json.description) {
+      if (monorepo) {
+        json.homepageUrl = packageJson.homepage;
+        json.name = packageJson.name;
+        json.topics = processTopics(packageJson.keywords);
         json.description = packageJson.description;
+        json.licenseInfo = getLicenseFromPackageJson(packageJson);
       }
 
-      if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
-        json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
-      }
-    }
+      if (!monorepo) {
+        json.topics = [
+          ...new Set([
+            ...processTopics(packageJson.keywords),
+            ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
+          ]),
+        ];
 
-    if (packageJson.types || packageJson.typings) {
-      json.types = true;
+        if (!json.description) {
+          json.description = packageJson.description;
+        }
+
+        if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+          json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+        }
+      }
+
+      if (packageJson.types || packageJson.typings) {
+        json.types = true;
+      }
+    } catch (e) {
+      console.warn(`Unable to parse ${json.name} package.json file!`);
+      console.error(e);
     }
   }
 
@@ -281,7 +286,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       hasWiki: json.hasWikiEnabled,
       hasPages: json.deployments.totalCount > 0,
       hasDownloads: true,
-      hasTopics: json.topics.length > 0,
+      hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,

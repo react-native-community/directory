@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
 
 import { colors, darkColors, Label } from '../common/styleguide';
@@ -11,37 +11,37 @@ type Props = {
 };
 
 type TagProps = {
-  platform: string;
+  label: string;
   tagStyle: ViewStyle;
   showCheck?: boolean;
 };
 
-const Tag = ({ platform, tagStyle, showCheck = true }: TagProps) => (
-  <CustomAppearanceContext.Consumer>
-    {context => (
-      <View key={platform} style={[styles.tag, tagStyle]}>
-        {showCheck ? (
-          <Check width={14} height={10} fill={context.isDark ? darkColors.secondary : undefined} />
-        ) : null}
-        <Label
-          style={[
-            styles.text,
-            {
-              color: context.isDark ? darkColors.secondary : colors.black,
-            },
-          ]}>
-          {platform}
-        </Label>
-      </View>
-    )}
-  </CustomAppearanceContext.Consumer>
-);
+const Tag = ({ label, tagStyle, showCheck = true }: TagProps) => {
+  const { isDark } = useContext(CustomAppearanceContext);
+  return (
+    <View key={label} style={[styles.tag, tagStyle]}>
+      {showCheck ? (
+        <Check width={14} height={10} fill={isDark ? darkColors.secondary : undefined} />
+      ) : null}
+      <Label
+        style={[
+          showCheck ? styles.textWithIcon : styles.text,
+          {
+            color: isDark ? darkColors.secondary : colors.black,
+          },
+        ]}>
+        {label}
+      </Label>
+    </View>
+  );
+};
 
 export function CompatibilityTags(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { library } = props;
   const platforms = [
     library.android ? 'Android' : null,
-    library.expo && typeof library.expo !== 'string' ? 'Expo client' : null,
+    library.expo ? 'Expo Go' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
@@ -52,32 +52,38 @@ export function CompatibilityTags(props: Props) {
     .filter(Boolean);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <View style={styles.container}>
-          {library.dev ? (
-            <Tag
-              platform="Development Tool"
-              tagStyle={{
-                backgroundColor: context.isDark ? '#2b1c48' : '#e3d8f8',
-                borderColor: context.isDark ? '#482f72' : '#d3c2f2',
-              }}
-              showCheck={false}
-            />
-          ) : null}
-          {platforms.map(platform => (
-            <Tag
-              platform={platform}
-              key={`${platform}-platform`}
-              tagStyle={{
-                backgroundColor: context.isDark ? darkColors.dark : colors.gray1,
-                borderColor: context.isDark ? darkColors.border : colors.gray2,
-              }}
-            />
-          ))}
-        </View>
-      )}
-    </CustomAppearanceContext.Consumer>
+    <View style={styles.container}>
+      {library.dev ? (
+        <Tag
+          label="Development Tool"
+          tagStyle={{
+            backgroundColor: isDark ? '#2b1c48' : '#e3d8f8',
+            borderColor: isDark ? '#482f72' : '#d3c2f2',
+          }}
+          showCheck={false}
+        />
+      ) : null}
+      {library.template ? (
+        <Tag
+          label="Template"
+          tagStyle={{
+            backgroundColor: isDark ? '#173137' : '#d8f8f1',
+            borderColor: isDark ? '#28555a' : '#b2ddce',
+          }}
+          showCheck={false}
+        />
+      ) : null}
+      {platforms.map(platform => (
+        <Tag
+          label={platform}
+          key={`${platform}-platform`}
+          tagStyle={{
+            backgroundColor: isDark ? darkColors.dark : colors.gray1,
+            borderColor: isDark ? darkColors.border : colors.gray2,
+          }}
+        />
+      ))}
+    </View>
   );
 }
 
@@ -98,7 +104,10 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginBottom: 4,
   },
-  text: {
+  textWithIcon: {
     marginLeft: 4,
+  },
+  text: {
+    marginHorizontal: 4,
   },
 });

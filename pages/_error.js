@@ -1,7 +1,7 @@
 // NOTE(brentvatne):
-// This is the default Sentry error page provided by https://github.com/zeit/next.js/blob/canary/examples/with-sentry-simple/
+// This is the default Sentry error page provided by https://github.com/vercel/next.js/tree/canary/examples/with-sentry/
 
-import * as Sentry from '@sentry/node';
+import * as Sentry from '@sentry/react';
 import Error from 'next/error';
 import React from 'react';
 
@@ -30,15 +30,8 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //
     // Next.js will pass an err on the server if a page's `getInitialProps`
     // threw or returned a Promise that rejected
-
-    if (res.statusCode === 404) {
-      // Opinionated: do not record an exception in Sentry for 404
-      return { statusCode: 404 };
-    }
-
     if (err) {
       Sentry.captureException(err);
-
       return errorInitialProps;
     }
   } else {
@@ -53,7 +46,6 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //    Boundaries: https://reactjs.org/docs/error-boundaries.html
     if (err) {
       Sentry.captureException(err);
-
       return errorInitialProps;
     }
   }
@@ -61,7 +53,7 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
   // If this point is reached, getInitialProps was called without any
   // information about what the error might be. This is unexpected and may
   // indicate a bug introduced in Next.js, so record it in Sentry
-  Sentry.captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
+  // Sentry.captureException(new Error(`_error.js getInitialProps missing data at path: ${asPath}`));
 
   return errorInitialProps;
 };

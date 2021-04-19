@@ -6,9 +6,9 @@ import path from 'path';
 import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
-import calculateScore from './calculate-score';
+import { calculateScore, calculatePopularity } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import fetchNpmData from './fetch-npm-data';
+import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -20,15 +20,28 @@ const USE_DEBUG_REPOS = false;
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
+// If script should try to scrape images from GitHub repositories.
+const SCRAPE_GH_IMAGES = true;
+
 const JSON_OPTIONS = {
   spaces: 2,
 };
 
-export const sleep = (ms = 0) => {
-  return new Promise(r => setTimeout(r, ms));
+export const sleep = (ms = 0, msMax = null) => {
+  return new Promise(r =>
+    setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
+  );
 };
 
-let invalidRepos = [];
+const fillNpmName = project => {
+  if (!project.npmPkg) {
+    const parts = project.githubUrl.split('/');
+    project.npmPkg = parts[parts.length - 1].toLowerCase();
+  }
+  return project;
+};
+
+const invalidRepos = [];
 
 const buildAndScoreData = async () => {
   console.log('** Loading data from GitHub');
@@ -42,22 +55,73 @@ const buildAndScoreData = async () => {
     return !Strings.isEmptyOrNull(project.github.name);
   });
 
-  console.log('\n** Scraping images from README');
+  if (SCRAPE_GH_IMAGES) {
+    console.log('\n** Scraping images from README');
+    await sleep(1000);
+    data = await Promise.all(data.map(project => fetchReadmeImages(project)));
+  }
+
+  console.log('\n** Determining npm package name');
   await sleep(1000);
-  data = await Promise.all(data.map(d => fetchReadmeImages(d, d.githubUrl)));
+  data = data.map(fillNpmName);
 
   console.log('\n** Loading download stats from npm');
   await sleep(1000);
-  data = await Promise.all(data.map(d => fetchNpmData(d, d.npmPkg, d.githubUrl)));
 
-  // Calculate score
+  // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
+  let bulkList = [];
+
+  // Fetch scope packages data
+  data = await Promise.all(
+    data.map(project => {
+      if (project.npmPkg.startsWith('@')) {
+        return fetchNpmData(project);
+      } else {
+        bulkList.push(project.npmPkg);
+        return project;
+      }
+    })
+  );
+
+  // Assemble and fetch data in bulk queries
+  const CHUNK_SIZE = 64;
+  bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
+    bulkList.splice(0, CHUNK_SIZE)
+  );
+
+  const downloadsList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk)))).flat();
+  const downloadsListWeek = (
+    await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk, 'week')))
+  ).flat();
+
+  // Fill npm data from bulk queries
+  data = data.map(project =>
+    project.npm
+      ? project
+      : {
+          ...project,
+          npm: {
+            ...(downloadsList.find(d => d.name === project.npmPkg)?.npm || {}),
+            ...(downloadsListWeek.find(d => d.name === project.npmPkg)?.npm || {}),
+          },
+        }
+  );
+
   console.log('\n** Calculating scores');
   data = data.map(project => {
     try {
       return calculateScore(project);
     } catch (e) {
-      console.log(`Failed to calculate score for ${project.github.name}`);
-      console.log(e.message);
+      console.log(`Failed to calculate score for ${project.github.name}`, e.message);
+    }
+  });
+
+  console.log('\n** Calculating popularity');
+  data = data.map(project => {
+    try {
+      return calculatePopularity(project);
+    } catch (e) {
+      console.log(`Failed to calculate popularity for ${project.github.name}`, e.message);
       console.log(project.githubUrl);
     }
   });
@@ -102,8 +166,7 @@ const buildAndScoreData = async () => {
       if (err) {
         console.log(err);
       } else {
-        console.log('');
-        console.log('** Done!');
+        console.log('\n** Done!');
       }
     }
   );
@@ -111,15 +174,15 @@ const buildAndScoreData = async () => {
 
 async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   let results = [];
-  let chunks = chunk(data, chunkSize);
-  for (let c of chunks) {
+  const chunks = chunk(data, chunkSize);
+  for (const c of chunks) {
     if (chunks.indexOf(c) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
       console.log(`Sleeping ${staggerMs}ms`);
       await sleep(staggerMs);
     }
 
-    let partialResult = await Promise.all(c.map(fetchGithubData));
+    const partialResult = await Promise.all(c.map(fetchGithubData));
     results = [...results, ...partialResult];
 
     if (partialResult.length !== c.length) {
@@ -133,14 +196,14 @@ async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
 }
 
 async function loadRepositoryDataAsync() {
-  let data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
+  const data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
   let githubResultsFileExists = false;
   try {
     fs.statSync(GITHUB_RESULTS_PATH);
     githubResultsFileExists = true;
   } catch (e) {}
 
-  let { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
+  const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
   // 5000 requests per hour is the authenticated API request rate limit
   if (!apiLimit || apiLimit < 5000) {
