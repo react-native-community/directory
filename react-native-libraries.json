@@ -6487,5 +6487,17 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/wix/react-native-ui-lib",
+    "examples": ["https://github.com/wix/react-native-ui-lib/tree/master/demo"],
+    "images": [
+      "https://user-images.githubusercontent.com/1780255/72094962-3044b280-3320-11ea-8e41-aa83743bafb9.gif",
+      "https://user-images.githubusercontent.com/1780255/72094961-3044b280-3320-11ea-95e2-9aa745c8b07d.gif",
+      "https://user-images.githubusercontent.com/1780255/72094958-2fac1c00-3320-11ea-8f67-9d759cfa4ae1.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
