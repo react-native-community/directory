@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/react';
-import { Integrations } from "@sentry/tracing";
+import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
 import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
@@ -16,7 +16,7 @@ import '../styles/styles.css';
 import PreviewStyles from '../styles/PreviewStyles';
 
 Sentry.init({
-  dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
+  dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
   enabled: process.env.NODE_ENV === 'production',
   integrations: [new Integrations.BrowserTracing()],
   tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.5 : 1.0,
