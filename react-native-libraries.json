@@ -5842,12 +5842,6 @@
     "android": true
   },
     {
-    "githubUrl": "https://github.com/christopherdro/react-native-print",
-    "npmPkg": "react-native-print",
-    "ios": true,
-    "android": true
-  },
-    {
     "githubUrl": "https://github.com/asklar/react-native-xaml",
     "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
     "images": ["https://raw.githubusercontent.com/asklar/react-native-xaml/main/example/rnx.gif"],
@@ -6203,5 +6197,11 @@
     "ios": true,
     "android": true,
     "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/christopherdro/react-native-print",
+    "npmPkg": "react-native-print",
+    "ios": true,
+    "android": true
+  },
 ]
