@@ -1,6 +1,6 @@
-import React from 'react';
 import * as Sentry from '@sentry/react';
 import { useRouter } from 'next/router';
+import React from 'react';
 
 import ErrorState from '../components/ErrorState';
 

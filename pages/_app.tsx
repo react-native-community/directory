@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/react';
-import { Integrations } from "@sentry/tracing";
+import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
 import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
