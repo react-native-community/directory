@@ -6502,16 +6502,10 @@
   },
   {
     "githubUrl": "https://github.com/raulpesilva/re-state",
-    "npmPkg": "https://www.npmjs.com/package/@raulpesilva/re-state",
-    "examples": ["https://github.com/raulpesilva/re-state/blob/master/README.md"],
+    "npmPkg": "@raulpesilva/re-state",
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
-    "windows": true,
-    "macos": true,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "expo": true
   }
 ]
