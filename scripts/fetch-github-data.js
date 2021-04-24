@@ -8,7 +8,7 @@ const GRAPHQL_API = 'https://api.github.com/graphql';
 
 const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
 
-let licenses = {};
+const licenses = {};
 
 /**
  * Fetch licenses from github to be used later to parse licenses from npm
