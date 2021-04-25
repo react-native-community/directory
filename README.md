@@ -36,7 +36,7 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 }
 ```
 
-## Entry field descriptions
+## Library field descriptions
 
 #### `githubUrl` - (**required** string)
 - URL to the GitHub repository (currently other git hosts are not supported).
