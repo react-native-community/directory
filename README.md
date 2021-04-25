@@ -38,40 +38,40 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 
 ## Library field descriptions
 
-#### `githubUrl` - (**required** string)
-- URL to the GitHub repository (currently other git hosts are not supported).
-#### `npmPkg` - (_optional_ string)
-- npm package name (fill only when the GitHub repository name is different from the name of package published to npm, or package is a a part of monorepo). Example: `"@expo/react-native-action-sheet"`.
-#### `nameOverride` - (_optional_ string)
-- display name override (fill only when it is different from the GitHub repository name and npm package name).
-#### `examples` - (_optional_ array of strings)
-- URLs to example projects (Snacks preferred) or with demonstrations of the library.
-#### `images` - (_optional_ array of strings)
-- URLs to images that will show up in the listing to preview the library functionality.
+#### `githubUrl`
+- **(required string)** - URL to the GitHub repository (currently other git hosts are not supported).
+#### `npmPkg`
+- **(_optional_ string)** - npm package name (fill only when the GitHub repository name is different from the name of package published to npm, or package is a a part of monorepo). Example: `"@expo/react-native-action-sheet"`.
+#### `nameOverride`
+- **(_optional_ string)** - display name override (fill only when it is different from the GitHub repository name and npm package name).
+#### `examples`
+- **(_optional_ array of strings)** - URLs to example projects (Snacks preferred) or with demonstrations of the library.
+#### `images`
+- **(_optional_ array of strings)** - URLs to images that will show up in the listing to preview the library functionality.
 
 ### 📱 Platforms
 
-#### `ios` - (_optional_ boolean)
-- works on iOS device.
-#### `android` - (_optional_ boolean)
-- works on Android device.
-#### `web` - (_optional_ boolean)
-- can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
-#### `expo` - (_optional_ boolean)
-- can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
-#### `windows` - (_optional_ boolean)
-- can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
-#### `macos` - (_optional_ boolean)
-- can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
+#### `ios`
+- **(_optional_ boolean)** - works on iOS device.
+#### `android`
+- **(_optional_ boolean)** - works on Android device.
+#### `web`
+- **(_optional_ boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
+#### `expo`
+- **(_optional_ boolean)** - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
+#### `windows`
+- **(_optional_ boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
+#### `macos`
+- **(_optional_ boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
 
 ### 🏷️ Tags
 
-#### `unmaintained` - (_optional_ boolean)
-- signify that a library is not maintained.
-#### `dev` - (_optional_ boolean)
-- signify that a library is a development tool.
-#### `template` - (_optional_ boolean)
-- signify that a library is a project template.
+#### `unmaintained`
+- **(_optional_ boolean)** - signify that a library is not maintained.
+#### `dev`
+- **(_optional_ boolean)** - signify that a library is a development tool.
+#### `template`
+- **(_optional_ boolean)** - signify that a library is a project template.
 
 > _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
