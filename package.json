@@ -13,7 +13,8 @@
     "libraries:format": "prettier --write react-native-libraries.json",
     "libraries:images": "babel-node scripts/check-images.js --presets @babel/preset-env",
     "lock:cleanup": "yarn-deduplicate",
-    "postinstall": "yarn lock:cleanup"
+    "postinstall": "yarn lock:cleanup",
+    "precommit": "simple-git-hooks && lint-staged"
   },
   "dependencies": {
     "@expo/html-elements": "^0.0.2",
@@ -70,7 +71,7 @@
   },
   "private": true,
   "simple-git-hooks": {
-    "pre-commit": "npx --no-install simple-git-hooks && npx --no-install lint-staged"
+    "pre-commit": "yarn precommit"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
