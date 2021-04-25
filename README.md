@@ -15,7 +15,7 @@
 - Add it at the end of `react-native-libraries.json` file.
 - Submit a PR.
 
-Please follow this format, fields order, indentation, skip any of the `false` values for the library and do not fill optional fields, unless it's necessary:
+Please follow this format, fields order and indentation:
 
 ```json
 {
@@ -35,6 +35,8 @@ Please follow this format, fields order, indentation, skip any of the `false` va
   "template": false
 }
 ```
+
+Please skip any of the `false` values and do not fill optional fields, unless it's necessary.
 
 ## Library field descriptions
 
@@ -77,11 +79,11 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 
 ## How do I run my own version locally?
 
-Prerequisites
+#### Prerequisites
 
 - Node LTS
 
-Commands
+#### Commands
 
 ```sh
 yarn
