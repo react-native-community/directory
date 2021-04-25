@@ -1,11 +1,8 @@
-<h1>
-  <img alt="React Native Directory Logo" height="32" src="./assets/logo.png" /> 
-  React Native Directory
-</h1>
-
-### https://reactnative.directory/
-
-React Native Directory is a website where you can see all the libraries that are compatible with React Native.
+<p align="center"><img alt="React Native Directory Logo" height="64" src="./assets/logo.png" /></p>
+<h1 align="center">React Native Directory</h1>
+<h3 align="center"> https://reactnative.directory/ </h3>
+<p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
+<br/>
 
 ## How do I know I'm at the right place?
 
@@ -39,7 +36,7 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 }
 ```
 
-### Field descriptions
+## Entry field descriptions
 
 #### `githubUrl` - (**required** string)
 - URL to the GitHub repository (currently other git hosts are not supported).
@@ -52,7 +49,7 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 #### `images` - (_optional_ array of strings)
 - URLs to images that will show up in the listing to preview the library functionality.
 
-📱 **Platforms**
+### 📱 Platforms
 
 #### `ios` - (_optional_ boolean)
 - works on iOS device.
@@ -67,7 +64,7 @@ Please follow this format, fields order, indentation, skip any of the `false` va
 #### `macos` - (_optional_ boolean)
 - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
 
-🏷️ **Tags**
+### 🏷️ Tags
 
 #### `unmaintained` - (_optional_ boolean)
 - signify that a library is not maintained.
