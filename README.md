@@ -1,4 +1,4 @@
-<p align="center"><img alt="React Native Directory Logo" height="64" src="./assets/logo.png" /></p>
+<dd align="center"><img alt="React Native Directory Logo" height="64" src="./assets/logo.png" /></dd>
 <h1 align="center">React Native Directory</h1>
 <h3 align="center"> https://reactnative.directory/ </h3>
 <p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
