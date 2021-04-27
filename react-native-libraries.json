@@ -6507,5 +6507,17 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kashishgrover/react-native-see-more-inline",
+    "examples": ["https://github.com/kashishgrover/react-native-see-more-inline/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot1.png",
+      "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot2.png",
+      "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot3.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
