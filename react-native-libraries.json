@@ -6480,7 +6480,7 @@
   {
     "githubUrl": "https://github.com/nandorojo/moti",
     "examples": [
-      "https://moti.fyi/examples/hello-world", 
+      "https://moti.fyi/examples/hello-world",
       "https://github.com/nandorojo/moti/tree/master/examples"
     ],
     "ios": true,
@@ -6516,6 +6516,13 @@
       "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot2.png",
       "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot3.png"
     ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Chooin/react-native-lifecycle",
+    "examples": ["https://github.com/Chooin/react-native-lifecycle-example"],
     "ios": true,
     "android": true,
     "expo": true
