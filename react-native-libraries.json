@@ -4898,7 +4898,8 @@
     "githubUrl": "https://github.com/joltup/rn-fetch-blob",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/realtime-framework/RCTRealtimeMessagingIOS",
@@ -6526,5 +6527,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/RonRadtke/react-native-blob-util",
+    "examples": ["https://github.com/RonRadtke/react-native-blob-util/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "windows": true
   }
 ]
