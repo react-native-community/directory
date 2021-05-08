@@ -6538,7 +6538,6 @@
   },
   {
     "githubUrl": "https://github.com/guhungry/react-native-photo-manipulator",
-    "npmPkg": "react-native-photo-manipulator",
     "examples": ["https://github.com/guhungry/react-native-photo-manipulator/tree/master/example"],
     "images": [
       "https://raw.githubusercontent.com/guhungry/react-native-photo-manipulator/master/docs/result-overlay.jpg",
@@ -6550,13 +6549,6 @@
       "https://raw.githubusercontent.com/guhungry/react-native-photo-manipulator/master/docs/result-print-text.jpg"
     ],
     "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
-    "macos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "android": true
   }
 ]
