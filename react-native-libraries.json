@@ -6553,9 +6553,9 @@
   },
   {
     "githubUrl": "https://github.com/xmartlabs/react-native-line",
+    "npmPkg": "@xmartlabs/react-native-line",    
     "examples": ["https://github.com/xmartlabs/react-native-line/tree/master/example"],
     "ios": true,
-    "android": true,
-    "unmaintained": false,
+    "android": true
   },
 ]
