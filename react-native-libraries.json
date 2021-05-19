@@ -6561,8 +6561,8 @@
   {
   "githubUrl": "https://github.com/firofame/react-native-compass-heading",
   "npmPkg": "https://www.npmjs.com/package/react-native-compass-heading",
-  "ios": false,
-  "android": false,
+  "ios": true,
+  "android": true,
   "web": false,
   "expo": false,
   "windows": false,
