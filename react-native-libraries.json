@@ -6557,5 +6557,16 @@
     "examples": ["https://github.com/xmartlabs/react-native-line/tree/master/example"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/firofame/react-native-compass-heading",
+  "npmPkg": "https://www.npmjs.com/package/react-native-compass-heading",
+  "ios": false,
+  "android": false,
+  "web": false,
+  "expo": false,
+  "windows": false,
+  "macos": false,
+  "unmaintained": false,
+}
 ]
