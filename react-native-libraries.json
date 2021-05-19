@@ -6559,14 +6559,15 @@
     "android": true
   },
   {
-  "githubUrl": "https://github.com/firofame/react-native-compass-heading",
-  "npmPkg": "https://www.npmjs.com/package/react-native-compass-heading",
-  "ios": true,
-  "android": true,
-  "web": false,
-  "expo": false,
-  "windows": false,
-  "macos": false,
-  "unmaintained": false,
-}
+    "githubUrl": "https://github.com/bk52/react-native-weather-chart",
+    "examples": ["https://github.com/bk52/react-native-weather-chart-example"],
+    "images": ["https://user-images.githubusercontent.com/24523985/118378101-ffdaeb80-b5d9-11eb-892f-38427ee34d75.jpg"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/firofame/react-native-compass-heading",
+    "examples": ["https://github.com/firofame/react-native-compass-heading/tree/master/Example"],
+    "ios": true,
+    "android": true
+  }
 ]
