@@ -6569,5 +6569,11 @@
     "examples": ["https://github.com/firofame/react-native-compass-heading/tree/master/Example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stripe/stripe-react-native",
+    "examples": ["https://github.com/stripe/stripe-react-native/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
