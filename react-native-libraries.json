@@ -1327,7 +1327,8 @@
   {
     "githubUrl": "https://github.com/kirankalyan5/react-native-segmented-control-tab",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/rgovindji/react-native-atoz-list",
@@ -4777,7 +4778,8 @@
   {
     "githubUrl": "https://github.com/goatandsheep/react-native-dotenv",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/gs-akhan/react-native-select",
@@ -5268,7 +5270,8 @@
     "examples": ["https://github.com/ammarahm-ed/react-native-actions-sheet/tree/master/example"],
     "images": ["https://imgur.com/XdsHb6M.gif", "https://imgur.com/g6LLkl4.gif"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-photo-editor",
@@ -5396,7 +5399,8 @@
     "npmPkg": "popup-ui",
     "examples": ["https://github.com/RafaelAugustoS/react-native-popup-ui/tree/master/examples"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/WrathChaos/react-native-header-view",
@@ -5923,7 +5927,8 @@
       "https://github.com/StefanoMartella/react-native-simple-bottom-sheet/raw/master/gif/toggle.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/fasky-software/react-native-widgetkit",
@@ -6228,7 +6233,8 @@
       "https://raw.githubusercontent.com/deanhet/react-native-text-ticker/master/example/media/example2.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/gabrielmoncea/react-native-template",
@@ -6454,7 +6460,8 @@
       "https://raw.githubusercontent.com/breeffy/react-native-calendar/main/preview.gif"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/codingki/react-native-rapi-ui",
