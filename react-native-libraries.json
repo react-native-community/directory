@@ -131,7 +131,8 @@
   {
     "githubUrl": "https://github.com/kenkotch/react-native-columns",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/kristerkari/react-native-svg-transformer",
@@ -200,7 +201,8 @@
   {
     "githubUrl": "https://github.com/prscX/react-native-about-libraries",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-siri-wave-view",
@@ -227,7 +229,8 @@
   {
     "githubUrl": "https://github.com/prscX/react-native-chip-view",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Instabug/instabug-reactnative",
@@ -337,7 +340,8 @@
   {
     "githubUrl": "https://github.com/prscX/react-native-iconic",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-download-button",
@@ -439,7 +443,8 @@
   {
     "githubUrl": "https://github.com/root-two/react-native-drawer",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-image-picker/react-native-image-picker",
@@ -502,7 +507,8 @@
   {
     "githubUrl": "https://github.com/silentcloud/react-native-page-control",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/lottie-react-native/lottie-react-native",
@@ -861,7 +867,8 @@
   {
     "githubUrl": "https://github.com/jacklam718/react-native-button-component",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Thomas101/react-native-fence-html",
@@ -1805,7 +1812,8 @@
   {
     "githubUrl": "https://github.com/douglasjunior/react-native-simple-dialogs",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/douglasjunior/react-native-keyboard-manager",
@@ -2104,7 +2112,8 @@
   {
     "githubUrl": "https://github.com/lodev09/react-native-cell-components",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/malsapp/react-native-photo-upload",
@@ -2149,7 +2158,8 @@
   {
     "githubUrl": "https://github.com/beefe/react-native-actionsheet",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Michaelvilleneuve/react-native-document-scanner",
@@ -2453,7 +2463,8 @@
   {
     "githubUrl": "https://github.com/hungdev/react-native-customize-selected-date",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/xcarpentier/react-native-suggester",
@@ -2463,7 +2474,8 @@
   {
     "githubUrl": "https://github.com/AndreYonadam/react-native-scrolling-images",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/hungdev/react-native-instagram-login",
@@ -2901,7 +2913,8 @@
   {
     "githubUrl": "https://github.com/leonelfaugusto/rn-option-select",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
@@ -3656,7 +3669,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-svg/react-native-svg",
@@ -3686,7 +3700,8 @@
   {
     "githubUrl": "https://github.com/mientjan/react-native-markdown-renderer",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-device-info/react-native-device-info",
@@ -3742,7 +3757,8 @@
   {
     "githubUrl": "https://github.com/sohobloo/react-native-modal-dropdown",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/listenzz/react-native-modal-translucent",
@@ -3994,7 +4010,8 @@
   {
     "githubUrl": "https://github.com/luisfcofv/react-native-deep-linking",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/eddieowens/react-native-boundary",
@@ -4178,7 +4195,8 @@
   {
     "githubUrl": "https://github.com/shimohq/react-native-prompt-android",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/djchie/react-native-star-rating",
@@ -4565,7 +4583,8 @@
   {
     "githubUrl": "https://github.com/msalo3/react-native-image-mapper",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/proyecto26/react-native-inappbrowser",
@@ -4881,7 +4900,8 @@
   {
     "githubUrl": "https://github.com/kyo504/react-native-marquee",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/ascoders/react-native-image-zoom",
@@ -5074,7 +5094,8 @@
       "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.android.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/octopitus/rn-sliding-up-panel",
@@ -5133,7 +5154,8 @@
       "https://cloud.githubusercontent.com/assets/2055622/24832328/459afaf0-1cb6-11e7-975d-accedb67a716.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-testing-library",
@@ -5255,7 +5277,8 @@
   {
     "githubUrl": "https://github.com/bberak/react-native-game-engine",
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Kjens93/react-native-font-faces",
@@ -6333,7 +6356,8 @@
     "githubUrl": "https://github.com/rawewhat/stora",
     "examples": ["https://github.com/rawewhat/stora/tree/master/demo"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/shijingsh/react-native-customized-image-picker",
