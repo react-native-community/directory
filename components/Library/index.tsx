@@ -97,7 +97,7 @@ export default function Library(props: Props) {
         </View>
         {!isEmptyOrNull(github.description) && (
           <View style={styles.verticalMargin}>
-            <Caption>
+            <Caption numberOfLines={skipMeta && 3}>
               <Linkify component={({ url }) => <A href={url}>{url}</A>}>
                 {emoji.emojify(github.description)}
               </Linkify>

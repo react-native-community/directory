@@ -8,7 +8,7 @@ const validateLibrariesFormat = libraries => {
   console.log('Checking all libraries have the correct format');
 
   // Reduces the libraries array to an object of errors for each library
-  const errors = libraries.reduce((errors, library, index) => {
+  const errorsList = libraries.reduce((errors, library, index) => {
     const libraryErrors = [];
     const libraryProperties = Object.keys(library);
 
@@ -17,7 +17,7 @@ const validateLibrariesFormat = libraries => {
       libraryErrors.push('Must contain a githubUrl property');
     } else if (!library.githubUrl.match(GITHUB_URL_PATTERN)) {
       libraryErrors.push(
-        `The githubUrl of ${library.githubUrl} must be in the format: https://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
+        `The githubUrl of ${library.githubUrl} must be in the format:\nhttps://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
       );
     }
 
@@ -29,10 +29,10 @@ const validateLibrariesFormat = libraries => {
     return errors;
   }, {});
 
-  if (Object.keys(errors).length > 0) {
-    const errorDescriptions = _.map(errors, (libraryErrors, index) => {
-      return `Library at index ${index}:\n` + libraryErrors.join('\n');
-    });
+  if (Object.keys(errorsList).length > 0) {
+    const errorDescriptions = Object.entries(errorsList).map(
+      ([index, libraryErrors]) => `Library at index ${index}:\n${libraryErrors.join('\n')}`
+    );
     console.log('✘ Malformed libraries found:\n' + errorDescriptions.join('\n'));
     process.exit(1);
   } else {

@@ -81,15 +81,17 @@ type TextProps = {
   style?: TextStyles;
   ref?: RefObject<ReactNode>;
   nativeID?: string;
+  numberOfLines?: number;
 };
 
 const createTextComponent = (Element: any, textStyle?: TextStyles) => {
   return (props: TextProps) => {
     const { isDark } = useContext(CustomAppearanceContext);
-    const { children, style, nativeID } = props;
+    const { children, style, nativeID, numberOfLines } = props;
     return (
       <Element
         nativeID={nativeID}
+        numberOfLines={numberOfLines}
         style={[
           textStyles[Element],
           textStyle,
