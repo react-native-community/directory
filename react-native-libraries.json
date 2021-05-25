@@ -6615,5 +6615,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jagannathBhat/async-storage-db",
+    "npmPkg": "https://www.npmjs.com/package/async-storage-db",
+    "examples": ["https://github.com/jagannathBhat/async-storage-db#readme"],
+    "ios": true,
+    "android": true,
+    "expo": true,
   }
 ]
