@@ -6622,5 +6622,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Blaumaus/react-native-redux-alert",
+    "npmPkg": "react-native-redux-alert",
+    "examples": ["https://github.com/Blaumaus/react-native-redux-alert#usage"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
