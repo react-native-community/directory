@@ -1522,6 +1522,7 @@
     "githubUrl": "https://github.com/gre/react-native-view-shot",
     "ios": true,
     "android": true,
+    "windows": true,
     "expo": true
   },
   {
@@ -3022,7 +3023,8 @@
     "githubUrl": "https://github.com/rnmods/react-native-document-picker",
     "images": ["http://i.stack.imgur.com/dv0iQ.png"],
     "ios": true,
-    "android": true
+    "android": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/HosseinShabani/react-native-modern-datepicker",
