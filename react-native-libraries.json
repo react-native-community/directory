@@ -6607,6 +6607,7 @@
   },
   {
     "githubUrl": "https://github.com/stripe/stripe-react-native",
+    "npmPkg": "@stripe/stripe-react-native",
     "examples": ["https://github.com/stripe/stripe-react-native/tree/master/example"],
     "ios": true,
     "android": true
@@ -6617,12 +6618,6 @@
     "images": [
       "https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/screenshots/swipe-animation.gif"
     ],
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/jagannathBhat/async-storage-db",
     "ios": true,
     "android": true,
     "expo": true
