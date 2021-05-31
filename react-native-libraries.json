@@ -6620,7 +6620,13 @@
   },
   {
     "githubUrl": "https://github.com/jagannathBhat/async-storage-db",
-    "examples": ["https://github.com/jagannathBhat/async-storage-db#readme"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Blaumaus/react-native-redux-alert",
+    "examples": ["https://github.com/Blaumaus/react-native-redux-alert/tree/main/example"],
     "ios": true,
     "android": true,
     "expo": true
