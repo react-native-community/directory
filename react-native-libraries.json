@@ -3945,9 +3945,7 @@
   },
   {
     "githubUrl": "https://github.com/githuboftigran/rn-range-slider",
-    "images": [
-      "https://raw.githubusercontent.com/githuboftigran/rn-range-slider/master/demo.gif"
-    ],
+    "images": ["https://raw.githubusercontent.com/githuboftigran/rn-range-slider/master/demo.gif"],
     "ios": true,
     "android": true
   },
@@ -4993,7 +4991,8 @@
       "https://raw.githubusercontent.com/avishayil/react-native-restart/master/gif/android.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/react-native-community/hooks",
@@ -5892,7 +5891,7 @@
       "https://user-images.githubusercontent.com/6936373/98471162-cb9f0080-222d-11eb-89ef-9342a1f10893.png"
     ],
     "ios": true,
-    "android":true,
+    "android": true,
     "npmPkg": "@react-native-menu/menu"
   },
   {
@@ -6483,9 +6482,7 @@
     "githubUrl": "https://github.com/breeffy/react-native-calendar",
     "npmPkg": "@breeffy/react-native-calendar",
     "examples": ["https://github.com/breeffy/react-native-calendar/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/breeffy/react-native-calendar/main/preview.gif"
-    ],
+    "images": ["https://raw.githubusercontent.com/breeffy/react-native-calendar/main/preview.gif"],
     "android": true,
     "ios": true,
     "expo": true
@@ -6545,7 +6542,9 @@
   },
   {
     "githubUrl": "https://github.com/kashishgrover/react-native-see-more-inline",
-    "examples": ["https://github.com/kashishgrover/react-native-see-more-inline/tree/master/example"],
+    "examples": [
+      "https://github.com/kashishgrover/react-native-see-more-inline/tree/master/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot1.png",
       "https://raw.githubusercontent.com/kashishgrover/react-native-see-more-inline/master/images/screenshot2.png",
@@ -6587,7 +6586,7 @@
   },
   {
     "githubUrl": "https://github.com/xmartlabs/react-native-line",
-    "npmPkg": "@xmartlabs/react-native-line",    
+    "npmPkg": "@xmartlabs/react-native-line",
     "examples": ["https://github.com/xmartlabs/react-native-line/tree/master/example"],
     "ios": true,
     "android": true
@@ -6595,7 +6594,9 @@
   {
     "githubUrl": "https://github.com/bk52/react-native-weather-chart",
     "examples": ["https://github.com/bk52/react-native-weather-chart-example"],
-    "images": ["https://user-images.githubusercontent.com/24523985/118378101-ffdaeb80-b5d9-11eb-892f-38427ee34d75.jpg"],
+    "images": [
+      "https://user-images.githubusercontent.com/24523985/118378101-ffdaeb80-b5d9-11eb-892f-38427ee34d75.jpg"
+    ],
     "android": true
   },
   {
@@ -6606,6 +6607,7 @@
   },
   {
     "githubUrl": "https://github.com/stripe/stripe-react-native",
+    "npmPkg": "@stripe/stripe-react-native",
     "examples": ["https://github.com/stripe/stripe-react-native/tree/master/example"],
     "ios": true,
     "android": true
@@ -6613,13 +6615,9 @@
   {
     "githubUrl": "https://github.com/swaplet/react-native-swipe-cards-deck",
     "examples": ["https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/example"],
-    "images": ["https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/screenshots/swipe-animation.gif"],
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/jagannathBhat/async-storage-db",
+    "images": [
+      "https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/screenshots/swipe-animation.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -6627,6 +6625,49 @@
   {
     "githubUrl": "https://github.com/Blaumaus/react-native-redux-alert",
     "examples": ["https://github.com/Blaumaus/react-native-redux-alert/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ThakurBallary/react-native-radio-buttons-group",
+    "images": [
+      "https://raw.githubusercontent.com/ThakurBallary/react-native-radio-buttons-group/main/docs/images/react-native-radio-buttons-group.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Cnilton/react-native-floating-label-input",
+    "images": [
+      "https://i.imgur.com/Na1KLIE.gif",
+      "https://i.imgur.com/kIfvKiD.gif",
+      "https://i.imgur.com/cgQsY20.gif",
+      "https://i.imgur.com/iKbez6d.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/emilioicai/react-native-safe-modules",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/master/packages/expo-status-bar",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/fram-x/react-native-styled-text",
+    "examples": ["https://snack.expo.io/@bjornegil/styledtext-demo"],
+    "images": [
+      "https://raw.githubusercontent.com/fram-x/react-native-styled-text/develop/docs/example-ios.png",
+      "https://raw.githubusercontent.com/fram-x/react-native-styled-text/develop/docs/example-android.png"
+    ],
     "ios": true,
     "android": true,
     "expo": true
