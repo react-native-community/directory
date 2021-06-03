@@ -3054,7 +3054,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-cookies/cookies",
-    "npmPkg": "@react-native-community/cookies",
+    "npmPkg": "@react-native-cookies/cookies",
     "ios": true,
     "android": true
   },
@@ -3197,7 +3197,8 @@
     "githubUrl": "https://github.com/react-native-voice/voice",
     "ios": true,
     "android": true,
-    "npmPkg": "@react-native-community/voice"
+    "expo": true,
+    "npmPkg": "@react-native-voice/voice"
   },
   {
     "githubUrl": "https://github.com/tienph6m/react-native-animated-spinkit",
@@ -3368,7 +3369,7 @@
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-viewpager",
-    "npmPkg": "@react-native-community/viewpager",
+    "npmPkg": "react-native-pager-view",
     "images": [
       "https://raw.githubusercontent.com/callstack/react-native-viewpager/master/docs/vp-carousel.gif"
     ],
@@ -3912,6 +3913,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit",
+    "examples": ["https://github.com/react-native-audio-toolkit/react-native-audio-toolkit/tree/master/ExampleApp"],
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/audio-toolkit"
@@ -4745,6 +4747,7 @@
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-slider",
+    "examples": ["https://github.com/callstack/react-native-slider/tree/master/example"],
     "npmPkg": "@react-native-community/slider",
     "images": [
       "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png",
@@ -6676,5 +6679,12 @@
     "githubUrl": "https://github.com/oblador/react-native-vector-image",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vivaxy/react-native-auto-height-image",
+    "examples": ["https://github.com/vivaxy/react-native-auto-height-image/tree/master/ExampleApp"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
