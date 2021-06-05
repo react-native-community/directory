@@ -6686,5 +6686,11 @@
     "ios": true,
     "android": true,
     "expo": true
-  }
+  },
+   {
+    "githubUrl": "https://github.com/christopherdro/react-native-print",
+    "npmPkg": "react-native-print",
+    "ios": true,
+    "android": true
+  }  
 ]
