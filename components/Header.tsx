@@ -1,96 +1,57 @@
 import { A, Header as HtmlHeader } from '@expo/html-elements';
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { layout, colors, H5, P, darkColors } from '../common/styleguide';
+import { layout, colors, H5, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Button } from './Button';
 import { Logo, Plus } from './Icons';
 
-export default function Header() {
-  const isSmallScreen = layout.isSmallScreen();
+const Header = () => {
+  const { isDark, setIsDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <HtmlHeader>
-          <View style={styles.bannerContainer}>
-            <P style={styles.bannerText}>
-              Black Lives Matter.{' '}
-              <A
-                target="_blank"
-                href="https://support.eji.org/give/153413/#!/donation/checkout"
-                style={styles.bannerLink}>
-                Support the Equal Justice Initiative
-              </A>
-              .
-            </P>
-          </View>
-          <View
-            style={[
-              styles.header,
-              {
-                backgroundColor: context.isDark ? darkColors.veryDark : colors.gray7,
-              },
-            ]}>
-            <View style={styles.headerContents}>
-              <View style={styles.displayHorizontal}>
-                <Logo fill={colors.primary} width={29} height={26} />
-                <H5 style={isSmallScreen && styles.smallTitle}>
-                  <A href="/" style={styles.headerContentsTitle}>
-                    React Native Directory
-                  </A>
-                </H5>
-              </View>
-              <View style={styles.displayHorizontal}>
-                <Button
-                  onPress={() => context.setIsDark(!context.isDark)}
-                  style={[styles.themeButton, isSmallScreen ? styles.themeButtonSmall : {}]}>
-                  <Text style={styles.themeButtonText}>{context.isDark ? '☀️' : '🌒'}</Text>
-                </Button>
-                <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
-                  <View style={styles.displayHorizontal}>
-                    <Plus
-                      width={14}
-                      height={14}
-                      fill={context.isDark ? colors.white : colors.black}
-                    />
-                    {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
-                  </View>
-                </Button>
-              </View>
+    <HtmlHeader
+      style={[
+        styles.header,
+        {
+          backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
+        },
+      ]}>
+      <View style={styles.headerContents}>
+        <View style={styles.displayHorizontal}>
+          <Logo fill={colors.primary} width={29} height={26} />
+          <H5 style={isSmallScreen && styles.smallTitle}>
+            <A href="/" style={styles.headerContentsTitle}>
+              {isSmallScreen ? 'Directory' : 'React Native Directory'}
+            </A>
+          </H5>
+        </View>
+        <View style={styles.displayHorizontal}>
+          <Button
+            onPress={() => setIsDark(!isDark)}
+            style={[styles.themeButton, isSmallScreen && styles.themeButtonSmall]}>
+            <Text style={styles.themeButtonText}>{isDark ? '☀️' : '🌒'}</Text>
+          </Button>
+          <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
+            <View style={styles.displayHorizontal}>
+              <Plus width={14} height={14} fill={isDark ? colors.white : colors.black} />
+              {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
             </View>
-          </View>
-        </HtmlHeader>
-      )}
-    </CustomAppearanceContext.Consumer>
+          </Button>
+        </View>
+      </View>
+    </HtmlHeader>
   );
-}
+};
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   header: {
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
-  },
-  bannerContainer: {
-    backgroundColor: '#000',
-    width: '100%',
-    height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
-  },
-  bannerText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  bannerLink: {
-    color: colors.primary,
-    textDecorationLine: 'underline',
-    whiteSpace: 'nowrap',
   },
   headerContents: {
     flexDirection: 'row',
@@ -103,6 +64,14 @@ let styles = StyleSheet.create({
   headerContentsTitle: {
     color: colors.primary,
     paddingLeft: 8,
+    fontWeight: '600',
+  },
+  headerSubpageTitle: {
+    color: colors.white,
+    marginLeft: 32,
+  },
+  headerSubpageTitleSmall: {
+    marginLeft: 20,
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -124,3 +93,5 @@ let styles = StyleSheet.create({
     paddingHorizontal: 14,
   },
 });
+
+export default Header;

@@ -15,6 +15,7 @@ const SortedData = {
   recommended: Sorting.recommended([...originalData]),
   compatibility: Sorting.compatibility([...originalData]),
   quality: Sorting.quality([...originalData]),
+  popularity: Sorting.popularity([...originalData]),
   downloads: Sorting.downloads([...originalData]),
   issues: Sorting.issues([...originalData]),
   stars: Sorting.stars([...originalData]),
@@ -37,17 +38,14 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
-  let sortBy = getAllowedOrderString(req);
-  let libraries = SortedData[sortBy];
+  const sortBy = getAllowedOrderString(req);
+  const libraries = SortedData[sortBy];
 
-  let querySearch = req.query.search
-    ? req.query.search
-        .toString()
-        .toLowerCase()
-        .trim()
+  const querySearch = req.query.search
+    ? req.query.search.toString().toLowerCase().trim()
     : undefined;
 
-  let filteredLibraries = handleFilterLibraries({
+  const filteredLibraries = handleFilterLibraries({
     libraries,
     queryTopic: req.query.topic,
     querySearch,
@@ -67,12 +65,13 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     isPopular: req.query.isPopular,
     isRecommended: req.query.isRecommended,
     wasRecentlyUpdated: req.query.wasRecentlyUpdated,
+    minPopularity: req.query.minPopularity,
   });
 
-  let offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
-  let limit = NUM_PER_PAGE; // UI doesn't yet support different limits req.query.limit || NUM_PER_PAGE,
+  const offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
+  const limit = req.query.limit ? parseInt(req.query.limit.toString(), 10) : NUM_PER_PAGE;
 
-  let filteredAndPaginatedLibraries = take(drop(filteredLibraries, offset), limit);
+  const filteredAndPaginatedLibraries = take(drop(filteredLibraries, offset), limit);
   return res.end(
     JSON.stringify({
       libraries: filteredAndPaginatedLibraries,

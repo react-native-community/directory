@@ -12,6 +12,6 @@ ga('send', 'pageview');
 };
 
 export default function GoogleAnalytics({ id }) {
-  let markup = { __html: getAnalyticsScript(id) };
+  const markup = { __html: getAnalyticsScript(id) };
   return <script dangerouslySetInnerHTML={markup} />;
 }

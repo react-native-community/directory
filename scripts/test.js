@@ -6,12 +6,12 @@
 import { fetchGithubData, fetchGithubRateLimit } from './fetch-github-data';
 
 async function getRateLimit() {
-  let info = await fetchGithubRateLimit();
+  const info = await fetchGithubRateLimit();
   console.log(info);
 }
 
 async function getRepoInfo() {
-  let info = await fetchGithubData({
+  const info = await fetchGithubData({
     githubUrl: 'https://github.com/expo/ex-navigation',
   });
   console.log(JSON.stringify(info));

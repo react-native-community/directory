@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, darkColors } from '../common/styleguide';
@@ -12,30 +12,23 @@ type Props = {
 };
 
 export function CheckBox(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { style, value, color } = props;
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <View
-          style={[
-            styles.container,
-            {
-              borderColor: value ? color : context.isDark ? darkColors.border : colors.gray4,
-              backgroundColor: value ? color : context.isDark ? darkColors.dark : colors.white,
-            },
-            style,
-          ]}>
-          {value ? (
-            <Check
-              width={14}
-              height={10}
-              fill={context.isDark ? darkColors.veryDark : colors.white}
-            />
-          ) : null}
-        </View>
-      )}
-    </CustomAppearanceContext.Consumer>
+    <View
+      style={[
+        styles.container,
+        {
+          borderColor: value ? color : isDark ? darkColors.border : colors.gray4,
+          backgroundColor: value ? color : isDark ? darkColors.dark : colors.white,
+        },
+        style,
+      ]}>
+      {value ? (
+        <Check width={14} height={10} fill={isDark ? darkColors.veryDark : colors.white} />
+      ) : null}
+    </View>
   );
 }
 

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import * as React from 'react';
+import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle, TouchableOpacity } from 'react-native';
 
 import { colors, Caption, darkColors } from '../common/styleguide';
@@ -16,9 +17,10 @@ type Props = {
 };
 
 export default function Pagination(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { query, total, style } = props;
   const totalPages = Math.ceil(total / NUM_PER_PAGE);
-  const currentOffset = parseInt(query.offset ? query.offset : '0', 10);
+  const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
   if (total < 1 || currentOffset >= total) return null;
@@ -54,34 +56,30 @@ export default function Pagination(props: Props) {
   );
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <View style={[styles.container, style]}>
-          {backDisabled ? (
-            backArrow(context.isDark)
-          ) : (
-            <TouchableOpacity>
-              <Link href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}>
-                {backArrow(context.isDark)}
-              </Link>
-            </TouchableOpacity>
-          )}
-
-          <Caption style={styles.text}>
-            {currentPage > 0 ? currentPage : '1'} of {totalPages}
-          </Caption>
-          {forwardDisabled ? (
-            forwardArrow(context.isDark)
-          ) : (
-            <TouchableOpacity>
-              <Link href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}>
-                {forwardArrow(context.isDark)}
-              </Link>
-            </TouchableOpacity>
-          )}
-        </View>
+    <View style={[styles.container, style]}>
+      {backDisabled ? (
+        backArrow(isDark)
+      ) : (
+        <TouchableOpacity>
+          <Link href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}>
+            {backArrow(isDark)}
+          </Link>
+        </TouchableOpacity>
       )}
-    </CustomAppearanceContext.Consumer>
+
+      <Caption style={styles.text}>
+        {currentPage > 0 ? currentPage : '1'} of {totalPages}
+      </Caption>
+      {forwardDisabled ? (
+        forwardArrow(isDark)
+      ) : (
+        <TouchableOpacity>
+          <Link href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}>
+            {forwardArrow(isDark)}
+          </Link>
+        </TouchableOpacity>
+      )}
+    </View>
   );
 }
 

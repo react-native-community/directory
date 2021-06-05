@@ -1,36 +1,56 @@
 import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
 import ContentContainer from '../components/ContentContainer';
-import Libraries from '../components/Libraries';
+import LoadingContent from '../components/Library/LoadingContent';
+import Navigation from '../components/Navigation';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
+const LibrariesWithLoading = dynamic(() => import('../components/Libraries'), {
+  loading: () => (
+    <View
+      style={{
+        paddingTop: 8,
+      }}>
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+      <LoadingContent />
+    </View>
+  ),
+});
+
 const Index = ({ data, query }) => {
   const router = useRouter();
+  const total = data && data.total;
   return (
     <>
-      <Search query={router.query} total={data && data.total} />
-      <ContentContainer>
-        <View style={styles.container}>
-          <Pagination query={query} total={data && data.total} />
-          <Libraries libraries={data && data.libraries} />
-          <Pagination query={query} total={data && data.total} />
-        </View>
+      <Navigation noHeader />
+      <Search query={router.query} total={total} />
+      <ContentContainer style={styles.container}>
+        <Pagination query={query} total={total} />
+        <LibrariesWithLoading libraries={data && data.libraries} />
+        <Pagination query={query} total={total} />
       </ContentContainer>
     </>
   );
 };
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
-  let url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
-  let response = await fetch(url);
-  let result = await response.json();
+  const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
+  const response = await fetch(url);
+  const result = await response.json();
 
   return {
     data: result,
@@ -40,7 +60,6 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 16,
   },
 });

@@ -1,4 +1,5 @@
-import * as Sentry from '@sentry/node';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
 import React from 'react';
 import { AppearanceProvider } from 'react-native-appearance';
@@ -14,10 +15,13 @@ import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 import '../styles/styles.css';
 import PreviewStyles from '../styles/PreviewStyles';
 
-// Sentry.init({
-//   dsn: 'https://b084338633454a63a82c787541b96d8f@sentry.io/2503319',
-//   enabled: process.env.NODE_ENV === 'production',
-// });
+Sentry.init({
+  dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
+  enabled: process.env.NODE_ENV === 'production',
+  allowUrls: process.env.NODE_ENV === 'production' ? [/https:\/\/reactnative\.directory/] : [],
+  integrations: [new Integrations.BrowserTracing()],
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.5 : 1.0,
+});
 
 const App = ({ pageProps, Component }) => {
   return (
@@ -32,6 +36,10 @@ const App = ({ pageProps, Component }) => {
               }}>
               <Head>
                 <title>React Native Directory</title>
+                <meta
+                  name="viewport"
+                  content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"
+                />
               </Head>
               <Header />
               <Component {...pageProps} />

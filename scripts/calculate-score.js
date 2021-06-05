@@ -10,12 +10,12 @@ const modifiers = [
   {
     name: 'Very popular',
     value: 40,
-    condition: data => popularityScore(data) > 10000,
+    condition: data => getCombinedPopularity(data) > 10000,
   },
   {
     name: 'Popular',
     value: 10,
-    condition: data => popularityScore(data) > 2500,
+    condition: data => getCombinedPopularity(data) > 2500,
   },
   {
     name: 'Recommended',
@@ -60,8 +60,8 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
-const calculateScore = data => {
-  // Filter the modifiers to the ones which condictions pass with the data
+export const calculateScore = data => {
+  // Filter the modifiers to the ones which conditions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
   // Reduce the matching modifiers to find the raw score for the data
@@ -83,18 +83,57 @@ const calculateScore = data => {
   };
 };
 
-const popularityScore = data => {
-  let { subscribers, forks, stars } = data.github.stats;
-  let { downloads } = data.npm;
+const getCombinedPopularity = data => {
+  const { subscribers, forks, stars } = data.github.stats;
+  const { downloads } = data.npm;
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
 };
+
+const DAY_IN_MS = 864e5;
 
 const getUpdatedDaysAgo = data => {
   const { updatedAt } = data.github.stats;
   const updateDate = new Date(updatedAt).getTime();
   const currentDate = new Date().getTime();
 
-  return (currentDate - updateDate) / 1000 / 60 / 60 / 24;
+  return (currentDate - updateDate) / DAY_IN_MS;
 };
 
-export default calculateScore;
+const MIN_MONTHLY_DOWNLOADS = 250;
+const MIN_GITHUB_STARS = 25;
+const DATE_NOW = Date.now();
+const WEEK_IN_MS = 6048e5;
+
+export const calculatePopularity = data => {
+  const { npm, github, unmaintained } = data;
+  const { downloads, weekDownloads } = npm;
+  const { createdAt, stars } = github.stats;
+
+  if (!downloads || !weekDownloads) {
+    return {
+      ...data,
+      popularity: -1,
+    };
+  }
+
+  const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.25 : 0;
+  const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.3 : 0;
+
+  const popularity = parseFloat(
+    (
+      popularityGain -
+      downloadsPenalty -
+      unmaintainedPenalty -
+      starsPenalty -
+      freshPackagePenalty
+    ).toFixed(3)
+  );
+
+  return {
+    ...data,
+    popularity,
+  };
+};

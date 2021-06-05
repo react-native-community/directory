@@ -1,5 +1,5 @@
 import { A } from '@expo/html-elements';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
 
 import { colors, darkColors, P } from '../common/styleguide';
@@ -14,27 +14,24 @@ type Props = {
 };
 
 export function Button(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { children, href, onPress, style, target } = props;
   const isString = typeof children === 'string';
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <A href={href} target={target}>
-          <TouchableOpacity
-            onPress={onPress}
-            style={[
-              styles.container,
-              {
-                backgroundColor: context.isDark ? darkColors.border : colors.white,
-              },
-              style,
-            ]}>
-            {isString ? <P>{children}</P> : children}
-          </TouchableOpacity>
-        </A>
-      )}
-    </CustomAppearanceContext.Consumer>
+    <A href={href} target={target}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={[
+          styles.container,
+          {
+            backgroundColor: isDark ? darkColors.border : colors.white,
+          },
+          style,
+        ]}>
+        {isString ? <P>{children}</P> : children}
+      </TouchableOpacity>
+    </A>
   );
 }
 

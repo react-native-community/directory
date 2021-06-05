@@ -1,11 +1,12 @@
 import { Query } from '../types';
 
 function toQueryString(query: Query) {
+  // @ts-ignore
   return new URLSearchParams(query).toString();
 }
 
-export default function urlWithQuery(url, query) {
-  let queryWithoutEmptyParams = {};
+export default function urlWithQuery(url, query: Query) {
+  const queryWithoutEmptyParams = {};
   Object.keys(query).forEach(key => {
     if (query[key]) {
       queryWithoutEmptyParams[key] = query[key];

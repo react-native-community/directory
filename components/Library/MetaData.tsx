@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
@@ -88,9 +88,9 @@ const generateData = (library, secondary, isDark) => {
         icon: <DirectoryScore score={library.score} />,
         content: (
           <A
-            target=""
+            target="_self"
             href="/directory-score"
-            style={styles.mutedLink}
+            style={[styles.link, styles.mutedLink]}
             hoverStyle={isDark ? { color: colors.primaryDark } : undefined}>
             Directory Score
           </A>
@@ -99,14 +99,14 @@ const generateData = (library, secondary, isDark) => {
       {
         id: 'calendar',
         icon: <Calendar fill={iconColor} />,
-        content: `Updated ${getTimeSinceToday(github.stats.pushedAt)}`,
+        content: <Caption>Updated {getTimeSinceToday(github.stats.pushedAt)}</Caption>,
       },
       library.npm.downloads
         ? {
             id: 'downloads',
-            icon: <Download fill={iconColor} />,
+            icon: <Download fill={iconColor} width={16} height={18} />,
             content: (
-              <A href={`https://www.npmjs.com/package/${library.npmPkg}`}>
+              <A href={`https://www.npmjs.com/package/${library.npmPkg}`} style={styles.link}>
                 {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
               </A>
             ),
@@ -115,14 +115,14 @@ const generateData = (library, secondary, isDark) => {
       {
         id: 'star',
         icon: <Star fill={iconColor} />,
-        content: `${github.stats.stars.toLocaleString()} stars`,
+        content: <Caption>{github.stats.stars.toLocaleString()} stars</Caption>,
       },
       github.stats.forks
         ? {
             id: 'forks',
             icon: <Fork fill={iconColor} width={16} height={17} />,
             content: (
-              <A href={`${github.urls.repo}/network/members`}>
+              <A href={`${github.urls.repo}/network/members`} style={styles.link}>
                 {`${github.stats.forks.toLocaleString()}`} forks
               </A>
             ),
@@ -133,7 +133,7 @@ const generateData = (library, secondary, isDark) => {
             id: 'issues',
             icon: <Issue fill={iconColor} />,
             content: (
-              <A href={`${github.urls.repo}/issues`}>
+              <A href={`${github.urls.repo}/issues`} style={styles.link}>
                 {`${github.stats.issues.toLocaleString()}`} issues
               </A>
             ),
@@ -144,39 +144,34 @@ const generateData = (library, secondary, isDark) => {
 };
 
 export function MetaData(props: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
   const { library, secondary } = props;
+  const data = generateData(library, secondary, isDark);
 
   return (
-    <CustomAppearanceContext.Consumer>
-      {context => {
-        const data = generateData(library, secondary, context.isDark);
-        return (
-          <>
-            {data.filter(Boolean).map((datum, i) => (
-              <View
-                key={datum.id}
-                style={[
-                  styles.displayHorizontal,
-                  i + 1 !== data.length ? styles.datumContainer : {},
-                  secondary ? styles.secondaryContainer : {},
-                ]}>
-                <View
-                  style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
-                  {datum.icon}
-                </View>
-                <Caption>{datum.content}</Caption>
-              </View>
-            ))}
-          </>
-        );
-      }}
-    </CustomAppearanceContext.Consumer>
+    <>
+      {data.filter(Boolean).map(({ id, icon, content }, i) => (
+        <View
+          key={id}
+          style={[
+            styles.displayHorizontal,
+            i + 1 !== data.length ? styles.datumContainer : {},
+            secondary ? styles.secondaryContainer : {},
+          ]}>
+          <View style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
+            {icon}
+          </View>
+          {content}
+        </View>
+      ))}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   datumContainer: {
     marginBottom: 8,
+    minHeight: 22,
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -186,6 +181,9 @@ const styles = StyleSheet.create({
     marginRight: 8,
     width: 20,
     alignItems: 'center',
+  },
+  link: {
+    fontSize: 15,
   },
   mutedLink: {
     backgroundColor: 'transparent',
@@ -203,5 +201,6 @@ const styles = StyleSheet.create({
   exampleLink: {
     marginLeft: 2,
     marginRight: 4,
+    fontSize: 13,
   },
 });

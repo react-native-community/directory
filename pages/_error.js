@@ -1,7 +1,7 @@
 // NOTE(brentvatne):
-// This is the default Sentry error page provided by https://github.com/zeit/next.js/blob/canary/examples/with-sentry-simple/
+// This is the default Sentry error page provided by https://github.com/vercel/next.js/tree/canary/examples/with-sentry/
 
-import * as Sentry from '@sentry/node';
+import * as Sentry from '@sentry/react';
 import Error from 'next/error';
 import React from 'react';
 
@@ -12,7 +12,7 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
     // getInitialProps is not called in case of
     // https://github.com/zeit/next.js/issues/8592. As a workaround, we pass
     // err via _app.js so it can be captured
-    // Sentry.captureException(err);
+    Sentry.captureException(err);
   }
 
   return <ErrorState statusCode={statusCode} />;
@@ -30,15 +30,8 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //
     // Next.js will pass an err on the server if a page's `getInitialProps`
     // threw or returned a Promise that rejected
-
-    if (res.statusCode === 404) {
-      // Opinionated: do not record an exception in Sentry for 404
-      return { statusCode: 404 };
-    }
-
     if (err) {
-      // Sentry.captureException(err);
-
+      Sentry.captureException(err);
       return errorInitialProps;
     }
   } else {
@@ -52,8 +45,7 @@ MyError.getInitialProps = async ({ res, err, asPath }) => {
     //    Boundary. Read more about what types of exceptions are caught by Error
     //    Boundaries: https://reactjs.org/docs/error-boundaries.html
     if (err) {
-      // Sentry.captureException(err);
-
+      Sentry.captureException(err);
       return errorInitialProps;
     }
   }
