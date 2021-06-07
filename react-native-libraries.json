@@ -6686,5 +6686,22 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/marcocesarato/react-native-big-list",
+    "examples": [
+      "https://github.com/marcocesarato/react-native-big-list/tree/master/example", 
+      "https://marcocesarato.github.io/react-native-big-list/"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/marcocesarato/react-native-big-list/master/assets/screenshots/performance.gif",
+      "https://raw.githubusercontent.com/marcocesarato/react-native-big-list/master/assets/screenshots/example-section-list.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true
   }
 ]
