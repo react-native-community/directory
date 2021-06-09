@@ -19,7 +19,7 @@ type Props = {
 export default function Search(props: Props) {
   const { query, total } = props;
   const [isFilterVisible, setFilterVisible] = useState(false);
-  const { callback } = useDebouncedCallback((text: string) => {
+  const callback = useDebouncedCallback((text: string) => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 150);
   const { isSmallScreen } = useLayout();
