@@ -6701,5 +6701,21 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kadiraydinli/react-native-system-navigation-bar",
+    "examples": ["https://github.com/kadiraydinli/react-native-system-navigation-bar/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/hide.png",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/leanBack.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/immersive.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/stickyImmersive.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/lowProfile.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/navigationColor.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/navigationBarDividerColor.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/lightNavigationBar.gif"
+    ],
+    "android": true,
+    "expo": true
   }
 ]
