@@ -42,12 +42,12 @@ Please follow this format, fields order and indentation:
 
 Please skip any of the `false` values and do not fill optional fields, unless it's necessary.
 
-## Library field descriptions
+## Library fields description
 
 - #### `githubUrl`
   **(required string)** - URL to the GitHub repository (currently other git hosts are not supported).
 - #### `npmPkg`
-  **(_optional_ string)** - npm package name (fill only when the GitHub repository name is different from the name of package published to npm, or package is a a part of - monorepo). Example: `"@expo/react-native-action-sheet"`.
+  **(_optional_ string)** - npm package name, by default GitHub repository name will be used (fill only when the GitHub repository name is different from the name of package published to npm, or package is a a part of - monorepo). Example: `"@expo/react-native-action-sheet"`.
 - #### `nameOverride`
   **(_optional_ string)** - display name override (fill only when it is different from the GitHub repository name and npm package name).
 - #### `examples`
@@ -73,13 +73,15 @@ Please skip any of the `false` values and do not fill optional fields, unless it
 ### 🏷️ Tags
 
 - #### `unmaintained`
-  **(_optional_ boolean)** - signify that a library is not maintained.
+  **(_optional_ boolean)** - signify that a library is no longer maintained.
 - #### `dev`
-  **(_optional_ boolean)** - signify that a library is a development tool.
+  **(_optional_ boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
-  **(_optional_ boolean)** - signify that a library is a project template.
+  **(_optional_ boolean)** - signify that a library is a new project template.
 
-> _Note:_ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
+---
+
+> __Note:__ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/master/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 
@@ -99,7 +101,7 @@ You should be able to visit `localhost:3000` in your browser.
 ## How do I run `yarn data:update` with keys?
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
-- Load the GITHUB_TOKEN environment variable into your shell.
+- Load the `GITHUB_TOKEN` environment variable into your shell.
 
 This command creates site data in `./assets/data.json`
 
