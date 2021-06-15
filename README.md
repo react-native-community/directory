@@ -1,13 +1,17 @@
 <dd align="center"><img alt="React Native Directory Logo" height="64" src="./assets/logo.png" /></dd>
 <h1 align="center">React Native Directory</h1>
-<h3 align="center"> https://reactnative.directory/ </h3>
+<h3 align="center">https://reactnative.directory/</h3>
 <p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
-<br/>
+<p align="center">
+  <a href="https://reactnative.directory/">
+    <img alt="React Native Directory Logo" height="20" src="https://img.shields.io/github/deployments/react-native-community/directory/Production?label=Deploy&logo=vercel&style=flat-square" />
+  </a>
+</p>
 
 ## How do I know I'm at the right place?
 
 - You made a repository on GitHub and you want the world to know it works with React Native.
-- You want to submit a pull request to improve React Native Directory.
+- You want to submit a pull request to improve React Native Directory or libraries dataset.
 - You want to report a bug or make a suggestion.
 
 ## How do I add a library?
@@ -131,19 +135,19 @@ Sure, go for it!
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo managed and Android and are popular based on the scoring criterion.
 
-## I don't like how you calculate health scores.
+## I don't like how you calculate scores.
 
 - Submit a PR with changes to `scripts/calculate-score.js`.
 - You have all the power! Tell us what you want.
 
 ## How do I deploy my own version of this?
 
-- Site is hosted on Now, and this is the easiest way to do it.
-- You can deploy your own with your own Now account
-- You will need to provide GITHUB_TOKEN environment variable in your Vercel configuration.
+- Site is hosted on Vercel, and this is the easiest way to do it.
+- You can deploy your own with your own Vercel account
+- You will need to provide `GITHUB_TOKEN` environment variable in your Vercel configuration.
 
 ```sh
-# once environment variables are configured, install vercel and deploy
-yarn global add vercel
+# once environment variables are configured, install Vercel and deploy
+npm i -g vercel
 vercel
 ```
