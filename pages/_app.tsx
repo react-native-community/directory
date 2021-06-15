@@ -53,4 +53,4 @@ const App = ({ pageProps, Component }) => {
   );
 };
 
-export default App;
+export default Sentry.withProfiler(App);
