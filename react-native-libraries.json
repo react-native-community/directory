@@ -6717,5 +6717,13 @@
     ],
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/tienphaw/react-native-figma-squircle",
+    "examples": ["https://github.com/tienphaw/react-native-figma-squircle/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/tienphaw/react-native-figma-squircle/main/demo.png"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
