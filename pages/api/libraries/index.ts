@@ -1,6 +1,5 @@
 import drop from 'lodash/drop';
 import take from 'lodash/take';
-import Cors from 'micro-cors';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { libraries } from '../../../assets/data.json';
@@ -34,7 +33,7 @@ const getAllowedOrderString = (req: NextApiRequest) => {
   return sortBy;
 };
 
-function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
@@ -79,9 +78,3 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     })
   );
 }
-
-const cors = Cors({
-  allowMethods: ['GET', 'HEAD'],
-});
-
-export default cors(handler);
