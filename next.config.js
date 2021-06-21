@@ -7,6 +7,17 @@ module.exports = withExpo(
     withFonts({
       projectRoot: __dirname,
       productionBrowserSourceMaps: true,
+      async headers() {
+        return [
+          {
+            source: '/api/libraries',
+            headers: [
+              { key: 'Access-Control-Allow-Origin', value: '*' },
+              { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
+            ],
+          },
+        ];
+      },
     })
   )
 );
