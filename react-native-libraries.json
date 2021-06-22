@@ -6225,11 +6225,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/cuvent/react-native-vision-camera",
-    "examples": ["https://github.com/cuvent/react-native-vision-camera/tree/master/example"],
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
+    "examples": ["https://github.com/mrousavy/react-native-vision-camera/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/docs/static/img/example.png",
-      "https://raw.githubusercontent.com/cuvent/react-native-vision-camera/main/docs/static/img/demo.gif"
+      "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/example.png",
+      "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/demo.gif"
     ],
     "ios": true,
     "android": true
@@ -6725,5 +6725,11 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/wcandillon/react-native-shader",
+    "examples": ["https://github.com/wcandillon/react-native-shader/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
