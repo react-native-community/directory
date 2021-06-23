@@ -6731,5 +6731,16 @@
     "examples": ["https://github.com/wcandillon/react-native-shader/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ibitcy/react-native-hole-view",
+    "examples": ["https://github.com/ibitcy/react-native-hole-view/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ibitcy/react-native-hole-view/master/misc/demo1.gif",
+      "https://raw.githubusercontent.com/ibitcy/react-native-hole-view/master/misc/demo2.gif",
+      "https://raw.githubusercontent.com/ibitcy/react-native-hole-view/master/misc/demo3.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
