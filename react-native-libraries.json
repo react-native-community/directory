@@ -3913,7 +3913,9 @@
   },
   {
     "githubUrl": "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit",
-    "examples": ["https://github.com/react-native-audio-toolkit/react-native-audio-toolkit/tree/master/ExampleApp"],
+    "examples": [
+      "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit/tree/master/ExampleApp"
+    ],
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/audio-toolkit"
@@ -6690,7 +6692,7 @@
   {
     "githubUrl": "https://github.com/marcocesarato/react-native-big-list",
     "examples": [
-      "https://github.com/marcocesarato/react-native-big-list/tree/master/example", 
+      "https://github.com/marcocesarato/react-native-big-list/tree/master/example",
       "https://marcocesarato.github.io/react-native-big-list/"
     ],
     "images": [
@@ -6704,7 +6706,9 @@
   },
   {
     "githubUrl": "https://github.com/kadiraydinli/react-native-system-navigation-bar",
-    "examples": ["https://github.com/kadiraydinli/react-native-system-navigation-bar/tree/master/example"],
+    "examples": [
+      "https://github.com/kadiraydinli/react-native-system-navigation-bar/tree/master/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/hide.png",
       "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/leanBack.gif",
@@ -6721,7 +6725,9 @@
   {
     "githubUrl": "https://github.com/tienphaw/react-native-figma-squircle",
     "examples": ["https://github.com/tienphaw/react-native-figma-squircle/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/tienphaw/react-native-figma-squircle/main/demo.png"],
+    "images": [
+      "https://raw.githubusercontent.com/tienphaw/react-native-figma-squircle/main/demo.png"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -6748,6 +6754,17 @@
     "npmPkg": "@svgr-iconkit/core",
     "nameOverride": "SVGR IconKit",
     "examples": ["https://svgr-iconkit.dev/expo-explorer/"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/akinncar/react-native-mask-text",
+    "examples": [
+      "https://github.com/akinncar/react-native-mask-text/tree/main/example",
+      "https://snack.expo.io/@akinncar/react-native-mask-text"
+    ],
     "ios": true,
     "android": true,
     "web": true,
