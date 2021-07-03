@@ -6615,7 +6615,8 @@
     "npmPkg": "@stripe/stripe-react-native",
     "examples": ["https://github.com/stripe/stripe-react-native/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/swaplet/react-native-swipe-cards-deck",
