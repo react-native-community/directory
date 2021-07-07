@@ -6774,5 +6774,13 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/RobertFOConnor/react-native-progress-wheel",
+    "images": [
+      "https://raw.githubusercontent.com/RobertFOConnor/react-native-progress-wheel/master/preview.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
