@@ -6754,7 +6754,11 @@
     "githubUrl": "https://github.com/lemankk/svgr-iconkit",
     "npmPkg": "@svgr-iconkit/core",
     "nameOverride": "SVGR IconKit",
-    "examples": ["https://svgr-iconkit.dev/expo-explorer/"],
+    "examples": [
+      "https://svgr-iconkit.dev/expo-explorer/", 
+      "https://snack.expo.io/@lemankk/svgr-iconkit-sample-with-material-design-icons", 
+      "https://svgr-iconkit.dev/explorer"
+    ],
     "ios": true,
     "android": true,
     "web": true,
