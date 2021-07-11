@@ -187,12 +187,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/prscX/react-native-gradient-blur-view",
-    "ios": true,
-    "android": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/prscX/react-native-material-shadows",
     "ios": true,
     "android": true,
@@ -354,25 +348,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/prscX/react-native-material-showcase-ios",
-    "images": [
-      "https://raw.githubusercontent.com/aromajoin/material-showcase-ios/master/art/material-showcase.gif"
-    ],
-    "ios": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/bietkul/react-reactive-form",
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/prscX/react-native-taptargetview",
-    "images": ["https://github.com/KeepSafe/TapTargetView/raw/master/.github/video.gif"],
-    "android": true,
-    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/hectahertz/react-native-typography",
@@ -1550,7 +1530,7 @@
   {
     "githubUrl": "https://github.com/rt2zz/react-native-contacts",
     "images": [
-      "https://raw.githubusercontent.com/morenoh149/react-native-contacts/raw/master/example/react-native-contacts.gif"
+      "https://raw.githubusercontent.com/morenoh149/react-native-contacts/master/example/react-native-contacts.gif"
     ],
     "ios": true,
     "android": true
@@ -1577,11 +1557,13 @@
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-fetch",
-    "ios": true
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/lrettig/react-native-stripe",
-    "ios": true
+    "ios": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-speech",
@@ -3368,10 +3350,12 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/callstack/react-native-viewpager",
-    "npmPkg": "react-native-pager-view",
+    "githubUrl": "https://github.com/callstack/react-native-pager-view",
+    "examples": ["https://github.com/callstack/react-native-pager-view/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/callstack/react-native-viewpager/master/docs/vp-carousel.gif"
+      "https://raw.githubusercontent.com/callstack/react-native-pager-view/master/img/vp-carousel.gif",
+      "https://raw.githubusercontent.com/callstack/react-native-pager-view/master/img/android-viewpager-vertical.gif",
+      "https://raw.githubusercontent.com/callstack/react-native-pager-view/master/img/ios-viewpager-vertical.gif"
     ],
     "ios": true,
     "android": true,
@@ -5671,7 +5655,8 @@
   {
     "githubUrl": "https://github.com/WrathChaos/react-native-bouncy-checkbox",
     "images": [
-      "https://github.com/WrathChaos/react-native-bouncy-checkbox/raw/master/assets/Screenshots/example.gif"
+      "https://raw.githubusercontent.com/WrathChaos/react-native-bouncy-checkbox/master/assets/Screenshots/react-native-bouncy-checkbox.png",
+      "https://raw.githubusercontent.com/WrathChaos/react-native-bouncy-checkbox/master/assets/Screenshots/react-native-bouncy-checkbox.gif"
     ],
     "ios": true,
     "android": true
@@ -5780,9 +5765,11 @@
     "examples": ["https://github.com/birkir/react-native-carplay/tree/master/example"],
     "images": [
       "https://media.giphy.com/media/Ffa4hukA3YMLh6U8fl/giphy.gif",
-      "https://github.com/birkir/react-native-carplay/raw/master/.github/grid-template.png",
-      "https://github.com/birkir/react-native-carplay/raw/master/.github/list-template.png",
-      "https://github.com/birkir/react-native-carplay/raw/master/.github/search-template.png"
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/actionSheetTemplate.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/gridTemplate.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/listTemplate.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/searchTemplate.png",
+      "https://github.com/birkir/react-native-carplay/raw/master/.github/tabTemplate.png"
     ],
     "ios": true
   },
@@ -6324,7 +6311,7 @@
     "githubUrl": "https://github.com/Flair-Dev/react-native-awesome-gallery",
     "examples": ["https://github.com/Flair-Dev/react-native-awesome-gallery/tree/main/example"],
     "images": [
-      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example.gif"
+      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example-0.0.3.gif"
     ],
     "ios": true,
     "android": true,
@@ -6755,8 +6742,8 @@
     "npmPkg": "@svgr-iconkit/core",
     "nameOverride": "SVGR IconKit",
     "examples": [
-      "https://svgr-iconkit.dev/expo-explorer/", 
-      "https://snack.expo.io/@lemankk/svgr-iconkit-sample-with-material-design-icons", 
+      "https://svgr-iconkit.dev/expo-explorer/",
+      "https://snack.expo.io/@lemankk/svgr-iconkit-sample-with-material-design-icons",
       "https://svgr-iconkit.dev/explorer"
     ],
     "ios": true,
@@ -6786,6 +6773,22 @@
   {
     "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput",
     "examples": ["https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/EvanBacon/react-native-web-hooks",
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/uiwjs/react-native-alipay",
+    "npmPkg": "@uiw/react-native-alipay",
+    "examples": ["https://github.com/uiwjs/react-native-alipay/tree/master/example"],
+    "images": [
+      "https://gw.alipayobjects.com/zos/skylark-tools/public/files/c0aa8379f5f57c55f1e5bf25e6f426d1.png",
+      "https://gw.alipayobjects.com/zos/skylark-tools/public/files/2454bffde14f428b2eeb2bfb6aa28d6b.png"
+    ],
     "ios": true,
     "android": true
   }
