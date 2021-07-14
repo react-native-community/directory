@@ -3466,7 +3466,7 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "npmPkg": "@react-native-community/masked-view"
+    "npmPkg": "@react-native-masked-view/masked-view"
   },
   {
     "githubUrl": "https://github.com/react-native-linear-gradient/react-native-linear-gradient",
@@ -4733,7 +4733,7 @@
     "examples": ["https://github.com/xcarpentier/rn-tourguide/blob/master/App.tsx"]
   },
   {
-    "githubUrl": "https://github.com/callstack/react-native-slider",
+    "githubUrl": "https://github.com/callstack/react-native-slider/tree/master/src",
     "examples": ["https://github.com/callstack/react-native-slider/tree/master/example"],
     "npmPkg": "@react-native-community/slider",
     "images": [
@@ -6835,6 +6835,7 @@
     "githubUrl": "https://github.com/stovmascript/react-native-version",
     "ios": true,
     "android": true,
+    "expo": true,
     "dev": true
   },
   {
