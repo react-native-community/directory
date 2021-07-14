@@ -6798,5 +6798,15 @@
     "examples": ["https://github.com/douglasjunior/react-native-get-location/tree/master/Sample"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/realm/realm-js",
+    "npmPkg": "realm",
+    "examples": [
+      "https://github.com/realm/realm-js/tree/master/examples/ReactExample",
+      "https://github.com/mongodb-university/realm-tutorial-react-native"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
