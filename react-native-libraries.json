@@ -6808,5 +6808,47 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/georstat/react-native-image-cache",
+    "npmPkg": "@georstat/react-native-image-cache",
+    "examples": ["https://github.com/georstat/react-native-image-cache/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/717975/117460761-85fd8f00-af55-11eb-8804-69c008bfeb8d.gif",
+      "https://user-images.githubusercontent.com/717975/117491773-4ba5e900-af79-11eb-8ae1-99604b47c55c.gif",
+      "https://user-images.githubusercontent.com/717975/125193571-b4e5f900-e255-11eb-8164-3ca097ce6e74.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rdhox/react-native-smooth-picker",
+    "examples": ["https://snack.expo.io/@rdhox/smoothpicker"],
+    "images": [
+      "https://raw.githubusercontent.com/rdhox/react-native-smooth-picker/master/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/stovmascript/react-native-version",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/lufinkey/react-native-events",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-progressive-fast-image",
+    "npmPkg": "@freakycoder/react-native-progressive-fast-image",
+    "examples": [
+      "https://github.com/WrathChaos/react-native-progressive-fast-image/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
