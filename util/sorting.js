@@ -52,3 +52,7 @@ export const quality = libraries => {
 export const popularity = libraries => {
   return libraries.sort((a, b) => b.popularity - a.popularity);
 };
+
+export const relevance = libraries => {
+  return libraries.sort((a, b) => b.matchScore - a.matchScore);
+};

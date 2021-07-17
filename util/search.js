@@ -1,5 +1,17 @@
 import { isEmptyOrNull } from './strings';
 
+const calculateMatchScore = ({ github, npmPkg, topicSearchString }, querySearch) => {
+  const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
+  const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
+  const isNameMatch = isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
+  const isDescriptionMatch =
+    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
+      ? 10
+      : 0;
+  const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
+  return isNpmPkgNameMatch + isDescriptionMatch + isTopicMatch + isNameMatch;
+};
+
 export const handleFilterLibraries = ({
   libraries,
   queryTopic,
@@ -17,105 +29,99 @@ export const handleFilterLibraries = ({
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  return libraries.filter(library => {
-    let isTopicMatch = false;
-    let isSearchMatch = false;
+  return libraries
+    .map(library => ({
+      ...library,
+      matchScore: viewerHasTypedSearch ? calculateMatchScore(library, querySearch) : undefined,
+    }))
+    .filter(library => {
+      let isTopicMatch = false;
+      let isSearchMatch = false;
 
-    if (support.ios && !library.ios) {
-      return false;
-    }
+      if (support.ios && !library.ios) {
+        return false;
+      }
 
-    if (support.android && !library.android) {
-      return false;
-    }
+      if (support.android && !library.android) {
+        return false;
+      }
 
-    if (support.web && !library.web) {
-      return false;
-    }
+      if (support.web && !library.web) {
+        return false;
+      }
 
-    if (support.windows && !library.windows) {
-      return false;
-    }
+      if (support.windows && !library.windows) {
+        return false;
+      }
 
-    if (support.macos && !library.macos) {
-      return false;
-    }
+      if (support.macos && !library.macos) {
+        return false;
+      }
 
-    if (support.tvos && !library.tvos) {
-      return false;
-    }
+      if (support.tvos && !library.tvos) {
+        return false;
+      }
 
-    if (support.expo && !library.expo) {
-      return false;
-    }
+      if (support.expo && !library.expo) {
+        return false;
+      }
 
-    if (support.expo && typeof library.expo === 'string') {
-      return false;
-    }
+      if (support.expo && typeof library.expo === 'string') {
+        return false;
+      }
 
-    if (hasExample && (!library.examples || !library.examples.length)) {
-      return false;
-    }
+      if (hasExample && (!library.examples || !library.examples.length)) {
+        return false;
+      }
 
-    if (hasImage && (!library.images || !library.images.length)) {
-      return false;
-    }
+      if (hasImage && (!library.images || !library.images.length)) {
+        return false;
+      }
 
-    if (hasTypes && !library.github.hasTypes) {
-      return false;
-    }
+      if (hasTypes && !library.github.hasTypes) {
+        return false;
+      }
 
-    if (isMaintained && library.unmaintained) {
-      return false;
-    }
+      if (isMaintained && library.unmaintained) {
+        return false;
+      }
 
-    if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
-      return false;
-    }
+      if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
+        return false;
+      }
 
-    if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
-      return false;
-    }
+      if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
+        return false;
+      }
 
-    if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
-      return false;
-    }
+      if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
+        return false;
+      }
 
-    if (minPopularity) {
-      return library.popularity * 100 >= parseFloat(minPopularity);
-    }
+      if (minPopularity) {
+        return library.popularity * 100 >= parseFloat(minPopularity);
+      }
 
-    if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
-      return true;
-    }
+      if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
+        return true;
+      }
 
-    if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
-      isTopicMatch = true;
-    }
+      if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
+        isTopicMatch = true;
+      }
 
-    if (!viewerHasTypedSearch) {
-      return isTopicMatch;
-    }
+      if (!viewerHasTypedSearch) {
+        return isTopicMatch;
+      }
 
-    if (viewerHasTypedSearch) {
-      const isTopicMatch = library.topicSearchString.includes(querySearch);
-      const isNameMatch = !isEmptyOrNull(library.github.name)
-        ? library.github.name.includes(querySearch)
-        : undefined;
-      const isNpmPkgNameMatch = !isEmptyOrNull(library.npmPkg)
-        ? library.npmPkg.includes(querySearch)
-        : undefined;
-      const isDescriptionMatch = !isEmptyOrNull(library.github.description)
-        ? library.github.description.toLowerCase().includes(querySearch)
-        : undefined;
+      if (viewerHasTypedSearch) {
+        isSearchMatch = library.matchScore && library.matchScore > 0;
+      }
 
-      isSearchMatch = isNameMatch || isNpmPkgNameMatch || isDescriptionMatch || isTopicMatch;
-    }
+      if (!viewerHasChosenTopic) {
+        return isSearchMatch;
+      }
 
-    if (!viewerHasChosenTopic) {
-      return isSearchMatch;
-    }
-
-    return isTopicMatch && isSearchMatch;
-  });
+      return isTopicMatch && isSearchMatch;
+    });
 };

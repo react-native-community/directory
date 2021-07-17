@@ -70,7 +70,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
   const limit = req.query.limit ? parseInt(req.query.limit.toString(), 10) : NUM_PER_PAGE;
 
-  const filteredAndPaginatedLibraries = take(drop(filteredLibraries, offset), limit);
+  const relevanceSortedLibraries =
+    querySearch?.length && (!req.query.order || req.query.order === 'relevance')
+      ? Sorting.relevance([...filteredLibraries])
+      : filteredLibraries;
+  const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
+
   return res.end(
     JSON.stringify({
       libraries: filteredAndPaginatedLibraries,
