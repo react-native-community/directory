@@ -29,99 +29,101 @@ export const handleFilterLibraries = ({
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  return libraries
-    .map(library => ({
-      ...library,
-      matchScore: viewerHasTypedSearch ? calculateMatchScore(library, querySearch) : undefined,
-    }))
-    .filter(library => {
-      let isTopicMatch = false;
-      let isSearchMatch = false;
+  const processedLibraries = viewerHasTypedSearch
+    ? libraries.map(library => ({
+        ...library,
+        matchScore: calculateMatchScore(library, querySearch),
+      }))
+    : libraries;
 
-      if (support.ios && !library.ios) {
-        return false;
-      }
+  return processedLibraries.filter(library => {
+    let isTopicMatch = false;
+    let isSearchMatch = false;
 
-      if (support.android && !library.android) {
-        return false;
-      }
+    if (support.ios && !library.ios) {
+      return false;
+    }
 
-      if (support.web && !library.web) {
-        return false;
-      }
+    if (support.android && !library.android) {
+      return false;
+    }
 
-      if (support.windows && !library.windows) {
-        return false;
-      }
+    if (support.web && !library.web) {
+      return false;
+    }
 
-      if (support.macos && !library.macos) {
-        return false;
-      }
+    if (support.windows && !library.windows) {
+      return false;
+    }
 
-      if (support.tvos && !library.tvos) {
-        return false;
-      }
+    if (support.macos && !library.macos) {
+      return false;
+    }
 
-      if (support.expo && !library.expo) {
-        return false;
-      }
+    if (support.tvos && !library.tvos) {
+      return false;
+    }
 
-      if (support.expo && typeof library.expo === 'string') {
-        return false;
-      }
+    if (support.expo && !library.expo) {
+      return false;
+    }
 
-      if (hasExample && (!library.examples || !library.examples.length)) {
-        return false;
-      }
+    if (support.expo && typeof library.expo === 'string') {
+      return false;
+    }
 
-      if (hasImage && (!library.images || !library.images.length)) {
-        return false;
-      }
+    if (hasExample && (!library.examples || !library.examples.length)) {
+      return false;
+    }
 
-      if (hasTypes && !library.github.hasTypes) {
-        return false;
-      }
+    if (hasImage && (!library.images || !library.images.length)) {
+      return false;
+    }
 
-      if (isMaintained && library.unmaintained) {
-        return false;
-      }
+    if (hasTypes && !library.github.hasTypes) {
+      return false;
+    }
 
-      if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
-        return false;
-      }
+    if (isMaintained && library.unmaintained) {
+      return false;
+    }
 
-      if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
-        return false;
-      }
+    if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
+      return false;
+    }
 
-      if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
-        return false;
-      }
+    if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
+      return false;
+    }
 
-      if (minPopularity) {
-        return library.popularity * 100 >= parseFloat(minPopularity);
-      }
+    if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
+      return false;
+    }
 
-      if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
-        return true;
-      }
+    if (minPopularity) {
+      return library.popularity * 100 >= parseFloat(minPopularity);
+    }
 
-      if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
-        isTopicMatch = true;
-      }
+    if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
+      return true;
+    }
 
-      if (!viewerHasTypedSearch) {
-        return isTopicMatch;
-      }
+    if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
+      isTopicMatch = true;
+    }
 
-      if (viewerHasTypedSearch) {
-        isSearchMatch = library.matchScore && library.matchScore > 0;
-      }
+    if (!viewerHasTypedSearch) {
+      return isTopicMatch;
+    }
 
-      if (!viewerHasChosenTopic) {
-        return isSearchMatch;
-      }
+    if (viewerHasTypedSearch) {
+      isSearchMatch = library.matchScore && library.matchScore > 0;
+    }
 
-      return isTopicMatch && isSearchMatch;
-    });
+    if (!viewerHasChosenTopic) {
+      return isSearchMatch;
+    }
+
+    return isTopicMatch && isSearchMatch;
+  });
 };
