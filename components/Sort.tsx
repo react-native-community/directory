@@ -15,6 +15,10 @@ type SortButtonProps = {
 
 const sorts = [
   {
+    param: 'relevance',
+    label: 'Relevance',
+  },
+  {
     param: 'updated',
     label: 'Last Updated',
   },
@@ -45,10 +49,6 @@ const sorts = [
   {
     param: 'stars',
     label: 'Stars',
-  },
-  {
-    param: 'relevance',
-    label: 'Relevance',
   },
 ];
 

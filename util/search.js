@@ -9,7 +9,7 @@ const calculateMatchScore = ({ github, npmPkg, topicSearchString }, querySearch)
       ? 10
       : 0;
   const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
-  return isNpmPkgNameMatch + isDescriptionMatch + isTopicMatch + isNameMatch;
+  return isNameMatch + isDescriptionMatch + isTopicMatch;
 };
 
 export const handleFilterLibraries = ({
