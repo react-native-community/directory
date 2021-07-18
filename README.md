@@ -34,6 +34,7 @@ Please follow this format, fields order and indentation:
   "expo": false,
   "windows": false,
   "macos": false,
+  "tvos": false,
   "unmaintained": false,
   "dev": false,
   "template": false
