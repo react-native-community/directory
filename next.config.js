@@ -9,6 +9,9 @@ module.exports = withTM(
       withFonts({
         projectRoot: __dirname,
         productionBrowserSourceMaps: true,
+        eslint: {
+          ignoreDuringBuilds: true,
+        },
         async headers() {
           return [
             {
