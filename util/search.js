@@ -1,5 +1,17 @@
 import { isEmptyOrNull } from './strings';
 
+const calculateMatchScore = ({ github, npmPkg, topicSearchString }, querySearch) => {
+  const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
+  const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
+  const isNameMatch = isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
+  const isDescriptionMatch =
+    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
+      ? 10
+      : 0;
+  const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
+  return isNameMatch + isDescriptionMatch + isTopicMatch;
+};
+
 export const handleFilterLibraries = ({
   libraries,
   queryTopic,
@@ -17,7 +29,14 @@ export const handleFilterLibraries = ({
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  return libraries.filter(library => {
+  const processedLibraries = viewerHasTypedSearch
+    ? libraries.map(library => ({
+        ...library,
+        matchScore: calculateMatchScore(library, querySearch),
+      }))
+    : libraries;
+
+  return processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -98,18 +117,7 @@ export const handleFilterLibraries = ({
     }
 
     if (viewerHasTypedSearch) {
-      const isTopicMatch = library.topicSearchString.includes(querySearch);
-      const isNameMatch = !isEmptyOrNull(library.github.name)
-        ? library.github.name.includes(querySearch)
-        : undefined;
-      const isNpmPkgNameMatch = !isEmptyOrNull(library.npmPkg)
-        ? library.npmPkg.includes(querySearch)
-        : undefined;
-      const isDescriptionMatch = !isEmptyOrNull(library.github.description)
-        ? library.github.description.toLowerCase().includes(querySearch)
-        : undefined;
-
-      isSearchMatch = isNameMatch || isNpmPkgNameMatch || isDescriptionMatch || isTopicMatch;
+      isSearchMatch = library.matchScore && library.matchScore > 0;
     }
 
     if (!viewerHasChosenTopic) {

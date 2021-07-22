@@ -15,6 +15,10 @@ type SortButtonProps = {
 
 const sorts = [
   {
+    param: 'relevance',
+    label: 'Relevance',
+  },
+  {
     param: 'updated',
     label: 'Last Updated',
   },
@@ -53,7 +57,7 @@ export const SortButton = (props: SortButtonProps) => {
     query: { order },
     query,
   } = props;
-  const [sortValue, setSortValue] = useState(order || 'updated');
+  const [sortValue, setSortValue] = useState(order || 'relevance');
   const { isDark } = useContext(CustomAppearanceContext);
 
   const onPickerChange = (order: QueryOrder) => {
