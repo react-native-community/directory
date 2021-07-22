@@ -71,7 +71,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const limit = req.query.limit ? parseInt(req.query.limit.toString(), 10) : NUM_PER_PAGE;
 
   const relevanceSortedLibraries =
-    querySearch?.length && req.query.order === 'relevance'
+    querySearch?.length && (!req.query.order || req.query.order === 'relevance')
       ? Sorting.relevance([...filteredLibraries])
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
