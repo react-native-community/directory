@@ -6851,5 +6851,48 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/timfpark/react-native-cache",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gorhom/react-native-portal",
+    "npmPkg": "@gorhom/portal",
+    "examples": ["https://github.com/gorhom/react-native-portal/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/a7ul/react-native-exception-handler",
+    "example": ["https://github.com/a7ul/react-native-exception-handler-example"],
+    "images": [
+      "https://raw.githubusercontent.com/a7ul/react-native-exception-handler/master/screens/WITH_EH.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ViroCommunity/viro",
+    "npmPkg": "@viro-community/react-viro",
+    "example": ["https://github.com/ViroCommunity/starter-kit"],
+    "images": [
+      "https://raw.githubusercontent.com/viromedia/viro/master/code-samples/js/ARCarDemo/viro_car_marker_demo.gif",
+      "https://raw.githubusercontent.com/viromedia/viro/master/code-samples/js/ARPosterDemo/viro_black_panther_marker_demo.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/IjzerenHein/react-native-bundle-visualizer",
+    "images": [
+      "https://raw.githubusercontent.com/IjzerenHein/react-native-bundle-visualizer/master/react-native-bundle-visualizer2.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "dev": true
   }
 ]
