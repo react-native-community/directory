@@ -61,9 +61,6 @@ export default function Library(props: Props) {
           </View>
         ) : null}
         {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
-        {library.matchScore ? (
-          <Label style={{ color: colors.primary }}>Debug MatchScore: {library.matchScore}</Label>
-        ) : null}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
             href={library.githubUrl || github.urls.repo}
