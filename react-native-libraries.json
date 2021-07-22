@@ -456,8 +456,13 @@
     "expo": true,
     "windows": true,
     "macos": true,
+    "tvos": true,
     "goldstar": true,
-    "examples": ["https://snack.expo.io/rJnUK4nrZ"]
+    "examples": [
+      "https://snack.expo.io/rJnUK4nrZ",
+      "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
+      "https://github.com/react-native-tvos/TVReanimated"
+    ]
   },
   {
     "githubUrl": "https://github.com/airbnb/native-navigation",
@@ -3052,9 +3057,13 @@
       "https://docs.swmansion.com/react-native-reanimated/docs/animations/twosprings.gif",
       "https://docs.swmansion.com/react-native-reanimated/docs/animations/wobble.gif"
     ],
-    "examples": ["https://github.com/software-mansion/react-native-reanimated/tree/master/Example"],
+    "examples": [
+      "https://github.com/software-mansion/react-native-reanimated/tree/master/Example",
+      "https://github.com/react-native-tvos/TVReanimated"
+    ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "web": true,
     "expo": true
   },
@@ -3333,6 +3342,7 @@
     "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context",
     "ios": true,
     "android": true,
+    "tvos": true,
     "web": true,
     "expo": true
   },
@@ -3341,7 +3351,12 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "tvos": true,
+    "examples": [
+      "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
+      "https://github.com/react-native-tvos/TVReanimated"
+    ]
   },
   {
     "githubUrl": "https://github.com/IjzerenHein/react-native-shared-element",
@@ -3406,6 +3421,7 @@
     "githubUrl": "https://github.com/react-navigation/react-native-safe-area-view",
     "ios": true,
     "android": true,
+    "tvos": true,
     "web": true,
     "expo": true,
     "unmaintained": true
@@ -3465,6 +3481,7 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expo": true,
     "npmPkg": "@react-native-masked-view/masked-view"
   },
@@ -3972,6 +3989,7 @@
     "githubUrl": "https://github.com/FortAwesome/react-native-fontawesome",
     "ios": true,
     "android": true,
+    "tvos": true,
     "expo": true,
     "npmPkg": "@fortawesome/react-native-fontawesome"
   },
@@ -4079,6 +4097,7 @@
     "githubUrl": "https://github.com/react-navigation/redux-helpers",
     "ios": true,
     "android": true,
+    "tvos": true,
     "expo": true,
     "npmPkg": "react-navigation-redux-helpers",
     "unmaintained": true
