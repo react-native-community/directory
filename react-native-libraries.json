@@ -6913,5 +6913,21 @@
     "android": true,
     "expo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/ximxim/react-native-feedback-reporter",
+    "npmPkg": "https://www.npmjs.com/package/react-native-feedback-reporter",
+    "examples": ["https://github.com/ximxim/react-native-feedback-reporter/tree/main/example"],
+    "images": ["https://ximxim.github.io/react-native-feedback-reporter/img/jira-account-linking.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
   }
 ]
