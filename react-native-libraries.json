@@ -3351,6 +3351,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "goldstar": true,
     "expo": true,
     "tvos": true,
     "examples": [
@@ -6933,6 +6934,7 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "web": true
+    "web": true,
+    "goldstar": true
   }
 ]
