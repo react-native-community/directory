@@ -6924,5 +6924,15 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-gesture-handler",
+    "examples": [
+      "https://github.com/software-mansion/react-native-gesture-handler/tree/master/examples"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
   }
 ]
