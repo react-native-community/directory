@@ -6936,5 +6936,32 @@
     "expo": true,
     "web": true,
     "goldstar": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-toolkit/react-native-responsive-dimensions",
+    "examples": [
+      "https://snack.expo.io/@daniakash/responsive-dimensions",
+      "https://codesandbox.io/s/react-native-responsive-dimensions-hooks-2cqm8"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/SimonErm/react-native-job-queue",
+    "examples": [
+      "https://github.com/SimonErm/react-native-job-queue/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ospfranco/react-native-quick-sqlite",
+    "examples": [
+      "https://github.com/ospfranco/react-native-quick-sqlite/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
