@@ -6963,5 +6963,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flipkart-incubator/animation-wrapper-view",
+    "npmPkg": "animation-wrapper-view",
+    "examples": ["https://github.com/flipkart-incubator/animation-wrapper-view", "https://snack.expo.dev/@swapnil1104/animationwrapperview-playground"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
   }
 ]
