@@ -5337,17 +5337,6 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/microsoft/fluentui-react-native",
-    "npmPkg": "@fluentui/react-native",
-    "ios": true,
-    "android": false,
-    "web": false,
-    "expo": true,
-    "windows": true,
-    "macos": false,
-    "unmaintained": false
-  },
-  {
     "githubUrl": "https://github.com/mrousavy/react-native-notification-badge",
     "examples": ["https://github.com/mrousavy/react-native-notification-badge/tree/master/example"],
     "ios": true
@@ -6961,27 +6950,32 @@
   },
   {
     "githubUrl": "https://github.com/SimonErm/react-native-job-queue",
-    "examples": [
-      "https://github.com/SimonErm/react-native-job-queue/tree/master/example"
-    ],
+    "examples": ["https://github.com/SimonErm/react-native-job-queue/tree/master/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/ospfranco/react-native-quick-sqlite",
-    "examples": [
-      "https://github.com/ospfranco/react-native-quick-sqlite/tree/main/example"
-    ],
+    "examples": ["https://github.com/ospfranco/react-native-quick-sqlite/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/ysfuu/react-native-relative-popup",
     "examples": ["https://github.com/ysfuu/react-native-relative-popup/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/ysfuu/react-native-relative-popup/master/assets/demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/ysfuu/react-native-relative-popup/master/assets/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/fluentui-react-native",
+    "npmPkg": "@fluentui/react-native",
+    "ios": true,
+    "expo": true,
+    "windows": true
   }
 ]
