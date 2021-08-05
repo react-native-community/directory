@@ -6972,5 +6972,13 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
+    "examples": ["https://github.com/TheWidlarzGroup/rn-emoji-keyboard#-examples", "https://github.com/TheWidlarzGroup/rn-emoji-keyboard/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/TheWidlarzGroup/rn-emoji-keyboard/master/example/assets/preview-small.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
