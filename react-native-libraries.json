@@ -5337,6 +5337,17 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/microsoft/fluentui-react-native",
+    "npmPkg": "@fluentui/react-native",
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true,
+    "windows": true,
+    "macos": false,
+    "unmaintained": false
+  },
+  {
     "githubUrl": "https://github.com/mrousavy/react-native-notification-badge",
     "examples": ["https://github.com/mrousavy/react-native-notification-badge/tree/master/example"],
     "ios": true
