@@ -6988,5 +6988,45 @@
     "ios": true,
     "android": true,
     "expo": true 
+  },
+  {
+    "githubUrl": "https://github.com/emeraldsanto/react-native-encrypted-storage",
+    "examples": ["https://github.com/emeraldsanto/react-native-encrypted-storage/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hoaphantn7604/react-native-curved-bottom-bar",
+    "examples": ["https://github.com/hoaphantn7604/react-native-curved-bottom-bar/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/navigationbar/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jobtoday/react-native-image-viewing",
+    "examples": [
+      "https://expo.dev/@antonkalinin/react-native-image-viewing",
+      "https://github.com/jobtoday/react-native-image-viewing/tree/master/example"
+    ],
+    "images": ["https://raw.githubusercontent.com/jobtoday/react-native-image-viewing/master/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/flipkart-incubator/animation-wrapper-view",
+    "examples": [
+      "https://snack.expo.dev/@swapnil1104/animationwrapperview-playground"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/flipkart-incubator/animation-wrapper-view/master/media/demo.gif",
+      "https://raw.githubusercontent.com/flipkart-incubator/animation-wrapper-view/master/media/json_animation.gif",
+      "https://raw.githubusercontent.com/flipkart-incubator/animation-wrapper-view/master/media/json_demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
