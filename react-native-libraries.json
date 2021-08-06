@@ -7028,5 +7028,17 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ajsmth/react-native-pager",
+    "npmPkg": "@crowdlinker/react-native-pager",
+    "examples": ["https://github.com/ajsmth/react-native-pager/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ajsmth/react-native-pager/master/docs/assets/kilter-cards.gif",
+      "https://raw.githubusercontent.com/ajsmth/react-native-pager/master/docs/assets/tabs-example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
