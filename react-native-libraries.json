@@ -6977,6 +6977,7 @@
     "githubUrl": "https://github.com/microsoft/fluentui-react-native",
     "npmPkg": "@fluentui/react-native",
     "ios": true,
+    "expo": true,
     "windows": true,
     "macos": true
   }
