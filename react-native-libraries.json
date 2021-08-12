@@ -7040,5 +7040,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/GantMan/jail-monkey",
+    "npmPkg": "jail-monkey",
+    "examples": ["https://github.com/GantMan/jail-monkey/tree/master/ExampleProject"],
+    "ios": true,
+    "android": true,
+    "expo": false
   }
 ]
