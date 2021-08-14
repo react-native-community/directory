@@ -7046,5 +7046,19 @@
     "examples": ["https://github.com/GantMan/jail-monkey/tree/master/ExampleProject"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Eugnis/react-native-timeline-flatlist",
+    "examples": [
+      "https://snack.expo.io/@eugnis/eaae28",
+      "https://expo.dev/@eugnis/react-native-timeline-flatlist-examples",
+      "https://github.com/Eugnis/react-native-timeline-flatlist/tree/master/examples/Example"
+    ],
+    "images": [
+      "https://cloud.githubusercontent.com/assets/21040043/24750025/8c8d044e-1aef-11e7-8fd7-7d64431af7e4.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
