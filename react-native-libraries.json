@@ -7063,9 +7063,11 @@
   },
   {
     "githubUrl": "https://github.com/mohakapt/react-native-js-tableview",
-    "npmPkg": "https://www.npmjs.com/package/react-native-js-tableview",
     "examples": ["https://github.com/mohakapt/react-native-js-tableview/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_ios.gif", "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_android.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_ios.gif", 
+      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_android.gif"
+    ],
     "ios": true,
     "android": true
   }
