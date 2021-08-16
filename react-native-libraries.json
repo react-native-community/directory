@@ -7062,6 +7062,16 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/mohakapt/react-native-js-tableview",
+    "examples": ["https://github.com/mohakapt/react-native-js-tableview/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_ios.gif", 
+      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_android.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/mohakapt/react-native-native-dialog",
     "examples": ["https://github.com/mohakapt/react-native-native-dialog/tree/master/example"],
     "ios": true,
