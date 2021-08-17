@@ -7050,7 +7050,7 @@
   {
     "githubUrl": "https://github.com/Eugnis/react-native-timeline-flatlist",
     "examples": [
-      "https://snack.expo.io/@eugnis/eaae28",
+      "/@eugnis/eaae28",
       "https://expo.dev/@eugnis/react-native-timeline-flatlist-examples",
       "https://github.com/Eugnis/react-native-timeline-flatlist/tree/master/examples/Example"
     ],
@@ -7070,5 +7070,20 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arelstone/react-native-email-chip",
+    "npmPkg": "@arelstone/react-native-email-chip",
+    "nameOverride": "react-native-email-chip",
+    "examples": [
+      "https://github.com/arelstone/react-native-email-chip#usage"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/arelstone/react-native-email-chip/master/docs/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
   }
 ]
