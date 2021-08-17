@@ -7070,5 +7070,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Giphy/giphy-react-native-sdk",
+    "npmPkg": "@giphy/react-native-sdk",
+    "examples": ["https://github.com/Giphy/giphy-react-native-sdk/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
