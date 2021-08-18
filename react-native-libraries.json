@@ -7070,5 +7070,16 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arelstone/react-native-email-chip",
+    "npmPkg": "@arelstone/react-native-email-chip",
+    "images": [
+      "https://raw.githubusercontent.com/arelstone/react-native-email-chip/master/docs/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
   }
 ]
