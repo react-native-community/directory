@@ -11,6 +11,9 @@ module.exports = withPlugins(
     eslint: {
       ignoreDuringBuilds: true,
     },
+    images: {
+      disableStaticImages: true,
+    },
     async headers() {
       return [
         {
