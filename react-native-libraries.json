@@ -7088,5 +7088,37 @@
     "examples": ["https://github.com/Giphy/giphy-react-native-sdk/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SrBrahma/react-native-shadow-2",
+    "examples": [
+      "https://snack.expo.dev/@srbrahma/react-native-shadow-2-sandbox",
+      "https://github.com/SrBrahma/react-native-shadow-2/tree/main/sandbox"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SrBrahma/react-native-shadow-2/main/resources/README/react-native-shadow-2-ex-1.png",
+      "https://raw.githubusercontent.com/SrBrahma/react-native-shadow-2/main/resources/README/react-native-shadow-2-ex-2.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/lazaronixon/react-native-turbolinks",
+    "examples": [
+      "https://github.com/lazaronixon/react-native-turbolinks/tree/master/Example"
+    ],
+    "images": [
+      "https://nixo-etc.s3-sa-east-1.amazonaws.com/intro-turbolinks.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/vision-camera-image-labeler",
+    "examples": ["https://github.com/mrousavy/vision-camera-image-labeler/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
