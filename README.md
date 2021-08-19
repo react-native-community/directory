@@ -34,6 +34,7 @@ Please follow this format, fields order and indentation:
   "expo": false,
   "windows": false,
   "macos": false,
+  "tvos": false,
   "unmaintained": false,
   "dev": false,
   "template": false
@@ -69,6 +70,8 @@ Please skip any of the `false` values and do not fill optional fields, unless it
   **(_optional_ boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
 - #### `macos`
   **(_optional_ boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
+- #### `tvos`
+  **(_optional_ boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
 
 ### 🏷️ Tags
 

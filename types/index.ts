@@ -98,4 +98,5 @@ export type Library = {
   npmPkg?: string;
   nameOverride?: string;
   popularity: number;
+  matchScore?: number;
 };
