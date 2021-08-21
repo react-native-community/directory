@@ -7121,5 +7121,13 @@
     "examples": ["https://github.com/mrousavy/vision-camera-image-labeler/tree/main/example"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/VittoriDavide/react-native-barcode-creator",
+  "npmPkg": "react-native-barcode-creator",
+  "nameOverride": "react-native-barcode-creator",
+  "examples": ["https://github.com/VittoriDavide/react-native-barcode-creator/tree/master/example"],
+  "ios": true,
+  "android": true,
+}
 ]
