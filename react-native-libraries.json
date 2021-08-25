@@ -7127,5 +7127,12 @@
     "examples": ["https://github.com/VittoriDavide/react-native-barcode-creator/tree/master/example"],
     "ios": true,
     "android": true
+  },
+    {
+    "githubUrl": "https://github.com/mthines/react-native-font-face",
+    "npmPkg": "https://www.npmjs.com/package/@mthines/react-native-font-face",
+    "examples": ["https://github.com/mthines/react-native-font-face#the-mission"],
+    "ios": true,
+    "android": true,
   }
 ]
