@@ -7128,11 +7128,10 @@
     "ios": true,
     "android": true
   },
-    {
+  {
     "githubUrl": "https://github.com/mthines/react-native-font-face",
-    "npmPkg": "https://www.npmjs.com/package/@mthines/react-native-font-face",
-    "examples": ["https://github.com/mthines/react-native-font-face#the-mission"],
+    "npmPkg": "@mthines/react-native-font-face",
     "ios": true,
-    "android": true,
+    "android": true
   }
 ]
