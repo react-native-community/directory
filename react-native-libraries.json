@@ -7133,5 +7133,27 @@
     "npmPkg": "@mthines/react-native-font-face",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/axelra-ag/react-native-animateable-text",
+    "examples": ["https://github.com/axelra-ag/react-native-animateable-text/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/WoLewicki/react-native-window-view",
+    "examples": ["https://github.com/WoLewicki/react-native-window-view/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ajith-ab/react-native-receive-sharing-intent",
+    "examples": ["https://github.com/ajith-ab/react-native-receive-sharing-intent/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ajith-ab/react-native-receive-sharing-intent/master/doc/android.gif",
+      "https://raw.githubusercontent.com/ajith-ab/react-native-receive-sharing-intent/master/doc/ios.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
