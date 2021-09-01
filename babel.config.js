@@ -1,7 +1,13 @@
-// Learn more: https://docs.expo.io/guides/using-nextjs
-
 module.exports = {
-  presets: ['@expo/next-adapter/babel'],
+  presets: [
+    'next/babel',
+    [
+      'babel-preset-expo',
+      {
+        web: { useTransformReactJsxExperimental: true },
+      },
+    ],
+  ],
   plugins: [
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     ['@babel/plugin-proposal-private-methods', { loose: true }],
