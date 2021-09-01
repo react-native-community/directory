@@ -6951,24 +6951,22 @@
   },
   {
     "githubUrl": "https://github.com/SimonErm/react-native-job-queue",
-    "examples": [
-      "https://github.com/SimonErm/react-native-job-queue/tree/master/example"
-    ],
+    "examples": ["https://github.com/SimonErm/react-native-job-queue/tree/master/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/ospfranco/react-native-quick-sqlite",
-    "examples": [
-      "https://github.com/ospfranco/react-native-quick-sqlite/tree/main/example"
-    ],
+    "examples": ["https://github.com/ospfranco/react-native-quick-sqlite/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/ysfuu/react-native-relative-popup",
     "examples": ["https://github.com/ysfuu/react-native-relative-popup/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/ysfuu/react-native-relative-popup/master/assets/demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/ysfuu/react-native-relative-popup/master/assets/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -6985,21 +6983,29 @@
   {
     "githubUrl": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
     "examples": ["https://github.com/TheWidlarzGroup/rn-emoji-keyboard/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/TheWidlarzGroup/rn-emoji-keyboard/master/example/assets/preview-small.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/TheWidlarzGroup/rn-emoji-keyboard/master/example/assets/preview-small.gif"
+    ],
     "ios": true,
     "android": true,
-    "expo": true 
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/emeraldsanto/react-native-encrypted-storage",
-    "examples": ["https://github.com/emeraldsanto/react-native-encrypted-storage/tree/master/example"],
+    "examples": [
+      "https://github.com/emeraldsanto/react-native-encrypted-storage/tree/master/example"
+    ],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/hoaphantn7604/react-native-curved-bottom-bar",
-    "examples": ["https://github.com/hoaphantn7604/react-native-curved-bottom-bar/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/navigationbar/demo.gif"],
+    "examples": [
+      "https://github.com/hoaphantn7604/react-native-curved-bottom-bar/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/navigationbar/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -7010,16 +7016,16 @@
       "https://expo.dev/@antonkalinin/react-native-image-viewing",
       "https://github.com/jobtoday/react-native-image-viewing/tree/master/example"
     ],
-    "images": ["https://raw.githubusercontent.com/jobtoday/react-native-image-viewing/master/demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/jobtoday/react-native-image-viewing/master/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
   },
   {
     "githubUrl": "https://github.com/flipkart-incubator/animation-wrapper-view",
-    "examples": [
-      "https://snack.expo.dev/@swapnil1104/animationwrapperview-playground"
-    ],
+    "examples": ["https://snack.expo.dev/@swapnil1104/animationwrapperview-playground"],
     "images": [
       "https://raw.githubusercontent.com/flipkart-incubator/animation-wrapper-view/master/media/demo.gif",
       "https://raw.githubusercontent.com/flipkart-incubator/animation-wrapper-view/master/media/json_animation.gif",
@@ -7066,7 +7072,7 @@
     "githubUrl": "https://github.com/mohakapt/react-native-js-tableview",
     "examples": ["https://github.com/mohakapt/react-native-js-tableview/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_ios.gif", 
+      "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_ios.gif",
       "https://raw.githubusercontent.com/mohakapt/react-native-js-tableview/master/images/screenshot_android.gif"
     ],
     "ios": true,
@@ -7107,12 +7113,8 @@
   },
   {
     "githubUrl": "https://github.com/lazaronixon/react-native-turbolinks",
-    "examples": [
-      "https://github.com/lazaronixon/react-native-turbolinks/tree/master/Example"
-    ],
-    "images": [
-      "https://nixo-etc.s3-sa-east-1.amazonaws.com/intro-turbolinks.gif"
-    ],
+    "examples": ["https://github.com/lazaronixon/react-native-turbolinks/tree/master/Example"],
+    "images": ["https://nixo-etc.s3-sa-east-1.amazonaws.com/intro-turbolinks.gif"],
     "ios": true,
     "android": true
   },
