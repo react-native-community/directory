@@ -7178,5 +7178,10 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/hudl/react-native-system-bars",
+    "examples": ["https://github.com/hudl/react-native-system-bars/tree/main/example"],
+    "android": true
   }
 ]
