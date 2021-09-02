@@ -7126,7 +7126,9 @@
   },
   {
     "githubUrl": "https://github.com/VittoriDavide/react-native-barcode-creator",
-    "examples": ["https://github.com/VittoriDavide/react-native-barcode-creator/tree/master/example"],
+    "examples": [
+      "https://github.com/VittoriDavide/react-native-barcode-creator/tree/master/example"
+    ],
     "ios": true,
     "android": true
   },
@@ -7150,13 +7152,32 @@
   },
   {
     "githubUrl": "https://github.com/ajith-ab/react-native-receive-sharing-intent",
-    "examples": ["https://github.com/ajith-ab/react-native-receive-sharing-intent/tree/master/example"],
+    "examples": [
+      "https://github.com/ajith-ab/react-native-receive-sharing-intent/tree/master/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/ajith-ab/react-native-receive-sharing-intent/master/doc/android.gif",
       "https://raw.githubusercontent.com/ajith-ab/react-native-receive-sharing-intent/master/doc/ios.gif"
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DataDog/dd-sdk-reactnative",
+    "npmPkg": "@datadog/mobile-react-native",
+    "nameOverride": "Datadog React Native Monitoring",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SrBrahma/pagescrollview",
+    "examples": ["https://snack.expo.io/@srbrahma/887706"],
+    "images": [
+      "https://raw.githubusercontent.com/SrBrahma/pagescrollview/main/resources/README/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/hudl/react-native-system-bars",
