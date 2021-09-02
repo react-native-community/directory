@@ -7168,5 +7168,15 @@
     "nameOverride": "Datadog React Native Monitoring",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SrBrahma/pagescrollview",
+    "examples": ["https://snack.expo.io/@srbrahma/887706"],
+    "images": [
+      "https://raw.githubusercontent.com/SrBrahma/pagescrollview/main/resources/README/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
