@@ -7177,5 +7177,11 @@
     "githubUrl": "https://github.com/hudl/react-native-system-bars",
     "examples": ["https://github.com/hudl/react-native-system-bars/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AzizAK/react-native-detector",
+    "examples": ["https://github.com/AzizAK/react-native-detector/blob/master/example/"],
+    "ios": true,
+    "android": true
   }
 ]
