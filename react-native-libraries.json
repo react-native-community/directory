@@ -7183,5 +7183,15 @@
     "examples": ["https://github.com/AzizAK/react-native-detector/blob/master/example/"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/yamankatby/react-native-material",
+    "npmPkg": "@react-native-material/core",
+    "examples": ["https://github.com/yamankatby/react-native-material/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/yamankatby/react-native-material/main/images/hero.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
