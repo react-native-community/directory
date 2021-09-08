@@ -7193,5 +7193,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Kichiyaki/react-native-barcode-generator",
+    "npmPkg": "https://www.npmjs.com/package/@kichiyaki/react-native-barcode-generator",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
