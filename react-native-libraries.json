@@ -7195,6 +7195,12 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/Kichiyaki/react-native-barcode-generator",
+    "npmPkg": "@kichiyaki/react-native-barcode-generator",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/arabold/react-native-whirlwind",
     "examples": ["https://snack.expo.dev/@arabold/react-native-whirlwind"],
     "ios": true,
