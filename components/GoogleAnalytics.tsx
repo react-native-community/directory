@@ -11,7 +11,8 @@ ga('send', 'pageview');
 `.replace(/\n/g, '');
 };
 
-export default function GoogleAnalytics({ id }) {
-  const markup = { __html: getAnalyticsScript(id) };
-  return <script dangerouslySetInnerHTML={markup} />;
-}
+const GoogleAnalytics = ({ id }) => (
+  <script dangerouslySetInnerHTML={{ __html: getAnalyticsScript(id) }} />
+);
+
+export default GoogleAnalytics;

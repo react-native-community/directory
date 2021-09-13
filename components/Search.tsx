@@ -16,7 +16,7 @@ type Props = {
   total: number;
 };
 
-export default function Search(props: Props) {
+const Search = (props: Props) => {
   const { query, total } = props;
   const [isFilterVisible, setFilterVisible] = useState(false);
   const callback = useDebouncedCallback((text: string) => {
@@ -79,7 +79,7 @@ export default function Search(props: Props) {
       {isFilterVisible && <Filters query={query} />}
     </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -130,3 +130,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
+export default Search;

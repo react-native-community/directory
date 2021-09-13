@@ -1,17 +1,11 @@
-import React, { ReactNode } from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import React, { PropsWithChildren } from 'react';
+import { View, ViewProps, StyleSheet } from 'react-native';
 
 import { layout } from '../common/styleguide';
 
-type Props = {
-  children: ReactNode;
-  style?: ViewStyle | ViewStyle[];
-};
-
-export default function ContentContainer(props: Props) {
-  const { children, style } = props;
-  return <View style={[styles.container, style]}>{children}</View>;
-}
+const ContentContainer = ({ children, style }: PropsWithChildren<ViewProps>) => (
+  <View style={[styles.container, style]}>{children}</View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -21,3 +15,5 @@ const styles = StyleSheet.create({
     margin: 'auto',
   },
 });
+
+export default ContentContainer;

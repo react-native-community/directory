@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import { H2, A, P } from '../common/styleguide';
 
-export default ({ statusCode }) => {
+const ErrorState = ({ statusCode }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={require('../assets/notfound.png')} />
@@ -37,3 +37,5 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+
+export default ErrorState;
