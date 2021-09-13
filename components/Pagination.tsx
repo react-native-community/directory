@@ -16,7 +16,7 @@ type Props = {
   style?: ViewStyle;
 };
 
-export default function Pagination(props: Props) {
+const Pagination = (props: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { query, total, style } = props;
   const totalPages = Math.ceil(total / NUM_PER_PAGE);
@@ -81,7 +81,7 @@ export default function Pagination(props: Props) {
       )}
     </View>
   );
-}
+};
 
 let styles = StyleSheet.create({
   container: {
@@ -109,3 +109,5 @@ let styles = StyleSheet.create({
     marginHorizontal: 6,
   },
 });
+
+export default Pagination;

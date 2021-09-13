@@ -14,9 +14,7 @@ const LibraryWithLoading = dynamic(() => import('../components/Library'), {
   loading: () => <LoadingContent />,
 });
 
-export default function Libraries(props: Props) {
-  const { libraries } = props;
-
+const Libraries = ({ libraries }: Props) => {
   if (!libraries || !libraries.length) {
     return (
       <View style={styles.container}>
@@ -39,7 +37,7 @@ export default function Libraries(props: Props) {
       ))}
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -62,3 +60,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default Libraries;

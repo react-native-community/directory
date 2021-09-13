@@ -10,7 +10,7 @@ const shouldRehydrate = true;
 
 const defaultState = { isDark: false };
 
-export default function CustomAppearanceProvider({ children }) {
+const CustomAppearanceProvider = ({ children }) => {
   const colorScheme = useColorScheme();
   const [isDark, setIsDark] = React.useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = React.useState(false);
@@ -47,7 +47,7 @@ export default function CustomAppearanceProvider({ children }) {
       </CustomAppearanceContext.Provider>
     );
   }
-}
+};
 
 async function cacheAppearanceState(appearance) {
   await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify(appearance));
@@ -65,3 +65,5 @@ async function rehydrateAppearanceState() {
     return defaultState;
   }
 }
+
+export default CustomAppearanceProvider;

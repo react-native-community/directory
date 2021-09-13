@@ -3,15 +3,16 @@ import React, { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Linkify from 'react-simple-linkify';
 
-import { colors, useLayout, A, Label, Caption, darkColors } from '../../common/styleguide';
+import { colors, useLayout, A, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
-import { Badge, Warning } from '../Icons';
 import { MetaData } from './MetaData';
 import PopularityMark from './PopularityMark';
+import RecommendedLabel from './RecommendedLabel';
 import Thumbnail from './Thumbnail';
+import UnmaintainedLabel from './UnmaintainedLabel';
 
 type Props = {
   library: LibraryType;
@@ -19,9 +20,8 @@ type Props = {
   showPopularity?: boolean;
 };
 
-export default function Library(props: Props) {
+const Library = ({ library, skipMeta, showPopularity }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { library, skipMeta, showPopularity } = props;
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
   const libName = library.nameOverride || library.npmPkg || github.name;
@@ -38,28 +38,7 @@ export default function Library(props: Props) {
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
-        {library.unmaintained ? (
-          <View style={styles.unmaintainedTextWrapper}>
-            <View
-              style={[
-                styles.unmaintainedTextContainer,
-                {
-                  backgroundColor: isDark ? darkColors.warning : colors.warningLight,
-                },
-              ]}>
-              <Warning width={16} height={16} fill={isDark ? colors.gray2 : colors.warningDark} />
-              <Label
-                style={[
-                  styles.unmaintainedText,
-                  {
-                    color: isDark ? colors.gray2 : colors.warningDark,
-                  },
-                ]}>
-                This library is not actively maintained
-              </Label>
-            </View>
-          </View>
-        ) : null}
+        {library.unmaintained ? <UnmaintainedLabel /> : null}
         {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
@@ -68,29 +47,7 @@ export default function Library(props: Props) {
             hoverStyle={styles.nameHovered}>
             {libName}
           </A>
-          {library.goldstar && (
-            <View
-              style={[
-                styles.recommendedContainer,
-                isSmallScreen ? styles.recommendedContainerSmall : null,
-                {
-                  backgroundColor: isDark ? colors.primaryDark : colors.primaryLight,
-                },
-              ]}>
-              <View style={styles.recommendedTextContainer}>
-                <Badge width={11} height={16} />
-                <Label
-                  style={[
-                    styles.recommendedText,
-                    {
-                      color: isDark ? darkColors.dark : colors.black,
-                    },
-                  ]}>
-                  Recommended Library
-                </Label>
-              </View>
-            </View>
-          )}
+          {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -141,9 +98,9 @@ export default function Library(props: Props) {
       )}
     </View>
   );
-}
+};
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     marginBottom: 16,
     borderWidth: 1,
@@ -212,23 +169,6 @@ let styles = StyleSheet.create({
   recommendedText: {
     marginLeft: 6,
   },
-  unmaintainedTextWrapper: {
-    flexDirection: 'row',
-  },
-  unmaintainedTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: -20,
-    marginBottom: 12,
-    paddingLeft: 20,
-    paddingRight: 12,
-    paddingVertical: 6,
-    borderTopRightRadius: 2,
-    borderBottomRightRadius: 2,
-  },
-  unmaintainedText: {
-    marginLeft: 6,
-  },
   verticalMargin: {
     marginTop: 12,
   },
@@ -276,3 +216,5 @@ let styles = StyleSheet.create({
     maxWidth: '98.5%',
   },
 });
+
+export default Library;
