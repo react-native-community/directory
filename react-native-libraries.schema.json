@@ -70,10 +70,10 @@
       "npmPkg": {
         "$id": "#/items/properties/npmPkg",
         "type": "string",
-        "title": "The NPM Package Schema",
+        "title": "The NPM Package Name Schema",
         "default": "",
         "examples": ["@expo/ex-navigation"],
-        "pattern": "^(.*)$"
+        "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
       },
       "unmaintained": {
         "$id": "#/items/properties/unmaintained",
