@@ -7209,5 +7209,62 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/renrizzolo/react-native-sectioned-multi-select",
+    "examples": [
+      "https://github.com/renrizzolo/react-native-sectioned-multi-select/tree/master/exampleapp"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/renrizzolo/react-native-sectioned-multi-select/master/previews/example_recording-1.gif",
+      "https://raw.githubusercontent.com/renrizzolo/react-native-sectioned-multi-select/master/previews/example_recording-2.gif",
+      "https://raw.githubusercontent.com/renrizzolo/react-native-sectioned-multi-select/master/previews/example_recording-3.gif",
+      "https://raw.githubusercontent.com/renrizzolo/react-native-sectioned-multi-select/master/previews/example_recording-4.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Shobbak/react-native-compressor",
+    "examples": ["https://github.com/Shobbak/react-native-compressor/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/garganurag893/react-native-phone-number-input",
+    "examples": [
+      "https://github.com/garganurag893/react-native-phone-number-input/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/garganurag893/react-native-phone-number-input/master/gif/Phone_Number_Input_Layout_1.gif",
+      "https://raw.githubusercontent.com/garganurag893/react-native-phone-number-input/master/gif/Phone_Number_Input_Layout_2.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/JungHsuan/react-native-gesture-flip-card",
+    "examples": [
+      "https://github.com/JungHsuan/react-native-gesture-flip-card/tree/master/examples"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/JungHsuan/react-native-gesture-flip-card/master/screenshots/example_1.gif",
+      "https://raw.githubusercontent.com/JungHsuan/react-native-gesture-flip-card/master/screenshots/example_2.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gusparis/react-native-month-year-picker",
+    "examples": ["https://github.com/gusparis/react-native-month-year-picker/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/gusparis/react-native-month-year-picker/master/screenshots/android_light.png",
+      "https://raw.githubusercontent.com/gusparis/react-native-month-year-picker/master/screenshots/android_dark.png",
+      "https://raw.githubusercontent.com/gusparis/react-native-month-year-picker/master/screenshots/ios_light.png",
+      "https://raw.githubusercontent.com/gusparis/react-native-month-year-picker/master/screenshots/ios_dark.png"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
