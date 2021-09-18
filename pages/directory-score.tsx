@@ -1,4 +1,3 @@
-import { LI, UL } from '@expo/html-elements';
 import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 

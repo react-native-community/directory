@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useContext, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { usePopper } from 'react-popper';
 
 import { colors, darkColors } from '../../common/styleguide';
