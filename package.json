@@ -19,6 +19,7 @@
   "dependencies": {
     "@expo/html-elements": "^0.0.2",
     "@expo/match-media": "^0.1.0",
+    "@jlengstorf/get-share-image": "^0.8.0",
     "@popperjs/core": "^2.10.1",
     "@react-native-async-storage/async-storage": "^1.15.7",
     "@react-native-picker/picker": "^2.1.0",

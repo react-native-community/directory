@@ -10,10 +10,11 @@ import PageMeta from './PageMeta';
 type NavigationProps = {
   title?: string;
   description?: string;
+  query?: string | string[];
   noHeader?: boolean;
 };
 
-const Navigation = ({ title, description, noHeader = false }: NavigationProps) => {
+const Navigation = ({ title, description, query, noHeader = false }: NavigationProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
 
   return (
@@ -24,7 +25,7 @@ const Navigation = ({ title, description, noHeader = false }: NavigationProps) =
           backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
         },
       ]}>
-      <PageMeta title={title} description={description} />
+      <PageMeta title={title} description={description} query={query} />
       <ContentContainer style={styles.tabsWrapper}>
         <View style={styles.tabsContainer}>
           <NavigationTab title="Explore" path="/" />
