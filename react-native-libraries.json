@@ -7266,5 +7266,47 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flyerhq/react-native-chat-ui",
+    "npmPkg": "@flyerhq/react-native-chat-ui",
+    "examples": ["https://github.com/flyerhq/react-native-chat-ui/tree/main/example"],
+    "images": ["https://user-images.githubusercontent.com/14123304/121787953-a6121500-cbc9-11eb-83ff-db0435d2cd57.png"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/flyerhq/react-native-firebase-chat-core",
+    "npmPkg": "@flyerhq/react-native-firebase-chat-core",
+    "examples": ["https://github.com/flyerhq/react-native-firebase-chat-core/tree/main/example"],
+    "images": ["https://user-images.githubusercontent.com/14123304/121787953-a6121500-cbc9-11eb-83ff-db0435d2cd57.png"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flyerhq/react-native-link-preview",
+    "npmPkg": "@flyerhq/react-native-link-preview",
+    "examples": ["https://github.com/flyerhq/react-native-link-preview/tree/main/example"],
+    "images": ["https://user-images.githubusercontent.com/14123304/119363213-d727b580-bcad-11eb-8678-6e4c4a54621c.png"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/flyerhq/react-native-keyboard-accessory-view",
+    "npmPkg": "@flyerhq/react-native-keyboard-accessory-view",
+    "examples": ["https://github.com/flyerhq/react-native-keyboard-accessory-view/tree/main/example"],
+    "images": ["https://user-images.githubusercontent.com/14123304/83332826-a761ef80-a29d-11ea-910b-b1025ae3aac9.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/flyerhq/react-native-android-uri-path",
+    "npmPkg": "@flyerhq/react-native-android-uri-path",
+    "examples": ["https://github.com/flyerhq/react-native-android-uri-path/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
