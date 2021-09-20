@@ -192,16 +192,21 @@ export const fetchGithubData = async (data, retries = 2) => {
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
     });
 
-    if (!result.data.repository && result.errors && result.errors[0].type === 'NOT_FOUND') {
-      const newUrl = await getUpdatedUrl(url);
-      if (newUrl !== url) {
-        console.log(`[GH] Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
-        data.githubUrl = newUrl;
+    if ((!result.data || !result.data.repository) && result.errors) {
+      if (result.errors[0].type === 'NOT_FOUND') {
+        const newUrl = await getUpdatedUrl(url);
+        if (newUrl !== url) {
+          console.warn(`[GH] Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+          data.githubUrl = newUrl;
+        } else {
+          console.warn(`[GH] Repository ${repoOwner}/${repoName} not found`);
+        }
       } else {
-        console.log(`[GH] Repository ${repoOwner}/${repoName} not found`);
+        console.warn(`[GH] Data fetch error for ${repoOwner}/${repoName}`, result.errors);
       }
+
       console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
-      await sleep(1000);
+      await sleep(2500);
       return await fetchGithubData(data, retries - 1);
     }
 
@@ -212,7 +217,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     };
   } catch (e) {
     console.log(`[GH] Retrying fetch for ${data.githubUrl}`, e);
-    await sleep(1000);
+    await sleep(2500);
     return await fetchGithubData(data, retries - 1);
   }
 };
