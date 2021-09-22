@@ -7209,5 +7209,32 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/baronha/react-native-multiple-image-picker",
+    "npmPkg": "@baronha/react-native-multiple-image-picker",
+    "examples": ["https://github.com/baronha/react-native-multiple-image-picker/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/baronha/react-native-multiple-image-picker/main/files/demo-main-android.gif",
+      "https://raw.githubusercontent.com/baronha/react-native-multiple-image-picker/main/files/demo-main-ios.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/th3rdwave/web-image",
+    "npmPkg": "@th3rdwave/web-image",
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/tokkozhin/react-native-neomorph-shadows",
+    "images": [
+      "https://raw.githubusercontent.com/tokkozhin/react-native-neomorph-shadows/master/assets/shadows.gif",
+      "https://raw.githubusercontent.com/tokkozhin/react-native-neomorph-shadows/master/assets/neomorph.gif",
+      "https://raw.githubusercontent.com/tokkozhin/react-native-neomorph-shadows/master/assets/neomorphblur.gif",
+      "https://raw.githubusercontent.com/tokkozhin/react-native-neomorph-shadows/master/assets/more.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
