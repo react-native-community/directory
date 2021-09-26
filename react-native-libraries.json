@@ -475,11 +475,7 @@
     "ios": true,
     "tvos": true,
     "android": true,
-    "goldstar": true,
-    "examples": [
-      "https://github.com/kanzitelli/rnn-starter",
-      "https://github.com/react-native-tvos/rnn-starter-tv"
-    ]
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/gre/gl-react",
