@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { H1, H2, P, Headline, A, colors, darkColors } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
+import PageMeta from '../components/PageMeta';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 const DirectoryScore = () => {
@@ -18,6 +19,10 @@ const DirectoryScore = () => {
 
   return (
     <ContentContainer style={styles.container}>
+      <PageMeta
+        title="Directory Score"
+        description="What is the Directory Score and how it is calculated?"
+      />
       <H1 style={[styles.header, textColorStyle]}>Directory Score</H1>
       <P style={[styles.paragraph, textColorStyle]}>
         The Directory Score is the combination of multiple factors that relate to the quality of a

@@ -121,7 +121,7 @@ const Footer = () => {
             <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
               Want to learn more about React Native? Check out the{' '}
               <A href="https://reactnative.dev/docs/getting-started">official React Native docs</A>,
-              and <A href="https://expo.io">Expo</A>.
+              and <A href="https://expo.dev">Expo</A>.
             </P>
           </View>
           <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>

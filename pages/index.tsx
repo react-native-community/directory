@@ -36,7 +36,7 @@ const Index = ({ data, query }) => {
   const total = data && data.total;
   return (
     <>
-      <Navigation noHeader />
+      <Navigation noHeader query={router.query?.search} />
       <Search query={router.query} total={total} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />
