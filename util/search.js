@@ -1,6 +1,9 @@
 import { isEmptyOrNull } from './strings';
 
-const calculateMatchScore = ({ github, npmPkg, topicSearchString }, querySearch) => {
+const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
+  if (unmaintained) {
+    return 0;
+  }
   const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
   const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
   const isNameMatch = isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
