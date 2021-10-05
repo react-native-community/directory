@@ -6533,9 +6533,7 @@
   },
   {
     "githubUrl": "https://github.com/wix/react-native-ui-lib",
-    "examples": [
-      "https://github.com/wix/react-native-ui-lib/tree/master/demo"
-    ],
+    "examples": ["https://github.com/wix/react-native-ui-lib/tree/master/demo"],
     "images": [
       "https://user-images.githubusercontent.com/1780255/72094962-3044b280-3320-11ea-8e41-aa83743bafb9.gif",
       "https://user-images.githubusercontent.com/1780255/72094961-3044b280-3320-11ea-95e2-9aa745c8b07d.gif",
@@ -7350,11 +7348,43 @@
     "ios": true,
     "android": true
   },
-   {
+  {
     "githubUrl": "https://github.com/yhostc/react-native-idata-scanner",
     "examples": ["https://github.com/yhostc/react-native-idata-scanner/tree/main/example"],
-    "ios": false,
+    "ios": true,
     "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/bolan9999/react-native-spring-scrollview",
+    "images": [
+      "https://raw.githubusercontent.com/bolan9999/react-native-spring-scrollview/master/docs/res/android-test.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Tintef/react-native-headphone-detection",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/wuxudong/react-native-charts-wrapper",
+    "images": [
+      "https://raw.githubusercontent.com/wuxudong/react-native-charts-wrapper/master/screenshot/Android%20ScreenShot.png",
+      "https://raw.githubusercontent.com/wuxudong/react-native-charts-wrapper/master/screenshot/IOS%20ScreenShot.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rishabhbhatia/react-native-awesome-alerts",
+    "images": [
+      "https://res.cloudinary.com/rishabhbhatia/image/upload/v1505042954/awesome-alerts/v1.0.3/react-native-awesome-alerts.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
     "expo": true
   }
 ]
