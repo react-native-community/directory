@@ -1,9 +1,6 @@
 import { isEmptyOrNull } from './strings';
 
 const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
-  if (unmaintained) {
-    return 0;
-  }
   const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
   const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
   const isNameMatch = isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
@@ -12,7 +9,12 @@ const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }
       ? 10
       : 0;
   const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
-  return isNameMatch + isDescriptionMatch + isTopicMatch;
+  const matchScore = isNameMatch + isDescriptionMatch + isTopicMatch;
+  if (matchScore && unmaintained) {
+    return matchScore / 1000;
+  } else {
+    return matchScore;
+  }
 };
 
 export const handleFilterLibraries = ({
