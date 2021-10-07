@@ -7402,5 +7402,25 @@
     "githubUrl": "https://github.com/mrousavy/react-native-jsi-contacts",
     "examples": ["https://github.com/mrousavy/react-native-jsi-contacts/tree/master/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RobertSasak/react-native-openalpr",
+    "examples": ["https://github.com/RobertSasak/react-native-openalpr/tree/master/example"],
+    "images": [
+      "https://cdn-images-1.medium.com/1*u1nTJMFc34aDLTPCIr0-cQ.gif",
+      "https://user-images.githubusercontent.com/10334791/27850595-62dc852e-615e-11e7-875c-57a017dbb28c.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alex-melnyk/react-native-multibar",
+    "examples": ["https://github.com/alex-melnyk/react-native-multibar/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/alex-melnyk/react-native-multibar/master/PREVIEW.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
