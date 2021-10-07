@@ -7386,5 +7386,21 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/esthor/react-native-swipeable-list",
+    "images": [
+      "https://raw.githubusercontent.com/esthor/react-native-swipeable-list/master/images/react-native-swipeable-list-demo2.gif"
+    ],
+    "examples": [
+      "https://github.com/esthor/react-native-swipeable-list/tree/master/examples/SwipeableFlatListExample"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-jsi-contacts",
+    "examples": ["https://github.com/mrousavy/react-native-jsi-contacts/tree/master/example"],
+    "android": true
   }
 ]
