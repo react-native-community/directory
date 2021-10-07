@@ -7386,5 +7386,10 @@
     "android": true,
     "web": true,
     "expo": true
-  }
+  },
+  {
+    "npmPkg": "@snapchat/snap-kit-react-native",
+    "ios": true,
+    "android": true
+  }  
 ]
