@@ -7425,7 +7425,6 @@
   },
   {
     "githubUrl": "https://github.com/pettiboy/react-native-ui-buttons",
-    "npmPkg": "react-native-ui-buttons",
     "examples": ["https://github.com/pettiboy/react-native-ui-buttons/tree/main/TestApp"],
     "images": [
       "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonOutline.png", 
@@ -7433,7 +7432,6 @@
     ],
     "ios": true,
     "android": true,
-    "expo": true,
-    "unmaintained": false
+    "expo": true
   }
 ]
