@@ -7427,11 +7427,22 @@
     "githubUrl": "https://github.com/pettiboy/react-native-ui-buttons",
     "examples": ["https://github.com/pettiboy/react-native-ui-buttons/tree/main/TestApp"],
     "images": [
-      "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonOutline.png", 
+      "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonOutline.png",
       "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonSolid.png"
     ],
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/rumax/react-native-PDFView",
+    "npmPkg": "react-native-view-pdf",
+    "examples": ["https://github.com/rumax/react-native-PDFView/tree/master/demo"],
+    "images": [
+      "https://raw.githubusercontent.com/rumax/react-native-PDFView/master/demo/res/ios_pdf.gif",
+      "https://raw.githubusercontent.com/rumax/react-native-PDFView/master/demo/res/android_pdf.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
