@@ -7427,11 +7427,19 @@
     "githubUrl": "https://github.com/pettiboy/react-native-ui-buttons",
     "examples": ["https://github.com/pettiboy/react-native-ui-buttons/tree/main/TestApp"],
     "images": [
-      "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonOutline.png", 
+      "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonOutline.png",
       "https://raw.githubusercontent.com/pettiboy/react-native-ui-buttons/main/TestApp/assets/ButtonSolid.png"
     ],
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/rumax/react-native-PixelsCatcher",
+    "npmPkg": "pixels-catcher",
+    "nameOverride": "pixels-catcher",
+    "examples": ["https://github.com/rumax/react-native-PixelsCatcher/tree/master/demo"],
+    "ios": true,
+    "android": true
   }
 ]
