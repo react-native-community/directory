@@ -7437,9 +7437,9 @@
   {
     "githubUrl": "https://github.com/rumax/react-native-PixelsCatcher",
     "npmPkg": "pixels-catcher",
-    "nameOverride": "pixels-catcher",
     "examples": ["https://github.com/rumax/react-native-PixelsCatcher/tree/master/demo"],
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   }
 ]
