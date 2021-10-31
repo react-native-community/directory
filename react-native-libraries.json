@@ -7452,5 +7452,39 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-freeze",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/shirakaba/react-native-native-runtime",
+    "examples": ["https://github.com/shirakaba/react-native-native-runtime/tree/master/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/agoldis/react-native-mlkit-ocr",
+    "examples": ["https://github.com/agoldis/react-native-mlkit-ocr/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/1637928/115913726-d2a97c00-a425-11eb-9c6a-6d19b974ee81.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/miblanchard/react-native-slider",
+    "npmPkg": "@miblanchard/react-native-slider",
+    "images": [
+      "https://raw.githubusercontent.com/miblanchard/react-native-slider/main/Screenshots/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/popshoplive/react-native-shareplay",
+    "examples": ["https://github.com/popshoplive/react-native-shareplay/tree/main/example"],
+    "ios": true
   }
 ]
