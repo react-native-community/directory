@@ -4,7 +4,7 @@ module.exports = {
     [
       'babel-preset-expo',
       {
-        web: { useTransformReactJsxExperimental: true },
+        web: { useTransformReactJSXExperimental: true },
       },
     ],
   ],
