@@ -7486,5 +7486,43 @@
     "githubUrl": "https://github.com/popshoplive/react-native-shareplay",
     "examples": ["https://github.com/popshoplive/react-native-shareplay/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Doko-Demo-Doa/react-native-shake",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flowkey/react-native-home-indicator",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flexible-agency/react-native-email-link",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/hoaphantn7604/react-native-element-dropdown",
+    "images": [
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/dropdown/demo.gif",
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/dropdown/example1.png",
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/dropdown/example2.png",
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/dropdown/example3.png",
+      "https://raw.githubusercontent.com/hoaphantn7604/file-upload/master/document/dropdown/example4.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gorhom/react-native-paper-onboarding",
+    "npmPkg": "@gorhom/paper-onboarding",
+    "examples": ["https://github.com/gorhom/react-native-paper-onboarding/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/gorhom/react-native-paper-onboarding/master/preview.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
