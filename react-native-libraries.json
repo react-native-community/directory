@@ -7524,5 +7524,13 @@
     ],
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/MobileReality/react-native-select-pro",
+    "npmPkg": "@mobile-reality/react-native-select-pro",
+    "examples": ["https://github.com/MobileReality/react-native-select-pro/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+  },
 ]
