@@ -143,7 +143,8 @@
   {
     "githubUrl": "https://github.com/aeirola/react-native-svg-asset-plugin",
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/kenmaca/react-native-apple-ads-attribution",
@@ -7532,5 +7533,54 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-quick-base64",
+    "examples": ["https://github.com/craftzdog/react-native-quick-base64/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/getbouncer/react-native-cardscan",
+    "examples": ["https://github.com/getbouncer/react-native-cardscan/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/getbouncer/react-native-cardscan/master/docs/images/demo.gif"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rodgomesc/vision-camera-qrcode-scanner",
+    "examples": ["https://github.com/rodgomesc/vision-camera-qrcode-scanner/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-twitter-signin/twitter-signin",
+    "npmPkg": "@react-native-twitter-signin/twitter-signin",
+    "examples": ["https://github.com/react-native-twitter-signin/twitter-signin/tree/master/Example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/aeirola/react-native-svg-app-icon",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/kanzitelli/rn-bounceable",
+    "examples": [
+      "https://expo.dev/@kanzitelli/rn-bounceable-example",
+      "https://github.com/kanzitelli/rn-bounceable/tree/main/expo-example"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-checkbox-reanimated",
+    "examples": ["https://github.com/craftzdog/react-native-checkbox-reanimated/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
+    "ios": true,
+    "android": true
   }
 ]
