@@ -7582,5 +7582,10 @@
     "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/henrhie/react-native-sha",
+    "examples": ["https://github.com/henrhie/react-native-sha/tree/master/example"],
+    "android":true
   }
 ]
