@@ -7595,5 +7595,13 @@
     "githubUrl": "https://github.com/henrhie/react-native-sha",
     "examples": ["https://github.com/henrhie/react-native-sha/tree/master/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kubilaysalih/react-native-customizable-toast",
+    "examples": ["https://github.com/kubilaysalih/react-native-customizable-toast/tree/main/example"],
+    "images": ["https://imgur.com/vpOfl05.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
