@@ -7582,5 +7582,11 @@
     "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RonRadtke/react-native-blob-util",
+    "examples": ["https://github.com/RonRadtke/react-native-blob-util/tree/master/examples/ReactNativeBlobUtil"],
+    "ios": true,
+    "android": true
   }
 ]
