@@ -7584,8 +7584,15 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/zoontek/react-native-bars",
+    "examples": ["https://github.com/zoontek/react-native-bars/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif"],
+    "ios": true,
+    "android": true
+  },
+  {    
     "githubUrl": "https://github.com/henrhie/react-native-sha",
     "examples": ["https://github.com/henrhie/react-native-sha/tree/master/example"],
-    "android":true
+    "android": true
   }
 ]
