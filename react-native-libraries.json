@@ -7582,5 +7582,12 @@
     "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/zoontek/react-native-bars",
+    "examples": ["https://github.com/zoontek/react-native-bars/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif?raw=true"],
+    "ios": true,
+    "android": true
   }
 ]
