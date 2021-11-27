@@ -4178,7 +4178,8 @@
   {
     "githubUrl": "https://github.com/wkh237/react-native-fetch-blob",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/kmend/react-native-md5",
@@ -7581,6 +7582,18 @@
     "examples": ["https://github.com/craftzdog/react-native-checkbox-reanimated/tree/master/example"],
     "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
     "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/zoontek/react-native-bars",
+    "examples": ["https://github.com/zoontek/react-native-bars/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif"],
+    "ios": true,
+    "android": true
+  },
+  {    
+    "githubUrl": "https://github.com/henrhie/react-native-sha",
+    "examples": ["https://github.com/henrhie/react-native-sha/tree/master/example"],
     "android": true
   },
   {
