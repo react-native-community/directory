@@ -948,7 +948,15 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "npmPkg": "native-base"
+    "web": true,
+    "npmPkg": "native-base",
+    "examples": [
+      "https://docs.nativebase.io/todo-example",
+      "https://docs.nativebase.io/kitchen-sink",
+      "https://snack.expo.dev/@nishanbende/example",
+      "https://codesandbox.io/s/native-base-v3-template-mq6ox?file=/src/components/Example.tsx"
+    ]
+
   },
   {
     "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
