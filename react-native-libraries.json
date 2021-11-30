@@ -945,18 +945,18 @@
   },
   {
     "githubUrl": "https://github.com/GeekyAnts/NativeBase",
+    "npmPkg": "native-base",
     "ios": true,
     "android": true,
     "expo": true,
     "web": true,
-    "npmPkg": "native-base",
     "examples": [
-      "https://docs.nativebase.io/todo-example",
-      "https://docs.nativebase.io/kitchen-sink",
+      "https://github.com/GeekyAnts/NativeBase/tree/master/example",
+      "https://github.com/GeekyAnts/NativeBase/tree/master/RNBareExample",
+      "https://github.com/nativebase/kitchen-sink",
       "https://snack.expo.dev/@nishanbende/example",
-      "https://codesandbox.io/s/native-base-v3-template-mq6ox?file=/src/components/Example.tsx"
+      "https://codesandbox.io/s/native-base-v3-template-mq6ox"
     ]
-
   },
   {
     "githubUrl": "https://github.com/olivierlesnicki/react-native-switcher",
