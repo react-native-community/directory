@@ -2,7 +2,6 @@ import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
 import React from 'react';
-import { AppearanceProvider } from 'react-native-appearance';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { colors, darkColors } from '../common/styleguide';
@@ -23,34 +22,30 @@ Sentry.init({
   tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.5 : 1.0,
 });
 
-const App = ({ pageProps, Component }) => {
-  return (
-    <AppearanceProvider>
-      <CustomAppearanceProvider>
-        <CustomAppearanceContext.Consumer>
-          {context => (
-            <SafeAreaProvider
-              style={{
-                flex: 1,
-                backgroundColor: context.isDark ? darkColors.background : colors.white,
-              }}>
-              <Head>
-                <title>React Native Directory</title>
-                <meta
-                  name="viewport"
-                  content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"
-                />
-              </Head>
-              <Header />
-              <Component {...pageProps} />
-              <Footer />
-              <PreviewStyles />
-            </SafeAreaProvider>
-          )}
-        </CustomAppearanceContext.Consumer>
-      </CustomAppearanceProvider>
-    </AppearanceProvider>
-  );
-};
+const App = ({ pageProps, Component }) => (
+  <CustomAppearanceProvider>
+    <CustomAppearanceContext.Consumer>
+      {context => (
+        <SafeAreaProvider
+          style={{
+            flex: 1,
+            backgroundColor: context.isDark ? darkColors.background : colors.white,
+          }}>
+          <Head>
+            <title>React Native Directory</title>
+            <meta
+              name="viewport"
+              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"
+            />
+          </Head>
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+          <PreviewStyles />
+        </SafeAreaProvider>
+      )}
+    </CustomAppearanceContext.Consumer>
+  </CustomAppearanceProvider>
+);
 
 export default Sentry.withProfiler(App);

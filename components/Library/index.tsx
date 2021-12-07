@@ -1,7 +1,7 @@
 import emoji from 'node-emoji';
 import React, { useContext } from 'react';
+import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
-import Linkify from 'react-simple-linkify';
 
 import { colors, useLayout, A, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
@@ -55,7 +55,10 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         {!isEmptyOrNull(github.description) && (
           <View style={styles.verticalMargin}>
             <Caption numberOfLines={skipMeta && 3}>
-              <Linkify component={({ url }) => <A href={url}>{url}</A>}>
+              <Linkify
+                options={{
+                  linkWrapper: props => <A {...props}>{props.children}</A>,
+                }}>
                 {emoji.emojify(github.description)}
               </Linkify>
             </Caption>

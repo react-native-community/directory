@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as React from 'react';
-import { StatusBar, View } from 'react-native';
-import { useColorScheme } from 'react-native-appearance';
+import { Appearance, StatusBar, View } from 'react-native';
 
 import CustomAppearanceContext from './CustomAppearanceContext';
 
@@ -11,7 +10,7 @@ const shouldRehydrate = true;
 const defaultState = { isDark: false };
 
 const CustomAppearanceProvider = ({ children }) => {
-  const colorScheme = useColorScheme();
+  const colorScheme = Appearance.getColorScheme();
   const [isDark, setIsDark] = React.useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = React.useState(false);
 
