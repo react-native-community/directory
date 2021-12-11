@@ -7640,7 +7640,7 @@
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-google-ads",
-    "npmPkg": ["@invertase/react-native-google-ads"],
+    "npmPkg": "@invertase/react-native-google-ads",
     "examples": ["https://github.com/invertase/react-native-google-ads/tree/main/example"],
     "ios": true,
     "android": true
