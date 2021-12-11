@@ -7552,7 +7552,9 @@
   {
     "githubUrl": "https://github.com/getbouncer/react-native-cardscan",
     "examples": ["https://github.com/getbouncer/react-native-cardscan/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/getbouncer/react-native-cardscan/master/docs/images/demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/getbouncer/react-native-cardscan/master/docs/images/demo.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -7565,7 +7567,9 @@
   {
     "githubUrl": "https://github.com/react-native-twitter-signin/twitter-signin",
     "npmPkg": "@react-native-twitter-signin/twitter-signin",
-    "examples": ["https://github.com/react-native-twitter-signin/twitter-signin/tree/master/Example"],
+    "examples": [
+      "https://github.com/react-native-twitter-signin/twitter-signin/tree/master/Example"
+    ],
     "ios": true,
     "android": true
   },
@@ -7587,29 +7591,70 @@
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-checkbox-reanimated",
-    "examples": ["https://github.com/craftzdog/react-native-checkbox-reanimated/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"],
+    "examples": [
+      "https://github.com/craftzdog/react-native-checkbox-reanimated/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/craftzdog/react-native-checkbox-reanimated/master/doc/demo.gif"
+    ],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/zoontek/react-native-bars",
     "examples": ["https://github.com/zoontek/react-native-bars/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif"
+    ],
     "ios": true,
     "android": true
   },
-  {    
+  {
     "githubUrl": "https://github.com/henrhie/react-native-sha",
     "examples": ["https://github.com/henrhie/react-native-sha/tree/master/example"],
     "android": true
   },
   {
     "githubUrl": "https://github.com/kubilaysalih/react-native-customizable-toast",
-    "examples": ["https://github.com/kubilaysalih/react-native-customizable-toast/tree/main/example"],
+    "examples": [
+      "https://github.com/kubilaysalih/react-native-customizable-toast/tree/main/example"
+    ],
     "images": ["https://imgur.com/vpOfl05.gif"],
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/react-native-lazy-index",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/minhtc/react-native-auto-scrolling",
+    "examples": ["https://github.com/minhtc/react-native-auto-scrolling/tree/main/Example"],
+    "images": [
+      "https://raw.githubusercontent.com/minhtc/react-native-auto-scrolling/main/screenshots/auto-scrolling.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-google-ads",
+    "npmPkg": "@invertase/react-native-google-ads",
+    "examples": ["https://github.com/invertase/react-native-google-ads/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-recaptcha-that-works",
+    "examples": [
+      "https://github.com/douglasjunior/react-native-recaptcha-that-works/tree/master/Sample"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/normal.gif",
+      "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/invisible.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
