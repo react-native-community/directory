@@ -7656,5 +7656,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/birkir/react-native-sfsymbols",
+    "examples": [
+      "https://github.com/birkir/react-native-sfsymbols/tree/main/example"
+    ],
+    "ios": true
   }
 ]
