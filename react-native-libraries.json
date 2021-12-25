@@ -7672,5 +7672,15 @@
       "https://github.com/birkir/react-native-sfsymbols/tree/main/example"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-native-platforms",
+    "npmPkg": "react-native-platforms",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
   }
 ]
