@@ -7681,5 +7681,14 @@
     "windows": true,
     "macos": true,
     "tvos": true
+  },
+  {
+    "npmPkg": "@clerk/clerk-expo",
+    "examples": [
+      "https://docs.clerk.dev/reference/clerk-expo"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
