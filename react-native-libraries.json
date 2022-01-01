@@ -7835,5 +7835,15 @@
       "https://github.com/microsoft/react-native-winrt/tree/main/samples/RNWinRTTestApp"
     ],
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/clerkinc/javascript",
+    "npmPkg": "@clerk/clerk-expo",
+    "examples": [
+      "https://docs.clerk.dev/reference/clerk-expo"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
