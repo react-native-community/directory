@@ -7681,5 +7681,21 @@
     "windows": true,
     "macos": true,
     "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/dohooo/react-native-reanimated-carousel",
+    "examples": [
+      "https://github.com/dohooo/react-native-reanimated-carousel/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/normal-horizontal.gif",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/normal-vertical.gif",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/parallax-horizontal.gif",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/parallax-vertical.gif",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/stack-horizontal-right.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
