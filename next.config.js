@@ -7,6 +7,7 @@ const withTM = require('next-transpile-modules')(['react-native-web']);
 module.exports = withPlugins(
   [withTM, [withExpo, { projectRoot: __dirname }], withImages, withFonts],
   {
+    webpack5: true,
     productionBrowserSourceMaps: true,
     eslint: {
       ignoreDuringBuilds: true,
