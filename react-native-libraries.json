@@ -6240,7 +6240,9 @@
     "githubUrl": "https://github.com/mrousavy/react-native-mmkv",
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
