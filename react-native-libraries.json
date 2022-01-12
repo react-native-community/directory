@@ -7700,5 +7700,15 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/shipt/osmosis",
+    "npmPkg": "@shipt/osmosis",
+    "examples": ["https://github.com/shipt/osmosis/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+    "windows": true
   }
 ]
