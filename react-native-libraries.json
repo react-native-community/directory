@@ -7702,6 +7702,19 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/MinaSamir11/react-native-in-app-review",
+    "examples": [
+      "https://github.com/MinaSamir11/react-native-in-app-review/tree/master/Example"
+    ],
+    "images": [
+      "https://developer.android.com/images/google/play/in-app-review/iar-flow.jpg",
+      "https://developer.apple.com/design/human-interface-guidelines/ios/images/AppRating_2x.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/shipt/osmosis",
     "npmPkg": "@shipt/osmosis",
     "examples": ["https://github.com/shipt/osmosis/tree/master/examples"],
