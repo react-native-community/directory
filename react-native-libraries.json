@@ -7732,5 +7732,14 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/fakeheal/react-native-pan-pinch-view",
+    "examples": ["https://github.com/fakeheal/react-native-pan-pinch-view/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/fakeheal/react-native-pan-pinch-view/master/example.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
