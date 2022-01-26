@@ -7736,5 +7736,42 @@
   {
     "githubUrl": "https://github.com/agencyenterprise/react-native-health",
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/nomi9995/react-native-interactable-reanimated",
+    "examples": [
+      "https://github.com/nomi9995/react-native-interactable-reanimated/tree/master/example"
+    ],
+    "images": [
+      "https://i.imgur.com/ErA2GQo.gif",
+      "https://i.imgur.com/pH6oB5D.gif",
+      "https://i.imgur.com/J5l2Qvq.gif",
+      "https://i.imgur.com/dWFYZBG.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ihmpavel/expo-video-player",
+    "examples": ["https://github.com/ihmpavel/expo-video-player/tree/master/example-app"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/interhub/react-native-accelerometer-parallax",
+    "images": ["https://interhub.github.io/source/parallax-lib.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/computerjazz/react-native-swipe-calendar",
+    "example": ["https://snack.expo.dev/@computerjazz/react-native-swipe-calendar"],
+    "images": ["https://i.imgur.com/5dsYg9M.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
