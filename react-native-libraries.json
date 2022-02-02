@@ -7790,5 +7790,13 @@
     "examples": ["https://github.com/gobeyondidentity/bi-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/xulihang/vision-camera-dynamsoft-barcode-reader",
+    "examples": [
+      "https://github.com/xulihang/vision-camera-dynamsoft-barcode-reader/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
