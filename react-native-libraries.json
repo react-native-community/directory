@@ -2009,8 +2009,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/admob",
-    "npmPkg": "@react-native-firebase/admob",
+    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
+    "examples": [
+      "https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"
+    ],
     "ios": true,
     "android": true
   },
