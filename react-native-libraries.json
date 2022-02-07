@@ -7833,5 +7833,16 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
+    "examples": [
+      "https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/invertase/react-native-google-mobile-ads/main/docs/img/logo_admob_192px.svg"
+    ]
+    "ios": true,
+    "android": true
   }
 ]
