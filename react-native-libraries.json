@@ -2009,11 +2009,17 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/admob",
-    "npmPkg": "@react-native-firebase/admob",
+    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
+    "npmPkg": "react-native-google-mobile-ads",
+    "examples": [
+      "https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/invertase/react-native-google-mobile-ads/main/docs/img/logo_admob_192px.svg"
+    ]
     "ios": true,
     "android": true
-  },
+  }
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/master/packages/analytics",
     "npmPkg": "@react-native-firebase/analytics",
@@ -7831,17 +7837,6 @@
     "examples": [
       "https://github.com/haxibiao/react-native-ad/tree/master/example"
     ],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
-    "examples": [
-      "https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/invertase/react-native-google-mobile-ads/main/docs/img/logo_admob_192px.svg"
-    ]
     "ios": true,
     "android": true
   }
