@@ -7814,5 +7814,11 @@
     "examples": ["https://github.com/haxibiao/react-native-ad/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Assembless/react-native-material-you",
+    "npmPkg": "@assembless/react-native-material-you",
+    "examples": ["https://github.com/Assembless/react-native-material-you/tree/main/example"],
+    "android": true
   }
 ]
