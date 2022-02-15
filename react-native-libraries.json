@@ -7838,19 +7838,8 @@
   },
   {
     "githubUrl": "https://github.com/Assembless/react-native-material-you",
-    "npmPkg": "https://www.npmjs.com/package/@assembless/react-native-material-you",
-    "nameOverride": "React Native Material You",
-    "examples": ["https://github.com/Assembless/react-native-material-you#how-to-use", "https://assembless.github.io/react-native-material-you/index.html"],
-    "images": ["https://camo.githubusercontent.com/085fa6a4c9ee9c1fbb5833aba9f8e3ca6037cba014548bf0842ce7a9b4fb76f2/68747470733a2f2f692e696d6775722e636f6d2f6663644f794c732e706e67"],
-    "ios": false,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "unmaintained": false,
-    "dev": true,
-    "template": false
+    "npmPkg": "@assembless/react-native-material-you",
+    "examples": ["https://github.com/Assembless/react-native-material-you/tree/main/example"],
+    "android": true
   }
 ]
