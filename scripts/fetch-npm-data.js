@@ -16,7 +16,7 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
     return namesArray.map(name => {
       const pkgData = downloadData[name];
 
-      if (isMonthly && !pkgData.downloads) {
+      if (isMonthly && !pkgData?.downloads) {
         console.warn(
           `[NPM] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
         );
@@ -33,7 +33,7 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
               period,
             }
           : {
-              weekDownloads: pkgData.downloads || 0,
+              weekDownloads: pkgData?.downloads || 0,
             },
       };
     });

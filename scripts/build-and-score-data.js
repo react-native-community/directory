@@ -84,7 +84,7 @@ const buildAndScoreData = async () => {
   );
 
   // Assemble and fetch data in bulk queries
-  const CHUNK_SIZE = 64;
+  const CHUNK_SIZE = 32;
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
   );
