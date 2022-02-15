@@ -16,7 +16,7 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
     return namesArray.map(name => {
       const pkgData = downloadData[name];
 
-      if (isMonthly && !pkgData.downloads) {
+      if (isMonthly && !pkgData?.downloads) {
         console.warn(
           `[NPM] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
         );
@@ -33,7 +33,7 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
               period,
             }
           : {
-              weekDownloads: pkgData.downloads || 0,
+              weekDownloads: pkgData?.downloads || 0,
             },
       };
     });
@@ -75,7 +75,7 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     };
   } catch (e) {
     await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
-    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
+    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`, e);
     return await fetchNpmData(pkgData, attemptsCount + 1);
   }
 };
