@@ -2010,9 +2010,7 @@
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
-    "examples": [
-      "https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"
-    ],
+    "examples": ["https://github.com/invertase/react-native-google-mobile-ads/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -7794,15 +7792,13 @@
     "ios": true,
     "android": true
   },
-    {
+  {
     "githubUrl": "https://github.com/gajjartejas/react-native-lan-port-scanner",
-    "examples": [
-      "https://github.com/gajjartejas/react-native-lan-port-scanner/tree/main/example"
-    ],
+    "examples": ["https://github.com/gajjartejas/react-native-lan-port-scanner/tree/main/example"],
     "ios": true,
     "android": true
   },
-    {
+  {
     "githubUrl": "https://github.com/Soomgo-Mobile/react-native-animated-pagination-dot",
     "examples": [
       "https://github.com/Soomgo-Mobile/react-native-animated-pagination-dot/tree/master/examples"
@@ -7813,28 +7809,17 @@
     "ios": true,
     "android": true
   },
-    {
-    "githubUrl": "https://github.com/standardnotes/react-native-sodium-jsi",
-    "examples": [
-      "https://github.com/standardnotes/react-native-sodium-jsi/tree/main/example"
-    ],
-    "ios": true,
-    "android": true
-  },
-    {
+  {
     "githubUrl": "https://github.com/haxibiao/react-native-ad",
-    "examples": [
-      "https://github.com/haxibiao/react-native-ad/tree/master/example"
-    ],
+    "examples": ["https://github.com/haxibiao/react-native-ad/tree/master/example"],
     "ios": true,
     "android": true
   },
-    {
-    "githubUrl": "https://github.com/microsoft/react-native-winrt",
-    "examples": [
-      "https://github.com/microsoft/react-native-winrt/tree/main/samples/RNWinRTTestApp"
-    ],
-    "windows": true
+  {
+    "githubUrl": "https://github.com/Assembless/react-native-material-you",
+    "npmPkg": "@assembless/react-native-material-you",
+    "examples": ["https://github.com/Assembless/react-native-material-you/tree/main/example"],
+    "android": true
   },
   {
     "githubUrl": "https://github.com/clerkinc/javascript",
@@ -7842,7 +7827,7 @@
     "examples": [
       "https://docs.clerk.dev/reference/clerk-expo"
     ],
-    "ios": true,
+    "ios": true, 
     "android": true,
     "expo": true
   }
