@@ -7820,5 +7820,15 @@
     "npmPkg": "@assembless/react-native-material-you",
     "examples": ["https://github.com/Assembless/react-native-material-you/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/clerkinc/javascript",
+    "npmPkg": "@clerk/clerk-expo",
+    "examples": [
+      "https://docs.clerk.dev/reference/clerk-expo"
+    ],
+    "ios": true, 
+    "android": true,
+    "expo": true
   }
 ]
