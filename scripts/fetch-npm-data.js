@@ -75,7 +75,7 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     };
   } catch (e) {
     await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
-    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`, e);
+    console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmData(pkgData, attemptsCount + 1);
   }
 };
