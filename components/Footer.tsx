@@ -2,8 +2,8 @@ import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
-import ContentContainer from '../components/ContentContainer';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import ContentContainer from './ContentContainer';
 import {
   Logo,
   PlatformAndroid,
@@ -13,6 +13,7 @@ import {
   PlatformWeb,
   PlatformWindows,
 } from './Icons';
+import VercelBanner from './VercelBanner';
 
 type PlatformProps = {
   name: string;
@@ -57,6 +58,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
 const Footer = () => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
+
   return (
     <View
       style={[
@@ -105,12 +107,8 @@ const Footer = () => {
             url="https://github.com/microsoft/react-native-windows#readme"
           />
         </View>
-        <View
-          style={[
-            { paddingHorizontal: 20 },
-            isSmallScreen ? { flexDirection: 'column' } : { flexDirection: 'row' },
-          ]}>
-          <View style={styles.footerTextContainer}>
+        <View style={[styles.footerTextWrapper, isSmallScreen && { flexDirection: 'column' }]}>
+          <View style={[styles.footerTextContainer, isSmallScreen && { alignItems: 'center' }]}>
             <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
@@ -119,22 +117,17 @@ const Footer = () => {
               .
             </P>
             <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-              Want to learn more about React Native? Check out the{' '}
+              Want to learn more? Check out the{' '}
               <A href="https://reactnative.dev/docs/getting-started">official React Native docs</A>,
               and <A href="https://expo.dev">Expo</A>.
             </P>
           </View>
           <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>
-            <P style={styles.bannerText}>
-              Black Lives Matter.{' '}
-              <A
-                target="_blank"
-                href="https://support.eji.org/give/153413/#!/donation/checkout"
-                style={styles.bannerLink}>
-                Support the Equal Justice Initiative
-              </A>
-              .
-            </P>
+            <A
+              href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
+              style={styles.bannerLink}>
+              <VercelBanner />
+            </A>
           </View>
         </View>
         <View style={styles.logoContainer}>
@@ -152,10 +145,13 @@ const styles = StyleSheet.create({
     paddingBottom: 28,
     marginTop: 12,
   },
+  footerTextWrapper: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+  },
   footerTextContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
   },
   footerText: {
     paddingVertical: 7,
@@ -185,31 +181,15 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   bannerContainer: {
-    backgroundColor: darkColors.veryDark,
-    maxHeight: 52,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 14,
-    paddingHorizontal: 20,
-    marginTop: 8,
-    borderRadius: 4,
+    marginHorizontal: 12,
+    alignSelf: 'center',
   },
   bannerContainerSmall: {
     marginTop: 24,
-    paddingVertical: 12,
-    maxHeight: 64,
-  },
-  bannerText: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 15,
+    alignItems: 'center',
   },
   bannerLink: {
-    color: colors.primary,
-    backgroundColor: darkColors.veryDark,
-    textDecorationLine: 'underline',
-    whiteSpace: 'nowrap',
+    backgroundColor: 'transparent',
   },
   logoContainer: {
     flex: 1,
