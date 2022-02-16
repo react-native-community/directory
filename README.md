@@ -1,10 +1,14 @@
 <dd align="center"><img alt="React Native Directory Logo" height="64" src="./assets/logo.png" /></dd>
 <h1 align="center">React Native Directory</h1>
-<h3 align="center">https://reactnative.directory/</h3>
+<h3 align="center">
+  <a href="https://reactnative.directory/">
+    https://reactnative.directory
+  </a>
+</h3>
 <p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
 <p align="center">
-  <a href="https://reactnative.directory/">
-    <img alt="React Native Directory Logo" height="20" src="https://img.shields.io/github/deployments/react-native-community/directory/Production?label=Deploy&logo=vercel&style=flat-square" />
+  <a href="https://vercel.com/?utm_source=rndir&utm_campaign=oss">
+    <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" />
   </a>
 </p>
 
