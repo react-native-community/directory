@@ -181,7 +181,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   bannerContainer: {
-    marginHorizontal: 12,
     alignSelf: 'center',
   },
   bannerContainerSmall: {
