@@ -4956,8 +4956,8 @@
   {
     "githubUrl": "https://github.com/colorfy-software/react-native-modalfy",
     "examples": [
-      "https://github.com/colorfy-software/react-native-modalfy/tree/master/Example",
-      "https://snack.expo.dev/@charles.m/react-native-modalfy"
+      "https://snack.expo.dev/@charles.m/react-native-modalfy",
+      "https://github.com/colorfy-software/react-native-modalfy/tree/main/example"
     ],
     "images": [
       "https://i.imgur.com/q8QFajL.gif",
@@ -4967,7 +4967,8 @@
     ],
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/benevbright/react-navigation-collapsible",
