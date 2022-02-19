@@ -7839,8 +7839,10 @@
   },
   {
     "githubUrl": "https://github.com/aykutkardas/react-icomoon",
-    "npmPkg": "react-icomoon",
-    "examples": ["https://snack.expo.dev/@aykutkardas/react-icomoon", "https://snack.expo.dev/@aykutkardas/react-icomoon-with-multiple-color"],
+    "examples": [
+      "https://snack.expo.dev/@aykutkardas/react-icomoon", 
+      "https://snack.expo.dev/@aykutkardas/react-icomoon-with-multiple-color"
+    ],
     "ios": true,
     "android": true,
     "web": true,
