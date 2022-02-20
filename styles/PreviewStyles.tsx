@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useDimensions } from 'react-native-web-hooks';
+import { useWindowDimensions } from 'react-native';
 
 import { colors, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -10,10 +10,12 @@ const GITHUB_PREVIEW_MIN_WIDTH = 640;
 // We should migrate to a more universal approach to thumbnails, built on top of React Native Web
 const PreviewStyles = () => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const screenWidth = useDimensions().window.width;
-  const previewWidth =
-    screenWidth < GITHUB_PREVIEW_MIN_WIDTH ? screenWidth : GITHUB_PREVIEW_MIN_WIDTH;
-  const previewImageWidth = previewWidth - 20;
+  const { width, height } = useWindowDimensions();
+
+  const maxPreviewWidth = width < GITHUB_PREVIEW_MIN_WIDTH ? width : GITHUB_PREVIEW_MIN_WIDTH;
+  const maxPreviewImageWidth = maxPreviewWidth - 20;
+  const maxPreviewHeight = height / 2;
+  const maxImgPreviewHeight = maxPreviewHeight - 20;
 
   return (
     <style jsx global>{`
@@ -25,22 +27,22 @@ const PreviewStyles = () => {
       .preview {
         background-color: ${isDark ? darkColors.black : colors.white} !important;
         opacity: 1 !important;
-        padding: 10px !important;
+        padding: 10px;
         box-sizing: border-box;
         box-shadow: 0 4px 6px 0 ${isDark ? '#2a2e3633' : '#00000025'} !important;
-        max-width: ${previewWidth}px;
-        max-height: 66vh;
+        max-width: ${maxPreviewWidth}px;
+        max-height: ${maxPreviewHeight}px;
         border-radius: 3px;
+        display: none;
       }
 
       .preview img {
-        display: none;
-        max-width: ${previewImageWidth}px;
-        max-height: calc(66vh - 20px);
+        max-width: ${maxPreviewImageWidth}px;
+        max-height: ${maxImgPreviewHeight}px;
         border-radius: 2px;
       }
 
-      .preview.loaded img {
+      .preview.loaded {
         display: block;
       }
     `}</style>
