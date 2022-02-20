@@ -11,6 +11,19 @@ type Props = {
   url: string;
 };
 
+const customOffset = {
+  name: 'offset',
+  options: {
+    offset: ({ placement, popper }) => {
+      if (placement === 'right-start') {
+        return [32, -30];
+      } else {
+        return [32, -popper.height + 80];
+      }
+    },
+  },
+};
+
 const Thumbnail = ({ url }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const [showPreview, setShowPreview] = useState(false);
@@ -19,8 +32,27 @@ const Thumbnail = ({ url }: Props) => {
   const previewRef = useRef();
 
   const { styles, attributes } = usePopper(iconRef.current, previewRef.current, {
-    placement: 'bottom',
+    placement: 'right-start',
     strategy: 'fixed',
+    modifiers: [
+      {
+        name: 'preventOverflow',
+        enabled: true,
+        options: {
+          rootBoundary: 'document',
+        },
+      },
+      customOffset,
+      {
+        name: 'flip',
+        enabled: true,
+        options: {
+          rootBoundary: 'document',
+          fallbackPlacements: ['top-start'],
+          allowedAutoPlacements: ['right-start', 'top-start'],
+        },
+      },
+    ],
   });
 
   const handleMouseEvent = useCallback(show => setShowPreview(show), [showPreview]);
@@ -53,14 +85,19 @@ const Thumbnail = ({ url }: Props) => {
           borderColor: isDark ? darkColors.border : colors.gray2,
           borderStyle: 'solid',
         }}>
-        <ThumbnailIcon fill={iconFill} />
+        {showPreview && !isLoaded ? (
+          <div style={{ width: 14, marginLeft: 1, marginRight: 1, marginTop: -2 }}>
+            <ActivityIndicator size="small" color={iconFill} />
+          </div>
+        ) : (
+          <ThumbnailIcon fill={iconFill} />
+        )}
       </div>
       {createPortal(
         <div ref={previewRef} style={styles.popper} {...attributes.popper}>
           {showPreview && (
             <div className={'preview' + (isLoaded ? ' loaded' : '')}>
-              {isLoaded ? null : <ActivityIndicator size="small" />}
-              <img src={url} onLoad={() => setLoaded(true)} alt="" style={{ maxHeight: 600 }} />
+              <img src={url} onLoad={() => setLoaded(true)} alt="" />
             </div>
           )}
         </div>,
