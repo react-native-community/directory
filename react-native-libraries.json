@@ -7847,5 +7847,16 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/MuhammedKpln/react-native-chatty",
+    "examples": [
+      "https://snack.expo.dev/@muhammedkpln/react-native-chatty-example",
+      "https://github.com/MuhammedKpln/react-native-chatty/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
