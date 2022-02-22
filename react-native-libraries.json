@@ -7858,5 +7858,22 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/cwnicoletti/react-native-gauge",
+    "npmPkg": "react-native-gauge",
+    "images": [
+      "https://user-images.githubusercontent.com/56566033/153973217-a1f4cc50-a53b-4946-8d1f-0403fe018e64.gif"
+    ],
+    "ios": true,
+    "android": false,
+    "web": false,
+    "expo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
   }
 ]
