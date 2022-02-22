@@ -7850,8 +7850,10 @@
   },
   {
     "githubUrl": "https://github.com/MuhammedKpln/react-native-chatty",
-    "npmPkg": "react-native-chatty",
-    "examples": ["https://github.com/MuhammedKpln/react-native-chatty/tree/main/example", "https://snack.expo.dev/@muhammedkpln/react-native-chatty-example"],
+    "examples": [
+      "https://snack.expo.dev/@muhammedkpln/react-native-chatty-example",
+      "https://github.com/MuhammedKpln/react-native-chatty/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "web": true,
