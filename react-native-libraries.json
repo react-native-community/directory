@@ -6561,10 +6561,13 @@
   {
     "githubUrl": "https://github.com/raulpesilva/re-state",
     "npmPkg": "@raulpesilva/re-state",
+    "example": "https://github.com/raulpesilva/re-state/tree/master/examples",
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "windows": true,
+    "macos": true
   },
   {
     "githubUrl": "https://github.com/kashishgrover/react-native-see-more-inline",
