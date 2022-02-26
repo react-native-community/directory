@@ -7828,10 +7828,8 @@
   {
     "githubUrl": "https://github.com/clerkinc/javascript",
     "npmPkg": "@clerk/clerk-expo",
-    "examples": [
-      "https://docs.clerk.dev/reference/clerk-expo"
-    ],
-    "ios": true, 
+    "examples": ["https://docs.clerk.dev/reference/clerk-expo"],
+    "ios": true,
     "android": true,
     "expo": true
   },
@@ -7843,7 +7841,7 @@
   {
     "githubUrl": "https://github.com/aykutkardas/react-icomoon",
     "examples": [
-      "https://snack.expo.dev/@aykutkardas/react-icomoon", 
+      "https://snack.expo.dev/@aykutkardas/react-icomoon",
       "https://snack.expo.dev/@aykutkardas/react-icomoon-with-multiple-color"
     ],
     "ios": true,
@@ -7868,6 +7866,75 @@
       "https://user-images.githubusercontent.com/56566033/153973217-a1f4cc50-a53b-4946-8d1f-0403fe018e64.gif"
     ],
     "ios": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/caglardurmus/react-native-insta-story",
+    "examples": [
+      "https://snack.expo.dev/p0DDl8ua3R",
+      "https://github.com/caglardurmus/react-native-insta-story/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/caglardurmus/react-native-insta-story/main/images/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Kieran-McIntyre/react-native-section-alphabet-list",
+    "examples": [
+      "https://snack.expo.dev/5lKcFdIRc",
+      "https://github.com/Kieran-McIntyre/react-native-section-alphabet-list/tree/master/example"
+    ],
+    "images": ["https://media.giphy.com/media/SACshMzMIP2NvP8rvY/giphy.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/alexZajac/react-native-skeleton-content",
+    "examples": ["https://snack.expo.dev/UiJm_n28a"],
+    "images": [
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/main.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/color_change.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/direction_change.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/layout_change.gif"
+    ],
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/alexZajac/react-native-skeleton-content-nonexpo",
+    "images": [
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/main.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/color_change.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/direction_change.gif",
+      "https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/layout_change.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/meedan/react-native-share-menu",
+    "examples": ["https://github.com/meedan/react-native-share-menu/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/meedan/react-native-share-menu/master/screenshots/android-menu.png",
+      "https://raw.githubusercontent.com/meedan/react-native-share-menu/master/screenshots/ios-share-view.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jamonholmgren/react-native-colo-loco",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-url-router",
+    "examples": ["https://snack.expo.dev/ay1wR7h6-L", "https://snack.expo.dev/iLrbuTr-f"],
+    "ios": true,
+    "android": true,
     "expo": true
   }
 ]
