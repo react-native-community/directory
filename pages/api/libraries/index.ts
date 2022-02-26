@@ -2,12 +2,12 @@ import drop from 'lodash/drop';
 import take from 'lodash/take';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { libraries } from '../../../assets/data.json';
+import data from '../../../assets/data.json';
 import { NUM_PER_PAGE } from '../../../util/Constants';
 import { handleFilterLibraries } from '../../../util/search';
 import * as Sorting from '../../../util/sorting';
 
-const originalData = [...libraries];
+const originalData = [...data.libraries];
 const SortedData = {
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],
