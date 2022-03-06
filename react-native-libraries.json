@@ -5715,7 +5715,10 @@
   },
   {
     "githubUrl": "https://github.com/panz3r/react-native-flipper-databases",
-    "examples": ["https://github.com/panz3r/react-native-flipper-databases/tree/main/example"],
+    "examples": [
+      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example",
+      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example2"
+    ],
     "ios": true,
     "android": true,
     "dev": true
