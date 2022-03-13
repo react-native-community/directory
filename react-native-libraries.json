@@ -7946,5 +7946,24 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/criszz77/luna",
+    "npmPkg": "@criszz77/luna",
+    "nameOverride": "luna",
+    "examples": [
+      "https://criszz77.github.io/luna/"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "template": true
+  },
+  {
+    "githubUrl": "https://github.com/criszz77/react-native-media-console",
+    "npmPkg": "react-native-media-console",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
