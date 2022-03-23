@@ -7963,14 +7963,13 @@
     "ios": true,
     "android": true,
     "web": true
-  }
+  },
   {
     "githubUrl": "https://github.com/ujjalkar/rn-status-bar",
     "npmPkg": "rn-status-bar",
     "images": ["https://raw.githubusercontent.com/UjjalKar/rn-status-bar/main/screenshots/S1.png"],
     "ios": true,
     "android": true,
-    "expo": true,
+    "expo": true
   }
-
 ]
