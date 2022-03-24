@@ -7970,5 +7970,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/nshaposhnik/react-native-virtual-keyboard",
+    "examples": ["https://github.com/nshaposhnik/react-native-virtual-keyboard/tree/master/example"],
+    "images": ["https://raw.github.com/nshaposhnik/react-native-virtual-keyboard/master/example/screenshot.jpg"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
