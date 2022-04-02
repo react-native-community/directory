@@ -8002,5 +8002,13 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "npmPkg": "@dimaportenko/react-native-shadow-view",
+    "githubUrl": "https://github.com/dimaportenko/react-native-shadow-view",
+    "examples": ["https://github.com/dimaportenko/react-native-shadow-view/tree/main/example"],
+    "images": ["https://github.com/dimaportenko/react-native-shadow-view/blob/main/docs/android.jpeg"],
+    "ios": true,
+    "android": true
   }
 ]
