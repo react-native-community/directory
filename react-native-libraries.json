@@ -7950,9 +7950,7 @@
   {
     "githubUrl": "https://github.com/criszz77/luna",
     "npmPkg": "@criszz77/luna",
-    "examples": [
-      "https://criszz77.github.io/luna/"
-    ],
+    "examples": ["https://criszz77.github.io/luna/"],
     "ios": true,
     "android": true,
     "web": true,
@@ -7973,11 +7971,35 @@
   },
   {
     "githubUrl": "https://github.com/nshaposhnik/react-native-virtual-keyboard",
-    "examples": ["https://github.com/nshaposhnik/react-native-virtual-keyboard/tree/master/example"],
-    "images": ["https://raw.github.com/nshaposhnik/react-native-virtual-keyboard/master/example/screenshot.jpg"],
+    "examples": [
+      "https://github.com/nshaposhnik/react-native-virtual-keyboard/tree/master/example"
+    ],
+    "images": [
+      "https://raw.github.com/nshaposhnik/react-native-virtual-keyboard/master/example/screenshot.jpg"
+    ],
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/yutasuzuki/react-native-record-screen",
+    "examples": ["https://github.com/yutasuzuki/react-native-record-screen/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/peterp/react-native-tags",
+    "examples": ["https://github.com/peterp/react-native-tags/tree/main/examples/Demo_RN_v63_2"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SvanBoxel/visibility-sensor-react-native",
+    "npmPkg": "@svanboxel/visibility-sensor-react-native",
+    "images": [
+      "https://user-images.githubusercontent.com/24505883/86367545-608c5e80-bc7c-11ea-89b0-76699e84d785.gif",
+      "https://user-images.githubusercontent.com/24505883/86367431-3aff5500-bc7c-11ea-90ca-7c8f1ef9dfe6.gif"
+    ],
   },
   {
     "githubUrl": "https://github.com/dimaportenko/react-native-shadow-view",
