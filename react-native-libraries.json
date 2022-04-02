@@ -7999,7 +7999,9 @@
     "images": [
       "https://user-images.githubusercontent.com/24505883/86367545-608c5e80-bc7c-11ea-89b0-76699e84d785.gif",
       "https://user-images.githubusercontent.com/24505883/86367431-3aff5500-bc7c-11ea-90ca-7c8f1ef9dfe6.gif"
-    ]
+    ],
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/dimaportenko/react-native-shadow-view",
