@@ -7850,14 +7850,10 @@
   },
   {
     "githubUrl": "https://github.com/yamankatby/react-native-flex-layout",
-    "npmPkg": "react-native-flex-layout",
     "examples": ["https://github.com/yamankatby/react-native-flex-layout/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
-    "windows": true,
-    "macos": true,
-    "tvos": true
+    "expo": true
   }
 ]
