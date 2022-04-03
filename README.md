@@ -23,14 +23,17 @@
 - Add it at the end of `react-native-libraries.json` file.
 - Submit a PR.
 
-Please follow this format, fields order and indentation:
+Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
 
 ```json
 {
   "githubUrl": "<GITHUB REPOSITORY URL>",
-  "npmPkg": "<NPM PACKAGE NAME>",
-  "nameOverride": "<PACKAGE DISPLAY NAME>",
-  "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
+  "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
+  "nameOverride": "<OPTIONALL PACKAGE DISPLAY NAME>",
+  "examples": [
+    "<THE URL TO REPO>", 
+    "<THE URL TO A SNACK>"
+  ],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
   "android": false,
@@ -45,46 +48,59 @@ Please follow this format, fields order and indentation:
 }
 ```
 
-Please skip any of the `false` values and do not fill optional fields, unless it's necessary.
+### Library fields description
 
-## Library fields description
+#### ⚙️ General
 
-- #### `githubUrl`
-  **(required string)** - URL to the GitHub repository (currently other git hosts are not supported).
+- #### ❗ `githubUrl` **(required)**
+  **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
+  
+  > Package also needs to be published to the NPM registry, becouse it is a source of crucial data for the directory.
 - #### `npmPkg`
-  **(_optional_ string)** - npm package name, by default GitHub repository name will be used (fill only when the GitHub repository name is different from the name of package published to npm, or package is a a part of - monorepo). Example: `"@expo/react-native-action-sheet"`.
+  **(string)** - npm package name, by default GitHub repository name will be used. Example: `"@expo/react-native-action-sheet"`.
+  
+  > Fill only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
 - #### `nameOverride`
-  **(_optional_ string)** - display name override (fill only when it is different from the GitHub repository name and npm package name).
+  **(string)** - display name override.
+  
+  > Fill only when it is different from the GitHub repository name and npm package name.
 - #### `examples`
-  **(_optional_ array of strings)** - URLs to example projects (Snacks preferred) or with demonstrations of the library.
+  **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
 - #### `images`
-  **(_optional_ array of strings)** - URLs to images that will show up in the listing to preview the library functionality.
+  **(array of strings)** - URLs to static images or GIFs that shows the library functionality.
+  
+  > Please do not add logotypes or other branding metrials, and please avoid linking multiple resources which shows the same feature.
 
-### 📱 Platforms
+#### 📱 Platforms
 
 - #### `ios`
-  **(_optional_ boolean)** - works on iOS device.
+  **(boolean)** - works on iOS device.
 - #### `android`
-  **(_optional_ boolean)** - works on Android device.
+  **(boolean)** - works on Android device.
 - #### `web`
-  **(_optional_ boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
+  **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 - #### `expo`
-  **(_optional_ boolean)** - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
-- #### `windows`
-  **(_optional_ boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
-- #### `macos`
-  **(_optional_ boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
-- #### `tvos`
-  **(_optional_ boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
+  **(boolean)** - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
+  
+#### 🖥️ Out-of-tree Platforms
 
-### 🏷️ Tags
+> __Note:__ Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
+
+- #### `windows`
+  **(boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
+- #### `macos`
+  **(boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
+- #### `tvos`
+  **(boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
+
+#### 🏷️ Tags
 
 - #### `unmaintained`
-  **(_optional_ boolean)** - signify that a library is no longer maintained.
+  **(boolean)** - signify that a library is no longer maintained.
 - #### `dev`
-  **(_optional_ boolean)** - signify that a library is a development tool or is only a part of development process.
+  **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
-  **(_optional_ boolean)** - signify that a library is a new project template.
+  **(boolean)** - signify that a library is a new project template.
 
 ---
 
@@ -99,8 +115,7 @@ Please skip any of the `false` values and do not fill optional fields, unless it
 #### Commands
 
 ```sh
-yarn
-yarn start
+yarn && yarn start
 ```
 
 You should be able to visit `localhost:3000` in your browser.
