@@ -8010,5 +8010,13 @@
     "images": ["https://github.com/dimaportenko/react-native-shadow-view/blob/main/docs/android.jpeg"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/yamankatby/react-native-flex-layout",
+    "examples": ["https://github.com/yamankatby/react-native-flex-layout/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
