@@ -8012,6 +8012,22 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/wix/react-native-notifications",
+    "npmPkg": "react-native-notifications",
+    "examples": [],
+    "images": ["https://github.com/wix/react-native-notifications/raw/master/.logo.png"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
+  },
+  {
     "githubUrl": "https://github.com/yamankatby/react-native-flex-layout",
     "examples": ["https://github.com/yamankatby/react-native-flex-layout/tree/main/example"],
     "ios": true,
