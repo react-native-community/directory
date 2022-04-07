@@ -8018,5 +8018,15 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jacobp100/react-native-tableview-list",
+    "examples": ["https://github.com/jacobp100/react-native-tableview-list/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/jacobp100/react-native-tableview-list/master/assets/1.png",
+      "https://raw.githubusercontent.com/jacobp100/react-native-tableview-list/master/assets/2.png",
+      "https://raw.githubusercontent.com/jacobp100/react-native-tableview-list/master/assets/3.png"
+    ],
+    "ios": true
   }
 ]
