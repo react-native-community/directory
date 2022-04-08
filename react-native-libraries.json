@@ -8035,5 +8035,11 @@
     "npmPkg": "@notifee/react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/wix/react-native-notifications",
+    "npmPkg": "react-native-notifications",
+    "ios": true,
+    "android": true
   }
 ]
