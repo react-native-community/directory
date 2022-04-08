@@ -8029,5 +8029,11 @@
       "https://raw.githubusercontent.com/jacobp100/react-native-tableview-list/master/assets/3.png"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/notifee",
+    "npmPkg": "@notifee/react-native",
+    "ios": true,
+    "android": true
   }
 ]
