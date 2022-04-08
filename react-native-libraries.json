@@ -8032,17 +8032,7 @@
   {
     "githubUrl": "https://github.com/invertase/notifee",
     "npmPkg": "@notifee/react-native",
-    "examples": [],
-    "images": ["https://static.invertase.io/assets/notifee-logo.png"],
     "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "android": true
   }
 ]
