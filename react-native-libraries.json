@@ -8041,5 +8041,10 @@
     "npmPkg": "react-native-notifications",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Gustash/react-native-focus",
+    "examples": ["https://github.com/Gustash/react-native-focus/tree/main/example"],
+    "ios": true
   }
 ]
