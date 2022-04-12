@@ -8048,5 +8048,17 @@
     "githubUrl": "https://github.com/Gustash/react-native-focus",
     "examples": ["https://github.com/Gustash/react-native-focus/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Forward-Software/react-auth",
+    "npmPkg": "@forward-software/react-auth",
+    "examples": [
+      "https://github.com/Forward-Software/react-auth/tree/main/examples/base",
+      "https://github.com/Forward-Software/react-auth/tree/main/examples/refresh-token",
+      "https://github.com/Forward-Software/react-auth/tree/main/examples/reqres"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
