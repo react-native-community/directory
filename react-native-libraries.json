@@ -6815,7 +6815,9 @@
   },
   {
     "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput",
-    "examples": ["https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/example"],
+    "examples": [
+      "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/mobile"
+    ],
     "ios": true,
     "android": true
   },
@@ -8010,7 +8012,9 @@
     "npmPkg": "@dimaportenko/react-native-shadow-view",
     "githubUrl": "https://github.com/dimaportenko/react-native-shadow-view",
     "examples": ["https://github.com/dimaportenko/react-native-shadow-view/tree/main/example"],
-    "images": ["https://github.com/dimaportenko/react-native-shadow-view/blob/main/docs/android.jpeg"],
+    "images": [
+      "https://github.com/dimaportenko/react-native-shadow-view/blob/main/docs/android.jpeg"
+    ],
     "ios": true,
     "android": true
   },
@@ -8040,7 +8044,6 @@
   },
   {
     "githubUrl": "https://github.com/wix/react-native-notifications",
-    "npmPkg": "react-native-notifications",
     "ios": true,
     "android": true
   },
@@ -8060,5 +8063,43 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/erksch/react-native-wheely",
+    "images": [
+      "https://raw.githubusercontent.com/erksch/react-native-wheely/master/screenshots/design_5_gray.jpg",
+      "https://raw.githubusercontent.com/erksch/react-native-wheely/master/screenshots/design_5_blue.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/iamolegga/react-native-launch-arguments",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/heyman333/react-native-animated-numbers",
+    "images": [
+      "https://raw.githubusercontent.com/heyman333/react-native-animated-numbers/master/images/android.gif",
+      "https://raw.githubusercontent.com/heyman333/react-native-animated-numbers/master/images/ios.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jkdrangel/react-native-switch-selector",
+    "images": [
+      "https://raw.githubusercontent.com/jkdrangel/react-native-switch-selector/master/assets/ex1.gif",
+      "https://raw.githubusercontent.com/jkdrangel/react-native-switch-selector/master/assets/ex2.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
