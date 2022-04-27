@@ -8101,5 +8101,13 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ammarahm-ed/react-native-admob-native-ads",
+    "examples": [
+      "https://github.com/ammarahm-ed/react-native-admob-native-ads/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
