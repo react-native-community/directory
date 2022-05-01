@@ -51,9 +51,9 @@ const Scoring = () => {
       <ContentContainer style={styles.container}>
         <P style={[styles.paragraph, styles.callout, calloutStyle]}>
           Directory scores are subjective and are based on data that's readily available on GitHub
-          and npm. It's not a perfect score and may not reflect quality for your specific needs.
-          When evaluating libraries to include in your project, review the library yourself to
-          determine if it's a good fit.
+          and npm. They are not a perfect scores and may not reflect quality for your specific
+          needs. When evaluating libraries to include in your project, review the library yourself
+          to determine if it's a good fit.
         </P>
         <H2 style={[styles.subHeader, textColorStyle]}>Directory Score</H2>
         <P style={[styles.paragraph, textColorStyle]}>
@@ -72,16 +72,16 @@ const Scoring = () => {
           The following criteria are used to calculate a library's Directory Score.
         </P>
         <ScoringCriterion headline="Very popular" score={40}>
-          Libraries with a popularity score of over 10,000 meet this criterion.
+          Libraries with a combined popularity score of over 10,000 meet this criterion.
           <br />
-          Popularity is measured by weighting and combining subscribers, forks, stars, and download
-          counts.
+          Combined popularity is measured by weighting and combining subscribers, forks, stars, and
+          download counts.
         </ScoringCriterion>
         <ScoringCriterion headline="Popular" score={10}>
-          Libraries with a popularity score of over 2,500 meet this criterion.
+          Libraries with a combined popularity score of over 2,500 meet this criterion.
           <br />
-          Popularity is measured by weighting and combining subscribers, forks, stars, and download
-          counts.
+          Combined popularity is measured by weighting and combining subscribers, forks, stars, and
+          download counts.
         </ScoringCriterion>
         <ScoringCriterion headline="Recommended" score={20}>
           The maintainers of React Native Directory hand pick select recommended libraries.
@@ -113,7 +113,7 @@ const Scoring = () => {
           .
         </P>
         <P style={[styles.paragraph, textColorStyle]}>
-          There are 5 levels of popularity depending on the final Popularity Score:
+          There are five levels of popularity which depends on the package final Popularity Score:
           <ul>
             <li>
               <PopularityMark markOnly library={{ popularity: 0.5001 }} />
@@ -144,8 +144,8 @@ const Scoring = () => {
         <ScoringCriterion headline="Popularity Gain">
           A base for the library score, it compares the monthly downloads count with weekly
           downloads count and based on those values calculates a growth ratio for the package. Its
-          value range span can be quite wide, but most of the packages score fits within +/-100 from
-          0. The formula used for calculating Popularity Gain looks as following:
+          value range span can be quite wide, but most of the packages Popularity Gain value fits
+          within +/- 100 range. The formula used for calculating the score looks as following:
           <br />
           <View style={styles.formula}>
             <code>
@@ -156,7 +156,7 @@ const Scoring = () => {
         <ScoringCriterion headline="Not many downloads" score={-45}>
           Libraries with less than 250 monthly downloads meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not that popular" score={-10}>
+        <ScoringCriterion headline="Not many followers" score={-10}>
           Libraries with less than 25 starts on GitHub meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="No longer maintained" score={-25}>
