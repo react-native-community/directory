@@ -6,7 +6,7 @@ import path from 'path';
 import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
-import { calculateScore, calculatePopularity } from './calculate-score';
+import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
@@ -107,10 +107,10 @@ const buildAndScoreData = async () => {
         }
   );
 
-  console.log('\n** Calculating scores');
+  console.log('\n** Calculating Directory Score');
   data = data.map(project => {
     try {
-      return calculateScore(project);
+      return calculateDirectoryScore(project);
     } catch (e) {
       console.log(`Failed to calculate score for ${project.github.name}`, e.message);
     }
@@ -119,7 +119,7 @@ const buildAndScoreData = async () => {
   console.log('\n** Calculating popularity');
   data = data.map(project => {
     try {
-      return calculatePopularity(project);
+      return calculatePopularityScore(project);
     } catch (e) {
       console.log(`Failed to calculate popularity for ${project.github.name}`, e.message);
       console.log(project.githubUrl);
