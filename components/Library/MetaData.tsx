@@ -89,7 +89,7 @@ const generateData = (library, secondary, isDark) => {
         content: (
           <A
             target="_self"
-            href="/directory-score"
+            href="/scoring"
             style={[styles.link, styles.mutedLink]}
             hoverStyle={isDark ? { color: colors.primaryDark } : undefined}>
             Directory Score

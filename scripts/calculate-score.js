@@ -1,11 +1,10 @@
+/**
+ * Directory Score
+ */
+
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The condiction is passed the data and if it returns true, the value is added to the
-// libraries score.
-//
-// The idea is to add to the score for good behaviour and subtract from the score for
-// bad behaviour. It is completely reasonable for no modifiers to match a given library
-// and it should get a score close to the middle. To help with this, the positive and
-// negative modifier scores should be roughly the same magnitude.
+// libraries score. Read more: https://reactnative.directory/scoring
 const modifiers = [
   {
     name: 'Very popular',
@@ -60,7 +59,7 @@ const maxScore = modifiers.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
-export const calculateScore = data => {
+export const calculateDirectoryScore = data => {
   // Filter the modifiers to the ones which conditions pass with the data
   const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
 
@@ -99,12 +98,16 @@ const getUpdatedDaysAgo = data => {
   return (currentDate - updateDate) / DAY_IN_MS;
 };
 
+/**
+ * Popularity Score
+ */
+
 const MIN_MONTHLY_DOWNLOADS = 250;
 const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
-export const calculatePopularity = data => {
+export const calculatePopularityScore = data => {
   const { npm, github, unmaintained } = data;
   const { downloads, weekDownloads } = npm;
   const { createdAt, stars } = github.stats;

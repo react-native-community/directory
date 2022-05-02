@@ -8,9 +8,8 @@ type Props = {
   score: number;
 };
 
-export function DirectoryScore(props: Props) {
+export function DirectoryScore({ score }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { score } = props;
 
   const chunk = 100 / 6;
   const getFill = (chunkNumber = 1) =>
