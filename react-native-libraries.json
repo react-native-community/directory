@@ -8116,17 +8116,12 @@
       "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/forceupgrade.jpeg",
       "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/upgrade.jpeg"
     ],
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/appupgrade-dev/app-upgrade-react-native-sdk",
     "examples": [
       "https://github.com/appupgrade-dev/app-upgrade-react-native-sdk#how-to-use-it"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": false,
+    "expo": true
   }
 ]
