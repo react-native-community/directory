@@ -8109,5 +8109,15 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/appupgrade-dev/app-upgrade-react-native-sdk",
+    "images": [
+      "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/forceupgrade.jpeg",
+      "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/upgrade.jpeg"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
