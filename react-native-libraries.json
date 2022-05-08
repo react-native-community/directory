@@ -8119,5 +8119,33 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-graph",
+    "examples": ["https://github.com/margelo/react-native-graph/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/margelo/react-native-graph/main/img/demo.gif",
+      "https://raw.githubusercontent.com/margelo/react-native-graph/main/img/change.gif",
+      "https://raw.githubusercontent.com/margelo/react-native-graph/main/img/pan.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-bignumber",
+    "examples": ["https://github.com/margelo/react-native-bignumber/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/streem/react-native-select-contact",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/KjellConnelly/react-native-shared-group-preferences",
+    "ios": true,
+    "android": true
   }
 ]
