@@ -8147,5 +8147,16 @@
     "githubUrl": "https://github.com/KjellConnelly/react-native-shared-group-preferences",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/shipt/segmented-arc-for-react-native",
+    "npmPkg": "@shipt/segmented-arc-for-react-native",
+    "examples": ["https://github.com/shipt/segmented-arc-for-react-native/tree/master/example"],
+    "images": [
+      "https://github.com/shipt/segmented-arc-for-react-native/blob/development/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
