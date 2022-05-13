@@ -4,12 +4,14 @@ import chunk from 'lodash/chunk';
 import path from 'path';
 
 import debugGithubRepos from '../debug-github-repos.json';
+import dataVersions from '../expo-react-native.json';
 import githubRepos from '../react-native-libraries.json';
 import * as Strings from '../util/strings';
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
+import { fetchVersionsData } from './fetch-versions-data';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -105,6 +107,22 @@ const buildAndScoreData = async () => {
             ...(downloadsListWeek.find(d => d.name === project.npmPkg)?.npm || {}),
           },
         }
+  );
+
+  console.log('\n** Fetch NPM Package JSON');
+  data = await Promise.all(
+    data.map(async project => {
+      const versionsData = await fetchVersionsData(project.npmPkg, [
+        {
+          name: 'react-native',
+          versions: dataVersions.reactNativeVersions,
+        },
+      ]);
+      return {
+        ...project,
+        rnVersions: versionsData?.[0]?.supports ?? {},
+      };
+    })
   );
 
   console.log('\n** Calculating Directory Score');

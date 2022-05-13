@@ -20,5 +20,25 @@
     "npmPkg": "@react-native-community/datetimepicker",
     "expo": true,
     "newArchitecture": true
+  },
+  { "githubUrl": "https://github.com/stripe/stripe-react-native",
+    "npmPkg": "@stripe/stripe-react-native",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Purii/react-native-tableview-simple",
+    "npmPkg": "react-native-tableview-simple",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-navigation-header-buttons",
+    "npmPkg": "react-navigation-header-buttons",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
