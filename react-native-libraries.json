@@ -8160,15 +8160,13 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/Bur0/react-native-actions-sheet-pickere",
-    "npmPkg": "react-native-actions-sheet-picker",
+    "githubUrl": "https://github.com/Bur0/react-native-actions-sheet-picker",
     "examples": ["https://github.com/Bur0/react-native-actions-sheet-picker/tree/master/example"],
     "images": [
       "https://raw.githubusercontent.com/Bur0/react-native-actions-sheet-picker/master/gifs/ios-default.gif",
       "https://raw.githubusercontent.com/Bur0/react-native-actions-sheet-picker/master/gifs/ios-filterable.gif"
     ],
     "ios": true,
-    "android": true,
-    "expo": false
+    "android": true
   }
 ]
