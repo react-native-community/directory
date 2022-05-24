@@ -8168,5 +8168,40 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pavel-corsaghin/react-native-leaflet",
+    "npmPkg": "react-native-leaflet-view",
+    "examples": ["https://github.com/pavel-corsaghin/react-native-leaflet/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/pavel-corsaghin/react-native-leaflet/main/images/android.png",
+      "https://raw.githubusercontent.com/pavel-corsaghin/react-native-leaflet/main/images/ios.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kirillzyusko/react-native-keyboard-controller",
+    "examples": [
+      "https://github.com/kirillzyusko/react-native-keyboard-controller/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/android.gif",
+      "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/ios.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-quick-websql",
+    "examples": ["https://github.com/craftzdog/react-native-quick-websql/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/TheWidlarzGroup/react-native-notificated",
+    "examples": ["https://github.com/TheWidlarzGroup/react-native-notificated/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
