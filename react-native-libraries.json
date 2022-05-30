@@ -8203,5 +8203,13 @@
     "examples": ["https://github.com/TheWidlarzGroup/react-native-notificated/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/apperside/cross-local-storage",
+    "npmPkg":"cross-local-storage",
+    "examples": ["https://github.com/apperside/cross-local-storage/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web":true
   }
 ]
