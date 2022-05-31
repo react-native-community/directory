@@ -8210,5 +8210,12 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/apperside/cross-local-storage",
+    "examples": ["https://github.com/apperside/cross-local-storage/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
