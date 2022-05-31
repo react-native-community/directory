@@ -8208,6 +8208,7 @@
     "githubUrl": "https://github.com/oblador/react-native-esbuild",
     "examples": ["https://github.com/oblador/react-native-esbuild/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   }
 ]
