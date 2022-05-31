@@ -8205,11 +8205,17 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/oblador/react-native-esbuild",
+    "examples": ["https://github.com/oblador/react-native-esbuild/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
     "githubUrl": "https://github.com/apperside/cross-local-storage",
-    "npmPkg":"cross-local-storage",
     "examples": ["https://github.com/apperside/cross-local-storage/tree/master/example"],
     "ios": true,
     "android": true,
-    "web":true
+    "web": true
   }
 ]
