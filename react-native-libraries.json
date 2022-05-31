@@ -8203,5 +8203,11 @@
     "examples": ["https://github.com/TheWidlarzGroup/react-native-notificated/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-esbuild",
+    "examples": ["https://github.com/oblador/react-native-esbuild/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
