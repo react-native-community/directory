@@ -8220,8 +8220,6 @@
   },
   {
     "githubUrl": "https://github.com/howljs/rn-card-scanner",
-    "npmPkg": "rn-card-scanner",
-    "nameOverride": "Credit card scanner",
     "examples": ["https://github.com/howljs/rn-card-scanner/tree/main/example"],
     "images": ["https://raw.githubusercontent.com/howljs/rn-card-scanner/main/example.gif"],
     "ios": true,
