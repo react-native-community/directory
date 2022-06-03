@@ -8224,5 +8224,15 @@
     "images": ["https://raw.githubusercontent.com/howljs/rn-card-scanner/main/example.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/isaced/react-native-cupertino-list",
+    "examples": [
+      "https://github.com/isaced/react-native-cupertino-list/tree/main/example"
+    ],
+    "images": ["https://raw.githubusercontent.com/isaced/react-native-cupertino-list/main/screenshot.jpg"],
+    "ios": true,
+    "android": false,
+    "web": false
   }
 ]
