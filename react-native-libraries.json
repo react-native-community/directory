@@ -8231,9 +8231,7 @@
       "https://github.com/isaced/react-native-cupertino-list/tree/main/example"
     ],
     "images": ["https://raw.githubusercontent.com/isaced/react-native-cupertino-list/main/screenshot.jpg"],
-    "ios": true,
-    "android": false,
-    "web": false
+    "ios": true
   },
   {
     "githubUrl": "https://github.com/computerjazz/react-native-infinite-pager",
@@ -8242,5 +8240,12 @@
     ],
     "ios": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/th3rdwave/react-navigation-bottom-sheet",
+    "npmPkg": "@th3rdwave/react-navigation-bottom-sheet",
+    "examples": ["https://github.com/th3rdwave/react-navigation-bottom-sheet/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
