@@ -8258,5 +8258,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/b0iq/react-native-place-picker",
+    "npmPkg": "react-native-place-picker",
+    "examples": ["https://github.com/b0iq/react-native-place-picker/tree/main/example"],
+    "images": ["https://github.com/b0iq/react-native-place-picker/blob/main/HEADER.png"],
+    "ios": true,
+    "android": true
   }
 ]
