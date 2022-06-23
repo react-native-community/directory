@@ -265,6 +265,10 @@
   },
   {
     "githubUrl": "https://github.com/vonovak/react-navigation-header-buttons",
+    "images": [
+      "https://raw.githubusercontent.com/vonovak/react-navigation-header-buttons/master/img/android.gif",
+      "https://raw.githubusercontent.com/vonovak/react-navigation-header-buttons/master/img/ios.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -3014,7 +3018,10 @@
   },
   {
     "githubUrl": "https://github.com/rnmods/react-native-document-picker",
-    "images": ["http://i.stack.imgur.com/dv0iQ.png"],
+    "images": [
+      "https://raw.githubusercontent.com/rnmods/react-native-document-picker/master/docs/android_screenshot.jpg",
+      "https://raw.githubusercontent.com/rnmods/react-native-document-picker/master/docs/ios_screenshot.jpeg"
+    ],
     "ios": true,
     "android": true,
     "windows": true
@@ -5279,6 +5286,9 @@
   },
   {
     "githubUrl": "https://github.com/mtford90/react-native-watch-connectivity",
+    "images": [
+      "https://raw.githubusercontent.com/mtford90/react-native-watch-connectivity/06001bb1d15bcdb9607c35d75c7c7ab463c71e86/assets/screenshot.png"
+    ],
     "ios": true
   },
   {
@@ -8227,17 +8237,15 @@
   },
   {
     "githubUrl": "https://github.com/isaced/react-native-cupertino-list",
-    "examples": [
-      "https://github.com/isaced/react-native-cupertino-list/tree/main/example"
+    "examples": ["https://github.com/isaced/react-native-cupertino-list/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/isaced/react-native-cupertino-list/main/screenshot.jpg"
     ],
-    "images": ["https://raw.githubusercontent.com/isaced/react-native-cupertino-list/main/screenshot.jpg"],
     "ios": true
   },
   {
     "githubUrl": "https://github.com/computerjazz/react-native-infinite-pager",
-    "examples": [
-      "https://snack.expo.dev/@computerjazz/infinite-pager"
-    ],
+    "examples": ["https://snack.expo.dev/@computerjazz/infinite-pager"],
     "ios": true,
     "expo": true
   },
@@ -8265,5 +8273,29 @@
     "images": ["https://raw.githubusercontent.com/b0iq/react-native-place-picker/main/HEADER.png"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-performance",
+    "npmPkg": "@shopify/react-native-performance",
+    "examples": ["https://github.com/b0iq/react-native-place-picker/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/bndkt/react-native-app-clip",
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ivanmoskalev/react-native-compressed-jsbundle",
+    "examples": [
+      "https://github.com/ivanmoskalev/react-native-compressed-jsbundle/tree/master/example"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/LinusU/react-native-get-random-values",
+    "android": true,
+    "ios": true
   }
 ]
