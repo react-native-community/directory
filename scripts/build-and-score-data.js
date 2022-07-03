@@ -201,7 +201,7 @@ async function loadRepositoryDataAsync() {
   try {
     fs.statSync(GITHUB_RESULTS_PATH);
     githubResultsFileExists = true;
-  } catch (e) {}
+  } catch {}
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
