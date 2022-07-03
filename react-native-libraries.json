@@ -8297,5 +8297,109 @@
     "githubUrl": "https://github.com/LinusU/react-native-get-random-values",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-skia",
+    "npmPkg": "@shopify/react-native-skia",
+    "examples": ["https://github.com/Shopify/react-native-skia/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/flash-list",
+    "examples": ["https://github.com/Shopify/flash-list/tree/main/fixture"],
+    "images": ["https://shopify.github.io/flash-list/img/scroll.mp4"],
+    "npmPkg": "@shopify/flash-list",
+    "android": true,
+    "ios": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/reassure",
+    "examples": ["https://github.com/callstack/reassure/tree/main/examples/native"],
+    "dev": true,
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/talknagish/react-native-turbo-starter",
+    "ios": true,
+    "android": true,
+    "template": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/leotm/react-native-template-new-architecture",
+    "ios": true,
+    "android": true,
+    "template": true
+  },
+  {
+    "githubUrl": "https://github.com/mmazzarolo/react-native-universal-monorepo",
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "web": true,
+    "windows": true,
+    "template": true
+  },
+  {
+    "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-gifted-charts",
+    "images": [
+      "https://raw.githubusercontent.com/Abhinandan-Kushwaha/react-native-gifted-charts/master/demos/bars.png",
+      "https://raw.githubusercontent.com/Abhinandan-Kushwaha/react-native-gifted-charts/master/demos/lineArea.png",
+      "https://raw.githubusercontent.com/Abhinandan-Kushwaha/react-native-gifted-charts/master/demos/blues.png",
+      "https://raw.githubusercontent.com/Abhinandan-Kushwaha/react-native-gifted-charts/master/demos/scrollLine.gif",
+      "https://raw.githubusercontent.com/Abhinandan-Kushwaha/react-native-gifted-charts/master/demos/animatedDataLine.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Luffos/rxn-keylistener",
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/wobsoriano/rn-perfect-sketch-canvas",
+    "examples": ["https://github.com/wobsoriano/rn-perfect-sketch-canvas/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/wobsoriano/rn-perfect-sketch-canvas/master/demoapp.gif"
+    ],
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/uragirii/rn-skia-sketch-canvas",
+    "images": [
+      "https://user-images.githubusercontent.com/19703138/159124156-f9d33301-0b49-4644-9cf6-cd80df8a8467.gif",
+      "https://user-images.githubusercontent.com/19703138/159124161-27b379dd-a368-4a7b-9d34-aeebb0e254b5.gif"
+    ],
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/react-native-zephyr",
+    "examples": [
+      "https://github.com/FormidableLabs/react-native-zephyr/tree/master/packages/sample"
+    ],
+    "android": true,
+    "ios": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/inokawa/react-native-react-bridge",
+    "examples": [
+      "https://github.com/inokawa/react-native-react-bridge/tree/main/examples/DemoApp",
+      "https://github.com/inokawa/react-native-react-bridge/tree/main/examples/DemoAppExpo"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/inokawa/react-native-react-bridge/main/examples/android.gif",
+      "https://raw.githubusercontent.com/inokawa/react-native-react-bridge/main/examples/ios.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "expo": true
   }
 ]
