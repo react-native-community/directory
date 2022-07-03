@@ -19,7 +19,7 @@ const CustomAppearanceProvider = ({ children }) => {
       try {
         const { isDark } = await rehydrateAppearanceState();
         setIsDark(isDark);
-      } catch (ignored) {}
+      } catch {}
       setLoaded(true);
     };
 
@@ -60,7 +60,7 @@ async function rehydrateAppearanceState() {
   try {
     const item = await AsyncStorage.getItem(appearanceStorageKey);
     return JSON.parse(item);
-  } catch (ignored) {
+  } catch {
     return defaultState;
   }
 }

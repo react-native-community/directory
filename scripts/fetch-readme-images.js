@@ -59,7 +59,7 @@ const fetchReadmeImages = async (data, attemptsCount = 0) => {
       ...data,
       images,
     };
-  } catch (e) {
+  } catch {
     console.log(`[GH] Retrying image scrape for ${githubUrl} (${attemptsCount + 1})`);
     await sleep(2000);
     return await fetchReadmeImages(data, attemptsCount + 1);
