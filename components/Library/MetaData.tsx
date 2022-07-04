@@ -5,7 +5,18 @@ import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { getTimeSinceToday } from '../../util/datetime';
-import { Calendar, Star, Download, Issue, Web, License, Fork, Code, TypeScript } from '../Icons';
+import {
+  Calendar,
+  Star,
+  Download,
+  Eye,
+  Issue,
+  Web,
+  License,
+  Fork,
+  Code,
+  TypeScript,
+} from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
@@ -115,7 +126,11 @@ const generateData = (library, secondary, isDark) => {
       {
         id: 'star',
         icon: <Star fill={iconColor} />,
-        content: <Caption>{github.stats.stars.toLocaleString()} stars</Caption>,
+        content: (
+          <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
+            <Caption>{github.stats.stars.toLocaleString()} stars</Caption>
+          </A>
+        ),
       },
       github.stats.forks
         ? {
@@ -124,6 +139,17 @@ const generateData = (library, secondary, isDark) => {
             content: (
               <A href={`${github.urls.repo}/network/members`} style={styles.link}>
                 {`${github.stats.forks.toLocaleString()}`} forks
+              </A>
+            ),
+          }
+        : null,
+      github.stats.subscribers
+        ? {
+            id: 'subscribers',
+            icon: <Eye fill={iconColor} />,
+            content: (
+              <A href={`${github.urls.repo}/watchers`} style={styles.link}>
+                {`${github.stats.subscribers.toLocaleString()}`} watchers
               </A>
             ),
           }

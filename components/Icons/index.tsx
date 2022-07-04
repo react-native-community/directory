@@ -173,6 +173,18 @@ export function Issue(props: Props) {
   );
 }
 
+export function Eye(props: Props) {
+  const { width, height, fill = colors.black } = props;
+  return (
+    <Svg width={width || 22} height={height || 22} viewBox="0 0 24 24" fill="none">
+      <Path
+        fill={fill}
+        d="M11.9,7.1c4.6,0,7.8,2.9,9.2,4.5c-1.4,1.8-4.6,5.2-9.2,5.2c-4.3,0-7.7-3.4-9.2-5.3C4.1,10,7.3,7.1,11.9,7.1z M12,5 C4.4,5,0,11.6,0,11.6S4.8,19,12,19c7.7,0,12-7.4,12-7.4S19.7,5,12,5z M11.9,8.5c-1.9,0-3.5,1.6-3.5,3.5s1.6,3.5,3.5,3.5 c1.9,0,3.5-1.6,3.5-3.5S13.8,8.5,11.9,8.5z M11.9,12c-0.5,0.5-1.3,0.5-1.8,0c-0.5-0.5-0.5-1.3,0-1.8c0.5-0.5,1.3-0.5,1.8,0 C12.4,10.7,12.4,11.5,11.9,12z"
+      />
+    </Svg>
+  );
+}
+
 export function Logo(props: Props) {
   const { width, height, fill = colors.black } = props;
   return (
