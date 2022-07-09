@@ -8400,5 +8400,23 @@
     "android": true,
     "ios": true,
     "expo": true
+  },
+  {
+  "githubUrl": "https://github.com/alabsi91/reanimated-color-picker",
+  "examples": [
+    "https://github.com/alabsi91/reanimated-color-picker/tree/main/Example", 
+    "https://github.com/alabsi91/reanimated-color-picker/tree/main/ExampleExpo",
+    "https://snack.expo.dev/@alabsi91/reanimated-color-picker"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/alabsi91/reanimated-color-picker/main/images/example_1.png",
+    "https://raw.githubusercontent.com/alabsi91/reanimated-color-picker/main/images/example_2.png",
+    "https://raw.githubusercontent.com/alabsi91/reanimated-color-picker/main/images/example_3.png",
+    "https://raw.githubusercontent.com/alabsi91/reanimated-color-picker/main/images/example_4.png"
+  ],
+  "android": true,
+  "ios": true,
+  "web": true,
+  "expo": true
   }
 ]
