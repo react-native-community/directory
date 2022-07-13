@@ -8490,5 +8490,14 @@
     "npmPkg": "@ovalmoney/react-native-fitness",
     "android": true,
     "ios": true
+  },
+  {
+  "githubUrl": "https://github.com/vonovak/react-native-theme-control",
+  "images": [
+    "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/light_mode.png",
+    "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/dark_mode.png"
+  ],
+  "android": true,
+  "ios": true
   }
 ]
