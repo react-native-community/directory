@@ -8499,5 +8499,12 @@
   ],
   "android": true,
   "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/dcangulo/react-native-outside-press",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
