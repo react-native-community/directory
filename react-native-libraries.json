@@ -8506,5 +8506,14 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/websitebeaver/react-native-document-scanner-plugin",
+    "images": [
+      "https://user-images.githubusercontent.com/26162804/160485984-e6c46563-56ee-4be9-b241-34a186e0029d.gif",
+      "https://user-images.githubusercontent.com/26162804/160306955-af9c5dd6-5cdf-4e2c-8770-c734a594985d.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
