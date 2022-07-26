@@ -8515,5 +8515,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/FormidableLabs/react-native-ama",
+    "examples": ["https://github.com/FormidableLabs/react-native-ama/tree/main/example"],
+    "ios":true,
+    "android":true,
+    "dev": true
   }
 ]
