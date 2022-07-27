@@ -8517,10 +8517,22 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/thakurballary/react-native-btr",
+    "examples": [
+      "https://github.com/thakurballary/react-native-btr-demo"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/FormidableLabs/react-native-ama",
     "examples": ["https://github.com/FormidableLabs/react-native-ama/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/FormidableLabs/react-native-ama/main/ama-demo.png"
+    ],
     "ios":true,
     "android":true,
-    "dev": true
+    "dev": true 
   }
 ]
