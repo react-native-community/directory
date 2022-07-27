@@ -8515,5 +8515,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/thakurballary/react-native-btr",
+    "examples": [
+      "https://github.com/thakurballary/react-native-btr-demo"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
