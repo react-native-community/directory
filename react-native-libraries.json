@@ -8535,5 +8535,13 @@
     "ios":true,
     "android":true,
     "dev": true 
+  },
+  {
+    "githubUrl": "https://github.com/xulihang/vision-camera-dynamsoft-label-recognizer",
+    "examples": [
+      "https://github.com/xulihang/vision-camera-dynamsoft-label-recognizer/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
