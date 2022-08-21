@@ -16,6 +16,7 @@ import {
   Fork,
   Code,
   TypeScript,
+  ReactLogo,
 } from '../Icons';
 import { DirectoryScore } from './DirectoryScore';
 
@@ -34,7 +35,7 @@ const generateData = (library, secondary, isDark) => {
     const iconColor = isDark ? darkColors.pewter : colors.secondary;
     const paragraphStyles = [styles.secondaryText, secondaryTextColor];
     const linkStyles = [...paragraphStyles, styles.mutedLink];
-    const hoverStyle = isDark ? { color: colors.primaryDark } : undefined;
+    const hoverStyle = isDark && { color: colors.primaryDark };
 
     return [
       github.urls.homepage
@@ -69,6 +70,20 @@ const generateData = (library, secondary, isDark) => {
             content: <P style={paragraphStyles}>TypeScript Types</P>,
           }
         : null,
+      github.supportsNewArch
+        ? {
+            id: 'supportsNewArch',
+            icon: <ReactLogo fill={iconColor} width={17} height={17} />,
+            content: (
+              <A
+                href="https://reactnative.dev/docs/new-architecture-intro"
+                style={linkStyles}
+                hoverStyle={hoverStyle}>
+                New Architecture
+              </A>
+            ),
+          }
+        : null,
       library.examples && library.examples.length
         ? {
             id: 'examples',
@@ -80,7 +95,6 @@ const generateData = (library, secondary, isDark) => {
                   <A
                     key={example}
                     href={example}
-                    target="blank"
                     style={[...linkStyles, styles.exampleLink]}
                     hoverStyle={hoverStyle}>
                     #{index + 1}
@@ -102,7 +116,7 @@ const generateData = (library, secondary, isDark) => {
             target="_self"
             href="/scoring"
             style={[styles.link, styles.mutedLink]}
-            hoverStyle={isDark ? { color: colors.primaryDark } : undefined}>
+            hoverStyle={isDark && { color: colors.primaryDark }}>
             Directory Score
           </A>
         ),
