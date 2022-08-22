@@ -18,7 +18,7 @@ const PreviewStyles = () => {
   const maxImgPreviewHeight = maxPreviewHeight - 20;
 
   return (
-    <style jsx global>{`
+    <style>{`
       html,
       body {
         background-color: ${isDark ? darkColors.background : colors.white};

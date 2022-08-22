@@ -1,5 +1,5 @@
 import * as HtmlElements from '@expo/html-elements';
-import React, { ReactNode, RefObject, useContext, useRef } from 'react';
+import React, { PropsWithChildren, PropsWithRef, useContext, useRef } from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { useHover, useDimensions } from 'react-native-web-hooks';
 
@@ -76,13 +76,13 @@ const textStyles = StyleSheet.create({
 
 type TextStyles = TextStyle | TextStyle[];
 
-type TextProps = {
-  children?: ReactNode;
-  style?: TextStyles;
-  ref?: RefObject<ReactNode>;
-  nativeID?: string;
-  numberOfLines?: number;
-};
+type TextProps = PropsWithRef<
+  PropsWithChildren<{
+    style?: TextStyles;
+    nativeID?: string;
+    numberOfLines?: number;
+  }>
+>;
 
 const createTextComponent = (Element: any, textStyle?: TextStyles) => {
   return (props: TextProps) => {
@@ -115,19 +115,17 @@ export const Headline = createTextComponent(HtmlElements.P, textStyles.headline)
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
-type AProps = {
+type AProps = PropsWithChildren<{
   style?: TextStyles;
   target?: string;
   href: string;
-  children?: ReactNode;
   hoverStyle?: TextStyles;
-};
+}>;
 
-export const A = (props: AProps) => {
+export const A = ({ href, target = '_blank', children, style, hoverStyle, ...rest }: AProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const linkRef = useRef();
   const isHovered = useHover(linkRef);
-  const { href, target = 'blank', children, style, hoverStyle, ...rest } = props;
   const anchorStyles = getAnchorStyles(isDark);
 
   return (
