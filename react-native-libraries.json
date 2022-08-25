@@ -437,7 +437,8 @@
       "https://github.com/react-native-image-picker/react-native-image-picker/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/Andr3wHur5t/react-native-keyboard-spacer",
