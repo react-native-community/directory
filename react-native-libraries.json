@@ -6615,7 +6615,7 @@
   {
     "githubUrl": "https://github.com/raulpesilva/re-state",
     "npmPkg": "@raulpesilva/re-state",
-    "example": "https://github.com/raulpesilva/re-state/tree/master/examples",
+    "examples": ["https://github.com/raulpesilva/re-state/tree/master/examples"],
     "ios": true,
     "android": true,
     "web": true,
@@ -6959,7 +6959,7 @@
   },
   {
     "githubUrl": "https://github.com/a7ul/react-native-exception-handler",
-    "example": ["https://github.com/a7ul/react-native-exception-handler-example"],
+    "examples": ["https://github.com/a7ul/react-native-exception-handler-example"],
     "images": [
       "https://raw.githubusercontent.com/a7ul/react-native-exception-handler/master/screens/WITH_EH.gif"
     ],
@@ -6969,7 +6969,7 @@
   {
     "githubUrl": "https://github.com/ViroCommunity/viro",
     "npmPkg": "@viro-community/react-viro",
-    "example": ["https://github.com/ViroCommunity/starter-kit"],
+    "examples": ["https://github.com/ViroCommunity/starter-kit"],
     "images": [
       "https://raw.githubusercontent.com/viromedia/viro/master/code-samples/js/ARCarDemo/viro_car_marker_demo.gif",
       "https://raw.githubusercontent.com/viromedia/viro/master/code-samples/js/ARPosterDemo/viro_black_panther_marker_demo.gif"
@@ -7191,7 +7191,8 @@
     "githubUrl": "https://github.com/mrousavy/vision-camera-image-labeler",
     "examples": ["https://github.com/mrousavy/vision-camera-image-labeler/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/VittoriDavide/react-native-barcode-creator",
@@ -7625,7 +7626,8 @@
     "githubUrl": "https://github.com/rodgomesc/vision-camera-qrcode-scanner",
     "examples": ["https://github.com/rodgomesc/vision-camera-qrcode-scanner/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/react-native-twitter-signin/twitter-signin",
@@ -7821,7 +7823,7 @@
   },
   {
     "githubUrl": "https://github.com/computerjazz/react-native-swipe-calendar",
-    "example": ["https://snack.expo.dev/@computerjazz/react-native-swipe-calendar"],
+    "examples": ["https://snack.expo.dev/@computerjazz/react-native-swipe-calendar"],
     "images": ["https://i.imgur.com/5dsYg9M.gif"],
     "ios": true,
     "android": true,
@@ -8494,13 +8496,13 @@
     "ios": true
   },
   {
-  "githubUrl": "https://github.com/vonovak/react-native-theme-control",
-  "images": [
-    "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/light_mode.png",
-    "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/dark_mode.png"
-  ],
-  "android": true,
-  "ios": true
+    "githubUrl": "https://github.com/vonovak/react-native-theme-control",
+    "images": [
+      "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/light_mode.png",
+      "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/dark_mode.png"
+    ],
+    "android": true,
+    "ios": true
   },
   {
     "githubUrl": "https://github.com/dcangulo/react-native-outside-press",
@@ -8520,9 +8522,7 @@
   },
   {
     "githubUrl": "https://github.com/thakurballary/react-native-btr",
-    "examples": [
-      "https://github.com/thakurballary/react-native-btr-demo"
-    ],
+    "examples": ["https://github.com/thakurballary/react-native-btr-demo"],
     "ios": true,
     "android": true,
     "expo": true
@@ -8533,9 +8533,9 @@
     "images": [
       "https://raw.githubusercontent.com/FormidableLabs/react-native-ama/main/ama-demo.png"
     ],
-    "ios":true,
-    "android":true,
-    "dev": true 
+    "ios": true,
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/xulihang/vision-camera-dynamsoft-label-recognizer",
@@ -8547,10 +8547,37 @@
   },
   {
     "githubUrl": "https://github.com/mateoguzmana/react-native-fiesta",
-    "examples": [
-      "https://github.com/mateoguzmana/react-native-fiesta/tree/main/example"
+    "examples": ["https://github.com/mateoguzmana/react-native-fiesta/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/alantoa/expo-reanimated-av-player",
+    "examples": ["https://github.com/alantoa/expo-reanimated-av-player/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/alantoa/expo-reanimated-av-player/main/assets/example.gif",
+      "https://raw.githubusercontent.com/alantoa/expo-reanimated-av-player/main/assets/example2.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/rodgomesc/vision-camera-code-scanner",
+    "examples": ["https://github.com/rodgomesc/vision-camera-code-scanner/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/aarongrider/vision-camera-ocr",
+    "examples": ["https://github.com/aarongrider/vision-camera-ocr/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/aarongrider/vision-camera-ocr/main/docs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
