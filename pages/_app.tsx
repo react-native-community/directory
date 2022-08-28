@@ -12,7 +12,7 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 
 import '../styles/styles.css';
-import PreviewStyles from '../styles/PreviewStyles';
+import ThemedBody from '../styles/ThemedBody';
 
 Sentry.init({
   dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
@@ -41,7 +41,7 @@ const App = ({ pageProps, Component }) => (
           <Header />
           <Component {...pageProps} />
           <Footer />
-          <PreviewStyles />
+          <ThemedBody />
         </SafeAreaProvider>
       )}
     </CustomAppearanceContext.Consumer>
