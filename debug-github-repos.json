@@ -18,6 +18,7 @@
   {
     "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
     "npmPkg": "@react-native-community/datetimepicker",
-    "expo": true
+    "expo": true,
+    "newArchitecture": true
   }
 ]

@@ -28,6 +28,7 @@ export type Query = {
   isRecommended?: string;
   wasRecentlyUpdated?: string;
   minPopularity?: string | number;
+  newArchitecture?: string;
 };
 
 export type Library = {
@@ -43,6 +44,7 @@ export type Library = {
   unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;
+  newArchitecture?: string;
   github: {
     urls: {
       repo: string;
@@ -82,6 +84,7 @@ export type Library = {
       isPrerelease: boolean;
     };
     hasTypes: boolean;
+    newArchitecture: string;
   };
   npm: {
     downloads: number;

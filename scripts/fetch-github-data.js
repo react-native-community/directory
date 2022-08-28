@@ -237,7 +237,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
-      json.supportsNewArch = Boolean(packageJson.codegenConfig);
+      json.newArchitecture = Boolean(packageJson.codegenConfig);
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -309,6 +309,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     license: json.licenseInfo,
     lastRelease: json.lastRelease,
     hasTypes: json.types,
-    supportsNewArch: json.supportsNewArch,
+    newArchitecture: json.newArchitecture,
   };
 };

@@ -26,7 +26,7 @@ type Props = {
 };
 
 const generateData = (library, secondary, isDark) => {
-  const { github } = library;
+  const { github, newArchitecture } = library;
 
   if (secondary) {
     const secondaryTextColor = {
@@ -70,9 +70,9 @@ const generateData = (library, secondary, isDark) => {
             content: <P style={paragraphStyles}>TypeScript Types</P>,
           }
         : null,
-      github.supportsNewArch
+      newArchitecture || github.newArchitecture
         ? {
-            id: 'supportsNewArch',
+            id: 'newArchitecture',
             icon: <ReactLogo fill={iconColor} width={17} height={17} />,
             content: (
               <A
