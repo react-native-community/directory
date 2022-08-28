@@ -44,7 +44,7 @@ export type Library = {
   unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;
-  newArchitecture?: string;
+  newArchitecture?: boolean;
   github: {
     urls: {
       repo: string;
