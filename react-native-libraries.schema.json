@@ -117,6 +117,13 @@
         "title": "The Template Schema",
         "default": false,
         "examples": [true]
+      },
+      "newArchitecture": {
+        "$id": "#/items/properties/newArch",
+        "type": "boolean",
+        "title": "The New Architecture Support Schema",
+        "default": false,
+        "examples": [true]
       }
     }
   }

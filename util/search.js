@@ -30,6 +30,7 @@ export const handleFilterLibraries = ({
   isRecommended,
   wasRecentlyUpdated,
   minPopularity,
+  newArchitecture,
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -86,6 +87,10 @@ export const handleFilterLibraries = ({
     }
 
     if (hasTypes && !library.github.hasTypes) {
+      return false;
+    }
+
+    if (newArchitecture && !library.newArchitecture && !library.github.newArchitecture) {
       return false;
     }
 

@@ -160,6 +160,13 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             title="Has TypeScript types"
             basePath={basePath}
           />
+          <ToggleLink
+            key="newArchitecture"
+            query={query}
+            paramName="newArchitecture"
+            title="Supports New Architecture"
+            basePath={basePath}
+          />
           {isMainSearch ? (
             <ToggleLink
               key="isMaintained"

@@ -11,7 +11,7 @@ const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
 const licenses = {};
 
 /**
- * Fetch licenses from github to be used later to parse licenses from npm
+ * Fetch licenses from GitHub to be used later to parse licenses from npm
  */
 export const loadGitHubLicenses = async () => {
   const query = `
@@ -237,6 +237,8 @@ const createRepoDataWithResponse = (json, monorepo) => {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
+      json.newArchitecture = Boolean(packageJson.codegenConfig);
+
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
         json.name = packageJson.name;
@@ -307,5 +309,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     license: json.licenseInfo,
     lastRelease: json.lastRelease,
     hasTypes: json.types,
+    newArchitecture: json.newArchitecture,
   };
 };
