@@ -3116,7 +3116,8 @@
     "android": true,
     "tvos": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/osdnk/react-native-reanimated-bottom-sheet",
@@ -8579,5 +8580,15 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/klarna-incubator/react-native-vector-drawable",
+    "npmPkg": "@klarna/react-native-vector-drawable",
+    "examples": [
+      "https://github.com/klarna-incubator/react-native-vector-drawable/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
