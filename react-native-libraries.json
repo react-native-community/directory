@@ -8590,5 +8590,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wix/Detox",
+    "npmPkg": "detox",
+    "nameOverride": "Detox",
+    "examples": [
+      "https://github.com/wix/Detox/tree/master/examples/demo-react-native"
+    ],
+    "images": [
+      "https://github.com/wix/Detox/raw/master/docs/img/Detox.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
