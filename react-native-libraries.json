@@ -8595,21 +8595,15 @@
     "githubUrl": "https://github.com/wix/Detox",
     "npmPkg": "detox",
     "nameOverride": "Detox",
-    "examples": [
-      "https://github.com/wix/Detox/tree/master/examples/demo-react-native"
-    ],
-    "images": [
-      "https://github.com/wix/Detox/raw/master/docs/img/Detox.gif"
-    ],
+    "examples": ["https://github.com/wix/Detox/tree/master/examples/demo-react-native"],
+    "images": ["https://github.com/wix/Detox/raw/master/docs/img/Detox.gif"],
     "ios": true,
     "android": true,
     "dev": true
   },
   {
     "githubUrl": "https://github.com/dev-family/react-native-wallet-manager",
-    "examples": [
-      "https://github.com/dev-family/react-native-wallet-manager/tree/main/example"
-    ],
+    "examples": ["https://github.com/dev-family/react-native-wallet-manager/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/dev-family/react-native-wallet-manager/main/docs/screenshot.gif"
     ],
@@ -8619,5 +8613,26 @@
     "githubUrl": "https://github.com/wix-incubator/react-native-wallet-pass",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/sendbird/sendbird-uikit-react-native",
+    "npmPkg": "@sendbird/uikit-react-native",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "examples": [
+      "https://github.com/sendbird/sendbird-uikit-react-native/tree/main/sample",
+      "https://github.com/sendbird/sample-uikit-react-native-expo"
+    ]
+  },
+  {
+    "githubUrl": "https://github.com/sendbird/sendbird-calls-react-native",
+    "npmPkg": "@sendbird/calls-react-native",
+    "ios": true,
+    "android": true,
+    "examples": [
+      "https://github.com/sendbird/quickstart-calls-directcall-react-native",
+      "https://github.com/sendbird/quickstart-calls-groupcall-react-native"
+    ]
   }
 ]
