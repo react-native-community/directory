@@ -8607,19 +8607,16 @@
   },
   {
     "githubUrl": "https://github.com/dev-family/react-native-wallet-manager",
-    "npmPkg": "react-native-wallet-manager",
     "examples": [
       "https://github.com/dev-family/react-native-wallet-manager/tree/main/example"
     ],
     "images": [
       "https://raw.githubusercontent.com/dev-family/react-native-wallet-manager/main/docs/screenshot.gif"
     ],
-    "ios": true,
-    "android": false
+    "ios": true
   },
   {
     "githubUrl": "https://github.com/wix-incubator/react-native-wallet-pass",
-    "npmPkg": "react-native-wallet-pass",
     "ios": true,
     "android": true
   }
