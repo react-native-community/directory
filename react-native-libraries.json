@@ -8642,5 +8642,30 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/BabylonJS/BabylonReactNative",
+    "npmPkg": "@babylonjs/react-native",
+    "examples": [
+      "https://github.com/BabylonJS/BabylonReactNative/tree/master/Apps",
+      "https://github.com/BabylonJS/BabylonReactNativeSample"
+    ],
+    "ios": true,
+    "android": true,
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/BabylonJS/BabylonReactNativeSample",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "template": true
+  },
+  {
+    "githubUrl": "https://github.com/runtothedoor/rotating-cube-demo-babylon-rxn",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "template": true
   }
 ]
