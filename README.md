@@ -103,7 +103,7 @@ Please follow format, fields order and indentation as seen below, skip any of th
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
-  **(boolean)** - signify that the library is using the new architecture.
+  **(boolean)** - signify that a library is using the new architecture.
 
 ---
 
