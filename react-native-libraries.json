@@ -8397,9 +8397,20 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/Luffos/rxn-keylistener",
+    "githubUrl": "https://github.com/Luffos/rxn-input",
     "android": true,
-    "web": true
+    "web": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Luffos/rxn-units",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true
   },
   {
     "githubUrl": "https://github.com/wobsoriano/rn-perfect-sketch-canvas",
