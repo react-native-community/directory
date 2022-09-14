@@ -44,7 +44,8 @@ Please follow format, fields order and indentation as seen below, skip any of th
   "tvos": false,
   "unmaintained": false,
   "dev": false,
-  "template": false
+  "template": false,
+  "newArchitecture": false
 }
 ```
 
@@ -101,6 +102,8 @@ Please follow format, fields order and indentation as seen below, skip any of th
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
+- #### `newArchitecture`
+  **(boolean)** - signify that the library is using the new architecture.
 
 ---
 
