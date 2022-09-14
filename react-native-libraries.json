@@ -8402,18 +8402,6 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/Luffos/rxn-units",
-    "npmPkg": "rxn-units",
-    "examples": ["https://codesandbox.io/s/rxn-units-example-ox6n4h"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "windows": true,
-    "macos": true,
-    "tvos": true
-  },
-  {
     "githubUrl": "https://github.com/wobsoriano/rn-perfect-sketch-canvas",
     "examples": ["https://github.com/wobsoriano/rn-perfect-sketch-canvas/tree/master/example"],
     "images": [
@@ -8646,5 +8634,13 @@
       "https://github.com/sendbird/quickstart-calls-directcall-react-native",
       "https://github.com/sendbird/quickstart-calls-groupcall-react-native"
     ]
+  },
+  {
+    "githubUrl": "https://github.com/Luffos/rxn-units",
+    "examples": ["https://codesandbox.io/s/rxn-units-example-ox6n4h"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
