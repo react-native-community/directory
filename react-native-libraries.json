@@ -8658,8 +8658,7 @@
     "githubUrl": "https://github.com/BabylonJS/BabylonReactNativeSample",
     "ios": true,
     "android": true,
-    "windows": true,
-    "template": true
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/runtothedoor/rotating-cube-demo-babylon-rxn",
@@ -8668,7 +8667,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "template": true
+    "web": true
   }
 ]
