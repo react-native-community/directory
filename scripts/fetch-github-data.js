@@ -280,8 +280,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
         : undefined;
   }
 
-  const { nodes } = json.defaultBranchRef.target.history;
-  const lastCommitAt = Array.isArray(nodes) && nodes.length > 0 ? nodes[0].committedDate : null;
+  const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
   return {
     urls: {
