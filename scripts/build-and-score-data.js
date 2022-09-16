@@ -112,16 +112,28 @@ const buildAndScoreData = async () => {
   console.log('\n** Fetch NPM Package JSON');
   data = await Promise.all(
     data.map(async project => {
-      const versionsData = await fetchVersionsData(project.npmPkg, [
-        {
-          name: 'react-native',
-          versions: dataVersions.reactNativeVersions,
-        },
-      ]);
-      return {
-        ...project,
-        rnVersions: versionsData?.[0]?.supports ?? {},
-      };
+      if (project.template) {
+        console.log(`Skipping template ${project.githubUrl}`);
+        return project;
+      }
+      try {
+        const versionsData = await fetchVersionsData(project.npmPkg, [
+          {
+            name: 'react-native',
+            versions: dataVersions.reactNativeVersions,
+          },
+        ]);
+        return {
+          ...project,
+          rnVersions: versionsData?.[0]?.supports ?? {},
+        };
+      } catch (err) {
+        if (err.statusCode === 404) {
+          console.log(`Skipping ${project.npmPkg} because it doesn't exist on NPM`);
+          return project;
+        }
+        throw err;
+      }
     })
   );
 
