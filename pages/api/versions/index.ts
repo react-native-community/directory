@@ -100,7 +100,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         versionRange,
       })),
     });
-  } catch (err) {
+  } catch {
     res.statusCode = 500;
     res.setHeader('Content-Type', 'application/json');
     res.json({ error: 'Internal server error' });
