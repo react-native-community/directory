@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import data from '../../../assets/data.json';
 
-type RequestBody = {
+type RequestQuery = {
   reactNativeVersion: string;
   expoSdkVersion: string;
   packages: string[];
@@ -44,7 +44,7 @@ function lookupPackageForReactNative(rnVersion: string, packages: string[]) {
     }));
 }
 
-async function processRequestAsync(data: RequestBody): Promise<PackageInfo[]> {
+async function processRequestAsync(data: RequestQuery): Promise<PackageInfo[]> {
   const { expoSdkVersion, reactNativeVersion, packages } = data;
   if (expoSdkVersion) {
     const { data } = await fetchNativeModulesAsync(expoSdkVersion);
@@ -82,15 +82,11 @@ async function processRequestAsync(data: RequestBody): Promise<PackageInfo[]> {
 }
 
 export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '1mb',
-    },
-  },
+  api: {},
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const body = req.body as RequestBody;
+  const body = req.query as RequestQuery;
   try {
     const packages = await processRequestAsync(body);
 
