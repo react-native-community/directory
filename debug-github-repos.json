@@ -40,5 +40,12 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gabrielmoncea/react-native-template",
+    "npmPkg": "@gabrielmoncea/react-native-template",
+    "ios": true,
+    "android": true,
+    "template": true
   }
 ]
