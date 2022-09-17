@@ -6086,6 +6086,7 @@
     "githubUrl": "https://github.com/Kudo/react-native-v8",
     "ios": true,
     "android": true,
+    "expo": true,
     "dev": true
   },
   {
@@ -8162,16 +8163,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/appupgrade-dev/app-upgrade-react-native-sdk",
-    "images": [
-      "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/forceupgrade.jpeg",
-      "https://raw.githubusercontent.com/appupgrade-dev/app-upgrade-react-native-sdk/main/screenshots/upgrade.jpeg"
-    ],
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/margelo/react-native-graph",
     "examples": ["https://github.com/margelo/react-native-graph/tree/main/example"],
     "images": [
@@ -8497,15 +8488,6 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/vonovak/react-native-theme-control",
-    "images": [
-      "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/light_mode.png",
-      "https://raw.githubusercontent.com/vonovak/react-native-theme-control/main/img/dark_mode.png"
-    ],
-    "android": true,
-    "ios": true
-  },
-  {
     "githubUrl": "https://github.com/dcangulo/react-native-outside-press",
     "ios": true,
     "android": true,
@@ -8644,7 +8626,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/BabylonJS/BabylonReactNative/tree/master/Modules/%40babylonjs/react-native",
+    "githubUrl": "https://github.com/BabylonJS/BabylonReactNative/tree/master/Modules/@babylonjs/react-native",
     "npmPkg": "@babylonjs/react-native",
     "examples": [
       "https://github.com/BabylonJS/BabylonReactNative/tree/master/Apps",
@@ -8654,5 +8636,20 @@
     "ios": true,
     "android": true,
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/zhigang1992/react-native-video-cache",
+    "examples": ["https://github.com/zhigang1992/react-native-video-cache/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kenjdavidson/react-native-bluetooth-classic",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/XHMM/react-native-cloud-store",
+    "ios": true
   }
 ]
