@@ -12,7 +12,11 @@ const removeEmptyArray = (lib, key) => (lib[key] && !lib[key].length ? omit(lib,
 
 const processedLibraries = libraries
   // Remove redundant `npmPkg` for libraries with correct GitHub repository name
-  .map(lib => (lib.githubUrl.endsWith(`/${lib.npmPkg}`) ? omit(lib, 'npmPkg') : lib))
+  .map(lib =>
+    lib.npmPkg && !lib.npmPkg.includes('/') && lib.githubUrl.endsWith(`/${lib.npmPkg}`)
+      ? omit(lib, 'npmPkg')
+      : lib
+  )
   // Remove empty arrays
   .map(lib => removeEmptyArray(lib, 'examples'))
   .map(lib => removeEmptyArray(lib, 'images'))
