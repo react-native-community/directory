@@ -8651,5 +8651,12 @@
   {
     "githubUrl": "https://github.com/XHMM/react-native-cloud-store",
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/mateoguzmana/react-native-clocks",
+    "examples": ["https://github.com/mateoguzmana/react-native-clocks/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
