@@ -3299,7 +3299,9 @@
     "githubUrl": "https://github.com/zoontek/react-native-localize",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "windows": true,
+    "macos": true
   },
   {
     "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
