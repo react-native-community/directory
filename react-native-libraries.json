@@ -8676,5 +8676,35 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/hirbod/react-native-volume-manager",
+    "examples": ["https://github.com/hirbod/react-native-volume-manager/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hirbod/react-native-volume-manager/main/ios-preview.gif",
+      "https://raw.githubusercontent.com/hirbod/react-native-volume-manager/main/android-preview.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/aws/amazon-ivs-react-native-player",
+    "examples": ["https://github.com/aws/amazon-ivs-react-native-player/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/router/tree/main/packages/expo-router",
+    "examples": ["https://github.com/expo/router/tree/main/apps/demo"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/omdxp/react-native-help-create",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
