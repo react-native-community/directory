@@ -8708,6 +8708,17 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/Mindinventory/awesome-clock",
+    "npmPkg": "@mindinventory/react-native-awesome-clock",
+    "examples": ["https://github.com/Mindinventory/awesome-clock/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/87525902/181426102-61d69a91-922f-45ef-aebb-0a087894e6ad.gif",
+      "https://user-images.githubusercontent.com/87525902/181426355-eb55b0e1-dc2e-484f-8675-f699e61bea80.gif"
+    ],
+    "ios": true,
+    "android": true,
+  },
+  {
     "githubUrl": "https://github.com/Mindinventory/react-native-tabbar-interaction",
     "npmPkg": "@mindinventory/react-native-tab-bar-interaction",
     "examples": [
