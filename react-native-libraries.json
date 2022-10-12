@@ -8719,6 +8719,70 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/Mindinventory/react-native-tabbar-interaction",
+    "npmPkg": "@mindinventory/react-native-tab-bar-interaction",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-tabbar-interaction/tree/master/example"
+    ],
+    "images": [
+      "https://cdn.dribbble.com/users/1233499/screenshots/4844696/preview.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/React-Native-top-navbar",
+    "npmPkg": "@mindinventory/rn-top-navbar",
+    "examples": [
+      "https://github.com/Mindinventory/React-Native-top-navbar/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/access-mindinventory/react-native-card-animation",
+    "npmPkg": "@mindinventory/react-native-card-animation",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-stagger-view",
+    "npmPkg": "@mindinventory/react-native-stagger-view",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-stagger-view/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/88423352/160378928-a2e472c6-df2f-4e11-9566-cd1e32e67a3e.gif",
+      "https://user-images.githubusercontent.com/88423352/160379456-33f6202c-4184-4ecd-852b-a85c099faf71.gif",
+      "https://user-images.githubusercontent.com/88423352/160379469-37adc7e9-9ebf-4a46-a895-0ecaf7c226ec.gif",
+      "https://user-images.githubusercontent.com/88423352/160378368-563dc457-54e6-421d-94c6-534e3bd9e9cc.gif",
+      "https://user-images.githubusercontent.com/88423352/160379485-809a22e8-82f8-4016-aa57-0d1553f54e15.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-boilerplate",
+    "npmPkg": "@mindinventory/react-native-boilerplate",
+    "images": [
+      "https://github.com/Mindinventory/react-native-boilerplate/blob/master/assets/Banner.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-speed-view",
+    "npmPkg": "@mindinventory/react-native-speed-view",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-speed-view/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/82019401/164174514-2369be99-a00a-4171-a47d-95b997388bbe.gif"
+    ],
+    "ios": true,
+    "android": true
+},
+{
     "githubUrl": "https://github.com/pusher/pusher-websocket-react-native",
     "npmPkg": "@pusher/pusher-websocket-react-native",
     "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
