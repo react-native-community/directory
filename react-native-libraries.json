@@ -8717,5 +8717,20 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pusher/pusher-websocket-react-native",
+    "npmPkg": "@pusher/pusher-websocket-react-native",
+    "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
   }
 ]
