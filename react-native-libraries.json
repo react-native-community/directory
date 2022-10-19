@@ -7845,7 +7845,7 @@
   },
   {
     "githubUrl": "https://github.com/gobeyondidentity/bi-sdk-react-native",
-    "npmPkg": "@beyondidentity/embedded-react-native",
+    "npmPkg": "@beyondidentity/bi-sdk-react-native",
     "examples": ["https://github.com/gobeyondidentity/bi-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true
