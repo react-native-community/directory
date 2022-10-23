@@ -8788,5 +8788,20 @@
     "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gmsgowtham/react-native-marked",
+    "npmPkg": "react-native-marked",
+    "examples": [
+      "https://github.com/gmsgowtham/react-native-marked/tree/main/examples/react-native-marked-sample"
+    ],
+    "images": [
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/dark-theme.png",
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/light-theme.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
