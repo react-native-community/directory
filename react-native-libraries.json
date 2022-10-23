@@ -8791,8 +8791,9 @@
   },
   {
     "githubUrl": "https://github.com/nikochan2k/expo-split-pane",
-    "npmPkg": "expo-split-pane",
-    "examples": ["https://github.com/nikochan2k/expo-split-pane"],
+    "images": [
+      "https://raw.githubusercontent.com/nikochan2k/expo-split-pane/6f55d25a407c5bb53735087e790db0d0c1253afd/assets/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
