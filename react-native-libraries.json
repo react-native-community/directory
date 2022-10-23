@@ -8798,5 +8798,19 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gmsgowtham/react-native-marked",
+    "examples": [
+      "https://github.com/gmsgowtham/react-native-marked/tree/main/examples/react-native-marked-sample"
+    ],
+    "images": [
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/dark-theme.png",
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/light-theme.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
