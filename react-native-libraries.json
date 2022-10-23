@@ -8781,12 +8781,27 @@
     ],
     "ios": true,
     "android": true
-},
-{
+  },
+  {
     "githubUrl": "https://github.com/pusher/pusher-websocket-react-native",
     "npmPkg": "@pusher/pusher-websocket-react-native",
     "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/CodingItWrong/react-native-style-queries",
+    "npmPkg": "react-native-style-queries",
+    "examples": [
+      "https://github.com/CodingItWrong/react-native-style-queries/tree/main/example",
+      "https://github.com/codingitwrong/surely-expo"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true
   }
 ]
