@@ -8781,12 +8781,22 @@
     ],
     "ios": true,
     "android": true
-},
-{
+  },
+  {
     "githubUrl": "https://github.com/pusher/pusher-websocket-react-native",
     "npmPkg": "@pusher/pusher-websocket-react-native",
     "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nikochan2k/expo-split-pane",
+    "images": [
+      "https://raw.githubusercontent.com/nikochan2k/expo-split-pane/6f55d25a407c5bb53735087e790db0d0c1253afd/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
