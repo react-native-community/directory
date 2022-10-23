@@ -8812,5 +8812,16 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/CodingItWrong/react-native-style-queries",
+    "examples": [
+      "https://github.com/CodingItWrong/react-native-style-queries/tree/main/example",
+      "https://github.com/codingitwrong/surely-expo"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
