@@ -8790,6 +8790,30 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/nikochan2k/expo-split-pane",
+    "images": [
+      "https://raw.githubusercontent.com/nikochan2k/expo-split-pane/6f55d25a407c5bb53735087e790db0d0c1253afd/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gmsgowtham/react-native-marked",
+    "examples": [
+      "https://github.com/gmsgowtham/react-native-marked/tree/main/examples/react-native-marked-sample"
+    ],
+    "images": [
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/dark-theme.png",
+      "https://github.com/gmsgowtham/react-native-marked/blob/main/assets/light-theme.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/CodingItWrong/react-native-style-queries",
     "examples": [
       "https://github.com/CodingItWrong/react-native-style-queries/tree/main/example",
