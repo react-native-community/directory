@@ -6866,9 +6866,15 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput",
+    "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/react-native-avoid-softinput",
     "examples": [
+      "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/fabricMobile",
       "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/mobile"
+    ],
+    "npmPkg": "react-native-avoid-softinput",
+    "images": [
+      "https://raw.githubusercontent.com/mateusz1913/react-native-avoid-softinput/master/static/form.gif",
+      "https://raw.githubusercontent.com/mateusz1913/react-native-avoid-softinput/master/static/sticky-footer.gif"
     ],
     "ios": true,
     "android": true
@@ -7606,7 +7612,9 @@
   {
     "githubUrl": "https://github.com/MobileReality/react-native-select-pro",
     "npmPkg": "@mobile-reality/react-native-select-pro",
-    "examples": ["https://github.com/MobileReality/react-native-select-pro/tree/master/apps/expo/src/examples"],
+    "examples": [
+      "https://github.com/MobileReality/react-native-select-pro/tree/master/apps/expo/src/examples"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -8724,18 +8732,14 @@
     "examples": [
       "https://github.com/Mindinventory/react-native-tabbar-interaction/tree/master/example"
     ],
-    "images": [
-      "https://cdn.dribbble.com/users/1233499/screenshots/4844696/preview.gif"
-    ],
+    "images": ["https://cdn.dribbble.com/users/1233499/screenshots/4844696/preview.gif"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/Mindinventory/React-Native-top-navbar",
     "npmPkg": "@mindinventory/rn-top-navbar",
-    "examples": [
-      "https://github.com/Mindinventory/React-Native-top-navbar/tree/master/example"
-    ],
+    "examples": ["https://github.com/Mindinventory/React-Native-top-navbar/tree/master/example"],
     "ios": true,
     "android": true
   },
@@ -8748,9 +8752,7 @@
   {
     "githubUrl": "https://github.com/Mindinventory/react-native-stagger-view",
     "npmPkg": "@mindinventory/react-native-stagger-view",
-    "examples": [
-      "https://github.com/Mindinventory/react-native-stagger-view/tree/main/example"
-    ],
+    "examples": ["https://github.com/Mindinventory/react-native-stagger-view/tree/main/example"],
     "images": [
       "https://user-images.githubusercontent.com/88423352/160378928-a2e472c6-df2f-4e11-9566-cd1e32e67a3e.gif",
       "https://user-images.githubusercontent.com/88423352/160379456-33f6202c-4184-4ecd-852b-a85c099faf71.gif",
@@ -8773,9 +8775,7 @@
   {
     "githubUrl": "https://github.com/Mindinventory/react-native-speed-view",
     "npmPkg": "@mindinventory/react-native-speed-view",
-    "examples": [
-      "https://github.com/Mindinventory/react-native-speed-view/tree/main/example"
-    ],
+    "examples": ["https://github.com/Mindinventory/react-native-speed-view/tree/main/example"],
     "images": [
       "https://user-images.githubusercontent.com/82019401/164174514-2369be99-a00a-4171-a47d-95b997388bbe.gif"
     ],
