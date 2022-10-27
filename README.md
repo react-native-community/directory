@@ -133,7 +133,7 @@ GITHUB_TOKEN=<*> yarn data:update
 
 ## How do I deploy to production?
 
-Get a commit on `master` and it will be automatically deployed.
+Get a commit on `main` and it will be automatically deployed.
 
 ## I don't like your website, can I hit an API instead and build my own better stuff?
 
