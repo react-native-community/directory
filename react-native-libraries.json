@@ -8823,5 +8823,21 @@
     "android": true,
     "web": true,
     "expo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/onmotion/react-native-autocomplete-dropdown",
+    "npmPkg": "@onmotion/react-native-autocomplete-dropdown",
+    "examples": [
+        "https://github.com/onmotion/react-native-autocomplete-dropdown/tree/main/example/components"
+    ],
+    "images": [
+        "https://github.com/onmotion/react-native-autocomplete-dropdown/raw/main/screens/ios.gif",
+        "https://github.com/onmotion/react-native-autocomplete-dropdown/raw/main/screens/android.gif",
+        "https://github.com/onmotion/react-native-autocomplete-dropdown/raw/main/screens/Example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": true
+}
 ]
