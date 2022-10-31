@@ -8840,5 +8840,18 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/alan-eu/react-native-fast-shadow",
+    "npmPkg": "react-native-fast-shadow",
+    "examples": [
+        "https://github.com/alan-eu/react-native-fast-shadow/tree/main/example"
+    ],
+    "images": [
+        "https://user-images.githubusercontent.com/20420653/197513322-81c46d07-2f44-463b-86ef-86a4ad856146.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
