@@ -8864,5 +8864,20 @@
     ],
     "ios": true,
     "android": true
+  },
+    {
+    "githubUrl": "https://github.com/Stringsaeed/react-native-tooltiplize",
+    "npmPkg": "https://www.npmjs.com/package/react-native-tooltiplize",
+    "examples": ["https://github.com/Stringsaeed/react-native-tooltiplize/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Stringsaeed/react-native-tooltiplize/main/.github/images/with-overlay-ios.png",
+      "https://raw.githubusercontent.com/Stringsaeed/react-native-tooltiplize/main/.github/images/without-overlay-ios.png",
+      "https://raw.githubusercontent.com/Stringsaeed/react-native-tooltiplize/main/.github/images/without-overlay-android.png",
+      "https://raw.githubusercontent.com/Stringsaeed/react-native-tooltiplize/main/.github/images/with-overlay-android.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
   }
 ]
