@@ -8878,5 +8878,13 @@
     "android": true,
     "expo": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/tony-xlh/vision-camera-dynamsoft-document-normalizer",
+    "examples": [
+      "https://github.com/tony-xlh/vision-camera-dynamsoft-document-normalizer/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
