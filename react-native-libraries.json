@@ -5767,18 +5767,6 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/panz3r/react-native-flipper-databases",
-    "examples": [
-      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example",
-      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example2",
-      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example3",
-      "https://github.com/panz3r/react-native-flipper-databases/tree/main/example4"
-    ],
-    "ios": true,
-    "android": true,
-    "dev": true
-  },
-  {
     "githubUrl": "https://github.com/testfairy/react-native-testfairy",
     "examples": ["https://github.com/testfairy/react-native-testfairy/tree/master/example"],
     "ios": true,
@@ -6872,7 +6860,6 @@
       "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/fabricMobile",
       "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/mobile"
     ],
-    "npmPkg": "react-native-avoid-softinput",
     "images": [
       "https://raw.githubusercontent.com/mateusz1913/react-native-avoid-softinput/master/static/form.gif",
       "https://raw.githubusercontent.com/mateusz1913/react-native-avoid-softinput/master/static/sticky-footer.gif"
@@ -8827,15 +8814,14 @@
   },
   {
     "githubUrl": "https://github.com/onmotion/react-native-autocomplete-dropdown",
-    "npmPkg": "@onmotion/react-native-autocomplete-dropdown",
     "examples": [
-        "https://snack.expo.dev/@onmotion/react-native-autocomplete-dropdown",
-        "https://github.com/onmotion/react-native-autocomplete-dropdown/tree/main/example/components"
+      "https://snack.expo.dev/@onmotion/react-native-autocomplete-dropdown",
+      "https://github.com/onmotion/react-native-autocomplete-dropdown/tree/main/example/components"
     ],
     "images": [
-        "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/ios.gif",
-        "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/android.gif",
-        "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/Example.png"
+      "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/ios.gif",
+      "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/android.gif",
+      "https://raw.githubusercontent.com/onmotion/react-native-autocomplete-dropdown/main/screens/Example.png"
     ],
     "ios": true,
     "android": true,
@@ -8843,11 +8829,9 @@
   },
   {
     "githubUrl": "https://github.com/alan-eu/react-native-fast-shadow",
-    "examples": [
-        "https://github.com/alan-eu/react-native-fast-shadow/tree/main/example"
-    ],
+    "examples": ["https://github.com/alan-eu/react-native-fast-shadow/tree/main/example"],
     "images": [
-        "https://user-images.githubusercontent.com/20420653/197513322-81c46d07-2f44-463b-86ef-86a4ad856146.png"
+      "https://user-images.githubusercontent.com/20420653/197513322-81c46d07-2f44-463b-86ef-86a4ad856146.png"
     ],
     "ios": true,
     "android": true,
@@ -8856,9 +8840,7 @@
   {
     "githubUrl": "https://github.com/howljs/react-native-calendar-kit",
     "npmPkg": "@howljs/calendar-kit",
-    "examples": [
-      "https://github.com/howljs/react-native-calendar-kit/tree/main/example"
-    ],
+    "examples": ["https://github.com/howljs/react-native-calendar-kit/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/howljs/react-native-calendar-kit/main/assets/demo.gif"
     ],
@@ -8886,5 +8868,108 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arnnis/react-native-toast-notifications",
+    "examples": ["https://github.com/arnnis/react-native-toast-notifications/tree/master/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/61647712/124135853-72742d80-da99-11eb-95f8-893281862e96.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/arnnis/react-native-match-media-polyfill",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-ridge-state",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-native-paper-autocomplete",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/match-media",
+    "npmPkg": "@expo/match-media",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/klazbaba/react-native-form-component",
+    "examples": ["https://github.com/klazbaba/react-native-form-component/tree/master/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/34392299/135331258-525de545-1937-40dc-8225-122d9a102572.gif",
+      "https://user-images.githubusercontent.com/34392299/135331616-78e74fb6-2e89-4529-9bb3-e50b99213adc.jpeg"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/VincentCATILLON/react-native-confetti-cannon",
+    "examples": [
+      "https://github.com/VincentCATILLON/react-native-confetti-cannon/tree/master/example",
+      "https://vincentcatillon.github.io/react-native-confetti-cannon"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/VincentCATILLON/react-native-confetti-cannon/master/.github/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/acro5piano/react-native-big-calendar",
+    "examples": [
+      "https://github.com/acro5piano/react-native-big-calendar/tree/main/rndemo",
+      "https://react-native-big-calendar.vercel.app/"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/acro5piano/react-native-big-calendar/main/assets/screenshot-mobile.png",
+      "https://user-images.githubusercontent.com/10719495/117629046-b98a2480-b1b4-11eb-89df-02c373438e45.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/thomas-coldwell/expo-image-editor",
+    "examples": [
+      "https://github.com/thomas-coldwell/expo-image-editor/tree/master/example",
+      "https://expo-image-cropping.netlify.app/"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/31568400/95880744-c0ac9980-0d6f-11eb-8610-73d291f1013b.jpg",
+      "https://user-images.githubusercontent.com/31568400/95880752-c2765d00-0d6f-11eb-8345-ca7420fabf9b.jpg",
+      "https://user-images.githubusercontent.com/31568400/95880755-c30ef380-0d6f-11eb-9567-4eaf188a18d6.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/marklawlor/nativewind/tree/main/packages/nativewind",
+    "examples": ["https://github.com/marklawlor/nativewind/tree/main/examples/expo"],
+    "images": [
+      "https://user-images.githubusercontent.com/3946701/178458837-df03c080-eb13-4dcc-9080-186b061a8678.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "web": true,
+    "dev": true
   }
 ]
