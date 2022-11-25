@@ -8971,5 +8971,14 @@
     "expo": true,
     "web": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Dynamsoft/capture-vision-react-native",
+    "npmPkg": "dynamsoft-capture-vision-react-native",
+    "examples": [
+      "https://github.com/Dynamsoft/capture-vision-react-native-samples"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
