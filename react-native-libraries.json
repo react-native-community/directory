@@ -8983,7 +8983,6 @@
   {
     "githubUrl": "https://github.com/jetrockets/react-native-modal",
     "npmPkg": "@jetrockets/react-native-modal",
-    "nameOverride": "@jetrockets/react-native-modal",
     "examples": ["https://github.com/jetrockets/react-native-modal/tree/master/example"],
     "images": [
       "https://github.com/jetrockets/react-native-modal/raw/master/.github/images/android-prev.gif",
@@ -8991,13 +8990,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expo": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "web": true
    }
 ]
