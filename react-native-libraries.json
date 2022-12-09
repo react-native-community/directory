@@ -2673,7 +2673,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-face-detector",
@@ -3787,7 +3788,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/react-native-unimodules",
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode",
@@ -6523,7 +6525,8 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "web": true
+    "web": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-screen-capture",
@@ -8974,9 +8977,7 @@
   {
     "githubUrl": "https://github.com/Dynamsoft/capture-vision-react-native",
     "npmPkg": "dynamsoft-capture-vision-react-native",
-    "examples": [
-      "https://github.com/Dynamsoft/capture-vision-react-native-samples"
-    ],
+    "examples": ["https://github.com/Dynamsoft/capture-vision-react-native-samples"],
     "ios": true,
     "android": true
   },
@@ -8991,5 +8992,66 @@
     "ios": true,
     "android": true,
     "web": true
-   }
+  },
+  {
+    "githubUrl": "https://github.com/sidevesh/react-native-snackbar-component",
+    "examples": [
+      "https://github.com/sidevesh/react-native-snackbar-component/tree/master/example/react-native-snackbar-component-demo"
+    ],
+    "images": [
+      "https://media.giphy.com/media/zChTSWog7TNmM/giphy.gif",
+      "https://media.giphy.com/media/6oCCk98unakbC/giphy.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/brunon80/expo-image-crop",
+    "examples": ["https://github.com/brunon80/expo-image-crop/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/brunon80/expo-image-crop/master/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/siposdani87/expo-maps-polygon-editor",
+    "npmPkg": "@siposdani87/expo-maps-polygon-editor",
+    "examples": ["https://github.com/siposdani87/expo-maps-polygon-editor/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/siposdani87/expo-maps-polygon-editor/master/images/expo-maps-polygon-editor.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dev-event/react-native-maps-draw",
+    "npmPkg": "@dev-event/react-native-maps-draw",
+    "examples": ["https://github.com/dev-event/react-native-maps-draw/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/dev-event/react-native-maps-draw/main/drawes.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/enzomanuelmangano/react-native-skia-gesture",
+    "examples": [
+      "https://github.com/enzomanuelmangano/react-native-skia-gesture/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/enzomanuelmangano/react-native-skia-gesture/raw/main/.assets/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-system-ui",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  }
 ]
