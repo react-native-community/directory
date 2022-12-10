@@ -1,4 +1,5 @@
 export type QueryOrder =
+  | 'relevance'
   | 'updated'
   | 'added'
   | 'recommended'
@@ -7,6 +8,8 @@ export type QueryOrder =
   | 'issues'
   | 'downloads'
   | 'stars';
+
+export type QueryOrderDirection = 'descending' | 'ascending';
 
 export type Query = {
   android?: string;
@@ -17,6 +20,7 @@ export type Query = {
   web?: string;
   windows?: string;
   order?: QueryOrder;
+  direction?: QueryOrderDirection;
   search?: string;
   offset?: string | number;
   limit?: string | number;
@@ -32,7 +36,7 @@ export type Query = {
 };
 
 export type Library = {
-  goldstar: boolean;
+  goldstar?: boolean;
   githubUrl: string;
   ios?: boolean;
   android?: boolean;
@@ -57,10 +61,9 @@ export type Library = {
       hasPages: boolean;
       hasDownloads: boolean;
       hasTopics: boolean;
-      updatedAt: Date;
-      createdAt: Date;
-      pushedAt: Date;
-      forks: number;
+      updatedAt: Date | string;
+      createdAt: Date | string;
+      pushedAt: Date | string;
       issues: number;
       subscribers: number;
       stars: number;
@@ -68,7 +71,7 @@ export type Library = {
     name: string;
     fullName: string;
     description: string;
-    topics: [];
+    topics: string[];
     license: {
       key: string;
       name: string;
@@ -79,8 +82,8 @@ export type Library = {
     lastRelease: {
       name: string;
       tagName: string;
-      createdAt: Date;
-      publishedAt: Date;
+      createdAt: Date | string;
+      publishedAt: Date | string;
       isPrerelease: boolean;
     };
     hasTypes: boolean;

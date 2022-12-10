@@ -210,11 +210,11 @@ export function Plus(props: Props) {
 export function Sort(props: Props) {
   const { width, height, fill = colors.black } = props;
   return (
-    <Svg width={width || 20} height={height || 12} viewBox="0 0 20 12" fill="none">
+    <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M12.954 2.978H.38V.758h12.574v2.22zM11.239 7.421L.379 7.416l.002-2.219 10.859.005-.001 2.22zM9.52 11.854H.38V9.635h9.14v2.22zM12.954 6.963h2.797V1.45a.692.692 0 011.384 0v5.512h2.766l-3.455 4.871-3.492-4.871z"
+        d="M10.3,5H0V3h10.3V5z M8.9,9L0,9l0-2l8.9,0L8.9,9L8.9,9z M7.5,13H0v-2h7.5V13L7.5,13z M10.3,8.6h2.3v-5c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6v5H16L13.2,13L10.3,8.6L10.3,8.6z"
         fill={fill}
       />
     </Svg>

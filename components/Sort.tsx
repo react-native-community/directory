@@ -1,11 +1,12 @@
 import { Picker } from '@react-native-picker/picker';
-import Router from 'next/router';
-import React, { useContext, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { useRouter } from 'next/router';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { Pressable, StyleSheet, View } from 'react-native';
+import { useHover } from 'react-native-web-hooks';
 
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Query, QueryOrder } from '../types';
+import { Query, QueryOrder, QueryOrderDirection } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
 import { Sort as SortIcon } from './Icons';
 
@@ -54,16 +55,29 @@ const sorts = [
 
 export const SortButton = (props: SortButtonProps) => {
   const {
-    query: { order },
+    query: { order, direction },
     query,
   } = props;
-  const [sortValue, setSortValue] = useState(order || 'relevance');
+  const [sortValue, setSortValue] = useState<QueryOrder>(order ?? 'relevance');
+  const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(
+    direction ?? 'descending'
+  );
   const { isDark } = useContext(CustomAppearanceContext);
+  const router = useRouter();
 
-  const onPickerChange = (order: QueryOrder) => {
-    Router.push(urlWithQuery('/', { ...query, order, offset: null }));
-    setSortValue(order);
-  };
+  const sortIconRef = useRef();
+  const isSortIconHovered = useHover(sortIconRef);
+
+  useEffect(() => {
+    router.push(
+      urlWithQuery('/', {
+        ...query,
+        order: sortValue !== 'relevance' ? sortValue : undefined,
+        direction: sortDirection !== 'descending' ? sortDirection : undefined,
+        offset: null,
+      })
+    );
+  }, [sortValue, sortDirection]);
 
   return (
     <View
@@ -73,7 +87,16 @@ export const SortButton = (props: SortButtonProps) => {
         { backgroundColor: isDark ? darkColors.border : colors.gray5 },
       ]}>
       <View style={styles.displayHorizontal}>
-        <SortIcon fill={colors.white} />
+        <Pressable
+          ref={sortIconRef}
+          style={sortDirection === 'ascending' && styles.flippedIcon}
+          onPress={() => {
+            setSortDirection(previousOrder =>
+              previousOrder === 'ascending' ? 'descending' : 'ascending'
+            );
+          }}>
+          <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
+        </Pressable>
         <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
@@ -86,7 +109,7 @@ export const SortButton = (props: SortButtonProps) => {
                 backgroundColor: isDark ? darkColors.border : 'transparent',
               },
             ]}
-            onValueChange={onPickerChange}>
+            onValueChange={setSortValue}>
             {sorts.map(sort => (
               <Picker.Item
                 key={sort.param}
@@ -130,5 +153,13 @@ const styles = StyleSheet.create({
     top: -1,
     fontSize: 14,
     fontFamily: 'System',
+    cursor: 'pointer',
+  },
+  flippedIcon: {
+    transform: [
+      {
+        scaleY: -1,
+      },
+    ],
   },
 });
