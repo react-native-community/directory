@@ -10,7 +10,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "target": "es2017",
+    "target": "esnext",
     "allowJs": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
