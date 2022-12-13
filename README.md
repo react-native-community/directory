@@ -23,15 +23,15 @@
 - Add it at the end of `react-native-libraries.json` file.
 - Submit a PR.
 
-Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
+> **Note** Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
 
 ```json
 {
   "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
-  "nameOverride": "<OPTIONALL PACKAGE DISPLAY NAME>",
+  "nameOverride": "<OPTIONAL PACKAGE DISPLAY NAME>",
   "examples": [
-    "<THE URL TO REPO>", 
+    "<THE URL TO REPO>",
     "<THE URL TO A SNACK>"
   ],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
@@ -54,37 +54,37 @@ Please follow format, fields order and indentation as seen below, skip any of th
 
 - #### ❗ `githubUrl` **(required)**
   **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
-  
-  > Package also needs to be published to the NPM registry, becouse it is a source of crucial data for the directory.
+
+  > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
 - #### `npmPkg`
   **(string)** - npm package name, by default GitHub repository name will be used. Example: `"@expo/react-native-action-sheet"`.
-  
+
   > Fill only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
 - #### `nameOverride`
   **(string)** - display name override.
-  
+
   > Fill only when it is different from the GitHub repository name and npm package name.
 - #### `examples`
   **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
 - #### `images`
   **(array of strings)** - URLs to static images or GIFs that shows the library functionality.
-  
-  > Please do not add logotypes or other branding metrials, and please avoid linking multiple resources which shows the same feature.
+
+  > Please do not add logotypes or other branding material, and please avoid linking multiple resources which shows the same feature.
 
 #### 📱 Platforms
 
-- #### `ios`
-  **(boolean)** - works on iOS device.
 - #### `android`
   **(boolean)** - works on Android device.
+- #### `ios`
+  **(boolean)** - works on iOS device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 - #### `expo`
   **(boolean)** - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
-  
+
 #### 🖥️ Out-of-tree Platforms
 
-> __Note:__ Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
+> **Note** Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
 
 - #### `windows`
   **(boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
@@ -104,7 +104,9 @@ Please follow format, fields order and indentation as seen below, skip any of th
 
 ---
 
-> __Note:__ If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser, then the name, description, homepage, and topics (keywords) will be extracted from package.json for that subrepo. GitHub stats will be based on the monorepo, because there isn't really another option.
+> **Note** If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser, 
+> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` for that subrepo.
+> GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 

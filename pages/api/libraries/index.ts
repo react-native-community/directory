@@ -3,12 +3,13 @@ import take from 'lodash/take';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import data from '../../../assets/data.json';
+import { Library } from '../../../types';
 import { NUM_PER_PAGE } from '../../../util/Constants';
 import { handleFilterLibraries } from '../../../util/search';
 import * as Sorting from '../../../util/sorting';
 
-const originalData = [...data.libraries];
-const SortedData = {
+const originalData = [...data.libraries] as Library[];
+const getData = () => ({
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],
   recommended: Sorting.recommended([...originalData]),
@@ -18,8 +19,15 @@ const SortedData = {
   downloads: Sorting.downloads([...originalData]),
   issues: Sorting.issues([...originalData]),
   stars: Sorting.stars([...originalData]),
-};
+});
+
+const SortedData = getData();
 const SortingKeys = Object.keys(SortedData);
+
+const ReversedSortedData = Object.entries(getData()).reduce(
+  (accumulator = {}, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
+  {}
+);
 
 const getAllowedOrderString = (req: NextApiRequest) => {
   let sortBy = SortingKeys[0];
@@ -38,7 +46,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'application/json');
 
   const sortBy = getAllowedOrderString(req);
-  const libraries = SortedData[sortBy];
+  const sortDirection = req.query.direction ?? 'descending';
+  const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
 
   const querySearch = req.query.search
     ? req.query.search.toString().toLowerCase().trim()
