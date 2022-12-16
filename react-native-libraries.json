@@ -9069,5 +9069,14 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
+    "npmPkg": "react-native-performance-limiter",
+    "examples": [
+      "https://github.com/DataDog/react-native-performance-limiter/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
