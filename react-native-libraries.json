@@ -9069,5 +9069,16 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/macvish/react-native-basic-carousel",
+    "npmPkg": "@mactony1/react-native-basic-carousel",
+    "images": ["https://github.com/macvish/react-native-basic-carousel/raw/develop/example/example.gif"],
+    "examples": [
+      "https://github.com/macvish/react-native-basic-carousel/tree/develop/example"
+    ]
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
