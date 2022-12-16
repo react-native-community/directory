@@ -9055,6 +9055,13 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/ArunGovil/react-native-flatboard",
+    "images": ["https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/okanfidan/react-native-tabbed-section-list",
     "npmPkg": "@glyw/react-native-tabbed-section-list",
     "images": ["https://raw.githubusercontent.com/okanfidan/react-native-tabbed-section-list/master/demo.gif"],
