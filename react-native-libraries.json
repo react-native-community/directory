@@ -9072,6 +9072,14 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
+    "examples": [
+      "https://github.com/DataDog/react-native-performance-limiter/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/macvish/react-native-basic-carousel",
     "images": ["https://github.com/macvish/react-native-basic-carousel/raw/develop/example/example.gif"],
     "examples": [
@@ -9080,13 +9088,5 @@
     "ios": true,
     "android": true,
     "expo": true
-    },
-    {
-    "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
-    "examples": [
-      "https://github.com/DataDog/react-native-performance-limiter/tree/main/example"
-    ],
-    "ios": true,
-    "android": true
   },
 ]
