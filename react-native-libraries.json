@@ -8657,7 +8657,8 @@
     "examples": ["https://github.com/mateoguzmana/react-native-clocks/tree/main/example"],
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/ouroboroscoding/react-native-picker",
@@ -9064,7 +9065,7 @@
   {
     "githubUrl": "https://github.com/okanfidan/react-native-tabbed-section-list",
     "npmPkg": "@glyw/react-native-tabbed-section-list",
-    "images": ["https://raw.githubusercontent.com/okanfidan/react-native-tabbed-section-list/master/demo.gif"],
+    "images": ["https://raw.githubusercontent.com/okanfidan/assets/master/demo.gif"],
     "ios": true,
     "android": true,
     "web": true,
@@ -9079,5 +9080,13 @@
     "ios": true,
     "android": true,
     "expo": true
-  }
+    },
+    {
+    "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
+    "examples": [
+      "https://github.com/DataDog/react-native-performance-limiter/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
 ]
