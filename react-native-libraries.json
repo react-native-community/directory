@@ -8657,7 +8657,8 @@
     "examples": ["https://github.com/mateoguzmana/react-native-clocks/tree/main/example"],
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/ouroboroscoding/react-native-picker",
