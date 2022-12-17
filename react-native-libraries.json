@@ -8530,10 +8530,17 @@
   },
   {
     "githubUrl": "https://github.com/mateoguzmana/react-native-fiesta",
-    "examples": ["https://github.com/mateoguzmana/react-native-fiesta/tree/main/example"],
+    "examples": [
+      "https://github.com/mateoguzmana/react-native-fiesta/tree/main/example",
+      "https://github.com/mateoguzmana/react-native-fiesta/tree/main/expo-example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/20783123/208243166-44ba12b5-1e19-407d-9a46-c4b04949c28d.gif"
+    ],
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/alantoa/expo-reanimated-av-player",
