@@ -9064,7 +9064,9 @@
   },
   {
     "githubUrl": "https://github.com/ArunGovil/react-native-flatboard",
-    "images": ["https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp"],
+    "images": [
+      "https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -9080,17 +9082,90 @@
   },
   {
     "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
-    "examples": [
-      "https://github.com/DataDog/react-native-performance-limiter/tree/main/example"
-    ],
+    "examples": ["https://github.com/DataDog/react-native-performance-limiter/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/macvish/react-native-basic-carousel",
-    "images": ["https://github.com/macvish/react-native-basic-carousel/raw/develop/example/example.gif"],
+    "examples": ["https://github.com/macvish/react-native-basic-carousel/tree/develop/example"],
+    "images": [
+      "https://github.com/macvish/react-native-basic-carousel/raw/develop/example/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/yuvraj24/react-native-stories-view",
+    "images": [
+      "https://raw.githubusercontent.com/yuvraj24/react-native-stories-view/master/assets/photo1.png",
+      "https://raw.githubusercontent.com/yuvraj24/react-native-stories-view/master/assets/photo2.png",
+      "https://raw.githubusercontent.com/yuvraj24/react-native-stories-view/master/assets/photo3.png",
+      "https://raw.githubusercontent.com/yuvraj24/react-native-stories-view/master/assets/photo4.png",
+      "https://raw.githubusercontent.com/yuvraj24/react-native-stories-view/master/assets/photo5.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/rmrs/react-native-settings",
+    "examples": ["https://github.com/rmrs/react-native-settings/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/c19354837/react-native-system-setting",
+    "examples": ["https://github.com/rmrs/react-native-settings/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/c19354837/react-native-system-setting/master/screenshot/android.jpg",
+      "https://raw.githubusercontent.com/c19354837/react-native-system-setting/master/screenshot/ios.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mouselangelo/react-native-actions-shortcuts",
     "examples": [
-      "https://github.com/macvish/react-native-basic-carousel/tree/develop/example"
+      "https://github.com/mouselangelo/react-native-actions-shortcuts/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Kingstinct/react-native-healthkit",
+    "examples": [
+      "https://github.com/Kingstinct/react-native-healthkit/tree/master/example",
+      "https://github.com/Kingstinct/react-native-healthkit/tree/master/example-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Kingstinct/react-native-hotkeys",
+    "examples": ["https://github.com/Kingstinct/react-native-hotkeys/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/revtel/react-native-nfc-manager",
+    "examples": ["https://github.com/revtel/react-native-nfc-rewriter"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hossein-zare/react-native-chunk-upload",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hossein-zare/react-native-dropdown-picker",
+    "examples": ["https://snack.expo.dev/8mHmLfcZf"],
+    "images": [
+      "https://user-images.githubusercontent.com/56504893/116790110-e0b36880-aac7-11eb-9ebd-196acee64f7a.png",
+      "https://user-images.githubusercontent.com/56504893/116789802-faec4700-aac5-11eb-837b-86f18cbfcf3d.png",
+      "https://user-images.githubusercontent.com/56504893/116789839-2c651280-aac6-11eb-99e0-b43b608ed8c7.png"
     ],
     "ios": true,
     "android": true,
