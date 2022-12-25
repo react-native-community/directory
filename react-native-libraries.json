@@ -5325,7 +5325,8 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/whitedogg13/react-native-nfc-manager",
+    "githubUrl": "https://github.com/revtel/react-native-nfc-manager",
+    "examples": ["https://github.com/revtel/react-native-nfc-rewriter"],
     "ios": true,
     "android": true
   },
@@ -9117,7 +9118,9 @@
   },
   {
     "githubUrl": "https://github.com/c19354837/react-native-system-setting",
-    "examples": ["https://github.com/rmrs/react-native-settings/tree/main/example"],
+    "examples": [
+      "https://github.com/c19354837/react-native-system-setting/tree/master/examples/SystemSettingExample"
+    ],
     "images": [
       "https://raw.githubusercontent.com/c19354837/react-native-system-setting/master/screenshot/android.jpg",
       "https://raw.githubusercontent.com/c19354837/react-native-system-setting/master/screenshot/ios.png"
@@ -9149,12 +9152,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/revtel/react-native-nfc-manager",
-    "examples": ["https://github.com/revtel/react-native-nfc-rewriter"],
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/hossein-zare/react-native-chunk-upload",
     "ios": true,
     "android": true
@@ -9170,5 +9167,23 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/SerenityNotes/react-native-libsodium",
+    "examples": ["https://github.com/SerenityNotes/react-native-libsodium/tree/main/example"],
+    "ios": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Karthik-B-06/react-native-segmented-control",
+    "examples": [
+      "https://github.com/Karthik-B-06/react-native-segmented-control/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/35562287/149650171-3cd9c972-6cf5-4aef-989f-199820d5b0e6.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
