@@ -9189,9 +9189,6 @@
   {
     "githubUrl": "https://github.com/killserver/react-native-screenshot-prevent",
     "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "dev": false
+    "android": true
   }
 ]
