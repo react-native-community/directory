@@ -9207,6 +9207,13 @@
   },
   {
     "githubUrl": "https://github.com/inferusvv/react-native-unicorn-modals",
+    "examples": [
+      "https://snack.expo.dev/@inferusvv/react-native-unicorn-modals",
+      "https://github.com/inferusvv/react-native-unicorn-modals/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/inferusvv/react-native-unicorn-modals/main/.github/images/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
