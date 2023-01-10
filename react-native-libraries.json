@@ -9219,5 +9219,17 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kanelloc/react-native-animated-header-scroll-view",
+    "npmPkg": "@kanelloc/react-native-animated-header-scroll-view",
+    "images": ["https://raw.githubusercontent.com/kanelloc/react-native-animated-header-scroll-view/master/preview-ios.gif"],
+    "examples": [
+      "https://github.com/kanelloc/react-native-animated-header-scroll-view/tree/main/example",
+      "https://snack.expo.dev/ukGomwbdE"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
