@@ -6786,17 +6786,16 @@
       "https://github.com/kadiraydinli/react-native-system-navigation-bar/tree/master/example"
     ],
     "images": [
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/hide.png",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/leanBack.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/hide.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/lean-back.gif",
       "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/immersive.gif",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/stickyImmersive.gif",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/lowProfile.gif",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/navigationColor.gif",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/navigationBarDividerColor.gif",
-      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/lightNavigationBar.gif"
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/sticky-immersive.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/low-profile.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/navigation-color.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/divider-color.gif",
+      "https://raw.githubusercontent.com/kadiraydinli/react-native-system-navigation-bar/master/screenshots/bar-mode.gif"
     ],
-    "android": true,
-    "expo": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/tienphaw/react-native-figma-squircle",
