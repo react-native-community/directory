@@ -9230,5 +9230,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/72days/react-native-appearance-control",
+    "examples": [
+      "https://github.com/72days/react-native-appearance-control/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
