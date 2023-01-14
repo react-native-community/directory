@@ -1,4 +1,4 @@
-const { withExpo } = require('@expo/next-adapter');
+const {withExpo} = require('@expo/next-adapter');
 const withImages = require('next-images');
 const withFonts = require('next-fonts');
 const withPlugins = require('next-compose-plugins');
@@ -20,8 +20,8 @@ module.exports = withPlugins(
         {
           source: '/api/libraries',
           headers: [
-            { key: 'Access-Control-Allow-Origin', value: '*' },
-            { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
+            {key: 'Access-Control-Allow-Origin', value: '*'},
+            {key: 'Access-Control-Allow-Methods', value: 'GET,HEAD'},
           ],
         },
       ];
