@@ -9238,5 +9238,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-code-push-dev-menu",
+    "examples": [
+      "https://github.com/retyui/CodePushCiCd"
+    ],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
