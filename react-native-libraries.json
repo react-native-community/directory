@@ -9247,5 +9247,16 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/coinbase/rest-hooks",
+    "npmPkg": "@rest-hooks/react",
+    "examples": [
+      "https://github.com/coinbase/rest-hooks/tree/master/examples",
+      "https://resthooks.io/demos"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
