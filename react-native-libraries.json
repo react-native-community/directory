@@ -9247,5 +9247,14 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/sAleksovski/react-native-android-widget",
+    "examples": [
+      "https://github.com/sAleksovski/react-native-android-widget/tree/master/example"
+    ],
+    "android": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
