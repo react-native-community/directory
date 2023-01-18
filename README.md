@@ -105,6 +105,8 @@
 - #### `newArchitecture`
   **(boolean)** - signify that a library supports the new architecture
 
+  > Set this tag only when automatic architecture detection fails for your package, despite it supports the new architecture.
+
 ---
 
 > **Note** If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
