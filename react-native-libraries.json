@@ -9256,5 +9256,18 @@
     "android": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Splicer97/react-native-apple-mapkit-directions",
+    "npmPkg": "react-native-apple-mapkit-directions",
+    "examples": [
+      "https://github.com/Splicer97/react-native-apple-mapkit-directions/tree/main/example"
+    ],
+    "ios": true,
+    "android": false,
+    "web": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false
   }
 ]
