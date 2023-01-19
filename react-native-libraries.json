@@ -9258,9 +9258,14 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/Splicer97/react-native-apple-mapkit-directions",
+    "examples": [
+      "https://github.com/Splicer97/react-native-apple-mapkit-directions/tree/main/example"
+    ],
+    "ios": true
+  },
+  {
     "githubUrl": "https://github.com/Novsochetra/react-native-circular-chart",
-    "npmPkg": "react-native-circular-chart",
-    "examples": [],
     "ios": true,
     "android": true
   }
