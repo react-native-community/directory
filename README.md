@@ -44,7 +44,8 @@
   "tvos": false,
   "unmaintained": false,
   "dev": false,
-  "template": false
+  "template": false,
+  "newArchitecture": false
 }
 ```
 
@@ -101,10 +102,14 @@
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
+- #### `newArchitecture`
+  **(boolean)** - signify that a library supports the new architecture
+
+  > Set this tag only when automatic architecture detection fails for your package, despite it supports the new architecture.
 
 ---
 
-> **Note** If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser, 
+> **Note** If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
 > then the name, description, homepage, and topics (keywords) will be extracted from `package.json` for that subrepo.
 > GitHub stats will be based on the monorepo, because there isn't really another option.
 

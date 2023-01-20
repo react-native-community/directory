@@ -9249,6 +9249,27 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/sAleksovski/react-native-android-widget",
+    "examples": [
+      "https://github.com/sAleksovski/react-native-android-widget/tree/master/example"
+    ],
+    "android": true,
+    "expo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Splicer97/react-native-apple-mapkit-directions",
+    "examples": [
+      "https://github.com/Splicer97/react-native-apple-mapkit-directions/tree/main/example"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Novsochetra/react-native-circular-chart",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/coinbase/rest-hooks",
     "npmPkg": "@rest-hooks/react",
     "examples": [
