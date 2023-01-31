@@ -9287,5 +9287,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Splicer97/react-native-osmdroid",
+    "examples": [
+      "https://github.com/Splicer97/react-native-osmdroid/tree/main/example"
+    ],
+    "android": true
   }
 ]
