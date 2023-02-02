@@ -9294,5 +9294,12 @@
       "https://github.com/Splicer97/react-native-osmdroid/tree/main/example"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/sparkfabrik/sparkfabrik-react-native-idfa-aaid",
+    "npmPkg": "@sparkfabrik/react-native-idfa-aaid",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
