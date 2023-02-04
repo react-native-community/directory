@@ -9300,5 +9300,11 @@
     "npmPkg": "@sparkfabrik/react-native-idfa-aaid",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/matinzd/react-native-health-connect",
+    "nameOverride": "React Native Health Connect",
+    "examples": ["https://github.com/matinzd/react-native-health-connect/tree/main/example"],
+    "android": true
   }
 ]
