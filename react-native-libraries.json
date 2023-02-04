@@ -9303,11 +9303,8 @@
   },
   {
     "githubUrl": "https://github.com/matinzd/react-native-health-connect",
-    "npmPkg": "react-native-health-connect",
     "nameOverride": "React Native Health Connect",
     "examples": ["https://github.com/matinzd/react-native-health-connect/tree/main/example"],
-    "ios": false,
-    "android": true,
-    "newArchitecture": true
+    "android": true
   }
 ]
