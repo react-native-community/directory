@@ -9306,5 +9306,11 @@
     "nameOverride": "React Native Health Connect",
     "examples": ["https://github.com/matinzd/react-native-health-connect/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Malaa-tech/react-native-simple-line-chart",
+    "examples": ["https://github.com/Malaa-tech/react-native-simple-line-chart/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
