@@ -9312,5 +9312,17 @@
     "examples": ["https://github.com/Malaa-tech/react-native-simple-line-chart/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tokkozhin/react-native-qrcode-styled",
+    "examples": ["https://github.com/tokkozhin/react-native-qrcode-styled/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/tokkozhin/react-native-qrcode-styled/main/example/assets/example.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "windows": true,
+    "macos": true,
+    "newArchitecture": true
   }
 ]
