@@ -9323,7 +9323,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR",
+    "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR/clients/ts/signalr",
     "npmPkg": "@microsoft/signalr",
     "nameOverride": "SignalR",
     "ios": true,
