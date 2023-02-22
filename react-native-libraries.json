@@ -9321,5 +9321,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR",
+    "npmPkg": "@microsoft/signalr",
+    "nameOverride": "SignalR",
+    "ios": true,
+    "android": true
   }
 ]
