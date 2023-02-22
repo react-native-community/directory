@@ -9321,5 +9321,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR/clients/ts/signalr",
+    "npmPkg": "@microsoft/signalr",
+    "nameOverride": "ASP.NET Core SignalR Client",
+    "ios": true,
+    "android": true
   }
 ]
