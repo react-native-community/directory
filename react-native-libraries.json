@@ -9314,6 +9314,23 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/tokkozhin/react-native-qrcode-styled",
+    "examples": ["https://github.com/tokkozhin/react-native-qrcode-styled/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/tokkozhin/react-native-qrcode-styled/main/example/assets/example.gif"],
+
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR/clients/ts/signalr",
+    "npmPkg": "@microsoft/signalr",
+    "nameOverride": "ASP.NET Core SignalR Client",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/sacmii/rn-vertical-slider",
     "examples": ["https://github.com/sacmii/rn-vertical-slider/tree/master/example"],
     "images": ["https://user-images.githubusercontent.com/12546974/219866420-4796142d-396f-4b31-996a-89f570f7a863.gif"],
