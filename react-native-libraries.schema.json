@@ -93,7 +93,7 @@
           "title": "The Image Schema",
           "default": "",
           "examples": ["https://reactnative.dev/img/homepage/phones.png"],
-          "pattern": "^(http(s?):)(\\w|-|\\/|\\.|-|%|\\+|\\*)+\\.(?i)(?:jp(e?)g|gif|png|webp)$"
+          "pattern": "^(http(s?):)(\\w|-|\\/|\\.|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)$"
         }
       },
       "nameOverride": {
