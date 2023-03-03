@@ -9440,5 +9440,11 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/matinzd/react-native-block-store",
+    "nameOverride": "React Native Block Store",
+    "examples": ["https://github.com/matinzd/react-native-block-store/tree/main/example"],
+    "android": true
   }
 ]
