@@ -9440,5 +9440,13 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pushpender-singh-ap/react-native-scanner",
+    "npmPkg": "@pushpendersingh/react-native-scanner",
+    "examples": ["https://github.com/pushpender-singh-ap/react-native-scanner/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
