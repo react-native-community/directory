@@ -9458,5 +9458,33 @@
     "examples": ["https://github.com/frw/react-native-ssl-public-key-pinning/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jgillick/react-native-a11y-slider",
+    "npmPkg": "react-native-a11y-slider",
+    "examples": ["https://github.com/jgillick/react-native-a11y-slider/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/slider-single.gif",
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/slider-range.gif",
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/examples.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jgillick/react-fancy-qrcode",
+    "npmPkg": "react-fancy-qrcode",
+    "examples": [
+      "https://github.com/jgillick/react-fancy-qrcode/tree/main/examples/ReactNative",
+      "https://github.com/jgillick/react-fancy-qrcode/tree/main/examples/Web"
+    ],
+    "images": [
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/logo.png",
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/logo_dots.png",
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/dots_color.png",
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
