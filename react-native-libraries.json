@@ -9237,7 +9237,9 @@
   {
     "githubUrl": "https://github.com/kanelloc/react-native-animated-header-scroll-view",
     "npmPkg": "@kanelloc/react-native-animated-header-scroll-view",
-    "images": ["https://raw.githubusercontent.com/kanelloc/react-native-animated-header-scroll-view/master/preview-ios.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/kanelloc/react-native-animated-header-scroll-view/master/preview-ios.gif"
+    ],
     "examples": [
       "https://github.com/kanelloc/react-native-animated-header-scroll-view/tree/main/example",
       "https://snack.expo.dev/ukGomwbdE"
@@ -9248,26 +9250,20 @@
   },
   {
     "githubUrl": "https://github.com/72days/react-native-appearance-control",
-    "examples": [
-      "https://github.com/72days/react-native-appearance-control/tree/main/example"
-    ],
+    "examples": ["https://github.com/72days/react-native-appearance-control/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/retyui/react-native-code-push-dev-menu",
-    "examples": [
-      "https://github.com/retyui/CodePushCiCd"
-    ],
+    "examples": ["https://github.com/retyui/CodePushCiCd"],
     "ios": true,
     "android": true,
     "dev": true
   },
   {
     "githubUrl": "https://github.com/sAleksovski/react-native-android-widget",
-    "examples": [
-      "https://github.com/sAleksovski/react-native-android-widget/tree/master/example"
-    ],
+    "examples": ["https://github.com/sAleksovski/react-native-android-widget/tree/master/example"],
     "android": true,
     "expo": true,
     "newArchitecture": true
@@ -9297,17 +9293,13 @@
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-mytracker",
-    "examples": [
-      "https://github.com/Splicer97/react-native-mytracker/tree/master/example"
-    ],
+    "examples": ["https://github.com/Splicer97/react-native-mytracker/tree/master/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-osmdroid",
-    "examples": [
-      "https://github.com/Splicer97/react-native-osmdroid/tree/main/example"
-    ],
+    "examples": ["https://github.com/Splicer97/react-native-osmdroid/tree/main/example"],
     "android": true
   },
   {
@@ -9331,7 +9323,9 @@
   {
     "githubUrl": "https://github.com/tokkozhin/react-native-qrcode-styled",
     "examples": ["https://github.com/tokkozhin/react-native-qrcode-styled/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/tokkozhin/react-native-qrcode-styled/main/example/assets/example.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/tokkozhin/react-native-qrcode-styled/main/example/assets/example.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -9347,7 +9341,9 @@
   {
     "githubUrl": "https://github.com/sacmii/rn-vertical-slider",
     "examples": ["https://github.com/sacmii/rn-vertical-slider/tree/master/example"],
-    "images": ["https://user-images.githubusercontent.com/12546974/219866420-4796142d-396f-4b31-996a-89f570f7a863.gif"],
+    "images": [
+      "https://user-images.githubusercontent.com/12546974/219866420-4796142d-396f-4b31-996a-89f570f7a863.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -9404,7 +9400,9 @@
   {
     "githubUrl": "https://github.com/maggialejandro/react-native-month",
     "examples": ["https://github.com/maggialejandro/react-native-month/tree/master/example"],
-    "images": ["https://raw.githubusercontent.com/maggialejandro/react-native-month/master/month.png"],
+    "images": [
+      "https://raw.githubusercontent.com/maggialejandro/react-native-month/master/month.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -9446,7 +9444,7 @@
     "examples": ["https://github.com/matinzd/react-native-block-store/tree/main/example"],
     "android": true
   },
-    {
+  {
     "githubUrl": "https://github.com/pushpender-singh-ap/react-native-scanner",
     "npmPkg": "@pushpendersingh/react-native-scanner",
     "examples": ["https://github.com/pushpender-singh-ap/react-native-scanner/tree/main/example"],
@@ -9458,5 +9456,31 @@
     "examples": ["https://github.com/frw/react-native-ssl-public-key-pinning/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jgillick/react-native-a11y-slider",
+    "examples": ["https://github.com/jgillick/react-native-a11y-slider/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/slider-single.gif",
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/slider-range.gif",
+      "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/examples.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jgillick/react-fancy-qrcode",
+    "examples": [
+      "https://github.com/jgillick/react-fancy-qrcode/tree/main/examples/ReactNative",
+      "https://github.com/jgillick/react-fancy-qrcode/tree/main/examples/Web"
+    ],
+    "images": [
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/logo.png",
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/logo_dots.png",
+      "https://github.com/jgillick/react-fancy-qrcode/raw/main/examples/dots_color.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
