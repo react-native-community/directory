@@ -9482,5 +9482,15 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/mutualmobile/react-native-barricade",
+    "npmPkg": "@mutualmobile/react-native-barricade",
+    "examples": ["https://github.com/mutualmobile/react-native-barricade/tree/main/example"],
+    "images": [
+      "https://github.com/mutualmobile/react-native-barricade/raw/main/docs/media/demo.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
