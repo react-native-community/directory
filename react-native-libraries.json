@@ -9484,14 +9484,14 @@
     "web": true
   },
   {
-  "githubUrl": "https://github.com/mutualmobile/react-native-barricade",
-  "npmPkg": "@mutualmobile/react-native-barricade",
-  "nameOverride": "react-native-barricade",
-  "examples": [
-    "https://github.com/mutualmobile/react-native-barricade/tree/main/example"
-  ],
-  "images": ["https://github.com/mutualmobile/react-native-barricade/raw/main/docs/media/demo.gif?raw=true"],
-  "ios": true,
-  "android": true
+    "githubUrl": "https://github.com/mutualmobile/react-native-barricade",
+    "npmPkg": "@mutualmobile/react-native-barricade",
+    "nameOverride": "react-native-barricade",
+    "examples": ["https://github.com/mutualmobile/react-native-barricade/tree/main/example"],
+    "images": [
+      "https://github.com/mutualmobile/react-native-barricade/raw/main/docs/media/demo.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
