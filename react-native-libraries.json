@@ -9492,5 +9492,19 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/azeezat/react-native-select",
+    "npmPkg": "react-native-input-select",
+    "examples": ["https://github.com/azeezat/react-native-select/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/9849221/226240418-efa4fe9f-4055-4c03-888e-8b7093adcd63.mov",
+      "https://user-images.githubusercontent.com/9849221/227392644-a039424a-9bdf-4253-b984-7b043e4a9545.png",
+      "https://user-images.githubusercontent.com/9849221/227391036-44b5e935-bc5e-48d6-a3a9-7a285a4879fd.png",
+      "https://user-images.githubusercontent.com/9849221/227393546-3aba8a28-f437-4f8f-9611-bf300c5af8f2.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
