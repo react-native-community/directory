@@ -9506,5 +9506,18 @@
     "ios": true,
     "android": true,
     "expo": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/AtharvaDeolalikar/react-native-animated-bottom-drawer",
+  "npmPkg": "react-native-animated-bottom-drawer",
+  "nameOverride": "react-native-animated-bottom-sheet",
+  "ios": true,
+  "android": true,
+  "web": false,
+  "expo": true,
+  "unmaintained": false,
+  "dev": false,
+  "template": false,
+  "newArchitecture": false
+}
 ]
