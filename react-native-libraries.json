@@ -9518,5 +9518,19 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/bambuser/react-native-bambuser-broadcaster",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "unmaintained": true,
+    "dev": false,
+    "template": false,
+    "newArchitecture": false
   }
 ]
