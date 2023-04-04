@@ -8632,7 +8632,7 @@
     "expo": true,
     "examples": [
       "https://github.com/sendbird/sendbird-uikit-react-native/tree/main/sample",
-      "https://github.com/sendbird/sample-uikit-react-native-expo"
+      "https://github.com/sendbird/sendbird-uikit-sample-react-native-expo"
     ]
   },
   {
@@ -8641,8 +8641,8 @@
     "ios": true,
     "android": true,
     "examples": [
-      "https://github.com/sendbird/quickstart-calls-directcall-react-native",
-      "https://github.com/sendbird/quickstart-calls-groupcall-react-native"
+      "https://github.com/sendbird/sendbird-calls-directcall-quickstart-react-native",
+      "https://github.com/sendbird/sendbird-calls-groupcall-quickstart-react-native"
     ]
   },
   {
