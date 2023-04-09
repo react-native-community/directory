@@ -6383,7 +6383,9 @@
   {
     "githubUrl": "https://github.com/enesozturk/react-native-hold-menu",
     "examples": ["https://github.com/enesozturk/react-native-hold-menu/tree/main/example"],
-    "images": ["https://i.imgur.com/VzjQ4n8.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/enesozturk/react-native-hold-menu/main/preview.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -9533,5 +9535,15 @@
     "ios": true,
     "android": true,
     "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/douglasjunior/react-native-pdf-renderer",
+    "examples": ["https://github.com/douglasjunior/react-native-pdf-renderer/tree/main/Sample"],
+    "images": [
+      "https://github.com/douglasjunior/react-native-pdf-renderer/raw/main/screenshots/android.gif",
+      "https://github.com/douglasjunior/react-native-pdf-renderer/raw/main/screenshots/ios.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
