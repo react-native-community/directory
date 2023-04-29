@@ -9545,5 +9545,15 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dozsolti/react-native-use-list",
+    "examples": [
+      "https://github.com/dozsolti/react-native-use-list/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
