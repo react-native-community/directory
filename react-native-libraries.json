@@ -9555,5 +9555,15 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ahmedrowaihi/react-native-i18n-storage",
+    "examples": [
+      "https://github.com/ahmedrowaihi/react-native-i18n-storage/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false
   }
 ]
