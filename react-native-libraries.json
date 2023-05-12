@@ -8635,7 +8635,6 @@
     "npmPkg": "@sendbird/uikit-react-native",
     "ios": true,
     "android": true,
-    "expo": true,
     "examples": [
       "https://github.com/sendbird/sendbird-uikit-react-native/tree/main/sample",
       "https://github.com/sendbird/sendbird-uikit-sample-react-native-expo"
