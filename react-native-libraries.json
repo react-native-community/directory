@@ -3629,9 +3629,18 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/osamaq/react-native-image-colors",
+    "githubUrl": "https://github.com/osamaqarem/react-native-image-colors",
+    "examples": [
+      "https://github.com/osamaqarem/react-native-image-colors/tree/master/example",
+      "https://snack.expo.dev/@osamaqarem/imagecolors-example?platform=web"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/osamaqarem/react-native-image-colors/master/assets/demo1_ios.png"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/torgeadelin/react-native-animated-nav-tab-bar",
