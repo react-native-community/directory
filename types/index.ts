@@ -87,7 +87,7 @@ export type Library = {
       isPrerelease: boolean;
     };
     hasTypes: boolean;
-    newArchitecture: string;
+    newArchitecture?: string;
   };
   npm: {
     downloads: number;
