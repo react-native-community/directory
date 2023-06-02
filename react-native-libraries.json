@@ -9557,9 +9557,7 @@
   },
   {
     "githubUrl": "https://github.com/dozsolti/react-native-use-list",
-    "examples": [
-      "https://github.com/dozsolti/react-native-use-list/tree/main/example"
-    ],
+    "examples": ["https://github.com/dozsolti/react-native-use-list/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -9568,10 +9566,19 @@
   {
     "githubUrl": "https://github.com/ahmedrowaihi/react-native-i18n-storage",
     "npmPkg": "@ahmedrowaihi/react-native-i18n-storage",
-    "examples": [
-      "https://github.com/ahmedrowaihi/react-native-i18n-storage/tree/main/example"
-    ],
+    "examples": ["https://github.com/ahmedrowaihi/react-native-i18n-storage/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gmsgowtham/react-native-code-highlighter",
+    "examples": [
+      "https://codesandbox.io/s/react-native-code-highligher-knfsyx?file=/src/App.js",
+      "https://github.com/gmsgowtham/react-native-code-highlighter/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
