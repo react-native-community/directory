@@ -1,7 +1,6 @@
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
-import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { colors, darkColors } from '../common/styleguide';
@@ -12,7 +11,6 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 
 import '../styles/styles.css';
-import ThemedBody from '../styles/ThemedBody';
 
 Sentry.init({
   dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
@@ -37,11 +35,21 @@ const App = ({ pageProps, Component }) => (
               name="viewport"
               content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"
             />
+            <style>
+              {`html { 
+                  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                  background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
+                }
+                *:focus-visible {
+                  outline-color: ${colors.primaryDark};
+                  outline-style: solid;
+                  outline-width: 2px;
+                }`}
+            </style>
           </Head>
           <Header />
           <Component {...pageProps} />
           <Footer />
-          <ThemedBody />
         </SafeAreaProvider>
       )}
     </CustomAppearanceContext.Consumer>

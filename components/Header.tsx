@@ -31,10 +31,13 @@ const Header = () => {
         <View style={styles.displayHorizontal}>
           <Button
             onPress={() => setIsDark(!isDark)}
-            style={[styles.themeButton, isSmallScreen && styles.themeButtonSmall]}>
+            style={[styles.button, styles.themeButton, isSmallScreen && styles.themeButtonSmall]}>
             <Text style={styles.themeButtonText}>{isDark ? '☀️' : '🌒'}</Text>
           </Button>
-          <Button href="https://github.com/react-native-directory/website#how-do-i-add-a-library">
+          <Button
+            href="https://github.com/react-native-directory/website#how-do-i-add-a-library"
+            style={styles.button}
+            openInNewTab>
             <View style={styles.displayHorizontal}>
               <Plus width={14} height={14} fill={isDark ? colors.white : colors.black} />
               {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
@@ -79,6 +82,11 @@ const styles = StyleSheet.create({
   },
   smallTitle: {
     fontSize: 18,
+  },
+  button: {
+    maxHeight: 34,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
   },
   themeButton: {
     marginRight: 12,

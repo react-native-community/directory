@@ -1,8 +1,7 @@
-import { A } from '@expo/html-elements';
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, darkColors, P } from '../../common/styleguide';
+import { colors, darkColors, P, A } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 
@@ -117,6 +116,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'none',
     position: 'relative',
     lineHeight: 18,
+    backgroundColor: 'none',
   },
 });
 

@@ -1,46 +1,54 @@
 import { A } from '@expo/html-elements';
-import React, { ReactNode, useContext } from 'react';
-import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
+import { PropsWithChildren, useContext } from 'react';
+import { StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
 
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
-type Props = {
-  children?: ReactNode;
+type Props = PropsWithChildren & {
   href?: string;
   onPress?: () => void;
-  target?: string;
-  style?: ViewStyle | ViewStyle[];
+  openInNewTab?: boolean;
+  style?: TextStyle | TextStyle[];
 };
 
 export function Button(props: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { children, href, onPress, style, target } = props;
-  const isString = typeof children === 'string';
+  const { children, href, onPress, style, openInNewTab } = props;
 
-  return (
-    <A href={href} target={target}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={[
-          styles.container,
-          {
-            backgroundColor: isDark ? darkColors.border : colors.white,
-          },
-          style,
-        ]}>
-        {isString ? <P>{children}</P> : children}
+  const isLink = !!href;
+  const linkStyle = [
+    styles.container,
+    {
+      backgroundColor: isDark ? darkColors.powder : colors.primaryDark,
+    },
+    style,
+  ];
+
+  const content = typeof children === 'string' ? <P>{children}</P> : children;
+
+  return isLink ? (
+    <A
+      href={href}
+      style={{ borderRadius: 4 }}
+      {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+      {/* @ts-ignore `focusable` should not work here, but it does... */}
+      <TouchableOpacity focusable={false} style={linkStyle} accessible={false}>
+        {content}
       </TouchableOpacity>
     </A>
+  ) : (
+    <TouchableOpacity onPress={onPress} style={linkStyle}>
+      {content}
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    maxHeight: 34,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 4,
+    outlineOffset: 1,
   },
 });

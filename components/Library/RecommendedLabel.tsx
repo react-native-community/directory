@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     marginLeft: 10,
     top: 1,
+    userSelect: 'none',
   },
   recommendedContainerSmall: {
     marginLeft: 0,
