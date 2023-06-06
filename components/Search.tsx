@@ -102,9 +102,10 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 16,
     paddingLeft: 44,
-    outlineColor: colors.primary,
     fontSize: 20,
     color: colors.white,
+    fontFamily: 'inherit',
+    outlineOffset: -2,
   },
   searchIcon: {
     position: 'absolute',

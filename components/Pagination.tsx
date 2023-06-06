@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import * as React from 'react';
 import { useContext } from 'react';
-import { StyleSheet, View, ViewStyle, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 
 import { colors, Caption, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -16,9 +15,8 @@ type Props = {
   style?: ViewStyle;
 };
 
-const Pagination = (props: Props) => {
+const Pagination = ({ query, total, style }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { query, total, style } = props;
   const totalPages = Math.ceil(total / NUM_PER_PAGE);
   const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
@@ -27,6 +25,8 @@ const Pagination = (props: Props) => {
 
   const backDisabled = currentPage <= 1;
   const forwardDisabled = currentPage >= totalPages;
+
+  console.warn(currentOffset);
 
   const backArrow = isDark => (
     <View
@@ -60,8 +60,11 @@ const Pagination = (props: Props) => {
       {backDisabled ? (
         backArrow(isDark)
       ) : (
-        <TouchableOpacity>
-          <Link href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}>
+        // @ts-ignore
+        <TouchableOpacity focusable={false}>
+          <Link
+            href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}
+            style={{ borderRadius: 4 }}>
             {backArrow(isDark)}
           </Link>
         </TouchableOpacity>
@@ -73,8 +76,11 @@ const Pagination = (props: Props) => {
       {forwardDisabled ? (
         forwardArrow(isDark)
       ) : (
-        <TouchableOpacity>
-          <Link href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}>
+        // @ts-ignore
+        <TouchableOpacity focusable={false}>
+          <Link
+            href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}
+            style={{ borderRadius: 4 }}>
             {forwardArrow(isDark)}
           </Link>
         </TouchableOpacity>
@@ -98,6 +104,7 @@ let styles = StyleSheet.create({
     width: 24,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 4,
   },
   rotate: {
     transform: [{ rotate: '180deg' }],
@@ -107,6 +114,8 @@ let styles = StyleSheet.create({
   },
   text: {
     marginHorizontal: 6,
+    minWidth: 60,
+    textAlign: 'center',
   },
 });
 

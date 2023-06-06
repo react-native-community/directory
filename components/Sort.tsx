@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
     height: 24,
     marginLeft: 8,
     paddingLeft: 8,
+    borderRadius: 4,
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: -1,
     fontSize: 14,
-    fontFamily: 'System',
+    fontFamily: 'inherit',
     cursor: 'pointer',
   },
   flippedIcon: {

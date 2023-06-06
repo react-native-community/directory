@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, useLayout, A, Caption, darkColors } from '../../common/styleguide';
+import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
 import { isEmptyOrNull } from '../../util/strings';
@@ -54,14 +54,14 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         </View>
         {!isEmptyOrNull(github.description) && (
           <View style={styles.verticalMargin}>
-            <Caption numberOfLines={skipMeta && 3}>
+            <Headline numberOfLines={skipMeta && 3} style={{ fontWeight: '400', lineHeight: 23 }}>
               <Linkify
                 options={{
                   linkWrapper: props => <A {...props}>{props.children}</A>,
                 }}>
                 {emoji.emojify(github.description)}
               </Linkify>
-            </Caption>
+            </Headline>
           </View>
         )}
         {!skipMeta && Platform.OS === 'web' && library.images && library.images.length ? (

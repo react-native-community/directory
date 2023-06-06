@@ -46,7 +46,7 @@ export const darkColors = {
   background: '#19191f',
   subHeader: '#14141a',
   border: '#2a2e36',
-  veryDark: '#0c0c0f',
+  veryDark: '#0e0e11',
   dark: '#14141a',
   powder: '#262a36',
   pewter: '#767C8E',
@@ -59,6 +59,7 @@ const baseTextStyles = {
   color: colors.black,
   marginVertical: 0,
   fontWeight: '400' as const,
+  fontFamily: 'inherit',
 };
 
 const textStyles = StyleSheet.create({
@@ -147,6 +148,7 @@ const getAnchorStyles = isDark =>
       backgroundColor: isDark ? darkColors.powder : colors.powder,
       textDecorationColor: isDark ? darkColors.pewter : colors.pewter,
       textDecorationLine: 'underline',
+      fontFamily: 'inherit',
     },
     aHovered: {
       backgroundColor: isDark ? colors.primaryDark : colors.sky,

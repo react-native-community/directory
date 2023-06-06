@@ -63,7 +63,8 @@ const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
         ...query,
         [paramName]: !isSelected,
         offset: null,
-      })}>
+      })}
+      style={{ textDecoration: 'none' }}>
       <View style={styles.link}>
         <CheckBox value={isSelected} color={colors.primaryDark} />
         <P style={{ fontSize: 14 }}>{title}</P>
