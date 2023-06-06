@@ -9580,5 +9580,10 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gbumps/react-native-screenguard",
+    "ios": true,
+    "android": true
   }
 ]
