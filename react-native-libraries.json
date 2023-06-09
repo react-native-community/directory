@@ -9588,12 +9588,10 @@
   },
   {
     "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
-    "npmPkg": "react-native-totp-utils",
     "examples": [
       "https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"
     ],
     "ios": true,
-    "android": true,
-    "newArchitecture": true
+    "android": true
   }
 ]
