@@ -9585,5 +9585,13 @@
     "githubUrl": "https://github.com/gbumps/react-native-screenguard",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
+    "examples": [
+      "https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
