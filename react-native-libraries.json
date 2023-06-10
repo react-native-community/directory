@@ -9593,5 +9593,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/JedrzejMajko/react-native-hardwired",
+    "nameOverride": "React Native Hardwired",
+    "examples": [
+      "https://github.com/JedrzejMajko/react-native-hardwired/tree/master/packages/react-native-hardwired/examples/SimpleTest"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
