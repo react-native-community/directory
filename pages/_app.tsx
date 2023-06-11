@@ -7,17 +7,20 @@ import { colors, darkColors } from '../common/styleguide';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
-// eslint-disable-next-line
 import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
 
 import '../styles/styles.css';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 Sentry.init({
+  enabled: isProd,
   dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
-  enabled: process.env.NODE_ENV === 'production',
-  allowUrls: process.env.NODE_ENV === 'production' ? [/https:\/\/reactnative\.directory/] : [],
+  environment: isProd ? 'production' : 'development',
+  allowUrls: isProd ? [/https:\/\/reactnative\.directory/] : [],
   integrations: [new Integrations.BrowserTracing()],
-  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.5 : 1.0,
+  tracesSampleRate: isProd ? 0.5 : 1.0,
+  debug: !isProd,
 });
 
 const App = ({ pageProps, Component }) => (
