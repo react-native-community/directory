@@ -86,10 +86,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  return res.end(
-    JSON.stringify({
-      libraries: filteredAndPaginatedLibraries,
-      total: filteredLibraries.length,
-    })
-  );
+  return res.json({
+    libraries: filteredAndPaginatedLibraries,
+    total: filteredLibraries.length,
+  });
 }
