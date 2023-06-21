@@ -9607,5 +9607,13 @@
     "githubUrl": "https://github.com/huextrat/react-native-maps-routes",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/monkin77/react-native-esper-sdk",
+    "nameOverride": "React Native Esper SDK",
+    "examples": [
+      "https://github.com/monkin77/react-native-esper-sdk/blob/master/example"
+    ],
+    "android": true
   }
 ]
