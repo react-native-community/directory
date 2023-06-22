@@ -9618,5 +9618,10 @@
     "examples": ["https://github.com/vonovak/react-native-theme-control/tree/main/example"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/neo773/react-native-macos-fast-image",
+    "npmPkg": "react-native-macos-fast-image",
+    "macos" true
+  },
 ]
