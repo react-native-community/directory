@@ -9588,9 +9588,7 @@
   },
   {
     "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
-    "examples": [
-      "https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"
-    ],
+    "examples": ["https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -9611,9 +9609,14 @@
   {
     "githubUrl": "https://github.com/monkin77/react-native-esper-sdk",
     "nameOverride": "React Native Esper SDK",
-    "examples": [
-      "https://github.com/monkin77/react-native-esper-sdk/blob/master/example"
-    ],
+    "examples": ["https://github.com/monkin77/react-native-esper-sdk/blob/master/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vonovak/react-native-theme-control",
+    "npmPkg": "@vonovak/react-native-theme-control",
+    "examples": ["https://github.com/vonovak/react-native-theme-control/tree/main/example"],
+    "ios": true,
     "android": true
   }
 ]
