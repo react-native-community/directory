@@ -9618,5 +9618,16 @@
     "examples": ["https://github.com/vonovak/react-native-theme-control/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/movio/react-native-rsa-signer",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/aidin36/react-native-pie-chart",
+    "examples": ["https://github.com/aidin36/react-native-pie-chart/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
