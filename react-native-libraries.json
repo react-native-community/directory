@@ -9629,5 +9629,9 @@
     "examples": ["https://github.com/aidin36/react-native-pie-chart/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/neo773/react-native-macos-fast-image",
+    "macos": true
   }
 ]
