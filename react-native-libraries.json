@@ -9633,5 +9633,16 @@
   {
     "githubUrl": "https://github.com/neo773/react-native-macos-fast-image",
     "macos": true
+  },
+  {
+    "githubUrl": "https://github.com/fracht/react-native-input-autofocus",
+    "npmPkg": "@alcs/react-native-input-autofocus",
+    "examples" :["https://github.com/fracht/react-native-input-autofocus/tree/main/ExampleApp"],
+    "images": [
+      "https://github.com/fracht/react-native-input-autofocus/raw/main/docs/assets/androidExample.gif",
+      "https://github.com/fracht/react-native-input-autofocus/raw/main/docs/assets/iosExample.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
