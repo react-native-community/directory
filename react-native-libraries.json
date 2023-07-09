@@ -9644,5 +9644,16 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/CareLuLu/react-native-web-jsonschema-form",
+    "ios": true,
+    "android": true,
+    "expo":  true
+  },
+  {
+    "githubUrl": "https://github.com/Lemonadd-UG/react-native-apple-music",
+    "npmPkg": "@bouncyapp/react-native-apple-music",
+    "ios": true
   }
 ]
