@@ -9637,7 +9637,7 @@
   {
     "githubUrl": "https://github.com/fracht/react-native-input-autofocus",
     "npmPkg": "@alcs/react-native-input-autofocus",
-    "examples" :["https://github.com/fracht/react-native-input-autofocus/tree/main/ExampleApp"],
+    "examples": ["https://github.com/fracht/react-native-input-autofocus/tree/main/ExampleApp"],
     "images": [
       "https://github.com/fracht/react-native-input-autofocus/raw/main/docs/assets/androidExample.gif",
       "https://github.com/fracht/react-native-input-autofocus/raw/main/docs/assets/iosExample.gif"
@@ -9649,11 +9649,17 @@
     "githubUrl": "https://github.com/CareLuLu/react-native-web-jsonschema-form",
     "ios": true,
     "android": true,
-    "expo":  true
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Lemonadd-UG/react-native-apple-music",
     "npmPkg": "@bouncyapp/react-native-apple-music",
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/numandev1/react-native-keys",
+    "examples": ["https://github.com/numandev1/react-native-keys/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
