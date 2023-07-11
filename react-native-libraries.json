@@ -9661,5 +9661,12 @@
     "examples": ["https://github.com/numandev1/react-native-keys/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Sharcoux/slider",
+    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8?file=/src/App.js"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
