@@ -9664,6 +9664,7 @@
   },
   {
     "githubUrl": "https://github.com/Sharcoux/slider",
+    "npmPkg": "@react-native-assets/slider",
     "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8?file=/src/App.js"],
     "ios": true,
     "android": true,
