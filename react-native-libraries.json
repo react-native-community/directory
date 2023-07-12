@@ -9669,5 +9669,14 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/lingui/js-lingui",
+    "npmPkg": "@lingui/react",
+    "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
