@@ -9663,6 +9663,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/Sharcoux/slider",
+    "npmPkg": "@react-native-assets/slider",
+    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8?file=/src/App.js"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
     "githubUrl": "https://github.com/lingui/js-lingui",
     "npmPkg": "@lingui/react",
     "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
