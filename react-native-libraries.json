@@ -9661,5 +9661,14 @@
     "examples": ["https://github.com/numandev1/react-native-keys/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lingui/js-lingui",
+    "npmPkg": "@lingui/react",
+    "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
