@@ -9678,5 +9678,13 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/pcamarajr/react-native-ultimate-icons",
+    "npmPkg": "react-native-ultimate-icons",
+    "examples": ["https://github.com/pcamarajr/react-native-ultimate-icons/tree/main/example/src"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
