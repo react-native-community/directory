@@ -9695,5 +9695,13 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jakex7/react-native-localization-settings",
+    "examples": [
+      "https://github.com/jakex7/react-native-localization-settings/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
