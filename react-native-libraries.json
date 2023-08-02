@@ -9716,10 +9716,12 @@
     "githubUrl": "https://github.com/retyui/react-native-detect-maestro",
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/retyui/react-native-widget-picker",
-    "android": true
+    "android": true,
+    "newArchitecture": true
   }
 ]
