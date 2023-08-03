@@ -9721,5 +9721,18 @@
   {
     "githubUrl": "https://github.com/retyui/react-native-widget-picker",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mhp23/react-native-fast-base",
+    "npmPkg": "https://www.npmjs.com/package/@fast-base/native",
+    "nameOverride": "React Native Fast Base",
+    "examples": [
+      "https://github.com/Mhp23/react-native-fast-base/tree/main/example/src",
+    ],
+    "images": ["https://github.com/Mhp23/react-native-fast-base/raw/main/assets/fast-base.jpg"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
   }
 ]
