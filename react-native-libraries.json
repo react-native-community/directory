@@ -9721,5 +9721,15 @@
   {
     "githubUrl": "https://github.com/retyui/react-native-widget-picker",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/situmtech/react-native",
+    "npmPkg": "@situm/react-native",
+    "examples": [
+      "https://github.com/situmtech/react-native/tree/master/example"
+    ],
+    "images": ["https://github.com/situmtech/react-native/blob/master/docs/assets/preview.png"],
+    "ios": true,
+    "android": true
   }
 ]
