@@ -6316,8 +6316,7 @@
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/master/example"],
     "ios": true,
     "android": true,
-    "web": true,
-    "expo": true
+    "web": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
@@ -9687,8 +9686,44 @@
     "expo": true
   },
   {
+    "githubUrl": "https://github.com/jakex7/react-native-click-outside",
+    "examples": [
+      "https://github.com/jakex7/react-native-click-outside/tree/main/example/src"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jakex7/react-native-localization-settings",
+    "examples": [
+      "https://github.com/jakex7/react-native-localization-settings/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments",
+    "npmPkg": "@rnw-community/react-native-payments",
+    "examples": [
+        "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-detect-maestro",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-widget-picker",
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
-    "npmPkg": "react-native-zoom-reanimated",
     "ios": true,
     "android": true,
     "web": true
