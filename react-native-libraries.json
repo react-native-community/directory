@@ -9721,5 +9721,11 @@
   {
     "githubUrl": "https://github.com/retyui/react-native-widget-picker",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
