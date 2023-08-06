@@ -10,7 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: 
+      name: production
+      url: https://reactnative.directory
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18
