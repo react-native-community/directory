@@ -9723,6 +9723,21 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Mhp23/react-native-fast-base",
+    "npmPkg": "@fast-base/native",
+    "examples": ["https://github.com/Mhp23/react-native-fast-base/tree/main/example/src"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/situmtech/react-native",
     "npmPkg": "@situm/react-native",
     "examples": [
