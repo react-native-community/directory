@@ -5255,6 +5255,8 @@
     "expo": true
   },
   {
+    "npmPkg": "@testing-library/react-native",
+    "nameOverride": "React Native Testing Library",
     "githubUrl": "https://github.com/callstack/react-native-testing-library",
     "examples": [
       "https://github.com/callstack/react-native-testing-library#example",
@@ -5263,7 +5265,7 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
+    "expo": true,
     "dev": true
   },
   {
