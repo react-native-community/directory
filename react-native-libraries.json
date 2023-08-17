@@ -9762,5 +9762,15 @@
     "web": true,
     "expo": true,
     "template": true
+  },
+  {
+    "githubUrl": "https://github.com/mrpmohiburrahman/react-native-cone-slider",
+    "examples": [
+      "https://github.com/mrpmohiburrahman/react-native-cone-slider/tree/main/example",
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
   }
 ]
