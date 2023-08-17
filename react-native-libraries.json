@@ -7191,8 +7191,10 @@
     "githubUrl": "https://github.com/Giphy/giphy-react-native-sdk",
     "npmPkg": "@giphy/react-native-sdk",
     "examples": ["https://github.com/Giphy/giphy-react-native-sdk/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/Giphy/giphy-react-native-sdk/main/docs/assets/example_app.gif"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SrBrahma/react-native-shadow-2",
