@@ -9793,5 +9793,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/mrpmohiburrahman/react-native-squish-button",
+    "examples": ["https://github.com/mrpmohiburrahman/react-native-squish-button/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
