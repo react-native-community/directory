@@ -7191,7 +7191,9 @@
     "githubUrl": "https://github.com/Giphy/giphy-react-native-sdk",
     "npmPkg": "@giphy/react-native-sdk",
     "examples": ["https://github.com/Giphy/giphy-react-native-sdk/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/Giphy/giphy-react-native-sdk/main/docs/assets/example_app.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/Giphy/giphy-react-native-sdk/main/docs/assets/example_app.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -9690,9 +9692,7 @@
   },
   {
     "githubUrl": "https://github.com/jakex7/react-native-click-outside",
-    "examples": [
-      "https://github.com/jakex7/react-native-click-outside/tree/main/example/src"
-    ],
+    "examples": ["https://github.com/jakex7/react-native-click-outside/tree/main/example/src"],
     "ios": true,
     "android": true,
     "web": true,
@@ -9700,9 +9700,7 @@
   },
   {
     "githubUrl": "https://github.com/jakex7/react-native-localization-settings",
-    "examples": [
-      "https://github.com/jakex7/react-native-localization-settings/tree/main/example"
-    ],
+    "examples": ["https://github.com/jakex7/react-native-localization-settings/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -9710,7 +9708,7 @@
     "githubUrl": "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments",
     "npmPkg": "@rnw-community/react-native-payments",
     "examples": [
-        "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example"
+      "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example"
     ],
     "ios": true,
     "android": true
@@ -9743,9 +9741,7 @@
   {
     "githubUrl": "https://github.com/situmtech/react-native",
     "npmPkg": "@situm/react-native",
-    "examples": [
-      "https://github.com/situmtech/react-native/tree/master/example"
-    ],
+    "examples": ["https://github.com/situmtech/react-native/tree/master/example"],
     "images": ["https://github.com/situmtech/react-native/blob/master/docs/assets/preview.png"],
     "ios": true,
     "android": true
@@ -9765,28 +9761,35 @@
   },
   {
     "githubUrl": "https://github.com/mrpmohiburrahman/react-native-cone-slider",
-    "examples": [
-      "https://github.com/mrpmohiburrahman/react-native-cone-slider/tree/main/example"
-    ],
+    "examples": ["https://github.com/mrpmohiburrahman/react-native-cone-slider/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
     "expo": true
   },
   {
-  "githubUrl": "https://github.com/Adarshshanbhag5/react-native-palette-picker",
-  "examples": [
-    "https://github.com/Adarshshanbhag5/react-native-palette-picker/tree/main/example"
-  ],
-  "images": [
-    "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_1.jpg",
-    "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_MusicFumes.jpg"
-  ],
-  "android": true
+    "githubUrl": "https://github.com/Adarshshanbhag5/react-native-palette-picker",
+    "examples": [
+      "https://github.com/Adarshshanbhag5/react-native-palette-picker/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_1.jpg",
+      "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_MusicFumes.jpg"
+    ],
+    "android": true
   },
   {
-    "githubUrl": "https://github.com/ayonshafiul/react-native-multi-word-highlight",
-    "images": ["https://raw.githubusercontent.com/ayonshafiul/react-native-multi-word-highlight/main/demo/image.png"],
+    "githubUrl": "https://github.com/MetaLabs-inc/react-native-vimeo-iframe",
+    "examples": ["https://github.com/MetaLabs-inc/react-native-vimeo-iframe/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/MetaLabs-inc/react-native-components-tracking",
+    "examples": [
+      "https://github.com/MetaLabs-inc/react-native-components-tracking/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "expo": true
