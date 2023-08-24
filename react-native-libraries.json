@@ -9801,5 +9801,21 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/troberts-28/react-native-timer-picker",
+    "examples": [
+      "https://github.com/troberts-28/react-native-timer-picker/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example1.gif",
+      "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example2.gif",
+      "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example3.gif",
+      "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example4.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
