@@ -9823,5 +9823,18 @@
     "examples": ["https://github.com/Malaa-tech/react-native-simple-keypad/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Alwinator/react-native-http-bridge-refurbished",
+    "npmPkg": "https://www.npmjs.com/package/react-native-http-bridge-refurbished",
+    "examples": [
+      "https://github.com/Alwinator/react-native-http-bridge-refurbished#example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expo": false,
+    "windows": true,
+    "macos": true
   }
 ]
