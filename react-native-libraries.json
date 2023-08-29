@@ -9826,15 +9826,7 @@
   },
   {
     "githubUrl": "https://github.com/Alwinator/react-native-http-bridge-refurbished",
-    "npmPkg": "react-native-http-bridge-refurbished",
-    "examples": [
-      "https://github.com/Alwinator/react-native-http-bridge-refurbished#example"
-    ],
     "ios": true,
-    "android": true,
-    "web": false,
-    "expo": false,
-    "windows": true,
-    "macos": true
+    "android": true
   }
 ]
