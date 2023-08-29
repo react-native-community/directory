@@ -9817,5 +9817,11 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+    {
+    "githubUrl": "https://github.com/Malaa-tech/react-native-simple-keypad",
+    "examples": ["https://github.com/Malaa-tech/react-native-simple-keypad/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
