@@ -9818,11 +9818,21 @@
     "web": true,
     "expo": true
   },
-    {
+  {
     "githubUrl": "https://github.com/Malaa-tech/react-native-simple-keypad",
     "examples": ["https://github.com/Malaa-tech/react-native-simple-keypad/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/chsdwn/react-native-responsive-scalability",
+    "examples": [
+      "https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example"
+    ],
+    "images": ["https://raw.githubusercontent.com/chsdwn/react-native-responsive-scalability/main/screenshots/overview.jpg"],
+    "ios": true,
+    "android": true,
+    "expo": true
   },
   {
     "githubUrl": "https://github.com/Alwinator/react-native-http-bridge-refurbished",
