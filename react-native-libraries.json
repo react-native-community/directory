@@ -9807,7 +9807,9 @@
   },
   {
     "githubUrl": "https://github.com/mrpmohiburrahman/react-native-squish-button",
-    "examples": ["https://github.com/mrpmohiburrahman/react-native-squish-button/tree/main/example"],
+    "examples": [
+      "https://github.com/mrpmohiburrahman/react-native-squish-button/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -9815,9 +9817,7 @@
   },
   {
     "githubUrl": "https://github.com/troberts-28/react-native-timer-picker",
-    "examples": [
-      "https://github.com/troberts-28/react-native-timer-picker/tree/main/example"
-    ],
+    "examples": ["https://github.com/troberts-28/react-native-timer-picker/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example1.gif",
       "https://raw.githubusercontent.com/troberts-28/react-native-timer-picker/main/demos/example2.gif",
@@ -9837,10 +9837,10 @@
   },
   {
     "githubUrl": "https://github.com/chsdwn/react-native-responsive-scalability",
-    "examples": [
-      "https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example"
+    "examples": ["https://github.com/chsdwn/react-native-responsive-scalability/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/chsdwn/react-native-responsive-scalability/main/screenshots/overview.jpg"
     ],
-    "images": ["https://raw.githubusercontent.com/chsdwn/react-native-responsive-scalability/main/screenshots/overview.jpg"],
     "ios": true,
     "android": true,
     "expo": true
@@ -9852,10 +9852,29 @@
   },
   {
     "githubUrl": "https://github.com/Malaa-tech/react-native-simple-bcrypt",
-    "examples": [
-      "https://github.com/Malaa-tech/react-native-simple-bcrypt/tree/main/example"
-    ],
+    "examples": ["https://github.com/Malaa-tech/react-native-simple-bcrypt/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/animate-react-native/stagger",
+    "npmPkg": "https://www.npmjs.com/package/@animatereactnative/stagger",
+    "examples": ["https://github.com/animate-react-native/stagger/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/animate-react-native/stagger/main/animatereactnative-stagger-preview.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/animate-react-native/marquee",
+    "npmPkg": "https://www.npmjs.com/package/@animatereactnative/marquee",
+    "examples": ["https://github.com/animate-react-native/marquee/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
