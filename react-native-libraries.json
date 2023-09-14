@@ -9858,7 +9858,7 @@
   },
   {
     "githubUrl": "https://github.com/animate-react-native/stagger",
-    "npmPkg": "https://www.npmjs.com/package/@animatereactnative/stagger",
+    "npmPkg": "@animatereactnative/stagger",
     "examples": ["https://github.com/animate-react-native/stagger/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/animate-react-native/stagger/main/animatereactnative-stagger-preview.gif"
@@ -9870,7 +9870,7 @@
   },
   {
     "githubUrl": "https://github.com/animate-react-native/marquee",
-    "npmPkg": "https://www.npmjs.com/package/@animatereactnative/marquee",
+    "npmPkg": "@animatereactnative/marquee",
     "examples": ["https://github.com/animate-react-native/marquee/tree/main/example"],
     "ios": true,
     "android": true,
