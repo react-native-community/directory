@@ -8047,6 +8047,9 @@
   },
   {
     "githubUrl": "https://github.com/criszz77/react-native-media-console",
+    "images": [
+      "https://user-images.githubusercontent.com/55203625/159137837-4e34a8be-1cbb-48ae-9d67-99ce4922e660.gif"
+    ],
     "ios": true,
     "android": true,
     "tvos": true
@@ -9872,6 +9875,79 @@
     "githubUrl": "https://github.com/animate-react-native/marquee",
     "npmPkg": "@animatereactnative/marquee",
     "examples": ["https://github.com/animate-react-native/marquee/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/AlirezaHadjar/expo-drag-drop-content-view",
+    "examples": ["https://github.com/AlirezaHadjar/expo-drag-drop-content-view/tree/main/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Jm-Zion/rn-wave-bottom-bar",
+    "examples": ["https://github.com/Jm-Zion/rn-wave-bottom-bar/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/Jm-Zion/rn-wave-bottom-bar/master/sample.gif"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/maplibre/maplibre-react-native",
+    "npmPkg": "@maplibre/maplibre-react-native",
+    "examples": ["https://github.com/maplibre/maplibre-react-native/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/assets/indoor_building_map_ios.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_choropleth_layer.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_clustering_earthquakes.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_data_driven_circle_colors.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_image_overlay.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_custom_callout.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/3DJakob/react-tinder-card",
+    "examples": [
+      "https://github.com/3DJakob/react-native-tinder-card-demo",
+      "https://3djakob.github.io/react-tinder-card-demo/",
+      "https://github.com/3DJakob/react-native-tinder-card-demo/tree/master/src/examples"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/3DJakob/react-native-tinder-card-demo/master/demo.gif",
+      "https://raw.githubusercontent.com/3DJakob/react-tinder-card/master/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/stackbuilders/react-native-spotlight-tour",
+    "npmPkg": "@stackbuilders/react-native-spotlight-tour",
+    "examples": ["https://github.com/stackbuilders/react-native-spotlight-tour/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/stackbuilders/react-native-spotlight-tour/main/docs/rnst-bounce.gif",
+      "https://raw.githubusercontent.com/stackbuilders/react-native-spotlight-tour/main/docs/rnst-slide.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/AstrOOnauta/react-native-international-phone-number",
+    "examples": ["https://snack.expo.dev/@astroonauta/react-native-international-phone-number"],
+    "images": [
+      "https://raw.githubusercontent.com/AstrOOnauta/react-native-international-phone-number/master/images/preview.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-image",
     "ios": true,
     "android": true,
     "web": true,
