@@ -2358,7 +2358,15 @@
   {
     "githubUrl": "https://github.com/JimmyDaddy/react-native-image-marker",
     "ios": true,
-    "android": true
+    "android": true,
+    "examples": ["https://github.com/JimmyDaddy/react-native-image-marker/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/multiple_icon_markers.png",
+      "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/rotatetexts.png",
+      "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/alphicononly.png",
+      "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/alphabgonly.png",
+      "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/textswihoutbg.png"
+    ]
   },
   {
     "githubUrl": "https://github.com/CompanyCam/react-native-walkthrough-tooltip",
