@@ -645,7 +645,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/satya164/react-native-tab-view",
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view",
     "ios": true,
     "android": true,
     "expo": true,
@@ -653,11 +653,9 @@
     "examples": [
       "https://snack.expo.dev/HJjbO4nSW",
       "https://expo.io/@satya164/react-native-tab-view-demos",
-      "https://github.com/satya164/react-native-tab-view/tree/main/example"
+      "https://github.com/react-navigation/react-navigation/tree/main/example"
     ],
-    "images": [
-      "https://raw.githubusercontent.com/satya164/react-native-tab-view/main/demo/demo.gif"
-    ]
+    "images": ["https://reactnavigation.org/assets/libraries/tab-view.gif"]
   },
   {
     "githubUrl": "https://github.com/bartgryszko/react-native-circular-slider",
