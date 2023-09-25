@@ -9958,5 +9958,12 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ekreative/react-native-braintree",
+    "npmPkg": "@ekreative/react-native-braintree",
+    "examples": ["https://github.com/ekreative/react-native-braintree/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
