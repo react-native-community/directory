@@ -9965,5 +9965,11 @@
     "examples": ["https://github.com/ekreative/react-native-braintree/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/okwasniewski/react-native-menubar-extra",
+    "examples": ["https://github.com/okwasniewski/react-native-menubar-extra/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/okwasniewski/react-native-menubar-extra/main/img/example-usage.png"],
+    "macos": true
   }
 ]
