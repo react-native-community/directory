@@ -9968,10 +9968,8 @@
   },
   {
     "githubUrl": "https://github.com/okwasniewski/react-native-menubar-extra",
-    "npmPkg": "react-native-menubar-extra",
     "examples": ["https://github.com/okwasniewski/react-native-menubar-extra/tree/main/example"],
     "images": ["https://raw.githubusercontent.com/okwasniewski/react-native-menubar-extra/main/img/example-usage.png"],
-    "macos": true,
-    "newArchitecture": true
+    "macos": true
   }
 ]
