@@ -9974,38 +9974,38 @@
   },
   {
     "npmPkg": "@react-native-ml-kit/text-recognition",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/text-recognition",
     "android": true,
     "ios": true
   },
   {
     "npmPkg": "@react-native-ml-kit/face-detection",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/face-detection",
     "android": true,
     "ios": true
   },
   {
     "npmPkg": "@react-native-ml-kit/image-labeling",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/image-labeling",
     "android": true,
     "ios": true
   },
   {
     "npmPkg": "@react-native-ml-kit/barcode-scanning",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/barcode-scanning",
     "android": true,
     "ios": true
   },
   {
     "npmPkg": "@react-native-ml-kit/identify-languages",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/identify-languages",
     "android": true,
     "ios": true
   },
   {
     "npmPkg": "@react-native-ml-kit/translate-text",
-    "githubUrl": "https://github.com/a7medev/react-native-ml-kit",
+    "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/translate-text",
     "android": true,
-    "ios": true
+    "ios": false
   }
 ]
