@@ -10005,7 +10005,6 @@
   {
     "npmPkg": "@react-native-ml-kit/translate-text",
     "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/translate-text",
-    "android": true,
-    "ios": false
+    "android": true
   }
 ]
