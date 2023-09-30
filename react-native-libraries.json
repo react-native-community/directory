@@ -10006,5 +10006,15 @@
     "npmPkg": "@react-native-ml-kit/translate-text",
     "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/translate-text",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/High5Apps/react-native-vis-network",
+    "examples": ["https://github.com/High5Apps/react-native-vis-network/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/High5Apps/react-native-vis-network/main/docs/images/example-network-on-ios.png",
+      "https://raw.githubusercontent.com/High5Apps/react-native-vis-network/main/docs/images/example-network-on-android.png"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
