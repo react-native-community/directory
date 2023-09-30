@@ -1,6 +1,6 @@
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import { A, H4, colors, darkColors, P } from '../common/styleguide';

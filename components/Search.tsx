@@ -3,13 +3,13 @@ import React, { useContext, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
+import { Filters, FilterButton } from './Filters';
+import { Search as SearchIcon } from './Icons';
+import { SortButton } from './Sort';
 import { layout, colors, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { Filters, FilterButton } from './Filters';
-import { Search as SearchIcon } from './Icons';
-import { SortButton } from './Sort';
 
 type Props = {
   query: Query;
@@ -60,7 +60,7 @@ const Search = (props: Props) => {
             ]}>
             {total ? (
               <P style={styles.totalText}>
-                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'library' : 'libraries'}
+                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'entry' : 'entries'}
               </P>
             ) : (
               <P />

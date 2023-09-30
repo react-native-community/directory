@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import { H2, A, P } from '../common/styleguide';
 import Navigation from './Navigation';
+import { H2, A, P } from '../common/styleguide';
 
 const ErrorState = ({ statusCode }) => {
   return (

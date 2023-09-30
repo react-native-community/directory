@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 
+import { Arrow } from './Icons';
 import { colors, Caption, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import { NUM_PER_PAGE } from '../util/Constants';
 import urlWithQuery from '../util/urlWithQuery';
-import { Arrow } from './Icons';
 
 type Props = {
   query: Query;

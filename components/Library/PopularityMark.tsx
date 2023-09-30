@@ -101,7 +101,7 @@ const PopularityMark = ({ library, markOnly = false }: Props) => {
 
 const styles = StyleSheet.create({
   popularityMark: {
-    height: 8,
+    height: 6,
     position: 'absolute',
     borderRadius: 4,
   },

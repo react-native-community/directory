@@ -1,18 +1,18 @@
-import emoji from 'node-emoji';
+import * as emoji from 'node-emoji';
 import React, { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../../types';
-import { isEmptyOrNull } from '../../util/strings';
-import { CompatibilityTags } from '../CompatibilityTags';
 import { MetaData } from './MetaData';
 import PopularityMark from './PopularityMark';
 import RecommendedLabel from './RecommendedLabel';
 import Thumbnail from './Thumbnail';
 import UnmaintainedLabel from './UnmaintainedLabel';
+import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
+import CustomAppearanceContext from '../../context/CustomAppearanceContext';
+import { Library as LibraryType } from '../../types';
+import { isEmptyOrNull } from '../../util/strings';
+import { CompatibilityTags } from '../CompatibilityTags';
 
 type Props = {
   library: LibraryType;

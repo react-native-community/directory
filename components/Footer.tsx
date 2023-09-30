@@ -1,8 +1,6 @@
 import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
-import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import ContentContainer from './ContentContainer';
 import {
   Logo,
@@ -14,6 +12,8 @@ import {
   PlatformWindows,
 } from './Icons';
 import VercelBanner from './VercelBanner';
+import { A, P, colors, darkColors, useLayout } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type PlatformProps = {
   name: string;

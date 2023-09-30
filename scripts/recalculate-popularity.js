@@ -1,8 +1,8 @@
 import jsonfile from 'jsonfile';
 import path from 'path';
 
-import data from '../assets/data.json';
 import { calculatePopularityScore } from './calculate-score';
+import data from '../assets/data.json';
 
 const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 

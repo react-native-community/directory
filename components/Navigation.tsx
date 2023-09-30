@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, darkColors, H1, P } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import ContentContainer from './ContentContainer';
 import NavigationTab from './NavigationTab';
 import PageMeta from './PageMeta';
+import { colors, darkColors, H1, P } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type NavigationProps = {
   title?: string;

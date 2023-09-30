@@ -4,11 +4,11 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useHover } from 'react-native-web-hooks';
 
+import { Sort as SortIcon } from './Icons';
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query, QueryOrder, QueryOrderDirection } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { Sort as SortIcon } from './Icons';
 
 type SortButtonProps = {
   query: Query;
