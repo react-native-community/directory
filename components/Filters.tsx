@@ -3,13 +3,13 @@ import * as React from 'react';
 import { useContext } from 'react';
 import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
 
+import { Button } from './Button';
+import { CheckBox } from './CheckBox';
+import { Filter as FilterIcon } from './Icons';
 import { colors, P, Headline, layout, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import urlWithQuery from '../util/urlWithQuery';
-import { Button } from './Button';
-import { CheckBox } from './CheckBox';
-import { Filter as FilterIcon } from './Icons';
 
 type FiltersProps = {
   query: Query;
@@ -202,6 +202,32 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
               basePath={basePath}
             />
           ) : null}
+        </View>
+      </View>
+      <View style={styles.container}>
+        <Headline style={styles.title}>Type</Headline>
+        <View style={styles.optionsContainer}>
+          <ToggleLink
+            key="skipLibs"
+            query={query}
+            paramName="skipLibs"
+            title="Hide libraries"
+            basePath={basePath}
+          />
+          <ToggleLink
+            key="skipTools"
+            query={query}
+            paramName="skipTools"
+            title="Hide development tools"
+            basePath={basePath}
+          />
+          <ToggleLink
+            key="skipTemplates"
+            query={query}
+            paramName="skipTemplates"
+            title="Hide templates"
+            basePath={basePath}
+          />
         </View>
       </View>
     </View>

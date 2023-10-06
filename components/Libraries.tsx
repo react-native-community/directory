@@ -2,9 +2,9 @@ import dynamic from 'next/dynamic';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
+import LoadingContent from './Library/LoadingContent';
 import { H3, A, P } from '../common/styleguide';
 import { Library as LibraryType } from '../types';
-import LoadingContent from './Library/LoadingContent';
 
 type Props = {
   libraries: LibraryType[];

@@ -31,6 +31,9 @@ export const handleFilterLibraries = ({
   wasRecentlyUpdated,
   minPopularity,
   newArchitecture,
+  skipLibs,
+  skipTools,
+  skipTemplates,
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -45,6 +48,18 @@ export const handleFilterLibraries = ({
   return processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
+
+    if (skipLibs && !library.dev && !library.template) {
+      return false;
+    }
+
+    if (skipTools && library.dev) {
+      return false;
+    }
+
+    if (skipTemplates && library.template) {
+      return false;
+    }
 
     if (support.ios && !library.ios) {
       return false;

@@ -75,6 +75,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     wasRecentlyUpdated: req.query.wasRecentlyUpdated,
     minPopularity: req.query.minPopularity,
     newArchitecture: req.query.newArchitecture,
+    skipLibs: req.query.skipLibs,
+    skipTools: req.query.skipTools,
+    skipTemplates: req.query.skipTemplates,
   });
 
   const offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;

@@ -2,7 +2,6 @@ import fetch from 'isomorphic-fetch';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import ContentContainer from '../components/ContentContainer';

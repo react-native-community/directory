@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { Check } from './Icons';
 import { colors, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Check } from './Icons';
 
 type Props = {
   style?: ViewStyle | ViewStyle[];

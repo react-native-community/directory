@@ -1,5 +1,4 @@
 import * as Sentry from '@sentry/react';
-import React from 'react';
 
 import ErrorState from '../components/ErrorState';
 

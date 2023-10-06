@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { DirectoryScore } from './DirectoryScore';
 import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
@@ -18,7 +19,6 @@ import {
   TypeScript,
   ReactLogo,
 } from '../Icons';
-import { DirectoryScore } from './DirectoryScore';
 
 type Props = {
   library: LibraryType;

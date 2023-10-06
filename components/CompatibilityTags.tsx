@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
 
+import { Check } from './Icons';
 import { colors, darkColors, Label } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library } from '../types';
-import { Check } from './Icons';
 
 type Props = {
   library: Library;
