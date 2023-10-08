@@ -1,5 +1,14 @@
 [
   {
+    "githubUrl": "https://github.com/anday013/react-native-otp-entry",
+    "npmPkg": "https://www.npmjs.com/package/react-native-otp-entry",
+    "images": ["https://github.com/anday013/react-native-otp-entry/blob/main/otp_demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+  }
+  ,
+  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
