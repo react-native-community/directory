@@ -10016,5 +10016,21 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/baronha/ting",
+    "npmPkg": "@baronha/ting",
+    "examples": ["https://github.com/baronha/ting/tree/main/example"],
+    "images": ["https://github.com/baronha/ting/raw/main/resources/Ting.png"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/baronha/react-native-photo-editor",
+    "npmPkg": "@baronha/react-native-photo-editor",
+    "examples": ["https://github.com/baronha/react-native-photo-editor/tree/main/example"],
+    "images": ["https://github.com/baronha/react-native-photo-editor/raw/master/resources/banner1.jpg"],
+    "ios": true,
+    "android": true
   }
 ]
