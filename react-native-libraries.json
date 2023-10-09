@@ -10008,12 +10008,19 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/High5Apps/react-native-vis-network",
-    "examples": ["https://github.com/High5Apps/react-native-vis-network/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/High5Apps/react-native-vis-network/main/docs/images/example-network-on-ios.png",
-      "https://raw.githubusercontent.com/High5Apps/react-native-vis-network/main/docs/images/example-network-on-android.png"
-    ],
+    "githubUrl": "https://github.com/baronha/ting",
+    "npmPkg": "@baronha/ting",
+    "examples": ["https://github.com/baronha/ting/tree/main/example"],
+    "images": ["https://github.com/baronha/ting/raw/main/resources/Ting.png"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/baronha/react-native-photo-editor",
+    "npmPkg": "@baronha/react-native-photo-editor",
+    "examples": ["https://github.com/baronha/react-native-photo-editor/tree/main/example"],
+    "images": ["https://github.com/baronha/react-native-photo-editor/raw/master/resources/banner1.jpg"],
     "ios": true,
     "android": true
   }
