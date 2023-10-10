@@ -10050,5 +10050,12 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/KroosX4V/react-native-orientation-manager",
+    "examples": ["https://github.com/KroosX4V/react-native-orientation-manager/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "windows": true
   }
 ]
