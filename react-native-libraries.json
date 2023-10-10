@@ -10039,5 +10039,16 @@
     "images": ["https://github.com/baronha/react-native-photo-editor/raw/master/resources/banner1.jpg"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/chsdwn/react-native-skia-shadow",
+    "examples": ["https://github.com/chsdwn/react-native-skia-shadow/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/chsdwn/react-native-skia-shadow/main/assets/screenshots/ios.png",
+      "https://raw.githubusercontent.com/chsdwn/react-native-skia-shadow/main/assets/screenshots/android.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
