@@ -9969,7 +9969,9 @@
   {
     "githubUrl": "https://github.com/okwasniewski/react-native-menubar-extra",
     "examples": ["https://github.com/okwasniewski/react-native-menubar-extra/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/okwasniewski/react-native-menubar-extra/main/img/example-usage.png"],
+    "images": [
+      "https://raw.githubusercontent.com/okwasniewski/react-native-menubar-extra/main/img/example-usage.png"
+    ],
     "macos": true
   },
   {
@@ -10036,7 +10038,9 @@
     "githubUrl": "https://github.com/baronha/react-native-photo-editor",
     "npmPkg": "@baronha/react-native-photo-editor",
     "examples": ["https://github.com/baronha/react-native-photo-editor/tree/main/example"],
-    "images": ["https://github.com/baronha/react-native-photo-editor/raw/master/resources/banner1.jpg"],
+    "images": [
+      "https://github.com/baronha/react-native-photo-editor/raw/master/resources/banner1.jpg"
+    ],
     "ios": true,
     "android": true
   },
@@ -10057,5 +10061,21 @@
     "ios": true,
     "android": true,
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/stanleyugwu/react-native-bottom-sheet",
+    "npmPkg": "@devvie/bottom-sheet",
+    "examples": ["https://github.com/stanleyugwu/react-native-bottom-sheet/tree/main/example"],
+    "images": [
+      "https://i.ibb.co/Y38XsMr/Combined.gif",
+      "https://i.ibb.co/rMTZz6D/Main.gif",
+      "https://i.ibb.co/BrxcZpD/Main.gif",
+      "https://i.ibb.co/sJpsFKD/Web.png",
+      "https://i.ibb.co/302ZYBL/Keyboard-Response.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
