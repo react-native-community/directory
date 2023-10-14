@@ -10057,5 +10057,24 @@
     "ios": true,
     "android": true,
     "windows": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/stanleyugwu/react-native-bottom-sheet",
+  "npmPkg": "@devvie/bottom-sheet",
+  "examples": [
+    "https://github.com/stanleyugwu/react-native-bottom-sheet/tree/main/example"
+  ],
+  "images": [
+    "https://i.ibb.co/Y38XsMr/Combined.gif",
+    "https://i.ibb.co/rMTZz6D/Main.gif",
+    "https://i.ibb.co/BrxcZpD/Main.gif",
+    "https://i.ibb.co/sJpsFKD/Web.png",
+    "https://i.ibb.co/302ZYBL/Keyboard-Response.gif"
+  ],
+  "ios": true,
+  "android": true,
+  "web": true,
+  "expo": true,
+}
+
 ]
