@@ -6927,11 +6927,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/realm/realm-js",
+    "githubUrl": "https://github.com/realm/realm-js/tree/main/packages/realm",
     "npmPkg": "realm",
     "examples": [
-      "https://github.com/realm/realm-js/tree/master/examples/ReactExample",
-      "https://github.com/mongodb-university/realm-tutorial-react-native"
+      "https://github.com/realm/realm-js/tree/main/examples/rn-todo-list",
+      "https://github.com/realm/realm-js/tree/main/examples/rn-multiple-realms",
+      "https://github.com/realm/realm-js/tree/main/examples/rn-connection-and-error",
+      "https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/"
     ],
     "ios": true,
     "android": true
