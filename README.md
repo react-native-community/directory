@@ -30,7 +30,10 @@
   "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
   "nameOverride": "<OPTIONAL PACKAGE DISPLAY NAME>",
-  "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
+  "examples": [
+    "<THE URL TO REPO>",
+    "<THE URL TO A SNACK>"
+  ],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
   "android": false,
