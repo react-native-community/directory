@@ -30,10 +30,7 @@
   "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
   "nameOverride": "<OPTIONAL PACKAGE DISPLAY NAME>",
-  "examples": [
-    "<THE URL TO REPO>",
-    "<THE URL TO A SNACK>"
-  ],
+  "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
   "android": false,
@@ -54,20 +51,27 @@
 #### ⚙️ General
 
 - #### ❗ `githubUrl` **(required)**
+
   **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
 
   > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
+
 - #### `npmPkg`
+
   **(string)** - npm package name, by default GitHub repository name will be used. Example: `"@expo/react-native-action-sheet"`.
 
   > Fill only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
+
 - #### `nameOverride`
+
   **(string)** - display name override.
 
   > Fill only when it is different from the GitHub repository name and npm package name.
+
 - #### `examples`
   **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
 - #### `images`
+
   **(array of strings)** - URLs to static images or GIFs that shows the library functionality.
 
   > Please do not add logotypes or other branding material, and please avoid linking multiple resources which shows the same feature.
@@ -81,7 +85,7 @@
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 - #### `expo`
-  **(boolean)** - can be used in managed workflow, without ejecting an [Expo](https://github.com/expo/expo) application (any library can be used if you eject).
+  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/) (any library can be used with dev clients and prebuild).
 
 #### 🖥️ Out-of-tree Platforms
 
@@ -103,6 +107,7 @@
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
+
   **(boolean)** - signify that a library supports the new architecture
 
   > Set this tag only when automatic architecture detection fails for your package, despite it supports the new architecture.
