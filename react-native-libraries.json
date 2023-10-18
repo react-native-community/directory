@@ -10079,5 +10079,19 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/farhoudshapouran/react-native-ui-datepicker",
+    "npmPkg": "react-native-ui-datepicker",
+    "examples": ["https://github.com/farhoudshapouran/react-native-ui-datepicker/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/7857656/227187674-93012672-495d-4955-b4d3-46c3d016684e.jpg",
+      "https://user-images.githubusercontent.com/7857656/227260476-30ee8c25-f809-4dcf-bccf-cd1ffab8795a.jpg",
+      "https://github.com/farhoudshapouran/react-native-ui-datepicker/raw/main/.github/images/react-native-ui-datepicker-example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
