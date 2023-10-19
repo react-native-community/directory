@@ -42,9 +42,9 @@
     "use-debounce": "^9.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@babel/node": "^7.22.19",
-    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-env": "^7.23.2",
     "@expo/next-adapter": "^5.0.2",
     "@types/react": "^18.2.23",
     "@types/react-native": "^0.72.3",
