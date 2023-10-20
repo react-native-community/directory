@@ -3512,12 +3512,6 @@
     "android": true,
     "npmPkg": "@react-native-community/blur"
   },
-   {
-    "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
-    "ios": true,
-    "android": true,
-    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"]
-  },
   {
     "githubUrl": "https://github.com/react-native-async-storage/async-storage",
     "ios": true,
@@ -10107,5 +10101,11 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"]
   }
 ]
