@@ -10103,9 +10103,17 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
+    "githubUrl": "https://github.com/bidah/react-native-vercel-ai",
+    "examples": ["https://github.com/bidah/react-native-vercel-ai/tree/main/example"],
     "ios": true,
     "android": true,
-    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"]
+    "web": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
+    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
