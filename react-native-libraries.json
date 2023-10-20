@@ -10109,5 +10109,11 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
+    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
