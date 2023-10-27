@@ -6928,7 +6928,6 @@
   },
   {
     "githubUrl": "https://github.com/realm/realm-js/tree/main/packages/realm",
-    "npmPkg": "realm",
     "examples": [
       "https://github.com/realm/realm-js/tree/main/examples/rn-todo-list",
       "https://github.com/realm/realm-js/tree/main/examples/rn-multiple-realms",
@@ -10082,7 +10081,9 @@
   },
   {
     "githubUrl": "https://github.com/farhoudshapouran/react-native-ui-datepicker",
-    "examples": ["https://github.com/farhoudshapouran/react-native-ui-datepicker/tree/main/example"],
+    "examples": [
+      "https://github.com/farhoudshapouran/react-native-ui-datepicker/tree/main/example"
+    ],
     "images": [
       "https://user-images.githubusercontent.com/7857656/227187674-93012672-495d-4955-b4d3-46c3d016684e.jpg",
       "https://user-images.githubusercontent.com/7857656/227260476-30ee8c25-f809-4dcf-bccf-cd1ffab8795a.jpg",
@@ -10096,7 +10097,9 @@
   {
     "githubUrl": "https://github.com/farhoudshapouran/react-native-highlighter",
     "examples": ["https://github.com/farhoudshapouran/react-native-highlighter/tree/main/example"],
-    "images": ["https://user-images.githubusercontent.com/7857656/227882432-2d18c750-5c96-4838-8dfd-62bd44cfa18f.jpg"],
+    "images": [
+      "https://user-images.githubusercontent.com/7857656/227882432-2d18c750-5c96-4838-8dfd-62bd44cfa18f.jpg"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -10112,8 +10115,63 @@
   },
   {
     "githubUrl": "https://github.com/gevgasparyan/react-native-animated-blur-view",
-    "examples": ["https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"],
+    "examples": [
+      "https://github.com/gevgasparyan/react-native-animated-blur-view/tree/main/example"
+    ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-fast-tflite",
+    "examples": ["https://github.com/mrousavy/react-native-fast-tflite/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-worklets-core",
+    "examples": ["https://github.com/margelo/react-native-worklets-core/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/vision-camera-resize-plugin",
+    "examples": ["https://github.com/mrousavy/vision-camera-resize-plugin/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rodgomesc/vision-camera-face-detector",
+    "examples": ["https://github.com/rodgomesc/vision-camera-face-detector/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/numandev1/react-native-compressor",
+    "examples": [
+      "https://github.com/numandev1/react-native-compressor/tree/main/example",
+      "https://github.com/numandev1/react-native-compressor/tree/main/exampleExpo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alantoa/react-native-awesome-slider",
+    "examples": ["https://github.com/alantoa/react-native-awesome-slider/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/alantoa/react-native-awesome-slider/main/assets/slider.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/jpudysz/react-native-unistyles",
+    "examples": [
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/ssr"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
