@@ -7341,8 +7341,11 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/Shobbak/react-native-compressor",
-    "examples": ["https://github.com/Shobbak/react-native-compressor/tree/master/example"],
+    "githubUrl": "https://github.com/numandev1/react-native-compressor",
+    "examples": [
+      "https://github.com/numandev1/react-native-compressor/tree/main/example",
+      "https://github.com/numandev1/react-native-compressor/tree/main/exampleExpo"
+    ],
     "ios": true,
     "android": true
   },
@@ -10142,15 +10145,6 @@
   {
     "githubUrl": "https://github.com/rodgomesc/vision-camera-face-detector",
     "examples": ["https://github.com/rodgomesc/vision-camera-face-detector/tree/master/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/numandev1/react-native-compressor",
-    "examples": [
-      "https://github.com/numandev1/react-native-compressor/tree/main/example",
-      "https://github.com/numandev1/react-native-compressor/tree/main/exampleExpo"
-    ],
     "ios": true,
     "android": true
   },
