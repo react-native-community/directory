@@ -7342,7 +7342,10 @@
   },
   {
     "githubUrl": "https://github.com/numandev1/react-native-compressor",
-    "examples": ["https://github.com/numandev1/react-native-compressor/tree/master/example"],
+    "examples": [
+      "https://github.com/numandev1/react-native-compressor/tree/master/example",
+      "https://github.com/numandev1/react-native-compressor/tree/main/exampleExpo"
+    ],
     "ios": true,
     "android": true
   },
