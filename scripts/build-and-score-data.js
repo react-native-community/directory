@@ -15,7 +15,7 @@ import * as Strings from '../util/strings';
 // each time we run the script
 const USE_DEBUG_REPOS = false;
 
-// Loads the Github API results from disk rather than hitting the API each time.
+// Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');

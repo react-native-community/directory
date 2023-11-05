@@ -53,14 +53,14 @@ export type Library = {
     urls: {
       repo: string;
       clone: string;
-      homepage: string | null;
+      homepage?: string | null;
     };
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
       hasPages: boolean;
       hasDownloads: boolean;
-      hasTopics: boolean;
+      hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
       pushedAt: Date | string;
@@ -71,7 +71,7 @@ export type Library = {
     name: string;
     fullName: string;
     description: string;
-    topics: string[];
+    topics?: string[];
     license: {
       key: string;
       name: string;
