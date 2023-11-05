@@ -90,7 +90,7 @@ export type Library = {
     hasTypes?: boolean;
     newArchitecture?: boolean;
   };
-  npm: {
+  npm?: {
     downloads: number;
     weekDownloads: number;
     start: string;
@@ -104,6 +104,6 @@ export type Library = {
   images?: string[];
   npmPkg?: string;
   nameOverride?: string;
-  popularity: number;
+  popularity?: number;
   matchScore?: number;
 };
