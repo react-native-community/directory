@@ -67,6 +67,7 @@ export type Library = {
       issues: number;
       subscribers: number;
       stars: number;
+      forks: number;
     };
     name: string;
     fullName: string;

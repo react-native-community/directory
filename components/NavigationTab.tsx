@@ -14,18 +14,18 @@ const NavigationTab = ({ title, path = `/${title.toLowerCase()}` }) => {
   return (
     <A
       href={path}
-      style={[
-        styles.tabLink,
-        isActive && {
+      style={{
+        ...styles.tabLink,
+        ...(isActive && {
           backgroundColor: activeBackground,
-        },
-      ]}
+        }),
+      }}
       hoverStyle={{
         backgroundColor: isActive ? activeBackground : isDark ? darkColors.dark : colors.gray6,
         color: colors.secondary,
       }}
       target="_self">
-      <View style={[styles.tabContainer]}>
+      <View style={styles.tabContainer}>
         <P style={[styles.tabTitle, isActive && styles.tabActiveTitle]}>{title}</P>
       </View>
     </A>
