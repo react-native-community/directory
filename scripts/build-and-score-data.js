@@ -226,7 +226,7 @@ async function loadRepositoryDataAsync() {
     result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 2500 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       await new Promise((resolve, reject) => {
