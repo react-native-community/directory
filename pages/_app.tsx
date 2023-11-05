@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/react';
+import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -52,6 +53,7 @@ const App = ({ pageProps, Component }) => (
           <Header />
           <Component {...pageProps} />
           <Footer />
+          <Analytics />
         </SafeAreaProvider>
       )}
     </CustomAppearanceContext.Consumer>

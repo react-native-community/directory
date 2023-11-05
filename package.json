@@ -24,6 +24,7 @@
     "@react-native-async-storage/async-storage": "^1.19.4",
     "@react-native-picker/picker": "^2.5.1",
     "@sentry/react": "^7.77.0",
+    "@vercel/analytics": "^1.1.1",
     "expo": "^49.0.16",
     "expo-font": "^11.6.0",
     "lodash": "^4.17.21",
