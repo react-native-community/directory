@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { Check } from './Icons';
@@ -11,9 +11,8 @@ type Props = {
   color?: string;
 };
 
-export function CheckBox(props: Props) {
+export function CheckBox({ style, value, color }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { style, value, color } = props;
 
   return (
     <View

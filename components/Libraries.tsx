@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import LoadingContent from './Library/LoadingContent';
@@ -18,7 +17,7 @@ const Libraries = ({ libraries }: Props) => {
   if (!libraries || !libraries.length) {
     return (
       <View style={styles.container}>
-        <Image style={styles.img} source={require('../assets/notfound.png')} />
+        <Image style={styles.img} source={require('../assets/notfound.png')} alt="No results" />
         <H3 style={styles.text}>Nothing was found! Try another search.</H3>
         <View style={{ marginTop: 20 }} />
         <P style={styles.text}>

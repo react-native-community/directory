@@ -1,4 +1,3 @@
-import React from 'react';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
 export const Website = props => (

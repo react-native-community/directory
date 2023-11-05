@@ -1,5 +1,4 @@
 import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -18,7 +17,7 @@ Sentry.init({
   dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
   environment: isProd ? 'production' : 'development',
   allowUrls: isProd ? [/https:\/\/reactnative\.directory/] : [],
-  integrations: [new Integrations.BrowserTracing()],
+  integrations: [new Sentry.BrowserTracing()],
   tracesSampleRate: isProd ? 0.5 : 1.0,
   debug: !isProd,
 });

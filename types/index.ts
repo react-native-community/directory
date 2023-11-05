@@ -79,15 +79,15 @@ export type Library = {
       url: string;
       id: string;
     };
-    lastRelease: {
+    lastRelease?: {
       name: string;
       tagName: string;
       createdAt: Date | string;
       publishedAt: Date | string;
       isPrerelease: boolean;
     };
-    hasTypes: boolean;
-    newArchitecture?: string;
+    hasTypes?: boolean;
+    newArchitecture?: boolean;
   };
   npm: {
     downloads: number;

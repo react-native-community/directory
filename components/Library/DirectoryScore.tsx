@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Svg, Path, Circle } from 'react-native-svg';
 
 import { colors, darkColors } from '../../common/styleguide';

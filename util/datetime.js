@@ -1,4 +1,4 @@
-import { pluralize } from '../util/strings';
+import { pluralize } from './strings';
 
 const MINUTE = 60;
 const HOUR = MINUTE * 60;
@@ -11,25 +11,23 @@ export const getTimeSinceToday = date => {
   const updateTimeSeconds = new Date(date).getTime();
   const currentTimeSeconds = new Date().getTime();
 
-  let seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
-  seconds = seconds > 0 ? seconds : 1;
+  const seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
+  const elapsed = seconds > 0 ? seconds : 1;
 
-  let [value, unit] =
-    seconds < MINUTE
-      ? [Math.round(seconds), 'second']
-      : seconds < HOUR
-      ? [Math.round(seconds / MINUTE), 'minute']
-      : seconds < DAY
-      ? [Math.round(seconds / HOUR), 'hour']
-      : seconds < WEEK
-      ? [Math.round(seconds / DAY), 'day']
-      : seconds < MONTH
-      ? [Math.round(seconds / WEEK), 'week']
-      : seconds < YEAR
-      ? [Math.round(seconds / MONTH), 'month']
-      : [Math.round(seconds / YEAR), 'year'];
+  const [value, unit] =
+    elapsed < MINUTE
+      ? [Math.round(elapsed), 'second']
+      : elapsed < HOUR
+      ? [Math.round(elapsed / MINUTE), 'minute']
+      : elapsed < DAY
+      ? [Math.round(elapsed / HOUR), 'hour']
+      : elapsed < WEEK
+      ? [Math.round(elapsed / DAY), 'day']
+      : elapsed < MONTH
+      ? [Math.round(elapsed / WEEK), 'week']
+      : elapsed < YEAR
+      ? [Math.round(elapsed / MONTH), 'month']
+      : [Math.round(elapsed / YEAR), 'year'];
 
-  unit = pluralize(unit, value);
-
-  return `${value} ${unit} ago`;
+  return `${value} ${pluralize(unit, value)} ago`;
 };

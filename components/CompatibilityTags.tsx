@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
 
 import { Check } from './Icons';

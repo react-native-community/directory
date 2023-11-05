@@ -10,15 +10,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: production
       url: https://reactnative.directory
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
     - name: Deploy
       shell: bash
       run: npx vercel --force --token "$VERCEL_TOKEN" --prod

@@ -1,6 +1,5 @@
 import getShareImage from '@jlengstorf/get-share-image';
 import Head from 'next/head';
-import React from 'react';
 
 const site = {
   title: 'React Native Directory',

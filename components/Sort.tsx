@@ -53,11 +53,7 @@ const sorts = [
   },
 ];
 
-export const SortButton = (props: SortButtonProps) => {
-  const {
-    query: { order, direction },
-    query,
-  } = props;
+export const SortButton = ({ query: { order, direction }, query }: SortButtonProps) => {
   const [sortValue, setSortValue] = useState<QueryOrder>(order ?? 'relevance');
   const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(
     direction ?? 'descending'
@@ -90,6 +86,7 @@ export const SortButton = (props: SortButtonProps) => {
         <Pressable
           ref={sortIconRef}
           style={sortDirection === 'ascending' && styles.flippedIcon}
+          aria-label="Toggle sort direction"
           onPress={() => {
             setSortDirection(previousOrder =>
               previousOrder === 'ascending' ? 'descending' : 'ascending'
@@ -157,10 +154,6 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
   },
   flippedIcon: {
-    transform: [
-      {
-        scaleY: -1,
-      },
-    ],
+    transform: 'scaleY(-1)',
   },
 });

@@ -1,5 +1,5 @@
 import * as emoji from 'node-emoji';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
@@ -38,8 +38,8 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
-        {library.unmaintained ? <UnmaintainedLabel /> : null}
-        {showPopularity && library.popularity ? <PopularityMark library={library} /> : null}
+        {library.unmaintained && <UnmaintainedLabel />}
+        {showPopularity && library.popularity && <PopularityMark library={library} />}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
             href={library.githubUrl || github.urls.repo}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Path, Svg, Rect, Line } from 'react-native-svg';
 
 const VercelBanner = () => (

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { View, ViewProps, StyleSheet } from 'react-native';
 
 import { layout } from '../common/styleguide';
