@@ -8,7 +8,7 @@ import { NUM_PER_PAGE } from '../../../util/Constants';
 import { handleFilterLibraries } from '../../../util/search';
 import * as Sorting from '../../../util/sorting';
 
-const originalData: Library[] = [...data.libraries];
+const originalData = [...data.libraries] as Library[];
 const getData = () => ({
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],
