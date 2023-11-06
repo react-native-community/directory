@@ -91,11 +91,11 @@ export type Library = {
     newArchitecture?: boolean;
   };
   npm?: {
-    downloads: number;
-    weekDownloads: number;
-    start: string;
-    end: string;
-    period: string;
+    downloads?: number;
+    weekDownloads?: number;
+    start?: string;
+    end?: string;
+    period?: string;
   };
   score: number;
   matchingScoreModifiers: string[];
