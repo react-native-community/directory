@@ -20,10 +20,12 @@
 
 ## How do I add a library?
 
-- Add it at the end of `react-native-libraries.json` file.
+- Add it **at the end** of [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file (we use the order in that file for "Recently added" sort option).
 - Submit a PR.
 
-> **Note** Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
+> [!NOTE]
+> Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
+> You can find the detailed descriptions of the fields below the entry template.
 
 ```json
 {
@@ -88,11 +90,15 @@
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 - #### `expo`
-  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/) (any library can be used with dev clients and prebuild).
+
+  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
+
+  > **Any** library can be used with Expo, if you use dev clients and prebuild.
 
 #### 🖥️ Out-of-tree Platforms
 
-> **Note** Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
+> [!IMPORTANT]
+> Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
 
 - #### `windows`
   **(boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
@@ -117,7 +123,8 @@
 
 ---
 
-> **Note** If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
+> [!NOTE]
+> If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
 > then the name, description, homepage, and topics (keywords) will be extracted from `package.json` for that subrepo.
 > GitHub stats will be based on the monorepo, because there isn't really another option.
 
@@ -173,6 +180,8 @@ Sure, go for it!
 `https://reactnative.directory/api/libraries?search=webgl&expo=true&android=true&isPopular=true`
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo managed and Android and are popular based on the scoring criterion.
+
+All of the possible query parameters represenents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
 
 ## I don't like how you calculate scores.
 
