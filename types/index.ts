@@ -53,25 +53,26 @@ export type Library = {
     urls: {
       repo: string;
       clone: string;
-      homepage: string | null;
+      homepage?: string | null;
     };
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
       hasPages: boolean;
       hasDownloads: boolean;
-      hasTopics: boolean;
+      hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
       pushedAt: Date | string;
       issues: number;
       subscribers: number;
       stars: number;
+      forks: number;
     };
     name: string;
     fullName: string;
     description: string;
-    topics: string[];
+    topics?: string[];
     license: {
       key: string;
       name: string;
@@ -79,22 +80,22 @@ export type Library = {
       url: string;
       id: string;
     };
-    lastRelease: {
+    lastRelease?: {
       name: string;
       tagName: string;
       createdAt: Date | string;
       publishedAt: Date | string;
       isPrerelease: boolean;
     };
-    hasTypes: boolean;
-    newArchitecture?: string;
+    hasTypes?: boolean;
+    newArchitecture?: boolean;
   };
-  npm: {
-    downloads: number;
-    weekDownloads: number;
-    start: string;
-    end: string;
-    period: string;
+  npm?: {
+    downloads?: number;
+    weekDownloads?: number;
+    start?: string;
+    end?: string;
+    period?: string;
   };
   score: number;
   matchingScoreModifiers: string[];
@@ -103,6 +104,6 @@ export type Library = {
   images?: string[];
   npmPkg?: string;
   nameOverride?: string;
-  popularity: number;
+  popularity?: number;
   matchScore?: number;
 };

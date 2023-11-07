@@ -1453,12 +1453,6 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/localz/react-native-searchbar",
-    "ios": true,
-    "android": true,
-    "expo": true
-  },
-  {
     "githubUrl": "https://github.com/wildlifela/react-native-device-monitor",
     "ios": true,
     "android": true,
@@ -1480,12 +1474,6 @@
     "ios": true,
     "android": true,
     "expo": true,
-    "unmaintained": true
-  },
-  {
-    "githubUrl": "https://github.com/smore-inc/react-native-segment-io-analytics",
-    "ios": true,
-    "android": true,
     "unmaintained": true
   },
   {
@@ -2445,13 +2433,6 @@
     "ios": true,
     "android": true,
     "expo": true
-  },
-  {
-    "githubUrl": "https://github.com/thomaswangio/react-native-gradient-buttons",
-    "ios": true,
-    "android": true,
-    "expo": true,
-    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Nozbe/WatermelonDB",
@@ -4196,11 +4177,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/anarchicknight/react-native-communications",
-    "ios": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/jsdf/react-native-htmlview",
     "images": ["https://i.imgur.com/FYOgBYc.png"],
     "ios": true,
@@ -4780,17 +4756,6 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/christianjuth/react-context-theming",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "examples": [
-      "https://github.com/christianjuth/react-context-theming/tree/master/examples/expo",
-      "https://github.com/christianjuth/react-context-theming/tree/master/examples/cra"
-    ]
-  },
-  {
     "githubUrl": "https://github.com/thodubois/react-native-woodpicker",
     "examples": [
       "https://snack.expo.dev/@fromwood/react-native-woodpicker-example",
@@ -5340,12 +5305,18 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-mapbox-gl/maps",
-    "npmPkg": "@react-native-mapbox-gl/maps",
-    "examples": ["https://github.com/react-native-mapbox-gl/maps/tree/master/example"],
+    "githubUrl": "https://github.com/rnmapbox/maps",
+    "npmPkg": "@rnmapbox/maps",
+    "examples": [
+      "https://github.com/rnmapbox/maps/tree/main/example",
+      "https://github.com/rnmapbox/maps/tree/main/fabricexample"
+    ],
     "images": [
-      "https://raw.githubusercontent.com/react-native-mapbox-gl/maps/master/assets/indoor_building_map_android.png",
-      "https://raw.githubusercontent.com/react-native-mapbox-gl/maps/master/assets/indoor_building_map_ios.png"
+      "https://raw.githubusercontent.com/rnmapbox/maps/main/assets/intro-examples.png",
+      "https://raw.githubusercontent.com/rnmapbox/maps/main/assets/beta-maps-example-point-annotation-960-d280759f6a3d8d75458f399c7a044926.webp",
+      "https://raw.githubusercontent.com/rnmapbox/maps/main/assets/beta-maps-guides-migrate-3d-terrain-960-48b1080117817ccfd92e434d0df7546f.webp",
+      "https://raw.githubusercontent.com/rnmapbox/maps/main/assets/maps-examples-building-extrusions-960-aaa140cce77da4e8b2dd216032b191b6.webp",
+      "https://raw.githubusercontent.com/rnmapbox/maps/main/assets/maps-examples-data-driven-symbols-960-2e2061a6b8127ef305c1b6c159f8dc65.webp"
     ],
     "ios": true,
     "android": true
@@ -10170,7 +10141,9 @@
   },
   {
     "githubUrl": "https://github.com/WadhahEssam/react-native-theme-switch-animation",
-    "examples": ["https://github.com/WadhahEssam/react-native-theme-switch-animation/tree/main/example"],
+    "examples": [
+      "https://github.com/WadhahEssam/react-native-theme-switch-animation/tree/main/example"
+    ],
     "ios": true,
     "android": true
   }

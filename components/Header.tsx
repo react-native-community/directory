@@ -1,5 +1,5 @@
 import { A, Header as HtmlHeader } from '@expo/html-elements';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 import { Button } from './Button';

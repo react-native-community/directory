@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { DirectoryScore } from './DirectoryScore';
@@ -25,8 +25,8 @@ type Props = {
   secondary?: boolean;
 };
 
-const generateData = (library, secondary, isDark) => {
-  const { github, newArchitecture } = library;
+const generateData = (library: LibraryType, secondary: boolean, isDark: boolean) => {
+  const { github, newArchitecture, examples, score, npm, npmPkg } = library;
 
   if (secondary) {
     const secondaryTextColor = {
@@ -84,14 +84,14 @@ const generateData = (library, secondary, isDark) => {
             ),
           }
         : null,
-      library.examples && library.examples.length
+      examples && examples.length
         ? {
             id: 'examples',
             icon: <Code fill={iconColor} width={16} height={16} />,
             content: (
               <>
                 <Caption style={paragraphStyles}>Examples: </Caption>
-                {library.examples.map((example, index) => (
+                {examples.map((example, index) => (
                   <A
                     key={example}
                     href={example}
@@ -110,12 +110,12 @@ const generateData = (library, secondary, isDark) => {
     return [
       {
         id: 'score',
-        icon: <DirectoryScore score={library.score} />,
+        icon: <DirectoryScore score={score} />,
         content: (
           <A
             target="_self"
             href="/scoring"
-            style={[styles.link, styles.mutedLink]}
+            style={{ ...styles.link, ...styles.mutedLink }}
             hoverStyle={isDark && { color: colors.primaryDark }}>
             Directory Score
           </A>
@@ -126,13 +126,13 @@ const generateData = (library, secondary, isDark) => {
         icon: <Calendar fill={iconColor} />,
         content: <Caption>Updated {getTimeSinceToday(github.stats.pushedAt)}</Caption>,
       },
-      library.npm.downloads
+      npm.downloads
         ? {
             id: 'downloads',
             icon: <Download fill={iconColor} width={16} height={18} />,
             content: (
-              <A href={`https://www.npmjs.com/package/${library.npmPkg}`} style={styles.link}>
-                {`${library.npm.downloads.toLocaleString()}`} {library.npm.period}ly downloads
+              <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
+                {`${npm.downloads.toLocaleString()}`} {npm.period}ly downloads
               </A>
             ),
           }
@@ -183,9 +183,8 @@ const generateData = (library, secondary, isDark) => {
   }
 };
 
-export function MetaData(props: Props) {
+export function MetaData({ library, secondary }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { library, secondary } = props;
   const data = generateData(library, secondary, isDark);
 
   return (

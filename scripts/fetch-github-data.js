@@ -308,7 +308,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     topics: json.topics,
     license: json.licenseInfo,
     lastRelease: json.lastRelease,
-    hasTypes: json.types,
+    hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
   };
 };

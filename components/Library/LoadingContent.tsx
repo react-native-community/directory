@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import ContentLoader from 'react-content-loader';
 
 import { colors, darkColors, useLayout } from '../../common/styleguide';
@@ -22,7 +22,7 @@ const LoadingContent = ({ width = '100%', height = 231, wrapperStyle = {} }) => 
         marginBottom: 16,
         ...wrapperStyle,
       }}>
-      <rect x="20" y="16" rx="3" ry="3" width="251" height="25" />
+      <rect x="20" y="20" rx="3" ry="3" width="251" height="25" />
       <rect x="20" y="56" rx="3" ry="3" width="62" height="16" />
       <rect x="20" y="88" rx="3" ry="3" width="410" height="10" />
       <rect x="20" y="106" rx="3" ry="3" width="380" height="10" />

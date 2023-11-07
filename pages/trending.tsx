@@ -37,13 +37,17 @@ const Trending = ({ data, query }) => {
           ))
         ) : (
           <View style={styles.noResultWrapper}>
-            <Image style={styles.noResultImg} source={require('../assets/notfound.png')} />
+            <Image
+              style={styles.noResultImg}
+              source={require('../assets/notfound.png')}
+              alt="No results"
+            />
             <H4>Nothing was found!</H4>
           </View>
         )}
         <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-          Unfortunately that's all, what's trending now. Want to explore more libraries? Check out
-          the{' '}
+          Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
+          Check out the{' '}
           <A href={urlWithQuery('/', {})} target="_self">
             directory home page
           </A>

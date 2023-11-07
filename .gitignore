@@ -40,3 +40,6 @@ build/
 
 # IDEs
 .idea
+
+# TS build files
+tsconfig.tsbuildinfo

@@ -50,18 +50,18 @@ const Scoring = () => {
       />
       <ContentContainer style={styles.container}>
         <P style={[styles.paragraph, styles.callout, calloutStyle]}>
-          Directory scores are subjective and are based on data that's readily available on GitHub
-          and npm. They are not a perfect scores and may not reflect quality for your specific
-          needs. When evaluating libraries to include in your project, review the library yourself
-          to determine if it's a good fit.
+          Directory scores are subjective and are based on data that&apos;s readily available on
+          GitHub and npm. They are not a perfect scores and may not reflect quality for your
+          specific needs. When evaluating libraries to include in your project, review the library
+          yourself to determine if it&apos;s a good fit.
         </P>
         <H2 style={[styles.subHeader, textColorStyle]}>Directory Score</H2>
         <P style={[styles.paragraph, textColorStyle]}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
-          library. A library can earn value by exhibiting "good behavior criteria" and can lose
-          value by exhibiting "bad behavior criteria". These criteria and their corresponding
-          weights are detailed below. You can see the code this directory uses to create Directory
-          Scores{' '}
+          library. A library can earn value by exhibiting &quot;good behavior criteria&quot; and can
+          lose value by exhibiting &quot;bad behavior criteria&quot;. These criteria and their
+          corresponding weights are detailed below. You can see the code this directory uses to
+          create Directory Scores{' '}
           <A href="https://github.com/react-native-directory/website/blob/main/scripts/calculate-score.js">
             here
           </A>
@@ -69,7 +69,7 @@ const Scoring = () => {
         </P>
         <H2 style={[styles.subHeader, textColorStyle]}>Directory Score criteria</H2>
         <P style={[styles.paragraph, textColorStyle]}>
-          The following criteria are used to calculate a library's Directory Score.
+          The following criteria are used to calculate a library&apos;s Directory Score.
         </P>
         <ScoringCriterion headline="Very popular" score={40}>
           Libraries with a combined popularity score of over 10,000 meet this criterion.
@@ -139,7 +139,7 @@ const Scoring = () => {
         </P>
         <H2 style={[styles.subHeader, textColorStyle]}>Popularity Score criteria</H2>
         <P style={[styles.paragraph, textColorStyle]}>
-          The following criteria are used to calculate a library's final Popularity Score.
+          The following criteria are used to calculate a library&apos;s final Popularity Score.
         </P>
         <ScoringCriterion headline="Popularity Gain">
           A base for the library score, it compares the monthly downloads count with weekly
@@ -160,7 +160,7 @@ const Scoring = () => {
           Libraries with less than 25 starts on GitHub meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="No longer maintained" score={-25}>
-          Libraries that are marked with "unmaintained" flag meet this criterion.
+          Libraries that are marked with &quot;unmaintained&quot; flag meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Very fresh package" score={-30}>
           Libraries that first version was published less that 3 days ago meet this criterion.

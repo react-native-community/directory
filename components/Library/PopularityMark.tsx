@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, P, A } from '../../common/styleguide';

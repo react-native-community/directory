@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -16,8 +16,7 @@ type Props = {
   total: number;
 };
 
-const Search = (props: Props) => {
-  const { query, total } = props;
+const Search = ({ query, total }: Props) => {
   const [isFilterVisible, setFilterVisible] = useState(false);
   const callback = useDebouncedCallback((text: string) => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
@@ -110,6 +109,7 @@ const styles = StyleSheet.create({
   searchIcon: {
     position: 'absolute',
     left: 16,
+    pointerEvents: 'none',
   },
   resultsContainer: {
     marginTop: 8,

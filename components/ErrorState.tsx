@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import Navigation from './Navigation';
@@ -9,7 +8,7 @@ const ErrorState = ({ statusCode }) => {
     <>
       <Navigation noHeader />
       <View style={styles.container}>
-        <Image style={styles.img} source={require('../assets/notfound.png')} />
+        <Image style={styles.img} source={require('../assets/notfound.png')} alt="No results" />
         <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
         <P style={[styles.text, styles.secondLine]}>
           Help fix it? Submit a PR to the{' '}

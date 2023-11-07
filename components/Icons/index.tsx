@@ -1,4 +1,3 @@
-import React from 'react';
 import { Path, Svg } from 'react-native-svg';
 
 import { colors } from '../../common/styleguide';
@@ -9,8 +8,7 @@ type Props = {
   height?: number;
 };
 
-export function Search(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Search({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 19} height={height || 19} viewBox="0 0 19 19" fill="none">
       <Path
@@ -23,8 +21,7 @@ export function Search(props: Props) {
   );
 }
 
-export function Star(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Star({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 20} height={height || 19} viewBox="0 0 20 19" fill="none">
       <Path
@@ -37,8 +34,7 @@ export function Star(props: Props) {
   );
 }
 
-export function Web(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Web({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 18} height={height || 19} viewBox="0 0 18 19" fill="none">
       <Path
@@ -63,8 +59,7 @@ export function Web(props: Props) {
   );
 }
 
-export function Arrow(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Arrow({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 9} height={height || 16} viewBox="0 0 9 16" fill="none">
       <Path
@@ -77,8 +72,7 @@ export function Arrow(props: Props) {
   );
 }
 
-export function Badge(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Badge({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 20} height={height || 26} viewBox="0 0 20 26" fill="none">
       <Path
@@ -97,8 +91,7 @@ export function Badge(props: Props) {
   );
 }
 
-export function Calendar(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Calendar({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 16} height={height || 18} viewBox="0 0 16 18" fill="none">
       <Path
@@ -111,8 +104,7 @@ export function Calendar(props: Props) {
   );
 }
 
-export function Check(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Check({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 19} height={height || 13} viewBox="0 0 19 13" fill="none">
       <Path
@@ -125,8 +117,7 @@ export function Check(props: Props) {
   );
 }
 
-export function Download(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Download({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 13} height={height || 16} viewBox="0 0 13 16" fill="none">
       <Path
@@ -139,8 +130,7 @@ export function Download(props: Props) {
   );
 }
 
-export function Filter(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Filter({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 21} height={height || 18} viewBox="0 0 21 18" fill="none">
       <Path
@@ -153,8 +143,7 @@ export function Filter(props: Props) {
   );
 }
 
-export function Issue(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Issue({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 19} height={height || 19} viewBox="0 0 19 19" fill="none">
       <Path
@@ -173,8 +162,7 @@ export function Issue(props: Props) {
   );
 }
 
-export function Eye(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Eye({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 22} height={height || 22} viewBox="0 0 24 24" fill="none">
       <Path
@@ -185,8 +173,7 @@ export function Eye(props: Props) {
   );
 }
 
-export function Logo(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Logo({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 25} height={height || 22} viewBox="0 0 25 22" fill="none">
       <Path
@@ -197,8 +184,7 @@ export function Logo(props: Props) {
   );
 }
 
-export function Plus(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Plus({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">
       <Path fillRule="evenodd" clipRule="evenodd" d="M.114 7.12H15.57v2H.114v-2z" fill={fill} />
@@ -207,8 +193,7 @@ export function Plus(props: Props) {
   );
 }
 
-export function Sort(props: Props) {
-  const { width, height, fill = colors.black } = props;
+export function Sort({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">
       <Path
@@ -286,8 +271,7 @@ export function Warning({ width = 17, height = 17, fill = colors.warningDark }: 
   );
 }
 
-export function TypeScript(props: Props) {
-  const { width = 16, height = 16, fill = colors.black } = props;
+export function TypeScript({ width = 16, height = 16, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
       <Path
@@ -298,8 +282,7 @@ export function TypeScript(props: Props) {
   );
 }
 
-export function PlatformTvOS(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformTvOS({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <Path d="M3 5h18v12H3z" opacity=".3" fill={fill} />
@@ -311,8 +294,7 @@ export function PlatformTvOS(props: Props) {
   );
 }
 
-export function PlatformMacOS(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformMacOS({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <Path d="M4 5h16v11H4z" opacity=".3" fill={fill} />
@@ -324,8 +306,7 @@ export function PlatformMacOS(props: Props) {
   );
 }
 
-export function PlatformIOS(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformIOS({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 18 18" fill="none">
       <Path d="M5 2.5h8v13H5v-13z" opacity=".3" fill={fill} />
@@ -337,8 +318,7 @@ export function PlatformIOS(props: Props) {
   );
 }
 
-export function PlatformAndroid(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformAndroid({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <Path
@@ -349,8 +329,7 @@ export function PlatformAndroid(props: Props) {
   );
 }
 
-export function PlatformWeb(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformWeb({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
       <rect height="3.5" opacity=".3" width="10.5" x="4" y="9" fill={fill} />
@@ -364,8 +343,7 @@ export function PlatformWeb(props: Props) {
   );
 }
 
-export function PlatformWindows(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformWindows({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 32 32" fill="none">
       <path
@@ -376,8 +354,7 @@ export function PlatformWindows(props: Props) {
   );
 }
 
-export function PlatformExpo(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function PlatformExpo({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 22" fill="none">
       <path
@@ -388,8 +365,7 @@ export function PlatformExpo(props: Props) {
   );
 }
 
-export function ReactLogo(props: Props) {
-  const { width = 18, height = 18, fill = colors.black } = props;
+export function ReactLogo({ width = 18, height = 18, fill = colors.black }: Props) {
   return (
     <Svg width={width} height={height} viewBox="0 0 512 512" fill="none">
       <path

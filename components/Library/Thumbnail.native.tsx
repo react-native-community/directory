@@ -1,1 +1,3 @@
-export default () => null;
+const NotImplemented = () => null;
+
+export default NotImplemented;

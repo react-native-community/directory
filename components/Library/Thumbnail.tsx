@@ -1,5 +1,5 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
-import React, { useContext, memo, useState } from 'react';
+import { useContext, memo, useState } from 'react';
 import { ActivityIndicator, useWindowDimensions } from 'react-native';
 
 import { colors, darkColors } from '../../common/styleguide';

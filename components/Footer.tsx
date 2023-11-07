@@ -1,4 +1,4 @@
-import React, { FunctionComponent, SVGAttributes, useContext } from 'react';
+import { FunctionComponent, SVGAttributes, createElement, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import ContentContainer from './ContentContainer';
@@ -46,7 +46,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
           : { borderLeftColor, borderLeftWidth: StyleSheet.hairlineWidth },
         style,
       ]}>
-      {React.createElement(Icon, { fill: iconColor, width: 32, height: 32 })}
+      {createElement(Icon, { fill: iconColor, width: 32, height: 32 })}
       <P style={styles.platformName}>{name}</P>
       <A href={url} style={packageNameStyles} hoverStyle={packageNameHoverStyle}>
         {pkgName}
@@ -125,7 +125,8 @@ const Footer = () => {
           <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>
             <A
               href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
-              style={styles.bannerLink}>
+              style={styles.bannerLink}
+              aria-label="Vercel banner">
               <VercelBanner />
             </A>
           </View>

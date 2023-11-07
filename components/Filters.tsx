@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import * as React from 'react';
 import { useContext } from 'react';
 import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
 

@@ -1,7 +1,8 @@
 import * as HtmlElements from '@expo/html-elements';
-import React, { PropsWithChildren, PropsWithRef, useContext, useRef } from 'react';
-import { StyleSheet, TextStyle } from 'react-native';
-import { useHover, useDimensions } from 'react-native-web-hooks';
+import Link from 'next/link';
+import { PropsWithChildren, PropsWithRef, useContext, useRef } from 'react';
+import { StyleSheet, TextStyle, View } from 'react-native';
+import { useHover, useDimensions, useActive } from 'react-native-web-hooks';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
@@ -80,18 +81,17 @@ type TextStyles = TextStyle | TextStyle[];
 type TextProps = PropsWithRef<
   PropsWithChildren<{
     style?: TextStyles;
-    nativeID?: string;
+    id?: string;
     numberOfLines?: number;
   }>
 >;
 
 const createTextComponent = (Element: any, textStyle?: TextStyles) => {
-  return (props: TextProps) => {
+  const TextComponent = ({ children, style, id, numberOfLines }: TextProps) => {
     const { isDark } = useContext(CustomAppearanceContext);
-    const { children, style, nativeID, numberOfLines } = props;
     return (
       <Element
-        nativeID={nativeID}
+        id={id}
         numberOfLines={numberOfLines}
         style={[
           textStyles[Element],
@@ -103,6 +103,10 @@ const createTextComponent = (Element: any, textStyle?: TextStyles) => {
       </Element>
     );
   };
+
+  TextComponent.displayName = `TextComponent(${Element.displayName ?? Element.name ?? 'Unknown'})`;
+
+  return TextComponent;
 };
 
 export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
@@ -127,32 +131,65 @@ export const A = ({ href, target = '_blank', children, style, hoverStyle, ...res
   const { isDark } = useContext(CustomAppearanceContext);
   const linkRef = useRef();
   const isHovered = useHover(linkRef);
-  const anchorStyles = getAnchorStyles(isDark);
+
+  const linkStyles = getLinkStyles(isDark);
+  const linkHoverStyles = getLinkHoverStyles(isDark);
+
+  if (target === '_self' && !href.startsWith('#')) {
+    return (
+      <Link
+        {...rest}
+        href={href}
+        style={{
+          ...linkStyles,
+          ...(isHovered && linkHoverStyles),
+          ...(style as any),
+          ...(isHovered && hoverStyle),
+        }}
+        ref={linkRef}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <HtmlElements.A
       {...rest}
       href={href}
       target={target}
-      style={[anchorStyles.a, isHovered && anchorStyles.aHovered, style, isHovered && hoverStyle]}
+      style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}
       ref={linkRef}>
       {children}
     </HtmlElements.A>
   );
 };
 
-const getAnchorStyles = isDark =>
-  StyleSheet.create({
-    a: {
-      color: isDark ? colors.white : colors.black,
-      backgroundColor: isDark ? darkColors.powder : colors.powder,
-      textDecorationColor: isDark ? darkColors.pewter : colors.pewter,
-      textDecorationLine: 'underline',
-      fontFamily: 'inherit',
-    },
-    aHovered: {
-      backgroundColor: isDark ? colors.primaryDark : colors.sky,
-      color: isDark ? darkColors.dark : colors.black,
-      textDecorationColor: isDark ? darkColors.powder : colors.black,
-    },
-  });
+const getLinkStyles = (isDark: boolean) => ({
+  color: isDark ? colors.white : colors.black,
+  backgroundColor: isDark ? darkColors.powder : colors.powder,
+  textDecorationColor: isDark ? darkColors.pewter : colors.pewter,
+  textDecorationLine: 'underline',
+  fontFamily: 'inherit',
+});
+
+const getLinkHoverStyles = (isDark: boolean) => ({
+  backgroundColor: isDark ? colors.primaryDark : colors.sky,
+  color: isDark ? darkColors.dark : colors.black,
+  textDecorationColor: isDark ? darkColors.powder : colors.black,
+});
+
+export const HoverEffect = ({ children }) => {
+  const ref = useRef();
+  const isHovered = useHover(ref);
+  const isActive = useActive(ref);
+
+  return (
+    <View
+      ref={ref}
+      style={[isHovered && { opacity: 0.8 }, isActive && { opacity: 0.5 }]}
+      focusable={false}
+      accessible={false}>
+      {children}
+    </View>
+  );
+};

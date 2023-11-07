@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useContext } from 'react';
-import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { Arrow } from './Icons';
-import { colors, Caption, darkColors } from '../common/styleguide';
+import { colors, Caption, darkColors, HoverEffect } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import { NUM_PER_PAGE } from '../util/Constants';
@@ -25,8 +25,6 @@ const Pagination = ({ query, total, style }: Props) => {
 
   const backDisabled = currentPage <= 1;
   const forwardDisabled = currentPage >= totalPages;
-
-  console.warn(currentOffset);
 
   const backArrow = isDark => (
     <View
@@ -60,14 +58,14 @@ const Pagination = ({ query, total, style }: Props) => {
       {backDisabled ? (
         backArrow(isDark)
       ) : (
-        // @ts-ignore
-        <TouchableOpacity focusable={false}>
+        <HoverEffect>
           <Link
             href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}
-            style={{ borderRadius: 4 }}>
+            style={{ borderRadius: 4 }}
+            aria-label="Previous page">
             {backArrow(isDark)}
           </Link>
-        </TouchableOpacity>
+        </HoverEffect>
       )}
 
       <Caption style={styles.text}>
@@ -76,20 +74,20 @@ const Pagination = ({ query, total, style }: Props) => {
       {forwardDisabled ? (
         forwardArrow(isDark)
       ) : (
-        // @ts-ignore
-        <TouchableOpacity focusable={false}>
+        <HoverEffect>
           <Link
             href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}
-            style={{ borderRadius: 4 }}>
+            style={{ borderRadius: 4 }}
+            aria-label="Next page">
             {forwardArrow(isDark)}
           </Link>
-        </TouchableOpacity>
+        </HoverEffect>
       )}
     </View>
   );
 };
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -107,7 +105,7 @@ let styles = StyleSheet.create({
     borderRadius: 4,
   },
   rotate: {
-    transform: [{ rotate: '180deg' }],
+    transform: 'rotate(180deg)',
   },
   disabled: {
     opacity: 0.5,

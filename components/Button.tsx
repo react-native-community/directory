@@ -1,8 +1,8 @@
 import { A } from '@expo/html-elements';
 import { PropsWithChildren, useContext } from 'react';
-import { StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
+import { StyleSheet, TextStyle, Pressable } from 'react-native';
 
-import { colors, darkColors, P } from '../common/styleguide';
+import { colors, darkColors, HoverEffect, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type Props = PropsWithChildren & {
@@ -27,20 +27,20 @@ export function Button(props: Props) {
 
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
-  return isLink ? (
-    <A
-      href={href}
-      style={{ borderRadius: 4 }}
-      {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-      {/* @ts-ignore `focusable` should not work here, but it does... */}
-      <TouchableOpacity focusable={false} style={linkStyle} accessible={false}>
-        {content}
-      </TouchableOpacity>
-    </A>
-  ) : (
-    <TouchableOpacity onPress={onPress} style={linkStyle}>
-      {content}
-    </TouchableOpacity>
+  return (
+    <HoverEffect>
+      {isLink ? (
+        <A href={href} style={{ borderRadius: 4 }} {...(openInNewTab ? { target: '_blank' } : {})}>
+          <Pressable focusable={false} style={linkStyle} accessible={false}>
+            {content}
+          </Pressable>
+        </A>
+      ) : (
+        <Pressable onPress={onPress} style={linkStyle}>
+          {content}
+        </Pressable>
+      )}
+    </HoverEffect>
   );
 }
 

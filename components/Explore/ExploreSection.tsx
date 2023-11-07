@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import React, { useContext } from 'react';
+import { createElement, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, H3, P } from '../../common/styleguide';
@@ -72,9 +72,9 @@ const ExploreSection = ({
 
   return (
     <>
-      <H3 style={styles.subHeader} nativeID={hashLink}>
+      <H3 style={styles.subHeader} id={hashLink}>
         <View style={styles.subHeaderIcon}>
-          {React.createElement(icon, { fill: color, width: 30, height: 30 })}
+          {createElement(icon, { fill: color, width: 30, height: 30 })}
         </View>
         <A
           href={`#${hashLink}`}
