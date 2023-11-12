@@ -3280,7 +3280,10 @@
     "android": true,
     "expo": true,
     "web": true,
-    "examples": ["https://snack.expo.dev/@seniv/react-native-notifer-example"]
+    "examples": [
+      "https://snack.expo.dev/@seniv/react-native-notifer-example",
+      "https://github.com/seniv/react-native-notifier/tree/master/example"
+    ]
   },
   {
     "githubUrl": "https://github.com/react-ui-kit/expo-ui-kit",
@@ -10146,5 +10149,51 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hoanglam10499/react-native-drop-shadow",
+    "examples": ["https://github.com/hoanglam10499/react-native-drop-shadow/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hoanglam10499/react-native-drop-shadow/master/img/main.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/expo-camera-characteristics",
+    "npmPkg": "@appandflow/expo-camera-characteristics",
+    "examples": ["https://github.com/AppAndFlow/expo-camera-characteristics/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/PedroBern/react-native-collapsible-tab-view",
+    "examples": [
+      "https://github.com/PedroBern/react-native-collapsible-tab-view/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/PedroBern/react-native-collapsible-tab-view/main/demo/default.gif",
+      "https://raw.githubusercontent.com/PedroBern/react-native-collapsible-tab-view/main/demo/diffClamp.gif",
+      "https://raw.githubusercontent.com/PedroBern/react-native-collapsible-tab-view/main/demo/snap.gif",
+      "https://raw.githubusercontent.com/PedroBern/react-native-collapsible-tab-view/main/demo/diffClamp_snap.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/phamfoo/react-native-easing-gradient",
+    "examples": ["https://github.com/phamfoo/react-native-easing-gradient/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/phamfoo/react-native-easing-gradient/main/demo.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/andrei-zgirvaci/expo-stable-diffusion",
+    "examples": ["https://github.com/andrei-zgirvaci/expo-stable-diffusion/tree/main/example"],
+    "images": ["https://i.imgur.com/1KaxBff.jpg"],
+    "ios": true
   }
 ]
