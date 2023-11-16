@@ -10195,5 +10195,13 @@
     "examples": ["https://github.com/andrei-zgirvaci/expo-stable-diffusion/tree/main/example"],
     "images": ["https://i.imgur.com/1KaxBff.jpg"],
     "ios": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/DevVibhor/react-native-bullet-graph",
+    "images": [
+      "https://raw.githubusercontent.com/DevVibhor/react-native-bullet-graph/main/images/react-native-bullet-graph-android.png"
+    ],
+    "ios": true,
+    "android": true
+  },
 ]
