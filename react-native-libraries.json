@@ -10195,5 +10195,14 @@
     "examples": ["https://github.com/andrei-zgirvaci/expo-stable-diffusion/tree/main/example"],
     "images": ["https://i.imgur.com/1KaxBff.jpg"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/dimaportenko/react-native-liquid-gauge",
+    "npmPkg": "react-native-liquid-gauge",
+    "examples": ["https://github.com/dimaportenko/react-native-liquid-gauge/tree/main/example"],
+    "images": ["https://github.com/dimaportenko/react-native-liquid-gauge/blob/main/docs/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
