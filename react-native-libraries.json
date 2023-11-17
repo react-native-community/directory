@@ -10197,10 +10197,18 @@
     "ios": true
   },
   {
+    "githubUrl": "https://github.com/DevVibhor/react-native-bullet-graph",
+    "images": [
+      "https://raw.githubusercontent.com/DevVibhor/react-native-bullet-graph/main/images/react-native-bullet-graph-android.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/dimaportenko/react-native-liquid-gauge",
-    "npmPkg": "react-native-liquid-gauge",
     "examples": ["https://github.com/dimaportenko/react-native-liquid-gauge/tree/main/example"],
-    "images": ["https://github.com/dimaportenko/react-native-liquid-gauge/blob/main/docs/demo.gif"],
+    "images": ["https://raw.githubusercontent.com/dimaportenko/react-native-liquid-gauge/main/docs/demo.gif"],
     "ios": true,
     "android": true,
     "expo": true
