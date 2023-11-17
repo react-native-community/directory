@@ -10204,5 +10204,13 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/dimaportenko/react-native-liquid-gauge",
+    "examples": ["https://github.com/dimaportenko/react-native-liquid-gauge/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/dimaportenko/react-native-liquid-gauge/main/docs/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
