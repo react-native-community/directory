@@ -1,5 +1,5 @@
 import { Picker } from '@react-native-picker/picker';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useHover } from 'react-native-web-hooks';
@@ -59,20 +59,20 @@ export const SortButton = ({ query: { order, direction }, query }: SortButtonPro
     direction ?? 'descending'
   );
   const { isDark } = useContext(CustomAppearanceContext);
-  const router = useRouter();
 
   const sortIconRef = useRef();
   const isSortIconHovered = useHover(sortIconRef);
 
   useEffect(() => {
-    router.push(
-      urlWithQuery('/', {
-        ...query,
-        order: sortValue !== 'relevance' ? sortValue : undefined,
-        direction: sortDirection !== 'descending' ? sortDirection : undefined,
-        offset: null,
-      })
-    );
+    const url = urlWithQuery('/', {
+      ...query,
+      order: sortValue !== 'relevance' ? sortValue : undefined,
+      direction: sortDirection !== 'descending' ? sortDirection : undefined,
+      offset: null,
+    });
+    if (url !== Router.pathname) {
+      Router.push(url);
+    }
   }, [sortValue, sortDirection]);
 
   return (
