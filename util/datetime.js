@@ -18,16 +18,16 @@ export const getTimeSinceToday = date => {
     elapsed < MINUTE
       ? [Math.round(elapsed), 'second']
       : elapsed < HOUR
-      ? [Math.round(elapsed / MINUTE), 'minute']
-      : elapsed < DAY
-      ? [Math.round(elapsed / HOUR), 'hour']
-      : elapsed < WEEK
-      ? [Math.round(elapsed / DAY), 'day']
-      : elapsed < MONTH
-      ? [Math.round(elapsed / WEEK), 'week']
-      : elapsed < YEAR
-      ? [Math.round(elapsed / MONTH), 'month']
-      : [Math.round(elapsed / YEAR), 'year'];
+        ? [Math.round(elapsed / MINUTE), 'minute']
+        : elapsed < DAY
+          ? [Math.round(elapsed / HOUR), 'hour']
+          : elapsed < WEEK
+            ? [Math.round(elapsed / DAY), 'day']
+            : elapsed < MONTH
+              ? [Math.round(elapsed / WEEK), 'week']
+              : elapsed < YEAR
+                ? [Math.round(elapsed / MONTH), 'month']
+                : [Math.round(elapsed / YEAR), 'year'];
 
   return `${value} ${pluralize(unit, value)} ago`;
 };

@@ -29,8 +29,8 @@ const Thumbnail = ({ url }: Props) => {
       ? colors.primary
       : darkColors.pewter
     : showPreview
-    ? colors.primary
-    : undefined;
+      ? colors.primary
+      : undefined;
 
   return (
     <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={open => setShowPreview(open)}>
