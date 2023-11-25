@@ -10218,5 +10218,17 @@
     "npmPkg": "@azesmway/react-native-unity",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/zeego/tree/master/packages/zeego",
+    "examples": ["https://github.com/nandorojo/zeego/tree/master/examples/expo"],
+    "images": [
+      "https://raw.githubusercontent.com/nandorojo/zeego/master/docs/static/img/group.png",
+      "https://raw.githubusercontent.com/nandorojo/zeego/master/docs/static/img/Philosophy.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true
   }
 ]
