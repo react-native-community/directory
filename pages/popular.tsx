@@ -23,6 +23,7 @@ const Popular = ({ data }) => {
       <Navigation
         title="Popular libraries"
         description="Browse most popular recently libraries by platform."
+        path="popular"
       />
       <ContentContainer style={styles.container}>
         <ExploreSection

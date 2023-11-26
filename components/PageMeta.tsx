@@ -9,10 +9,11 @@ const site = {
 type PageMetaProps = {
   title?: string;
   description?: string;
+  path?: string;
   query?: string | string[];
 };
 
-const PageMeta = ({ title, query, description = site.description }: PageMetaProps) => {
+const PageMeta = ({ title, query, path, description = site.description }: PageMetaProps) => {
   const pageTitle = `${title ? title + ' • ' : ''}${site.title}`;
   const parsedQuery = Array.isArray(query) ? query[0] : query;
 
@@ -51,10 +52,17 @@ const PageMeta = ({ title, query, description = site.description }: PageMetaProp
       <meta name="twitter:image" content={socialImage} />
 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14141a" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#20232a" />
 
       <meta name="application-name" content={site.title} />
-      <meta name="msapplication-TileColor" content="#14141a" />
+      <meta name="msapplication-TileColor" content="#20232a" />
+
+      <link rel="canonical" href={`https://reactnative.directory${path ? `/${path}` : ''}`} />
+
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     </Head>
   );
 };

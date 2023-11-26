@@ -10,11 +10,12 @@ import CustomAppearanceContext from '../context/CustomAppearanceContext';
 type NavigationProps = {
   title?: string;
   description?: string;
+  path?: string;
   query?: string | string[];
   noHeader?: boolean;
 };
 
-const Navigation = ({ title, description, query, noHeader = false }: NavigationProps) => {
+const Navigation = ({ title, description, query, path, noHeader = false }: NavigationProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
 
   return (
@@ -25,7 +26,7 @@ const Navigation = ({ title, description, query, noHeader = false }: NavigationP
           backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
         },
       ]}>
-      <PageMeta title={title} description={description} query={query} />
+      <PageMeta title={title} description={description} path={path} query={query} />
       <ContentContainer style={styles.tabsWrapper}>
         <View style={styles.tabsContainer}>
           <NavigationTab title="Explore" path="/" />

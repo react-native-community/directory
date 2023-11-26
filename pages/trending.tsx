@@ -24,6 +24,7 @@ const Trending = ({ data, query }) => {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today."
+        path="trending"
       />
       <ContentContainer style={styles.container}>
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
