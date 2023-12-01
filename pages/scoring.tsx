@@ -47,6 +47,7 @@ const Scoring = () => {
       <Navigation
         title="Scoring"
         description="What are the Directory Score and Popularity Score and how they are calculated?"
+        path="scoring"
       />
       <ContentContainer style={styles.container}>
         <P style={[styles.paragraph, styles.callout, calloutStyle]}>
