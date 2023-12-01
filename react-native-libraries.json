@@ -10230,5 +10230,11 @@
     "android": true,
     "web": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/shyambhongle/react-native-video-duration",
+    "examples": ["https://github.com/shyambhongle/react-native-video-duration/example"],
+    "ios": true,
+    "android": true,
   }
 ]
