@@ -10236,5 +10236,13 @@
     "examples": ["https://github.com/shyambhongle/react-native-video-duration/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/orbital-systems/react-native-esp-idf-provisioning",
+    "npmPkg": "@orbital-systems/react-native-esp-idf-provisioning",
+    "examples": ["https://github.com/orbital-systems/react-native-esp-idf-provisioning/example"],
+    "images": ["https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"],
+    "ios": true,
+    "android": true
   }
 ]
