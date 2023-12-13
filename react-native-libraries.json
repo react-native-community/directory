@@ -10244,5 +10244,12 @@
     "images": ["https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Hector-Chong/native-wechat/issues",
+    "npmPkg": "native-wechat",
+    "examples": ["https://native-wechat.hector.im/guide/getting-started.html"],
+    "ios": true,
+    "android": true
   }
 ]
