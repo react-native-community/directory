@@ -10244,5 +10244,12 @@
     "images": ["https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/OP-Engineering/op-sqlite",
+    "npmPkg": "@op-engineering/op-sqlite",
+    "examples": ["https://github.com/OP-Engineering/op-sqlite/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
