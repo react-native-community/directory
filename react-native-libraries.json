@@ -10246,7 +10246,14 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/Hector-Chong/native-wechat/issues",
+    "githubUrl": "https://github.com/OP-Engineering/op-sqlite",
+    "npmPkg": "@op-engineering/op-sqlite",
+    "examples": ["https://github.com/OP-Engineering/op-sqlite/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Hector-Chong/native-wechat",
     "npmPkg": "native-wechat",
     "examples": ["https://native-wechat.hector.im/guide/getting-started.html"],
     "ios": true,
