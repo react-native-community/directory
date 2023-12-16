@@ -10258,5 +10258,11 @@
     "examples": ["https://native-wechat.hector.im/guide/getting-started.html"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mateoguzmana/react-native-zendesk-unified",
+    "examples": ["https://github.com/mateoguzmana/react-native-zendesk-unified/tree/main/example", "https://github.com/mateoguzmana/ZendeskDemo"],
+    "ios": true,
+    "android": true
   }
 ]
