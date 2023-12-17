@@ -10261,7 +10261,10 @@
   },
   {
     "githubUrl": "https://github.com/mateoguzmana/react-native-zendesk-unified",
-    "examples": ["https://github.com/mateoguzmana/react-native-zendesk-unified/tree/main/example", "https://github.com/mateoguzmana/ZendeskDemo"],
+    "examples": [
+      "https://github.com/mateoguzmana/react-native-zendesk-unified/tree/main/example",
+      "https://github.com/mateoguzmana/ZendeskDemo"
+    ],
     "ios": true,
     "android": true
   }
