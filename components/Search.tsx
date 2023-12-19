@@ -19,7 +19,7 @@ type Props = {
 
 const Search = ({ query, total }: Props) => {
   const [isInputFocused, setInputFocused] = useState(false);
-  const [isFilterVisible, setFilterVisible] = useState(false);
+  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 0);
   const [isApple, setIsApple] = useState<boolean | null>(null);
   const inputRef = useRef(null);
 
