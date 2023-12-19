@@ -72,9 +72,9 @@ const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
   );
 };
 
-export const FilterButton = (props: FilterButtonProps) => {
+export const FilterButton = ({ isFilterVisible, query, onPress }: FilterButtonProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { isFilterVisible, query, onPress } = props;
+
   const params = [
     ...platforms.map(platform => platform.param),
     'hasExample',
@@ -84,7 +84,9 @@ export const FilterButton = (props: FilterButtonProps) => {
     'isPopular',
     'isRecommended',
     'wasRecentlyUpdated',
+    'newArchitecture',
   ];
+
   const filterCount = Object.keys(query).reduce(
     (acc, q) => (params.includes(q) ? acc + 1 : acc),
     0
@@ -100,7 +102,11 @@ export const FilterButton = (props: FilterButtonProps) => {
       ]}>
       <View style={styles.displayHorizontal}>
         <View style={styles.iconContainer}>
-          <FilterIcon fill={isFilterVisible ? colors.gray7 : colors.white} width={14} height={12} />
+          <FilterIcon
+            fill={isFilterVisible ? colors.gray7 : filterCount > 0 ? colors.primary : colors.white}
+            width={14}
+            height={12}
+          />
         </View>
         <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
           Filters{filterCount > 0 ? `: ${filterCount}` : ''}
