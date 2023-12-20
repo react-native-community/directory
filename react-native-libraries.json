@@ -10267,5 +10267,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bugfender/rn-bugfender",
+    "npmPkg": "@bugfender/rn-bugfender",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
