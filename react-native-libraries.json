@@ -10274,5 +10274,11 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/howljs/react-native-auto-route",
+    "examples": ["https://github.com/howljs/react-native-auto-route/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
