@@ -10274,5 +10274,11 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/neurio/react-native-local-network-permission",
+    "npmPkg": "@generac/react-native-local-network-permission",
+    "ios": true,
+    "expo": true
   }
 ]
