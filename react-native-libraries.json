@@ -10276,6 +10276,12 @@
     "web": true
   },
   {
+    "githubUrl": "https://github.com/howljs/react-native-auto-route",
+    "examples": ["https://github.com/howljs/react-native-auto-route/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/neurio/react-native-local-network-permission",
     "npmPkg": "@generac/react-native-local-network-permission",
     "examples": [
