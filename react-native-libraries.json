@@ -10288,5 +10288,11 @@
       "https://github.com/neurio/react-native-local-network-permission/tree/main/example"
     ],
     "ios": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/flixyudh/react-native-flix-snackbar",
+    "npmPkg": "https://www.npmjs.com/package/react-native-flix-snackbar",
+    "ios": true,
+    "android": true,
+  },
 ]
