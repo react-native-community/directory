@@ -8,6 +8,7 @@ import ContentContainer from '../components/ContentContainer';
 import { Filters } from '../components/Filters';
 import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
+import PageMeta from '../components/PageMeta';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../types';
 import getApiUrl from '../util/getApiUrl';
@@ -21,10 +22,14 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <>
+      <PageMeta
+        title="Trending libraries"
+        description="See the libraries that are trending today"
+        path="trending"
+      />
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today."
-        path="trending"
       />
       <ContentContainer style={styles.container}>
         <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />

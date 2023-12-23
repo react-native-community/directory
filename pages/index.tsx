@@ -7,6 +7,7 @@ import { View, StyleSheet } from 'react-native';
 import ContentContainer from '../components/ContentContainer';
 import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
+import PageMeta from '../components/PageMeta';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import { StructuredData } from '../components/StructuredData';
@@ -52,7 +53,8 @@ const Index = ({ data, query }) => {
           },
         }}
       />
-      <Navigation noHeader query={router.query?.search} />
+      <PageMeta query={router.query?.search} />
+      <Navigation noHeader />
       <Search query={router.query} total={total} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />

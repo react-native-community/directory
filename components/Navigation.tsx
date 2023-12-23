@@ -3,19 +3,16 @@ import { StyleSheet, View } from 'react-native';
 
 import ContentContainer from './ContentContainer';
 import NavigationTab from './NavigationTab';
-import PageMeta from './PageMeta';
 import { colors, darkColors, H1, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type NavigationProps = {
   title?: string;
   description?: string;
-  path?: string;
-  query?: string | string[];
   noHeader?: boolean;
 };
 
-const Navigation = ({ title, description, query, path, noHeader = false }: NavigationProps) => {
+const Navigation = ({ title, description, noHeader = false }: NavigationProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
 
   return (
@@ -26,7 +23,6 @@ const Navigation = ({ title, description, query, path, noHeader = false }: Navig
           backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
         },
       ]}>
-      <PageMeta title={title} description={description} path={path} query={query} />
       <ContentContainer style={styles.tabsWrapper}>
         <View style={styles.tabsContainer}>
           <NavigationTab title="Explore" path="/" />
