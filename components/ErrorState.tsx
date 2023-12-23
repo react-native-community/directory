@@ -1,11 +1,13 @@
 import { Image, StyleSheet, View } from 'react-native';
 
 import Navigation from './Navigation';
+import PageMeta from './PageMeta';
 import { H2, A, P } from '../common/styleguide';
 
 const ErrorState = ({ statusCode }) => {
   return (
     <>
+      <PageMeta title="Error" description="Uh oh, something went wrong" />
       <Navigation noHeader />
       <View style={styles.container}>
         <Image style={styles.img} source={require('../assets/notfound.png')} alt="No results" />

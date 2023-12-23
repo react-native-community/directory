@@ -5,6 +5,7 @@ import { H2, P, Headline, A, colors, darkColors } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import PopularityMark from '../components/Library/PopularityMark';
 import Navigation from '../components/Navigation';
+import PageMeta from '../components/PageMeta';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 const ScoringCriterion = ({ children, headline, score = undefined }) => {
@@ -44,10 +45,14 @@ const Scoring = () => {
 
   return (
     <>
+      <PageMeta
+        title="Scoring"
+        description="What are the Directory Score and Popularity Score and how they are calculated"
+        path="popular"
+      />
       <Navigation
         title="Scoring"
         description="What are the Directory Score and Popularity Score and how they are calculated?"
-        path="scoring"
       />
       <ContentContainer style={styles.container}>
         <P style={[styles.paragraph, styles.callout, calloutStyle]}>

@@ -14,16 +14,21 @@ import {
   ReactLogo,
 } from '../components/Icons';
 import Navigation from '../components/Navigation';
+import PageMeta from '../components/PageMeta';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
 const Popular = ({ data }) => {
   return (
     <>
+      <PageMeta
+        title="Popular libraries"
+        description="Browse most popular recently libraries by platform"
+        path="popular"
+      />
       <Navigation
         title="Popular libraries"
         description="Browse most popular recently libraries by platform."
-        path="popular"
       />
       <ContentContainer style={styles.container}>
         <ExploreSection
