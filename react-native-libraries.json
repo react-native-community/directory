@@ -10296,5 +10296,13 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Splicer97/react-native-switch",
+    "examples": ["https://github.com/Splicer97/react-native-switch/tree/main/example"],
+    "npmPkg": "@splicer97/react-native-switch",
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
