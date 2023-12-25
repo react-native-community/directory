@@ -10313,5 +10313,14 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-release-profiler",
+    "examples":[
+      "https://github.com/margelo/react-native-release-profiler/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
