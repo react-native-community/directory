@@ -10304,5 +10304,14 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/bviebahn/react-native-star-rating-widget",
+    "examples":[
+      "https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
