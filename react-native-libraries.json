@@ -10298,8 +10298,15 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/Splicer97/react-native-switch",
+    "examples": ["https://github.com/Splicer97/react-native-switch/tree/main/example"],
+    "npmPkg": "@splicer97/react-native-switch",
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
     "githubUrl": "https://github.com/bviebahn/react-native-star-rating-widget",
-    "npmPkg": "react-native-star-rating-widget",
     "examples":[
       "https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"
     ],
