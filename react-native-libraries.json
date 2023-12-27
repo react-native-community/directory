@@ -10291,7 +10291,7 @@
   },
   {
     "githubUrl": "https://github.com/flixyudh/react-native-flix-snackbar",
-    "examples":[
+    "examples": [
       "https://github.com/flixyudh/react-native-flix-snackbar/tree/main/example"
     ],
     "ios": true,
@@ -10307,7 +10307,7 @@
   },
   {
     "githubUrl": "https://github.com/bviebahn/react-native-star-rating-widget",
-    "examples":[
+    "examples": [
       "https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"
     ],
     "ios": true,
@@ -10316,11 +10316,19 @@
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-release-profiler",
-    "examples":[
+    "examples": [
       "https://github.com/margelo/react-native-release-profiler/tree/main/example"
     ],
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/outsung/expo-dynamic-app-icon",
+    "examples": [
+      "https://github.com/outsung/expo-dynamic-app-icon/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
