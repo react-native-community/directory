@@ -10340,5 +10340,18 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "nameOverride": "react-native-image-preview-reanimated",
+    "githubUrl": "https://github.com/sbaiahmed1/react-native-image-preview",
+    "examples": [
+      "https://github.com/sbaiahmed1/react-native-image-preview/tree/main/example"
+    ],
+    "npmPkg":"@sbaiahmed1/react-native-image-preview-reanimated",
+    "images": ["https://raw.githubusercontent.com/sbaiahmed1/react-native-image-preview/main/example/PreviewModal.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
