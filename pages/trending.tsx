@@ -1,11 +1,12 @@
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
 import { A, H4, colors, darkColors, P } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import { Filters } from '../components/Filters';
+import { FilterButton } from '../components/Filters/FilterButton';
 import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
 import PageMeta from '../components/PageMeta';
@@ -19,7 +20,9 @@ const LibraryWithLoading = dynamic(() => import('../components/Library'), {
 });
 
 const Trending = ({ data, query }) => {
+  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 0);
   const { isDark } = useContext(CustomAppearanceContext);
+
   return (
     <>
       <PageMeta
@@ -29,10 +32,18 @@ const Trending = ({ data, query }) => {
       />
       <Navigation
         title="Trending libraries"
-        description="See the libraries that are trending today."
-      />
+        description="See the libraries that are trending today.">
+        <View style={{ width: 160, marginHorizontal: 'auto', marginTop: 12 }}>
+          <FilterButton
+            style={{ height: 32 }}
+            query={query}
+            onPress={() => setFilterVisible(!isFilterVisible)}
+            isFilterVisible={isFilterVisible}
+          />
+        </View>
+      </Navigation>
+      {isFilterVisible && <Filters query={query} basePath="/trending" />}
       <ContentContainer style={styles.container}>
-        <Filters query={query} basePath="/trending" style={styles.filtersWrapper} />
         {data.length ? (
           data.map((item: LibraryType, index: number) => (
             <LibraryWithLoading
@@ -83,13 +94,9 @@ Trending.getInitialProps = async (ctx: NextPageContext) => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 32,
     paddingHorizontal: 16,
     paddingVertical: 12,
-  },
-  filtersWrapper: {
-    backgroundColor: 'transparent',
-    marginBottom: 16,
-    paddingTop: 0,
   },
   note: {
     padding: 24,

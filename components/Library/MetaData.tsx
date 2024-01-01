@@ -142,7 +142,7 @@ const generateData = (library: LibraryType, secondary: boolean, isDark: boolean)
         icon: <Star fill={iconColor} />,
         content: (
           <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
-            <Caption>{github.stats.stars.toLocaleString()} stars</Caption>
+            {github.stats.stars.toLocaleString()} stars
           </A>
         ),
       },

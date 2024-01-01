@@ -55,7 +55,7 @@ const getPopularityGrade = popularity => {
   } else if (popularity > 0) {
     return 'Trending';
   } else {
-    return 'In shadow';
+    return 'Declining';
   }
 };
 

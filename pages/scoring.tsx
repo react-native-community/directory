@@ -210,6 +210,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   criterionScore: {
+    // @ts-ignore
     float: 'left',
     marginRight: 16,
     width: 44,

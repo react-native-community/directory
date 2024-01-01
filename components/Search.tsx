@@ -3,7 +3,8 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Filters, FilterButton } from './Filters';
+import { Filters } from './Filters';
+import { FilterButton } from './Filters/FilterButton';
 import { Search as SearchIcon } from './Icons';
 import { SortButton } from './Sort';
 import { layout, colors, P, darkColors, useLayout, Label } from '../common/styleguide';
@@ -193,6 +194,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.white,
     fontFamily: 'inherit',
+    // @ts-ignore
     outlineOffset: -2,
   },
   searchIcon: {

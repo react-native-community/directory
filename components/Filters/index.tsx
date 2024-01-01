@@ -1,119 +1,16 @@
-import Link from 'next/link';
 import { useContext } from 'react';
-import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 
-import { Button } from './Button';
-import { CheckBox } from './CheckBox';
-import { Filter as FilterIcon } from './Icons';
-import { colors, P, Headline, layout, darkColors } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Query } from '../types';
-import urlWithQuery from '../util/urlWithQuery';
+import { ToggleLink } from './ToggleLink';
+import { FILTER_PLATFORMS } from './helpers';
+import { colors, Headline, layout, darkColors } from '../../common/styleguide';
+import CustomAppearanceContext from '../../context/CustomAppearanceContext';
+import { Query } from '../../types';
 
 type FiltersProps = {
   query: Query;
   style?: ViewStyle | ViewStyle[];
   basePath?: string;
-};
-
-type FilterButtonProps = {
-  query: Query;
-  onPress: () => void;
-  isFilterVisible: boolean;
-};
-
-const platforms = [
-  {
-    param: 'android',
-    title: 'Android',
-  },
-  {
-    param: 'expo',
-    title: 'Expo Go',
-  },
-  {
-    param: 'ios',
-    title: 'iOS',
-  },
-  {
-    param: 'macos',
-    title: 'macOS',
-  },
-  {
-    param: 'tvos',
-    title: 'tvOS',
-  },
-  {
-    param: 'web',
-    title: 'Web',
-  },
-  {
-    param: 'windows',
-    title: 'Windows',
-  },
-];
-
-const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
-  const isSelected = !!query[paramName];
-
-  return (
-    <Link
-      href={urlWithQuery(basePath, {
-        ...query,
-        [paramName]: !isSelected,
-        offset: null,
-      })}
-      style={{ textDecoration: 'none' }}>
-      <View style={styles.link}>
-        <CheckBox value={isSelected} color={colors.primaryDark} />
-        <P style={{ fontSize: 14 }}>{title}</P>
-      </View>
-    </Link>
-  );
-};
-
-export const FilterButton = ({ isFilterVisible, query, onPress }: FilterButtonProps) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const params = [
-    ...platforms.map(platform => platform.param),
-    'hasExample',
-    'hasImage',
-    'hasTypes',
-    'isMaintained',
-    'isPopular',
-    'isRecommended',
-    'wasRecentlyUpdated',
-    'newArchitecture',
-  ];
-
-  const filterCount = Object.keys(query).reduce(
-    (acc, q) => (params.includes(q) ? acc + 1 : acc),
-    0
-  );
-
-  return (
-    <Button
-      onPress={onPress}
-      style={[
-        styles.button,
-        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
-        isFilterVisible && styles.activeButton,
-      ]}>
-      <View style={styles.displayHorizontal}>
-        <View style={styles.iconContainer}>
-          <FilterIcon
-            fill={isFilterVisible ? colors.gray7 : filterCount > 0 ? colors.primary : colors.white}
-            width={14}
-            height={12}
-          />
-        </View>
-        <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
-          Filters{filterCount > 0 ? `: ${filterCount}` : ''}
-        </P>
-      </View>
-    </Button>
-  );
 };
 
 export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
@@ -131,7 +28,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
       <View style={styles.container}>
         <Headline style={styles.title}>Platform</Headline>
         <View style={styles.optionsContainer}>
-          {platforms.map(platform => (
+          {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
               key={platform.param}
               query={query}
@@ -258,39 +155,5 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 8,
-  },
-  link: {
-    ...Platform.select({
-      web: {
-        cursor: 'pointer',
-      },
-    }),
-    marginRight: 16,
-    marginVertical: 4,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  button: {
-    height: 24,
-    paddingHorizontal: 8,
-  },
-  activeButton: {
-    backgroundColor: colors.primary,
-  },
-  buttonText: {
-    fontSize: 14,
-    color: colors.white,
-    marginLeft: 6,
-    fontWeight: '500',
-  },
-  activeButtonText: {
-    color: colors.gray7,
-  },
-  iconContainer: {
-    top: 1,
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
 });

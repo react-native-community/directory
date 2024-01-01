@@ -25,33 +25,24 @@ type PlatformProps = {
 
 const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { isSmallScreen } = useLayout();
 
-  const packageNameStyles = [
-    styles.platformPackageName,
-    { backgroundColor: isDark ? darkColors.powder : colors.gray2 },
-  ];
-  const packageNameHoverStyle = {
-    backgroundColor: isDark ? colors.primary : colors.sky,
+  const packageHoverStyle = {
+    backgroundColor: isDark ? darkColors.powder : colors.gray2,
+    borderRadius: 8,
   };
-  const iconColor = isDark ? darkColors.pewter : colors.gray5;
-  const borderLeftColor = isDark ? darkColors.border : colors.gray2;
 
   return (
-    <View
-      style={[
-        styles.platformItem,
-        isSmallScreen
-          ? { borderLeftWidth: 0 }
-          : { borderLeftColor, borderLeftWidth: StyleSheet.hairlineWidth },
-        style,
-      ]}>
-      {createElement(Icon, { fill: iconColor, width: 32, height: 32 })}
-      <P style={styles.platformName}>{name}</P>
-      <A href={url} style={packageNameStyles} hoverStyle={packageNameHoverStyle}>
-        {pkgName}
-      </A>
-    </View>
+    <A href={url} style={styles.itemLink} hoverStyle={packageHoverStyle}>
+      <View style={[styles.platformItem, style]}>
+        {createElement(Icon, {
+          fill: isDark ? darkColors.pewter : colors.gray5,
+          width: 32,
+          height: 32,
+        })}
+        <P style={styles.platformName}>{name}</P>
+        <P style={styles.platformPackageName}>{pkgName}</P>
+      </View>
+    </A>
   );
 };
 
@@ -149,6 +140,7 @@ const styles = StyleSheet.create({
   footerTextWrapper: {
     flexDirection: 'row',
     paddingHorizontal: 16,
+    marginTop: 12,
   },
   footerTextContainer: {
     flex: 1,
@@ -163,15 +155,18 @@ const styles = StyleSheet.create({
     marginTop: 4,
     justifyContent: 'center',
     flexWrap: 'wrap',
+    gap: 14,
+    marginBottom: 28,
   },
   platformItem: {
-    minWidth: '15%',
-    paddingHorizontal: 24,
-    marginBottom: 28,
+    minWidth: 180,
+    paddingHorizontal: 8,
+    paddingVertical: 16,
+    borderRadius: 8,
     alignItems: 'center',
   },
   platformName: {
-    marginTop: 8,
+    marginTop: 12,
   },
   platformPackageName: {
     fontSize: 12,
@@ -179,7 +174,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     lineHeight: 22,
-    marginTop: 8,
+    marginTop: 2,
   },
   bannerContainer: {
     alignSelf: 'center',
@@ -197,6 +192,7 @@ const styles = StyleSheet.create({
     paddingTop: 48,
     paddingBottom: 32,
   },
+  itemLink: { backgroundColor: 'none', borderWidth: 1, borderColor: 'transparent' },
 });
 
 export default Footer;

@@ -47,7 +47,7 @@ export const darkColors = {
   background: '#19191f',
   subHeader: '#14141a',
   border: '#2a2e36',
-  veryDark: '#0e0e11',
+  veryDark: '#111114',
   dark: '#14141a',
   powder: '#262a36',
   pewter: '#767C8E',

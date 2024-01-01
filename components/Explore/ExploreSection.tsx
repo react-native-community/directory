@@ -73,9 +73,7 @@ const ExploreSection = ({
   return (
     <>
       <H3 style={styles.subHeader} id={hashLink}>
-        <View style={styles.subHeaderIcon}>
-          {createElement(icon, { fill: color, width: 30, height: 30 })}
-        </View>
+        {createElement(icon, { fill: color, width: 30, height: 30 })}
         <A
           href={`#${hashLink}`}
           target="_self"
@@ -108,16 +106,13 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   subHeader: {
+    display: 'flex',
+    gap: 16,
     marginTop: 16,
     marginBottom: 8,
-  },
-  subHeaderIcon: {
-    marginTop: 4,
-    marginRight: 12,
-    float: 'left',
+    alignItems: 'center',
   },
   subHeaderTitle: {
-    marginTop: 16,
     fontSize: 26,
     fontWeight: '700',
     textDecorationLine: 'none',
