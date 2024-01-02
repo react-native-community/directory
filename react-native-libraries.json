@@ -10136,11 +10136,15 @@
     "githubUrl": "https://github.com/jpudysz/react-native-unistyles",
     "examples": [
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo",
-      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/ssr"
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/macos",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo/src/examples"
     ],
     "ios": true,
     "android": true,
-    "expo": true
+    "expo": true,
+    "web": true,
+    "macos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/WadhahEssam/react-native-theme-switch-animation",
