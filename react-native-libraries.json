@@ -10356,5 +10356,15 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-background-downloader",
+    "npmPkg": "@kesha-antonov/react-native-background-downloader",
+    "examples": [
+      "https://github.com/kesha-antonov/react-native-background-downloader/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "macos": true
   }
 ]
