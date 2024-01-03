@@ -1844,7 +1844,7 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-material-design/react-native-material-design",
+    "githubUrl": "https://github.com/invertase/react-native-material-design",
     "android": true,
     "unmaintained": true
   },
@@ -3272,7 +3272,8 @@
     "githubUrl": "https://github.com/react-native-camera/react-native-camera",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/seniv/react-native-notifier",
@@ -3530,13 +3531,13 @@
     "npmPkg": "@react-native-community/cameraroll"
   },
   {
-    "githubUrl": "https://github.com/react-native-image-editor/react-native-image-editor",
+    "githubUrl": "https://github.com/callstack/react-native-image-editor",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/image-editor"
   },
   {
-    "githubUrl": "https://github.com/react-native-masked-view/react-native-masked-view",
+    "githubUrl": "https://github.com/react-native-masked-view/masked-view",
     "images": [
       "https://raw.githubusercontent.com/react-native-masked-view/masked-view/master/img/example.png"
     ],
@@ -3749,21 +3750,17 @@
     "expo": true
   },
   {
-    "githubUrl": "https://github.com/react-native-svg/react-native-svg",
-    "images": [
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/svg.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/pencil.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/tspan.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/text-path.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/text.png",
-      "https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenshots/path.png"
+    "githubUrl": "https://github.com/software-mansion/react-native-svg",
+    "examples": [
+      "https://github.com/software-mansion/react-native-svg/tree/main/Example",
+      "https://github.com/software-mansion/react-native-svg/tree/main/FabricExample",
+      "https://github.com/software-mansion/react-native-svg/tree/main/TestsExample"
     ],
     "ios": true,
     "android": true,
     "expo": true,
     "tvos": true,
-    "web": true,
-    "examples": ["https://snack.expo.dev/@msand/react-native-svg-example"]
+    "web": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
@@ -3974,7 +3971,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/react-native-geolocation/react-native-geolocation",
+    "githubUrl": "https://github.com/michalchudziak/react-native-geolocation",
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/geolocation"
@@ -8739,8 +8736,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/expo/router/tree/main/packages/expo-router",
-    "examples": ["https://github.com/expo/router/tree/main/apps/demo"],
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-router",
+    "examples": [
+      "https://github.com/expo/examples/tree/master/with-router",
+      "https://github.com/expo/examples/tree/master/with-router-tailwind",
+      "https://github.com/EvanBacon/expo-router-instagram-layout",
+      "https://github.com/EvanBacon/expo-router-twitter"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -10212,7 +10214,9 @@
   {
     "githubUrl": "https://github.com/dimaportenko/react-native-liquid-gauge",
     "examples": ["https://github.com/dimaportenko/react-native-liquid-gauge/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/dimaportenko/react-native-liquid-gauge/main/docs/demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/dimaportenko/react-native-liquid-gauge/main/docs/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expo": true
@@ -10245,7 +10249,9 @@
     "githubUrl": "https://github.com/orbital-systems/react-native-esp-idf-provisioning",
     "npmPkg": "@orbital-systems/react-native-esp-idf-provisioning",
     "examples": ["https://github.com/orbital-systems/react-native-esp-idf-provisioning/example"],
-    "images": ["https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -10258,7 +10264,6 @@
   },
   {
     "githubUrl": "https://github.com/Hector-Chong/native-wechat",
-    "npmPkg": "native-wechat",
     "examples": ["https://native-wechat.hector.im/guide/getting-started.html"],
     "ios": true,
     "android": true
@@ -10295,9 +10300,7 @@
   },
   {
     "githubUrl": "https://github.com/flixyudh/react-native-flix-snackbar",
-    "examples": [
-      "https://github.com/flixyudh/react-native-flix-snackbar/tree/main/example"
-    ],
+    "examples": ["https://github.com/flixyudh/react-native-flix-snackbar/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -10311,35 +10314,27 @@
   },
   {
     "githubUrl": "https://github.com/bviebahn/react-native-star-rating-widget",
-    "examples": [
-      "https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"
-    ],
+    "examples": ["https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"],
     "ios": true,
     "android": true,
     "web": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-release-profiler",
-    "examples": [
-      "https://github.com/margelo/react-native-release-profiler/tree/main/example"
-    ],
+    "examples": ["https://github.com/margelo/react-native-release-profiler/tree/main/example"],
     "ios": true,
     "android": true,
     "dev": true
   },
   {
     "githubUrl": "https://github.com/outsung/expo-dynamic-app-icon",
-    "examples": [
-      "https://github.com/outsung/expo-dynamic-app-icon/tree/main/example"
-    ],
+    "examples": ["https://github.com/outsung/expo-dynamic-app-icon/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/hirbod/expo-video-metadata",
-    "examples": [
-      "https://github.com/hirbod/expo-video-metadata/tree/main/example"
-    ],
+    "examples": ["https://github.com/hirbod/expo-video-metadata/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -10347,11 +10342,11 @@
   },
   {
     "githubUrl": "https://github.com/sbaiahmed1/react-native-image-preview",
-    "npmPkg":"react-native-image-preview-reanimated",
-    "examples": [
-      "https://github.com/sbaiahmed1/react-native-image-preview/tree/main/example"
+    "npmPkg": "react-native-image-preview-reanimated",
+    "examples": ["https://github.com/sbaiahmed1/react-native-image-preview/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/sbaiahmed1/react-native-image-preview/main/example/PreviewModal.gif"
     ],
-    "images": ["https://raw.githubusercontent.com/sbaiahmed1/react-native-image-preview/main/example/PreviewModal.gif"],
     "ios": true,
     "android": true,
     "web": true,
@@ -10364,6 +10359,85 @@
       "https://github.com/kesha-antonov/react-native-background-downloader/tree/master/example"
     ],
     "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-theme-provider",
+    "npmPkg": "@callstack/react-theme-provider",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/sosog/react-native-dynamically-selected-picker",
+    "examples": [
+      "https://github.com/sosog/react-native-dynamically-selected-picker/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/sosog/react-native-dynamically-selected-picker/master/README/android.gif",
+      "https://raw.githubusercontent.com/sosog/react-native-dynamically-selected-picker/master/README/ios.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/steffeydev/react-native-popover-view",
+    "examples": ["https://snack.expo.dev/@steffeydev/react-native-popover-view"],
+    "images": [
+      "https://raw.githubusercontent.com/SteffeyDev/react-native-popover-view/master/gifs/react-native-popover-view-smaller.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/ecklf/react-native-heroicons",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/unimonkiez/react-native-asset",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Dean177/react-native-json-tree",
+    "examples": ["https://github.com/Dean177/react-native-json-tree/tree/master/Example"],
+    "ios": true,
+    "android": true,
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kimxogus/react-native-version-check/tree/master/packages/react-native-version-check",
+    "examples": [
+      "https://github.com/kimxogus/react-native-version-check/tree/master/examples/reactnative"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kimxogus/react-native-version-check/tree/master/packages/react-native-version-check-expo",
+    "examples": [
+      "https://github.com/kimxogus/react-native-version-check/tree/master/examples/expo"
+    ],
+    "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/kevinstumpf/react-native-signature-pad",
+    "images": [
+      "https://cloud.githubusercontent.com/assets/7293984/13297035/303fefc6-dae5-11e5-99e8-edb8335633b5.gif",
+      "https://cloud.githubusercontent.com/assets/7293984/13299954/72bc3bf4-daf2-11e5-8606-388c05c26d6d.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Richou/react-native-android-location-enabler",
+    "example": [
+      "https://github.com/Richou/react-native-android-location-enabler/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Richou/react-native-android-location-enabler/main/assets/android-location-enabler.gif"
+    ],
     "android": true
   }
 ]
