@@ -5807,7 +5807,8 @@
     "web": true,
     "expo": true,
     "windows": true,
-    "macos": true
+    "macos": true,
+    "examples": ["https://github.com/dcangulo/react-native-pkce-challenge/tree/main/example"]
   },
   {
     "githubUrl": "https://github.com/Forward-Software/react-native-toolbox",
@@ -8528,7 +8529,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "examples": ["https://github.com/dcangulo/react-native-outside-press/tree/main/example"]
   },
   {
     "githubUrl": "https://github.com/websitebeaver/react-native-document-scanner-plugin",
