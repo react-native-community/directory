@@ -10457,5 +10457,14 @@
     "web": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/xmtp/xmtp-react-native",
+    "npmPkg": "@xmtp/react-native-sdk",
+    "examples": [
+      "https://github.com/xmtp/xmtp-react-native/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
