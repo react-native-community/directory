@@ -10442,7 +10442,6 @@
   },
   {
     "githubUrl": "https://github.com/Mhp23/react-native-full-responsive",
-    "npmPkg": "react-native-full-responsive",
     "examples": [
       "https://github.com/Mhp23/react-native-full-responsive/tree/main/example"
     ],
@@ -10455,9 +10454,6 @@
     "android": true,
     "web": true,
     "expo": true,
-    "windows": true,
-    "macos": true,
-    "tvos": true,
     "newArchitecture": true
   }
 ]
