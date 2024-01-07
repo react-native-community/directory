@@ -10441,5 +10441,21 @@
       "https://raw.githubusercontent.com/Richou/react-native-android-location-enabler/main/assets/android-location-enabler.gif"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Mhp23/react-native-full-responsive",
+    "examples": [
+      "https://github.com/Mhp23/react-native-full-responsive/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/Mhp23/react-native-full-responsive/raw/main/sim-1x.png",
+      "https://github.com/Mhp23/react-native-full-responsive/raw/main/sim-2x.png",
+      "https://github.com/Mhp23/react-native-full-responsive/raw/main/sim-3x.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
