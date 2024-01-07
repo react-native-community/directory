@@ -11,7 +11,7 @@ class DirectoryWebsite extends Document {
   render = () => (
     <Html lang="en">
       <Head>
-        <GoogleAnalytics id="UA-107832480-1" />
+        <GoogleAnalytics id="G-T0F1XSEWES" />
       </Head>
       <body>
         <Main />
