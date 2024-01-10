@@ -4,6 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import { Button } from './Button';
 import { GitHub, Logo, Plus } from './Icons';
+import Tooltip from './Tooltip';
 import { layout, colors, H5, P, darkColors, useLayout } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
@@ -28,25 +29,32 @@ const Header = () => {
             </A>
           </H5>
         </View>
-        <View style={styles.displayHorizontal}>
-          <Button
-            aria-label="Toggle theme"
-            onPress={() => setIsDark(!isDark)}
-            style={[styles.button, styles.themeButton, styles.themeButtonSmall]}>
-            <Text style={styles.themeButtonText}>{isDark ? '☀️' : '🌒'}</Text>
-          </Button>
+        <View style={[styles.displayHorizontal, { gap: 12 }]}>
+          <Tooltip
+            trigger={
+              <View>
+                <Button
+                  aria-label="Toggle theme"
+                  onPress={() => setIsDark(!isDark)}
+                  style={[styles.button, styles.themeButtonSmall]}>
+                  <Text style={styles.themeButtonText}>{isDark ? '☀️' : '🌒'}</Text>
+                </Button>
+              </View>
+            }>
+            Toggle theme
+          </Tooltip>
           <Button
             openInNewTab
             aria-label="GitHub"
             href="https://github.com/react-native-community/directory"
-            style={[styles.button, styles.themeButton, styles.themeButtonSmall]}>
+            style={[styles.button, styles.themeButtonSmall]}>
             <GitHub fill={isDark ? colors.white : colors.black} />
           </Button>
           <Button
             openInNewTab
             href="https://github.com/react-native-community/directory/?tab=readme-ov-file#how-do-i-add-a-library"
             style={styles.button}>
-            <View style={styles.displayHorizontal}>
+            <View style={[styles.displayHorizontal, { gap: 4 }]}>
               <Plus width={14} height={14} fill={isDark ? colors.white : colors.black} />
               {!isSmallScreen && <P style={{ marginLeft: 6 }}>Add a library</P>}
             </View>
@@ -97,12 +105,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
-  themeButton: {
-    marginRight: 12,
-  },
   themeButtonText: {
     fontSize: 18,
     marginTop: -1,
+    userSelect: 'none',
   },
   themeButtonSmall: {
     maxWidth: 46,

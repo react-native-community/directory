@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useHover } from 'react-native-web-hooks';
 
 import { Sort as SortIcon } from './Icons';
+import Tooltip from './Tooltip';
 import { colors, darkColors, P } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query, QueryOrder, QueryOrderDirection } from '../types';
@@ -54,10 +55,8 @@ const sorts = [
 ];
 
 export const SortButton = ({ query: { order, direction }, query }: SortButtonProps) => {
-  const [sortValue, setSortValue] = useState<QueryOrder>(order ?? 'relevance');
-  const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(
-    direction ?? 'descending'
-  );
+  const [sortValue, setSortValue] = useState<QueryOrder>(order);
+  const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(direction);
   const { isDark } = useContext(CustomAppearanceContext);
 
   const sortIconRef = useRef();
@@ -66,8 +65,8 @@ export const SortButton = ({ query: { order, direction }, query }: SortButtonPro
   useEffect(() => {
     const url = urlWithQuery('/', {
       ...query,
-      order: sortValue !== 'relevance' ? sortValue : undefined,
-      direction: sortDirection !== 'descending' ? sortDirection : undefined,
+      order: sortValue,
+      direction: sortDirection,
       offset: null,
     });
     if (url !== Router.pathname) {
@@ -83,17 +82,26 @@ export const SortButton = ({ query: { order, direction }, query }: SortButtonPro
         { backgroundColor: isDark ? darkColors.border : colors.gray5 },
       ]}>
       <View style={styles.displayHorizontal}>
-        <Pressable
-          ref={sortIconRef}
-          style={sortDirection === 'ascending' && styles.flippedIcon}
-          aria-label="Toggle sort direction"
-          onPress={() => {
-            setSortDirection(previousOrder =>
-              previousOrder === 'ascending' ? 'descending' : 'ascending'
-            );
-          }}>
-          <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
-        </Pressable>
+        <Tooltip
+          sideOffset={8}
+          trigger={
+            <Pressable
+              ref={sortIconRef}
+              style={sortDirection === 'ascending' && styles.flippedIcon}
+              aria-label="Toggle sort direction"
+              onPress={() => {
+                setSortDirection(previousOrder =>
+                  previousOrder === 'ascending' ? 'descending' : 'ascending'
+                );
+                if (!sortValue) {
+                  setSortValue('relevance');
+                }
+              }}>
+              <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
+            </Pressable>
+          }>
+          Toggle sort order
+        </Tooltip>
         <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
@@ -139,6 +147,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginLeft: 6,
     fontSize: 14,
+    userSelect: 'none',
   },
   pickerContainer: {
     top: 1,
@@ -151,6 +160,7 @@ const styles = StyleSheet.create({
     top: -1,
     fontSize: 14,
     fontFamily: 'inherit',
+    // @ts-ignore
     cursor: 'pointer',
   },
   flippedIcon: {
