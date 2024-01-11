@@ -10466,5 +10466,15 @@
     ],
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/powersync-ja/powersync-react-native-sdk",
+    "npmPkg": "@journeyapps/powersync-sdk-react-native",
+    "examples": [
+      "https://github.com/powersync-ja/powersync-supabase-react-native-todolist-demo/tree/main"
+    ],
+    "ios": true,
+    "expo": true,
+    "android": true
+  },
 ]
