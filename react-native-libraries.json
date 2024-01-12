@@ -10476,5 +10476,17 @@
     "ios": true,
     "expo": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/andrew-levy/swiftui-react-native",
+    "examples": [
+      "https://github.com/andrew-levy/swiftui-react-native-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/andrew-levy/swiftui-react-native/master/assets/cover.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expo": true
   }
 ]
