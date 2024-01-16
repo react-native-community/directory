@@ -5,7 +5,7 @@
     "preview": "next build && next start",
     "script": "babel-node --presets @babel/preset-env",
     "lint": "eslint .",
-    "data:update": "GITHUB_TOKEN=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 babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
+    "data:update": "babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
     "data:test": "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose",
     "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env && yarn libraries:format",
