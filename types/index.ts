@@ -13,7 +13,7 @@ export type QueryOrderDirection = 'descending' | 'ascending';
 
 export type Query = {
   android?: string;
-  expo?: string;
+  expoGo?: string;
   ios?: string;
   macos?: string;
   tvos?: string;
@@ -41,7 +41,7 @@ export type Library = {
   ios?: boolean;
   android?: boolean;
   web?: boolean;
-  expo?: boolean;
+  expoGo?: boolean;
   windows?: boolean;
   macos?: boolean;
   tvos?: boolean;

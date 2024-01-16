@@ -6,13 +6,13 @@ export const recommended = libraries => {
 
 export const compatibility = libraries => {
   return libraries.sort((a, b) => {
-    const aCompat = [1, a.expo && typeof a.expo !== 'string', a.ios, a.android, a.web].reduce(
+    const aCompat = [1, a.expoGo && typeof a.expoGo !== 'string', a.ios, a.android, a.web].reduce(
       (total, val) => {
         return val ? total + val : total;
       }
     );
 
-    const bCompat = [1, b.expo && typeof b.expo !== 'string', b.ios, b.android, b.web].reduce(
+    const bCompat = [1, b.expoGo && typeof b.expoGo !== 'string', b.ios, b.android, b.web].reduce(
       (total, val) => {
         return val ? total + val : total;
       }

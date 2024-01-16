@@ -40,7 +40,7 @@
   "ios": false,
   "android": false,
   "web": false,
-  "expo": false,
+  "expoGo": false,
   "windows": false,
   "macos": false,
   "tvos": false,
@@ -89,11 +89,12 @@
   **(boolean)** - works on iOS device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
-- #### `expo`
+- #### `expoGo`
 
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
-
-  > **Any** library can be used with Expo, if you use dev clients and prebuild.
+  
+> [!NOTE]
+> **Any** library can be used with Expo, if you use dev clients and prebuild.
 
 #### 🖥️ Out-of-tree Platforms
 
@@ -125,8 +126,8 @@
 
 > [!NOTE]
 > If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
-> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` for that subrepo.
-> GitHub stats will be based on the monorepo, because there isn't really another option.
+> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` in the package subdirectory.
+> However, GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 
@@ -169,19 +170,19 @@ Sure, go for it!
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
 
-`https://reactnative.directory/api/libraries?search=webgl&expo=true`
+`https://reactnative.directory/api/libraries?search=webgl&expoGo=true`
 
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed.
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
 
-`https://reactnative.directory/api/libraries?search=webgl&expo=true&android=true`
+`https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true`
 
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo managed and Android.
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
 
-`https://reactnative.directory/api/libraries?search=webgl&expo=true&android=true&isPopular=true`
+`https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true&isPopular=true`
 
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo managed and Android and are popular based on the scoring criterion.
+- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
 
-All of the possible query parameters represenents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
+All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
 
 ## I don't like how you calculate scores.
 

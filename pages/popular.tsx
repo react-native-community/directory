@@ -55,7 +55,7 @@ const Popular = ({ data }) => {
           title="Expo Go"
           icon={PlatformExpo}
           data={data}
-          filter={lib => lib.expo === true}
+          filter={lib => lib.expoGo === true}
         />
         <ExploreSection
           title="macOS"

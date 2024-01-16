@@ -4,7 +4,7 @@ export const FILTER_PLATFORMS = [
     title: 'Android',
   },
   {
-    param: 'expo',
+    param: 'expoGo',
     title: 'Expo Go',
   },
   {

@@ -1,24 +1,25 @@
 [
   {
     "githubUrl": "https://github.com/react-community/react-navigation",
-    "expo": true
+    "expoGo": true
   },
-  { "githubUrl": "https://github.com/gre/gl-react", "expo": true },
+  { "githubUrl": "https://github.com/gre/gl-react", "expoGo": true },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
-    "expo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
-  { "githubUrl": "https://github.com/n4kz/react-native-pages", "expo": true },
-  { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expo": true },
-  { "githubUrl": "https://github.com/shahnawaz/react-native-barcode-mask", "expo": true },
-  { "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip", "expo": true },
-  { "githubUrl": "https://github.com/archriss/react-native-render-html", "expo": true },
-  { "githubUrl": "https://github.com/react-native-community/react-native-picker", "expo": true },
-  { "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context", "expo": true },
+  { "githubUrl": "https://github.com/n4kz/react-native-pages", "expoGo": true },
+  { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expoGo": true },
+  { "githubUrl": "https://github.com/shahnawaz/react-native-barcode-mask", "expoGo": true },
+  { "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip", "expoGo": true },
+  { "githubUrl": "https://github.com/archriss/react-native-render-html", "expoGo": true },
+  { "githubUrl": "https://github.com/react-native-community/react-native-picker", "expoGo": true },
+  { "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context", "expoGo": true },
   {
     "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
     "npmPkg": "@react-native-community/datetimepicker",
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   }
 ]
