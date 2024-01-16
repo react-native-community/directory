@@ -85,11 +85,11 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (support.expo && !library.expo) {
+    if (support.expoGo && !library.expoGo) {
       return false;
     }
 
-    if (support.expo && typeof library.expo === 'string') {
+    if (support.expoGo && typeof library.expoGo === 'string') {
       return false;
     }
 
