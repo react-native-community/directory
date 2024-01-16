@@ -10489,5 +10489,14 @@
     "ios": true,
     "android": true,
     "expo": true
+  },
+  {
+    "githubUrl": "https://github.com/Kuatsu/react-native-cloud-storage",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "examples": [
+      "https://github.com/Kuatsu/react-native-cloud-storage/tree/master/example"
+    ]
   }
 ]
