@@ -40,7 +40,7 @@
   "ios": false,
   "android": false,
   "web": false,
-  "expo": false,
+  "expoGo": false,
   "windows": false,
   "macos": false,
   "tvos": false,
@@ -89,7 +89,7 @@
   **(boolean)** - works on iOS device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
-- #### `expo`
+- #### `expoGo`
 
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
 
@@ -125,8 +125,8 @@
 
 > [!NOTE]
 > If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
-> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` for that subrepo.
-> GitHub stats will be based on the monorepo, because there isn't really another option.
+> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` in the package subdirectory.
+> However, GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 

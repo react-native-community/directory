@@ -46,7 +46,7 @@
         "default": false,
         "examples": [true]
       },
-      "expo": {
+      "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
         "title": "The Expo Go Schema",

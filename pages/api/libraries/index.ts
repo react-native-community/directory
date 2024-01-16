@@ -63,7 +63,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       web: req.query.web,
       windows: req.query.windows,
       macos: req.query.macos,
-      expo: req.query.expo,
+      expoGo: req.query.expoGo,
       tvos: req.query.tvos,
     },
     hasExample: req.query.hasExample,
