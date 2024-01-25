@@ -10484,5 +10484,26 @@
     "examples": ["https://github.com/Malaa-tech/expo-squircle-view/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AnkiPro/react-native-canvas-view",
+    "npmPkg": "@ankipro/react-native-canvas-view",
+    "examples": ["https://github.com/AnkiPro/react-native-canvas-view/tree/main/example"],
+    "images": ["https://github.com/AnkiPro/react-native-canvas-view/blob/main/assets/demo.png"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AnkiPro/react-native-file-open",
+    "npmPkg": "@ankipro/react-native-file-open",
+    "examples": ["https://github.com/AnkiPro/react-native-file-open/tree/main/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AnkiPro/react-native-window-resize",
+    "npmPkg": "@ankipro/react-native-window-resize",
+    "examples": ["https://github.com/AnkiPro/react-native-window-resize/tree/main/example"],
+    "images": ["https://github.com/AnkiPro/react-native-window-resize/raw/main/assets/example.gif"],
+    "ios": true,
+    "dev": true
   }
 ]
