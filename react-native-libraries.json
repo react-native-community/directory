@@ -2345,7 +2345,10 @@
     "githubUrl": "https://github.com/JimmyDaddy/react-native-image-marker",
     "ios": true,
     "android": true,
-    "examples": ["https://github.com/JimmyDaddy/react-native-image-marker/tree/master/example"],
+    "examples": [
+      "https://github.com/JimmyDaddy/react-native-image-marker/tree/master/example",
+      "https://github.com/JimmyDaddy/react-native-image-marker/tree/master/expo-example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/multiple_icon_markers.png",
       "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/asset/rotatetexts.png",
