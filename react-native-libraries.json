@@ -10505,5 +10505,14 @@
     "images": ["https://github.com/AnkiPro/react-native-window-resize/raw/main/assets/example.gif"],
     "ios": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/iChengbo/react-native-imagemin-asset-plugin",
+    "npmPkg": "react-native-imagemin-asset-plugin",
+    "examples": ["https://github.com/iChengbo/react-native-imagemin-asset-plugin/tree/master/playground"],
+    "images": ["https://github.com/iChengbo/react-native-imagemin-asset-plugin/blob/master/example.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
