@@ -10518,5 +10518,17 @@
     "android": true,
     "expoGo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/ShivamRawat0l/react-native-loader-collection",
+    "npmPkg": "React Native Loader Collection",
+    "images": ["https://github.com/ShivamRawat0l/react-native-loader-collection/blob/main/demo/player_GJBbstqXvs.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "unmaintained": false,
+    "dev": false,
+    "newArchitecture": false
   }
 ]
