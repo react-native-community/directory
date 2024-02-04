@@ -10520,15 +10520,16 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/Malaa-tech/expo-custom-assets",
+    "examples": ["https://github.com/Malaa-tech/expo-custom-assets/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
     "githubUrl": "https://github.com/ShivamRawat0l/react-native-loader-collection",
-    "npmPkg": "react-native-loader-collection",
     "images": ["https://github.com/ShivamRawat0l/react-native-loader-collection/blob/main/demo/player_GJBbstqXvs.gif"],
     "ios": true,
     "android": true,
-    "web": false,
-    "expoGo": false,
-    "unmaintained": false,
-    "dev": false,
-    "newArchitecture": false
   }
 ]
