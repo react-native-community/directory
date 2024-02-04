@@ -10518,5 +10518,12 @@
     "android": true,
     "expoGo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Malaa-tech/expo-custom-assets",
+    "examples": ["https://github.com/Malaa-tech/expo-custom-assets/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
