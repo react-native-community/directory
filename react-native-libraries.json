@@ -10537,5 +10537,11 @@
     "npmPkg": "@rn-elementary/menu",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DevChanQ/react-native-svg-editor",
+    "images": ["https://github.com/DevChanQ/react-native-svg-editor/blob/master/screenshots/1.gif"],
+    "ios": true,
+    "android": true
   }
 ]
