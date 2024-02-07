@@ -10133,12 +10133,14 @@
     "examples": [
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo",
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/macos",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/win",
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo/src/examples"
     ],
     "ios": true,
     "android": true,
     "web": true,
     "macos": true,
+    "windows": true,
     "newArchitecture": true
   },
   {
