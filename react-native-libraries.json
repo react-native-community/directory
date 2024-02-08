@@ -10478,9 +10478,7 @@
   },
   {
     "githubUrl": "https://github.com/Kuatsu/react-native-cloud-storage",
-    "examples": [
-      "https://github.com/Kuatsu/react-native-cloud-storage/tree/master/example"
-    ],
+    "examples": ["https://github.com/Kuatsu/react-native-cloud-storage/tree/master/example"],
     "ios": true,
     "android": true,
     "web": true
@@ -10514,8 +10512,12 @@
   },
   {
     "githubUrl": "https://github.com/iChengbo/react-native-imagemin-asset-plugin",
-    "examples": ["https://github.com/iChengbo/react-native-imagemin-asset-plugin/tree/master/playground"],
-    "images": ["https://github.com/iChengbo/react-native-imagemin-asset-plugin/blob/master/example.png"],
+    "examples": [
+      "https://github.com/iChengbo/react-native-imagemin-asset-plugin/tree/master/playground"
+    ],
+    "images": [
+      "https://github.com/iChengbo/react-native-imagemin-asset-plugin/blob/master/example.png"
+    ],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -10530,7 +10532,9 @@
   },
   {
     "githubUrl": "https://github.com/ShivamRawat0l/react-native-loader-collection",
-    "images": ["https://github.com/ShivamRawat0l/react-native-loader-collection/blob/main/demo/player_GJBbstqXvs.gif"],
+    "images": [
+      "https://github.com/ShivamRawat0l/react-native-loader-collection/blob/main/demo/player_GJBbstqXvs.gif"
+    ],
     "ios": true,
     "android": true
   },
@@ -10545,5 +10549,38 @@
     "images": ["https://github.com/DevChanQ/react-native-svg-editor/blob/master/screenshots/1.gif"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Expensify/react-native-live-markdown",
+    "examples": [
+      "https://github.com/Expensify/react-native-live-markdown/tree/main/example",
+      "https://github.com/Expensify/react-native-live-markdown/tree/main/WebExample"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Expensify/react-native-live-markdown/main/assets/hero-animation.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/oktaysenkan/react-native-iconify",
+    "examples": ["https://github.com/oktaysenkan/react-native-iconify/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/zacharyfmarion/react-native-fast-trie",
+    "examples": ["https://github.com/zacharyfmarion/react-native-fast-trie/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/zacharyfmarion/react-native-heap-profiler",
+    "examples": ["https://github.com/zacharyfmarion/react-native-heap-profiler/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
