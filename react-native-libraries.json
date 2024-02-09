@@ -10582,5 +10582,19 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/ayonshafiul/react-native-reanimated-progress-steps",
+    "examples": [
+      "https://github.com/ayonshafiul/react-native-reanimated-progress-steps/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/ayonshafiul/react-native-reanimated-progress-steps-docs/main/static/img/demo.gif",
+      "https://raw.githubusercontent.com/ayonshafiul/react-native-reanimated-progress-steps-docs/main/static/img/progress_stepper_custom.gif",
+      "https://raw.githubusercontent.com/ayonshafiul/react-native-reanimated-progress-steps-docs/main/static/img/progress_stepper_round.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
