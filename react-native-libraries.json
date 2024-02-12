@@ -10596,5 +10596,18 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/simformSolutionsPvtLtd/react-native-story-view/",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-story-view/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-story-view/blob/main/assets/StoryView.gif",
+      "https://github.com/SimformSolutionsPvtLtd/react-native-story-view/blob/main/assets/SingleStory.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
