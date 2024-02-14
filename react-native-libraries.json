@@ -10608,5 +10608,17 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/yaay/react-native-pintyper",
+    "examples": [
+      "https://github.com/yaay/react-native-pintyper/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/yaay/react-native-pintyper/blob/main/assets/pintyper.gif",
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
