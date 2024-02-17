@@ -10611,14 +10611,80 @@
   },
   {
     "githubUrl": "https://github.com/yaay/react-native-pintyper",
-    "examples": [
-      "https://github.com/yaay/react-native-pintyper/tree/main/example"
-    ],
-    "images": [
-      "https://github.com/yaay/react-native-pintyper/blob/main/assets/pintyper.gif"
-    ],
+    "examples": ["https://github.com/yaay/react-native-pintyper/tree/main/example"],
+    "images": ["https://github.com/yaay/react-native-pintyper/blob/main/assets/pintyper.gif"],
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/shubhambathe1/react-native-countdown-timer-hooks",
+    "examples": ["https://github.com/shubhambathe1/CountDownTimerDemo"],
+    "images": [
+      "https://raw.githubusercontent.com/shubhambathe1/react-native-countdown-timer-hooks/master/screenshots/screenshot1.png",
+      "https://raw.githubusercontent.com/shubhambathe1/react-native-countdown-timer-hooks/master/screenshots/screenshot2.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Temzasse/react-modal-sheet",
+    "examples": [
+      "https://github.com/Temzasse/react-modal-sheet/tree/main/example",
+      "https://github.com/Temzasse/react-modal-sheet/tree/main/example-ssr"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Temzasse/react-modal-sheet/main/media/1.gif",
+      "https://raw.githubusercontent.com/Temzasse/react-modal-sheet/main/media/2.gif",
+      "https://raw.githubusercontent.com/Temzasse/react-modal-sheet/main/media/3.gif",
+      "https://raw.githubusercontent.com/Temzasse/react-modal-sheet/main/media/4.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/WalletConnect/web3modal-react-native",
+    "examples": [
+      "https://github.com/WalletConnect/react-native-examples/tree/main/dapps/W3MWagmi",
+      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/gallery",
+      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/native-cli",
+      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/native"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/intellidev1991/react-native-image-slider-box",
+    "examples": [
+      "https://github.com/intellidev1991/react-native-image-slider-box/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/intellidev1991/react-native-image-slider-box/master/assets/pic1.jpg",
+      "https://raw.githubusercontent.com/intellidev1991/react-native-image-slider-box/master/assets/gif.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/carsonwah/react-native-push-notification-popup",
+    "images": [
+      "https://raw.githubusercontent.com/carsonwah/_file_hosting/master/react-native-push-notification-popup/android-example.gif",
+      "https://raw.githubusercontent.com/carsonwah/_file_hosting/master/react-native-push-notification-popup/ios-example.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SHISME/react-native-draggable-grid",
+    "images": [
+      "https://raw.githubusercontent.com/SHISME/react-native-draggable-grid/master/example.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jkomyno/react-native-user-inactivity",
+    "ios": true,
+    "android": true
   }
 ]
