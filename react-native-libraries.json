@@ -10437,7 +10437,11 @@
   },
   {
     "githubUrl": "https://github.com/Mhp23/react-native-full-responsive",
-    "examples": ["https://github.com/Mhp23/react-native-full-responsive/tree/main/example"],
+    "examples": [
+      "https://github.com/Mhp23/react-native-full-responsive/tree/main/example",
+      "https://github.com/Mhp23/react-native-full-responsive/tree/main/macos-example",
+      "https://github.com/Mhp23/react-native-full-responsive/tree/main/tv-example"
+    ],
     "images": [
       "https://github.com/Mhp23/react-native-full-responsive/raw/main/sim-1x.png",
       "https://github.com/Mhp23/react-native-full-responsive/raw/main/sim-2x.png",
