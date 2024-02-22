@@ -8,6 +8,7 @@ import {
   PlatformIOS,
   PlatformMacOS,
   PlatformTvOS,
+  PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
 } from './Icons';
@@ -86,6 +87,12 @@ const Footer = () => {
             url="https://github.com/react-native-community/react-native-tvos#readme"
           />
           <Platform
+            name="visionOS"
+            pkgName="react-native-visionos"
+            Icon={PlatformVisionOS}
+            url="https://github.com/callstack/react-native-visionos#readme"
+          />
+          <Platform
             name="Web"
             pkgName="react-native-web"
             Icon={PlatformWeb}
@@ -157,9 +164,11 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 14,
     marginBottom: 28,
+    maxWidth: 960,
+    marginHorizontal: 'auto',
   },
   platformItem: {
-    minWidth: 180,
+    minWidth: 160,
     paddingHorizontal: 8,
     paddingVertical: 16,
     borderRadius: 8,

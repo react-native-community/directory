@@ -20,6 +20,10 @@ export const FILTER_PLATFORMS = [
     title: 'tvOS',
   },
   {
+    param: 'visionos',
+    title: 'visionOS',
+  },
+  {
     param: 'web',
     title: 'Web',
   },

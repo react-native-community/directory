@@ -473,6 +473,7 @@
     "windows": true,
     "macos": true,
     "tvos": true,
+    "visionos": true,
     "goldstar": true,
     "examples": [
       "https://snack.expo.dev/rJnUK4nrZ",
@@ -3116,6 +3117,7 @@
     "tvos": true,
     "web": true,
     "expoGo": true,
+    "visionos": true,
     "newArchitecture": true
   },
   {
@@ -3411,6 +3413,7 @@
     "goldstar": true,
     "expoGo": true,
     "tvos": true,
+    "visionos": true,
     "examples": [
       "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
       "https://github.com/react-native-tvos/TVReanimated"
@@ -3444,6 +3447,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "visionos": true,
     "npmPkg": "@react-native-community/netinfo"
   },
   {
@@ -3491,6 +3495,8 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
+    "visionos": true,
     "npmPkg": "@react-native-community/blur"
   },
   {
@@ -4816,6 +4822,7 @@
     "android": true,
     "windows": true,
     "web": true,
+    "visionos": true,
     "expoGo": true
   },
   {
@@ -7010,6 +7017,7 @@
     "android": true,
     "expoGo": true,
     "web": true,
+    "visionos": true,
     "goldstar": true
   },
   {
@@ -10695,9 +10703,7 @@
   },
   {
     "githubUrl": "https://github.com/tony-xlh/vision-camera-cropper",
-    "examples": [
-      "https://github.com/tony-xlh/vision-camera-cropper/tree/main/example"
-    ],
+    "examples": ["https://github.com/tony-xlh/vision-camera-cropper/tree/main/example"],
     "ios": true,
     "android": true
   }
