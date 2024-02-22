@@ -44,6 +44,7 @@
   "windows": false,
   "macos": false,
   "tvos": false,
+  "visionos": false,
   "unmaintained": false,
   "dev": false,
   "template": false,
@@ -107,6 +108,8 @@
   **(boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
 - #### `tvos`
   **(boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
+- #### `visionos`
+  **(boolean)** - can be used with [`react-native-visionos`](https://github.com/callstack/react-native-visionos).
 
 #### 🏷️ Tags
 

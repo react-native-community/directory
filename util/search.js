@@ -85,6 +85,10 @@ export const handleFilterLibraries = ({
       return false;
     }
 
+    if (support.visionos && !library.visionos) {
+      return false;
+    }
+
     if (support.expoGo && !library.expoGo) {
       return false;
     }

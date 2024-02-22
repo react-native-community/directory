@@ -36,15 +36,15 @@ const Tag = ({ label, tagStyle, showCheck = true }: TagProps) => {
   );
 };
 
-export function CompatibilityTags(props: Props) {
+export function CompatibilityTags({ library }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { library } = props;
   const platforms = [
     library.android ? 'Android' : null,
     library.expoGo ? 'Expo Go' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
+    library.visionos ? 'visionOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
   ]

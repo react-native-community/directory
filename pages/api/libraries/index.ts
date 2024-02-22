@@ -65,6 +65,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       macos: req.query.macos,
       expoGo: req.query.expoGo,
       tvos: req.query.tvos,
+      visionos: req.query.visionos,
     },
     hasExample: req.query.hasExample,
     hasImage: req.query.hasImage,

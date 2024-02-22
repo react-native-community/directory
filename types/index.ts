@@ -17,6 +17,7 @@ export type Query = {
   ios?: string;
   macos?: string;
   tvos?: string;
+  visionos?: string;
   web?: string;
   windows?: string;
   order?: QueryOrder;
@@ -45,6 +46,7 @@ export type Library = {
   windows?: boolean;
   macos?: boolean;
   tvos?: boolean;
+  visionos?: boolean;
   unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;

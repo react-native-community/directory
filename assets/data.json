@@ -4911,6 +4911,7 @@
       "windows": true,
       "macos": true,
       "tvos": true,
+      "visionos": true,
       "goldstar": true,
       "examples": [
         "https://snack.expo.dev/rJnUK4nrZ",
@@ -64841,6 +64842,7 @@
       "ios": true,
       "android": true,
       "expoGo": true,
+      "visionos": true,
       "web": true,
       "github": {
         "urls": {
