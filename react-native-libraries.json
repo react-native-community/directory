@@ -732,7 +732,8 @@
   {
     "githubUrl": "https://github.com/oblador/react-native-keychain",
     "ios": true,
-    "android": true
+    "android": true,
+    "visionos": true,
   },
   {
     "githubUrl": "https://github.com/doefler/react-native-social-share",
