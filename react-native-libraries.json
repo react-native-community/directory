@@ -10707,5 +10707,16 @@
     "examples": ["https://github.com/tony-xlh/vision-camera-cropper/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/MarceloPrado/flash-calendar/tree/main/packages/flash-calendar",
+    "npmPkg": "@marceloterreiro/flash-calendar",
+    "examples": ["https://github.com/MarceloPrado/flash-calendar/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/MarceloPrado/flash-calendar/main/apps/docs/static/img/shots.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
