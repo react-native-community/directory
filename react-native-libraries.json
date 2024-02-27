@@ -10718,5 +10718,11 @@
     "ios": true,
     "android": true,
     "expoGo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/tosspayments/widget-sdk-react-native",
+    "examples": ["https://github.com/tosspayments/widget-sdk-react-native/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
 ]
