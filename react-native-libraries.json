@@ -3783,7 +3783,8 @@
     "githubUrl": "https://github.com/react-native-device-info/react-native-device-info",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/zo0r/react-native-push-notification",
