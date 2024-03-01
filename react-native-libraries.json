@@ -10719,5 +10719,13 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/meedwire/react-native-image-rotate",
+    "npmPkg": "https://www.npmjs.com/package/@meedwire/react-native-image-rotate",
+    "nameOverride": "@meedwire/react-native-image-rotate",
+    "examples": ["https://github.com/meedwire/react-native-image-rotate/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
