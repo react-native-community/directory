@@ -10726,5 +10726,11 @@
     "examples": ["https://github.com/meedwire/react-native-image-rotate/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-action-cable",
+    "npmPkg": "@kesha-antonov/react-native-action-cable",
+    "ios": true,
+    "android": true
   }
 ]
