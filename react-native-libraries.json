@@ -5350,7 +5350,8 @@
   {
     "githubUrl": "https://github.com/EkoLabs/react-native-background-downloader",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-google-nearby-messages",
