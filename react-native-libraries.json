@@ -10733,5 +10733,18 @@
     "npmPkg": "@kesha-antonov/react-native-action-cable",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/codeherence/react-native-header",
+    "npmPkg": "@codeherence/react-native-header",
+    "examples": ["https://github.com/codeherence/react-native-header/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/codeherence/react-native-header/2bbb2a838223aa4c5a2892060c6efe7182e89ec9/crnh-gif.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
