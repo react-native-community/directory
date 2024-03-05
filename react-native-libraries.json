@@ -522,6 +522,7 @@
     ],
     "ios": true,
     "android": true,
+    "windows": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/SJdIbHe4b"],
     "goldstar": true
@@ -3763,7 +3764,8 @@
     "android": true,
     "expoGo": true,
     "tvos": true,
-    "web": true
+    "web": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
@@ -10752,5 +10754,10 @@
     "examples": ["https://github.com/bluesky-social/react-native-uitextview/tree/main/example"],
     "images": ["https://haileyok.com/content/images/size/w1920/2024/01/IMG_4730.jpeg"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-windows-hello",
+    "npmPkg": "react-native-windows-hello",
+    "windows": true
   }
 ]
