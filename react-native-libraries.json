@@ -10757,5 +10757,11 @@
     "examples": ["https://github.com/bluesky-social/react-native-uitextview/tree/main/example"],
     "images": ["https://haileyok.com/content/images/size/w1920/2024/01/IMG_4730.jpeg"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/binaryminds/react-native-sse",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
