@@ -10764,11 +10764,11 @@
     "android": true,
     "expoGo": true
   },
-   {
+  {
     "githubUrl": "https://github.com/Acetyld/expo-foreground-actions",
     "npmPkg": "expo-foreground-actions",
     "examples": ["https://github.com/Acetyld/expo-foreground-actions/tree/main/example"],
     "ios": true,
     "android": true
-  },
+  }
 ]
