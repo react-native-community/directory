@@ -9879,7 +9879,12 @@
   {
     "githubUrl": "https://github.com/AlirezaHadjar/expo-drag-drop-content-view",
     "examples": ["https://github.com/AlirezaHadjar/expo-drag-drop-content-view/tree/main/example"],
-    "ios": true
+    "images": ["https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/.github/screenshots/ios.gif", 
+      "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/.github/screenshots/Android.gif", 
+      "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/.github/screenshots/web.gif"],
+    "ios": true,
+    "android": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/Jm-Zion/rn-wave-bottom-bar",
