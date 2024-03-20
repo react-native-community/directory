@@ -10774,5 +10774,17 @@
     "examples": ["https://github.com/Acetyld/expo-foreground-actions/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/FerRiv3ra/rn-custom-alert-prompt",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/FerRiv3ra/rn-segmented-tab-controls",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
