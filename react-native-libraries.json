@@ -9735,9 +9735,7 @@
   },
   {
     "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
-    "examples": [
-      "https://github.com/kesha-antonov/react-native-zoom-reanimated/tree/main/example"
-    ],
+    "examples": ["https://github.com/kesha-antonov/react-native-zoom-reanimated/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true
@@ -9881,12 +9879,15 @@
   },
   {
     "githubUrl": "https://github.com/AlirezaHadjar/expo-drag-drop-content-view/tree/main/packages/expo-drag-drop-content-view",
-    "examples": ["https://github.com/AlirezaHadjar/expo-drag-drop-content-view/tree/main/apps/example"],
+    "examples": [
+      "https://github.com/AlirezaHadjar/expo-drag-drop-content-view/tree/main/apps/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/apps/docs/static/img/ios.gif",
       "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/apps/docs/static/img/android.gif",
       "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/apps/docs/static/img/web.gif",
-      "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/apps/docs/static/img/ipados.gif"],
+      "https://raw.githubusercontent.com/AlirezaHadjar/expo-drag-drop-content-view/main/apps/docs/static/img/ipados.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true
@@ -10786,5 +10787,54 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/imnapo/react-native-cn-quill",
+    "examples": ["https://github.com/imnapo/react-native-cn-quill/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/imnapo/react-native-cn-quill/master/images/quill-editor.jpeg"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/candlefinance/react-native-purchase-kit",
+    "examples": ["https://github.com/candlefinance/react-native-purchase-kit/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/candlefinance/faster-image",
+    "npmPkg": "@candlefinance/faster-image",
+    "examples": ["https://github.com/candlefinance/faster-image/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/candlefinance/app-icon",
+    "npmPkg": "@candlefinance/app-icon",
+    "examples": ["https://github.com/candlefinance/app-icon/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/candlefinance/react-native-openai",
+    "examples": ["https://github.com/candlefinance/react-native-openai/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/candlefinance/haptics",
+    "npmPkg": "@candlefinance/haptics",
+    "examples": ["https://github.com/candlefinance/haptics/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-skottie/tree/main/package",
+    "npmPkg": "react-native-skottie",
+    "examples": ["https://github.com/margelo/react-native-skottie/tree/main/package/example"],
+    "ios": true,
+    "android": true
   }
 ]
