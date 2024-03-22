@@ -10836,5 +10836,22 @@
     "examples": ["https://github.com/margelo/react-native-skottie/tree/main/package/example"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/otp-input",
+    "npmPkg": "https://www.npmjs.com/package/@sectiontn/otp-input",
+    "nameOverride": "",
+    "examples": [
+    "https://github.com/SectionTN/otp-input-example",
+    "https://snack.expo.dev/@sectiontn/otptextinput-advanced-example"
+   ],
+  "images": ["https://github.com/SectionTN/otp-input/blob/main/assets/screenshot_one.jpg",
+             "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif", 
+              "https://github.com/SectionTN/otp-input/blob/main/assets/web.gif"],
+  "ios": true,
+  "android": true,
+  "web": true,
+  "expoGo": true,
+  "newArchitecture": true
+}
 ]
