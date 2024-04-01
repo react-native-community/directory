@@ -522,6 +522,7 @@
     ],
     "ios": true,
     "android": true,
+    "windows": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/SJdIbHe4b"],
     "goldstar": true
@@ -3763,7 +3764,8 @@
     "android": true,
     "expoGo": true,
     "tvos": true,
-    "web": true
+    "web": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
@@ -10838,11 +10840,56 @@
     "android": true
   },
   {
+
+    "githubUrl": "https://github.com/ysfzrn/react-native-gif-player",
+    "examples": [
+      "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordiOS.gif",
+      "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ExtrieveTechnologies/QuickCapture_react_native",
+    "npmPkg": "@extrieve_technologies/quickcapture_react_native",
+    "examples": ["https://github.com/ExtrieveTechnologies/QuickCapture_react_native/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/otp-input",
+    "npmPkg": "@sectiontn/otp-input",
+    "examples": [
+      "https://github.com/SectionTN/otp-input-example",
+      "https://snack.expo.dev/@sectiontn/otptextinput-advanced-example"
+     ],
+    "images": [
+      "https://github.com/SectionTN/otp-input/blob/main/assets/screenshot_one.jpg",
+      "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif", 
+      "https://github.com/SectionTN/otp-input/blob/main/assets/web.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-windows-hello",
+    "images": [
+      "https://raw.githubusercontent.com/callstack/react-native-windows-hello/main/.github/Resources/RNW-Hello-FullExample.gif"
+    ],
+    "windows": true
+
+  },
+  {
     "githubUrl": "https://github.com/tushu4212/rntemplate",
     "npmPkg": "@tushar4212/rntemplate",
     "nameOverride": "rntemplate",
     "ios": true,
     "android": true,
-    "template": true
+    "template": true 
   }
 ]
