@@ -10836,5 +10836,17 @@
     "examples": ["https://github.com/margelo/react-native-skottie/tree/main/package/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ysfzrn/react-native-gif-player",
+    "examples": [
+        "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
+    ],
+    "images": [
+        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordiOS.gif",
+        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
