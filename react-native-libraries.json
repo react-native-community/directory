@@ -10848,5 +10848,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ExtrieveTechnologies/QuickCapture_react_native",
+    "npmPkg": "@extrieve_technologies/quickcapture_react_native",
+    "examples": ["https://github.com/ExtrieveTechnologies/QuickCapture_react_native/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
