@@ -10838,6 +10838,18 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/ysfzrn/react-native-gif-player",
+    "examples": [
+        "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
+    ],
+    "images": [
+        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordiOS.gif",
+        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/ExtrieveTechnologies/QuickCapture_react_native",
     "npmPkg": "@extrieve_technologies/quickcapture_react_native",
     "examples": ["https://github.com/ExtrieveTechnologies/QuickCapture_react_native/tree/main/example"],
