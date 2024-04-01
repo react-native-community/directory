@@ -522,6 +522,7 @@
     ],
     "ios": true,
     "android": true,
+    "windows": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/SJdIbHe4b"],
     "goldstar": true
@@ -3763,7 +3764,8 @@
     "android": true,
     "expoGo": true,
     "tvos": true,
-    "web": true
+    "web": true,
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
@@ -10872,5 +10874,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-windows-hello",
+    "images": [
+      "https://raw.githubusercontent.com/callstack/react-native-windows-hello/main/.github/Resources/RNW-Hello-FullExample.gif"
+    ],
+    "windows": true
   }
 ]
