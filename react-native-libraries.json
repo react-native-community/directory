@@ -10839,7 +10839,6 @@
   },
   {
     "githubUrl": "https://github.com/ysfzrn/react-native-gif-player",
-    "npmPkg": "react-native-gif-player",
     "examples": [
         "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
     ],
@@ -10848,7 +10847,6 @@
         "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
     ],
     "ios": true,
-    "android": true,
-    "newArchitecture": true
+    "android": true
   }
 ]
