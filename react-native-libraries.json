@@ -10840,11 +10840,11 @@
   {
     "githubUrl": "https://github.com/ysfzrn/react-native-gif-player",
     "examples": [
-        "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
+      "https://github.com/ysfzrn/react-native-gif-player/tree/main/example"
     ],
     "images": [
-        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordiOS.gif",
-        "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
+      "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordiOS.gif",
+      "https://github.com/ysfzrn/react-native-gif-player/blob/main/assets/recordAndroid.gif"
     ],
     "ios": true,
     "android": true
@@ -10855,5 +10855,22 @@
     "examples": ["https://github.com/ExtrieveTechnologies/QuickCapture_react_native/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/otp-input",
+    "npmPkg": "@sectiontn/otp-input",
+    "examples": [
+      "https://github.com/SectionTN/otp-input-example",
+      "https://snack.expo.dev/@sectiontn/otptextinput-advanced-example"
+     ],
+    "images": [
+      "https://github.com/SectionTN/otp-input/blob/main/assets/screenshot_one.jpg",
+      "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif", 
+      "https://github.com/SectionTN/otp-input/blob/main/assets/web.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
