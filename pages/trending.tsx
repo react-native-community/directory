@@ -100,7 +100,6 @@ Trending.getInitialProps = async (ctx: NextPageContext) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 32,
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
@@ -109,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   wrapper: {
-    marginTop: 8,
+    marginTop: 12,
   },
   noResultWrapper: {
     alignItems: 'center',

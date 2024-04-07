@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   noMetaContainer: {
     width: '48.5%',
     marginHorizontal: '0.75%',
-    maxHeight: 232,
+    minHeight: 206,
   },
   noMetaColumnContainer: {
     maxHeight: 'auto',
