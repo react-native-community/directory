@@ -7,15 +7,17 @@ import { colors, Caption, darkColors, HoverEffect } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Query } from '../types';
 import { NUM_PER_PAGE } from '../util/Constants';
+import { getPageQuery } from '../util/search';
 import urlWithQuery from '../util/urlWithQuery';
 
 type Props = {
   query: Query;
   total: number | null;
   style?: ViewStyle;
+  basePath?: string;
 };
 
-const Pagination = ({ query, total, style }: Props) => {
+const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const totalPages = Math.ceil(total / NUM_PER_PAGE);
   const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
@@ -26,7 +28,9 @@ const Pagination = ({ query, total, style }: Props) => {
   const backDisabled = currentPage <= 1;
   const forwardDisabled = currentPage >= totalPages;
 
-  const backArrow = isDark => (
+  const pageQuery = getPageQuery(basePath, query);
+
+  const backArrow = (isDark: boolean) => (
     <View
       style={[
         styles.rotate,
@@ -40,7 +44,7 @@ const Pagination = ({ query, total, style }: Props) => {
     </View>
   );
 
-  const forwardArrow = isDark => (
+  const forwardArrow = (isDark: boolean) => (
     <View
       style={[
         styles.arrowContainer,
@@ -60,7 +64,7 @@ const Pagination = ({ query, total, style }: Props) => {
       ) : (
         <HoverEffect>
           <Link
-            href={urlWithQuery('/', { ...query, offset: currentOffset - NUM_PER_PAGE })}
+            href={urlWithQuery(basePath, { ...pageQuery, offset: currentOffset - NUM_PER_PAGE })}
             style={{ borderRadius: 4 }}
             aria-label="Previous page">
             {backArrow(isDark)}
@@ -76,7 +80,7 @@ const Pagination = ({ query, total, style }: Props) => {
       ) : (
         <HoverEffect>
           <Link
-            href={urlWithQuery('/', { ...query, offset: currentOffset + NUM_PER_PAGE })}
+            href={urlWithQuery(basePath, { ...pageQuery, offset: currentOffset + NUM_PER_PAGE })}
             style={{ borderRadius: 4 }}
             aria-label="Next page">
             {forwardArrow(isDark)}

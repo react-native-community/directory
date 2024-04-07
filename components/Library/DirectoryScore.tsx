@@ -26,7 +26,7 @@ export function DirectoryScore({ score }: Props) {
             height={22}
             viewBox="0 0 22 20"
             fill="none"
-            accessibilityLabel={`Score: ${score} out of 100`}>
+            aria-label={`Score: ${score} out of 100`}>
             <Path
               d="M16.3789 5.76173C15.121 5.48057 14.2348 5.38423 13.3789 5.29298C12.8203 4.43746 12.0547 3.58199 11.4922 2.92966C12.5273 1.88672 14.8061 0.125596 15.9998 0.932227C17.1682 1.72171 16.7109 4.50782 16.3789 5.76173Z"
               fill={getFill()}

@@ -37,6 +37,7 @@ export const handleFilterLibraries = ({
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
+  const minPopularityValue = minPopularity && parseFloat(minPopularity) / 100;
 
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({
@@ -129,8 +130,8 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (minPopularity) {
-      return library.popularity * 100 >= parseFloat(minPopularity);
+    if (minPopularityValue) {
+      return library.popularity >= minPopularityValue;
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
@@ -156,3 +157,10 @@ export const handleFilterLibraries = ({
     return isTopicMatch && isSearchMatch;
   });
 };
+
+export function getPageQuery(basePath, query) {
+  if (basePath === '/trending') {
+    return { ...query, minPopularity: undefined, order: undefined };
+  }
+  return query;
+}

@@ -6,6 +6,7 @@ import { FILTER_PLATFORMS } from './helpers';
 import { colors, Headline, layout, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Query } from '../../types';
+import { getPageQuery } from '../../util/search';
 
 type FiltersProps = {
   query: Query;
@@ -16,6 +17,8 @@ type FiltersProps = {
 export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const isMainSearch = basePath === '/';
+  const pageQuery = getPageQuery(basePath, query);
+
   return (
     <View
       style={[
@@ -31,7 +34,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
           {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
               key={platform.param}
-              query={query}
+              query={pageQuery}
               paramName={platform.param}
               title={platform.title}
               basePath={basePath}
@@ -44,66 +47,66 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
         <View style={styles.optionsContainer}>
           <ToggleLink
             key="hasExample"
-            query={query}
+            query={pageQuery}
             paramName="hasExample"
             title="Has example"
             basePath={basePath}
           />
           <ToggleLink
             key="hasImage"
-            query={query}
+            query={pageQuery}
             paramName="hasImage"
             title="Has image preview"
             basePath={basePath}
           />
           <ToggleLink
             key="hasTypes"
-            query={query}
+            query={pageQuery}
             paramName="hasTypes"
             title="Has TypeScript types"
             basePath={basePath}
           />
           <ToggleLink
             key="newArchitecture"
-            query={query}
+            query={pageQuery}
             paramName="newArchitecture"
             title="Supports New Architecture"
             basePath={basePath}
           />
-          {isMainSearch ? (
+          {isMainSearch && (
             <ToggleLink
               key="isMaintained"
-              query={query}
+              query={pageQuery}
               paramName="isMaintained"
               title="Maintained"
               basePath={basePath}
             />
-          ) : null}
-          {isMainSearch ? (
+          )}
+          {isMainSearch && (
             <ToggleLink
               key="isPopular"
-              query={query}
+              query={pageQuery}
               paramName="isPopular"
               title="Popular"
               basePath={basePath}
             />
-          ) : null}
+          )}
           <ToggleLink
             key="wasRecentlyUpdated"
-            query={query}
+            query={pageQuery}
             paramName="wasRecentlyUpdated"
             title="Recently updated"
             basePath={basePath}
           />
-          {isMainSearch ? (
+          {isMainSearch && (
             <ToggleLink
               key="isRecommended"
-              query={query}
+              query={pageQuery}
               paramName="isRecommended"
               title="Recommended"
               basePath={basePath}
             />
-          ) : null}
+          )}
         </View>
       </View>
       <View style={styles.container}>
@@ -111,21 +114,21 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
         <View style={styles.optionsContainer}>
           <ToggleLink
             key="skipLibs"
-            query={query}
+            query={pageQuery}
             paramName="skipLibs"
             title="Hide libraries"
             basePath={basePath}
           />
           <ToggleLink
             key="skipTools"
-            query={query}
+            query={pageQuery}
             paramName="skipTools"
             title="Hide development tools"
             basePath={basePath}
           />
           <ToggleLink
             key="skipTemplates"
-            query={query}
+            query={pageQuery}
             paramName="skipTemplates"
             title="Hide templates"
             basePath={basePath}
