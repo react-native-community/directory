@@ -3292,14 +3292,14 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/mobily/stacks",
+    "githubUrl": "https://github.com/grapp-dev/stacks",
     "ios": true,
     "android": true,
     "web": true,
     "expoGo": true,
     "windows": true,
-    "examples": ["https://mobily.github.io/stacks"],
-    "npmPkg": "@mobily/stacks"
+    "examples": ["https://stacks.grapp.dev/"],
+    "npmPkg": "@grapp/stacks"
   },
   {
     "githubUrl": "https://github.com/zoontek/react-native-localize",
