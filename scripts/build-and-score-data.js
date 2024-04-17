@@ -9,7 +9,7 @@ import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 import debugGithubRepos from '../debug-github-repos.json';
 import githubRepos from '../react-native-libraries.json';
-import * as Strings from '../util/strings';
+import { isEmptyOrNull } from '../util/strings';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -48,11 +48,11 @@ const buildAndScoreData = async () => {
   let data = await loadRepositoryDataAsync();
 
   data = data.filter(project => {
-    if (!project.github || Strings.isEmptyOrNull(project.github.name)) {
+    if (!project.github || isEmptyOrNull(project.github.name)) {
       invalidRepos.push(project.githubUrl);
       return false;
     }
-    return !Strings.isEmptyOrNull(project.github.name);
+    return !isEmptyOrNull(project.github.name);
   });
 
   if (SCRAPE_GH_IMAGES) {
