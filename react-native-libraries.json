@@ -10885,5 +10885,12 @@
       "https://raw.githubusercontent.com/callstack/react-native-windows-hello/main/.github/Resources/RNW-Hello-FullExample.gif"
     ],
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/tushu4212/rntemplate",
+    "npmPkg": "@tushar4212/rntemplate",
+    "ios": true,
+    "android": true,
+    "template": true 
   }
 ]
