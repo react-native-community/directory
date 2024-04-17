@@ -10155,16 +10155,20 @@
   {
     "githubUrl": "https://github.com/jpudysz/react-native-unistyles",
     "examples": [
-      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/bare",
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/macos",
       "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/win",
-      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo/src/examples"
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/expo",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/tv",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/examples/vision"
     ],
     "ios": true,
     "android": true,
     "web": true,
     "macos": true,
     "windows": true,
+    "tvos": true,
+    "visionos": true,
     "newArchitecture": true
   },
   {
