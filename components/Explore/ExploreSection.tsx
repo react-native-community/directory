@@ -24,7 +24,7 @@ const LibraryWithLoading = dynamic(() => import('../Library'), {
 type ExploreSectionProps = {
   data: LibraryType[];
   title: string;
-  filter: (LibraryType) => boolean;
+  filter: (library: LibraryType) => boolean;
   icon: any;
   count?: number;
   queryParams?: Query;
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
   subHeader: {
     display: 'flex',
     gap: 16,
-    marginTop: 16,
-    marginBottom: 8,
+    marginHorizontal: 8,
+    marginVertical: 16,
     alignItems: 'center',
   },
   subHeaderTitle: {

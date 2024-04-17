@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingTop: 32,
     paddingBottom: 28,
-    marginTop: 12,
+    marginTop: 4,
   },
   footerTextWrapper: {
     flexDirection: 'row',

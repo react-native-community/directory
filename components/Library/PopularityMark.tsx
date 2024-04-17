@@ -91,15 +91,18 @@ const PopularityMark = ({ library, markOnly = false }: Props) => {
   );
 
   return markOnly ? (
-    <View>{content}</View>
+    <View style={styles.container}>{content}</View>
   ) : (
-    <A href="/scoring" style={styles.scoringLink}>
+    <A href="/scoring" style={[styles.container, styles.scoringLink]}>
       {content}
     </A>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 4,
+  },
   popularityMark: {
     height: 6,
     position: 'absolute',

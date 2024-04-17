@@ -10,8 +10,9 @@ import { FilterButton } from '../components/Filters/FilterButton';
 import LoadingContent from '../components/Library/LoadingContent';
 import Navigation from '../components/Navigation';
 import PageMeta from '../components/PageMeta';
+import Pagination from '../components/Pagination';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../types';
+import { Library as LibraryType, QueryOrder } from '../types';
 import getApiUrl from '../util/getApiUrl';
 import urlWithQuery from '../util/urlWithQuery';
 
@@ -20,8 +21,9 @@ const LibraryWithLoading = dynamic(() => import('../components/Library'), {
 });
 
 const Trending = ({ data, query }) => {
-  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 0);
+  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 2);
   const { isDark } = useContext(CustomAppearanceContext);
+  const total = data && data.total;
 
   return (
     <>
@@ -44,14 +46,20 @@ const Trending = ({ data, query }) => {
       </Navigation>
       {isFilterVisible && <Filters query={query} basePath="/trending" />}
       <ContentContainer style={styles.container}>
-        {data.length ? (
-          data.map((item: LibraryType, index: number) => (
-            <LibraryWithLoading
-              key={`list-item-${index}-${item.github.name}`}
-              library={item}
-              showPopularity
-            />
-          ))
+        {data?.libraries.length ? (
+          <>
+            <Pagination query={query} total={total} basePath="/trending" />
+            <View style={styles.wrapper}>
+              {data.libraries.map((item: LibraryType, index: number) => (
+                <LibraryWithLoading
+                  key={`list-item-${index}-${item.github.name}`}
+                  library={item}
+                  showPopularity
+                />
+              ))}
+            </View>
+            <Pagination query={query} total={total} basePath="/trending" />
+          </>
         ) : (
           <View style={styles.noResultWrapper}>
             <Image
@@ -76,31 +84,31 @@ const Trending = ({ data, query }) => {
 };
 
 Trending.getInitialProps = async (ctx: NextPageContext) => {
-  const url = getApiUrl(
-    urlWithQuery('/libraries', {
-      ...ctx.query,
-      ...{ limit: 9999, minPopularity: 5, order: 'popularity' },
-    }),
-    ctx
-  );
+  const trendingQuery = {
+    ...ctx.query,
+    ...{ minPopularity: 5, order: 'popularity' as QueryOrder },
+  };
+  const url = getApiUrl(urlWithQuery('/libraries', trendingQuery), ctx);
   const response = await fetch(url);
   const result = await response.json();
 
   return {
-    data: result.libraries,
-    query: ctx.query,
+    data: result,
+    query: trendingQuery,
   };
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 32,
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
   note: {
     padding: 24,
     fontSize: 14,
+  },
+  wrapper: {
+    marginTop: 12,
   },
   noResultWrapper: {
     alignItems: 'center',

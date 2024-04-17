@@ -3,7 +3,7 @@ const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
 const withImages = require('next-images');
 
-module.exports = withPlugins([[withExpo, { projectRoot: __dirname }], withImages, withFonts], {
+module.exports = withPlugins([withExpo, withImages, withFonts], {
   productionBrowserSourceMaps: true,
   swcMinify: true,
   eslint: {

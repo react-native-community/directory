@@ -11,7 +11,6 @@ import UnmaintainedLabel from './UnmaintainedLabel';
 import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
-import { isEmptyOrNull } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
 
 type Props = {
@@ -52,7 +51,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
-        {!isEmptyOrNull(github.description) && (
+        {github.description && github.description.length && (
           <View style={styles.verticalMargin}>
             <Headline numberOfLines={skipMeta && 3} style={{ fontWeight: '400', lineHeight: 23 }}>
               <Linkify
@@ -211,7 +210,7 @@ const styles = StyleSheet.create({
   noMetaContainer: {
     width: '48.5%',
     marginHorizontal: '0.75%',
-    maxHeight: 232,
+    minHeight: 206,
   },
   noMetaColumnContainer: {
     maxHeight: 'auto',

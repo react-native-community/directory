@@ -96,8 +96,8 @@ Popular.getInitialProps = async (ctx: NextPageContext) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
-    paddingHorizontal: 16,
+    paddingTop: 12,
+    paddingHorizontal: 8,
     paddingBottom: 12,
   },
 });
