@@ -10892,5 +10892,15 @@
     "ios": true,
     "android": true,
     "template": true 
+  },
+  {
+    "githubUrl": "https://github.com/lodev09/react-native-true-sheet",
+    "npmPkg": "@lodev09/react-native-true-sheet",
+    "examples": [
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example"
+    ],
+    "images": ["https://github.com/lodev09/react-native-true-sheet/blob/main/preview.gif"],
+    "ios": true,
+    "android": true
   }
 ]
