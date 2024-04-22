@@ -10871,7 +10871,7 @@
      ],
     "images": [
       "https://github.com/SectionTN/otp-input/blob/main/assets/screenshot_one.jpg",
-      "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif", 
+      "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif",
       "https://github.com/SectionTN/otp-input/blob/main/assets/web.gif"
     ],
     "ios": true,
@@ -10891,7 +10891,7 @@
     "npmPkg": "@tushar4212/rntemplate",
     "ios": true,
     "android": true,
-    "template": true 
+    "template": true
   },
    {
     "githubUrl": "https://github.com/lodev09/react-native-true-sheet",
@@ -10902,6 +10902,12 @@
     "examples": [
       "https://github.com/lodev09/react-native-true-sheet/tree/main/example"
     ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dylankenneally/react-native-ssh-sftp",
+    "npmPkg": "@dylankenneally/react-native-ssh-sftp",
     "ios": true,
     "android": true
   }
