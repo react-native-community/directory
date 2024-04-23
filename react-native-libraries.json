@@ -10910,5 +10910,22 @@
     "npmPkg": "@dylankenneally/react-native-ssh-sftp",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RichardRNStudio/react-native-slider-intro",
+    "images": [
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/basic-example.gif",
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/custom-buttons-example.gif",
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/column-buttons-example.gif"
+    ],
+    "examples": [
+      "https://github.com/RichardRNStudio/react-native-slider-intro/blob/main/example/src/BasicExample.tsx",
+      "https://github.com/RichardRNStudio/react-native-slider-intro/blob/main/example/src/CustomButtonsExample.tsx",
+      "https://github.com/RichardRNStudio/react-native-slider-intro/blob/main/example/src/ColumnButtonsExample.tsx"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true
   }
 ]
