@@ -10910,5 +10910,18 @@
     "npmPkg": "@dylankenneally/react-native-ssh-sftp",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RichardRNStudio/react-native-find-local-devices",
+    "images": [
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-find-local-devices/main/docs/android-example.gif"
+    ],
+    "examples": [
+      "https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/example"
+    ],
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expoGo": false
   }
 ]
