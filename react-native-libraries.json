@@ -10912,6 +10912,20 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/RichardRNStudio/react-native-slider-intro",
+    "images": [
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/basic-example.gif",
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/custom-buttons-example.gif",
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-slider-intro/main/docs/column-buttons-example.gif"
+    ],
+    "examples": [
+      "https://github.com/RichardRNStudio/react-native-slider-intro/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/RichardRNStudio/react-native-find-local-devices",
     "images": [
       "https://raw.githubusercontent.com/RichardRNStudio/react-native-find-local-devices/main/docs/android-example.gif"
