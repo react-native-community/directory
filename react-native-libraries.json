@@ -10919,9 +10919,6 @@
     "examples": [
       "https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/example"
     ],
-    "ios": false,
-    "android": true,
-    "web": false,
-    "expoGo": false
+    "android": true
   }
 ]
