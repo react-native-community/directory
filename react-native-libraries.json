@@ -10924,5 +10924,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/RichardRNStudio/react-native-find-local-devices",
+    "images": [
+      "https://raw.githubusercontent.com/RichardRNStudio/react-native-find-local-devices/main/docs/android-example.gif"
+    ],
+    "examples": [
+      "https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/example"
+    ],
+    "android": true
   }
 ]
