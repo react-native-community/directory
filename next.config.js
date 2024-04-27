@@ -1,9 +1,12 @@
 const { withExpo } = require('@expo/next-adapter');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
 const withImages = require('next-images');
 
-module.exports = withPlugins([withExpo, withImages, withFonts], {
+module.exports = withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
   productionBrowserSourceMaps: true,
   swcMinify: true,
   eslint: {
@@ -15,6 +18,7 @@ module.exports = withPlugins([withExpo, withImages, withFonts], {
   transpilePackages: [
     '@expo/html-elements',
     '@react-native-picker/picker',
+    '@sentry/react',
     'react-native-safe-area-context',
     'react-native-svg',
     'react-native-web',

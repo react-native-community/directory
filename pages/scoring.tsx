@@ -38,7 +38,7 @@ const Scoring = () => {
     color: isDark ? colors.gray2 : colors.black,
   };
   const calloutStyle = {
-    color: isDark ? colors.gray2 : colors.black,
+    color: isDark ? darkColors.warning : colors.warningDark,
     backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
     borderLeftColor: isDark ? darkColors.warning : colors.warning,
   };
