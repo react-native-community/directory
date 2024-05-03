@@ -52,8 +52,8 @@ export const darkColors = {
   powder: '#262a36',
   pewter: '#767C8E',
   secondary: '#a2a7ab',
-  warningLight: '#4B3F03',
-  warning: '#685603',
+  warningLight: '#2f2704',
+  warning: '#9a810c',
 };
 
 const baseTextStyles = {

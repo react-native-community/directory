@@ -20,12 +20,9 @@ const Tag = ({ label, tagStyle, showCheck = true }: TagProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <View key={label} style={[styles.tag, tagStyle]}>
-      {showCheck ? (
-        <Check width={14} height={10} fill={isDark ? darkColors.secondary : undefined} />
-      ) : null}
+      {showCheck ? <Check width={12} height={8} fill={colors.gray5} /> : null}
       <Label
         style={[
-          showCheck ? styles.textWithIcon : styles.text,
           {
             color: isDark ? darkColors.secondary : colors.black,
           },
@@ -93,22 +90,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
     marginBottom: -4,
+    gap: 6,
   },
   tag: {
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    marginRight: 8,
-    borderRadius: 2,
-    paddingHorizontal: 6,
+    borderRadius: 4,
+    paddingHorizontal: 8,
     paddingVertical: 4,
     marginBottom: 4,
     userSelect: 'none',
-  },
-  textWithIcon: {
-    marginLeft: 4,
-  },
-  text: {
-    marginHorizontal: 4,
+    gap: 4,
   },
 });

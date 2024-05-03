@@ -13,15 +13,15 @@ const UnmaintainedLabel = () => {
         style={[
           styles.unmaintainedTextContainer,
           {
-            backgroundColor: isDark ? darkColors.warning : colors.warningLight,
+            backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
           },
         ]}>
-        <Warning width={16} height={16} fill={isDark ? colors.gray2 : colors.warningDark} />
+        <Warning width={16} height={16} fill={isDark ? darkColors.warning : colors.warningDark} />
         <Label
           style={[
             styles.unmaintainedText,
             {
-              color: isDark ? colors.gray2 : colors.warningDark,
+              color: isDark ? darkColors.warning : colors.warningDark,
             },
           ]}>
           This library is not actively maintained
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 12,
     paddingVertical: 6,
-    borderTopRightRadius: 2,
-    borderBottomRightRadius: 2,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
   },
   unmaintainedText: {
     marginLeft: 6,
