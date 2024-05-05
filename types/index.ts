@@ -91,6 +91,7 @@ export type Library = {
     };
     hasTypes?: boolean;
     newArchitecture?: boolean;
+    packageJson?: PackageJsonData;
   };
   npm?: {
     downloads?: number;
@@ -108,4 +109,15 @@ export type Library = {
   nameOverride?: string;
   popularity?: number;
   matchScore?: number;
+};
+
+export type PackageJsonData = {
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  peerDependency?: Record<string, string>;
+  resolutions?: Record<string, string>;
+  engines?: Record<string, string>;
+  packageManager?: string;
+  author?: Record<string, string> | string;
+  contributors?: string[];
 };

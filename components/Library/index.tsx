@@ -11,6 +11,7 @@ import UnmaintainedLabel from './UnmaintainedLabel';
 import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
+import { getLibraryDisplayName } from '../../util/strings';
 import { CompatibilityTags } from '../CompatibilityTags';
 
 type Props = {
@@ -23,7 +24,8 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
-  const libName = library.nameOverride || library.npmPkg || github.name;
+  const libName = getLibraryDisplayName(library);
+  const detailsLinkHoverStyle = isDark && { color: colors.primaryDark };
 
   return (
     <View
@@ -39,14 +41,27 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
       <View style={styles.columnOne}>
         {library.unmaintained && <UnmaintainedLabel />}
         {showPopularity && library.popularity && <PopularityMark library={library} />}
-        <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
+        <View
+          style={[
+            styles.nameWrapper,
+            isSmallScreen ? styles.containerColumn : styles.displayHorizontal,
+          ]}>
+          <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
+            <A
+              href={library.githubUrl || github.urls.repo}
+              style={styles.name}
+              hoverStyle={styles.nameHovered}>
+              {libName}
+            </A>
+            {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
+          </View>
           <A
-            href={library.githubUrl || github.urls.repo}
-            style={styles.name}
-            hoverStyle={styles.nameHovered}>
-            {libName}
+            href={`package/${library.npmPkg}`}
+            target="_self"
+            style={styles.detailsLink}
+            hoverStyle={detailsLinkHoverStyle}>
+            See details
           </A>
-          {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -136,6 +151,10 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderTopWidth: 1,
   },
+  nameWrapper: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   name: {
     backgroundColor: 'transparent',
     fontWeight: '600',
@@ -185,6 +204,12 @@ const styles = StyleSheet.create({
   secondaryText: {
     fontSize: 13,
     color: colors.gray5,
+  },
+  detailsLink: {
+    fontSize: 14,
+    color: colors.gray4,
+    backgroundColor: 'transparent',
+    textDecorationLine: 'none',
   },
   bottomBar: {
     width: '100%',

@@ -23,9 +23,15 @@ import {
 type Props = {
   library: LibraryType;
   secondary?: boolean;
+  skipExamples?: boolean;
 };
 
-const generateData = (library: LibraryType, secondary: boolean, isDark: boolean) => {
+const generateData = (
+  library: LibraryType,
+  secondary: boolean,
+  isDark: boolean,
+  skipExamples = false
+) => {
   const { github, newArchitecture, examples, score, npm, npmPkg } = library;
 
   if (secondary) {
@@ -84,7 +90,7 @@ const generateData = (library: LibraryType, secondary: boolean, isDark: boolean)
             ),
           }
         : null,
-      examples && examples.length
+      !skipExamples && examples && examples.length
         ? {
             id: 'examples',
             icon: <Code fill={iconColor} width={16} height={16} />,
@@ -183,9 +189,9 @@ const generateData = (library: LibraryType, secondary: boolean, isDark: boolean)
   }
 };
 
-export function MetaData({ library, secondary }: Props) {
+export function MetaData({ library, secondary, skipExamples = false }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const data = generateData(library, secondary, isDark);
+  const data = generateData(library, secondary, isDark, skipExamples);
 
   return (
     <>

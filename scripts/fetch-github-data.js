@@ -232,6 +232,17 @@ const getLicenseFromPackageJson = packageJson => {
 const processTopics = topics =>
   (topics || []).map(topic => topic.replace(/([ _])/g, '-').toLowerCase());
 
+const PACKAGE_JSON_KEYS_TO_PICK = [
+  'dependencies',
+  'devDependencies',
+  'peerDependency',
+  'engines',
+  'packageManager',
+  'resolutions',
+  'author',
+  'contributors',
+];
+
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
     try {
@@ -259,6 +270,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
           json.description = packageJson.description;
         }
 
+        if (!json.homepageUrl) {
+          json.homepageUrl = packageJson.homepage;
+        }
+
         if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
         }
@@ -267,6 +282,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
       if (packageJson.types || packageJson.typings) {
         json.types = true;
       }
+
+      json.packageJson = Object.fromEntries(
+        Object.entries(packageJson).filter(([key]) => PACKAGE_JSON_KEYS_TO_PICK.includes(key))
+      );
     } catch (e) {
       console.warn(`Unable to parse ${json.name} package.json file!`);
       console.error(e);
@@ -310,5 +329,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     lastRelease: json.lastRelease,
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
+    packageJson: json.packageJson,
   };
 };
