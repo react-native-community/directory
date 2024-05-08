@@ -10934,5 +10934,17 @@
       "https://github.com/RichardRNStudio/react-native-find-local-devices/blob/main/example"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Netizen-Teknologi/avatar-placeholder",
+    "npmPkg": "@netizen-teknologi/avatar-placeholder",
+    "examples": [
+      "https://github.com/Netizen-Teknologi/avatar-placeholder/tree/main/example/react-native",
+      "https://snack.expo.dev/@rinaldycodes/avatar-placeholder-example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
