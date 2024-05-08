@@ -10946,5 +10946,14 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-quick-crypto",
+    "npmPkg": "react-native-quick-crypto",
+    "examples": [
+      "https://github.com/margelo/react-native-quick-crypto/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
