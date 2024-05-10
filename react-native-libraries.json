@@ -10965,5 +10965,12 @@
     "ios": true,
     "android": true,
     "examples": ["https://github.com/vokhuyetOz/react-native-messy/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/vokhuyetOz/react-native-concurrent-sound",
+    "npmPkg": "@vokhuyet/react-native-concurrent-sound",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/vokhuyetOz/react-native-concurrent-sound/tree/main/example"]
   }
 ]
