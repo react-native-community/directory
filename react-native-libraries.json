@@ -10972,5 +10972,11 @@
     "ios": true,
     "android": true,
     "examples": ["https://github.com/vokhuyetOz/react-native-concurrent-sound/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/FerRiv3ra/rn-inkpad",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
