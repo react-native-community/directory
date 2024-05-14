@@ -10893,7 +10893,7 @@
     "android": true,
     "template": true
   },
-   {
+  {
     "githubUrl": "https://github.com/lodev09/react-native-true-sheet",
     "npmPkg": "@lodev09/react-native-true-sheet",
     "images": [
@@ -10978,5 +10978,20 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/lodev09/expo-recorder",
+    "npmPkg": "@lodev09/expo-recorder",
+    "images": [
+      "https://raw.githubusercontent.com/lodev09/expo-recorder/main/preview.gif"
+    ],
+    "examples": [
+      "https://github.com/lodev09/expo-recorder/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
