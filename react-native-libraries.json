@@ -3224,6 +3224,7 @@
     "android": true,
     "windows": true,
     "macos": true,
+    "visionos": true,
     "npmPkg": "@react-native-clipboard/clipboard"
   },
   {
@@ -3265,7 +3266,8 @@
     "android": true,
     "expoGo": true,
     "windows": true,
-    "macos": true
+    "macos": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/react-native-camera/react-native-camera",
@@ -3323,7 +3325,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "windows": true
+    "windows": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/dualscreeninfo",
@@ -3765,7 +3768,9 @@
     "expoGo": true,
     "tvos": true,
     "web": true,
-    "windows": true
+    "windows": true,
+    "macos": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
