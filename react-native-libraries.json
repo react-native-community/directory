@@ -10998,5 +10998,18 @@
     "expoGo": true,
     "web": true,
     "newArchitecture": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/LovesWorking/react-native-react-query-devtools",
+  "npmPkg": "react-native-react-query-devtools",
+  "examples": [
+    "https://github.com/LovesWorking/RN-Dev-Tools-Example"
+  ],
+  "images": ["https://private-user-images.githubusercontent.com/111514077/306025651-cba61dd3-bd3f-47a7-9573-1efa088084a0.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY0MDIzNjEsIm5iZiI6MTcxNjQwMjA2MSwicGF0aCI6Ii8xMTE1MTQwNzcvMzA2MDI1NjUxLWNiYTYxZGQzLWJkM2YtNDdhNy05NTczLTFlZmEwODgwODRhMC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyMlQxODIxMDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOTRjYWM5NDM0NjMyMDY3OTcyMjZiOGIzMmMxNmNiNGJhOWM5MWY3YTgzNTQ1ODkxNzUxZWQzODNmZGVlZTBiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.jm_KWIDTWLkYtCtjyFSNQIZQn7T4Ejd27gYnY6N8t58"],
+  "ios": true,
+  "android": true,
+  "expoGo": true,
+  "tvos": true,
+  "dev": true
+}
 ]
