@@ -10998,5 +10998,13 @@
     "expoGo": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/calintamas/react-native-toast-message",
+    "npmPkg": "https://www.npmjs.com/package/react-native-toast-message",
+    "images": ["https://raw.githubusercontent.com/calintamas/react-native-toast-message/HEAD/docs/toast.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
   }
 ]
