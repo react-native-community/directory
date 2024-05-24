@@ -11010,5 +11010,19 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-react-query-devtools",
+    "examples": [
+      "https://github.com/LovesWorking/RN-Dev-Tools-Example"
+    ],
+    "images": [
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGxmMHhhbXRicmEzbm44OGU5cW05ZmV6enQ0eTQ5MmJ3MWp2ZmhkdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZWYRq7RgGeDqYYMoFS/giphy.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "tvos": true,
+    "dev": true
   }
 ]
