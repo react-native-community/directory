@@ -11000,6 +11000,18 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/duguyihou/react-native-turbo-image",
+    "images":[
+      "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/list.gif",
+      "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/process.gif"
+    ],
+    "examples": [
+      "https://github.com/duguyihou/react-native-turbo-image/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/LovesWorking/react-native-react-query-devtools",
     "examples": [
       "https://github.com/LovesWorking/RN-Dev-Tools-Example"
