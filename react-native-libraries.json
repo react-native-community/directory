@@ -11031,5 +11031,13 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/gladiuscode/react-native-orientation-director",
+    "examples": [
+      "https://github.com/gladiuscode/react-native-orientation-director/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
