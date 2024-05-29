@@ -3,7 +3,10 @@ import { isEmptyOrNull } from './strings';
 const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
   const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
   const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
-  const isNameMatch = isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
+  const isExactNameMatch =
+    (!isEmptyOrNull(github.name) && github.name === querySearch) ||
+    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch);
+  const isNameMatch = isExactNameMatch ? 150 : isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
   const isDescriptionMatch =
     !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
       ? 10

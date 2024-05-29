@@ -11249,6 +11249,7 @@
       "ios": true,
       "android": true,
       "expoGo": true,
+      "unmaintained": "expo-image",
       "github": {
         "urls": {
           "repo": "https://github.com/expo/react-native-fade-in-image",
@@ -64985,6 +64986,7 @@
       ],
       "ios": true,
       "android": true,
+      "unmaintained": "@op-engineering/op-sqlite",
       "github": {
         "urls": {
           "repo": "https://github.com/ospfranco/react-native-quick-sqlite",

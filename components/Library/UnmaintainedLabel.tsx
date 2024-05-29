@@ -1,31 +1,60 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, darkColors, Label } from '../../common/styleguide';
+import { A, colors, darkColors, Label, useLayout } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Warning } from '../Icons';
 
-const UnmaintainedLabel = () => {
+const UnmaintainedLabel = ({ value }) => {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
+  const linkHoverStyle = isDark && { color: colors.secondary };
+
   return (
     <View style={styles.unmaintainedTextWrapper}>
       <View
         style={[
           styles.unmaintainedTextContainer,
           {
+            gap: 4,
+            flexDirection: isSmallScreen ? 'column' : 'row',
             backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
           },
         ]}>
-        <Warning width={16} height={16} fill={isDark ? darkColors.warning : colors.warningDark} />
-        <Label
+        <View
           style={[
-            styles.unmaintainedText,
+            styles.unmaintainedTextWrapper,
             {
-              color: isDark ? darkColors.warning : colors.warningDark,
+              gap: 6,
             },
           ]}>
-          This library is not actively maintained
-        </Label>
+          <Warning width={16} height={16} fill={isDark ? darkColors.warning : colors.warningDark} />
+          <Label
+            style={[
+              {
+                color: isDark ? darkColors.warning : colors.warningDark,
+              },
+            ]}>
+            This library is not actively maintained.
+          </Label>
+        </View>
+        {typeof value === 'string' && (
+          <Label
+            style={[
+              {
+                color: isDark ? darkColors.warning : colors.warningDark,
+              },
+            ]}>
+            You can use{' '}
+            <A
+              href={`/?search=${encodeURIComponent(value)}`}
+              style={{ backgroundColor: 'transparent' }}
+              hoverStyle={linkHoverStyle}>
+              {value}
+            </A>{' '}
+            instead.
+          </Label>
+        )}
       </View>
     </View>
   );
@@ -36,8 +65,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   unmaintainedTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginLeft: -20,
     marginBottom: 12,
     paddingLeft: 20,
@@ -45,9 +73,6 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4,
-  },
-  unmaintainedText: {
-    marginLeft: 6,
   },
 });
 

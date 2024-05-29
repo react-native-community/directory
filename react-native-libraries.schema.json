@@ -77,10 +77,10 @@
       },
       "unmaintained": {
         "$id": "#/items/properties/unmaintained",
-        "type": "boolean",
+        "type": ["boolean", "string"],
         "title": "The Unmaintained Schema",
         "default": false,
-        "examples": [true]
+        "examples": [true, "expo-image"]
       },
       "images": {
         "$id": "#/items/properties/images",
