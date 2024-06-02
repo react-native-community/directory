@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { View } from 'react-native';
 
-import { A, Caption, Label } from '../common/styleguide';
+import { A, Caption, colors, Label } from '../common/styleguide';
+import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { PackageJsonData } from '../types';
 
 type Props = {
@@ -9,6 +11,8 @@ type Props = {
 };
 
 export function PackageAuthor({ author }: Props) {
+  const { isDark } = useContext(CustomAppearanceContext);
+
   if (!author) {
     return (
       <View>
@@ -50,15 +54,16 @@ export function PackageAuthor({ author }: Props) {
             gap: 12,
             alignItems: 'center',
             backgroundColor: 'transparent',
-          }}>
+          }}
+          hoverStyle={isDark && { color: colors.primaryDark }}>
           <img
             src={`https://github.com/${ghUsername}.png`}
             style={{ width: 36, height: 36, borderRadius: '100%' }}
             alt={`${ghUsername} avatar`}
           />
           <View>
-            <Caption style={{ lineHeight: 16 }}>{ghUsername}</Caption>
-            <Label>{validName}</Label>
+            <Caption style={{ lineHeight: 16, color: 'inherit' }}>{ghUsername}</Caption>
+            <Label style={{ color: 'inherit' }}>{validName}</Label>
           </View>
         </A>
       </View>

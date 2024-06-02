@@ -19,6 +19,7 @@ import { PackageAuthor } from '../../components/PackageAuthor';
 import PageMeta from '../../components/PageMeta';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library as LibraryType } from '../../types';
+import { getTimeSinceToday } from '../../util/datetime';
 import getApiUrl from '../../util/getApiUrl';
 import { getExampleDescription, getLibraryDisplayName } from '../../util/strings';
 import urlWithQuery from '../../util/urlWithQuery';
@@ -55,8 +56,8 @@ export default function PackagePage({ data, packageName }: Props) {
     );
   }
 
-  const { author, contributors, dependencies, devDependencies, peerDependency } =
-    library.github.packageJson;
+  const { description, packageJson, lastRelease, urls } = library.github;
+  const { author, contributors, dependencies, devDependencies, peerDependencies } = packageJson;
 
   const headerColorStyle = {
     color: isDark ? darkColors.secondary : colors.gray5,
@@ -64,6 +65,7 @@ export default function PackagePage({ data, packageName }: Props) {
   const mutedLinkHoverStyle = isDark && { color: colors.primaryDark };
 
   const libraryDisplayName = getLibraryDisplayName(library);
+  const libraryRepoURL = library.githubUrl ?? urls.repo;
 
   return (
     <>
@@ -78,21 +80,18 @@ export default function PackagePage({ data, packageName }: Props) {
           <View style={styles.readmeContainer}>
             {library.unmaintained && <UnmaintainedLabel />}
             <View style={styles.nameWrapper}>
-              <A
-                href={library.githubUrl || library.github.urls.repo}
-                style={styles.name}
-                hoverStyle={styles.nameHovered}>
+              <A href={libraryRepoURL} style={styles.name} hoverStyle={styles.nameHovered}>
                 {libraryDisplayName}
               </A>
               {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
             </View>
-            {library.github.description && library.github.description.length && (
+            {description && description.length && (
               <Headline style={{ fontWeight: '400', lineHeight: 23, marginBottom: 8 }}>
                 <Linkify
                   options={{
                     linkWrapper: props => <A {...props}>{props.children}</A>,
                   }}>
-                  {emoji.emojify(library.github.description)}
+                  {emoji.emojify(description)}
                 </Linkify>
               </Headline>
             )}
@@ -100,6 +99,31 @@ export default function PackagePage({ data, packageName }: Props) {
             <CompatibilityTags library={library} />
             <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
             <PopularityMark library={library} />
+            {author && (
+              <>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
+                <View style={{ alignItems: 'flex-start' }}>
+                  <PackageAuthor author={author} />
+                </View>
+              </>
+            )}
+            {lastRelease ? (
+              <>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Last GitHub Release</H6>
+                <View style={{ gap: 4, alignItems: 'flex-start' }}>
+                  <A
+                    href={`${urls.repo}/releases/tag/${lastRelease.tagName}`}
+                    style={styles.mutedLink}
+                    hoverStyle={mutedLinkHoverStyle}>
+                    {lastRelease.name ?? lastRelease.tagName}
+                    {lastRelease.isPrerelease ? ` (pre-release)` : ''}
+                  </A>
+                  <P style={[{ fontSize: 13 }, headerColorStyle]}>
+                    {getTimeSinceToday(lastRelease.createdAt)}
+                  </P>
+                </View>
+              </>
+            ) : null}
             {library.examples && library.examples.length ? (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Code examples</H6>
@@ -116,6 +140,10 @@ export default function PackagePage({ data, packageName }: Props) {
                 </View>
               </>
             ) : null}
+            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Additional information</H6>
+            <View style={{ gap: 6 }}>
+              <MetaData library={library} secondary skipExamples />
+            </View>
             {library.images && library.images.length ? (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Usage gallery</H6>
@@ -126,22 +154,27 @@ export default function PackagePage({ data, packageName }: Props) {
                 </View>
               </>
             ) : null}
-            {author && (
-              <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
-                <View style={{ alignItems: 'flex-start' }}>
-                  <PackageAuthor author={author} />
-                </View>
-              </>
-            )}
-            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Additional information</H6>
-            <View style={{ gap: 6 }}>
-              <MetaData library={library} secondary skipExamples />
-            </View>
           </View>
           <View style={styles.depsContainer}>
             <View>
               <MetaData library={library} />
+            </View>
+            <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
+            <View style={{ gap: 4 }}>
+              <A
+                href={`https://bundlephobia.com/package/${library.npmPkg}`}
+                target="_blank"
+                style={[styles.dependencyLabel, styles.mutedLink]}
+                hoverStyle={mutedLinkHoverStyle}>
+                Bundlephobia
+              </A>
+              <A
+                href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
+                target="_blank"
+                style={[styles.dependencyLabel, styles.mutedLink]}
+                hoverStyle={mutedLinkHoverStyle}>
+                Snyk Advisor
+              </A>
             </View>
             {contributors && (
               <>
@@ -191,11 +224,11 @@ export default function PackagePage({ data, packageName }: Props) {
                 </View>
               </>
             )}
-            {peerDependency && (
+            {peerDependencies && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Peer dependencies</H6>
                 <View>
-                  {Object.entries(peerDependency).map(([name, version]: [string, string]) => (
+                  {Object.entries(peerDependencies).map(([name, version]: [string, string]) => (
                     <View key={`peer-dep-${name}`} style={styles.dependencyEntry}>
                       <A
                         href={`https://www.npmjs.com/package/${name}`}
@@ -210,18 +243,16 @@ export default function PackagePage({ data, packageName }: Props) {
                 </View>
               </>
             )}
-            {library.github.packageJson && library.github.packageJson.engines && (
+            {packageJson && packageJson.engines && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Engines</H6>
                 <View>
-                  {Object.entries(library.github.packageJson.engines).map(
-                    ([name, version]: [string, string]) => (
-                      <View key={`engines-${name}`} style={styles.dependencyEntry}>
-                        <P style={styles.dependencyLabel}>{name}</P>
-                        <Label style={headerColorStyle}>{version}</Label>
-                      </View>
-                    )
-                  )}
+                  {Object.entries(packageJson.engines).map(([name, version]: [string, string]) => (
+                    <View key={`engines-${name}`} style={styles.dependencyEntry}>
+                      <P style={styles.dependencyLabel}>{name}</P>
+                      <Label style={headerColorStyle}>{version}</Label>
+                    </View>
+                  ))}
                 </View>
               </>
             )}

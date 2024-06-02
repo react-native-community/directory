@@ -13,7 +13,7 @@ import { isEmptyOrNull } from '../util/strings';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
-const USE_DEBUG_REPOS = false;
+const USE_DEBUG_REPOS = true;
 
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
@@ -124,6 +124,15 @@ const buildAndScoreData = async () => {
       console.log(`Failed to calculate popularity for ${project.github.name}`, e.message);
       console.log(project.githubUrl);
     }
+  });
+
+  console.log('\n** Marking packages with archived repository as unmaintained');
+  data = data.map(project => {
+    if (project.github.isArchived) {
+      project.unmaintained = project.unmaintained || project.github.isArchived;
+      return project;
+    }
+    return project;
   });
 
   // Process topic counts

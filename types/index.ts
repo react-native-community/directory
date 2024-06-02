@@ -83,7 +83,7 @@ export type Library = {
       id: string;
     };
     lastRelease?: {
-      name: string;
+      name?: string;
       tagName: string;
       createdAt: Date | string;
       publishedAt: Date | string;
@@ -91,6 +91,7 @@ export type Library = {
     };
     hasTypes?: boolean;
     newArchitecture?: boolean;
+    isArchived?: boolean;
     packageJson?: PackageJsonData;
   };
   npm?: {
@@ -114,7 +115,7 @@ export type Library = {
 export type PackageJsonData = {
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
-  peerDependency?: Record<string, string>;
+  peerDependencies?: Record<string, string>;
   resolutions?: Record<string, string>;
   engines?: Record<string, string>;
   packageManager?: string;

@@ -67,6 +67,7 @@ const query = `
       nameWithOwner
       isArchived
       isMirror
+      diskUsage
       licenseInfo {
         key
         name
@@ -236,6 +237,7 @@ const PACKAGE_JSON_KEYS_TO_PICK = [
   'dependencies',
   'devDependencies',
   'peerDependency',
+  'peerDependencies',
   'engines',
   'packageManager',
   'resolutions',
@@ -283,9 +285,19 @@ const createRepoDataWithResponse = (json, monorepo) => {
         json.types = true;
       }
 
-      json.packageJson = Object.fromEntries(
-        Object.entries(packageJson).filter(([key]) => PACKAGE_JSON_KEYS_TO_PICK.includes(key))
-      );
+      json.packageJson = Object.entries(packageJson)
+        .filter(([key]) => PACKAGE_JSON_KEYS_TO_PICK.includes(key))
+        .reduce((acc, [key, value]) => {
+          if (key === 'peerDependency') {
+            if (!acc['peerDependencies']) {
+              acc['peerDependencies'] = [];
+            }
+            acc['peerDependencies'].push(value);
+          } else {
+            acc[key] = value;
+          }
+          return acc;
+        }, {});
     } catch (e) {
       console.warn(`Unable to parse ${json.name} package.json file!`);
       console.error(e);
