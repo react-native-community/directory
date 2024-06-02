@@ -47,7 +47,7 @@ export type Library = {
   macos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
-  unmaintained?: boolean;
+  unmaintained?: boolean | string;
   dev?: boolean;
   template?: boolean;
   newArchitecture?: boolean;

@@ -39,7 +39,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
       ]}>
       <View style={styles.columnOne}>
-        {library.unmaintained && <UnmaintainedLabel />}
+        {library.unmaintained && <UnmaintainedLabel value={library.unmaintained} />}
         {showPopularity && library.popularity && <PopularityMark library={library} />}
         <View
           style={[

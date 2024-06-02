@@ -114,7 +114,7 @@
 #### 🏷️ Tags
 
 - #### `unmaintained`
-  **(boolean)** - signify that a library is no longer maintained.
+  **(boolean|string)** - signify that a library is no longer maintained. Can also pass the package name string to point out the recommended alternative.
 - #### `dev`
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
