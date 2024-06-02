@@ -15,7 +15,9 @@ npm-debug.*
 .expo
 
 # Next.js
-.next/*
+.next
+.swc
+.vercel
 analyze/
 build/
 out/
@@ -25,3 +27,6 @@ out/
 
 # TS build files
 tsconfig.tsbuildinfo
+
+# Local GitHub API GQL schema
+schema.docs.graphql

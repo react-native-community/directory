@@ -13,7 +13,7 @@ import { isEmptyOrNull } from '../util/strings';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
-const USE_DEBUG_REPOS = true;
+const USE_DEBUG_REPOS = false;
 
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
