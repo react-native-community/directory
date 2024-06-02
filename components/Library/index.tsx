@@ -44,7 +44,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         <View
           style={[
             styles.nameWrapper,
-            isSmallScreen ? styles.containerColumn : styles.displayHorizontal,
+            isSmallScreen ? styles.mobileNameWrapper : styles.displayHorizontal,
           ]}>
           <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
             <A
@@ -58,7 +58,10 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
           <A
             href={`package/${library.npmPkg}`}
             target="_self"
-            style={styles.detailsLink}
+            style={{
+              ...styles.detailsLink,
+              ...(library.unmaintained && !isSmallScreen ? styles.detailsLinkShift : {}),
+            }}
             hoverStyle={detailsLinkHoverStyle}>
             See details
           </A>
@@ -211,6 +214,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textDecorationLine: 'none',
   },
+  detailsLinkShift: {
+    marginTop: -80,
+  },
   bottomBar: {
     width: '100%',
     position: 'absolute',
@@ -241,6 +247,11 @@ const styles = StyleSheet.create({
     maxHeight: 'auto',
     width: '98.5%',
     maxWidth: '98.5%',
+  },
+  mobileNameWrapper: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: 2,
   },
 });
 

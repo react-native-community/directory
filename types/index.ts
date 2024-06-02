@@ -60,8 +60,11 @@ export type Library = {
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
-      hasPages: boolean;
       hasDownloads: boolean;
+      hasDiscussions: boolean;
+      hasProjects: boolean;
+      hasSponsorships: boolean;
+      hasVulnerabilityAlerts: boolean;
       hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;

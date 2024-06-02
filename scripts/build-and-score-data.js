@@ -129,8 +129,7 @@ const buildAndScoreData = async () => {
   console.log('\n** Marking packages with archived repository as unmaintained');
   data = data.map(project => {
     if (project.github.isArchived) {
-      project.unmaintained = project.unmaintained || project.github.isArchived;
-      return project;
+      return { ...project, unmaintained: true };
     }
     return project;
   });

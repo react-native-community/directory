@@ -76,7 +76,7 @@ export default function PackagePage({ data, packageName }: Props) {
       />
       <Navigation title="Package information" />
       <ContentContainer style={styles.container}>
-        <View style={styles.metaContainer}>
+        <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
           <View style={styles.readmeContainer}>
             {library.unmaintained && <UnmaintainedLabel />}
             <View style={styles.nameWrapper}>
@@ -104,6 +104,16 @@ export default function PackagePage({ data, packageName }: Props) {
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
                 <View style={{ alignItems: 'flex-start' }}>
                   <PackageAuthor author={author} />
+                </View>
+              </>
+            )}
+            {contributors && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
+                <View style={{ gap: 8 }}>
+                  {contributors.map(contributor => (
+                    <PackageAuthor author={contributor} key={contributor} />
+                  ))}
                 </View>
               </>
             )}
@@ -176,16 +186,6 @@ export default function PackagePage({ data, packageName }: Props) {
                 Snyk Advisor
               </A>
             </View>
-            {contributors && (
-              <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
-                <View style={{ gap: 8 }}>
-                  {contributors.map(contributor => (
-                    <PackageAuthor author={contributor} key={contributor} />
-                  ))}
-                </View>
-              </>
-            )}
             {dependencies && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>
@@ -292,6 +292,10 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     gap: 40,
+  },
+  mobileMetaContainer: {
+    flexDirection: 'column',
+    gap: 20,
   },
   readmeContainer: {
     gap: 12,

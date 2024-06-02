@@ -42,8 +42,6 @@ const query = `
       resetAt
     }
     repository(owner: $repoOwner, name: $repoName) {
-      hasIssuesEnabled
-      hasWikiEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -68,15 +66,22 @@ const query = `
       isArchived
       isMirror
       diskUsage
+      hasDiscussionsEnabled
+      hasIssuesEnabled
+      hasProjectsEnabled
+      hasSponsorshipsEnabled
+      hasWikiEnabled
+      hasVulnerabilityAlertsEnabled
+      fundingLinks {
+        url
+        platform
+      }
       licenseInfo {
         key
         name
         spdxId
         url
         id
-      }
-      deployments {
-        totalCount
       }
       releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
         nodes {
@@ -321,8 +326,12 @@ const createRepoDataWithResponse = (json, monorepo) => {
     },
     stats: {
       hasIssues: json.hasIssuesEnabled,
+      hasDiscussions: json.hasDiscussionsEnabled,
+      hasProjects: json.hasProjectsEnabled,
+      hasSponsorships: json.hasSponsorshipsEnabled,
       hasWiki: json.hasWikiEnabled,
-      hasPages: json.deployments.totalCount > 0,
+      hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
+      fundingLinks: json.fundingLinks,
       hasDownloads: true,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
@@ -342,5 +351,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     packageJson: json.packageJson,
+    isArchived: json.isArchived,
   };
 };
