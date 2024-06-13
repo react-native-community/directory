@@ -1043,7 +1043,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "examples": ["https://snack.expo.dev/ryzXJOhH-"]
+    "examples": ["https://snack.expo.dev/ryzXJOhH-"],
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
@@ -1215,7 +1216,7 @@
     "npmPkg": "react-native-calendar-picker"
   },
   {
-    "githubUrl": "https://github.com/mrlaessig/react-native-autocomplete-input",
+    "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -3840,7 +3841,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "npmPkg": "react-native-image-zoom-viewer"
+    "npmPkg": "react-native-image-zoom-viewer",
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/sohobloo/react-native-modal-dropdown",
@@ -4154,7 +4156,8 @@
   {
     "githubUrl": "https://github.com/weflex/react-native-wechat",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Microsoft/react-native-code-push",
@@ -4894,7 +4897,8 @@
     "githubUrl": "https://github.com/tanguyantoine/react-native-music-control",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/RealOrangeOne/react-native-mock",
@@ -4951,7 +4955,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/aprock/react-native-os",
@@ -5161,7 +5166,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": "react-native-reanimated-table"
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dynamic",
@@ -7988,11 +7994,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/meedan/react-native-share-menu",
-    "examples": ["https://github.com/meedan/react-native-share-menu/tree/master/example"],
+    "githubUrl": "https://github.com/Expensify/react-native-share-menu",
+    "examples": ["https://github.com/Expensify/react-native-share-menu/tree/master/example"],
     "images": [
-      "https://raw.githubusercontent.com/meedan/react-native-share-menu/master/screenshots/android-menu.png",
-      "https://raw.githubusercontent.com/meedan/react-native-share-menu/master/screenshots/ios-share-view.gif"
+      "https://raw.githubusercontent.com/Expensify/react-native-share-menu/master/screenshots/android-menu.png",
+      "https://raw.githubusercontent.com/Expensify/react-native-share-menu/master/screenshots/ios-share-view.gif"
     ],
     "ios": true,
     "android": true
@@ -11023,6 +11029,31 @@
     ],
     "android": true,
     "ios": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/dohooo/react-native-reanimated-table",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/dohooo/react-native-reanimated-table/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/Expensify/react-native-onyx",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/wxik/react-native-rich-editor",
+    "npmPkg": "react-native-pell-rich-editor",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo-atlas",
+    "dev": true,
+    "ios": true,
+    "android": true,
+    "web": true,
     "expoGo": true
   }
 ]
