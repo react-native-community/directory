@@ -1714,13 +1714,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/sabeurthabti/react-native-css",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/tachyons-css/react-native-style-tachyons",
     "ios": true,
     "android": true,
@@ -8658,11 +8651,12 @@
     ]
   },
   {
-    "githubUrl": "https://github.com/sendbird/sendbird-calls-react-native",
+    "githubUrl": "https://github.com/sendbird/sendbird-calls-sdk-react-native",
     "npmPkg": "@sendbird/calls-react-native",
     "ios": true,
     "android": true,
     "examples": [
+      "https://github.com/sendbird/sendbird-calls-sdk-react-native/tree/main/sample",
       "https://github.com/sendbird/sendbird-calls-directcall-quickstart-react-native",
       "https://github.com/sendbird/sendbird-calls-groupcall-quickstart-react-native"
     ]
