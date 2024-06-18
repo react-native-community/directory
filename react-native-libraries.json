@@ -11055,5 +11055,14 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/withpaceio/react-native-nacl-jsi",
+    "examples": [
+      "https://github.com/withpaceio/react-native-nacl-jsi/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
