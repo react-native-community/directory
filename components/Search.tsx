@@ -19,8 +19,9 @@ type Props = {
 };
 
 const Search = ({ query, total }: Props) => {
+  const { search, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
-  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 0);
+  const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
   const [isApple, setIsApple] = useState<boolean | null>(null);
   const inputRef = useRef(null);
 
@@ -71,7 +72,7 @@ const Search = ({ query, total }: Props) => {
                     event.preventDefault();
                   }
                   if (event.key === 'Escape') {
-                    if (query.search) {
+                    if (search) {
                       event.preventDefault();
                       inputRef.current.value = '';
                       Router.replace(
@@ -97,7 +98,7 @@ const Search = ({ query, total }: Props) => {
                   borderColor: isDark ? darkColors.border : colors.gray5,
                 },
               ]}
-              defaultValue={query && query.search}
+              defaultValue={search}
               placeholderTextColor={colors.gray4}
             />
             {!isSmallScreen &&
@@ -114,7 +115,7 @@ const Search = ({ query, total }: Props) => {
                     Esc
                   </Label>
                   <Label style={styles.focusHintLabel}>
-                    to {query.search?.length > 0 ? 'clear' : 'blur'}
+                    to {search?.length > 0 ? 'clear' : 'blur'}
                   </Label>
                 </View>
               ) : (
