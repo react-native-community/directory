@@ -23,7 +23,14 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
-  const libName = library.nameOverride || library.npmPkg || github.name;
+
+  const libName = library.nameOverride ?? library.npmPkg ?? github.name;
+  const hasSecondaryMetadata =
+    github.license ||
+    github.urls.homepage ||
+    github.newArchitecture ||
+    library.newArchitecture ||
+    (library.examples && library.examples.length);
 
   return (
     <View
@@ -70,7 +77,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
             ))}
           </View>
         ) : null}
-        {github.license || github.urls.homepage || (library.examples && library.examples.length) ? (
+        {hasSecondaryMetadata ? (
           <>
             {isSmallScreen ? null : <View style={styles.filler} />}
             <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>

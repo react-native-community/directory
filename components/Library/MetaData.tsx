@@ -19,62 +19,155 @@ import {
   TypeScript,
   ReactLogo,
 } from '../Icons';
+import Tooltip from '../Tooltip';
 
 type Props = {
   library: LibraryType;
   secondary?: boolean;
 };
 
-const generateData = (library: LibraryType, secondary: boolean, isDark: boolean) => {
-  const { github, newArchitecture, examples, score, npm, npmPkg } = library;
+function generateData(library: LibraryType, isDark: boolean) {
+  const { github, score, npm, npmPkg } = library;
 
-  if (secondary) {
-    const secondaryTextColor = {
-      color: isDark ? darkColors.secondary : colors.gray5,
-    };
-    const iconColor = isDark ? darkColors.pewter : colors.secondary;
-    const paragraphStyles = [styles.secondaryText, secondaryTextColor];
-    const linkStyles = [...paragraphStyles, styles.mutedLink];
-    const hoverStyle = isDark && { color: colors.primaryDark };
+  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+  return [
+    {
+      id: 'score',
+      icon: <DirectoryScore score={score} />,
+      content: (
+        <A
+          target="_self"
+          href="/scoring"
+          style={{ ...styles.link, ...styles.mutedLink }}
+          hoverStyle={isDark && { color: colors.primaryDark }}>
+          Directory Score
+        </A>
+      ),
+    },
+    {
+      id: 'calendar',
+      icon: <Calendar fill={iconColor} />,
+      content: <Caption>Updated {getTimeSinceToday(github.stats.pushedAt)}</Caption>,
+    },
+    npm.downloads
+      ? {
+          id: 'downloads',
+          icon: <Download fill={iconColor} width={16} height={18} />,
+          content: (
+            <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
+              {`${npm.downloads.toLocaleString()}`} {npm.period}ly downloads
+            </A>
+          ),
+        }
+      : null,
+    {
+      id: 'star',
+      icon: <Star fill={iconColor} />,
+      content: (
+        <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
+          {github.stats.stars.toLocaleString()} stars
+        </A>
+      ),
+    },
+    github.stats.forks
+      ? {
+          id: 'forks',
+          icon: <Fork fill={iconColor} width={16} height={17} />,
+          content: (
+            <A href={`${github.urls.repo}/network/members`} style={styles.link}>
+              {`${github.stats.forks.toLocaleString()}`} forks
+            </A>
+          ),
+        }
+      : null,
+    github.stats.subscribers
+      ? {
+          id: 'subscribers',
+          icon: <Eye fill={iconColor} />,
+          content: (
+            <A href={`${github.urls.repo}/watchers`} style={styles.link}>
+              {`${github.stats.subscribers.toLocaleString()}`} watchers
+            </A>
+          ),
+        }
+      : null,
+    github.stats.issues
+      ? {
+          id: 'issues',
+          icon: <Issue fill={iconColor} />,
+          content: (
+            <A href={`${github.urls.repo}/issues`} style={styles.link}>
+              {`${github.stats.issues.toLocaleString()}`} issues
+            </A>
+          ),
+        }
+      : null,
+  ];
+}
 
-    return [
-      github.urls.homepage
-        ? {
-            id: 'web',
-            icon: <Web fill={iconColor} width={16} height={16} />,
-            content: (
-              <A href={github.urls.homepage} style={linkStyles} hoverStyle={hoverStyle}>
-                Website
+function generateSecondaryData(library: LibraryType, isDark: boolean) {
+  const { github, newArchitecture, examples } = library;
+  const secondaryTextColor = {
+    color: isDark ? darkColors.secondary : colors.gray5,
+  };
+  const iconColor = isDark ? darkColors.pewter : colors.secondary;
+  const paragraphStyles = [styles.secondaryText, secondaryTextColor];
+  const linkStyles = [...paragraphStyles, styles.mutedLink];
+  const hoverStyle = isDark && { color: colors.primaryDark };
+
+  return [
+    github.urls.homepage
+      ? {
+          id: 'web',
+          icon: <Web fill={iconColor} width={16} height={16} />,
+          content: (
+            <A href={github.urls.homepage} style={linkStyles} hoverStyle={hoverStyle}>
+              Website
+            </A>
+          ),
+        }
+      : null,
+    github.license
+      ? {
+          id: 'license',
+          icon: <License fill={iconColor} width={14} height={16} />,
+          content:
+            github.license.name === 'Other' ? (
+              <P style={paragraphStyles}>Unrecognized License</P>
+            ) : (
+              <A href={github.license.url} style={linkStyles} hoverStyle={hoverStyle}>
+                {github.license.name}
               </A>
             ),
-          }
-        : null,
-      github.license
-        ? {
-            id: 'license',
-            icon: <License fill={iconColor} width={14} height={16} />,
-            content:
-              github.license.name === 'Other' ? (
-                <P style={paragraphStyles}>Unrecognized License</P>
-              ) : (
-                <A href={github.license.url} style={linkStyles} hoverStyle={hoverStyle}>
-                  {github.license.name}
-                </A>
-              ),
-          }
-        : null,
-      github.hasTypes
-        ? {
-            id: 'types',
-            icon: <TypeScript fill={iconColor} width={16} height={16} />,
-            content: <P style={paragraphStyles}>TypeScript Types</P>,
-          }
-        : null,
-      newArchitecture || github.newArchitecture
-        ? {
-            id: 'newArchitecture',
-            icon: <ReactLogo fill={iconColor} width={17} height={17} />,
-            content: (
+        }
+      : null,
+    github.hasTypes
+      ? {
+          id: 'types',
+          icon: <TypeScript fill={iconColor} width={16} height={16} />,
+          content: <P style={paragraphStyles}>TypeScript Types</P>,
+        }
+      : null,
+    newArchitecture || github.newArchitecture
+      ? {
+          id: 'newArchitecture',
+          icon: <ReactLogo fill={iconColor} width={17} height={17} />,
+          content:
+            typeof newArchitecture === 'string' ? (
+              <Tooltip
+                trigger={
+                  <View>
+                    <A
+                      href="https://reactnative.dev/docs/new-architecture-intro"
+                      style={linkStyles}
+                      hoverStyle={hoverStyle}>
+                      New Architecture
+                    </A>
+                  </View>
+                }>
+                {newArchitecture}
+              </Tooltip>
+            ) : (
               <A
                 href="https://reactnative.dev/docs/new-architecture-intro"
                 style={linkStyles}
@@ -82,110 +175,34 @@ const generateData = (library: LibraryType, secondary: boolean, isDark: boolean)
                 New Architecture
               </A>
             ),
-          }
-        : null,
-      examples && examples.length
-        ? {
-            id: 'examples',
-            icon: <Code fill={iconColor} width={16} height={16} />,
-            content: (
-              <>
-                <Caption style={paragraphStyles}>Examples: </Caption>
-                {examples.map((example, index) => (
-                  <A
-                    key={example}
-                    href={example}
-                    style={[...linkStyles, styles.exampleLink]}
-                    hoverStyle={hoverStyle}>
-                    #{index + 1}
-                  </A>
-                ))}
-              </>
-            ),
-          }
-        : null,
-    ];
-  } else {
-    const iconColor = isDark ? darkColors.pewter : colors.gray5;
-    return [
-      {
-        id: 'score',
-        icon: <DirectoryScore score={score} />,
-        content: (
-          <A
-            target="_self"
-            href="/scoring"
-            style={{ ...styles.link, ...styles.mutedLink }}
-            hoverStyle={isDark && { color: colors.primaryDark }}>
-            Directory Score
-          </A>
-        ),
-      },
-      {
-        id: 'calendar',
-        icon: <Calendar fill={iconColor} />,
-        content: <Caption>Updated {getTimeSinceToday(github.stats.pushedAt)}</Caption>,
-      },
-      npm.downloads
-        ? {
-            id: 'downloads',
-            icon: <Download fill={iconColor} width={16} height={18} />,
-            content: (
-              <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
-                {`${npm.downloads.toLocaleString()}`} {npm.period}ly downloads
-              </A>
-            ),
-          }
-        : null,
-      {
-        id: 'star',
-        icon: <Star fill={iconColor} />,
-        content: (
-          <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
-            {github.stats.stars.toLocaleString()} stars
-          </A>
-        ),
-      },
-      github.stats.forks
-        ? {
-            id: 'forks',
-            icon: <Fork fill={iconColor} width={16} height={17} />,
-            content: (
-              <A href={`${github.urls.repo}/network/members`} style={styles.link}>
-                {`${github.stats.forks.toLocaleString()}`} forks
-              </A>
-            ),
-          }
-        : null,
-      github.stats.subscribers
-        ? {
-            id: 'subscribers',
-            icon: <Eye fill={iconColor} />,
-            content: (
-              <A href={`${github.urls.repo}/watchers`} style={styles.link}>
-                {`${github.stats.subscribers.toLocaleString()}`} watchers
-              </A>
-            ),
-          }
-        : null,
-      github.stats.issues
-        ? {
-            id: 'issues',
-            icon: <Issue fill={iconColor} />,
-            content: (
-              <A href={`${github.urls.repo}/issues`} style={styles.link}>
-                {`${github.stats.issues.toLocaleString()}`} issues
-              </A>
-            ),
-          }
-        : null,
-    ];
-  }
-};
+        }
+      : null,
+    examples && examples.length
+      ? {
+          id: 'examples',
+          icon: <Code fill={iconColor} width={16} height={16} />,
+          content: (
+            <>
+              <Caption style={paragraphStyles}>Examples: </Caption>
+              {examples.map((example, index) => (
+                <A
+                  key={example}
+                  href={example}
+                  style={[...linkStyles, styles.exampleLink]}
+                  hoverStyle={hoverStyle}>
+                  #{index + 1}
+                </A>
+              ))}
+            </>
+          ),
+        }
+      : null,
+  ];
+}
 
 export function MetaData({ library, secondary }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const data = generateData(library, secondary, isDark);
+  const data = secondary ? generateSecondaryData(library, isDark) : generateData(library, isDark);
 
   return (
     <>

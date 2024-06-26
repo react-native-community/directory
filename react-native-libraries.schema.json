@@ -119,11 +119,11 @@
         "examples": [true]
       },
       "newArchitecture": {
-        "$id": "#/items/properties/newArch",
-        "type": "boolean",
+        "$id": "#/items/properties/newArchitecture",
+        "type": ["boolean", "string"],
         "title": "The New Architecture Support Schema",
         "default": false,
-        "examples": [true]
+        "examples": [true, "Only iOS supported"]
       }
     }
   }
