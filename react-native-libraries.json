@@ -3485,7 +3485,7 @@
     "npmPkg": "@react-native-community/blur"
   },
   {
-    "githubUrl": "https://github.com/react-native-async-storage/async-storage/blob/main/packages/default-storage",
+    "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage",
     "examples": [
       "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage/example"
     ],
@@ -6682,9 +6682,9 @@
   },
   {
     "githubUrl": "https://github.com/swaplet/react-native-swipe-cards-deck",
-    "examples": ["https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/example"],
+    "examples": ["https://github.com/swaplet/react-native-swipe-cards-deck/tree/master/example"],
     "images": [
-      "https://github.com/swaplet/react-native-swipe-cards-deck/blob/master/screenshots/swipe-animation.gif"
+      "https://raw.githubusercontent.com/swaplet/react-native-swipe-cards-deck/master/screenshots/swipe-animation.gif"
     ],
     "ios": true,
     "android": true,
