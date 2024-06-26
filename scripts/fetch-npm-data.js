@@ -45,7 +45,11 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
 };
 
 export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
-  const { npmPkg } = pkgData;
+  const { npmPkg, template } = pkgData;
+
+  if (template) {
+    return { ...pkgData, npm: null };
+  }
 
   try {
     const url = urlForPackage(npmPkg);

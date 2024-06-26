@@ -42,8 +42,6 @@ const query = `
       resetAt
     }
     repository(owner: $repoOwner, name: $repoName) {
-      hasIssuesEnabled
-      hasWikiEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -67,15 +65,23 @@ const query = `
       nameWithOwner
       isArchived
       isMirror
+      diskUsage
+      hasDiscussionsEnabled
+      hasIssuesEnabled
+      hasProjectsEnabled
+      hasSponsorshipsEnabled
+      hasWikiEnabled
+      hasVulnerabilityAlertsEnabled
+      fundingLinks {
+        url
+        platform
+      }
       licenseInfo {
         key
         name
         spdxId
         url
         id
-      }
-      deployments {
-        totalCount
       }
       releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
         nodes {
@@ -232,6 +238,18 @@ const getLicenseFromPackageJson = packageJson => {
 const processTopics = topics =>
   (topics || []).map(topic => topic.replace(/([ _])/g, '-').toLowerCase());
 
+const PACKAGE_JSON_KEYS_TO_PICK = [
+  'dependencies',
+  'devDependencies',
+  'peerDependency',
+  'peerDependencies',
+  'engines',
+  'packageManager',
+  'resolutions',
+  'author',
+  'contributors',
+];
+
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
     try {
@@ -259,6 +277,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
           json.description = packageJson.description;
         }
 
+        if (!json.homepageUrl) {
+          json.homepageUrl = packageJson.homepage;
+        }
+
         if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
         }
@@ -267,6 +289,20 @@ const createRepoDataWithResponse = (json, monorepo) => {
       if (packageJson.types || packageJson.typings) {
         json.types = true;
       }
+
+      json.packageJson = Object.entries(packageJson)
+        .filter(([key]) => PACKAGE_JSON_KEYS_TO_PICK.includes(key))
+        .reduce((acc, [key, value]) => {
+          if (key === 'peerDependency') {
+            if (!acc['peerDependencies']) {
+              acc['peerDependencies'] = [];
+            }
+            acc['peerDependencies'].push(value);
+          } else {
+            acc[key] = value;
+          }
+          return acc;
+        }, {});
     } catch (e) {
       console.warn(`Unable to parse ${json.name} package.json file!`);
       console.error(e);
@@ -290,8 +326,12 @@ const createRepoDataWithResponse = (json, monorepo) => {
     },
     stats: {
       hasIssues: json.hasIssuesEnabled,
+      hasDiscussions: json.hasDiscussionsEnabled,
+      hasProjects: json.hasProjectsEnabled,
+      hasSponsorships: json.hasSponsorshipsEnabled,
       hasWiki: json.hasWikiEnabled,
-      hasPages: json.deployments.totalCount > 0,
+      hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
+      fundingLinks: json.fundingLinks,
       hasDownloads: true,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
@@ -310,5 +350,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     lastRelease: json.lastRelease,
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
+    packageJson: json.packageJson,
+    isArchived: json.isArchived,
   };
 };

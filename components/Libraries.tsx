@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import LoadingContent from './Library/LoadingContent';
-import { H3, A, P } from '../common/styleguide';
+import { NotFoundContent } from './NotFoundContent';
 import { Library as LibraryType } from '../types';
 
 type Props = {
@@ -15,18 +15,7 @@ const LibraryWithLoading = dynamic(() => import('../components/Library'), {
 
 const Libraries = ({ libraries }: Props) => {
   if (!libraries || !libraries.length) {
-    return (
-      <View style={styles.container}>
-        <Image style={styles.img} source={require('../assets/notfound.png')} alt="No results" />
-        <H3 style={styles.text}>Nothing was found! Try another search.</H3>
-        <View style={{ marginTop: 20 }} />
-        <P style={styles.text}>
-          Want to contribute a library you like? Submit a PR to the{' '}
-          <A href="https://github.com/react-native-community/react-native-directory">Github Repo</A>
-          .
-        </P>
-      </View>
-    );
+    return <NotFoundContent />;
   }
 
   return (
@@ -39,24 +28,8 @@ const Libraries = ({ libraries }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    width: '100%',
-    paddingHorizontal: 24,
-    marginTop: 40,
-    marginBottom: 80,
-  },
   librariesContainer: {
     paddingTop: 12,
-  },
-  img: {
-    marginTop: 48,
-    marginBottom: 24,
-    width: 64,
-    height: 64,
-  },
-  text: {
-    textAlign: 'center',
   },
 });
 

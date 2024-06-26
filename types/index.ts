@@ -60,8 +60,11 @@ export type Library = {
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
-      hasPages: boolean;
       hasDownloads: boolean;
+      hasDiscussions: boolean;
+      hasProjects: boolean;
+      hasSponsorships: boolean;
+      hasVulnerabilityAlerts: boolean;
       hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
@@ -83,7 +86,7 @@ export type Library = {
       id: string;
     };
     lastRelease?: {
-      name: string;
+      name?: string;
       tagName: string;
       createdAt: Date | string;
       publishedAt: Date | string;
@@ -91,6 +94,8 @@ export type Library = {
     };
     hasTypes?: boolean;
     newArchitecture?: boolean;
+    isArchived?: boolean;
+    packageJson?: PackageJsonData;
   };
   npm?: {
     downloads?: number;
@@ -108,4 +113,15 @@ export type Library = {
   nameOverride?: string;
   popularity?: number;
   matchScore?: number;
+};
+
+export type PackageJsonData = {
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  peerDependencies?: Record<string, string>;
+  resolutions?: Record<string, string>;
+  engines?: Record<string, string>;
+  packageManager?: string;
+  author?: Record<string, string> | string;
+  contributors?: string[];
 };

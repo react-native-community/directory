@@ -126,6 +126,14 @@ const buildAndScoreData = async () => {
     }
   });
 
+  console.log('\n** Marking packages with archived repository as unmaintained');
+  data = data.map(project => {
+    if (project.github.isArchived) {
+      return { ...project, unmaintained: true };
+    }
+    return project;
+  });
+
   // Process topic counts
   const topicCounts = {};
   data.forEach((project, index, projectList) => {
