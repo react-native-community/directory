@@ -656,6 +656,9 @@
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements",
+    "examples": [
+      "https://github.com/react-native-elements/react-native-elements/tree/next/example"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -711,6 +714,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "visionos": true,
     "goldstar": true
   },
   {
@@ -1489,13 +1493,6 @@
     "ios": true,
     "android": true,
     "npmPkg": "react-native-branch"
-  },
-  {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-branch",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/xxsnakerxx/react-native-social-auth",
@@ -2568,7 +2565,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-av",
@@ -2597,7 +2595,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-blur",
@@ -2611,7 +2610,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-brightness",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-calendar",
@@ -2633,7 +2633,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-constants",
@@ -2679,7 +2680,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
@@ -2701,7 +2703,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-haptics",
@@ -2737,7 +2740,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-keep-awake",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-linear-gradient",
@@ -2849,7 +2853,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-sms",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-speech",
@@ -3357,7 +3362,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-linking",
@@ -6042,7 +6048,6 @@
   {
     "githubUrl": "https://github.com/facebook/fbt",
     "npmPkg": "react-native-fbt",
-    "nameOverride": "fbt",
     "examples": [
       "https://github.com/facebook/fbt/tree/rn-demo-app",
       "https://github.com/facebook/fbt/tree/live-demo-app"
@@ -6190,10 +6195,10 @@
   {
     "githubUrl": "https://github.com/OsmiCSX/osmi",
     "npmPkg": "osmi-cli",
-    "nameOverride": "Osmi CLI",
     "images": ["https://i.imgur.com/Drrulsw.png"],
     "ios": true,
-    "android": true
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/adobe/react-native-acpmedia",
@@ -6224,6 +6229,7 @@
   },
   {
     "githubUrl": "https://github.com/YanYuanFE/react-native-signature-canvas",
+    "examples": ["https://github.com/YanYuanFE/react-native-signature-canvas/tree/master/example"],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -6729,7 +6735,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-status-bar",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/fram-x/react-native-styled-text",
@@ -8605,7 +8612,6 @@
   {
     "githubUrl": "https://github.com/wix/Detox",
     "npmPkg": "detox",
-    "nameOverride": "Detox",
     "examples": ["https://github.com/wix/Detox/tree/master/examples/demo-react-native"],
     "images": ["https://github.com/wix/Detox/raw/master/docs/img/Detox.gif"],
     "ios": true,
@@ -8732,7 +8738,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/omdxp/react-native-help-create",
@@ -9322,7 +9329,6 @@
   },
   {
     "githubUrl": "https://github.com/matinzd/react-native-health-connect",
-    "nameOverride": "React Native Health Connect",
     "examples": ["https://github.com/matinzd/react-native-health-connect/tree/main/example"],
     "android": true
   },
@@ -9452,7 +9458,6 @@
   },
   {
     "githubUrl": "https://github.com/matinzd/react-native-block-store",
-    "nameOverride": "React Native Block Store",
     "examples": ["https://github.com/matinzd/react-native-block-store/tree/main/example"],
     "android": true
   },
@@ -9586,7 +9591,6 @@
   },
   {
     "githubUrl": "https://github.com/JedrzejMajko/react-native-hardwired",
-    "nameOverride": "React Native Hardwired",
     "examples": [
       "https://github.com/JedrzejMajko/react-native-hardwired/tree/master/packages/react-native-hardwired/examples/SimpleTest"
     ],
@@ -9600,7 +9604,6 @@
   },
   {
     "githubUrl": "https://github.com/monkin77/react-native-esper-sdk",
-    "nameOverride": "React Native Esper SDK",
     "examples": ["https://github.com/monkin77/react-native-esper-sdk/blob/master/example"],
     "android": true
   },

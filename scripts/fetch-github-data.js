@@ -44,6 +44,7 @@ const query = `
     repository(owner: $repoOwner, name: $repoName) {
       hasIssuesEnabled
       hasWikiEnabled
+      hasSponsorshipsEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -73,9 +74,6 @@ const query = `
         spdxId
         url
         id
-      }
-      deployments {
-        totalCount
       }
       releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
         nodes {
@@ -286,13 +284,12 @@ const createRepoDataWithResponse = (json, monorepo) => {
     urls: {
       repo: json.url,
       clone: `${json.url}.git`,
-      homepage: json.homepageUrl,
+      homepage: json?.homepageUrl?.length > 0 ? json.homepageUrl : null,
     },
     stats: {
       hasIssues: json.hasIssuesEnabled,
       hasWiki: json.hasWikiEnabled,
-      hasPages: json.deployments.totalCount > 0,
-      hasDownloads: true,
+      hasSponsorships: json.hasSponsorshipsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
@@ -310,5 +307,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     lastRelease: json.lastRelease,
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
+    isArchived: json.isArchived,
   };
 };

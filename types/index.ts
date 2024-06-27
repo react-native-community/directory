@@ -60,8 +60,7 @@ export type Library = {
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
-      hasPages: boolean;
-      hasDownloads: boolean;
+      hasSponsorships: boolean;
       hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
@@ -91,6 +90,7 @@ export type Library = {
     };
     hasTypes?: boolean;
     newArchitecture?: boolean;
+    isArchived?: boolean;
   };
   npm?: {
     downloads?: number;

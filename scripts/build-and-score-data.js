@@ -1,7 +1,7 @@
-import fs from 'fs';
 import jsonfile from 'jsonfile';
 import chunk from 'lodash/chunk';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
@@ -74,12 +74,15 @@ const buildAndScoreData = async () => {
   // Fetch scope packages data
   data = await Promise.all(
     data.map(project => {
-      if (project.npmPkg.startsWith('@')) {
-        return fetchNpmData(project);
-      } else {
-        bulkList.push(project.npmPkg);
-        return project;
+      if (!project.template) {
+        if (project.npmPkg.startsWith('@')) {
+          return fetchNpmData(project);
+        } else {
+          bulkList.push(project.npmPkg);
+          return project;
+        }
       }
+      return project;
     })
   );
 
