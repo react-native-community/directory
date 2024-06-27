@@ -422,10 +422,11 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/geektimecoil/react-native-onesignal",
+    "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
     "ios": true,
     "android": true,
-    "goldstar": true
+    "goldstar": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/jodybrewster/react-native-linkedin-login",
