@@ -10,9 +10,9 @@ html, body {
 
 .TooltipContent {
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 8px 14px;
   font-size: 13px;
-  line-height: 1;
+  line-height: 1.5;
   color: #fff;
   background-color: #000;
   box-shadow: hsl(206 22% 7% / 40%) 0 10px 38px -10px, hsl(206 22% 7% / 25%) 0 10px 20px -15px;
@@ -20,6 +20,7 @@ html, body {
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+  max-width: 220px;
 }
 
 .TooltipContent[data-state='delayed-open'][data-side='top'] {
