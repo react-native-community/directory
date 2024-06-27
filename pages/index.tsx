@@ -18,7 +18,7 @@ const LibrariesWithLoading = dynamic(() => import('../components/Libraries'), {
   loading: () => (
     <View
       style={{
-        paddingTop: 8,
+        paddingTop: 12,
       }}>
       <LoadingContent />
       <LoadingContent />
