@@ -1,11 +1,9 @@
-import _ from 'lodash';
-
-import libraries from '../react-native-libraries.json';
+import libraries from '../react-native-libraries.json' assert { type: 'json' };
 
 const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w-]+\/[\w-]+(\/tree\/[\w-\\/\\.\\%\\@]+)?$/g;
 
 const validateLibrariesFormat = libraries => {
-  console.log('Checking all libraries have the correct format');
+  console.log('🔍️Checking all libraries have the correct format');
 
   // Reduces the libraries array to an object of errors for each library
   const errorsList = libraries.reduce((errors, library, index) => {
@@ -33,37 +31,37 @@ const validateLibrariesFormat = libraries => {
     const errorDescriptions = Object.entries(errorsList).map(
       ([index, libraryErrors]) => `Library at index ${index}:\n${libraryErrors.join('\n')}`
     );
-    console.log('✘ Malformed libraries found:\n' + errorDescriptions.join('\n'));
+    console.error('❌ Malformed libraries found:\n' + errorDescriptions.join('\n'));
     process.exit(1);
   } else {
-    console.log('✔︎ No malformed libraries');
+    console.log('✅ No malformed libraries');
   }
 };
 
 const validateDuplicateLibraries = libraries => {
-  console.log('Checking for duplicate libraries');
+  console.log('🔍️Checking for duplicate libraries');
 
-  const duplicateLibraries = _.chain(libraries)
-    // Reduce the library names to an object with the name as the key and the count as the value
-    .map(library => library.githubUrl)
-    .reduce((currentCount, libraryName) => {
-      const previousCount = currentCount[libraryName] || 0;
-      currentCount[libraryName] = previousCount + 1;
-      return currentCount;
-    }, {})
+  const duplicateLibraries = Object.entries(
+    libraries
+      // Reduce the library names to an object with the name as the key and the count as the value
+      .map(library => library.githubUrl)
+      .reduce((currentCount, libraryName) => {
+        const previousCount = currentCount[libraryName] || 0;
+        currentCount[libraryName] = previousCount + 1;
+        return currentCount;
+      }, {})
     // Convert to pairs and then filter based on the count
-    .toPairs()
-    .filter(pair => pair[1] > 1)
+  )
+    .filter(([_, count]) => count[1] > 1)
     // Map back to the library name and return the value
-    .map(pair => pair[0])
-    .value();
+    .map(([libraryUrl, _]) => libraryUrl);
 
   if (duplicateLibraries.length > 0) {
-    console.log('✘ Duplicate libraries found:\n' + duplicateLibraries.join('\n'));
-    console.log('Remove these duplicates before commiting.');
+    console.error('❌ Duplicate libraries found:\n' + duplicateLibraries.join('\n'));
+    console.error('Remove these duplicates before commiting.');
     process.exit(1);
   } else {
-    console.log('✔︎ No duplicates');
+    console.log('✅ No duplicates');
   }
 };
 

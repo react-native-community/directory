@@ -1,8 +1,9 @@
 import fetch from 'cross-fetch';
+import { config } from 'dotenv';
 
-import { sleep } from './build-and-score-data';
+import { sleep } from './build-and-score-data.js';
 
-require('dotenv').config();
+config();
 
 const GRAPHQL_API = 'https://api.github.com/graphql';
 
@@ -266,7 +267,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
         json.types = true;
       }
     } catch (e) {
-      console.warn(`Unable to parse ${json.name} package.json file!`);
+      console.error(`Unable to parse ${json.name} package.json file!`);
       console.error(e);
     }
   }

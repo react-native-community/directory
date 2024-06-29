@@ -1,10 +1,10 @@
-import jsonfile from 'jsonfile';
-import identity from 'lodash/identity';
-import omit from 'lodash/omit';
-import pickBy from 'lodash/pickBy';
-import path from 'path';
+import identity from 'lodash/identity.js';
+import omit from 'lodash/omit.js';
+import pickBy from 'lodash/pickBy.js';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import libraries from '../react-native-libraries.json';
+import libraries from '../react-native-libraries.json' with { type: 'json' };
 
 const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 
@@ -23,15 +23,4 @@ const processedLibraries = libraries
   // Remove all properties with `false` value
   .map(lib => pickBy(lib, identity));
 
-jsonfile.writeFile(
-  LIBRARIES_JSON_PATH,
-  processedLibraries,
-  {
-    spaces: 2,
-  },
-  err => {
-    if (err) {
-      console.error(err);
-    }
-  }
-);
+fs.writeFileSync(LIBRARIES_JSON_PATH, JSON.stringify(processedLibraries, null, 2));

@@ -1,7 +1,7 @@
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 import fetch from 'cross-fetch';
 
-import { sleep } from './build-and-score-data';
+import { sleep } from './build-and-score-data.js';
 
 const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
   const parentHref = image.parent().attr('href');
@@ -22,7 +22,7 @@ const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
 const scrapeImagesAsync = async githubUrl => {
   const response = await fetch(githubUrl);
   const html = await response.text();
-  const $ = cheerio.load(html);
+  const $ = load(html);
   const images = $('#readme').find('img');
 
   if (images && images.length) {
@@ -60,7 +60,7 @@ const fetchReadmeImages = async (data, attemptsCount = 0) => {
       images,
     };
   } catch {
-    console.log(`[GH] Retrying image scrape for ${githubUrl} (${attemptsCount + 1})`);
+    console.log(`Retrying image scrape for ${githubUrl} (${attemptsCount + 1})`);
     await sleep(2000);
     return await fetchReadmeImages(data, attemptsCount + 1);
   }

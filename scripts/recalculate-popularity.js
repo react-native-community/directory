@@ -1,15 +1,13 @@
-import jsonfile from 'jsonfile';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import { calculatePopularityScore } from './calculate-score';
-import data from '../assets/data.json';
+import { calculatePopularityScore } from './calculate-score.js';
+import data from '../assets/data.json' assert { type: 'json' };
 
 const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 
+console.log('🧮 Recalculating popularity score');
+
 const processedLibraries = data.libraries.map(lib => calculatePopularityScore(lib));
 
-jsonfile.writeFile(LIBRARIES_JSON_PATH, { libraries: processedLibraries }, { spaces: 2 }, err => {
-  if (err) {
-    console.error(err);
-  }
-});
+fs.writeFileSync(LIBRARIES_JSON_PATH, JSON.stringify({ libraries: processedLibraries }, null, 2));
