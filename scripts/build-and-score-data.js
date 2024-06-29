@@ -152,7 +152,7 @@ const buildAndScoreData = async () => {
     invalidRepos.forEach(repoUrl => console.warn(`- ${repoUrl}`));
   }
 
-  return fs.writeFile(
+  return fs.writeFileSync(
     path.resolve('assets', 'data.json'),
     JSON.stringify(
       {
