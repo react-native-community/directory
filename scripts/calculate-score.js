@@ -3,7 +3,7 @@
  */
 
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
-// The condiction is passed the data and if it returns true, the value is added to the
+// The data is passed to condition function, and if it returns true, the value is added to the
 // libraries score. Read more: https://reactnative.directory/scoring
 const modifiers = [
   {

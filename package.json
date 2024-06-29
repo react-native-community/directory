@@ -1,17 +1,17 @@
 {
+  "type": "module",
   "scripts": {
     "start": "next dev",
     "build": "yarn data:update && next build",
     "preview": "next build && next start",
-    "script": "babel-node --presets @babel/preset-env",
     "lint": "eslint .",
-    "data:update": "babel-node scripts/build-and-score-data.js --presets @babel/preset-env",
-    "data:test": "babel-node scripts/validate-libraries.js --presets @babel/preset-env",
-    "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose",
-    "libraries:cleanup": "babel-node scripts/cleanup-libraries-json.js --presets @babel/preset-env && yarn libraries:format",
-    "libraries:recalculate": "babel-node scripts/recalculate-popularity.js --presets @babel/preset-env",
+    "data:update": "node --no-warnings scripts/build-and-score-data.js",
+    "data:test": "node --no-warnings scripts/validate-libraries.js",
+    "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose --allowUnionTypes",
+    "libraries:cleanup": "node --no-warnings scripts/cleanup-libraries-json.js && yarn libraries:format",
+    "libraries:recalculate": "node --no-warnings scripts/recalculate-popularity.js",
     "libraries:format": "prettier --write react-native-libraries.json",
-    "libraries:check": "babel-node scripts/check-resources.js --presets @babel/preset-env",
+    "libraries:check": "node --no-warnings scripts/check-resources.js",
     "precommit": "simple-git-hooks && lint-staged"
   },
   "dependencies": {
@@ -41,9 +41,6 @@
     "use-debounce": "^10.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/node": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
     "@expo/next-adapter": "^6.0.0",
     "@next/bundle-analyzer": "^14.2.4",
     "@types/react": "^18.2.79",
@@ -56,7 +53,6 @@
     "eslint-config-next": "^14.2.4",
     "eslint-config-universe": "^13.0.0",
     "isomorphic-fetch": "^3.0.0",
-    "jsonfile": "^6.1.0",
     "lint-staged": "^15.2.7",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",

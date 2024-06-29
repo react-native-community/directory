@@ -1,12 +1,14 @@
-const { withExpo } = require('@expo/next-adapter');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import { withExpo } from '@expo/next-adapter';
+import BundleAnalyzer from '@next/bundle-analyzer';
+import withPlugins from 'next-compose-plugins';
+import withFonts from 'next-fonts';
+import withImages from 'next-images';
+
+const withBundleAnalyzer = BundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
-const withPlugins = require('next-compose-plugins');
-const withFonts = require('next-fonts');
-const withImages = require('next-images');
 
-module.exports = withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
+export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
   productionBrowserSourceMaps: true,
   swcMinify: true,
   eslint: {

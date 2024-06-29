@@ -1,15 +1,14 @@
-import jsonfile from 'jsonfile';
-import chunk from 'lodash/chunk';
+import chunk from 'lodash/chunk.js';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
-import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
-import fetchReadmeImages from './fetch-readme-images';
-import debugGithubRepos from '../debug-github-repos.json';
-import githubRepos from '../react-native-libraries.json';
-import { isEmptyOrNull } from '../util/strings';
+import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score.js';
+import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data.js';
+import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
+import fetchReadmeImages from './fetch-readme-images.js';
+import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
+import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
+import { isEmptyOrNull } from '../util/strings.js';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -22,10 +21,6 @@ const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = true;
-
-const JSON_OPTIONS = {
-  spaces: 2,
-};
 
 export const sleep = (ms = 0, msMax = null) => {
   return new Promise(r =>
@@ -56,16 +51,16 @@ const buildAndScoreData = async () => {
   });
 
   if (SCRAPE_GH_IMAGES) {
-    console.log('\n** Scraping images from README');
+    console.log('\n📝 Scraping images from README');
     await sleep(1000);
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
-  console.log('\n** Determining npm package name');
+  console.log('\n🔖 Determining npm package name');
   await sleep(1000);
   data = data.map(fillNpmName);
 
-  console.log('\n** Loading download stats from npm');
+  console.log('\n⬇️ Loading download stats from npm');
   await sleep(1000);
 
   // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
@@ -110,22 +105,22 @@ const buildAndScoreData = async () => {
         }
   );
 
-  console.log('\n** Calculating Directory Score');
+  console.log('\n⚛️ Calculating Directory Score');
   data = data.map(project => {
     try {
       return calculateDirectoryScore(project);
     } catch (e) {
-      console.log(`Failed to calculate score for ${project.github.name}`, e.message);
+      console.error(`Failed to calculate score for ${project.github.name}`, e.message);
     }
   });
 
-  console.log('\n** Calculating popularity');
+  console.log('\n🧮 Calculating popularity');
   data = data.map(project => {
     try {
       return calculatePopularityScore(project);
     } catch (e) {
-      console.log(`Failed to calculate popularity for ${project.github.name}`, e.message);
-      console.log(project.githubUrl);
+      console.error(`Failed to calculate popularity for ${project.github.name}`, e.message);
+      console.error(project.githubUrl);
     }
   });
 
@@ -151,27 +146,23 @@ const buildAndScoreData = async () => {
   });
 
   if (invalidRepos.length) {
-    console.log(
-      '** The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
+    console.warn(
+      '🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
     );
-    invalidRepos.forEach(repoUrl => console.log(`- ${repoUrl}`));
+    invalidRepos.forEach(repoUrl => console.warn(`- ${repoUrl}`));
   }
 
-  return jsonfile.writeFile(
+  return fs.writeFile(
     path.resolve('assets', 'data.json'),
-    {
-      libraries: data,
-      topics: topicCounts,
-      topicsList: Object.keys(topicCounts).sort(),
-    },
-    JSON_OPTIONS,
-    err => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('\n** Done!');
-      }
-    }
+    JSON.stringify(
+      {
+        libraries: data,
+        topics: topicCounts,
+        topicsList: Object.keys(topicCounts).sort(),
+      },
+      null,
+      2
+    )
   );
 };
 
@@ -226,21 +217,13 @@ async function loadRepositoryDataAsync() {
 
   let result;
   if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
-    result = jsonfile.readFileSync(GITHUB_RESULTS_PATH);
+    result = fs.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
     result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
-      await new Promise((resolve, reject) => {
-        jsonfile.writeFile(GITHUB_RESULTS_PATH, result, JSON_OPTIONS, err => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve();
-          }
-        });
-      });
+      fs.writeFileSync(GITHUB_RESULTS_PATH, JSON.stringify(result, null, 2));
       console.log('Saved Github results from disk');
     }
   }

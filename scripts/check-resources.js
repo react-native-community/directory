@@ -1,6 +1,8 @@
 import fetch from 'cross-fetch';
 
-import libraries from '../react-native-libraries.json';
+import libraries from '../react-native-libraries.json' assert { type: 'json' };
+
+console.log('⬇️ Attempting to fetch examples and images');
 
 libraries.forEach(lib => {
   if (lib.examples) {

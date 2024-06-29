@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 
-import { sleep } from './build-and-score-data';
+import { sleep } from './build-and-score-data.js';
 
 const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
