@@ -39,7 +39,6 @@ const App = ({ pageProps, Component }) => (
             />
             <style>
               {`html { 
-                  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                   background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
                 }
                 *:focus-visible {

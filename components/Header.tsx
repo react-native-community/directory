@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   headerContentsTitle: {
     color: colors.primary,
     paddingLeft: 8,
-    fontWeight: '600',
+    fontWeight: 700,
   },
   headerSubpageTitle: {
     color: colors.white,

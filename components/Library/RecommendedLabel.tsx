@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   recommendedContainer: {
     paddingVertical: 4,
     paddingHorizontal: 8,
-    borderRadius: 2,
+    borderRadius: 4,
     marginLeft: 10,
     top: 1,
     userSelect: 'none',

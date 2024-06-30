@@ -60,7 +60,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         </View>
         {github.description && github.description.length && (
           <View style={styles.verticalMargin}>
-            <Headline numberOfLines={skipMeta && 3} style={{ fontWeight: '400', lineHeight: 23 }}>
+            <Headline numberOfLines={skipMeta && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
                   linkWrapper: props => <A {...props}>{props.children}</A>,
@@ -145,8 +145,8 @@ const styles = StyleSheet.create({
   },
   name: {
     backgroundColor: 'transparent',
-    fontWeight: '600',
-    fontSize: 20,
+    fontWeight: 700,
+    fontSize: 19,
     textDecorationLine: 'none',
   },
   nameHovered: {
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   secondaryStats: {
-    marginVertical: 6,
+    marginTop: 6,
     flexWrap: 'wrap',
   },
   secondaryText: {

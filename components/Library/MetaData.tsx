@@ -47,7 +47,11 @@ function generateData(library: LibraryType, isDark: boolean) {
     {
       id: 'calendar',
       icon: <Calendar fill={iconColor} />,
-      content: <Caption>Updated {getTimeSinceToday(github.stats.pushedAt)}</Caption>,
+      content: (
+        <Caption style={{ fontWeight: 300 }}>
+          Updated {getTimeSinceToday(github.stats.pushedAt)}
+        </Caption>
+      ),
     },
     npm.downloads
       ? {
@@ -240,15 +244,17 @@ const styles = StyleSheet.create({
   },
   link: {
     fontSize: 15,
+    fontWeight: 300,
   },
   mutedLink: {
     backgroundColor: 'transparent',
   },
   secondaryText: {
     fontSize: 13,
+    fontWeight: 300,
   },
   secondaryContainer: {
-    marginBottom: 0,
+    marginBottom: 6,
     marginRight: 16,
   },
   secondaryIconContainer: {

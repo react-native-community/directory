@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   },
   popularityScore: {
     paddingLeft: 40,
-    fontWeight: '700',
+    fontWeight: 700,
   },
   scoringLink: {
     textDecorationLine: 'none',

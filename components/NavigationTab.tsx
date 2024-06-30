@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     color: 'inherit',
   },
   tabActiveTitle: {
-    fontWeight: '500',
+    fontWeight: 500,
   },
 });
 

@@ -158,5 +158,6 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 8,
+    fontWeight: 700,
   },
 });
