@@ -49,6 +49,11 @@ const modifiers = [
     value: -20,
     condition: data => getUpdatedDaysAgo(data) >= 180, // Roughly 6 months
   },
+  {
+    name: 'Not supporting New Architecture',
+    value: -5,
+    condition: data => !data.newArchitecture || !data.github.newArchitecture,
+  },
 ];
 
 // Calculate the minimum and maximum possible scores based on the modifiers

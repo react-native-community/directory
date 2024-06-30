@@ -8,6 +8,7 @@ import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
 import fetchReadmeImages from './fetch-readme-images.js';
 import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
 import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
+import { isLaterThan, TimeRange } from '../util/datetime.js';
 import { isEmptyOrNull } from '../util/strings.js';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -17,10 +18,11 @@ const USE_DEBUG_REPOS = false;
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
-const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = true;
+
+const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 export const sleep = (ms = 0, msMax = null) => {
   return new Promise(r =>
@@ -39,7 +41,7 @@ const fillNpmName = project => {
 const invalidRepos = [];
 
 const buildAndScoreData = async () => {
-  console.log('** Loading data from GitHub');
+  console.log('📦️ Loading data from GitHub');
   let data = await loadRepositoryDataAsync();
 
   data = data.filter(project => {
@@ -48,6 +50,18 @@ const buildAndScoreData = async () => {
       return false;
     }
     return !isEmptyOrNull(project.github.name);
+  });
+
+  // Mark libraries as `unmaintained` automatically
+  data = data.map(project => {
+    if (!project.unmaintained) {
+      if (project.github.isArchived) {
+        project.unmaintained = true;
+      } else if (isLaterThan(project.github.stats.pushedAt, TimeRange.YEAR * 4)) {
+        project.unmaintained = true;
+      }
+    }
+    return project;
   });
 
   if (SCRAPE_GH_IMAGES) {
@@ -220,7 +234,7 @@ async function loadRepositoryDataAsync() {
     result = fs.readFileSync(GITHUB_RESULTS_PATH);
     console.log('Loaded Github results from disk, skipped API calls');
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 3000 });
 
     if (LOAD_GITHUB_RESULTS_FROM_DISK) {
       fs.writeFileSync(GITHUB_RESULTS_PATH, JSON.stringify(result, null, 2));

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { H2, P, Headline, A, colors, darkColors } from '../common/styleguide';
+import { H2, P, Headline, A, colors, darkColors, H3 } from '../common/styleguide';
 import ContentContainer from '../components/ContentContainer';
 import PopularityMark from '../components/Library/PopularityMark';
 import Navigation from '../components/Navigation';
@@ -16,13 +16,19 @@ const ScoringCriterion = ({ children, headline, score = undefined }) => {
   const borderStyle = {
     borderColor: isDark ? darkColors.border : colors.gray2,
   };
+  const isPositiveModifier = score > 0;
   return (
     <View style={[styles.criterionWrapper, borderStyle]}>
       <Headline style={[styles.criterion, textStyle]}>
         {headline}
         {score && (
-          <Headline style={[styles.criterionScore, borderStyle]}>
-            {score > 0 ? '+' : ''}
+          <Headline
+            style={[
+              styles.criterionScore,
+              borderStyle,
+              { color: isPositiveModifier ? colors.success : colors.error },
+            ]}>
+            {isPositiveModifier ? '+' : ''}
             {score}
           </Headline>
         )}
@@ -73,7 +79,11 @@ const Scoring = () => {
           </A>
           .
         </P>
-        <H2 style={[styles.subHeader, textColorStyle]}>Directory Score criteria</H2>
+        <P style={[styles.paragraph, textColorStyle]}>
+          The Directory Score is represented as a value between 0 and 100. All final scores outside
+          this range will be clamped to the nearest limit.
+        </P>
+        <H3 style={[styles.subHeader, textColorStyle]}>Directory Score criteria</H3>
         <P style={[styles.paragraph, textColorStyle]}>
           The following criteria are used to calculate a library&apos;s Directory Score.
         </P>
@@ -81,19 +91,30 @@ const Scoring = () => {
           Libraries with a combined popularity score of over 10,000 meet this criterion.
           <br />
           Combined popularity is measured by weighting and combining subscribers, forks, stars, and
-          download counts.
+          download counts:
+          <br />
+          <View style={styles.formula}>
+            <code>subscribers * 20 + forks * 10 + stars + downloads / 100;</code>
+          </View>
         </ScoringCriterion>
         <ScoringCriterion headline="Popular" score={10}>
           Libraries with a combined popularity score of over 2,500 meet this criterion.
           <br />
           Combined popularity is measured by weighting and combining subscribers, forks, stars, and
-          download counts.
+          download counts:
+          <br />
+          <View style={styles.formula}>
+            <code>subscribers * 20 + forks * 10 + stars + downloads / 100;</code>
+          </View>
         </ScoringCriterion>
         <ScoringCriterion headline="Recommended" score={20}>
           The maintainers of React Native Directory hand pick select recommended libraries.
         </ScoringCriterion>
         <ScoringCriterion headline="Recently updated" score={10}>
           Libraries that have been updated in the last 30 days meet this criterion.
+        </ScoringCriterion>
+        <ScoringCriterion headline="Not supporting New Architecture" score={-5}>
+          Libraries that does not support new architecture meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Not updated recently" score={-10}>
           Libraries that have not been updated in the last 180 days meet this criterion.
@@ -143,7 +164,7 @@ const Scoring = () => {
             </li>
           </ul>
         </P>
-        <H2 style={[styles.subHeader, textColorStyle]}>Popularity Score criteria</H2>
+        <H3 style={[styles.subHeader, textColorStyle]}>Popularity Score criteria</H3>
         <P style={[styles.paragraph, textColorStyle]}>
           The following criteria are used to calculate a library&apos;s final Popularity Score.
         </P>
@@ -222,7 +243,6 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 4,
     textAlign: 'center',
-    color: colors.primaryDark,
   },
   criterionScoreSymbol: {
     position: 'relative',
