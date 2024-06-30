@@ -1,11 +1,13 @@
-import { pluralize } from './strings';
+import { pluralize } from './strings.js';
 
-const MINUTE = 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
-const WEEK = DAY * 7;
-const MONTH = DAY * 30;
-const YEAR = DAY * 365;
+export const TimeRange = Object.freeze({
+  MINUTE: 60,
+  HOUR: 60 * 60,
+  DAY: 60 * 60 * 24,
+  WEEK: 60 * 60 * 24 * 7,
+  MONTH: 60 * 60 * 24 * 30,
+  YEAR: 60 * 60 * 24 * 365,
+});
 
 export const getTimeSinceToday = date => {
   const updateTimeSeconds = new Date(date).getTime();
@@ -15,19 +17,26 @@ export const getTimeSinceToday = date => {
   const elapsed = seconds > 0 ? seconds : 1;
 
   const [value, unit] =
-    elapsed < MINUTE
+    elapsed < TimeRange.MINUTE
       ? [Math.round(elapsed), 'second']
-      : elapsed < HOUR
-        ? [Math.round(elapsed / MINUTE), 'minute']
-        : elapsed < DAY
-          ? [Math.round(elapsed / HOUR), 'hour']
-          : elapsed < WEEK
-            ? [Math.round(elapsed / DAY), 'day']
-            : elapsed < MONTH
-              ? [Math.round(elapsed / WEEK), 'week']
-              : elapsed < YEAR
-                ? [Math.round(elapsed / MONTH), 'month']
-                : [Math.round(elapsed / YEAR), 'year'];
+      : elapsed < TimeRange.HOUR
+        ? [Math.round(elapsed / TimeRange.MINUTE), 'minute']
+        : elapsed < TimeRange.DAY
+          ? [Math.round(elapsed / TimeRange.HOUR), 'hour']
+          : elapsed < TimeRange.WEEK
+            ? [Math.round(elapsed / TimeRange.DAY), 'day']
+            : elapsed < TimeRange.MONTH
+              ? [Math.round(elapsed / TimeRange.WEEK), 'week']
+              : elapsed < TimeRange.YEAR
+                ? [Math.round(elapsed / TimeRange.MONTH), 'month']
+                : [Math.round(elapsed / TimeRange.YEAR), 'year'];
 
   return `${value} ${pluralize(unit, value)} ago`;
 };
+
+export function isLaterThan(date, timeRange) {
+  const updateTimeSeconds = new Date(date).getTime();
+  const currentTimeSeconds = new Date().getTime();
+  const seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
+  return seconds > timeRange;
+}

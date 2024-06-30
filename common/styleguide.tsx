@@ -40,6 +40,8 @@ export const colors = {
   warning: '#FBE679',
   warningLight: '#FEF7D6',
   warningDark: '#995e00',
+  error: '#ff5555',
+  success: '#4caf50',
 };
 
 export const darkColors = {

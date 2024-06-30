@@ -3983,6 +3983,7 @@
     "githubUrl": "https://github.com/michalchudziak/react-native-geolocation",
     "ios": true,
     "android": true,
+    "web": true,
     "npmPkg": "@react-native-community/geolocation"
   },
   {
@@ -4226,6 +4227,7 @@
   },
   {
     "githubUrl": "https://github.com/Aleksefo/react-native-webp-format",
+    "examples": ["https://github.com/Aleksefo/react-native-webp-format/tree/master/example"],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -4245,7 +4247,8 @@
     "githubUrl": "https://github.com/TaylorBriggs/react-native-typewriter",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/conorhastings/react-native-syntax-highlighter",
@@ -4297,7 +4300,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "web": true
   },
   {
     "githubUrl": "https://github.com/avishayil/react-native-user-avatar",
@@ -7046,7 +7049,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/microsoft/fluentui-react-native",
+    "githubUrl": "https://github.com/microsoft/fluentui-react-native/blob/main/packages/libraries/core",
     "npmPkg": "@fluentui/react-native",
     "ios": true,
     "expoGo": true,
@@ -8094,7 +8097,7 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/invertase/notifee",
+    "githubUrl": "https://github.com/invertase/notifee/tree/main/packages/react-native",
     "npmPkg": "@notifee/react-native",
     "ios": true,
     "android": true
@@ -9205,9 +9208,10 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/SerenityNotes/react-native-libsodium",
-    "examples": ["https://github.com/SerenityNotes/react-native-libsodium/tree/main/example"],
+    "githubUrl": "https://github.com/serenity-kit/react-native-libsodium",
+    "examples": ["https://github.com/serenity-kit/react-native-libsodium/tree/main/example"],
     "ios": true,
+    "android": true,
     "web": true
   },
   {
@@ -11118,5 +11122,104 @@
     "ios": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/orcunorcun/react-native-native-language",
+    "examples": ["https://github.com/orcunorcun/react-native-native-language/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/sandarshnaroju/react-native-nano",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/rive-app/rive-react-native",
+    "examples": ["https://github.com/rive-app/rive-react-native/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/beaverfy/react-native-wear",
+    "examples": ["https://github.com/beaverfy/react-native-wear/tree/main/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/riteshshukla04/kiosk-mode-react-native",
+    "examples": ["https://github.com/riteshshukla04/kiosk-mode-react-native/tree/main/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/cnmapos/react-native-mapa",
+    "examples": ["https://github.com/cnmapos/react-native-mapa/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/adaptyteam/AdaptySDK-React-Native",
+    "npmPkg": "react-native-adapty",
+    "examples": [
+      "https://github.com/adaptyteam/AdaptySDK-React-Native/tree/master/examples/SubscriptionsJS"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/stnrd/healthicons/tree/main/packages/healthicons-react-native",
+    "examples": ["https://github.com/stnrd/healthicons/tree/main/examples/react-native"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/iaphub/react-native-iaphub",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/CleverTap/clevertap-react-native",
+    "examples": ["https://github.com/CleverTap/clevertap-react-native/tree/master/Example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/odemolliens/react-native-netwatch",
+    "examples": ["https://github.com/odemolliens/react-native-netwatch/tree/develop/example"],
+    "android": true,
+    "ios": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/iconoir-icons/iconoir/tree/main/packages/iconoir-react-native",
+    "examples": ["https://github.com/iconoir-icons/iconoir/tree/main/examples/react-native"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/lucide-icons/lucide/tree/main/packages/lucide-react-native",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/maitrungduc1410/react-native-loader-kit",
+    "examples": ["https://github.com/maitrungduc1410/react-native-loader-kit/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/maitrungduc1410/react-native-loader-kit/master/images/demo_android.gif",
+      "https://raw.githubusercontent.com/maitrungduc1410/react-native-loader-kit/master/images/demo_ios.gif"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/BeTomorrow/react-native-file-logger",
+    "examples": ["https://github.com/BeTomorrow/react-native-file-logger/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/okta/okta-react-native",
+    "npmPkg": "@okta/okta-react-native",
+    "android": true,
+    "ios": true
   }
 ]
