@@ -18,7 +18,7 @@ export const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
       style={{ textDecoration: 'none' }}>
       <View style={styles.link}>
         <CheckBox value={isSelected} color={colors.primaryDark} />
-        <P style={{ fontSize: 14 }}>{title}</P>
+        <P style={styles.text}>{title}</P>
       </View>
     </Link>
   );
@@ -35,5 +35,9 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  text: {
+    fontSize: 14,
+    fontWeight: 300,
   },
 });

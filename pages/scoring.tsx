@@ -190,6 +190,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     lineHeight: 29,
     marginBottom: 17,
+    fontWeight: 300,
   },
   callout: {
     borderLeftWidth: 8,

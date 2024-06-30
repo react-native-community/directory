@@ -19,7 +19,7 @@ type Props = {
 };
 
 const Search = ({ query, total }: Props) => {
-  const { search, ...filterParams } = query;
+  const { search, order, direction, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
   const [isApple, setIsApple] = useState<boolean | null>(null);
@@ -32,9 +32,9 @@ const Search = ({ query, total }: Props) => {
 
   useEffect(() => {
     if (isApple !== null) {
-      const keyDownListener = (e: KeyboardEvent) => {
-        if (e.key === 'k' && (isApple ? e.metaKey : e.ctrlKey)) {
-          e.preventDefault();
+      const keyDownListener = (event: KeyboardEvent) => {
+        if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+          event.preventDefault();
           inputRef.current.focus();
         }
       };
@@ -222,6 +222,7 @@ const styles = StyleSheet.create({
   },
   focusHintLabel: {
     color: colors.gray4,
+    fontWeight: 300,
   },
   resultsContainer: {
     marginTop: 8,
@@ -236,7 +237,7 @@ const styles = StyleSheet.create({
   },
   totalCount: {
     color: colors.primary,
-    fontWeight: '600',
+    fontWeight: 700,
   },
   totalText: {
     color: colors.white,

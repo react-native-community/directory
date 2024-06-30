@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
   footerText: {
     paddingVertical: 7,
     fontSize: 13,
+    fontWeight: 300,
   },
   platformsWrapper: {
     flexDirection: 'row',

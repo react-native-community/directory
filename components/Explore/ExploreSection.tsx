@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   },
   subHeaderTitle: {
     fontSize: 26,
-    fontWeight: '700',
+    fontWeight: 700,
     textDecorationLine: 'none',
     backgroundColor: 'transparent',
   },

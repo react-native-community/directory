@@ -30,7 +30,10 @@ export function Button(props: Props) {
   return (
     <HoverEffect>
       {isLink ? (
-        <A href={href} style={{ borderRadius: 4 }} {...(openInNewTab ? { target: '_blank' } : {})}>
+        <A
+          href={href}
+          style={{ borderRadius: 4, fontFamily: 'inherit' }}
+          {...(openInNewTab ? { target: '_blank' } : {})}>
           <Pressable focusable={false} style={linkStyle} accessible={false}>
             {content}
           </Pressable>

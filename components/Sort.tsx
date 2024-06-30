@@ -54,9 +54,12 @@ const sorts = [
   },
 ];
 
-export const SortButton = ({ query: { order, direction }, query }: SortButtonProps) => {
+export const SortButton = ({ query: { order, direction, offset }, query }: SortButtonProps) => {
   const [sortValue, setSortValue] = useState<QueryOrder>(order);
   const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(direction);
+  const [paginationOffset, setPaginationOffset] = useState<number | null>(
+    typeof offset === 'string' ? parseInt(offset, 10) : offset
+  );
   const { isDark } = useContext(CustomAppearanceContext);
 
   const sortIconRef = useRef();
@@ -67,7 +70,7 @@ export const SortButton = ({ query: { order, direction }, query }: SortButtonPro
       ...query,
       order: sortValue,
       direction: sortDirection,
-      offset: null,
+      offset: paginationOffset,
     });
     if (url !== Router.pathname) {
       Router.push(url);
@@ -114,7 +117,10 @@ export const SortButton = ({ query: { order, direction }, query }: SortButtonPro
                 backgroundColor: isDark ? darkColors.border : 'transparent',
               },
             ]}
-            onValueChange={setSortValue}>
+            onValueChange={value => {
+              setPaginationOffset(null);
+              setSortValue(value);
+            }}>
             {sorts.map(sort => (
               <Picker.Item
                 key={sort.param}
@@ -144,7 +150,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.white,
-    fontWeight: '500',
+    fontWeight: 500,
     marginLeft: 6,
     fontSize: 14,
     userSelect: 'none',

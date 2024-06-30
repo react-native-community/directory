@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.white,
     marginLeft: 6,
-    fontWeight: '500',
+    fontWeight: 500,
     userSelect: 'none',
   },
   activeButtonText: {
