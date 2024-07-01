@@ -10981,7 +10981,8 @@
     ],
     "examples": ["https://github.com/duguyihou/react-native-turbo-image/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/LovesWorking/react-native-react-query-devtools",
