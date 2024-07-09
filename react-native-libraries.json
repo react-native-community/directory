@@ -11226,14 +11226,12 @@
    "githubUrl": "https://github.com/gev2002/react-native-vision-camera-text-recognition",
     "npmPkg": "react-native-vision-camera-text-recognition",
     "android": true,
-    "ios": true,
-    "expoGo": true
+    "ios": true
   },
     {
    "githubUrl": "https://github.com/gev2002/react-native-vision-camera-image-labeler",
     "npmPkg": "react-native-vision-camera-image-labeler",
     "android": true,
-    "ios": true,
-    "expoGo": true
+    "ios": true
   }
 ]
