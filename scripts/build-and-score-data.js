@@ -57,7 +57,7 @@ const buildAndScoreData = async () => {
     if (!project.unmaintained) {
       if (project.github.isArchived) {
         project.unmaintained = true;
-      } else if (isLaterThan(project.github.stats.pushedAt, TimeRange.YEAR * 4)) {
+      } else if (isLaterThan(project.github.stats.pushedAt, TimeRange.YEAR * 2)) {
         project.unmaintained = true;
       }
     }
