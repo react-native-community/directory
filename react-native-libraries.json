@@ -2059,7 +2059,8 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app",
     "npmPkg": "@react-native-firebase/app",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/auth",
@@ -2142,7 +2143,8 @@
   {
     "githubUrl": "https://github.com/itinance/react-native-fs",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": "expo-file-system"
   },
   {
     "githubUrl": "https://github.com/lodev09/react-native-cell-components",
@@ -2589,7 +2591,7 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "unmaintained": true
+    "unmaintained": "expo-camera"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-battery",
@@ -2773,7 +2775,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-mail-composer",
@@ -3688,7 +3691,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/APSL/react-native-keyboard-aware-scroll-view",
@@ -3761,7 +3765,8 @@
     "web": true,
     "windows": true,
     "macos": true,
-    "visionos": true
+    "visionos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/dooboolab/react-native-iap",
@@ -3802,7 +3807,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": "expo"
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode",
@@ -3881,7 +3886,8 @@
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
     "ios": true,
     "android": true,
-    "npmPkg": "@react-native-google-signin/google-signin"
+    "npmPkg": "@react-native-google-signin/google-signin",
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-kvideo",
@@ -3939,7 +3945,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "npmPkg": "parse"
+    "npmPkg": "parse",
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mxck/react-native-material-menu",
@@ -5752,8 +5759,7 @@
     "examples": ["https://github.com/gorhom/react-native-bottom-sheet/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "newArchitecture": false
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/react-keycloak/react-native-keycloak",
@@ -8347,7 +8353,8 @@
     "examples": ["https://github.com/Shopify/react-native-skia/tree/main/example"],
     "android": true,
     "ios": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Shopify/flash-list",
@@ -11083,7 +11090,8 @@
     "npmPkg": "@braze/react-native-sdk",
     "examples": ["https://github.com/braze-inc/braze-react-native-sdk/tree/master/BrazeProject"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/nandorojo/burnt",
@@ -11226,14 +11234,12 @@
     "ios": true
   },
   {
-   "githubUrl": "https://github.com/gev2002/react-native-vision-camera-text-recognition",
-    "npmPkg": "react-native-vision-camera-text-recognition",
+    "githubUrl": "https://github.com/gev2002/react-native-vision-camera-text-recognition",
     "android": true,
     "ios": true
   },
-    {
-   "githubUrl": "https://github.com/gev2002/react-native-vision-camera-image-labeler",
-    "npmPkg": "react-native-vision-camera-image-labeler",
+  {
+    "githubUrl": "https://github.com/gev2002/react-native-vision-camera-image-labeler",
     "android": true,
     "ios": true
   }
