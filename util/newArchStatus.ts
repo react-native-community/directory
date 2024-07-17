@@ -15,7 +15,7 @@ export function getNewArchSupportStatus({ newArchitecture, github, expoGo }: Lib
   // Assume untested unless indicated otherwise through one of the following tests
   let flag = undefined;
 
-  if (newArchitecture !== undefined) {
+  if (typeof newArchitecture !== 'undefined') {
     flag = newArchitecture;
   } else if (github.newArchitecture === true) {
     flag = true;
