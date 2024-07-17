@@ -204,6 +204,31 @@ export function Plus({ width, height, fill = colors.black }: Props) {
   );
 }
 
+export function XIcon({ width, height, fill = colors.black }: Props) {
+  return (
+    <Svg
+      width={width || 16}
+      height={height || 16}
+      viewBox="0 0 16 16"
+      fill="none"
+      style={{ transform: 'rotate(45deg)' }}>
+      <Path fillRule="evenodd" clipRule="evenodd" d="M.114 7.12H15.57v2H.114v-2z" fill={fill} />
+      <Path fillRule="evenodd" clipRule="evenodd" d="M6.842 15.848V.393h2v15.455h-2z" fill={fill} />
+    </Svg>
+  );
+}
+
+export function Question({ width, height, fill = colors.black }: Props) {
+  return (
+    <Svg width={width || 16} height={height || 16} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M9.88849 16.0515H13.0629V15.8036C13.082 13.7826 13.7398 12.858 15.2936 11.9047C17.0477 10.8561 18.144 9.42612 18.144 7.24309C18.144 4.02097 15.6368 2 11.9953 2C8.65875 2 5.95141 3.84938 5.85608 7.47188H9.24979C9.33558 5.67969 10.6321 4.82173 11.9762 4.82173C13.4347 4.82173 14.6073 5.79409 14.6073 7.29075C14.6073 8.62536 13.7207 9.54051 12.5672 10.265C10.8799 11.3136 9.90756 12.3718 9.88849 15.8036V16.0515ZM11.5567 22C12.6816 22 13.6444 21.0658 13.654 19.9028C13.6444 18.7588 12.6816 17.8246 11.5567 17.8246C10.3937 17.8246 9.44998 18.7588 9.45951 19.9028C9.44998 21.0658 10.3937 22 11.5567 22Z"
+        fill={fill}
+      />
+    </Svg>
+  );
+}
+
 export function Sort({ width, height, fill = colors.black }: Props) {
   return (
     <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">

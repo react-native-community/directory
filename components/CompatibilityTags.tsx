@@ -1,36 +1,14 @@
 import { useContext } from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Check } from './Icons';
-import { colors, darkColors, Label } from '../common/styleguide';
+import { NewArchitectureTag } from './Library/NewArchitectureTag';
+import { Tag } from './Tag';
+import { colors, darkColors } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 import { Library } from '../types';
 
 type Props = {
   library: Library;
-};
-
-type TagProps = {
-  label: string;
-  tagStyle: ViewStyle;
-  showCheck?: boolean;
-};
-
-const Tag = ({ label, tagStyle, showCheck = true }: TagProps) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-  return (
-    <View key={label} style={[styles.tag, tagStyle]}>
-      {showCheck ? <Check width={12} height={8} fill={colors.gray5} /> : null}
-      <Label
-        style={[
-          {
-            color: isDark ? darkColors.secondary : colors.black,
-          },
-        ]}>
-        {label}
-      </Label>
-    </View>
-  );
 };
 
 export function CompatibilityTags({ library }: Props) {
@@ -54,22 +32,23 @@ export function CompatibilityTags({ library }: Props) {
         <Tag
           label="Development Tool"
           tagStyle={{
-            backgroundColor: isDark ? '#2b1c48' : '#e3d8f8',
-            borderColor: isDark ? '#482f72' : '#d3c2f2',
+            backgroundColor: isDark ? '#261a3d' : '#ece3fc',
+            borderColor: isDark ? '#3d2861' : '#d9c8fa',
           }}
-          showCheck={false}
+          icon={null}
         />
       ) : null}
       {library.template ? (
         <Tag
           label="Template"
           tagStyle={{
-            backgroundColor: isDark ? '#173137' : '#d8f8f1',
-            borderColor: isDark ? '#28555a' : '#b2ddce',
+            backgroundColor: isDark ? '#37172e' : '#fce1f5',
+            borderColor: isDark ? '#52213e' : '#f5c6e8',
           }}
-          showCheck={false}
+          icon={null}
         />
       ) : null}
+      {!library.dev && !library.template && <NewArchitectureTag library={library} />}
       {platforms.map(platform => (
         <Tag
           label={platform}
@@ -91,16 +70,5 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginBottom: -4,
     gap: 6,
-  },
-  tag: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    marginBottom: 4,
-    userSelect: 'none',
-    gap: 4,
   },
 });
