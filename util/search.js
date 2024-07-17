@@ -117,7 +117,11 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (isMaintained && library.unmaintained) {
+    if (isMaintained === 'false' && !library.unmaintained) {
+      return false;
+    }
+
+    if (isMaintained === 'true' && library.unmaintained) {
       return false;
     }
 
