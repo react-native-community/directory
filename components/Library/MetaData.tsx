@@ -17,9 +17,7 @@ import {
   Fork,
   Code,
   TypeScript,
-  ReactLogo,
 } from '../Icons';
-import Tooltip from '../Tooltip';
 
 type Props = {
   library: LibraryType;
@@ -150,35 +148,6 @@ function generateSecondaryData(library: LibraryType, isDark: boolean) {
           id: 'types',
           icon: <TypeScript fill={iconColor} width={16} height={16} />,
           content: <P style={paragraphStyles}>TypeScript Types</P>,
-        }
-      : null,
-    newArchitecture || github.newArchitecture
-      ? {
-          id: 'newArchitecture',
-          icon: <ReactLogo fill={iconColor} width={17} height={17} />,
-          content:
-            typeof newArchitecture === 'string' ? (
-              <Tooltip
-                trigger={
-                  <View>
-                    <A
-                      href="https://reactnative.dev/docs/new-architecture-intro"
-                      style={linkStyles}
-                      hoverStyle={hoverStyle}>
-                      New Architecture
-                    </A>
-                  </View>
-                }>
-                {newArchitecture}
-              </Tooltip>
-            ) : (
-              <A
-                href="https://reactnative.dev/docs/new-architecture-intro"
-                style={linkStyles}
-                hoverStyle={hoverStyle}>
-                New Architecture
-              </A>
-            ),
         }
       : null,
     examples && examples.length

@@ -121,7 +121,7 @@
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
 
-  **(boolean)** - signify that a library supports the new architecture
+  **(boolean)** - signify that a library supports, or not, the new architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. 
 
   > Set this tag only when automatic architecture detection fails for your package, despite it supports the new architecture.
 

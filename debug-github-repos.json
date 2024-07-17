@@ -1,9 +1,14 @@
 [
   {
     "githubUrl": "https://github.com/react-community/react-navigation",
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
-  { "githubUrl": "https://github.com/gre/gl-react", "expoGo": true },
+  {
+    "githubUrl": "https://github.com/gre/gl-react",
+    "expoGo": true,
+    "newArchitecture": false
+  },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
     "expoGo": true,
@@ -22,5 +27,9 @@
     "expoGo": true,
     "newArchitecture": "Test note for new architecture support"
   },
-  { "githubUrl": "https://github.com/rnc-archive/react-native-drawer-layout", "expoGo": true }
+  {
+    "githubUrl": "https://github.com/rnc-archive/react-native-drawer-layout",
+    "expoGo": true,
+    "dev": true
+  }
 ]
