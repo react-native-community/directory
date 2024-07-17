@@ -24,9 +24,7 @@ type Props = {
   secondary?: boolean;
 };
 
-function generateData(library: LibraryType, isDark: boolean) {
-  const { github, score, npm, npmPkg } = library;
-
+function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boolean) {
   const iconColor = isDark ? darkColors.pewter : colors.gray5;
   return [
     {
@@ -107,8 +105,7 @@ function generateData(library: LibraryType, isDark: boolean) {
   ];
 }
 
-function generateSecondaryData(library: LibraryType, isDark: boolean) {
-  const { github, newArchitecture, examples } = library;
+function generateSecondaryData({ github, examples }: LibraryType, isDark: boolean) {
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
   };

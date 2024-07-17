@@ -42,6 +42,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         isSmallScreen && styles.containerColumn,
         skipMeta && styles.noMetaContainer,
         skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
+        library.unmaintained && styles.unmaintained,
       ]}>
       <View style={styles.columnOne}>
         {library.unmaintained && <UnmaintainedLabel value={library.unmaintained} />}
@@ -50,7 +51,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
           <A
             href={library.githubUrl || github.urls.repo}
             style={styles.name}
-            hoverStyle={styles.nameHovered}>
+            hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
             {libName}
           </A>
           {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
@@ -149,9 +150,6 @@ const styles = StyleSheet.create({
     fontSize: 19,
     textDecorationLine: 'none',
   },
-  nameHovered: {
-    color: colors.gray4,
-  },
   displayHorizontal: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -223,6 +221,9 @@ const styles = StyleSheet.create({
     maxHeight: 'auto',
     width: '98.5%',
     maxWidth: '98.5%',
+  },
+  unmaintained: {
+    opacity: 0.88,
   },
 });
 

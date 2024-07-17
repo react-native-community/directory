@@ -32,8 +32,8 @@ export function CompatibilityTags({ library }: Props) {
         <Tag
           label="Development Tool"
           tagStyle={{
-            backgroundColor: isDark ? '#2b1c48' : '#e3d8f8',
-            borderColor: isDark ? '#482f72' : '#d3c2f2',
+            backgroundColor: isDark ? '#261a3d' : '#ece3fc',
+            borderColor: isDark ? '#3d2861' : '#d9c8fa',
           }}
           icon={null}
         />
@@ -42,13 +42,13 @@ export function CompatibilityTags({ library }: Props) {
         <Tag
           label="Template"
           tagStyle={{
-            backgroundColor: isDark ? '#173137' : '#d8f8f1',
-            borderColor: isDark ? '#28555a' : '#b2ddce',
+            backgroundColor: isDark ? '#37172e' : '#fce1f5',
+            borderColor: isDark ? '#52213e' : '#f5c6e8',
           }}
           icon={null}
         />
       ) : null}
-      <NewArchitectureTag library={library} />
+      {!library.dev && !library.template && <NewArchitectureTag library={library} />}
       {platforms.map(platform => (
         <Tag
           label={platform}

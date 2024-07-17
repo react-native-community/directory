@@ -8,7 +8,9 @@ import { Warning } from '../Icons';
 const UnmaintainedLabel = ({ value }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
+
   const linkHoverStyle = isDark && { color: colors.secondary };
+  const contentColor = isDark ? darkColors.secondary : colors.gray5;
 
   return (
     <View style={styles.unmaintainedTextWrapper}>
@@ -16,35 +18,27 @@ const UnmaintainedLabel = ({ value }) => {
         style={[
           styles.unmaintainedTextContainer,
           {
-            gap: 4,
             flexDirection: isSmallScreen ? 'column' : 'row',
-            backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
+            backgroundColor: isDark ? darkColors.dark : colors.gray1,
+            borderColor: isDark ? darkColors.border : colors.gray2,
+            // @ts-expect-error
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, ${isDark ? '#18181f' : '#f0f0f0'} 20px, ${isDark ? '#18181f' : '#f0f0f0'} 40px)`,
           },
         ]}>
-        <View
-          style={[
-            styles.unmaintainedTextWrapper,
-            {
-              gap: 6,
-            },
-          ]}>
-          <Warning width={16} height={16} fill={isDark ? darkColors.warning : colors.warningDark} />
+        <View style={styles.unmaintainedTextWrapper}>
+          <Warning width={16} height={16} fill={contentColor} />
           <Label
-            style={[
-              {
-                color: isDark ? darkColors.warning : colors.warningDark,
-              },
-            ]}>
+            style={{
+              color: contentColor,
+            }}>
             This library is not actively maintained.
           </Label>
         </View>
         {typeof value === 'string' && (
           <Label
-            style={[
-              {
-                color: isDark ? darkColors.warning : colors.warningDark,
-              },
-            ]}>
+            style={{
+              color: contentColor,
+            }}>
             You can use{' '}
             <A
               href={`/?search=${encodeURIComponent(value)}`}
@@ -63,6 +57,7 @@ const UnmaintainedLabel = ({ value }) => {
 const styles = StyleSheet.create({
   unmaintainedTextWrapper: {
     flexDirection: 'row',
+    gap: 6,
   },
   unmaintainedTextContainer: {
     alignItems: 'flex-start',
@@ -73,6 +68,9 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4,
+    gap: 4,
+    borderWidth: 1,
+    borderLeftWidth: 0,
   },
 });
 

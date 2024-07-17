@@ -40,7 +40,9 @@ export function NewArchitectureTag({ library }: Props) {
         side="bottom"
         trigger={
           <View>
-            <HtmlElements.A href="https://reactnative.dev/docs/new-architecture-intro">
+            <HtmlElements.A
+              href="https://reactnative.dev/docs/new-architecture-intro"
+              target="_blank">
               <Tag label="New Architecture" icon={icon} tagStyle={getTagColor(status, isDark)} />
             </HtmlElements.A>
           </View>
@@ -87,7 +89,7 @@ function getIconColor(status: SupportStatus, isDark: boolean) {
     case SupportStatus.Unsupported:
       return isDark ? darkColors.warning : colors.warningDark;
     default:
-      return colors.gray5;
+      return colors.gray4;
   }
 }
 
@@ -95,18 +97,18 @@ function getTagColor(status: SupportStatus, isDark: boolean) {
   switch (status) {
     case SupportStatus.Supported:
       return {
-        backgroundColor: isDark ? '#142933' : '#e8f6fc',
-        borderColor: isDark ? '#1e4047' : '#cdedf7',
+        backgroundColor: isDark ? '#142733' : '#edf6fc',
+        borderColor: isDark ? '#203b4d' : '#d4ebfa',
       };
     case SupportStatus.Unsupported:
       return {
-        backgroundColor: isDark ? darkColors.warningLight : '#fffae0',
-        borderColor: isDark ? '#3d3306' : '#fcee9d',
+        backgroundColor: isDark ? '#292005' : '#fffae8',
+        borderColor: isDark ? '#3d3206' : '#faebaf',
       };
     default:
       return {
-        backgroundColor: isDark ? darkColors.dark : colors.gray1,
         borderColor: isDark ? darkColors.border : colors.gray2,
+        borderStyle: 'dashed' as 'dashed',
       };
   }
 }

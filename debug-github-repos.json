@@ -20,7 +20,11 @@
   { "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip", "expoGo": true },
   { "githubUrl": "https://github.com/archriss/react-native-render-html", "expoGo": true },
   { "githubUrl": "https://github.com/react-native-community/react-native-picker", "expoGo": true },
-  { "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context", "expoGo": true },
+  {
+    "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context",
+    "expoGo": true,
+    "template": true
+  },
   {
     "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
     "npmPkg": "@react-native-community/datetimepicker",
