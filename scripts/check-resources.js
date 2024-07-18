@@ -17,7 +17,7 @@ libraries.forEach(lib => {
           .catch(e => {
             console.warn(`EXAMPLE: errored! ${e}`);
           });
-      }, 10 * i);
+      }, 150 * i);
     });
   }
 
@@ -33,7 +33,7 @@ libraries.forEach(lib => {
           .catch(e => {
             console.warn(`IMG: errored! ${e}`);
           });
-      }, 10 * i);
+      }, 150 * i);
     });
   }
 });
