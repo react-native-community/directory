@@ -44,7 +44,8 @@
   {
     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
@@ -141,13 +142,15 @@
     "githubUrl": "https://github.com/kristerkari/react-native-svg-transformer",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/aeirola/react-native-svg-asset-plugin",
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/kenmaca/react-native-apple-ads-attribution",
@@ -3492,7 +3495,9 @@
   {
     "githubUrl": "https://github.com/react-native-push-notification-ios/push-notification-ios",
     "ios": true,
-    "npmPkg": "@react-native-community/push-notification-ios"
+    "npmPkg": "@react-native-community/push-notification-ios",
+    "newArchitecture": false,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-native-safe-area-view",
@@ -3501,7 +3506,7 @@
     "tvos": true,
     "web": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": "react-native-safe-area-context"
   },
   {
     "githubUrl": "https://github.com/Kureev/react-native-blur",
@@ -3512,7 +3517,8 @@
     "android": true,
     "tvos": true,
     "visionos": true,
-    "npmPkg": "@react-native-community/blur"
+    "npmPkg": "@react-native-community/blur",
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage",
@@ -3526,7 +3532,8 @@
     "windows": true,
     "macos": true,
     "visionos": true,
-    "npmPkg": "@react-native-async-storage/async-storage"
+    "npmPkg": "@react-native-async-storage/async-storage",
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/react-native-picker/picker",
@@ -3543,7 +3550,8 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
-    "npmPkg": "@react-native-picker/picker"
+    "npmPkg": "@react-native-picker/picker",
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/react-native-cameraroll/react-native-cameraroll",
@@ -3703,7 +3711,8 @@
   {
     "githubUrl": "https://github.com/iamacup/react-native-markdown-display",
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/i18next/react-i18next",
@@ -3900,7 +3909,8 @@
     "android": true,
     "ios": true,
     "windows": true,
-    "npmPkg": "@react-native-community/checkbox"
+    "npmPkg": "@react-native-community/checkbox",
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
@@ -4187,7 +4197,9 @@
     "githubUrl": "https://github.com/Microsoft/react-native-code-push",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "newArchitecture": false,
+    "unmaintained": "expo-updates"
   },
   {
     "githubUrl": "https://github.com/plmok61/react-navigation-transitions",
@@ -4710,7 +4722,8 @@
     ],
     "ios": true,
     "android": true,
-    "npmPkg": "react-native-inappbrowser-reborn"
+    "npmPkg": "react-native-inappbrowser-reborn",
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/rafaelmotta/react-native-progress-bar-animated",
@@ -4721,7 +4734,8 @@
   {
     "githubUrl": "https://github.com/alikazemkhanloo/react-native-reanimated-slider",
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/jsoendermann/rn-section-list-get-item-layout",
@@ -5154,7 +5168,8 @@
     "githubUrl": "https://github.com/computerjazz/react-native-draggable-flatlist",
     "images": ["https://i.imgur.com/xHCylq1.gif"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/hieuvp/react-native-fingerprint-scanner",
@@ -5164,7 +5179,8 @@
       "https://raw.githubusercontent.com/hieuvp/react-native-fingerprint-scanner/master/screenshots/android-authentication.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": "expo-local-authentication"
   },
   {
     "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
@@ -5628,7 +5644,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/BlackBoxVision/react-native-mercadopago-px",
@@ -6033,7 +6050,8 @@
       "https://github.com/dominicstop/react-native-ios-context-menu/raw/master/assets/example-screenshots/ContextMenuButton-SimpleExample01.png",
       "https://github.com/dominicstop/react-native-ios-context-menu/raw/master/assets/example-screenshots/ContextMenuButton-SimpleExample02.png"
     ],
-    "ios": true
+    "ios": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/srk-sharingan/sharingan-rn-modal-dropdown",
@@ -6328,7 +6346,8 @@
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/package/example"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
@@ -7596,7 +7615,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/popshoplive/react-native-shareplay",
@@ -8656,7 +8676,8 @@
     "images": ["https://github.com/wix/Detox/raw/master/docs/img/Detox.gif"],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/dev-family/react-native-wallet-manager",
@@ -9395,7 +9416,8 @@
     "npmPkg": "@microsoft/signalr",
     "nameOverride": "ASP.NET Core SignalR Client",
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/sacmii/rn-vertical-slider",
@@ -9454,7 +9476,8 @@
   {
     "githubUrl": "https://github.com/necolas/react-native-web/tree/master/packages/babel-plugin-react-native-web",
     "dev": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/maggialejandro/react-native-month",
@@ -9642,7 +9665,8 @@
   {
     "githubUrl": "https://github.com/huextrat/react-native-maps-routes",
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/monkin77/react-native-esper-sdk",
@@ -11040,7 +11064,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/gladiuscode/react-native-orientation-director",
