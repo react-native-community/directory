@@ -191,7 +191,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
     });
 
-    if ((!result.data || !result.data.repository) && result.errors) {
+    if (!result.data && result.errors) {
       if (result.errors[0].type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
@@ -209,13 +209,19 @@ export const fetchGithubData = async (data, retries = 2) => {
       return await fetchGithubData(data, retries - 1);
     }
 
+    if (!result?.data?.repository) {
+      console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
+      await sleep(2500);
+      return await fetchGithubData(data, retries - 1);
+    }
+
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
     return {
       ...data,
       github,
     };
   } catch (e) {
-    console.log(`[GH] Retrying fetch for ${data.githubUrl}`, e);
+    console.log(`[GH] Retrying fetch for ${data.githubUrl}\n`, e);
     await sleep(2500);
     return await fetchGithubData(data, retries - 1);
   }
@@ -228,8 +234,17 @@ const getLicenseFromPackageJson = packageJson => {
   }
 };
 
-const processTopics = topics =>
-  (topics || []).map(topic => topic.replace(/([ _])/g, '-').toLowerCase());
+function processTopics(topics) {
+  return (topics || [])
+    .map(topic =>
+      topic
+        .replace(/([ _])/g, '-')
+        .replace('react-native-', '')
+        .toLowerCase()
+        .trim()
+    )
+    .filter(topic => topic?.length);
+}
 
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {
