@@ -30,6 +30,19 @@ export function NewArchitectureTag({ library }: Props) {
       <Question fill={getIconColor(status, isDark)} width={11} height={11} />
     );
 
+  const newArchitectureNote = library.newArchitectureNote &&
+    typeof library.newArchitectureNote === 'string' && (
+      <Label style={styles.note}>{library.newArchitectureNote}</Label>
+    );
+
+  const alternatives = library.alternatives && library.alternatives.length > 0 && (
+    <Label style={styles.note}>
+      {' '}
+      {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
+      {library.alternatives.join(', ')}{' '}
+    </Label>
+  );
+
   return (
     <View>
       <Tooltip
@@ -46,17 +59,10 @@ export function NewArchitectureTag({ library }: Props) {
         {status === SupportStatus.Supported && 'Supports New Architecture'}
         {status === SupportStatus.Unsupported && 'Does not support New Architecture'}
         {status === SupportStatus.Untested && 'Untested with New Architecture'}
-        {typeof library.newArchitectureNote === 'string' && (
-          <>
-            <Label style={styles.note}>{library.newArchitectureNote}</Label>
-            {library.alternatives && library.alternatives.length > 0 && (
-              <Label style={styles.note}>
-                {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
-                {library.alternatives.join(', ')}
-              </Label>
-            )}
-          </>
-        )}
+        <>
+          {newArchitectureNote}
+          {alternatives}
+        </>
       </Tooltip>
     </View>
   );
