@@ -5,6 +5,10 @@ import { View, StyleSheet } from 'react-native';
 import { colors, darkColors, Label } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Library } from '../../types';
+import {
+  getNewArchSupportStatus as getSupportStatus,
+  NewArchSupportStatus as SupportStatus,
+} from '../../util/newArchStatus';
 import { Check, Question, XIcon } from '../Icons';
 import { Tag } from '../Tag';
 import Tooltip from '../Tooltip';
@@ -13,17 +17,9 @@ type Props = {
   library: Library;
 };
 
-enum SupportStatus {
-  Supported = 'supported',
-  Unsupported = 'unsupported',
-  Untested = 'untested',
-}
-
 export function NewArchitectureTag({ library }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-
-  const hasNote = typeof library.newArchitecture === 'string';
-  const status = getSupportStatus(library, hasNote);
+  const status = getSupportStatus(library);
 
   const icon =
     status === SupportStatus.Unsupported ? (
@@ -58,28 +54,6 @@ export function NewArchitectureTag({ library }: Props) {
       </Tooltip>
     </View>
   );
-}
-
-function getSupportStatus({ newArchitecture, github }: Library, hasNote: boolean) {
-  if (hasNote) {
-    return SupportStatus.Supported;
-  }
-
-  const flag =
-    newArchitecture !== undefined
-      ? newArchitecture
-      : github.newArchitecture === true
-        ? true
-        : undefined;
-
-  switch (flag) {
-    case true:
-      return SupportStatus.Supported;
-    case false:
-      return SupportStatus.Unsupported;
-    default:
-      return SupportStatus.Untested;
-  }
 }
 
 function getIconColor(status: SupportStatus, isDark: boolean) {

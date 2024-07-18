@@ -1,3 +1,4 @@
+import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { isEmptyOrNull } from './strings';
 
 const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
@@ -113,7 +114,26 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (newArchitecture && !library.newArchitecture && !library.github.newArchitecture) {
+    const newArchStatus = getNewArchSupportStatus(library);
+
+    if (
+      newArchitecture === 'true' &&
+      [NewArchSupportStatus.Unsupported, NewArchSupportStatus.Untested].includes(newArchStatus)
+    ) {
+      return false;
+    }
+
+    if (
+      newArchitecture === 'false' &&
+      [NewArchSupportStatus.Supported, NewArchSupportStatus.Untested].includes(newArchStatus)
+    ) {
+      return false;
+    }
+
+    if (
+      newArchitecture === 'untested' &&
+      [NewArchSupportStatus.Supported, NewArchSupportStatus.Unsupported].includes(newArchStatus)
+    ) {
       return false;
     }
 

@@ -18,10 +18,19 @@
 - You want to submit a pull request to improve React Native Directory or libraries dataset.
 - You want to report a bug or make a suggestion.
 
+## How do I update the data for a library?
+
+- Find the entry for the library in [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file. (Not there? [Add it the library](#how-do-i-add-a-library).)
+- Update the entry with the new data. Use the [library fields description](#library-fields-description) as a guide.
+- Submit a PR.
+
 ## How do I add a library?
 
 - Add it **at the end** of [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file (we use the order in that file for "Recently added" sort option).
+- Use the [template](#new-library-entry-template) as a guide.
 - Submit a PR.
+
+### New library entry template
 
 > [!NOTE]
 > Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
