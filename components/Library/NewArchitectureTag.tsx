@@ -46,9 +46,15 @@ export function NewArchitectureTag({ library }: Props) {
         {status === SupportStatus.Supported && 'Supports New Architecture'}
         {status === SupportStatus.Unsupported && 'Does not support New Architecture'}
         {status === SupportStatus.Untested && 'Untested with New Architecture'}
-        {typeof library.newArchitecture === 'string' && (
+        {typeof library.newArchitectureNote === 'string' && (
           <>
-            <Label style={styles.note}>{library.newArchitecture}</Label>
+            <Label style={styles.note}>{library.newArchitectureNote}</Label>
+            {library.alternatives && library.alternatives.length > 0 && (
+              <Label style={styles.note}>
+                {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
+                {library.alternatives.join(', ')}
+              </Label>
+            )}
           </>
         )}
       </Tooltip>
@@ -90,7 +96,7 @@ function getTagColor(status: SupportStatus, isDark: boolean) {
 const styles = StyleSheet.create({
   note: {
     display: 'flex',
-    marginTop: 4,
+    marginVertical: 4,
     color: '#fff',
   },
 });

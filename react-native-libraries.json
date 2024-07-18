@@ -87,7 +87,9 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Works used with Expo modules dependencies. Alternative dependencies are not all compatible with the New Architecture."
   },
   {
     "githubUrl": "https://github.com/alexfoxy/react-native-units",
@@ -1695,7 +1697,8 @@
     "githubUrl": "https://github.com/AlexanderZaytsev/react-native-i18n",
     "ios": true,
     "android": true,
-    "unmaintained": "react-native-localize"
+    "unmaintained": true,
+    "alternatives": ["react-native-localize"]
   },
   {
     "githubUrl": "https://github.com/Anthonyzou/react-native-image-zoom",
@@ -2016,7 +2019,6 @@
     "githubUrl": "https://github.com/Polidea/react-native-ble-plx",
     "ios": true,
     "android": true,
-    "expoGo": true,
     "newArchitecture": true
   },
   {
@@ -2164,7 +2166,8 @@
     "githubUrl": "https://github.com/itinance/react-native-fs",
     "ios": true,
     "android": true,
-    "unmaintained": "expo-file-system"
+    "unmaintained": true,
+    "alternatives": ["expo-file-system"]
   },
   {
     "githubUrl": "https://github.com/lodev09/react-native-cell-components",
@@ -3499,7 +3502,8 @@
     "tvos": true,
     "web": true,
     "expoGo": true,
-    "unmaintained": "react-native-safe-area-context"
+    "unmaintained": true,
+    "alternatives": ["react-native-safe-area-context"]
   },
   {
     "githubUrl": "https://github.com/Kureev/react-native-blur",
@@ -3831,7 +3835,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": "expo"
+    "unmaintained": true,
+    "alternatives": ["expo-modules-core"]
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode",
@@ -3847,7 +3852,9 @@
     ],
     "ios": true,
     "android": true,
-    "unmaintained": "expo-image"
+    "newArchitecture": false,
+    "unmaintained": true,
+    "alternatives": ["expo-image"]
   },
   {
     "githubUrl": "https://github.com/ascoders/react-native-image-viewer",
@@ -4194,7 +4201,9 @@
     "android": true,
     "windows": true,
     "newArchitecture": false,
-    "unmaintained": "expo-updates"
+    "newArchitectureNote": "Microsoft no longer maintains this library and has no plans to add New Architecture support.",
+    "unmaintained": true,
+    "alternatives": ["expo-updates"]
   },
   {
     "githubUrl": "https://github.com/plmok61/react-navigation-transitions",
@@ -5175,7 +5184,8 @@
     ],
     "ios": true,
     "android": true,
-    "unmaintained": "expo-local-authentication"
+    "unmaintained": true,
+    "alternatives": ["expo-local-authentication"]
   },
   {
     "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
@@ -5193,7 +5203,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": "react-native-reanimated-table"
+    "unmaintained": true,
+    "alternatives": ["react-native-reanimated-table"]
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dynamic",
@@ -6004,7 +6015,8 @@
     "ios": true,
     "android": true,
     "visionos": true,
-    "npmPkg": "@react-native-menu/menu"
+    "npmPkg": "@react-native-menu/menu",
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-context-menu",
@@ -6355,8 +6367,7 @@
       "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/demo.gif"
     ],
     "ios": true,
-    "android": true,
-    "expoGo": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
@@ -8405,7 +8416,8 @@
     "npmPkg": "@shopify/flash-list",
     "android": true,
     "ios": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitectureNote": "Compiles and runs, but behavior may not be as expected."
   },
   {
     "githubUrl": "https://github.com/callstack/reassure",

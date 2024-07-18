@@ -45,7 +45,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
         library.unmaintained && styles.unmaintained,
       ]}>
       <View style={styles.columnOne}>
-        {library.unmaintained && <UnmaintainedLabel value={library.unmaintained} />}
+        {library.unmaintained && <UnmaintainedLabel alternatives={library.alternatives} />}
         {showPopularity && library.popularity && <PopularityMark library={library} />}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A

@@ -51,6 +51,8 @@ export type Library = {
   dev?: boolean;
   template?: boolean;
   newArchitecture?: boolean | string;
+  newArchitectureNote?: string;
+  alternatives?: string[];
   github: {
     urls: {
       repo: string;
