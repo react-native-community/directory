@@ -5790,7 +5790,8 @@
     "examples": ["https://github.com/gorhom/react-native-bottom-sheet/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/react-keycloak/react-native-keycloak",
