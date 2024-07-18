@@ -114,7 +114,7 @@ const Scoring = () => {
           Libraries that have been updated in the last 30 days meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Not supporting New Architecture" score={-5}>
-          Libraries that does not support new architecture meet this criterion.
+          Libraries that does not support New Architecture meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Not updated recently" score={-10}>
           Libraries that have not been updated in the last 180 days meet this criterion.

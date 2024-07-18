@@ -8,14 +8,18 @@
     "$id": "#/items",
     "type": "object",
     "title": "The Items Schema",
-    "required": ["githubUrl"],
+    "required": [
+      "githubUrl"
+    ],
     "properties": {
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
         "title": "The GitHub URL Schema",
         "default": "",
-        "examples": ["https://github.com/joshswan/react-native-autolink"],
+        "examples": [
+          "https://github.com/joshswan/react-native-autolink"
+        ],
         "pattern": "^(.*)$"
       },
       "ios": {
@@ -23,35 +27,45 @@
         "type": "boolean",
         "title": "The iOS Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "android": {
         "$id": "#/items/properties/android",
         "type": "boolean",
         "title": "The Android Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "windows": {
         "$id": "#/items/properties/windows",
         "type": "boolean",
         "title": "The Windows Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "macos": {
         "$id": "#/items/properties/macos",
         "type": "boolean",
         "title": "The macOS Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
         "title": "The Expo Go Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "examples": {
         "$id": "#/items/properties/examples",
@@ -63,7 +77,9 @@
           "type": "string",
           "title": "The Items Schema",
           "default": "",
-          "examples": ["https://snack.expo.io/SkRP2Ehrb"],
+          "examples": [
+            "https://snack.expo.io/SkRP2Ehrb"
+          ],
           "pattern": "^(.*)$"
         }
       },
@@ -72,27 +88,39 @@
         "type": "string",
         "title": "The NPM Package Name Schema",
         "default": "",
-        "examples": ["@expo/ex-navigation"],
+        "examples": [
+          "@expo/ex-navigation"
+        ],
         "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
       },
       "unmaintained": {
         "$id": "#/items/properties/unmaintained",
-        "type": ["boolean", "string"],
+        "type": [
+          "boolean",
+          "string"
+        ],
         "title": "The Unmaintained Schema",
         "default": false,
-        "examples": [true, "expo-image"]
+        "examples": [
+          true,
+          "expo-image"
+        ]
       },
       "images": {
         "$id": "#/items/properties/images",
         "type": "array",
         "title": "The Images Schema",
-        "default": [null],
+        "default": [
+          null
+        ],
         "items": {
           "$id": "#/items/properties/images/items",
           "type": "string",
           "title": "The Image Schema",
           "default": "",
-          "examples": ["https://reactnative.dev/img/homepage/phones.png"],
+          "examples": [
+            "https://reactnative.dev/img/homepage/phones.png"
+          ],
           "pattern": "^(http(s?):)(\\w|\\/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)$"
         }
       },
@@ -101,7 +129,9 @@
         "type": "string",
         "title": "Optional property to override the name provided by npm and GitHub",
         "default": "",
-        "examples": ["react-navigation"],
+        "examples": [
+          "react-navigation"
+        ],
         "pattern": "^(.*)$"
       },
       "dev": {
@@ -109,21 +139,58 @@
         "type": "boolean",
         "title": "The Development Tool Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "template": {
         "$id": "#/items/properties/template",
         "type": "boolean",
         "title": "The Template Schema",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true
+        ]
       },
       "newArchitecture": {
         "$id": "#/items/properties/newArchitecture",
-        "type": ["boolean", "string"],
+        "type": [
+          "boolean",
+          "string"
+        ],
         "title": "The New Architecture Support Schema",
         "default": false,
-        "examples": [true, "Only iOS supported"]
+        "examples": [
+          true,
+          "Only iOS supported"
+        ]
+      },
+      "newArchitectureNote": {
+        "$id": "#/items/properties/newArchitectureNote",
+        "type": "string",
+        "title": "Optional note about the New Architecture support",
+        "default": "",
+        "examples": [
+          "Refer to https://github.com/MinaSamir11/react-native-in-app-review/issues/169 for the latest status"
+        ]
+      },
+      "alternatives": {
+        "$id": "#/items/properties/alternatives",
+        "type": "array",
+        "title": "Optional alternative libraries to use, if the library is not maintained anymore or does not support the New Architecture",
+        "default": [
+          null
+        ],
+        "items": {
+          "$id": "#/items/properties/alternatives/items",
+          "type": "string",
+          "title": "Alternative library",
+          "default": "",
+          "examples": [
+            "expo-image"
+          ],
+          "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
+        }
       }
     }
   }

@@ -123,16 +123,24 @@
 #### 🏷️ Tags
 
 - #### `unmaintained`
-  **(boolean|string)** - signify that a library is no longer maintained. Can also pass the package name string to point out the recommended alternative.
+  **(boolean)** - signify that a library is no longer maintained. Provide alternative libraries with the `alternatives` field.
 - #### `dev`
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
 
-  **(boolean)** - signify that a library supports, or not, the new architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. 
+  **(boolean)** - signify that a library supports, or not, the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result.  Provide additional context with the `newArchitectureNote` field.
 
-  > Set this tag only when automatic architecture detection fails for your package, despite it supports the new architecture.
+  > Set this tag only when automatic architecture detection fails for your package, despite it supports the New Architecture.
+
+### 📝 Additional context for tags
+
+- #### `newArchitectureNote`
+  **(string)** - provide a note for the New Architecture support status, if a boolean `"true"` or `"false"` is not sufficient to describe the state of New Architecture support.
+
+- #### `alternatives`
+  **(array of strings)** - provide a list of alternatives to the library. eg: `["expo-camera", "react-native-vision-camera"]`. This is used to provide a list of alternatives to a library if it is unmaintained or does not suppport the New Architecture.
 
 ---
 

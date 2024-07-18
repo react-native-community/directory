@@ -5,7 +5,7 @@ import { A, colors, darkColors, Label, useLayout } from '../../common/styleguide
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Warning } from '../Icons';
 
-const UnmaintainedLabel = ({ value }) => {
+const UnmaintainedLabel = ({ alternatives }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -34,18 +34,25 @@ const UnmaintainedLabel = ({ value }) => {
             This library is not actively maintained.
           </Label>
         </View>
-        {typeof value === 'string' && (
+        {alternatives && alternatives.length > 0 && (
           <Label
             style={{
               color: contentColor,
             }}>
             You can use{' '}
-            <A
-              href={`/?search=${encodeURIComponent(value)}`}
-              style={{ backgroundColor: 'transparent' }}
-              hoverStyle={linkHoverStyle}>
-              {value}
-            </A>{' '}
+            {alternatives.map((alternative, index) => (
+              <>
+                <A
+                  key={alternative}
+                  href={`/?search=${encodeURIComponent(alternative)}`}
+                  style={{ backgroundColor: 'transparent' }}
+                  hoverStyle={linkHoverStyle}>
+                  {alternative}
+                </A>
+                {index < alternatives.length - 1 && alternatives.length > 2 ? ', ' : ' '}
+                {index === alternatives.length - 2 && 'or '}
+              </>
+            ))}{' '}
             instead.
           </Label>
         )}

@@ -29,7 +29,8 @@
     "githubUrl": "https://github.com/react-native-datetimepicker/datetimepicker",
     "npmPkg": "@react-native-community/datetimepicker",
     "expoGo": true,
-    "newArchitecture": "Test note for new architecture support"
+    "newArchitecture": true,
+    "newArchitectureNote": "Test note for New Architecture support"
   },
   {
     "githubUrl": "https://github.com/rnc-archive/react-native-drawer-layout",
