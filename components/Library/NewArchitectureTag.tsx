@@ -30,10 +30,9 @@ export function NewArchitectureTag({ library }: Props) {
       <Question fill={getIconColor(status, isDark)} width={11} height={11} />
     );
 
-  const newArchitectureNote = library.newArchitectureNote &&
-    typeof library.newArchitectureNote === 'string' && (
-      <Label style={styles.note}>{library.newArchitectureNote}</Label>
-    );
+  const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
+    <Label style={styles.note}>{library.newArchitectureNote}</Label>
+  );
 
   // Do not show alternatives in new arch tag for unmaintained libraries since
   // we already show the alternatives in unmaintained label
