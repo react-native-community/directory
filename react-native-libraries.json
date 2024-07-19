@@ -3542,7 +3542,8 @@
     "tvos": true,
     "visionos": true,
     "npmPkg": "@react-native-community/blur",
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["expo-blur"]
   },
   {
     "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage",
@@ -3843,7 +3844,8 @@
     "android": true,
     "windows": true,
     "visionos": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["expo-device"]
   },
   {
     "githubUrl": "https://github.com/zo0r/react-native-push-notification",
@@ -3940,7 +3942,8 @@
     "ios": true,
     "windows": true,
     "npmPkg": "@react-native-community/checkbox",
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["expo-checkbox"]
   },
   {
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
@@ -4756,7 +4759,8 @@
     "ios": true,
     "android": true,
     "npmPkg": "react-native-inappbrowser-reborn",
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["expo-web-browser"]
   },
   {
     "githubUrl": "https://github.com/rafaelmotta/react-native-progress-bar-animated",
@@ -6088,7 +6092,8 @@
       "https://raw.githubusercontent.com/dominicstop/react-native-ios-context-menu/master/assets/example-ContextMenuButtonExample02.gif"
     ],
     "ios": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["@react-native-menu/menu"]
   },
   {
     "githubUrl": "https://github.com/srk-sharingan/sharingan-rn-modal-dropdown",
@@ -8693,7 +8698,8 @@
     "ios": true,
     "android": true,
     "dev": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "newArchitectureNote": "Consider using Maestro instead to migrate to the New Architecture today."
   },
   {
     "githubUrl": "https://github.com/dev-family/react-native-wallet-manager",
