@@ -5852,7 +5852,8 @@
     ],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/testfairy/react-native-testfairy",
@@ -11329,5 +11330,150 @@
     "npmPkg": "@batch.com/react-native-plugin",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/@expo/fingerprint",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo",
+    "goldstar": true,
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-gesture-handler",
+    "goldstar": true,
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "web": true,
+    "macos": true,
+    "expoGo": true,
+    "visionos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/moti/tree/master/packages/moti",
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "web": true,
+    "macos": true,
+    "expoGo": true,
+    "visionos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tinyplex/tinybase",
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "web": true,
+    "macos": true,
+    "expoGo": true,
+    "visionos": true,
+    "newArchitecture": true
+  },
+  {
+    "npmPkg": "vexo-analytics",
+    "githubUrl": "https://github.com/vexo-tech/docs",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/bottom-tabs",
+    "npmPkg": "@react-navigation/bottom-tabs",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/material-top-tabs",
+    "npmPkg": "@react-navigation/material-top-tabs",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/drawer",
+    "npmPkg": "@react-navigation/drawer",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/native-stack",
+    "npmPkg": "@react-navigation/native-stack",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/stack",
+    "npmPkg": "@react-navigation/stack",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/elements",
+    "npmPkg": "@react-navigation/elements",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-drawer-layout",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/routers",
+    "npmPkg": "@react-navigation/routers",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true,
+    "visionos": true,
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/dev-tools",
+    "npmPkg": "@react-navigation/devtools",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true,
+    "visionos": true,
+    "windows": true,
+    "dev": true
   }
 ]
