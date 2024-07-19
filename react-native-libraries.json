@@ -11352,18 +11352,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-gesture-handler",
-    "goldstar": true,
-    "ios": true,
-    "android": true,
-    "tvos": true,
-    "web": true,
-    "macos": true,
-    "expoGo": true,
-    "visionos": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/nandorojo/moti/tree/master/packages/moti",
     "ios": true,
     "android": true,
@@ -11475,5 +11463,16 @@
     "visionos": true,
     "windows": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/supabase/supabase-js",
+    "npmPkg": "@supabase/supabase-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "tvos": true,
+    "visionos": true,
+    "windows": true
   }
 ]
