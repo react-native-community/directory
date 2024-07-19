@@ -3962,12 +3962,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js",
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/aws-amplify",
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true,
-    "npmPkg": "aws-amplify"
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/datastore",
@@ -4124,7 +4123,7 @@
     "examples": ["https://github.com/jibraniqbal666/react-native-fb-image-grid/tree/master/example"]
   },
   {
-    "githubUrl": "https://github.com/mongodb/stitch-js-sdk",
+    "githubUrl": "https://github.com/mongodb/stitch-js-sdk/tree/master/packages/react-native/sdk",
     "ios": true,
     "android": true,
     "web": true,
@@ -5694,7 +5693,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/storybookjs/react-native",
+    "githubUrl": "https://github.com/storybookjs/react-native/tree/next/packages/react-native",
     "npmPkg": "@storybook/react-native",
     "examples": ["https://snack.expo.dev/@dannyhw/expo-storybook-example"],
     "ios": true,
@@ -7718,8 +7717,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/rodgomesc/vision-camera-qrcode-scanner",
-    "examples": ["https://github.com/rodgomesc/vision-camera-qrcode-scanner/tree/master/example"],
+    "githubUrl": "https://github.com/rodgomesc/vision-camera-code-scanner",
+    "examples": ["https://github.com/rodgomesc/vision-camera-code-scanner/tree/master/example"],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -7787,8 +7786,9 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/minhtc/react-native-auto-scrolling",
-    "examples": ["https://github.com/minhtc/react-native-auto-scrolling/tree/main/Example"],
+    "githubUrl": "https://github.com/homielab/react-native-auto-scroll",
+    "npmPkg": "@homielab/react-native-auto-scroll",
+    "examples": ["https://github.com/homielab/react-native-auto-scroll/tree/main/Example"],
     "images": [
       "https://raw.githubusercontent.com/minhtc/react-native-auto-scrolling/main/screenshots/auto-scrolling.gif"
     ],
@@ -8668,13 +8668,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/rodgomesc/vision-camera-code-scanner",
-    "examples": ["https://github.com/rodgomesc/vision-camera-code-scanner/tree/master/example"],
-    "ios": true,
-    "android": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/aarongrider/vision-camera-ocr",
     "examples": ["https://github.com/aarongrider/vision-camera-ocr/tree/main/example"],
     "images": [
@@ -9288,6 +9281,7 @@
   },
   {
     "githubUrl": "https://github.com/Karthik-B-06/react-native-segmented-control",
+    "npmPkg": "rn-segmented-control",
     "examples": [
       "https://github.com/Karthik-B-06/react-native-segmented-control/tree/main/example"
     ],
@@ -9450,6 +9444,7 @@
   },
   {
     "githubUrl": "https://github.com/showtime-xyz/showtime-tab-view",
+    "npmPkg": "@showtime-xyz/tab-view",
     "examples": ["https://github.com/showtime-xyz/showtime-tab-view/tree/main/example"],
     "ios": true,
     "android": true,
@@ -9714,7 +9709,7 @@
     "macos": true
   },
   {
-    "githubUrl": "https://github.com/fracht/react-native-input-autofocus",
+    "githubUrl": "https://github.com/fracht/react-native-input-autofocus/tree/main/lib",
     "npmPkg": "@alcs/react-native-input-autofocus",
     "examples": ["https://github.com/fracht/react-native-input-autofocus/tree/main/ExampleApp"],
     "images": [
@@ -9750,7 +9745,7 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/lingui/js-lingui",
+    "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/react",
     "npmPkg": "@lingui/react",
     "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
     "ios": true,
@@ -9997,6 +9992,7 @@
   },
   {
     "githubUrl": "https://github.com/stackbuilders/react-native-spotlight-tour/tree/main/package",
+    "npmPkg": "react-native-spotlight-tour",
     "examples": ["https://github.com/stackbuilders/react-native-spotlight-tour/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/stackbuilders/react-native-spotlight-tour/main/docs/rnst-bounce.gif",
@@ -11229,6 +11225,7 @@
   },
   {
     "githubUrl": "https://github.com/riteshshukla04/kiosk-mode-react-native",
+    "npmPkg": "kiosk-react-native",
     "examples": ["https://github.com/riteshshukla04/kiosk-mode-react-native/tree/main/example"],
     "android": true
   },
@@ -11323,7 +11320,7 @@
   },
   {
     "githubUrl": "https://github.com/BatchLabs/Batch-React-Native-Plugin",
-    "alternatives": ["@batch.com/react-native-plugin"],
+    "npmPkg": "@batch.com/react-native-plugin",
     "ios": true,
     "android": true
   }
