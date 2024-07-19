@@ -252,10 +252,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
       const packageJson = JSON.parse(json.packageJson.text);
 
       json.newArchitecture = Boolean(packageJson.codegenConfig);
+      json.name = packageJson.name;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
-        json.name = packageJson.name;
         json.topics = processTopics(packageJson.keywords);
         json.description = packageJson.description;
         json.licenseInfo = getLicenseFromPackageJson(packageJson);
