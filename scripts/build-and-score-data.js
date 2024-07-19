@@ -39,6 +39,7 @@ const fillNpmName = project => {
 };
 
 const invalidRepos = [];
+const mismatchedRepos = [];
 
 const buildAndScoreData = async () => {
   console.log('📦️ Loading data from GitHub');
@@ -50,6 +51,15 @@ const buildAndScoreData = async () => {
       return false;
     }
     return !isEmptyOrNull(project.github.name);
+  });
+
+  // Detect mismatched package and package.json content
+  data.forEach(project => {
+    if (
+      (project.npmPkg ?? project.githubUrl.split('/').pop()).toLowerCase() !== project.github.name
+    ) {
+      mismatchedRepos.push(project);
+    }
   });
 
   // Mark libraries as `unmaintained` automatically
@@ -161,9 +171,18 @@ const buildAndScoreData = async () => {
 
   if (invalidRepos.length) {
     console.warn(
-      '🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
+      '\n 🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
     );
     invalidRepos.forEach(repoUrl => console.warn(`- ${repoUrl}`));
+  }
+
+  if (mismatchedRepos.length) {
+    console.warn(
+      `\n 🚨 The following projects repository URLs (${mismatchedRepos.length}) are misaligned with the package name extracted from package.json:`
+    );
+    mismatchedRepos.forEach(project =>
+      console.warn(`- ${project.githubUrl}: ${project.github.name}`)
+    );
   }
 
   return fs.writeFileSync(
