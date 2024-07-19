@@ -7,12 +7,15 @@
   {
     "githubUrl": "https://github.com/gre/gl-react",
     "expoGo": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "alternatives": ["expo-three"]
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "alternatives": ["expo-camera"],
+    "unmaintained": true
   },
   { "githubUrl": "https://github.com/n4kz/react-native-pages", "expoGo": true },
   { "githubUrl": "https://github.com/airbnb/lottie-react-native", "expoGo": true },
