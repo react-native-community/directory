@@ -2253,6 +2253,7 @@
   },
   {
     "githubUrl": "https://github.com/bamlab/react-native-batch-push",
+    "npmPkg": "@bam.tech/react-native-batch",
     "alternatives": ["@batch.com/react-native-plugin"],
     "ios": true,
     "android": true,
@@ -8095,9 +8096,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/criszz77/luna",
-    "npmPkg": "@criszz77/luna",
-    "examples": ["https://luna-gamma.vercel.app/"],
+    "githubUrl": "https://github.com/LunatiqueCoder/luna/tree/master/packages/create-luna-app",
     "ios": true,
     "android": true,
     "web": true,
@@ -10554,10 +10553,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/powersync-ja/powersync-react-native-sdk/tree/main/packages/powersync-sdk-react-native",
-    "npmPkg": "@journeyapps/powersync-sdk-react-native",
+    "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/react-native",
+    "npmPkg": "@powersync/react-native",
     "examples": [
-      "https://github.com/powersync-ja/powersync-supabase-react-native-todolist-demo/tree/main"
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-group-chat",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist"
     ],
     "ios": true,
     "expoGo": true,
