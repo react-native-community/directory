@@ -35,13 +35,17 @@ export function NewArchitectureTag({ library }: Props) {
       <Label style={styles.note}>{library.newArchitectureNote}</Label>
     );
 
-  const alternatives = library.alternatives && library.alternatives.length > 0 && (
-    <Label style={styles.note}>
-      {' '}
-      {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
-      {library.alternatives.join(', ')}{' '}
-    </Label>
-  );
+  // Do not show alternatives in new arch tag for unmaintained libraries since
+  // we already show the alternatives in unmaintained label
+  const alternatives = library.alternatives &&
+    library.alternatives.length > 0 &&
+    !library.unmaintained && (
+      <Label style={styles.note}>
+        {' '}
+        {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
+        {library.alternatives.join(', ')}{' '}
+      </Label>
+    );
 
   return (
     <View>
