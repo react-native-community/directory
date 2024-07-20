@@ -11058,10 +11058,12 @@
   {
     "githubUrl": "https://github.com/duguyihou/react-native-turbo-image",
     "images": [
-      "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/list.gif",
-      "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/process.gif"
+      "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/ios.gif"
     ],
-    "examples": ["https://github.com/duguyihou/react-native-turbo-image/tree/main/example"],
+    "examples": [
+      "https://github.com/duguyihou/react-native-turbo-image/tree/main/example", 
+      "https://github.com/duguyihou/APPLibTest"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
