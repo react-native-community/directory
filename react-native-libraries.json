@@ -11333,6 +11333,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/@expo/fingerprint",
+    "npmPkg": "@expo/fingerprint",
     "ios": true,
     "android": true,
     "web": true,
@@ -11357,27 +11358,16 @@
     "android": true,
     "tvos": true,
     "web": true,
-    "macos": true,
     "expoGo": true,
-    "visionos": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/tinyplex/tinybase",
     "ios": true,
     "android": true,
-    "tvos": true,
     "web": true,
-    "macos": true,
     "expoGo": true,
-    "visionos": true,
     "newArchitecture": true
-  },
-  {
-    "npmPkg": "vexo-analytics",
-    "githubUrl": "https://github.com/vexo-tech/docs",
-    "ios": true,
-    "android": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/bottom-tabs",
@@ -11453,7 +11443,7 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/dev-tools",
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/devtools",
     "npmPkg": "@react-navigation/devtools",
     "ios": true,
     "android": true,
@@ -11470,9 +11460,6 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true,
-    "tvos": true,
-    "visionos": true,
-    "windows": true
+    "expoGo": true
   }
 ]
