@@ -3869,10 +3869,12 @@
     "alternatives": ["expo-modules-core"]
   },
   {
-    "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode",
+    "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode/tree/master/library",
+    "npmPkg": "react-native-dark-mode",
     "ios": true,
     "android": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["react-native-dynamic"]
   },
   {
     "githubUrl": "https://github.com/DylanVann/react-native-fast-image",
@@ -3932,7 +3934,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/react-native-checkbox/react-native-checkbox",
+    "githubUrl": "https://github.com/react-native-checkbox/react-native-checkbox/tree/develop/src",
     "images": [
       "https://raw.githubusercontent.com/react-native-checkbox/react-native-checkbox/master/screenShots/demo-android.png",
       "https://raw.githubusercontent.com/react-native-checkbox/react-native-checkbox/master/screenShots/demo-ios.png",
@@ -5240,7 +5242,8 @@
     "alternatives": ["react-native-reanimated-table"]
   },
   {
-    "githubUrl": "https://github.com/codemotionapps/react-native-dynamic",
+    "githubUrl": "https://github.com/codemotionapps/react-native-dynamic/tree/master/library",
+    "npmPkg": "react-native-dynamic",
     "examples": ["https://github.com/codemotionapps/react-native-dynamic/tree/master/example"],
     "images": [
       "https://raw.githubusercontent.com/codemotionapps/react-native-dynamic/master/.vscode/showcase.ios.gif",
@@ -5986,7 +5989,7 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/nandorojo/dripsy",
+    "githubUrl": "https://github.com/nandorojo/dripsy/tree/master/packages/dripsy",
     "examples": [
       "https://github.com/nandorojo/dripsy/tree/master/examples/next-example",
       "https://github.com/nandorojo/dripsy/tree/master/examples/example"
@@ -6683,7 +6686,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/nandorojo/moti",
+    "githubUrl": "https://github.com/nandorojo/moti/tree/master/packages/moti",
     "examples": [
       "https://moti.fyi/examples/hello-world",
       "https://github.com/nandorojo/moti/tree/master/examples"
@@ -7513,7 +7516,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/th3rdwave/web-image",
+    "githubUrl": "https://github.com/th3rdwave/web-image/tree/main/packages/web-image",
     "npmPkg": "@th3rdwave/web-image",
     "web": true
   },
@@ -7863,7 +7866,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/shipt/osmosis",
+    "githubUrl": "https://github.com/shipt/osmosis/tree/development/osmosis",
     "npmPkg": "@shipt/osmosis",
     "examples": ["https://github.com/shipt/osmosis/tree/master/examples"],
     "ios": true,
@@ -8018,7 +8021,8 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/cwnicoletti/react-native-gauge",
+    "githubUrl": "https://github.com/cwnicoletti/react-native-gauge/tree/main/src",
+    "npmPkg": "react-native-gauge",
     "images": [
       "https://user-images.githubusercontent.com/56566033/157319604-d393078e-cdb5-4f1d-a770-7b45cd12efed.gif"
     ],
@@ -8513,7 +8517,8 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/FormidableLabs/react-native-zephyr",
+    "githubUrl": "https://github.com/FormidableLabs/react-native-zephyr/tree/master/packages/core",
+    "npmPkg": "react-native-zephyr",
     "examples": [
       "https://github.com/FormidableLabs/react-native-zephyr/tree/master/packages/sample"
     ],
@@ -8716,7 +8721,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/sendbird/sendbird-uikit-react-native",
+    "githubUrl": "https://github.com/sendbird/sendbird-uikit-react-native/tree/main/packages/uikit-react-native",
     "npmPkg": "@sendbird/uikit-react-native",
     "ios": true,
     "android": true,
@@ -9378,7 +9383,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/coinbase/rest-hooks",
+    "githubUrl": "https://github.com/reactive/data-client/tree/master/packages/react",
     "npmPkg": "@rest-hooks/react",
     "examples": [
       "https://github.com/coinbase/rest-hooks/tree/master/examples",
@@ -11061,7 +11066,7 @@
       "https://github.com/duguyihou/react-native-turbo-image/blob/main/example/assets/ios.gif"
     ],
     "examples": [
-      "https://github.com/duguyihou/react-native-turbo-image/tree/main/example", 
+      "https://github.com/duguyihou/react-native-turbo-image/tree/main/example",
       "https://github.com/duguyihou/APPLibTest"
     ],
     "ios": true,
@@ -11347,15 +11352,6 @@
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo",
     "goldstar": true,
-    "ios": true,
-    "android": true,
-    "tvos": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/nandorojo/moti/tree/master/packages/moti",
     "ios": true,
     "android": true,
     "tvos": true,
