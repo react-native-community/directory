@@ -11461,5 +11461,15 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/zahidalidev/toastify-react-native",
+    "npmPkg": "toastify-react-native",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true,
+    "examples": ["https://snack.expo.dev/@zahidalidev/toastify-react-native"],
   }
 ]
