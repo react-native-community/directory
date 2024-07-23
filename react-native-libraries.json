@@ -7002,7 +7002,9 @@
       "https://www.mongodb.com/docs/atlas/app-services/tutorial/react-native/"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
   },
   {
     "githubUrl": "https://github.com/georstat/react-native-image-cache",
