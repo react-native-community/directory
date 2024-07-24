@@ -11469,5 +11469,16 @@
     "web": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/@zahidalidev/toastify-react-native"]
+  },
+  {
+    "githubUrl": "https://github.com/sacmii/rn-float-box",
+    "examples": [
+      "https://snack.expo.dev/@zackmi/rnfloatingbox",
+      "https://github.com/sacmii/rn-float-box/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
