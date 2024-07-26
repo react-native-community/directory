@@ -9386,10 +9386,10 @@
   },
   {
     "githubUrl": "https://github.com/reactive/data-client/tree/master/packages/react",
-    "npmPkg": "@rest-hooks/react",
+    "npmPkg": "@data-client/react",
     "examples": [
-      "https://github.com/coinbase/rest-hooks/tree/master/examples",
-      "https://resthooks.io/demos"
+      "https://github.com/reactive/data-client/tree/master/examples",
+      "https://dataclient.io/docs"
     ],
     "ios": true,
     "android": true,
@@ -11464,6 +11464,7 @@
   },
   {
     "githubUrl": "https://github.com/zahidalidev/toastify-react-native",
+    "npmPkg": "@zahidalidev/toastify-react-native",
     "ios": true,
     "android": true,
     "web": true,
@@ -11480,5 +11481,57 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/GSTJ/react-native-magic-modal/tree/main/packages/modal",
+    "npmPkg": "react-native-magic-modal",
+    "examples": [
+      "https://github.com/GSTJ/react-native-magic-modal/tree/main/examples/kitchen-sink"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/EvanBacon/expo-quick-actions",
+    "examples": ["https://github.com/EvanBacon/expo-quick-actions/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/obytes/app-icon-badge",
+    "examples": ["https://github.com/EvanBacon/expo-quick-actions/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/achorein/expo-share-intent",
+    "examples": [
+      "https://github.com/achorein/expo-share-intent/tree/main/example/basic",
+      "https://github.com/achorein/expo-share-intent/tree/main/example/expo-router",
+      "https://github.com/achorein/expo-share-intent/tree/main/example/react-navigation"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/watanabeyu/react-native-store-version",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/GeorgeHop/react-native-country-codes-picker",
+    "images": [
+      "https://user-images.githubusercontent.com/47904385/195978433-29982bec-b5cc-4d2a-ba01-4eb686005567.gif"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/react-native-google-autocomplete",
+    "examples": [
+      "https://github.com/AppAndFlow/react-native-google-autocomplete/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
