@@ -5,7 +5,7 @@
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to condition function, and if it returns true, the value is added to the
 // libraries score. Read more: https://reactnative.directory/scoring
-const modifiers = [
+const MODIFIERS = [
   {
     name: 'Very popular',
     value: 40,
@@ -56,17 +56,20 @@ const modifiers = [
   },
 ];
 
+const DAY_IN_MS = 864e5;
+
 // Calculate the minimum and maximum possible scores based on the modifiers
-const minScore = modifiers.reduce((currentMin, modifier) => {
+const minScore = MODIFIERS.reduce((currentMin, modifier) => {
   return modifier.value < 0 ? currentMin + modifier.value : currentMin;
 }, 0);
-const maxScore = modifiers.reduce((currentMax, modifier) => {
+
+const maxScore = MODIFIERS.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
 export const calculateDirectoryScore = data => {
   // Filter the modifiers to the ones which conditions pass with the data
-  const matchingModifiers = modifiers.filter(modifier => modifier.condition(data));
+  const matchingModifiers = MODIFIERS.filter(modifier => modifier.condition(data));
 
   // Reduce the matching modifiers to find the raw score for the data
   const rawScore = matchingModifiers.reduce((currentScore, modifier) => {
@@ -92,8 +95,6 @@ const getCombinedPopularity = data => {
   const { downloads } = data.npm;
   return subscribers * 20 + forks * 10 + stars + downloads / 100;
 };
-
-const DAY_IN_MS = 864e5;
 
 const getUpdatedDaysAgo = data => {
   const { updatedAt } = data.github.stats;
