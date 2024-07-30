@@ -9388,12 +9388,15 @@
     "githubUrl": "https://github.com/reactive/data-client/tree/master/packages/react",
     "npmPkg": "@data-client/react",
     "examples": [
+      "https://dataclient.io/demos",
       "https://github.com/reactive/data-client/tree/master/examples",
-      "https://dataclient.io/docs"
+      "https://github.com/reactive/coin-app"
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-mytracker",
@@ -11533,19 +11536,5 @@
     ],
     "android": true,
     "ios": true
-  },
-  {
-    "githubUrl": "https://github.com/reactive/data-client",
-    "npmPkg": "@data-client/react",
-    "examples": [
-      "https://dataclient.io/demos",
-      "https://github.com/reactive/data-client/tree/master/examples",
-      "https://github.com/reactive/coin-app"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expo": true,
-    "newArchitecture": true
   }
 ]
