@@ -6,6 +6,7 @@ import { calculateDirectoryScore, calculatePopularityScore } from './calculate-s
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data.js';
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
 import fetchReadmeImages from './fetch-readme-images.js';
+import { fillNpmName, sleep } from './helpers.js';
 import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
 import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
 import { isLaterThan, TimeRange } from '../util/datetime.js';
@@ -14,6 +15,7 @@ import { isEmptyOrNull } from '../util/strings.js';
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
 const USE_DEBUG_REPOS = false;
+const DATASET = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
@@ -21,25 +23,13 @@ const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = true;
-
+const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
-
-export const sleep = (ms = 0, msMax = null) => {
-  return new Promise(r =>
-    setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
-  );
-};
-
-const fillNpmName = project => {
-  if (!project.npmPkg) {
-    const parts = project.githubUrl.split('/');
-    project.npmPkg = parts[parts.length - 1].toLowerCase();
-  }
-  return project;
-};
 
 const invalidRepos = [];
 const mismatchedRepos = [];
+
+const wantedPackageName = process.argv[2];
 
 const buildAndScoreData = async () => {
   console.log('📦️ Loading data from GitHub');
@@ -185,18 +175,39 @@ const buildAndScoreData = async () => {
     );
   }
 
-  return fs.writeFileSync(
-    path.resolve('assets', 'data.json'),
-    JSON.stringify(
-      {
-        libraries: data,
-        topics: topicCounts,
-        topicsList: Object.keys(topicCounts).sort(),
-      },
-      null,
-      2
-    )
-  );
+  if (wantedPackageName) {
+    const { libraries, ...rest } = JSON.parse(fs.readFileSync(DATA_PATH));
+
+    return fs.writeFileSync(
+      DATA_PATH,
+      JSON.stringify(
+        {
+          libraries: libraries.map(library => {
+            if (library.npmPkg === wantedPackageName) {
+              return data.find(entry => entry.npmPkg === wantedPackageName);
+            }
+            return library;
+          }),
+          ...rest,
+        },
+        null,
+        2
+      )
+    );
+  } else {
+    return fs.writeFileSync(
+      DATA_PATH,
+      JSON.stringify(
+        {
+          libraries: data,
+          topics: topicCounts,
+          topicsList: Object.keys(topicCounts).sort(),
+        },
+        null,
+        2
+      )
+    );
+  }
 };
 
 async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
@@ -222,8 +233,24 @@ async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   return results;
 }
 
+function getDataForFetch() {
+  if (wantedPackageName) {
+    const match = DATASET.find(
+      entry =>
+        entry?.npmPkg === wantedPackageName || entry.githubUrl.endsWith(`/${wantedPackageName}`)
+    );
+    if (!match) {
+      console.error(`❌ Package named "${wantedPackageName}" does not exist in the dataset!`);
+      process.exit(1);
+    }
+    return [match];
+  }
+  return DATASET;
+}
+
 async function loadRepositoryDataAsync() {
-  const data = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
+  const data = getDataForFetch();
+
   let githubResultsFileExists = false;
   try {
     fs.statSync(GITHUB_RESULTS_PATH);

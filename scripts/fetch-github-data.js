@@ -1,13 +1,15 @@
 import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { sleep } from './build-and-score-data.js';
+import { processTopics, sleep } from './helpers.js';
+import GitHubLicensesQuery from './queries/GitHubLicensesQuery.js';
+import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery.js';
 
 config();
 
 const GRAPHQL_API = 'https://api.github.com/graphql';
 
-const Authorization = `bearer ${process.env.GITHUB_TOKEN}`;
+const AUTHORIZATION = `bearer ${process.env.GITHUB_TOKEN}`;
 
 const licenses = {};
 
@@ -15,110 +17,18 @@ const licenses = {};
  * Fetch licenses from GitHub to be used later to parse licenses from npm
  */
 export const loadGitHubLicenses = async () => {
-  const query = `
-    query {
-      licenses {
-        name
-        url
-        id
-        key
-        spdxId
-      }
-    }
-  `;
-
-  const result = await makeGraphqlQuery(query);
+  const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
   result.data.licenses.forEach(license => {
     licenses[license.key] = license;
   });
 };
 
-const query = `
-  query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
-    rateLimit {
-      limit
-      cost
-      remaining
-      resetAt
-    }
-    repository(owner: $repoOwner, name: $repoName) {
-      hasIssuesEnabled
-      hasWikiEnabled
-      hasSponsorshipsEnabled
-      issues(states: OPEN) {
-        totalCount
-      }
-      watchers {
-        totalCount
-      }
-      stargazers {
-        totalCount
-      }
-      forks {
-        totalCount
-      }
-      description
-      createdAt
-      pushedAt
-      updatedAt
-      homepageUrl
-      url
-      mirrorUrl
-      name
-      nameWithOwner
-      isArchived
-      isMirror
-      licenseInfo {
-        key
-        name
-        spdxId
-        url
-        id
-      }
-      releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
-        nodes {
-          name
-          tagName
-          createdAt
-          publishedAt
-          isPrerelease
-        }
-      }
-      repositoryTopics(first: 10) {
-        nodes {
-          topic {
-            name
-          }
-        }
-      }
-      defaultBranchRef {
-        target {
-          ... on Commit {
-            id
-            history(path: $packagePath, first: 1) {
-              nodes {
-                committedDate
-                message
-              }
-            }
-          }
-        }
-      }
-      packageJson:object(expression: $packageJsonPath) {
-        ... on Blob {
-          text
-        }
-      }
-    }
-  }
-`;
-
 const makeGraphqlQuery = async (query, variables) => {
   const result = await fetch(GRAPHQL_API, {
     method: 'POST',
     headers: {
-      Authorization,
+      Authorization: AUTHORIZATION,
       Accept: 'application/json',
     },
     body: JSON.stringify({
@@ -132,7 +42,7 @@ const makeGraphqlQuery = async (query, variables) => {
 export const fetchGithubRateLimit = async () => {
   // Accurately fetch query rate limit and cost by making dummy request
   // https://developer.github.com/v4/guides/resource-limitations/
-  const result = await makeGraphqlQuery(query, {
+  const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
     repoOwner: 'react-native-directory',
     repoName: 'website',
   });
@@ -184,7 +94,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     const url = data.githubUrl;
     const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
 
-    const result = await makeGraphqlQuery(query, {
+    const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
       repoName,
       packagePath,
@@ -233,18 +143,6 @@ const getLicenseFromPackageJson = packageJson => {
     return licenses[packageJson.license.toLowerCase()];
   }
 };
-
-function processTopics(topics) {
-  return (topics || [])
-    .map(topic =>
-      topic
-        .replace(/([ _])/g, '-')
-        .replace('react-native-', '')
-        .toLowerCase()
-        .trim()
-    )
-    .filter(topic => topic?.length);
-}
 
 const createRepoDataWithResponse = (json, monorepo) => {
   if (json.packageJson) {

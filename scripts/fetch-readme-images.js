@@ -1,7 +1,7 @@
 import { load } from 'cheerio';
 import fetch from 'cross-fetch';
 
-import { sleep } from './build-and-score-data.js';
+import { sleep } from './helpers.js';
 
 const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
   const parentHref = image.parent().attr('href');

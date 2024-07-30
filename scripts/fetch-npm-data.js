@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 
-import { sleep } from './build-and-score-data.js';
+import { sleep } from './helpers.js';
 
 const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
@@ -8,13 +8,15 @@ const urlForPackage = (npmPkg, period = 'month') => {
 
 export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCount = 0) => {
   try {
+    const listCount = namesArray.length;
     const url = urlForPackage(namesArray.join(','), period);
+
     const isMonthly = period === 'month';
     const response = await fetch(url);
     const downloadData = await response.json();
 
     return namesArray.map(name => {
-      const pkgData = downloadData[name];
+      const pkgData = listCount === 1 ? downloadData : downloadData[name];
 
       if (isMonthly && !pkgData?.downloads) {
         console.warn(
