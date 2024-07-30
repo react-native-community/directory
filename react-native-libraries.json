@@ -11536,5 +11536,17 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/mattermost/react-native-paste-input",
+    "npmPkg": "@mattermost/react-native-paste-input",
+    "examples": ["https://github.com/mattermost/react-native-paste-input/tree/master/example"],
+    "images": [
+      "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/AndroidPasteInput.gif?raw=true",
+      "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
+    ],
+    "newArchitecture": true,
+    "android": true,
+    "ios": true
   }
 ]
