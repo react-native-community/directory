@@ -11509,5 +11509,16 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/reactive/data-client/tree/master/packages/react",
+    "npmPkg": "@data-client/react",
+    "examples": [
+      "https://github.com/reactive/data-client/tree/master/examples",
+      "https://dataclient.io/docs"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
