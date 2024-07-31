@@ -34,30 +34,28 @@ const validateLibrariesFormat = libraries => {
     console.error('❌ Malformed libraries found:\n' + errorDescriptions.join('\n'));
     process.exit(1);
   } else {
-    console.log('✅ No malformed libraries');
+    console.log('✅ No malformed libraries\n');
   }
 };
 
 const validateDuplicateLibraries = libraries => {
   console.log('🔍️Checking for duplicate libraries');
 
-  const duplicateLibraries = Object.entries(
-    libraries
-      // Reduce the library names to an object with the name as the key and the count as the value
-      .map(library => library.githubUrl)
-      .reduce((currentCount, libraryName) => {
-        const previousCount = currentCount[libraryName] || 0;
-        currentCount[libraryName] = previousCount + 1;
-        return currentCount;
-      }, {})
-    // Convert to pairs and then filter based on the count
-  )
-    .filter(([_, count]) => count[1] > 1)
-    // Map back to the library name and return the value
-    .map(([libraryUrl, _]) => libraryUrl);
+  const librariesName = libraries.map(
+    library => library.npmPkg ?? library.githubUrl.split('/').at(-1)
+  );
+  const occurrences = librariesName.reduce((acc, item) => {
+    acc[item] = (acc[item] || 0) + 1;
+    return acc;
+  }, {});
+
+  const duplicateLibraries = [...new Set(librariesName.filter(item => occurrences[item] !== 1))];
 
   if (duplicateLibraries.length > 0) {
-    console.error('❌ Duplicate libraries found:\n' + duplicateLibraries.join('\n'));
+    console.error(
+      '❌ Duplicate libraries found:\n' +
+        duplicateLibraries.map(library => `- ${library}`).join('\n')
+    );
     console.error('Remove these duplicates before commiting.');
     process.exit(1);
   } else {
@@ -66,5 +64,4 @@ const validateDuplicateLibraries = libraries => {
 };
 
 validateLibrariesFormat(libraries);
-console.log(''); // Add in a line break
 validateDuplicateLibraries(libraries);
