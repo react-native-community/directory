@@ -663,13 +663,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/rnc-archive/react-native-drawer-layout",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/n4kz/react-native-material-textfield",
     "ios": true,
     "android": true,
@@ -4018,12 +4011,6 @@
     "android": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/@mxck/react-native-material-menu-demo"]
-  },
-  {
-    "githubUrl": "https://github.com/jacklam718/react-native-modals",
-    "ios": true,
-    "android": true,
-    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/MaxGraey/react-native-console-time-polyfill",
@@ -9001,17 +8988,6 @@
     ],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/arnnis/react-native-toast-notifications",
-    "examples": ["https://github.com/arnnis/react-native-toast-notifications/tree/master/example"],
-    "images": [
-      "https://user-images.githubusercontent.com/61647712/124135853-72742d80-da99-11eb-95f8-893281862e96.gif"
-    ],
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "web": true
   },
   {
     "githubUrl": "https://github.com/arnnis/react-native-match-media-polyfill",
