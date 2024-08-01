@@ -6,7 +6,7 @@ import { calculateDirectoryScore, calculatePopularityScore } from './calculate-s
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data.js';
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
 import fetchReadmeImages from './fetch-readme-images.js';
-import { fillNpmName, sleep } from './helpers.js';
+import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers.js';
 import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
 import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
 import { isLaterThan, TimeRange } from '../util/datetime.js';
@@ -45,9 +45,7 @@ const buildAndScoreData = async () => {
 
   // Detect mismatched package and package.json content
   data.forEach(project => {
-    if (
-      (project.npmPkg ?? project.githubUrl.split('/').pop()).toLowerCase() !== project.github.name
-    ) {
+    if (hasMismatchedPackageData(project)) {
       mismatchedRepos.push(project);
     }
   });
@@ -210,7 +208,7 @@ const buildAndScoreData = async () => {
   }
 };
 
-async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
+export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   let results = [];
   const chunks = chunk(data, chunkSize);
   for (const c of chunks) {
@@ -233,8 +231,8 @@ async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   return results;
 }
 
-function getDataForFetch() {
-  if (wantedPackageName) {
+function getDataForFetch(wantedPackage) {
+  if (wantedPackage) {
     const match = DATASET.find(
       entry =>
         entry?.npmPkg === wantedPackageName || entry.githubUrl.endsWith(`/${wantedPackageName}`)
@@ -249,7 +247,7 @@ function getDataForFetch() {
 }
 
 async function loadRepositoryDataAsync() {
-  const data = getDataForFetch();
+  const data = getDataForFetch(wantedPackageName);
 
   let githubResultsFileExists = false;
   try {

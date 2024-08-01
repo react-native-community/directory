@@ -54,6 +54,14 @@ export type Library = {
   newArchitectureNote?: string;
   alternatives?: string[];
   github: {
+    name: string;
+    isPackagePrivate: boolean;
+    fullName: string;
+    description: string;
+    topics?: string[];
+    hasTypes?: boolean;
+    newArchitecture?: boolean;
+    isArchived?: boolean;
     urls: {
       repo: string;
       clone: string;
@@ -72,10 +80,6 @@ export type Library = {
       stars: number;
       forks: number;
     };
-    name: string;
-    fullName: string;
-    description: string;
-    topics?: string[];
     license: {
       key: string;
       name: string;
@@ -90,9 +94,6 @@ export type Library = {
       publishedAt: Date | string;
       isPrerelease: boolean;
     };
-    hasTypes?: boolean;
-    newArchitecture?: boolean;
-    isArchived?: boolean;
   };
   npm?: {
     downloads?: number;

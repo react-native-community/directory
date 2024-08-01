@@ -19,3 +19,5 @@ jobs:
       run: yarn data:validate
     - name: Test react-native-libraries.json
       run: yarn data:test
+    - name: Check new entries in react-native-libraries.json
+      run: yarn ci:validate
