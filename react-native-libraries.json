@@ -11527,7 +11527,7 @@
   },
   {
     "githubUrl": "https://github.com/gluestack/gluestack-ui",
-    "npmPkg": "https://www.npmjs.com/package/gluestack-ui",
+    "npmPkg": "gluestack-ui",
     "examples": ["https://github.com/gluestack/ui-example-nativewind"],
     "newArchitecture": true,
     "android": true,
