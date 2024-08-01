@@ -11524,5 +11524,28 @@
     "newArchitecture": true,
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/react-native-magic-scroll",
+    "npmPkg": "@appandflow/react-native-magic-scroll",
+    "examples": [
+      "https://github.com/AppAndFlow/react-native-magic-scroll-demo"
+    ],
+    "images": ["https://github.com/AppAndFlow/react-native-magic-scroll-demo/assets/129197567/c1e2b9f4-f66d-4aaf-a57d-9eb4b89400e9","https://github.com/AppAndFlow/react-native-magic-scroll-demo/assets/129197567/4d1a23f2-c55e-414f-a564-4883dfc2c3aa"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/expo-image-cropping",
+    "npmPkg": "@appandflow/expo-image-cropping",
+    "examples": [
+      "https://github.com/AppAndFlow/expo-image-cropping/tree/main/example"
+    ],
+    "images": ["https://github.com/AppAndFlow/react-native-magic-scroll-demo/assets/129197567/c1e2b9f4-f66d-4aaf-a57d-9eb4b89400e9","https://github.com/AppAndFlow/react-native-magic-scroll-demo/assets/129197567/4d1a23f2-c55e-414f-a564-4883dfc2c3aa"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
