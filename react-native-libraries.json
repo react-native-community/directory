@@ -11524,5 +11524,26 @@
     "newArchitecture": true,
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/react-native-magic-scroll",
+    "npmPkg": "@appandflow/react-native-magic-scroll",
+    "examples": [
+      "https://github.com/AppAndFlow/react-native-magic-scroll-demo"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/expo-image-cropping",
+    "npmPkg": "@appandflow/expo-image-cropping",
+    "examples": [
+      "https://github.com/AppAndFlow/expo-image-cropping/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
