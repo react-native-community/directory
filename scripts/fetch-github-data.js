@@ -9,7 +9,7 @@ config();
 
 const GRAPHQL_API = 'https://api.github.com/graphql';
 
-const AUTHORIZATION = `bearer ${process.env.GITHUB_TOKEN}`;
+const AUTHORIZATION = `bearer ${process.env.GITHUB_TOKEN ?? process.env.CI_CHECKS_TOKEN}`;
 
 const licenses = {};
 
@@ -87,7 +87,7 @@ const parseUrl = url => {
 
 export const fetchGithubData = async (data, retries = 2) => {
   if (retries < 0) {
-    console.warn(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
+    console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
   }
   try {
@@ -151,6 +151,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
 
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
+      json.isPackagePrivate = packageJson.private ?? false;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -215,6 +216,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     },
     name: json.name,
     fullName: json.nameWithOwner,
+    isPrivate: json.isPackagePrivate,
     description: json.description,
     topics: json.topics,
     license: json.licenseInfo,

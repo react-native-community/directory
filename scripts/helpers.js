@@ -23,3 +23,9 @@ export function processTopics(topics) {
     )
     .filter(topic => topic?.length);
 }
+
+export function hasMismatchedPackageData(project) {
+  return (
+    (project.npmPkg ?? project.githubUrl.split('/').at(-1)).toLowerCase() !== project.github?.name
+  );
+}
