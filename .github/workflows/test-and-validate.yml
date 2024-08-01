@@ -1,6 +1,11 @@
 name: Test and Validate
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - react-native-libraries.json
 
 jobs:
   test:
@@ -21,3 +26,5 @@ jobs:
       run: yarn data:test
     - name: Check new entries in react-native-libraries.json
       run: yarn ci:validate
+      env:
+        CI_CHECKS_TOKEN: ${{ secrets.CI_CHECKS_TOKEN }}
