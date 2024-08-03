@@ -10373,7 +10373,8 @@
     "examples": [
       "https://github.com/neurio/react-native-local-network-permission/tree/main/example"
     ],
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/flixyudh/react-native-flix-snackbar",
