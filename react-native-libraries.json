@@ -11529,9 +11529,7 @@
   {
     "githubUrl": "https://github.com/AppAndFlow/react-native-magic-scroll",
     "npmPkg": "@appandflow/react-native-magic-scroll",
-    "examples": [
-      "https://github.com/AppAndFlow/react-native-magic-scroll-demo"
-    ],
+    "examples": ["https://github.com/AppAndFlow/react-native-magic-scroll-demo"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -11540,16 +11538,24 @@
   {
     "githubUrl": "https://github.com/AppAndFlow/expo-image-cropping",
     "npmPkg": "@appandflow/expo-image-cropping",
-    "examples": [
-      "https://github.com/AppAndFlow/expo-image-cropping/tree/main/example"
-    ],
+    "examples": ["https://github.com/AppAndFlow/expo-image-cropping/tree/main/example"],
     "ios": true,
     "android": true,
     "expoGo": true
   },
   {
     "githubUrl": "https://github.com/fabOnReact/react-native-wear-connectivity",
-    "examples": ["https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/example", "https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/watch-example"],
+    "examples": [
+      "https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/example",
+      "https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/watch-example"
+    ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gnmjafari/react-native-multipurpose-calendar",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
