@@ -11546,5 +11546,10 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/fabOnReact/react-native-wear-connectivity",
+    "examples": ["https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/example", "https://github.com/fabOnReact/react-native-wear-connectivity/tree/main/watch-example"],
+    "android": true
   }
 ]
