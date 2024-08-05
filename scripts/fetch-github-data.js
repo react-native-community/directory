@@ -9,7 +9,7 @@ config();
 
 const GRAPHQL_API = 'https://api.github.com/graphql';
 
-const AUTHORIZATION = `bearer ${process.env.GITHUB_TOKEN ?? process.env.CI_CHECKS_TOKEN}`;
+const AUTHORIZATION = `bearer ${process.env.CI_CHECKS_TOKEN ?? process.env.GITHUB_TOKEN}`;
 
 const licenses = {};
 
