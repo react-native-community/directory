@@ -1,5 +1,15 @@
 [
   {
+    "githubUrl": "https://github.com/gnmjafari/react-native-multipurpose-calendar",
+    "npmPkg": "react-native-multipurpose-calendar",
+    "nameOverride": "react-native-multipurpose-calendar",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true
+  }
+  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
