@@ -93,6 +93,7 @@ export const fetchGithubData = async (data, retries = 2) => {
   try {
     const url = data.githubUrl;
     const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
+    const fullName = `${repoOwner}/${repoName}`;
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
@@ -105,22 +106,24 @@ export const fetchGithubData = async (data, retries = 2) => {
       if (result.errors[0].type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
-          console.warn(`[GH] Repository ${repoOwner}/${repoName} has moved to ${newUrl}`);
+          console.warn(`[GH] Repository ${fullName} has moved to ${newUrl}`);
           data.githubUrl = newUrl;
         } else {
-          console.warn(`[GH] Repository ${repoOwner}/${repoName} not found`);
+          console.warn(`[GH] Repository ${fullName} not found`);
         }
       } else {
-        console.warn(`[GH] Data fetch error for ${repoOwner}/${repoName}`, result.errors);
+        console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
       }
 
-      console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
+      console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
       await sleep(2500);
       return await fetchGithubData(data, retries - 1);
     }
 
     if (!result?.data?.repository) {
-      console.log(`[GH] Retrying fetch for ${data.githubUrl}`);
+      console.log(
+        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
+      );
       await sleep(2500);
       return await fetchGithubData(data, retries - 1);
     }
@@ -130,8 +133,8 @@ export const fetchGithubData = async (data, retries = 2) => {
       ...data,
       github,
     };
-  } catch (e) {
-    console.log(`[GH] Retrying fetch for ${data.githubUrl}\n`, e);
+  } catch (error) {
+    console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
     await sleep(2500);
     return await fetchGithubData(data, retries - 1);
   }
