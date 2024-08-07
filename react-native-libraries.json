@@ -11570,5 +11570,12 @@
     "expoGo": true,
     "newArchitecture": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/expo-image-cropping",
+    "examples": ["https://github.com/AppAndFlow/expo-image-cropping/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
