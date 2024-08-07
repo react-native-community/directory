@@ -3,7 +3,7 @@ name: Test and Validate
 on:
   push:
     branches: [main]
-  pull_request:
+  pull_request_target:
     paths:
       - react-native-libraries.json
 
