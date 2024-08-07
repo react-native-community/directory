@@ -873,7 +873,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-lightbox",
@@ -11491,7 +11492,8 @@
       "https://github.com/achorein/expo-share-intent/tree/main/example/react-navigation"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/watanabeyu/react-native-store-version",
