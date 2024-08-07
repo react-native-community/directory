@@ -11572,5 +11572,15 @@
     "expoGo": true,
     "newArchitecture": true,
     "dev": true
+  },
+    {
+    "githubUrl": "https://github.com/microsoft/rnx-kit/tree/main/packages/align-deps",
+    "npmPkg": "@rnx-kit/align-deps",
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "visionos": true,
+    "windows": true,
+    "dev": true
   }
 ]
