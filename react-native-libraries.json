@@ -11557,5 +11557,18 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/ro-mgh/mallaui/tree/main/packages/cli",
+    "npmPkg": "mallaui",
+    "examples": [
+      "https://github.com/ro-mgh/mallaui?tab=readme-ov-file#examples",
+      "https://www.mallaui.io/"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
   }
 ]
