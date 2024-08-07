@@ -27,4 +27,4 @@ jobs:
     - name: Check new entries in react-native-libraries.json
       run: yarn ci:validate
       env:
-        CI_CHECKS_TOKEN: ${{ secrets.CI_CHECKS_TOKEN }}
+        CI_CHECKS_TOKEN: ${{ github.token }}
