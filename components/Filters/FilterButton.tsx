@@ -13,7 +13,7 @@ import Tooltip from '../Tooltip';
 type FilterButtonProps = {
   query: Query;
   onPress: () => void;
-  onClearAll: () => void;
+  onClearAllPress: () => void;
   isFilterVisible: boolean;
   containerStyle?: ViewStyle;
   style?: ViewStyle;
@@ -23,7 +23,7 @@ export const FilterButton = ({
   isFilterVisible,
   query,
   onPress,
-  onClearAll,
+  onClearAllPress,
   containerStyle,
   style,
 }: FilterButtonProps) => {
@@ -82,7 +82,7 @@ export const FilterButton = ({
           <Tooltip
             sideOffset={8}
             trigger={
-              <Pressable ref={xIconRef} onPress={onClearAll} accessibilityLabel="Clear all">
+              <Pressable ref={xIconRef} onPress={onClearAllPress} accessibilityLabel="Clear all">
                 <XIcon
                   fill={isXIconHovered ? colors.primary : colors.white}
                   width={12}

@@ -26,8 +26,8 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const total = data && data.total;
 
-  const handleClearAll = () => {
-    Router.replace(urlWithQuery('/trending', { order: 'popularity', minPopularity: 5 }));
+  const handleClearAllPress = () => {
+    Router.replace(urlWithQuery('/trending', {}));
   };
 
   return (
@@ -46,7 +46,7 @@ const Trending = ({ data, query }) => {
             style={{ height: 32, width: 160 }}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
-            onClearAll={handleClearAll}
+            onClearAllPress={handleClearAllPress}
             isFilterVisible={isFilterVisible}
           />
         </View>
