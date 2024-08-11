@@ -11587,8 +11587,7 @@
   },
   {
     "githubUrl": "https://github.com/wwdrew/expo-spotify-sdk",
-    "npmPkg": "https://www.npmjs.com/package/@wwdrew/expo-spotify-sdk",
-    "nameOverride": "expo-spotify-sdk",
+    "npmPkg": "@wwdrew/expo-spotify-sdk",
     "examples": [
       "https://github.com/wwdrew/expo-spotify-sdk/tree/main/example"
     ],
@@ -11598,8 +11597,7 @@
   },
   {
     "githubUrl": "https://github.com/wwdrew/expo-android-shared-preferences",
-    "npmPkg": "https://www.npmjs.com/package/@wwdrew/expo-android-shared-preferences",
-    "nameOverride": "expo-android-shared-preferences",
+    "npmPkg": "@wwdrew/expo-android-shared-preferences",
     "examples": [
       "https://github.com/wwdrew/expo-android-shared-preferences/tree/main/example"
     ],
@@ -11608,8 +11606,7 @@
   },
   {
     "githubUrl": "https://github.com/wwdrew/expo-android-account-manager",
-    "npmPkg": "https://www.npmjs.com/package/@wwdrew/expo-android-account-manager",
-    "nameOverride": "expo-android-account-manager",
+    "npmPkg": "@wwdrew/expo-android-account-manager",
     "examples": [
       "https://github.com/wwdrew/expo-android-account-manager/tree/main/example"
     ],
