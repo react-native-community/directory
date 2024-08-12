@@ -40,7 +40,7 @@ const Trending = ({ data, query }) => {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={{ width: 160, marginHorizontal: 'auto', marginTop: 12 }}>
+        <View style={{ marginHorizontal: 'auto', marginTop: 12 }}>
           <FilterButton
             containerStyle={{ height: 32 }}
             style={{ height: 32, width: 160 }}
