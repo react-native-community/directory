@@ -47,6 +47,10 @@ const Search = ({ query, total }: Props) => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 150);
 
+  const handleClearAllPress = () => {
+    Router.replace(urlWithQuery('/', { search: query.search, offset: null }));
+  };
+
   return (
     <>
       <View
@@ -157,8 +161,11 @@ const Search = ({ query, total }: Props) => {
             )}
             <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
               <FilterButton
+                containerStyle={{ height: 24 }}
+                style={{ height: 24 }}
                 query={query}
                 onPress={() => setFilterVisible(!isFilterVisible)}
+                onClearAllPress={handleClearAllPress}
                 isFilterVisible={isFilterVisible}
               />
               <SortButton query={query} />

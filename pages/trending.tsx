@@ -1,5 +1,6 @@
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
+import Router from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
@@ -25,6 +26,10 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const total = data && data.total;
 
+  const handleClearAllPress = () => {
+    Router.replace(urlWithQuery('/trending', {}));
+  };
+
   return (
     <>
       <PageMeta
@@ -35,11 +40,13 @@ const Trending = ({ data, query }) => {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={{ width: 160, marginHorizontal: 'auto', marginTop: 12 }}>
+        <View style={{ marginHorizontal: 'auto', marginTop: 12 }}>
           <FilterButton
-            style={{ height: 32 }}
+            containerStyle={{ height: 32 }}
+            style={{ height: 32, width: 160 }}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
+            onClearAllPress={handleClearAllPress}
             isFilterVisible={isFilterVisible}
           />
         </View>
