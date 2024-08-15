@@ -1,5 +1,28 @@
 [
   {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
+    "npmPkg": "@dr.pogodin/react-native-audio",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-fs",
+    "npmPkg": "@dr.pogodin/react-native-fs",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-static-server",
+    "npmPkg": "@dr.pogodin/react-native-static-server",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -2184,7 +2207,7 @@
     "ios": true,
     "android": true,
     "unmaintained": true,
-    "alternatives": ["expo-file-system"]
+    "alternatives": ["@dr.pogodin/react-native-fs"]
   },
   {
     "githubUrl": "https://github.com/lodev09/react-native-cell-components",
@@ -11575,7 +11598,7 @@
     "newArchitecture": true,
     "dev": true
   },
-    {
+  {
     "githubUrl": "https://github.com/microsoft/rnx-kit/tree/main/packages/align-deps",
     "npmPkg": "@rnx-kit/align-deps",
     "ios": true,
@@ -11588,9 +11611,7 @@
   {
     "githubUrl": "https://github.com/wwdrew/expo-spotify-sdk",
     "npmPkg": "@wwdrew/expo-spotify-sdk",
-    "examples": [
-      "https://github.com/wwdrew/expo-spotify-sdk/tree/main/example"
-    ],
+    "examples": ["https://github.com/wwdrew/expo-spotify-sdk/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -11598,18 +11619,14 @@
   {
     "githubUrl": "https://github.com/wwdrew/expo-android-shared-preferences",
     "npmPkg": "@wwdrew/expo-android-shared-preferences",
-    "examples": [
-      "https://github.com/wwdrew/expo-android-shared-preferences/tree/main/example"
-    ],
+    "examples": ["https://github.com/wwdrew/expo-android-shared-preferences/tree/main/example"],
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/wwdrew/expo-android-account-manager",
     "npmPkg": "@wwdrew/expo-android-account-manager",
-    "examples": [
-      "https://github.com/wwdrew/expo-android-account-manager/tree/main/example"
-    ],
+    "examples": ["https://github.com/wwdrew/expo-android-account-manager/tree/main/example"],
     "android": true,
     "newArchitecture": true
   }
