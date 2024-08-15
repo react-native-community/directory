@@ -1,28 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
-    "npmPkg": "@dr.pogodin/react-native-audio",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/birdofpreyru/react-native-fs",
-    "npmPkg": "@dr.pogodin/react-native-fs",
-    "ios": true,
-    "android": true,
-    "windows": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/birdofpreyru/react-native-static-server",
-    "npmPkg": "@dr.pogodin/react-native-static-server",
-    "ios": true,
-    "android": true,
-    "windows": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -11628,6 +11605,29 @@
     "npmPkg": "@wwdrew/expo-android-account-manager",
     "examples": ["https://github.com/wwdrew/expo-android-account-manager/tree/main/example"],
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
+    "npmPkg": "@dr.pogodin/react-native-audio",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-fs",
+    "npmPkg": "@dr.pogodin/react-native-fs",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/birdofpreyru/react-native-static-server",
+    "npmPkg": "@dr.pogodin/react-native-static-server",
+    "ios": true,
+    "android": true,
+    "windows": true,
     "newArchitecture": true
   }
 ]
