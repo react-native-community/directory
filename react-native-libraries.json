@@ -2207,7 +2207,7 @@
     "ios": true,
     "android": true,
     "unmaintained": true,
-    "alternatives": ["@dr.pogodin/react-native-fs"]
+    "alternatives": ["@dr.pogodin/react-native-fs", "expo-file-system"]
   },
   {
     "githubUrl": "https://github.com/lodev09/react-native-cell-components",
