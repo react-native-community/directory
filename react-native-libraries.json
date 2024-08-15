@@ -1105,7 +1105,8 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/FormidableLabs/victory-native",
+    "githubUrl": "https://github.com/FormidableLabs/victory-native-xl/tree/main/lib",
+    "npmPkg": "victory-native",
     "ios": true,
     "android": true,
     "web": true,
@@ -11606,6 +11607,12 @@
     "examples": ["https://github.com/wwdrew/expo-android-account-manager/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ajakka/react-native-here-explore",
+    "examples": ["https://github.com/ajakka/react-native-here-explore/tree/main/example"],
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
