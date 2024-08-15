@@ -11612,5 +11612,14 @@
     ],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ajakka/react-native-here-explore",
+    "npmPkg": "react-native-here-explore",
+    "examples": [
+      "https://github.com/ajakka/react-native-here-explore/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
