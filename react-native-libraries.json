@@ -11618,8 +11618,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/RakaDoank/react-native-android-finish",
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/wcandillon/react-native-webgpu/tree/main/package",
-    "npmPkg": "react-native-webgpu",
+    "npmPkg": "react-native-wgpu",
     "examples": ["https://github.com/wcandillon/react-native-webgpu/tree/main/package/example"],
     "ios": true,
     "android": true,
