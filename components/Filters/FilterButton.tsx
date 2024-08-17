@@ -1,14 +1,13 @@
-import { useContext, useRef } from 'react';
-import { Pressable, StyleSheet, View, ViewStyle } from 'react-native';
-import { useHover } from 'react-native-web-hooks';
+import { useContext } from 'react';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { ClearButton } from './ClearButton';
 import { FILTER_PLATFORMS } from './helpers';
 import { colors, darkColors, P } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Query } from '../../types';
 import { Button } from '../Button';
-import { Filter as FilterIcon, XIcon } from '../Icons';
-import Tooltip from '../Tooltip';
+import { Filter as FilterIcon } from '../Icons';
 
 type FilterButtonProps = {
   query: Query;
@@ -28,9 +27,6 @@ export const FilterButton = ({
   style,
 }: FilterButtonProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
-
-  const xIconRef = useRef();
-  const isXIconHovered = useHover(xIconRef);
 
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
@@ -79,19 +75,7 @@ export const FilterButton = ({
       </Button>
       {filterCount > 0 && (
         <View style={[styles.clearButtonContainer, { backgroundColor, borderLeftColor }]}>
-          <Tooltip
-            sideOffset={8}
-            trigger={
-              <Pressable ref={xIconRef} onPress={onClearAllPress} accessibilityLabel="Clear all">
-                <XIcon
-                  fill={isXIconHovered ? colors.primary : colors.white}
-                  width={12}
-                  height={12}
-                />
-              </Pressable>
-            }>
-            Clear all
-          </Tooltip>
+          <ClearButton onPress={onClearAllPress} />
         </View>
       )}
     </View>

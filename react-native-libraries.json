@@ -1441,6 +1441,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-component/react-native-smart-badge",
+    "npmPkg": "@react-native-component/react-native-smart-badge",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2586,10 +2587,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/Bruno-Furtado/react-native-sms-retriever",
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-apple-authentication",
     "ios": true,
     "expoGo": true,
@@ -2970,13 +2967,6 @@
     "dev": true,
     "unmaintained": true,
     "alternatives": ["@testing-library/react-native"]
-  },
-  {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/jest-expo-puppeteer",
-    "web": true,
-    "expoGo": true,
-    "dev": true,
-    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
@@ -9611,12 +9601,6 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/bambuser/react-native-bambuser-broadcaster",
-    "ios": true,
-    "android": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/douglasjunior/react-native-pdf-renderer",
     "examples": ["https://github.com/douglasjunior/react-native-pdf-renderer/tree/main/Sample"],
     "images": [
@@ -9699,10 +9683,6 @@
     "examples": ["https://github.com/aidin36/react-native-pie-chart/tree/main/example"],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/neo773/react-native-macos-fast-image",
-    "macos": true
   },
   {
     "githubUrl": "https://github.com/fracht/react-native-input-autofocus/tree/main/lib",
@@ -11635,6 +11615,14 @@
     "ios": true,
     "android": true,
     "windows": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wcandillon/react-native-webgpu/tree/main/package",
+    "npmPkg": "react-native-webgpu",
+    "examples": ["https://github.com/wcandillon/react-native-webgpu/tree/main/package/example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]

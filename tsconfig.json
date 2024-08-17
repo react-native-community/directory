@@ -1,23 +1,26 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "lib": [
       "dom",
       "esnext"
     ],
+    "paths": {
+      "~/*": ["./"]
+    },
+    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
     "target": "esnext",
     "allowJs": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "isolatedModules": true,
-    "incremental": true
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": false
   },
   "exclude": [
     "node_modules"
