@@ -11630,5 +11630,25 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pmndrs/zustand",
+    "npmPkg": "zustand",
+    "examples": [
+      "https://zustand-demo.pmnd.rs/",
+      "https://github.com/pmndrs/zustand/tree/main/examples/demo"
+    ],
+    "images": [
+      "https://github.com/pmndrs/zustand/raw/main/docs/bear.jpg"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true,
+    "newArchitectureNote": "Zustand is a lightweight state management solution that works well with React Native's new architecture."
   }
 ]
