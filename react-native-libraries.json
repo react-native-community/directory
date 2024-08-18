@@ -2529,7 +2529,8 @@
     ],
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/lawnstarter/react-native-hotspot",
