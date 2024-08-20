@@ -11643,5 +11643,13 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/arbta/calendar-kit",
+    "npmPkg": "@arbta/calendar-kit",
+    "examples": ["https://github.com/arbta/calendar-kit/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
