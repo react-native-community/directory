@@ -11719,5 +11719,22 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rnheroes/react-native-toastable",
+    "examples": ["https://github.com/rnheroes/react-native-toastable/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/rnheroes/react-native-ruler-picker",
+    "examples": ["https://github.com/rnheroes/react-native-ruler-picker/tree/main/example"],
+    "images": ["https://github.com/rnheroes/react-native-ruler-picker/blob/HEAD/docs/preview.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
