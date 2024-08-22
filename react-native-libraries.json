@@ -11633,7 +11633,6 @@
   },
   {
     "githubUrl": "https://github.com/pmndrs/zustand",
-    "npmPkg": "zustand",
     "examples": [
       "https://zustand-demo.pmnd.rs/",
       "https://github.com/pmndrs/zustand/tree/main/examples/demo"
@@ -11651,5 +11650,70 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/faizalshap/react-native-otp-verify",
+    "examples": ["https://github.com/faizalshap/react-native-otp-verify/tree/master/example"],
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/gabrieldonadel/rn-material-ui-textfield",
+    "examples": [
+      "https://github.com/gabrieldonadel/rn-material-ui-textfield/tree/master/example",
+      "https://github.com/gabrieldonadel/rn-material-ui-textfield/tree/master/expo-example"
+    ],
+    "images": [
+      "https://cloud.githubusercontent.com/assets/2055622/24325711/eaa4ff08-11af-11e7-8550-2504c1580979.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/query",
+    "npmPkg": "@tanstack/react-query",
+    "examples": [
+      "https://github.com/tanstack/query/tree/main/examples/react/react-native",
+      "https://tanstack.com/query/latest/docs/framework/react/examples/react-native"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/razorpay/react-native-razorpay",
+    "examples": ["https://github.com/razorpay/react-native-razorpay/tree/master/example/SampleApp"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/customerglu/CG-SDK-React-Native",
+    "examples": ["https://github.com/customerglu/CG-SDK-React-Native/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/moengage/React-Native",
+    "npmPkg": "react-native-moengage",
+    "examples": ["https://github.com/moengage/React-Native/tree/master/SampleApp"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin",
+    "npmPkg": "react-native-appsflyer",
+    "examples": [
+      "https://github.com/AppsFlyerSDK/appsflyer-expo-sample-app",
+      "https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin/tree/master/demos/appsflyer-react-native-app",
+      "https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin/tree/master/demos/appsflyer-expo-app"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
