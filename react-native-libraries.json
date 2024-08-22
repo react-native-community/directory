@@ -3843,8 +3843,7 @@
     "githubUrl": "https://github.com/zmxv/react-native-sound",
     "ios": true,
     "android": true,
-    "windows": true,
-    "unmaintained": true
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/react-native-unimodules",
@@ -11736,5 +11735,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/remigallego/react-native-use-sound",
+    "examples": ["https://github.com/remigallego/react-native-use-sound/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "unmaintained": true,
+    "newArchitecture": false
   }
 ]
