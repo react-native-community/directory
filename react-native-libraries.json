@@ -11676,8 +11676,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/TanStack/query",
-    "npmPkg": "@tanstack/react-query",
+    "githubUrl": "https://github.com/TanStack/query/tree/main/packages/react-query",
     "examples": [
       "https://github.com/tanstack/query/tree/main/examples/react/react-native",
       "https://tanstack.com/query/latest/docs/framework/react/examples/react-native"
@@ -11701,15 +11700,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/moengage/React-Native",
-    "npmPkg": "react-native-moengage",
+    "githubUrl": "https://github.com/moengage/React-Native/tree/master/sdk/core",
     "examples": ["https://github.com/moengage/React-Native/tree/master/SampleApp"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin",
-    "npmPkg": "react-native-appsflyer",
     "examples": [
       "https://github.com/AppsFlyerSDK/appsflyer-expo-sample-app",
       "https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin/tree/master/demos/appsflyer-react-native-app",
