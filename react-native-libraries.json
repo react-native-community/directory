@@ -10378,6 +10378,9 @@
   {
     "githubUrl": "https://github.com/bviebahn/react-native-star-rating-widget",
     "examples": ["https://github.com/bviebahn/react-native-star-rating-widget/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/bviebahn/react-native-star-rating-widget/master/media/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true
