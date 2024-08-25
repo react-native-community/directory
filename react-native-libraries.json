@@ -10990,9 +10990,12 @@
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-quick-crypto",
+    "npmPkg": "react-native-quick-crypto",
     "examples": ["https://github.com/margelo/react-native-quick-crypto/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "use v1.0.0 or higher for new architecture support"
   },
   {
     "githubUrl": "https://github.com/vokhuyetOz/react-native-messy",
