@@ -10565,7 +10565,8 @@
     "githubUrl": "https://github.com/Malaa-tech/expo-squircle-view",
     "examples": ["https://github.com/Malaa-tech/expo-squircle-view/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/AnkiPro/react-native-canvas-view",
