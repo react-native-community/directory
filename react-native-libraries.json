@@ -11754,7 +11754,10 @@
     "examples": [
       "https://github.com/orkunkarakus/react-native-qr/tree/main/example"
     ],
-    "images": ["<PUBLIC URL TO RELATED IMAGE>"],
+    "images": [
+      "https://github.com/orkunkarakus/react-native-qr/blob/main/public/ios.png",
+      "https://github.com/orkunkarakus/react-native-qr/blob/main/public/android.png"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
