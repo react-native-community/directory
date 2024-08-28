@@ -11747,5 +11747,19 @@
     "android": true,
     "unmaintained": true,
     "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/orkunkarakus/react-native-qr",
+    "npmPkg": "react-native-qr",
+    "examples": [
+      "https://github.com/orkunkarakus/react-native-qr/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/orkunkarakus/react-native-qr/blob/main/public/ios.png",
+      "https://github.com/orkunkarakus/react-native-qr/blob/main/public/android.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
