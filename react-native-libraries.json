@@ -11777,5 +11777,15 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/lukaszkurantdev/react-native-fast-opencv",
+    "examples": [
+      "https://lukaszkurantdev.github.io/react-native-fast-opencv/examples/realtimedetection",
+      "https://lukaszkurantdev.github.io/react-native-fast-opencv/examples/blur"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
