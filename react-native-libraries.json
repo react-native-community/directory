@@ -2088,7 +2088,7 @@
     "npmPkg": "@react-native-firebase/analytics",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app",
@@ -2102,84 +2102,84 @@
     "npmPkg": "@react-native-firebase/auth",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/crashlytics",
     "npmPkg": "@react-native-firebase/crashlytics",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/database",
     "npmPkg": "@react-native-firebase/database",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/dynamic-links",
     "npmPkg": "@react-native-firebase/dynamic-links",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/firestore",
     "npmPkg": "@react-native-firebase/firestore",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/functions",
     "npmPkg": "@react-native-firebase/functions",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/in-app-messaging",
     "npmPkg": "@react-native-firebase/in-app-messaging",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/messaging",
     "npmPkg": "@react-native-firebase/messaging",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/ml",
     "npmPkg": "@react-native-firebase/ml",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/perf",
     "npmPkg": "@react-native-firebase/perf",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/remote-config",
     "npmPkg": "@react-native-firebase/remote-config",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/storage",
     "npmPkg": "@react-native-firebase/storage",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/itinance/react-native-fs",
@@ -11652,7 +11652,7 @@
     "githubUrl": "https://github.com/arbta/calendar-kit",
     "npmPkg": "@arbta/calendar-kit",
     "examples": ["https://github.com/arbta/calendar-kit/tree/master/example"],
-    "images":[
+    "images": [
       "https://github.com/arbta/calendar-kit/blob/master/static/vio-calendar.gif",
       "https://github.com/arbta/calendar-kit/raw/master/static/priceline-calendar.gif",
       "https://github.com/arbta/calendar-kit/raw/master/static/localize-calendar.gif",
