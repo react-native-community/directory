@@ -11787,5 +11787,27 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gunnartorfis/react-native-week-month-date-picker",
+    "npmPkg": "react-native-reanimated-toasts",
+    "nameOverride": "React Native Reanimated Toasts",
+    "examples": [
+      "https://github.com/gunnartorfis/react-native-reanimated-toasts/tree/main/example",
+      "https://snack.expo.dev/@gunnartorfis/react-native-reanimated-toasts"
+    ],
+    "images": [https://private-user-images.githubusercontent.com/5333875/364546718-b0a95d89-3895-4d95-8a87-262fb7209805.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU1NzA1MTksIm5iZiI6MTcyNTU3MDIxOSwicGF0aCI6Ii81MzMzODc1LzM2NDU0NjcxOC1iMGE5NWQ4OS0zODk1LTRkOTUtOGE4Ny0yNjJmYjcyMDk4MDUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDkwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA5MDVUMjEwMzM5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NDRlZDRhNDFiMzMwMDQ0NWZmNmRhYjI3ODNhNWM3YTk4NDY0NTZmOTliN2RlZWE2ZDIyYjJjNDQzZTExZTE2MCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.HBq2J4AIJKFXNvnCuN8kEvNN8OfEnSbw5o2QEVUV6W4],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
