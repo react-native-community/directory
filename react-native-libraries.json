@@ -684,7 +684,8 @@
     "examples": ["https://snack.expo.dev/ByBCD_2r-"]
   },
   {
-    "githubUrl": "https://github.com/react-native-elements/react-native-elements",
+    "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/3.x",
+    "npmPkg": "react-native-elements",
     "examples": [
       "https://github.com/react-native-elements/react-native-elements/tree/next/example"
     ],
