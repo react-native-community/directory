@@ -691,7 +691,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": "@rneui/themed"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view",
@@ -3961,11 +3962,11 @@
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/datastore",
+    "npmPkg": "@aws-amplify/datastore",
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true,
-    "npmPkg": "@aws-amplify/datastore"
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-react-native",
@@ -3976,17 +3977,17 @@
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/auth",
+    "npmPkg": "@aws-amplify/auth",
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true,
-    "npmPkg": "@aws-amplify/auth"
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
+    "npmPkg": "@aws-amplify/pushnotification",
     "ios": true,
-    "android": true,
-    "npmPkg": "@aws-amplify/pushnotification"
+    "android": true
   },
   {
     "githubUrl": "https://github.com/parse-community/Parse-SDK-JS",
@@ -6826,6 +6827,7 @@
   },
   {
     "githubUrl": "https://github.com/fram-x/react-native-styled-text",
+    "npmPkg": "react-native-styled-text-ex",
     "examples": ["https://snack.expo.dev/@bjornegil/styledtext-demo"],
     "images": [
       "https://raw.githubusercontent.com/fram-x/react-native-styled-text/develop/docs/example-ios.png",
@@ -8417,7 +8419,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/Shopify/react-native-skia/tree/main/package",
+    "githubUrl": "https://github.com/Shopify/react-native-skia/tree/main/packages/skia",
     "npmPkg": "@shopify/react-native-skia",
     "examples": ["https://github.com/Shopify/react-native-skia/tree/main/example"],
     "android": true,
@@ -8619,7 +8621,8 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/FormidableLabs/react-native-ama",
+    "githubUrl": "https://github.com/FormidableLabs/react-native-ama/tree/main/packages/core",
+    "npmPkg": "@react-native-ama/core",
     "examples": [
       "https://github.com/FormidableLabs/react-native-ama/tree/main/examples/bare",
       "https://github.com/FormidableLabs/react-native-ama/tree/main/examples/expo",
@@ -11104,7 +11107,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo-atlas",
+    "githubUrl": "https://github.com/expo/atlas/tree/main/packages/expo-atlas",
     "dev": true,
     "ios": true,
     "android": true,
@@ -11499,6 +11502,7 @@
   },
   {
     "githubUrl": "https://github.com/AppAndFlow/react-native-google-autocomplete",
+    "npmPkg": "@appandflow/react-native-google-autocomplete",
     "examples": [
       "https://github.com/AppAndFlow/react-native-google-autocomplete/tree/main/example"
     ],
@@ -11629,9 +11633,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/wcandillon/react-native-webgpu/tree/main/package",
+    "githubUrl": "https://github.com/wcandillon/react-native-webgpu/tree/main/packages/webgpu",
     "npmPkg": "react-native-wgpu",
-    "examples": ["https://github.com/wcandillon/react-native-webgpu/tree/main/package/example"],
+    "examples": ["https://github.com/wcandillon/react-native-webgpu/tree/main/apps/paper"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -11787,5 +11791,24 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/next/packages/base",
+    "npmPkg": "@rneui/base",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/next/packages/themed",
+    "npmPkg": "@rneui/themed",
+    "images": [
+      "https://user-images.githubusercontent.com/5962998/37248832-a7060286-24b1-11e8-94a8-847ab6ded4ec.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
