@@ -685,9 +685,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements",
-    "examples": [
-      "https://github.com/react-native-elements/react-native-elements/tree/next/example"
-    ],
+    "npmPkg": "rneui",
     "ios": true,
     "android": true,
     "web": true,
