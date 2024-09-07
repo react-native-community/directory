@@ -11807,5 +11807,20 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/gunnartorfis/react-native-reanimated-toasts",
+    "npmPkg": "react-native-reanimated-toasts",
+    "nameOverride": "React Native Reanimated Toasts",
+    "examples": [
+      "https://github.com/gunnartorfis/react-native-reanimated-toasts/tree/main/example",
+      "https://snack.expo.dev/@gunnartorfis/react-native-reanimated-toasts"
+    ],
+    "images": ["https://noona-static-assets.s3.eu-west-1.amazonaws.com/oss/reanimated-toasts.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
