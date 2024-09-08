@@ -11809,14 +11809,14 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/gunnartorfis/react-native-reanimated-toasts",
-    "npmPkg": "react-native-reanimated-toasts",
-    "nameOverride": "React Native Reanimated Toasts",
+    "githubUrl": "https://github.com/gunnartorfis/sonner-native",
+    "npmPkg": "sonner-native",
+    "nameOverride": "Sonner Native",
     "examples": [
-      "https://github.com/gunnartorfis/react-native-reanimated-toasts/tree/main/example",
-      "https://snack.expo.dev/@gunnartorfis/react-native-reanimated-toasts"
+      "https://github.com/gunnartorfis/sonner-native/tree/main/example",
+      "https://snack.expo.dev/@gunnartorfis/02c2ab"
     ],
-    "images": ["https://noona-static-assets.s3.eu-west-1.amazonaws.com/oss/reanimated-toasts.png"],
+    "images": ["https://noona-static-assets.s3.eu-west-1.amazonaws.com/oss/sonner-native.png"],
     "ios": true,
     "android": true,
     "web": true,
