@@ -11810,7 +11810,6 @@
   },
   {
     "githubUrl": "https://github.com/gunnartorfis/sonner-native",
-    "npmPkg": "sonner-native",
     "nameOverride": "Sonner Native",
     "examples": [
       "https://github.com/gunnartorfis/sonner-native/tree/main/example",
@@ -11825,20 +11824,35 @@
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
-    "npmPkg": "mobile-native-barcode-generator",
     "examples": [
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
     ],
-    "images": ["https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"],
+    "images": [
+      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"
+    ],
     "android": true
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
-    "npmPkg": "expo-barcode",
-    "examples": [
-      "https://github.com/gabriel-logan/expo-barcode/tree/main/example"
-    ],
+    "examples": ["https://github.com/gabriel-logan/expo-barcode/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/swan-io/react-native-browser",
+    "examples": ["https://github.com/swan-io/react-native-browser/tree/main/example"],
+    "images": ["https://github.com/swan-io/react-native-browser/blob/main/docs/demo.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers",
+    "examples": [
+      "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
