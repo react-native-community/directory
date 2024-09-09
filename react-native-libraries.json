@@ -11833,18 +11833,7 @@
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/blob/main/README.md"
     ],
     "images": ["https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"],
-    "ios": false,
     "android": true,
-    "web": false,
-    "expoGo": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
-    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
@@ -11854,17 +11843,6 @@
       "https://github.com/gabriel-logan/expo-barcode/tree/main/example",
       "https://github.com/gabriel-logan/expo-barcode/blob/main/README.md"
     ],
-    "ios": false,
     "android": true,
-    "web": false,
-    "expoGo": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
-    "newArchitecture": false
   }
 ]
