@@ -108,7 +108,6 @@ export type Library = {
   examples?: string[];
   images?: string[];
   npmPkg?: string;
-  nameOverride?: string;
   popularity?: number;
   matchScore?: number;
 };
