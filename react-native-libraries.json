@@ -11822,5 +11822,23 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
+    "npmPkg": "mobile-native-barcode-generator",
+    "examples": [
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
+    ],
+    "images": ["https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
+    "npmPkg": "expo-barcode",
+    "examples": [
+      "https://github.com/gabriel-logan/expo-barcode/tree/main/example"
+    ],
+    "android": true
   }
 ]
