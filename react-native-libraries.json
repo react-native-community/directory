@@ -11822,5 +11822,49 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
+    "npmPkg": "mobile-native-barcode-generator",
+    "nameOverride": "React Native Barcode Generator",
+    "examples": [
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs",
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/blob/main/README.md"
+    ],
+    "images": ["https://private-user-images.githubusercontent.com/96627244/365431315-31661309-1f46-4d52-ab24-5389a0fbb07e.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4NTY3OTAsIm5iZiI6MTcyNTg1NjQ5MCwicGF0aCI6Ii85NjYyNzI0NC8zNjU0MzEzMTUtMzE2NjEzMDktMWY0Ni00ZDUyLWFiMjQtNTM4OWEwZmJiMDdlLmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkwOVQwNDM0NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mZDNjNzY0ZjA5NTBlNjk1M2UyZTdmYTNhNGZhZTUzYzM0ZWFkMWVkZGUyYWRiYTk3OWQ2ZWQ1Y2U1YzJlNjBkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.jI4AwvdPpvk59nbfLclSsSODFnO9W3m7NWnKg8u12gY"],
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
+    "npmPkg": "expo-barcode",
+    "nameOverride": "Expo Barcode Generator",
+    "examples": [
+      "https://github.com/gabriel-logan/expo-barcode/tree/main/example",
+      "https://github.com/gabriel-logan/expo-barcode/blob/main/README.md"
+    ],
+    "ios": false,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": false
   }
 ]
