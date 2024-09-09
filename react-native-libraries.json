@@ -11844,5 +11844,46 @@
     "dev": false,
     "template": false,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/Azure-translator-code",
+    "npmPkg": "azure-translator-code",
+    "nameOverride": "Azure Translator Code",
+    "examples": [
+      "https://github.com/gabriel-logan/Azure-translator-code/blob/main/README.md",
+      "https://azuretranslatorcode.vercel.app/"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": true,
+    "template": false,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido",
+    "npmPkg": "cpf_and_cnpj-generator",
+    "nameOverride": "Gerador CPF e CNPJ válido",
+    "examples": [
+      "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido/blob/main/README.md"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": true,
+    "template": false,
+    "newArchitecture": true
   }
 ]
