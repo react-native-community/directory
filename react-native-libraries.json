@@ -11822,5 +11822,42 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "npmPkg": "react-native-community-checkbox",
+    "nameOverride": "React Native Community Checkbox",
+    "examples": [
+      "https://www.npmjs.com/package/react-native-community-checkbox"
+    ],
+    "images": ["https://gabriel-logan.github.io/react-native-community-checkbox/example.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
+  },
+  {
+    "npmPkg": "react-native-light-checkbox",
+    "nameOverride": "React Native light Checkbox",
+    "images": ["https://gabriel-logan.github.io/react-native-community-checkbox/example.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
