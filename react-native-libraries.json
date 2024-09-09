@@ -11826,7 +11826,6 @@
   {
     "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
     "npmPkg": "mobile-native-barcode-generator",
-    "nameOverride": "React Native Barcode Generator",
     "examples": [
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs",
@@ -11838,7 +11837,6 @@
   {
     "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
     "npmPkg": "expo-barcode",
-    "nameOverride": "Expo Barcode Generator",
     "examples": [
       "https://github.com/gabriel-logan/expo-barcode/tree/main/example",
       "https://github.com/gabriel-logan/expo-barcode/blob/main/README.md"
