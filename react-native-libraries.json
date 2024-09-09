@@ -11859,5 +11859,25 @@
     "dev": false,
     "template": false,
     "newArchitecture": true
+  },
+  {
+    "npmPkg": "react-native-community-radio",
+    "nameOverride": "React Native Community Radio",
+    "examples": [
+      "https://www.npmjs.com/package/react-native-community-radio"
+    ],
+    "images": ["https://gabriel-logan.github.io/react-native-community-radio/example.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
