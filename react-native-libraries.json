@@ -11824,21 +11824,54 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
-    "npmPkg": "mobile-native-barcode-generator",
+    "githubUrl": "https://github.com/Multiform-Validator/typescript-javascript",
+    "npmPkg": "multiform-validator",
     "examples": [
-      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
-      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
+      "https://multiformvalidator.netlify.app/documentation/js"
     ],
-    "images": ["https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"],
-    "android": true
+    "images": ["https://raw.githubusercontent.com/Multiform-Validator/docs/main/src/app/opengraph-image.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
-    "npmPkg": "expo-barcode",
+    "githubUrl": "https://github.com/gabriel-logan/Azure-translator-code",
+    "npmPkg": "azure-translator-code",
     "examples": [
-      "https://github.com/gabriel-logan/expo-barcode/tree/main/example"
+      "https://azuretranslatorcode.vercel.app/"
     ],
-    "android": true
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido",
+    "npmPkg": "cpf_and_cnpj-generator",
+    "examples": [
+      "https://gabriel-logan.github.io/Gerador-CPF-e-CNPJ-valido/js"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Redux-Utils/react-native-redux-persist",
+    "npmPkg": "react-native-redux-persist2",
+    "examples": [
+      "https://github.com/Redux-Utils/react-native-redux-persist/tree/main/docs"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
