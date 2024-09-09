@@ -11831,18 +11831,11 @@
       "https://github.com/Multiform-Validator/typescript-javascript/blob/main/README.md",
       "https://multiformvalidator.netlify.app/documentation/js"
     ],
-    "images": ["https://private-user-images.githubusercontent.com/96627244/346492119-db223bd9-ff67-481e-9884-cd37af6f6567.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4NTgxMjYsIm5iZiI6MTcyNTg1NzgyNiwicGF0aCI6Ii85NjYyNzI0NC8zNDY0OTIxMTktZGIyMjNiZDktZmY2Ny00ODFlLTk4ODQtY2QzN2FmNmY2NTY3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTA5VDA0NTcwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA3NzAzZjUxNGRiZmY4OTNlN2NhZjcyYzkwMDA0ZDRhYzBlNDVmNmRiODYwYTQ3ZDI2OGRlZDEzMjUyOTRjZWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.35DuAKNe4yPgRr2awobZXW3t8ac-YmUBVWkIU87IfMA"],
+    "images": ["https://raw.githubusercontent.com/Multiform-Validator/docs/main/src/app/opengraph-image.png"],
     "ios": true,
     "android": true,
     "web": true,
     "expoGo": true,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
     "newArchitecture": true
   },
   {
@@ -11857,13 +11850,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
     "dev": true,
-    "template": false,
     "newArchitecture": true
   },
   {
@@ -11877,13 +11864,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
     "dev": true,
-    "template": false,
     "newArchitecture": true
   },
   {
@@ -11898,13 +11879,6 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
     "newArchitecture": true
   }
 ]
