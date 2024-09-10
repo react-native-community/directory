@@ -11817,5 +11817,51 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
+    "examples": [
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
+      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
+    "examples": ["https://github.com/gabriel-logan/expo-barcode/tree/main/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/swan-io/react-native-browser",
+    "npmPkg": "@swan-io/react-native-browser",
+    "examples": ["https://github.com/swan-io/react-native-browser/tree/main/example"],
+    "images": ["https://github.com/swan-io/react-native-browser/blob/main/docs/demo.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers",
+    "examples": [
+      "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/ayonshafiul/react-native-press-and-hold-button",
+    "examples": [
+      "https://github.com/ayonshafiul/react-native-press-and-hold-button/tree/main/example"
+    ],
+    "images": [
+      "https://peyara-remote-mouse.vercel.app/press-and-hold-button.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]

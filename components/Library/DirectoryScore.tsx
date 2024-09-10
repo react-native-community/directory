@@ -20,7 +20,7 @@ export function DirectoryScore({ score }: Props) {
   return (
     <Tooltip
       trigger={
-        <View>
+        <View style={{ cursor: 'pointer' }}>
           <Svg
             width={24}
             height={22}
