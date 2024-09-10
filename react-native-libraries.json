@@ -11840,5 +11840,17 @@
       "https://github.com/gabriel-logan/expo-barcode/tree/main/example"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ayonshafiul/react-native-press-and-hold-button",
+    "examples": [
+      "https://github.com/ayonshafiul/react-native-press-and-hold-button/tree/main/example"
+    ],
+    "images": [
+      "https://peyara-remote-mouse.vercel.app/press-and-hold-button.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
