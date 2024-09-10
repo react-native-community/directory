@@ -125,16 +125,6 @@
           "pattern": "^(http(s?):)(\\w|\\/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
         }
       },
-      "nameOverride": {
-        "$id": "#/items/properties/nameOverride",
-        "type": "string",
-        "title": "Optional property to override the name provided by npm and GitHub",
-        "default": "",
-        "examples": [
-          "react-navigation"
-        ],
-        "pattern": "^(.*)$"
-      },
       "dev": {
         "$id": "#/items/properties/dev",
         "type": "boolean",

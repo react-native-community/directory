@@ -24,7 +24,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
-  const libName = library.nameOverride ?? library.npmPkg ?? github.name;
+  const libName = library.npmPkg ?? github.name;
   const hasSecondaryMetadata =
     github.license ||
     github.urls.homepage ||

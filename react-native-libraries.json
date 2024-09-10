@@ -500,7 +500,6 @@
     "newArchitecture": false
   },
   {
-    "nameOverride": "react-navigation",
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/native",
     "npmPkg": "@react-navigation/native",
     "ios": true,
@@ -5289,7 +5288,6 @@
   },
   {
     "npmPkg": "@testing-library/react-native",
-    "nameOverride": "React Native Testing Library",
     "githubUrl": "https://github.com/callstack/react-native-testing-library",
     "examples": [
       "https://github.com/callstack/react-native-testing-library/tree/main/examples/basic",
@@ -9412,7 +9410,6 @@
   {
     "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR/clients/ts/signalr",
     "npmPkg": "@microsoft/signalr",
-    "nameOverride": "ASP.NET Core SignalR Client",
     "ios": true,
     "android": true,
     "expoGo": true
@@ -11810,7 +11807,6 @@
   },
   {
     "githubUrl": "https://github.com/gunnartorfis/sonner-native",
-    "nameOverride": "Sonner Native",
     "examples": [
       "https://github.com/gunnartorfis/sonner-native/tree/main/example",
       "https://snack.expo.dev/@gunnartorfis/02c2ab"

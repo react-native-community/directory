@@ -40,7 +40,6 @@
 {
   "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
-  "nameOverride": "<OPTIONAL PACKAGE DISPLAY NAME>",
   "examples": [
     "<THE URL TO REPO>",
     "<THE URL TO A SNACK>"
@@ -76,12 +75,6 @@
   **(string)** - npm package name, by default GitHub repository name will be used. Example: `"@expo/react-native-action-sheet"`.
 
   > Fill only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
-
-- #### `nameOverride`
-
-  **(string)** - display name override.
-
-  > Fill only when it is different from the GitHub repository name and npm package name.
 
 - #### `examples`
   **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
