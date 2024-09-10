@@ -500,7 +500,6 @@
     "newArchitecture": false
   },
   {
-    "nameOverride": "react-navigation",
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/native",
     "npmPkg": "@react-navigation/native",
     "ios": true,
@@ -5289,7 +5288,6 @@
   },
   {
     "npmPkg": "@testing-library/react-native",
-    "nameOverride": "React Native Testing Library",
     "githubUrl": "https://github.com/callstack/react-native-testing-library",
     "examples": [
       "https://github.com/callstack/react-native-testing-library/tree/main/examples/basic",
@@ -9413,7 +9411,6 @@
   {
     "githubUrl": "https://github.com/dotnet/aspnetcore/tree/main/src/SignalR/clients/ts/signalr",
     "npmPkg": "@microsoft/signalr",
-    "nameOverride": "ASP.NET Core SignalR Client",
     "ios": true,
     "android": true,
     "expoGo": true
@@ -11811,8 +11808,6 @@
   },
   {
     "githubUrl": "https://github.com/gunnartorfis/sonner-native",
-    "npmPkg": "sonner-native",
-    "nameOverride": "Sonner Native",
     "examples": [
       "https://github.com/gunnartorfis/sonner-native/tree/main/example",
       "https://snack.expo.dev/@gunnartorfis/02c2ab"
@@ -11826,21 +11821,49 @@
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
-    "npmPkg": "mobile-native-barcode-generator",
     "examples": [
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
       "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
     ],
-    "images": ["https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"],
+    "images": [
+      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"
+    ],
     "android": true
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/expo-barcode",
-    "npmPkg": "expo-barcode",
-    "examples": [
-      "https://github.com/gabriel-logan/expo-barcode/tree/main/example"
-    ],
+    "examples": ["https://github.com/gabriel-logan/expo-barcode/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/swan-io/react-native-browser",
+    "npmPkg": "@swan-io/react-native-browser",
+    "examples": ["https://github.com/swan-io/react-native-browser/tree/main/example"],
+    "images": ["https://github.com/swan-io/react-native-browser/blob/main/docs/demo.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers",
+    "examples": [
+      "https://github.com/BouarourMohammed/react-native-animated-rolling-numbers/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/ayonshafiul/react-native-press-and-hold-button",
+    "examples": [
+      "https://github.com/ayonshafiul/react-native-press-and-hold-button/tree/main/example"
+    ],
+    "images": [
+      "https://peyara-remote-mouse.vercel.app/press-and-hold-button.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/jwplayer/jwplayer-react-native",
