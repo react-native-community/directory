@@ -50,6 +50,7 @@ const Thumbnail = ({ url }: Props) => {
             borderRadius: 3,
             borderColor: isDark ? darkColors.border : colors.gray2,
             borderStyle: 'solid',
+            cursor: isLoaded ? 'pointer' : 'progress',
           }}>
           {showPreview && !isLoaded ? (
             <div style={{ width: 14, marginLeft: 1, marginRight: 1, marginTop: -2 }}>
