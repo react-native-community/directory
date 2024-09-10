@@ -5533,7 +5533,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": "jwplayer/jwplayer-react-native"
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-ios-kit",
@@ -11859,6 +11860,19 @@
     ],
     "images": [
       "https://peyara-remote-mouse.vercel.app/press-and-hold-button.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/jwplayer/jwplayer-react-native",
+    "npmPkg": "@jwplayer/jwplayer-react-native",
+    "examples": ["https://github.com/jwplayer/jwplayer-react-native/tree/master/Example"],
+    "images": [
+      "https://raw.githubusercontent.com/jwplayer/jwplayer-react-native/master/images/1.png",
+      "https://raw.githubusercontent.com/jwplayer/jwplayer-react-native/master/images/2.png",
+      "https://raw.githubusercontent.com/jwplayer/jwplayer-react-native/master/images/3.png"
     ],
     "ios": true,
     "android": true,
