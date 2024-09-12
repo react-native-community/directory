@@ -3,8 +3,13 @@ scripts/raw-github-results.json
 secrets.json
 .env
 
-# Standard stuff
+# Yarn Berry
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
 yarn-error.log
+
+# Standard stuff
 node_modules/**/*
 npm-debug.*
 
