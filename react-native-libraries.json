@@ -11877,5 +11877,23 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image",
+    "npmPkg": "@rn-flix/auto-image",
+    "examples": ["https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/snackbar",
+    "npmPkg": "@rn-flix/snackbar",
+    "examples": ["https://github.com/flixyudh/rn-flix/tree/master/packages/snackbar/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
