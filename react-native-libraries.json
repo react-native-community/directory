@@ -11877,5 +11877,11 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/react-native-ping-android",
+    "examples": ["https://github.com/RakaDoank/react-native-ping-android/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
   }
 ]
