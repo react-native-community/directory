@@ -1739,7 +1739,9 @@
   {
     "githubUrl": "https://github.com/tinycreative/react-native-intercom",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["@intercom/intercom-react-native"]
   },
   {
     "githubUrl": "https://github.com/joshswan/react-native-globalize",
