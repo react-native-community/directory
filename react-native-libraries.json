@@ -1739,7 +1739,9 @@
   {
     "githubUrl": "https://github.com/tinycreative/react-native-intercom",
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["@intercom/intercom-react-native"]
   },
   {
     "githubUrl": "https://github.com/joshswan/react-native-globalize",
@@ -11904,5 +11906,17 @@
     "expoGo": true,
     "macos": true,
     "newArchitecture": true
+  }, 
+  {
+    "githubUrl": "https://github.com/intercom/intercom-react-native",
+    "npmPkg": "@intercom/intercom-react-native",
+    "examples": [
+      "https://github.com/intercom/intercom-react-native/tree/main/example"
+    ],
+    "images": [
+      "https://images.ctfassets.net/xny2w179f4ki/2zU4haC1CGGDqkVpi4ffac/efdf1e8b2f5729f0b07428178ff62b74/customers-help-product-1.webp?&q=90&w=2560", 
+      "https://images.ctfassets.net/xny2w179f4ki/7kCxx0mYf5S5p1oNqqGSo2/f5126ee7c940c243a3cb90424da4b646/customers-omni-product-1.webp?&q=90&w=2560"],
+    "ios": true,
+    "android": true
   }
 ]
