@@ -10362,7 +10362,8 @@
     "githubUrl": "https://github.com/flixyudh/react-native-flix-snackbar",
     "examples": ["https://github.com/flixyudh/react-native-flix-snackbar/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-switch",
@@ -11883,5 +11884,23 @@
     "examples": ["https://github.com/RakaDoank/react-native-ping-android/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image",
+    "npmPkg": "@rn-flix/auto-image",
+    "examples": ["https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/snackbar",
+    "npmPkg": "@rn-flix/snackbar",
+    "examples": ["https://github.com/flixyudh/rn-flix/tree/master/packages/snackbar/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
