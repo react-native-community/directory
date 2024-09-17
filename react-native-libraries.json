@@ -11880,6 +11880,12 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/RakaDoank/react-native-ping-android",
+    "examples": ["https://github.com/RakaDoank/react-native-ping-android/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image",
     "npmPkg": "@rn-flix/auto-image",
     "examples": ["https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image/example"],
