@@ -11887,5 +11887,22 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/PostHog/posthog-js-lite/tree/main/posthog-react-native",
+    "npmPkg": "posthog-react-native",
+    "examples": [
+      "https://github.com/PostHog/posthog-js-lite/tree/main/examples/example-expo",
+      "https://github.com/PostHog/posthog-js-lite/tree/main/examples/example_rn_new_architecture",
+      "https://github.com/PostHog/posthog-js-lite/tree/main/examples/example_rn_macos",
+      "https://github.com/PostHog/posthog-js-lite/tree/main/examples/example_expo_rn_web"
+    ],
+    "images": ["https://posthog.com/static/a31f7db2abf56ba7e82e88b0d47ea0be/929d0/screenshot-product-analytics.webp"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "macos": true,
+    "newArchitecture": true
   }
 ]
