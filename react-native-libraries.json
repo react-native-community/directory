@@ -11920,8 +11920,22 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/f0wu5u/calendar-kit",
+    "npmPkg": "@fowusu/calendar-kit",
+    "examples": ["https://github.com/f0wu5u/calendar-kit/tree/master/example"],
+    "images": [
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/vio-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/priceline-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/localize-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/schedule-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/booking-calendar.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/huextrat/react-native-rate-app",
-    "npmPkg": "react-native-rate-app",
     "examples": [
       "https://github.com/huextrat/react-native-rate-app/tree/main/example"
     ],
