@@ -11976,5 +11976,20 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/iNerdStack/react-native-flexible-grid",
+    "examples": [
+      "https://github.com/iNerdStack/react-native-flexible-grid/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/iNerdStack/react-native-flexible-grid/main/example/assets/gifs/instagram-explore-example.gif",
+      "https://raw.githubusercontent.com/iNerdStack/react-native-flexible-grid/main/example/assets/gifs/pinterest-example.gif",
+      "https://raw.githubusercontent.com/iNerdStack/react-native-flexible-grid/main/example/assets/gifs/gridboard-overflow-example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
