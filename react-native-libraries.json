@@ -11918,5 +11918,20 @@
       "https://images.ctfassets.net/xny2w179f4ki/7kCxx0mYf5S5p1oNqqGSo2/f5126ee7c940c243a3cb90424da4b646/customers-omni-product-1.webp?&q=90&w=2560"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/f0wu5u/calendar-kit",
+    "npmPkg": "@fowusu/calendar-kit",
+    "examples": ["https://github.com/f0wu5u/calendar-kit/tree/master/example"],
+    "images": [
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/vio-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/priceline-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/localize-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/schedule-calendar.gif",
+      "https://github.com/f0wu5u/calendar-kit/raw/master/static/booking-calendar.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
