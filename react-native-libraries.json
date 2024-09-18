@@ -11942,5 +11942,39 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/mehuljetani/react-native-typing-animated-text",
+    "npmPkg": "react-native-typing-animated-text",
+    "examples": [
+      "https://github.com/mehuljetani/react-native-typing-animated-text"
+    ],
+    "images": [
+      "https://github.com/mehuljetani/react-native-typing-animated-text/blob/main/src/assets/demo.gif"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mehuljetani/react-native-custom-animated-accordion",
+    "npmPkg": "react-native-custom-animated-accordion",
+    "examples": [
+      "https://github.com/mehuljetani/react-native-custom-animated-accordion"
+    ],
+    "images": [
+      "https://github.com/mehuljetani/react-native-custom-animated-accordion/blob/main/src/assets/accord.gif"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mehuljetani/react-native-animated-flip-card",
+    "npmPkg": "react-native-animated-flip-card",
+    "examples": [
+      "https://github.com/mehuljetani/react-native-animated-flip-card"
+    ],
+    "images": [
+      "https://github.com/mehuljetani/react-native-animated-flip-card/blob/main/src/assets/verticle.gif",
+      "https://github.com/mehuljetani/react-native-animated-flip-card/blob/main/src/assets/horizontal.gif"],
+    "ios": true,
+    "android": true
+  },
 ]
