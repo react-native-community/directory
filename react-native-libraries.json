@@ -11999,5 +11999,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/huextrat/react-native-screenshot-aware",
+    "examples": [
+      "https://github.com/huextrat/react-native-screenshot-aware/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
