@@ -11991,5 +11991,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/xulihang/vision-camera-zxing",
+    "examples": [
+      "https://github.com/xulihang/vision-camera-zxing/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
