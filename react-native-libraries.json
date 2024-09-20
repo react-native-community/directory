@@ -12008,5 +12008,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mehuljetani/react-native-stack-carousel",
+    "examples": [
+      "https://github.com/mehuljetani/react-native-stack-carousel"
+    ],
+    "images": [
+      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/horizontalLeft.gif",
+      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/horizontalRight.gif",
+      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/verticalBottom.gif",
+      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/verticalTop.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
