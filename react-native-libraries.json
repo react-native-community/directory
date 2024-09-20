@@ -12020,6 +12020,6 @@
     ],
     "ios": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Support for both the new architecture (fabric), and backward compat. to the old architecture (paper) is handled via react-native-ios-utilities",
+    "newArchitectureNote": "Support for both the new architecture (fabric), and backward compat. to the old architecture (paper) is handled via react-native-ios-utilities"
   }
 ]
