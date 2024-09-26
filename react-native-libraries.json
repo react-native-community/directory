@@ -10562,7 +10562,8 @@
     "examples": ["https://github.com/Kuatsu/react-native-cloud-storage/tree/master/example"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Malaa-tech/expo-squircle-view",
