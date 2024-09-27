@@ -12043,5 +12043,14 @@
     "npmPkg": "@vokhuyet/react-native-draw-overlay",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/HapticlabsIO/react-native-hapticlabs",
+    "npmPkg": "react-native-hapticlabs",
+    "examples": [
+      "https://github.com/HapticlabsIO/react-native-hapticlabs"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
