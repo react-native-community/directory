@@ -12060,5 +12060,18 @@
   ],
   "ios": true,
   "android": true
+},
+  {
+  "githubUrl": "https://github.com/kimolalekan/react-native-custom-select",
+  "examples": [
+    "https://github.com/kimolalekan/react-native-custom-select/blob/main/examples/index.js",
+    "https://snack.expo.dev/@geek_lekan/react-native-custom-select-example"
+  ],
+  "images": ["https://raw.githubusercontent.com/kimolalekan/react-native-custom-select/main/screenshot-image.png"],
+  "ios": true,
+  "android": true,
+  "web": true,
+  "expoGo": true,
+  "newArchitecture": true
 }
 ]
