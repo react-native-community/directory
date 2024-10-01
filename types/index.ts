@@ -58,6 +58,7 @@ export type Library = {
     isPackagePrivate: boolean;
     fullName: string;
     description: string;
+    registry?: string;
     topics?: string[];
     hasTypes?: boolean;
     newArchitecture?: boolean;

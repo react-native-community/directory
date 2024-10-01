@@ -155,6 +155,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
+      json.registry = packageJson?.publishConfig?.registry ?? undefined;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -220,6 +221,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     name: json.name,
     fullName: json.nameWithOwner,
     isPrivate: json.isPackagePrivate,
+    registry: json.registry,
     description: json.description,
     topics: json.topics,
     license: json.licenseInfo,
