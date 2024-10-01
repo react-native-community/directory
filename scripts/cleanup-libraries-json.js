@@ -8,18 +8,13 @@ import libraries from '../react-native-libraries.json' with { type: 'json' };
 
 const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 
-const IGNORE_CLEANUP = ['toastify-react-native'];
-
 const removeEmptyArray = (lib, key) => (lib[key] && !lib[key].length ? omit(lib, key) : lib);
 const emptyPropertiesToKeep = ['newArchitecture'];
 
 const processedLibraries = libraries
   // Remove redundant `npmPkg` for libraries with correct GitHub repository name
   .map(lib =>
-    lib.npmPkg &&
-    !lib.npmPkg.includes('/') &&
-    lib.githubUrl.endsWith(`/${lib.npmPkg}`) &&
-    !IGNORE_CLEANUP.includes(lib.npmPkg)
+    lib.npmPkg && !lib.npmPkg.includes('/') && lib.githubUrl.endsWith(`/${lib.npmPkg}`)
       ? omit(lib, 'npmPkg')
       : lib
   )

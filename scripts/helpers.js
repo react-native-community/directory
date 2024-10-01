@@ -24,8 +24,16 @@ export function processTopics(topics) {
     .filter(topic => topic?.length);
 }
 
+function splitAndGetLastChunk(value, delimiter = '/') {
+  return value.split(delimiter).at(-1).toLowerCase();
+}
+
 export function hasMismatchedPackageData(project) {
-  return (
-    (project.npmPkg ?? project.githubUrl.split('/').at(-1)).toLowerCase() !== project.github?.name
-  );
+  const desiredName = project.npmPkg ?? splitAndGetLastChunk(project.githubUrl);
+
+  if (project.github.registry) {
+    const registryScope = splitAndGetLastChunk(project.github.registry);
+    return project.github?.name.replace(`${registryScope}/`, '') !== desiredName;
+  }
+  return desiredName !== project.github?.name;
 }
