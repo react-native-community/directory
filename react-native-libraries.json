@@ -12073,5 +12073,14 @@
   "web": true,
   "expoGo": true,
   "newArchitecture": true
+},
+  {
+  "githubUrl": "https://github.com/mateoguzmana/react-native-lz4",
+  "examples": [
+    "https://github.com/mateoguzmana/react-native-lz4/tree/main/example"
+  ],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
 }
 ]
