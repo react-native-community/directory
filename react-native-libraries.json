@@ -12047,5 +12047,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dream-sports-labs/react-native-fast-image",
+    "npmPkg": "@d11/react-native-fast-image",
+    "examples": [
+      "https://github.com/dream-sports-labs/react-native-fast-image/tree/main/ReactNativeFastImageExample"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/dream-sports-labs/react-native-fast-image/refs/heads/main/docs/assets/scroll.gif",
+      "https://github.com/dream-sports-labs/react-native-fast-image/blob/main/docs/assets/priority.gif?raw=true"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
