@@ -12087,5 +12087,18 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido",
+    "npmPkg": "cpf_and_cnpj-generator",
+    "examples": [
+      "https://gabriel-logan.github.io/Gerador-CPF-e-CNPJ-valido/js"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true,
+    "newArchitecture": true
   }
 ]
