@@ -12133,15 +12133,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "expoGo": true,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
-    "newArchitecture": false
+    "expoGo": true
   }
 ]
