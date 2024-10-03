@@ -12050,5 +12050,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/4cc3ssX/react-native-nitro-totp",
+    "examples": ["https://github.com/4cc3ssX/react-native-nitro-totp/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
   }
 ]
