@@ -689,7 +689,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "unmaintained": "@rneui/themed"
+    "alternatives": ["@rneui/themed"]
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view",
@@ -1187,7 +1187,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": "expo-image"
+    "unmaintained": true,
+    "alternatives": ["expo-image"]
   },
   {
     "githubUrl": "https://github.com/moschan/react-native-flip-card",
@@ -2631,7 +2632,8 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "unmaintained": "expo-camera"
+    "unmaintained": true,
+    "alternatives": ["expo-camera"]
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-battery",
@@ -3969,7 +3971,8 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-react-native",
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/react-native",
+    "npmPkg": "@aws-amplify/react-native",
     "ios": true,
     "android": true,
     "web": true,
@@ -3984,7 +3987,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/master/packages/pushnotification",
+    "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/notifications",
     "npmPkg": "@aws-amplify/pushnotification",
     "ios": true,
     "android": true
@@ -5539,7 +5542,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": "jwplayer/jwplayer-react-native"
+    "unmaintained": true,
+    "alternatives": ["@jwplayer/jwplayer-react-native"]
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-ios-kit",
@@ -7125,7 +7129,8 @@
     "githubUrl": "https://github.com/ospfranco/react-native-quick-sqlite",
     "ios": true,
     "android": true,
-    "unmaintained": "@op-engineering/op-sqlite"
+    "unmaintained": true,
+    "alternatives": ["@op-engineering/op-sqlite"]
   },
   {
     "githubUrl": "https://github.com/ysfuu/react-native-relative-popup",
@@ -10719,13 +10724,12 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/WalletConnect/web3modal-react-native/tree/main/packages/wagmi",
-    "npmPkg": "@web3modal/wagmi-react-native",
+    "githubUrl": "https://github.com/reown-com/appkit-react-native/blob/main/packages/wagmi",
+    "npmPkg": "@reown/appkit-wagmi-react-native",
     "examples": [
-      "https://github.com/WalletConnect/react-native-examples/tree/main/dapps/W3MWagmi",
-      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/gallery",
-      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/native-cli",
-      "https://github.com/WalletConnect/web3modal-react-native/tree/main/apps/native"
+      "https://github.com/reown-com/appkit-react-native/tree/develop/apps/native",
+      "https://github.com/reown-com/appkit-react-native/tree/develop/apps/gallery",
+      "https://github.com/reown-com/react-native-examples/tree/main/dapps/W3MWagmi"
     ],
     "ios": true,
     "android": true
@@ -12056,10 +12060,10 @@
   {
     "githubUrl": "https://github.com/Multiform-Validator/typescript-javascript",
     "npmPkg": "multiform-validator",
-    "examples": [
-      "https://multiformvalidator.netlify.app/documentation/js"
+    "examples": ["https://multiformvalidator.netlify.app/documentation/js"],
+    "images": [
+      "https://raw.githubusercontent.com/Multiform-Validator/docs/main/src/app/opengraph-image.png"
     ],
-    "images": ["https://raw.githubusercontent.com/Multiform-Validator/docs/main/src/app/opengraph-image.png"],
     "ios": true,
     "android": true,
     "web": true,
@@ -12069,9 +12073,7 @@
   {
     "githubUrl": "https://github.com/gabriel-logan/Azure-translator-code",
     "npmPkg": "azure-translator-code",
-    "examples": [
-      "https://azuretranslatorcode.vercel.app/"
-    ],
+    "examples": ["https://azuretranslatorcode.vercel.app/"],
     "ios": true,
     "android": true,
     "web": true,
@@ -12082,9 +12084,7 @@
   {
     "githubUrl": "https://github.com/Redux-Utils/react-native-redux-persist",
     "npmPkg": "react-native-redux-persist2",
-    "examples": [
-      "https://github.com/Redux-Utils/react-native-redux-persist/tree/main/docs"
-    ],
+    "examples": ["https://github.com/Redux-Utils/react-native-redux-persist/tree/main/docs"],
     "ios": true,
     "android": true,
     "web": true,
@@ -12115,9 +12115,7 @@
   {
     "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido/tree/main/packages/typescript",
     "npmPkg": "cpf_and_cnpj-generator",
-    "examples": [
-      "https://gabriel-logan.github.io/Gerador-CPF-e-CNPJ-valido/js"
-    ],
+    "examples": ["https://gabriel-logan.github.io/Gerador-CPF-e-CNPJ-valido/js"],
     "ios": true,
     "android": true,
     "web": true,

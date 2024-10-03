@@ -45,7 +45,7 @@ const buildAndScoreData = async () => {
 
   // Detect mismatched package and package.json content
   data.forEach(project => {
-    if (hasMismatchedPackageData(project)) {
+    if (hasMismatchedPackageData(project) && !project.template) {
       mismatchedRepos.push(project);
     }
   });
