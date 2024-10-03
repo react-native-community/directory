@@ -9636,7 +9636,10 @@
     "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
     "examples": ["https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-nitro-totp"]
   },
   {
     "githubUrl": "https://github.com/JedrzejMajko/react-native-hardwired",
@@ -12087,6 +12090,27 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/4cc3ssX/react-native-nitro-totp",
+    "examples": ["https://github.com/4cc3ssX/react-native-nitro-totp/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
+  },
+  {
+    "githubUrl": "https://github.com/dream-sports-labs/react-native-fast-image",
+    "npmPkg": "@d11/react-native-fast-image",
+    "examples": [
+      "https://github.com/dream-sports-labs/react-native-fast-image/tree/main/ReactNativeFastImageExample"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/dream-sports-labs/react-native-fast-image/refs/heads/main/docs/assets/scroll.gif",
+      "https://github.com/dream-sports-labs/react-native-fast-image/blob/main/docs/assets/priority.gif?raw=true"
+    ],
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido/tree/main/packages/typescript",
