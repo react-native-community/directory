@@ -9636,7 +9636,10 @@
     "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
     "examples": ["https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-nitro-totp"]
   },
   {
     "githubUrl": "https://github.com/JedrzejMajko/react-native-hardwired",
@@ -12087,5 +12090,13 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/4cc3ssX/react-native-nitro-totp",
+    "examples": ["https://github.com/4cc3ssX/react-native-nitro-totp/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
   }
 ]
