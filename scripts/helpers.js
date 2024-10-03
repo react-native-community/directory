@@ -31,9 +31,11 @@ function splitAndGetLastChunk(value, delimiter = '/') {
 export function hasMismatchedPackageData(project) {
   const desiredName = project.npmPkg ?? splitAndGetLastChunk(project.githubUrl);
 
-  if (project.github.registry) {
+  if (project.github.registry && project.github.registry !== 'https://registry.npmjs.org/') {
     const registryScope = splitAndGetLastChunk(project.github.registry);
-    return project.github?.name.replace(`${registryScope}/`, '') !== desiredName;
+    if (registryScope.startsWith('@')) {
+      return project.github?.name.replace(`${registryScope}/`, '') !== desiredName;
+    }
   }
   return desiredName !== project.github?.name;
 }
