@@ -9636,7 +9636,10 @@
     "githubUrl": "https://github.com/4cc3ssX/react-native-totp-utils",
     "examples": ["https://github.com/4cc3ssX/react-native-totp-utils/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-nitro-totp"]
   },
   {
     "githubUrl": "https://github.com/JedrzejMajko/react-native-hardwired",
