@@ -12126,6 +12126,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/kore-koi/react-native-get-random-values",
+    "npmPkg": "@korekoi/react-native-get-random-values",
+    "examples": [
+      "https://github.com/kore-koi/react-native-get-random-values/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/adobe/aepsdk-react-native/tree/main/packages/core",
     "npmPkg": "@adobe/react-native-aepcore",
     "examples": [
