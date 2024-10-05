@@ -75,6 +75,9 @@ const checkResults = await Promise.all(
       console.error(
         `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
       );
+      console.error(
+        `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
+      );
 
       return false;
     }
