@@ -12143,5 +12143,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Netizen-Teknologi/react-native-maps-leaflet",
+    "npmPkg": "https://www.npmjs.com/package/@netizen-teknologi/react-native-maps-leaflet",
+    "examples": [
+      "https://github.com/Netizen-Teknologi/react-native-maps-leaflet",
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true
   }
 ]
