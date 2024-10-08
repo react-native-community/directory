@@ -11245,7 +11245,8 @@
     "githubUrl": "https://github.com/CleverTap/clevertap-react-native",
     "examples": ["https://github.com/CleverTap/clevertap-react-native/tree/master/Example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/odemolliens/react-native-netwatch",
