@@ -3145,7 +3145,8 @@
     "macos": true,
     "expoGo": true,
     "visionos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/osdnk/react-native-reanimated-bottom-sheet",
