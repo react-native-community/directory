@@ -173,9 +173,9 @@ const buildAndScoreData = async () => {
     );
   }
 
-  if (wantedPackageName) {
-    const { libraries, ...rest } = JSON.parse(fs.readFileSync(DATA_PATH));
+  const { libraries, ...rest } = JSON.parse(fs.readFileSync(DATA_PATH).toString());
 
+  if (wantedPackageName) {
     return fs.writeFileSync(
       DATA_PATH,
       JSON.stringify(
@@ -193,11 +193,15 @@ const buildAndScoreData = async () => {
       )
     );
   } else {
+    const existingData = libraries.map(lib => lib.githubUrl);
+    const newData = data.map(lib => lib.githubUrl);
+    const missingData = existingData.filter(url => !newData.includes(url));
+
     return fs.writeFileSync(
       DATA_PATH,
       JSON.stringify(
         {
-          libraries: data,
+          libraries: [...libraries.filter(lib => missingData.includes(lib.githubUrl)), ...data],
           topics: topicCounts,
           topicsList: Object.keys(topicCounts).sort(),
         },
