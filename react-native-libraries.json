@@ -6335,10 +6335,12 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/asklar/react-native-xaml/tree/main/package",
+    "githubUrl": "https://github.com/microsoft/react-native-xaml/tree/main/package",
     "npmPkg": "react-native-xaml",
-    "examples": ["https://github.com/asklar/react-native-xaml/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/asklar/react-native-xaml/main/example/rnx.gif"],
+    "examples": ["https://github.com/microsoft/react-native-xaml/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/microsoft/react-native-xaml/main/example/rnx.gif"
+    ],
     "windows": true
   },
   {
@@ -12128,9 +12130,7 @@
   {
     "githubUrl": "https://github.com/kore-koi/react-native-get-random-values",
     "npmPkg": "@korekoi/react-native-get-random-values",
-    "examples": [
-      "https://github.com/kore-koi/react-native-get-random-values/tree/main/example"
-    ],
+    "examples": ["https://github.com/kore-koi/react-native-get-random-values/tree/main/example"],
     "ios": true,
     "android": true,
     "tvos": true,
@@ -12139,9 +12139,7 @@
   {
     "githubUrl": "https://github.com/adobe/aepsdk-react-native/tree/main/packages/core",
     "npmPkg": "@adobe/react-native-aepcore",
-    "examples": [
-      "https://github.com/adobe/aepsdk-react-native/tree/main/apps/AEPSampleApp"
-    ],
+    "examples": ["https://github.com/adobe/aepsdk-react-native/tree/main/apps/AEPSampleApp"],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -12149,12 +12147,9 @@
   {
     "githubUrl": "https://github.com/Netizen-Teknologi/react-native-maps-leaflet",
     "npmPkg": "@netizen-teknologi/react-native-maps-leaflet",
-    "examples": [
-      "https://github.com/Netizen-Teknologi/react-native-maps-leaflet"
-    ],
+    "examples": ["https://github.com/Netizen-Teknologi/react-native-maps-leaflet"],
     "ios": true,
     "android": true,
-    "web": false,
     "expoGo": true
   }
 ]
