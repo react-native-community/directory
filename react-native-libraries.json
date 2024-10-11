@@ -12169,14 +12169,14 @@
     "newArchitecture": true
   },
   {
-  "githubUrl": "https://github.com/dcavalcante/react-native-sprites",
-  "npmPkg": "react-native-sprites",
-  "examples": [
-    "https://github.com/dcavalcante/react-native-sprites/tree/main/example"
-  ],
-  "ios": true,
-  "android": true,
-  "web": true,
-  "newArchitecture": true
-}
+    "githubUrl": "https://github.com/dcavalcante/react-native-sprites",
+    "npmPkg": "react-native-sprites",
+    "examples": [
+      "https://github.com/dcavalcante/react-native-sprites/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  }
 ]
