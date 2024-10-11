@@ -12151,5 +12151,21 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/jamsch/expo-speech-recognition",
+    "npmPkg": "expo-speech-recognition",
+    "examples": [
+      "https://github.com/jamsch/expo-speech-recognition/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/jamsch/expo-speech-recognition/blob/main/images/preview.gif?raw=true",
+      "https://github.com/jamsch/expo-speech-recognition/blob/main/images/volume-metering.gif?raw=true",
+      "https://github.com/jamsch/expo-speech-recognition/blob/main/images/on-device-recognition.jpg?raw=true"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
