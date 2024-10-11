@@ -1,4 +1,4 @@
-import { BlobAccessError, list, put } from '@vercel/blob';
+import { BlobAccessError, list, put, del } from '@vercel/blob';
 import fetch from 'cross-fetch';
 import chunk from 'lodash/chunk.js';
 import fs from 'node:fs';
@@ -34,9 +34,9 @@ const mismatchedRepos = [];
 const wantedPackageName = process.argv[2];
 
 const buildAndScoreData = async () => {
-  console.log('⬇️️ Fetching latest data blob');
+  console.log('⬇️️ Fetching latest data blob from the store');
 
-  const latestData = await fetchLatestData();
+  const { latestData, blobUrl } = await fetchLatestData();
 
   console.log('📦️ Loading data from GitHub');
 
@@ -75,17 +75,17 @@ const buildAndScoreData = async () => {
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
-  console.log('\n🔖 Determining npm package name');
+  console.log('\n🔖 Determining npm package names');
   await sleep(1000);
   data = data.map(fillNpmName);
 
-  console.log('\n⬇️ Loading download stats from npm');
+  console.log('\n⬇️ Fetching download stats from npm');
   await sleep(1000);
 
   // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
   let bulkList = [];
 
-  // Fetch scope packages data
+  // Fetch scoped packages data
   data = await Promise.all(
     data.map(project => {
       if (!project.template) {
@@ -100,7 +100,7 @@ const buildAndScoreData = async () => {
     })
   );
 
-  // Assemble and fetch data in bulk queries
+  // Assemble and fetch regular packages data in bulk queries
   const CHUNK_SIZE = 32;
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
@@ -156,7 +156,7 @@ const buildAndScoreData = async () => {
     }
   });
 
-  // Process topic counts
+  console.log('\n🏷️ Processing topics');
   const topicCounts = {};
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
@@ -193,10 +193,14 @@ const buildAndScoreData = async () => {
     );
   }
 
+  console.log('📄️ Preparing data file');
+
   const { libraries, ...rest } = latestData;
 
+  let fileContent;
+
   if (wantedPackageName) {
-    const fileContent = JSON.stringify(
+    fileContent = JSON.stringify(
       {
         libraries: libraries.map(library => {
           if (library.npmPkg === wantedPackageName) {
@@ -209,16 +213,12 @@ const buildAndScoreData = async () => {
       null,
       2
     );
-
-    await put('data.json', fileContent, { access: 'public' });
-
-    return fs.writeFileSync(DATA_PATH, fileContent);
   } else {
     const existingData = libraries.map(lib => lib.githubUrl);
     const newData = data.map(lib => lib.githubUrl);
     const missingData = existingData.filter(url => !newData.includes(url));
 
-    const fileContent = JSON.stringify(
+    fileContent = JSON.stringify(
       {
         libraries: [...libraries.filter(lib => missingData.includes(lib.githubUrl)), ...data],
         topics: topicCounts,
@@ -227,20 +227,14 @@ const buildAndScoreData = async () => {
       null,
       2
     );
-
-    try {
-      await put('data.json', fileContent, { access: 'public' });
-    } catch (error) {
-      if (error instanceof BlobAccessError) {
-        console.error('❌ Cannot access the blob storage, aborting!');
-        throw error;
-      } else {
-        throw error;
-      }
-    }
-
-    return fs.writeFileSync(DATA_PATH, fileContent);
   }
+
+  await uploadToStore(fileContent);
+
+  console.log('🗑️️ Removing old data blob from the store');
+  await del(blobUrl);
+
+  return fs.writeFileSync(DATA_PATH, fileContent);
 };
 
 export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
@@ -329,10 +323,27 @@ async function fetchLatestData() {
 
   if (blobs?.length > 0) {
     const response = await fetch(blobs[0].downloadUrl);
-    return await response.json();
+    return {
+      latestData: await response.json(),
+      blobUrl: blobs[0].url,
+    };
   }
 
   return JSON.parse(fs.readFileSync(DATA_PATH).toString());
+}
+
+async function uploadToStore(fileContent) {
+  console.log('⬆️ Uploading data blob to the store');
+  try {
+    await put('data.json', fileContent, { access: 'public' });
+  } catch (error) {
+    if (error instanceof BlobAccessError) {
+      console.error('❌ Cannot access the blob store, aborting!');
+      throw error;
+    } else {
+      throw error;
+    }
+  }
 }
 
 buildAndScoreData();
