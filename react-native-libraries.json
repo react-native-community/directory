@@ -3849,14 +3849,6 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/react-native-unimodules",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true,
-    "alternatives": ["expo-modules-core"]
-  },
-  {
     "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode/tree/master/library",
     "npmPkg": "react-native-dark-mode",
     "ios": true,
@@ -3988,7 +3980,7 @@
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/notifications",
-    "npmPkg": "@aws-amplify/pushnotification",
+    "npmPkg": "@aws-amplify/notifications",
     "ios": true,
     "android": true
   },
@@ -10647,8 +10639,9 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/oktaysenkan/react-native-iconify",
-    "examples": ["https://github.com/oktaysenkan/react-native-iconify/tree/main/example"],
+    "githubUrl": "https://github.com/oktaysenkan/monicon/tree/main/packages/native",
+    "npmPkg": "@monicon/native",
+    "examples": ["https://github.com/oktaysenkan/monicon/tree/main/apps/react-native-app"],
     "ios": true,
     "android": true,
     "web": true

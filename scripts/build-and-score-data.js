@@ -1,3 +1,5 @@
+import { BlobAccessError, list, put } from '@vercel/blob';
+import fetch from 'cross-fetch';
 import chunk from 'lodash/chunk.js';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,7 +34,12 @@ const mismatchedRepos = [];
 const wantedPackageName = process.argv[2];
 
 const buildAndScoreData = async () => {
+  console.log('⬇️️ Fetching latest data blob');
+
+  const latestData = await fetchLatestData();
+
   console.log('📦️ Loading data from GitHub');
+
   let data = await loadRepositoryDataAsync();
 
   data = data.filter(project => {
@@ -99,9 +106,22 @@ const buildAndScoreData = async () => {
     bulkList.splice(0, CHUNK_SIZE)
   );
 
-  const downloadsList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk)))).flat();
+  const downloadsList = (
+    await Promise.all(
+      bulkList.map(async (chunk, index) => {
+        await sleep(250 * index);
+        return await fetchNpmDataBulk(chunk);
+      })
+    )
+  ).flat();
+
   const downloadsListWeek = (
-    await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk, 'week')))
+    await Promise.all(
+      bulkList.map(async (chunk, index) => {
+        await sleep(250 * index);
+        return await fetchNpmDataBulk(chunk, 'week');
+      })
+    )
   ).flat();
 
   // Fill npm data from bulk queries
@@ -173,42 +193,53 @@ const buildAndScoreData = async () => {
     );
   }
 
-  const { libraries, ...rest } = JSON.parse(fs.readFileSync(DATA_PATH).toString());
+  const { libraries, ...rest } = latestData;
 
   if (wantedPackageName) {
-    return fs.writeFileSync(
-      DATA_PATH,
-      JSON.stringify(
-        {
-          libraries: libraries.map(library => {
-            if (library.npmPkg === wantedPackageName) {
-              return data.find(entry => entry.npmPkg === wantedPackageName);
-            }
-            return library;
-          }),
-          ...rest,
-        },
-        null,
-        2
-      )
+    const fileContent = JSON.stringify(
+      {
+        libraries: libraries.map(library => {
+          if (library.npmPkg === wantedPackageName) {
+            return data.find(entry => entry.npmPkg === wantedPackageName);
+          }
+          return library;
+        }),
+        ...rest,
+      },
+      null,
+      2
     );
+
+    await put('data.json', fileContent, { access: 'public' });
+
+    return fs.writeFileSync(DATA_PATH, fileContent);
   } else {
     const existingData = libraries.map(lib => lib.githubUrl);
     const newData = data.map(lib => lib.githubUrl);
     const missingData = existingData.filter(url => !newData.includes(url));
 
-    return fs.writeFileSync(
-      DATA_PATH,
-      JSON.stringify(
-        {
-          libraries: [...libraries.filter(lib => missingData.includes(lib.githubUrl)), ...data],
-          topics: topicCounts,
-          topicsList: Object.keys(topicCounts).sort(),
-        },
-        null,
-        2
-      )
+    const fileContent = JSON.stringify(
+      {
+        libraries: [...libraries.filter(lib => missingData.includes(lib.githubUrl)), ...data],
+        topics: topicCounts,
+        topicsList: Object.keys(topicCounts).sort(),
+      },
+      null,
+      2
     );
+
+    try {
+      await put('data.json', fileContent, { access: 'public' });
+    } catch (error) {
+      if (error instanceof BlobAccessError) {
+        console.error('❌ Cannot access the blob storage, aborting!');
+        throw error;
+      } else {
+        throw error;
+      }
+    }
+
+    return fs.writeFileSync(DATA_PATH, fileContent);
   }
 };
 
@@ -291,6 +322,17 @@ async function loadRepositoryDataAsync() {
   }
 
   return result;
+}
+
+async function fetchLatestData() {
+  const { blobs } = await list();
+
+  if (blobs?.length > 0) {
+    const response = await fetch(blobs[0].downloadUrl);
+    return await response.json();
+  }
+
+  return JSON.parse(fs.readFileSync(DATA_PATH).toString());
 }
 
 buildAndScoreData();

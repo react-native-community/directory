@@ -24,6 +24,7 @@ jobs:
       run: npx vercel --force --token "$VERCEL_TOKEN" --prod
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
         # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787
         VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
         VERCEL_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'
