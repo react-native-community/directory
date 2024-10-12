@@ -40,8 +40,9 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
       };
     });
   } catch {
-    if (attemptsCount > 15) {
-      throw new Error('[NPM] Looks like we have reach the NPM API rate limit, aborting!');
+    if (attemptsCount > 25) {
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      return namesArray.map(name => ({ name, npm: null }));
     }
     await sleep(2500 + 500 * attemptsCount, 5000 + 500 * attemptsCount);
     console.log(`[NPM] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
@@ -79,8 +80,9 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
       },
     };
   } catch {
-    if (attemptsCount > 15) {
-      throw new Error('[NPM] Looks like we have reach the NPM API rate limit, aborting!');
+    if (attemptsCount > 25) {
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      return { ...pkgData, npm: null };
     }
     await sleep(2500 + 500 * attemptsCount, 5000 + 500 * attemptsCount);
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);

@@ -8419,10 +8419,7 @@
   {
     "githubUrl": "https://github.com/Shopify/react-native-skia/tree/main/packages/skia",
     "npmPkg": "@shopify/react-native-skia",
-    "examples": [
-      "https://github.com/Shopify/react-native-skia/tree/main/apps/fabric",
-      "https://github.com/Shopify/react-native-skia/tree/main/apps/paper"
-    ],
+    "examples": ["https://github.com/Shopify/react-native-skia/tree/main/example"],
     "android": true,
     "ios": true,
     "web": true,
