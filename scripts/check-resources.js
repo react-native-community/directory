@@ -1,12 +1,14 @@
 import fetch from 'cross-fetch';
 
 import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import { sleep } from './helpers.js';
 
 console.log('⬇️ Attempting to fetch examples and images');
 
 libraries.forEach(lib => {
   if (lib.examples) {
-    lib.examples.forEach((example, i) => {
+    lib.examples.forEach(async (example, i) => {
+      await sleep(500);
       setTimeout(() => {
         fetch(example)
           .then(response => {
@@ -22,7 +24,8 @@ libraries.forEach(lib => {
   }
 
   if (lib.images) {
-    lib.images.forEach((img, i) => {
+    lib.images.forEach(async (img, i) => {
+      await sleep(500);
       setTimeout(() => {
         fetch(img)
           .then(response => {

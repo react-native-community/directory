@@ -12,6 +12,7 @@
     "libraries:recalculate": "node --no-warnings scripts/recalculate-popularity.js",
     "libraries:format": "prettier --write react-native-libraries.json",
     "libraries:check": "node --no-warnings scripts/check-resources.js",
+    "ci:cleanup-blobs": "node --no-warnings scripts/cleanup-data-blobs.js",
     "ci:validate": "node --no-warnings scripts/validate-new-entries.js",
     "precommit": "simple-git-hooks && lint-staged"
   },
