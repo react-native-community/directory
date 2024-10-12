@@ -1,4 +1,4 @@
-import { BlobAccessError, list, put, del } from '@vercel/blob';
+import { BlobAccessError, list, put } from '@vercel/blob';
 import fetch from 'cross-fetch';
 import chunk from 'lodash/chunk.js';
 import fs from 'node:fs';
@@ -36,7 +36,7 @@ const wantedPackageName = process.argv[2];
 const buildAndScoreData = async () => {
   console.log('⬇️️ Fetching latest data blob from the store');
 
-  const { latestData, blobUrl } = await fetchLatestData();
+  const { latestData } = await fetchLatestData();
 
   console.log('📦️ Loading data from GitHub');
 
@@ -214,13 +214,13 @@ const buildAndScoreData = async () => {
       2
     );
   } else {
-    const existingData = libraries.map(lib => lib.githubUrl);
-    const newData = data.map(lib => lib.githubUrl);
+    const existingData = [];
+    const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(url => !newData.includes(url));
 
     fileContent = JSON.stringify(
       {
-        libraries: [...libraries.filter(lib => missingData.includes(lib.githubUrl)), ...data],
+        libraries: [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data],
         topics: topicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
@@ -230,9 +230,6 @@ const buildAndScoreData = async () => {
   }
 
   await uploadToStore(fileContent);
-
-  console.log('🗑️️ Removing old data blob from the store');
-  await del(blobUrl);
 
   return fs.writeFileSync(DATA_PATH, fileContent);
 };
@@ -322,10 +319,11 @@ async function fetchLatestData() {
   const { blobs } = await list();
 
   if (blobs?.length > 0) {
-    const response = await fetch(blobs[0].downloadUrl);
+    const sortedBlobs = blobs.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
+    const response = await fetch(sortedBlobs[0].downloadUrl);
+
     return {
       latestData: await response.json(),
-      blobUrl: blobs[0].url,
     };
   }
 
