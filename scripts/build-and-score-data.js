@@ -1,3 +1,5 @@
+import { BlobAccessError, list, put } from '@vercel/blob';
+import fetch from 'cross-fetch';
 import chunk from 'lodash/chunk.js';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,7 +34,12 @@ const mismatchedRepos = [];
 const wantedPackageName = process.argv[2];
 
 const buildAndScoreData = async () => {
+  console.log('⬇️️ Fetching latest data blob from the store');
+
+  const { latestData } = await fetchLatestData();
+
   console.log('📦️ Loading data from GitHub');
+
   let data = await loadRepositoryDataAsync();
 
   data = data.filter(project => {
@@ -68,17 +75,17 @@ const buildAndScoreData = async () => {
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
-  console.log('\n🔖 Determining npm package name');
+  console.log('\n🔖 Determining npm package names');
   await sleep(1000);
   data = data.map(fillNpmName);
 
-  console.log('\n⬇️ Loading download stats from npm');
+  console.log('\n⬇️ Fetching download stats from npm');
   await sleep(1000);
 
   // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
   let bulkList = [];
 
-  // Fetch scope packages data
+  // Fetch scoped packages data
   data = await Promise.all(
     data.map(project => {
       if (!project.template) {
@@ -93,15 +100,28 @@ const buildAndScoreData = async () => {
     })
   );
 
-  // Assemble and fetch data in bulk queries
+  // Assemble and fetch regular packages data in bulk queries
   const CHUNK_SIZE = 32;
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
   );
 
-  const downloadsList = (await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk)))).flat();
+  const downloadsList = (
+    await Promise.all(
+      bulkList.map(async (chunk, index) => {
+        await sleep(250 * index);
+        return await fetchNpmDataBulk(chunk);
+      })
+    )
+  ).flat();
+
   const downloadsListWeek = (
-    await Promise.all(bulkList.map(chunk => fetchNpmDataBulk(chunk, 'week')))
+    await Promise.all(
+      bulkList.map(async (chunk, index) => {
+        await sleep(250 * index);
+        return await fetchNpmDataBulk(chunk, 'week');
+      })
+    )
   ).flat();
 
   // Fill npm data from bulk queries
@@ -136,7 +156,7 @@ const buildAndScoreData = async () => {
     }
   });
 
-  // Process topic counts
+  console.log('\n🏷️ Processing topics');
   const topicCounts = {};
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
@@ -173,39 +193,45 @@ const buildAndScoreData = async () => {
     );
   }
 
-  if (wantedPackageName) {
-    const { libraries, ...rest } = JSON.parse(fs.readFileSync(DATA_PATH));
+  console.log('📄️ Preparing data file');
 
-    return fs.writeFileSync(
-      DATA_PATH,
-      JSON.stringify(
-        {
-          libraries: libraries.map(library => {
-            if (library.npmPkg === wantedPackageName) {
-              return data.find(entry => entry.npmPkg === wantedPackageName);
-            }
-            return library;
-          }),
-          ...rest,
-        },
-        null,
-        2
-      )
+  const { libraries, ...rest } = latestData;
+
+  let fileContent;
+
+  if (wantedPackageName) {
+    fileContent = JSON.stringify(
+      {
+        libraries: libraries.map(library => {
+          if (library.npmPkg === wantedPackageName) {
+            return data.find(entry => entry.npmPkg === wantedPackageName);
+          }
+          return library;
+        }),
+        ...rest,
+      },
+      null,
+      2
     );
   } else {
-    return fs.writeFileSync(
-      DATA_PATH,
-      JSON.stringify(
-        {
-          libraries: data,
-          topics: topicCounts,
-          topicsList: Object.keys(topicCounts).sort(),
-        },
-        null,
-        2
-      )
+    const existingData = [];
+    const newData = data.map(lib => lib.npmPkg);
+    const missingData = existingData.filter(url => !newData.includes(url));
+
+    fileContent = JSON.stringify(
+      {
+        libraries: [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data],
+        topics: topicCounts,
+        topicsList: Object.keys(topicCounts).sort(),
+      },
+      null,
+      2
     );
   }
+
+  await uploadToStore(fileContent);
+
+  return fs.writeFileSync(DATA_PATH, fileContent);
 };
 
 export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
@@ -287,6 +313,35 @@ async function loadRepositoryDataAsync() {
   }
 
   return result;
+}
+
+async function fetchLatestData() {
+  const { blobs } = await list();
+
+  if (blobs?.length > 0) {
+    const sortedBlobs = blobs.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
+    const response = await fetch(sortedBlobs[0].downloadUrl);
+
+    return {
+      latestData: await response.json(),
+    };
+  }
+
+  return JSON.parse(fs.readFileSync(DATA_PATH).toString());
+}
+
+async function uploadToStore(fileContent) {
+  console.log('⬆️ Uploading data blob to the store');
+  try {
+    await put('data.json', fileContent, { access: 'public' });
+  } catch (error) {
+    if (error instanceof BlobAccessError) {
+      console.error('❌ Cannot access the blob store, aborting!');
+      throw error;
+    } else {
+      throw error;
+    }
+  }
 }
 
 buildAndScoreData();

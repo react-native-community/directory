@@ -3345,7 +3345,7 @@
     "images": [
       "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/android_date.png",
       "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/android_time.png",
-      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/ios_date.png",
+      "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/ios_date_new.png",
       "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/ios_time.png",
       "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/windows_date.png",
       "https://raw.githubusercontent.com/react-native-datetimepicker/datetimepicker/master/docs/images/windows_time_2.png"
@@ -3482,10 +3482,6 @@
   },
   {
     "githubUrl": "https://github.com/react-native-text-input-mask/react-native-text-input-mask",
-    "images": [
-      "https://s3.amazonaws.com/react-native-text-input-mask/react-native-text-input-mask-ios.gif",
-      "https://s3.amazonaws.com/react-native-text-input-mask/react-native-text-input-mask-android-updated.gif"
-    ],
     "ios": true,
     "android": true
   },
@@ -3799,7 +3795,9 @@
     "examples": [
       "https://github.com/software-mansion/react-native-svg/tree/main/example",
       "https://github.com/software-mansion/react-native-svg/tree/main/fabric-example",
-      "https://github.com/software-mansion/react-native-svg/tree/main/macos-example",
+      "https://github.com/software-mansion/react-native-svg/tree/main/fabric-macos-example",
+      "https://github.com/software-mansion/react-native-svg/tree/main/fabric-windows-example",
+      "https://github.com/software-mansion/react-native-svg/tree/main/paper-macos-example",
       "https://github.com/software-mansion/react-native-svg/tree/main/tests-example",
       "https://github.com/software-mansion/react-native-svg/tree/main/web-example"
     ],
@@ -3847,14 +3845,6 @@
     "ios": true,
     "android": true,
     "windows": true
-  },
-  {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/react-native-unimodules",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true,
-    "alternatives": ["expo-modules-core"]
   },
   {
     "githubUrl": "https://github.com/codemotionapps/react-native-dark-mode/tree/master/library",
@@ -3988,7 +3978,7 @@
   },
   {
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/notifications",
-    "npmPkg": "@aws-amplify/pushnotification",
+    "npmPkg": "@aws-amplify/notifications",
     "ios": true,
     "android": true
   },
@@ -6490,7 +6480,9 @@
     "githubUrl": "https://github.com/Flair-Dev/react-native-awesome-gallery",
     "examples": ["https://github.com/Flair-Dev/react-native-awesome-gallery/tree/main/example"],
     "images": [
-      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example-0.0.3.gif"
+      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example-basic.gif",
+      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example-loop.gif",
+      "https://raw.githubusercontent.com/Flair-Dev/react-native-awesome-gallery/main/example-toolbar.gif"
     ],
     "ios": true,
     "android": true,
@@ -6949,10 +6941,9 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput/tree/master/packages/react-native-avoid-softinput",
+    "githubUrl": "https://github.com/mateusz1913/react-native-avoid-softinput/tree/main/packages/react-native-avoid-softinput",
     "examples": [
-      "https://github.com/mateusz1913/react-native-avoid-softinput/tree/main/packages/fabricMobile",
-      "https://github.com/mateusz1913/react-native-avoid-softinput/tree/main/packages/mobile"
+      "https://github.com/mateusz1913/react-native-avoid-softinput/tree/main/packages/example"
     ],
     "images": [
       "https://raw.githubusercontent.com/mateusz1913/react-native-avoid-softinput/master/static/form.gif",
@@ -8323,8 +8314,7 @@
       "https://github.com/kirillzyusko/react-native-keyboard-controller/tree/main/example"
     ],
     "images": [
-      "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/android.gif",
-      "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/ios.gif"
+      "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/demo.gif"
     ],
     "ios": true,
     "android": true
@@ -8951,12 +8941,9 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/howljs/react-native-calendar-kit",
+    "githubUrl": "https://github.com/howljs/react-native-calendar-kit/tree/main/packages/react-native-calendar-kit",
     "npmPkg": "@howljs/calendar-kit",
-    "examples": ["https://github.com/howljs/react-native-calendar-kit/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/howljs/react-native-calendar-kit/main/assets/demo.gif"
-    ],
+    "examples": ["https://github.com/howljs/react-native-calendar-kit/tree/main/apps/example"],
     "ios": true,
     "android": true
   },
@@ -9939,14 +9926,13 @@
   {
     "githubUrl": "https://github.com/maplibre/maplibre-react-native",
     "npmPkg": "@maplibre/maplibre-react-native",
-    "examples": ["https://github.com/maplibre/maplibre-react-native/tree/main/example"],
+    "examples": [
+      "https://github.com/maplibre/maplibre-react-native/tree/main/packages/expo-app",
+      "https://github.com/maplibre/maplibre-react-native/tree/main/packages/react-native-app"
+    ],
     "images": [
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/assets/indoor_building_map_ios.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_choropleth_layer.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_clustering_earthquakes.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_data_driven_circle_colors.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_image_overlay.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/example/readme_assets/example_custom_callout.png"
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/assets/indoor_building_map_android.png",
+      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/assets/indoor_building_map_ios.png"
     ],
     "ios": true,
     "android": true
@@ -10647,8 +10633,9 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/oktaysenkan/react-native-iconify",
-    "examples": ["https://github.com/oktaysenkan/react-native-iconify/tree/main/example"],
+    "githubUrl": "https://github.com/oktaysenkan/monicon/tree/main/packages/native",
+    "npmPkg": "@monicon/native",
+    "examples": ["https://github.com/oktaysenkan/monicon/tree/main/apps/react-native-app"],
     "ios": true,
     "android": true,
     "web": true
@@ -12011,12 +11998,6 @@
   {
     "githubUrl": "https://github.com/mehuljetani/react-native-stack-carousel",
     "examples": ["https://github.com/mehuljetani/react-native-stack-carousel"],
-    "images": [
-      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/horizontalLeft.gif",
-      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/horizontalRight.gif",
-      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/verticalBottom.gif",
-      "https://github.com/mehuljetani/react-native-stack-carousel/raw/main/src/assets/verticalTop.gif"
-    ],
     "ios": true,
     "android": true
   },
@@ -12153,10 +12134,7 @@
   },
   {
     "githubUrl": "https://github.com/jamsch/expo-speech-recognition",
-    "npmPkg": "expo-speech-recognition",
-    "examples": [
-      "https://github.com/jamsch/expo-speech-recognition/tree/main/example"
-    ],
+    "examples": ["https://github.com/jamsch/expo-speech-recognition/tree/main/example"],
     "images": [
       "https://github.com/jamsch/expo-speech-recognition/blob/main/images/preview.gif?raw=true",
       "https://github.com/jamsch/expo-speech-recognition/blob/main/images/volume-metering.gif?raw=true",
@@ -12169,10 +12147,7 @@
   },
   {
     "githubUrl": "https://github.com/dcavalcante/react-native-sprites",
-    "npmPkg": "react-native-sprites",
-    "examples": [
-      "https://github.com/dcavalcante/react-native-sprites/tree/main/example"
-    ],
+    "examples": ["https://github.com/dcavalcante/react-native-sprites/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,

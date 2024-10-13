@@ -1,0 +1,24 @@
+name: Cleanup data blobs
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Run once a week on Thursday at midnight - https://crontab.guru/#0_0_*_*_2
+    - cron: '0 0 * * 2'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Install dependencies
+      run: yarn
+    - name: Cleanup data blobs
+      run: yarn ci:cleanup-blobs
+      env:
+        BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}

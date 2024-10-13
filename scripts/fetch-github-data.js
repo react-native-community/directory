@@ -102,7 +102,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
     });
 
-    if (!result.data && result.errors) {
+    if (result.errors) {
       if (result.errors[0].type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
