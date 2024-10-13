@@ -8,6 +8,10 @@ const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 
 console.log('🧮 Recalculating popularity score');
 
-const processedLibraries = data.libraries.map(lib => calculatePopularityScore(lib));
+const { libraries, ...rest } = data;
+const processedLibraries = libraries.map(lib => calculatePopularityScore(lib));
 
-fs.writeFileSync(LIBRARIES_JSON_PATH, JSON.stringify({ libraries: processedLibraries }, null, 2));
+fs.writeFileSync(
+  LIBRARIES_JSON_PATH,
+  JSON.stringify({ libraries: processedLibraries, ...rest }, null, 2)
+);

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, darkColors, P, A } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
@@ -8,6 +8,47 @@ import { Library as LibraryType } from '../../types';
 type Props = {
   library: LibraryType | { popularity: number };
   markOnly?: boolean;
+  style?: ViewStyle;
+};
+
+const TrendingMark = ({ library, style, markOnly = false }: Props) => {
+  const { isDark } = useContext(CustomAppearanceContext);
+  const { popularity = -100 } = library;
+  const popularityStyles = getPopularityStyles(popularity, markOnly);
+  const markBackgroundColor = isDark ? darkColors.border : colors.gray2;
+
+  const content = (
+    <>
+      <View
+        style={[
+          styles.popularityMark,
+          styles.popularityMarkBackground,
+          { backgroundColor: markBackgroundColor, top: markOnly ? 11 : 7 },
+        ]}
+      />
+      <View style={[styles.popularityMark, popularityStyles]} />
+      <P
+        style={[
+          styles.popularityScore,
+          {
+            color: popularityStyles.backgroundColor,
+            marginBottom: markOnly ? 0 : 6,
+            fontSize: markOnly ? 15 : 12,
+          },
+        ]}>
+        {getPopularityGrade(popularity)}
+        {!markOnly && ` (${(popularity * 100).toFixed(1)})`}
+      </P>
+    </>
+  );
+
+  return markOnly ? (
+    <View style={[styles.container, style]}>{content}</View>
+  ) : (
+    <A href="/scoring" style={[styles.container, styles.scoringLink, style]}>
+      {content}
+    </A>
+  );
 };
 
 const getPopularityStyles = (popularity, markOnly) => {
@@ -59,46 +100,6 @@ const getPopularityGrade = popularity => {
   }
 };
 
-const PopularityMark = ({ library, markOnly = false }: Props) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const { popularity = -1 } = library;
-  const popularityStyles = getPopularityStyles(popularity, markOnly);
-  const markBackgroundColor = isDark ? darkColors.border : colors.gray2;
-
-  const content = (
-    <>
-      <View
-        style={[
-          styles.popularityMark,
-          styles.popularityMarkBackground,
-          { backgroundColor: markBackgroundColor, top: markOnly ? 11 : 7 },
-        ]}
-      />
-      <View style={[styles.popularityMark, popularityStyles]} />
-      <P
-        style={[
-          styles.popularityScore,
-          {
-            color: popularityStyles.backgroundColor,
-            marginBottom: markOnly ? 0 : 6,
-            fontSize: markOnly ? 15 : 12,
-          },
-        ]}>
-        {getPopularityGrade(popularity)}
-        {!markOnly && ` (${(popularity * 100).toFixed(1)})`}
-      </P>
-    </>
-  );
-
-  return markOnly ? (
-    <View style={styles.container}>{content}</View>
-  ) : (
-    <A href="/scoring" style={[styles.container, styles.scoringLink]}>
-      {content}
-    </A>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     marginBottom: 4,
@@ -123,4 +124,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PopularityMark;
+export default TrendingMark;
