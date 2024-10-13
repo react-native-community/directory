@@ -8953,12 +8953,11 @@
   {
     "githubUrl": "https://github.com/howljs/react-native-calendar-kit",
     "npmPkg": "@howljs/calendar-kit",
-    "examples": ["https://github.com/howljs/react-native-calendar-kit/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/howljs/react-native-calendar-kit/main/assets/demo.gif"
-    ],
+    "examples": ["https://github.com/howljs/react-native-calendar-kit/tree/main/apps/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Stringsaeed/react-native-tooltiplize",
