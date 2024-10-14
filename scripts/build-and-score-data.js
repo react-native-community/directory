@@ -214,9 +214,9 @@ const buildAndScoreData = async () => {
       2
     );
   } else {
-    const existingData = [];
+    const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
-    const missingData = existingData.filter(url => !newData.includes(url));
+    const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
 
     fileContent = JSON.stringify(
       {
