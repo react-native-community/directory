@@ -12154,5 +12154,13 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pachun/react-native-use-app-lifecycle",
+    "npmPkg": "@pachun/react-native-use-app-lifecycle",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
