@@ -61,7 +61,7 @@ const Trending = ({ data, query }) => {
                 <LibraryWithLoading
                   key={`list-item-${index}-${item.github.name}`}
                   library={item}
-                  showPopularity
+                  showTrendingMark
                 />
               ))}
             </View>

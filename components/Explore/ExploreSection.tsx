@@ -49,8 +49,8 @@ const renderLibs = (list: LibraryType[], count = 4) => {
           <LibraryWithLoading
             key={`explore-item-${index}-${item.github.name}`}
             library={item}
-            showPopularity
-            skipMeta
+            showTrendingMark
+            skipMetadata
           />
         ))}
     </View>

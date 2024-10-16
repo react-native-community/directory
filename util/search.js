@@ -2,18 +2,30 @@ import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { isEmptyOrNull } from './strings';
 
 const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
-  const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
-  const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
-  const isExactNameMatch =
+  const exactNameMatchPoints =
     (!isEmptyOrNull(github.name) && github.name === querySearch) ||
-    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch);
-  const isNameMatch = isExactNameMatch ? 150 : isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
-  const isDescriptionMatch =
-    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
-      ? 10
+    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch)
+      ? 250
       : 0;
-  const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
-  const matchScore = isNameMatch + isDescriptionMatch + isTopicMatch;
+
+  const npmPkgNameMatchPoints = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch) ? 100 : 0;
+  const repoNameMatchPoints =
+    !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 100 : 0;
+
+  const descriptionMatchPoints =
+    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
+      ? 50
+      : 0;
+
+  const topicMatchPoints = topicSearchString.includes(querySearch) ? 10 : 0;
+
+  const matchScore =
+    exactNameMatchPoints +
+    repoNameMatchPoints +
+    npmPkgNameMatchPoints +
+    descriptionMatchPoints +
+    topicMatchPoints;
+
   if (matchScore && unmaintained) {
     return matchScore / 1000;
   } else {

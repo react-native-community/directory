@@ -105,31 +105,39 @@ const getUpdatedDaysAgo = data => {
 };
 
 /**
- * Popularity Score
+ * Trending Score
  */
 
-const MIN_MONTHLY_DOWNLOADS = 250;
+const MIN_MONTHLY_DOWNLOADS = 500;
+const MANY_MONTHLY_DOWNLOADS = 5000;
 const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
 export const calculatePopularityScore = data => {
-  const { npm, github, unmaintained } = data;
-  const { downloads, weekDownloads } = npm;
-  const { createdAt, stars } = github.stats;
+  const {
+    npm: { downloads, weekDownloads },
+    github,
+    unmaintained,
+  } = data;
 
   if (!downloads || !weekDownloads) {
     return {
       ...data,
-      popularity: -1,
+      popularity: -100,
     };
   }
 
-  const popularityGain = (weekDownloads - Math.floor(downloads / 4)) / downloads;
-  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.45 : 0;
+  const { createdAt, stars } = github.stats;
+
+  const popularityGain = (weekDownloads - Math.floor(downloads / 4.5)) / downloads;
+
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.25 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
-  const unmaintainedPenalty = unmaintained ? 0.25 : 0;
-  const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.3 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.5 : 0;
+  const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.5 : 0;
+
+  const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 5 : 0) : 0;
 
   const popularity = parseFloat(
     (
@@ -137,7 +145,8 @@ export const calculatePopularityScore = data => {
       downloadsPenalty -
       unmaintainedPenalty -
       starsPenalty -
-      freshPackagePenalty
+      freshPackagePenalty +
+      downloadBonus
     ).toFixed(3)
   );
 
