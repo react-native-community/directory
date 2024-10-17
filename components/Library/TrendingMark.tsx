@@ -62,7 +62,7 @@ const getPopularityStyles = (popularity, markOnly) => {
   } else if (popularity > 0.25) {
     return {
       width: 24,
-      backgroundColor: '#e20026',
+      backgroundColor: '#e70a2f',
       top,
     };
   } else if (popularity > 0.1) {

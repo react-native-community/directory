@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import ContentContainer from './ContentContainer';
 import NavigationTab from './NavigationTab';
-import { colors, darkColors, H1, P } from '../common/styleguide';
+import { colors, darkColors, H1, H2 } from '../common/styleguide';
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type NavigationProps = PropsWithChildren<{
@@ -33,7 +33,7 @@ const Navigation = ({ title, description, children, noHeader = false }: Navigati
             { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
           ]}>
           <H1 style={styles.header}>{title}</H1>
-          <P style={styles.headerDescription}>{description}</P>
+          <H2 style={styles.headerDescription}>{description}</H2>
           {children}
         </View>
       ) : null}
@@ -62,6 +62,8 @@ const styles = StyleSheet.create({
   headerDescription: {
     textAlign: 'center',
     color: colors.pewter,
+    fontWeight: '500',
+    fontSize: 16,
     paddingTop: 4,
     paddingBottom: 6,
     paddingHorizontal: 40,

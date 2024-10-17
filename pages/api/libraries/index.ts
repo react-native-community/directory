@@ -75,6 +75,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     isRecommended: req.query.isRecommended,
     wasRecentlyUpdated: req.query.wasRecentlyUpdated,
     minPopularity: req.query.minPopularity,
+    minMonthlyDownloads: req.query.minMonthlyDownloads,
     newArchitecture: req.query.newArchitecture,
     skipLibs: req.query.skipLibs,
     skipTools: req.query.skipTools,
