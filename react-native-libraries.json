@@ -7751,10 +7751,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/zoontek/react-native-bars",
-    "examples": ["https://github.com/zoontek/react-native-bars/tree/main/example"],
+    "githubUrl": "https://github.com/zoontek/react-native-edge-to-edge",
+    "examples": ["https://github.com/zoontek/react-native-edge-to-edge/tree/main/example"],
     "images": [
-      "https://raw.githubusercontent.com/zoontek/react-native-bars/HEAD/docs/android_demo.gif"
+      "https://raw.githubusercontent.com/zoontek/react-native-edge-to-edge/HEAD/docs/android_demo.gif"
     ],
     "ios": true,
     "android": true
@@ -12162,5 +12162,45 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/okwasniewski/react-native-bottom-tabs",
+    "examples": ["https://github.com/okwasniewski/react-native-bottom-tabs/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "visionos": true
+  },
+  {
+    "githubUrl": "https://github.com/AlirezaHadjar/react-native-fast-confetti",
+    "examples": ["https://github.com/AlirezaHadjar/react-native-fast-confetti/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/rgommezz/react-native-animated-stopwatch-timer",
+    "examples": [
+      "https://github.com/rgommezz/react-native-animated-stopwatch-timer/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/rgommezz/react-native-animated-stopwatch-timer/blob/main/gifs/stopwatch.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/IvanIhnatsiuk/react-native-fast-secure-storage",
+    "examples": [
+      "https://github.com/IvanIhnatsiuk/react-native-fast-secure-storage/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nativeflowteam/nativeflowcss",
+    "examples": ["https://github.com/nativeflowteam/nativeflowcss/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
