@@ -45,7 +45,7 @@ const Header = () => {
           </Tooltip>
           <Button
             openInNewTab
-            aria-label="GitHub"
+            aria-label="GitHub repository"
             href="https://github.com/react-native-community/directory"
             style={[styles.button, styles.themeButtonSmall]}>
             <GitHub fill={isDark ? colors.white : colors.black} />

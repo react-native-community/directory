@@ -189,7 +189,6 @@ export const HoverEffect = ({ children }) => {
     <View
       ref={ref}
       style={[isHovered && { opacity: 0.8 }, isActive && { opacity: 0.5 }]}
-      focusable={false}
       accessible={false}>
       {children}
     </View>
