@@ -51,7 +51,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
           <Tooltip
             sideOffset={8}
             trigger={
-              <View style={styles.popularityContainer}>
+              <View style={styles.trendingMarkContainer}>
                 <TrendingMark library={library} />
               </View>
             }>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   unmaintained: {
     opacity: 0.88,
   },
-  popularityContainer: {
+  trendingMarkContainer: {
     alignSelf: 'flex-start',
   },
 });

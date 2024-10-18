@@ -33,6 +33,7 @@ export type Query = {
   isRecommended?: string;
   wasRecentlyUpdated?: string;
   minPopularity?: string | number;
+  minMonthlyDownloads?: string | number;
   newArchitecture?: string;
 };
 
