@@ -12204,14 +12204,28 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/grahammendick/navigation",
-    "npmPkg": "https://www.npmjs.com/package/navigation",
+    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react",
+    "examples": [
+      "https://github.com/grahammendick/navigation/tree/master/NavigationReact/sample"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react-native",
     "examples": [
       "https://github.com/grahammendick/navigation/tree/master/NavigationReactNative/sample"
     ],
     "ios": true,
     "android": true,
-    "web": true,
     "newArchitecture": true
   }
 ]
