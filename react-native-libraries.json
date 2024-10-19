@@ -12217,7 +12217,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react-native",
