@@ -12202,5 +12202,16 @@
     "examples": ["https://github.com/nativeflowteam/nativeflowcss/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/grahammendick/navigation",
+    "npmPkg": "https://www.npmjs.com/package/navigation",
+    "examples": [
+      "https://github.com/grahammendick/navigation/tree/master/NavigationReactNative/sample"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
