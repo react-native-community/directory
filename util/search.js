@@ -46,6 +46,7 @@ export const handleFilterLibraries = ({
   isRecommended,
   wasRecentlyUpdated,
   minPopularity,
+  minMonthlyDownloads,
   newArchitecture,
   skipLibs,
   skipTools,
@@ -53,7 +54,9 @@ export const handleFilterLibraries = ({
 }) => {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
+
   const minPopularityValue = minPopularity && parseFloat(minPopularity) / 100;
+  const minMonthlyDownloadsValue = minMonthlyDownloads && parseInt(minMonthlyDownloads, 10);
 
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({
@@ -169,8 +172,15 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (minPopularityValue) {
+    if (minPopularityValue && minMonthlyDownloadsValue) {
+      return (
+        library.popularity >= minPopularityValue &&
+        library.npm.downloads >= minMonthlyDownloadsValue
+      );
+    } else if (minPopularityValue) {
       return library.popularity >= minPopularityValue;
+    } else if (minMonthlyDownloadsValue) {
+      return library.npm.downloads >= minMonthlyDownloadsValue;
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
