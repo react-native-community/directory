@@ -8178,7 +8178,8 @@
     "githubUrl": "https://github.com/invertase/notifee/tree/main/packages/react-native",
     "npmPkg": "@notifee/react-native",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-notifications",
