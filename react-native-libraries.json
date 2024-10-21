@@ -12229,5 +12229,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hsjoberg/react-native-turbo-sqlite",
+    "examples": [
+      "https://github.com/hsjoberg/react-native-turbo-sqlite#usage"
+    ],
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "newArchitecture": true
   }
 ]
