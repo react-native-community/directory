@@ -12213,9 +12213,7 @@
   },
   {
     "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react",
-    "examples": [
-      "https://github.com/grahammendick/navigation/tree/master/NavigationReact/sample"
-    ],
+    "examples": ["https://github.com/grahammendick/navigation/tree/master/NavigationReact/sample"],
     "ios": true,
     "android": true,
     "web": true,
@@ -12232,12 +12230,18 @@
   },
   {
     "githubUrl": "https://github.com/hsjoberg/react-native-turbo-sqlite",
-    "examples": [
-      "https://github.com/hsjoberg/react-native-turbo-sqlite/tree/master/example"
-    ],
+    "examples": ["https://github.com/hsjoberg/react-native-turbo-sqlite/tree/master/example"],
     "ios": true,
     "android": true,
     "macos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pachun/simple-expo-update",
+    "npmPkg": "@pachun/simple-expo-update",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
