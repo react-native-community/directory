@@ -12243,5 +12243,59 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SohelIslamImran/expo-in-app-updates",
+    "examples": ["https://github.com/SohelIslamImran/expo-in-app-updates/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-manifests",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-structured-headers",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-json-utils",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/blake-simpson/expo-jwt",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/mmusaib/expo-skeleton-loading",
+    "images": ["https://i.imgur.com/toxEFWe.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-reactions",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-reactions/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-reactions/main/assets/default.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-reactions/main/assets/custom.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/LunatiqueCoder/expo-notifee-plugin",
+    "ios": true
   }
 ]
