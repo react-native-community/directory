@@ -12300,8 +12300,7 @@
   },
   {
     "githubUrl": "https://github.com/LonelyCpp/rn-scroll-viewport-tracker",
-    "npmPkg": "rn-scroll-viewport-tracker",
-    "images": ["https://github.com/LonelyCpp/rn-scroll-viewport-tracker/blob/main/docs/viewport.png?raw=true"],
+    "images": ["https://raw.githubusercontent.com/LonelyCpp/rn-scroll-viewport-tracker/refs/heads/main/docs/viewport.png"],
     "ios": true,
     "android": true,
     "expoGo": true
