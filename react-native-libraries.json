@@ -12306,5 +12306,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/paufau/react-native-multiple-modals",
+    "npmPkg": "react-native-multiple-modals",
+    "examples": [
+      "https://github.com/paufau/react-native-multiple-modals?tab=readme-ov-file#usage",
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
