@@ -7306,7 +7306,9 @@
     "githubUrl": "https://github.com/axelra-ag/react-native-animateable-text",
     "examples": ["https://github.com/axelra-ag/react-native-animateable-text/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/WoLewicki/react-native-window-view",
