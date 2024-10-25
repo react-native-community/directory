@@ -12297,5 +12297,12 @@
   {
     "githubUrl": "https://github.com/LunatiqueCoder/expo-notifee-plugin",
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/LonelyCpp/rn-scroll-viewport-tracker",
+    "images": ["https://raw.githubusercontent.com/LonelyCpp/rn-scroll-viewport-tracker/refs/heads/main/docs/viewport.png"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
