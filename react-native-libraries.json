@@ -12328,5 +12328,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pchalupa/expo-alternate-app-icons",
+    "examples": ["https://github.com/pchalupa/expo-alternate-app-icons/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
