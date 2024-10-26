@@ -12302,7 +12302,9 @@
   },
   {
     "githubUrl": "https://github.com/LonelyCpp/rn-scroll-viewport-tracker",
-    "images": ["https://raw.githubusercontent.com/LonelyCpp/rn-scroll-viewport-tracker/refs/heads/main/docs/viewport.png"],
+    "images": [
+      "https://raw.githubusercontent.com/LonelyCpp/rn-scroll-viewport-tracker/refs/heads/main/docs/viewport.png"
+    ],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -12311,6 +12313,20 @@
     "githubUrl": "https://github.com/paufau/react-native-multiple-modals",
     "ios": true,
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-dev-client",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-build-properties",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
     "newArchitecture": true
   }
 ]
