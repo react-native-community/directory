@@ -12250,7 +12250,8 @@
     "githubUrl": "https://github.com/SohelIslamImran/expo-in-app-updates",
     "examples": ["https://github.com/SohelIslamImran/expo-in-app-updates/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-manifests",
