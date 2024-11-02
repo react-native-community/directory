@@ -12341,5 +12341,23 @@
     "githubUrl": "https://github.com/aravind3566/react-native-get-app-list",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/quidone/react-native-wheel-picker",
+    "npmPkg": "@quidone/react-native-wheel-picker",
+    "examples": [
+      "https://snack.expo.dev/@sergeyrozhkov/quidone-react-native-wheel-picker",
+      "https://github.com/quidone/react-native-wheel-picker/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/quidone/react-native-wheel-picker/raw/main/docs/images/simple-picker-ios.gif",
+      "https://github.com/quidone/react-native-wheel-picker/raw/main/docs/images/simple-picker-android.gif",
+      "https://github.com/quidone/react-native-wheel-picker/raw/main/docs/images/customized-picker.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
