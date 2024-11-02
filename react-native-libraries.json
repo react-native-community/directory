@@ -12359,5 +12359,22 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/HichamELBSI/react-native-body-highlighter",
+    "examples": [
+      "https://staging-snack.expo.dev/@hichamelbsi/react-native-body-highlighter"
+    ],
+    "images": [
+      "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-female-front.PNG",
+      "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-female-back.PNG",
+      "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-male-front.PNG",
+      "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-male-back.PNG"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
