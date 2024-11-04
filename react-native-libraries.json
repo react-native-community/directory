@@ -12376,5 +12376,17 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/talsec/Free-RASP-ReactNative",
+    "npmPkg": "freerasp-react-native",
+    "examples": [
+      "https://www.talsec.app/freerasp-in-app-protection-security-talsec",
+      "https://github.com/talsec/Free-RASP-ReactNative/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
