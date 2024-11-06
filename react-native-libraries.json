@@ -12362,9 +12362,7 @@
   },
   {
     "githubUrl": "https://github.com/HichamELBSI/react-native-body-highlighter",
-    "examples": [
-      "https://staging-snack.expo.dev/@hichamelbsi/react-native-body-highlighter"
-    ],
+    "examples": ["https://staging-snack.expo.dev/@hichamelbsi/react-native-body-highlighter"],
     "images": [
       "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-female-front.PNG",
       "https://github.com/HichamELBSI/react-native-body-highlighter/raw/main/docs/screenshots/example-female-back.PNG",
@@ -12387,6 +12385,16 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pnthach95/react-native-root-view-background",
+    "npmPkg": "@pnthach95/react-native-root-view-background",
+    "examples": [
+      "https://github.com/pnthach95/react-native-root-view-background/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
