@@ -12388,5 +12388,15 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
+    "npmPkg": "react-native-webp-converter",
+    "examples": [
+      "https://github.com/EdgarJMesquita/react-native-webp-converter/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
