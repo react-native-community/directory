@@ -11463,9 +11463,10 @@
   },
   {
     "githubUrl": "https://github.com/obytes/app-icon-badge",
-    "examples": ["https://github.com/EvanBacon/expo-quick-actions/tree/main/example"],
+    "examples": ["https://github.com/obytes/app-icon-badge/tree/master/demo"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/achorein/expo-share-intent",
