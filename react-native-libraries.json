@@ -12455,5 +12455,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wneel/react-native-get-device-locale",
+    "npmPkg": "react-native-get-device-locale",
+    "examples": [
+      "https://github.com/wneel/react-native-get-device-locale",
+      "https://snack.expo.dev/@wawa2048/react-native-get-device-locale-demo"
+    ],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
