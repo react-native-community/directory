@@ -58,7 +58,7 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     const response = await fetch(url);
     const downloadData = await response.json();
 
-    if (!downloadData.downloads) {
+    if (!downloadData.package) {
       console.warn(
         `[NPM] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
