@@ -11463,9 +11463,10 @@
   },
   {
     "githubUrl": "https://github.com/obytes/app-icon-badge",
-    "examples": ["https://github.com/EvanBacon/expo-quick-actions/tree/main/example"],
+    "examples": ["https://github.com/obytes/app-icon-badge/tree/master/demo"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/achorein/expo-share-intent",
@@ -12406,8 +12407,15 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/master/code/ui/tamagui",
+    "examples": [
+      "https://tamagui.dev"
+    ],
+    "images": ["https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"],
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
-    "npmPkg": "react-native-webp-converter",
     "images": ["https://raw.githubusercontent.com/EdgarJMesquita/react-native-webp-converter/refs/tags/v0.1.4/docs/assets/quality-5.png"],
     "examples": [
       "https://github.com/EdgarJMesquita/react-native-webp-converter/tree/main/example"
