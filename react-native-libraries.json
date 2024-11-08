@@ -2083,11 +2083,28 @@
       "https://github.com/invertase/react-native-google-mobile-ads/tree/main/RNGoogleMobileAdsExample"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/analytics",
     "npmPkg": "@react-native-firebase/analytics",
+    "ios": true,
+    "tvos": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app-check",
+    "npmPkg": "@react-native-firebase/app-check",
+    "ios": true,
+    "tvos": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app-distribution",
+    "npmPkg": "@react-native-firebase/app-distribution",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -2096,6 +2113,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/app",
     "npmPkg": "@react-native-firebase/app",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2103,6 +2121,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/auth",
     "npmPkg": "@react-native-firebase/auth",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2110,6 +2129,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/crashlytics",
     "npmPkg": "@react-native-firebase/crashlytics",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2117,6 +2137,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/database",
     "npmPkg": "@react-native-firebase/database",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2131,6 +2152,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/firestore",
     "npmPkg": "@react-native-firebase/firestore",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2138,6 +2160,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/functions",
     "npmPkg": "@react-native-firebase/functions",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2145,6 +2168,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/in-app-messaging",
     "npmPkg": "@react-native-firebase/in-app-messaging",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2152,6 +2176,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/messaging",
     "npmPkg": "@react-native-firebase/messaging",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2159,6 +2184,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/ml",
     "npmPkg": "@react-native-firebase/ml",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2166,6 +2192,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/perf",
     "npmPkg": "@react-native-firebase/perf",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2173,6 +2200,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/remote-config",
     "npmPkg": "@react-native-firebase/remote-config",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -2180,6 +2208,7 @@
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/storage",
     "npmPkg": "@react-native-firebase/storage",
     "ios": true,
+    "tvos": true,
     "android": true,
     "newArchitecture": true
   },
@@ -5702,10 +5731,13 @@
     "githubUrl": "https://github.com/invertase/react-native-apple-authentication",
     "npmPkg": "@invertase/react-native-apple-authentication",
     "examples": [
-      "https://github.com/invertase/react-native-apple-authentication/tree/master/example"
+      "https://github.com/invertase/react-native-apple-authentication/tree/main/example"
     ],
     "images": ["https://static.invertase.io/assets/apple-auth.png"],
-    "ios": true
+    "ios": true,
+    "macos": true,
+    "visionos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/edamameldn/tape-cli",
