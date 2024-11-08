@@ -12405,5 +12405,13 @@
     ],
     "images": ["https://raw.githubusercontent.com/EdgarJMesquita/expo-pip/refs/heads/main/docs/assets/demo.gif"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/master/code/ui/tamagui",
+    "examples": [
+      "https://tamagui.dev"
+    ],
+    "images": ["https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"],
+    "android": true
   }
 ]
