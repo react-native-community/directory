@@ -12239,16 +12239,11 @@
       "https://github.com/SICK-Solana/sick-app",
       "https://snack.expo.dev/@mathdebate09/react-native-flow"
     ],
-    "images": [
-      "https://mathdebate09.github.io/dummy-img-cdn/assets/nativeflow/meta.png",
-      "https://mathdebate09.github.io/dummy-img-cdn/assets/nativeflow/twitter.png"
-    ],
     "ios": true,
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true,
-    "alternatives": ["nativewind", "twrnc", "unistyles"]
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation",
