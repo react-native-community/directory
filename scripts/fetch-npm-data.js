@@ -1,7 +1,6 @@
 import fetch from 'cross-fetch';
 
-import { sleep } from './helpers.js';
-import { REQUEST_SLEEP } from '../util/Constants.js';
+import { sleep, REQUEST_SLEEP } from './helpers.js';
 
 const ATTEMPTS_LIMIT = 5;
 
