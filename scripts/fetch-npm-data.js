@@ -1,6 +1,7 @@
 import fetch from 'cross-fetch';
 
 import { sleep } from './helpers.js';
+import { REQUEST_SLEEP } from '../util/Constants.js';
 
 const ATTEMPTS_LIMIT = 5;
 
@@ -45,7 +46,7 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
       console.error('[NPM] Looks like we have reach the NPM API rate limit!', error);
       return namesArray.map(name => ({ name, npm: null }));
     }
-    await sleep(2500 + 500 * attemptsCount, 5000 + 500 * attemptsCount);
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     console.log(`[NPM] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
     return await fetchNpmDataBulk(namesArray, period, attemptsCount + 1);
   }
@@ -85,7 +86,7 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
       console.error('[NPM] Looks like we have reach the NPM API rate limit!', error);
       return { ...pkgData, npm: null };
     }
-    await sleep(2500 + 500 * attemptsCount, 5000 + 500 * attemptsCount);
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmData(pkgData, attemptsCount + 1);
   }

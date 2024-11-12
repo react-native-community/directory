@@ -55,7 +55,7 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           icon: <Download fill={iconColor} width={16} height={18} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
-              {`${npm.downloads.toLocaleString()}`} {npm.period}ly downloads
+              {`${npm.downloads.toLocaleString()}`} monthly downloads
             </A>
           ),
         }
