@@ -10,7 +10,6 @@ const withBundleAnalyzer = BundleAnalyzer({
 
 export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
   productionBrowserSourceMaps: true,
-  swcMinify: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
