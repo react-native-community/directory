@@ -32,7 +32,7 @@
 
 ### New library entry template
 
-> [!NOTE]
+> [!IMPORTANT]
 > Please follow format, fields order and indentation as seen below, skip any of the `false` values and do not fill optional fields, unless it's necessary.
 > You can find the detailed descriptions of the fields below the entry template.
 
@@ -60,6 +60,12 @@
 }
 ```
 
+> [!NOTE]
+> If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
+> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` in the package subdirectory.
+> However, GitHub stats will be based on the monorepo, because there isn't really another option.
+
+
 ### Library fields description
 
 #### ⚙️ General
@@ -67,14 +73,15 @@
 - #### ❗ `githubUrl` **(required)**
 
   **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
-
-  > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
+> [!WARNING]
+> Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
 
 - #### `npmPkg`
 
   **(string)** - npm package name, by default GitHub repository name will be used. Example: `"@expo/react-native-action-sheet"`.
 
-  > Fill only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
+> [!TIP]
+> Fill `npmPkg` only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
 
 - #### `examples`
   **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
@@ -82,7 +89,8 @@
 
   **(array of strings)** - URLs to static images or GIFs that shows the library functionality.
 
-  > Please do not add logotypes or other branding material, and please avoid linking multiple resources which shows the same feature.
+> [!TIP]
+> Please do not add logotypes or other branding materials to the `images` array, and please avoid linking multiple assets which shows the same feature.
 
 #### 📱 Platforms
 
@@ -96,7 +104,7 @@
 
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
   
-> [!NOTE]
+> [!TIP]
 > **Any** library can be used with Expo, if you use dev clients and prebuild.
 
 #### 🖥️ Out-of-tree Platforms
@@ -125,7 +133,8 @@
 
   **(boolean)** - signify that a library supports, or not, the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
 
-  > Set this tag only when automatic architecture detection fails for your package, despite it supports the New Architecture.
+> [!TIP]
+> Set `newArchitecture` field only when automatic architecture detection fails for your package, despite it supports the New Architecture.
 
 ### 📝 Additional context for tags
 
@@ -134,13 +143,6 @@
 
 - #### `alternatives`
   **(array of strings)** - provide a list of alternatives to the library. eg: `["expo-camera", "react-native-vision-camera"]`. This is used to provide a list of alternatives to a library if it is unmaintained or does not support the New Architecture.
-
----
-
-> [!NOTE]
-> If your package is within a monorepo on GitHub, eg: https://github.com/expo/expo/tree/main/packages/expo-web-browser,
-> then the name, description, homepage, and topics (keywords) will be extracted from `package.json` in the package subdirectory.
-> However, GitHub stats will be based on the monorepo, because there isn't really another option.
 
 ## How do I run my own version locally?
 
@@ -175,27 +177,42 @@ Get a commit on `main` and it will be automatically deployed.
 
 Sure, go for it!
 
-`https://reactnative.directory/api/libraries`
+```
+https://reactnative.directory/api/libraries
+```
 
 - Returns a list of all libraries in `JSON` format.
 
-`https://reactnative.directory/api/libraries?search=webgl`
+<details>
+  <summary><b>More details on API queries</b></summary>
+  <br/>
 
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
-
-`https://reactnative.directory/api/libraries?search=webgl&expoGo=true`
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
-
-`https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true`
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
-
-`https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true&isPopular=true`
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
-
-All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
+  ```
+  https://reactnative.directory/api/libraries?search=webgl
+  ```
+  
+  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
+  
+  ```
+  https://reactnative.directory/api/libraries?search=webgl&expoGo=true
+  ```
+  
+  - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
+  
+  ```
+  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true
+  ```
+  
+  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
+  
+  ```
+  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true&isPopular=true
+  ```
+  
+  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
+  
+  All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
+</details>
 
 ## I don't like how you calculate scores.
 
