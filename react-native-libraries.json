@@ -4720,16 +4720,16 @@
   },
   {
     "githubUrl": "https://github.com/GregFrench/react-native-wheel-picker",
+    "npmPkg": "@gregfrench/react-native-wheel-picker",
     "ios": true,
-    "android": true,
-    "npmPkg": "@gregfrench/react-native-wheel-picker"
+    "android": true
   },
   {
-    "githubUrl": "https://github.com/getsentry/sentry-react-native",
+    "githubUrl": "https://github.com/getsentry/sentry-react-native/tree/main/packages/core",
+    "npmPkg": "@sentry/react-native",
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "npmPkg": "@sentry/react-native"
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/solinor/react-native-bluetooth-status",
@@ -6409,7 +6409,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/package",
+    "npmPkg": "react-native-vision-camera",
     "examples": [
       "https://github.com/mrousavy/react-native-vision-camera/tree/main/package/example"
     ],
