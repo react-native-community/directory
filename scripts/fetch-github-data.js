@@ -1,10 +1,9 @@
 import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { processTopics, sleep } from './helpers.js';
+import { processTopics, sleep, REQUEST_SLEEP } from './helpers.js';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery.js';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery.js';
-import { REQUEST_SLEEP } from '../util/Constants.js';
 
 config();
 
