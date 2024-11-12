@@ -71,18 +71,15 @@ const buildAndScoreData = async () => {
 
   if (SCRAPE_GH_IMAGES) {
     console.log('\n📝 Scraping images from README');
-    await sleep(1000);
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
   console.log('\n🔖 Determining npm package names');
-  await sleep(1000);
   data = data.map(fillNpmName);
 
   console.log('\n⬇️ Fetching download stats from npm');
-  await sleep(1000);
 
-  // https://github.com/npm/registry/blob/master/docs/download-counts.md#bulk-queries
+  // https://github.com/npm/registry/blob/main/docs/download-counts.md#bulk-queries
   let bulkList = [];
 
   // Fetch scoped packages data
@@ -100,8 +97,10 @@ const buildAndScoreData = async () => {
     })
   );
 
+  // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
+  const CHUNK_SIZE = 128;
+
   // Assemble and fetch regular packages data in bulk queries
-  const CHUNK_SIZE = 32;
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
   );
@@ -109,7 +108,7 @@ const buildAndScoreData = async () => {
   const downloadsList = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(250 * index);
+        await sleep(500 * index);
         return await fetchNpmDataBulk(chunk);
       })
     )
@@ -118,7 +117,7 @@ const buildAndScoreData = async () => {
   const downloadsListWeek = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(250 * index);
+        await sleep(500 * index);
         return await fetchNpmDataBulk(chunk, 'week');
       })
     )

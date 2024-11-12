@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import { processTopics, sleep } from './helpers.js';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery.js';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery.js';
+import { REQUEST_SLEEP } from '../util/Constants.js';
 
 config();
 
@@ -116,7 +117,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       }
 
       console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
-      await sleep(2500);
+      await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
       return await fetchGithubData(data, retries - 1);
     }
 
@@ -124,7 +125,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       console.log(
         `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
       );
-      await sleep(2500);
+      await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
       return await fetchGithubData(data, retries - 1);
     }
 
@@ -135,7 +136,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     };
   } catch (error) {
     console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
-    await sleep(2500);
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     return await fetchGithubData(data, retries - 1);
   }
 };
