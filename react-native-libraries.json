@@ -4720,16 +4720,16 @@
   },
   {
     "githubUrl": "https://github.com/GregFrench/react-native-wheel-picker",
+    "npmPkg": "@gregfrench/react-native-wheel-picker",
     "ios": true,
-    "android": true,
-    "npmPkg": "@gregfrench/react-native-wheel-picker"
+    "android": true
   },
   {
-    "githubUrl": "https://github.com/getsentry/sentry-react-native",
+    "githubUrl": "https://github.com/getsentry/sentry-react-native/tree/main/packages/core",
+    "npmPkg": "@sentry/react-native",
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "npmPkg": "@sentry/react-native"
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/solinor/react-native-bluetooth-status",
@@ -6409,7 +6409,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera",
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/package",
+    "npmPkg": "react-native-vision-camera",
     "examples": [
       "https://github.com/mrousavy/react-native-vision-camera/tree/main/package/example"
     ],
@@ -11228,7 +11229,8 @@
     "githubUrl": "https://github.com/rive-app/rive-react-native",
     "examples": ["https://github.com/rive-app/rive-react-native/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/beaverfy/react-native-wear",
@@ -12460,6 +12462,15 @@
     "examples": ["https://github.com/EdgarJMesquita/react-native-webp-converter/tree/main/example"],
     "ios": true,
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wneel/react-native-get-device-locale",
+    "examples": [
+      "https://github.com/wneel/react-native-get-device-locale",
+      "https://snack.expo.dev/@wawa2048/react-native-get-device-locale-demo"
+    ],
+    "ios": true,
     "newArchitecture": true
   },
   {
