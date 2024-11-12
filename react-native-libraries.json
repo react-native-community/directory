@@ -12480,5 +12480,15 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kore-koi/react-native-media-controller",
+    "npmPkg": "@korekoi/react-native-media-controller",
+    "examples": [
+      "https://github.com/kore-koi/react-native-media-controller/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
