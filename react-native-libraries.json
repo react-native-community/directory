@@ -11228,7 +11228,8 @@
     "githubUrl": "https://github.com/rive-app/rive-react-native",
     "examples": ["https://github.com/rive-app/rive-react-native/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/beaverfy/react-native-wear",
