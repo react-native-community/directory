@@ -12355,6 +12355,9 @@
   },
   {
     "githubUrl": "https://github.com/paufau/react-native-multiple-modals",
+    "images": [
+      "https://raw.githubusercontent.com/paufau/react-native-multiple-modals/main/assets/preview.gif"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -12514,15 +12517,6 @@
     "githubUrl": "https://github.com/rollbar/rollbar-react-native",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/paufau/react-native-multiple-modals",
-    "images": [
-      "https://raw.githubusercontent.com/paufau/react-native-multiple-modals/main/assets/preview.gif"
-    ],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/fusioncharts/react-native-fusioncharts",
