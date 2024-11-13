@@ -8,7 +8,12 @@ const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }
       ? 250
       : 0;
 
-  const npmPkgNameMatchPoints = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch) ? 100 : 0;
+  const npmPkgNameMatchPoints =
+    !isEmptyOrNull(npmPkg) &&
+    (npmPkg.includes(querySearch) || npmPkg.replaceAll(/[-/]/g, ' ').includes(querySearch))
+      ? 100
+      : 0;
+
   const repoNameMatchPoints =
     !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 100 : 0;
 
