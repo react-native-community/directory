@@ -12490,5 +12490,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/BearStudio/react-native-ficus-ui",
+    "npmPkg": "react-native-ficus-ui",
+    "examples": [
+      "https://github.com/BearStudio/react-native-ficus-ui/tree/main/example",
+      "https://snack.expo.dev/@bearstudio/ficus-ui-button",
+      "https://ficus-ui.com/docs/Components/Layout/box"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
