@@ -9088,7 +9088,7 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/marklawlor/nativewind/tree/main/packages/nativewind",
+    "githubUrl": "https://github.com/nativewind/nativewind/tree/main/packages/nativewind",
     "examples": ["https://github.com/nativewind/nativewind/tree/main/examples/expo-router"],
     "images": [
       "https://user-images.githubusercontent.com/3946701/178458837-df03c080-eb13-4dcc-9080-186b061a8678.png"
@@ -11633,6 +11633,7 @@
   {
     "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
     "npmPkg": "@dr.pogodin/react-native-audio",
+    "examples": ["https://github.com/birdofpreyru/react-native-audio/tree/master/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -11640,6 +11641,7 @@
   {
     "githubUrl": "https://github.com/birdofpreyru/react-native-fs",
     "npmPkg": "@dr.pogodin/react-native-fs",
+    "examples": ["https://github.com/birdofpreyru/react-native-fs/tree/master/example"],
     "ios": true,
     "android": true,
     "windows": true,
@@ -12484,16 +12486,13 @@
   {
     "githubUrl": "https://github.com/kore-koi/react-native-media-controller",
     "npmPkg": "@korekoi/react-native-media-controller",
-    "examples": [
-      "https://github.com/kore-koi/react-native-media-controller/tree/main/example"
-    ],
+    "examples": ["https://github.com/kore-koi/react-native-media-controller/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/BearStudio/react-native-ficus-ui",
-    "npmPkg": "react-native-ficus-ui",
     "examples": [
       "https://github.com/BearStudio/react-native-ficus-ui/tree/main/example",
       "https://snack.expo.dev/@bearstudio/ficus-ui-button",
@@ -12504,5 +12503,44 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/SamuelScheit/react-native-skia-list",
+    "examples": ["https://github.com/SamuelScheit/react-native-skia-list/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rollbar/rollbar-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/paufau/react-native-multiple-modals",
+    "images": [
+      "https://raw.githubusercontent.com/paufau/react-native-multiple-modals/main/assets/preview.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fusioncharts/react-native-fusioncharts",
+    "examples": [
+      "https://github.com/fusioncharts/react-native-fusioncharts/tree/master/examples/expo-app/AwesomeProject",
+      "https://github.com/fusioncharts/react-native-fusioncharts/tree/master/examples/bare-react-native-app/chart"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/plaid/react-native-plaid-link-sdk",
+    "examples": [
+      "https://github.com/plaid/react-native-plaid-link-sdk/tree/master/example",
+      "https://github.com/plaid/react-native-plaid-link-sdk/tree/master/FabricExample"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
