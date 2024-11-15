@@ -12552,5 +12552,13 @@
     "images": ["https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/3.png", "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/4.png"],
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/axios/axios",
+  "npmPkg": "axios",
+  "ios": true,
+  "android": true,
+  "web": true,
+  "expoGo": true
+}
 ]
