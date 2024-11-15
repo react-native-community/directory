@@ -12555,7 +12555,6 @@
   },
   {
     "githubUrl": "https://github.com/Balthazar33/rnx-gen",
-    "npmPkg": "rnx-gen",
     "images": ["https://raw.githubusercontent.com/Balthazar33/rnx-gen/refs/heads/main/assets/rnx-gen-example-screen.png"],
     "ios": true,
     "android": true,
@@ -12563,7 +12562,6 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
-    "dev": true,
-    "newArchitecture": true
+    "dev": true
   }
 ]
