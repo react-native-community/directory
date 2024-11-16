@@ -12563,5 +12563,13 @@
     "windows": true,
     "macos": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/BrodaNoel/duix",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
