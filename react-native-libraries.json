@@ -12571,5 +12571,12 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/axios/axios",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
