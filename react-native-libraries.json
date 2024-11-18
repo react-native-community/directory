@@ -12578,5 +12578,62 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/mustapha-ghlissi/react-native-select-picker",
+    "npmPkg": "@mustapha-ghlissi/react-native-select-picker",
+    "examples": [
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/example",
+    ],
+    "images": [
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/demo/demo.gif",
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/screenshots/screen-1.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/screenshots/screen-2.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/screenshots/screen-3.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-select-picker/tree/main/screenshots/screen-4.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": false,
+  },
+  {
+    "githubUrl": "https://github.com/mustapha-ghlissi/react-native-otp",
+    "npmPkg": "@mustapha-ghlissi/react-native-otp",
+    "examples": [
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/example",
+    ],
+    "images": [
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/demo/demo.gif",
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-1.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-2.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-3.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-4.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-5.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": false,
+  },
+  {
+    "githubUrl": "https://github.com/mustapha-ghlissi/react-native-accordion",
+    "npmPkg": "@mustapha-ghlissi/react-native-accordion",
+    "examples": [
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/example",
+    ],
+    "images": [
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/demo/demo.gif",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/c-screen-1.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/c-screen-2.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/c-screen-3.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/screen-1.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/screen-2.jpg",
+      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/screen-3.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": false,
   }
 ]
