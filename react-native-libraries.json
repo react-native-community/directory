@@ -7152,13 +7152,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/ospfranco/react-native-quick-sqlite",
-    "ios": true,
-    "android": true,
-    "unmaintained": true,
-    "alternatives": ["@op-engineering/op-sqlite"]
-  },
-  {
     "githubUrl": "https://github.com/ysfuu/react-native-relative-popup",
     "examples": ["https://github.com/ysfuu/react-native-relative-popup/tree/master/example"],
     "images": [
@@ -12635,5 +12628,46 @@
     "android": true,
     "web": true,
     "expoGo": false
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-nitro-sqlite",
+    "npmPkg": "react-native-nitro-sqlite",
+    "examples": [
+      "https://github.com/margelo/react-native-nitro-sqlite/tree/main/example"
+    ],
+    "images": ["https://github.com/margelo/react-native-nitro-sqlite/blob/main/header.png"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "windows": false,
+    "macos": true,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-quick-sqlite",
+    "npmPkg": "react-native-quick-sqlite",
+    "examples": [
+      "https://github.com/margelo/react-native-nitro-sqlite/tree/react-native-quick-sqlite/example"
+    ],
+    "images": ["https://github.com/margelo/react-native-nitro-sqlite/blob/react-native-quick-sqlite/header2.png"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "windows": false,
+    "macos": true,
+    "tvos": false,
+    "visionos": false,
+    "unmaintained": true,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true,
+    "alternatives": ["react-native-nitro-sqlite"]
   }
 ]
