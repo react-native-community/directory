@@ -12658,5 +12658,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/yukukotani/react-native-webview-rpc",
+    "examples": [
+      "https://github.com/yukukotani/react-native-webview-rpc/tree/main/examples"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
