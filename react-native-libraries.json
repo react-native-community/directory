@@ -12545,18 +12545,22 @@
   },
   {
     "githubUrl": "https://github.com/pushy/pushy-react-native",
-    "npmPkg": "pushy-react-native",
     "examples": [
       "https://github.com/pushy/pushy-demo-react-native",
       "https://pushy.me/docs/additional-platforms/react-native"
     ],
-    "images": ["https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/3.png", "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/4.png"],
+    "images": [
+      "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/3.png",
+      "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/4.png"
+    ],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/Balthazar33/rnx-gen",
-    "images": ["https://raw.githubusercontent.com/Balthazar33/rnx-gen/refs/heads/main/assets/rnx-gen-example-screen.png"],
+    "images": [
+      "https://raw.githubusercontent.com/Balthazar33/rnx-gen/refs/heads/main/assets/rnx-gen-example-screen.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12595,15 +12599,12 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/mustapha-ghlissi/react-native-otp",
     "npmPkg": "@mustapha-ghlissi/react-native-otp",
-    "examples": [
-      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/example"
-    ],
+    "examples": ["https://github.com/mustapha-ghlissi/react-native-otp/tree/main/example"],
     "images": [
       "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/demo/demo.gif",
       "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-1.jpg",
@@ -12614,15 +12615,12 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/mustapha-ghlissi/react-native-accordion",
     "npmPkg": "@mustapha-ghlissi/react-native-accordion",
-    "examples": [
-      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/example"
-    ],
+    "examples": ["https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/example"],
     "images": [
       "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/demo/demo.gif",
       "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/c-screen-1.jpg",
@@ -12634,39 +12632,37 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-nitro-sqlite/tree/main/package",
     "npmPkg": "react-native-nitro-sqlite",
-    "examples": [
-      "https://github.com/margelo/react-native-nitro-sqlite/tree/main/example"
-    ],
+    "examples": ["https://github.com/margelo/react-native-nitro-sqlite/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/tomatterton/react-native-snowfall",
-    "examples": [
-      "https://github.com/TomAtterton/react-native-snowfall/tree/main/example"
-    ],
-    "images": [
-      "https://github.com/TomAtterton/react-native-snowfall/blob/main/assets/demo.gif"
-    ],
+    "examples": ["https://github.com/TomAtterton/react-native-snowfall/tree/main/example"],
+    "images": ["https://github.com/TomAtterton/react-native-snowfall/blob/main/assets/demo.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/yukukotani/react-native-webview-rpc",
-    "examples": [
-      "https://github.com/yukukotani/react-native-webview-rpc/tree/main/examples"
-    ],
+    "examples": ["https://github.com/yukukotani/react-native-webview-rpc/tree/main/examples"],
     "ios": true,
     "android": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jobpaardekooper/react-native-localize-date",
+    "examples": ["https://github.com/jobpaardekooper/react-native-localize-date/tree/main/example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
