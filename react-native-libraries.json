@@ -12647,5 +12647,20 @@
     "android": true,
     "macos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tomatterton/react-native-snowfall",
+    "npmPkg": "react-native-snowfall",
+    "examples": [
+      "https://github.com/TomAtterton/react-native-snowfall/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/TomAtterton/react-native-snowfall/blob/main/assets/demo.gif"
+
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
