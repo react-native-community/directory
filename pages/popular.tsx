@@ -6,11 +6,13 @@ import ContentContainer from '../components/ContentContainer';
 import ExploreSection from '../components/Explore/ExploreSection';
 import {
   PlatformAndroid,
+  PlatformExpo,
   PlatformIOS,
   PlatformMacOS,
+  PlatformTvOS,
+  PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
-  PlatformExpo,
   ReactLogo,
 } from '../components/Icons';
 import Navigation from '../components/Navigation';
@@ -62,6 +64,18 @@ const Popular = ({ data }) => {
           icon={PlatformMacOS}
           data={data}
           filter={lib => lib.macos === true}
+        />
+        <ExploreSection
+          title="tvOS"
+          icon={PlatformTvOS}
+          data={data}
+          filter={lib => lib.tvos === true}
+        />
+        <ExploreSection
+          title="VisionOS"
+          icon={PlatformVisionOS}
+          data={data}
+          filter={lib => lib.visionos === true}
         />
         <ExploreSection
           title="Web"
