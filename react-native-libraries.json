@@ -12671,7 +12671,7 @@
   },
   {
       "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
-      "npmPkg":"react-native-audio-waveform",
+      "npmPkg":"@simform_solutions/react-native-audio-waveform",
       "examples":[
          "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform?tab=readme-ov-file#usage"
       ],
@@ -12887,39 +12887,6 @@
          "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedScanner.gif",
          "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedNotification.gif",
          "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedFlickerLoader.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-skia-catalog",
-      "npmPkg":"react-native-skia-catalog",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-skia-catalog?tab=readme-ov-file#components"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/Indicator.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultStrikeImage.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultNotification.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultThemeSwitch.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultSkiaLike.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultAnimatedWallet.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultAnimatedScanner.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultMediaButton.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultHeartRate.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultAnimatedCheckMark.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultSkiaCharging.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-skia-catalog/main/assets/DefaultWirelessCharger.gif"
       ],
       "ios":true,
       "android":true,
