@@ -72,7 +72,7 @@ const Popular = ({ data }) => {
           filter={lib => lib.tvos === true}
         />
         <ExploreSection
-          title="VisionOS"
+          title="visionOS"
           icon={PlatformVisionOS}
           data={data}
           filter={lib => lib.visionos === true}
