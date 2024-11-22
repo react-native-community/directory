@@ -12745,5 +12745,11 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/auth0/jwt-decode",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
