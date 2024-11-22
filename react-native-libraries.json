@@ -12545,18 +12545,22 @@
   },
   {
     "githubUrl": "https://github.com/pushy/pushy-react-native",
-    "npmPkg": "pushy-react-native",
     "examples": [
       "https://github.com/pushy/pushy-demo-react-native",
       "https://pushy.me/docs/additional-platforms/react-native"
     ],
-    "images": ["https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/3.png", "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/4.png"],
+    "images": [
+      "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/3.png",
+      "https://github.com/pushy/pushy-demo-react-native/raw/master/src/img/4.png"
+    ],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/Balthazar33/rnx-gen",
-    "images": ["https://raw.githubusercontent.com/Balthazar33/rnx-gen/refs/heads/main/assets/rnx-gen-example-screen.png"],
+    "images": [
+      "https://raw.githubusercontent.com/Balthazar33/rnx-gen/refs/heads/main/assets/rnx-gen-example-screen.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12595,15 +12599,12 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/mustapha-ghlissi/react-native-otp",
     "npmPkg": "@mustapha-ghlissi/react-native-otp",
-    "examples": [
-      "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/example"
-    ],
+    "examples": ["https://github.com/mustapha-ghlissi/react-native-otp/tree/main/example"],
     "images": [
       "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/demo/demo.gif",
       "https://github.com/mustapha-ghlissi/react-native-otp/tree/main/screenshots/screen-1.jpg",
@@ -12614,15 +12615,12 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/mustapha-ghlissi/react-native-accordion",
     "npmPkg": "@mustapha-ghlissi/react-native-accordion",
-    "examples": [
-      "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/example"
-    ],
+    "examples": ["https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/example"],
     "images": [
       "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/demo/demo.gif",
       "https://github.com/mustapha-ghlissi/react-native-accordion/tree/main/screenshots/c-screen-1.jpg",
@@ -12634,293 +12632,258 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
-    "expoGo": false
+    "web": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-nitro-sqlite/tree/main/package",
     "npmPkg": "react-native-nitro-sqlite",
-    "examples": [
-      "https://github.com/margelo/react-native-nitro-sqlite/tree/main/example"
-    ],
+    "examples": ["https://github.com/margelo/react-native-nitro-sqlite/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/tomatterton/react-native-snowfall",
-    "examples": [
-      "https://github.com/TomAtterton/react-native-snowfall/tree/main/example"
-    ],
-    "images": [
-      "https://github.com/TomAtterton/react-native-snowfall/blob/main/assets/demo.gif"
-    ],
+    "examples": ["https://github.com/TomAtterton/react-native-snowfall/tree/main/example"],
+    "images": ["https://github.com/TomAtterton/react-native-snowfall/blob/main/assets/demo.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/yukukotani/react-native-webview-rpc",
-    "examples": [
-      "https://github.com/yukukotani/react-native-webview-rpc/tree/main/examples"
-    ],
+    "examples": ["https://github.com/yukukotani/react-native-webview-rpc/tree/main/examples"],
     "ios": true,
     "android": true,
     "expoGo": true,
     "newArchitecture": true
   },
   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
-      "npmPkg":"@simform_solutions/react-native-audio-waveform",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_playback_with_speed.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_record.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker",
-      "npmPkg":"react-native-infinite-wheel-picker",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker/master/assets/preview1.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit",
-      "npmPkg":"react-native-graph-kit",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/lineChart.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/barChart.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table",
-      "npmPkg":"react-native-sticky-table",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-sticky-table/master/assets/StickyTableApp.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection",
-      "npmPkg":"react-native-tree-selection",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-tree-selection/master/assets/Tree-Selection.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery",
-      "npmPkg":"react-native-photos-gallery",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/twoColumnList.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/horizontalList.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-images-preview",
-      "npmPkg":"react-native-images-preview",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-images-preview?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/simple.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/pinchZoom.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider",
-      "npmPkg":"react-native-radial-slider",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider?tab=readme-ov-file#radialslider"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/RadialSliderExample.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/SpeedoMeterExample.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select",
-      "npmPkg":"react-native-country-code-select",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select?tab=readme-ov-file#countrypicker"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-country-code-select/main/assets/sample1.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog",
-      "npmPkg":"react-native-animation-catalog",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog?tab=readme-ov-file#components"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/ParallaxHeaderWithoutTabs.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCard.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/MediaButton.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedWallet.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCheckMark.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedScanner.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedNotification.gif",
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedFlickerLoader.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   },
-   {
-      "githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button",
-      "npmPkg":"react-native-spinner-button",
-      "examples":[
-         "https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button?tab=readme-ov-file#usage"
-      ],
-      "images":[
-         "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-spinner-button/master/assets/example.gif"
-      ],
-      "ios":true,
-      "android":true,
-      "web":false,
-      "expoGo":false,
-      "windows":false,
-      "macos":false,
-      "tvos":false,
-      "visionos":false,
-      "unmaintained":false,
-      "dev":false,
-      "template":false,
-      "newArchitecture":false
-   }
+    "githubUrl": "https://github.com/jobpaardekooper/react-native-localize-date",
+    "examples": ["https://github.com/jobpaardekooper/react-native-localize-date/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JUHUU-Labs/sdk-ts",
+    "npmPkg": "@juhuu/sdk-ts",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/colinhacks/zod",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dcastil/tailwind-merge",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/lukeed/clsx",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dominicstop/react-native-ios-utilities",
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/iamkun/dayjs",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mdevils/html-entities",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/npm/node-semver",
+    "npmPkg": "semver",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/query/tree/main/packages/query-persist-client-core",
+    "npmPkg": "@tanstack/query-persist-client-core",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
+    "npmPkg": "@futurejj/react-native-visibility-sensor",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/auth0/jwt-decode",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
+		"npmPkg":"@simform_solutions/react-native-audio-waveform",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_playback_with_speed.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_record.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker/master/assets/preview1.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit",
+		"examples": [
+		  "https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/lineChart.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/barChart.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-sticky-table/master/assets/StickyTableApp.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-tree-selection/master/assets/Tree-Selection.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/twoColumnList.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/horizontalList.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-images-preview",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-images-preview/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/simple.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/pinchZoom.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/RadialSliderExample.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/SpeedoMeterExample.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-country-code-select/main/assets/sample1.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog/tree/main/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/ParallaxHeaderWithoutTabs.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCard.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/MediaButton.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedWallet.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCheckMark.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedScanner.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedNotification.gif",
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedFlickerLoader.gif"
+		],
+		"ios":true,
+		"android":true
+	},
+	{
+		"githubUrl":"https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button",
+		"examples": [
+			"https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/tree/master/example"
+		],
+		"images":[
+			"https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-spinner-button/master/assets/example.gif"
+		],
+		"ios":true,
+		"android":true
+	}
 ]
