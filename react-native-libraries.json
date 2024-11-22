@@ -12702,5 +12702,11 @@
     "githubUrl": "https://github.com/dominicstop/react-native-ios-utilities",
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/date-fns/date-fns",
+    "ios": true,
+    "android": true,
+    "web": true,
   }
 ]
