@@ -12704,6 +12704,49 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/iamkun/dayjs",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mdevils/html-entities",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/npm/node-semver",
+    "npmPkg": "semver",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/query/tree/main/packages/query-persist-client-core",
+    "npmPkg": "@tanstack/query-persist-client-core",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
+    "npmPkg": "@futurejj/react-native-visibility-sensor",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/auth0/jwt-decode",
     "ios": true,
     "android": true,
