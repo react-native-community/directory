@@ -12751,5 +12751,139 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
+    "npmPkg": "@simform_solutions/react-native-audio-waveform",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_playback_with_speed.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-audio-waveform/master/assets/audio_record.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-infinite-wheel-picker/master/assets/preview1.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-graph-kit/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/lineChart.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-graph-kit/master/assets/barChart.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-sticky-table/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-sticky-table/master/assets/StickyTableApp.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-tree-selection/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-tree-selection/master/assets/Tree-Selection.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/twoColumnList.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/horizontalList.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-images-preview",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-images-preview/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/simple.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-images-preview/master/assets/pinchZoom.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-radial-slider/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/RadialSliderExample.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-radial-slider/main/assets/SpeedoMeterExample.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-country-code-select/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-country-code-select/main/assets/sample1.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/ParallaxHeaderWithoutTabs.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCard.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/MediaButton.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedWallet.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedCheckMark.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedScanner.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedNotification.gif",
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-animation-catalog/main/assets/AnimatedFlickerLoader.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button",
+    "examples": [
+      "https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-spinner-button/master/assets/example.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
