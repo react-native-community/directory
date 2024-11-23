@@ -11494,7 +11494,8 @@
     "githubUrl": "https://github.com/EvanBacon/expo-quick-actions",
     "examples": ["https://github.com/EvanBacon/expo-quick-actions/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/obytes/app-icon-badge",
