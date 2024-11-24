@@ -12892,5 +12892,12 @@
     "examples": ["https://github.com/ttlock/react-native-ttlock/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/react/tree/main/compiler/packages/react-compiler-runtime",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
