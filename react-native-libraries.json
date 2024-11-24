@@ -12886,5 +12886,11 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ttlock/react-native-ttlock",
+    "examples": ["https://github.com/ttlock/react-native-ttlock/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
