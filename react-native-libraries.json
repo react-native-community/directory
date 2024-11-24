@@ -12909,5 +12909,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/react/tree/main/compiler/packages/react-compiler-runtime",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
