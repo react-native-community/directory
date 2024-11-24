@@ -12892,5 +12892,13 @@
     "examples": ["https://github.com/ttlock/react-native-ttlock/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hardik27111/react-native-toastier",
+    "npmPkg": "react-native-toastier",
+    "examples": ["https://github.com/hardik27111/react-native-toastier/tree/master/example"],
+    "android": true,
+    "ios": true,
+    "expoGo": true
   }
 ]
