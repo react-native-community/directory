@@ -12894,6 +12894,23 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/hardik27111/react-native-toastier",
+    "npmPkg": "react-native-toastier",
+    "examples": ["https://github.com/hardik27111/react-native-toastier/tree/master/example"],
+    "android": true,
+    "ios": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/core",
+    "npmPkg": "@lingui/core",
+    "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/facebook/react/tree/main/compiler/packages/react-compiler-runtime",
     "ios": true,
     "android": true,
