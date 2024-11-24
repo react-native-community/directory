@@ -12892,5 +12892,14 @@
     "examples": ["https://github.com/ttlock/react-native-ttlock/tree/master/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/core",
+    "npmPkg": "@lingui/core",
+    "examples": ["https://github.com/lingui/js-lingui/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
