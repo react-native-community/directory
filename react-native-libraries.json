@@ -12916,5 +12916,14 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/NativeNotify/native-notify",
+    "npmPkg": "native-notify",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
