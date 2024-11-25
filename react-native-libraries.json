@@ -12895,7 +12895,6 @@
   },
   {
     "githubUrl": "https://github.com/hardik27111/react-native-toastier",
-    "npmPkg": "react-native-toastier",
     "examples": ["https://github.com/hardik27111/react-native-toastier/tree/master/example"],
     "android": true,
     "ios": true,
@@ -12915,6 +12914,13 @@
     "ios": true,
     "android": true,
     "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/SolankiYogesh/rn-date-format",
+    "examples": ["https://github.com/SolankiYogesh/rn-date-format/tree/main/example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
