@@ -6422,6 +6422,32 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules",
+    "npmPkg": "react-native-nitro-modules",
+    "examples": [
+      "https://github.com/mrousavy/nitro/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true",
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/nitrogen",
+    "npmPkg": "nitro-codegen",
+    "examples": [
+      "https://github.com/mrousavy/nitro/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true",
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
     "examples": ["https://snack.expo.dev/@dabakovich/mentionsapp"],
     "images": [
