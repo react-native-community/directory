@@ -6432,6 +6432,10 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
+    "macos": true,
+    "visionos": true,
+    "dev": true,
     "newArchitecture": true
   },
   {
@@ -6445,6 +6449,10 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
+    "macos": true,
+    "visionos": true,
+    "dev": true,
     "newArchitecture": true
   },
   {
