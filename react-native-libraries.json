@@ -11582,6 +11582,22 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/Aris-ngoy/react-native-irano.git",
+    "npmPkg": "https://www.npmjs.com/package/react-native-irano",
+    "examples": [
+      "https://github.com/Aris-ngoy/react-native-irano/tree/main/example",
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/ro-mgh/mallaui/tree/main/packages/cli",
     "npmPkg": "mallaui",
     "examples": [
