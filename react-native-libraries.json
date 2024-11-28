@@ -7584,7 +7584,6 @@
   },
   {
     "githubUrl": "https://github.com/esthor/react-native-swipeable-list",
-    "npmpkg": "react-native-swipeable-list",
     "examples": [
       "https://github.com/esthor/react-native-swipeable-list/tree/main/examples/SwipeableListExampleApp"
     ],
@@ -7596,9 +7595,6 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
     "newArchitecture": true
   },
   {
