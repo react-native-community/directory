@@ -9975,7 +9975,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported from v10 release"
   },
   {
     "githubUrl": "https://github.com/3DJakob/react-tinder-card",
