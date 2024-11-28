@@ -9974,7 +9974,8 @@
       "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/assets/indoor_building_map_ios.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/3DJakob/react-tinder-card",
