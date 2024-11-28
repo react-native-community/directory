@@ -7584,6 +7584,7 @@
   },
   {
     "githubUrl": "https://github.com/esthor/react-native-swipeable-list",
+    "npmpkg": "react-native-swipeable-list",
     "examples": [
       "https://github.com/esthor/react-native-swipeable-list/tree/main/examples/SwipeableListExampleApp"
     ],
@@ -7592,7 +7593,13 @@
       "https://raw.githubusercontent.com/esthor/react-native-swipeable-list/master/images/react-native-swipeable-list-demo2.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-jsi-contacts",
