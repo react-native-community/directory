@@ -12963,6 +12963,7 @@
   },
   {
     "githubUrl": "https://github.com/EvanBacon/expo-apple-colors",
+    "npmPkg": "@bacons/apple-colors",
     "ios": true,
     "android": true,
     "web": true
@@ -12982,6 +12983,7 @@
   },
   {
     "githubUrl": "https://github.com/googlemaps/react-native-navigation-sdk",
+    "npmPkg": "@googlemaps/react-native-navigation-sdk",
     "examples": ["https://github.com/googlemaps/react-native-navigation-sdk/tree/main/example"],
     "ios": true,
     "android": true,
