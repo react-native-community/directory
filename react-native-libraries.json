@@ -12994,5 +12994,13 @@
     "npmPkg": "@matter/react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/fnando/i18n",
+    "npmPkg": "i18n-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
