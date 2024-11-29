@@ -12940,5 +12940,22 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Aris-ngoy/react-native-irano",
+    "examples": [
+      "https://github.com/Aris-ngoy/react-native-irano/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/1.png",
+      "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/2.png",
+      "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/3.png",
+      "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/4.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
