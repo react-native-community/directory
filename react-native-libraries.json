@@ -12957,5 +12957,10 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/MaxAst/expo-share-extension",
+    "examples": ["https://github.com/MaxAst/expo-share-extension/tree/main/examples"],
+    "ios": true
   }
 ]
