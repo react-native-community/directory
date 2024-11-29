@@ -1,6 +1,6 @@
 import libraries from '../react-native-libraries.json' assert { type: 'json' };
 
-const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w-]+\/[\w-]+(\/tree\/[\w-\\/\\.\\%\\@]+)?$/g;
+const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/g;
 
 const validateLibrariesFormat = libraries => {
   console.log('🔍️Checking all libraries have the correct format');

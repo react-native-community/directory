@@ -12943,9 +12943,7 @@
   },
   {
     "githubUrl": "https://github.com/Aris-ngoy/react-native-irano",
-    "examples": [
-      "https://github.com/Aris-ngoy/react-native-irano/tree/main/example"
-    ],
+    "examples": ["https://github.com/Aris-ngoy/react-native-irano/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/1.png",
       "https://raw.githubusercontent.com/Aris-ngoy/react-native-irano/refs/heads/main/assets/2.png",
@@ -12962,5 +12960,39 @@
     "githubUrl": "https://github.com/MaxAst/expo-share-extension",
     "examples": ["https://github.com/MaxAst/expo-share-extension/tree/main/examples"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/EvanBacon/expo-apple-colors",
+    "npmPkg": "@bacons/apple-colors",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/azimgd/shadowlist",
+    "examples": ["https://github.com/azimgd/shadowlist/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/skiniks/react-native-shiki-engine",
+    "examples": ["https://github.com/skiniks/react-native-shiki-engine/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/googlemaps/react-native-navigation-sdk",
+    "npmPkg": "@googlemaps/react-native-navigation-sdk",
+    "examples": ["https://github.com/googlemaps/react-native-navigation-sdk/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/project-chip/matter.js/tree/main/packages/react-native",
+    "npmPkg": "@matter/react-native",
+    "ios": true,
+    "android": true
   }
 ]
