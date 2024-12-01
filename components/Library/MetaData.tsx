@@ -44,9 +44,9 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
       id: 'calendar',
       icon: <Calendar fill={iconColor} />,
       content: (
-        <Caption style={{ fontWeight: 300 }}>
+        <A href={`${github.urls.repo}/commits`} style={styles.link}>
           Updated {getTimeSinceToday(github.stats.pushedAt)}
-        </Caption>
+        </A>
       ),
     },
     npm.downloads
