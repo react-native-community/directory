@@ -13005,5 +13005,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/jaredh159/tailwind-react-native-classnames",
+    "npmPkg": "twrnc",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
