@@ -1633,8 +1633,11 @@
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-fetch",
+    "npmPkg": "react-native-background-fetch",
+    "examples": ["https://github.com/transistorsoft/react-native-background-fetch/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/lrettig/react-native-stripe",
