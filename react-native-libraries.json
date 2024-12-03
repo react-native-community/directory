@@ -13013,5 +13013,17 @@
     "android": true,
     "web": true,
     "expoGo": true
-  }
+  },
+   {
+    "githubUrl": "https://github.com/AakashThakur23102000/useapihook-dexterverse",
+    "npmPkg": "useapihook-dexterverse",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "newArchitecture": true
+   }
 ]
