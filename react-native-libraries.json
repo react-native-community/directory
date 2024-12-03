@@ -3237,8 +3237,13 @@
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-geolocation",
+    "npmPkg": "react-native-background-geolocation",
+    "examples": [
+      "https://github.com/transistorsoft/rn-background-geolocation-demo"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/nidorx/react-native-ui-blueprint",
