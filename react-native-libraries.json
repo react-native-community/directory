@@ -13019,7 +13019,7 @@
     "web": true,
     "expoGo": true
   },
-   {
+  {
     "githubUrl": "https://github.com/AakashThakur23102000/useapihook-dexterverse",
     "npmPkg": "useapihook-dexterverse",
     "ios": true,
@@ -13027,5 +13027,13 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
-   }
+  },
+  {
+    "githubUrl": "https://github.com/itsramiel/react-native-audio-playback",
+    "npmPkg": "react-native-audio-playback",
+    "examples": ["https://github.com/itsramiel/react-native-audio-playback/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
