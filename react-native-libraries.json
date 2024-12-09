@@ -149,14 +149,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/EAT-CODE-KITE-REPEAT/expo-super-image",
-    "npmPkg": "react-native-super-image",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/A11yWatch/react-native-reader",
     "ios": true,
     "android": true,
@@ -1633,8 +1625,9 @@
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-fetch",
-    "npmPkg": "react-native-background-fetch",
-    "examples": ["https://github.com/transistorsoft/react-native-background-fetch/tree/master/example"],
+    "examples": [
+      "https://github.com/transistorsoft/react-native-background-fetch/tree/master/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -3237,10 +3230,7 @@
   },
   {
     "githubUrl": "https://github.com/transistorsoft/react-native-background-geolocation",
-    "npmPkg": "react-native-background-geolocation",
-    "examples": [
-      "https://github.com/transistorsoft/rn-background-geolocation-demo"
-    ],
+    "examples": ["https://github.com/transistorsoft/rn-background-geolocation-demo"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -13021,7 +13011,6 @@
   },
   {
     "githubUrl": "https://github.com/AakashThakur23102000/useapihook-dexterverse",
-    "npmPkg": "useapihook-dexterverse",
     "ios": true,
     "android": true,
     "web": true,
@@ -13030,7 +13019,6 @@
   },
   {
     "githubUrl": "https://github.com/itsramiel/react-native-audio-playback",
-    "npmPkg": "react-native-audio-playback",
     "examples": ["https://github.com/itsramiel/react-native-audio-playback/tree/main/example"],
     "ios": true,
     "android": true,
@@ -13056,7 +13044,9 @@
   },
   {
     "githubUrl": "https://github.com/JairajJangle/react-native-session-storage",
-    "examples": ["https://github.com/JairajJangle/react-native-session-storage/tree/master/example"],
+    "examples": [
+      "https://github.com/JairajJangle/react-native-session-storage/tree/master/example"
+    ],
     "ios": true,
     "android": true,
     "web": true,
