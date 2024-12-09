@@ -98,7 +98,7 @@ const buildAndScoreData = async () => {
   );
 
   // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
-  const CHUNK_SIZE = 128;
+  const CHUNK_SIZE = 50;
 
   // Assemble and fetch regular packages data in bulk queries
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
@@ -108,7 +108,7 @@ const buildAndScoreData = async () => {
   const downloadsList = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(500 * index);
+        await sleep(2000 * index);
         return await fetchNpmDataBulk(chunk);
       })
     )
@@ -117,7 +117,7 @@ const buildAndScoreData = async () => {
   const downloadsListWeek = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(500 * index);
+        await sleep(2000 * index);
         return await fetchNpmDataBulk(chunk, 'week');
       })
     )
