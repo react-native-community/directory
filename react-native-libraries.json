@@ -13059,5 +13059,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/packages/react-native-client",
+    "examples": ["https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/fishjam-chat"],
+    "npmPkg": "@fishjam-cloud/react-native-client",
+    "images": [
+      "https://raw.githubusercontent.com/fishjam-cloud/mobile-client-sdk/main/.github/images/fishjam-card.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
