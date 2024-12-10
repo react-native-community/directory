@@ -13060,7 +13060,7 @@
     "android": true,
     "newArchitecture": true
   },
-    {
+  {
     "githubUrl": "https://github.com/fishjam-cloud/mobile-client-sdk",
     "examples": ["https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/fishjam-chat"],
     "npmPkg": "@fishjam-cloud/react-native-client",
