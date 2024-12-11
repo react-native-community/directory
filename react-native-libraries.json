@@ -786,7 +786,9 @@
   {
     "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "The old architecture is not supported since version 12.x"
   },
   {
     "githubUrl": "https://github.com/chirag04/react-native-mail",
