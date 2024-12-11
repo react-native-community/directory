@@ -500,6 +500,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "tvos": true,
     "visionos": true,
     "goldstar": true,
@@ -556,6 +557,7 @@
     "ios": true,
     "android": true,
     "windows": true,
+    "fireos": true,
     "expoGo": true,
     "goldstar": true,
     "npmPkg": "lottie-react-native"
@@ -753,6 +755,7 @@
     "ios": true,
     "android": true,
     "windows": true,
+    "fireos": true,
     "visionos": true,
     "tvos": true,
     "newArchitecture": true
@@ -786,9 +789,7 @@
   {
     "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
     "ios": true,
-    "android": true,
-    "newArchitecture": true,
-    "newArchitectureNote": "The old architecture is not supported since version 12.x"
+    "android": true
   },
   {
     "githubUrl": "https://github.com/chirag04/react-native-mail",
@@ -2073,6 +2074,7 @@
     "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -2651,7 +2653,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
@@ -3149,6 +3151,7 @@
     "npmPkg": "@react-native-cookies/cookies",
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3170,6 +3173,7 @@
     "tvos": true,
     "web": true,
     "macos": true,
+    "fireos": true,
     "expoGo": true,
     "visionos": true,
     "newArchitecture": true,
@@ -3366,6 +3370,7 @@
     "android": true,
     "web": true,
     "windows": true,
+    "fireos": true,
     "macos": true
   },
   {
@@ -3505,6 +3510,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-community/netinfo",
     "newArchitecture": true
@@ -3570,6 +3576,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-async-storage/async-storage",
     "newArchitecture": true
@@ -3611,6 +3618,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "tvos": true,
     "expoGo": true,
     "npmPkg": "@react-native-masked-view/masked-view"
@@ -3622,6 +3630,7 @@
       "https://raw.githubusercontent.com/react-native-community/react-native-linear-gradient/master/images/example-animated.gif"
     ],
     "ios": true,
+    "fireos": true,
     "android": true,
     "windows": true
   },
@@ -3837,6 +3846,7 @@
     "web": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "newArchitecture": true
   },
@@ -3860,6 +3870,7 @@
     "android": true,
     "windows": true,
     "visionos": true,
+    "fireos": true,
     "newArchitecture": true,
     "alternatives": ["expo-device"]
   },
@@ -3891,6 +3902,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": false,
     "unmaintained": true,
     "alternatives": ["expo-image"]
@@ -6405,6 +6417,7 @@
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/package/example"],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "newArchitecture": true
   },
@@ -7131,6 +7144,7 @@
     "expoGo": true,
     "web": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "goldstar": true
   },
@@ -8471,6 +8485,7 @@
     "npmPkg": "@shopify/flash-list",
     "android": true,
     "ios": true,
+    "fireos": true,
     "expoGo": true,
     "newArchitectureNote": "Compiles and runs, but behavior may not be as expected."
   },
@@ -12587,6 +12602,7 @@
     "githubUrl": "https://github.com/axios/axios",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -13064,24 +13080,14 @@
   },
   {
     "githubUrl": "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/packages/react-native-client",
-    "examples": [
-      "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/fishjam-chat"
-    ],
+    "examples": ["https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/fishjam-chat"],
     "npmPkg": "@fishjam-cloud/react-native-client",
     "images": [
       "https://raw.githubusercontent.com/fishjam-cloud/mobile-client-sdk/main/.github/images/fishjam-card.png"
     ],
     "ios": true,
     "android": true,
+    "expoGo": false,
     "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/saulamsal/react-native-sheet-transitions",
-    "examples": ["https://github.com/saulamsal/react-native-sheet-transitions?tab=readme-ov-file#example-with-haptic-feedback"],
-    "images": ["https://github.com/saulamsal/react-native-sheet-transitions/blob/main/assets/gifs/demo.gif"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true
   }
 ]

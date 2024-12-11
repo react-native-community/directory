@@ -16,6 +16,10 @@ export const FILTER_PLATFORMS = [
     title: 'macOS',
   },
   {
+    param: 'fireos',
+    title: 'Fire OS',
+  },
+  {
     param: 'tvos',
     title: 'tvOS',
   },
