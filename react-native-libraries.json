@@ -786,7 +786,9 @@
   {
     "githubUrl": "https://github.com/innoveit/react-native-ble-manager",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "The old architecture is not supported since version 12.x"
   },
   {
     "githubUrl": "https://github.com/chirag04/react-native-mail",
@@ -2649,7 +2651,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
@@ -13059,6 +13061,32 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/packages/react-native-client",
+    "examples": [
+      "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/fishjam-chat"
+    ],
+    "npmPkg": "@fishjam-cloud/react-native-client",
+    "images": [
+      "https://raw.githubusercontent.com/fishjam-cloud/mobile-client-sdk/main/.github/images/fishjam-card.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/saulamsal/react-native-sheet-transitions",
+    "examples": [
+      "https://github.com/saulamsal/react-native-sheet-transitions?tab=readme-ov-file#example-with-haptic-feedback"
+    ],
+    "images": [
+      "https://github.com/saulamsal/react-native-sheet-transitions/blob/main/assets/gifs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/reagankm/rn-animated-ellipsis",
