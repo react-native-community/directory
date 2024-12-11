@@ -13071,5 +13071,14 @@
     "android": true,
     "expoGo": false,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/saulamsal/react-native-sheet-transitions",
+    "examples": ["https://github.com/saulamsal/react-native-sheet-transitions?tab=readme-ov-file#example-with-haptic-feedback"],
+    "images": ["https://github.com/saulamsal/react-native-sheet-transitions/blob/main/assets/gifs/demo.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
