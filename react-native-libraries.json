@@ -13059,5 +13059,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/reagankm/rn-animated-ellipsis",
+    "npmPkg": "@reagankm/rn-animated-ellipsis",
+    "examples": ["https://snack.expo.dev/@reagankm/animatedellipsis-example"],
+    "images": [
+      "https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_ios_ish.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
