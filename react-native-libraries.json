@@ -13077,8 +13077,24 @@
   },
   {
     "githubUrl": "https://github.com/saulamsal/react-native-sheet-transitions",
-    "examples": ["https://github.com/saulamsal/react-native-sheet-transitions?tab=readme-ov-file#example-with-haptic-feedback"],
-    "images": ["https://github.com/saulamsal/react-native-sheet-transitions/blob/main/assets/gifs/demo.gif"],
+    "examples": [
+      "https://github.com/saulamsal/react-native-sheet-transitions?tab=readme-ov-file#example-with-haptic-feedback"
+    ],
+    "images": [
+      "https://github.com/saulamsal/react-native-sheet-transitions/blob/main/assets/gifs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/reagankm/rn-animated-ellipsis",
+    "npmPkg": "@reagankm/rn-animated-ellipsis",
+    "examples": ["https://snack.expo.dev/@reagankm/animatedellipsis-example"],
+    "images": [
+      "https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_ios_ish.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
