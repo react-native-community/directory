@@ -11441,6 +11441,7 @@
     "npmPkg": "@react-navigation/elements",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
