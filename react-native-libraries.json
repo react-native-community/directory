@@ -13083,5 +13083,15 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/cmpayc/react-native-fs-turbo",
+    "npmPkg": "react-native-fs-turbo",
+    "examples": ["https://github.com/cmpayc/react-native-fs-turbo?tab=readme-ov-file#examples"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Library is a pure C++ TurboModule and requires the new architecture to be enabled. Doesn't work on legacy architecture",
+    "alternatives": ["react-native-fs", "@dr.pogodin/react-native-fs"]
   }
 ]
