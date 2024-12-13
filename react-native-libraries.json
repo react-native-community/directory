@@ -11443,6 +11443,7 @@
     "npmPkg": "@react-navigation/native-stack",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
@@ -11452,6 +11453,7 @@
     "npmPkg": "@react-navigation/stack",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
