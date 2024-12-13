@@ -13107,5 +13107,12 @@
     "android": true,
     "newArchitecture": true,
     "newArchitectureNote": "Library is a pure C++ TurboModule and requires the new architecture to be enabled. Doesn't work on legacy architecture"
+  },
+  {
+    "githubUrl": "https://github.com/jhugman/uniffi-bindgen-react-native",
+    "dev": true,
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
