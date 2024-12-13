@@ -3992,6 +3992,7 @@
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/aws-amplify",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -4000,6 +4001,7 @@
     "npmPkg": "@aws-amplify/datastore",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -4008,6 +4010,7 @@
     "npmPkg": "@aws-amplify/react-native",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -4016,6 +4019,7 @@
     "npmPkg": "@aws-amplify/auth",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -4023,6 +4027,7 @@
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/notifications",
     "npmPkg": "@aws-amplify/notifications",
     "ios": true,
+    "fireos": true,
     "android": true
   },
   {
