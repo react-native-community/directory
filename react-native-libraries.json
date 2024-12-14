@@ -13114,5 +13114,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/osamaqarem/drag-select",
+    "npmPkg": "https://www.npmjs.com/package/@osamaq/drag-select",
+    "examples": ["https://github.com/osamaqarem/drag-select/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
