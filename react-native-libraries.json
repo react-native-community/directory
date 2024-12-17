@@ -7533,7 +7533,8 @@
       "https://raw.githubusercontent.com/baronha/react-native-multiple-image-picker/main/files/demo-main-ios.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/th3rdwave/web-image/tree/main/packages/web-image",
@@ -13122,6 +13123,14 @@
     "examples": ["https://github.com/osamaqarem/drag-select/tree/main/example"],
     "ios": true,
     "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AakashThakur23102000/useUtils-dexterverse",
+    "ios": true,
+    "android": true,
+    "web": true,
     "expoGo": true,
     "newArchitecture": true
   },
