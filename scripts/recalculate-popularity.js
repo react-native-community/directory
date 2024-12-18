@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { calculatePopularityScore } from './calculate-score.js';
-import data from '../assets/data.json' assert { type: 'json' };
+import data from '../assets/data.json' with { type: 'json' };
 
 const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 
