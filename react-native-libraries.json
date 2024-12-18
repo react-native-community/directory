@@ -9575,7 +9575,8 @@
       "https://raw.githubusercontent.com/jgillick/react-native-a11y-slider/HEAD/examples.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/jgillick/react-fancy-qrcode",
@@ -9590,7 +9591,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mutualmobile/react-native-barricade",
