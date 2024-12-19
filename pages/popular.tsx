@@ -9,6 +9,7 @@ import {
   PlatformExpo,
   PlatformIOS,
   PlatformMacOS,
+  PlatformFireOS,
   PlatformTvOS,
   PlatformVisionOS,
   PlatformWeb,
@@ -64,6 +65,12 @@ const Popular = ({ data }) => {
           icon={PlatformMacOS}
           data={data}
           filter={lib => lib.macos === true}
+        />
+        <ExploreSection
+          title="Fire OS"
+          icon={PlatformFireOS}
+          data={data}
+          filter={lib => lib.fireos === true}
         />
         <ExploreSection
           title="tvOS"

@@ -7,6 +7,7 @@ import {
   PlatformAndroid,
   PlatformIOS,
   PlatformMacOS,
+  PlatformFireOS,
   PlatformTvOS,
   PlatformVisionOS,
   PlatformWeb,
@@ -79,6 +80,12 @@ const Footer = () => {
             pkgName="react-native-macos"
             Icon={PlatformMacOS}
             url="https://github.com/microsoft/react-native-macos#readme"
+          />
+          <Platform
+            name="Fire OS"
+            pkgName="react-native"
+            Icon={PlatformFireOS}
+            url="https://github.com/facebook/react-native#readme"
           />
           <Platform
             name="tvOS"

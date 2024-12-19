@@ -1,4 +1,4 @@
-import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import libraries from '../react-native-libraries.json' with { type: 'json' };
 
 const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/g;
 

@@ -9,8 +9,8 @@ import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fet
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
 import fetchReadmeImages from './fetch-readme-images.js';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers.js';
-import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
-import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
+import debugGithubRepos from '../debug-github-repos.json' with { type: 'json' };
+import githubRepos from '../react-native-libraries.json' with { type: 'json' };
 import { isLaterThan, TimeRange } from '../util/datetime.js';
 import { isEmptyOrNull } from '../util/strings.js';
 
