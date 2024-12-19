@@ -58,6 +58,15 @@
           true
         ]
       },
+      "fireos": {
+        "$id": "#/items/properties/fireos",
+        "type": "boolean",
+        "title": "The Fire OS Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
       "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
