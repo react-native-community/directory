@@ -13171,6 +13171,19 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/sjwall/react-native-drag-expand/tree/main/lib",
+    "npmPkg": "react-native-drag-expand",
+    "examples": [
+      "https://github.com/sjwall/react-native-drag-expand/tree/main/example"
+    ],
+    "images": ["https://github.com/sjwall/react-native-drag-expand/blob/main/demo.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/aravind3566/react-native-in-app-updates",
     "npmPkg": "react-native-in-app-updates",
     "android": true,
