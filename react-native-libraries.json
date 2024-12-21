@@ -13182,5 +13182,11 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/aravind3566/react-native-in-app-updates",
+    "npmPkg": "react-native-in-app-updates",
+    "android": true,
+    "newArchitecture": true
   }
 ]
