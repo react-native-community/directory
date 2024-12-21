@@ -12482,12 +12482,14 @@
   },
   {
     "githubUrl": "https://github.com/wneel/react-native-get-device-locale",
+    "npmPkg": "react-native-get-device-locale",
     "examples": [
       "https://github.com/wneel/react-native-get-device-locale",
       "https://snack.expo.dev/@wawa2048/react-native-get-device-locale-demo"
     ],
+    "android": true,
     "ios": true,
-    "newArchitecture": true
+    "newArchitecture": true,
   },
   {
     "githubUrl": "https://github.com/filipe-2/native-sass",
