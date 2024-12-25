@@ -13190,5 +13190,11 @@
     "npmPkg": "react-native-in-app-updates",
     "android": true,
     "newArchitecture": true
+  },  
+  {
+    "githubUrl": "https://www.npmjs.com/package/react-native-install-unknown-apps",
+    "npmPkg": "react-native-install-unknown-apps",
+    "android": true,
+    "newArchitecture": true
   }
 ]
