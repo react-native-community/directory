@@ -13190,5 +13190,15 @@
     "npmPkg": "react-native-in-app-updates",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/MihirGrand/react-native-serialport-windows",
+    "npmPkg": "react-native-serialport-windows",
+    "examples": [
+      "https://github.com/MihirGrand/react-native-serialport-windows/tree/main/example"
+    ],
+    "images": ["https://github.com/MihirGrand/react-native-serialport-windows/blob/main/react-native-serialport-windows.png"],
+    "windows": true,
+    "newArchitecture": true
   }
 ]
