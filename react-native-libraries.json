@@ -13188,6 +13188,10 @@
   {
     "githubUrl": "https://github.com/aravind3566/react-native-in-app-updates",
     "npmPkg": "react-native-in-app-updates",
+    "images": [
+       "https://developer.android.com/static/images/app-bundle/flexible_flow.png",
+       "https://developer.android.com/static/images/app-bundle/immediate_flow.png"
+     ],
     "android": true,
     "newArchitecture": true
   },
