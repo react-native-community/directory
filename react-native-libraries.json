@@ -13190,10 +13190,19 @@
     "npmPkg": "react-native-in-app-updates",
     "android": true,
     "newArchitecture": true
-  },  
+  },
+  {
+    "githubUrl": "https://github.com/MihirGrand/react-native-serialport-windows",
+    "npmPkg": "react-native-serialport-windows",
+    "examples": [
+      "https://github.com/MihirGrand/react-native-serialport-windows/tree/main/example"
+    ],
+    "images": ["https://github.com/MihirGrand/react-native-serialport-windows/blob/main/react-native-serialport-windows.png"],
+    "windows": true,
+    "newArchitecture": true
+  },
   {
     "githubUrl": "https://github.com/aravind3566/react-native-install-unknown-apps",
-    "npmPkg": "react-native-install-unknown-apps",
     "examples": ["https://github.com/aravind3566/react-native-install-unknown-apps/tree/main/example"],
     "android": true,
     "newArchitecture": true
