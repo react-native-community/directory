@@ -13210,5 +13210,15 @@
     "examples": ["https://github.com/aravind3566/react-native-install-unknown-apps/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-nitro-haptics",
+    "npmPkg": "react-native-nitro-haptics",
+    "examples": [
+      "https://github.com/oblador/react-native-nitro-haptics/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
