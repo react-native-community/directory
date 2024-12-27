@@ -13216,5 +13216,15 @@
     "examples": ["https://github.com/iliapnmrv/react-native-urovo/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-nitro-haptics",
+    "npmPkg": "react-native-nitro-haptics",
+    "examples": [
+      "https://github.com/oblador/react-native-nitro-haptics/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
