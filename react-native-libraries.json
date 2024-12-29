@@ -13235,5 +13235,13 @@
     "images": ["https://i.ibb.co/WPfT696/Simulator-Screenshot-i-Phone-16-Pro-2024-12-24-at-11-07-48.png"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ShivamJoker/react-native-quick-aws4",
+    "npmPkg": "react-native-quick-aws4",
+    "examples": ["https://github.com/ShivamJoker/react-native-quick-aws4?tab=readme-ov-file#example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
   }
 ]
