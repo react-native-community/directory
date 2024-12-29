@@ -13235,5 +13235,17 @@
     "images": ["https://i.ibb.co/WPfT696/Simulator-Screenshot-i-Phone-16-Pro-2024-12-24-at-11-07-48.png"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/samitha9125/react-native-timezone",
+    "npmPkg": "https://www.npmjs.com/package/react-native-timezone",
+    "examples": [
+      "https://github.com/samitha9125/react-native-timezone/tree/main/example",
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
