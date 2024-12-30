@@ -13237,6 +13237,31 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/ShivamJoker/react-native-quick-aws4",
+    "npmPkg": "react-native-quick-aws4",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager",
+    "npmPkg": "react-native-bluetooth-state-manager",
+    "ios": true,
+    "android": true,
+    "unmaintained": true,
+    "alternatives": [ "react-native-ble-plx" ],
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video",
+    "npmPkg": "expo-video",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/samitha9125/react-native-timezone",
     "npmPkg": "react-native-timezone",
     "examples": ["https://github.com/samitha9125/react-native-timezone/tree/main/example"],
