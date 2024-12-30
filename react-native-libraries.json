@@ -13269,5 +13269,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/shivanshBTW/react-native-overflow-row",
+    "npmPkg": "react-native-overflow-row",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
