@@ -13251,5 +13251,14 @@
     "unmaintained": true,
     "alternatives": [ "react-native-ble-plx" ],
     "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video",
+    "npmPkg": "expo-video",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
