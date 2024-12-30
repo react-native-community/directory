@@ -13248,6 +13248,8 @@
     "npmPkg": "expo-video",
     "ios": true,
     "android": true,
+    "web": true,
+    "tvos": true,
     "newArchitecture": true
   }
 ]
