@@ -2,7 +2,7 @@ import fetch from 'cross-fetch';
 
 import { sleep, REQUEST_SLEEP } from './helpers.js';
 
-const ATTEMPTS_LIMIT = 5;
+const ATTEMPTS_LIMIT = 3;
 
 const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
@@ -42,7 +42,8 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
     });
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
-      console.error('[NPM] Looks like we have reach the NPM API rate limit!', error);
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      console.error(error);
       return namesArray.map(name => ({ name, npm: null }));
     }
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
@@ -81,8 +82,9 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
       },
     };
   } catch (error) {
-    if (attemptsCount > ATTEMPTS_LIMIT) {
-      console.error('[NPM] Looks like we have reach the NPM API rate limit!', error);
+    if (attemptsCount >= ATTEMPTS_LIMIT) {
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      console.error(error);
       return { ...pkgData, npm: null };
     }
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
