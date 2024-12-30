@@ -13242,5 +13242,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager",
+    "npmPkg": "react-native-bluetooth-state-manager",
+    "ios": true,
+    "android": true,
+    "unmaintained": true,
+    "alternatives": [ "react-native-ble-plx" ],
+    "newArchitecture": false
   }
 ]
