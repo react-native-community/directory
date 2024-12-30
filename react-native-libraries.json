@@ -12215,11 +12215,12 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/okwasniewski/react-native-bottom-tabs",
-    "examples": ["https://github.com/okwasniewski/react-native-bottom-tabs/tree/main/example"],
+    "githubUrl": "https://github.com/callstackincubator/react-native-bottom-tabs",
+    "examples": ["https://github.com/callstackincubator/react-native-bottom-tabs/tree/main/example"],
     "ios": true,
     "android": true,
-    "visionos": true
+    "visionos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/AlirezaHadjar/react-native-fast-confetti",
