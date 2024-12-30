@@ -2753,7 +2753,8 @@
     "android": true,
     "expoGo": true,
     "unmaintained": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "alternatives": ["react-native-vision-camera"]
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
@@ -4347,12 +4348,6 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
-  },
-  {
-    "githubUrl": "https://github.com/connected-io/react-native-xml2js",
-    "ios": true,
-    "android": true,
     "unmaintained": true
   },
   {
@@ -12215,8 +12210,10 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/callstackincubator/react-native-bottom-tabs",
-    "examples": ["https://github.com/callstackincubator/react-native-bottom-tabs/tree/main/example"],
+    "githubUrl": "https://github.com/callstackincubator/react-native-bottom-tabs/tree/main/packages/react-native-bottom-tabs",
+    "examples": [
+      "https://github.com/callstackincubator/react-native-bottom-tabs/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "visionos": true,
@@ -12483,7 +12480,6 @@
   },
   {
     "githubUrl": "https://github.com/wneel/react-native-get-device-locale",
-    "npmPkg": "react-native-get-device-locale",
     "examples": [
       "https://github.com/wneel/react-native-get-device-locale",
       "https://snack.expo.dev/@wawa2048/react-native-get-device-locale-demo"
@@ -13141,10 +13137,7 @@
   },
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules",
-    "npmPkg": "react-native-nitro-modules",
-    "examples": [
-      "https://github.com/mrousavy/nitro/tree/main/example"
-    ],
+    "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
     "images": [
       "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true"
     ],
@@ -13159,9 +13152,7 @@
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/nitrogen",
     "npmPkg": "nitro-codegen",
-    "examples": [
-      "https://github.com/mrousavy/nitro/tree/main/example"
-    ],
+    "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
     "images": [
       "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true"
     ],
@@ -13176,9 +13167,7 @@
   {
     "githubUrl": "https://github.com/sjwall/react-native-drag-expand/tree/main/lib",
     "npmPkg": "react-native-drag-expand",
-    "examples": [
-      "https://github.com/sjwall/react-native-drag-expand/tree/main/example"
-    ],
+    "examples": ["https://github.com/sjwall/react-native-drag-expand/tree/main/example"],
     "images": ["https://github.com/sjwall/react-native-drag-expand/blob/main/demo.gif"],
     "ios": true,
     "android": true,
@@ -13188,28 +13177,30 @@
   },
   {
     "githubUrl": "https://github.com/aravind3566/react-native-in-app-updates",
-    "npmPkg": "react-native-in-app-updates",
     "images": [
-       "https://developer.android.com/static/images/app-bundle/flexible_flow.png",
-       "https://developer.android.com/static/images/app-bundle/immediate_flow.png"
-     ],
+      "https://developer.android.com/static/images/app-bundle/flexible_flow.png",
+      "https://developer.android.com/static/images/app-bundle/immediate_flow.png"
+    ],
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/MihirGrand/react-native-serialport-windows",
-    "npmPkg": "react-native-serialport-windows",
-    "examples": [
-      "https://github.com/MihirGrand/react-native-serialport-windows/tree/main/example"
+    "examples": ["https://github.com/MihirGrand/react-native-serialport-windows/tree/main/example"],
+    "images": [
+      "https://github.com/MihirGrand/react-native-serialport-windows/blob/main/react-native-serialport-windows.png"
     ],
-    "images": ["https://github.com/MihirGrand/react-native-serialport-windows/blob/main/react-native-serialport-windows.png"],
     "windows": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/aravind3566/react-native-install-unknown-apps",
-    "examples": ["https://github.com/aravind3566/react-native-install-unknown-apps/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/aravind3566/react-native-install-unknown-apps/refs/heads/main/assets/demo.gif"],
+    "examples": [
+      "https://github.com/aravind3566/react-native-install-unknown-apps/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/aravind3566/react-native-install-unknown-apps/refs/heads/main/assets/demo.gif"
+    ],
     "android": true,
     "newArchitecture": true
   },
@@ -13221,10 +13212,7 @@
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-nitro-haptics",
-    "npmPkg": "react-native-nitro-haptics",
-    "examples": [
-      "https://github.com/oblador/react-native-nitro-haptics/tree/master/example"
-    ],
+    "examples": ["https://github.com/oblador/react-native-nitro-haptics/tree/master/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -13233,29 +13221,28 @@
     "githubUrl": "https://github.com/RomanSytnyk/blur-app-in-recents",
     "npmPkg": "@roman.sytnyk/blur-app-in-recents",
     "examples": ["https://github.com/RomanSytnyk/blur-app-in-recents/tree/main/example"],
-    "images": ["https://i.ibb.co/WPfT696/Simulator-Screenshot-i-Phone-16-Pro-2024-12-24-at-11-07-48.png"],
+    "images": [
+      "https://i.ibb.co/WPfT696/Simulator-Screenshot-i-Phone-16-Pro-2024-12-24-at-11-07-48.png"
+    ],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/ShivamJoker/react-native-quick-aws4",
-    "npmPkg": "react-native-quick-aws4",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager",
-    "npmPkg": "react-native-bluetooth-state-manager",
     "ios": true,
     "android": true,
     "unmaintained": true,
-    "alternatives": [ "react-native-ble-plx" ],
+    "alternatives": ["react-native-ble-plx"],
     "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video",
-    "npmPkg": "expo-video",
     "ios": true,
     "android": true,
     "web": true,
@@ -13264,7 +13251,6 @@
   },
   {
     "githubUrl": "https://github.com/samitha9125/react-native-timezone",
-    "npmPkg": "react-native-timezone",
     "examples": ["https://github.com/samitha9125/react-native-timezone/tree/main/example"],
     "ios": true,
     "android": true,
@@ -13273,7 +13259,6 @@
   },
   {
     "githubUrl": "https://github.com/shivanshBTW/react-native-overflow-row",
-    "npmPkg": "react-native-overflow-row",
     "ios": true,
     "android": true,
     "web": true,

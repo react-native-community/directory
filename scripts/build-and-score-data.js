@@ -124,17 +124,17 @@ const buildAndScoreData = async () => {
   ).flat();
 
   // Fill npm data from bulk queries
-  data = data.map(project =>
-    project.npm
-      ? project
-      : {
-          ...project,
-          npm: {
-            ...(downloadsList.find(d => d.name === project.npmPkg)?.npm || {}),
-            ...(downloadsListWeek.find(d => d.name === project.npmPkg)?.npm || {}),
-          },
-        }
-  );
+  data = data.map(project => ({
+    ...project,
+    npm: {
+      ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ??
+        latestData.libraries.find(entry => entry.name === project.npmPkg)?.npm ??
+        {}),
+      ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ??
+        latestData.libraries.find(entry => entry.name === project.npmPkg)?.npm ??
+        {}),
+    },
+  }));
 
   console.log('\n⚛️ Calculating Directory Score');
   data = data.map(project => {
@@ -228,7 +228,9 @@ const buildAndScoreData = async () => {
     );
   }
 
-  await uploadToStore(fileContent);
+  if (!USE_DEBUG_REPOS) {
+    await uploadToStore(fileContent);
+  }
 
   return fs.writeFileSync(DATA_PATH, fileContent);
 };
