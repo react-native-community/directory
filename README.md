@@ -20,7 +20,7 @@
 
 ## How do I update the data for a library?
 
-- Find the entry for the library in [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file. (Not there? [Add it the library](#how-do-i-add-a-library).)
+- Find the entry for the library in [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file. (Not there? [Add it to the library](#how-do-i-add-a-library).)
 - Update the entry with the new data. Use the [library fields description](#library-fields-description) as a guide.
 - Submit a PR.
 
