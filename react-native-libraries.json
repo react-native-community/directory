@@ -13260,5 +13260,14 @@
     "web": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/samitha9125/react-native-timezone",
+    "npmPkg": "react-native-timezone",
+    "examples": ["https://github.com/samitha9125/react-native-timezone/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
