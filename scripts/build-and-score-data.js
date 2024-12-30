@@ -82,6 +82,9 @@ const buildAndScoreData = async () => {
   // https://github.com/npm/registry/blob/main/docs/download-counts.md#bulk-queries
   let bulkList = [];
 
+  // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
+  const CHUNK_SIZE = 80;
+
   // Fetch scoped packages data
   data = await Promise.all(
     data.map(project => {
@@ -97,9 +100,6 @@ const buildAndScoreData = async () => {
     })
   );
 
-  // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
-  const CHUNK_SIZE = 50;
-
   // Assemble and fetch regular packages data in bulk queries
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
@@ -108,7 +108,7 @@ const buildAndScoreData = async () => {
   const downloadsList = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(2000 * index);
+        await sleep(Math.max(2500 * index, 15000));
         return await fetchNpmDataBulk(chunk);
       })
     )
@@ -117,7 +117,7 @@ const buildAndScoreData = async () => {
   const downloadsListWeek = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(2000 * index);
+        await sleep(Math.max(2500 * index, 15000));
         return await fetchNpmDataBulk(chunk, 'week');
       })
     )
@@ -127,12 +127,8 @@ const buildAndScoreData = async () => {
   data = data.map(project => ({
     ...project,
     npm: {
-      ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ??
-        latestData.libraries.find(entry => entry.name === project.npmPkg)?.npm ??
-        {}),
-      ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ??
-        latestData.libraries.find(entry => entry.name === project.npmPkg)?.npm ??
-        {}),
+      ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
+      ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
     },
   }));
 
@@ -216,10 +212,21 @@ const buildAndScoreData = async () => {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
+    const currentData = [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data];
+
+    const dataWithFallback = currentData.map(entry =>
+      Object.keys(entry.npm).length > 0
+        ? entry
+        : {
+            ...entry,
+            npm:
+              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+          }
+    );
 
     fileContent = JSON.stringify(
       {
-        libraries: [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data],
+        libraries: dataWithFallback,
         topics: topicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
@@ -276,12 +283,6 @@ function getDataForFetch(wantedPackage) {
 async function loadRepositoryDataAsync() {
   const data = getDataForFetch(wantedPackageName);
 
-  let githubResultsFileExists = false;
-  try {
-    fs.statSync(GITHUB_RESULTS_PATH);
-    githubResultsFileExists = true;
-  } catch {}
-
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
   // 5000 requests per hour is the authenticated API request rate limit
@@ -295,22 +296,21 @@ async function loadRepositoryDataAsync() {
   }
 
   console.info(
-    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request`
+    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request.`
   );
 
   await loadGitHubLicenses();
 
   let result;
-  if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
-    result = fs.readFileSync(GITHUB_RESULTS_PATH);
-    console.log('Loaded Github results from disk, skipped API calls');
-  } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
-
-    if (LOAD_GITHUB_RESULTS_FROM_DISK) {
-      fs.writeFileSync(GITHUB_RESULTS_PATH, JSON.stringify(result, null, 2));
-      console.log('Saved Github results from disk');
+  if (LOAD_GITHUB_RESULTS_FROM_DISK) {
+    try {
+      result = fs.readFileSync(GITHUB_RESULTS_PATH);
+      console.log('Loaded GitHub results from disk, skipping API calls.');
+    } catch (error) {
+      console.warn('Failed to load data from disk!', error);
     }
+  } else {
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 2500 });
   }
 
   return result;
