@@ -6137,47 +6137,13 @@
     "githubUrl": "https://github.com/web-ridge/react-native-paper-dates",
     "examples": ["https://github.com/web-ridge/react-native-paper-dates/tree/master/example"],
     "images": [
-      "https://user-images.githubusercontent.com/6492229/98866767-bd3f2780-246d-11eb-890e-3491b47c95c5.gif"
+      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-paper-dates.gif"
     ],
     "ios": true,
     "android": true,
     "web": true,
     "newArchitecture": true,
     "expoGo": true
-  },
-  {
-    "githubUrl": "https://github.com/web-ridge/react-native-use-form",
-    "examples": ["https://github.com/web-ridge/react-native-use-form/tree/master/example"],
-    "images": [
-      "https://github.com/user-attachments/assets/50d069ef-672c-47e3-a9d9-8ecb53578475"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "newArchitecture": true,
-    "expoGo": true
-  },
-  {
-    "githubUrl": "https://github.com/web-ridge/react-native-paper-tabs",
-    "examples": ["https://github.com/web-ridge/react-native-paper-tabs/tree/master/example"],
-    "images": [
-      "https://user-images.githubusercontent.com/6492229/103141217-cb7d9600-46f1-11eb-8a98-9f233f0b7198.png"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/web-ridge/react-native-ridge-navigation",
-    "examples": ["https://github.com/web-ridge/react-native-ridge-navigation/tree/master/example"],
-    "images": [
-      "https://camo.githubusercontent.com/a05e6b0448d02b0ac2949cb4c5094e72fa6aaf8910859bb18c85040daa7712d7/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f69643d316e4530447a6c61567a615f68334b314b436b506e4b354e66495866594d35632d"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/retyui/react-native-stylex",
@@ -13295,6 +13261,40 @@
   },
   {
     "githubUrl": "https://github.com/shivanshBTW/react-native-overflow-row",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-native-use-form",
+    "examples": ["https://github.com/web-ridge/react-native-use-form/tree/master/example"],
+    "images": [
+      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-use-form.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-native-paper-tabs",
+    "examples": ["https://github.com/web-ridge/react-native-paper-tabs/tree/master/example"],
+    "images": [
+      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-paper-tabs.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/web-ridge/react-native-ridge-navigation",
+    "examples": ["https://github.com/web-ridge/react-native-ridge-navigation/tree/master/example"],
+    "images": [
+      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-ridge-navigation.webp"
+    ],
     "ios": true,
     "android": true,
     "web": true,
