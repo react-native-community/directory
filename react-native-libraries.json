@@ -13269,9 +13269,7 @@
   {
     "githubUrl": "https://github.com/web-ridge/react-native-use-form",
     "examples": ["https://github.com/web-ridge/react-native-use-form/tree/master/example"],
-    "images": [
-      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-use-form.png"
-    ],
+    "images": ["https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-use-form.png"],
     "ios": true,
     "android": true,
     "web": true,
@@ -13281,9 +13279,7 @@
   {
     "githubUrl": "https://github.com/web-ridge/react-native-paper-tabs",
     "examples": ["https://github.com/web-ridge/react-native-paper-tabs/tree/master/example"],
-    "images": [
-      "https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-paper-tabs.png"
-    ],
+    "images": ["https://webridge-assets.s3.eu-central-1.amazonaws.com/react-native-paper-tabs.png"],
     "ios": true,
     "android": true,
     "web": true,
@@ -13298,6 +13294,19 @@
     "ios": true,
     "android": true,
     "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/indiespirit/react-native-chart-kit",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/installations",
+    "npmPkg": "@react-native-firebase/installations",
+    "ios": true,
+    "tvos": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
