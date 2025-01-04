@@ -13308,5 +13308,11 @@
     "tvos": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/didomi/react-native",
+    "npmPkg": "@didomi/react-native",
+    "ios": true,
+    "android": true
   }
 ]
