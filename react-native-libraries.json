@@ -1931,13 +1931,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/Kommunicate-io/Kommunicate-React-Native-SDK.git",
-    "examples": "https://github.com/Kommunicate-io/Expo-Kommunicate-Sample-App",
-    "npmPkg": "@kommunicate-react-native-chat",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/jeanregisser/react-native-popover",
     "ios": true,
     "android": true,
