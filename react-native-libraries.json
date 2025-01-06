@@ -13322,5 +13322,13 @@
     "android": true,
     "expo": true,
     "newArchitecture": true
-  }  
+  },
+  {
+    "githubUrl": "https://github.com/Kommunicate-io/Kommunicate-React-Native-SDK",
+    "examples": ["https://github.com/Kommunicate-io/Expo-Kommunicate-Sample-App"],
+    "npmPkg": "@kommunicate-react-native-chat",
+    "iOS": true,
+    "android": true,
+    "newArchitecture": false
+  }
 ]
