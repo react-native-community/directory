@@ -13314,5 +13314,13 @@
     "npmPkg": "@didomi/react-native",
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/liveakshay/expo-spellchecker",
+    "examples": ["https://github.com/liveakshay/expo-spellchecker/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "newArchitecture": true
+  }  
 ]
