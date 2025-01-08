@@ -13355,5 +13355,14 @@
     "web": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/reduxjs/redux",
+    "examples": ["https://github.com/reduxjs/redux/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
