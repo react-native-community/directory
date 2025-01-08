@@ -13330,5 +13330,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/reduxjs/redux-toolkit/tree/master/packages/toolkit",
+    "examples": [
+      "https://github.com/reduxjs/redux-toolkit/tree/master/examples/publish-ci/react-native",
+      "https://github.com/reduxjs/redux-toolkit/tree/master/examples/publish-ci/expo"
+    ],
+    "npmPkg": "@reduxjs/toolkit",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
