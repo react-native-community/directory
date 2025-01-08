@@ -13332,10 +13332,10 @@
     "newArchitecture": false
   },
   {
-    "githubUrl": "https://github.com/reduxjs/redux-toolkit/tree/HEAD/packages/toolkit",
+    "githubUrl": "https://github.com/reduxjs/redux-toolkit/tree/master/packages/toolkit",
     "examples": [
-      "https://github.com/reduxjs/redux-toolkit/tree/HEAD/examples/publish-ci/react-native",
-      "https://github.com/reduxjs/redux-toolkit/tree/HEAD/examples/publish-ci/expo"
+      "https://github.com/reduxjs/redux-toolkit/tree/master/examples/publish-ci/react-native",
+      "https://github.com/reduxjs/redux-toolkit/tree/master/examples/publish-ci/expo"
     ],
     "npmPkg": "@reduxjs/toolkit",
     "ios": true,
