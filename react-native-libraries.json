@@ -13372,5 +13372,13 @@
     "web": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/reduxjs/redux-thunk",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
