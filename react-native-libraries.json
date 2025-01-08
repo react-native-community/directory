@@ -13355,5 +13355,17 @@
     "web": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/reduxjs/reselect",
+    "examples": [
+      "https://github.com/reduxjs/redux-toolkit/tree/HEAD/examples/publish-ci/react-native",
+      "https://github.com/reduxjs/redux-toolkit/tree/HEAD/examples/publish-ci/expo"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
