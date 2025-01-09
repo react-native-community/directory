@@ -1370,11 +1370,15 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/alexbrillant/react-native-deck-swiper",
+    "githubUrl": "https://github.com/webraptor/react-native-deck-swiper",
     "ios": true,
     "android": true,
     "expoGo": true,
-    "examples": ["https://snack.expo.dev/rJBRhOLU-"]
+    "examples": ["https://github.com/webraptor/react-native-deck-swiper/tree/master/example"],
+    "images": [
+      "https://github.com/webraptor/react-native-deck-swiper/raw/master/animation.gif",
+      "https://github.com/webraptor/react-native-deck-swiper/blob/master/animation2.gif"
+    ]
   },
   {
     "githubUrl": "https://github.com/d-a-n/react-native-webbrowser",
