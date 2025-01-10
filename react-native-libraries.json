@@ -13386,5 +13386,13 @@
     "web": true,
     "expo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/FilipiRafael/react-native-motion-tabs",
+    "npmPkg": "https://www.npmjs.com/package/react-native-motion-tabs",
+    "ios": true,
+    "android": true,
+    "expo": true,
+    "newArchitecture": true
   }
 ]
