@@ -13439,5 +13439,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/PlayerData/react-native-mcu-manager/tree/main/react-native-mcu-manager",
+    "npmPkg": "@playerdata/react-native-mcu-manager",
+    "examples": [
+      "https://github.com/PlayerData/react-native-mcu-manager/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
