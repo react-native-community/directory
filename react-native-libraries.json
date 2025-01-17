@@ -13449,5 +13449,26 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/THEOplayer/react-native-theoplayer",
+    "examples": [
+      "https://github.com/THEOplayer/react-native-theoplayer/tree/develop/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/example-app-player-ui.png",
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/example-app-thumbnails.png",
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/example-app-source-selection.png",
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/texttrackstyle_family.png",
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/notification_android.png",
+      "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/notification_ios.png"
+    ],
+    "npmPkg": "react-native-theoplayer",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
