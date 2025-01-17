@@ -13470,5 +13470,15 @@
     "tvos": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gronxb/hot-updater",
+    "npmPkg": "@hot-updater/react-native",
+    "images": [
+      "https://github.com/gronxb/hot-updater/blob/main/demo.gif?raw=true"
+    ],
+	"ios": true,
+	"android": true,
+	"newArchitecture": true
   }
 ]
