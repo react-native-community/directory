@@ -9961,7 +9961,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Jm-Zion/rn-wave-bottom-bar",
@@ -12230,10 +12231,18 @@
   },
   {
     "githubUrl": "https://github.com/AlirezaHadjar/react-native-fast-confetti",
-    "examples": ["https://github.com/AlirezaHadjar/react-native-fast-confetti/tree/main/example"],
+    "examples": [
+      "https://github.com/AlirezaHadjar/react-native-fast-confetti/blob/main/example/src/App.tsx"
+    ],
+    "images": [
+      "https://github.com/AlirezaHadjar/react-native-fast-confetti/blob/main/images/confetti.png",
+      "https://github.com/AlirezaHadjar/react-native-fast-confetti/blob/main/images/piconfetti.png"
+    ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/rgommezz/react-native-animated-stopwatch-timer",
@@ -13443,18 +13452,14 @@
   {
     "githubUrl": "https://github.com/PlayerData/react-native-mcu-manager/tree/main/react-native-mcu-manager",
     "npmPkg": "@playerdata/react-native-mcu-manager",
-    "examples": [
-      "https://github.com/PlayerData/react-native-mcu-manager/tree/main/example"
-    ],
+    "examples": ["https://github.com/PlayerData/react-native-mcu-manager/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/THEOplayer/react-native-theoplayer",
-    "examples": [
-      "https://github.com/THEOplayer/react-native-theoplayer/tree/develop/example"
-    ],
+    "examples": ["https://github.com/THEOplayer/react-native-theoplayer/tree/develop/example"],
     "images": [
       "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/example-app-player-ui.png",
       "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/example-app-thumbnails.png",
@@ -13463,7 +13468,6 @@
       "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/notification_android.png",
       "https://raw.githubusercontent.com/THEOplayer/react-native-theoplayer/develop/doc/notification_ios.png"
     ],
-    "npmPkg": "react-native-theoplayer",
     "ios": true,
     "android": true,
     "web": true,
