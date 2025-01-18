@@ -106,6 +106,10 @@ export const handleFilterLibraries = ({
       return false;
     }
 
+    if (support.fireos && !library.fireos) {
+      return false;
+    }
+
     if (support.tvos && !library.tvos) {
       return false;
     }
