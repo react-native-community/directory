@@ -6807,7 +6807,8 @@
     "examples": ["https://github.com/stripe/stripe-react-native/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/swaplet/react-native-swipe-cards-deck",
