@@ -13486,5 +13486,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/yunusyavuz16/react-native-trendy",
+    "npmPkg": "react-native-trendy",
+    "examples": ["https://github.com/yunusyavuz16/react-native-trendy/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/yunusyavuz16/react-native-trendy/HEAD/react-native-trendy.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
