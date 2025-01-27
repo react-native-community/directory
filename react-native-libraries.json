@@ -13504,5 +13504,13 @@
     "examples": ["https://github.com/matinzd/expo-health-connect/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/suhaotian/xior",
+    "npmPkg": "xior",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
