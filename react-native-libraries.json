@@ -7740,9 +7740,11 @@
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-base64",
+    "npmPkg": "react-native-quick-base64",
     "examples": ["https://github.com/craftzdog/react-native-quick-base64/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/getbouncer/react-native-cardscan",
@@ -13512,5 +13514,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/craftzdog/react-native-buffer",
+    "npmPkg": "@craftzdog/react-native-buffer",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
