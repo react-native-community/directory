@@ -13521,5 +13521,29 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bugsnag/bugsnag-expo/tree/next/packages/expo",
+    "npmPkg": "@bugsnag/expo",
+    "examples": ["https://github.com/bugsnag/bugsnag-expo/tree/next/examples"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bugsnag/bugsnag-js/tree/next/packages/react-native",
+    "npmPkg": "@bugsnag/react-native",
+    "examples": ["https://github.com/bugsnag/bugsnag-js/tree/next/examples/reactnative"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bugsnag/bugsnag-js-performance/tree/next/packages/platforms/react-native",
+    "examples": ["https://github.com/bugsnag/bugsnag-js-performance/tree/next/examples"],
+    "npmPkg": "@bugsnag/react-native-performance",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
