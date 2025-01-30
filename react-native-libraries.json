@@ -6408,7 +6408,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/package",
@@ -6421,7 +6422,8 @@
       "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "goldstar": true
   },
   {
     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
