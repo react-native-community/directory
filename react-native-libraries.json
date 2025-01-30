@@ -3337,7 +3337,8 @@
     "ios": true,
     "android": true,
     "windows": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["react-native-vision-camera"]
   },
   {
     "githubUrl": "https://github.com/seniv/react-native-notifier",
@@ -6421,7 +6422,9 @@
       "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy view components."
   },
   {
     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
