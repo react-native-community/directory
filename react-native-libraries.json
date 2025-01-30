@@ -13545,5 +13545,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pachun/use-expo-push-notifications",
+    "npmPkg": "@pachun/use-expo-push-notifications",
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
