@@ -8,18 +8,18 @@
 const MODIFIERS = [
   {
     name: 'Very popular',
-    value: 40,
-    condition: data => getCombinedPopularity(data) > 10000,
+    value: 45,
+    condition: data => getCombinedPopularity(data) > 50000,
   },
   {
     name: 'Popular',
-    value: 10,
-    condition: data => getCombinedPopularity(data) > 2500,
+    value: 30,
+    condition: data => getCombinedPopularity(data) > 10000,
   },
   {
-    name: 'Recommended',
-    value: 20,
-    condition: data => data.goldstar,
+    name: 'Known',
+    value: 15,
+    condition: data => getCombinedPopularity(data) > 2500,
   },
   {
     name: 'Lots of open issues',
@@ -93,7 +93,7 @@ export const calculateDirectoryScore = data => {
 const getCombinedPopularity = data => {
   const { subscribers, forks, stars } = data.github.stats;
   const { downloads } = data.npm;
-  return subscribers * 20 + forks * 10 + stars + downloads / 100;
+  return subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;
 };
 
 const getUpdatedDaysAgo = data => {
