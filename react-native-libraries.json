@@ -4417,8 +4417,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": false,
-    "newArchitectureNote": "PR open for new architecture support https://github.com/teslamotors/react-native-camera-kit/issues/537",
-    "alternatives": ["react-native-vision-camera"]
+    "newArchitectureNote": "PR open for new architecture support https://github.com/teslamotors/react-native-camera-kit/issues/537"
   },
   {
     "githubUrl": "https://github.com/BondGoat/react-native-native-video-player",
