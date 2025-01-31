@@ -7743,7 +7743,6 @@
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-base64",
-    "npmPkg": "react-native-quick-base64",
     "examples": ["https://github.com/craftzdog/react-native-quick-base64/tree/master/example"],
     "ios": true,
     "android": true,
@@ -13485,18 +13484,17 @@
   {
     "githubUrl": "https://github.com/gronxb/hot-updater/tree/main/packages/react-native",
     "npmPkg": "@hot-updater/react-native",
-    "images": [
-      "https://raw.githubusercontent.com/gronxb/hot-updater/refs/heads/main/demo.gif"
-    ],
+    "images": ["https://raw.githubusercontent.com/gronxb/hot-updater/refs/heads/main/demo.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/yunusyavuz16/react-native-trendy",
-    "npmPkg": "react-native-trendy",
     "examples": ["https://github.com/yunusyavuz16/react-native-trendy/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/yunusyavuz16/react-native-trendy/HEAD/react-native-trendy.png"],
+    "images": [
+      "https://raw.githubusercontent.com/yunusyavuz16/react-native-trendy/HEAD/react-native-trendy.png"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -13505,14 +13503,12 @@
   },
   {
     "githubUrl": "https://github.com/matinzd/expo-health-connect",
-    "npmPkg": "expo-health-connect",
     "examples": ["https://github.com/matinzd/expo-health-connect/tree/main/example"],
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/suhaotian/xior",
-    "npmPkg": "xior",
     "ios": true,
     "android": true,
     "web": true,
@@ -13554,33 +13550,41 @@
     "npmPkg": "@pachun/use-expo-push-notifications",
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": true
   },
   {
-  "githubUrl": "https://github.com/benjamineruvieru/react-native-pdf-from-image",
-  "npmPkg": "react-native-pdf-from-image",
-  "examples": ["https://github.com/benjamineruvieru/react-native-pdf-from-image/tree/main/example"],
-  "ios": true,
-  "android": true,
-  "newArchitecture": true
-},
-{
-  "githubUrl": "https://github.com/benjamineruvieru/rn-text-touch-highlight",
-  "npmPkg": "rn-text-touch-highlight",
-  "examples": ["https://github.com/benjamineruvieru/rn-text-touch-highlight/tree/main/example"],
-  "ios": true,
-  "android": true,
-  "expoGo": true,
-  "newArchitecture": true
-},
-{
-  "githubUrl": "https://github.com/benjamineruvieru/react-native-type-animation",
-  "npmPkg": "react-native-type-animation",
-  "examples": ["https://github.com/benjamineruvieru/react-native-type-animation/tree/main/example"],
-  "ios": true,
-  "android": true,
-  "expoGo": true,
-  "newArchitecture": true
-}
+    "githubUrl": "https://github.com/benjamineruvieru/react-native-pdf-from-image",
+    "examples": [
+      "https://github.com/benjamineruvieru/react-native-pdf-from-image/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/benjamineruvieru/rn-text-touch-highlight",
+    "examples": ["https://github.com/benjamineruvieru/rn-text-touch-highlight/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/benjamineruvieru/react-native-type-animation",
+    "examples": [
+      "https://github.com/benjamineruvieru/react-native-type-animation/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/oxidia/style-variance-authority",
+    "npmPkg": "@oxidia/style-variance-authority",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true
+  }
 ]
