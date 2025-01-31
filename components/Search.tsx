@@ -45,7 +45,7 @@ const Search = ({ query, total }: Props) => {
 
   const typingCallback = useDebouncedCallback((text: string) => {
     Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
-  }, 150);
+  }, 200);
 
   const handleClearAllPress = () => {
     Router.replace(urlWithQuery('/', { search: query.search, offset: null }));

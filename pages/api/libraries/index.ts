@@ -12,13 +12,13 @@ const originalData = [...data.libraries] as Library[];
 const getData = () => ({
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],
-  recommended: Sorting.recommended([...originalData]),
   compatibility: Sorting.compatibility([...originalData]),
   quality: Sorting.quality([...originalData]),
   popularity: Sorting.popularity([...originalData]),
   downloads: Sorting.downloads([...originalData]),
   issues: Sorting.issues([...originalData]),
   stars: Sorting.stars([...originalData]),
+  relevance: Sorting.relevance([...originalData]),
 });
 
 const SortedData = getData();
@@ -29,8 +29,8 @@ const ReversedSortedData = Object.entries(getData()).reduce(
   {}
 );
 
-const getAllowedOrderString = (req: NextApiRequest) => {
-  let sortBy = SortingKeys[0];
+const getAllowedOrderString = (req: NextApiRequest, querySearch?: string) => {
+  let sortBy = querySearch ? SortingKeys.at(-1) : SortingKeys[0];
 
   SortingKeys.forEach(sortName => {
     if (req.query.order === sortName) {
@@ -45,16 +45,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
-  const sortBy = getAllowedOrderString(req);
-  const sortDirection = req.query.direction ?? 'descending';
-  const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
-
   const querySearch = req.query.search
     ? req.query.search.toString().toLowerCase().trim()
     : undefined;
 
+  const sortBy = getAllowedOrderString(req, querySearch);
+  const sortDirection = req.query.direction ?? 'descending';
+  const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
+
   const filteredLibraries = handleFilterLibraries({
     libraries,
+    sortBy,
     queryTopic: req.query.topic,
     querySearch,
     support: {

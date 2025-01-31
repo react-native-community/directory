@@ -116,7 +116,6 @@ export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
 export const H3 = createTextComponent(HtmlElements.H3, textStyles.h3);
 export const H4 = createTextComponent(HtmlElements.H4, textStyles.h4);
 export const H5 = createTextComponent(HtmlElements.H5, textStyles.h5);
-export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);

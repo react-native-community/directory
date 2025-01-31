@@ -96,17 +96,17 @@ const Scoring = () => {
           download counts:
           <br />
           <View style={styles.formula}>
-            <code>subscribers * 20 + forks * 10 + stars + downloads / 100;</code>
+            <code>subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;</code>
           </View>
         </ScoringCriterion>
-        <ScoringCriterion headline="Very popular" score={40}>
+        <ScoringCriterion headline="Very popular" score={45}>
+          Libraries with a Combined Popularity score of over 50,000 meet this criterion.
+        </ScoringCriterion>
+        <ScoringCriterion headline="Popular" score={30}>
           Libraries with a Combined Popularity score of over 10,000 meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Popular" score={10}>
+        <ScoringCriterion headline="Known" score={15}>
           Libraries with a Combined Popularity score of over 2,500 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Recommended" score={20}>
-          The maintainers of React Native Directory hand pick select recommended libraries.
         </ScoringCriterion>
         <ScoringCriterion headline="Recently updated" score={10}>
           Libraries that have been updated in the last 30 days meet this criterion.

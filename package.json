@@ -9,7 +9,7 @@
     "data:test": "node scripts/validate-libraries.js",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose --allowUnionTypes",
     "libraries:cleanup": "node scripts/cleanup-libraries-json.js && yarn libraries:format",
-    "libraries:recalculate": "node scripts/recalculate-popularity.js",
+    "libraries:recalculate": "node scripts/recalculate-scores.js",
     "libraries:format": "prettier --write react-native-libraries.json",
     "libraries:check": "node scripts/check-resources.js",
     "ci:cleanup-blobs": "node scripts/cleanup-data-blobs.js",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
     "@next/bundle-analyzer": "^15.1.3",
+    "@types/lodash": "^4.17.15",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "ajv-cli": "^5.0.0",

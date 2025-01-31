@@ -4,7 +4,6 @@ import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { MetaData } from './MetaData';
-import RecommendedLabel from './RecommendedLabel';
 import Thumbnail from './Thumbnail';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
@@ -65,7 +64,6 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
             hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
             {libName}
           </A>
-          {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -75,7 +73,11 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
             <Headline numberOfLines={skipMetadata && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
-                  linkWrapper: props => <A {...props}>{props.children}</A>,
+                  linkWrapper: ({ children, key, ...rest }) => (
+                    <A {...rest} key={key}>
+                      {children}
+                    </A>
+                  ),
                 }}>
                 {emoji.emojify(github.description)}
               </Linkify>
