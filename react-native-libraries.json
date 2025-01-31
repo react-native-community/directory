@@ -13556,5 +13556,32 @@
     "android": true,
     "expoGo": false,
     "newArchitecture": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/benjamineruvieru/react-native-pdf-from-image",
+  "npmPkg": "@react-native-pdf-from-image",
+  "examples": ["https://github.com/benjamineruvieru/react-native-pdf-from-image/tree/main/example"],
+  "images": ["https://www.benjamineruvieru.com/images/projects/react-native-pdf-from-image/logo.png"],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
+},
+{
+  "githubUrl": "https://github.com/benjamineruvieru/rn-text-touch-highlight",
+  "npmPkg": "@rn-text-touch-highlight",
+  "examples": ["https://github.com/benjamineruvieru/rn-text-touch-highlight/tree/main/example"],
+  "ios": true,
+  "android": true,
+  "expoGo": true,
+  "newArchitecture": true
+},
+{
+  "githubUrl": "https://github.com/benjamineruvieru/react-native-type-animation",
+  "npmPkg": "@react-native-type-animation",
+  "examples": ["https://github.com/benjamineruvieru/react-native-type-animation/tree/main/example"],
+  "ios": true,
+  "android": true,
+  "expoGo": true,
+  "newArchitecture": true
+}
 ]
