@@ -3111,8 +3111,11 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/rnmods/react-native-document-picker",
-    "examples": ["https://github.com/rnmods/react-native-document-picker/tree/master/example"],
+    "githubUrl": "https://github.com/react-native-documents/document-picker/tree/main/packages/document-picker",
+    "npmPkg": "@react-native-documents/picker",
+    "examples": [
+      "https://github.com/react-native-documents/document-picker/tree/main/packages/example  "
+    ],
     "images": [
       "https://raw.githubusercontent.com/rnmods/react-native-document-picker/master/docs/android_screenshot.jpg",
       "https://raw.githubusercontent.com/rnmods/react-native-document-picker/master/docs/ios_screenshot.jpeg"
@@ -13586,5 +13589,71 @@
     "ios": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/MatiPl01/react-native-sortables",
+    "android": true,
+    "ios": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/react-native-fast-io/tree/main/packages/react-native-fast-io",
+    "examples": ["https://github.com/callstackincubator/react-native-fast-io/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/polygen/tree/master/packages/polygen",
+    "npmPkg": "@callstack/polygen",
+    "examples": ["https://github.com/callstackincubator/polygen/tree/master/apps/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-documents/document-picker/tree/main/packages/document-viewer",
+    "npmPkg": "@react-native-documents/viewer",
+    "examples": ["https://github.com/rnmods/react-native-document-picker/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-css-animations",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Lg0gs/react-native-tiktok",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/otago-dev/otago",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/deeeed/expo-audio-stream/blob/main/packages/expo-audio-stream",
+    "npmPkg": "@siteed/expo-audio-stream",
+    "examples": ["https://deeeed.github.io/expo-audio-stream/playground"],
+    "images": ["https://raw.githubusercontent.com/deeeed/expo-audio-stream/main/docs/demo.gif"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/deeeed/expo-audio-stream/tree/main/packages/expo-audio-ui",
+    "npmPkg": "@siteed/expo-audio-stream-ui",
+    "examples": ["https://deeeed.github.io/expo-audio-stream/expo-audio-ui-storybook/"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/gitn00b1337/expo-widgets",
+    "npmPkg": "@bittingz/expo-widgets",
+    "examples": ["https://github.com/gitn00b1337/expo-widgets/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
