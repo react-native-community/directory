@@ -13657,7 +13657,8 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/statelyai/xstate",
+    "githubUrl": "https://github.com/statelyai/xstate/tree/main/packages/core",
+    "npmPkg": "xstate",
     "examples": ["https://github.com/statelyai/xstate/tree/main/examples"],
     "ios": true,
     "android": true,
