@@ -13655,5 +13655,30 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/statelyai/xstate/tree/main/packages/core",
+    "npmPkg": "xstate",
+    "examples": ["https://github.com/statelyai/xstate/tree/main/examples"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/statelyai/xstate/tree/main/packages/xstate-store",
+    "npmPkg": "@xstate/store",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/statelyai/xstate/tree/main/packages/xstate-react",
+    "npmPkg": "@xstate/react",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
