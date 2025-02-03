@@ -24,7 +24,7 @@ const DATASET = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 
 // If script should try to scrape images from GitHub repositories.
-const SCRAPE_GH_IMAGES = true;
+const SCRAPE_GH_IMAGES = false;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
