@@ -451,7 +451,6 @@
     "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
     "ios": true,
     "android": true,
-    "goldstar": true,
     "newArchitecture": true
   },
   {
@@ -502,7 +501,6 @@
     "macos": true,
     "tvos": true,
     "visionos": true,
-    "goldstar": true,
     "examples": [
       "https://snack.expo.dev/rJnUK4nrZ",
       "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
@@ -519,8 +517,7 @@
     "githubUrl": "https://github.com/wix/react-native-navigation",
     "ios": true,
     "tvos": true,
-    "android": true,
-    "goldstar": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/gre/gl-react/tree/master/packages/gl-react-expo",
@@ -557,7 +554,6 @@
     "android": true,
     "windows": true,
     "expoGo": true,
-    "goldstar": true,
     "npmPkg": "lottie-react-native"
   },
   {
@@ -569,7 +565,6 @@
       "https://github.com/react-native-maps/react-native-maps/tree/master/example",
       "https://snack.expo.dev/H1zOFxnN-"
     ],
-    "goldstar": true,
     "newArchitecture": false
   },
   {
@@ -584,7 +579,6 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "goldstar": true,
     "examples": ["https://snack.expo.dev/SJfJguhrW"]
   },
   {
@@ -606,7 +600,6 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "goldstar": true,
     "examples": [
       "https://snack.expo.dev/HkoXUdhr-",
       "https://github.com/wix/react-native-calendars/tree/master/example"
@@ -622,8 +615,7 @@
     "web": true,
     "expoGo": true,
     "macos": true,
-    "windows": true,
-    "goldstar": true
+    "windows": true
   },
   {
     "githubUrl": "https://github.com/expo/vector-icons",
@@ -632,7 +624,6 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "goldstar": true,
     "examples": ["https://icons.expo.fyi"]
   },
   {
@@ -688,7 +679,6 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "goldstar": true,
     "examples": [
       "https://snack.expo.dev/HJjbO4nSW",
       "https://github.com/react-navigation/react-navigation/tree/main/example"
@@ -733,8 +723,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "visionos": true,
-    "goldstar": true
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
@@ -3181,8 +3170,7 @@
     "macos": true,
     "expoGo": true,
     "visionos": true,
-    "newArchitecture": true,
-    "goldstar": true
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/osdnk/react-native-reanimated-bottom-sheet",
@@ -3479,7 +3467,6 @@
     "ios": true,
     "android": true,
     "web": true,
-    "goldstar": true,
     "expoGo": true,
     "tvos": true,
     "visionos": true,
@@ -7140,8 +7127,7 @@
     "expoGo": true,
     "web": true,
     "macos": true,
-    "visionos": true,
-    "goldstar": true
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/react-native-toolkit/react-native-responsive-dimensions",
@@ -11376,7 +11362,6 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo",
-    "goldstar": true,
     "ios": true,
     "android": true,
     "tvos": true,

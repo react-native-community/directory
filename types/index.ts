@@ -38,7 +38,6 @@ export type Query = {
 };
 
 export type Library = {
-  goldstar?: boolean;
   githubUrl: string;
   ios?: boolean;
   android?: boolean;

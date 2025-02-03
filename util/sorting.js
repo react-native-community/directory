@@ -1,9 +1,3 @@
-export const recommended = libraries => {
-  return libraries.sort((a, b) => {
-    return a.goldstar === b.goldstar ? 0 : a.goldstar ? -1 : 1;
-  });
-};
-
 export const compatibility = libraries => {
   return libraries.sort((a, b) => {
     const aCompat = [1, a.expoGo && typeof a.expoGo !== 'string', a.ios, a.android, a.web].reduce(
@@ -54,5 +48,11 @@ export const popularity = libraries => {
 };
 
 export const relevance = libraries => {
-  return libraries.sort((a, b) => b.matchScore - a.matchScore);
+  return libraries.sort((a, b) => {
+    if (Math.abs(a.matchScore - b.matchScore) >= 50) {
+      return b.matchScore - a.matchScore;
+    }
+
+    return b.score - a.score;
+  });
 };
