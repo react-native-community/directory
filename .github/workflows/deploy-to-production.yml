@@ -6,8 +6,8 @@ on:
     paths-ignore:
       - 'react-native-libraries.json'
   schedule:
-    # Run every 2 hours - https://crontab.guru/#0_*/2_*_*_*
-    - cron: '0 */2 * * *'
+    # Run every 3 hours - https://crontab.guru/#0_*/3_*_*_*
+    - cron: '0 */3 * * *'
 
 jobs:
   build:

@@ -116,12 +116,12 @@ const WEEK_IN_MS = 6048e5;
 
 export const calculatePopularityScore = data => {
   const {
-    npm: { downloads, weekDownloads },
+    npm: { downloads },
     github,
     unmaintained,
   } = data;
 
-  if (!downloads || !weekDownloads) {
+  if (!downloads) {
     return {
       ...data,
       popularity: -100,
@@ -130,7 +130,9 @@ export const calculatePopularityScore = data => {
 
   const { createdAt, stars } = github.stats;
 
-  const popularityGain = (weekDownloads - Math.floor(downloads / 4.5)) / downloads;
+  // Figure out better way to determine popularity gain, since with amount of libraries
+  // we list, we are hitting npm API limits when fetching twice, for each entry
+  const popularityGain = (Math.floor(downloads / 4) - Math.floor(downloads / 4.5)) / downloads;
 
   const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.25 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;

@@ -46,7 +46,7 @@ const fetchReadmeImages = async (data, attemptsCount = 0) => {
    * @DEV
    * if images been set, or max attempt count has been reached, we skip scraping images
    */
-  if (data.images || attemptsCount > 5) {
+  if (data.images || attemptsCount > 3) {
     return data;
   }
 
