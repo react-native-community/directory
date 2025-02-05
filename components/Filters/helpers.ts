@@ -38,10 +38,6 @@ export const FILTER_REQUIRES_MAIN_SEARCH = [
     param: 'isPopular',
     title: 'Popular',
   },
-  {
-    param: 'isRecommended',
-    title: 'Recommended',
-  },
 ];
 
 export const FILTER_STATUS = [
@@ -59,11 +55,11 @@ export const FILTER_STATUS = [
   },
   {
     param: 'hasTypes',
-    title: 'Has Typescript types',
+    title: 'Has TypeScript types',
   },
   {
     param: 'newArchitecture',
-    title: 'Supports new architecture',
+    title: 'Supports New Architecture',
   },
   {
     param: 'wasRecentlyUpdated',
