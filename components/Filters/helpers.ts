@@ -66,8 +66,8 @@ export const FILTER_STATUS = [
     title: 'Has TypeScript types',
   },
   {
-    param: 'newArchitecture',
-    title: 'Supports New Architecture',
+    param: 'expoGo',
+    title: 'Works with Expo Go',
   },
   {
     param: 'wasRecentlyUpdated',
