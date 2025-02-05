@@ -42,6 +42,10 @@ export const FILTER_REQUIRES_MAIN_SEARCH = [
 
 export const FILTER_STATUS = [
   {
+    param: 'newArchitecture',
+    title: 'Supports New Architecture',
+  },
+  {
     param: 'hasExample',
     title: 'Has example',
   },
@@ -50,16 +54,12 @@ export const FILTER_STATUS = [
     title: 'Has image preview',
   },
   {
-    param: 'expoGo',
-    title: 'Works with Expo Go',
-  },
-  {
     param: 'hasTypes',
     title: 'Has TypeScript types',
   },
   {
-    param: 'newArchitecture',
-    title: 'Supports New Architecture',
+    param: 'expoGo',
+    title: 'Works with Expo Go',
   },
   {
     param: 'wasRecentlyUpdated',
