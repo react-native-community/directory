@@ -115,7 +115,7 @@
 - #### `visionos`
   **(boolean)** - can be used with [`react-native-visionos`](https://github.com/callstack/react-native-visionos).
 
-#### ✅ Compatiblity
+#### ✅ Compatibility
 
 - #### `expoGo`
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
