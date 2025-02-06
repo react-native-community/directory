@@ -13665,5 +13665,21 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/portabletext/react-native-portabletext",
+    "npmPkg": "@portabletext/react-native",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+  },
+  {
+    "githubUrl": "https://github.com/sanity-io/client",
+    "npmPkg": "@sanity/client",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
   }
 ]
