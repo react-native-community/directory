@@ -121,7 +121,7 @@
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
 
 > [!TIP]
-> **Any** library can be used with Expo, if you use dev clients and prebuild.
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
 
 #### 🏷️ Tags
 
