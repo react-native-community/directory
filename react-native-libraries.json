@@ -13665,5 +13665,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+  "githubUrl": "https://github.com/neurio/react-native-mqtt-file-transfer",
+  "npmPkg": "react-native-mqtt-file-transfer",
+  "examples": ["https://github.com/neurio/react-native-mqtt-file-transfer/tree/main/example"],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
   }
 ]
