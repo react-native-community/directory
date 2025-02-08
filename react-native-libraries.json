@@ -13665,5 +13665,16 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/EdgarJMesquita/expo-totp",
+    "examples": ["https://github.com/EdgarJMesquita/expo-totp/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/EdgarJMesquita/expo-totp/refs/heads/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "web": false
   }
 ]
