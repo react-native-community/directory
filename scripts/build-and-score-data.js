@@ -24,7 +24,7 @@ const DATASET = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 
 // If script should try to scrape images from GitHub repositories.
-const SCRAPE_GH_IMAGES = true;
+const SCRAPE_GH_IMAGES = false;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
@@ -83,13 +83,14 @@ const buildAndScoreData = async () => {
   let bulkList = [];
 
   // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
-  const CHUNK_SIZE = 80;
+  const CHUNK_SIZE = 25;
 
   // Fetch scoped packages data
   data = await Promise.all(
-    data.map(project => {
+    data.map(async project => {
       if (!project.template) {
         if (project.npmPkg.startsWith('@')) {
+          await sleep(Math.max(Math.random() * 2500));
           return fetchNpmData(project);
         } else {
           bulkList.push(project.npmPkg);
@@ -114,21 +115,21 @@ const buildAndScoreData = async () => {
     )
   ).flat();
 
-  const downloadsListWeek = (
-    await Promise.all(
-      bulkList.map(async (chunk, index) => {
-        await sleep(Math.max(2500 * index, 15000));
-        return await fetchNpmDataBulk(chunk, 'week');
-      })
-    )
-  ).flat();
+  // const downloadsListWeek = (
+  //   await Promise.all(
+  //     bulkList.map(async (chunk, index) => {
+  //       await sleep(Math.max(2500 * index, 15000));
+  //       return await fetchNpmDataBulk(chunk, 'week');
+  //     })
+  //   )
+  // ).flat();
 
   // Fill npm data from bulk queries
   data = data.map(project => ({
     ...project,
     npm: {
       ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
-      ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
+      // ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
     },
   }));
 
@@ -136,8 +137,8 @@ const buildAndScoreData = async () => {
   data = data.map(project => {
     try {
       return calculateDirectoryScore(project);
-    } catch (e) {
-      console.error(`Failed to calculate score for ${project.github.name}`, e.message);
+    } catch (error) {
+      console.error(`Failed to calculate score for ${project.github.name}`, error.message);
     }
   });
 
@@ -145,8 +146,8 @@ const buildAndScoreData = async () => {
   data = data.map(project => {
     try {
       return calculatePopularityScore(project);
-    } catch (e) {
-      console.error(`Failed to calculate popularity for ${project.github.name}`, e.message);
+    } catch (error) {
+      console.error(`Failed to calculate popularity for ${project.github.name}`, error.message);
       console.error(project.githubUrl);
     }
   });

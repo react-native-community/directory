@@ -48,11 +48,11 @@
   "ios": false,
   "android": false,
   "web": false,
-  "expoGo": false,
   "windows": false,
   "macos": false,
   "tvos": false,
   "visionos": false,
+  "expoGo": false,
   "unmaintained": false,
   "dev": false,
   "template": false,
@@ -100,12 +100,6 @@
   **(boolean)** - works on iOS device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
-- #### `expoGo`
-
-  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
-  
-> [!TIP]
-> **Any** library can be used with Expo, if you use dev clients and prebuild.
 
 #### 🖥️ Out-of-tree Platforms
 
@@ -120,6 +114,14 @@
   **(boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
 - #### `visionos`
   **(boolean)** - can be used with [`react-native-visionos`](https://github.com/callstack/react-native-visionos).
+
+#### ✅ Compatibility
+
+- #### `expoGo`
+  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
+
+> [!TIP]
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
 
 #### 🏷️ Tags
 

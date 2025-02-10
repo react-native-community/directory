@@ -2,7 +2,7 @@ import fetch from 'cross-fetch';
 
 import { sleep, REQUEST_SLEEP } from './helpers.js';
 
-const ATTEMPTS_LIMIT = 3;
+const ATTEMPTS_LIMIT = 2;
 
 const urlForPackage = (npmPkg, period = 'month') => {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
@@ -67,15 +67,15 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
       return { ...pkgData, npm: null };
     }
 
-    const weekUrl = urlForPackage(npmPkg, 'week');
-    const weekResponse = await fetch(weekUrl);
-    const weekDownloadData = await weekResponse.json();
+    // const weekUrl = urlForPackage(npmPkg, 'week');
+    // const weekResponse = await fetch(weekUrl);
+    // const weekDownloadData = await weekResponse.json();
 
     return {
       ...pkgData,
       npm: {
         downloads: downloadData.downloads,
-        weekDownloads: weekDownloadData.downloads,
+        // weekDownloads: weekDownloadData.downloads,
         start: downloadData.start,
         end: downloadData.end,
         period: 'month',
