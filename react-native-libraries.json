@@ -13676,5 +13676,14 @@
     "android": true,
     "expoGo": false,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/sellpy/react-native-scroll-anchor",
+    "examples": ["https://github.com/sellpy/react-native-scroll-anchor/tree/main/example"],
+    "npmPkg": "@sellpy/react-native-scroll-anchor",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": false
   }
 ]
