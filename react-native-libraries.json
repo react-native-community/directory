@@ -13685,5 +13685,15 @@
     "android": true,
     "expoGo": true,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/tlow92/expo-key-event",
+    "examples": [
+      "https://github.com/tlow92/expo-key-event/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
