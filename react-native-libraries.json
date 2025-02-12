@@ -13695,5 +13695,29 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-segmented-control-2",
+    "examples": [
+      "https://github.com/WrathChaos/react-native-segmented-control-2/tree/master/example"
+    ],
+    "images": [
+      "https://github.com/WrathChaos/react-native-segmented-control-2/blob/master/assets/Screenshots/react-native-segmented-control-2.gif"
+    ],
+    "alternatives": [
+      "@react-native-segmented-control/segmented-control",
+      "rn-segmented-tab-controls",
+      "react-native-paper",
+      "react-native-segmented-control-tabs"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
