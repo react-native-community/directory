@@ -13673,9 +13673,7 @@
       "https://raw.githubusercontent.com/EdgarJMesquita/expo-totp/refs/heads/main/docs/assets/demo.gif"
     ],
     "ios": true,
-    "android": true,
-    "expoGo": false,
-    "web": false
+    "android": true
   },
   {
     "githubUrl": "https://github.com/sellpy/react-native-scroll-anchor",
@@ -13683,17 +13681,38 @@
     "npmPkg": "@sellpy/react-native-scroll-anchor",
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "web": false
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/tlow92/expo-key-event",
+    "examples": ["https://github.com/tlow92/expo-key-event/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-segmented-control-2",
     "examples": [
-      "https://github.com/tlow92/expo-key-event/tree/main/example"
+      "https://github.com/WrathChaos/react-native-segmented-control-2/tree/master/example"
+    ],
+    "images": [
+      "https://github.com/WrathChaos/react-native-segmented-control-2/blob/master/assets/Screenshots/react-native-segmented-control-2.gif"
+    ],
+    "alternatives": [
+      "@react-native-segmented-control/segmented-control",
+      "rn-segmented-tab-controls",
+      "react-native-paper",
+      "react-native-segmented-control-tabs"
     ],
     "ios": true,
     "android": true,
     "web": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true,
     "newArchitecture": true
   }
 ]
