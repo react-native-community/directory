@@ -13673,7 +13673,9 @@
       "https://raw.githubusercontent.com/EdgarJMesquita/expo-totp/refs/heads/main/docs/assets/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": false,
+    "web": false
   },
   {
     "githubUrl": "https://github.com/sellpy/react-native-scroll-anchor",
@@ -13681,11 +13683,14 @@
     "npmPkg": "@sellpy/react-native-scroll-anchor",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "web": false
   },
   {
     "githubUrl": "https://github.com/tlow92/expo-key-event",
-    "examples": ["https://github.com/tlow92/expo-key-event/tree/main/example"],
+    "examples": [
+      "https://github.com/tlow92/expo-key-event/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "web": true,
