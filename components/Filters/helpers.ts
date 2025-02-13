@@ -62,14 +62,6 @@ export const FILTER_STATUS = [
     title: 'Works with Expo Go',
   },
   {
-    param: 'hasTypes',
-    title: 'Has TypeScript types',
-  },
-  {
-    param: 'expoGo',
-    title: 'Works with Expo Go',
-  },
-  {
     param: 'fireos',
     title: 'Works with Fire OS',
   },
