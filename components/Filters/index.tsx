@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { ToggleLink } from './ToggleLink';
-import { FILTER_PLATFORMS } from './helpers';
+import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';
 import { colors, Headline, layout, darkColors } from '../../common/styleguide';
 import CustomAppearanceContext from '../../context/CustomAppearanceContext';
 import { Query } from '../../types';
@@ -45,68 +45,25 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
       <View style={styles.container}>
         <Headline style={styles.title}>Status</Headline>
         <View style={styles.optionsContainer}>
-          <ToggleLink
-            key="hasExample"
-            query={pageQuery}
-            paramName="hasExample"
-            title="Has example"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="hasImage"
-            query={pageQuery}
-            paramName="hasImage"
-            title="Has image preview"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="hasTypes"
-            query={pageQuery}
-            paramName="hasTypes"
-            title="Has TypeScript types"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="newArchitecture"
-            query={pageQuery}
-            paramName="newArchitecture"
-            title="Supports New Architecture"
-            basePath={basePath}
-          />
-          {isMainSearch && (
+          {isMainSearch &&
+            FILTER_REQUIRES_MAIN_SEARCH.map(platform => (
+              <ToggleLink
+                key={platform.param}
+                query={pageQuery}
+                paramName={platform.param}
+                title={platform.title}
+                basePath={basePath}
+              />
+            ))}
+          {FILTER_STATUS.map(platform => (
             <ToggleLink
-              key="isMaintained"
+              key={platform.param}
               query={pageQuery}
-              paramName="isMaintained"
-              title="Maintained"
+              paramName={platform.param}
+              title={platform.title}
               basePath={basePath}
             />
-          )}
-          {isMainSearch && (
-            <ToggleLink
-              key="isPopular"
-              query={pageQuery}
-              paramName="isPopular"
-              title="Popular"
-              basePath={basePath}
-            />
-          )}
-          <ToggleLink
-            key="wasRecentlyUpdated"
-            query={pageQuery}
-            paramName="wasRecentlyUpdated"
-            title="Recently updated"
-            basePath={basePath}
-          />
-          {isMainSearch && (
-            <ToggleLink
-              key="isRecommended"
-              query={pageQuery}
-              paramName="isRecommended"
-              title="Recommended"
-              basePath={basePath}
-            />
-          )}
+          ))}
         </View>
       </View>
       <View style={styles.container}>
