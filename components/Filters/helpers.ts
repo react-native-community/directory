@@ -70,6 +70,10 @@ export const FILTER_STATUS = [
     title: 'Works with Expo Go',
   },
   {
+    param: 'fireos',
+    title: 'Works with Fire OS',
+  },
+  {
     param: 'wasRecentlyUpdated',
     title: 'Recently updated',
   },

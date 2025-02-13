@@ -499,6 +499,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "tvos": true,
     "visionos": true,
     "examples": [
@@ -553,6 +554,7 @@
     "ios": true,
     "android": true,
     "windows": true,
+    "fireos": true,
     "expoGo": true,
     "npmPkg": "lottie-react-native"
   },
@@ -743,6 +745,7 @@
     "android": true,
     "web": true,
     "windows": true,
+    "fireos": true,
     "visionos": true,
     "tvos": true,
     "newArchitecture": true
@@ -2067,6 +2070,7 @@
     "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -2662,6 +2666,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2677,6 +2682,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2708,6 +2714,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2731,6 +2738,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2755,6 +2763,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2778,6 +2787,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2794,6 +2804,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2808,6 +2819,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2816,6 +2828,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2917,6 +2930,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2974,6 +2988,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3147,6 +3162,7 @@
     "npmPkg": "@react-native-cookies/cookies",
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3168,6 +3184,7 @@
     "tvos": true,
     "web": true,
     "macos": true,
+    "fireos": true,
     "expoGo": true,
     "visionos": true,
     "newArchitecture": true
@@ -3364,6 +3381,7 @@
     "android": true,
     "web": true,
     "windows": true,
+    "fireos": true,
     "macos": true
   },
   {
@@ -3436,6 +3454,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3444,6 +3463,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3459,6 +3479,7 @@
     "ios": true,
     "android": true,
     "tvos": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -3470,6 +3491,7 @@
     "expoGo": true,
     "tvos": true,
     "visionos": true,
+    "fireos": true,
     "examples": [
       "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
       "https://github.com/react-native-tvos/TVReanimated"
@@ -3502,6 +3524,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-community/netinfo",
     "newArchitecture": true
@@ -3567,6 +3590,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-async-storage/async-storage",
     "newArchitecture": true
@@ -3608,6 +3632,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "tvos": true,
     "expoGo": true,
     "npmPkg": "@react-native-masked-view/masked-view"
@@ -3619,6 +3644,7 @@
       "https://raw.githubusercontent.com/react-native-community/react-native-linear-gradient/master/images/example-animated.gif"
     ],
     "ios": true,
+    "fireos": true,
     "android": true,
     "windows": true
   },
@@ -3834,6 +3860,7 @@
     "web": true,
     "windows": true,
     "macos": true,
+    "fireos": true,
     "visionos": true,
     "newArchitecture": true
   },
@@ -3857,6 +3884,7 @@
     "android": true,
     "windows": true,
     "visionos": true,
+    "fireos": true,
     "newArchitecture": true,
     "alternatives": ["expo-device"]
   },
@@ -3888,6 +3916,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": false,
     "unmaintained": true,
     "alternatives": ["expo-image"]
@@ -3975,6 +4004,7 @@
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/aws-amplify",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -3983,6 +4013,7 @@
     "npmPkg": "@aws-amplify/datastore",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -3991,6 +4022,7 @@
     "npmPkg": "@aws-amplify/react-native",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -3999,6 +4031,7 @@
     "npmPkg": "@aws-amplify/auth",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -4006,6 +4039,7 @@
     "githubUrl": "https://github.com/aws-amplify/amplify-js/tree/main/packages/notifications",
     "npmPkg": "@aws-amplify/notifications",
     "ios": true,
+    "fireos": true,
     "android": true
   },
   {
@@ -5314,6 +5348,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true,
     "dev": true
   },
@@ -6398,6 +6433,7 @@
     "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/package/example"],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "newArchitecture": true
   },
@@ -7127,6 +7163,7 @@
     "expoGo": true,
     "web": true,
     "macos": true,
+    "fireos": true,
     "visionos": true
   },
   {
@@ -8469,6 +8506,7 @@
     "npmPkg": "@shopify/flash-list",
     "android": true,
     "ios": true,
+    "fireos": true,
     "expoGo": true,
     "newArchitectureNote": "Compiles and runs, but behavior may not be as expected."
   },
@@ -11367,6 +11405,7 @@
     "tvos": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -11382,6 +11421,7 @@
     "npmPkg": "@react-navigation/bottom-tabs",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
@@ -11409,6 +11449,7 @@
     "npmPkg": "@react-navigation/native-stack",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
@@ -11418,6 +11459,7 @@
     "npmPkg": "@react-navigation/stack",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
@@ -11427,6 +11469,7 @@
     "npmPkg": "@react-navigation/elements",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "tvos": true
@@ -11720,6 +11763,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -12603,6 +12647,7 @@
     "githubUrl": "https://github.com/axios/axios",
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },

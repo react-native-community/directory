@@ -50,10 +50,10 @@
   "web": false,
   "windows": false,
   "macos": false,
-  "fireos": false,
   "tvos": false,
   "visionos": false,
   "expoGo": false,
+  "fireos": false,
   "unmaintained": false,
   "dev": false,
   "template": false,
@@ -99,8 +99,6 @@
   **(boolean)** - works on Android device.
 - #### `ios`
   **(boolean)** - works on iOS device.
-- #### `fireos`
-  **(boolean)** - works on Amazon Fire device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
 
@@ -125,6 +123,8 @@
 
 > [!TIP]
 > **Any** library can be used with Expo, if you use dev clients or prebuild.
+- #### `fireos`
+  **(boolean)** - works on Amazon Fire OS.
 
 #### 🏷️ Tags
 
