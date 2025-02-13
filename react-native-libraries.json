@@ -13699,7 +13699,9 @@
   {
     "githubUrl": "https://github.com/ShinMini/react-native-inner-shadow",
     "npmPkg": "react-native-inner-shadow",
-    "examples": ["https://github.com/ShinMini/react-native-inner-shadow/tree/main/example"],
+    "examples": [
+      "https://github.com/ShinMini/react-native-inner-shadow/tree/main/example"
+    ],
     "images": [
       "https://github.com/user-attachments/assets/c588c061-d2c3-4d90-85ed-c71689b2a8cf",
       "https://github.com/user-attachments/assets/2a59b1a8-65df-487b-aabe-1f0a94d5aa10"
@@ -13710,6 +13712,6 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true,
+    "expoGo": true
   }
 ]
