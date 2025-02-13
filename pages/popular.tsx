@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet } from 'react-native';
 
