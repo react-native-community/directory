@@ -61,7 +61,7 @@ export function CompatibilityTags({ library }: Props) {
           }}
         />
       ))}
-      {library.expoGo && (
+      {(library.expoGo || library.fireos) && (
         <Tooltip
           side="bottom"
           trigger={
@@ -71,7 +71,10 @@ export function CompatibilityTags({ library }: Props) {
           }>
           Additional information
           <br />
-          {library.expoGo && '• Works with Expo Go'}
+          <ul style={styles.compatibilityList}>
+            {library.expoGo && <li>Works with Expo Go</li>}
+            {library.fireos && <li>Works with Fire OS</li>}
+          </ul>
         </Tooltip>
       )}
     </View>
@@ -91,5 +94,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     cursor: 'pointer',
     minHeight: 25,
+  },
+  compatibilityList: {
+    margin: 0,
+    paddingLeft: 14,
   },
 });

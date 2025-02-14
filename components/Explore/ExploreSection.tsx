@@ -25,7 +25,7 @@ type ExploreSectionProps = {
   data: LibraryType[];
   title: string;
   filter: (library: LibraryType) => boolean;
-  icon: any;
+  icon?: any;
   count?: number;
   queryParams?: Query;
 };
@@ -73,7 +73,7 @@ const ExploreSection = ({
   return (
     <>
       <H3 style={styles.subHeader} id={hashLink}>
-        {createElement(icon, { fill: color, width: 30, height: 30 })}
+        {icon && createElement(icon, { fill: color, width: 30, height: 30 })}
         <A
           href={`#${hashLink}`}
           target="_self"

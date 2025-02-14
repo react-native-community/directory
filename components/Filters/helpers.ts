@@ -58,15 +58,18 @@ export const FILTER_STATUS = [
     title: 'Has TypeScript types',
   },
   {
+    param: 'wasRecentlyUpdated',
+    title: 'Recently updated',
+  },
+];
+
+export const FILTER_COMPATIBILITY = [
+  {
     param: 'expoGo',
     title: 'Works with Expo Go',
   },
   {
     param: 'fireos',
     title: 'Works with Fire OS',
-  },
-  {
-    param: 'wasRecentlyUpdated',
-    title: 'Recently updated',
   },
 ];
