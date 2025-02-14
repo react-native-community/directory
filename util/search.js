@@ -133,6 +133,10 @@ export const handleFilterLibraries = ({
       return false;
     }
 
+    if (support.fireos && !library.fireos) {
+      return false;
+    }
+
     if (support.expoGo && !library.expoGo) {
       return false;
     }
