@@ -13740,7 +13740,7 @@
     "android": true,
     "web": true,
     "newArchitecture": true
-  },  
+  },
   {
     "githubUrl": "https://github.com/ShinMini/react-native-inner-shadow",
     "npmPkg": "react-native-inner-shadow",
@@ -13754,5 +13754,19 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/WrathChaos/react-native-segmented-control-2",
+    "examples": [
+      "https://github.com/WrathChaos/react-native-segmented-control-2/tree/master/example"
+    ],
+    "images": [
+      "https://github.com/WrathChaos/react-native-segmented-control-2/blob/master/assets/Screenshots/react-native-segmented-control-2.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
