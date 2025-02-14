@@ -9,7 +9,6 @@ import {
   PlatformExpo,
   PlatformIOS,
   PlatformMacOS,
-  PlatformFireOS,
   PlatformTvOS,
   PlatformVisionOS,
   PlatformWeb,
@@ -55,10 +54,10 @@ const Popular = ({ data }) => {
           filter={lib => lib.ios === true && !lib.android}
         />
         <ExploreSection
-          title="Expo Go"
-          icon={PlatformExpo}
+          title="Web"
+          icon={PlatformWeb}
           data={data}
-          filter={lib => lib.expoGo === true}
+          filter={lib => lib.web === true}
         />
         <ExploreSection
           title="macOS"
@@ -67,11 +66,12 @@ const Popular = ({ data }) => {
           filter={lib => lib.macos === true}
         />
         <ExploreSection
-          title="Fire OS"
-          icon={PlatformFireOS}
+          title="Expo Go"
+          icon={PlatformExpo}
           data={data}
-          filter={lib => lib.fireos === true}
+          filter={lib => lib.expoGo === true}
         />
+        <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
         <ExploreSection
           title="tvOS"
           icon={PlatformTvOS}
@@ -83,12 +83,6 @@ const Popular = ({ data }) => {
           icon={PlatformVisionOS}
           data={data}
           filter={lib => lib.visionos === true}
-        />
-        <ExploreSection
-          title="Web"
-          icon={PlatformWeb}
-          data={data}
-          filter={lib => lib.web === true}
         />
         <ExploreSection
           title="Windows"
