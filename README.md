@@ -123,8 +123,6 @@
 
 > [!TIP]
 > **Any** library can be used with Expo, if you use dev clients or prebuild.
-- #### `fireos`
-  **(boolean)** - works on Amazon Fire OS.
 
 #### 🏷️ Tags
 
@@ -135,8 +133,9 @@
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
-
   **(boolean)** - signify that a library supports, or not, the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
+- #### `fireos`
+  **(boolean)** - works on Amazon Fire OS.
 
 > [!TIP]
 > Set `newArchitecture` field only when automatic architecture detection fails for your package, despite it supports the New Architecture.
