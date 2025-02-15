@@ -13768,5 +13768,16 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/s77rt/react-native-markdown",
+    "npmPkg": "@s77rt/react-native-markdown",
+    "images": [
+      "https://raw.githubusercontent.com/s77rt/react-native-markdown/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
