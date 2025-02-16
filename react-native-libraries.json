@@ -9822,10 +9822,12 @@
     "githubUrl": "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments",
     "npmPkg": "@rnw-community/react-native-payments",
     "examples": [
-      "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example"
+      "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example",
+      "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example-expo"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/retyui/react-native-detect-maestro",
