@@ -13781,5 +13781,19 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/s77rt/react-native-viewshot",
+    "npmPkg": "@s77rt/react-native-viewshot",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/s77rt/react-native-contacts",
+    "npmPkg": "@s77rt/react-native-contacts",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
