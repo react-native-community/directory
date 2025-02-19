@@ -13784,6 +13784,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/s77rt/react-native-contacts",
+    "npmPkg": "@s77rt/react-native-contacts",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-audio",
     "examples": [
       "https://docs.expo.dev/versions/latest/sdk/audio/#playing-sounds",
