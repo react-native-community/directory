@@ -8870,6 +8870,7 @@
     "examples": [
       "https://github.com/expo/examples/tree/master/with-router",
       "https://github.com/expo/examples/tree/master/with-router-tailwind",
+      "https://github.com/expo/examples/tree/master/with-nativewind",
       "https://github.com/EvanBacon/expo-router-instagram-layout",
       "https://github.com/EvanBacon/expo-router-twitter"
     ],
@@ -13302,6 +13303,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/video/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -13720,9 +13722,7 @@
       "https://raw.githubusercontent.com/EdgarJMesquita/expo-totp/refs/heads/main/docs/assets/demo.gif"
     ],
     "ios": true,
-    "android": true,
-    "expoGo": false,
-    "web": false
+    "android": true
   },
   {
     "githubUrl": "https://github.com/sellpy/react-native-scroll-anchor",
@@ -13730,14 +13730,11 @@
     "npmPkg": "@sellpy/react-native-scroll-anchor",
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "web": false
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/tlow92/expo-key-event",
-    "examples": [
-      "https://github.com/tlow92/expo-key-event/tree/main/example"
-    ],
+    "examples": ["https://github.com/tlow92/expo-key-event/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -13745,10 +13742,7 @@
   },
   {
     "githubUrl": "https://github.com/ShinMini/react-native-inner-shadow",
-    "npmPkg": "react-native-inner-shadow",
-    "examples": [
-      "https://github.com/ShinMini/react-native-inner-shadow/tree/main/example"
-    ],
+    "examples": ["https://github.com/ShinMini/react-native-inner-shadow/tree/main/example"],
     "images": [
       "https://github.com/ShinMini/react-native-inner-shadow/blob/main/docs/imgs/rn-inner-shadow-thubnail.jpg",
       "https://github.com/ShinMini/react-native-inner-shadow/blob/main/docs/imgs/rn-inner-shadow-pressable-thumbnail.gif"
@@ -13792,6 +13786,24 @@
   {
     "githubUrl": "https://github.com/s77rt/react-native-contacts",
     "npmPkg": "@s77rt/react-native-contacts",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-audio",
+    "examples": [
+      "https://docs.expo.dev/versions/latest/sdk/audio/#playing-sounds",
+      "https://docs.expo.dev/versions/latest/sdk/audio/#recording-sounds"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-maps",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/maps/#usage"],
     "ios": true,
     "android": true,
     "newArchitecture": true
