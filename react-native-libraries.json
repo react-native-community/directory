@@ -13818,6 +13818,7 @@
   },
   {
     "githubUrl": "https://github.com/AppZung/react-native-code-push",
+    "examples": ["https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoApp", "https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoAppCpp"],
     "npmPkg": "@appzung/react-native-code-push",
     "ios": true,
     "android": true,
