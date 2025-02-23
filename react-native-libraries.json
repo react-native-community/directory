@@ -2759,16 +2759,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-face-detector",
-    "examples": ["https://docs.expo.dev/versions/latest/sdk/facedetector/#example"],
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true,
-    "newArchitecture": true,
-    "alternatives": ["react-native-vision-camera"]
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
     "examples": ["https://docs.expo.dev/versions/latest/sdk/filesystem/#usage"],
     "ios": true,
