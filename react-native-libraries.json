@@ -2616,6 +2616,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-apple-authentication",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/apple-authentication/#usage"],
     "ios": true,
     "expoGo": true,
     "newArchitecture": true
@@ -2638,6 +2639,12 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-av",
+    "examples": [
+      "https://docs.expo.dev/versions/latest/sdk/audio-av/#playing-sounds",
+      "https://docs.expo.dev/versions/latest/sdk/audio-av/#recording-sounds",
+      "https://docs.expo.dev/versions/latest/sdk/video-av/#usage",
+      "https://github.com/expo/examples/tree/master/with-video-background"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -2646,22 +2653,15 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-background-fetch",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/background-fetch/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-barcode-scanner",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "newArchitecture": true,
-    "unmaintained": true,
-    "alternatives": ["expo-camera"]
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-battery",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/battery/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2671,6 +2671,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-blur",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/blur-view/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2679,6 +2680,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-brightness",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/brightness/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2687,6 +2689,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-calendar",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/calendar/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2694,6 +2697,10 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-camera",
+    "examples": [
+      "https://docs.expo.dev/versions/latest/sdk/camera/#usage",
+      "https://github.com/expo/examples/tree/master/with-camera"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -2726,6 +2733,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-crypto",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/crypto/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2734,6 +2742,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-device",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/device/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2750,16 +2759,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-face-detector",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true,
-    "newArchitecture": true,
-    "alternatives": ["react-native-vision-camera"]
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/filesystem/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2768,6 +2769,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-font",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/font/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2776,6 +2778,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-gl",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/gl-view/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2784,6 +2787,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-haptics",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/haptics/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2792,6 +2796,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-image-manipulator",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/imagemanipulator/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2800,6 +2805,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-image-picker",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/imagepicker/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2816,6 +2822,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-keep-awake",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/keep-awake/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2824,6 +2831,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-linear-gradient",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/linear-gradient/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2849,6 +2857,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-location",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/location/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2865,6 +2874,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-media-library",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/media-library/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2880,6 +2890,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-notifications",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/notifications/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -2908,17 +2919,8 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-random",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true,
-    "unmaintained": true,
-    "alternatives": ["expo-crypto"]
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-secure-store",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/securestore/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2926,6 +2928,14 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-sensors",
+    "examples": [
+      "https://docs.expo.dev/versions/unversioned/sdk/barometer/#usage",
+      "https://docs.expo.dev/versions/unversioned/sdk/battery/#usage",
+      "https://docs.expo.dev/versions/unversioned/sdk/gyroscope/#usage",
+      "https://docs.expo.dev/versions/unversioned/sdk/light-sensor/#usage",
+      "https://docs.expo.dev/versions/unversioned/sdk/magnetometer/#usage",
+      "https://docs.expo.dev/versions/unversioned/sdk/pedometer/#usage"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -2942,6 +2952,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-speech",
+    "examples": ["https://docs.expo.dev/versions/unversioned/sdk/speech/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2950,6 +2961,11 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-sqlite",
+    "examples": [
+      "https://docs.expo.dev/versions/unversioned/sdk/sqlite/#usage",
+      "https://github.com/expo/examples/blob/master/with-sqlite",
+      "https://github.com/expo/examples/blob/master/with-libsql"
+    ],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2957,6 +2973,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-store-review",
+    "examples": ["https://docs.expo.dev/versions/unversioned/sdk/storereview/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2964,12 +2981,14 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-task-manager",
+    "examples": ["https://docs.expo.dev/versions/unversioned/sdk/task-manager/#example"],
     "ios": true,
     "android": true,
     "expoGo": true
   },
   {
     "githubUrl": "https://github.com/expo/expo-three",
+    "examples": ["https://github.com/expo/examples/tree/master/with-three"],
     "ios": true,
     "android": true,
     "web": true,
@@ -2977,6 +2996,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video-thumbnails",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/video-thumbnails/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -2984,6 +3004,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-web-browser",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/webbrowser/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -3421,6 +3442,10 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-splash-screen",
+    "examples": [
+      "https://github.com/expo/examples/tree/master/with-splash-screen",
+      "https://docs.expo.dev/versions/latest/sdk/splash-screen/#usage"
+    ],
     "ios": true,
     "android": true,
     "expoGo": true
@@ -6678,6 +6703,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-screen-capture",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/screen-capture/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -6885,6 +6911,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-status-bar",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/status-bar/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -8872,7 +8899,11 @@
       "https://github.com/expo/examples/tree/master/with-router-tailwind",
       "https://github.com/expo/examples/tree/master/with-nativewind",
       "https://github.com/EvanBacon/expo-router-instagram-layout",
-      "https://github.com/EvanBacon/expo-router-twitter"
+      "https://github.com/EvanBacon/expo-router-twitter",
+      "https://github.com/expo/examples/tree/master/with-router-menus",
+      "https://github.com/expo/examples/tree/master/with-router-tv",
+      "https://github.com/expo/examples/tree/master/with-satori",
+      "https://github.com/expo/examples/tree/master/with-shadcn"
     ],
     "ios": true,
     "android": true,
@@ -10064,6 +10095,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-image",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/image/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -11234,6 +11266,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-tracking-transparency",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/tracking-transparency/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -11247,6 +11280,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-clipboard",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/clipboard/#usage"],
     "ios": true,
     "android": true,
     "web": true,
@@ -11261,6 +11295,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-symbols",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/symbols/#usage"],
     "ios": true,
     "expoGo": true,
     "newArchitecture": true
@@ -11413,6 +11448,7 @@
   },
   {
     "githubUrl": "https://github.com/tinyplex/tinybase",
+    "examples": ["https://github.com/expo/examples/tree/master/with-tinybase"],
     "ios": true,
     "android": true,
     "web": true,
@@ -12439,6 +12475,7 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-build-properties",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/build-properties/#usage"],
     "ios": true,
     "android": true,
     "expoGo": true,
