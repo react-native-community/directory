@@ -13854,14 +13854,12 @@
   },
   {
     "githubUrl": "https://github.com/kuatsu/react-native-boost/tree/master/packages/react-native-boost",
-    "npmPkg": "react-native-boost",
     "examples": [
       "https://github.com/kuatsu/react-native-boost/tree/master/apps/example"
     ],
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": false,
     "dev": true,
     "newArchitecture": true
   }
