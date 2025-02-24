@@ -3021,16 +3021,6 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/jest-expo-enzyme",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "dev": true,
-    "unmaintained": true,
-    "alternatives": ["@testing-library/react-native"]
-  },
-  {
     "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
     "ios": true,
     "android": true,
