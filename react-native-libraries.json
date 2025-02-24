@@ -13851,5 +13851,18 @@
     "android": true,
     "windows": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kuatsu/react-native-boost",
+    "npmPkg": "react-native-boost",
+    "examples": [
+      "https://github.com/kuatsu/react-native-boost/tree/master/apps/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "unmaintained": false,
+    "dev": true,
+    "newArchitecture": true
   }
 ]
