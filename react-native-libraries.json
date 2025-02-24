@@ -4295,7 +4295,7 @@
     "newArchitecture": false,
     "newArchitectureNote": "Microsoft no longer maintains this library and has no plans to add New Architecture support.",
     "unmaintained": true,
-    "alternatives": ["expo-updates"]
+    "alternatives": ["@appzung/react-native-code-push", "expo-updates"]
   },
   {
     "githubUrl": "https://github.com/plmok61/react-navigation-transitions",
@@ -13851,6 +13851,15 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AppZung/react-native-code-push",
+    "examples": ["https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoApp", "https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoAppCpp"],
+    "npmPkg": "@appzung/react-native-code-push",
+    "ios": true,
+    "android": true,
+    "windows": true,
     "newArchitecture": true
   }
 ]
