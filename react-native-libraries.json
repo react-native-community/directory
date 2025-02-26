@@ -13862,5 +13862,13 @@
     "expoGo": true,
     "dev": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fabrizioiacobucci/expo-googlenearby-connection",
+    "examples": [
+      "https://github.com/fabrizioiacobucci/expo-googlenearby-connection/tree/main/nearby-example"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
