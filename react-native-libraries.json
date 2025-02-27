@@ -13845,7 +13845,10 @@
   },
   {
     "githubUrl": "https://github.com/AppZung/react-native-code-push",
-    "examples": ["https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoApp", "https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoAppCpp"],
+    "examples": [
+      "https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoApp",
+      "https://github.com/AppZung/react-native-code-push/tree/main/Examples/CodePushDemoAppCpp"
+    ],
     "npmPkg": "@appzung/react-native-code-push",
     "ios": true,
     "android": true,
@@ -13854,9 +13857,7 @@
   },
   {
     "githubUrl": "https://github.com/kuatsu/react-native-boost/tree/master/packages/react-native-boost",
-    "examples": [
-      "https://github.com/kuatsu/react-native-boost/tree/master/apps/example"
-    ],
+    "examples": ["https://github.com/kuatsu/react-native-boost/tree/master/apps/example"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -13872,13 +13873,38 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
-    "examples": [
-      "https://github.com/colaquecez/expo-selectable-text/blob/main/README.md"
+    "githubUrl": "https://github.com/maniac-tech/react-native-expo-read-sms",
+    "npmPkg": "@maniac-tech/react-native-expo-read-sms",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Ucekay/react-native-image-playground",
+    "npmPkg": "react-native-apple-image-playground",
+    "examples": ["https://github.com/Ucekay/react-native-image-playground/tree/master/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/niteshbalusu11/react-native-nitro-tor",
+    "examples": ["https://github.com/niteshbalusu11/react-native-nitro-tor/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/danilrafiqi/react-native-stepper-ui",
+    "examples": ["https://github.com/danilrafiqi/react-native-stepper-ui/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/danilrafiqi/react-native-stepper-ui/master/assets/react-native-stepper-ui-1.png",
+      "https://raw.githubusercontent.com/danilrafiqi/react-native-stepper-ui/master/assets/react-native-stepper-ui-2.png",
+      "https://raw.githubusercontent.com/danilrafiqi/react-native-stepper-ui/master/assets/react-native-stepper-ui-3.png"
     ],
     "android": true,
-    "expoGo":true,
-    "ios": false,
-    "newArchitecture": true
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/LegendApp/legend-list",
+    "npmPkg": "@legendapp/list",
+    "examples": ["https://github.com/LegendApp/legend-list/tree/main/example"],
+    "android": true,
+    "ios": true
   }
 ]
