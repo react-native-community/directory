@@ -13870,5 +13870,15 @@
     ],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
+    "examples": [
+      "https://github.com/colaquecez/expo-selectable-text/blob/main/README.md"
+    ],
+    "android": true,
+    "expoGo":true,
+    "ios": false,
+    "newArchitecture": true
   }
 ]
