@@ -13906,5 +13906,13 @@
     "examples": ["https://github.com/LegendApp/legend-list/tree/main/example"],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
+    "examples": [
+      "https://github.com/colaquecez/expo-selectable-text/tree/main/example"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
