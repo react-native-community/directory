@@ -13930,5 +13930,13 @@
     ],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/raouldandresy/react-native-momentum-carousel",
+    "examples": [
+      "https://github.com/raouldandresy/react-native-momentum-carousel/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
