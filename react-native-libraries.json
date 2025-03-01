@@ -10154,10 +10154,15 @@
   },
   {
     "githubUrl": "https://github.com/anday013/react-native-otp-entry",
+    "examples": [
+      "https://snack.expo.dev/@anday013/demo-react-native-otp-entry"
+    ],
     "images": ["https://github.com/anday013/react-native-otp-entry/blob/main/otp_demo.gif"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "web": "true",
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/baronha/ting",
@@ -13938,7 +13943,7 @@
     ],
     "ios": true,
     "android": true
-},
+  },
   {
     "githubUrl": "https://github.com/anday013/react-native-phone-entry",
     "examples": [
