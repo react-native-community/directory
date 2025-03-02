@@ -13929,13 +13929,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/dayaki/react-native-app-shortcuts",
-    "npmPkg": "@mbdayo/react-native-app-shortcuts",
-    "examples": [
-      "https://github.com/dayaki/react-native-app-shortcuts/blob/main/example-usage.tsx"
-    ],
-    "ios": true,
-    "android": true,
     "githubUrl": "https://github.com/huextrat/react-native-ios-translate-tasks",
     "examples": [
       "https://github.com/huextrat/react-native-ios-translate-tasks/tree/main/example"
@@ -13962,6 +13955,16 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dayaki/react-native-app-shortcuts",
+    "npmPkg": "@mbdayo/react-native-app-shortcuts",
+    "examples": [
+      "https://github.com/dayaki/react-native-app-shortcuts/blob/main/example-usage.tsx"
+    ],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
