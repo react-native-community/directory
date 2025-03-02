@@ -13956,5 +13956,21 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/BrijenMakwana/react-native-multistep",
+    "npmPkg": "@brijen/react-native-multistep",
+    "examples": [
+      "https://github.com/BrijenMakwana/react-native-multistep/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/BrijenMakwana/react-native-multistep/blob/main/example/assets/images/example_1/example_1.gif",
+      "https://github.com/BrijenMakwana/react-native-multistep/blob/main/example/assets/images/example_2/example_2.gif",
+      "https://github.com/BrijenMakwana/react-native-multistep/blob/main/example/assets/images/example_3/example_3.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
