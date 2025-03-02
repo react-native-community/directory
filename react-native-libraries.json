@@ -13958,6 +13958,16 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/dayaki/react-native-app-shortcuts",
+    "npmPkg": "@mbdayo/react-native-app-shortcuts",
+    "examples": [
+      "https://github.com/dayaki/react-native-app-shortcuts/blob/main/example-usage.tsx"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/BrijenMakwana/react-native-multistep",
     "npmPkg": "@brijen/react-native-multistep",
     "examples": [
