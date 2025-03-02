@@ -10154,10 +10154,15 @@
   },
   {
     "githubUrl": "https://github.com/anday013/react-native-otp-entry",
+    "examples": [
+      "https://snack.expo.dev/@anday013/demo-react-native-otp-entry"
+    ],
     "images": ["https://github.com/anday013/react-native-otp-entry/blob/main/otp_demo.gif"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "web": "true",
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/baronha/ting",
@@ -13931,6 +13936,32 @@
     ],
     "ios": true,
     "android": true,
+    "githubUrl": "https://github.com/huextrat/react-native-ios-translate-tasks",
+    "examples": [
+      "https://github.com/huextrat/react-native-ios-translate-tasks/tree/main/example"
+    ],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/raouldandresy/react-native-momentum-carousel",
+    "examples": [
+      "https://github.com/raouldandresy/react-native-momentum-carousel/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/anday013/react-native-phone-entry",
+    "examples": [
+      "https://github.com/anday013/react-native-phone-entry/tree/main/example",
+      "https://snack.expo.dev/@anday013/demo-react-native-phone-entry"
+    ],
+    "images": ["https://github.com/anday013/react-native-phone-entry/blob/main/assets/autopick.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
     "newArchitecture": true
   }
 ]
