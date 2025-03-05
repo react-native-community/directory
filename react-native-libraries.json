@@ -13910,7 +13910,9 @@
     "npmPkg": "@legendapp/list",
     "examples": ["https://github.com/LegendApp/legend-list/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
