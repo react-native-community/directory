@@ -13986,11 +13986,12 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/tomatterton/expo-translate-text",
+    "githubUrl": "https://github.com/TomAtterton/expo-translate-text",
+    "npmPkg": "expo-translate-text",
     "examples": [
-      "https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"
+      "https://github.com/TomAtterton/expo-translate-text/tree/main/example"
     ],
-    "images": ["<PUBLIC URL TO RELATED IMAGE>"],
+    "images": ["https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
