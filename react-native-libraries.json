@@ -13994,5 +13994,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TomAtterton/expo-translate-text",
+    "examples": [
+      "https://github.com/TomAtterton/expo-translate-text/tree/main/example"
+    ],
+    "images": ["https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
