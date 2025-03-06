@@ -13984,5 +13984,15 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mhpdev-com/react-native-speech",
+    "npmPkg": "@mhpdev/react-native-speech",
+    "examples": [
+      "https://github.com/mhpdev-com/react-native-speech/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
