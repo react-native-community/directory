@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 
-import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import libraries from '../react-native-libraries.json' with { type: 'json' };
 import { sleep } from './helpers.js';
 
 console.log('⬇️ Attempting to fetch examples and images');

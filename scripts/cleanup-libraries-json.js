@@ -24,7 +24,6 @@ const processedLibraries = libraries
   // Remove all properties with `false` value, except those listed in emptyPropertiesToKeep
   .map(lib =>
     pickBy(lib, (value, key) => {
-      console.log(key);
       if (emptyPropertiesToKeep.includes(key)) {
         return true;
       } else {

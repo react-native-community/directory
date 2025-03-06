@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     paddingVertical: 4,
-    marginBottom: 4,
     userSelect: 'none',
     minHeight: 25.5,
     gap: 5,
