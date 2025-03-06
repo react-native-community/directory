@@ -13986,8 +13986,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/mhpdev-com/react-native-speech",
+    "npmPkg": "@mhpdev/react-native-speech",
+    "examples": [
+      "https://github.com/mhpdev-com/react-native-speech/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/TomAtterton/expo-translate-text",
-    "npmPkg": "expo-translate-text",
     "examples": [
       "https://github.com/TomAtterton/expo-translate-text/tree/main/example"
     ],
