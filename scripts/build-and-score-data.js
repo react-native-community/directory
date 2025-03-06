@@ -9,8 +9,8 @@ import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fet
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
 import fetchReadmeImages from './fetch-readme-images.js';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers.js';
-import debugGithubRepos from '../debug-github-repos.json' assert { type: 'json' };
-import githubRepos from '../react-native-libraries.json' assert { type: 'json' };
+import debugGithubRepos from '../debug-github-repos.json' with { type: 'json' };
+import githubRepos from '../react-native-libraries.json' with { type: 'json' };
 import { isLaterThan, TimeRange } from '../util/datetime.js';
 import { isEmptyOrNull } from '../util/strings.js';
 
@@ -24,7 +24,7 @@ const DATASET = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 
 // If script should try to scrape images from GitHub repositories.
-const SCRAPE_GH_IMAGES = true;
+const SCRAPE_GH_IMAGES = false;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
@@ -82,11 +82,15 @@ const buildAndScoreData = async () => {
   // https://github.com/npm/registry/blob/main/docs/download-counts.md#bulk-queries
   let bulkList = [];
 
+  // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
+  const CHUNK_SIZE = 25;
+
   // Fetch scoped packages data
   data = await Promise.all(
-    data.map(project => {
+    data.map(async project => {
       if (!project.template) {
         if (project.npmPkg.startsWith('@')) {
+          await sleep(Math.max(Math.random() * 2500));
           return fetchNpmData(project);
         } else {
           bulkList.push(project.npmPkg);
@@ -97,9 +101,6 @@ const buildAndScoreData = async () => {
     })
   );
 
-  // https://github.com/npm/registry/blob/main/docs/download-counts.md#limits
-  const CHUNK_SIZE = 128;
-
   // Assemble and fetch regular packages data in bulk queries
   bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
     bulkList.splice(0, CHUNK_SIZE)
@@ -108,40 +109,36 @@ const buildAndScoreData = async () => {
   const downloadsList = (
     await Promise.all(
       bulkList.map(async (chunk, index) => {
-        await sleep(500 * index);
+        await sleep(Math.max(2500 * index, 15000));
         return await fetchNpmDataBulk(chunk);
       })
     )
   ).flat();
 
-  const downloadsListWeek = (
-    await Promise.all(
-      bulkList.map(async (chunk, index) => {
-        await sleep(500 * index);
-        return await fetchNpmDataBulk(chunk, 'week');
-      })
-    )
-  ).flat();
+  // const downloadsListWeek = (
+  //   await Promise.all(
+  //     bulkList.map(async (chunk, index) => {
+  //       await sleep(Math.max(2500 * index, 15000));
+  //       return await fetchNpmDataBulk(chunk, 'week');
+  //     })
+  //   )
+  // ).flat();
 
   // Fill npm data from bulk queries
-  data = data.map(project =>
-    project.npm
-      ? project
-      : {
-          ...project,
-          npm: {
-            ...(downloadsList.find(d => d.name === project.npmPkg)?.npm || {}),
-            ...(downloadsListWeek.find(d => d.name === project.npmPkg)?.npm || {}),
-          },
-        }
-  );
+  data = data.map(project => ({
+    ...project,
+    npm: {
+      ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
+      // ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
+    },
+  }));
 
   console.log('\n⚛️ Calculating Directory Score');
   data = data.map(project => {
     try {
       return calculateDirectoryScore(project);
-    } catch (e) {
-      console.error(`Failed to calculate score for ${project.github.name}`, e.message);
+    } catch (error) {
+      console.error(`Failed to calculate score for ${project.github.name}`, error.message);
     }
   });
 
@@ -149,8 +146,8 @@ const buildAndScoreData = async () => {
   data = data.map(project => {
     try {
       return calculatePopularityScore(project);
-    } catch (e) {
-      console.error(`Failed to calculate popularity for ${project.github.name}`, e.message);
+    } catch (error) {
+      console.error(`Failed to calculate popularity for ${project.github.name}`, error.message);
       console.error(project.githubUrl);
     }
   });
@@ -216,10 +213,21 @@ const buildAndScoreData = async () => {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
+    const currentData = [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data];
+
+    const dataWithFallback = currentData.map(entry =>
+      Object.keys(entry.npm).length > 0
+        ? entry
+        : {
+            ...entry,
+            npm:
+              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+          }
+    );
 
     fileContent = JSON.stringify(
       {
-        libraries: [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data],
+        libraries: dataWithFallback,
         topics: topicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
@@ -228,7 +236,9 @@ const buildAndScoreData = async () => {
     );
   }
 
-  await uploadToStore(fileContent);
+  if (!USE_DEBUG_REPOS) {
+    await uploadToStore(fileContent);
+  }
 
   return fs.writeFileSync(DATA_PATH, fileContent);
 };
@@ -274,12 +284,6 @@ function getDataForFetch(wantedPackage) {
 async function loadRepositoryDataAsync() {
   const data = getDataForFetch(wantedPackageName);
 
-  let githubResultsFileExists = false;
-  try {
-    fs.statSync(GITHUB_RESULTS_PATH);
-    githubResultsFileExists = true;
-  } catch {}
-
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
   // 5000 requests per hour is the authenticated API request rate limit
@@ -293,22 +297,21 @@ async function loadRepositoryDataAsync() {
   }
 
   console.info(
-    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request`
+    `${apiLimitRemaining} of ${apiLimit} GitHub API requests remaining for the hour at a cost of ${apiLimitCost} per request.`
   );
 
   await loadGitHubLicenses();
 
   let result;
-  if (LOAD_GITHUB_RESULTS_FROM_DISK && githubResultsFileExists) {
-    result = fs.readFileSync(GITHUB_RESULTS_PATH);
-    console.log('Loaded Github results from disk, skipped API calls');
-  } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 5000 });
-
-    if (LOAD_GITHUB_RESULTS_FROM_DISK) {
-      fs.writeFileSync(GITHUB_RESULTS_PATH, JSON.stringify(result, null, 2));
-      console.log('Saved Github results from disk');
+  if (LOAD_GITHUB_RESULTS_FROM_DISK) {
+    try {
+      result = fs.readFileSync(GITHUB_RESULTS_PATH);
+      console.log('Loaded GitHub results from disk, skipping API calls.');
+    } catch (error) {
+      console.warn('Failed to load data from disk!', error);
     }
+  } else {
+    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 2500 });
   }
 
   return result;

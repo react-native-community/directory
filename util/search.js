@@ -1,25 +1,42 @@
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
+import { relevance } from './sorting.js';
 import { isEmptyOrNull } from './strings';
 
-const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
+const calculateMatchScore = (
+  { github, npmPkg, topicSearchString, unmaintained, score },
+  querySearch
+) => {
   const exactNameMatchPoints =
     (!isEmptyOrNull(github.name) && github.name === querySearch) ||
     (!isEmptyOrNull(npmPkg) && npmPkg === querySearch)
-      ? 250
+      ? 300
       : 0;
 
   const npmPkgNameMatchPoints =
     !isEmptyOrNull(npmPkg) &&
     (npmPkg.includes(querySearch) || npmPkg.replaceAll(/[-/]/g, ' ').includes(querySearch))
+      ? 200
+      : 0;
+
+  const cleanedUpName = npmPkg
+    .replace('react-native', '')
+    .replace('react', '')
+    .replaceAll(/[-/]/g, ' ')
+    .trim();
+
+  const cleanedUpNameMatchPoints =
+    !isEmptyOrNull(cleanedUpName) &&
+    (cleanedUpName.includes(querySearch) ||
+      cleanedUpName.includes(querySearch.replaceAll(/[-/]/g, ' ')))
       ? 100
       : 0;
 
   const repoNameMatchPoints =
-    !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 100 : 0;
+    !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 50 : 0;
 
   const descriptionMatchPoints =
     !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
-      ? 50
+      ? 25
       : 0;
 
   const topicMatchPoints = topicSearchString.includes(querySearch) ? 10 : 0;
@@ -27,6 +44,7 @@ const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }
   const matchScore =
     exactNameMatchPoints +
     repoNameMatchPoints +
+    cleanedUpNameMatchPoints +
     npmPkgNameMatchPoints +
     descriptionMatchPoints +
     topicMatchPoints;
@@ -40,6 +58,7 @@ const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }
 
 export const handleFilterLibraries = ({
   libraries,
+  sortBy,
   queryTopic,
   querySearch,
   support,
@@ -70,7 +89,7 @@ export const handleFilterLibraries = ({
       }))
     : libraries;
 
-  return processedLibraries.filter(library => {
+  const fiteredLibraries = processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -111,6 +130,10 @@ export const handleFilterLibraries = ({
     }
 
     if (support.visionos && !library.visionos) {
+      return false;
+    }
+
+    if (support.fireos && !library.fireos) {
       return false;
     }
 
@@ -210,6 +233,12 @@ export const handleFilterLibraries = ({
 
     return isTopicMatch && isSearchMatch;
   });
+
+  if (sortBy === 'relevance') {
+    return relevance(fiteredLibraries);
+  }
+
+  return fiteredLibraries;
 };
 
 export function getPageQuery(basePath, query) {

@@ -29,10 +29,6 @@ const sorts = [
     label: 'Recently Added',
   },
   {
-    param: 'recommended',
-    label: 'Recommended',
-  },
-  {
     param: 'quality',
     label: 'Quality',
   },
@@ -41,16 +37,16 @@ const sorts = [
     label: 'Popularity Gain',
   },
   {
-    param: 'issues',
-    label: 'Issues',
-  },
-  {
     param: 'downloads',
     label: 'Downloads',
   },
   {
     param: 'stars',
     label: 'Stars',
+  },
+  {
+    param: 'issues',
+    label: 'Issues',
   },
 ];
 

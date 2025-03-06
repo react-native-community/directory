@@ -16,6 +16,7 @@ export type Query = {
   expoGo?: string;
   ios?: string;
   macos?: string;
+  fireos?: string;
   tvos?: string;
   visionos?: string;
   web?: string;
@@ -38,7 +39,6 @@ export type Query = {
 };
 
 export type Library = {
-  goldstar?: boolean;
   githubUrl: string;
   ios?: boolean;
   android?: boolean;
@@ -46,6 +46,7 @@ export type Library = {
   expoGo?: boolean;
   windows?: boolean;
   macos?: boolean;
+  fireos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
   unmaintained?: boolean | string;

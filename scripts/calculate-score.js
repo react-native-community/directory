@@ -8,18 +8,18 @@
 const MODIFIERS = [
   {
     name: 'Very popular',
-    value: 40,
-    condition: data => getCombinedPopularity(data) > 10000,
+    value: 45,
+    condition: data => getCombinedPopularity(data) > 50000,
   },
   {
     name: 'Popular',
-    value: 10,
-    condition: data => getCombinedPopularity(data) > 2500,
+    value: 30,
+    condition: data => getCombinedPopularity(data) > 10000,
   },
   {
-    name: 'Recommended',
-    value: 20,
-    condition: data => data.goldstar,
+    name: 'Known',
+    value: 15,
+    condition: data => getCombinedPopularity(data) > 2500,
   },
   {
     name: 'Lots of open issues',
@@ -93,7 +93,7 @@ export const calculateDirectoryScore = data => {
 const getCombinedPopularity = data => {
   const { subscribers, forks, stars } = data.github.stats;
   const { downloads } = data.npm;
-  return subscribers * 20 + forks * 10 + stars + downloads / 100;
+  return subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;
 };
 
 const getUpdatedDaysAgo = data => {
@@ -116,12 +116,12 @@ const WEEK_IN_MS = 6048e5;
 
 export const calculatePopularityScore = data => {
   const {
-    npm: { downloads, weekDownloads },
+    npm: { downloads },
     github,
     unmaintained,
   } = data;
 
-  if (!downloads || !weekDownloads) {
+  if (!downloads) {
     return {
       ...data,
       popularity: -100,
@@ -130,7 +130,9 @@ export const calculatePopularityScore = data => {
 
   const { createdAt, stars } = github.stats;
 
-  const popularityGain = (weekDownloads - Math.floor(downloads / 4.5)) / downloads;
+  // Figure out better way to determine popularity gain, since with amount of libraries
+  // we list, we are hitting npm API limits when fetching twice, for each entry
+  const popularityGain = (Math.floor(downloads / 4) - Math.floor(downloads / 4.5)) / downloads;
 
   const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.25 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;

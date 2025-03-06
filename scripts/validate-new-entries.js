@@ -5,7 +5,7 @@ import isEqual from 'lodash/isEqual.js';
 import { fetchGithubData } from './fetch-github-data.js';
 import { fetchNpmData } from './fetch-npm-data.js';
 import { fillNpmName, hasMismatchedPackageData } from './helpers.js';
-import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import libraries from '../react-native-libraries.json' with { type: 'json' };
 
 async function makeBaseFileQuery() {
   const result = await fetch(

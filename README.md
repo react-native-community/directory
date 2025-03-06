@@ -20,7 +20,7 @@
 
 ## How do I update the data for a library?
 
-- Find the entry for the library in [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file. (Not there? [Add it the library](#how-do-i-add-a-library).)
+- Find the entry for the library in [`react-native-libraries.json`](https://github.com/react-native-community/directory/blob/main/react-native-libraries.json) file. (Not there? [Add it to the directory](#how-do-i-add-a-library).)
 - Update the entry with the new data. Use the [library fields description](#library-fields-description) as a guide.
 - Submit a PR.
 
@@ -48,11 +48,12 @@
   "ios": false,
   "android": false,
   "web": false,
-  "expoGo": false,
   "windows": false,
   "macos": false,
   "tvos": false,
   "visionos": false,
+  "expoGo": false,
+  "fireos": false,
   "unmaintained": false,
   "dev": false,
   "template": false,
@@ -100,12 +101,6 @@
   **(boolean)** - works on iOS device.
 - #### `web`
   **(boolean)** - can be used with [`react-native-web`](https://github.com/necolas/react-native-web).
-- #### `expoGo`
-
-  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
-  
-> [!TIP]
-> **Any** library can be used with Expo, if you use dev clients and prebuild.
 
 #### 🖥️ Out-of-tree Platforms
 
@@ -121,6 +116,16 @@
 - #### `visionos`
   **(boolean)** - can be used with [`react-native-visionos`](https://github.com/callstack/react-native-visionos).
 
+#### ✅ Compatibility
+
+- #### `expoGo`
+  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
+- #### `fireos`
+  **(boolean)** - works on Amazon Fire OS.
+
+> [!TIP]
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
+
 #### 🏷️ Tags
 
 - #### `unmaintained`
@@ -130,7 +135,6 @@
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
-
   **(boolean)** - signify that a library supports, or not, the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
 
 > [!TIP]
