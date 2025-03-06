@@ -12659,5 +12659,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tomatterton/expo-translate-text",
+    "examples": [
+      "https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"
+    ],
+    "images": ["<PUBLIC URL TO RELATED IMAGE>"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
