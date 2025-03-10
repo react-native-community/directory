@@ -14014,8 +14014,8 @@
     "images": ["https://github.com/Kushalchg/nepali-picker/blob/main/assets/picker.png"],
     "ios": true,
     "android": true,
-    "newArchitecture":true,
-    "expoGo":true,
     "web":true,
+    "expoGo":true,
+    "newArchitecture":true
   }
 ]
