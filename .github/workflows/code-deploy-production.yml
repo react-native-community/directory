@@ -1,10 +1,10 @@
-name: Deploy to production
+name: "[CODE] Deploy production website"
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
-      - 'react-native-libraries.json'
+      - react-native-libraries.json
   schedule:
     # Run every 3 hours - https://crontab.guru/#0_*/3_*_*_*
     - cron: '0 */3 * * *'

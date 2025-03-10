@@ -1,8 +1,8 @@
-name: Test deploy
+name: "[CODE] Deploy preview website"
 
 on:
   pull_request:
-    types: [ labeled, synchronize ]
+    types: [labeled, synchronize]
 
 jobs:
   build:

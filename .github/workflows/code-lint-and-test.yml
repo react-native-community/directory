@@ -1,0 +1,26 @@
+name: "[CODE] Lint and test"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths-ignore:
+      - react-native-libraries.json
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - name: Install dependencies
+      run: yarn
+    - name: TSC
+      run: yarn tsc
+    - name: Lint
+      run: yarn lint
+    - name: Build Next app
+      run: yarn next build
