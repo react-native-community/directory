@@ -1,8 +1,8 @@
-name: Cleanup data blobs
+name: "[VERCEL] Cleanup data blobs"
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   schedule:
     # Run once a week on Thursday at midnight - https://crontab.guru/#0_0_*_*_2
     - cron: '0 0 * * 2'
