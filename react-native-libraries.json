@@ -14004,5 +14004,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Kushalchg/nepali-picker",
+    "npmPkg": "react-native-nepali-picker",
+    "examples": [
+      "https://github.com/Kushalchg/nepali-picker/tree/main/example"
+    ],
+    "images": ["https://github.com/Kushalchg/nepali-picker/blob/main/assets/picker.png"],
+    "ios": true,
+    "android": true,
+    "newArchitecture":true,
+    "expoGo":true,
+    "web":true,
   }
 ]
