@@ -14027,5 +14027,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/saadqbal/react-native-notification-sounds",
+    "npmPkg": "react-native-notification-sounds",
+    "examples": [
+      "https://github.com/saadqbal/notificationSounds"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
