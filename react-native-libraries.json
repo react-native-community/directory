@@ -4764,6 +4764,12 @@
     "ios": true,
     "android": true
   },
+    {
+    "githubUrl": "https://github.com/newrelic/newrelic-react-native-agent",
+    "npmPkg": "newrelic-react-native-agent",
+    "ios": true,
+    "android": true
+  },
   {
     "githubUrl": "https://github.com/getsentry/sentry-react-native/tree/main/packages/core",
     "npmPkg": "@sentry/react-native",
