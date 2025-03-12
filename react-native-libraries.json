@@ -14028,5 +14028,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/newrelic/newrelic-react-native-agent",
+    "npmPkg": "newrelic-react-native-agent",
+    "examples": [
+      "https://github.com/newrelic/newrelic-react-native-agent/tree/main/NewRelicExampleApp/React-Native-Test-App"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
