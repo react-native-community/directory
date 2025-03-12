@@ -4764,12 +4764,6 @@
     "ios": true,
     "android": true
   },
-    {
-    "githubUrl": "https://github.com/newrelic/newrelic-react-native-agent",
-    "npmPkg": "newrelic-react-native-agent",
-    "ios": true,
-    "android": true
-  },
   {
     "githubUrl": "https://github.com/getsentry/sentry-react-native/tree/main/packages/core",
     "npmPkg": "@sentry/react-native",
@@ -14029,6 +14023,16 @@
     "npmPkg": "react-native-purchases-ui",
     "examples": [
       "https://github.com/RevenueCat/react-native-purchases/tree/main/examples/MagicWeather"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/newrelic/newrelic-react-native-agent",
+    "npmPkg": "newrelic-react-native-agent",
+    "examples": [
+      "https://github.com/newrelic/newrelic-react-native-agent/tree/main/NewRelicExampleApp/React-Native-Test-App"
     ],
     "ios": true,
     "android": true,
