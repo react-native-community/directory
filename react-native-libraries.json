@@ -13911,6 +13911,7 @@
     "examples": ["https://github.com/LegendApp/legend-list/tree/main/example"],
     "android": true,
     "ios": true,
+    "macos": true,
     "expoGo": true,
     "newArchitecture": true
   },
