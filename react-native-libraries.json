@@ -10154,9 +10154,7 @@
   },
   {
     "githubUrl": "https://github.com/anday013/react-native-otp-entry",
-    "examples": [
-      "https://snack.expo.dev/@anday013/demo-react-native-otp-entry"
-    ],
+    "examples": ["https://snack.expo.dev/@anday013/demo-react-native-otp-entry"],
     "images": ["https://github.com/anday013/react-native-otp-entry/blob/main/otp_demo.gif"],
     "ios": true,
     "android": true,
@@ -13917,25 +13915,19 @@
   },
   {
     "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
-    "examples": [
-      "https://github.com/colaquecez/expo-selectable-text/tree/main/example"
-    ],
+    "examples": ["https://github.com/colaquecez/expo-selectable-text/tree/main/example"],
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/huextrat/react-native-ios-translate-sheet",
-    "examples": [
-      "https://github.com/huextrat/react-native-ios-translate-sheet/tree/main/example"
-    ],
+    "examples": ["https://github.com/huextrat/react-native-ios-translate-sheet/tree/main/example"],
     "ios": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/huextrat/react-native-ios-translate-tasks",
-    "examples": [
-      "https://github.com/huextrat/react-native-ios-translate-tasks/tree/main/example"
-    ],
+    "examples": ["https://github.com/huextrat/react-native-ios-translate-tasks/tree/main/example"],
     "ios": true,
     "newArchitecture": true
   },
@@ -13953,7 +13945,9 @@
       "https://github.com/anday013/react-native-phone-entry/tree/main/example",
       "https://snack.expo.dev/@anday013/demo-react-native-phone-entry"
     ],
-    "images": ["https://github.com/anday013/react-native-phone-entry/blob/main/assets/autopick.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/anday013/react-native-phone-entry/refs/heads/main/assets/autopick.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -13973,9 +13967,7 @@
   {
     "githubUrl": "https://github.com/BrijenMakwana/react-native-multistep",
     "npmPkg": "@brijen/react-native-multistep",
-    "examples": [
-      "https://github.com/BrijenMakwana/react-native-multistep/tree/main/example"
-    ],
+    "examples": ["https://github.com/BrijenMakwana/react-native-multistep/tree/main/example"],
     "images": [
       "https://github.com/BrijenMakwana/react-native-multistep/blob/main/example/assets/images/example_1/example_1.gif",
       "https://github.com/BrijenMakwana/react-native-multistep/blob/main/example/assets/images/example_2/example_2.gif",
@@ -13989,19 +13981,17 @@
   {
     "githubUrl": "https://github.com/mhpdev-com/react-native-speech",
     "npmPkg": "@mhpdev/react-native-speech",
-    "examples": [
-      "https://github.com/mhpdev-com/react-native-speech/tree/main/example"
-    ],
+    "examples": ["https://github.com/mhpdev-com/react-native-speech/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/TomAtterton/expo-translate-text",
-    "examples": [
-      "https://github.com/TomAtterton/expo-translate-text/tree/main/example"
+    "examples": ["https://github.com/TomAtterton/expo-translate-text/tree/main/example"],
+    "images": [
+      "https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"
     ],
-    "images": ["https://github.com/TomAtterton/expo-translate-text/blob/main/resources/Translate_iOS.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -14009,10 +13999,10 @@
   {
     "githubUrl": "https://github.com/Kushalchg/nepali-picker",
     "npmPkg": "react-native-nepali-picker",
-    "examples": [
-      "https://github.com/Kushalchg/nepali-picker/tree/main/example"
+    "examples": ["https://github.com/Kushalchg/nepali-picker/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Kushalchg/nepali-picker/refs/heads/main/assets/picker.png"
     ],
-    "images": ["https://github.com/Kushalchg/nepali-picker/blob/main/assets/picker.png"],
     "ios": true,
     "android": true,
     "web": true,
@@ -14021,7 +14011,6 @@
   },
   {
     "githubUrl": "https://github.com/RevenueCat/react-native-purchases/tree/main/react-native-purchases-ui",
-    "npmPkg": "react-native-purchases-ui",
     "examples": [
       "https://github.com/RevenueCat/react-native-purchases/tree/main/examples/MagicWeather"
     ],
@@ -14031,7 +14020,6 @@
   },
   {
     "githubUrl": "https://github.com/newrelic/newrelic-react-native-agent",
-    "npmPkg": "newrelic-react-native-agent",
     "examples": [
       "https://github.com/newrelic/newrelic-react-native-agent/tree/main/NewRelicExampleApp/React-Native-Test-App"
     ],
@@ -14041,10 +14029,65 @@
   },
   {
     "githubUrl": "https://github.com/saadqbal/react-native-notification-sounds",
-    "npmPkg": "react-native-notification-sounds",
+    "examples": ["https://github.com/saadqbal/notificationSounds"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/okwasniewski/react-native-emoji-popup",
+    "examples": ["https://github.com/okwasniewski/react-native-emoji-popup/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/react-native-legal/tree/main/packages/react-native-legal",
     "examples": [
-      "https://github.com/saadqbal/notificationSounds"
+      "https://github.com/callstackincubator/react-native-legal/tree/main/packages/bare-example-notice",
+      "https://github.com/callstackincubator/react-native-legal/tree/main/packages/expo-example-notice"
     ],
+    "images": [
+      "https://raw.githubusercontent.com/callstackincubator/react-native-legal/refs/heads/main/static/android-expo.gif",
+      "https://raw.githubusercontent.com/callstackincubator/react-native-legal/refs/heads/main/static/android-tv.gif",
+      "https://raw.githubusercontent.com/callstackincubator/react-native-legal/refs/heads/main/static/ios-expo.gif",
+      "https://raw.githubusercontent.com/callstackincubator/react-native-legal/refs/heads/main/static/tvos.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-brownfield",
+    "npmPkg": "@callstack/react-native-brownfield",
+    "examples": ["https://github.com/callstack/react-native-brownfield/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/react-native-testing-library",
+    "npmPkg": "@testing-library/react-native",
+    "examples": [
+      "https://github.com/callstack/react-native-testing-library/tree/main/examples/basic",
+      "https://github.com/callstack/react-native-testing-library/tree/main/examples/cookbook"
+    ],
+    "dev": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-executorch",
+    "examples": [
+      "https://github.com/software-mansion/react-native-executorch/tree/main/examples/computer-vision",
+      "https://github.com/software-mansion/react-native-executorch/tree/main/examples/llama",
+      "https://github.com/software-mansion/react-native-executorch/tree/main/examples/speech-to-text"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kubilaysalih/react-native-attributify",
+    "examples": ["https://github.com/kubilaysalih/react-native-attributify/tree/main/example"],
     "ios": true,
     "android": true
   }
