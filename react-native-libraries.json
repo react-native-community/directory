@@ -14079,5 +14079,12 @@
     "examples": ["https://github.com/kubilaysalih/react-native-attributify/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vexotech/vexo-analytics",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Use v1.3.15 or higher for new architecture support"
   }
 ]
