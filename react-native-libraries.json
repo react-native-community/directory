@@ -14079,5 +14079,11 @@
     "examples": ["https://github.com/kubilaysalih/react-native-attributify/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Splicer97/react-native-android-keyboard-adjust",
+    "examples": ["https://github.com/Splicer97/react-native-android-keyboard-adjust/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
   }
 ]
