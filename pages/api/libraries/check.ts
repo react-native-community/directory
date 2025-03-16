@@ -1,17 +1,15 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import data from '../../../assets/data.json';
-import { Library } from '../../../types';
-import { getNewArchSupportStatus } from '../../../util/newArchStatus';
+import data from '~/assets/data.json';
+import { Library } from '~/types';
+import { getNewArchSupportStatus } from '~/util/newArchStatus';
 
 // Copy data into an object that is keyed by npm package name for faster lookup
 const dataByNpmPackage = {};
 data.libraries.forEach(library => {
-  // @ts-ignore
   const npmPackageName = getNpmPackageName(library);
   dataByNpmPackage[npmPackageName] = {
     unmaintained: library.unmaintained,
-    // @ts-ignore
     newArchitecture: getNewArchSupportStatus(library),
   };
 });
@@ -19,7 +17,7 @@ data.libraries.forEach(library => {
 // Provide library metadata for a list of npm packages
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'application/json');
-  let packages = [];
+  let packages: string[];
 
   if (typeof req.body === 'string') {
     packages = JSON.parse(req.body)?.packages;

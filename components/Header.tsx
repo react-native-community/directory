@@ -2,11 +2,12 @@ import { A, Header as HtmlHeader } from '@expo/html-elements';
 import { useContext } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import { layout, colors, H5, P, darkColors, useLayout } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import { Button } from './Button';
 import { GitHub, Logo, Plus } from './Icons';
 import Tooltip from './Tooltip';
-import { layout, colors, H5, P, darkColors, useLayout } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 const Header = () => {
   const { isDark, setIsDark } = useContext(CustomAppearanceContext);

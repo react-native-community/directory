@@ -1,6 +1,6 @@
 import { Circle, Path, Rect, Svg } from 'react-native-svg';
 
-import { colors } from '../../common/styleguide';
+import { colors } from '~/common/styleguide';
 
 type Props = {
   fill?: string;

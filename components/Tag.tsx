@@ -1,9 +1,10 @@
 import { ReactElement, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, darkColors, Label } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import { Check } from './Icons';
-import { colors, darkColors, Label } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type Props = {
   label: string;

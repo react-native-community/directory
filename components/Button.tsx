@@ -2,8 +2,8 @@ import { A } from '@expo/html-elements';
 import { PropsWithChildren, useContext } from 'react';
 import { StyleSheet, TextStyle, Pressable } from 'react-native';
 
-import { colors, darkColors, HoverEffect, P } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import { colors, darkColors, HoverEffect, P } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 type Props = PropsWithChildren & {
   href?: string;

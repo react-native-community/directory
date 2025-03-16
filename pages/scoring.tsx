@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { H2, P, Headline, A, colors, darkColors, H3 } from '../common/styleguide';
-import ContentContainer from '../components/ContentContainer';
-import TrendingMark from '../components/Library/TrendingMark';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import { H2, P, Headline, A, colors, darkColors, H3 } from '~/common/styleguide';
+import ContentContainer from '~/components/ContentContainer';
+import TrendingMark from '~/components/Library/TrendingMark';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 const ScoringCriterion = ({ children, headline, score = undefined }) => {
   const { isDark } = useContext(CustomAppearanceContext);

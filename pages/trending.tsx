@@ -4,20 +4,20 @@ import Router from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import { A, H4, colors, darkColors, P } from '../common/styleguide';
-import ContentContainer from '../components/ContentContainer';
-import { Filters } from '../components/Filters';
-import { FilterButton } from '../components/Filters/FilterButton';
-import LoadingContent from '../components/Library/LoadingContent';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import Pagination from '../components/Pagination';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Library as LibraryType, QueryOrder } from '../types';
-import getApiUrl from '../util/getApiUrl';
-import urlWithQuery from '../util/urlWithQuery';
+import { A, H4, colors, darkColors, P } from '~/common/styleguide';
+import ContentContainer from '~/components/ContentContainer';
+import { Filters } from '~/components/Filters';
+import { FilterButton } from '~/components/Filters/FilterButton';
+import LoadingContent from '~/components/Library/LoadingContent';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import Pagination from '~/components/Pagination';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType, QueryOrder } from '~/types';
+import getApiUrl from '~/util/getApiUrl';
+import urlWithQuery from '~/util/urlWithQuery';
 
-const LibraryWithLoading = dynamic(() => import('../components/Library'), {
+const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => <LoadingContent />,
 });
 
@@ -71,7 +71,7 @@ const Trending = ({ data, query }) => {
           <View style={styles.noResultWrapper}>
             <Image
               style={styles.noResultImg}
-              source={require('../assets/notfound.png')}
+              source={require('~/assets/notfound.png')}
               alt="No results"
             />
             <H4>Nothing was found!</H4>

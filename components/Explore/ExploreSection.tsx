@@ -2,13 +2,13 @@ import dynamic from 'next/dynamic';
 import { createElement, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, H3, P } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType, Query } from '../../types';
-import urlWithQuery from '../../util/urlWithQuery';
-import LoadingContent from '../Library/LoadingContent';
+import { A, colors, darkColors, H3, P } from '~/common/styleguide';
+import LoadingContent from '~/components/Library/LoadingContent';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType, Query } from '~/types';
+import urlWithQuery from '~/util/urlWithQuery';
 
-const LibraryWithLoading = dynamic(() => import('../Library'), {
+const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => (
     <LoadingContent
       width="48.25%"

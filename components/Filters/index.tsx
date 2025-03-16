@@ -1,6 +1,11 @@
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, Headline, layout, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+import { getPageQuery } from '~/util/search';
+
 import { ToggleLink } from './ToggleLink';
 import {
   FILTER_COMPATIBILITY,
@@ -8,10 +13,6 @@ import {
   FILTER_REQUIRES_MAIN_SEARCH,
   FILTER_STATUS,
 } from './helpers';
-import { colors, Headline, layout, darkColors } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Query } from '../../types';
-import { getPageQuery } from '../../util/search';
 
 type FiltersProps = {
   query: Query;
