@@ -157,12 +157,12 @@
 #### Commands
 
 ```sh
-yarn && yarn start
+bun install && bun start
 ```
 
 You should be able to visit `localhost:3000` in your browser.
 
-## How do I run `yarn data:update` with keys?
+## How do I run `bun data:update` with keys?
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
 - Load the `GITHUB_TOKEN` environment variable into your shell.
@@ -170,7 +170,7 @@ You should be able to visit `localhost:3000` in your browser.
 This command creates site data in `./assets/data.json`
 
 ```sh
-GITHUB_TOKEN=<*> yarn data:update
+GITHUB_TOKEN=<*> bun data:update
 ```
 
 ## How do I deploy to production?

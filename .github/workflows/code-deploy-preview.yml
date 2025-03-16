@@ -11,13 +11,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
       - name: Deploy
         shell: bash
-        run: npx vercel --force --token "$VERCEL_TOKEN"
+        run: bunx vercel --force --token "$VERCEL_TOKEN"
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787

@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score.js';
-import data from '../assets/data.json' with { type: 'json' };
+import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
+import data from '../assets/data.json';
 
 const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 

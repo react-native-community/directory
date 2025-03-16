@@ -1,4 +1,4 @@
-import { pluralize } from './strings.js';
+import { pluralize } from './strings';
 
 export const TimeRange = Object.freeze({
   MINUTE: 60,
@@ -9,7 +9,7 @@ export const TimeRange = Object.freeze({
   YEAR: 60 * 60 * 24 * 365,
 });
 
-export const getTimeSinceToday = date => {
+export function getTimeSinceToday(date: Date | string) {
   const updateTimeSeconds = new Date(date).getTime();
   const currentTimeSeconds = new Date().getTime();
 
@@ -32,9 +32,9 @@ export const getTimeSinceToday = date => {
                 : [Math.round(elapsed / TimeRange.YEAR), 'year'];
 
   return `${value} ${pluralize(unit, value)} ago`;
-};
+}
 
-export function isLaterThan(date, timeRange) {
+export function isLaterThan(date: Date | string, timeRange: number) {
   const updateTimeSeconds = new Date(date).getTime();
   const currentTimeSeconds = new Date().getTime();
   const seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;

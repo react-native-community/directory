@@ -1,14 +1,15 @@
 import fetch from 'cross-fetch';
 
-import { sleep, REQUEST_SLEEP } from './helpers.js';
+import { sleep, REQUEST_SLEEP } from './helpers';
+import { Library } from '../types';
 
 const ATTEMPTS_LIMIT = 2;
 
-const urlForPackage = (npmPkg, period = 'month') => {
+function urlForPackage(npmPkg: string, period = 'month') {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
-};
+}
 
-export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCount = 0) => {
+export async function fetchNpmDataBulk(namesArray: string[], period = 'month', attemptsCount = 0) {
   try {
     const listCount = namesArray.length;
     const url = urlForPackage(namesArray.join(','), period);
@@ -50,9 +51,9 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
     console.log(`[NPM] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
     return await fetchNpmDataBulk(namesArray, period, attemptsCount + 1);
   }
-};
+}
 
-export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
+export async function fetchNpmData(pkgData: Library, attemptsCount = 0) {
   const { npmPkg } = pkgData;
 
   try {
@@ -91,4 +92,4 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmData(pkgData, attemptsCount + 1);
   }
-};
+}

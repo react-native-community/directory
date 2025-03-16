@@ -12,13 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js 22
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v2
     - name: Install dependencies
-      run: yarn
+      run: bun install
     - name: Cleanup data blobs
-      run: yarn ci:cleanup-blobs
+      run: bun ci:cleanup-blobs
       env:
         BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}

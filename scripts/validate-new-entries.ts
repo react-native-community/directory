@@ -1,11 +1,11 @@
 import fetch from 'cross-fetch';
-import differenceWith from 'lodash/differenceWith.js';
-import isEqual from 'lodash/isEqual.js';
+import differenceWith from 'lodash/differenceWith';
+import isEqual from 'lodash/isEqual';
 
-import { fetchGithubData } from './fetch-github-data.js';
-import { fetchNpmData } from './fetch-npm-data.js';
-import { fillNpmName, hasMismatchedPackageData } from './helpers.js';
-import libraries from '../react-native-libraries.json' with { type: 'json' };
+import { fetchGithubData } from './fetch-github-data';
+import { fetchNpmData } from './fetch-npm-data';
+import { fillNpmName, hasMismatchedPackageData } from './helpers';
+import libraries from '../react-native-libraries.json';
 
 async function makeBaseFileQuery() {
   const result = await fetch(
