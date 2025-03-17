@@ -2,13 +2,13 @@ import * as Sentry from '@sentry/react';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { colors, darkColors } from '../common/styleguide';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
+import { colors, darkColors } from '~/common/styleguide';
+import Footer from '~/components/Footer';
+import Header from '~/components/Header';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
-import '../styles/styles.css';
+import '~/styles/styles.css';
 
 const isProd = process.env.NODE_ENV === 'production';
 

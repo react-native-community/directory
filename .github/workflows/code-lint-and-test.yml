@@ -12,15 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js 22
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v2
     - name: Install dependencies
-      run: yarn
+      run: bun install
     - name: TSC
-      run: yarn tsc
+      run: bun tsc
     - name: Lint
-      run: yarn lint
+      run: bun lint
     - name: Build Next app
-      run: yarn next build
+      run: bun next build

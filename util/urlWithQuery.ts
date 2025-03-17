@@ -1,8 +1,7 @@
 import { Query } from '../types';
 
 function toQueryString(query: Query) {
-  // @ts-ignore
-  return new URLSearchParams(query).toString();
+  return new URLSearchParams(query as Record<string, string>).toString();
 }
 
 export default function urlWithQuery(url: string, query: Query) {

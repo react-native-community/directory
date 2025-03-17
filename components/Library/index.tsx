@@ -3,13 +3,14 @@ import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
+import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType } from '~/types';
+
 import { MetaData } from './MetaData';
 import Thumbnail from './Thumbnail';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
-import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../../types';
 import { CompatibilityTags } from '../CompatibilityTags';
 import Tooltip from '../Tooltip';
 

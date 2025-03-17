@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, darkColors, P } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+
 import { ClearButton } from './ClearButton';
 import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';
-import { colors, darkColors, P } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Query } from '../../types';
 import { Button } from '../Button';
 import { Filter as FilterIcon } from '../Icons';
 

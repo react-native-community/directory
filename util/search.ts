@@ -1,11 +1,12 @@
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
-import { relevance } from './sorting.js';
+import { relevance } from './sorting';
 import { isEmptyOrNull } from './strings';
+import { Library, Query } from '../types';
 
-const calculateMatchScore = (
-  { github, npmPkg, topicSearchString, unmaintained, score },
-  querySearch
-) => {
+function calculateMatchScore(
+  { github, npmPkg, topicSearchString, unmaintained }: Library,
+  querySearch: string
+) {
   const exactNameMatchPoints =
     (!isEmptyOrNull(github.name) && github.name === querySearch) ||
     (!isEmptyOrNull(npmPkg) && npmPkg === querySearch)
@@ -54,9 +55,9 @@ const calculateMatchScore = (
   } else {
     return matchScore;
   }
-};
+}
 
-export const handleFilterLibraries = ({
+export function handleFilterLibraries({
   libraries,
   sortBy,
   queryTopic,
@@ -75,7 +76,7 @@ export const handleFilterLibraries = ({
   skipLibs,
   skipTools,
   skipTemplates,
-}) => {
+}) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
@@ -239,9 +240,9 @@ export const handleFilterLibraries = ({
   }
 
   return fiteredLibraries;
-};
+}
 
-export function getPageQuery(basePath, query) {
+export function getPageQuery(basePath: string, query: Query) {
   if (basePath === '/trending') {
     return { ...query, minPopularity: undefined, order: undefined };
   }

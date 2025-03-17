@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, Label, useLayout } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
+import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import { Warning } from '../Icons';
 
 const UnmaintainedLabel = ({ alternatives }) => {

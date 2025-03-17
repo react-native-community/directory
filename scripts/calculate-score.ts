@@ -1,6 +1,7 @@
 /**
  * Directory Score
  */
+import { Library } from '../types';
 
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to condition function, and if it returns true, the value is added to the
@@ -114,7 +115,7 @@ const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
-export const calculatePopularityScore = data => {
+export function calculatePopularityScore(data: Library) {
   const {
     npm: { downloads },
     github,
@@ -137,7 +138,7 @@ export const calculatePopularityScore = data => {
   const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.25 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
   const unmaintainedPenalty = unmaintained ? 0.5 : 0;
-  const freshPackagePenalty = DATE_NOW - new Date(createdAt) < WEEK_IN_MS ? 0.5 : 0;
+  const freshPackagePenalty = DATE_NOW - new Date(createdAt).getTime() < WEEK_IN_MS ? 0.5 : 0;
 
   const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 5 : 0) : 0;
 
@@ -156,4 +157,4 @@ export const calculatePopularityScore = data => {
     ...data,
     popularity,
   };
-};
+}

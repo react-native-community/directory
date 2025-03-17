@@ -12,17 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js 22
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v2
     - name: Install dependencies
-      run: yarn
+      run: bun install
     - name: Validate react-native-libraries.json
-      run: yarn data:validate
+      run: bun data:validate
     - name: Test react-native-libraries.json
-      run: yarn data:test
+      run: bun data:test
     - name: Check new entries in react-native-libraries.json
-      run: yarn ci:validate
+      run: bun ci:validate
       env:
         CI_CHECKS_TOKEN: ${{ github.token }}

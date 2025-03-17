@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType } from '~/types';
+import { getTimeSinceToday } from '~/util/datetime';
+
 import { DirectoryScore } from './DirectoryScore';
-import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../../types';
-import { getTimeSinceToday } from '../../util/datetime';
 import {
   Calendar,
   Star,

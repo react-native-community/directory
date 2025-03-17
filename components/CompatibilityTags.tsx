@@ -1,13 +1,14 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library } from '~/types';
+
+import { Info } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
 import { Tag } from './Tag';
 import Tooltip from './Tooltip';
-import { colors, darkColors } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Library } from '../types';
-import { Info } from './Icons';
 
 type Props = {
   library: Library;

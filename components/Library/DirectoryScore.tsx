@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import { View } from 'react-native';
 import { Svg, Path, Circle } from 'react-native-svg';
 
-import { colors, darkColors } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
+import { colors, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import Tooltip from '../Tooltip';
 
 type Props = {

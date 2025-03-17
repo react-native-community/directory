@@ -1,10 +1,11 @@
 import { type PropsWithChildren, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors, darkColors, H1, H2 } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import ContentContainer from './ContentContainer';
 import NavigationTab from './NavigationTab';
-import { colors, darkColors, H1, H2 } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type NavigationProps = PropsWithChildren<{
   title?: string;

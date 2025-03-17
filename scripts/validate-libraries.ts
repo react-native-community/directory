@@ -1,12 +1,13 @@
-import libraries from '../react-native-libraries.json' with { type: 'json' };
+import libraries from '../react-native-libraries.json';
+import { Library } from '../types';
 
 const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/g;
 
-const validateLibrariesFormat = libraries => {
+function validateLibrariesFormat(libraries: Library[]) {
   console.log('🔍️Checking all libraries have the correct format');
 
   // Reduces the libraries array to an object of errors for each library
-  const errorsList = libraries.reduce((errors, library, index) => {
+  const errorsList: Record<string, string[]> = libraries.reduce((errors, library, index) => {
     const libraryErrors = [];
     const libraryProperties = Object.keys(library);
 
@@ -36,9 +37,9 @@ const validateLibrariesFormat = libraries => {
   } else {
     console.log('✅ No malformed libraries\n');
   }
-};
+}
 
-const validateDuplicateLibraries = libraries => {
+function validateDuplicateLibraries(libraries: Library[]) {
   console.log('🔍️Checking for duplicate libraries');
 
   const librariesName = libraries.map(
@@ -61,7 +62,7 @@ const validateDuplicateLibraries = libraries => {
   } else {
     console.log('✅ No duplicates');
   }
-};
+}
 
 validateLibrariesFormat(libraries);
 validateDuplicateLibraries(libraries);

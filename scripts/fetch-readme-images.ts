@@ -1,9 +1,10 @@
-import { load } from 'cheerio';
+import { Cheerio, load } from 'cheerio';
 import fetch from 'cross-fetch';
 
-import { sleep } from './helpers.js';
+import { sleep } from './helpers';
+import { Library } from '../types';
 
-const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
+function isLikelyUsefulImage(image: Cheerio<any>, imageSrc: string, githubUrl: string) {
   const parentHref = image.parent().attr('href');
   const isInHeader = image.parents('h1').length > 0;
   const isFromRepo = imageSrc.includes(githubUrl) || imageSrc.startsWith('/');
@@ -17,9 +18,9 @@ const isLikelyUsefulImage = (image, imageSrc, githubUrl) => {
     (isFromRepo && !isInHeader && !isBadge && !isAvatar) ||
     (parentHref && imageSrc && parentHref === imageSrc && !isInHeader && !isBadge && !isAvatar)
   );
-};
+}
 
-const scrapeImagesAsync = async githubUrl => {
+async function scrapeImagesAsync(githubUrl: string) {
   const response = await fetch(githubUrl);
   const html = await response.text();
   const $ = load(html);
@@ -39,9 +40,9 @@ const scrapeImagesAsync = async githubUrl => {
   } else {
     return [];
   }
-};
+}
 
-const fetchReadmeImages = async (data, attemptsCount = 0) => {
+async function fetchReadmeImages(data: Library, attemptsCount = 0) {
   /**
    * @DEV
    * if images been set, or max attempt count has been reached, we skip scraping images
@@ -64,6 +65,6 @@ const fetchReadmeImages = async (data, attemptsCount = 0) => {
     await sleep(2000);
     return await fetchReadmeImages(data, attemptsCount + 1);
   }
-};
+}
 
 export default fetchReadmeImages;

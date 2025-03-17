@@ -1,6 +1,6 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 
-import GoogleAnalytics from '../components/GoogleAnalytics';
+import GoogleAnalytics from '~/components/GoogleAnalytics';
 
 class DirectoryWebsite extends Document {
   static async getInitialProps(ctx: DocumentContext) {

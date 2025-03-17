@@ -2,8 +2,8 @@ import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet } from 'react-native';
 
-import ContentContainer from '../components/ContentContainer';
-import ExploreSection from '../components/Explore/ExploreSection';
+import ContentContainer from '~/components/ContentContainer';
+import ExploreSection from '~/components/Explore/ExploreSection';
 import {
   PlatformAndroid,
   PlatformExpo,
@@ -14,11 +14,11 @@ import {
   PlatformWeb,
   PlatformWindows,
   ReactLogo,
-} from '../components/Icons';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import getApiUrl from '../util/getApiUrl';
-import urlWithQuery from '../util/urlWithQuery';
+} from '~/components/Icons';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import getApiUrl from '~/util/getApiUrl';
+import urlWithQuery from '~/util/urlWithQuery';
 
 const Popular = ({ data }) => {
   return (

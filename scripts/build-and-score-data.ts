@@ -1,23 +1,24 @@
 import { BlobAccessError, list, put } from '@vercel/blob';
 import fetch from 'cross-fetch';
-import chunk from 'lodash/chunk.js';
+import chunk from 'lodash/chunk';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score.js';
-import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data.js';
-import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data.js';
-import fetchReadmeImages from './fetch-readme-images.js';
-import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers.js';
-import debugGithubRepos from '../debug-github-repos.json' with { type: 'json' };
-import githubRepos from '../react-native-libraries.json' with { type: 'json' };
-import { isLaterThan, TimeRange } from '../util/datetime.js';
-import { isEmptyOrNull } from '../util/strings.js';
+import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
+import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
+import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
+import fetchReadmeImages from './fetch-readme-images';
+import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
+import debugGithubRepos from '../debug-github-repos.json';
+import githubRepos from '../react-native-libraries.json';
+import { Library } from '../types';
+import { isLaterThan, TimeRange } from '../util/datetime';
+import { isEmptyOrNull } from '../util/strings';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
 const USE_DEBUG_REPOS = false;
-const DATASET = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
+const DATASET: Library[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
@@ -33,7 +34,7 @@ const mismatchedRepos = [];
 
 const wantedPackageName = process.argv[2];
 
-const buildAndScoreData = async () => {
+async function buildAndScoreData() {
   console.log('⬇️️ Fetching latest data blob from the store');
 
   const { latestData } = await fetchLatestData();
@@ -241,7 +242,7 @@ const buildAndScoreData = async () => {
   }
 
   return fs.writeFileSync(DATA_PATH, fileContent);
-};
+}
 
 export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   let results = [];
@@ -266,7 +267,7 @@ export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   return results;
 }
 
-function getDataForFetch(wantedPackage) {
+function getDataForFetch(wantedPackage: string) {
   if (wantedPackage) {
     const match = DATASET.find(
       entry =>
@@ -321,7 +322,9 @@ async function fetchLatestData() {
   const { blobs } = await list();
 
   if (blobs?.length > 0) {
-    const sortedBlobs = blobs.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
+    const sortedBlobs = blobs.sort(
+      (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
+    );
     const response = await fetch(sortedBlobs[0].downloadUrl);
 
     return {
@@ -332,7 +335,7 @@ async function fetchLatestData() {
   return JSON.parse(fs.readFileSync(DATA_PATH).toString());
 }
 
-async function uploadToStore(fileContent) {
+async function uploadToStore(fileContent: string) {
   console.log('⬆️ Uploading data blob to the store');
   try {
     await put('data.json', fileContent, { access: 'public' });

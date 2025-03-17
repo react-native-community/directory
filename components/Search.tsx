@@ -3,15 +3,16 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
+import { layout, colors, P, darkColors, useLayout, Label } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+import isAppleDevice from '~/util/isAppleDevice';
+import urlWithQuery from '~/util/urlWithQuery';
+
 import { Filters } from './Filters';
 import { FilterButton } from './Filters/FilterButton';
 import { Search as SearchIcon } from './Icons';
 import { SortButton } from './Sort';
-import { layout, colors, P, darkColors, useLayout, Label } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Query } from '../types';
-import isAppleDevice from '../util/isAppleDevice';
-import urlWithQuery from '../util/urlWithQuery';
 
 type Props = {
   query: Query;

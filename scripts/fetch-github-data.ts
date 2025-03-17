@@ -1,9 +1,9 @@
 import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { processTopics, sleep, REQUEST_SLEEP } from './helpers.js';
-import GitHubLicensesQuery from './queries/GitHubLicensesQuery.js';
-import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery.js';
+import { processTopics, sleep, REQUEST_SLEEP } from './helpers';
+import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
+import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
 
@@ -24,7 +24,7 @@ export const loadGitHubLicenses = async () => {
   });
 };
 
-const makeGraphqlQuery = async (query, variables) => {
+const makeGraphqlQuery = async (query: string, variables = {}) => {
   const result = await fetch(GRAPHQL_API, {
     method: 'POST',
     headers: {
