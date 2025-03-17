@@ -152,7 +152,7 @@
 
 #### Prerequisites
 
-- Node LTS
+- [Bun (1.2+)](https://bun.sh/)
 
 #### Commands
 
