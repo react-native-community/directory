@@ -14075,5 +14075,26 @@
     "npmPkg": "@splicer97/react-native-android-keyboard-adjust",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-img-buffer-save",
+    "examples": ["https://github.com/pioner92/react-native-img-buffer-save-example/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-xxhash",
+    "examples": ["https://github.com/pioner92/react-native-xxhash/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-config-jsi",
+    "examples": ["https://github.com/pioner92/react-native-config-jsi-example/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
