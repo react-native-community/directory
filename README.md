@@ -231,6 +231,5 @@ https://reactnative.directory/api/libraries
 
 ```sh
 # once environment variables are configured, install Vercel and deploy
-npm i -g vercel
-vercel
+bunx vercel
 ```
