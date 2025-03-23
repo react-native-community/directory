@@ -14098,8 +14098,14 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/dcangulo/react-native-render-lynx",
+    "examples": ["https://github.com/dcangulo/react-native-render-lynx/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/JuanSeBestia/react-native-wifi-reborn",
-    "npmPkg": "react-native-wifi-reborn",
     "examples": ["https://github.com/JuanSeBestia/react-native-wifi-reborn/tree/master/example"],
     "ios": true,
     "android": true,
