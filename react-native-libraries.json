@@ -14119,5 +14119,15 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/google-gemini/generative-ai-js",
+    "npmPkg": "@google/generative-ai",
+    "examples": [
+      "https://github.com/google-gemini/generative-ai-js/tree/main/samples"
+    ],
+    "web": true,
+    "windows": true,
+    "expoGo": true,
   }
 ]
