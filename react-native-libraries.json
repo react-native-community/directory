@@ -12336,27 +12336,14 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react",
-    "examples": ["https://github.com/grahammendick/navigation/tree/master/NavigationReact/sample"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react-native",
+    "githubUrl": "https://github.com/grahammendick/navigation",
+    "npmPkg": "https://www.npmjs.com/package/navigation",
     "examples": [
-      "https://github.com/grahammendick/navigation/tree/master/NavigationReactNative/sample"
+      "https://github.com/grahammendick/navigation/tree/master/NavigationReactNative/sample/fabric"
     ],
     "ios": true,
     "android": true,
+    "web": true,
     "newArchitecture": true
   },
   {
