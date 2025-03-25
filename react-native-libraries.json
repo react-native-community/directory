@@ -14078,7 +14078,7 @@
   },
   {
     "githubUrl": "https://github.com/pioner92/react-native-img-buffer-save",
-    "examples": ["https://github.com/pioner92/react-native-img-buffer-save-example/tree/main/example"],
+    "examples": ["https://github.com/pioner92/react-native-img-buffer-save/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -14092,7 +14092,7 @@
   },
   {
     "githubUrl": "https://github.com/pioner92/react-native-config-jsi",
-    "examples": ["https://github.com/pioner92/react-native-config-jsi-example/tree/main/example"],
+    "examples": ["https://github.com/pioner92/react-native-config-jsi/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -14128,5 +14128,11 @@
     ],
     "web": true,
     "expoGo": true
+  },
+    {
+    "githubUrl": "https://github.com/pioner92/react-native-auto-skeleton",
+    "examples": ["https://github.com/pioner92/react-native-auto-skeleton/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
