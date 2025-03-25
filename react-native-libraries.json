@@ -14071,7 +14071,9 @@
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-android-keyboard-adjust",
-    "examples": ["https://github.com/Splicer97/react-native-android-keyboard-adjust/tree/main/example"],
+    "examples": [
+      "https://github.com/Splicer97/react-native-android-keyboard-adjust/tree/main/example"
+    ],
     "npmPkg": "@splicer97/react-native-android-keyboard-adjust",
     "android": true,
     "newArchitecture": true
@@ -14123,16 +14125,72 @@
   {
     "githubUrl": "https://github.com/google-gemini/generative-ai-js",
     "npmPkg": "@google/generative-ai",
-    "examples": [
-      "https://github.com/google-gemini/generative-ai-js/tree/main/samples"
-    ],
+    "examples": ["https://github.com/google-gemini/generative-ai-js/tree/main/samples"],
     "web": true,
     "expoGo": true
   },
-    {
+  {
     "githubUrl": "https://github.com/pioner92/react-native-auto-skeleton",
     "examples": ["https://github.com/pioner92/react-native-auto-skeleton/tree/main/example"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/IvanIhnatsiuk/react-native-advanced-input-mask/tree/main/package",
+    "npmPkg": "react-native-advanced-input-mask",
+    "examples": [
+      "https://github.com/IvanIhnatsiuk/react-native-advanced-input-mask/tree/main/apps/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/IvanIhnatsiuk/react-native-advanced-input-mask/main/gifs/demo.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/KoreanThinker/react-native-translator",
+    "examples": ["https://github.com/KoreanThinker/react-native-translator/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/48207131/158834248-05331dd0-d294-4041-9d7b-cb72b5e75737.gif"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/corasan/image-compressor/tree/main/package",
+    "npmPkg": "@corasan/image-compressor",
+    "examples": ["https://github.com/corasan/image-compressor/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/ronickg/react-native-nitro-bip39/tree/main/packages/react-native-nitro-bip39",
+    "examples": ["https://github.com/ronickg/react-native-nitro-bip39/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-in-app-browser/tree/main/react-native-nitro-in-app-browser",
+    "examples": [
+      "https://github.com/patrickkabwe/react-native-nitro-in-app-browser/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/litecoin-foundation/react-native-turbo-scrypt",
+    "examples": [
+      "https://github.com/litecoin-foundation/react-native-turbo-scrypt/tree/master/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/cdiddy77/react-native-llm-mediapipe",
+    "examples": ["https://github.com/cdiddy77/react-native-llm-mediapipe/tree/main/example"],
+    "android": true,
+    "ios": true
   }
 ]
