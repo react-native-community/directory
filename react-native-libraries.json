@@ -14192,5 +14192,12 @@
     "examples": ["https://github.com/cdiddy77/react-native-llm-mediapipe/tree/main/example"],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/holepunchto/react-native-bare-kit",
+    "examples": ["https://github.com/holepunchto/bare-expo/blob/main/app/index.tsx"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
