@@ -6818,9 +6818,11 @@
   {
     "githubUrl": "https://github.com/xmartlabs/react-native-line",
     "npmPkg": "@xmartlabs/react-native-line",
-    "examples": ["https://github.com/xmartlabs/react-native-line/tree/master/example"],
+    "examples": ["https://github.com/xmartlabs/react-native-line/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/bk52/react-native-weather-chart",
