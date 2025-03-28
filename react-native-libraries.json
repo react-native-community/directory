@@ -14201,5 +14201,12 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+   {
+  "githubUrl": "https://github.com/getsettalk/rn-build-version",
+  "npmPkg": "rn-build-version",
+  "android": true,
+  "dev": true,
+  "newArchitecture": true
   }
 ]
