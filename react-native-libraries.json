@@ -1,21 +1,5 @@
 [
   {
-  "githubUrl": "https://github.com/getsettalk/rn-build-version",
-  "npmPkg": "rn-build-version",
-  "ios": false,
-  "android": true,
-  "web": false,
-  "windows": false,
-  "macos": false,
-  "tvos": false,
-  "visionos": false,
-  "expoGo": false,
-  "fireos": false,
-  "unmaintained": false,
-  "dev": true,
-  "newArchitecture": true
-},
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -14215,5 +14199,12 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
-  }
+  },
+   {
+  "githubUrl": "https://github.com/getsettalk/rn-build-version",
+  "npmPkg": "rn-build-version",
+  "android": true,
+  "dev": true,
+  "newArchitecture": true
+  },
 ]
