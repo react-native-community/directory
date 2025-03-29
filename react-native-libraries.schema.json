@@ -59,7 +59,7 @@
         ]
       },
       "tvos": {
-        "$id": "#/items/properties/macos",
+        "$id": "#/items/properties/tvos",
         "type": "boolean",
         "title": "Package supports tvOS (react-native-tvos)",
         "default": false,
