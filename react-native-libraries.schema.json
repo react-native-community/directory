@@ -1,13 +1,13 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
+  "$id": "https://github.com/react-native-community/directory/blob/main/react-native-libraries.schema.json",
   "type": "array",
-  "title": "The Root Schema",
+  "title": "React Native Directory entries",
   "items": {
     "$id": "#/items",
     "type": "object",
-    "title": "The Items Schema",
+    "title": "React Native Directory package entry",
     "required": [
       "githubUrl"
     ],
@@ -15,7 +15,7 @@
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
-        "title": "The GitHub URL Schema",
+        "title": "Package GitHub repository URL",
         "default": "",
         "examples": [
           "https://github.com/joshswan/react-native-autolink"
@@ -25,7 +25,7 @@
       "ios": {
         "$id": "#/items/properties/ios",
         "type": "boolean",
-        "title": "The iOS Schema",
+        "title": "Package supports iOS",
         "default": false,
         "examples": [
           true
@@ -34,7 +34,7 @@
       "android": {
         "$id": "#/items/properties/android",
         "type": "boolean",
-        "title": "The Android Schema",
+        "title": "Package supports Android",
         "default": false,
         "examples": [
           true
@@ -43,7 +43,7 @@
       "windows": {
         "$id": "#/items/properties/windows",
         "type": "boolean",
-        "title": "The Windows Schema",
+        "title": "Package supports Windows (react-native-windows)",
         "default": false,
         "examples": [
           true
@@ -52,7 +52,16 @@
       "macos": {
         "$id": "#/items/properties/macos",
         "type": "boolean",
-        "title": "The macOS Schema",
+        "title": "Package supports macOS (react-native-macos)",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "tvos": {
+        "$id": "#/items/properties/tvos",
+        "type": "boolean",
+        "title": "Package supports tvOS (react-native-tvos)",
         "default": false,
         "examples": [
           true
@@ -61,7 +70,7 @@
       "fireos": {
         "$id": "#/items/properties/fireos",
         "type": "boolean",
-        "title": "The Fire OS Schema",
+        "title": "Package is compatible with Fire OS",
         "default": false,
         "examples": [
           true
@@ -70,7 +79,7 @@
       "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
-        "title": "The Expo Go Schema",
+        "title": "Package is compatible with Expo Go",
         "default": false,
         "examples": [
           true
@@ -79,23 +88,43 @@
       "examples": {
         "$id": "#/items/properties/examples",
         "type": "array",
-        "title": "The Examples Schema",
+        "title": "List of example projects or Snacks URLs",
         "default": null,
         "items": {
           "$id": "#/items/properties/examples/items",
           "type": "string",
-          "title": "The Items Schema",
+          "title": "Example entry URL",
           "default": "",
           "examples": [
+            "https://github.com/expo/examples/tree/master/with-video-background",
             "https://snack.expo.io/SkRP2Ehrb"
           ],
           "pattern": "^(.*)$"
         }
       },
+      "images": {
+        "$id": "#/items/properties/images",
+        "type": "array",
+        "title": "List of image URLs demonstrating package functionality",
+        "default": [
+          null
+        ],
+        "items": {
+          "$id": "#/items/properties/images/items",
+          "type": "string",
+          "title": "Image entry URL",
+          "default": "",
+          "examples": [
+            "https://reactnative.dev/img/homepage/phones.png",
+            "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
+          ],
+          "pattern": "^(http(s?):)(\\w|\\/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
+        }
+      },
       "npmPkg": {
         "$id": "#/items/properties/npmPkg",
         "type": "string",
-        "title": "The NPM Package Name Schema",
+        "title": "npm package name in the registry (mostly for scoped packages)",
         "default": "",
         "examples": [
           "@expo/ex-navigation"
@@ -108,36 +137,17 @@
           "boolean",
           "string"
         ],
-        "title": "The Unmaintained Schema",
+        "title": "Package is unmaintained or archived",
         "default": false,
         "examples": [
           true,
           "expo-image"
         ]
       },
-      "images": {
-        "$id": "#/items/properties/images",
-        "type": "array",
-        "title": "The Images Schema",
-        "default": [
-          null
-        ],
-        "items": {
-          "$id": "#/items/properties/images/items",
-          "type": "string",
-          "title": "The Image Schema",
-          "default": "",
-          "examples": [
-            "https://reactnative.dev/img/homepage/phones.png",
-            "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
-          ],
-          "pattern": "^(http(s?):)(\\w|\\/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
-        }
-      },
       "dev": {
         "$id": "#/items/properties/dev",
         "type": "boolean",
-        "title": "The Development Tool Schema",
+        "title": "Package is a Development Tool (should be installed as 'devDependency')",
         "default": false,
         "examples": [
           true
@@ -146,7 +156,7 @@
       "template": {
         "$id": "#/items/properties/template",
         "type": "boolean",
-        "title": "The Template Schema",
+        "title": "Package is a project template",
         "default": false,
         "examples": [
           true
@@ -158,7 +168,7 @@
           "boolean",
           "string"
         ],
-        "title": "The New Architecture Support Schema",
+        "title": "Package supports New Architecture",
         "default": false,
         "examples": [
           true,
@@ -184,7 +194,7 @@
         "items": {
           "$id": "#/items/properties/alternatives/items",
           "type": "string",
-          "title": "Alternative library",
+          "title": "Alternative library npm package name",
           "default": "",
           "examples": [
             "expo-image"
