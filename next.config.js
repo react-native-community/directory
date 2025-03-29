@@ -10,6 +10,11 @@ const withBundleAnalyzer = BundleAnalyzer({
 
 export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
   productionBrowserSourceMaps: true,
+  reactStrictMode: true,
+  poweredByHeader: false,
+  devIndicators: {
+    enabled: false,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -28,6 +33,17 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   ],
   experimental: {
     forceSwcTransforms: true,
+    webpackBuildWorker: true,
+    optimizePackageImports: [
+      '@expo/html-elements',
+      '@react-native-picker/picker',
+      '@sentry/react',
+      'react-native-safe-area-context',
+      'react-native-svg',
+      'react-native-web',
+      'react-native-web-hooks',
+      'react-native',
+    ],
   },
   async headers() {
     return [
