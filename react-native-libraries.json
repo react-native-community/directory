@@ -14206,5 +14206,10 @@
     "android": true,
     "dev": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jeremybarbet/expo-testflight",
+    "ios": true,
+    "newArchitecture": true
   }
 ]
