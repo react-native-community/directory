@@ -14219,4 +14219,11 @@
     "android": true,
     "newArchitecture": true
   }
+  {
+    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf",
+    "npmPkg": "@config-plugins/react-native-pdf",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
