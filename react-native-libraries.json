@@ -14211,5 +14211,12 @@
     "githubUrl": "https://github.com/jeremybarbet/expo-testflight",
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-blob-util",
+    "npmPkg": "@config-plugins/react-native-blob-util",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
