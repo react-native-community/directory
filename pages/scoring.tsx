@@ -78,7 +78,7 @@ const Scoring = () => {
           lose value by exhibiting &quot;bad behavior criteria&quot;. These criteria and their
           corresponding weights are detailed below. You can see the code this directory uses to
           create Directory Scores{' '}
-          <A href="https://github.com/react-native-directory/website/blob/main/scripts/calculate-score.js">
+          <A href="https://github.com/react-native-directory/website/blob/main/scripts/calculate-score.ts">
             here
           </A>
           .
@@ -132,7 +132,7 @@ const Scoring = () => {
           criterion and can lose score by exhibiting one of bad criteria. These criteria and their
           corresponding weights are detailed below. You can see the code this directory uses to
           create Trending Scores{' '}
-          <A href="https://github.com/react-native-directory/website/blob/main/scripts/calculate-score.js">
+          <A href="https://github.com/react-native-directory/website/blob/main/scripts/calculate-score.ts">
             here
           </A>
           .
