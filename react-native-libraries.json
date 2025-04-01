@@ -14211,5 +14211,13 @@
     "githubUrl": "https://github.com/jeremybarbet/expo-testflight",
     "ios": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/date-fns/date-fns",
+    "npmPkg": "date-fns",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true
+  },
 ]
