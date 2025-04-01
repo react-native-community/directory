@@ -14211,5 +14211,27 @@
     "githubUrl": "https://github.com/jeremybarbet/expo-testflight",
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-blob-util",
+    "npmPkg": "@config-plugins/react-native-blob-util",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf",
+    "npmPkg": "@config-plugins/react-native-pdf",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/brix/crypto-js",
+    "npmPkg": "crypto-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
