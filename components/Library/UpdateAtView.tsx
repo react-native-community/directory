@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors } from '~/common/styleguide';
+import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Library as LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
@@ -23,11 +24,19 @@ export default function UpdatedAtView({ library }: Props) {
 
   return (
     <View style={styles.updatedAtContainer}>
-      <Calendar
-        fill={library.unmaintained ? unmaintainedIconColor : iconColor}
-        width={14}
-        height={16}
-      />
+      <Tooltip
+        sideOffset={2}
+        trigger={
+          <View style={{ cursor: 'pointer' }} aria-label="Last updated">
+            <Calendar
+              fill={library.unmaintained ? unmaintainedIconColor : iconColor}
+              width={14}
+              height={16}
+            />
+          </View>
+        }>
+        Last updated
+      </Tooltip>
       <A
         href={`${library.github.urls.repo}/commits`}
         style={[
@@ -51,7 +60,7 @@ export default function UpdatedAtView({ library }: Props) {
                 : colors.gray4,
           },
         ]}>
-        Updated {getTimeSinceToday(library.github.stats.pushedAt)}
+        {getTimeSinceToday(library.github.stats.pushedAt)}
       </A>
     </View>
   );
@@ -62,7 +71,6 @@ const styles = StyleSheet.create({
     gap: 8,
     flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'space-between',
   },
   link: {
     fontSize: 13,

@@ -48,20 +48,39 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
       ]}>
       <View style={styles.columnOne}>
         {library.unmaintained && (
-          <View style={[styles.updatedAtContainer, styles.trendingMarkContainer]}>
+          <View
+            style={
+              isSmallScreen
+                ? [
+                    styles.containerColumn,
+                    styles.updatedAtContainerSmall,
+                    { marginBottom: 6, gap: 0 },
+                  ]
+                : [styles.updatedAtContainer, styles.trendingMarkContainer]
+            }>
             <UnmaintainedLabel alternatives={library.alternatives} />
             <UpdatedAtView library={library} />
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={[styles.updatedAtContainer, { marginBottom: 4 }]}>
+          <View
+            style={
+              isSmallScreen
+                ? [styles.containerColumn, styles.updatedAtContainerSmall]
+                : [styles.updatedAtContainer, { marginBottom: 4 }]
+            }>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
             {!library.unmaintained && <UpdatedAtView library={library} />}
           </View>
         )}
-        <View style={isSmallScreen ? styles.containerColumn : styles.updatedAtContainer}>
+        <View
+          style={
+            isSmallScreen
+              ? [styles.containerColumn, styles.updatedAtContainerSmall]
+              : styles.updatedAtContainer
+          }>
           <A
             href={library.githubUrl || github.urls.repo}
             style={styles.name}
@@ -78,11 +97,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
             <Headline numberOfLines={skipMetadata && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
-                  linkWrapper: ({ children, key, ...rest }) => (
-                    <A {...rest} key={key}>
-                      {children}
-                    </A>
-                  ),
+                  linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,
                 }}>
                 {emoji.emojify(github.description)}
               </Linkify>
@@ -257,6 +272,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
+  },
+  updatedAtContainerSmall: {
+    gap: 8,
+    justifyContent: 'flex-start',
+    alignSelf: 'flex-start',
   },
 });
 
