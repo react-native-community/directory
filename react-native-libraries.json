@@ -14233,5 +14233,13 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/date-fns/date-fns",
+    "npmPkg": "date-fns",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true
   }
 ]
