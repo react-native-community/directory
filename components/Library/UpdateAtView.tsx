@@ -27,7 +27,7 @@ export default function UpdatedAtView({ library }: Props) {
       <Tooltip
         sideOffset={2}
         trigger={
-          <View style={{ cursor: 'pointer' }} aria-label="Last updated">
+          <View style={{ cursor: 'pointer' }} aria-label="Last update (based on git activity)">
             <Calendar
               fill={library.unmaintained ? unmaintainedIconColor : iconColor}
               width={14}
@@ -35,7 +35,7 @@ export default function UpdatedAtView({ library }: Props) {
             />
           </View>
         }>
-        Last updated
+        Last update (based on git activity)
       </Tooltip>
       <A
         href={`${library.github.urls.repo}/commits`}
