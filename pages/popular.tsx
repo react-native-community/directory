@@ -66,13 +66,6 @@ const Popular = ({ data }) => {
           filter={lib => lib.macos === true}
         />
         <ExploreSection
-          title="Expo Go"
-          icon={PlatformExpo}
-          data={data}
-          filter={lib => lib.expoGo === true}
-        />
-        <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
-        <ExploreSection
           title="tvOS"
           icon={PlatformTvOS}
           data={data}
@@ -90,6 +83,13 @@ const Popular = ({ data }) => {
           data={data}
           filter={lib => lib.windows === true}
         />
+        <ExploreSection
+          title="Expo Go"
+          icon={PlatformExpo}
+          data={data}
+          filter={lib => lib.expoGo === true}
+        />
+        <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
       </ContentContainer>
     </>
   );

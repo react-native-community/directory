@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   unmaintainedTextContainer: {
     alignItems: 'flex-start',
     marginLeft: -20,
-    marginBottom: 12,
+    marginBottom: 8,
     paddingLeft: 20,
     paddingRight: 12,
     paddingVertical: 6,

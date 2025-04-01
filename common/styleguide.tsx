@@ -168,7 +168,7 @@ export const A = ({ href, target = '_blank', children, style, hoverStyle, ...res
 const getLinkStyles = (isDark: boolean) => ({
   color: isDark ? colors.white : colors.black,
   backgroundColor: isDark ? darkColors.powder : colors.powder,
-  textDecorationColor: isDark ? darkColors.pewter : colors.pewter,
+  textDecorationColor: isDark ? colors.gray5 : colors.pewter,
   textDecorationLine: 'underline',
   fontFamily: 'inherit',
 });
@@ -176,7 +176,7 @@ const getLinkStyles = (isDark: boolean) => ({
 const getLinkHoverStyles = (isDark: boolean) => ({
   backgroundColor: isDark ? colors.primaryDark : colors.sky,
   color: isDark ? darkColors.dark : colors.black,
-  textDecorationColor: isDark ? darkColors.powder : colors.black,
+  textDecorationColor: isDark ? darkColors.powder : colors.gray4,
 });
 
 export const HoverEffect = ({ children }) => {

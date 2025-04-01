@@ -45,7 +45,7 @@ const TrendingMark = ({ library, style, markOnly = false }: Props) => {
   return markOnly ? (
     <View style={[styles.container, style]}>{content}</View>
   ) : (
-    <A href="/scoring" style={[styles.container, styles.scoringLink, style]}>
+    <A href="/scoring" style={[styles.scoringLink, style]}>
       {content}
     </A>
   );

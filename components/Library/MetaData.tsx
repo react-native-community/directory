@@ -4,21 +4,9 @@ import { StyleSheet, View } from 'react-native';
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Library as LibraryType } from '~/types';
-import { getTimeSinceToday } from '~/util/datetime';
 
 import { DirectoryScore } from './DirectoryScore';
-import {
-  Calendar,
-  Star,
-  Download,
-  Eye,
-  Issue,
-  Web,
-  License,
-  Fork,
-  Code,
-  TypeScript,
-} from '../Icons';
+import { Star, Download, Eye, Issue, Web, License, Fork, Code, TypeScript } from '../Icons';
 
 type Props = {
   library: LibraryType;
@@ -38,15 +26,6 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           style={{ ...styles.link, ...styles.mutedLink }}
           hoverStyle={isDark && { color: colors.primaryDark }}>
           Directory Score
-        </A>
-      ),
-    },
-    {
-      id: 'calendar',
-      icon: <Calendar fill={iconColor} />,
-      content: (
-        <A href={`${github.urls.repo}/commits`} style={styles.link}>
-          Updated {getTimeSinceToday(github.stats.pushedAt)}
         </A>
       ),
     },
