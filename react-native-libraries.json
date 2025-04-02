@@ -14242,5 +14242,12 @@
     "ios": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/evergrace-co/react-native-audio-pro",
+    "npmPkg": "react-native-audio-pro",
+    "examples": ["https://github.com/evergrace-co/react-native-audio-pro/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
