@@ -14257,5 +14257,12 @@
     "ios": true,
     "android": true,
     "web":true
+  },
+  {
+    "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
+    "npmPkg": "posthog-react-native-session-replay",
+    "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
