@@ -14249,5 +14249,13 @@
     "examples": ["https://github.com/evergrace-co/react-native-audio-pro/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/i18next/i18next",
+    "npmPkg": "i18next",
+    "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],
+    "ios": true,
+    "android": true,
+    "web":true
   }
 ]
