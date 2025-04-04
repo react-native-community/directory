@@ -4,6 +4,7 @@ import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
+import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Library as LibraryType } from '~/types';
 
@@ -46,25 +47,47 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
         library.unmaintained && styles.unmaintained,
       ]}>
       <View style={styles.columnOne}>
-        {library.unmaintained && <UnmaintainedLabel alternatives={library.alternatives} />}
-        {showTrendingMark && library.popularity && (
-          <Tooltip
-            sideOffset={8}
-            trigger={
-              <View style={styles.trendingMarkContainer}>
-                <TrendingMark library={library} />
-              </View>
+        {library.unmaintained && (
+          <View
+            style={
+              isSmallScreen
+                ? [
+                    styles.containerColumn,
+                    styles.updatedAtContainerSmall,
+                    { marginBottom: 6, gap: 0 },
+                  ]
+                : [styles.updatedAtContainer, styles.trendingMarkContainer]
             }>
-            Trending Score is based on the last week to last month download rate.
-          </Tooltip>
+            <UnmaintainedLabel alternatives={library.alternatives} />
+            <UpdatedAtView library={library} />
+          </View>
         )}
-        <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
+        {showTrendingMark && library.popularity && (
+          <View
+            style={
+              isSmallScreen
+                ? [styles.containerColumn, styles.updatedAtContainerSmall]
+                : [styles.updatedAtContainer, { marginBottom: 4 }]
+            }>
+            <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
+              Trending Score is based on the last week to last month download rate.
+            </Tooltip>
+            {!library.unmaintained && <UpdatedAtView library={library} />}
+          </View>
+        )}
+        <View
+          style={
+            isSmallScreen
+              ? [styles.containerColumn, styles.updatedAtContainerSmall]
+              : styles.updatedAtContainer
+          }>
           <A
             href={library.githubUrl || github.urls.repo}
             style={styles.name}
             hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
             {libName}
           </A>
+          {!showTrendingMark && !library.unmaintained && <UpdatedAtView library={library} />}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
@@ -74,11 +97,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
             <Headline numberOfLines={skipMetadata && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
-                  linkWrapper: ({ children, key, ...rest }) => (
-                    <A {...rest} key={key}>
-                      {children}
-                    </A>
-                  ),
+                  linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,
                 }}>
                 {emoji.emojify(github.description)}
               </Linkify>
@@ -195,7 +214,7 @@ const styles = StyleSheet.create({
   },
   imagesContainer: {
     flexWrap: 'wrap',
-    marginTop: 12,
+    marginTop: 8,
   },
   secondaryStats: {
     marginTop: 6,
@@ -240,6 +259,23 @@ const styles = StyleSheet.create({
     opacity: 0.88,
   },
   trendingMarkContainer: {
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
+  link: {
+    fontSize: 13,
+    fontWeight: 300,
+    backgroundColor: 'transparent',
+  },
+  updatedAtContainer: {
+    gap: 8,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
+  updatedAtContainerSmall: {
+    gap: 8,
+    justifyContent: 'flex-start',
     alignSelf: 'flex-start',
   },
 });
