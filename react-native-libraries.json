@@ -14249,5 +14249,20 @@
     "examples": ["https://github.com/evergrace-co/react-native-audio-pro/tree/main/example"],
     "ios": true,
     "android": true
-  }
+  },
+  { 
+    "githubUrl": "https://github.com/i18next/i18next",
+    "npmPkg": "i18next",
+    "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
+     "npmPkg": "posthog-react-native-session-replay",
+     "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
+     "ios": true,
+     "android": true
+   }
 ]
