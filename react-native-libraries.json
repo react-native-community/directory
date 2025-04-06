@@ -14264,5 +14264,16 @@
      "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
      "ios": true,
      "android": true
-   }
+   },
+  {
+    "githubUrl": "https://github.com/tschoffelen/react-native-check-version",
+    "npmPkg": "https://www.npmjs.com/package/react-native-check-version",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "unmaintained": false,
+    "dev": false,
+    "newArchitecture": true
+  }
 ]
