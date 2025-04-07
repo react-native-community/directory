@@ -14290,5 +14290,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Raja0sama/rn-foreground-service",
+    "npmPkg": "@supersami/rn-foreground-service",
+    "examples": ["https://github.com/Raja0sama/rn-forground-service-example"],
+    "images": ["https://rn-foreground.vercel.app/md.png"],
+    "android": true
   }
 ]
