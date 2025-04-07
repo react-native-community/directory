@@ -14260,12 +14260,28 @@
   },
   {
     "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
-     "npmPkg": "posthog-react-native-session-replay",
-     "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
-     "ios": true,
-     "android": true
-   },
-   {
+    "npmPkg": "posthog-react-native-session-replay",
+    "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/rn-fade-wrapper",
+    "npmPkg": "rn-fade-wrapper",
+    "examples": ["https://github.com/pioner92/rn-fade-wrapper/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tschoffelen/react-native-check-version",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/livekit/client-sdk-react-native",
     "npmPkg": "@livekit/react-native",
     "examples": ["https://github.com/livekit/client-sdk-react-native/tree/main/example"],
