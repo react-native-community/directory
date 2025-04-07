@@ -14317,7 +14317,7 @@
   {
     "githubUrl": "https://github.com/LegendApp/legend-state",
     "npmPkg": "@legendapp/state",
-    "examples": "https://github.com/LegendApp/legend-state/tree/main/examples",
+    "examples": ["https://github.com/LegendApp/legend-state/tree/main/examples"],
     "android": true,
     "ios": true,
     "web": true,
