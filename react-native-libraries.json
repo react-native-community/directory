@@ -14264,5 +14264,31 @@
      "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
      "ios": true,
      "android": true
-   }
+   },
+   {
+    "githubUrl": "https://github.com/livekit/client-sdk-react-native",
+    "npmPkg": "@livekit/react-native",
+    "examples": ["https://github.com/livekit/client-sdk-react-native/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/livekit/react-native-webrtc",
+    "npmPkg": "@livekit/react-native-webrtc",
+    "examples": ["https://github.com/livekit/react-native-webrtc/tree/master/examples"],
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/livekit/client-sdk-js",
+    "npmPkg": "livekit-client",
+    "examples": ["https://github.com/livekit/client-sdk-js/tree/main/examples"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  }
 ]
