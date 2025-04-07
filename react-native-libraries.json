@@ -14313,5 +14313,14 @@
     "examples": ["https://github.com/Raja0sama/rn-forground-service-example"],
     "images": ["https://rn-foreground.vercel.app/md.png"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/w88975/expo-click-outside",
+    "npmPkg": "expo-click-outside",
+    "examples": ["https://github.com/w88975/expo-click-outside/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
