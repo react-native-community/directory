@@ -14313,5 +14313,15 @@
     "examples": ["https://github.com/Raja0sama/rn-forground-service-example"],
     "images": ["https://rn-foreground.vercel.app/md.png"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LegendApp/legend-state",
+    "npmPkg": "@legendapp/state",
+    "examples": ["https://github.com/LegendApp/legend-state/tree/main/examples"],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
