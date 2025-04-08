@@ -14323,5 +14323,11 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/versatica/mediasoup-client",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
