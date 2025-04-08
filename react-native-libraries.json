@@ -14315,8 +14315,17 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/LegendApp/legend-state",
+    "npmPkg": "@legendapp/state",
+    "examples": ["https://github.com/LegendApp/legend-state/tree/main/examples"],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/w88975/expo-click-outside",
-    "npmPkg": "expo-click-outside",
     "examples": ["https://github.com/w88975/expo-click-outside/tree/main/example"],
     "ios": true,
     "android": true,
