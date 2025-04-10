@@ -3580,7 +3580,7 @@
     "tvos": true,
     "visionos": true,
     "npmPkg": "@react-native-community/blur",
-    "newArchitecture": false,
+    "newArchitecture": true,
     "alternatives": ["expo-blur"]
   },
   {
