@@ -14343,5 +14343,25 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mahdidavoodi7/bottom-sheet-stepper",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "images": ["https://raw.githubusercontent.com/mahdidavoodi7/bottom-sheet-stepper/refs/heads/main/preview.gif"],
+    "examples": [
+      "https://github.com/mahdidavoodi7/bottom-sheet-stepper/tree/main/example"
+    ]
+  },
+  {
+    "githubUrl": "https://github.com/mahdidavoodi7/expo-image-compare",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "images": ["https://raw.githubusercontent.com/mahdidavoodi7/expo-image-compare/refs/heads/main/ezgif-426768e63a1227.gif"],
+    "examples": [
+      "https://github.com/mahdidavoodi7/expo-image-compare/tree/main/example"
+    ]
   }
 ]
