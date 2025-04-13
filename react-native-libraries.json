@@ -14363,5 +14363,12 @@
     "examples": [
       "https://github.com/mahdidavoodi7/expo-image-compare/tree/main/example"
     ]
+  },
+  {
+    "githubUrl": "https://github.com/s77rt/react-native-sodium",
+    "npmPkg": "@s77rt/react-native-sodium",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
