@@ -14366,22 +14366,10 @@
   },
   {
     "githubUrl": "https://github.com/Hiroenzo/react-native-mqtt-clients",
-    "npmPkg": "https://www.npmjs.com/package/react-native-mqtt-clients",
     "examples": [
       "https://github.com/Hiroenzo/react-native-mqtt-clients/tree/main/example"
     ],
     "ios": true,
-    "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "expoGo": false,
-    "fireos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
-    "newArchitecture": false
+    "android": true
   }
 ]
