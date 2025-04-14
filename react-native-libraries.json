@@ -14370,5 +14370,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Hiroenzo/react-native-mqtt-clients",
+    "examples": [
+      "https://github.com/Hiroenzo/react-native-mqtt-clients/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
