@@ -29,6 +29,12 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  outline-offset: 2px;
+}
+
 #__next, #__next > div {
   min-height: 100vh;
 }
