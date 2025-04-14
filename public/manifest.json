@@ -1,0 +1,33 @@
+{
+    "name": "React Native Directory",
+    "short_name": "RND",
+    "description": "A searchable and filterable directory of React Native libraries",
+    "lang": "en-US",
+    "categories": ["education", "utilities"],
+    "display": "minimal-ui",
+    "orientation": "any",
+    "start_url": "/",
+    "scope": "/",
+    "protocol_handlers": [
+        {
+            "protocol": "web+rnd",
+            "url": "/?search=%s"
+        }
+    ],
+    "theme_color": "#20232a",
+    "background_color": "#20232a",
+    "icons": [
+        {
+            "src": "/icon-192px.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-512px.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
