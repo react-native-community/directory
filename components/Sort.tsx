@@ -102,7 +102,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
           }>
           Toggle sort order
         </Tooltip>
-        <P style={styles.title}>Sort:</P>
+        <P style={styles.title}>Sort: </P>
       </View>
       <View style={styles.pickerContainer}>
         <P style={styles.title}>
@@ -111,6 +111,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
             style={[
               styles.picker,
               {
+                fontWeight: 600,
                 backgroundColor: isDark ? darkColors.border : 'transparent',
               },
             ]}
@@ -127,6 +128,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
               />
             ))}
           </Picker>
+          <P style={styles.arrow}>›</P>
         </P>
       </View>
     </View>
@@ -147,10 +149,21 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.white,
-    fontWeight: 500,
+    fontWeight: 400,
     marginLeft: 6,
     fontSize: 14,
     userSelect: 'none',
+  },
+  arrow: {
+    color: colors.secondary,
+    fontSize: 18,
+    lineHeight: 18,
+    userSelect: 'none',
+    position: 'absolute',
+    pointerEvents: 'none',
+    right: 6,
+    top: 0,
+    transform: 'rotate(90deg)',
   },
   pickerContainer: {
     top: 1,
@@ -159,11 +172,12 @@ const styles = StyleSheet.create({
   picker: {
     color: colors.white,
     borderWidth: 0,
+    borderRadius: 2,
     position: 'relative',
     top: -1,
     fontSize: 14,
+    paddingRight: 22,
     fontFamily: 'inherit',
-    // @ts-ignore
     cursor: 'pointer',
   },
   flippedIcon: {
