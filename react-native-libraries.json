@@ -3316,7 +3316,9 @@
     "githubUrl": "https://github.com/react-native-voice/voice",
     "ios": true,
     "android": true,
-    "npmPkg": "@react-native-voice/voice"
+    "npmPkg": "@react-native-voice/voice",
+    "unmaintained": true,
+    "alternatives": ["expo-speech-recognition"]
   },
   {
     "githubUrl": "https://github.com/tienph6m/react-native-animated-spinkit",
