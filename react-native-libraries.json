@@ -14387,5 +14387,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/shakebugs/shake-react-native",
+    "npmPkg": "@shakebugs/react-native-shake",
+    "examples": ["https://apps.apple.com/us/app/shake-sdk-demo/id1599736701"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
