@@ -14381,6 +14381,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/dpakakpo4/rn-use-google-places-autocomplete",
+    "npmPkg": "rn-use-google-places-autocomplete",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/shakebugs/shake-react-native",
     "npmPkg": "@shakebugs/react-native-shake",
     "examples": ["https://apps.apple.com/us/app/shake-sdk-demo/id1599736701"],
