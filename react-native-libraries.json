@@ -14382,19 +14382,10 @@
   },
   {
   "githubUrl": "https://github.com/dpakakpo4/rn-use-google-places-autocomplete",
-  "npmPkg": "https://www.npmjs.com/package/rn-use-google-places-autocomplete",
+  "npmPkg": "rn-use-google-places-autocomplete",
   "ios": true,
   "android": true,
-  "web": false,
-  "windows": false,
-  "macos": false,
-  "tvos": false,
-  "visionos": false,
   "expoGo": true,
-  "fireos": false,
-  "unmaintained": false,
-  "dev": false,
-  "template": false,
   "newArchitecture": true
   }
 ]
