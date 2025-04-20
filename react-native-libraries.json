@@ -14395,5 +14395,21 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/your-username/react-native-country-flag",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "npmPkg": "react-native-country-flag"
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "npmPkg": "react-native-vector-icons"
   }
 ]
