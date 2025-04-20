@@ -14395,5 +14395,22 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/better-auth/better-auth",
+    "npmPkg": "better-auth",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/better-auth/better-auth/tree/main/packages/expo",
+    "npmPkg": "@better-auth/expo",
+    "examples": ["https://github.com/better-auth/better-auth/tree/main/examples/expo-example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
