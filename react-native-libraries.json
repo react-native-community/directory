@@ -14413,5 +14413,11 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/eugenehp/react-native-uuid",
+    "npmPkg": "react-native-uuid",
+    "android": true,
+    "expoGo": true
   }
 ]
