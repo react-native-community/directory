@@ -14415,8 +14415,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/BITNET-Infotech/react-native-wav-to-mp3",
+    "npmPkg": "@bitnet-infotech/react-native-wav-to-mp3",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/eugenehp/react-native-uuid",
-    "npmPkg": "react-native-uuid",
     "examples": ["https://github.com/eugenehp/RNUUID"],
     "ios": true,
     "android": true,
