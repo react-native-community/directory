@@ -14413,5 +14413,11 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/BITNET-Infotech/react-native-wav-to-mp3",
+    "npmPkg": "@bitnet-infotech/react-native-wav-to-mp3",
+    "ios": true,
+    "android": true
   }
 ]
