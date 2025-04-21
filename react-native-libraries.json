@@ -14417,6 +14417,8 @@
   {
     "githubUrl": "https://github.com/eugenehp/react-native-uuid",
     "npmPkg": "react-native-uuid",
+    "examples": ["https://github.com/eugenehp/RNUUID"],
+    "ios": true,
     "android": true,
     "expoGo": true
   }
