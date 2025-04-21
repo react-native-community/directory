@@ -14419,5 +14419,12 @@
     "npmPkg": "@bitnet-infotech/react-native-wav-to-mp3",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/eugenehp/react-native-uuid",
+    "examples": ["https://github.com/eugenehp/RNUUID"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
