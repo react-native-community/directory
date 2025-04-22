@@ -12548,7 +12548,9 @@
     "images": [
       "https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"
     ],
-    "android": true
+    "android": true,
+    "ios": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
@@ -14252,7 +14254,7 @@
     "ios": true,
     "android": true
   },
-  { 
+  {
     "githubUrl": "https://github.com/i18next/i18next",
     "npmPkg": "i18next",
     "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],

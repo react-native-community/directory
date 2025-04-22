@@ -4,16 +4,17 @@ import chunk from 'lodash/chunk';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import debugGithubRepos from '~/debug-github-repos.json';
+import githubRepos from '~/react-native-libraries.json';
+import { Library } from '~/types';
+import { isLaterThan, TimeRange } from '~/util/datetime';
+import { isEmptyOrNull } from '~/util/strings';
+
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import { fetchNpmData, fetchNpmDataBulk } from './fetch-npm-data';
 import fetchReadmeImages from './fetch-readme-images';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
-import debugGithubRepos from '../debug-github-repos.json';
-import githubRepos from '../react-native-libraries.json';
-import { Library } from '../types';
-import { isLaterThan, TimeRange } from '../util/datetime';
-import { isEmptyOrNull } from '../util/strings';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -91,7 +92,7 @@ async function buildAndScoreData() {
     data.map(async project => {
       if (!project.template) {
         if (project.npmPkg.startsWith('@')) {
-          await sleep(Math.max(Math.random() * 2500));
+          await sleep(Math.random() * 10000);
           return fetchNpmData(project);
         } else {
           bulkList.push(project.npmPkg);
@@ -214,7 +215,11 @@ async function buildAndScoreData() {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
-    const currentData = [...libraries.filter(lib => missingData.includes(lib.npmPkg)), ...data];
+
+    const existingPackages = DATASET.map(fillNpmName).map(lib => lib.npmPkg);
+    const dataToFill = missingData.filter(npmPkg => !existingPackages.includes(npmPkg));
+
+    const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
 
     const dataWithFallback = currentData.map(entry =>
       Object.keys(entry.npm).length > 0
@@ -225,10 +230,11 @@ async function buildAndScoreData() {
               latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
           }
     );
+    const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
 
     fileContent = JSON.stringify(
       {
-        libraries: dataWithFallback,
+        libraries: finalData,
         topics: topicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
