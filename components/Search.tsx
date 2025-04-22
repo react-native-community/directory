@@ -203,7 +203,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.white,
     fontFamily: 'inherit',
-    // @ts-ignore
     outlineOffset: -2,
   },
   searchIcon: {

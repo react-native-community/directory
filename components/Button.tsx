@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
-    // @ts-ignore
     outlineOffset: 1,
   },
 });
