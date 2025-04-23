@@ -13669,6 +13669,30 @@
     "ios": true
   },
   {
+    "githubUrl": "https://github.com/clerkinc/javascript",
+    "npmPkg": "@clerk/types",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/get-convex/convex-js",
+    "npmPkg": "convex",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/svix/svix-example",
+    "npmPkg": "svix",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/react-native-documents/document-picker/tree/main/packages/document-viewer",
     "npmPkg": "@react-native-documents/viewer",
     "examples": ["https://github.com/rnmods/react-native-document-picker/tree/master/example"],
