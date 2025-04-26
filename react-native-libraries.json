@@ -14436,10 +14436,9 @@
     "expoGo": true
   },
   {
-  "githubUrl": "https://github.com/jagnesh/react-native-splash-view",
-  "npmPkg": "react-native-splash-view",
-  "ios": true,
-  "android": true,
-  "newArchitecture": true
+    "githubUrl": "https://github.com/jagnesh/react-native-splash-view",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
