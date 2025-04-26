@@ -14434,5 +14434,11 @@
     "android": true,
     "ios": true,
     "expoGo": true
+  },
+    {
+    "githubUrl": "https://github.com/jagnesh/react-native-splash-view",
+    "npmPkg": "react-native-splash-view",
+    "android": true,
+    "ios": true,
   }
 ]
