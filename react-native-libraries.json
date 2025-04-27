@@ -2611,6 +2611,7 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-apple-authentication",
     "examples": ["https://docs.expo.dev/versions/latest/sdk/apple-authentication/#usage"],
     "ios": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2626,6 +2627,7 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-asset",
     "ios": true,
     "android": true,
+    "tvos": true,
     "web": true,
     "expoGo": true,
     "newArchitecture": true
@@ -2641,6 +2643,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2668,6 +2671,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2713,6 +2717,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
@@ -2730,6 +2735,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2739,6 +2745,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
@@ -2756,6 +2763,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/filesystem/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
@@ -2766,6 +2774,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2818,6 +2827,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/keep-awake/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
@@ -2828,6 +2838,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
@@ -2845,6 +2856,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2870,6 +2882,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/media-library/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2878,6 +2891,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -2916,6 +2930,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/securestore/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -3427,12 +3442,14 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-updates",
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -3528,6 +3545,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "tvos": true,
     "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-community/netinfo",
@@ -3594,6 +3612,7 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
+    "tvos": true,
     "fireos": true,
     "visionos": true,
     "npmPkg": "@react-native-async-storage/async-storage",
@@ -8513,6 +8532,7 @@
     "npmPkg": "@shopify/flash-list",
     "android": true,
     "ios": true,
+    "tvos": true,
     "fireos": true,
     "expoGo": true,
     "newArchitectureNote": "Compiles and runs, but behavior may not be as expected."
@@ -8887,6 +8907,7 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -9149,6 +9170,7 @@
     "android": true,
     "expoGo": true,
     "web": true,
+    "tvos": true,
     "dev": true
   },
   {
@@ -9222,6 +9244,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -10079,6 +10102,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -11253,6 +11277,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/tracking-transparency/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -11363,7 +11388,8 @@
   {
     "githubUrl": "https://github.com/lucide-icons/lucide/tree/main/packages/lucide-react-native",
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/maitrungduc1410/react-native-loader-kit",
@@ -12388,6 +12414,7 @@
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-manifests",
     "ios": true,
+    "tvos": true,
     "android": true,
     "expoGo": true
   },
@@ -12463,6 +12490,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/build-properties/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -12547,7 +12575,9 @@
     "images": [
       "https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"
     ],
-    "android": true
+    "android": true,
+    "ios": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
@@ -13820,6 +13850,7 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "web": true,
     "newArchitecture": true
   },
@@ -14251,7 +14282,7 @@
     "ios": true,
     "android": true
   },
-  { 
+  {
     "githubUrl": "https://github.com/i18next/i18next",
     "npmPkg": "i18next",
     "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],
@@ -14397,11 +14428,60 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/YannisHofmann/react-native-country-flag",
+    "githubUrl": "https://github.com/better-auth/better-auth/tree/main/packages/better-auth",
+    "npmPkg": "better-auth",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/better-auth/better-auth/tree/main/packages/expo",
+    "npmPkg": "@better-auth/expo",
+    "examples": ["https://github.com/better-auth/better-auth/tree/main/examples/expo-example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/BITNET-Infotech/react-native-wav-to-mp3",
+    "npmPkg": "@bitnet-infotech/react-native-wav-to-mp3",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/eugenehp/react-native-uuid",
+    "examples": ["https://github.com/eugenehp/RNUUID"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-screenshot-test",
+    "android": true,
+    "ios": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/jagnesh/react-native-splash-view",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tailwindlabs/tailwindcss/tree/main/packages/tailwindcss",
     "ios": true,
     "android": true,
     "web": true,
     "expoGo": true,
-    "npmPkg": "react-native-country-flag"
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/YannisHofmann/react-native-country-flag",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
