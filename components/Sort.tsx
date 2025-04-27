@@ -52,9 +52,9 @@ const sorts = [
 ];
 
 export const SortButton = ({ query: { order, direction, offset }, query }: SortButtonProps) => {
-  const [sortValue, setSortValue] = useState<QueryOrder>(order);
-  const [sortDirection, setSortDirection] = useState<QueryOrderDirection>(direction);
-  const [paginationOffset, setPaginationOffset] = useState<number | null>(
+  const [sortValue, setSortValue] = useState<QueryOrder | undefined>(order);
+  const [sortDirection, setSortDirection] = useState<QueryOrderDirection | undefined>(direction);
+  const [paginationOffset, setPaginationOffset] = useState<number | undefined>(
     typeof offset === 'string' ? parseInt(offset, 10) : offset
   );
   const { isDark } = useContext(CustomAppearanceContext);
@@ -70,7 +70,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
       offset: paginationOffset,
     });
     if (url !== Router.pathname) {
-      Router.push(url);
+      void Router.push(url);
     }
   }, [sortValue, sortDirection]);
 

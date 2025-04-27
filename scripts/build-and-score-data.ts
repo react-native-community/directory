@@ -93,7 +93,7 @@ async function buildAndScoreData() {
       if (!project.template) {
         if (project.npmPkg.startsWith('@')) {
           await sleep(Math.random() * 10000);
-          return fetchNpmData(project);
+          return await fetchNpmData(project);
         } else {
           bulkList.push(project.npmPkg);
           return project;
@@ -355,4 +355,4 @@ async function uploadToStore(fileContent: string) {
   }
 }
 
-buildAndScoreData();
+await buildAndScoreData();

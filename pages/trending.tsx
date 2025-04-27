@@ -26,9 +26,9 @@ const Trending = ({ data, query }) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const total = data && data.total;
 
-  const handleClearAllPress = () => {
-    Router.replace(urlWithQuery('/trending', {}));
-  };
+  function handleClearAllPress() {
+    void Router.replace(urlWithQuery('/trending', {}));
+  }
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { H2, P, Headline, A, colors, darkColors, H3 } from '~/common/styleguide';
@@ -8,7 +8,12 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
-const ScoringCriterion = ({ children, headline, score = undefined }) => {
+type Props = PropsWithChildren<{
+  headline: string;
+  score?: number;
+}>;
+
+function ScoringCriterion({ children, headline, score = undefined }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const textStyle = {
     color: isDark ? colors.gray2 : colors.black,
@@ -16,7 +21,7 @@ const ScoringCriterion = ({ children, headline, score = undefined }) => {
   const borderStyle = {
     borderColor: isDark ? darkColors.border : colors.gray2,
   };
-  const isPositiveModifier = score > 0;
+  const isPositiveModifier = (score ?? 0) > 0;
   return (
     <View style={[styles.criterionWrapper, borderStyle]}>
       <Headline style={[styles.criterion, textStyle]}>
@@ -36,7 +41,7 @@ const ScoringCriterion = ({ children, headline, score = undefined }) => {
       <P style={[styles.paragraph, { marginBottom: 0 }, textStyle]}>{children}</P>
     </View>
   );
-};
+}
 
 const Scoring = () => {
   const { isDark } = useContext(CustomAppearanceContext);
@@ -240,7 +245,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   criterionScore: {
-    // @ts-ignore
+    // @ts-expect-error RNW complains
     float: 'left',
     marginRight: 16,
     width: 50,

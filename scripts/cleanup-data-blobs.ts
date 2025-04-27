@@ -23,4 +23,4 @@ async function deleteOutdatedBlobs() {
   }
 }
 
-deleteOutdatedBlobs();
+await deleteOutdatedBlobs();

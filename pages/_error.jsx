@@ -6,7 +6,7 @@ import Error from 'next/error';
 
 import ErrorState from '~/components/ErrorState';
 
-const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
+function MyError({ statusCode, hasGetInitialPropsRun, err }) {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of
     // https://github.com/zeit/next.js/issues/8592. As a workaround, we pass
@@ -15,9 +15,9 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   }
 
   return <ErrorState statusCode={statusCode} />;
-};
+}
 
-MyError.getInitialProps = async ({ res, err, asPath }) => {
+MyError.getInitialProps = async ({ res, err }) => {
   const errorInitialProps = await Error.getInitialProps({ res, err });
 
   // Workaround for https://github.com/zeit/next.js/issues/8592, mark when

@@ -41,5 +41,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 // if npmPkg, use that, otherwise use the last path segment on githubUrl
 function getNpmPackageName(library: Library): string {
-  return library.npmPkg || library.githubUrl.split('/').pop();
+  return library.npmPkg ?? library.githubUrl.split('/').pop() ?? '';
 }
