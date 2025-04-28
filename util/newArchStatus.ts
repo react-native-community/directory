@@ -1,4 +1,4 @@
-import { Library } from '../types';
+import { Library } from '~/types';
 
 export enum NewArchSupportStatus {
   Supported = 'supported',
@@ -8,7 +8,7 @@ export enum NewArchSupportStatus {
 
 export function getNewArchSupportStatus({ newArchitecture, github, expoGo }: Library) {
   // Assume untested unless indicated otherwise through one of the following tests
-  let flag = undefined;
+  let flag: boolean | string | undefined = undefined;
 
   if (typeof newArchitecture !== 'undefined') {
     flag = newArchitecture;

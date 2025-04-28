@@ -95,7 +95,7 @@ function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
     default:
       return {
         borderColor: isDark ? darkColors.border : colors.gray2,
-        borderStyle: 'dashed' as 'dashed',
+        borderStyle: 'dashed' as const,
       };
   }
 }

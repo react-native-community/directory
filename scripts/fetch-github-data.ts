@@ -172,12 +172,10 @@ const createRepoDataWithResponse = (json, monorepo) => {
           ]),
         ];
 
-        if (!json.description) {
-          json.description = packageJson.description;
-        }
+        json.description ??= packageJson.description;
 
         if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
-          json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+          json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
         }
       }
 

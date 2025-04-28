@@ -52,16 +52,18 @@ export function CompatibilityTags({ library }: Props) {
         />
       ) : null}
       {!library.dev && !library.template && <NewArchitectureTag library={library} />}
-      {platforms.map(platform => (
-        <Tag
-          label={platform}
-          key={`${platform}-platform`}
-          tagStyle={{
-            backgroundColor: isDark ? darkColors.dark : colors.gray1,
-            borderColor: isDark ? darkColors.border : colors.gray2,
-          }}
-        />
-      ))}
+      {platforms.map(platform =>
+        platform ? (
+          <Tag
+            label={platform}
+            key={`${platform}-platform`}
+            tagStyle={{
+              backgroundColor: isDark ? darkColors.dark : colors.gray1,
+              borderColor: isDark ? darkColors.border : colors.gray2,
+            }}
+          />
+        ) : null
+      )}
       {(library.expoGo || library.fireos) && (
         <Tooltip
           side="bottom"

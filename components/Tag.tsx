@@ -1,4 +1,4 @@
-import { ReactElement, useContext } from 'react';
+import { ReactNode, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, darkColors, Label } from '~/common/styleguide';
@@ -9,7 +9,7 @@ import { Check } from './Icons';
 type Props = {
   label: string;
   tagStyle: ViewStyle;
-  icon?: ReactElement;
+  icon?: ReactNode;
 };
 
 export const Tag = ({

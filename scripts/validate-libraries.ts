@@ -1,5 +1,6 @@
+import { Library } from '~/types';
+
 import libraries from '../react-native-libraries.json';
-import { Library } from '../types';
 
 const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/g;
 
@@ -46,7 +47,7 @@ function validateDuplicateLibraries(libraries: Library[]) {
     library => library.npmPkg ?? library.githubUrl.split('/').at(-1)
   );
   const occurrences = librariesName.reduce((acc, item) => {
-    acc[item] = (acc[item] || 0) + 1;
+    acc[item] = (acc[item] ?? 0) + 1;
     return acc;
   }, {});
 

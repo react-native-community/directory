@@ -17,7 +17,7 @@ export function fillNpmName(library: Library) {
 }
 
 export function processTopics(topics?: string[]) {
-  return (topics || [])
+  return (topics ?? [])
     .map(topic =>
       topic
         .replace(/([ _])/g, '-')

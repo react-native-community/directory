@@ -20,13 +20,15 @@ type Props = {
 
 const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const totalPages = Math.ceil(total / NUM_PER_PAGE);
   const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
-  if (total < 1 || currentOffset >= total) return null;
+  if (!total || total < 1 || currentOffset >= total) {
+    return null;
+  }
 
   const backDisabled = currentPage <= 1;
+  const totalPages = Math.ceil(total / NUM_PER_PAGE);
   const forwardDisabled = currentPage >= totalPages;
 
   const pageQuery = getPageQuery(basePath, query);

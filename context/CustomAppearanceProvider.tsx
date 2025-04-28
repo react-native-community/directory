@@ -23,7 +23,7 @@ const CustomAppearanceProvider = ({ children }) => {
       setLoaded(true);
     };
 
-    rehydrateAsync();
+    void rehydrateAsync();
   }, []);
 
   React.useEffect(() => {
@@ -39,7 +39,7 @@ const CustomAppearanceProvider = ({ children }) => {
           isDark,
           setIsDark: isDark => {
             setIsDark(isDark);
-            cacheAppearanceState({ isDark });
+            void cacheAppearanceState({ isDark });
           },
         }}>
         {children}
@@ -59,7 +59,7 @@ async function rehydrateAppearanceState() {
 
   try {
     const item = await AsyncStorage.getItem(appearanceStorageKey);
-    return JSON.parse(item);
+    return item ? JSON.parse(item) : null;
   } catch {
     return defaultState;
   }

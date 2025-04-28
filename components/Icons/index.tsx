@@ -10,7 +10,7 @@ type Props = {
 
 export function Search({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 19} height={height || 19} viewBox="0 0 19 19" fill="none">
+    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -23,7 +23,7 @@ export function Search({ width, height, fill = colors.black }: Props) {
 
 export function Star({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 20} height={height || 19} viewBox="0 0 20 19" fill="none">
+    <Svg width={width ?? 20} height={height ?? 19} viewBox="0 0 20 19" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -36,7 +36,7 @@ export function Star({ width, height, fill = colors.black }: Props) {
 
 export function Web({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 18} height={height || 19} viewBox="0 0 18 19" fill="none">
+    <Svg width={width ?? 18} height={height ?? 19} viewBox="0 0 18 19" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -61,7 +61,7 @@ export function Web({ width, height, fill = colors.black }: Props) {
 
 export function Arrow({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 9} height={height || 16} viewBox="0 0 9 16" fill="none">
+    <Svg width={width ?? 9} height={height ?? 16} viewBox="0 0 9 16" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -74,7 +74,7 @@ export function Arrow({ width, height, fill = colors.black }: Props) {
 
 export function Badge({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 20} height={height || 26} viewBox="0 0 20 26" fill="none">
+    <Svg width={width ?? 20} height={height ?? 26} viewBox="0 0 20 26" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -93,7 +93,7 @@ export function Badge({ width, height, fill = colors.black }: Props) {
 
 export function Calendar({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 16} height={height || 18} viewBox="0 0 16 18" fill="none">
+    <Svg width={width ?? 16} height={height ?? 18} viewBox="0 0 16 18" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -106,7 +106,7 @@ export function Calendar({ width, height, fill = colors.black }: Props) {
 
 export function Check({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 19} height={height || 13} viewBox="0 0 19 13" fill="none">
+    <Svg width={width ?? 19} height={height ?? 13} viewBox="0 0 19 13" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -119,7 +119,7 @@ export function Check({ width, height, fill = colors.black }: Props) {
 
 export function Download({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 13} height={height || 16} viewBox="0 0 13 16" fill="none">
+    <Svg width={width ?? 13} height={height ?? 16} viewBox="0 0 13 16" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -132,7 +132,7 @@ export function Download({ width, height, fill = colors.black }: Props) {
 
 export function Filter({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 21} height={height || 18} viewBox="0 0 21 18" fill="none">
+    <Svg width={width ?? 21} height={height ?? 18} viewBox="0 0 21 18" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -145,7 +145,7 @@ export function Filter({ width, height, fill = colors.black }: Props) {
 
 export function Issue({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 19} height={height || 19} viewBox="0 0 19 19" fill="none">
+    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -164,7 +164,7 @@ export function Issue({ width, height, fill = colors.black }: Props) {
 
 export function Eye({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 22} height={height || 22} viewBox="0 0 24 24" fill="none">
+    <Svg width={width ?? 22} height={height ?? 22} viewBox="0 0 24 24" fill="none">
       <Path
         fill={fill}
         d="M11.9,7.1c4.6,0,7.8,2.9,9.2,4.5c-1.4,1.8-4.6,5.2-9.2,5.2c-4.3,0-7.7-3.4-9.2-5.3C4.1,10,7.3,7.1,11.9,7.1z M12,5 C4.4,5,0,11.6,0,11.6S4.8,19,12,19c7.7,0,12-7.4,12-7.4S19.7,5,12,5z M11.9,8.5c-1.9,0-3.5,1.6-3.5,3.5s1.6,3.5,3.5,3.5 c1.9,0,3.5-1.6,3.5-3.5S13.8,8.5,11.9,8.5z M11.9,12c-0.5,0.5-1.3,0.5-1.8,0c-0.5-0.5-0.5-1.3,0-1.8c0.5-0.5,1.3-0.5,1.8,0 C12.4,10.7,12.4,11.5,11.9,12z"
@@ -175,7 +175,7 @@ export function Eye({ width, height, fill = colors.black }: Props) {
 
 export function Logo({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 25} height={height || 22} viewBox="0 0 25 22" fill="none">
+    <Svg width={width ?? 25} height={height ?? 22} viewBox="0 0 25 22" fill="none">
       <Path
         d="M12.029 13.03a2.334 2.334 0 002.343-2.325 2.334 2.334 0 00-2.343-2.326 2.334 2.334 0 00-2.343 2.325 2.334 2.334 0 002.343 2.326zM18.88 1.794c-.16-.74-.466-1.183-.851-1.404-.385-.22-.926-.262-1.65-.03-.725.234-1.571.723-2.485 1.46-.35.283-.708.6-1.068.947a27.206 27.206 0 012.225 2.743c1.246.114 2.424.298 3.505.54.123-.483.221-.948.293-1.391.186-1.154.19-2.125.03-2.865zM10.163 1.82c.351.283.708.6 1.068.947A27.215 27.215 0 009.007 5.51a27.564 27.564 0 00-3.506.54c-.123-.483-.22-.948-.292-1.391-.186-1.153-.19-2.125-.031-2.865.16-.74.466-1.183.85-1.403C6.415.17 6.955.128 7.68.36s1.57.722 2.484 1.459zM19.354 7.421a27.05 27.05 0 01-1.281 3.284 27.04 27.04 0 011.28 3.283c.484-.136.939-.284 1.361-.444 1.1-.417 1.95-.9 2.515-1.406.566-.507.8-.992.8-1.433 0-.442-.234-.927-.8-1.434-.565-.506-1.415-.988-2.515-1.405-.422-.16-.877-.309-1.36-.445zM15.05 15.9a27.207 27.207 0 01-2.224 2.742c.36.348.718.664 1.069.947.913.737 1.759 1.227 2.483 1.46.725.232 1.266.19 1.65-.03.386-.221.693-.665.852-1.404.16-.74.155-1.711-.031-2.864-.072-.444-.17-.909-.293-1.392a27.56 27.56 0 01-3.505.54zM9.007 15.9a27.21 27.21 0 002.224 2.742c-.36.348-.717.664-1.068.947-.913.737-1.759 1.227-2.484 1.46-.725.232-1.265.19-1.65-.03-.385-.221-.692-.665-.851-1.404-.16-.74-.155-1.711.031-2.864.071-.444.17-.909.292-1.392a27.56 27.56 0 003.506.54zM4.704 13.988c.329-1.05.758-2.155 1.28-3.283a27.043 27.043 0 01-1.28-3.284c-.483.136-.938.285-1.36.445-1.1.417-1.95.899-2.516 1.405-.565.507-.8.992-.8 1.434 0 .441.235.926.8 1.433.566.507 1.416.989 2.515 1.405.423.16.877.31 1.36.445z"
         fill={fill}
@@ -186,7 +186,7 @@ export function Logo({ width, height, fill = colors.black }: Props) {
 
 export function GitHub({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 24} height={height || 24} viewBox="0 0 24 24" fill="none">
+    <Svg width={width ?? 24} height={height ?? 24} viewBox="0 0 24 24" fill="none">
       <Path
         fill={fill}
         d="M12 1.60205C5.9225 1.60205 1 6.41965 1 12.3676C1 17.1314 4.14875 21.155 8.52125 22.5815C9.07125 22.6757 9.2775 22.3527 9.2775 22.0701C9.2775 21.8144 9.26375 20.9666 9.26375 20.065C6.5 20.5629 5.785 19.4056 5.565 18.8001C5.44125 18.4906 4.905 17.5351 4.4375 17.2794C4.0525 17.0776 3.5025 16.5797 4.42375 16.5662C5.29 16.5528 5.90875 17.3467 6.115 17.6697C7.105 19.298 8.68625 18.8404 9.31875 18.5578C9.415 17.8581 9.70375 17.3871 10.02 17.1179C7.5725 16.8488 5.015 15.9203 5.015 11.8024C5.015 10.6317 5.44125 9.66278 6.1425 8.90919C6.0325 8.64005 5.6475 7.53658 6.2525 6.05631C6.2525 6.05631 7.17375 5.77372 9.2775 7.15978C10.1575 6.91756 11.0925 6.79645 12.0275 6.79645C12.9625 6.79645 13.8975 6.91756 14.7775 7.15978C16.8813 5.76026 17.8025 6.05631 17.8025 6.05631C18.4075 7.53658 18.0225 8.64005 17.9125 8.90919C18.6138 9.66278 19.04 10.6182 19.04 11.8024C19.04 15.9337 16.4688 16.8488 14.0213 17.1179C14.42 17.4544 14.7638 18.1003 14.7638 19.1096C14.7638 20.5495 14.75 21.7068 14.75 22.0701C14.75 22.3527 14.9563 22.6891 15.5063 22.5815C17.69 21.86 19.5875 20.4865 20.9318 18.6542C22.2761 16.822 22.9994 14.6233 23 12.3676C23 6.41965 18.0775 1.60205 12 1.60205Z"
@@ -197,7 +197,7 @@ export function GitHub({ width, height, fill = colors.black }: Props) {
 
 export function Plus({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">
+    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" fill="none">
       <Path fillRule="evenodd" clipRule="evenodd" d="M.114 7.12H15.57v2H.114v-2z" fill={fill} />
       <Path fillRule="evenodd" clipRule="evenodd" d="M6.842 15.848V.393h2v15.455h-2z" fill={fill} />
     </Svg>
@@ -207,8 +207,8 @@ export function Plus({ width, height, fill = colors.black }: Props) {
 export function XIcon({ width, height, fill = colors.black }: Props) {
   return (
     <Svg
-      width={width || 16}
-      height={height || 16}
+      width={width ?? 16}
+      height={height ?? 16}
       viewBox="0 0 16 16"
       fill="none"
       style={{ transform: 'rotate(45deg)' }}>
@@ -220,7 +220,7 @@ export function XIcon({ width, height, fill = colors.black }: Props) {
 
 export function Question({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 16} height={height || 16} viewBox="0 0 24 24" fill="none">
+    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 24 24" fill="none">
       <Path
         d="M9.88849 16.0515H13.0629V15.8036C13.082 13.7826 13.7398 12.858 15.2936 11.9047C17.0477 10.8561 18.144 9.42612 18.144 7.24309C18.144 4.02097 15.6368 2 11.9953 2C8.65875 2 5.95141 3.84938 5.85608 7.47188H9.24979C9.33558 5.67969 10.6321 4.82173 11.9762 4.82173C13.4347 4.82173 14.6073 5.79409 14.6073 7.29075C14.6073 8.62536 13.7207 9.54051 12.5672 10.265C10.8799 11.3136 9.90756 12.3718 9.88849 15.8036V16.0515ZM11.5567 22C12.6816 22 13.6444 21.0658 13.654 19.9028C13.6444 18.7588 12.6816 17.8246 11.5567 17.8246C10.3937 17.8246 9.44998 18.7588 9.45951 19.9028C9.44998 21.0658 10.3937 22 11.5567 22Z"
         fill={fill}
@@ -231,7 +231,7 @@ export function Question({ width, height, fill = colors.black }: Props) {
 
 export function Sort({ width, height, fill = colors.black }: Props) {
   return (
-    <Svg width={width || 16} height={height || 16} viewBox="0 0 16 16" fill="none">
+    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"

@@ -1,14 +1,14 @@
-import { Library } from '../types';
+import { Library } from '~/types';
 
 export function compatibility(libraries: Library[]) {
   return libraries.sort((a, b) => {
-    const aCompat = [a.expoGo && typeof a.expoGo !== 'string', a.ios, a.android, a.web]
+    const aCompat = [a.expoGo, a.ios, a.android, a.web]
       .map(value => Number(value))
       .reduce((total, val) => {
         return val ? total + val : total;
       }, 0);
 
-    const bCompat = [b.expoGo && typeof b.expoGo !== 'string', b.ios, b.android, b.web]
+    const bCompat = [b.expoGo, b.ios, b.android, b.web]
       .map(value => Number(value))
       .reduce((total, val) => {
         return val ? total + val : total;
@@ -28,8 +28,8 @@ export function stars(libraries: Library[]) {
 
 export function downloads(libraries: Library[]) {
   return libraries.sort((a, b) => {
-    const bDownloads = b.npm.downloads ? b.npm.downloads : 0;
-    const aDownloads = a.npm.downloads ? a.npm.downloads : 0;
+    const bDownloads = b.npm?.downloads ?? 0;
+    const aDownloads = a.npm?.downloads ?? 0;
 
     return bDownloads - aDownloads;
   });
@@ -48,7 +48,7 @@ export function quality(libraries: Library[]) {
 }
 
 export function popularity(libraries: Library[]) {
-  return libraries.sort((a, b) => b.popularity - a.popularity);
+  return libraries.sort((a, b) => (b?.popularity ?? 0) - (a?.popularity ?? 0));
 }
 
 export function relevance(libraries: Library[]) {

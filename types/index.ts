@@ -112,5 +112,5 @@ export type Library = {
   images?: string[];
   npmPkg?: string;
   popularity?: number;
-  matchScore?: number;
+  matchScore: number;
 };
