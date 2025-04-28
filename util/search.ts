@@ -1,10 +1,15 @@
+import { Library, Query } from '~/types';
+
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
 import { isEmptyOrNull } from './strings';
-import { Library, Query } from '../types';
+
+const NPM_NAME_CLEANUP_REGEX = /[-/]/g;
+const GITHUB_URL_CLEANUP_REGEX =
+  /^https?:\/\/(?:www\.)?github\.com\/([^/]+\/[^/]+)(?:$|\/|\.git).*$/;
 
 function calculateMatchScore(
-  { github, npmPkg, topicSearchString, unmaintained }: Library,
+  { github, npmPkg, topicSearchString, unmaintained, githubUrl }: Library,
   querySearch: string
 ) {
   const exactNameMatchPoints =
@@ -15,8 +20,15 @@ function calculateMatchScore(
 
   const npmPkgNameMatchPoints =
     !isEmptyOrNull(npmPkg) &&
-    (npmPkg.includes(querySearch) || npmPkg.replaceAll(/[-/]/g, ' ').includes(querySearch))
+    (npmPkg.includes(querySearch) ||
+      npmPkg.replaceAll(NPM_NAME_CLEANUP_REGEX, ' ').includes(querySearch))
       ? 200
+      : 0;
+
+  const gitHubURLOrOwnerMatchPoints =
+    githubUrl.startsWith(querySearch) ||
+    githubUrl.replace(GITHUB_URL_CLEANUP_REGEX, '$1').includes(querySearch)
+      ? 150
       : 0;
 
   const cleanedUpName = npmPkg
@@ -28,7 +40,7 @@ function calculateMatchScore(
   const cleanedUpNameMatchPoints =
     !isEmptyOrNull(cleanedUpName) &&
     (cleanedUpName.includes(querySearch) ||
-      cleanedUpName.includes(querySearch.replaceAll(/[-/]/g, ' ')))
+      cleanedUpName.includes(querySearch.replaceAll(NPM_NAME_CLEANUP_REGEX, ' ')))
       ? 100
       : 0;
 
@@ -47,6 +59,7 @@ function calculateMatchScore(
     repoNameMatchPoints +
     cleanedUpNameMatchPoints +
     npmPkgNameMatchPoints +
+    gitHubURLOrOwnerMatchPoints +
     descriptionMatchPoints +
     topicMatchPoints;
 
@@ -90,7 +103,7 @@ export function handleFilterLibraries({
       }))
     : libraries;
 
-  const fiteredLibraries = processedLibraries.filter(library => {
+  const filteredLibraries = processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -236,10 +249,10 @@ export function handleFilterLibraries({
   });
 
   if (sortBy === 'relevance') {
-    return relevance(fiteredLibraries);
+    return relevance(filteredLibraries);
   }
 
-  return fiteredLibraries;
+  return filteredLibraries;
 }
 
 export function getPageQuery(basePath: string, query: Query) {
