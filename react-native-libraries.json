@@ -9879,7 +9879,8 @@
     "examples": ["https://github.com/kesha-antonov/react-native-zoom-reanimated/tree/main/example"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Mhp23/react-native-fast-base",
