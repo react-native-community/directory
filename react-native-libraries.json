@@ -14491,5 +14491,17 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-tiny-wavpack-decoder",
+    "examples": [
+      "https://github.com/JairajJangle/react-native-tiny-wavpack-decoder/tree/main/example"
+    ],
+    "images": [
+      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDFuMjU5amU0YjZ3aG1yd240cnY1dmgweXhobHpzd2ltOWdjZ3NkMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L4M2fUjJd9hRqZDaYf/giphy.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
