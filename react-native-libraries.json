@@ -626,6 +626,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://icons.expo.fyi"]
   },
   {
@@ -3414,7 +3415,8 @@
     "android": true,
     "expoGo": true,
     "windows": true,
-    "visionos": true
+    "visionos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-dualscreen/tree/master/dualscreeninfo",
@@ -3634,7 +3636,8 @@
     "windows": true,
     "macos": true,
     "npmPkg": "@react-native-picker/picker",
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-cameraroll/react-native-cameraroll",
@@ -4777,7 +4780,8 @@
     "npmPkg": "@sentry/react-native",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/solinor/react-native-bluetooth-status",
@@ -4958,7 +4962,8 @@
     "windows": true,
     "web": true,
     "visionos": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-toolkit/triangle",
@@ -7132,7 +7137,8 @@
     "examples": ["https://github.com/gorhom/react-native-portal/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/a7ul/react-native-exception-handler",
@@ -9513,7 +9519,8 @@
     "npmPkg": "@microsoft/signalr",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/sacmii/rn-vertical-slider",
@@ -11446,7 +11453,8 @@
     "tvos": true,
     "expoGo": true,
     "newArchitecture": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo",
@@ -11562,7 +11570,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/zahidalidev/toastify-react-native",
@@ -12819,7 +12828,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-utilities",
@@ -12849,7 +12859,8 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/TanStack/query/tree/main/packages/query-persist-client-core",
@@ -12858,7 +12869,8 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
@@ -14462,7 +14474,8 @@
     "examples": ["https://github.com/eugenehp/RNUUID"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-screenshot-test",
@@ -14509,5 +14522,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ammarahm-ed/react-native-gzip",
+    "npmPkg": "react-native-gzip",
+    "android": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/bamlab/react-tv-space-navigation/tree/main/packages/lib",
+    "npmPkg": "react-tv-space-navigation",
+    "android": true,
+    "fireos": true
   }
 ]
