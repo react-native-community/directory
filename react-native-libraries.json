@@ -14534,5 +14534,15 @@
     "npmPkg": "react-tv-space-navigation",
     "android": true,
     "fireos": true
+  },
+    {
+    "githubUrl": "https://github.com/alanjhughes/expo-emoji-picker",
+    "examples": [
+      "https://github.com/alanjhughes/expo-emoji-picker/tree/main/example"
+    ],
+    "npmPkg": "expo-emoji-picker",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
