@@ -12863,6 +12863,12 @@
   {
     "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
     "npmPkg": "@futurejj/react-native-visibility-sensor",
+    "examples": [
+      "https://github.com/JairajJangle/react-native-visibility-sensor/tree/main/example"
+    ],
+    "images": [
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTlsaGEyaXd4ZDdicWdtYnM4d3FibWltZjJwd3RrOG80b2pzemQ4dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hNCfKTz7YMuDPIM7eV/giphy.gif"
+    ],
     "android": true,
     "ios": true,
     "web": true,
