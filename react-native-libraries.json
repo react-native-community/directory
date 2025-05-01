@@ -6318,7 +6318,8 @@
     "ios": true,
     "web": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aspect-apps/react-native-navigation-drawer-extension",
@@ -12812,7 +12813,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dcastil/tailwind-merge",
@@ -12820,7 +12822,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/lukeed/clsx",
@@ -12842,7 +12845,8 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mdevils/html-entities",
@@ -12850,7 +12854,8 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/npm/node-semver",
@@ -13484,7 +13489,8 @@
     "android": true,
     "web": true,
     "expo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/redux",
@@ -13493,7 +13499,8 @@
     "android": true,
     "web": true,
     "expo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/reselect",
@@ -13501,7 +13508,8 @@
     "android": true,
     "web": true,
     "expo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/redux-thunk",
@@ -14284,7 +14292,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/date-fns/date-fns",
@@ -14292,7 +14301,8 @@
     "android": true,
     "ios": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/evergrace-co/react-native-audio-pro",
@@ -14495,7 +14505,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/YannisHofmann/react-native-country-flag",
