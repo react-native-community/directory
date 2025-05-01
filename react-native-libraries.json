@@ -2653,7 +2653,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/background-fetch/#usage"],
     "ios": true,
     "android": true,
-    "expoGo": true,
+    "expoGo": false,
     "newArchitecture": true
   },
   {
