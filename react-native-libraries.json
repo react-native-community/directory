@@ -14555,5 +14555,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-background-task",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/background-task/#usage"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
