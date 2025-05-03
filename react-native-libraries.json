@@ -2357,6 +2357,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -3803,6 +3804,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -9567,6 +9569,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -11782,6 +11785,7 @@
     "android": true,
     "ios": true,
     "web": true,
+    "fireos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -12888,7 +12892,8 @@
     "githubUrl": "https://github.com/auth0/jwt-decode",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
@@ -13051,6 +13056,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -13508,6 +13514,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "expo": true,
     "newArchitecture": true
   },
@@ -13768,6 +13775,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -14305,7 +14313,8 @@
     "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
