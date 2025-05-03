@@ -14602,5 +14602,16 @@
     "examples": ["https://github.com/prisma/react-native-prisma/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/s77rt/react-native-date-picker",
+    "npmPkg": "@s77rt/react-native-date-picker",
+    "images": [
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-ios.gif",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
