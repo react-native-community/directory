@@ -11923,7 +11923,7 @@
     "web": true,
     "expoGo": true,
     "unmaintained": true,
-  "alternatives": ["@rn-vui/base","@rn-vui/themed"]
+    "alternatives": ["@rn-vui/base"]
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/next/packages/themed",
