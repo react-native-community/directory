@@ -675,7 +675,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "alternatives": ["@rneui/themed"]
+    "alternatives": ["@rn-vui/themed"]
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view",
@@ -11921,7 +11921,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["@rn-vui/base"]
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/next/packages/themed",
@@ -11932,7 +11934,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["@rn-vui/themed"]
   },
   {
     "githubUrl": "https://github.com/gunnartorfis/sonner-native",
@@ -14613,5 +14617,21 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/deepktp/react-native-vikalp-elements/tree/next/packages/base",
+    "npmPkg": "@rn-vui/base",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/deepktp/react-native-vikalp-elements/tree/next/packages/themed",
+    "npmPkg": "@rn-vui/themed",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
