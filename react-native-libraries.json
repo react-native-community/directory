@@ -675,7 +675,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "alternatives": ["@rneui/themed","@rn-vui/themed"]
+    "alternatives": ["@rn-vui/themed"]
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view",
