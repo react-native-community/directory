@@ -14633,5 +14633,72 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/sdk",
+    "npmPkg": "@rudderstack/rudder-sdk-react-native",
+    "ios": true,
+    "android": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/plugins/rudder-plugin-db-encryption-react-native",
+    "npmPkg": "@rudderstack/rudder-plugin-db-encryption-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-amplitude-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-amplitude-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-appcenter-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-appcenter-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-appsflyer-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-appsflyer-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-braze-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-braze-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-clevertap-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-clevertap-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-facebook-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-facebook-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-firebase-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-firebase-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-moengage-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-moengage-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/rudder-integration-singular-react-native",
+    "npmPkg": "@rudderstack/rudder-integration-singular-react-native",
+    "ios": true,
+    "android": true
   }
 ]
