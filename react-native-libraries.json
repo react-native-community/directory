@@ -14703,5 +14703,34 @@
     "npmPkg": "@rudderstack/rudder-integration-singular-react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AzzappApp/react-native-skia-video",
+    "npmPkg": "@azzapp/react-native-skia-video",
+    "examples": [
+      "https://github.com/AzzappApp/react-native-skia-video/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bluesky-social/expo-image-crop-tool",
+    "examples": [
+      "https://github.com/bluesky-social/expo-image-crop-tool/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/echowaves/expo-cached-image",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alanjhughes/expo-shazamkit",
+    "examples": [
+      "https://github.com/alanjhughes/expo-shazamkit/tree/main/example"
+    ],
+    "ios": true
   }
 ]
