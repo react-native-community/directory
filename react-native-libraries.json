@@ -1254,8 +1254,10 @@
   },
   {
     "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input",
+    "npmPkg": "react-native-autocomplete-input",
     "ios": true,
     "android": true,
+    "web": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/rJxdeFIIb"]
   },
@@ -14703,13 +14705,5 @@
     "npmPkg": "@rudderstack/rudder-integration-singular-react-native",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input",
-    "npmPkg": "react-native-autocomplete-input",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true
   }
 ]
