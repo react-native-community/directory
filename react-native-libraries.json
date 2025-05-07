@@ -608,18 +608,6 @@
     ]
   },
   {
-    "githubUrl": "https://github.com/oblador/react-native-vector-icons",
-    "images": [
-      "https://cloud.githubusercontent.com/assets/378279/8903470/a9fe6b46-3458-11e5-901f-98b7b676d0d3.png"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "macos": true,
-    "windows": true
-  },
-  {
     "githubUrl": "https://github.com/expo/vector-icons",
     "npmPkg": "@expo/vector-icons",
     "ios": true,
@@ -1253,12 +1241,18 @@
     "npmPkg": "react-native-calendar-picker"
   },
   {
-    "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input",
+    "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input/tree/main/packages/react-native-autocomplete-input",
+    "examples": [
+      "https://github.com/byteburgers/react-native-autocomplete-input/tree/main/examples/StarWarsMovieFinder",
+      "https://snack.expo.dev/@mrlaessig/rn-autocomplete-input-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/mrlaessig/react-native-autocomplete-input/master/example.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true,
-    "examples": ["https://snack.expo.dev/rJxdeFIIb"]
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/aksonov/react-native-tabs",
