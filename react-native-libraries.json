@@ -2614,6 +2614,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2623,6 +2624,7 @@
     "tvos": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2638,6 +2640,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2665,6 +2668,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2694,6 +2698,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2729,6 +2734,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2768,6 +2774,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2859,6 +2866,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -2892,7 +2900,8 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/notifications/#usage"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo-pixi",
@@ -2924,6 +2933,7 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3018,6 +3028,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "dev": true
   },
   {
@@ -3345,7 +3356,8 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
-    "visionos": true
+    "visionos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-camera/react-native-camera",
@@ -3436,7 +3448,8 @@
     "ios": true,
     "android": true,
     "tvos": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-updates",
@@ -7709,7 +7722,8 @@
     "githubUrl": "https://github.com/software-mansion-labs/react-freeze",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/shirakaba/react-native-native-runtime",
@@ -8504,6 +8518,7 @@
     "githubUrl": "https://github.com/LinusU/react-native-get-random-values",
     "android": true,
     "ios": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -9241,6 +9256,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -10105,6 +10121,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -11300,6 +11317,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/symbols/#usage"],
     "ios": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -12422,7 +12440,8 @@
     "ios": true,
     "tvos": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-structured-headers",
@@ -12434,7 +12453,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-json-utils",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/blake-simpson/expo-jwt",
