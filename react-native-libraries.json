@@ -14747,5 +14747,19 @@
       "https://github.com/alanjhughes/expo-shazamkit/tree/main/example"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/deepktp/react-native-vikalp-ratings",
+    "npmPkg": "@rn-vui/ratings",
+    "images": [
+      "https://raw.githubusercontent.com/deepktp/react-native-vikalp-ratings/master/resources/tap_rating_1.png",
+      "https://raw.githubusercontent.com/deepktp/react-native-vikalp-ratings/master/resources/tap_rating_2.png",
+      "https://raw.githubusercontent.com/deepktp/react-native-viaklp-ratings/master/resources/swipe_rating_1.png",
+      "https://raw.githubusercontent.com/deepktp/react-native-vikalp-ratings/master/resources/swipe_rating_2.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
