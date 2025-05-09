@@ -14761,5 +14761,14 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-vector-icons",
+    "npmPkg": "react-native-vector-icons",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
   }
 ]
