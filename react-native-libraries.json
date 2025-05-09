@@ -670,6 +670,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "examples": [
       "https://snack.expo.dev/HJjbO4nSW",
       "https://github.com/react-navigation/react-navigation/tree/main/example"
@@ -4555,6 +4556,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true,
     "examples": [
@@ -5349,6 +5351,7 @@
     "githubUrl": "https://github.com/charpeni/react-native-url-polyfill",
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -5358,6 +5361,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -5744,6 +5748,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "web": true,
     "expoGo": true
   },
@@ -6043,6 +6048,7 @@
     "githubUrl": "https://github.com/rt2zz/redux-persist",
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true
   },
   {
@@ -6921,6 +6927,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/status-bar/#usage"],
     "ios": true,
     "android": true,
+    "fireos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -8919,6 +8926,7 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
