@@ -14778,5 +14778,411 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/accordion",
+    "npmPkg": "@rn-primitives/accordion",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_accordion"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/alert-dialog",
+    "npmPkg": "@rn-primitives/alert-dialog",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_alert-dialog"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/aspect-ratio",
+    "npmPkg": "@rn-primitives/aspect-ratio",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_aspect-ratio"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/avatar",
+    "npmPkg": "@rn-primitives/avatar",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_avatar"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/checkbox",
+    "npmPkg": "@rn-primitives/checkbox",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_checkbox"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/collapsible",
+    "npmPkg": "@rn-primitives/collapsible",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_collapsible"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/context-menu",
+    "npmPkg": "@rn-primitives/context-menu",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_context-menu"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/dialog",
+    "npmPkg": "@rn-primitives/dialog",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_dialog"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/dropdown-menu",
+    "npmPkg": "@rn-primitives/dropdown-menu",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_dropdown-menu"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/hover-card",
+    "npmPkg": "@rn-primitives/hover-card",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_hover-card"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/label",
+    "npmPkg": "@rn-primitives/label",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_label"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/menubar",
+    "npmPkg": "@rn-primitives/menubar",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_menubar"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/navigation-menu",
+    "npmPkg": "@rn-primitives/navigation-menu",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_navigation-menu"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/popover",
+    "npmPkg": "@rn-primitives/popover",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_popover"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/progress",
+    "npmPkg": "@rn-primitives/progress",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_progress"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/radio-group",
+    "npmPkg": "@rn-primitives/radio-group",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_radio-group"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/select",
+    "npmPkg": "@rn-primitives/select",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_select"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/separator",
+    "npmPkg": "@rn-primitives/separator",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_separator"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/slider",
+    "npmPkg": "@rn-primitives/slider",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_slider"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/switch",
+    "npmPkg": "@rn-primitives/switch",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_switch"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/table",
+    "npmPkg": "@rn-primitives/table",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_table"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/tabs",
+    "npmPkg": "@rn-primitives/tabs",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_tabs"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toast",
+    "npmPkg": "@rn-primitives/toast",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_toast"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toggle",
+    "npmPkg": "@rn-primitives/toggle",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_toggle"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toggle-group",
+    "npmPkg": "@rn-primitives/toggle-group",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_toggle-group"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toolbar",
+    "npmPkg": "@rn-primitives/toolbar",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_toolbar"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/tooltip",
+    "npmPkg": "@rn-primitives/tooltip",
+    "examples": [
+      "https://snack.expo.dev/@dylmye/rn-primitives_tooltip"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/hooks",
+    "npmPkg": "@rn-primitives/hooks",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/portal",
+    "npmPkg": "@rn-primitives/portal",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/slot",
+    "npmPkg": "@rn-primitives/slot",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/types",
+    "npmPkg": "@rn-primitives/types",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/utils",
+    "npmPkg": "@rn-primitives/utils",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true,
+    "dev": true
   }
 ]
