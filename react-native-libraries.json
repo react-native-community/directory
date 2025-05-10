@@ -290,6 +290,13 @@
     "unmaintained": true
   },
   {
+    "githubUrl": "https://github.com/facebook/metro",
+    "ios": true,
+    "android": true,
+    "npmPkg": "metro",
+    "description": "The JavaScript bundler for React Native."
+  },
+  {
     "githubUrl": "https://github.com/vonovak/react-native-simple-toast",
     "ios": true,
     "android": true
