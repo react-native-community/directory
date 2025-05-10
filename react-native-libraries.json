@@ -14778,5 +14778,12 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/googleapis/js-genai",
+    "npmPkg": "@google/genai",
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
