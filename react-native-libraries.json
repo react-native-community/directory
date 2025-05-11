@@ -14788,6 +14788,7 @@
   },
   {
     "githubUrl": "https://github.com/JairajJangle/react-native-checkbox",
+    "npmPkg": "@futurejj/react-native-checkbox",
     "examples": [
       "https://github.com/JairajJangle/react-native-checkbox/tree/main/example",
       "https://snack.expo.dev/@futurejj/react-native-checkbox-example"
@@ -14801,5 +14802,5 @@
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
-  },
+  }
 ]
