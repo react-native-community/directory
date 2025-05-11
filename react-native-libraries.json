@@ -930,7 +930,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["@futurejj/react-native-checkbox"]
   },
   {
     "githubUrl": "https://github.com/expo/react-native-loading-container",
@@ -4279,7 +4280,9 @@
     "githubUrl": "https://github.com/tableflip/react-native-select-multiple",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-tree-multi-select"]
   },
   {
     "githubUrl": "https://github.com/Richard-Cao/react-native-exceptions-manager",
