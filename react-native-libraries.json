@@ -14785,5 +14785,21 @@
     "android": true,
     "web": true,
     "expoGo": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-checkbox",
+    "examples": [
+      "https://github.com/JairajJangle/react-native-checkbox/tree/main/example",
+      "https://snack.expo.dev/@futurejj/react-native-checkbox-example"
+    ],
+    "images": [
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl6dG1mOXJ5bGd6bTVrMWV5YnAzMmkzYTRvbWFjZ2RkMjh4eHl3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pegf3CERuvAllv0dxv/giphy.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
 ]
