@@ -14637,11 +14637,15 @@
     "githubUrl": "https://github.com/s77rt/react-native-date-picker",
     "npmPkg": "@s77rt/react-native-date-picker",
     "images": [
-      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-ios.gif",
-      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-android.gif"
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-ios.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-android.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-mweb-safari.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-mweb-chrome.jpg",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-web-chrome.png"
     ],
     "ios": true,
     "android": true,
+    "web": true,
     "newArchitecture": true
   },
   {
