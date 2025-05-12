@@ -8258,7 +8258,9 @@
       "https://user-images.githubusercontent.com/24505883/86367431-3aff5500-bc7c-11ea-90ca-7c8f1ef9dfe6.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["@futurejj/react-native-visibility-sensor"]
   },
   {
     "npmPkg": "@dimaportenko/react-native-shadow-view",
