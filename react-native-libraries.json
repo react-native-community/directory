@@ -15275,5 +15275,17 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/iosazee/expo-passkey",
+  "npmPkg": "expo-passkey",
+  "examples": [
+    "https://github.com/iosazee/neb-starter"
+  ],
+  "ios": true,
+  "android": true,
+  "web": false,
+  "expoGo": false,
+  "newArchitecture": true
+}
 ]
