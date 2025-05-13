@@ -165,7 +165,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aeirola/react-native-svg-asset-plugin",
@@ -581,6 +582,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/SJfJguhrW"]
   },
   {
@@ -654,6 +656,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/ByBCD_2r-"]
   },
   {
@@ -744,7 +747,8 @@
       "https://react-native-share.github.io/react-native-share/img/assets-docs/ios-component.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aakashns/react-native-dialogs",
@@ -930,7 +934,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["@futurejj/react-native-checkbox"]
   },
   {
     "githubUrl": "https://github.com/expo/react-native-loading-container",
@@ -2199,6 +2204,7 @@
     "ios": true,
     "android": true,
     "unmaintained": true,
+    "fireos": true,
     "alternatives": ["@dr.pogodin/react-native-fs", "expo-file-system"]
   },
   {
@@ -3542,7 +3548,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-netinfo/react-native-netinfo",
@@ -4279,7 +4286,9 @@
     "githubUrl": "https://github.com/tableflip/react-native-select-multiple",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-tree-multi-select"]
   },
   {
     "githubUrl": "https://github.com/Richard-Cao/react-native-exceptions-manager",
@@ -6831,7 +6840,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/guhungry/react-native-photo-manipulator",
@@ -8255,7 +8265,9 @@
       "https://user-images.githubusercontent.com/24505883/86367431-3aff5500-bc7c-11ea-90ca-7c8f1ef9dfe6.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["@futurejj/react-native-visibility-sensor"]
   },
   {
     "npmPkg": "@dimaportenko/react-native-shadow-view",
@@ -11590,6 +11602,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/@zahidalidev/toastify-react-native"]
   },
   {
@@ -12526,7 +12539,8 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/pchalupa/expo-alternate-app-icons",
@@ -14637,11 +14651,15 @@
     "githubUrl": "https://github.com/s77rt/react-native-date-picker",
     "npmPkg": "@s77rt/react-native-date-picker",
     "images": [
-      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-ios.gif",
-      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/demo-android.gif"
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-ios.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-android.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-mweb-safari.png",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-mweb-chrome.jpg",
+      "https://raw.githubusercontent.com/s77rt/react-native-date-picker/refs/heads/main/assets/screenshot-web-chrome.png"
     ],
     "ios": true,
     "android": true,
+    "web": true,
     "newArchitecture": true
   },
   {
@@ -14785,6 +14803,34 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-checkbox",
+    "npmPkg": "@futurejj/react-native-checkbox",
+    "examples": [
+      "https://github.com/JairajJangle/react-native-checkbox/tree/main/example",
+      "https://snack.expo.dev/@futurejj/react-native-checkbox-example"
+    ],
+    "images": [
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl6dG1mOXJ5bGd6bTVrMWV5YnAzMmkzYTRvbWFjZ2RkMjh4eHl3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pegf3CERuvAllv0dxv/giphy.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/XterioTech/XterioSDK-RN/tree/main/xterio-auth",
+    "npmPkg": "@xterio-sdk/rn-auth",
+    "examples": [
+      "https://github.com/XterioTech/XterioSDK-RN/tree/main/xterio-auth/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/accordion",
