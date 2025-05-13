@@ -15175,8 +15175,7 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true,
-    "dev": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/portal",
@@ -15189,8 +15188,7 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true,
-    "dev": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/slot",
@@ -15203,8 +15201,7 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true,
-    "dev": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/types",
@@ -15231,7 +15228,6 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true,
-    "dev": true
+    "fireos": true
   }
 ]
