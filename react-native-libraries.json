@@ -165,7 +165,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aeirola/react-native-svg-asset-plugin",
@@ -581,6 +582,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/SJfJguhrW"]
   },
   {
@@ -654,6 +656,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/ByBCD_2r-"]
   },
   {
@@ -744,7 +747,8 @@
       "https://react-native-share.github.io/react-native-share/img/assets-docs/ios-component.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aakashns/react-native-dialogs",
@@ -2200,6 +2204,7 @@
     "ios": true,
     "android": true,
     "unmaintained": true,
+    "fireos": true,
     "alternatives": ["@dr.pogodin/react-native-fs", "expo-file-system"]
   },
   {
@@ -3543,7 +3548,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-netinfo/react-native-netinfo",
@@ -6834,7 +6840,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/guhungry/react-native-photo-manipulator",
@@ -11595,6 +11602,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "examples": ["https://snack.expo.dev/@zahidalidev/toastify-react-native"]
   },
   {
@@ -12531,7 +12539,8 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/pchalupa/expo-alternate-app-icons",
