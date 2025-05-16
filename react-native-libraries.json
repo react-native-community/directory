@@ -15293,5 +15293,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-status-bar-height",
+    "npmPkg": "@logicwind/react-native-status-bar-height",
+    "examples": [
+      "https://github.com/logicwind/react-native-status-bar-height/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
