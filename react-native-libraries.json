@@ -15313,5 +15313,14 @@
     "android": true,
     "tvos": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-fold-detection",
+    "npmPkg": "@logicwind/react-native-fold-detection",
+    "examples": [
+      "https://github.com/logicwind/react-native-fold-detection/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
