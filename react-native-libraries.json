@@ -15293,5 +15293,34 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-status-bar-height",
+    "npmPkg": "@logicwind/react-native-status-bar-height",
+    "examples": [
+      "https://github.com/logicwind/react-native-status-bar-height/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-matomo-tracker",
+    "npmPkg": "@logicwind/react-native-matomo-tracker",
+    "examples": [
+      "https://github.com/logicwind/react-native-matomo-tracker/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-fold-detection",
+    "npmPkg": "@logicwind/react-native-fold-detection",
+    "examples": [
+      "https://github.com/logicwind/react-native-fold-detection/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
