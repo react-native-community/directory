@@ -15302,5 +15302,16 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-matomo-tracker",
+    "npmPkg": "@logicwind/react-native-matomo-tracker",
+    "examples": [
+      "https://github.com/logicwind/react-native-matomo-tracker/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "fireos": true
   }
 ]
