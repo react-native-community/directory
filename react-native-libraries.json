@@ -14277,12 +14277,13 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-in-app-browser/tree/main/react-native-nitro-in-app-browser",
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-in-app-browser",
     "examples": [
       "https://github.com/patrickkabwe/react-native-nitro-in-app-browser/tree/main/example"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/litecoin-foundation/react-native-turbo-scrypt",
@@ -15322,5 +15323,23 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-fs",
+    "examples": [
+      "https://github.com/patrickkabwe/react-native-nitro-fs/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-google-sso",
+    "examples": [
+      "https://github.com/patrickkabwe/react-native-nitro-google-sso/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
