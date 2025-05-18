@@ -14363,7 +14363,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "fireos": true
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
