@@ -13228,7 +13228,11 @@
   {
     "githubUrl": "https://github.com/JairajJangle/react-native-session-storage",
     "examples": [
-      "https://github.com/JairajJangle/react-native-session-storage/tree/master/example"
+      "https://github.com/JairajJangle/react-native-session-storage/tree/master/example",
+      "https://snack.expo.dev/@futurejj/react-native-session-storage-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/JairajJangle/react-native-session-storage/HEAD/.github/assets/demo_app_ss.png"
     ],
     "ios": true,
     "android": true,
