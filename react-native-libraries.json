@@ -343,7 +343,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-popover-menu",
@@ -473,7 +474,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/Andr3wHur5t/react-native-keyboard-spacer",
@@ -604,6 +606,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "fireos": true,
     "examples": [
       "https://snack.expo.dev/HkoXUdhr-",
       "https://github.com/wix/react-native-calendars/tree/master/example"
@@ -705,7 +708,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jkomyno/react-native-universal-picker",
@@ -1567,7 +1571,8 @@
     "ios": true,
     "android": true,
     "windows": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-safari-view",
@@ -1923,7 +1928,8 @@
     "examples": ["https://github.com/oblador/react-native-collapsible/tree/master/Example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jeanregisser/react-native-popover",
@@ -2809,7 +2815,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-image-picker",
@@ -2864,7 +2871,8 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos" :true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-location",
@@ -3155,7 +3163,8 @@
     ],
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/HosseinShabani/react-native-modern-datepicker",
@@ -3789,7 +3798,8 @@
     "images": ["https://i.giphy.com/26tkmjBLvThP0TSak.gif"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
@@ -3813,7 +3823,8 @@
     "githubUrl": "https://github.com/iamacup/react-native-markdown-display",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/i18next/react-i18next",
@@ -3827,7 +3838,8 @@
   {
     "githubUrl": "https://github.com/APSL/react-native-keyboard-aware-scroll-view",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/slorber/react-native-scroll-into-view",
@@ -3842,7 +3854,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/react-native-action-sheet",
@@ -4238,7 +4251,8 @@
     "android": true,
     "windows": true,
     "visionos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos":true
   },
   {
     "githubUrl": "https://github.com/luisfcofv/react-native-deep-linking",
@@ -4542,7 +4556,8 @@
   {
     "githubUrl": "https://github.com/mkuczera/react-native-haptic-feedback",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tschoffelen/react-native-map-link",
@@ -5281,7 +5296,8 @@
     "images": ["https://i.imgur.com/xHCylq1.gif"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/hieuvp/react-native-fingerprint-scanner",
@@ -6495,6 +6511,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": true,
     "newArchitectureNote": "Currently supported through the compatibility layer for legacy view components."
   },
@@ -7957,7 +7974,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/MinaSamir11/react-native-in-app-review",
@@ -8441,7 +8459,8 @@
       "https://raw.githubusercontent.com/kirillzyusko/react-native-keyboard-controller/main/gifs/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-websql",
@@ -8808,6 +8827,7 @@
     "ios": true,
     "android": true,
     "dev": true,
+    "fireos": true,
     "newArchitecture": false,
     "newArchitectureNote": "Consider using Maestro instead to migrate to the New Architecture today."
   },
@@ -11212,7 +11232,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gladiuscode/react-native-orientation-director",
@@ -11324,7 +11345,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-navigation-bar",
@@ -12468,7 +12490,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-structured-headers",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-json-utils",
@@ -13181,7 +13204,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jaredh159/tailwind-react-native-classnames",
