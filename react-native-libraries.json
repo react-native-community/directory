@@ -4480,8 +4480,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": false,
-    "newArchitectureNote": "PR open for new architecture support https://github.com/teslamotors/react-native-camera-kit/issues/537"
+    "newArchitecture": true,
+    "newArchitectureNote": "new architecture support added v14.1.0"
   },
   {
     "githubUrl": "https://github.com/BondGoat/react-native-native-video-player",
