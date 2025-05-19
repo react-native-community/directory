@@ -5358,7 +5358,8 @@
     "githubUrl": "https://github.com/FormidableLabs/react-native-app-auth/tree/main/packages/react-native-app-auth",
     "examples": ["https://github.com/FormidableLabs/react-native-app-auth/tree/main/examples/demo"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/nandorojo/react-navigation-heavy-screen",
