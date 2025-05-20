@@ -4494,13 +4494,14 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": false,
-    "newArchitectureNote": "PR open for new architecture support https://github.com/teslamotors/react-native-camera-kit/issues/537"
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported since v14.1.0"
   },
   {
     "githubUrl": "https://github.com/BondGoat/react-native-native-video-player",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/jordanbyron/react-native-quick-actions",
@@ -12652,7 +12653,8 @@
     ],
     "android": true,
     "ios": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
