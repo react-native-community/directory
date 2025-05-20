@@ -4494,8 +4494,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true,
-    "newArchitectureNote": "Supported since v14.1.0"
+    "newArchitecture": false,
+    "newArchitectureNote": "PR open for new architecture support https://github.com/teslamotors/react-native-camera-kit/issues/537"
   },
   {
     "githubUrl": "https://github.com/BondGoat/react-native-native-video-player",
@@ -5358,8 +5358,7 @@
     "githubUrl": "https://github.com/FormidableLabs/react-native-app-auth/tree/main/packages/react-native-app-auth",
     "examples": ["https://github.com/FormidableLabs/react-native-app-auth/tree/main/examples/demo"],
     "ios": true,
-    "android": true,
-    "newArchitecture": true
+    "android": true
   },
   {
     "githubUrl": "https://github.com/nandorojo/react-navigation-heavy-screen",
@@ -9872,10 +9871,14 @@
   {
     "githubUrl": "https://github.com/Sharcoux/slider",
     "npmPkg": "@react-native-assets/slider",
-    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8?file=/src/App.js"],
-    "ios": true,
+    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8"],
+    "images": ["https://github.com/Sharcoux/slider/blob/master/slider.gif"],
     "android": true,
-    "web": true
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/react",
@@ -12649,8 +12652,7 @@
     ],
     "android": true,
     "ios": true,
-    "web": true,
-    "newArchitecture": true
+    "web": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
@@ -15372,5 +15374,37 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/Sharcoux/rn-css",
+    "npmPkg": "rn-css",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/cantoo-scribe/pdf-lib",
+    "npmPkg": "@cantoo/pdf-lib",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Sharcoux/navigation",
+    "npmPkg": "@react-native-assets/navigation",
+    "examples": ["https://snack.expo.dev/@sharcoux/react-native-navigation"],
+    "images": ["https://github.com/Sharcoux/navigation/blob/master/example/navigation.gif"],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
 ]
