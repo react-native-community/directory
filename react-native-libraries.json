@@ -15408,5 +15408,19 @@
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pushy/pushy-expo-plugin",
+    "examples": [
+      "https://github.com/pushy/pushy-demo-expo",
+      "https://pushy.me/docs/additional-platforms/react-native"
+    ],
+    "images": [
+      "https://github.com/pushy/pushy-demo-expo/raw/main/img/3.png",
+      "https://github.com/pushy/pushy-demo-expo/raw/main/img/4.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
