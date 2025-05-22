@@ -16842,105 +16842,56 @@
     "name": "@xmldom/xmldom",
     "npmPkg": "@xmldom/xmldom",
     "description": "A pure JavaScript W3C DOMParser and XMLSerializer implementation for Node.js, Rhino and the browser.",
-    "github": "https://github.com/xmldom/xmldom",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "tags": [
-      "utility",
-      "xml"
-    ]
+    "githubUrl": "https://github.com/xmldom/xmldom",
+    "platforms": ["ios", "android", "web"],
+    "tags": ["utility", "xml"]
   },
   {
     "name": "expo-env",
     "npmPkg": "expo-env",
     "description": "Environment variable support for Expo apps.",
-    "github": "https://github.com/expo/expo",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "tags": [
-      "expo",
-      "utility",
-      "env"
-    ]
+    "githubUrl": "https://github.com/expo/expo",
+    "platforms": ["ios", "android", "web"],
+    "tags": ["expo", "utility", "env"]
   },
   {
     "name": "expo-facebook",
     "npmPkg": "expo-facebook",
     "description": "Facebook SDK integration for Expo apps.",
-    "github": "https://github.com/expo/expo/tree/main/packages/expo-facebook",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "tags": [
-      "expo",
-      "social",
-      "facebook",
-      "auth"
-    ]
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-facebook",
+    "platforms": ["ios", "android"],
+    "tags": ["expo", "social", "facebook", "auth"]
   },
   {
     "name": "glob",
     "npmPkg": "glob",
     "description": "Match files using the patterns the shell uses.",
-    "github": "https://github.com/isaacs/node-glob",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "tags": [
-      "utility",
-      "filesystem"
-    ]
+    "githubUrl": "https://github.com/isaacs/node-glob",
+    "platforms": ["ios", "android", "web"],
+    "tags": ["utility", "filesystem"]
   },
   {
     "name": "metro",
     "npmPkg": "metro",
     "description": "Metro is a JavaScript bundler for React Native.",
-    "github": "https://github.com/facebook/metro",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "tags": [
-      "bundler",
-      "react-native"
-    ]
+    "githubUrl": "https://github.com/facebook/metro",
+    "platforms": ["ios", "android"],
+    "tags": ["bundler", "react-native"]
   },
   {
     "name": "metro-resolver",
     "npmPkg": "metro-resolver",
     "description": "Module resolution for Metro bundler.",
-    "github": "https://github.com/facebook/metro",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "tags": [
-      "bundler",
-      "react-native"
-    ]
+    "githubUrl": "https://github.com/facebook/metro",
+    "platforms": ["ios", "android"],
+    "tags": ["bundler", "react-native"]
   },
   {
     "name": "uuid",
     "npmPkg": "uuid",
     "description": "Simple, fast generation of RFC4122 UUIDs.",
-    "github": "https://github.com/uuidjs/uuid",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "tags": [
-      "utility",
-      "uuid"
-    ]
+    "githubUrl": "https://github.com/uuidjs/uuid",
+    "platforms": ["ios", "android", "web"],
+    "tags": ["utility", "uuid"]
   }
 ]
