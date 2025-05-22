@@ -1,5 +1,6 @@
 {
   "expo": {
+    "_note": "metro, metro-resolver, glob, uuid, @xmldom/xmldom do not require Expo plugins or app.json configuration.",
     "name": "React Native Directory",
     "slug": "react-native-directory",
     "privacy": "public",
@@ -20,7 +21,15 @@
       "supportsTablet": true
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-env",
+      [
+        "expo-facebook",
+        {
+          "appId": "2229062507525758",
+          "displayName": "Vibe My Car"
+        }
+      ]
     ]
   }
 }
