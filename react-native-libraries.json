@@ -764,7 +764,8 @@
     "ios": true,
     "android": true,
     "visionos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/doefler/react-native-social-share",
@@ -2514,7 +2515,8 @@
       "https://raw.githubusercontent.com/henninghall/react-native-date-picker/master/docs/react-native-date-picker-android-native.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/FriendsOfReact/react-native-gradients",
@@ -2767,7 +2769,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
@@ -2862,7 +2865,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-localization",
@@ -3002,7 +3006,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-task-manager",
@@ -3296,7 +3301,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
@@ -3515,7 +3521,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context",
@@ -3876,7 +3883,8 @@
       "https://raw.githubusercontent.com/peacechen/react-native-modal-selector/master/docs/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/JesperLekland/react-native-svg-charts",
@@ -5037,7 +5045,8 @@
     "githubUrl": "https://github.com/goatandsheep/react-native-dotenv",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gs-akhan/react-native-select",
@@ -5093,7 +5102,8 @@
     "githubUrl": "https://github.com/wcandillon/react-native-redash",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mvayngrib/react-native-randombytes",
@@ -5263,7 +5273,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/xamous/react-native-smooth-pincode-input",
@@ -5439,7 +5450,8 @@
   {
     "githubUrl": "https://github.com/rh389/react-native-securerandom",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Kishanjvaghela/react-native-cardview",
@@ -5738,7 +5750,8 @@
     "githubUrl": "https://github.com/pmadruga/react-native-clean-project",
     "dev": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kristerkari/react-native-sass-transformer",
@@ -6805,7 +6818,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-ui-lib",
@@ -11589,7 +11603,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/routers",
@@ -14641,7 +14656,8 @@
   {
     "githubUrl": "https://github.com/zoontek/react-native-edge-to-edge/tree/main/react-native-is-edge-to-edge",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wn-na/react-native-capture-protection",
