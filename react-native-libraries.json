@@ -7950,14 +7950,17 @@
   {
     "githubUrl": "https://github.com/douglasjunior/react-native-recaptcha-that-works",
     "examples": [
-      "https://github.com/douglasjunior/react-native-recaptcha-that-works/tree/master/Sample"
+      "https://github.com/douglasjunior/react-native-recaptcha-that-works/tree/master/Sample",
+      "https://snack.expo.dev/@douglasjunior/react-native-recaptcha-that-works"
     ],
     "images": [
       "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/normal.gif",
       "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/invisible.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SrBrahma/react-native-payment-icons",
@@ -15453,8 +15456,39 @@
     "fireos": true
   },
   {
+    "githubUrl": "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/npm",
+    "npmPkg": "react-native-reanimated-skeleton",
+    "examples": [
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/app",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/expo",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/web"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pmndrs/jotai",
+    "examples": [
+      "https://codesandbox.io/s/jotai-demo-47wvh",
+      "https://codesandbox.io/s/jotai-demo-forked-x2g5d"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/manuelbieh/geolib",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/xnimorz/use-debounce",
-    "npmPkg": "use-debounce",
     "examples": [
       "https://codesandbox.io/s/kx75xzyrq7"
     ],
