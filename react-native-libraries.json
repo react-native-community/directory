@@ -15497,5 +15497,15 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Landeed/react-native-google-places-sdk",
+    "npmPkg": "react-native-google-places-sdk",
+    "examples": [
+      "https://github.com/Landeed/react-native-google-places-sdk/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
