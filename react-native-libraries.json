@@ -15451,5 +15451,24 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/pmndrs/jotai",
+    "npmPkg": "jotai",
+    "examples": [
+      "https://codesandbox.io/s/jotai-demo-47wvh",
+      "https://codesandbox.io/s/jotai-demo-forked-x2g5d"
+    ],
+    "images": ["https://raw.githubusercontent.com/pmndrs/jotai/HEAD/img/jotai-header-light.png"],
+    "ios": true
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   }
 ]
