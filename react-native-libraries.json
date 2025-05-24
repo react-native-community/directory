@@ -15454,5 +15454,18 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/npm",
+    "npmPkg": "react-native-reanimated-skeleton",
+    "examples": [
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/app",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/expo",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/web"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
