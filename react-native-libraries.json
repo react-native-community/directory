@@ -15451,5 +15451,23 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/xnimorz/use-debounce",
+    "npmPkg": "use-debounce",
+    "examples": [
+      "https://codesandbox.io/s/kx75xzyrq7"
+    ],
+    "images": ["https://raw.githubusercontent.com/xnimorz/use-debounce/master/logo.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   }
 ]
