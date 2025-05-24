@@ -15451,5 +15451,19 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/manuelbieh/geolib",
+    "npmPkg": "geolib",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   }
 ]
