@@ -133,7 +133,8 @@
   {
     "githubUrl": "https://github.com/crazycodeboy/react-native-splash-screen",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kristerkari/pinar",
@@ -446,7 +447,8 @@
     "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
@@ -2903,6 +2905,7 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -5370,6 +5373,7 @@
     "examples": ["https://github.com/FormidableLabs/react-native-app-auth/tree/main/examples/demo"],
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -5967,6 +5971,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "dev": true,
     "unmaintained": true
   },
@@ -11461,6 +11466,7 @@
     "githubUrl": "https://github.com/lucide-icons/lucide/tree/main/packages/lucide-react-native",
     "android": true,
     "ios": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
