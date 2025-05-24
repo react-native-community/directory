@@ -15467,5 +15467,18 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pmndrs/jotai",
+    "npmPkg": "jotai",
+    "examples": [
+      "https://codesandbox.io/s/jotai-demo-47wvh",
+      "https://codesandbox.io/s/jotai-demo-forked-x2g5d"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
