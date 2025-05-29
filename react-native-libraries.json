@@ -44,7 +44,8 @@
     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "npmPkg": "react-native-image-crop-picker"
   },
   {
     "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
