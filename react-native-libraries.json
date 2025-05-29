@@ -4225,6 +4225,19 @@
     "examples": ["https://github.com/jibraniqbal666/react-native-fb-image-grid/tree/master/example"]
   },
   {
+    "githubUrl": "https://github.com/developit/mitt",
+    "examples": [
+     "http://codepen.io/developit/pen/rjMEwW?editors=0110"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "hasNativeModule": false,
+    "newArchitecture": false,
+    "npmPkg": "mitt"
+  },
+  {
     "githubUrl": "https://github.com/mongodb/stitch-js-sdk/tree/master/packages/react-native/sdk",
     "ios": true,
     "android": true,
