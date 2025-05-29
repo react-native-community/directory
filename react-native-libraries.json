@@ -15507,5 +15507,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyochan/expo-iap",
+    "npmPkg": "expo-iap",
+    "examples": [
+      "https://github.com/hyochan/expo-iap/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
