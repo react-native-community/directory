@@ -83680,6 +83680,13 @@
       "topicSearchString": "react-native amap maps mapview"
     },
     {
+      "githubUrl": "https://github.com/developit/mitt",
+      "ios": true,
+      "android": true,
+      "expoGo": true,
+      "npmPkg": "mitt"
+    },
+    {
       "githubUrl": "https://github.com/mixpanel/mixpanel-react-native",
       "examples": [
         "https://github.com/mixpanel/mixpanel-react-native/tree/master/Samples/ContextAPIMixpanel",
