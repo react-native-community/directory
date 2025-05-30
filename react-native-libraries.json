@@ -15518,5 +15518,29 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://www.npmjs.com/package/patch-package",
+    "npmPkg": "patch-package",
+    "examples": [
+      "https://www.npmjs.com/package/patch-package"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://www.npmjs.com/package/postinstall-postinstall",
+    "npmPkg": "postinstall-postinstall",
+    "examples": [
+      "https://www.npmjs.com/package/postinstall-postinstall"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
