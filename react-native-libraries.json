@@ -44,7 +44,8 @@
     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "npmPkg": "react-native-image-crop-picker"
   },
   {
     "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
@@ -15503,6 +15504,16 @@
     "npmPkg": "react-native-google-places-sdk",
     "examples": [
       "https://github.com/Landeed/react-native-google-places-sdk/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyochan/expo-iap",
+    "npmPkg": "expo-iap",
+    "examples": [
+      "https://github.com/hyochan/expo-iap/tree/main/example"
     ],
     "ios": true,
     "android": true,
