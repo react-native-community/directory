@@ -15518,5 +15518,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/developit/mitt",
+    "examples": [
+     "http://codepen.io/developit/pen/rjMEwW?editors=0110"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
