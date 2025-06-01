@@ -15528,5 +15528,14 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Robert27/expo-github-cache",
+    "npmPkg": "@eggl-js/expo-github-cache",
+    "examples": ["https://github.com/Robert27/expo-github-cache/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "dev": true
   }
 ]
