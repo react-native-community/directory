@@ -15537,5 +15537,31 @@
     "android": true,
     "newArchitecture": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/react-hook-form/resolvers",
+    "npmPkg": "@hookform/resolvers",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/joe-bell/cva",
+    "npmPkg": "class-variance-authority",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/duongdev/phosphor-react-native",
+    "npmPkg": "phosphor-react-native",
+    "examples": ["https://github.com/duongdev/phosphor-react-native/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
