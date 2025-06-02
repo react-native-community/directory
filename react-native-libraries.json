@@ -1091,12 +1091,13 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/FormidableLabs/victory-native-xl/tree/main/lib",
+    "githubUrl": "https://github.com/FormidableLabs/victory-native-xl",
     "npmPkg": "victory-native",
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mastermoo/react-native-action-button",
