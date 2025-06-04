@@ -15548,7 +15548,6 @@
   },
   {
     "githubUrl": "https://github.com/joe-bell/cva/tree/main/packages/class-variance-authority",
-    "npmPkg": "class-variance-authority",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -15556,7 +15555,6 @@
   },
   {
     "githubUrl": "https://github.com/duongdev/phosphor-react-native",
-    "npmPkg": "phosphor-react-native",
     "examples": ["https://github.com/duongdev/phosphor-react-native/tree/main/example"],
     "ios": true,
     "android": true,
@@ -15565,7 +15563,6 @@
   },
   {
     "githubUrl": "https://github.com/EliteWise/react-native-ranking-leaderboard",
-    "npmPkg": "react-native-ranking-leaderboard",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -15573,7 +15570,6 @@
   },
   {
     "githubUrl": "https://github.com/entropyconquers/react-native-reanimated-dnd",
-    "npmPkg": "react-native-reanimated-dnd",
     "examples": ["https://github.com/entropyconquers/react-native-reanimated-dnd/tree/main/example-app"],
     "ios": true,
     "android": true,
@@ -15581,8 +15577,22 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/mrousavy/react-native-pressable-opacity",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Charanor/react-native-highlight-overlay",
+    "examples": ["https://github.com/Charanor/react-native-highlight-overlay/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
-    "npmPkg": "react-native-video-trim",
     "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
     "ios": true,
     "android": true,
