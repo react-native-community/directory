@@ -15597,5 +15597,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/enzomanuelmangano/pressto",
+    "examples": ["https://github.com/enzomanuelmangano/pressto/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
