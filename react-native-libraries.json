@@ -15607,10 +15607,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/drizzle-team/drizzle-orm/tree/main/drizzle-orm",
+    "npmPkg": "drizzle-orm",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": false
+  },
+  {
     "githubUrl": "https://github.com/wumke/react-native-exit-app",
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": true
   }
 ]
