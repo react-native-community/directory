@@ -15590,5 +15590,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
+    "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
