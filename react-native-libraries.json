@@ -15571,13 +15571,21 @@
     "expoGo": true,
     "newArchitecture": true
   },
-   {
+  {
     "githubUrl": "https://github.com/entropyconquers/react-native-reanimated-dnd",
     "npmPkg": "react-native-reanimated-dnd",
     "examples": ["https://github.com/entropyconquers/react-native-reanimated-dnd/tree/main/example-app"],
     "ios": true,
     "android": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Expensify/react-native-qrcode-svg",
+    "npmPkg": "react-native-qrcode-svg",
+    "examples": ["https://github.com/Expensify/react-native-qrcode-svg/tree/main/Example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
