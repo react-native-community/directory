@@ -15570,5 +15570,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+   {
+    "githubUrl": "https://github.com/entropyconquers/react-native-reanimated-dnd",
+    "npmPkg": "react-native-reanimated-dnd",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
