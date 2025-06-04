@@ -15605,5 +15605,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wumke/react-native-exit-app",
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
