@@ -15579,5 +15579,14 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+     {
+    "githubUrl": "https://github.com/Charanor/react-native-highlight-overlay",
+    "npmPkg": "react-native-highlight-overlay",
+    "examples": ["https://github.com/Charanor/react-native-highlight-overlay/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
