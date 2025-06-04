@@ -15571,13 +15571,13 @@
     "expoGo": true,
     "newArchitecture": true
   },
-   {
-    "githubUrl": "https://github.com/entropyconquers/react-native-reanimated-dnd",
-    "npmPkg": "react-native-reanimated-dnd",
-    "examples": ["https://github.com/entropyconquers/react-native-reanimated-dnd/tree/main/example-app"],
+  {
+    "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
+    "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
+    "npmPkg": "react-native-video-trim",
     "ios": true,
     "android": true,
-    "expoGo": true,
+    "expoGo": false,
     "newArchitecture": true
   }
 ]
