@@ -15619,5 +15619,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dev-family/react-native-device-country",
+    "examples": ["https://github.com/dev-family/react-native-device-country/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
   }
 ]
