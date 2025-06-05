@@ -15633,5 +15633,12 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/MortalKastor/expo-resolve-url",
+    "examples": ["https://github.com/MortalKastor/expo-resolve-url/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
