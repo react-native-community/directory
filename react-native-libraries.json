@@ -15626,5 +15626,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo",
+    "npmPkg": "expo-checkbox",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
