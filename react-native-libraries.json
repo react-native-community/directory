@@ -15626,5 +15626,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-checkbox",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
