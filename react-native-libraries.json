@@ -15633,5 +15633,12 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jekingohel/react-native-wordcloud",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
   }
 ]
