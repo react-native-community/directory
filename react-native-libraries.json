@@ -15658,11 +15658,18 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/jekingohel/react-native-wordcloud",
+    "npmPkg": "rn-wordcloud",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-network-info",
     "examples": ["https://github.com/patrickkabwe/react-native-nitro-network-info/tree/main/example"],
     "android": true,
     "ios": true,
-    "newArchitecture": true,
-    "npmPkg": "react-native-nitro-network-info"
+    "newArchitecture": true
   }
 ]
