@@ -44,7 +44,8 @@
     "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "npmPkg": "react-native-image-crop-picker"
   },
   {
     "githubUrl": "https://github.com/richardvclam/react-native-resegmented-control",
@@ -133,7 +134,8 @@
   {
     "githubUrl": "https://github.com/crazycodeboy/react-native-splash-screen",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kristerkari/pinar",
@@ -446,7 +448,8 @@
     "githubUrl": "https://github.com/wonday/react-native-orientation-locker",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
@@ -764,7 +767,8 @@
     "ios": true,
     "android": true,
     "visionos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/doefler/react-native-social-share",
@@ -2514,7 +2518,8 @@
       "https://raw.githubusercontent.com/henninghall/react-native-date-picker/master/docs/react-native-date-picker-android-native.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/FriendsOfReact/react-native-gradients",
@@ -2767,7 +2772,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-file-system",
@@ -2862,7 +2868,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-localization",
@@ -2899,6 +2906,7 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -3002,7 +3010,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-task-manager",
@@ -3296,7 +3305,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/RosterBuster/rn-zendesk",
@@ -3515,7 +3525,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/th3rdwave/react-native-safe-area-context",
@@ -3876,7 +3887,8 @@
       "https://raw.githubusercontent.com/peacechen/react-native-modal-selector/master/docs/demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/JesperLekland/react-native-svg-charts",
@@ -5037,7 +5049,8 @@
     "githubUrl": "https://github.com/goatandsheep/react-native-dotenv",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gs-akhan/react-native-select",
@@ -5093,7 +5106,8 @@
     "githubUrl": "https://github.com/wcandillon/react-native-redash",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mvayngrib/react-native-randombytes",
@@ -5263,7 +5277,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/xamous/react-native-smooth-pincode-input",
@@ -5359,6 +5374,7 @@
     "examples": ["https://github.com/FormidableLabs/react-native-app-auth/tree/main/examples/demo"],
     "ios": true,
     "android": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -5439,7 +5455,8 @@
   {
     "githubUrl": "https://github.com/rh389/react-native-securerandom",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Kishanjvaghela/react-native-cardview",
@@ -5738,7 +5755,8 @@
     "githubUrl": "https://github.com/pmadruga/react-native-clean-project",
     "dev": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kristerkari/react-native-sass-transformer",
@@ -5954,6 +5972,7 @@
     ],
     "ios": true,
     "android": true,
+    "fireos": true,
     "dev": true,
     "unmaintained": true
   },
@@ -6805,7 +6824,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-ui-lib",
@@ -7931,14 +7951,17 @@
   {
     "githubUrl": "https://github.com/douglasjunior/react-native-recaptcha-that-works",
     "examples": [
-      "https://github.com/douglasjunior/react-native-recaptcha-that-works/tree/master/Sample"
+      "https://github.com/douglasjunior/react-native-recaptcha-that-works/tree/master/Sample",
+      "https://snack.expo.dev/@douglasjunior/react-native-recaptcha-that-works"
     ],
     "images": [
       "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/normal.gif",
       "https://raw.githubusercontent.com/douglasjunior/react-native-recaptcha-that-works/master/screenshots/invisible.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SrBrahma/react-native-payment-icons",
@@ -9872,10 +9895,14 @@
   {
     "githubUrl": "https://github.com/Sharcoux/slider",
     "npmPkg": "@react-native-assets/slider",
-    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8?file=/src/App.js"],
-    "ios": true,
+    "examples": ["https://codesandbox.io/s/sharcoux-slider-demo-7fqnk8"],
+    "images": ["https://github.com/Sharcoux/slider/blob/master/slider.gif"],
     "android": true,
-    "web": true
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/react",
@@ -11443,6 +11470,7 @@
     "githubUrl": "https://github.com/lucide-icons/lucide/tree/main/packages/lucide-react-native",
     "android": true,
     "ios": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -11585,7 +11613,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/routers",
@@ -12643,13 +12672,112 @@
   },
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/master/code/ui/tamagui",
+    "npmPkg": "tamagui",
     "examples": ["https://tamagui.dev"],
     "images": [
       "https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"
     ],
     "android": true,
     "ios": true,
-    "web": true
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-moti",
+    "npmPkg": "@tamagui/animations-moti",
+    "examples": [
+      "https://tamagui.dev/docs/core/animations"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-react-native",
+    "npmPkg": "@tamagui/animations-react-native",
+    "examples": [
+      "https://tamagui.dev/docs/core/configuration"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/compiler/babel-plugin",
+    "npmPkg": "@tamagui/babel-plugin",
+    "examples": [
+      "https://tamagui.dev/docs/intro/compiler-install"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/cli",
+    "npmPkg": "@tamagui/cli",
+    "examples": [
+      "https://tamagui.dev/docs/intro/introduction"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/config",
+    "npmPkg": "@tamagui/config",
+    "examples": [
+      "https://tamagui.dev/docs/core/configuration"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/shorthands",
+    "npmPkg": "@tamagui/shorthands",
+    "examples": [
+      "https://tamagui.dev/docs/core/configuration#shorthands"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/themes",
+    "npmPkg": "@tamagui/themes",
+    "examples": [
+      "https://tamagui.dev/docs/intro/themes"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/ui/toast",
+    "npmPkg": "@tamagui/toast",
+    "examples": [
+      "https://tamagui.dev/ui/toast"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": false,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/react-native-webp-converter",
@@ -12869,7 +12997,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/colinhacks/zod",
+    "githubUrl": "https://github.com/colinhacks/zod/tree/main/packages/zod",
     "ios": true,
     "android": true,
     "web": true,
@@ -13444,9 +13572,7 @@
     "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager",
     "ios": true,
     "android": true,
-    "unmaintained": true,
-    "alternatives": ["react-native-ble-plx"],
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-video",
@@ -14638,7 +14764,8 @@
   {
     "githubUrl": "https://github.com/zoontek/react-native-edge-to-edge/tree/main/react-native-is-edge-to-edge",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wn-na/react-native-capture-protection",
@@ -15368,6 +15495,277 @@
     "examples": [
       "https://github.com/patrickkabwe/react-native-nitro-google-sso/tree/main/example"
     ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Sharcoux/rn-css",
+    "npmPkg": "rn-css",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/cantoo-scribe/pdf-lib",
+    "npmPkg": "@cantoo/pdf-lib",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Sharcoux/navigation",
+    "npmPkg": "@react-native-assets/navigation",
+    "examples": ["https://snack.expo.dev/@sharcoux/react-native-navigation"],
+    "images": ["https://github.com/Sharcoux/navigation/blob/master/example/navigation.gif"],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pushy/pushy-expo-plugin",
+    "examples": [
+      "https://github.com/pushy/pushy-demo-expo",
+      "https://pushy.me/docs/additional-platforms/react-native"
+    ],
+    "images": [
+      "https://github.com/pushy/pushy-demo-expo/raw/main/img/3.png",
+      "https://github.com/pushy/pushy-demo-expo/raw/main/img/4.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/fast-is-equal",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/npm",
+    "npmPkg": "react-native-reanimated-skeleton",
+    "examples": [
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/app",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/expo",
+      "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/web"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pmndrs/jotai",
+    "examples": [
+      "https://codesandbox.io/s/jotai-demo-47wvh",
+      "https://codesandbox.io/s/jotai-demo-forked-x2g5d"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/manuelbieh/geolib",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/xnimorz/use-debounce",
+    "examples": [
+      "https://codesandbox.io/s/kx75xzyrq7"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Landeed/react-native-google-places-sdk",
+    "npmPkg": "react-native-google-places-sdk",
+    "examples": [
+      "https://github.com/Landeed/react-native-google-places-sdk/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyochan/expo-iap",
+    "npmPkg": "expo-iap",
+    "examples": [
+      "https://github.com/hyochan/expo-iap/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/developit/mitt",
+    "examples": [
+     "http://codepen.io/developit/pen/rjMEwW?editors=0110"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Robert27/expo-github-cache",
+    "npmPkg": "@eggl-js/expo-github-cache",
+    "examples": ["https://github.com/Robert27/expo-github-cache/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/react-hook-form/resolvers",
+    "npmPkg": "@hookform/resolvers",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/joe-bell/cva/tree/main/packages/class-variance-authority",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/duongdev/phosphor-react-native",
+    "examples": ["https://github.com/duongdev/phosphor-react-native/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/EliteWise/react-native-ranking-leaderboard",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/entropyconquers/react-native-reanimated-dnd",
+    "examples": ["https://github.com/entropyconquers/react-native-reanimated-dnd/tree/main/example-app"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-pressable-opacity",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Charanor/react-native-highlight-overlay",
+    "examples": ["https://github.com/Charanor/react-native-highlight-overlay/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
+    "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/enzomanuelmangano/pressto",
+    "examples": ["https://github.com/enzomanuelmangano/pressto/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/drizzle-team/drizzle-orm/tree/main/drizzle-orm",
+    "npmPkg": "drizzle-orm",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wumke/react-native-exit-app",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dev-family/react-native-device-country",
+    "examples": ["https://github.com/dev-family/react-native-device-country/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-checkbox",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/benjamineruvieru/react-native-pushdown-alert",
+    "examples": ["https://github.com/benjamineruvieru/react-native-pushdown-alert/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/benjamineruvieru/react-native-credentials-manager",
+    "examples": ["https://github.com/benjamineruvieru/react-native-credentials-manager/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/MortalKastor/expo-resolve-url",
+    "examples": ["https://github.com/MortalKastor/expo-resolve-url/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jekingohel/react-native-wordcloud",
+    "npmPkg": "rn-wordcloud",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-network-info",
+    "examples": ["https://github.com/patrickkabwe/react-native-nitro-network-info/tree/main/example"],
     "android": true,
     "ios": true,
     "newArchitecture": true
