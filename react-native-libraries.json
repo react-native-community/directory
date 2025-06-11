@@ -8654,7 +8654,8 @@
   {
     "githubUrl": "https://github.com/Luffos/rxn-input",
     "android": true,
-    "web": true
+    "web": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/wobsoriano/rn-perfect-sketch-canvas",
@@ -9973,7 +9974,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/situmtech/react-native",
+    "githubUrl": "https://github.com/situmtech/react-native/tree/master/plugin",
     "npmPkg": "@situm/react-native",
     "examples": ["https://github.com/situmtech/react-native/tree/master/example"],
     "images": ["https://github.com/situmtech/react-native/blob/master/docs/assets/preview.png"],
@@ -13529,7 +13530,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager",
+    "githubUrl": "https://github.com/patlux/react-native-bluetooth-state-manager/tree/master/packages/react-native-bluetooth-state-manager",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -14273,7 +14274,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-executorch",
+    "githubUrl": "https://github.com/software-mansion/react-native-executorch/tree/main/packages/react-native-executorch",
     "examples": [
       "https://github.com/software-mansion/react-native-executorch/tree/main/examples/computer-vision",
       "https://github.com/software-mansion/react-native-executorch/tree/main/examples/llama",
@@ -15729,5 +15730,23 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tarikfp/expo-pencilkit-ui",
+    "examples": ["https://github.com/tarikfp/expo-pencilkit-ui/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-whip-whep",
+    "examples": ["https://github.com/software-mansion/react-native-whip-whep/tree/main/examples/react-native/WhipWhepDemo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/react-native-audio-api/tree/main/packages/react-native-audio-api",
+    "examples": ["https://github.com/software-mansion/react-native-audio-api/tree/main/apps/fabric-example"],
+    "ios": true,
+    "android": true
   }
 ]
