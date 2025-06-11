@@ -12708,30 +12708,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/compiler/babel-plugin",
-    "npmPkg": "@tamagui/babel-plugin",
-    "examples": [
-      "https://tamagui.dev/docs/intro/compiler-install"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/cli",
-    "npmPkg": "@tamagui/cli",
-    "examples": [
-      "https://tamagui.dev/docs/intro/introduction"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/config",
     "npmPkg": "@tamagui/config",
     "examples": [
