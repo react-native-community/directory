@@ -12672,7 +12672,6 @@
   },
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/master/code/ui/tamagui",
-    "npmPkg": "tamagui",
     "examples": ["https://tamagui.dev"],
     "images": [
       "https://raw.githubusercontent.com/tamagui/tamagui/master/code/tamagui.dev/public/social.png"
@@ -12686,9 +12685,6 @@
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-moti",
     "npmPkg": "@tamagui/animations-moti",
-    "examples": [
-      "https://tamagui.dev/docs/core/animations"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12698,9 +12694,6 @@
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-react-native",
     "npmPkg": "@tamagui/animations-react-native",
-    "examples": [
-      "https://tamagui.dev/docs/core/configuration"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12710,9 +12703,6 @@
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/config",
     "npmPkg": "@tamagui/config",
-    "examples": [
-      "https://tamagui.dev/docs/core/configuration"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12722,9 +12712,6 @@
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/shorthands",
     "npmPkg": "@tamagui/shorthands",
-    "examples": [
-      "https://tamagui.dev/docs/core/configuration#shorthands"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12734,9 +12721,6 @@
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/themes",
     "npmPkg": "@tamagui/themes",
-    "examples": [
-      "https://tamagui.dev/docs/intro/themes"
-    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -12747,7 +12731,7 @@
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/ui/toast",
     "npmPkg": "@tamagui/toast",
     "examples": [
-      "https://tamagui.dev/ui/toast"
+      "https://github.com/tamagui/tamagui/blob/main/code/demos/src/ToastDemo.tsx"
     ],
     "ios": true,
     "android": true,
