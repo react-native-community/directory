@@ -12679,6 +12679,64 @@
     "android": true,
     "ios": true,
     "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-moti",
+    "npmPkg": "@tamagui/animations-moti",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-react-native",
+    "npmPkg": "@tamagui/animations-react-native",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/config",
+    "npmPkg": "@tamagui/config",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/shorthands",
+    "npmPkg": "@tamagui/shorthands",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/themes",
+    "npmPkg": "@tamagui/themes",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/ui/toast",
+    "npmPkg": "@tamagui/toast",
+    "examples": [
+      "https://github.com/tamagui/tamagui/blob/main/code/demos/src/ToastDemo.tsx"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": false,
     "newArchitecture": true
   },
   {
