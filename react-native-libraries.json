@@ -15738,7 +15738,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-whip-whep",
+    "githubUrl": "https://github.com/software-mansion/react-native-whip-whep/tree/main/packages/react-native-client",
+    "npmPkg": "react-native-whip-whep",
     "examples": ["https://github.com/software-mansion/react-native-whip-whep/tree/main/examples/react-native/WhipWhepDemo"],
     "ios": true,
     "android": true
