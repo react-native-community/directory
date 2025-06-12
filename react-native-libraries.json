@@ -15750,8 +15750,14 @@
     "ios": true,
     "android": true
   },
-   {
+  {
     "githubUrl": "https://github.com/teamairship/react-native-public-ip",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/thinhkhang97/react-native-viewport-detector",
+    "examples": ["https://github.com/thinhkhang97/react-native-viewport-detector/tree/master/examples"],
     "ios": true,
     "android": true
   }
