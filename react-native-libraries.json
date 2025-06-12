@@ -15749,5 +15749,11 @@
     "examples": ["https://github.com/software-mansion/react-native-audio-api/tree/main/apps/fabric-example"],
     "ios": true,
     "android": true
+  },
+    {
+    "githubUrl": "https://github.com/romgrk/react-fast-memo",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
