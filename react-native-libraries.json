@@ -15749,5 +15749,12 @@
     "examples": ["https://github.com/software-mansion/react-native-audio-api/tree/main/apps/fabric-example"],
     "ios": true,
     "android": true
+  },
+   {
+    "githubUrl": "https://github.com/rn-toolkit/react-native-lottie-splash-screen",
+    "npmPkg": "@rn-toolkit/react-native-lottie-splash-screen",
+    "examples": ["https://github.com/rn-toolkit/react-native-lottie-splash-screen/tree/master/examples"],
+    "ios": true,
+    "android": true
   }
 ]
