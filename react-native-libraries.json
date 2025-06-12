@@ -11434,7 +11434,8 @@
       "https://github.com/adaptyteam/AdaptySDK-React-Native/tree/master/examples/SubscriptionsJS"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/stnrd/healthicons/tree/main/packages/healthicons-react-native",
@@ -15750,7 +15751,18 @@
     "ios": true,
     "android": true
   },
-   {
+  {
+    "githubUrl": "https://github.com/teamairship/react-native-public-ip",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/thinhkhang97/react-native-viewport-detector",
+    "examples": ["https://github.com/thinhkhang97/react-native-viewport-detector/tree/master/examples"],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/rn-toolkit/react-native-lottie-splash-screen",
     "npmPkg": "@rn-toolkit/react-native-lottie-splash-screen",
     "examples": ["https://github.com/rn-toolkit/react-native-lottie-splash-screen/tree/master/examples"],
