@@ -15809,5 +15809,17 @@
     ],
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-tvos-ssl-pinning",
+    "npmPkg": "@logicwind/react-native-tvos-ssl-pinning",
+    "examples": [
+      "https://github.com/logicwind/react-native-tvos-ssl-pinning/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "fireos": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
