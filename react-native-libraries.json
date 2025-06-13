@@ -15788,5 +15788,17 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-exit-app",
+    "npmPkg": "@logicwind/react-native-exit-app",
+    "examples": [
+      "https://github.com/logicwind/react-native-exit-app/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "fireos": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
