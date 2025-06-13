@@ -15421,7 +15421,8 @@
       "https://github.com/logicwind/react-native-status-bar-height/tree/master/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-matomo-tracker",
@@ -15432,7 +15433,8 @@
     "ios": true,
     "android": true,
     "tvos": true,
-    "fireos": true
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-fold-detection",
@@ -15786,5 +15788,38 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-exit-app",
+    "npmPkg": "@logicwind/react-native-exit-app",
+    "examples": [
+      "https://github.com/logicwind/react-native-exit-app/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "fireos": true,
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-tvos-keyboard",
+    "npmPkg": "@logicwind/react-native-tvos-keyboard",
+    "examples": [
+      "https://github.com/logicwind/react-native-tvos-keyboard/tree/master/example"
+    ],
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-tvos-ssl-pinning",
+    "npmPkg": "@logicwind/react-native-tvos-ssl-pinning",
+    "examples": [
+      "https://github.com/logicwind/react-native-tvos-ssl-pinning/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "fireos": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
