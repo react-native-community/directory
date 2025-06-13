@@ -15800,5 +15800,14 @@
     "fireos": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-tvos-keyboard",
+    "npmPkg": "@logicwind/react-native-tvos-keyboard",
+    "examples": [
+      "https://github.com/logicwind/react-native-tvos-keyboard/tree/master/example"
+    ],
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
