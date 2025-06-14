@@ -15821,5 +15821,15 @@
     "fireos": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/loro-dev/loro-react-native",
+    "npmPkg": "loro-react-native",
+    "examples": [
+      "https://github.com/loro-dev/loro-react-native/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
