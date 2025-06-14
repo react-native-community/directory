@@ -15821,5 +15821,14 @@
     "fireos": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/CRIIPI11/rn-watch-connect",
+    "npmPkg": "rn-watch-connect",
+    "examples": [
+      "https://github.com/CRIIPI11/rn-watch-connect/tree/master/example"
+    ],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
