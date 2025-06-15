@@ -15842,5 +15842,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-navigation-mode",
+    "examples": [
+      "https://github.com/JairajJangle/react-native-navigation-mode/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/JairajJangle/react-native-navigation-mode/blob/main/.github/assets/buttons.png",
+      "https://github.com/JairajJangle/react-native-navigation-mode/blob/main/.github/assets/gesture.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
