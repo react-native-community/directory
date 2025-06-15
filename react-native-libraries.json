@@ -14471,7 +14471,8 @@
     "githubUrl": "https://github.com/evergrace-co/react-native-audio-pro",
     "examples": ["https://github.com/evergrace-co/react-native-audio-pro/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/i18next/i18next",
