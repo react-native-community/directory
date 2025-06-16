@@ -15876,5 +15876,14 @@
     "npmPkg": "react-native-rn-in-app-update",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/galeria",
+    "npmPkg": "@nandorojo/galeria",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "unmaintained": false,
+    "newArchitecture": true
   }
 ]
