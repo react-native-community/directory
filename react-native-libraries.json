@@ -15870,5 +15870,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/logicwind/react-native-rn-in-app-update",
+    "npmPkg": "react-native-rn-in-app-update",
+    "ios": true,
+    "android": true
   }
 ]
