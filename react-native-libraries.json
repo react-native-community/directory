@@ -15588,7 +15588,7 @@
   {
     "githubUrl": "https://github.com/developit/mitt",
     "examples": [
-     "http://codepen.io/developit/pen/rjMEwW?editors=0110"
+      "http://codepen.io/developit/pen/rjMEwW?editors=0110"
     ],
     "ios": true,
     "android": true,
@@ -15853,6 +15853,20 @@
       "https://github.com/JairajJangle/react-native-navigation-mode/blob/main/.github/assets/buttons.png",
       "https://github.com/JairajJangle/react-native-navigation-mode/blob/main/.github/assets/gesture.png"
     ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/sbaiahmed1/react-native-blur",
+    "examples": [
+      "https://github.com/sbaiahmed1/react-native-blur/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/sbaiahmed1/react-native-blur/blob/main/android-demo.gif",
+      "https://github.com/sbaiahmed1/react-native-blur/blob/main/iOS-demo.gif"
+    ],
+    "npmPkg": "@sbaiahmed1/react-native-blur",
     "ios": true,
     "android": true,
     "newArchitecture": true
