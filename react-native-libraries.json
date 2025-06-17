@@ -15895,5 +15895,12 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/openspacelabs/react-native-zoomable-view",
+    "npmPkg": "@openspacelabs/react-native-zoomable-view",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
