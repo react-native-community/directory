@@ -15884,5 +15884,16 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/codemask-labs/stan-js",
+    "examples": [
+      "https://codemask-labs.github.io/stan-js/examples/react/"
+    ],
+    "npmPkg": "stan-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
