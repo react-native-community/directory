@@ -9862,8 +9862,10 @@
   {
     "githubUrl": "https://github.com/aidin36/react-native-pie-chart",
     "examples": ["https://github.com/aidin36/react-native-pie-chart/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/aidin36/react-native-pie-chart/main/preview.png"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/fracht/react-native-input-autofocus/tree/main/lib",
