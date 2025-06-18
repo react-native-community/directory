@@ -15904,5 +15904,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kiethuynh0904/react-native-nitro-toast",
+    "npmPkg": "react-native-nitro-toast",
+    "examples": [
+      "https://github.com/kiethuynh0904/react-native-nitro-toast/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
