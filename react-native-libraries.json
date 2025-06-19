@@ -14880,8 +14880,11 @@
   },
   {
     "githubUrl": "https://github.com/echowaves/expo-cached-image",
+    "npmPkg": "expo-cached-image",
+    "android": true,
     "ios": true,
-    "android": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/alanjhughes/expo-shazamkit",
