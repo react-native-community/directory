@@ -15866,5 +15866,15 @@
     ],
     "macos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/facebookarchive/emitter",
+    "npmPkg": "https://www.npmjs.com/package/fbemitter",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "unmaintained": true
   }
 ]
