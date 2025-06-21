@@ -130,6 +130,9 @@ async function buildAndScoreData() {
   data = data.map(project => ({
     ...project,
     npm: {
+      // Keep existing npm data (for scoped packages processed individually)
+      ...project.npm,
+      // Add bulk query results (for regular packages)
       ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
       // ...(downloadsListWeek.find(entry => entry.name === project.npmPkg)?.npm ?? {}),
     },
