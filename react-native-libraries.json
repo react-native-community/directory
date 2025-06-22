@@ -15884,5 +15884,20 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-bridges/react-native-youtube-bridge",
+    "examples": [
+      "https://snack.expo.dev/@harang/react-native-youtube-bridge",
+      "https://github.com/react-native-bridges/react-native-youtube-bridge/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/react-native-bridges/react-native-youtube-bridge/blob/main/assets/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "expoGo": true
   }
 ]
