@@ -30,6 +30,10 @@ const SCRAPE_GH_IMAGES = false;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
+// If script should only write to the local data file and not upload to the store.
+// This is useful for debugging and testing purposes.
+const ONLY_WRITE_LOCAL_DATA_FILE = true;
+
 const invalidRepos = [];
 const mismatchedRepos = [];
 
@@ -228,10 +232,10 @@ async function buildAndScoreData() {
       Object.keys(entry.npm).length > 0
         ? entry
         : {
-            ...entry,
-            npm:
-              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
-          }
+          ...entry,
+          npm:
+            latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+        }
     );
     const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
 
@@ -246,7 +250,7 @@ async function buildAndScoreData() {
     );
   }
 
-  if (!USE_DEBUG_REPOS) {
+  if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
     await uploadToStore(fileContent);
   }
 
@@ -328,6 +332,13 @@ async function loadRepositoryDataAsync() {
 }
 
 async function fetchLatestData() {
+  if (ONLY_WRITE_LOCAL_DATA_FILE) {
+    console.log('⚠️ Only writing to local data file, skipping blob store fetch');
+    return {
+      latestData: JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')),
+    };
+  }
+
   const { blobs } = await list();
 
   if (blobs?.length > 0) {
