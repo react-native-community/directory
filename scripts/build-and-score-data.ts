@@ -32,7 +32,7 @@ const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 // If script should only write to the local data file and not upload to the store.
 // This is useful for debugging and testing purposes.
-const ONLY_WRITE_LOCAL_DATA_FILE = true;
+const ONLY_WRITE_LOCAL_DATA_FILE = false;
 
 const invalidRepos = [];
 const mismatchedRepos = [];
