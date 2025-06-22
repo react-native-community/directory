@@ -15878,6 +15878,14 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/anuj-kumary/react-native-toastify",
+    "npmPkg": "react-native-toastify-expo",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/react-native-bridges/react-native-youtube-bridge",
     "examples": [
       "https://snack.expo.dev/@harang/react-native-youtube-bridge",
