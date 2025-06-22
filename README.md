@@ -221,7 +221,7 @@ https://reactnative.directory/api/libraries
 
 ## I don't like how you calculate scores.
 
-- Submit a PR with changes to `scripts/calculate-score.js`.
+- Submit a PR with changes to `scripts/calculate-score.ts`.
 - You have all the power! Tell us what you want.
 
 ## How do I deploy my own version of this?
