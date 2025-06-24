@@ -15901,6 +15901,17 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/sbaiahmed1/react-native-biometrics",
+    "examples": ["https://github.com/sbaiahmed1/react-native-biometrics/tree/main/example"],
+    "images": [
+      "https://github.com/sbaiahmed1/react-native-biometrics/blob/main/demo.gif"
+    ],
+    "npmPkg": "@sbaiahmed1/react-native-biometrics",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/yjose/input-otp-native",
     "ios": true,
     "android": true,
