@@ -15899,5 +15899,11 @@
     "web": true,
     "newArchitecture": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/JairajJangle/react-native-navigation-mode",
+    "npmPkg": "react-native-navigation-mode",
+    "android": true,
+    "newArchitecture": true
   }
 ]
