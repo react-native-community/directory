@@ -232,10 +232,10 @@ async function buildAndScoreData() {
       Object.keys(entry.npm).length > 0
         ? entry
         : {
-          ...entry,
-          npm:
-            latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
-        }
+            ...entry,
+            npm:
+              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+          }
     );
     const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
 
