@@ -9397,12 +9397,9 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/Kingstinct/react-native-healthkit",
+    "githubUrl": "https://github.com/kingstinct/react-native-healthkit/tree/master/packages/react-native-healthkit",
     "npmPkg": "@kingstinct/react-native-healthkit",
-    "examples": [
-      "https://github.com/Kingstinct/react-native-healthkit/tree/master/example",
-      "https://github.com/Kingstinct/react-native-healthkit/tree/master/example-expo"
-    ],
+    "examples": ["https://github.com/kingstinct/react-native-healthkit/tree/master/apps/example"],
     "ios": true,
     "newArchitecture": true
   },
@@ -15886,7 +15883,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/react-native-bridges/react-native-youtube-bridge",
+    "githubUrl": "https://github.com/react-native-bridges/react-native-youtube-bridge/tree/main/packages/react-native-youtube-bridge",
     "examples": [
       "https://snack.expo.dev/@harang/react-native-youtube-bridge",
       "https://github.com/react-native-bridges/react-native-youtube-bridge/tree/main/example"
@@ -15903,9 +15900,7 @@
   {
     "githubUrl": "https://github.com/sbaiahmed1/react-native-biometrics",
     "examples": ["https://github.com/sbaiahmed1/react-native-biometrics/tree/main/example"],
-    "images": [
-      "https://github.com/sbaiahmed1/react-native-biometrics/blob/main/demo.gif"
-    ],
+    "images": ["https://github.com/sbaiahmed1/react-native-biometrics/blob/main/demo.gif"],
     "npmPkg": "@sbaiahmed1/react-native-biometrics",
     "ios": true,
     "android": true,
