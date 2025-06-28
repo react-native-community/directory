@@ -15915,6 +15915,7 @@
   },
   {
     "githubUrl": "https://github.com/vega-ui/ui-react-native/tree/main/packages/ui",
+    "examples": ["https://github.com/vega-ui/ui-react-native/tree/main/apps/preview"],
     "npmPkg": "@vega-ui/react-native",
     "ios": true,
     "android": true,
