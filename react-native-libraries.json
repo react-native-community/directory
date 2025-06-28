@@ -15921,5 +15921,20 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-bridges/react-native-vimeo-bridge",
+    "examples": [
+      "https://snack.expo.dev/@harang/react-native-vimeo-bridge",
+      "https://github.com/react-native-bridges/react-native-vimeo-bridge/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/react-native-bridges/react-native-vimeo-bridge/main/assets/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "expoGo": true
   }
 ]
