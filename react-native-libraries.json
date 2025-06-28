@@ -15912,5 +15912,12 @@
     "android": true,
     "newArchitecture": true,
     "web": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/vega-ui/ui-react-native/tree/main/packages/ui",
+    "npmPkg": "@vega-ui/react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
 ]
