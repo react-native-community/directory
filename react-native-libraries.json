@@ -15918,6 +15918,7 @@
     "npmPkg": "@vega-ui/react-native",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "expoGo": true,
   }
 ]
