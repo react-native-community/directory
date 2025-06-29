@@ -15921,5 +15921,17 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/sjwall/react-native-aria-description/tree/main/lib",
+    "npmPkg": "react-native-aria-description",
+    "examples": [
+      "https://github.com/sjwall/react-native-aria-description/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
