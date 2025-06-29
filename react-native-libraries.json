@@ -15923,6 +15923,21 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/react-native-bridges/react-native-vimeo-bridge",
+    "examples": [
+      "https://snack.expo.dev/@harang/react-native-vimeo-bridge",
+      "https://github.com/react-native-bridges/react-native-vimeo-bridge/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/react-native-bridges/react-native-vimeo-bridge/main/assets/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/sjwall/react-native-aria-description/tree/main/lib",
     "npmPkg": "react-native-aria-description",
     "examples": [
