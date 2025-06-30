@@ -15948,5 +15948,19 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/theboringlok/react-native-place-autocomplete-picker",
+    "npmPkg": "react-native-place-autocomplete-picker",
+    "examples": [
+      "https://github.com/theboringlok/react-native-place-autocomplete-picker/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/theboringlok/react-native-place-autocomplete-picker/blob/main/assets/images/iOSPlaceAutoCompletePicker.gif",
+      "https://github.com/theboringlok/react-native-place-autocomplete-picker/blob/main/assets/images/androidPlaceAutoCompletePicker.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
