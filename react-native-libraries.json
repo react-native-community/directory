@@ -13213,6 +13213,7 @@
   },
   {
     "githubUrl": "https://github.com/SolankiYogesh/rn-date-format",
+    "npmPkg":"rn-date-format",
     "examples": ["https://github.com/SolankiYogesh/rn-date-format/tree/main/example"],
     "ios": true,
     "android": true,
@@ -15969,6 +15970,14 @@
       "https://github.com/theboringlok/react-native-place-autocomplete-picker/blob/main/assets/images/androidPlaceAutoCompletePicker.gif"
     ],
     "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }, 
+  {
+    "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
+    "npmPkg": "rn-turbo-location-enabler",
+    "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
+    "ios": false,
     "android": true,
     "newArchitecture": true
   }
