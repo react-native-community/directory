@@ -15971,5 +15971,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/superwall/expo-superwall",
+    "examples": [
+      "https://github.com/superwall/expo-superwall/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
