@@ -15980,6 +15980,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  }, 
+  {
+    "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
+    "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Iterable/react-native-sdk",
@@ -15989,7 +15995,6 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": true
   },
   {
@@ -16000,7 +16005,6 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": false
   }
 ]
