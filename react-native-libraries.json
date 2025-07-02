@@ -13681,7 +13681,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-brands-svg-icons",
