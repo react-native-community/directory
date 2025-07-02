@@ -15972,12 +15972,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/superwall/expo-superwall",
+    "examples": [
+      "https://github.com/superwall/expo-superwall/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }, 
   {
     "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
-    "npmPkg": "rn-turbo-location-enabler",
     "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
-    "ios": false,
     "android": true,
     "newArchitecture": true
   }
