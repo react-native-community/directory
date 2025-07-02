@@ -15980,6 +15980,32 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  }, 
+  {
+    "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
+    "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Iterable/react-native-sdk",
+    "npmPkg": "@iterable/react-native-sdk",
+    "examples": [
+      "https://github.com/Iterable/react-native-sdk/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Iterable/iterable-expo-plugin",
+    "npmPkg": "@iterable/expo-plugin",
+    "examples": [
+      "https://github.com/Iterable/iterable-expo-plugin/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/Soomgo-Mobile/react-native-code-push",
