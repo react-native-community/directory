@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   unmaintainedTextWrapper: {
     flexDirection: 'row',
     gap: 6,
+    flexShrink: 1,
   },
   unmaintainedTextContainer: {
     alignItems: 'flex-start',
@@ -78,6 +79,8 @@ const styles = StyleSheet.create({
     gap: 4,
     borderWidth: 1,
     borderLeftWidth: 0,
+    flexShrink: 1,
+    flexWrap: 'wrap',
   },
 });
 

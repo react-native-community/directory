@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   updatedAtContainer: {
-    gap: 8,
+    gap: 24,
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
