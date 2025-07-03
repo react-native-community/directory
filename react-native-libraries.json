@@ -16018,5 +16018,25 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/cornejobarraza/expo-libvlc-player",
+    "npmPkg": "expo-libvlc-player",
+    "examples": [
+      "https://github.com/cornejobarraza/expo-libvlc-player/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "expoGo": false,
+    "fireos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
