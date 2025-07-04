@@ -17,6 +17,15 @@
     "category": "Networking"
   },
   {
+    "name": "react-native-unilist",
+    "npmPkg": "react-native-unilist",
+    "description": "The most powerful, flexible, and beautiful FlatList & ScrollView wrapper for React Native.",
+    "githubUrl": "https://github.com/SamadK01/react-native-unilist",
+    "examples": [],
+    "tags": ["flatlist", "scrollview", "list", "grid", "masonry", "carousel", "card", "pagination", "search", "theme", "universal-list", "react-native-unilist"],
+    "category": "List"
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
