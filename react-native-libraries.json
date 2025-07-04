@@ -8,6 +8,15 @@
     "dev": true
   },
   {
+    "name": "react-native-apikit",
+    "npmPkg": "react-native-apikit",
+    "description": "Modern API toolkit for React Native and Expo with automatic token management, smart response parsing, and built-in error handling.",
+    "githubUrl": "https://github.com/SamadK01/apikit",
+    "examples": [],
+    "tags": ["api", "networking", "http", "fetch", "axios", "expo", "typescript"],
+    "category": "Networking"
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
