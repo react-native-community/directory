@@ -16020,6 +16020,15 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/moyasar/moyasar-react-native",
+    "npmPkg": "react-native-moyasar-sdk",
+    "examples": [
+      "https://github.com/moyasar/moyasar-react-native/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/cornejobarraza/expo-libvlc-player",
     "npmPkg": "expo-libvlc-player",
     "examples": [
@@ -16027,16 +16036,7 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
     "expoGo": false,
-    "fireos": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
     "newArchitecture": true
   }
 ]
