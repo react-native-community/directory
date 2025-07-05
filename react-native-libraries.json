@@ -16027,5 +16027,20 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/saseungmin/react-native-gesture-image-viewer",
+    "examples": [
+      "https://snack.expo.dev/@harang/react-native-gesture-image-viewer",
+      "https://github.com/saseungmin/react-native-gesture-image-viewer/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/saseungmin/react-native-gesture-image-viewer/main/assets/example.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "expoGo": true
   }
 ]
