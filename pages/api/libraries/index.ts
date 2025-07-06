@@ -89,7 +89,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const relevanceSortedLibraries =
     querySearch?.length && (!req.query.order || req.query.order === 'relevance')
-      ? Sorting.relevance([...filteredLibraries])
+      ? sortDirection === 'ascending'
+        ? Sorting.relevance([...filteredLibraries]).reverse()
+        : Sorting.relevance([...filteredLibraries])
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 

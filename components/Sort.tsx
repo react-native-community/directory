@@ -1,8 +1,7 @@
 import { Picker } from '@react-native-picker/picker';
 import Router from 'next/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useHover } from 'react-native-web-hooks';
 
 import { colors, darkColors, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -57,10 +56,8 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
   const [paginationOffset, setPaginationOffset] = useState<number | undefined>(
     typeof offset === 'string' ? parseInt(offset, 10) : offset
   );
+  const [isSortIconHovered, setIsSortIconHovered] = useState(false);
   const { isDark } = useContext(CustomAppearanceContext);
-
-  const sortIconRef = useRef();
-  const isSortIconHovered = useHover(sortIconRef);
 
   useEffect(() => {
     const url = urlWithQuery('/', {
@@ -86,7 +83,8 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
           sideOffset={8}
           trigger={
             <Pressable
-              ref={sortIconRef}
+              onHoverIn={() => setIsSortIconHovered(true)}
+              onHoverOut={() => setIsSortIconHovered(false)}
               style={sortDirection === 'ascending' && styles.flippedIcon}
               aria-label="Toggle sort direction"
               onPress={() => {
