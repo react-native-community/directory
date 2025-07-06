@@ -16029,6 +16029,17 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/cornejobarraza/expo-libvlc-player",
+    "npmPkg": "expo-libvlc-player",
+    "examples": [
+      "https://github.com/cornejobarraza/expo-libvlc-player/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/saseungmin/react-native-gesture-image-viewer",
     "examples": [
       "https://snack.expo.dev/@harang/react-native-gesture-image-viewer",
