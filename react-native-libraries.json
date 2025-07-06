@@ -4335,7 +4335,11 @@
     "newArchitecture": false,
     "newArchitectureNote": "Microsoft no longer maintains this library and has no plans to add New Architecture support.",
     "unmaintained": true,
-    "alternatives": ["@appzung/react-native-code-push", "@bravemobile/react-native-code-push", "expo-updates"]
+    "alternatives": [
+      "@appzung/react-native-code-push",
+      "@bravemobile/react-native-code-push",
+      "expo-updates"
+    ]
   },
   {
     "githubUrl": "https://github.com/plmok61/react-navigation-transitions",
@@ -15942,9 +15946,7 @@
   {
     "githubUrl": "https://github.com/sjwall/react-native-aria-description/tree/main/lib",
     "npmPkg": "react-native-aria-description",
-    "examples": [
-      "https://github.com/sjwall/react-native-aria-description/tree/main/example"
-    ],
+    "examples": ["https://github.com/sjwall/react-native-aria-description/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -15953,7 +15955,6 @@
   },
   {
     "githubUrl": "https://github.com/primus/eventemitter3",
-    "npmPkg": "eventemitter3",
     "ios": true,
     "android": true,
     "web": true,
@@ -15962,7 +15963,6 @@
   },
   {
     "githubUrl": "https://github.com/theboringlok/react-native-place-autocomplete-picker",
-    "npmPkg": "react-native-place-autocomplete-picker",
     "examples": [
       "https://github.com/theboringlok/react-native-place-autocomplete-picker/tree/main/example"
     ],
@@ -15976,13 +15976,11 @@
   },
   {
     "githubUrl": "https://github.com/superwall/expo-superwall",
-    "examples": [
-      "https://github.com/superwall/expo-superwall/tree/main/example"
-    ],
+    "examples": ["https://github.com/superwall/expo-superwall/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
-  }, 
+  },
   {
     "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
     "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
@@ -15992,9 +15990,7 @@
   {
     "githubUrl": "https://github.com/Iterable/react-native-sdk",
     "npmPkg": "@iterable/react-native-sdk",
-    "examples": [
-      "https://github.com/Iterable/react-native-sdk/tree/master/example"
-    ],
+    "examples": ["https://github.com/Iterable/react-native-sdk/tree/master/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16002,9 +15998,7 @@
   {
     "githubUrl": "https://github.com/Iterable/iterable-expo-plugin",
     "npmPkg": "@iterable/expo-plugin",
-    "examples": [
-      "https://github.com/Iterable/iterable-expo-plugin/tree/main/example"
-    ],
+    "examples": ["https://github.com/Iterable/iterable-expo-plugin/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": false
@@ -16022,21 +16016,15 @@
   {
     "githubUrl": "https://github.com/moyasar/moyasar-react-native",
     "npmPkg": "react-native-moyasar-sdk",
-    "examples": [
-      "https://github.com/moyasar/moyasar-react-native/tree/main/example"
-    ],
+    "examples": ["https://github.com/moyasar/moyasar-react-native/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/cornejobarraza/expo-libvlc-player",
-    "npmPkg": "expo-libvlc-player",
-    "examples": [
-      "https://github.com/cornejobarraza/expo-libvlc-player/tree/master/example"
-    ],
+    "examples": ["https://github.com/cornejobarraza/expo-libvlc-player/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": true
   },
   {
@@ -16056,10 +16044,7 @@
   },
   {
     "githubUrl": "https://github.com/cashfree/react-native-cashfree-pg-sdk",
-    "npmPkg": "react-native-cashfree-pg-sdk",
-    "examples": [
-      "https://github.com/cashfree/react-native-cashfree-pg-sdk/tree/master/example"
-    ],
+    "examples": ["https://github.com/cashfree/react-native-cashfree-pg-sdk/tree/master/example"],
     "ios": true,
     "android": true
   }
