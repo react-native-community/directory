@@ -16053,5 +16053,14 @@
     "web": true,
     "newArchitecture": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/cashfree/react-native-cashfree-pg-sdk",
+    "npmPkg": "react-native-cashfree-pg-sdk",
+    "examples": [
+      "https://github.com/cashfree/react-native-cashfree-pg-sdk/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
