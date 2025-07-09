@@ -16066,5 +16066,32 @@
     "githubUrl": "https://github.com/eggmun98/expo-android-keyboard-fix",
     "npmPkg": "expo-android-keyboard-fix",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/drizzle-team/drizzle-orm/tree/main/drizzle-zod",
+    "npmPkg": "drizzle-zod",
+    "examples": ["https://github.com/Minori-ty/directory-examples/tree/master/drizzle-example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/drizzle-team/drizzle-studio-expo",
+    "npmPkg": "expo-drizzle-studio-plugin",
+    "examples": ["https://github.com/Minori-ty/directory-examples/tree/master/drizzle-example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/shijistar/enum-plus",
+    "npmPkg": "enum-plus",
+    "examples": ["https://github.com/Minori-ty/directory-examples/tree/master/drizzle-example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
