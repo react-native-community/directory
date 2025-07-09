@@ -16061,5 +16061,10 @@
     "npmPkg": "react-native-apikit",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/eggmun98/expo-android-keyboard-fix",
+    "npmPkg": "expo-android-keyboard-fix",
+    "android": true
   }
 ]
