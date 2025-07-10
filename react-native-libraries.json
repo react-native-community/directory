@@ -16096,5 +16096,14 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bvaughn/react-error-boundary",
+    "npmPkg": "react-error-boundary",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
