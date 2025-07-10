@@ -16074,7 +16074,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/drizzle-team/drizzle-studio-expo",
@@ -16083,7 +16084,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/shijistar/enum-plus",
@@ -16092,6 +16094,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
