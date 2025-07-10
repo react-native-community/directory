@@ -16105,14 +16105,5 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/eslint-config-expo",
-    "npmPkg": "eslint-config-expo",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
   }
 ]
