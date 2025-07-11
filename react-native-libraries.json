@@ -16113,5 +16113,18 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/mCodex/react-native-inappbrowser-nitro",
+    "npmPkg": "react-native-inappbrowser-nitro",
+    "examples": ["https://github.com/mCodex/react-native-inappbrowser-nitro/tree/main/example"],
+    "images": [
+      "https://github.com/mCodex/react-native-inappbrowser-nitro/blob/main/app.gif?raw=true"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "newArchitecture": true
+  },
 ]
