@@ -16107,12 +16107,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/maheshmuttintidev/react-native-scaler.git",
+    "githubUrl": "https://github.com/maheshmuttintidev/react-native-scaler",
     "npmPkg": "@shayrn/react-native-scaler",
-    "examples": [
-      "https://github.com/maheshmuttintidev/react-native-scaler?tab=readme-ov-file#-basic-usage",
-      "https://github.com/maheshmuttintidev/react-native-scaler/blob/main/EXAMPLE_USAGE.md"
-    ],
     "ios": true,
     "android": true,
     "expoGo": true,
