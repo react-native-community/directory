@@ -16124,5 +16124,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/itsandrehere/rn-selector",
+    "examples": ["https://github.com/itsandrehere/rn-selector/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "web": true
   }
 ]
