@@ -16126,6 +16126,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/dangervalentine/react-native-scroll-track",
+    "images": [
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/scroll.gif",
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/tap.gif",
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/drag.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/itsandrehere/rn-selector",
     "examples": ["https://github.com/itsandrehere/rn-selector/tree/main/example"],
     "ios": true,
