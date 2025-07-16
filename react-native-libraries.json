@@ -16143,5 +16143,13 @@
     "android": true,
     "newArchitecture": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/ihwf/expo-native-alipay",
+    "npmPkg": "expo-native-alipay",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/ihwf/expo-native-alipay/tree/master/example"],
+    "newArchitecture": true
   }
 ]
