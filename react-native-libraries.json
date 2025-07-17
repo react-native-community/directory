@@ -16115,8 +16115,46 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint",
+    "githubUrl": "https://github.com/mCodex/react-native-inappbrowser-nitro",
+    "npmPkg": "react-native-inappbrowser-nitro",
+    "examples": ["https://github.com/mCodex/react-native-inappbrowser-nitro/tree/main/example"],
+    "images": [
+      "https://github.com/mCodex/react-native-inappbrowser-nitro/blob/main/app.gif?raw=true"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dangervalentine/react-native-scroll-track",
+    "images": [
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/scroll.gif",
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/tap.gif",
+      "https://raw.githubusercontent.com/dangervalentine/react-native-scroll-track/main/media/drag.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/itsandrehere/rn-selector",
+    "examples": ["https://github.com/itsandrehere/rn-selector/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/ihwf/expo-native-alipay",
     "npmPkg": "expo-native-alipay",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/ihwf/expo-native-alipay/tree/master/example"],
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint",
+    "npmPkg": "@shayrn/react-native-android-phone-number-hint",
     "android": true,
     "examples": ["https://github.com/maheshmuttintidev/react-native-android-phone-number-hint/tree/main/example"],
     "newArchitecture": true
