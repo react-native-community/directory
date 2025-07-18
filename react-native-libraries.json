@@ -16151,5 +16151,14 @@
     "android": true,
     "examples": ["https://github.com/ihwf/expo-native-alipay/tree/master/example"],
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call",
+    "npmPkg": "react-native-full-screen-notification-incoming-call",
+    "examples": [
+      "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/example",
+      "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/expo-example"
+    ],
+    "android": true
   }
 ]
