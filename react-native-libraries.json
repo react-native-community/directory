@@ -16188,5 +16188,61 @@
   {
     "githubUrl": "https://github.com/deveix/react-native-apple-llm",
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/haileyok/expo-atproto-auth",
+    "examples": [
+      "https://github.com/haileyok/expo-atproto-auth/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/nativewind/react-native-css",
+    "examples": [
+      "https://github.com/nativewind/react-native-css/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/suwi-lanji/rn-maps-clustering",
+    "examples": [
+      "https://github.com/suwi-lanji/rn-maps-clustering/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/raahimkhan/react-native-responsive-utils",
+    "npmPkg": "@raahimkhan23/react-native-responsive-utils",
+    "examples": [
+      "https://github.com/raahimkhan/react-native-responsive-utils/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/whitestranger7/react-native-orientation-turbo",
+    "examples": [
+      "https://github.com/whitestranger7/react-native-orientation-turbo/tree/main/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/blaiti/react-native-mixins",
+    "examples": [
+      "https://github.com/blaiti/react-native-mixins/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/katungi/expo-azure-blob-storage",
+    "android": true,
+    "ios": true,
+    "web": true
   }
 ]
