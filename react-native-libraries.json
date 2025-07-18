@@ -16171,6 +16171,7 @@
   },
   {
     "githubUrl": "https://github.com/Expensify/react-native-wallet",
+    "npmPkg": "@expensify/react-native-wallet",
     "examples": ["https://github.com/Expensify/react-native-wallet/tree/main/example"],
     "android": true,
     "ios": true
