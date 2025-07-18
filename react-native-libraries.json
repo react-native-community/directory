@@ -16215,6 +16215,7 @@
   },
   {
     "githubUrl": "https://github.com/raahimkhan/react-native-responsive-utils",
+    "npmPkg": "@raahimkhan23/react-native-responsive-utils",
     "examples": [
       "https://github.com/raahimkhan/react-native-responsive-utils/tree/main/example"
     ],
@@ -16237,14 +16238,6 @@
     "android": true,
     "ios": true,
     "expoGo": true
-  },
-  {
-    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-scanner",
-    "examples": [
-      "https://github.com/patrickkabwe/react-native-nitro-scanner/tree/main/example"
-    ],
-    "android": true,
-    "ios": true
   },
   {
     "githubUrl": "https://github.com/katungi/expo-azure-blob-storage",
