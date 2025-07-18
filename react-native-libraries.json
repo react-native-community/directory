@@ -7245,11 +7245,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-gesture-handler",
+    "githubUrl": "https://github.com/software-mansion/react-native-gesture-handler/tree/main/packages/react-native-gesture-handler",
     "examples": [
-      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/example",
-      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/FabricExample",
-      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/MacOSExample"
+      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/apps/basic-example",
+      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/apps/expo-example",
+      "https://github.com/software-mansion/react-native-gesture-handler/tree/main/apps/macos-example"
     ],
     "ios": true,
     "android": true,
@@ -8360,7 +8360,7 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/Forward-Software/react-auth",
+    "githubUrl": "https://github.com/forwardsoftware/react-auth/tree/main/lib",
     "npmPkg": "@forward-software/react-auth",
     "examples": [
       "https://github.com/Forward-Software/react-auth/tree/main/examples/base",
@@ -12779,11 +12779,10 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/BearStudio/react-native-ficus-ui",
+    "githubUrl": "https://github.com/BearStudio/react-native-ficus-ui/tree/main/packages/react-native-ficus-ui",
     "examples": [
-      "https://github.com/BearStudio/react-native-ficus-ui/tree/main/example",
-      "https://snack.expo.dev/@bearstudio/ficus-ui-button",
-      "https://ficus-ui.com/docs/Components/Layout/box"
+      "https://github.com/BearStudio/react-native-ficus-ui/tree/main/apps/examples",
+      "https://snack.expo.dev/@bearstudio/ficus-ui-button"
     ],
     "ios": true,
     "android": true,
@@ -16050,9 +16049,7 @@
   },
   {
     "githubUrl": "https://github.com/SamadK01/react-native-unilist",
-    "examples": [
-      "https://github.com/SamadK01/react-native-unilist/tree/main/example"
-    ],
+    "examples": ["https://github.com/SamadK01/react-native-unilist/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -16064,12 +16061,10 @@
   },
   {
     "githubUrl": "https://github.com/eggmun98/expo-android-keyboard-fix",
-    "npmPkg": "expo-android-keyboard-fix",
     "android": true
   },
   {
     "githubUrl": "https://github.com/drizzle-team/drizzle-orm/tree/main/drizzle-zod",
-    "npmPkg": "drizzle-zod",
     "examples": ["https://github.com/Minori-ty/directory-examples/tree/master/drizzle-example"],
     "ios": true,
     "android": true,
@@ -16089,7 +16084,6 @@
   },
   {
     "githubUrl": "https://github.com/shijistar/enum-plus",
-    "npmPkg": "enum-plus",
     "examples": ["https://github.com/Minori-ty/directory-examples/tree/master/drizzle-example"],
     "ios": true,
     "android": true,
@@ -16099,7 +16093,6 @@
   },
   {
     "githubUrl": "https://github.com/bvaughn/react-error-boundary",
-    "npmPkg": "react-error-boundary",
     "ios": true,
     "android": true,
     "web": true,
@@ -16116,7 +16109,6 @@
   },
   {
     "githubUrl": "https://github.com/mCodex/react-native-inappbrowser-nitro",
-    "npmPkg": "react-native-inappbrowser-nitro",
     "examples": ["https://github.com/mCodex/react-native-inappbrowser-nitro/tree/main/example"],
     "images": [
       "https://github.com/mCodex/react-native-inappbrowser-nitro/blob/main/app.gif?raw=true"
@@ -16146,7 +16138,6 @@
   },
   {
     "githubUrl": "https://github.com/ihwf/expo-native-alipay",
-    "npmPkg": "expo-native-alipay",
     "ios": true,
     "android": true,
     "examples": ["https://github.com/ihwf/expo-native-alipay/tree/master/example"],
@@ -16156,7 +16147,9 @@
     "githubUrl": "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint",
     "npmPkg": "@shayrn/react-native-android-phone-number-hint",
     "android": true,
-    "examples": ["https://github.com/maheshmuttintidev/react-native-android-phone-number-hint/tree/main/example"],
+    "examples": [
+      "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint/tree/main/example"
+    ],
     "newArchitecture": true
   },
   {
@@ -16166,5 +16159,34 @@
       "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/expo-example"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/eds2002/react-native-screen-transitions/tree/main/packages/react-native-screen-transitions",
+    "examples": [
+      "https://github.com/eds2002/react-native-screen-transitions/tree/main/examples/expo-router-example",
+      "https://github.com/eds2002/react-native-screen-transitions/tree/main/examples/react-nav-example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Expensify/react-native-wallet",
+    "npmPkg": "@expensify/react-native-wallet",
+    "examples": ["https://github.com/Expensify/react-native-wallet/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/react-native-node-api/tree/main/packages/host",
+    "npmPkg": "react-native-node-api",
+    "examples": [
+      "https://github.com/callstackincubator/react-native-node-api/tree/main/apps/test-app"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/deveix/react-native-apple-llm",
+    "ios": true
   }
 ]
