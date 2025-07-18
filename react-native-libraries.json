@@ -13107,7 +13107,9 @@
       "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-tree-selection/master/assets/Tree-Selection.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-tree-multi-select"]
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-photos-gallery",
