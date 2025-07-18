@@ -16153,8 +16153,14 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint",
+    "npmPkg": "@shayrn/react-native-android-phone-number-hint",
+    "android": true,
+    "examples": ["https://github.com/maheshmuttintidev/react-native-android-phone-number-hint/tree/main/example"],
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call",
-    "npmPkg": "react-native-full-screen-notification-incoming-call",
     "examples": [
       "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/example",
       "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/expo-example"
