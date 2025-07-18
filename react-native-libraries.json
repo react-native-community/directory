@@ -16151,5 +16151,12 @@
     "android": true,
     "examples": ["https://github.com/ihwf/expo-native-alipay/tree/master/example"],
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/maheshmuttintidev/react-native-android-phone-number-hint",
+    "npmPkg": "@shayrn/react-native-android-phone-number-hint",
+    "android": true,
+    "examples": ["https://github.com/maheshmuttintidev/react-native-android-phone-number-hint/tree/main/example"],
+    "newArchitecture": true
   }
 ]
