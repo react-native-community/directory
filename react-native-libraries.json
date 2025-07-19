@@ -16244,5 +16244,17 @@
     "android": true,
     "ios": true,
     "web": true
+  },
+  {
+    "npmPkg": "@instantdb/react-native",
+    "githubUrl": "https://github.com/instantdb/instant/tree/main/client/packages/react-native",
+    "examples": [
+      "https://www.instantdb.com/docs/start-rn"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
