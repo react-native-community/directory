@@ -1,7 +1,7 @@
 /**
  * Directory Score
  */
-import { Library } from '../types';
+import { Library } from '~/types';
 
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to condition function, and if it returns true, the value is added to the

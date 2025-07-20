@@ -1,15 +1,17 @@
-import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { processTopics, sleep, REQUEST_SLEEP } from './helpers';
+import {
+  processTopics,
+  sleep,
+  REQUEST_SLEEP,
+  makeGraphqlQuery,
+  parseGitHubUrl,
+  getUpdatedUrl,
+} from './helpers';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
-
-const GRAPHQL_API = 'https://api.github.com/graphql';
-
-const AUTHORIZATION = `bearer ${process.env.CI_CHECKS_TOKEN ?? process.env.GITHUB_TOKEN}`;
 
 const licenses = {};
 
@@ -22,21 +24,6 @@ export const loadGitHubLicenses = async () => {
   result.data.licenses.forEach(license => {
     licenses[license.key] = license;
   });
-};
-
-const makeGraphqlQuery = async (query: string, variables = {}) => {
-  const result = await fetch(GRAPHQL_API, {
-    method: 'POST',
-    headers: {
-      Authorization: AUTHORIZATION,
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-  return await result.json();
 };
 
 export const fetchGithubRateLimit = async () => {
@@ -63,28 +50,6 @@ export const fetchGithubRateLimit = async () => {
   return {};
 };
 
-const getUpdatedUrl = async url => {
-  try {
-    const result = await fetch(url);
-    return result.url;
-  } catch {
-    return url;
-  }
-};
-
-const parseUrl = url => {
-  const [, , , repoOwner, repoName, ...path] = url.split('/');
-  const isMonorepo = !!(path && path.length);
-  const packagePath = isMonorepo ? path.slice(2).join('/') : '.';
-
-  return {
-    repoOwner,
-    repoName,
-    isMonorepo,
-    packagePath,
-  };
-};
-
 export const fetchGithubData = async (data, retries = 2) => {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
@@ -92,7 +57,7 @@ export const fetchGithubData = async (data, retries = 2) => {
   }
   try {
     const url = data.githubUrl;
-    const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
+    const { isMonorepo, repoOwner, repoName, packagePath } = parseGitHubUrl(url);
     const fullName = `${repoOwner}/${repoName}`;
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
@@ -200,13 +165,13 @@ const createRepoDataWithResponse = (json, monorepo) => {
   return {
     urls: {
       repo: json.url,
-      clone: `${json.url}.git`,
       homepage: json?.homepageUrl?.length > 0 ? json.homepageUrl : null,
     },
     stats: {
       hasIssues: json.hasIssuesEnabled,
       hasWiki: json.hasWikiEnabled,
       hasSponsorships: json.hasSponsorshipsEnabled,
+      hasDiscussions: json.hasDiscussionsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
@@ -223,7 +188,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     description: json.description,
     topics: json.topics,
     license: json.licenseInfo,
-    lastRelease: json.lastRelease,
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,

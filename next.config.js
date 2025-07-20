@@ -34,6 +34,8 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   experimental: {
     forceSwcTransforms: true,
     webpackBuildWorker: true,
+    browserDebugInfoInTerminal: true,
+    clientSegmentCache: true,
     optimizePackageImports: [
       '@expo/html-elements',
       '@react-native-picker/picker',

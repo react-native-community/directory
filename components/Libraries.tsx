@@ -31,7 +31,7 @@ const Libraries = ({ libraries }: Props) => {
 
   return (
     <View style={styles.librariesContainer}>
-      {libraries.map((item: any, index: number) => (
+      {libraries.map((item: LibraryType, index: number) => (
         <LibraryWithLoading key={`list-item-${index}-${item.github.name}`} library={item} />
       ))}
     </View>

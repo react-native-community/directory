@@ -1,7 +1,8 @@
 import fetch from 'cross-fetch';
 
+import { Library } from '~/types';
+
 import { sleep, REQUEST_SLEEP } from './helpers';
-import { Library } from '../types';
 
 const ATTEMPTS_LIMIT = 2;
 
