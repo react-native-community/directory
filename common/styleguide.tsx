@@ -1,6 +1,7 @@
 import * as HtmlElements from '@expo/html-elements';
+import { TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { PropsWithChildren, useContext, useState } from 'react';
+import { ComponentType, PropsWithChildren, useContext, useState } from 'react';
 import { StyleSheet, TextStyle, View, useWindowDimensions } from 'react-native';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -77,21 +78,21 @@ const textStyles = StyleSheet.create({
 
 type TextStyles = TextStyle | TextStyle[];
 
-type TextProps = PropsWithChildren<{
-  style?: TextStyles;
-  id?: string;
-  numberOfLines?: number;
-}>;
+type CustomTextProps = TextProps &
+  PropsWithChildren<{
+    id?: string;
+    numberOfLines?: number;
+  }>;
 
-const createTextComponent = (Element: any, textStyle?: TextStyles) => {
-  const TextComponent = ({ children, style, id, numberOfLines }: TextProps) => {
+const createTextComponent = (Element: ComponentType<TextProps>, textStyle?: TextStyles) => {
+  const TextComponent = ({ children, style, id, numberOfLines }: CustomTextProps) => {
     const { isDark } = useContext(CustomAppearanceContext);
     return (
       <Element
         id={id}
         numberOfLines={numberOfLines}
         style={[
-          textStyles[Element],
+          textStyles[Element.displayName],
           textStyle,
           { color: isDark ? colors.white : colors.black },
           style,

@@ -4,8 +4,8 @@ import pickBy from 'lodash/pickBy';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import libraries from '../react-native-libraries.json';
-import { Library } from '../types';
+import libraries from '~/react-native-libraries.json';
+import { Library } from '~/types';
 
 const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 

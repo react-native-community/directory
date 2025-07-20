@@ -17,9 +17,8 @@ Sentry.init({
   dsn: 'https://d91de4406c74494dbfcadfd007774ba6@o574947.ingest.sentry.io/5727369',
   environment: isProd ? 'production' : 'development',
   allowUrls: isProd ? [/https:\/\/reactnative\.directory/] : [],
-  integrations: [Sentry.browserTracingIntegration()],
+  integrations: isProd ? [Sentry.browserTracingIntegration()] : [],
   tracesSampleRate: isProd ? 0.5 : 1.0,
-  debug: !isProd,
 });
 
 const App = ({ pageProps, Component }) => (

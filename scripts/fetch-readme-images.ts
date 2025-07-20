@@ -1,8 +1,9 @@
 import { Cheerio, load } from 'cheerio';
 import fetch from 'cross-fetch';
 
+import { Library } from '~/types';
+
 import { sleep } from './helpers';
-import { Library } from '../types';
 
 function isLikelyUsefulImage(image: Cheerio<any>, imageSrc: string, githubUrl: string) {
   const parentHref = image.parent().attr('href');

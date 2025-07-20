@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic';
-import { createElement, useContext } from 'react';
+import { createElement, FunctionComponent, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, H3, P } from '~/common/styleguide';
+import { IconProps } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Library as LibraryType, Query } from '~/types';
@@ -25,7 +26,7 @@ type ExploreSectionProps = {
   data: LibraryType[];
   title: string;
   filter: (library: LibraryType) => boolean;
-  icon?: any;
+  icon?: FunctionComponent<IconProps>;
   count?: number;
   queryParams?: Query;
 };

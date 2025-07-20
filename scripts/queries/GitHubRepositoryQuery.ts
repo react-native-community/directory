@@ -10,6 +10,7 @@ const GitHubRepositoryQuery = `
       hasIssuesEnabled
       hasWikiEnabled
       hasSponsorshipsEnabled
+      hasDiscussionsEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -39,15 +40,6 @@ const GitHubRepositoryQuery = `
         spdxId
         url
         id
-      }
-      releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
-        nodes {
-          name
-          tagName
-          createdAt
-          publishedAt
-          isPrerelease
-        }
       }
       repositoryTopics(first: 10) {
         nodes {
