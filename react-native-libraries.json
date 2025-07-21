@@ -16266,11 +16266,18 @@
     "expoGo": true
   },
   {
-    "npmPkg": "otpauth",
     "githubUrl": "https://github.com/hectorm/otpauth",
     "ios": true,
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/epoberezkin/fast-deep-equal",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
