@@ -12,6 +12,10 @@
   </a>
 </p>
 
+> [!TIP]
+> Are you looking for an integration with VS Code? Check out our official extension:
+> * https://github.com/react-native-community/vscode-react-native-directory
+
 ## How do I know I'm at the right place?
 
 - You made a repository on GitHub and you want the world to know it works with React Native.
