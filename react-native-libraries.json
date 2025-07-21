@@ -16256,5 +16256,21 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "npmPkg": "@aramir/react-native-barcode",
+    "githubUrl": "https://github.com/aramir/react-native-barcode",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "npmPkg": "otpauth",
+    "githubUrl": "https://github.com/hectorm/otpauth",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
