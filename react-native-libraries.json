@@ -16259,6 +16259,29 @@
     "newArchitecture": true
   },
   {
+    "npmPkg": "@aramir/react-native-barcode",
+    "githubUrl": "https://github.com/aramir/react-native-barcode",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/hectorm/otpauth",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/epoberezkin/fast-deep-equal",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/RakaDoank/ping-react-native/tree/main/package",
     "npmPkg": "ping-react-native",
     "examples": ["https://github.com/RakaDoank/ping-react-native/tree/main/example"],
