@@ -12107,7 +12107,8 @@
     "npmPkg": "react-native-ping-android",
     "examples": ["https://github.com/RakaDoank/react-native-ping-android/tree/main/example"],
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/auto-image",
@@ -16278,6 +16279,14 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/ping-react-native/tree/main/package",
+    "npmPkg": "ping-react-native",
+    "examples": ["https://github.com/RakaDoank/ping-react-native/tree/main/example"],
+    "android": true,
+    "ios": true,
     "newArchitecture": true
   }
 ]
