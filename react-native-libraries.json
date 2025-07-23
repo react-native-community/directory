@@ -16291,7 +16291,7 @@
   },
   {
     "githubUrl": "https://github.com/launchdarkly/react-client-sdk",
-    "npmPkg": "@launchdarkly/react-native-client-sdk",
+    "npmPkg": "launchdarkly-js-client-sdk",
     "examples": ["https://github.com/launchdarkly/react-client-sdk/tree/main/examples"],
     "android": true,
     "ios": true,
