@@ -16288,5 +16288,13 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/launchdarkly/react-client-sdk",
+    "npmPkg": "launchdarkly-react-client-sdk",
+    "examples": ["https://github.com/launchdarkly/react-client-sdk/tree/main/examples"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
