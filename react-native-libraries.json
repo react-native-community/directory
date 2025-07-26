@@ -16296,5 +16296,13 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/moment/luxon",
+    "examples": ["https://moment.github.io/luxon/demo/global.html"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
