@@ -16322,7 +16322,12 @@
       "https://github.com/martinezguillaume/react-native-scroll-sync/tree/main/example",
       "https://snack.expo.dev/@martinezguillaume/react-native-scroll-sync"
     ],
-    "images": ["https://github.com/martinezguillaume/react-native-scroll-sync/blob/main/assets/github-header-image.png"],
+    "images": [
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-1.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-2.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-3.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-4.gif"
+      ],
     "ios": true,
     "android": true,
     "web": true,
