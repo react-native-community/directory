@@ -16305,5 +16305,14 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/kazimshah39/react-native-feather-toast",
+    "npmPkg": "react-native-feather-toast",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
