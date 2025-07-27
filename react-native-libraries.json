@@ -16314,5 +16314,24 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/martinezguillaume/react-native-scroll-sync",
+    "npmPkg": "react-native-scroll-sync",
+    "examples": [
+      "https://github.com/martinezguillaume/react-native-scroll-sync/tree/main/example",
+      "https://snack.expo.dev/@martinezguillaume/react-native-scroll-sync"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-1.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-2.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-3.gif",
+      "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-4.gif"
+      ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
