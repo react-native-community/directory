@@ -16335,15 +16335,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/lodash/lodash/tree/es",
-    "npmPkg": "lodash-es",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/lodash/lodash",
     "npmPkg": "lodash",
     "ios": true,
