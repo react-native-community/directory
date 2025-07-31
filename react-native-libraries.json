@@ -16369,5 +16369,25 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-letter-flatlist",
+    "images": [
+      "https://github.com/antosmamanktr/react-native-letter-flatlist/blob/main/src/assets/demo-layout.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-stonewall-grid",
+    "images": [
+      "https://github.com/antosmamanktr/react-native-stonewall-grid/blob/main/src/assets/demo-layout.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
