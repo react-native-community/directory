@@ -16397,5 +16397,25 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-dream-toast",
+    "images": [
+      "https://github.com/antosmamanktr/react-native-dream-toast/blob/main/src/assets/sample_layout.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-input-suggestion",
+    "images": [
+      "https://github.com/antosmamanktr/react-native-input-suggestion/blob/main/src/assets/demo-layout.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
 ]
