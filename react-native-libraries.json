@@ -16407,5 +16407,17 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/cloudcaptainai/paywall-sdk-react-native",
+    "npmPkg": "@tryheliumai/paywall-sdk-react-native",
+    "ios": true,
+    "alternatives": ["expo-helium"]
+  },
+  {
+    "githubUrl": "https://github.com/cloudcaptainai/helium-expo-sdk",
+    "npmPkg": "expo-helium",
+    "ios": true,
+    "newArchitecture": true
   }
 ]
