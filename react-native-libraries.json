@@ -12130,6 +12130,7 @@
   },
   {
     "githubUrl": "https://github.com/PostHog/posthog-js/tree/main/packages/react-native",
+    "npmPkg": "posthog-react-native",
     "examples": [
       "https://github.com/PostHog/posthog-js/tree/main/examples/example-expo-53",
       "https://github.com/PostHog/posthog-js/tree/main/examples/example_rn_macos"
