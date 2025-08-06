@@ -16418,5 +16418,12 @@
     "npmPkg": "expo-helium",
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/OneSignal/onesignal-expo-plugin",
+    "npmPkg": "onesignal-expo-plugin",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
