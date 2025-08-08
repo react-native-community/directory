@@ -16444,14 +16444,14 @@
   },
   {
     "githubUrl": "https://github.com/braze-inc/braze-react-native-sdk",
-    "npmPkgg": "@braze/react-native-sdk"
+    "npmPkgg": "@braze/react-native-sdk",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/braze-inc/braze-expo-plugin",
-    "npmPkgg": "@braze/expo-plugin"
+    "npmPkgg": "@braze/expo-plugin",
     "ios": true,
     "android": true,
     "newArchitecture": true
