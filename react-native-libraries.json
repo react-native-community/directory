@@ -16441,5 +16441,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
-  } 
+  },
+  {
+    "githubUrl": "https://github.com/braze-inc/braze-expo-plugin/tree/main/plugin",
+    "npmPkg": "@braze/expo-plugin",
+    "examples": [
+      "https://github.com/braze-inc/braze-expo-plugin/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
