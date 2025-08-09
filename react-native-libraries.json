@@ -16455,6 +16455,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/Glazzes/react-native-zoom-toolkit",
+    "npmPkg": "react-native-zoom-toolkit",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/sivantha96/react-native-trays",
     "examples": [
       "https://github.com/sivantha96/react-native-trays/tree/main/example"
