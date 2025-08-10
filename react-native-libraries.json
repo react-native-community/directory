@@ -16479,5 +16479,20 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-avatar",
+    "npmPkg": "@kolking/react-native-avatar",
+    "examples": [
+      "https://github.com/kolking/react-native-avatar/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/kolking/react-native-avatar/assets/4656448/877fbd1b-7040-41d4-a29b-80958b9b7cdd"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
