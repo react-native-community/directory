@@ -1,6 +1,7 @@
 import { Library } from '~/types';
 
 export enum NewArchSupportStatus {
+  NewArchOnly = 'new-arch-only',
   Supported = 'supported',
   Unsupported = 'unsupported',
   Untested = 'untested',
@@ -23,6 +24,8 @@ export function getNewArchSupportStatus({ newArchitecture, github, expoGo }: Lib
   }
 
   switch (flag) {
+    case 'new-arch-only':
+      return NewArchSupportStatus.NewArchOnly;
     case true:
       return NewArchSupportStatus.Supported;
     case false:

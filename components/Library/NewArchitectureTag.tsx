@@ -22,7 +22,7 @@ export function NewArchitectureTag({ library }: Props) {
   const icon =
     status === NewArchSupportStatus.Unsupported ? (
       <XIcon fill={getIconColor(status, isDark)} width={11} height={11} />
-    ) : status === NewArchSupportStatus.Supported ? (
+    ) : status === NewArchSupportStatus.Supported || status === NewArchSupportStatus.NewArchOnly ? (
       <Check fill={getIconColor(status, isDark)} width={12} height={12} />
     ) : (
       <Question fill={getIconColor(status, isDark)} width={11} height={11} />
@@ -53,10 +53,19 @@ export function NewArchitectureTag({ library }: Props) {
             <HtmlElements.A
               href="https://reactnative.dev/docs/new-architecture-intro"
               target="_blank">
-              <Tag label="New Architecture" icon={icon} tagStyle={getTagColor(status, isDark)} />
+              <Tag
+                label={
+                  status === NewArchSupportStatus.NewArchOnly
+                    ? 'New Architecture Only'
+                    : 'New Architecture'
+                }
+                icon={icon}
+                tagStyle={getTagColor(status, isDark)}
+              />
             </HtmlElements.A>
           </View>
         }>
+        {status === NewArchSupportStatus.NewArchOnly && 'Only Supports New Architecture'}
         {status === NewArchSupportStatus.Supported && 'Supports New Architecture'}
         {status === NewArchSupportStatus.Unsupported && 'Does not support New Architecture'}
         {status === NewArchSupportStatus.Untested && 'Untested with New Architecture'}
@@ -71,6 +80,7 @@ export function NewArchitectureTag({ library }: Props) {
 
 function getIconColor(status: NewArchSupportStatus, isDark: boolean) {
   switch (status) {
+    case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
       return colors.primaryDark;
     case NewArchSupportStatus.Unsupported:
@@ -82,6 +92,7 @@ function getIconColor(status: NewArchSupportStatus, isDark: boolean) {
 
 function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
   switch (status) {
+    case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
       return {
         backgroundColor: isDark ? '#142733' : '#edf6fc',
