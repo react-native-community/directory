@@ -16545,5 +16545,20 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-page-indicator",
+    "npmPkg": "react-native-page-indicator",
+    "examples": [
+      "https://github.com/kolking/react-native-page-indicator/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/4656448/233733811-9d602089-9f55-403f-b51e-916785c15837.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
