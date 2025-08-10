@@ -16481,6 +16481,87 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/unofficialmohit/rn-snappy-toast",
+    "npmPkg": "rn-snappy-toast",
+    "examples": [
+      "https://github.com/unofficialmohit/rn-snappy-toast/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ony3000/react-native-simple-weekly-calendar",
+    "examples": [
+      "https://github.com/ony3000/react-native-simple-weekly-calendar/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/ony3000/react-native-simple-weekly-calendar/refs/heads/main/docs/demonstration.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-crossfade-image",
+    "examples": [
+      "https://github.com/kolking/react-native-crossfade-image/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/4656448/171822383-7a9b1d0d-38fe-4804-bf09-20b3c2c4b569.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-avatar",
+    "npmPkg": "@kolking/react-native-avatar",
+    "examples": [
+      "https://github.com/kolking/react-native-avatar/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-rating",
+    "npmPkg": "@kolking/react-native-rating",
+    "examples": [
+      "https://github.com/kolking/react-native-rating/tree/main/example"
+    ],
+    "images": [
+      "https://github-production-user-asset-6210df.s3.amazonaws.com/4656448/239993348-0a17986a-5846-41d3-99d9-9e687198a078.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-page-indicator",
+    "npmPkg": "react-native-page-indicator",
+    "examples": [
+      "https://github.com/kolking/react-native-page-indicator/tree/main/example"
+    ],
+    "images": [
+      "https://user-images.githubusercontent.com/4656448/233733811-9d602089-9f55-403f-b51e-916785c15837.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/kolking/react-native-parallax-swiper",
     "npmPkg": "@kolking/react-native-parallax-swiper",
     "examples": [
