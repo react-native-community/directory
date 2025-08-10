@@ -16479,5 +16479,20 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-rating",
+    "npmPkg": "@kolking/react-native-rating",
+    "examples": [
+      "https://github.com/kolking/react-native-rating/tree/main/example"
+    ],
+    "images": [
+      "https://github-production-user-asset-6210df.s3.amazonaws.com/4656448/239993348-0a17986a-5846-41d3-99d9-9e687198a078.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
