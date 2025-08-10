@@ -16560,5 +16560,16 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kolking/react-native-parallax-swiper",
+    "npmPkg": "@kolking/react-native-parallax-swiper",
+    "examples": [
+      "https://github.com/kolking/react-native-parallax-swiper/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
