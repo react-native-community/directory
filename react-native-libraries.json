@@ -16481,6 +16481,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/unofficialmohit/rn-snappy-toast",
+    "npmPkg": "rn-snappy-toast",
+    "examples": [
+      "https://github.com/unofficialmohit/rn-snappy-toast/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/ony3000/react-native-simple-weekly-calendar",
     "examples": [
       "https://github.com/ony3000/react-native-simple-weekly-calendar/tree/main/example"
