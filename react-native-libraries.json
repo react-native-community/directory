@@ -16573,6 +16573,16 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/mhpdev-com/react-native-haptics",
+    "npmPkg": "@mhpdev/react-native-haptics",
+    "examples": [
+      "https://github.com/mhpdev-com/react-native-haptics/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/bluesky-social/react-native-device-attest",
     "examples": [
       "https://github.com/bluesky-social/react-native-device-attest/tree/main/example"
