@@ -16571,5 +16571,14 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "github.com/bluesky-social/react-native-device-attest",
+    "examples": [
+      "https://github.com/bluesky-social/react-native-device-attest/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
