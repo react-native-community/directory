@@ -16605,5 +16605,12 @@
     "githubUrl": "https://github.com/retyui/react-native-fbtee",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-bundle-discovery",
+    "images": [
+      "https://raw.githubusercontent.com/retyui/react-native-bundle-discovery/main/assets/img.png"
+    ],
+    "dev": true
   }
 ]
