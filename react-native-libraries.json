@@ -16590,5 +16590,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/retyui/react-native-linear-gradient-web",
+    "images": [
+      "https://raw.githubusercontent.com/retyui/react-native-linear-gradient-web/main/example/expo/assets/images/demo.png"
+    ],
+    "examples": [
+      "https://github.com/retyui/react-native-linear-gradient-web/tree/main/example/expo"
+    ],
+    "web": true
   }
 ]
