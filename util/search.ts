@@ -182,14 +182,22 @@ export function handleFilterLibraries({
 
     if (
       newArchitecture === 'false' &&
-      [NewArchSupportStatus.Supported, NewArchSupportStatus.Untested].includes(newArchStatus)
+      [
+        NewArchSupportStatus.NewArchOnly,
+        NewArchSupportStatus.Supported,
+        NewArchSupportStatus.Untested,
+      ].includes(newArchStatus)
     ) {
       return false;
     }
 
     if (
       newArchitecture === 'untested' &&
-      [NewArchSupportStatus.Supported, NewArchSupportStatus.Unsupported].includes(newArchStatus)
+      [
+        NewArchSupportStatus.NewArchOnly,
+        NewArchSupportStatus.Supported,
+        NewArchSupportStatus.Unsupported,
+      ].includes(newArchStatus)
     ) {
       return false;
     }

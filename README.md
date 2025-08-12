@@ -139,7 +139,7 @@
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
 - #### `newArchitecture`
-  **(boolean)** - signify that a library supports, or not, the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
+  **(boolean|'new-arch-only')** - signify that a library supports both, or not, the New Architecture and the Old Architecture or only the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
 
 > [!TIP]
 > Set `newArchitecture` field only when automatic architecture detection fails for your package, despite it supports the New Architecture.
