@@ -2138,13 +2138,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/dynamic-links",
-    "npmPkg": "@react-native-firebase/dynamic-links",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/firestore",
     "npmPkg": "@react-native-firebase/firestore",
     "ios": true,
@@ -16590,6 +16583,13 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gre/gl-react/tree/master/packages/gl-react-native",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/fbeccaceci/react-native-fast-squircle",
