@@ -11401,11 +11401,6 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/sandarshnaroju/react-native-nano",
-    "android": true,
-    "ios": true
-  },
-  {
     "githubUrl": "https://github.com/rive-app/rive-react-native",
     "examples": ["https://github.com/rive-app/rive-react-native/tree/main/example"],
     "android": true,
@@ -16193,34 +16188,26 @@
   },
   {
     "githubUrl": "https://github.com/haileyok/expo-atproto-auth",
-    "examples": [
-      "https://github.com/haileyok/expo-atproto-auth/tree/main/example"
-    ],
+    "examples": ["https://github.com/haileyok/expo-atproto-auth/tree/main/example"],
     "android": true,
     "ios": true
   },
   {
     "githubUrl": "https://github.com/nativewind/react-native-css",
-    "examples": [
-      "https://github.com/nativewind/react-native-css/tree/main/example"
-    ],
+    "examples": ["https://github.com/nativewind/react-native-css/tree/main/example"],
     "android": true,
     "ios": true
   },
   {
     "githubUrl": "https://github.com/suwi-lanji/rn-maps-clustering",
-    "examples": [
-      "https://github.com/suwi-lanji/rn-maps-clustering/tree/main/example"
-    ],
+    "examples": ["https://github.com/suwi-lanji/rn-maps-clustering/tree/main/example"],
     "android": true,
     "ios": true
   },
   {
     "githubUrl": "https://github.com/raahimkhan/react-native-responsive-utils",
     "npmPkg": "@raahimkhan23/react-native-responsive-utils",
-    "examples": [
-      "https://github.com/raahimkhan/react-native-responsive-utils/tree/main/example"
-    ],
+    "examples": ["https://github.com/raahimkhan/react-native-responsive-utils/tree/main/example"],
     "android": true,
     "ios": true
   },
@@ -16234,9 +16221,7 @@
   },
   {
     "githubUrl": "https://github.com/blaiti/react-native-mixins",
-    "examples": [
-      "https://github.com/blaiti/react-native-mixins/tree/main/example"
-    ],
+    "examples": ["https://github.com/blaiti/react-native-mixins/tree/main/example"],
     "android": true,
     "ios": true,
     "expoGo": true
@@ -16250,9 +16235,7 @@
   {
     "npmPkg": "@instantdb/react-native",
     "githubUrl": "https://github.com/instantdb/instant/tree/main/client/packages/react-native",
-    "examples": [
-      "https://www.instantdb.com/docs/start-rn"
-    ],
+    "examples": ["https://www.instantdb.com/docs/start-rn"],
     "ios": true,
     "android": true,
     "web": true,
@@ -16309,7 +16292,6 @@
   },
   {
     "githubUrl": "https://github.com/kazimshah39/react-native-feather-toast",
-    "npmPkg": "react-native-feather-toast",
     "ios": true,
     "android": true,
     "web": true,
@@ -16318,7 +16300,6 @@
   },
   {
     "githubUrl": "https://github.com/martinezguillaume/react-native-scroll-sync",
-    "npmPkg": "react-native-scroll-sync",
     "examples": [
       "https://github.com/martinezguillaume/react-native-scroll-sync/tree/main/example",
       "https://snack.expo.dev/@martinezguillaume/react-native-scroll-sync"
@@ -16328,7 +16309,7 @@
       "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-2.gif",
       "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-3.gif",
       "https://raw.githubusercontent.com/martinezguillaume/react-native-scroll-sync/main/assets/demo-4.gif"
-      ],
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -16337,7 +16318,6 @@
   },
   {
     "githubUrl": "https://github.com/lodash/lodash",
-    "npmPkg": "lodash",
     "ios": true,
     "android": true,
     "web": true,
@@ -16346,7 +16326,6 @@
   },
   {
     "githubUrl": "https://github.com/sodiray/radash",
-    "npmPkg": "radash",
     "ios": true,
     "android": true,
     "web": true,
@@ -16355,7 +16334,6 @@
   },
   {
     "githubUrl": "https://github.com/toss/es-toolkit",
-    "npmPkg": "es-toolkit",
     "ios": true,
     "android": true,
     "web": true,
@@ -16393,7 +16371,6 @@
   },
   {
     "githubUrl": "https://github.com/filiphsps/react-native-scroll-to-child",
-    "npmPkg": "react-native-scroll-to-child",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -16423,14 +16400,12 @@
   },
   {
     "githubUrl": "https://github.com/OneSignal/onesignal-expo-plugin",
-    "npmPkg": "onesignal-expo-plugin",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/antosmamanktr/react-native-input-suggestion",
-    "npmPkg": "react-native-input-suggestion",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16447,25 +16422,20 @@
   {
     "githubUrl": "https://github.com/braze-inc/braze-expo-plugin/tree/main/plugin",
     "npmPkg": "@braze/expo-plugin",
-    "examples": [
-      "https://github.com/braze-inc/braze-expo-plugin/tree/main/example"
-    ],
+    "examples": ["https://github.com/braze-inc/braze-expo-plugin/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Glazzes/react-native-zoom-toolkit",
-    "npmPkg": "react-native-zoom-toolkit",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/sivantha96/react-native-trays",
-    "examples": [
-      "https://github.com/sivantha96/react-native-trays/tree/main/example"
-    ],
+    "examples": ["https://github.com/sivantha96/react-native-trays/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16482,10 +16452,7 @@
   },
   {
     "githubUrl": "https://github.com/unofficialmohit/rn-snappy-toast",
-    "npmPkg": "rn-snappy-toast",
-    "examples": [
-      "https://github.com/unofficialmohit/rn-snappy-toast/tree/main/example"
-    ],
+    "examples": ["https://github.com/unofficialmohit/rn-snappy-toast/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -16507,9 +16474,7 @@
   },
   {
     "githubUrl": "https://github.com/kolking/react-native-crossfade-image",
-    "examples": [
-      "https://github.com/kolking/react-native-crossfade-image/tree/main/example"
-    ],
+    "examples": ["https://github.com/kolking/react-native-crossfade-image/tree/main/example"],
     "images": [
       "https://user-images.githubusercontent.com/4656448/171822383-7a9b1d0d-38fe-4804-bf09-20b3c2c4b569.gif"
     ],
@@ -16522,9 +16487,7 @@
   {
     "githubUrl": "https://github.com/kolking/react-native-avatar",
     "npmPkg": "@kolking/react-native-avatar",
-    "examples": [
-      "https://github.com/kolking/react-native-avatar/tree/main/example"
-    ],
+    "examples": ["https://github.com/kolking/react-native-avatar/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -16534,9 +16497,7 @@
   {
     "githubUrl": "https://github.com/kolking/react-native-rating",
     "npmPkg": "@kolking/react-native-rating",
-    "examples": [
-      "https://github.com/kolking/react-native-rating/tree/main/example"
-    ],
+    "examples": ["https://github.com/kolking/react-native-rating/tree/main/example"],
     "images": [
       "https://github-production-user-asset-6210df.s3.amazonaws.com/4656448/239993348-0a17986a-5846-41d3-99d9-9e687198a078.gif"
     ],
@@ -16548,10 +16509,7 @@
   },
   {
     "githubUrl": "https://github.com/kolking/react-native-page-indicator",
-    "npmPkg": "react-native-page-indicator",
-    "examples": [
-      "https://github.com/kolking/react-native-page-indicator/tree/main/example"
-    ],
+    "examples": ["https://github.com/kolking/react-native-page-indicator/tree/main/example"],
     "images": [
       "https://user-images.githubusercontent.com/4656448/233733811-9d602089-9f55-403f-b51e-916785c15837.gif"
     ],
@@ -16564,9 +16522,7 @@
   {
     "githubUrl": "https://github.com/kolking/react-native-parallax-swiper",
     "npmPkg": "@kolking/react-native-parallax-swiper",
-    "examples": [
-      "https://github.com/kolking/react-native-parallax-swiper/tree/main/example"
-    ],
+    "examples": ["https://github.com/kolking/react-native-parallax-swiper/tree/main/example"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -16575,18 +16531,14 @@
   {
     "githubUrl": "https://github.com/mhpdev-com/react-native-haptics",
     "npmPkg": "@mhpdev/react-native-haptics",
-    "examples": [
-      "https://github.com/mhpdev-com/react-native-haptics/tree/main/example"
-    ],
+    "examples": ["https://github.com/mhpdev-com/react-native-haptics/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/bluesky-social/react-native-device-attest",
-    "examples": [
-      "https://github.com/bluesky-social/react-native-device-attest/tree/main/example"
-    ],
+    "examples": ["https://github.com/bluesky-social/react-native-device-attest/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true

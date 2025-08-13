@@ -20,7 +20,7 @@ type Props = {
 };
 
 const Search = ({ query, total }: Props) => {
-  const { search, order, direction, ...filterParams } = query;
+  const { search, order, direction, offset, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
   const [isApple, setIsApple] = useState<boolean | null>(null);

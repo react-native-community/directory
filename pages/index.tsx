@@ -10,7 +10,6 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import Search from '~/components/Search';
-import { StructuredData } from '~/components/StructuredData';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -37,22 +36,6 @@ const Index = ({ data, query }) => {
   const total = data && data.total;
   return (
     <>
-      <StructuredData
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name: 'React Native Directory',
-          url: 'https://reactnative.directory/',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-              '@type': 'EntryPoint',
-              urlTemplate: 'https://reactnative.directory/?search={search_term_string}',
-            },
-            'query-input': 'required name=search_term_string',
-          },
-        }}
-      />
       <PageMeta query={router.query?.search} />
       <Navigation noHeader />
       <Search query={router.query} total={total} />

@@ -52,7 +52,7 @@ export type Library = {
   unmaintained?: boolean | string;
   dev?: boolean;
   template?: boolean;
-  newArchitecture?: boolean | string;
+  newArchitecture?: boolean | 'new-arch-only';
   newArchitectureNote?: string;
   alternatives?: string[];
   github: {
