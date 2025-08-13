@@ -1,6 +1,7 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 
 import GoogleAnalytics from '~/components/GoogleAnalytics';
+import { StructuredData } from '~/components/StructuredData';
 
 class DirectoryWebsite extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -22,6 +23,30 @@ class DirectoryWebsite extends Document {
 
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="/icon-180px.png" />
+        <meta name="msapplication-TileColor" content="#20232a" />
+
+        <meta name="application-name" content="React Native Directory" />
+        <meta property="og:site_name" content="React Native Directory" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reactnative.directory" />
+
+        <StructuredData
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'React Native Directory',
+            url: 'https://reactnative.directory/',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: 'https://reactnative.directory/?search={search_term_string}',
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          }}
+        />
       </Head>
       <body>
         <Main />

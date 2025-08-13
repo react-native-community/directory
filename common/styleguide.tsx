@@ -152,6 +152,7 @@ export const A = ({ href, target = '_blank', children, style, hoverStyle, ...res
       <HtmlElements.A
         {...rest}
         href={href}
+        target={target}
         hrefAttrs={{ target }}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
