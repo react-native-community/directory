@@ -34,8 +34,6 @@ export async function fetchNpmDataBulk(namesArray: string[], period = 'month', a
         npm: isMonthly
           ? {
               downloads: pkgData.downloads,
-              start: pkgData.start,
-              end: pkgData.end,
             }
           : {
               weekDownloads: pkgData?.downloads ?? 0,
@@ -69,18 +67,10 @@ export async function fetchNpmData(pkgData: Library, attemptsCount = 0) {
       return { ...pkgData, npm: null };
     }
 
-    // const weekUrl = urlForPackage(npmPkg, 'week');
-    // const weekResponse = await fetch(weekUrl);
-    // const weekDownloadData = await weekResponse.json();
-
     return {
       ...pkgData,
       npm: {
         downloads: downloadData.downloads,
-        // weekDownloads: weekDownloadData.downloads,
-        start: downloadData.start,
-        end: downloadData.end,
-        period: 'month',
       },
     };
   } catch (error) {

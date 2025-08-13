@@ -38,23 +38,7 @@ export type Query = {
   newArchitecture?: string;
 };
 
-export type Library = {
-  githubUrl: string;
-  ios?: boolean;
-  android?: boolean;
-  web?: boolean;
-  expoGo?: boolean;
-  windows?: boolean;
-  macos?: boolean;
-  fireos?: boolean;
-  tvos?: boolean;
-  visionos?: boolean;
-  unmaintained?: boolean | string;
-  dev?: boolean;
-  template?: boolean;
-  newArchitecture?: boolean | 'new-arch-only';
-  newArchitectureNote?: string;
-  alternatives?: string[];
+export type Library = LibraryDataEntry & {
   github: {
     name: string;
     isPackagePrivate: boolean;
@@ -101,16 +85,32 @@ export type Library = {
   npm?: {
     downloads?: number;
     weekDownloads?: number;
-    start?: string;
-    end?: string;
-    period?: string;
   };
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
-  examples?: string[];
-  images?: string[];
-  npmPkg?: string;
   popularity?: number;
   matchScore: number;
+};
+
+export type LibraryDataEntry = {
+  githubUrl: string;
+  ios?: boolean;
+  android?: boolean;
+  web?: boolean;
+  expoGo?: boolean;
+  windows?: boolean;
+  macos?: boolean;
+  fireos?: boolean;
+  tvos?: boolean;
+  visionos?: boolean;
+  unmaintained?: boolean | string;
+  dev?: boolean;
+  template?: boolean;
+  newArchitecture?: boolean | 'new-arch-only';
+  newArchitectureNote?: string;
+  alternatives?: string[];
+  npmPkg?: string;
+  examples?: string[];
+  images?: string[];
 };
