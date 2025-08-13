@@ -16590,5 +16590,12 @@
     "android": true,
     "expoGo": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/fbeccaceci/react-native-fast-squircle",
+    "npmPkg": "react-native-fast-squircle",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
