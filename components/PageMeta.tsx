@@ -30,9 +30,6 @@ const PageMeta = ({ title, query, path, description = site.description }: PageMe
 
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={finalDescription} />
-      <meta property="og:site_name" content={site.title} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://reactnative.directory" />
       <meta property="og:image" content={socialImage} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="669" />
@@ -41,9 +38,6 @@ const PageMeta = ({ title, query, path, description = site.description }: PageMe
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={socialImage} />
-
-      <meta name="application-name" content={site.title} />
-      <meta name="msapplication-TileColor" content="#20232a" />
 
       <link rel="canonical" href={`https://reactnative.directory${path ? `/${path}` : ''}`} />
     </Head>

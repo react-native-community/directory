@@ -172,7 +172,7 @@
         "default": false,
         "examples": [
           true,
-          "Only iOS supported"
+          "new-arch-only"
         ]
       },
       "newArchitectureNote": {
@@ -181,7 +181,8 @@
         "title": "Optional note about the New Architecture support",
         "default": "",
         "examples": [
-          "Refer to https://github.com/MinaSamir11/react-native-in-app-review/issues/169 for the latest status"
+          "Refer to https://github.com/MinaSamir11/react-native-in-app-review/issues/169 for the latest status",
+          "Only iOS supported"
         ]
       },
       "alternatives": {
