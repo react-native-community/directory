@@ -16572,5 +16572,19 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/query/tree/main/packages/query-async-storage-persister",
+    "npmPkg": "@tanstack/query-async-storage-persister",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/query/tree/main/packages/react-query-persist-client",
+    "npmPkg": "@tanstack/react-query-persist-client",
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
