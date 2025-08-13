@@ -16566,6 +16566,14 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/TanStack/form/tree/main/packages/react-form",
+    "npmPkg": "@tanstack/react-form",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/TanStack/query/tree/main/packages/query-async-storage-persister",
     "npmPkg": "@tanstack/query-async-storage-persister",
     "ios": true,
