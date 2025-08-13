@@ -143,9 +143,7 @@ const Scoring = () => {
           formula used for calculating the score looks as following:
           <br />
           <View style={styles.formula}>
-            <code>
-              (lastWeekDownloads - Math.floor(monthlyDownloads / 4.5)) / monthlyDownloads)
-            </code>
+            <code>(lastWeekDownloads / Math.floor(monthlyDownloads / 4.25)) / 5</code>
           </View>
           <br />
           <View style={[styles.sidenoteContainer]}>
@@ -155,21 +153,21 @@ const Scoring = () => {
             </P>
           </View>
         </ScoringCriterion>
-        <ScoringCriterion headline="Many downloads" score={+5}>
-          Libraries with more than 10,000 monthly downloads and Popularity Gain score above 0.25
+        <ScoringCriterion headline="Many downloads" score={+0.25}>
+          Libraries with more than 15,000 monthly downloads and Popularity Gain score above 0.25
           meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not many downloads" score={-0.25}>
-          Libraries with less than 500 monthly downloads meet this criterion.
+        <ScoringCriterion headline="Not many downloads" score={-0.75}>
+          Libraries with less than 1,000 monthly downloads meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not many followers" score={-0.1}>
+        <ScoringCriterion headline="Not many followers" score={-0.25}>
           Libraries with less than 25 starts on GitHub meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="No longer maintained" score={-0.5}>
+        <ScoringCriterion headline="No longer maintained" score={-0.75}>
           Libraries that are marked with &quot;unmaintained&quot; flag meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Very fresh package" score={-0.5}>
-          Libraries that first version was published less that 3 days ago meet this criterion.
+          Libraries that first version was published less that 7 days ago meet this criterion.
         </ScoringCriterion>
         <br />
       </ContentContainer>
