@@ -16564,5 +16564,13 @@
       "https://raw.githubusercontent.com/retyui/react-native-bundle-discovery/main/assets/img.png"
     ],
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/TanStack/form/tree/main/packages/react-form",
+    "npmPkg": "@tanstack/react-form",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
