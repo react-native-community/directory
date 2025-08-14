@@ -32,7 +32,7 @@ const TrendingMark = ({ library, style, markOnly = false }: Props) => {
           styles.popularityScore,
           {
             color: popularityStyles.backgroundColor,
-            marginBottom: markOnly ? 0 : 6,
+            marginVertical: markOnly ? -1 : 2,
             fontSize: markOnly ? 15 : 12,
           },
         ]}>
@@ -119,8 +119,9 @@ const styles = StyleSheet.create({
   scoringLink: {
     textDecorationLine: 'none',
     position: 'relative',
-    lineHeight: 18,
     backgroundColor: 'none',
+    display: 'flex',
+    alignItems: 'flex-start',
   },
 });
 
