@@ -7,7 +7,7 @@ import path from 'node:path';
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { LibraryDataEntry } from '~/types';
+import { LibraryDataEntry, Library } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { isEmptyOrNull } from '~/util/strings';
 
@@ -34,6 +34,9 @@ const SCRAPE_GH_IMAGES = false;
 const DATASET: LibraryDataEntry[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
+
+const CHUNK_SIZE = 25;
+const SLEEP_TIME = 500;
 
 const invalidRepos = [];
 const mismatchedRepos = [];
@@ -87,7 +90,6 @@ async function buildAndScoreData() {
   console.log('\n⬇️ Fetching download stats from npm-stat');
 
   let bulkList = [];
-  const CHUNK_SIZE = 25;
 
   // Filter out template entries, prepare npm-stat API chunks
   data = data.map(project => {
@@ -208,11 +210,15 @@ async function buildAndScoreData() {
               latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
           }
     );
+
     const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
+    const validEntries = data.map((entry: LibraryDataEntry) => entry.githubUrl);
 
     fileContent = JSON.stringify(
       {
-        libraries: finalData,
+        libraries: finalData.filter((entry: Library) => {
+          return validEntries.includes(entry.githubUrl);
+        }),
         topics: topicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
@@ -296,7 +302,7 @@ async function loadRepositoryDataAsync() {
       console.warn('Failed to load data from disk!', error);
     }
   } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: 25, staggerMs: 1000 });
+    result = await fetchGithubDataThrottled({ data, chunkSize: CHUNK_SIZE, staggerMs: SLEEP_TIME });
   }
 
   return result;
@@ -341,10 +347,16 @@ async function uploadToStore(fileContent: string) {
 }
 
 async function fetchNpmStatDataSequentially(bulkList: string[][]) {
+  const total = bulkList.flat().length;
   const results = [];
-  for (const chunk of bulkList) {
-    await sleep(500);
+
+  for (const [chunkIndex, chunk] of bulkList.entries()) {
+    await sleep(SLEEP_TIME);
+    console.log(`Sleeping ${SLEEP_TIME}ms`);
+
     const data = await fetchNpmStatDataBulk(chunk);
+    console.log(`${CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
+
     results.push(...data);
   }
   return results;
