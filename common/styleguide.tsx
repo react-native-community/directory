@@ -124,22 +124,22 @@ type AProps = PropsWithChildren<{
   hoverStyle?: TextStyles;
 }>;
 
-export const A = ({ href, target = '_blank', children, style, hoverStyle, ...rest }: AProps) => {
+export const A = ({ href, target, children, style, hoverStyle, ...rest }: AProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setIsHovered] = useState(false);
 
   const linkStyles = getLinkStyles(isDark);
   const linkHoverStyles = getLinkHoverStyles(isDark);
 
-  if (target === '_self' && !href.startsWith('#')) {
+  if (target === '_self' && !href.startsWith('#') || href.startsWith('/')) {
+    const passedStyle = Array.isArray(style) ? StyleSheet.flatten(style) : style;
     return (
       <Link
-        {...rest}
         href={href}
         style={{
           ...linkStyles,
           ...(isHovered && linkHoverStyles),
-          ...(style as any),
+          ...passedStyle as any,
           ...(isHovered && hoverStyle),
         }}>
         {children}
@@ -152,8 +152,8 @@ export const A = ({ href, target = '_blank', children, style, hoverStyle, ...res
       <HtmlElements.A
         {...rest}
         href={href}
-        target={target}
-        hrefAttrs={{ target }}
+        target={target ?? '_blank'}
+        hrefAttrs={{ target: target ?? '_blank' }}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
