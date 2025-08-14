@@ -13,7 +13,14 @@ import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
 
-const licenses = {};
+const licenses = {
+  isc: {
+    name: 'ISC License',
+    url: 'https://www.isc.org/licenses/',
+    key: 'isc',
+    spdxId: 'ISC',
+  },
+};
 
 /**
  * Fetch licenses from GitHub to be used later to parse licenses from npm
