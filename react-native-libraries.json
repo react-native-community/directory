@@ -5328,7 +5328,8 @@
       "https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Gil2015/react-native-table-component",
@@ -13037,7 +13038,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "fireos": true
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
