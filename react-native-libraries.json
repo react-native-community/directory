@@ -16598,5 +16598,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+    {
+    "githubUrl": "https://github.com/attarchi/react-native-lottie-splash-screen",
+    "npmPkg": "@attarchi/react-native-lottie-splash-screen",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
