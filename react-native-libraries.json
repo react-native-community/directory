@@ -15737,7 +15737,8 @@
       "https://github.com/rn-toolkit/react-native-lottie-splash-screen/tree/master/examples"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["@attarchi/react-native-lottie-splash-screen"]
   },
   {
     "githubUrl": "https://github.com/romgrk/react-fast-memo",
@@ -16596,6 +16597,13 @@
   {
     "githubUrl": "https://github.com/fbeccaceci/react-native-fast-squircle",
     "npmPkg": "react-native-fast-squircle",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/attarchi/react-native-lottie-splash-screen",
+    "npmPkg": "@attarchi/react-native-lottie-splash-screen",
     "ios": true,
     "android": true,
     "newArchitecture": true
