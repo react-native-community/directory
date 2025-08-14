@@ -15735,7 +15735,8 @@
       "https://github.com/rn-toolkit/react-native-lottie-splash-screen/tree/master/examples"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["@attarchi/react-native-lottie-splash-screen"]
   },
   {
     "githubUrl": "https://github.com/romgrk/react-fast-memo",
