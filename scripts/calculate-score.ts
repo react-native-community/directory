@@ -109,38 +109,43 @@ const getUpdatedDaysAgo = data => {
  * Trending Score
  */
 
-const MIN_MONTHLY_DOWNLOADS = 500;
-const MANY_MONTHLY_DOWNLOADS = 5000;
+const MIN_MONTHLY_DOWNLOADS = 1000;
+const MANY_MONTHLY_DOWNLOADS = 15000;
 const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
 export function calculatePopularityScore(data: Library) {
   const {
-    npm: { downloads },
+    npm: { downloads, weekDownloads },
     github,
     unmaintained,
   } = data;
 
-  if (!downloads) {
+  if (!downloads || !weekDownloads) {
     return {
       ...data,
-      popularity: -100,
+      popularity: -1,
     };
   }
 
   const { createdAt, stars } = github.stats;
 
-  // Figure out better way to determine popularity gain, since with amount of libraries
-  // we list, we are hitting npm API limits when fetching twice, for each entry
-  const popularityGain = (Math.floor(downloads / 4) - Math.floor(downloads / 4.5)) / downloads;
+  const popularityGain = weekDownloads / Math.floor(downloads / 4.25) / 5;
 
-  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.25 : 0;
-  const starsPenalty = stars < MIN_GITHUB_STARS ? 0.1 : 0;
-  const unmaintainedPenalty = unmaintained ? 0.5 : 0;
+  if (!Number.isFinite(popularityGain)) {
+    return {
+      ...data,
+      popularity: -1,
+    };
+  }
+
+  const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 0.25 : 0) : 0;
+
+  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.75 : 0;
+  const starsPenalty = stars < MIN_GITHUB_STARS ? 0.25 : 0;
+  const unmaintainedPenalty = unmaintained ? 0.75 : 0;
   const freshPackagePenalty = DATE_NOW - new Date(createdAt).getTime() < WEEK_IN_MS ? 0.5 : 0;
-
-  const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 5 : 0) : 0;
 
   const popularity = parseFloat(
     (
