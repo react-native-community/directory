@@ -16607,5 +16607,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-mesh-gradient",
+    "npmPkg": "expo-mesh-gradient",
+    "ios": true,
+    "android": false,
+    "newArchitecture": true
   }
 ]
