@@ -16620,5 +16620,13 @@
     "android": false,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "npmPkg": "react-native-worklets",
+    "githubUrl": "https://github.com/software-mansion/react-native-reanimated/tree/main/packages/react-native-worklets",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
