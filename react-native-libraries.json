@@ -2993,6 +2993,7 @@
     ],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -3010,6 +3011,7 @@
     "examples": ["https://docs.expo.dev/versions/unversioned/sdk/task-manager/#example"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true
   },
   {
@@ -3025,6 +3027,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/video-thumbnails/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -12577,6 +12580,7 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-dev-client",
     "ios": true,
     "android": true,
+    "tvos": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -14707,6 +14711,7 @@
     "examples": ["https://docs.expo.dev/versions/latest/sdk/background-task/#usage"],
     "ios": true,
     "android": true,
+    "tvos": true,
     "newArchitecture": true
   },
   {
@@ -16613,6 +16618,7 @@
     "npmPkg": "expo-mesh-gradient",
     "ios": true,
     "android": false,
+    "tvos": true,
     "newArchitecture": true
   }
 ]
