@@ -16628,5 +16628,17 @@
     "android": true,
     "web": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/realimposter/react-native-animated-glow",
+    "npmPkg": "react-native-animated-glow",
+    "images": [
+      "https://raw.githubusercontent.com/realimposter/react-native-animated-glow/main/assets/react-native-glow-demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
