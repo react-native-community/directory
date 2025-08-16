@@ -1,4 +1,18 @@
 [
+    {
+    "githubUrl": "https://github.com/realimposter/react-native-animated-glow",
+    "examples": [
+      "https://reactnativeglow.com"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/realimposter/react-native-animated-glow/main/assets/react-native-glow-demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "npmPkg": "react-native-animated-glow"
+  },
   {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
