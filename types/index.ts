@@ -41,15 +41,14 @@ export type Query = {
 export type Library = LibraryDataEntry & {
   github: {
     name: string;
-    isPackagePrivate: boolean;
     fullName: string;
-    description: string;
+    description?: string;
     registry?: string;
     topics?: string[];
     newArchitecture?: boolean;
     hasTypes: boolean;
     isArchived: boolean;
-    isPrivate: boolean;
+    isPrivate?: boolean;
     urls: {
       repo: string;
       homepage: string | null;
@@ -68,13 +67,13 @@ export type Library = LibraryDataEntry & {
       stars: number;
       forks: number;
     };
-    license: {
+    license?: {
       key: string;
       name: string;
       spdxId: string;
       url: string;
-      id: string;
-    };
+      id?: string;
+    } | null;
   };
   npm: {
     downloads?: number;
@@ -85,7 +84,7 @@ export type Library = LibraryDataEntry & {
   matchingScoreModifiers: string[];
   topicSearchString: string;
   popularity: number;
-  matchScore: number;
+  matchScore?: number;
 };
 
 export type LibraryWithConvexData = Library & {

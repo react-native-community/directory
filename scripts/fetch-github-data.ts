@@ -126,7 +126,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
 
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
-      json.isPackagePrivate = packageJson.private ?? false;
+      json.isPackagePrivate = packageJson.private === 'true';
       json.registry = packageJson?.publishConfig?.registry ?? undefined;
 
       if (monorepo) {
