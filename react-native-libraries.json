@@ -16677,13 +16677,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/AlirezaHadjar/react-native-fast-confetti",
-    "examples": ["https://github.com/AlirezaHadjar/react-native-fast-confetti/tree/main/example"],
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/stripe/stripe-identity-react-native",
     "npmPkg": "@stripe/stripe-identity-react-native",
     "examples": ["https://github.com/stripe/stripe-identity-react-native/tree/main/example"],
