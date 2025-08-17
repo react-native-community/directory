@@ -1,4 +1,4 @@
-name: "[DATA] Test and Validate"
+name: "[CONVEX] Update libraries data"
 
 on:
   schedule:
@@ -17,6 +17,6 @@ jobs:
     - name: Validate react-native-libraries.json
       run: bun data:update
       env:
-        CONVEX_AUTH_KEY: ${{ secrets.CONVEX_AUTH_KEY }}
+        CONVEX_DEPLOY_KEY: ${{ secrets.CONVEX_DEPLOY_KEY }}
         CONVEX_DEPLOYMENT: 'dev:calm-quail-572'
         NEXT_PUBLIC_CONVEX_URL: 'https://calm-quail-572.convex.cloud'

@@ -26,5 +26,3 @@ jobs:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
         VERCEL_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'
-        CONVEX_DEPLOYMENT: 'dev:calm-quail-572'
-        NEXT_PUBLIC_CONVEX_URL: 'https://calm-quail-572.convex.cloud'

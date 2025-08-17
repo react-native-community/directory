@@ -17,9 +17,6 @@ import fetchReadmeImages from './fetch-readme-images';
 import { fillNpmName, hasMismatchedPackageData, processTopics, sleep } from './helpers';
 
 const httpClient = new ConvexHttpClient(process.env['NEXT_PUBLIC_CONVEX_URL']);
-const httpAuthClient = new ConvexHttpClient(process.env['NEXT_PUBLIC_CONVEX_URL'], {
-  auth: process.env['CONVEX_AUTH_KEY'],
-});
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -197,9 +194,10 @@ async function buildAndScoreData() {
     };
   }
 
-  if (!USE_DEBUG_REPOS || !process.env['CONVEX_AUTH_KEY']) {
-    console.warn(fileContent.libraries);
-    await httpAuthClient.mutation(api.mutations.updateLibrariesData, {
+  if (!USE_DEBUG_REPOS || !process.env['CONVEX_DEPLOY_KEY']) {
+    console.log('⬆️️ Uploading newest data to Convex');
+
+    await httpClient.mutation(api.mutations.updateLibrariesData, {
       libraries: fileContent.libraries,
     });
   }

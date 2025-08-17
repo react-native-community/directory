@@ -77,7 +77,9 @@ const LibraryDefinition = v.object({
 });
 
 export const updateLibrariesData = mutation({
-  args: { libraries: v.array(LibraryDefinition) },
+  args: {
+    libraries: v.array(LibraryDefinition)
+  },
   handler: async (ctx, args) => {
     const existing = await ctx.db.query('libraries').collect();
     for (const doc of existing) {
