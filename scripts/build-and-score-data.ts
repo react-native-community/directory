@@ -1,28 +1,29 @@
-import { BlobAccessError, list, put } from '@vercel/blob';
-import fetch from 'cross-fetch';
+import { ConvexHttpClient } from 'convex/browser';
 import chunk from 'lodash/chunk';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { api } from '~/convex/_generated/api';
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { LibraryDataEntry, Library } from '~/types';
+import { LibraryDataEntry, Library, DataFile } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import fetchReadmeImages from './fetch-readme-images';
-import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
+import { fillNpmName, hasMismatchedPackageData, processTopics, sleep } from './helpers';
+
+const httpClient = new ConvexHttpClient(process.env['NEXT_PUBLIC_CONVEX_URL']);
+const httpAuthClient = new ConvexHttpClient(process.env['NEXT_PUBLIC_CONVEX_URL'], {
+  auth: process.env['CONVEX_AUTH_KEY'],
+});
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
 const USE_DEBUG_REPOS = false;
-
-// If script should only write to the local data file and not upload to the store.
-// This is useful for debugging and testing purposes.
-const ONLY_WRITE_LOCAL_DATA_FILE = false;
 
 // Loads the GitHub API results from disk rather than hitting the API each time.
 // The first run will hit the API if raw-github-results.json doesn't exist yet.
@@ -44,9 +45,9 @@ const mismatchedRepos = [];
 const wantedPackageName = process.argv[2];
 
 async function buildAndScoreData() {
-  console.log('⬇️️ Fetching latest data blob from the store');
+  console.log('⬇️️ Fetching latest data blob from Convex');
 
-  const { latestData } = await fetchLatestData();
+  const latestData = await httpClient.query(api.queries.getLibrariesData, {});
 
   console.log('📦️ Loading data from GitHub');
 
@@ -134,27 +135,6 @@ async function buildAndScoreData() {
     }
   });
 
-  console.log('\n🏷️ Processing topics');
-  const topicCounts = {};
-  data.forEach((project, index, projectList) => {
-    let topicSearchString = '';
-
-    if (project.github.topics) {
-      project.github.topics.forEach(topic => {
-        topicSearchString = `${topicSearchString} ${topic}`;
-
-        if (!topicCounts[topic]) {
-          topicCounts[topic] = 1;
-          return;
-        }
-
-        topicCounts[topic] += 1;
-      });
-    }
-
-    projectList[index].topicSearchString = topicSearchString.trim();
-  });
-
   if (invalidRepos.length) {
     console.warn(
       '\n 🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
@@ -171,72 +151,68 @@ async function buildAndScoreData() {
     );
   }
 
+  console.log('\n🏷️ Processing topics');
+  const topicsData = processTopics(data);
+
   console.log('📄️ Preparing data file');
 
-  const { libraries, ...rest } = latestData;
-
-  let fileContent;
+  let fileContent: DataFile;
 
   if (wantedPackageName) {
-    fileContent = JSON.stringify(
-      {
-        libraries: libraries.map(library => {
-          if (library.npmPkg === wantedPackageName) {
-            return data.find(entry => entry.npmPkg === wantedPackageName);
-          }
-          return library;
-        }),
-        ...rest,
-      },
-      null,
-      2
-    );
+    fileContent = {
+      libraries: latestData.map(library => {
+        if (library.npmPkg === wantedPackageName) {
+          return data.find(entry => entry.npmPkg === wantedPackageName);
+        }
+        return library;
+      }),
+      ...topicsData,
+    };
   } else {
-    const existingData = libraries.map(lib => lib.npmPkg);
+    const existingData = latestData.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
 
     const existingPackages = DATASET.map(fillNpmName).map(lib => lib.npmPkg);
     const dataToFill = missingData.filter(npmPkg => !existingPackages.includes(npmPkg));
 
-    const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
+    const currentData = [...latestData.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
 
     const dataWithFallback = currentData.map(entry =>
       Object.keys(entry.npm).length > 0
         ? entry
         : {
             ...entry,
-            npm:
-              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+            npm: latestData.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
           }
     );
 
-    const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
     const validEntries = data.map((entry: LibraryDataEntry) => entry.githubUrl);
 
-    fileContent = JSON.stringify(
-      {
-        libraries: finalData.filter((entry: Library) => {
-          return validEntries.includes(entry.githubUrl);
-        }),
-        topics: topicCounts,
-        topicsList: Object.keys(topicCounts).sort(),
-      },
-      null,
-      2
-    );
+    fileContent = {
+      libraries: dataWithFallback.filter((entry: Library) => {
+        return validEntries.includes(entry.githubUrl);
+      }),
+      ...topicsData,
+    };
   }
 
-  if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
-    await uploadToStore(fileContent);
+  if (!USE_DEBUG_REPOS || !process.env['CONVEX_AUTH_KEY']) {
+    console.warn(fileContent.libraries);
+    await httpAuthClient.mutation(api.mutations.updateLibrariesData, {
+      libraries: fileContent.libraries,
+    });
   }
 
-  return fs.writeFileSync(DATA_PATH, fileContent);
+  const dataString = JSON.stringify(fileContent, null, 2);
+
+  return fs.writeFileSync(DATA_PATH, dataString);
 }
 
 export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
   let results = [];
   const chunks = chunk(data, chunkSize);
+
   for (const c of chunks) {
     if (chunks.indexOf(c) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
@@ -272,7 +248,7 @@ function getDataForFetch(wantedPackage: string) {
   return DATASET;
 }
 
-async function loadRepositoryDataAsync() {
+async function loadRepositoryDataAsync(): Promise<Library[]> {
   const data = getDataForFetch(wantedPackageName);
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
@@ -306,44 +282,6 @@ async function loadRepositoryDataAsync() {
   }
 
   return result;
-}
-
-async function fetchLatestData() {
-  if (ONLY_WRITE_LOCAL_DATA_FILE) {
-    console.log('⚠️ Only writing to local data file, skipping blob store fetch');
-    return {
-      latestData: JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')),
-    };
-  }
-
-  const { blobs } = await list();
-
-  if (blobs?.length > 0) {
-    const sortedBlobs = blobs.sort(
-      (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
-    );
-    const response = await fetch(sortedBlobs[0].downloadUrl);
-
-    return {
-      latestData: await response.json(),
-    };
-  }
-
-  return JSON.parse(fs.readFileSync(DATA_PATH).toString());
-}
-
-async function uploadToStore(fileContent: string) {
-  console.log('⬆️ Uploading data blob to the store');
-  try {
-    await put('data.json', fileContent, { access: 'public' });
-  } catch (error) {
-    if (error instanceof BlobAccessError) {
-      console.error('❌ Cannot access the blob store, aborting!');
-      throw error;
-    } else {
-      throw error;
-    }
-  }
 }
 
 async function fetchNpmStatDataSequentially(bulkList: string[][]) {

@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 
 import {
-  processTopics,
+  cleanupTopics,
   sleep,
   REQUEST_SLEEP,
   makeGraphqlQuery,
@@ -131,7 +131,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
-        json.topics = processTopics(packageJson.keywords);
+        json.topics = cleanupTopics(packageJson.keywords);
         json.description = packageJson.description;
         json.licenseInfo = getLicenseFromPackageJson(packageJson);
       }
@@ -139,8 +139,8 @@ const createRepoDataWithResponse = (json, monorepo) => {
       if (!monorepo) {
         json.topics = [
           ...new Set([
-            ...processTopics(packageJson.keywords),
-            ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
+            ...cleanupTopics(packageJson.keywords),
+            ...cleanupTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
           ]),
         ];
 

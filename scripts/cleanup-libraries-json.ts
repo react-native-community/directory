@@ -5,17 +5,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import libraries from '~/react-native-libraries.json';
-import { Library } from '~/types';
+import { LibraryDataEntry } from '~/types';
 
 const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 
 const emptyPropertiesToKeep = ['newArchitecture'];
 
-function removeEmptyArray(lib: Library, key: string) {
-  return lib[key] && !lib[key].length ? (omit(lib, key) as Library) : lib;
+function removeEmptyArray(lib: LibraryDataEntry, key: string) {
+  return lib[key] && !lib[key].length ? (omit(lib, key) as LibraryDataEntry) : lib;
 }
 
-const processedLibraries = (libraries as Library[])
+const processedLibraries = (libraries as LibraryDataEntry[])
   // Remove redundant `npmPkg` for libraries with correct GitHub repository name
   .map(lib =>
     lib.npmPkg && !lib.npmPkg.includes('/') && lib.githubUrl.endsWith(`/${lib.npmPkg}`)
