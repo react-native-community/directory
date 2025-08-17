@@ -16601,7 +16601,6 @@
   },
   {
     "githubUrl": "https://github.com/fbeccaceci/react-native-fast-squircle",
-    "npmPkg": "react-native-fast-squircle",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16615,14 +16614,11 @@
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-mesh-gradient",
-    "npmPkg": "expo-mesh-gradient",
     "ios": true,
-    "android": false,
     "tvos": true,
     "newArchitecture": true
   },
   {
-    "npmPkg": "react-native-worklets",
     "githubUrl": "https://github.com/software-mansion/react-native-reanimated/tree/main/packages/react-native-worklets",
     "ios": true,
     "android": true,
@@ -16631,7 +16627,6 @@
   },
   {
     "githubUrl": "https://github.com/realimposter/react-native-animated-glow",
-    "npmPkg": "react-native-animated-glow",
     "images": [
       "https://raw.githubusercontent.com/realimposter/react-native-animated-glow/main/assets/react-native-glow-demo.gif"
     ],
@@ -16640,5 +16635,63 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TheWidlarzGroup/react-native-video-player",
+    "examples": [
+      "https://github.com/TheWidlarzGroup/react-native-video-player/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dream-sports-labs/d11-react-native-mqtt",
+    "npmPkg": "@d11/react-native-mqtt",
+    "examples": ["https://github.com/dream-sports-labs/d11-react-native-mqtt/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vvv-sss/react-native-drop-shadow-view",
+    "examples": ["https://github.com/vvv-sss/react-native-drop-shadow-view/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rit3zh/expo-liquid-glass-view",
+    "examples": ["https://github.com/rit3zh/expo-liquid-glass-view/tree/main/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/HeligPfleigh/react-native-thermal-receipt-printer",
+    "examples": [
+      "https://github.com/HeligPfleigh/react-native-thermal-receipt-printer/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/riderodd/react-native-vosk",
+    "examples": ["https://github.com/riderodd/react-native-vosk/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stripe/stripe-identity-react-native",
+    "npmPkg": "@stripe/stripe-identity-react-native",
+    "examples": ["https://github.com/stripe/stripe-identity-react-native/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-screen-corner-radius",
+    "examples": [
+      "https://github.com/mrousavy/react-native-screen-corner-radius/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/mrousavy/react-native-screen-corner-radius/refs/heads/master/img/example.png"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
