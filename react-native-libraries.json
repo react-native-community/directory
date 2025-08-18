@@ -16693,5 +16693,15 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Stephenjoe10/react-native-battery-info",
+    "npmPkg": "react-native-battery-info-pro",
+    "examples": [
+      "https://github.com/Stephenjoe10/react-native-battery-info?tab=readme-ov-file#-usage"
+    ],
+    "ios": false,
+    "android": true,
+    "newArchitecture": true
   }
 ]
