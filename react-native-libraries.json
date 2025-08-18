@@ -16693,5 +16693,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Stephenjoe10/react-native-battery-info",
+    "npmPkg": "react-native-battery-info-pro",
+    "ios": false,
+    "android": true,
+    "newArchitecture": true
   }
 ]
