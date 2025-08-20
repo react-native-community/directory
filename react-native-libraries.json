@@ -16701,5 +16701,16 @@
     "ios": false,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fordat/expo-roomplan",
+    "npmPkg": "expo-roomplan",
+    "examples": [
+      "https://github.com/fordat/expo-roomplan/tree/main/example-managed",
+      "https://github.com/fordat/expo-roomplan/tree/main/example"
+    ],
+    "ios": true,
+    "android": false,
+    "web": false
   }
 ]
