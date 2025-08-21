@@ -16712,5 +16712,15 @@
     "ios": true,
     "android": false,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/twilio/twilio-voice-react-native",
+    "npmPkg": "@twilio/voice-react-native-sdk",
+    "examples": [
+      "https://github.com/twilio/twilio-voice-react-native-app"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
