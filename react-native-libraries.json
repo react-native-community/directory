@@ -16712,5 +16712,21 @@
     "ios": true,
     "android": false,
     "web": false
+  },
+  {
+    "githubUrl": "https://github.com/DimaIvashchuk/react-native-emoji-picker",
+    "npmPkg": "react-native-emoji-chooser",
+    "examples": [
+      "https://github.com/DimaIvashchuk/react-native-emoji-picker/tree/master/example"
+    ],
+    "images": ["https://github.com/DimaIvashchuk/react-native-emoji-picker/tree/master/gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
