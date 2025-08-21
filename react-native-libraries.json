@@ -16717,5 +16717,15 @@
     "githubUrl": "https://github.com/donni106/matomo-tracker-react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/twilio/twilio-voice-react-native",
+    "npmPkg": "@twilio/voice-react-native-sdk",
+    "examples": [
+      "https://github.com/twilio/twilio-voice-react-native-app"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
