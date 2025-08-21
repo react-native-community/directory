@@ -16712,5 +16712,25 @@
     "ios": true,
     "android": false,
     "web": false
-  }
+  },
+  {
+  "githubUrl": "https://github.com/devanshuruhela/react-native-feedback-hub",
+  "npmPkg": "react-native-feedback-hub",
+  "examples": [
+    "https://github.com/devanshuruhela/react-native-feedback-hub#-react-native-feedback-hub"
+  ],
+  "ios": true,
+  "android": true,
+  "web": false,
+  "windows": false,
+  "macos": false,
+  "tvos": false,
+  "visionos": false,
+  "expoGo": false,
+  "fireos": false,
+  "unmaintained": false,
+  "dev": false,
+  "template": false,
+  "newArchitecture": true
+}
 ]
