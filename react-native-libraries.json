@@ -16748,5 +16748,17 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/elevenlabs/packages/tree/main/packages/react-native",
+    "npmPkg": "@elevenlabs/react-native",
+    "examples": [
+      "https://github.com/elevenlabs/packages/tree/main/examples/react-native-expo"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
