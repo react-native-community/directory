@@ -16711,7 +16711,8 @@
     ],
     "ios": true,
     "android": false,
-    "web": false
+    "web": false,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/donni106/matomo-tracker-react-native",
