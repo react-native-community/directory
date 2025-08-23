@@ -131,7 +131,7 @@ export const A = ({ href, target, children, style, hoverStyle, ...rest }: AProps
   const linkStyles = getLinkStyles(isDark);
   const linkHoverStyles = getLinkHoverStyles(isDark);
 
-  if (target === '_self' && !href.startsWith('#') || href.startsWith('/')) {
+  if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
     const passedStyle = Array.isArray(style) ? StyleSheet.flatten(style) : style;
     return (
       <Link
@@ -139,7 +139,7 @@ export const A = ({ href, target, children, style, hoverStyle, ...rest }: AProps
         style={{
           ...linkStyles,
           ...(isHovered && linkHoverStyles),
-          ...passedStyle as any,
+          ...(passedStyle as any),
           ...(isHovered && hoverStyle),
         }}>
         {children}
