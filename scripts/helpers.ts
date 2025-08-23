@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 
-import { Library } from '~/types';
+import { DataFile, Library } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 
@@ -58,7 +58,37 @@ export function fillNpmName(library: Library) {
   return library;
 }
 
-export function processTopics(topics?: string[]) {
+export function processTopics(data: Library[]) {
+  const topicCounts: DataFile['topics'] = {};
+
+  data.forEach((project, index, projectList) => {
+    let topicSearchString = '';
+
+    if (project.github.topics) {
+      project.github.topics.forEach(topic => {
+        topicSearchString = `${topicSearchString} ${topic}`;
+
+        if (!topicCounts[topic]) {
+          topicCounts[topic] = 1;
+          return;
+        }
+
+        topicCounts[topic] += 1;
+      });
+    }
+
+    projectList[index].topicSearchString = topicSearchString.trim();
+  });
+
+  return {
+    topics: Object.fromEntries(
+      Object.entries(topicCounts).sort(([, aCount], [, bCount]) => bCount - aCount)
+    ),
+    topicsList: Object.keys(topicCounts).sort(),
+  };
+}
+
+export function cleanupTopics(topics?: string[]) {
   return (topics ?? [])
     .map(topic =>
       topic

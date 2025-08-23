@@ -1,0 +1,22 @@
+name: "[CONVEX] Update libraries data"
+
+on:
+  schedule:
+    # Run every 3 hours - https://crontab.guru/#0_*/3_*_*_*
+    - cron: '0 */3 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v2
+    - name: Install dependencies
+      run: bun install
+    - name: Validate react-native-libraries.json
+      run: bun data:update
+      env:
+        CONVEX_DEPLOY_KEY: ${{ secrets.CONVEX_DEPLOY_KEY }}
+        CONVEX_DEPLOYMENT: 'dev:calm-quail-572'
+        NEXT_PUBLIC_CONVEX_URL: 'https://calm-quail-572.convex.cloud'

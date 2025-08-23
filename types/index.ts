@@ -41,56 +41,55 @@ export type Query = {
 export type Library = LibraryDataEntry & {
   github: {
     name: string;
-    isPackagePrivate: boolean;
     fullName: string;
-    description: string;
+    description?: string;
     registry?: string;
     topics?: string[];
-    hasTypes?: boolean;
     newArchitecture?: boolean;
-    isArchived?: boolean;
+    hasTypes: boolean;
+    isArchived: boolean;
+    isPrivate?: boolean;
     urls: {
       repo: string;
-      clone: string;
-      homepage?: string | null;
+      homepage: string | null;
     };
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
+      hasDiscussions: boolean;
       hasSponsorships: boolean;
       hasTopics?: boolean;
-      updatedAt: Date | string;
-      createdAt: Date | string;
-      pushedAt: Date | string;
+      updatedAt: string;
+      createdAt: string;
+      pushedAt: string;
       issues: number;
       subscribers: number;
       stars: number;
       forks: number;
     };
-    license: {
+    license?: {
       key: string;
       name: string;
       spdxId: string;
       url: string;
-      id: string;
-    };
-    lastRelease?: {
-      name: string;
-      tagName: string;
-      createdAt: Date | string;
-      publishedAt: Date | string;
-      isPrerelease: boolean;
-    };
+      id?: string;
+    } | null;
   };
-  npm?: {
+  npm: {
     downloads?: number;
     weekDownloads?: number;
   };
+  npmPkg: string;
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
-  popularity?: number;
-  matchScore: number;
+  popularity: number;
+  matchScore?: number;
+};
+
+export type LibraryWithConvexData = Library & {
+  _id: string;
+  _creationTime: number;
 };
 
 export type LibraryDataEntry = {
@@ -104,7 +103,7 @@ export type LibraryDataEntry = {
   fireos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
-  unmaintained?: boolean | string;
+  unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;
   newArchitecture?: boolean | 'new-arch-only';
@@ -113,4 +112,10 @@ export type LibraryDataEntry = {
   npmPkg?: string;
   examples?: string[];
   images?: string[];
+};
+
+export type DataFile = {
+  libraries: Library[];
+  topics: Record<string, number>;
+  topicsList: string[];
 };
