@@ -16698,20 +16698,16 @@
   {
     "githubUrl": "https://github.com/Stephenjoe10/react-native-battery-info",
     "npmPkg": "react-native-battery-info-pro",
-    "ios": false,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/fordat/expo-roomplan",
-    "npmPkg": "expo-roomplan",
     "examples": [
       "https://github.com/fordat/expo-roomplan/tree/main/example-managed",
       "https://github.com/fordat/expo-roomplan/tree/main/example"
     ],
     "ios": true,
-    "android": false,
-    "web": false,
     "newArchitecture": true
   },
   {
@@ -16722,9 +16718,7 @@
   {
     "githubUrl": "https://github.com/twilio/twilio-voice-react-native",
     "npmPkg": "@twilio/voice-react-native-sdk",
-    "examples": [
-      "https://github.com/twilio/twilio-voice-react-native-app"
-    ],
+    "examples": ["https://github.com/twilio/twilio-voice-react-native-app"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16738,9 +16732,7 @@
   {
     "githubUrl": "https://github.com/DimaIvashchuk/react-native-emoji-picker",
     "npmPkg": "react-native-emoji-chooser",
-    "examples": [
-      "https://github.com/DimaIvashchuk/react-native-emoji-picker/tree/master/example"
-    ],
+    "examples": ["https://github.com/DimaIvashchuk/react-native-emoji-picker/tree/master/example"],
     "images": [
       "https://github.com/DimaIvashchuk/react-native-emoji-picker/blob/master/gif/dark.gif",
       "https://github.com/DimaIvashchuk/react-native-emoji-picker/blob/master/gif/white.gif"
@@ -16753,9 +16745,7 @@
   {
     "githubUrl": "https://github.com/elevenlabs/packages/tree/main/packages/react-native",
     "npmPkg": "@elevenlabs/react-native",
-    "examples": [
-      "https://github.com/elevenlabs/packages/tree/main/examples/react-native-expo"
-    ],
+    "examples": ["https://github.com/elevenlabs/packages/tree/main/examples/react-native-expo"],
     "ios": true,
     "android": true,
     "newArchitecture": true
