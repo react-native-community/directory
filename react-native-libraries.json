@@ -563,13 +563,12 @@
     "npmPkg": "lottie-react-native"
   },
   {
-    "githubUrl": "https://github.com/react-native-maps/react-native-maps/tree/master/packages/lib",
-    "npmPkg": "react-native-maps",
+    "githubUrl": "https://github.com/react-native-maps/react-native-maps",
     "ios": true,
     "android": true,
     "expoGo": true,
     "examples": [
-      "https://github.com/react-native-maps/react-native-maps/tree/master/packages/example",
+      "https://github.com/react-native-maps/react-native-maps/tree/master/example",
       "https://snack.expo.dev/H1zOFxnN-"
     ],
     "newArchitecture": true
@@ -16746,6 +16745,48 @@
     "githubUrl": "https://github.com/elevenlabs/packages/tree/main/packages/react-native",
     "npmPkg": "@elevenlabs/react-native",
     "examples": ["https://github.com/elevenlabs/packages/tree/main/examples/react-native-expo"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-core",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-barcode",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-id",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-parser",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-label",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-label-text",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Scandit/scandit-react-native-datacapture-price-label",
     "ios": true,
     "android": true,
     "newArchitecture": true
