@@ -16832,5 +16832,15 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/getsettalk/react-native-qr-kit",
+    "npmPkg": "react-native-qr-kit",
+    "examples": [
+      "https://github.com/getsettalk/react-native-qr-kit/tree/main/Example"
+    ],
+    "ios": false,
+    "android": true,
+    "newArchitecture": true
   }
 ]
