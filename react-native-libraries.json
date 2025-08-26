@@ -16817,5 +16817,20 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/10play/10tap-editor",
+    "npmPkg": "@10play/tentap-editor",
+    "examples": [
+      "https://github.com/10play/10tap-editor/tree/main/example",
+      "https://github.com/10play/10TapAdvancedExample",
+      "https://github.com/10play/10tap-web-example"
+    ],
+    "images": ["https://raw.githubusercontent.com/10play/10tap-editor/refs/heads/main/website/static/img/cover.webp"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
