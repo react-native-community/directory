@@ -16826,7 +16826,9 @@
       "https://github.com/10play/10TapAdvancedExample",
       "https://github.com/10play/10tap-web-example"
     ],
-    "images": ["https://raw.githubusercontent.com/10play/10tap-editor/refs/heads/main/website/static/img/cover.webp"],
+    "images": [
+      "https://raw.githubusercontent.com/10play/10tap-editor/refs/heads/main/website/static/img/cover.webp"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -16835,12 +16837,43 @@
   },
   {
     "githubUrl": "https://github.com/getsettalk/react-native-qr-kit",
-    "npmPkg": "react-native-qr-kit",
-    "examples": [
-      "https://github.com/getsettalk/react-native-qr-kit/tree/main/Example"
-    ],
-    "ios": false,
+    "examples": ["https://github.com/getsettalk/react-native-qr-kit/tree/main/Example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/checkout-sheet-kit-react-native/tree/main/modules/%40shopify/checkout-sheet-kit",
+    "npmPkg": "@shopify/checkout-sheet-kit",
+    "examples": ["https://github.com/Shopify/checkout-sheet-kit-react-native/tree/main/sample"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/expo-live-activity",
+    "examples": ["https://github.com/software-mansion-labs/expo-live-activity/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-rag",
+    "examples": ["https://github.com/software-mansion-labs/react-native-rag/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/xmartlabs/react-native-line",
+    "npmPkg": "@xmartlabs/react-native-line",
+    "examples": ["https://github.com/xmartlabs/react-native-line/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mybigday/llama.rn",
+    "examples": ["https://github.com/mybigday/llama.rn/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
