@@ -34,7 +34,7 @@ export const getUpdatedUrl = async url => {
 export const parseGitHubUrl = url => {
   const [, , , repoOwner, repoName, ...path] = url.split('/');
   const isMonorepo = !!(path && path.length);
-  const packagePath = isMonorepo ? path.slice(2).join('/') : '.';
+  const packagePath = isMonorepo ? path.slice(2).join('/').replace('%40', '@') : '.';
 
   return {
     repoOwner,
