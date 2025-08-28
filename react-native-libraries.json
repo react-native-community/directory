@@ -12291,12 +12291,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "tvos": true,
     "web": true,
-    "windows": true,
-    "macos": true,
     "fireos": true,
-    "visionos": true,
     "newArchitecture": true
   },
   {
@@ -12306,12 +12302,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "tvos": true,
     "web": true,
-    "windows": true,
-    "macos": true,
     "fireos": true,
-    "visionos": true,
     "dev": true,
     "newArchitecture": true
   },
