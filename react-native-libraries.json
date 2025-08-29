@@ -16869,26 +16869,12 @@
     "android": true
   },
   {
-  "githubUrl": "https://github.com/iymra-org/rn-toptabs",
-  "npmPkg": "rn-toptabs",
-  "examples": [
-    "https://github.com/iymra-org/rn-toptabs?tab=readme-ov-file#usage-example"
-  ],
-  "images": [
-   "https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"
-  ],
-  "ios": true,
-  "android": true,
-  "web": false,
-  "windows": false,
-  "macos": false,
-  "tvos": false,
-  "visionos": false,
-  "expoGo": false,
-  "fireos": false,
-  "unmaintained": false,
-  "dev": false,
-  "template": false,
-  "newArchitecture": true
-}
+    "githubUrl": "https://github.com/iymra-org/rn-toptabs",
+    "images": [
+     "https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
