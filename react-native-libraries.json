@@ -16868,5 +16868,14 @@
     "examples": ["https://github.com/mybigday/llama.rn/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/iymra-org/rn-toptabs",
+    "images": [
+     "https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
