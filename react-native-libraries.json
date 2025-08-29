@@ -16867,5 +16867,26 @@
     "examples": ["https://github.com/mybigday/llama.rn/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/iymra-org/rn-toptabs",
+    "npmPkg": "tn-toptabs",
+    "examples": [
+      "https://github.com/iymra-org/rn-toptabs?tab=readme-ov-file#usage-example"
+    ],
+    "images": ["https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "expoGo": false,
+    "fireos": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false,
+    "newArchitecture": true
   }
 ]
