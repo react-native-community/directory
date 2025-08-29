@@ -12290,8 +12290,9 @@
     ],
     "ios": true,
     "android": true,
-    "web": true,
     "expoGo": true,
+    "web": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -12300,8 +12301,9 @@
     "examples": ["https://azuretranslatorcode.vercel.app/"],
     "ios": true,
     "android": true,
-    "web": true,
     "expoGo": true,
+    "web": true,
+    "fireos": true,
     "dev": true,
     "newArchitecture": true
   },
@@ -12344,8 +12346,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "dev": true,
-    "newArchitecture": true
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/kore-koi/react-native-get-random-values",
