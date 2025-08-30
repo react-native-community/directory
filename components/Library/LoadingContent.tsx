@@ -1,10 +1,16 @@
-import { useContext } from 'react';
+import { SVGAttributes, useContext } from 'react';
 import ContentLoader from 'react-content-loader';
 
 import { colors, darkColors, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
-const LoadingContent = ({ width = '100%', height = 232, wrapperStyle = {} }) => {
+type Props = {
+  width?: string | number;
+  height?: string | number;
+  wrapperStyle?: SVGAttributes<SVGSVGElement>['style'];
+};
+
+const LoadingContent = ({ width = '100%', height = 202, wrapperStyle = {} }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
   return (

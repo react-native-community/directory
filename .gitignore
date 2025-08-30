@@ -2,6 +2,7 @@
 scripts/raw-github-results.json
 secrets.json
 .env
+.env.local
 
 # Standard stuff
 node_modules/**/*

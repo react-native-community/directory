@@ -1,47 +1,35 @@
 import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { View, StyleSheet } from 'react-native';
+import { type ParsedUrlQuery } from 'node:querystring';
+import { StyleSheet } from 'react-native';
 
 import ContentContainer from '~/components/ContentContainer';
-import LoadingContent from '~/components/Library/LoadingContent';
+import Libraries from '~/components/Libraries';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import Search from '~/components/Search';
+import { type APIResponseType } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
-const LibrariesWithLoading = dynamic(() => import('~/components/Libraries'), {
-  loading: () => (
-    <View
-      style={{
-        paddingTop: 12,
-      }}>
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-      <LoadingContent />
-    </View>
-  ),
-});
+type Props = {
+  data: APIResponseType;
+  query: ParsedUrlQuery;
+};
 
-const Index = ({ data, query }) => {
+const Index = ({ data, query }: Props) => {
   const router = useRouter();
   const total = data && data.total;
   return (
     <>
-      <PageMeta query={router.query?.search} />
+      <PageMeta searchQuery={router.query?.search} />
       <Navigation noHeader />
       <Search query={router.query} total={total} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />
-        <LibrariesWithLoading libraries={data && data.libraries} />
+        <Libraries libraries={data && data.libraries} />
         <Pagination query={query} total={total} />
       </ContentContainer>
     </>
@@ -51,7 +39,7 @@ const Index = ({ data, query }) => {
 Index.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
   const response = await fetch(url);
-  const result = await response.json();
+  const result: APIResponseType = await response.json();
 
   return {
     data: result,
