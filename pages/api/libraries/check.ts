@@ -1,14 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { Library } from '~/types';
+import { type APIResponseType } from '~/types';
 import { getNewArchSupportStatus } from '~/util/newArchStatus';
 
 // Copy data into an object that is keyed by npm package name for faster lookup
 const dataByNpmPackage = {};
-data.libraries.forEach(library => {
-  const npmPackageName = getNpmPackageName(library);
-  dataByNpmPackage[npmPackageName] = {
+(data as APIResponseType).libraries.forEach(library => {
+  dataByNpmPackage[library.npmPkg] = {
     unmaintained: library.unmaintained,
     newArchitecture: getNewArchSupportStatus(library),
   };
@@ -37,9 +36,4 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   });
 
   return res.json(result);
-}
-
-// if npmPkg, use that, otherwise use the last path segment on githubUrl
-function getNpmPackageName(library: Library): string {
-  return library.npmPkg ?? library.githubUrl.split('/').pop() ?? '';
 }

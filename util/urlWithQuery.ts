@@ -1,4 +1,4 @@
-import { Query } from '../types';
+import { Query } from '~/types';
 
 function toQueryString(query: Query) {
   return new URLSearchParams(query as Record<string, string>).toString();

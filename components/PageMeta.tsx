@@ -11,14 +11,14 @@ type PageMetaProps = {
   title?: string;
   description?: string;
   path?: string;
-  query?: string | string[];
+  searchQuery?: string | string[];
 };
 
-const PageMeta = ({ title, query, path, description = site.description }: PageMetaProps) => {
+const PageMeta = ({ title, searchQuery, path, description = site.description }: PageMetaProps) => {
   const pageTitle = `${title ? title + ' • ' : ''}${site.title}`;
-  const parsedQuery = Array.isArray(query) ? query[0] : query;
-  const finalDescription = parsedQuery
-    ? `Search results for keyword: '${parsedQuery}'`
+  const parsedSearchQuery = Array.isArray(searchQuery) ? searchQuery[0] : searchQuery;
+  const finalDescription = parsedSearchQuery
+    ? `Search results for keyword: '${parsedSearchQuery}'`
     : description;
 
   const socialImage = `${BASE_OG_URL}&title=${encodeURIComponent(pageTitle)}&description=${encodeURIComponent(finalDescription)}`;

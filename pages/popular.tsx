@@ -17,10 +17,15 @@ import {
 } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
+import { type APIResponseType, type Library } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
-const Popular = ({ data }) => {
+type Props = {
+  data: Library[];
+};
+
+const Popular = ({ data }: Props) => {
   return (
     <>
       <PageMeta
@@ -101,7 +106,7 @@ Popular.getInitialProps = async (ctx: NextPageContext) => {
     ctx
   );
   const response = await fetch(url);
-  const result = await response.json();
+  const result: APIResponseType = await response.json();
 
   return {
     data: result.libraries,

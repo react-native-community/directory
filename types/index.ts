@@ -114,3 +114,8 @@ export type LibraryDataEntry = {
   examples?: string[];
   images?: string[];
 };
+
+export type APIResponseType = {
+  libraries: Library[];
+  total?: number;
+};

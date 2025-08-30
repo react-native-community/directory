@@ -103,9 +103,6 @@ export default defineConfig([
       '@next/next/no-img-element': 'off',
       'import/no-named-as-default': 'off',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
-      'react/no-this-in-sfc': 'off',
-      'react/no-unknown-property': ['error', { ignore: ['css', 'mask-type'] }],
-      'react/no-unescaped-entities': 'off',
       'react/jsx-key': [
         'error',
         {
@@ -117,7 +114,7 @@ export default defineConfig([
     },
   },
 
-  // Typed Node files configuration
+  // Typed Bun files configuration
   {
     files: ['**/*.ts'],
     extends: [universeNodeConfig],
@@ -128,7 +125,7 @@ export default defineConfig([
     },
   },
 
-  // Non-typed Node files configuration
+  // Non-typed Bun files configuration
   {
     files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
     extends: [universeNodeConfig],

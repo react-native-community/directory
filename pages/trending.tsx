@@ -13,7 +13,12 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType, QueryOrder } from '~/types';
+import {
+  type APIResponseType,
+  type Library as LibraryType,
+  type Query,
+  type QueryOrder,
+} from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -21,7 +26,12 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => <LoadingContent />,
 });
 
-const Trending = ({ data, query }) => {
+type Props = {
+  data: APIResponseType;
+  query: Query;
+};
+
+const Trending = ({ data, query }: Props) => {
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 2);
   const { isDark } = useContext(CustomAppearanceContext);
   const total = data && data.total;
@@ -97,7 +107,7 @@ Trending.getInitialProps = async (ctx: NextPageContext) => {
   };
   const url = getApiUrl(urlWithQuery('/libraries', trendingQuery), ctx);
   const response = await fetch(url);
-  const result = await response.json();
+  const result: APIResponseType = await response.json();
 
   return {
     data: result,
