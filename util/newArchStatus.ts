@@ -1,4 +1,4 @@
-import { Library } from '~/types';
+import { type Library } from '~/types';
 
 export enum NewArchSupportStatus {
   NewArchOnly = 'new-arch-only',

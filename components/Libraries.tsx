@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import { H3, A, P } from '~/common/styleguide';
 import LoadingContent from '~/components/Library/LoadingContent';
-import { Library as LibraryType } from '~/types';
+import { type Library as LibraryType } from '~/types';
 
 type Props = {
   libraries: LibraryType[];
@@ -19,7 +19,7 @@ const Libraries = ({ libraries }: Props) => {
       <View style={styles.container}>
         <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
         <H3 style={styles.text}>Nothing was found! Try another search.</H3>
-        <View style={{ marginTop: 20 }} />
+        <View style={styles.separator} />
         <P style={styles.text}>
           Want to contribute a library you like? Submit a PR to the{' '}
           <A href="https://github.com/react-native-community/react-native-directory">GitHub Repo</A>
@@ -31,7 +31,7 @@ const Libraries = ({ libraries }: Props) => {
 
   return (
     <View style={styles.librariesContainer}>
-      {libraries.map((item: LibraryType, index: number) => (
+      {libraries.map((item, index) => (
         <LibraryWithLoading key={`list-item-${index}-${item.github.name}`} library={item} />
       ))}
     </View>
@@ -57,6 +57,9 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+  },
+  separator: {
+    marginTop: 20,
   },
 });
 
