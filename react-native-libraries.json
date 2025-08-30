@@ -16180,8 +16180,11 @@
     "githubUrl": "https://github.com/callstackincubator/react-native-node-api/tree/main/packages/host",
     "npmPkg": "react-native-node-api",
     "examples": [
+      "https://github.com/callstackincubator/node-api-example-lib",
+      "https://github.com/callstackincubator/react-native-node-api/tree/main/packages/ferric-example",
       "https://github.com/callstackincubator/react-native-node-api/tree/main/apps/test-app"
     ],
+    "newArchitecture": true,
     "android": true,
     "ios": true
   },
@@ -16871,9 +16874,7 @@
   },
   {
     "githubUrl": "https://github.com/iymra-org/rn-toptabs",
-    "images": [
-     "https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"
-    ],
+    "images": ["https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
