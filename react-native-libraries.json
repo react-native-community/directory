@@ -16878,5 +16878,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/vijayanandof/react-native-gnss-status-checker",
+    "npmPkg": "react-native-gnss-status-checker",
+    "android": true,
+    "newArchitecture": true,
+    "examples": ["https://github.com/vijayanandof/GnssTestApp"]
   }
 ]
