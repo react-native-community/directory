@@ -9237,11 +9237,8 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/nativewind/nativewind/tree/main/packages/nativewind",
-    "examples": ["https://github.com/nativewind/nativewind/tree/main/examples/expo-router"],
-    "images": [
-      "https://user-images.githubusercontent.com/3946701/178458837-df03c080-eb13-4dcc-9080-186b061a8678.png"
-    ],
+    "githubUrl": "https://github.com/nativewind/nativewind",
+    "examples": ["https://github.com/nativewind/nativewind/tree/main/example"],
     "ios": true,
     "android": true,
     "expoGo": true,
