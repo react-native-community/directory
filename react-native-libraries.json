@@ -1531,7 +1531,8 @@
     "githubUrl": "https://github.com/corbt/react-native-keep-awake",
     "ios": true,
     "android": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["@thehale/react-native-keep-awake"]
   },
   {
     "githubUrl": "https://github.com/lucasferreira/react-native-send-intent",
@@ -16896,6 +16897,16 @@
   {
     "githubUrl": "https://github.com/irolinski/typewriter4react-native",
     "npmPkg": "typewriter4react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thehale/react-native-keep-awake",
+    "npmPkg": "@thehale/react-native-keep-awake",
+    "examples": [
+      "https://github.com/thehale/react-native-keep-awake/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
