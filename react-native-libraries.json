@@ -16892,5 +16892,12 @@
     "android": true,
     "newArchitecture": true,
     "examples": ["https://github.com/vijayanandof/GnssTestApp"]
+  },
+  {
+    "githubUrl": "https://github.com/irolinski/typewriter4react-native",
+    "npmPkg": "typewriter4react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
   }
 ]
