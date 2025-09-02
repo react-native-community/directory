@@ -14119,8 +14119,13 @@
     "android": true,
     "ios": true,
     "macos": true,
+    "windows": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "web": true,
+    "fireos": true,
+    "tvos": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
@@ -14542,7 +14547,12 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "macos": true,
+    "windows": true,
+    "fireos": true,
+    "tvos": true,
+    "visionos": true
   },
   {
     "githubUrl": "https://github.com/w88975/expo-click-outside",
