@@ -16921,13 +16921,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/callstackincubator/ottrelite/tree/main/packages/core",
-    "npmPkg": "@ottrelite/core",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/callstack/liquid-glass",
     "npmPkg": "@callstack/liquid-glass",
     "examples": [
