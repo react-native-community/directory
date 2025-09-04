@@ -16923,5 +16923,22 @@
     "web": true,
     "macos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nkzw-tech/stack",
+    "npmPkg": "@nkzw/stack",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstack/liquid-glass",
+    "npmPkg": "@callstack/liquid-glass",
+    "examples": [
+      "https://github.com/callstackincubator/ottrelite/tree/main/examples/rn-app"
+    ],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
