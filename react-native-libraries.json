@@ -6513,9 +6513,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-mmkv/tree/main/package",
-    "npmPkg": "react-native-mmkv",
-    "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/package/example"],
+    "githubUrl": "https://github.com/mrousavy/react-native-mmkv/tree/main/packages/react-native-mmkv",
+    "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/example"],
     "ios": true,
     "android": true,
     "fireos": true,
@@ -16890,14 +16889,12 @@
   },
   {
     "githubUrl": "https://github.com/vijayanandof/react-native-gnss-status-checker",
-    "npmPkg": "react-native-gnss-status-checker",
     "android": true,
     "newArchitecture": true,
     "examples": ["https://github.com/vijayanandof/GnssTestApp"]
   },
   {
     "githubUrl": "https://github.com/irolinski/typewriter4react-native",
-    "npmPkg": "typewriter4react-native",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16905,19 +16902,14 @@
   {
     "githubUrl": "https://github.com/thehale/react-native-keep-awake",
     "npmPkg": "@thehale/react-native-keep-awake",
-    "examples": [
-      "https://github.com/thehale/react-native-keep-awake/tree/main/example"
-    ],
+    "examples": ["https://github.com/thehale/react-native-keep-awake/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/kevcube/expo-better-auth-passkey",
-    "npmPkg": "expo-better-auth-passkey",
-    "examples": [
-      "https://github.com/kevcube/expo-better-auth-passkey/tree/main/example"
-    ],
+    "examples": ["https://github.com/kevcube/expo-better-auth-passkey/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -16935,10 +16927,22 @@
   {
     "githubUrl": "https://github.com/callstack/liquid-glass",
     "npmPkg": "@callstack/liquid-glass",
-    "examples": [
-      "https://github.com/callstackincubator/ottrelite/tree/main/examples/rn-app"
-    ],
+    "examples": ["https://github.com/callstackincubator/ottrelite/tree/main/examples/rn-app"],
     "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/VladyslavMartynov10/react-native-nitro-event-kit",
+    "examples": ["https://github.com/VladyslavMartynov10/react-native-nitro-event-kit/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ChristopherGabba/react-native-nitro-audio-manager",
+    "examples": ["https://github.com/ChristopherGabba/react-native-nitro-audio-manager/tree/main/example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
