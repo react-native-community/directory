@@ -16913,6 +16913,18 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/kevcube/expo-better-auth-passkey",
+    "npmPkg": "expo-better-auth-passkey",
+    "examples": [
+      "https://github.com/kevcube/expo-better-auth-passkey/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "macos": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/nkzw-tech/stack",
     "npmPkg": "@nkzw/stack",
     "ios": true,
