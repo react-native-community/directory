@@ -14487,7 +14487,8 @@
       "https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true 
   },
   {
     "githubUrl": "https://github.com/pioner92/rn-fade-wrapper",
