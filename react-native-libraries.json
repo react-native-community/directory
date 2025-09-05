@@ -16955,6 +16955,7 @@
   },
   {
     "githubUrl": "https://github.com/hyochan/react-native-masonry-list",
+    "npmPkg": "@react-native-seoul/masonry-list",
     "examples": ["https://github.com/hyochan/react-native-masonry-list/tree/main/MasonryExample"],
     "ios": true,
     "android": true
