@@ -14488,7 +14488,7 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true 
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/pioner92/rn-fade-wrapper",
@@ -16944,6 +16944,25 @@
     "examples": ["https://github.com/ChristopherGabba/react-native-nitro-audio-manager/tree/main/example"],
     "ios": true,
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched",
+    "examples": ["https://github.com/software-mansion-labs/react-native-enriched/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyochan/react-native-masonry-list",
+    "npmPkg": "@react-native-seoul/masonry-list",
+    "examples": ["https://github.com/hyochan/react-native-masonry-list/tree/main/MasonryExample"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-glass-effect",
+    "ios": true,
     "newArchitecture": true
   }
 ]
