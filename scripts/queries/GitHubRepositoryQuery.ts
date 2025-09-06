@@ -1,5 +1,11 @@
 const GitHubRepositoryQuery = `
-  query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
+  query (
+    $repoOwner: String!,
+    $repoName: String!,
+    $packagePath: String = ".",
+    $packageFilesPath: String = "HEAD:.",
+    $packageJsonPath: String = "HEAD:package.json"
+  ) {
     rateLimit {
       limit
       cost
@@ -64,6 +70,14 @@ const GitHubRepositoryQuery = `
       packageJson:object(expression: $packageJsonPath) {
         ... on Blob {
           text
+        }
+      }
+      files: object(expression: $packageFilesPath) {
+        ... on Tree {
+          entries {
+            name
+            type
+          }
         }
       }
     }

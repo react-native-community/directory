@@ -49,6 +49,7 @@ export type Library = LibraryDataEntry & {
     hasTypes?: boolean;
     newArchitecture?: boolean;
     isArchived?: boolean;
+    hasNativeCode: boolean;
     urls: {
       repo: string;
       clone: string;

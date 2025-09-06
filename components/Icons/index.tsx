@@ -444,3 +444,14 @@ export function Info({ width = 18, height = 18, fill = colors.black }: IconProps
     </Svg>
   );
 }
+
+export function NativeCode({ width = 18, height = 22, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 18 22" fill="none">
+      <Path
+        fill={fill}
+        d="M0 0H12.414L18 5.586V22H0V0ZM2 2V20H16V8H10V2H2ZM12 2.414V6H15.586L12 2.414ZM8.207 11.207L6.414 13L8.207 14.793L6.793 16.207L3.586 13L6.793 9.793L8.207 11.207ZM11.207 9.793L14.414 13L11.207 16.207L9.793 14.793L11.586 13L9.793 11.207L11.207 9.793Z"
+      />
+    </Svg>
+  );
+}

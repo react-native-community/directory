@@ -72,6 +72,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     hasExample: req.query.hasExample,
     hasImage: req.query.hasImage,
     hasTypes: req.query.hasTypes,
+    hasNativeCode: req.query.hasNativeCode,
     isMaintained: req.query.isMaintained,
     isPopular: req.query.isPopular,
     isRecommended: req.query.isRecommended,

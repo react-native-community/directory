@@ -46,6 +46,10 @@ export const FILTER_STATUS = [
     title: 'Supports New Architecture',
   },
   {
+    param: 'hasNativeCode',
+    title: 'Uses native code',
+  },
+  {
     param: 'hasExample',
     title: 'Has example',
   },
