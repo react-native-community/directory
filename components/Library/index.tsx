@@ -46,7 +46,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
         skipMetadata && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
         library.unmaintained && styles.unmaintained,
       ]}>
-      <View style={styles.columnOne}>
+      <View style={[styles.columnOne, styles.columnDesktop]}>
         {library.unmaintained && (
           <View
             style={
@@ -112,14 +112,11 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
           </View>
         ) : null}
         {hasSecondaryMetadata ? (
-          <>
-            {isSmallScreen ? null : <View style={styles.filler} />}
-            <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
-              <View style={[styles.displayHorizontal, styles.secondaryStats]}>
-                <MetaData library={library} secondary />
-              </View>
+          <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
+            <View style={[styles.displayHorizontal, styles.secondaryStats]}>
+              <MetaData library={library} secondary />
             </View>
-          </>
+          </View>
         ) : null}
       </View>
       {skipMetadata ? null : (
@@ -154,6 +151,9 @@ const styles = StyleSheet.create({
   containerColumn: {
     flexDirection: 'column',
   },
+  columnDesktop: {
+    paddingBottom: 14,
+  },
   columnOne: {
     ...Platform.select({
       web: {
@@ -186,6 +186,7 @@ const styles = StyleSheet.create({
   displayHorizontal: {
     flexDirection: 'row',
     alignItems: 'center',
+    rowGap: 2,
   },
   exampleLink: {
     marginRight: 6,
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   secondaryStats: {
-    marginTop: 6,
+    marginTop: 12,
     flexWrap: 'wrap',
   },
   secondaryText: {
@@ -226,12 +227,7 @@ const styles = StyleSheet.create({
   },
   bottomBar: {
     width: '100%',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    minHeight: 42,
-    paddingLeft: 20,
-    paddingRight: 16,
+    marginTop: 'auto',
   },
   bottomBarSmall: {
     position: 'relative',

@@ -2,7 +2,7 @@ import * as HtmlElements from '@expo/html-elements';
 import { TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
 import { ComponentType, PropsWithChildren, useContext, useState } from 'react';
-import { StyleSheet, TextStyle, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, TextStyle, View, useWindowDimensions, ViewStyle } from 'react-native';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
@@ -122,9 +122,18 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: TextStyles;
+  containerStyle?: ViewStyle;
 }>;
 
-export const A = ({ href, target, children, style, hoverStyle, ...rest }: AProps) => {
+export const A = ({
+  href,
+  target,
+  children,
+  style,
+  hoverStyle,
+  containerStyle,
+  ...rest
+}: AProps) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -148,10 +157,14 @@ export const A = ({ href, target, children, style, hoverStyle, ...rest }: AProps
   }
 
   return (
-    <View onPointerEnter={() => setIsHovered(true)} onPointerLeave={() => setIsHovered(false)}>
+    <View
+      onPointerEnter={() => setIsHovered(true)}
+      onPointerLeave={() => setIsHovered(false)}
+      style={containerStyle}>
       <HtmlElements.A
         {...rest}
         href={href}
+        numberOfLines={containerStyle ? 1 : undefined}
         target={target ?? '_blank'}
         hrefAttrs={{ target: target ?? '_blank' }}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>

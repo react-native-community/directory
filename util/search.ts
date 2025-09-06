@@ -79,6 +79,7 @@ export function handleFilterLibraries({
   hasExample,
   hasImage,
   hasTypes,
+  hasNativeCode,
   isMaintained,
   isPopular,
   isRecommended,
@@ -168,6 +169,10 @@ export function handleFilterLibraries({
     }
 
     if (hasTypes && !library.github.hasTypes) {
+      return false;
+    }
+
+    if (hasNativeCode && !library.github.hasNativeCode) {
       return false;
     }
 

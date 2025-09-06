@@ -4609,12 +4609,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/yamill/react-native-orientation",
-    "ios": true,
-    "android": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/aksonov/react-native-tableview",
     "ios": true
   },
@@ -6136,9 +6130,9 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/dooboolab/react-native-audio-recorder-player",
+    "githubUrl": "https://github.com/hyochan/react-native-nitro-sound",
     "examples": [
-      "https://github.com/dooboolab/react-native-audio-recorder-player/tree/master/Example"
+      "https://github.com/hyochan/react-native-nitro-sound/tree/main/example"
     ],
     "ios": true,
     "android": true

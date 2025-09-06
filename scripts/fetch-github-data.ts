@@ -1,5 +1,7 @@
 import { config } from 'dotenv';
 
+import hasNativeCode from '~/util/hasNativeCode';
+
 import {
   processTopics,
   sleep,
@@ -71,6 +73,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       repoOwner,
       repoName,
       packagePath,
+      packageFilesPath: packagePath === '.' ? 'HEAD:' : `HEAD:${packagePath}`,
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
     });
 
@@ -101,6 +104,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
+
     return {
       ...data,
       github,
@@ -198,5 +202,6 @@ const createRepoDataWithResponse = (json, monorepo) => {
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
+    hasNativeCode: hasNativeCode(json.files),
   };
 };

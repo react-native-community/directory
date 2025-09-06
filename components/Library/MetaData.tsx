@@ -1,12 +1,23 @@
 import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Library as LibraryType } from '~/types';
 
 import { DirectoryScore } from './DirectoryScore';
-import { Star, Download, Eye, Issue, Web, License, Fork, Code, TypeScript } from '../Icons';
+import {
+  Star,
+  Download,
+  Eye,
+  Issue,
+  Web,
+  License,
+  Fork,
+  Code,
+  TypeScript,
+  NativeCode,
+} from '../Icons';
 
 type Props = {
   library: LibraryType;
@@ -34,7 +45,10 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           id: 'downloads',
           icon: <Download fill={iconColor} width={16} height={18} />,
           content: (
-            <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
+            <A
+              href={`https://www.npmjs.com/package/${npmPkg}`}
+              style={styles.link}
+              containerStyle={styles.linkContainer}>
               {`${npm.downloads.toLocaleString()}`} monthly downloads
             </A>
           ),
@@ -120,6 +134,13 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
             ),
         }
       : null,
+    github.hasNativeCode
+      ? {
+          id: 'nativeCode',
+          icon: <NativeCode fill={iconColor} width={16} height={16} />,
+          content: <P style={paragraphStyles}>Native code</P>,
+        }
+      : null,
     github.hasTypes
       ? {
           id: 'types',
@@ -178,6 +199,7 @@ const styles = StyleSheet.create({
   datumContainer: {
     marginBottom: 8,
     minHeight: 22,
+    overflow: 'hidden',
   },
   displayHorizontal: {
     flexDirection: 'row',
@@ -187,6 +209,14 @@ const styles = StyleSheet.create({
     marginRight: 8,
     width: 20,
     alignItems: 'center',
+  },
+  linkContainer: {
+    display: 'contents',
+    ...Platform.select({
+      web: {
+        textOverflow: 'ellipsis',
+      },
+    }),
   },
   link: {
     fontSize: 15,
@@ -200,7 +230,7 @@ const styles = StyleSheet.create({
     fontWeight: 300,
   },
   secondaryContainer: {
-    marginBottom: 6,
+    marginBottom: 0,
     marginRight: 16,
   },
   secondaryIconContainer: {
