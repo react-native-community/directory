@@ -2,11 +2,19 @@ import Link from 'next/link';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { P, colors } from '~/common/styleguide';
+import { type Query } from '~/types';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { CheckBox } from '../CheckBox';
 
-export const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
+type Props = {
+  query: Query;
+  paramName: string;
+  title: string;
+  basePath?: string;
+};
+
+export function ToggleLink({ query, paramName, title, basePath = '/' }: Props) {
   const isSelected = !!query[paramName];
 
   return (
@@ -23,7 +31,7 @@ export const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
       </View>
     </Link>
   );
-};
+}
 
 const styles = StyleSheet.create({
   link: {

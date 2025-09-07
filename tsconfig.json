@@ -20,7 +20,8 @@
     "strict": false,
     "paths": {
       "~/*": ["./*"]
-    }
+    },
+    "typeRoots": ["types", "node_modules/@types"],
   },
   "exclude": [
     "node_modules"

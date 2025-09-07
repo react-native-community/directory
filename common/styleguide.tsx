@@ -188,7 +188,7 @@ const getLinkHoverStyles = (isDark: boolean) => ({
   textDecorationColor: isDark ? darkColors.powder : colors.gray4,
 });
 
-export const HoverEffect = ({ children }) => {
+export function HoverEffect({ children }: PropsWithChildren) {
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -203,4 +203,4 @@ export const HoverEffect = ({ children }) => {
       {children}
     </View>
   );
-};
+}

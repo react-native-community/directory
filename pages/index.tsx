@@ -21,7 +21,7 @@ type Props = {
 
 const Index = ({ data, query }: Props) => {
   const router = useRouter();
-  const total = data && data.total;
+  const total = data.total ?? 0;
   return (
     <>
       <PageMeta searchQuery={router.query?.search} />

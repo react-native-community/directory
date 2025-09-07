@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library } from '~/types';
+import { LibraryType } from '~/types';
 
 import { Info } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
@@ -11,7 +11,7 @@ import { Tag } from './Tag';
 import Tooltip from './Tooltip';
 
 type Props = {
-  library: Library;
+  library: LibraryType;
 };
 
 export function CompatibilityTags({ library }: Props) {

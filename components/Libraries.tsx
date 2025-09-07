@@ -3,7 +3,7 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import { H3, A, P } from '~/common/styleguide';
 import LoadingContent from '~/components/Library/LoadingContent';
-import { type Library as LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 type Props = {
   libraries: LibraryType[];

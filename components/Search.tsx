@@ -36,7 +36,7 @@ const Search = ({ query, total }: Props) => {
       const keyDownListener = (event: KeyboardEvent) => {
         if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
           event.preventDefault();
-          inputRef.current.focus();
+          inputRef.current?.focus();
         }
       };
       document.addEventListener('keydown', keyDownListener, false);
@@ -76,7 +76,7 @@ const Search = ({ query, total }: Props) => {
                   ) {
                     event.preventDefault();
                   }
-                  if (event.key === 'Escape') {
+                  if (inputRef.current && event.key === 'Escape') {
                     if (search) {
                       event.preventDefault();
                       inputRef.current.value = '';

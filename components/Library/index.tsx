@@ -6,7 +6,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { MetaData } from './MetaData';
 import Thumbnail from './Thumbnail';
@@ -94,7 +94,9 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
         </View>
         {github.description && github.description.length && (
           <View style={styles.verticalMargin}>
-            <Headline numberOfLines={skipMetadata && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
+            <Headline
+              numberOfLines={skipMetadata ? 3 : undefined}
+              style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
                   linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,

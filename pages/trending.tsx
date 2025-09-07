@@ -13,12 +13,7 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import {
-  type APIResponseType,
-  type Library as LibraryType,
-  type Query,
-  type QueryOrder,
-} from '~/types';
+import { type APIResponseType, type LibraryType, type Query, type QueryOrder } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 

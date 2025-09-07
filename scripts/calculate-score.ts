@@ -1,7 +1,7 @@
 /**
  * Directory Score
  */
-import { type Library } from '~/types';
+import { type LibraryType } from '~/types';
 
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to condition function, and if it returns true, the value is added to the
@@ -68,7 +68,7 @@ const maxScore = MODIFIERS.reduce((currentMax, modifier) => {
   return modifier.value > 0 ? currentMax + modifier.value : currentMax;
 }, 0);
 
-export function calculateDirectoryScore(data: Library) {
+export function calculateDirectoryScore(data: LibraryType) {
   // Filter the modifiers to the ones which conditions pass with the data
   const matchingModifiers = MODIFIERS.filter(modifier => modifier.condition(data));
 
@@ -91,13 +91,13 @@ export function calculateDirectoryScore(data: Library) {
   };
 }
 
-function getCombinedPopularity(data: Library) {
+function getCombinedPopularity(data: LibraryType) {
   const { subscribers, forks, stars } = data.github.stats;
   const { downloads } = data.npm;
   return subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;
 }
 
-function getUpdatedDaysAgo(data: Library) {
+function getUpdatedDaysAgo(data: LibraryType) {
   const { updatedAt } = data.github.stats;
   const updateDate = new Date(updatedAt).getTime();
   const currentDate = new Date().getTime();
@@ -115,7 +115,7 @@ const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
-export function calculatePopularityScore(data: Library) {
+export function calculatePopularityScore(data: LibraryType) {
   const {
     npm: { downloads, weekDownloads },
     github,

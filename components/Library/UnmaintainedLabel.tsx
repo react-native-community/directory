@@ -3,10 +3,15 @@ import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { type LibraryDataEntryType } from '~/types';
 
 import { Warning } from '../Icons';
 
-const UnmaintainedLabel = ({ alternatives }) => {
+type Props = {
+  alternatives?: LibraryDataEntryType['alternatives'];
+};
+
+function UnmaintainedLabel({ alternatives }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -59,7 +64,7 @@ const UnmaintainedLabel = ({ alternatives }) => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   unmaintainedTextWrapper: {

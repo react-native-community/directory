@@ -5,7 +5,12 @@ import { StyleSheet, View } from 'react-native';
 import { A, colors, darkColors, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
-const NavigationTab = ({ title, path = `/${title.toLowerCase()}` }) => {
+type Props = {
+  title: string;
+  path?: string;
+};
+
+function NavigationTab({ title, path = `/${title.toLowerCase()}` }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const router = useRouter();
   const isActive = router.pathname === path;
@@ -30,7 +35,7 @@ const NavigationTab = ({ title, path = `/${title.toLowerCase()}` }) => {
       </View>
     </A>
   );
-};
+}
 
 const styles = StyleSheet.create({
   tabLink: {

@@ -4,7 +4,8 @@ import { StyleSheet, View } from 'react-native';
 import { A, colors, darkColors } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType } from '~/types';
+import { parseGitHubUrl } from '~/scripts/helpers';
+import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 
 import { Calendar } from '../Icons';
@@ -22,6 +23,8 @@ export default function UpdatedAtView({ library }: Props) {
   const unmaintainedIconColor = isDark ? darkColors.warning : colors.warningDark;
   const unmaintainedTextColor = isDark ? darkColors.warning : colors.warningDark;
 
+  const { branchName, packagePath } = parseGitHubUrl(library.githubUrl);
+
   return (
     <View style={styles.updatedAtContainer}>
       <Tooltip
@@ -38,7 +41,11 @@ export default function UpdatedAtView({ library }: Props) {
         Last update (based on git activity)
       </Tooltip>
       <A
-        href={`${library.github.urls.repo}/commits`}
+        href={
+          packagePath === '.'
+            ? `${library.github.urls.repo}/commits`
+            : `${library.github.urls.repo}/commits/${branchName}/${packagePath}`
+        }
         style={[
           styles.link,
           {

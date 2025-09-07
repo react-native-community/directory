@@ -17,12 +17,12 @@ import {
 } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
-import { type APIResponseType, type Library } from '~/types';
+import { type APIResponseType, type LibraryType } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
-  data: Library[];
+  data: LibraryType[];
 };
 
 const Popular = ({ data }: Props) => {

@@ -25,7 +25,7 @@ type PlatformProps = {
   style?: ViewStyle;
 };
 
-const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
+function Platform({ name, pkgName, url, Icon, style }: PlatformProps) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const packageHoverStyle = {
@@ -46,7 +46,7 @@ const Platform = ({ name, pkgName, url, Icon, style }: PlatformProps) => {
       </View>
     </A>
   );
-};
+}
 
 const Footer = () => {
   const { isDark } = useContext(CustomAppearanceContext);

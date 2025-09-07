@@ -40,6 +40,7 @@ const GitHubRepositoryQuery = `
       nameWithOwner
       isArchived
       isMirror
+      isPrivate
       licenseInfo {
         key
         name

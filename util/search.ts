@@ -1,4 +1,4 @@
-import { Library, Query } from '~/types';
+import { LibraryType, Query } from '~/types';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -9,7 +9,7 @@ const GITHUB_URL_CLEANUP_REGEX =
   /^https?:\/\/(?:www\.)?github\.com\/([^/]+\/[^/]+)(?:$|\/|\.git).*$/;
 
 function calculateMatchScore(
-  { github, npmPkg, topicSearchString, unmaintained, githubUrl }: Library,
+  { github, npmPkg, topicSearchString, unmaintained, githubUrl }: LibraryType,
   querySearch: string
 ) {
   const exactNameMatchPoints =

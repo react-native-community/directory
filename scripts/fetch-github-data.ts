@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 
+import { LibraryType } from '~/types';
 import hasNativeCode from '~/util/hasNativeCode';
 
 import {
@@ -59,7 +60,7 @@ export const fetchGithubRateLimit = async () => {
   return {};
 };
 
-export const fetchGithubData = async (data, retries = 2) => {
+export async function fetchGithubData(data: LibraryType, retries = 2) {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
@@ -114,10 +115,10 @@ export const fetchGithubData = async (data, retries = 2) => {
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     return await fetchGithubData(data, retries - 1);
   }
-};
+}
 
+// Get the GitHub license spec from the npm string
 const getLicenseFromPackageJson = packageJson => {
-  // Get the GitHub license spec from the npm string
   if (packageJson.license && typeof packageJson.license === 'string') {
     return licenses[packageJson.license.toLowerCase()];
   }

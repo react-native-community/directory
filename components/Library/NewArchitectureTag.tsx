@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { colors, darkColors, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library } from '~/types';
+import { LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 import { Check, Question, XIcon } from '../Icons';
@@ -12,7 +12,7 @@ import { Tag } from '../Tag';
 import Tooltip from '../Tooltip';
 
 type Props = {
-  library: Library;
+  library: LibraryType;
 };
 
 export function NewArchitectureTag({ library }: Props) {
