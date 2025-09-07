@@ -16958,5 +16958,17 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-glass-effect",
     "ios": true,
     "newArchitecture": true
+  }, 
+  {
+    "githubUrl": "https://github.com/crossplatformkorea/react-native-naver-login",
+    "npmPkg": "@react-native-seoul/naver-login",
+    "examples": [
+      "https://github.com/crossplatformkorea/react-native-naver-login/tree/main/example",
+      "https://github.com/crossplatformkorea/react-native-naver-login/tree/main/example-expo53"
+    ],
+    
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
