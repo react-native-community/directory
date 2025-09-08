@@ -1,6 +1,8 @@
 import { createContext } from 'react';
 
-export default createContext<{
+export type CustomAppearanceContextType = {
   isDark: boolean;
   setIsDark: (value: boolean) => void;
-}>({ isDark: false, setIsDark() {} });
+};
+
+export default createContext<CustomAppearanceContextType>({ isDark: false, setIsDark() {} });

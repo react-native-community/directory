@@ -5,7 +5,11 @@ import { H2, A, P } from '~/common/styleguide';
 import Navigation from './Navigation';
 import PageMeta from './PageMeta';
 
-const ErrorState = ({ statusCode }) => {
+type Props = {
+  statusCode: number;
+};
+
+function ErrorState({ statusCode }: Props) {
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
@@ -20,7 +24,7 @@ const ErrorState = ({ statusCode }) => {
       </View>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

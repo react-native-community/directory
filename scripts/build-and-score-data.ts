@@ -7,7 +7,7 @@ import path from 'node:path';
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { LibraryDataEntry, Library } from '~/types';
+import { LibraryDataEntryType, LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { isEmptyOrNull } from '~/util/strings';
 
@@ -31,15 +31,15 @@ const LOAD_GITHUB_RESULTS_FROM_DISK = false;
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = false;
 
-const DATASET: LibraryDataEntry[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
+const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 const CHUNK_SIZE = 25;
 const SLEEP_TIME = 500;
 
-const invalidRepos = [];
-const mismatchedRepos = [];
+const invalidRepos: string[] = [];
+const mismatchedRepos: LibraryType[] = [];
 
 const wantedPackageName = process.argv[2];
 
@@ -212,11 +212,11 @@ async function buildAndScoreData() {
     );
 
     const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
-    const validEntries = data.map((entry: LibraryDataEntry) => entry.githubUrl);
+    const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
 
     fileContent = JSON.stringify(
       {
-        libraries: finalData.filter((entry: Library) => {
+        libraries: finalData.filter((entry: LibraryType) => {
           return validEntries.includes(entry.githubUrl);
         }),
         topics: topicCounts,
@@ -234,7 +234,15 @@ async function buildAndScoreData() {
   return fs.writeFileSync(DATA_PATH, fileContent);
 }
 
-export async function fetchGithubDataThrottled({ data, chunkSize, staggerMs }) {
+export async function fetchGithubDataThrottled({
+  data,
+  chunkSize,
+  staggerMs,
+}: {
+  data: LibraryDataEntryType[];
+  chunkSize: number;
+  staggerMs: number;
+}) {
   let results = [];
   const chunks = chunk(data, chunkSize);
   for (const c of chunks) {
@@ -272,7 +280,7 @@ function getDataForFetch(wantedPackage: string) {
   return DATASET;
 }
 
-async function loadRepositoryDataAsync() {
+async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
   const data = getDataForFetch(wantedPackageName);
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();

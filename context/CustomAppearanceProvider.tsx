@@ -1,20 +1,22 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as React from 'react';
-import { Appearance, StatusBar, View } from 'react-native';
+import { type PropsWithChildren, useEffect, useState } from 'react';
+import { Appearance, View } from 'react-native';
 
-import CustomAppearanceContext from './CustomAppearanceContext';
+import CustomAppearanceContext, {
+  type CustomAppearanceContextType,
+} from './CustomAppearanceContext';
 
 const appearanceStorageKey = '@ReactNativeDirectory:CustomAppearanceContext';
 const shouldRehydrate = true;
 
 const defaultState = { isDark: false };
 
-const CustomAppearanceProvider = ({ children }) => {
+function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const colorScheme = Appearance.getColorScheme();
-  const [isDark, setIsDark] = React.useState(colorScheme === 'dark');
-  const [isLoaded, setLoaded] = React.useState(false);
+  const [isDark, setIsDark] = useState(colorScheme === 'dark');
+  const [isLoaded, setLoaded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const rehydrateAsync = async () => {
       try {
         const { isDark } = await rehydrateAppearanceState();
@@ -25,10 +27,6 @@ const CustomAppearanceProvider = ({ children }) => {
 
     void rehydrateAsync();
   }, []);
-
-  React.useEffect(() => {
-    StatusBar.setBarStyle(isDark ? 'light-content' : 'dark-content', true);
-  }, [isDark]);
 
   if (!isLoaded) {
     return <View />;
@@ -46,9 +44,9 @@ const CustomAppearanceProvider = ({ children }) => {
       </CustomAppearanceContext.Provider>
     );
   }
-};
+}
 
-async function cacheAppearanceState(appearance) {
+async function cacheAppearanceState(appearance: Omit<CustomAppearanceContextType, 'setIsDark'>) {
   await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify(appearance));
 }
 

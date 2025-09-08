@@ -51,7 +51,7 @@ const checkResults = await Promise.all(
       return false;
     }
 
-    if (entryWithGitHubData.github.isPackagePrivate === false) {
+    if (entryWithGitHubData.github.isPrivate === false) {
       console.error(
         `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
       );

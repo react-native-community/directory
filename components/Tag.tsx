@@ -9,7 +9,7 @@ import { Check } from './Icons';
 type Props = {
   label: string;
   tagStyle: ViewStyle;
-  icon?: ReactElement;
+  icon?: ReactElement | null;
 };
 
 export const Tag = ({

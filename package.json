@@ -25,7 +25,7 @@
     "@react-native-picker/picker": "^2.11.1",
     "@sentry/react": "^9.40.0",
     "@vercel/blob": "^0.27.3",
-    "expo": "54.0.0-preview.11",
+    "expo": "54.0.0-preview.15",
     "expo-font": "^14.0.5",
     "lodash": "^4.17.21",
     "next": "^15.5.2",
@@ -38,7 +38,7 @@
     "react-native-safe-area-context": "^5.6.1",
     "react-native-svg": "^15.12.1",
     "react-native-web": "^0.21.1",
-    "use-debounce": "^10.0.5"
+    "use-debounce": "^10.0.6"
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
@@ -50,8 +50,8 @@
     "browserslist": "^4.25.4",
     "cheerio": "^1.1.2",
     "cross-fetch": "^4.1.0",
-    "dotenv": "^17.2.1",
-    "eslint": "^9.34.0",
+    "dotenv": "^17.2.2",
+    "eslint": "^9.35.0",
     "eslint-config-next": "^15.5.2",
     "eslint-config-universe": "^15.0.3",
     "lint-staged": "^15.5.1",

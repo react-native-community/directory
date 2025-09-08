@@ -6,7 +6,7 @@ import { A, colors, darkColors, H3, P } from '~/common/styleguide';
 import { IconProps } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType, Query } from '~/types';
+import { LibraryType, Query } from '~/types';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {

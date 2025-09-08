@@ -29,6 +29,7 @@ export type Query = {
   hasExample?: string;
   hasImage?: string;
   hasTypes?: string;
+  hasNativeCode?: string;
   isMaintained?: string;
   isPopular?: string;
   isRecommended?: string;
@@ -38,10 +39,9 @@ export type Query = {
   newArchitecture?: string;
 };
 
-export type Library = LibraryDataEntry & {
+export type LibraryType = LibraryDataEntryType & {
   github: {
     name: string;
-    isPackagePrivate: boolean;
     fullName: string;
     description: string;
     registry?: string;
@@ -49,10 +49,10 @@ export type Library = LibraryDataEntry & {
     hasTypes?: boolean;
     newArchitecture?: boolean;
     isArchived?: boolean;
+    isPrivate?: boolean;
     hasNativeCode: boolean;
     urls: {
       repo: string;
-      clone: string;
       homepage?: string | null;
     };
     stats: {
@@ -87,6 +87,7 @@ export type Library = LibraryDataEntry & {
     downloads?: number;
     weekDownloads?: number;
   };
+  npmPkg: string;
   score: number;
   matchingScoreModifiers: string[];
   topicSearchString: string;
@@ -94,7 +95,7 @@ export type Library = LibraryDataEntry & {
   matchScore: number;
 };
 
-export type LibraryDataEntry = {
+export type LibraryDataEntryType = {
   githubUrl: string;
   ios?: boolean;
   android?: boolean;
@@ -117,6 +118,12 @@ export type LibraryDataEntry = {
 };
 
 export type APIResponseType = {
-  libraries: Library[];
+  libraries: LibraryType[];
   total?: number;
+};
+
+export type DataAssetType = {
+  libraries: LibraryType[];
+  topics: Record<string, number>;
+  topicsList: string[];
 };

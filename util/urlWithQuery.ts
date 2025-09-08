@@ -4,7 +4,7 @@ function toQueryString(query: Query) {
   return new URLSearchParams(query as Record<string, string>).toString();
 }
 
-export default function urlWithQuery(url: string, query: Query) {
+export default function urlWithQuery(url: string, query: Partial<Query>) {
   const queryWithoutEmptyParams = {};
   Object.keys(query).forEach(key => {
     if (query[key]) {

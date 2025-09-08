@@ -6,7 +6,11 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 import { Badge } from '../Icons';
 
-const RecommendedLabel = ({ isSmallScreen }) => {
+type Props = {
+  isSmallScreen?: boolean;
+};
+
+function RecommendedLabel({ isSmallScreen }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <View
@@ -31,7 +35,7 @@ const RecommendedLabel = ({ isSmallScreen }) => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   recommendedContainer: {

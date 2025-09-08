@@ -3,7 +3,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { DirectoryScore } from './DirectoryScore';
 import {
@@ -40,7 +40,7 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
         </A>
       ),
     },
-    npm.downloads
+    npm?.downloads
       ? {
           id: 'downloads',
           icon: <Download fill={iconColor} width={16} height={18} />,

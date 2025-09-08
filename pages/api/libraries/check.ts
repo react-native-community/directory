@@ -1,12 +1,12 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { type APIResponseType } from '~/types';
+import { type DataAssetType } from '~/types';
 import { getNewArchSupportStatus } from '~/util/newArchStatus';
 
 // Copy data into an object that is keyed by npm package name for faster lookup
 const dataByNpmPackage = {};
-(data as APIResponseType).libraries.forEach(library => {
+(data as DataAssetType).libraries.forEach(library => {
   dataByNpmPackage[library.npmPkg] = {
     unmaintained: library.unmaintained,
     newArchitecture: getNewArchSupportStatus(library),

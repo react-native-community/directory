@@ -3,7 +3,7 @@ import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { colors, darkColors, P, A } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Library as LibraryType } from '~/types';
+import { LibraryType } from '~/types';
 
 type Props = {
   library: LibraryType | { popularity: number };
@@ -51,7 +51,7 @@ const TrendingMark = ({ library, style, markOnly = false }: Props) => {
   );
 };
 
-const getPopularityStyles = (popularity, markOnly) => {
+function getPopularityStyles(popularity: number, markOnly: boolean) {
   const top = markOnly ? 11 : 7;
   if (popularity > 0.5) {
     return {
@@ -84,9 +84,9 @@ const getPopularityStyles = (popularity, markOnly) => {
       top,
     };
   }
-};
+}
 
-const getPopularityGrade = popularity => {
+function getPopularityGrade(popularity: number) {
   if (popularity > 0.5) {
     return 'HOT!';
   } else if (popularity > 0.25) {
@@ -98,7 +98,7 @@ const getPopularityGrade = popularity => {
   } else {
     return 'Declining';
   }
-};
+}
 
 const styles = StyleSheet.create({
   container: {
