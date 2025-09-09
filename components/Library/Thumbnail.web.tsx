@@ -13,7 +13,7 @@ type Props = {
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
-const Thumbnail = ({ url }: Props) => {
+function Thumbnail({ url }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { width, height } = useWindowDimensions();
 
@@ -37,6 +37,7 @@ const Thumbnail = ({ url }: Props) => {
     <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={open => setShowPreview(open)}>
       <HoverCard.Trigger asChild>
         <div
+          tabIndex={0}
           style={{
             marginRight: 10,
             marginTop: 4,
@@ -49,8 +50,8 @@ const Thumbnail = ({ url }: Props) => {
             textAlign: 'center',
             borderWidth: 1,
             borderRadius: 3,
-            borderColor: isDark ? darkColors.border : colors.gray2,
             borderStyle: 'solid',
+            borderColor: isDark ? darkColors.border : colors.gray2,
             cursor: isLoaded ? 'pointer' : 'progress',
           }}>
           {showPreview && !isLoaded ? (
@@ -66,13 +67,13 @@ const Thumbnail = ({ url }: Props) => {
         <HoverCard.Content sideOffset={6} sticky="always">
           <div
             style={{
-              backgroundColor: isDark ? darkColors.black : colors.white,
               opacity: 1,
               padding: 10,
+              borderRadius: 4,
               boxSizing: 'border-box',
+              backgroundColor: isDark ? darkColors.black : colors.white,
               maxWidth: maxPreviewWidth,
               maxHeight: maxPreviewHeight,
-              borderRadius: 4,
               display: showPreview && isLoaded ? 'block' : 'none',
               boxShadow: `0 4px 6px 0 ${isDark ? '#2a2e3633' : '#00000025'}`,
             }}>
@@ -81,9 +82,9 @@ const Thumbnail = ({ url }: Props) => {
               onLoad={() => setLoaded(true)}
               alt=""
               style={{
+                borderRadius: 2,
                 maxWidth: maxPreviewImageWidth,
                 maxHeight: maxImgPreviewHeight,
-                borderRadius: 2,
               }}
             />
           </div>
@@ -91,6 +92,6 @@ const Thumbnail = ({ url }: Props) => {
       </HoverCard.Portal>
     </HoverCard.Root>
   );
-};
+}
 
 export default memo(Thumbnail);

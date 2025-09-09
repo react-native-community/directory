@@ -9,7 +9,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 
 import { MetaData } from './MetaData';
-import Thumbnail from './Thumbnail';
+import Thumbnail from './Thumbnail.web';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
 import { CompatibilityTags } from '../CompatibilityTags';
@@ -172,7 +172,6 @@ const styles = StyleSheet.create({
       },
     }),
     padding: 16,
-    paddingLeft: 18,
     borderLeftWidth: 1,
   },
   columnTwoSmall: {
@@ -222,6 +221,7 @@ const styles = StyleSheet.create({
   secondaryStats: {
     marginTop: 12,
     flexWrap: 'wrap',
+    gap: 10,
   },
   secondaryText: {
     fontSize: 13,

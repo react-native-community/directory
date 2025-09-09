@@ -160,7 +160,12 @@ const Search = ({ query, total }: Props) => {
             ) : (
               <P />
             )}
-            <View style={[styles.displayHorizontal, styles.buttonsContainer]}>
+            <View
+              style={[
+                styles.displayHorizontal,
+                styles.buttonsContainer,
+                isSmallScreen && { marginTop: 10 },
+              ]}>
               <FilterButton
                 containerStyle={{ height: 24 }}
                 style={{ height: 24 }}
