@@ -206,8 +206,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconContainer: {
-    marginRight: 8,
-    width: 20,
+    marginRight: 7,
+    width: 22,
     alignItems: 'center',
   },
   linkContainer: {
@@ -221,6 +221,7 @@ const styles = StyleSheet.create({
   link: {
     fontSize: 15,
     fontWeight: 300,
+    outlineOffset: -1,
   },
   mutedLink: {
     backgroundColor: 'transparent',
@@ -231,10 +232,10 @@ const styles = StyleSheet.create({
   },
   secondaryContainer: {
     marginBottom: 0,
-    marginRight: 16,
+    paddingRight: 3,
   },
   secondaryIconContainer: {
-    marginRight: 6,
+    marginRight: 4,
   },
   exampleLink: {
     marginLeft: 2,

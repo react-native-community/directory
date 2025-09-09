@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
-import { colors, Headline, layout, darkColors } from '~/common/styleguide';
+import { colors, Headline, layout, darkColors, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { Query } from '~/types';
 import { getPageQuery } from '~/util/search';
@@ -20,10 +20,12 @@ type FiltersProps = {
   basePath?: string;
 };
 
-export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
+export function Filters({ query, style, basePath = '/' }: FiltersProps) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const isMainSearch = basePath === '/';
+  const { isSmallScreen } = useLayout();
   const pageQuery = getPageQuery(basePath, query);
+
+  const isMainSearch = basePath === '/';
 
   const titleColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
@@ -77,7 +79,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
         </View>
       </View>
       <View style={styles.twoColumns}>
-        <View style={styles.wrappableContainer}>
+        <View style={[styles.wrappableContainer, isSmallScreen && { maxWidth: '100%' }]}>
           <Headline style={[styles.title, titleColor]}>Compatibility</Headline>
           <View style={styles.optionsContainer}>
             {FILTER_COMPATIBILITY.map(platform => (
@@ -91,7 +93,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
             ))}
           </View>
         </View>
-        <View style={styles.wrappableContainer}>
+        <View style={[styles.wrappableContainer, isSmallScreen && { maxWidth: '100%' }]}>
           <Headline style={[styles.title, titleColor]}>Type</Headline>
           <View style={styles.optionsContainer}>
             <ToggleLink
@@ -120,7 +122,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   wrapper: {

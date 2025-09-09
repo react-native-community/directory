@@ -43,6 +43,7 @@ const App = ({ pageProps, Component }) => (
                   outline-color: ${colors.primaryDark};
                   outline-style: solid;
                   outline-width: 2px;
+                  border-radius: 3px;
                 }`}
             </style>
           </Head>
