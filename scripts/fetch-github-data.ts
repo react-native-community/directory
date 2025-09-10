@@ -133,6 +133,9 @@ const createRepoDataWithResponse = (json, monorepo) => {
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
       json.registry = packageJson?.publishConfig?.registry ?? undefined;
+      json.dependenciesCount = packageJson.dependencies
+        ? Object.keys(packageJson.dependencies).length
+        : 0;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -192,6 +195,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       issues: json.issues.totalCount,
       subscribers: json.watchers.totalCount,
       stars: json.stargazers.totalCount,
+      dependencies: json.dependenciesCount,
     },
     name: json.name,
     fullName: json.nameWithOwner,

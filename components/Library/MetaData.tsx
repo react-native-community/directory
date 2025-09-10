@@ -2,8 +2,11 @@ import { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { type LibraryType } from '~/types';
+import { type LibraryType, MetadataEntryType } from '~/types';
+import { partition } from '~/util/arrays';
+import { formatBytes } from '~/util/formatBytes';
 
 import { DirectoryScore } from './DirectoryScore';
 import {
@@ -17,6 +20,8 @@ import {
   Code,
   TypeScript,
   NativeCode,
+  PackageSize,
+  Dependency,
 } from '../Icons';
 
 type Props = {
@@ -24,18 +29,17 @@ type Props = {
   secondary?: boolean;
 };
 
-function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boolean) {
+function generateData(
+  { github, score, npm, npmPkg }: LibraryType,
+  isDark: boolean
+): MetadataEntryType[] {
   const iconColor = isDark ? darkColors.pewter : colors.gray5;
   return [
     {
       id: 'score',
       icon: <DirectoryScore score={score} />,
       content: (
-        <A
-          target="_self"
-          href="/scoring"
-          style={{ ...styles.link, ...styles.mutedLink }}
-          hoverStyle={isDark && { color: colors.primaryDark }}>
+        <A target="_self" href="/scoring" style={styles.link}>
           Directory Score
         </A>
       ),
@@ -63,15 +67,38 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
         </A>
       ),
     },
+    {
+      id: 'dependencies',
+      icon: <Dependency fill={iconColor} />,
+      content: (
+        <A
+          href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
+          style={styles.link}>
+          {`${github.stats.dependencies} ${github.stats.dependencies === 1 ? 'dependency' : 'dependencies'}`}
+        </A>
+      ),
+    },
+    npm.size
+      ? {
+          id: 'size',
+          icon: <PackageSize fill={iconColor} />,
+          content: (
+            <A href={`https://packagephobia.com/result?p=${npmPkg}`} style={styles.link}>
+              {`${formatBytes(npm.size)} package size`}
+            </A>
+          ),
+        }
+      : null,
     github.stats.forks
       ? {
           id: 'forks',
           icon: <Fork fill={iconColor} width={16} height={17} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={styles.link}>
-              {`${github.stats.forks.toLocaleString()}`} forks
+              {`${github.stats.forks.toLocaleString()}`}
             </A>
           ),
+          tooltip: 'Forks',
         }
       : null,
     github.stats.subscribers
@@ -80,9 +107,10 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           icon: <Eye fill={iconColor} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={styles.link}>
-              {`${github.stats.subscribers.toLocaleString()}`} watchers
+              {`${github.stats.subscribers.toLocaleString()}`}
             </A>
           ),
+          tooltip: 'Watchers',
         }
       : null,
     github.stats.issues
@@ -91,9 +119,10 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           icon: <Issue fill={iconColor} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={styles.link}>
-              {`${github.stats.issues.toLocaleString()}`} issues
+              {`${github.stats.issues.toLocaleString()}`}
             </A>
           ),
+          tooltip: 'Issues',
         }
       : null,
   ];
@@ -106,7 +135,10 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
   const iconColor = isDark ? darkColors.pewter : colors.secondary;
   const paragraphStyles = [styles.secondaryText, secondaryTextColor];
   const linkStyles = [...paragraphStyles, styles.mutedLink];
-  const hoverStyle = isDark && { color: colors.primaryDark };
+  const hoverStyle = [
+    { textDecorationColor: isDark ? colors.gray6 : colors.gray4 },
+    isDark && { color: colors.primaryDark },
+  ];
 
   return [
     github.urls.homepage
@@ -173,26 +205,57 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
 
 export function MetaData({ library, secondary }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const data = secondary ? generateSecondaryData(library, isDark) : generateData(library, isDark);
 
-  return (
-    <>
-      {data.filter(Boolean).map(({ id, icon, content }, i) => (
-        <View
-          key={id}
-          style={[
-            styles.displayHorizontal,
-            i + 1 !== data.length ? styles.datumContainer : {},
-            secondary ? styles.secondaryContainer : {},
-          ]}>
-          <View style={[styles.iconContainer, secondary ? styles.secondaryIconContainer : {}]}>
-            {icon}
+  if (secondary) {
+    const data = generateSecondaryData(library, isDark).filter(Boolean);
+    return (
+      <>
+        {data.map(({ id, icon, content }, i) => (
+          <View
+            key={id}
+            style={[
+              styles.displayHorizontal,
+              i + 1 !== data.length ? styles.datumContainer : {},
+              styles.secondaryContainer,
+            ]}>
+            <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
+            {content}
           </View>
-          {content}
+        ))}
+      </>
+    );
+  } else {
+    const data = generateData(library, isDark).filter(Boolean);
+    const [bottomData, listData] = partition<MetadataEntryType>(data, ({ id }) => {
+      return ['forks', 'subscribers', 'issues'].includes(id);
+    });
+    return (
+      <>
+        {listData.map(({ id, icon, content }, i) => (
+          <View
+            key={id}
+            style={[styles.displayHorizontal, i + 1 !== data.length ? styles.datumContainer : {}]}>
+            <View style={styles.iconContainer}>{icon}</View>
+            {content}
+          </View>
+        ))}
+        <View style={[styles.displayHorizontal, styles.bottomStats]}>
+          {bottomData.map(({ id, icon, content, tooltip }) => (
+            <View key={id} style={styles.displayHorizontal}>
+              <Tooltip
+                key={id}
+                sideOffset={2}
+                delayDuration={100}
+                trigger={<View style={styles.iconContainer}>{icon}</View>}>
+                {tooltip}
+              </Tooltip>
+              {content}
+            </View>
+          ))}
         </View>
-      ))}
-    </>
-  );
+      </>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -204,6 +267,9 @@ const styles = StyleSheet.create({
   displayHorizontal: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  bottomStats: {
+    gap: 16,
   },
   iconContainer: {
     marginRight: 7,

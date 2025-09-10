@@ -3,7 +3,7 @@ import differenceWith from 'lodash/differenceWith';
 import isEqual from 'lodash/isEqual';
 
 import { fetchGithubData } from './fetch-github-data';
-import { fetchNpmData } from './fetch-npm-data';
+import { fetchNpmDownloadData } from './fetch-npm-download-data';
 import { fillNpmName, hasMismatchedPackageData } from './helpers';
 import libraries from '../react-native-libraries.json';
 
@@ -27,7 +27,7 @@ const modifiedEntries = differenceWith(libraries, mainData, isEqual);
 
 const checkResults = await Promise.all(
   modifiedEntries.map(async entry => {
-    const entryWithNpmData = await fetchNpmData(fillNpmName(entry));
+    const entryWithNpmData = await fetchNpmDownloadData(fillNpmName(entry));
 
     if (!entryWithNpmData.npm) {
       console.error(
