@@ -6131,9 +6131,7 @@
   },
   {
     "githubUrl": "https://github.com/hyochan/react-native-nitro-sound",
-    "examples": [
-      "https://github.com/hyochan/react-native-nitro-sound/tree/main/example"
-    ],
+    "examples": ["https://github.com/hyochan/react-native-nitro-sound/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -16928,21 +16926,27 @@
   },
   {
     "githubUrl": "https://github.com/VladyslavMartynov10/react-native-nitro-event-kit",
-    "examples": ["https://github.com/VladyslavMartynov10/react-native-nitro-event-kit/tree/main/example"],
+    "examples": [
+      "https://github.com/VladyslavMartynov10/react-native-nitro-event-kit/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/ChristopherGabba/react-native-nitro-audio-manager",
-    "examples": ["https://github.com/ChristopherGabba/react-native-nitro-audio-manager/tree/main/example"],
+    "examples": [
+      "https://github.com/ChristopherGabba/react-native-nitro-audio-manager/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched",
-    "examples": ["https://github.com/software-mansion-labs/react-native-enriched/tree/main/example"],
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-enriched/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -16958,7 +16962,7 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-glass-effect",
     "ios": true,
     "newArchitecture": true
-  }, 
+  },
   {
     "githubUrl": "https://github.com/crossplatformkorea/react-native-naver-login",
     "npmPkg": "@react-native-seoul/naver-login",
@@ -16966,8 +16970,55 @@
       "https://github.com/crossplatformkorea/react-native-naver-login/tree/main/example",
       "https://github.com/crossplatformkorea/react-native-naver-login/tree/main/example-expo53"
     ],
-    
     "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/zoontek/react-native-navigation-bar",
+    "npmPkg": "@zoontek/react-native-navigation-bar",
+    "examples": ["https://github.com/zoontek/react-native-navigation-bar/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/satya164/react-native-animated-observer",
+    "examples": ["https://github.com/satya164/react-native-animated-observer/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/google-pay/react-native-make-payment",
+    "npmPkg": "@google/react-native-make-payment",
+    "examples": ["https://github.com/google-pay/react-native-make-payment/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mtebele/react-native-tiktok-business-sdk",
+    "examples": ["https://github.com/mtebele/react-native-tiktok-business-sdk/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/luisscruza/react-native-multi-resource-timeline",
+    "examples": [
+      "https://github.com/luisscruza/react-native-multi-resource-timeline/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/clerk/javascript/tree/main/packages/expo-passkeys",
+    "npmPkg": "@clerk/expo-passkeys",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tconns/react-native-nitro-keyevent",
     "android": true,
     "newArchitecture": true
   }
