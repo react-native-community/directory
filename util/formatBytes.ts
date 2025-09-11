@@ -1,5 +1,5 @@
-const MUL = 1024;
-const SUFFIXES = ['B', 'KiB', 'MiB'];
+const MUL = 1000;
+const SUFFIXES = ['B', 'kB', 'MB'];
 
 export function formatBytes(bytes: number, decimals = 2): string {
   if (bytes === 0) {

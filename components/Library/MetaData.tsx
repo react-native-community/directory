@@ -83,7 +83,7 @@ function generateData(
           id: 'size',
           icon: <PackageSize fill={iconColor} />,
           content: (
-            <A href={`https://packagephobia.com/result?p=${npmPkg}`} style={styles.link}>
+            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={styles.link}>
               {`${formatBytes(npm.size)} package size`}
             </A>
           ),
