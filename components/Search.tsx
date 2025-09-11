@@ -120,7 +120,7 @@ const Search = ({ query, total }: Props) => {
                     Esc
                   </Label>
                   <Label style={styles.focusHintLabel}>
-                    to {search?.length > 0 ? 'clear' : 'blur'}
+                    to {(search?.length ?? 0) > 0 ? 'clear' : 'blur'}
                   </Label>
                 </View>
               ) : (

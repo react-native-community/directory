@@ -455,3 +455,26 @@ export function NativeCode({ width = 18, height = 22, fill = colors.black }: Ico
     </Svg>
   );
 }
+
+export function PackageSize({ width = 18, height = 18, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+      <Path fill={fill} d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
+      <Path
+        fill={fill}
+        d="M20 1.002v4.586l1.501-1.5L22.915 5.5l-3.914 3.915L15.084 5.5l1.414-1.414l1.503 1.503V1.002z"
+      />
+    </Svg>
+  );
+}
+
+export function Dependency({ width = 18, height = 20, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 18 20" fill="none">
+      <Path
+        fill={fill}
+        d="M8 17.425V10.575L2 7.1V13.95L8 17.425ZM10 17.425L16 13.95V7.1L10 10.575V17.425ZM8 19.725L1 15.7C0.683337 15.5167 0.437337 15.275 0.262004 14.975C0.0866705 14.675 -0.000662879 14.3417 3.78787e-06 13.975V6.025C3.78787e-06 5.65833 0.0876704 5.325 0.263004 5.025C0.438337 4.725 0.684004 4.48333 1 4.3L8 0.275C8.31667 0.0916668 8.65 0 9 0C9.35 0 9.68333 0.0916668 10 0.275L17 4.3C17.3167 4.48333 17.5627 4.725 17.738 5.025C17.9133 5.325 18.0007 5.65833 18 6.025V13.975C18 14.3417 17.9123 14.675 17.737 14.975C17.5617 15.275 17.316 15.5167 17 15.7L10 19.725C9.68333 19.9083 9.35 20 9 20C8.65 20 8.31667 19.9083 8 19.725ZM13 6.525L14.925 5.425L9 2L7.05 3.125L13 6.525ZM9 8.85L10.95 7.725L5.025 4.3L3.075 5.425L9 8.85Z"
+      />
+    </Svg>
+  );
+}

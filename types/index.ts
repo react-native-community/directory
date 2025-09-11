@@ -1,3 +1,5 @@
+import { ReactElement, ReactNode } from 'react';
+
 export type QueryOrder =
   | 'relevance'
   | 'updated'
@@ -24,7 +26,7 @@ export type Query = {
   order?: QueryOrder;
   direction?: QueryOrderDirection;
   search?: string;
-  offset?: string | number;
+  offset?: string | number | null;
   limit?: string | number;
   hasExample?: string;
   hasImage?: string;
@@ -67,6 +69,7 @@ export type LibraryType = LibraryDataEntryType & {
       subscribers: number;
       stars: number;
       forks: number;
+      dependencies: number;
     };
     license: {
       key: string;
@@ -86,6 +89,7 @@ export type LibraryType = LibraryDataEntryType & {
   npm?: {
     downloads?: number;
     weekDownloads?: number;
+    size?: number;
   };
   npmPkg: string;
   score: number;
@@ -127,3 +131,10 @@ export type DataAssetType = {
   topics: Record<string, number>;
   topicsList: string[];
 };
+
+export type MetadataEntryType = {
+  id: string;
+  icon: ReactElement;
+  content: ReactNode;
+  tooltip?: ReactNode;
+} | null;

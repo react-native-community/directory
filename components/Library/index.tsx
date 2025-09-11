@@ -92,7 +92,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
-        {github.description && github.description.length && (
+        {Boolean(github.description && github.description.length) && (
           <View style={styles.verticalMargin}>
             <Headline
               numberOfLines={skipMetadata ? 3 : undefined}

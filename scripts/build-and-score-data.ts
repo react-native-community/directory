@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
+import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
 import { LibraryDataEntryType, LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
@@ -114,6 +115,10 @@ async function buildAndScoreData() {
       ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? project.npm),
     },
   }));
+
+  console.log('\n⬇️ Fetching registry data from npm');
+
+  data = await fetchNpmRegistryDataSequentially(data);
 
   console.log('\n⚛️ Calculating Directory Score');
   data = data.map(project => {
@@ -368,6 +373,29 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
     results.push(...data);
   }
   return results;
+}
+
+async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
+  const total = list.length;
+
+  for (let i = 0; i < list.length; i++) {
+    const entry = list[i];
+
+    if (entry.template) {
+      continue;
+    }
+
+    await sleep(SLEEP_TIME / 10);
+    const shouldLog = i % CHUNK_SIZE === 0;
+    shouldLog && console.log(`Sleeping ${SLEEP_TIME / 10}ms`);
+
+    const data = await fetchNpmRegistryData(entry);
+    shouldLog && console.log(`${CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`);
+
+    list[i] = data;
+  }
+
+  return list;
 }
 
 await buildAndScoreData();

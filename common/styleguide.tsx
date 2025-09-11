@@ -138,17 +138,19 @@ export const A = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const linkStyles = getLinkStyles(isDark);
-  const linkHoverStyles = getLinkHoverStyles(isDark);
+  const linkHoverStyles = getLinkHoverStyles();
 
   if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
     const passedStyle = Array.isArray(style) ? StyleSheet.flatten(style) : style;
     return (
       <Link
         href={href}
+        onPointerEnter={() => setIsHovered(true)}
+        onPointerLeave={() => setIsHovered(false)}
         style={{
           ...linkStyles,
-          ...(isHovered && linkHoverStyles),
           ...(passedStyle as any),
+          ...(isHovered && linkHoverStyles),
           ...(isHovered && hoverStyle),
         }}>
         {children}
@@ -176,16 +178,13 @@ export const A = ({
 
 const getLinkStyles = (isDark: boolean) => ({
   color: isDark ? colors.white : colors.black,
-  backgroundColor: isDark ? darkColors.powder : colors.powder,
   textDecorationColor: isDark ? colors.gray5 : colors.pewter,
   textDecorationLine: 'underline',
   fontFamily: 'inherit',
 });
 
-const getLinkHoverStyles = (isDark: boolean) => ({
-  backgroundColor: isDark ? colors.primaryDark : colors.sky,
-  color: isDark ? darkColors.dark : colors.black,
-  textDecorationColor: isDark ? darkColors.powder : colors.gray4,
+const getLinkHoverStyles = () => ({
+  textDecorationColor: colors.primaryDark,
 });
 
 export function HoverEffect({ children }: PropsWithChildren) {
