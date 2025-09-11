@@ -13,7 +13,7 @@ import { Arrow } from './Icons';
 
 type Props = {
   query: Query;
-  total: number | null;
+  total?: number | null;
   style?: ViewStyle;
   basePath?: string;
 };

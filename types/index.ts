@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react';
 
 export type QueryOrder =
   | 'relevance'
@@ -26,7 +26,7 @@ export type Query = {
   order?: QueryOrder;
   direction?: QueryOrderDirection;
   search?: string;
-  offset?: string | number;
+  offset?: string | number | null;
   limit?: string | number;
   hasExample?: string;
   hasImage?: string;
@@ -133,8 +133,8 @@ export type DataAssetType = {
 };
 
 export type MetadataEntryType = {
-  id?: string;
-  icon?: ReactElement;
-  content?: ReactNode;
+  id: string;
+  icon: ReactElement;
+  content: ReactNode;
   tooltip?: ReactNode;
 } | null;

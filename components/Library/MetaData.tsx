@@ -225,8 +225,8 @@ export function MetaData({ library, secondary }: Props) {
       </>
     );
   } else {
-    const data = generateData(library, isDark).filter(Boolean);
-    const [bottomData, listData] = partition<MetadataEntryType>(data, ({ id }) => {
+    const data = generateData(library, isDark).filter(entry => !!entry);
+    const [bottomData, listData] = partition<NonNullable<MetadataEntryType>>(data, ({ id }) => {
       return ['forks', 'subscribers', 'issues'].includes(id);
     });
     return (
