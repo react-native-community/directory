@@ -9316,7 +9316,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/ArunGovil/react-native-flatboard",
+    "githubUrl": "https://github.com/ArunGovil/react-native-flatboard/blob/main/release",
+    "npmPkg": "react-native-flatboard",
     "images": [
       "https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp"
     ],
@@ -13422,9 +13423,6 @@
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules",
     "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
-    "images": [
-      "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true"
-    ],
     "ios": true,
     "android": true,
     "tvos": true,
@@ -13435,11 +13433,7 @@
   },
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/nitrogen",
-    "npmPkg": "nitro-codegen",
     "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
-    "images": [
-      "https://github.com/mrousavy/nitro/blob/main/docs/static/img/social-card.png?raw=true"
-    ],
     "ios": true,
     "android": true,
     "tvos": true,
