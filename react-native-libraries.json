@@ -17015,5 +17015,14 @@
     "githubUrl": "https://github.com/tconns/react-native-nitro-keyevent",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Lomray-Software/react-native-apple-music",
+    "npmPkg": "@lomray/react-native-apple-music",
+    "examples": [
+      "https://github.com/Lomray-Software/react-native-apple-music/tree/prod/example",
+    ],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
