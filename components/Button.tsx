@@ -12,9 +12,8 @@ type Props = PropsWithChildren & {
   style?: TextStyle | TextStyle[];
 };
 
-export function Button(props: Props) {
+export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
-  const { children, href, onPress, style, openInNewTab } = props;
 
   const isLink = !!href;
   const linkStyle = [
@@ -33,13 +32,14 @@ export function Button(props: Props) {
         <A
           href={href}
           style={{ borderRadius: 4, fontFamily: 'inherit' }}
-          {...(openInNewTab ? { target: '_blank' } : {})}>
+          {...(openInNewTab ? { target: '_blank' } : {})}
+          {...rest}>
           <Pressable focusable={false} style={linkStyle} accessible={false}>
             {content}
           </Pressable>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={linkStyle}>
+        <Pressable onPress={onPress} style={linkStyle} {...rest}>
           {content}
         </Pressable>
       )}

@@ -21,9 +21,9 @@ const COMMON_RULES = {
       ],
     },
   ],
-  curly: 'warn',
+  curly: 'error',
   eqeqeq: ['error', 'always', { null: 'ignore' }],
-  'no-void': ['warn', { allowAsStatement: true }],
+  'no-void': ['error', { allowAsStatement: true }],
   'import/no-cycle': ['error', { maxDepth: '∞' }],
 };
 
@@ -43,14 +43,14 @@ const TS_COMMON_RULES = {
   ],
   '@typescript-eslint/no-floating-promises': 'error',
   '@typescript-eslint/return-await': ['error', 'always'],
-  '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
-  '@typescript-eslint/no-extra-non-null-assertion': 'warn',
-  '@typescript-eslint/prefer-as-const': 'warn',
-  '@typescript-eslint/prefer-includes': 'warn',
-  '@typescript-eslint/prefer-readonly': 'warn',
-  '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+  '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+  '@typescript-eslint/no-extra-non-null-assertion': 'error',
+  '@typescript-eslint/prefer-as-const': 'error',
+  '@typescript-eslint/prefer-includes': 'error',
+  '@typescript-eslint/prefer-readonly': 'error',
+  '@typescript-eslint/prefer-string-starts-ends-with': 'error',
   '@typescript-eslint/ban-ts-comment': [
-    'warn',
+    'error',
     {
       minimumDescriptionLength: 3,
       'ts-check': false,
@@ -59,8 +59,8 @@ const TS_COMMON_RULES = {
       'ts-nocheck': true,
     },
   ],
-  '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
-  '@typescript-eslint/no-restricted-types': 'warn',
+  '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+  '@typescript-eslint/no-restricted-types': 'error',
 };
 
 export default defineConfig([
@@ -102,7 +102,7 @@ export default defineConfig([
       ...TS_COMMON_RULES,
       '@next/next/no-img-element': 'off',
       'import/no-named-as-default': 'off',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
       'react/jsx-key': [
         'error',
         {

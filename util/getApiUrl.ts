@@ -1,7 +1,6 @@
 import { NextPageContext } from 'next';
 
-export default function getApiUrl(path: string, ctx: NextPageContext) {
-  const { req } = ctx;
+export default function getApiUrl(path: string, { req }: NextPageContext) {
   if (!req && typeof window !== 'undefined') {
     return `/api${path}`;
   }
@@ -10,5 +9,6 @@ export default function getApiUrl(path: string, ctx: NextPageContext) {
   const proto = req
     ? (req.headers['x-forwarded-proto'] ?? 'http')
     : window.location.protocol.slice(0, -1);
+
   return `${proto}://${host}/api${path}`;
 }

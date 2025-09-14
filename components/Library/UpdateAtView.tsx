@@ -25,51 +25,53 @@ export default function UpdatedAtView({ library }: Props) {
 
   const { branchName, packagePath } = parseGitHubUrl(library.githubUrl);
 
+  const tooltipContent = `
+    Last update (based on Git activity)
+    ${
+      library.npm.latestReleaseDate
+        ? ` Last npm release: ${getTimeSinceToday(library.npm.latestReleaseDate)}`
+        : ''
+    }`;
+
   return (
-    <View style={styles.updatedAtContainer}>
-      <Tooltip
-        sideOffset={2}
-        trigger={
-          <View style={{ cursor: 'pointer' }} aria-label="Last update (based on git activity)">
+    <Tooltip
+      sideOffset={2}
+      trigger={
+        <View style={styles.updatedAtContainer} aria-label={tooltipContent} role="tooltip">
+          <View>
             <Calendar
               fill={library.unmaintained ? unmaintainedIconColor : iconColor}
               width={14}
               height={16}
             />
           </View>
-        }>
-        Last update (based on git activity)
-      </Tooltip>
-      <A
-        href={
-          packagePath === '.'
-            ? `${library.github.urls.repo}/commits`
-            : `${library.github.urls.repo}/commits/${branchName}/${packagePath}`
-        }
-        style={[
-          styles.link,
-          {
-            color: library.unmaintained ? unmaintainedTextColor : textColor,
-            textDecorationColor: decorationColor,
-          },
-        ]}
-        hoverStyle={[
-          {
-            color: library.unmaintained
-              ? unmaintainedTextColor
-              : isDark
-                ? colors.primaryDark
-                : textColor,
-            textDecorationColor: library.unmaintained
-              ? unmaintainedTextColor
-              : isDark
-                ? colors.gray6
-                : colors.gray4,
-          },
-        ]}>
-        {getTimeSinceToday(library.github.stats.pushedAt)}
-      </A>
-    </View>
+          <A
+            href={
+              packagePath === '.'
+                ? `${library.github.urls.repo}/commits`
+                : `${library.github.urls.repo}/commits/${branchName}/${packagePath}`
+            }
+            style={[
+              styles.link,
+              {
+                color: library.unmaintained ? unmaintainedTextColor : textColor,
+                textDecorationColor: decorationColor,
+              },
+            ]}
+            hoverStyle={{
+              color: library.unmaintained
+                ? unmaintainedTextColor
+                : isDark
+                  ? colors.gray3
+                  : colors.gray5,
+              textDecorationColor: library.unmaintained ? unmaintainedTextColor : colors.gray4,
+            }}>
+            {getTimeSinceToday(library.github.stats.pushedAt)}
+          </A>
+        </View>
+      }>
+      {tooltipContent}
+    </Tooltip>
   );
 }
 

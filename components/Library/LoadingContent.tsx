@@ -24,18 +24,17 @@ const LoadingContent = ({ width = '100%', height = 202, wrapperStyle = {} }: Pro
         borderWidth: 1,
         borderStyle: 'solid',
         borderColor: isDark ? darkColors.border : colors.gray2,
-        borderRadius: 4,
+        borderRadius: 6,
         marginBottom: 16,
         ...wrapperStyle,
       }}>
-      <rect x="20" y="20" rx="3" ry="3" width="251" height="25" />
-      <rect x="20" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="20" y="88" rx="3" ry="3" width="410" height="10" />
-      <rect x="20" y="106" rx="3" ry="3" width="380" height="10" />
-      <rect x="20" y="124" rx="3" ry="3" width="194" height="10" />
-      <rect x="94" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="168" y="56" rx="3" ry="3" width="62" height="16" />
-      <rect x="20" y="170" rx="3" ry="3" width="306" height="14" />
+      <rect x="20" y="20" rx="3" ry="3" width="288" height="25" />
+      <rect x="20" y="56" rx="3" ry="3" width="88" height="20" />
+      <rect x="20" y="88" rx="3" ry="3" width={isSmallScreen ? '320' : '410'} height="14" />
+      <rect x="20" y="110" rx="3" ry="3" width={isSmallScreen ? '250' : '380'} height="14" />
+      <rect x="118" y="56" rx="3" ry="3" width="60" height="20" />
+      <rect x="192" y="56" rx="3" ry="3" width="72" height="20" />
+      <rect x="20" y="170" rx="3" ry="3" width={isSmallScreen ? '220' : '306'} height="14" />
     </ContentLoader>
   );
 };

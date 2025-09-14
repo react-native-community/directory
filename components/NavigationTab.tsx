@@ -26,7 +26,7 @@ function NavigationTab({ title, path = `/${title.toLowerCase()}` }: Props) {
         }),
       }}
       hoverStyle={{
-        backgroundColor: isActive ? activeBackground : isDark ? darkColors.dark : colors.gray6,
+        backgroundColor: isActive ? activeBackground : isDark ? darkColors.background : colors.gray6,
         color: colors.secondary,
       }}
       target="_self">

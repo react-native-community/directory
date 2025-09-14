@@ -41,9 +41,13 @@ const App = ({ pageProps, Component }) => (
                 }
                 *:focus-visible {
                   outline-color: ${colors.primaryDark};
-                  outline-style: solid;
-                  outline-width: 2px;
-                  border-radius: 3px;
+                }
+                .TooltipContent {
+                  background-color: ${darkColors.black};
+                  border: 1px solid ${context.isDark ? colors.gray7 : colors.gray6};
+                }
+                .TooltipContent svg {
+                  stroke: ${context.isDark ? colors.gray7 : colors.gray6};
                 }`}
             </style>
           </Head>

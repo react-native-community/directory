@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 16,
     borderWidth: 1,
-    borderRadius: 4,
+    borderRadius: 6,
     flexDirection: 'row',
     overflow: 'hidden',
   },

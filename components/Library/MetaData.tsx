@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View, Text } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
@@ -7,6 +7,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, MetadataEntryType } from '~/types';
 import { partition } from '~/util/arrays';
 import { formatBytes } from '~/util/formatBytes';
+import { pluralize } from '~/util/strings';
 
 import { DirectoryScore } from './DirectoryScore';
 import {
@@ -74,7 +75,7 @@ function generateData(
         <A
           href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
           style={styles.link}>
-          {`${github.stats.dependencies} ${github.stats.dependencies === 1 ? 'dependency' : 'dependencies'}`}
+          {`${github.stats.dependencies} ${pluralize('dependency', github.stats.dependencies)}`}
         </A>
       ),
     },
@@ -94,7 +95,7 @@ function generateData(
           id: 'forks',
           icon: <Fork fill={iconColor} width={16} height={17} />,
           content: (
-            <A href={`${github.urls.repo}/network/members`} style={styles.link}>
+            <A href={`${github.urls.repo}/network/members`} style={styles.link} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
             </A>
           ),
@@ -106,7 +107,7 @@ function generateData(
           id: 'subscribers',
           icon: <Eye fill={iconColor} />,
           content: (
-            <A href={`${github.urls.repo}/watchers`} style={styles.link}>
+            <A href={`${github.urls.repo}/watchers`} style={styles.link} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
             </A>
           ),
@@ -118,7 +119,7 @@ function generateData(
           id: 'issues',
           icon: <Issue fill={iconColor} />,
           content: (
-            <A href={`${github.urls.repo}/issues`} style={styles.link}>
+            <A href={`${github.urls.repo}/issues`} style={styles.link} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
             </A>
           ),
@@ -135,10 +136,10 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
   const iconColor = isDark ? darkColors.pewter : colors.secondary;
   const paragraphStyles = [styles.secondaryText, secondaryTextColor];
   const linkStyles = [...paragraphStyles, styles.mutedLink];
-  const hoverStyle = [
-    { textDecorationColor: isDark ? colors.gray6 : colors.gray4 },
-    isDark && { color: colors.primaryDark },
-  ];
+  const hoverStyle = {
+    textDecorationColor: colors.gray4,
+    color: isDark ? colors.gray3 : colors.gray5,
+  };
 
   return [
     github.urls.homepage
@@ -246,7 +247,11 @@ export function MetaData({ library, secondary }: Props) {
                 key={id}
                 sideOffset={2}
                 delayDuration={100}
-                trigger={<View style={styles.iconContainer}>{icon}</View>}>
+                trigger={
+                  <View style={styles.iconContainer}>
+                    {icon}
+                  </View>
+                }>
                 {tooltip}
               </Tooltip>
               {content}
