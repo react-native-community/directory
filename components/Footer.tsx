@@ -29,7 +29,7 @@ function Platform({ name, pkgName, url, Icon, style }: PlatformProps) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const packageHoverStyle = {
-    backgroundColor: isDark ? darkColors.powder : colors.gray2,
+    backgroundColor: isDark ? darkColors.background : colors.gray2,
     borderRadius: 8,
   };
 

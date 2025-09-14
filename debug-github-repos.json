@@ -2,7 +2,13 @@
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/core",
     "npmPkg": "@react-navigation/core",
+    "android": true,
+    "ios": true,
+    "macos": true,
+    "windows": true,
+    "web": true,
     "expoGo": true,
+    "fireos": true,
     "newArchitecture": true
   },
   {

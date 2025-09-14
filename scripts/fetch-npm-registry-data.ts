@@ -25,9 +25,9 @@ export async function fetchNpmRegistryData(pkgData: LibraryType, attemptsCount =
       return { ...pkgData, npm: pkgData.npm };
     }
 
-    const latestVersion = registryData['dist-tags'].latest;
+    const latestRelease = registryData['dist-tags'].latest;
 
-    if (!latestVersion) {
+    if (!latestRelease) {
       console.warn(
         `[NPM REGISTRY API] ${npmPkg} doesn't have the "latest" tag, skipping bundle size!`
       );
@@ -38,7 +38,9 @@ export async function fetchNpmRegistryData(pkgData: LibraryType, attemptsCount =
       ...pkgData,
       npm: {
         ...pkgData.npm,
-        size: registryData.versions[latestVersion].dist.unpackedSize,
+        size: registryData.versions[latestRelease].dist.unpackedSize,
+        latestRelease,
+        latestReleaseDate: registryData.time[latestRelease],
       },
     };
   } catch (error) {

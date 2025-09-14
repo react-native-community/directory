@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     borderWidth: 2,
-    borderRadius: 4,
+    borderRadius: 6,
     padding: 16,
     paddingLeft: 44,
     fontSize: 20,

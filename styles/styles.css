@@ -22,6 +22,12 @@
   font-style: normal;
 }
 
+*:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  border-radius: 3px;
+}
+
 html, body {
   min-height: 100%;
   font-family: "Optimistic Display", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -35,6 +41,10 @@ select {
   outline-offset: 2px;
 }
 
+input:focus-visible  {
+  border-radius: 6px;
+}
+
 #__next, #__next > div {
   min-height: 100vh;
 }
@@ -42,13 +52,12 @@ select {
 /* TOOLTIP */
 
 .TooltipContent {
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 6px 12px;
   font-size: 13px;
   line-height: 1.5;
   color: #fff;
-  background-color: #000;
-  box-shadow: hsl(206 22% 7% / 40%) 0 10px 38px -10px, hsl(206 22% 7% / 25%) 0 10px 20px -15px;
+  box-shadow: hsl(206 22% 7% / 40%) 0 10px 32px -8px, hsl(206 22% 7% / 25%) 0 10px 18px -12px;
   user-select: none;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);

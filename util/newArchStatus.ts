@@ -9,7 +9,7 @@ export enum NewArchSupportStatus {
 
 export function getNewArchSupportStatus({ newArchitecture, github, expoGo }: LibraryType) {
   // Assume untested unless indicated otherwise through one of the following tests
-  let flag: boolean | string | undefined = undefined;
+  let flag: LibraryType['newArchitecture'] = undefined;
 
   if (typeof newArchitecture !== 'undefined') {
     flag = newArchitecture;

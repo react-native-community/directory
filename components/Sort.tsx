@@ -87,6 +87,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
               onHoverOut={() => setIsSortIconHovered(false)}
               style={sortDirection === 'ascending' && styles.flippedIcon}
               aria-label="Toggle sort direction"
+              role="button"
               onPress={() => {
                 setSortDirection(previousOrder =>
                   previousOrder === 'ascending' ? 'descending' : 'ascending'
@@ -105,6 +106,7 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
       <View style={styles.pickerContainer}>
         <P style={styles.title}>
           <Picker
+            aria-label="Sort direction"
             selectedValue={sortValue}
             style={[
               styles.picker,

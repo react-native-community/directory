@@ -90,6 +90,8 @@ export type LibraryType = LibraryDataEntryType & {
     downloads?: number;
     weekDownloads?: number;
     size?: number;
+    latestRelease?: string;
+    latestReleaseDate?: string;
   };
   npmPkg: string;
   score: number;
