@@ -17032,5 +17032,12 @@
     ],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/sbaiahmed1/react-native-google-auth",
+    "ios": true,
+    "android": true,
+    "npmPkg": "react-native-google-auth",
+    "newArchitecture": true
   }
 ]
