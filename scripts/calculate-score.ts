@@ -34,15 +34,15 @@ const MODIFIERS: {
   {
     name: 'No license',
     value: -20,
-    condition: data => data.license === null,
+    condition: data => data.github.license === null,
   },
   {
     name: 'GPL license',
     value: -20,
     condition: data =>
-      data.license &&
-      data.license.key &&
-      (data.license.key.startsWith('gpl') || data.license.key.startsWith('other')),
+      data.github.license &&
+      data.github.license.key &&
+      (data.github.license.key.startsWith('gpl') || data.github.license.key.startsWith('other')),
   },
   {
     name: 'Recently updated',
