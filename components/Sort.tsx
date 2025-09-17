@@ -53,8 +53,8 @@ const sorts = [
 export const SortButton = ({ query: { order, direction, offset }, query }: SortButtonProps) => {
   const [sortValue, setSortValue] = useState<QueryOrder | undefined>(order);
   const [sortDirection, setSortDirection] = useState<QueryOrderDirection | undefined>(direction);
-  const [paginationOffset, setPaginationOffset] = useState<number | undefined>(
-    typeof offset === 'string' ? parseInt(offset, 10) : offset
+  const [paginationOffset, setPaginationOffset] = useState<string | null | undefined>(
+    typeof offset === 'string' ? offset : offset
   );
   const [isSortIconHovered, setIsSortIconHovered] = useState(false);
   const { isDark } = useContext(CustomAppearanceContext);

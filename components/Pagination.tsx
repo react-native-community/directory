@@ -20,7 +20,7 @@ type Props = {
 
 const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
-  const currentOffset = query.offset ? parseInt(query.offset.toString(), 10) : 0;
+  const currentOffset = query.offset ? parseInt(query.offset, 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
   if (!total || total < 1 || currentOffset >= total) {
@@ -67,7 +67,10 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
       ) : (
         <HoverEffect>
           <Link
-            href={urlWithQuery(basePath, { ...pageQuery, offset: currentOffset - NUM_PER_PAGE })}
+            href={urlWithQuery(basePath, {
+              ...pageQuery,
+              offset: (currentOffset - NUM_PER_PAGE).toString(),
+            })}
             style={{ borderRadius: 4 }}
             aria-label="Previous page">
             {backArrow(isDark)}
@@ -83,7 +86,10 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
       ) : (
         <HoverEffect>
           <Link
-            href={urlWithQuery(basePath, { ...pageQuery, offset: currentOffset + NUM_PER_PAGE })}
+            href={urlWithQuery(basePath, {
+              ...pageQuery,
+              offset: (currentOffset + NUM_PER_PAGE).toString(),
+            })}
             style={{ borderRadius: 4 }}
             aria-label="Next page">
             {forwardArrow(isDark)}

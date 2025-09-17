@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Platform, StyleSheet, View, Text } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
@@ -79,7 +79,7 @@ function generateData(
         </A>
       ),
     },
-    npm.size
+    npm?.size
       ? {
           id: 'size',
           icon: <PackageSize fill={iconColor} />,
@@ -247,11 +247,7 @@ export function MetaData({ library, secondary }: Props) {
                 key={id}
                 sideOffset={2}
                 delayDuration={100}
-                trigger={
-                  <View style={styles.iconContainer}>
-                    {icon}
-                  </View>
-                }>
+                trigger={<View style={styles.iconContainer}>{icon}</View>}>
                 {tooltip}
               </Tooltip>
               {content}

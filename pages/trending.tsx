@@ -98,7 +98,7 @@ const Trending = ({ data, query }: Props) => {
 Trending.getInitialProps = async (ctx: NextPageContext) => {
   const trendingQuery = {
     ...ctx.query,
-    ...{ minPopularity: 15, minMonthlyDownloads: 5000, order: 'popularity' as QueryOrder },
+    ...{ minPopularity: '15', minMonthlyDownloads: '5000', order: 'popularity' as QueryOrder },
   };
   const url = getApiUrl(urlWithQuery('/libraries', trendingQuery), ctx);
   const response = await fetch(url);

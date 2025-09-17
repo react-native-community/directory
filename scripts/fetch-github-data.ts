@@ -28,15 +28,15 @@ const licenses = {
 /**
  * Fetch licenses from GitHub to be used later to parse licenses from npm
  */
-export const loadGitHubLicenses = async () => {
+export async function loadGitHubLicenses() {
   const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
   result.data.licenses.forEach(license => {
     licenses[license.key] = license;
   });
-};
+}
 
-export const fetchGithubRateLimit = async () => {
+export async function fetchGithubRateLimit() {
   // Accurately fetch query rate limit and cost by making dummy request
   // https://developer.github.com/v4/guides/resource-limitations/
   const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
@@ -58,7 +58,7 @@ export const fetchGithubRateLimit = async () => {
   }
 
   return {};
-};
+}
 
 export async function fetchGithubData(data: LibraryType, retries = 2) {
   if (retries < 0) {
@@ -118,13 +118,13 @@ export async function fetchGithubData(data: LibraryType, retries = 2) {
 }
 
 // Get the GitHub license spec from the npm string
-const getLicenseFromPackageJson = packageJson => {
+function getLicenseFromPackageJson(packageJson: Record<string, string | object>) {
   if (packageJson.license && typeof packageJson.license === 'string') {
     return licenses[packageJson.license.toLowerCase()];
   }
-};
+}
 
-const createRepoDataWithResponse = (json, monorepo) => {
+function createRepoDataWithResponse(json, monorepo: boolean) {
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
@@ -209,4 +209,4 @@ const createRepoDataWithResponse = (json, monorepo) => {
     isArchived: json.isArchived,
     hasNativeCode: hasNativeCode(json.files),
   };
-};
+}

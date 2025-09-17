@@ -26,8 +26,8 @@ export type Query = {
   order?: QueryOrder;
   direction?: QueryOrderDirection;
   search?: string;
-  offset?: string | number | null;
-  limit?: string | number;
+  offset?: string | null;
+  limit?: string;
   hasExample?: string;
   hasImage?: string;
   hasTypes?: string;
@@ -36,9 +36,20 @@ export type Query = {
   isPopular?: string;
   isRecommended?: string;
   wasRecentlyUpdated?: string;
-  minPopularity?: string | number;
-  minMonthlyDownloads?: string | number;
+  minPopularity?: string;
+  minMonthlyDownloads?: string;
   newArchitecture?: string;
+};
+
+export type QueryFilters = {
+  libraries: LibraryType[];
+  sortBy?: QueryOrder;
+  queryTopic?: string;
+  querySearch?: string;
+  support: Record<string, string | undefined>;
+  skipLibs?: string;
+  skipTools?: string;
+  skipTemplates?: string;
 };
 
 export type LibraryType = LibraryDataEntryType & {
