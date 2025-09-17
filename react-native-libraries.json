@@ -17039,5 +17039,15 @@
     "android": true,
     "npmPkg": "react-native-google-auth",
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/omarsdev/react-native-contacts",
+    "npmPkg": "@omarsdev/react-native-contacts",
+    "examples": [
+      "https://github.com/omarsdev/react-native-contacts/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
