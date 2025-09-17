@@ -1,4 +1,4 @@
-import { LibraryType, Query } from '~/types';
+import { LibraryType, Query, QueryFilters } from '~/types';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -90,7 +90,7 @@ export function handleFilterLibraries({
   skipLibs,
   skipTools,
   skipTemplates,
-}) {
+}: Query & QueryFilters) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
@@ -100,7 +100,7 @@ export function handleFilterLibraries({
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({
         ...library,
-        matchScore: calculateMatchScore(library, querySearch),
+        matchScore: calculateMatchScore(library, querySearch ?? ''),
       }))
     : libraries;
 
@@ -229,13 +229,13 @@ export function handleFilterLibraries({
 
     if (minPopularityValue && minMonthlyDownloadsValue) {
       return (
-        library.popularity >= minPopularityValue &&
-        library.npm.downloads >= minMonthlyDownloadsValue
+        (library?.popularity ?? 0) >= minPopularityValue &&
+        (library.npm?.downloads ?? 0) >= minMonthlyDownloadsValue
       );
     } else if (minPopularityValue) {
-      return library.popularity >= minPopularityValue;
+      return (library?.popularity ?? 0) >= minPopularityValue;
     } else if (minMonthlyDownloadsValue) {
-      return library.npm.downloads >= minMonthlyDownloadsValue;
+      return (library.npm?.downloads ?? 0) >= minMonthlyDownloadsValue;
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
@@ -251,7 +251,7 @@ export function handleFilterLibraries({
     }
 
     if (viewerHasTypedSearch) {
-      isSearchMatch = library.matchScore && library.matchScore > 0;
+      isSearchMatch = Boolean(library.matchScore && library.matchScore > 0);
     }
 
     if (!viewerHasChosenTopic) {

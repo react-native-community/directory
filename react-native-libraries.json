@@ -17019,17 +17019,13 @@
   {
     "githubUrl": "https://github.com/Lomray-Software/react-native-apple-music",
     "npmPkg": "@lomray/react-native-apple-music",
-    "examples": [
-      "https://github.com/Lomray-Software/react-native-apple-music/tree/prod/example"
-    ],
+    "examples": ["https://github.com/Lomray-Software/react-native-apple-music/tree/prod/example"],
     "ios": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Gautham495/react-native-app-clip-overlay",
-    "examples": [
-      "https://github.com/Gautham495/react-native-app-clip-overlay/example"
-    ],
+    "examples": ["https://github.com/Gautham495/react-native-app-clip-overlay/example"],
     "ios": true,
     "newArchitecture": true
   },
@@ -17037,7 +17033,6 @@
     "githubUrl": "https://github.com/sbaiahmed1/react-native-google-auth",
     "ios": true,
     "android": true,
-    "npmPkg": "react-native-google-auth",
     "newArchitecture": true
   }
 ]

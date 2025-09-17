@@ -28,7 +28,7 @@ export default function UpdatedAtView({ library }: Props) {
   const tooltipContent = `
     Last update (based on Git activity)
     ${
-      library.npm.latestReleaseDate
+      library.npm?.latestReleaseDate
         ? ` Last npm release: ${getTimeSinceToday(library.npm.latestReleaseDate)}`
         : ''
     }`;

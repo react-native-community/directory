@@ -125,7 +125,9 @@ async function buildAndScoreData() {
     try {
       return calculateDirectoryScore(project);
     } catch (error) {
-      console.error(`Failed to calculate score for ${project.github.name}`, error.message);
+      if (error instanceof Error) {
+        console.error(`Failed to calculate score for ${project.github.name}`, error.message);
+      }
     }
   });
 
@@ -134,8 +136,10 @@ async function buildAndScoreData() {
     try {
       return calculatePopularityScore(project);
     } catch (error) {
-      console.error(`Failed to calculate popularity for ${project.github.name}`, error.message);
-      console.error(project.githubUrl);
+      if (error instanceof Error) {
+        console.error(`Failed to calculate popularity for ${project.github.name}`, error.message);
+        console.error(project.githubUrl);
+      }
     }
   });
 
@@ -248,7 +252,7 @@ export async function fetchGithubDataThrottled({
   chunkSize: number;
   staggerMs: number;
 }) {
-  let results = [];
+  let results: LibraryType[] = [];
   const chunks = chunk(data, chunkSize);
   for (const c of chunks) {
     if (chunks.indexOf(c) > 0) {

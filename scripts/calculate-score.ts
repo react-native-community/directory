@@ -6,7 +6,11 @@ import { type LibraryType } from '~/types';
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to condition function, and if it returns true, the value is added to the
 // libraries score. Read more: https://reactnative.directory/scoring
-const MODIFIERS = [
+const MODIFIERS: {
+  name: string;
+  value: number;
+  condition: (data: LibraryType) => boolean;
+}[] = [
   {
     name: 'Very popular',
     value: 45,
@@ -30,15 +34,15 @@ const MODIFIERS = [
   {
     name: 'No license',
     value: -20,
-    condition: data => data.license === null,
+    condition: data => data.github.license === null,
   },
   {
     name: 'GPL license',
     value: -20,
     condition: data =>
-      data.license &&
-      data.license.key &&
-      (data.license.key.startsWith('gpl') || data.license.key.startsWith('other')),
+      data.github.license &&
+      data.github.license.key &&
+      (data.github.license.key.startsWith('gpl') || data.github.license.key.startsWith('other')),
   },
   {
     name: 'Recently updated',
