@@ -17055,5 +17055,16 @@
     "android": true,
     "web": true,
     "newArchitecture": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/Dinesh7571/react-native-calllogs-android",
+  "npmPkg": "https://www.npmjs.com/settings/dinesh7571/packages",
+  "examples": [
+    "https://github.com/Dinesh7571/react-native-calllogs-android/tree/main/example"
+  ],
+  "ios": false,
+  "android": true,
+  "web": false,
+  "newArchitecture": true
+ }
 ]
