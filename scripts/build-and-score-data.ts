@@ -1,5 +1,5 @@
 import { BlobAccessError, list, put } from '@vercel/blob';
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
 import chunk from 'lodash/chunk';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -37,7 +37,7 @@ const DATA_PATH = path.resolve('assets', 'data.json');
 const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 const CHUNK_SIZE = 25;
-const SLEEP_TIME = 500;
+const SLEEP_TIME = 400;
 
 const invalidRepos: string[] = [];
 const mismatchedRepos: LibraryType[] = [];

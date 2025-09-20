@@ -1,5 +1,5 @@
+import { fetch } from 'bun';
 import { Cheerio, load } from 'cheerio';
-import fetch from 'cross-fetch';
 
 import { LibraryType } from '~/types';
 

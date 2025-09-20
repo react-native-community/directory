@@ -1,4 +1,3 @@
-import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 import { type ParsedUrlQuery } from 'node:querystring';

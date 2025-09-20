@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
 import differenceWith from 'lodash/differenceWith';
 import isEqual from 'lodash/isEqual';
 

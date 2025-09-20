@@ -2,15 +2,9 @@ import { config } from 'dotenv';
 
 import { LibraryType } from '~/types';
 import hasNativeCode from '~/util/hasNativeCode';
+import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
-import {
-  processTopics,
-  sleep,
-  REQUEST_SLEEP,
-  makeGraphqlQuery,
-  parseGitHubUrl,
-  getUpdatedUrl,
-} from './helpers';
+import { processTopics, sleep, REQUEST_SLEEP, makeGraphqlQuery, getUpdatedUrl } from './helpers';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
