@@ -123,7 +123,7 @@ export type LibraryDataEntryType = {
   fireos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
-  unmaintained?: boolean | string;
+  unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;
   newArchitecture?: boolean | 'new-arch-only';

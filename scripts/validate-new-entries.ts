@@ -1,6 +1,5 @@
 import { fetch } from 'bun';
-import differenceWith from 'lodash/differenceWith';
-import isEqual from 'lodash/isEqual';
+import { differenceWith, isEqual } from 'es-toolkit';
 
 import { fetchGithubData } from './fetch-github-data';
 import { fetchNpmDownloadData } from './fetch-npm-download-data';

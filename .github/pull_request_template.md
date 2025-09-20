@@ -1,4 +1,4 @@
-<!-- Thanks for submitting a pull request! We appreciate you spending the time to work on these changes. 
+<!-- Thanks for submitting a pull request! We appreciate you spending the time to work on these changes.
 Please follow the template so that the reviewers can easily understand what the code changes affect -->
 
 # 📝 Why & how
@@ -14,4 +14,4 @@ Please follow the template so that the reviewers can easily understand what the 
 
 <!-- If you added a feature or fixed a bug -->
 - [ ] Documented in this PR how to use the feature or replicate the bug.
-- [ ] Documented in this PR how you fixed or created the feature.
+- [ ] Documented in this PR how you fixed an issue or created the feature.

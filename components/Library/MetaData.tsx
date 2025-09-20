@@ -211,18 +211,20 @@ export function MetaData({ library, secondary }: Props) {
     const data = generateSecondaryData(library, isDark).filter(Boolean);
     return (
       <>
-        {data.map(({ id, icon, content }, i) => (
-          <View
-            key={id}
-            style={[
-              styles.displayHorizontal,
-              i + 1 !== data.length ? styles.datumContainer : {},
-              styles.secondaryContainer,
-            ]}>
-            <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
-            {content}
-          </View>
-        ))}
+        {data
+          .filter(entry => !!entry)
+          .map(({ id, icon, content }, i) => (
+            <View
+              key={id}
+              style={[
+                styles.displayHorizontal,
+                i + 1 !== data.length ? styles.datumContainer : {},
+                styles.secondaryContainer,
+              ]}>
+              <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
+              {content}
+            </View>
+          ))}
       </>
     );
   } else {
