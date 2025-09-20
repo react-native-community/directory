@@ -58,7 +58,7 @@ export function processTopics(topics?: string[]) {
 }
 
 function splitAndGetLastChunk(value: string, delimiter = '/') {
-  return value.split(delimiter).at(-1).toLowerCase();
+  return value.split(delimiter).at(-1)?.toLowerCase();
 }
 
 export function hasMismatchedPackageData(library: LibraryType) {
@@ -66,7 +66,7 @@ export function hasMismatchedPackageData(library: LibraryType) {
 
   if (library.github.registry && library.github.registry !== 'https://registry.npmjs.org/') {
     const registryScope = splitAndGetLastChunk(library.github.registry);
-    if (registryScope.startsWith('@')) {
+    if (registryScope?.startsWith('@')) {
       return library.github?.name.replace(`${registryScope}/`, '') !== desiredName;
     }
   }

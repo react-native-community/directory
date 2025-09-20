@@ -95,10 +95,9 @@ export function calculateDirectoryScore(data: LibraryType) {
   };
 }
 
-function getCombinedPopularity(data: LibraryType) {
-  const { subscribers, forks, stars } = data.github.stats;
-  const { downloads } = data.npm;
-  return subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;
+function getCombinedPopularity({ github, npm }: LibraryType) {
+  const { subscribers, forks, stars } = github.stats;
+  return subscribers * 50 + forks * 25 + stars * 10 + (npm?.downloads ?? 0) / 100;
 }
 
 function getUpdatedDaysAgo(data: LibraryType) {

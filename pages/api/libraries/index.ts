@@ -1,15 +1,14 @@
-import drop from 'lodash/drop';
-import take from 'lodash/take';
+import { drop, take } from 'es-toolkit';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { type LibraryType, QueryOrder } from '~/types';
+import { type DataAssetType, QueryOrder } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { parseQueryParams } from '~/util/parseQueryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
 
-const originalData = [...data.libraries] as LibraryType[];
+const originalData = [...(data as DataAssetType).libraries];
 const getData = () => ({
   updated: Sorting.updated([...originalData]),
   added: [...originalData.reverse()],

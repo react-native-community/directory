@@ -1,6 +1,4 @@
-import identity from 'lodash/identity';
-import omit from 'lodash/omit';
-import pickBy from 'lodash/pickBy';
+import { identity, omit, pickBy } from 'es-toolkit';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -11,15 +9,15 @@ const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 
 const emptyPropertiesToKeep = ['newArchitecture'];
 
-function removeEmptyArray(lib: LibraryDataEntryType, key: string) {
-  return lib[key] && !lib[key].length ? (omit(lib, key) as LibraryDataEntryType) : lib;
+function removeEmptyArray(lib: LibraryDataEntryType, key: 'examples' | 'images') {
+  return lib[key] && !lib[key].length ? omit(lib, [key]) : lib;
 }
 
-const processedLibraries = (libraries as LibraryDataEntryType[])
+const processedLibraries = libraries
   // Remove redundant `npmPkg` for libraries with the correct GitHub repository name
-  .map(lib =>
+  .map((lib: LibraryDataEntryType) =>
     lib.npmPkg && !lib.npmPkg.includes('/') && lib.githubUrl.endsWith(`/${lib.npmPkg}`)
-      ? omit(lib, 'npmPkg')
+      ? omit(lib, ['npmPkg'])
       : lib
   )
   // Remove empty arrays
@@ -31,7 +29,7 @@ const processedLibraries = (libraries as LibraryDataEntryType[])
       if (emptyPropertiesToKeep.includes(key)) {
         return true;
       } else {
-        return identity(value);
+        return !!identity(value);
       }
     })
   );
