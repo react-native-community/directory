@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
 
 import { sleep, REQUEST_SLEEP } from './helpers';
 

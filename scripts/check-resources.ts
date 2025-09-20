@@ -1,42 +1,41 @@
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
+
+import { LibraryDataEntryType } from '~/types';
 
 import libraries from '../react-native-libraries.json';
 import { sleep } from './helpers';
 
-console.log('⬇️ Attempting to fetch examples and images');
+async function runThrottledFetches(libraries: LibraryDataEntryType[], delayMs = 50) {
+  const urlList: string[] = [];
 
-libraries.forEach(lib => {
-  if (lib.examples) {
-    lib.examples.forEach(async (example: string, index: number) => {
-      await sleep(500);
-      setTimeout(() => {
-        fetch(example)
-          .then(response => {
-            if (response.status !== 200) {
-              console.warn(`EXAMPLE: ${example} returned ${response.status}`);
-            }
-          })
-          .catch(error => {
-            console.warn(`EXAMPLE: errored! ${error}`);
-          });
-      }, 150 * index);
-    });
+  for (const lib of libraries) {
+    if (lib.examples) {
+      for (const exampleUrl of lib.examples) {
+        urlList.push(exampleUrl);
+      }
+    }
+    if (lib.images) {
+      for (const imgUrl of lib.images) {
+        urlList.push(imgUrl);
+      }
+    }
   }
 
-  if (lib.images) {
-    lib.images.forEach(async (img: string, index: number) => {
-      await sleep(500);
-      setTimeout(() => {
-        fetch(img)
-          .then(response => {
-            if (response.status !== 200) {
-              console.warn(`IMG: ${img} returned ${response.status}`);
-            }
-          })
-          .catch(error => {
-            console.warn(`IMG: errored! ${error}`);
-          });
-      }, 150 * index);
-    });
+  console.log(`⬇️ Attempting to fetch examples and images (${urlList.length} URLs)`);
+
+  for (const url of urlList) {
+    try {
+      const response = await fetch(url);
+      if (response.status !== 200) {
+        console.warn(`${url} returned ${response.status}`);
+      }
+    } catch (err: any) {
+      console.warn(`${url} errored!`, err);
+    }
+    await sleep(delayMs);
   }
+}
+
+runThrottledFetches(libraries).catch(err => {
+  console.error('❌ Unexpected error in throttled fetcher:', err);
 });

@@ -4,9 +4,9 @@ import { StyleSheet, View } from 'react-native';
 import { A, colors, darkColors } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { parseGitHubUrl } from '~/scripts/helpers';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
+import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
 import { Calendar } from '../Icons';
 
