@@ -58,21 +58,21 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
         <Headline style={[styles.title, titleColor]}>Status</Headline>
         <View style={styles.optionsContainer}>
           {isMainSearch &&
-            FILTER_REQUIRES_MAIN_SEARCH.map(platform => (
+            FILTER_REQUIRES_MAIN_SEARCH.map(status => (
               <ToggleLink
-                key={platform.param}
+                key={status.param}
                 query={pageQuery}
-                paramName={platform.param}
-                title={platform.title}
+                paramName={status.param}
+                title={status.title}
                 basePath={basePath}
               />
             ))}
-          {FILTER_STATUS.map(platform => (
+          {FILTER_STATUS.map(status => (
             <ToggleLink
-              key={platform.param}
+              key={status.param}
               query={pageQuery}
-              paramName={platform.param}
-              title={platform.title}
+              paramName={status.param}
+              title={status.title}
               basePath={basePath}
             />
           ))}
@@ -82,12 +82,12 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
         <View style={[styles.wrappableContainer, isSmallScreen && { maxWidth: '100%' }]}>
           <Headline style={[styles.title, titleColor]}>Compatibility</Headline>
           <View style={styles.optionsContainer}>
-            {FILTER_COMPATIBILITY.map(platform => (
+            {FILTER_COMPATIBILITY.map(compatibility => (
               <ToggleLink
-                key={platform.param}
+                key={compatibility.param}
                 query={pageQuery}
-                paramName={platform.param}
-                title={platform.title}
+                paramName={compatibility.param}
+                title={compatibility.title}
                 basePath={basePath}
               />
             ))}

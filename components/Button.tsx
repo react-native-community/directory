@@ -1,6 +1,6 @@
 import { A } from '@expo/html-elements';
 import { PropsWithChildren, useContext } from 'react';
-import { StyleSheet, TextStyle, Pressable } from 'react-native';
+import { StyleSheet, TextStyle, Pressable, StyleProp } from 'react-native';
 
 import { colors, darkColors, HoverEffect, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -9,7 +9,7 @@ type Props = PropsWithChildren & {
   href?: string;
   onPress?: () => void;
   openInNewTab?: boolean;
-  style?: TextStyle | TextStyle[];
+  style?: StyleProp<TextStyle>;
 };
 
 export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {

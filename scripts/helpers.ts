@@ -1,6 +1,6 @@
 import { fetch } from 'bun';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 

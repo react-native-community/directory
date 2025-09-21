@@ -4,8 +4,8 @@
 import { type LibraryType } from '~/types';
 
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
-// The data is passed to condition function, and if it returns true, the value is added to the
-// libraries score. Read more: https://reactnative.directory/scoring
+// The data is passed to the `condition` function, and if it returns `true`, the value is added to the
+// library score. Read more: https://reactnative.directory/scoring
 const MODIFIERS: {
   name: string;
   value: number;
@@ -40,9 +40,9 @@ const MODIFIERS: {
     name: 'GPL license',
     value: -20,
     condition: data =>
-      data.github.license &&
-      data.github.license.key &&
-      (data.github.license.key.startsWith('gpl') || data.github.license.key.startsWith('other')),
+      data.github.license && data.github.license.key
+        ? data.github.license.key.startsWith('gpl') || data.github.license.key.startsWith('other')
+        : false,
   },
   {
     name: 'Recently updated',
@@ -119,13 +119,9 @@ const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
 export function calculatePopularityScore(data: LibraryType) {
-  const {
-    npm: { downloads, weekDownloads },
-    github,
-    unmaintained,
-  } = data;
+  const { npm, github, unmaintained } = data;
 
-  if (!downloads || !weekDownloads) {
+  if (!npm?.downloads || !npm?.weekDownloads) {
     return {
       ...data,
       popularity: -1,
@@ -133,6 +129,7 @@ export function calculatePopularityScore(data: LibraryType) {
   }
 
   const { createdAt, stars } = github.stats;
+  const { downloads, weekDownloads } = npm;
 
   const popularityGain = weekDownloads / Math.floor(downloads / 4.25) / 5;
 

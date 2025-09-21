@@ -1,23 +1,5 @@
 import { LibraryType } from '~/types';
 
-export function compatibility(libraries: LibraryType[]) {
-  return libraries.sort((a, b) => {
-    const aCompat = [a.expoGo, a.ios, a.android, a.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    const bCompat = [b.expoGo, b.ios, b.android, b.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    return bCompat - aCompat;
-  });
-}
-
 export function issues(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);
 }

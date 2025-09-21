@@ -242,7 +242,7 @@ export function handleFilterLibraries({
       return true;
     }
 
-    if (viewerHasChosenTopic && library.topicSearchString.includes(queryTopic)) {
+    if (viewerHasChosenTopic && queryTopic && library.topicSearchString.includes(queryTopic)) {
       isTopicMatch = true;
     }
 

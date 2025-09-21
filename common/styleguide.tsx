@@ -1,8 +1,15 @@
 import * as HtmlElements from '@expo/html-elements';
 import { TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { ComponentType, PropsWithChildren, useContext, useState } from 'react';
-import { StyleSheet, TextStyle, View, useWindowDimensions, ViewStyle } from 'react-native';
+import { type ComponentType, type PropsWithChildren, useContext, useState } from 'react';
+import {
+  StyleSheet,
+  TextStyle,
+  View,
+  useWindowDimensions,
+  ViewStyle,
+  StyleProp,
+} from 'react-native';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
@@ -87,16 +94,16 @@ type CustomTextProps = TextProps &
 const createTextComponent = (Element: ComponentType<TextProps>, textStyle?: TextStyles) => {
   const TextComponent = ({ children, style, id, numberOfLines }: CustomTextProps) => {
     const { isDark } = useContext(CustomAppearanceContext);
+
+    const elementStyle = Element?.displayName
+      ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
+      : undefined;
+
     return (
       <Element
         id={id}
         numberOfLines={numberOfLines}
-        style={[
-          textStyles[Element.displayName],
-          textStyle,
-          { color: isDark ? colors.white : colors.black },
-          style,
-        ]}>
+        style={[elementStyle, textStyle, { color: isDark ? colors.white : colors.black }, style]}>
         {children}
       </Element>
     );
@@ -118,22 +125,14 @@ export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = PropsWithChildren<{
-  style?: TextStyles;
+  style?: StyleProp<TextStyle>;
   target?: string;
   href: string;
-  hoverStyle?: TextStyles;
-  containerStyle?: ViewStyle;
+  hoverStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
 }>;
 
-export const A = ({
-  href,
-  target,
-  children,
-  style,
-  hoverStyle,
-  containerStyle,
-  ...rest
-}: AProps) => {
+export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
   const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -141,7 +140,7 @@ export const A = ({
   const linkHoverStyles = getLinkHoverStyles();
 
   if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
-    const passedStyle = Array.isArray(style) ? StyleSheet.flatten(style) : style;
+    const passedStyle = StyleSheet.flatten(style);
     return (
       <Link
         href={href}
@@ -151,7 +150,7 @@ export const A = ({
           ...linkStyles,
           ...(passedStyle as any),
           ...(isHovered && linkHoverStyles),
-          ...(isHovered && hoverStyle),
+          ...(isHovered && hoverStyle && StyleSheet.flatten(hoverStyle)),
         }}>
         {children}
       </Link>
@@ -174,18 +173,22 @@ export const A = ({
       </HtmlElements.A>
     </View>
   );
-};
+}
 
-const getLinkStyles = (isDark: boolean) => ({
-  color: isDark ? colors.white : colors.black,
-  textDecorationColor: isDark ? colors.gray5 : colors.pewter,
-  textDecorationLine: 'underline',
-  fontFamily: 'inherit',
-});
+function getLinkStyles(isDark: boolean): TextStyle {
+  return {
+    color: isDark ? colors.white : colors.black,
+    textDecorationColor: isDark ? colors.gray5 : colors.pewter,
+    textDecorationLine: 'underline',
+    fontFamily: 'inherit',
+  };
+}
 
-const getLinkHoverStyles = () => ({
-  textDecorationColor: colors.primaryDark,
-});
+function getLinkHoverStyles(): TextStyle {
+  return {
+    textDecorationColor: colors.primaryDark,
+  };
+}
 
 export function HoverEffect({ children }: PropsWithChildren) {
   const [isHovered, setIsHovered] = useState(false);

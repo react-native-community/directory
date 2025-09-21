@@ -4,7 +4,6 @@ export type QueryOrder =
   | 'relevance'
   | 'updated'
   | 'added'
-  | 'recommended'
   | 'quality'
   | 'popularity'
   | 'issues'
@@ -39,6 +38,9 @@ export type Query = {
   minPopularity?: string;
   minMonthlyDownloads?: string;
   newArchitecture?: string;
+  skipLibs?: string;
+  skipTools?: string;
+  skipTemplates?: string;
 };
 
 export type QueryFilters = {
@@ -47,9 +49,16 @@ export type QueryFilters = {
   queryTopic?: string;
   querySearch?: string;
   support: Record<string, string | undefined>;
-  skipLibs?: string;
-  skipTools?: string;
-  skipTemplates?: string;
+};
+
+export type SortedDataType = Record<QueryOrder, LibraryType[]>;
+
+export type LibraryLicenseType = {
+  key: string;
+  name: string;
+  spdxId: string;
+  url: string;
+  id: string;
 };
 
 export type LibraryType = LibraryDataEntryType & {
@@ -72,6 +81,7 @@ export type LibraryType = LibraryDataEntryType & {
       hasIssues: boolean;
       hasWiki: boolean;
       hasSponsorships: boolean;
+      hasDiscussions: boolean;
       hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
@@ -82,13 +92,7 @@ export type LibraryType = LibraryDataEntryType & {
       forks: number;
       dependencies: number;
     };
-    license: {
-      key: string;
-      name: string;
-      spdxId: string;
-      url: string;
-      id: string;
-    };
+    license: LibraryLicenseType;
     lastRelease?: {
       name: string;
       tagName: string;
