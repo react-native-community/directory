@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 
-import { LibraryType } from '~/types';
+import { LibraryLicenseType, LibraryType } from '~/types';
 import hasNativeCode from '~/util/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
@@ -10,8 +10,9 @@ import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
 
-const licenses = {
+const licenses: Record<string, LibraryLicenseType> = {
   isc: {
+    id: 'isc',
     name: 'ISC License',
     url: 'https://www.isc.org/licenses/',
     key: 'isc',
@@ -25,7 +26,7 @@ const licenses = {
 export async function loadGitHubLicenses() {
   const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
-  result.data.licenses.forEach(license => {
+  result.data.licenses.forEach((license: LibraryLicenseType) => {
     licenses[license.key] = license;
   });
 }
@@ -54,7 +55,7 @@ export async function fetchGithubRateLimit() {
   return {};
 }
 
-export async function fetchGithubData(data: LibraryType, retries = 2) {
+export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
@@ -118,7 +119,7 @@ function getLicenseFromPackageJson(packageJson: Record<string, string | object>)
   }
 }
 
-function createRepoDataWithResponse(json, monorepo: boolean) {
+function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
@@ -142,7 +143,11 @@ function createRepoDataWithResponse(json, monorepo: boolean) {
         json.topics = [
           ...new Set([
             ...processTopics(packageJson.keywords),
-            ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
+            ...processTopics(
+              json.repositoryTopics.nodes.map(
+                ({ topic }: { topic: { name: string } }) => topic.name
+              )
+            ),
           ]),
         ];
 
@@ -156,9 +161,9 @@ function createRepoDataWithResponse(json, monorepo: boolean) {
       if (packageJson.types || packageJson.typings) {
         json.types = true;
       }
-    } catch (e) {
+    } catch (error) {
       console.error(`Unable to parse ${json.name} package.json file!`);
-      console.error(e);
+      console.error(error);
     }
   }
 

@@ -8,7 +8,7 @@ import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { LibraryDataEntryType, LibraryType } from '~/types';
+import { APIResponseType, LibraryDataEntryType, LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { isEmptyOrNull } from '~/util/strings';
 
@@ -25,16 +25,11 @@ const USE_DEBUG_REPOS = false;
 // This is useful for debugging and testing purposes.
 const ONLY_WRITE_LOCAL_DATA_FILE = false;
 
-// Loads the GitHub API results from disk rather than hitting the API each time.
-// The first run will hit the API if raw-github-results.json doesn't exist yet.
-const LOAD_GITHUB_RESULTS_FROM_DISK = false;
-
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = false;
 
 const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const DATA_PATH = path.resolve('assets', 'data.json');
-const GITHUB_RESULTS_PATH = path.join('scripts', 'raw-github-results.json');
 
 const CHUNK_SIZE = 25;
 const SLEEP_TIME = 400;
@@ -90,20 +85,20 @@ async function buildAndScoreData() {
 
   console.log('\n⬇️ Fetching download stats from npm-stat');
 
-  let bulkList = [];
+  const fetchList: string[] = [];
 
   // Filter out template entries, prepare npm-stat API chunks
   data = data.map(project => {
     if (!project.template) {
-      bulkList.push(project.npmPkg);
+      fetchList.push(project.npmPkg);
       return project;
     }
     return project;
   });
 
   // Assemble and fetch packages data in bulk queries
-  bulkList = [...Array(Math.ceil(bulkList.length / CHUNK_SIZE))].map(_ =>
-    bulkList.splice(0, CHUNK_SIZE)
+  const bulkList = [...Array(Math.ceil(fetchList.length / CHUNK_SIZE))].map(_ =>
+    fetchList.splice(0, CHUNK_SIZE)
   );
 
   const downloadsList = await fetchNpmStatDataSequentially(bulkList);
@@ -129,6 +124,7 @@ async function buildAndScoreData() {
         console.error(`Failed to calculate score for ${project.github.name}`, error.message);
       }
     }
+    return project;
   });
 
   console.log('\n🧮 Calculating popularity');
@@ -141,10 +137,11 @@ async function buildAndScoreData() {
         console.error(project.githubUrl);
       }
     }
+    return project;
   });
 
   console.log('\n🏷️ Processing topics');
-  const topicCounts = {};
+  const topicCounts: Record<string, number> = {};
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
 
@@ -182,7 +179,7 @@ async function buildAndScoreData() {
 
   console.log('📄️ Preparing data file');
 
-  const { libraries, ...rest } = latestData;
+  const { libraries, ...rest }: APIResponseType = latestData;
 
   let fileContent;
 
@@ -205,22 +202,24 @@ async function buildAndScoreData() {
     const newData = data.map(lib => lib.npmPkg);
     const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
 
-    const existingPackages = DATASET.map(fillNpmName).map(lib => lib.npmPkg);
+    const existingPackages = (DATASET as LibraryType[]).map(fillNpmName).map(lib => lib.npmPkg);
     const dataToFill = missingData.filter(npmPkg => !existingPackages.includes(npmPkg));
 
     const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
 
-    const dataWithFallback = currentData.map(entry =>
-      Object.keys(entry.npm).length > 0
+    const dataWithFallback: LibraryType[] = currentData.map(entry =>
+      entry.npm && Object.keys(entry.npm).length > 0
         ? entry
         : {
             ...entry,
             npm:
-              latestData.libraries.find(prevEntry => entry.npmPkg === prevEntry.npmPkg)?.npm ?? {},
+              latestData.libraries.find(
+                (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
+              )?.npm ?? {},
           }
     );
 
-    const finalData = dataWithFallback.filter(npmPkg => !existingPackages.includes(npmPkg));
+    const finalData = dataWithFallback.filter(({ npmPkg }) => !existingPackages.includes(npmPkg));
     const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
 
     fileContent = JSON.stringify(
@@ -248,25 +247,26 @@ export async function fetchGithubDataThrottled({
   chunkSize,
   staggerMs,
 }: {
-  data: LibraryDataEntryType[];
+  data: LibraryType[];
   chunkSize: number;
   staggerMs: number;
 }) {
   let results: LibraryType[] = [];
   const chunks = chunk(data, chunkSize);
-  for (const c of chunks) {
-    if (chunks.indexOf(c) > 0) {
+
+  for (const chunk of chunks) {
+    if (chunks.indexOf(chunk) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
       console.log(`Sleeping ${staggerMs}ms`);
       await sleep(staggerMs);
     }
 
-    const partialResult = await Promise.all(c.map(fetchGithubData));
+    const partialResult = await Promise.all(chunk.map(data => fetchGithubData(data)));
     results = [...results, ...partialResult];
 
-    if (partialResult.length !== c.length) {
+    if (partialResult.length !== chunk.length) {
       throw new Error(
-        `Error in fetching data from GitHub... Expected ${c.length} results but only received ${partialResult.length}`
+        `Error in fetching data from GitHub... Expected ${chunk.length} results but only received ${partialResult.length}`
       );
     }
   }
@@ -290,7 +290,7 @@ function getDataForFetch(wantedPackage: string) {
 }
 
 async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
-  const data = getDataForFetch(wantedPackageName);
+  const data = getDataForFetch(wantedPackageName) as LibraryType[];
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
@@ -310,19 +310,7 @@ async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
 
   await loadGitHubLicenses();
 
-  let result;
-  if (LOAD_GITHUB_RESULTS_FROM_DISK) {
-    try {
-      result = fs.readFileSync(GITHUB_RESULTS_PATH);
-      console.log('Loaded GitHub results from disk, skipping API calls.');
-    } catch (error) {
-      console.warn('Failed to load data from disk!', error);
-    }
-  } else {
-    result = await fetchGithubDataThrottled({ data, chunkSize: CHUNK_SIZE, staggerMs: SLEEP_TIME });
-  }
-
-  return result;
+  return await fetchGithubDataThrottled({ data, chunkSize: CHUNK_SIZE, staggerMs: SLEEP_TIME });
 }
 
 async function fetchLatestData() {

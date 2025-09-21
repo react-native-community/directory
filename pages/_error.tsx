@@ -9,9 +9,10 @@ import ErrorState from '~/components/ErrorState';
 
 type ExtendedErrorProps = ErrorProps & {
   hasGetInitialPropsRun?: boolean;
+  err?: NextPageContext['err'];
 };
 
-function MyError({ statusCode, hasGetInitialPropsRun, err }) {
+function MyError({ statusCode, hasGetInitialPropsRun, err }: ExtendedErrorProps) {
   if (!hasGetInitialPropsRun && err) {
     Sentry.captureException(err);
   }

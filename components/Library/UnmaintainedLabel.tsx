@@ -1,5 +1,5 @@
 import { Fragment, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
 
 import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -15,7 +15,7 @@ function UnmaintainedLabel({ alternatives }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
-  const linkHoverStyle = isDark && { color: colors.secondary };
+  const linkHoverStyle: StyleProp<TextStyle> = isDark && { color: colors.secondary };
   const contentColor = isDark ? darkColors.secondary : colors.gray5;
 
   return (

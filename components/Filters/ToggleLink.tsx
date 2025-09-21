@@ -11,7 +11,7 @@ import { CheckBox } from '../CheckBox';
 
 type Props = {
   query: Query;
-  paramName: string;
+  paramName: keyof Query;
   title: string;
   basePath?: string;
 };

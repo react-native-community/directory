@@ -36,7 +36,7 @@ export const FilterButton = ({
   ];
 
   const filterCount = Object.keys(query).reduce(
-    (acc, q) => (params.includes(q) ? acc + 1 : acc),
+    (acc, q) => (params.includes(q as keyof Query) ? acc + 1 : acc),
     0
   );
   const isFilterCount = !!filterCount;

@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/react';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -21,22 +22,23 @@ Sentry.init({
   tracesSampleRate: isProd ? 0.5 : 1.0,
 });
 
-const App = ({ pageProps, Component }) => (
-  <CustomAppearanceProvider>
-    <CustomAppearanceContext.Consumer>
-      {context => (
-        <SafeAreaProvider
-          style={{
-            flex: 1,
-            backgroundColor: context.isDark ? darkColors.background : colors.white,
-          }}>
-          <Head>
-            <meta
-              name="viewport"
-              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
-            />
-            <style>
-              {`html { 
+function App({ pageProps, Component }: AppProps) {
+  return (
+    <CustomAppearanceProvider>
+      <CustomAppearanceContext.Consumer>
+        {context => (
+          <SafeAreaProvider
+            style={{
+              flex: 1,
+              backgroundColor: context.isDark ? darkColors.background : colors.white,
+            }}>
+            <Head>
+              <meta
+                name="viewport"
+                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
+              />
+              <style>
+                {`html { 
                   background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
                 }
                 *:focus-visible {
@@ -49,15 +51,16 @@ const App = ({ pageProps, Component }) => (
                 .TooltipContent svg {
                   stroke: ${context.isDark ? colors.gray7 : colors.gray6};
                 }`}
-            </style>
-          </Head>
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </SafeAreaProvider>
-      )}
-    </CustomAppearanceContext.Consumer>
-  </CustomAppearanceProvider>
-);
+              </style>
+            </Head>
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </SafeAreaProvider>
+        )}
+      </CustomAppearanceContext.Consumer>
+    </CustomAppearanceProvider>
+  );
+}
 
 export default Sentry.withProfiler(App);

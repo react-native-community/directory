@@ -2,32 +2,34 @@ import { drop, take } from 'es-toolkit';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { type DataAssetType, QueryOrder } from '~/types';
+import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { parseQueryParams } from '~/util/parseQueryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
 
 const originalData = [...(data as DataAssetType).libraries];
-const getData = () => ({
-  updated: Sorting.updated([...originalData]),
-  added: [...originalData.reverse()],
-  compatibility: Sorting.compatibility([...originalData]),
-  quality: Sorting.quality([...originalData]),
-  popularity: Sorting.popularity([...originalData]),
-  downloads: Sorting.downloads([...originalData]),
-  issues: Sorting.issues([...originalData]),
-  stars: Sorting.stars([...originalData]),
-  relevance: Sorting.relevance([...originalData]),
-});
+
+function getData(): SortedDataType {
+  return {
+    updated: Sorting.updated([...originalData]),
+    added: [...originalData.reverse()],
+    quality: Sorting.quality([...originalData]),
+    popularity: Sorting.popularity([...originalData]),
+    downloads: Sorting.downloads([...originalData]),
+    issues: Sorting.issues([...originalData]),
+    stars: Sorting.stars([...originalData]),
+    relevance: Sorting.relevance([...originalData]),
+  };
+}
 
 const SortedData = getData();
-const SortingKeys = Object.keys(SortedData);
-
-const ReversedSortedData = Object.entries(getData()).reduce(
-  (accumulator = {}, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
-  {}
+const ReversedSortedData = Object.entries(getData()).reduce<SortedDataType>(
+  (accumulator, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
+  {} as SortedDataType
 );
+
+const SortingKeys = Object.keys(SortedData);
 
 function getAllowedOrderString(req: NextApiRequest, querySearch?: string): QueryOrder {
   let sortBy = querySearch ? SortingKeys.at(-1) : SortingKeys[0];

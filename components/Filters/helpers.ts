@@ -1,4 +1,11 @@
-export const FILTER_PLATFORMS = [
+import { Query } from '~/types';
+
+type FilterParamsType = {
+  param: keyof Query;
+  title: string;
+};
+
+export const FILTER_PLATFORMS: FilterParamsType[] = [
   {
     param: 'android',
     title: 'Android',
@@ -29,7 +36,7 @@ export const FILTER_PLATFORMS = [
   },
 ];
 
-export const FILTER_REQUIRES_MAIN_SEARCH = [
+export const FILTER_REQUIRES_MAIN_SEARCH: FilterParamsType[] = [
   {
     param: 'isMaintained',
     title: 'Maintained',
@@ -40,7 +47,7 @@ export const FILTER_REQUIRES_MAIN_SEARCH = [
   },
 ];
 
-export const FILTER_STATUS = [
+export const FILTER_STATUS: FilterParamsType[] = [
   {
     param: 'newArchitecture',
     title: 'Supports New Architecture',
@@ -67,7 +74,7 @@ export const FILTER_STATUS = [
   },
 ];
 
-export const FILTER_COMPATIBILITY = [
+export const FILTER_COMPATIBILITY: FilterParamsType[] = [
   {
     param: 'expoGo',
     title: 'Works with Expo Go',

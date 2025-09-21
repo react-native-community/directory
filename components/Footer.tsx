@@ -1,4 +1,4 @@
-import { FunctionComponent, SVGAttributes, createElement, useContext } from 'react';
+import { ComponentType, createElement, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
 import { A, P, colors, darkColors, useLayout } from '~/common/styleguide';
@@ -6,6 +6,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 import ContentContainer from './ContentContainer';
 import {
+  IconProps,
   Logo,
   PlatformAndroid,
   PlatformIOS,
@@ -21,7 +22,7 @@ type PlatformProps = {
   name: string;
   pkgName: string;
   url: string;
-  Icon: FunctionComponent<SVGAttributes<SVGElement>>;
+  Icon: ComponentType<IconProps>;
   style?: ViewStyle;
 };
 

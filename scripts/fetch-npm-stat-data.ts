@@ -21,15 +21,13 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
         return { npm: null };
       }
 
-      const downloadCountsPerDay = Object.values(pkgData);
+      const downloadCountsPerDay: number[] = Object.values(pkgData);
 
       return {
         name,
         npm: {
-          downloads: downloadCountsPerDay.reduce((sum: number, value: number) => sum + value, 0),
-          weekDownloads: downloadCountsPerDay
-            .slice(0, 6)
-            .reduce((sum: number, value: number) => sum + value, 0),
+          downloads: downloadCountsPerDay.reduce((sum, value) => sum + value, 0),
+          weekDownloads: downloadCountsPerDay.slice(0, 6).reduce((sum, value) => sum + value, 0),
         },
       };
     });

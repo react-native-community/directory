@@ -24,7 +24,7 @@ const Search = ({ query, total }: Props) => {
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
   const [isApple, setIsApple] = useState<boolean | null>(null);
-  const inputRef = useRef(null);
+  const inputRef = useRef<TextInput>(null);
 
   const { isSmallScreen } = useLayout();
   const { isDark } = useContext(CustomAppearanceContext);
@@ -79,7 +79,7 @@ const Search = ({ query, total }: Props) => {
                   if (inputRef.current && event.key === 'Escape') {
                     if (search) {
                       event.preventDefault();
-                      inputRef.current.value = '';
+                      inputRef.current.clear();
                       void Router.replace(
                         urlWithQuery('/', {
                           ...query,

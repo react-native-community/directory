@@ -8,7 +8,7 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
   console.log('🔍️Checking all libraries have the correct format');
 
   // Reduces the libraries array to an object of errors for each library
-  const errorsList: Record<string, string[]> = libraries.reduce((errors, library, index) => {
+  const errorsList = libraries.reduce<Record<string, string[]>>((errors, library, index) => {
     const libraryErrors = [];
     const libraryProperties = Object.keys(library);
 
@@ -46,7 +46,7 @@ function validateDuplicateLibraries(libraries: LibraryType[]) {
   const librariesName = libraries.map(
     library => library.npmPkg ?? library.githubUrl.split('/').at(-1)
   );
-  const occurrences = librariesName.reduce((acc, item) => {
+  const occurrences = librariesName.reduce<Record<string, number>>((acc, item) => {
     acc[item] = (acc[item] ?? 0) + 1;
     return acc;
   }, {});
