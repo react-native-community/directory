@@ -17066,6 +17066,7 @@
   },
   {
     "githubUrl": "https://github.com/Survicate/survicate-react-native-sdk",
+    "npmPkg": "@survicate/react-native-survicate",
     "ios": true,
     "android": true,
     "newArchitecture": true
