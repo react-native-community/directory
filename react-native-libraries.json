@@ -17070,5 +17070,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/purrseus/react-native-xenon",
+    "npmPkg": "react-native-xenon",
+    "examples": ["https://github.com/purrseus/react-native-xenon/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/purrseus/react-native-xenon/refs/heads/main/images/screenshots/preview.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
