@@ -113,7 +113,7 @@ export type LibraryType = LibraryDataEntryType & {
   matchingScoreModifiers: string[];
   topicSearchString: string;
   popularity?: number;
-  matchScore: number;
+  matchScore?: number;
 };
 
 export type LibraryDataEntryType = {
