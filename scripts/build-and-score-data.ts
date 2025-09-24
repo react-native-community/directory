@@ -219,15 +219,19 @@ async function buildAndScoreData() {
           }
     );
 
-    const finalData = dataWithFallback.filter(({ npmPkg }) => !existingPackages.includes(npmPkg));
+    const finalData = dataWithFallback.filter(({ npmPkg }) => existingPackages.includes(npmPkg));
     const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
+
+    const sortedTopicCounts = Object.fromEntries(
+      Object.entries(topicCounts).sort((a, b) => b[1] - a[1])
+    );
 
     fileContent = JSON.stringify(
       {
         libraries: finalData.filter((entry: LibraryType) => {
           return validEntries.includes(entry.githubUrl);
         }),
-        topics: topicCounts,
+        topics: sortedTopicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
       null,
