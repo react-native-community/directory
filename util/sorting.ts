@@ -35,10 +35,13 @@ export function popularity(libraries: LibraryType[]) {
 
 export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    if (Math.abs(a.matchScore - b.matchScore) >= 50) {
-      return b.matchScore - a.matchScore;
-    }
+    if (a.matchScore && b.matchScore) {
+      if (Math.abs(a.matchScore - b.matchScore) >= 50) {
+        return b.matchScore - a.matchScore;
+      }
 
-    return b.score - a.score;
+      return b.score - a.score;
+    }
+    return 0;
   });
 }
