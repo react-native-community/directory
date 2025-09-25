@@ -17083,5 +17083,21 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/NIKHIL0VERMA/flixsrota-player",
+    "npmPkg": "@flixsrota/player",
+    "examples": [
+      "https://github.com/NIKHIL0VERMA/flixsrota-player/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/buffering.jpg",
+      "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/controls.jpg",
+      "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/fullscreen_player.jpg",
+      "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/skip_gesture.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
