@@ -17097,13 +17097,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "expoGo": true,
-    "unmaintained": false,
-    "dev": false,
-    "template": false,
-    "alternatives":[
-      "react-native-youtube-iframe"
-    ]
+    "expoGo": true
   }
 ]
