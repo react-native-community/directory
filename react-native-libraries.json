@@ -16839,7 +16839,6 @@
   {
     "githubUrl": "https://github.com/getsettalk/react-native-qr-kit",
     "examples": ["https://github.com/getsettalk/react-native-qr-kit/tree/main/Example"],
-    "npmPkg": "react-native-qr-kit",
     "android": true,
     "ios": true,
     "newArchitecture": true
@@ -17076,7 +17075,6 @@
   },
   {
     "githubUrl": "https://github.com/purrseus/react-native-xenon",
-    "npmPkg": "react-native-xenon",
     "examples": ["https://github.com/purrseus/react-native-xenon/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/purrseus/react-native-xenon/refs/heads/main/images/screenshots/preview.png"
@@ -17089,9 +17087,7 @@
   {
     "githubUrl": "https://github.com/NIKHIL0VERMA/flixsrota-player",
     "npmPkg": "@flixsrota/player",
-    "examples": [
-      "https://github.com/NIKHIL0VERMA/flixsrota-player/tree/main/example"
-    ],
+    "examples": ["https://github.com/NIKHIL0VERMA/flixsrota-player/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/buffering.jpg",
       "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/controls.jpg",
@@ -17101,5 +17097,58 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/devtools-floating-menu",
+    "npmPkg": "@react-buoy/core",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/shared",
+    "npmPkg": "@react-buoy/shared-ui",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/env-tools",
+    "npmPkg": "@react-buoy/env",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/network",
+    "npmPkg": "@react-buoy/network",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/react-query",
+    "npmPkg": "@react-buoy/react-query",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/storage",
+    "npmPkg": "@react-buoy/storage",
+    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-nitro-fetch",
+    "examples": ["https://github.com/margelo/react-native-nitro-fetch/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-text",
+    "examples": ["https://github.com/patrickkabwe/react-native-nitro-text/tree/main/example"],
+    "ios": true
   }
 ]
