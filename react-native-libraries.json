@@ -17150,5 +17150,21 @@
     "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-text",
     "examples": ["https://github.com/patrickkabwe/react-native-nitro-text/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/thereallo1026/expo-native-storage",
+    "npmPkg": "expo-native-storage",
+    "examples": [
+      "https://github.com/thereallo1026/expo-storage-benchmark"
+    ],
+    "images": [
+      "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/andorid_100ops.png?raw=true",
+      "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/android_1000ops.png?raw=true",
+      "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/ios_100ops.png?raw=true"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
