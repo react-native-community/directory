@@ -24,7 +24,9 @@ const COMMON_RULES = {
   curly: 'error',
   eqeqeq: ['error', 'always', { null: 'ignore' }],
   'no-void': ['error', { allowAsStatement: true }],
-  'import/no-cycle': ['error', { maxDepth: '∞' }],
+  'import/no-cycle': ['error', { maxDepth: '∞', disableScc: true }],
+  'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+  'import/enforce-node-protocol-usage': ['error', 'always'],
 };
 
 const TS_COMMON_RULES = {

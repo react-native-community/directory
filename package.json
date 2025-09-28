@@ -23,11 +23,11 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-picker/picker": "^2.11.2",
-    "@sentry/react": "^10.12.0",
-    "expo": "54.0.9",
-    "expo-font": "^14.0.8",
+    "@sentry/react": "^10.15.0",
     "es-toolkit": "^1.39.10",
-    "next": "^15.5.3",
+    "expo": "54.0.10",
+    "expo-font": "^14.0.8",
+    "next": "^15.5.4",
     "node-emoji": "^2.2.0",
     "react": "19.1.1",
     "react-content-loader": "^7.1.1",
@@ -41,18 +41,19 @@
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
-    "@next/bundle-analyzer": "^15.5.3",
-    "@types/bun": "^1.2.22",
-    "@types/react": "^19.1.13",
+    "@next/bundle-analyzer": "^15.5.4",
+    "@prettier/plugin-oxc": "^0.0.4",
+    "@types/bun": "^1.2.23",
+    "@types/react": "^19.1.15",
     "@vercel/blob": "^0.27.3",
     "ajv-cli": "^5.0.0",
     "browserslist": "^4.26.2",
     "cheerio": "^1.1.2",
     "dotenv": "^17.2.2",
     "eslint": "^9.36.0",
-    "eslint-config-next": "^15.5.3",
+    "eslint-config-next": "^15.5.4",
     "eslint-config-universe": "^15.0.3",
-    "lint-staged": "^16.1.6",
+    "lint-staged": "^16.2.3",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.5",
@@ -66,7 +67,7 @@
     "pre-commit": "bunx precommit"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{mjs,ts,tsx}": [
       "eslint --fix"
     ],
     "react-native-libraries.json": [

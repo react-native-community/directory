@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/react';
-import type { AppProps } from 'next/app';
+import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
