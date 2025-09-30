@@ -17173,5 +17173,13 @@
     "examples": ["https://github.com/pushpender-singh-ap/react-native-unarchive/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-text",
+    "npmPkg": "react-native-nitro-text",
+    "examples": ["https://github.com/patrickkabwe/react-native-nitro-text/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
