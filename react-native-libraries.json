@@ -17149,7 +17149,9 @@
   {
     "githubUrl": "https://github.com/patrickkabwe/react-native-nitro-text",
     "examples": ["https://github.com/patrickkabwe/react-native-nitro-text/tree/main/example"],
-    "ios": true
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/thereallo1026/expo-native-storage",
