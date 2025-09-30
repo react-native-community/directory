@@ -5,5 +5,8 @@
   "bracketSameLine": true,
   "trailingComma": "es5",
   "endOfLine": "auto",
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "plugins": [
+    "@prettier/plugin-oxc"
+  ]
 }

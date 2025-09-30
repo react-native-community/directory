@@ -1,6 +1,6 @@
 import { withExpo } from '@expo/next-adapter';
 import BundleAnalyzer from '@next/bundle-analyzer';
-import type { NextConfig } from 'next';
+import { type NextConfig } from 'next';
 import withPlugins from 'next-compose-plugins';
 import withFonts from 'next-fonts';
 import withImages from 'next-images';
