@@ -17175,5 +17175,12 @@
     "examples": ["https://github.com/pushpender-singh-ap/react-native-unarchive/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pushpender-singh-ap/react-native-otp-verify",
+    "npmPkg": "@pushpendersingh/react-native-otp-verify",
+    "examples": ["https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"],
+    "ios": false,
+    "android": true
   }
 ]
