@@ -10790,7 +10790,8 @@
     "examples": ["https://github.com/Malaa-tech/expo-custom-assets/tree/main/example"],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/ShivamRawat0l/react-native-loader-collection",
