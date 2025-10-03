@@ -8,7 +8,9 @@ export type QueryOrder =
   | 'popularity'
   | 'issues'
   | 'downloads'
-  | 'stars';
+  | 'stars'
+  | 'dependencies'
+  | 'size';
 
 export type QueryOrderDirection = 'descending' | 'ascending';
 

@@ -45,3 +45,21 @@ export function relevance(libraries: LibraryType[]) {
     return 0;
   });
 }
+
+export function dependencies(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bDependencies = b.github.stats.dependencies;
+    const aDependencies = a.github.stats.dependencies;
+
+    return bDependencies - aDependencies;
+  });
+}
+
+export function bundleSize(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bSize = b.npm?.size ?? 0;
+    const aSize = a.npm?.size ?? 0;
+
+    return bSize - aSize;
+  });
+}

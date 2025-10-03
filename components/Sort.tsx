@@ -15,7 +15,7 @@ type SortButtonProps = {
   query: Query;
 };
 
-const sorts = [
+const sorts: { param: QueryOrder; label: string }[] = [
   {
     param: 'relevance',
     label: 'Relevance',
@@ -47,6 +47,14 @@ const sorts = [
   {
     param: 'issues',
     label: 'Issues',
+  },
+  {
+    param: 'dependencies',
+    label: 'Dependencies',
+  },
+  {
+    param: 'size',
+    label: 'Bundle Size',
   },
 ];
 
