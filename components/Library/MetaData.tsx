@@ -75,7 +75,7 @@ function generateData(
         <A
           href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
           style={styles.link}>
-          {`${github.stats.dependencies} ${pluralize('dependency', github.stats.dependencies)}`}
+          {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
         </A>
       ),
     },

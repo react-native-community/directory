@@ -92,7 +92,7 @@ export type LibraryType = LibraryDataEntryType & {
       subscribers: number;
       stars: number;
       forks: number;
-      dependencies: number;
+      dependencies?: number;
     };
     license: LibraryLicenseType;
     lastRelease?: {
