@@ -20,6 +20,8 @@ function getData(): SortedDataType {
     issues: Sorting.issues([...originalData]),
     stars: Sorting.stars([...originalData]),
     relevance: Sorting.relevance([...originalData]),
+    size: Sorting.bundleSize([...originalData]),
+    dependencies: Sorting.dependencies([...originalData]),
   };
 }
 
