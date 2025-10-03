@@ -48,8 +48,8 @@ export function relevance(libraries: LibraryType[]) {
 
 export function dependencies(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    const bDependencies = b.github.stats.dependencies;
-    const aDependencies = a.github.stats.dependencies;
+    const bDependencies = b.github.stats?.dependencies ?? 0;
+    const aDependencies = a.github.stats?.dependencies ?? 0;
 
     return bDependencies - aDependencies;
   });

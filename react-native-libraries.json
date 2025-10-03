@@ -11235,18 +11235,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/LovesWorking/react-native-react-query-devtools",
-    "examples": ["https://github.com/LovesWorking/RN-Dev-Tools-Example"],
-    "images": [
-      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGxmMHhhbXRicmEzbm44OGU5cW05ZmV6enQ0eTQ5MmJ3MWp2ZmhkdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZWYRq7RgGeDqYYMoFS/giphy.gif"
-    ],
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "tvos": true,
-    "dev": true
-  },
-  {
     "githubUrl": "https://github.com/calintamas/react-native-toast-message",
     "images": [
       "https://raw.githubusercontent.com/calintamas/react-native-toast-message/HEAD/docs/toast.gif"
@@ -11631,7 +11619,7 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/supabase/supabase-js",
+    "githubUrl": "https://github.com/supabase/supabase-js/tree/master/packages/core/supabase-js",
     "npmPkg": "@supabase/supabase-js",
     "ios": true,
     "android": true,
@@ -16838,7 +16826,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/getsettalk/react-native-qr-kit",
+    "githubUrl": "https://github.com/getsettalk/react-native-qr-kit/tree/main/package",
+    "npmPkg": "react-native-qr-kit",
     "examples": ["https://github.com/getsettalk/react-native-qr-kit/tree/main/Example"],
     "android": true,
     "ios": true,
