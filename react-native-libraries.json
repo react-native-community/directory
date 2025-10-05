@@ -17178,5 +17178,13 @@
     "npmPkg": "@pushpendersingh/react-native-otp-verify",
     "examples": ["https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ahmedawaad1804/react-native-restart-newarch",
+    "npmPkg": "react-native-restart-newarch",
+    "examples": ["https://github.com/ahmedawaad1804/react-native-restart-newarch/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
