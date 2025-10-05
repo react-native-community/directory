@@ -17186,5 +17186,13 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ebrimasamba/react-native-sms-retriever",
+    "npmPkg": "@ebrimasamba/react-native-sms-retriever",
+    "examples": ["https://github.com/ebrimasamba/react-native-sms-retriever/tree/main/example"],
+    "android": true,
+    "ios": false,
+    "newArchitecture": true
   }
 ]
