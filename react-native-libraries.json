@@ -17188,11 +17188,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/roeycohen/react-native-mdm-config",
+    "npmPkg": "react-native-mdm-config",
+    "examples": ["https://github.com/roeycohen/react-native-mdm-config/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/ebrimasamba/react-native-sms-retriever",
     "npmPkg": "@ebrimasamba/react-native-sms-retriever",
     "examples": ["https://github.com/ebrimasamba/react-native-sms-retriever/tree/main/example"],
     "android": true,
-    "ios": false,
     "newArchitecture": true
   }
 ]
