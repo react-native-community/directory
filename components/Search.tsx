@@ -1,5 +1,5 @@
-import Router from 'next/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -23,13 +23,12 @@ const Search = ({ query, total }: Props) => {
   const { search, order, direction, offset, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
-  const [isApple, setIsApple] = useState<boolean | null>(null);
+  const isApple = useMemo<boolean>(() => isAppleDevice(), []);
   const inputRef = useRef<TextInput>(null);
 
+  const { replace } = useRouter();
   const { isSmallScreen } = useLayout();
   const { isDark } = useContext(CustomAppearanceContext);
-
-  useEffect(() => setIsApple(isAppleDevice()), []);
 
   useEffect(() => {
     if (isApple !== null) {
@@ -45,11 +44,11 @@ const Search = ({ query, total }: Props) => {
   }, [isApple]);
 
   const typingCallback = useDebouncedCallback((text: string) => {
-    void Router.replace(urlWithQuery('/', { ...query, search: text, offset: null }));
+    void replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 200);
 
   function handleClearAllPress() {
-    void Router.replace(urlWithQuery('/', { search: query.search, offset: undefined }));
+    void replace(urlWithQuery('/', { search: query.search, offset: undefined }));
   }
 
   return (
@@ -80,7 +79,7 @@ const Search = ({ query, total }: Props) => {
                     if (search) {
                       event.preventDefault();
                       inputRef.current.clear();
-                      void Router.replace(
+                      void replace(
                         urlWithQuery('/', {
                           ...query,
                           search: undefined,

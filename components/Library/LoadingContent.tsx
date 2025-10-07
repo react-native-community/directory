@@ -10,7 +10,7 @@ type Props = {
   wrapperStyle?: SVGAttributes<SVGSVGElement>['style'];
 };
 
-const LoadingContent = ({ width = '100%', height = 202, wrapperStyle = {} }: Props) => {
+const LoadingContent = ({ width = '100%', height = 204, wrapperStyle = {} }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
   return (
@@ -26,6 +26,7 @@ const LoadingContent = ({ width = '100%', height = 202, wrapperStyle = {} }: Pro
         borderColor: isDark ? darkColors.border : colors.gray2,
         borderRadius: 6,
         marginBottom: 16,
+        boxSizing: 'border-box',
         ...wrapperStyle,
       }}>
       <rect x="20" y="20" rx="3" ry="3" width="288" height="25" />
