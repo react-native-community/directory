@@ -30,12 +30,6 @@ const COMMON_RULES = {
 };
 
 const TS_COMMON_RULES = {
-  '@typescript-eslint/explicit-function-return-type': [
-    'off',
-    {
-      allowExpressions: true,
-    },
-  ],
   '@typescript-eslint/await-thenable': 'error',
   '@typescript-eslint/no-misused-promises': [
     'error',
@@ -103,7 +97,6 @@ export default defineConfig([
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
       '@next/next/no-img-element': 'off',
-      'import/no-named-as-default': 'off',
       'no-console': ['error', { allow: ['warn', 'error'] }],
       'react/jsx-key': [
         'error',
@@ -113,6 +106,13 @@ export default defineConfig([
           warnOnDuplicates: true,
         },
       ],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/immutability': 'error',
+      'react-hooks/purity': 'error',
+      'react-hooks/refs': 'error',
+      'react-hooks/set-state-in-effect': 'error',
+      'react-hooks/set-state-in-render': 'error',
+      'react-hooks/static-components': 'error',
     },
   },
 
@@ -123,7 +123,6 @@ export default defineConfig([
     rules: {
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
-      'no-return-await': 'off',
     },
   },
 
@@ -133,7 +132,6 @@ export default defineConfig([
     extends: [universeNodeConfig],
     rules: {
       ...COMMON_RULES,
-      'no-return-await': 'off',
     },
   },
 ]);

@@ -1,6 +1,6 @@
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
@@ -28,11 +28,14 @@ type Props = {
 
 const Trending = ({ data, query }: Props) => {
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 2);
+
+  const router = useRouter();
   const { isDark } = useContext(CustomAppearanceContext);
+
   const total = data && data.total;
 
   function handleClearAllPress() {
-    void Router.replace(urlWithQuery('/trending', {}));
+    void router.replace(urlWithQuery('/trending', {}));
   }
 
   return (

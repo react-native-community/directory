@@ -23,7 +23,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-picker/picker": "^2.11.2",
-    "@sentry/react": "^10.17.0",
+    "@sentry/react": "^10.18.0",
     "es-toolkit": "^1.39.10",
     "expo": "54.0.12",
     "expo-font": "^14.0.8",
@@ -44,13 +44,13 @@
     "@next/bundle-analyzer": "^15.5.4",
     "@prettier/plugin-oxc": "^0.0.4",
     "@types/bun": "^1.2.23",
-    "@types/react": "^19.2.0",
+    "@types/react": "^19.2.2",
     "@vercel/blob": "^0.27.3",
     "ajv-cli": "^5.0.0",
     "browserslist": "^4.26.3",
     "cheerio": "^1.1.2",
     "dotenv": "^17.2.3",
-    "eslint": "^9.36.0",
+    "eslint": "^9.37.0",
     "eslint-config-next": "^15.5.4",
     "eslint-config-universe": "^15.0.3",
     "lint-staged": "^16.2.3",
@@ -61,6 +61,9 @@
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "user-agent-data-types": "^0.4.2"
+  },
+  "resolutions": {
+    "eslint-plugin-react-hooks": "~6.1.1"
   },
   "private": true,
   "simple-git-hooks": {

@@ -1,5 +1,5 @@
 import { Picker } from '@react-native-picker/picker';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
@@ -65,6 +65,8 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
     typeof offset === 'string' ? offset : offset
   );
   const [isSortIconHovered, setIsSortIconHovered] = useState(false);
+
+  const { pathname, push } = useRouter();
   const { isDark } = useContext(CustomAppearanceContext);
 
   useEffect(() => {
@@ -74,10 +76,10 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
       direction: sortDirection,
       offset: paginationOffset,
     });
-    if (url !== Router.pathname) {
-      void Router.push(url);
+    if (url !== pathname) {
+      void push(url);
     }
-  }, [sortValue, sortDirection]);
+  }, [sortValue, sortDirection, paginationOffset]);
 
   return (
     <View
