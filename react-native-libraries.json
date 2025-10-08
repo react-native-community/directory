@@ -17146,10 +17146,7 @@
   },
   {
     "githubUrl": "https://github.com/thereallo1026/expo-native-storage",
-    "npmPkg": "expo-native-storage",
-    "examples": [
-      "https://github.com/thereallo1026/expo-storage-benchmark"
-    ],
+    "examples": ["https://github.com/thereallo1026/expo-storage-benchmark"],
     "images": [
       "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/andorid_100ops.png?raw=true",
       "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/android_1000ops.png?raw=true",
@@ -17162,14 +17159,12 @@
   },
   {
     "githubUrl": "https://github.com/pushpender-singh-ap/react-native-unarchive",
-    "npmPkg": "react-native-unarchive",
     "examples": ["https://github.com/pushpender-singh-ap/react-native-unarchive/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/SamadK01/react-native-ultrastore",
-    "npmPkg": "react-native-ultrastore",
     "examples": ["https://github.com/SamadK01/react-native-ultrastore/tree/main/example"],
     "ios": true,
     "android": true
@@ -17177,20 +17172,22 @@
   {
     "githubUrl": "https://github.com/pushpender-singh-ap/react-native-otp-verify",
     "npmPkg": "@pushpendersingh/react-native-otp-verify",
-    "examples": ["https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"],
+    "examples": [
+      "https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"
+    ],
     "android": true
   },
   {
     "githubUrl": "https://github.com/ahmedawaad1804/react-native-restart-newarch",
-    "npmPkg": "react-native-restart-newarch",
-    "examples": ["https://github.com/ahmedawaad1804/react-native-restart-newarch/tree/main/example"],
+    "examples": [
+      "https://github.com/ahmedawaad1804/react-native-restart-newarch/tree/main/example"
+    ],
     "android": true,
     "ios": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/roeycohen/react-native-mdm-config",
-    "npmPkg": "react-native-mdm-config",
     "examples": ["https://github.com/roeycohen/react-native-mdm-config/tree/main/example"],
     "ios": true,
     "android": true
@@ -17201,5 +17198,91 @@
     "examples": ["https://github.com/ebrimasamba/react-native-sms-retriever/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/huytdps13400/react-native-ssl-manager",
+    "examples": [
+      "https://github.com/huytdps13400/react-native-ssl-manager/tree/main/example",
+      "https://github.com/huytdps13400/react-native-ssl-manager/tree/main/example-expo"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/huytdps13400/react-native-sms-retriever-nitro-module",
+    "npmPkg": "@huymobile/react-native-sms-retriever-nitro-module",
+    "examples": [
+      "https://github.com/huytdps13400/react-native-sms-retriever-nitro-module/tree/main/example"
+    ],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/coolsoftwaretyler/cool-pdf",
+    "npmPkg": "@coolsoftwaretyler/cool-pdf",
+    "examples": ["https://github.com/coolsoftwaretyler/cool-pdf/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/heroui-inc/heroui-native",
+    "examples": ["https://github.com/heroui-inc/heroui-native/tree/alpha/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/GG11HEDR/react-native-google-places-textinput",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/DanielAraldi/react-native-blur-view",
+    "npmPkg": "@danielsaraldi/react-native-blur-view",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/furkananter/react-native-shimmer-text",
+    "android": true,
+    "ios": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/avas-app/react-native-android-otp-autofill",
+    "npmPkg": "@avasapp/react-native-otp-autofill",
+    "example": ["https://github.com/avas-app/react-native-android-otp-autofill/tree/main/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/appwrite/sdk-for-react-native",
+    "npmPkg": "react-native-appwrite",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/itsRares/react-native-deepgram",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/forwardsoftware/react-native-toolbox",
+    "npmPkg": "@forward-software/react-native-toolbox",
+    "android": true,
+    "ios": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/ursnj/nayan-ui/tree/main/packages/react-native",
+    "npmPkg": "@nayan-ui/react-native",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/sharathchandramg/react-native-formo",
+    "npmPkg": "react-native-form0",
+    "android": true,
+    "ios": true
   }
 ]
