@@ -23,6 +23,7 @@ export function CompatibilityTags({ library }: Props) {
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
     library.visionos ? 'visionOS' : null,
+    library.vegaos ? 'Vega OS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
   ]

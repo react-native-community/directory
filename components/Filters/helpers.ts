@@ -27,6 +27,10 @@ export const FILTER_PLATFORMS: FilterParamsType[] = [
     title: 'visionOS',
   },
   {
+    param: 'vegaos',
+    title: 'Vega OS',
+  },
+  {
     param: 'web',
     title: 'Web',
   },
