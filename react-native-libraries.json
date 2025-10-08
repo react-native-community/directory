@@ -14332,6 +14332,7 @@
   {
     "githubUrl": "https://github.com/pioner92/react-native-auto-skeleton",
     "examples": ["https://github.com/pioner92/react-native-auto-skeleton/tree/main/example"],
+    "android": true,
     "ios": true,
     "newArchitecture": true
   },
