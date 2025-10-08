@@ -61,6 +61,7 @@ export const darkColors = {
   secondary: '#a2a7ab',
   warningLight: '#2f2704',
   warning: '#9a810c',
+  primaryDark: '#2e9ab8',
 };
 
 const baseTextStyles = {

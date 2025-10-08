@@ -38,19 +38,25 @@ function App({ pageProps, Component }: AppProps) {
                 content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
               />
               <style>
-                {`html { 
-                  background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
-                }
-                *:focus-visible {
-                  outline-color: ${colors.primaryDark};
-                }
-                .TooltipContent {
-                  background-color: ${darkColors.black};
-                  border: 1px solid ${context.isDark ? colors.gray7 : colors.gray6};
-                }
-                .TooltipContent svg {
-                  stroke: ${context.isDark ? colors.gray7 : colors.gray6};
-                }`}
+                {context.isDark
+                  ? `
+                  :root {
+                    --outline: ${colors.primaryDark};
+                    --active: ${darkColors.primaryDark};
+                    --select-background: ${darkColors.dark};
+                    --select-border: ${colors.gray6};
+                    --tooltip-border: ${colors.gray7};
+                  }
+                `
+                  : `
+                  :root {
+                    --outline: ${colors.primaryDark};
+                    --active: ${darkColors.primaryDark};
+                    --select-background: ${colors.gray6};
+                    --select-border: ${colors.gray5};
+                    --tooltip-border: ${colors.gray6};
+                  }
+                `}
               </style>
             </Head>
             <Header />
