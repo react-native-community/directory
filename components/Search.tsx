@@ -5,7 +5,7 @@ import { useDebouncedCallback } from 'use-debounce';
 
 import { layout, colors, P, darkColors, useLayout, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query } from '~/types';
+import { type Query } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
 import urlWithQuery from '~/util/urlWithQuery';
 

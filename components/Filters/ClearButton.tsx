@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, PressableProps } from 'react-native';
+import { Pressable, type PressableProps } from 'react-native';
 
 import { colors } from '~/common/styleguide';
 

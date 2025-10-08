@@ -1,4 +1,4 @@
-import { SVGAttributes, useContext } from 'react';
+import { type SVGAttributes, useContext } from 'react';
 import ContentLoader from 'react-content-loader';
 
 import { colors, darkColors, useLayout } from '~/common/styleguide';

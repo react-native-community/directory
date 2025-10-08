@@ -8,7 +8,7 @@ import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { APIResponseType, LibraryDataEntryType, LibraryType } from '~/types';
+import { type APIResponseType, type LibraryDataEntryType, type LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { isEmptyOrNull } from '~/util/strings';
 
@@ -32,7 +32,7 @@ const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : git
 const DATA_PATH = path.resolve('assets', 'data.json');
 
 const CHUNK_SIZE = 25;
-const SLEEP_TIME = 400;
+const SLEEP_TIME = 250;
 
 const invalidRepos: string[] = [];
 const mismatchedRepos: LibraryType[] = [];
@@ -278,7 +278,7 @@ export async function fetchGithubDataThrottled({
   return results;
 }
 
-function getDataForFetch(wantedPackage: string) {
+function getDataForFetch(wantedPackage?: string) {
   if (wantedPackage) {
     const match = DATASET.find(
       entry =>
@@ -377,13 +377,13 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   for (let i = 0; i < list.length; i++) {
     const entry = list[i];
 
-    if (entry.template) {
+    if (!entry || entry.template) {
       continue;
     }
 
     await sleep(SLEEP_TIME / 10);
     const shouldLog = i % CHUNK_SIZE === 0;
-    shouldLog && console.log(`Sleeping ${SLEEP_TIME / 10}ms`);
+    shouldLog && console.log(`Sleeping ${SLEEP_TIME / 5}ms`);
 
     const data = await fetchNpmRegistryData(entry);
     shouldLog && console.log(`${CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`);

@@ -1,4 +1,4 @@
-import { LibraryType, Query, QueryFilters } from '~/types';
+import { type LibraryType, type Query, type QueryFilters } from '~/types';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';

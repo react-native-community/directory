@@ -1,6 +1,6 @@
 import { A } from '@expo/html-elements';
-import { PropsWithChildren, useContext } from 'react';
-import { StyleSheet, TextStyle, Pressable, StyleProp } from 'react-native';
+import { type PropsWithChildren, useContext } from 'react';
+import { StyleSheet, type TextStyle, Pressable, type StyleProp } from 'react-native';
 
 import { colors, darkColors, HoverEffect, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';

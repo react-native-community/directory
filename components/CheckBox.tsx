@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';

@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { Info } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';

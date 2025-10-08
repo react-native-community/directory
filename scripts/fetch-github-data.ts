@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 
-import { LibraryLicenseType, LibraryType } from '~/types';
+import { type LibraryLicenseType, type LibraryType } from '~/types';
 import hasNativeCode from '~/util/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 

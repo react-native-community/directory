@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { colors, darkColors, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 import { Check, Question, XIcon } from '../Icons';

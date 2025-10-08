@@ -1,4 +1,4 @@
-import { Query } from '~/types';
+import { type Query } from '~/types';
 
 type FilterParamsType = {
   param: keyof Query;

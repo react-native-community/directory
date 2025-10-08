@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next';
+import { type NextPageContext } from 'next';
 
 export default function getApiUrl(path: string, { req }: NextPageContext) {
   if (!req && typeof window !== 'undefined') {

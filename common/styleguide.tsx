@@ -1,14 +1,14 @@
 import * as HtmlElements from '@expo/html-elements';
-import { TextProps } from '@expo/html-elements/build/primitives/Text';
+import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
 import { type ComponentType, type PropsWithChildren, useContext, useState } from 'react';
 import {
   StyleSheet,
-  TextStyle,
+  type TextStyle,
   View,
   useWindowDimensions,
-  ViewStyle,
-  StyleProp,
+  type ViewStyle,
+  type StyleProp,
 } from 'react-native';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';

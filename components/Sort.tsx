@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query, QueryOrder, QueryOrderDirection } from '~/types';
+import { type Query, type QueryOrder, type QueryOrderDirection } from '~/types';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { Sort as SortIcon } from './Icons';

@@ -8,8 +8,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "target": "esnext",
-    "allowJs": true,
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -19,6 +20,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
+    "noImplicitOverride": true,
     "paths": {
       "~/*": ["./*"]
     },
@@ -31,5 +33,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+  ]
 }
