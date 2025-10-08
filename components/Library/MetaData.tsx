@@ -4,7 +4,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { type LibraryType, MetadataEntryType } from '~/types';
+import { type LibraryType, type MetadataEntryType } from '~/types';
 import { partition } from '~/util/arrays';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';

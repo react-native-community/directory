@@ -1,7 +1,7 @@
 import { fetch } from 'bun';
-import { Cheerio, load } from 'cheerio';
+import { type Cheerio, load } from 'cheerio';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { sleep } from './helpers';
 

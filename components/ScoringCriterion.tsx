@@ -1,4 +1,4 @@
-import { PropsWithChildren, useContext } from 'react';
+import { type PropsWithChildren, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, Headline, P } from '~/common/styleguide';

@@ -1,6 +1,6 @@
 import { fetch } from 'bun';
 
-import { LibraryDataEntryType } from '~/types';
+import { type LibraryDataEntryType } from '~/types';
 
 import libraries from '../react-native-libraries.json';
 import { sleep } from './helpers';

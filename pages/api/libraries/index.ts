@@ -1,5 +1,5 @@
 import { drop, take } from 'es-toolkit';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
 import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';

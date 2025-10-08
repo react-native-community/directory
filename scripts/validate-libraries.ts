@@ -1,4 +1,4 @@
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import libraries from '../react-native-libraries.json';
 

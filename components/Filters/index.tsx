@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, Headline, layout, darkColors, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query } from '~/types';
+import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
 
 import { ToggleLink } from './ToggleLink';

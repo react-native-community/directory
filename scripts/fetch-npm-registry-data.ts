@@ -1,11 +1,13 @@
 import { fetch } from 'bun';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { sleep, REQUEST_SLEEP } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 
+// NOTE(simek): to speed up we can use light-weight https://registry.npmjs.org/${npmPkg}/latest endpoint,
+// if npm adds version publish time in the response, which is available when fetching full package metadata
 function urlForPackage(npmPkg: string) {
   return `https://registry.npmjs.org/${npmPkg}`;
 }

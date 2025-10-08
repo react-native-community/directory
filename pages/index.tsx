@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next';
+import { type NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 import { type ParsedUrlQuery } from 'node:querystring';
 import { StyleSheet } from 'react-native';

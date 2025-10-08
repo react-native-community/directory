@@ -1,12 +1,12 @@
 import dynamic from 'next/dynamic';
-import { createElement, FunctionComponent, useContext } from 'react';
+import { createElement, type FunctionComponent, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, H3, P } from '~/common/styleguide';
-import { IconProps } from '~/components/Icons';
+import { type IconProps } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { LibraryType, Query } from '~/types';
+import { type LibraryType, type Query } from '~/types';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {

@@ -1,5 +1,5 @@
-import { PropsWithChildren } from 'react';
-import { View, ViewProps, StyleSheet } from 'react-native';
+import { type PropsWithChildren } from 'react';
+import { View, type ViewProps, StyleSheet } from 'react-native';
 
 import { layout } from '~/common/styleguide';
 

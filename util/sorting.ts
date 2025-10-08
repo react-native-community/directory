@@ -1,4 +1,4 @@
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 export function issues(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);

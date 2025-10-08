@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, P, A } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 type Props = {
   library: LibraryType | { popularity: number };

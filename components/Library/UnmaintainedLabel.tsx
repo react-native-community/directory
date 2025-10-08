@@ -1,5 +1,5 @@
 import { Fragment, useContext } from 'react';
-import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
+import { type StyleProp, StyleSheet, type TextStyle, View } from 'react-native';
 
 import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';

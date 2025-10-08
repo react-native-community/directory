@@ -1,5 +1,5 @@
-import { ReactElement, useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { type ReactElement, useContext } from 'react';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';

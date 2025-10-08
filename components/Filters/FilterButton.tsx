@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query } from '~/types';
+import { type Query } from '~/types';
 
 import { ClearButton } from './ClearButton';
 import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';

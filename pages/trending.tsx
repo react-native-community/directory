@@ -1,4 +1,4 @@
-import { NextPageContext } from 'next';
+import { type NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
