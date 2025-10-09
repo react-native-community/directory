@@ -53,6 +53,16 @@ select {
   align-items: center;
   cursor: pointer;
 
+  @supports (font: -apple-system-body) {
+    appearance: none;
+    min-width: 136px;
+    padding-left: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23fff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 95% 4px;
+  }
+
   @supports (appearance: base-select) {
     appearance: base-select;
     padding-inline: 4px;
