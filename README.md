@@ -56,6 +56,7 @@
   "macos": false,
   "tvos": false,
   "visionos": false,
+  "vegaos": false,
   "expoGo": false,
   "fireos": false,
   "unmaintained": false,
@@ -119,6 +120,8 @@
   **(boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
 - #### `visionos`
   **(boolean)** - can be used with [`react-native-visionos`](https://github.com/callstack/react-native-visionos).
+- #### `vegaos`
+  **(boolean)** - can be used with [`Vega OS`](https://developer.amazon.com/docs/react-native-vega/0.72/react_overview.html) platform.
 
 #### ✅ Compatibility
 
