@@ -25,6 +25,7 @@
 *:focus-visible {
   outline-style: solid;
   outline-width: 2px;
+  outline-color: var(--outline);
   border-radius: 3px;
 }
 
@@ -35,18 +36,105 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-select {
-  -webkit-appearance: none;
-  appearance: none;
-  outline-offset: 2px;
-}
-
 input:focus-visible  {
   border-radius: 6px;
 }
 
 #__next, #__next > div {
   min-height: 100vh;
+}
+
+/* SELECT */
+
+select {
+  display: flex;
+  min-width: 140px;
+  height: 24px;
+  align-items: center;
+  cursor: pointer;
+
+  @supports (font: -apple-system-body) {
+    appearance: none;
+    min-width: 136px;
+    padding-left: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23fff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: 95% 4px;
+  }
+
+  @supports (appearance: base-select) {
+    appearance: base-select;
+    padding-inline: 4px;
+    background-image: none;
+    color: #fff;
+
+    &::picker-icon {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23fff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+      transition: rotate 0.2s ease-out;
+    }
+
+    &:open::picker-icon {
+      rotate: 180deg;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%2361DAFB'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+    }
+
+    &::picker(select) {
+      appearance: base-select;
+      padding: 2px;
+      margin-top: 6px;
+      border: 2px solid var(--select-border);
+      background: var(--select-background);
+      border-radius: 6px;
+      font-weight: 400;
+      opacity: 0;
+      overflow: clip;
+      transition: opacity 0.5s ease-out;
+      box-shadow: hsl(206 22% 7% / 60%) 0 10px 32px -8px, hsl(206 22% 7% / 40%) 0 10px 18px -12px;
+    }
+
+    &:open::picker(select) {
+      opacity: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    option {
+      display: flex;
+      align-items: center;
+      padding: 2px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s ease-out;
+      color: #fff !important;
+
+      &:where(:hover, :focus, :active) {
+        background: color-mix(in srgb, var(--select-border) 60%, transparent);
+      }
+
+      &:checked {
+        background: var(--active);
+      }
+
+      &:checked:hover {
+        background: color-mix(in srgb, var(--active) 60%, transparent);
+      }
+
+      &::checkmark {
+        display: none;
+      }
+    }
+  }
 }
 
 /* TOOLTIP */
@@ -57,12 +145,18 @@ input:focus-visible  {
   font-size: 13px;
   line-height: 1.5;
   color: #fff;
+  background: #000;
+  border: 1px solid var(--tooltip-border);
   box-shadow: hsl(206 22% 7% / 40%) 0 10px 32px -8px, hsl(206 22% 7% / 25%) 0 10px 18px -12px;
   user-select: none;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   max-width: 220px;
+
+  svg {
+    stroke: var(--tooltip-border);
+  }
 }
 
 .TooltipContent[data-state='delayed-open'][data-side='top'] {

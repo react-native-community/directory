@@ -67,6 +67,7 @@ const Search = ({ query, total }: Props) => {
             </View>
             <TextInput
               ref={inputRef}
+              id="search"
               onKeyPress={event => {
                 if ('key' in event) {
                   if (
