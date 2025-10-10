@@ -17277,5 +17277,11 @@
     "npmPkg": "react-native-form0",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-play-age-signals",
+    "examples": ["https://github.com/Gautham495/react-native-play-age-signals/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
