@@ -14,7 +14,6 @@ function NavigationTab({ title, path = `/${title.toLowerCase()}` }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const router = useRouter();
   const isActive = router.pathname === path;
-  const activeBackground = isDark ? darkColors.powder : colors.gray5;
 
   return (
     <A
@@ -22,16 +21,17 @@ function NavigationTab({ title, path = `/${title.toLowerCase()}` }: Props) {
       style={{
         ...styles.tabLink,
         ...(isActive && {
-          backgroundColor: activeBackground,
+          backgroundColor: colors.primaryHover,
+          color: colors.primary,
         }),
       }}
       hoverStyle={{
         backgroundColor: isActive
-          ? activeBackground
+          ? colors.primaryHover
           : isDark
             ? darkColors.background
             : colors.gray6,
-        color: colors.secondary,
+        color: isActive ? colors.primaryDark : colors.secondary,
       }}
       target="_self">
       <View style={styles.tabContainer}>
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     textDecorationLine: 'none',
     color: colors.white,
     borderRadius: 4,
-    marginRight: 10,
+    // @ts-expect-error Transition is a valid web style property
+    transition: 'color 0.33s, background-color 0.33s',
   },
   tabContainer: {
     paddingHorizontal: 16,

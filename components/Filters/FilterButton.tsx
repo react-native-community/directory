@@ -58,14 +58,12 @@ export const FilterButton = ({
         <View style={styles.displayHorizontal}>
           <View style={styles.iconContainer}>
             <FilterIcon
-              fill={isFilterVisible ? colors.gray7 : isFilterCount ? colors.primary : colors.white}
+              fill={isFilterVisible ? colors.white : isFilterCount ? colors.primary : colors.white}
               width={14}
               height={12}
             />
           </View>
-          <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
-            Filters{isFilterCount ? `: ${filterCount}` : ''}
-          </P>
+          <P style={styles.buttonText}>Filters{isFilterCount ? `: ${filterCount}` : ''}</P>
         </View>
       </Button>
       {filterCount > 0 && (
@@ -88,7 +86,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   activeButton: {
-    backgroundColor: colors.primary,
+    backgroundColor: darkColors.primaryDark,
   },
   leftBorderRadiusOnly: {
     borderTopRightRadius: 0,
@@ -101,9 +99,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     userSelect: 'none',
   },
-  activeButtonText: {
-    color: colors.gray7,
-  },
   iconContainer: {
     top: 1,
   },
@@ -113,7 +108,6 @@ const styles = StyleSheet.create({
   },
   clearButtonContainer: {
     height: '100%',
-    width: 24,
     justifyContent: 'center',
     alignItems: 'center',
     borderTopRightRadius: 4,

@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { colors, darkColors } from '~/common/styleguide';
 import Footer from '~/components/Footer';
-import Header from '~/components/Header';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
@@ -59,7 +58,6 @@ function App({ pageProps, Component }: AppProps) {
                 `}
               </style>
             </Head>
-            <Header />
             <Component {...pageProps} />
             <Footer />
           </SafeAreaProvider>

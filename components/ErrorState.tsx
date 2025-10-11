@@ -13,7 +13,7 @@ function ErrorState({ statusCode }: Props) {
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
-      <Navigation noHeader />
+      <Navigation />
       <View style={styles.container}>
         <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
         <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>

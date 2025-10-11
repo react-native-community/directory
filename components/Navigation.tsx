@@ -1,58 +1,49 @@
-import { type PropsWithChildren, useContext } from 'react';
+import { type PropsWithChildren, type ReactElement, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, H1, H2 } from '~/common/styleguide';
+import { Logo } from '~/components/Icons';
+import TopBar from '~/components/TopBar';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-
-import ContentContainer from './ContentContainer';
-import NavigationTab from './NavigationTab';
 
 type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
-  noHeader?: boolean;
+  header?: ReactElement;
 }>;
 
-const Navigation = ({ title, description, children, noHeader = false }: NavigationProps) => {
+export default function Navigation({ title, description, children, header }: NavigationProps) {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
-    <View
-      style={{
-        backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
-      }}>
-      <ContentContainer style={styles.tabsWrapper}>
-        <View style={styles.tabsContainer}>
-          <NavigationTab title="Explore" path="/" />
-          <NavigationTab title="Popular" />
-          <NavigationTab title="Trending" />
-        </View>
-      </ContentContainer>
-      {!noHeader ? (
+    <>
+      <TopBar />
+      {header ? (
+        header
+      ) : (
         <View
           style={[
             styles.headerWrapper,
             { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
           ]}>
+          <Logo
+            fill={isDark ? colors.gray7 : colors.gray5}
+            width={580}
+            height={520}
+            style={styles.logoBackground}
+          />
           <H1 style={styles.header}>{title}</H1>
           <H2 style={styles.headerDescription}>{description}</H2>
           {children}
         </View>
-      ) : null}
-    </View>
+      )}
+    </>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  tabsWrapper: {
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-  },
-  tabsContainer: {
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
   headerWrapper: {
     paddingVertical: 40,
+    overflow: 'hidden',
   },
   header: {
     textAlign: 'center',
@@ -69,6 +60,11 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     paddingHorizontal: 40,
   },
+  logoBackground: {
+    position: 'absolute',
+    left: '50%',
+    top: -76,
+    marginLeft: -280,
+    opacity: 0.15,
+  },
 });
-
-export default Navigation;
