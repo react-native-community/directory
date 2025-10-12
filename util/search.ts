@@ -148,6 +148,10 @@ export function handleFilterLibraries({
       return false;
     }
 
+    if (support.vegaos && !library.vegaos) {
+      return false;
+    }
+
     if (support.fireos && !library.fireos) {
       return false;
     }
