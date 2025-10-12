@@ -17283,5 +17283,18 @@
     "examples": ["https://github.com/Gautham495/react-native-play-age-signals/tree/main/example"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rafalmeida73/heart-switch-react-native",
+    "examples": [
+      "https://snack.expo.dev/@rafalmeida73/heart-switch-react-native",
+      "https://github.com/rafalmeida73/heart-switch-react-native/tree/main/example"
+    ],
+    "images": ["https://raw.githubusercontent.com/rafalmeida73/heart-switch-react-native/main/ios.gif"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
