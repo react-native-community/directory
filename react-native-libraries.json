@@ -17253,7 +17253,10 @@
     "githubUrl": "https://github.com/avas-app/react-native-android-otp-autofill",
     "npmPkg": "@avasapp/react-native-otp-autofill",
     "example": ["https://github.com/avas-app/react-native-android-otp-autofill/tree/main/example"],
-    "android": true
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "alternatives": ["react-native-otp-verify"]
   },
   {
     "githubUrl": "https://github.com/appwrite/sdk-for-react-native",
