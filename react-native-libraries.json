@@ -17284,7 +17284,8 @@
   {
     "githubUrl": "https://github.com/Gautham495/react-native-play-age-signals",
     "examples": ["https://github.com/Gautham495/react-native-play-age-signals/tree/main/example"],
-    "ios": true,
+    "android": true,
+    "ios": false,
     "newArchitecture": true
   },
   {
@@ -17298,6 +17299,20 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-apns-kit",
+    "examples": ["https://github.com/Gautham495/react-native-apns-kit/tree/main/example"],
+    "android": false,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-app-attest",
+    "examples": ["https://github.com/Gautham495/react-native-app-attest/tree/main/example"],
+    "android": false,
+    "ios": true,
     "newArchitecture": true
   }
 ]
