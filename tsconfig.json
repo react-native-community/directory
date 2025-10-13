@@ -22,9 +22,14 @@
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "paths": {
-      "~/*": ["./*"]
+      "~/*": [
+        "./*"
+      ]
     },
-    "typeRoots": ["types", "node_modules/@types"],
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules"

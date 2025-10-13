@@ -24,8 +24,7 @@ const Index = ({ data, query }: Props) => {
   return (
     <>
       <PageMeta searchQuery={router.query?.search} />
-      <Navigation noHeader />
-      <Search query={router.query} total={total} />
+      <Navigation header={<Search query={router.query} total={total} />} />
       <ContentContainer style={styles.container}>
         <Pagination query={query} total={total} />
         <Libraries libraries={data && data.libraries} />

@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { colors, darkColors } from '~/common/styleguide';
 import Footer from '~/components/Footer';
-import Header from '~/components/Header';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
@@ -41,6 +40,7 @@ function App({ pageProps, Component }: AppProps) {
                 {context.isDark
                   ? `
                   :root {
+                    --overscroll-background: ${darkColors.veryDark};
                     --outline: ${colors.primaryDark};
                     --active: ${darkColors.primaryDark};
                     --select-background: ${darkColors.dark};
@@ -50,6 +50,7 @@ function App({ pageProps, Component }: AppProps) {
                 `
                   : `
                   :root {
+                    --overscroll-background: ${colors.gray7};
                     --outline: ${colors.primaryDark};
                     --active: ${darkColors.primaryDark};
                     --select-background: ${colors.gray6};
@@ -59,7 +60,6 @@ function App({ pageProps, Component }: AppProps) {
                 `}
               </style>
             </Head>
-            <Header />
             <Component {...pageProps} />
             <Footer />
           </SafeAreaProvider>
