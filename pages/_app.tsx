@@ -40,6 +40,7 @@ function App({ pageProps, Component }: AppProps) {
                 {context.isDark
                   ? `
                   :root {
+                    --overscroll-background: ${darkColors.veryDark};
                     --outline: ${colors.primaryDark};
                     --active: ${darkColors.primaryDark};
                     --select-background: ${darkColors.dark};
@@ -49,6 +50,7 @@ function App({ pageProps, Component }: AppProps) {
                 `
                   : `
                   :root {
+                    --overscroll-background: ${colors.gray7};
                     --outline: ${colors.primaryDark};
                     --active: ${darkColors.primaryDark};
                     --select-background: ${colors.gray6};
