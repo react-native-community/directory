@@ -17328,7 +17328,6 @@
   {
     "githubUrl": "https://github.com/MisterMunchkin/expo-video-thumbref",
     "android": true,
-    "ios": true,
-    "alternatives": ["expo-video-thumbnail", "expo-video"]
+    "ios": true
   }
 ]
