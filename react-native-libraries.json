@@ -17317,5 +17317,12 @@
     "githubUrl": "https://github.com/anirudhabhurke/react-native-google-code-scanner-android",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pinpong/react-native-google-maps-plus",
+    "examples": ["https://github.com/pinpong/react-native-google-maps-plus/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
