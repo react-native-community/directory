@@ -17324,5 +17324,10 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/MisterMunchkin/expo-video-thumbref",
+    "android": true,
+    "ios": true
   }
 ]
