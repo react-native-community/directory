@@ -17329,5 +17329,13 @@
     "githubUrl": "https://github.com/MisterMunchkin/expo-video-thumbref",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/zykeco/react-native-ble-nitro",
+    "examples": ["https://github.com/zykeco/react-native-ble-nitro/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
   }
 ]
