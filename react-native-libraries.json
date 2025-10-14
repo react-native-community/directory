@@ -17312,5 +17312,10 @@
     "android": false,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/anirudhabhurke/react-native-google-code-scanner-android",
+    "android": true,
+    "newArchitecture": true
   }
 ]
