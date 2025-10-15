@@ -17342,5 +17342,13 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
+  },
+  {
+    "githubUrl": "https://github.com/FFGlobal/expo-onboarding",
+    "npmPkg": "expo-onboarding",
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "newArchitecture": true
   }
 ]
