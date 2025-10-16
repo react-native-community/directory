@@ -17373,5 +17373,20 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/LegendApp/legend-motion",
+    "npmPkg": "@legendapp/motion",
+    "examples": ["https://github.com/LegendApp/legend-motion/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "macos": true,
+    "windows": true,
+    "fireos": true,
+    "tvos": true,
+    "visionos": true
   }
 ]
