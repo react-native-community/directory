@@ -1,11 +1,8 @@
-type TreeNode = {
-  name: string;
-  type: 'tree' | 'blob';
-};
+import { type RepositoryTreeNode } from '~/types';
 
 const NATIVE_DIRECTORIES = ['android', 'ios', 'apple', 'macos', 'windows'];
 
-export default function hasNativeCode(rootFiles: { entries: TreeNode[] } | null) {
+export default function hasNativeCode(rootFiles: { entries: RepositoryTreeNode[] } | null) {
   if (!rootFiles || !rootFiles.entries.length) {
     return false;
   }

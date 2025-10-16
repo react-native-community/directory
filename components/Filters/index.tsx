@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, Headline, layout, darkColors, useLayout } from '~/common/styleguide';
+import { Tag } from '~/components/Tag';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
@@ -12,6 +13,8 @@ import {
   FILTER_PLATFORMS,
   FILTER_REQUIRES_MAIN_SEARCH,
   FILTER_STATUS,
+  FILTER_MODULE_TYPE,
+  FILTER_TYPE,
 } from './helpers';
 
 type FiltersProps = {
@@ -79,7 +82,11 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
         </View>
       </View>
       <View style={styles.twoColumns}>
-        <View style={[styles.wrappableContainer, isSmallScreen && { maxWidth: '100%' }]}>
+        <View
+          style={[
+            styles.wrappableContainer,
+            isSmallScreen && styles.wrappableContainerSmallScreen,
+          ]}>
           <Headline style={[styles.title, titleColor]}>Compatibility</Headline>
           <View style={styles.optionsContainer}>
             {FILTER_COMPATIBILITY.map(compatibility => (
@@ -93,30 +100,49 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
             ))}
           </View>
         </View>
-        <View style={[styles.wrappableContainer, isSmallScreen && { maxWidth: '100%' }]}>
+        <View
+          style={[
+            styles.wrappableContainer,
+            isSmallScreen && styles.wrappableContainerSmallScreen,
+          ]}>
           <Headline style={[styles.title, titleColor]}>Type</Headline>
           <View style={styles.optionsContainer}>
-            <ToggleLink
-              key="skipLibs"
-              query={pageQuery}
-              paramName="skipLibs"
-              title="Hide libraries"
-              basePath={basePath}
+            {FILTER_TYPE.map(entryType => (
+              <ToggleLink
+                key={entryType.param}
+                query={pageQuery}
+                paramName={entryType.param}
+                title={entryType.title}
+                basePath={basePath}
+              />
+            ))}
+          </View>
+        </View>
+        <View style={styles.container}>
+          <Headline style={[styles.titleWithTag, titleColor]}>
+            Module type
+            <Tag
+              label="Experimental"
+              tagStyle={[
+                styles.titleTag,
+                {
+                  backgroundColor: isDark ? '#261a3d' : '#ece3fc',
+                  borderColor: isDark ? '#3d2861' : '#d9c8fa',
+                },
+              ]}
+              icon={null}
             />
-            <ToggleLink
-              key="skipTools"
-              query={pageQuery}
-              paramName="skipTools"
-              title="Hide development tools"
-              basePath={basePath}
-            />
-            <ToggleLink
-              key="skipTemplates"
-              query={pageQuery}
-              paramName="skipTemplates"
-              title="Hide templates"
-              basePath={basePath}
-            />
+          </Headline>
+          <View style={styles.optionsContainer}>
+            {FILTER_MODULE_TYPE.map(moduleType => (
+              <ToggleLink
+                key={moduleType.param}
+                query={pageQuery}
+                paramName={moduleType.param}
+                title={moduleType.title}
+                basePath={basePath}
+              />
+            ))}
           </View>
         </View>
       </View>
@@ -142,6 +168,9 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     maxWidth: layout.maxWidth,
   },
+  wrappableContainerSmallScreen: {
+    maxWidth: '100%',
+  },
   optionsContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
@@ -149,6 +178,16 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 8,
     fontWeight: 600,
+  },
+  titleWithTag: {
+    marginBottom: 4,
+    fontWeight: 600,
+  },
+  titleTag: {
+    marginLeft: 8,
+    top: -1,
+    paddingVertical: 0,
+    minHeight: 22,
   },
   twoColumns: {
     width: '100%',

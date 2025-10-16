@@ -90,6 +90,9 @@ export function handleFilterLibraries({
   skipLibs,
   skipTools,
   skipTemplates,
+  expoModule,
+  nitroModule,
+  turboModule,
 }: Query & QueryFilters) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -153,10 +156,6 @@ export function handleFilterLibraries({
     }
 
     if (support.expoGo && !library.expoGo) {
-      return false;
-    }
-
-    if (support.expoGo && typeof library.expoGo === 'string') {
       return false;
     }
 
@@ -224,6 +223,18 @@ export function handleFilterLibraries({
     }
 
     if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
+      return false;
+    }
+
+    if (expoModule && (!library.github.moduleType || library.github.moduleType !== 'expo')) {
+      return false;
+    }
+
+    if (nitroModule && (!library.github.moduleType || library.github.moduleType !== 'nitro')) {
+      return false;
+    }
+
+    if (turboModule && (!library.github.moduleType || library.github.moduleType !== 'turbo')) {
       return false;
     }
 
