@@ -17350,5 +17350,19 @@
     "expoGo": true,
     "fireos": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/Unistyles-OSS/uniwind/tree/main/packages/uniwind",
+    "npmPkg": "uniwind",
+    "examples": [
+      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-router",
+      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-example",
+      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/bare"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+ }
 ]
