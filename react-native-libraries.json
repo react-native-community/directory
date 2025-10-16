@@ -17328,7 +17328,8 @@
     "examples": ["https://github.com/pinpong/react-native-google-maps-plus/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only"
+    "newArchitecture": "new-arch-only".
+    "expoGo": true,
   },
   {
     "githubUrl": "https://github.com/MisterMunchkin/expo-video-thumbref",
