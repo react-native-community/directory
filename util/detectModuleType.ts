@@ -9,18 +9,20 @@ export default function detectModuleType(
   }
 
   if (
-    packageJson?.devDependencies?.['expo-modules-core'] ||
-    packageJson?.devDependencies?.['expo-module-scripts']
-  ) {
-    return 'expo';
-  }
-
-  if (
     packageJson?.devDependencies?.['react-native-nitro-modules'] ||
+    packageJson?.peerDependencies?.['react-native-nitro-modules'] ||
     packageJson?.devDependencies?.['nitrogen'] ||
     packageJson?.devDependencies?.['nitro-codegen']
   ) {
     return 'nitro';
+  }
+
+  if (
+    packageJson?.devDependencies?.['expo-modules-core'] ||
+    packageJson?.peerDependencies?.['expo-modules-core'] ||
+    packageJson?.devDependencies?.['expo-module-scripts']
+  ) {
+    return 'expo';
   }
 
   if (packageJson?.codegenConfig?.android || packageJson?.codegenConfig?.ios) {
