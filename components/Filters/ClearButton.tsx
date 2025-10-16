@@ -8,7 +8,7 @@ import Tooltip from '../Tooltip';
 
 type ClearButtonProps = Pick<PressableProps, 'onPress'>;
 
-export const ClearButton = ({ onPress }: ClearButtonProps) => {
+export function ClearButton({ onPress }: ClearButtonProps) {
   const [isXIconHovered, setIsXIconHovered] = useState(false);
   return (
     <Tooltip
@@ -26,7 +26,7 @@ export const ClearButton = ({ onPress }: ClearButtonProps) => {
       Clear all
     </Tooltip>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

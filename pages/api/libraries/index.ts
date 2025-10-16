@@ -89,6 +89,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     skipLibs: parsedQuery.skipLibs,
     skipTools: parsedQuery.skipTools,
     skipTemplates: parsedQuery.skipTemplates,
+    expoModule: parsedQuery.expoModule,
+    nitroModule: parsedQuery.nitroModule,
+    turboModule: parsedQuery.turboModule,
   });
 
   const offset = parsedQuery.offset ? parseInt(parsedQuery.offset.toString(), 10) : 0;

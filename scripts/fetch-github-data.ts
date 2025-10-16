@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
+import detectModuleType from '~/util/detectModuleType';
 import hasNativeCode from '~/util/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
@@ -124,6 +125,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
+      json.pasedPackageJson = packageJson;
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
@@ -167,13 +169,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     }
   }
 
-  if (!monorepo) {
-    json.lastRelease =
-      json.releases && json.releases.nodes && json.releases.nodes.length
-        ? json.releases.nodes[0]
-        : undefined;
-  }
-
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
 
   return {
@@ -207,5 +202,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
     hasNativeCode: hasNativeCode(json.files),
+    moduleType: detectModuleType(json.files, json.pasedPackageJson),
   };
 }

@@ -6,7 +6,14 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type Query } from '~/types';
 
 import { ClearButton } from './ClearButton';
-import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';
+import {
+  FILTER_COMPATIBILITY,
+  FILTER_MODULE_TYPE,
+  FILTER_PLATFORMS,
+  FILTER_REQUIRES_MAIN_SEARCH,
+  FILTER_STATUS,
+  FILTER_TYPE,
+} from './helpers';
 import { Button } from '../Button';
 import { Filter as FilterIcon } from '../Icons';
 
@@ -19,20 +26,23 @@ type FilterButtonProps = {
   style?: ViewStyle;
 };
 
-export const FilterButton = ({
+export function FilterButton({
   isFilterVisible,
   query,
   onPress,
   onClearAllPress,
   containerStyle,
   style,
-}: FilterButtonProps) => {
+}: FilterButtonProps) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
-    ...FILTER_REQUIRES_MAIN_SEARCH.map(platform => platform.param),
-    ...FILTER_STATUS.map(platform => platform.param),
+    ...FILTER_REQUIRES_MAIN_SEARCH.map(filter => filter.param),
+    ...FILTER_STATUS.map(status => status.param),
+    ...FILTER_COMPATIBILITY.map(compatibility => compatibility.param),
+    ...FILTER_TYPE.map(entryType => entryType.param),
+    ...FILTER_MODULE_TYPE.map(moduleType => moduleType.param),
   ];
 
   const filterCount = Object.keys(query).reduce(
@@ -73,7 +83,7 @@ export const FilterButton = ({
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
