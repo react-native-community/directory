@@ -17365,5 +17365,13 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
- }
+ },
+ {
+    "githubUrl": "https://github.com/LottieFiles/dotlottie-react-native",
+    "npmPkg": "@lottiefiles/dotlottie-react-native",
+    "examples": ["https://github.com/LottieFiles/dotlottie-react-native/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  }
 ]
