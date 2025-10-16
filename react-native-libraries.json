@@ -4876,9 +4876,7 @@
   },
   {
     "githubUrl": "https://github.com/mCodex/react-native-sensitive-info",
-    "examples": [
-      "https://github.com/mCodex/react-native-sensitive-info/tree/master/example"
-    ],
+    "examples": ["https://github.com/mCodex/react-native-sensitive-info/tree/master/example"],
     "ios": true,
     "android": true,
     "macos": true,
@@ -16186,7 +16184,8 @@
     "githubUrl": "https://github.com/haileyok/expo-atproto-auth",
     "examples": ["https://github.com/haileyok/expo-atproto-auth/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "alternatives": ["@atproto/oauth-client-expo"]
   },
   {
     "githubUrl": "https://github.com/nativewind/react-native-css",
@@ -17287,7 +17286,9 @@
   },
   {
     "githubUrl": "https://github.com/Gautham495/react-native-play-age-range-declaration",
-    "examples": ["https://github.com/Gautham495/react-native-play-age-range-declaration/tree/main/example"],
+    "examples": [
+      "https://github.com/Gautham495/react-native-play-age-range-declaration/tree/main/example"
+    ],
     "android": true,
     "ios": true,
     "newArchitecture": true
@@ -17298,7 +17299,9 @@
       "https://snack.expo.dev/@rafalmeida73/heart-switch-react-native",
       "https://github.com/rafalmeida73/heart-switch-react-native/tree/main/example"
     ],
-    "images": ["https://raw.githubusercontent.com/rafalmeida73/heart-switch-react-native/main/ios.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/rafalmeida73/heart-switch-react-native/main/ios.gif"
+    ],
     "ios": true,
     "android": true,
     "web": true,
@@ -17314,7 +17317,6 @@
   {
     "githubUrl": "https://github.com/Gautham495/react-native-app-attest",
     "examples": ["https://github.com/Gautham495/react-native-app-attest/tree/main/example"],
-    "android": false,
     "ios": true,
     "newArchitecture": true
   },
@@ -17346,7 +17348,6 @@
   },
   {
     "githubUrl": "https://github.com/FFGlobal/expo-onboarding",
-    "npmPkg": "expo-onboarding",
     "web": true,
     "expoGo": true,
     "fireos": true,
@@ -17354,7 +17355,6 @@
   },
   {
     "githubUrl": "https://github.com/Unistyles-OSS/uniwind/tree/main/packages/uniwind",
-    "npmPkg": "uniwind",
     "examples": [
       "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-router",
       "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-example",
@@ -17365,8 +17365,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
- },
- {
+  },
+  {
     "githubUrl": "https://github.com/LottieFiles/dotlottie-react-native",
     "npmPkg": "@lottiefiles/dotlottie-react-native",
     "examples": ["https://github.com/LottieFiles/dotlottie-react-native/tree/main/example"],
@@ -17388,5 +17388,29 @@
     "fireos": true,
     "tvos": true,
     "visionos": true
+  },
+  {
+    "githubUrl": "https://github.com/bluesky-social/atproto/tree/main/packages/oauth/oauth-client-expo",
+    "npmPkg": "@atproto/oauth-client-expo",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/rit3zh/expo-ios-visual-blur",
+    "examples": ["https://github.com/rit3zh/expo-ios-visual-blur/tree/main/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/react-native-harness/tree/main/packages/react-native-harness",
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/whidrubeld/react-native-reanimated-modal",
+    "examples": ["https://github.com/whidrubeld/react-native-reanimated-modal/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "expoGo": true
   }
 ]
