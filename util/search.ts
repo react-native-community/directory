@@ -226,16 +226,18 @@ export function handleFilterLibraries({
       return false;
     }
 
-    if (expoModule && (!library.github.moduleType || library.github.moduleType !== 'expo')) {
-      return false;
-    }
+    const activeModuleTypeFilters = [
+      expoModule && 'expo',
+      nitroModule && 'nitro',
+      turboModule && 'turbo',
+    ].filter(Boolean);
 
-    if (nitroModule && (!library.github.moduleType || library.github.moduleType !== 'nitro')) {
-      return false;
-    }
+    if (activeModuleTypeFilters.length > 0) {
+      const type = library.github?.moduleType;
 
-    if (turboModule && (!library.github.moduleType || library.github.moduleType !== 'turbo')) {
-      return false;
+      if (!activeModuleTypeFilters.includes(type)) {
+        return false;
+      }
     }
 
     if (minPopularityValue && minMonthlyDownloadsValue) {

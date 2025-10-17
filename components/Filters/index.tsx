@@ -43,18 +43,42 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
         },
         style,
       ]}>
-      <View style={styles.container}>
-        <Headline style={[styles.title, titleColor]}>Platform</Headline>
-        <View style={styles.optionsContainer}>
-          {FILTER_PLATFORMS.map(platform => (
-            <ToggleLink
-              key={platform.param}
-              query={pageQuery}
-              paramName={platform.param}
-              title={platform.title}
-              basePath={basePath}
-            />
-          ))}
+      <View style={styles.twoColumns}>
+        <View
+          style={[
+            styles.wrappableContainer,
+            isSmallScreen && styles.wrappableContainerSmallScreen,
+          ]}>
+          <Headline style={[styles.title, titleColor]}>Platform</Headline>
+          <View style={styles.optionsContainer}>
+            {FILTER_PLATFORMS.map(platform => (
+              <ToggleLink
+                key={platform.param}
+                query={pageQuery}
+                paramName={platform.param}
+                title={platform.title}
+                basePath={basePath}
+              />
+            ))}
+          </View>
+        </View>
+        <View
+          style={[
+            styles.wrappableContainer,
+            isSmallScreen && styles.wrappableContainerSmallScreen,
+          ]}>
+          <Headline style={[styles.title, titleColor]}>Type</Headline>
+          <View style={styles.optionsContainer}>
+            {FILTER_TYPE.map(entryType => (
+              <ToggleLink
+                key={entryType.param}
+                query={pageQuery}
+                paramName={entryType.param}
+                title={entryType.title}
+                basePath={basePath}
+              />
+            ))}
+          </View>
         </View>
       </View>
       <View style={styles.container}>
@@ -105,20 +129,6 @@ export function Filters({ query, style, basePath = '/' }: FiltersProps) {
             styles.wrappableContainer,
             isSmallScreen && styles.wrappableContainerSmallScreen,
           ]}>
-          <Headline style={[styles.title, titleColor]}>Type</Headline>
-          <View style={styles.optionsContainer}>
-            {FILTER_TYPE.map(entryType => (
-              <ToggleLink
-                key={entryType.param}
-                query={pageQuery}
-                paramName={entryType.param}
-                title={entryType.title}
-                basePath={basePath}
-              />
-            ))}
-          </View>
-        </View>
-        <View style={styles.container}>
           <Headline style={[styles.titleWithTag, titleColor]}>
             Module type
             <Tag
@@ -180,7 +190,7 @@ const styles = StyleSheet.create({
     fontWeight: 600,
   },
   titleWithTag: {
-    marginBottom: 4,
+    marginBottom: 6,
     fontWeight: 600,
   },
   titleTag: {
