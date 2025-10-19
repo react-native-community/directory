@@ -17412,5 +17412,33 @@
     "android": true,
     "ios": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-detour",
+    "npmPkg": "@swmansion/react-native-detour",
+    "examples": ["https://github.com/software-mansion-labs/react-native-detour/tree/main/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/rn-bridge/react-native-shortcuts",
+    "npmPkg": "@rn-bridge/react-native-shortcuts",
+    "examples": ["https://github.com/rn-bridge/react-native-shortcuts/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/rn-bridge/react-native-geofencing",
+    "npmPkg": "@rn-bridge/react-native-geofencing",
+    "examples": ["https://github.com/rn-bridge/react-native-geofencing/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/relateddigital/react-native-related-digital/tree/master/sdk",
+    "npmPkg": "react-native-related-digital",
+    "examples": ["https://github.com/relateddigital/react-native-related-digital/tree/master/client"],
+    "android": true,
+    "ios": true
   }
 ]
