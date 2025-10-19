@@ -2,6 +2,7 @@ import { config } from 'dotenv';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/detectModuleType';
+import hasConfigPlugin from '~/util/hasConfigPlugin';
 import hasNativeCode from '~/util/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
@@ -202,6 +203,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
     hasNativeCode: hasNativeCode(json.files),
+    configPlugin: hasConfigPlugin(json.files),
     moduleType: detectModuleType(json.files, json.pasedPackageJson),
   };
 }

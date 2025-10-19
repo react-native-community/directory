@@ -1,4 +1,5 @@
 import { type LibraryType, type Query, type QueryFilters } from '~/types';
+import { getConfigPluginStatus } from '~/util/configPluginStatus';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -80,6 +81,7 @@ export function handleFilterLibraries({
   hasImage,
   hasTypes,
   hasNativeCode,
+  configPlugin,
   isMaintained,
   isPopular,
   isRecommended,
@@ -172,6 +174,10 @@ export function handleFilterLibraries({
     }
 
     if (hasNativeCode && !library.github.hasNativeCode) {
+      return false;
+    }
+
+    if (configPlugin && !getConfigPluginStatus(library)) {
       return false;
     }
 

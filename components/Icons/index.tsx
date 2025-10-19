@@ -458,6 +458,21 @@ export function NativeCode({ width = 18, height = 22, fill = colors.black }: Ico
   );
 }
 
+export function ConfigPlugin({ width = 18, height = 22, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
+      <Path
+        d="M7.61738 8.04512L7.58735 8.01867C7.73476 7.48962 7.60057 6.8983 7.18477 6.48222C6.77145 6.07 6.18729 5.93498 5.66127 6.07744L6.55184 6.96801L6.31818 7.84067L5.44552 8.07406L4.5544 7.18404C4.41277 7.70978 4.54751 8.29422 4.96083 8.70754C5.39372 9.1407 6.01755 9.26773 6.56286 9.09027L6.56782 9.09523L10.2326 12.7597C10.3775 12.9044 10.5671 12.9777 10.7572 12.9777C10.9474 12.9777 11.1367 12.9044 11.2824 12.7597C11.5726 12.4707 11.5726 12.0009 11.2824 11.7096L7.61738 8.04512Z"
+        fill="#767C8E"
+      />
+      <Path
+        d="M1.4541 0H10.4825L14.545 4.06255V16H1.4541V0ZM2.90865 1.45455V14.5455H13.0905V5.81818H8.72683V1.45455H2.90865ZM10.1814 1.75564V4.36364H12.7894L10.1814 1.75564Z"
+        fill="#767C8E"
+      />
+    </Svg>
+  );
+}
+
 export function PackageSize({ width = 18, height = 18, fill = colors.black }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">

@@ -57,6 +57,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Uses native code',
   },
   {
+    param: 'configPlugin',
+    title: 'Has Expo Config Plugin',
+  },
+  {
     param: 'hasExample',
     title: 'Has example',
   },
