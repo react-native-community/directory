@@ -17448,5 +17448,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/alexrus28996/react-native-threadforge/tree/main/packages/react-native-threadforge",
+    "examples": [
+      "https://github.com/alexrus28996/react-native-threadforge",
+      "https://snack.expo.dev/@alexrus28996/threadforge-demo"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/alexrus28996/react-native-threadforge/main/docs/assets/threadforge-demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
