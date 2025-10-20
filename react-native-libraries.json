@@ -1,5 +1,29 @@
 [
   {
+  "githubUrl": "https://github.com/alexrus28996/react-native-threadforge",
+  "npmPkg": "react-native-threadforge",
+  "examples": [
+    "https://github.com/alexrus28996/react-native-threadforge"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/alexrus28996/react-native-threadforge/main/docs/assets/threadforge-demo.gif"
+  ],
+  "ios": true,
+  "android": true,
+  "web": false,
+  "windows": true,
+  "macos": false,
+  "tvos": false,
+  "visionos": false,
+  "expoGo": false,
+  "fireos": false,
+  "unmaintained": false,
+  "dev": false,
+  "template": false,
+  "newArchitecture": true
+}
+,
+  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
