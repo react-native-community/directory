@@ -1,30 +1,5 @@
 [
   {
-  "githubUrl": "https://github.com/alexrus28996/react-native-threadforge",
-  "npmPkg": "react-native-threadforge",
-  "examples": [
-    "https://github.com/alexrus28996/react-native-threadforge",
-    "https://snack.expo.dev/@alexrus28996/threadforge-demo"
-  ],
-  "images": [
-    "https://raw.githubusercontent.com/alexrus28996/react-native-threadforge/main/docs/assets/threadforge-demo.gif"
-  ],
-  "ios": true,
-  "android": true,
-  "web": false,
-  "windows": true,
-  "macos": false,
-  "tvos": false,
-  "visionos": false,
-  "expoGo": false,
-  "fireos": false,
-  "unmaintained": false,
-  "dev": false,
-  "template": false,
-  "newArchitecture": true
-}
-,
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -17470,6 +17445,19 @@
     "githubUrl": "https://github.com/effx13/react-native-secure-view",
     "npmPkg": "react-native-secure-view",
     "examples": ["https://github.com/effx13/react-native-secure-view/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/alexrus28996/react-native-threadforge/tree/main/packages/react-native-threadforge",
+    "examples": [
+      "https://github.com/alexrus28996/react-native-threadforge",
+      "https://snack.expo.dev/@alexrus28996/threadforge-demo"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/alexrus28996/react-native-threadforge/main/docs/assets/threadforge-demo.gif"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
