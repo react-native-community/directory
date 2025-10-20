@@ -17440,5 +17440,13 @@
     "examples": ["https://github.com/relateddigital/react-native-related-digital/tree/master/client"],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/effx13/react-native-secure-view",
+    "npmPkg": "react-native-secure-view",
+    "examples": ["https://github.com/effx13/react-native-secure-view/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
