@@ -457,7 +457,8 @@
     "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "configPlugin": "https://github.com/OneSignal/onesignal-expo-plugin"
   },
   {
     "githubUrl": "https://github.com/jodybrewster/react-native-linkedin-login",
@@ -14564,22 +14565,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-blob-util",
-    "npmPkg": "@config-plugins/react-native-blob-util",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true,
-    "configPlugin": true
-  },
-  {
-    "githubUrl": "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf",
-    "npmPkg": "@config-plugins/react-native-pdf",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true,
-    "configPlugin": true
-  },
-  {
     "githubUrl": "https://github.com/brix/crypto-js",
     "ios": true,
     "android": true,
@@ -14901,7 +14886,8 @@
     "npmPkg": "@ua/react-native-airship",
     "examples": ["https://github.com/urbanairship/react-native-airship/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "configPlugin": "https://github.com/urbanairship/airship-expo-plugin"
   },
   {
     "githubUrl": "https://github.com/prisma/react-native-prisma",
@@ -17623,13 +17609,14 @@
   {
     "githubUrl": "https://github.com/relateddigital/react-native-related-digital/tree/master/sdk",
     "npmPkg": "react-native-related-digital",
-    "examples": ["https://github.com/relateddigital/react-native-related-digital/tree/master/client"],
+    "examples": [
+      "https://github.com/relateddigital/react-native-related-digital/tree/master/client"
+    ],
     "android": true,
     "ios": true
   },
   {
     "githubUrl": "https://github.com/effx13/react-native-secure-view",
-    "npmPkg": "react-native-secure-view",
     "examples": ["https://github.com/effx13/react-native-secure-view/tree/main/example"],
     "ios": true,
     "android": true,
@@ -17647,5 +17634,68 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/adjust/react_native_sdk",
+    "npmPkg": "react-native-adjust",
+    "examples": ["https://github.com/adjust/react_native_sdk/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-adjust"
+  },
+  {
+    "githubUrl": "https://github.com/idearockers/react-native-dynamic-app-icon",
+    "ios": true,
+    "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-dynamic-app-icon"
+  },
+  {
+    "githubUrl": "https://github.com/computools/react-native-dynamic-app-icon",
+    "npmPkg": "@computools/react-native-dynamic-app-icon",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Leanplum/Leanplum-ReactNative-SDK",
+    "npmPkg": "@leanplum/react-native-sdk",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/MetaMask/react-native-search-api",
+    "npmPkg": "@metamask/react-native-search-api",
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/jdmunro/react-native-spotlight-search",
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/appcenter-sdk-react-native/tree/develop/appcenter",
+    "ios": true,
+    "android": true,
+    "configPlugin": "https://github.com/BelkaLab/expo-appcenter"
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/appcenter-sdk-react-native/tree/develop/appcenter-analytics",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/microsoft/appcenter-sdk-react-native/tree/develop/appcenter-crashes",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kevinejohn/react-native-keyevent",
+    "ios": true,
+    "android": true,
+    "configPlugin": "https://github.com/chronsyn/react-native-keyevent-expo-config-plugin"
+  },
+  {
+    "githubUrl": "https://github.com/EdgeApp/react-native-airship",
+    "examples": ["https://github.com/EdgeApp/react-native-airship/tree/master/AirshipDemo"],
+    "ios": true,
+    "android": true
   }
 ]
