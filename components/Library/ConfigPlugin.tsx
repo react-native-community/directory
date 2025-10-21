@@ -1,18 +1,21 @@
 import { type StyleProp, type TextStyle } from 'react-native';
 
 import { A, P } from '~/common/styleguide';
+import { type LibraryDataEntryType } from '~/types';
 
-export const ConfigPluginContent = ({
+type Props = {
+  configPlugin?: LibraryDataEntryType['configPlugin'];
+  hoverStyle?: StyleProp<TextStyle>;
+  linkStyles?: StyleProp<TextStyle>;
+  paragraphStyles?: StyleProp<TextStyle>;
+};
+
+export function ConfigPluginContent({
   configPlugin,
   linkStyles,
   paragraphStyles,
   hoverStyle,
-}: {
-  configPlugin?: string | boolean;
-  hoverStyle?: StyleProp<TextStyle>;
-  linkStyles?: StyleProp<TextStyle>;
-  paragraphStyles?: StyleProp<TextStyle>;
-}) => {
+}: Props) {
   const url = typeof configPlugin === 'string' ? configPlugin : undefined;
   if (url) {
     return (
@@ -22,12 +25,12 @@ export const ConfigPluginContent = ({
     );
   }
   return <P style={paragraphStyles}>Config plugin</P>;
-};
+}
 
-export const getConfigPluginText = ({ configPlugin }: { configPlugin?: string | boolean }) => {
+export function getConfigPluginText(configPlugin: LibraryDataEntryType['configPlugin']) {
   if (typeof configPlugin === 'string') {
-    return `Expo Config Plugin available as a separate package`;
+    return `Expo config plugin available as a separate package`;
   } else if (configPlugin) {
     return 'Expo config plugin included';
   }
-};
+}

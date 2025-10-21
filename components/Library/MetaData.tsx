@@ -191,7 +191,7 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
               paragraphStyles={paragraphStyles}
             />
           ),
-          tooltip: getConfigPluginText({ configPlugin }),
+          tooltip: getConfigPluginText(configPlugin),
         }
       : null,
     github.hasTypes

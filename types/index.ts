@@ -33,7 +33,7 @@ export type Query = {
   hasImage?: string;
   hasTypes?: string;
   hasNativeCode?: string;
-  configPlugin?: boolean | string;
+  configPlugin?: string;
   isMaintained?: string;
   isPopular?: string;
   isRecommended?: string;
@@ -79,7 +79,7 @@ export type LibraryType = LibraryDataEntryType & {
     isArchived?: boolean;
     isPrivate?: boolean;
     hasNativeCode: boolean;
-    configPlugin?: boolean | string;
+    configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     urls: {
       repo: string;

@@ -58,7 +58,7 @@ export const FILTER_STATUS: FilterParamsType[] = [
   },
   {
     param: 'configPlugin',
-    title: 'Has Expo Config Plugin',
+    title: 'Has Expo config plugin',
   },
   {
     param: 'hasExample',
