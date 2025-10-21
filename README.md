@@ -61,6 +61,7 @@
   "unmaintained": false,
   "dev": false,
   "template": false,
+  "configPlugin": false,
   "newArchitecture": false
 }
 ```
@@ -138,6 +139,8 @@
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
 - #### `template`
   **(boolean)** - signify that a library is a new project template.
+- #### `configPlugin`
+  **(boolean \| string \[URL to third-party config plugin\])** - Indicates if the library includes an [Expo config plugin](https://docs.expo.dev/config-plugins/introduction/). If the plugin is provided by a third party, supply the URL as a string. This field is optional and will be detected automatically if omitted.
 - #### `newArchitecture`
   **(boolean|'new-arch-only')** - signify that a library supports both, or not, the New Architecture and the Old Architecture or only the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
 

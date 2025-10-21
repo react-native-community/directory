@@ -79,6 +79,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     hasImage: parsedQuery.hasImage,
     hasTypes: parsedQuery.hasTypes,
     hasNativeCode: parsedQuery.hasNativeCode,
+    configPlugin: parsedQuery.configPlugin,
     isMaintained: parsedQuery.isMaintained,
     isPopular: parsedQuery.isPopular,
     isRecommended: parsedQuery.isRecommended,
