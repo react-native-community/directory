@@ -143,16 +143,13 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       }
 
       if (!monorepo) {
-        json.topics = [
-          ...new Set([
-            ...processTopics(packageJson.keywords),
-            ...processTopics(
-              json.repositoryTopics.nodes.map(
-                ({ topic }: { topic: { name: string } }) => topic.name
-              )
-            ),
-          ]),
+        const rawTopics = [
+          ...processTopics(packageJson.keywords),
+          ...processTopics(
+            json.repositoryTopics.nodes.map(({ topic }: { topic: { name: string } }) => topic.name)
+          ),
         ];
+        json.topics = [...new Set(rawTopics)];
 
         json.description ??= packageJson.description;
 

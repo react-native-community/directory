@@ -57,7 +57,7 @@ const MODIFIERS: {
   {
     name: 'Not supporting New Architecture',
     value: -5,
-    condition: data => !data.newArchitecture || !data.github.newArchitecture,
+    condition: data => !data.newArchitecture && !data.github.newArchitecture,
   },
 ];
 
