@@ -14886,7 +14886,8 @@
     "npmPkg": "@ua/react-native-airship",
     "examples": ["https://github.com/urbanairship/react-native-airship/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "configPlugin": "https://github.com/urbanairship/airship-expo-plugin"
   },
   {
     "githubUrl": "https://github.com/prisma/react-native-prisma",
@@ -17692,11 +17693,9 @@
     "configPlugin": "https://github.com/chronsyn/react-native-keyevent-expo-config-plugin"
   },
   {
-    "githubUrl": "https://github.com/urbanairship/react-native-airship",
-    "npmPkg": "@ua/react-native-airship",
-    "examples": ["https://github.com/urbanairship/react-native-airship/tree/main/example"],
+    "githubUrl": "https://github.com/EdgeApp/react-native-airship",
+    "examples": ["https://github.com/EdgeApp/react-native-airship/tree/master/AirshipDemo"],
     "ios": true,
-    "android": true,
-    "configPlugin": "https://github.com/urbanairship/airship-expo-plugin"
+    "android": true
   }
 ]
