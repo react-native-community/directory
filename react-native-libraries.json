@@ -17316,7 +17316,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/margelo/react-native-nitro-fetch",
+    "githubUrl": "https://github.com/margelo/react-native-nitro-fetch/tree/main/package",
+    "npmPkg": "react-native-nitro-fetch",
     "examples": ["https://github.com/margelo/react-native-nitro-fetch/tree/main/example"],
     "ios": true,
     "android": true

@@ -45,12 +45,21 @@ export function fillNpmName(library: LibraryType) {
   return library;
 }
 
+const STOPWORDS = ['react-native', 'reactnative', 'react', 'native'];
+const STOPWORDS_PATTERN = new RegExp(`\\b(?:${STOPWORDS.join('|')})\\b`, 'gi');
+
 export function processTopics(topics?: string[]) {
-  return (topics ?? [])
+  if (!Array.isArray(topics)) {
+    return [];
+  }
+
+  return topics
     .map(topic =>
       topic
         .replace(/([ _])/g, '-')
-        .replace('react-native-', '')
+        .replace(STOPWORDS_PATTERN, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
         .toLowerCase()
         .trim()
     )
