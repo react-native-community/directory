@@ -17697,5 +17697,34 @@
     "examples": ["https://github.com/EdgeApp/react-native-airship/tree/master/AirshipDemo"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/patch-project",
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WookieFPV/typed-config-plugins",
+    "ios": true,
+    "android": true,
+    "dev": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WookieFPV/expo-build-disk-cache",
+    "ios": true,
+    "android": true,
+    "dev": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WookieFPV/list-config-plugins",
+    "ios": true,
+    "android": true,
+    "dev": true,
+    "newArchitecture": true
   }
 ]
