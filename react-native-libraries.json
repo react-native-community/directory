@@ -7061,8 +7061,11 @@
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-vector-image",
+    "examples": ["https://github.com/oblador/react-native-vector-image/tree/master/Example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true, 
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/vivaxy/react-native-auto-height-image",
