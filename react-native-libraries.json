@@ -17726,5 +17726,14 @@
     "android": true,
     "dev": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/orcunorcun/react-native-cookie-handler",
+    "npmPkg": "react-native-cookie-handler",
+    "examples": [
+      "https://github.com/orcunorcun/react-native-cookie-handler/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
