@@ -8,18 +8,14 @@
     "$id": "#/items",
     "type": "object",
     "title": "React Native Directory package entry",
-    "required": [
-      "githubUrl"
-    ],
+    "required": ["githubUrl"],
     "properties": {
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
         "title": "Package GitHub repository URL",
         "default": "",
-        "examples": [
-          "https://github.com/joshswan/react-native-autolink"
-        ],
+        "examples": ["https://github.com/joshswan/react-native-autolink"],
         "pattern": "^(.*)$"
       },
       "ios": {
@@ -27,36 +23,28 @@
         "type": "boolean",
         "title": "Package supports iOS",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "android": {
         "$id": "#/items/properties/android",
         "type": "boolean",
         "title": "Package supports Android",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "windows": {
         "$id": "#/items/properties/windows",
         "type": "boolean",
         "title": "Package supports Windows (react-native-windows)",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "macos": {
         "$id": "#/items/properties/macos",
         "type": "boolean",
         "title": "Package supports macOS (react-native-macos)",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "tvos": {
         "$id": "#/items/properties/tvos",
@@ -68,7 +56,7 @@
       "vegaos": {
         "$id": "#/items/properties/vegaos",
         "type": "boolean",
-        "title": "Package supports Vega OS",
+        "title": "Package is compatible with Vega OS",
         "default": false,
         "examples": [true]
       },
@@ -77,18 +65,14 @@
         "type": "boolean",
         "title": "Package is compatible with Fire OS",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
         "title": "Package is compatible with Expo Go",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "examples": {
         "$id": "#/items/properties/examples",
@@ -111,9 +95,7 @@
         "$id": "#/items/properties/images",
         "type": "array",
         "title": "List of image URLs demonstrating package functionality",
-        "default": [
-          null
-        ],
+        "default": [null],
         "items": {
           "$id": "#/items/properties/images/items",
           "type": "string",
@@ -131,54 +113,36 @@
         "type": "string",
         "title": "npm package name in the registry (mostly for scoped packages)",
         "default": "",
-        "examples": [
-          "@expo/ex-navigation"
-        ],
+        "examples": ["@expo/ex-navigation"],
         "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
       },
       "unmaintained": {
         "$id": "#/items/properties/unmaintained",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "title": "Package is unmaintained or archived",
         "default": false,
-        "examples": [
-          true,
-          "expo-image"
-        ]
+        "examples": [true, "expo-image"]
       },
       "dev": {
         "$id": "#/items/properties/dev",
         "type": "boolean",
         "title": "Package is a Development Tool (should be installed as 'devDependency')",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "template": {
         "$id": "#/items/properties/template",
         "type": "boolean",
         "title": "Package is a project template",
         "default": false,
-        "examples": [
-          true
-        ]
+        "examples": [true]
       },
       "newArchitecture": {
         "$id": "#/items/properties/newArchitecture",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "title": "Package supports New Architecture",
         "default": false,
-        "examples": [
-          true,
-          "new-arch-only"
-        ]
+        "examples": [true, "new-arch-only"]
       },
       "newArchitectureNote": {
         "$id": "#/items/properties/newArchitectureNote",
@@ -194,17 +158,13 @@
         "$id": "#/items/properties/alternatives",
         "type": "array",
         "title": "Optional alternative libraries to use, if the library is not maintained anymore or does not support the New Architecture",
-        "default": [
-          null
-        ],
+        "default": [null],
         "items": {
           "$id": "#/items/properties/alternatives/items",
           "type": "string",
           "title": "Alternative library npm package name",
           "default": "",
-          "examples": [
-            "expo-image"
-          ],
+          "examples": ["expo-image"],
           "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
         }
       }

@@ -9,7 +9,6 @@ import {
   PlatformIOS,
   PlatformMacOS,
   PlatformTvOS,
-  PlatformVegaOS,
   PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
@@ -81,12 +80,6 @@ const Popular = ({ data }: Props) => {
           icon={PlatformVisionOS}
           data={data}
           filter={lib => lib.visionos === true}
-        />
-        <ExploreSection
-          title="Vega OS"
-          icon={PlatformVegaOS}
-          data={data}
-          filter={lib => lib.vegaos === true}
         />
         <ExploreSection
           title="Windows"

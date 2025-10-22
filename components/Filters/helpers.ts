@@ -27,10 +27,6 @@ export const FILTER_PLATFORMS: FilterParamsType[] = [
     title: 'visionOS',
   },
   {
-    param: 'vegaos',
-    title: 'Vega OS',
-  },
-  {
     param: 'web',
     title: 'Web',
   },
@@ -86,5 +82,9 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
   {
     param: 'fireos',
     title: 'Works with Fire OS',
+  },
+  {
+    param: 'vegaos',
+    title: 'Works with Vega OS',
   },
 ];

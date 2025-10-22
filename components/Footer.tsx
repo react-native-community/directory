@@ -12,7 +12,6 @@ import {
   PlatformIOS,
   PlatformMacOS,
   PlatformTvOS,
-  PlatformVegaOS,
   PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
@@ -94,12 +93,6 @@ const Footer = () => {
             pkgName="react-native-visionos"
             Icon={PlatformVisionOS}
             url="https://github.com/callstack/react-native-visionos#readme"
-          />
-          <Platform
-            name="Vega OS"
-            pkgName="react-native for Vega"
-            Icon={PlatformVegaOS}
-            url="https://developer.amazon.com/docs/react-native-vega/0.72/react_overview.html"
           />
           <Platform
             name="Web"

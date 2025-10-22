@@ -23,7 +23,6 @@ export function CompatibilityTags({ library }: Props) {
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
     library.visionos ? 'visionOS' : null,
-    library.vegaos ? 'Vega OS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
   ]
@@ -65,7 +64,7 @@ export function CompatibilityTags({ library }: Props) {
           />
         ) : null
       )}
-      {(library.expoGo || library.fireos) && (
+      {(library.expoGo || library.fireos || library.vegaos) && (
         <Tooltip
           side="bottom"
           trigger={
@@ -78,6 +77,7 @@ export function CompatibilityTags({ library }: Props) {
           <ul style={styles.compatibilityList}>
             {library.expoGo && <li>Works with Expo Go</li>}
             {library.fireos && <li>Works with Fire OS</li>}
+            {library.vegaos && <li>Works with Vega OS</li>}
           </ul>
         </Tooltip>
       )}
