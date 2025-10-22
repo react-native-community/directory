@@ -17726,5 +17726,18 @@
     "android": true,
     "dev": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mCodex/react-native-nitro-sfsymbols",
+    "npmPkg": "react-native-nitro-sfsymbols",
+    "examples": [
+      "https://github.com/mCodex/react-native-nitro-sfsymbols/tree/main/example"
+    ],
+    "images": ["https://github.com/mCodex/react-native-nitro-sfsymbols/blob/main/example.gif?raw=true"],
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "newArchitecture": true
   }
 ]
