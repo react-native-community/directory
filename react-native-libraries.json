@@ -7064,7 +7064,7 @@
     "examples": ["https://github.com/oblador/react-native-vector-image/tree/master/Example"],
     "ios": true,
     "android": true,
-    "web": true, 
+    "web": true,
     "newArchitecture": true
   },
   {
@@ -17751,5 +17751,18 @@
     "tvos": true,
     "visionos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/sbaiahmed1/react-native-menus",
+    "npmPkg": "react-native-menus",
+    "examples": [
+      "https://github.com/sbaiahmed1/react-native-menus/tree/main/example"
+    ],
+    "images": ["https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/android-image.png", "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/ios-image.png"],
+    "ios": true,
+    "expo": true,
+    "android": true,
+    "newArchitecture": true,
+    "expoGo": true
   }
 ]
