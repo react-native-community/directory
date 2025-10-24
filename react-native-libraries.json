@@ -17758,7 +17758,10 @@
     "examples": [
       "https://github.com/sbaiahmed1/react-native-menus/tree/main/example"
     ],
-    "images": ["https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/android-image.png", "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/ios-image.png"],
+    "images": [
+      "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/android-image.png",
+      "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/ios-image.png"
+    ],
     "ios": true,
     "expo": true,
     "android": true,
