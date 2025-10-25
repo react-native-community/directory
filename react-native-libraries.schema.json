@@ -76,6 +76,13 @@
           true
         ]
       },
+      "vegaos": {
+        "$id": "#/items/properties/vegaos",
+        "type": "boolean",
+        "title": "Package is compatible with Vega OS",
+        "default": false,
+        "examples": [true]
+      },
       "expoGo": {
         "$id": "#/items/properties/expo",
         "type": "boolean",
