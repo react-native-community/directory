@@ -78,10 +78,16 @@
       },
       "vegaos": {
         "$id": "#/items/properties/vegaos",
-        "type": "boolean",
-        "title": "Package is compatible with Vega OS",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "title": "Package is compatible with Vega OS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
         "default": false,
-        "examples": [true]
+        "examples": [
+          true,
+          "@amazon-devices/react-native-async-storage__async-storage"
+        ]
       },
       "expoGo": {
         "$id": "#/items/properties/expo",

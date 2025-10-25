@@ -136,7 +136,7 @@ export type LibraryDataEntryType = {
   fireos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
-  vegaos?: boolean;
+  vegaos?: boolean | string;
   unmaintained?: boolean;
   dev?: boolean;
   template?: boolean;
