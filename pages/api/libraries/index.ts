@@ -74,6 +74,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       fireos: parsedQuery.fireos,
       tvos: parsedQuery.tvos,
       visionos: parsedQuery.visionos,
+      vegaos: parsedQuery.vegaos,
     },
     hasExample: parsedQuery.hasExample,
     hasImage: parsedQuery.hasImage,
