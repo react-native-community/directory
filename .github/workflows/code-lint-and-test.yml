@@ -21,4 +21,4 @@ jobs:
     - name: Lint
       run: bun lint
     - name: Build Next app
-      run: bun next build
+      run: bun next build --webpack
