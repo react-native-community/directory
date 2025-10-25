@@ -10791,7 +10791,7 @@
   },
   {
     "githubUrl": "https://github.com/Richou/react-native-android-location-enabler",
-    "example": [
+    "examples": [
       "https://github.com/Richou/react-native-android-location-enabler/tree/main/example"
     ],
     "images": [
@@ -13729,7 +13729,7 @@
     "examples": ["https://github.com/liveakshay/expo-spellchecker/tree/main/example"],
     "ios": true,
     "android": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
@@ -13750,7 +13750,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
@@ -13762,7 +13762,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true,
     "fireos": true
   },
@@ -13772,7 +13772,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true,
     "fireos": true
   },
@@ -13781,7 +13781,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true,
     "fireos": true
   },
@@ -13791,7 +13791,7 @@
     "android": true,
     "web": true,
     "fireos": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
@@ -13800,7 +13800,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
@@ -13809,7 +13809,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-regular-svg-icons",
@@ -13817,7 +13817,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-solid-svg-icons",
@@ -13825,20 +13825,20 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expo": true
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/FilipiRafael/react-native-motion-tabs",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/vantuan88291/react-native-ota-hot-update",
     "ios": true,
     "android": true,
-    "expo": true,
+    "expoGo": true,
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -17428,7 +17428,7 @@
   {
     "githubUrl": "https://github.com/avas-app/react-native-android-otp-autofill",
     "npmPkg": "@avasapp/react-native-otp-autofill",
-    "example": ["https://github.com/avas-app/react-native-android-otp-autofill/tree/main/example"],
+    "examples": ["https://github.com/avas-app/react-native-android-otp-autofill/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true,
@@ -17732,20 +17732,16 @@
   },
   {
     "githubUrl": "https://github.com/orcunorcun/react-native-cookie-handler",
-    "npmPkg": "react-native-cookie-handler",
-    "examples": [
-      "https://github.com/orcunorcun/react-native-cookie-handler/tree/master/example"
-    ],
+    "examples": ["https://github.com/orcunorcun/react-native-cookie-handler/tree/master/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/mCodex/react-native-nitro-sfsymbols",
-    "npmPkg": "react-native-nitro-sfsymbols",
-    "examples": [
-      "https://github.com/mCodex/react-native-nitro-sfsymbols/tree/main/example"
+    "examples": ["https://github.com/mCodex/react-native-nitro-sfsymbols/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/mCodex/react-native-nitro-sfsymbols/refs/heads/main/example.gif"
     ],
-    "images": ["https://raw.githubusercontent.com/mCodex/react-native-nitro-sfsymbols/refs/heads/main/example.gif"],
     "ios": true,
     "macos": true,
     "tvos": true,
@@ -17754,16 +17750,20 @@
   },
   {
     "githubUrl": "https://github.com/sbaiahmed1/react-native-menus",
-    "npmPkg": "react-native-menus",
-    "examples": [
-      "https://github.com/sbaiahmed1/react-native-menus/tree/main/example"
-    ],
+    "examples": ["https://github.com/sbaiahmed1/react-native-menus/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/android-image.png",
       "https://raw.githubusercontent.com/sbaiahmed1/react-native-menus/refs/heads/main/ios-image.png"
     ],
     "ios": true,
-    "expo": true,
+    "android": true,
+    "newArchitecture": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-shine",
+    "examples": ["https://github.com/software-mansion-labs/react-native-shine/tree/main/example"],
+    "ios": true,
     "android": true,
     "newArchitecture": true,
     "expoGo": true

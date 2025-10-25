@@ -1,1 +1,24 @@
 export const NUM_PER_PAGE = 30;
+
+export const VALID_ENTRY_KEYS = new Set([
+  'githubUrl',
+  'ios',
+  'android',
+  'web',
+  'expoGo',
+  'windows',
+  'macos',
+  'fireos',
+  'tvos',
+  'visionos',
+  'unmaintained',
+  'dev',
+  'template',
+  'newArchitecture',
+  'newArchitectureNote',
+  'configPlugin',
+  'alternatives',
+  'npmPkg',
+  'examples',
+  'images',
+]);

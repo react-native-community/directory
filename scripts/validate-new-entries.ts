@@ -1,6 +1,8 @@
 import { fetch } from 'bun';
 import { differenceWith, isEqual } from 'es-toolkit';
 
+import { VALID_ENTRY_KEYS } from '~/util/Constants';
+
 import { fetchGithubData } from './fetch-github-data';
 import { fetchNpmDownloadData } from './fetch-npm-download-data';
 import { fillNpmName, hasMismatchedPackageData } from './helpers';
@@ -20,7 +22,7 @@ if (libraries.length === mainData.length) {
   process.exit(0);
 }
 
-console.log('🔍️ Detected changes in data entries, checking!');
+console.log('🚩️ Detected changes in data entries, checking!');
 
 const modifiedEntries = differenceWith(libraries, mainData, isEqual);
 
@@ -80,6 +82,16 @@ const checkResults = await Promise.all(
 
       return false;
     }
+
+    const invalidKeys = Object.keys(entry).filter(key => !VALID_ENTRY_KEYS.has(key));
+
+    if (invalidKeys.length > 0) {
+      console.error(
+        `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
+      );
+      return false;
+    }
+
     return true;
   })
 );
@@ -88,4 +100,5 @@ if (checkResults.filter(result => !result).length > 0) {
   console.error('\n❌ There were errors spotted during new entries check!');
   process.exit(1);
 }
+
 console.log('✅ All checks have passed!');
