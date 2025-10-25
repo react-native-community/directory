@@ -11,6 +11,7 @@ export const VALID_ENTRY_KEYS = new Set([
   'fireos',
   'tvos',
   'visionos',
+  'vegaos',
   'unmaintained',
   'dev',
   'template',
