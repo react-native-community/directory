@@ -154,6 +154,19 @@
           "Only iOS supported"
         ]
       },
+      "configPlugin": {
+        "$id": "#/items/properties/configPlugin",
+        "type": [
+          "boolean",
+          "string"
+        ],
+        "title": "Package has Expo config plugin",
+        "default": false,
+        "examples": [
+          true,
+          "link to third-party config plugin"
+        ]
+      },
       "alternatives": {
         "$id": "#/items/properties/alternatives",
         "type": "array",

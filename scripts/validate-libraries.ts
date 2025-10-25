@@ -1,4 +1,6 @@
+import { fillNpmName } from '~/scripts/helpers';
 import { type LibraryType } from '~/types';
+import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
 import libraries from '../react-native-libraries.json';
 
@@ -11,19 +13,28 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
   const errorsList = libraries.reduce<Record<string, string[]>>((errors, library, index) => {
     const libraryErrors = [];
     const libraryProperties = Object.keys(library);
+    const libraryWithNpmName = fillNpmName(library);
 
     // Check that it has the githubUrl property and that it is in the correct format
     if (!libraryProperties.includes('githubUrl')) {
-      libraryErrors.push('Must contain a githubUrl property');
+      libraryErrors.push(`- Must contain a 'githubUrl' property`);
     } else if (!library.githubUrl.match(GITHUB_URL_PATTERN)) {
       libraryErrors.push(
-        `The githubUrl of ${library.githubUrl} must be in the format:\nhttps://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
+        `- The 'githubUrl' of ${library.githubUrl} must be in the format:\nhttps://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
       );
+    }
+
+    const invalidKeys = libraryProperties.filter(key => !VALID_ENTRY_KEYS.has(key));
+
+    if (invalidKeys.length > 0) {
+      invalidKeys.forEach(key => {
+        libraryErrors.push(`- Uses invalid key - ${key}`);
+      });
     }
 
     // If there were errors, add them to the object
     if (libraryErrors.length > 0) {
-      errors[index] = libraryErrors;
+      errors[libraryWithNpmName.npmPkg] = libraryErrors;
     }
 
     return errors;
@@ -31,7 +42,8 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
 
   if (Object.keys(errorsList).length > 0) {
     const errorDescriptions = Object.entries(errorsList).map(
-      ([index, libraryErrors]) => `Library at index ${index}:\n${libraryErrors.join('\n')}`
+      ([npmPkg, libraryErrors], index) =>
+        `Library entry for '${npmPkg}' contains errors:\n${libraryErrors.join('\n')}`
     );
     console.error('❌ Malformed libraries found:\n' + errorDescriptions.join('\n'));
     process.exit(1);

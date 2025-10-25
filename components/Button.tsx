@@ -1,9 +1,8 @@
 import { A } from '@expo/html-elements';
-import { type PropsWithChildren, useContext } from 'react';
+import { type PropsWithChildren } from 'react';
 import { StyleSheet, type TextStyle, Pressable, type StyleProp } from 'react-native';
 
-import { colors, darkColors, HoverEffect, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { darkColors, HoverEffect, P } from '~/common/styleguide';
 
 type Props = PropsWithChildren & {
   href?: string;
@@ -13,13 +12,11 @@ type Props = PropsWithChildren & {
 };
 
 export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
   const isLink = !!href;
   const linkStyle = [
     styles.container,
     {
-      backgroundColor: isDark ? darkColors.powder : colors.primaryDark,
+      backgroundColor: darkColors.primaryDark,
     },
     style,
   ];

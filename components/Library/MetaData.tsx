@@ -2,10 +2,12 @@ import { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type MetadataEntryType } from '~/types';
 import { partition } from '~/util/arrays';
+import { getConfigPluginStatus } from '~/util/configPluginStatus';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
 
@@ -23,6 +25,7 @@ import {
   NativeCode,
   PackageSize,
   Dependency,
+  ConfigPlugin,
 } from '../Icons';
 
 type Props = {
@@ -129,7 +132,8 @@ function generateData(
   ];
 }
 
-function generateSecondaryData({ github, examples }: LibraryType, isDark: boolean) {
+function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataEntryType[] {
+  const { github, examples } = library;
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
   };
@@ -140,6 +144,7 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
     textDecorationColor: colors.gray4,
     color: isDark ? colors.gray3 : colors.gray5,
   };
+  const configPlugin = getConfigPluginStatus(library);
 
   return [
     github.urls.homepage
@@ -172,6 +177,21 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
           id: 'nativeCode',
           icon: <NativeCode fill={iconColor} width={16} height={16} />,
           content: <P style={paragraphStyles}>Native code</P>,
+        }
+      : null,
+    configPlugin
+      ? {
+          id: 'configPlugin',
+          icon: <ConfigPlugin fill={iconColor} width={16} height={16} />,
+          content: (
+            <ConfigPluginContent
+              configPlugin={configPlugin}
+              hoverStyle={hoverStyle}
+              linkStyles={linkStyles}
+              paragraphStyles={paragraphStyles}
+            />
+          ),
+          tooltip: getConfigPluginText(configPlugin),
         }
       : null,
     github.hasTypes
@@ -213,18 +233,28 @@ export function MetaData({ library, secondary }: Props) {
       <>
         {data
           .filter(entry => !!entry)
-          .map(({ id, icon, content }, i) => (
-            <View
-              key={id}
-              style={[
-                styles.displayHorizontal,
-                i + 1 !== data.length ? styles.datumContainer : {},
-                styles.secondaryContainer,
-              ]}>
-              <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
-              {content}
-            </View>
-          ))}
+          .map(({ id, icon, content, tooltip }, i) => {
+            const component = (
+              <View
+                key={id}
+                style={{
+                  ...styles.displayHorizontal,
+                  ...(i + 1 !== data.length ? styles.datumContainer : {}),
+                  ...styles.secondaryContainer,
+                }}>
+                <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
+                {content}
+              </View>
+            );
+
+            return tooltip ? (
+              <Tooltip key={id} sideOffset={2} delayDuration={100} trigger={component}>
+                {tooltip}
+              </Tooltip>
+            ) : (
+              component
+            );
+          })}
       </>
     );
   } else {

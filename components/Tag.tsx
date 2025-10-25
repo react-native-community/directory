@@ -8,7 +8,7 @@ import { Check } from './Icons';
 
 type Props = {
   label: string;
-  tagStyle: ViewStyle;
+  tagStyle: ViewStyle | ViewStyle[];
   icon?: ReactElement | null;
 };
 

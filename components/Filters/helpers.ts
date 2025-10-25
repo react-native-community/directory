@@ -57,6 +57,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Uses native code',
   },
   {
+    param: 'configPlugin',
+    title: 'Has Expo config plugin',
+  },
+  {
     param: 'hasExample',
     title: 'Has example',
   },
@@ -86,5 +90,35 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
   {
     param: 'vegaos',
     title: 'Works with Vega OS',
+  },
+];
+
+export const FILTER_TYPE: FilterParamsType[] = [
+  {
+    param: 'skipLibs',
+    title: 'Hide libraries',
+  },
+  {
+    param: 'skipTools',
+    title: 'Hide development tools',
+  },
+  {
+    param: 'skipTemplates',
+    title: 'Hide templates',
+  },
+];
+
+export const FILTER_MODULE_TYPE: FilterParamsType[] = [
+  {
+    param: 'expoModule',
+    title: 'Expo Module',
+  },
+  {
+    param: 'nitroModule',
+    title: 'Nitro Module',
+  },
+  {
+    param: 'turboModule',
+    title: 'Turbo Module',
   },
 ];

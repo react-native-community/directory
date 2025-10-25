@@ -27,7 +27,7 @@ type Props = {
 };
 
 const Trending = ({ data, query }: Props) => {
-  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 2);
+  const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 3);
 
   const router = useRouter();
   const { isDark } = useContext(CustomAppearanceContext);

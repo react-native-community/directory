@@ -34,6 +34,7 @@ export type Query = {
   hasImage?: string;
   hasTypes?: string;
   hasNativeCode?: string;
+  configPlugin?: string;
   isMaintained?: string;
   isPopular?: string;
   isRecommended?: string;
@@ -44,6 +45,9 @@ export type Query = {
   skipLibs?: string;
   skipTools?: string;
   skipTemplates?: string;
+  expoModule?: string;
+  nitroModule?: string;
+  turboModule?: string;
 };
 
 export type QueryFilters = {
@@ -76,6 +80,8 @@ export type LibraryType = LibraryDataEntryType & {
     isArchived?: boolean;
     isPrivate?: boolean;
     hasNativeCode: boolean;
+    configPlugin?: boolean;
+    moduleType?: 'expo' | 'nitro' | 'turbo';
     urls: {
       repo: string;
       homepage?: string | null;
@@ -136,6 +142,7 @@ export type LibraryDataEntryType = {
   template?: boolean;
   newArchitecture?: boolean | 'new-arch-only';
   newArchitectureNote?: string;
+  configPlugin?: boolean | string;
   alternatives?: string[];
   npmPkg?: string;
   examples?: string[];
@@ -159,3 +166,8 @@ export type MetadataEntryType = {
   content: ReactNode;
   tooltip?: ReactNode;
 } | null;
+
+export type RepositoryTreeNode = {
+  name: string;
+  type: 'tree' | 'blob';
+};

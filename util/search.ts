@@ -1,4 +1,5 @@
 import { type LibraryType, type Query, type QueryFilters } from '~/types';
+import { getConfigPluginStatus } from '~/util/configPluginStatus';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -80,6 +81,7 @@ export function handleFilterLibraries({
   hasImage,
   hasTypes,
   hasNativeCode,
+  configPlugin,
   isMaintained,
   isPopular,
   isRecommended,
@@ -90,6 +92,9 @@ export function handleFilterLibraries({
   skipLibs,
   skipTools,
   skipTemplates,
+  expoModule,
+  nitroModule,
+  turboModule,
 }: Query & QueryFilters) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -160,10 +165,6 @@ export function handleFilterLibraries({
       return false;
     }
 
-    if (support.expoGo && typeof library.expoGo === 'string') {
-      return false;
-    }
-
     if (hasExample && (!library.examples || !library.examples.length)) {
       return false;
     }
@@ -177,6 +178,10 @@ export function handleFilterLibraries({
     }
 
     if (hasNativeCode && !library.github.hasNativeCode) {
+      return false;
+    }
+
+    if (configPlugin && !getConfigPluginStatus(library)) {
       return false;
     }
 
@@ -229,6 +234,20 @@ export function handleFilterLibraries({
 
     if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
       return false;
+    }
+
+    const activeModuleTypeFilters = [
+      expoModule && 'expo',
+      nitroModule && 'nitro',
+      turboModule && 'turbo',
+    ].filter(Boolean);
+
+    if (activeModuleTypeFilters.length > 0) {
+      const type = library.github?.moduleType;
+
+      if (!activeModuleTypeFilters.includes(type)) {
+        return false;
+      }
     }
 
     if (minPopularityValue && minMonthlyDownloadsValue) {

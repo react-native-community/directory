@@ -1,6 +1,8 @@
 import { config } from 'dotenv';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
+import detectModuleType from '~/util/detectModuleType';
+import hasConfigPlugin from '~/util/hasConfigPlugin';
 import hasNativeCode from '~/util/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
@@ -124,6 +126,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
+      json.pasedPackageJson = packageJson;
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
@@ -140,16 +143,13 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       }
 
       if (!monorepo) {
-        json.topics = [
-          ...new Set([
-            ...processTopics(packageJson.keywords),
-            ...processTopics(
-              json.repositoryTopics.nodes.map(
-                ({ topic }: { topic: { name: string } }) => topic.name
-              )
-            ),
-          ]),
+        const rawTopics = [
+          ...processTopics(packageJson.keywords),
+          ...processTopics(
+            json.repositoryTopics.nodes.map(({ topic }: { topic: { name: string } }) => topic.name)
+          ),
         ];
+        json.topics = [...new Set(rawTopics)];
 
         json.description ??= packageJson.description;
 
@@ -165,13 +165,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       console.error(`Unable to parse ${json.name} package.json file!`);
       console.error(error);
     }
-  }
-
-  if (!monorepo) {
-    json.lastRelease =
-      json.releases && json.releases.nodes && json.releases.nodes.length
-        ? json.releases.nodes[0]
-        : undefined;
   }
 
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
@@ -207,5 +200,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
     hasNativeCode: hasNativeCode(json.files),
+    configPlugin: hasConfigPlugin(json.files),
+    moduleType: detectModuleType(json.files, json.pasedPackageJson),
   };
 }

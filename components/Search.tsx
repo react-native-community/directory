@@ -67,6 +67,7 @@ const Search = ({ query, total }: Props) => {
             </View>
             <TextInput
               ref={inputRef}
+              id="search"
               onKeyPress={event => {
                 if ('key' in event) {
                   if (
@@ -185,7 +186,7 @@ const Search = ({ query, total }: Props) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingVertical: 16,
+    paddingVertical: 14,
     alignItems: 'center',
   },
   container: {

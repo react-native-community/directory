@@ -111,35 +111,32 @@ export const SortButton = ({ query: { order, direction, offset }, query }: SortB
           }>
           Toggle sort order
         </Tooltip>
-        <P style={styles.title}>Sort: </P>
+        <P style={styles.title}>Sort:</P>
       </View>
       <View style={styles.pickerContainer}>
-        <P style={styles.title}>
-          <Picker
-            aria-label="Sort direction"
-            selectedValue={sortValue}
-            style={[
-              styles.picker,
-              {
-                fontWeight: 600,
-                backgroundColor: isDark ? darkColors.border : 'transparent',
-              },
-            ]}
-            onValueChange={value => {
-              setPaginationOffset(null);
-              setSortValue(value);
-            }}>
-            {sorts.map(sort => (
-              <Picker.Item
-                key={sort.param}
-                value={sort.param}
-                label={sort.label}
-                color={isDark ? colors.white : colors.black}
-              />
-            ))}
-          </Picker>
-          <P style={styles.arrow}>›</P>
-        </P>
+        <Picker
+          id="sort-order"
+          aria-label="Sort order"
+          selectedValue={sortValue}
+          style={[
+            styles.picker,
+            {
+              backgroundColor: isDark ? darkColors.border : 'transparent',
+            },
+          ]}
+          onValueChange={value => {
+            setPaginationOffset(null);
+            setSortValue(value);
+          }}>
+          {sorts.map(sort => (
+            <Picker.Item
+              key={sort.param}
+              value={sort.param}
+              label={sort.label}
+              color={isDark ? colors.white : colors.black}
+            />
+          ))}
+        </Picker>
       </View>
     </View>
   );
@@ -161,34 +158,23 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: 400,
     marginLeft: 6,
+    marginRight: 2,
     fontSize: 14,
     userSelect: 'none',
   },
-  arrow: {
-    color: colors.secondary,
-    fontSize: 18,
-    lineHeight: 18,
-    userSelect: 'none',
-    position: 'absolute',
-    pointerEvents: 'none',
-    right: 6,
-    top: 0,
-    transform: 'rotate(90deg)',
-  },
   pickerContainer: {
     top: 1,
-    left: -4,
   },
   picker: {
     color: colors.white,
     borderWidth: 0,
-    borderRadius: 2,
+    borderRadius: 4,
     position: 'relative',
     top: -1,
     fontSize: 14,
-    paddingRight: 22,
     fontFamily: 'inherit',
     cursor: 'pointer',
+    fontWeight: 600,
   },
   flippedIcon: {
     transform: 'scaleY(-1)',

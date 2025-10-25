@@ -29,6 +29,7 @@ export const colors = {
   primary: '#61DAFB',
   primaryLight: '#c1f4ff',
   primaryDark: '#39BEE2',
+  primaryHover: '#61dafb16',
   sky: '#C6EEFB',
   powder: '#EEFAFE',
   pewter: '#BEC8CB',
@@ -37,7 +38,7 @@ export const colors = {
   gray3: '#CFCFD5',
   gray4: '#82889E',
   gray5: '#505461',
-  gray6: '#2A2C33',
+  gray6: '#24262e',
   gray7: '#21232A',
   black: '#242424',
   white: '#ffffff',
@@ -61,6 +62,7 @@ export const darkColors = {
   secondary: '#a2a7ab',
   warningLight: '#2f2704',
   warning: '#9a810c',
+  primaryDark: '#2e9ab8',
 };
 
 const baseTextStyles = {
@@ -196,7 +198,12 @@ export function HoverEffect({ children }: PropsWithChildren) {
 
   return (
     <View
-      style={[isHovered && { opacity: 0.8 }, isActive && { opacity: 0.5 }]}
+      style={[
+        // @ts-expect-error Transition is a valid web style property
+        { transition: 'opacity 0.33s' },
+        isHovered && { opacity: 0.8 },
+        isActive && { opacity: 0.5 },
+      ]}
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
       onPointerDown={() => setIsActive(true)}

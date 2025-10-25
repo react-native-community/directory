@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { colors, darkColors } from '~/common/styleguide';
 import Footer from '~/components/Footer';
-import Header from '~/components/Header';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
@@ -38,22 +37,29 @@ function App({ pageProps, Component }: AppProps) {
                 content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
               />
               <style>
-                {`html { 
-                  background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
-                }
-                *:focus-visible {
-                  outline-color: ${colors.primaryDark};
-                }
-                .TooltipContent {
-                  background-color: ${darkColors.black};
-                  border: 1px solid ${context.isDark ? colors.gray7 : colors.gray6};
-                }
-                .TooltipContent svg {
-                  stroke: ${context.isDark ? colors.gray7 : colors.gray6};
-                }`}
+                {context.isDark
+                  ? `
+                  :root {
+                    --overscroll-background: ${darkColors.veryDark};
+                    --outline: ${colors.primaryDark};
+                    --active: ${darkColors.primaryDark};
+                    --select-background: ${darkColors.dark};
+                    --select-border: ${colors.gray6};
+                    --tooltip-border: ${colors.gray7};
+                  }
+                `
+                  : `
+                  :root {
+                    --overscroll-background: ${colors.gray7};
+                    --outline: ${colors.primaryDark};
+                    --active: ${darkColors.primaryDark};
+                    --select-background: ${colors.gray6};
+                    --select-border: ${colors.gray5};
+                    --tooltip-border: ${colors.gray6};
+                  }
+                `}
               </style>
             </Head>
-            <Header />
             <Component {...pageProps} />
             <Footer />
           </SafeAreaProvider>
