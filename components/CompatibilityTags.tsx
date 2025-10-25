@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, darkColors } from '~/common/styleguide';
+import { A, colors, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 
@@ -77,7 +77,18 @@ export function CompatibilityTags({ library }: Props) {
           <ul style={styles.compatibilityList}>
             {library.expoGo && <li>Works with Expo Go</li>}
             {library.fireos && <li>Works with Fire OS</li>}
-            {library.vegaos && <li>Works with Vega OS</li>}
+            {library.vegaos && typeof library.vegaos === 'boolean' && <li>Works with Vega OS</li>}
+            {library.vegaos && typeof library.vegaos === 'string' && (
+              <li>
+                Works with Vega OS
+                <br />
+                <A
+                  href={`https://www.npmjs.com/package/${library.vegaos}`}
+                  style={styles.tooltipLink}>
+                  (via dedicated support package)
+                </A>
+              </li>
+            )}
           </ul>
         </Tooltip>
       )}
@@ -102,5 +113,9 @@ const styles = StyleSheet.create({
   compatibilityList: {
     margin: 0,
     paddingLeft: 14,
+  },
+  tooltipLink: {
+    fontSize: 12,
+    fontWeight: 300,
   },
 });

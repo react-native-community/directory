@@ -510,6 +510,7 @@
     "fireos": true,
     "tvos": true,
     "visionos": true,
+    "vegaos": "@amazon-devices/react-navigation__native",
     "examples": [
       "https://snack.expo.dev/rJnUK4nrZ",
       "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
@@ -564,6 +565,7 @@
     "windows": true,
     "fireos": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/lottie-react-native",
     "npmPkg": "lottie-react-native"
   },
   {
@@ -683,6 +685,7 @@
     "android": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/react-navigation__react-native-tab-view",
     "examples": [
       "https://snack.expo.dev/HJjbO4nSW",
       "https://github.com/react-navigation/react-navigation/tree/main/example"
@@ -2084,7 +2087,8 @@
     "ios": true,
     "android": true,
     "fireos": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": "@amazon-devices/react-native-qrcode-svg"
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads",
@@ -2384,6 +2388,7 @@
     "android": true,
     "web": true,
     "fireos": true,
+    "vegaos": true,
     "expoGo": true
   },
   {
@@ -2649,6 +2654,7 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-application",
     "newArchitecture": true
   },
   {
@@ -2659,6 +2665,7 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-asset",
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -2758,6 +2765,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-constants",
     "newArchitecture": true
   },
   {
@@ -2777,6 +2785,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-crypto",
     "newArchitecture": true
   },
   {
@@ -2788,6 +2797,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-device",
     "newArchitecture": true
   },
   {
@@ -2808,6 +2818,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-file-system",
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -2820,6 +2831,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-font",
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -2830,6 +2842,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/expo-gl",
     "newArchitecture": true
   },
   {
@@ -2848,6 +2861,7 @@
     "android": true,
     "web": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/expo-image-manipulator",
     "newArchitecture": true,
     "fireos": true
   },
@@ -2888,6 +2902,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-linear-gradient",
     "newArchitecture": true
   },
   {
@@ -2907,8 +2922,9 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
-    "newArchitecture": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-localization",
+    "newArchitecture": true,
     "configPlugin": true
   },
   {
@@ -2949,6 +2965,7 @@
     "web": true,
     "tvos": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/expo-network",
     "newArchitecture": true
   },
   {
@@ -3039,6 +3056,7 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/expo-sqlite",
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -3246,6 +3264,7 @@
     "ios": true,
     "android": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/react-native-cookies__cookies",
     "newArchitecture": true
   },
   {
@@ -3270,6 +3289,7 @@
     "fireos": true,
     "expoGo": true,
     "visionos": true,
+    "vegaos": "@amazon-devices/react-native-reanimated",
     "newArchitecture": true
   },
   {
@@ -3470,6 +3490,7 @@
     "windows": true,
     "fireos": true,
     "macos": true,
+    "vegaos": "@amazon-devices/react-native-localize",
     "configPlugin": true
   },
   {
@@ -3520,6 +3541,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-splash-screen",
     "configPlugin": true
   },
   {
@@ -3554,6 +3576,7 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-linking",
     "newArchitecture": true
   },
   {
@@ -3593,6 +3616,7 @@
     "tvos": true,
     "visionos": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/react-native-screens",
     "examples": [
       "https://github.com/dlowder-salesforce/ReactNavigationTVDemo",
       "https://github.com/react-native-tvos/TVReanimated"
@@ -3629,6 +3653,7 @@
     "tvos": true,
     "fireos": true,
     "visionos": true,
+    "vegaos": "@amazon-devices/keplerscript-netmgr-lib",
     "npmPkg": "@react-native-community/netinfo",
     "newArchitecture": true
   },
@@ -3696,6 +3721,7 @@
     "tvos": true,
     "fireos": true,
     "visionos": true,
+    "vegaos": "@amazon-devices/react-native-async-storage__async-storage",
     "npmPkg": "@react-native-async-storage/async-storage",
     "newArchitecture": true
   },
@@ -3740,6 +3766,7 @@
     "fireos": true,
     "tvos": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/react-native-masked-view__masked-view",
     "npmPkg": "@react-native-masked-view/masked-view"
   },
   {
@@ -3751,7 +3778,8 @@
     "ios": true,
     "fireos": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "vegaos": "@amazon-devices/react-linear-gradient"
   },
   {
     "githubUrl": "https://github.com/Kida007/react-native-medium-clap",
@@ -3978,6 +4006,7 @@
     "macos": true,
     "fireos": true,
     "visionos": true,
+    "vegaos": "@amazon-devices/react-native-svg",
     "newArchitecture": true
   },
   {
@@ -4003,6 +4032,7 @@
     "windows": true,
     "visionos": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/react-native-device-info",
     "newArchitecture": true,
     "alternatives": ["expo-device"]
   },
@@ -4035,6 +4065,7 @@
     "ios": true,
     "android": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/react-native-fast-image",
     "newArchitecture": false,
     "unmaintained": true,
     "alternatives": ["expo-image"]
@@ -5457,7 +5488,8 @@
     "ios": true,
     "android": true,
     "fireos": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/danilowoz/react-content-loader",
@@ -5838,7 +5870,7 @@
     "githubUrl": "https://github.com/AndreiCalazans/rn-tooltip",
     "examples": [
       "https://github.com/AndreiCalazans/rn-tooltip",
-      "https://www.npmjs.com/package/rn-tooltip"
+      "rn-tooltip"
     ],
     "images": [
       "https://raw.githubusercontent.com/AndreiCalazans/rn-tooltip/HEAD/tooltipExample.gif"
@@ -6583,6 +6615,7 @@
     "android": true,
     "fireos": true,
     "web": true,
+    "vegaos": "@amazon-devices/react-native-mmkv",
     "newArchitecture": true
   },
   {
@@ -6814,7 +6847,8 @@
   {
     "githubUrl": "https://github.com/ihor/react-native-scalable-image",
     "android": true,
-    "ios": true
+    "ios": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/homeeondemand/react-native-mapbox-navigation",
@@ -8645,6 +8679,7 @@
     "examples": ["https://github.com/b0iq/react-native-place-picker/tree/main/example"],
     "ios": true,
     "android": true,
+    "vegaos": "@amazon-devices/shopify__react-native-performance",
     "dev": true
   },
   {
@@ -8689,6 +8724,7 @@
     "tvos": true,
     "fireos": true,
     "expoGo": true,
+    "vegaos": "@amazon-devices/shopify__flash-list",
     "newArchitectureNote": "Compiles and runs, but behavior may not be as expected."
   },
   {
@@ -9407,6 +9443,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-system-ui",
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -10287,6 +10324,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "vegaos": "@amazon-devices/expo-image",
     "newArchitecture": true
   },
   {
@@ -11357,7 +11395,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gladiuscode/react-native-orientation-director",
@@ -11654,7 +11693,8 @@
     "fireos": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__bottom-tabs"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/material-top-tabs",
@@ -11663,7 +11703,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__material-top-tabs"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/drawer",
@@ -11672,7 +11713,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__drawer"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/native-stack",
@@ -11682,7 +11724,8 @@
     "fireos": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__native-stack"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/stack",
@@ -11692,7 +11735,8 @@
     "fireos": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__stack"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/elements",
@@ -11702,7 +11746,8 @@
     "fireos": true,
     "web": true,
     "expoGo": true,
-    "tvos": true
+    "tvos": true,
+    "vegaos": "@amazon-devices/react-navigation__elements"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-drawer-layout",
@@ -11722,7 +11767,8 @@
     "expoGo": true,
     "tvos": true,
     "visionos": true,
-    "windows": true
+    "windows": true,
+    "vegaos": "@amazon-devices/react-navigation__routers"
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/devtools",
@@ -11734,7 +11780,8 @@
     "tvos": true,
     "visionos": true,
     "windows": true,
-    "dev": true
+    "dev": true,
+    "vegaos": "@amazon-devices/react-navigation__devtools"
   },
   {
     "githubUrl": "https://github.com/supabase/supabase-js/tree/master/packages/core/supabase-js",
@@ -14767,7 +14814,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-screenshot-test",
@@ -15588,9 +15636,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/Sharcoux/navigation",
+    "githubUrl": "https://github.com/Sharcoux/navigation/tree/master/packages/react-native",
     "npmPkg": "@react-native-assets/navigation",
-    "examples": ["https://snack.expo.dev/@sharcoux/react-native-navigation"],
+    "examples": ["https://snack.expo.dev/@cantoo/react-native-navigation"],
     "images": ["https://github.com/Sharcoux/navigation/blob/master/example/navigation.gif"],
     "android": true,
     "ios": true,
@@ -15791,6 +15839,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "vegaos": "@amazon-devices/expo-checkbox",
     "newArchitecture": true
   },
   {
@@ -17767,5 +17816,59 @@
     "android": true,
     "newArchitecture": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-performance/tree/main/packages/react-native-performance-lists-profiler",
+    "npmPkg": "@shopify/react-native-performance-lists-profiler",
+    "ios": true,
+    "android": true,
+    "vegaos": "@amazon-devices/shopify__react-native-performance-lists-profiler",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-performance/tree/main/packages/react-native-performance-navigation",
+    "npmPkg": "@shopify/react-native-performance-navigation",
+    "ios": true,
+    "android": true,
+    "vegaos": "@amazon-devices/shopify__react-native-performance-navigation",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-performance/tree/main/packages/react-native-performance-navigation-bottom-tabs",
+    "npmPkg": "@shopify/react-native-performance-navigation-bottom-tabs",
+    "ios": true,
+    "android": true,
+    "vegaos": "@amazon-devices/shopify__react-native-performance-navigation-bottom-tabs",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Shopify/react-native-performance/tree/main/packages/react-native-performance-navigation-drawer",
+    "npmPkg": "@shopify/react-native-performance-navigation-drawer",
+    "ios": true,
+    "android": true,
+    "vegaos": "@amazon-devices/shopify__react-native-performance-navigation-drawer",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/storybookjs/react-native/tree/next/packages/react-native-ui",
+    "npmPkg": "@storybook/react-native-ui",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/storybookjs/react-native/tree/next/packages/react-native-ui-lite",
+    "npmPkg": "@storybook/react-native-ui-lite",
+    "ios": true,
+    "android": true,
+    "vegaos": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/storybookjs/react-native/tree/next/packages/react-native-theming",
+    "npmPkg": "@storybook/react-native-theming",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
