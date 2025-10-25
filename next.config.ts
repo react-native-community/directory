@@ -25,9 +25,7 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   reactStrictMode: true,
   poweredByHeader: false,
   devIndicators: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  reactCompiler: true,
   images: {
     disableStaticImages: true,
   },

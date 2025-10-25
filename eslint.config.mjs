@@ -128,7 +128,7 @@ export default defineConfig([
 
   // Non-typed Bun files configuration
   {
-    files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    files: ['**/*.js', '**/*.mjs'],
     extends: [universeNodeConfig],
     rules: {
       ...COMMON_RULES,
