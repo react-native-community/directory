@@ -17870,5 +17870,35 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/gluestack-core",
+    "npmPkg": "@gluestack-ui/core",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/gluestack-utils",
+    "npmPkg": "@gluestack-ui/utils",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/ui-next-adapter",
+    "npmPkg": "@gluestack/ui-next-adapter",
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/metro/tree/main/packages/metro",
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true,
+    "web": true,
+    "windows": true,
+    "dev": true
   }
 ]
