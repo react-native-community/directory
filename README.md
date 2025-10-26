@@ -58,11 +58,12 @@
   "visionos": false,
   "expoGo": false,
   "fireos": false,
+  "vegaos": false,
+  "newArchitecture": false,
+  "configPlugin": false,
   "unmaintained": false,
   "dev": false,
-  "template": false,
-  "configPlugin": false,
-  "newArchitecture": false
+  "template": false
 }
 ```
 
@@ -123,15 +124,15 @@
 
 #### ✅ Compatibility
 
+> [!TIP]
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
+
 - #### `expoGo`
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
 - #### `fireos`
   **(boolean)** - works on Amazon Fire OS.
 - #### `vegaos`
-  **(boolean)** - works with [Vega OS](https://developer.amazon.com/docs/react-native-vega/0.72/react_overview.html).
-
-> [!TIP]
-> **Any** library can be used with Expo, if you use dev clients or prebuild.
+  **(boolean|string)** - works with [Vega OS](https://developer.amazon.com/apps-and-games/vega). It can also be a string containing npm package name, if a separate/additional package is required for full support.
 
 #### 🏷️ Tags
 
