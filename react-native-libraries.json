@@ -17900,5 +17900,47 @@
     "web": true,
     "windows": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-nitro-image/tree/main/packages/react-native-nitro-image",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-nitro-image/tree/main/packages/react-native-nitro-web-image",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/BlixtWallet/react-native-nitro-ark/tree/master/react-native-nitro-ark",
+    "examples": [
+      "https://github.com/BlixtWallet/react-native-nitro-ark/tree/master/react-native-nitro-ark/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Daavidaviid/react-native-nitro-udp",
+    "examples": [
+      "https://github.com/Daavidaviid/react-native-nitro-udp/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/riteshshukla04/react-native-sports-car",
+    "npmPkg": "react-native-sportscar",
+    "examples": [
+      "https://github.com/riteshshukla04/react-native-sports-car/tree/main/example"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/corasan/react-native-mlx/tree/main/package",
+    "npmPkg": "react-native-mlx",
+    "examples": [
+      "https://github.com/corasan/react-native-mlx/tree/main/example"
+    ],
+    "ios": true
   }
 ]
