@@ -17945,12 +17945,10 @@
   }, 
   {
     "githubUrl": "https://github.com/ChrisCosentino/expo-iperf",
-    "npmPkg": "expo-iperf",
     "examples": [
       "https://github.com/ChrisCosentino/expo-iperf/tree/main/example"
     ],
     "ios": true,
-    "android": true,
-    "expoGo":false
+    "android": true
   }
 ]
