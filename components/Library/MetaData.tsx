@@ -34,14 +34,14 @@ type Props = {
 };
 
 function generateData(
-  { github, score, npm, npmPkg }: LibraryType,
+  { github, score, npm, npmPkg, matchingScoreModifiers }: LibraryType,
   isDark: boolean
 ): MetadataEntryType[] {
   const iconColor = isDark ? darkColors.pewter : colors.gray5;
   return [
     {
       id: 'score',
-      icon: <DirectoryScore score={score} />,
+      icon: <DirectoryScore score={score} matchingScoreModifiers={matchingScoreModifiers} />,
       content: (
         <A target="_self" href="/scoring" style={styles.link}>
           Directory Score

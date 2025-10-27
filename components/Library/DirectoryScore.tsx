@@ -1,17 +1,16 @@
 import { useContext } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Svg, Path, Circle } from 'react-native-svg';
 
 import { colors, darkColors } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { type LibraryType } from '~/types';
 
 import Tooltip from '../Tooltip';
 
-type Props = {
-  score: number;
-};
+type Props = Pick<LibraryType, 'score' | 'matchingScoreModifiers'>;
 
-export function DirectoryScore({ score }: Props) {
+export function DirectoryScore({ score, matchingScoreModifiers }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const chunk = 100 / 6;
@@ -56,7 +55,21 @@ export function DirectoryScore({ score }: Props) {
           </Svg>
         </View>
       }>
-      {score} / 100
+      Score: <strong>{score} / 100</strong>
+      <br />
+      <ul style={styles.scoreModsList}>
+        {matchingScoreModifiers.map((mod, index) => (
+          <li key={`mod-${index}`}>{mod}</li>
+        ))}
+      </ul>
     </Tooltip>
   );
 }
+
+const styles = StyleSheet.create({
+  scoreModsList: {
+    margin: 0,
+    paddingLeft: 14,
+    fontSize: 12,
+  },
+});
