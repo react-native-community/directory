@@ -80,20 +80,24 @@ const Scoring = () => {
           Libraries with a Combined Popularity score of over 2,500 meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Recently updated" score={10}>
-          Libraries that have been updated in the last 30 days meet this criterion.
+          Libraries that have been updated in the last 45 days meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not supporting New Architecture" score={-5}>
+        <ScoringCriterion headline="Not supporting New Architecture" score={-10}>
           Libraries that does not support New Architecture meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Not updated recently" score={-10}>
           Libraries that have not been updated in the last 180 days meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Lots of open issues" score={-20}>
-          Libraries with more than 75 open issues meet this criterion.
+          Libraries with more than 50 open issues meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="No license, unrecognized license or GPL license" score={-20}>
           Libraries without a license, libraries with non-standard license or that include the GPL
           license meet this criterion.
+        </ScoringCriterion>
+        <ScoringCriterion headline="Unmaintained" score={-25}>
+          Libraries that are archived on GitHub or marked as unmaintained due to lack of activity in
+          last two years.
         </ScoringCriterion>
         <br />
         <H2 style={[styles.subHeader, textColorStyle]}>Trending Score</H2>

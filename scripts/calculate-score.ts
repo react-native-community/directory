@@ -6,7 +6,7 @@ import { type LibraryType } from '~/types';
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to the `condition` function, and if it returns `true`, the value is added to the
 // library score. Read more: https://reactnative.directory/scoring
-const MODIFIERS: {
+export const MODIFIERS: {
   name: string;
   value: number;
   condition: (data: LibraryType) => boolean;
@@ -29,7 +29,7 @@ const MODIFIERS: {
   {
     name: 'Lots of open issues',
     value: -20,
-    condition: data => data.github.stats.issues >= 75,
+    condition: data => data.github.stats.issues >= 50,
   },
   {
     name: 'No license',
@@ -47,7 +47,7 @@ const MODIFIERS: {
   {
     name: 'Recently updated',
     value: 10,
-    condition: data => getUpdatedDaysAgo(data) <= 30, // Roughly 1 month
+    condition: data => getUpdatedDaysAgo(data) <= 45, // Roughly 1.5 month
   },
   {
     name: 'Not updated recently',
@@ -56,8 +56,23 @@ const MODIFIERS: {
   },
   {
     name: 'Not supporting New Architecture',
-    value: -5,
-    condition: data => !data.newArchitecture && !data.github.newArchitecture,
+    value: -10,
+    condition: data => {
+      if (data.dev || data.template || data.expoGo) {
+        return false;
+      }
+
+      if (data.newArchitecture !== undefined) {
+        return !data.newArchitecture;
+      }
+
+      return data.github.newArchitecture !== true;
+    },
+  },
+  {
+    name: 'Unmaintained',
+    value: -25,
+    condition: data => data?.unmaintained ?? false,
   },
 ];
 
