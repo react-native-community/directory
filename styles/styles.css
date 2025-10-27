@@ -49,7 +49,7 @@ input:focus-visible  {
 
 select {
   display: flex;
-  min-width: 140px;
+  min-width: 156px;
   height: 24px;
   align-items: center;
   cursor: pointer;

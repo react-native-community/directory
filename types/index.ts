@@ -4,6 +4,7 @@ export type QueryOrder =
   | 'relevance'
   | 'updated'
   | 'added'
+  | 'released'
   | 'quality'
   | 'popularity'
   | 'issues'

@@ -29,6 +29,10 @@ const sorts: { param: QueryOrder; label: string }[] = [
     label: 'Recently Added',
   },
   {
+    param: 'released',
+    label: 'Recently Released',
+  },
+  {
     param: 'quality',
     label: 'Quality',
   },

@@ -25,6 +25,17 @@ export function updated(libraries: LibraryType[]) {
   });
 }
 
+export function released(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    if (a?.npm?.latestReleaseDate && b?.npm?.latestReleaseDate) {
+      return (
+        new Date(b.npm.latestReleaseDate).getTime() - new Date(a.npm.latestReleaseDate).getTime()
+      );
+    }
+    return 0;
+  });
+}
+
 export function quality(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.score - a.score);
 }

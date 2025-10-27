@@ -22,6 +22,7 @@ function getData(): SortedDataType {
     relevance: Sorting.relevance([...originalData]),
     size: Sorting.bundleSize([...originalData]),
     dependencies: Sorting.dependencies([...originalData]),
+    released: Sorting.released([...originalData]),
   };
 }
 
