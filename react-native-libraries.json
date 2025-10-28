@@ -5870,10 +5870,7 @@
   },
   {
     "githubUrl": "https://github.com/AndreiCalazans/rn-tooltip",
-    "examples": [
-      "https://github.com/AndreiCalazans/rn-tooltip",
-      "rn-tooltip"
-    ],
+    "examples": ["https://github.com/AndreiCalazans/rn-tooltip", "rn-tooltip"],
     "images": [
       "https://raw.githubusercontent.com/AndreiCalazans/rn-tooltip/HEAD/tooltipExample.gif"
     ],
@@ -17923,42 +17920,31 @@
   },
   {
     "githubUrl": "https://github.com/Daavidaviid/react-native-nitro-udp",
-    "examples": [
-      "https://github.com/Daavidaviid/react-native-nitro-udp/tree/main/example"
-    ],
+    "examples": ["https://github.com/Daavidaviid/react-native-nitro-udp/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/riteshshukla04/react-native-sports-car",
     "npmPkg": "react-native-sportscar",
-    "examples": [
-      "https://github.com/riteshshukla04/react-native-sports-car/tree/main/example"
-    ],
+    "examples": ["https://github.com/riteshshukla04/react-native-sports-car/tree/main/example"],
     "android": true
   },
   {
     "githubUrl": "https://github.com/corasan/react-native-mlx/tree/main/package",
     "npmPkg": "react-native-mlx",
-    "examples": [
-      "https://github.com/corasan/react-native-mlx/tree/main/example"
-    ],
+    "examples": ["https://github.com/corasan/react-native-mlx/tree/main/example"],
     "ios": true
-  }, 
+  },
   {
     "githubUrl": "https://github.com/ChrisCosentino/expo-iperf",
-    "examples": [
-      "https://github.com/ChrisCosentino/expo-iperf/tree/main/example"
-    ],
+    "examples": ["https://github.com/ChrisCosentino/expo-iperf/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-device-info",
-    "npmPkg": "react-native-nitro-device-info",
-    "examples": [
-      "https://github.com/l2hyunwoo/react-native-nitro-device-info/tree/main/example"
-    ],
+    "examples": ["https://github.com/l2hyunwoo/react-native-nitro-device-info/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
