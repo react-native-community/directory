@@ -10,6 +10,7 @@ import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
 import { type APIResponseType, type LibraryDataEntryType, type LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
+import { getNewArchSupportStatus } from '~/util/newArchStatus';
 import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
@@ -30,6 +31,7 @@ const SCRAPE_GH_IMAGES = false;
 
 const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
 const DATA_PATH = path.resolve('assets', 'data.json');
+const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 const CHUNK_SIZE = 25;
 const SLEEP_TIME = 250;
@@ -219,8 +221,10 @@ async function buildAndScoreData() {
           }
     );
 
-    const finalData = dataWithFallback.filter(({ npmPkg }) => existingPackages.includes(npmPkg));
     const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
+    const finalData = dataWithFallback
+      .filter(({ npmPkg }) => existingPackages.includes(npmPkg))
+      .filter((entry: LibraryType) => validEntries.includes(entry.githubUrl));
 
     const sortedTopicCounts = Object.fromEntries(
       Object.entries(topicCounts).sort((a, b) => b[1] - a[1])
@@ -228,22 +232,36 @@ async function buildAndScoreData() {
 
     fileContent = JSON.stringify(
       {
-        libraries: finalData.filter((entry: LibraryType) => {
-          return validEntries.includes(entry.githubUrl);
-        }),
+        libraries: finalData,
         topics: sortedTopicCounts,
         topicsList: Object.keys(topicCounts).sort(),
       },
       null,
       2
     );
+
+    createCheckEndpointData(finalData);
   }
 
   if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
     await uploadToStore(fileContent);
   }
 
-  return fs.writeFileSync(DATA_PATH, fileContent);
+  fs.writeFileSync(DATA_PATH, fileContent);
+}
+
+export function createCheckEndpointData(libraries: LibraryType[]) {
+  const checkData = Object.fromEntries(
+    libraries.map(library => [
+      library.npmPkg,
+      {
+        unmaintained: library.unmaintained,
+        newArchitecture: getNewArchSupportStatus(library),
+      },
+    ])
+  );
+
+  fs.writeFileSync(CHECK_DATA_PATH, JSON.stringify(checkData, null, 2));
 }
 
 export async function fetchGithubDataThrottled({

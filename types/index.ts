@@ -1,5 +1,7 @@
 import { type ReactElement, type ReactNode } from 'react';
 
+import { type NewArchSupportStatus } from '~/util/newArchStatus';
+
 export type QueryOrder =
   | 'relevance'
   | 'updated'
@@ -172,3 +174,11 @@ export type RepositoryTreeNode = {
   name: string;
   type: 'tree' | 'blob';
 };
+
+export type CheckResultsType = Record<
+  string,
+  {
+    unmaintained?: boolean;
+    newArchitecture: NewArchSupportStatus;
+  }
+>;
