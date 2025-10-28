@@ -17952,5 +17952,15 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-device-info",
+    "npmPkg": "react-native-nitro-device-info",
+    "examples": [
+      "https://github.com/l2hyunwoo/react-native-nitro-device-info/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
