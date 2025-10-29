@@ -3929,7 +3929,8 @@
     "githubUrl": "https://github.com/APSL/react-native-keyboard-aware-scroll-view",
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "alternatives": ["react-native-keyboard-controller"]
   },
   {
     "githubUrl": "https://github.com/slorber/react-native-scroll-into-view",
