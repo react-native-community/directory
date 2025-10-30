@@ -161,6 +161,10 @@ export function handleFilterLibraries({
       return false;
     }
 
+    if (support.horizon && !library.horizon) {
+      return false;
+    }
+
     if (support.expoGo && !library.expoGo) {
       return false;
     }

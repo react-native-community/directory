@@ -76,6 +76,15 @@
           true
         ]
       },
+      "horizon": {
+        "$id": "#/items/properties/horizon",
+        "type": "boolean",
+        "title": "Package is compatible with Meta Horizon OS",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
       "vegaos": {
         "$id": "#/items/properties/vegaos",
         "type": [
