@@ -29,7 +29,7 @@ const Scoring = () => {
       <PageMeta
         title="Scoring"
         description="What are the Directory Score and Trending Score and how they are calculated"
-        path="popular"
+        path="scoring"
       />
       <Navigation
         title="Scoring"

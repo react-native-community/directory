@@ -27,10 +27,10 @@ function Thumbnail({ url }: Props) {
 
   const iconFill = isDark
     ? showPreview
-      ? colors.primary
+      ? colors.primaryDark
       : darkColors.pewter
     : showPreview
-      ? colors.primary
+      ? colors.primaryDark
       : undefined;
 
   return (

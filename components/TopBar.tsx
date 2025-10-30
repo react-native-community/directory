@@ -9,7 +9,7 @@ import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 import { Button } from './Button';
-import { GitHub, Logo, Plus, ThemeDark, ThemeLight } from './Icons';
+import { GitHub, Logo, Plus, ThemeDark, ThemeLight, Tools } from './Icons';
 import Tooltip from './Tooltip';
 
 export default function TopBar() {
@@ -66,6 +66,19 @@ export default function TopBar() {
               </View>
             }>
             Toggle theme
+          </Tooltip>
+          <Tooltip
+            trigger={
+              <View>
+                <Button
+                  aria-label="Tools"
+                  href="/tools"
+                  style={[styles.button, styles.themeButtonSmall]}>
+                  <Tools fill={colors.white} />
+                </Button>
+              </View>
+            }>
+            Tools
           </Tooltip>
           <Tooltip
             trigger={
