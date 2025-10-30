@@ -28,7 +28,7 @@ export function Button({ children, href, onPress, style, openInNewTab, ...rest }
       {isLink ? (
         <A
           href={href}
-          style={{ borderRadius: 4, fontFamily: 'inherit' }}
+          style={{ borderRadius: 4, fontFamily: 'inherit', fontSize: 'inherit' }}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
           <Pressable focusable={false} style={linkStyle} accessible={false}>
