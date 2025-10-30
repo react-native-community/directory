@@ -58,6 +58,7 @@
   "visionos": false,
   "expoGo": false,
   "fireos": false,
+  "horizon": false,
   "vegaos": false,
   "newArchitecture": false,
   "configPlugin": false,
@@ -131,6 +132,8 @@
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
 - #### `fireos`
   **(boolean)** - works on Amazon Fire OS.
+- #### `horizon`
+**(boolean)** - works on Meta Horizon OS.
 - #### `vegaos`
   **(boolean|string)** - works with [Vega OS](https://developer.amazon.com/apps-and-games/vega). It can also be a string containing npm package name, if a separate/additional package is required for full support.
 

@@ -88,6 +88,10 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
     title: 'Works with Fire OS',
   },
   {
+    param: 'horizon',
+    title: 'Works with Meta Horizon OS',
+  },
+  {
     param: 'vegaos',
     title: 'Works with Vega OS',
   },

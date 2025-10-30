@@ -17949,5 +17949,24 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/expo-horizon/tree/main/expo-horizon-core",
+    "examples": ["https://github.com/software-mansion-labs/expo-horizon/tree/main/example"],
+    "android": true,
+    "horizon": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/expo-horizon/tree/main/expo-horizon-location",
+    "android": true,
+    "horizon": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/expo-horizon/tree/main/expo-horizon-notifications",
+    "android": true,
+    "horizon": true,
+    "newArchitecture": true
   }
 ]

@@ -26,6 +26,7 @@ export type Query = {
   tvos?: string;
   visionos?: string;
   vegaos?: string;
+  horizon?: string;
   web?: string;
   windows?: string;
   order?: QueryOrder;
@@ -137,6 +138,7 @@ export type LibraryDataEntryType = {
   windows?: boolean;
   macos?: boolean;
   fireos?: boolean;
+  horizon?: boolean;
   tvos?: boolean;
   visionos?: boolean;
   vegaos?: boolean | string;

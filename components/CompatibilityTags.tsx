@@ -64,7 +64,7 @@ export function CompatibilityTags({ library }: Props) {
           />
         ) : null
       )}
-      {(library.expoGo || library.fireos || library.vegaos) && (
+      {(library.expoGo || library.fireos || library.vegaos || library.horizon) && (
         <Tooltip
           side="bottom"
           trigger={
@@ -77,6 +77,7 @@ export function CompatibilityTags({ library }: Props) {
           <ul style={styles.compatibilityList}>
             {library.expoGo && <li>Works with Expo Go</li>}
             {library.fireos && <li>Works with Fire OS</li>}
+            {library.horizon && <li>Works with Meta Horizon OS</li>}
             {library.vegaos && typeof library.vegaos === 'boolean' && <li>Works with Vega OS</li>}
             {library.vegaos && typeof library.vegaos === 'string' && (
               <li>
