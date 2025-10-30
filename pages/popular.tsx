@@ -94,6 +94,7 @@ const Popular = ({ data }: Props) => {
           filter={lib => lib.expoGo === true}
         />
         <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
+        <ExploreSection title="Vega OS" data={data} filter={lib => !!lib.vegaos} />
       </ContentContainer>
     </>
   );
@@ -101,7 +102,13 @@ const Popular = ({ data }: Props) => {
 
 Popular.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(
-    urlWithQuery('/libraries', { limit: '9999', minPopularity: '5', order: 'popularity' }),
+    urlWithQuery('/libraries', {
+      limit: '9999',
+      minPopularity: '15',
+      order: 'popularity',
+      skipTools: 'true',
+      skipTemplates: 'true',
+    }),
     ctx
   );
   const response = await fetch(url);
