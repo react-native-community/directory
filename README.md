@@ -133,7 +133,7 @@
 - #### `fireos`
   **(boolean)** - works on Amazon Fire OS.
 - #### `horizon`
-**(boolean)** - works on Meta Horizon OS.
+  **(boolean)** - works on Meta Horizon OS.
 - #### `vegaos`
   **(boolean|string)** - works with [Vega OS](https://developer.amazon.com/apps-and-games/vega). It can also be a string containing npm package name, if a separate/additional package is required for full support.
 
