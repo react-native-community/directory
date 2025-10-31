@@ -17968,5 +17968,47 @@
     "android": true,
     "horizon": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-onboarding",
+    "npmPkg": "@blazejkustra/react-native-onboarding",
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-onboarding/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/expo-live-updates",
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-onboarding/tree/main/example"
+    ],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ChainPlatform/react-native-splash",
+    "npmPkg": "@chainplatform/splash",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/customerio/customerio-reactnative",
+    "examples": [
+      "https://github.com/customerio/customerio-reactnative/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "configPlugin": "https://github.com/customerio/customerio-expo-plugin"
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/ai",
+    "npmPkg": "@react-native-firebase/ai",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
