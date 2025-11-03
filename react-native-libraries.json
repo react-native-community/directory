@@ -18030,5 +18030,18 @@
     "npmPkg": "@levpotapov/react-native-windows-cursor",
     "examples": ["https://github.com/LevPotapov/react-native-windows-cursor/tree/main/example"],
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/mCodex/react-native-sized-webview",
+    "examples": [
+      "https://github.com/mCodex/react-native-sized-webview/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
