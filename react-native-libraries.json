@@ -17997,9 +17997,7 @@
   },
   {
     "githubUrl": "https://github.com/customerio/customerio-reactnative",
-    "examples": [
-      "https://github.com/customerio/customerio-reactnative/tree/main/example"
-    ],
+    "examples": ["https://github.com/customerio/customerio-reactnative/tree/main/example"],
     "android": true,
     "ios": true,
     "configPlugin": "https://github.com/customerio/customerio-expo-plugin"
@@ -18010,5 +18008,27 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/borndotcom/react-native-godot",
+    "npmPkg": "@borndotcom/react-native-godot",
+    "examples": ["https://github.com/borndotcom/react-native-godot/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/mybigday/react-native-web-sound",
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/starburst997/react-native-video-desktop",
+    "npmPkg": "@jdboivin/react-native-video-desktop",
+    "macos": true
+  },
+  {
+    "githubUrl": "https://github.com/LevPotapov/react-native-windows-cursor",
+    "npmPkg": "@levpotapov/react-native-windows-cursor",
+    "examples": ["https://github.com/LevPotapov/react-native-windows-cursor/tree/main/example"],
+    "windows": true
   }
 ]
