@@ -10,7 +10,7 @@ const GITHUB_URL_CLEANUP_REGEX =
   /^https?:\/\/(?:www\.)?github\.com\/([^/]+\/[^/]+)(?:$|\/|\.git).*$/;
 
 function calculateMatchScore(
-  { github, npmPkg, topicSearchString, unmaintained, githubUrl }: LibraryType,
+  { github, npmPkg, topicSearchString, unmaintained, githubUrl, vegaos }: LibraryType,
   querySearch: string
 ) {
   const exactNameMatchPoints =
@@ -48,6 +48,9 @@ function calculateMatchScore(
   const repoNameMatchPoints =
     !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 50 : 0;
 
+  const vegaOSPackageMatchPoints =
+    typeof vegaos === 'string' && vegaos.includes(querySearch) ? 50 : 0;
+
   const descriptionMatchPoints =
     !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
       ? 25
@@ -58,6 +61,7 @@ function calculateMatchScore(
   const matchScore =
     exactNameMatchPoints +
     repoNameMatchPoints +
+    vegaOSPackageMatchPoints +
     cleanedUpNameMatchPoints +
     npmPkgNameMatchPoints +
     gitHubURLOrOwnerMatchPoints +
