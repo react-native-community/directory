@@ -18055,5 +18055,17 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/flexsurfer/reflex",
+    "npmPkg": "@flexsurfer/reflex",
+    "examples": [
+      "https://github.com/flexsurfer/reflex/tree/main/examples/todomvc",
+      "https://github.com/flexsurfer/einburgerungstest"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
