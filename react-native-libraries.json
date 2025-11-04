@@ -18033,6 +18033,19 @@
     "windows": true
   },
   {
+    "githubUrl": "https://github.com/mCodex/react-native-sized-webview",
+    "examples": [
+      "https://github.com/mCodex/react-native-sized-webview/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": true,
+    "macos": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/khokanuzzaman/react-native-zero-permission-picker",
     "npmPkg": "react-native-files-picker",
     "examples": ["https://github.com/khokanuzzaman/react-native-zero-permission-picker/tree/main/example"],
