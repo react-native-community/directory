@@ -18031,5 +18031,13 @@
     "npmPkg": "@levpotapov/react-native-windows-cursor",
     "examples": ["https://github.com/LevPotapov/react-native-windows-cursor/tree/main/example"],
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/khokanuzzman/react-native-files-picker",
+    "npmPkg": "react-native-files-picker",
+    "examples": ["https://github.com/khokanuzzman/react-native-files-picker/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/khokanuzzman/react-native-files-picker/main/docs/screenshots/example-app-main.jpeg"],
+    "ios": true,
+    "android": true
   }
 ]
