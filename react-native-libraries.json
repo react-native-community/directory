@@ -18033,12 +18033,12 @@
     "windows": true
   },
   {
-    "githubUrl": "https://github.com/khokanuzzman/react-native-files-picker",
+    "githubUrl": "https://github.com/khokanuzzaman/react-native-zero-permission-picker",
     "npmPkg": "react-native-files-picker",
-    "examples": ["https://github.com/khokanuzzman/react-native-files-picker/tree/main/example"],
+    "examples": ["https://github.com/khokanuzzaman/react-native-zero-permission-picker/tree/main/example"],
     "images": [
-      "https://raw.githubusercontent.com/khokanuzzman/react-native-files-picker/main/docs/screenshots/example-app-main.jpeg",
-      "https://raw.githubusercontent.com/khokanuzzman/react-native-files-picker/main/docs/screenshots/selected-item.jpeg"
+      "https://raw.githubusercontent.com/khokanuzzaman/react-native-zero-permission-picker/main/docs/screenshots/example-app-main.jpeg",
+      "https://raw.githubusercontent.com/khokanuzzaman/react-native-zero-permission-picker/main/docs/screenshots/selected-item.jpeg"
     ],
     "ios": true,
     "android": true
