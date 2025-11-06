@@ -18078,5 +18078,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tristanmanchester/react-native-dotgrid",
+    "npmPkg": "react-native-dotgrid",
+    "examples": ["https://github.com/tristanmanchester/react-native-dotgrid/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/tristanmanchester/react-native-dotgrid/main/demos/wave.webp",
+      "https://raw.githubusercontent.com/tristanmanchester/react-native-dotgrid/main/demos/snake.webp",
+      "https://raw.githubusercontent.com/tristanmanchester/react-native-dotgrid/main/demos/showcase.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
