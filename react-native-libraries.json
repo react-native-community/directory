@@ -18080,6 +18080,15 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/Gautham495/react-native-speech-recognition-kit",
+    "examples": [
+      "https://github.com/Gautham495/react-native-speech-recognition-kit/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/tristanmanchester/react-native-dotgrid",
     "npmPkg": "react-native-dotgrid",
     "examples": ["https://github.com/tristanmanchester/react-native-dotgrid/tree/main/example"],
