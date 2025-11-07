@@ -18109,17 +18109,6 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/JairajJangle/react-native-navigation-mode",
-    "examples": ["https://github.com/JairajJangle/react-native-navigation-mode/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/JairajJangle/react-native-navigation-mode/refs/heads/main/.github/assets/buttons.png",
-      "https://raw.githubusercontent.com/JairajJangle/react-native-navigation-mode/refs/heads/main/.github/assets/gesture.png"
-    ],
-    "ios": true,
-    "android": true,
-    "newArchitecture": "new-arch-only"
-  },
-  {
     "githubUrl": "https://github.com/Flagsmith/flagsmith-js-client/tree/main/lib/react-native-flagsmith",
     "examples": ["https://github.com/Flagsmith/flagsmith-js-examples/tree/main/reactnative"],
     "ios": true,
