@@ -3,39 +3,57 @@ import { fetch } from 'bun';
 import { type LibraryDataEntryType } from '~/types';
 
 import libraries from '../react-native-libraries.json';
-import { sleep } from './helpers';
 
-async function runThrottledFetches(libraries: LibraryDataEntryType[], delayMs = 50) {
-  const urlList: string[] = [];
+const CONCURRENCY = 8;
 
-  for (const lib of libraries) {
-    if (lib.examples) {
-      for (const exampleUrl of lib.examples) {
-        urlList.push(exampleUrl);
-      }
+async function fetchUrl(url: string) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    if (res.status !== 200) {
+      console.warn(`❌ ${url} → ${res.status}`);
     }
-    if (lib.images) {
-      for (const imgUrl of lib.images) {
-        urlList.push(imgUrl);
-      }
+  } catch (err) {
+    if (err instanceof DOMException) {
+      console.warn(`❌ ${url} failed to fetch:`, err.message);
+    } else {
+      console.warn(`❌ ${url} failed to fetch!`);
     }
-  }
-
-  console.log(`⬇️ Attempting to fetch examples and images (${urlList.length} URLs)`);
-
-  for (const url of urlList) {
-    try {
-      const response = await fetch(url);
-      if (response.status !== 200) {
-        console.warn(`${url} returned ${response.status}`);
-      }
-    } catch (err: any) {
-      console.warn(`${url} errored!`, err);
-    }
-    await sleep(delayMs);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
-runThrottledFetches(libraries).catch(err => {
-  console.error('❌ Unexpected error in throttled fetcher:', err);
-});
+async function runFetches(libraries: LibraryDataEntryType[]) {
+  const urls = libraries.flatMap(lib => [...(lib.examples ?? []), ...(lib.images ?? [])]);
+
+  console.log(`⬇️ Fetching ${urls.length} URLs with concurrency of ${CONCURRENCY} requests`);
+
+  let current = 0;
+  let completed = 0;
+
+  async function fetcher() {
+    while (true) {
+      const index = current++;
+      if (index >= urls.length) {
+        break;
+      }
+
+      await fetchUrl(urls[index]);
+
+      completed++;
+      if (completed % 100 === 0 || completed === urls.length) {
+        console.log(`⏩ ${completed}/${urls.length} done`);
+      }
+    }
+  }
+
+  const batches = Array.from({ length: CONCURRENCY }, fetcher);
+  await Promise.all(batches);
+
+  console.log('✅ All fetches finished!');
+}
+
+runFetches(libraries).catch(err => console.error('❌ Unexpected error:', err));
