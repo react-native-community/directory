@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
     paths-ignore:
+      - .vscode
+      - '**.md'
       - react-native-libraries.json
+      - react-native-libraries.schema.json
   schedule:
     # Run every 3 hours - https://crontab.guru/#0_*/3_*_*_*
     - cron: '0 */3 * * *'
