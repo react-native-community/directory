@@ -1,9 +1,8 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/react-native-community/directory/blob/main/react-native-libraries.schema.json",
   "type": "array",
-  "title": "React Native Directory entries",
+  "title": "React Native Directory entries list",
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -37,7 +36,7 @@
         "default": false
       },
       "web": {
-        "$id": "#/items/properties/android",
+        "$id": "#/items/properties/web",
         "type": "boolean",
         "title": "Package supports Web (react-native-web)",
         "default": false
@@ -61,7 +60,7 @@
         "default": false
       },
       "visionos": {
-        "$id": "#/items/properties/tvos",
+        "$id": "#/items/properties/visionos",
         "type": "boolean",
         "title": "Package supports visionOS (react-native-visionos)",
         "default": false
