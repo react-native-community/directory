@@ -18107,5 +18107,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/adelbeke/react-native-speech-to-text",
+    "npmPkg": "@dbkable/react-native-speech-to-text",
+    "examples": [
+      "https://github.com/adelbeke/react-native-speech-to-text/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
