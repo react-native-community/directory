@@ -151,7 +151,7 @@
       "dev": {
         "$id": "#/items/properties/dev",
         "type": "boolean",
-        "title": "Package is a Development Tool (should be installed as 'devDependency' or used via `npx/bunx`)",
+        "title": "Package is a Development Tool (should be installed as `devDependency` or used via `npx/bunx`)",
         "default": false
       },
       "template": {
@@ -190,7 +190,7 @@
           "boolean",
           "string"
         ],
-        "title": "Package has Expo config plugin",
+        "title": "Package includes Expo config plugin or confing plugin is available via separate package. Can be a boolean, or URL pointing to GitHub repository of config plugin package.",
         "default": false,
         "examples": [
           true,
