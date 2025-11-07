@@ -14,21 +14,22 @@ function calculateMatchScore(
   querySearch: string
 ) {
   const exactNameMatchPoints =
-    (!isEmptyOrNull(github.name) && github.name === querySearch) ||
-    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch)
+    (!isEmptyOrNull(github.name) && github.name.toLowerCase() === querySearch) ||
+    (!isEmptyOrNull(githubUrl) && githubUrl.toLowerCase() === querySearch) ||
+    (!isEmptyOrNull(npmPkg) && npmPkg.toLowerCase() === querySearch)
       ? 300
       : 0;
 
   const npmPkgNameMatchPoints =
     !isEmptyOrNull(npmPkg) &&
     (npmPkg.includes(querySearch) ||
-      npmPkg.replaceAll(NPM_NAME_CLEANUP_REGEX, ' ').includes(querySearch))
+      npmPkg.replaceAll(NPM_NAME_CLEANUP_REGEX, ' ').toLowerCase().includes(querySearch))
       ? 200
       : 0;
 
   const gitHubURLOrOwnerMatchPoints =
     githubUrl.startsWith(querySearch) ||
-    githubUrl.replace(GITHUB_URL_CLEANUP_REGEX, '$1').includes(querySearch)
+    githubUrl.replace(GITHUB_URL_CLEANUP_REGEX, '$1').toLowerCase().includes(querySearch)
       ? 150
       : 0;
 
@@ -36,6 +37,7 @@ function calculateMatchScore(
     .replace('react-native', '')
     .replace('react', '')
     .replaceAll(/[-/]/g, ' ')
+    .toLowerCase()
     .trim();
 
   const cleanedUpNameMatchPoints =
@@ -46,7 +48,7 @@ function calculateMatchScore(
       : 0;
 
   const repoNameMatchPoints =
-    !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 50 : 0;
+    !isEmptyOrNull(github.name) && github.name.toLowerCase().includes(querySearch) ? 50 : 0;
 
   const vegaOSPackageMatchPoints =
     typeof vegaos === 'string' && vegaos.includes(querySearch) ? 50 : 0;
