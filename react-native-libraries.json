@@ -18252,5 +18252,18 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/johelder/react-native-input-code-otp",
+    "npmPkg": "react-native-input-code-otp",
+    "examples": [
+      "https://github.com/johelder/react-native-input-code-otp/tree/main/example",
+      "https://snack.expo.dev/@johelder/demo-react-native-input-code-otp"
+    ],
+    "images": ["https://raw.githubusercontent.com/johelder/react-native-input-code-otp/refs/heads/main/.github/assets/react-native-input-code-otp.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
