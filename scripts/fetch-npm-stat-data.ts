@@ -1,6 +1,8 @@
 import { fetch } from 'bun';
 
-import { sleep, REQUEST_SLEEP } from './helpers';
+import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data';
+
+import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 
@@ -11,26 +13,28 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
     const response = await fetch(url);
     const downloadData = await response.json();
 
-    return namesArray.map(name => {
-      const pkgData = downloadData[name];
+    return await Promise.all(
+      namesArray.map(async name => {
+        const pkgData = downloadData[name];
 
-      if (pkgData && Object.keys(pkgData).length <= 0) {
-        console.warn(
-          `[npm-stat] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
-        );
-        return { npm: null };
-      }
+        if (pkgData && Object.keys(pkgData).length <= 0) {
+          console.warn(
+            `[npm-stat] ${name} doesn't not return any downloads data, falling back to npm downloads API!`
+          );
+          return await fallbackFetchNpmDownloadData(name);
+        }
 
-      const downloadCountsPerDay: number[] = Object.values(pkgData);
+        const downloadCountsPerDay: number[] = Object.values(pkgData);
 
-      return {
-        name,
-        npm: {
-          downloads: downloadCountsPerDay.reduce((sum, value) => sum + value, 0),
-          weekDownloads: downloadCountsPerDay.slice(0, 6).reduce((sum, value) => sum + value, 0),
-        },
-      };
-    });
+        return {
+          name,
+          npm: {
+            downloads: downloadCountsPerDay.reduce((sum, value) => sum + value, 0),
+            weekDownloads: downloadCountsPerDay.slice(0, 6).reduce((sum, value) => sum + value, 0),
+          },
+        };
+      })
+    );
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
       console.error('[npm-stat] Looks like we have reach the npm-stat API rate limit!');

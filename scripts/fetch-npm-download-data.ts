@@ -42,3 +42,41 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
     return await fetchNpmDownloadData(pkgData, attemptsCount + 1);
   }
 }
+
+export async function fallbackFetchNpmDownloadData(name: string) {
+  try {
+    const monthlyUrl = urlForPackage(name);
+    const monthlyResponse = await fetch(monthlyUrl);
+    const monthlyDownloadData = await monthlyResponse.json();
+
+    if (!monthlyDownloadData.package) {
+      console.warn(
+        `[NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+      );
+      return { name, npm: null };
+    }
+
+    const weeklyUrl = urlForPackage(name);
+    const weeklyResponse = await fetch(weeklyUrl);
+    const weeklyDownloadData = await weeklyResponse.json();
+
+    if (!weeklyDownloadData.package) {
+      console.warn(
+        `[NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+      );
+      return { name, npm: null };
+    }
+
+    return {
+      name,
+      npm: {
+        downloads: monthlyDownloadData.downloads as number,
+        weekDownloads: weeklyDownloadData.downloads as number,
+      },
+    };
+  } catch (error) {
+    console.error('[NPM DOWNLOADS API] Looks like we have reach the NPM API rate limit!');
+    console.error(error);
+    return { name, npm: null };
+  }
+}
