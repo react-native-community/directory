@@ -1,6 +1,6 @@
 import { Picker } from '@react-native-picker/picker';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { colors, darkColors, P } from '~/common/styleguide';
@@ -15,7 +15,91 @@ type SortButtonProps = {
   query: Query;
 };
 
-const sorts: { param: QueryOrder; label: string }[] = [
+export const SortButton = ({
+  query: { order, direction, offset, search },
+  query,
+}: SortButtonProps) => {
+  const [isSortIconHovered, setIsSortIconHovered] = useState(false);
+
+  const { asPath, push } = useRouter();
+  const { isDark } = useContext(CustomAppearanceContext);
+
+  const currentSortValue: QueryOrder | undefined = order;
+  const currentDirection: QueryOrderDirection | undefined = direction;
+
+  function updatePath(url: string) {
+    if (url !== asPath) {
+      void push(url);
+    }
+  }
+
+  return (
+    <View
+      style={[
+        styles.container,
+        styles.displayHorizontal,
+        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
+      ]}>
+      <View style={styles.displayHorizontal}>
+        <Tooltip
+          sideOffset={8}
+          trigger={
+            <Pressable
+              onHoverIn={() => setIsSortIconHovered(true)}
+              onHoverOut={() => setIsSortIconHovered(false)}
+              style={currentDirection === 'ascending' && styles.flippedIcon}
+              aria-label="Toggle sort direction"
+              role="button"
+              onPress={() => {
+                updatePath(
+                  urlWithQuery('/', {
+                    ...query,
+                    direction: currentDirection === 'ascending' ? 'descending' : 'ascending',
+                  })
+                );
+              }}>
+              <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
+            </Pressable>
+          }>
+          Toggle sort order
+        </Tooltip>
+        <P style={styles.title}>Sort:</P>
+      </View>
+      <View style={styles.pickerContainer}>
+        <Picker
+          id="sort-order"
+          aria-label="Sort order"
+          selectedValue={currentSortValue ?? (search ? 'relevance' : 'updated')}
+          style={[
+            styles.picker,
+            {
+              backgroundColor: isDark ? darkColors.border : 'transparent',
+            },
+          ]}
+          onValueChange={value => {
+            updatePath(
+              urlWithQuery('/', {
+                ...query,
+                order: value,
+                offset: null,
+              })
+            );
+          }}>
+          {SORTS.map(sort => (
+            <Picker.Item
+              key={sort.param}
+              value={sort.param}
+              label={sort.label}
+              color={isDark ? colors.white : colors.black}
+            />
+          ))}
+        </Picker>
+      </View>
+    </View>
+  );
+};
+
+const SORTS: { param: QueryOrder; label: string }[] = [
   {
     param: 'relevance',
     label: 'Relevance',
@@ -61,90 +145,6 @@ const sorts: { param: QueryOrder; label: string }[] = [
     label: 'Bundle Size',
   },
 ];
-
-export const SortButton = ({ query: { order, direction, offset }, query }: SortButtonProps) => {
-  const [sortValue, setSortValue] = useState<QueryOrder | undefined>(order);
-  const [sortDirection, setSortDirection] = useState<QueryOrderDirection | undefined>(direction);
-  const [paginationOffset, setPaginationOffset] = useState<string | null | undefined>(
-    typeof offset === 'string' ? offset : offset
-  );
-  const [isSortIconHovered, setIsSortIconHovered] = useState(false);
-
-  const { pathname, push } = useRouter();
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  useEffect(() => {
-    const url = urlWithQuery('/', {
-      ...query,
-      order: sortValue,
-      direction: sortDirection,
-      offset: paginationOffset,
-    });
-    if (url !== pathname) {
-      void push(url);
-    }
-  }, [sortValue, sortDirection, paginationOffset]);
-
-  return (
-    <View
-      style={[
-        styles.container,
-        styles.displayHorizontal,
-        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
-      ]}>
-      <View style={styles.displayHorizontal}>
-        <Tooltip
-          sideOffset={8}
-          trigger={
-            <Pressable
-              onHoverIn={() => setIsSortIconHovered(true)}
-              onHoverOut={() => setIsSortIconHovered(false)}
-              style={sortDirection === 'ascending' && styles.flippedIcon}
-              aria-label="Toggle sort direction"
-              role="button"
-              onPress={() => {
-                setSortDirection(previousOrder =>
-                  previousOrder === 'ascending' ? 'descending' : 'ascending'
-                );
-                if (!sortValue) {
-                  setSortValue('relevance');
-                }
-              }}>
-              <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
-            </Pressable>
-          }>
-          Toggle sort order
-        </Tooltip>
-        <P style={styles.title}>Sort:</P>
-      </View>
-      <View style={styles.pickerContainer}>
-        <Picker
-          id="sort-order"
-          aria-label="Sort order"
-          selectedValue={sortValue}
-          style={[
-            styles.picker,
-            {
-              backgroundColor: isDark ? darkColors.border : 'transparent',
-            },
-          ]}
-          onValueChange={value => {
-            setPaginationOffset(null);
-            setSortValue(value);
-          }}>
-          {sorts.map(sort => (
-            <Picker.Item
-              key={sort.param}
-              value={sort.param}
-              label={sort.label}
-              color={isDark ? colors.white : colors.black}
-            />
-          ))}
-        </Picker>
-      </View>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
