@@ -23,6 +23,7 @@ const Search = ({ query, total }: Props) => {
   const { search, order, direction, offset, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
+
   const isApple = useMemo<boolean>(() => isAppleDevice(), []);
   const inputRef = useRef<TextInput>(null);
 
@@ -43,12 +44,18 @@ const Search = ({ query, total }: Props) => {
     }
   }, [isApple]);
 
+  useEffect(() => {
+    if (inputRef?.current && !search) {
+      inputRef.current.clear();
+    }
+  }, [search]);
+
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 200);
 
   function handleClearAllPress() {
-    void replace(urlWithQuery('/', { search: query.search, offset: undefined }));
+    void replace(urlWithQuery('/', { search, offset: undefined }));
   }
 
   return (
