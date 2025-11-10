@@ -16168,10 +16168,11 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/SolankiYogesh/rn-turbo-location-enabler",
-    "examples": ["https://github.com/SolankiYogesh/rn-turbo-location-enabler/tree/main/example"],
+    "githubUrl": "https://github.com/SolankiYogesh/react-native-nitro-location-enabler",
+    "examples": ["https://github.com/SolankiYogesh/react-native-nitro-location-enabler/tree/main/example"],
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "npmPkg":"rn-nitro-location-enabler"
   },
   {
     "githubUrl": "https://github.com/Iterable/react-native-sdk",
@@ -18266,5 +18267,26 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SolankiYogesh/react-native-nitro-share-intent",
+    "examples": ["https://github.com/SolankiYogesh/react-native-nitro-share-intent/tree/main/example"],
+    "android": true,
+     "ios": true,
+    "newArchitecture": true
+  },
+    {
+    "githubUrl": "https://github.com/SolankiYogesh/react-native-nitro-image-colors",
+    "examples": ["https://github.com/SolankiYogesh/react-native-nitro-image-colors/tree/main/example"],
+    "android": true,
+     "ios": true,
+    "newArchitecture": true
+  },
+      {
+    "githubUrl": "https://github.com/SolankiYogesh/react-native-nitro-video-metadata",
+    "examples": ["https://github.com/SolankiYogesh/react-native-nitro-video-metadata/tree/main/example"],
+    "android": true,
+     "ios": true,
+    "newArchitecture": true
   }
 ]
