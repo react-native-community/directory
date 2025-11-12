@@ -3,9 +3,9 @@ import { View, type ViewProps, StyleSheet } from 'react-native';
 
 import { layout } from '~/common/styleguide';
 
-const ContentContainer = ({ children, style }: PropsWithChildren<ViewProps>) => (
-  <View style={[styles.container, style]}>{children}</View>
-);
+export default function ContentContainer({ children, style }: PropsWithChildren<ViewProps>) {
+  return <View style={[styles.container, style]}>{children}</View>;
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -15,5 +15,3 @@ const styles = StyleSheet.create({
     margin: 'auto',
   },
 });
-
-export default ContentContainer;

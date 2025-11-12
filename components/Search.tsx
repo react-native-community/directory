@@ -19,7 +19,7 @@ type Props = {
   total: number;
 };
 
-const Search = ({ query, total }: Props) => {
+export default function Search({ query, total }: Props) {
   const { search, order, direction, offset, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
@@ -33,12 +33,12 @@ const Search = ({ query, total }: Props) => {
 
   useEffect(() => {
     if (isApple !== null) {
-      const keyDownListener = (event: KeyboardEvent) => {
+      function keyDownListener(event: KeyboardEvent) {
         if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
           event.preventDefault();
           inputRef.current?.focus();
         }
-      };
+      }
       document.addEventListener('keydown', keyDownListener, false);
       return () => document.removeEventListener('keydown', keyDownListener);
     }
@@ -189,7 +189,7 @@ const Search = ({ query, total }: Props) => {
       {isFilterVisible && <Filters query={query} />}
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -263,5 +263,3 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
-
-export default Search;

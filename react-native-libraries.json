@@ -8652,9 +8652,12 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/th3rdwave/react-navigation-bottom-sheet",
-    "npmPkg": "@th3rdwave/react-navigation-bottom-sheet",
-    "examples": ["https://github.com/th3rdwave/react-navigation-bottom-sheet/tree/main/example"],
+    "githubUrl": "https://github.com/AppAndFlow/react-navigation-bottom-sheet",
+    "npmPkg": "@appandflow/react-navigation-bottom-sheet",
+    "examples": [
+      "https://github.com/AppAndFlow/react-navigation-bottom-sheet/tree/main/example/expo-router",
+      "https://github.com/AppAndFlow/react-navigation-bottom-sheet/tree/main/example/react-navigation"
+    ],
     "ios": true,
     "android": true
   },

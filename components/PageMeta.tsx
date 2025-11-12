@@ -14,7 +14,12 @@ type PageMetaProps = {
   searchQuery?: string | string[];
 };
 
-const PageMeta = ({ title, searchQuery, path, description = site.description }: PageMetaProps) => {
+export default function PageMeta({
+  title,
+  searchQuery,
+  path,
+  description = site.description,
+}: PageMetaProps) {
   const pageTitle = `${title ? title + ' • ' : ''}${site.title}`;
   const parsedSearchQuery = Array.isArray(searchQuery) ? searchQuery[0] : searchQuery;
   const finalDescription = parsedSearchQuery
@@ -42,6 +47,4 @@ const PageMeta = ({ title, searchQuery, path, description = site.description }: 
       <link rel="canonical" href={`https://reactnative.directory${path ? `/${path}` : ''}`} />
     </Head>
   );
-};
-
-export default PageMeta;
+}

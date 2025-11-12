@@ -13,7 +13,7 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => <LoadingContent />,
 });
 
-const Libraries = ({ libraries }: Props) => {
+export default function Libraries({ libraries }: Props) {
   if (!libraries || !libraries.length) {
     return (
       <View style={styles.container}>
@@ -36,7 +36,7 @@ const Libraries = ({ libraries }: Props) => {
       ))}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -62,5 +62,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
-
-export default Libraries;

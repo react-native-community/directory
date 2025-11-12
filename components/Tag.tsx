@@ -12,11 +12,11 @@ type Props = {
   icon?: ReactElement | null;
 };
 
-export const Tag = ({
+export function Tag({
   label,
   tagStyle,
   icon = <Check width={12} height={8} fill={colors.gray5} />,
-}: Props) => {
+}: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <View key={label} style={[styles.tag, tagStyle]}>
@@ -31,7 +31,7 @@ export const Tag = ({
       </Label>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   tag: {
