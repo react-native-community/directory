@@ -18,7 +18,7 @@ type Props = {
   query: ParsedUrlQuery;
 };
 
-const Index = ({ data, query }: Props) => {
+function Index({ data, query }: Props) {
   const router = useRouter();
   const total = data.total ?? 0;
   return (
@@ -32,7 +32,7 @@ const Index = ({ data, query }: Props) => {
       </ContentContainer>
     </>
   );
-};
+}
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);

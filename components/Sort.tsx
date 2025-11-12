@@ -15,10 +15,10 @@ type SortButtonProps = {
   query: Query;
 };
 
-export const SortButton = ({
+export function SortButton({
   query: { order, direction, offset, search },
   query,
-}: SortButtonProps) => {
+}: SortButtonProps) {
   const [isSortIconHovered, setIsSortIconHovered] = useState(false);
 
   const { asPath, push } = useRouter();
@@ -97,7 +97,7 @@ export const SortButton = ({
       </View>
     </View>
   );
-};
+}
 
 const SORTS: { param: QueryOrder; label: string }[] = [
   {

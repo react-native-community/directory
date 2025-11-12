@@ -1,3 +1,3 @@
-const NotImplemented = () => null;
-
-export default NotImplemented;
+export default function NotImplemented() {
+  return null;
+}

@@ -17,13 +17,13 @@ export const layout = {
   maxWidth: 1200,
 };
 
-export const useLayout = () => {
+export function useLayout() {
   const { width } = useWindowDimensions();
   return {
     isSmallScreen: width < 800,
     isBelowMaxWidth: width < layout.maxWidth,
   };
-};
+}
 
 export const colors = {
   primary: '#61DAFB',
@@ -93,8 +93,8 @@ type CustomTextProps = TextProps &
     numberOfLines?: number;
   }>;
 
-const createTextComponent = (Element: ComponentType<TextProps>, textStyle?: TextStyles) => {
-  const TextComponent = ({ children, style, id, numberOfLines }: CustomTextProps) => {
+function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
+  function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const { isDark } = useContext(CustomAppearanceContext);
 
     const elementStyle = Element?.displayName
@@ -109,12 +109,12 @@ const createTextComponent = (Element: ComponentType<TextProps>, textStyle?: Text
         {children}
       </Element>
     );
-  };
+  }
 
   TextComponent.displayName = `TextComponent(${Element.displayName ?? Element.name ?? 'Unknown'})`;
 
   return TextComponent;
-};
+}
 
 export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
 export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);

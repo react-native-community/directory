@@ -17,13 +17,13 @@ function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const rehydrateAsync = async () => {
+    async function rehydrateAsync() {
       try {
         const { isDark } = await rehydrateAppearanceState();
         setIsDark(isDark);
       } catch {}
       setLoaded(true);
-    };
+    }
 
     void rehydrateAsync();
   }, []);

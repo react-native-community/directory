@@ -10,7 +10,7 @@ type Props = {
   wrapperStyle?: SVGAttributes<SVGSVGElement>['style'];
 };
 
-const LoadingContent = ({ width = '100%', height = 204, wrapperStyle = {} }: Props) => {
+export default function LoadingContent({ width = '100%', height = 204, wrapperStyle = {} }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
   return (
@@ -38,6 +38,4 @@ const LoadingContent = ({ width = '100%', height = 204, wrapperStyle = {} }: Pro
       <rect x="20" y="170" rx="3" ry="3" width={isSmallScreen ? '220' : '306'} height="14" />
     </ContentLoader>
   );
-};
-
-export default LoadingContent;
+}

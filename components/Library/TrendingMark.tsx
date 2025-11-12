@@ -11,7 +11,7 @@ type Props = {
   style?: ViewStyle;
 };
 
-const TrendingMark = ({ library, style, markOnly = false }: Props) => {
+export default function TrendingMark({ library, style, markOnly = false }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { popularity = -100 } = library;
   const popularityStyles = getPopularityStyles(popularity, markOnly);
@@ -49,7 +49,7 @@ const TrendingMark = ({ library, style, markOnly = false }: Props) => {
       {content}
     </A>
   );
-};
+}
 
 function getPopularityStyles(popularity: number, markOnly: boolean) {
   const top = markOnly ? 11 : 7;
@@ -124,5 +124,3 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
 });
-
-export default TrendingMark;

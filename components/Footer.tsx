@@ -49,7 +49,7 @@ function Platform({ name, pkgName, url, Icon, style }: PlatformProps) {
   );
 }
 
-const Footer = () => {
+export default function Footer() {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -137,7 +137,7 @@ const Footer = () => {
       </ContentContainer>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -206,5 +206,3 @@ const styles = StyleSheet.create({
   },
   itemLink: { backgroundColor: 'none', borderWidth: 1, borderColor: 'transparent' },
 });
-
-export default Footer;

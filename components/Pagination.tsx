@@ -18,8 +18,44 @@ type Props = {
   basePath?: string;
 };
 
-const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
+type ArrowButtonProps = {
+  disabled?: boolean;
+};
+
+function BackArrow({ disabled }: ArrowButtonProps) {
   const { isDark } = useContext(CustomAppearanceContext);
+  return (
+    <View
+      style={[
+        styles.rotate,
+        styles.arrowContainer,
+        {
+          backgroundColor: isDark ? darkColors.border : colors.gray2,
+        },
+        disabled && styles.disabled,
+      ]}>
+      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
+    </View>
+  );
+}
+
+function ForwardArrow({ disabled }: ArrowButtonProps) {
+  const { isDark } = useContext(CustomAppearanceContext);
+  return (
+    <View
+      style={[
+        styles.arrowContainer,
+        {
+          backgroundColor: isDark ? darkColors.border : colors.gray2,
+        },
+        disabled && styles.disabled,
+      ]}>
+      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
+    </View>
+  );
+}
+
+export default function Pagination({ query, total, style, basePath = '/' }: Props) {
   const currentOffset = query.offset ? parseInt(query.offset, 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
@@ -33,37 +69,10 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
 
   const pageQuery = getPageQuery(basePath, query);
 
-  const backArrow = (isDark: boolean) => (
-    <View
-      style={[
-        styles.rotate,
-        styles.arrowContainer,
-        {
-          backgroundColor: isDark ? darkColors.border : colors.gray2,
-        },
-        backDisabled && styles.disabled,
-      ]}>
-      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
-    </View>
-  );
-
-  const forwardArrow = (isDark: boolean) => (
-    <View
-      style={[
-        styles.arrowContainer,
-        {
-          backgroundColor: isDark ? darkColors.border : colors.gray2,
-        },
-        forwardDisabled && styles.disabled,
-      ]}>
-      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
-    </View>
-  );
-
   return (
     <View style={[styles.container, style]}>
       {backDisabled ? (
-        backArrow(isDark)
+        <BackArrow disabled />
       ) : (
         <HoverEffect>
           <Link
@@ -73,7 +82,7 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
             })}
             style={{ borderRadius: 4 }}
             aria-label="Previous page">
-            {backArrow(isDark)}
+            <BackArrow />
           </Link>
         </HoverEffect>
       )}
@@ -82,7 +91,7 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
         {currentPage > 0 ? currentPage : '1'} of {totalPages}
       </Caption>
       {forwardDisabled ? (
-        forwardArrow(isDark)
+        <ForwardArrow disabled />
       ) : (
         <HoverEffect>
           <Link
@@ -92,13 +101,13 @@ const Pagination = ({ query, total, style, basePath = '/' }: Props) => {
             })}
             style={{ borderRadius: 4 }}
             aria-label="Next page">
-            {forwardArrow(isDark)}
+            <ForwardArrow />
           </Link>
         </HoverEffect>
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -129,5 +138,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default Pagination;

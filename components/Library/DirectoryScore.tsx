@@ -14,8 +14,14 @@ export function DirectoryScore({ score, matchingScoreModifiers }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const chunk = 100 / 6;
-  const getFill = (chunkNumber = 1) =>
-    score >= chunk * chunkNumber ? colors.primaryDark : isDark ? darkColors.pewter : colors.gray3;
+
+  function getFill(chunkNumber = 1) {
+    return score >= chunk * chunkNumber
+      ? colors.primaryDark
+      : isDark
+        ? darkColors.pewter
+        : colors.gray3;
+  }
 
   return (
     <Tooltip
