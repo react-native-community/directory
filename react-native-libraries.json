@@ -18345,5 +18345,12 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
-   }
+   },
+   {
+    "githubUrl": "https://github.com/arbazz/react-native-ocr-fast",
+    "npmPkg": "react-native-ocr-fast",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
