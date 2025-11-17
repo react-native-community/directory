@@ -6,6 +6,7 @@ import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
+import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, H6, Headline, Label, P, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
@@ -29,21 +30,23 @@ import { getExampleDescription } from '~/util/strings';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
+  packageName: string;
   apiData: {
     libraries: LibraryType[];
   };
-  registryData: NpmLatestRegistryData;
-  packageName: string;
+  registryData?: NpmLatestRegistryData;
   readmeContent?: string;
 };
 
+// TODO: async render/data fetch
+// TODO: responsive/mobile viewports
 export default function PackagePage({ apiData, registryData, packageName, readmeContent }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
-  if (!library) {
+  if (!library || !registryData) {
     return (
       <>
         <Navigation />
@@ -62,7 +65,6 @@ export default function PackagePage({ apiData, registryData, packageName, readme
     );
   }
 
-  const { description } = library.github;
   const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
     registryData;
 
@@ -92,13 +94,13 @@ export default function PackagePage({ apiData, registryData, packageName, readme
               <UpdatedAtView library={library} />
             </View>
             <CompatibilityTags library={library} />
-            {description && description.length && (
+            {library.github.description && library.github.description.length && (
               <Headline style={styles.description}>
                 <Linkify
                   options={{
                     linkWrapper: props => <A {...props}>{props.children}</A>,
                   }}>
-                  {emoji.emojify(description)}
+                  {emoji.emojify(library.github.description)}
                 </Linkify>
               </Headline>
             )}
@@ -118,10 +120,12 @@ export default function PackagePage({ apiData, registryData, packageName, readme
                     hr: () => null,
                     a: (props: any) => <A containerStyle={{ display: 'inline-flex' }} {...props} />,
                     // TODO: decide if we want to remove images/assets, or fix relative assets links
-                    // TODO: render code block in a better way
                     // TODO: render blockquotes in a better way, support GH themed notes
+                    // TODO: render code block in a better way
+                    // TODO: render tables in a better way
                   }}
-                  rehypePlugins={[rehypeRaw, rehypeSanitize]}>
+                  rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                  remarkPlugins={[remarkGfm]}>
                   {readmeContent}
                 </Md>
               </View>
@@ -166,7 +170,7 @@ export default function PackagePage({ apiData, registryData, packageName, readme
               </>
             )}
             <H6 style={[styles.mainContentHeader, headerColorStyle]}>Additional information</H6>
-            <View style={{ gap: 6 }}>
+            <View style={styles.rowSpacing}>
               <MetaData library={library} secondary skipExamples />
             </View>
             {library.images && library.images.length ? (
@@ -187,7 +191,7 @@ export default function PackagePage({ apiData, registryData, packageName, readme
             <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
             <TrendingMark library={library} />
             <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
-            <View style={{ gap: 4 }}>
+            <View style={styles.rowSpacing}>
               <A
                 href={`https://bundlephobia.com/package/${library.npmPkg}`}
                 target="_blank"
@@ -349,6 +353,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderStyle: 'solid',
+  },
+  rowSpacing: {
+    gap: 6,
   },
 });
 

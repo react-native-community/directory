@@ -242,7 +242,40 @@ select {
     word-break: break-word;
   }
 
+  pre {
+    background-color: var(--select-background);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #fff;
+    margin-bottom: 0;
+    line-height: 1.4;
+
+    &:last-child {
+      margin-bottom: 12px;
+    }
+  }
+
   img {
     max-width: 100%;
+  }
+
+  blockquote {
+    margin-inline-start: 1rem;
+  }
+
+  ul, ol {
+    padding-inline-start: 1rem;
+    margin-bottom: 0;
+  }
+
+  table {
+    margin-top: 8px;
+    border-collapse: collapse;
+    width: fit-content;
+  }
+
+  td, th {
+    border: 1px solid var(--select-border);
+    padding: 3px 6px;
   }
 }

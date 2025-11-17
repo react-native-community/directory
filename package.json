@@ -41,6 +41,7 @@
     "react-native-web": "^0.21.2",
     "rehype-raw": "^7.0.0",
     "rehype-sanitize": "^6.0.0",
+    "remark-gfm": "^4.0.1",
     "use-debounce": "^10.0.6"
   },
   "devDependencies": {

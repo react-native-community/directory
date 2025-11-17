@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { A, Caption, colors, Label } from '~/common/styleguide';
 import { type NpmUser } from '~/types';
@@ -33,21 +33,15 @@ export function PackageAuthor({ author }: Props) {
           <A
             href={`https://github.com/${ghUsername}`}
             target="_blank"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: 12,
-              alignItems: 'center',
-              backgroundColor: 'transparent',
-            }}
+            style={styles.link}
             hoverStyle={isDark && { color: colors.primaryDark }}>
             <img
               src={`https://github.com/${ghUsername}.png`}
-              style={{ width: 32, height: 32, borderRadius: '100%' }}
+              style={styles.avatar}
               alt={`${ghUsername} avatar`}
             />
             <View>
-              <Caption style={{ lineHeight: 16, color: 'inherit' }}>{ghUsername}</Caption>
+              <Caption style={styles.secondLine}>{ghUsername}</Caption>
               <Label style={{ color: 'inherit' }}>{validName}</Label>
             </View>
           </A>
@@ -78,3 +72,22 @@ function getValidName(potentialName: string): string {
     .join(' ');
   return cleanName.length ? cleanName : potentialName.replace(/[<>()]/g, '');
 }
+
+const styles = StyleSheet.create({
+  link: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 12,
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  secondLine: {
+    lineHeight: 16,
+    color: 'inherit',
+  },
+  avatar: {
+    width: 32,
+    height: 32,
+    borderRadius: '100%',
+  },
+});
