@@ -153,6 +153,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
 
         json.description ??= packageJson.description;
 
+        if (!json.homepageUrl) {
+          json.homepageUrl = packageJson.homepage;
+        }
+
         if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
         }
@@ -179,7 +183,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       hasWiki: json.hasWikiEnabled,
       hasSponsorships: json.hasSponsorshipsEnabled,
       hasDiscussions: json.hasDiscussionsEnabled,
+      hasProjects: json.hasProjectsEnabled,
+      hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
+      fundingLinks: json.fundingLinks,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,

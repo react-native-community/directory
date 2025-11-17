@@ -14580,9 +14580,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/litecoin-foundation/react-native-turbo-scrypt",
+    "githubUrl": "https://github.com/litecoin-foundation/react-native-nitro-scrypt",
     "examples": [
-      "https://github.com/litecoin-foundation/react-native-turbo-scrypt/tree/master/example"
+      "https://github.com/litecoin-foundation/react-native-nitro-scrypt/tree/master/example"
     ],
     "android": true,
     "ios": true
@@ -17456,11 +17456,6 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/GG11HEDR/react-native-google-places-textinput",
-    "android": true,
-    "ios": true
-  },
-  {
     "githubUrl": "https://github.com/DanielAraldi/react-native-blur-view",
     "npmPkg": "@danielsaraldi/react-native-blur-view",
     "android": true,
@@ -18331,9 +18326,7 @@
   {
     "githubUrl": "https://github.com/BANG88/react-native-markdown/tree/main/packages/react-native-markdown",
     "npmPkg": "@hake/react-native-markdown",
-    "examples": [
-      "https://github.com/BANG88/react-native-markdown/tree/main/apps/example"
-    ],
+    "examples": ["https://github.com/BANG88/react-native-markdown/tree/main/apps/example"],
     "images": [
       "https://raw.githubusercontent.com/BANG88/react-native-markdown/main/screenshots/1.png",
       "https://raw.githubusercontent.com/BANG88/react-native-markdown/main/screenshots/2.png",
@@ -18345,22 +18338,17 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
-   },
-   {
+  },
+  {
     "githubUrl": "https://github.com/arbazz/react-native-ocr-fast",
-    "npmPkg": "react-native-ocr-fast",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
-   {
+  {
     "githubUrl": "https://github.com/oblador/react-native-variable-blur",
-    "npmPkg": "react-native-variable-blur",
-    "examples": [
-      "https://github.com/oblador/react-native-variable-blur/tree/master/example"
-    ],
+    "examples": ["https://github.com/oblador/react-native-variable-blur/tree/master/example"],
     "ios": true,
-    "android": false,
     "newArchitecture": true
   }
 ]

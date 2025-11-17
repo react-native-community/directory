@@ -220,3 +220,29 @@ select {
     transform: translateX(0);
   }
 }
+
+/* README WRAPPER */
+#readmeMarkdownWrapper {
+  font-size: 90%;
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+  }
+
+  code, pre, a {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

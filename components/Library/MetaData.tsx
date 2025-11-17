@@ -31,6 +31,7 @@ import {
 type Props = {
   library: LibraryType;
   secondary?: boolean;
+  skipExamples?: boolean;
 };
 
 function generateData(
@@ -132,7 +133,11 @@ function generateData(
   ];
 }
 
-function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataEntryType[] {
+function generateSecondaryData(
+  library: LibraryType,
+  isDark: boolean,
+  skipExamples: boolean
+): MetadataEntryType[] {
   const { github, examples } = library;
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
@@ -201,7 +206,7 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
-    examples && examples.length
+    !skipExamples && examples && examples.length
       ? {
           id: 'examples',
           icon: <Code fill={iconColor} width={16} height={16} />,
@@ -224,11 +229,11 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
   ];
 }
 
-export function MetaData({ library, secondary }: Props) {
+export function MetaData({ library, secondary, skipExamples = false }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   if (secondary) {
-    const data = generateSecondaryData(library, isDark).filter(Boolean);
+    const data = generateSecondaryData(library, isDark, skipExamples).filter(Boolean);
     return (
       <>
         {data

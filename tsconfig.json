@@ -6,7 +6,7 @@
       "esnext"
     ],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,

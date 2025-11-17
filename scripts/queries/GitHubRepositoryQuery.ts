@@ -13,10 +13,12 @@ const GitHubRepositoryQuery = `
       resetAt
     }
     repository(owner: $repoOwner, name: $repoName) {
-      hasIssuesEnabled
-      hasWikiEnabled
-      hasSponsorshipsEnabled
       hasDiscussionsEnabled
+      hasIssuesEnabled
+      hasProjectsEnabled
+      hasSponsorshipsEnabled
+      hasWikiEnabled
+      hasVulnerabilityAlertsEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -28,6 +30,10 @@ const GitHubRepositoryQuery = `
       }
       forks {
         totalCount
+      }
+      fundingLinks {
+        url
+        platform
       }
       description
       createdAt
@@ -48,7 +54,7 @@ const GitHubRepositoryQuery = `
         url
         id
       }
-      repositoryTopics(first: 10) {
+      repositoryTopics(first: 15) {
         nodes {
           topic {
             name

@@ -20,6 +20,7 @@
   "dependencies": {
     "@expo/html-elements": "^0.13.7",
     "@expo/match-media": "^0.4.0",
+    "@m2d/react-markdown": "^1.0.0",
     "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-async-storage/async-storage": "^2.2.0",
@@ -38,6 +39,8 @@
     "react-native-safe-area-context": "^5.6.2",
     "react-native-svg": "^15.14.0",
     "react-native-web": "^0.21.2",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
     "use-debounce": "^10.0.6"
   },
   "devDependencies": {
