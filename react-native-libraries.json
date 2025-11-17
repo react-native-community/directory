@@ -810,6 +810,30 @@
     "unmaintained": true
   },
   {
+"githubUrl": "https://github.com/Fiyaz6772/react-native-fn-forms",
+"npmPkg": "react-native-fn-forms",
+"examples": [
+"https://github.com/Fiyaz6772/react-native-fn-forms/tree/main/example"
+],
+"images": [],
+"ios": true,
+"android": true,
+"web": true,
+"windows": false,
+"macos": false,
+"tvos": false,
+"visionos": false,
+"expoGo": true,
+"fireos": false,
+"horizon": false,
+"vegaos": false,
+"newArchitecture": false,
+"configPlugin": false,
+"unmaintained": false,
+"dev": false,
+"template": false
+}
+  {
     "githubUrl": "https://github.com/Kerumen/react-native-awesome-card-io",
     "ios": true,
     "android": true,
