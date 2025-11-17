@@ -8,6 +8,29 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/Fiyaz6772/react-native-fn-forms",
+    "npmPkg": "react-native-fn-forms",
+    "examples": [
+      "https://github.com/Fiyaz6772/react-native-fn-forms/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "expoGo": true,
+    "fireos": false,
+    "horizon": false,
+    "vegaos": false,
+    "newArchitecture": false,
+    "configPlugin": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
+  }
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
