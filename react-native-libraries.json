@@ -18352,5 +18352,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+   {
+    "githubUrl": "https://github.com/oblador/react-native-variable-blur",
+    "npmPkg": "react-native-variable-blur",
+    "examples": [
+      "https://github.com/oblador/react-native-variable-blur/tree/master/example"
+    ],
+    "ios": true,
+    "android": false,
+    "newArchitecture": true
   }
 ]
