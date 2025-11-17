@@ -31,10 +31,6 @@ const GitHubRepositoryQuery = `
       forks {
         totalCount
       }
-      fundingLinks {
-        url
-        platform
-      }
       description
       createdAt
       pushedAt
