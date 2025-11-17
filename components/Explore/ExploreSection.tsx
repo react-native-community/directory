@@ -39,7 +39,7 @@ const DEFAULT_PARAMS: Query = {
   order: 'popularity',
 };
 
-const renderLibs = (list: LibraryType[], count = 4) => {
+function renderLibs(list: LibraryType[], count = 4) {
   const now = new Date().getTime();
   return (
     <View style={styles.librariesContainer}>
@@ -56,16 +56,16 @@ const renderLibs = (list: LibraryType[], count = 4) => {
         ))}
     </View>
   );
-};
+}
 
-const ExploreSection = ({
+export default function ExploreSection({
   data,
   title,
   filter,
   icon,
   count = 4,
   queryParams = { [title.toLowerCase()]: true },
-}: ExploreSectionProps) => {
+}: ExploreSectionProps) {
   const { isDark } = useContext(CustomAppearanceContext);
   const color = isDark ? darkColors.pewter : colors.gray5;
   const hoverColor = isDark ? colors.gray5 : colors.gray4;
@@ -93,7 +93,7 @@ const ExploreSection = ({
       </P>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -126,5 +126,3 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
-
-export default ExploreSection;

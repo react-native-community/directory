@@ -1,9 +1,8 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/react-native-community/directory/blob/main/react-native-libraries.schema.json",
   "type": "array",
-  "title": "React Native Directory entries",
+  "title": "React Native Directory entries list",
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -11,79 +10,72 @@
     "required": [
       "githubUrl"
     ],
+    "additionalProperties": false,
     "properties": {
       "githubUrl": {
         "$id": "#/items/properties/githubUrl",
         "type": "string",
         "title": "Package GitHub repository URL",
         "default": "",
+        "pattern": "^(https?://)?(www\\.)?github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(/tree/[A-Za-z0-9_.@%\\-/]+)?/?$",
         "examples": [
-          "https://github.com/joshswan/react-native-autolink"
-        ],
-        "pattern": "^(.*)$"
+          "https://github.com/joshswan/react-native-autolink",
+          "https://github.com/GetStream/stream-chat-react-native/tree/develop/package/expo-package"
+        ]
       },
       "ios": {
         "$id": "#/items/properties/ios",
         "type": "boolean",
         "title": "Package supports iOS",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
       },
       "android": {
         "$id": "#/items/properties/android",
         "type": "boolean",
         "title": "Package supports Android",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
+      },
+      "web": {
+        "$id": "#/items/properties/web",
+        "type": "boolean",
+        "title": "Package supports Web (react-native-web)",
+        "default": false
       },
       "windows": {
         "$id": "#/items/properties/windows",
         "type": "boolean",
         "title": "Package supports Windows (react-native-windows)",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
       },
       "macos": {
         "$id": "#/items/properties/macos",
         "type": "boolean",
         "title": "Package supports macOS (react-native-macos)",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
       },
       "tvos": {
         "$id": "#/items/properties/tvos",
         "type": "boolean",
         "title": "Package supports tvOS (react-native-tvos)",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
+      },
+      "visionos": {
+        "$id": "#/items/properties/visionos",
+        "type": "boolean",
+        "title": "Package supports visionOS (react-native-visionos)",
+        "default": false
       },
       "fireos": {
         "$id": "#/items/properties/fireos",
         "type": "boolean",
-        "title": "Package is compatible with Fire OS",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "title": "Package is compatible with Amazon Fire OS",
+        "default": false
       },
       "horizon": {
         "$id": "#/items/properties/horizon",
         "type": "boolean",
         "title": "Package is compatible with Meta Horizon OS",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
       },
       "vegaos": {
         "$id": "#/items/properties/vegaos",
@@ -91,7 +83,7 @@
           "boolean",
           "string"
         ],
-        "title": "Package is compatible with Vega OS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
+        "title": "Package is compatible with Amazon Vega OS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
         "default": false,
         "examples": [
           true,
@@ -102,10 +94,7 @@
         "$id": "#/items/properties/expo",
         "type": "boolean",
         "title": "Package is compatible with Expo Go",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "default": false
       },
       "examples": {
         "$id": "#/items/properties/examples",
@@ -140,7 +129,7 @@
             "https://reactnative.dev/img/homepage/phones.png",
             "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
           ],
-          "pattern": "^(http(s?):)(\\w|\\/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
+          "pattern": "^(http(s?):)(\\w|/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
         }
       },
       "npmPkg": {
@@ -155,34 +144,21 @@
       },
       "unmaintained": {
         "$id": "#/items/properties/unmaintained",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": "boolean",
         "title": "Package is unmaintained or archived",
-        "default": false,
-        "examples": [
-          true,
-          "expo-image"
-        ]
+        "default": false
       },
       "dev": {
         "$id": "#/items/properties/dev",
         "type": "boolean",
-        "title": "Package is a Development Tool (should be installed as 'devDependency')",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "title": "Package is a Development Tool (should be installed as `devDependency` or used via `npx/bunx`)",
+        "default": false
       },
       "template": {
         "$id": "#/items/properties/template",
         "type": "boolean",
-        "title": "Package is a project template",
-        "default": false,
-        "examples": [
-          true
-        ]
+        "title": "Entry is a project template",
+        "default": false
       },
       "newArchitecture": {
         "$id": "#/items/properties/newArchitecture",
@@ -190,7 +166,8 @@
           "boolean",
           "string"
         ],
-        "title": "Package supports New Architecture",
+        "enum": [true, false, "new-arch-only"],
+        "title": "Package supports New Architecture. Can be a boolean, or 'new-arch-only' string, if package only supports New Architecture.",
         "default": false,
         "examples": [
           true,
@@ -213,11 +190,11 @@
           "boolean",
           "string"
         ],
-        "title": "Package has Expo config plugin",
+        "title": "Package includes Expo config plugin or confing plugin is available via separate package. Can be a boolean, or URL pointing to GitHub repository of config plugin package.",
         "default": false,
         "examples": [
           true,
-          "link to third-party config plugin"
+          "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf"
         ]
       },
       "alternatives": {

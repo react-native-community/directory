@@ -23,6 +23,7 @@ const COMMON_RULES = {
   ],
   curly: 'error',
   eqeqeq: ['error', 'always', { null: 'ignore' }],
+  'func-style': ['error', 'declaration'],
   'no-void': ['error', { allowAsStatement: true }],
   'import/no-cycle': ['error', { maxDepth: '∞', disableScc: true }],
   'import/consistent-type-specifier-style': ['error', 'prefer-inline'],

@@ -9,7 +9,7 @@ import PageMeta from '~/components/PageMeta';
 import { ScoringCriterion } from '~/components/ScoringCriterion';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
-const Scoring = () => {
+export default function Scoring() {
   const { isDark } = useContext(CustomAppearanceContext);
   const textColorStyle = {
     color: isDark ? colors.gray2 : colors.black,
@@ -177,7 +177,7 @@ const Scoring = () => {
       </ContentContainer>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -216,5 +216,3 @@ const styles = StyleSheet.create({
     fontWeight: 300,
   },
 });
-
-export default Scoring;

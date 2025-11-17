@@ -26,7 +26,7 @@ type Props = {
   query: Query;
 };
 
-const Trending = ({ data, query }: Props) => {
+function Trending({ data, query }: Props) {
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 3);
 
   const router = useRouter();
@@ -96,7 +96,7 @@ const Trending = ({ data, query }: Props) => {
       </ContentContainer>
     </>
   );
-};
+}
 
 Trending.getInitialProps = async (ctx: NextPageContext) => {
   const trendingQuery = {

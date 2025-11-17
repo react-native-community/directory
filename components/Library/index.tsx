@@ -21,7 +21,7 @@ type Props = {
   showTrendingMark?: boolean;
 };
 
-const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
+export default function Library({ library, skipMetadata, showTrendingMark }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
@@ -140,7 +140,7 @@ const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -277,5 +277,3 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
 });
-
-export default Library;

@@ -24,7 +24,7 @@ type Props = {
   data: LibraryType[];
 };
 
-const Popular = ({ data }: Props) => {
+function Popular({ data }: Props) {
   return (
     <>
       <PageMeta
@@ -98,7 +98,7 @@ const Popular = ({ data }: Props) => {
       </ContentContainer>
     </>
   );
-};
+}
 
 Popular.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(

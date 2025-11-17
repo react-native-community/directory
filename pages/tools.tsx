@@ -9,7 +9,7 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
-const Tools = () => {
+export default function Tools() {
   const { isDark } = useContext(CustomAppearanceContext);
   const textColorStyle = {
     color: isDark ? colors.gray2 : colors.black,
@@ -147,7 +147,7 @@ const Tools = () => {
       </ContentContainer>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -179,5 +179,3 @@ const styles = StyleSheet.create({
     gap: 2,
   },
 });
-
-export default Tools;
