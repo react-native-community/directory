@@ -18362,5 +18362,13 @@
     "ios": true,
     "android": false,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fullstorydev/fullstory-react-native",
+    "npmPkg": "@fullstory/react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
