@@ -18353,7 +18353,7 @@
     "android": true,
     "newArchitecture": true
   },
-   {
+  {
     "githubUrl": "https://github.com/oblador/react-native-variable-blur",
     "npmPkg": "react-native-variable-blur",
     "examples": [
@@ -18370,5 +18370,16 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/Fiyaz6772/react-native-fn-forms",
+    "npmPkg": "react-native-fn-forms",
+    "examples": [
+      "https://github.com/Fiyaz6772/react-native-fn-forms/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
