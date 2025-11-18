@@ -1,18 +1,17 @@
-import { Md } from '@m2d/react-markdown/client';
 import { type NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import * as emoji from 'node-emoji';
 import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
-import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, H6, Headline, Label, P, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { CompatibilityTags } from '~/components/CompatibilityTags';
 import ContentContainer from '~/components/ContentContainer';
-import DependencyRow from '~/components/DependencyRow';
+import DependencyRow from '~/components/Details/DependencyRow';
+import PackageAuthor from '~/components/Details/PackageAuthor';
+import ReadmeBox from '~/components/Details/ReadmeBox';
 import { MetaData } from '~/components/Library/MetaData';
 import Thumbnail from '~/components/Library/Thumbnail.web';
 import TrendingMark from '~/components/Library/TrendingMark';
@@ -20,7 +19,6 @@ import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import Navigation from '~/components/Navigation';
 import NotFoundContent from '~/components/NotFoundContent';
-import { PackageAuthor } from '~/components/PackageAuthor';
 import PageMeta from '~/components/PageMeta';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type NpmLatestRegistryData, type NpmUser } from '~/types';
@@ -35,12 +33,11 @@ type Props = {
     libraries: LibraryType[];
   };
   registryData?: NpmLatestRegistryData;
-  readmeContent?: string;
 };
 
 // TODO: async render/data fetch
 // TODO: responsive/mobile viewports
-export default function PackagePage({ apiData, registryData, packageName, readmeContent }: Props) {
+export default function PackagePage({ apiData, registryData, packageName }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -104,32 +101,11 @@ export default function PackagePage({ apiData, registryData, packageName, readme
                 </Linkify>
               </Headline>
             )}
-            {readmeContent && (
-              <View
-                id="readmeMarkdownWrapper"
-                style={[
-                  styles.readmeWrapper,
-                  {
-                    // @ts-expect-error allow color style inheritance
-                    color: isDark ? colors.white : colors.black,
-                    borderColor: isDark ? darkColors.border : colors.gray2,
-                  },
-                ]}>
-                <Md
-                  components={{
-                    hr: () => null,
-                    a: (props: any) => <A containerStyle={{ display: 'inline-flex' }} {...props} />,
-                    // TODO: decide if we want to remove images/assets, or fix relative assets links
-                    // TODO: render blockquotes in a better way, support GH themed notes
-                    // TODO: render code block in a better way
-                    // TODO: render tables in a better way
-                  }}
-                  rehypePlugins={[rehypeRaw, rehypeSanitize]}
-                  remarkPlugins={[remarkGfm]}>
-                  {readmeContent}
-                </Md>
-              </View>
-            )}
+            <ReadmeBoxWithLoading
+              packageName={packageName}
+              isDark={isDark}
+              githubUrl={library.githubUrl}
+            />
             {library.examples && library.examples.length > 0 && (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Code examples</H6>
@@ -255,6 +231,10 @@ export default function PackagePage({ apiData, registryData, packageName, readme
   );
 }
 
+const ReadmeBoxWithLoading = dynamic(() => import('~/components/Details/ReadmeBox'), {
+  loading: () => <ReadmeBox loader />,
+});
+
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 32,
@@ -364,8 +344,10 @@ export async function getServerSideProps(ctx: NextPageContext) {
 
   if (!packageName) {
     return {
-      data: {},
-      packageName,
+      props: {
+        data: {},
+        packageName,
+      },
     };
   }
 
@@ -377,15 +359,11 @@ export async function getServerSideProps(ctx: NextPageContext) {
   const npmResponse = await fetch(`https://registry.npmjs.org/${packageName}/latest`);
   const registryData = await npmResponse.json();
 
-  const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
-  const readmeContent = await readmeResponse.text();
-
   return {
     props: {
       packageName,
       apiData,
       registryData,
-      readmeContent,
     },
   };
 }

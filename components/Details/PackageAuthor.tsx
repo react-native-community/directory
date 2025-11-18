@@ -2,16 +2,15 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, Caption, colors, Label } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
-
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type Props = {
   author?: NpmUser;
   size?: 'sm' | 'md';
 };
 
-export function PackageAuthor({ author }: Props) {
+export default function PackageAuthor({ author }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   if (!author) {

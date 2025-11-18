@@ -1,13 +1,18 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { type ComponentType, type PropsWithChildren, useContext, useState } from 'react';
+import {
+  type ComponentType,
+  type CSSProperties,
+  type PropsWithChildren,
+  useContext,
+  useState,
+} from 'react';
 import {
   StyleSheet,
   type TextStyle,
   View,
   useWindowDimensions,
-  type ViewStyle,
   type StyleProp,
 } from 'react-native';
 
@@ -132,7 +137,7 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
+  containerStyle?: CSSProperties | undefined;
 }>;
 
 export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
@@ -161,10 +166,10 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
   }
 
   return (
-    <View
+    <span
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={containerStyle}>
+      style={{ display: 'contents', ...containerStyle }}>
       <HtmlElements.A
         {...rest}
         href={href}
@@ -174,7 +179,7 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
-    </View>
+    </span>
   );
 }
 
