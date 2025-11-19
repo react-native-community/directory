@@ -157,7 +157,6 @@
 ### 📝 Additional context for tags
 
 - #### `newArchitectureNote`
-
   **(string)** - provide a note for the New Architecture support status, if a boolean `"true"` or `"false"` is not sufficient to describe the state of New Architecture support.
 
 - #### `alternatives`
@@ -197,9 +196,9 @@ Get a commit on `main` and it will be automatically deployed.
 
 Sure, go for it!
 
-  ```
-  https://reactnative.directory/api/libraries?search=webgl
-  ```
+```
+https://reactnative.directory/api/libraries
+```
 
 - Returns a list of all libraries in `JSON` format.
 
@@ -220,7 +219,7 @@ https://reactnative.directory/api/libraries?search=webgl
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
 
   ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true
+  https://reactnative.directory/api/libraries?search=webgl
   ```
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
