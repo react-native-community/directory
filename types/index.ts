@@ -106,13 +106,6 @@ export type LibraryType = LibraryDataEntryType & {
       dependencies?: number;
     };
     license: LibraryLicenseType;
-    lastRelease?: {
-      name: string;
-      tagName: string;
-      createdAt: Date | string;
-      publishedAt: Date | string;
-      isPrerelease: boolean;
-    };
   };
   npm?: {
     downloads?: number;

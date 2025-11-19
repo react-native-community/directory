@@ -48,7 +48,7 @@ const GitHubRepositoryQuery = `
         url
         id
       }
-      repositoryTopics(first: 10) {
+      repositoryTopics(first: 15) {
         nodes {
           topic {
             name
