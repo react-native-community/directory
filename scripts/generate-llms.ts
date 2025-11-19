@@ -5,12 +5,6 @@ import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/hel
 import { type DataAssetType, type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
-type LibraryRecord = {
-  library: LibraryType;
-  repoUrl: string;
-  description: string;
-};
-
 const OUTPUT_PATH = path.resolve('public', 'llms.txt');
 const DATASET_PATH = path.resolve('assets', 'data.json');
 const INTRODUCTION = [
@@ -37,10 +31,7 @@ function formatRecord(library: LibraryType, repoUrl: string, rawDescription: str
   const website = library.github?.urls.homepage;
   const latestVersion = library.npm?.latestRelease;
   const latestReleaseDate = library.npm?.latestReleaseDate;
-  const lines = [`${header}`, `Supports: ${supportText}`];
-  if (newArch) {
-    lines.push(`New Architecture: ${newArch}`);
-  }
+  const lines = [`${header}`, `Supports: ${supportText}`, `New Architecture: ${newArch}`];
   if (downloads) {
     lines.push(`Downloads: ${downloads}`);
   }
@@ -108,26 +99,21 @@ function formatDownloads(library: LibraryType) {
 
 async function generateLlmsFile() {
   const assetLibraries = await loadAssetLibraries();
-  const records: LibraryRecord[] = assetLibraries
+  const entries = assetLibraries
     .filter(library => !library.template)
-    .map(library => {
-      const repoUrl = library.githubUrl;
-
-      return {
+    .map(library =>
+      formatRecord(
         library,
-        repoUrl,
-        description: library.github?.description,
-      };
-    });
+        library.github?.urls.repo ?? library.githubUrl,
+        library.github?.description ?? ''
+      )
+    );
 
-  const content = [
-    ...INTRODUCTION,
-    ...records.map(record => formatRecord(record.library, record.repoUrl, record.description)),
-  ].join('\n\n---\n\n');
+  const content = [...INTRODUCTION, ...entries].join('\n\n---\n\n');
 
   await fs.writeFile(OUTPUT_PATH, `${content}\n`, 'utf8');
   console.log(
-    `Generated ${records.length} entries in ${path.relative(process.cwd(), OUTPUT_PATH)}`
+    `Generated ${entries.length} entries in ${path.relative(process.cwd(), OUTPUT_PATH)}`
   );
 }
 
