@@ -1,13 +1,18 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { type ComponentType, type PropsWithChildren, useContext, useState } from 'react';
+import {
+  type ComponentType,
+  type CSSProperties,
+  type PropsWithChildren,
+  useContext,
+  useState,
+} from 'react';
 import {
   StyleSheet,
   type TextStyle,
   View,
   useWindowDimensions,
-  type ViewStyle,
   type StyleProp,
 } from 'react-native';
 
@@ -121,6 +126,7 @@ export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
 export const H3 = createTextComponent(HtmlElements.H3, textStyles.h3);
 export const H4 = createTextComponent(HtmlElements.H4, textStyles.h4);
 export const H5 = createTextComponent(HtmlElements.H5, textStyles.h5);
+export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
@@ -131,7 +137,7 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
+  containerStyle?: CSSProperties | undefined;
 }>;
 
 export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
@@ -160,10 +166,10 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
   }
 
   return (
-    <View
+    <span
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={containerStyle}>
+      style={{ display: 'contents', ...containerStyle }}>
       <HtmlElements.A
         {...rest}
         href={href}
@@ -173,7 +179,7 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
-    </View>
+    </span>
   );
 }
 
