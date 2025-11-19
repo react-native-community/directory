@@ -33,9 +33,13 @@ function formatRecord(library: LibraryType, repoUrl: string, rawDescription: str
   const header = `[${displayName}](${repoUrl}): ${rawDescription}`;
   const newArchStatus = getNewArchSupportStatus(library);
   const newArch = formatNewArchitectureStatus(newArchStatus, library.newArchitectureNote);
+  const downloads = formatDownloads(library);
   const lines = [`${header}`, `Supports: ${supportText}`];
   if (newArch) {
     lines.push(`New Architecture: ${newArch}`);
+  }
+  if (downloads) {
+    lines.push(`Downloads: ${downloads}`);
   }
   return lines.join('\n');
 }
@@ -66,6 +70,27 @@ function formatNewArchitectureStatus(status: NewArchSupportStatus, note?: string
     return `${value} (${note})`;
   }
   return value;
+}
+
+function formatDownloads(library: LibraryType) {
+  const downloads = library.npm?.downloads;
+  const weekDownloads = library.npm?.weekDownloads;
+
+  if (!downloads && !weekDownloads) {
+    return null;
+  }
+
+  const parts: string[] = [];
+
+  if (typeof downloads === 'number' && downloads > 0) {
+    parts.push(`${downloads} total`);
+  }
+
+  if (typeof weekDownloads === 'number' && weekDownloads > 0) {
+    parts.push(`${weekDownloads} last week`);
+  }
+
+  return parts.join(', ');
 }
 
 async function generateLlmsFile() {
