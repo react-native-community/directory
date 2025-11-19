@@ -29,10 +29,9 @@ function formatRecord(
   rawDescription: string
 ): string {
   const displayName = library.npmPkg ?? repoName ?? deriveSlug(library.githubUrl);
-  const description = rawDescription;
   const platforms = getSupportedPlatforms(library);
   const supportText = platforms.length ? platforms.join(', ') : 'Not specified';
-  const header = `[${displayName}](${repoUrl}): ${description}`;
+  const header = `[${displayName}](${repoUrl}): ${rawDescription}`;
   const newArch = formatNewArchitectureStatus(library.newArchitecture, library.newArchitectureNote);
   const lines = [`${header}`, `Supports: ${supportText}`];
   if (newArch) {
