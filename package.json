@@ -15,7 +15,8 @@
     "libraries:check": "bun scripts/check-resources",
     "ci:cleanup-blobs": "bun scripts/cleanup-data-blobs",
     "ci:validate": "bun scripts/validate-new-entries",
-    "precommit": "simple-git-hooks && lint-staged"
+    "precommit": "simple-git-hooks && lint-staged",
+    "llms:generate": "bun scripts/generate-llms.ts"
   },
   "dependencies": {
     "@expo/html-elements": "^0.13.7",

@@ -247,3 +247,11 @@ All the possible query parameters represents [`Query` type](https://github.com/r
 # once environment variables are configured, install Vercel and deploy
 bunx vercel
 ```
+
+## How do I generate `llms.txt`?
+
+`llms.txt` is a lightweight text dump of every entry from `react-native-libraries.json` augmented with the GitHub description and other metadata information for each library. It can feed embeddings or other LLM workflows without parsing the large JSON file.
+
+1. (Optional) Run `bun data:update` first so `assets/data.json` already contains the latest metadata.
+2. Execute `bun llms:generate`. The script reuses cached descriptions from `assets/data.json`.
+3. The generator writes to `public/llms.txt`, so once the dev server is running you can open `http://localhost:3000/llms.txt`. Commit the file if you want it published alongside the website.
