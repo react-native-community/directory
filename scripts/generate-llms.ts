@@ -101,13 +101,7 @@ async function generateLlmsFile() {
   const assetLibraries = await loadAssetLibraries();
   const entries = assetLibraries
     .filter(library => !library.template)
-    .map(library =>
-      formatRecord(
-        library,
-        library.github?.urls.repo ?? library.githubUrl,
-        library.github?.description ?? ''
-      )
-    );
+    .map(library => formatRecord(library, library.githubUrl, library.github?.description ?? ''));
 
   const content = [...INTRODUCTION, ...entries].join('\n\n---\n\n');
 
