@@ -81,7 +81,6 @@
 - #### ❗ `githubUrl` **(required)**
 
   **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
-
 > [!WARNING]
 > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
 
@@ -206,9 +205,9 @@ https://reactnative.directory/api/libraries
   <summary><b>More details on API queries</b></summary>
   <br/>
 
-```
-https://reactnative.directory/api/libraries?search=webgl
-```
+  ```
+  https://reactnative.directory/api/libraries?search=webgl
+  ```
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
 
@@ -219,7 +218,7 @@ https://reactnative.directory/api/libraries?search=webgl
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
 
   ```
-  https://reactnative.directory/api/libraries?search=webgl
+  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true
   ```
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
