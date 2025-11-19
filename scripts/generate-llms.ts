@@ -70,15 +70,17 @@ function formatNewArchitectureStatus(status: NewArchSupportStatus, note?: string
 
 async function generateLlmsFile() {
   const assetLibraries = await loadAssetLibraries();
-  const records: LibraryRecord[] = assetLibraries.map(library => {
-    const repoUrl = library.githubUrl;
+  const records: LibraryRecord[] = assetLibraries
+    .filter(library => !library.template)
+    .map(library => {
+      const repoUrl = library.githubUrl;
 
-    return {
-      library,
-      repoUrl,
-      description: library.github?.description,
-    };
-  });
+      return {
+        library,
+        repoUrl,
+        description: library.github?.description,
+      };
+    });
 
   const content = [
     ...INTRODUCTION,
