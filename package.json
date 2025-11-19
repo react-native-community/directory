@@ -13,10 +13,10 @@
     "libraries:recalculate": "bun scripts/recalculate-scores",
     "libraries:format": "prettier --experimental-cli --write react-native-libraries.json",
     "libraries:check": "bun scripts/check-resources",
+    "llms:generate": "bun scripts/generate-llms.ts",
     "ci:cleanup-blobs": "bun scripts/cleanup-data-blobs",
     "ci:validate": "bun scripts/validate-new-entries",
-    "precommit": "simple-git-hooks && lint-staged",
-    "llms:generate": "bun scripts/generate-llms.ts"
+    "precommit": "simple-git-hooks && lint-staged"
   },
   "dependencies": {
     "@expo/html-elements": "^0.13.7",

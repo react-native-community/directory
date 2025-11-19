@@ -14,7 +14,8 @@
 
 > [!TIP]
 > Are you looking for an integration with VS Code? Check out our official extension:
-> * https://github.com/react-native-community/vscode-react-native-directory
+>
+> - https://github.com/react-native-community/vscode-react-native-directory
 
 ## How do I know I'm at the right place?
 
@@ -44,10 +45,7 @@
 {
   "githubUrl": "<GITHUB REPOSITORY URL>",
   "npmPkg": "<OPTIONAL NPM PACKAGE NAME>",
-  "examples": [
-    "<THE URL TO REPO>",
-    "<THE URL TO A SNACK>"
-  ],
+  "examples": ["<THE URL TO REPO>", "<THE URL TO A SNACK>"],
   "images": ["<PUBLIC URL TO RELATED IMAGE>"],
   "ios": false,
   "android": false,
@@ -73,7 +71,6 @@
 > then the name, description, homepage, and topics (keywords) will be extracted from `package.json` in the package subdirectory.
 > However, GitHub stats will be based on the monorepo, because there isn't really another option.
 
-
 ### Library fields description
 
 #### ⚙️ General
@@ -81,8 +78,9 @@
 - #### ❗ `githubUrl` **(required)**
 
   **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
-> [!WARNING]
-> Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
+
+  > [!WARNING]
+  > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
 
 - #### `npmPkg`
 
@@ -156,6 +154,7 @@
 ### 📝 Additional context for tags
 
 - #### `newArchitectureNote`
+
   **(string)** - provide a note for the New Architecture support status, if a boolean `"true"` or `"false"` is not sufficient to describe the state of New Architecture support.
 
 - #### `alternatives`
@@ -179,7 +178,7 @@ You should be able to visit `localhost:3000` in your browser.
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
 - Load the `GITHUB_TOKEN` environment variable into your shell.
-- Set `ONLY_WRITE_LOCAL_DATA_FILE` to `true` in *scripts/build-and-score-data.ts* to skip fetching and updating store blob from Vercel and instead use and update the local `assets/data.json` file.
+- Set `ONLY_WRITE_LOCAL_DATA_FILE` to `true` in _scripts/build-and-score-data.ts_ to skip fetching and updating store blob from Vercel and instead use and update the local `assets/data.json` file.
 
 This command creates site data in `./assets/data.json`
 
@@ -205,9 +204,9 @@ https://reactnative.directory/api/libraries
   <summary><b>More details on API queries</b></summary>
   <br/>
 
-  ```
-  https://reactnative.directory/api/libraries?search=webgl
-  ```
+```
+https://reactnative.directory/api/libraries?search=webgl
+```
 
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
 
@@ -230,6 +229,7 @@ https://reactnative.directory/api/libraries
 - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
 
 All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
+
 </details>
 
 ## I don't like how you calculate scores.
@@ -247,11 +247,3 @@ All the possible query parameters represents [`Query` type](https://github.com/r
 # once environment variables are configured, install Vercel and deploy
 bunx vercel
 ```
-
-## How do I generate `llms.txt`?
-
-`llms.txt` is a lightweight text dump of every entry from `react-native-libraries.json` augmented with the GitHub description and other metadata information for each library. It can feed embeddings or other LLM workflows without parsing the large JSON file.
-
-1. (Optional) Run `bun data:update` first so `assets/data.json` already contains the latest metadata.
-2. Execute `bun llms:generate`. The script reuses cached descriptions from `assets/data.json`.
-3. The generator writes to `public/llms.txt`, so once the dev server is running you can open `http://localhost:3000/llms.txt`. Commit the file if you want it published alongside the website.
