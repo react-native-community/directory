@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "next dev --webpack",
-    "build": "bun data:update && next build --webpack",
+    "build": "bun data:update && bun llms:generate && next build --webpack",
     "preview": "next build --webpack && next start",
     "lint": "eslint .",
     "data:update": "bun scripts/build-and-score-data",
@@ -13,7 +13,7 @@
     "libraries:recalculate": "bun scripts/recalculate-scores",
     "libraries:format": "prettier --experimental-cli --write react-native-libraries.json",
     "libraries:check": "bun scripts/check-resources",
-    "llms:generate": "bun scripts/generate-llms.ts",
+    "llms:generate": "bun scripts/generate-llms",
     "ci:cleanup-blobs": "bun scripts/cleanup-data-blobs",
     "ci:validate": "bun scripts/validate-new-entries",
     "precommit": "simple-git-hooks && lint-staged"
