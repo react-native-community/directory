@@ -34,12 +34,25 @@ function formatRecord(library: LibraryType, repoUrl: string, rawDescription: str
   const newArchStatus = getNewArchSupportStatus(library);
   const newArch = formatNewArchitectureStatus(newArchStatus, library.newArchitectureNote);
   const downloads = formatDownloads(library);
+  const website = library.github?.urls.homepage;
+  const latestVersion = library.npm?.latestRelease;
+  const latestReleaseDate = library.npm?.latestReleaseDate;
   const lines = [`${header}`, `Supports: ${supportText}`];
   if (newArch) {
     lines.push(`New Architecture: ${newArch}`);
   }
   if (downloads) {
     lines.push(`Downloads: ${downloads}`);
+  }
+  if (website) {
+    lines.push(`Website: ${website}`);
+  }
+  if (latestVersion) {
+    lines.push(`Latest Version: ${latestVersion}`);
+  }
+  if (latestReleaseDate) {
+    const date = new Date(latestReleaseDate).toISOString().split('T')[0];
+    lines.push(`Latest Release Date: ${date}`);
   }
   return lines.join('\n');
 }
