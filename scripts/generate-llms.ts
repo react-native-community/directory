@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
 import libraries from '~/react-native-libraries.json';
 import { type DataAssetType, type LibraryDataEntryType } from '~/types';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
@@ -19,19 +20,7 @@ const INTRODUCTION = [
   'Browse the full catalog at https://reactnative.directory for fresh React Native libraries.',
 ];
 
-const PLATFORM_LABELS = {
-  android: 'Android',
-  expoGo: 'Expo Go',
-  fireos: 'Fire OS',
-  horizon: 'Meta Horizon',
-  ios: 'iOS',
-  macos: 'macOS',
-  tvos: 'tvOS',
-  visionos: 'visionOS',
-  vegaos: 'Vega OS',
-  web: 'Web',
-  windows: 'Windows',
-} as const;
+const SUPPORTED_FILTERS = [...FILTER_PLATFORMS, ...FILTER_COMPATIBILITY];
 
 function formatRecord(
   library: LibraryDataEntryType,
@@ -64,16 +53,18 @@ function deriveSlug(url: string) {
 
 function getSupportedPlatforms(library: LibraryDataEntryType) {
   const platforms: string[] = [];
-  (Object.keys(PLATFORM_LABELS) as (keyof typeof PLATFORM_LABELS)[]).forEach(key => {
-    const value = (library as Record<string, unknown>)[key];
+  SUPPORTED_FILTERS.forEach(filter => {
+    const key = filter.param as keyof LibraryDataEntryType;
+    const value = library[key];
+    const title = filter.title;
 
     if (typeof value === 'boolean' && value) {
-      platforms.push(PLATFORM_LABELS[key]);
+      platforms.push(title);
       return;
     }
 
     if (typeof value === 'string' && value) {
-      platforms.push(`${PLATFORM_LABELS[key]} (${value})`);
+      platforms.push(`${title} (${value})`);
     }
   });
   return platforms;
