@@ -2,14 +2,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
-import libraries from '~/react-native-libraries.json';
-import { type DataAssetType, type LibraryDataEntryType } from '~/types';
-import { parseGitHubUrl } from '~/util/parseGitHubUrl';
+import { type DataAssetType, type LibraryType } from '~/types';
+import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 type LibraryRecord = {
-  library: LibraryDataEntryType;
+  library: LibraryType;
   repoUrl: string;
-  repoName: string;
   description: string;
 };
 
@@ -21,18 +19,20 @@ const INTRODUCTION = [
 ];
 
 const SUPPORTED_FILTERS = [...FILTER_PLATFORMS, ...FILTER_COMPATIBILITY];
+const NEW_ARCHITECTURE_STATUS_LABELS: Record<NewArchSupportStatus, string> = {
+  [NewArchSupportStatus.NewArchOnly]: 'Only Supports New Architecture',
+  [NewArchSupportStatus.Supported]: 'Supports New Architecture',
+  [NewArchSupportStatus.Unsupported]: 'Does not support New Architecture',
+  [NewArchSupportStatus.Untested]: 'Untested with New Architecture',
+};
 
-function formatRecord(
-  library: LibraryDataEntryType,
-  repoUrl: string,
-  repoName: string,
-  rawDescription: string
-): string {
-  const displayName = library.npmPkg ?? repoName ?? deriveSlug(library.githubUrl);
+function formatRecord(library: LibraryType, repoUrl: string, rawDescription: string): string {
+  const displayName = library.npmPkg;
   const platforms = getSupportedPlatforms(library);
   const supportText = platforms.length ? platforms.join(', ') : 'Not specified';
   const header = `[${displayName}](${repoUrl}): ${rawDescription}`;
-  const newArch = formatNewArchitectureStatus(library.newArchitecture, library.newArchitectureNote);
+  const newArchStatus = getNewArchSupportStatus(library);
+  const newArch = formatNewArchitectureStatus(newArchStatus, library.newArchitectureNote);
   const lines = [`${header}`, `Supports: ${supportText}`];
   if (newArch) {
     lines.push(`New Architecture: ${newArch}`);
@@ -40,20 +40,10 @@ function formatRecord(
   return lines.join('\n');
 }
 
-function cleanDescription(value?: string | null) {
-  const sanitized = value?.replace(/\s+/g, ' ').trim();
-  return sanitized || 'Description unavailable.';
-}
-
-function deriveSlug(url: string) {
-  const { repoOwner, repoName } = parseGitHubUrl(url);
-  return `${repoOwner}/${repoName}`;
-}
-
-function getSupportedPlatforms(library: LibraryDataEntryType) {
+function getSupportedPlatforms(library: LibraryType) {
   const platforms: string[] = [];
   SUPPORTED_FILTERS.forEach(filter => {
-    const key = filter.param as keyof LibraryDataEntryType;
+    const key = filter.param as keyof LibraryType;
     const value = library[key];
     const title = filter.title;
 
@@ -69,16 +59,8 @@ function getSupportedPlatforms(library: LibraryDataEntryType) {
   return platforms;
 }
 
-function formatNewArchitectureStatus(
-  status: LibraryDataEntryType['newArchitecture'],
-  note?: string
-) {
-  const statusMap: Record<string, string> = {
-    true: 'Supported',
-    false: 'Not supported',
-    'new-arch-only': 'New Architecture only',
-  };
-  const value = statusMap[String(status)] ?? 'Unknown';
+function formatNewArchitectureStatus(status: NewArchSupportStatus, note?: string) {
+  const value = NEW_ARCHITECTURE_STATUS_LABELS[status];
 
   if (note) {
     return `${value} (${note})`;
@@ -88,28 +70,19 @@ function formatNewArchitectureStatus(
 
 async function generateLlmsFile() {
   const assetLibraries = await loadAssetLibraries();
-  const cachedByUrl = new Map(assetLibraries.map(entry => [entry.githubUrl, entry]));
-  const records: LibraryRecord[] = (libraries as LibraryDataEntryType[]).map(library => {
-    const cached = cachedByUrl.get(library.githubUrl);
-    const mergedLibrary =
-      typeof library.newArchitecture === 'undefined' &&
-      typeof cached?.github?.newArchitecture !== 'undefined'
-        ? { ...library, newArchitecture: cached.github.newArchitecture }
-        : library;
+  const records: LibraryRecord[] = assetLibraries.map(library => {
+    const repoUrl = library.githubUrl;
 
     return {
-      library: mergedLibrary,
-      repoUrl: cached?.github?.urls.repo ?? library.githubUrl,
-      repoName: cached?.github?.name ?? parseGitHubUrl(library.githubUrl).repoName,
-      description: cleanDescription(cached?.github?.description),
+      library,
+      repoUrl,
+      description: library.github?.description,
     };
   });
 
   const content = [
     ...INTRODUCTION,
-    ...records.map(record =>
-      formatRecord(record.library, record.repoUrl, record.repoName, record.description)
-    ),
+    ...records.map(record => formatRecord(record.library, record.repoUrl, record.description)),
   ].join('\n\n---\n\n');
 
   await fs.writeFile(OUTPUT_PATH, `${content}\n`, 'utf8');
