@@ -224,6 +224,7 @@ select {
 /* README WRAPPER */
 #readmeMarkdownWrapper {
   font-size: 90%;
+  line-height: 1.4;
 
   *:first-child {
     margin-top: 0;
@@ -235,23 +236,37 @@ select {
 
   p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
+    text-align: left;
   }
 
-  code, pre, a {
+  a:has(img), p:empty {
+    display: none;
+  }
+
+  code, pre, a  {
     white-space: pre-wrap;
     word-break: break-word;
   }
 
-  pre {
-    background-color: var(--select-background);
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: #fff;
-    margin-bottom: 0;
-    line-height: 1.4;
+  code {
+    font-size: 115%;
+    background-color: var(--inline-code-background);
+    border-radius: 4px;
+    padding: 1px 4px;
+  }
 
-    &:last-child {
-      margin-bottom: 12px;
+  pre {
+    margin-bottom: 0;
+
+    code {
+      background-color: unset;
+      border-radius: unset;
+      padding: unset;
+    }
+
+    &.shiki {
+      padding: 12px 16px;
+      background-color: var(--code-block-background) !important;
     }
   }
 
@@ -260,12 +275,35 @@ select {
   }
 
   blockquote {
-    margin-inline-start: 1rem;
+    margin-block-start: 8px;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    padding-inline-start: 1rem;
+    border-left-width: 3px;
+    border-left-style: solid;
   }
 
   ul, ol {
+    margin-inline-start: 0.75rem;
     padding-inline-start: 1rem;
     margin-bottom: 0;
+
+    ul, ol {
+      padding-top: 8px;
+      margin-inline-start: 0;
+    }
+  }
+
+  li *:last-child {
+    margin-bottom: 12px;
+  }
+
+  details {
+    padding-inline-start: 1rem;
+
+    summary {
+      margin-top: 8px !important;
+    }
   }
 
   table {
@@ -275,7 +313,11 @@ select {
   }
 
   td, th {
-    border: 1px solid var(--select-border);
-    padding: 3px 6px;
+    border: 1px solid var(--table-border);
+    padding: 4px 8px;
+  }
+
+  th {
+    background-color: var(--table-header-background);
   }
 }

@@ -1,12 +1,15 @@
 import { Md } from '@m2d/react-markdown/client';
+import { type HighlighterCore } from '@shikijs/types';
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { ShikiHighlighter } from 'react-shiki/core';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
+import { getHighlighter } from '~/util/codeBlockHighlighter';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 
 type Props = {
@@ -18,6 +21,7 @@ type Props = {
 
 export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Props) {
   const [readmeContent, setReadmeContent] = useState<string | null>(null);
+  const [highlighter, setHighlighter] = useState<HighlighterCore | null>(null);
 
   useEffect(() => {
     if (loader) {
@@ -30,6 +34,8 @@ export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Pr
         const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
         const readmeContent = await readmeResponse.text();
         if (!cancelled) {
+          const highlighter = await getHighlighter();
+          setHighlighter(highlighter);
           setReadmeContent(readmeContent);
         }
       } catch {
@@ -69,16 +75,45 @@ export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Pr
           // TODO: collapse Readme content by default, expand on user interaction
           <Md
             components={{
-              hr: () => null,
-              div: () => null,
-              a: (props: any) => <A style={{ display: 'contents' }} {...props} />,
-              img: ({ src, alt }: any) => (
-                <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} />
-              ),
+              // TODO: remove/hide empty paragraphs
               // TODO: skip broken/non-loading images
               // TODO: render blockquotes in a better way, support GH themed notes
-              // TODO: render code block in a better way
               // TODO: render tables in a better way
+              hr: () => null,
+              div: () => null,
+              pre: (props: any) => {
+                if (!highlighter) {
+                  return <pre>{props.children}</pre>;
+                }
+                const langClass = props.children.props.className;
+                return (
+                  <ShikiHighlighter
+                    showLanguage={false}
+                    highlighter={highlighter}
+                    language={langClass ? (langClass.split('-')[1] ?? 'sh') : 'sh'}
+                    theme={isDark ? 'github-dark-default' : 'github-light-default'}>
+                    {props.children.props.children}
+                  </ShikiHighlighter>
+                );
+              },
+              a: (props: any) => {
+                if (props.href) {
+                  return <A {...props} />;
+                }
+                return <span>{props.children}</span>;
+              },
+              img: ({ src, alt, width }: any) => (
+                <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} width={width} />
+              ),
+              blockquote: (props: any) => (
+                <blockquote
+                  style={{
+                    color: isDark ? darkColors.secondary : colors.gray5,
+                    borderColor: isDark ? darkColors.secondary : colors.secondary,
+                  }}>
+                  {props.children}
+                </blockquote>
+              ),
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             remarkPlugins={[remarkGfm]}>
