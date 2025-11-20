@@ -1,15 +1,13 @@
 import { Md } from '@m2d/react-markdown/client';
-import { type HighlighterCore } from '@shikijs/types';
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ShikiHighlighter } from 'react-shiki/core';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, P } from '~/common/styleguide';
+import ReadmeCodeBlock from '~/components/Details/ReadmeCodeBlock';
 import { ReadmeFile } from '~/components/Icons';
-import { getHighlighter } from '~/util/codeBlockHighlighter';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 
 type Props = {
@@ -19,9 +17,13 @@ type Props = {
   loader?: boolean;
 };
 
-export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Props) {
+export default function ReadmeBox({
+  packageName,
+  githubUrl,
+  isDark = false,
+  loader = false,
+}: Props) {
   const [readmeContent, setReadmeContent] = useState<string | null>(null);
-  const [highlighter, setHighlighter] = useState<HighlighterCore | null>(null);
 
   useEffect(() => {
     if (loader) {
@@ -34,8 +36,6 @@ export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Pr
         const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
         const readmeContent = await readmeResponse.text();
         if (!cancelled) {
-          const highlighter = await getHighlighter();
-          setHighlighter(highlighter);
           setReadmeContent(readmeContent);
         }
       } catch {
@@ -82,18 +82,13 @@ export default function ReadmeBox({ packageName, githubUrl, isDark, loader }: Pr
               hr: () => null,
               div: () => null,
               pre: (props: any) => {
-                if (!highlighter) {
-                  return <pre>{props.children}</pre>;
-                }
                 const langClass = props.children.props.className;
                 return (
-                  <ShikiHighlighter
-                    showLanguage={false}
-                    highlighter={highlighter}
-                    language={langClass ? (langClass.split('-')[1] ?? 'sh') : 'sh'}
-                    theme={isDark ? 'github-dark-default' : 'github-light-default'}>
-                    {props.children.props.children}
-                  </ShikiHighlighter>
+                  <ReadmeCodeBlock
+                    code={props.children.props.children}
+                    lang={langClass ? (langClass.split('-')[1] ?? 'sh') : 'sh'}
+                    isDark={isDark}
+                  />
                 );
               },
               a: (props: any) => {

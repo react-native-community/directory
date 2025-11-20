@@ -1,7 +1,7 @@
 import { type NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import * as emoji from 'node-emoji';
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
@@ -41,7 +41,10 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
-  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
+  const library = useMemo(
+    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
+    [apiData.libraries, packageName]
+  );
 
   if (!library || !registryData) {
     return (
@@ -181,7 +184,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 Snyk Advisor
               </A>
             </View>
-            {dependencies && (
+            {dependencies && Object.keys(dependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>
                 <View>
@@ -191,7 +194,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {devDependencies && (
+            {devDependencies && Object.keys(devDependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Development dependencies</H6>
                 <View>
@@ -201,7 +204,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {peerDependencies && (
+            {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Peer dependencies</H6>
                 <View>
@@ -211,7 +214,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {engines && (
+            {engines && Object.keys(engines).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Engines</H6>
                 <View>
