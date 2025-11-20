@@ -46,6 +46,10 @@ function App({ pageProps, Component }: AppProps) {
                     --select-background: ${darkColors.dark};
                     --select-border: ${colors.gray6};
                     --tooltip-border: ${colors.gray7};
+                    --table-border: ${colors.gray6};
+                    --table-header-background: ${darkColors.dark};
+                    --code-block-background: ${darkColors.veryDark};
+                    --inline-code-background: ${colors.gray6};
                   }
                 `
                   : `
@@ -56,6 +60,10 @@ function App({ pageProps, Component }: AppProps) {
                     --select-background: ${colors.gray6};
                     --select-border: ${colors.gray5};
                     --tooltip-border: ${colors.gray6};
+                    --table-border: ${colors.gray3};
+                    --table-header-background: ${colors.gray2};
+                    --code-block-background: ${colors.gray2};
+                    --inline-code-background: ${colors.gray2};
                   }
                 `}
               </style>
