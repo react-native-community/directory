@@ -18366,5 +18366,11 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/kubacienciala/expo-weather-kit",
+    "examples": ["https://github.com/kubacienciala/expo-weather-kit/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
