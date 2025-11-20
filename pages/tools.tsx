@@ -11,12 +11,9 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 export default function Tools() {
   const { isDark } = useContext(CustomAppearanceContext);
+
   const textColorStyle = {
     color: isDark ? colors.gray2 : colors.black,
-  };
-
-  const primaryButtonColorStyle = {
-    backgroundColor: isDark ? darkColors.primaryDark : colors.primary,
   };
   const buttonColorStyle = {
     backgroundColor: isDark ? darkColors.border : colors.gray3,
@@ -41,12 +38,7 @@ export default function Tools() {
           package inside the built-in editor Command Palette.
         </P>
         <View style={styles.buttonsContainer}>
-          <Button
-            openInNewTab
-            href="https://github.com/react-native-community/vscode-react-native-directory"
-            style={[styles.button, primaryButtonColorStyle]}>
-            <GitHub width={16} /> <span>GitHub</span>
-          </Button>
+          <GitHubButton href="https://github.com/react-native-community/vscode-react-native-directory" />
           <Button
             openInNewTab
             href="https://marketplace.visualstudio.com/items?itemName=react-native-directory.vscode-react-native-directory"
@@ -65,12 +57,7 @@ export default function Tools() {
           A searchable and filterable list of React Native libraries inside Raycast.
         </P>
         <View style={styles.buttonsContainer}>
-          <Button
-            openInNewTab
-            href="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory"
-            style={[styles.button, primaryButtonColorStyle]}>
-            <GitHub width={16} /> <span>GitHub</span>
-          </Button>
+          <GitHubButton href="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory" />
           <Button
             openInNewTab
             href="https://www.raycast.com/shubh_porwal/react-native-directory"
@@ -83,12 +70,7 @@ export default function Tools() {
           CLI to check your Expo project for known issues and used libraries compatibility.
         </P>
         <View style={styles.buttonsContainer}>
-          <Button
-            openInNewTab
-            href="https://github.com/expo/expo/tree/main/packages/expo-doctor"
-            style={[styles.button, primaryButtonColorStyle]}>
-            <GitHub width={16} /> <span>GitHub</span>
-          </Button>
+          <GitHubButton href="https://github.com/expo/expo/tree/main/packages/expo-doctor" />
           <Button
             openInNewTab
             href="https://www.npmjs.com/package/expo-doctor"
@@ -102,19 +84,14 @@ export default function Tools() {
           at once, get detailed insights, and export reports.
         </P>
         <View style={styles.buttonsContainer}>
-          <Button
-            openInNewTab
-            href="https://github.com/sandipshiwakoti/react-native-package-checker"
-            style={[styles.button, primaryButtonColorStyle]}>
-            <GitHub width={16} /> <span>GitHub</span>
-          </Button>
+          <GitHubButton href="https://github.com/sandipshiwakoti/react-native-package-checker" />
           <Button
             openInNewTab
             href="https://react-native-package-checker.vercel.app/"
             style={[styles.button, buttonColorStyle]}>
             <span>Website</span>
           </Button>
-        </View>{' '}
+        </View>
         <H3 style={[styles.subHeader, textColorStyle]}>
           React Native Package Checker VS Code Extension
         </H3>
@@ -123,12 +100,7 @@ export default function Tools() {
           inside VS Code.
         </P>
         <View style={styles.buttonsContainer}>
-          <Button
-            openInNewTab
-            href="https://github.com/sandipshiwakoti/vscode-react-native-package-checker"
-            style={[styles.button, primaryButtonColorStyle]}>
-            <GitHub width={16} /> <span>GitHub</span>
-          </Button>
+          <GitHubButton href="https://github.com/sandipshiwakoti/vscode-react-native-package-checker" />
           <Button
             openInNewTab
             href="https://marketplace.visualstudio.com/items?itemName=sandipshiwakoti.vscode-react-native-package-checker"
@@ -146,6 +118,26 @@ export default function Tools() {
         <br />
       </ContentContainer>
     </>
+  );
+}
+
+type GitHubButtonProps = {
+  href: string;
+};
+
+function GitHubButton({ href }: GitHubButtonProps) {
+  const { isDark } = useContext(CustomAppearanceContext);
+  const primaryButtonColorStyle = {
+    backgroundColor: isDark ? darkColors.primaryDark : colors.primary,
+  };
+  return (
+    <Button
+      openInNewTab
+      href="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory"
+      style={[styles.button, primaryButtonColorStyle]}>
+      <GitHub width={16} />
+      <P style={styles.githubButtonLabel}>GitHub</P>
+    </Button>
   );
 }
 
@@ -176,6 +168,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     minHeight: 32,
     fontSize: 14,
-    gap: 2,
+    gap: 6,
+  },
+  githubButtonLabel: {
+    color: 'inherit',
+    fontSize: 14,
   },
 });

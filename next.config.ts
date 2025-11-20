@@ -34,7 +34,6 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
     forceSwcTransforms: true,
     webpackBuildWorker: true,
     browserDebugInfoInTerminal: true,
-    clientSegmentCache: true,
     useLightningcss: true,
     optimizePackageImports: PACKAGES_TO_OPTIMIZE,
   },
