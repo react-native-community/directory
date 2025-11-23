@@ -18372,5 +18372,15 @@
     "examples": ["https://github.com/kubacienciala/expo-weather-kit/tree/main/example"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/wneel/react-native-native-select",
+    "npmPkg": "react-native-native-select",
+    "examples": [
+      "https://github.com/wneel/react-native-native-select/tree/main/tests"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
