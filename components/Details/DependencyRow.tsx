@@ -12,20 +12,24 @@ type Props = {
 export default function DependencyRow({ name, version }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
-  const headerColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
+  const versionLabel = getVersionLabel(version);
+  const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 26;
 
   return (
-    <View style={styles.dependencyEntry}>
+    <View style={[styles.dependencyEntry, hasLongVersion && styles.withLongVersion]}>
       <A
         href={`https://www.npmjs.com/package/${name}`}
         target="_blank"
-        containerStyle={{ flexShrink: 1 }}
+        containerStyle={styles.linkContainer}
         style={[styles.dependencyLabel, styles.mutedLink]}>
         {name}
       </A>
-      <Label style={headerColorStyle}>{getVersionLabel(version)}</Label>
+      <Label
+        style={{
+          color: isDark ? darkColors.secondary : colors.gray5,
+        }}>
+        {getVersionLabel(version)}
+      </Label>
     </View>
   );
 }
@@ -53,6 +57,9 @@ function extractPatchedVersion(entry: string): string | null {
 }
 
 const styles = StyleSheet.create({
+  linkContainer: {
+    flexShrink: 1,
+  },
   mutedLink: {
     fontWeight: 300,
     backgroundColor: 'transparent',
@@ -60,9 +67,12 @@ const styles = StyleSheet.create({
   dependencyEntry: {
     display: 'flex',
     flexDirection: 'row',
-    gap: 8,
+    columnGap: 8,
     justifyContent: 'space-between',
     fontFamily: 'monospace',
+  },
+  withLongVersion: {
+    flexWrap: 'wrap',
   },
   dependencyLabel: {
     fontSize: 12,

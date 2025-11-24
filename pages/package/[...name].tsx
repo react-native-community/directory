@@ -84,7 +84,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
       <ContentContainer style={styles.container}>
         <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
           <View style={styles.detailsContainer}>
-            {library.unmaintained && <UnmaintainedLabel />}
+            {library.unmaintained && <UnmaintainedLabel block />}
             <View style={styles.nameRow}>
               <View style={styles.nameWrapper}>
                 <A href={library.githubUrl} style={styles.name} hoverStyle={styles.nameHovered}>
