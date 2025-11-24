@@ -1,3 +1,4 @@
+import { UL } from '@expo/html-elements';
 import { type NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import * as emoji from 'node-emoji';
@@ -10,6 +11,7 @@ import { Button } from '~/components/Button';
 import { CompatibilityTags } from '~/components/CompatibilityTags';
 import ContentContainer from '~/components/ContentContainer';
 import DependencyRow from '~/components/Details/DependencyRow';
+import ExampleBox from '~/components/Details/ExampleBox';
 import PackageAuthor from '~/components/Details/PackageAuthor';
 import ReadmeBox from '~/components/Details/ReadmeBox';
 import { MetaData } from '~/components/Library/MetaData';
@@ -24,7 +26,6 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type NpmLatestRegistryData, type NpmUser } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
 import mapDependencies from '~/util/mapDependencies';
-import { getExampleDescription } from '~/util/strings';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -112,20 +113,11 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             {library.examples && library.examples.length > 0 && (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Code examples</H6>
-                <ul
-                  style={{
-                    marginBlock: 0,
-                    paddingLeft: 24,
-                    color: isDark ? colors.gray5 : colors.gray4,
-                  }}>
+                <UL style={styles.examplesWrapper}>
                   {library.examples.map((example, index) => (
-                    <li key={example}>
-                      <A href={example} style={styles.mutedLink}>
-                        #{index + 1}: {getExampleDescription(example)}
-                      </A>
-                    </li>
+                    <ExampleBox example={example} key={example} index={index} />
                   ))}
-                </ul>
+                </UL>
               </>
             )}
             {author && (
@@ -138,7 +130,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             )}
             {maintainers && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Contributors</H6>
                 <View style={styles.maintainersList}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
@@ -339,6 +331,11 @@ const styles = StyleSheet.create({
   },
   rowSpacing: {
     gap: 6,
+  },
+  examplesWrapper: {
+    marginBlock: 0,
+    marginBottom: 8,
+    gap: 12,
   },
 });
 

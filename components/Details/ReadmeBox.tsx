@@ -141,6 +141,7 @@ const styles = StyleSheet.create({
   readmeContainer: {
     padding: 16,
     paddingTop: 12,
+    fontWeight: 300,
   },
   loadingContent: {
     textAlign: 'center',

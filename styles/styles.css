@@ -249,7 +249,7 @@ select {
   }
 
   code {
-    font-size: 115%;
+    font-size: 110%;
     background-color: var(--inline-code-background);
     border-radius: 4px;
     padding: 1px 4px;

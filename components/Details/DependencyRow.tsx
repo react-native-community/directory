@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { type ReactNode, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, Label } from '~/common/styleguide';
@@ -25,17 +25,31 @@ export default function DependencyRow({ name, version }: Props) {
         style={[styles.dependencyLabel, styles.mutedLink]}>
         {name}
       </A>
-      <Label style={headerColorStyle}>
-        {version.startsWith('http') ? (
-          <A href={version} style={styles.mutedLink}>
-            URL
-          </A>
-        ) : (
-          version
-        )}
-      </Label>
+      <Label style={headerColorStyle}>{getVersionLabel(version)}</Label>
     </View>
   );
+}
+
+function getVersionLabel(version: string): ReactNode {
+  if (version.startsWith('http')) {
+    return (
+      <A href={version} style={styles.mutedLink}>
+        URL
+      </A>
+    );
+  } else if (version.startsWith('patch:')) {
+    const patchedVersion = extractPatchedVersion(version);
+    if (patchedVersion) {
+      return `${patchedVersion} (patched)`;
+    }
+    return 'patched';
+  }
+  return version;
+}
+
+function extractPatchedVersion(entry: string): string | null {
+  const match = entry.match(/@npm%3A([^#]+)/);
+  return match ? decodeURIComponent(match[1]) : null;
 }
 
 const styles = StyleSheet.create({
