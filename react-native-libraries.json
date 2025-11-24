@@ -18384,15 +18384,15 @@
     "newArchitecture": true
   },
   {
-  "githubUrl": "https://github.com/bhojaniasgar/react-native-otp-input",
-  "npmPkg": "https://www.npmjs.com/package/@bhojaniasgar/react-native-otp-input",
-  "examples": [
+    "githubUrl": "https://github.com/bhojaniasgar/react-native-otp-input",
+    "npmPkg": "@bhojaniasgar/react-native-otp-input",
+    "examples": [
     "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/BareCli",
     "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/expo"
-  ],
-  "ios": true,
+    ],
+    "ios": true,
   "android": true,
   "web": true,
   "newArchitecture": true
-}
+  }
 ]
