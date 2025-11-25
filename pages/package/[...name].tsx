@@ -135,15 +135,11 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
                     .map(maintainer => (
-                      <PackageAuthor author={maintainer} key={maintainer.name} />
+                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
                     ))}
                 </View>
               </>
             )}
-            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Additional information</H6>
-            <View style={styles.rowSpacing}>
-              <MetaData library={library} secondary skipExamples />
-            </View>
             {library.images && library.images.length ? (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Usage gallery</H6>
@@ -161,6 +157,10 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             </View>
             <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
             <TrendingMark library={library} />
+            <H6 style={[styles.contentHeader, headerColorStyle]}>Additional information</H6>
+            <View style={styles.rowSpacing}>
+              <MetaData library={library} secondary skipExamples />
+            </View>
             {library.github.topics && library.github.topics.length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>
