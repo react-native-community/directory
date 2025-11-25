@@ -161,17 +161,30 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             </View>
             <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
             <TrendingMark library={library} />
+            {library.github.topics && library.github.topics.length > 0 && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>
+                <View style={styles.topicsContainer}>
+                  {library.github.topics.map(topic => (
+                    <A
+                      key={topic}
+                      href={`/?search=${topic}`}
+                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      {topic}
+                    </A>
+                  ))}
+                </View>
+              </>
+            )}
             <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
             <View style={styles.rowSpacing}>
               <A
                 href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                target="_blank"
                 style={[styles.dependencyLabel, styles.mutedLink]}>
                 Bundlephobia
               </A>
               <A
                 href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                target="_blank"
                 style={[styles.dependencyLabel, styles.mutedLink]}>
                 Snyk Advisor
               </A>
@@ -336,6 +349,12 @@ const styles = StyleSheet.create({
     marginBlock: 0,
     marginBottom: 8,
     gap: 12,
+  },
+  topicsContainer: {
+    gap: 8,
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
 
