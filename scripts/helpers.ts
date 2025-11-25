@@ -56,11 +56,12 @@ export function processTopics(topics?: string[]) {
   return topics
     .map(topic =>
       topic
+        .normalize('NFKC')
+        .toLowerCase()
         .replace(/([ _])/g, '-')
         .replace(STOPWORDS_PATTERN, '')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '')
-        .toLowerCase()
         .trim()
     )
     .filter(topic => topic?.length);
