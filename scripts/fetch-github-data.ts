@@ -186,7 +186,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       hasProjects: json.hasProjectsEnabled,
       hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
-      fundingLinks: json.fundingLinks,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,

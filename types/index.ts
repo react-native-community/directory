@@ -106,10 +106,6 @@ export type LibraryType = LibraryDataEntryType & {
       stars: number;
       forks: number;
       dependencies?: number;
-      fundingLinks: {
-        platform: string;
-        url: string;
-      };
     };
     license: LibraryLicenseType;
   };
@@ -222,7 +218,6 @@ export type NpmLatestRegistryData = {
     node: string;
   };
   exports: Record<string, object | string>;
-  funding?: string;
   gitHead?: string;
   scripts: Record<string, string>;
   gitHooks?: Record<string, string>;

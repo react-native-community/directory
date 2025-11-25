@@ -306,6 +306,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 20,
     textDecorationLine: 'none',
+    lineHeight: 24,
+    marginTop: -2,
   },
   nameHovered: {
     color: colors.gray4,

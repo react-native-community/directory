@@ -23,7 +23,7 @@ export default function ReadmeBox({
   isDark = false,
   loader = false,
 }: Props) {
-  const [readmeContent, setReadmeContent] = useState<string | null>(null);
+  const [readmeContent, setReadmeContent] = useState<string | null | undefined>(undefined);
 
   useEffect(() => {
     if (loader) {
@@ -49,6 +49,13 @@ export default function ReadmeBox({
     };
   }, []);
 
+  if (!githubUrl || !packageName) {
+    return null;
+  }
+
+  const readmeFallbackContent = getReadmeFallbackContent(readmeContent);
+
+  // TODO: collapse Readme content by default, expand on user interaction
   return (
     <View
       id="readmeMarkdownWrapper"
@@ -71,8 +78,9 @@ export default function ReadmeBox({
         <P>Readme.md</P>
       </View>
       <View style={styles.readmeContainer}>
-        {readmeContent && githubUrl ? (
-          // TODO: collapse Readme content by default, expand on user interaction
+        {!readmeContent && readmeFallbackContent ? (
+          <P style={styles.statusContent}>{readmeFallbackContent}</P>
+        ) : (
           <Md
             components={{
               // TODO: remove/hide empty paragraphs
@@ -81,11 +89,11 @@ export default function ReadmeBox({
               // TODO: render tables in a better way
               hr: () => null,
               div: () => null,
-              pre: (props: any) => {
-                const langClass = props.children.props.className;
+              pre: ({ children }: any) => {
+                const langClass = children.props.className;
                 return (
                   <ReadmeCodeBlock
-                    code={props.children.props.children}
+                    code={children.props.children}
                     lang={langClass ? (langClass.split('-')[1] ?? 'sh') : 'sh'}
                     isDark={isDark}
                   />
@@ -100,26 +108,35 @@ export default function ReadmeBox({
               img: ({ src, alt, width }: any) => (
                 <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} width={width} />
               ),
-              blockquote: (props: any) => (
+              blockquote: ({ children }: any) => (
                 <blockquote
                   style={{
                     color: isDark ? darkColors.secondary : colors.gray5,
                     borderColor: isDark ? darkColors.secondary : colors.secondary,
                   }}>
-                  {props.children}
+                  {children}
                 </blockquote>
               ),
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             remarkPlugins={[remarkGfm]}>
-            {readmeContent}
+            {readmeContent ?? undefined}
           </Md>
-        ) : (
-          <P style={styles.loadingContent}>Loading README.md…</P>
         )}
       </View>
     </View>
   );
+}
+
+function getReadmeFallbackContent(readmeContent: string | null | undefined): string | null {
+  if (readmeContent === undefined) {
+    return 'Loading README.md…';
+  } else if (readmeContent === null) {
+    return 'Cannot fetch README.md content.';
+  } else if (readmeContent === '') {
+    return 'This package does not have a README.md file.';
+  }
+  return null;
 }
 
 const styles = StyleSheet.create({
@@ -143,7 +160,7 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     fontWeight: 300,
   },
-  loadingContent: {
+  statusContent: {
     textAlign: 'center',
     paddingVertical: 24,
   },
