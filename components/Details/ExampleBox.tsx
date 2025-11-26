@@ -2,7 +2,7 @@ import { LI } from '@expo/html-elements';
 import { useContext } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { A, colors, darkColors } from '~/common/styleguide';
+import { A, colors, darkColors, useLayout } from '~/common/styleguide';
 import { GitHub } from '~/components/Icons';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
@@ -13,6 +13,8 @@ type Props = {
 
 export default function ExampleBox({ example, index }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
+
   return (
     <LI>
       <A
@@ -31,7 +33,7 @@ export default function ExampleBox({ example, index }: Props) {
             // TODO: add Snack and generic code icons
             <GitHub fill={isDark ? darkColors.pewter : colors.gray5} />
           )}
-          <span style={{ fontWeight: 300, color: isDark ? colors.white : colors.black }}>
+          <span style={{ ...styles.exampleLabel, color: isDark ? colors.white : colors.black }}>
             {getExampleDescription(example)}
           </span>
         </View>
@@ -41,6 +43,7 @@ export default function ExampleBox({ example, index }: Props) {
             {
               color: isDark ? darkColors.pewter : colors.gray5,
             },
+            isSmallScreen && { display: 'none' },
           ]}>
           #{index + 1}
         </Text>
@@ -81,7 +84,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     fontWeight: 400,
+    maxWidth: '100%',
     gap: 10,
+  },
+  exampleLabel: {
+    fontWeight: 300,
   },
   exampleIndex: {
     opacity: 0.33,

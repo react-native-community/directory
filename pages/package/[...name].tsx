@@ -96,7 +96,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
         <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
           <View style={styles.detailsContainer}>
             {library.unmaintained && <UnmaintainedLabel block />}
-            <View style={styles.nameRow}>
+            <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
               <View style={styles.nameWrapper}>
                 <P style={styles.name}>{library.npmPkg}</P>
                 <P style={headerColorStyle}>{library.npm?.latestRelease ?? registryData.version}</P>
@@ -134,7 +134,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </UL>
               </>
             )}
-            {author && (
+            {!isSmallScreen && author && (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
                 <View style={{ alignItems: 'flex-start' }}>
@@ -142,7 +142,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {maintainers && (
+            {!isSmallScreen && maintainers && (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Contributors</H6>
                 <View style={styles.maintainersList}>
@@ -187,6 +187,26 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                       {topic}
                     </A>
                   ))}
+                </View>
+              </>
+            )}
+            {isSmallScreen && author && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Author</H6>
+                <View style={{ alignItems: 'flex-start' }}>
+                  <PackageAuthor author={author} />
+                </View>
+              </>
+            )}
+            {isSmallScreen && maintainers && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
+                <View style={styles.maintainersList}>
+                  {maintainers
+                    .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
+                    .map(maintainer => (
+                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
+                    ))}
                 </View>
               </>
             )}
@@ -310,10 +330,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  nameWrapper: {
+  nameRowMobile: {
     gap: 8,
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+  },
+  nameWrapper: {
+    columnGap: 8,
+    rowGap: 4,
     flexDirection: 'row',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   name: {
     fontWeight: '600',
