@@ -131,10 +131,7 @@ function GitHubButton({ href }: GitHubButtonProps) {
     backgroundColor: isDark ? darkColors.primaryDark : colors.primary,
   };
   return (
-    <Button
-      openInNewTab
-      href="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory"
-      style={[styles.button, primaryButtonColorStyle]}>
+    <Button openInNewTab href={href} style={[styles.button, primaryButtonColorStyle]}>
       <GitHub width={16} />
       <P style={styles.githubButtonLabel}>GitHub</P>
     </Button>
