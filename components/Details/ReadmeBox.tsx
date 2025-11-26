@@ -1,4 +1,5 @@
 import { Md } from '@m2d/react-markdown/client';
+import { capitalize } from 'es-toolkit';
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import rehypeRaw from 'rehype-raw';
@@ -8,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 import { A, colors, darkColors, P } from '~/common/styleguide';
 import ReadmeCodeBlock from '~/components/Details/ReadmeCodeBlock';
 import { ReadmeFile } from '~/components/Icons';
+import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 
 type Props = {
@@ -85,8 +87,6 @@ export default function ReadmeBox({
             components={{
               // TODO: remove/hide empty paragraphs
               // TODO: skip broken/non-loading images
-              // TODO: render blockquotes in a better way, support GH themed notes
-              // TODO: render tables in a better way
               hr: () => null,
               div: () => null,
               pre: ({ children }: any) => {
@@ -108,15 +108,28 @@ export default function ReadmeBox({
               img: ({ src, alt, width }: any) => (
                 <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} width={width} />
               ),
-              blockquote: ({ children }: any) => (
-                <blockquote
-                  style={{
-                    color: isDark ? darkColors.secondary : colors.gray5,
-                    borderColor: isDark ? darkColors.secondary : colors.secondary,
-                  }}>
-                  {children}
-                </blockquote>
-              ),
+              blockquote: ({ children }: any) => {
+                const blockquoteType = extractAndStripBlockquoteType(children);
+                return (
+                  <blockquote
+                    className={blockquoteType.type}
+                    style={{
+                      color: isDark ? darkColors.secondary : colors.gray5,
+                      borderColor: blockquoteType
+                        ? undefined
+                        : isDark
+                          ? darkColors.secondary
+                          : colors.secondary,
+                    }}>
+                    {blockquoteType.type && (
+                      <strong className="blockquote-title">
+                        {capitalize(blockquoteType.type)}
+                      </strong>
+                    )}
+                    {blockquoteType.children}
+                  </blockquote>
+                );
+              },
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             remarkPlugins={[remarkGfm]}>

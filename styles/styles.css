@@ -288,8 +288,54 @@ select {
     margin-block-end: 0;
     margin-inline-start: 0;
     padding-inline-start: 1rem;
+    padding-block-start: 0.25rem;
+    padding-block-end: 0.25rem;
     border-left-width: 3px;
     border-left-style: solid;
+
+    .blockquote-title {
+      font-weight: 600;
+    }
+
+    &.note {
+      border-left-color: #4493f8;
+
+      .blockquote-title {
+        color: #4493f8;
+      }
+    }
+
+    &.tip {
+      border-left-color: #238636;
+
+      .blockquote-title {
+        color: #238636;
+      }
+    }
+
+    &.important {
+      border-left-color: #ab7df8;
+
+      .blockquote-title {
+        color: #ab7df8;
+      }
+    }
+
+    &.warning {
+      border-left-color: #9e6a03;
+
+      .blockquote-title {
+        color: #9e6a03;
+      }
+    }
+
+    &.caution {
+      border-left-color: #da3633;
+
+      .blockquote-title {
+        color: #da3633;
+      }
+    }
   }
 
   ul, ol {
