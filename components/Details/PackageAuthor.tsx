@@ -70,7 +70,10 @@ export default function PackageAuthor({ author, compact }: Props) {
             trigger={
               <img
                 src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
-                style={styles.avatar}
+                style={{
+                  ...styles.avatar,
+                  backgroundColor: isDark ? darkColors.powder : colors.gray2,
+                }}
                 alt={`${author.name} avatar`}
               />
             }>

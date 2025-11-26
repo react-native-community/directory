@@ -142,9 +142,9 @@ function generateSecondaryData(
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
   };
-  const iconColor = isDark ? darkColors.pewter : colors.secondary;
-  const paragraphStyles = [styles.secondaryText, secondaryTextColor];
-  const linkStyles = [...paragraphStyles, styles.mutedLink];
+  const iconColor = isDark ? darkColors.pewter : skipExamples ? colors.gray5 : colors.secondary;
+  const paragraphStyles = [styles.secondaryText, !skipExamples && secondaryTextColor];
+  const linkStyles = [...paragraphStyles, !skipExamples && styles.mutedLink];
   const hoverStyle = {
     textDecorationColor: colors.gray4,
     color: isDark ? colors.gray3 : colors.gray5,

@@ -155,12 +155,12 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             <View>
               <MetaData library={library} />
             </View>
-            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
-            <TrendingMark library={library} />
             <H6 style={[styles.contentHeader, headerColorStyle]}>Additional information</H6>
             <View style={styles.rowSpacing}>
               <MetaData library={library} secondary skipExamples />
             </View>
+            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
+            <TrendingMark library={library} />
             {library.github.topics && library.github.topics.length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>

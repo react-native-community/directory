@@ -40,7 +40,13 @@ export default function ReadmeBox({
         if (!cancelled) {
           setReadmeContent(readmeContent);
         }
-      } catch {
+      } catch (error: any) {
+        if (error instanceof Error) {
+          if (error.message === 'Failed to fetch') {
+            setReadmeContent('');
+            return;
+          }
+        }
         if (!cancelled) {
           setReadmeContent(null);
         }
@@ -115,11 +121,11 @@ export default function ReadmeBox({
                     className={blockquoteType.type}
                     style={{
                       color: isDark ? darkColors.secondary : colors.gray5,
-                      borderColor: blockquoteType
+                      borderColor: blockquoteType.type
                         ? undefined
                         : isDark
                           ? darkColors.secondary
-                          : colors.secondary,
+                          : colors.gray4,
                     }}>
                     {blockquoteType.type && (
                       <strong className="blockquote-title">
