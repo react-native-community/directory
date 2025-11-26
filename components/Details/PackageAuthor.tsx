@@ -105,7 +105,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   return (
     <View>
-      <Label>{getValidName(author.name) ?? 'Unknown'}</Label>
+      <Label>{getValidName(author.name ?? author) ?? 'Unknown'}</Label>
     </View>
   );
 }

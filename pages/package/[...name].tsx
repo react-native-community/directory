@@ -48,7 +48,6 @@ type Props = {
 };
 
 // TODO: async render/data fetch
-// TODO: responsive/mobile viewports
 export default function PackagePage({ apiData, registryData, packageName }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();

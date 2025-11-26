@@ -10,7 +10,10 @@ export default function ReadmeCodeBlock({ code, lang, isDark }: Props) {
   const highlighter = useShikiHighlighter(
     code,
     lang,
-    isDark ? 'github-dark-default' : 'github-light-default'
+    isDark ? 'github-dark-default' : 'github-light-default',
+    {
+      langAlias: { gradle: 'groovy' },
+    }
   );
 
   if (!highlighter) {

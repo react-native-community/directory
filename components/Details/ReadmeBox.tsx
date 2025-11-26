@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
+import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, P } from '~/common/styleguide';
@@ -95,16 +96,6 @@ export default function ReadmeBox({
               // TODO: skip broken/non-loading images
               hr: () => null,
               div: () => null,
-              pre: ({ children }: any) => {
-                const langClass = children.props.className;
-                return (
-                  <ReadmeCodeBlock
-                    code={children.props.children}
-                    lang={langClass ? (langClass.split('-')[1] ?? 'sh') : 'sh'}
-                    isDark={isDark}
-                  />
-                );
-              },
               a: (props: any) => {
                 if (props.href) {
                   return <A {...props} />;
@@ -114,6 +105,16 @@ export default function ReadmeBox({
               img: ({ src, alt, width }: any) => (
                 <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} width={width} />
               ),
+              pre: ({ children }: any) => {
+                const langClass = children.props.className;
+                return (
+                  <ReadmeCodeBlock
+                    code={children.props.children}
+                    lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
+                    isDark={isDark}
+                  />
+                );
+              },
               blockquote: ({ children }: any) => {
                 const blockquoteType = extractAndStripBlockquoteType(children);
                 return (
@@ -138,7 +139,7 @@ export default function ReadmeBox({
               },
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
-            remarkPlugins={[remarkGfm]}>
+            remarkPlugins={[remarkGfm, remarkEmoji]}>
             {readmeContent ?? undefined}
           </Md>
         )}
