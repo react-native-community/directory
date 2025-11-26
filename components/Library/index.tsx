@@ -3,9 +3,8 @@ import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
-import { Button } from '~/components/Button';
-import { Arrow } from '~/components/Icons';
+import { colors, useLayout, A, darkColors, Headline, HoverEffect } from '~/common/styleguide';
+import { GitHub } from '~/components/Icons';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
@@ -35,8 +34,6 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
     github.newArchitecture ||
     library.newArchitecture ||
     (library.examples && library.examples.length);
-
-  const detailsButtonBackgroundColor = isDark ? darkColors.border : colors.gray3;
 
   return (
     <View
@@ -87,16 +84,16 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
           }>
           <View style={styles.nameWrapper}>
             <A
-              href={library.githubUrl || github.urls.repo}
+              href={`/package/${library.npmPkg}`}
               style={styles.name}
               hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
               {libName}
             </A>
-            <Button
-              href={`/package/${library.npmPkg}`}
-              style={[styles.detailsButton, { backgroundColor: detailsButtonBackgroundColor }]}>
-              <Arrow width={10} height={10} fill={isDark ? colors.gray4 : colors.gray5} />
-            </Button>
+            <HoverEffect>
+              <A href={library.githubUrl} style={styles.githubButton}>
+                <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
+              </A>
+            </HoverEffect>
           </View>
           {!showTrendingMark && !library.unmaintained && <UpdatedAtView library={library} />}
         </View>
@@ -297,5 +294,9 @@ const styles = StyleSheet.create({
     width: 16,
     height: 16,
     alignItems: 'center',
+  },
+  githubButton: {
+    width: 20,
+    height: 20,
   },
 });

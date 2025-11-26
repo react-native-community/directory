@@ -13,7 +13,7 @@ type Props = PropsWithChildren & {
 
 export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
   const isLink = !!href;
-  const linkStyle = [
+  const buttonStyle = [
     styles.container,
     {
       backgroundColor: darkColors.primaryDark,
@@ -31,12 +31,12 @@ export function Button({ children, href, onPress, style, openInNewTab, ...rest }
           style={{ borderRadius: 4, fontFamily: 'inherit', fontSize: 'inherit' }}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
-          <Pressable focusable={false} style={linkStyle} accessible={false}>
+          <Pressable focusable={false} style={buttonStyle} accessible={false}>
             {content}
           </Pressable>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={linkStyle} {...rest}>
+        <Pressable onPress={onPress} style={buttonStyle} {...rest}>
           {content}
         </Pressable>
       )}

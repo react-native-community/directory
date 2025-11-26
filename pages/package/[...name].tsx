@@ -6,7 +6,17 @@ import { useContext, useMemo } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, H6, Headline, Label, P, useLayout } from '~/common/styleguide';
+import {
+  A,
+  colors,
+  darkColors,
+  H6,
+  Headline,
+  HoverEffect,
+  Label,
+  P,
+  useLayout,
+} from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { CompatibilityTags } from '~/components/CompatibilityTags';
 import ContentContainer from '~/components/ContentContainer';
@@ -14,6 +24,7 @@ import DependencyRow from '~/components/Details/DependencyRow';
 import ExampleBox from '~/components/Details/ExampleBox';
 import PackageAuthor from '~/components/Details/PackageAuthor';
 import ReadmeBox from '~/components/Details/ReadmeBox';
+import { GitHub } from '~/components/Icons';
 import { MetaData } from '~/components/Library/MetaData';
 import Thumbnail from '~/components/Library/Thumbnail.web';
 import TrendingMark from '~/components/Library/TrendingMark';
@@ -87,10 +98,13 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             {library.unmaintained && <UnmaintainedLabel block />}
             <View style={styles.nameRow}>
               <View style={styles.nameWrapper}>
-                <A href={library.githubUrl} style={styles.name} hoverStyle={styles.nameHovered}>
-                  {library.npmPkg}
-                </A>
+                <P style={styles.name}>{library.npmPkg}</P>
                 <P style={headerColorStyle}>{library.npm?.latestRelease ?? registryData.version}</P>
+                <HoverEffect>
+                  <A href={library.githubUrl} style={styles.githubButton}>
+                    <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
+                  </A>
+                </HoverEffect>
               </View>
               <UpdatedAtView library={library} />
             </View>
@@ -302,15 +316,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   name: {
-    backgroundColor: 'transparent',
     fontWeight: '600',
     fontSize: 20,
-    textDecorationLine: 'none',
     lineHeight: 24,
     marginTop: -2,
   },
-  nameHovered: {
-    color: colors.gray4,
+  githubButton: {
+    width: 20,
+    height: 20,
   },
   description: {
     fontWeight: '400',
@@ -350,7 +363,7 @@ const styles = StyleSheet.create({
   examplesWrapper: {
     marginBlock: 0,
     marginBottom: 8,
-    gap: 12,
+    gap: 8,
   },
   topicsContainer: {
     gap: 8,
