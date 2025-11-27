@@ -18426,5 +18426,15 @@
     "githubUrl": "https://github.com/Ganesh1110/react-native-apptext",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dayaki/react-native-health-kits",
+    "npmPkg": "@mbdayo/react-native-health-kits",
+    "examples": [
+      "https://github.com/dayaki/react-native-health-kits/blob/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
