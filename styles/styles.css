@@ -238,8 +238,12 @@ select {
     margin-top: 18px;
   }
 
-  section + img {
-    margin-top: 18px;
+  section + img, blockquote + img {
+    margin-top: 12px;
+  }
+
+  img + img {
+    margin-top: 8px;
   }
 
   p, h1, h2, h3, h4, h5, h6 {

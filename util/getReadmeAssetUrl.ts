@@ -1,6 +1,15 @@
-export function getReadmeAssetURL(src: string, githubUrl: string) {
-  if (src.startsWith('http')) {
+export function getReadmeAssetURL(src: string, githubUrl: string, defaultBranch = 'main') {
+  const isGitHubAssetURL =
+    src.includes('github.com') && !src.endsWith('badge.svg') && !src.includes('user-attachments');
+
+  if (src.startsWith('http') && !isGitHubAssetURL) {
     return src;
+  }
+
+  if (isGitHubAssetURL) {
+    return src
+      .replace('https://github.com', 'https://raw.githubusercontent.com')
+      .replace('/blob/', '/');
   }
 
   const url = new URL(githubUrl);
@@ -9,7 +18,7 @@ export function getReadmeAssetURL(src: string, githubUrl: string) {
   if (parts.length < 4 || parts[2] !== 'tree') {
     const owner = parts[0];
     const repo = parts[1];
-    const branch = 'main';
+    const branch = defaultBranch;
     const basePath = '';
     const resolved = resolvePosix(basePath, src);
 

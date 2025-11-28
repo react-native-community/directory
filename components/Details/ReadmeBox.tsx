@@ -91,6 +91,7 @@ export default function ReadmeBox({
         ) : (
           <Md
             components={{
+              br: () => null,
               hr: () => null,
               div: () => null,
               a: (props: any) => {
@@ -102,6 +103,11 @@ export default function ReadmeBox({
               img: ({ src, alt, width, height }: any) => (
                 <img
                   src={getReadmeAssetURL(src, githubUrl)}
+                  onError={(error: any) => {
+                    const target = error.currentTarget;
+                    target.onerror = null;
+                    target.src = getReadmeAssetURL(src, githubUrl, 'master');
+                  }}
                   alt={alt ?? ''}
                   width={width}
                   height={height}
