@@ -222,7 +222,7 @@ select {
 }
 
 /* README WRAPPER */
-#readmeMarkdownWrapper {
+#readmeMarkdownContainer {
   font-size: 90%;
   line-height: 1.4;
 
@@ -238,7 +238,7 @@ select {
     margin-top: 18px;
   }
 
-  section + img, blockquote + img, pre + img {
+  img {
     margin-top: 12px;
   }
 
@@ -246,7 +246,19 @@ select {
     margin-top: 8px;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+
+    & a {
+      font-size: inherit;
+    }
+
+    & img {
+      display: block;
+    }
+  }
+
+  p {
     margin-bottom: 0;
 
     & a {
@@ -301,6 +313,10 @@ select {
 
   img {
     max-width: 100%;
+
+    &:not([width]) {
+      width: min-content;
+    }
   }
 
   blockquote {
@@ -371,7 +387,7 @@ select {
     }
   }
 
-  li *:last-child {
+  li &:last-child {
     margin-bottom: 12px;
   }
 
@@ -390,7 +406,12 @@ select {
     width: fit-content;
 
     a:has(img) {
-      display: inline;
+      display: inline-block;
+      text-align: inherit;
+    }
+
+    sub, sup {
+      text-align: inherit;
     }
   }
 

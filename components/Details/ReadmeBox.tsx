@@ -66,7 +66,6 @@ export default function ReadmeBox({
 
   return (
     <View
-      id="readmeMarkdownWrapper"
       style={[
         styles.readmeWrapper,
         {
@@ -90,6 +89,7 @@ export default function ReadmeBox({
           <P style={styles.statusContent}>{readmeFallbackContent}</P>
         ) : (
           <Md
+            id="readmeMarkdownContainer"
             components={{
               br: () => null,
               hr: () => null,
@@ -110,6 +110,8 @@ export default function ReadmeBox({
                     if (target.src !== fallbackUrl) {
                       target.onerror = null;
                       target.src = fallbackUrl;
+                    } else {
+                      target.style.display = 'none';
                     }
                   }}
                   alt={alt ?? ''}
