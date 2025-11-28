@@ -47,7 +47,6 @@ type Props = {
   registryData?: NpmLatestRegistryData;
 };
 
-// TODO: async render/data fetch
 export default function PackagePage({ apiData, registryData, packageName }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();

@@ -536,3 +536,82 @@ export function ReadmeFile({ width = 24, height = 24, fill = colors.black }: Ico
     </Svg>
   );
 }
+
+export function CodeBrackets({ width = 24, height = 24, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} stroke={fill} viewBox="0 0 256 256">
+      <Path
+        d="M80,40c-64,0,0,88-64,88,64,0,0,88,64,88"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M176,40c64,0,0,88,64,88-64,0,0,88-64,88"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function Snack({ width = 24, height = 24, fill = colors.black }: IconProps) {
+  return (
+    <Svg
+      width={width}
+      height={height}
+      stroke={fill}
+      fill={fill}
+      viewBox="0 0 32 32"
+      strokeWidth="0.5">
+      <Path
+        fillRule="evenodd"
+        d="M27.468 2.36a3.886 3.886 0 1 0 0 7.77 3.886 3.886 0 0 0 0-7.769m-4.402 3.887a4.403 4.403 0 1 1 8.805-.132 4.403 4.403 0 0 1-8.805.132"
+        clipRule="evenodd"
+      />
+      <Path d="M31.034 4.132a6.09 6.09 0 0 1-6.002 5.075c-.164 0-.324 0-.484-.021a4.144 4.144 0 0 0 6.486-5.054" />
+      <Path
+        fillRule="evenodd"
+        d="M.171 7.905a.26.26 0 0 1 .258 0l13.551 7.87a.26.26 0 0 1 .129.224v15.743a.258.258 0 0 1-.388.223L.129 24.095A.26.26 0 0 1 0 23.87L.041 8.128c0-.092.05-.177.13-.223m.386.672-.04 15.146 13.075 7.57V16.15z"
+        clipRule="evenodd"
+      />
+      <Path
+        fillRule="evenodd"
+        d="M13.742.035a.26.26 0 0 1 .259 0l6.773 3.936a.26.26 0 0 1 0 .447l-6.408 3.71 6.408 3.713a.258.258 0 0 1 0 .447l-6.794 3.935a.26.26 0 0 1-.26 0L.17 8.35a.258.258 0 0 1 0-.447zM.812 8.129l13.039 7.57 6.278-3.635L13.72 8.35a.257.257 0 0 1 0-.447l6.409-3.711L13.87.557.815 8.129z"
+        clipRule="evenodd"
+      />
+      <Path d="M20.645 12.065v7.87L27.44 16l.041 7.872-13.632 7.87V16z" />
+      <Path
+        fillRule="evenodd"
+        d="M20.774 11.841c.08.046.129.132.129.224v7.422l6.408-3.711a.26.26 0 0 1 .388.222l.041 7.872a.26.26 0 0 1-.129.225l-13.632 7.87a.258.258 0 0 1-.387-.223V15.999a.26.26 0 0 1 .129-.223l6.794-3.935a.26.26 0 0 1 .259 0m-6.665 4.307v15.146l13.114-7.571-.038-7.277-6.41 3.713a.257.257 0 0 1-.389-.224v-7.422z"
+        clipRule="evenodd"
+      />
+      <Path d="M20.645 4.194v7.87L13.85 8.13z" />
+      <Path
+        fillRule="evenodd"
+        d="M20.774 3.97a.26.26 0 0 1 .129.224v7.87a.257.257 0 0 1-.388.224L13.72 8.352a.26.26 0 0 1 0-.447l6.794-3.934a.26.26 0 0 1 .259-.001m-6.408 4.16 6.02 3.488V4.642z"
+        clipRule="evenodd"
+      />
+      <Path
+        fillRule="evenodd"
+        d="M20.516 11.841a.26.26 0 0 1 .258 0l6.796 3.935a.258.258 0 0 1 0 .447l-6.796 3.936a.258.258 0 0 1-.388-.224v-7.87a.26.26 0 0 1 .13-.224m.387.672v6.974L26.925 16zM.035 16.09a.257.257 0 0 1 .353-.094l13.59 7.87a.26.26 0 0 1-.259.448L.13 16.444a.26.26 0 0 1-.095-.354"
+        clipRule="evenodd"
+      />
+      <Path
+        fillRule="evenodd"
+        d="M20.858 4.065a.257.257 0 0 1-.094.353L7.323 12.214v15.6a.258.258 0 1 1-.517 0v-15.75a.26.26 0 0 1 .13-.223l13.569-7.87a.26.26 0 0 1 .353.094"
+        clipRule="evenodd"
+      />
+      <Path
+        fillRule="evenodd"
+        d="M6.845 4.074a.26.26 0 0 1 .353-.095l13.576 7.862a.257.257 0 0 1 .094.353.257.257 0 0 1-.353.094L6.94 4.426a.26.26 0 0 1-.094-.352z"
+        clipRule="evenodd"
+      />
+    </Svg>
+  );
+}

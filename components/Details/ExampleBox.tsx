@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { A, colors, darkColors, useLayout } from '~/common/styleguide';
-import { GitHub } from '~/components/Icons';
+import { CodeBrackets, GitHub, Snack } from '~/components/Icons';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 type Props = {
@@ -30,8 +30,13 @@ export default function ExampleBox({ example, index }: Props) {
         }}>
         <View style={styles.exampleLabelWrapper}>
           {example.includes('github.com') && (
-            // TODO: add Snack and generic code icons
             <GitHub fill={isDark ? darkColors.pewter : colors.gray5} />
+          )}
+          {example.includes('snack.expo.dev') && (
+            <Snack fill={isDark ? darkColors.pewter : colors.gray5} />
+          )}
+          {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
+            <CodeBrackets fill={isDark ? darkColors.pewter : colors.gray5} />
           )}
           <span style={{ ...styles.exampleLabel, color: isDark ? colors.white : colors.black }}>
             {getExampleDescription(example)}

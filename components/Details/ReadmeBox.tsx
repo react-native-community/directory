@@ -92,8 +92,6 @@ export default function ReadmeBox({
         ) : (
           <Md
             components={{
-              // TODO: remove/hide empty paragraphs
-              // TODO: skip broken/non-loading images
               hr: () => null,
               div: () => null,
               a: (props: any) => {
