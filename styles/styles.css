@@ -244,16 +244,20 @@ select {
 
   p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
-    text-align: left;
   }
 
-  a:has(img), p:empty {
+  a:has(img) {
+    display: inline-flex;
+    text-decoration: none !important;
+  }
+
+  p:empty {
     display: none;
   }
 
   code, pre, a  {
     white-space: pre-wrap;
-    word-break: break-word;
+    word-break: auto-phrase;
   }
 
   code {
@@ -277,6 +281,10 @@ select {
       padding: 12px 16px;
       background-color: var(--code-block-background) !important;
     }
+  }
+
+  picture {
+    display: contents;
   }
 
   img {
@@ -358,6 +366,7 @@ select {
 
     summary {
       margin-top: 8px !important;
+      cursor: pointer;
     }
   }
 
@@ -365,6 +374,10 @@ select {
     margin-top: 8px;
     border-collapse: collapse;
     width: fit-content;
+
+    a:has(img) {
+      display: inline;
+    }
   }
 
   td, th {

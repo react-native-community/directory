@@ -102,8 +102,13 @@ export default function ReadmeBox({
                 }
                 return <span>{props.children}</span>;
               },
-              img: ({ src, alt, width }: any) => (
-                <img src={getReadmeAssetURL(src, githubUrl)} alt={alt ?? ''} width={width} />
+              img: ({ src, alt, width, height }: any) => (
+                <img
+                  src={getReadmeAssetURL(src, githubUrl)}
+                  alt={alt ?? ''}
+                  width={width}
+                  height={height}
+                />
               ),
               pre: ({ children }: any) => {
                 const langClass = children.props.className;
@@ -135,6 +140,17 @@ export default function ReadmeBox({
                     )}
                     {blockquoteType.children}
                   </blockquote>
+                );
+              },
+              details: ({ children }: any) => {
+                return (
+                  <details
+                    style={{
+                      ...styles.detailsWrapper,
+                      borderColor: isDark ? darkColors.border : colors.gray2,
+                    }}>
+                    {children}
+                  </details>
                 );
               },
             }}
@@ -183,5 +199,14 @@ const styles = StyleSheet.create({
   statusContent: {
     textAlign: 'center',
     paddingVertical: 24,
+  },
+  detailsWrapper: {
+    borderRadius: 12,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    marginTop: 12,
+    paddingBottom: 12,
+    paddingTop: 4,
+    paddingRight: 16,
   },
 });
