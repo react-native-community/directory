@@ -104,9 +104,13 @@ export default function ReadmeBox({
                 <img
                   src={getReadmeAssetURL(src, githubUrl)}
                   onError={(error: any) => {
+                    const fallbackUrl = getReadmeAssetURL(src, githubUrl, 'master');
                     const target = error.currentTarget;
-                    target.onerror = null;
-                    target.src = getReadmeAssetURL(src, githubUrl, 'master');
+
+                    if (target.src !== fallbackUrl) {
+                      target.onerror = null;
+                      target.src = fallbackUrl;
+                    }
                   }}
                   alt={alt ?? ''}
                   width={width}

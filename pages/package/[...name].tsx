@@ -26,7 +26,6 @@ import PackageAuthor from '~/components/Details/PackageAuthor';
 import ReadmeBox from '~/components/Details/ReadmeBox';
 import { GitHub } from '~/components/Icons';
 import { MetaData } from '~/components/Library/MetaData';
-import Thumbnail from '~/components/Library/Thumbnail.web';
 import TrendingMark from '~/components/Library/TrendingMark';
 import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
@@ -152,16 +151,6 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {library.images && library.images.length ? (
-              <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Usage gallery</H6>
-                <View style={styles.galleryWrapper}>
-                  {library.images.map((image, index) => (
-                    <Thumbnail key={`${image}-${index}`} url={image} />
-                  ))}
-                </View>
-              </>
-            ) : null}
           </View>
           <View style={styles.depsContainer}>
             <View>

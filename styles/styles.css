@@ -238,7 +238,7 @@ select {
     margin-top: 18px;
   }
 
-  section + img, blockquote + img {
+  section + img, blockquote + img, pre + img {
     margin-top: 12px;
   }
 

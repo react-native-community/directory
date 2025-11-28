@@ -259,10 +259,12 @@ export function MetaData({ library, secondary, skipExamples = false }: Props) {
             const component = (
               <View
                 key={id}
+                // @ts-expect-error RNW complains about 'fit-content'
                 style={{
                   ...styles.displayHorizontal,
                   ...(i + 1 !== data.length ? styles.datumContainer : {}),
                   ...styles.secondaryContainer,
+                  width: 'fit-content',
                 }}>
                 <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
                 {content}
