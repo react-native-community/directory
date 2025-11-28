@@ -2,7 +2,7 @@ import SHA256 from 'crypto-js/sha256';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, Caption, colors, darkColors, Label } from '~/common/styleguide';
+import { A, colors, darkColors, Label } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
@@ -41,8 +41,8 @@ export default function PackageAuthor({ author, compact }: Props) {
               alt={`${ghUsername} avatar`}
             />
             <View>
-              <Caption style={styles.caption}>{ghUsername}</Caption>
-              <Label style={{ color: 'inherit' }}>{validName}</Label>
+              <Label>{ghUsername}</Label>
+              <Label style={[styles.sublabel, { color: 'inherit' }]}>{validName}</Label>
             </View>
           </A>
         </View>
@@ -78,8 +78,11 @@ export default function PackageAuthor({ author, compact }: Props) {
               />
             }>
             <View style={styles.tooltipContent}>
-              <Caption style={styles.caption}>{author.name}</Caption>
-              <Label style={{ color: colors.white }}>{email}</Label>
+              <Label>{author.name}</Label>
+              <Label
+                style={[styles.sublabel, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+                {email}
+              </Label>
             </View>
           </Tooltip>
         </View>
@@ -94,10 +97,10 @@ export default function PackageAuthor({ author, compact }: Props) {
           alt={`${author.name} avatar`}
         />
         <View>
-          <Caption style={[styles.caption, { color: isDark ? colors.white : colors.black }]}>
-            {author.name}
-          </Caption>
-          <Label style={{ color: isDark ? darkColors.secondary : colors.gray5 }}>{email}</Label>
+          <Label style={{ color: isDark ? colors.white : colors.black }}>{author.name}</Label>
+          <Label style={[styles.sublabel, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+            {email}
+          </Label>
         </View>
       </View>
     );
@@ -126,9 +129,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
   },
-  caption: {
-    lineHeight: 16,
-    color: 'inherit',
+  sublabel: {
+    fontSize: 11,
+    fontWeight: 300,
   },
   avatar: {
     width: 36,

@@ -209,18 +209,34 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
               </>
             )}
             <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
-            <View style={styles.rowSpacing}>
-              <A
-                href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                style={[styles.dependencyLabel, styles.mutedLink]}>
-                Bundlephobia
-              </A>
-              <A
-                href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                style={[styles.dependencyLabel, styles.mutedLink]}>
-                Snyk Advisor
-              </A>
-            </View>
+            <ul
+              style={{
+                ...styles.rowSpacing,
+                ...styles.linkList,
+                color: isDark ? colors.gray5 : colors.gray4,
+              }}>
+              <li>
+                <A
+                  href={`https://bundlephobia.com/package/${library.npmPkg}`}
+                  style={[styles.dependencyLabel, styles.mutedLink]}>
+                  Bundlephobia
+                </A>
+              </li>
+              <li>
+                <A
+                  href={`https://pkg-size.dev/${library.npmPkg}`}
+                  style={[styles.dependencyLabel, styles.mutedLink]}>
+                  pkg-size.dev
+                </A>
+              </li>
+              <li>
+                <A
+                  href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
+                  style={[styles.dependencyLabel, styles.mutedLink]}>
+                  Snyk Advisor
+                </A>
+              </li>
+            </ul>
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>
@@ -231,22 +247,22 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {devDependencies && Object.keys(devDependencies).length > 0 && (
-              <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Development dependencies</H6>
-                <View>
-                  {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
-                    <DependencyRow key={`dev-dep-${name}`} name={name} version={version} />
-                  ))}
-                </View>
-              </>
-            )}
             {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Peer dependencies</H6>
                 <View>
                   {mapDependencies(peerDependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`peer-dep-${name}`} name={name} version={version} />
+                  ))}
+                </View>
+              </>
+            )}
+            {devDependencies && Object.keys(devDependencies).length > 0 && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Development dependencies</H6>
+                <View>
+                  {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
+                    <DependencyRow key={`dev-dep-${name}`} name={name} version={version} />
                   ))}
                 </View>
               </>
@@ -395,6 +411,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap',
+  },
+  linkList: {
+    margin: 0,
+    paddingLeft: 18,
+    fontSize: 13,
   },
 });
 
