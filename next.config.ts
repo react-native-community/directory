@@ -14,6 +14,8 @@ const PACKAGES_TO_OPTIMIZE = [
   'react-native-safe-area-context',
   'react-native-svg',
   'react-native-web',
+  'react-shiki',
+  'shiki/*',
 ];
 
 const withBundleAnalyzer = BundleAnalyzer({

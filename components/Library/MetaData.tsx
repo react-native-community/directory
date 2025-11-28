@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
 import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -26,11 +27,13 @@ import {
   PackageSize,
   Dependency,
   ConfigPlugin,
+  Tools,
 } from '../Icons';
 
 type Props = {
   library: LibraryType;
   secondary?: boolean;
+  skipExamples?: boolean;
 };
 
 function generateData(
@@ -132,14 +135,18 @@ function generateData(
   ];
 }
 
-function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataEntryType[] {
+function generateSecondaryData(
+  library: LibraryType,
+  isDark: boolean,
+  skipExamples: boolean
+): MetadataEntryType[] {
   const { github, examples } = library;
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
   };
-  const iconColor = isDark ? darkColors.pewter : colors.secondary;
-  const paragraphStyles = [styles.secondaryText, secondaryTextColor];
-  const linkStyles = [...paragraphStyles, styles.mutedLink];
+  const iconColor = isDark ? darkColors.pewter : skipExamples ? colors.gray5 : colors.secondary;
+  const paragraphStyles = [styles.secondaryText, !skipExamples && secondaryTextColor];
+  const linkStyles = [...paragraphStyles, !skipExamples && styles.mutedLink];
   const hoverStyle = {
     textDecorationColor: colors.gray4,
     color: isDark ? colors.gray3 : colors.gray5,
@@ -194,6 +201,21 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
           tooltip: getConfigPluginText(configPlugin),
         }
       : null,
+    skipExamples && library.github.moduleType
+      ? {
+          id: 'moduleType',
+          icon: <Tools fill={iconColor} width={16} height={16} />,
+          content: (
+            <P style={paragraphStyles}>
+              {
+                FILTER_MODULE_TYPE.filter(
+                  ({ param }) => param === `${library.github.moduleType}Module`
+                ).at(0)?.title
+              }
+            </P>
+          ),
+        }
+      : null,
     github.hasTypes
       ? {
           id: 'types',
@@ -201,7 +223,7 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
-    examples && examples.length
+    !skipExamples && examples && examples.length
       ? {
           id: 'examples',
           icon: <Code fill={iconColor} width={16} height={16} />,
@@ -224,11 +246,11 @@ function generateSecondaryData(library: LibraryType, isDark: boolean): MetadataE
   ];
 }
 
-export function MetaData({ library, secondary }: Props) {
+export function MetaData({ library, secondary, skipExamples = false }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   if (secondary) {
-    const data = generateSecondaryData(library, isDark).filter(Boolean);
+    const data = generateSecondaryData(library, isDark, skipExamples).filter(Boolean);
     return (
       <>
         {data
@@ -237,10 +259,12 @@ export function MetaData({ library, secondary }: Props) {
             const component = (
               <View
                 key={id}
+                // @ts-expect-error RNW complains about 'fit-content'
                 style={{
                   ...styles.displayHorizontal,
                   ...(i + 1 !== data.length ? styles.datumContainer : {}),
                   ...styles.secondaryContainer,
+                  width: 'fit-content',
                 }}>
                 <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
                 {content}

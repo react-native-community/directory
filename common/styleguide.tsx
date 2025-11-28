@@ -207,7 +207,7 @@ export function HoverEffect({ children }: PropsWithChildren) {
       style={[
         // @ts-expect-error Transition is a valid web style property
         { transition: 'opacity 0.33s' },
-        isHovered && { opacity: 0.8 },
+        isHovered && { opacity: 0.75 },
         isActive && { opacity: 0.5 },
       ]}
       onPointerEnter={() => setIsHovered(true)}
