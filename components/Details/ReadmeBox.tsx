@@ -64,7 +64,6 @@ export default function ReadmeBox({
 
   const readmeFallbackContent = getReadmeFallbackContent(readmeContent);
 
-  // TODO: collapse Readme content by default, expand on user interaction
   return (
     <View
       id="readmeMarkdownWrapper"
@@ -107,6 +106,9 @@ export default function ReadmeBox({
                   width={width}
                   height={height}
                 />
+              ),
+              source: ({ srcSet, ...rest }: any) => (
+                <source srcSet={getReadmeAssetURL(srcSet, githubUrl)} {...rest} />
               ),
               pre: ({ children }: any) => {
                 const langClass = children.props.className;

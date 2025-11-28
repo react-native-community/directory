@@ -244,11 +244,19 @@ select {
 
   p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
+
+    & a {
+      font-size: inherit;
+    }
   }
 
   a:has(img) {
     display: inline-flex;
     text-decoration: none !important;
+  }
+
+  a:has(code) {
+    font-size: 100%;
   }
 
   p:empty {
@@ -303,6 +311,8 @@ select {
 
     .blockquote-title {
       font-weight: 600;
+      margin-bottom: -4px;
+      display: block;
     }
 
     &.note {

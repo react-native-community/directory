@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
 import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -26,6 +27,7 @@ import {
   PackageSize,
   Dependency,
   ConfigPlugin,
+  Tools,
 } from '../Icons';
 
 type Props = {
@@ -197,6 +199,21 @@ function generateSecondaryData(
             />
           ),
           tooltip: getConfigPluginText(configPlugin),
+        }
+      : null,
+    skipExamples && library.github.moduleType
+      ? {
+          id: 'moduleType',
+          icon: <Tools fill={iconColor} width={16} height={16} />,
+          content: (
+            <P style={paragraphStyles}>
+              {
+                FILTER_MODULE_TYPE.filter(
+                  ({ param }) => param === `${library.github.moduleType}Module`
+                ).at(0)?.title
+              }
+            </P>
+          ),
         }
       : null,
     github.hasTypes
