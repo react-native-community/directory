@@ -18437,5 +18437,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dawidzawada/bonjour-zeroconf",
+    "npmPkg": "@dawidzawada/bonjour-zeroconf",
+    "examples": [
+      "https://github.com/dawidzawada/bonjour-zeroconf/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
