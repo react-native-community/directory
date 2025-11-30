@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "target": "esnext",
@@ -22,21 +19,10 @@
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "paths": {
-      "~/*": [
-        "./*"
-      ]
+      "~/*": ["./*"]
     },
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ]
+    "typeRoots": ["types", "node_modules/@types"]
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
