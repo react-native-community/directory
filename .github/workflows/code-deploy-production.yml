@@ -19,7 +19,7 @@ jobs:
       name: production
       url: https://reactnative.directory
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Use Bun
       uses: oven-sh/setup-bun@v2
     - name: Deploy
