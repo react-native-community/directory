@@ -18451,5 +18451,23 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/athexweb3/react-native-libprisma/react-native-libprisma",
+    "npmPkg": "react-native-libprisma",
+    "examples": [
+      "https://github.com/athexweb3/react-native-libprisma/react-native-libprisma/exmaple"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "windows": false, // to be added
+    "macos": false, // to be added
+    "expoGo": false,
+    "newArchitecture": true,
+    "configPlugin": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
   }
 ]
