@@ -37,7 +37,7 @@ type Props = {
 };
 
 function generateData(
-  { github, score, npm, npmPkg, matchingScoreModifiers }: LibraryType,
+  { github, score, npm, npmPkg, matchingScoreModifiers, template }: LibraryType,
   isDark: boolean
 ): MetadataEntryType[] {
   const iconColor = isDark ? darkColors.pewter : colors.gray5;
@@ -77,7 +77,11 @@ function generateData(
     {
       id: 'dependencies',
       icon: <Dependency fill={iconColor} />,
-      content: (
+      content: template ? (
+        <P style={styles.link}>
+          {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
+        </P>
+      ) : (
         <A
           href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
           style={styles.link}>

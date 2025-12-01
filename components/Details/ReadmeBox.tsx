@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, P } from '~/common/styleguide';
 import ReadmeCodeBlock from '~/components/Details/ReadmeCodeBlock';
+import { ThreeDotsLoader } from '~/components/Details/ThreeDotsLoader';
 import { ReadmeFile } from '~/components/Icons';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
@@ -16,6 +17,7 @@ import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 type Props = {
   packageName?: string;
   githubUrl?: string;
+  isTemplate?: boolean;
   isDark?: boolean;
   loader?: boolean;
 };
@@ -23,6 +25,7 @@ type Props = {
 export default function ReadmeBox({
   packageName,
   githubUrl,
+  isTemplate,
   isDark = false,
   loader = false,
 }: Props) {
@@ -34,22 +37,41 @@ export default function ReadmeBox({
     }
 
     let cancelled = false;
+
     void (async () => {
-      try {
-        const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
-        const readmeContent = await readmeResponse.text();
-        if (!cancelled) {
-          setReadmeContent(readmeContent);
+      if (isTemplate) {
+        const templateRawUrl = githubUrl?.replace('github.com/', 'raw.githubusercontent.com/');
+        let readmeResponse = await fetch(`${templateRawUrl}/main/README.md`);
+
+        if (readmeResponse.status === 404) {
+          readmeResponse = await fetch(`${templateRawUrl}/master/README.md`);
         }
-      } catch (error: any) {
-        if (error instanceof Error) {
-          if (error.message === 'Failed to fetch') {
-            setReadmeContent('');
-            return;
+
+        if (readmeResponse.status === 200) {
+          const readmeContent = await readmeResponse.text();
+          if (!cancelled) {
+            setReadmeContent(readmeContent);
           }
+        } else {
+          setReadmeContent('');
         }
-        if (!cancelled) {
-          setReadmeContent(null);
+      } else {
+        try {
+          const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
+          const readmeContent = await readmeResponse.text();
+          if (!cancelled) {
+            setReadmeContent(readmeContent);
+          }
+        } catch (error: any) {
+          if (error instanceof Error) {
+            if (error.message === 'Failed to fetch') {
+              setReadmeContent('');
+              return;
+            }
+          }
+          if (!cancelled) {
+            setReadmeContent(null);
+          }
         }
       }
     })();
@@ -86,14 +108,18 @@ export default function ReadmeBox({
       </View>
       <View style={styles.readmeContainer}>
         {!readmeContent && readmeFallbackContent ? (
-          <P style={styles.statusContent}>{readmeFallbackContent}</P>
+          <View style={styles.statusContainer}>
+            {readmeContent === undefined && (
+              <ThreeDotsLoader color={isDark ? darkColors.pewter : colors.gray4} />
+            )}
+            <P style={styles.statusContent}>{readmeFallbackContent}</P>
+          </View>
         ) : (
           <Md
             id="readmeMarkdownContainer"
             components={{
               br: () => null,
               hr: () => null,
-              div: () => null,
               a: (props: any) => {
                 if (props.href) {
                   return <A {...props} />;
@@ -116,7 +142,10 @@ export default function ReadmeBox({
                   }}
                   alt={alt ?? ''}
                   width={width}
-                  height={height}
+                  height="auto"
+                  style={{
+                    maxHeight: height,
+                  }}
                 />
               ),
               source: ({ srcSet, ...rest }: any) => (
@@ -208,9 +237,12 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     fontWeight: 300,
   },
+  statusContainer: {
+    paddingVertical: 24,
+    gap: 16,
+  },
   statusContent: {
     textAlign: 'center',
-    paddingVertical: 24,
   },
   detailsWrapper: {
     borderRadius: 12,

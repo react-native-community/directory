@@ -84,7 +84,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
   return (
     <>
       <PageMeta
-        title={`Package details: ${library.npmPkg}`}
+        title={library.npmPkg}
         description={`See ${library.npmPkg} the detailed information and metadata`}
         path="package"
       />
@@ -118,6 +118,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             )}
             <ReadmeBoxWithLoading
               packageName={packageName}
+              isTemplate={library.template ?? false}
               isDark={isDark}
               githubUrl={library.githubUrl}
             />
@@ -197,35 +198,39 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
-            <ul
-              style={{
-                ...styles.rowSpacing,
-                ...styles.linkList,
-                color: isDark ? colors.gray5 : colors.gray4,
-              }}>
-              <li>
-                <A
-                  href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                  style={[styles.dependencyLabel, styles.mutedLink]}>
-                  Bundlephobia
-                </A>
-              </li>
-              <li>
-                <A
-                  href={`https://pkg-size.dev/${library.npmPkg}`}
-                  style={[styles.dependencyLabel, styles.mutedLink]}>
-                  pkg-size.dev
-                </A>
-              </li>
-              <li>
-                <A
-                  href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                  style={[styles.dependencyLabel, styles.mutedLink]}>
-                  Snyk Advisor
-                </A>
-              </li>
-            </ul>
+            {!library.template && (
+              <>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
+                <ul
+                  style={{
+                    ...styles.rowSpacing,
+                    ...styles.linkList,
+                    color: isDark ? colors.gray5 : colors.gray4,
+                  }}>
+                  <li>
+                    <A
+                      href={`https://bundlephobia.com/package/${library.npmPkg}`}
+                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      Bundlephobia
+                    </A>
+                  </li>
+                  <li>
+                    <A
+                      href={`https://pkg-size.dev/${library.npmPkg}`}
+                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      pkg-size.dev
+                    </A>
+                  </li>
+                  <li>
+                    <A
+                      href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
+                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      Snyk Advisor
+                    </A>
+                  </li>
+                </ul>
+              </>
+            )}
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>

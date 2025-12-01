@@ -9,7 +9,8 @@ export function getReadmeAssetURL(src: string, githubUrl: string, defaultBranch 
   if (isGitHubAssetURL) {
     return src
       .replace('https://github.com', 'https://raw.githubusercontent.com')
-      .replace('/blob/', '/');
+      .replace('/blob/', '/')
+      .replace('/raw/', '/');
   }
 
   const url = new URL(githubUrl);

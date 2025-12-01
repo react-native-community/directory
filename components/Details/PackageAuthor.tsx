@@ -23,6 +23,8 @@ export default function PackageAuthor({ author, compact }: Props) {
     );
   }
 
+  const sublabelStyle = { color: isDark ? darkColors.secondary : colors.gray5 };
+
   if (author?.url && !author.url.includes('@')) {
     if (author.url.includes('github.com/')) {
       const [, potentialGHUsername] = author.url.split('github.com/');
@@ -42,7 +44,7 @@ export default function PackageAuthor({ author, compact }: Props) {
             />
             <View>
               <Label>{ghUsername}</Label>
-              <Label style={[styles.sublabel, { color: 'inherit' }]}>{validName}</Label>
+              <Label style={[styles.sublabel, sublabelStyle]}>{validName}</Label>
             </View>
           </A>
         </View>
@@ -79,10 +81,7 @@ export default function PackageAuthor({ author, compact }: Props) {
             }>
             <View style={styles.tooltipContent}>
               <Label>{author.name}</Label>
-              <Label
-                style={[styles.sublabel, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-                {email}
-              </Label>
+              <Label style={[styles.sublabel, sublabelStyle]}>{email}</Label>
             </View>
           </Tooltip>
         </View>
@@ -98,9 +97,7 @@ export default function PackageAuthor({ author, compact }: Props) {
         />
         <View>
           <Label style={{ color: isDark ? colors.white : colors.black }}>{author.name}</Label>
-          <Label style={[styles.sublabel, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
-            {email}
-          </Label>
+          <Label style={[styles.sublabel, sublabelStyle]}>{email}</Label>
         </View>
       </View>
     );
