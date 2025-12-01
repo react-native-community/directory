@@ -27,6 +27,7 @@ export default function ReadmeCodeBlock({ code, lang, isDark }: Props) {
       sideOffset={2}
       trigger={
         <Button
+          containerStyle={styles.copyCodeContainer}
           style={styles.copyCodeButton}
           onPress={async () => {
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -42,28 +43,34 @@ export default function ReadmeCodeBlock({ code, lang, isDark }: Props) {
 
   if (!highlighter) {
     return (
-      <>
-        {copyButton}
+      <div style={styles.codeBlockContainer}>
         <pre className="shiki">
           <code>{code}</code>
         </pre>
-      </>
+        {copyButton}
+      </div>
     );
   }
 
   return (
-    <>
-      {copyButton}
+    <div style={styles.codeBlockContainer}>
       {highlighter}
-    </>
+      {copyButton}
+    </div>
   );
 }
 
 const styles = StyleSheet.create({
-  copyCodeButton: {
+  codeBlockContainer: {
+    position: 'relative',
+    marginTop: 8,
+  },
+  copyCodeContainer: {
     position: 'absolute',
-    backgroundColor: 'transparent',
-    top: 24,
+    top: 12,
     right: 12,
+  },
+  copyCodeButton: {
+    backgroundColor: 'transparent',
   },
 });

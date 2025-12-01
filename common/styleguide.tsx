@@ -14,6 +14,7 @@ import {
   View,
   useWindowDimensions,
   type StyleProp,
+  type ViewStyle,
 } from 'react-native';
 
 import CustomAppearanceContext from '../context/CustomAppearanceContext';
@@ -198,7 +199,9 @@ function getLinkHoverStyles(): TextStyle {
   };
 }
 
-export function HoverEffect({ children }: PropsWithChildren) {
+type HoverEffectProps = PropsWithChildren<{ style?: StyleProp<ViewStyle> }>;
+
+export function HoverEffect({ children, style }: HoverEffectProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -209,6 +212,7 @@ export function HoverEffect({ children }: PropsWithChildren) {
         { transition: 'opacity 0.33s' },
         isHovered && { opacity: 0.75 },
         isActive && { opacity: 0.5 },
+        style,
       ]}
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}

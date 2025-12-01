@@ -308,7 +308,7 @@ select {
 
     &.shiki {
       border-radius: 6px;
-      padding: 12px 16px;
+      padding: 12px 32px 12px 16px;
       background-color: var(--code-block-background) !important;
     }
   }

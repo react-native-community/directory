@@ -1,6 +1,12 @@
 import { A } from '@expo/html-elements';
 import { type PropsWithChildren } from 'react';
-import { StyleSheet, type TextStyle, Pressable, type StyleProp } from 'react-native';
+import {
+  StyleSheet,
+  type TextStyle,
+  Pressable,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
 
 import { darkColors, HoverEffect, P } from '~/common/styleguide';
 
@@ -9,9 +15,18 @@ type Props = PropsWithChildren & {
   onPress?: () => void;
   openInNewTab?: boolean;
   style?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
-export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
+export function Button({
+  children,
+  href,
+  onPress,
+  style,
+  containerStyle,
+  openInNewTab,
+  ...rest
+}: Props) {
   const isLink = !!href;
   const buttonStyle = [
     styles.container,
@@ -24,7 +39,7 @@ export function Button({ children, href, onPress, style, openInNewTab, ...rest }
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
   return (
-    <HoverEffect>
+    <HoverEffect style={containerStyle}>
       {isLink ? (
         <A
           href={href}
