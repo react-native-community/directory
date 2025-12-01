@@ -221,4 +221,10 @@ const styles = StyleSheet.create({
     paddingTop: 4,
     paddingRight: 16,
   },
+  copyCodeButton: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    top: 22,
+    right: 10,
+  },
 });

@@ -157,7 +157,13 @@ select {
   max-width: 220px;
 
   svg {
-    stroke: var(--tooltip-border);
+    position: relative;
+    top: -0.25px;
+
+    path {
+      stroke: var(--tooltip-border);
+      stroke-width: 1.5px;
+    }
   }
 }
 
@@ -387,8 +393,14 @@ select {
     }
   }
 
-  li &:last-child {
-    margin-bottom: 12px;
+  li {
+    &:last-child {
+      margin-bottom: 12px;
+    }
+
+    pre {
+      margin-top: 8px !important;
+    }
   }
 
   details {

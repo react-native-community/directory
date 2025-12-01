@@ -1,5 +1,5 @@
 import { type ViewStyle } from 'react-native';
-import { Circle, Path, Rect, Svg } from 'react-native-svg';
+import { Circle, Path, Polyline, Rect, Svg } from 'react-native-svg';
 
 import { colors } from '~/common/styleguide';
 
@@ -611,6 +611,31 @@ export function Snack({ width = 24, height = 24, fill = colors.black }: IconProp
         fillRule="evenodd"
         d="M6.845 4.074a.26.26 0 0 1 .353-.095l13.576 7.862a.257.257 0 0 1 .094.353.257.257 0 0 1-.353.094L6.94 4.426a.26.26 0 0 1-.094-.352z"
         clipRule="evenodd"
+      />
+    </Svg>
+  );
+}
+
+export function Copy({ width = 24, height = 24, fill = colors.black }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256">
+      <Polyline
+        points="168 168 216 168 216 40 88 40 88 88"
+        fill="none"
+        stroke={fill}
+        strokeDasharray="30 20"
+        strokeWidth="12"
+      />
+      <Rect
+        x="40"
+        y="88"
+        width="128"
+        height="128"
+        fill="none"
+        stroke={fill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       />
     </Svg>
   );
