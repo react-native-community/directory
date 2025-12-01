@@ -96,7 +96,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
               <View style={styles.nameWrapper}>
                 <P style={styles.name}>{library.npmPkg}</P>
-                {registryData && (
+                {registryData.version && (
                   <P style={headerColorStyle}>
                     {library.npm?.latestRelease ?? registryData.version}
                   </P>
@@ -165,8 +165,12 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             <View style={styles.rowSpacing}>
               <MetaData library={library} secondary skipExamples />
             </View>
-            <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
-            <TrendingMark library={library} />
+            {!library.template && (
+              <>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
+                <TrendingMark library={library} />
+              </>
+            )}
             {library.github.topics && library.github.topics.length > 0 && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>
@@ -441,7 +445,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
     props: {
       packageName,
       apiData,
-      registryData,
+      registryData: typeof registryData === 'object' ? registryData : {},
     },
   };
 }
