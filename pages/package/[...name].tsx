@@ -85,10 +85,10 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
     <>
       <PageMeta
         title={library.npmPkg}
-        description={`See ${library.npmPkg} the detailed information and metadata`}
+        description={`See ${library.npmPkg} ${library.template ? 'template' : 'package'} detailed information and metadata`}
         path="package"
       />
-      <Navigation title="Package information" />
+      <Navigation title={`${library.template ? 'Template' : 'Package'} information`} />
       <ContentContainer style={styles.container}>
         <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
           <View style={styles.detailsContainer}>
@@ -96,7 +96,11 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
               <View style={styles.nameWrapper}>
                 <P style={styles.name}>{library.npmPkg}</P>
-                <P style={headerColorStyle}>{library.npm?.latestRelease ?? registryData.version}</P>
+                {registryData && (
+                  <P style={headerColorStyle}>
+                    {library.npm?.latestRelease ?? registryData.version}
+                  </P>
+                )}
                 <HoverEffect>
                   <A href={library.githubUrl} style={styles.githubButton}>
                     <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
