@@ -18460,14 +18460,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false, // to be added
-    "macos": false, // to be added
-    "expoGo": false,
-    "newArchitecture": true,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "newArchitecture": true
   }
 ]
