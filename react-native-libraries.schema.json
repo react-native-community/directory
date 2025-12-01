@@ -7,9 +7,7 @@
     "$id": "#/items",
     "type": "object",
     "title": "React Native Directory package entry",
-    "required": [
-      "githubUrl"
-    ],
+    "required": ["githubUrl"],
     "additionalProperties": false,
     "properties": {
       "githubUrl": {
@@ -79,16 +77,10 @@
       },
       "vegaos": {
         "$id": "#/items/properties/vegaos",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "title": "Package is compatible with Amazon Vega OS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
         "default": false,
-        "examples": [
-          true,
-          "@amazon-devices/react-native-async-storage__async-storage"
-        ]
+        "examples": [true, "@amazon-devices/react-native-async-storage__async-storage"]
       },
       "expoGo": {
         "$id": "#/items/properties/expo",
@@ -117,9 +109,7 @@
         "$id": "#/items/properties/images",
         "type": "array",
         "title": "List of image URLs demonstrating package functionality",
-        "default": [
-          null
-        ],
+        "default": [null],
         "items": {
           "$id": "#/items/properties/images/items",
           "type": "string",
@@ -137,9 +127,7 @@
         "type": "string",
         "title": "npm package name in the registry (mostly for scoped packages)",
         "default": "",
-        "examples": [
-          "@expo/ex-navigation"
-        ],
+        "examples": ["@expo/ex-navigation"],
         "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
       },
       "unmaintained": {
@@ -162,17 +150,11 @@
       },
       "newArchitecture": {
         "$id": "#/items/properties/newArchitecture",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "enum": [true, false, "new-arch-only"],
         "title": "Package supports New Architecture. Can be a boolean, or 'new-arch-only' string, if package only supports New Architecture.",
         "default": false,
-        "examples": [
-          true,
-          "new-arch-only"
-        ]
+        "examples": [true, "new-arch-only"]
       },
       "newArchitectureNote": {
         "$id": "#/items/properties/newArchitectureNote",
@@ -186,10 +168,7 @@
       },
       "configPlugin": {
         "$id": "#/items/properties/configPlugin",
-        "type": [
-          "boolean",
-          "string"
-        ],
+        "type": ["boolean", "string"],
         "title": "Package includes Expo config plugin or confing plugin is available via separate package. Can be a boolean, or URL pointing to GitHub repository of config plugin package.",
         "default": false,
         "examples": [
@@ -201,17 +180,13 @@
         "$id": "#/items/properties/alternatives",
         "type": "array",
         "title": "Optional alternative libraries to use, if the library is not maintained anymore or does not support the New Architecture",
-        "default": [
-          null
-        ],
+        "default": [null],
         "items": {
           "$id": "#/items/properties/alternatives/items",
           "type": "string",
           "title": "Alternative library npm package name",
           "default": "",
-          "examples": [
-            "expo-image"
-          ],
+          "examples": ["expo-image"],
           "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
         }
       }

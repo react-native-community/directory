@@ -2672,7 +2672,7 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-av",
+    "githubUrl": "https://github.com/expo/expo-av",
     "examples": [
       "https://docs.expo.dev/versions/latest/sdk/audio-av/#playing-sounds",
       "https://docs.expo.dev/versions/latest/sdk/audio-av/#recording-sounds",
@@ -2685,6 +2685,7 @@
     "tvos": true,
     "expoGo": true,
     "fireos": true,
+    "unmaintained": true,
     "newArchitecture": true,
     "configPlugin": true
   },
@@ -15896,6 +15897,7 @@
     ],
     "ios": true,
     "android": true,
+    "newArchitecture": true,
     "configPlugin": true
   },
   {
@@ -18375,10 +18377,7 @@
   },
   {
     "githubUrl": "https://github.com/wneel/react-native-native-select",
-    "npmPkg": "react-native-native-select",
-    "examples": [
-      "https://github.com/wneel/react-native-native-select/tree/main/tests"
-    ],
+    "examples": ["https://github.com/wneel/react-native-native-select/tree/main/tests"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18387,12 +18386,70 @@
     "githubUrl": "https://github.com/bhojaniasgar/react-native-otp-input",
     "npmPkg": "@bhojaniasgar/react-native-otp-input",
     "examples": [
-    "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/BareCli",
-    "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/expo"
+      "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/BareCli",
+      "https://github.com/bhojaniasgar/react-native-otp-input/tree/main/example/expo"
     ],
     "ios": true,
     "android": true,
     "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dariyd/react-native-image-filters",
+    "npmPkg": "@dariyd/react-native-image-filters",
+    "examples": ["https://github.com/dariyd/react-native-image-filters/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/dariyd/react-native-image-filters/main/assets/android_filters.png",
+      "https://raw.githubusercontent.com/dariyd/react-native-image-filters/main/assets/ios_filters.PNG"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/xerdnu/react-native-blasted-image",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/authsignal/react-native-authsignal",
+    "examples": ["https://github.com/dariyd/react-native-image-filters/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rpldy/react-uploady/tree/master/packages/native/native-uploady",
+    "npmPkg": "@rpldy/native-uploady",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Ganesh1110/react-native-apptext",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dayaki/react-native-health-kits",
+    "npmPkg": "@mbdayo/react-native-health-kits",
+    "examples": ["https://github.com/dayaki/react-native-health-kits/blob/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/dawidzawada/bonjour-zeroconf",
+    "npmPkg": "@dawidzawada/bonjour-zeroconf",
+    "examples": ["https://github.com/dawidzawada/bonjour-zeroconf/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-cookies/tree/main/package",
+    "npmPkg": "react-native-nitro-cookies",
+    "examples": ["https://github.com/l2hyunwoo/react-native-nitro-cookies/tree/main/example"],
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]

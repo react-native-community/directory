@@ -1,8 +1,10 @@
+import json from '@eslint/json';
 import nextPlugin from '@next/eslint-plugin-next';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import universeNativeConfig from 'eslint-config-universe/flat/native.js';
 import universeNodeConfig from 'eslint-config-universe/flat/node.js';
 import universeWebConfig from 'eslint-config-universe/flat/web.js';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 
 const COMMON_RULES = {
   'import/order': [
@@ -60,6 +62,22 @@ const TS_COMMON_RULES = {
   '@typescript-eslint/no-restricted-types': 'error',
 };
 
+const PRETTIER_RULES = {
+  'prettier/prettier': [
+    'warn',
+    {
+      printWidth: 100,
+      tabWidth: 2,
+      singleQuote: true,
+      bracketSameLine: true,
+      trailingComma: 'es5',
+      endOfLine: 'auto',
+      arrowParens: 'avoid',
+      plugins: ['@prettier/plugin-oxc'],
+    },
+  ],
+};
+
 export default defineConfig([
   globalIgnores([
     '**/.next',
@@ -67,6 +85,7 @@ export default defineConfig([
     '**/node_modules',
     '**/out',
     '**/public',
+    '**/assets',
     'README.md',
     'next-env.d.ts',
   ]),
@@ -86,6 +105,20 @@ export default defineConfig([
     },
   },
 
+  prettierRecommended,
+
+  // Typed Bun files configuration
+  {
+    files: ['**/*.json'],
+    language: 'json/json',
+    plugins: {
+      json,
+    },
+    rules: {
+      ...PRETTIER_RULES,
+    },
+  },
+
   // App files configuration
   {
     files: ['**/*.tsx', '**/*.d.ts'],
@@ -95,6 +128,7 @@ export default defineConfig([
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
+      ...PRETTIER_RULES,
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
       '@next/next/no-img-element': 'off',
@@ -122,6 +156,7 @@ export default defineConfig([
     files: ['**/*.ts'],
     extends: [universeNodeConfig],
     rules: {
+      ...PRETTIER_RULES,
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
     },
@@ -132,6 +167,7 @@ export default defineConfig([
     files: ['**/*.js', '**/*.mjs'],
     extends: [universeNodeConfig],
     rules: {
+      ...PRETTIER_RULES,
       ...COMMON_RULES,
     },
   },

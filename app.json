@@ -2,22 +2,16 @@
   "expo": {
     "name": "React Native Directory",
     "slug": "react-native-directory",
-    "platforms": [
-      "web"
-    ],
+    "platforms": ["web"],
     "version": "1.0.0",
     "icon": "./assets/logo.png",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
