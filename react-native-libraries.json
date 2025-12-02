@@ -14524,7 +14524,8 @@
     "npmPkg": "@google/generative-ai",
     "examples": ["https://github.com/google-gemini/generative-ai-js/tree/main/samples"],
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/pioner92/react-native-auto-skeleton",
@@ -17927,7 +17928,7 @@
   },
   {
     "githubUrl": "https://github.com/corasan/react-native-mlx/tree/main/package",
-    "npmPkg": "react-native-mlx",
+    "npmPkg": "react-native-nitro-mlx",
     "examples": ["https://github.com/corasan/react-native-mlx/tree/main/example"],
     "ios": true
   },
@@ -18460,5 +18461,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mdjastrzebski/react-native-unmount",
+    "examples": [
+      "https://github.com/mdjastrzebski/react-native-unmount/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ICEPepsiCola/react-native-dev-lens",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
