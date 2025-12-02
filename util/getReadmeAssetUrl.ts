@@ -1,8 +1,10 @@
+const FILE_WITH_EXTENSION_REGEX = /\/[^/?#]+\.[^/?#]+(?=(?:\?|#|$))/i;
+
 export function getReadmeAssetURL(src: string, githubUrl: string, defaultBranch = 'main') {
   const isGitHubAssetURL =
     src.includes('github.com') && !src.endsWith('badge.svg') && !src.includes('user-attachments');
 
-  if (src.startsWith('http') && !isGitHubAssetURL) {
+  if (src.startsWith('http') && (!isGitHubAssetURL || !FILE_WITH_EXTENSION_REGEX.test(src))) {
     return src;
   }
 

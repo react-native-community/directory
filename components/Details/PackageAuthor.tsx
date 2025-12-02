@@ -41,6 +41,7 @@ export default function PackageAuthor({ author, compact }: Props) {
               src={`https://github.com/${ghUsername}.png`}
               style={styles.avatar}
               alt={`${ghUsername} avatar`}
+              onError={hideAvatarOnError}
             />
             <View>
               <Label>{ghUsername}</Label>
@@ -77,6 +78,7 @@ export default function PackageAuthor({ author, compact }: Props) {
                   backgroundColor: isDark ? darkColors.powder : colors.gray2,
                 }}
                 alt={`${author.name} avatar`}
+                onError={hideAvatarOnError}
               />
             }>
             <View style={styles.tooltipContent}>
@@ -94,6 +96,7 @@ export default function PackageAuthor({ author, compact }: Props) {
           src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
           style={styles.avatar}
           alt={`${author.name} avatar`}
+          onError={hideAvatarOnError}
         />
         <View>
           <Label style={{ color: isDark ? colors.white : colors.black }}>{author.name}</Label>
@@ -116,6 +119,12 @@ function getValidName(potentialName: string): string {
     .filter(word => !(word.includes('(') || word.includes('/') || word.includes('<')))
     .join(' ');
   return cleanName.length ? cleanName : potentialName.replace(/[<>()]/g, '');
+}
+
+function hideAvatarOnError(error: any) {
+  const target = error.currentTarget;
+  target.src = '';
+  target.style.display = 'none';
 }
 
 const styles = StyleSheet.create({
