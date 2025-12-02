@@ -17646,7 +17646,10 @@
     "npmPkg": "@rn-bridge/react-native-shortcuts",
     "examples": ["https://github.com/rn-bridge/react-native-shortcuts/tree/master/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "alternatives": [
+      "@rn-org/react-native-shortcuts"
+    ]
   },
   {
     "githubUrl": "https://github.com/rn-bridge/react-native-geofencing",
@@ -18464,9 +18467,7 @@
   },
   {
     "githubUrl": "https://github.com/mdjastrzebski/react-native-unmount",
-    "examples": [
-      "https://github.com/mdjastrzebski/react-native-unmount/tree/main/example"
-    ],
+    "examples": ["https://github.com/mdjastrzebski/react-native-unmount/tree/main/example"],
     "ios": true,
     "android": true
   },
@@ -18475,5 +18476,19 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/rn-org/react-native-shortcuts",
+    "npmPkg": "@rn-org/react-native-shortcuts",
+    "examples": ["https://github.com/rn-org/react-native-shortcuts/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/rn-org/react-native-annotated-text",
+    "npmPkg": "@rn-org/react-native-annotated-text",
+    "examples": ["https://github.com/rn-org/react-native-annotated-text/tree/master/example"],
+    "android": true,
+    "ios": true
   }
 ]

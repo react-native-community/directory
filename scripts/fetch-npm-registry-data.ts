@@ -12,7 +12,10 @@ function urlForPackage(npmPkg: string) {
   return `https://registry.npmjs.org/${npmPkg}`;
 }
 
-export async function fetchNpmRegistryData(pkgData: LibraryType, attemptsCount = 0) {
+export async function fetchNpmRegistryData(
+  pkgData: LibraryType,
+  attemptsCount = 0
+): Promise<LibraryType> {
   const { npmPkg } = pkgData;
 
   try {
@@ -38,6 +41,8 @@ export async function fetchNpmRegistryData(pkgData: LibraryType, attemptsCount =
 
     return {
       ...pkgData,
+      unmaintained:
+        'deprecated' in registryData.versions[latestRelease] ? true : pkgData.unmaintained,
       npm: {
         ...pkgData.npm,
         size: registryData.versions[latestRelease].dist.unpackedSize,
