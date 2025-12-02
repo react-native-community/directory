@@ -308,6 +308,10 @@ select {
       display: block;
     }
 
+    &[align="center"] img {
+      margin: 0 auto;
+    }
+
     + div {
       margin-top: 12px;
     }

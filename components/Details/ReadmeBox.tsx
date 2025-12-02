@@ -121,7 +121,7 @@ export default function ReadmeBox({
               br: () => null,
               hr: () => null,
               a: (props: any) => {
-                if (props.href) {
+                if (props.href && !props.href.startsWith('//')) {
                   return <A {...props} />;
                 }
                 return <span>{props.children}</span>;

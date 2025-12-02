@@ -194,7 +194,7 @@ export type NpmLatestRegistryData = {
   name: string;
   version: string;
   keywords: string[];
-  author: NpmUser;
+  author: NpmUser | string;
   license: string;
   maintainers: NpmUser[];
   homepage: string;

@@ -62,7 +62,7 @@ export function getExampleDescription(url: string) {
     if (url.includes('/tree/')) {
       return `GitHub project (${url.split('/').reverse()[0]})`;
     }
-    return 'GitHub repository example';
+    return `GitHub repository (${url.split('/')[4]})`;
   }
   if (url.includes('snack.expo.dev')) {
     return 'Snack';

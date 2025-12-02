@@ -136,11 +136,17 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </UL>
               </>
             )}
-            {!isSmallScreen && author && (
+            {!isSmallScreen && !!author && (
               <>
                 <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
                 <View style={{ alignItems: 'flex-start' }}>
-                  <PackageAuthor author={author} />
+                  {typeof author === 'string' ? (
+                    <View>
+                      <Label>{author ?? 'Unknown'}</Label>
+                    </View>
+                  ) : (
+                    <PackageAuthor author={author} />
+                  )}
                 </View>
               </>
             )}
@@ -186,11 +192,17 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
                 </View>
               </>
             )}
-            {isSmallScreen && author && (
+            {isSmallScreen && !!author && (
               <>
                 <H6 style={[styles.contentHeader, headerColorStyle]}>Author</H6>
                 <View style={{ alignItems: 'flex-start' }}>
-                  <PackageAuthor author={author} />
+                  {typeof author === 'string' ? (
+                    <View>
+                      <Label>{author ?? 'Unknown'}</Label>
+                    </View>
+                  ) : (
+                    <PackageAuthor author={author} />
+                  )}
                 </View>
               </>
             )}
