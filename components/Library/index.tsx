@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
+import { colors, useLayout, A, darkColors, Headline, HoverEffect } from '~/common/styleguide';
+import { GitHub } from '~/components/Icons';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
@@ -81,12 +82,19 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
               ? [styles.containerColumn, styles.updatedAtContainerSmall]
               : styles.updatedAtContainer
           }>
-          <A
-            href={library.githubUrl || github.urls.repo}
-            style={styles.name}
-            hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
-            {libName}
-          </A>
+          <View style={styles.nameWrapper}>
+            <A
+              href={`/package/${library.npmPkg}`}
+              style={styles.name}
+              hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
+              {libName}
+            </A>
+            <HoverEffect>
+              <A href={library.githubUrl} style={styles.githubButton}>
+                <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
+              </A>
+            </HoverEffect>
+          </View>
           {!showTrendingMark && !library.unmaintained && <UpdatedAtView library={library} />}
         </View>
         <View style={styles.verticalMargin}>
@@ -177,6 +185,11 @@ const styles = StyleSheet.create({
   columnTwoSmall: {
     borderLeftWidth: 0,
     borderTopWidth: 1,
+  },
+  nameWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
   },
   name: {
     backgroundColor: 'transparent',
@@ -275,5 +288,15 @@ const styles = StyleSheet.create({
     gap: 8,
     justifyContent: 'flex-start',
     alignSelf: 'flex-start',
+  },
+  detailsButton: {
+    display: 'flex',
+    width: 16,
+    height: 16,
+    alignItems: 'center',
+  },
+  githubButton: {
+    width: 20,
+    height: 20,
   },
 });

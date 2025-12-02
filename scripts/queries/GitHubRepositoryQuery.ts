@@ -13,10 +13,12 @@ const GitHubRepositoryQuery = `
       resetAt
     }
     repository(owner: $repoOwner, name: $repoName) {
-      hasIssuesEnabled
-      hasWikiEnabled
-      hasSponsorshipsEnabled
       hasDiscussionsEnabled
+      hasIssuesEnabled
+      hasProjectsEnabled
+      hasSponsorshipsEnabled
+      hasWikiEnabled
+      hasVulnerabilityAlertsEnabled
       issues(states: OPEN) {
         totalCount
       }

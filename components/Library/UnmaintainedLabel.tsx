@@ -9,9 +9,10 @@ import { Warning } from '../Icons';
 
 type Props = {
   alternatives?: LibraryDataEntryType['alternatives'];
+  block?: boolean;
 };
 
-function UnmaintainedLabel({ alternatives }: Props) {
+function UnmaintainedLabel({ alternatives, block }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -23,6 +24,7 @@ function UnmaintainedLabel({ alternatives }: Props) {
       <View
         style={[
           styles.unmaintainedTextContainer,
+          block && styles.unmaintainedTextContainerBlock,
           {
             flexDirection: isSmallScreen ? 'column' : 'row',
             backgroundColor: isDark ? darkColors.dark : colors.gray1,
@@ -86,6 +88,15 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     flexShrink: 1,
     flexWrap: 'wrap',
+  },
+  unmaintainedTextContainerBlock: {
+    marginLeft: 0,
+    borderLeftWidth: 1,
+    paddingLeft: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 8,
   },
 });
 

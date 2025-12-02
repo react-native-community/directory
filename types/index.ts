@@ -93,8 +93,10 @@ export type LibraryType = LibraryDataEntryType & {
     stats: {
       hasIssues: boolean;
       hasWiki: boolean;
+      hasProjects: boolean;
       hasSponsorships: boolean;
       hasDiscussions: boolean;
+      hasVulnerabilityAlerts: boolean;
       hasTopics?: boolean;
       updatedAt: Date | string;
       createdAt: Date | string;
@@ -177,3 +179,66 @@ export type CheckResultsType = Record<
     newArchitecture: NewArchSupportStatus;
   }
 >;
+
+export type NpmRegistryData = {
+  'dist-tags': Record<string, string>;
+  versions: Record<
+    string,
+    {
+      version: string;
+    } & Record<string, unknown>
+  >;
+};
+
+export type NpmLatestRegistryData = {
+  name: string;
+  version: string;
+  keywords: string[];
+  author: NpmUser | string;
+  license: string;
+  maintainers: NpmUser[];
+  homepage: string;
+  bugs: { url: string };
+  bin: { eslint: string };
+  dist: {
+    shasum: string;
+    tarball: string;
+    fileCount?: number;
+    integrity?: string;
+    signatures?: {
+      sig: string;
+      keyid: string;
+    };
+    unpackedSize?: number;
+  };
+  main: string;
+  type: string;
+  types?: string;
+  engines: {
+    node: string;
+  };
+  exports: Record<string, object | string>;
+  gitHead?: string;
+  scripts: Record<string, string>;
+  gitHooks?: Record<string, string>;
+  repository: {
+    url: string;
+    type: string;
+  };
+  description: string;
+  directories: Record<string, unknown>;
+  dependencies: Record<string, string>;
+  typesVersions?: Record<string, object>;
+  devDependencies?: Record<string, string>;
+  peerDependencies?: Record<string, string>;
+  peerDependenciesMeta?: Record<string, { optional?: boolean }>;
+  _npmUser?: NpmUser;
+  _npmVersion?: string;
+  _nodeVersion?: string;
+};
+
+export type NpmUser = {
+  name: string;
+  email?: string;
+  url?: string;
+};

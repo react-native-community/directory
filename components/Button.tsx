@@ -1,6 +1,12 @@
 import { A } from '@expo/html-elements';
 import { type PropsWithChildren } from 'react';
-import { StyleSheet, type TextStyle, Pressable, type StyleProp } from 'react-native';
+import {
+  StyleSheet,
+  type TextStyle,
+  Pressable,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
 
 import { darkColors, HoverEffect, P } from '~/common/styleguide';
 
@@ -9,11 +15,20 @@ type Props = PropsWithChildren & {
   onPress?: () => void;
   openInNewTab?: boolean;
   style?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
-export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
+export function Button({
+  children,
+  href,
+  onPress,
+  style,
+  containerStyle,
+  openInNewTab,
+  ...rest
+}: Props) {
   const isLink = !!href;
-  const linkStyle = [
+  const buttonStyle = [
     styles.container,
     {
       backgroundColor: darkColors.primaryDark,
@@ -24,19 +39,19 @@ export function Button({ children, href, onPress, style, openInNewTab, ...rest }
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
   return (
-    <HoverEffect>
+    <HoverEffect style={containerStyle}>
       {isLink ? (
         <A
           href={href}
           style={{ borderRadius: 4, fontFamily: 'inherit', fontSize: 'inherit' }}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
-          <Pressable focusable={false} style={linkStyle} accessible={false}>
+          <Pressable focusable={false} style={buttonStyle} accessible={false}>
             {content}
           </Pressable>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={linkStyle} {...rest}>
+        <Pressable onPress={onPress} style={buttonStyle} {...rest}>
           {content}
         </Pressable>
       )}
