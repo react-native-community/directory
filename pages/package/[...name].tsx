@@ -17,6 +17,7 @@ import {
   P,
   useLayout,
 } from '~/common/styleguide';
+import Avatar from '~/components/Avatar';
 import { Button } from '~/components/Button';
 import { CompatibilityTags } from '~/components/CompatibilityTags';
 import ContentContainer from '~/components/ContentContainer';
@@ -32,6 +33,7 @@ import UpdatedAtView from '~/components/Library/UpdateAtView';
 import Navigation from '~/components/Navigation';
 import NotFoundContent from '~/components/NotFoundContent';
 import PageMeta from '~/components/PageMeta';
+import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type NpmLatestRegistryData, type NpmUser } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
@@ -74,6 +76,7 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
     );
   }
 
+  const ghUsername = library.github.fullName.split('/')[0];
   const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
     registryData;
 
@@ -95,6 +98,21 @@ export default function PackagePage({ apiData, registryData, packageName }: Prop
             {library.unmaintained && <UnmaintainedLabel block />}
             <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
               <View style={styles.nameWrapper}>
+                <Tooltip
+                  sideOffset={2}
+                  delayDuration={100}
+                  trigger={
+                    <Avatar
+                      src={`https://github.com/${ghUsername}.png`}
+                      style={{
+                        ...styles.avatar,
+                        borderColor: isDark ? darkColors.border : colors.gray2,
+                      }}
+                      alt={`${ghUsername} avatar`}
+                    />
+                  }>
+                  {ghUsername}
+                </Tooltip>
                 <P style={styles.name}>{library.npmPkg}</P>
                 {registryData.version && (
                   <P style={headerColorStyle}>
@@ -354,6 +372,7 @@ const styles = StyleSheet.create({
   },
   nameRow: {
     gap: 24,
+    minHeight: 26,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -373,7 +392,7 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: '600',
     fontSize: 20,
-    lineHeight: 24,
+    lineHeight: 26,
     marginTop: -2,
   },
   githubButton: {
@@ -430,6 +449,13 @@ const styles = StyleSheet.create({
     margin: 0,
     paddingLeft: 18,
     fontSize: 13,
+  },
+  avatar: {
+    width: 24,
+    height: 24,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderStyle: 'solid',
   },
 });
 

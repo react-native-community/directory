@@ -85,24 +85,19 @@ export default function ReadmeBox({
   }
 
   const readmeFallbackContent = getReadmeFallbackContent(readmeContent);
+  const borderColorStyle = { borderColor: isDark ? darkColors.border : colors.gray2 };
 
   return (
     <View
       style={[
         styles.readmeWrapper,
+        borderColorStyle,
         {
           // @ts-expect-error allow color style inheritance
           color: isDark ? colors.white : colors.black,
-          borderColor: isDark ? darkColors.border : colors.gray2,
         },
       ]}>
-      <View
-        style={[
-          styles.readmeHeader,
-          {
-            borderColor: isDark ? darkColors.border : colors.gray2,
-          },
-        ]}>
+      <View style={[styles.readmeHeader, borderColorStyle]}>
         <ReadmeFile fill={isDark ? darkColors.pewter : colors.secondary} />
         <P>Readme.md</P>
       </View>
@@ -149,7 +144,10 @@ export default function ReadmeBox({
                 />
               ),
               source: ({ srcSet, ...rest }: any) => (
-                <source srcSet={getReadmeAssetURL(srcSet, githubUrl)} {...rest} />
+                <source
+                  srcSet={srcSet ? getReadmeAssetURL(srcSet, githubUrl) : undefined}
+                  {...rest}
+                />
               ),
               pre: ({ children }: any) => {
                 const langClass = children.props.className;
@@ -188,7 +186,7 @@ export default function ReadmeBox({
                   <details
                     style={{
                       ...styles.detailsWrapper,
-                      borderColor: isDark ? darkColors.border : colors.gray2,
+                      ...borderColorStyle,
                     }}>
                     {children}
                   </details>
@@ -205,7 +203,7 @@ export default function ReadmeBox({
   );
 }
 
-function getReadmeFallbackContent(readmeContent: string | null | undefined): string | null {
+function getReadmeFallbackContent(readmeContent?: string | null): string | null {
   if (readmeContent === undefined) {
     return 'Loading README.md…';
   } else if (readmeContent === null) {
