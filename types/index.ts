@@ -113,6 +113,7 @@ export type LibraryType = LibraryDataEntryType & {
     downloads?: number;
     weekDownloads?: number;
     size?: number;
+    versionsCount?: number;
     latestRelease?: string;
     latestReleaseDate?: string;
   };
@@ -180,25 +181,35 @@ export type CheckResultsType = Record<
   }
 >;
 
-export type NpmRegistryData = {
-  'dist-tags': Record<string, string>;
-  versions: Record<
-    string,
-    {
-      version: string;
-    } & Record<string, unknown>
-  >;
-};
-
-export type NpmLatestRegistryData = {
+type NpmRegistryCommonData = {
   name: string;
-  version: string;
-  keywords: string[];
   author: NpmUser | string;
+  bugs: { url: string };
+  description: string;
+  homepage: string;
+  keywords: string[];
   license: string;
   maintainers: NpmUser[];
-  homepage: string;
-  bugs: { url: string };
+  repository: {
+    url: string;
+    type: string;
+    directory?: string;
+  };
+};
+
+export type NpmRegistryData = NpmRegistryCommonData & {
+  'dist-tags': Record<string, string>;
+  versions: Record<string, NpmRegistryVersionData>;
+  time: Record<string, string>;
+  readme?: string;
+  readmeFilename?: string;
+  users?: Record<string, unknown>;
+  _id?: string;
+  _rev?: string;
+};
+
+export type NpmRegistryVersionData = NpmRegistryCommonData & {
+  version: string;
   bin: { eslint: string };
   dist: {
     shasum: string;
@@ -221,13 +232,9 @@ export type NpmLatestRegistryData = {
   gitHead?: string;
   scripts: Record<string, string>;
   gitHooks?: Record<string, string>;
-  repository: {
-    url: string;
-    type: string;
-  };
   description: string;
   directories: Record<string, unknown>;
-  dependencies: Record<string, string>;
+  dependencies?: Record<string, string>;
   typesVersions?: Record<string, object>;
   devDependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;
@@ -241,4 +248,8 @@ export type NpmUser = {
   name: string;
   email?: string;
   url?: string;
+  trustedPublisher?: {
+    id: string;
+    oidcConfigId: string;
+  };
 };

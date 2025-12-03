@@ -1,7 +1,7 @@
 import { type PropsWithChildren, type ReactElement, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, H1, H2 } from '~/common/styleguide';
+import { colors, darkColors, H1, H2, useLayout } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
 import TopBar from '~/components/TopBar';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -10,10 +10,19 @@ type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
   header?: ReactElement;
+  style?: ViewStyle;
 }>;
 
-export default function Navigation({ title, description, children, header }: NavigationProps) {
+export default function Navigation({
+  title,
+  description,
+  children,
+  header,
+  style,
+}: NavigationProps) {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
+
   return (
     <>
       <TopBar />
@@ -24,6 +33,7 @@ export default function Navigation({ title, description, children, header }: Nav
           style={[
             styles.headerWrapper,
             { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
+            style,
           ]}>
           <Logo
             fill={isDark ? colors.gray7 : colors.gray5}
@@ -31,7 +41,7 @@ export default function Navigation({ title, description, children, header }: Nav
             height={520}
             style={styles.logoBackground}
           />
-          <H1 style={styles.header}>{title}</H1>
+          <H1 style={[styles.header, isSmallScreen && styles.headerSmall]}>{title}</H1>
           <H2 style={styles.headerDescription}>{description}</H2>
           {children}
         </View>
@@ -50,6 +60,9 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 42,
     paddingHorizontal: 20,
+  },
+  headerSmall: {
+    fontSize: 32,
   },
   headerDescription: {
     textAlign: 'center',

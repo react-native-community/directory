@@ -167,6 +167,7 @@
     "newArchitecture": "supported"
   },
   "react-native-add-calendar-event": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-bottom-action-sheet": {
@@ -469,7 +470,6 @@
     "newArchitecture": "supported"
   },
   "react-native-hyperlink": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-check-box": {
@@ -504,6 +504,7 @@
     "newArchitecture": "supported"
   },
   "native-base": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-switcher": {
@@ -1401,6 +1402,7 @@
     "newArchitecture": "supported"
   },
   "expo-av": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "expo-background-fetch": {
@@ -1627,6 +1629,7 @@
     "newArchitecture": "supported"
   },
   "reactotron": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "apisauce": {
@@ -2466,6 +2469,7 @@
     "newArchitecture": "supported"
   },
   "react-native-randombytes": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-radial-gradient": {
@@ -3547,6 +3551,7 @@
     "newArchitecture": "supported"
   },
   "@react-native-twitter-signin/twitter-signin": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-svg-app-icon": {
@@ -3729,7 +3734,6 @@
     "newArchitecture": "untested"
   },
   "react-native-flex-layout": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-tableview-list": {
@@ -3829,6 +3833,7 @@
     "newArchitecture": "untested"
   },
   "@shopify/react-native-performance": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-app-clip": {
@@ -3895,7 +3900,6 @@
     "newArchitecture": "supported"
   },
   "expo-music-picker": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@ovalmoney/react-native-fitness": {
@@ -3975,7 +3979,7 @@
     "newArchitecture": "supported"
   },
   "amazon-ivs-react-native-player": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "expo-router": {
     "newArchitecture": "supported"
@@ -4302,7 +4306,6 @@
     "newArchitecture": "supported"
   },
   "react-native-rsa-signer": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-pie-chart": {
@@ -4390,6 +4393,7 @@
     "newArchitecture": "supported"
   },
   "react-native-http-bridge-refurbished": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-simple-bcrypt": {
@@ -4521,6 +4525,7 @@
     "newArchitecture": "untested"
   },
   "react-native-bullet-graph": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-liquid-gauge": {
@@ -4533,6 +4538,7 @@
     "newArchitecture": "supported"
   },
   "react-native-video-duration": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@orbital-systems/react-native-esp-idf-provisioning": {
@@ -4581,7 +4587,7 @@
     "newArchitecture": "supported"
   },
   "@kesha-antonov/react-native-background-downloader": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@callstack/react-theme-provider": {
     "unmaintained": true,
@@ -4744,6 +4750,7 @@
     "newArchitecture": "untested"
   },
   "@candlefinance/app-icon": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-openai": {
@@ -4814,6 +4821,7 @@
     "newArchitecture": "supported"
   },
   "react-native-reanimated-table": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-onyx": {
@@ -5698,6 +5706,7 @@
     "newArchitecture": "untested"
   },
   "@siteed/expo-audio-stream": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@siteed/expo-audio-ui": {
@@ -5849,6 +5858,7 @@
     "newArchitecture": "supported"
   },
   "@google/generative-ai": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-auto-skeleton": {
@@ -5869,7 +5879,7 @@
   "react-native-nitro-in-app-browser": {
     "newArchitecture": "supported"
   },
-  "react-native-turbo-scrypt": {
+  "react-native-nitro-scrypt": {
     "newArchitecture": "untested"
   },
   "react-native-llm-mediapipe": {
@@ -6300,7 +6310,7 @@
     "newArchitecture": "supported"
   },
   "react-native-whip-whep": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-audio-api": {
     "newArchitecture": "supported"
@@ -6951,9 +6961,11 @@
     "newArchitecture": "untested"
   },
   "@rn-bridge/react-native-shortcuts": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@rn-bridge/react-native-geofencing": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-related-digital": {
@@ -7038,6 +7050,7 @@
     "newArchitecture": "untested"
   },
   "@shopify/react-native-performance-navigation-drawer": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@storybook/react-native-ui": {
@@ -7076,7 +7089,7 @@
   "react-native-sportscar": {
     "newArchitecture": "untested"
   },
-  "react-native-mlx": {
+  "react-native-nitro-mlx": {
     "newArchitecture": "untested"
   },
   "expo-iperf": {
@@ -7167,9 +7180,11 @@
     "newArchitecture": "supported"
   },
   "react-native-winrt": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "anyline-ocr-react-native-module": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@stripe/stripe-terminal-react-native": {
@@ -7185,6 +7200,7 @@
     "newArchitecture": "supported"
   },
   "react-native-3d-model-view": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-update": {
@@ -7230,6 +7246,63 @@
     "newArchitecture": "supported"
   },
   "react-native-variable-blur": {
+    "newArchitecture": "supported"
+  },
+  "@fullstory/react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-fn-forms": {
+    "newArchitecture": "supported"
+  },
+  "expo-weather-kit": {
+    "newArchitecture": "supported"
+  },
+  "react-native-native-select": {
+    "newArchitecture": "supported"
+  },
+  "@bhojaniasgar/react-native-otp-input": {
+    "newArchitecture": "supported"
+  },
+  "@dariyd/react-native-image-filters": {
+    "newArchitecture": "supported"
+  },
+  "react-native-blasted-image": {
+    "newArchitecture": "untested"
+  },
+  "react-native-authsignal": {
+    "newArchitecture": "untested"
+  },
+  "@rpldy/native-uploady": {
+    "newArchitecture": "untested"
+  },
+  "react-native-apptext": {
+    "newArchitecture": "untested"
+  },
+  "@mbdayo/react-native-health-kits": {
+    "newArchitecture": "supported"
+  },
+  "@dawidzawada/bonjour-zeroconf": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-cookies": {
+    "newArchitecture": "supported"
+  },
+  "react-native-libprisma": {
+    "newArchitecture": "supported"
+  },
+  "react-native-unmount": {
+    "newArchitecture": "untested"
+  },
+  "react-native-dev-lens": {
+    "newArchitecture": "untested"
+  },
+  "@rn-org/react-native-shortcuts": {
+    "newArchitecture": "supported"
+  },
+  "@rn-org/react-native-annotated-text": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-cloud-uploader": {
     "newArchitecture": "supported"
   }
 }
