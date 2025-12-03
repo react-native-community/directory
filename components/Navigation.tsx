@@ -1,5 +1,5 @@
 import { type PropsWithChildren, type ReactElement, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, H1, H2 } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
@@ -10,9 +10,16 @@ type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
   header?: ReactElement;
+  style?: ViewStyle;
 }>;
 
-export default function Navigation({ title, description, children, header }: NavigationProps) {
+export default function Navigation({
+  title,
+  description,
+  children,
+  header,
+  style,
+}: NavigationProps) {
   const { isDark } = useContext(CustomAppearanceContext);
   return (
     <>
@@ -24,6 +31,7 @@ export default function Navigation({ title, description, children, header }: Nav
           style={[
             styles.headerWrapper,
             { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
+            style,
           ]}>
           <Logo
             fill={isDark ? colors.gray7 : colors.gray5}

@@ -46,6 +46,7 @@ export async function fetchNpmRegistryData(
       npm: {
         ...pkgData.npm,
         size: registryData.versions[latestRelease].dist.unpackedSize,
+        versionsCount: Object.keys(registryData.versions).length,
         latestRelease,
         latestReleaseDate: registryData.time[latestRelease],
       },

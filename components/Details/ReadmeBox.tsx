@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderStyle: 'solid',
-    marginBottom: 8,
+    marginVertical: 8,
   },
   readmeHeader: {
     flexDirection: 'row',
