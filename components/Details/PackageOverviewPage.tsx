@@ -56,8 +56,16 @@ export default function PackageOverviewPage({
   }
 
   const ghUsername = library.github.fullName.split('/')[0];
-  const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
-    registryData;
+  const {
+    author,
+    maintainers,
+    dependencies,
+    devDependencies,
+    peerDependencies,
+    engines,
+    version,
+    _npmUser,
+  } = registryData;
 
   const headerColorStyle = {
     color: isDark ? darkColors.secondary : colors.gray5,
@@ -93,14 +101,10 @@ export default function PackageOverviewPage({
                   {ghUsername}
                 </Tooltip>
                 <P style={styles.name}>{library.npmPkg}</P>
-                {registryData.version && (
-                  <View style={styles.versionContainer}>
-                    <P style={headerColorStyle}>
-                      {library.npm?.latestRelease ?? registryData.version}
-                    </P>
-                    {registryData._npmUser?.trustedPublisher && <TrustedBadge />}
-                  </View>
-                )}
+                <View style={styles.versionContainer}>
+                  <P style={headerColorStyle}>{version}</P>
+                  {_npmUser?.trustedPublisher && <TrustedBadge />}
+                </View>
                 <HoverEffect>
                   <A href={library.githubUrl} style={styles.githubButton}>
                     <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />

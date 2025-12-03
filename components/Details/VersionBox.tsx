@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, Caption, colors, darkColors, Label } from '~/common/styleguide';
+import { A, Caption, colors, darkColors, Label, useLayout } from '~/common/styleguide';
 import TrustedBadge from '~/components/Details/TrustedBadge';
 import { Dependency, PackageSize } from '~/components/Icons';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -18,6 +18,7 @@ type Props = {
 
 export default function VersionBox({ label, time, versionData }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
+  const { isSmallScreen } = useLayout();
 
   const iconColor = isDark ? darkColors.pewter : colors.gray5;
 
@@ -25,6 +26,7 @@ export default function VersionBox({ label, time, versionData }: Props) {
     <View
       style={[
         styles.versionBox,
+        isSmallScreen && styles.versionBoxSmall,
         {
           borderColor: isDark ? darkColors.border : colors.gray2,
         },
@@ -55,7 +57,7 @@ export default function VersionBox({ label, time, versionData }: Props) {
           <View
             style={[
               styles.versionMetadata,
-              {
+              !isSmallScreen && {
                 minWidth: 150,
               },
             ]}>
@@ -71,7 +73,7 @@ export default function VersionBox({ label, time, versionData }: Props) {
           <View
             style={[
               styles.versionMetadata,
-              {
+              !isSmallScreen && {
                 minWidth: 180,
               },
             ]}>
@@ -103,9 +105,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  versionBoxSmall: {
+    gap: 8,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+  },
   versionMetadataContainer: {
     flexDirection: 'row',
-    gap: 16,
+    flexWrap: 'wrap',
+    columnGap: 16,
+    rowGap: 4,
   },
   versionMetadata: {
     flexDirection: 'row',

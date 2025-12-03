@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 
+import { useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
 import NavigationTab from '~/components/NavigationTab';
@@ -10,10 +11,12 @@ type Props = {
 };
 
 export default function DetailsNavigation({ library }: Props) {
+  const { isSmallScreen } = useLayout();
+
   return (
     <Navigation
       title={`${library.template ? 'Template' : 'Package'} information`}
-      style={styles.tabsNav}>
+      style={{ ...styles.tabsNav, ...(isSmallScreen ? styles.tabsNavSmall : {}) }}>
       <ContentContainer style={styles.tabsContainer}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
         <NavigationTab
@@ -29,8 +32,12 @@ export default function DetailsNavigation({ library }: Props) {
 const styles = StyleSheet.create({
   tabsNav: {
     paddingBottom: 12,
-    paddingTop: 32,
+    paddingTop: 36,
     gap: 4,
+  },
+  tabsNavSmall: {
+    paddingTop: 20,
+    gap: 6,
   },
   tabsContainer: {
     gap: 8,
