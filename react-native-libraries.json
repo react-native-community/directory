@@ -18490,5 +18490,14 @@
     "examples": ["https://github.com/rn-org/react-native-annotated-text/tree/master/example"],
     "android": true,
     "ios": true
+  },
+   {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-cloud-uploader",
+    "examples": [
+      "https://github.com/Gautham495/react-native-nitro-cloud-uploader/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
