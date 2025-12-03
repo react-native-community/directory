@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, Label } from '~/common/styleguide';
+import Avatar from '~/components/Avatar';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
@@ -23,7 +24,7 @@ export default function PackageAuthor({ author, compact }: Props) {
     );
   }
 
-  const sublabelStyle = { color: isDark ? darkColors.secondary : colors.gray5 };
+  const sublabelStyle = { color: isDark ? darkColors.secondary : colors.gray4 };
 
   if (author?.url && !author.url.includes('@')) {
     if (author.url.includes('github.com/')) {
@@ -37,15 +38,10 @@ export default function PackageAuthor({ author, compact }: Props) {
             href={`https://github.com/${ghUsername}`}
             style={styles.authorContainer}
             hoverStyle={isDark && { color: colors.primaryDark }}>
-            <img
-              src={`https://github.com/${ghUsername}.png`}
-              style={styles.avatar}
-              alt={`${ghUsername} avatar`}
-              onError={hideAvatarOnError}
-            />
+            <Avatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <Label>{ghUsername}</Label>
-              <Label style={[styles.sublabel, sublabelStyle]}>{validName}</Label>
+              <span>{ghUsername}</span>
+              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{validName}</span>
             </View>
           </A>
         </View>
@@ -71,19 +67,14 @@ export default function PackageAuthor({ author, compact }: Props) {
             sideOffset={2}
             delayDuration={100}
             trigger={
-              <img
+              <Avatar
                 src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
-                style={{
-                  ...styles.avatar,
-                  backgroundColor: isDark ? darkColors.powder : colors.gray2,
-                }}
                 alt={`${author.name} avatar`}
-                onError={hideAvatarOnError}
               />
             }>
             <View style={styles.tooltipContent}>
-              <Label>{author.name}</Label>
-              <Label style={[styles.sublabel, sublabelStyle]}>{email}</Label>
+              <span>{author.name}</span>
+              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{email}</span>
             </View>
           </Tooltip>
         </View>
@@ -92,15 +83,13 @@ export default function PackageAuthor({ author, compact }: Props) {
 
     return (
       <View style={styles.authorContainer}>
-        <img
+        <Avatar
           src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
-          style={styles.avatar}
           alt={`${author.name} avatar`}
-          onError={hideAvatarOnError}
         />
         <View>
-          <Label style={{ color: isDark ? colors.white : colors.black }}>{author.name}</Label>
-          <Label style={[styles.sublabel, sublabelStyle]}>{email}</Label>
+          <span style={{ color: isDark ? colors.white : colors.black }}>{author.name}</span>
+          <span style={{ ...styles.sublabel, ...sublabelStyle }}>{email}</span>
         </View>
       </View>
     );
@@ -121,12 +110,6 @@ function getValidName(potentialName: string): string {
   return cleanName.length ? cleanName : potentialName.replace(/[<>()]/g, '');
 }
 
-function hideAvatarOnError(error: any) {
-  const target = error.currentTarget;
-  target.src = '';
-  target.style.display = 'none';
-}
-
 const styles = StyleSheet.create({
   authorContainer: {
     display: 'flex',
@@ -139,13 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: 300,
   },
-  avatar: {
-    width: 36,
-    height: 36,
-    borderRadius: '100%',
-  },
   tooltipContent: {
     display: 'flex',
-    gap: 2,
   },
 });

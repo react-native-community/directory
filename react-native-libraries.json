@@ -17575,11 +17575,11 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/Unistyles-OSS/uniwind/tree/main/packages/uniwind",
+    "githubUrl": "https://github.com/uni-stack/uniwind/tree/main/packages/uniwind",
     "examples": [
-      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-router",
-      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/expo-example",
-      "https://github.com/Unistyles-OSS/uniwind/tree/main/apps/bare"
+      "https://github.com/uni-stack/uniwind/tree/main/apps/expo-router",
+      "https://github.com/uni-stack/uniwind/tree/main/apps/expo-example",
+      "https://github.com/uni-stack/uniwind/tree/main/apps/bare"
     ],
     "ios": true,
     "android": true,
@@ -17647,9 +17647,7 @@
     "examples": ["https://github.com/rn-bridge/react-native-shortcuts/tree/master/example"],
     "android": true,
     "ios": true,
-    "alternatives": [
-      "@rn-org/react-native-shortcuts"
-    ]
+    "alternatives": ["@rn-org/react-native-shortcuts"]
   },
   {
     "githubUrl": "https://github.com/rn-bridge/react-native-geofencing",
@@ -18491,7 +18489,7 @@
     "android": true,
     "ios": true
   },
-   {
+  {
     "githubUrl": "https://github.com/Gautham495/react-native-nitro-cloud-uploader",
     "examples": [
       "https://github.com/Gautham495/react-native-nitro-cloud-uploader/tree/main/example"
