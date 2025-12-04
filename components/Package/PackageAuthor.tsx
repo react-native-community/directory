@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, Label } from '~/common/styleguide';
-import Avatar from '~/components/Avatar';
+import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
@@ -38,7 +38,7 @@ export default function PackageAuthor({ author, compact }: Props) {
             href={`https://github.com/${ghUsername}`}
             style={styles.authorContainer}
             hoverStyle={isDark && { color: colors.primaryDark }}>
-            <Avatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
+            <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
               <span>{ghUsername}</span>
               <span style={{ ...styles.sublabel, ...sublabelStyle }}>{validName}</span>
@@ -67,7 +67,7 @@ export default function PackageAuthor({ author, compact }: Props) {
             sideOffset={2}
             delayDuration={100}
             trigger={
-              <Avatar
+              <UserAvatar
                 src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
                 alt={`${author.name} avatar`}
               />
@@ -83,7 +83,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
     return (
       <View style={styles.authorContainer}>
-        <Avatar
+        <UserAvatar
           src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
           alt={`${author.name} avatar`}
         />

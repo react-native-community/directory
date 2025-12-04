@@ -1,25 +1,11 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { colors, darkColors, H3, P } from '~/common/styleguide';
-import { Button } from '~/components/Button';
 import ContentContainer from '~/components/ContentContainer';
-import { GitHub } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import ToolEntry from '~/components/Tools/ToolEntry';
 
 export default function Tools() {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const textColorStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const buttonColorStyle = {
-    backgroundColor: isDark ? darkColors.border : colors.gray3,
-    color: isDark ? colors.white : colors.black,
-  };
-
   return (
     <>
       <PageMeta
@@ -32,116 +18,79 @@ export default function Tools() {
         description="List of development tools, apps and websites using React Native Directory data."
       />
       <ContentContainer style={styles.container}>
-        <H3 style={[styles.subHeader, textColorStyle]}>React Native Directory VS Code extension</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
-          Browse through the React Native Directory and perform actions related to the chosen
-          package inside the built-in editor Command Palette.
-        </P>
-        <View style={styles.buttonsContainer}>
-          <GitHubButton href="https://github.com/react-native-community/vscode-react-native-directory" />
-          <Button
-            openInNewTab
-            href="https://marketplace.visualstudio.com/items?itemName=react-native-directory.vscode-react-native-directory"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Visual Studio Marketplace</span>
-          </Button>
-          <Button
-            openInNewTab
-            href="https://open-vsx.org/extension/react-native-directory/vscode-react-native-directory"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Open VSX</span>
-          </Button>
-        </View>
-        <H3 style={[styles.subHeader, textColorStyle]}>React Native Directory Raycast extension</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
-          A searchable and filterable list of React Native libraries inside Raycast.
-        </P>
-        <View style={styles.buttonsContainer}>
-          <GitHubButton href="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory" />
-          <Button
-            openInNewTab
-            href="https://www.raycast.com/shubh_porwal/react-native-directory"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Raycast Store</span>
-          </Button>
-        </View>
-        <H3 style={[styles.subHeader, textColorStyle]}>expo-doctor</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
-          CLI to check your Expo project for known issues and used libraries compatibility.
-        </P>
-        <View style={styles.buttonsContainer}>
-          <GitHubButton href="https://github.com/expo/expo/tree/main/packages/expo-doctor" />
-          <Button
-            openInNewTab
-            href="https://www.npmjs.com/package/expo-doctor"
-            style={[styles.button, buttonColorStyle]}>
-            <span>npm Registry</span>
-          </Button>
-        </View>
-        <H3 style={[styles.subHeader, textColorStyle]}>React Native Package Checker</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
-          Analyze React Native packages for New Architecture compatibility, check multiple packages
-          at once, get detailed insights, and export reports.
-        </P>
-        <View style={styles.buttonsContainer}>
-          <GitHubButton href="https://github.com/sandipshiwakoti/react-native-package-checker" />
-          <Button
-            openInNewTab
-            href="https://react-native-package-checker.vercel.app/"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Website</span>
-          </Button>
-        </View>
-        <H3 style={[styles.subHeader, textColorStyle]}>
-          React Native Package Checker VS Code Extension
-        </H3>
-        <P style={[styles.paragraph, textColorStyle]}>
-          Check New Architecture compatibility and version requirements for React Native packages
-          inside VS Code.
-        </P>
-        <View style={styles.buttonsContainer}>
-          <GitHubButton href="https://github.com/sandipshiwakoti/vscode-react-native-package-checker" />
-          <Button
-            openInNewTab
-            href="https://marketplace.visualstudio.com/items?itemName=sandipshiwakoti.vscode-react-native-package-checker"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Visual Studio Marketplace</span>
-          </Button>
-          <Button
-            openInNewTab
-            href="https://open-vsx.org/extension/sandipshiwakoti/vscode-react-native-package-checker"
-            style={[styles.button, buttonColorStyle]}>
-            <span>Open VSX</span>
-          </Button>
-        </View>
-        <br />
-        <br />
+        <ToolEntry
+          name="React Native Directory VS Code extension"
+          description="Browse through the React Native Directory and perform actions related to the chosen package inside the built-in editor Command Palette."
+          githubUrl="https://github.com/react-native-community/vscode-react-native-directory"
+          buttons={[
+            {
+              label: 'Visual Studio Marketplace',
+              href: 'https://marketplace.visualstudio.com/items?itemName=react-native-directory.vscode-react-native-directory',
+            },
+            {
+              label: 'Open VSX',
+              href: 'https://open-vsx.org/extension/react-native-directory/vscode-react-native-directory',
+            },
+          ]}
+        />
+        <ToolEntry
+          name="React Native Directory Raycast extension"
+          description="A searchable and filterable list of React Native libraries inside Raycast."
+          githubUrl="https://github.com/raycast/extensions/tree/main/extensions/react-native-directory"
+          buttons={[
+            {
+              label: 'Raycast Store',
+              href: 'https://www.raycast.com/shubh_porwal/react-native-directory',
+            },
+          ]}
+        />
+        <ToolEntry
+          name="expo-doctor"
+          description="CLI to check your Expo project for known issues and used libraries compatibility."
+          githubUrl="https://github.com/expo/expo/tree/main/packages/expo-doctor"
+          buttons={[
+            {
+              label: 'npm Registry',
+              href: 'https://www.npmjs.com/package/expo-doctor',
+            },
+          ]}
+        />
+        <ToolEntry
+          name="React Native Package Checker"
+          description="Analyze React Native packages for New Architecture compatibility, check multiple packages at once, get detailed insights, and export reports."
+          githubUrl="https://github.com/sandipshiwakoti/react-native-package-checker"
+          buttons={[
+            {
+              label: 'Website',
+              href: 'https://react-native-package-checker.vercel.app',
+            },
+          ]}
+        />
+        <ToolEntry
+          name="React Native Package Checker VS Code Extension"
+          description="Check New Architecture compatibility and version requirements for React Native packages inside VS Code."
+          githubUrl="https://github.com/sandipshiwakoti/vscode-react-native-package-checker"
+          buttons={[
+            {
+              label: 'Visual Studio Marketplace',
+              href: 'https://marketplace.visualstudio.com/items?itemName=sandipshiwakoti.vscode-react-native-package-checker',
+            },
+            {
+              label: 'Open VSX',
+              href: 'https://open-vsx.org/extension/sandipshiwakoti/vscode-react-native-package-checker',
+            },
+          ]}
+        />
       </ContentContainer>
     </>
   );
 }
 
-type GitHubButtonProps = {
-  href: string;
-};
-
-function GitHubButton({ href }: GitHubButtonProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const primaryButtonColorStyle = {
-    backgroundColor: isDark ? darkColors.primaryDark : colors.primary,
-  };
-  return (
-    <Button openInNewTab href={href} style={[styles.button, primaryButtonColorStyle]}>
-      <GitHub width={16} />
-      <P style={styles.githubButtonLabel}>GitHub</P>
-    </Button>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
-    marginTop: 32,
+    marginVertical: 40,
     paddingHorizontal: 16,
+    gap: 16,
   },
   subHeader: {
     fontSize: 22,
@@ -166,9 +115,5 @@ const styles = StyleSheet.create({
     minHeight: 32,
     fontSize: 14,
     gap: 6,
-  },
-  githubButtonLabel: {
-    color: 'inherit',
-    fontSize: 14,
   },
 });

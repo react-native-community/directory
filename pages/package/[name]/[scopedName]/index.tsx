@@ -1,6 +1,6 @@
 import { type NextPageContext } from 'next';
 
-import PackageOverviewPage from '~/components/Details/PackageOverviewPage';
+import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackagePageProps } from '~/types/pages';
 import getApiUrl from '~/util/getApiUrl';
 import { parseQueryParams } from '~/util/parseQueryParams';
@@ -12,7 +12,7 @@ export default function ScopedOverviewPage({
   packageName,
 }: PackagePageProps) {
   return (
-    <PackageOverviewPage packageName={packageName} apiData={apiData} registryData={registryData} />
+    <PackageOverviewScene packageName={packageName} apiData={apiData} registryData={registryData} />
   );
 }
 

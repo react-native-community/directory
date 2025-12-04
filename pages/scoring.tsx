@@ -11,13 +11,13 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 export default function Scoring() {
   const { isDark } = useContext(CustomAppearanceContext);
+
   const textColorStyle = {
     color: isDark ? colors.gray2 : colors.black,
   };
   const secondaryTextColorStyle = {
     color: isDark ? darkColors.secondary : colors.gray4,
   };
-
   const calloutStyle = {
     color: isDark ? darkColors.warning : colors.warningDark,
     backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,

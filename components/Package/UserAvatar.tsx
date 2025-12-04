@@ -8,7 +8,7 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & {
   hideOnError?: boolean;
 };
 
-export default function Avatar({ src, alt, style, hideOnError = true, ...rest }: Props) {
+export default function UserAvatar({ src, alt, style, hideOnError = true, ...rest }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const avatarStyle = {

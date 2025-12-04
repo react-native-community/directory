@@ -1,44 +1,31 @@
 import { UL } from '@expo/html-elements';
 import dynamic from 'next/dynamic';
-import * as emoji from 'node-emoji';
 import { useContext, useMemo } from 'react';
-import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import {
-  A,
-  colors,
-  darkColors,
-  H6,
-  Headline,
-  HoverEffect,
-  Label,
-  P,
-  useLayout,
-} from '~/common/styleguide';
-import Avatar from '~/components/Avatar';
-import { CompatibilityTags } from '~/components/CompatibilityTags';
+import { A, colors, darkColors, H6, Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import DependencyRow from '~/components/Details/DependencyRow';
-import DetailsNavigation from '~/components/Details/DetailsNavigation';
-import ExampleBox from '~/components/Details/ExampleBox';
-import NotFound from '~/components/Details/NotFound';
-import PackageAuthor from '~/components/Details/PackageAuthor';
-import ReadmeBox from '~/components/Details/ReadmeBox';
-import TrustedBadge from '~/components/Details/TrustedBadge';
-import { GitHub } from '~/components/Icons';
 import { MetaData } from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
-import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
+import DependencyRow from '~/components/Package/DependencyRow';
+import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import ExampleBox from '~/components/Package/ExampleBox';
+import NotFound from '~/components/Package/NotFound';
+import PackageAuthor from '~/components/Package/PackageAuthor';
+import PackageHeader from '~/components/Package/PackageHeader';
+import ReadmeBox from '~/components/Package/ReadmeBox';
 import PageMeta from '~/components/PageMeta';
-import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
 import { type PackagePageProps } from '~/types/pages';
 import mapDependencies from '~/util/mapDependencies';
 
-export default function PackageOverviewPage({
+const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
+  loading: () => <ReadmeBox loader />,
+});
+
+export default function PackageOverviewScene({
   apiData,
   registryData,
   packageName,
@@ -55,17 +42,8 @@ export default function PackageOverviewPage({
     return <NotFound />;
   }
 
-  const ghUsername = library.github.fullName.split('/')[0];
-  const {
-    author,
-    maintainers,
-    dependencies,
-    devDependencies,
-    peerDependencies,
-    engines,
-    version,
-    _npmUser,
-  } = registryData;
+  const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
+    registryData;
 
   const headerColorStyle = {
     color: isDark ? darkColors.secondary : colors.gray5,
@@ -82,48 +60,11 @@ export default function PackageOverviewPage({
       <ContentContainer style={styles.container}>
         <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
           <View style={styles.detailsContainer}>
-            {library.unmaintained && <UnmaintainedLabel block />}
-            <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
-              <View style={styles.nameWrapper}>
-                <Tooltip
-                  sideOffset={2}
-                  delayDuration={100}
-                  trigger={
-                    <Avatar
-                      src={`https://github.com/${ghUsername}.png`}
-                      style={{
-                        ...styles.avatar,
-                        borderColor: isDark ? darkColors.border : colors.gray2,
-                      }}
-                      alt={`${ghUsername} avatar`}
-                    />
-                  }>
-                  {ghUsername}
-                </Tooltip>
-                <P style={styles.name}>{library.npmPkg}</P>
-                <View style={styles.versionContainer}>
-                  <P style={headerColorStyle}>{version}</P>
-                  {_npmUser?.trustedPublisher && <TrustedBadge />}
-                </View>
-                <HoverEffect>
-                  <A href={library.githubUrl} style={styles.githubButton}>
-                    <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
-                  </A>
-                </HoverEffect>
-              </View>
-              <UpdatedAtView library={library} />
-            </View>
-            <CompatibilityTags library={library} />
-            {library.github.description && library.github.description.length && (
-              <Headline style={styles.description}>
-                <Linkify
-                  options={{
-                    linkWrapper: props => <A {...props}>{props.children}</A>,
-                  }}>
-                  {emoji.emojify(library.github.description)}
-                </Linkify>
-              </Headline>
-            )}
+            <PackageHeader
+              library={library}
+              registryData={registryData}
+              rightSlot={<UpdatedAtView library={library} />}
+            />
             <ReadmeBoxWithLoading
               packageName={packageName}
               isTemplate={library.template ?? false}
@@ -305,10 +246,6 @@ export default function PackageOverviewPage({
   );
 }
 
-const ReadmeBoxWithLoading = dynamic(() => import('~/components/Details/ReadmeBox'), {
-  loading: () => <ReadmeBox loader />,
-});
-
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 24,
@@ -347,44 +284,6 @@ const styles = StyleSheet.create({
   mainContentHeader: {
     fontSize: 16,
     marginTop: 12,
-  },
-  nameRow: {
-    gap: 24,
-    minHeight: 26,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  nameRowMobile: {
-    gap: 8,
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-  },
-  nameWrapper: {
-    columnGap: 8,
-    rowGap: 4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  name: {
-    fontWeight: '600',
-    fontSize: 20,
-    lineHeight: 26,
-    marginTop: -2,
-  },
-  versionContainer: {
-    columnGap: 4,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  githubButton: {
-    width: 20,
-    height: 20,
-  },
-  description: {
-    fontWeight: '400',
-    lineHeight: 23,
   },
   mutedLink: {
     fontWeight: 300,
@@ -431,12 +330,5 @@ const styles = StyleSheet.create({
     margin: 0,
     paddingLeft: 18,
     fontSize: 13,
-  },
-  avatar: {
-    width: 24,
-    height: 24,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderStyle: 'solid',
   },
 });
