@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, H2, H3, P } from '~/common/styleguide';
+import { A, Caption, colors, darkColors, H2, H3, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import TrendingMark from '~/components/Library/TrendingMark';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
-import { ScoringCriterion } from '~/components/ScoringCriterion';
+import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 export default function Scoring() {
@@ -36,12 +36,12 @@ export default function Scoring() {
         description="What are the Directory Score and Trending Score and how they are calculated?"
       />
       <ContentContainer style={styles.container}>
-        <P style={[styles.paragraph, styles.callout, calloutStyle]}>
+        <Caption style={[styles.paragraph, styles.callout, calloutStyle]}>
           Directory scores are subjective and are based on data that&apos;s readily available on
           GitHub and npm. They are not a perfect scores and may not reflect quality for your
           specific needs. When evaluating libraries to include in your project, review the library
           yourself to determine if it&apos;s a good fit.
-        </P>
+        </Caption>
         <H2 style={[styles.subHeader, textColorStyle]}>Directory Score</H2>
         <P style={[styles.paragraph, textColorStyle]}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
@@ -189,15 +189,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   paragraph: {
-    fontSize: 17,
     lineHeight: 29,
-    marginBottom: 17,
+    marginBottom: 16,
     fontWeight: 300,
   },
   callout: {
-    borderLeftWidth: 8,
-    padding: 16,
-    marginBottom: 17,
+    lineHeight: 24,
+    borderLeftWidth: 6,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    marginBottom: 16,
   },
   formula: {
     paddingHorizontal: 16,
