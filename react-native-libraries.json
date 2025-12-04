@@ -18504,5 +18504,12 @@
     "npmPkg": "react-native-nitro-ota",
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bugsnag/bugsnag-expo-performance",
+    "npmPkg": "@bugsnag/expo-performance",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
