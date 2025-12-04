@@ -1,8 +1,8 @@
 import * as Sentry from '@sentry/react';
 
-import ErrorState from '../components/ErrorState';
+import ErrorScene from '~/scenes/ErrorScene';
 
 export default function NotFound() {
   Sentry.captureMessage('404');
-  return <ErrorState statusCode={404} />;
+  return <ErrorScene statusCode={404} />;
 }

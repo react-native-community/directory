@@ -1,19 +1,18 @@
 import { Image, StyleSheet, View } from 'react-native';
 
 import { H2, A, P } from '~/common/styleguide';
-
-import Navigation from './Navigation';
-import PageMeta from './PageMeta';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
 
 type Props = {
   statusCode: number;
 };
 
-function ErrorState({ statusCode }: Props) {
+export default function ErrorScene({ statusCode }: Props) {
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
-      <Navigation />
+      <Navigation header={<></>} />
       <View style={styles.container}>
         <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
         <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
@@ -29,13 +28,14 @@ function ErrorState({ statusCode }: Props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
     paddingHorizontal: 24,
-    paddingVertical: 72,
+    paddingTop: 48,
+    paddingBottom: 72,
     flex: 1,
   },
   img: {
-    marginTop: 48,
     marginBottom: 24,
     width: 64,
     height: 64,
@@ -47,5 +47,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
-
-export default ErrorState;

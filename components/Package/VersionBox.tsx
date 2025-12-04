@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, Caption, colors, darkColors, Label, useLayout } from '~/common/styleguide';
-import TrustedBadge from '~/components/Details/TrustedBadge';
 import { Dependency, PackageSize } from '~/components/Icons';
+import TrustedBadge from '~/components/Package/TrustedBadge';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmRegistryVersionData } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';

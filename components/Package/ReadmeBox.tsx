@@ -8,9 +8,9 @@ import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 
 import { A, colors, darkColors, P } from '~/common/styleguide';
-import ReadmeCodeBlock from '~/components/Details/ReadmeCodeBlock';
-import { ThreeDotsLoader } from '~/components/Details/ThreeDotsLoader';
 import { ReadmeFile } from '~/components/Icons';
+import ReadmeCodeBlock from '~/components/Package/ReadmeCodeBlock';
+import { ThreeDotsLoader } from '~/components/Package/ThreeDotsLoader';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 

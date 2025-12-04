@@ -27,7 +27,7 @@ const COMMON_RULES = {
   eqeqeq: ['error', 'always', { null: 'ignore' }],
   'func-style': ['error', 'declaration'],
   'no-void': ['error', { allowAsStatement: true }],
-  'import/no-cycle': ['error', { maxDepth: '∞', disableScc: true }],
+  'import/no-cycle': ['error', { maxDepth: 3, disableScc: true }],
   'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
   'import/enforce-node-protocol-usage': ['error', 'always'],
 };
@@ -90,6 +90,14 @@ export default defineConfig([
     'next-env.d.ts',
   ]),
 
+  // Global rules
+  {
+    ...prettierRecommended,
+    rules: {
+      ...PRETTIER_RULES,
+    },
+  },
+
   // Overrides needed to make flat config rules work
   {
     settings: {
@@ -100,22 +108,7 @@ export default defineConfig([
     languageOptions: {
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
       },
-    },
-  },
-
-  prettierRecommended,
-
-  // Typed Bun files configuration
-  {
-    files: ['**/*.json'],
-    language: 'json/json',
-    plugins: {
-      json,
-    },
-    rules: {
-      ...PRETTIER_RULES,
     },
   },
 
@@ -128,7 +121,6 @@ export default defineConfig([
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
-      ...PRETTIER_RULES,
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
       '@next/next/no-img-element': 'off',
@@ -156,7 +148,6 @@ export default defineConfig([
     files: ['**/*.ts'],
     extends: [universeNodeConfig],
     rules: {
-      ...PRETTIER_RULES,
       ...COMMON_RULES,
       ...TS_COMMON_RULES,
     },
@@ -167,8 +158,17 @@ export default defineConfig([
     files: ['**/*.js', '**/*.mjs'],
     extends: [universeNodeConfig],
     rules: {
-      ...PRETTIER_RULES,
       ...COMMON_RULES,
     },
+  },
+
+  // JSON files configuration
+  {
+    files: ['**/*.json'],
+    language: 'json/json',
+    plugins: {
+      json,
+    },
+    extends: ['json/recommended'],
   },
 ]);

@@ -41,7 +41,6 @@ export function ScoringCriterion({ children, headline, score = undefined }: Prop
 
 const styles = StyleSheet.create({
   paragraph: {
-    fontSize: 17,
     lineHeight: 29,
     marginBottom: 17,
     fontWeight: 300,

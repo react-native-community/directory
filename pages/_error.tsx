@@ -5,22 +5,22 @@ import * as Sentry from '@sentry/react';
 import { type NextPageContext } from 'next';
 import Error, { type ErrorProps } from 'next/error';
 
-import ErrorState from '~/components/ErrorState';
+import ErrorScene from '~/scenes/ErrorScene';
 
 type ExtendedErrorProps = ErrorProps & {
   hasGetInitialPropsRun?: boolean;
   err?: NextPageContext['err'];
 };
 
-function MyError({ statusCode, hasGetInitialPropsRun, err }: ExtendedErrorProps) {
+function ErrorPage({ statusCode, hasGetInitialPropsRun, err }: ExtendedErrorProps) {
   if (!hasGetInitialPropsRun && err) {
     Sentry.captureException(err);
   }
 
-  return <ErrorState statusCode={statusCode} />;
+  return <ErrorScene statusCode={statusCode} />;
 }
 
-MyError.getInitialProps = async (nextPageContext: NextPageContext) => {
+ErrorPage.getInitialProps = async (nextPageContext: NextPageContext) => {
   const errorInitialProps: ExtendedErrorProps = await Error.getInitialProps(nextPageContext);
 
   errorInitialProps.hasGetInitialPropsRun = true;
@@ -33,4 +33,4 @@ MyError.getInitialProps = async (nextPageContext: NextPageContext) => {
   return errorInitialProps;
 };
 
-export default MyError;
+export default ErrorPage;

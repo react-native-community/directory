@@ -1,6 +1,6 @@
 import { type NextPageContext } from 'next';
 
-import PackageVersionsPage from '~/components/Details/PackageVersionsPage';
+import PackageVersionsScene from '~/scenes/PackageVersionsScene';
 import { type PackageVersionsPageProps } from '~/types/pages';
 import getApiUrl from '~/util/getApiUrl';
 import { parseQueryParams } from '~/util/parseQueryParams';
@@ -12,7 +12,7 @@ export default function ScopedVersionsPage({
   packageName,
 }: PackageVersionsPageProps) {
   return (
-    <PackageVersionsPage packageName={packageName} apiData={apiData} registryData={registryData} />
+    <PackageVersionsScene packageName={packageName} apiData={apiData} registryData={registryData} />
   );
 }
 
