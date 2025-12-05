@@ -21,6 +21,7 @@ export type PackagePageProps = {
     libraries: LibraryType[];
   };
   registryData?: NpmRegistryVersionData;
+  errorMessage?: string;
 };
 
 export type PackageVersionsPageProps = {
@@ -29,4 +30,5 @@ export type PackageVersionsPageProps = {
     libraries: LibraryType[];
   };
   registryData?: NpmRegistryData;
+  errorMessage?: string;
 };

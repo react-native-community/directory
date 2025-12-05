@@ -6,9 +6,10 @@ import PageMeta from '~/components/PageMeta';
 
 type Props = {
   statusCode: number;
+  reason?: string;
 };
 
-export default function ErrorScene({ statusCode }: Props) {
+export default function ErrorScene({ statusCode, reason }: Props) {
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
@@ -17,8 +18,12 @@ export default function ErrorScene({ statusCode }: Props) {
         <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
         <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
         <P style={[styles.text, styles.secondLine]}>
-          Help fix it? Submit a PR to the{' '}
-          <A href="https://github.com/react-native-community/directory">GitHub repository</A>.
+          {reason ?? (
+            <>
+              Help fix it? Submit a PR to the{' '}
+              <A href="https://github.com/react-native-community/directory">GitHub repository</A>.
+            </>
+          )}
         </P>
       </View>
     </>
