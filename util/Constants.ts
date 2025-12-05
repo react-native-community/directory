@@ -1,5 +1,9 @@
 export const NUM_PER_PAGE = 30;
 
+export const EMPTY_PACKAGE_DATA = {
+  props: {},
+};
+
 export const VALID_ENTRY_KEYS = new Set([
   'githubUrl',
   'ios',
@@ -24,7 +28,3 @@ export const VALID_ENTRY_KEYS = new Set([
   'examples',
   'images',
 ]);
-
-export const EMPTY_PACKAGE_DATA = {
-  props: {},
-};

@@ -99,7 +99,7 @@ export default function ReadmeBox({
       ]}>
       <View style={[styles.readmeHeader, borderColorStyle]}>
         <ReadmeFile fill={isDark ? darkColors.pewter : colors.secondary} />
-        <P>Readme.md</P>
+        <P>Readme</P>
       </View>
       <View style={styles.readmeContainer}>
         {!readmeContent && readmeFallbackContent ? (
@@ -205,11 +205,11 @@ export default function ReadmeBox({
 
 function getReadmeFallbackContent(readmeContent?: string | null): string | null {
   if (readmeContent === undefined) {
-    return 'Loading README.md…';
+    return 'Loading README…';
   } else if (readmeContent === null) {
-    return 'Cannot fetch README.md content.';
+    return 'Cannot fetch README file content.';
   } else if (readmeContent === '') {
-    return 'This package does not have a README.md file.';
+    return 'This package does not have a README file.';
   }
   return null;
 }

@@ -1,10 +1,9 @@
-import * as emoji from 'node-emoji';
 import { useContext } from 'react';
-import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { colors, useLayout, A, darkColors, Headline, HoverEffect } from '~/common/styleguide';
+import { colors, useLayout, A, darkColors, HoverEffect } from '~/common/styleguide';
 import { GitHub } from '~/components/Icons';
+import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
@@ -100,20 +99,9 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
-        {Boolean(github.description && github.description.length) && (
-          <View style={styles.verticalMargin}>
-            <Headline
-              numberOfLines={skipMetadata ? 3 : undefined}
-              style={{ fontWeight: 300, lineHeight: 23 }}>
-              <Linkify
-                options={{
-                  linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,
-                }}>
-                {emoji.emojify(github.description)}
-              </Linkify>
-            </Headline>
-          </View>
-        )}
+        <View style={styles.verticalMargin}>
+          <LibraryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
+        </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (

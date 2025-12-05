@@ -1,5 +1,5 @@
 import { type PropsWithChildren, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, Headline, P } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -7,21 +7,23 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 type Props = PropsWithChildren<{
   headline: string;
   score?: number;
+  style?: ViewStyle;
 }>;
 
-export function ScoringCriterion({ children, headline, score = undefined }: Props) {
+export function ScoringCriterion({ children, headline, style, score = undefined }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
+
   const textStyle = {
     color: isDark ? colors.gray2 : colors.black,
   };
   const borderStyle = {
     borderColor: isDark ? darkColors.border : colors.gray2,
   };
+
   const isPositiveModifier = (score ?? 0) > 0;
   return (
-    <View style={[styles.criterionWrapper, borderStyle]}>
+    <View style={[styles.criterionWrapper, borderStyle, style]}>
       <Headline style={[styles.criterion, textStyle]}>
-        {headline}
         {score && (
           <Headline
             style={[
@@ -33,6 +35,7 @@ export function ScoringCriterion({ children, headline, score = undefined }: Prop
             {score}
           </Headline>
         )}
+        {headline}
       </Headline>
       <P style={[styles.paragraph, { marginBottom: 0 }, textStyle]}>{children}</P>
     </View>
@@ -41,28 +44,30 @@ export function ScoringCriterion({ children, headline, score = undefined }: Prop
 
 const styles = StyleSheet.create({
   paragraph: {
-    lineHeight: 29,
-    marginBottom: 17,
+    lineHeight: 24,
+    marginBottom: 16,
     fontWeight: 300,
   },
   criterionWrapper: {
-    paddingVertical: 16,
+    paddingVertical: 14,
     paddingHorizontal: 20,
     borderWidth: 1,
     borderStyle: 'solid',
     borderRadius: 6,
-    marginBottom: 17,
+    marginBottom: 16,
   },
   criterion: {
-    fontSize: 18,
+    display: 'flex',
+    gap: 12,
+    fontSize: 17,
     fontWeight: '600',
-    marginBottom: 8,
+    marginBottom: 4,
   },
   criterionScore: {
-    // @ts-expect-error RNW complains
-    float: 'left',
-    marginRight: 16,
-    width: 50,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 50,
     fontSize: 15,
     fontWeight: '700',
     padding: 1,

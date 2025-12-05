@@ -76,7 +76,7 @@ export type LibraryType = LibraryDataEntryType & {
   github: {
     name: string;
     fullName: string;
-    description: string;
+    description?: string;
     registry?: string;
     topics?: string[];
     hasTypes?: boolean;
@@ -84,6 +84,7 @@ export type LibraryType = LibraryDataEntryType & {
     isArchived?: boolean;
     isPrivate?: boolean;
     hasNativeCode: boolean;
+    hasReadme?: boolean;
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     urls: {
@@ -116,6 +117,7 @@ export type LibraryType = LibraryDataEntryType & {
     versionsCount?: number;
     latestRelease?: string;
     latestReleaseDate?: string;
+    hasReadme?: boolean;
   };
   npmPkg: string;
   score: number;
@@ -167,6 +169,13 @@ export type MetadataEntryType = {
   content: ReactNode;
   tooltip?: ReactNode;
 } | null;
+
+export type ScoringCriterionType = {
+  name: string;
+  description: string;
+  value: number;
+  condition: (data: LibraryType) => boolean;
+};
 
 export type RepositoryTreeNode = {
   name: string;

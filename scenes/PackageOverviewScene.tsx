@@ -18,7 +18,7 @@ import ReadmeBox from '~/components/Package/ReadmeBox';
 import PageMeta from '~/components/PageMeta';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
-import { type PackagePageProps } from '~/types/pages';
+import { type PackageOverviewPageProps } from '~/types/pages';
 import mapDependencies from '~/util/mapDependencies';
 
 const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
@@ -29,7 +29,7 @@ export default function PackageOverviewScene({
   apiData,
   registryData,
   packageName,
-}: PackagePageProps) {
+}: PackageOverviewPageProps) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 

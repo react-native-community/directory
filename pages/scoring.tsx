@@ -8,6 +8,7 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { SCORING_CRITERIONS } from '~/util/scoring';
 
 export default function Scoring() {
   const { isDark } = useContext(CustomAppearanceContext);
@@ -67,38 +68,14 @@ export default function Scoring() {
           download counts:
           <br />
           <View style={styles.formula}>
-            <code>subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;</code>
+            <code>forks * 20 + stars * 10 + downloads / 50;</code>
           </View>
         </ScoringCriterion>
-        <ScoringCriterion headline="Very popular" score={45}>
-          Libraries with a Combined Popularity score of over 50,000 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Popular" score={30}>
-          Libraries with a Combined Popularity score of over 10,000 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Known" score={15}>
-          Libraries with a Combined Popularity score of over 2,500 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Recently updated" score={10}>
-          Libraries that have been updated in the last 45 days meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Not supporting New Architecture" score={-10}>
-          Libraries that does not support New Architecture meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Not updated recently" score={-10}>
-          Libraries that have not been updated in the last 180 days meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Lots of open issues" score={-20}>
-          Libraries with more than 50 open issues meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="No license, unrecognized license or GPL license" score={-20}>
-          Libraries without a license, libraries with non-standard license or that include the GPL
-          license meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Unmaintained" score={-25}>
-          Libraries that are archived on GitHub or marked as unmaintained due to lack of activity in
-          last two years.
-        </ScoringCriterion>
+        {SCORING_CRITERIONS.map(({ name, description, value }) => (
+          <ScoringCriterion headline={name} score={value} key={name}>
+            {description}
+          </ScoringCriterion>
+        ))}
         <br />
         <H2 style={[styles.subHeader, textColorStyle]}>Trending Score</H2>
         <P style={[styles.paragraph, textColorStyle]}>

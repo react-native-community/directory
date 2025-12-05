@@ -7304,5 +7304,11 @@
   },
   "react-native-nitro-cloud-uploader": {
     "newArchitecture": "supported"
+  },
+  "react-native-nitro-ota": {
+    "newArchitecture": "supported"
+  },
+  "@bugsnag/expo-performance": {
+    "newArchitecture": "supported"
   }
 }

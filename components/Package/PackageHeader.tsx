@@ -1,11 +1,10 @@
-import * as emoji from 'node-emoji';
 import { useContext, type ReactNode } from 'react';
-import { Linkify } from 'react-easy-linkify';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, Headline, HoverEffect, P, useLayout } from '~/common/styleguide';
+import { A, colors, darkColors, HoverEffect, P, useLayout } from '~/common/styleguide';
 import { CompatibilityTags } from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
+import LibraryDescription from '~/components/Library/LibraryDescription';
 import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
@@ -65,16 +64,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
         {rightSlot}
       </View>
       <CompatibilityTags library={library} />
-      {library.github.description && library.github.description.length > 0 && (
-        <Headline style={styles.description}>
-          <Linkify
-            options={{
-              linkWrapper: props => <A {...props}>{props.children}</A>,
-            }}>
-            {emoji.emojify(library.github.description)}
-          </Linkify>
-        </Headline>
-      )}
+      <LibraryDescription github={library.github} />
     </>
   );
 }
@@ -113,10 +103,6 @@ const styles = StyleSheet.create({
   githubButton: {
     width: 20,
     height: 20,
-  },
-  description: {
-    fontWeight: '400',
-    lineHeight: 23,
   },
   avatar: {
     width: 24,

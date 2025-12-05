@@ -2,7 +2,7 @@ import { type NextPageContext } from 'next';
 
 import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
-import { type PackagePageProps } from '~/types/pages';
+import { type PackageOverviewPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
 import { getPackagePageErrorMessage } from '~/util/getPackagePageErrorMessage';
@@ -14,7 +14,7 @@ export default function OverviewPage({
   registryData,
   packageName,
   errorMessage,
-}: PackagePageProps) {
+}: PackageOverviewPageProps) {
   if (!packageName || !apiData || !registryData) {
     return <ErrorScene statusCode={500} reason={errorMessage} />;
   }
