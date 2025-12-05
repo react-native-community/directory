@@ -15,7 +15,7 @@ export type PopularPageProps = {
   data: LibraryType[];
 };
 
-export type PackagePageProps = {
+export type PackageOverviewPageProps = {
   packageName: string;
   apiData: {
     libraries: LibraryType[];
@@ -30,5 +30,13 @@ export type PackageVersionsPageProps = {
     libraries: LibraryType[];
   };
   registryData?: NpmRegistryData;
+  errorMessage?: string;
+};
+
+export type PackageScorePageProps = {
+  packageName: string;
+  apiData: {
+    libraries: LibraryType[];
+  };
   errorMessage?: string;
 };

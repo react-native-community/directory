@@ -17940,7 +17940,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-device-info",
+    "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-device-info/tree/main/packages/react-native-nitro-device-info",
     "examples": ["https://github.com/l2hyunwoo/react-native-nitro-device-info/tree/main/example"],
     "ios": true,
     "android": true,
@@ -18455,10 +18455,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/athexweb3/react-native-libprisma/tree/master/react-native-libprisma",
-    "examples": [
-      "https://github.com/athexweb3/react-native-libprisma/tree/master/react-native-libprisma/example"
-    ],
+    "githubUrl": "https://github.com/athexweb3/react-native-libprisma",
+    "examples": ["https://github.com/athexweb3/react-native-libprisma/tree/master/examples/mobile"],
     "ios": true,
     "android": true,
     "newArchitecture": true

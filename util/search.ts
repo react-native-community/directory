@@ -1,5 +1,4 @@
 import { type LibraryType, type Query, type QueryFilters } from '~/types';
-import { getConfigPluginStatus } from '~/util/configPluginStatus';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -54,7 +53,7 @@ function calculateMatchScore(
     typeof vegaos === 'string' && vegaos.includes(querySearch) ? 50 : 0;
 
   const descriptionMatchPoints =
-    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
+    !isEmptyOrNull(github.description) && github.description?.toLowerCase().includes(querySearch)
       ? 25
       : 0;
 
@@ -191,7 +190,7 @@ export function handleFilterLibraries({
       return false;
     }
 
-    if (configPlugin && !getConfigPluginStatus(library)) {
+    if (configPlugin && !(library.configPlugin ?? library.github.configPlugin)) {
       return false;
     }
 

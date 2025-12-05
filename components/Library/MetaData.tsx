@@ -8,7 +8,6 @@ import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/C
 import Tooltip from '~/components/Tooltip';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type MetadataEntryType } from '~/types';
-import { getConfigPluginStatus } from '~/util/configPluginStatus';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
 
@@ -46,7 +45,7 @@ function generateData(
       id: 'score',
       icon: <DirectoryScore score={score} matchingScoreModifiers={matchingScoreModifiers} />,
       content: (
-        <A target="_self" href="/scoring" style={styles.link}>
+        <A target="_self" href={`/package/${npmPkg}/score`} style={styles.link}>
           Directory Score
         </A>
       ),
@@ -145,6 +144,8 @@ function generateSecondaryData(
   skipExamples: boolean
 ): MetadataEntryType[] {
   const { github, examples } = library;
+  const configPlugin = library.configPlugin ?? library.github.configPlugin;
+
   const secondaryTextColor = {
     color: isDark ? darkColors.secondary : colors.gray5,
   };
@@ -155,7 +156,6 @@ function generateSecondaryData(
     textDecorationColor: colors.gray4,
     color: isDark ? colors.gray3 : colors.gray5,
   };
-  const configPlugin = getConfigPluginStatus(library);
 
   return [
     github.urls.homepage
