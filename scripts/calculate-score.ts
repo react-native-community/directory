@@ -1,20 +1,9 @@
 import { type LibraryType } from '~/types';
-import { SCORING_CRITERIONS } from '~/util/scoring';
+import { MAX_SCORE, MIN_SCORE, SCORING_CRITERIONS } from '~/util/scoring';
 
 /**
  * Directory Score
  */
-
-// Calculate the minimum and maximum possible scores based on the modifiers
-const minScore =
-  100 +
-  SCORING_CRITERIONS.reduce((currentMin, modifier) => {
-    return modifier.value < 0 ? currentMin + modifier.value : currentMin;
-  }, 0);
-
-const maxScore = SCORING_CRITERIONS.reduce((currentMax, modifier) => {
-  return modifier.value > 0 ? currentMax + modifier.value : currentMax;
-}, 0);
 
 export function calculateDirectoryScore(data: LibraryType) {
   // Filter the modifiers to the ones which conditions pass with the data
@@ -27,7 +16,7 @@ export function calculateDirectoryScore(data: LibraryType) {
 
   // Scale the raw score as a percentage between the minimum and maximum possible score
   // based on the available modifiers
-  const score = Math.min(Math.max(rawScore, minScore), maxScore);
+  const score = rawScore <= 0 ? 0 : Math.min(Math.max(rawScore, MIN_SCORE), MAX_SCORE);
 
   // Map the modifiers to the name so we can include that in the data
   const matchingModifierNames = matchingModifiers.map(modifier => modifier.name);

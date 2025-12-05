@@ -1,14 +1,19 @@
 import { type LibraryType, type ScoringCriterionType } from '~/types';
 
+export function getCombinedPopularity({ github, npm }: LibraryType) {
+  const { forks, stars } = github.stats;
+  return forks * 20 + stars * 10 + (npm?.downloads ?? 0) / 50;
+}
+
 // This is an array of modifier objects. Each modifier has a name, value, and condition.
 // The data is passed to the `condition` function, and if it returns `true`, the value is added to the
 // library score. Read more: https://reactnative.directory/scoring
 export const SCORING_CRITERIONS: ScoringCriterionType[] = [
   {
     name: 'Very popular',
-    description: 'Libraries with a Combined Popularity score of over 50,000 meet this criterion.',
+    description: 'Libraries with a Combined Popularity score of over 100,000 meet this criterion.',
     value: 35,
-    condition: data => getCombinedPopularity(data) > 50000,
+    condition: data => getCombinedPopularity(data) > 100000,
   },
   {
     name: 'Popular',
@@ -24,15 +29,15 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
   },
   {
     name: 'Recently updated',
-    description: 'Libraries that have been updated in the last 45 days meet this criterion.',
+    description: 'Libraries that have been updated in the last 60 days meet this criterion.',
     value: 10,
-    condition: data => getUpdatedDaysAgo(data) <= 45, // Roughly 1.5 month
+    condition: data => getUpdatedDaysAgo(data) <= 60, // Roughly 2 months
   },
   {
     name: 'Has a README file',
     description: 'Libraries that have a README file included meet this criterion.',
     value: 10,
-    condition: data => data.github?.hasReadme ?? data.npm?.hasReadme ?? false,
+    condition: data => (data.github?.hasReadme || data.npm?.hasReadme) ?? false,
   },
   {
     name: 'Has a description',
@@ -42,10 +47,30 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     condition: data => !!data.github.description && data.github.description.trim().length > 0,
   },
   {
+    name: 'New Architecture support unknown',
+    description:
+      'Libraries that does not have New Architecture support defined or confirmed by the code analysis meet this criterion.',
+    value: -5,
+    condition: data => {
+      if (data.dev || data.template || data.expoGo) {
+        return false;
+      }
+
+      return data.newArchitecture === undefined && data.github.newArchitecture === false;
+    },
+  },
+  {
     name: 'Not updated recently',
     description: 'Libraries that have not been updated in the last 180 days meet this criterion.',
     value: -10,
     condition: data => getUpdatedDaysAgo(data) >= 180, // Roughly 6 months
+  },
+  {
+    name: 'Lots of open issues',
+    description:
+      'Libraries with more than 100 open issues with at least 1000 stars, or 50 open issues otherwise meet this criterion.',
+    value: -10,
+    condition: data => data.github.stats.issues >= (data.github.stats.stars > 1000 ? 100 : 50),
   },
   {
     name: 'Has a lot of dependencies',
@@ -59,22 +84,12 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     description: 'Libraries that does not support New Architecture meet this criterion.',
     value: -15,
     condition: data => {
-      if (data.dev || data.template || data.expoGo) {
+      if (data.dev || data.template) {
         return false;
       }
 
-      if (data.newArchitecture !== undefined) {
-        return !data.newArchitecture;
-      }
-
-      return data.github.newArchitecture !== true;
+      return data.newArchitecture === false;
     },
-  },
-  {
-    name: 'Lots of open issues',
-    description: 'Libraries with more than 50 open issues meet this criterion.',
-    value: -15,
-    condition: data => data.github.stats.issues >= 50,
   },
   {
     name: 'No license, GPL license or unrecognized license',
@@ -100,12 +115,17 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
   },
 ];
 
-const DAY_IN_MS = 864e5;
+export const MAX_SCORE = SCORING_CRITERIONS.reduce((currentMax, modifier) => {
+  return modifier.value > 0 ? currentMax + modifier.value : currentMax;
+}, 0);
 
-function getCombinedPopularity({ github, npm }: LibraryType) {
-  const { subscribers, forks, stars } = github.stats;
-  return subscribers * 50 + forks * 25 + stars * 10 + (npm?.downloads ?? 0) / 100;
-}
+export const MIN_SCORE =
+  MAX_SCORE +
+  SCORING_CRITERIONS.reduce((currentMin, modifier) => {
+    return modifier.value < 0 ? currentMin + modifier.value : currentMin;
+  }, 0);
+
+const DAY_IN_MS = 864e5;
 
 function getUpdatedDaysAgo(data: LibraryType) {
   const { updatedAt } = data.github.stats;

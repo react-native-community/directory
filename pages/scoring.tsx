@@ -68,7 +68,7 @@ export default function Scoring() {
           download counts:
           <br />
           <View style={styles.formula}>
-            <code>subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;</code>
+            <code>forks * 20 + stars * 10 + downloads / 50;</code>
           </View>
         </ScoringCriterion>
         {SCORING_CRITERIONS.map(({ name, description, value }) => (
