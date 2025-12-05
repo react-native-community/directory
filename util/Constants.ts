@@ -24,3 +24,7 @@ export const VALID_ENTRY_KEYS = new Set([
   'examples',
   'images',
 ]);
+
+export const EMPTY_PACKAGE_DATA = {
+  props: {},
+};

@@ -1,12 +1,24 @@
 import { type NextPageContext } from 'next';
 
+import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackagePageProps } from '~/types/pages';
+import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
+import { getPackagePageErrorMessage } from '~/util/getPackagePageErrorMessage';
 import { parseQueryParams } from '~/util/parseQueryParams';
 import urlWithQuery from '~/util/urlWithQuery';
 
-export default function OverviewPage({ apiData, registryData, packageName }: PackagePageProps) {
+export default function OverviewPage({
+  apiData,
+  registryData,
+  packageName,
+  errorMessage,
+}: PackagePageProps) {
+  if (!packageName || !apiData || !registryData) {
+    return <ErrorScene statusCode={500} reason={errorMessage} />;
+  }
+
   return (
     <PackageOverviewScene packageName={packageName} apiData={apiData} registryData={registryData} />
   );
@@ -17,27 +29,34 @@ export async function getServerSideProps(ctx: NextPageContext) {
   const packageName = queryParams.name;
 
   if (!packageName) {
-    return {
-      props: {
-        data: {},
-        packageName,
-      },
-    };
+    return EMPTY_PACKAGE_DATA;
   }
 
-  const apiResponse = await fetch(
-    getApiUrl(urlWithQuery(`/libraries?search=${encodeURI(packageName)}`, {}), ctx)
-  );
-  const apiData = await apiResponse.json();
+  try {
+    const [apiResponse, npmResponse] = await Promise.all([
+      fetch(getApiUrl(urlWithQuery(`/libraries?search=${encodeURI(packageName)}`, {}), ctx)),
+      fetch(`https://registry.npmjs.org/${packageName}/latest`),
+    ]);
 
-  const npmResponse = await fetch(`https://registry.npmjs.org/${packageName}/latest`);
-  const registryData = await npmResponse.json();
+    if (apiResponse.status !== 200 || npmResponse.status !== 200) {
+      return {
+        props: {
+          packageName,
+          ...getPackagePageErrorMessage(apiResponse.status, npmResponse.status),
+        },
+      };
+    }
 
-  return {
-    props: {
-      packageName,
-      apiData,
-      registryData: typeof registryData === 'object' ? registryData : {},
-    },
-  };
+    const [apiData, registryData] = await Promise.all([apiResponse.json(), npmResponse.json()]);
+
+    return {
+      props: {
+        packageName,
+        apiData,
+        registryData,
+      },
+    };
+  } catch {
+    return EMPTY_PACKAGE_DATA;
+  }
 }
