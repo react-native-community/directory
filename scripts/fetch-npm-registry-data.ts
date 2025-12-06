@@ -24,7 +24,7 @@ export async function fetchNpmRegistryData(
 
     if (response.status !== 200) {
       console.error(
-        `[NPM REGISTRY API] npm API has returned invalid response - status ${response.status}!`
+        `📦 [NPM REGISTRY API] npm API has returned invalid response - status ${response.status}!`
       );
       return pkgData;
     }
@@ -33,7 +33,7 @@ export async function fetchNpmRegistryData(
 
     if (!registryData._id) {
       console.warn(
-        `[NPM REGISTRY API] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+        `📦 [NPM REGISTRY API] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return pkgData;
     }
@@ -42,7 +42,7 @@ export async function fetchNpmRegistryData(
 
     if (!latestRelease) {
       console.warn(
-        `[NPM REGISTRY API] ${npmPkg} doesn't have the "latest" tag, skipping bundle size!`
+        `📦 [NPM REGISTRY API] ${npmPkg} doesn't have the "latest" tag, skipping bundle size!`
       );
       return pkgData;
     }
@@ -62,12 +62,12 @@ export async function fetchNpmRegistryData(
     };
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
-      console.error('[NPM REGISTRY API] Looks like we have reach the npm API rate limit!');
+      console.error('📦 [NPM REGISTRY API] Looks like we have reach the npm API rate limit!');
       console.error(error);
       return pkgData;
     }
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    console.log(`[NPM REGISTRY API] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
+    console.log(`📦 [NPM REGISTRY API] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmRegistryData(pkgData, attemptsCount + 1);
   }
 }

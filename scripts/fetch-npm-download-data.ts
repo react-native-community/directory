@@ -19,7 +19,7 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
 
     if (response.status !== 200) {
       console.error(
-        `[NPM DOWNLOADS API] npm API has returned invalid response - status ${response.status}!`
+        `⬇️ [NPM DOWNLOADS API] npm API has returned invalid response - status ${response.status}!`
       );
       return { ...pkgData, npm: null };
     }
@@ -28,7 +28,7 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
 
     if (!downloadData.package) {
       console.warn(
-        `[NPM DOWNLOADS API] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+        `⬇️ [NPM DOWNLOADS API] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { ...pkgData, npm: null };
     }
@@ -41,12 +41,12 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
     };
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
-      console.error('[NPM DOWNLOADS API] Looks like we have reached the npm API rate limit!');
+      console.error('⬇️ [NPM DOWNLOADS API] Looks like we have reached the npm API rate limit!');
       console.error(error);
       return { ...pkgData, npm: null };
     }
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    console.log(`[NPM DOWNLOADS API] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
+    console.log(`⬇️ [NPM DOWNLOADS API] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmDownloadData(pkgData, attemptsCount + 1);
   }
 }
@@ -58,7 +58,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
 
     if (monthlyResponse.status !== 200) {
       console.error(
-        `[NPM DOWNLOADS API] npm API has returned invalid response - status ${monthlyResponse.status}!`
+        `⬇️ [NPM DOWNLOADS API] npm API has returned invalid response - status ${monthlyResponse.status}!`
       );
       return { name, npm: null };
     }
@@ -67,7 +67,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
 
     if (!monthlyDownloadData.package) {
       console.warn(
-        `[NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+        `⬇️ [NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { name, npm: null };
     }
@@ -77,7 +77,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
 
     if (weeklyResponse.status !== 200) {
       console.error(
-        `[NPM DOWNLOADS API] npm API has returned invalid response - status ${weeklyResponse.status}!`
+        `⬇️ [NPM DOWNLOADS API] npm API has returned invalid response - status ${weeklyResponse.status}!`
       );
       return { name, npm: null };
     }
@@ -86,7 +86,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
 
     if (!weeklyDownloadData.package) {
       console.warn(
-        `[NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
+        `⬇️ [NPM DOWNLOADS API] ${name} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { name, npm: null };
     }
@@ -99,7 +99,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
       },
     };
   } catch (error) {
-    console.error('[NPM DOWNLOADS API] Looks like we have reached the npm API rate limit!');
+    console.error('⬇️ [NPM DOWNLOADS API] Looks like we have reached the npm API rate limit!');
     console.error(error);
     return { name, npm: null };
   }
