@@ -4,6 +4,7 @@ import { StyleSheet, View, type ViewStyle } from 'react-native';
 import { colors, darkColors, P, A } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
+import { getPopularityGrade } from '~/util/scoring';
 
 type Props = {
   library: LibraryType | { popularity: number };
@@ -83,20 +84,6 @@ function getPopularityStyles(popularity: number, markOnly: boolean) {
       backgroundColor: colors.gray4,
       top,
     };
-  }
-}
-
-function getPopularityGrade(popularity: number) {
-  if (popularity > 0.5) {
-    return 'HOT!';
-  } else if (popularity > 0.25) {
-    return 'Popular';
-  } else if (popularity > 0.1) {
-    return 'Quite popular';
-  } else if (popularity > 0) {
-    return 'Trending';
-  } else {
-    return 'Declining';
   }
 }
 

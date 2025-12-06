@@ -11,7 +11,7 @@ const shouldRehydrate = true;
 
 const defaultState = { isDark: false };
 
-function CustomAppearanceProvider({ children }: PropsWithChildren) {
+export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const colorScheme = Appearance.getColorScheme();
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = useState(false);
@@ -62,5 +62,3 @@ async function rehydrateAppearanceState() {
     return defaultState;
   }
 }
-
-export default CustomAppearanceProvider;

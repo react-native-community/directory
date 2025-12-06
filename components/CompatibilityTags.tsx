@@ -14,7 +14,7 @@ type Props = {
   library: LibraryType;
 };
 
-export function CompatibilityTags({ library }: Props) {
+export default function CompatibilityTags({ library }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   const platforms = [

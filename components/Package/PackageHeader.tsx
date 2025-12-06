@@ -2,7 +2,7 @@ import { useContext, type ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, HoverEffect, P, useLayout } from '~/common/styleguide';
-import { CompatibilityTags } from '~/components/CompatibilityTags';
+import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
