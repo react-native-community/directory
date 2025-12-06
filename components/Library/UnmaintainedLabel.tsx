@@ -12,7 +12,7 @@ type Props = {
   block?: boolean;
 };
 
-function UnmaintainedLabel({ alternatives, block }: Props) {
+export default function UnmaintainedLabel({ alternatives, block }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
@@ -99,5 +99,3 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 8,
   },
 });
-
-export default UnmaintainedLabel;

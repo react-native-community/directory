@@ -12,7 +12,7 @@ type Props = {
   color?: string;
 };
 
-export function CheckBox({ style, value, color }: Props) {
+export default function CheckBox({ style, value, color }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   return (

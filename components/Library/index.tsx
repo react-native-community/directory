@@ -8,11 +8,11 @@ import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 
-import { MetaData } from './MetaData';
-import Thumbnail from './Thumbnail.web';
+import MetaData from './MetaData';
+import Thumbnail from './Thumbnail';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
-import { CompatibilityTags } from '../CompatibilityTags';
+import CompatibilityTags from '../CompatibilityTags';
 import Tooltip from '../Tooltip';
 
 type Props = {

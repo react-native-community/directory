@@ -250,7 +250,7 @@ function generateSecondaryData(
   ];
 }
 
-export function MetaData({ library, secondary, skipExamples = false }: Props) {
+export default function MetaData({ library, secondary, skipExamples = false }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
 
   if (secondary) {

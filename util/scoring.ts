@@ -134,3 +134,17 @@ function getUpdatedDaysAgo(data: LibraryType) {
 
   return (currentDate - updateDate) / DAY_IN_MS;
 }
+
+export function getPopularityGrade(popularity: number) {
+  if (popularity > 0.5) {
+    return 'HOT!';
+  } else if (popularity > 0.25) {
+    return 'Popular';
+  } else if (popularity > 0.1) {
+    return 'Quite popular';
+  } else if (popularity > 0) {
+    return 'Trending';
+  } else {
+    return 'Declining';
+  }
+}

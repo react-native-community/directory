@@ -7,7 +7,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type Query } from '~/types';
 import urlWithQuery from '~/util/urlWithQuery';
 
-import { CheckBox } from '../CheckBox';
+import CheckBox from '../CheckBox';
 
 type Props = {
   query: Query;

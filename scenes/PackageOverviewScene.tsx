@@ -5,7 +5,7 @@ import { Platform, StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, H6, Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import { MetaData } from '~/components/Library/MetaData';
+import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import DependencyRow from '~/components/Package/DependencyRow';
@@ -108,7 +108,7 @@ export default function PackageOverviewScene({
               </>
             )}
           </View>
-          <View style={styles.depsContainer}>
+          <View style={styles.metadataContainer} id="metadataContainer">
             <View>
               <MetaData library={library} />
             </View>
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  depsContainer: {
+  metadataContainer: {
     gap: 16,
     ...Platform.select({
       web: {
