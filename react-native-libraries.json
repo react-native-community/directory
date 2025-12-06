@@ -18511,5 +18511,9 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  }, {
+    "githubUrl": "https://github.com/quantizor/markdown-to-jsx",
+    "npmPkg": "https://www.npmjs.com/package/markdown-to-jsx",
+    "exmaples": ["https://markdown-to-jsx.quantizor.dev/"]
   }
 ]
