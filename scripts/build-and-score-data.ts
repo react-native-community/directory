@@ -42,11 +42,11 @@ const mismatchedRepos: LibraryType[] = [];
 const wantedPackageName = process.argv[2];
 
 async function buildAndScoreData() {
-  console.log('⬇️️ Fetching latest data blob from the store');
+  console.log('🔄️️ Fetching latest data blob from the store');
 
-  const { latestData } = await fetchLatestData();
+  const { latestData }: { latestData: APIResponseType } = await fetchLatestData();
 
-  console.log('📦️ Loading data from GitHub');
+  console.log('🗂️️ Loading data from GitHub');
 
   let data = await loadRepositoryDataAsync();
 
@@ -85,7 +85,7 @@ async function buildAndScoreData() {
   console.log('\n🔖 Determining npm package names');
   data = data.map(fillNpmName);
 
-  console.log('\n⬇️ Fetching download stats from npm-stat');
+  console.log('\n⬇🔄 Fetching download stats from npm-stat');
 
   const fetchList: string[] = [];
 
@@ -113,7 +113,7 @@ async function buildAndScoreData() {
     },
   }));
 
-  console.log('\n⬇️ Fetching registry data from npm');
+  console.log('\n⬇🔄 Fetching registry data from npm');
 
   data = await fetchNpmRegistryDataSequentially(data);
 
@@ -181,7 +181,7 @@ async function buildAndScoreData() {
 
   console.log('📄️ Preparing data file');
 
-  const { libraries, ...rest }: APIResponseType = latestData;
+  const { libraries, ...rest } = latestData;
 
   let fileContent;
 
@@ -209,17 +209,28 @@ async function buildAndScoreData() {
 
     const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
 
-    const dataWithFallback: LibraryType[] = currentData.map(entry =>
-      entry.npm && Object.keys(entry.npm).length > 0
-        ? entry
-        : {
-            ...entry,
-            npm:
-              latestData.libraries.find(
-                (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
-              )?.npm ?? {},
-          }
-    );
+    const dataWithFallback: LibraryType[] = currentData.map(entry => {
+      if (entry.npm?.downloads) {
+        return entry;
+      }
+
+      const fallbackData = latestData.libraries.find(
+        (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
+      );
+
+      if (!fallbackData) {
+        return entry;
+      }
+
+      return {
+        ...entry,
+        npm: {
+          ...(entry.npm ?? {}),
+          downloads: fallbackData.npm?.downloads,
+          weekDownloads: fallbackData.npm?.weekDownloads,
+        },
+      };
+    });
 
     const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
     const finalData = dataWithFallback

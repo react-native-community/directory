@@ -17,36 +17,58 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
       namesArray.map(async name => {
         const pkgData = downloadData[name];
 
-        if (pkgData && Object.keys(pkgData).length <= 0) {
-          console.warn(
-            `[npm-stat] ${name} doesn't not return any downloads data, falling back to npm downloads API!`
+        if (pkgData && Object.keys(pkgData).length > 0) {
+          return {
+            name,
+            npm: formatDownloadData(pkgData),
+          };
+        }
+
+        console.error(
+          `📊 [npm-stat] ${name} doesn't not return downloads data in bulk request, falling back to single query!`
+        );
+
+        const singleUrl = urlForPackages(name);
+
+        const singleResponse = await fetch(singleUrl);
+        const singleDownloadData = await singleResponse.json();
+        const singlePkgData = singleDownloadData[name];
+
+        if (singlePkgData && Object.keys(singlePkgData).length <= 0) {
+          console.error(
+            `📊 [npm-stat] ${name} doesn't not return downloads data in single request, falling back to npm downloads API!`
           );
+
           return await fallbackFetchNpmDownloadData(name);
         }
 
-        const downloadCountsPerDay: number[] = Object.values(pkgData);
-
         return {
           name,
-          npm: {
-            downloads: downloadCountsPerDay.reduce((sum, value) => sum + value, 0),
-            weekDownloads: downloadCountsPerDay.slice(0, 6).reduce((sum, value) => sum + value, 0),
-          },
+          npm: formatDownloadData(singlePkgData),
         };
       })
     );
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
-      console.error('[npm-stat] Looks like we have reach the npm-stat API rate limit!');
+      console.error('📊 [npm-stat] Looks like we have reach the npm-stat API rate limit!');
       console.error(error);
       return namesArray.map(name => ({ name, npm: null }));
     }
 
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    console.log(`[npm-stat] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
+    console.log(`📊 [npm-stat] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
 
     return await fetchNpmStatDataBulk(namesArray, attemptsCount + 1);
   }
+}
+
+function formatDownloadData(downloadData: Record<string, number>) {
+  const downloadCounts = Object.values(downloadData);
+
+  return {
+    downloads: downloadCounts.reduce((sum, value) => sum + value, 0),
+    weekDownloads: downloadCounts.slice(0, 6).reduce((sum, value) => sum + value, 0),
+  };
 }
 
 function formattedDate(date: Date) {
