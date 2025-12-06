@@ -108,7 +108,7 @@ export default function PackageOverviewScene({
               </>
             )}
           </View>
-          <View style={styles.depsContainer}>
+          <View style={styles.metadataContainer} id="metadataContainer">
             <View>
               <MetaData library={library} />
             </View>
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  depsContainer: {
+  metadataContainer: {
     gap: 16,
     ...Platform.select({
       web: {

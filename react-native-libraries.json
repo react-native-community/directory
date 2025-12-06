@@ -13430,8 +13430,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/skiniks/react-native-shiki-engine",
-    "examples": ["https://github.com/skiniks/react-native-shiki-engine/tree/main/example"],
+    "githubUrl": "https://github.com/skiniks/react-native-shiki-engine/tree/main/packages/react-native-shiki-engine",
+    "examples": [
+      "https://github.com/skiniks/react-native-shiki-engine/tree/main/examples/react-native"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true

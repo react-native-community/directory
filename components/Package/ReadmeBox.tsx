@@ -121,6 +121,14 @@ export default function ReadmeBox({
                 }
                 return <span>{props.children}</span>;
               },
+              table: ({ children }) => {
+                return (
+                  // @ts-expect-error dataSet is a valid RNW prop
+                  <View dataSet={{ tableWrapper: true }}>
+                    <table>{children}</table>
+                  </View>
+                );
+              },
               img: ({ src, alt, width, height }: any) => (
                 <img
                   src={getReadmeAssetURL(src, githubUrl)}
