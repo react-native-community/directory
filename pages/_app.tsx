@@ -47,6 +47,7 @@ function App({ pageProps, Component }: AppProps) {
                     --select-border: ${colors.gray6};
                     --tooltip-border: ${colors.gray7};
                     --table-border: ${colors.gray6};
+                    --table-alt-row: ${darkColors.darkBright};
                     --table-header-background: ${darkColors.dark};
                     --code-block-background: ${darkColors.veryDark};
                     --inline-code-background: ${colors.gray6};
@@ -61,6 +62,7 @@ function App({ pageProps, Component }: AppProps) {
                     --select-border: ${colors.gray5};
                     --tooltip-border: ${colors.gray6};
                     --table-border: ${colors.gray3};
+                    --table-alt-row: ${colors.gray1};
                     --table-header-background: ${colors.gray2};
                     --code-block-background: ${colors.gray2};
                     --inline-code-background: ${colors.gray2};
