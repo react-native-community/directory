@@ -34,6 +34,7 @@ const DATA_PATH = path.resolve('assets', 'data.json');
 const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 const CHUNK_SIZE = 25;
+const NPM_STATS_CHUNK_SIZE = 10;
 const SLEEP_TIME = 250;
 
 const invalidRepos: string[] = [];
@@ -99,8 +100,8 @@ async function buildAndScoreData() {
   });
 
   // Assemble and fetch packages data in bulk queries
-  const bulkList = [...Array(Math.ceil(fetchList.length / CHUNK_SIZE))].map(_ =>
-    fetchList.splice(0, CHUNK_SIZE)
+  const bulkList = [...Array(Math.ceil(fetchList.length / NPM_STATS_CHUNK_SIZE))].map(_ =>
+    fetchList.splice(0, NPM_STATS_CHUNK_SIZE)
   );
 
   const downloadsList = await fetchNpmStatDataSequentially(bulkList);
@@ -393,7 +394,7 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
     console.log(`Sleeping ${SLEEP_TIME}ms`);
 
     const data = await fetchNpmStatDataBulk(chunk);
-    console.log(`${CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
+    console.log(`${NPM_STATS_CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
 
     results.push(...data);
   }

@@ -17316,48 +17316,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/devtools-floating-menu",
-    "npmPkg": "@react-buoy/core",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/shared",
-    "npmPkg": "@react-buoy/shared-ui",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/env-tools",
-    "npmPkg": "@react-buoy/env",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/network",
-    "npmPkg": "@react-buoy/network",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/react-query",
-    "npmPkg": "@react-buoy/react-query",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/LovesWorking/react-native-buoy/tree/main/packages/storage",
-    "npmPkg": "@react-buoy/storage",
-    "examples": ["https://github.com/LovesWorking/react-native-buoy/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/margelo/react-native-nitro-fetch/tree/main/package",
     "npmPkg": "react-native-nitro-fetch",
     "examples": ["https://github.com/margelo/react-native-nitro-fetch/tree/main/example"],
@@ -18501,7 +18459,6 @@
   {
     "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-ota",
     "android": true,
-    "npmPkg": "react-native-nitro-ota",
     "ios": true,
     "newArchitecture": true
   },
