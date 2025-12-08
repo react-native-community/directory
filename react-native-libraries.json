@@ -18483,5 +18483,14 @@
     ],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nagasaicharan/react-native-store-age-signals-native-modules",
+    "examples": [
+      "https://github.com/nagasaicharan/react-native-store-age-signals-native-modules/tree/main/example"
+    ],
+    "npmPkg": "react-native-store-age-signals-native-modules",
+    "ios": true,
+    "android": true
   }
 ]
