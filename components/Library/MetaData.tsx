@@ -26,7 +26,8 @@ import {
   PackageSize,
   Dependency,
   ConfigPlugin,
-  Tools,
+  NightlyTest,
+  Module,
 } from '../Icons';
 
 type Props = {
@@ -143,7 +144,7 @@ function generateSecondaryData(
   isDark: boolean,
   skipExamples: boolean
 ): MetadataEntryType[] {
-  const { github, examples } = library;
+  const { github, examples, nightlyProgram } = library;
   const configPlugin = library.configPlugin ?? library.github.configPlugin;
 
   const secondaryTextColor = {
@@ -205,10 +206,25 @@ function generateSecondaryData(
           tooltip: getConfigPluginText(configPlugin),
         }
       : null,
+    nightlyProgram
+      ? {
+          id: 'nightlyProgram',
+          icon: <NightlyTest fill={iconColor} width={18} height={18} />,
+          content: (
+            <A
+              href="https://react-native-community.github.io/nightly-tests/"
+              style={linkStyles}
+              hoverStyle={hoverStyle}>
+              Nightly Program
+            </A>
+          ),
+          tooltip: 'Package is tested against nightly React Native releases.',
+        }
+      : null,
     skipExamples && library.github.moduleType
       ? {
           id: 'moduleType',
-          icon: <Tools fill={iconColor} width={16} height={16} />,
+          icon: <Module fill={iconColor} width={18} height={18} />,
           content: (
             <P style={paragraphStyles}>
               {

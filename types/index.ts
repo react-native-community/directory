@@ -52,6 +52,7 @@ export type Query = {
   expoModule?: string;
   nitroModule?: string;
   turboModule?: string;
+  nightlyProgram?: string;
 };
 
 export type QueryFilters = {
@@ -125,6 +126,7 @@ export type LibraryType = LibraryDataEntryType & {
   topicSearchString: string;
   popularity?: number;
   matchScore?: number;
+  nightlyProgram?: boolean;
 };
 
 export type LibraryDataEntryType = {

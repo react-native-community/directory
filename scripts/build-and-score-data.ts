@@ -15,6 +15,7 @@ import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
+import fetchNightlyProgramData from './fetch-nightly-program-data';
 import fetchReadmeImages from './fetch-readme-images';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
@@ -117,6 +118,10 @@ async function buildAndScoreData() {
   console.log('\n⬇🔄 Fetching registry data from npm');
 
   data = await fetchNpmRegistryDataSequentially(data);
+
+  console.log('\n⬇🔄 Fetching nightly programme information');
+
+  data = await fetchNightlyProgramData(data);
 
   console.log('\n⚛️ Calculating Directory Score');
   data = data.map(project => {
