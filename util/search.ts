@@ -100,6 +100,7 @@ export function handleFilterLibraries({
   expoModule,
   nitroModule,
   turboModule,
+  nightlyProgram,
 }: Query & QueryFilters) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -222,6 +223,10 @@ export function handleFilterLibraries({
         NewArchSupportStatus.Unsupported,
       ].includes(newArchStatus)
     ) {
+      return false;
+    }
+
+    if (nightlyProgram === 'true' && !library.nightlyProgram) {
       return false;
     }
 

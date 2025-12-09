@@ -73,6 +73,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Has TypeScript types',
   },
   {
+    param: 'nightlyProgram',
+    title: 'Tested in Nightly Program',
+  },
+  {
     param: 'wasRecentlyUpdated',
     title: 'Recently updated',
   },

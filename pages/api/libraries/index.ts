@@ -96,6 +96,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     expoModule: parsedQuery.expoModule,
     nitroModule: parsedQuery.nitroModule,
     turboModule: parsedQuery.turboModule,
+    nightlyProgram: parsedQuery.nightlyProgram,
   });
 
   const offset = parsedQuery.offset ? parseInt(parsedQuery.offset.toString(), 10) : 0;
