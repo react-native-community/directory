@@ -18471,7 +18471,6 @@
   },
   {
     "githubUrl": "https://github.com/saadelsabahy/react-native-nitro-geocoder",
-    "npmPkg": "react-native-nitro-geocoder",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18489,7 +18488,6 @@
     "examples": [
       "https://github.com/nagasaicharan/react-native-store-age-signals-native-modules/tree/main/example"
     ],
-    "npmPkg": "react-native-store-age-signals-native-modules",
     "ios": true,
     "android": true
   },
@@ -18498,5 +18496,68 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/wassgha/react-native-zoom-grid",
+    "images": [
+      "https://raw.githubusercontent.com/wassgha/react-native-zoom-grid/main/screenshots/react-native-zoom-grid.gif"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/uemura1114/react-native-ll-calendar",
+    "examples": ["https://github.com/uemura1114/react-native-ll-calendar/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/uemura1114/react-native-ll-calendar/main/assets/screen-shot.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/iwater/react-native-nitro-http-server",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lukailun/react-native-console-viewer",
+    "examples": ["https://github.com/lukailun/react-native-console-viewer/tree/develop/example"],
+    "images": [
+      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Android.png",
+      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/iOS.png",
+      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Web.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/loqalabs/loqa-audio-bridge",
+    "npmPkg": "@loqalabs/loqa-audio-bridge",
+    "examples": ["https://github.com/loqalabs/loqa-audio-bridge/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/loqalabs/loqa-expo-dsp",
+    "npmPkg": "@loqalabs/loqa-expo-dsp",
+    "examples": ["https://github.com/loqalabs/loqa-expo-dsp/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/phattran1201/react-native-pax",
+    "npmPkg": "@haroldtran/react-native-pax",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/XBigTK13X/expo-libmpv",
+    "examples": ["https://github.com/XBigTK13X/expo-libmpv/tree/master/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/exponotify/sdk",
+    "npmPkg": "@exponotify/sdk",
+    "ios": true,
+    "android": true
   }
 ]
