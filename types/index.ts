@@ -125,6 +125,7 @@ export type LibraryType = LibraryDataEntryType & {
   topicSearchString: string;
   popularity?: number;
   matchScore?: number;
+  nightlyProgram?: boolean;
 };
 
 export type LibraryDataEntryType = {
