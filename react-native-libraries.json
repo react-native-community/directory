@@ -18531,6 +18531,13 @@
     "web": true
   },
   {
+    "githubUrl": "https://github.com/loqalabs/loqa-audio-bridge",
+    "npmPkg": "@loqalabs/loqa-audio-bridge",
+    "examples": ["https://github.com/loqalabs/loqa-audio-bridge/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/loqalabs/loqa-expo-dsp",
     "npmPkg": "@loqalabs/loqa-expo-dsp",
     "examples": ["https://github.com/loqalabs/loqa-expo-dsp/tree/main/example"],
