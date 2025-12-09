@@ -18492,5 +18492,11 @@
     "npmPkg": "react-native-store-age-signals-native-modules",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/devshojol/react-native-smart-placeholder",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
