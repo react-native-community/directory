@@ -4581,6 +4581,19 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/devshojol/react-native-smart-placeholder",
+    "npmPkg": "react-native-smart-placeholder",
+    "nameOverride": "React Native Smart Placeholder",
+    "examples": [
+      "https://github.com/devshojol/react-native-smart-placeholder?tab=readme-ov-file#example"
+    ],
+    "images": [],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "unmaintained": false
+  },
+  {
     "githubUrl": "https://github.com/lhandel/react-native-card-flip",
     "ios": true,
     "android": true,
