@@ -18566,5 +18566,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/notixit/rn-hide-home-indicator",
+    "npmPkg": "rn-hide-home-indicator",
+    "examples": ["https://github.com/notixit/rn-hide-home-indicator"],
+    "ios": true,
+    "newArchitecture": true
   }
 ]
