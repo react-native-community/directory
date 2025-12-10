@@ -18578,5 +18578,12 @@
     "expoGo": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/vLaD1m1r99/expo-stream-audio",
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
