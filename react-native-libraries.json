@@ -18568,19 +18568,15 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/notixit/rn-hide-home-indicator",
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/mmpotulo28/react-native-package-checker",
-    "npmPkg": "react-native-package-checker",
-    "examples": [
-      "https://github.com/mmpotulo28/react-native-package-checker"
-    ],
-    "ios": false,
     "android": true,
-    "web": false,
     "expoGo": true,
     "newArchitecture": true,
-    "configPlugin": true,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "configPlugin": true
   }
 ]
