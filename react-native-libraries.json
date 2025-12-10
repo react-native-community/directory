@@ -18569,9 +18569,14 @@
   },
   {
     "githubUrl": "https://github.com/notixit/rn-hide-home-indicator",
-    "npmPkg": "rn-hide-home-indicator",
-    "examples": ["https://github.com/notixit/rn-hide-home-indicator"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mmpotulo28/react-native-package-checker",
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
