@@ -63,6 +63,11 @@ export type QueryFilters = {
   support: Record<string, string | undefined>;
 };
 
+export type FilterParamsType = {
+  param: keyof Query;
+  title: string;
+};
+
 export type SortedDataType = Record<QueryOrder, LibraryType[]>;
 
 export type LibraryLicenseType = {
