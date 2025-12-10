@@ -18578,5 +18578,23 @@
     "expoGo": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+  "githubUrl": "https://github.com/Gautham495/react-native-legend-ruler-picker",
+  "examples": [
+    "https://github.com/Gautham495/react-native-legend-ruler-picker/tree/main/example"
+  ],
+  "android": true,
+  "ios": true,
+  "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-skan-referrer",
+    "examples": [
+      "https://github.com/Gautham495/react-native-nitro-skan-referrer/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
