@@ -5,7 +5,7 @@ import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
-import { getPackagePageErrorMessage } from '~/util/getPackagePageErrorMessage';
+import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/parseQueryParams';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -39,12 +39,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
     ]);
 
     if (apiResponse.status !== 200 || npmResponse.status !== 200) {
-      return {
-        props: {
-          packageName,
-          ...getPackagePageErrorMessage(apiResponse.status, npmResponse.status),
-        },
-      };
+      return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
     }
 
     const [apiData, registryData] = await Promise.all([apiResponse.json(), npmResponse.json()]);

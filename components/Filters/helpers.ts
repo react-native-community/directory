@@ -1,9 +1,4 @@
-import { type Query } from '~/types';
-
-type FilterParamsType = {
-  param: keyof Query;
-  title: string;
-};
+import { type FilterParamsType } from '~/types';
 
 export const FILTER_PLATFORMS: FilterParamsType[] = [
   {

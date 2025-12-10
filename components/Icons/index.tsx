@@ -711,9 +711,9 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="20"
+        strokeWidth="20"
       />
-      <Line x1="24" y1="120" x2="232" y2="120" fill="none" stroke={fill} stroke-width="16" />
+      <Line x1="24" y1="120" x2="232" y2="120" fill="none" stroke={fill} strokeWidth="16" />
       <Line
         x1="72"
         y1="104"
@@ -723,7 +723,7 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="16"
+        strokeWidth="16"
       />
       <Line
         x1="184"
@@ -734,7 +734,7 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="16"
+        strokeWidth="16"
       />
       <Path
         d="M168,72V56a16,16,0,0,0-16-16H104A16,16,0,0,0,88,56V72"
@@ -742,7 +742,7 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="20"
+        strokeWidth="20"
       />
     </Svg>
   );

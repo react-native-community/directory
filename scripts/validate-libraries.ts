@@ -10,7 +10,7 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
   console.log('🔍️Checking all libraries have the correct format');
 
   // Reduces the libraries array to an object of errors for each library
-  const errorsList = libraries.reduce<Record<string, string[]>>((errors, library, index) => {
+  const errorsList = libraries.reduce<Record<string, string[]>>((errors, library) => {
     const libraryErrors = [];
     const libraryProperties = Object.keys(library);
     const libraryWithNpmName = fillNpmName(library);

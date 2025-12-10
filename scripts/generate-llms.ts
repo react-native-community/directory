@@ -2,17 +2,17 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
-import { type DataAssetType, type LibraryType } from '~/types';
+import { type DataAssetType, type FilterParamsType, type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
+import data from '../assets/data.json';
+
 const OUTPUT_PATH = path.resolve('public', 'llms.txt');
-const DATASET_PATH = path.resolve('assets', 'data.json');
 const INTRODUCTION = [
   '# reactnative.directory',
   'Browse the full catalog at https://reactnative.directory for fresh React Native libraries.',
 ];
 
-const SUPPORTED_FILTERS = [...FILTER_PLATFORMS, ...FILTER_COMPATIBILITY];
 const NEW_ARCHITECTURE_STATUS_LABELS: Record<NewArchSupportStatus, string> = {
   [NewArchSupportStatus.NewArchOnly]: 'Only Supports New Architecture',
   [NewArchSupportStatus.Supported]: 'Supports New Architecture',
@@ -20,51 +20,49 @@ const NEW_ARCHITECTURE_STATUS_LABELS: Record<NewArchSupportStatus, string> = {
   [NewArchSupportStatus.Untested]: 'Untested with New Architecture',
 };
 
-function formatRecord(library: LibraryType, repoUrl: string, rawDescription: string): string {
-  const displayName = library.npmPkg;
-  const platforms = getSupportedPlatforms(library);
-  const supportText = platforms.length ? platforms.join(', ') : 'Not specified';
-  const header = `[${displayName}](${repoUrl}): ${rawDescription}`;
-  const newArchStatus = getNewArchSupportStatus(library);
-  const newArch = formatNewArchitectureStatus(newArchStatus, library.newArchitectureNote);
+function formatRecord(library: LibraryType): string {
+  const platforms = getStringifiedFlags(FILTER_PLATFORMS, library);
+  const compatibility = getStringifiedFlags(FILTER_COMPATIBILITY, library);
   const downloads = formatDownloads(library);
-  const website = library.github?.urls.homepage;
-  const latestVersion = library.npm?.latestRelease;
-  const latestReleaseDate = library.npm?.latestReleaseDate;
-  const lines = [`${header}`, `Supports: ${supportText}`, `New Architecture: ${newArch}`];
-  if (downloads) {
-    lines.push(`Downloads: ${downloads}`);
-  }
-  if (website) {
-    lines.push(`Website: ${website}`);
-  }
-  if (latestVersion) {
-    lines.push(`Latest Version: ${latestVersion}`);
-  }
-  if (latestReleaseDate) {
-    const date = new Date(latestReleaseDate).toISOString().split('T')[0];
-    lines.push(`Latest Release Date: ${date}`);
-  }
-  return lines.join('\n');
+  const newArch = formatNewArchitectureStatus(
+    getNewArchSupportStatus(library),
+    library.newArchitectureNote
+  );
+
+  const { npmPkg, npm, github, githubUrl } = library;
+
+  return [
+    `[${npmPkg}](${githubUrl}): ${github.description ?? 'No description'}`,
+    `Platforms: ${platforms.join(', ')}`,
+    compatibility.length > 0 ? `Compatibility: ${compatibility.join(', ')}` : undefined,
+    `New Architecture: ${newArch}`,
+    downloads ? `Downloads: ${downloads}` : undefined,
+    github?.urls.homepage ? `Website: ${github.urls.homepage}` : undefined,
+    npm?.latestRelease ? `Latest Version: ${npm.latestRelease}` : undefined,
+    npm?.latestReleaseDate
+      ? `Latest Release Date: ${new Date(npm.latestReleaseDate).toLocaleDateString()}`
+      : undefined,
+  ]
+    .filter(entry => entry !== undefined)
+    .join('\n');
 }
 
-function getSupportedPlatforms(library: LibraryType) {
-  const platforms: string[] = [];
-  SUPPORTED_FILTERS.forEach(filter => {
-    const key = filter.param as keyof LibraryType;
-    const value = library[key];
-    const title = filter.title;
+function getStringifiedFlags(list: FilterParamsType[], library: LibraryType) {
+  return list
+    .map(({ param, title }) => {
+      const key = param as keyof LibraryType;
+      const value = library[key];
 
-    if (typeof value === 'boolean' && value) {
-      platforms.push(title);
-      return;
-    }
+      if (typeof value === 'boolean' && value) {
+        return title;
+      }
 
-    if (typeof value === 'string' && value) {
-      platforms.push(`${title} (${value})`);
-    }
-  });
-  return platforms;
+      if (typeof value === 'string' && value) {
+        return `${title} (${value})`;
+      }
+      return undefined;
+    })
+    .filter(entry => entry !== undefined);
 }
 
 function formatNewArchitectureStatus(status: NewArchSupportStatus, note?: string) {
@@ -73,12 +71,13 @@ function formatNewArchitectureStatus(status: NewArchSupportStatus, note?: string
   if (note) {
     return `${value} (${note})`;
   }
+
   return value;
 }
 
-function formatDownloads(library: LibraryType) {
-  const downloads = library.npm?.downloads;
-  const weekDownloads = library.npm?.weekDownloads;
+function formatDownloads({ npm }: LibraryType) {
+  const downloads = npm?.downloads;
+  const weekDownloads = npm?.weekDownloads;
 
   if (!downloads && !weekDownloads) {
     return null;
@@ -98,31 +97,18 @@ function formatDownloads(library: LibraryType) {
 }
 
 async function generateLlmsFile() {
-  const assetLibraries = await loadAssetLibraries();
-  const entries = assetLibraries
-    .filter(library => !library.template)
-    .map(library => formatRecord(library, library.githubUrl, library.github?.description ?? ''));
+  const { libraries } = data as DataAssetType;
 
+  const entries = libraries
+    .filter(library => !library.template)
+    .map(library => formatRecord(library));
   const content = [...INTRODUCTION, ...entries].join('\n\n---\n\n');
 
   await fs.writeFile(OUTPUT_PATH, `${content}\n`, 'utf8');
-  console.log(
-    `Generated ${entries.length} entries in ${path.relative(process.cwd(), OUTPUT_PATH)}`
-  );
-}
 
-async function loadAssetLibraries(): Promise<DataAssetType['libraries']> {
-  try {
-    const raw = await fs.readFile(DATASET_PATH, 'utf8');
-    const parsed = JSON.parse(raw) as DataAssetType;
-    return parsed.libraries ?? [];
-  } catch (error) {
-    console.warn(
-      'Unable to read cached assets/data.json. Continuing without cached descriptions.',
-      error
-    );
-    return [];
-  }
+  console.log(
+    `✅ Generated ${entries.length} entries in ${path.relative(process.cwd(), OUTPUT_PATH)}`
+  );
 }
 
 await generateLlmsFile();
