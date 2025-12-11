@@ -18580,13 +18580,19 @@
     "configPlugin": true
   },
   {
-  "githubUrl": "https://github.com/Gautham495/react-native-legend-ruler-picker",
-  "examples": [
-    "https://github.com/Gautham495/react-native-legend-ruler-picker/tree/main/example"
-  ],
-  "android": true,
-  "ios": true,
-  "newArchitecture": true
+    "githubUrl": "https://github.com/vLaD1m1r99/expo-stream-audio",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-legend-ruler-picker",
+    "examples": [
+      "https://github.com/Gautham495/react-native-legend-ruler-picker/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Gautham495/react-native-nitro-skan-referrer",
