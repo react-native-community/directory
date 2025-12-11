@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { type PropsWithChildren, useEffect, useState } from 'react';
-import { Appearance, View } from 'react-native';
+import { View } from 'react-native';
+import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
 
 import CustomAppearanceContext, {
   type CustomAppearanceContextType,
@@ -12,15 +13,21 @@ const shouldRehydrate = true;
 const defaultState = { isDark: false };
 
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
-  const colorScheme = Appearance.getColorScheme();
+  const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = useState(false);
+
+  useDeviceContext(tw, {
+    observeDeviceColorSchemeChanges: false,
+    initialColorScheme: colorScheme === 'dark' ? 'dark' : 'light',
+  });
 
   useEffect(() => {
     async function rehydrateAsync() {
       try {
         const { isDark } = await rehydrateAppearanceState();
         setIsDark(isDark);
+        setColorScheme(isDark ? 'dark' : 'light');
       } catch {}
       setLoaded(true);
     }
@@ -33,10 +40,12 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   } else {
     return (
       <CustomAppearanceContext.Provider
+        key={tw.memoBuster}
         value={{
           isDark,
           setIsDark: isDark => {
             setIsDark(isDark);
+            setColorScheme(isDark ? 'dark' : 'light');
             void cacheAppearanceState({ isDark });
           },
         }}>

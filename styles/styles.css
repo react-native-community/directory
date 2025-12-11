@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Optimistic Display";
   src: url("/fonts/Optimistic-Display-Light.woff2")
