@@ -18602,5 +18602,78 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mgcrea/react-native-tailwind",
+    "npmPkg": "@mgcrea/react-native-tailwind",
+    "images": [
+      "https://raw.githubusercontent.com/mgcrea/react-native-tailwind/main/.github/assets/demo.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mgcrea/react-native-swiftui",
+    "npmPkg": "@mgcrea/react-native-swiftui",
+    "images": [
+      "https://raw.githubusercontent.com/mgcrea/react-native-swiftui/main/.github/assets/demo.gif"
+    ],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mgcrea/react-native-jetpack-compose",
+    "npmPkg": "@mgcrea/react-native-jetpack-compose",
+    "images": [
+      "https://raw.githubusercontent.com/mgcrea/react-native-jetpack-compose/main/.github/assets/demo.gif"
+    ],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mgcrea/react-native-video-frames",
+    "npmPkg": "@mgcrea/react-native-video-frames",
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mgcrea/vision-camera-barcode-scanner",
+    "npmPkg": "@mgcrea/vision-camera-barcode-scanner",
+    "images": [
+      "https://raw.githubusercontent.com/mgcrea/vision-camera-barcode-scanner/master/.github/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/criipto/criipto-verify-expo",
+    "npmPkg": "@criipto/verify-expo",
+    "examples": [
+      "https://github.com/criipto/criipto-verify-expo/tree/master/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pagopa/io-app-design-system",
+    "npmPkg": "@pagopa/io-app-design-system",
+    "examples": [
+      "https://github.com/pagopa/io-app-design-system/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/smallcase/react-native-simple-biometrics",
+    "examples": [
+      "https://github.com/smallcase/react-native-simple-biometrics/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/smallcase/react-native-simple-biometrics/master/demo.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
