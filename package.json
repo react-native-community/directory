@@ -90,8 +90,5 @@
     "react-native-libraries.json": [
       "bun libraries:cleanup"
     ]
-  },
-  "patchedDependencies": {
-    "twrnc@4.11.1": "patches/twrnc@4.11.1.patch"
   }
 }
