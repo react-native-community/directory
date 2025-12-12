@@ -37,7 +37,6 @@ export default function Footer() {
             pkgName="react-native"
             Icon={PlatformAndroid}
             url="https://github.com/facebook/react-native#readme"
-            style={{ borderLeftWidth: 0 }}
           />
           <PlatformTile
             name="iOS"

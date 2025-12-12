@@ -1,6 +1,19 @@
 import plugin from 'tailwindcss/plugin';
 
 const palette = {
+  black: 'var(--black)',
+  white: 'var(--white)',
+
+  'primary-dark': 'var(--primary-dark)',
+
+  secondary: 'var(--secondary)',
+
+  success: 'var(--success)',
+  error: 'var(--error)',
+  warning: 'var(--warning)',
+  'warning-light': 'var(--warning-light)',
+  'warning-dark': 'var(--warning-dark)',
+
   'palette-gray1': 'var(--gray-1)',
   'palette-gray2': 'var(--gray-2)',
   'palette-gray3': 'var(--gray-3)',
@@ -24,11 +37,18 @@ export default {
     backgroundColor: {
       transparent: 'transparent',
       current: 'currentColor',
+      default: 'var(--background)',
       ...palette,
+
+      // TODO: temporary values, replace with proper gray palette for dark mode
+      dark: 'var(--dark)',
+      'very-dark': 'var(--very-dark)',
+      'dark-brighter': 'var(--dark-brighter)',
     },
     borderColor: {
       transparent: 'transparent',
       current: 'currentColor',
+      default: 'var(--border)',
       ...palette,
     },
     colors: {
@@ -40,13 +60,18 @@ export default {
       transparent: 'transparent',
       ...palette,
     },
-    extend: {},
+    extend: {
+      maxWidth: {
+        layout: 1200,
+      },
+    },
   },
   corePlugins: {
     fontFamily: false,
   },
   plugins: [
-    plugin(({ addUtilities, addVariant }) => {
+    plugin(({ addUtilities }) => {
+      // TODO: try fixing later via twrnc PR
       // addVariant('hocus', ['&:hover', '&:focus-visible']);
       addUtilities({
         '.break-words': { 'word-break': 'break-word' },

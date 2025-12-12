@@ -57,6 +57,7 @@
   --success: #4caf50;
 
   --background: #ffffff;
+  --border: var(--gray-2);
 
   --overscroll-background: var(--gray-7);
   --outline: var(--primary-dark);
@@ -72,19 +73,26 @@
 }
 
 :root.dark {
+  --primary-dark: #2e9ab8;
+
+  --powder: #262a36;
+  --pewter: #767c8e;
+
   --black: #000000;
-  --background: #19191f;
-  --sub-header: #14141a;
-  --border: #2a2e36;
   --very-dark: #111114;
   --dark: #14141a;
   --dark-bright: #1c1c21;
-  --powder: #262a36;
-  --pewter: #767c8e;
+  --dark-brighter: #2a2e36;
+
+  /* TODO: introduce dark theme `gray` color palette */
+
   --secondary: #a2a7ab;
-  --warning-light: #2f2704;
+
   --warning: #9a810c;
-  --primary-dark: #2e9ab8;
+  --warning-light: #2f2704;
+
+  --background: #19191f;
+  --border: var(--dark-brighter);
 
   --overscroll-background: var(--very-dark);
   --outline: var(--primary-dark);

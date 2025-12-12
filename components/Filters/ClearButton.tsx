@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Pressable, type PressableProps, StyleSheet } from 'react-native';
+import { Pressable, type PressableProps } from 'react-native';
 
-import { colors } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 import { XIcon } from '../Icons';
 import Tooltip from '../Tooltip';
@@ -18,21 +18,13 @@ export function ClearButton({ onPress }: ClearButtonProps) {
           onHoverIn={() => setIsXIconHovered(true)}
           onHoverOut={() => setIsXIconHovered(false)}
           onPress={onPress}
-          style={styles.container}
+          style={tw`size-6 items-center justify-center`}
           aria-label="Clear all">
-          <XIcon fill={isXIconHovered ? colors.error : colors.white} width={12} height={12} />
+          {/* TODO: figure out hover */}
+          <XIcon style={isXIconHovered ? tw`text-error` : tw`text-white`} width={12} height={12} />
         </Pressable>
       }>
       Clear all
     </Tooltip>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: 24,
-    height: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

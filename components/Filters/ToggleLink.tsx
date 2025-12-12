@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { useContext, useState } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { View } from 'react-native';
 
-import { P, colors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { P } from '~/common/styleguide';
 import { type Query } from '~/types';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import CheckBox from '../CheckBox';
@@ -17,7 +17,6 @@ type Props = {
 };
 
 export function ToggleLink({ query, paramName, title, basePath = '/' }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setHovered] = useState<boolean>(false);
   const isSelected = !!query[paramName];
 
@@ -30,36 +29,18 @@ export function ToggleLink({ query, paramName, title, basePath = '/' }: Props) {
       })}
       style={{ textDecoration: 'none' }}>
       <View
-        style={styles.link}
+        style={tw`cursor-pointer mr-4 my-1 items-center flex-row`}
         onPointerEnter={() => setHovered(true)}
         onPointerLeave={() => setHovered(false)}>
-        <CheckBox
-          value={isSelected}
-          color={colors.primaryDark}
-          style={isHovered && { borderColor: colors.primaryDark }}
-        />
-        <P style={[styles.text, isHovered && { color: isDark ? colors.gray3 : colors.gray5 }]}>
+        <CheckBox value={isSelected} style={isHovered && tw`border-primary-dark`} />
+        <P
+          style={[
+            tw`text-sm font-light leading-[18px]`,
+            isHovered && tw`text-palette-gray5 dark:text-palette-gray3`,
+          ]}>
           {title}
         </P>
       </View>
     </Link>
   );
 }
-
-const styles = StyleSheet.create({
-  link: {
-    ...Platform.select({
-      web: {
-        cursor: 'pointer',
-      },
-    }),
-    marginRight: 16,
-    marginVertical: 4,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  text: {
-    fontSize: 14,
-    fontWeight: 300,
-  },
-});

@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import { A, colors, darkColors, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
+import tw from '~/util/tailwind';
 
 import { Check, Question, XIcon } from '../Icons';
 import { Tag } from '../Tag';
@@ -20,23 +21,23 @@ export function NewArchitectureTag({ library }: Props) {
 
   const icon =
     status === NewArchSupportStatus.Unsupported ? (
-      <XIcon fill={getIconColor(status, isDark)} width={11} height={11} />
+      <XIcon style={tw`text-warning-dark dark:text-warning`} width={11} height={11} />
     ) : status === NewArchSupportStatus.Supported || status === NewArchSupportStatus.NewArchOnly ? (
-      <Check fill={getIconColor(status, isDark)} width={12} height={12} />
+      <Check style={tw`text-primary-dark`} width={12} height={12} />
     ) : (
-      <Question fill={getIconColor(status, isDark)} width={11} height={11} />
+      <Question style={tw`text-palette-gray4`} width={11} height={11} />
     );
 
   const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
-    <Label style={styles.note}>{library.newArchitectureNote}</Label>
+    <Label style={tw`flex my-1 text-white`}>{library.newArchitectureNote}</Label>
   );
 
-  // Do not show alternatives in new arch tag for unmaintained libraries since
+  // Do not show alternatives in New Arch tag for unmaintained libraries since
   // we already show the alternatives in unmaintained label
   const alternatives = library.alternatives &&
     library.alternatives.length > 0 &&
     !library.unmaintained && (
-      <Label style={styles.note}>
+      <Label style={tw`flex my-1 text-white`}>
         {' '}
         {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
         {library.alternatives.join(', ')}{' '}
@@ -75,18 +76,6 @@ export function NewArchitectureTag({ library }: Props) {
   );
 }
 
-function getIconColor(status: NewArchSupportStatus, isDark: boolean) {
-  switch (status) {
-    case NewArchSupportStatus.NewArchOnly:
-    case NewArchSupportStatus.Supported:
-      return colors.primaryDark;
-    case NewArchSupportStatus.Unsupported:
-      return isDark ? darkColors.warning : colors.warningDark;
-    default:
-      return colors.gray4;
-  }
-}
-
 function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
@@ -107,11 +96,3 @@ function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
       };
   }
 }
-
-const styles = StyleSheet.create({
-  note: {
-    display: 'flex',
-    marginVertical: 4,
-    color: '#fff',
-  },
-});
