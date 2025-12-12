@@ -18562,7 +18562,6 @@
   },
   {
     "githubUrl": "https://github.com/quantizor/markdown-to-jsx",
-    "npmPkg": "markdown-to-jsx",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18650,18 +18649,14 @@
   {
     "githubUrl": "https://github.com/criipto/criipto-verify-expo",
     "npmPkg": "@criipto/verify-expo",
-    "examples": [
-      "https://github.com/criipto/criipto-verify-expo/tree/master/example"
-    ],
+    "examples": ["https://github.com/criipto/criipto-verify-expo/tree/master/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/pagopa/io-app-design-system",
     "npmPkg": "@pagopa/io-app-design-system",
-    "examples": [
-      "https://github.com/pagopa/io-app-design-system/tree/main/example"
-    ],
+    "examples": ["https://github.com/pagopa/io-app-design-system/tree/main/example"],
     "ios": true,
     "android": true
   }

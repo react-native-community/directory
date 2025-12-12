@@ -13,8 +13,9 @@ type Props = {
 
 function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
+
   const router = useRouter();
-  const isActive = router.asPath === path;
+  const isActive = router.asPath.split('?')[0] === path;
 
   return (
     <A
