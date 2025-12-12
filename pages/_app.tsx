@@ -3,9 +3,7 @@ import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { colors, darkColors } from '~/common/styleguide';
 import Footer from '~/components/Footer';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
 import '~/styles/styles.css';
@@ -24,57 +22,19 @@ Sentry.init({
 function App({ pageProps, Component }: AppProps) {
   return (
     <CustomAppearanceProvider>
-      <CustomAppearanceContext.Consumer>
-        {context => (
-          <SafeAreaProvider
-            style={{
-              flex: 1,
-              backgroundColor: context.isDark ? darkColors.background : colors.white,
-            }}>
-            <Head>
-              <meta
-                name="viewport"
-                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
-              />
-              <style>
-                {context.isDark
-                  ? `
-                  :root {
-                    --overscroll-background: ${darkColors.veryDark};
-                    --outline: ${colors.primaryDark};
-                    --active: ${darkColors.primaryDark};
-                    --select-background: ${darkColors.dark};
-                    --select-border: ${colors.gray6};
-                    --tooltip-border: ${colors.gray7};
-                    --table-border: ${colors.gray6};
-                    --table-alt-row: ${darkColors.darkBright};
-                    --table-header-background: ${darkColors.dark};
-                    --code-block-background: ${darkColors.veryDark};
-                    --inline-code-background: ${colors.gray6};
-                  }
-                `
-                  : `
-                  :root {
-                    --overscroll-background: ${colors.gray7};
-                    --outline: ${colors.primaryDark};
-                    --active: ${darkColors.primaryDark};
-                    --select-background: ${colors.gray6};
-                    --select-border: ${colors.gray5};
-                    --tooltip-border: ${colors.gray6};
-                    --table-border: ${colors.gray3};
-                    --table-alt-row: ${colors.gray1};
-                    --table-header-background: ${colors.gray2};
-                    --code-block-background: ${colors.gray2};
-                    --inline-code-background: ${colors.gray2};
-                  }
-                `}
-              </style>
-            </Head>
-            <Component {...pageProps} />
-            <Footer />
-          </SafeAreaProvider>
-        )}
-      </CustomAppearanceContext.Consumer>
+      <SafeAreaProvider
+        style={{
+          flex: 1,
+        }}>
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
+          />
+        </Head>
+        <Component {...pageProps} />
+        <Footer />
+      </SafeAreaProvider>
     </CustomAppearanceProvider>
   );
 }

@@ -17,6 +17,19 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
   const [isLoaded, setLoaded] = useState(false);
 
+  function toggleTheme(isDark: boolean) {
+    const el = document.documentElement;
+
+    if (isDark) {
+      el.classList.add('dark');
+    } else {
+      el.classList.remove('dark');
+    }
+
+    setColorScheme(isDark ? 'dark' : 'light');
+    setIsDark(isDark);
+  }
+
   useDeviceContext(tw, {
     observeDeviceColorSchemeChanges: false,
     initialColorScheme: colorScheme === 'dark' ? 'dark' : 'light',
@@ -26,8 +39,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     async function rehydrateAsync() {
       try {
         const { isDark } = await rehydrateAppearanceState();
-        setIsDark(isDark);
-        setColorScheme(isDark ? 'dark' : 'light');
+        toggleTheme(isDark);
       } catch {}
       setLoaded(true);
     }
@@ -40,12 +52,10 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   } else {
     return (
       <CustomAppearanceContext.Provider
-        key={tw.memoBuster}
         value={{
           isDark,
           setIsDark: isDark => {
-            setIsDark(isDark);
-            setColorScheme(isDark ? 'dark' : 'light');
+            toggleTheme(isDark);
             void cacheAppearanceState({ isDark });
           },
         }}>

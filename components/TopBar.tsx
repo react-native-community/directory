@@ -2,6 +2,7 @@ import { Header as HtmlHeader } from '@expo/html-elements';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
+import tw from 'twrnc';
 
 import { layout, colors, H5, P, darkColors, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
@@ -19,8 +20,9 @@ export default function TopBar() {
   return (
     <HtmlHeader
       style={[
-        styles.header,
+        tw`py-3.5 justify-center items-center overflow-hidden gap-y-2.5`,
         {
+          // TODO: figure out how to use CSS var or downgrade to Tailwind v3
           backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
         },
       ]}>

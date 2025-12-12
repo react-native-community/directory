@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
+import tw from 'twrnc';
 
 import { A, H4, colors, darkColors, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
@@ -42,10 +43,10 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={{ marginHorizontal: 'auto', marginTop: 12 }}>
+        <View style={tw`mx-auto mt-3`}>
           <FilterButton
-            containerStyle={{ height: 32 }}
-            style={{ height: 32, width: 160 }}
+            containerStyle={tw`h-8`}
+            style={tw`h-8 w-40`}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
             onClearAllPress={handleClearAllPress}
