@@ -2,12 +2,12 @@ import { Header as HtmlHeader } from '@expo/html-elements';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
-import tw from 'twrnc';
 
 import { layout, colors, H5, P, darkColors, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 import { Button } from './Button';
 import { GitHub, Logo, Plus, ThemeDark, ThemeLight, Tools } from './Icons';

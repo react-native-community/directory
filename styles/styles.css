@@ -100,9 +100,7 @@
 }
 
 *:focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: var(--outline);
+  outline: var(--outline) solid 2px;
   border-radius: 3px;
 }
 

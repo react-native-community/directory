@@ -1,8 +1,8 @@
 import { type ReactElement } from 'react';
 import { Image, View } from 'react-native';
-import tw from 'twrnc';
 
 import { A, H3, P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = {
   header?: string;

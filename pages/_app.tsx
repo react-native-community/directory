@@ -22,10 +22,7 @@ Sentry.init({
 function App({ pageProps, Component }: AppProps) {
   return (
     <CustomAppearanceProvider>
-      <SafeAreaProvider
-        style={{
-          flex: 1,
-        }}>
+      <SafeAreaProvider style={{ flex: 1 }}>
         <Head>
           <meta
             name="viewport"

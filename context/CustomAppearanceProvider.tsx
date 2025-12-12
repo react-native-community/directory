@@ -1,7 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { type PropsWithChildren, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
+
+import tw, { useDeviceContext, useAppColorScheme } from '~/util/tailwind';
 
 import CustomAppearanceContext, {
   type CustomAppearanceContextType,
@@ -52,6 +53,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   } else {
     return (
       <CustomAppearanceContext.Provider
+        key={tw.memoBuster}
         value={{
           isDark,
           setIsDark: isDark => {

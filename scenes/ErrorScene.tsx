@@ -1,10 +1,10 @@
 import { Image, View } from 'react-native';
-import tw from 'twrnc';
 
 import { H3, A, P } from '~/common/styleguide';
 import Navigation from '~/components/Navigation';
 import NotFound from '~/components/Package/NotFound';
 import PageMeta from '~/components/PageMeta';
+import tw from '~/util/tailwind';
 
 type Props = {
   statusCode: number;

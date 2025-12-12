@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import tw from 'twrnc';
 
 import { A, H4, colors, darkColors, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
@@ -15,6 +14,7 @@ import Pagination from '~/components/Pagination';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { type TrendingPageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {

@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
 import { View } from 'react-native';
-import tw from 'twrnc';
 
 import LoadingContent from '~/components/Library/LoadingContent';
 import NotFound from '~/components/Package/NotFound';
 import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
 type Props = {
   libraries: LibraryType[];

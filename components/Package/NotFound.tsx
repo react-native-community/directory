@@ -1,10 +1,9 @@
-import tw from 'twrnc';
-
 import { Button } from '~/components/Button';
 import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
 import NotFoundContent from '~/components/NotFoundContent';
 import PageMeta from '~/components/PageMeta';
+import tw from '~/util/tailwind';
 
 export default function NotFound() {
   return (

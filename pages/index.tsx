@@ -1,7 +1,6 @@
 import { type NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 import { type ParsedUrlQuery } from 'node:querystring';
-import { StyleSheet } from 'react-native';
 
 import ContentContainer from '~/components/ContentContainer';
 import Libraries from '~/components/Libraries';
@@ -11,6 +10,7 @@ import Pagination from '~/components/Pagination';
 import Search from '~/components/Search';
 import { type APIResponseType } from '~/types';
 import getApiUrl from '~/util/getApiUrl';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -21,11 +21,12 @@ type Props = {
 function Index({ data, query }: Props) {
   const router = useRouter();
   const total = data.total ?? 0;
+
   return (
     <>
       <PageMeta searchQuery={router.query?.search} />
       <Navigation header={<Search query={router.query} total={total} />} />
-      <ContentContainer style={styles.container}>
+      <ContentContainer style={tw`px-4 py-3`}>
         <Pagination query={query} total={total} />
         <Libraries libraries={data && data.libraries} />
         <Pagination query={query} total={total} />
@@ -44,12 +45,5 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
     query: ctx.query,
   };
 };
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-});
 
 export default Index;
