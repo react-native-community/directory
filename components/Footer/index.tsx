@@ -1,7 +1,6 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, P, colors, darkColors, useLayout } from '~/common/styleguide';
+import { A, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import {
   Logo,
@@ -13,25 +12,18 @@ import {
   PlatformWeb,
   PlatformWindows,
 } from '~/components/Icons';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 import PlatformTile from './PlatformTile';
 import VercelBanner from './VercelBanner';
 
 export default function Footer() {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          backgroundColor: isDark ? darkColors.subHeader : colors.gray1,
-        },
-      ]}>
+    <View style={tw`w-full pt-8 pb-7 mt-1 bg-palette-gray1 dark:bg-dark`}>
       <ContentContainer>
-        <View style={styles.platformsWrapper}>
+        <View style={tw`flex-row mt-1 justify-center flex-wrap gap-3.5 mb-7 max-w-footer mx-auto`}>
           <PlatformTile
             name="Android"
             pkgName="react-native"
@@ -75,83 +67,37 @@ export default function Footer() {
             url="https://github.com/microsoft/react-native-windows#readme"
           />
         </View>
-        <View style={[styles.footerTextWrapper, isSmallScreen && { flexDirection: 'column' }]}>
-          <View style={[styles.footerTextContainer, isSmallScreen && { alignItems: 'center' }]}>
-            <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+        <View style={[tw`flex-row px-4 mt-3`, isSmallScreen && tw`flex-col`]}>
+          <View style={[tw`flex-col flex-1`, isSmallScreen && tw`items-center`]}>
+            <P style={tw`py-1.5 text-sm font-light text-palette-gray5 dark:text-secondary`}>
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
                 Add it to the directory
               </A>
               .
             </P>
-            <P style={[styles.footerText, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+            <P
+              style={[
+                tw`py-1.5 text-sm font-light text-palette-gray5 dark:text-secondary`,
+                isSmallScreen && tw`items-center text-center`,
+              ]}>
               Want to learn more? Check out the{' '}
               <A href="https://reactnative.dev/docs/getting-started">official React Native docs</A>,
               and <A href="https://expo.dev">Expo</A>.
             </P>
           </View>
-          <View style={[styles.bannerContainer, isSmallScreen && styles.bannerContainerSmall]}>
+          <View style={[tw`self-center`, isSmallScreen && tw`items-center mt-6`]}>
             <A
               href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
-              style={styles.bannerLink}
               aria-label="Vercel banner">
               <VercelBanner />
             </A>
           </View>
         </View>
-        <View style={styles.logoContainer}>
-          <Logo fill={isDark ? darkColors.powder : colors.gray3} width={42} height={38} />
+        <View style={tw`items-center pt-12 pb-8`}>
+          <Logo style={tw`text-palette-gray3 dark:text-powder`} width={42} height={38} />
         </View>
       </ContentContainer>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    paddingTop: 32,
-    paddingBottom: 28,
-    marginTop: 4,
-  },
-  footerTextWrapper: {
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-    marginTop: 12,
-  },
-  footerTextContainer: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  footerText: {
-    paddingVertical: 7,
-    fontSize: 13,
-    fontWeight: 300,
-  },
-  platformsWrapper: {
-    flexDirection: 'row',
-    marginTop: 4,
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: 14,
-    marginBottom: 28,
-    maxWidth: 960,
-    marginHorizontal: 'auto',
-  },
-  bannerContainer: {
-    alignSelf: 'center',
-  },
-  bannerContainerSmall: {
-    marginTop: 24,
-    alignItems: 'center',
-  },
-  bannerLink: {
-    backgroundColor: 'transparent',
-  },
-  logoContainer: {
-    flex: 1,
-    alignItems: 'center',
-    paddingTop: 48,
-    paddingBottom: 32,
-  },
-});

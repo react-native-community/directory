@@ -28,7 +28,7 @@ export default function TopBar() {
       ]}>
       <View style={styles.headerContents}>
         <View style={[styles.displayHorizontal, !isBelowMaxWidth && styles.headerSide]}>
-          <Logo fill={colors.primary} width={29} height={26} />
+          <Logo style={tw`text-primary`} width={29} height={26} />
           <H5 style={[styles.headerTitle, isBelowMaxWidth && styles.smallTitle]}>
             <Link href="/" style={styles.headerContentsTitle} target="_self">
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}

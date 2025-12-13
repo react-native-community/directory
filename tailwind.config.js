@@ -4,9 +4,13 @@ const palette = {
   black: 'var(--black)',
   white: 'var(--white)',
 
+  primary: 'var(--primary)',
   'primary-dark': 'var(--primary-dark)',
 
   secondary: 'var(--secondary)',
+
+  powder: 'var(--powder)',
+  pewter: 'var(--pewter)',
 
   success: 'var(--success)',
   error: 'var(--error)',
@@ -41,6 +45,7 @@ export default {
       ...palette,
 
       // TODO: temporary values, replace with proper gray palette for dark mode
+      'sub-header': 'var(--dark)',
       dark: 'var(--dark)',
       'very-dark': 'var(--very-dark)',
       'dark-brighter': 'var(--dark-brighter)',
@@ -63,6 +68,8 @@ export default {
     extend: {
       maxWidth: {
         layout: 1200,
+        // TODO: is it a great name? not really
+        footer: 960,
       },
     },
   },
