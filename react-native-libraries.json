@@ -18659,5 +18659,15 @@
     "examples": ["https://github.com/pagopa/io-app-design-system/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hyoper/react-native-animated-modal",
+    "npmPkg": "@hyoper/rn-animated-modal",
+    "images": ["https://github.com/HyopeR/react-native-animated-modal/blob/master/preview.gif"],
+    "examples": ["https://github.com/HyopeR/react-native-animated-modal/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
