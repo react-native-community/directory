@@ -1,14 +1,9 @@
 import { A } from '@expo/html-elements';
 import { type PropsWithChildren } from 'react';
-import {
-  StyleSheet,
-  type TextStyle,
-  Pressable,
-  type StyleProp,
-  type ViewStyle,
-} from 'react-native';
+import { type TextStyle, Pressable, type StyleProp, type ViewStyle } from 'react-native';
 
-import { darkColors, HoverEffect, P } from '~/common/styleguide';
+import { HoverEffect, P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren & {
   href?: string;
@@ -29,10 +24,8 @@ export function Button({
 }: Props) {
   const isLink = !!href;
   const buttonStyle = [
-    styles.container,
-    {
-      backgroundColor: darkColors.primaryDark,
-    },
+    // TODO: support outline offset
+    tw`justify-center items-center rounded outline-offset-1 bg-primary-dark`,
     style,
   ];
 
@@ -58,12 +51,3 @@ export function Button({
     </HoverEffect>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    outlineOffset: 1,
-  },
-});

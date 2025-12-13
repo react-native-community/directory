@@ -7,6 +7,7 @@ import { layout, colors, H5, P, darkColors, useLayout } from '~/common/styleguid
 import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 import { Button } from './Button';
 import { GitHub, Logo, Plus, ThemeDark, ThemeLight, Tools } from './Icons';
@@ -19,14 +20,15 @@ export default function TopBar() {
   return (
     <HtmlHeader
       style={[
-        styles.header,
+        tw`py-3.5 justify-center items-center overflow-hidden gap-y-2.5`,
         {
+          // TODO: figure out how to use CSS var or downgrade to Tailwind v3
           backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
         },
       ]}>
       <View style={styles.headerContents}>
         <View style={[styles.displayHorizontal, !isBelowMaxWidth && styles.headerSide]}>
-          <Logo fill={colors.primary} width={29} height={26} />
+          <Logo style={tw`text-primary`} width={29} height={26} />
           <H5 style={[styles.headerTitle, isBelowMaxWidth && styles.smallTitle]}>
             <Link href="/" style={styles.headerContentsTitle} target="_self">
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}

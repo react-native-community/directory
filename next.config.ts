@@ -16,6 +16,7 @@ const PACKAGES_TO_OPTIMIZE = [
   'react-native-web',
   'react-shiki',
   'shiki/*',
+  'twrnc',
 ];
 
 const withBundleAnalyzer = BundleAnalyzer({
@@ -36,7 +37,6 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
     forceSwcTransforms: true,
     webpackBuildWorker: true,
     browserDebugInfoInTerminal: true,
-    useLightningcss: true,
     optimizePackageImports: PACKAGES_TO_OPTIMIZE,
   },
   async headers() {

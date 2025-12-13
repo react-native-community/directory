@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 @font-face {
   font-family: "Optimistic Display";
   src: url("/fonts/Optimistic-Display-Light.woff2")
@@ -22,10 +24,91 @@
   font-style: normal;
 }
 
+/* TODO: refactor colors and naming */
+:root {
+  --primary: #61dafb;
+  --primary-light: #c1f4ff;
+  --primary-dark: #39bee2;
+  --primary-darker: #2e9ab8;
+  --primary-hover: #61dafb16;
+
+  --sky: #c6eefb;
+  --powder: #eefafe;
+  --pewter: #bec8cb;
+
+  --gray-1: #f9f9f9;
+  --gray-2: #ececec;
+  --gray-3: #cfcfd5;
+  --gray-4: #828898;
+  --gray-5: #505461;
+  --gray-6: #24262e;
+  --gray-7: #21232a;
+
+  --black: #242424;
+  --white: #ffffff;
+
+  --secondary: #afb1af;
+
+  --warning: #fbe679;
+  --warning-light: #fef7d6;
+  --warning-dark: #995e00;
+
+  --error: #ff5555;
+  --success: #4caf50;
+
+  --background: #ffffff;
+  --border: var(--gray-2);
+
+  --overscroll-background: var(--gray-7);
+  --outline: var(--primary-dark);
+  --active: var(--primary-darker);
+  --select-background: var(--gray-6);
+  --select-border: var(--gray-5);
+  --tooltip-border: var(--gray-6);
+  --table-border: var(--gray-3);
+  --table-alt-row: var(--gray-1);
+  --table-header-background: var(--gray-2);
+  --code-block-background: var(--gray-2);
+  --inline-code-background: var(--gray-2);
+}
+
+:root.dark {
+  --primary-dark: #2e9ab8;
+
+  --powder: #262a36;
+  --pewter: #767c8e;
+
+  --black: #000000;
+  --very-dark: #111114;
+  --dark: #14141a;
+  --dark-bright: #1c1c21;
+  --dark-brighter: #2a2e36;
+
+  /* TODO: introduce dark theme `gray` color palette */
+
+  --secondary: #a2a7ab;
+
+  --warning: #9a810c;
+  --warning-light: #2f2704;
+
+  --background: #19191f;
+  --border: var(--dark-brighter);
+
+  --overscroll-background: var(--very-dark);
+  --outline: var(--primary-dark);
+  --active: var(--primary-dark);
+  --select-background: var(--dark);
+  --select-border: var(--gray-6);
+  --tooltip-border: var(--gray-7);
+  --table-border: var(--gray-6);
+  --table-alt-row: var(--dark-bright);
+  --table-header-background: var(--dark);
+  --code-block-background: var(--very-dark);
+  --inline-code-background: var(--gray-6);
+}
+
 *:focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: var(--outline);
+  outline: var(--outline) solid 2px;
   border-radius: 3px;
 }
 
@@ -43,6 +126,7 @@ input:focus-visible  {
 
 #__next, #__next > div {
   min-height: 100vh;
+  background-color: var(--background);
 }
 
 /* SELECT */

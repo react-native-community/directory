@@ -14,6 +14,7 @@ import Pagination from '~/components/Pagination';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { type TrendingPageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
@@ -42,10 +43,10 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={{ marginHorizontal: 'auto', marginTop: 12 }}>
+        <View style={tw`mx-auto mt-3`}>
           <FilterButton
-            containerStyle={{ height: 32 }}
-            style={{ height: 32, width: 160 }}
+            containerStyle={tw`h-8`}
+            style={tw`h-8 w-40`}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
             onClearAllPress={handleClearAllPress}

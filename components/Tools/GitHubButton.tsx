@@ -1,8 +1,5 @@
-import { useContext } from 'react';
-import { StyleSheet } from 'react-native';
-
-import { colors, darkColors, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 import { Button } from '../Button';
 import { GitHub } from '../Icons';
@@ -12,30 +9,13 @@ type Props = {
 };
 
 export default function GitHubButton({ href }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const primaryButtonColorStyle = {
-    backgroundColor: isDark ? darkColors.primaryDark : colors.primary,
-  };
-
   return (
-    <Button openInNewTab href={href} style={[styles.button, primaryButtonColorStyle]}>
+    <Button
+      openInNewTab
+      href={href}
+      style={tw`flex-row px-3 min-h-8 text-sm gap-1.5 bg-primary dark:bg-primary-dark`}>
       <GitHub width={16} />
-      <P style={styles.githubButtonLabel}>GitHub</P>
+      <P style={tw`text-sm text-[inherit]`}>GitHub</P>
     </Button>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    flexDirection: 'row',
-    paddingHorizontal: 12,
-    minHeight: 32,
-    fontSize: 14,
-    gap: 6,
-  },
-  githubButtonLabel: {
-    color: 'inherit',
-    fontSize: 14,
-  },
-});
