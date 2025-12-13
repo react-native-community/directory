@@ -2,9 +2,7 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { A, P, colors, darkColors, useLayout } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-
-import ContentContainer from './ContentContainer';
+import ContentContainer from '~/components/ContentContainer';
 import {
   Logo,
   PlatformAndroid,
@@ -14,8 +12,10 @@ import {
   PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
-} from './Icons';
-import Platform from './PlatformTile';
+} from '~/components/Icons';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
+import PlatformTile from './PlatformTile';
 import VercelBanner from './VercelBanner';
 
 export default function Footer() {
@@ -32,44 +32,44 @@ export default function Footer() {
       ]}>
       <ContentContainer>
         <View style={styles.platformsWrapper}>
-          <Platform
+          <PlatformTile
             name="Android"
             pkgName="react-native"
             Icon={PlatformAndroid}
             url="https://github.com/facebook/react-native#readme"
             style={{ borderLeftWidth: 0 }}
           />
-          <Platform
+          <PlatformTile
             name="iOS"
             pkgName="react-native"
             Icon={PlatformIOS}
             url="https://github.com/facebook/react-native#readme"
           />
-          <Platform
+          <PlatformTile
             name="macOS"
             pkgName="react-native-macos"
             Icon={PlatformMacOS}
             url="https://github.com/microsoft/react-native-macos#readme"
           />
-          <Platform
+          <PlatformTile
             name="tvOS"
             pkgName="react-native-tvos"
             Icon={PlatformTvOS}
             url="https://github.com/react-native-community/react-native-tvos#readme"
           />
-          <Platform
+          <PlatformTile
             name="visionOS"
             pkgName="react-native-visionos"
             Icon={PlatformVisionOS}
             url="https://github.com/callstack/react-native-visionos#readme"
           />
-          <Platform
+          <PlatformTile
             name="Web"
             pkgName="react-native-web"
             Icon={PlatformWeb}
             url="https://github.com/necolas/react-native-web#readme"
           />
-          <Platform
+          <PlatformTile
             name="Windows"
             pkgName="react-native-windows"
             Icon={PlatformWindows}

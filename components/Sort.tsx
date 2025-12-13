@@ -15,10 +15,7 @@ type SortButtonProps = {
   query: Query;
 };
 
-export function SortButton({
-  query: { order, direction, offset, search },
-  query,
-}: SortButtonProps) {
+export function SortButton({ query: { order, direction, search }, query }: SortButtonProps) {
   const [isSortIconHovered, setIsSortIconHovered] = useState(false);
 
   const { asPath, push } = useRouter();
