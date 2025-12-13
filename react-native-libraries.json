@@ -18669,5 +18669,15 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyoper/react-native-location",
+    "npmPkg": "@hyoper/rn-location",
+    "images": ["https://github.com/HyopeR/react-native-location/blob/master/preview.gif"],
+    "examples": ["https://github.com/HyopeR/react-native-location/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
