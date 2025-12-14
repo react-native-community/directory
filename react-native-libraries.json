@@ -11287,13 +11287,19 @@
     "githubUrl": "https://github.com/lodev09/react-native-true-sheet",
     "npmPkg": "@lodev09/react-native-true-sheet",
     "images": [
-      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview.gif"
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-ios.gif",
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-android.gif",
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-web.gif"
     ],
-    "examples": ["https://github.com/lodev09/react-native-true-sheet/tree/main/example"],
+    "examples": [
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/bare",
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/expo"
+    ],
     "ios": true,
     "android": true,
+    "web": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Use v1.0 or higher"
+    "newArchitectureNote": "Use v2.0 or higher"
   },
   {
     "githubUrl": "https://github.com/dylankenneally/react-native-ssh-sftp",
