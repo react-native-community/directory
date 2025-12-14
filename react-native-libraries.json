@@ -11291,7 +11291,10 @@
       "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-android.gif",
       "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-web.gif"
     ],
-    "examples": ["https://github.com/lodev09/react-native-true-sheet/tree/main/example"],
+    "examples": [
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/bare",
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/expo"
+    ],
     "ios": true,
     "android": true,
     "web": true,
