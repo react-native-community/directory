@@ -1,8 +1,8 @@
-import { type ReactNode, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { type ReactNode } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, Label } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A, Label } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = {
   name: string;
@@ -10,24 +10,19 @@ type Props = {
 };
 
 export default function DependencyRow({ name, version }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
   const versionLabel = getVersionLabel(version);
   const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 26;
 
   return (
-    <View style={[styles.dependencyEntry, hasLongVersion && styles.withLongVersion]}>
+    <View style={[tw`flex-row gap-x-2 justify-between font-mono`, hasLongVersion && tw`flex-wrap`]}>
       <A
         href={`https://www.npmjs.com/package/${name}`}
         target="_blank"
-        containerStyle={styles.linkContainer}
-        style={[styles.dependencyLabel, styles.mutedLink]}>
+        containerStyle={tw`flex-shrink`}
+        style={tw`text-xs leading-tight`}>
         {name}
       </A>
-      <Label
-        style={{
-          color: isDark ? darkColors.secondary : colors.gray5,
-        }}>
+      <Label style={tw`text-xs leading-tight text-palette-gray5 dark:text-secondary`}>
         {getVersionLabel(version)}
       </Label>
     </View>
@@ -37,7 +32,7 @@ export default function DependencyRow({ name, version }: Props) {
 function getVersionLabel(version: string): ReactNode {
   if (version.startsWith('http')) {
     return (
-      <A href={version} style={styles.mutedLink}>
+      <A href={version} style={tw`leading-tight`}>
         URL
       </A>
     );
@@ -55,26 +50,3 @@ function extractPatchedVersion(entry: string): string | null {
   const match = entry.match(/@npm%3A([^#]+)/);
   return match ? decodeURIComponent(match[1]) : null;
 }
-
-const styles = StyleSheet.create({
-  linkContainer: {
-    flexShrink: 1,
-  },
-  mutedLink: {
-    fontWeight: 300,
-    backgroundColor: 'transparent',
-  },
-  dependencyEntry: {
-    display: 'flex',
-    flexDirection: 'row',
-    columnGap: 8,
-    justifyContent: 'space-between',
-    fontFamily: 'monospace',
-  },
-  withLongVersion: {
-    flexWrap: 'wrap',
-  },
-  dependencyLabel: {
-    fontSize: 12,
-  },
-});

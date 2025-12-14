@@ -38,6 +38,10 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['Optimistic Display', 'ui-sans-serif', 'system-ui'],
+      mono: ['monospace', 'ui-monospace'],
+    },
     backgroundColor: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -68,7 +72,6 @@ export default {
     extend: {
       maxWidth: {
         layout: 1200,
-        // TODO: is it a great name? not really
         footer: 960,
       },
     },

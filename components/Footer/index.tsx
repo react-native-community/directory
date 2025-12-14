@@ -69,7 +69,7 @@ export default function Footer() {
         </View>
         <View style={[tw`flex-row px-4 mt-3`, isSmallScreen && tw`flex-col`]}>
           <View style={[tw`flex-col flex-1`, isSmallScreen && tw`items-center`]}>
-            <P style={tw`py-1.5 text-sm font-light text-palette-gray5 dark:text-secondary`}>
+            <P style={tw`py-1.5 text-[13px] font-light text-palette-gray5 dark:text-secondary`}>
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
                 Add it to the directory
@@ -78,7 +78,7 @@ export default function Footer() {
             </P>
             <P
               style={[
-                tw`py-1.5 text-sm font-light text-palette-gray5 dark:text-secondary`,
+                tw`py-1.5 text-[13px] font-light text-palette-gray5 dark:text-secondary`,
                 isSmallScreen && tw`items-center text-center`,
               ]}>
               Want to learn more? Check out the{' '}
