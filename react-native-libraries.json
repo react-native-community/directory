@@ -2085,9 +2085,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
+    "githubUrl": "https://github.com/Expensify/react-native-qrcode-svg",
     "ios": true,
     "android": true,
+    "web": true,
     "fireos": true,
     "expoGo": true,
     "vegaos": "@amazon-devices/react-native-qrcode-svg"
@@ -8252,7 +8253,7 @@
   },
   {
     "githubUrl": "https://github.com/clerk/javascript/tree/main/packages/expo",
-    "npmPkg": "@clerk/clerk-expo",
+    "npmPkg": "@clerk/expo",
     "examples": ["https://docs.clerk.dev/reference/clerk-expo"],
     "ios": true,
     "android": true,
@@ -18523,18 +18524,6 @@
     "githubUrl": "https://github.com/iwater/react-native-nitro-http-server",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/lukailun/react-native-console-viewer",
-    "examples": ["https://github.com/lukailun/react-native-console-viewer/tree/develop/example"],
-    "images": [
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Android.png",
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/iOS.png",
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Web.png"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true
   },
   {
     "githubUrl": "https://github.com/loqalabs/loqa-audio-bridge",
