@@ -2,6 +2,7 @@ import { Image, StyleSheet, View } from 'react-native';
 
 import { H2, A, P } from '~/common/styleguide';
 import Navigation from '~/components/Navigation';
+import NotFound from '~/components/Package/NotFound';
 import PageMeta from '~/components/PageMeta';
 
 type Props = {
@@ -10,6 +11,10 @@ type Props = {
 };
 
 export default function ErrorScene({ statusCode, reason }: Props) {
+  if (statusCode === 404) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />

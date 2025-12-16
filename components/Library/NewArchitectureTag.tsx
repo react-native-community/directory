@@ -1,8 +1,7 @@
-import * as HtmlElements from '@expo/html-elements';
 import { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { colors, darkColors, Label } from '~/common/styleguide';
+import { A, colors, darkColors, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
@@ -50,9 +49,7 @@ export function NewArchitectureTag({ library }: Props) {
         side="bottom"
         trigger={
           <View>
-            <HtmlElements.A
-              href="https://reactnative.dev/docs/new-architecture-intro"
-              target="_blank">
+            <A href="https://reactnative.dev/architecture/overview">
               <Tag
                 label={
                   status === NewArchSupportStatus.NewArchOnly
@@ -62,7 +59,7 @@ export function NewArchitectureTag({ library }: Props) {
                 icon={icon}
                 tagStyle={getTagColor(status, isDark)}
               />
-            </HtmlElements.A>
+            </A>
           </View>
         }>
         {status === NewArchSupportStatus.NewArchOnly && 'Only Supports New Architecture'}
