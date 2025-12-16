@@ -1,5 +1,5 @@
 import { type PropsWithChildren, type ReactElement, useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
 import { colors, darkColors, H1, H2, useLayout } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
@@ -10,7 +10,7 @@ type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
   header?: ReactElement;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }>;
 
 export default function Navigation({

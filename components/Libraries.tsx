@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { StyleSheet, View } from 'react-native';
 
 import LoadingContent from '~/components/Library/LoadingContent';
-import NotFoundContent from '~/components/NotFoundContent';
+import NotFound from '~/components/Package/NotFound';
 import { type LibraryType } from '~/types';
 
 type Props = {
@@ -15,7 +15,7 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
 
 export default function Libraries({ libraries }: Props) {
   if (!libraries || !libraries.length) {
-    return <NotFoundContent />;
+    return <NotFound />;
   }
 
   return (

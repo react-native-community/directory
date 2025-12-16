@@ -321,7 +321,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   topicsContainer: {
-    gap: 8,
+    columnGap: 8,
+    rowGap: 2,
     alignItems: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap',
