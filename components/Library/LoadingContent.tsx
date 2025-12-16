@@ -1,8 +1,9 @@
 import { type SVGAttributes, useContext } from 'react';
 import ContentLoader from 'react-content-loader';
 
-import { colors, darkColors, useLayout } from '~/common/styleguide';
+import { useLayout } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 type Props = {
   width?: string | number;
@@ -21,12 +22,8 @@ export default function LoadingContent({ width = '100%', height = 204, wrapperSt
       backgroundColor={isDark ? '#2a2e36' : '#f3f3f3'}
       foregroundColor={isDark ? '#383c42' : '#ecebeb'}
       style={{
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: isDark ? darkColors.border : colors.gray2,
-        borderRadius: 6,
-        marginBottom: 16,
-        boxSizing: 'border-box',
+        // TODO: support boxSizing prop
+        ...tw`border border-solid rounded-md mb-4 box-border border-palette-gray2 dark:border-default`,
         ...wrapperStyle,
       }}>
       <rect x="20" y="20" rx="3" ry="3" width="288" height="25" />
