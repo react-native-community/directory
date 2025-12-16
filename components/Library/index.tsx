@@ -7,6 +7,7 @@ import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
 import MetaData from './MetaData';
 import Thumbnail from './Thumbnail';
@@ -90,7 +91,11 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
             </A>
             <HoverEffect>
               <A href={library.githubUrl} style={styles.githubButton}>
-                <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
+                <GitHub
+                  width={20}
+                  height={20}
+                  style={tw`text-palette-gray5 dark:text-palette-gray4`}
+                />
               </A>
             </HoverEffect>
           </View>

@@ -1,10 +1,9 @@
 import { LI } from '@expo/html-elements';
-import { useContext } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
-import { A, colors, darkColors, useLayout } from '~/common/styleguide';
+import { A, useLayout } from '~/common/styleguide';
 import { CodeBrackets, GitHub, Snack } from '~/components/Icons';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 type Props = {
   example: string;
@@ -12,43 +11,30 @@ type Props = {
 };
 
 export default function ExampleBox({ example, index }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   return (
     <LI>
       <A
         href={example}
-        style={[
-          styles.exampleBox,
-          {
-            borderColor: isDark ? darkColors.border : colors.gray2,
-          },
-        ]}
-        hoverStyle={{
-          backgroundColor: isDark ? darkColors.dark : colors.gray1,
-        }}>
-        <View style={styles.exampleLabelWrapper}>
+        style={tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-palette-gray2 dark:border-default`}
+        hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
+        <View style={tw`flex flex-row items-center max-w-full gap-2.5`}>
           {example.includes('github.com') && (
-            <GitHub fill={isDark ? darkColors.pewter : colors.gray5} />
+            <GitHub style={tw`text-palette-gray5 dark:text-pewter`} />
           )}
           {example.includes('snack.expo.dev') && (
-            <Snack fill={isDark ? darkColors.pewter : colors.gray5} />
+            <Snack style={tw`text-palette-gray5 dark:text-pewter`} />
           )}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
-            <CodeBrackets fill={isDark ? darkColors.pewter : colors.gray5} />
+            <CodeBrackets style={tw`text-palette-gray5 dark:text-pewter`} />
           )}
-          <span style={{ ...styles.exampleLabel, color: isDark ? colors.white : colors.black }}>
-            {getExampleDescription(example)}
-          </span>
+          <span style={tw`font-light`}>{getExampleDescription(example)}</span>
         </View>
         <Text
           style={[
-            styles.exampleIndex,
-            {
-              color: isDark ? darkColors.pewter : colors.gray5,
-            },
-            isSmallScreen && { display: 'none' },
+            tw`opacity-30 text-2xl leading-[28px] text-palette-gray5 dark:text-pewter`,
+            isSmallScreen && tw`hidden`,
           ]}>
           #{index + 1}
         </Text>
@@ -69,34 +55,3 @@ export function getExampleDescription(url: string) {
   }
   return 'Code example';
 }
-
-const styles = StyleSheet.create({
-  exampleBox: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    textDecorationLine: 'none',
-  },
-  exampleLabelWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    fontWeight: 400,
-    maxWidth: '100%',
-    gap: 10,
-  },
-  exampleLabel: {
-    fontWeight: 300,
-  },
-  exampleIndex: {
-    opacity: 0.33,
-    fontSize: 24,
-  },
-});

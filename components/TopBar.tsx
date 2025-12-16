@@ -90,7 +90,7 @@ export default function TopBar() {
                   aria-label="GitHub repository"
                   href="https://github.com/react-native-community/directory"
                   style={[styles.button, styles.themeButtonSmall]}>
-                  <GitHub fill={colors.white} />
+                  <GitHub style={tw`text-white`} />
                 </Button>
               </View>
             }>
