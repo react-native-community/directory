@@ -43,7 +43,7 @@ export function NewArchitectureTag({ library }: Props) {
         side="bottom"
         trigger={
           <View>
-            <A href="https://reactnative.dev/architecture/overview" target="_blank">
+            <A href="https://reactnative.dev/architecture/overview">
               <Tag
                 label={
                   status === NewArchSupportStatus.NewArchOnly

@@ -2085,9 +2085,10 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/awesomejerry/react-native-qrcode-svg",
+    "githubUrl": "https://github.com/Expensify/react-native-qrcode-svg",
     "ios": true,
     "android": true,
+    "web": true,
     "fireos": true,
     "expoGo": true,
     "vegaos": "@amazon-devices/react-native-qrcode-svg"
@@ -8252,7 +8253,7 @@
   },
   {
     "githubUrl": "https://github.com/clerk/javascript/tree/main/packages/expo",
-    "npmPkg": "@clerk/clerk-expo",
+    "npmPkg": "@clerk/expo",
     "examples": ["https://docs.clerk.dev/reference/clerk-expo"],
     "ios": true,
     "android": true,
@@ -11287,13 +11288,19 @@
     "githubUrl": "https://github.com/lodev09/react-native-true-sheet",
     "npmPkg": "@lodev09/react-native-true-sheet",
     "images": [
-      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview.gif"
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-ios.gif",
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-android.gif",
+      "https://raw.githubusercontent.com/lodev09/react-native-true-sheet/main/docs/static/img/preview-web.gif"
     ],
-    "examples": ["https://github.com/lodev09/react-native-true-sheet/tree/main/example"],
+    "examples": [
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/bare",
+      "https://github.com/lodev09/react-native-true-sheet/tree/main/example/expo"
+    ],
     "ios": true,
     "android": true,
+    "web": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Use v1.0 or higher"
+    "newArchitectureNote": "Use v2.0 or higher"
   },
   {
     "githubUrl": "https://github.com/dylankenneally/react-native-ssh-sftp",
@@ -18516,19 +18523,8 @@
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-http-server",
     "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/lukailun/react-native-console-viewer",
-    "examples": ["https://github.com/lukailun/react-native-console-viewer/tree/develop/example"],
-    "images": [
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Android.png",
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/iOS.png",
-      "https://raw.githubusercontent.com/lukailun/react-native-console-viewer/develop/assets/Web.png"
-    ],
-    "ios": true,
     "android": true,
-    "web": true
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/loqalabs/loqa-audio-bridge",
@@ -18659,5 +18655,31 @@
     "examples": ["https://github.com/pagopa/io-app-design-system/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hyoper/react-native-animated-modal",
+    "npmPkg": "@hyoper/rn-animated-modal",
+    "images": ["https://github.com/HyopeR/react-native-animated-modal/blob/master/preview.gif"],
+    "examples": ["https://github.com/HyopeR/react-native-animated-modal/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hyoper/react-native-location",
+    "npmPkg": "@hyoper/rn-location",
+    "images": ["https://github.com/HyopeR/react-native-location/blob/master/preview.gif"],
+    "examples": ["https://github.com/HyopeR/react-native-location/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/iwater/react-native-nitro-crypto",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
