@@ -18523,7 +18523,8 @@
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-http-server",
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/loqalabs/loqa-audio-bridge",
