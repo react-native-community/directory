@@ -28,7 +28,7 @@ export default function PopularScene({ data }: PopularPageProps) {
         title="Popular libraries"
         description="Browse most popular recently libraries by platform."
       />
-      <ContentContainer style={tw`py-3 px-2`}>
+      <ContentContainer style={tw`py-4 px-2`}>
         <ExploreSection
           title="Core platforms"
           icon={ReactLogo}

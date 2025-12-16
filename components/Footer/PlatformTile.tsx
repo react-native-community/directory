@@ -1,29 +1,23 @@
-import { createElement, useContext, type ComponentType } from 'react';
+import { createElement, type ComponentType } from 'react';
 import { View } from 'react-native';
 
-import { A, colors, darkColors, P } from '~/common/styleguide';
+import { A, P } from '~/common/styleguide';
 import { type IconProps } from '~/components/Icons';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
 
-type PlatformProps = {
+type Props = {
   name: string;
   pkgName: string;
   url: string;
   Icon: ComponentType<IconProps>;
 };
 
-export default function Platform({ name, pkgName, url, Icon }: PlatformProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+export default function Platform({ name, pkgName, url, Icon }: Props) {
   return (
     <A href={url} hoverStyle={tw`rounded-lg bg-palette-gray2 dark:bg-default`}>
       <View style={tw`min-w-[160px] px-2 py-4 rounded-lg items-center`}>
-        {/* TODO: convert icons */}
         {createElement(Icon, {
-          fill: isDark ? darkColors.pewter : colors.gray5,
-          width: 32,
-          height: 32,
+          style: tw`size-8 text-palette-gray5 dark:text-pewter`,
         })}
         <P style={tw`mt-3`}>{name}</P>
         <P style={tw`text-xs font-mono rounded-sm px-2 leading-loose`}>{pkgName}</P>

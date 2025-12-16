@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { View } from 'react-native';
 
-import { A, colors, darkColors, Label } from '~/common/styleguide';
+import { A, Label } from '~/common/styleguide';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
@@ -19,14 +19,7 @@ export function NewArchitectureTag({ library }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
   const status = getNewArchSupportStatus(library);
 
-  const icon =
-    status === NewArchSupportStatus.Unsupported ? (
-      <XIcon style={tw`text-warning-dark dark:text-warning`} width={11} height={11} />
-    ) : status === NewArchSupportStatus.Supported || status === NewArchSupportStatus.NewArchOnly ? (
-      <Check style={tw`text-primary-dark`} width={12} height={12} />
-    ) : (
-      <Question style={tw`text-palette-gray4`} width={11} height={11} />
-    );
+  const icon = getTagIcon(status, isDark);
 
   const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
     <Label style={tw`flex my-1 text-white`}>{library.newArchitectureNote}</Label>
@@ -90,9 +83,18 @@ function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
         borderColor: isDark ? '#3d3206' : '#faebaf',
       };
     default:
-      return {
-        borderColor: isDark ? darkColors.border : colors.gray2,
-        borderStyle: 'dashed' as const,
-      };
+      return tw`border-dashed border-palette-gray2 dark:border-default`;
+  }
+}
+
+function getTagIcon(status: NewArchSupportStatus, isDark: boolean) {
+  switch (status) {
+    case NewArchSupportStatus.NewArchOnly:
+    case NewArchSupportStatus.Supported:
+      return <Check style={tw`text-primary-dark`} width={12} height={12} />;
+    case NewArchSupportStatus.Unsupported:
+      return <XIcon style={tw`text-warning-dark dark:text-warning`} width={11} height={11} />;
+    default:
+      return <Question style={tw`text-palette-gray4`} width={11} height={11} />;
   }
 }
