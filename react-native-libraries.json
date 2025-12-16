@@ -18675,5 +18675,12 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/iwater/react-native-nitro-crypto",
+    "npmPkg": "react-native-nitro-crypto",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
