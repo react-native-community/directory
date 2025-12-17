@@ -100,7 +100,7 @@ type CustomTextProps = TextProps &
     numberOfLines?: number;
   }>;
 
-function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
+export function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const { isDark } = useContext(CustomAppearanceContext);
 

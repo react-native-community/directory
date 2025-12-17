@@ -1,15 +1,13 @@
 import Link from 'next/link';
-import { useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { View, type ViewStyle } from 'react-native';
 
-import { colors, Caption, darkColors, HoverEffect } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Caption, HoverEffect } from '~/common/styleguide';
+import { Arrow } from '~/components/Icons';
 import { type Query } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { getPageQuery } from '~/util/search';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-import { Arrow } from './Icons';
 
 type Props = {
   query: Query;
@@ -21,39 +19,6 @@ type Props = {
 type ArrowButtonProps = {
   disabled?: boolean;
 };
-
-function BackArrow({ disabled }: ArrowButtonProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-  return (
-    <View
-      style={[
-        styles.rotate,
-        styles.arrowContainer,
-        {
-          backgroundColor: isDark ? darkColors.border : colors.gray2,
-        },
-        disabled && styles.disabled,
-      ]}>
-      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
-    </View>
-  );
-}
-
-function ForwardArrow({ disabled }: ArrowButtonProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-  return (
-    <View
-      style={[
-        styles.arrowContainer,
-        {
-          backgroundColor: isDark ? darkColors.border : colors.gray2,
-        },
-        disabled && styles.disabled,
-      ]}>
-      <Arrow height={12} width={9} fill={isDark ? colors.white : colors.black} />
-    </View>
-  );
-}
 
 export default function Pagination({ query, total, style, basePath = '/' }: Props) {
   const currentOffset = query.offset ? parseInt(query.offset, 10) : 0;
@@ -70,7 +35,7 @@ export default function Pagination({ query, total, style, basePath = '/' }: Prop
   const pageQuery = getPageQuery(basePath, query);
 
   return (
-    <View style={[styles.container, style]}>
+    <View style={[tw`flex-row items-center justify-end`, style]}>
       {backDisabled ? (
         <BackArrow disabled />
       ) : (
@@ -80,14 +45,13 @@ export default function Pagination({ query, total, style, basePath = '/' }: Prop
               ...pageQuery,
               offset: (currentOffset - NUM_PER_PAGE).toString(),
             })}
-            style={{ borderRadius: 4 }}
+            style={tw`rounded`}
             aria-label="Previous page">
             <BackArrow />
           </Link>
         </HoverEffect>
       )}
-
-      <Caption style={styles.text}>
+      <Caption style={tw`mx-1.5 min-w-15 text-center`}>
         {currentPage > 0 ? currentPage : '1'} of {totalPages}
       </Caption>
       {forwardDisabled ? (
@@ -99,7 +63,7 @@ export default function Pagination({ query, total, style, basePath = '/' }: Prop
               ...pageQuery,
               offset: (currentOffset + NUM_PER_PAGE).toString(),
             })}
-            style={{ borderRadius: 4 }}
+            style={tw`rounded`}
             aria-label="Next page">
             <ForwardArrow />
           </Link>
@@ -109,32 +73,26 @@ export default function Pagination({ query, total, style, basePath = '/' }: Prop
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    flexGrow: 0,
-    flexBasis: 1,
-    minHeight: 28,
-  },
-  arrowContainer: {
-    height: 24,
-    width: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-  },
-  rotate: {
-    transform: 'rotate(180deg)',
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  text: {
-    marginHorizontal: 6,
-    minWidth: 60,
-    textAlign: 'center',
-  },
-});
+function BackArrow({ disabled }: ArrowButtonProps) {
+  return (
+    <View
+      style={[
+        tw`size-6 items-center justify-center rounded rotate-180 bg-palette-gray2 dark:bg-dark-brighter`,
+        disabled && tw`opacity-50`,
+      ]}>
+      <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />
+    </View>
+  );
+}
+
+function ForwardArrow({ disabled }: ArrowButtonProps) {
+  return (
+    <View
+      style={[
+        tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-dark-brighter`,
+        disabled && tw`opacity-50`,
+      ]}>
+      <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />
+    </View>
+  );
+}
