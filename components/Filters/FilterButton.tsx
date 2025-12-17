@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { colors, P } from '~/common/styleguide';
 import { type Query } from '~/types';
+import tw from '~/util/tailwind';
 
 import { ClearButton } from './ClearButton';
 import {
@@ -17,7 +16,7 @@ import {
 import { Button } from '../Button';
 import { Filter as FilterIcon } from '../Icons';
 
-type FilterButtonProps = {
+type Props = {
   query: Query;
   onPress: () => void;
   onClearAllPress: () => void;
@@ -33,9 +32,7 @@ export function FilterButton({
   onClearAllPress,
   containerStyle,
   style,
-}: FilterButtonProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+}: Props) {
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
     ...FILTER_REQUIRES_MAIN_SEARCH.map(filter => filter.param),
@@ -51,77 +48,35 @@ export function FilterButton({
   );
   const isFilterCount = !!filterCount;
 
-  const backgroundColor = isDark ? darkColors.border : colors.gray5;
-  const borderLeftColor = isDark ? darkColors.dark : colors.gray6;
-
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View style={[tw`flex-row items-center rounded`, containerStyle]}>
       <Button
         onPress={onPress}
         style={[
-          styles.button,
-          { backgroundColor },
-          isFilterVisible && styles.activeButton,
-          isFilterCount && styles.leftBorderRadiusOnly,
+          tw`h-full px-2 bg-palette-gray5 dark:bg-dark-brighter`,
+          isFilterVisible && tw`bg-primary-dark`,
+          isFilterCount && tw`rounded-r-none`,
           style,
         ]}>
-        <View style={styles.displayHorizontal}>
-          <View style={styles.iconContainer}>
+        <View style={tw`flex-row items-center`}>
+          <View style={tw`top-px`}>
             <FilterIcon
               fill={isFilterVisible ? colors.white : isFilterCount ? colors.primary : colors.white}
               width={14}
               height={12}
             />
           </View>
-          <P style={styles.buttonText}>Filters{isFilterCount ? `: ${filterCount}` : ''}</P>
+          <P style={tw`text-sm ml-1.5 text-white select-none`}>
+            Filters{isFilterCount ? `: ${filterCount}` : ''}
+          </P>
         </View>
       </Button>
       {filterCount > 0 && (
-        <View style={[styles.clearButtonContainer, { backgroundColor, borderLeftColor }]}>
+        <View
+          style={tw`h-full justify-center items-center rounded-r border-l border-palette-gray6 bg-palette-gray5 dark:bg-dark-brighter dark:border-dark`}>
           <ClearButton onPress={onClearAllPress} />
         </View>
       )}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 4,
-  },
-  button: {
-    height: '100%',
-    paddingHorizontal: 8,
-  },
-  activeButton: {
-    backgroundColor: darkColors.primaryDark,
-  },
-  leftBorderRadiusOnly: {
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-  },
-  buttonText: {
-    fontSize: 14,
-    color: colors.white,
-    marginLeft: 6,
-    fontWeight: '500',
-    userSelect: 'none',
-  },
-  iconContainer: {
-    top: 1,
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  clearButtonContainer: {
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    borderLeftWidth: 1,
-  },
-});

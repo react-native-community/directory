@@ -1,7 +1,7 @@
 import SHA256 from 'crypto-js/sha256';
 import { View } from 'react-native';
 
-import { A, Label } from '~/common/styleguide';
+import { A, Caption, Label } from '~/common/styleguide';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
 import { type NpmUser } from '~/types';
@@ -13,6 +13,7 @@ type Props = {
 };
 
 const authorContainerStyle = tw`flex flex-row gap-3 items-center bg-transparent`;
+const labelStyle = tw`leading-[18px]`;
 const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
 
 export default function PackageAuthor({ author, compact }: Props) {
@@ -26,6 +27,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   const potentialHref = author.url ?? author.email;
 
+  // URL
   if (potentialHref && !potentialHref.includes('@')) {
     if (potentialHref.includes('github.com/')) {
       const [, potentialGHUsername] = potentialHref.split('github.com/');
@@ -37,7 +39,7 @@ export default function PackageAuthor({ author, compact }: Props) {
           <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
             <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <span>{ghUsername}</span>
+              <Caption style={labelStyle}>{ghUsername}</Caption>
               <span style={sublabelStyle}>{validName}</span>
             </View>
           </A>
@@ -48,7 +50,7 @@ export default function PackageAuthor({ author, compact }: Props) {
     return (
       <View>
         <A href={potentialHref} target="_blank">
-          <Label>{author.name ?? 'Unknown'}</Label>
+          <Caption style={labelStyle}>{author.name ?? 'Unknown'}</Caption>
         </A>
       </View>
     );
@@ -68,8 +70,8 @@ export default function PackageAuthor({ author, compact }: Props) {
                 alt={`${author.name} avatar`}
               />
             }>
-            <View style={tw`flex`}>
-              <span>{author.name}</span>
+            <View>
+              <Caption style={labelStyle}>{author.name}</Caption>
               <span style={sublabelStyle}>{potentialHref}</span>
             </View>
           </Tooltip>
@@ -84,7 +86,7 @@ export default function PackageAuthor({ author, compact }: Props) {
           alt={`${author.name} avatar`}
         />
         <View>
-          <span>{author.name}</span>
+          <Caption style={labelStyle}>{author.name}</Caption>
           <span style={sublabelStyle}>{potentialHref}</span>
         </View>
       </View>
@@ -93,7 +95,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   return (
     <View>
-      <Label>{getValidName(author.name) ?? 'Unknown'}</Label>
+      <Caption style={labelStyle}>{getValidName(author.name) ?? 'Unknown'}</Caption>
     </View>
   );
 }

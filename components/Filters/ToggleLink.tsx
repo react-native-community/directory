@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { P } from '~/common/styleguide';
-import { type Query } from '~/types';
+import { type FilterParamsType, type Query } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -11,20 +11,19 @@ import CheckBox from '../CheckBox';
 
 type Props = {
   query: Query;
-  paramName: keyof Query;
-  title: string;
+  filterParam: FilterParamsType;
   basePath?: string;
 };
 
-export function ToggleLink({ query, paramName, title, basePath = '/' }: Props) {
+export function ToggleLink({ query, filterParam, basePath = '/' }: Props) {
   const [isHovered, setHovered] = useState<boolean>(false);
-  const isSelected = !!query[paramName];
+  const isSelected = !!query[filterParam.param];
 
   return (
     <Link
       href={urlWithQuery(basePath, {
         ...query,
-        [paramName]: !isSelected,
+        [filterParam.param]: !isSelected,
         offset: null,
       })}
       style={tw`no-underline`}>
@@ -39,7 +38,7 @@ export function ToggleLink({ query, paramName, title, basePath = '/' }: Props) {
             tw`text-sm font-light leading-[18px]`,
             isHovered && tw`text-palette-gray5 dark:text-palette-gray3`,
           ]}>
-          {title}
+          {filterParam.title}
         </P>
       </View>
     </Link>

@@ -163,7 +163,6 @@ export default function ReadmeBox({
                   <ReadmeCodeBlock
                     code={children.props.children}
                     lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
-                    isDark={isDark}
                   />
                 );
               },
