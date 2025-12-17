@@ -15,11 +15,11 @@ export function ScoringCriterion({ children, headline, style, score = undefined 
 
   return (
     <View style={[tw`py-3.5 px-5 border rounded-md mb-4 border-default`, style]}>
-      <Headline style={tw`flex gap-3 text-lg font-semibold mb-1 leading-[24px]`}>
+      <Headline style={tw`flex gap-3 text-[17px] font-semibold mb-1 leading-[22px]`}>
         {score && (
           <Headline
             style={[
-              tw`flex items-center justify-center border-default min-w-[50px] leading-[21px] text-base font-bold border rounded text-center`,
+              tw`flex items-center justify-center border-default min-w-[50px] text-[15px] font-bold border rounded text-center`,
               isPositiveModifier ? tw`text-success` : tw`text-error`,
             ]}>
             {isPositiveModifier ? '+' : ''}
