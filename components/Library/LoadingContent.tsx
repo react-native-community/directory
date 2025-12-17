@@ -22,7 +22,6 @@ export default function LoadingContent({ width = '100%', height = 204, wrapperSt
       backgroundColor={isDark ? '#2a2e36' : '#f3f3f3'}
       foregroundColor={isDark ? '#383c42' : '#ecebeb'}
       style={{
-        // TODO: support boxSizing prop
         ...tw`border border-solid rounded-md mb-4 box-border border-palette-gray2 dark:border-default`,
         ...wrapperStyle,
       }}>

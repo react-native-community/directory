@@ -49,7 +49,6 @@ export default {
       ...palette,
 
       // TODO: temporary values, replace with proper gray palette for dark mode
-      'sub-header': 'var(--dark)',
       dark: 'var(--dark)',
       'very-dark': 'var(--very-dark)',
       'dark-brighter': 'var(--dark-brighter)',
@@ -59,6 +58,9 @@ export default {
       current: 'currentColor',
       default: 'var(--border)',
       ...palette,
+
+      // TODO: temporary values, replace with proper gray palette for dark mode
+      dark: 'var(--dark)',
     },
     colors: {
       transparent: 'transparent',

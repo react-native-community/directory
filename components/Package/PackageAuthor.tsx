@@ -1,7 +1,7 @@
 import SHA256 from 'crypto-js/sha256';
 import { View } from 'react-native';
 
-import { A, Label } from '~/common/styleguide';
+import { A, Caption, Label } from '~/common/styleguide';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
 import { type NpmUser } from '~/types';
@@ -13,6 +13,7 @@ type Props = {
 };
 
 const authorContainerStyle = tw`flex flex-row gap-3 items-center bg-transparent`;
+const labelStyle = tw`leading-[18px]`;
 const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
 
 export default function PackageAuthor({ author, compact }: Props) {
@@ -24,9 +25,12 @@ export default function PackageAuthor({ author, compact }: Props) {
     );
   }
 
-  if (author?.url && !author.url.includes('@')) {
-    if (author.url.includes('github.com/')) {
-      const [, potentialGHUsername] = author.url.split('github.com/');
+  const potentialHref = author.url ?? author.email;
+
+  // URL
+  if (potentialHref && !potentialHref.includes('@')) {
+    if (potentialHref.includes('github.com/')) {
+      const [, potentialGHUsername] = potentialHref.split('github.com/');
       const ghUsername = potentialGHUsername.replace(/[<>()]/g, '');
       const validName = getValidName(author.name);
 
@@ -35,7 +39,7 @@ export default function PackageAuthor({ author, compact }: Props) {
           <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
             <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <span>{ghUsername}</span>
+              <Caption style={labelStyle}>{ghUsername}</Caption>
               <span style={sublabelStyle}>{validName}</span>
             </View>
           </A>
@@ -45,16 +49,15 @@ export default function PackageAuthor({ author, compact }: Props) {
 
     return (
       <View>
-        <A href={author.url} target="_blank">
-          <Label>{author.name ?? 'Unknown'}</Label>
+        <A href={potentialHref} target="_blank">
+          <Caption style={labelStyle}>{author.name ?? 'Unknown'}</Caption>
         </A>
       </View>
     );
   }
 
-  if (author.email || (author?.url && author.url.includes('@'))) {
-    const email = author.email ?? author.url;
-
+  // Email
+  if (potentialHref && potentialHref.includes('@')) {
     if (compact) {
       return (
         <View style={authorContainerStyle}>
@@ -63,13 +66,13 @@ export default function PackageAuthor({ author, compact }: Props) {
             delayDuration={100}
             trigger={
               <UserAvatar
-                src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
+                src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
                 alt={`${author.name} avatar`}
               />
             }>
-            <View style={tw`flex`}>
-              <span>{author.name}</span>
-              <span style={sublabelStyle}>{email}</span>
+            <View>
+              <Caption style={labelStyle}>{author.name}</Caption>
+              <span style={sublabelStyle}>{potentialHref}</span>
             </View>
           </Tooltip>
         </View>
@@ -79,12 +82,12 @@ export default function PackageAuthor({ author, compact }: Props) {
     return (
       <View style={authorContainerStyle}>
         <UserAvatar
-          src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
+          src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
           alt={`${author.name} avatar`}
         />
         <View>
-          <span>{author.name}</span>
-          <span style={sublabelStyle}>{email}</span>
+          <Caption style={labelStyle}>{author.name}</Caption>
+          <span style={sublabelStyle}>{potentialHref}</span>
         </View>
       </View>
     );
@@ -92,7 +95,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   return (
     <View>
-      <Label>{getValidName(author.name) ?? 'Unknown'}</Label>
+      <Caption style={labelStyle}>{getValidName(author.name) ?? 'Unknown'}</Caption>
     </View>
   );
 }

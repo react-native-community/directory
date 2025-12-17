@@ -93,14 +93,14 @@ export function Badge({ width, height, fill = colors.black }: IconProps) {
   );
 }
 
-export function Calendar({ width, height, fill = colors.black }: IconProps) {
+export function Calendar({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 18} viewBox="0 0 16 18" fill="none">
+    <Svg width={width ?? 16} height={height ?? 18} viewBox="0 0 16 18" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M5.238.79a1 1 0 011 1v.164h3.874V1.79a1 1 0 112 0v.163h3.802v15.77H.144V1.954h4.094V1.79a1 1 0 011-1zm4.874 3.164v.023a1 1 0 102 0v-.023h1.802v3.101H2.144V3.954h2.094v.023a1 1 0 102 0v-.023h3.874zM2.144 8.626v7.098h11.77V8.612l-11.77.014z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -626,13 +626,13 @@ export function Snack({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Copy({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function Copy({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256">
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <Polyline
         points="168 168 216 168 216 40 88 40 88 88"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeDasharray="30 20"
         strokeWidth="12"
       />
@@ -642,7 +642,7 @@ export function Copy({ width = 24, height = 24, fill = colors.black }: IconProps
         width="128"
         height="128"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="16"
