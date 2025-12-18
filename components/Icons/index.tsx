@@ -11,14 +11,14 @@ export type IconProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-export function Search({ width, height, fill = colors.black }: IconProps) {
+export function Search({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" fill="none">
+    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M7.572.3A7.19 7.19 0 00.38 7.49a7.19 7.19 0 007.192 7.188 7.163 7.163 0 004.26-1.396l5.092 5.02 1.456-1.475-5.071-5A7.19 7.19 0 007.573.3zM2.452 7.49a5.118 5.118 0 015.12-5.117c2.828 0 5.12 2.29 5.12 5.117a5.118 5.118 0 01-5.12 5.117 5.118 5.118 0 01-5.12-5.117z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );

@@ -1,4 +1,4 @@
-import { View, type ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import { type Query } from '~/types';
@@ -21,18 +21,10 @@ type Props = {
   onPress: () => void;
   onClearAllPress: () => void;
   isFilterVisible: boolean;
-  containerStyle?: ViewStyle;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
-export function FilterButton({
-  isFilterVisible,
-  query,
-  onPress,
-  onClearAllPress,
-  containerStyle,
-  style,
-}: Props) {
+export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress, style }: Props) {
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
     ...FILTER_REQUIRES_MAIN_SEARCH.map(filter => filter.param),
@@ -49,7 +41,7 @@ export function FilterButton({
   const isFilterCount = !!filterCount;
 
   return (
-    <View style={[tw`flex-row items-center rounded`, containerStyle]}>
+    <View style={tw`flex-row items-center rounded`}>
       <Button
         onPress={onPress}
         style={[
