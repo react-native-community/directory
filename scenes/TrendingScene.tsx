@@ -43,7 +43,6 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
         description="See the libraries that are trending today.">
         <View style={tw`mx-auto mt-3`}>
           <FilterButton
-            containerStyle={tw`h-8`}
             style={tw`h-8 w-40`}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
