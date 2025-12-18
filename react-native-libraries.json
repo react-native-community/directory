@@ -18690,8 +18690,12 @@
   },
   {
     "githubUrl": "https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/packages/react-native-nitro-markdown",
-    "examples": ["https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/apps/example"],
-    "images": ["https://raw.githubusercontent.com/JoaoPauloCMarra/react-native-nitro-markdown/main/readme/demo.gif"],
+    "examples": [
+      "https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/apps/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/JoaoPauloCMarra/react-native-nitro-markdown/main/readme/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
