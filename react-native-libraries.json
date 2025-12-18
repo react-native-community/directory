@@ -6932,7 +6932,7 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/wix/react-native-ui-lib",
+    "githubUrl": "https://github.com/wix/react-native-ui-lib/tree/master/packages/react-native-ui-lib",
     "examples": ["https://github.com/wix/react-native-ui-lib/tree/master/demo"],
     "images": [
       "https://user-images.githubusercontent.com/1780255/72094962-3044b280-3320-11ea-8e41-aa83743bafb9.gif",
@@ -14450,9 +14450,9 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/callstack/react-native-brownfield",
+    "githubUrl": "https://github.com/callstack/react-native-brownfield/tree/main/packages/react-native-brownfield",
     "npmPkg": "@callstack/react-native-brownfield",
-    "examples": ["https://github.com/callstack/react-native-brownfield/tree/main/example"],
+    "examples": ["https://github.com/callstack/react-native-brownfield/tree/main/apps/example"],
     "ios": true,
     "android": true
   },
@@ -18684,6 +18684,14 @@
   },
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-buffer",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/packages/react-native-nitro-markdown",
+    "examples": ["https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/apps/example"],
+    "images": ["https://raw.githubusercontent.com/JoaoPauloCMarra/react-native-nitro-markdown/main/readme/demo.gif"],
     "ios": true,
     "android": true,
     "newArchitecture": true
