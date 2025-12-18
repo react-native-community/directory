@@ -296,7 +296,6 @@ export async function fetchGithubDataThrottled({
   for (const chunk of chunks) {
     if (chunks.indexOf(chunk) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
-      console.log(`Sleeping ${staggerMs}ms`);
       await sleep(staggerMs);
     }
 
@@ -396,7 +395,6 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
 
   for (const [chunkIndex, chunk] of bulkList.entries()) {
     await sleep(SLEEP_TIME);
-    console.log(`Sleeping ${SLEEP_TIME}ms`);
 
     const data = await fetchNpmStatDataBulk(chunk);
     console.log(`${NPM_STATS_CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
@@ -418,7 +416,6 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
 
     await sleep(SLEEP_TIME / 10);
     const shouldLog = i % CHUNK_SIZE === 0;
-    shouldLog && console.log(`Sleeping ${SLEEP_TIME / 5}ms`);
 
     const data = await fetchNpmRegistryData(entry);
     shouldLog && console.log(`${CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`);
