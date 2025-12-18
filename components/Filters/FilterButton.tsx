@@ -1,6 +1,6 @@
 import { View, type ViewStyle } from 'react-native';
 
-import { colors, P } from '~/common/styleguide';
+import { P } from '~/common/styleguide';
 import { type Query } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -61,7 +61,7 @@ export function FilterButton({
         <View style={tw`flex-row items-center`}>
           <View style={tw`top-px`}>
             <FilterIcon
-              fill={isFilterVisible ? colors.white : isFilterCount ? colors.primary : colors.white}
+              style={[tw`text-white`, !isFilterVisible && isFilterCount && tw`text-primary`]}
               width={14}
               height={12}
             />

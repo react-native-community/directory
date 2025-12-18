@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { layout, colors, H5, P, darkColors, useLayout } from '~/common/styleguide';
+import { layout, colors, H5, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -19,13 +19,7 @@ export default function TopBar() {
 
   return (
     <HtmlHeader
-      style={[
-        tw`py-3.5 justify-center items-center overflow-hidden gap-y-2.5`,
-        {
-          // TODO: figure out how to use CSS var or downgrade to Tailwind v3
-          backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
-        },
-      ]}>
+      style={tw`py-3.5 justify-center items-center overflow-hidden gap-y-2.5 bg-palette-gray7 dark:bg-very-dark`}>
       <View style={styles.headerContents}>
         <View style={[styles.displayHorizontal, !isBelowMaxWidth && styles.headerSide]}>
           <Logo style={tw`text-primary`} width={29} height={26} />
@@ -35,15 +29,7 @@ export default function TopBar() {
             </Link>
           </H5>
         </View>
-        <View
-          style={[
-            isBelowMaxWidth && {
-              display: 'contents',
-            },
-            isSmallScreen && {
-              display: 'none',
-            },
-          ]}>
+        <View style={[isBelowMaxWidth && tw`contents`, isSmallScreen && tw`hidden`]}>
           <ContentContainer style={styles.tabsWrapper}>
             <NavigationTab title="Explore" path="/" />
             <NavigationTab title="Popular" />
@@ -63,7 +49,11 @@ export default function TopBar() {
                   aria-label="Toggle theme"
                   onPress={() => setIsDark(!isDark)}
                   style={[styles.button, styles.themeButtonSmall]}>
-                  {isDark ? <ThemeLight fill={colors.white} /> : <ThemeDark fill={colors.white} />}
+                  {tw.prefixMatch('dark') ? (
+                    <ThemeLight style={tw`text-white`} />
+                  ) : (
+                    <ThemeDark style={tw`text-white`} />
+                  )}
                 </Button>
               </View>
             }>
@@ -76,7 +66,7 @@ export default function TopBar() {
                   aria-label="Tools"
                   href="/tools"
                   style={[styles.button, styles.themeButtonSmall]}>
-                  <Tools fill={colors.white} />
+                  <Tools style={tw`text-white`} />
                 </Button>
               </View>
             }>
@@ -84,7 +74,7 @@ export default function TopBar() {
           </Tooltip>
           <Tooltip
             trigger={
-              <View style={{ marginRight: 4 }}>
+              <View style={tw`mr-1`}>
                 <Button
                   openInNewTab
                   aria-label="GitHub repository"
@@ -99,22 +89,19 @@ export default function TopBar() {
           <Button
             openInNewTab
             href="https://github.com/react-native-community/directory/?tab=readme-ov-file#how-do-i-add-a-library"
-            style={[styles.button, isSmallScreen && { width: 36 }]}>
-            <View style={[styles.displayHorizontal, { gap: 4 }]}>
+            style={[styles.button, isSmallScreen && tw`w-8.5`]}>
+            <View style={tw`flex-row items-center gap-1`}>
               <Plus
                 width={14}
                 height={14}
-                fill={colors.white}
-                style={!isSmallScreen ? { marginLeft: -2 } : undefined}
+                style={[tw`text-white`, !isSmallScreen && tw`-ml-0.5`]}
               />
-              {!isSmallScreen && (
-                <P style={{ marginLeft: 4, color: colors.white }}>Add a library</P>
-              )}
+              {!isSmallScreen && <P style={tw`ml-1 text-white`}>Add a library</P>}
             </View>
           </Button>
         </View>
       </View>
-      <ContentContainer style={[styles.tabsWrapper, !isSmallScreen && { display: 'none' }]}>
+      <ContentContainer style={[styles.tabsWrapper, !isSmallScreen && tw`hidden`]}>
         <NavigationTab title="Explore" path="/" />
         <NavigationTab title="Popular" />
         <NavigationTab title="Trending" />

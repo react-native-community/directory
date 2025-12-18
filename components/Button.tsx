@@ -25,7 +25,7 @@ export function Button({
   const isLink = !!href;
   const buttonStyle = [
     // TODO: support outline offset
-    tw`justify-center items-center rounded outline-offset-1 bg-primary-dark`,
+    tw`justify-center items-center rounded outline-offset-1 bg-primary-darker dark:bg-primary-dark`,
     style,
   ];
 
@@ -36,7 +36,7 @@ export function Button({
       {isLink ? (
         <A
           href={href}
-          style={{ borderRadius: 4, fontFamily: 'inherit', fontSize: 'inherit' }}
+          style={tw`rounded font-sans`}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
           <Pressable focusable={false} style={buttonStyle} accessible={false}>

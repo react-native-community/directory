@@ -314,19 +314,11 @@ select {
 /* THREE DOTS LOADER */
 
 #dots-loader {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 6px;
+  @apply inline-flex items-center justify-center flex-row gap-1.5;
 
   .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
+    @apply size-2.5 rounded-[50%] opacity-90 inline-block bg-palette-gray4 dark:bg-pewter;
     animation: dots-bounce 1.2s infinite ease-in-out both;
-    opacity: 0.9;
 
     &:nth-child(1) {
       animation-delay: 0s;
@@ -346,12 +338,10 @@ select {
   0%,
   80%,
   100% {
-    transform: scale(0);
-    opacity: 0.4;
+    @apply scale-0 opacity-40;
   }
   40% {
-    transform: scale(1);
-    opacity: 1;
+    @apply scale-100 opacity-100;
   }
 }
 

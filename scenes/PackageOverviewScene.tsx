@@ -68,7 +68,6 @@ export default function PackageOverviewScene({
             <ReadmeBoxWithLoading
               packageName={packageName}
               isTemplate={library.template ?? false}
-              isDark={isDark}
               githubUrl={library.githubUrl}
             />
             {library.examples && library.examples.length > 0 && (

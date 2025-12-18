@@ -158,20 +158,12 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
   },
   columnOne: {
-    ...Platform.select({
-      web: {
-        flex: 1,
-      },
-    }),
+    flex: 1,
     padding: 16,
     paddingLeft: 20,
   },
   columnTwo: {
-    ...Platform.select({
-      web: {
-        flex: 0.35,
-      },
-    }),
+    flex: 0.35,
     padding: 16,
     borderLeftWidth: 1,
   },

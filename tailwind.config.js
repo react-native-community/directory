@@ -6,6 +6,7 @@ const palette = {
 
   primary: 'var(--primary)',
   'primary-dark': 'var(--primary-dark)',
+  'primary-darker': 'var(--primary-darker)',
 
   secondary: 'var(--secondary)',
 
