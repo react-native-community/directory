@@ -26,9 +26,12 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   const sublabelStyle = { color: isDark ? darkColors.secondary : colors.gray4 };
 
-  if (author?.url && !author.url.includes('@')) {
-    if (author.url.includes('github.com/')) {
-      const [, potentialGHUsername] = author.url.split('github.com/');
+  const potentialHref = author.url ?? author.email;
+
+  // URL
+  if (potentialHref && !potentialHref.includes('@')) {
+    if (potentialHref.includes('github.com/')) {
+      const [, potentialGHUsername] = potentialHref.split('github.com/');
       const ghUsername = potentialGHUsername.replace(/[<>()]/g, '');
       const validName = getValidName(author.name);
 
@@ -50,16 +53,15 @@ export default function PackageAuthor({ author, compact }: Props) {
 
     return (
       <View>
-        <A href={author.url} target="_blank">
+        <A href={potentialHref} target="_blank">
           <Label>{author.name ?? 'Unknown'}</Label>
         </A>
       </View>
     );
   }
 
-  if (author.email || (author?.url && author.url.includes('@'))) {
-    const email = author.email ?? author.url;
-
+  // Email
+  if (potentialHref && potentialHref.includes('@')) {
     if (compact) {
       return (
         <View style={styles.authorContainer}>
@@ -68,13 +70,13 @@ export default function PackageAuthor({ author, compact }: Props) {
             delayDuration={100}
             trigger={
               <UserAvatar
-                src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
+                src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
                 alt={`${author.name} avatar`}
               />
             }>
             <View style={styles.tooltipContent}>
               <span>{author.name}</span>
-              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{email}</span>
+              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{potentialHref}</span>
             </View>
           </Tooltip>
         </View>
@@ -84,12 +86,12 @@ export default function PackageAuthor({ author, compact }: Props) {
     return (
       <View style={styles.authorContainer}>
         <UserAvatar
-          src={`https://gravatar.com/avatar/${SHA256(email!).toString()}?d=retro`}
+          src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
           alt={`${author.name} avatar`}
         />
         <View>
           <span style={{ color: isDark ? colors.white : colors.black }}>{author.name}</span>
-          <span style={{ ...styles.sublabel, ...sublabelStyle }}>{email}</span>
+          <span style={{ ...styles.sublabel, ...sublabelStyle }}>{potentialHref}</span>
         </View>
       </View>
     );
