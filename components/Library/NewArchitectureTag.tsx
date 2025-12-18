@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import { View } from 'react-native';
 
 import { A, Label } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
+import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import { Check, Question, XIcon } from '../Icons';
@@ -16,10 +15,8 @@ type Props = {
 };
 
 export function NewArchitectureTag({ library }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const status = getNewArchSupportStatus(library);
-
-  const icon = getTagIcon(status, isDark);
+  const icon = getTagIcon(status);
 
   const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
     <Label style={tw`flex my-1 text-white`}>{library.newArchitectureNote}</Label>
@@ -32,7 +29,8 @@ export function NewArchitectureTag({ library }: Props) {
     !library.unmaintained && (
       <Label style={tw`flex my-1 text-white`}>
         {' '}
-        {library.alternatives.length > 1 ? 'Alternatives:' : 'Alternative:'}{' '}
+        {pluralize('Alternative', library.alternatives.length)}
+        {': '}
         {library.alternatives.join(', ')}{' '}
       </Label>
     );
@@ -51,7 +49,7 @@ export function NewArchitectureTag({ library }: Props) {
                     : 'New Architecture'
                 }
                 icon={icon}
-                tagStyle={getTagColor(status, isDark)}
+                tagStyle={getTagColor(status)}
               />
             </A>
           </View>
@@ -69,25 +67,19 @@ export function NewArchitectureTag({ library }: Props) {
   );
 }
 
-function getTagColor(status: NewArchSupportStatus, isDark: boolean) {
+function getTagColor(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return {
-        backgroundColor: isDark ? '#142733' : '#edf6fc',
-        borderColor: isDark ? '#203b4d' : '#d4ebfa',
-      };
+      return tw`bg-[#edf6fc] border-[#d4ebfa] dark:bg-[#142733] dark:border-[#203b4d]`;
     case NewArchSupportStatus.Unsupported:
-      return {
-        backgroundColor: isDark ? '#292005' : '#fffae8',
-        borderColor: isDark ? '#3d3206' : '#faebaf',
-      };
+      return tw`bg-[#fffae8] border-[#faebaf] dark:bg-[#292005] dark:border-[#3d3206]`;
     default:
       return tw`border-dashed border-palette-gray2 dark:border-default`;
   }
 }
 
-function getTagIcon(status: NewArchSupportStatus, isDark: boolean) {
+function getTagIcon(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:

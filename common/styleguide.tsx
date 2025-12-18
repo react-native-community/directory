@@ -1,13 +1,7 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import {
-  type ComponentType,
-  type CSSProperties,
-  type PropsWithChildren,
-  useContext,
-  useState,
-} from 'react';
+import { type ComponentType, type CSSProperties, type PropsWithChildren, useState } from 'react';
 import {
   StyleSheet,
   type TextStyle,
@@ -17,7 +11,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 export const layout = {
   maxWidth: 1200,
@@ -102,8 +96,6 @@ type CustomTextProps = TextProps &
 
 export function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
-    const { isDark } = useContext(CustomAppearanceContext);
-
     const elementStyle = Element?.displayName
       ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
       : undefined;
@@ -112,7 +104,7 @@ export function createTextComponent(Element: ComponentType<TextProps>, textStyle
       <Element
         id={id}
         numberOfLines={numberOfLines}
-        style={[elementStyle, textStyle, { color: isDark ? colors.white : colors.black }, style]}>
+        style={[elementStyle, textStyle, tw`text-black dark:text-white`, style]}>
         {children}
       </Element>
     );
@@ -143,11 +135,10 @@ type AProps = PropsWithChildren<{
 }>;
 
 export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setIsHovered] = useState(false);
 
-  const linkStyles = getLinkStyles(isDark);
-  const linkHoverStyles = getLinkHoverStyles();
+  const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
+  const linkHoverStyles = tw`decoration-primary-dark`;
 
   if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
     const passedStyle = StyleSheet.flatten(style);
@@ -171,7 +162,7 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
     <span
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={{ display: 'contents', ...containerStyle }}>
+      style={{ ...tw`contents`, ...containerStyle }}>
       <HtmlElements.A
         {...rest}
         href={href}
@@ -185,21 +176,6 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
   );
 }
 
-function getLinkStyles(isDark: boolean): TextStyle {
-  return {
-    color: isDark ? colors.white : colors.black,
-    textDecorationColor: isDark ? colors.gray5 : colors.pewter,
-    textDecorationLine: 'underline',
-    fontFamily: 'inherit',
-  };
-}
-
-function getLinkHoverStyles(): TextStyle {
-  return {
-    textDecorationColor: colors.primaryDark,
-  };
-}
-
 type HoverEffectProps = PropsWithChildren<{ style?: StyleProp<ViewStyle> }>;
 
 export function HoverEffect({ children, style }: HoverEffectProps) {
@@ -209,10 +185,9 @@ export function HoverEffect({ children, style }: HoverEffectProps) {
   return (
     <View
       style={[
-        // @ts-expect-error Transition is a valid web style property
         { transition: 'opacity 0.33s' },
-        isHovered && { opacity: 0.75 },
-        isActive && { opacity: 0.5 },
+        isHovered && tw`opacity-75`,
+        isActive && tw`opacity-50`,
         style,
       ]}
       onPointerEnter={() => setIsHovered(true)}

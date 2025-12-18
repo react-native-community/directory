@@ -1,13 +1,14 @@
-import { type ViewStyle } from 'react-native';
+import { type StyleProp, type ViewStyle } from 'react-native';
 import { Circle, Line, Path, Polyline, Rect, Svg } from 'react-native-svg';
 
 import { colors } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 export type IconProps = {
   fill?: string;
   width?: number;
   height?: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
 export function Search({ width, height, fill = colors.black }: IconProps) {
@@ -113,14 +114,14 @@ export function Download({ width, height, fill = colors.black }: IconProps) {
   );
 }
 
-export function Filter({ width, height, fill = colors.black }: IconProps) {
+export function Filter({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 21} height={height ?? 18} viewBox="0 0 21 18" fill="none">
+    <Svg width={width ?? 21} height={height ?? 18} viewBox="0 0 21 18" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M20.66.087H.227L7.77 9.029v5.414l5.953 3.472v-9.1L20.66.087zM9.77 13.294l1.953 1.14V8.116l4.792-6.03H4.531l5.24 6.211v4.996z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -178,11 +179,21 @@ export function GitHub({ width, height, style }: IconProps) {
   );
 }
 
-export function Plus({ width, height, style, fill = colors.black }: IconProps) {
+export function Plus({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" fill="none" style={style}>
-      <Path fillRule="evenodd" clipRule="evenodd" d="M.114 7.12H15.57v2H.114v-2z" fill={fill} />
-      <Path fillRule="evenodd" clipRule="evenodd" d="M6.842 15.848V.393h2v15.455h-2z" fill={fill} />
+    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" style={style}>
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M.114 7.12H15.57v2H.114v-2z"
+        fill="currentColor"
+      />
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6.842 15.848V.393h2v15.455h-2z"
+        fill="currentColor"
+      />
     </Svg>
   );
 }
@@ -193,7 +204,7 @@ export function XIcon({ width, height, style }: IconProps) {
       width={width ?? 16}
       height={height ?? 16}
       viewBox="0 0 16 16"
-      style={[style, { transform: 'rotate(45deg)' }]}>
+      style={[style, tw`rotate-45`]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -221,14 +232,14 @@ export function Question({ width, height, style }: IconProps) {
   );
 }
 
-export function Sort({ width, height, fill = colors.black }: IconProps) {
+export function Sort({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" fill="none">
+    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M10.3,5H0V3h10.3V5z M8.9,9L0,9l0-2l8.9,0L8.9,9L8.9,9z M7.5,13H0v-2h7.5V13L7.5,13z M10.3,8.6h2.3v-5c0-0.3,0.3-0.6,0.6-0.6c0.3,0,0.6,0.3,0.6,0.6v5H16L13.2,13L10.3,8.6L10.3,8.6z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -486,43 +497,46 @@ export function Dependency({ width = 18, height = 20, fill = colors.black }: Ico
   );
 }
 
-export function ThemeLight({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function ThemeLight({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
       <Path
-        fill={fill}
         d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"
+        fill="currentColor"
       />
     </Svg>
   );
 }
 
-export function ThemeDark({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function ThemeDark({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
       <Path
-        fill={fill}
         d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"
+        fill="currentColor"
       />
     </Svg>
   );
 }
 
-export function Tools({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function Tools({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
       <Path
-        fill={fill}
         d="M14.501 2.1826C12.3317 2.70203 10.3412 4.64749 10.0265 6.55588C9.92493 7.17081 10.2516 7.60159 10.8197 7.60159C11.2884 7.60159 11.4135 7.45672 11.7829 6.48543C12.3782 4.92082 13.7886 3.86061 15.5094 3.68441C15.9876 3.63543 16.3787 3.64337 16.3787 3.70205C16.3787 3.76074 15.8518 4.29359 15.208 4.88608C13.4702 6.48515 13.092 7.52334 13.7708 8.83008C14.2353 9.72435 14.9597 10.2331 15.8749 10.3077C17.0637 10.4047 17.5348 10.1691 19.0694 8.71037L20.4518 7.39639L20.3774 8.23266C20.2857 9.26401 19.8753 10.2036 19.1438 11.0568C18.4852 11.8251 18.4541 12.3288 19.0452 12.6537C19.559 12.9359 19.9817 12.695 20.7602 11.6764C21.6906 10.4593 21.9935 9.56361 21.9999 8.012C22.0075 6.15546 21.6321 5.54957 20.4742 5.54957C20.0077 5.54957 19.8137 5.6917 18.326 7.12279C16.8616 8.53144 16.6389 8.69601 16.1971 8.69601C15.8294 8.69601 15.6298 8.60394 15.4152 8.33554C14.8635 7.64578 14.991 7.38367 16.638 5.82317C17.4717 5.03314 18.2239 4.25227 18.3094 4.08797C18.5651 3.59713 18.4881 3.11668 18.0826 2.67166C17.4829 2.01351 16.0333 1.81556 14.501 2.1826ZM3.02467 2.71092C2.77181 2.88029 2.43702 3.18836 2.28082 3.39576C1.78329 4.05624 1.9018 4.52382 3.00158 6.23932C4.2214 8.14196 4.55397 8.50668 5.25929 8.71448C5.70619 8.84622 5.90356 8.83733 6.34711 8.66591L6.88915 8.45661L8.98774 10.5257L11.0865 12.5949L10.8873 13.1421C10.327 14.6822 10.7732 15.8891 12.5188 17.5539C13.7698 18.7471 14.0907 18.8809 14.5705 18.4089C15.0465 17.9408 14.9132 17.6203 13.7538 16.4428C12.5014 15.1708 12.3451 14.9256 12.3451 14.2318C12.3451 13.3326 13.4739 12.5038 14.3967 12.7255C14.6388 12.7838 15.7322 13.7552 17.3772 15.3739C19.5481 17.5099 19.9906 18.0124 20.0676 18.4299C20.2074 19.1858 19.8155 19.8863 19.0718 20.2098C18.321 20.5365 17.9296 20.4459 17.1226 19.759C16.3943 19.1391 15.8198 19.0601 15.4825 19.5339C15.1638 19.9814 15.2063 20.1299 15.8509 20.8176C16.6638 21.6851 17.3473 22 18.4171 22C20.0227 22 21.3535 20.9273 21.685 19.3659C21.8198 18.7311 21.8068 18.4865 21.6015 17.7942C21.3699 17.0129 21.2325 16.849 18.6947 14.3279C17.2297 12.8724 15.7806 11.5513 15.4746 11.3921C14.8123 11.0472 13.4902 10.994 12.7856 11.2839L12.3221 11.4746L10.195 9.38577L8.06807 7.29707L8.28088 6.76396C8.54738 6.09677 8.35335 5.32849 7.78697 4.80851C7.17581 4.24721 4.10429 2.40312 3.78063 2.40312C3.61775 2.40312 3.27754 2.54156 3.02467 2.71092ZM5.42536 5.18211C6.17117 5.63425 6.78149 6.06818 6.78149 6.14657C6.78149 6.3422 5.9297 7.19119 5.73345 7.19119C5.60827 7.19119 4.56523 5.65572 3.79092 4.33134C3.6585 4.10507 3.58493 4.06677 5.42536 5.18211ZM5.16568 14.3391C2.28638 17.205 2.05243 17.526 2.05243 18.6142C2.05243 19.6782 2.76276 20.7949 3.76978 21.3138C4.51099 21.6958 5.80466 21.72 6.50331 21.365C6.77106 21.229 7.81952 20.309 8.83307 19.3206C10.7763 17.4256 10.9328 17.1567 10.3978 16.6305C9.88223 16.1234 9.60377 16.2736 7.76708 18.0504C6.8043 18.9819 5.86906 19.8186 5.68894 19.9098C4.86789 20.3254 3.72151 19.5508 3.72151 18.5804C3.72151 18.1249 3.92069 17.8913 6.43377 15.3993C9.26536 12.5914 9.41182 12.3775 8.86784 11.8425C8.30105 11.285 8.09325 11.4252 5.16568 14.3391Z"
+        fill="currentColor"
       />
     </Svg>
   );
 }
 
-export function ReadmeFile({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function ReadmeFile({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} fill={fill} viewBox="0 0 256 256">
-      <Path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V224a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM144,144H128a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h16a36,36,0,0,0,0-72Zm0,56h-8V160h8a20,20,0,0,1,0,40Zm-40-48v56a8,8,0,0,1-16,0V177.38L74.55,196.59a8,8,0,0,1-13.1,0L48,177.38V208a8,8,0,0,1-16,0V152a8,8,0,0,1,14.55-4.59L68,178.05l21.45-30.64A8,8,0,0,1,104,152Z" />
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Path
+        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V224a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM144,144H128a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h16a36,36,0,0,0,0-72Zm0,56h-8V160h8a20,20,0,0,1,0,40Zm-40-48v56a8,8,0,0,1-16,0V177.38L74.55,196.59a8,8,0,0,1-13.1,0L48,177.38V208a8,8,0,0,1-16,0V152a8,8,0,0,1,14.55-4.59L68,178.05l21.45-30.64A8,8,0,0,1,104,152Z"
+        fill="currentColor"
+      />
     </Svg>
   );
 }
