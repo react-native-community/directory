@@ -20,22 +20,15 @@ export default function ExampleBox({ example, index }: Props) {
         style={tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-palette-gray2 dark:border-default`}
         hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
         <View style={tw`flex flex-row items-center max-w-full gap-2.5`}>
-          {example.includes('github.com') && (
-            <GitHub style={tw`text-palette-gray5 dark:text-pewter`} />
-          )}
-          {example.includes('snack.expo.dev') && (
-            <Snack style={tw`text-palette-gray5 dark:text-pewter`} />
-          )}
+          {example.includes('github.com') && <GitHub style={tw`text-icon`} />}
+          {example.includes('snack.expo.dev') && <Snack style={tw`text-icon`} />}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
-            <CodeBrackets style={tw`text-palette-gray5 dark:text-pewter`} />
+            <CodeBrackets style={tw`text-icon`} />
           )}
           <span style={tw`font-light`}>{getExampleDescription(example)}</span>
         </View>
         <Text
-          style={[
-            tw`opacity-30 text-2xl leading-[28px] text-palette-gray5 dark:text-pewter`,
-            isSmallScreen && tw`hidden`,
-          ]}>
+          style={[tw`opacity-30 text-2xl leading-[28px] text-icon`, isSmallScreen && tw`hidden`]}>
           #{index + 1}
         </Text>
       </A>

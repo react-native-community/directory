@@ -14,15 +14,15 @@ export default function DependencyRow({ name, version }: Props) {
   const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 26;
 
   return (
-    <View style={[tw`flex-row gap-x-2 justify-between font-mono`, hasLongVersion && tw`flex-wrap`]}>
+    <View style={[tw`flex-row gap-x-2 justify-between`, hasLongVersion && tw`flex-wrap`]}>
       <A
         href={`https://www.npmjs.com/package/${name}`}
         target="_blank"
         containerStyle={tw`flex-shrink`}
-        style={tw`text-xs leading-tight`}>
+        style={tw`text-xs leading-tight font-mono font-light`}>
         {name}
       </A>
-      <Label style={tw`text-xs leading-tight text-palette-gray5 dark:text-secondary`}>
+      <Label style={tw`text-xs leading-tight text-palette-gray5 font-mono dark:text-secondary`}>
         {getVersionLabel(version)}
       </Label>
     </View>

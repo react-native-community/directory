@@ -1,7 +1,7 @@
 import { UL } from '@expo/html-elements';
 import dynamic from 'next/dynamic';
 import { useContext, useMemo } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { A, colors, darkColors, H6, Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
@@ -263,19 +263,11 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     gap: 12,
-    ...Platform.select({
-      web: {
-        flex: 1,
-      },
-    }),
+    flex: 1,
   },
   metadataContainer: {
     gap: 16,
-    ...Platform.select({
-      web: {
-        flex: 0.35,
-      },
-    }),
+    flex: 0.35,
   },
   contentHeader: {
     fontSize: 16,
