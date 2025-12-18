@@ -56,7 +56,7 @@ export default function CompatibilityTags({ library }: Props) {
           trigger={
             // TODO: fix cursor pointer
             <View style={{ ...tw`items-center justify-center`, cursor: 'pointer' }}>
-              <Info style={tw`text-secondary dark:text-pewter`} />
+              <Info style={tw`text-icon`} />
             </View>
           }>
           Additional information

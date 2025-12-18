@@ -10,6 +10,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
+import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
 import {
@@ -36,11 +37,14 @@ type Props = {
   skipExamples?: boolean;
 };
 
-function generateData(
-  { github, score, npm, npmPkg, matchingScoreModifiers, template }: LibraryType,
-  isDark: boolean
-): MetadataEntryType[] {
-  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+function generateData({
+  github,
+  score,
+  npm,
+  npmPkg,
+  matchingScoreModifiers,
+  template,
+}: LibraryType): MetadataEntryType[] {
   return [
     {
       id: 'score',
@@ -54,7 +58,7 @@ function generateData(
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <Download fill={iconColor} width={16} height={18} />,
+          icon: <Download style={tw`text-icon`} width={16} height={18} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
@@ -67,7 +71,7 @@ function generateData(
       : null,
     {
       id: 'star',
-      icon: <Star fill={iconColor} />,
+      icon: <Star style={tw`text-icon`} />,
       content: (
         <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
           {github.stats.stars.toLocaleString()} stars
@@ -76,7 +80,7 @@ function generateData(
     },
     {
       id: 'dependencies',
-      icon: <Dependency fill={iconColor} />,
+      icon: <Dependency style={tw`text-icon`} />,
       content: template ? (
         <P style={styles.link}>
           {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
@@ -92,7 +96,7 @@ function generateData(
     npm?.size
       ? {
           id: 'size',
-          icon: <PackageSize fill={iconColor} />,
+          icon: <PackageSize style={tw`text-icon`} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={styles.link}>
               {`${formatBytes(npm.size)} package size`}
@@ -103,7 +107,7 @@ function generateData(
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <Fork fill={iconColor} width={16} height={17} />,
+          icon: <Fork style={tw`text-icon`} width={16} height={17} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={styles.link} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
@@ -115,7 +119,7 @@ function generateData(
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <Eye fill={iconColor} />,
+          icon: <Eye style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={styles.link} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
@@ -127,7 +131,7 @@ function generateData(
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <Issue fill={iconColor} />,
+          icon: <Issue style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={styles.link} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
@@ -302,7 +306,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
       </>
     );
   } else {
-    const data = generateData(library, isDark).filter(entry => !!entry);
+    const data = generateData(library).filter(entry => !!entry);
     const [bottomData, listData] = partition<NonNullable<MetadataEntryType>>(data, ({ id }) => {
       return ['forks', 'subscribers', 'issues'].includes(id);
     });
@@ -316,7 +320,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
             {content}
           </View>
         ))}
-        <View style={[styles.displayHorizontal, styles.bottomStats]}>
+        <View style={tw`flex-row items-center gap-4`}>
           {bottomData.map(({ id, icon, content, tooltip }) => (
             <View key={id} style={styles.displayHorizontal}>
               <Tooltip
@@ -344,9 +348,6 @@ const styles = StyleSheet.create({
   displayHorizontal: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  bottomStats: {
-    gap: 16,
   },
   iconContainer: {
     marginRight: 7,

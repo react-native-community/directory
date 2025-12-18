@@ -17,7 +17,7 @@ export default function Platform({ name, pkgName, url, Icon }: Props) {
     <A href={url} hoverStyle={tw`rounded-lg bg-palette-gray2 dark:bg-default`}>
       <View style={tw`min-w-[160px] px-2 py-4 rounded-lg items-center`}>
         {createElement(Icon, {
-          style: tw`size-8 text-palette-gray5 dark:text-pewter`,
+          style: tw`size-8 text-icon`,
         })}
         <P style={tw`mt-3`}>{name}</P>
         <P style={tw`text-xs font-mono rounded-sm px-2 leading-loose`}>{pkgName}</P>

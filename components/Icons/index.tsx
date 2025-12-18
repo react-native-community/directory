@@ -24,14 +24,14 @@ export function Search({ width, height, style }: IconProps) {
   );
 }
 
-export function Star({ width, height, fill = colors.black }: IconProps) {
+export function Star({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 20} height={height ?? 19} viewBox="0 0 20 19" fill="none">
+    <Svg width={width ?? 20} height={height ?? 19} viewBox="0 0 20 19" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9.764.081l2.723 6.323 6.856.636-5.173 4.544 1.514 6.716-5.92-3.515-5.92 3.515 1.514-6.716L.186 7.04l6.855-.636L9.764.081zm0 5.057L8.408 8.286l-3.413.317 2.575 2.262-.753 3.345 2.947-1.75 2.948 1.75-.754-3.345 2.576-2.262-3.414-.317-1.356-3.148z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -101,14 +101,14 @@ export function Check({ width, height, style }: IconProps) {
   );
 }
 
-export function Download({ width, height, fill = colors.black }: IconProps) {
+export function Download({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 13} height={height ?? 16} viewBox="0 0 13 16" fill="none">
+    <Svg width={width ?? 13} height={height ?? 16} viewBox="0 0 13 16" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M2.44 7.518h3.304V1.01a.817.817 0 011.635 0v6.51h3.266l-4.08 5.752-4.124-5.753zM12.45 15.77H.635v-1.635H12.45v1.635z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -127,31 +127,31 @@ export function Filter({ width, height, style }: IconProps) {
   );
 }
 
-export function Issue({ width, height, fill = colors.black }: IconProps) {
+export function Issue({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" fill="none">
+    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9.5 7.75C9.96413 7.75 10.4092 7.93437 10.7374 8.26256C11.0656 8.59075 11.25 9.03587 11.25 9.5C11.25 9.96413 11.0656 10.4092 10.7374 10.7374C10.4092 11.0656 9.96413 11.25 9.5 11.25C9.03587 11.25 8.59075 11.0656 8.26256 10.7374C7.93437 10.4092 7.75 9.96413 7.75 9.5C7.75 9.03587 7.93437 8.59075 8.26256 8.26256C8.59075 7.93437 9.03587 7.75 9.5 7.75Z"
-        fill={fill}
+        fill="currentColor"
       />
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9.49 16.277a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2A8.744 8.744 0 109.49.79a8.744 8.744 0 000 17.487z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
 }
 
-export function Eye({ width = 22, height = 19, fill = colors.black }: IconProps) {
+export function Eye({ width = 22, height = 19, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 22 13" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 22 13" style={style}>
       <Path
-        fill={fill}
         d="M10.9083 1.925C15.125 1.925 18.0583 4.58333 19.3417 6.05C18.0583 7.7 15.125 10.8167 10.9083 10.8167C6.96667 10.8167 3.85 7.7 2.475 5.95833C3.75833 4.58333 6.69167 1.925 10.9083 1.925ZM11 0C4.03333 0 0 6.05 0 6.05C0 6.05 4.4 12.8333 11 12.8333C18.0583 12.8333 22 6.05 22 6.05C22 6.05 18.0583 0 11 0ZM10.9083 3.20833C9.16667 3.20833 7.7 4.675 7.7 6.41667C7.7 8.15833 9.16667 9.625 10.9083 9.625C12.65 9.625 14.1167 8.15833 14.1167 6.41667C14.1167 4.675 12.65 3.20833 10.9083 3.20833ZM10.9083 6.41667C10.45 6.875 9.71667 6.875 9.25833 6.41667C8.8 5.95833 8.8 5.225 9.25833 4.76667C9.71667 4.30833 10.45 4.30833 10.9083 4.76667C11.3667 5.225 11.3667 5.95833 10.9083 6.41667Z"
+        fill="currentColor"
       />
     </Svg>
   );
@@ -271,15 +271,15 @@ export function License({ width = 16, height = 18, fill = colors.black }: IconPr
   );
 }
 
-export function Fork({ width = 15, height = 16, fill = colors.black }: IconProps) {
+export function Fork({ width = 15, height = 16, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 15 16" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 15 16" style={style}>
       <Path
-        fill={fill}
+        fill="currentColor"
         d="M8.5,10.8V8l4.7-5l0,2.3H15V0H9.7v1.8H12L7.5,6.5L3,1.8h2.3V0H0v5.3h1.8V3l4.7,5v2.9"
       />
       <Path
-        fill={fill}
+        fill="currentColor"
         d="M10.7,12.8c0,1.8-1.4,3.2-3.2,3.2s-3.2-1.4-3.2-3.2s1.4-3.2,3.2-3.2S10.7,11.1,10.7,12.8z M7.5,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4S8.3,11.4,7.5,11.4z"
       />
     </Svg>
@@ -474,24 +474,24 @@ export function ConfigPlugin({ width = 18, height = 22, fill = colors.black }: I
   );
 }
 
-export function PackageSize({ width = 18, height = 18, fill = colors.black }: IconProps) {
+export function PackageSize({ width = 18, height = 18, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
-      <Path fill={fill} d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
+    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+      <Path fill="currentColor" d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
       <Path
-        fill={fill}
         d="M20 1.002v4.586l1.501-1.5L22.915 5.5l-3.914 3.915L15.084 5.5l1.414-1.414l1.503 1.503V1.002z"
+        fill="currentColor"
       />
     </Svg>
   );
 }
 
-export function Dependency({ width = 18, height = 20, fill = colors.black }: IconProps) {
+export function Dependency({ width = 18, height = 20, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 18 20" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 18 20" style={style}>
       <Path
-        fill={fill}
         d="M8 17.425V10.575L2 7.1V13.95L8 17.425ZM10 17.425L16 13.95V7.1L10 10.575V17.425ZM8 19.725L1 15.7C0.683337 15.5167 0.437337 15.275 0.262004 14.975C0.0866705 14.675 -0.000662879 14.3417 3.78787e-06 13.975V6.025C3.78787e-06 5.65833 0.0876704 5.325 0.263004 5.025C0.438337 4.725 0.684004 4.48333 1 4.3L8 0.275C8.31667 0.0916668 8.65 0 9 0C9.35 0 9.68333 0.0916668 10 0.275L17 4.3C17.3167 4.48333 17.5627 4.725 17.738 5.025C17.9133 5.325 18.0007 5.65833 18 6.025V13.975C18 14.3417 17.9123 14.675 17.737 14.975C17.5617 15.275 17.316 15.5167 17 15.7L10 19.725C9.68333 19.9083 9.35 20 9 20C8.65 20 8.31667 19.9083 8 19.725ZM13 6.525L14.925 5.425L9 2L7.05 3.125L13 6.525ZM9 8.85L10.95 7.725L5.025 4.3L3.075 5.425L9 8.85Z"
+        fill="currentColor"
       />
     </Svg>
   );

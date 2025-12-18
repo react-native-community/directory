@@ -48,6 +48,7 @@
   --white: #ffffff;
 
   --secondary: #afb1af;
+  --icon: var(--gray-5);
 
   --warning: #fbe679;
   --warning-light: #fef7d6;
@@ -87,6 +88,7 @@
   /* TODO: introduce dark theme `gray` color palette */
 
   --secondary: #a2a7ab;
+  --icon: var(--secondary);
 
   --warning: #9a810c;
   --warning-light: #2f2704;

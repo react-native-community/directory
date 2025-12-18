@@ -24,7 +24,7 @@ export default function TopBar() {
         <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
           <Logo style={tw`text-primary`} width={29} height={26} />
           <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
-            <Link href="/" style={tw`text-primary pl-2 font-bold no-underline`}>
+            <Link href="/" style={tw`text-primary ml-2 font-bold no-underline`}>
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
             </Link>
           </H5>

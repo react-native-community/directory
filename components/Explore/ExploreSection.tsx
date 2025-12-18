@@ -42,11 +42,11 @@ export default function ExploreSection({
   return (
     <>
       <H3 style={tw`flex gap-4 pt-3 pb-2 px-2 items-center`} id={hashLink}>
-        {icon && createElement(icon, { style: tw`size-7.5 text-palette-gray5 dark:text-pewter` })}
+        {icon && createElement(icon, { style: tw`size-7.5 text-icon` })}
         <A
           href={`#${hashLink}`}
           target="_self"
-          style={tw`no-underline text-palette-gray5 dark:text-pewter`}
+          style={tw`no-underline text-icon`}
           hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
           {title}
         </A>

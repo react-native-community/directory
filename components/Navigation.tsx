@@ -41,7 +41,8 @@ export default function Navigation({
             ]}>
             {title}
           </H1>
-          <H2 style={tw`text-center text-secondary text-base font-normal pt-1 pb-1.5 px-10`}>
+          <H2
+            style={tw`text-center text-base font-normal py-1 px-10 text-palette-gray3 dark:text-secondary`}>
             {description}
           </H2>
           {children}

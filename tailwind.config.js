@@ -7,6 +7,7 @@ const palette = {
   primary: 'var(--primary)',
   'primary-dark': 'var(--primary-dark)',
   'primary-darker': 'var(--primary-darker)',
+  'primary-hover': 'var(--primary-hover)',
 
   secondary: 'var(--secondary)',
 
@@ -66,6 +67,7 @@ export default {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      icon: 'var(--icon)',
       ...palette,
     },
     gradientColorStops: {

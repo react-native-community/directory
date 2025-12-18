@@ -39,37 +39,44 @@ export default function PackageVersionsScene({
       />
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 py-3 px-5`}>
-        <View style={tw`gap-2.5 flex-1`}>
+        <View style={tw`gap-3 flex-1`}>
           <PackageHeader library={library} />
           <H6 style={tw`mt-3 text-palette-gray5 dark:text-secondary`}>Tagged versions</H6>
-          {Object.entries(registryData['dist-tags'])
-            .sort((a, b) => -registryData.time[a[1]].localeCompare(registryData.time[b[1]]))
-            .map(([label, version]) => {
-              return (
-                <VersionBox
-                  key={label}
-                  label={label}
-                  time={registryData.time[version]}
-                  versionData={registryData.versions[version]}
-                />
-              );
-            })}
+          <View style={tw`gap-2`}>
+            {Object.entries(registryData['dist-tags'])
+              .sort((a, b) => -registryData.time[a[1]].localeCompare(registryData.time[b[1]]))
+              .map(([label, version]) => {
+                return (
+                  <VersionBox
+                    key={label}
+                    label={label}
+                    time={registryData.time[version]}
+                    versionData={registryData.versions[version]}
+                  />
+                );
+              })}
+          </View>
           <H6 style={tw`mt-3 text-palette-gray5 dark:text-secondary`}>Versions</H6>
-          {Object.entries(registryData.versions)
-            .sort(
-              (a, b) =>
-                -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
-            )
-            .slice(0, shouldShowAll ? Object.keys(registryData.versions).length : VERSIONS_TO_SHOW)
-            .map(([version, versionData]) => {
-              return (
-                <VersionBox
-                  key={version}
-                  time={registryData.time[versionData.version]}
-                  versionData={versionData}
-                />
-              );
-            })}
+          <View style={tw`gap-2`}>
+            {Object.entries(registryData.versions)
+              .sort(
+                (a, b) =>
+                  -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
+              )
+              .slice(
+                0,
+                shouldShowAll ? Object.keys(registryData.versions).length : VERSIONS_TO_SHOW
+              )
+              .map(([version, versionData]) => {
+                return (
+                  <VersionBox
+                    key={version}
+                    time={registryData.time[versionData.version]}
+                    versionData={versionData}
+                  />
+                );
+              })}
+          </View>
           <Button onPress={() => setShowAll(true)} style={tw`mt-2 mx-auto py-2 px-4`}>
             Show all versions
           </Button>
