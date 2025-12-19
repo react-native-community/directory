@@ -18699,5 +18699,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/core",
+  "npmPkg": "expo-gaode-map",
+  "examples": [
+    "https://github.com/TomWq/expo-gaode-map-example"
+  ],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
+}
+
 ]
