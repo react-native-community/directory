@@ -61,8 +61,7 @@ export function DirectoryScore({ score, matchingScoreModifiers, sizeMultiplier =
   }
 
   return (
-    // TODO: support pointer styles?
-    <Tooltip trigger={<View style={{ cursor: 'pointer' }}>{scoreSymbol}</View>}>
+    <Tooltip trigger={<View style={tw`cursor-pointer`}>{scoreSymbol}</View>}>
       Score:{' '}
       <strong>
         {score} / {MAX_SCORE}
