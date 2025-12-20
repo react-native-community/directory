@@ -245,17 +245,22 @@ export function Sort({ width, height, style }: IconProps) {
   );
 }
 
-export function Thumbnail({ width = 16, height = 16, fill = colors.gray3 }: IconProps) {
+export function Thumbnail({ width = 16, height = 16, style }: IconProps) {
   return (
-    <Svg width={width} height={height} fill="none">
-      <Path fillRule="evenodd" clipRule="evenodd" d="M14 2H2v12h12V2zM0 0v16h16V0H0z" fill={fill} />
+    <Svg width={width} height={height} style={style}>
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14 2H2v12h12V2zM0 0v16h16V0H0z"
+        fill="currentColor"
+      />
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M7 7.586l3 3 2-2 3.707 3.707-1.414 1.414L12 11.414l-.586.586 2.293 2.293-1.414 1.414L7 10.414l-5.293 5.293-1.414-1.414L7 7.586z"
-        fill={fill}
+        fill="currentColor"
       />
-      <Path d="M12 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill={fill} />
+      <Path d="M12 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill="currentColor" />
     </Svg>
   );
 }
@@ -296,15 +301,16 @@ export function Code({ width = 16, height = 16, fill = colors.black }: IconProps
   );
 }
 
-export function Warning({ width = 17, height = 17, fill = colors.warningDark }: IconProps) {
+export function Warning({ width = 17, height = 17, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 25 25" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 25 25" style={style}>
       <Path
         d="M12.147 22.345c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zM12.147 8.345v4M12.147 16.345h.01"
-        stroke={fill}
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        fill="none"
       />
     </Svg>
   );
