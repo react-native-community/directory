@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { A, Caption, colors, darkColors, H6, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
@@ -123,11 +123,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     gap: 12,
-    ...Platform.select({
-      web: {
-        flex: 1,
-      },
-    }),
+    flex: 1,
   },
   scoreBox: {
     display: 'flex',

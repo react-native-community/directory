@@ -20,6 +20,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import mapDependencies from '~/util/mapDependencies';
+import tw from '~/util/tailwind';
 
 const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
   loading: () => <ReadmeBox loader />,
@@ -57,9 +58,9 @@ export default function PackageOverviewScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={styles.container}>
+      <ContentContainer style={tw`py-6 px-0`}>
         <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
-          <View style={styles.detailsContainer}>
+          <View style={tw`gap-3 flex-1`}>
             <PackageHeader
               library={library}
               registryData={registryData}
@@ -246,10 +247,6 @@ export default function PackageOverviewScene({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 24,
-    paddingHorizontal: 0,
-  },
   metaContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -260,10 +257,6 @@ const styles = StyleSheet.create({
   mobileMetaContainer: {
     flexDirection: 'column',
     gap: 20,
-  },
-  detailsContainer: {
-    gap: 12,
-    flex: 1,
   },
   metadataContainer: {
     gap: 16,
@@ -278,7 +271,6 @@ const styles = StyleSheet.create({
   },
   mutedLink: {
     fontWeight: 300,
-    backgroundColor: 'transparent',
   },
   dependencyEntry: {
     display: 'flex',

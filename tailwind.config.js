@@ -69,6 +69,9 @@ export default {
       current: 'currentColor',
       icon: 'var(--icon)',
       ...palette,
+
+      // TODO: temporary values, replace with proper gray palette for dark mode
+      'dark-brighter': 'var(--dark-brighter)',
     },
     gradientColorStops: {
       transparent: 'transparent',
