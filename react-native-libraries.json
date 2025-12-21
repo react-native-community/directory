@@ -1,5 +1,15 @@
 [
   {
+    "githubUrl": "https://github.com/Swif7ify/react-native-earl-gamepad",
+    "npmPkg": "react-native-earl-gamepad",
+    "name": "react-native-earl-gamepad",
+    "description": "React Native gamepad bridge via WebView (buttons, sticks, d-pad, status).",
+    "keywords": ["gamepad", "controller", "input", "webview"],
+    "types": "typescript",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
