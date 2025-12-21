@@ -18703,16 +18703,13 @@
   {
     "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/core",
     "npmPkg": "expo-gaode-map",
-    "examples": [
-      "https://github.com/TomWq/expo-gaode-map-example"
-    ],
+    "examples": ["https://github.com/TomWq/expo-gaode-map-example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-file-system",
-    "npmPkg": "react-native-nitro-file-system",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18720,41 +18717,31 @@
   {
     "githubUrl": "https://github.com/fixie-ai/ultravox-client-sdk-react-native",
     "npmPkg": "ultravox-react-native",
-    "examples": [
-      "https://github.com/fixie-ai/ultravox-client-sdk-react-native/tree/main/example"
-    ],
+    "examples": ["https://github.com/fixie-ai/ultravox-client-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-wechat",
-    "npmPkg": "expo-wechat",
-    "examples": [
-      "https://github.com/likeSo/expo-wechat/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-wechat/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
     "configPlugin": true,
     "newArchitecture": true
   },
-    {
+  {
     "githubUrl": "https://github.com/likeSo/expo-alipay",
     "npmPkg": "expo-alikit",
-    "examples": [
-      "https://github.com/likeSo/expo-alipay/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-alipay/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-aliyun-oss",
-    "npmPkg": "expo-aliyun-oss",
-    "examples": [
-      "https://github.com/likeSo/expo-aliyun-oss/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-aliyun-oss/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -18763,10 +18750,7 @@
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-tencent-trtc",
-    "npmPkg": "expo-tencent-trtc",
-    "examples": [
-      "https://github.com/likeSo/expo-tencent-trtc/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-tencent-trtc/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -18775,10 +18759,7 @@
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-bonjour",
-    "npmPkg": "expo-bonjour",
-    "examples": [
-      "https://github.com/likeSo/expo-bonjour/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-bonjour/tree/main/example"],
     "ios": true,
     "android": true,
     "configPlugin": true,
@@ -18786,20 +18767,14 @@
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-barcode-recognizer",
-    "npmPkg": "expo-barcode-recognizer",
-    "examples": [
-      "https://github.com/likeSo/expo-barcode-recognizer/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-barcode-recognizer/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-qq",
-    "npmPkg": "expo-qq",
-    "examples": [
-      "https://github.com/likeSo/expo-qq/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-qq/tree/main/example"],
     "ios": true,
     "android": true,
     "configPlugin": true,
@@ -18807,23 +18782,34 @@
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-svga",
-    "npmPkg": "expo-svga",
-    "examples": [
-      "https://github.com/likeSo/expo-svga/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-svga/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/likeSo/expo-aliyun-push",
-    "npmPkg": "expo-aliyun-push",
-    "examples": [
-      "https://github.com/likeSo/expo-aliyun-push/tree/main/example"
-    ],
+    "examples": ["https://github.com/likeSo/expo-aliyun-push/tree/main/example"],
     "ios": true,
     "android": true,
     "configPlugin": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/deflexable/react-native-dodge-keyboard",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/emilienaufauvre/react-native-maplibre-gl-js",
+    "examples": ["https://github.com/emilienaufauvre/react-native-maplibre-gl-js/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/msasinowski/react-native-expo-braintree",
+    "examples": ["https://github.com/msasinowski/react-native-expo-braintree/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
