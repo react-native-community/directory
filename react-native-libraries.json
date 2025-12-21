@@ -18726,5 +18726,104 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-wechat",
+    "npmPkg": "expo-wechat",
+    "examples": [
+      "https://github.com/likeSo/expo-wechat/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+    {
+    "githubUrl": "https://github.com/likeSo/expo-alipay",
+    "npmPkg": "expo-alikit",
+    "examples": [
+      "https://github.com/likeSo/expo-alipay/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-aliyun-oss",
+    "npmPkg": "expo-aliyun-oss",
+    "examples": [
+      "https://github.com/likeSo/expo-aliyun-oss/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-tencent-trtc",
+    "npmPkg": "expo-tencent-trtc",
+    "examples": [
+      "https://github.com/likeSo/expo-tencent-trtc/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-bonjour",
+    "npmPkg": "expo-bonjour",
+    "examples": [
+      "https://github.com/likeSo/expo-bonjour/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-barcode-recognizer",
+    "npmPkg": "expo-barcode-recognizer",
+    "examples": [
+      "https://github.com/likeSo/expo-barcode-recognizer/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-qq",
+    "npmPkg": "expo-qq",
+    "examples": [
+      "https://github.com/likeSo/expo-qq/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-svga",
+    "npmPkg": "expo-svga",
+    "examples": [
+      "https://github.com/likeSo/expo-svga/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/likeSo/expo-aliyun-push",
+    "npmPkg": "expo-aliyun-push",
+    "examples": [
+      "https://github.com/likeSo/expo-aliyun-push/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true,
+    "newArchitecture": true
   }
 ]
