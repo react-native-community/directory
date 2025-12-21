@@ -3,7 +3,12 @@
     "githubUrl": "https://github.com/Swif7ify/react-native-earl-gamepad",
     "npmPkg": "react-native-earl-gamepad",
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true,
+    "images": [
+      "https://github.com/user-attachments/assets/dfebd8c5-7d9a-42c7-802b-2773ec8c8ae9",
+      "https://github.com/user-attachments/assets/7b37d76a-7695-4be9-bda4-7e3d1e6adf41"
+    ],
   },
   {
     "githubUrl": "https://github.com/onubo/react-native-logs",
@@ -47,7 +52,7 @@
     "npmPkg": "react-native-videoeditorsdk"
   },
   {
-    "githubUrl": "https://github.com/ivpusic/react-native-image-crop-picker",
+    "githubUrl": "https://github.com/ivpusic/react-native--crop-picker",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -93,7 +98,7 @@
       "https://github.com/GetStream/react-native-samples/tree/develop/projects/WhatsAppClone",
       "https://github.com/GetStream/react-native-samples/tree/develop/projects/iMessageClone"
     ],
-    "images": [
+    "s": [
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/readme/cover.png",
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/1.png",
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/2.png",
@@ -113,7 +118,7 @@
       "https://github.com/GetStream/react-native-samples/tree/develop/projects/WhatsAppClone",
       "https://github.com/GetStream/react-native-samples/tree/develop/projects/iMessageClone"
     ],
-    "images": [
+    "s": [
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/readme/cover.png",
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/1.png",
       "https://raw.githubusercontent.com/GetStream/stream-chat-react-native/master/screenshots/2.png",
@@ -210,7 +215,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/wonday/react-native-image-cache-wrapper",
+    "githubUrl": "https://github.com/wonday/react-native--cache-wrapper",
     "ios": true,
     "android": true,
     "expoGo": true
@@ -278,7 +283,7 @@
       "https://snack.expo.dev/@purii/react-native-tableview-simple",
       "https://github.com/Purii/react-native-tableview-simple/tree/master/example"
     ],
-    "images": [
+    "s": [
       "https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotStandard.png",
       "https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotDark.png"
     ],
