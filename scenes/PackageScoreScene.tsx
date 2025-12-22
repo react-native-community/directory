@@ -12,6 +12,7 @@ import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type PackageScorePageProps } from '~/types/pages';
 import { SCORING_CRITERIONS } from '~/util/scoring';
+import tw from '~/util/tailwind';
 
 export default function PackageScoreScene({ apiData, packageName }: PackageScorePageProps) {
   const { isDark } = useContext(CustomAppearanceContext);
@@ -42,8 +43,8 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={styles.container}>
-        <View style={styles.detailsContainer}>
+      <ContentContainer style={tw`my-6 py-3 px-5`}>
+        <View style={tw`gap-3 flex-1`}>
           <PackageHeader library={library} />
           <View
             style={[
@@ -54,7 +55,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 backgroundColor: isDark ? colors.gray7 : colors.gray1,
               },
             ]}>
-            <View style={styles.scoreSection}>
+            <View style={tw`items-center`}>
               <H6 style={styles.sectionHeader}>Directory score</H6>
               <DirectoryScore score={library.score} sizeMultiplier={2} />
               <span
@@ -72,18 +73,18 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 { backgroundColor: scoreBoxBorderColor },
               ]}
             />
-            <div style={styles.scoreDescriptionWrapper}>
-              <Caption style={[styles.scoreDescription, secondaryColorStyle]}>
+            <View style={tw`flex flex-shrink gap-2`}>
+              <Caption style={[tw`font-light`, secondaryColorStyle]}>
                 The Directory Score is the combination of multiple factors that relate to the
                 quality of a library. A library can earn value by exhibiting &quot;good behavior
                 criteria&quot; and can lose value by exhibiting &quot;bad behavior criteria&quot;.
               </Caption>
-              <Caption style={[styles.scoreDescription, secondaryColorStyle]}>
+              <Caption style={[tw`font-light`, secondaryColorStyle]}>
                 Scores are subjective and are based on data that's readily available on GitHub and
                 npm. They are not a perfect scores and may not reflect quality for your specific
                 needs. <A href="/scoring">Read more</A>.
               </Caption>
-            </div>
+            </View>
           </View>
           <H6 style={headerColorStyle}>Matching criteria</H6>
           <View>
@@ -116,15 +117,6 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginVertical: 24,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-  },
-  detailsContainer: {
-    gap: 12,
-    flex: 1,
-  },
   scoreBox: {
     display: 'flex',
     alignItems: 'center',
@@ -141,10 +133,6 @@ const styles = StyleSheet.create({
   scoreBoxSmall: {
     flexDirection: 'column',
     paddingHorizontal: 20,
-  },
-  scoreSection: {
-    display: 'flex',
-    alignItems: 'center',
   },
   sectionHeader: {
     marginBottom: 12,
@@ -166,14 +154,6 @@ const styles = StyleSheet.create({
     minHeight: 0.5,
     marginHorizontal: 0,
     marginVertical: 12,
-  },
-  scoreDescriptionWrapper: {
-    display: 'flex',
-    gap: 8,
-    flexDirection: 'column',
-  },
-  scoreDescription: {
-    fontWeight: 300,
   },
   unmatchedCriterion: {
     filter: 'grayscale(1)',

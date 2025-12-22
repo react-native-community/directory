@@ -1,6 +1,6 @@
 import { partition } from 'es-toolkit';
 import { useContext } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
 import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
@@ -37,6 +37,8 @@ type Props = {
   skipExamples?: boolean;
 };
 
+const linkStyle = tw`text-[15px] font-light -outline-offset-1`;
+
 function generateData({
   github,
   score,
@@ -50,7 +52,7 @@ function generateData({
       id: 'score',
       icon: <DirectoryScore score={score} matchingScoreModifiers={matchingScoreModifiers} />,
       content: (
-        <A target="_self" href={`/package/${npmPkg}/score`} style={styles.link}>
+        <A target="_self" href={`/package/${npmPkg}/score`} style={linkStyle}>
           Directory Score
         </A>
       ),
@@ -62,8 +64,8 @@ function generateData({
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
-              style={styles.link}
-              containerStyle={styles.linkContainer}>
+              style={linkStyle}
+              containerStyle={{ textOverflow: 'ellipsis' }}>
               {`${npm.downloads.toLocaleString()}`} monthly downloads
             </A>
           ),
@@ -73,7 +75,7 @@ function generateData({
       id: 'star',
       icon: <Star style={tw`text-icon`} />,
       content: (
-        <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
+        <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
           {github.stats.stars.toLocaleString()} stars
         </A>
       ),
@@ -82,13 +84,13 @@ function generateData({
       id: 'dependencies',
       icon: <Dependency style={tw`text-icon`} />,
       content: template ? (
-        <P style={styles.link}>
+        <P style={linkStyle}>
           {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
         </P>
       ) : (
         <A
           href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
-          style={styles.link}>
+          style={linkStyle}>
           {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
         </A>
       ),
@@ -98,7 +100,7 @@ function generateData({
           id: 'size',
           icon: <PackageSize style={tw`text-icon`} />,
           content: (
-            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={styles.link}>
+            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
               {`${formatBytes(npm.size)} package size`}
             </A>
           ),
@@ -109,7 +111,7 @@ function generateData({
           id: 'forks',
           icon: <Fork style={tw`text-icon`} width={16} height={17} />,
           content: (
-            <A href={`${github.urls.repo}/network/members`} style={styles.link} aria-label="Forks">
+            <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
             </A>
           ),
@@ -121,7 +123,7 @@ function generateData({
           id: 'subscribers',
           icon: <Eye style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/watchers`} style={styles.link} aria-label="Watchers">
+            <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
             </A>
           ),
@@ -133,7 +135,7 @@ function generateData({
           id: 'issues',
           icon: <Issue style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/issues`} style={styles.link} aria-label="Issues">
+            <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
             </A>
           ),
@@ -151,12 +153,11 @@ function generateSecondaryData(
   const { github, examples, nightlyProgram } = library;
   const configPlugin = library.configPlugin ?? library.github.configPlugin;
 
-  const secondaryTextColor = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
   const iconColor = isDark ? darkColors.pewter : skipExamples ? colors.gray5 : colors.secondary;
-  const paragraphStyles = [styles.secondaryText, !skipExamples && secondaryTextColor];
-  const linkStyles = [...paragraphStyles, !skipExamples && styles.mutedLink];
+  const paragraphStyles = [
+    tw`text-[13px] font-light`,
+    !skipExamples && tw`text-palette-gray5 dark:text-secondary`,
+  ];
   const hoverStyle = {
     textDecorationColor: colors.gray4,
     color: isDark ? colors.gray3 : colors.gray5,
@@ -168,7 +169,7 @@ function generateSecondaryData(
           id: 'web',
           icon: <Web fill={iconColor} width={16} height={16} />,
           content: (
-            <A href={github.urls.homepage} style={linkStyles} hoverStyle={hoverStyle}>
+            <A href={github.urls.homepage} style={paragraphStyles} hoverStyle={hoverStyle}>
               Website
             </A>
           ),
@@ -182,7 +183,7 @@ function generateSecondaryData(
             github.license.name === 'Other' ? (
               <P style={paragraphStyles}>Unrecognized License</P>
             ) : (
-              <A href={github.license.url} style={linkStyles} hoverStyle={hoverStyle}>
+              <A href={github.license.url} style={paragraphStyles} hoverStyle={hoverStyle}>
                 {github.license.name}
               </A>
             ),
@@ -203,7 +204,7 @@ function generateSecondaryData(
             <ConfigPluginContent
               configPlugin={configPlugin}
               hoverStyle={hoverStyle}
-              linkStyles={linkStyles}
+              linkStyles={paragraphStyles}
               paragraphStyles={paragraphStyles}
             />
           ),
@@ -217,7 +218,7 @@ function generateSecondaryData(
           content: (
             <A
               href="https://react-native-community.github.io/nightly-tests/"
-              style={linkStyles}
+              style={paragraphStyles}
               hoverStyle={hoverStyle}>
               Nightly Program
             </A>
@@ -258,7 +259,7 @@ function generateSecondaryData(
                 <A
                   key={example}
                   href={example}
-                  style={[...linkStyles, styles.exampleLink]}
+                  style={[...paragraphStyles, tw`ml-0.5 mr-1 text-[13px]`]}
                   hoverStyle={hoverStyle}>
                   #{index + 1}
                 </A>
@@ -285,12 +286,11 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
                 key={id}
                 // @ts-expect-error RNW complains about 'fit-content'
                 style={{
-                  ...styles.displayHorizontal,
-                  ...(i + 1 !== data.length ? styles.datumContainer : {}),
-                  ...styles.secondaryContainer,
+                  ...(i + 1 !== data.length ? tw`mb-2 min-h-[22px] overflow-hidden` : {}),
+                  ...tw`flex-row items-center mb-0 pr-[3px]`,
                   width: 'fit-content',
                 }}>
-                <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
+                <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
                 {content}
               </View>
             );
@@ -315,19 +315,22 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
         {listData.map(({ id, icon, content }, i) => (
           <View
             key={id}
-            style={[styles.displayHorizontal, i + 1 !== data.length ? styles.datumContainer : {}]}>
-            <View style={styles.iconContainer}>{icon}</View>
+            style={[
+              tw`flex-row items-center`,
+              i + 1 !== data.length && tw`mb-2 min-h-[22px] overflow-hidden`,
+            ]}>
+            <View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>
             {content}
           </View>
         ))}
         <View style={tw`flex-row items-center gap-4`}>
           {bottomData.map(({ id, icon, content, tooltip }) => (
-            <View key={id} style={styles.displayHorizontal}>
+            <View key={id} style={tw`flex-row items-center`}>
               <Tooltip
                 key={id}
                 sideOffset={2}
                 delayDuration={100}
-                trigger={<View style={styles.iconContainer}>{icon}</View>}>
+                trigger={<View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>}>
                 {tooltip}
               </Tooltip>
               {content}
@@ -338,52 +341,3 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
     );
   }
 }
-
-const styles = StyleSheet.create({
-  datumContainer: {
-    marginBottom: 8,
-    minHeight: 22,
-    overflow: 'hidden',
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  iconContainer: {
-    marginRight: 7,
-    width: 22,
-    alignItems: 'center',
-  },
-  linkContainer: {
-    display: 'contents',
-    ...Platform.select({
-      web: {
-        textOverflow: 'ellipsis',
-      },
-    }),
-  },
-  link: {
-    fontSize: 15,
-    fontWeight: 300,
-    outlineOffset: -1,
-  },
-  mutedLink: {
-    backgroundColor: 'transparent',
-  },
-  secondaryText: {
-    fontSize: 13,
-    fontWeight: 300,
-  },
-  secondaryContainer: {
-    marginBottom: 0,
-    paddingRight: 3,
-  },
-  secondaryIconContainer: {
-    marginRight: 4,
-  },
-  exampleLink: {
-    marginLeft: 2,
-    marginRight: 4,
-    fontSize: 13,
-  },
-});
