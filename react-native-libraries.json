@@ -1,17 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/Swif7ify/react-native-earl-gamepad",
-    "npmPkg": "react-native-earl-gamepad",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "images": [
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/visual_debugger.jpg",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/2.jpg",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/4.jpg"
-    ]
-  },
-  {
     "githubUrl": "https://github.com/onubo/react-native-logs",
     "ios": true,
     "android": true,
@@ -18823,5 +18811,16 @@
     "examples": ["https://github.com/msasinowski/react-native-expo-braintree/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Swif7ify/react-native-earl-gamepad",
+    "images": [
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/visual_debugger.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/2.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/4.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
