@@ -18828,14 +18828,16 @@
   },
   {
     "githubUrl": "https://github.com/Tony-Starkus/react-native-financial-charts",
-    "npmPkg": "react-native-financial-charts",
     "examples": [
-      "https://github.com/Tony-Starkus/react-native-financial-charts"
+      "https://github.com/Tony-Starkus/react-native-financial-charts/tree/main/example"
     ],
-    "images": ["https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/0.gif", "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/1.png", "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/2.png"],
+    "images": [
+      "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/0.gif",
+      "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/1.png",
+      "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/2.png"
+    ],
     "ios": true,
     "android": true,
-    "web": false,
     "newArchitecture": "new-arch-only"
   }
 ]
