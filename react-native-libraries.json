@@ -16225,8 +16225,9 @@
   {
     "githubUrl": "https://github.com/cornejobarraza/expo-libvlc-player",
     "examples": ["https://github.com/cornejobarraza/expo-libvlc-player/tree/master/example"],
-    "ios": true,
     "android": true,
+    "ios": true,
+    "tvos": true,
     "newArchitecture": true,
     "configPlugin": true
   },
