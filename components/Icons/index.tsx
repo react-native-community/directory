@@ -1,11 +1,9 @@
 import { type StyleProp, type ViewStyle } from 'react-native';
 import { Circle, Line, Path, Polyline, Rect, Svg } from 'react-native-svg';
 
-import { colors } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 export type IconProps = {
-  fill?: string;
   width?: number;
   height?: number;
   style?: StyleProp<ViewStyle>;
@@ -37,26 +35,26 @@ export function Star({ width, height, style }: IconProps) {
   );
 }
 
-export function Web({ width, height, fill = colors.black }: IconProps) {
+export function Web({ width, height, style }: IconProps) {
   return (
-    <Svg width={width ?? 18} height={height ?? 19} viewBox="0 0 18 19" fill="none">
+    <Svg width={width ?? 18} height={height ?? 19} viewBox="0 0 18 19" style={style}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9.059 16.473a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2a8.744 8.744 0 100-17.487 8.744 8.744 0 000 17.487z"
-        fill={fill}
+        fill="currentColor"
       />
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M10.607 15.54c.576-1.437.954-3.49.954-5.81 0-2.32-.378-4.374-.954-5.811-.289-.721-.608-1.238-.91-1.558-.302-.318-.517-.375-.638-.375-.12 0-.336.057-.637.375-.303.32-.622.837-.911 1.558-.576 1.437-.954 3.49-.954 5.81 0 2.32.378 4.374.954 5.811.289.722.608 1.238.91 1.558.302.318.517.375.638.375.12 0 .336-.057.637-.375.303-.32.622-.836.911-1.558zM9.06 18.473c1.934 0 3.502-3.914 3.502-8.743 0-4.83-1.568-8.744-3.502-8.744-1.934 0-3.502 3.915-3.502 8.744s1.568 8.743 3.502 8.743z"
-        fill={fill}
+        fill="currentColor"
       />
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M1.794 6.877H16.21v1H1.794v-1zM1.794 11.877H16.21v1H1.794v-1z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -265,11 +263,11 @@ export function Thumbnail({ width = 16, height = 16, style }: IconProps) {
   );
 }
 
-export function License({ width = 16, height = 18, fill = colors.black }: IconProps) {
+export function License({ width = 16, height = 18, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 18" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 16 18" style={style}>
       <Path
-        fill={fill}
+        fill="currentColor"
         d="M0,0v18h16V0H0z M14,15.9H2V3.1h12C14,3.1,14,15.9,14,15.9z M12,13H4v-1h8V13z M12,10.5H4v-1h8V10.5z M12,8H4V7h8V8z"
       />
     </Svg>
@@ -291,12 +289,12 @@ export function Fork({ width = 15, height = 16, style }: IconProps) {
   );
 }
 
-export function Code({ width = 16, height = 16, fill = colors.black }: IconProps) {
+export function Code({ width = 16, height = 16, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
-      <Path fill={fill} d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
-      <Path fill={fill} d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
-      <Path fill={fill} d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
+    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
+      <Path fill="currentColor" d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
+      <Path fill="currentColor" d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
+      <Path fill="currentColor" d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
     </Svg>
   );
 }
@@ -316,11 +314,11 @@ export function Warning({ width = 17, height = 17, style }: IconProps) {
   );
 }
 
-export function TypeScript({ width = 16, height = 16, fill = colors.black }: IconProps) {
+export function TypeScript({ width = 16, height = 16, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
       <Path
-        fill={fill}
+        fill="currentColor"
         d="M0,0v8v8h16V0H0z M9.1,8.7H7v5.9H5.6V8.7H3.5V7.4h5.6V8.7z M14.5,13.4c-0.3,0.7-0.9,1.1-1.8,1.3c-0.3,0-0.9,0-1.2,0c-0.6-0.1-1.3-0.4-1.6-0.9c-0.1-0.2-0.4-0.6-0.4-0.6l0.2-0.1l0.6-0.3l0.5-0.3l0.1,0.1c0.1,0.2,0.4,0.5,0.6,0.6c0.5,0.3,1.2,0.2,1.6-0.1c0.1-0.1,0.2-0.3,0.2-0.5c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.4-0.3-1.1-0.6c-0.8-0.4-1.2-0.6-1.5-0.9c-0.2-0.2-0.4-0.5-0.4-0.8c-0.1-0.2-0.1-0.8,0-1c0.2-0.8,0.8-1.4,1.6-1.5c0.3-0.1,0.9,0,1.2,0l0,0c0.4,0.1,0.7,0.3,1,0.6c0.1,0.2,0.4,0.4,0.4,0.5c0,0-0.7,0.5-1.1,0.8c0,0-0.1-0.2-0.1-0.2c-0.2-0.3-0.4-0.4-0.8-0.4c-0.5,0-0.8,0.2-0.8,0.6c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.3,0.4,0.9,0.6c1.1,0.5,1.6,0.8,1.9,1.3C14.7,12,14.8,12.8,14.5,13.4z"
       />
     </Svg>
@@ -454,27 +452,27 @@ export function Info({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function NativeCode({ width = 18, height = 22, fill = colors.black }: IconProps) {
+export function NativeCode({ width = 18, height = 22, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 18 22" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 18 22" style={style}>
       <Path
-        fill={fill}
+        fill="currentColor"
         d="M0 0H12.414L18 5.586V22H0V0ZM2 2V20H16V8H10V2H2ZM12 2.414V6H15.586L12 2.414ZM8.207 11.207L6.414 13L8.207 14.793L6.793 16.207L3.586 13L6.793 9.793L8.207 11.207ZM11.207 9.793L14.414 13L11.207 16.207L9.793 14.793L11.586 13L9.793 11.207L11.207 9.793Z"
       />
     </Svg>
   );
 }
 
-export function ConfigPlugin({ width = 18, height = 22, fill = colors.black }: IconProps) {
+export function ConfigPlugin({ width = 18, height = 22, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
       <Path
         d="M7.61738 8.04512L7.58735 8.01867C7.73476 7.48962 7.60057 6.8983 7.18477 6.48222C6.77145 6.07 6.18729 5.93498 5.66127 6.07744L6.55184 6.96801L6.31818 7.84067L5.44552 8.07406L4.5544 7.18404C4.41277 7.70978 4.54751 8.29422 4.96083 8.70754C5.39372 9.1407 6.01755 9.26773 6.56286 9.09027L6.56782 9.09523L10.2326 12.7597C10.3775 12.9044 10.5671 12.9777 10.7572 12.9777C10.9474 12.9777 11.1367 12.9044 11.2824 12.7597C11.5726 12.4707 11.5726 12.0009 11.2824 11.7096L7.61738 8.04512Z"
-        fill={fill}
+        fill="currentColor"
       />
       <Path
         d="M1.4541 0H10.4825L14.545 4.06255V16H1.4541V0ZM2.90865 1.45455V14.5455H13.0905V5.81818H8.72683V1.45455H2.90865ZM10.1814 1.75564V4.36364H12.7894L10.1814 1.75564Z"
-        fill={fill}
+        fill="currentColor"
       />
     </Svg>
   );
@@ -675,16 +673,16 @@ export function Verified({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function NightlyTest({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function NightlyTest({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256">
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <Line
         x1="88"
         y1="32"
         x2="168"
         y2="32"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="20"
@@ -692,7 +690,7 @@ export function NightlyTest({ width = 24, height = 24, fill = colors.black }: Ic
       <Path
         d="M152,32V99.14l62.85,104.74A8,8,0,0,1,208,216H48a8,8,0,0,1-6.86-12.12L104,99.14V32"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="20"
@@ -700,7 +698,7 @@ export function NightlyTest({ width = 24, height = 24, fill = colors.black }: Ic
       <Path
         d="M71.63,153.08c13.23-2.48,32-1.41,56.37,10.92,32.25,16.33,54.75,12.91,67.5,7.65"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="20"
@@ -709,9 +707,9 @@ export function NightlyTest({ width = 24, height = 24, fill = colors.black }: Ic
   );
 }
 
-export function Module({ width = 24, height = 24, fill = colors.black }: IconProps) {
+export function Module({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256">
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <Rect
         x="24"
         y="72"
@@ -719,19 +717,19 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         height="128"
         rx="8"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="20"
       />
-      <Line x1="24" y1="120" x2="232" y2="120" fill="none" stroke={fill} strokeWidth="16" />
+      <Line x1="24" y1="120" x2="232" y2="120" fill="none" stroke="currentColor" strokeWidth="16" />
       <Line
         x1="72"
         y1="104"
         x2="72"
         y2="136"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="16"
@@ -742,7 +740,7 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
         x2="184"
         y2="136"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="16"
@@ -750,7 +748,7 @@ export function Module({ width = 24, height = 24, fill = colors.black }: IconPro
       <Path
         d="M168,72V56a16,16,0,0,0-16-16H104A16,16,0,0,0,88,56V72"
         fill="none"
-        stroke={fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="20"
