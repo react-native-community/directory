@@ -1,12 +1,10 @@
 import { partition } from 'es-toolkit';
-import { useContext } from 'react';
 import { View } from 'react-native';
 
-import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import { A, P, Caption } from '~/common/styleguide';
 import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
 import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
@@ -60,7 +58,7 @@ function generateData({
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <Download style={tw`text-icon`} width={16} height={18} />,
+          icon: <Download style={tw`text-icon dark:text-pewter`} width={16} height={18} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
@@ -73,7 +71,7 @@ function generateData({
       : null,
     {
       id: 'star',
-      icon: <Star style={tw`text-icon`} />,
+      icon: <Star style={tw`text-icon dark:text-pewter`} />,
       content: (
         <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
           {github.stats.stars.toLocaleString()} stars
@@ -82,7 +80,7 @@ function generateData({
     },
     {
       id: 'dependencies',
-      icon: <Dependency style={tw`text-icon`} />,
+      icon: <Dependency style={tw`text-icon dark:text-pewter`} />,
       content: template ? (
         <P style={linkStyle}>
           {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
@@ -98,7 +96,7 @@ function generateData({
     npm?.size
       ? {
           id: 'size',
-          icon: <PackageSize style={tw`text-icon`} />,
+          icon: <PackageSize style={tw`text-icon dark:text-pewter`} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
               {`${formatBytes(npm.size)} package size`}
@@ -109,7 +107,7 @@ function generateData({
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <Fork style={tw`text-icon`} width={16} height={17} />,
+          icon: <Fork style={tw`text-icon dark:text-pewter`} width={16} height={17} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
@@ -121,7 +119,7 @@ function generateData({
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <Eye style={tw`text-icon`} />,
+          icon: <Eye style={tw`text-icon dark:text-pewter`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
@@ -133,7 +131,7 @@ function generateData({
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <Issue style={tw`text-icon`} />,
+          icon: <Issue style={tw`text-icon dark:text-pewter`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
@@ -145,29 +143,26 @@ function generateData({
   ];
 }
 
-function generateSecondaryData(
-  library: LibraryType,
-  isDark: boolean,
-  skipExamples: boolean
-): MetadataEntryType[] {
+function generateSecondaryData(library: LibraryType, skipExamples: boolean): MetadataEntryType[] {
   const { github, examples, nightlyProgram } = library;
   const configPlugin = library.configPlugin ?? library.github.configPlugin;
 
-  const iconColor = isDark ? darkColors.pewter : skipExamples ? colors.gray5 : colors.secondary;
+  const iconColor = [
+    tw`text-secondary`,
+    skipExamples && tw`text-palette-gray5`,
+    tw`dark:text-pewter`,
+  ];
   const paragraphStyles = [
     tw`text-[13px] font-light`,
     !skipExamples && tw`text-palette-gray5 dark:text-secondary`,
   ];
-  const hoverStyle = {
-    textDecorationColor: colors.gray4,
-    color: isDark ? colors.gray3 : colors.gray5,
-  };
+  const hoverStyle = tw`text-palette-gray5 decoration-palette-gray4 dark:text-palette-gray3`;
 
   return [
     github.urls.homepage
       ? {
           id: 'web',
-          icon: <Web fill={iconColor} width={16} height={16} />,
+          icon: <Web style={iconColor} width={16} height={16} />,
           content: (
             <A href={github.urls.homepage} style={paragraphStyles} hoverStyle={hoverStyle}>
               Website
@@ -178,7 +173,7 @@ function generateSecondaryData(
     github.license
       ? {
           id: 'license',
-          icon: <License fill={iconColor} width={14} height={16} />,
+          icon: <License style={iconColor} width={14} height={16} />,
           content:
             github.license.name === 'Other' ? (
               <P style={paragraphStyles}>Unrecognized License</P>
@@ -192,14 +187,14 @@ function generateSecondaryData(
     github.hasNativeCode
       ? {
           id: 'nativeCode',
-          icon: <NativeCode fill={iconColor} width={16} height={16} />,
+          icon: <NativeCode style={iconColor} width={16} height={16} />,
           content: <P style={paragraphStyles}>Native code</P>,
         }
       : null,
     configPlugin
       ? {
           id: 'configPlugin',
-          icon: <ConfigPlugin fill={iconColor} width={16} height={16} />,
+          icon: <ConfigPlugin style={iconColor} width={16} height={16} />,
           content: (
             <ConfigPluginContent
               configPlugin={configPlugin}
@@ -214,7 +209,7 @@ function generateSecondaryData(
     nightlyProgram
       ? {
           id: 'nightlyProgram',
-          icon: <NightlyTest fill={iconColor} width={18} height={18} />,
+          icon: <NightlyTest style={iconColor} width={18} height={18} />,
           content: (
             <A
               href="https://react-native-community.github.io/nightly-tests/"
@@ -229,7 +224,7 @@ function generateSecondaryData(
     skipExamples && library.github.moduleType
       ? {
           id: 'moduleType',
-          icon: <Module fill={iconColor} width={18} height={18} />,
+          icon: <Module style={iconColor} width={18} height={18} />,
           content: (
             <P style={paragraphStyles}>
               {
@@ -244,14 +239,14 @@ function generateSecondaryData(
     github.hasTypes
       ? {
           id: 'types',
-          icon: <TypeScript fill={iconColor} width={16} height={16} />,
+          icon: <TypeScript style={iconColor} width={16} height={16} />,
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
     !skipExamples && examples && examples.length
       ? {
           id: 'examples',
-          icon: <Code fill={iconColor} width={16} height={16} />,
+          icon: <Code style={iconColor} width={16} height={16} />,
           content: (
             <>
               <Caption style={paragraphStyles}>Examples: </Caption>
@@ -272,10 +267,8 @@ function generateSecondaryData(
 }
 
 export default function MetaData({ library, secondary, skipExamples = false }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
   if (secondary) {
-    const data = generateSecondaryData(library, isDark, skipExamples).filter(Boolean);
+    const data = generateSecondaryData(library, skipExamples).filter(Boolean);
     return (
       <>
         {data

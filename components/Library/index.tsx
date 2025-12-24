@@ -1,11 +1,9 @@
-import { useContext } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform, View } from 'react-native';
 
-import { colors, useLayout, A, darkColors, HoverEffect } from '~/common/styleguide';
+import { useLayout, A, HoverEffect } from '~/common/styleguide';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -23,7 +21,6 @@ type Props = {
 };
 
 export default function Library({ library, skipMetadata, showTrendingMark }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
@@ -38,38 +35,28 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
   return (
     <View
       style={[
-        styles.container,
-        {
-          borderColor: isDark ? darkColors.border : colors.gray2,
-        },
-        isSmallScreen && styles.containerColumn,
-        skipMetadata && styles.noMetaContainer,
-        skipMetadata && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
-        library.unmaintained && styles.unmaintained,
+        tw` mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default`,
+        isSmallScreen && tw`flex-col`,
+        skipMetadata && tw`w-[48.5%] mx-[0.75%] min-h-[206px]`,
+        skipMetadata &&
+          (isSmallScreen || isBelowMaxWidth) &&
+          tw`max-h-auto w-[98.5%] max-w-[98.5%]`,
+        library.unmaintained && tw`opacity-85`,
       ]}>
-      <View style={[styles.columnOne, styles.columnDesktop]}>
+      <View style={tw`pb-3.5 flex-1 p-4 pl-5`}>
         {library.unmaintained && (
           <View
             style={
               isSmallScreen
-                ? [
-                    styles.containerColumn,
-                    styles.updatedAtContainerSmall,
-                    { marginBottom: 6, gap: 0 },
-                  ]
-                : [styles.updatedAtContainer, styles.trendingMarkContainer]
+                ? tw`flex-col justify-start self-start mb-1.5`
+                : tw`flex-row justify-between items-start gap-6 mb-1`
             }>
             <UnmaintainedLabel alternatives={library.alternatives} />
             <UpdatedAtView library={library} />
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View
-            style={
-              isSmallScreen
-                ? [styles.containerColumn, styles.updatedAtContainerSmall]
-                : [styles.updatedAtContainer, { marginBottom: 4 }]
-            }>
+          <View style={tw`flex-row justify-between items-start gap-6 mb-1`}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
@@ -79,18 +66,18 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
         <View
           style={
             isSmallScreen
-              ? [styles.containerColumn, styles.updatedAtContainerSmall]
-              : styles.updatedAtContainer
+              ? tw`flex-col gap-2 justify-start self-start`
+              : tw`flex-row justify-between items-start gap-6`
           }>
-          <View style={styles.nameWrapper}>
+          <View style={tw`flex-row items-center gap-1.5`}>
             <A
               href={`/package/${library.npmPkg}`}
-              style={styles.name}
-              hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
+              style={tw`font-bold text-[19px]`}
+              hoverStyle={tw`text-palette-gray5 dark:text-palette-gray3`}>
               {libName}
             </A>
             <HoverEffect>
-              <A href={library.githubUrl} style={styles.githubButton}>
+              <A href={library.githubUrl} style={tw`size-5`}>
                 <GitHub
                   width={20}
                   height={20}
@@ -101,22 +88,22 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
           </View>
           {!showTrendingMark && !library.unmaintained && <UpdatedAtView library={library} />}
         </View>
-        <View style={styles.verticalMargin}>
+        <View style={tw`mt-3`}>
           <CompatibilityTags library={library} />
         </View>
-        <View style={styles.verticalMargin}>
+        <View style={tw`mt-3`}>
           <LibraryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
         </View>
-        {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length ? (
-          <View style={[styles.displayHorizontal, styles.imagesContainer]}>
+        {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
+          <View style={tw`flex-row items-center gap-x-0.5 flex-wrap mt-2`}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
           </View>
-        ) : null}
+        )}
         {hasSecondaryMetadata ? (
-          <View style={[styles.bottomBar, isSmallScreen ? styles.bottomBarSmall : {}]}>
-            <View style={[styles.displayHorizontal, styles.secondaryStats]}>
+          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-auto mt-1.5 -mb-1`]}>
+            <View style={[tw`flex-row items-center mt-3 flex-wrap gap-2.5 gap-y-0.5`]}>
               <MetaData library={library} secondary />
             </View>
           </View>
@@ -125,16 +112,8 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
       {skipMetadata ? null : (
         <View
           style={[
-            styles.columnTwo,
-            {
-              borderLeftColor: isDark ? darkColors.border : colors.gray2,
-            },
-            isSmallScreen && styles.columnTwoSmall,
-            isSmallScreen
-              ? {
-                  borderTopColor: isDark ? darkColors.border : colors.gray2,
-                }
-              : undefined,
+            tw`flex-0.35 p-4 border-l border-palette-gray2 dark:border-default`,
+            isSmallScreen && tw`border-l-0 border-t`,
           ]}>
           <MetaData library={library} />
         </View>
@@ -142,146 +121,3 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 16,
-    borderWidth: 1,
-    borderRadius: 6,
-    flexDirection: 'row',
-    overflow: 'hidden',
-  },
-  containerColumn: {
-    flexDirection: 'column',
-  },
-  columnDesktop: {
-    paddingBottom: 14,
-  },
-  columnOne: {
-    flex: 1,
-    padding: 16,
-    paddingLeft: 20,
-  },
-  columnTwo: {
-    flex: 0.35,
-    padding: 16,
-    borderLeftWidth: 1,
-  },
-  columnTwoSmall: {
-    borderLeftWidth: 0,
-    borderTopWidth: 1,
-  },
-  nameWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-  },
-  name: {
-    backgroundColor: 'transparent',
-    fontWeight: 700,
-    fontSize: 19,
-    textDecorationLine: 'none',
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    rowGap: 2,
-  },
-  exampleLink: {
-    marginRight: 6,
-  },
-  recommendedContainer: {
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    borderRadius: 2,
-    marginLeft: 10,
-    top: 1,
-  },
-  recommendedContainerSmall: {
-    marginLeft: 0,
-    marginTop: 8,
-    alignSelf: 'flex-start',
-  },
-  recommendedTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  recommendedText: {
-    marginLeft: 6,
-  },
-  verticalMargin: {
-    marginTop: 12,
-  },
-  imagesContainer: {
-    flexWrap: 'wrap',
-    marginTop: 8,
-  },
-  secondaryStats: {
-    marginTop: 12,
-    flexWrap: 'wrap',
-    gap: 10,
-  },
-  secondaryText: {
-    fontSize: 13,
-    color: colors.gray5,
-  },
-  bottomBar: {
-    width: '100%',
-    marginTop: 'auto',
-  },
-  bottomBarSmall: {
-    position: 'relative',
-    minHeight: 'auto',
-    paddingLeft: 0,
-    paddingRight: 0,
-    marginTop: 6,
-    marginBottom: -4,
-  },
-  filler: {
-    flex: 1,
-    paddingBottom: 34,
-  },
-  noMetaContainer: {
-    width: '48.5%',
-    marginHorizontal: '0.75%',
-    minHeight: 206,
-  },
-  noMetaColumnContainer: {
-    maxHeight: 'auto',
-    width: '98.5%',
-    maxWidth: '98.5%',
-  },
-  unmaintained: {
-    opacity: 0.88,
-  },
-  trendingMarkContainer: {
-    justifyContent: 'space-between',
-    marginBottom: 4,
-  },
-  link: {
-    fontSize: 13,
-    fontWeight: 300,
-    backgroundColor: 'transparent',
-  },
-  updatedAtContainer: {
-    gap: 24,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-  },
-  updatedAtContainerSmall: {
-    gap: 8,
-    justifyContent: 'flex-start',
-    alignSelf: 'flex-start',
-  },
-  detailsButton: {
-    display: 'flex',
-    width: 16,
-    height: 16,
-    alignItems: 'center',
-  },
-  githubButton: {
-    width: 20,
-    height: 20,
-  },
-});

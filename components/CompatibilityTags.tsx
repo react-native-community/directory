@@ -71,7 +71,7 @@ export default function CompatibilityTags({ library }: Props) {
                 <br />
                 <A
                   href={`https://www.npmjs.com/package/${library.vegaos}`}
-                  style={tw`text-xs font-light`}>
+                  style={tw`text-xs text-white font-light`}>
                   (via dedicated support package)
                 </A>
               </li>
