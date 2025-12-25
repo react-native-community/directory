@@ -1,7 +1,6 @@
-import { View } from 'react-native';
+import { type ColorValue, View } from 'react-native';
 import { Svg, Path, Circle } from 'react-native-svg';
 
-import { colors } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
 import { MAX_SCORE } from '~/util/scoring';
 import tw from '~/util/tailwind';
@@ -18,7 +17,9 @@ export function DirectoryScore({ score, matchingScoreModifiers, sizeMultiplier =
   const chunk = (MAX_SCORE - 5) / 5;
 
   function getFill(chunkNumber = 1) {
-    return score >= chunk * chunkNumber ? colors.primaryDark : 'currentColor';
+    return score >= chunk * chunkNumber
+      ? (tw`text-primary-dark`.color as ColorValue)
+      : 'currentColor';
   }
 
   const scoreSymbol = (
@@ -30,7 +31,7 @@ export function DirectoryScore({ score, matchingScoreModifiers, sizeMultiplier =
       aria-label={`Score: ${score} out of 100`}>
       <Path
         d="M16.3789 5.76173C15.121 5.48057 14.2348 5.38423 13.3789 5.29298C12.8203 4.43746 12.0547 3.58199 11.4922 2.92966C12.5273 1.88672 14.8061 0.125596 15.9998 0.932227C17.1682 1.72171 16.7109 4.50782 16.3789 5.76173Z"
-        fill={score > 0 ? colors.primaryDark : 'currentColor'}
+        fill={score > 0 ? (tw`text-primary-dark`.color as ColorValue) : 'currentColor'}
       />
       <Path
         d="M17.0621 12.5824C16.6766 11.3525 16.3169 10.5368 15.968 9.74996C16.4296 8.83845 16.7877 7.74766 17.0713 6.93436C18.4921 7.30936 21.1567 8.40227 21.055 9.83938C20.9555 11.2459 18.314 12.243 17.0621 12.5824Z"
@@ -52,7 +53,12 @@ export function DirectoryScore({ score, matchingScoreModifiers, sizeMultiplier =
         d="M10.1285 2.94207C9.25607 3.89083 8.7295 4.61021 8.22255 5.30577C7.20235 5.36177 6.07868 5.59709 5.23249 5.75806C4.84686 4.34012 4.46106 1.48608 5.75649 0.8556C7.02437 0.238523 9.2086 2.02757 10.1285 2.94207Z"
         fill={getFill(5)}
       />
-      <Circle cx="10.8074" cy="9.75731" r="1.98916" fill={colors.primaryDark} />
+      <Circle
+        cx="10.8074"
+        cy="9.75731"
+        r="1.98916"
+        fill={tw`text-primary-dark`.color as ColorValue}
+      />
     </Svg>
   );
 

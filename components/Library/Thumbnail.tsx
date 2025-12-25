@@ -1,8 +1,7 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
 import { memo, useState } from 'react';
-import { ActivityIndicator, useWindowDimensions, View } from 'react-native';
+import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
-import { colors } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 import { Thumbnail as ThumbnailIcon } from '../Icons';
@@ -32,7 +31,7 @@ function Thumbnail({ url }: Props) {
           style={tw`mr-2.5 my-1 p-1.5 pb-0 min-h-7.5 box-border overflow-hidden text-center rounded border border-palette-gray2 dark:border-default`}>
           {showPreview && !isLoaded ? (
             <div style={tw`w-3.5 mx-px -mt-0.5`}>
-              <ActivityIndicator size="small" color={colors.primaryDark} />
+              <ActivityIndicator size="small" color={tw`text-primary-dark`.color as ColorValue} />
             </div>
           ) : (
             <ThumbnailIcon
