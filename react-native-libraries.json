@@ -739,10 +739,9 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/TheWidlarzGroup/react-native-video",
+    "githubUrl": "https://github.com/TheWidlarzGroup/react-native-video/tree/master/packages/react-native-video",
     "examples": [
-      "https://github.com/TheWidlarzGroup/react-native-video/tree/master/examples/bare",
-      "https://github.com/TheWidlarzGroup/react-native-video/tree/master/examples/expo",
+      "https://github.com/TheWidlarzGroup/react-native-video/tree/master/example",
       "https://github.com/TheWidlarzGroup/react-native-video-tvos-example"
     ],
     "ios": true,
