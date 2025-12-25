@@ -1,9 +1,9 @@
 import { UL } from '@expo/html-elements';
 import dynamic from 'next/dynamic';
-import { useContext, useMemo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { useMemo } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, H6, Label, P, useLayout } from '~/common/styleguide';
+import { A, H6, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
@@ -16,7 +16,6 @@ import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
 import ReadmeBox from '~/components/Package/ReadmeBox';
 import PageMeta from '~/components/PageMeta';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import mapDependencies from '~/util/mapDependencies';
@@ -31,7 +30,6 @@ export default function PackageOverviewScene({
   registryData,
   packageName,
 }: PackageOverviewPageProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   const library = useMemo(
@@ -46,10 +44,6 @@ export default function PackageOverviewScene({
   const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
     registryData;
 
-  const headerColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
-
   return (
     <>
       <PageMeta
@@ -59,7 +53,7 @@ export default function PackageOverviewScene({
       />
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`py-6 px-0`}>
-        <View style={[styles.metaContainer, isSmallScreen && styles.mobileMetaContainer]}>
+        <View style={[tw`flex-row py-3 px-5 gap-8`, isSmallScreen && tw`flex-col gap-5`]}>
           <View style={tw`gap-3 flex-1`}>
             <PackageHeader
               library={library}
@@ -73,8 +67,10 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Code examples</H6>
-                <UL style={styles.examplesWrapper}>
+                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                  Code examples
+                </H6>
+                <UL style={tw`m-0 mb-2 gap-2`}>
                   {library.examples.map((example, index) => (
                     <ExampleBox example={example} key={example} index={index} />
                   ))}
@@ -83,7 +79,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && !!author && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Author</H6>
+                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>Author</H6>
                 <View style={{ alignItems: 'flex-start' }}>
                   {typeof author === 'string' ? (
                     <View>
@@ -97,8 +93,10 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Contributors</H6>
-                <View style={styles.maintainersList}>
+                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                  Contributors
+                </H6>
+                <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
                     .map(maintainer => (
@@ -108,29 +106,30 @@ export default function PackageOverviewScene({
               </>
             )}
           </View>
-          <View style={styles.metadataContainer} id="metadataContainer">
+          <View style={tw`gap-4 flex-0.35`} id="metadataContainer">
             <View>
               <MetaData library={library} />
             </View>
-            <H6 style={[styles.contentHeader, headerColorStyle]}>Additional information</H6>
-            <View style={styles.rowSpacing}>
+            <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+              Additional information
+            </H6>
+            <View style={tw`gap-1.5`}>
               <MetaData library={library} secondary skipExamples />
             </View>
             {!library.template && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Popularity</H6>
+                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                  Popularity
+                </H6>
                 <TrendingMark library={library} />
               </>
             )}
             {library.github.topics && library.github.topics.length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>
-                <View style={styles.topicsContainer}>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Topics</H6>
+                <View style={tw`flex-row flex-wrap items-start gap-y-0.5 gap-x-2`}>
                   {library.github.topics.map(topic => (
-                    <A
-                      key={topic}
-                      href={`/?search=${topic}`}
-                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                    <A key={topic} href={`/?search=${topic}`} style={tw`text-[12px] font-light`}>
                       {topic}
                     </A>
                   ))}
@@ -139,8 +138,8 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && !!author && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Author</H6>
-                <View style={{ alignItems: 'flex-start' }}>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Author</H6>
+                <View style={tw`items-start`}>
                   {typeof author === 'string' ? (
                     <View>
                       <Label>{author ?? 'Unknown'}</Label>
@@ -153,8 +152,8 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && maintainers && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
-                <View style={styles.maintainersList}>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Contributors</H6>
+                <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
                     .map(maintainer => (
@@ -165,31 +164,29 @@ export default function PackageOverviewScene({
             )}
             {!library.template && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Package analysis</H6>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Package analysis
+                </H6>
                 <ul
-                  style={{
-                    ...styles.rowSpacing,
-                    ...styles.linkList,
-                    color: isDark ? colors.gray5 : colors.gray4,
-                  }}>
+                  style={tw`m-0 pl-4.5 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
                   <li>
                     <A
                       href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      style={tw`text-[12px] font-light`}>
                       Bundlephobia
                     </A>
                   </li>
                   <li>
                     <A
                       href={`https://pkg-size.dev/${library.npmPkg}`}
-                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      style={tw`text-[12px] font-light`}>
                       pkg-size.dev
                     </A>
                   </li>
                   <li>
                     <A
                       href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                      style={[styles.dependencyLabel, styles.mutedLink]}>
+                      style={tw`text-[12px] font-light`}>
                       Snyk Advisor
                     </A>
                   </li>
@@ -198,7 +195,7 @@ export default function PackageOverviewScene({
             )}
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Dependencies</H6>
                 <View>
                   {mapDependencies(dependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`dep-${name}`} name={name} version={version} />
@@ -208,7 +205,9 @@ export default function PackageOverviewScene({
             )}
             {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Peer dependencies</H6>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Peer dependencies
+                </H6>
                 <View>
                   {mapDependencies(peerDependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`peer-dep-${name}`} name={name} version={version} />
@@ -218,7 +217,9 @@ export default function PackageOverviewScene({
             )}
             {devDependencies && Object.keys(devDependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Development dependencies</H6>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Development dependencies
+                </H6>
                 <View>
                   {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`dev-dep-${name}`} name={name} version={version} />
@@ -228,13 +229,10 @@ export default function PackageOverviewScene({
             )}
             {engines && Object.keys(engines).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Engines</H6>
+                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Engines</H6>
                 <View>
                   {mapDependencies(engines, ([name, version]: [string, string]) => (
-                    <View key={`engines-${name}`} style={styles.dependencyEntry}>
-                      <P style={styles.dependencyLabel}>{name}</P>
-                      <Label style={headerColorStyle}>{version}</Label>
-                    </View>
+                    <DependencyRow key={`engine-${name}`} name={name} version={version} />
                   ))}
                 </View>
               </>
@@ -245,74 +243,3 @@ export default function PackageOverviewScene({
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  metaContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    gap: 32,
-  },
-  mobileMetaContainer: {
-    flexDirection: 'column',
-    gap: 20,
-  },
-  metadataContainer: {
-    gap: 16,
-    flex: 0.35,
-  },
-  contentHeader: {
-    fontSize: 16,
-  },
-  mainContentHeader: {
-    fontSize: 16,
-    marginTop: 12,
-  },
-  mutedLink: {
-    fontWeight: 300,
-  },
-  dependencyEntry: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 8,
-    justifyContent: 'space-between',
-    fontFamily: 'monospace',
-  },
-  dependencyLabel: {
-    fontSize: 12,
-  },
-  maintainersList: {
-    gap: 8,
-    alignItems: 'flex-start',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  readmeWrapper: {
-    padding: 16,
-    paddingTop: 12,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderStyle: 'solid',
-  },
-  rowSpacing: {
-    gap: 6,
-  },
-  examplesWrapper: {
-    marginBlock: 0,
-    marginBottom: 8,
-    gap: 8,
-  },
-  topicsContainer: {
-    columnGap: 8,
-    rowGap: 2,
-    alignItems: 'flex-start',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  linkList: {
-    margin: 0,
-    paddingLeft: 18,
-    fontSize: 13,
-  },
-});

@@ -19,10 +19,10 @@ export default function DependencyRow({ name, version }: Props) {
         href={`https://www.npmjs.com/package/${name}`}
         target="_blank"
         containerStyle={tw`flex-shrink`}
-        style={tw`text-xs leading-tight font-mono font-light`}>
+        style={tw`text-xs leading-[14px] font-mono font-light`}>
         {name}
       </A>
-      <Label style={tw`text-xs leading-tight text-palette-gray5 font-mono dark:text-secondary`}>
+      <Label style={tw`text-xs leading-[14px] text-palette-gray5 font-mono dark:text-secondary`}>
         {getVersionLabel(version)}
       </Label>
     </View>
