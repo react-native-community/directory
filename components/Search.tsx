@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { TextInput, View } from 'react-native';
+import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { colors, P, useLayout, Label } from '~/common/styleguide';
+import { P, useLayout, Label } from '~/common/styleguide';
 import { type Query } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';
@@ -102,7 +102,7 @@ export default function Search({ query, total }: Props) {
               placeholder="Search libraries..."
               style={tw`flex flex-1 h-12.5 p-4 pl-11 font-sans text-xl text-white rounded-md -outline-offset-2 border-2 border-palette-gray5 dark:border-default`}
               defaultValue={search}
-              placeholderTextColor={colors.gray4}
+              placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
             />
             {!isSmallScreen && (
               <View style={tw`absolute right-4 pointer-events-none flex-row gap-1 items-center`}>

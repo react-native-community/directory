@@ -25,49 +25,7 @@ export function useLayout() {
   };
 }
 
-export const colors = {
-  primary: '#61DAFB',
-  primaryLight: '#c1f4ff',
-  primaryDark: '#39BEE2',
-  primaryHover: '#61dafb16',
-  sky: '#C6EEFB',
-  powder: '#EEFAFE',
-  pewter: '#BEC8CB',
-  gray1: '#f9f9f9',
-  gray2: '#ececec',
-  gray3: '#CFCFD5',
-  gray4: '#828898',
-  gray5: '#505461',
-  gray6: '#24262e',
-  gray7: '#21232A',
-  black: '#242424',
-  white: '#ffffff',
-  secondary: '#afb1af',
-  warning: '#FBE679',
-  warningLight: '#FEF7D6',
-  warningDark: '#995e00',
-  error: '#ff5555',
-  success: '#4caf50',
-};
-
-export const darkColors = {
-  black: '#000',
-  background: '#19191f',
-  subHeader: '#14141a',
-  border: '#2a2e36',
-  veryDark: '#111114',
-  dark: '#14141a',
-  darkBright: '#1c1c21',
-  powder: '#262a36',
-  pewter: '#767C8E',
-  secondary: '#a2a7ab',
-  warningLight: '#2f2704',
-  warning: '#9a810c',
-  primaryDark: '#2e9ab8',
-};
-
 const baseTextStyles = {
-  color: colors.black,
   marginVertical: 0,
   fontWeight: '400' as const,
   fontFamily: 'inherit',

@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { type PropsWithChildren, useEffect, useState } from 'react';
-import { View } from 'react-native';
 
 import tw, { useDeviceContext, useAppColorScheme } from '~/util/tailwind';
 
@@ -16,7 +15,6 @@ const defaultState = { isDark: false };
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
-  const [isLoaded, setLoaded] = useState(false);
 
   function toggleTheme(isDark: boolean) {
     const el = document.documentElement;
@@ -42,29 +40,24 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
         const { isDark } = await rehydrateAppearanceState();
         toggleTheme(isDark);
       } catch {}
-      setLoaded(true);
     }
 
     void rehydrateAsync();
   }, []);
 
-  if (!isLoaded) {
-    return <View />;
-  } else {
-    return (
-      <CustomAppearanceContext.Provider
-        key={tw.memoBuster}
-        value={{
-          isDark,
-          setIsDark: isDark => {
-            toggleTheme(isDark);
-            void cacheAppearanceState({ isDark });
-          },
-        }}>
-        {children}
-      </CustomAppearanceContext.Provider>
-    );
-  }
+  return (
+    <CustomAppearanceContext.Provider
+      key={tw.memoBuster}
+      value={{
+        isDark,
+        setIsDark: isDark => {
+          toggleTheme(isDark);
+          void cacheAppearanceState({ isDark });
+        },
+      }}>
+      {children}
+    </CustomAppearanceContext.Provider>
+  );
 }
 
 async function cacheAppearanceState(appearance: Omit<CustomAppearanceContextType, 'setIsDark'>) {
