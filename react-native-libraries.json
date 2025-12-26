@@ -18839,5 +18839,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/iwater/react-native-nitro-zlib",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
