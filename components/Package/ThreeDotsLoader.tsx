@@ -1,17 +1,15 @@
 import { View } from 'react-native';
 
 type ThreeDotsProps = {
-  color: string;
   label?: string;
 };
 
-export function ThreeDotsLoader({ color, label = 'Loading' }: ThreeDotsProps) {
-  const colorStyle = { backgroundColor: color };
+export function ThreeDotsLoader({ label = 'Loading' }: ThreeDotsProps) {
   return (
     <View role="status" aria-label={label} aria-live="polite" id="dots-loader">
-      <span className="dot" style={colorStyle} />
-      <span className="dot" style={colorStyle} />
-      <span className="dot" style={colorStyle} />
+      <span className="dot" />
+      <span className="dot" />
+      <span className="dot" />
     </View>
   );
 }

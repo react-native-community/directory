@@ -1,26 +1,19 @@
-import { type ImgHTMLAttributes, useContext } from 'react';
-import { StyleSheet } from 'react-native';
+import { type ImgHTMLAttributes } from 'react';
 
-import { colors, darkColors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & {
   hideOnError?: boolean;
 };
 
 export default function UserAvatar({ src, alt, style, hideOnError = true, ...rest }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const avatarStyle = {
-    ...styles.avatar,
-    backgroundColor: isDark ? darkColors.powder : colors.gray2,
-    ...style,
-  };
-
   return (
     <img
       src={src}
-      style={avatarStyle}
+      style={{
+        ...tw`size-9 rounded-full bg-palette-gray2 dark:bg-powder`,
+        ...style,
+      }}
       alt={alt}
       onError={hideOnError ? hideAvatarOnError : undefined}
       {...rest}
@@ -33,11 +26,3 @@ function hideAvatarOnError(error: any) {
   target.src = '';
   target.style.display = 'none';
 }
-
-const styles = StyleSheet.create({
-  avatar: {
-    width: 36,
-    height: 36,
-    borderRadius: '100%',
-  },
-});

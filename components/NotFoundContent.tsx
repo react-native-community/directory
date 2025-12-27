@@ -1,7 +1,8 @@
 import { type ReactElement } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, View } from 'react-native';
 
 import { A, H3, P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = {
   header?: string;
@@ -15,11 +16,14 @@ export default function NotFoundContent({
   bottomSlot,
 }: Props) {
   return (
-    <View style={styles.container}>
-      <Image style={styles.img} source={require('~/assets/notfound.png')} alt={alt} />
-      <H3 style={styles.text}>{header}</H3>
-      <View style={styles.separator} />
-      <P style={styles.text}>
+    <View style={tw`items-center justify-center w-full px-6 mt-12 mb-18 flex flex-1`}>
+      <Image
+        style={tw`mt-12 mb-6 size-[64px]`}
+        source={require('~/assets/notfound.png')}
+        alt={alt}
+      />
+      <H3>{header}</H3>
+      <P style={tw`mt-4`}>
         Want to contribute a library you like? Submit a PR to the{' '}
         <A href="https://github.com/react-native-community/react-native-directory">GitHub Repo</A>.
       </P>
@@ -27,25 +31,3 @@ export default function NotFoundContent({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    width: '100%',
-    paddingHorizontal: 24,
-    marginTop: 40,
-    marginBottom: 80,
-  },
-  img: {
-    marginTop: 48,
-    marginBottom: 24,
-    width: 64,
-    height: 64,
-  },
-  text: {
-    textAlign: 'center',
-  },
-  separator: {
-    marginTop: 20,
-  },
-});

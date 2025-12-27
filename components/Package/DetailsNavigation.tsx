@@ -1,10 +1,9 @@
-import { StyleSheet } from 'react-native';
-
 import { useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
 import NavigationTab from '~/components/NavigationTab';
 import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -16,8 +15,8 @@ export default function DetailsNavigation({ library }: Props) {
   return (
     <Navigation
       title={`${library.template ? 'Template' : 'Package'} information`}
-      style={{ ...styles.tabsNav, ...(isSmallScreen ? styles.tabsNavSmall : {}) }}>
-      <ContentContainer style={styles.tabsContainer}>
+      style={[tw`pt-9 pb-3 gap-1`, isSmallScreen && tw`pt-5 gap-1.5`]}>
+      <ContentContainer style={tw`gap-2 flex-row px-5`}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
         <NavigationTab
           title="Versions"
@@ -29,20 +28,3 @@ export default function DetailsNavigation({ library }: Props) {
     </Navigation>
   );
 }
-
-const styles = StyleSheet.create({
-  tabsNav: {
-    paddingBottom: 12,
-    paddingTop: 36,
-    gap: 4,
-  },
-  tabsNavSmall: {
-    paddingTop: 20,
-    gap: 6,
-  },
-  tabsContainer: {
-    gap: 8,
-    flexDirection: 'row',
-    paddingHorizontal: 20,
-  },
-});

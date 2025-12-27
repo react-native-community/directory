@@ -1,8 +1,8 @@
-import { type SVGAttributes, useContext } from 'react';
+import { type SVGAttributes } from 'react';
 import ContentLoader from 'react-content-loader';
 
-import { colors, darkColors, useLayout } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { useLayout } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = {
   width?: string | number;
@@ -11,22 +11,16 @@ type Props = {
 };
 
 export default function LoadingContent({ width = '100%', height = 204, wrapperStyle = {} }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
   return (
     <ContentLoader
       speed={2}
       width={isSmallScreen ? '100%' : width}
       height={height}
-      backgroundColor={isDark ? '#2a2e36' : '#f3f3f3'}
-      foregroundColor={isDark ? '#383c42' : '#ecebeb'}
+      backgroundColor={tw.prefixMatch('dark') ? '#2a2e36' : '#f3f3f3'}
+      foregroundColor={tw.prefixMatch('dark') ? '#383c42' : '#ecebeb'}
       style={{
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: isDark ? darkColors.border : colors.gray2,
-        borderRadius: 6,
-        marginBottom: 16,
-        boxSizing: 'border-box',
+        ...tw`border border-solid rounded-md mb-4 box-border border-palette-gray2 dark:border-default`,
         ...wrapperStyle,
       }}>
       <rect x="20" y="20" rx="3" ry="3" width="288" height="25" />

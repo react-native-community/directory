@@ -1,9 +1,10 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, View } from 'react-native';
 
-import { H2, A, P } from '~/common/styleguide';
+import { H3, A, P } from '~/common/styleguide';
 import Navigation from '~/components/Navigation';
 import NotFound from '~/components/Package/NotFound';
 import PageMeta from '~/components/PageMeta';
+import tw from '~/util/tailwind';
 
 type Props = {
   statusCode: number;
@@ -19,10 +20,14 @@ export default function ErrorScene({ statusCode, reason }: Props) {
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
       <Navigation header={<></>} />
-      <View style={styles.container}>
-        <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
-        <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
-        <P style={[styles.text, styles.secondLine]}>
+      <View style={tw`items-center justify-center w-full px-6 mt-12 mb-18 flex flex-1`}>
+        <Image
+          style={tw`mt-12 mb-6 size-[64px]`}
+          source={require('~/assets/notfound.png')}
+          alt="Error"
+        />
+        <H3>Uh oh, something went wrong ({statusCode})</H3>
+        <P style={tw`mt-4`}>
           {reason ?? (
             <>
               Help fix it? Submit a PR to the{' '}
@@ -34,26 +39,3 @@ export default function ErrorScene({ statusCode, reason }: Props) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    paddingHorizontal: 24,
-    paddingTop: 48,
-    paddingBottom: 72,
-    flex: 1,
-  },
-  img: {
-    marginBottom: 24,
-    width: 64,
-    height: 64,
-  },
-  text: {
-    textAlign: 'center',
-  },
-  secondLine: {
-    marginTop: 20,
-  },
-});

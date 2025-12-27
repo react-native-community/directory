@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native';
-
 import ContentContainer from '~/components/ContentContainer';
 import ExploreSection from '~/components/Explore/ExploreSection';
 import {
@@ -16,6 +14,7 @@ import {
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import { type PopularPageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
 
 export default function PopularScene({ data }: PopularPageProps) {
   return (
@@ -29,7 +28,7 @@ export default function PopularScene({ data }: PopularPageProps) {
         title="Popular libraries"
         description="Browse most popular recently libraries by platform."
       />
-      <ContentContainer style={styles.container}>
+      <ContentContainer style={tw`py-4 px-2`}>
         <ExploreSection
           title="Core platforms"
           icon={ReactLogo}
@@ -92,11 +91,3 @@ export default function PopularScene({ data }: PopularPageProps) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 12,
-    paddingHorizontal: 8,
-    paddingBottom: 12,
-  },
-});

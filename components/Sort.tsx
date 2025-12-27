@@ -1,11 +1,11 @@
 import { Picker } from '@react-native-picker/picker';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
 
-import { colors, darkColors, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { P } from '~/common/styleguide';
 import { type Query, type QueryOrder, type QueryOrderDirection } from '~/types';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { Sort as SortIcon } from './Icons';
@@ -19,7 +19,6 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
   const [isSortIconHovered, setIsSortIconHovered] = useState(false);
 
   const { asPath, push } = useRouter();
-  const { isDark } = useContext(CustomAppearanceContext);
 
   const currentSortValue: QueryOrder | undefined = order;
   const currentDirection: QueryOrderDirection | undefined = direction;
@@ -31,20 +30,15 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
   }
 
   return (
-    <View
-      style={[
-        styles.container,
-        styles.displayHorizontal,
-        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
-      ]}>
-      <View style={styles.displayHorizontal}>
+    <View style={tw`flex-row items-center bg-accented h-6 ml-2 pl-2 rounded`}>
+      <View style={tw`flex-row items-center`}>
         <Tooltip
           sideOffset={8}
           trigger={
             <Pressable
               onHoverIn={() => setIsSortIconHovered(true)}
               onHoverOut={() => setIsSortIconHovered(false)}
-              style={currentDirection === 'ascending' && styles.flippedIcon}
+              style={currentDirection === 'ascending' && tw`-scale-y-100`}
               aria-label="Toggle sort direction"
               role="button"
               onPress={() => {
@@ -55,24 +49,19 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
                   })
                 );
               }}>
-              <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
+              <SortIcon style={isSortIconHovered ? tw`text-primary` : tw`text-white`} />
             </Pressable>
           }>
           Toggle sort order
         </Tooltip>
-        <P style={styles.title}>Sort:</P>
+        <P style={tw`text-sm text-white ml-1.5 mr-0.5 select-none`}>Sort:</P>
       </View>
-      <View style={styles.pickerContainer}>
+      <View style={tw`top-px`}>
         <Picker
           id="sort-order"
           aria-label="Sort order"
           selectedValue={currentSortValue ?? (search ? 'relevance' : 'updated')}
-          style={[
-            styles.picker,
-            {
-              backgroundColor: isDark ? darkColors.border : 'transparent',
-            },
-          ]}
+          style={tw`text-white border-0 rounded text-sm relative -top-px font-semibold bg-transparent`}
           onValueChange={value => {
             updatePath(
               urlWithQuery('/', {
@@ -83,12 +72,7 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
             );
           }}>
           {SORTS.map(sort => (
-            <Picker.Item
-              key={sort.param}
-              value={sort.param}
-              label={sort.label}
-              color={isDark ? colors.white : colors.black}
-            />
+            <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
           ))}
         </Picker>
       </View>
@@ -142,42 +126,3 @@ const SORTS: { param: QueryOrder; label: string }[] = [
     label: 'Bundle Size',
   },
 ];
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.gray5,
-    height: 24,
-    marginLeft: 8,
-    paddingLeft: 8,
-    borderRadius: 4,
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  title: {
-    color: colors.white,
-    fontWeight: 400,
-    marginLeft: 6,
-    marginRight: 2,
-    fontSize: 14,
-    userSelect: 'none',
-  },
-  pickerContainer: {
-    top: 1,
-  },
-  picker: {
-    color: colors.white,
-    borderWidth: 0,
-    borderRadius: 4,
-    position: 'relative',
-    top: -1,
-    fontSize: 14,
-    fontFamily: 'inherit',
-    cursor: 'pointer',
-    fontWeight: 600,
-  },
-  flippedIcon: {
-    transform: 'scaleY(-1)',
-  },
-});
