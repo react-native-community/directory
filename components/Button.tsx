@@ -24,7 +24,7 @@ export function Button({
 }: Props) {
   const isLink = !!href;
   const buttonStyle = [
-    tw`justify-center items-center rounded outline-offset-1 bg-primary-darker dark:bg-primary-dark`,
+    tw`justify-center items-center rounded outline-offset-1 select-none bg-primary-darker dark:bg-primary-dark`,
     style,
   ];
 

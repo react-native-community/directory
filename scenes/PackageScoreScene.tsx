@@ -50,7 +50,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
             </View>
             <View
               style={[
-                tw`w-[0.5px] min-h-[112px] mx-7 bg-palette-gray3 dark:bg-dark-brighter`,
+                tw`w-[0.5px] min-h-[112px] mx-7 bg-palette-gray3 dark:bg-accented`,
                 isSmallScreen && tw`w-full min-h-[0.5px] mx-0 my-3`,
               ]}
             />

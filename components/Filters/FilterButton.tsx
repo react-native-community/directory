@@ -45,7 +45,7 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
       <Button
         onPress={onPress}
         style={[
-          tw`h-full px-2 bg-palette-gray5 dark:bg-dark-brighter`,
+          tw`h-full px-2 bg-accented`,
           isFilterVisible && tw`bg-primary-dark`,
           isFilterCount && tw`rounded-r-none`,
           style,
@@ -65,7 +65,7 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
       </Button>
       {filterCount > 0 && (
         <View
-          style={tw`h-full justify-center items-center rounded-r border-l border-palette-gray6 bg-palette-gray5 dark:bg-dark-brighter dark:border-dark`}>
+          style={tw`h-full justify-center items-center rounded-r border-l border-palette-gray6 bg-accented dark:border-dark`}>
           <ClearButton onPress={onClearAllPress} />
         </View>
       )}

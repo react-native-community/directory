@@ -19,7 +19,7 @@ export default function TrendingMark({ library, style, markOnly = false }: Props
     <>
       <View
         style={[
-          tw`absolute h-1.5 w-8 rounded bg-palette-gray2 dark:bg-dark-brighter`,
+          tw`absolute h-1.5 w-8 rounded bg-palette-gray2 dark:bg-accented`,
           markOnly ? tw`top-[11px]` : tw`top-[7px]`,
         ]}
       />

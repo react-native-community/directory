@@ -32,7 +32,6 @@
   --primary-darker: #2e9ab8;
   --primary-hover: #61dafb16;
 
-  --sky: #c6eefb;
   --powder: #eefafe;
   --pewter: #bec8cb;
 
@@ -48,6 +47,7 @@
   --white: #ffffff;
 
   --secondary: #afb1af;
+  --accented: var(--gray-5);
   --icon: var(--gray-5);
 
   --warning: #fbe679;
@@ -83,18 +83,18 @@
   --very-dark: #111114;
   --dark: #14141a;
   --dark-bright: #1c1c21;
-  --dark-brighter: #2a2e36;
 
   /* TODO: introduce dark theme `gray` color palette */
 
   --secondary: #a2a7ab;
+  --accented: #2a2e36;
   --icon: var(--secondary);
 
   --warning: #9a810c;
   --warning-light: #2f2704;
 
   --background: #19191f;
-  --border: var(--dark-brighter);
+  --border: var(--accented);
 
   --overscroll-background: var(--very-dark);
   --outline: var(--primary-dark);

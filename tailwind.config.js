@@ -10,6 +10,7 @@ const palette = {
   'primary-hover': 'var(--primary-hover)',
 
   secondary: 'var(--secondary)',
+  accented: 'var(--accented)',
 
   powder: 'var(--powder)',
   pewter: 'var(--pewter)',
@@ -40,6 +41,10 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      small: '800px',
+      layout: '1200px',
+    },
     fontFamily: {
       sans: ['Optimistic Display', 'ui-sans-serif', 'system-ui'],
       mono: ['monospace', 'ui-monospace'],
@@ -53,7 +58,6 @@ export default {
       // TODO: temporary values, replace with proper gray palette for dark mode
       dark: 'var(--dark)',
       'very-dark': 'var(--very-dark)',
-      'dark-brighter': 'var(--dark-brighter)',
     },
     borderColor: {
       transparent: 'transparent',
@@ -69,9 +73,6 @@ export default {
       current: 'currentColor',
       icon: 'var(--icon)',
       ...palette,
-
-      // TODO: temporary values, replace with proper gray palette for dark mode
-      'dark-brighter': 'var(--dark-brighter)',
     },
     gradientColorStops: {
       transparent: 'transparent',
