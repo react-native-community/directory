@@ -9100,13 +9100,14 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-router",
     "examples": [
       "https://github.com/expo/examples/tree/master/with-router",
-      "https://github.com/expo/examples/tree/master/with-router-tailwind",
-      "https://github.com/EvanBacon/expo-router-instagram-layout",
-      "https://github.com/EvanBacon/expo-router-twitter",
+      "https://github.com/expo/examples/tree/master/with-router-ai",
       "https://github.com/expo/examples/tree/master/with-router-menus",
       "https://github.com/expo/examples/tree/master/with-router-tv",
+      "https://github.com/expo/examples/tree/master/with-router-uniwind",
       "https://github.com/expo/examples/tree/master/with-satori",
-      "https://github.com/expo/examples/tree/master/with-shadcn"
+      "https://github.com/expo/examples/tree/master/with-shadcn",
+      "https://github.com/EvanBacon/expo-router-instagram-layout",
+      "https://github.com/EvanBacon/expo-router-twitter"
     ],
     "ios": true,
     "android": true,
@@ -11575,7 +11576,7 @@
     "githubUrl": "https://github.com/adaptyteam/AdaptySDK-React-Native",
     "npmPkg": "react-native-adapty",
     "examples": [
-      "https://github.com/adaptyteam/AdaptySDK-React-Native/tree/master/examples/AdaptyRnSdkExample",
+      "https://github.com/adaptyteam/AdaptySDK-React-Native/tree/master/examples/BasicExample",
       "https://github.com/adaptyteam/AdaptySDK-React-Native/tree/master/examples/FocusJournalExpo"
     ],
     "android": true,
@@ -14149,7 +14150,7 @@
   },
   {
     "githubUrl": "https://github.com/tlow92/expo-key-event",
-    "examples": ["https://github.com/tlow92/expo-key-event/tree/main/example"],
+    "examples": ["https://github.com/tlow92/expo-key-event/tree/main/examples/expo-54"],
     "ios": true,
     "android": true,
     "web": true,
@@ -17039,7 +17040,7 @@
     "githubUrl": "https://github.com/10play/10tap-editor",
     "npmPkg": "@10play/tentap-editor",
     "examples": [
-      "https://github.com/10play/10tap-editor/tree/main/example",
+      "https://github.com/10play/10tap-editor/tree/main/examplelatest",
       "https://github.com/10play/10TapAdvancedExample",
       "https://github.com/10play/10tap-web-example"
     ],
@@ -17160,9 +17161,6 @@
   },
   {
     "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched",
-    "examples": [
-      "https://github.com/software-mansion-labs/react-native-enriched/tree/main/example"
-    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18423,7 +18421,7 @@
   },
   {
     "githubUrl": "https://github.com/athexweb3/react-native-libprisma",
-    "examples": ["https://github.com/athexweb3/react-native-libprisma/tree/master/examples/mobile"],
+    "examples": ["https://github.com/athexweb3/react-native-libprisma/tree/master/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18802,7 +18800,9 @@
   },
   {
     "githubUrl": "https://github.com/emilienaufauvre/react-native-maplibre-gl-js",
-    "examples": ["https://github.com/emilienaufauvre/react-native-maplibre-gl-js/tree/main/example"],
+    "examples": [
+      "https://github.com/emilienaufauvre/react-native-maplibre-gl-js/tree/main/example"
+    ],
     "ios": true,
     "android": true
   },
@@ -18819,18 +18819,14 @@
       "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/visual_debugger_2.jpg",
       "https://raw.githubusercontent.com/Swif7ify/react-native-earl-gamepad/main/images/visual_debugger_3.jpg"
     ],
-    "examples": [
-      "https://github.com/Swif7ify/react-native-earl-gamepad-example"
-    ],
+    "examples": ["https://github.com/Swif7ify/react-native-earl-gamepad-example"],
     "ios": true,
     "android": true,
     "expoGo": true
   },
   {
     "githubUrl": "https://github.com/Tony-Starkus/react-native-financial-charts",
-    "examples": [
-      "https://github.com/Tony-Starkus/react-native-financial-charts/tree/main/example"
-    ],
+    "examples": ["https://github.com/Tony-Starkus/react-native-financial-charts/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/0.gif",
       "https://raw.githubusercontent.com/Tony-Starkus/react-native-financial-charts/main/docs/assets/1.png",
