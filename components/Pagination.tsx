@@ -77,7 +77,7 @@ function BackArrow({ disabled }: ArrowButtonProps) {
   return (
     <View
       style={[
-        tw`size-6 items-center justify-center rounded rotate-180 bg-palette-gray2 dark:bg-dark-brighter`,
+        tw`size-6 items-center justify-center rounded rotate-180 bg-palette-gray2 dark:bg-accented`,
         disabled && tw`opacity-50`,
       ]}>
       <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />
@@ -89,7 +89,7 @@ function ForwardArrow({ disabled }: ArrowButtonProps) {
   return (
     <View
       style={[
-        tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-dark-brighter`,
+        tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
         disabled && tw`opacity-50`,
       ]}>
       <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />

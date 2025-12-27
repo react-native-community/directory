@@ -25,23 +25,17 @@ export function useLayout() {
   };
 }
 
-const baseTextStyles = {
-  marginVertical: 0,
-  fontWeight: '400' as const,
-  fontFamily: 'inherit',
-};
-
 const textStyles = StyleSheet.create({
-  h1: { ...baseTextStyles, fontSize: 57.25, fontWeight: '600' as const },
-  h2: { ...baseTextStyles, fontSize: 35.5, fontWeight: '600' as const },
-  h3: { ...baseTextStyles, fontSize: 26.5, fontWeight: '600' as const },
-  h4: { ...baseTextStyles, fontSize: 22 },
-  h5: { ...baseTextStyles, fontSize: 20 },
-  h6: { ...baseTextStyles, fontSize: 18 },
-  headline: { ...baseTextStyles, fontSize: 16, fontWeight: '500' as const },
-  p: { ...baseTextStyles, fontSize: 16 },
-  caption: { ...baseTextStyles, fontSize: 15, lineHeight: 22 },
-  label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
+  h1: tw`text-[57.25px] font-semibold`,
+  h2: tw`text-[35.5px] font-semibold`,
+  h3: tw`text-[26.5px] font-semibold`,
+  h4: tw`text-[22px]`,
+  h5: tw`text-[20px]`,
+  h6: tw`text-[18px]`,
+  headline: tw`text-[16px] font-medium`,
+  p: tw`text-[16px]`,
+  caption: tw`text-[15px] leading-[22px]`,
+  label: tw`text-[12px] font-medium`,
 });
 
 type TextStyles = TextStyle | TextStyle[];
@@ -62,7 +56,12 @@ export function createTextComponent(Element: ComponentType<TextProps>, textStyle
       <Element
         id={id}
         numberOfLines={numberOfLines}
-        style={[elementStyle, textStyle, tw`text-black dark:text-white`, style]}>
+        style={[
+          tw`font-sans font-normal my-0 text-black dark:text-white`,
+          elementStyle as StyleProp<any>,
+          textStyle,
+          style,
+        ]}>
         {children}
       </Element>
     );

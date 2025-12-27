@@ -47,7 +47,7 @@ function Thumbnail({ url }: Props) {
         <HoverCard.Content sideOffset={6} sticky="always">
           <View
             style={[
-              tw`p-2.5 rounded-lg box-border hidden shadow-offset-0/0.5 shadow-radius-2 shadow-palette-gray3 bg-white dark:shadow-dark-brighter dark:bg-black`,
+              tw`p-2.5 rounded-lg box-border hidden shadow-offset-0/0.5 shadow-radius-2 shadow-palette-gray3 bg-white dark:shadow-accented dark:bg-black`,
               showPreview && isLoaded && tw`flex`,
               {
                 maxWidth: maxPreviewWidth,

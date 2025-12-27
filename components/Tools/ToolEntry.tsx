@@ -30,7 +30,7 @@ export default function ToolEntry({ name, description, githubUrl, buttons }: Pro
             href={href}
             style={[
               tw`flex-row px-3 min-h-8 gap-1.5 text-sm bg-palette-gray3`,
-              tw`dark:bg-dark-brighter dark:text-white`,
+              tw`dark:bg-accented dark:text-white`,
             ]}>
             <span>{label}</span>
           </Button>

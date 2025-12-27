@@ -17,12 +17,10 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
 
   function toggleTheme(isDark: boolean) {
-    const el = document.documentElement;
-
     if (isDark) {
-      el.classList.add('dark');
+      document.documentElement.classList.add('dark');
     } else {
-      el.classList.remove('dark');
+      document.documentElement.classList.remove('dark');
     }
 
     setColorScheme(isDark ? 'dark' : 'light');
@@ -47,7 +45,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
 
   return (
     <CustomAppearanceContext.Provider
-      key={tw.memoBuster}
+      key={colorScheme}
       value={{
         isDark,
         setIsDark: isDark => {

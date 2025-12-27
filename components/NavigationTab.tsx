@@ -33,9 +33,7 @@ function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Pro
           <Label
             style={[
               tw`py-0.5 px-1.5 rounded-xl text-[11px] text-white mt-[3px]`,
-              isActive
-                ? tw`bg-primary-dark text-black dark:text-white`
-                : tw`bg-palette-gray5 dark:bg-dark-brighter`,
+              isActive ? tw`bg-primary-dark text-black dark:text-white` : tw`bg-accented`,
             ]}>
             {counter}
           </Label>

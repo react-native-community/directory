@@ -30,8 +30,7 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
   }
 
   return (
-    <View
-      style={tw`flex-row items-center bg-palette-gray5 h-6 ml-2 pl-2 rounded dark:bg-dark-brighter`}>
+    <View style={tw`flex-row items-center bg-accented h-6 ml-2 pl-2 rounded`}>
       <View style={tw`flex-row items-center`}>
         <Tooltip
           sideOffset={8}
