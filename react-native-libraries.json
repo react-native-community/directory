@@ -18847,5 +18847,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tlow92/expo-skia-charts",
+    "examples": [
+      "https://github.com/tlow92/expo-skia-charts/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/tlow92/expo-skia-charts/refs/heads/main/preview-small.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
