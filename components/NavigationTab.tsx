@@ -2,7 +2,8 @@ import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, Label, P } from '~/common/styleguide';
+import { A, colors, darkColors, P } from '~/common/styleguide';
+import EntityCounter from '~/components/Package/EntityCounter';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 type Props = {
@@ -39,18 +40,17 @@ function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Pro
       <View style={styles.tabContainer}>
         <P style={[styles.tabTitle, isActive && styles.tabActiveTitle]}>{title}</P>
         {!!counter && (
-          <Label
-            style={[
-              styles.tabCounter,
+          <EntityCounter
+            count={counter}
+            style={
               isActive
                 ? {
                     color: isDark ? colors.white : colors.black,
                     backgroundColor: isDark ? darkColors.primaryDark : colors.primaryDark,
                   }
-                : { backgroundColor: isDark ? darkColors.border : colors.gray5 },
-            ]}>
-            {counter}
-          </Label>
+                : { backgroundColor: isDark ? darkColors.border : colors.gray5 }
+            }
+          />
         )}
       </View>
     </A>

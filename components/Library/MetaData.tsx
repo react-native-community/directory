@@ -70,25 +70,27 @@ function generateData(
       icon: <Star fill={iconColor} />,
       content: (
         <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
-          {github.stats.stars.toLocaleString()} stars
+          {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
         </A>
       ),
     },
-    {
-      id: 'dependencies',
-      icon: <Dependency fill={iconColor} />,
-      content: template ? (
-        <P style={styles.link}>
-          {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
-        </P>
-      ) : (
-        <A
-          href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
-          style={styles.link}>
-          {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
-        </A>
-      ),
-    },
+    github.stats?.dependencies !== undefined
+      ? {
+          id: 'dependencies',
+          icon: <Dependency fill={iconColor} />,
+          content: template ? (
+            <P style={styles.link}>
+              {`${github.stats.dependencies} ${pluralize('dependency', github.stats.dependencies)}`}
+            </P>
+          ) : (
+            <A
+              href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
+              style={styles.link}>
+              {`${github.stats.dependencies} ${pluralize('dependency', github.stats.dependencies)}`}
+            </A>
+          ),
+        }
+      : null,
     npm?.size
       ? {
           id: 'size',

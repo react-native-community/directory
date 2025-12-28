@@ -10,6 +10,7 @@ import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import DependencyRow from '~/components/Package/DependencyRow';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
@@ -73,7 +74,10 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Code examples</H6>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>
+                  Code examples
+                  <EntityCounter count={library.examples.length} />
+                </H6>
                 <UL style={styles.examplesWrapper}>
                   {library.examples.map((example, index) => (
                     <ExampleBox example={example} key={example} index={index} />
@@ -97,7 +101,10 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={[styles.mainContentHeader, headerColorStyle]}>Contributors</H6>
+                <H6 style={[styles.mainContentHeader, headerColorStyle]}>
+                  Contributors
+                  <EntityCounter count={maintainers.length} />
+                </H6>
                 <View style={styles.maintainersList}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
@@ -124,7 +131,10 @@ export default function PackageOverviewScene({
             )}
             {library.github.topics && library.github.topics.length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Topics</H6>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>
+                  Topics
+                  <EntityCounter count={library.github.topics.length} />
+                </H6>
                 <View style={styles.topicsContainer}>
                   {library.github.topics.map(topic => (
                     <A
@@ -153,7 +163,10 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && maintainers && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Contributors</H6>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>
+                  Contributors
+                  <EntityCounter count={maintainers.length} />
+                </H6>
                 <View style={styles.maintainersList}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
@@ -198,7 +211,10 @@ export default function PackageOverviewScene({
             )}
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Dependencies</H6>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>
+                  Dependencies
+                  <EntityCounter count={Object.keys(dependencies).length} />
+                </H6>
                 <View>
                   {mapDependencies(dependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`dep-${name}`} name={name} version={version} />
@@ -208,7 +224,10 @@ export default function PackageOverviewScene({
             )}
             {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Peer dependencies</H6>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>
+                  Peer dependencies
+                  <EntityCounter count={Object.keys(peerDependencies).length} />
+                </H6>
                 <View>
                   {mapDependencies(peerDependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`peer-dep-${name}`} name={name} version={version} />
@@ -218,7 +237,10 @@ export default function PackageOverviewScene({
             )}
             {devDependencies && Object.keys(devDependencies).length > 0 && (
               <>
-                <H6 style={[styles.contentHeader, headerColorStyle]}>Development dependencies</H6>
+                <H6 style={[styles.contentHeader, headerColorStyle]}>
+                  Development dependencies
+                  <EntityCounter count={Object.keys(devDependencies).length} />
+                </H6>
                 <View>
                   {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`dev-dep-${name}`} name={name} version={version} />
@@ -280,10 +302,14 @@ const styles = StyleSheet.create({
   },
   contentHeader: {
     fontSize: 16,
+    display: 'flex',
+    gap: 6,
   },
   mainContentHeader: {
     fontSize: 16,
     marginTop: 12,
+    display: 'flex',
+    gap: 6,
   },
   mutedLink: {
     fontWeight: 300,
