@@ -10,6 +10,7 @@ import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import DependencyRow from '~/components/Package/DependencyRow';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
@@ -67,8 +68,9 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
                   Code examples
+                  <EntityCounter count={library.examples.length} />
                 </H6>
                 <UL style={tw`m-0 mb-2 gap-2`}>
                   {library.examples.map((example, index) => (
@@ -93,8 +95,9 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
                   Contributors
+                  <EntityCounter count={maintainers.length} />
                 </H6>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
@@ -126,7 +129,10 @@ export default function PackageOverviewScene({
             )}
             {library.github.topics && library.github.topics.length > 0 && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Topics</H6>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Topics
+                  <EntityCounter count={library.github.topics.length} />
+                </H6>
                 <View style={tw`flex-row flex-wrap items-start gap-y-0.5 gap-x-2`}>
                   {library.github.topics.map(topic => (
                     <A key={topic} href={`/?search=${topic}`} style={tw`text-[12px] font-light`}>
@@ -152,7 +158,10 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Contributors</H6>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Contributors
+                  <EntityCounter count={maintainers.length} />
+                </H6>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
@@ -195,7 +204,10 @@ export default function PackageOverviewScene({
             )}
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Dependencies</H6>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                  Dependencies
+                  <EntityCounter count={Object.keys(dependencies).length} />
+                </H6>
                 <View>
                   {mapDependencies(dependencies, ([name, version]: [string, string]) => (
                     <DependencyRow key={`dep-${name}`} name={name} version={version} />
@@ -205,8 +217,9 @@ export default function PackageOverviewScene({
             )}
             {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
                   Peer dependencies
+                  <EntityCounter count={Object.keys(peerDependencies).length} />
                 </H6>
                 <View>
                   {mapDependencies(peerDependencies, ([name, version]: [string, string]) => (
@@ -217,8 +230,9 @@ export default function PackageOverviewScene({
             )}
             {devDependencies && Object.keys(devDependencies).length > 0 && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
                   Development dependencies
+                  <EntityCounter count={Object.keys(devDependencies).length} />
                 </H6>
                 <View>
                   {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
