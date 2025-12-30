@@ -22,7 +22,7 @@ jobs:
       run: bun data:test
     - name: Check new entries in react-native-libraries.json
       run: bun ci:validate
-    - name: Lint data
-      run: bun eslint react-native-libraries.json
       env:
         CI_CHECKS_TOKEN: ${{ github.token }}
+    - name: Lint data
+      run: bun eslint react-native-libraries.json
