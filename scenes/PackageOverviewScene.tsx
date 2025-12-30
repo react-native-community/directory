@@ -68,7 +68,8 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6
+                  style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
                   Code examples
                   <EntityCounter count={library.examples.length} />
                 </H6>
@@ -95,7 +96,8 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6
+                  style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
                 </H6>
