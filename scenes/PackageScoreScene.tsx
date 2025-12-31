@@ -86,8 +86,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 headline={name}
                 score={value}
                 key={`unmatch-${name}`}
-                // TODO: add PR with RN filters
-                style={tw`opacity-60 border-2 border-dashed grayscale`}>
+                style={[tw`opacity-60 border-2 border-dashed`, { filter: 'grayscale(1)' }]}>
                 {description}
               </ScoringCriterion>
             ))}

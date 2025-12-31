@@ -90,8 +90,6 @@ export default {
   },
   plugins: [
     plugin(({ addUtilities }) => {
-      // TODO: try fixing later via twrnc PR
-      // addVariant('hocus', ['&:hover', '&:focus-visible']);
       addUtilities({
         '.break-words': { 'word-break': 'break-word' },
         '.wrap-anywhere': { 'overflow-wrap': 'anywhere' },

@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'react';
-import { View, type ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { Headline, P } from '~/common/styleguide';
 import tw from '~/util/tailwind';
@@ -7,7 +7,7 @@ import tw from '~/util/tailwind';
 type Props = PropsWithChildren<{
   headline: string;
   score?: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }>;
 
 export function ScoringCriterion({ children, headline, style, score = undefined }: Props) {

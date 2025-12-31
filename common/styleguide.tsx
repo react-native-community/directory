@@ -13,15 +13,11 @@ import {
 
 import tw from '~/util/tailwind';
 
-export const layout = {
-  maxWidth: 1200,
-};
-
 export function useLayout() {
   const { width } = useWindowDimensions();
   return {
     isSmallScreen: width < 800,
-    isBelowMaxWidth: width < layout.maxWidth,
+    isBelowMaxWidth: width < 1200,
   };
 }
 
@@ -38,15 +34,16 @@ const textStyles = StyleSheet.create({
   label: tw`text-[12px] font-medium`,
 });
 
-type TextStyles = TextStyle | TextStyle[];
-
 type CustomTextProps = TextProps &
   PropsWithChildren<{
     id?: string;
     numberOfLines?: number;
   }>;
 
-export function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
+export function createTextComponent(
+  Element: ComponentType<TextProps>,
+  textStyle?: StyleProp<TextStyle>
+) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const elementStyle = Element?.displayName
       ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
@@ -58,7 +55,7 @@ export function createTextComponent(Element: ComponentType<TextProps>, textStyle
         numberOfLines={numberOfLines}
         style={[
           tw`font-sans font-normal my-0 text-black dark:text-white`,
-          elementStyle as StyleProp<any>,
+          elementStyle as StyleProp<TextStyle>,
           textStyle,
           style,
         ]}>

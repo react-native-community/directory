@@ -21,7 +21,6 @@ function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Pro
       style={[
         tw`no-underline rounded`,
         {
-          // TODO: figure out transitions
           transition: 'color 0.33s, background-color 0.33s',
         },
         isActive && tw`text-primary bg-primary-hover`,

@@ -84,8 +84,6 @@
   --dark: #14141a;
   --dark-bright: #1c1c21;
 
-  /* TODO: introduce dark theme `gray` color palette */
-
   --secondary: #a2a7ab;
   --accented: #2a2e36;
   --icon: var(--secondary);
@@ -123,12 +121,11 @@ html, body {
 }
 
 input:focus-visible  {
-  border-radius: 6px;
+  @apply rounded;
 }
 
 #__next, #__next > div {
-  min-height: 100vh;
-  background-color: var(--background);
+  @apply bg-default min-h-[100vh];
 }
 
 /* SELECT */
