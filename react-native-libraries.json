@@ -18858,5 +18858,20 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/bacarybruno/react-native-streaming-message-list",
+    "examples": [
+      "https://github.com/bacarybruno/react-native-streaming-message-list/tree/main/example",
+      "https://snack.expo.dev/@bacarybruno/react-native-streaming-message-list-demo"
+    ],
+    "images": [
+      "https://github.com/user-attachments/assets/038161ee-a2ef-4386-a9a4-72cc63c44d3b"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
