@@ -58,7 +58,7 @@ function generateData({
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <Download style={tw`text-icon dark:text-pewter`} width={16} height={18} />,
+          icon: <Download style={tw`text-icon`} width={16} height={18} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
@@ -71,7 +71,7 @@ function generateData({
       : null,
     {
       id: 'star',
-      icon: <Star style={tw`text-icon dark:text-pewter`} />,
+      icon: <Star style={tw`text-icon`} />,
       content: (
         <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
           {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
@@ -81,7 +81,7 @@ function generateData({
     github.stats?.dependencies !== undefined
       ? {
           id: 'dependencies',
-          icon: <Dependency style={tw`text-icon dark:text-pewter`} />,
+          icon: <Dependency style={tw`text-icon`} />,
           content: template ? (
             <P style={linkStyle}>
               {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
@@ -98,7 +98,7 @@ function generateData({
     npm?.size
       ? {
           id: 'size',
-          icon: <PackageSize style={tw`text-icon dark:text-pewter`} />,
+          icon: <PackageSize style={tw`text-icon`} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
               {`${formatBytes(npm.size)} package size`}
@@ -109,7 +109,7 @@ function generateData({
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <Fork style={tw`text-icon dark:text-pewter`} width={16} height={17} />,
+          icon: <Fork style={tw`text-icon`} width={16} height={17} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
@@ -121,7 +121,7 @@ function generateData({
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <Eye style={tw`text-icon dark:text-pewter`} />,
+          icon: <Eye style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
@@ -133,7 +133,7 @@ function generateData({
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <Issue style={tw`text-icon dark:text-pewter`} />,
+          icon: <Issue style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}

@@ -41,8 +41,8 @@ export default function ExploreSection({
 
   return (
     <>
-      <H3 style={tw`flex gap-4 pt-3 pb-2 px-2 items-center`} id={hashLink}>
-        {icon && createElement(icon, { style: tw`size-7.5 text-icon` })}
+      <H3 style={tw`flex gap-3 pt-3 pb-2 px-2 items-center`} id={hashLink}>
+        {icon && createElement(icon, { style: tw`size-7.5 text-icon mt-px` })}
         <A
           href={`#${hashLink}`}
           target="_self"

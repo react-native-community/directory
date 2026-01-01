@@ -41,14 +41,14 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
   const isFilterCount = !!filterCount;
 
   return (
-    <View style={tw`flex-row items-center rounded`}>
+    <View style={[tw`flex-row items-center rounded`, style]}>
       <Button
         onPress={onPress}
+        containerStyle={tw`h-full flex-grow`}
         style={[
           tw`h-full px-2 bg-accented`,
           isFilterVisible && tw`bg-primary-dark`,
           isFilterCount && tw`rounded-r-none`,
-          style,
         ]}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`top-px`}>
