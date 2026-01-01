@@ -14,7 +14,7 @@ import { GitHub, Logo, Plus, ThemeDark, ThemeLight, Tools } from './Icons';
 import Tooltip from './Tooltip';
 
 export default function TopBar() {
-  const { isDark, setIsDark } = useContext(CustomAppearanceContext);
+  const { toggleTheme } = useContext(CustomAppearanceContext);
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
   return (
@@ -46,7 +46,7 @@ export default function TopBar() {
               <View>
                 <Button
                   aria-label="Toggle theme"
-                  onPress={() => setIsDark(!isDark)}
+                  onPress={toggleTheme}
                   style={tw`size-8.5 px-1 bg-transparent rounded-full`}>
                   {tw.prefixMatch('dark') ? (
                     <ThemeLight style={tw`text-white`} />

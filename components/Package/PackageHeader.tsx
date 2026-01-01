@@ -28,7 +28,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
       {library.unmaintained && <UnmaintainedLabel block />}
       <View
         style={[
-          tw`flex-row gap-6 items-center justify-between min-h-[26px]`,
+          tw`flex-row items-center justify-between min-h-[26px]`,
           isSmallScreen && tw`gap-y-2.5 items-start flex-col`,
         ]}>
         <View style={tw`flex-row flex-wrap items-center gap-x-2 gap-y-1`}>

@@ -1,30 +1,25 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { type PropsWithChildren, useEffect, useState } from 'react';
+import { type PropsWithChildren, useEffect } from 'react';
 
 import tw, { useDeviceContext, useAppColorScheme } from '~/util/tailwind';
 
-import CustomAppearanceContext, {
-  type CustomAppearanceContextType,
-} from './CustomAppearanceContext';
+import CustomAppearanceContext from './CustomAppearanceContext';
 
 const appearanceStorageKey = '@ReactNativeDirectory:CustomAppearanceContext';
 const shouldRehydrate = true;
-
 const defaultState = { isDark: false };
 
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
-  const [isDark, setIsDark] = useState(colorScheme === 'dark');
 
-  function toggleTheme(isDark: boolean) {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
+  function toggleTheme() {
+    if (colorScheme === 'dark') {
       document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
     }
 
-    setColorScheme(isDark ? 'dark' : 'light');
-    setIsDark(isDark);
+    setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
   }
 
   useDeviceContext(tw, {
@@ -36,7 +31,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     async function rehydrateAsync() {
       try {
         const { isDark } = await rehydrateAppearanceState();
-        toggleTheme(isDark);
+        isDark && toggleTheme();
       } catch {}
     }
 
@@ -47,10 +42,9 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     <CustomAppearanceContext.Provider
       key={colorScheme}
       value={{
-        isDark,
-        setIsDark: isDark => {
-          toggleTheme(isDark);
-          void cacheAppearanceState({ isDark });
+        toggleTheme: () => {
+          toggleTheme();
+          void cacheAppearanceState(colorScheme !== 'dark');
         },
       }}>
       {children}
@@ -58,8 +52,8 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   );
 }
 
-async function cacheAppearanceState(appearance: Omit<CustomAppearanceContextType, 'setIsDark'>) {
-  await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify(appearance));
+async function cacheAppearanceState(isDark: boolean) {
+  await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify({ isDark }));
 }
 
 async function rehydrateAppearanceState() {
@@ -69,7 +63,7 @@ async function rehydrateAppearanceState() {
 
   try {
     const item = await AsyncStorage.getItem(appearanceStorageKey);
-    return item ? JSON.parse(item) : null;
+    return item ? JSON.parse(item) : defaultState;
   } catch {
     return defaultState;
   }
