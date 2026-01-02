@@ -18883,5 +18883,23 @@
     "android": true,
     "expoGo": true,
     "examples": ["https://github.com/vijaykishan312/react-native-custom-splash/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/WilliamDanielsson/react-native-swappable-grid",
+    "npmPkg": "react-native-swappable-grid",
+    "examples": [
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid-example"
+    ],
+    "images": [
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/re-order.gif",
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/re-size.gif",
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/add-items.gif",
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/hold-to-delete.gif",
+      "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/drag-to-delete.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
