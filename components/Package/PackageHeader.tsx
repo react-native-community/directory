@@ -1,7 +1,7 @@
-import { useContext, type ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { type ReactNode } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, HoverEffect, P, useLayout } from '~/common/styleguide';
+import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
@@ -9,8 +9,8 @@ import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
+import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -19,45 +19,45 @@ type Props = {
 };
 
 export default function PackageHeader({ library, registryData, rightSlot }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   const ghUsername = library.github.fullName.split('/')[0];
 
-  const headerColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
-
   return (
     <>
       {library.unmaintained && <UnmaintainedLabel block />}
-      <View style={[styles.nameRow, isSmallScreen && styles.nameRowMobile]}>
-        <View style={styles.nameWrapper}>
+      <View
+        style={[
+          tw`flex-row items-center justify-between min-h-[26px]`,
+          isSmallScreen && tw`gap-y-2.5 items-start flex-col`,
+        ]}>
+        <View style={tw`flex-row flex-wrap items-center gap-x-2 gap-y-1`}>
           <Tooltip
             sideOffset={2}
             delayDuration={100}
             trigger={
               <UserAvatar
                 src={`https://github.com/${ghUsername}.png`}
-                style={{
-                  ...styles.avatar,
-                  borderColor: isDark ? darkColors.border : colors.gray2,
-                }}
+                style={tw`size-6 rounded-md border border-solid border-palette-gray2 dark:border-default`}
                 alt={`${ghUsername} avatar`}
               />
             }>
             {ghUsername}
           </Tooltip>
-          <P style={styles.name}>{library.npmPkg}</P>
+          <P style={tw`text-xl leading-[26px] font-semibold -mt-0.5`}>{library.npmPkg}</P>
           {registryData && (
-            <View style={styles.versionContainer}>
-              <P style={headerColorStyle}>{registryData.version}</P>
+            <View style={tw`flex-row items-center gap-x-1`}>
+              <P style={tw`text-secondary`}>{registryData.version}</P>
               {registryData._npmUser?.trustedPublisher && <TrustedBadge />}
             </View>
           )}
           <HoverEffect>
-            <A href={library.githubUrl} style={styles.githubButton}>
-              <GitHub width={20} height={20} fill={isDark ? colors.gray4 : colors.gray5} />
+            <A href={library.githubUrl} style={tw`size-5`}>
+              <GitHub
+                width={20}
+                height={20}
+                style={tw`text-palette-gray5 dark:text-palette-gray4`}
+              />
             </A>
           </HoverEffect>
         </View>
@@ -68,47 +68,3 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  nameRow: {
-    gap: 24,
-    minHeight: 26,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  nameRowMobile: {
-    gap: 8,
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-  },
-  nameWrapper: {
-    columnGap: 8,
-    rowGap: 4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  name: {
-    fontWeight: '600',
-    fontSize: 20,
-    lineHeight: 26,
-    marginTop: -2,
-  },
-  versionContainer: {
-    columnGap: 4,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  githubButton: {
-    width: 20,
-    height: 20,
-  },
-  avatar: {
-    width: 24,
-    height: 24,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderStyle: 'solid',
-  },
-});

@@ -1,35 +1,26 @@
-import { type PropsWithChildren, useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { type PropsWithChildren } from 'react';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, Headline, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Headline, P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
   headline: string;
   score?: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }>;
 
 export function ScoringCriterion({ children, headline, style, score = undefined }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const textStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const borderStyle = {
-    borderColor: isDark ? darkColors.border : colors.gray2,
-  };
-
   const isPositiveModifier = (score ?? 0) > 0;
+
   return (
-    <View style={[styles.criterionWrapper, borderStyle, style]}>
-      <Headline style={[styles.criterion, textStyle]}>
+    <View style={[tw`py-3.5 px-5 border rounded-md mb-4 border-default`, style]}>
+      <Headline style={tw`flex gap-3 text-[17px] font-semibold mb-1 leading-[22px]`}>
         {score && (
           <Headline
             style={[
-              styles.criterionScore,
-              borderStyle,
-              { color: isPositiveModifier ? colors.success : colors.error },
+              tw`flex items-center justify-center border-default min-w-[50px] text-[15px] font-bold border rounded text-center`,
+              isPositiveModifier ? tw`text-success` : tw`text-error`,
             ]}>
             {isPositiveModifier ? '+' : ''}
             {score}
@@ -37,43 +28,7 @@ export function ScoringCriterion({ children, headline, style, score = undefined 
         )}
         {headline}
       </Headline>
-      <P style={[styles.paragraph, { marginBottom: 0 }, textStyle]}>{children}</P>
+      <P style={tw`leading-[24px] font-light`}>{children}</P>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  paragraph: {
-    lineHeight: 24,
-    marginBottom: 16,
-    fontWeight: 300,
-  },
-  criterionWrapper: {
-    paddingVertical: 14,
-    paddingHorizontal: 20,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 6,
-    marginBottom: 16,
-  },
-  criterion: {
-    display: 'flex',
-    gap: 12,
-    fontSize: 17,
-    fontWeight: '600',
-    marginBottom: 4,
-  },
-  criterionScore: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minWidth: 50,
-    fontSize: 15,
-    fontWeight: '700',
-    padding: 1,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 4,
-    textAlign: 'center',
-  },
-});

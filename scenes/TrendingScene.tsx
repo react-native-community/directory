@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { Image, View } from 'react-native';
 
-import { A, H4, colors, darkColors, P } from '~/common/styleguide';
+import { A, H4, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { Filters } from '~/components/Filters';
 import { FilterButton } from '~/components/Filters/FilterButton';
@@ -11,9 +11,9 @@ import LoadingContent from '~/components/Library/LoadingContent';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { type TrendingPageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
@@ -24,7 +24,6 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 3);
 
   const router = useRouter();
-  const { isDark } = useContext(CustomAppearanceContext);
 
   const total = data && data.total;
 
@@ -42,10 +41,9 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={{ marginHorizontal: 'auto', marginTop: 12 }}>
+        <View style={tw`mx-auto mt-3`}>
           <FilterButton
-            containerStyle={{ height: 32 }}
-            style={{ height: 32, width: 160 }}
+            style={tw`h-8 min-w-40`}
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
             onClearAllPress={handleClearAllPress}
@@ -54,11 +52,11 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
         </View>
       </Navigation>
       {isFilterVisible && <Filters query={query} basePath="/trending" />}
-      <ContentContainer style={styles.container}>
+      <ContentContainer style={tw`px-4 py-3`}>
         {data?.libraries.length ? (
           <>
             <Pagination query={query} total={total} basePath="/trending" />
-            <View style={styles.wrapper}>
+            <View style={tw`mt-3`}>
               {data.libraries.map((item: LibraryType, index: number) => (
                 <LibraryWithLoading
                   key={`list-item-${index}-${item.github.name}`}
@@ -70,16 +68,12 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
             <Pagination query={query} total={total} basePath="/trending" />
           </>
         ) : (
-          <View style={styles.noResultWrapper}>
-            <Image
-              style={styles.noResultImg}
-              source={require('~/assets/notfound.png')}
-              alt="No results"
-            />
+          <View style={tw`items-center mt-6 mb-10`}>
+            <Image style={tw`size-16`} source={require('~/assets/notfound.png')} alt="No results" />
             <H4>Nothing was found!</H4>
           </View>
         )}
-        <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+        <P style={tw`p-6 text-sm text-secondary`}>
           Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
           Check out the{' '}
           <A href={urlWithQuery('/', {})} target="_self">
@@ -91,29 +85,3 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  note: {
-    padding: 24,
-    fontSize: 14,
-  },
-  wrapper: {
-    marginTop: 12,
-  },
-  noResultWrapper: {
-    alignItems: 'center',
-    marginTop: 24,
-    marginBottom: 42,
-  },
-  noResult: {
-    marginTop: 12,
-  },
-  noResultImg: {
-    width: 64,
-    height: 64,
-  },
-});

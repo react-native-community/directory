@@ -1,9 +1,8 @@
-import { StyleSheet } from 'react-native';
-
 import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import ToolEntry from '~/components/Tools/ToolEntry';
+import tw from '~/util/tailwind';
 
 export default function Tools() {
   return (
@@ -17,7 +16,7 @@ export default function Tools() {
         title="Tools"
         description="List of development tools, apps and websites using React Native Directory data."
       />
-      <ContentContainer style={styles.container}>
+      <ContentContainer style={tw`my-10 px-4 gap-4`}>
         <ToolEntry
           name="React Native Directory VS Code extension"
           description="Browse through the React Native Directory and perform actions related to the chosen package inside the built-in editor Command Palette."
@@ -85,35 +84,3 @@ export default function Tools() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 40,
-    paddingHorizontal: 16,
-    gap: 16,
-  },
-  subHeader: {
-    fontSize: 22,
-    marginTop: 16,
-    marginBottom: 12,
-  },
-  paragraph: {
-    fontSize: 17,
-    lineHeight: 29,
-    marginBottom: 17,
-    fontWeight: 300,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
-    marginBottom: 24,
-  },
-  button: {
-    flexDirection: 'row',
-    paddingHorizontal: 12,
-    minHeight: 32,
-    fontSize: 14,
-    gap: 6,
-  },
-});

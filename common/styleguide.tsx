@@ -1,13 +1,7 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import {
-  type ComponentType,
-  type CSSProperties,
-  type PropsWithChildren,
-  useContext,
-  useState,
-} from 'react';
+import { type ComponentType, type CSSProperties, type PropsWithChildren, useState } from 'react';
 import {
   StyleSheet,
   type TextStyle,
@@ -17,82 +11,28 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-
-export const layout = {
-  maxWidth: 1200,
-};
+import tw from '~/util/tailwind';
 
 export function useLayout() {
   const { width } = useWindowDimensions();
   return {
     isSmallScreen: width < 800,
-    isBelowMaxWidth: width < layout.maxWidth,
+    isBelowMaxWidth: width < 1200,
   };
 }
 
-export const colors = {
-  primary: '#61DAFB',
-  primaryLight: '#c1f4ff',
-  primaryDark: '#39BEE2',
-  primaryHover: '#61dafb16',
-  sky: '#C6EEFB',
-  powder: '#EEFAFE',
-  pewter: '#BEC8CB',
-  gray1: '#f9f9f9',
-  gray2: '#ececec',
-  gray3: '#CFCFD5',
-  gray4: '#828898',
-  gray5: '#505461',
-  gray6: '#24262e',
-  gray7: '#21232A',
-  black: '#242424',
-  white: '#ffffff',
-  secondary: '#afb1af',
-  warning: '#FBE679',
-  warningLight: '#FEF7D6',
-  warningDark: '#995e00',
-  error: '#ff5555',
-  success: '#4caf50',
-};
-
-export const darkColors = {
-  black: '#000',
-  background: '#19191f',
-  subHeader: '#14141a',
-  border: '#2a2e36',
-  veryDark: '#111114',
-  dark: '#14141a',
-  darkBright: '#1c1c21',
-  powder: '#262a36',
-  pewter: '#767C8E',
-  secondary: '#a2a7ab',
-  warningLight: '#2f2704',
-  warning: '#9a810c',
-  primaryDark: '#2e9ab8',
-};
-
-const baseTextStyles = {
-  color: colors.black,
-  marginVertical: 0,
-  fontWeight: '400' as const,
-  fontFamily: 'inherit',
-};
-
 const textStyles = StyleSheet.create({
-  h1: { ...baseTextStyles, fontSize: 57.25, fontWeight: '600' as const },
-  h2: { ...baseTextStyles, fontSize: 35.5, fontWeight: '600' as const },
-  h3: { ...baseTextStyles, fontSize: 26.5, fontWeight: '600' as const },
-  h4: { ...baseTextStyles, fontSize: 22 },
-  h5: { ...baseTextStyles, fontSize: 20 },
-  h6: { ...baseTextStyles, fontSize: 18 },
-  headline: { ...baseTextStyles, fontSize: 16, fontWeight: '500' as const },
-  p: { ...baseTextStyles, fontSize: 16 },
-  caption: { ...baseTextStyles, fontSize: 15, lineHeight: 22 },
-  label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
+  h1: tw`text-[57.25px] font-semibold`,
+  h2: tw`text-[35.5px] font-semibold`,
+  h3: tw`text-[26.5px] font-semibold`,
+  h4: tw`text-[22px]`,
+  h5: tw`text-[20px]`,
+  h6: tw`text-[18px]`,
+  headline: tw`text-[16px] font-medium`,
+  p: tw`text-[16px]`,
+  caption: tw`text-[15px] leading-[22px]`,
+  label: tw`text-[12px] font-medium`,
 });
-
-type TextStyles = TextStyle | TextStyle[];
 
 type CustomTextProps = TextProps &
   PropsWithChildren<{
@@ -100,10 +40,11 @@ type CustomTextProps = TextProps &
     numberOfLines?: number;
   }>;
 
-function createTextComponent(Element: ComponentType<TextProps>, textStyle?: TextStyles) {
+export function createTextComponent(
+  Element: ComponentType<TextProps>,
+  textStyle?: StyleProp<TextStyle>
+) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
-    const { isDark } = useContext(CustomAppearanceContext);
-
     const elementStyle = Element?.displayName
       ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
       : undefined;
@@ -112,7 +53,12 @@ function createTextComponent(Element: ComponentType<TextProps>, textStyle?: Text
       <Element
         id={id}
         numberOfLines={numberOfLines}
-        style={[elementStyle, textStyle, { color: isDark ? colors.white : colors.black }, style]}>
+        style={[
+          tw`font-sans font-normal my-0 text-black dark:text-white`,
+          elementStyle as StyleProp<TextStyle>,
+          textStyle,
+          style,
+        ]}>
         {children}
       </Element>
     );
@@ -139,15 +85,14 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: StyleProp<TextStyle>;
-  containerStyle?: CSSProperties | undefined;
+  containerStyle?: CSSProperties;
 }>;
 
 export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const [isHovered, setIsHovered] = useState(false);
 
-  const linkStyles = getLinkStyles(isDark);
-  const linkHoverStyles = getLinkHoverStyles();
+  const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
+  const linkHoverStyles = tw`decoration-primary-dark`;
 
   if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
     const passedStyle = StyleSheet.flatten(style);
@@ -171,7 +116,7 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
     <span
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={{ display: 'contents', ...containerStyle }}>
+      style={{ ...tw`contents`, ...containerStyle }}>
       <HtmlElements.A
         {...rest}
         href={href}
@@ -185,21 +130,6 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
   );
 }
 
-function getLinkStyles(isDark: boolean): TextStyle {
-  return {
-    color: isDark ? colors.white : colors.black,
-    textDecorationColor: isDark ? colors.gray5 : colors.pewter,
-    textDecorationLine: 'underline',
-    fontFamily: 'inherit',
-  };
-}
-
-function getLinkHoverStyles(): TextStyle {
-  return {
-    textDecorationColor: colors.primaryDark,
-  };
-}
-
 type HoverEffectProps = PropsWithChildren<{ style?: StyleProp<ViewStyle> }>;
 
 export function HoverEffect({ children, style }: HoverEffectProps) {
@@ -209,10 +139,9 @@ export function HoverEffect({ children, style }: HoverEffectProps) {
   return (
     <View
       style={[
-        // @ts-expect-error Transition is a valid web style property
         { transition: 'opacity 0.33s' },
-        isHovered && { opacity: 0.75 },
-        isActive && { opacity: 0.5 },
+        isHovered && tw`opacity-75`,
+        isActive && tw`opacity-50`,
         style,
       ]}
       onPointerEnter={() => setIsHovered(true)}

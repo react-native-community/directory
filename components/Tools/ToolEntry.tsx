@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { colors, darkColors, H3, P } from '~/common/styleguide';
+import { H3, P } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 import GitHubButton from './GitHubButton';
 
@@ -18,24 +17,21 @@ type Props = {
 };
 
 export default function ToolEntry({ name, description, githubUrl, buttons }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const textColorStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const buttonColorStyle = {
-    backgroundColor: isDark ? darkColors.border : colors.gray3,
-    color: isDark ? colors.white : colors.black,
-  };
-
   return (
-    <View style={[styles.box, { borderColor: isDark ? darkColors.border : colors.gray2 }]}>
-      <H3 style={[styles.header, textColorStyle]}>{name}</H3>
-      <P style={[styles.paragraph, textColorStyle]}>{description}</P>
-      <View style={styles.buttonsContainer}>
+    <View style={tw`border border-default px-5 py-4 rounded-xl`}>
+      <H3 style={tw`text-xl mb-0.5`}>{name}</H3>
+      <P style={tw`mb-3 font-light leading-[29px]`}>{description}</P>
+      <View style={tw`flex-row flex-wrap gap-3`}>
         <GitHubButton href={githubUrl} />
         {buttons.map(({ label, href }) => (
-          <Button key={label} openInNewTab href={href} style={[styles.button, buttonColorStyle]}>
+          <Button
+            key={label}
+            openInNewTab
+            href={href}
+            style={[
+              tw`flex-row px-3 min-h-8 gap-1.5 text-sm bg-palette-gray3`,
+              tw`dark:bg-accented dark:text-white`,
+            ]}>
             <span>{label}</span>
           </Button>
         ))}
@@ -43,34 +39,3 @@ export default function ToolEntry({ name, description, githubUrl, buttons }: Pro
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  box: {
-    borderRadius: 12,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-  },
-  header: {
-    fontSize: 20,
-    marginBottom: 4,
-  },
-  paragraph: {
-    lineHeight: 29,
-    marginBottom: 12,
-    fontWeight: 300,
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
-  },
-  button: {
-    flexDirection: 'row',
-    paddingHorizontal: 12,
-    minHeight: 32,
-    fontSize: 14,
-    gap: 6,
-  },
-});

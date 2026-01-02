@@ -1,30 +1,15 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, Caption, colors, darkColors, H2, H3, P } from '~/common/styleguide';
+import { A, P, Caption, H2, H3 } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import TrendingMark from '~/components/Library/TrendingMark';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { SCORING_CRITERIONS } from '~/util/scoring';
+import tw from '~/util/tailwind';
 
 export default function Scoring() {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const textColorStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const secondaryTextColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray4,
-  };
-  const calloutStyle = {
-    color: isDark ? darkColors.warning : colors.warningDark,
-    backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
-    borderLeftColor: isDark ? darkColors.warning : colors.warning,
-  };
-
   return (
     <>
       <PageMeta
@@ -36,15 +21,19 @@ export default function Scoring() {
         title="Scoring"
         description="What are the Directory Score and Trending Score and how they are calculated?"
       />
-      <ContentContainer style={styles.container}>
-        <Caption style={[styles.paragraph, styles.callout, calloutStyle]}>
+      <ContentContainer style={tw`mt-8 px-4`}>
+        <Caption
+          style={[
+            tw`font-light border-l-[6px] leading-[24px] px-5 py-4 mb-4 text-warning-dark bg-warning-light border-warning`,
+            tw`dark:text-warning dark:bg-warning-light`,
+          ]}>
           Directory scores are subjective and are based on data that&apos;s readily available on
           GitHub and npm. They are not a perfect scores and may not reflect quality for your
           specific needs. When evaluating libraries to include in your project, review the library
           yourself to determine if it&apos;s a good fit.
         </Caption>
-        <H2 style={[styles.subHeader, textColorStyle]}>Directory Score</H2>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H2 style={tw`mt-4 mb-5`}>Directory Score</H2>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
           library. A library can earn value by exhibiting &quot;good behavior criteria&quot; and can
           lose value by exhibiting &quot;bad behavior criteria&quot;. These criteria and their
@@ -55,19 +44,18 @@ export default function Scoring() {
           </A>
           .
         </P>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           The Directory Score is represented as a value between 0 and 100. All final scores outside
           this range will be clamped to the nearest limit.
         </P>
-        <H3 style={[styles.subHeader, textColorStyle]}>Directory Score criteria</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H3 style={tw`mt-4 mb-5`}>Directory Score criteria</H3>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           The following criteria are used to calculate a library&apos;s Directory Score.
         </P>
         <ScoringCriterion headline="Combined Popularity">
           Base popularity metric measured by weighting and combining subscribers, forks, stars, and
           download counts:
-          <br />
-          <View style={styles.formula}>
+          <View style={tw`px-4 mt-3`}>
             <code>forks * 20 + stars * 10 + downloads / 50;</code>
           </View>
         </ScoringCriterion>
@@ -77,8 +65,8 @@ export default function Scoring() {
           </ScoringCriterion>
         ))}
         <br />
-        <H2 style={[styles.subHeader, textColorStyle]}>Trending Score</H2>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H2 style={tw`mt-4 mb-5`}>Trending Score</H2>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           The Trending Score is the combination of multiple factors that relate to the download
           count and quality of a library. A library gets the the base score from the Popularity Gain
           criterion and can lose score by exhibiting one of bad criteria. These criteria and their
@@ -89,50 +77,46 @@ export default function Scoring() {
           </A>
           .
         </P>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           There are five levels of popularity which depends on the package final Trending Score:
-          <ul style={styles.trendingExplainers}>
+          <ul>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.5001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.5001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 50)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.2501 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.2501 }} style={tw`min-w-[164px]`} />
               (final score &gt; 25)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.1001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.1001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 10)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.0001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.0001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 0)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0 }} style={tw`min-w-[164px]`} />
               (final score =&lt; 0)
             </li>
           </ul>
         </P>
-        <H3 style={[styles.subHeader, textColorStyle]}>Trending Score criteria</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H3 style={tw`mt-4 mb-5`}>Trending Score criteria</H3>
+        <P style={tw`mb-4 leading-[27px] font-light`}>
           The following criteria are used to calculate a library&apos;s final Trending Score.
         </P>
         <ScoringCriterion headline="Popularity Gain">
           A base for the final library score, it compares the monthly downloads count with weekly
           downloads count and based on those values calculates a growth ratio for the package. The
           formula used for calculating the score looks as following:
-          <br />
-          <View style={styles.formula}>
+          <View style={tw`px-4 mt-3`}>
             <code>(lastWeekDownloads / Math.floor(monthlyDownloads / 4.25)) / 5</code>
           </View>
-          <br />
-          <View style={[styles.sidenoteContainer]}>
-            <P style={[styles.sidenote, secondaryTextColorStyle]}>
-              The value range span can be quite wide, but most of the packages Popularity Gain value
-              fits within +/- 100 range.
-            </P>
-          </View>
+          <P style={[tw`flex mt-3 text-sm font-light text-palette-gray4 dark:text-secondary`]}>
+            The value range span can be quite wide, but most of the packages Popularity Gain value
+            fits within +/- 100 range.
+          </P>
         </ScoringCriterion>
         <ScoringCriterion headline="Many downloads" score={+0.25}>
           Libraries with more than 15,000 monthly downloads and Popularity Gain score above 0.25
@@ -155,42 +139,3 @@ export default function Scoring() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 32,
-    paddingHorizontal: 16,
-  },
-  subHeader: {
-    marginTop: 16,
-    marginBottom: 20,
-  },
-  paragraph: {
-    lineHeight: 29,
-    marginBottom: 16,
-    fontWeight: 300,
-  },
-  callout: {
-    lineHeight: 24,
-    borderLeftWidth: 6,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    marginBottom: 16,
-  },
-  formula: {
-    paddingHorizontal: 16,
-    marginTop: 12,
-  },
-  trendingExplainers: {
-    fontSize: 16,
-  },
-  sidenoteContainer: {
-    flex: 1,
-    marginTop: 12,
-  },
-  sidenote: {
-    fontSize: 15,
-    lineHeight: 25,
-    fontWeight: 300,
-  },
-});

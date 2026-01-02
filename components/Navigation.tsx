@@ -1,10 +1,10 @@
-import { type PropsWithChildren, type ReactElement, useContext } from 'react';
-import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
+import { type PropsWithChildren, type ReactElement } from 'react';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, H1, H2, useLayout } from '~/common/styleguide';
+import { H1, H2, useLayout } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
 import TopBar from '~/components/TopBar';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 type NavigationProps = PropsWithChildren<{
   title?: string;
@@ -20,7 +20,6 @@ export default function Navigation({
   header,
   style,
 }: NavigationProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   return (
@@ -29,55 +28,26 @@ export default function Navigation({
       {header ? (
         header
       ) : (
-        <View
-          style={[
-            styles.headerWrapper,
-            { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
-            style,
-          ]}>
+        <View style={[tw`py-10 overflow-hidden bg-palette-gray6 dark:bg-dark`, style]}>
           <Logo
-            fill={isDark ? colors.gray7 : colors.gray5}
             width={580}
             height={520}
-            style={styles.logoBackground}
+            style={tw`absolute left-1/2 top-[-76px] ml-[-280px] opacity-15 text-palette-gray5 dark:text-palette-gray7`}
           />
-          <H1 style={[styles.header, isSmallScreen && styles.headerSmall]}>{title}</H1>
-          <H2 style={styles.headerDescription}>{description}</H2>
+          <H1
+            style={[
+              tw`text-center text-white text-[42px] leading-[54px] px-5`,
+              isSmallScreen && tw`text-3xl`,
+            ]}>
+            {title}
+          </H1>
+          <H2
+            style={tw`text-center text-base font-normal py-1 px-10 text-palette-gray3 dark:text-secondary`}>
+            {description}
+          </H2>
           {children}
         </View>
       )}
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  headerWrapper: {
-    paddingVertical: 40,
-    overflow: 'hidden',
-  },
-  header: {
-    textAlign: 'center',
-    color: colors.white,
-    fontSize: 42,
-    paddingHorizontal: 20,
-  },
-  headerSmall: {
-    fontSize: 32,
-  },
-  headerDescription: {
-    textAlign: 'center',
-    color: colors.pewter,
-    fontWeight: '500',
-    fontSize: 16,
-    paddingTop: 4,
-    paddingBottom: 6,
-    paddingHorizontal: 40,
-  },
-  logoBackground: {
-    position: 'absolute',
-    left: '50%',
-    top: -76,
-    marginLeft: -280,
-    opacity: 0.15,
-  },
-});

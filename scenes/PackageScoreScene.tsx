@@ -1,7 +1,7 @@
-import { useContext, useMemo } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { useMemo } from 'react';
+import { View } from 'react-native';
 
-import { A, Caption, colors, darkColors, H6, useLayout } from '~/common/styleguide';
+import { A, Caption, H6, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { DirectoryScore } from '~/components/Library/DirectoryScore';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
@@ -9,12 +9,11 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type PackageScorePageProps } from '~/types/pages';
 import { SCORING_CRITERIONS } from '~/util/scoring';
+import tw from '~/util/tailwind';
 
 export default function PackageScoreScene({ apiData, packageName }: PackageScorePageProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
   const library = useMemo(
@@ -26,14 +25,6 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
     return <NotFound />;
   }
 
-  const scoreBoxBorderColor = isDark ? darkColors.border : colors.gray3;
-  const headerColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
-  const secondaryColorStyle = {
-    color: isDark ? colors.gray4 : colors.gray5,
-  };
-
   return (
     <>
       <PageMeta
@@ -42,50 +33,41 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={styles.container}>
-        <View style={styles.detailsContainer}>
+      <ContentContainer style={tw`my-6 py-3 px-5`}>
+        <View style={tw`gap-3 flex-1`}>
           <PackageHeader library={library} />
           <View
             style={[
-              styles.scoreBox,
-              isSmallScreen && styles.scoreBoxSmall,
-              {
-                borderColor: scoreBoxBorderColor,
-                backgroundColor: isDark ? colors.gray7 : colors.gray1,
-              },
+              tw`items-center flex-row gap-1 mt-2 mb-3 py-4 px-7 border rounded-xl border-palette-gray3 bg-palette-gray1 dark:bg-palette-gray7 dark:border-default`,
+              isSmallScreen && tw`flex-col px-5`,
             ]}>
-            <View style={styles.scoreSection}>
-              <H6 style={styles.sectionHeader}>Directory score</H6>
+            <View style={tw`items-center`}>
+              <H6 style={tw`mb-3`}>Directory score</H6>
               <DirectoryScore score={library.score} sizeMultiplier={2} />
-              <span
-                style={{
-                  ...styles.scoreIndicator,
-                  color: isDark ? darkColors.primaryDark : colors.primaryDark,
-                }}>
+              <span style={tw`flex text-[24px] font-semibold items-center mt-1 text-primary-dark`}>
                 {library.score}/100
               </span>
             </View>
             <View
               style={[
-                styles.separator,
-                isSmallScreen && styles.separatorSmall,
-                { backgroundColor: scoreBoxBorderColor },
+                tw`w-[0.5px] min-h-[112px] mx-7 bg-palette-gray3 dark:bg-accented`,
+                isSmallScreen && tw`w-full min-h-[0.5px] mx-0 my-3`,
               ]}
             />
-            <div style={styles.scoreDescriptionWrapper}>
-              <Caption style={[styles.scoreDescription, secondaryColorStyle]}>
+            <View style={tw`flex flex-shrink gap-2`}>
+              <Caption style={tw`font-light text-palette-gray5 dark:text-palette-gray4`}>
                 The Directory Score is the combination of multiple factors that relate to the
                 quality of a library. A library can earn value by exhibiting &quot;good behavior
                 criteria&quot; and can lose value by exhibiting &quot;bad behavior criteria&quot;.
               </Caption>
-              <Caption style={[styles.scoreDescription, secondaryColorStyle]}>
+              <Caption style={tw`font-light text-palette-gray5 dark:text-palette-gray4`}>
                 Scores are subjective and are based on data that's readily available on GitHub and
                 npm. They are not a perfect scores and may not reflect quality for your specific
                 needs. <A href="/scoring">Read more</A>.
               </Caption>
-            </div>
+            </View>
           </View>
-          <H6 style={headerColorStyle}>Matching criteria</H6>
+          <H6 style={tw`text-secondary`}>Matching criteria</H6>
           <View>
             {SCORING_CRITERIONS.filter(({ name }) =>
               library.matchingScoreModifiers.includes(name)
@@ -95,7 +77,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               </ScoringCriterion>
             ))}
           </View>
-          <H6 style={headerColorStyle}>Not matched criteria</H6>
+          <H6 style={tw`text-secondary`}>Not matched criteria</H6>
           <View>
             {SCORING_CRITERIONS.filter(
               ({ name }) => !library.matchingScoreModifiers.includes(name)
@@ -104,7 +86,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 headline={name}
                 score={value}
                 key={`unmatch-${name}`}
-                style={styles.unmatchedCriterion}>
+                style={[tw`opacity-60 border-2 border-dashed`, { filter: 'grayscale(1)' }]}>
                 {description}
               </ScoringCriterion>
             ))}
@@ -114,75 +96,3 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 24,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-  },
-  detailsContainer: {
-    gap: 12,
-    ...Platform.select({
-      web: {
-        flex: 1,
-      },
-    }),
-  },
-  scoreBox: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 4,
-    marginTop: 8,
-    marginBottom: 12,
-    paddingVertical: 16,
-    paddingHorizontal: 28,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 12,
-  },
-  scoreBoxSmall: {
-    flexDirection: 'column',
-    paddingHorizontal: 20,
-  },
-  scoreSection: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  sectionHeader: {
-    marginBottom: 12,
-  },
-  scoreIndicator: {
-    display: 'flex',
-    fontSize: 24,
-    fontWeight: 600,
-    alignItems: 'center',
-    marginTop: 4,
-  },
-  separator: {
-    width: 0.5,
-    minHeight: 112,
-    marginHorizontal: 28,
-  },
-  separatorSmall: {
-    width: '100%',
-    minHeight: 0.5,
-    marginHorizontal: 0,
-    marginVertical: 12,
-  },
-  scoreDescriptionWrapper: {
-    display: 'flex',
-    gap: 8,
-    flexDirection: 'column',
-  },
-  scoreDescription: {
-    fontWeight: 300,
-  },
-  unmatchedCriterion: {
-    filter: 'grayscale(1)',
-    opacity: 0.6,
-    borderStyle: 'dashed',
-    borderWidth: 2,
-  },
-});

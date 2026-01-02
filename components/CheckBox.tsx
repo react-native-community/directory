@@ -1,46 +1,26 @@
-import { useContext } from 'react';
-import { type StyleProp, StyleSheet, View, type ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
 import { Check } from './Icons';
 
 type Props = {
   style?: StyleProp<ViewStyle>;
   value?: boolean;
-  color?: string;
 };
 
-export default function CheckBox({ style, value, color }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+export default function CheckBox({ style, value }: Props) {
   return (
     <View
       style={[
-        styles.container,
-        {
-          borderColor: value ? color : isDark ? darkColors.border : colors.gray4,
-          backgroundColor: value ? color : isDark ? darkColors.dark : colors.white,
-        },
+        tw`size-[18px] items-center justify-center border-2 rounded-sm mr-2`,
+        value
+          ? tw`border-primary-dark bg-primary-dark`
+          : tw`border-palette-gray4 bg-white dark:border-default dark:bg-dark`,
+        { transition: 'border-color .33s, background-color .33s' },
         style,
       ]}>
-      {value ? (
-        <Check width={14} height={10} fill={isDark ? darkColors.veryDark : colors.white} />
-      ) : null}
+      {value ? <Check width={14} height={10} style={tw`text-white dark:text-black`} /> : null}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 18,
-    width: 18,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderRadius: 2,
-    marginRight: 8,
-  },
-});

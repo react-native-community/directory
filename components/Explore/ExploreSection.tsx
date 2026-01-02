@@ -1,28 +1,19 @@
 import dynamic from 'next/dynamic';
-import { createElement, type FunctionComponent, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { createElement, type FunctionComponent } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, H3, P } from '~/common/styleguide';
+import { A, H3, P } from '~/common/styleguide';
 import { type IconProps } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType, type Query } from '~/types';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
-  loading: () => (
-    <LoadingContent
-      width="48.25%"
-      height={210}
-      wrapperStyle={{
-        marginLeft: '0.75%',
-        marginRight: '0.75%',
-      }}
-    />
-  ),
+  loading: () => <LoadingContent width="48.5%" height={210} wrapperStyle={tw`mx-[0.75%]`} />,
 });
 
-type ExploreSectionProps = {
+type Props = {
   data: LibraryType[];
   title: string;
   filter: (library: LibraryType) => boolean;
@@ -32,31 +23,11 @@ type ExploreSectionProps = {
 };
 
 const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
-
 const DEFAULT_PARAMS: Query = {
   wasRecentlyUpdated: 'true',
   isMaintained: 'true',
   order: 'popularity',
 };
-
-function renderLibs(list: LibraryType[], count = 4) {
-  const now = new Date().getTime();
-  return (
-    <View style={styles.librariesContainer}>
-      {list
-        .filter(lib => now - new Date(lib.github.stats.updatedAt).getTime() < UPDATED_IN)
-        .splice(0, count)
-        .map((item: LibraryType, index: number) => (
-          <LibraryWithLoading
-            key={`explore-item-${index}-${item.github.name}`}
-            library={item}
-            showTrendingMark
-            skipMetadata
-          />
-        ))}
-    </View>
-  );
-}
 
 export default function ExploreSection({
   data,
@@ -65,26 +36,25 @@ export default function ExploreSection({
   icon,
   count = 4,
   queryParams = { [title.toLowerCase()]: true },
-}: ExploreSectionProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const color = isDark ? darkColors.pewter : colors.gray5;
-  const hoverColor = isDark ? colors.gray5 : colors.gray4;
+}: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
     <>
-      <H3 style={styles.subHeader} id={hashLink}>
-        {icon && createElement(icon, { fill: color, width: 30, height: 30 })}
+      <H3 style={tw`flex gap-3 pt-3 pb-2 px-2 items-center`} id={hashLink}>
+        {icon && createElement(icon, { style: tw`size-7.5 text-icon mt-px` })}
         <A
           href={`#${hashLink}`}
           target="_self"
-          style={[styles.subHeaderTitle, { color }]}
-          hoverStyle={{ color: hoverColor }}>
+          style={tw`no-underline text-icon`}
+          hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
           {title}
         </A>
       </H3>
-      <View style={styles.librariesContainer}>{renderLibs(data.filter(filter), count)}</View>
-      <P style={[styles.note, { color: isDark ? darkColors.secondary : colors.gray5 }]}>
+      <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>
+        {renderLibs(data.filter(filter), count)}
+      </View>
+      <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries
@@ -95,34 +65,17 @@ export default function ExploreSection({
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingBottom: 12,
-  },
-  librariesContainer: {
-    paddingVertical: 4,
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  subHeader: {
-    display: 'flex',
-    gap: 16,
-    marginHorizontal: 8,
-    marginVertical: 16,
-    alignItems: 'center',
-  },
-  subHeaderTitle: {
-    fontSize: 26,
-    fontWeight: 700,
-    textDecorationLine: 'none',
-    backgroundColor: 'transparent',
-  },
-  note: {
-    paddingHorizontal: 24,
-    paddingTop: 8,
-    paddingBottom: 24,
-    fontSize: 14,
-  },
-});
+function renderLibs(list: LibraryType[], count = 4) {
+  const now = new Date().getTime();
+  return list
+    .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
+    .splice(0, count)
+    .map((item: LibraryType, index: number) => (
+      <LibraryWithLoading
+        key={`explore-item-${index}-${item.github.name}`}
+        library={item}
+        showTrendingMark
+        skipMetadata
+      />
+    ));
+}
