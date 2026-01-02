@@ -41,7 +41,7 @@ export default function ReadmeCodeBlock({ code, lang }: Props) {
 
   if (!highlighter) {
     return (
-      <div style={tw`relative mt-2`}>
+      <div style={tw`relative mt-2`} className="readme-code-block">
         <pre className="shiki">
           <code>{code}</code>
         </pre>
@@ -51,7 +51,7 @@ export default function ReadmeCodeBlock({ code, lang }: Props) {
   }
 
   return (
-    <div style={tw`relative mt-2`}>
+    <div style={tw`relative mt-2`} className="readme-code-block">
       {highlighter}
       {copyButton}
     </div>

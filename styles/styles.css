@@ -401,8 +401,13 @@ select {
     }
   }
 
-  a:has(img) {
+  a {
     display: inline-flex;
+    align-items: baseline;
+    font-weight: inherit;
+  }
+
+  a:has(img) {
     text-decoration: none !important;
   }
 
@@ -557,6 +562,22 @@ select {
 
     sub, sup {
       text-align: inherit;
+    }
+
+    li {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .readme-code-block {
+      &:first-child {
+        margin-top: 2px !important;
+      }
+
+      &:last-child {
+        margin-bottom: 2px;
+      }
     }
   }
 

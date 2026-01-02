@@ -1,3 +1,4 @@
+import { P } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
@@ -16,7 +17,7 @@ export default function NotFound() {
           alt="No package"
           bottomSlot={
             <Button href="/" style={tw`my-5 px-4 py-1.5`}>
-              Go back Home
+              <P style={tw`ml-1 text-white`}>Go back Home</P>
             </Button>
           }
         />
