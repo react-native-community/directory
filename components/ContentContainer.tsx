@@ -1,17 +1,8 @@
 import { type PropsWithChildren } from 'react';
-import { View, type ViewProps, StyleSheet } from 'react-native';
+import { View, type ViewProps } from 'react-native';
 
-import { layout } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 export default function ContentContainer({ children, style }: PropsWithChildren<ViewProps>) {
-  return <View style={[styles.container, style]}>{children}</View>;
+  return <View style={[tw`w-full mx-auto max-w-layout flex-1`, style]}>{children}</View>;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    maxWidth: layout.maxWidth,
-    margin: 'auto',
-  },
-});

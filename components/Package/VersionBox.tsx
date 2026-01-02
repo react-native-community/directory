@@ -1,14 +1,13 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, Caption, colors, darkColors, Label, useLayout } from '~/common/styleguide';
+import { A, Caption, Label, useLayout } from '~/common/styleguide';
 import { Dependency, PackageSize } from '~/components/Icons';
 import TrustedBadge from '~/components/Package/TrustedBadge';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmRegistryVersionData } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
+import tw from '~/util/tailwind';
 
 type Props = {
   label?: string;
@@ -17,70 +16,42 @@ type Props = {
 };
 
 export default function VersionBox({ label, time, versionData }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const { isSmallScreen } = useLayout();
 
-  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+  const urlBase = `https://www.npmjs.com/package/${versionData.name}/v/${versionData.version}`;
 
   return (
     <View
       style={[
-        styles.versionBox,
-        isSmallScreen && styles.versionBoxSmall,
-        {
-          borderColor: isDark ? darkColors.border : colors.gray2,
-        },
+        tw`flex-row items-center justify-between px-4 py-2.5 rounded-xl gap-0.5 border border-palette-gray2 dark:border-default`,
+        isSmallScreen && tw`flex-col items-start justify-start gap-2`,
       ]}>
       <View>
-        <View style={styles.versionLabelWrapper}>
+        <View style={tw`flex-row items-center gap-1 min-h-4`}>
           {label && <Caption>{label}</Caption>}
-          {label && <Caption style={{ color: iconColor }}>{` • `}</Caption>}
-          <Caption style={label && { color: isDark ? darkColors.secondary : colors.gray5 }}>
-            {versionData.version}
-          </Caption>
+          {label && <Caption style={tw`text-secondary`}>{` • `}</Caption>}
+          <Caption style={label && tw`text-secondary`}>{versionData.version}</Caption>
         </View>
-        <View style={styles.versionLabelWrapper}>
-          <Label
-            style={[
-              styles.versionLabel,
-              {
-                color: isDark ? darkColors.secondary : colors.gray5,
-              },
-            ]}>
+        <View style={tw`flex-row items-center gap-1 min-h-4`}>
+          <Label style={tw`font-light text-secondary`}>
             Released {getTimeSinceToday(time)} by {versionData._npmUser?.name}
           </Label>
           {versionData._npmUser?.trustedPublisher && <TrustedBadge />}
         </View>
       </View>
-      <View style={styles.versionMetadataContainer}>
+      <View style={tw`flex-row flex-wrap gap-x-4 gap-y-1`}>
         {versionData.dependencies && (
-          <View
-            style={[
-              styles.versionMetadata,
-              !isSmallScreen && {
-                minWidth: 150,
-              },
-            ]}>
-            <Dependency fill={iconColor} />
-            <A
-              style={styles.versionLabel}
-              href={`https://www.npmjs.com/package/${versionData.name}/v/${versionData.version}?activeTab=dependencies`}>
+          <View style={[tw`flex-row gap-2`, !isSmallScreen && tw`min-w-[150px]`]}>
+            <Dependency style={tw`text-icon`} />
+            <A style={tw`font-light`} href={`${urlBase}?activeTab=dependencies`}>
               {`${Object.keys(versionData.dependencies).length} ${pluralize('dependency', Object.keys(versionData.dependencies).length)}`}
             </A>
           </View>
         )}
         {versionData.dist.unpackedSize && (
-          <View
-            style={[
-              styles.versionMetadata,
-              !isSmallScreen && {
-                minWidth: 180,
-              },
-            ]}>
-            <PackageSize fill={iconColor} />
-            <A
-              style={styles.versionLabel}
-              href={`https://www.npmjs.com/package/${versionData.name}/v/${versionData.version}?activeTab=code`}>
+          <View style={[tw`flex-row gap-2`, !isSmallScreen && tw`min-w-[180px]`]}>
+            <PackageSize style={tw`text-icon`} />
+            <A style={tw`font-light`} href={`${urlBase}?activeTab=code`}>
               {`${formatBytes(versionData.dist.unpackedSize)} package size`}
             </A>
           </View>
@@ -89,48 +60,3 @@ export default function VersionBox({ label, time, versionData }: Props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  versionBox: {
-    display: 'flex',
-    flex: 1,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 12,
-    borderWidth: 1,
-    gap: 2,
-    borderStyle: 'solid',
-    textDecorationLine: 'none',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  versionBoxSmall: {
-    gap: 8,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
-  },
-  versionMetadataContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    columnGap: 16,
-    rowGap: 4,
-  },
-  versionMetadata: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  versionLabelWrapper: {
-    minHeight: 16,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    fontWeight: 400,
-    maxWidth: '100%',
-    gap: 4,
-  },
-  versionLabel: {
-    fontWeight: 300,
-  },
-});

@@ -1,34 +1,28 @@
 import { Md } from '@m2d/react-markdown/client';
 import { capitalize } from 'es-toolkit';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 
-import { A, colors, darkColors, P } from '~/common/styleguide';
+import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
 import ReadmeCodeBlock from '~/components/Package/ReadmeCodeBlock';
 import { ThreeDotsLoader } from '~/components/Package/ThreeDotsLoader';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
+import tw from '~/util/tailwind';
 
 type Props = {
   packageName?: string;
   githubUrl?: string;
   isTemplate?: boolean;
-  isDark?: boolean;
   loader?: boolean;
 };
 
-export default function ReadmeBox({
-  packageName,
-  githubUrl,
-  isTemplate,
-  isDark = false,
-  loader = false,
-}: Props) {
+export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader = false }: Props) {
   const [readmeContent, setReadmeContent] = useState<string | null | undefined>(undefined);
 
   useEffect(() => {
@@ -85,29 +79,20 @@ export default function ReadmeBox({
   }
 
   const readmeFallbackContent = getReadmeFallbackContent(readmeContent);
-  const borderColorStyle = { borderColor: isDark ? darkColors.border : colors.gray2 };
 
   return (
     <View
-      style={[
-        styles.readmeWrapper,
-        borderColorStyle,
-        {
-          // @ts-expect-error allow color style inheritance
-          color: isDark ? colors.white : colors.black,
-        },
-      ]}>
-      <View style={[styles.readmeHeader, borderColorStyle]}>
-        <ReadmeFile fill={isDark ? darkColors.pewter : colors.secondary} />
+      style={tw`rounded-xl my-2 border border-palette-gray2 text-black dark:border-default dark:text-white`}>
+      <View
+        style={tw`flex-row gap-2 items-center px-4 py-3 border-b border-palette-gray2 dark:border-default`}>
+        <ReadmeFile style={tw`text-tertiary dark:text-pewter`} />
         <P>Readme</P>
       </View>
-      <View style={styles.readmeContainer}>
+      <View style={tw`p-4 pt-3 font-light`}>
         {!readmeContent && readmeFallbackContent ? (
-          <View style={styles.statusContainer}>
-            {readmeContent === undefined && (
-              <ThreeDotsLoader color={isDark ? darkColors.pewter : colors.gray4} />
-            )}
-            <P style={styles.statusContent}>{readmeFallbackContent}</P>
+          <View style={tw`gap-4 py-6`}>
+            {readmeContent === undefined && <ThreeDotsLoader />}
+            <P style={tw`text-center`}>{readmeFallbackContent}</P>
           </View>
         ) : (
           <Md
@@ -163,7 +148,6 @@ export default function ReadmeBox({
                   <ReadmeCodeBlock
                     code={children.props.children}
                     lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
-                    isDark={isDark}
                   />
                 );
               },
@@ -173,12 +157,10 @@ export default function ReadmeBox({
                   <blockquote
                     className={blockquoteType.type}
                     style={{
-                      color: isDark ? darkColors.secondary : colors.gray5,
-                      borderColor: blockquoteType.type
-                        ? undefined
-                        : isDark
-                          ? darkColors.secondary
-                          : colors.gray4,
+                      ...tw`text-secondary`,
+                      ...(blockquoteType.type
+                        ? {}
+                        : tw`border-palette-gray4 dark:border-secondary`),
                     }}>
                     {blockquoteType.type && (
                       <strong className="blockquote-title">
@@ -192,10 +174,7 @@ export default function ReadmeBox({
               details: ({ children }: any) => {
                 return (
                   <details
-                    style={{
-                      ...styles.detailsWrapper,
-                      ...borderColorStyle,
-                    }}>
+                    style={tw`rounded-xl mt-3 pb-3 pt-1 pr-4 border border-palette-gray2 dark:border-default`}>
                     {children}
                   </details>
                 );
@@ -221,48 +200,3 @@ function getReadmeFallbackContent(readmeContent?: string | null): string | null 
   }
   return null;
 }
-
-const styles = StyleSheet.create({
-  readmeWrapper: {
-    borderRadius: 12,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    marginVertical: 8,
-  },
-  readmeHeader: {
-    flexDirection: 'row',
-    gap: 8,
-    alignItems: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    borderBottomWidth: 1,
-    borderStyle: 'solid',
-  },
-  readmeContainer: {
-    padding: 16,
-    paddingTop: 12,
-    fontWeight: 300,
-  },
-  statusContainer: {
-    paddingVertical: 24,
-    gap: 16,
-  },
-  statusContent: {
-    textAlign: 'center',
-  },
-  detailsWrapper: {
-    borderRadius: 12,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    marginTop: 12,
-    paddingBottom: 12,
-    paddingTop: 4,
-    paddingRight: 16,
-  },
-  copyCodeButton: {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-    top: 22,
-    right: 10,
-  },
-});

@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 @font-face {
   font-family: "Optimistic Display";
   src: url("/fonts/Optimistic-Display-Light.woff2")
@@ -22,10 +24,94 @@
   font-style: normal;
 }
 
+/* TODO: refactor colors and naming */
+:root {
+  --primary: #61dafb;
+  --primary-light: #c1f4ff;
+  --primary-dark: #39bee2;
+  --primary-darker: #2e9ab8;
+  --primary-hover: #61dafb16;
+
+  --powder: #eefafe;
+  --pewter: #bec8cb;
+
+  --gray-1: #f9f9f9;
+  --gray-2: #ececec;
+  --gray-3: #cfcfd5;
+  --gray-4: #828898;
+  --gray-5: #505461;
+  --gray-6: #24262e;
+  --gray-7: #21232a;
+
+  --black: #242424;
+  --white: #ffffff;
+
+  --secondary: var(--gray-5);
+  --tertiary: #afb1af;
+  --accented: var(--gray-5);
+  --icon: var(--gray-5);
+  --hover: var(--gray-5);
+
+  --warning: #fbe679;
+  --warning-light: #fef7d6;
+  --warning-dark: #995e00;
+
+  --error: #ff5555;
+  --success: #4caf50;
+
+  --background: #ffffff;
+  --border: var(--gray-2);
+
+  --overscroll-background: var(--gray-7);
+  --outline: var(--primary-dark);
+  --active: var(--primary-darker);
+  --select-background: var(--gray-6);
+  --select-border: var(--gray-5);
+  --tooltip-border: var(--gray-6);
+  --table-border: var(--gray-3);
+  --table-alt-row: var(--gray-1);
+  --table-header-background: var(--gray-2);
+  --code-block-background: var(--gray-2);
+  --inline-code-background: var(--gray-2);
+}
+
+:root.dark {
+  --primary-dark: #2e9ab8;
+
+  --powder: #262a36;
+  --pewter: #767c8e;
+
+  --black: #000000;
+  --very-dark: #111114;
+  --dark: #14141a;
+  --dark-bright: #1c1c21;
+
+  --secondary: #a2a7ab;
+  --accented: #2a2e36;
+  --icon: var(--pewter);
+  --hover: var(--gray-3);
+
+  --warning: #9a810c;
+  --warning-light: #2f2704;
+
+  --background: #19191f;
+  --border: var(--accented);
+
+  --overscroll-background: var(--very-dark);
+  --outline: var(--primary-dark);
+  --active: var(--primary-dark);
+  --select-background: var(--dark);
+  --select-border: var(--gray-6);
+  --tooltip-border: var(--gray-7);
+  --table-border: var(--gray-6);
+  --table-alt-row: var(--dark-bright);
+  --table-header-background: var(--dark);
+  --code-block-background: var(--very-dark);
+  --inline-code-background: var(--gray-6);
+}
+
 *:focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: var(--outline);
+  outline: var(--outline) solid 2px;
   border-radius: 3px;
 }
 
@@ -38,11 +124,11 @@ html, body {
 }
 
 input:focus-visible  {
-  border-radius: 6px;
+  @apply rounded;
 }
 
 #__next, #__next > div {
-  min-height: 100vh;
+  @apply bg-default min-h-[100vh];
 }
 
 /* SELECT */
@@ -185,64 +271,48 @@ select {
 
 @keyframes slideUpAndFade {
   from {
-    opacity: 0;
-    transform: translateY(6px);
+    @apply opacity-0 translate-y-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
 }
 
 @keyframes slideRightAndFade {
   from {
-    opacity: 0;
-    transform: translateX(-6px);
+    @apply opacity-0 -translate-x-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    @apply opacity-100 translate-x-0;
   }
 }
 
 @keyframes slideDownAndFade {
   from {
-    opacity: 0;
-    transform: translateY(-6px);
+    @apply opacity-0 -translate-y-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
 }
 
 @keyframes slideLeftAndFade {
   from {
-    opacity: 0;
-    transform: translateX(6px);
+    @apply opacity-0 translate-x-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    @apply opacity-100 translate-x-0;
   }
 }
 
 /* THREE DOTS LOADER */
 
 #dots-loader {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 6px;
+  @apply inline-flex items-center justify-center flex-row gap-1.5;
 
   .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
+    @apply size-2.5 rounded-[50%] opacity-90 inline-block bg-palette-gray4 dark:bg-pewter;
     animation: dots-bounce 1.2s infinite ease-in-out both;
-    opacity: 0.9;
 
     &:nth-child(1) {
       animation-delay: 0s;
@@ -262,12 +332,10 @@ select {
   0%,
   80%,
   100% {
-    transform: scale(0);
-    opacity: 0.4;
+    @apply scale-0 opacity-40;
   }
   40% {
-    transform: scale(1);
-    opacity: 1;
+    @apply scale-100 opacity-100;
   }
 }
 
@@ -333,8 +401,13 @@ select {
     }
   }
 
-  a:has(img) {
+  a {
     display: inline-flex;
+    align-items: baseline;
+    font-weight: inherit;
+  }
+
+  a:has(img) {
     text-decoration: none !important;
   }
 
@@ -489,6 +562,22 @@ select {
 
     sub, sup {
       text-align: inherit;
+    }
+
+    li {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .readme-code-block {
+      &:first-child {
+        margin-top: 2px !important;
+      }
+
+      &:last-child {
+        margin-bottom: 2px;
+      }
     }
   }
 

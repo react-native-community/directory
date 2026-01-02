@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 import LoadingContent from '~/components/Library/LoadingContent';
 import NotFoundContent from '~/components/NotFoundContent';
 import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
 type Props = {
   libraries: LibraryType[];
@@ -19,16 +20,10 @@ export default function Libraries({ libraries }: Props) {
   }
 
   return (
-    <View style={styles.librariesContainer}>
+    <View style={tw`pt-3`}>
       {libraries.map((item, index) => (
         <LibraryWithLoading key={`list-item-${index}-${item.github.name}`} library={item} />
       ))}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  librariesContainer: {
-    paddingTop: 12,
-  },
-});

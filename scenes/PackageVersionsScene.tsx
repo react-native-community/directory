@@ -1,7 +1,7 @@
-import { useContext, useMemo, useState } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { useMemo, useState } from 'react';
+import { View } from 'react-native';
 
-import { colors, darkColors, H6 } from '~/common/styleguide';
+import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import ContentContainer from '~/components/ContentContainer';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
@@ -9,8 +9,8 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import VersionBox from '~/components/Package/VersionBox';
 import PageMeta from '~/components/PageMeta';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type PackageVersionsPageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
 
 const VERSIONS_TO_SHOW = 25;
 
@@ -19,7 +19,6 @@ export default function PackageVersionsScene({
   registryData,
   packageName,
 }: PackageVersionsPageProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
   const [shouldShowAll, setShowAll] = useState(false);
 
   const library = useMemo(
@@ -31,10 +30,6 @@ export default function PackageVersionsScene({
     return <NotFound />;
   }
 
-  const headerColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
-
   return (
     <>
       <PageMeta
@@ -43,39 +38,46 @@ export default function PackageVersionsScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={styles.container}>
-        <View style={styles.detailsContainer}>
+      <ContentContainer style={tw`my-6 py-3 px-5`}>
+        <View style={tw`gap-3 flex-1`}>
           <PackageHeader library={library} />
-          <H6 style={[styles.sectionHeader, headerColorStyle]}>Tagged versions</H6>
-          {Object.entries(registryData['dist-tags'])
-            .sort((a, b) => -registryData.time[a[1]].localeCompare(registryData.time[b[1]]))
-            .map(([label, version]) => {
-              return (
-                <VersionBox
-                  key={label}
-                  label={label}
-                  time={registryData.time[version]}
-                  versionData={registryData.versions[version]}
-                />
-              );
-            })}
-          <H6 style={[styles.sectionHeader, headerColorStyle]}>Versions</H6>
-          {Object.entries(registryData.versions)
-            .sort(
-              (a, b) =>
-                -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
-            )
-            .slice(0, shouldShowAll ? Object.keys(registryData.versions).length : VERSIONS_TO_SHOW)
-            .map(([version, versionData]) => {
-              return (
-                <VersionBox
-                  key={version}
-                  time={registryData.time[versionData.version]}
-                  versionData={versionData}
-                />
-              );
-            })}
-          <Button onPress={() => setShowAll(true)} style={styles.showAllButton}>
+          <H6 style={tw`mt-3 text-secondary`}>Tagged versions</H6>
+          <View style={tw`gap-2`}>
+            {Object.entries(registryData['dist-tags'])
+              .sort((a, b) => -registryData.time[a[1]].localeCompare(registryData.time[b[1]]))
+              .map(([label, version]) => {
+                return (
+                  <VersionBox
+                    key={label}
+                    label={label}
+                    time={registryData.time[version]}
+                    versionData={registryData.versions[version]}
+                  />
+                );
+              })}
+          </View>
+          <H6 style={tw`mt-3 text-secondary`}>Versions</H6>
+          <View style={tw`gap-2`}>
+            {Object.entries(registryData.versions)
+              .sort(
+                (a, b) =>
+                  -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
+              )
+              .slice(
+                0,
+                shouldShowAll ? Object.keys(registryData.versions).length : VERSIONS_TO_SHOW
+              )
+              .map(([version, versionData]) => {
+                return (
+                  <VersionBox
+                    key={version}
+                    time={registryData.time[versionData.version]}
+                    versionData={versionData}
+                  />
+                );
+              })}
+          </View>
+          <Button onPress={() => setShowAll(true)} style={tw`mt-2 mx-auto py-2 px-4`}>
             Show all versions
           </Button>
         </View>
@@ -83,28 +85,3 @@ export default function PackageVersionsScene({
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 24,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-  },
-  detailsContainer: {
-    gap: 12,
-    ...Platform.select({
-      web: {
-        flex: 1,
-      },
-    }),
-  },
-  sectionHeader: {
-    marginTop: 12,
-  },
-  showAllButton: {
-    marginTop: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginHorizontal: 'auto',
-  },
-});

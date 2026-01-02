@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, colors, darkColors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
 import { Info } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
@@ -15,8 +14,6 @@ type Props = {
 };
 
 export default function CompatibilityTags({ library }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
   const platforms = [
     library.android ? 'Android' : null,
     library.ios ? 'iOS' : null,
@@ -25,29 +22,21 @@ export default function CompatibilityTags({ library }: Props) {
     library.visionos ? 'visionOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
-  ]
-    .map(platform => platform)
-    .filter(Boolean);
+  ].filter(Boolean);
 
   return (
-    <View style={styles.container}>
+    <View style={tw`flex-row flex-wrap items-center gap-1.5`}>
       {library.dev ? (
         <Tag
           label="Development Tool"
-          tagStyle={{
-            backgroundColor: isDark ? '#261a3d' : '#ece3fc',
-            borderColor: isDark ? '#3d2861' : '#d9c8fa',
-          }}
+          tagStyle={tw`bg-[#ece3fc] border-[#d9c8fa] dark:bg-[#261a3d] dark:border-[#3d2861]`}
           icon={null}
         />
       ) : null}
       {library.template ? (
         <Tag
           label="Template"
-          tagStyle={{
-            backgroundColor: isDark ? '#37172e' : '#fce1f5',
-            borderColor: isDark ? '#52213e' : '#f5c6e8',
-          }}
+          tagStyle={tw`bg-[#fce1f5] border-[#f5c6e8] dark:bg-[#37172e] dark:border-[#52213e]`}
           icon={null}
         />
       ) : null}
@@ -57,10 +46,7 @@ export default function CompatibilityTags({ library }: Props) {
           <Tag
             label={platform}
             key={`${platform}-platform`}
-            tagStyle={{
-              backgroundColor: isDark ? darkColors.dark : colors.gray1,
-              borderColor: isDark ? darkColors.border : colors.gray2,
-            }}
+            tagStyle={tw`bg-palette-gray1 border-palette-gray2 dark:bg-dark dark:border-default`}
           />
         ) : null
       )}
@@ -68,13 +54,13 @@ export default function CompatibilityTags({ library }: Props) {
         <Tooltip
           side="bottom"
           trigger={
-            <View style={styles.infoTrigger}>
-              <Info fill={isDark ? darkColors.pewter : colors.secondary} />
+            <View style={tw`items-center justify-center cursor-pointer`}>
+              <Info style={tw`text-icon`} />
             </View>
           }>
           Additional information
           <br />
-          <ul style={styles.compatibilityList}>
+          <ul style={tw`m-0 pl-3.5`}>
             {library.expoGo && <li>Works with Expo Go</li>}
             {library.fireos && <li>Works with Fire OS</li>}
             {library.horizon && <li>Works with Meta Horizon OS</li>}
@@ -85,7 +71,7 @@ export default function CompatibilityTags({ library }: Props) {
                 <br />
                 <A
                   href={`https://www.npmjs.com/package/${library.vegaos}`}
-                  style={styles.tooltipLink}>
+                  style={tw`text-xs text-white font-light`}>
                   (via dedicated support package)
                 </A>
               </li>
@@ -96,27 +82,3 @@ export default function CompatibilityTags({ library }: Props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: 6,
-  },
-  infoTrigger: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    minHeight: 25,
-  },
-  compatibilityList: {
-    margin: 0,
-    paddingLeft: 14,
-  },
-  tooltipLink: {
-    fontSize: 12,
-    fontWeight: 300,
-  },
-});

@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { type StyleProp, StyleSheet, type TextStyle } from 'react-native';
+import { type StyleProp, type TextStyle } from 'react-native';
 
-import { colors, darkColors, Label } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Label } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = {
   count: number;
@@ -10,26 +9,13 @@ type Props = {
 };
 
 export default function EntityCounter({ count, style }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
   return (
     <Label
       style={[
-        styles.tabCounter,
-        { backgroundColor: isDark ? darkColors.border : colors.gray2 },
+        tw`mt-[3px] text-[11px] rounded-xl py-0.5 px-1.5 text-[inherit] bg-palette-gray2 dark:bg-accented`,
         style,
       ]}>
       {count}
     </Label>
   );
 }
-
-const styles = StyleSheet.create({
-  tabCounter: {
-    color: 'inherit',
-    marginTop: 3,
-    fontSize: 11,
-    borderRadius: 12,
-    paddingVertical: 2,
-    paddingHorizontal: 6,
-  },
-});

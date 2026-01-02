@@ -1,21 +1,22 @@
 import SHA256 from 'crypto-js/sha256';
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, Label } from '~/common/styleguide';
+import { A, Caption, Label } from '~/common/styleguide';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type NpmUser } from '~/types';
+import tw from '~/util/tailwind';
 
 type Props = {
   author?: NpmUser;
   compact?: boolean;
 };
 
-export default function PackageAuthor({ author, compact }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
+const authorContainerStyle = tw`flex flex-row gap-3 items-center bg-transparent`;
+const labelStyle = tw`leading-[18px]`;
+const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
 
+export default function PackageAuthor({ author, compact }: Props) {
   if (!author) {
     return (
       <View>
@@ -23,8 +24,6 @@ export default function PackageAuthor({ author, compact }: Props) {
       </View>
     );
   }
-
-  const sublabelStyle = { color: isDark ? darkColors.secondary : colors.gray4 };
 
   const potentialHref = author.url ?? author.email;
 
@@ -37,14 +36,11 @@ export default function PackageAuthor({ author, compact }: Props) {
 
       return (
         <View>
-          <A
-            href={`https://github.com/${ghUsername}`}
-            style={styles.authorContainer}
-            hoverStyle={isDark && { color: colors.primaryDark }}>
+          <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
             <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <span>{ghUsername}</span>
-              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{validName}</span>
+              <Caption style={labelStyle}>{ghUsername}</Caption>
+              <span style={sublabelStyle}>{validName}</span>
             </View>
           </A>
         </View>
@@ -54,7 +50,7 @@ export default function PackageAuthor({ author, compact }: Props) {
     return (
       <View>
         <A href={potentialHref} target="_blank">
-          <Label>{author.name ?? 'Unknown'}</Label>
+          <Caption style={labelStyle}>{author.name ?? 'Unknown'}</Caption>
         </A>
       </View>
     );
@@ -64,7 +60,7 @@ export default function PackageAuthor({ author, compact }: Props) {
   if (potentialHref && potentialHref.includes('@')) {
     if (compact) {
       return (
-        <View style={styles.authorContainer}>
+        <View style={authorContainerStyle}>
           <Tooltip
             sideOffset={2}
             delayDuration={100}
@@ -74,9 +70,9 @@ export default function PackageAuthor({ author, compact }: Props) {
                 alt={`${author.name} avatar`}
               />
             }>
-            <View style={styles.tooltipContent}>
-              <span>{author.name}</span>
-              <span style={{ ...styles.sublabel, ...sublabelStyle }}>{potentialHref}</span>
+            <View>
+              <Caption style={labelStyle}>{author.name}</Caption>
+              <span style={sublabelStyle}>{potentialHref}</span>
             </View>
           </Tooltip>
         </View>
@@ -84,14 +80,14 @@ export default function PackageAuthor({ author, compact }: Props) {
     }
 
     return (
-      <View style={styles.authorContainer}>
+      <View style={authorContainerStyle}>
         <UserAvatar
           src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
           alt={`${author.name} avatar`}
         />
         <View>
-          <span style={{ color: isDark ? colors.white : colors.black }}>{author.name}</span>
-          <span style={{ ...styles.sublabel, ...sublabelStyle }}>{potentialHref}</span>
+          <Caption style={labelStyle}>{author.name}</Caption>
+          <span style={sublabelStyle}>{potentialHref}</span>
         </View>
       </View>
     );
@@ -99,7 +95,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   return (
     <View>
-      <Label>{getValidName(author.name) ?? 'Unknown'}</Label>
+      <Caption style={labelStyle}>{getValidName(author.name) ?? 'Unknown'}</Caption>
     </View>
   );
 }
@@ -111,20 +107,3 @@ function getValidName(potentialName: string): string {
     .join(' ');
   return cleanName.length ? cleanName : potentialName.replace(/[<>()]/g, '');
 }
-
-const styles = StyleSheet.create({
-  authorContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 12,
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-  },
-  sublabel: {
-    fontSize: 11,
-    fontWeight: 300,
-  },
-  tooltipContent: {
-    display: 'flex',
-  },
-});

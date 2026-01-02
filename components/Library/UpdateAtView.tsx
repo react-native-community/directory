@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { A, colors, darkColors } from '~/common/styleguide';
+import { A } from '~/common/styleguide';
 import Tooltip from '~/components/Tooltip';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
+import tw from '~/util/tailwind';
 
 import { Calendar } from '../Icons';
 
@@ -15,15 +14,8 @@ type Props = {
 };
 
 export default function UpdatedAtView({ library }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  const iconColor = isDark ? darkColors.pewter : colors.secondary;
-  const textColor = isDark ? darkColors.secondary : colors.gray5;
-  const decorationColor = isDark ? colors.gray5 : colors.gray3;
-  const unmaintainedIconColor = isDark ? darkColors.warning : colors.warningDark;
-  const unmaintainedTextColor = isDark ? darkColors.warning : colors.warningDark;
-
   const { branchName, packagePath } = parseGitHubUrl(library.githubUrl);
+  const repoUrl = library.github.urls.repo;
 
   const tooltipContent = `
     Last update (based on Git activity)
@@ -37,10 +29,14 @@ export default function UpdatedAtView({ library }: Props) {
     <Tooltip
       sideOffset={2}
       trigger={
-        <View style={styles.updatedAtContainer} aria-label={tooltipContent} role="tooltip">
+        <View style={tw`flex-row items-start gap-2`} aria-label={tooltipContent} role="tooltip">
           <View>
             <Calendar
-              fill={library.unmaintained ? unmaintainedIconColor : iconColor}
+              style={
+                library.unmaintained
+                  ? tw`text-warning-dark dark:text-warning`
+                  : tw`text-tertiary dark:text-pewter`
+              }
               width={14}
               height={16}
             />
@@ -48,24 +44,18 @@ export default function UpdatedAtView({ library }: Props) {
           <A
             href={
               packagePath === '.'
-                ? `${library.github.urls.repo}/commits`
-                : `${library.github.urls.repo}/commits/${branchName}/${packagePath}`
+                ? `${repoUrl}/commits`
+                : `${repoUrl}/commits/${branchName}/${packagePath}`
             }
             style={[
-              styles.link,
-              {
-                color: library.unmaintained ? unmaintainedTextColor : textColor,
-                textDecorationColor: decorationColor,
-              },
+              tw`text-[13px] font-light decoration-palette-gray3 dark:decoration-palette-gray5`,
+              library.unmaintained ? tw`text-warning-dark dark:text-warning` : tw`text-secondary`,
             ]}
-            hoverStyle={{
-              color: library.unmaintained
-                ? unmaintainedTextColor
-                : isDark
-                  ? colors.gray3
-                  : colors.gray5,
-              textDecorationColor: library.unmaintained ? unmaintainedTextColor : colors.gray4,
-            }}>
+            hoverStyle={
+              library.unmaintained
+                ? tw`text-warning-dark dark:text-warning decoration-warning-dark dark:decoration-warning`
+                : tw`decoration-palette-gray4 text-hover`
+            }>
             {getTimeSinceToday(library.github.stats.pushedAt)}
           </A>
         </View>
@@ -74,17 +64,3 @@ export default function UpdatedAtView({ library }: Props) {
     </Tooltip>
   );
 }
-
-const styles = StyleSheet.create({
-  updatedAtContainer: {
-    gap: 8,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  link: {
-    fontSize: 13,
-    fontWeight: 300,
-    backgroundColor: 'transparent',
-    textDecorationColor: 'transparent',
-  },
-});
