@@ -68,8 +68,7 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6
-                  style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-secondary`}>
                   Code examples
                   <EntityCounter count={library.examples.length} />
                 </H6>
@@ -82,8 +81,8 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && !!author && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>Author</H6>
-                <View style={{ alignItems: 'flex-start' }}>
+                <H6 style={tw`text-[16px] mt-3 text-secondary`}>Author</H6>
+                <View style={tw`items-start`}>
                   {typeof author === 'string' ? (
                     <View>
                       <Label>{author ?? 'Unknown'}</Label>
@@ -96,8 +95,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6
-                  style={tw`flex gap-1.5 text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-secondary`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
                 </H6>
@@ -115,23 +113,19 @@ export default function PackageOverviewScene({
             <View>
               <MetaData library={library} />
             </View>
-            <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
-              Additional information
-            </H6>
+            <H6 style={tw`text-[16px] text-secondary`}>Additional information</H6>
             <View style={tw`gap-1.5`}>
               <MetaData library={library} secondary skipExamples />
             </View>
             {!library.template && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-palette-gray5 dark:text-secondary`}>
-                  Popularity
-                </H6>
+                <H6 style={tw`text-[16px] mt-3 text-secondary`}>Popularity</H6>
                 <TrendingMark library={library} />
               </>
             )}
             {library.github.topics && library.github.topics.length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
                   Topics
                   <EntityCounter count={library.github.topics.length} />
                 </H6>
@@ -146,7 +140,7 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && !!author && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Author</H6>
+                <H6 style={tw`text-[16px] text-secondary`}>Author</H6>
                 <View style={tw`items-start`}>
                   {typeof author === 'string' ? (
                     <View>
@@ -160,7 +154,7 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
                 </H6>
@@ -175,9 +169,7 @@ export default function PackageOverviewScene({
             )}
             {!library.template && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>
-                  Package analysis
-                </H6>
+                <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
                 <ul
                   style={tw`m-0 pl-4.5 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
                   <li>
@@ -206,7 +198,7 @@ export default function PackageOverviewScene({
             )}
             {dependencies && Object.keys(dependencies).length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
                   Dependencies
                   <EntityCounter count={Object.keys(dependencies).length} />
                 </H6>
@@ -219,7 +211,7 @@ export default function PackageOverviewScene({
             )}
             {peerDependencies && Object.keys(peerDependencies).length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
                   Peer dependencies
                   <EntityCounter count={Object.keys(peerDependencies).length} />
                 </H6>
@@ -232,7 +224,7 @@ export default function PackageOverviewScene({
             )}
             {devDependencies && Object.keys(devDependencies).length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-palette-gray5 dark:text-secondary`}>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
                   Development dependencies
                   <EntityCounter count={Object.keys(devDependencies).length} />
                 </H6>
@@ -245,7 +237,7 @@ export default function PackageOverviewScene({
             )}
             {engines && Object.keys(engines).length > 0 && (
               <>
-                <H6 style={tw`text-[16px] text-palette-gray5 dark:text-secondary`}>Engines</H6>
+                <H6 style={tw`text-[16px] text-secondary`}>Engines</H6>
                 <View>
                   {mapDependencies(engines, ([name, version]: [string, string]) => (
                     <DependencyRow key={`engine-${name}`} name={name} version={version} />

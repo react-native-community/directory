@@ -47,7 +47,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
           <P style={tw`text-xl leading-[26px] font-semibold -mt-0.5`}>{library.npmPkg}</P>
           {registryData && (
             <View style={tw`flex-row items-center gap-x-1`}>
-              <P style={tw`text-palette-gray5 dark:text-secondary`}>{registryData.version}</P>
+              <P style={tw`text-secondary`}>{registryData.version}</P>
               {registryData._npmUser?.trustedPublisher && <TrustedBadge />}
             </View>
           )}

@@ -22,7 +22,7 @@ export default function DependencyRow({ name, version }: Props) {
         style={tw`text-xs leading-[14px] font-mono font-light`}>
         {name}
       </A>
-      <Label style={tw`text-xs leading-[14px] text-palette-gray5 font-mono dark:text-secondary`}>
+      <Label style={tw`text-xs leading-[14px] font-mono text-secondary`}>
         {getVersionLabel(version)}
       </Label>
     </View>

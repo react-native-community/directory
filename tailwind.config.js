@@ -10,6 +10,7 @@ const palette = {
   'primary-hover': 'var(--primary-hover)',
 
   secondary: 'var(--secondary)',
+  tertiary: 'var(--tertiary)',
   accented: 'var(--accented)',
 
   powder: 'var(--powder)',
@@ -72,6 +73,7 @@ export default {
       transparent: 'transparent',
       current: 'currentColor',
       icon: 'var(--icon)',
+      hover: 'var(--hover)',
       ...palette,
     },
     gradientColorStops: {

@@ -14,11 +14,7 @@ export default function FiltersSection({ title, children, rightSlot }: Props) {
 
   return (
     <View style={[tw`px-4 py-2 max-w-layout`, isSmallScreen && tw`max-w-full`]}>
-      <Headline
-        style={[
-          tw`mb-2 font-semibold text-palette-gray5 dark:text-secondary`,
-          rightSlot && tw`mb-1`,
-        ]}>
+      <Headline style={[tw`mb-2 font-semibold text-secondary`, rightSlot && tw`mb-1`]}>
         {title}
         {rightSlot}
       </Headline>

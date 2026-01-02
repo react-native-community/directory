@@ -29,13 +29,11 @@ export default function VersionBox({ label, time, versionData }: Props) {
       <View>
         <View style={tw`flex-row items-center gap-1 min-h-4`}>
           {label && <Caption>{label}</Caption>}
-          {label && <Caption style={tw`text-palette-gray5 dark:text-secondary`}>{` • `}</Caption>}
-          <Caption style={label && tw`text-palette-gray5 dark:text-secondary`}>
-            {versionData.version}
-          </Caption>
+          {label && <Caption style={tw`text-secondary`}>{` • `}</Caption>}
+          <Caption style={label && tw`text-secondary`}>{versionData.version}</Caption>
         </View>
         <View style={tw`flex-row items-center gap-1 min-h-4`}>
-          <Label style={tw`font-light text-palette-gray5 dark:text-secondary`}>
+          <Label style={tw`font-light text-secondary`}>
             Released {getTimeSinceToday(time)} by {versionData._npmUser?.name}
           </Label>
           {versionData._npmUser?.trustedPublisher && <TrustedBadge />}

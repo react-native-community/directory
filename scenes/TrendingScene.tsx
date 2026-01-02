@@ -73,7 +73,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
             <H4>Nothing was found!</H4>
           </View>
         )}
-        <P style={tw`p-6 text-sm text-palette-gray5 dark:text-secondary`}>
+        <P style={tw`p-6 text-sm text-secondary`}>
           Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
           Check out the{' '}
           <A href={urlWithQuery('/', {})} target="_self">

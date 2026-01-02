@@ -85,7 +85,7 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: StyleProp<TextStyle>;
-  containerStyle?: CSSProperties | undefined;
+  containerStyle?: CSSProperties;
 }>;
 
 export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {

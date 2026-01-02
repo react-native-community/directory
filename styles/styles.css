@@ -46,9 +46,11 @@
   --black: #242424;
   --white: #ffffff;
 
-  --secondary: #afb1af;
+  --secondary: var(--gray-5);
+  --tertiary: #afb1af;
   --accented: var(--gray-5);
   --icon: var(--gray-5);
+  --hover: var(--gray-5);
 
   --warning: #fbe679;
   --warning-light: #fef7d6;
@@ -87,6 +89,7 @@
   --secondary: #a2a7ab;
   --accented: #2a2e36;
   --icon: var(--pewter);
+  --hover: var(--gray-3);
 
   --warning: #9a810c;
   --warning-light: #2f2704;
@@ -268,45 +271,37 @@ select {
 
 @keyframes slideUpAndFade {
   from {
-    opacity: 0;
-    transform: translateY(6px);
+    @apply opacity-0 translate-y-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
 }
 
 @keyframes slideRightAndFade {
   from {
-    opacity: 0;
-    transform: translateX(-6px);
+    @apply opacity-0 -translate-x-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    @apply opacity-100 translate-x-0;
   }
 }
 
 @keyframes slideDownAndFade {
   from {
-    opacity: 0;
-    transform: translateY(-6px);
+    @apply opacity-0 -translate-y-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
 }
 
 @keyframes slideLeftAndFade {
   from {
-    opacity: 0;
-    transform: translateX(6px);
+    @apply opacity-0 translate-x-1.5;
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    @apply opacity-100 translate-x-0;
   }
 }
 

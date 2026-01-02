@@ -32,11 +32,7 @@ export function ToggleLink({ query, filterParam, basePath = '/' }: Props) {
         onPointerEnter={() => setHovered(true)}
         onPointerLeave={() => setHovered(false)}>
         <CheckBox value={isSelected} style={isHovered && tw`border-primary-dark`} />
-        <P
-          style={[
-            tw`text-sm font-light leading-[18px]`,
-            isHovered && tw`text-palette-gray5 dark:text-palette-gray3`,
-          ]}>
+        <P style={[tw`text-sm font-light leading-[18px]`, isHovered && tw`text-hover`]}>
           {filterParam.title}
         </P>
       </View>

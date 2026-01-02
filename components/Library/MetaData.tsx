@@ -150,15 +150,12 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
   const configPlugin = library.configPlugin ?? library.github.configPlugin;
 
   const iconColor = [
-    tw`text-secondary`,
+    tw`text-tertiary`,
     skipExamples && tw`text-palette-gray5`,
     tw`dark:text-pewter`,
   ];
-  const paragraphStyles = [
-    tw`text-[13px] font-light`,
-    !skipExamples && tw`text-palette-gray5 dark:text-secondary`,
-  ];
-  const hoverStyle = tw`text-palette-gray5 decoration-palette-gray4 dark:text-palette-gray3`;
+  const paragraphStyles = [tw`text-[13px] font-light`, !skipExamples && tw`text-secondary`];
+  const hoverStyle = tw`text-hover decoration-palette-gray4`;
 
   return [
     github.urls.homepage

@@ -54,7 +54,7 @@ export default function ExploreSection({
       <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>
         {renderLibs(data.filter(filter), count)}
       </View>
-      <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-palette-gray5 dark:text-secondary`}>
+      <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries

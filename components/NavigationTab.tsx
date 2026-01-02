@@ -25,7 +25,7 @@ function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Pro
         },
         isActive && tw`text-primary bg-primary-hover`,
       ]}
-      hoverStyle={tw`text-secondary bg-palette-gray6 dark:bg-default`}
+      hoverStyle={tw`text-tertiary bg-palette-gray6 dark:bg-default`}
       target="_self">
       <View style={tw`flex-row items-center gap-2 px-4 pt-1.5 pb-2`}>
         <P style={[tw`text-white`, isActive && tw`text-primary`]}>{title}</P>

@@ -547,7 +547,7 @@ export function ReadmeFile({ width = 24, height = 24, style }: IconProps) {
 
 export function CodeBrackets({ width = 24, height = 24, style }: IconProps) {
   return (
-    <Svg width={width} height={height} style={style} viewBox="0 0 256 256">
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <Path
         d="M80,40c-64,0,0,88-64,88,64,0,0,88,64,88"
         fill="none"

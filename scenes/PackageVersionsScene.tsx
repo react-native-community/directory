@@ -41,7 +41,7 @@ export default function PackageVersionsScene({
       <ContentContainer style={tw`my-6 py-3 px-5`}>
         <View style={tw`gap-3 flex-1`}>
           <PackageHeader library={library} />
-          <H6 style={tw`mt-3 text-palette-gray5 dark:text-secondary`}>Tagged versions</H6>
+          <H6 style={tw`mt-3 text-secondary`}>Tagged versions</H6>
           <View style={tw`gap-2`}>
             {Object.entries(registryData['dist-tags'])
               .sort((a, b) => -registryData.time[a[1]].localeCompare(registryData.time[b[1]]))
@@ -56,7 +56,7 @@ export default function PackageVersionsScene({
                 );
               })}
           </View>
-          <H6 style={tw`mt-3 text-palette-gray5 dark:text-secondary`}>Versions</H6>
+          <H6 style={tw`mt-3 text-secondary`}>Versions</H6>
           <View style={tw`gap-2`}>
             {Object.entries(registryData.versions)
               .sort(

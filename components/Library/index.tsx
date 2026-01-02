@@ -73,7 +73,7 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
             <A
               href={`/package/${library.npmPkg}`}
               style={tw`font-bold text-[19px]`}
-              hoverStyle={tw`text-palette-gray5 dark:text-palette-gray3`}>
+              hoverStyle={tw`text-hover`}>
               {libName}
             </A>
             <HoverEffect>

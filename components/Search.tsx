@@ -58,7 +58,7 @@ export default function Search({ query, total }: Props) {
   }
 
   const focusHintLabel = tw`text-palette-gray4 font-light`;
-  const focusHintKey = tw`text-secondary text-center py-[3px] px-1 min-w-6 rounded-[3px] tracking-[0.75px] bg-palette-gray5 dark:bg-powder`;
+  const focusHintKey = tw`text-tertiary text-center py-[3px] px-1 min-w-6 rounded-[3px] tracking-[0.75px] bg-palette-gray5 dark:bg-powder`;
 
   return (
     <>

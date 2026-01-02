@@ -27,13 +27,11 @@ export default function UnmaintainedLabel({ alternatives, block }: Props) {
           },
         ]}>
         <View style={tw`flex-row flex-shrink gap-1.5`}>
-          <Warning width={16} height={16} style={tw`text-palette-gray5 dark:text-secondary`} />
-          <Label style={tw`text-palette-gray5 dark:text-secondary`}>
-            This library is not actively maintained.
-          </Label>
+          <Warning width={16} height={16} style={tw`text-secondary`} />
+          <Label style={tw`text-secondary`}>This library is not actively maintained.</Label>
         </View>
         {alternatives && alternatives.length > 0 && (
-          <Label style={tw`text-palette-gray5 dark:text-secondary`}>
+          <Label style={tw`text-secondary`}>
             You can use{' '}
             {alternatives.map((alternative, index) => (
               <Fragment key={alternative}>

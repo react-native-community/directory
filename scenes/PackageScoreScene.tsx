@@ -67,7 +67,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               </Caption>
             </View>
           </View>
-          <H6 style={tw`text-palette-gray5 dark:text-secondary`}>Matching criteria</H6>
+          <H6 style={tw`text-secondary`}>Matching criteria</H6>
           <View>
             {SCORING_CRITERIONS.filter(({ name }) =>
               library.matchingScoreModifiers.includes(name)
@@ -77,7 +77,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               </ScoringCriterion>
             ))}
           </View>
-          <H6 style={tw`text-palette-gray5 dark:text-secondary`}>Not matched criteria</H6>
+          <H6 style={tw`text-secondary`}>Not matched criteria</H6>
           <View>
             {SCORING_CRITERIONS.filter(
               ({ name }) => !library.matchingScoreModifiers.includes(name)

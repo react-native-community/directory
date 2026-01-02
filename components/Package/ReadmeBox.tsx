@@ -85,7 +85,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
       style={tw`rounded-xl my-2 border border-palette-gray2 text-black dark:border-default dark:text-white`}>
       <View
         style={tw`flex-row gap-2 items-center px-4 py-3 border-b border-palette-gray2 dark:border-default`}>
-        <ReadmeFile style={tw`text-secondary dark:text-pewter`} />
+        <ReadmeFile style={tw`text-tertiary dark:text-pewter`} />
         <P>Readme</P>
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
@@ -157,7 +157,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
                   <blockquote
                     className={blockquoteType.type}
                     style={{
-                      ...tw`text-palette-gray5 dark:text-secondary`,
+                      ...tw`text-secondary`,
                       ...(blockquoteType.type
                         ? {}
                         : tw`border-palette-gray4 dark:border-secondary`),

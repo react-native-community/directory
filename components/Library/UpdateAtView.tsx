@@ -35,7 +35,7 @@ export default function UpdatedAtView({ library }: Props) {
               style={
                 library.unmaintained
                   ? tw`text-warning-dark dark:text-warning`
-                  : tw`text-secondary dark:text-pewter`
+                  : tw`text-tertiary dark:text-pewter`
               }
               width={14}
               height={16}
@@ -49,14 +49,12 @@ export default function UpdatedAtView({ library }: Props) {
             }
             style={[
               tw`text-[13px] font-light decoration-palette-gray3 dark:decoration-palette-gray5`,
-              library.unmaintained
-                ? tw`text-warning-dark dark:text-warning`
-                : tw`text-palette-gray5 dark:text-secondary`,
+              library.unmaintained ? tw`text-warning-dark dark:text-warning` : tw`text-secondary`,
             ]}
             hoverStyle={
               library.unmaintained
                 ? tw`text-warning-dark dark:text-warning decoration-warning-dark dark:decoration-warning`
-                : tw`decoration-palette-gray4 text-palette-gray5 dark:text-palette-gray3`
+                : tw`decoration-palette-gray4 text-hover`
             }>
             {getTimeSinceToday(library.github.stats.pushedAt)}
           </A>
