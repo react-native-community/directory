@@ -102,6 +102,9 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
               hr: () => null,
               a: (props: any) => {
                 if (props.href && !props.href.startsWith('//')) {
+                  if (!props.href.startsWith('http')) {
+                    return <A {...props} href={`${githubUrl}/blob/HEAD/${props.href}`} />;
+                  }
                   return <A {...props} />;
                 }
                 return <span>{props.children}</span>;

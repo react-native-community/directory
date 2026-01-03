@@ -8,7 +8,7 @@ import { type NpmUser } from '~/types';
 import tw from '~/util/tailwind';
 
 type Props = {
-  author?: NpmUser;
+  author?: NpmUser | string;
   compact?: boolean;
 };
 
@@ -25,13 +25,37 @@ export default function PackageAuthor({ author, compact }: Props) {
     );
   }
 
+  if (typeof author === 'string') {
+    if (author.includes('github.com/')) {
+      const ghUsername = extractGitHubUsername(author);
+
+      return (
+        <View>
+          <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
+            <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
+            <View>
+              <Caption style={labelStyle}>{ghUsername}</Caption>
+              <span style={sublabelStyle}>
+                {author.replace(/\s*\(?https?:\/\/\S+\)?\s*/g, '').trim()}
+              </span>
+            </View>
+          </A>
+        </View>
+      );
+    }
+    return (
+      <View>
+        <Label>{author}</Label>
+      </View>
+    );
+  }
+
   const potentialHref = author.url ?? author.email;
 
   // URL
   if (potentialHref && !potentialHref.includes('@')) {
     if (potentialHref.includes('github.com/')) {
-      const [, potentialGHUsername] = potentialHref.split('github.com/');
-      const ghUsername = potentialGHUsername.replace(/[<>()]/g, '');
+      const ghUsername = extractGitHubUsername(potentialHref);
       const validName = getValidName(author.name);
 
       return (
@@ -106,4 +130,9 @@ function getValidName(potentialName: string): string {
     .filter(word => !(word.includes('(') || word.includes('/') || word.includes('<')))
     .join(' ');
   return cleanName.length ? cleanName : potentialName.replace(/[<>()]/g, '');
+}
+
+function extractGitHubUsername(author: string): string | null {
+  const [, potentialGHUsername] = author.split('github.com/');
+  return potentialGHUsername ? potentialGHUsername.replace(/[<>()]/g, '') : null;
 }

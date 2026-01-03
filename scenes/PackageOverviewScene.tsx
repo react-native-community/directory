@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import { View } from 'react-native';
 
-import { A, H6, Label, useLayout } from '~/common/styleguide';
+import { A, H6, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
@@ -83,13 +83,7 @@ export default function PackageOverviewScene({
               <>
                 <H6 style={tw`text-[16px] mt-3 text-secondary`}>Author</H6>
                 <View style={tw`items-start`}>
-                  {typeof author === 'string' ? (
-                    <View>
-                      <Label>{author ?? 'Unknown'}</Label>
-                    </View>
-                  ) : (
-                    <PackageAuthor author={author} />
-                  )}
+                  <PackageAuthor author={author} />
                 </View>
               </>
             )}
@@ -142,13 +136,7 @@ export default function PackageOverviewScene({
               <>
                 <H6 style={tw`text-[16px] text-secondary`}>Author</H6>
                 <View style={tw`items-start`}>
-                  {typeof author === 'string' ? (
-                    <View>
-                      <Label>{author ?? 'Unknown'}</Label>
-                    </View>
-                  ) : (
-                    <PackageAuthor author={author} />
-                  )}
+                  <PackageAuthor author={author} />
                 </View>
               </>
             )}
