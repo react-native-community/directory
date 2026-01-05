@@ -18912,5 +18912,21 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/leanhtuan1994/react-native-hyper-markdown",
+    "npmPkg": "react-native-hyper-markdown",
+    "examples": [
+      "https://github.com/leanhtuan1994/react-native-hyper-markdown/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/basic_rendering.png",
+      "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/theming.png",
+      "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/code_blocks.png",
+      "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/live_preview.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
