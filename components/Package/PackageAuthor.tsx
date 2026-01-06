@@ -36,7 +36,10 @@ export default function PackageAuthor({ author, compact }: Props) {
             <View>
               <Caption style={labelStyle}>{ghUsername}</Caption>
               <span style={sublabelStyle}>
-                {author.replace(/\s*\(?https?:\/\/\S+\)?\s*/g, '').trim()}
+                {author
+                  .replace(/\s*\(?https?:\/\/\S+\)?\s*/g, '')
+                  .replace(/[<>()]/g, '')
+                  .trim()}
               </span>
             </View>
           </A>

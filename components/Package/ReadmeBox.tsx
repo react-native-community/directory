@@ -103,7 +103,12 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
               a: (props: any) => {
                 if (props.href && !props.href.startsWith('//')) {
                   if (!props.href.startsWith('http')) {
-                    return <A {...props} href={`${githubUrl}/blob/HEAD/${props.href}`} />;
+                    return (
+                      <A
+                        {...props}
+                        href={`${githubUrl}/blob/HEAD/${props.href.startsWith('/') ? props.href.slice(1) : props.href}`}
+                      />
+                    );
                   }
                   return <A {...props} />;
                 }
@@ -146,12 +151,19 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
                 />
               ),
               pre: ({ children }: any) => {
-                const langClass = children.props.className;
+                const langClass = children?.props?.className;
+                if (langClass) {
+                  return (
+                    <ReadmeCodeBlock
+                      code={children.props.children}
+                      lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
+                    />
+                  );
+                }
                 return (
-                  <ReadmeCodeBlock
-                    code={children.props.children}
-                    lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
-                  />
+                  <div style={tw`relative my-2`} className="readme-code-block">
+                    <pre className="shiki">{children}</pre>
+                  </div>
                 );
               },
               blockquote: ({ children }: any) => {
