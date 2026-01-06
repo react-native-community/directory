@@ -18701,7 +18701,10 @@
   {
     "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/core",
     "npmPkg": "expo-gaode-map",
-    "examples": ["https://github.com/TomWq/expo-gaode-map-example"],
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -18882,10 +18885,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-
-    "examples": [
-      "https://github.com/vijaykishan312/react-native-custom-splash/tree/main/example"
-    ]
+    "examples": ["https://github.com/vijaykishan312/react-native-custom-splash/tree/main/example"]
   },
   {
     "githubUrl": "https://github.com/moser-jose/mo-icon-react-native",
@@ -18897,10 +18897,7 @@
   },
   {
     "githubUrl": "https://github.com/WilliamDanielsson/react-native-swappable-grid",
-    "npmPkg": "react-native-swappable-grid",
-    "examples": [
-      "https://github.com/WilliamDanielsson/react-native-swappable-grid-example"
-    ],
+    "examples": ["https://github.com/WilliamDanielsson/react-native-swappable-grid-example"],
     "images": [
       "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/re-order.gif",
       "https://github.com/WilliamDanielsson/react-native-swappable-grid/blob/main/assets/re-size.gif",
@@ -18915,10 +18912,7 @@
   },
   {
     "githubUrl": "https://github.com/leanhtuan1994/react-native-hyper-markdown",
-    "npmPkg": "react-native-hyper-markdown",
-    "examples": [
-      "https://github.com/leanhtuan1994/react-native-hyper-markdown/tree/main/example"
-    ],
+    "examples": ["https://github.com/leanhtuan1994/react-native-hyper-markdown/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/basic_rendering.png",
       "https://raw.githubusercontent.com/leanhtuan1994/react-native-hyper-markdown/main/screenshots/theming.png",
@@ -18928,5 +18922,78 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/EvanBacon/apple-health",
+    "examples": ["https://github.com/EvanBacon/apple-health/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jakex7/expo-watermark",
+    "examples": ["https://github.com/jakex7/expo-watermark/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/DarkSorrow/rn-google-signin",
+    "npmPkg": "@novastera-oss/rn-google-signin",
+    "examples": ["https://github.com/DarkSorrow/rn-google-signin/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/NO1225/expo-media-control",
+    "examples": ["https://github.com/NO1225/expo-media-control/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/zewish/redux-remember/tree/master/packages/redux-remember",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/evansuner/expo-gbk-converter",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/JoaoPauloCMarra/react-native-nitro-auth/tree/main/packages/react-native-nitro-auth",
+    "examples": [
+      "https://github.com/JoaoPauloCMarra/react-native-nitro-auth/tree/main/apps/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/liveforownhappiness/react-native-puff-pop",
+    "examples": ["https://github.com/liveforownhappiness/react-native-puff-pop/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/liveforownhappiness/react-native-puff-pop/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/liveforownhappiness/react-native-glitter",
+    "examples": ["https://github.com/liveforownhappiness/react-native-glitter/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/liveforownhappiness/react-native-glitter/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/alyssadicarlo/expo-finance-kit",
+    "examples": ["https://github.com/alyssadicarlo/expo-finance-kit/tree/main/example"],
+    "ios": true
   }
 ]
