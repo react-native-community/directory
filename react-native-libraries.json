@@ -19005,5 +19005,19 @@
     "ios": true,
     "android": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/react-native",
+    "npmPkg": "@powersync/react-native",
+    "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo#installation",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-barebones-opsqlite",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-group-chat",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-web-supabase-todolist"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
