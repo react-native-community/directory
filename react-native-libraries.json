@@ -10875,12 +10875,16 @@
     "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/react-native",
     "npmPkg": "@powersync/react-native",
     "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-barebones-opsqlite",
       "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-group-chat",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist"
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-web-supabase-todolist"
     ],
     "ios": true,
     "expoGo": true,
-    "android": true
+    "android": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/andrew-levy/swiftui-react-native",
@@ -19013,20 +19017,6 @@
       "https://docs.powersync.com/client-sdk-references/react-native-and-expo/expo-go-support"
     ],
     "expoGo": true,
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
-    "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/react-native",
-    "npmPkg": "@powersync/react-native",
-    "examples": [
-      "https://docs.powersync.com/client-sdk-references/react-native-and-expo",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-barebones-opsqlite",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-group-chat",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-web-supabase-todolist"
-    ],
     "ios": true,
     "android": true,
     "web": true
