@@ -10875,12 +10875,16 @@
     "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/react-native",
     "npmPkg": "@powersync/react-native",
     "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-barebones-opsqlite",
       "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-group-chat",
-      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist"
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-supabase-todolist",
+      "https://github.com/powersync-ja/powersync-js/tree/main/demos/react-native-web-supabase-todolist"
     ],
     "ios": true,
     "expoGo": true,
-    "android": true
+    "android": true,
+    "web": true
   },
   {
     "githubUrl": "https://github.com/andrew-levy/swiftui-react-native",
@@ -18995,5 +18999,26 @@
     "githubUrl": "https://github.com/alyssadicarlo/expo-finance-kit",
     "examples": ["https://github.com/alyssadicarlo/expo-finance-kit/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/powersync-ja/react-native-quick-sqlite",
+    "npmPkg": "@journeyapps/react-native-quick-sqlite",
+    "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo#react-native-quick-sqlite"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/powersync-ja/powersync-js/tree/main/packages/adapter-sql-js",
+    "npmPkg": "@powersync/adapter-sql-js",
+    "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo/expo-go-support"
+    ],
+    "expoGo": true,
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
