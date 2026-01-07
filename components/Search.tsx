@@ -43,12 +43,6 @@ export default function Search({ query, total }: Props) {
     }
   }, [isApple]);
 
-  useEffect(() => {
-    if (inputRef?.current && !search) {
-      inputRef.current.clear();
-    }
-  }, [search]);
-
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/', { ...query, search: text, offset: null }));
   }, 200);
