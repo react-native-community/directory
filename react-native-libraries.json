@@ -18995,5 +18995,15 @@
     "githubUrl": "https://github.com/alyssadicarlo/expo-finance-kit",
     "examples": ["https://github.com/alyssadicarlo/expo-finance-kit/tree/main/example"],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/powersync-ja/react-native-quick-sqlite",
+    "npmPkg": "@journeyapps/react-native-quick-sqlite",
+    "examples": [
+      "https://docs.powersync.com/client-sdk-references/react-native-and-expo#react-native-quick-sqlite"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
   }
 ]
