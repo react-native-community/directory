@@ -11,6 +11,7 @@ type Props = PropsWithChildren & {
   openInNewTab?: boolean;
   style?: StyleProp<TextStyle>;
   containerStyle?: StyleProp<ViewStyle>;
+  tabIndex?: number;
 };
 
 export function Button({
@@ -20,6 +21,7 @@ export function Button({
   style,
   containerStyle,
   openInNewTab,
+  tabIndex,
   ...rest
 }: Props) {
   const isLink = !!href;
@@ -36,6 +38,7 @@ export function Button({
         <A
           href={href}
           style={tw`rounded font-sans`}
+          tabIndex={tabIndex}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
           <Pressable focusable={false} style={buttonStyle} accessible={false}>
@@ -43,7 +46,7 @@ export function Button({
           </Pressable>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={buttonStyle} {...rest}>
+        <Pressable onPress={onPress} style={buttonStyle} role="button" {...rest}>
           {content}
         </Pressable>
       )}

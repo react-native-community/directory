@@ -64,7 +64,8 @@ export default function TopBar() {
                 <Button
                   aria-label="Tools"
                   href="/tools"
-                  style={tw`size-8.5 px-1 bg-transparent rounded-full`}>
+                  style={tw`size-8.5 px-1 bg-transparent rounded-full`}
+                  tabIndex={-1}>
                   <Tools style={tw`text-white`} />
                 </Button>
               </View>
@@ -78,7 +79,8 @@ export default function TopBar() {
                   openInNewTab
                   aria-label="GitHub repository"
                   href="https://github.com/react-native-community/directory"
-                  style={tw`size-8.5 px-1 bg-transparent rounded-full`}>
+                  style={tw`size-8.5 px-1 bg-transparent rounded-full`}
+                  tabIndex={-1}>
                   <GitHub style={tw`text-white`} />
                 </Button>
               </View>

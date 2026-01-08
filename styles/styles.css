@@ -6,6 +6,7 @@
   format("woff2");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
   format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,7 @@
   format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 /* TODO: refactor colors and naming */
@@ -396,6 +399,12 @@ select {
   p {
     margin-bottom: 0;
 
+    &[align="center"] {
+      picture {
+        display: block
+      }
+    }
+
     & a {
       font-size: inherit;
     }
@@ -444,7 +453,7 @@ select {
   }
 
   picture {
-    display: block;
+    display: contents;
   }
 
   img {
@@ -518,14 +527,14 @@ select {
     margin-bottom: 0;
 
     ul, ol {
-      padding-top: 8px;
+      padding-block: 4px;
       margin-inline-start: 0;
     }
   }
 
   li {
-    &:last-child {
-      margin-bottom: 12px;
+    div:last-child {
+      margin-bottom: 8px;
     }
 
     pre {
@@ -534,6 +543,7 @@ select {
   }
 
   details {
+    background-color: var(--table-alt-row);
     padding-inline-start: 1rem;
 
     summary {
@@ -558,6 +568,10 @@ select {
     a:has(img) {
       display: inline-block;
       text-align: inherit;
+    }
+
+    p {
+      margin-top: 8px;
     }
 
     sub, sup {
