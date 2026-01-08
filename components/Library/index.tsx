@@ -77,7 +77,7 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
               {libName}
             </A>
             <HoverEffect>
-              <A href={library.githubUrl} style={tw`size-5`}>
+              <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
                 <GitHub
                   width={20}
                   height={20}

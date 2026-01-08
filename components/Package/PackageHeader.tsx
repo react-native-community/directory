@@ -52,7 +52,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
             </View>
           )}
           <HoverEffect>
-            <A href={library.githubUrl} style={tw`size-5`}>
+            <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
               <GitHub
                 width={20}
                 height={20}

@@ -5,7 +5,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Footer from '~/components/Footer';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
-import tw from '~/util/tailwind';
 
 import '~/styles/styles.css';
 
@@ -23,14 +22,16 @@ Sentry.init({
 function App({ pageProps, Component }: AppProps) {
   return (
     <CustomAppearanceProvider>
-      <SafeAreaProvider style={tw`flex-1`}>
+      <SafeAreaProvider>
         <Head>
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
           />
         </Head>
-        <Component {...pageProps} />
+        <main>
+          <Component {...pageProps} />
+        </main>
         <Footer />
       </SafeAreaProvider>
     </CustomAppearanceProvider>

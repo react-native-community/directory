@@ -54,7 +54,10 @@ export default function CompatibilityTags({ library }: Props) {
         <Tooltip
           side="bottom"
           trigger={
-            <View style={tw`items-center justify-center cursor-pointer`}>
+            <View
+              style={tw`items-center justify-center cursor-pointer rounded-full`}
+              role="button"
+              aria-label="Additional information">
               <Info style={tw`text-icon`} />
             </View>
           }>

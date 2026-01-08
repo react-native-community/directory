@@ -31,7 +31,8 @@ export default function ReadmeCodeBlock({ code, lang }: Props) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
               await navigator.clipboard.writeText(code);
             }
-          }}>
+          }}
+          aria-label="Copy to clipboard">
           <Copy width={20} height={20} style={tw`text-palette-gray4 dark:text-pewter`} />
         </Button>
       }>
