@@ -1,4 +1,4 @@
-import { useShikiHighlighter } from 'react-shiki';
+import { type Theme, useShikiHighlighter } from 'react-shiki';
 
 import { Button } from '~/components/Button';
 import { Copy } from '~/components/Icons';
@@ -8,17 +8,13 @@ import tw from '~/util/tailwind';
 type Props = {
   code: string;
   lang: string;
+  theme: Theme;
 };
 
-export default function ReadmeCodeBlock({ code, lang }: Props) {
-  const highlighter = useShikiHighlighter(
-    code,
-    lang,
-    tw.prefixMatch('dark') ? 'github-dark-default' : 'github-light-default',
-    {
-      langAlias: { gradle: 'groovy' },
-    }
-  );
+export default function ReadmeCodeBlock({ code, theme, lang }: Props) {
+  const highlighter = useShikiHighlighter(code, lang, theme, {
+    langAlias: { gradle: 'groovy' },
+  });
 
   const copyButton = (
     <Tooltip

@@ -9,6 +9,7 @@ const PACKAGES_TO_OPTIMIZE = [
   '@expo/html-elements',
   '@react-native-picker/picker',
   '@sentry/*',
+  '@shikijs/*',
   'node-emoji',
   'react-native',
   'react-native-safe-area-context',
