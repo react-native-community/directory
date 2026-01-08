@@ -2,6 +2,7 @@ import { Md } from '@m2d/react-markdown/client';
 import { capitalize } from 'es-toolkit';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
+import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
@@ -11,6 +12,8 @@ import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
 import ReadmeCodeBlock from '~/components/Package/ReadmeCodeBlock';
 import { ThreeDotsLoader } from '~/components/Package/ThreeDotsLoader';
+import rndDark from '~/styles/shiki/rnd-dark.json';
+import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import tw from '~/util/tailwind';
@@ -156,6 +159,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
                   return (
                     <ReadmeCodeBlock
                       code={children.props.children}
+                      theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
                       lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
                     />
                   );
