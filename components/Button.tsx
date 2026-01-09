@@ -1,8 +1,8 @@
-import { A } from '@expo/html-elements';
 import { type PropsWithChildren } from 'react';
-import { type TextStyle, Pressable, type StyleProp, type ViewStyle } from 'react-native';
+import { type TextStyle, type StyleProp, type ViewStyle, View } from 'react-native';
+import { type Style } from 'twrnc';
 
-import { HoverEffect, P } from '~/common/styleguide';
+import { A, HoverEffect, P } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren & {
@@ -10,8 +10,7 @@ type Props = PropsWithChildren & {
   onPress?: () => void;
   openInNewTab?: boolean;
   style?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
-  tabIndex?: number;
+  containerStyle?: StyleProp<Style>;
 };
 
 export function Button({
@@ -21,34 +20,35 @@ export function Button({
   style,
   containerStyle,
   openInNewTab,
-  tabIndex,
   ...rest
 }: Props) {
   const isLink = !!href;
   const buttonStyle = [
-    tw`justify-center items-center rounded outline-offset-1 select-none bg-primary-darker dark:bg-primary-dark`,
+    tw`justify-center items-center rounded outline-offset-1 cursor-pointer select-none bg-primary-darker dark:bg-primary-dark`,
     style,
-  ];
+  ] as ViewStyle[];
 
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
   return (
-    <HoverEffect style={containerStyle}>
+    <HoverEffect
+      style={containerStyle}
+      onPress={isLink ? undefined : onPress}
+      tabIndex={isLink ? -1 : 0}>
       {isLink ? (
         <A
           href={href}
-          style={tw`rounded font-sans`}
-          tabIndex={tabIndex}
+          style={[tw`rounded font-sans`, isLink && containerStyle]}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
-          <Pressable focusable={false} style={buttonStyle} accessible={false}>
+          <View focusable={false} style={buttonStyle} accessible={false}>
             {content}
-          </Pressable>
+          </View>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={buttonStyle} role="button" {...rest}>
+        <View role="button" focusable={false} style={buttonStyle} accessible={false} {...rest}>
           {content}
-        </Pressable>
+        </View>
       )}
     </HoverEffect>
   );

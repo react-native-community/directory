@@ -89,7 +89,8 @@ export default function Footer() {
           <View style={[tw`self-center`, isSmallScreen && tw`items-center mt-6`]}>
             <A
               href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
-              aria-label="Vercel banner">
+              aria-label="Vercel banner"
+              style={tw`flex`}>
               <VercelBanner />
             </A>
           </View>

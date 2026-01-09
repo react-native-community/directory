@@ -8,7 +8,7 @@ export default function TrustedBadge() {
   return (
     <Tooltip
       trigger={
-        <View>
+        <View role="button" aria-label="Trusted publisher">
           <Verified width={16} height={16} style={tw`text-success`} />
         </View>
       }>

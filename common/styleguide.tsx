@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { type ComponentType, type CSSProperties, type PropsWithChildren, useState } from 'react';
 import {
   StyleSheet,
-  type TextStyle,
-  View,
+  Pressable,
   useWindowDimensions,
   type StyleProp,
   type ViewStyle,
+  type PressableProps,
 } from 'react-native';
+import { type Style } from 'twrnc';
 
 import tw from '~/util/tailwind';
 
@@ -42,7 +43,7 @@ type CustomTextProps = TextProps &
 
 export function createTextComponent(
   Element: ComponentType<TextProps>,
-  textStyle?: StyleProp<TextStyle>
+  textStyle?: StyleProp<Style>
 ) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const elementStyle = Element?.displayName
@@ -55,7 +56,7 @@ export function createTextComponent(
         numberOfLines={numberOfLines}
         style={[
           tw`font-sans font-normal my-0 text-black dark:text-white`,
-          elementStyle as StyleProp<TextStyle>,
+          elementStyle as StyleProp<Style>,
           textStyle,
           style,
         ]}>
@@ -81,10 +82,10 @@ export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = PropsWithChildren<{
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<Style>;
   target?: string;
   href: string;
-  hoverStyle?: StyleProp<TextStyle>;
+  hoverStyle?: StyleProp<Style>;
   containerStyle?: CSSProperties;
 }>;
 
@@ -98,6 +99,7 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
     const passedStyle = StyleSheet.flatten(style);
     return (
       <Link
+        {...rest}
         href={href}
         onPointerEnter={() => setIsHovered(true)}
         onPointerLeave={() => setIsHovered(false)}
@@ -130,26 +132,23 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
   );
 }
 
-type HoverEffectProps = PropsWithChildren<{ style?: StyleProp<ViewStyle> }>;
+type HoverEffectProps = PressableProps & { style?: StyleProp<ViewStyle> };
 
-export function HoverEffect({ children, style }: HoverEffectProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-
+export function HoverEffect({ children, style, onPress, ...rest }: HoverEffectProps) {
   return (
-    <View
-      style={[
+    <Pressable
+      style={({ hovered, pressed }) => [
         { transition: 'opacity 0.33s' },
-        isHovered && tw`opacity-75`,
-        isActive && tw`opacity-50`,
+        hovered && tw`opacity-75`,
+        pressed && tw`opacity-50`,
         style,
       ]}
-      onPointerEnter={() => setIsHovered(true)}
-      onPointerLeave={() => setIsHovered(false)}
-      onPointerDown={() => setIsActive(true)}
-      onPointerUp={() => setIsActive(false)}
-      accessible={false}>
+      accessible={false}
+      focusable={false}
+      tabIndex={onPress ? 0 : -1}
+      onPress={onPress}
+      {...rest}>
       {children}
-    </View>
+    </Pressable>
   );
 }

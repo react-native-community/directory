@@ -1,13 +1,14 @@
-import { type StyleProp, type TextStyle } from 'react-native';
+import { type StyleProp } from 'react-native';
+import { type Style } from 'twrnc';
 
 import { A, P } from '~/common/styleguide';
 import { type LibraryDataEntryType } from '~/types';
 
 type Props = {
   configPlugin?: LibraryDataEntryType['configPlugin'];
-  hoverStyle?: StyleProp<TextStyle>;
-  linkStyles?: StyleProp<TextStyle>;
-  paragraphStyles?: StyleProp<TextStyle>;
+  hoverStyle?: StyleProp<Style>;
+  linkStyles?: StyleProp<Style>;
+  paragraphStyles?: StyleProp<Style>;
 };
 
 export function ConfigPluginContent({
