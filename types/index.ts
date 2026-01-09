@@ -1,3 +1,5 @@
+import 'expo/types/react-native-web.d.ts';
+
 import { type ReactElement, type ReactNode } from 'react';
 
 import { type NewArchSupportStatus } from '~/util/newArchStatus';

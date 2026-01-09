@@ -1,6 +1,7 @@
-import { View, type ViewStyle } from 'react-native';
+import { View, type ViewStyle, type TextStyle } from 'react-native';
+import { type Style } from 'twrnc';
 
-import { P, A, HoverEffect } from '~/common/styleguide';
+import { A, P, HoverEffect } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
 import { getPopularityGrade } from '~/util/scoring';
 import tw from '~/util/tailwind';
@@ -8,7 +9,7 @@ import tw from '~/util/tailwind';
 type Props = {
   library: LibraryType | { popularity: number };
   markOnly?: boolean;
-  style?: ViewStyle;
+  style?: TextStyle | ViewStyle;
 };
 
 export default function TrendingMark({ library, style, markOnly = false }: Props) {
@@ -45,10 +46,10 @@ export default function TrendingMark({ library, style, markOnly = false }: Props
   );
 
   return markOnly ? (
-    <View style={[tw`mb-1`, style]}>{content}</View>
+    <View style={[tw`mb-1`, style as ViewStyle]}>{content}</View>
   ) : (
     <HoverEffect>
-      <A href="/scoring" style={[tw`flex relative items-start no-underline`, style]}>
+      <A href="/scoring" style={[tw`flex relative items-start no-underline`, style as Style]}>
         {content}
       </A>
     </HoverEffect>

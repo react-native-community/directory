@@ -1,11 +1,12 @@
-import { type StyleProp, type TextStyle } from 'react-native';
+import { type StyleProp } from 'react-native';
+import { type Style } from 'twrnc';
 
 import { Label } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 type Props = {
   count: number;
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<Style>;
 };
 
 export default function EntityCounter({ count, style }: Props) {
