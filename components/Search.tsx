@@ -31,6 +31,13 @@ export default function Search({ query, total }: Props) {
   const { isSmallScreen } = useLayout();
 
   useEffect(() => {
+    // @ts-expect-error using native input value to clear on same-page navigation
+    if (!isInputFocused && inputRef?.current?.value && !search) {
+      inputRef.current.clear();
+    }
+  }, [search]);
+
+  useEffect(() => {
     if (isApple !== null) {
       function keyDownListener(event: KeyboardEvent) {
         if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {

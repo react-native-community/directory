@@ -1,9 +1,8 @@
 import { Header as HtmlHeader } from '@expo/html-elements';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { View } from 'react-native';
 
-import { H5, P, useLayout } from '~/common/styleguide';
+import { A, H5, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
@@ -24,9 +23,9 @@ export default function TopBar() {
         <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
           <Logo style={tw`text-primary`} width={29} height={26} />
           <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
-            <Link href="/" style={tw`text-primary ml-2 font-bold no-underline`}>
+            <A href="/" style={tw`text-primary ml-2 font-bold no-underline`}>
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
-            </Link>
+            </A>
           </H5>
         </View>
         <View style={[isBelowMaxWidth && tw`mr-auto`, isSmallScreen && tw`hidden`]}>

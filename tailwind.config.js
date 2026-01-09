@@ -8,6 +8,7 @@ const palette = {
   'primary-dark': 'var(--primary-dark)',
   'primary-darker': 'var(--primary-darker)',
   'primary-hover': 'var(--primary-hover)',
+  'primary-active-hover': 'var(--primary-active-hover)',
 
   secondary: 'var(--secondary)',
   tertiary: 'var(--tertiary)',
