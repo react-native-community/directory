@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Footer from '~/components/Footer';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
+import tw from '~/util/tailwind';
 
 import '~/styles/styles.css';
 
@@ -29,7 +30,7 @@ function App({ pageProps, Component }: AppProps) {
             content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
           />
         </Head>
-        <main>
+        <main style={tw`flex flex-col flex-1`}>
           <Component {...pageProps} />
         </main>
         <Footer />

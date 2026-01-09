@@ -1,12 +1,12 @@
 import { Md } from '@m2d/react-markdown/client';
 import { capitalize } from 'es-toolkit';
-import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
+import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
@@ -26,62 +26,30 @@ type Props = {
 };
 
 export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader = false }: Props) {
-  const [readmeContent, setReadmeContent] = useState<string | null | undefined>(undefined);
-
-  useEffect(() => {
-    if (loader) {
-      return;
+  const { data, error, isLoading } = useSWR(
+    isTemplate
+      ? `${githubUrl?.replace('github.com/', 'raw.githubusercontent.com/')}/HEAD/README.md`
+      : `https://unpkg.com/${packageName}/README.md`,
+    (url: string) =>
+      fetch(url).then(res => {
+        if (res.status === 404) {
+          return '';
+        } else if (res.status === 200) {
+          return res.text();
+        }
+        return null;
+      }),
+    {
+      dedupingInterval: 60_000 * 10,
+      revalidateOnFocus: false,
     }
-
-    let cancelled = false;
-
-    void (async () => {
-      if (isTemplate) {
-        const templateRawUrl = githubUrl?.replace('github.com/', 'raw.githubusercontent.com/');
-        let readmeResponse = await fetch(`${templateRawUrl}/main/README.md`);
-
-        if (readmeResponse.status === 404) {
-          readmeResponse = await fetch(`${templateRawUrl}/master/README.md`);
-        }
-
-        if (readmeResponse.status === 200) {
-          const readmeContent = await readmeResponse.text();
-          if (!cancelled) {
-            setReadmeContent(readmeContent);
-          }
-        } else {
-          setReadmeContent('');
-        }
-      } else {
-        try {
-          const readmeResponse = await fetch(`https://unpkg.com/${packageName}/README.md`);
-          const readmeContent = await readmeResponse.text();
-          if (!cancelled) {
-            setReadmeContent(readmeContent);
-          }
-        } catch (error: any) {
-          if (error instanceof Error) {
-            if (error.message === 'Failed to fetch') {
-              setReadmeContent('');
-              return;
-            }
-          }
-          if (!cancelled) {
-            setReadmeContent(null);
-          }
-        }
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  );
 
   if (!githubUrl || !packageName) {
     return null;
   }
 
-  const readmeFallbackContent = getReadmeFallbackContent(readmeContent);
+  const readmeFallbackContent = getReadmeFallbackContent(data, isLoading, error);
 
   return (
     <View
@@ -92,9 +60,9 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
         <P>Readme</P>
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
-        {!readmeContent && readmeFallbackContent ? (
+        {!data && readmeFallbackContent ? (
           <View style={tw`gap-4 py-6`}>
-            {readmeContent === undefined && <ThreeDotsLoader />}
+            {isLoading && <ThreeDotsLoader />}
             <P style={tw`text-center`}>{readmeFallbackContent}</P>
           </View>
         ) : (
@@ -201,7 +169,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             remarkPlugins={[remarkGfm, remarkEmoji]}>
-            {readmeContent ?? undefined}
+            {data ?? undefined}
           </Md>
         )}
       </View>
@@ -209,13 +177,17 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
   );
 }
 
-function getReadmeFallbackContent(readmeContent?: string | null): string | null {
-  if (readmeContent === undefined) {
+function getReadmeFallbackContent(
+  readmeContent?: string | null,
+  isLoading?: boolean,
+  error?: string
+): string | null {
+  if (isLoading) {
     return 'Loading README…';
-  } else if (readmeContent === null) {
-    return 'Cannot fetch README file content.';
   } else if (readmeContent === '') {
     return 'This package does not have a README file.';
+  } else if (readmeContent === null || error) {
+    return `Cannot fetch README file content.`;
   }
   return null;
 }

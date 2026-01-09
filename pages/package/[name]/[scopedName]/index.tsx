@@ -34,11 +34,15 @@ export async function getServerSideProps(ctx: NextPageContext) {
 
   try {
     const [apiResponse, npmResponse] = await Promise.all([
-      fetch(getApiUrl(urlWithQuery(`/libraries?search=${encodeURI(packageName)}`, {}), ctx)),
-      fetch(`https://registry.npmjs.org/${packageName}/latest`),
+      fetch(getApiUrl(urlWithQuery(`/libraries?search=${encodeURI(packageName)}`, {}), ctx), {
+        next: { revalidate: 60 * 60 },
+      }),
+      fetch(`https://registry.npmjs.org/${packageName}/latest`, {
+        next: { revalidate: 60 * 10 },
+      }),
     ]);
 
-    if (apiResponse.status !== 200 || npmResponse.status !== 200) {
+    if (apiResponse.status !== 200 || (npmResponse.status !== 200 && npmResponse.status !== 404)) {
       return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
     }
 

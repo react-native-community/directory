@@ -22,6 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   res.statusCode = 200;
+  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
   const result: CheckResultsType = {};
   packages.forEach(pkgName => {
     result[pkgName] = DATASET[pkgName];
