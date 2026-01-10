@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, useEffectEvent } from 'react';
 import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -37,18 +37,19 @@ export default function Search({ query, total }: Props) {
     }
   }, [search]);
 
+  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+      event.preventDefault();
+      inputRef.current?.focus();
+    }
+  });
+
   useEffect(() => {
     if (isApple !== null) {
-      function keyDownListener(event: KeyboardEvent) {
-        if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-          event.preventDefault();
-          inputRef.current?.focus();
-        }
-      }
       document.addEventListener('keydown', keyDownListener, false);
       return () => document.removeEventListener('keydown', keyDownListener);
     }
-  }, [isApple]);
+  }, [isApple, keyDownListener]);
 
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/', { ...query, search: text, offset: null }));

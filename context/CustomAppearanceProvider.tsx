@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { type PropsWithChildren, useEffect } from 'react';
+import { type PropsWithChildren, useEffect, useRef } from 'react';
+import { type RnColorScheme } from 'twrnc';
 
 import tw, { useDeviceContext, useAppColorScheme } from '~/util/tailwind';
 
@@ -11,15 +12,25 @@ const defaultState = { isDark: false };
 
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
+  const colorSchemeRef = useRef<RnColorScheme>(colorScheme);
+
+  useEffect(() => {
+    colorSchemeRef.current = colorScheme;
+  }, [colorScheme]);
+
+  function applyTheme(scheme: string) {
+    if (scheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
 
   function toggleTheme() {
-    if (colorScheme === 'dark') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
-
-    setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
+    const newTheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    setColorScheme(newTheme);
+    void cacheAppearanceState(newTheme === 'dark');
   }
 
   useDeviceContext(tw, {
@@ -31,7 +42,10 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     async function rehydrateAsync() {
       try {
         const { isDark } = await rehydrateAppearanceState();
-        isDark && toggleTheme();
+        if (isDark) {
+          applyTheme('dark');
+          setColorScheme('dark');
+        }
       } catch {}
     }
 
@@ -39,14 +53,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
   }, []);
 
   return (
-    <CustomAppearanceContext.Provider
-      key={colorScheme}
-      value={{
-        toggleTheme: () => {
-          toggleTheme();
-          void cacheAppearanceState(colorScheme !== 'dark');
-        },
-      }}>
+    <CustomAppearanceContext.Provider key={colorScheme} value={{ toggleTheme }}>
       {children}
     </CustomAppearanceContext.Provider>
   );
