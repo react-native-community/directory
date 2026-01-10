@@ -8,7 +8,7 @@ import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
-import DependencyRow from '~/components/Package/DependencyRow';
+import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
@@ -19,7 +19,6 @@ import ReadmeBox from '~/components/Package/ReadmeBox';
 import PageMeta from '~/components/PageMeta';
 import { type NpmUser } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
-import mapDependencies from '~/util/mapDependencies';
 import tw from '~/util/tailwind';
 
 const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
@@ -184,55 +183,10 @@ export default function PackageOverviewScene({
                 </ul>
               </>
             )}
-            {dependencies && Object.keys(dependencies).length > 0 && (
-              <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
-                  Dependencies
-                  <EntityCounter count={Object.keys(dependencies).length} />
-                </H6>
-                <View>
-                  {mapDependencies(dependencies, ([name, version]: [string, string]) => (
-                    <DependencyRow key={`dep-${name}`} name={name} version={version} />
-                  ))}
-                </View>
-              </>
-            )}
-            {peerDependencies && Object.keys(peerDependencies).length > 0 && (
-              <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
-                  Peer dependencies
-                  <EntityCounter count={Object.keys(peerDependencies).length} />
-                </H6>
-                <View>
-                  {mapDependencies(peerDependencies, ([name, version]: [string, string]) => (
-                    <DependencyRow key={`peer-dep-${name}`} name={name} version={version} />
-                  ))}
-                </View>
-              </>
-            )}
-            {devDependencies && Object.keys(devDependencies).length > 0 && (
-              <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
-                  Development dependencies
-                  <EntityCounter count={Object.keys(devDependencies).length} />
-                </H6>
-                <View>
-                  {mapDependencies(devDependencies, ([name, version]: [string, string]) => (
-                    <DependencyRow key={`dev-dep-${name}`} name={name} version={version} />
-                  ))}
-                </View>
-              </>
-            )}
-            {engines && Object.keys(engines).length > 0 && (
-              <>
-                <H6 style={tw`text-[16px] text-secondary`}>Engines</H6>
-                <View>
-                  {mapDependencies(engines, ([name, version]: [string, string]) => (
-                    <DependencyRow key={`engine-${name}`} name={name} version={version} />
-                  ))}
-                </View>
-              </>
-            )}
+            <CollapsibleSection title="Dependencies" data={dependencies} />
+            <CollapsibleSection title="Peer dependencies" data={peerDependencies} />
+            <CollapsibleSection title="Development dependencies" data={devDependencies} />
+            <CollapsibleSection title="Engines" data={engines} />
           </View>
         </View>
       </ContentContainer>
