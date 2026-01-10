@@ -24,11 +24,13 @@ export default function CollapsibleSection({ title, data }: Props) {
   );
 
   useEffect(() => {
-    void (async () => {
+    async function refreshState() {
       const val = await AsyncStorage.getItem(key);
       setCollapsed(val === 'true');
-    })();
-  }, [key]);
+    }
+
+    void refreshState();
+  }, []);
 
   if (!data || Object.keys(data).length === 0) {
     return null;
