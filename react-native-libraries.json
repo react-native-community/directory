@@ -19035,19 +19035,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "expoGo": false,
-    "fireos": false,
-    "horizon": false,
-    "vegaos": false,
-    "newArchitecture": true,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "newArchitecture": true
   }
 ]
