@@ -1,5 +1,5 @@
 import { type ReactElement } from 'react';
-import { View, type ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import tw from '~/util/tailwind';
@@ -8,7 +8,7 @@ import { Check } from './Icons';
 
 type Props = {
   label: string;
-  tagStyle: ViewStyle | ViewStyle[];
+  tagStyle: StyleProp<ViewStyle>;
   icon?: ReactElement | null;
 };
 

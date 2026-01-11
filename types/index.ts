@@ -55,6 +55,7 @@ export type Query = {
   nitroModule?: string;
   turboModule?: string;
   nightlyProgram?: string;
+  owner?: string;
 };
 
 export type QueryFilters = {
@@ -163,7 +164,7 @@ export type LibraryDataEntryType = {
 
 export type APIResponseType = {
   libraries: LibraryType[];
-  total?: number;
+  total: number;
 };
 
 export type DataAssetType = {

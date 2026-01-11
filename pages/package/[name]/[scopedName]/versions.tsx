@@ -34,7 +34,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
 
   try {
     const [apiResponse, npmResponse] = await Promise.all([
-      fetch(getApiUrl(urlWithQuery(`/libraries?search=${encodeURI(packageName)}`, {}), ctx), {
+      fetch(getApiUrl(urlWithQuery(`/libraries`, { search: packageName }), ctx), {
         next: { revalidate: 60 * 60 },
       }),
       fetch(`https://registry.npmjs.org/${packageName}`, {
