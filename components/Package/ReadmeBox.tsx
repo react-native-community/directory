@@ -10,13 +10,14 @@ import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
-import ReadmeCodeBlock from '~/components/Package/ReadmeCodeBlock';
-import { ThreeDotsLoader } from '~/components/Package/ThreeDotsLoader';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import tw from '~/util/tailwind';
+
+import ReadmeCodeBlock from './ReadmeCodeBlock';
+import ThreeDotsLoader from './ThreeDotsLoader';
 
 type Props = {
   packageName?: string;

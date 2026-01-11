@@ -3,6 +3,7 @@ import { View, type ViewStyle } from 'react-native';
 
 import { Caption, HoverEffect } from '~/common/styleguide';
 import { Arrow } from '~/components/Icons';
+import SearchTag from '~/components/SearchTag';
 import { type Query } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { getPageQuery } from '~/util/search';
@@ -35,40 +36,43 @@ export default function Pagination({ query, total, style, basePath = '/' }: Prop
   const pageQuery = getPageQuery(basePath, query);
 
   return (
-    <View style={[tw`flex-row items-center justify-end`, style]}>
-      {backDisabled ? (
-        <BackArrow disabled />
-      ) : (
-        <HoverEffect>
-          <Link
-            href={urlWithQuery(basePath, {
-              ...pageQuery,
-              offset: (currentOffset - NUM_PER_PAGE).toString(),
-            })}
-            style={tw`rounded`}
-            aria-label="Previous page">
-            <BackArrow />
-          </Link>
-        </HoverEffect>
-      )}
-      <Caption style={tw`mx-1.5 min-w-15 text-center`}>
-        {currentPage > 0 ? currentPage : '1'} of {totalPages}
-      </Caption>
-      {forwardDisabled ? (
-        <ForwardArrow disabled />
-      ) : (
-        <HoverEffect>
-          <Link
-            href={urlWithQuery(basePath, {
-              ...pageQuery,
-              offset: (currentOffset + NUM_PER_PAGE).toString(),
-            })}
-            style={tw`rounded`}
-            aria-label="Next page">
-            <ForwardArrow />
-          </Link>
-        </HoverEffect>
-      )}
+    <View style={tw`flex-row justify-between`}>
+      {query.owner ? <SearchTag title="Owner" value={query.owner} /> : <View />}
+      <View style={[tw`flex-row items-center justify-end`, style]}>
+        {backDisabled ? (
+          <BackArrow disabled />
+        ) : (
+          <HoverEffect>
+            <Link
+              href={urlWithQuery(basePath, {
+                ...pageQuery,
+                offset: (currentOffset - NUM_PER_PAGE).toString(),
+              })}
+              style={tw`rounded`}
+              aria-label="Previous page">
+              <BackArrow />
+            </Link>
+          </HoverEffect>
+        )}
+        <Caption style={tw`mx-1.5 min-w-15 text-center`}>
+          {currentPage > 0 ? currentPage : '1'} of {totalPages}
+        </Caption>
+        {forwardDisabled ? (
+          <ForwardArrow disabled />
+        ) : (
+          <HoverEffect>
+            <Link
+              href={urlWithQuery(basePath, {
+                ...pageQuery,
+                offset: (currentOffset + NUM_PER_PAGE).toString(),
+              })}
+              style={tw`rounded`}
+              aria-label="Next page">
+              <ForwardArrow />
+            </Link>
+          </HoverEffect>
+        )}
+      </View>
     </View>
   );
 }

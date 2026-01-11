@@ -101,6 +101,7 @@ export function handleFilterLibraries({
   nitroModule,
   turboModule,
   nightlyProgram,
+  owner,
 }: Query & QueryFilters) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
@@ -247,6 +248,10 @@ export function handleFilterLibraries({
     }
 
     if (wasRecentlyUpdated && !library.matchingScoreModifiers.includes('Recently updated')) {
+      return false;
+    }
+
+    if (owner && !library.githubUrl.startsWith(`https://github.com/${owner}`)) {
       return false;
     }
 

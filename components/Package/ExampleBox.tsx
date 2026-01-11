@@ -17,7 +17,10 @@ export default function ExampleBox({ example, index }: Props) {
     <LI>
       <A
         href={example}
-        style={tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-palette-gray2 dark:border-default`}
+        style={[
+          tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-palette-gray2 dark:border-default`,
+          isSmallScreen && tw`px-3 py-2`,
+        ]}
         hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
         <View style={tw`flex flex-row items-center max-w-full gap-2.5`}>
           {example.includes('github.com') && <GitHub style={tw`text-icon`} />}

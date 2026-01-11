@@ -12,6 +12,7 @@ import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
+import MorePackagesBox from '~/components/Package/MorePackagesBox';
 import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
@@ -67,11 +68,12 @@ export default function PackageOverviewScene({
             />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-secondary`}>
+                <H6
+                  style={[tw`flex gap-1.5 text-[16px] text-secondary`, !isSmallScreen && tw`mt-3`]}>
                   Code examples
                   <EntityCounter count={library.examples.length} />
                 </H6>
-                <UL style={tw`m-0 mb-2 gap-2`}>
+                <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
                   {library.examples.map((example, index) => (
                     <ExampleBox example={example} key={example} index={index} />
                   ))}
@@ -80,7 +82,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && !!author && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-secondary`}>Author</H6>
+                <H6 style={tw`text-[16px] mt-4 text-secondary`}>Author</H6>
                 <View style={tw`items-start`}>
                   <PackageAuthor author={author} />
                 </View>
@@ -101,6 +103,7 @@ export default function PackageOverviewScene({
                 </View>
               </>
             )}
+            {!isSmallScreen && <MorePackagesBox library={library} />}
           </View>
           <View style={tw`gap-4 flex-0.35`} id="metadataContainer">
             <View>
@@ -128,29 +131,6 @@ export default function PackageOverviewScene({
                       {topic}
                     </A>
                   ))}
-                </View>
-              </>
-            )}
-            {isSmallScreen && !!author && (
-              <>
-                <H6 style={tw`text-[16px] text-secondary`}>Author</H6>
-                <View style={tw`items-start`}>
-                  <PackageAuthor author={author} />
-                </View>
-              </>
-            )}
-            {isSmallScreen && maintainers && (
-              <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
-                  Contributors
-                  <EntityCounter count={maintainers.length} />
-                </H6>
-                <View style={tw`flex-row flex-wrap items-start gap-2`}>
-                  {maintainers
-                    .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
-                    .map(maintainer => (
-                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
-                    ))}
                 </View>
               </>
             )}
@@ -187,6 +167,30 @@ export default function PackageOverviewScene({
             <CollapsibleSection title="Peer dependencies" data={peerDependencies} />
             <CollapsibleSection title="Development dependencies" data={devDependencies} />
             <CollapsibleSection title="Engines" data={engines} />
+            {isSmallScreen && !!author && (
+              <>
+                <H6 style={tw`text-[16px] text-secondary`}>Author</H6>
+                <View style={tw`items-start`}>
+                  <PackageAuthor author={author} />
+                </View>
+              </>
+            )}
+            {isSmallScreen && maintainers && (
+              <>
+                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
+                  Contributors
+                  <EntityCounter count={maintainers.length} />
+                </H6>
+                <View style={tw`flex-row flex-wrap items-start gap-2`}>
+                  {maintainers
+                    .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
+                    .map(maintainer => (
+                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
+                    ))}
+                </View>
+              </>
+            )}
+            {isSmallScreen && <MorePackagesBox library={library} />}
           </View>
         </View>
       </ContentContainer>
