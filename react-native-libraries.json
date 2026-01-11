@@ -19027,4 +19027,27 @@
     "ios": true,
     "newArchitecture": true
   }
+  {
+    "githubUrl": "https://github.com/Iternio-Planning-AB/react-native-auto-play",
+    "npmPkg": "https://www.npmjs.com/package/@iternio/react-native-auto-play",
+    "examples": [
+      "https://github.com/Iternio-Planning-AB/react-native-auto-play/tree/master/apps/example",
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "expoGo": false,
+    "fireos": false,
+    "horizon": false,
+    "vegaos": false,
+    "newArchitecture": true,
+    "configPlugin": false,
+    "unmaintained": false,
+    "dev": false,
+    "template": false
+  }
 ]
