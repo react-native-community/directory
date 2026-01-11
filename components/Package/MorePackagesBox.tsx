@@ -43,6 +43,10 @@ export default function MorePackagesBox({ library }: Props) {
     }
   );
 
+  if (data && data.libraries.length <= 1) {
+    return null;
+  }
+
   return (
     <>
       <H6
@@ -51,7 +55,9 @@ export default function MorePackagesBox({ library }: Props) {
           !isSmallScreen && tw`mt-4`,
         ]}>
         More packages from {startCase(owner)}
-        {!isLoading && data?.total && data.total > 0 ? <EntityCounter count={data.total} /> : null}
+        {!isLoading && data?.total && data.total > 0 ? (
+          <EntityCounter count={data.total > LIMIT ? data.total : data.total - 1} />
+        ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
           <A href={`/?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
             <Caption style={tw`font-light`}>See all packages</Caption>
