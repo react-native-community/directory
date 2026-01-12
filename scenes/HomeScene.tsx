@@ -16,6 +16,7 @@ import {
   PlatformWeb,
   PlatformWindows,
   Plus,
+  Star,
 } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
@@ -28,6 +29,7 @@ export default function HomeScene({
   mostDownloaded,
   recentlyAdded,
   recentlyUpdated,
+  popular,
   statistic,
 }: HomePageProps) {
   const router = useRouter();
@@ -37,8 +39,8 @@ export default function HomeScene({
     <>
       <PageMeta />
       <Navigation
-        title="React Native open-source package registry"
-        description="Browse through thousnds of packages, and find the best ones for your current or next project.">
+        title="React Native packages registry"
+        description="Browse thousands of open-source packages and find the best ones for your current or next project.">
         <Search
           query={router.query}
           total={statistic.total}
@@ -62,7 +64,7 @@ export default function HomeScene({
               <PlatformRow platform="iOS" count={statistic.ios} Icon={PlatformIOS} />
               <PlatformRow platform="macOS" count={statistic.macos} Icon={PlatformMacOS} />
               <PlatformRow platform="tvOS" count={statistic.tvos} Icon={PlatformTvOS} />
-              <PlatformRow platform="visonOS" count={statistic.visionos} Icon={PlatformVisionOS} />
+              <PlatformRow platform="visionOS" count={statistic.visionos} Icon={PlatformVisionOS} />
               <PlatformRow platform="Web" count={statistic.web} Icon={PlatformWeb} />
               <PlatformRow platform="Windows" count={statistic.windows} Icon={PlatformWindows} />
             </View>
@@ -117,11 +119,13 @@ export default function HomeScene({
                 isSmallScreen && tw`min-h-0`,
               ]}>
               <View>
-                <P style={tw`text-2xl font-bold`}>{statistic.total.toLocaleString()}</P>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                  {statistic.total.toLocaleString()}
+                </P>
                 <P style={tw`text-sm text-secondary font-light`}>packages in the directory</P>
               </View>
               <View>
-                <P style={tw`text-2xl font-bold`}>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
                   {statistic.newArchitecture.toLocaleString()}{' '}
                   <span style={tw`font-light`}>
                     ({((statistic.newArchitecture / statistic.total) * 100).toFixed(2)}%)
@@ -132,7 +136,9 @@ export default function HomeScene({
                 </P>
               </View>
               <View>
-                <P style={tw`text-2xl font-bold`}>{statistic.downloads.toLocaleString()}</P>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                  {statistic.downloads.toLocaleString()}
+                </P>
                 <P style={tw`text-sm text-secondary font-light`}>cumulative monthly downloads</P>
               </View>
             </View>
@@ -143,6 +149,17 @@ export default function HomeScene({
           title="Most downloaded"
           icon={Download}
           queryParams={{ order: 'downloads' }}
+        />
+        <HomeSection
+          data={popular.libraries}
+          title="Popular"
+          icon={Star}
+          queryParams={{
+            order: 'popularity',
+            isPopular: 'true',
+            isMaintained: 'true',
+            wasRecentlyUpdated: 'true',
+          }}
         />
         <HomeSection
           data={recentlyUpdated.libraries}

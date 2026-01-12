@@ -9,7 +9,7 @@ function Index(props: HomePageProps) {
   return <HomeScene {...props} />;
 }
 
-const LIMIT = 6;
+const LIMIT = 8;
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
   console.warn(ctx.query);
@@ -37,6 +37,18 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   const recentlyUpdatedResponse = await fetch(
     getApiUrl(urlWithQuery('/libraries', { order: 'updated', limit: LIMIT.toString() }), ctx)
   );
+  const popularResponse = await fetch(
+    getApiUrl(
+      urlWithQuery('/libraries', {
+        order: 'popularity',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        isPopular: 'true',
+        wasRecentlyUpdated: 'true',
+      }),
+      ctx
+    )
+  );
 
   const statisticResponse = await fetch(getApiUrl(urlWithQuery('/libraries/statistic', {}), ctx));
 
@@ -44,6 +56,7 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
     mostDownloaded: await mostDownloadedResponse.json(),
     recentlyAdded: await recentlyAddedResponse.json(),
     recentlyUpdated: await recentlyUpdatedResponse.json(),
+    popular: await popularResponse.json(),
     statistic: await statisticResponse.json(),
   };
 };

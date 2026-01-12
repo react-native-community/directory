@@ -11,6 +11,7 @@ export type HomePageProps = {
   mostDownloaded: APIResponseType;
   recentlyAdded: APIResponseType;
   recentlyUpdated: APIResponseType;
+  popular: APIResponseType;
   statistic: StatisticResultType;
 };
 

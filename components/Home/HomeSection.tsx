@@ -27,14 +27,14 @@ export default function HomeSection({
   title,
   filter,
   icon,
-  count = 6,
+  count = 8,
   queryParams = {},
 }: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
     <>
-      <H4 style={tw`flex gap-3 pt-3 pb-2 px-2 items-center font-medium`} id={hashLink}>
+      <H4 style={tw`flex gap-2.5 pt-3 pb-2 px-2 items-center font-medium`} id={hashLink}>
         {icon && createElement(icon, { style: tw`size-5 text-icon mt-px` })}
         <A
           href={`#${hashLink}`}
@@ -58,7 +58,7 @@ export default function HomeSection({
   );
 }
 
-function renderLibs(list: LibraryType[], count = 6) {
+function renderLibs(list: LibraryType[], count: number) {
   return list
     .splice(0, count)
     .map((item: LibraryType, index: number) => (
@@ -66,6 +66,7 @@ function renderLibs(list: LibraryType[], count = 6) {
         key={`explore-item-${index}-${item.github.name}`}
         library={item}
         skipMetadata
+        skipSecondaryMetadata
         skipDate
       />
     ));
