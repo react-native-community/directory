@@ -28,7 +28,12 @@ export default function Navigation({
       {header ? (
         header
       ) : (
-        <View style={[tw`py-10 overflow-hidden bg-palette-gray6 dark:bg-dark`, style]}>
+        <View
+          style={[
+            tw`py-10 overflow-hidden bg-palette-gray6 dark:bg-dark`,
+            isSmallScreen && tw`py-6`,
+            style,
+          ]}>
           <Logo
             width={580}
             height={520}
