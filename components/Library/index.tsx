@@ -63,7 +63,7 @@ export default function Library({
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={tw`flex-row justify-between items-start gap-6 mb-1`}>
+          <View style={tw`flex-row justify-between items-center gap-6 mb-1`}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
@@ -110,8 +110,8 @@ export default function Library({
             ))}
           </View>
         )}
-        {!skipSecondaryMetadata && hasSecondaryMetadata ? (
-          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-0 mt-1.5 -mb-1`]}>
+        {hasSecondaryMetadata ? (
+          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-0 mt-0`]}>
             <View style={[tw`flex-row items-center mt-3 flex-wrap gap-2.5 gap-y-0.5`]}>
               <MetaData library={library} secondary />
             </View>
