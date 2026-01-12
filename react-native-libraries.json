@@ -15067,6 +15067,7 @@
   },
   {
     "githubUrl": "https://github.com/bluesky-social/expo-image-crop-tool",
+    "npmPkg": "@bsky.app/expo-image-crop-tool",
     "examples": ["https://github.com/bluesky-social/expo-image-crop-tool/tree/main/example"],
     "ios": true,
     "android": true
