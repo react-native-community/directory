@@ -17,10 +17,11 @@ import Tooltip from '../Tooltip';
 type Props = {
   library: LibraryType;
   skipMetadata?: boolean;
+  skipDate?: boolean;
   showTrendingMark?: boolean;
 };
 
-export default function Library({ library, skipMetadata, showTrendingMark }: Props) {
+export default function Library({ library, skipMetadata, skipDate, showTrendingMark }: Props) {
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
@@ -35,15 +36,13 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
   return (
     <View
       style={[
-        tw` mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default`,
+        tw`mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default`,
         isSmallScreen && tw`flex-col`,
         skipMetadata && tw`w-[48.5%] mx-[0.75%] min-h-[206px]`,
-        skipMetadata &&
-          (isSmallScreen || isBelowMaxWidth) &&
-          tw`max-h-auto w-[98.5%] max-w-[98.5%]`,
+        skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
         library.unmaintained && tw`opacity-85`,
       ]}>
-      <View style={tw`pb-3.5 flex-1 p-4 pl-5`}>
+      <View style={[tw`pb-3.5 flex-1 p-4 pl-5`, isSmallScreen && tw`pt-2.5 pb-3 px-3.5`]}>
         {library.unmaintained && (
           <View
             style={
@@ -52,7 +51,7 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
                 : tw`flex-row justify-between items-start gap-6 mb-1`
             }>
             <UnmaintainedLabel alternatives={library.alternatives} />
-            <UpdatedAtView library={library} />
+            {!skipDate && <UpdatedAtView library={library} />}
           </View>
         )}
         {showTrendingMark && library.popularity && (
@@ -60,7 +59,7 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
-            {!library.unmaintained && <UpdatedAtView library={library} />}
+            {!skipDate && !library.unmaintained && <UpdatedAtView library={library} />}
           </View>
         )}
         <View
@@ -86,7 +85,9 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
               </A>
             </HoverEffect>
           </View>
-          {!showTrendingMark && !library.unmaintained && <UpdatedAtView library={library} />}
+          {!showTrendingMark && !skipDate && !library.unmaintained && (
+            <UpdatedAtView library={library} />
+          )}
         </View>
         <View style={tw`mt-3`}>
           <CompatibilityTags library={library} />
@@ -102,7 +103,7 @@ export default function Library({ library, skipMetadata, showTrendingMark }: Pro
           </View>
         )}
         {hasSecondaryMetadata ? (
-          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-auto mt-1.5 -mb-1`]}>
+          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-0 mt-1.5 -mb-1`]}>
             <View style={[tw`flex-row items-center mt-3 flex-wrap gap-2.5 gap-y-0.5`]}>
               <MetaData library={library} secondary />
             </View>

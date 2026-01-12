@@ -4,7 +4,15 @@ import {
   type NpmRegistryData,
   type NpmRegistryVersionData,
   type Query,
+  type StatisticResultType,
 } from '~/types';
+
+export type HomePageProps = {
+  mostDownloaded: APIResponseType;
+  recentlyAdded: APIResponseType;
+  recentlyUpdated: APIResponseType;
+  statistic: StatisticResultType;
+};
 
 export type TrendingPageProps = {
   data: APIResponseType;

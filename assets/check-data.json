@@ -920,7 +920,6 @@
     "newArchitecture": "untested"
   },
   "react-native-calendar-events": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-photo-view": {
@@ -1320,6 +1319,7 @@
     "newArchitecture": "untested"
   },
   "react-native-walkthrough-tooltip": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-canvas": {
@@ -4269,6 +4269,7 @@
     "newArchitecture": "supported"
   },
   "@mutualmobile/react-native-barricade": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-input-select": {
@@ -6088,6 +6089,7 @@
     "newArchitecture": "supported"
   },
   "expo-shazamkit": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@rn-vui/ratings": {
@@ -7466,6 +7468,54 @@
     "newArchitecture": "supported"
   },
   "@mosmmy/mo-icon-react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-swappable-grid": {
+    "newArchitecture": "supported"
+  },
+  "react-native-hyper-markdown": {
+    "newArchitecture": "supported"
+  },
+  "apple-health": {
+    "newArchitecture": "supported"
+  },
+  "expo-watermark": {
+    "newArchitecture": "supported"
+  },
+  "@novastera-oss/rn-google-signin": {
+    "newArchitecture": "supported"
+  },
+  "expo-media-control": {
+    "newArchitecture": "untested"
+  },
+  "redux-remember": {
+    "newArchitecture": "untested"
+  },
+  "expo-gbk-converter": {
+    "newArchitecture": "untested"
+  },
+  "react-native-nitro-auth": {
+    "newArchitecture": "supported"
+  },
+  "react-native-puff-pop": {
+    "newArchitecture": "untested"
+  },
+  "react-native-glitter": {
+    "newArchitecture": "untested"
+  },
+  "expo-finance-kit": {
+    "newArchitecture": "untested"
+  },
+  "@journeyapps/react-native-quick-sqlite": {
+    "newArchitecture": "untested"
+  },
+  "@powersync/adapter-sql-js": {
+    "newArchitecture": "supported"
+  },
+  "expo-skoverlay": {
+    "newArchitecture": "supported"
+  },
+  "@iternio/react-native-auto-play": {
     "newArchitecture": "supported"
   }
 }

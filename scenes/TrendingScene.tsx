@@ -76,7 +76,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
         <P style={tw`p-6 text-sm text-secondary`}>
           Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
           Check out the{' '}
-          <A href={urlWithQuery('/', {})} target="_self">
+          <A href={urlWithQuery('/packages', {})} target="_self">
             directory home page
           </A>
           .
