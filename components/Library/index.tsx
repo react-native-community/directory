@@ -110,7 +110,7 @@ export default function Library({
             ))}
           </View>
         )}
-        {hasSecondaryMetadata ? (
+        {!skipSecondaryMetadata && hasSecondaryMetadata ? (
           <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-0 mt-0`]}>
             <View style={[tw`flex-row items-center mt-3 flex-wrap gap-2.5 gap-y-0.5`]}>
               <MetaData library={library} secondary />

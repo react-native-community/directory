@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { createElement, type FunctionComponent } from 'react';
+import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
 import { A, H4, P } from '~/common/styleguide';
@@ -16,26 +16,18 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
 type Props = {
   data: LibraryType[];
   title: string;
-  filter?: (library: LibraryType) => boolean;
-  icon?: FunctionComponent<IconProps>;
+  Icon?: ComponentType<IconProps>;
   count?: number;
   queryParams?: Query;
 };
 
-export default function HomeSection({
-  data,
-  title,
-  filter,
-  icon,
-  count = 8,
-  queryParams = {},
-}: Props) {
+export default function HomeSection({ data, title, Icon, count = 8, queryParams = {} }: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
     <>
       <H4 style={tw`flex gap-2.5 pt-3 pb-2 px-2 items-center font-medium`} id={hashLink}>
-        {icon && createElement(icon, { style: tw`size-5 text-icon mt-px` })}
+        {Icon && createElement(Icon, { style: tw`size-5 text-icon mt-px` })}
         <A
           href={`#${hashLink}`}
           target="_self"
@@ -44,9 +36,7 @@ export default function HomeSection({
           {title}
         </A>
       </H4>
-      <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>
-        {renderLibs(data.filter(filter ?? (() => true)), count)}
-      </View>
+      <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>{renderLibs(data, count)}</View>
       <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/packages', { ...queryParams })} target="_self">
@@ -63,7 +53,7 @@ function renderLibs(list: LibraryType[], count: number) {
     .splice(0, count)
     .map((item: LibraryType, index: number) => (
       <LibraryWithLoading
-        key={`explore-item-${index}-${item.github.name}`}
+        key={`home-item-${index}-${item.github.name}`}
         library={item}
         skipMetadata
         skipSecondaryMetadata

@@ -76,7 +76,7 @@ export default function HomeScene({
             </H4>
             <View
               style={[
-                tw`min-h-[194px] flex-row flex-wrap gap-x-3 gap-y-1.5 justify-center content-center px-4 py-3 mb-4 border rounded-md border-palette-gray2 dark:border-default`,
+                tw`min-h-[194px] flex-row flex-wrap gap-x-3 gap-y-1.5 justify-center content-center px-4 pt-2 pb-3 mb-4 border rounded-md border-palette-gray2 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
               <A href={urlWithQuery('/packages', { search: 'animation' })}>Animation</A>
@@ -147,13 +147,13 @@ export default function HomeScene({
         <HomeSection
           data={mostDownloaded.libraries}
           title="Most downloaded"
-          icon={Download}
+          Icon={Download}
           queryParams={{ order: 'downloads' }}
         />
         <HomeSection
           data={popular.libraries}
           title="Popular"
-          icon={Star}
+          Icon={Star}
           queryParams={{
             order: 'popularity',
             isPopular: 'true',
@@ -164,13 +164,13 @@ export default function HomeScene({
         <HomeSection
           data={recentlyUpdated.libraries}
           title="Just updated"
-          icon={Calendar}
+          Icon={Calendar}
           queryParams={{ order: 'updated' }}
         />
         <HomeSection
           data={recentlyAdded.libraries}
           title="Recently added"
-          icon={Plus}
+          Icon={Plus}
           queryParams={{ order: 'added' }}
         />
       </ContentContainer>

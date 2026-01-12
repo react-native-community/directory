@@ -16,7 +16,7 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
 type Props = {
   data: LibraryType[];
   title: string;
-  filter?: (library: LibraryType) => boolean;
+  filter: (library: LibraryType) => boolean;
   icon?: FunctionComponent<IconProps>;
   count?: number;
   queryParams?: Query;
@@ -52,7 +52,7 @@ export default function ExploreSection({
         </A>
       </H3>
       <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>
-        {renderLibs(data.filter(filter ?? (() => true)), count)}
+        {renderLibs(data.filter(filter), count)}
       </View>
       <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}

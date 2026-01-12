@@ -18,7 +18,7 @@ export default function PlatformRow({ platform, count, Icon }: Props) {
       href={urlWithQuery('/packages', { [platform.toLowerCase()]: 'true' })}
       style={tw`flex justify-between items-center`}>
       <View style={tw`flex-row gap-2 items-center`}>
-        {Icon && createElement(Icon, { style: tw`size-4 text-icon` })}
+        {Icon && createElement(Icon, { style: tw`size-4 text-icon mt-px` })}
         <span>{platform}</span>
       </View>
       <Label style={tw`text-secondary font-light`}>{count} packages</Label>

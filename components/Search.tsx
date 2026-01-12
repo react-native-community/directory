@@ -125,16 +125,19 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
                 {isInputFocused ? (
                   <>
                     <Label style={focusHintLabel}>press</Label>
-                    {isHomePage && (
+                    {isHomePage ? (
                       <>
                         <Label style={focusHintKey}>Enter</Label>
                         <Label style={focusHintLabel}>to search</Label>
                       </>
+                    ) : (
+                      <>
+                        <Label style={focusHintKey}>Esc</Label>
+                        <Label style={focusHintLabel}>
+                          to {(search?.length ?? 0) > 0 ? 'clear' : 'blur'}
+                        </Label>
+                      </>
                     )}
-                    <Label style={focusHintKey}>Esc</Label>
-                    <Label style={focusHintLabel}>
-                      to {(search?.length ?? 0) > 0 ? 'clear' : 'blur'}
-                    </Label>
                   </>
                 ) : (
                   <>
