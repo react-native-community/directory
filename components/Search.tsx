@@ -73,6 +73,7 @@ export default function Search({ query, total }: Props) {
             <TextInput
               ref={inputRef}
               id="search"
+              autoComplete="off"
               onKeyPress={event => {
                 if ('key' in event) {
                   if (
