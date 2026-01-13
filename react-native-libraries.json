@@ -19037,5 +19037,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AsteriskZuo/react-native-rich-text-fabric",
+    "npmPkg": "react-native-rich-text-fabric",
+    "examples": [
+      "https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
