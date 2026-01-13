@@ -91,6 +91,7 @@ export default function HomeScene({
               </A>
               <A href={urlWithQuery('/packages', { search: 'gesture' })}>Gestures</A>
               <A href={urlWithQuery('/packages', { search: 'health' })}>Health</A>
+              <A href={urlWithQuery('/packages', { search: 'i18n' })}>I18n</A>
               <A href={urlWithQuery('/packages', { search: 'icons' })}>Icons</A>
               <A href={urlWithQuery('/packages', { search: 'image' })}>Image</A>
               <A href={urlWithQuery('/packages', { search: 'location' })}>Location</A>
@@ -148,7 +149,7 @@ export default function HomeScene({
           data={mostDownloaded.libraries}
           title="Most downloaded"
           Icon={Download}
-          queryParams={{ order: 'downloads' }}
+          queryParams={{ order: 'downloads', hasNativeCode: 'true' }}
         />
         <HomeSection
           data={popular.libraries}

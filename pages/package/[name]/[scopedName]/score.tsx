@@ -3,7 +3,7 @@ import { type NextPageContext } from 'next';
 import ErrorScene from '~/scenes/ErrorScene';
 import PackageScoreScene from '~/scenes/PackageScoreScene';
 import { type PackageScorePageProps } from '~/types/pages';
-import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
+import { EMPTY_PACKAGE_DATA, NEXT_1H_CACHE_HEADER } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/parseQueryParams';
@@ -28,9 +28,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
   try {
     const apiResponse = await fetch(
       getApiUrl(urlWithQuery(`/libraries`, { search: packageName }), ctx),
-      {
-        next: { revalidate: 60 * 60 },
-      }
+      NEXT_1H_CACHE_HEADER
     );
 
     if (apiResponse.status !== 200) {
