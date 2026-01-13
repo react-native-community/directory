@@ -49,10 +49,10 @@ export default function HomeScene({
         />
       </Navigation>
       <ContentContainer style={[tw`px-4 py-5`, isSmallScreen && tw`pt-2`]}>
-        <View style={[tw`flex-row flex-1 gap-1`, isSmallScreen && tw`flex-col`]}>
+        <View style={[tw`flex-row flex-1 gap-1 mb-1`, isSmallScreen && tw`flex-col`]}>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
               Discover by platform
             </H4>
             <View
@@ -71,7 +71,7 @@ export default function HomeScene({
           </View>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
               Explore topics
             </H4>
             <View
@@ -110,7 +110,7 @@ export default function HomeScene({
           </View>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
               Statistics
             </H4>
             <View
