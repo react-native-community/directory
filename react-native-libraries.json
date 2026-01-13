@@ -18708,7 +18708,29 @@
     "npmPkg": "expo-gaode-map",
     "examples": [
       "https://github.com/TomWq/expo-gaode-map/tree/main/example",
-      "https://github.com/TomWq/expo-gaode-map-example"
+      "https://github.com/TomWq/expo-gaode-map-example",
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+    {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/web-api",
+    "npmPkg": "expo-gaode-map-web-api",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example",
+      "https://github.com/TomWq/expo-gaode-map-navigation-example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+   {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/navigation",
+    "npmPkg": "expo-gaode-map-navigation",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map-navigation-example"
     ],
     "ios": true,
     "android": true,
