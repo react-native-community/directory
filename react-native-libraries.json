@@ -14689,7 +14689,8 @@
     "examples": ["https://github.com/livekit/client-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
   },
   {
     "githubUrl": "https://github.com/livekit/react-native-webrtc",
@@ -14698,7 +14699,8 @@
     "ios": true,
     "android": true,
     "macos": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
   },
   {
     "githubUrl": "https://github.com/livekit/client-sdk-js",
