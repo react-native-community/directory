@@ -21,7 +21,7 @@ type ArrowButtonProps = {
   disabled?: boolean;
 };
 
-export default function Pagination({ query, total, style, basePath = '/' }: Props) {
+export default function Pagination({ query, total, style, basePath = '/packages' }: Props) {
   const currentOffset = query.offset ? parseInt(query.offset, 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 

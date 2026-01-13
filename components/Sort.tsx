@@ -43,7 +43,7 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
               role="button"
               onPress={() => {
                 updatePath(
-                  urlWithQuery('/', {
+                  urlWithQuery('/packages', {
                     ...query,
                     direction: currentDirection === 'ascending' ? 'descending' : 'ascending',
                   })
@@ -64,7 +64,7 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
           style={tw`text-white border-0 rounded text-sm relative -top-px font-semibold bg-transparent`}
           onValueChange={value => {
             updatePath(
-              urlWithQuery('/', {
+              urlWithQuery('/packages', {
                 ...query,
                 order: value,
                 offset: null,

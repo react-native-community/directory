@@ -56,7 +56,7 @@ export default function ExploreSection({
       </View>
       <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
-        <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
+        <A href={urlWithQuery('/packages', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries
         </A>{' '}
         in the directory!

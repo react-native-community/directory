@@ -1,48 +1,63 @@
 import { type NextPageContext } from 'next';
-import { useRouter } from 'next/router';
-import { type ParsedUrlQuery } from 'node:querystring';
 
-import ContentContainer from '~/components/ContentContainer';
-import Libraries from '~/components/Libraries';
-import Navigation from '~/components/Navigation';
-import PageMeta from '~/components/PageMeta';
-import Pagination from '~/components/Pagination';
-import Search from '~/components/Search';
-import { type APIResponseType } from '~/types';
+import HomeScene from '~/scenes/HomeScene';
+import { type HomePageProps } from '~/types/pages';
 import getApiUrl from '~/util/getApiUrl';
-import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-type Props = {
-  data: APIResponseType;
-  query: ParsedUrlQuery;
-};
-
-function Index({ data, query }: Props) {
-  const router = useRouter();
-  const total = data.total ?? 0;
-
-  return (
-    <>
-      <PageMeta searchQuery={router.query?.search} />
-      <Navigation header={<Search query={router.query} total={total} />} />
-      <ContentContainer style={tw`px-4 py-3`}>
-        <Pagination query={query} total={total} />
-        <Libraries libraries={data && data.libraries} />
-        <Pagination query={query} total={total} />
-      </ContentContainer>
-    </>
-  );
+function Index(props: HomePageProps) {
+  return <HomeScene {...props} />;
 }
 
+const LIMIT = 8;
+
 Index.getInitialProps = async (ctx: NextPageContext) => {
-  const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
-  const response = await fetch(url);
-  const result: APIResponseType = await response.json();
+  console.warn(ctx.query);
+  if (ctx.res && ctx.query && Object.keys(ctx.query).length > 0) {
+    ctx.res.writeHead(302, {
+      Location: urlWithQuery('/packages', ctx.query),
+    });
+    ctx.res.end();
+  }
+
+  const mostDownloadedResponse = await fetch(
+    getApiUrl(
+      urlWithQuery('/libraries', {
+        order: 'downloads',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        hasNativeCode: 'true',
+      }),
+      ctx
+    )
+  );
+  const recentlyAddedResponse = await fetch(
+    getApiUrl(urlWithQuery('/libraries', { order: 'added', limit: LIMIT.toString() }), ctx)
+  );
+  const recentlyUpdatedResponse = await fetch(
+    getApiUrl(urlWithQuery('/libraries', { order: 'updated', limit: LIMIT.toString() }), ctx)
+  );
+  const popularResponse = await fetch(
+    getApiUrl(
+      urlWithQuery('/libraries', {
+        order: 'popularity',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        isPopular: 'true',
+        wasRecentlyUpdated: 'true',
+      }),
+      ctx
+    )
+  );
+
+  const statisticResponse = await fetch(getApiUrl(urlWithQuery('/libraries/statistic', {}), ctx));
 
   return {
-    data: result,
-    query: ctx.query,
+    mostDownloaded: await mostDownloadedResponse.json(),
+    recentlyAdded: await recentlyAddedResponse.json(),
+    recentlyUpdated: await recentlyUpdatedResponse.json(),
+    popular: await popularResponse.json(),
+    statistic: await statisticResponse.json(),
   };
 };
 
