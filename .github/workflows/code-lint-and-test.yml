@@ -18,6 +18,8 @@ jobs:
         run: bun install
       - name: TSC
         run: bun tsc
+      - name: TEST FORMATTING CHANGES
+        run: bun oxfmt react-native-libraries.json > /tmp/react-native-libraries.json && diff -u react-native-libraries.json /tmp/react-native-libraries.json || true
       - name: Lint
         run: bun lint
       - name: Build Next app
