@@ -6,7 +6,7 @@
   "bracketSameLine": true,
   "trailingComma": "es5",
   "arrowParens": "avoid",
-  "endOfLine": "crlf",
+  "endOfLine": "lf",
   "ignorePatterns": [
     "**/.next",
     "**/.swc",
