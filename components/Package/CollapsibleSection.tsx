@@ -57,9 +57,11 @@ export default function CollapsibleSection({ title, data }: Props) {
       </View>
       {!collapsed && (
         <View>
-          {Object.entries(data).map(([name, version]) => (
-            <DependencyRow key={`${sectionKey}-${name}`} name={name} version={version} />
-          ))}
+          {Object.entries(data)
+            .sort(([aName], [bName]) => aName.localeCompare(bName))
+            .map(([name, version]) => (
+              <DependencyRow key={`${sectionKey}-${name}`} name={name} version={version} />
+            ))}
         </View>
       )}
     </>

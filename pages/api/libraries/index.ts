@@ -111,7 +111,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
 
   return res.json({
     libraries: filteredAndPaginatedLibraries,

@@ -28,9 +28,11 @@ type Props = {
 
 export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader = false }: Props) {
   const { data, error, isLoading } = useSWR(
-    isTemplate
-      ? `${githubUrl?.replace('github.com/', 'raw.githubusercontent.com/')}/HEAD/README.md`
-      : `https://unpkg.com/${packageName}/README.md`,
+    packageName
+      ? isTemplate
+        ? `${githubUrl?.replace('github.com/', 'raw.githubusercontent.com/')}/HEAD/README.md`
+        : `https://unpkg.com/${packageName}/README.md`
+      : null,
     (url: string) =>
       fetch(url).then(res => {
         if (res.status === 404) {
@@ -46,11 +48,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
     }
   );
 
-  if (!githubUrl || !packageName) {
-    return null;
-  }
-
-  const readmeFallbackContent = getReadmeFallbackContent(data, isLoading, error);
+  const readmeFallbackContent = getReadmeFallbackContent(data, isLoading || loader, error);
 
   return (
     <View
@@ -61,7 +59,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
         <P>Readme</P>
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
-        {!data && readmeFallbackContent ? (
+        {(!data && readmeFallbackContent) || !githubUrl ? (
           <View style={tw`gap-4 py-6`}>
             {isLoading && <ThreeDotsLoader />}
             <P style={tw`text-center`}>{readmeFallbackContent}</P>
