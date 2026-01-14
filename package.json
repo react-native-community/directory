@@ -6,6 +6,7 @@
     "build": "bun data:update && bun llms:generate && next build --webpack",
     "preview": "next build --webpack && next start",
     "lint": "oxlint --type-aware && bun oxfmt",
+    "lint:fix": "oxlint --type-aware --fix && bun oxfmt",
     "data:update": "bun scripts/build-and-score-data",
     "data:test": "bun scripts/validate-libraries",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose --allowUnionTypes",
