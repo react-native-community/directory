@@ -6,7 +6,7 @@ import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchSta
 
 const DATASET = data as DataAssetType;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(_: NextApiRequest, res: NextApiResponse) {
   const result: StatisticResultType = {
     total: 0,
     newArchitecture: 0,
@@ -110,7 +110,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   });
 
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
   res.statusCode = 200;
 
   return res.json(result);

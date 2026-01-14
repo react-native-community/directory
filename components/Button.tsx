@@ -38,7 +38,7 @@ export function Button({
       {isLink ? (
         <A
           href={href}
-          style={[tw`rounded font-sans`, isLink && containerStyle]}
+          style={[tw`rounded font-sans no-underline`, containerStyle]}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...rest}>
           <View focusable={false} style={buttonStyle} accessible={false}>
