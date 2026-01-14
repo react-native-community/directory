@@ -28,7 +28,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
   const total = data && data.total;
 
   function handleClearAllPress() {
-    void router.replace(urlWithQuery('/trending', {}));
+    void router.replace(urlWithQuery('/trending'));
   }
 
   return (
@@ -76,7 +76,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
         <P style={tw`p-6 text-sm text-secondary`}>
           Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
           Check out the{' '}
-          <A href={urlWithQuery('/packages', {})} target="_self">
+          <A href={urlWithQuery('/packages')} target="_self">
             directory home page
           </A>
           .
