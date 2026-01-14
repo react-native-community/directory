@@ -18717,17 +18717,6 @@
     "android": true,
     "newArchitecture": true
   },
-   {
-    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/search",
-    "npmPkg": "expo-gaode-map-search",
-    "examples": [
-      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
-      "https://github.com/TomWq/expo-gaode-map-example"
-    ],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-file-system",
     "ios": true,
@@ -19141,5 +19130,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/search",
+    "npmPkg": "expo-gaode-map-search",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
