@@ -18470,6 +18470,7 @@
   },
   {
     "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-ota",
+    "examples":["https://github.com/riteshshukla04/react-native-nitro-ota/tree/main/example"],
     "android": true,
     "ios": true,
     "newArchitecture": true
@@ -19113,5 +19114,32 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-player/tree/main/react-native-nitro-player",
+    "examples": ["https://github.com/riteshshukla04/react-native-nitro-player/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AsteriskZuo/react-native-rich-text-fabric",
+    "examples": [
+      "https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/search",
+    "npmPkg": "expo-gaode-map-search",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
