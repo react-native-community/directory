@@ -227,9 +227,9 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           content: (
             <P style={paragraphStyles}>
               {
-                FILTER_MODULE_TYPE.filter(
+                FILTER_MODULE_TYPE.find(
                   ({ param }) => param === `${library.github.moduleType}Module`
-                ).at(0)?.title
+                )?.title
               }
             </P>
           ),

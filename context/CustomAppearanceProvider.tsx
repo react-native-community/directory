@@ -50,7 +50,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     }
 
     void rehydrateAsync();
-  }, []);
+  }, [setColorScheme]);
 
   return (
     <CustomAppearanceContext.Provider key={colorScheme} value={{ toggleTheme }}>

@@ -19,9 +19,7 @@ export default function CollapsibleSection({ title, data }: Props) {
   const sectionKey = sanitizeTitle(title);
   const key = `@ReactNativeDirectory:PackageSectionCollapsed:${sectionKey}`;
 
-  const [collapsed, setCollapsed] = useState<boolean>(
-    Boolean(window.localStorage.getItem(key)) ?? false
-  );
+  const [collapsed, setCollapsed] = useState<boolean>(Boolean(window.localStorage.getItem(key)));
 
   useEffect(() => {
     async function refreshState() {
@@ -30,7 +28,7 @@ export default function CollapsibleSection({ title, data }: Props) {
     }
 
     void refreshState();
-  }, []);
+  }, [key]);
 
   if (!data || Object.keys(data).length === 0) {
     return null;

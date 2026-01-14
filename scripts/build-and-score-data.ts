@@ -231,7 +231,7 @@ async function buildAndScoreData() {
       return {
         ...entry,
         npm: {
-          ...(entry.npm ?? {}),
+          ...entry.npm,
           downloads: fallbackData.npm?.downloads,
           weekDownloads: fallbackData.npm?.weekDownloads,
         },
