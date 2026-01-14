@@ -200,6 +200,28 @@ export type CheckResultsType = Record<
   }
 >;
 
+export type StatisticResultType = {
+  total: number;
+  newArchitecture: number;
+  downloads: number;
+  weekDownloads: number;
+  unmaintained: number;
+  withTypes: number;
+  withNativeCode: number;
+  withConfigPlugin: number;
+  ios: number;
+  android: number;
+  web: number;
+  expoGo: number;
+  windows: number;
+  macos: number;
+  fireos: number;
+  horizon: number;
+  tvos: number;
+  visionos: number;
+  vegaos: number;
+};
+
 type NpmRegistryCommonData = {
   name: string;
   author: NpmUser | string;

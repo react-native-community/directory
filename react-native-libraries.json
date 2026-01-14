@@ -14689,7 +14689,8 @@
     "examples": ["https://github.com/livekit/client-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
   },
   {
     "githubUrl": "https://github.com/livekit/react-native-webrtc",
@@ -14698,7 +14699,8 @@
     "ios": true,
     "android": true,
     "macos": true,
-    "newArchitecture": false
+    "newArchitecture": true,
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
   },
   {
     "githubUrl": "https://github.com/livekit/client-sdk-js",
@@ -18468,6 +18470,7 @@
   },
   {
     "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-ota",
+    "examples":["https://github.com/riteshshukla04/react-native-nitro-ota/tree/main/example"],
     "android": true,
     "ios": true,
     "newArchitecture": true
@@ -19039,8 +19042,88 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/web-api",
+    "npmPkg": "expo-gaode-map-web-api",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/navigation",
+    "npmPkg": "expo-gaode-map-navigation",
+    "examples": [
+      "https://github.com/TomWq/expo-gaode-map/tree/main/example",
+      "https://github.com/TomWq/expo-gaode-map-example",
+      "https://github.com/TomWq/expo-gaode-map-navigation-example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/kishannareshpal/expo-pdf",
+    "npmPkg": "@kishannareshpal/expo-pdf",
+    "examples": ["https://github.com/kishannareshpal/expo-pdf/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ronickg/react-native-nitro-inspire-face",
+    "examples": ["https://github.com/ronickg/react-native-nitro-inspire-face/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ronickg/react-native-nitro-inspire-face/main/docs/static/img/banner.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/WalletConnect/walletconnect-monorepo/tree/HEAD/packages/react-native-compat",
+    "npmPkg": "@walletconnect/react-native-compat",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ensunluer/react-native-markdown-stream",
+    "examples": ["https://github.com/ensunluer/react-native-markdown-stream/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/bear-block/vision-camera-ocr",
+    "npmPkg": "@bear-block/vision-camera-ocr",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/aymericzip/intlayer/tree/main/packages/react-native-intlayer",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-a11y-order",
+    "images": [
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y-order/develop/.github/images/android-reader.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y-order/develop/.github/images/ios-reader.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-player/tree/main/react-native-nitro-player",
+    "examples": ["https://github.com/riteshshukla04/react-native-nitro-player/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/AsteriskZuo/react-native-rich-text-fabric",
-    "npmPkg": "react-native-rich-text-fabric",
     "examples": [
       "https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"
     ],

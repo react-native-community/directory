@@ -1,3 +1,5 @@
+import { TimeRange } from '~/util/datetime';
+
 export const NUM_PER_PAGE = 30;
 
 export const EMPTY_PACKAGE_DATA = {
@@ -28,3 +30,11 @@ export const VALID_ENTRY_KEYS = new Set([
   'examples',
   'images',
 ]);
+
+export const NEXT_10M_CACHE_HEADER = {
+  next: { revalidate: TimeRange.MINUTE * 10 },
+};
+
+export const NEXT_1H_CACHE_HEADER = {
+  next: { revalidate: TimeRange.HOUR },
+};

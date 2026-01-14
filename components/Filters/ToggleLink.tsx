@@ -15,7 +15,7 @@ type Props = {
   basePath?: string;
 };
 
-export function ToggleLink({ query, filterParam, basePath = '/' }: Props) {
+export function ToggleLink({ query, filterParam, basePath = '/packages' }: Props) {
   const [isHovered, setHovered] = useState<boolean>(false);
   const isSelected = !!query[filterParam.param];
 
