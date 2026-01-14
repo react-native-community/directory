@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["import", "nextjs", "react", "typescript", "unicorn"],
+  "plugins": ["import", "jsx-a11y", "nextjs", "react", "typescript", "unicorn"],
   "ignorePatterns": [
     "**/.next",
     "**/.swc",
@@ -21,12 +21,6 @@
       }
     ],
     "func-style": ["error", "declaration"],
-    "no-void": [
-      "error",
-      {
-        "allowAsStatement": true
-      }
-    ],
     "no-unused-expressions": [
       "warn",
       {
@@ -34,7 +28,6 @@
         "enforceForJSX": true
       }
     ],
-    "no-unused-labels": "warn",
     "no-unused-vars": [
       "warn",
       {
@@ -48,38 +41,20 @@
     "no-useless-computed-key": "warn",
     "no-useless-concat": "warn",
     "no-useless-constructor": "warn",
-    "no-useless-escape": "warn",
-    "no-useless-rename": "warn",
     "no-useless-return": "warn",
+    "no-void": [
+      "error",
+      {
+        "allowAsStatement": true
+      }
+    ],
     "prefer-promise-reject-errors": "warn",
     "prefer-rest-params": "warn",
     "prefer-spread": "warn",
-    "nextjs/google-font-display": "warn",
-    "nextjs/google-font-preconnect": "warn",
-    "nextjs/inline-script-id": "error",
-    "nextjs/next-script-for-ga": "warn",
-    "nextjs/no-async-client-component": "warn",
-    "nextjs/no-before-interactive-script-outside-document": "warn",
-    "nextjs/no-css-tags": "warn",
-    "nextjs/no-head-element": "warn",
-    "nextjs/no-html-link-for-pages": "warn",
-    "nextjs/no-img-element": "off",
-    "nextjs/no-page-custom-font": "warn",
-    "nextjs/no-styled-jsx-in-document": "warn",
-    "nextjs/no-sync-scripts": "warn",
-    "nextjs/no-title-in-document-head": "warn",
-    "nextjs/no-typos": "warn",
-    "nextjs/no-unwanted-polyfillio": "warn",
-    "nextjs/no-assign-module-variable": "error",
-    "nextjs/no-document-import-in-page": "error",
-    "nextjs/no-duplicate-head": "error",
-    "nextjs/no-head-import-in-document": "error",
-    "nextjs/no-script-component-in-head": "error",
-    "import/namespace": "error",
+
+    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/default": "error",
-    "import/no-named-as-default": "warn",
-    "import/no-named-as-default-member": "warn",
-    "import/no-duplicates": "warn",
+    "import/namespace": "error",
     "import/no-cycle": [
       "error",
       {
@@ -87,7 +62,41 @@
         "disableScc": true
       }
     ],
-    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+    "import/no-duplicates": "warn",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-self-import": "warn",
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/anchor-has-content": "error",
+    "jsx-a11y/anchor-is-valid": "error",
+    "jsx-a11y/aria-props": "error",
+    "jsx-a11y/heading-has-content": "error",
+    "jsx-a11y/img-redundant-alt": "error",
+    "jsx-a11y/no-noninteractive-tabindex": "error",
+    "jsx-a11y/no-redundant-roles": "error",
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "nextjs/google-font-display": "warn",
+    "nextjs/google-font-preconnect": "warn",
+    "nextjs/inline-script-id": "error",
+    "nextjs/next-script-for-ga": "warn",
+    "nextjs/no-assign-module-variable": "error",
+    "nextjs/no-async-client-component": "warn",
+    "nextjs/no-before-interactive-script-outside-document": "warn",
+    "nextjs/no-css-tags": "warn",
+    "nextjs/no-document-import-in-page": "error",
+    "nextjs/no-duplicate-head": "error",
+    "nextjs/no-head-element": "warn",
+    "nextjs/no-head-import-in-document": "error",
+    "nextjs/no-html-link-for-pages": "warn",
+    "nextjs/no-img-element": "off",
+    "nextjs/no-page-custom-font": "warn",
+    "nextjs/no-script-component-in-head": "error",
+    "nextjs/no-styled-jsx-in-document": "warn",
+    "nextjs/no-sync-scripts": "warn",
+    "nextjs/no-title-in-document-head": "warn",
+    "nextjs/no-typos": "warn",
+    "nextjs/no-unwanted-polyfillio": "warn",
+    "react-hooks/rules-of-hooks": "error",
     "react/jsx-boolean-value": ["warn"],
     "react/jsx-curly-brace-presence": ["warn"],
     "react/jsx-fragments": ["warn", "syntax"],
@@ -108,7 +117,6 @@
     "react/no-unknown-property": "warn",
     "react/no-will-update-set-state": "warn",
     "react/self-closing-comp": "warn",
-    "react-hooks/rules-of-hooks": "error",
     "typescript/await-thenable": "error",
     "typescript/ban-ts-comment": [
       "error",
@@ -126,7 +134,6 @@
         "fixStyle": "inline-type-imports"
       }
     ],
-    "typescript/no-floating-promises": "error",
     "typescript/no-confusing-non-null-assertion": "error",
     "typescript/no-extra-non-null-assertion": "error",
     "typescript/no-misused-promises": [
@@ -135,17 +142,15 @@
         "checksVoidReturn": false
       }
     ],
-    "typescript/prefer-as-const": "error",
-    "typescript/prefer-includes": "error",
-    "typescript/prefer-readonly": "error",
-    "typescript/prefer-string-starts-ends-with": "error",
-    "typescript/return-await": ["error", "error-handling-correctness-only"],
     "typescript/no-restricted-types": "error",
     "typescript/no-unnecessary-boolean-literal-compare": "error",
     "typescript/no-unnecessary-type-arguments": "error",
     "typescript/no-unnecessary-type-assertion": "error",
+    "typescript/no-unsafe-enum-comparison": "error",
+    "typescript/prefer-includes": "error",
+    "typescript/prefer-readonly": "error",
+    "typescript/return-await": ["error", "error-handling-correctness-only"],
     "typescript/unbound-method": "off",
-    "unicorn/no-unnecessary-await": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat": "error",
     "unicorn/prefer-array-flat-map": "error",
