@@ -50,7 +50,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     }
 
     void rehydrateAsync();
-  }, [setColorScheme]);
+  }, []); // oxlint-disable-line react/exhaustive-deps
 
   return (
     <CustomAppearanceContext.Provider key={colorScheme} value={{ toggleTheme }}>
