@@ -1,3 +1,4 @@
+import { cloneDeep } from 'es-toolkit/object';
 import { type NextPageContext } from 'next';
 
 import HomeScene from '~/scenes/HomeScene';
@@ -7,7 +8,7 @@ import getApiUrl from '~/util/getApiUrl';
 import urlWithQuery from '~/util/urlWithQuery';
 
 function Index(props: HomePageProps) {
-  return <HomeScene {...props} />;
+  return <HomeScene {...cloneDeep(props)} />;
 }
 
 const LIMIT = 8;
@@ -56,7 +57,7 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   );
 
   const statisticResponse = await fetch(
-    getApiUrl(urlWithQuery('/libraries/statistic', {}), ctx),
+    getApiUrl(urlWithQuery('/libraries/statistic'), ctx),
     NEXT_1H_CACHE_HEADER
   );
 
