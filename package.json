@@ -10,7 +10,7 @@
     "data:update": "bun scripts/build-and-score-data",
     "data:test": "bun scripts/validate-libraries",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose --allowUnionTypes",
-    "libraries:cleanup": "bun scripts/cleanup-libraries-json && bun oxfmt react-native-libraries.json",
+    "libraries:cleanup": "bun scripts/cleanup-libraries-json && oxfmt react-native-libraries.json",
     "libraries:recalculate": "bun scripts/recalculate-scores",
     "libraries:check": "bun scripts/check-resources",
     "llms:generate": "bun scripts/generate-llms",
