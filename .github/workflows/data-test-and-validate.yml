@@ -1,4 +1,4 @@
-name: "[DATA] Test and Validate"
+name: '[DATA] Test and Validate'
 
 on:
   push:
@@ -11,18 +11,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: Use Bun
-      uses: oven-sh/setup-bun@v2
-    - name: Install dependencies
-      run: bun install
-    - name: Validate react-native-libraries.json
-      run: bun data:validate
-    - name: Test react-native-libraries.json
-      run: bun data:test
-    - name: Check new entries in react-native-libraries.json
-      run: bun ci:validate
-      env:
-        CI_CHECKS_TOKEN: ${{ github.token }}
-    - name: Lint data
-      run: bun eslint react-native-libraries.json
+      - uses: actions/checkout@v6
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install
+      - name: Validate react-native-libraries.json
+        run: bun data:validate
+      - name: Test react-native-libraries.json
+        run: bun data:test
+      - name: Check new entries in react-native-libraries.json
+        run: bun ci:validate
+        env:
+          CI_CHECKS_TOKEN: ${{ github.token }}
+      - name: Lint data
+        run: bun eslint react-native-libraries.json
