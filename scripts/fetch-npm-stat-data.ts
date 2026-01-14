@@ -56,7 +56,7 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
     }
 
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    console.log(`📊 [npm-stat] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
+    console.log(`📊 [npm-stat] Retrying fetch for ${namesArray.join(', ')} (${attemptsCount + 1})`);
 
     return await fetchNpmStatDataBulk(namesArray, attemptsCount + 1);
   }

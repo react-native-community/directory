@@ -18470,7 +18470,7 @@
   },
   {
     "githubUrl": "https://github.com/riteshshukla04/react-native-nitro-ota",
-    "examples":["https://github.com/riteshshukla04/react-native-nitro-ota/tree/main/example"],
+    "examples": ["https://github.com/riteshshukla04/react-native-nitro-ota/tree/main/example"],
     "android": true,
     "ios": true,
     "newArchitecture": true
@@ -19124,9 +19124,7 @@
   },
   {
     "githubUrl": "https://github.com/AsteriskZuo/react-native-rich-text-fabric",
-    "examples": [
-      "https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"
-    ],
+    "examples": ["https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"

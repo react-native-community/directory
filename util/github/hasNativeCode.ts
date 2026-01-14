@@ -7,9 +7,7 @@ export default function hasNativeCode(rootFiles: { entries: RepositoryTreeNode[]
     return false;
   }
 
-  return (
-    rootFiles.entries.filter(
-      node => NATIVE_DIRECTORIES.includes(node.name) || node.name.endsWith('podspec')
-    ).length > 0
+  return rootFiles.entries.some(
+    node => NATIVE_DIRECTORIES.includes(node.name) || node.name.endsWith('podspec')
   );
 }

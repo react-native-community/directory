@@ -18,6 +18,7 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
       Location: urlWithQuery('/packages', ctx.query),
     });
     ctx.res.end();
+    return;
   }
 
   const mostDownloadedResponse = await fetch(

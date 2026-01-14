@@ -37,7 +37,7 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
     if (!isInputFocused && inputRef?.current?.value && !search) {
       inputRef.current.clear();
     }
-  }, [search]);
+  }, [search, isInputFocused]);
 
   const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
     if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
@@ -51,7 +51,7 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
       document.addEventListener('keydown', keyDownListener, false);
       return () => document.removeEventListener('keydown', keyDownListener);
     }
-  }, [isApple, keyDownListener]);
+  }, [isApple]);
 
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));

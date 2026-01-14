@@ -1,4 +1,4 @@
-name: "[CODE] Lint and test"
+name: '[CODE] Lint and test'
 
 on:
   push:
@@ -11,14 +11,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: Use Bun
-      uses: oven-sh/setup-bun@v2
-    - name: Install dependencies
-      run: bun install
-    - name: TSC
-      run: bun tsc
-    - name: Lint
-      run: bun lint
-    - name: Build Next app
-      run: bun next build --webpack
+      - uses: actions/checkout@v6
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install
+      - name: TSC
+        run: bun tsc
+      - name: Lint
+        run: bun lint
+      - name: Build Next app
+        run: bun next build --webpack

@@ -1,4 +1,4 @@
-name: "[VERCEL] Cleanup data blobs"
+name: '[VERCEL] Cleanup data blobs'
 
 on:
   push:
@@ -11,12 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: Use Bun
-      uses: oven-sh/setup-bun@v2
-    - name: Install dependencies
-      run: bun install
-    - name: Cleanup data blobs
-      run: bun ci:cleanup-blobs
-      env:
-        BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+      - uses: actions/checkout@v6
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install
+      - name: Cleanup data blobs
+        run: bun ci:cleanup-blobs
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
