@@ -14686,11 +14686,15 @@
   {
     "githubUrl": "https://github.com/livekit/client-sdk-react-native",
     "npmPkg": "@livekit/react-native",
-    "examples": ["https://github.com/livekit/client-sdk-react-native/tree/main/example"],
+    "examples": [
+      "https://github.com/livekit/client-sdk-react-native/tree/main/example",
+      "https://github.com/livekit-examples/agent-starter-react-native"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules.",
+    "configPlugin": "https://github.com/livekit/client-sdk-react-native-expo-plugin"
   },
   {
     "githubUrl": "https://github.com/livekit/react-native-webrtc",
@@ -14700,7 +14704,8 @@
     "android": true,
     "macos": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules."
+    "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules.",
+    "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-webrtc"
   },
   {
     "githubUrl": "https://github.com/livekit/client-sdk-js",
@@ -19139,6 +19144,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/livekit/components-js/tree/main/packages/react",
+    "npmPkg": "@livekit/components-react",
+    "examples": [
+      "https://github.com/livekit/client-sdk-react-native/tree/main/example",
+      "https://github.com/livekit-examples/agent-starter-react-native"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/ehtishamali042/react-native-switchery",
