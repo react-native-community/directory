@@ -50,7 +50,7 @@ export default function CompatibilityTags({ library }: Props) {
           />
         ) : null
       )}
-      {(library.expoGo || library.fireos || library.vegaos || library.horizon) && (
+      {(library.expoGo ?? library.fireos ?? library.vegaos ?? library.horizon) && (
         <Tooltip
           side="bottom"
           trigger={

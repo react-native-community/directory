@@ -66,7 +66,7 @@ export default function ExploreSection({
 }
 
 function renderLibs(list: LibraryType[], count = 4) {
-  const now = new Date().getTime();
+  const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
     .splice(0, count)

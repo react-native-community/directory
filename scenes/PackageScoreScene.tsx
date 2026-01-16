@@ -61,8 +61,8 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 criteria&quot; and can lose value by exhibiting &quot;bad behavior criteria&quot;.
               </Caption>
               <Caption style={tw`font-light text-palette-gray5 dark:text-palette-gray4`}>
-                Scores are subjective and are based on data that's readily available on GitHub and
-                npm. They are not a perfect scores and may not reflect quality for your specific
+                Scores are subjective and are based on data that&apos;s readily available on GitHub
+                and npm. They are not a perfect scores and may not reflect quality for your specific
                 needs. <A href="/scoring">Read more</A>.
               </Caption>
             </View>

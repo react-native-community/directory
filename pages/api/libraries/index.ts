@@ -100,8 +100,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     owner: parsedQuery.owner,
   });
 
-  const offset = parsedQuery.offset ? parseInt(parsedQuery.offset.toString(), 10) : 0;
-  const limit = parsedQuery.limit ? parseInt(parsedQuery.limit.toString(), 10) : NUM_PER_PAGE;
+  const offset = parsedQuery.offset ? Number.parseInt(parsedQuery.offset.toString(), 10) : 0;
+  const limit = parsedQuery.limit
+    ? Number.parseInt(parsedQuery.limit.toString(), 10)
+    : NUM_PER_PAGE;
 
   const relevanceSortedLibraries =
     querySearch?.length && (!parsedQuery.order || parsedQuery.order === 'relevance')
