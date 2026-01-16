@@ -170,7 +170,6 @@ export type APIResponseType = {
 export type DataAssetType = {
   libraries: LibraryType[];
   topics: Record<string, number>;
-  topicsList: string[];
 };
 
 export type MetadataEntryType = {

@@ -244,14 +244,18 @@ async function buildAndScoreData() {
       .filter((entry: LibraryType) => validEntries.includes(entry.githubUrl));
 
     const sortedTopicCounts = Object.fromEntries(
-      Object.entries(topicCounts).sort((a, b) => b[1] - a[1])
+      Object.entries(topicCounts).sort(([kA, vA], [kB, vB]) => {
+        if (vA !== vB) {
+          return vB - vA;
+        }
+        return kA.localeCompare(kB);
+      })
     );
 
     fileContent = JSON.stringify(
       {
         libraries: finalData,
         topics: sortedTopicCounts,
-        topicsList: Object.keys(topicCounts).sort(),
       },
       null,
       2
@@ -420,7 +424,7 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
     const data = await fetchNpmRegistryData(entry);
     shouldLog &&
       console.log(
-        `${CHUNK_SIZE > total ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
+        `${CHUNK_SIZE > total && i !== 0 ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
       );
 
     list[i] = data;
