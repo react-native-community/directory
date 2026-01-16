@@ -4,7 +4,7 @@ import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
 import libraries from '../react-native-libraries.json';
 
-const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/g;
+const GITHUB_URL_PATTERN = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(\/tree\/[\w-\\/.%@]+)?$/;
 
 function validateLibrariesFormat(libraries: LibraryType[]) {
   console.log('🔍️Checking all libraries have the correct format');
