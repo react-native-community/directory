@@ -5,7 +5,7 @@ import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data'
 import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
-const REQUEST_TIMEOUT = 7_500;
+const REQUEST_TIMEOUT = 5000;
 
 export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount = 0) {
   try {

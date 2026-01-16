@@ -25,9 +25,7 @@ export default function Navigation({
   return (
     <>
       <TopBar />
-      {header ? (
-        header
-      ) : (
+      {header ?? (
         <View
           style={[
             tw`py-10 overflow-hidden bg-palette-gray6 dark:bg-dark`,

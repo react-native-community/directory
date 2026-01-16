@@ -18,7 +18,7 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
     // Check that it has the githubUrl property and that it is in the correct format
     if (!libraryProperties.includes('githubUrl')) {
       libraryErrors.push(`- Must contain a 'githubUrl' property`);
-    } else if (!library.githubUrl.match(GITHUB_URL_PATTERN)) {
+    } else if (!GITHUB_URL_PATTERN.test(library.githubUrl)) {
       libraryErrors.push(
         `- The 'githubUrl' of ${library.githubUrl} must be in the format:\nhttps://github.com/owner/repo-name or https://github.com/owner/repo-name/tree/default-branch/name for monorepos`
       );

@@ -33,7 +33,7 @@ export function calculateDirectoryScore(data: LibraryType) {
  */
 
 const MIN_MONTHLY_DOWNLOADS = 1000;
-const MANY_MONTHLY_DOWNLOADS = 15000;
+const MANY_MONTHLY_DOWNLOADS = 15_000;
 const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
@@ -67,7 +67,7 @@ export function calculatePopularityScore(data: LibraryType) {
   const unmaintainedPenalty = unmaintained ? 0.75 : 0;
   const freshPackagePenalty = DATE_NOW - new Date(createdAt).getTime() < WEEK_IN_MS ? 0.5 : 0;
 
-  const popularity = parseFloat(
+  const popularity = Number.parseFloat(
     (
       popularityGain -
       downloadsPenalty -

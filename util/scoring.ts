@@ -13,13 +13,13 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     name: 'Very popular',
     description: 'Libraries with a Combined Popularity score of over 100,000 meet this criterion.',
     value: 35,
-    condition: data => getCombinedPopularity(data) > 100000,
+    condition: data => getCombinedPopularity(data) > 100_000,
   },
   {
     name: 'Popular',
     description: 'Libraries with a Combined Popularity score of over 10,000 meet this criterion',
     value: 25,
-    condition: data => getCombinedPopularity(data) > 10000,
+    condition: data => getCombinedPopularity(data) > 10_000,
   },
   {
     name: 'Known',
@@ -37,7 +37,7 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     name: 'Has a README file',
     description: 'Libraries that have a README file included meet this criterion.',
     value: 10,
-    condition: data => (data.github?.hasReadme || data.npm?.hasReadme) ?? false,
+    condition: data => data.github?.hasReadme ?? data.npm?.hasReadme ?? false,
   },
   {
     name: 'Has a description',
@@ -130,7 +130,7 @@ const DAY_IN_MS = 864e5;
 function getUpdatedDaysAgo(data: LibraryType) {
   const { updatedAt } = data.github.stats;
   const updateDate = new Date(updatedAt).getTime();
-  const currentDate = new Date().getTime();
+  const currentDate = Date.now();
 
   return (currentDate - updateDate) / DAY_IN_MS;
 }
