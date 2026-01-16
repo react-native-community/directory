@@ -397,7 +397,7 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
     await sleep(SLEEP_TIME);
 
     const data = await fetchNpmStatDataBulk(chunk);
-    console.log(`${NPM_STATS_CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
+    console.log(`${NPM_STATS_CHUNK_SIZE * chunkIndex + chunk.length} of ${total} fetched`);
 
     results.push(...data);
   }
@@ -415,10 +415,13 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
     }
 
     await sleep(SLEEP_TIME / 10);
-    const shouldLog = i % CHUNK_SIZE === 0;
+    const shouldLog = i % CHUNK_SIZE === 0 || i + 1 === total;
 
     const data = await fetchNpmRegistryData(entry);
-    shouldLog && console.log(`${CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`);
+    shouldLog &&
+      console.log(
+        `${CHUNK_SIZE > total ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
+      );
 
     list[i] = data;
   }
