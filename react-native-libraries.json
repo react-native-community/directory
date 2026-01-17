@@ -19193,23 +19193,5 @@
     "examples": ["https://github.com/pawicao/react-native-header-motion/tree/main/example"],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
-    "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
-    "images": [
-      "https://raw.githubusercontent.com/maitrungduc1410/react-native-video-trim/master/images/android.gif",
-      "https://raw.githubusercontent.com/maitrungduc1410/react-native-video-trim/master/images/ios.gif"
-    ],
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/storage",
-    "npmPkg": "@react-native-firebase/storage",
-    "ios": true,
-    "tvos": true,
-    "android": true,
-    "newArchitecture": true
   }
 ]
