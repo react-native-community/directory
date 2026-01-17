@@ -19164,5 +19164,52 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Megane14916/react-native-draggable-masonry",
+    "examples": ["https://github.com/Megane14916/react-native-draggable-masonry/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Megane14916/react-native-draggable-masonry/main/example/assets/gif/demo.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/deeeed/expo-audio-stream/tree/main/packages/react-native-essentia",
+    "npmPkg": "@siteed/react-native-essentia",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/okwasniewski/expo-icloud-storage",
+    "examples": ["https://github.com/okwasniewski/expo-icloud-storage/tree/main/example"],
+    "ios": true,
+    "macos": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/pawicao/react-native-header-motion",
+    "examples": ["https://github.com/pawicao/react-native-header-motion/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/maitrungduc1410/react-native-video-trim",
+    "examples": ["https://github.com/maitrungduc1410/react-native-video-trim/tree/master/example"],
+    "images": [
+      "https://raw.githubusercontent.com/maitrungduc1410/react-native-video-trim/master/images/android.gif",
+      "https://raw.githubusercontent.com/maitrungduc1410/react-native-video-trim/master/images/ios.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/storage",
+    "npmPkg": "@react-native-firebase/storage",
+    "ios": true,
+    "tvos": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
