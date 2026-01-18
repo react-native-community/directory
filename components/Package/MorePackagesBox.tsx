@@ -8,6 +8,7 @@ import useSWR from 'swr';
 import { A, Caption, H6, Label, useLayout } from '~/common/styleguide';
 import { Download, Star } from '~/components/Icons';
 import { type APIResponseType, type LibraryType } from '~/types';
+import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
@@ -38,7 +39,7 @@ export default function MorePackagesBox({ library }: Props) {
         return { libraries: [], total: 0 };
       }),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
     }
   );

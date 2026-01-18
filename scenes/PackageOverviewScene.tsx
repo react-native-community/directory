@@ -10,6 +10,7 @@ import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import MorePackagesBox from '~/components/Package/MorePackagesBox';
@@ -117,6 +118,10 @@ export default function PackageOverviewScene({
               <>
                 <H6 style={tw`text-[16px] mt-3 text-secondary`}>Popularity</H6>
                 <TrendingMark library={library} />
+                <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
+                <View style={tw`h-[54px] gap-1.5 rounded-lg border border-default overflow-hidden`}>
+                  <DownloadsChart packageName={packageName} />
+                </View>
               </>
             )}
             {library.github.topics && library.github.topics.length > 0 && (

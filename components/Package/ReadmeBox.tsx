@@ -12,6 +12,7 @@ import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
+import { TimeRange } from '~/util/datetime';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import tw from '~/util/tailwind';
@@ -43,7 +44,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
         return null;
       }),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.MINUTE * 10 * 1000,
       revalidateOnFocus: false,
     }
   );

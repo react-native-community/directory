@@ -6,6 +6,7 @@ import useSWR from 'swr';
 import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
+import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
 import DependencyRow from './DependencyRow';
@@ -30,7 +31,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
       : null,
     (url: string) => fetch(url).then(res => res.json()),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
     }
   );
