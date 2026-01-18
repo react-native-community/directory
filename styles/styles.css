@@ -388,7 +388,11 @@ select {
   h4,
   h5,
   h6 {
+    scroll-margin-top: 12px;
     margin-bottom: 0;
+    display: flex;
+    gap: 6px;
+    align-items: center;
 
     & a {
       font-size: inherit;
@@ -404,6 +408,16 @@ select {
 
     + div {
       margin-top: 12px;
+    }
+
+    a[href^='#'] {
+      display: none;
+    }
+
+    &:hover {
+      a[href^='#'] {
+        display: flex;
+      }
     }
   }
 
