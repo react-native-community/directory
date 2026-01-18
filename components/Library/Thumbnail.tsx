@@ -2,9 +2,8 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 import { memo, useState } from 'react';
 import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
+import { Thumbnail as ThumbnailIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
-
-import { Thumbnail as ThumbnailIcon } from '../Icons';
 
 type Props = {
   url: string;

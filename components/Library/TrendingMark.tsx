@@ -1,7 +1,7 @@
-import { View, type ViewStyle, type TextStyle } from 'react-native';
+import { type TextStyle, View, type ViewStyle } from 'react-native';
 import { type Style } from 'twrnc';
 
-import { A, P, HoverEffect } from '~/common/styleguide';
+import { A, HoverEffect, P } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
 import { getPopularityGrade } from '~/util/scoring';
 import tw from '~/util/tailwind';

@@ -1,4 +1,4 @@
-import { list, del } from '@vercel/blob';
+import { del, list } from '@vercel/blob';
 
 const BLOBS_LIMIT = 3;
 

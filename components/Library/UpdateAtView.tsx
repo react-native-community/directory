@@ -1,13 +1,12 @@
 import { View } from 'react-native';
 
 import { A } from '~/common/styleguide';
+import { Calendar } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 import tw from '~/util/tailwind';
-
-import { Calendar } from '../Icons';
 
 type Props = {
   library: LibraryType;

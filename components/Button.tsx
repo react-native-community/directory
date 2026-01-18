@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'react';
-import { type TextStyle, type StyleProp, type ViewStyle, View } from 'react-native';
+import { type StyleProp, type TextStyle, View, type ViewStyle } from 'react-native';
 import { type Style } from 'twrnc';
 
 import { A, HoverEffect, P } from '~/common/styleguide';

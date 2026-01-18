@@ -1,9 +1,11 @@
 import { Platform, View } from 'react-native';
 
-import { useLayout, A, HoverEffect } from '~/common/styleguide';
+import { A, HoverEffect, useLayout } from '~/common/styleguide';
+import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
+import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -11,8 +13,6 @@ import MetaData from './MetaData';
 import Thumbnail from './Thumbnail';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
-import CompatibilityTags from '../CompatibilityTags';
-import Tooltip from '../Tooltip';
 
 type Props = {
   library: LibraryType;

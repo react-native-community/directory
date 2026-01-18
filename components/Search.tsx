@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useRef, useState, useEffectEvent } from 'react';
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { P, useLayout, Label } from '~/common/styleguide';
+import { Label, P, useLayout } from '~/common/styleguide';
 import { type Query } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';

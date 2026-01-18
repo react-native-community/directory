@@ -2,7 +2,7 @@ import { fetch } from 'bun';
 
 import { type LibraryType, type NpmRegistryData } from '~/types';
 
-import { sleep, REQUEST_SLEEP } from './helpers';
+import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 

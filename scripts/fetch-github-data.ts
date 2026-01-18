@@ -7,7 +7,7 @@ import hasNativeCode from '~/util/github/hasNativeCode';
 import hasReadmeFile from '~/util/github/hasReadmeFile';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
-import { processTopics, sleep, REQUEST_SLEEP, makeGraphqlQuery, getUpdatedUrl } from './helpers';
+import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 

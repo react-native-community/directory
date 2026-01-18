@@ -2,10 +2,9 @@ import { Fragment } from 'react';
 import { View } from 'react-native';
 
 import { A, Label, useLayout } from '~/common/styleguide';
+import { Warning } from '~/components/Icons';
 import { type LibraryDataEntryType } from '~/types';
 import tw from '~/util/tailwind';
-
-import { Warning } from '../Icons';
 
 type Props = {
   alternatives?: LibraryDataEntryType['alternatives'];

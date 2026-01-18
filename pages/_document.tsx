@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript, type DocumentContext } from 'next/document';
+import Document, { type DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 
 import GoogleAnalytics from '~/components/Head/GoogleAnalytics';
 import StructuredData from '~/components/Head/StructuredData';
