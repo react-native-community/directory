@@ -96,7 +96,7 @@ const checkResults = await Promise.all(
   })
 );
 
-if (checkResults.filter(result => !result).length > 0) {
+if (checkResults.some(result => !result)) {
   console.error('\n❌ There were errors spotted during new entries check!');
   process.exit(1);
 }

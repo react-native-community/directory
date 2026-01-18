@@ -100,8 +100,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     owner: parsedQuery.owner,
   });
 
-  const offset = parsedQuery.offset ? parseInt(parsedQuery.offset.toString(), 10) : 0;
-  const limit = parsedQuery.limit ? parseInt(parsedQuery.limit.toString(), 10) : NUM_PER_PAGE;
+  const offset = parsedQuery.offset ? Number.parseInt(parsedQuery.offset.toString(), 10) : 0;
+  const limit = parsedQuery.limit
+    ? Number.parseInt(parsedQuery.limit.toString(), 10)
+    : NUM_PER_PAGE;
 
   const relevanceSortedLibraries =
     querySearch?.length && (!parsedQuery.order || parsedQuery.order === 'relevance')
@@ -111,7 +113,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
 
   return res.json({
     libraries: filteredAndPaginatedLibraries,

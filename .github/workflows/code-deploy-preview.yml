@@ -1,4 +1,4 @@
-name: "[CODE] Deploy preview website"
+name: '[CODE] Deploy preview website'
 
 on:
   pull_request:

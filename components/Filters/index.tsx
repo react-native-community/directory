@@ -22,9 +22,9 @@ type FiltersProps = {
   basePath?: string;
 };
 
-export function Filters({ query, style, basePath = '/' }: FiltersProps) {
+export function Filters({ query, style, basePath = '/packages' }: FiltersProps) {
   const pageQuery = getPageQuery(basePath, query);
-  const isMainSearch = basePath === '/';
+  const isMainSearch = basePath === '/packages';
 
   return (
     <View style={[tw`py-2 flex-1 items-center bg-palette-gray1 dark:bg-very-dark`, style]}>

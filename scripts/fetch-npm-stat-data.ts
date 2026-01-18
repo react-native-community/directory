@@ -5,16 +5,27 @@ import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data'
 import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
+const REQUEST_TIMEOUT = 5000;
 
 export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount = 0) {
   try {
     const url = urlForPackages(namesArray.join('&package='));
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT),
+    });
+
     const downloadData = await response.json();
 
     return await Promise.all(
       namesArray.map(async name => {
+        if (response.status >= 500) {
+          return {
+            name,
+            npm: null,
+          };
+        }
+
         const pkgData = downloadData[name];
 
         if (pkgData && Object.keys(pkgData).length > 0) {
@@ -49,6 +60,11 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
       })
     );
   } catch (error) {
+    if (error instanceof DOMException) {
+      console.error(`📊 [npm-stat] ${error.name}: ${error.message} Aborting!`);
+      return namesArray.map(name => ({ name, npm: null }));
+    }
+
     if (attemptsCount >= ATTEMPTS_LIMIT) {
       console.error('📊 [npm-stat] Looks like we have reach the npm-stat API rate limit!');
       console.error(error);
@@ -56,7 +72,7 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
     }
 
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    console.log(`📊 [npm-stat] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
+    console.log(`📊 [npm-stat] Retrying fetch for ${namesArray.join(', ')} (${attemptsCount + 1})`);
 
     return await fetchNpmStatDataBulk(namesArray, attemptsCount + 1);
   }

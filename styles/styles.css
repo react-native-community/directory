@@ -1,27 +1,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Optimistic Display";
-  src: url("/fonts/Optimistic-Display-Light.woff2")
-  format("woff2");
+  font-family: 'Optimistic Display';
+  src: url('/fonts/Optimistic-Display-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Optimistic Display";
-  src: url("/fonts/Optimistic-Display-Regular.woff2")
-  format("woff2");
+  font-family: 'Optimistic Display';
+  src: url('/fonts/Optimistic-Display-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Optimistic Display";
-  src: url("/fonts/Optimistic-Display-Bold.woff2")
-  format("woff2");
+  font-family: 'Optimistic Display';
+  src: url('/fonts/Optimistic-Display-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -119,19 +116,23 @@
   border-radius: 3px;
 }
 
-html, body {
+html,
+body {
   background: var(--overscroll-background);
   min-height: 100%;
-  font-family: "Optimistic Display", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    'Optimistic Display', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-input:focus-visible  {
+input:focus-visible {
   @apply rounded;
 }
 
-#__next, #__next > div {
+#__next,
+#__next > div {
   @apply bg-default min-h-[100vh];
 }
 
@@ -161,7 +162,7 @@ select {
     color: #fff;
 
     &::picker-icon {
-      content: "";
+      content: '';
       width: 16px;
       height: 16px;
       margin-right: 2px;
@@ -185,7 +186,9 @@ select {
       opacity: 0;
       overflow: clip;
       transition: opacity 0.5s ease-out;
-      box-shadow: hsl(206 22% 7% / 60%) 0 10px 32px -8px, hsl(206 22% 7% / 40%) 0 10px 18px -12px;
+      box-shadow:
+        hsl(206 22% 7% / 60%) 0 10px 32px -8px,
+        hsl(206 22% 7% / 40%) 0 10px 18px -12px;
     }
 
     &:open::picker(select) {
@@ -239,7 +242,9 @@ select {
   color: #fff;
   background: #000;
   border: 1px solid var(--tooltip-border);
-  box-shadow: hsl(206 22% 7% / 40%) 0 10px 32px -8px, hsl(206 22% 7% / 25%) 0 10px 18px -12px;
+  box-shadow:
+    hsl(206 22% 7% / 40%) 0 10px 32px -8px,
+    hsl(206 22% 7% / 25%) 0 10px 18px -12px;
   user-select: none;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -377,7 +382,12 @@ select {
     margin-top: 8px;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 0;
 
     & a {
@@ -388,7 +398,7 @@ select {
       display: block;
     }
 
-    &[align="center"] img {
+    &[align='center'] img {
       margin: 0 auto;
     }
 
@@ -400,9 +410,9 @@ select {
   p {
     margin-bottom: 0;
 
-    &[align="center"] {
+    &[align='center'] {
       picture {
-        display: block
+        display: block;
       }
     }
 
@@ -425,7 +435,9 @@ select {
     font-size: 100%;
   }
 
-  code, pre, a  {
+  code,
+  pre,
+  a {
     white-space: pre-wrap;
     word-break: auto-phrase;
   }
@@ -522,12 +534,14 @@ select {
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-inline-start: 0.75rem;
     padding-inline-start: 1rem;
     margin-bottom: 0;
 
-    ul, ol {
+    ul,
+    ol {
       padding-block: 4px;
       margin-inline-start: 0;
     }
@@ -575,7 +589,8 @@ select {
       margin-top: 8px;
     }
 
-    sub, sup {
+    sub,
+    sup {
       text-align: inherit;
     }
 
@@ -598,7 +613,8 @@ select {
 
   tr {
     &:first-child {
-      td, th {
+      td,
+      th {
         border-top: 0;
       }
     }
@@ -614,7 +630,8 @@ select {
     }
   }
 
-  td, th {
+  td,
+  th {
     border: 1px solid var(--table-border);
     padding: 5px 8px;
 

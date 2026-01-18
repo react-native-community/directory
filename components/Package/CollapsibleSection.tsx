@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
+import useSWR from 'swr';
 
 import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
@@ -13,14 +14,25 @@ import EntityCounter from './EntityCounter';
 type Props = {
   title: string;
   data?: Record<string, string> | null;
+  checkExistence?: boolean;
 };
 
-export default function CollapsibleSection({ title, data }: Props) {
+export default function CollapsibleSection({ title, data, checkExistence }: Props) {
   const sectionKey = sanitizeTitle(title);
   const key = `@ReactNativeDirectory:PackageSectionCollapsed:${sectionKey}`;
+  const noData = !data || Object.keys(data).length === 0;
 
-  const [collapsed, setCollapsed] = useState<boolean>(
-    Boolean(window.localStorage.getItem(key)) ?? false
+  const [collapsed, setCollapsed] = useState<boolean>(Boolean(window.localStorage.getItem(key)));
+
+  const { data: checkData } = useSWR(
+    checkExistence && !noData
+      ? `/api/library?name=${Object.keys(data).join(',')}&check=true`
+      : null,
+    (url: string) => fetch(url).then(res => res.json()),
+    {
+      dedupingInterval: 60_000 * 10,
+      revalidateOnFocus: false,
+    }
   );
 
   useEffect(() => {
@@ -30,9 +42,9 @@ export default function CollapsibleSection({ title, data }: Props) {
     }
 
     void refreshState();
-  }, []);
+  }, [key]);
 
-  if (!data || Object.keys(data).length === 0) {
+  if (noData) {
     return null;
   }
 
@@ -59,9 +71,16 @@ export default function CollapsibleSection({ title, data }: Props) {
       </View>
       {!collapsed && (
         <View>
-          {Object.entries(data).map(([name, version]) => (
-            <DependencyRow key={`${sectionKey}-${name}`} name={name} version={version} />
-          ))}
+          {Object.entries(data)
+            .sort(([aName], [bName]) => aName.localeCompare(bName))
+            .map(([name, version]) => (
+              <DependencyRow
+                key={`${sectionKey}-${name}`}
+                name={name}
+                version={version}
+                packageExists={checkData?.[name]}
+              />
+            ))}
         </View>
       )}
     </>

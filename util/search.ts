@@ -106,8 +106,8 @@ export function handleFilterLibraries({
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
-  const minPopularityValue = minPopularity && parseFloat(minPopularity) / 100;
-  const minMonthlyDownloadsValue = minMonthlyDownloads && parseInt(minMonthlyDownloads, 10);
+  const minPopularityValue = minPopularity && Number.parseFloat(minPopularity) / 100;
+  const minMonthlyDownloadsValue = minMonthlyDownloads && Number.parseInt(minMonthlyDownloads, 10);
 
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({

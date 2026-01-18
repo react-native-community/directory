@@ -21,7 +21,7 @@ export function Tag({
     <View
       key={label}
       style={[
-        tw`flex-row items-center border rounded px-2 py-1 select-none gap-[5px] min-h-6.5`,
+        tw`flex-row items-center border rounded px-2 py-1 select-none gap-[5px] min-h-6`,
         tagStyle,
       ]}>
       {icon}

@@ -56,7 +56,7 @@ export default function ExploreSection({
       </View>
       <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
-        <A href={urlWithQuery('/', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
+        <A href={urlWithQuery('/packages', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries
         </A>{' '}
         in the directory!
@@ -66,7 +66,7 @@ export default function ExploreSection({
 }
 
 function renderLibs(list: LibraryType[], count = 4) {
-  const now = new Date().getTime();
+  const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
     .splice(0, count)

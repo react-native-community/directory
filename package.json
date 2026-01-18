@@ -1,15 +1,16 @@
 {
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "next dev --webpack",
     "build": "bun data:update && bun llms:generate && next build --webpack",
     "preview": "next build --webpack && next start",
-    "lint": "eslint .",
+    "lint": "oxlint --type-aware && oxfmt --check",
+    "lint:fix": "oxlint --type-aware --fix && oxfmt",
     "data:update": "bun scripts/build-and-score-data",
     "data:test": "bun scripts/validate-libraries",
     "data:validate": "ajv validate -s react-native-libraries.schema.json -d react-native-libraries.json --verbose --allowUnionTypes",
-    "libraries:cleanup": "bun scripts/cleanup-libraries-json && bun eslint --fix react-native-libraries.json",
+    "libraries:cleanup": "bun scripts/cleanup-libraries-json && oxfmt react-native-libraries.json",
     "libraries:recalculate": "bun scripts/recalculate-scores",
     "libraries:check": "bun scripts/check-resources",
     "llms:generate": "bun scripts/generate-llms",
@@ -25,12 +26,12 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-picker/picker": "^2.11.4",
-    "@sentry/react": "^10.33.0",
+    "@sentry/react": "^10.34.0",
     "crypto-js": "^4.2.0",
-    "es-toolkit": "^1.43.0",
+    "es-toolkit": "^1.44.0",
     "expo": "54.0.31",
     "expo-font": "^14.0.10",
-    "next": "^16.1.1",
+    "next": "^16.1.3",
     "node-emoji": "^2.2.0",
     "postcss": "^8.5.6",
     "react": "19.2.3",
@@ -52,11 +53,10 @@
     "use-debounce": "^10.1.0"
   },
   "devDependencies": {
-    "@eslint/json": "^0.14.0",
     "@expo/next-adapter": "^6.0.0",
-    "@next/bundle-analyzer": "^16.1.1",
+    "@next/bundle-analyzer": "^16.1.3",
     "@prettier/plugin-oxc": "^0.1.3",
-    "@types/bun": "^1.3.5",
+    "@types/bun": "^1.3.6",
     "@types/crypto-js": "^4.2.2",
     "@types/react": "^19.2.8",
     "@vercel/blob": "^0.27.3",
@@ -64,28 +64,23 @@
     "browserslist": "^4.28.1",
     "cheerio": "^1.1.2",
     "dotenv": "^17.2.3",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.1",
-    "eslint-config-universe": "^15.0.3",
-    "eslint-plugin-prettier": "^5.5.4",
     "lint-staged": "^16.2.7",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.5",
-    "prettier": "^3.7.4",
+    "oxfmt": "^0.24.0",
+    "oxlint": "^1.39.0",
+    "oxlint-tsgolint": "^0.11.1",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "user-agent-data-types": "^0.4.2"
-  },
-  "resolutions": {
-    "eslint-plugin-react-hooks": "~6.1.1"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx precommit"
   },
   "lint-staged": {
-    "*.{mjs,ts,tsx}": [
-      "eslint --fix"
+    "*.{mjs,ts,tsx,json,yml}": [
+      "oxlint --type-aware --fix"
     ],
     "react-native-libraries.json": [
       "bun libraries:cleanup"

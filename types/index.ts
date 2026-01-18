@@ -170,7 +170,6 @@ export type APIResponseType = {
 export type DataAssetType = {
   libraries: LibraryType[];
   topics: Record<string, number>;
-  topicsList: string[];
 };
 
 export type MetadataEntryType = {
@@ -199,6 +198,28 @@ export type CheckResultsType = Record<
     newArchitecture: NewArchSupportStatus;
   }
 >;
+
+export type StatisticResultType = {
+  total: number;
+  newArchitecture: number;
+  downloads: number;
+  weekDownloads: number;
+  unmaintained: number;
+  withTypes: number;
+  withNativeCode: number;
+  withConfigPlugin: number;
+  ios: number;
+  android: number;
+  web: number;
+  expoGo: number;
+  windows: number;
+  macos: number;
+  fireos: number;
+  horizon: number;
+  tvos: number;
+  visionos: number;
+  vegaos: number;
+};
 
 type NpmRegistryCommonData = {
   name: string;

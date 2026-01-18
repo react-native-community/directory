@@ -163,8 +163,8 @@ export default function PackageOverviewScene({
                 </ul>
               </>
             )}
-            <CollapsibleSection title="Dependencies" data={dependencies} />
-            <CollapsibleSection title="Peer dependencies" data={peerDependencies} />
+            <CollapsibleSection title="Dependencies" data={dependencies} checkExistence />
+            <CollapsibleSection title="Peer dependencies" data={peerDependencies} checkExistence />
             <CollapsibleSection title="Development dependencies" data={devDependencies} />
             <CollapsibleSection title="Engines" data={engines} />
             {isSmallScreen && !!author && (
