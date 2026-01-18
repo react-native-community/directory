@@ -10,6 +10,7 @@ import tw from '~/util/tailwind';
 
 import DependencyRow from './DependencyRow';
 import EntityCounter from './EntityCounter';
+import { TimeRange } from '~/util/datetime';
 
 type Props = {
   title: string;
@@ -30,7 +31,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
       : null,
     (url: string) => fetch(url).then(res => res.json()),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
     }
   );

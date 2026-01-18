@@ -14,6 +14,7 @@ import urlWithQuery from '~/util/urlWithQuery';
 
 import EntityCounter from './EntityCounter';
 import ThreeDotsLoader from './ThreeDotsLoader';
+import { TimeRange } from '~/util/datetime';
 
 type Props = {
   library: LibraryType;
@@ -38,7 +39,7 @@ export default function MorePackagesBox({ library }: Props) {
         return { libraries: [], total: 0 };
       }),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
     }
   );

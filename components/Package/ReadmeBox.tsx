@@ -18,6 +18,7 @@ import tw from '~/util/tailwind';
 
 import ReadmeCodeBlock from './ReadmeCodeBlock';
 import ThreeDotsLoader from './ThreeDotsLoader';
+import { TimeRange } from '~/util/datetime';
 
 type Props = {
   packageName?: string;
@@ -43,7 +44,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
         return null;
       }),
     {
-      dedupingInterval: 60_000 * 10,
+      dedupingInterval: TimeRange.MINUTE * 10 * 1000,
       revalidateOnFocus: false,
     }
   );
