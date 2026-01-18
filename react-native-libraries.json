@@ -19208,5 +19208,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Renegades-Studio/react-native-tickle",
+    "examples": ["https://github.com/Renegades-Studio/react-native-tickle/tree/main/example"],
+    "npmPkg": "@renegades/react-native-tickle",
+    "images": [
+      "https://raw.githubusercontent.com/Renegades-Studio/react-native-tickle/refs/heads/feat/assets/banner.png"
+    ],
+    "newArchitecture": true,
+    "ios": true
   }
 ]
