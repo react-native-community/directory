@@ -1,8 +1,8 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import { NEXT_10M_CACHE_HEADER } from '~/util/Constants';
-import { parseQueryParams } from '~/util/parseQueryParams';
 import { TimeRange } from '~/util/datetime';
+import { parseQueryParams } from '~/util/parseQueryParams';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { name } = parseQueryParams(req.query);

@@ -6,11 +6,11 @@ import useSWR from 'swr';
 import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
+import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
 import DependencyRow from './DependencyRow';
 import EntityCounter from './EntityCounter';
-import { TimeRange } from '~/util/datetime';
 
 type Props = {
   title: string;

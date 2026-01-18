@@ -10,6 +10,7 @@ import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import MorePackagesBox from '~/components/Package/MorePackagesBox';
@@ -21,7 +22,6 @@ import PageMeta from '~/components/PageMeta';
 import { type NpmUser } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
-import DownloadsChart from '~/components/Package/DownloadsChart';
 
 const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
   loading: () => <ReadmeBox loader />,

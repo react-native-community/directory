@@ -1,13 +1,14 @@
 import { LinearGradient } from '@visx/gradient';
 import { ParentSize } from '@visx/responsive';
-import { XYChart, AreaSeries, Tooltip, type AxisScale } from '@visx/xychart';
+import { AreaSeries, type AxisScale, Tooltip, XYChart } from '@visx/xychart';
 import { useMemo } from 'react';
-import useSWR from 'swr';
-import tw from '~/util/tailwind';
 import { Text, View } from 'react-native';
-import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import useSWR from 'swr';
+
 import { Label } from '~/common/styleguide';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { TimeRange } from '~/util/datetime';
+import tw from '~/util/tailwind';
 
 type DataMap = Record<string, number>;
 type Point = { date: Date; value: number };
