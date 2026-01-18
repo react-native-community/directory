@@ -24,7 +24,7 @@ const DATE_FORMAT = {
   year: '2-digit' as const,
 };
 
-export default function SparklineVisX({ packageName, height = 48 }: Props) {
+export default function DownloadsChart({ packageName, height = 48 }: Props) {
   const { data } = useSWR(
     `/api/proxy/npm-stat?name=${packageName}`,
     (url: string) => fetch(url).then(res => res.json()),

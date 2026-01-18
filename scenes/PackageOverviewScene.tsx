@@ -21,7 +21,7 @@ import PageMeta from '~/components/PageMeta';
 import { type NpmUser } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
-import SparklineVisX from '~/components/Package/DownloadsChart';
+import DownloadsChart from '~/components/Package/DownloadsChart';
 
 const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
   loading: () => <ReadmeBox loader />,
@@ -120,7 +120,7 @@ export default function PackageOverviewScene({
                 <TrendingMark library={library} />
                 <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
                 <View style={tw`h-[54px] gap-1.5 rounded-lg border border-default overflow-hidden`}>
-                  <SparklineVisX packageName={packageName} />
+                  <DownloadsChart packageName={packageName} />
                 </View>
               </>
             )}
