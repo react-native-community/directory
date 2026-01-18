@@ -38,8 +38,10 @@ export function Button({
       {isLink ? (
         <A
           href={href}
+          role="button"
           style={[tw`rounded font-sans no-underline`, containerStyle]}
           {...(openInNewTab ? { target: '_blank' } : {})}
+          {...(href?.startsWith('#') ? { target: '_self' } : {})}
           {...rest}>
           <View focusable={false} style={buttonStyle} accessible={false}>
             {content}

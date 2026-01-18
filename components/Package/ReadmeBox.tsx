@@ -1,5 +1,6 @@
 import { Md } from '@m2d/react-markdown/client';
-import { capitalize } from 'es-toolkit';
+import { capitalize } from 'es-toolkit/string';
+import { useEffect } from 'react';
 import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
@@ -10,6 +11,7 @@ import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
 import { ReadmeFile } from '~/components/Icons';
+import ReadmeHeading from '~/components/Package/ReadmeHeading';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { TimeRange } from '~/util/datetime';
@@ -50,6 +52,20 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
   );
 
   const readmeFallbackContent = getReadmeFallbackContent(data, isLoading || loader, error);
+  const noData = (!data && Boolean(readmeFallbackContent)) || !githubUrl;
+
+  useEffect(() => {
+    if (!noData && window.location.hash) {
+      const element = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+
+      if (element) {
+        setTimeout(() => {
+          const top = element.getBoundingClientRect().top + window.scrollY - 12;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [noData]);
 
   return (
     <View
@@ -60,7 +76,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
         <P>Readme</P>
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
-        {(!data && readmeFallbackContent) || !githubUrl ? (
+        {noData ? (
           <View style={tw`gap-4 py-6`}>
             {isLoading && <ThreeDotsLoader />}
             <P style={tw`text-center`}>{readmeFallbackContent}</P>
@@ -69,6 +85,24 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
           <Md
             id="readmeMarkdownContainer"
             components={{
+              h1: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
+              h2: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
+              h3: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
+              h4: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
+              h5: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
+              h6: ({ children, node }: any) => (
+                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+              ),
               br: () => null,
               hr: () => null,
               a: (props: any) => {

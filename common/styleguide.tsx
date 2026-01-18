@@ -5,6 +5,7 @@ import { type ComponentType, type CSSProperties, type PropsWithChildren, useStat
 import {
   Pressable,
   type PressableProps,
+  type Role,
   type StyleProp,
   StyleSheet,
   useWindowDimensions,
@@ -87,9 +88,19 @@ type AProps = PropsWithChildren<{
   href: string;
   hoverStyle?: StyleProp<Style>;
   containerStyle?: CSSProperties;
+  role?: Role;
 }>;
 
-export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
+export function A({
+  href,
+  target,
+  children,
+  style,
+  hoverStyle,
+  containerStyle,
+  role,
+  ...rest
+}: AProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
