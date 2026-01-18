@@ -19193,5 +19193,19 @@
     "examples": ["https://github.com/pawicao/react-native-header-motion/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Swif7ify/react-native-earl-toastify",
+    "images": [
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/1.png",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/2.png",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/3.png",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/4.png",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/5.png"
+    ],
+    "examples": ["https://github.com/Swif7ify/react-native-earl-toastify/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
