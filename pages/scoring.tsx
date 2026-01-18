@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 
-import { A, P, Caption, H2, H3 } from '~/common/styleguide';
+import { A, Caption, H2, H3, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import TrendingMark from '~/components/Library/TrendingMark';
 import Navigation from '~/components/Navigation';

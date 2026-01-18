@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Pressable, type PressableProps } from 'react-native';
 
+import { XIcon } from '~/components/Icons';
+import Tooltip from '~/components/Tooltip';
 import tw from '~/util/tailwind';
-
-import { XIcon } from '../Icons';
-import Tooltip from '../Tooltip';
 
 type ClearButtonProps = Pick<PressableProps, 'onPress'>;
 

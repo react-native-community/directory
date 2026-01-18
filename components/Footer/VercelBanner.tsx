@@ -1,4 +1,4 @@
-import { Path, Svg, Rect, Line } from 'react-native-svg';
+import { Line, Path, Rect, Svg } from 'react-native-svg';
 
 export default function VercelBanner() {
   return (

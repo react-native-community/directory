@@ -51,7 +51,14 @@
     "prefer-promise-reject-errors": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
-
+    "sort-imports": [
+      "error",
+      {
+        "allowSeparatedGroups": true,
+        "ignoreDeclarationSort": true,
+        "ignoreCase": true
+      }
+    ],
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/default": "error",
     "import/namespace": "error",

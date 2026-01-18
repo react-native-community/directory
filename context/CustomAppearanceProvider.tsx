@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { type RnColorScheme } from 'twrnc';
 
-import tw, { useDeviceContext, useAppColorScheme } from '~/util/tailwind';
+import tw, { useAppColorScheme, useDeviceContext } from '~/util/tailwind';
 
 import CustomAppearanceContext from './CustomAppearanceContext';
 

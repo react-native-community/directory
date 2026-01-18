@@ -3,8 +3,9 @@ import path from 'node:path';
 
 import { type DataAssetType } from '~/types';
 
-import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import data from '../assets/data.json';
+
+import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 
 const LIBRARIES_JSON_PATH = path.join('assets', 'data.json');
 

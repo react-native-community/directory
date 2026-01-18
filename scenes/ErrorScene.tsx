@@ -1,6 +1,6 @@
 import { Image, View } from 'react-native';
 
-import { H3, A, P } from '~/common/styleguide';
+import { A, H3, P } from '~/common/styleguide';
 import Navigation from '~/components/Navigation';
 import NotFound from '~/components/Package/NotFound';
 import PageMeta from '~/components/PageMeta';

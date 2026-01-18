@@ -6,15 +6,15 @@ import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
 import tw from '~/util/tailwind';
 
-import { ToggleLink } from './ToggleLink';
 import {
   FILTER_COMPATIBILITY,
+  FILTER_MODULE_TYPE,
   FILTER_PLATFORMS,
   FILTER_REQUIRES_MAIN_SEARCH,
   FILTER_STATUS,
-  FILTER_MODULE_TYPE,
   FILTER_TYPE,
 } from './helpers';
+import { ToggleLink } from './ToggleLink';
 
 type FiltersProps = {
   query: Query;

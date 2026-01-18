@@ -1,14 +1,13 @@
 import { View } from 'react-native';
 
 import { A, Label } from '~/common/styleguide';
+import { Check, Question, XIcon } from '~/components/Icons';
+import { Tag } from '~/components/Tag';
+import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
-
-import { Check, Question, XIcon } from '../Icons';
-import { Tag } from '../Tag';
-import Tooltip from '../Tooltip';
 
 type Props = {
   library: LibraryType;

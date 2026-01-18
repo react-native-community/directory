@@ -1,3 +1,5 @@
+import '~/styles/styles.css';
+
 import * as Sentry from '@sentry/react';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
@@ -6,8 +8,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Footer from '~/components/Footer';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 import tw from '~/util/tailwind';
-
-import '~/styles/styles.css';
 
 const isProd = process.env.NODE_ENV === 'production';
 
