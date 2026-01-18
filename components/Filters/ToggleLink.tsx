@@ -3,11 +3,10 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { P } from '~/common/styleguide';
+import CheckBox from '~/components/CheckBox';
 import { type FilterParamsType, type Query } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-import CheckBox from '../CheckBox';
 
 type Props = {
   query: Query;

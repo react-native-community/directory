@@ -1,4 +1,4 @@
-import { createElement, type ComponentType } from 'react';
+import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
 import { A, P } from '~/common/styleguide';

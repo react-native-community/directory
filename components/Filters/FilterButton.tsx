@@ -1,6 +1,8 @@
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { P } from '~/common/styleguide';
+import { Button } from '~/components/Button';
+import { Filter as FilterIcon } from '~/components/Icons';
 import { type Query } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -13,8 +15,6 @@ import {
   FILTER_STATUS,
   FILTER_TYPE,
 } from './helpers';
-import { Button } from '../Button';
-import { Filter as FilterIcon } from '../Icons';
 
 type Props = {
   query: Query;

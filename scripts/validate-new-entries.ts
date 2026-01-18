@@ -3,10 +3,11 @@ import { differenceWith, isEqual } from 'es-toolkit';
 
 import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
+import libraries from '../react-native-libraries.json';
+
 import { fetchGithubData } from './fetch-github-data';
 import { fetchNpmDownloadData } from './fetch-npm-download-data';
 import { fillNpmName, hasMismatchedPackageData } from './helpers';
-import libraries from '../react-native-libraries.json';
 
 async function makeBaseFileQuery() {
   const result = await fetch(

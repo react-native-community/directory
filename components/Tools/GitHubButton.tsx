@@ -1,8 +1,7 @@
 import { P } from '~/common/styleguide';
+import { Button } from '~/components/Button';
+import { GitHub } from '~/components/Icons';
 import tw from '~/util/tailwind';
-
-import { Button } from '../Button';
-import { GitHub } from '../Icons';
 
 type Props = {
   href: string;

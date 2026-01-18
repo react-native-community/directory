@@ -1,6 +1,7 @@
-import { identity, omit, pickBy } from 'es-toolkit';
 import fs from 'node:fs';
 import path from 'node:path';
+
+import { identity, omit, pickBy } from 'es-toolkit';
 
 import libraries from '~/react-native-libraries.json';
 import { type LibraryDataEntryType } from '~/types';

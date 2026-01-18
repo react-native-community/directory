@@ -3,12 +3,12 @@ import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
 import { type ComponentType, type CSSProperties, type PropsWithChildren, useState } from 'react';
 import {
-  StyleSheet,
   Pressable,
-  useWindowDimensions,
-  type StyleProp,
-  type ViewStyle,
   type PressableProps,
+  type StyleProp,
+  StyleSheet,
+  useWindowDimensions,
+  type ViewStyle,
 } from 'react-native';
 import { type Style } from 'twrnc';
 

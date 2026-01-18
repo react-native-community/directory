@@ -1,8 +1,25 @@
 import { partition } from 'es-toolkit';
 import { View } from 'react-native';
 
-import { A, P, Caption } from '~/common/styleguide';
+import { A, Caption, P } from '~/common/styleguide';
 import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
+import {
+  Code,
+  ConfigPlugin,
+  Dependency,
+  Download,
+  Eye,
+  Fork,
+  Issue,
+  License,
+  Module,
+  NativeCode,
+  NightlyTest,
+  PackageSize,
+  Star,
+  TypeScript,
+  Web,
+} from '~/components/Icons';
 import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType, type MetadataEntryType } from '~/types';
@@ -11,23 +28,6 @@ import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
-import {
-  Star,
-  Download,
-  Eye,
-  Issue,
-  Web,
-  License,
-  Fork,
-  Code,
-  TypeScript,
-  NativeCode,
-  PackageSize,
-  Dependency,
-  ConfigPlugin,
-  NightlyTest,
-  Module,
-} from '../Icons';
 
 type Props = {
   library: LibraryType;
