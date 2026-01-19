@@ -1,5 +1,10 @@
 import { TimeRange } from '~/util/datetime';
 
+export const BASE_META = {
+  title: 'React Native Directory',
+  description: 'An interactive directory to find packages for your React Native apps.',
+};
+
 export const NUM_PER_PAGE = 30;
 
 export const EMPTY_PACKAGE_DATA = {

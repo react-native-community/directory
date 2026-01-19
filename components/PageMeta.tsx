@@ -1,32 +1,33 @@
+import { type NextPageContext } from 'next';
 import Head from 'next/head';
 
-const site = {
-  title: 'React Native Directory',
-  description: 'An interactive directory to find packages for your React Native apps.',
-};
-
-const BASE_OG_URL = 'https://og.expo.dev/?theme=rnd';
+import { type Query } from '~/types';
+import { BASE_META } from '~/util/Constants';
+import getApiUrl from '~/util/getApiUrl';
 
 type PageMetaProps = {
   title?: string;
   description?: string;
   path?: string;
-  searchQuery?: string | string[];
+  searchQuery?: Query;
 };
 
 export default function PageMeta({
   title,
   searchQuery,
   path,
-  description = site.description,
+  description = BASE_META.description,
 }: PageMetaProps) {
-  const pageTitle = `${title ? title + ' • ' : ''}${site.title}`;
+  const pageTitle = `${title ? title + ' • ' : ''}${BASE_META.title}`;
   const parsedSearchQuery = Array.isArray(searchQuery) ? searchQuery[0] : searchQuery;
   const finalDescription = parsedSearchQuery
     ? `Search results for keyword: '${parsedSearchQuery}'`
     : description;
 
-  const socialImage = `${BASE_OG_URL}&title=${encodeURIComponent(pageTitle)}&description=${encodeURIComponent(finalDescription)}`;
+  const socialImage = getApiUrl(
+    `/proxy/og?title=${encodeURIComponent(pageTitle)}&description=${encodeURIComponent(finalDescription)}`,
+    {} as NextPageContext
+  );
 
   return (
     <Head>
