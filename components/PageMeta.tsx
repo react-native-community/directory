@@ -1,8 +1,6 @@
-import { type NextPageContext } from 'next';
 import Head from 'next/head';
 
 import { BASE_META } from '~/util/Constants';
-import getApiUrl from '~/util/getApiUrl';
 
 type PageMetaProps = {
   title?: string;
@@ -23,10 +21,7 @@ export default function PageMeta({
     ? `Search results for keyword: '${parsedSearchQuery}'`
     : description;
 
-  const socialImage = getApiUrl(
-    `/proxy/og?title=${encodeURIComponent(pageTitle)}&description=${encodeURIComponent(finalDescription)}`,
-    {} as NextPageContext
-  );
+  const socialImage = `https://${window.location.host}/api/proxy/og?title=${encodeURIComponent(pageTitle)}&description=${encodeURIComponent(finalDescription)}`;
 
   return (
     <Head>
