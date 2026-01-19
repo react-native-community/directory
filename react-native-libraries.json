@@ -19218,5 +19218,10 @@
     ],
     "newArchitecture": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/npm/example",
+    "ios": false,
+    "android": false
   }
 ]
