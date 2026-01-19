@@ -1,7 +1,6 @@
 import { type NextPageContext } from 'next';
 import Head from 'next/head';
 
-import { type Query } from '~/types';
 import { BASE_META } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
 
@@ -9,7 +8,7 @@ type PageMetaProps = {
   title?: string;
   description?: string;
   path?: string;
-  searchQuery?: Query;
+  searchQuery?: string | string[];
 };
 
 export default function PageMeta({
