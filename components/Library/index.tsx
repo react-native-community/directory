@@ -2,10 +2,11 @@ import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { GitHub } from '~/components/Icons';
+import { GitHub, Star, StarFilled } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import Tooltip from '~/components/Tooltip';
+import { useBookmarks } from '~/context/BookmarksContext';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -31,8 +32,16 @@ export default function Library({
 }: Props) {
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
+  const { isBookmarked: checkIsBookmarked, toggleBookmark: toggleBookmarkGlobal } = useBookmarks();
 
   const libName = library.npmPkg ?? github.name;
+  const bookmarkId = library.npmPkg ?? library.github.fullName;
+  const isBookmarked = checkIsBookmarked(bookmarkId);
+
+  const handleToggleBookmark = () => {
+    void toggleBookmarkGlobal(bookmarkId);
+  };
+
   const hasSecondaryMetadata =
     github.license ||
     github.urls.homepage ||
@@ -43,13 +52,29 @@ export default function Library({
   return (
     <View
       style={[
-        tw`mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default`,
+        tw`mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default relative`,
         isSmallScreen && tw`flex-col`,
         skipMetadata && tw`w-[48.5%] mx-[0.75%] min-h-[206px]`,
         skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
+      <Tooltip
+        sideOffset={8}
+        trigger={
+          <HoverEffect
+            onPress={handleToggleBookmark}
+            style={tw`absolute top-2 right-2 z-10 p-1.5 rounded-md bg-white dark:bg-palette-gray8 border border-palette-gray2 dark:border-palette-gray6`}
+            aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
+            {isBookmarked ? (
+              <StarFilled width={16} height={16} style={tw`text-yellow-500`} />
+            ) : (
+              <Star width={16} height={16} style={tw`text-palette-gray4 dark:text-palette-gray5`} />
+            )}
+          </HoverEffect>
+        }>
+        {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
+      </Tooltip>
       <View style={[tw`pb-3.5 flex-1 p-4 pl-5`, isSmallScreen && tw`pt-2.5 pb-3 px-3.5`]}>
         {library.unmaintained && (
           <View
