@@ -119,7 +119,7 @@
             "https://reactnative.dev/img/homepage/phones.png",
             "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
           ],
-          "pattern": "^(http(s?):)(\\w|/|\\.|:|-|%|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
+          "pattern": "^(http(s?):)(\\w|/|\\.|:|-|%|@|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
         }
       },
       "npmPkg": {
