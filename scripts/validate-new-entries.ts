@@ -7,7 +7,7 @@ import libraries from '../react-native-libraries.json';
 
 import { fetchGithubData } from './fetch-github-data';
 import { fetchNpmDownloadData } from './fetch-npm-download-data';
-import { fillNpmName, hasMismatchedPackageData } from './helpers';
+import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
 async function makeBaseFileQuery() {
   const result = await fetch(
@@ -27,7 +27,9 @@ console.log('🚩️ Detected changes in data entries, checking!');
 
 const modifiedEntries = differenceWith(libraries, mainData, isEqual);
 
-const BATCH_SIZE = 10;
+const BATCH_SIZE = 5;
+const STAGGER_MS = 1000;
+const BATCH_DELAY_MS = 3000;
 
 const checkResults = [];
 
@@ -35,76 +37,84 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
   const batch = modifiedEntries.slice(i, i + BATCH_SIZE);
 
   const batchResults = await Promise.all(
-    batch.map(async entry => {
-      const entryWithNpmData = await fetchNpmDownloadData(fillNpmName(entry));
+    batch.map(entry =>
+      (async () => {
+        await sleep(STAGGER_MS);
 
-      if (!entryWithNpmData.npm) {
-        console.error(
-          `Unable to fetch npm package data for ${entryWithNpmData.npmPkg} package! Please make sure that the package exist in npm registry.`
-        );
-        console.error(
-          `For the new packages recently published for the first time, npm API can return non-existing package error. The resolution here is to wait up to 24h, and then re-trigger the CI workflow.`
-        );
-        console.error(
-          `To check the current API response visit: https://api.npmjs.org/downloads/point/last-month/${entryWithNpmData.npmPkg}`
-        );
-        return false;
-      }
+        const entryWithNpmData = await fetchNpmDownloadData(fillNpmName(entry));
 
-      const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
+        if (!entryWithNpmData.npm) {
+          console.error(
+            `Unable to fetch npm package data for ${entryWithNpmData.npmPkg} package! Please make sure that the package exist in npm registry.`
+          );
+          console.error(
+            `For the new packages recently published for the first time, npm API can return non-existing package error. The resolution here is to wait up to 24h, and then re-trigger the CI workflow.`
+          );
+          console.error(
+            `To check the current API response visit: https://api.npmjs.org/downloads/point/last-month/${entryWithNpmData.npmPkg}`
+          );
+          return false;
+        }
 
-      if (!entryWithGitHubData.github) {
-        console.error(
-          `Unable to fetch data from ${entryWithGitHubData.githubUrl} repository! Make sure that repository is public, and URL is correct.`
-        );
-        return false;
-      }
+        const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
 
-      if (entryWithGitHubData.github.isPrivate === true) {
-        console.error(
-          `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
-        );
-        return false;
-      }
+        if (!entryWithGitHubData.github) {
+          console.error(
+            `Unable to fetch data from ${entryWithGitHubData.githubUrl} repository! Make sure that repository is public, and URL is correct.`
+          );
+          return false;
+        }
 
-      if (!entryWithGitHubData.github.name) {
-        console.error(
-          `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} does not contains package name! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
-        );
-        return false;
-      }
+        if (entryWithGitHubData.github.isPrivate === true) {
+          console.error(
+            `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
+          );
+          return false;
+        }
 
-      if (hasMismatchedPackageData(entryWithGitHubData)) {
-        console.error(
-          `Package name extracted from 'package.json' at given GitHub repository URL differs with package name in the directory data!`
-        );
-        console.error(
-          `- Supplied package name: ${entryWithGitHubData.npmPkg ?? entryWithGitHubData.githubUrl.split('/').at(-1)}`
-        );
-        console.error(
-          `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
-        );
-        console.error(
-          `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
-        );
+        if (!entryWithGitHubData.github.name) {
+          console.error(
+            `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} does not contains package name! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
+          );
+          return false;
+        }
 
-        return false;
-      }
+        if (hasMismatchedPackageData(entryWithGitHubData)) {
+          console.error(
+            `Package name extracted from 'package.json' at given GitHub repository URL differs with package name in the directory data!`
+          );
+          console.error(
+            `- Supplied package name: ${entryWithGitHubData.npmPkg ?? entryWithGitHubData.githubUrl.split('/').at(-1)}`
+          );
+          console.error(
+            `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
+          );
+          console.error(
+            `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
+          );
 
-      const invalidKeys = Object.keys(entry).filter(key => !VALID_ENTRY_KEYS.has(key));
+          return false;
+        }
 
-      if (invalidKeys.length > 0) {
-        console.error(
-          `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
-        );
-        return false;
-      }
+        const invalidKeys = Object.keys(entry).filter(key => !VALID_ENTRY_KEYS.has(key));
 
-      return true;
-    })
+        if (invalidKeys.length > 0) {
+          console.error(
+            `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
+          );
+          return false;
+        }
+
+        return true;
+      })()
+    )
   );
 
   checkResults.push(...batchResults);
+
+  if (i + BATCH_SIZE < modifiedEntries.length) {
+    await sleep(BATCH_DELAY_MS);
+  }
 }
 
 if (checkResults.some(result => !result)) {
