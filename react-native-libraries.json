@@ -261,6 +261,7 @@
   },
   {
     "githubUrl": "https://github.com/Instabug/Instabug-React-Native",
+    "npmPkg": "instabug-reactnative",
     "ios": true,
     "android": true,
     "web": true,
@@ -3186,7 +3187,8 @@
     "npmPkg": "@pietile-native-kit/page-slider"
   },
   {
-    "githubUrl": "https://github.com/akveo/react-native-eva-icons",
+    "githubUrl": "https://github.com/akveo/react-native-eva-icons/tree/master/lib",
+    "npmPkg": "react-native-eva-icons",
     "examples": ["https://github.com/akveo/react-native-eva-icons/tree/master/playground"],
     "ios": true,
     "android": true,
