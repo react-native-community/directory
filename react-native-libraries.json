@@ -19218,5 +19218,13 @@
     ],
     "newArchitecture": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/instantpay/react-native-instantpay-code-push",
+    "examples": [
+      "https://github.com/instantpay/react-native-instantpay-code-push/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
