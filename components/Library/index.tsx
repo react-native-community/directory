@@ -38,9 +38,9 @@ export default function Library({
   const bookmarkId = library.npmPkg ?? library.github.fullName;
   const isBookmarked = checkIsBookmarked(bookmarkId);
 
-  const handleToggleBookmark = () => {
+  function handleToggleBookmark() {
     void toggleBookmarkGlobal(bookmarkId);
-  };
+  }
 
   const hasSecondaryMetadata =
     github.license ||

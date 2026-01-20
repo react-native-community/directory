@@ -31,12 +31,14 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
       }
     }
 
-    loadBookmarks();
+    void loadBookmarks();
   }, []);
 
-  const isBookmarked = (id: string) => bookmarkedIds.has(id);
+  function isBookmarked(id: string) {
+    return bookmarkedIds.has(id);
+  }
 
-  const toggleBookmark = async (id: string) => {
+  async function toggleBookmark(id: string) {
     try {
       const newSet = new Set(bookmarkedIds);
       if (newSet.has(id)) {
@@ -44,13 +46,13 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
       } else {
         newSet.add(id);
       }
-      
+
       await AsyncStorage.setItem(BOOKMARK_KEY, JSON.stringify([...newSet]));
       setBookmarkedIds(newSet);
     } catch (error) {
       console.error('Failed to toggle bookmark:', error);
     }
-  };
+  }
 
   return (
     <BookmarksContext.Provider value={{ bookmarkedIds, isBookmarked, toggleBookmark, isLoading }}>
