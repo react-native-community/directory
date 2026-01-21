@@ -2,7 +2,7 @@ import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { GitHub, Star, StarFilled } from '~/components/Icons';
+import { Bookmark, BookmarkFilled, GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import Tooltip from '~/components/Tooltip';
@@ -67,9 +67,17 @@ export default function Library({
             style={tw`absolute top-2 right-2 z-10 p-1.5 rounded-md bg-white dark:bg-palette-gray8 border border-palette-gray2 dark:border-palette-gray6`}
             aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
             {isBookmarked ? (
-              <StarFilled width={16} height={16} style={tw`text-yellow-500`} />
+              <BookmarkFilled
+                width={16}
+                height={16}
+                style={tw`text-primary-dark dark:text-primary`}
+              />
             ) : (
-              <Star width={16} height={16} style={tw`text-palette-gray4 dark:text-palette-gray5`} />
+              <Bookmark
+                width={16}
+                height={16}
+                style={tw`text-palette-gray4 dark:text-palette-gray5`}
+              />
             )}
           </HoverEffect>
         }>
