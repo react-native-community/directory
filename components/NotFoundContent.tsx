@@ -16,9 +16,9 @@ export default function NotFoundContent({
   bottomSlot,
 }: Props) {
   return (
-    <View style={tw`items-center justify-center w-full px-6 mt-12 mb-18 flex flex-1`}>
+    <View style={tw`mb-18 mt-12 flex w-full flex-1 items-center justify-center px-6`}>
       <Image
-        style={tw`mt-12 mb-6 size-[64px]`}
+        style={tw`mb-6 mt-12 size-[64px]`}
         source={require('~/assets/notfound.png')}
         alt={alt}
       />

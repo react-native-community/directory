@@ -52,8 +52,8 @@ export default function UpdatedAtView({ library }: Props) {
             ]}
             hoverStyle={
               library.unmaintained
-                ? tw`text-warning-dark dark:text-warning decoration-warning-dark dark:decoration-warning`
-                : tw`decoration-palette-gray4 text-hover`
+                ? tw`text-warning-dark decoration-warning-dark dark:text-warning dark:decoration-warning`
+                : tw`text-hover decoration-palette-gray4`
             }>
             {getTimeSinceToday(library.github.stats.pushedAt)}
           </A>

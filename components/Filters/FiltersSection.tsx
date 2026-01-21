@@ -13,7 +13,7 @@ export default function FiltersSection({ title, children, rightSlot }: Props) {
   const { isSmallScreen } = useLayout();
 
   return (
-    <View style={[tw`px-4 py-2 max-w-layout`, isSmallScreen && tw`max-w-full`]}>
+    <View style={[tw`max-w-layout px-4 py-2`, isSmallScreen && tw`max-w-full`]}>
       <Headline style={[tw`mb-2 font-semibold text-secondary`, rightSlot && tw`mb-1`]}>
         {title}
         {rightSlot}

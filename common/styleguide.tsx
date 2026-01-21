@@ -56,7 +56,7 @@ export function createTextComponent(
         id={id}
         numberOfLines={numberOfLines}
         style={[
-          tw`font-sans font-normal my-0 text-black dark:text-white`,
+          tw`font-sans my-0 font-normal text-black dark:text-white`,
           elementStyle as StyleProp<Style>,
           textStyle,
           style,

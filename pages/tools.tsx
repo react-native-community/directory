@@ -16,7 +16,7 @@ export default function Tools() {
         title="Tools"
         description="List of development tools, apps and websites using React Native Directory data."
       />
-      <ContentContainer style={tw`my-10 px-4 gap-4`}>
+      <ContentContainer style={tw`my-10 gap-4 px-4`}>
         <ToolEntry
           name="React Native Directory VS Code extension"
           description="Browse through the React Native Directory and perform actions related to the chosen package inside the built-in editor Command Palette."

@@ -24,16 +24,16 @@ export default function Scoring() {
       <ContentContainer style={tw`mt-8 px-4`}>
         <Caption
           style={[
-            tw`font-light border-l-[6px] leading-[24px] px-5 py-4 mb-4 text-warning-dark bg-warning-light border-warning`,
-            tw`dark:text-warning dark:bg-warning-light`,
+            tw`mb-4 border-l-[6px] border-warning bg-warning-light px-5 py-4 font-light leading-[24px] text-warning-dark`,
+            tw`dark:bg-warning-light dark:text-warning`,
           ]}>
           Directory scores are subjective and are based on data that&apos;s readily available on
           GitHub and npm. They are not a perfect scores and may not reflect quality for your
           specific needs. When evaluating libraries to include in your project, review the library
           yourself to determine if it&apos;s a good fit.
         </Caption>
-        <H2 style={tw`mt-4 mb-5`}>Directory Score</H2>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <H2 style={tw`mb-5 mt-4`}>Directory Score</H2>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
           library. A library can earn value by exhibiting &quot;good behavior criteria&quot; and can
           lose value by exhibiting &quot;bad behavior criteria&quot;. These criteria and their
@@ -44,18 +44,18 @@ export default function Scoring() {
           </A>
           .
         </P>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Directory Score is represented as a value between 0 and 100. All final scores outside
           this range will be clamped to the nearest limit.
         </P>
-        <H3 style={tw`mt-4 mb-5`}>Directory Score criteria</H3>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <H3 style={tw`mb-5 mt-4`}>Directory Score criteria</H3>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The following criteria are used to calculate a library&apos;s Directory Score.
         </P>
         <ScoringCriterion headline="Combined Popularity">
           Base popularity metric measured by weighting and combining subscribers, forks, stars, and
           download counts:
-          <View style={tw`px-4 mt-3`}>
+          <View style={tw`mt-3 px-4`}>
             <code>forks * 20 + stars * 10 + downloads / 50;</code>
           </View>
         </ScoringCriterion>
@@ -65,8 +65,8 @@ export default function Scoring() {
           </ScoringCriterion>
         ))}
         <br />
-        <H2 style={tw`mt-4 mb-5`}>Trending Score</H2>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <H2 style={tw`mb-5 mt-4`}>Trending Score</H2>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Trending Score is the combination of multiple factors that relate to the download
           count and quality of a library. A library gets the the base score from the Popularity Gain
           criterion and can lose score by exhibiting one of bad criteria. These criteria and their
@@ -77,7 +77,7 @@ export default function Scoring() {
           </A>
           .
         </P>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           There are five levels of popularity which depends on the package final Trending Score:
           <ul>
             <li>
@@ -102,18 +102,18 @@ export default function Scoring() {
             </li>
           </ul>
         </P>
-        <H3 style={tw`mt-4 mb-5`}>Trending Score criteria</H3>
-        <P style={tw`mb-4 leading-[27px] font-light`}>
+        <H3 style={tw`mb-5 mt-4`}>Trending Score criteria</H3>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The following criteria are used to calculate a library&apos;s final Trending Score.
         </P>
         <ScoringCriterion headline="Popularity Gain">
           A base for the final library score, it compares the monthly downloads count with weekly
           downloads count and based on those values calculates a growth ratio for the package. The
           formula used for calculating the score looks as following:
-          <View style={tw`px-4 mt-3`}>
+          <View style={tw`mt-3 px-4`}>
             <code>(lastWeekDownloads / Math.floor(monthlyDownloads / 4.25)) / 5</code>
           </View>
-          <P style={[tw`flex mt-3 text-sm font-light text-palette-gray4 dark:text-secondary`]}>
+          <P style={[tw`mt-3 flex text-sm font-light text-palette-gray4 dark:text-secondary`]}>
             The value range span can be quite wide, but most of the packages Popularity Gain value
             fits within +/- 100 range.
           </P>

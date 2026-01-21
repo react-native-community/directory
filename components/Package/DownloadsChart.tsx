@@ -56,15 +56,15 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
       {({ width }) => {
         if (data && !Object.keys(data).length) {
           return (
-            <View style={tw`h-full justify-center items-center`}>
-              <Label style={tw`text-secondary font-light`}>Cannot fetch download data</Label>
+            <View style={tw`h-full items-center justify-center`}>
+              <Label style={tw`font-light text-secondary`}>Cannot fetch download data</Label>
             </View>
           );
         }
 
         if (!width || !data || !series) {
           return (
-            <View style={tw`h-full justify-center items-center`}>
+            <View style={tw`h-full items-center justify-center`}>
               <ThreeDotsLoader />
             </View>
           );
@@ -110,7 +110,7 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
                 }
                 return (
                   <Text
-                    style={tw`flex flex-col text-xs bg-black text-white font-sans font-light px-2.5 py-1.5 rounded dark:border dark:border-default`}>
+                    style={tw`font-sans flex flex-col rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`}>
                     <span style={tw`text-palette-gray3 dark:text-secondary`}>
                       {data.date.toLocaleDateString('en-US', DATE_FORMAT)}
                       &apos;

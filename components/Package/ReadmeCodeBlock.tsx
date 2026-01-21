@@ -21,7 +21,7 @@ export default function ReadmeCodeBlock({ code, theme, lang }: Props) {
       sideOffset={2}
       trigger={
         <Button
-          containerStyle={tw`absolute top-3 right-3`}
+          containerStyle={tw`absolute right-3 top-3`}
           style={tw`bg-transparent`}
           onPress={async () => {
             if (navigator.clipboard && navigator.clipboard.writeText) {

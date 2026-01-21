@@ -41,20 +41,20 @@ export default function ExploreSection({
 
   return (
     <>
-      <H3 style={tw`flex gap-3 pt-3 pb-2 px-2 items-center`} id={hashLink}>
-        {icon && createElement(icon, { style: tw`size-7.5 text-icon mt-px` })}
+      <H3 style={tw`flex items-center gap-3 px-2 pb-2 pt-3`} id={hashLink}>
+        {icon && createElement(icon, { style: tw`size-7.5 mt-px text-icon` })}
         <A
           href={`#${hashLink}`}
           target="_self"
-          style={tw`no-underline text-icon`}
+          style={tw`text-icon no-underline`}
           hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
           {title}
         </A>
       </H3>
-      <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
         {renderLibs(data.filter(filter), count)}
       </View>
-      <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
+      <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/packages', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
           {title} libraries

@@ -14,15 +14,15 @@ type Props = {
 export default function SearchTag({ title, value }: Props) {
   return (
     <View
-      style={tw`flex-row text-[12px] items-center no-underline rounded pr-1.5 border border-default bg-palette-gray1 dark:bg-dark`}>
+      style={tw`flex-row items-center rounded border border-default bg-palette-gray1 pr-1.5 text-[12px] no-underline dark:bg-dark`}>
       <View
-        style={tw`pl-2.5 pr-2 h-full justify-center text-secondary select-none border-r border-default bg-palette-gray2 dark:bg-powder`}>
+        style={tw`h-full select-none justify-center border-r border-default bg-palette-gray2 pl-2.5 pr-2 text-secondary dark:bg-powder`}>
         <span>{title}</span>
       </View>
       <Tooltip
         trigger={
           <HoverEffect>
-            <A href="/" style={tw`flex flex-row gap-1.5 pl-2 items-center no-underline`}>
+            <A href="/" style={tw`flex flex-row items-center gap-1.5 pl-2 no-underline`}>
               {startCase(value)}
               <XIcon style={tw`w-2.5 text-error`} />
             </A>

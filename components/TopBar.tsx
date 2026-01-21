@@ -18,18 +18,18 @@ export default function TopBar() {
 
   return (
     <HtmlHeader
-      style={tw`py-3.5 justify-center items-center overflow-hidden gap-y-2.5 bg-palette-gray7 dark:bg-very-dark`}>
-      <View style={tw`flex-row w-full max-w-layout items-center justify-between px-4 -mt-[1.5px]`}>
+      style={tw`items-center justify-center gap-y-2.5 overflow-hidden bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
+      <View style={tw`-mt-[1.5px] w-full max-w-layout flex-row items-center justify-between px-4`}>
         <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
           <Logo style={tw`text-primary`} width={29} height={26} />
           <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
-            <A href="/" style={tw`text-primary ml-2 font-bold no-underline`}>
+            <A href="/" style={tw`ml-2 font-bold text-primary no-underline`}>
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
             </A>
           </H5>
         </View>
         <View style={[isBelowMaxWidth && tw`mr-auto`, isSmallScreen && tw`hidden`]}>
-          <ContentContainer style={tw`flex-row px-4 gap-2.5`}>
+          <ContentContainer style={tw`flex-row gap-2.5 px-4`}>
             <NavigationTab title="Explore" path="/packages" />
             <NavigationTab title="Popular" />
             <NavigationTab title="Trending" />
@@ -46,7 +46,7 @@ export default function TopBar() {
                 <Button
                   aria-label="Toggle theme"
                   onPress={toggleTheme}
-                  style={tw`size-8.5 px-1 bg-transparent`}
+                  style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
                   {tw.prefixMatch('dark') ? (
                     <ThemeLight style={tw`text-white`} />
@@ -64,7 +64,7 @@ export default function TopBar() {
                 <Button
                   aria-label="Tools"
                   href="/tools"
-                  style={tw`size-8.5 px-1 bg-transparent`}
+                  style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
                   <Tools style={tw`text-white`} />
                 </Button>
@@ -79,7 +79,7 @@ export default function TopBar() {
                   openInNewTab
                   aria-label="GitHub repository"
                   href="https://github.com/react-native-community/directory"
-                  style={tw`size-8.5 px-1 bg-transparent`}
+                  style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
                   <GitHub style={tw`text-white`} />
                 </Button>
@@ -90,7 +90,7 @@ export default function TopBar() {
           <Button
             openInNewTab
             href="https://github.com/react-native-community/directory/?tab=readme-ov-file#how-do-i-add-a-library"
-            style={[tw`px-4 py-2 max-h-8.5`, isSmallScreen && tw`w-8.5`]}>
+            style={[tw`max-h-8.5 px-4 py-2`, isSmallScreen && tw`w-8.5`]}>
             <View style={tw`flex-row items-center gap-1`}>
               <Plus
                 width={14}
@@ -102,7 +102,7 @@ export default function TopBar() {
           </Button>
         </View>
       </View>
-      <ContentContainer style={[tw`flex-row px-4 gap-2.5`, !isSmallScreen && tw`hidden`]}>
+      <ContentContainer style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
         <NavigationTab title="Explore" path="/" />
         <NavigationTab title="Popular" />
         <NavigationTab title="Trending" />

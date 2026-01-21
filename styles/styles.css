@@ -133,7 +133,7 @@ input:focus-visible {
 
 #__next,
 #__next > div {
-  @apply bg-default min-h-[100vh];
+  @apply min-h-[100vh] bg-default;
 }
 
 /* SELECT */
@@ -280,47 +280,47 @@ select {
 
 @keyframes slideUpAndFade {
   from {
-    @apply opacity-0 translate-y-1.5;
+    @apply translate-y-1.5 opacity-0;
   }
   to {
-    @apply opacity-100 translate-y-0;
+    @apply translate-y-0 opacity-100;
   }
 }
 
 @keyframes slideRightAndFade {
   from {
-    @apply opacity-0 -translate-x-1.5;
+    @apply -translate-x-1.5 opacity-0;
   }
   to {
-    @apply opacity-100 translate-x-0;
+    @apply translate-x-0 opacity-100;
   }
 }
 
 @keyframes slideDownAndFade {
   from {
-    @apply opacity-0 -translate-y-1.5;
+    @apply -translate-y-1.5 opacity-0;
   }
   to {
-    @apply opacity-100 translate-y-0;
+    @apply translate-y-0 opacity-100;
   }
 }
 
 @keyframes slideLeftAndFade {
   from {
-    @apply opacity-0 translate-x-1.5;
+    @apply translate-x-1.5 opacity-0;
   }
   to {
-    @apply opacity-100 translate-x-0;
+    @apply translate-x-0 opacity-100;
   }
 }
 
 /* THREE DOTS LOADER */
 
 #dots-loader {
-  @apply inline-flex items-center justify-center flex-row gap-1.5;
+  @apply inline-flex flex-row items-center justify-center gap-1.5;
 
   .dot {
-    @apply size-2.5 rounded-[50%] opacity-90 inline-block bg-palette-gray4 dark:bg-pewter;
+    @apply inline-block size-2.5 rounded-[50%] bg-palette-gray4 opacity-90 dark:bg-pewter;
     animation: dots-bounce 1.2s infinite ease-in-out both;
 
     &:nth-child(1) {

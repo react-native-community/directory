@@ -25,9 +25,9 @@ export function ToggleLink({ query, filterParam, basePath = '/packages' }: Props
         [filterParam.param]: !isSelected,
         offset: null,
       })}
-      style={tw`no-underline mr-4 my-1`}>
+      style={tw`my-1 mr-4 no-underline`}>
       <View
-        style={tw`cursor-pointer items-center flex-row`}
+        style={tw`cursor-pointer flex-row items-center`}
         onPointerEnter={() => setHovered(true)}
         onPointerLeave={() => setHovered(false)}>
         <CheckBox value={isSelected} style={isHovered && tw`border-primary-dark`} />

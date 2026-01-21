@@ -12,7 +12,7 @@ export default function GitHubButton({ href }: Props) {
     <Button
       openInNewTab
       href={href}
-      style={tw`flex-row px-3 min-h-8 text-sm gap-1.5 bg-primary dark:bg-primary-dark`}>
+      style={tw`min-h-8 flex-row gap-1.5 bg-primary px-3 text-sm dark:bg-primary-dark`}>
       <GitHub width={16} style={tw`text-black`} />
       <P style={tw`text-sm text-black`}>GitHub</P>
     </Button>
