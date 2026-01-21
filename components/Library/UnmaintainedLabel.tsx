@@ -15,17 +15,17 @@ export default function UnmaintainedLabel({ alternatives, block }: Props) {
   const { isSmallScreen } = useLayout();
 
   return (
-    <View style={tw`flex-row flex-shrink gap-1.5`}>
+    <View style={tw`flex-shrink flex-row gap-1.5`}>
       <View
         style={[
-          tw`flex-row flex-wrap flex-shrink items-start -ml-5 mb-2 pl-5 pr-3 py-1.5 rounded-r gap-1 bg-palette-gray1 border border-l-0 border-palette-gray3 dark:bg-dark dark:border-default`,
-          block && tw`ml-0 border-l pl-3 py-2 rounded-lg rounded-r-lg`,
+          tw`-ml-5 mb-2 flex-shrink flex-row flex-wrap items-start gap-1 rounded-r border border-l-0 border-palette-gray3 bg-palette-gray1 py-1.5 pl-5 pr-3 dark:border-default dark:bg-dark`,
+          block && tw`ml-0 rounded-lg rounded-r-lg border-l py-2 pl-3`,
           isSmallScreen && tw`flex-col`,
           {
             backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, ${tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'} 20px, ${tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'} 40px)`,
           },
         ]}>
-        <View style={tw`flex-row flex-shrink gap-1.5`}>
+        <View style={tw`flex-shrink flex-row gap-1.5`}>
           <Warning width={16} height={16} style={tw`text-secondary`} />
           <Label style={tw`text-secondary`}>This library is not actively maintained.</Label>
         </View>

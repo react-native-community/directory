@@ -38,8 +38,8 @@ export default function PackageVersionsScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={tw`my-6 py-3 px-5`}>
-        <View style={tw`gap-3 flex-1`}>
+      <ContentContainer style={tw`my-6 px-5 py-3`}>
+        <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} />
           <H6 style={tw`mt-3 text-secondary`}>Tagged versions</H6>
           <View style={tw`gap-2`}>
@@ -77,7 +77,7 @@ export default function PackageVersionsScene({
                 );
               })}
           </View>
-          <Button onPress={() => setShowAll(true)} style={tw`mt-2 mx-auto py-2 px-4`}>
+          <Button onPress={() => setShowAll(true)} style={tw`mx-auto mt-2 px-4 py-2`}>
             Show all versions
           </Button>
         </View>

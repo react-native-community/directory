@@ -279,7 +279,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
                 // @ts-expect-error RNW complains about 'fit-content'
                 style={{
                   ...(i + 1 !== data.length ? tw`mb-2 min-h-[22px] overflow-hidden` : {}),
-                  ...tw`flex-row items-center mb-0 pr-[3px]`,
+                  ...tw`mb-0 flex-row items-center pr-[3px]`,
                   width: 'fit-content',
                 }}>
                 <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>

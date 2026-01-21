@@ -21,9 +21,9 @@ export default function Footer() {
   const { isSmallScreen } = useLayout();
 
   return (
-    <View style={tw`w-full pt-8 pb-7 mt-1 bg-palette-gray1 dark:bg-dark`}>
+    <View style={tw`mt-1 w-full bg-palette-gray1 pb-7 pt-8 dark:bg-dark`}>
       <ContentContainer>
-        <View style={tw`flex-row mt-1 justify-center flex-wrap gap-3.5 mb-7 max-w-footer mx-auto`}>
+        <View style={tw`mx-auto mb-7 mt-1 max-w-footer flex-row flex-wrap justify-center gap-3.5`}>
           <PlatformTile
             name="Android"
             pkgName="react-native"
@@ -67,8 +67,8 @@ export default function Footer() {
             url="https://github.com/microsoft/react-native-windows#readme"
           />
         </View>
-        <View style={[tw`flex-row px-4 mt-3`, isSmallScreen && tw`flex-col`]}>
-          <View style={[tw`flex-col flex-1`, isSmallScreen && tw`items-center`]}>
+        <View style={[tw`mt-3 flex-row px-4`, isSmallScreen && tw`flex-col`]}>
+          <View style={[tw`flex-1 flex-col`, isSmallScreen && tw`items-center`]}>
             <P style={tw`py-1.5 text-[13px] font-light text-secondary`}>
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
@@ -86,7 +86,7 @@ export default function Footer() {
               and <A href="https://expo.dev">Expo</A>.
             </P>
           </View>
-          <View style={[tw`self-center`, isSmallScreen && tw`items-center mt-6`]}>
+          <View style={[tw`self-center`, isSmallScreen && tw`mt-6 items-center`]}>
             <A
               href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
               aria-label="Vercel banner"
@@ -95,7 +95,7 @@ export default function Footer() {
             </A>
           </View>
         </View>
-        <View style={tw`items-center pt-12 pb-8`}>
+        <View style={tw`items-center pb-8 pt-12`}>
           <Logo style={tw`text-palette-gray3 dark:text-powder`} width={42} height={38} />
         </View>
       </ContentContainer>

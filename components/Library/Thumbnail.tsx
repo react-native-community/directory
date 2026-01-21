@@ -27,9 +27,9 @@ function Thumbnail({ url }: Props) {
       <HoverCard.Trigger asChild>
         <View
           tabIndex={0}
-          style={tw`mr-2.5 my-1 p-1.5 pb-0 min-h-7.5 box-border overflow-hidden text-center rounded border border-palette-gray2 dark:border-default`}>
+          style={tw`min-h-7.5 my-1 mr-2.5 box-border overflow-hidden rounded border border-palette-gray2 p-1.5 pb-0 text-center dark:border-default`}>
           {showPreview && !isLoaded ? (
-            <div style={tw`w-3.5 mx-px -mt-0.5`}>
+            <div style={tw`mx-px -mt-0.5 w-3.5`}>
               <ActivityIndicator size="small" color={tw`text-primary-dark`.color as ColorValue} />
             </div>
           ) : (
@@ -46,7 +46,7 @@ function Thumbnail({ url }: Props) {
         <HoverCard.Content sideOffset={6} sticky="always">
           <View
             style={[
-              tw`p-2.5 rounded-lg box-border hidden shadow-offset-0/0.5 shadow-radius-2 shadow-palette-gray3 bg-white dark:shadow-accented dark:bg-black`,
+              tw`shadow-offset-0/0.5 shadow-radius-2 box-border hidden rounded-lg bg-white p-2.5 shadow-palette-gray3 dark:bg-black dark:shadow-accented`,
               showPreview && isLoaded && tw`flex`,
               {
                 maxWidth: maxPreviewWidth,

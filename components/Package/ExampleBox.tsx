@@ -18,11 +18,11 @@ export default function ExampleBox({ example, index }: Props) {
       <A
         href={example}
         style={[
-          tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-palette-gray2 dark:border-default`,
+          tw`flex flex-row items-center justify-between rounded-lg border border-palette-gray2 px-4 py-2.5 no-underline dark:border-default`,
           isSmallScreen && tw`px-3 py-2`,
         ]}
         hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
-        <View style={tw`flex flex-row items-center max-w-full gap-2.5`}>
+        <View style={tw`flex max-w-full flex-row items-center gap-2.5`}>
           {example.includes('github.com') && <GitHub style={tw`text-icon`} />}
           {example.includes('snack.expo.dev') && <Snack style={tw`text-icon`} />}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
@@ -31,7 +31,7 @@ export default function ExampleBox({ example, index }: Props) {
           <span style={tw`font-light`}>{getExampleDescription(example)}</span>
         </View>
         <Text
-          style={[tw`opacity-30 text-2xl leading-[28px] text-icon`, isSmallScreen && tw`hidden`]}>
+          style={[tw`text-2xl leading-[28px] text-icon opacity-30`, isSmallScreen && tw`hidden`]}>
           #{index + 1}
         </Text>
       </A>

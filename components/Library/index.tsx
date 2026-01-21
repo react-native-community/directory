@@ -52,14 +52,14 @@ export default function Library({
   return (
     <View
       style={[
-        tw`mb-4 border rounded-md flex-row overflow-hidden border-palette-gray2 dark:border-default relative`,
+        tw`mb-4 border rounded-md flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default relative`,
         isSmallScreen && tw`flex-col`,
-        skipMetadata && tw`w-[48.5%] mx-[0.75%] min-h-[206px]`,
+        skipMetadata && tw`mx-[0.75%] min-h-[206px] w-[48.5%]`,
         skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
-      <Tooltip
+        <Tooltip
         sideOffset={8}
         trigger={
           <HoverEffect
@@ -83,20 +83,20 @@ export default function Library({
         }>
         {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
       </Tooltip>
-      <View style={[tw`pb-3.5 flex-1 p-4 pl-5`, isSmallScreen && tw`pt-2.5 pb-3 px-3.5`]}>
+      <View style={[tw`flex-1 p-4 pb-3.5 pl-5`, isSmallScreen && tw`px-3.5 pb-3 pt-2.5`]}>
         {library.unmaintained && (
           <View
             style={
               isSmallScreen
-                ? tw`flex-col justify-start self-start mb-1.5`
-                : tw`flex-row justify-between items-start gap-6 mb-1`
+                ? tw`mb-1.5 flex-col justify-start self-start`
+                : tw`mb-1 flex-row items-start justify-between gap-6`
             }>
             <UnmaintainedLabel alternatives={library.alternatives} />
             {!skipDate && <UpdatedAtView library={library} />}
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={tw`flex-row justify-between items-center gap-6 mb-1`}>
+          <View style={tw`mb-1 flex-row items-center justify-between gap-6`}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
@@ -106,13 +106,13 @@ export default function Library({
         <View
           style={
             isSmallScreen
-              ? tw`flex-col gap-2 justify-start self-start`
-              : tw`flex-row justify-between items-start gap-6`
+              ? tw`flex-col justify-start gap-2 self-start`
+              : tw`flex-row items-start justify-between gap-6`
           }>
           <View style={tw`flex-row items-center gap-1.5`}>
             <A
               href={`/package/${library.npmPkg}`}
-              style={tw`font-bold text-[19px]`}
+              style={tw`text-[19px] font-bold`}
               hoverStyle={tw`text-hover`}>
               {libName}
             </A>
@@ -137,15 +137,15 @@ export default function Library({
           <LibraryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
-          <View style={tw`flex-row items-center gap-x-0.5 flex-wrap mt-2`}>
+          <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
             ))}
           </View>
         )}
         {!skipSecondaryMetadata && hasSecondaryMetadata ? (
-          <View style={[tw`w-full mt-auto`, isSmallScreen && tw`relative min-h-0 mt-0`]}>
-            <View style={[tw`flex-row items-center mt-3 flex-wrap gap-2.5 gap-y-0.5`]}>
+          <View style={[tw`mt-auto w-full`, isSmallScreen && tw`relative mt-0 min-h-0`]}>
+            <View style={[tw`mt-3 flex-row flex-wrap items-center gap-2.5 gap-y-0.5`]}>
               <MetaData library={library} secondary />
             </View>
           </View>
@@ -154,7 +154,7 @@ export default function Library({
       {skipMetadata ? null : (
         <View
           style={[
-            tw`flex-0.35 p-4 border-l border-palette-gray2 dark:border-default`,
+            tw`flex-0.35 border-l border-palette-gray2 p-4 dark:border-default`,
             isSmallScreen && tw`border-l-0 border-t`,
           ]}>
           <MetaData library={library} />

@@ -33,25 +33,25 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={tw`my-6 py-3 px-5`}>
-        <View style={tw`gap-3 flex-1`}>
+      <ContentContainer style={tw`my-6 px-5 py-3`}>
+        <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} />
           <View
             style={[
-              tw`items-center flex-row gap-1 mt-2 mb-3 py-4 px-7 border rounded-xl border-palette-gray3 bg-palette-gray1 dark:bg-palette-gray7 dark:border-default`,
+              tw`mb-3 mt-2 flex-row items-center gap-1 rounded-xl border border-palette-gray3 bg-palette-gray1 px-7 py-4 dark:border-default dark:bg-palette-gray7`,
               isSmallScreen && tw`flex-col px-5`,
             ]}>
             <View style={tw`items-center`}>
               <H6 style={tw`mb-3`}>Directory score</H6>
               <DirectoryScore score={library.score} sizeMultiplier={2} />
-              <span style={tw`flex text-[24px] font-semibold items-center mt-1 text-primary-dark`}>
+              <span style={tw`mt-1 flex items-center text-[24px] font-semibold text-primary-dark`}>
                 {library.score}/100
               </span>
             </View>
             <View
               style={[
-                tw`w-[0.5px] min-h-[112px] mx-7 bg-palette-gray3 dark:bg-accented`,
-                isSmallScreen && tw`w-full min-h-[0.5px] mx-0 my-3`,
+                tw`mx-7 min-h-[112px] w-[0.5px] bg-palette-gray3 dark:bg-accented`,
+                isSmallScreen && tw`mx-0 my-3 min-h-[0.5px] w-full`,
               ]}
             />
             <View style={tw`flex flex-shrink gap-2`}>
@@ -86,7 +86,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
                 headline={name}
                 score={value}
                 key={`unmatch-${name}`}
-                style={[tw`opacity-60 border-2 border-dashed`, { filter: 'grayscale(1)' }]}>
+                style={[tw`border-2 border-dashed opacity-60`, { filter: 'grayscale(1)' }]}>
                 {description}
               </ScoringCriterion>
             ))}

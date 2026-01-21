@@ -18,7 +18,7 @@ export function NewArchitectureTag({ library }: Props) {
   const icon = getTagIcon(status);
 
   const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
-    <Label style={tw`flex my-1 text-white`}>{library.newArchitectureNote}</Label>
+    <Label style={tw`my-1 flex text-white`}>{library.newArchitectureNote}</Label>
   );
 
   // Do not show alternatives in New Arch tag for unmaintained libraries since
@@ -26,7 +26,7 @@ export function NewArchitectureTag({ library }: Props) {
   const alternatives = library.alternatives &&
     library.alternatives.length > 0 &&
     !library.unmaintained && (
-      <Label style={tw`flex my-1 text-white`}>
+      <Label style={tw`my-1 flex text-white`}>
         {' '}
         {pluralize('Alternative', library.alternatives.length)}
         {': '}
@@ -70,9 +70,9 @@ function getTagColor(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return tw`bg-[#edf6fc] border-[#d4ebfa] dark:bg-[#142733] dark:border-[#203b4d]`;
+      return tw`border-[#d4ebfa] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
     case NewArchSupportStatus.Unsupported:
-      return tw`bg-[#fffae8] border-[#faebaf] dark:bg-[#292005] dark:border-[#3d3206]`;
+      return tw`border-[#faebaf] bg-[#fffae8] dark:border-[#3d3206] dark:bg-[#292005]`;
     default:
       return tw`border-dashed border-palette-gray2 dark:border-default`;
   }

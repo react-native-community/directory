@@ -24,7 +24,7 @@ export function Button({
 }: Props) {
   const isLink = !!href;
   const buttonStyle = [
-    tw`justify-center items-center rounded outline-offset-1 cursor-pointer select-none bg-primary-darker dark:bg-primary-dark`,
+    tw`cursor-pointer select-none items-center justify-center rounded bg-primary-darker outline-offset-1 dark:bg-primary-dark`,
     style,
   ] as ViewStyle[];
 
@@ -39,7 +39,7 @@ export function Button({
         <A
           href={href}
           role="button"
-          style={[tw`rounded font-sans no-underline`, containerStyle]}
+          style={[tw`font-sans rounded no-underline`, containerStyle]}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...(href?.startsWith('#') ? { target: '_self' } : {})}
           {...rest}>

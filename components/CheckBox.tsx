@@ -13,7 +13,7 @@ export default function CheckBox({ style, value }: Props) {
   return (
     <View
       style={[
-        tw`size-[18px] items-center justify-center border-2 rounded-sm mr-2`,
+        tw`mr-2 size-[18px] items-center justify-center rounded-sm border-2`,
         value
           ? tw`border-primary-dark bg-primary-dark`
           : tw`border-palette-gray4 bg-white dark:border-default dark:bg-dark`,

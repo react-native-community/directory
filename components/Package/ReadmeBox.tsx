@@ -69,9 +69,9 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
 
   return (
     <View
-      style={tw`rounded-xl my-2 border border-palette-gray2 text-black dark:border-default dark:text-white`}>
+      style={tw`my-2 rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
       <View
-        style={tw`flex-row gap-2 items-center px-4 py-3 border-b border-palette-gray2 dark:border-default`}>
+        style={tw`flex-row items-center gap-2 border-b border-palette-gray2 px-4 py-3 dark:border-default`}>
         <ReadmeFile style={tw`text-tertiary dark:text-pewter`} />
         <P>Readme</P>
       </View>
@@ -195,7 +195,7 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
               details: ({ children }: any) => {
                 return (
                   <details
-                    style={tw`rounded-xl mt-3 pb-3 pt-1 pr-4 border border-palette-gray2 dark:border-default`}>
+                    style={tw`mt-3 rounded-xl border border-palette-gray2 pb-3 pr-4 pt-1 dark:border-default`}>
                     {children}
                   </details>
                 );

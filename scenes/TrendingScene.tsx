@@ -68,7 +68,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
             <Pagination query={query} total={total} basePath="/trending" />
           </>
         ) : (
-          <View style={tw`items-center mt-6 mb-10`}>
+          <View style={tw`mb-10 mt-6 items-center`}>
             <Image style={tw`size-16`} source={require('~/assets/notfound.png')} alt="No results" />
             <H4>Nothing was found!</H4>
           </View>

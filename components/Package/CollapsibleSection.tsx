@@ -57,17 +57,17 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
 
   return (
     <>
-      <View style={tw`flex-row gap-1.5 justify-between items-center`}>
+      <View style={tw`flex-row items-center justify-between gap-1.5`}>
         <H6 style={tw`flex items-center gap-1.5 text-[16px] text-secondary`}>
           {title}
           <EntityCounter count={Object.keys(data).length} />
         </H6>
         <Button
           onPress={toggleSection}
-          style={tw`p-1 bg-palette-gray2 dark:bg-palette-gray7`}
+          style={tw`bg-palette-gray2 p-1 dark:bg-palette-gray7`}
           containerStyle={tw`mt-px`}
           aria-label={`${collapsed ? 'Expand' : 'Collapse'} section`}>
-          <Arrow style={[tw`w-4 h-3 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
+          <Arrow style={[tw`h-3 w-4 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
         </Button>
       </View>
       {!collapsed && (

@@ -23,16 +23,16 @@ export default function VersionBox({ label, time, versionData }: Props) {
   return (
     <View
       style={[
-        tw`flex-row items-center justify-between px-4 py-2.5 rounded-xl gap-0.5 border border-palette-gray2 dark:border-default`,
+        tw`flex-row items-center justify-between gap-0.5 rounded-xl border border-palette-gray2 px-4 py-2.5 dark:border-default`,
         isSmallScreen && tw`flex-col items-start justify-start gap-2`,
       ]}>
       <View>
-        <View style={tw`flex-row items-center gap-1 min-h-4`}>
+        <View style={tw`min-h-4 flex-row items-center gap-1`}>
           {label && <Caption>{label}</Caption>}
           {label && <Caption style={tw`text-secondary`}>{` • `}</Caption>}
           <Caption style={label && tw`text-secondary`}>{versionData.version}</Caption>
         </View>
-        <View style={tw`flex-row items-center gap-1 min-h-4`}>
+        <View style={tw`min-h-4 flex-row items-center gap-1`}>
           <Label style={tw`font-light text-secondary`}>
             Released {getTimeSinceToday(time)} by {versionData._npmUser?.name}
           </Label>

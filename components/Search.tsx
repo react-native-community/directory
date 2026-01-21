@@ -61,15 +61,15 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
     void replace(urlWithQuery('/packages', { search, offset: undefined }));
   }
 
-  const focusHintLabel = tw`text-palette-gray4 font-light`;
-  const focusHintKey = tw`text-tertiary text-center py-[3px] px-1 min-w-6 rounded-[3px] tracking-[0.75px] bg-palette-gray5 dark:bg-powder`;
+  const focusHintLabel = tw`font-light text-palette-gray4`;
+  const focusHintKey = tw`min-w-6 rounded-[3px] bg-palette-gray5 px-1 py-[3px] text-center tracking-[0.75px] text-tertiary dark:bg-powder`;
 
   return (
     <>
-      <View style={[tw`py-3.5 items-center bg-palette-gray6 dark:bg-dark`, style]}>
+      <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
         <View style={tw`w-full max-w-layout px-4`}>
           <View style={tw`flex-row items-center`}>
-            <View style={tw`absolute left-4 pointer-events-none`}>
+            <View style={tw`pointer-events-none absolute left-4`}>
               <SearchIcon style={tw`text-white`} />
             </View>
             <TextInput
@@ -116,12 +116,12 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
               onBlur={() => setInputFocused(false)}
               onChangeText={isHomePage ? undefined : typingCallback}
               placeholder="Search libraries..."
-              style={tw`flex flex-1 h-12.5 p-4 pl-11 font-sans text-xl text-white rounded-md -outline-offset-2 border-2 border-palette-gray5 bg-palette-gray6 dark:bg-dark dark:border-default`}
+              style={tw`h-12.5 font-sans flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
               defaultValue={search}
               placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
             />
             {!isSmallScreen && (
-              <View style={tw`absolute right-4 pointer-events-none flex-row gap-1 items-center`}>
+              <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
                 {isInputFocused ? (
                   <>
                     <Label style={focusHintLabel}>press</Label>
@@ -152,18 +152,18 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
           {!isHomePage && (
             <View
               style={[
-                tw`flex-row items-center mt-2 justify-between`,
+                tw`mt-2 flex-row items-center justify-between`,
                 isSmallScreen && tw`flex-col items-start`,
               ]}>
               {total ? (
                 <P style={tw`mt-1 text-white`}>
-                  <P style={tw`text-primary font-bold`}>{total}</P>{' '}
+                  <P style={tw`font-bold text-primary`}>{total}</P>{' '}
                   {total === 1 ? 'entry' : 'entries'}
                 </P>
               ) : (
                 <P />
               )}
-              <View style={[tw`flex-row items-center mt-1.5`, isSmallScreen && tw`mt-2.5`]}>
+              <View style={[tw`mt-1.5 flex-row items-center`, isSmallScreen && tw`mt-2.5`]}>
                 <FilterButton
                   style={tw`h-6`}
                   query={query}

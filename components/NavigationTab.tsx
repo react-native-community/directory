@@ -19,24 +19,24 @@ function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Pro
     <A
       href={path}
       style={[
-        tw`no-underline rounded`,
+        tw`rounded no-underline`,
         {
           transition: 'color 0.33s, background-color 0.33s',
         },
-        isActive && tw`text-primary bg-primary-hover`,
+        isActive && tw`bg-primary-hover text-primary`,
       ]}
       hoverStyle={[
-        tw`text-tertiary bg-palette-gray6 dark:bg-default`,
+        tw`bg-palette-gray6 text-tertiary dark:bg-default`,
         isActive && tw`bg-primary-active-hover`,
       ]}
       target="_self">
-      <View style={tw`flex-row items-center gap-2 px-4 pt-1.5 pb-2`}>
+      <View style={tw`flex-row items-center gap-2 px-4 pb-2 pt-1.5`}>
         <P style={[tw`text-white`, isActive && tw`text-primary`]}>{title}</P>
         {!!counter && (
           <EntityCounter
             count={counter}
             style={[
-              tw`py-0.5 px-1.5 rounded-xl text-[11px] text-white mt-[3px]`,
+              tw`mt-[3px] rounded-xl px-1.5 py-0.5 text-[11px] text-white`,
               isActive ? tw`bg-primary-dark text-black dark:text-white` : tw`bg-accented`,
             ]}
           />

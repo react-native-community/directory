@@ -31,8 +31,8 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
   const hasBookmarks = bookmarkedIds.size > 0;
 
   return (
-    <View style={[tw`py-2 flex-1 items-center bg-palette-gray1 dark:bg-very-dark`, style]}>
-      <View style={tw`w-full max-w-layout content-start flex-row flex-wrap`}>
+    <View style={[tw`flex-1 items-center bg-palette-gray1 py-2 dark:bg-very-dark`, style]}>
+      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
         <FiltersSection title="Platform">
           {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
@@ -76,7 +76,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
           />
         ))}
       </FiltersSection>
-      <View style={tw`w-full max-w-layout content-start flex-row flex-wrap`}>
+      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
         <FiltersSection title="Compatibility">
           {FILTER_COMPATIBILITY.map(compatibility => (
             <ToggleLink
@@ -92,7 +92,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
           rightSlot={
             <Tag
               label="Experimental"
-              tagStyle={tw`ml-2 -top-px py-0 min-h-5.5 bg-[#ece3fc] border-[#d9c8fa] dark:bg-[#261a3d] dark:border-[#3d2861]`}
+              tagStyle={tw`min-h-5.5 -top-px ml-2 border-[#d9c8fa] bg-[#ece3fc] py-0 dark:border-[#3d2861] dark:bg-[#261a3d]`}
               icon={null}
             />
           }>

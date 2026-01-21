@@ -28,24 +28,24 @@ export default function Navigation({
       {header ?? (
         <View
           style={[
-            tw`py-10 overflow-hidden bg-palette-gray6 dark:bg-dark`,
+            tw`overflow-hidden bg-palette-gray6 py-10 dark:bg-dark`,
             isSmallScreen && tw`py-6`,
             style,
           ]}>
           <Logo
             width={580}
             height={520}
-            style={tw`absolute left-1/2 top-[-76px] ml-[-280px] opacity-15 text-palette-gray5 dark:text-palette-gray7`}
+            style={tw`absolute left-1/2 top-[-76px] ml-[-280px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
           />
           <H1
             style={[
-              tw`text-center text-white text-[42px] leading-[54px] px-5`,
+              tw`px-5 text-center text-[42px] leading-[54px] text-white`,
               isSmallScreen && tw`text-3xl`,
             ]}>
             {title}
           </H1>
           <H2
-            style={tw`text-center text-base font-normal py-1 px-10 text-palette-gray3 dark:text-secondary`}>
+            style={tw`px-10 py-1 text-center text-base font-normal text-palette-gray3 dark:text-secondary`}>
             {description}
           </H2>
           {children}

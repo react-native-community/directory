@@ -20,7 +20,7 @@ export default function LoadingContent({ width = '100%', height = 204, wrapperSt
       backgroundColor={tw.prefixMatch('dark') ? '#2a2e36' : '#f3f3f3'}
       foregroundColor={tw.prefixMatch('dark') ? '#383c42' : '#ecebeb'}
       style={{
-        ...tw`border border-solid rounded-md mb-4 box-border border-palette-gray2 dark:border-default`,
+        ...tw`mb-4 box-border rounded-md border border-solid border-palette-gray2 dark:border-default`,
         ...wrapperStyle,
       }}>
       <rect x="20" y="20" rx="3" ry="3" width="288" height="25" />

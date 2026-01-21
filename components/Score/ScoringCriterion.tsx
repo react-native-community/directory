@@ -14,12 +14,12 @@ export function ScoringCriterion({ children, headline, style, score = undefined 
   const isPositiveModifier = (score ?? 0) > 0;
 
   return (
-    <View style={[tw`py-3.5 px-5 border rounded-md mb-4 border-default`, style]}>
-      <Headline style={tw`flex gap-3 text-[17px] font-semibold mb-1 leading-[22px]`}>
+    <View style={[tw`mb-4 rounded-md border border-default px-5 py-3.5`, style]}>
+      <Headline style={tw`mb-1 flex gap-3 text-[17px] font-semibold leading-[22px]`}>
         {score && (
           <Headline
             style={[
-              tw`flex items-center justify-center border-default min-w-[50px] text-[15px] font-bold border rounded text-center`,
+              tw`flex min-w-[50px] items-center justify-center rounded border border-default text-center text-[15px] font-bold`,
               isPositiveModifier ? tw`text-success` : tw`text-error`,
             ]}>
             {isPositiveModifier ? '+' : ''}
@@ -28,7 +28,7 @@ export function ScoringCriterion({ children, headline, style, score = undefined 
         )}
         {headline}
       </Headline>
-      <P style={tw`leading-[24px] font-light`}>{children}</P>
+      <P style={tw`font-light leading-[24px]`}>{children}</P>
     </View>
   );
 }
