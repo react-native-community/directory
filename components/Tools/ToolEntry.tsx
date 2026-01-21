@@ -18,8 +18,8 @@ type Props = {
 
 export default function ToolEntry({ name, description, githubUrl, buttons }: Props) {
   return (
-    <View style={tw`border border-default px-5 py-4 rounded-xl`}>
-      <H3 style={tw`text-xl mb-0.5`}>{name}</H3>
+    <View style={tw`rounded-xl border border-default px-5 py-4`}>
+      <H3 style={tw`mb-0.5 text-xl`}>{name}</H3>
       <P style={tw`mb-3 font-light leading-[29px]`}>{description}</P>
       <View style={tw`flex-row flex-wrap gap-3`}>
         <GitHubButton href={githubUrl} />
@@ -29,7 +29,7 @@ export default function ToolEntry({ name, description, githubUrl, buttons }: Pro
             openInNewTab
             href={href}
             style={[
-              tw`flex-row px-3 min-h-8 gap-1.5 text-sm bg-palette-gray3`,
+              tw`min-h-8 flex-row gap-1.5 bg-palette-gray3 px-3 text-sm`,
               tw`dark:bg-accented dark:text-white`,
             ]}>
             <span>{label}</span>

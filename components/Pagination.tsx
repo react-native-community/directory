@@ -54,7 +54,7 @@ export default function Pagination({ query, total, style, basePath = '/packages'
             </Link>
           </HoverEffect>
         )}
-        <Caption style={tw`mx-1.5 min-w-15 text-center`}>
+        <Caption style={tw`min-w-15 mx-1.5 text-center`}>
           {currentPage > 0 ? currentPage : '1'} of {totalPages}
         </Caption>
         {forwardDisabled ? (
@@ -81,7 +81,7 @@ function BackArrow({ disabled }: ArrowButtonProps) {
   return (
     <View
       style={[
-        tw`size-6 items-center justify-center rounded rotate-180 bg-palette-gray2 dark:bg-accented`,
+        tw`size-6 rotate-180 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
         disabled && tw`opacity-50`,
       ]}>
       <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />

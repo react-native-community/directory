@@ -28,8 +28,8 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
       {library.unmaintained && <UnmaintainedLabel block />}
       <View
         style={[
-          tw`flex-row items-center justify-between min-h-[26px]`,
-          isSmallScreen && tw`gap-y-2.5 items-start flex-col`,
+          tw`min-h-[26px] flex-row items-center justify-between`,
+          isSmallScreen && tw`flex-col items-start gap-y-2.5`,
         ]}>
         <View style={tw`flex-row flex-wrap items-center gap-x-2 gap-y-1`}>
           <Tooltip
@@ -44,7 +44,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
             }>
             {ghUsername}
           </Tooltip>
-          <P style={tw`text-xl leading-[26px] font-semibold -mt-0.5`}>{library.npmPkg}</P>
+          <P style={tw`-mt-0.5 text-xl font-semibold leading-[26px]`}>{library.npmPkg}</P>
           {registryData && (
             <View style={tw`flex-row items-center gap-x-1`}>
               <P style={tw`text-secondary`}>{registryData.version}</P>

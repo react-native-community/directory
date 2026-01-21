@@ -25,7 +25,7 @@ export default function ReadmeHeading({ children, tagName }: Props) {
         aria-label="Link to header"
         style={[
           tw`bg-transparent`,
-          ['h1', 'h2', 'h3'].includes(tagName) ? tw`size-4 mt-px` : tw`size-3.5`,
+          ['h1', 'h2', 'h3'].includes(tagName) ? tw`mt-px size-4` : tw`size-3.5`,
         ]}>
         <Link style={tw`text-icon`} />
       </Button>

@@ -15,8 +15,8 @@ export default function DetailsNavigation({ library }: Props) {
   return (
     <Navigation
       title={`${library.template ? 'Template' : 'Package'} information`}
-      style={[tw`pt-9 pb-3 gap-1`, isSmallScreen && tw`pt-5 gap-1.5`]}>
-      <ContentContainer style={tw`gap-2 flex-row px-5`}>
+      style={[tw`gap-1 pb-3 pt-9`, isSmallScreen && tw`gap-1.5 pt-5`]}>
+      <ContentContainer style={tw`flex-row gap-2 px-5`}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
         {!library.template && (
           <NavigationTab

@@ -12,7 +12,7 @@ type Props = {
 
 export default function LibraryDescription({ github, maxLines }: Props) {
   return github.description && github.description.length > 0 ? (
-    <Headline numberOfLines={maxLines} style={tw`font-light text-base leading-snug`}>
+    <Headline numberOfLines={maxLines} style={tw`text-base font-light leading-snug`}>
       <Linkify
         options={{
           linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,
@@ -21,7 +21,7 @@ export default function LibraryDescription({ github, maxLines }: Props) {
       </Linkify>
     </Headline>
   ) : (
-    <Caption style={tw`font-light text-base leading-snug text-palette-gray4 dark:text-secondary`}>
+    <Caption style={tw`text-base font-light leading-snug text-palette-gray4 dark:text-secondary`}>
       The package does not have a description defined.
     </Caption>
   );

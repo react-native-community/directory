@@ -17,6 +17,9 @@
     "README.md",
     "next-env.d.ts"
   ],
+  "experimentalTailwindcss": {
+    "functions": ["tw"]
+  },
   "experimentalSortImports": {
     "groups": [
       ["side-effect"],

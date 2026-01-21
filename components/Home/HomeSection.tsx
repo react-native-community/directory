@@ -26,18 +26,18 @@ export default function HomeSection({ data, title, Icon, count = 8, queryParams 
 
   return (
     <>
-      <H4 style={tw`flex gap-2.5 pt-3 pb-2 px-2 items-center font-medium`} id={hashLink}>
-        {Icon && createElement(Icon, { style: tw`size-5 text-icon mt-px` })}
+      <H4 style={tw`flex items-center gap-2.5 px-2 pb-2 pt-3 font-medium`} id={hashLink}>
+        {Icon && createElement(Icon, { style: tw`mt-px size-5 text-icon` })}
         <A
           href={`#${hashLink}`}
           target="_self"
-          style={tw`no-underline text-icon`}
+          style={tw`text-icon no-underline`}
           hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
           {title}
         </A>
       </H4>
-      <View style={tw`pt-3 flex-1 flex-row flex-wrap`}>{renderLibs(data, count)}</View>
-      <P style={tw`px-6 pt-2 pb-6 text-sm font-light text-secondary`}>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data, count)}</View>
+      <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/packages', { ...queryParams })} target="_self">
           {title.toLowerCase()} libraries

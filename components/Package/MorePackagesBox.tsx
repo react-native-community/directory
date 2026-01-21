@@ -52,7 +52,7 @@ export default function MorePackagesBox({ library }: Props) {
     <>
       <H6
         style={[
-          tw`flex gap-1.5 text-[16px] text-secondary items-center`,
+          tw`flex items-center gap-1.5 text-[16px] text-secondary`,
           !isSmallScreen && tw`mt-4`,
         ]}>
         More packages from {startCase(owner)}
@@ -78,29 +78,29 @@ export default function MorePackagesBox({ library }: Props) {
                   <A
                     href={`/package/${npmPkg}`}
                     style={[
-                      tw`flex flex-row items-center justify-between px-4 py-2.5 rounded-lg no-underline border border-solid border-palette-gray2 dark:border-default`,
+                      tw`flex flex-row items-center justify-between rounded-lg border border-solid border-palette-gray2 px-4 py-2.5 no-underline dark:border-default`,
                       isSmallScreen && tw`px-3 pt-2`,
                     ]}
                     hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
                     <View
                       style={[
-                        tw`flex flex-row items-center w-full max-w-full gap-2.5`,
+                        tw`flex w-full max-w-full flex-row items-center gap-2.5`,
                         isSmallScreen && tw`flex-col items-start gap-1`,
                       ]}>
-                      <Caption style={tw`text-sm flex-shrink-0`}>{npmPkg}</Caption>
+                      <Caption style={tw`flex-shrink-0 text-sm`}>{npmPkg}</Caption>
                       <Label numberOfLines={1} style={tw`font-light text-secondary`}>
                         {github.description}
                       </Label>
                       <View
                         style={[
-                          tw`flex-row gap-4 ml-auto text-icon text-sm leading-[14px] font-light`,
+                          tw`ml-auto flex-row gap-4 text-sm font-light leading-[14px] text-icon`,
                           isSmallScreen && tw`ml-0 mt-1`,
                         ]}>
-                        <View style={tw`flex-row gap-1 items-center`}>
+                        <View style={tw`flex-row items-center gap-1`}>
                           <Star style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
                           <span>{github.stats.stars.toLocaleString()}</span>
                         </View>
-                        <View style={tw`flex-row gap-1 items-center`}>
+                        <View style={tw`flex-row items-center gap-1`}>
                           <Download style={tw`text-tertiary dark:text-palette-gray5`} />
                           <span>{(npm?.downloads ?? 0).toLocaleString()}</span>
                         </View>

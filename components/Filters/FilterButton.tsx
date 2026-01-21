@@ -46,7 +46,7 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
         onPress={onPress}
         containerStyle={tw`h-full flex-grow`}
         style={[
-          tw`h-full px-2 bg-accented`,
+          tw`h-full bg-accented px-2`,
           isFilterVisible && tw`bg-primary-dark`,
           isFilterCount && tw`rounded-r-none`,
         ]}>
@@ -58,14 +58,14 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
               height={12}
             />
           </View>
-          <P style={tw`text-sm ml-1.5 text-white select-none`}>
+          <P style={tw`ml-1.5 select-none text-sm text-white`}>
             Filters{isFilterCount ? `: ${filterCount}` : ''}
           </P>
         </View>
       </Button>
       {filterCount > 0 && (
         <View
-          style={tw`h-full justify-center items-center rounded-r border-l border-palette-gray6 bg-accented dark:border-dark`}>
+          style={tw`h-full items-center justify-center rounded-r border-l border-palette-gray6 bg-accented dark:border-dark`}>
           <ClearButton onPress={onClearAllPress} />
         </View>
       )}

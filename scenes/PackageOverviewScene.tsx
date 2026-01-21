@@ -54,9 +54,9 @@ export default function PackageOverviewScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={tw`py-6 px-0`}>
-        <View style={[tw`flex-row py-3 px-5 gap-8`, isSmallScreen && tw`flex-col gap-5`]}>
-          <View style={tw`gap-3 flex-1`}>
+      <ContentContainer style={tw`px-0 py-6`}>
+        <View style={[tw`flex-row gap-8 px-5 py-3`, isSmallScreen && tw`flex-col gap-5`]}>
+          <View style={tw`flex-1 gap-3`}>
             <PackageHeader
               library={library}
               registryData={registryData}
@@ -83,7 +83,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && !!author && (
               <>
-                <H6 style={tw`text-[16px] mt-4 text-secondary`}>Author</H6>
+                <H6 style={tw`mt-4 text-[16px] text-secondary`}>Author</H6>
                 <View style={tw`items-start`}>
                   <PackageAuthor author={author} />
                 </View>
@@ -91,7 +91,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] mt-3 text-secondary`}>
+                <H6 style={tw`mt-3 flex gap-1.5 text-[16px] text-secondary`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
                 </H6>
@@ -106,7 +106,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && <MorePackagesBox library={library} />}
           </View>
-          <View style={tw`gap-4 flex-0.35`} id="metadataContainer">
+          <View style={tw`flex-0.35 gap-4`} id="metadataContainer">
             <View>
               <MetaData library={library} />
             </View>
@@ -116,10 +116,10 @@ export default function PackageOverviewScene({
             </View>
             {!library.template && (
               <>
-                <H6 style={tw`text-[16px] mt-3 text-secondary`}>Popularity</H6>
+                <H6 style={tw`mt-3 text-[16px] text-secondary`}>Popularity</H6>
                 <TrendingMark library={library} />
                 <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
-                <View style={tw`h-[54px] gap-1.5 rounded-lg border border-default overflow-hidden`}>
+                <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
                   <DownloadsChart packageName={packageName} />
                 </View>
               </>
@@ -130,7 +130,7 @@ export default function PackageOverviewScene({
                   Topics
                   <EntityCounter count={library.github.topics.length} />
                 </H6>
-                <View style={tw`flex-row flex-wrap items-start gap-y-0.5 gap-x-2`}>
+                <View style={tw`flex-row flex-wrap items-start gap-x-2 gap-y-0.5`}>
                   {library.github.topics.map(topic => (
                     <A key={topic} href={`/?search=${topic}`} style={tw`text-[12px] font-light`}>
                       {topic}
@@ -143,7 +143,7 @@ export default function PackageOverviewScene({
               <>
                 <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
                 <ul
-                  style={tw`m-0 pl-4.5 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
+                  style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
                   <li>
                     <A
                       href={`https://bundlephobia.com/package/${library.npmPkg}`}

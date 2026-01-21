@@ -30,7 +30,7 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
   }
 
   return (
-    <View style={tw`flex-row items-center bg-accented h-6 ml-2 pl-2 rounded`}>
+    <View style={tw`ml-2 h-6 flex-row items-center rounded bg-accented pl-2`}>
       <View style={tw`flex-row items-center`}>
         <Tooltip
           sideOffset={8}
@@ -54,14 +54,14 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
           }>
           Toggle sort order
         </Tooltip>
-        <P style={tw`text-sm text-white ml-1.5 mr-0.5 select-none`}>Sort:</P>
+        <P style={tw`ml-1.5 mr-0.5 select-none text-sm text-white`}>Sort:</P>
       </View>
       <View style={tw`top-px`}>
         <Picker
           id="sort-order"
           aria-label="Sort order"
           selectedValue={currentSortValue ?? (search ? 'relevance' : 'updated')}
-          style={tw`text-white border-0 rounded text-sm relative -top-px font-semibold bg-transparent`}
+          style={tw`relative -top-px rounded border-0 bg-transparent text-sm font-semibold text-white`}
           onValueChange={value => {
             updatePath(
               urlWithQuery('/packages', {

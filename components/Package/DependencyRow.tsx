@@ -20,11 +20,11 @@ export default function DependencyRow({ name, version, packageExists }: Props) {
   return (
     <View
       style={[
-        tw`flex-row gap-x-2 justify-between`,
+        tw`flex-row justify-between gap-x-2`,
         hasLongVersion && tw`flex-wrap`,
         isSmallScreen && tw`my-px`,
       ]}>
-      <span style={tw`flex flex-row gap-x-1.5 items-center flex-shrink pl-0.5 overflow-hidden`}>
+      <span style={tw`flex flex-shrink flex-row items-center gap-x-1.5 overflow-hidden pl-0.5`}>
         {packageExists ? (
           <Tooltip
             side="left"
@@ -45,7 +45,7 @@ export default function DependencyRow({ name, version, packageExists }: Props) {
         ) : (
           <View style={tw`flex max-h-3`}>
             <P
-              style={tw`w-3 text-lg leading-[12px] -mt-px text-center select-none text-palette-gray4 dark:text-palette-gray5`}>
+              style={tw`-mt-px w-3 select-none text-center text-lg leading-[12px] text-palette-gray4 dark:text-palette-gray5`}>
               •
             </P>
           </View>
@@ -54,13 +54,13 @@ export default function DependencyRow({ name, version, packageExists }: Props) {
           href={`https://www.npmjs.com/package/${name}`}
           target="_blank"
           containerStyle={tw`flex-shrink`}
-          style={tw`text-xs leading-[14px] font-mono font-light`}>
+          style={tw`font-mono text-xs font-light leading-[14px]`}>
           {name}
         </A>
       </span>
       <Label
         style={[
-          tw`text-xs leading-[14px] font-mono text-secondary`,
+          tw`font-mono text-xs leading-[14px] text-secondary`,
           hasLongVersion && tw`ml-auto`,
         ]}>
         {getVersionLabel(version)}

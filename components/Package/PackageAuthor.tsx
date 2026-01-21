@@ -12,7 +12,7 @@ type Props = {
   compact?: boolean;
 };
 
-const authorContainerStyle = tw`flex flex-row gap-3 items-center bg-transparent`;
+const authorContainerStyle = tw`flex flex-row items-center gap-3 bg-transparent`;
 const labelStyle = tw`leading-[18px]`;
 const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
 

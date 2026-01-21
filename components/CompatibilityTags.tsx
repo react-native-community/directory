@@ -29,14 +29,14 @@ export default function CompatibilityTags({ library }: Props) {
       {library.dev ? (
         <Tag
           label="Development Tool"
-          tagStyle={tw`bg-[#ece3fc] border-[#d9c8fa] dark:bg-[#261a3d] dark:border-[#3d2861]`}
+          tagStyle={tw`border-[#d9c8fa] bg-[#ece3fc] dark:border-[#3d2861] dark:bg-[#261a3d]`}
           icon={null}
         />
       ) : null}
       {library.template ? (
         <Tag
           label="Template"
-          tagStyle={tw`bg-[#fce1f5] border-[#f5c6e8] dark:bg-[#37172e] dark:border-[#52213e]`}
+          tagStyle={tw`border-[#f5c6e8] bg-[#fce1f5] dark:border-[#52213e] dark:bg-[#37172e]`}
           icon={null}
         />
       ) : null}
@@ -46,7 +46,7 @@ export default function CompatibilityTags({ library }: Props) {
           <Tag
             label={platform}
             key={`${platform}-platform`}
-            tagStyle={tw`bg-palette-gray1 border-palette-gray2 dark:bg-dark dark:border-default`}
+            tagStyle={tw`border-palette-gray2 bg-palette-gray1 dark:border-default dark:bg-dark`}
           />
         ) : null
       )}
@@ -55,7 +55,7 @@ export default function CompatibilityTags({ library }: Props) {
           side="bottom"
           trigger={
             <View
-              style={tw`items-center justify-center cursor-pointer rounded-full`}
+              style={tw`cursor-pointer items-center justify-center rounded-full`}
               role="button"
               aria-label="Additional information">
               <Info style={tw`text-icon`} />
@@ -74,7 +74,7 @@ export default function CompatibilityTags({ library }: Props) {
                 <br />
                 <A
                   href={`https://www.npmjs.com/package/${library.vegaos}`}
-                  style={tw`text-xs text-white font-light`}>
+                  style={tw`text-xs font-light text-white`}>
                   (via dedicated support package)
                 </A>
               </li>

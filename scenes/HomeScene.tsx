@@ -44,20 +44,20 @@ export default function HomeScene({
         <Search
           query={router.query}
           total={statistic.total}
-          style={tw`bg-transparent w-[600px] max-w-full self-center`}
+          style={tw`w-[600px] max-w-full self-center bg-transparent`}
           isHomePage
         />
       </Navigation>
       <ContentContainer style={[tw`px-4 py-5`, isSmallScreen && tw`pt-2`]}>
-        <View style={[tw`flex-row flex-1 gap-1 mb-1`, isSmallScreen && tw`flex-col`]}>
+        <View style={[tw`mb-1 flex-1 flex-row gap-1`, isSmallScreen && tw`flex-col`]}>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
               Discover by platform
             </H4>
             <View
               style={[
-                tw`min-h-[194px] px-4 py-3 gap-1 mb-4 border rounded-md border-palette-gray2 dark:border-default`,
+                tw`mb-4 min-h-[194px] gap-1 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
               <PlatformRow platform="Android" count={statistic.android} Icon={PlatformAndroid} />
@@ -71,12 +71,12 @@ export default function HomeScene({
           </View>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
               Explore topics
             </H4>
             <View
               style={[
-                tw`min-h-[194px] flex-row flex-wrap gap-x-3 gap-y-1.5 justify-center content-center px-4 pt-2 pb-3 mb-4 border rounded-md border-palette-gray2 dark:border-default`,
+                tw`mb-4 min-h-[194px] flex-row flex-wrap content-center justify-center gap-x-3 gap-y-1.5 rounded-md border border-palette-gray2 px-4 pb-3 pt-2 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
               <A href={urlWithQuery('/packages', { search: 'animation' })}>Animation</A>
@@ -111,19 +111,19 @@ export default function HomeScene({
           </View>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`flex gap-3 pt-3 pb-2 mb-1 items-center font-medium text-secondary dark:text-pewter`}>
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
               Statistics
             </H4>
             <View
               style={[
-                tw`min-h-[194px] gap-1.5 px-4 py-3 mb-4 border rounded-md border-palette-gray2 dark:border-default`,
+                tw`mb-4 min-h-[194px] gap-1.5 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
               <View>
                 <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
                   {statistic.total.toLocaleString()}
                 </P>
-                <P style={tw`text-sm text-secondary font-light`}>packages in the directory</P>
+                <P style={tw`text-sm font-light text-secondary`}>packages in the directory</P>
               </View>
               <View>
                 <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
@@ -132,7 +132,7 @@ export default function HomeScene({
                     ({((statistic.newArchitecture / statistic.total) * 100).toFixed(2)}%)
                   </span>
                 </P>
-                <P style={tw`text-sm text-secondary font-light`}>
+                <P style={tw`text-sm font-light text-secondary`}>
                   packages supporting New Architecture
                 </P>
               </View>
@@ -140,7 +140,7 @@ export default function HomeScene({
                 <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
                   {statistic.downloads.toLocaleString()}
                 </P>
-                <P style={tw`text-sm text-secondary font-light`}>cumulative monthly downloads</P>
+                <P style={tw`text-sm font-light text-secondary`}>cumulative monthly downloads</P>
               </View>
             </View>
           </View>
