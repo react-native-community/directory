@@ -52,19 +52,19 @@ export default function Library({
   return (
     <View
       style={[
-        tw`mb-4 border rounded-md flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default relative`,
+        tw`relative mb-4 flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default`,
         isSmallScreen && tw`flex-col`,
         skipMetadata && tw`mx-[0.75%] min-h-[206px] w-[48.5%]`,
         skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
-        <Tooltip
+      <Tooltip
         sideOffset={8}
         trigger={
           <HoverEffect
             onPress={handleToggleBookmark}
-            style={tw`absolute top-2 right-2 z-10 p-1.5 rounded-md bg-white dark:bg-palette-gray8 border border-palette-gray2 dark:border-palette-gray6`}
+            style={tw`dark:bg-palette-gray8 absolute right-2 top-2 z-10 rounded-md border border-palette-gray2 bg-white p-1.5 dark:border-palette-gray6`}
             aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
             {isBookmarked ? (
               <BookmarkFilled
