@@ -3,12 +3,13 @@ import { View } from 'react-native';
 
 import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { GitHub } from '~/components/Icons';
+import { Bookmark, BookmarkFilled, GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
+import { useBookmarks } from '~/context/BookmarksContext';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -20,8 +21,15 @@ type Props = {
 
 export default function PackageHeader({ library, registryData, rightSlot }: Props) {
   const { isSmallScreen } = useLayout();
+  const { isBookmarked: checkIsBookmarked, toggleBookmark: toggleBookmarkGlobal } = useBookmarks();
 
   const ghUsername = library.github.fullName.split('/')[0];
+  const bookmarkId = library.npmPkg ?? library.github.fullName;
+  const isBookmarked = checkIsBookmarked(bookmarkId);
+
+  function handleToggleBookmark() {
+    toggleBookmarkGlobal(bookmarkId);
+  }
 
   return (
     <>
@@ -60,6 +68,30 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
               />
             </A>
           </HoverEffect>
+          <Tooltip
+            sideOffset={8}
+            trigger={
+              <HoverEffect
+                onPress={handleToggleBookmark}
+                style={tw`size-5`}
+                aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
+                {isBookmarked ? (
+                  <BookmarkFilled
+                    width={20}
+                    height={20}
+                    style={tw`text-primary-dark dark:text-primary`}
+                  />
+                ) : (
+                  <Bookmark
+                    width={20}
+                    height={20}
+                    style={tw`text-palette-gray5 dark:text-palette-gray4`}
+                  />
+                )}
+              </HoverEffect>
+            }>
+            {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
+          </Tooltip>
         </View>
         {rightSlot}
       </View>
