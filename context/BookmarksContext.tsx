@@ -1,7 +1,9 @@
 import { createContext, type PropsWithChildren, useContext, useEffect, useState } from 'react';
 
+import { TimeRange } from '~/util/datetime';
+
 const BOOKMARK_COOKIE_NAME = 'rnd_bookmarks';
-const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
+const COOKIE_MAX_AGE = TimeRange.YEAR;
 
 type BookmarksContextType = {
   bookmarkedIds: Set<string>;

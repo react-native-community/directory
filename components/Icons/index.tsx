@@ -35,17 +35,6 @@ export function Star({ width, height, style }: IconProps) {
   );
 }
 
-export function StarFilled({ width, height, style }: IconProps) {
-  return (
-    <Svg width={width ?? 20} height={height ?? 19} viewBox="0 0 20 19" style={style}>
-      <Path
-        d="M9.764.081l2.723 6.323 6.856.636-5.173 4.544 1.514 6.716-5.92-3.515-5.92 3.515 1.514-6.716L.186 7.04l6.855-.636L9.764.081z"
-        fill="currentColor"
-      />
-    </Svg>
-  );
-}
-
 export function Bookmark({ width, height, style }: IconProps) {
   return (
     <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 256 256" style={style}>

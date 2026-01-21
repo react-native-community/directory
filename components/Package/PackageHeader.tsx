@@ -76,17 +76,9 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
                 style={tw`size-5`}
                 aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
                 {isBookmarked ? (
-                  <BookmarkFilled
-                    width={20}
-                    height={20}
-                    style={tw`text-primary-dark dark:text-primary`}
-                  />
+                  <BookmarkFilled style={tw`size-5 text-primary-dark dark:text-primary`} />
                 ) : (
-                  <Bookmark
-                    width={20}
-                    height={20}
-                    style={tw`text-palette-gray5 dark:text-palette-gray4`}
-                  />
+                  <Bookmark style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
                 )}
               </HoverEffect>
             }>
