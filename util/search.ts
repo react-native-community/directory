@@ -102,7 +102,9 @@ export function handleFilterLibraries({
   turboModule,
   nightlyProgram,
   owner,
-}: Query & QueryFilters) {
+  bookmarks,
+  bookmarkedIds,
+}: Query & QueryFilters & { bookmarkedIds?: Set<string> | null }) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
 
@@ -119,6 +121,14 @@ export function handleFilterLibraries({
   const filteredLibraries = processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
+
+    // Filter by bookmarks if enabled
+    if (bookmarks && bookmarkedIds) {
+      const libraryId = library.npmPkg ?? library.github.fullName;
+      if (!bookmarkedIds.has(libraryId)) {
+        return false;
+      }
+    }
 
     if (skipLibs && !library.dev && !library.template) {
       return false;

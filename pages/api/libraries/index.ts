@@ -2,6 +2,7 @@ import { drop, take } from 'es-toolkit';
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
+import { getBookmarksFromCookie } from '~/context/BookmarksContext';
 import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { parseQueryParams } from '~/util/parseQueryParams';
@@ -60,6 +61,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sortDirection = parsedQuery.direction ?? 'descending';
   const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
 
+  // Get bookmarks from cookie if bookmarks filter is enabled
+  const bookmarkedIds = parsedQuery.bookmarks
+    ? new Set(getBookmarksFromCookie(req.headers.cookie))
+    : null;
+
   const filteredLibraries = handleFilterLibraries({
     libraries,
     sortBy,
@@ -98,6 +104,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     turboModule: parsedQuery.turboModule,
     nightlyProgram: parsedQuery.nightlyProgram,
     owner: parsedQuery.owner,
+    bookmarks: parsedQuery.bookmarks,
+    bookmarkedIds,
   });
 
   const offset = parsedQuery.offset ? Number.parseInt(parsedQuery.offset.toString(), 10) : 0;
@@ -113,7 +121,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  // Don't cache responses with bookmarks filter since it depends on user-specific cookies
+  if (parsedQuery.bookmarks) {
+    res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  } else {
+    res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  }
 
   return res.json({
     libraries: filteredAndPaginatedLibraries,

@@ -39,7 +39,7 @@ export default function Library({
   const isBookmarked = checkIsBookmarked(bookmarkId);
 
   function handleToggleBookmark() {
-    void toggleBookmarkGlobal(bookmarkId);
+    toggleBookmarkGlobal(bookmarkId);
   }
 
   const hasSecondaryMetadata =

@@ -1,57 +1,80 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, type PropsWithChildren, useContext, useEffect, useState } from 'react';
 
-const BOOKMARK_KEY = '@ReactNativeDirectory:BookmarkedLibraries';
+const BOOKMARK_COOKIE_NAME = 'rnd_bookmarks';
+const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
 
 type BookmarksContextType = {
   bookmarkedIds: Set<string>;
   isBookmarked: (id: string) => boolean;
-  toggleBookmark: (id: string) => Promise<void>;
+  toggleBookmark: (id: string) => void;
   isLoading: boolean;
 };
 
 const BookmarksContext = createContext<BookmarksContextType | null>(null);
+
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') {
+    return null;
+  }
+  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+  return match ? decodeURIComponent(match[2]) : null;
+}
+
+function setCookie(name: string, value: string, maxAge: number) {
+  if (typeof document === 'undefined') {
+    return;
+  }
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}; SameSite=Lax`;
+}
+
+export function getBookmarksFromCookie(cookieString?: string): string[] {
+  if (typeof cookieString === 'string') {
+    const match = cookieString.match(new RegExp(`(^| )${BOOKMARK_COOKIE_NAME}=([^;]+)`));
+    if (match) {
+      try {
+        return JSON.parse(decodeURIComponent(match[2]));
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  }
+
+  const value = getCookie(BOOKMARK_COOKIE_NAME);
+  if (!value) {
+    return [];
+  }
+  try {
+    return JSON.parse(value);
+  } catch {
+    return [];
+  }
+}
 
 export function BookmarksProvider({ children }: PropsWithChildren) {
   const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function loadBookmarks() {
-      try {
-        const stored = await AsyncStorage.getItem(BOOKMARK_KEY);
-        if (stored) {
-          const parsed: string[] = JSON.parse(stored);
-          setBookmarkedIds(new Set(parsed));
-        }
-      } catch (error) {
-        console.error('Failed to load bookmarks:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    void loadBookmarks();
+    const bookmarks = getBookmarksFromCookie();
+    setBookmarkedIds(new Set(bookmarks));
+    setIsLoading(false);
   }, []);
 
   function isBookmarked(id: string) {
     return bookmarkedIds.has(id);
   }
 
-  async function toggleBookmark(id: string) {
-    try {
-      const newSet = new Set(bookmarkedIds);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
-
-      await AsyncStorage.setItem(BOOKMARK_KEY, JSON.stringify([...newSet]));
-      setBookmarkedIds(newSet);
-    } catch (error) {
-      console.error('Failed to toggle bookmark:', error);
+  function toggleBookmark(id: string) {
+    const newSet = new Set(bookmarkedIds);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
     }
+
+    setCookie(BOOKMARK_COOKIE_NAME, JSON.stringify([...newSet]), COOKIE_MAX_AGE);
+    setBookmarkedIds(newSet);
   }
 
   return (

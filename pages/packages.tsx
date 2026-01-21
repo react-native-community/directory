@@ -38,7 +38,14 @@ function Index({ data, query }: Props) {
 
 Index.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
-  const response = await fetch(url);
+
+  // Forward cookies when making server-side requests (needed for bookmarks filter)
+  const headers: HeadersInit = {};
+  if (ctx.req?.headers.cookie) {
+    headers.cookie = ctx.req.headers.cookie;
+  }
+
+  const response = await fetch(url, { headers });
   const result: APIResponseType = await response.json();
 
   return {
