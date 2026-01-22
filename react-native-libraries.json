@@ -19221,13 +19221,16 @@
   },
   {
     "githubUrl": "https://github.com/simek/eslint-plugin-alex",
-    "newArchitecture": true,
-    "configPlugin": "https://github.com/simek/eslint-plugin-alex-plugin",
-    "ios": true,
+    "examples": [
+      "https://github.com/bombshell-dev/clack/tree/main/packages/prompts",
+      "https://github.com/bombshell-dev/clack/tree/main/packages/example"
+    ],
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true,
     "android": true,
     "web": true,
-    "macos": true,
-    "fireos": true,
-    "horizon": true
+    "tvos": true,
+    "visionos": true,
+    "expoGo": true
   }
 ]
