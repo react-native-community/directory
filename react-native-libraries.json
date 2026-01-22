@@ -19226,5 +19226,15 @@
     "githubUrl": "https://github.com/Hector-Zhuang/expo-native-wechat",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched-markdown",
+    "npmPkg": "react-native-enriched-markdown",
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-enriched-markdown/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
