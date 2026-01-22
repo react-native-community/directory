@@ -293,3 +293,12 @@ export type NpmUser = {
     oidcConfigId: string;
   };
 };
+
+export type NightlyProgramData = {
+  description: string;
+  installCommand: string;
+  android: boolean;
+  ios: boolean;
+  maintainersUsernames: string[];
+  notes: string;
+};
