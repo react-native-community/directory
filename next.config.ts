@@ -49,6 +49,10 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
           { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
         ],
       },
+      {
+        source: '/fonts/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
     ];
   },
 } satisfies NextConfig);

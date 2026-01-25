@@ -23,8 +23,7 @@
   "experimentalSortImports": {
     "groups": [
       ["side-effect"],
-      ["builtin"],
-      ["external", "external-type"],
+      ["builtin", "external", "external-type"],
       ["internal", "internal-type"],
       ["parent", "parent-type"],
       ["sibling", "sibling-type"],
