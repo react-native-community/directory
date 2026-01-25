@@ -19236,5 +19236,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
+    "npmPkg": "@gmessier/nitro-speech",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
