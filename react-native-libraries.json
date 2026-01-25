@@ -19242,7 +19242,6 @@
     "npmPkg": "@gmessier/nitro-speech",
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only",
-    "alternatives": ["expo-speech-recognition"]
+    "newArchitecture": "new-arch-only"
   }
 ]
