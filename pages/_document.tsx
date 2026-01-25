@@ -26,6 +26,28 @@ function DirectoryWebsite() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://reactnative.directory" />
 
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
         <StructuredData
           data={{
             '@context': 'https://schema.org',
