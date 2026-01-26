@@ -1,12 +1,12 @@
 import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
+import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { Bookmark, BookmarkFilled, GitHub } from '~/components/Icons';
+import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import Tooltip from '~/components/Tooltip';
-import { useBookmarks } from '~/context/BookmarksContext';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -32,15 +32,9 @@ export default function Library({
 }: Props) {
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
-  const { isBookmarked: checkIsBookmarked, toggleBookmark: toggleBookmarkGlobal } = useBookmarks();
 
   const libName = library.npmPkg ?? github.name;
   const bookmarkId = library.npmPkg ?? library.github.fullName;
-  const isBookmarked = checkIsBookmarked(bookmarkId);
-
-  function handleToggleBookmark() {
-    toggleBookmarkGlobal(bookmarkId);
-  }
 
   const hasSecondaryMetadata =
     github.license ||
@@ -59,30 +53,12 @@ export default function Library({
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
-      <Tooltip
-        sideOffset={8}
-        trigger={
-          <HoverEffect
-            onPress={handleToggleBookmark}
-            style={tw`dark:bg-palette-gray8 absolute right-2 top-2 z-10 rounded-md border border-palette-gray2 bg-white p-1.5 dark:border-palette-gray6`}
-            aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
-            {isBookmarked ? (
-              <BookmarkFilled
-                width={16}
-                height={16}
-                style={tw`text-primary-dark dark:text-primary`}
-              />
-            ) : (
-              <Bookmark
-                width={16}
-                height={16}
-                style={tw`text-palette-gray4 dark:text-palette-gray5`}
-              />
-            )}
-          </HoverEffect>
-        }>
-        {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
-      </Tooltip>
+      <BookmarkButton
+        bookmarkId={bookmarkId}
+        style={tw`absolute right-2 top-2 z-10 rounded border border-palette-gray2 bg-white p-1.5 dark:border-palette-gray6 dark:bg-palette-gray7`}
+        iconStyle={tw`size-4 text-palette-gray4 dark:text-palette-gray5`}
+        filledIconStyle={tw`size-4 text-primary-dark dark:text-primary`}
+      />
       <View style={[tw`flex-1 p-4 pb-3.5 pl-5`, isSmallScreen && tw`px-3.5 pb-3 pt-2.5`]}>
         {library.unmaintained && (
           <View

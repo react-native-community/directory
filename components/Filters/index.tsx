@@ -52,9 +52,6 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
               basePath={basePath}
             />
           ))}
-          {hasBookmarks && (
-            <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
-          )}
         </FiltersSection>
       </View>
       <FiltersSection title="Status">
@@ -75,6 +72,9 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
             basePath={basePath}
           />
         ))}
+        {hasBookmarks && (
+          <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
+        )}
       </FiltersSection>
       <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
         <FiltersSection title="Compatibility">

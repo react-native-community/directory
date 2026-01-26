@@ -124,8 +124,7 @@ export function handleFilterLibraries({
 
     // Filter by bookmarks if enabled
     if (bookmarks && bookmarkedIds) {
-      const libraryId = library.npmPkg ?? library.github.fullName;
-      if (!bookmarkedIds.has(libraryId)) {
+      if (!bookmarkedIds.has(library.npmPkg)) {
         return false;
       }
     }

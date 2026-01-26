@@ -2,14 +2,14 @@ import { type ReactNode } from 'react';
 import { View } from 'react-native';
 
 import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
+import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { Bookmark, BookmarkFilled, GitHub } from '~/components/Icons';
+import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
-import { useBookmarks } from '~/context/BookmarksContext';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -21,15 +21,9 @@ type Props = {
 
 export default function PackageHeader({ library, registryData, rightSlot }: Props) {
   const { isSmallScreen } = useLayout();
-  const { isBookmarked: checkIsBookmarked, toggleBookmark: toggleBookmarkGlobal } = useBookmarks();
 
   const ghUsername = library.github.fullName.split('/')[0];
   const bookmarkId = library.npmPkg ?? library.github.fullName;
-  const isBookmarked = checkIsBookmarked(bookmarkId);
-
-  function handleToggleBookmark() {
-    toggleBookmarkGlobal(bookmarkId);
-  }
 
   return (
     <>
@@ -68,22 +62,12 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
               />
             </A>
           </HoverEffect>
-          <Tooltip
-            sideOffset={8}
-            trigger={
-              <HoverEffect
-                onPress={handleToggleBookmark}
-                style={tw`size-5`}
-                aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark library'}>
-                {isBookmarked ? (
-                  <BookmarkFilled style={tw`size-5 text-primary-dark dark:text-primary`} />
-                ) : (
-                  <Bookmark style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
-                )}
-              </HoverEffect>
-            }>
-            {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
-          </Tooltip>
+          <BookmarkButton
+            bookmarkId={bookmarkId}
+            style={tw`size-5`}
+            iconStyle={tw`size-5 text-palette-gray5 dark:text-palette-gray4`}
+            filledIconStyle={tw`size-5 text-primary-dark dark:text-primary`}
+          />
         </View>
         {rightSlot}
       </View>
