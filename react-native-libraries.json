@@ -19284,5 +19284,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rahulmandyal1/react-native-nitro-wallpaper",
+    "npmPkg": "react-native-nitro-wallpaper",
+    "examples": [
+      "https://github.com/rahulmandyal1/react-native-nitro-wallpaper/tree/main/example"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
