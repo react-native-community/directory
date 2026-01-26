@@ -5,7 +5,6 @@ import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
-import UnmaintainedLabel from '~/components/Library/UnmaintainedLabel';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
@@ -25,7 +24,6 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
 
   return (
     <>
-      {library.unmaintained && <UnmaintainedLabel block />}
       <View
         style={[
           tw`min-h-[26px] flex-row items-center justify-between`,

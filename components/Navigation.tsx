@@ -10,6 +10,7 @@ type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
   header?: ReactElement;
+  subHeader?: ReactElement;
   style?: StyleProp<ViewStyle>;
 }>;
 
@@ -18,6 +19,7 @@ export default function Navigation({
   description,
   children,
   header,
+  subHeader,
   style,
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
@@ -25,6 +27,7 @@ export default function Navigation({
   return (
     <>
       <TopBar />
+      {subHeader}
       {header ?? (
         <View
           style={[
