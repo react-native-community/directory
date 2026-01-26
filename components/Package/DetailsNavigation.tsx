@@ -26,22 +26,24 @@ export default function DetailsNavigation({ library }: Props) {
         library.unmaintained ? (
           <View
             style={[
-              tw`border-b border-t border-secondary bg-palette-gray7 dark:border-palette-gray6 dark:bg-dark`,
-              strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-6)'),
+              tw`border-b border-t border-palette-gray3 bg-palette-gray1 dark:border-palette-gray6 dark:bg-dark`,
+              strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
             ]}>
             <ContentContainer
-              style={tw`flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2 text-warning`}>
+              style={tw`flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2 text-warning-dark dark:text-warning`}>
               <Warning style={tw`size-4.5 mr-1 flex-shrink-0`} />
-              <Label style={tw`text-warning`}>This library is not actively maintained.</Label>
+              <Label style={tw`text-warning-dark dark:text-warning`}>
+                This library is not actively maintained.
+              </Label>
               {library.alternatives && alternativesLength > 0 && (
-                <Label style={tw`text-warning`}>
+                <Label style={tw`text-warning-dark dark:text-warning`}>
                   You can use{' '}
                   {library.alternatives.map((alternative, index) => (
                     <Fragment key={alternative}>
                       <A
                         href={`/package/${alternative}`}
-                        style={tw`text-white decoration-secondary dark:decoration-palette-gray5`}
-                        hoverStyle={tw`decoration-warning`}>
+                        style={tw`decoration-secondary dark:decoration-palette-gray5`}
+                        hoverStyle={tw`decoration-warning-dark dark:decoration-warning`}>
                         {alternative}
                       </A>
                       {index < alternativesLength - 1 && alternativesLength > 2 ? ', ' : ' '}

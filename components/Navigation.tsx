@@ -27,7 +27,6 @@ export default function Navigation({
   return (
     <>
       <TopBar />
-      {subHeader}
       {header ?? (
         <View
           style={[
@@ -54,6 +53,7 @@ export default function Navigation({
           {children}
         </View>
       )}
+      {subHeader}
     </>
   );
 }
