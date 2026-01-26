@@ -19283,5 +19283,14 @@
     "examples": ["https://github.com/rahulmandyal1/react-native-nitro-wallpaper/tree/main/example"],
     "android": true,
     "newArchitecture": true
+  },
+   {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-ios-alarm-kit",
+    "examples": [
+      "https://github.com/Gautham495/react-native-nitro-ios-alarm-kit/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
