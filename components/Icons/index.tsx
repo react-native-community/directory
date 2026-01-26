@@ -301,15 +301,32 @@ export function Code({ width = 16, height = 16, style }: IconProps) {
 
 export function Warning({ width = 17, height = 17, style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 25 25" style={style}>
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <Path
-        d="M12.147 22.345c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zM12.147 8.345v4M12.147 16.345h.01"
+        d="M142.41,40.22l87.46,151.87C236,202.79,228.08,216,215.46,216H40.54C27.92,216,20,202.79,26.13,192.09L113.59,40.22C119.89,29.26,136.11,29.26,142.41,40.22Z"
+        fill="currentColor"
+        opacity="0.2"
+      />
+      <Path
+        d="M142.41,40.22l87.46,151.87C236,202.79,228.08,216,215.46,216H40.54C27.92,216,20,202.79,26.13,192.09L113.59,40.22C119.89,29.26,136.11,29.26,142.41,40.22Z"
+        fill="none"
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        fill="none"
+        strokeWidth="16"
       />
+      <Line
+        x1="128"
+        y1="144"
+        x2="128"
+        y2="104"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Circle cx="128" cy="180" r="12" fill="currentColor" />
     </Svg>
   );
 }
