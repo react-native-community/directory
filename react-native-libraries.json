@@ -19246,16 +19246,12 @@
   },
   {
     "githubUrl": "https://github.com/wael-fadlallah/rn-alarm-kit",
-    "examples": [
-      "https://github.com/wael-fadlallah/rn-alarm-kit/tree/main/example"
-    ],
+    "examples": ["https://github.com/wael-fadlallah/rn-alarm-kit/tree/main/example"],
     "ios": true
   },
   {
     "githubUrl": "https://github.com/arekkubaczkowski/react-native-pip-view",
-    "examples": [
-      "https://github.com/arekkubaczkowski/react-native-pip-view/tree/main/example"
-    ],
+    "examples": ["https://github.com/arekkubaczkowski/react-native-pip-view/tree/main/example"],
     "ios": true
   },
   {
@@ -19268,9 +19264,7 @@
   },
   {
     "githubUrl": "https://github.com/imwithye/react-native-remark",
-    "examples": [
-      "https://github.com/imwithye/react-native-remark/tree/main/example"
-    ],
+    "examples": ["https://github.com/imwithye/react-native-remark/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/imwithye/react-native-remark/main/docs/quick-look.png"
     ],
@@ -19279,18 +19273,14 @@
   },
   {
     "githubUrl": "https://github.com/divyanshu-patil/react-native-typerich",
-    "examples": [
-      "https://github.com/divyanshu-patil/react-native-typerich/tree/main/example"
-    ],
+    "examples": ["https://github.com/divyanshu-patil/react-native-typerich/tree/main/example"],
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/rahulmandyal1/react-native-nitro-wallpaper",
     "npmPkg": "react-native-nitro-wallpaper",
-    "examples": [
-      "https://github.com/rahulmandyal1/react-native-nitro-wallpaper/tree/main/example"
-    ],
+    "examples": ["https://github.com/rahulmandyal1/react-native-nitro-wallpaper/tree/main/example"],
     "android": true,
     "newArchitecture": true
   }
