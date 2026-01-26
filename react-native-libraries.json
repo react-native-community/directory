@@ -10990,8 +10990,8 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/oktaysenkan/monicon/tree/main/packages/native",
-    "npmPkg": "@monicon/native",
+    "githubUrl": "https://github.com/oktaysenkan/monicon/tree/main/packages/core",
+    "npmPkg": "@monicon/core",
     "examples": ["https://github.com/oktaysenkan/monicon/tree/main/apps/react-native-app"],
     "ios": true,
     "android": true,
@@ -19243,5 +19243,46 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/wael-fadlallah/rn-alarm-kit",
+    "examples": [
+      "https://github.com/wael-fadlallah/rn-alarm-kit/tree/main/example"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/arekkubaczkowski/react-native-pip-view",
+    "examples": [
+      "https://github.com/arekkubaczkowski/react-native-pip-view/tree/main/example"
+    ],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/arekkubaczkowski/react-native-bottom-sheet-stack",
+    "examples": [
+      "https://github.com/arekkubaczkowski/react-native-bottom-sheet-stack/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/imwithye/react-native-remark",
+    "examples": [
+      "https://github.com/imwithye/react-native-remark/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/imwithye/react-native-remark/main/docs/quick-look.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/divyanshu-patil/react-native-typerich",
+    "examples": [
+      "https://github.com/divyanshu-patil/react-native-typerich/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
