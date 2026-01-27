@@ -60,12 +60,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
               />
             </A>
           </HoverEffect>
-          <BookmarkButton
-            bookmarkId={bookmarkId}
-            style={tw`size-5`}
-            iconStyle={tw`size-5 text-palette-gray5 dark:text-palette-gray4`}
-            filledIconStyle={tw`size-5 text-primary-dark dark:text-primary`}
-          />
+          <BookmarkButton bookmarkId={bookmarkId} style={tw`size-5`} iconStyle={tw`size-5`} />
         </View>
         {rightSlot}
       </View>

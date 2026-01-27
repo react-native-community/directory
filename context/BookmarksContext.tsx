@@ -7,7 +7,7 @@ const COOKIE_MAX_AGE = TimeRange.YEAR;
 
 type BookmarksContextType = {
   bookmarkedIds: Set<string>;
-  isBookmarked: (id: string) => boolean;
+  checkIsBookmarked: (id: string) => boolean;
   toggleBookmark: (id: string) => void;
   isLoading: boolean;
 };
@@ -63,7 +63,7 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
     setIsLoading(false);
   }, []);
 
-  function isBookmarked(id: string) {
+  function checkIsBookmarked(id: string) {
     return bookmarkedIds.has(id);
   }
 
@@ -80,7 +80,8 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
   }
 
   return (
-    <BookmarksContext.Provider value={{ bookmarkedIds, isBookmarked, toggleBookmark, isLoading }}>
+    <BookmarksContext.Provider
+      value={{ bookmarkedIds, checkIsBookmarked, toggleBookmark, isLoading }}>
       {children}
     </BookmarksContext.Provider>
   );
