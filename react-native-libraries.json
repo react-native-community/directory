@@ -3271,7 +3271,8 @@
     "android": true,
     "fireos": true,
     "vegaos": "@amazon-devices/react-native-cookies__cookies",
-    "newArchitecture": true
+    "newArchitecture": false,
+    "alternatives": ["@preeternal/react-native-cookie-manager"]
   },
   {
     "githubUrl": "https://github.com/souvik-ghosh/react-native-create-thumbnail",
@@ -19229,7 +19230,6 @@
   },
   {
     "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched-markdown",
-    "npmPkg": "react-native-enriched-markdown",
     "examples": [
       "https://github.com/software-mansion-labs/react-native-enriched-markdown/tree/main/example"
     ],
@@ -19279,7 +19279,6 @@
   },
   {
     "githubUrl": "https://github.com/rahulmandyal1/react-native-nitro-wallpaper",
-    "npmPkg": "react-native-nitro-wallpaper",
     "examples": ["https://github.com/rahulmandyal1/react-native-nitro-wallpaper/tree/main/example"],
     "android": true,
     "newArchitecture": true
