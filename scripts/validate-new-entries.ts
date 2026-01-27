@@ -1,6 +1,7 @@
 import { fetch } from 'bun';
 import { differenceWith, isEqual } from 'es-toolkit';
 
+import { type LibraryType } from '~/types';
 import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
 import libraries from '../react-native-libraries.json';
@@ -103,6 +104,43 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
             `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
           );
           return false;
+        }
+
+        if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
+          const alternativesDataResponse = await fetch(
+            `https://reactnative.directory/api/library?name=${entryWithGitHubData.alternatives.join(',')}`
+          );
+
+          if (alternativesDataResponse.status !== 200) {
+            console.error('Cannot check the alternative library existence in the directory.');
+            return false;
+          }
+
+          const alternativesDataJson = (await alternativesDataResponse.json()) as Record<
+            string,
+            LibraryType
+          >;
+
+          const alternativesChecks = entryWithGitHubData.alternatives.map(alternative => {
+            if (alternative in alternativesDataJson) {
+              if (!alternativesDataJson[alternative].unmaintained) {
+                console.error(
+                  `${alternative} is not marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
+                );
+                return false;
+              }
+            } else {
+              console.error(
+                `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
+              );
+              return false;
+            }
+            return true;
+          });
+
+          if (alternativesChecks.includes(false)) {
+            return false;
+          }
         }
 
         return true;
