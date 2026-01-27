@@ -25,4 +25,4 @@ jobs:
         env:
           CI_CHECKS_TOKEN: ${{ github.token }}
       - name: Lint data
-        run: bun oxfmt react-native-libraries.json
+        run: bun oxfmt react-native-libraries.json --check
