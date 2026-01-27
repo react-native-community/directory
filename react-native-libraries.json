@@ -19300,10 +19300,6 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true,
-    "alternatives": [
-      "@react-native-cookies/cookies",
-      "@react-native-community/cookies"
-    ]
+    "newArchitecture": true
   }
 ]
