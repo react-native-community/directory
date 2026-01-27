@@ -8,6 +8,7 @@ import tw from '~/util/tailwind';
 
 import { ClearButton } from './ClearButton';
 import {
+  FILTER_BOOKMARKS,
   FILTER_COMPATIBILITY,
   FILTER_MODULE_TYPE,
   FILTER_PLATFORMS,
@@ -32,6 +33,7 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
     ...FILTER_COMPATIBILITY.map(compatibility => compatibility.param),
     ...FILTER_TYPE.map(entryType => entryType.param),
     ...FILTER_MODULE_TYPE.map(moduleType => moduleType.param),
+    FILTER_BOOKMARKS.param,
   ];
 
   const filterCount = Object.keys(query).reduce(

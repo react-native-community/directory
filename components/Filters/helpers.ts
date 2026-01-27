@@ -125,3 +125,8 @@ export const FILTER_MODULE_TYPE: FilterParamsType[] = [
     title: 'Turbo Module',
   },
 ];
+
+export const FILTER_BOOKMARKS: FilterParamsType = {
+  param: 'bookmarks',
+  title: 'Bookmarked',
+};

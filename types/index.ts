@@ -56,6 +56,7 @@ export type Query = {
   turboModule?: string;
   nightlyProgram?: string;
   owner?: string;
+  bookmarks?: string;
 };
 
 export type QueryFilters = {

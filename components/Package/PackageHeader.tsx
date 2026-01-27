@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { View } from 'react-native';
 
 import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
+import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
@@ -21,6 +22,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
   const { isSmallScreen } = useLayout();
 
   const ghUsername = library.github.fullName.split('/')[0];
+  const bookmarkId = library.npmPkg ?? library.github.fullName;
 
   return (
     <>
@@ -58,6 +60,12 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
               />
             </A>
           </HoverEffect>
+          <BookmarkButton
+            bookmarkId={bookmarkId}
+            style={tw`size-5`}
+            iconStyle={tw`size-5 text-palette-gray5 dark:text-palette-gray4`}
+            filledIconStyle={tw`size-5 text-primary-dark dark:text-primary`}
+          />
         </View>
         {rightSlot}
       </View>

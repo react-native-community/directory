@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Footer from '~/components/Footer';
+import { BookmarksProvider } from '~/context/BookmarksContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 import tw from '~/util/tailwind';
 
@@ -23,18 +24,20 @@ Sentry.init({
 function App({ pageProps, Component }: AppProps) {
   return (
     <CustomAppearanceProvider>
-      <SafeAreaProvider>
-        <Head>
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
-          />
-        </Head>
-        <main style={tw`flex flex-1 flex-col`}>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </SafeAreaProvider>
+      <BookmarksProvider>
+        <SafeAreaProvider>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
+            />
+          </Head>
+          <main style={tw`flex flex-1 flex-col`}>
+            <Component {...pageProps} />
+          </main>
+          <Footer />
+        </SafeAreaProvider>
+      </BookmarksProvider>
     </CustomAppearanceProvider>
   );
 }

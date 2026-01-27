@@ -1,6 +1,7 @@
 import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
+import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
@@ -33,6 +34,8 @@ export default function Library({
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
   const libName = library.npmPkg ?? github.name;
+  const bookmarkId = library.npmPkg ?? library.github.fullName;
+
   const hasSecondaryMetadata =
     github.license ||
     github.urls.homepage ||
@@ -43,13 +46,19 @@ export default function Library({
   return (
     <View
       style={[
-        tw`mb-4 flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default`,
+        tw`relative mb-4 flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default`,
         isSmallScreen && tw`flex-col`,
         skipMetadata && tw`mx-[0.75%] min-h-[206px] w-[48.5%]`,
         skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
+      <BookmarkButton
+        bookmarkId={bookmarkId}
+        style={tw`absolute right-2 top-2 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+        iconStyle={tw`size-4 text-palette-gray4 dark:text-palette-gray5`}
+        filledIconStyle={tw`size-4 text-primary-dark dark:text-primary`}
+      />
       <View style={[tw`flex-1 p-4 pb-3.5 pl-5`, isSmallScreen && tw`px-3.5 pb-3 pt-2.5`]}>
         {library.unmaintained && (
           <View
