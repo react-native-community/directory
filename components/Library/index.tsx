@@ -55,7 +55,7 @@ export default function Library({
       ]}>
       <BookmarkButton
         bookmarkId={bookmarkId}
-        style={tw`absolute right-2 top-2 z-10 rounded border border-palette-gray2 bg-white p-1.5 dark:border-palette-gray6 dark:bg-palette-gray7`}
+        style={tw`absolute right-2 top-2 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
         iconStyle={tw`size-4 text-palette-gray4 dark:text-palette-gray5`}
         filledIconStyle={tw`size-4 text-primary-dark dark:text-primary`}
       />
