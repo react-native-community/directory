@@ -2,7 +2,6 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import FiltersSection from '~/components/Filters/FiltersSection';
 import { Tag } from '~/components/Tag';
-import { useBookmarks } from '~/context/BookmarksContext';
 import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
 import tw from '~/util/tailwind';
@@ -27,8 +26,6 @@ type FiltersProps = {
 export function Filters({ query, style, basePath = '/packages' }: FiltersProps) {
   const pageQuery = getPageQuery(basePath, query);
   const isMainSearch = basePath === '/packages';
-  const { bookmarkedIds } = useBookmarks();
-  const hasBookmarks = bookmarkedIds.size > 0;
 
   return (
     <View style={[tw`flex-1 items-center bg-palette-gray1 py-2 dark:bg-very-dark`, style]}>
@@ -72,9 +69,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
             basePath={basePath}
           />
         ))}
-        {hasBookmarks && (
-          <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
-        )}
+        <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
       </FiltersSection>
       <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
         <FiltersSection title="Compatibility">
