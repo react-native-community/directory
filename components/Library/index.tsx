@@ -55,9 +55,15 @@ export default function Library({
       ]}>
       <BookmarkButton
         bookmarkId={bookmarkId}
-        style={tw`absolute right-2 top-2 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+        style={tw`absolute right-2.5 top-2.5 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
       />
-      <View style={[tw`flex-1 p-4 pb-3.5 pl-5`, isSmallScreen && tw`px-3.5 pb-3 pt-2.5`]}>
+      <View
+        style={[
+          tw`flex-1 p-4 pb-3 pl-5`,
+          showTrendingMark && tw`pt-3.5`,
+          isSmallScreen && tw`px-3.5 pt-2.5`,
+          showTrendingMark && isSmallScreen && tw`pb-2 pl-3.5 pr-4 pt-3.5`,
+        ]}>
         {library.unmaintained && (
           <View
             style={
@@ -70,7 +76,7 @@ export default function Library({
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={tw`mb-1 flex-row items-center justify-between gap-6`}>
+          <View style={tw`mb-1 flex-row items-center justify-between gap-6 pr-8`}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
