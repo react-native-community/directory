@@ -8,7 +8,12 @@ import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { type APIResponseType, type LibraryDataEntryType, type LibraryType } from '~/types';
+import {
+  type APIResponseType,
+  type DataAssetType,
+  type LibraryDataEntryType,
+  type LibraryType,
+} from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { getNewArchSupportStatus } from '~/util/newArchStatus';
 import { isEmptyOrNull } from '~/util/strings';
@@ -42,6 +47,7 @@ const invalidRepos: string[] = [];
 const mismatchedRepos: LibraryType[] = [];
 
 const wantedPackageName = process.argv[2];
+const missingOnly = process.argv.includes('--missing-only');
 
 async function buildAndScoreData() {
   console.log('🔄️️ Fetching latest data blob from the store');
@@ -192,19 +198,21 @@ async function buildAndScoreData() {
   let fileContent;
 
   if (wantedPackageName) {
-    fileContent = JSON.stringify(
-      {
-        libraries: libraries.map(library => {
-          if (library.npmPkg === wantedPackageName) {
-            return data.find(entry => entry.npmPkg === wantedPackageName);
-          }
-          return library;
-        }),
-        ...rest,
-      },
-      null,
-      2
-    );
+    const content = libraries.some(lib => lib.npmPkg === wantedPackageName)
+      ? {
+          libraries: libraries.map(library => {
+            if (library.npmPkg === wantedPackageName) {
+              return data.find(entry => entry.npmPkg === wantedPackageName);
+            }
+            return library;
+          }),
+          ...rest,
+        }
+      : {
+          libraries: [...libraries, data.find(entry => entry.npmPkg === wantedPackageName)],
+          ...rest,
+        };
+    fileContent = JSON.stringify(content, null, 2);
   } else {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
@@ -316,7 +324,26 @@ export async function fetchGithubDataThrottled({
   return results;
 }
 
+function getMissingOnlyDataset() {
+  const { libraries } = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) as DataAssetType;
+
+  const existingGithubUrls = new Set(
+    libraries.map(lib => lib.githubUrl).filter(url => !!url && !isEmptyOrNull(url))
+  );
+  const missing = DATASET.filter(entry => !existingGithubUrls.has(entry.githubUrl));
+
+  console.log(
+    `🧩 Missing-only mode: fetching ${missing.length} of ${DATASET.length} entries not present in data file\n`
+  );
+
+  return missing;
+}
+
 function getDataForFetch(wantedPackage?: string) {
+  if (missingOnly) {
+    return getMissingOnlyDataset();
+  }
+
   if (wantedPackage) {
     const match = DATASET.find(
       entry =>
@@ -328,6 +355,7 @@ function getDataForFetch(wantedPackage?: string) {
     }
     return [match];
   }
+
   return DATASET;
 }
 
