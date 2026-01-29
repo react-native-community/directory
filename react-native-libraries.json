@@ -18083,6 +18083,7 @@
   },
   {
     "githubUrl": "https://github.com/Flagsmith/flagsmith-js-client/tree/main/lib/react-native-flagsmith",
+    "npmPkg": "@flagsmith/react-native",
     "examples": ["https://github.com/Flagsmith/flagsmith-js-examples/tree/main/reactnative"],
     "ios": true,
     "android": true
@@ -19299,5 +19300,66 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/0xZekeA/supastash",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/seenn-io/react-native",
+    "npmPkg": "@seenn/react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/testshallpass/react-native-thumbnail-selector",
+    "examples": [
+      "https://github.com/testshallpass/react-native-thumbnail-selector/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/testshallpass/react-native-thumbnail-selector/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/ai/tree/main/packages/apple-llm",
+    "npmPkg": "@react-native-ai/apple",
+    "examples": ["https://github.com/callstackincubator/ai/tree/main/apps/expo-example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/ai/tree/main/packages/llama",
+    "npmPkg": "@react-native-ai/llama",
+    "examples": ["https://github.com/callstackincubator/ai/tree/main/apps/expo-example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/ai/tree/main/packages/mlc",
+    "npmPkg": "@react-native-ai/mlc",
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/ai/tree/main/packages/dev-tools",
+    "npmPkg": "@react-native-ai/dev-tools",
+    "images": [
+      "https://raw.githubusercontent.com/callstackincubator/ai/main/website/src/public/dev-tools-preview.png"
+    ],
+    "dev": true,
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/luciqai/luciq-reactnative-sdk",
+    "npmPkg": "@luciq/react-native",
+    "examples": ["https://github.com/luciqai/luciq-reactnative-sdk/tree/master/examples/default"],
+    "ios": true,
+    "android": true
   }
 ]
