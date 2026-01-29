@@ -8979,7 +8979,7 @@
     "android": true,
     "dev": true,
     "fireos": true,
-    "newArchitecture": false,
+    "newArchitecture": true,
     "newArchitectureNote": "Consider using Maestro instead to migrate to the New Architecture today.",
     "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/detox"
   },
