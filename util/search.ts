@@ -89,7 +89,6 @@ export function handleFilterLibraries({
   configPlugin,
   isMaintained,
   isPopular,
-  isRecommended,
   wasRecentlyUpdated,
   minPopularity,
   minMonthlyDownloads,
@@ -129,15 +128,11 @@ export function handleFilterLibraries({
       }
     }
 
-    if (skipLibs && !library.dev && !library.template) {
+    if (skipLibs && !library.dev) {
       return false;
     }
 
     if (skipTools && library.dev) {
-      return false;
-    }
-
-    if (skipTemplates && library.template) {
       return false;
     }
 
@@ -249,10 +244,6 @@ export function handleFilterLibraries({
     }
 
     if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
-      return false;
-    }
-
-    if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
       return false;
     }
 

@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 
-import { type LibraryLicenseType, type LibraryType } from '~/types';
+import { type LibraryLicenseType, type LibraryType, type TemplateType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
 import hasNativeCode from '~/util/github/hasNativeCode';
@@ -58,7 +58,10 @@ export async function fetchGithubRateLimit() {
   return {};
 }
 
-export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
+export async function fetchGithubData(
+  data: LibraryType | TemplateType,
+  retries = 2
+): Promise<LibraryType | TemplateType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;

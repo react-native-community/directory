@@ -20,7 +20,7 @@ export default function DetailsNavigation({ library }: Props) {
 
   return (
     <Navigation
-      title={`${library.template ? 'Template' : 'Package'} information`}
+      title="Package information"
       style={[tw`gap-1 pb-3 pt-9`, isSmallScreen && tw`gap-1.5 pt-5`]}
       subHeader={
         library.unmaintained ? (
@@ -59,13 +59,11 @@ export default function DetailsNavigation({ library }: Props) {
       }>
       <ContentContainer style={tw`flex-row gap-2 px-5`}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
-        {!library.template && (
-          <NavigationTab
-            title="Versions"
-            counter={library.npm?.versionsCount}
-            path={`/package/${library.npmPkg}/versions`}
-          />
-        )}
+        <NavigationTab
+          title="Versions"
+          counter={library.npm?.versionsCount}
+          path={`/package/${library.npmPkg}/versions`}
+        />
         <NavigationTab title="Score" path={`/package/${library.npmPkg}/score`} />
       </ContentContainer>
     </Navigation>

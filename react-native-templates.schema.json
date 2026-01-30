@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/react-native-community/directory/blob/main/react-native-libraries.schema.json",
+  "type": "array",
+  "title": "React Native Directory templates list",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "React Native Directory template entry",
+    "required": ["githubUrl"],
+    "additionalProperties": false,
+    "properties": {
+      "githubUrl": {
+        "$id": "#/items/properties/githubUrl",
+        "type": "string",
+        "title": "Package GitHub repository URL",
+        "default": "",
+        "pattern": "^(https?://)?(www\\.)?github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(/tree/[A-Za-z0-9_.@%\\-/]+)?/?$",
+        "examples": [
+          "https://github.com/joshswan/react-native-autolink",
+          "https://github.com/GetStream/stream-chat-react-native/tree/develop/package/expo-package"
+        ]
+      },
+      "ios": {
+        "$id": "#/items/properties/ios",
+        "type": "boolean",
+        "title": "Template supports iOS",
+        "default": false
+      },
+      "android": {
+        "$id": "#/items/properties/android",
+        "type": "boolean",
+        "title": "Template supports Android",
+        "default": false
+      },
+      "web": {
+        "$id": "#/items/properties/web",
+        "type": "boolean",
+        "title": "Template supports Web (react-native-web)",
+        "default": false
+      },
+      "windows": {
+        "$id": "#/items/properties/windows",
+        "type": "boolean",
+        "title": "Template supports Windows (react-native-windows)",
+        "default": false
+      },
+      "macos": {
+        "$id": "#/items/properties/macos",
+        "type": "boolean",
+        "title": "Template supports macOS (react-native-macos)",
+        "default": false
+      },
+      "tvos": {
+        "$id": "#/items/properties/tvos",
+        "type": "boolean",
+        "title": "Template supports tvOS (react-native-tvos)",
+        "default": false
+      },
+      "visionos": {
+        "$id": "#/items/properties/visionos",
+        "type": "boolean",
+        "title": "Template supports visionOS (react-native-visionos)",
+        "default": false
+      },
+      "fireos": {
+        "$id": "#/items/properties/fireos",
+        "type": "boolean",
+        "title": "Template is compatible with Amazon Fire OS",
+        "default": false
+      },
+      "horizon": {
+        "$id": "#/items/properties/horizon",
+        "type": "boolean",
+        "title": "Template is compatible with Meta Horizon OS",
+        "default": false
+      },
+      "vegaos": {
+        "$id": "#/items/properties/vegaos",
+        "type": ["boolean", "string"],
+        "title": "Template is compatible with Amazon Vega OS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
+        "default": false,
+        "examples": [true, "@amazon-devices/react-native-async-storage__async-storage"]
+      },
+      "expoGo": {
+        "$id": "#/items/properties/expo",
+        "type": "boolean",
+        "title": "Template is compatible with Expo Go",
+        "default": false
+      },
+      "images": {
+        "$id": "#/items/properties/images",
+        "type": "array",
+        "title": "List of image URLs demonstrating package functionality",
+        "default": [null],
+        "items": {
+          "$id": "#/items/properties/images/items",
+          "type": "string",
+          "title": "Image entry URL",
+          "default": "",
+          "examples": [
+            "https://reactnative.dev/img/homepage/phones.png",
+            "https://github.com/mattermost/react-native-paste-input/blob/master/example/gifs/iOSPasteInput.gif?raw=true"
+          ],
+          "pattern": "^(http(s?):)(\\w|/|\\.|:|-|%|@|\\+|\\*)+\\.(?:jp(e?)g|gif|png|webp|JP(E?)G|GIF|PNG|WEBP)(\\?\\S*)?$"
+        }
+      },
+      "npmPkg": {
+        "$id": "#/items/properties/npmPkg",
+        "type": "string",
+        "title": "npm package name in the registry (mostly for scoped packages)",
+        "default": "",
+        "examples": ["@expo/ex-navigation"],
+        "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
+      },
+      "templateName": {
+        "$id": "#/items/properties/templateName",
+        "type": "string",
+        "title": "Template name used for --template parameter in RN CLI",
+        "default": "",
+        "examples": ["@mindinventory/react-native-boilerplate"],
+        "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$"
+      },
+      "unmaintained": {
+        "$id": "#/items/properties/unmaintained",
+        "type": "boolean",
+        "title": "Package is unmaintained or archived",
+        "default": false
+      },
+      "dev": {
+        "$id": "#/items/properties/dev",
+        "type": "boolean",
+        "title": "Package is a Development Tool (should be installed as `devDependency` or used via `npx/bunx`)",
+        "default": false
+      },
+      "newArchitecture": {
+        "$id": "#/items/properties/newArchitecture",
+        "type": ["boolean", "string"],
+        "enum": [true, false, "new-arch-only"],
+        "title": "Template supports New Architecture. Can be a boolean, or 'new-arch-only' string, if package only supports New Architecture.",
+        "default": false,
+        "examples": [true, "new-arch-only"]
+      },
+      "newArchitectureNote": {
+        "$id": "#/items/properties/newArchitectureNote",
+        "type": "string",
+        "title": "Optional note about the New Architecture support",
+        "default": "",
+        "examples": [
+          "Refer to https://github.com/MinaSamir11/react-native-in-app-review/issues/169 for the latest status",
+          "Only iOS supported"
+        ]
+      },
+      "configPlugin": {
+        "$id": "#/items/properties/configPlugin",
+        "type": ["boolean", "string"],
+        "title": "Package includes Expo config plugin or confing plugin is available via separate package. Can be a boolean, or URL pointing to GitHub repository of config plugin package.",
+        "default": false,
+        "examples": [
+          true,
+          "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf"
+        ]
+      }
+    }
+  }
+}

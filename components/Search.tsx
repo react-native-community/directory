@@ -18,10 +18,17 @@ type Props = {
   query: Query;
   total: number;
   style?: StyleProp<ViewStyle>;
+  endpoint?: string;
   isHomePage?: boolean;
 };
 
-export default function Search({ query, total, style, isHomePage = false }: Props) {
+export default function Search({
+  query,
+  total,
+  style,
+  endpoint = '/packages',
+  isHomePage = false,
+}: Props) {
   const { search, order, direction, offset, owner, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
@@ -54,11 +61,11 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
   }, [isApple]);
 
   const typingCallback = useDebouncedCallback((text: string) => {
-    void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));
+    void replace(urlWithQuery(endpoint, { ...query, search: text, offset: null }));
   }, 200);
 
   function handleClearAllPress() {
-    void replace(urlWithQuery('/packages', { search, offset: undefined }));
+    void replace(urlWithQuery(endpoint, { search, offset: undefined }));
   }
 
   const focusHintLabel = tw`font-light text-palette-gray4`;
@@ -81,7 +88,7 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
                   if (isHomePage && event.key === 'Enter') {
                     event.preventDefault();
                     void replace(
-                      urlWithQuery('/packages', {
+                      urlWithQuery(endpoint, {
                         ...query,
                         // @ts-expect-error using native input value
                         search: inputRef.current.value,
@@ -100,7 +107,7 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
                       event.preventDefault();
                       inputRef.current.clear();
                       void replace(
-                        urlWithQuery('/packages', {
+                        urlWithQuery(endpoint, {
                           ...query,
                           search: undefined,
                           offset: undefined,
@@ -115,7 +122,9 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
               onChangeText={isHomePage ? undefined : typingCallback}
-              placeholder="Search libraries..."
+              placeholder={
+                endpoint === '/templates' ? 'Search templates...' : 'Search libraries...'
+              }
               style={tw`h-12.5 font-sans flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
               defaultValue={search}
               placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}

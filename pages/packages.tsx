@@ -18,7 +18,7 @@ type Props = {
   query: ParsedUrlQuery;
 };
 
-function Index({ data, query }: Props) {
+function PackagesPage({ data, query }: Props) {
   const router = useRouter();
   const total = data.total ?? 0;
 
@@ -35,7 +35,7 @@ function Index({ data, query }: Props) {
   );
 }
 
-Index.getInitialProps = async (ctx: NextPageContext) => {
+PackagesPage.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
 
   // Forward cookies when making server-side requests (needed for bookmarks filter)
@@ -53,4 +53,4 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   };
 };
 
-export default Index;
+export default PackagesPage;

@@ -1,6 +1,6 @@
 import { fetch } from 'bun';
 
-import { type LibraryType, type NpmRegistryData } from '~/types';
+import { type LibraryType, type NpmRegistryData, type TemplateType } from '~/types';
 
 import { REQUEST_SLEEP, sleep } from './helpers';
 
@@ -13,10 +13,14 @@ function urlForPackage(npmPkg: string) {
 }
 
 export async function fetchNpmRegistryData(
-  pkgData: LibraryType,
+  pkgData: LibraryType | TemplateType,
   attemptsCount = 0
-): Promise<LibraryType> {
+): Promise<LibraryType | TemplateType> {
   const { npmPkg } = pkgData;
+
+  if (!npmPkg) {
+    return pkgData;
+  }
 
   try {
     const url = urlForPackage(npmPkg);

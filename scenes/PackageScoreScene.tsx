@@ -29,7 +29,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
     <>
       <PageMeta
         title={library.npmPkg}
-        description={`See ${library.npmPkg} ${library.template ? 'template' : 'package'} directory score details`}
+        description={`See ${library.npmPkg} package directory score details`}
         path="package"
       />
       <DetailsNavigation library={library} />
