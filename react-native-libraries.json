@@ -19194,16 +19194,22 @@
   {
     "githubUrl": "https://github.com/Swif7ify/react-native-earl-toastify",
     "images": [
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/1.png",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/2.png",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/3.png",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/4.png",
-      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/5.png"
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/1.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/2.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/3.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/4.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/5.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/6.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/7.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/8.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/9.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-toastify/main/example/10.jpg"
     ],
     "examples": ["https://github.com/Swif7ify/react-native-earl-toastify/tree/main/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Renegades-Studio/react-native-tickle",
