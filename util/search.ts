@@ -89,7 +89,6 @@ export function handleFilterLibraries({
   configPlugin,
   isMaintained,
   isPopular,
-  isRecommended,
   wasRecentlyUpdated,
   minPopularity,
   minMonthlyDownloads,
@@ -249,10 +248,6 @@ export function handleFilterLibraries({
     }
 
     if (isPopular && !library.matchingScoreModifiers.includes('Popular')) {
-      return false;
-    }
-
-    if (isRecommended && !library.matchingScoreModifiers.includes('Recommended')) {
       return false;
     }
 
