@@ -13197,10 +13197,12 @@
     "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
     "npmPkg": "@futurejj/react-native-visibility-sensor",
     "examples": [
-      "https://github.com/JairajJangle/react-native-visibility-sensor/tree/main/example"
+      "https://github.com/JairajJangle/react-native-visibility-sensor/tree/main/example",
+      "https://snack.expo.dev/@futurejj/react-native-visibility-sensor-nested-scrollview"
     ],
     "images": [
-      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN4ZWs5ejdiYmZ5Zm5xaWw5YXZ5OGYwMmczcnFneXNiYW5hcDh6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gEbrrDtgnoq6Fs8FNq/giphy.gif"
+      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN4ZWs5ejdiYmZ5Zm5xaWw5YXZ5OGYwMmczcnFneXNiYW5hcDh6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gEbrrDtgnoq6Fs8FNq/giphy.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWJocG1idG5jODRmM20xdzd0a3Zlb25rdjIxZWRrdzhreHJpOWd2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ITFXieDSZ0lWaFcrwC/giphy.gif"
     ],
     "android": true,
     "ios": true,
