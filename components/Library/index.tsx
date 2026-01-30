@@ -33,7 +33,7 @@ export default function Library({
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
-  const libName = library.npmPkg ?? github.name;
+  const libName = library.npmPkg ?? github.fullName;
 
   const hasSecondaryMetadata =
     github.license ||
