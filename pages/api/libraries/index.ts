@@ -91,7 +91,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     configPlugin: parsedQuery.configPlugin,
     isMaintained: parsedQuery.isMaintained,
     isPopular: parsedQuery.isPopular,
-    isRecommended: parsedQuery.isRecommended,
     wasRecentlyUpdated: parsedQuery.wasRecentlyUpdated,
     minPopularity: parsedQuery.minPopularity,
     minMonthlyDownloads: parsedQuery.minMonthlyDownloads,

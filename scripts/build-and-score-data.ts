@@ -98,12 +98,10 @@ async function buildAndScoreData() {
   const fetchList: string[] = [];
 
   // Filter out template entries, prepare npm-stat API chunks
-  data = data.map(project => {
+  data.forEach(project => {
     if (!project.template) {
       fetchList.push(project.npmPkg);
-      return project;
     }
-    return project;
   });
 
   // Assemble and fetch packages data in bulk queries
@@ -439,7 +437,7 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
 async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   const total = list.length;
 
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < total; i++) {
     const entry = list[i];
 
     if (!entry || entry.template) {

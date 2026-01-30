@@ -43,7 +43,6 @@ export type Query = {
   configPlugin?: string;
   isMaintained?: string;
   isPopular?: string;
-  isRecommended?: string;
   wasRecentlyUpdated?: string;
   minPopularity?: string;
   minMonthlyDownloads?: string;
