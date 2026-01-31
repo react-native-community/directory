@@ -3,17 +3,17 @@ import { Platform, View } from 'react-native';
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
 import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
+import EntryDescription from '~/components/EntryDescription';
 import { GitHub } from '~/components/Icons';
-import LibraryDescription from '~/components/Library/LibraryDescription';
-import UpdatedAtView from '~/components/Library/UpdateAtView';
+import Thumbnail from '~/components/Thumbnail';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
 import MetaData from './MetaData';
-import Thumbnail from './Thumbnail';
 import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
+import UpdatedAtView from './UpdateAtView';
 
 type Props = {
   library: LibraryType;
@@ -110,10 +110,10 @@ export default function Library({
           )}
         </View>
         <View style={tw`mt-3`}>
-          <CompatibilityTags library={library} />
+          <CompatibilityTags entry={library} />
         </View>
         <View style={tw`mt-3`}>
-          <LibraryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
+          <EntryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
           <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>

@@ -1,4 +1,4 @@
-import { type LibraryType } from '~/types';
+import { type LibraryType, type TemplateType } from '~/types';
 
 export enum NewArchSupportStatus {
   NewArchOnly = 'new-arch-only',
@@ -7,7 +7,11 @@ export enum NewArchSupportStatus {
   Untested = 'untested',
 }
 
-export function getNewArchSupportStatus({ newArchitecture, github, expoGo }: LibraryType) {
+export function getNewArchSupportStatus({
+  newArchitecture,
+  github,
+  expoGo,
+}: LibraryType | TemplateType) {
   // Assume untested unless indicated otherwise through one of the following tests
   let flag: LibraryType['newArchitecture'] = undefined;
 

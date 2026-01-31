@@ -4,8 +4,8 @@ import { View } from 'react-native';
 import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
 import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
+import EntryDescription from '~/components/EntryDescription';
 import { GitHub } from '~/components/Icons';
-import LibraryDescription from '~/components/Library/LibraryDescription';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import Tooltip from '~/components/Tooltip';
@@ -64,8 +64,8 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
         </View>
         {rightSlot}
       </View>
-      <CompatibilityTags library={library} />
-      <LibraryDescription github={library.github} />
+      <CompatibilityTags entry={library} />
+      <EntryDescription github={library.github} />
     </>
   );
 }

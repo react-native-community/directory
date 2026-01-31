@@ -36,7 +36,7 @@ export default function MorePackagesBox({ library }: Props) {
         if (res.status === 200) {
           return res.json();
         }
-        return { libraries: [], total: 0 };
+        return { templates: [], total: 0 };
       }),
     {
       dedupingInterval: TimeRange.HOUR * 1000,

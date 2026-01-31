@@ -34,7 +34,7 @@ export default function PackageVersionsScene({
     <>
       <PageMeta
         title={library.npmPkg}
-        description={`See ${library.npmPkg} ${library.template ? 'template' : 'package'} published versions information and metadata`}
+        description={`See ${library.npmPkg} package published versions information and metadata`}
         path="package"
       />
       <DetailsNavigation library={library} />

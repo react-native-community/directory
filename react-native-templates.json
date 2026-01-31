@@ -1,0 +1,110 @@
+[
+  {
+    "githubUrl": "hhttps://github.com/akveo/react-native-ui-kitten/tree/master/src/template-js",
+    "npmPkg": "@ui-kitten/template-js",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/akveo/react-native-ui-kitten/tree/master/src/template-ts",
+    "npmPkg": "@ui-kitten/template-ts",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-community/react-native-template-typescript",
+    "templateName": "react-native-template-typescript",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gabimoncha/react-native-template",
+    "templateName": "@gabimoncha/react-native-template",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LunatiqueCoder/luna/tree/master/packages/create-luna-app",
+    "npmPkg": "create-luna-app",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/talknagish/react-native-turbo-starter",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/leotm/react-native-template-new-architecture",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mmazzarolo/react-native-universal-monorepo",
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "web": true,
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-boilerplate",
+    "npmPkg": "@mindinventory/react-native-boilerplate",
+    "templateName": "@mindinventory/react-native-boilerplate",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ory/kratos-selfservice-ui-react-native",
+    "images": ["https://www.ory.sh/docs/assets/images/1-78684ec591551f445a1064e274bf37b8.png"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/tushu4212/rntemplate",
+    "npmPkg": "@tushar4212/rntemplate",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/templates/expo-template-default",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/templates/expo-template-blank",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/templates/expo-template-blank-typescript",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/templates/expo-template-tabs",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/templates/expo-template-bare-minimum",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  }
+]

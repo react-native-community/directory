@@ -2361,16 +2361,6 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/akveo/react-native-ui-kitten/tree/master/src/components",
-    "npmPkg": "@ui-kitten/components",
-    "examples": ["https://github.com/akveo/kittenTricks"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "template": true
-  },
-  {
     "githubUrl": "https://github.com/lopespm/react-native-offscreen-toolbar",
     "images": [
       "https://lopespm.github.io/files/rn-offscreen-toolbar/simplelist_demo.gif",
@@ -4242,12 +4232,6 @@
     "android": true,
     "web": true,
     "npmPkg": "@react-native-community/geolocation"
-  },
-  {
-    "githubUrl": "https://github.com/react-native-community/react-native-template-typescript",
-    "ios": true,
-    "android": true,
-    "template": true
   },
   {
     "githubUrl": "https://github.com/react-native-audio-toolkit/react-native-audio-toolkit",
@@ -6666,13 +6650,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/gabimoncha/react-native-template",
-    "npmPkg": "@gabimoncha/react-native-template",
-    "ios": true,
-    "android": true,
-    "template": true
-  },
-  {
     "githubUrl": "https://github.com/smallcase/react-native-simple-biometrics",
     "examples": ["https://github.com/smallcase/react-native-simple-biometrics/tree/master/example"],
     "images": [
@@ -8370,13 +8347,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/LunatiqueCoder/luna/tree/master/packages/create-luna-app",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "template": true
-  },
-  {
     "githubUrl": "https://github.com/LunatiqueCoder/react-native-media-console",
     "images": [
       "https://user-images.githubusercontent.com/55203625/159137837-4e34a8be-1cbb-48ae-9d67-99ce4922e660.gif"
@@ -8738,28 +8708,6 @@
     "dev": true,
     "android": true,
     "ios": true
-  },
-  {
-    "githubUrl": "https://github.com/talknagish/react-native-turbo-starter",
-    "ios": true,
-    "android": true,
-    "template": true,
-    "dev": true
-  },
-  {
-    "githubUrl": "https://github.com/leotm/react-native-template-new-architecture",
-    "ios": true,
-    "android": true,
-    "template": true
-  },
-  {
-    "githubUrl": "https://github.com/mmazzarolo/react-native-universal-monorepo",
-    "ios": true,
-    "android": true,
-    "macos": true,
-    "web": true,
-    "windows": true,
-    "template": true
   },
   {
     "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-gifted-charts",
@@ -9168,13 +9116,6 @@
     ],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/Mindinventory/react-native-boilerplate",
-    "npmPkg": "@mindinventory/react-native-boilerplate",
-    "ios": true,
-    "android": true,
-    "template": true
   },
   {
     "githubUrl": "https://github.com/Mindinventory/react-native-speed-view",
@@ -10117,19 +10058,6 @@
     ],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/ory/kratos-selfservice-ui-react-native",
-    "examples": [
-      "https://www.ory.sh/docs/getting-started/integrate-auth/react-native",
-      "https://www.ory.sh/login-react-native-authentication-example-api/"
-    ],
-    "images": ["https://www.ory.sh/docs/assets/images/1-78684ec591551f445a1064e274bf37b8.png"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "template": true
   },
   {
     "githubUrl": "https://github.com/mrpmohiburrahman/react-native-cone-slider",
@@ -11280,13 +11208,6 @@
       "https://raw.githubusercontent.com/BartoszKlonowski/react-native-windows-hello/main/.github/Resources/RNW-Hello-FullExample.gif"
     ],
     "windows": true
-  },
-  {
-    "githubUrl": "https://github.com/tushu4212/rntemplate",
-    "npmPkg": "@tushar4212/rntemplate",
-    "ios": true,
-    "android": true,
-    "template": true
   },
   {
     "githubUrl": "https://github.com/lodev09/react-native-true-sheet",

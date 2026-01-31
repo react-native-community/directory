@@ -43,7 +43,6 @@ function generateData({
   npm,
   npmPkg,
   matchingScoreModifiers,
-  template,
 }: LibraryType): MetadataEntryType[] {
   return [
     {
@@ -82,11 +81,7 @@ function generateData({
       ? {
           id: 'dependencies',
           icon: <Dependency style={tw`text-icon`} />,
-          content: template ? (
-            <P style={linkStyle}>
-              {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
-            </P>
-          ) : (
+          content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
               style={linkStyle}>

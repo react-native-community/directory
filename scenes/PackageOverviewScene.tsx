@@ -50,7 +50,7 @@ export default function PackageOverviewScene({
     <>
       <PageMeta
         title={library.npmPkg}
-        description={`See ${library.npmPkg} ${library.template ? 'template' : 'package'} detailed information and metadata`}
+        description={`See ${library.npmPkg} package detailed information and metadata`}
         path="package"
       />
       <DetailsNavigation library={library} />
@@ -62,11 +62,7 @@ export default function PackageOverviewScene({
               registryData={registryData}
               rightSlot={<UpdatedAtView library={library} />}
             />
-            <ReadmeBoxWithLoading
-              packageName={packageName}
-              isTemplate={library.template ?? false}
-              githubUrl={library.github.urls.repo}
-            />
+            <ReadmeBoxWithLoading packageName={packageName} githubUrl={library.github.urls.repo} />
             {library.examples && library.examples.length > 0 && (
               <>
                 <H6
@@ -114,16 +110,12 @@ export default function PackageOverviewScene({
             <View style={tw`gap-1.5`}>
               <MetaData library={library} secondary skipExamples />
             </View>
-            {!library.template && (
-              <>
-                <H6 style={tw`mt-3 text-[16px] text-secondary`}>Popularity</H6>
-                <TrendingMark library={library} />
-                <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
-                <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
-                  <DownloadsChart packageName={packageName} />
-                </View>
-              </>
-            )}
+            <H6 style={tw`mt-3 text-[16px] text-secondary`}>Popularity</H6>
+            <TrendingMark library={library} />
+            <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
+            <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
+              <DownloadsChart packageName={packageName} />
+            </View>
             {library.github.topics && library.github.topics.length > 0 && (
               <>
                 <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
@@ -139,35 +131,31 @@ export default function PackageOverviewScene({
                 </View>
               </>
             )}
-            {!library.template && (
-              <>
-                <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
-                <ul
-                  style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
-                  <li>
-                    <A
-                      href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      Bundlephobia
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://pkg-size.dev/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      pkg-size.dev
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      Snyk Advisor
-                    </A>
-                  </li>
-                </ul>
-              </>
-            )}
+            <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
+            <ul
+              style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
+              <li>
+                <A
+                  href={`https://bundlephobia.com/package/${library.npmPkg}`}
+                  style={tw`text-[12px] font-light`}>
+                  Bundlephobia
+                </A>
+              </li>
+              <li>
+                <A
+                  href={`https://pkg-size.dev/${library.npmPkg}`}
+                  style={tw`text-[12px] font-light`}>
+                  pkg-size.dev
+                </A>
+              </li>
+              <li>
+                <A
+                  href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
+                  style={tw`text-[12px] font-light`}>
+                  Snyk Advisor
+                </A>
+              </li>
+            </ul>
             <CollapsibleSection title="Dependencies" data={dependencies} checkExistence />
             <CollapsibleSection title="Peer dependencies" data={peerDependencies} checkExistence />
             <CollapsibleSection title="Development dependencies" data={devDependencies} />

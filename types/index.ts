@@ -152,7 +152,6 @@ export type LibraryDataEntryType = {
   vegaos?: boolean | string;
   unmaintained?: boolean;
   dev?: boolean;
-  template?: boolean;
   newArchitecture?: boolean | 'new-arch-only';
   newArchitectureNote?: string;
   configPlugin?: boolean | string;
@@ -169,6 +168,90 @@ export type APIResponseType = {
 
 export type DataAssetType = {
   libraries: LibraryType[];
+  topics: Record<string, number>;
+};
+
+export type TemplateType = TemplateDataEntryType & {
+  github: {
+    name: string;
+    fullName: string;
+    description?: string;
+    registry?: string;
+    topics?: string[];
+    hasTypes?: boolean;
+    newArchitecture?: boolean;
+    isArchived?: boolean;
+    isPrivate?: boolean;
+    hasNativeCode: boolean;
+    hasReadme?: boolean;
+    configPlugin?: boolean;
+    moduleType?: 'expo' | 'nitro' | 'turbo';
+    urls: {
+      repo: string;
+      homepage?: string | null;
+    };
+    stats: {
+      hasIssues: boolean;
+      hasWiki: boolean;
+      hasProjects: boolean;
+      hasSponsorships: boolean;
+      hasDiscussions: boolean;
+      hasVulnerabilityAlerts: boolean;
+      hasTopics?: boolean;
+      updatedAt: Date | string;
+      createdAt: Date | string;
+      pushedAt: Date | string;
+      issues: number;
+      subscribers: number;
+      stars: number;
+      forks: number;
+      dependencies?: number;
+    };
+    license: LibraryLicenseType;
+  };
+  npm?: {
+    downloads?: number;
+    weekDownloads?: number;
+    size?: number;
+    versionsCount?: number;
+    latestRelease?: string;
+    latestReleaseDate?: string;
+    hasReadme?: boolean;
+  };
+  topicSearchString: string;
+  matchScore?: number;
+};
+
+export type TemplateDataEntryType = {
+  githubUrl: string;
+  ios?: boolean;
+  android?: boolean;
+  web?: boolean;
+  expoGo?: boolean;
+  windows?: boolean;
+  macos?: boolean;
+  fireos?: boolean;
+  horizon?: boolean;
+  tvos?: boolean;
+  visionos?: boolean;
+  vegaos?: boolean | string;
+  unmaintained?: boolean;
+  dev?: boolean;
+  newArchitecture?: boolean | 'new-arch-only';
+  newArchitectureNote?: string;
+  configPlugin?: boolean | string;
+  npmPkg?: string;
+  templateName?: string;
+  images?: string[];
+};
+
+export type APITemplatesResponseType = {
+  templates: TemplateType[];
+  total: number;
+};
+
+export type TemplatesDataAssetType = {
+  templates: TemplateType[];
   topics: Record<string, number>;
 };
 

@@ -99,9 +99,7 @@ function formatDownloads({ npm }: LibraryType) {
 async function generateLlmsFile() {
   const { libraries } = data as DataAssetType;
 
-  const entries = libraries
-    .filter(library => !library.template)
-    .map(library => formatRecord(library));
+  const entries = libraries.map(library => formatRecord(library));
   const content = [...INTRODUCTION, ...entries].join('\n\n---\n\n');
 
   await fs.writeFile(OUTPUT_PATH, `${content}\n`, 'utf8');

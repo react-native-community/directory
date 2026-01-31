@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/react-native-community/directory/blob/main/react-native-libraries.schema.json",
   "type": "array",
-  "title": "React Native Directory entries list",
+  "title": "React Native Directory packages list",
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -140,12 +140,6 @@
         "$id": "#/items/properties/dev",
         "type": "boolean",
         "title": "Package is a Development Tool (should be installed as `devDependency` or used via `npx/bunx`)",
-        "default": false
-      },
-      "template": {
-        "$id": "#/items/properties/template",
-        "type": "boolean",
-        "title": "Entry is a project template",
         "default": false
       },
       "newArchitecture": {

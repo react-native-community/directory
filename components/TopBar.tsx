@@ -32,7 +32,7 @@ export default function TopBar() {
           <ContentContainer style={tw`flex-row gap-2.5 px-4`}>
             <NavigationTab title="Explore" path="/packages" />
             <NavigationTab title="Popular" />
-            <NavigationTab title="Trending" />
+            <NavigationTab title="Templates" />
           </ContentContainer>
         </View>
         <View

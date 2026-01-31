@@ -128,15 +128,11 @@ export function handleFilterLibraries({
       }
     }
 
-    if (skipLibs && !library.dev && !library.template) {
+    if (skipLibs && !library.dev) {
       return false;
     }
 
     if (skipTools && library.dev) {
-      return false;
-    }
-
-    if (skipTemplates && library.template) {
       return false;
     }
 
