@@ -19373,7 +19373,6 @@
   },
   {
     "githubUrl": "https://github.com/RahulMandyal1/react-native-chat-typing-indicator",
-    "npmPkg": "react-native-chat-typing-indicator",
     "examples": [
       "https://github.com/RahulMandyal1/react-native-chat-typing-indicator/tree/main/example"
     ],
@@ -19382,5 +19381,65 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JarX-Concepts/react-native-platform-components",
+    "examples": [
+      "https://github.com/JarX-Concepts/react-native-platform-components/tree/main/example",
+      "https://github.com/JarX-Concepts/react-native-platform-components/tree/main/example-expo"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/ios-datepicker.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/android-datepicker.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/ios-contextmenu.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/android-contextmenu.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/ios-selectionmenu.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/android-selectionmenu.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/ios-segmentedcontrol.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/android-segmentedcontrol.gif",
+      "https://raw.githubusercontent.com/JarX-Concepts/react-native-platform-components/main/assets/ios-liquidglass.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/keiver/expo-tvos-search",
+    "images": [
+      "https://raw.githubusercontent.com/keiver/expo-tvos-search/refs/heads/main/screenshots/default.webp",
+      "https://raw.githubusercontent.com/keiver/expo-tvos-search/refs/heads/main/screenshots/demo-05.webp"
+    ],
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/TronNatthakorn/react-native-wheel-pick",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mensonones/expo-vector-search/tree/main/modules/expo-vector-search",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/codearcade-io/expo-markdown",
+    "npmPkg": "@codearcade/expo-markdown",
+    "examples": ["https://github.com/codearcade-io/expo-markdown/tree/master/demo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/alisherrahimov/react-native-nitro-map",
+    "examples": ["https://github.com/alisherrahimov/react-native-nitro-map/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/zibs/react-native-peekie/tree/main/module",
+    "npmPkg": "react-native-peekie",
+    "images": ["https://raw.githubusercontent.com/zibs/react-native-peekie/main/example.gif"],
+    "ios": true
   }
 ]
