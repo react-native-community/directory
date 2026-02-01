@@ -33,8 +33,7 @@ export default function Library({
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
-  const libName = library.npmPkg ?? github.name;
-  const bookmarkId = library.npmPkg ?? library.github.fullName;
+  const libName = library.npmPkg ?? github.fullName;
 
   const hasSecondaryMetadata =
     github.license ||
@@ -54,7 +53,7 @@ export default function Library({
         library.unmaintained && tw`opacity-85`,
       ]}>
       <BookmarkButton
-        bookmarkId={bookmarkId}
+        bookmarkId={libName}
         style={tw`absolute right-2.5 top-2.5 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
       />
       <View

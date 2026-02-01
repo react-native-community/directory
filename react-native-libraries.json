@@ -11886,7 +11886,9 @@
       "https://github.com/AppAndFlow/react-native-google-autocomplete/tree/main/example"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/mattermost/react-native-paste-input",
@@ -13197,10 +13199,12 @@
     "githubUrl": "https://github.com/JairajJangle/react-native-visibility-sensor",
     "npmPkg": "@futurejj/react-native-visibility-sensor",
     "examples": [
-      "https://github.com/JairajJangle/react-native-visibility-sensor/tree/main/example"
+      "https://github.com/JairajJangle/react-native-visibility-sensor/tree/main/example",
+      "https://snack.expo.dev/@futurejj/react-native-visibility-sensor-nested-scrollview"
     ],
     "images": [
-      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN4ZWs5ejdiYmZ5Zm5xaWw5YXZ5OGYwMmczcnFneXNiYW5hcDh6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gEbrrDtgnoq6Fs8FNq/giphy.gif"
+      "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXN4ZWs5ejdiYmZ5Zm5xaWw5YXZ5OGYwMmczcnFneXNiYW5hcDh6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gEbrrDtgnoq6Fs8FNq/giphy.gif",
+      "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWJocG1idG5jODRmM20xdzd0a3Zlb25rdjIxZWRrdzhreHJpOWd2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ITFXieDSZ0lWaFcrwC/giphy.gif"
     ],
     "android": true,
     "ios": true,
@@ -19366,5 +19370,17 @@
     "examples": ["https://github.com/luciqai/luciq-reactnative-sdk/tree/master/examples/default"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RahulMandyal1/react-native-chat-typing-indicator",
+    "npmPkg": "react-native-chat-typing-indicator",
+    "examples": [
+      "https://github.com/RahulMandyal1/react-native-chat-typing-indicator/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
