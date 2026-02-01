@@ -561,6 +561,10 @@ select {
       padding-block: 4px;
       margin-inline-start: 0;
     }
+
+    + div[data-table-wrapper] {
+      margin-top: 12px;
+    }
   }
 
   li {
@@ -589,6 +593,10 @@ select {
     overflow-x: auto;
     border-radius: 9px;
     border: 1px solid var(--table-border);
+
+    + div[data-table-wrapper] {
+      margin-top: 12px;
+    }
   }
 
   table {
@@ -650,6 +658,10 @@ select {
   th {
     border: 1px solid var(--table-border);
     padding: 5px 8px;
+
+    &:empty {
+      display: none;
+    }
 
     &:first-child {
       border-left: 0;
