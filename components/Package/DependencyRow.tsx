@@ -15,7 +15,7 @@ type Props = {
 export default function DependencyRow({ name, version, packageExists }: Props) {
   const { isSmallScreen } = useLayout();
   const versionLabel = getVersionLabel(version);
-  const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 26;
+  const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 18;
 
   return (
     <View
@@ -60,8 +60,8 @@ export default function DependencyRow({ name, version, packageExists }: Props) {
       </span>
       <Label
         style={[
-          tw`font-mono text-xs leading-[14px] text-secondary`,
-          hasLongVersion && tw`ml-auto`,
+          tw`font-mono flex-shrink-0 text-right text-xs leading-[14px] text-secondary`,
+          hasLongVersion && tw`ml-auto flex-shrink`,
         ]}>
         {getVersionLabel(version)}
       </Label>
