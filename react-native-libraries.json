@@ -19443,10 +19443,17 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/SudoPlz/sp-react-native-in-app-updates",
-    "npmPkg": "sp-react-native-in-app-updates",
-    "images": ["https://user-images.githubusercontent.com/8539174/88419625-6db0ef00-cddd-11ea-814e-389db852368b.gif"],
+    "githubUrl": "https://github.com/pioner92/react-native-ulid-jsi",
+    "examples": ["https://github.com/pioner92/react-native-ulid-jsi/tree/main/example"],
+    "ios": true,
     "android": true,
-    "ios": false
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/SudoPlz/sp-react-native-in-app-updates",
+    "images": [
+      "https://user-images.githubusercontent.com/8539174/88419625-6db0ef00-cddd-11ea-814e-389db852368b.gif"
+    ],
+    "android": true
   }
 ]
