@@ -52,7 +52,7 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
       'Libraries that does not have New Architecture support defined or confirmed by the code analysis meet this criterion.',
     value: -5,
     condition: data => {
-      if (data.dev || data.template || data.expoGo) {
+      if (data.dev || data.expoGo) {
         return false;
       }
 
@@ -84,7 +84,7 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     description: 'Libraries that does not support New Architecture meet this criterion.',
     value: -15,
     condition: data => {
-      if (data.dev || data.template) {
+      if (data.dev) {
         return false;
       }
 

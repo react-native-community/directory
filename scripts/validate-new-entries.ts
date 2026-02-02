@@ -56,7 +56,7 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
           return false;
         }
 
-        const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
+        const entryWithGitHubData = (await fetchGithubData(entryWithNpmData)) as LibraryType;
 
         if (!entryWithGitHubData.github) {
           console.error(

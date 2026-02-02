@@ -68,7 +68,7 @@ async function buildAndScoreData() {
 
   // Detect mismatched package and package.json content
   data.forEach(project => {
-    if (hasMismatchedPackageData(project) && !project.template) {
+    if (hasMismatchedPackageData(project)) {
       mismatchedRepos.push(project);
     }
   });
@@ -97,11 +97,8 @@ async function buildAndScoreData() {
 
   const fetchList: string[] = [];
 
-  // Filter out template entries, prepare npm-stat API chunks
   data.forEach(project => {
-    if (!project.template) {
-      fetchList.push(project.npmPkg);
-    }
+    fetchList.push(project.npmPkg);
   });
 
   // Assemble and fetch packages data in bulk queries
@@ -309,7 +306,9 @@ export async function fetchGithubDataThrottled({
       await sleep(staggerMs);
     }
 
-    const partialResult = await Promise.all(chunk.map(data => fetchGithubData(data)));
+    const partialResult = await Promise.all(
+      chunk.map(data => fetchGithubData(data) as Promise<LibraryType>)
+    );
     results = [...results, ...partialResult];
 
     if (partialResult.length !== chunk.length) {
@@ -440,14 +439,14 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   for (let i = 0; i < total; i++) {
     const entry = list[i];
 
-    if (!entry || entry.template) {
+    if (!entry) {
       continue;
     }
 
     await sleep(SLEEP_TIME / 10);
     const shouldLog = i % CHUNK_SIZE === 0 || i + 1 === total;
 
-    const data = await fetchNpmRegistryData(entry);
+    const data = (await fetchNpmRegistryData(entry)) as LibraryType;
     shouldLog &&
       console.log(
         `${CHUNK_SIZE > total && i !== 0 ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
