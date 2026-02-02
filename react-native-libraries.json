@@ -19455,5 +19455,33 @@
       "https://user-images.githubusercontent.com/8539174/88419625-6db0ef00-cddd-11ea-814e-389db852368b.gif"
     ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/luoxuhai/react-native-avif",
+    "examples": ["https://github.com/luoxuhai/react-native-avif/tree/main/example"],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/johnp2002/react-native-android-liquid-glass-button",
+    "images": [
+      "https://raw.githubusercontent.com/johnp2002/react-native-android-liquid-glass-button/main/demo.gif"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/johnp2002/react-native-android-liquid-glass-range-slider",
+    "images": [
+      "https://raw.githubusercontent.com/johnp2002/react-native-android-liquid-glass-range-slider/main/demo.gif"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/getlimelight/limelight-sdk",
+    "npmPkg": "@getlimelight/sdk",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "dev": true
   }
 ]
