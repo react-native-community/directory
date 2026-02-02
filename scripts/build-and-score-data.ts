@@ -8,12 +8,7 @@ import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import {
-  type APIResponseType,
-  type DataAssetType,
-  type LibraryDataEntryType,
-  type LibraryType,
-} from '~/types';
+import { type DataAssetType, type LibraryDataEntryType, type LibraryType } from '~/types';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { getNewArchSupportStatus } from '~/util/newArchStatus';
 import { isEmptyOrNull } from '~/util/strings';
@@ -52,7 +47,7 @@ const missingOnly = process.argv.includes('--missing-only');
 async function buildAndScoreData() {
   console.log('🔄️️ Fetching latest data blob from the store');
 
-  const { latestData }: { latestData: APIResponseType } = await fetchLatestData();
+  const { latestData }: { latestData: DataAssetType } = await fetchLatestData();
 
   console.log('🗂️️ Loading data from GitHub');
 
@@ -153,7 +148,10 @@ async function buildAndScoreData() {
   });
 
   console.log('\n🏷️ Processing topics');
-  const topicCounts: Record<string, number> = {};
+
+  const { libraries, topics } = latestData;
+  const topicCounts: Record<string, number> = topics ?? {};
+
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
 
@@ -191,26 +189,37 @@ async function buildAndScoreData() {
 
   console.log('📄️ Preparing data file');
 
-  const { libraries, ...rest } = latestData;
-
   let fileContent;
 
-  if (wantedPackageName) {
-    const content = libraries.some(lib => lib.npmPkg === wantedPackageName)
+  if (missingOnly) {
+    const content = {
+      libraries: [...libraries, ...data],
+      topics: sortTopics(topicCounts),
+    };
+
+    fileContent = JSON.stringify(content, null, 2);
+    createCheckEndpointData(content.libraries);
+  } else if (wantedPackageName) {
+    const hasEntry = libraries.some(lib => lib.npmPkg === wantedPackageName);
+    const newDataEntry = data.find(entry => entry.npmPkg === wantedPackageName);
+
+    const content = hasEntry
       ? {
           libraries: libraries.map(library => {
-            if (library.npmPkg === wantedPackageName) {
-              return data.find(entry => entry.npmPkg === wantedPackageName);
+            if (newDataEntry && library.npmPkg === wantedPackageName) {
+              return newDataEntry;
             }
             return library;
           }),
-          ...rest,
+          topics,
         }
       : {
-          libraries: [...libraries, data.find(entry => entry.npmPkg === wantedPackageName)],
-          ...rest,
+          libraries: newDataEntry ? [...libraries, newDataEntry] : libraries,
+          topics,
         };
+
     fileContent = JSON.stringify(content, null, 2);
+    createCheckEndpointData(content.libraries);
   } else {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
@@ -249,19 +258,10 @@ async function buildAndScoreData() {
       .filter(({ npmPkg }) => existingPackages.includes(npmPkg))
       .filter((entry: LibraryType) => validEntries.includes(entry.githubUrl));
 
-    const sortedTopicCounts = Object.fromEntries(
-      Object.entries(topicCounts).sort(([kA, vA], [kB, vB]) => {
-        if (vA !== vB) {
-          return vB - vA;
-        }
-        return kA.localeCompare(kB);
-      })
-    );
-
     fileContent = JSON.stringify(
       {
         libraries: finalData,
-        topics: sortedTopicCounts,
+        topics: sortTopics(topicCounts),
       },
       null,
       2
@@ -289,6 +289,17 @@ export function createCheckEndpointData(libraries: LibraryType[]) {
   );
 
   fs.writeFileSync(CHECK_DATA_PATH, JSON.stringify(checkData, null, 2));
+}
+
+function sortTopics(topicCounts: Record<string, number>) {
+  return Object.fromEntries(
+    Object.entries(topicCounts).sort(([kA, vA], [kB, vB]) => {
+      if (vA !== vB) {
+        return vB - vA;
+      }
+      return kA.localeCompare(kB);
+    })
+  );
 }
 
 export async function fetchGithubDataThrottled({

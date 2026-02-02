@@ -38,20 +38,21 @@ const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
-export function calculatePopularityScore(data: LibraryType) {
-  const { npm, github, unmaintained } = data;
+console.log('Min score:', MIN_SCORE);
+console.log('Max score:', MAX_SCORE);
 
-  if (!npm?.downloads || !npm?.weekDownloads) {
+export function calculatePopularityScore(data: LibraryType) {
+  if (!data?.npm || !data.npm?.downloads || !data.npm?.weekDownloads) {
     return {
       ...data,
       popularity: -1,
     };
   }
 
+  const { github, unmaintained } = data;
   const { createdAt, stars } = github.stats;
-  const { downloads, weekDownloads } = npm;
 
-  const popularityGain = weekDownloads / Math.floor(downloads / 4.25) / 5;
+  const popularityGain = data.npm.weekDownloads / Math.floor(data.npm.downloads / 4.25) / 5;
 
   if (!Number.isFinite(popularityGain)) {
     return {
@@ -60,9 +61,10 @@ export function calculatePopularityScore(data: LibraryType) {
     };
   }
 
-  const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 0.25 : 0) : 0;
+  const downloadBonus =
+    popularityGain > 0.25 ? (data.npm.downloads > MANY_MONTHLY_DOWNLOADS ? 0.25 : 0) : 0;
 
-  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.75 : 0;
+  const downloadsPenalty = data.npm.downloads < MIN_MONTHLY_DOWNLOADS ? 0.75 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.25 : 0;
   const unmaintainedPenalty = unmaintained ? 0.75 : 0;
   const freshPackagePenalty = DATE_NOW - new Date(createdAt).getTime() < WEEK_IN_MS ? 0.5 : 0;
