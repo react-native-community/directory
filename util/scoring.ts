@@ -12,19 +12,19 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
   {
     name: 'Very popular',
     description: 'Libraries with a Combined Popularity score of over 100,000 meet this criterion.',
-    value: 35,
+    value: 40,
     condition: data => getCombinedPopularity(data) > 100_000,
   },
   {
     name: 'Popular',
     description: 'Libraries with a Combined Popularity score of over 10,000 meet this criterion',
-    value: 25,
+    value: 20,
     condition: data => getCombinedPopularity(data) > 10_000,
   },
   {
     name: 'Known',
     description: 'Libraries with a Combined Popularity score of over 2,500 meet this criterion.',
-    value: 15,
+    value: 10,
     condition: data => getCombinedPopularity(data) > 2500,
   },
   {
@@ -45,6 +45,13 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
       'Libraries that have a description defined in package.json file meet this criterion.',
     value: 5,
     condition: data => !!data.github.description && data.github.description.trim().length > 0,
+  },
+  {
+    name: 'Has vulnerability alerts enabled',
+    description:
+      'Libraries with enabled vulnerability alerts in their GitHub repository meet this criterion.',
+    value: 5,
+    condition: data => data.github.stats.hasVulnerabilityAlerts,
   },
   {
     name: 'New Architecture support unknown',
