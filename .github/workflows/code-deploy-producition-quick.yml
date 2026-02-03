@@ -21,8 +21,7 @@ jobs:
           predicate-quantifier: 'every'
           filters: |
             only_data_changed:
-              - 'react-native-libraries.json'
-              - '!**'
+              - react-native-libraries.json
       - name: Use Bun
         uses: oven-sh/setup-bun@v2
       - name: Deploy
