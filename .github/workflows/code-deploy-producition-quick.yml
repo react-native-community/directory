@@ -1,0 +1,47 @@
+name: '[CODE] Deploy production website (new data only)'
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - react-native-libraries.json
+
+jobs:
+  detect_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      data_changed: ${{ steps.filter.outputs.data_changed }}
+      other_changed: ${{ steps.filter.outputs.other_changed }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: filter
+        name: Detect changed paths
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            data_changed:
+              - 'react-native-libraries.json'
+            other_changed:
+              - '**'
+              - '!react-native-libraries.json'
+
+  build:
+    needs: detect_changes
+    if: ${{ needs.detect_changes.outputs.data_changed == 'true' && needs.detect_changes.outputs.other_changed != 'true' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://reactnative.directory
+    steps:
+      - uses: actions/checkout@v6
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Deploy
+        shell: bash
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config /vercel-quick.json
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787
+          VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
+          VERCEL_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'

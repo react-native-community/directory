@@ -7688,5 +7688,11 @@
   },
   "@getlimelight/sdk": {
     "newArchitecture": "untested"
+  },
+  "react-native-litert-lm": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@thatkid02/react-native-pdf-viewer": {
+    "newArchitecture": "supported"
   }
 }
