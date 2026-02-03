@@ -19500,5 +19500,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/loijwdev/react-native-live-detect-edges",
+    "examples": ["https://github.com/loijwdev/react-native-live-detect-edges/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
