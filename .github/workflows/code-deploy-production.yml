@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - .vscode
       - '**.md'
+      - '**.yml'
       - react-native-libraries.json
       - react-native-libraries.schema.json
   schedule:
