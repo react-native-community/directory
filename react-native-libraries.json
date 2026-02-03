@@ -19485,5 +19485,12 @@
     "ios": true,
     "web": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-litert-lm",
+    "npmPkg": "react-native-litert-lm",
+    "android": true,
+    "ios": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
