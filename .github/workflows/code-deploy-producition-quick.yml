@@ -27,7 +27,7 @@ jobs:
       - name: Deploy
         if: ${{ steps.filter.outputs.only_data_changed == 'true' }}
         shell: bash
-        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config /vercel-quick.json
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config ./vercel-quick.json
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
