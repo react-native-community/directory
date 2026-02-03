@@ -19492,5 +19492,13 @@
     "android": true,
     "ios": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/thatkid02/react-native-pdf-viewer",
+    "npmPkg": "@thatkid02/react-native-pdf-viewer",
+    "examples": ["https://github.com/thatkid02/react-native-pdf-viewer/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
