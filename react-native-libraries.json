@@ -16038,8 +16038,9 @@
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-rn-in-app-update",
-    "ios": true,
-    "android": true
+    "newArchitecture": true,
+    "android": true,
+    "ios": false
   },
   {
     "githubUrl": "https://github.com/nandorojo/galeria",
