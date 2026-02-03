@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Run once a week on Thursday at midnight - https://crontab.guru/#0_0_*_*_2
-    - cron: '0 0 * * 2'
+    # Run three time a week on Tuesday, Thursday, and Saturday at midnight - https://crontab.guru/#0 0 * * 2,4,6
+    - cron: '0 0 * * 2,4,6'
 
 jobs:
   build:

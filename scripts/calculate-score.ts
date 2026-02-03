@@ -38,9 +38,6 @@ const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
-console.log('Min score:', MIN_SCORE);
-console.log('Max score:', MAX_SCORE);
-
 export function calculatePopularityScore(data: LibraryType) {
   if (!data?.npm || !data.npm?.downloads || !data.npm?.weekDownloads) {
     return {

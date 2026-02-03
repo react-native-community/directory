@@ -4,6 +4,7 @@
   "scripts": {
     "start": "next dev --webpack",
     "build": "bun data:update && bun llms:generate && next build --webpack",
+    "build:quick": "bun data:update-missing --missing-only && bun llms:generate && next build --webpack",
     "preview": "next build --webpack && next start",
     "lint": "oxlint --type-aware && oxfmt --check",
     "lint:fix": "oxlint --type-aware --fix && oxfmt",

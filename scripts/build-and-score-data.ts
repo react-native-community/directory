@@ -211,11 +211,11 @@ async function buildAndScoreData() {
             }
             return library;
           }),
-          topics,
+          topics: sortTopics(topicCounts),
         }
       : {
           libraries: newDataEntry ? [...libraries, newDataEntry] : libraries,
-          topics,
+          topics: sortTopics(topicCounts),
         };
 
     fileContent = JSON.stringify(content, null, 2);
