@@ -19506,5 +19506,18 @@
     "examples": ["https://github.com/loijwdev/react-native-live-detect-edges/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/chvvkrishnakumar/react-native-metrify",
+    "examples": ["https://github.com/chvvkrishnakumar/react-native-metrify/tree/main/examples"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/mohd-Bilal-exe/motion-on-native",
+    "ios": true,
+    "android": true
   }
 ]
