@@ -19519,5 +19519,19 @@
     "githubUrl": "https://github.com/mohd-Bilal-exe/motion-on-native",
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/arunabhverma/expo-paste-input",
+  "npmPkg": "expo-paste-input",
+  "examples": [
+    "https://github.com/arunabhverma/expo-paste-input/tree/main/example"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/arunabhverma/expo-paste-input/main/.github/ios.gif",
+    "https://raw.githubusercontent.com/arunabhverma/expo-paste-input/main/.github/android.gif"
+  ],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
+}
 ]
