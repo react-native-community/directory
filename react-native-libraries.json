@@ -19546,16 +19546,12 @@
     "newArchitecture": true
   },
   {
-  "githubUrl": "https://github.com/vishaal2002/rn-rich-text-editor",
-  "npmPkg": "rn-rich-text-editor",
-  "examples": [
-    "https://github.com/vishaal2002/rn-rich-text-editor"
-  ],
-  "images": [
-    "https://raw.githubusercontent.com/vishaal2002/rn-rich-text-editor/main/Demo-ezgif.com-optimize.gif"
-  ],
-  "ios": true,
-  "android": true,
-  "newArchitecture": true
-}
+    "githubUrl": "https://github.com/vishaal2002/rn-rich-text-editor",
+    "images": [
+      "https://raw.githubusercontent.com/vishaal2002/rn-rich-text-editor/main/Demo-ezgif.com-optimize.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
