@@ -19531,5 +19531,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/RahulMandyal1/react-native-dashed-view",
+    "npmPkg": "react-native-dashed-view",
+    "examples": ["https://github.com/RahulMandyal1/react-native-dashed-view/tree/main/example"],
+    "images": [
+      "https://github.com/RahulMandyal1/react-native-dashed-view/raw/main/assets/cover.png"
+    ],
+    "expoGo": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
