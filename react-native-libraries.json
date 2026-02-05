@@ -19553,5 +19553,25 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/testshallpass/react-native-simple-stepper",
+    "npmPkg": "react-native-simple-stepper",
+    "examples": ["https://github.com/testshallpass/react-native-simple-stepper/tree/main/example"],
+    "images": [
+      "https://github.com/testshallpass/react-native-simple-stepper/blob/main/screenshots/stepper.png"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/testshallpass/react-native-thumbnail-selector",
+    "npmPkg": "react-native-thumbnail-selector",
+    "examples": ["https://github.com/testshallpass/react-native-thumbnail-selector/tree/main/example"],
+    "images": [
+      "https://github.com/testshallpass/react-native-thumbnail-selector/blob/main/assets/demo.gif"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
