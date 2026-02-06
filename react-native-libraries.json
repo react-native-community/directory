@@ -16039,8 +16039,7 @@
   {
     "githubUrl": "https://github.com/logicwind/react-native-rn-in-app-update",
     "newArchitecture": true,
-    "android": true,
-    "ios": false
+    "android": true
   },
   {
     "githubUrl": "https://github.com/nandorojo/galeria",
@@ -19488,7 +19487,6 @@
   },
   {
     "githubUrl": "https://github.com/hung-yueh/react-native-litert-lm",
-    "npmPkg": "react-native-litert-lm",
     "android": true,
     "ios": true,
     "newArchitecture": "new-arch-only"
