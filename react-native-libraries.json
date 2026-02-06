@@ -19522,7 +19522,6 @@
   },
   {
     "githubUrl": "https://github.com/arunabhverma/expo-paste-input",
-    "npmPkg": "expo-paste-input",
     "examples": ["https://github.com/arunabhverma/expo-paste-input/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/arunabhverma/expo-paste-input/main/.github/ios.gif",
@@ -19534,7 +19533,6 @@
   },
   {
     "githubUrl": "https://github.com/RahulMandyal1/react-native-dashed-view",
-    "npmPkg": "react-native-dashed-view",
     "examples": ["https://github.com/RahulMandyal1/react-native-dashed-view/tree/main/example"],
     "images": [
       "https://github.com/RahulMandyal1/react-native-dashed-view/raw/main/assets/cover.png"
@@ -19553,5 +19551,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/testshallpass/react-native-simple-stepper",
+    "examples": ["https://github.com/testshallpass/react-native-simple-stepper/tree/main/example"],
+    "images": [
+      "https://github.com/testshallpass/react-native-simple-stepper/blob/main/screenshots/stepper.png"
+    ],
+    "android": true,
+    "ios": true
   }
 ]
