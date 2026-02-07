@@ -1,12 +1,14 @@
 import { LI, UL } from '@expo/html-elements';
 import { startCase } from 'es-toolkit';
 import { type NextPageContext } from 'next';
+import * as emoji from 'node-emoji';
 import { useMemo } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { A, Caption, H6, Label, useLayout } from '~/common/styleguide';
-import { Download, Star } from '~/components/Icons';
+import { Download, Star, Warning } from '~/components/Icons';
+import Tooltip from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
@@ -60,7 +62,7 @@ export default function MorePackagesBox({ library }: Props) {
           <EntityCounter count={data.total > LIMIT ? data.total : data.total - 1} />
         ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
-          <A href={`/?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
+          <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
             <Caption style={tw`font-light`}>See all packages</Caption>
           </A>
         )}
@@ -73,7 +75,7 @@ export default function MorePackagesBox({ library }: Props) {
             {data.libraries
               .filter(({ npmPkg }) => npmPkg !== library.npmPkg)
               .slice(0, LIMIT - 1)
-              .map(({ npmPkg, npm, github }) => (
+              .map(({ npmPkg, npm, github, unmaintained }) => (
                 <LI key={npmPkg}>
                   <A
                     href={`/package/${npmPkg}`}
@@ -84,13 +86,33 @@ export default function MorePackagesBox({ library }: Props) {
                     hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
                     <View
                       style={[
-                        tw`flex w-full max-w-full flex-row items-center gap-2.5`,
+                        tw`flex w-full max-w-full flex-row items-center gap-2`,
                         isSmallScreen && tw`flex-col items-start gap-1`,
                       ]}>
-                      <Caption style={tw`flex-shrink-0 text-sm`}>{npmPkg}</Caption>
-                      <Label numberOfLines={1} style={tw`font-light text-secondary`}>
-                        {github.description}
-                      </Label>
+                      <Caption style={tw`flex flex-shrink-0 items-center gap-1.5 text-sm`}>
+                        {unmaintained && (
+                          <Tooltip
+                            trigger={
+                              <View>
+                                <Warning style={tw`text-warning-dark dark:text-warning`} />
+                              </View>
+                            }>
+                            Unmaintained
+                          </Tooltip>
+                        )}
+                        {npmPkg}
+                      </Caption>
+                      {github.description ? (
+                        <Label numberOfLines={1} style={tw`font-light text-secondary`}>
+                          {emoji.emojify(github.description)}
+                        </Label>
+                      ) : (
+                        <Label
+                          numberOfLines={1}
+                          style={tw`font-light text-tertiary dark:text-palette-gray5`}>
+                          The package does not have a description defined.
+                        </Label>
+                      )}
                       <View
                         style={[
                           tw`ml-auto flex-row gap-4 text-sm font-light leading-[14px] text-icon`,
@@ -111,7 +133,7 @@ export default function MorePackagesBox({ library }: Props) {
               ))}
           </UL>
           {isSmallScreen && data.total > LIMIT && (
-            <A href={`/?owner=${encodeURI(owner)}`} style={tw`text-center`}>
+            <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`text-center`}>
               <Caption style={tw`font-light`}>See all packages</Caption>
             </A>
           )}
