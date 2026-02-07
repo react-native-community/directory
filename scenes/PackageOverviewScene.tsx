@@ -132,7 +132,10 @@ export default function PackageOverviewScene({
                 </H6>
                 <View style={tw`flex-row flex-wrap items-start gap-x-2 gap-y-0.5`}>
                   {library.github.topics.map(topic => (
-                    <A key={topic} href={`/?search=${topic}`} style={tw`text-[12px] font-light`}>
+                    <A
+                      key={topic}
+                      href={`/packages?search=${topic}`}
+                      style={tw`text-[12px] font-light`}>
                       {topic}
                     </A>
                   ))}
