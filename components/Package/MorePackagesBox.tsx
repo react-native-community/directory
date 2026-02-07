@@ -89,12 +89,12 @@ export default function MorePackagesBox({ library }: Props) {
                         tw`flex w-full max-w-full flex-row items-center gap-2`,
                         isSmallScreen && tw`flex-col items-start gap-1`,
                       ]}>
-                      <Caption style={tw`flex flex-shrink-0 items-center gap-2 text-sm`}>
+                      <Caption style={tw`flex flex-shrink-0 items-center gap-1.5 text-sm`}>
                         {unmaintained && (
                           <Tooltip
                             trigger={
                               <View>
-                                <Warning style={tw`text-warning`} />
+                                <Warning style={tw`text-warning-dark dark:text-warning`} />
                               </View>
                             }>
                             Unmaintained
