@@ -19558,5 +19558,10 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/ssshojaei/expo-cafebazaar-auth",
+    "android": true,
+    "configPlugin": true
   }
 ]
