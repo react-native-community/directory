@@ -16,6 +16,10 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install
+      - name: List lock changes
+        uses: Simek/bun-lock-changes@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: TSC
         run: bun tsc
       - name: Lint
