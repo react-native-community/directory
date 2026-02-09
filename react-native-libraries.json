@@ -19558,5 +19558,15 @@
     ],
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/faluciano/react-native-couch-kit",
+    "npmPkg": "@couch-kit/host",
+    "examples": [
+      "https://github.com/faluciano/buzz-tv-party-game",
+      "https://github.com/faluciano/domino-party-game"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
