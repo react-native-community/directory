@@ -19560,6 +19560,21 @@
     "ios": true
   },
   {
+    "githubUrl": "https://github.com/ssshojaei/expo-cafebazaar-auth",
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/lodev09/react-native-exify",
+    "npmPkg": "@lodev09/react-native-exify",
+    "images": ["https://raw.githubusercontent.com/lodev09/react-native-exify/main/preview.gif"],
+    "examples": ["https://github.com/lodev09/react-native-exify/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Use v1.0 or higher"
+  },
+  {
     "githubUrl": "https://github.com/faluciano/react-native-couch-kit",
     "npmPkg": "@couch-kit/host",
     "examples": [
