@@ -9,6 +9,7 @@ import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import Search from '~/components/Search';
 import { type APIResponseType } from '~/types';
+import { NEXT_1H_CACHE_HEADER } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
@@ -29,7 +30,7 @@ function Index({ data, query }: Props) {
       <ContentContainer style={tw`px-4 py-3`}>
         <Pagination query={query} total={total} />
         <Libraries libraries={data && data.libraries} />
-        <Pagination query={query} total={total} />
+        <Pagination query={query} total={total} noTags />
       </ContentContainer>
     </>
   );
@@ -39,16 +40,13 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
 
   // Forward cookies when making server-side requests (needed for bookmarks filter)
-  const headers: HeadersInit = {};
-  if (ctx.req?.headers.cookie) {
-    headers.cookie = ctx.req.headers.cookie;
-  }
-
-  const response = await fetch(url, { headers });
-  const result: APIResponseType = await response.json();
+  const response = await fetch(
+    url,
+    ctx.req?.headers.cookie ? { headers: { cookie: ctx.req.headers.cookie } } : NEXT_1H_CACHE_HEADER
+  );
 
   return {
-    data: result,
+    data: await response.json(),
     query: ctx.query,
   };
 };

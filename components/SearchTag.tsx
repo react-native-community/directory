@@ -14,7 +14,7 @@ type Props = {
 export default function SearchTag({ title, value }: Props) {
   return (
     <View
-      style={tw`flex-row items-center rounded border border-default bg-palette-gray1 pr-1.5 text-[12px] no-underline dark:bg-dark`}>
+      style={tw`h-full flex-row items-center rounded border border-default bg-palette-gray1 pr-1.5 text-[12px] no-underline dark:bg-dark`}>
       <View
         style={tw`h-full select-none justify-center border-r border-default bg-palette-gray2 pl-2.5 pr-2 text-secondary dark:bg-powder`}>
         <span>{title}</span>

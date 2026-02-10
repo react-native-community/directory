@@ -37,6 +37,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
               query={pageQuery}
               filterParam={platform}
               basePath={basePath}
+              allowFalse
             />
           ))}
         </FiltersSection>
@@ -79,6 +80,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
               query={pageQuery}
               filterParam={compatibility}
               basePath={basePath}
+              allowFalse
             />
           ))}
         </FiltersSection>
