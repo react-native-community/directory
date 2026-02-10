@@ -1,3 +1,4 @@
+import { type QueryOrder } from '~/types';
 import { TimeRange } from '~/util/datetime';
 
 export const NUM_PER_PAGE = 30;
@@ -30,6 +31,15 @@ export const VALID_ENTRY_KEYS = new Set([
   'examples',
   'images',
 ]);
+
+export const POPULAR_QUERY_BASE = {
+  minPopularity: '10',
+  wasRecentlyUpdated: 'true',
+  isMaintained: 'true',
+  order: 'popularity' as QueryOrder,
+  skipTools: 'true',
+  skipTemplates: 'true',
+};
 
 export const NEXT_10M_CACHE_HEADER = {
   next: { revalidate: TimeRange.MINUTE * 10 },

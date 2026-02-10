@@ -21,7 +21,18 @@ export type TrendingPageProps = {
 };
 
 export type PopularPageProps = {
-  data: LibraryType[];
+  core: APIResponseType;
+  android: APIResponseType;
+  ios: APIResponseType;
+  web: APIResponseType;
+  macos: APIResponseType;
+  tvos: APIResponseType;
+  visionos: APIResponseType;
+  windows: APIResponseType;
+  expoGo: APIResponseType;
+  fireos: APIResponseType;
+  horizon: APIResponseType;
+  vegaos: APIResponseType;
 };
 
 export type PackageOverviewPageProps = {

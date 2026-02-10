@@ -1,3 +1,4 @@
+import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
 import { type LibraryType, type Query, type QueryFilters } from '~/types';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
@@ -7,6 +8,11 @@ import { isEmptyOrNull } from './strings';
 const NPM_NAME_CLEANUP_REGEX = /[-/]/g;
 const GITHUB_URL_CLEANUP_REGEX =
   /^https?:\/\/(?:www\.)?github\.com\/([^/]+\/[^/]+)(?:$|\/|\.git).*$/;
+
+const SUPPORT_PARAMS = [
+  ...FILTER_PLATFORMS.map(filter => filter.param),
+  ...FILTER_COMPATIBILITY.map(filter => filter.param),
+];
 
 function calculateMatchScore(
   { github, npmPkg, topicSearchString, unmaintained, githubUrl, vegaos }: LibraryType,
@@ -140,48 +146,13 @@ export function handleFilterLibraries({
       return false;
     }
 
-    if (support.ios && !library.ios) {
-      return false;
-    }
-
-    if (support.android && !library.android) {
-      return false;
-    }
-
-    if (support.web && !library.web) {
-      return false;
-    }
-
-    if (support.windows && !library.windows) {
-      return false;
-    }
-
-    if (support.macos && !library.macos) {
-      return false;
-    }
-
-    if (support.tvos && !library.tvos) {
-      return false;
-    }
-
-    if (support.visionos && !library.visionos) {
-      return false;
-    }
-
-    if (support.vegaos && !library.vegaos) {
-      return false;
-    }
-
-    if (support.fireos && !library.fireos) {
-      return false;
-    }
-
-    if (support.horizon && !library.horizon) {
-      return false;
-    }
-
-    if (support.expoGo && !library.expoGo) {
-      return false;
+    for (const param of SUPPORT_PARAMS) {
+      if (support[param] === 'true' && !library[param as keyof LibraryType]) {
+        return false;
+      }
+      if (support[param] === 'false' && library[param as keyof LibraryType]) {
+        return false;
+      }
     }
 
     if (hasExample && (!library.examples || !library.examples.length)) {

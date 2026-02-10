@@ -6,6 +6,8 @@ import { A, H3, P } from '~/common/styleguide';
 import { type IconProps } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
 import { type LibraryType, type Query } from '~/types';
+import { POPULAR_QUERY_BASE } from '~/util/Constants';
+import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -16,27 +18,12 @@ const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
 type Props = {
   data: LibraryType[];
   title: string;
-  filter: (library: LibraryType) => boolean;
   icon?: FunctionComponent<IconProps>;
-  count?: number;
   queryParams?: Query;
 };
 
-const UPDATED_IN = 1000 * 60 * 60 * 24 * 90; // 90 days
-const DEFAULT_PARAMS: Query = {
-  wasRecentlyUpdated: 'true',
-  isMaintained: 'true',
-  order: 'popularity',
-};
-
-export default function ExploreSection({
-  data,
-  title,
-  filter,
-  icon,
-  count = 4,
-  queryParams = { [title.toLowerCase()]: true },
-}: Props) {
+const UPDATED_IN = 1000 * TimeRange.MONTH * 3;
+export default function ExploreSection({ data, title, icon, queryParams }: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
@@ -51,12 +38,16 @@ export default function ExploreSection({
           {title}
         </A>
       </H3>
-      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
-        {renderLibs(data.filter(filter), count)}
-      </View>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data)}</View>
       <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
-        <A href={urlWithQuery('/packages', { ...queryParams, ...DEFAULT_PARAMS })} target="_self">
+        <A
+          href={urlWithQuery('/packages', {
+            [title.toLowerCase()]: true,
+            ...queryParams,
+            ...POPULAR_QUERY_BASE,
+          })}
+          target="_self">
           {title} libraries
         </A>{' '}
         in the directory!
@@ -65,11 +56,10 @@ export default function ExploreSection({
   );
 }
 
-function renderLibs(list: LibraryType[], count = 4) {
+function renderLibs(list: LibraryType[]) {
   const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
-    .splice(0, count)
     .map((item: LibraryType, index: number) => (
       <LibraryWithLoading
         key={`explore-item-${index}-${item.github.name}`}

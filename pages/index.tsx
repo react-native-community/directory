@@ -3,8 +3,7 @@ import { type NextPageContext } from 'next';
 
 import HomeScene from '~/scenes/HomeScene';
 import { type HomePageProps } from '~/types/pages';
-import { NEXT_1H_CACHE_HEADER } from '~/util/Constants';
-import getApiUrl from '~/util/getApiUrl';
+import { ssrFetch } from '~/util/SSRFetch';
 import urlWithQuery from '~/util/urlWithQuery';
 
 function Index(props: HomePageProps) {
@@ -22,44 +21,39 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
     return;
   }
 
-  const mostDownloadedResponse = await fetch(
-    getApiUrl(
-      urlWithQuery('/libraries', {
-        order: 'downloads',
-        limit: LIMIT.toString(),
-        isMaintained: 'true',
-        hasNativeCode: 'true',
-      }),
-      ctx
-    ),
-    NEXT_1H_CACHE_HEADER
+  const mostDownloadedResponse = await ssrFetch(
+    '/libraries',
+    {
+      order: 'downloads',
+      limit: LIMIT.toString(),
+      isMaintained: 'true',
+      hasNativeCode: 'true',
+    },
+    ctx
   );
-  const recentlyAddedResponse = await fetch(
-    getApiUrl(urlWithQuery('/libraries', { order: 'added', limit: LIMIT.toString() }), ctx),
-    NEXT_1H_CACHE_HEADER
+  const recentlyAddedResponse = await ssrFetch(
+    '/libraries',
+    { order: 'added', limit: LIMIT.toString() },
+    ctx
   );
-  const recentlyUpdatedResponse = await fetch(
-    getApiUrl(urlWithQuery('/libraries', { order: 'updated', limit: LIMIT.toString() }), ctx),
-    NEXT_1H_CACHE_HEADER
+  const recentlyUpdatedResponse = await ssrFetch(
+    '/libraries',
+    { order: 'updated', limit: LIMIT.toString() },
+    ctx
   );
-  const popularResponse = await fetch(
-    getApiUrl(
-      urlWithQuery('/libraries', {
-        order: 'popularity',
-        limit: LIMIT.toString(),
-        isMaintained: 'true',
-        isPopular: 'true',
-        wasRecentlyUpdated: 'true',
-      }),
-      ctx
-    ),
-    NEXT_1H_CACHE_HEADER
+  const popularResponse = await ssrFetch(
+    '/libraries',
+    {
+      order: 'popularity',
+      limit: LIMIT.toString(),
+      isMaintained: 'true',
+      isPopular: 'true',
+      wasRecentlyUpdated: 'true',
+    },
+    ctx
   );
 
-  const statisticResponse = await fetch(
-    getApiUrl(urlWithQuery('/libraries/statistic'), ctx),
-    NEXT_1H_CACHE_HEADER
-  );
+  const statisticResponse = await ssrFetch('/libraries/statistic', {}, ctx);
 
   return {
     mostDownloaded: await mostDownloadedResponse.json(),

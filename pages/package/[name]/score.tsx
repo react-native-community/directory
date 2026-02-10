@@ -3,11 +3,10 @@ import { type NextPageContext } from 'next';
 import ErrorScene from '~/scenes/ErrorScene';
 import PackageScoreScene from '~/scenes/PackageScoreScene';
 import { type PackageScorePageProps } from '~/types/pages';
-import { EMPTY_PACKAGE_DATA, NEXT_1H_CACHE_HEADER } from '~/util/Constants';
-import getApiUrl from '~/util/getApiUrl';
+import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/parseQueryParams';
-import urlWithQuery from '~/util/urlWithQuery';
+import { ssrFetch } from '~/util/SSRFetch';
 
 export default function ScorePage({ apiData, packageName, errorMessage }: PackageScorePageProps) {
   if (!packageName || !apiData) {
@@ -26,21 +25,16 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   try {
-    const apiResponse = await fetch(
-      getApiUrl(urlWithQuery(`/libraries`, { search: packageName }), ctx),
-      NEXT_1H_CACHE_HEADER
-    );
+    const apiResponse = await ssrFetch(`/libraries`, { search: packageName }, ctx);
 
     if (apiResponse.status !== 200) {
       return getPackagePageErrorProps(packageName, apiResponse.status);
     }
 
-    const apiData = await apiResponse.json();
-
     return {
       props: {
         packageName,
-        apiData,
+        apiData: await apiResponse.json(),
       },
     };
   } catch {

@@ -3,11 +3,10 @@ import { type NextPageContext } from 'next';
 import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
-import { EMPTY_PACKAGE_DATA, NEXT_10M_CACHE_HEADER, NEXT_1H_CACHE_HEADER } from '~/util/Constants';
-import getApiUrl from '~/util/getApiUrl';
+import { EMPTY_PACKAGE_DATA, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/parseQueryParams';
-import urlWithQuery from '~/util/urlWithQuery';
+import { ssrFetch } from '~/util/SSRFetch';
 
 export default function ScopedOverviewPage({
   apiData,
@@ -34,10 +33,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
 
   try {
     const [apiResponse, npmResponse] = await Promise.all([
-      fetch(
-        getApiUrl(urlWithQuery(`/libraries`, { search: packageName }), ctx),
-        NEXT_1H_CACHE_HEADER
-      ),
+      ssrFetch(`/libraries`, { search: packageName }, ctx),
       fetch(`https://registry.npmjs.org/${packageName}/latest`, NEXT_10M_CACHE_HEADER),
     ]);
 
@@ -45,13 +41,11 @@ export async function getServerSideProps(ctx: NextPageContext) {
       return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
     }
 
-    const [apiData, registryData] = await Promise.all([apiResponse.json(), npmResponse.json()]);
-
     return {
       props: {
         packageName,
-        apiData,
-        registryData,
+        apiData: await apiResponse.json(),
+        registryData: await npmResponse.json(),
       },
     };
   } catch {

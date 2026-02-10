@@ -14,6 +14,7 @@ type Props = {
   query: Query;
   total?: number | null;
   style?: ViewStyle;
+  noTags?: boolean;
   basePath?: string;
 };
 
@@ -21,7 +22,7 @@ type ArrowButtonProps = {
   disabled?: boolean;
 };
 
-export default function Pagination({ query, total, style, basePath = '/packages' }: Props) {
+export default function Pagination({ query, total, style, noTags, basePath = '/packages' }: Props) {
   const currentOffset = query.offset ? Number.parseInt(query.offset, 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
@@ -37,7 +38,16 @@ export default function Pagination({ query, total, style, basePath = '/packages'
 
   return (
     <View style={tw`flex-row justify-between`}>
-      {query.owner ? <SearchTag title="Owner" value={query.owner} /> : <View />}
+      {!noTags ? (
+        <View>
+          {query.owner && <SearchTag title="Owner" value={query.owner} />}
+          {query.minPopularity && (
+            <SearchTag title="Minimal popularity" value={query.minPopularity} />
+          )}
+        </View>
+      ) : (
+        <View />
+      )}
       <View style={[tw`flex-row items-center justify-end`, style]}>
         {backDisabled ? (
           <BackArrow disabled />
