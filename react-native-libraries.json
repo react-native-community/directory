@@ -18568,7 +18568,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/quantizor/markdown-to-jsx",
+    "githubUrl": "https://github.com/quantizor/markdown-to-jsx/tree/main/lib",
+    "npmPkg": "markdown-to-jsx",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -19458,8 +19459,8 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/luoxuhai/react-native-avif",
-    "examples": ["https://github.com/luoxuhai/react-native-avif/tree/main/example"],
+    "githubUrl": "https://github.com/luoxuhai/react-native-media-view",
+    "examples": ["https://github.com/luoxuhai/react-native-media-view/tree/main/example"],
     "ios": true,
     "newArchitecture": "new-arch-only"
   },
@@ -19582,6 +19583,51 @@
       "https://github.com/faluciano/domino-party-game"
     ],
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/superfan-app/spotify-auth",
+    "npmPkg": "@superfan-app/spotify-auth",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-a11y",
+    "images": [
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y/master/.github/images/ios-reader.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y/master/.github/images/android-reader.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y/master/.github/images/ios-keyboard.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-a11y/master/.github/images/android-keyboard.gif"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-external-keyboard",
+    "images": [
+      "https://raw.githubusercontent.com/ArturKalach/react-native-external-keyboard/main/.github/images/rnek-ios-example.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-external-keyboard/main/.github/images/rnek-android-example.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-external-keyboard/main/.github/images/rnek-focus-lock-ios.gif",
+      "https://raw.githubusercontent.com/ArturKalach/react-native-external-keyboard/main/.github/images/rnek-focus-lock-android.gif"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-a11y-container",
+    "examples": ["https://github.com/ArturKalach/react-native-a11y-container/tree/master/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/factorialco/f0/tree/main/packages/react-native",
+    "npmPkg": "@factorialco/f0-react-native",
+    "android": true,
+    "ios": true,
+    "expoGo": true,
     "newArchitecture": true
   }
 ]
