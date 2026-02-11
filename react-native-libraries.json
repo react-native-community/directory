@@ -19629,5 +19629,15 @@
     "ios": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/riteshshukla04/react-native-superconfig",
+    "examples": [
+      "https://github.com/riteshshukla04/react-native-superconfig/tree/main/example",
+      "https://github.com/riteshshukla04/react-native-superconfig/tree/main/BenchmarkApp"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
