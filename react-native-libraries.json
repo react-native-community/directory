@@ -19629,5 +19629,13 @@
     "ios": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/huextrat/expo-maps-routes",
+    "npmPkg": "expo-maps-routes",
+    "android": true,
+    "ios": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
