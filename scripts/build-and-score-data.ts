@@ -150,7 +150,7 @@ async function buildAndScoreData() {
   console.log('\n🏷️ Processing topics');
 
   const { libraries, topics } = latestData;
-  const topicCounts: Record<string, number> = topics ?? {};
+  const topicCounts: Record<string, number> = missingOnly ? (topics ?? {}) : {};
 
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
