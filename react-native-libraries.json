@@ -19647,5 +19647,13 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/15bedirhan/expo-lux-sensor",
+  "examples": ["https://github.com/15bedirhan/expo-lux-sensor/tree/main/example"],
+  "ios": true,
+  "android": true,
+  "expoGo": true,
+  "newArchitecture": true
+},
 ]
