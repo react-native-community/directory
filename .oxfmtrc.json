@@ -22,12 +22,12 @@
   },
   "experimentalSortImports": {
     "groups": [
-      ["side-effect"],
-      ["builtin", "external", "external-type"],
-      ["internal", "internal-type"],
-      ["parent", "parent-type"],
-      ["sibling", "sibling-type"],
-      ["index", "index-type"]
+      ["side_effect"],
+      ["builtin", "external"],
+      ["internal"],
+      ["parent"],
+      ["sibling"],
+      ["index"]
     ]
   }
 }
