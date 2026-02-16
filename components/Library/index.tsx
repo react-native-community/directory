@@ -3,28 +3,29 @@ import { useContext } from 'react';
 import { Linkify } from 'react-easy-linkify';
 import { Platform, StyleSheet, View } from 'react-native';
 
+import { colors, useLayout, A, darkColors, Headline } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType } from '~/types';
+
 import { MetaData } from './MetaData';
-import PopularityMark from './PopularityMark';
-import RecommendedLabel from './RecommendedLabel';
 import Thumbnail from './Thumbnail';
+import TrendingMark from './TrendingMark';
 import UnmaintainedLabel from './UnmaintainedLabel';
-import { colors, useLayout, A, darkColors, Headline } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../../types';
 import { CompatibilityTags } from '../CompatibilityTags';
+import Tooltip from '../Tooltip';
 
 type Props = {
   library: LibraryType;
-  skipMeta?: boolean;
-  showPopularity?: boolean;
+  skipMetadata?: boolean;
+  showTrendingMark?: boolean;
 };
 
-const Library = ({ library, skipMeta, showPopularity }: Props) => {
+const Library = ({ library, skipMetadata, showTrendingMark }: Props) => {
   const { isDark } = useContext(CustomAppearanceContext);
   const { github } = library;
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
-  const libName = library.nameOverride ?? library.npmPkg ?? github.name;
+  const libName = library.npmPkg ?? github.name;
   const hasSecondaryMetadata =
     github.license ||
     github.urls.homepage ||
@@ -40,13 +41,23 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
           borderColor: isDark ? darkColors.border : colors.gray2,
         },
         isSmallScreen && styles.containerColumn,
-        skipMeta && styles.noMetaContainer,
-        skipMeta && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
+        skipMetadata && styles.noMetaContainer,
+        skipMetadata && (isSmallScreen || isBelowMaxWidth) && styles.noMetaColumnContainer,
         library.unmaintained && styles.unmaintained,
       ]}>
       <View style={styles.columnOne}>
         {library.unmaintained && <UnmaintainedLabel alternatives={library.alternatives} />}
-        {showPopularity && library.popularity && <PopularityMark library={library} />}
+        {showTrendingMark && library.popularity && (
+          <Tooltip
+            sideOffset={8}
+            trigger={
+              <View style={styles.trendingMarkContainer}>
+                <TrendingMark library={library} />
+              </View>
+            }>
+            Trending Score is based on the last week to last month download rate.
+          </Tooltip>
+        )}
         <View style={isSmallScreen ? styles.containerColumn : styles.displayHorizontal}>
           <A
             href={library.githubUrl || github.urls.repo}
@@ -54,24 +65,27 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
             hoverStyle={{ color: isDark ? colors.gray3 : colors.gray5 }}>
             {libName}
           </A>
-          {library.goldstar && <RecommendedLabel isSmallScreen={isSmallScreen} />}
         </View>
         <View style={styles.verticalMargin}>
           <CompatibilityTags library={library} />
         </View>
         {github.description && github.description.length && (
           <View style={styles.verticalMargin}>
-            <Headline numberOfLines={skipMeta && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
+            <Headline numberOfLines={skipMetadata && 3} style={{ fontWeight: 300, lineHeight: 23 }}>
               <Linkify
                 options={{
-                  linkWrapper: props => <A {...props}>{props.children}</A>,
+                  linkWrapper: ({ children, key, ...rest }) => (
+                    <A {...rest} key={key}>
+                      {children}
+                    </A>
+                  ),
                 }}>
                 {emoji.emojify(github.description)}
               </Linkify>
             </Headline>
           </View>
         )}
-        {!skipMeta && Platform.OS === 'web' && library.images && library.images.length ? (
+        {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length ? (
           <View style={[styles.displayHorizontal, styles.imagesContainer]}>
             {library.images.map((image, index) => (
               <Thumbnail key={`${image}-${index}`} url={image} />
@@ -89,7 +103,7 @@ const Library = ({ library, skipMeta, showPopularity }: Props) => {
           </>
         ) : null}
       </View>
-      {skipMeta ? null : (
+      {skipMetadata ? null : (
         <View
           style={[
             styles.columnTwo,
@@ -224,6 +238,9 @@ const styles = StyleSheet.create({
   },
   unmaintained: {
     opacity: 0.88,
+  },
+  trendingMarkContainer: {
+    alignSelf: 'flex-start',
   },
 });
 

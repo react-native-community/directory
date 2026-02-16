@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { Platform, StyleSheet, View } from 'react-native';
 
-import { P, colors } from '../../common/styleguide';
-import urlWithQuery from '../../util/urlWithQuery';
+import { P, colors } from '~/common/styleguide';
+import urlWithQuery from '~/util/urlWithQuery';
+
 import { CheckBox } from '../CheckBox';
 
 export const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {

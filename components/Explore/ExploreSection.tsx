@@ -2,13 +2,13 @@ import dynamic from 'next/dynamic';
 import { createElement, useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, H3, P } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType, Query } from '../../types';
-import urlWithQuery from '../../util/urlWithQuery';
-import LoadingContent from '../Library/LoadingContent';
+import { A, colors, darkColors, H3, P } from '~/common/styleguide';
+import LoadingContent from '~/components/Library/LoadingContent';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType, Query } from '~/types';
+import urlWithQuery from '~/util/urlWithQuery';
 
-const LibraryWithLoading = dynamic(() => import('../Library'), {
+const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => (
     <LoadingContent
       width="48.25%"
@@ -25,7 +25,7 @@ type ExploreSectionProps = {
   data: LibraryType[];
   title: string;
   filter: (library: LibraryType) => boolean;
-  icon: any;
+  icon?: any;
   count?: number;
   queryParams?: Query;
 };
@@ -49,8 +49,8 @@ const renderLibs = (list: LibraryType[], count = 4) => {
           <LibraryWithLoading
             key={`explore-item-${index}-${item.github.name}`}
             library={item}
-            showPopularity
-            skipMeta
+            showTrendingMark
+            skipMetadata
           />
         ))}
     </View>
@@ -73,7 +73,7 @@ const ExploreSection = ({
   return (
     <>
       <H3 style={styles.subHeader} id={hashLink}>
-        {createElement(icon, { fill: color, width: 30, height: 30 })}
+        {icon && createElement(icon, { fill: color, width: 30, height: 30 })}
         <A
           href={`#${hashLink}`}
           target="_self"

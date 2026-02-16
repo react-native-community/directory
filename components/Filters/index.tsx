@@ -1,12 +1,18 @@
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, Headline, layout, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+import { getPageQuery } from '~/util/search';
+
 import { ToggleLink } from './ToggleLink';
-import { FILTER_PLATFORMS } from './helpers';
-import { colors, Headline, layout, darkColors } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Query } from '../../types';
-import { getPageQuery } from '../../util/search';
+import {
+  FILTER_COMPATIBILITY,
+  FILTER_PLATFORMS,
+  FILTER_REQUIRES_MAIN_SEARCH,
+  FILTER_STATUS,
+} from './helpers';
 
 type FiltersProps = {
   query: Query;
@@ -19,6 +25,10 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
   const isMainSearch = basePath === '/';
   const pageQuery = getPageQuery(basePath, query);
 
+  const titleColor = {
+    color: isDark ? darkColors.secondary : colors.gray5,
+  };
+
   return (
     <View
       style={[
@@ -29,7 +39,7 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
         style,
       ]}>
       <View style={styles.container}>
-        <Headline style={styles.title}>Platform</Headline>
+        <Headline style={[styles.title, titleColor]}>Platform</Headline>
         <View style={styles.optionsContainer}>
           {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
@@ -43,96 +53,69 @@ export const Filters = ({ query, style, basePath = '/' }: FiltersProps) => {
         </View>
       </View>
       <View style={styles.container}>
-        <Headline style={styles.title}>Status</Headline>
+        <Headline style={[styles.title, titleColor]}>Status</Headline>
         <View style={styles.optionsContainer}>
-          <ToggleLink
-            key="hasExample"
-            query={pageQuery}
-            paramName="hasExample"
-            title="Has example"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="hasImage"
-            query={pageQuery}
-            paramName="hasImage"
-            title="Has image preview"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="hasTypes"
-            query={pageQuery}
-            paramName="hasTypes"
-            title="Has TypeScript types"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="newArchitecture"
-            query={pageQuery}
-            paramName="newArchitecture"
-            title="Supports New Architecture"
-            basePath={basePath}
-          />
-          {isMainSearch && (
+          {isMainSearch &&
+            FILTER_REQUIRES_MAIN_SEARCH.map(platform => (
+              <ToggleLink
+                key={platform.param}
+                query={pageQuery}
+                paramName={platform.param}
+                title={platform.title}
+                basePath={basePath}
+              />
+            ))}
+          {FILTER_STATUS.map(platform => (
             <ToggleLink
-              key="isMaintained"
+              key={platform.param}
               query={pageQuery}
-              paramName="isMaintained"
-              title="Maintained"
+              paramName={platform.param}
+              title={platform.title}
               basePath={basePath}
             />
-          )}
-          {isMainSearch && (
-            <ToggleLink
-              key="isPopular"
-              query={pageQuery}
-              paramName="isPopular"
-              title="Popular"
-              basePath={basePath}
-            />
-          )}
-          <ToggleLink
-            key="wasRecentlyUpdated"
-            query={pageQuery}
-            paramName="wasRecentlyUpdated"
-            title="Recently updated"
-            basePath={basePath}
-          />
-          {isMainSearch && (
-            <ToggleLink
-              key="isRecommended"
-              query={pageQuery}
-              paramName="isRecommended"
-              title="Recommended"
-              basePath={basePath}
-            />
-          )}
+          ))}
         </View>
       </View>
-      <View style={styles.container}>
-        <Headline style={styles.title}>Type</Headline>
-        <View style={styles.optionsContainer}>
-          <ToggleLink
-            key="skipLibs"
-            query={pageQuery}
-            paramName="skipLibs"
-            title="Hide libraries"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="skipTools"
-            query={pageQuery}
-            paramName="skipTools"
-            title="Hide development tools"
-            basePath={basePath}
-          />
-          <ToggleLink
-            key="skipTemplates"
-            query={pageQuery}
-            paramName="skipTemplates"
-            title="Hide templates"
-            basePath={basePath}
-          />
+      <View style={styles.twoColumns}>
+        <View style={styles.wrappableContainer}>
+          <Headline style={[styles.title, titleColor]}>Compatibility</Headline>
+          <View style={styles.optionsContainer}>
+            {FILTER_COMPATIBILITY.map(platform => (
+              <ToggleLink
+                key={platform.param}
+                query={pageQuery}
+                paramName={platform.param}
+                title={platform.title}
+                basePath={basePath}
+              />
+            ))}
+          </View>
+        </View>
+        <View style={styles.wrappableContainer}>
+          <Headline style={[styles.title, titleColor]}>Type</Headline>
+          <View style={styles.optionsContainer}>
+            <ToggleLink
+              key="skipLibs"
+              query={pageQuery}
+              paramName="skipLibs"
+              title="Hide libraries"
+              basePath={basePath}
+            />
+            <ToggleLink
+              key="skipTools"
+              query={pageQuery}
+              paramName="skipTools"
+              title="Hide development tools"
+              basePath={basePath}
+            />
+            <ToggleLink
+              key="skipTemplates"
+              query={pageQuery}
+              paramName="skipTemplates"
+              title="Hide templates"
+              basePath={basePath}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -152,12 +135,24 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     maxWidth: layout.maxWidth,
   },
+  wrappableContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    maxWidth: layout.maxWidth,
+  },
   optionsContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
   },
   title: {
     marginBottom: 8,
-    fontWeight: 700,
+    fontWeight: 600,
+  },
+  twoColumns: {
+    width: '100%',
+    maxWidth: layout.maxWidth,
+    alignContent: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });

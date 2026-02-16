@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { View, ViewProps, StyleSheet } from 'react-native';
 
-import { layout } from '../common/styleguide';
+import { layout } from '~/common/styleguide';
 
 const ContentContainer = ({ children, style }: PropsWithChildren<ViewProps>) => (
   <View style={[styles.container, style]}>{children}</View>

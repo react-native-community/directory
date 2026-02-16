@@ -1,11 +1,11 @@
 import fetch from 'cross-fetch';
-import differenceWith from 'lodash/differenceWith.js';
-import isEqual from 'lodash/isEqual.js';
+import differenceWith from 'lodash/differenceWith';
+import isEqual from 'lodash/isEqual';
 
-import { fetchGithubData } from './fetch-github-data.js';
-import { fetchNpmData } from './fetch-npm-data.js';
-import { fillNpmName, hasMismatchedPackageData } from './helpers.js';
-import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import { fetchGithubData } from './fetch-github-data';
+import { fetchNpmData } from './fetch-npm-data';
+import { fillNpmName, hasMismatchedPackageData } from './helpers';
+import libraries from '../react-native-libraries.json';
 
 async function makeBaseFileQuery() {
   const result = await fetch(
@@ -33,13 +33,21 @@ const checkResults = await Promise.all(
       console.error(
         `Unable to fetch npm package data for ${entryWithNpmData.npmPkg} package! Please make sure that the package exist in npm registry.`
       );
+      console.error(
+        `For the new packages recently published for the first time, npm API can return non-existing package error. The resolution here is to wait up to 24h, and then re-trigger the CI workflow.`
+      );
+      console.error(
+        `To check the current API response visit: https://api.npmjs.org/downloads/point/last-month/${entryWithNpmData.npmPkg}`
+      );
       return false;
     }
 
     const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
 
     if (!entryWithGitHubData.github) {
-      console.error(`Unable to fetch data from ${entryWithGitHubData.githubUrl} repository!`);
+      console.error(
+        `Unable to fetch data from ${entryWithGitHubData.githubUrl} repository! Make sure that repository is public, and URL is correct.`
+      );
       return false;
     }
 
@@ -66,6 +74,9 @@ const checkResults = await Promise.all(
       );
       console.error(
         `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
+      );
+      console.error(
+        `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
       );
 
       return false;

@@ -1,28 +1,65 @@
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
+import { relevance } from './sorting';
 import { isEmptyOrNull } from './strings';
+import { Library, Query } from '../types';
 
-const calculateMatchScore = ({ github, npmPkg, topicSearchString, unmaintained }, querySearch) => {
-  const isRepoNameMatch = !isEmptyOrNull(github.name) && github.name.includes(querySearch);
-  const isNpmPkgNameMatch = !isEmptyOrNull(npmPkg) && npmPkg.includes(querySearch);
-  const isExactNameMatch =
+function calculateMatchScore(
+  { github, npmPkg, topicSearchString, unmaintained }: Library,
+  querySearch: string
+) {
+  const exactNameMatchPoints =
     (!isEmptyOrNull(github.name) && github.name === querySearch) ||
-    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch);
-  const isNameMatch = isExactNameMatch ? 150 : isRepoNameMatch || isNpmPkgNameMatch ? 100 : 0;
-  const isDescriptionMatch =
-    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
-      ? 10
+    (!isEmptyOrNull(npmPkg) && npmPkg === querySearch)
+      ? 300
       : 0;
-  const isTopicMatch = topicSearchString.includes(querySearch) ? 1 : 0;
-  const matchScore = isNameMatch + isDescriptionMatch + isTopicMatch;
+
+  const npmPkgNameMatchPoints =
+    !isEmptyOrNull(npmPkg) &&
+    (npmPkg.includes(querySearch) || npmPkg.replaceAll(/[-/]/g, ' ').includes(querySearch))
+      ? 200
+      : 0;
+
+  const cleanedUpName = npmPkg
+    .replace('react-native', '')
+    .replace('react', '')
+    .replaceAll(/[-/]/g, ' ')
+    .trim();
+
+  const cleanedUpNameMatchPoints =
+    !isEmptyOrNull(cleanedUpName) &&
+    (cleanedUpName.includes(querySearch) ||
+      cleanedUpName.includes(querySearch.replaceAll(/[-/]/g, ' ')))
+      ? 100
+      : 0;
+
+  const repoNameMatchPoints =
+    !isEmptyOrNull(github.name) && github.name.includes(querySearch) ? 50 : 0;
+
+  const descriptionMatchPoints =
+    !isEmptyOrNull(github.description) && github.description.toLowerCase().includes(querySearch)
+      ? 25
+      : 0;
+
+  const topicMatchPoints = topicSearchString.includes(querySearch) ? 10 : 0;
+
+  const matchScore =
+    exactNameMatchPoints +
+    repoNameMatchPoints +
+    cleanedUpNameMatchPoints +
+    npmPkgNameMatchPoints +
+    descriptionMatchPoints +
+    topicMatchPoints;
+
   if (matchScore && unmaintained) {
     return matchScore / 1000;
   } else {
     return matchScore;
   }
-};
+}
 
-export const handleFilterLibraries = ({
+export function handleFilterLibraries({
   libraries,
+  sortBy,
   queryTopic,
   querySearch,
   support,
@@ -34,14 +71,17 @@ export const handleFilterLibraries = ({
   isRecommended,
   wasRecentlyUpdated,
   minPopularity,
+  minMonthlyDownloads,
   newArchitecture,
   skipLibs,
   skipTools,
   skipTemplates,
-}) => {
+}) {
   const viewerHasChosenTopic = !isEmptyOrNull(queryTopic);
   const viewerHasTypedSearch = !isEmptyOrNull(querySearch);
+
   const minPopularityValue = minPopularity && parseFloat(minPopularity) / 100;
+  const minMonthlyDownloadsValue = minMonthlyDownloads && parseInt(minMonthlyDownloads, 10);
 
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({
@@ -50,7 +90,7 @@ export const handleFilterLibraries = ({
       }))
     : libraries;
 
-  return processedLibraries.filter(library => {
+  const fiteredLibraries = processedLibraries.filter(library => {
     let isTopicMatch = false;
     let isSearchMatch = false;
 
@@ -91,6 +131,10 @@ export const handleFilterLibraries = ({
     }
 
     if (support.visionos && !library.visionos) {
+      return false;
+    }
+
+    if (support.fireos && !library.fireos) {
       return false;
     }
 
@@ -157,8 +201,15 @@ export const handleFilterLibraries = ({
       return false;
     }
 
-    if (minPopularityValue) {
+    if (minPopularityValue && minMonthlyDownloadsValue) {
+      return (
+        library.popularity >= minPopularityValue &&
+        library.npm.downloads >= minMonthlyDownloadsValue
+      );
+    } else if (minPopularityValue) {
       return library.popularity >= minPopularityValue;
+    } else if (minMonthlyDownloadsValue) {
+      return library.npm.downloads >= minMonthlyDownloadsValue;
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {
@@ -183,9 +234,15 @@ export const handleFilterLibraries = ({
 
     return isTopicMatch && isSearchMatch;
   });
-};
 
-export function getPageQuery(basePath, query) {
+  if (sortBy === 'relevance') {
+    return relevance(fiteredLibraries);
+  }
+
+  return fiteredLibraries;
+}
+
+export function getPageQuery(basePath: string, query: Query) {
   if (basePath === '/trending') {
     return { ...query, minPopularity: undefined, order: undefined };
   }

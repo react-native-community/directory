@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, darkColors, P } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+
 import { ClearButton } from './ClearButton';
-import { FILTER_PLATFORMS } from './helpers';
-import { colors, darkColors, P } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Query } from '../../types';
+import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';
 import { Button } from '../Button';
 import { Filter as FilterIcon } from '../Icons';
 
@@ -30,14 +31,8 @@ export const FilterButton = ({
 
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
-    'hasExample',
-    'hasImage',
-    'hasTypes',
-    'isMaintained',
-    'isPopular',
-    'isRecommended',
-    'wasRecentlyUpdated',
-    'newArchitecture',
+    ...FILTER_REQUIRES_MAIN_SEARCH.map(platform => platform.param),
+    ...FILTER_STATUS.map(platform => platform.param),
   ];
 
   const filterCount = Object.keys(query).reduce(

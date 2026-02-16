@@ -1,22 +1,24 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
 import { StyleSheet } from 'react-native';
 
-import ContentContainer from '../components/ContentContainer';
-import ExploreSection from '../components/Explore/ExploreSection';
+import ContentContainer from '~/components/ContentContainer';
+import ExploreSection from '~/components/Explore/ExploreSection';
 import {
   PlatformAndroid,
+  PlatformExpo,
   PlatformIOS,
   PlatformMacOS,
+  PlatformTvOS,
+  PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
-  PlatformExpo,
   ReactLogo,
-} from '../components/Icons';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import getApiUrl from '../util/getApiUrl';
-import urlWithQuery from '../util/urlWithQuery';
+} from '~/components/Icons';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import getApiUrl from '~/util/getApiUrl';
+import urlWithQuery from '~/util/urlWithQuery';
 
 const Popular = ({ data }) => {
   return (
@@ -52,10 +54,10 @@ const Popular = ({ data }) => {
           filter={lib => lib.ios === true && !lib.android}
         />
         <ExploreSection
-          title="Expo Go"
-          icon={PlatformExpo}
+          title="Web"
+          icon={PlatformWeb}
           data={data}
-          filter={lib => lib.expoGo === true}
+          filter={lib => lib.web === true}
         />
         <ExploreSection
           title="macOS"
@@ -64,10 +66,23 @@ const Popular = ({ data }) => {
           filter={lib => lib.macos === true}
         />
         <ExploreSection
-          title="Web"
-          icon={PlatformWeb}
+          title="Expo Go"
+          icon={PlatformExpo}
           data={data}
-          filter={lib => lib.web === true}
+          filter={lib => lib.expoGo === true}
+        />
+        <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
+        <ExploreSection
+          title="tvOS"
+          icon={PlatformTvOS}
+          data={data}
+          filter={lib => lib.tvos === true}
+        />
+        <ExploreSection
+          title="visionOS"
+          icon={PlatformVisionOS}
+          data={data}
+          filter={lib => lib.visionos === true}
         />
         <ExploreSection
           title="Windows"

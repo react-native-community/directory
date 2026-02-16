@@ -1,9 +1,9 @@
 import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { processTopics, sleep } from './helpers.js';
-import GitHubLicensesQuery from './queries/GitHubLicensesQuery.js';
-import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery.js';
+import { processTopics, sleep, REQUEST_SLEEP } from './helpers';
+import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
+import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
 
@@ -24,7 +24,7 @@ export const loadGitHubLicenses = async () => {
   });
 };
 
-const makeGraphqlQuery = async (query, variables) => {
+const makeGraphqlQuery = async (query: string, variables = {}) => {
   const result = await fetch(GRAPHQL_API, {
     method: 'POST',
     headers: {
@@ -102,7 +102,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
     });
 
-    if (!result.data && result.errors) {
+    if (result.errors) {
       if (result.errors[0].type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
@@ -116,7 +116,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       }
 
       console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
-      await sleep(2500);
+      await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
       return await fetchGithubData(data, retries - 1);
     }
 
@@ -124,7 +124,7 @@ export const fetchGithubData = async (data, retries = 2) => {
       console.log(
         `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
       );
-      await sleep(2500);
+      await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
       return await fetchGithubData(data, retries - 1);
     }
 
@@ -135,7 +135,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     };
   } catch (error) {
     console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
-    await sleep(2500);
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     return await fetchGithubData(data, retries - 1);
   }
 };
@@ -155,6 +155,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
+      json.registry = packageJson?.publishConfig?.registry ?? undefined;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -220,6 +221,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
     name: json.name,
     fullName: json.nameWithOwner,
     isPrivate: json.isPackagePrivate,
+    registry: json.registry,
     description: json.description,
     topics: json.topics,
     license: json.licenseInfo,

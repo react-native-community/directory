@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library } from '~/types';
+
+import { Info } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
 import { Tag } from './Tag';
-import { colors, darkColors } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Library } from '../types';
+import Tooltip from './Tooltip';
 
 type Props = {
   library: Library;
@@ -13,9 +16,9 @@ type Props = {
 
 export function CompatibilityTags({ library }: Props) {
   const { isDark } = useContext(CustomAppearanceContext);
+
   const platforms = [
     library.android ? 'Android' : null,
-    library.expoGo ? 'Expo Go' : null,
     library.ios ? 'iOS' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
@@ -59,6 +62,22 @@ export function CompatibilityTags({ library }: Props) {
           }}
         />
       ))}
+      {(library.expoGo || library.fireos) && (
+        <Tooltip
+          side="bottom"
+          trigger={
+            <View style={styles.infoTrigger}>
+              <Info fill={isDark ? darkColors.pewter : colors.secondary} />
+            </View>
+          }>
+          Additional information
+          <br />
+          <ul style={styles.compatibilityList}>
+            {library.expoGo && <li>Works with Expo Go</li>}
+            {library.fireos && <li>Works with Fire OS</li>}
+          </ul>
+        </Tooltip>
+      )}
     </View>
   );
 }
@@ -68,7 +87,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flexWrap: 'wrap',
-    marginBottom: -4,
     gap: 6,
+  },
+  infoTrigger: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    minHeight: 25,
+  },
+  compatibilityList: {
+    margin: 0,
+    paddingLeft: 14,
   },
 });

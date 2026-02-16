@@ -1,15 +1,14 @@
 import * as Sentry from '@sentry/react';
-import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { colors, darkColors } from '../common/styleguide';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import CustomAppearanceProvider from '../context/CustomAppearanceProvider';
+import { colors, darkColors } from '~/common/styleguide';
+import Footer from '~/components/Footer';
+import Header from '~/components/Header';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 
-import '../styles/styles.css';
+import '~/styles/styles.css';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -35,7 +34,7 @@ const App = ({ pageProps, Component }) => (
           <Head>
             <meta
               name="viewport"
-              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.00001,viewport-fit=cover"
+              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
             />
             <style>
               {`html { 
@@ -51,7 +50,6 @@ const App = ({ pageProps, Component }) => (
           <Header />
           <Component {...pageProps} />
           <Footer />
-          <Analytics />
         </SafeAreaProvider>
       )}
     </CustomAppearanceContext.Consumer>

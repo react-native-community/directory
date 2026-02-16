@@ -17,7 +17,10 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false
+    "strict": false,
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "exclude": [
     "node_modules"
@@ -26,5 +29,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+  ],
 }

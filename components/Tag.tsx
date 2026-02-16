@@ -1,9 +1,10 @@
 import { ReactElement, useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, darkColors, Label } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import { Check } from './Icons';
-import { colors, darkColors, Label } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
 
 type Props = {
   label: string;
@@ -40,7 +41,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     paddingVertical: 4,
-    marginBottom: 4,
     userSelect: 'none',
     minHeight: 25.5,
     gap: 5,
