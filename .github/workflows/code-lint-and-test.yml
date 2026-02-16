@@ -1,0 +1,24 @@
+name: "[CODE] Lint and test"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths-ignore:
+      - react-native-libraries.json
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v2
+    - name: Install dependencies
+      run: bun install
+    - name: TSC
+      run: bun tsc
+    - name: Lint
+      run: bun lint
+    - name: Build Next app
+      run: bun next build

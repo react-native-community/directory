@@ -4,7 +4,7 @@
 import * as Sentry from '@sentry/react';
 import Error from 'next/error';
 
-import ErrorState from '../components/ErrorState';
+import ErrorState from '~/components/ErrorState';
 
 const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   if (!hasGetInitialPropsRun && err) {

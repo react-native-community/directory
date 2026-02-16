@@ -1,12 +1,14 @@
 import fetch from 'cross-fetch';
 
-import libraries from '../react-native-libraries.json' assert { type: 'json' };
+import libraries from '../react-native-libraries.json';
+import { sleep } from './helpers';
 
 console.log('⬇️ Attempting to fetch examples and images');
 
 libraries.forEach(lib => {
   if (lib.examples) {
-    lib.examples.forEach((example, i) => {
+    lib.examples.forEach(async (example: string, index: number) => {
+      await sleep(500);
       setTimeout(() => {
         fetch(example)
           .then(response => {
@@ -14,15 +16,16 @@ libraries.forEach(lib => {
               console.warn(`EXAMPLE: ${example} returned ${response.status}`);
             }
           })
-          .catch(e => {
-            console.warn(`EXAMPLE: errored! ${e}`);
+          .catch(error => {
+            console.warn(`EXAMPLE: errored! ${error}`);
           });
-      }, 150 * i);
+      }, 150 * index);
     });
   }
 
   if (lib.images) {
-    lib.images.forEach((img, i) => {
+    lib.images.forEach(async (img: string, index: number) => {
+      await sleep(500);
       setTimeout(() => {
         fetch(img)
           .then(response => {
@@ -30,10 +33,10 @@ libraries.forEach(lib => {
               console.warn(`IMG: ${img} returned ${response.status}`);
             }
           })
-          .catch(e => {
-            console.warn(`IMG: errored! ${e}`);
+          .catch(error => {
+            console.warn(`IMG: errored! ${error}`);
           });
-      }, 150 * i);
+      }, 150 * index);
     });
   }
 });

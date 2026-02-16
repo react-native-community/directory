@@ -16,6 +16,7 @@ export type Query = {
   expoGo?: string;
   ios?: string;
   macos?: string;
+  fireos?: string;
   tvos?: string;
   visionos?: string;
   web?: string;
@@ -33,11 +34,11 @@ export type Query = {
   isRecommended?: string;
   wasRecentlyUpdated?: string;
   minPopularity?: string | number;
+  minMonthlyDownloads?: string | number;
   newArchitecture?: string;
 };
 
 export type Library = {
-  goldstar?: boolean;
   githubUrl: string;
   ios?: boolean;
   android?: boolean;
@@ -45,6 +46,7 @@ export type Library = {
   expoGo?: boolean;
   windows?: boolean;
   macos?: boolean;
+  fireos?: boolean;
   tvos?: boolean;
   visionos?: boolean;
   unmaintained?: boolean | string;
@@ -58,6 +60,7 @@ export type Library = {
     isPackagePrivate: boolean;
     fullName: string;
     description: string;
+    registry?: string;
     topics?: string[];
     hasTypes?: boolean;
     newArchitecture?: boolean;
@@ -108,7 +111,6 @@ export type Library = {
   examples?: string[];
   images?: string[];
   npmPkg?: string;
-  nameOverride?: string;
   popularity?: number;
   matchScore?: number;
 };

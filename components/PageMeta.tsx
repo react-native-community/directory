@@ -51,18 +51,10 @@ const PageMeta = ({ title, query, path, description = site.description }: PageMe
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={socialImage} />
 
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#20232a" />
-
       <meta name="application-name" content={site.title} />
       <meta name="msapplication-TileColor" content="#20232a" />
 
       <link rel="canonical" href={`https://reactnative.directory${path ? `/${path}` : ''}`} />
-
-      <link rel="manifest" href="/site.webmanifest" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     </Head>
   );
 };

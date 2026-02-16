@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 
+import { colors, Caption, darkColors, HoverEffect } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Query } from '~/types';
+import { NUM_PER_PAGE } from '~/util/Constants';
+import { getPageQuery } from '~/util/search';
+import urlWithQuery from '~/util/urlWithQuery';
+
 import { Arrow } from './Icons';
-import { colors, Caption, darkColors, HoverEffect } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Query } from '../types';
-import { NUM_PER_PAGE } from '../util/Constants';
-import { getPageQuery } from '../util/search';
-import urlWithQuery from '../util/urlWithQuery';
 
 type Props = {
   query: Query;

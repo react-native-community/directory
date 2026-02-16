@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { Pressable } from 'react-native';
 import { useHover } from 'react-native-web-hooks';
 
-import { colors } from '../../common/styleguide';
+import { colors } from '~/common/styleguide';
+
 import { XIcon } from '../Icons';
 import Tooltip from '../Tooltip';
 

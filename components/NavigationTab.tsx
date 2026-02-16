@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { A, colors, darkColors, P } from '../common/styleguide';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import { A, colors, darkColors, P } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 
 const NavigationTab = ({ title, path = `/${title.toLowerCase()}` }) => {
   const { isDark } = useContext(CustomAppearanceContext);

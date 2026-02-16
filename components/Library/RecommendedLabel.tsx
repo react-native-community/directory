@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { colors, darkColors, Label } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
+import { colors, darkColors, Label } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+
 import { Badge } from '../Icons';
 
 const RecommendedLabel = ({ isSmallScreen }) => {

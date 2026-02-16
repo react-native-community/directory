@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType } from '~/types';
+import { getTimeSinceToday } from '~/util/datetime';
+
 import { DirectoryScore } from './DirectoryScore';
-import { colors, A, P, Caption, darkColors } from '../../common/styleguide';
-import CustomAppearanceContext from '../../context/CustomAppearanceContext';
-import { Library as LibraryType } from '../../types';
-import { getTimeSinceToday } from '../../util/datetime';
 import {
   Calendar,
   Star,
@@ -44,9 +45,9 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
       id: 'calendar',
       icon: <Calendar fill={iconColor} />,
       content: (
-        <Caption style={{ fontWeight: 300 }}>
+        <A href={`${github.urls.repo}/commits`} style={styles.link}>
           Updated {getTimeSinceToday(github.stats.pushedAt)}
-        </Caption>
+        </A>
       ),
     },
     npm.downloads
@@ -55,7 +56,7 @@ function generateData({ github, score, npm, npmPkg }: LibraryType, isDark: boole
           icon: <Download fill={iconColor} width={16} height={18} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}`} style={styles.link}>
-              {`${npm.downloads.toLocaleString()}`} {npm.period}ly downloads
+              {`${npm.downloads.toLocaleString()}`} monthly downloads
             </A>
           ),
         }

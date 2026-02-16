@@ -1,8 +1,9 @@
 import { Image, StyleSheet, View } from 'react-native';
 
+import { H2, A, P } from '~/common/styleguide';
+
 import Navigation from './Navigation';
 import PageMeta from './PageMeta';
-import { H2, A, P } from '../common/styleguide';
 
 const ErrorState = ({ statusCode }) => {
   return (
@@ -10,11 +11,11 @@ const ErrorState = ({ statusCode }) => {
       <PageMeta title="Error" description="Uh oh, something went wrong" />
       <Navigation noHeader />
       <View style={styles.container}>
-        <Image style={styles.img} source={require('../assets/notfound.png')} alt="No results" />
+        <Image style={styles.img} source={require('~/assets/notfound.png')} alt="No results" />
         <H2 style={styles.text}>Uh oh, something went wrong ({statusCode})</H2>
         <P style={[styles.text, styles.secondLine]}>
           Help fix it? Submit a PR to the{' '}
-          <A href="https://github.com/react-native-directory/website">Github Repo</A>.
+          <A href="https://github.com/react-native-community/directory">GitHub repository</A>.
         </P>
       </View>
     </>

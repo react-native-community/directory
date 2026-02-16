@@ -4,20 +4,20 @@ import Router from 'next/router';
 import { useContext, useState } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import { A, H4, colors, darkColors, P } from '../common/styleguide';
-import ContentContainer from '../components/ContentContainer';
-import { Filters } from '../components/Filters';
-import { FilterButton } from '../components/Filters/FilterButton';
-import LoadingContent from '../components/Library/LoadingContent';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import Pagination from '../components/Pagination';
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
-import { Library as LibraryType, QueryOrder } from '../types';
-import getApiUrl from '../util/getApiUrl';
-import urlWithQuery from '../util/urlWithQuery';
+import { A, H4, colors, darkColors, P } from '~/common/styleguide';
+import ContentContainer from '~/components/ContentContainer';
+import { Filters } from '~/components/Filters';
+import { FilterButton } from '~/components/Filters/FilterButton';
+import LoadingContent from '~/components/Library/LoadingContent';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import Pagination from '~/components/Pagination';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Library as LibraryType, QueryOrder } from '~/types';
+import getApiUrl from '~/util/getApiUrl';
+import urlWithQuery from '~/util/urlWithQuery';
 
-const LibraryWithLoading = dynamic(() => import('../components/Library'), {
+const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
   loading: () => <LoadingContent />,
 });
 
@@ -61,7 +61,7 @@ const Trending = ({ data, query }) => {
                 <LibraryWithLoading
                   key={`list-item-${index}-${item.github.name}`}
                   library={item}
-                  showPopularity
+                  showTrendingMark
                 />
               ))}
             </View>
@@ -71,7 +71,7 @@ const Trending = ({ data, query }) => {
           <View style={styles.noResultWrapper}>
             <Image
               style={styles.noResultImg}
-              source={require('../assets/notfound.png')}
+              source={require('~/assets/notfound.png')}
               alt="No results"
             />
             <H4>Nothing was found!</H4>
@@ -93,7 +93,7 @@ const Trending = ({ data, query }) => {
 Trending.getInitialProps = async (ctx: NextPageContext) => {
   const trendingQuery = {
     ...ctx.query,
-    ...{ minPopularity: 5, order: 'popularity' as QueryOrder },
+    ...{ minPopularity: 5, minMonthlyDownloads: 1000, order: 'popularity' as QueryOrder },
   };
   const url = getApiUrl(urlWithQuery('/libraries', trendingQuery), ctx);
   const response = await fetch(url);

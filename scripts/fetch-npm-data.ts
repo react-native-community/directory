@@ -1,12 +1,15 @@
 import fetch from 'cross-fetch';
 
-import { sleep } from './helpers.js';
+import { sleep, REQUEST_SLEEP } from './helpers';
+import { Library } from '../types';
 
-const urlForPackage = (npmPkg, period = 'month') => {
+const ATTEMPTS_LIMIT = 2;
+
+function urlForPackage(npmPkg: string, period = 'month') {
   return `https://api.npmjs.org/downloads/point/last-${period}/${npmPkg}`;
-};
+}
 
-export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCount = 0) => {
+export async function fetchNpmDataBulk(namesArray: string[], period = 'month', attemptsCount = 0) {
   try {
     const listCount = namesArray.length;
     const url = urlForPackage(namesArray.join(','), period);
@@ -32,21 +35,25 @@ export const fetchNpmDataBulk = async (namesArray, period = 'month', attemptsCou
               downloads: pkgData.downloads,
               start: pkgData.start,
               end: pkgData.end,
-              period,
             }
           : {
-              weekDownloads: pkgData?.downloads || 0,
+              weekDownloads: pkgData?.downloads ?? 0,
             },
       };
     });
-  } catch {
-    await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
+  } catch (error) {
+    if (attemptsCount >= ATTEMPTS_LIMIT) {
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      console.error(error);
+      return namesArray.map(name => ({ name, npm: null }));
+    }
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     console.log(`[NPM] Retrying fetch for ${namesArray} (${attemptsCount + 1})`);
     return await fetchNpmDataBulk(namesArray, period, attemptsCount + 1);
   }
-};
+}
 
-export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
+export async function fetchNpmData(pkgData: Library, attemptsCount = 0) {
   const { npmPkg } = pkgData;
 
   try {
@@ -54,30 +61,35 @@ export const fetchNpmData = async (pkgData, attemptsCount = 0) => {
     const response = await fetch(url);
     const downloadData = await response.json();
 
-    if (!downloadData.downloads) {
+    if (!downloadData.package) {
       console.warn(
         `[NPM] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
       return { ...pkgData, npm: null };
     }
 
-    const weekUrl = urlForPackage(npmPkg, 'week');
-    const weekResponse = await fetch(weekUrl);
-    const weekDownloadData = await weekResponse.json();
+    // const weekUrl = urlForPackage(npmPkg, 'week');
+    // const weekResponse = await fetch(weekUrl);
+    // const weekDownloadData = await weekResponse.json();
 
     return {
       ...pkgData,
       npm: {
         downloads: downloadData.downloads,
-        weekDownloads: weekDownloadData.downloads,
+        // weekDownloads: weekDownloadData.downloads,
         start: downloadData.start,
         end: downloadData.end,
         period: 'month',
       },
     };
-  } catch {
-    await sleep(1000 + 250 * attemptsCount, 2000 + 500 * attemptsCount);
+  } catch (error) {
+    if (attemptsCount >= ATTEMPTS_LIMIT) {
+      console.error('[NPM] Looks like we have reach the NPM API rate limit!');
+      console.error(error);
+      return { ...pkgData, npm: null };
+    }
+    await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     console.log(`[NPM] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);
     return await fetchNpmData(pkgData, attemptsCount + 1);
   }
-};
+}

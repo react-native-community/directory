@@ -4,7 +4,6 @@ secrets.json
 .env
 
 # Standard stuff
-yarn-error.log
 node_modules/**/*
 npm-debug.*
 

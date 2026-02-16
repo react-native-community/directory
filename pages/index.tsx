@@ -1,20 +1,20 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { View, StyleSheet } from 'react-native';
 
-import ContentContainer from '../components/ContentContainer';
-import LoadingContent from '../components/Library/LoadingContent';
-import Navigation from '../components/Navigation';
-import PageMeta from '../components/PageMeta';
-import Pagination from '../components/Pagination';
-import Search from '../components/Search';
-import { StructuredData } from '../components/StructuredData';
-import getApiUrl from '../util/getApiUrl';
-import urlWithQuery from '../util/urlWithQuery';
+import ContentContainer from '~/components/ContentContainer';
+import LoadingContent from '~/components/Library/LoadingContent';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import Pagination from '~/components/Pagination';
+import Search from '~/components/Search';
+import { StructuredData } from '~/components/StructuredData';
+import getApiUrl from '~/util/getApiUrl';
+import urlWithQuery from '~/util/urlWithQuery';
 
-const LibrariesWithLoading = dynamic(() => import('../components/Libraries'), {
+const LibrariesWithLoading = dynamic(() => import('~/components/Libraries'), {
   loading: () => (
     <View
       style={{
