@@ -744,7 +744,8 @@
     "githubUrl": "https://github.com/TheWidlarzGroup/react-native-video/tree/master/packages/react-native-video",
     "examples": [
       "https://github.com/TheWidlarzGroup/react-native-video/tree/master/example",
-      "https://github.com/TheWidlarzGroup/react-native-video-tvos-example"
+      "https://github.com/TheWidlarzGroup/react-native-video-tvos-example",
+      "https://github.com/TheWidlarzGroup/react-native-video-feed"
     ],
     "ios": true,
     "android": true,
@@ -19634,7 +19635,6 @@
   },
   {
     "githubUrl": "https://github.com/huextrat/expo-maps-routes",
-    "npmPkg": "expo-maps-routes",
     "android": true,
     "ios": true,
     "expoGo": true,
@@ -19656,6 +19656,44 @@
     "ios": true,
     "android": true,
     "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rygrams/xaui/tree/main/packages/core",
+    "npmPkg": "@xaui/core",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rygrams/xaui/tree/main/packages/native",
+    "npmPkg": "@xaui/native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rygrams/xaui/tree/main/packages/icons",
+    "npmPkg": "@xaui/icons",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/MatthewSRC/native-springs-shaders",
+    "npmPkg": "@native-springs/shaders",
+    "examples": ["https://github.com/MatthewSRC/native-springs-shaders/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/vercel-labs/json-render/tree/main/packages/react-native",
+    "examples": ["https://github.com/vercel-labs/json-render/tree/main/examples/react-native"],
+    "npmPkg": "@json-render/react-native",
+    "ios": true,
+    "android": true,
+    "web": true,
     "newArchitecture": true
   }
 ]
