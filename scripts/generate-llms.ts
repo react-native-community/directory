@@ -8,10 +8,99 @@ import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchSta
 import data from '../assets/data.json';
 
 const OUTPUT_PATH = path.resolve('public', 'llms.txt');
-const INTRODUCTION = [
-  '# reactnative.directory',
-  'Browse the full catalog at https://reactnative.directory for fresh React Native libraries.',
-];
+const API_DOCUMENTATION = await fs.readFile('API.md', 'utf8');
+
+const INTRODUCTION = `# reactnative.directory
+
+React Native Directory is a website where you can browse through all the libraries that are compatible with React Native.
+
+## Library fields description
+
+### ⚙️ General
+
+- #### ❗ \`githubUrl\` **(required)**
+
+  **(string)** - URL to the package GitHub repository (currently other Git hosts are not supported).
+
+  > [!WARNING]
+  > Package also needs to be published to the NPM registry, because it is a source of crucial data for the directory.
+
+- #### \`npmPkg\`
+
+  **(string)** - npm package name, by default GitHub repository name will be used. Example: \`"@expo/react-native-action-sheet"\`.
+
+  > [!TIP]
+  > Fill \`npmPkg\` only when the GitHub repository name is different from the name of package published to npm, or the package is a part of monorepo.
+
+- #### \`examples\`
+  **(array of strings)** - URLs to example projects or Snacks which demonstrates the library.
+- #### \`images\`
+
+  **(array of strings)** - URLs to static images or GIFs that shows the library functionality.
+
+  > [!TIP]
+  > Please do not add logotypes or other branding materials to the \`images\` array, and please avoid linking multiple assets which shows the same feature.
+
+### 📱 Platforms
+
+- #### \`android\`
+  **(boolean)** - works on Android device.
+- #### \`ios\`
+  **(boolean)** - works on iOS device.
+- #### \`web\`
+  **(boolean)** - can be used with [\`react-native-web\`](https://github.com/necolas/react-native-web).
+
+### 🖥️ Out-of-tree Platforms
+
+> [!IMPORTANT]
+> Adding out-of-tree platforms support requires an example or link to the app which uses the library on the given platform.
+
+- #### \`windows\`
+  **(boolean)** - can be used with [\`react-native-windows\`](https://github.com/microsoft/react-native-windows).
+- #### \`macos\`
+  **(boolean)** - can be used with [\`react-native-macos\`](https://github.com/microsoft/react-native-macos).
+- #### \`tvos\`
+  **(boolean)** - can be used with [\`react-native-tvos\`](https://github.com/react-native-tvos/react-native-tvos).
+- #### \`visionos\`
+  **(boolean)** - can be used with [\`react-native-visionos\`](https://github.com/callstack/react-native-visionos).
+
+### ✅ Compatibility
+
+> [!TIP]
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
+
+- #### \`expoGo\`
+  **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
+- #### \`fireos\`
+  **(boolean)** - works on Amazon Fire OS.
+- #### \`horizon\`
+  **(boolean)** - works on Meta Horizon OS.
+- #### \`vegaos\`
+  **(boolean|string)** - works with [Vega OS](https://developer.amazon.com/apps-and-games/vega). It can also be a string containing npm package name, if a separate/additional package is required for full support.
+
+### 🏷️ Tags
+
+- #### \`unmaintained\`
+  **(boolean)** - signify that a library is no longer maintained. You can provide alternative or replacement libraries with the \`alternatives\` field, if needed.
+- #### \`dev\`
+  **(boolean)** - signify that a library is a development tool or is only a part of development process.
+- #### \`template\`
+  **(boolean)** - signify that a library is a new project template.
+- #### \`configPlugin\`
+  **(boolean \\| string \\[URL to third-party config plugin\\])** - Indicates if the library includes an [Expo config plugin](https://docs.expo.dev/config-plugins/introduction/). If the plugin is provided by a third party, supply the URL as a string. This field is optional and will be detected automatically if omitted.
+- #### \`newArchitecture\`
+  **(boolean|'new-arch-only')** - signify that a library supports both, or not, the New Architecture and the Old Architecture or only the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the \`newArchitectureNote\` field, if needed.
+
+  > [!TIP]
+  > Set \`newArchitecture\` field only when automatic architecture detection fails for your package, despite it supports the New Architecture.
+
+### 📝 Additional context for tags
+
+- #### \`newArchitectureNote\`
+  **(string)** - provide a note for the New Architecture support status, if a boolean \`"true"\` or \`"false"\` is not sufficient to describe the state of New Architecture support.
+
+- #### \`alternatives\`
+  **(array of strings)** - provide a list of alternatives to the library. eg: \`["expo-camera", "react-native-vision-camera"]\`. This is used to provide a list of alternatives to a library if it is unmaintained or does not support the New Architecture.`;
 
 const NEW_ARCHITECTURE_STATUS_LABELS: Record<NewArchSupportStatus, string> = {
   [NewArchSupportStatus.NewArchOnly]: 'Only Supports New Architecture',
@@ -102,7 +191,13 @@ async function generateLlmsFile() {
   const entries = libraries
     .filter(library => !library.template)
     .map(library => formatRecord(library));
-  const content = [...INTRODUCTION, ...entries].join('\n\n---\n\n');
+
+  const content = [
+    INTRODUCTION,
+    API_DOCUMENTATION,
+    '# List of available libraries',
+    entries.join('\n\n---\n\n'),
+  ].join('\n\n');
 
   await fs.writeFile(OUTPUT_PATH, `${content}\n`, 'utf8');
 

@@ -5,7 +5,7 @@
     https://reactnative.directory
   </a>
 </h3>
-<p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
+<p align="center">React Native Directory is a website where you can browse through all the libraries that are compatible with React Native.</p>
 <p align="center">
   <a href="https://vercel.com/?utm_source=rndir&utm_campaign=oss">
     <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" />
@@ -193,44 +193,7 @@ Get a commit on `main` and it will be automatically deployed.
 
 ## I don't like your website, can I hit an API instead and build my own better stuff?
 
-Sure, go for it!
-
-```
-https://reactnative.directory/api/libraries
-```
-
-- Returns a list of all libraries in `JSON` format.
-
-<details>
-  <summary><b>More details on API queries</b></summary>
-  <br/>
-
-  ```
-  https://reactnative.directory/api/libraries?search=webgl
-  ```
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
-
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true
-  ```
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
-
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true
-  ```
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
-
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true&isPopular=true
-  ```
-
-- Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
-
-All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
-</details>
+Sure, go for it! You can read more details on the public API in the [dedicated documentation file](API.md).
 
 ## I don't like how you calculate scores.
 
