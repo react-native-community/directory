@@ -19697,7 +19697,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/sherlo-io/sherlo",
+    "githubUrl": "https://github.com/sherlo-io/sherlo/tree/main/packages/cli",
+    "npmPkg": "sherlo",
     "examples": [
       "https://github.com/sherlo-io/sherlo/tree/main/examples/standard",
       "https://github.com/sherlo-io/sherlo/tree/main/examples/eas-update",
