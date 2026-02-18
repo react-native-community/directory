@@ -19718,5 +19718,22 @@
     "android": true,
     "newArchitecture": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/sherlo-io/sherlo/tree/main/packages/react-native-storybook",
+    "npmPkg": "@sherlo/react-native-storybook",
+    "examples": [
+      "https://github.com/sherlo-io/sherlo/tree/main/examples/standard",
+      "https://github.com/sherlo-io/sherlo/tree/main/examples/eas-update",
+      "https://github.com/sherlo-io/sherlo/tree/main/examples/eas-cloud-build"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/sherlo-io/sherlo/main/assets/hero-desktop-dark.gif",
+      "https://raw.githubusercontent.com/sherlo-io/sherlo/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "dev": true
   }
 ]
