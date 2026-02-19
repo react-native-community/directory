@@ -175,16 +175,18 @@ async function buildAndScoreData() {
     console.warn(
       '\n 🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
     );
-    invalidRepos.forEach(repoUrl => console.warn(`- ${repoUrl}`));
+    invalidRepos.forEach(repoUrl => {
+      console.warn(`- ${repoUrl}`);
+    });
   }
 
   if (mismatchedRepos.length) {
     console.warn(
       `\n 🚨 The following projects repository URLs (${mismatchedRepos.length}) are misaligned with the package name extracted from package.json:`
     );
-    mismatchedRepos.forEach(project =>
-      console.warn(`- ${project.githubUrl}: ${project.github.name}`)
-    );
+    mismatchedRepos.forEach(project => {
+      console.warn(`- ${project.githubUrl}: ${project.github.name}`);
+    });
   }
 
   console.log('📄️ Preparing data file');

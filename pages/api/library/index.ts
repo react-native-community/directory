@@ -21,13 +21,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (!packageNames) {
     res.statusCode = 500;
-    return res.json({
+    res.json({
       error: `Invalid request. You need to specify package names via 'name' query param.`,
     });
+    return;
   }
 
   res.statusCode = 200;
-  return res.json(
+  res.json(
     Object.fromEntries(
       packageNames.map(name => [
         name,

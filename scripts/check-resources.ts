@@ -9,7 +9,9 @@ const GITHUB_URLS_ONLY = false;
 
 async function fetchUrl(url: string) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10_000);
+  const timeout = setTimeout(() => {
+    controller.abort();
+  }, 10_000);
 
   try {
     const res = await fetch(url, { signal: controller.signal, redirect: 'manual' });
@@ -65,4 +67,6 @@ async function runFetches(libraries: LibraryDataEntryType[]) {
   console.log('✅ All fetches finished!');
 }
 
-runFetches(libraries).catch(err => console.error('❌ Unexpected error:', err));
+runFetches(libraries).catch(err => {
+  console.error('❌ Unexpected error:', err);
+});

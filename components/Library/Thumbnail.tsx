@@ -23,7 +23,7 @@ function Thumbnail({ url }: Props) {
   const maxImgPreviewHeight = maxPreviewHeight - 20;
 
   return (
-    <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={open => setShowPreview(open)}>
+    <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={setShowPreview}>
       <HoverCard.Trigger asChild>
         <View
           tabIndex={0}
