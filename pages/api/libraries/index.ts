@@ -127,7 +127,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
   }
 
-  return res.json({
+  res.json({
     libraries: filteredAndPaginatedLibraries,
     total: filteredLibraries.length,
   });

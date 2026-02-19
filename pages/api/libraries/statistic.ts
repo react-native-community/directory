@@ -113,5 +113,5 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
   res.statusCode = 200;
 
-  return res.json(result);
+  res.json(result);
 }

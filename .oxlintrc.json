@@ -108,6 +108,7 @@
     "promise/always-return": "error",
     "promise/no-callback-in-promise": "error",
     "react-hooks/rules-of-hooks": "error",
+    "react/button-has-type": "error",
     "react/forward-ref-uses-ref": "error",
     "react/jsx-boolean-value": ["error"],
     "react/jsx-curly-brace-presence": ["error"],
@@ -125,18 +126,20 @@
     "react/no-did-mount-set-state": "error",
     "react/no-direct-mutation-state": "error",
     "react/no-redundant-should-component-update": "error",
+    "react/no-string-refs": "error",
     "react/no-this-in-sfc": "error",
     "react/no-unknown-property": "error",
     "react/no-unescaped-entities": "error",
     "react/no-will-update-set-state": "error",
     "react/self-closing-comp": "error",
+    "react/style-prop-object": "error",
     "typescript/await-thenable": "error",
     "typescript/ban-ts-comment": [
       "error",
       {
         "minimumDescriptionLength": 3,
-        "ts-check": false,
         "ts-expect-error": "allow-with-description",
+        "ts-check": false,
         "ts-ignore": true,
         "ts-nocheck": true
       }
@@ -148,6 +151,12 @@
       }
     ],
     "typescript/no-confusing-non-null-assertion": "error",
+    "typescript/no-confusing-void-expression": [
+      "error",
+      {
+        "ignoreArrowShorthand": true
+      }
+    ],
     "typescript/no-extra-non-null-assertion": "error",
     "typescript/no-misused-promises": [
       "error",

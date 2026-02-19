@@ -13,9 +13,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (!packageName) {
     res.statusCode = 500;
-    return res.json({
+    res.json({
       error: `Invalid request. You need to specify package name via 'name' query param.`,
     });
+    return;
   }
 
   const now = Date.now();
@@ -29,9 +30,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if ('status' in result && result.status !== 200) {
     res.statusCode = result.status;
-    return res.json({});
+    res.json({});
+    return;
   }
 
   res.statusCode = 200;
-  return res.json(await result.json());
+  res.json(await result.json());
 }

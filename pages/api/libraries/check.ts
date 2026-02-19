@@ -18,7 +18,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (!packages || !Array.isArray(packages)) {
     res.statusCode = 500;
-    return res.json({ error: 'packages must be an array' });
+    res.json({ error: 'packages must be an array' });
+    return;
   }
 
   res.statusCode = 200;
@@ -28,5 +29,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     result[pkgName] = DATASET[pkgName];
   });
 
-  return res.json(result);
+  res.json(result);
 }
