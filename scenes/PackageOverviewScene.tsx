@@ -156,6 +156,13 @@ export default function PackageOverviewScene({
                   </li>
                   <li>
                     <A
+                      href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
+                      style={tw`text-[12px] font-light`}>
+                      npmgraph
+                    </A>
+                  </li>
+                  <li>
+                    <A
                       href={`https://pkg-size.dev/${library.npmPkg}`}
                       style={tw`text-[12px] font-light`}>
                       pkg-size.dev
