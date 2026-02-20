@@ -19735,5 +19735,12 @@
     "android": true,
     "newArchitecture": true,
     "dev": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/Swif7ify/react-native-earl-thermal-printer",
+    "examples": ["https://github.com/Swif7ify/react-native-earl-thermal-printer/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
 ]
