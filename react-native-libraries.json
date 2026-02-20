@@ -18395,9 +18395,11 @@
   },
   {
     "githubUrl": "https://github.com/authsignal/react-native-authsignal",
-    "examples": ["https://github.com/dariyd/react-native-image-filters/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported via the interop compatibility layer."
   },
   {
     "githubUrl": "https://github.com/rpldy/react-uploady/tree/master/packages/native/native-uploady",
