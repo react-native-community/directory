@@ -19738,5 +19738,19 @@
     "android": true,
     "newArchitecture": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Rednegniw/number-flow-react-native",
+    "npmPkg": "number-flow-react-native",
+    "examples": [
+      "https://github.com/Rednegniw/number-flow-react-native/tree/main/apps/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Rednegniw/number-flow-react-native/main/assets/showcase.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
