@@ -19750,5 +19750,19 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/suhaotian/broad-infinite-list",
+    "npmPkg": "broad-infinite-list",
+    "examples": [
+      "https://github.com/suhaotian/broad-infinite-list?tab=readme-ov-file#expo-demo-previewreactnative"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/suhaotian/broad-infinite-list/refs/heads/main/flow.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
