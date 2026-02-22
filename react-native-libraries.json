@@ -8,6 +8,16 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/hizbullaharif/rn-background-upload",
+    "npmPkg": "https://www.npmjs.com/package/rn-background-upload",
+    "ios": true,
+    "android": true,
+    "web": false,
+    "expoGo": true,
+    "dev": true,
+    "newArchitecture": true,
+  },
+  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
