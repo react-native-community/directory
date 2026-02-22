@@ -6432,7 +6432,8 @@
       "https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/Sifir-io/react-native-tor",
