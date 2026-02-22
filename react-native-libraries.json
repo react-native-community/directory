@@ -8,16 +8,6 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/hizbullaharif/rn-background-upload",
-    "npmPkg": "rn-background-upload",
-    "ios": true,
-    "android": true,
-    "web": false,
-    "expoGo": true,
-    "dev": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
     "ios": true,
     "android": true,
@@ -19771,6 +19761,14 @@
       "https://raw.githubusercontent.com/suhaotian/broad-infinite-list/refs/heads/main/flow.jpg"
     ],
     "web": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hizbullaharif/rn-background-upload",
+    "examples": ["https://github.com/hizbullaharif/rn-background-upload/tree/main/example"],
     "ios": true,
     "android": true,
     "expoGo": true,
