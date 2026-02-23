@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
@@ -7,6 +6,7 @@ import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
 import { TimeRange } from '~/util/datetime';
+import { storage } from '~/util/storage';
 import tw from '~/util/tailwind';
 
 import DependencyRow from './DependencyRow';
@@ -38,7 +38,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
 
   useEffect(() => {
     async function refreshState() {
-      const val = await AsyncStorage.getItem(key);
+      const val = await storage.getItem(key);
       setCollapsed(val === 'true');
     }
 
@@ -52,7 +52,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   async function toggleSection() {
     const next = !collapsed;
     setCollapsed(next);
-    await AsyncStorage.setItem(key, next ? 'true' : 'false');
+    await storage.setItem(key, next ? 'true' : 'false');
   }
 
   return (

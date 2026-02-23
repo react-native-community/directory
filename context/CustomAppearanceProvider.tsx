@@ -1,7 +1,7 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { type RnColorScheme } from 'twrnc';
 
+import { storage } from '~/util/storage';
 import tw, { useAppColorScheme, useDeviceContext } from '~/util/tailwind';
 
 import CustomAppearanceContext from './CustomAppearanceContext';
@@ -60,16 +60,16 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
 }
 
 async function cacheAppearanceState(isDark: boolean) {
-  await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify({ isDark }));
+  await storage.setItem(appearanceStorageKey, JSON.stringify({ isDark }));
 }
 
 async function rehydrateAppearanceState() {
-  if (!shouldRehydrate || !AsyncStorage) {
+  if (!shouldRehydrate) {
     return defaultState;
   }
 
   try {
-    const item = await AsyncStorage.getItem(appearanceStorageKey);
+    const item = await storage.getItem(appearanceStorageKey);
     return item ? JSON.parse(item) : defaultState;
   } catch {
     return defaultState;
