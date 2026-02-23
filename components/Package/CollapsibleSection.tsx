@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
@@ -37,12 +36,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   );
 
   useEffect(() => {
-    async function refreshState() {
-      const val = await AsyncStorage.getItem(key);
-      setCollapsed(val === 'true');
-    }
-
-    void refreshState();
+    setCollapsed(window.localStorage.getItem(key) === 'true');
   }, [key]);
 
   if (noData) {
@@ -50,9 +44,9 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   }
 
   async function toggleSection() {
-    const next = !collapsed;
-    setCollapsed(next);
-    await AsyncStorage.setItem(key, next ? 'true' : 'false');
+    const nextState = !collapsed;
+    setCollapsed(nextState);
+    window.localStorage.setItem(key, nextState ? 'true' : 'false');
   }
 
   return (
