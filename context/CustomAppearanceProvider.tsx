@@ -11,7 +11,10 @@ const defaultState = { isDark: false };
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
   const colorSchemeRef = useRef<RnColorScheme>(colorScheme);
-  const initialScheme = useMemo<RnColorScheme>(() => (readIsDarkFromLS() ? 'dark' : 'light'), []);
+  const initialScheme = useMemo<RnColorScheme>(
+    () => (readStoredAppearance() ? 'dark' : 'light'),
+    []
+  );
 
   useEffect(() => {
     applyTheme(initialScheme);
@@ -30,7 +33,7 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     const newTheme: RnColorScheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
     applyTheme(newTheme);
     setColorScheme(newTheme);
-    writeIsDarkToLS(newTheme === 'dark');
+    writeAppearanceToStore(newTheme === 'dark');
   }
 
   return (
@@ -48,19 +51,15 @@ function applyTheme(scheme: RnColorScheme) {
   }
 }
 
-function readIsDarkFromLS(): boolean {
+function readStoredAppearance(): boolean {
   try {
-    const raw = window.localStorage.getItem(appearanceStorageKey);
-    if (!raw) {
-      return defaultState.isDark;
-    }
-    const { isDark } = JSON.parse(raw);
-    return isDark ?? defaultState.isDark;
+    const item = window.localStorage.getItem(appearanceStorageKey);
+    return item ? (JSON.parse(item)?.isDark ?? defaultState.isDark) : defaultState.isDark;
   } catch {
     return defaultState.isDark;
   }
 }
 
-function writeIsDarkToLS(isDark: boolean) {
+function writeAppearanceToStore(isDark: boolean) {
   window.localStorage.setItem(appearanceStorageKey, JSON.stringify({ isDark }));
 }
