@@ -6,7 +6,6 @@ import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
 import { TimeRange } from '~/util/datetime';
-import { storage } from '~/util/storage';
 import tw from '~/util/tailwind';
 
 import DependencyRow from './DependencyRow';
@@ -37,12 +36,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   );
 
   useEffect(() => {
-    async function refreshState() {
-      const val = await storage.getItem(key);
-      setCollapsed(val === 'true');
-    }
-
-    void refreshState();
+    setCollapsed(window.localStorage.getItem(key) === 'true');
   }, [key]);
 
   if (noData) {
@@ -50,9 +44,9 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   }
 
   async function toggleSection() {
-    const next = !collapsed;
-    setCollapsed(next);
-    await storage.setItem(key, next ? 'true' : 'false');
+    const nextState = !collapsed;
+    setCollapsed(nextState);
+    window.localStorage.setItem(key, nextState ? 'true' : 'false');
   }
 
   return (
