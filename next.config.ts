@@ -7,7 +7,6 @@ import withImages from 'next-images';
 
 const PACKAGES_TO_OPTIMIZE = [
   '@expo/html-elements',
-  '@react-native-async-storage/async-storage',
   '@react-native-picker/picker',
   '@sentry/*',
   '@shikijs/*',
