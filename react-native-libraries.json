@@ -6432,7 +6432,8 @@
       "https://github.com/Vydia/react-native-background-upload/tree/master/example/RNBackgroundExample"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": false
   },
   {
     "githubUrl": "https://github.com/Sifir-io/react-native-tor",
@@ -18395,9 +18396,12 @@
   },
   {
     "githubUrl": "https://github.com/authsignal/react-native-authsignal",
-    "examples": ["https://github.com/dariyd/react-native-image-filters/tree/main/example"],
+    "examples": ["https://github.com/authsignal/react-native-authsignal/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported via the interop compatibility layer."
   },
   {
     "githubUrl": "https://github.com/rpldy/react-uploady/tree/master/packages/native/native-uploady",
@@ -19735,6 +19739,41 @@
     "android": true,
     "newArchitecture": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Rednegniw/number-flow-react-native/tree/main/packages/number-flow-react-native",
+    "npmPkg": "number-flow-react-native",
+    "examples": ["https://github.com/Rednegniw/number-flow-react-native/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Rednegniw/number-flow-react-native/main/assets/showcase.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/suhaotian/broad-infinite-list",
+    "npmPkg": "broad-infinite-list",
+    "examples": [
+      "https://github.com/suhaotian/broad-infinite-list?tab=readme-ov-file#expo-demo-previewreactnative"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/suhaotian/broad-infinite-list/refs/heads/main/flow.jpg"
+    ],
+    "web": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hizbullaharif/rn-background-upload",
+    "examples": ["https://github.com/hizbullaharif/rn-background-upload/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Swif7ify/react-native-earl-thermal-printer",
