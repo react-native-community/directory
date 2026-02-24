@@ -18223,6 +18223,15 @@
     "android": true
   },
   {
+  "githubUrl": "https://github.com/GufranGaury1887/dsChat",
+  "npmPkg": "react-native-ds-chat",
+  "examples": ["https://github.com/GufranGaury1887/dsChat/tree/main/rn-DS-chat-UI/example"],
+  "images": ["https://raw.githubusercontent.com/GufranGaury1887/dsChat/main/screenshot/ChatScreen.png"],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true
+},
+  {
     "githubUrl": "https://github.com/johelder/react-native-input-code-otp",
     "examples": [
       "https://github.com/johelder/react-native-input-code-otp/tree/main/example",
