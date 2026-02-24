@@ -15,27 +15,21 @@ const SUPPORT_PARAMS = [
 ];
 
 function calculateMatchScore(
-  { github, npmPkg, topicSearchString, unmaintained, githubUrl, vegaos }: LibraryType,
+  { github, npmPkg, topicSearchString, unmaintained, githubUrl, vegaos, score, npm }: LibraryType,
   querySearch: string
 ) {
   const exactNameMatchPoints =
     (!isEmptyOrNull(github.name) && github.name.toLowerCase() === querySearch) ||
     (!isEmptyOrNull(githubUrl) && githubUrl.toLowerCase() === querySearch) ||
     (!isEmptyOrNull(npmPkg) && npmPkg.toLowerCase() === querySearch)
-      ? 300
+      ? 150
       : 0;
 
   const npmPkgNameMatchPoints =
     !isEmptyOrNull(npmPkg) &&
     (npmPkg.includes(querySearch) ||
       npmPkg.replaceAll(NPM_NAME_CLEANUP_REGEX, ' ').toLowerCase().includes(querySearch))
-      ? 200
-      : 0;
-
-  const gitHubURLOrOwnerMatchPoints =
-    githubUrl.startsWith(querySearch) ||
-    githubUrl.replace(GITHUB_URL_CLEANUP_REGEX, '$1').toLowerCase().includes(querySearch)
-      ? 150
+      ? 125
       : 0;
 
   const cleanedUpName = npmPkg
@@ -52,11 +46,17 @@ function calculateMatchScore(
       ? 100
       : 0;
 
+  const gitHubURLOrOwnerMatchPoints =
+    githubUrl.startsWith(querySearch) ||
+    githubUrl.replace(GITHUB_URL_CLEANUP_REGEX, '$1').toLowerCase().includes(querySearch)
+      ? 50
+      : 0;
+
   const repoNameMatchPoints =
     !isEmptyOrNull(github.name) && github.name.toLowerCase().includes(querySearch) ? 50 : 0;
 
   const vegaOSPackageMatchPoints =
-    typeof vegaos === 'string' && vegaos.includes(querySearch) ? 50 : 0;
+    typeof vegaos === 'string' && vegaos.includes(querySearch) ? 25 : 0;
 
   const descriptionMatchPoints =
     !isEmptyOrNull(github.description) && github.description?.toLowerCase().includes(querySearch)
@@ -77,8 +77,10 @@ function calculateMatchScore(
 
   if (matchScore && unmaintained) {
     return matchScore / 1000;
+  } else if (npm?.downloads && npm.downloads < 10_000) {
+    return matchScore / 10;
   } else {
-    return matchScore;
+    return matchScore > 0 ? matchScore + score / 2 : matchScore;
   }
 }
 

@@ -47,10 +47,9 @@ export function popularity(libraries: LibraryType[]) {
 export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
     if (a.matchScore && b.matchScore) {
-      if (Math.abs(a.matchScore - b.matchScore) >= 50) {
+      if (a.matchScore < 10 || b.matchScore < 10 || Math.abs(a.matchScore - b.matchScore) >= 40) {
         return b.matchScore - a.matchScore;
       }
-
       return b.score - a.score;
     }
     return 0;
