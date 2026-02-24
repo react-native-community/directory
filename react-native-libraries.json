@@ -19788,5 +19788,14 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+   {
+    "githubUrl": "https://github.com/rtsouza26/expo-mqtt",
+    "examples": [
+      "https://github.com/rtsouza26/expo-mqtt/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
