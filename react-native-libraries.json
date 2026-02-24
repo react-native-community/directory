@@ -19,6 +19,13 @@
     ]
   },
   {
+    "githubUrl": "https://github.com/GufranGaury1887/dsChat/tree/main/rn-DS-chat-UI",
+    "npmPkg": "react-native-ds-chat",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/Iconscout/react-native-unicons",
     "ios": true,
     "android": true,
