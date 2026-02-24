@@ -123,7 +123,14 @@
     "githubUrl": "https://github.com/alexfoxy/react-native-units",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+  },
+  {
+  "githubUrl": "https://github.com/GufranGaury1887/dsChat/tree/main/rn-DS-chat-UI",
+  "npmPkg": "react-native-ds-chat"
+  "ios": true,
+  "android": true,
+  "expoGo": true
   },
   {
     "githubUrl": "https://github.com/SudoPlz/react-native-shake-event",
