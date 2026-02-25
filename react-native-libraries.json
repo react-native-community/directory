@@ -19790,8 +19790,14 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/rtsouza26/expo-mqtt",
+    "examples": ["https://github.com/rtsouza26/expo-mqtt/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/Babayev03/rn-floating-input",
-    "npmPkg": "rn-floating-input",
     "ios": true,
     "android": true,
     "newArchitecture": true
