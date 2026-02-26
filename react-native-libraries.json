@@ -3713,9 +3713,11 @@
     "alternatives": ["expo-blur"]
   },
   {
-    "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage",
+    "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/async-storage",
     "examples": [
-      "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage/example"
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/expo",
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/react-native",
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/web"
     ],
     "ios": true,
     "android": true,
@@ -3728,6 +3730,7 @@
     "visionos": true,
     "vegaos": "@amazon-devices/react-native-async-storage__async-storage",
     "npmPkg": "@react-native-async-storage/async-storage",
+    "configPlugin": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/expo-with-async-storage",
     "newArchitecture": true
   },
   {
@@ -19742,7 +19745,6 @@
   },
   {
     "githubUrl": "https://github.com/Rednegniw/number-flow-react-native/tree/main/packages/number-flow-react-native",
-    "npmPkg": "number-flow-react-native",
     "examples": ["https://github.com/Rednegniw/number-flow-react-native/tree/main/apps/example"],
     "images": [
       "https://raw.githubusercontent.com/Rednegniw/number-flow-react-native/main/assets/showcase.gif"
@@ -19754,7 +19756,6 @@
   },
   {
     "githubUrl": "https://github.com/suhaotian/broad-infinite-list",
-    "npmPkg": "broad-infinite-list",
     "examples": [
       "https://github.com/suhaotian/broad-infinite-list?tab=readme-ov-file#expo-demo-previewreactnative"
     ],
