@@ -3713,9 +3713,11 @@
     "alternatives": ["expo-blur"]
   },
   {
-    "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage",
+    "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/async-storage",
     "examples": [
-      "https://github.com/react-native-async-storage/async-storage/tree/main/packages/default-storage/example"
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/expo",
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/react-native",
+      "https://github.com/react-native-async-storage/async-storage/tree/main/examples/web"
     ],
     "ios": true,
     "android": true,
@@ -3728,6 +3730,7 @@
     "visionos": true,
     "vegaos": "@amazon-devices/react-native-async-storage__async-storage",
     "npmPkg": "@react-native-async-storage/async-storage",
+    "configPlugin": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/expo-with-async-storage",
     "newArchitecture": true
   },
   {
