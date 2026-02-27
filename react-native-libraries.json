@@ -15856,7 +15856,7 @@
     "examples": ["https://github.com/dev-family/react-native-device-country/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-checkbox",
