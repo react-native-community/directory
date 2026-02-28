@@ -10,7 +10,7 @@ import remarkGfm from 'remark-gfm';
 import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
-import { ReadmeFile } from '~/components/Icons';
+import { Check, ReadmeFile } from '~/components/Icons';
 import ReadmeHeading from '~/components/Package/ReadmeHeading';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
@@ -199,6 +199,19 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
                     {children}
                   </details>
                 );
+              },
+              input: ({ type, checked, ...rest }: any) => {
+                if (type === 'checkbox') {
+                  const isChecked = Boolean(checked);
+                  return (
+                    <div
+                      className="checkbox"
+                      style={tw`m-0 box-border size-4 items-center justify-center rounded border border-solid border-palette-gray3 bg-palette-gray2 dark:border-powder dark:bg-palette-gray6`}>
+                      {isChecked && <Check style={tw`size-3 text-success`} />}
+                    </div>
+                  );
+                }
+                return <input type={type} {...rest} />;
               },
             }}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}

@@ -211,7 +211,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           icon: <NightlyTest style={iconColor} width={18} height={18} />,
           content: (
             <A
-              href="https://react-native-community.github.io/nightly-tests/"
+              href={`https://react-native-community.github.io/nightly-tests/?q=${encodeURIComponent(library.npmPkg)}`}
               style={paragraphStyles}
               hoverStyle={hoverStyle}>
               Nightly Program

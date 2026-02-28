@@ -10531,10 +10531,11 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/jpudysz/react-native-unistyles",
+    "githubUrl": "https://github.com/jpudysz/react-native-unistyles/tree/main/packages/unistyles",
+    "npmPkg": "react-native-unistyles",
     "examples": [
-      "https://github.com/jpudysz/react-native-unistyles/tree/main/example",
-      "https://github.com/jpudysz/react-native-unistyles/tree/main/expo-example"
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/apps/example",
+      "https://github.com/jpudysz/react-native-unistyles/tree/main/apps/expo-example"
     ],
     "ios": true,
     "android": true,
