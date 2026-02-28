@@ -565,9 +565,27 @@ select {
     + div[data-table-wrapper] {
       margin-top: 12px;
     }
+
+    &.contains-task-list {
+      padding-inline-start: 0;
+    }
   }
 
   li {
+    &.task-list-item {
+      position: relative;
+      display: block;
+      padding-left: 20px;
+      margin: 1px 0;
+
+      .checkbox {
+        display: inline-flex;
+        position: absolute;
+        top: 2px;
+        left: -4px;
+      }
+    }
+
     div:last-child {
       margin-bottom: 8px;
     }
