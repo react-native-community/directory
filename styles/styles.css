@@ -393,6 +393,7 @@ select {
     scroll-margin-top: 12px;
     margin-bottom: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     align-items: center;
 
@@ -402,6 +403,11 @@ select {
 
     & img {
       display: block;
+      margin-top: 0;
+    }
+
+    & code {
+      display: inline;
     }
 
     &[align='center'] img {
@@ -434,6 +440,10 @@ select {
 
     & a {
       font-size: inherit;
+    }
+
+    + div[data-table-wrapper] {
+      margin-top: 12px;
     }
   }
 
@@ -584,6 +594,10 @@ select {
         top: 2px;
         left: -4px;
       }
+    }
+
+    a {
+      display: inline;
     }
 
     div:last-child {
