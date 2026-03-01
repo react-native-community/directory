@@ -19824,5 +19824,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rtsouza26/targwire",
+    "examples": [
+      "https://github.com/rtsouza26/targwire/tree/master/examples/expo-zustand-react-query"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
