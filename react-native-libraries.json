@@ -19833,5 +19833,51 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/AlshehriAli0/react-native-bread/tree/main/package",
+    "npmPkg": "react-native-bread",
+    "examples": ["https://github.com/AlshehriAli0/react-native-bread/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/IAmTester35/react-native-nitro-sse",
+    "examples": ["https://github.com/IAmTester35/react-native-nitro-sse/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bluesky-social/expo-guess-language",
+    "npmPkg": "@bsky.app/expo-guess-language",
+    "examples": ["https://github.com/bluesky-social/expo-guess-language/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/BogdanGeorgian91/react-native-icloud-kit",
+    "examples": ["https://github.com/BogdanGeorgian91/react-native-icloud-kit/tree/master/example"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-photos",
+    "npmPkg": "@hortemo/expo-photos",
+    "examples": ["https://github.com/hortemo/expo-photos/tree/main/e2e"],
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/functionland/react-native-fula",
+    "npmPkg": "@functionland/react-native-fula",
+    "examples": ["https://github.com/functionland/react-native-fula/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/KGGrande/react-native-launcher-windows",
+    "examples": ["https://github.com/KGGrande/react-native-launcher-windows/tree/main/example"],
+    "windows": true
   }
 ]
