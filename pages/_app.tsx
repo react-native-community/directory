@@ -32,7 +32,7 @@ function App({ pageProps, Component }: AppProps) {
               content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
             />
           </Head>
-          <main style={tw`flex flex-1 flex-col`}>
+          <main style={tw`flex flex-1 flex-col bg-palette-gray7 pt-[61px] dark:bg-very-dark`}>
             <Component {...pageProps} />
           </main>
           <Footer />
