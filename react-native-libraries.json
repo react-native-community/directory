@@ -13444,6 +13444,12 @@
     "configPlugin": true
   },
   {
+    "githubUrl": "https://github.com/EvanBacon/expo-apple-targets/tree/main/packages/apple-targets",
+    "npmPkg": "@bacons/apple-targets",
+    "ios": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/azimgd/shadowlist",
     "examples": ["https://github.com/azimgd/shadowlist/tree/main/example"],
     "ios": true,
