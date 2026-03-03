@@ -153,22 +153,16 @@ async function buildAndScoreData() {
   const topicCounts: Record<string, number> = missingOnly ? (topics ?? {}) : {};
 
   data.forEach((project, index, projectList) => {
-    let topicSearchString = '';
+    const topics = new Set<string>();
 
-    if (project.github.topics) {
-      project.github.topics.forEach(topic => {
-        topicSearchString = `${topicSearchString} ${topic}`;
+    project.github.topics?.forEach(topic => topics.add(topic));
+    project.npm?.keywords?.forEach(keyword => topics.add(keyword));
 
-        if (!topicCounts[topic]) {
-          topicCounts[topic] = 1;
-          return;
-        }
-
-        topicCounts[topic] += 1;
-      });
+    for (const topic of topics) {
+      topicCounts[topic] = (topicCounts[topic] ?? 0) + 1;
     }
 
-    projectList[index].topicSearchString = topicSearchString.trim();
+    projectList[index].topicSearchString = [...topics].join(' ');
   });
 
   if (invalidRepos.length) {

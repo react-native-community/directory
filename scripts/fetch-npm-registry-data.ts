@@ -2,7 +2,7 @@ import { fetch } from 'bun';
 
 import { type LibraryType, type NpmRegistryData } from '~/types';
 
-import { REQUEST_SLEEP, sleep } from './helpers';
+import { processTopics, REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 
@@ -53,6 +53,7 @@ export async function fetchNpmRegistryData(
         'deprecated' in registryData.versions[latestRelease] ? true : pkgData.unmaintained,
       npm: {
         ...pkgData.npm,
+        keywords: processTopics(registryData.keywords),
         size: registryData.versions[latestRelease].dist.unpackedSize,
         versionsCount: Object.keys(registryData.versions).length,
         latestRelease,

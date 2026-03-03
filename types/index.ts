@@ -122,6 +122,7 @@ export type LibraryType = LibraryDataEntryType & {
   npm?: {
     downloads?: number;
     weekDownloads?: number;
+    keywords?: string[];
     size?: number;
     versionsCount?: number;
     latestRelease?: string;
