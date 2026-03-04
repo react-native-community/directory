@@ -19886,5 +19886,23 @@
     "githubUrl": "https://github.com/KGGrande/react-native-launcher-windows",
     "examples": ["https://github.com/KGGrande/react-native-launcher-windows/tree/main/example"],
     "windows": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/fr3em1nd/react-native-unified-modal",
+  "ios": true,
+  "android": true,
+  "web": true,
+  "windows": false,
+  "macos": false,
+  "tvos": false,
+  "visionos": false,
+  "expoGo": true,
+  "fireos": false,
+  "horizon": false,
+  "vegaos": false,
+  "newArchitecture": true,
+  "unmaintained": false,
+  "dev": false,
+  "template": false
+}
 ]
