@@ -17,10 +17,10 @@
     "README.md",
     "next-env.d.ts"
   ],
-  "experimentalTailwindcss": {
+  "sortTailwindcss": {
     "functions": ["tw"]
   },
-  "experimentalSortImports": {
+  "sortImports": {
     "groups": [
       ["side_effect"],
       ["builtin", "external"],
