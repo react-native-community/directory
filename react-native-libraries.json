@@ -19913,5 +19913,15 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/nHiRanZ/react-native-kenburns-view",
+    "examples": [
+      "https://github.com/nHiRanZ/react-native-kenburns-view/tree/main/example/kenburns-example"
+    ],
+    "images": ["https://media.giphy.com/media/792gUTkm8Gic8AieQl/giphy.gif"],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
