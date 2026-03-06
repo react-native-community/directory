@@ -19813,7 +19813,6 @@
   },
   {
     "githubUrl": "https://github.com/antosmamanktr/react-native-multi-range-slider",
-    "npmPkg": "react-native-multi-range-slider",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -19904,7 +19903,6 @@
   },
   {
     "githubUrl": "https://github.com/Rednegniw/react-native-view-recorder/tree/main/packages/react-native-view-recorder",
-    "npmPkg": "react-native-view-recorder",
     "examples": ["https://github.com/Rednegniw/react-native-view-recorder/tree/main/apps/example"],
     "images": [
       "https://raw.githubusercontent.com/Rednegniw/react-native-view-recorder/main/assets/showcase.gif"
