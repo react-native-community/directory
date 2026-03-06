@@ -19916,26 +19916,12 @@
   },
   {
     "githubUrl": "https://github.com/nHiRanZ/react-native-kenburns-view",
-    "npmPkg": "react-native-kenburns-view",
     "examples": [
       "https://github.com/nHiRanZ/react-native-kenburns-view/tree/main/example/kenburns-example"
     ],
     "images": ["https://media.giphy.com/media/792gUTkm8Gic8AieQl/giphy.gif"],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "expoGo": true,
-    "fireos": false,
-    "horizon": false,
-    "vegaos": false,
-    "newArchitecture": false,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "expoGo": true
   }
 ]
