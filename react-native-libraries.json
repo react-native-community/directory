@@ -19921,5 +19921,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/rive-app/rive-nitro-react-native",
+    "npmPkg": "@rive-app/react-native",
+    "examples": [
+      "https://github.com/rive-app/rive-nitro-react-native/tree/main/example", 
+      "https://github.com/rive-app/rive-nitro-react-native/tree/main/expo-example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
