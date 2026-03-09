@@ -19934,14 +19934,30 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://www.npmjs.com/package/react-native-sprinkle-toast",
+    "githubUrl": "https://github.com/orcunorcun/react-native-masked-animated-view",
+    "examples": [
+      "https://github.com/orcunorcun/react-native-masked-animated-view/tree/master/example"
+    ],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/orcunorcun/react-native-rich-modal",
+    "examples": ["https://github.com/orcunorcun/react-native-rich-modal/tree/master/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  ,
+  {
+    "githubUrl": "https://github.com/getsettalk/react-native-sprinkle-toast",
     "images": ["https://github.com/user-attachments/assets/401cb34d-bd50-48f7-91f2-cd60e033f378"],
     "android": true,
     "ios": true,
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://www.npmjs.com/package/react-native-smart-tooltip",
+    "githubUrl": "https://github.com/getsettalk/react-native-smart-tooltip",
     "images": ["https://github.com/user-attachments/assets/8e0bdab6-056e-4626-bbf6-6e84b5005a25"],
     "android": true,
     "ios": true,
