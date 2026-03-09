@@ -19932,5 +19932,18 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/orcunorcun/react-native-masked-animated-view",
+    "examples": ["https://github.com/orcunorcun/react-native-masked-animated-view/tree/master/example"],
+    "android": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/orcunorcun/react-native-rich-modal",
+    "examples": ["https://github.com/orcunorcun/react-native-rich-modal/tree/master/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
