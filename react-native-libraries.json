@@ -19932,5 +19932,21 @@
     "android": true,
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://www.npmjs.com/package/react-native-sprinkle-toast",
+    "npmPkg": "react-native-sprinkle-toast",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true,
+    "images": ["https://github.com/user-attachments/assets/401cb34d-bd50-48f7-91f2-cd60e033f378"],
+  },
+  {
+    "githubUrl": "https://www.npmjs.com/package/react-native-smart-tooltip",
+    "npmPkg": "react-native-smart-tooltip",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true,
+    "images": ["https://github.com/user-attachments/assets/8e0bdab6-056e-4626-bbf6-6e84b5005a25"],
   }
 ]
