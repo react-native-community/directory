@@ -1242,6 +1242,7 @@
     "newArchitecture": "untested"
   },
   "react-native-material-palette": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-onboarding-swiper": {
@@ -7750,6 +7751,117 @@
     "newArchitecture": "supported"
   },
   "react-native-superconfig": {
+    "newArchitecture": "supported"
+  },
+  "@bacons/apple-targets": {
+    "newArchitecture": "supported"
+  },
+  "expo-lux-sensor": {
+    "newArchitecture": "supported"
+  },
+  "@xaui/core": {
+    "newArchitecture": "supported"
+  },
+  "@xaui/native": {
+    "newArchitecture": "supported"
+  },
+  "@xaui/icons": {
+    "newArchitecture": "supported"
+  },
+  "@native-springs/shaders": {
+    "newArchitecture": "supported"
+  },
+  "@json-render/react-native": {
+    "newArchitecture": "supported"
+  },
+  "expo-esim-utils": {
+    "newArchitecture": "supported"
+  },
+  "sherlo": {
+    "newArchitecture": "supported"
+  },
+  "@sherlo/react-native-storybook": {
+    "newArchitecture": "supported"
+  },
+  "number-flow-react-native": {
+    "newArchitecture": "supported"
+  },
+  "broad-infinite-list": {
+    "newArchitecture": "supported"
+  },
+  "rn-background-upload": {
+    "newArchitecture": "supported"
+  },
+  "react-native-earl-thermal-printer": {
+    "newArchitecture": "supported"
+  },
+  "react-native-ds-chat": {
+    "newArchitecture": "supported"
+  },
+  "expo-mqtt": {
+    "newArchitecture": "supported"
+  },
+  "rn-floating-input": {
+    "newArchitecture": "supported"
+  },
+  "react-native-multi-range-slider": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-unzip": {
+    "newArchitecture": "supported"
+  },
+  "@flitzinteractive/react-native-nitro-html-pdf": {
+    "newArchitecture": "supported"
+  },
+  "targwire": {
+    "newArchitecture": "supported"
+  },
+  "react-native-bread": {
+    "newArchitecture": "untested"
+  },
+  "react-native-nitro-sse": {
+    "newArchitecture": "supported"
+  },
+  "@bsky.app/expo-guess-language": {
+    "newArchitecture": "untested"
+  },
+  "react-native-icloud-kit": {
+    "newArchitecture": "untested"
+  },
+  "@hortemo/expo-photos": {
+    "newArchitecture": "untested"
+  },
+  "@functionland/react-native-fula": {
+    "newArchitecture": "untested"
+  },
+  "react-native-launcher-windows": {
+    "newArchitecture": "supported"
+  },
+  "react-native-ferropix": {
+    "newArchitecture": "supported"
+  },
+  "react-native-unified-modal": {
+    "newArchitecture": "supported"
+  },
+  "react-native-view-recorder": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-kenburns-view": {
+    "newArchitecture": "supported"
+  },
+  "@rive-app/react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-masked-animated-view": {
+    "newArchitecture": "untested"
+  },
+  "react-native-rich-modal": {
+    "newArchitecture": "supported"
+  },
+  "react-native-sprinkle-toast": {
+    "newArchitecture": "supported"
+  },
+  "react-native-smart-tooltip": {
     "newArchitecture": "supported"
   }
 }

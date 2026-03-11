@@ -2,19 +2,21 @@ import { type ReactNode } from 'react';
 import { View } from 'react-native';
 
 import { A, HoverEffect, Label, P, useLayout } from '~/common/styleguide';
-import { Logo } from '~/components/Icons';
+import { Info, Logo } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
+import { type PeerDependencyData } from '~/types';
 import tw from '~/util/tailwind';
 
 type Props = {
   name: string;
-  version: string;
+  data: string | PeerDependencyData;
   packageExists?: boolean;
 };
 
-export default function DependencyRow({ name, version, packageExists }: Props) {
+export default function DependencyRow({ name, data, packageExists }: Props) {
   const { isSmallScreen } = useLayout();
-  const versionLabel = getVersionLabel(version);
+  const isDataString = typeof data === 'string';
+  const versionLabel = getVersionLabel(isDataString ? data : data.version);
   const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 18;
 
   return (
@@ -57,13 +59,23 @@ export default function DependencyRow({ name, version, packageExists }: Props) {
           style={tw`font-mono text-xs font-light leading-[14px]`}>
           {name}
         </A>
+        {!isDataString && data.optional && (
+          <Tooltip
+            trigger={
+              <View>
+                <Info style={tw`size-[13px] cursor-pointer text-icon`} />
+              </View>
+            }>
+            Optional
+          </Tooltip>
+        )}
       </span>
       <Label
         style={[
           tw`font-mono flex-shrink-0 text-right text-xs leading-[14px] text-secondary`,
           hasLongVersion && tw`ml-auto flex-shrink`,
         ]}>
-        {getVersionLabel(version)}
+        {versionLabel}
       </Label>
     </View>
   );
