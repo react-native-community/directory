@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import { H6 } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
+import { type PeerDependencyData } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
@@ -13,7 +14,7 @@ import EntityCounter from './EntityCounter';
 
 type Props = {
   title: string;
-  data?: Record<string, string> | null;
+  data?: Record<string, string | PeerDependencyData> | null;
   checkExistence?: boolean;
 };
 
@@ -68,11 +69,11 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
         <View>
           {Object.entries(data)
             .sort(([aName], [bName]) => aName.localeCompare(bName))
-            .map(([name, version]) => (
+            .map(([name, depData]) => (
               <DependencyRow
                 key={`${sectionKey}-${name}`}
                 name={name}
-                version={version}
+                data={depData}
                 packageExists={checkData?.[name]}
               />
             ))}

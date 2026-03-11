@@ -191,6 +191,11 @@ export type RepositoryTreeNode = {
   type: 'tree' | 'blob';
 };
 
+export type PeerDependencyData = {
+  version: string;
+  optional: boolean;
+};
+
 export type CheckResultsType = Record<
   string,
   {
