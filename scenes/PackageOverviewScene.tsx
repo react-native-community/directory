@@ -18,8 +18,9 @@ import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
 import ReadmeBox from '~/components/Package/ReadmeBox';
+import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
-import { type NpmUser } from '~/types';
+import { type NpmRegistryVersionData, type NpmUser, type PeerDependencyData } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 
@@ -43,8 +44,7 @@ export default function PackageOverviewScene({
     return <NotFound />;
   }
 
-  const { author, maintainers, dependencies, devDependencies, peerDependencies, engines } =
-    registryData;
+  const { author, maintainers, dependencies, devDependencies, engines } = registryData;
 
   return (
     <>
@@ -124,24 +124,7 @@ export default function PackageOverviewScene({
                 </View>
               </>
             )}
-            {library.github.topics && library.github.topics.length > 0 && (
-              <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
-                  Topics
-                  <EntityCounter count={library.github.topics.length} />
-                </H6>
-                <View style={tw`flex-row flex-wrap items-start gap-x-2 gap-y-0.5`}>
-                  {library.github.topics.map(topic => (
-                    <A
-                      key={topic}
-                      href={`/packages?search=${topic}`}
-                      style={tw`text-[12px] font-light`}>
-                      {topic}
-                    </A>
-                  ))}
-                </View>
-              </>
-            )}
+            <TopicsSection topics={library.github.topics} />
             {!library.template && (
               <>
                 <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
@@ -179,7 +162,11 @@ export default function PackageOverviewScene({
               </>
             )}
             <CollapsibleSection title="Dependencies" data={dependencies} checkExistence />
-            <CollapsibleSection title="Peer dependencies" data={peerDependencies} checkExistence />
+            <CollapsibleSection
+              title="Peer dependencies"
+              data={mergePeerDependenciesData(registryData)}
+              checkExistence
+            />
             <CollapsibleSection title="Development dependencies" data={devDependencies} />
             <CollapsibleSection title="Engines" data={engines} />
             {isSmallScreen && !!author && (
@@ -210,5 +197,20 @@ export default function PackageOverviewScene({
         </View>
       </ContentContainer>
     </>
+  );
+}
+
+function mergePeerDependenciesData({
+  peerDependencies = {},
+  peerDependenciesMeta = {},
+}: NpmRegistryVersionData): Record<string, PeerDependencyData> {
+  return Object.fromEntries(
+    Object.entries(peerDependencies).map(([name, version]) => [
+      name,
+      {
+        version,
+        optional: peerDependenciesMeta?.[name]?.optional ?? false,
+      },
+    ])
   );
 }
