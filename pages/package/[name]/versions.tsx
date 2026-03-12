@@ -12,6 +12,7 @@ export default function VersionsPage({
   apiData,
   registryData,
   packageName,
+  npmDownloads,
   errorMessage,
 }: PackageVersionsPageProps) {
   if (!packageName || !apiData || !registryData) {
@@ -19,7 +20,12 @@ export default function VersionsPage({
   }
 
   return (
-    <PackageVersionsScene packageName={packageName} apiData={apiData} registryData={registryData} />
+    <PackageVersionsScene
+      packageName={packageName}
+      apiData={apiData}
+      registryData={registryData}
+      npmDownloads={npmDownloads}
+    />
   );
 }
 
@@ -32,9 +38,10 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   try {
-    const [apiResponse, npmResponse] = await Promise.all([
+    const [apiResponse, npmResponse, npmDownloads] = await Promise.all([
       ssrFetch(`/libraries`, { search: packageName }, ctx),
       fetch(`https://registry.npmjs.org/${packageName}`, NEXT_10M_CACHE_HEADER),
+      fetch(`https://api.npmjs.org/versions/${packageName}/last-week`, NEXT_10M_CACHE_HEADER),
     ]);
 
     if (apiResponse.status !== 200 || npmResponse.status !== 200) {
@@ -46,6 +53,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
         packageName,
         apiData: await apiResponse.json(),
         registryData: await npmResponse.json(),
+        npmDownloads: await npmDownloads.json(),
       },
     };
   } catch {

@@ -17,3 +17,10 @@ export function pluralize(word: string, count: number) {
 export function isEmptyOrNull(text?: string) {
   return !text || !text.trim();
 }
+
+export function formatNumberToString(quantity: number) {
+  return new Intl.NumberFormat('en-US', {
+    notation: 'compact',
+    compactDisplay: 'short',
+  }).format(quantity);
+}
