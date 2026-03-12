@@ -29,9 +29,9 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
       ]}>
       <View>
         <View style={tw`min-h-4 flex-row items-center gap-1`}>
-          {label && <Caption>{label}</Caption>}
+          {label && <Caption style={tw`tabular-nums`}>{label}</Caption>}
           {label && <Caption style={tw`text-secondary`}>{` • `}</Caption>}
-          <Caption style={label && tw`text-secondary`}>{versionData.version}</Caption>
+          <Caption style={label && tw`tabular-nums text-secondary`}>{versionData.version}</Caption>
         </View>
         <View style={tw`min-h-4 flex-row items-center gap-1`}>
           <Label style={tw`font-light text-secondary`}>
