@@ -299,6 +299,11 @@ export type NpmUser = {
   };
 };
 
+export type NpmPerVersionDownloads = {
+  package: string;
+  downloads: Record<string, number>;
+};
+
 export type NightlyProgramData = {
   description: string;
   installCommand: string;

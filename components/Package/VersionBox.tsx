@@ -1,21 +1,22 @@
 import { View } from 'react-native';
 
 import { A, Caption, Label, useLayout } from '~/common/styleguide';
-import { Dependency, PackageSize } from '~/components/Icons';
+import { Dependency, Download, PackageSize } from '~/components/Icons';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import { type NpmRegistryVersionData } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
-import { pluralize } from '~/util/strings';
+import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 type Props = {
   label?: string;
   time: string;
   versionData: NpmRegistryVersionData;
+  downloads?: number;
 };
 
-export default function VersionBox({ label, time, versionData }: Props) {
+export default function VersionBox({ label, time, versionData, downloads = 0 }: Props) {
   const { isSmallScreen } = useLayout();
 
   const urlBase = `https://www.npmjs.com/package/${versionData.name}/v/${versionData.version}`;
@@ -39,21 +40,38 @@ export default function VersionBox({ label, time, versionData }: Props) {
           {versionData._npmUser?.trustedPublisher && <TrustedBadge />}
         </View>
       </View>
-      <View style={tw`flex-row flex-wrap gap-x-4 gap-y-1`}>
+      <View style={tw`flex-row flex-wrap gap-x-5 gap-y-1`}>
         {versionData.dependencies && (
-          <View style={[tw`flex-row gap-2`, !isSmallScreen && tw`min-w-[150px]`]}>
+          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
             <Dependency style={tw`text-icon`} />
-            <A style={tw`font-light`} href={`${urlBase}?activeTab=dependencies`}>
-              {`${Object.keys(versionData.dependencies).length} ${pluralize('dependency', Object.keys(versionData.dependencies).length)}`}
-            </A>
+            <View>
+              <A style={tw`font-light`} href={`${urlBase}?activeTab=dependencies`}>
+                {Object.keys(versionData.dependencies).length}
+              </A>
+              <Label style={tw`font-light text-secondary no-underline`}>
+                {pluralize('dependency', Object.keys(versionData.dependencies).length)}
+              </Label>
+            </View>
           </View>
         )}
-        {versionData.dist.unpackedSize && (
-          <View style={[tw`flex-row gap-2`, !isSmallScreen && tw`min-w-[180px]`]}>
-            <PackageSize style={tw`text-icon`} />
-            <A style={tw`font-light`} href={`${urlBase}?activeTab=code`}>
-              {`${formatBytes(versionData.dist.unpackedSize)} package size`}
+        <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[128px]`]}>
+          <Download style={tw`text-icon`} />
+          <View>
+            <A style={tw`font-light`} href={`${urlBase}?activeTab=versions`}>
+              {formatNumberToString(downloads)}
             </A>
+            <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
+          </View>
+        </View>
+        {versionData.dist.unpackedSize && (
+          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
+            <PackageSize style={tw`text-icon`} />
+            <View>
+              <A style={tw`font-light`} href={`${urlBase}?activeTab=code`}>
+                {formatBytes(versionData.dist.unpackedSize)}
+              </A>
+              <Label style={tw`font-light text-secondary`}>package size</Label>
+            </View>
           </View>
         )}
       </View>
