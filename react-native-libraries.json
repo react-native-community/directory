@@ -8716,7 +8716,8 @@
     "ios": true,
     "web": true,
     "tvos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/Shopify/flash-list",
