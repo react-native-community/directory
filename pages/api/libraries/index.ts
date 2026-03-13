@@ -5,7 +5,7 @@ import data from '~/assets/data.json';
 import { getBookmarksFromCookie } from '~/context/BookmarksContext';
 import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
-import { parseQueryParams } from '~/util/parseQueryParams';
+import { parseQueryParams } from '~/util/queryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
 

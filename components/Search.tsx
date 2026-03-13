@@ -3,7 +3,8 @@ import { useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Label, P, useLayout } from '~/common/styleguide';
+import { P, useLayout } from '~/common/styleguide';
+import InputKeyHint from '~/components/InputKeyHint';
 import { type Query } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';
@@ -60,9 +61,6 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
   function handleClearAllPress() {
     void replace(urlWithQuery('/packages', { search, offset: undefined }));
   }
-
-  const focusHintLabel = tw`font-light text-palette-gray4`;
-  const focusHintKey = tw`min-w-6 rounded-[3px] bg-palette-gray5 px-1 py-[3px] text-center tracking-[0.75px] text-tertiary dark:bg-powder`;
 
   return (
     <>
@@ -123,28 +121,23 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
             {!isSmallScreen && (
               <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
                 {isInputFocused ? (
-                  <>
-                    <Label style={focusHintLabel}>press</Label>
-                    {isHomePage ? (
-                      <>
-                        <Label style={focusHintKey}>Enter</Label>
-                        <Label style={focusHintLabel}>to search</Label>
-                      </>
-                    ) : (
-                      <>
-                        <Label style={focusHintKey}>Esc</Label>
-                        <Label style={focusHintLabel}>
-                          to {(search?.length ?? 0) > 0 ? 'clear' : 'blur'}
-                        </Label>
-                      </>
-                    )}
-                  </>
+                  isHomePage ? (
+                    <InputKeyHint
+                      content={[{ label: 'press' }, { key: 'Enter' }, { label: 'to search' }]}
+                    />
+                  ) : (
+                    <InputKeyHint
+                      content={[
+                        { label: 'press' },
+                        { key: 'Esc' },
+                        { label: `to ${(search?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
+                      ]}
+                    />
+                  )
                 ) : (
-                  <>
-                    <Label style={focusHintKey}>{isApple ? 'Cmd' : 'Ctrl'}</Label>
-                    <Label style={focusHintLabel}>+</Label>
-                    <Label style={focusHintKey}>K</Label>
-                  </>
+                  <InputKeyHint
+                    content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
+                  />
                 )}
               </View>
             )}
