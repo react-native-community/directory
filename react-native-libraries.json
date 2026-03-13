@@ -8029,7 +8029,8 @@
     "examples": ["https://github.com/zoontek/react-native-edge-to-edge/tree/main/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/henrhie/react-native-sha",
@@ -8600,7 +8601,8 @@
     ],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-websql",
@@ -8716,7 +8718,8 @@
     "ios": true,
     "web": true,
     "tvos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/Shopify/flash-list",
@@ -16858,7 +16861,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": "new-arch-only"
+    "newArchitecture": "new-arch-only",
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/realimposter/react-native-animated-glow",
