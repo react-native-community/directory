@@ -19982,5 +19982,40 @@
     "githubUrl": "https://github.com/JubaKitiashvili/everything-react-native-expo",
     "npmPkg": "erne-universal",
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/native-html/render/tree/main/packages/render",
+    "npmPkg": "@native-html/render",
+    "images": ["https://raw.githubusercontent.com/native-html/render/main/assets/demo.gif"],
+    "examples": ["https://github.com/native-html/render/tree/main/apps/discovery"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/native-html/render/tree/main/packages/css-processor",
+    "npmPkg": "@native-html/css-processor",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/native-html/render/tree/main/packages/transient-render-engine",
+    "npmPkg": "@native-html/transient-render-engine",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/react-native-ease",
+    "examples": ["https://github.com/AppAndFlow/react-native-ease/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-streamdown",
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-streamdown/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
