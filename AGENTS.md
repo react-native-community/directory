@@ -26,7 +26,7 @@
 
 - This repo uses the **Pages Router**, not the App Router. Add new pages under `pages/` and follow existing patterns like `getInitialProps` on listing pages and `getServerSideProps` on package detail pages.
 - Keep page files thin. Put page layout in `scenes/` and shared UI in `components/`.
-- Styling is primarily done with `twrnc` via ``tw`` from `util/tailwind.ts` and React Native style props, not CSS modules.
+- Styling is primarily done with `twrnc` via `tw` from `util/tailwind.ts` and React Native style props, not CSS modules.
   - Example: `components/Search.tsx` and `scenes/HomeScene.tsx`
 - Use the `~/*` path alias from `tsconfig.json` for internal imports.
 - Follow the lint-enforced TypeScript style already used across the repo:
@@ -147,4 +147,3 @@ bun preview
 - Update `API.md` whenever a public endpoint, request parameter, response shape, or caching rule changes.
 - Update `README.md` when contributor-facing dataset fields or submission rules change.
 - Regenerate `public/llms.txt` and `public/llms-full.txt` after changing `scripts/generate-llms.ts` or content it consumes.
-
