@@ -19973,5 +19973,10 @@
     "examples": ["https://github.com/bluesky-social/expo-scroll-edge-effect/tree/main/example"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JubaKitiashvili/everything-react-native-expo",
+    "npmPkg": "erne-universal",
+    "dev": true
   }
 ]
