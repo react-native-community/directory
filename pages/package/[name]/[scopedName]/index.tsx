@@ -5,7 +5,7 @@ import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
-import { parseQueryParams } from '~/util/parseQueryParams';
+import { parseQueryParams } from '~/util/queryParams';
 import { ssrFetch } from '~/util/SSRFetch';
 
 export default function ScopedOverviewPage({

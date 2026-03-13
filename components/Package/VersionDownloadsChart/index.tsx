@@ -1,13 +1,13 @@
 import { ParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
-import { omit } from 'es-toolkit/object';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type NpmRegistryData } from '~/types';
+import { replaceQueryParam } from '~/util/queryParams';
 import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
@@ -91,22 +91,10 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
     }
 
     setMode(nextMode);
-
-    const queryParams = omit(router.query, [CHART_MODE_QUERY_PARAM]);
-
-    void router.replace(
-      {
-        pathname: router.pathname,
-        query:
-          nextMode === DEFAULT_CHART_MODE
-            ? queryParams
-            : { ...queryParams, [CHART_MODE_QUERY_PARAM]: nextMode },
-      },
-      undefined,
-      {
-        shallow: true,
-        scroll: false,
-      }
+    replaceQueryParam(
+      router,
+      CHART_MODE_QUERY_PARAM,
+      nextMode === DEFAULT_CHART_MODE ? undefined : nextMode
     );
   }
 

@@ -2,7 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
 import { type DataAssetType } from '~/types';
-import { parseQueryParams } from '~/util/parseQueryParams';
+import { parseQueryParams } from '~/util/queryParams';
 
 const DATASET = data as DataAssetType;
 

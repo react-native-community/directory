@@ -5,7 +5,7 @@ import PackageScoreScene from '~/scenes/PackageScoreScene';
 import { type PackageScorePageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
-import { parseQueryParams } from '~/util/parseQueryParams';
+import { parseQueryParams } from '~/util/queryParams';
 import { ssrFetch } from '~/util/SSRFetch';
 
 export default function ScorePage({ apiData, packageName, errorMessage }: PackageScorePageProps) {
