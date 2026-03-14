@@ -14,7 +14,7 @@ export function ScoringCriterion({ children, headline, style, score = undefined 
   const isPositiveModifier = (score ?? 0) > 0;
 
   return (
-    <View style={[tw`mb-4 rounded-md border border-default px-5 py-3.5`, style]}>
+    <View style={[tw`mb-3 rounded-lg border border-default px-5 py-3.5`, style]}>
       <Headline style={tw`mb-1 flex gap-3 text-[17px] font-semibold leading-[22px]`}>
         {score && (
           <Headline

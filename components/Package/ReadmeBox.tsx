@@ -11,6 +11,7 @@ import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
 import { Check, ReadmeFile } from '~/components/Icons';
+import CopyButton from '~/components/Package/CopyButton';
 import ReadmeHeading from '~/components/Package/ReadmeHeading';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
@@ -73,7 +74,15 @@ export default function ReadmeBox({ packageName, githubUrl, isTemplate, loader =
       <View
         style={tw`flex-row items-center gap-2 border-b border-palette-gray2 px-4 py-3 dark:border-default`}>
         <ReadmeFile style={tw`text-tertiary dark:text-pewter`} />
-        <P>Readme</P>
+        <P>README</P>
+        {!noData && data && (
+          <CopyButton
+            data={data}
+            tooltip="Copy README"
+            label="Copy README to clipboard"
+            style={tw`right-4 top-3.5`}
+          />
+        )}
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
         {noData ? (

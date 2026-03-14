@@ -38,12 +38,12 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
         </View>
         <Label style={tw`flex min-h-4 flex-wrap items-center font-light text-secondary`}>
           Released <RelativeTime time={time} dateOnly /> by
-          {versionData._npmUser?.trustedPublisher && <TrustedBadge style={tw`mx-[3px]`} />}
+          {versionData._npmUser?.trustedPublisher && <TrustedBadge style={tw`mx-1`} />}
           {publisherMetadata && !versionData._npmUser?.trustedPublisher && (
             <UserAvatar
               src={`https://gravatar.com/avatar/${SHA256(publisherMetadata).toString()}?d=retro`}
               alt={`${versionData._npmUser?.name} avatar`}
-              style={tw`relative top-px mx-[3px] size-3.5 border border-default`}
+              style={tw`relative top-px mx-1 size-3.5 border border-default`}
             />
           )}
           {versionData._npmUser?.name ?? 'Unknown'}
