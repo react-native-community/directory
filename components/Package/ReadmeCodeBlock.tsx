@@ -1,8 +1,6 @@
 import { type Theme, useShikiHighlighter } from 'react-shiki';
 
-import { Button } from '~/components/Button';
-import { Copy } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import CopyButton from '~/components/Package/CopyButton';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -16,25 +14,7 @@ const SHIKI_OPTS = { langAlias: { gradle: 'groovy' } } as const;
 export default function ReadmeCodeBlock({ code, theme, lang }: Props) {
   const highlighter = useShikiHighlighter(code, lang, theme, SHIKI_OPTS);
 
-  const copyButton = (
-    <Tooltip
-      sideOffset={2}
-      trigger={
-        <Button
-          containerStyle={tw`absolute right-3 top-3`}
-          style={tw`bg-transparent`}
-          onPress={async () => {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              await navigator.clipboard.writeText(code);
-            }
-          }}
-          aria-label="Copy to clipboard">
-          <Copy width={20} height={20} style={tw`text-palette-gray4 dark:text-pewter`} />
-        </Button>
-      }>
-      Copy code
-    </Tooltip>
-  );
+  const copyButton = <CopyButton data={code} tooltip="Copy code" label="Copy code to clipboard" />;
 
   if (!highlighter) {
     return (

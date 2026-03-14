@@ -694,6 +694,33 @@ export function Copy({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
+export function CheckSquare({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Polyline
+        points="88 136 112 160 168 104"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Rect
+        x="40"
+        y="40"
+        width="176"
+        height="176"
+        rx="8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
 export function Link({ width = 24, height = 24, style }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
