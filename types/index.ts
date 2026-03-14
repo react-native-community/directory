@@ -1,7 +1,8 @@
 import 'expo/types/react-native-web.d.ts';
 
-import { type ReactElement, type ReactNode } from 'react';
+import { type ComponentType, type ReactElement, type ReactNode } from 'react';
 
+import { type IconProps } from '~/components/Icons';
 import { type NewArchSupportStatus } from '~/util/newArchStatus';
 
 export type QueryOrder =
@@ -94,6 +95,9 @@ export type LibraryType = LibraryDataEntryType & {
     isPrivate?: boolean;
     hasNativeCode: boolean;
     hasReadme?: boolean;
+    hasChangelog?: boolean;
+    hasContributing?: boolean;
+    hasCC?: boolean;
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     urls: {
@@ -194,6 +198,14 @@ export type RepositoryTreeNode = {
 export type PeerDependencyData = {
   version: string;
   optional: boolean;
+};
+
+export type MarkdownTabsType = 'Readme' | 'Changelog' | 'Contributing' | 'Code of Conduct';
+
+export type MarkdownTab = {
+  title: MarkdownTabsType;
+  url: string | null;
+  Icon: ComponentType<IconProps>;
 };
 
 export type CheckResultsType = Record<

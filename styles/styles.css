@@ -359,9 +359,9 @@ select {
   position: sticky;
 }
 
-/* README WRAPPER */
+/* MARKDOWN CONTENT WRAPPER */
 
-#readmeMarkdownContainer {
+#markdownContentContainer {
   font-size: 90%;
   line-height: 1.4;
 

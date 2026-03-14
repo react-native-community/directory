@@ -3,8 +3,13 @@ import { config } from 'dotenv';
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
+import {
+  hasCCFile,
+  hasChangelogFile,
+  hasContributingFile,
+  hasReadmeFile,
+} from '~/util/github/hasFiles';
 import hasNativeCode from '~/util/github/hasNativeCode';
-import hasReadmeFile from '~/util/github/hasReadmeFile';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
 import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
@@ -204,6 +209,9 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
     hasReadme: hasReadmeFile(json.files),
+    hasChangelog: hasChangelogFile(json.files),
+    hasContributing: hasContributingFile(json.files),
+    hasCC: hasCCFile(json.files),
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
     moduleType: detectModuleType(json.files, json.pasedPackageJson),
