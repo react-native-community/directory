@@ -440,6 +440,7 @@ select {
     }
 
     & a {
+      display: inline;
       font-size: inherit;
     }
 

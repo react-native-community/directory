@@ -63,7 +63,7 @@ export default function DependencyRow({ name, data, packageExists }: Props) {
           <Tooltip
             trigger={
               <View>
-                <Info style={tw`size-[13px] cursor-pointer text-icon`} />
+                <Info style={tw`-ml-0.5 -mt-px size-3 cursor-pointer text-icon`} />
               </View>
             }>
             Optional
