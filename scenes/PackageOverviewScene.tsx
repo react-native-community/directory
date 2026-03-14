@@ -13,20 +13,23 @@ import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
+import MarkdownContentBox from '~/components/Package/MarkdownContentBox';
 import MorePackagesBox from '~/components/Package/MorePackagesBox';
 import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
-import ReadmeBox from '~/components/Package/ReadmeBox';
 import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
 import { type NpmRegistryVersionData, type NpmUser, type PeerDependencyData } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 
-const ReadmeBoxWithLoading = dynamic(() => import('~/components/Package/ReadmeBox'), {
-  loading: () => <ReadmeBox loader />,
-});
+const MarkdownContentBoxWithLoading = dynamic(
+  () => import('~/components/Package/MarkdownContentBox'),
+  {
+    loading: () => <MarkdownContentBox loader />,
+  }
+);
 
 export default function PackageOverviewScene({
   apiData,
@@ -62,11 +65,7 @@ export default function PackageOverviewScene({
               registryData={registryData}
               rightSlot={<UpdatedAtView library={library} />}
             />
-            <ReadmeBoxWithLoading
-              packageName={packageName}
-              isTemplate={library.template ?? false}
-              githubUrl={library.github.urls.repo}
-            />
+            <MarkdownContentBoxWithLoading packageName={packageName} library={library} />
             {library.examples && library.examples.length > 0 && (
               <>
                 <H6

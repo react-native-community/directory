@@ -589,6 +589,166 @@ export function ReadmeFile({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
+export function ChangelogFile({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Rect width="256" height="256" fill="none" />
+      <Line
+        x1="40"
+        y1="64"
+        x2="216"
+        y2="64"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="40"
+        y1="128"
+        x2="112"
+        y2="128"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="40"
+        y1="192"
+        x2="128"
+        y2="192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Circle
+        cx="184"
+        cy="144"
+        r="32"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="206.63"
+        y1="166.63"
+        x2="232"
+        y2="192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function ContributingFile({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Rect width="256" height="256" fill="none" />
+      <Circle
+        cx="84"
+        cy="108"
+        r="52"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M10.23,200a88,88,0,0,1,147.54,0"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M172,160a87.93,87.93,0,0,1,73.77,40"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M152.69,59.7A52,52,0,1,1,172,160"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function CCFile({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Rect width="256" height="256" fill="none" />
+      <Line
+        x1="72"
+        y1="136"
+        x2="120"
+        y2="136"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="72"
+        y1="104"
+        x2="120"
+        y2="104"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Circle
+        cx="196"
+        cy="124"
+        r="44"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M168,192H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V90.06"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Polyline
+        points="168 157.94 168 224 196 208 224 224 224 157.94"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
 export function CodeBrackets({ width = 24, height = 24, style }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
