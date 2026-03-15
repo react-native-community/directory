@@ -21,7 +21,6 @@ import { TimeRange } from '~/util/datetime';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
-import { replaceQueryParam } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
 import MarkdownCodeBlock from './MarkdownCodeBlock';
@@ -138,11 +137,21 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
     }
 
     setActiveTab(nextTab);
-    replaceQueryParam(
-      router,
-      MARKDOWN_CONTENT_QUERY_PARAM,
-      nextTab === DEFAULT_MARKDOWN_TAB ? undefined : nextTab
-    );
+
+    const url = new URL(window.location.href);
+
+    if (nextTab === DEFAULT_MARKDOWN_TAB) {
+      url.searchParams.delete(MARKDOWN_CONTENT_QUERY_PARAM);
+    } else {
+      url.searchParams.set(MARKDOWN_CONTENT_QUERY_PARAM, nextTab);
+    }
+
+    url.hash = '';
+
+    void router.replace(`${url.pathname}${url.search}`, undefined, {
+      shallow: true,
+      scroll: false,
+    });
   }
 
   return (
