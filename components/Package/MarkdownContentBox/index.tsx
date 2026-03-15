@@ -1,6 +1,7 @@
 import { Md } from '@m2d/react-markdown/client';
 import { capitalize } from 'es-toolkit/string';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
@@ -12,8 +13,7 @@ import useSWR from 'swr';
 import { A, P } from '~/common/styleguide';
 import { CCFile, ChangelogFile, Check, ContributingFile, ReadmeFile } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
-import MarkdownContentTab from '~/components/Package/MarkdownContentTab';
-import ReadmeHeading from '~/components/Package/ReadmeHeading';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
@@ -23,8 +23,10 @@ import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 import tw from '~/util/tailwind';
 
-import ReadmeCodeBlock from './ReadmeCodeBlock';
-import ThreeDotsLoader from './ThreeDotsLoader';
+import MarkdownCodeBlock from './MarkdownCodeBlock';
+import MarkdownContentTab from './MarkdownContentTab';
+import MarkdownHeading from './MarkdownHeading';
+import { DEFAULT_MARKDOWN_TAB, MARKDOWN_CONTENT_QUERY_PARAM, parseMarkdownTab } from './utils';
 
 type Props = {
   packageName?: string;
@@ -33,45 +35,63 @@ type Props = {
 };
 
 export default function MarkdownContentBox({ packageName, library, loader = false }: Props) {
-  const [activeTab, setActiveTab] = useState<MarkdownTabsType>('Readme');
+  const router = useRouter();
   const repoUrl = library?.github.urls.repo;
 
-  const contentTabs: MarkdownTab[] = [
-    {
-      title: 'Readme' as const,
-      Icon: ReadmeFile,
-      url: library?.template
-        ? getTabContentUrl(library, 'README.md')
-        : `https://unpkg.com/${packageName}/README.md`,
-    },
-    ...(library?.github?.hasChangelog
-      ? [
-          {
-            title: 'Changelog' as const,
-            Icon: ChangelogFile,
-            url: getTabContentUrl(library, 'CHANGELOG.md'),
-          },
-        ]
-      : []),
-    ...(library?.github?.hasContributing
-      ? [
-          {
-            title: 'Contributing' as const,
-            Icon: ContributingFile,
-            url: getTabContentUrl(library, 'CONTRIBUTING.md'),
-          },
-        ]
-      : []),
-    ...(library?.github?.hasCC
-      ? [
-          {
-            title: 'Code of Conduct' as const,
-            Icon: CCFile,
-            url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
-          },
-        ]
-      : []),
-  ].flat();
+  const contentTabs = useMemo<MarkdownTab[]>(
+    () =>
+      [
+        {
+          title: 'Readme' as const,
+          Icon: ReadmeFile,
+          url: library?.template
+            ? getTabContentUrl(library, 'README.md')
+            : `https://unpkg.com/${packageName}/README.md`,
+        },
+        ...(library?.github?.hasChangelog
+          ? [
+              {
+                title: 'Changelog' as const,
+                Icon: ChangelogFile,
+                url: getTabContentUrl(library, 'CHANGELOG.md'),
+              },
+            ]
+          : []),
+        ...(library?.github?.hasContributing
+          ? [
+              {
+                title: 'Contributing' as const,
+                Icon: ContributingFile,
+                url: getTabContentUrl(library, 'CONTRIBUTING.md'),
+              },
+            ]
+          : []),
+        ...(library?.github?.hasCC
+          ? [
+              {
+                title: 'Code of Conduct' as const,
+                Icon: CCFile,
+                url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
+              },
+            ]
+          : []),
+      ].flat(),
+    [library, packageName]
+  );
+
+  const availableTabs = useMemo<MarkdownTabsType[]>(
+    () => contentTabs.map(({ title }) => title),
+    [contentTabs]
+  );
+  const routeTab = useMemo(
+    () => parseMarkdownTab(router.query[MARKDOWN_CONTENT_QUERY_PARAM], availableTabs),
+    [availableTabs, router.query]
+  );
+  const [activeTab, setActiveTab] = useState<MarkdownTabsType>(routeTab);
+
+  useEffect(() => {
+    setActiveTab(currentTab => (currentTab === routeTab ? currentTab : routeTab));
+  }, [routeTab]);
 
   const { data, error, isLoading } = useSWR(
     contentTabs.find(({ title }) => title === activeTab)?.url,
@@ -111,6 +131,29 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
     }
   }, [noData]);
 
+  function handleTabChange(nextTab: MarkdownTabsType) {
+    if (nextTab === activeTab) {
+      return;
+    }
+
+    setActiveTab(nextTab);
+
+    const url = new URL(window.location.href);
+
+    if (nextTab === DEFAULT_MARKDOWN_TAB) {
+      url.searchParams.delete(MARKDOWN_CONTENT_QUERY_PARAM);
+    } else {
+      url.searchParams.set(MARKDOWN_CONTENT_QUERY_PARAM, nextTab);
+    }
+
+    url.hash = '';
+
+    void router.replace(`${url.pathname}${url.search}`, undefined, {
+      shallow: true,
+      scroll: false,
+    });
+  }
+
   return (
     <View
       style={tw`my-2 rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
@@ -120,7 +163,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           <MarkdownContentTab
             tab={tab}
             activeTab={activeTab}
-            setActiveTab={setActiveTab}
+            onPress={availableTabs.length > 1 ? handleTabChange : undefined}
             key={`tab-${tab.title.toLocaleLowerCase()}`}
           />
         ))}
@@ -144,22 +187,22 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
             id="markdownContentContainer"
             components={{
               h1: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               h2: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               h3: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               h4: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               h5: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               h6: ({ children, node }: any) => (
-                <ReadmeHeading tagName={node.tagName}>{children}</ReadmeHeading>
+                <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
               br: () => null,
               hr: () => null,
@@ -217,7 +260,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                 const langClass = children?.props?.className;
                 if (langClass) {
                   return (
-                    <ReadmeCodeBlock
+                    <MarkdownCodeBlock
                       code={children.props.children}
                       theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
                       lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
