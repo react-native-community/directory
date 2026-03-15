@@ -11,7 +11,7 @@ type Props = {
 
 const SHIKI_OPTS = { langAlias: { gradle: 'groovy' } } as const;
 
-export default function ReadmeCodeBlock({ code, theme, lang }: Props) {
+export default function MarkdownCodeBlock({ code, theme, lang }: Props) {
   const highlighter = useShikiHighlighter(code, lang, theme, SHIKI_OPTS);
 
   const copyButton = <CopyButton data={code} tooltip="Copy code" label="Copy code to clipboard" />;

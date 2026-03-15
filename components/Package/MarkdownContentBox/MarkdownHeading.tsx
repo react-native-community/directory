@@ -9,7 +9,7 @@ type Props = PropsWithChildren<{
   tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }>;
 
-export default function ReadmeHeading({ children, tagName }: Props) {
+export default function MarkdownHeading({ children, tagName }: Props) {
   const Heading = tagName;
   const slug = typeof children === 'string' ? kebabCase(children) : undefined;
 
