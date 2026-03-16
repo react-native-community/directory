@@ -33,7 +33,7 @@ export default function TrendingMark({ library, style, markOnly = false }: Props
       />
       <P
         style={[
-          tw`pl-10 font-bold`,
+          tw`pl-10`,
           markOnly ? tw`-my-px text-[15px]` : tw`my-0.5 text-xs`,
           {
             color: popularityStyles.backgroundColor,

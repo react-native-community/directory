@@ -1,48 +1,36 @@
-import { useEffect, useState } from 'react';
-import { View } from 'react-native';
-import useSWR from 'swr';
+import { type PropsWithChildren, type ReactElement, useEffect, useState } from 'react';
+import { type StyleProp, View } from 'react-native';
+import { type Style } from 'twrnc';
 
-import { H6 } from '~/common/styleguide';
+import { H6Section } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Arrow } from '~/components/Icons';
-import { type PeerDependencyData } from '~/types';
-import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
-import DependencyRow from './DependencyRow';
 import EntityCounter from './EntityCounter';
 
-type Props = {
+type Props = PropsWithChildren<{
   title: string;
-  data?: Record<string, string | PeerDependencyData> | null;
-  checkExistence?: boolean;
-};
+  count?: number;
+  rightSlot?: ReactElement;
+  headerStyle?: StyleProp<Style>;
+}>;
 
-export default function CollapsibleSection({ title, data, checkExistence }: Props) {
+export default function CollapsibleSection({
+  title,
+  count,
+  rightSlot,
+  headerStyle,
+  children,
+}: Props) {
   const sectionKey = sanitizeTitle(title);
   const key = `@ReactNativeDirectory:PackageSectionCollapsed:${sectionKey}`;
-  const noData = !data || Object.keys(data).length === 0;
 
   const [collapsed, setCollapsed] = useState<boolean>(Boolean(window.localStorage.getItem(key)));
-
-  const { data: checkData } = useSWR(
-    checkExistence && !noData
-      ? `/api/library?name=${Object.keys(data).join(',')}&check=true`
-      : null,
-    (url: string) => fetch(url).then(res => res.json()),
-    {
-      dedupingInterval: TimeRange.HOUR * 1000,
-      revalidateOnFocus: false,
-    }
-  );
 
   useEffect(() => {
     setCollapsed(window.localStorage.getItem(key) === 'true');
   }, [key]);
-
-  if (noData) {
-    return null;
-  }
 
   async function toggleSection() {
     const nextState = !collapsed;
@@ -53,10 +41,11 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
   return (
     <>
       <View style={tw`flex-row items-center justify-between gap-1.5`}>
-        <H6 style={tw`flex items-center gap-1.5 text-[16px] text-secondary`}>
+        <H6Section style={[tw`flex items-center gap-1.5`, headerStyle]}>
           {title}
-          <EntityCounter count={Object.keys(data).length} />
-        </H6>
+          {count && <EntityCounter count={count} />}
+        </H6Section>
+        {!collapsed ? rightSlot : undefined}
         <Button
           onPress={toggleSection}
           style={tw`bg-palette-gray2 p-1 dark:bg-palette-gray7`}
@@ -65,20 +54,7 @@ export default function CollapsibleSection({ title, data, checkExistence }: Prop
           <Arrow style={[tw`h-3 w-4 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
         </Button>
       </View>
-      {!collapsed && (
-        <View>
-          {Object.entries(data)
-            .sort(([aName], [bName]) => aName.localeCompare(bName))
-            .map(([name, depData]) => (
-              <DependencyRow
-                key={`${sectionKey}-${name}`}
-                name={name}
-                data={depData}
-                packageExists={checkData?.[name]}
-              />
-            ))}
-        </View>
-      )}
+      {!collapsed && <View>{children}</View>}
     </>
   );
 }

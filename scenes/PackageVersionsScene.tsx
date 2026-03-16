@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { View } from 'react-native';
 
-import { H6, Label, useLayout } from '~/common/styleguide';
+import { H6Section, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
@@ -56,7 +56,7 @@ export default function PackageVersionsScene({
           {hasVersionDownloads && npmDownloads ? (
             <>
               <View style={tw`mt-3 gap-1`}>
-                <H6
+                <H6Section
                   style={[
                     tw`flex items-center justify-between text-secondary`,
                     isSmallScreen && tw`flex-col items-start gap-y-0.5`,
@@ -65,14 +65,14 @@ export default function PackageVersionsScene({
                   <Label style={tw`font-light text-secondary`}>
                     Last week&ensp;·&ensp;Top downloaded versions
                   </Label>
-                </H6>
+                </H6Section>
               </View>
               <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
                 <VersionDownloadsChart npmDownloads={npmDownloads} registryData={registryData} />
               </View>
             </>
           ) : null}
-          <H6 style={tw`mt-3 text-secondary`}>Tagged versions</H6>
+          <H6Section style={tw`mt-3 text-secondary`}>Tagged versions</H6Section>
           <View style={tw`gap-2`}>
             {taggedVersions.map(([label, versionData]) => (
               <VersionBox

@@ -3,12 +3,13 @@ import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import { View } from 'react-native';
 
-import { A, H6, useLayout } from '~/common/styleguide';
+import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdateAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
+import DependenciesSection from '~/components/Package/DependenciesSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
@@ -68,11 +69,10 @@ export default function PackageOverviewScene({
             <MarkdownContentBoxWithLoading packageName={packageName} library={library} />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6
-                  style={[tw`flex gap-1.5 text-[16px] text-secondary`, !isSmallScreen && tw`mt-3`]}>
+                <H6Section style={[tw`flex gap-1.5`, !isSmallScreen && tw`mt-3`]}>
                   Code examples
                   <EntityCounter count={library.examples.length} />
-                </H6>
+                </H6Section>
                 <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
                   {library.examples.map((example, index) => (
                     <ExampleBox example={example} key={example} index={index} />
@@ -82,7 +82,7 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && !!author && (
               <>
-                <H6 style={tw`mt-4 text-[16px] text-secondary`}>Author</H6>
+                <H6Section style={tw`mt-4`}>Author</H6Section>
                 <View style={tw`items-start`}>
                   <PackageAuthor author={author} />
                 </View>
@@ -90,10 +90,10 @@ export default function PackageOverviewScene({
             )}
             {!isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`mt-3 flex gap-1.5 text-[16px] text-secondary`}>
+                <H6Section style={tw`mt-3 flex gap-1.5`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
-                </H6>
+                </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
@@ -109,24 +109,31 @@ export default function PackageOverviewScene({
             <View>
               <MetaData library={library} />
             </View>
-            <H6 style={tw`text-[16px] text-secondary`}>Additional information</H6>
-            <View style={tw`gap-1.5`}>
-              <MetaData library={library} secondary skipExamples />
-            </View>
+            <CollapsibleSection title="Additional information">
+              <View style={tw`mb-1 gap-1.5`}>
+                <MetaData library={library} secondary skipExamples />
+              </View>
+            </CollapsibleSection>
             {!library.template && (
               <>
-                <H6 style={tw`mt-3 text-[16px] text-secondary`}>Popularity</H6>
-                <TrendingMark library={library} />
-                <H6 style={tw`text-[16px] text-secondary`}>Downloads (last month)</H6>
-                <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
-                  <DownloadsChart packageName={packageName} />
+                <H6Section style={tw`flex items-center justify-between`}>
+                  Downloads <Label style={tw`font-light text-secondary`}>Last month</Label>
+                </H6Section>
+                <View style={tw`gap-y-2`}>
+                  <View
+                    style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
+                    <DownloadsChart packageName={packageName} />
+                  </View>
+                  <View style={tw`flex-row flex-wrap items-center justify-between`}>
+                    <Caption style={tw`text-[13px] font-light`}>Popularity</Caption>
+                    <TrendingMark library={library} />
+                  </View>
                 </View>
               </>
             )}
             <TopicsSection topics={library.github.topics} />
             {!library.template && (
-              <>
-                <H6 style={tw`text-[16px] text-secondary`}>Package analysis</H6>
+              <CollapsibleSection title="Package analysis">
                 <ul
                   style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
                   <li>
@@ -158,19 +165,19 @@ export default function PackageOverviewScene({
                     </A>
                   </li>
                 </ul>
-              </>
+              </CollapsibleSection>
             )}
-            <CollapsibleSection title="Dependencies" data={dependencies} checkExistence />
-            <CollapsibleSection
+            <DependenciesSection title="Dependencies" data={dependencies} checkExistence />
+            <DependenciesSection
               title="Peer dependencies"
               data={mergePeerDependenciesData(registryData)}
               checkExistence
             />
-            <CollapsibleSection title="Development dependencies" data={devDependencies} />
-            <CollapsibleSection title="Engines" data={engines} />
+            <DependenciesSection title="Development dependencies" data={devDependencies} />
+            <DependenciesSection title="Engines" data={engines} />
             {isSmallScreen && !!author && (
               <>
-                <H6 style={tw`text-[16px] text-secondary`}>Author</H6>
+                <H6Section>Author</H6Section>
                 <View style={tw`items-start`}>
                   <PackageAuthor author={author} />
                 </View>
@@ -178,10 +185,10 @@ export default function PackageOverviewScene({
             )}
             {isSmallScreen && maintainers && (
               <>
-                <H6 style={tw`flex gap-1.5 text-[16px] text-secondary`}>
+                <H6Section style={tw`flex gap-1.5`}>
                   Contributors
                   <EntityCounter count={maintainers.length} />
-                </H6>
+                </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
                   {maintainers
                     .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))

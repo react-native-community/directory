@@ -27,13 +27,14 @@ const textStyles = StyleSheet.create({
   h1: tw`text-[57.25px] font-semibold`,
   h2: tw`text-[35.5px] font-semibold`,
   h3: tw`text-[26.5px] font-semibold`,
-  h4: tw`text-[22px]`,
+  h4: tw`text-[22px] tracking-tight`,
   h5: tw`text-[20px]`,
   h6: tw`text-[18px]`,
+  h6section: tw`text-[16px] tracking-tight text-secondary`,
   headline: tw`text-[16px] font-medium`,
   p: tw`text-[16px]`,
   caption: tw`text-[15px] leading-[22px]`,
-  label: tw`text-[12px] font-medium`,
+  label: tw`text-[12px] font-medium tracking-normal`,
 });
 
 type CustomTextProps = TextProps &
@@ -77,6 +78,7 @@ export const H3 = createTextComponent(HtmlElements.H3, textStyles.h3);
 export const H4 = createTextComponent(HtmlElements.H4, textStyles.h4);
 export const H5 = createTextComponent(HtmlElements.H5, textStyles.h5);
 export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
+export const H6Section = createTextComponent(HtmlElements.H6, textStyles.h6section);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
