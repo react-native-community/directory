@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import { View } from 'react-native';
 
 import { H3, P } from '~/common/styleguide';
@@ -8,7 +9,7 @@ import GitHubButton from './GitHubButton';
 
 type Props = {
   name: string;
-  description: string;
+  description: ReactNode;
   githubUrl: string;
   buttons: {
     label: string;
@@ -19,8 +20,8 @@ type Props = {
 export default function ToolEntry({ name, description, githubUrl, buttons }: Props) {
   return (
     <View style={tw`rounded-xl border border-default px-5 py-4`}>
-      <H3 style={tw`mb-0.5 text-xl`}>{name}</H3>
-      <P style={tw`mb-3 font-light leading-[29px]`}>{description}</P>
+      <H3 style={tw`mb-1 text-xl`}>{name}</H3>
+      <P style={tw`mb-3 font-light leading-[23px]`}>{description}</P>
       <View style={tw`flex-row flex-wrap gap-3`}>
         <GitHubButton href={githubUrl} />
         {buttons.map(({ label, href }) => (

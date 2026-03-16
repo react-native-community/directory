@@ -18,6 +18,27 @@ export default function Tools() {
       />
       <ContentContainer style={tw`my-10 gap-4 px-4`}>
         <ToolEntry
+          name="React Native Directory CLI"
+          description={
+            <span>
+              Propose new entries to React Native Directory directly from your terminal. The{' '}
+              <code
+                style={tw`rounded-sm bg-palette-gray2 p-0.5 px-1 text-[90%] dark:bg-palette-gray6`}>
+                rn-directory
+              </code>{' '}
+              CLI gathers the required information manually or automatically, creates a fork, and
+              opens a pull request on behalf of the user currently logged in to the GitHub CLI.
+            </span>
+          }
+          githubUrl="https://github.com/Simek/rn-directory"
+          buttons={[
+            {
+              label: 'npm Registry',
+              href: 'https://www.npmjs.com/package/rn-directory',
+            },
+          ]}
+        />
+        <ToolEntry
           name="React Native Directory VS Code extension"
           description="Browse through the React Native Directory and perform actions related to the chosen package inside the built-in editor Command Palette."
           githubUrl="https://github.com/react-native-community/vscode-react-native-directory"
