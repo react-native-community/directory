@@ -9,6 +9,7 @@ import {
   type StyleProp,
   StyleSheet,
   useWindowDimensions,
+  type ViewStyle,
 } from 'react-native';
 import { type Style } from 'twrnc';
 
@@ -144,7 +145,7 @@ export function A({
   );
 }
 
-type HoverEffectProps = PressableProps & { style?: StyleProp<Style> };
+type HoverEffectProps = PressableProps & { style?: StyleProp<ViewStyle> };
 
 export function HoverEffect({ children, style, onPress, ...rest }: HoverEffectProps) {
   return (
