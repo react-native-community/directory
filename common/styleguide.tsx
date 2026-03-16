@@ -9,7 +9,6 @@ import {
   type StyleProp,
   StyleSheet,
   useWindowDimensions,
-  type ViewStyle,
 } from 'react-native';
 import { type Style } from 'twrnc';
 
@@ -33,7 +32,7 @@ const textStyles = StyleSheet.create({
   h6section: tw`text-[16px] tracking-tight text-secondary`,
   headline: tw`text-[16px] font-medium`,
   p: tw`text-[16px]`,
-  caption: tw`text-[15px] leading-[22px]`,
+  caption: tw`text-[15px] leading-[22px] tracking-normal`,
   label: tw`text-[12px] font-medium tracking-normal`,
 });
 
@@ -145,7 +144,7 @@ export function A({
   );
 }
 
-type HoverEffectProps = PressableProps & { style?: StyleProp<ViewStyle> };
+type HoverEffectProps = PressableProps & { style?: StyleProp<Style> };
 
 export function HoverEffect({ children, style, onPress, ...rest }: HoverEffectProps) {
   return (

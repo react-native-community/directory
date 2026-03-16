@@ -59,7 +59,7 @@ export default function MorePackagesBox({ library }: Props) {
         ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
           <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
-            <Caption style={tw`font-light`}>See all packages</Caption>
+            <Label style={tw`font-light`}>See all packages</Label>
           </A>
         )}
       </H6Section>
