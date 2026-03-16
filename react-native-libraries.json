@@ -20017,5 +20017,17 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/turbopushdev/react-native-code-push",
+    "npmPkg": "@turbopush/react-native-code-push",
+    "examples": [
+      "https://github.com/turbopushdev/example-expo-turbopush",
+      "https://github.com/turbopushdev/turbopush-expo-plugin/tree/main/examples"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": "https://github.com/turbopushdev/turbopush-expo-plugin/tree/main"
   }
 ]
