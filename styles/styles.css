@@ -517,7 +517,7 @@ select {
 
     .blockquote-title {
       font-weight: 600;
-      margin-bottom: -4px;
+      margin-bottom: -6px;
       display: block;
     }
 
@@ -530,10 +530,10 @@ select {
     }
 
     &.tip {
-      border-left-color: #238636;
+      border-left-color: #238a2c;
 
       .blockquote-title {
-        color: #238636;
+        color: #238a2c;
       }
     }
 
@@ -693,10 +693,6 @@ select {
     border: 1px solid var(--table-border);
     padding: 5px 8px;
 
-    &:empty {
-      display: none;
-    }
-
     &:first-child {
       border-left: 0;
     }
@@ -704,6 +700,10 @@ select {
     &:last-child {
       border-right: 0;
     }
+  }
+
+  td:empty {
+    display: none;
   }
 
   th {

@@ -11,7 +11,18 @@ import remarkGfm from 'remark-gfm';
 import useSWR from 'swr';
 
 import { A, P } from '~/common/styleguide';
-import { CCFile, ChangelogFile, Check, ContributingFile, ReadmeFile } from '~/components/Icons';
+import {
+  CautionBlockquote,
+  CCFile,
+  ChangelogFile,
+  Check,
+  ContributingFile,
+  ImportantBlockquote,
+  NoteBlockquote,
+  ReadmeFile,
+  TipBlockquote,
+  WarningBlockquote,
+} from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import rndDark from '~/styles/shiki/rnd-dark.json';
@@ -285,7 +296,8 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                         : tw`border-palette-gray4 dark:border-secondary`),
                     }}>
                     {blockquoteType.type && (
-                      <strong className="blockquote-title">
+                      <strong className="blockquote-title" style={tw`flex items-center gap-1.5`}>
+                        {getBlockquoteIcon(blockquoteType.type)}
                         {capitalize(blockquoteType.type)}
                       </strong>
                     )}
@@ -344,4 +356,21 @@ function getReadmeFallbackContent(
 function getTabContentUrl(library: LibraryType, fileName: string) {
   const { packagePath, branchName } = parseGitHubUrl(library.githubUrl);
   return `${library.github.urls.repo?.replace('github.com/', 'raw.githubusercontent.com/')}/${branchName ?? 'HEAD'}/${packagePath !== '.' ? `${packagePath}/` : ''}${fileName}`;
+}
+
+function getBlockquoteIcon(type: string) {
+  switch (type) {
+    case 'note':
+      return <NoteBlockquote style={tw`-ml-0.5 size-4`} />;
+    case 'tip':
+      return <TipBlockquote style={tw`-ml-0.5 size-4`} />;
+    case 'warning':
+      return <WarningBlockquote style={tw`-ml-0.5 size-4`} />;
+    case 'caution':
+      return <CautionBlockquote style={tw`-ml-0.5 size-4`} />;
+    case 'important':
+      return <ImportantBlockquote style={tw`-ml-0.5 size-4`} />;
+    default:
+      return null;
+  }
 }

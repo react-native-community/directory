@@ -320,7 +320,7 @@
       }
     },
     {
-      "scope": ["keyword.operator", "keyword.control"],
+      "scope": ["keyword.soft", "keyword.hard", "keyword.operator", "keyword.control"],
       "settings": {
         "foreground": "#cf222e"
       }
