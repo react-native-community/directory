@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { View } from 'react-native';
 
-import { A, Caption, H6, useLayout } from '~/common/styleguide';
+import { A, Caption, H6Section, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { DirectoryScore } from '~/components/Library/DirectoryScore';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
@@ -42,7 +42,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               isSmallScreen && tw`flex-col px-5`,
             ]}>
             <View style={tw`items-center`}>
-              <H6 style={tw`mb-3`}>Directory score</H6>
+              <H6Section style={tw`mb-3`}>Directory score</H6Section>
               <DirectoryScore score={library.score} sizeMultiplier={2} />
               <span style={tw`mt-1 flex items-center text-[24px] font-semibold text-primary-dark`}>
                 {library.score}/100
@@ -67,7 +67,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               </Caption>
             </View>
           </View>
-          <H6 style={tw`text-secondary`}>Matching criteria</H6>
+          <H6Section style={tw`text-secondary`}>Matching criteria</H6Section>
           <View>
             {SCORING_CRITERIONS.filter(({ name }) =>
               library.matchingScoreModifiers.includes(name)
@@ -77,7 +77,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
               </ScoringCriterion>
             ))}
           </View>
-          <H6 style={tw`text-secondary`}>Not matched criteria</H6>
+          <H6Section style={tw`text-secondary`}>Not matched criteria</H6Section>
           <View>
             {SCORING_CRITERIONS.filter(
               ({ name }) => !library.matchingScoreModifiers.includes(name)
