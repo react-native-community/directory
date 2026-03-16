@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { A, H6, Label } from '~/common/styleguide';
+import { A, Label } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import EntityCounter from '~/components/Package/EntityCounter';
+import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -23,19 +23,20 @@ export default function TopicsSection({ topics }: Props) {
   const trimmedTopics = hasManyTopics && !expanded ? topics.slice(0, MAX_TOPICS) : topics;
 
   return (
-    <>
-      <H6 style={tw`-mb-0.5 flex min-h-[25px] items-center gap-1.5 text-[16px] text-secondary`}>
-        Topics
-        <EntityCounter count={topics.length} />
-        {hasManyTopics && !expanded && (
+    <CollapsibleSection
+      title="Topics"
+      count={topics.length}
+      headerStyle={tw`-mb-0.5 min-h-[25px]`}
+      rightSlot={
+        hasManyTopics && !expanded ? (
           <Button
             containerStyle={tw`ml-auto`}
             style={tw`border border-default bg-default px-2 py-1`}
             onPress={() => setExpanded(true)}>
-            <Label>Show All</Label>
+            <Label style={tw`text-[10px]`}>Show All</Label>
           </Button>
-        )}
-      </H6>
+        ) : undefined
+      }>
       <View style={tw`flex-row flex-wrap items-start gap-x-2 gap-y-0.5`}>
         {trimmedTopics.map(topic => (
           <A key={topic} href={`/packages?search=${topic}`} style={tw`text-[12px] font-light`}>
@@ -48,6 +49,6 @@ export default function TopicsSection({ topics }: Props) {
           </Label>
         )}
       </View>
-    </>
+    </CollapsibleSection>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Caption, H6, Label, useLayout } from '~/common/styleguide';
+import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { Search } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
@@ -73,7 +73,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
 
   return (
     <>
-      <H6 style={tw`mt-3 flex items-end justify-between text-secondary`}>
+      <H6Section style={tw`mt-3 flex items-end justify-between text-secondary`}>
         <span>Versions</span>
         <Label style={tw`font-light text-secondary`}>
           <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
@@ -81,7 +81,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
           </span>{' '}
           matching {pluralize('version', filteredVersions.length)}
         </Label>
-      </H6>
+      </H6Section>
       <View style={tw`gap-2`}>
         <View
           style={tw`flex-row items-center rounded-lg border-2 border-default bg-palette-gray1 dark:bg-dark`}>

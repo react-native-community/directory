@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
-import { A, Caption, H6, Label, useLayout } from '~/common/styleguide';
+import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Download, Star, Warning } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
@@ -52,21 +52,17 @@ export default function MorePackagesBox({ library }: Props) {
 
   return (
     <>
-      <H6
-        style={[
-          tw`flex items-center gap-1.5 text-[16px] text-secondary`,
-          !isSmallScreen && tw`mt-4`,
-        ]}>
+      <H6Section style={[tw`flex items-center gap-1.5`, !isSmallScreen && tw`mt-4`]}>
         More packages from {startCase(owner)}
         {!isLoading && data?.total && data.total > 0 ? (
           <EntityCounter count={data.total > LIMIT ? data.total : data.total - 1} />
         ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
           <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
-            <Caption style={tw`font-light`}>See all packages</Caption>
+            <Label style={tw`font-light`}>See all packages</Label>
           </A>
         )}
-      </H6>
+      </H6Section>
       {!data || isLoading ? (
         <ThreeDotsLoader />
       ) : (
