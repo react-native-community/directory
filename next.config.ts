@@ -16,6 +16,7 @@ const PACKAGES_TO_OPTIMIZE = [
   'react-native-svg',
   'react-native-web',
   'react-shiki',
+  'semver',
   'shiki/*',
   'twrnc',
 ];

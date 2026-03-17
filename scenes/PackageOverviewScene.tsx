@@ -167,7 +167,12 @@ export default function PackageOverviewScene({
                 </ul>
               </CollapsibleSection>
             )}
-            <DependenciesSection title="Dependencies" data={dependencies} checkExistence />
+            <DependenciesSection
+              title="Dependencies"
+              data={dependencies}
+              checkExistence
+              checkVersion
+            />
             <DependenciesSection
               title="Peer dependencies"
               data={mergePeerDependenciesData(registryData)}
