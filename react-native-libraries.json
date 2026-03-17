@@ -14089,7 +14089,7 @@
   {
     "githubUrl": "https://github.com/deeeed/expo-audio-stream/tree/main/packages/expo-audio-stream",
     "npmPkg": "@siteed/expo-audio-stream",
-    "examples": ["https://deeeed.github.io/audiolab/playground"],
+    "examples": ["https://deeeed.github.io/expo-audio-stream/playground"],
     "images": ["https://raw.githubusercontent.com/deeeed/expo-audio-stream/main/docs/demo.gif"],
     "ios": true,
     "android": true,
@@ -14098,7 +14098,7 @@
   {
     "githubUrl": "https://github.com/deeeed/expo-audio-stream/tree/main/packages/expo-audio-ui",
     "npmPkg": "@siteed/expo-audio-ui",
-    "examples": ["https://deeeed.github.io/audiolab/expo-audio-ui-storybook"],
+    "examples": ["https://deeeed.github.io/expo-audio-stream/expo-audio-ui-storybook/"],
     "ios": true,
     "android": true,
     "web": true
@@ -20044,5 +20044,30 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": "https://github.com/turbopushdev/turbopush-expo-plugin/tree/main"
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/%40expo/router-server",
+    "npmPkg": "@expo/router-server",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/%40expo/dom-webview",
+    "npmPkg": "@expo/dom-webview",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/akvelon/react-native-sms-user-consent",
+    "npmPkg": "@eabdullazyanov/react-native-sms-user-consent",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kpanuragh/zlib",
+    "npmPkg": "react-zlib-js",
+    "ios": true,
+    "android": true
   }
 ]
