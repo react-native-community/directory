@@ -20076,23 +20076,11 @@
       "https://github.com/Adoobdoob71/react-native-add-calendar/example"
     ],
     "images": [
-      "https://github.com/Adoobdoob71/react-native-add-calendar/blob/main/media/android_gif.gif",
-      "https://github.com/Adoobdoob71/react-native-add-calendar/blob/main/media/ios_gif.gif"
+      "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/android_gif.gif",
+      "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/ios_gif.gif"
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "expoGo": false,
-    "fireos": false,
-    "horizon": false,
-    "newArchitecture": true,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false,
-    "template": false
+    "newArchitecture": true
   }
 ]
