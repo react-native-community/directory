@@ -13,13 +13,16 @@ import tw from '~/util/tailwind';
 type Props = {
   name: string;
   data: string | PeerDependencyData;
-  packageVersion?: string;
+  packageVersion?: string | boolean;
 };
 
 export default function DependencyRow({ name, data, packageVersion }: Props) {
   const { isSmallScreen } = useLayout();
   const isDataString = typeof data === 'string';
-  const versionLabel = getVersionLabel(isDataString ? data : data.version, packageVersion);
+  const versionLabel = getVersionLabel(
+    isDataString ? data : data.version,
+    typeof packageVersion === 'string' ? packageVersion : undefined
+  );
   const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 18;
 
   return (
