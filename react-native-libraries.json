@@ -20069,5 +20069,28 @@
     "npmPkg": "react-zlib-js",
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/Adoobdoob71/react-native-add-calendar",
+  "npmPkg": "react-native-add-calendar",
+  "examples": [
+    "https://github.com/Adoobdoob71/react-native-add-calendar",
+  ],
+  "images": ["https://github.com/Adoobdoob71/react-native-add-calendar/media"],
+  "ios": true,
+  "android": true,
+  "web": false,
+  "windows": false,
+  "macos": false,
+  "tvos": false,
+  "visionos": false,
+  "expoGo": false,
+  "fireos": false,
+  "horizon": false,
+  "newArchitecture": true,
+  "configPlugin": false,
+  "unmaintained": false,
+  "dev": false,
+  "template": false
+}
 ]
