@@ -17,7 +17,7 @@ export default function DependenciesSection({ title, data, checkExistence }: Pro
 
   const { data: checkData } = useSWR(
     checkExistence && !noData
-      ? `/api/library?name=${Object.keys(data).join(',')}&check=true`
+      ? `/api/library?name=${Object.keys(data).join(',')}&check=version`
       : null,
     (url: string) => fetch(url).then(res => res.json()),
     {
@@ -39,7 +39,7 @@ export default function DependenciesSection({ title, data, checkExistence }: Pro
             key={`${title.toLocaleLowerCase()}-${name}`}
             name={name}
             data={depData}
-            packageExists={checkData?.[name]}
+            packageVersion={checkData?.[name]}
           />
         ))}
     </CollapsibleSection>

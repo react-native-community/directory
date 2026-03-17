@@ -1,7 +1,7 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { type DataAssetType } from '~/types';
+import { type DataAssetType, type LibraryType } from '~/types';
 import { parseQueryParams } from '~/util/queryParams';
 
 const DATASET = data as DataAssetType;
@@ -10,8 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { name, check } = parseQueryParams(req.query);
 
   const packageNames = name ? name.toString().toLowerCase().trim().split(',') : undefined;
-  const checkOnly = Boolean(check);
-
   const libraries = DATASET.libraries.filter(library =>
     packageNames?.includes(library.npmPkg.toLowerCase())
   );
@@ -29,13 +27,18 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   res.statusCode = 200;
   res.json(
-    Object.fromEntries(
-      packageNames.map(name => [
-        name,
-        checkOnly
-          ? libraries.filter(library => name === library.npmPkg).length >= 1
-          : libraries.find(library => (name === library.npmPkg ? library : undefined)),
-      ])
-    )
+    Object.fromEntries(packageNames.map(name => [name, handleCheck(libraries, name, check)]))
   );
+}
+
+function handleCheck(libraries: LibraryType[], name: string, check?: string) {
+  switch (check) {
+    case 'version':
+      const lib = libraries.find(library => (name === library.npmPkg ? library : undefined));
+      return lib ? (lib.npm?.latestRelease ?? 'unknown') : undefined;
+    case 'true':
+      return libraries.some(library => name === library.npmPkg);
+    default:
+      return libraries.find(library => (name === library.npmPkg ? library : undefined));
+  }
 }
