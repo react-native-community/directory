@@ -18,12 +18,14 @@ type Props = {
 
 export default function DependencyRow({ name, data, packageVersion }: Props) {
   const { isSmallScreen } = useLayout();
+
   const isDataString = typeof data === 'string';
+  const versionString = isDataString ? data : data.version;
+  const hasLongVersion = versionString.length > 18;
   const versionLabel = getVersionLabel(
-    isDataString ? data : data.version,
+    versionString,
     typeof packageVersion === 'string' ? packageVersion : undefined
   );
-  const hasLongVersion = typeof versionLabel !== 'string' || versionLabel.length > 18;
 
   return (
     <View
