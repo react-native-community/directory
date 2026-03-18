@@ -522,6 +522,15 @@ select {
       display: block;
     }
 
+    &.note,
+    &.tip,
+    &.important,
+    &.warning,
+    &.caution {
+      padding-block-start: 0.5rem;
+      padding-block-end: 0.5rem;
+    }
+
     &.note {
       border-left-color: #4493f8;
 
@@ -701,10 +710,6 @@ select {
     &:last-child {
       border-right: 0;
     }
-  }
-
-  td:empty {
-    display: none;
   }
 
   th {

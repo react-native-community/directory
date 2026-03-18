@@ -1107,6 +1107,7 @@ export function CautionBlockquote({ width = 24, height = 24, style }: IconProps)
         x2="128"
         y2="80"
         fill="none"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="24"
@@ -1118,7 +1119,7 @@ export function CautionBlockquote({ width = 24, height = 24, style }: IconProps)
         strokeMiterlimit="10"
         strokeWidth="24"
       />
-      <Circle cx="128" cy="172" r="24" fill="currentColor" />
+      <Circle cx="128" cy="172" r="16" fill="currentColor" />
     </Svg>
   );
 }
