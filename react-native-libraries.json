@@ -20069,5 +20069,11 @@
     "npmPkg": "react-zlib-js",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vladrozhnev/react-native-interception-webview",
+    "npmPkg": "react-native-interception-webview",
+    "android": true,
+    "newArchitecture": true
   }
 ]
