@@ -20069,5 +20069,13 @@
     "npmPkg": "react-zlib-js",
     "ios": true,
     "android": true
+  },
+   {
+    "githubUrl": "https://github.com/efstathiosntonas/expo-native-sheet-emojis",
+    "examples": ["https://github.com/efstathiosntonas/expo-native-sheet-emojis/tree/main/example"],
+    "npmPkg": "expo-native-sheet-emojis",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
   }
 ]
