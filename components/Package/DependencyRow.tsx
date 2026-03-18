@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { View } from 'react-native';
 import semverClean from 'semver/functions/clean';
 import semverDiff from 'semver/functions/diff';
@@ -23,7 +23,7 @@ export default function DependencyRow({ name, data, packageVersion }: Props) {
     isDataString ? data : data.version,
     typeof packageVersion === 'string' ? packageVersion : undefined
   );
-  const hasLongVersion = typeof versionLabel === 'string' && versionLabel.length > 18;
+  const hasLongVersion = typeof versionLabel !== 'string' || versionLabel.length > 18;
 
   return (
     <View
@@ -78,7 +78,7 @@ export default function DependencyRow({ name, data, packageVersion }: Props) {
       </span>
       <Label
         style={[
-          tw`font-mono flex-shrink-0 text-right text-xs leading-[14px] text-secondary`,
+          tw`font-mono max-w-[93%] flex-shrink-0 text-right text-xs leading-[14px] text-secondary`,
           hasLongVersion && tw`ml-auto flex-shrink`,
         ]}>
         {versionLabel}
@@ -100,6 +100,14 @@ function getVersionLabel(version: string, latestVersion?: string): ReactNode {
       return `${patchedVersion} (patched)`;
     }
     return 'patched';
+  } else if (version.includes('||')) {
+    const versionChunks = version.split(' || ');
+    return versionChunks.map((v, index) => (
+      <Fragment key={`v-${v}`}>
+        {v}
+        {index !== versionChunks.length - 1 && <span style={tw`text-tertiary`}>{` || `}</span>}
+      </Fragment>
+    ));
   }
 
   if (latestVersion) {
