@@ -20120,5 +20120,12 @@
     "macos": true,
     "tvos": true,
     "visionos": true
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-smooth-collapse",
+    "npmPkg": "react-native-smooth-collapse",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
