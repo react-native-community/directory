@@ -202,7 +202,8 @@ Return aggregated statistics about the library dataset, such as total counts of 
 
 ## GET /api/library
 
-Lookup one or more libraries by npm package name. Endpoint can optionally perform a quick `check` to return existence flag only.
+Lookup one or more libraries by npm package name.
+Endpoint can optionally perform a quick `check` to return existence flag only, or when `version` is used as `check` value to return the latest version string when package is present in the directory.
 
 - Method: GET
 - Path: `/api/library`
@@ -213,6 +214,7 @@ Lookup one or more libraries by npm package name. Endpoint can optionally perfor
 ### Notes
 
 - If `check` is `true`, the response includes only information about existence for the specified package(s).
+- If `check` is `version`, the response includes only information about existence for the specified package(s), returning the latest version if package exists.
 - If `check` is `false` or not provided, the response includes full library data.
 
 ### Example
@@ -308,6 +310,16 @@ Lookup one or more libraries by npm package name. Endpoint can optionally perfor
   ```json
   {
     "uniwind": true
+  }
+  ```
+
+- GET `/api/library?name=react&check=version`
+
+  Response:
+
+  ```json
+  {
+    "uniwind": "1.5.0"
   }
   ```
 

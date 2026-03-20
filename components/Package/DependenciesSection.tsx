@@ -10,14 +10,15 @@ type Props = {
   title: string;
   data?: Record<string, string | PeerDependencyData> | null;
   checkExistence?: boolean;
+  checkVersion?: boolean;
 };
 
-export default function DependenciesSection({ title, data, checkExistence }: Props) {
+export default function DependenciesSection({ title, data, checkExistence, checkVersion }: Props) {
   const noData = !data || Object.keys(data).length === 0;
 
   const { data: checkData } = useSWR(
     checkExistence && !noData
-      ? `/api/library?name=${Object.keys(data).join(',')}&check=true`
+      ? `/api/library?name=${Object.keys(data).join(',')}&check=${checkVersion ? 'version' : 'true'}`
       : null,
     (url: string) => fetch(url).then(res => res.json()),
     {
@@ -39,7 +40,7 @@ export default function DependenciesSection({ title, data, checkExistence }: Pro
             key={`${title.toLocaleLowerCase()}-${name}`}
             name={name}
             data={depData}
-            packageExists={checkData?.[name]}
+            packageVersion={checkData?.[name]}
           />
         ))}
     </CollapsibleSection>

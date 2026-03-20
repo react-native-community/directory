@@ -16,6 +16,7 @@ const PACKAGES_TO_OPTIMIZE = [
   'react-native-svg',
   'react-native-web',
   'react-shiki',
+  'semver',
   'shiki/*',
   'twrnc',
 ];
@@ -34,10 +35,12 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
     disableStaticImages: true,
   },
   transpilePackages: PACKAGES_TO_OPTIMIZE,
+  logging: {
+    browserToTerminal: true,
+  },
   experimental: {
     forceSwcTransforms: true,
     webpackBuildWorker: true,
-    browserDebugInfoInTerminal: true,
     optimizePackageImports: PACKAGES_TO_OPTIMIZE,
   },
   async headers() {
