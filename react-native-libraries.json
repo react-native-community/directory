@@ -20071,8 +20071,60 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/hyochan/react-native-audio-recorder-player",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "alternatives": ["react-native-nitro-sound"]
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo-asset-utils",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "alternatives": ["expo-asset", "expo-file-system"]
+  },
+  {
+    "githubUrl": "https://github.com/acostalima/react-native-polyfill-globals",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ide/react-native-button",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/glepur/react-native-swipe-gestures",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/naeemur/react-native-wheel-color-picker",
+    "images": ["https://naeemur.github.io/asset-bucket/rn-wheel-color-picker.gif"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/nandorojo/sf-symbols-typescript",
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/@expo/metro-runtime",
+    "npmPkg": "@expo/metro-runtime",
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true
+  },
+  {
     "githubUrl": "https://github.com/vladrozhnev/react-native-interception-webview",
     "npmPkg": "react-native-interception-webview",
+    "ios": true,
     "android": true,
     "newArchitecture": true
   }
