@@ -438,6 +438,10 @@ select {
       picture {
         display: block;
       }
+
+      a {
+        display: inline-flex;
+      }
     }
 
     & a {
@@ -507,7 +511,7 @@ select {
   }
 
   blockquote {
-    margin-block-start: 8px;
+    margin-block-start: 12px;
     margin-block-end: 0;
     margin-inline-start: 0;
     padding-inline-start: 1rem;
@@ -520,6 +524,15 @@ select {
       font-weight: 600;
       margin-bottom: -6px;
       display: block;
+    }
+
+    &.note,
+    &.tip,
+    &.important,
+    &.warning,
+    &.caution {
+      padding-block-start: 0.5rem;
+      padding-block-end: 0.5rem;
     }
 
     &.note {
@@ -703,11 +716,13 @@ select {
     }
   }
 
-  td:empty {
-    display: none;
-  }
-
   th {
     background-color: var(--table-header-background);
+  }
+
+  .readme-code-block {
+    + div[data-table-wrapper] {
+      margin-top: 12px;
+    }
   }
 }
