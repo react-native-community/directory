@@ -20120,5 +20120,17 @@
     "macos": true,
     "tvos": true,
     "visionos": true
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-lumen",
+    "examples": [
+      "https://github.com/thedev204/react-native-lumen/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-lumen/main/assets/showcase1.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
