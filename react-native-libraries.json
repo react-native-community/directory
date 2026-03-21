@@ -12657,6 +12657,7 @@
     "ios": true,
     "android": true,
     "macos": true,
+    "windows": true,
     "newArchitecture": true
   },
   {
@@ -20122,10 +20123,38 @@
     "visionos": true
   },
   {
-    "githubUrl": "https://github.com/thedev204/react-native-lumen",
-    "examples": [
-      "https://github.com/thedev204/react-native-lumen/tree/main/example"
+    "githubUrl": "https://github.com/Adoobdoob71/react-native-add-calendar",
+    "examples": ["https://github.com/Adoobdoob71/react-native-add-calendar/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/android_gif.gif",
+      "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/ios_gif.gif"
     ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/vladrozhnev/react-native-interception-webview",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/efstathiosntonas/expo-native-sheet-emojis",
+    "examples": ["https://github.com/efstathiosntonas/expo-native-sheet-emojis/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/antosmamanktr/react-native-smooth-collapse",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-lumen",
+    "examples": ["https://github.com/thedev204/react-native-lumen/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/thedev204/react-native-lumen/main/assets/showcase1.gif"
     ],
