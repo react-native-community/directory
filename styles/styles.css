@@ -64,6 +64,7 @@
   --border: var(--gray-2);
   --border-secondary: #353840;
 
+  --top-bar: #21232af0;
   --overscroll-background: var(--gray-7);
   --outline: var(--primary-dark);
   --active: var(--primary-darker);
@@ -102,6 +103,7 @@
   --border: var(--accented);
   --border-secondary: var(--secondary);
 
+  --top-bar: #111114ed;
   --overscroll-background: var(--very-dark);
   --outline: var(--primary-dark);
   --active: var(--primary-dark);
@@ -138,6 +140,13 @@ input:focus-visible {
 #__next,
 #__next > div {
   @apply min-h-[100vh] bg-default;
+}
+
+#top-bar {
+  backdrop-filter: blur(6px);
+  position: fixed;
+  z-index: 100;
+  background-color: var(--top-bar);
 }
 
 /* SELECT */
@@ -355,7 +364,7 @@ select {
 /* PACKAGE STICKY CONTAINER */
 
 #metadataContainer {
-  top: 26px;
+  top: 87px;
   height: fit-content;
   position: sticky;
 }
