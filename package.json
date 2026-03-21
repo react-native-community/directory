@@ -35,7 +35,7 @@
     "es-toolkit": "^1.45.1",
     "expo": "55.0.8",
     "expo-font": "^55.0.4",
-    "next": "^16.2.0",
+    "next": "^16.2.1",
     "node-emoji": "^2.2.0",
     "postcss": "^8.5.8",
     "react": "19.2.4",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
-    "@next/bundle-analyzer": "^16.2.0",
+    "@next/bundle-analyzer": "^16.2.1",
     "@prettier/plugin-oxc": "^0.1.3",
     "@types/bun": "^1.3.11",
     "@types/crypto-js": "^4.2.2",
@@ -76,7 +76,7 @@
     "next-images": "^1.8.5",
     "oxfmt": "^0.41.0",
     "oxlint": "^1.56.0",
-    "oxlint-tsgolint": "^0.17.0",
+    "oxlint-tsgolint": "^0.17.1",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "user-agent-data-types": "^0.4.2"
