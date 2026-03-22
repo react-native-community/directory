@@ -297,7 +297,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
             );
 
             return tooltip ? (
-              <Tooltip key={id} sideOffset={2} delayDuration={100} trigger={component}>
+              <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
                 {tooltip}
               </Tooltip>
             ) : (
@@ -330,7 +330,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
               <Tooltip
                 key={id}
                 sideOffset={2}
-                delayDuration={100}
+                delayDuration={250}
                 trigger={<View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>}>
                 {tooltip}
               </Tooltip>
