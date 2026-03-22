@@ -22,7 +22,7 @@ export default function SearchTag({ title, value }: Props) {
       <Tooltip
         trigger={
           <HoverEffect>
-            <A href="/" style={tw`flex flex-row items-center gap-1.5 pl-2 no-underline`}>
+            <A href="/packages" style={tw`flex flex-row items-center gap-1.5 pl-2 no-underline`}>
               {startCase(value)}
               <XIcon style={tw`w-2.5 text-error`} />
             </A>
