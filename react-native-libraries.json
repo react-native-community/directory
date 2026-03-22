@@ -11979,9 +11979,14 @@
   },
   {
     "githubUrl": "https://github.com/ajakka/react-native-here-explore",
-    "examples": ["https://github.com/ajakka/react-native-here-explore/tree/main/example"],
+    "examples": [
+      "https://github.com/ajakka/react-native-here-explore/tree/main/example",
+      "https://github.com/ajakka/react-native-here-explore/tree/main/example-expo"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/birdofpreyru/react-native-audio",
