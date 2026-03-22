@@ -138,6 +138,13 @@ export default function PackageOverviewScene({
                   style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
                   <li>
                     <A
+                      href={`https://node-modules.dev/grid/depth#install=${library.npmPkg}`}
+                      style={tw`text-[12px] font-light`}>
+                      Node Modules Inspector
+                    </A>
+                  </li>
+                  <li>
+                    <A
                       href={`https://bundlephobia.com/package/${library.npmPkg}`}
                       style={tw`text-[12px] font-light`}>
                       Bundlephobia
@@ -145,16 +152,16 @@ export default function PackageOverviewScene({
                   </li>
                   <li>
                     <A
-                      href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
+                      href={`https://pkg-size.dev/${library.npmPkg}`}
                       style={tw`text-[12px] font-light`}>
-                      npmgraph
+                      pkg-size.dev
                     </A>
                   </li>
                   <li>
                     <A
-                      href={`https://pkg-size.dev/${library.npmPkg}`}
+                      href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
                       style={tw`text-[12px] font-light`}>
-                      pkg-size.dev
+                      npmgraph
                     </A>
                   </li>
                   <li>

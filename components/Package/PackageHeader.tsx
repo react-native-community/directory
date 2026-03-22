@@ -1,3 +1,4 @@
+import { startCase } from 'es-toolkit';
 import { type ReactNode } from 'react';
 import { View } from 'react-native';
 
@@ -39,10 +40,10 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
               <UserAvatar
                 src={`https://github.com/${ghUsername}.png`}
                 style={tw`size-6 rounded-md border border-solid border-palette-gray2 dark:border-default`}
-                alt={`${ghUsername} avatar`}
+                alt={`${startCase(ghUsername)} avatar`}
               />
             }>
-            {ghUsername}
+            {startCase(ghUsername)}
           </Tooltip>
           <P style={tw`-mt-0.5 text-xl font-semibold leading-[26px]`}>{library.npmPkg}</P>
           {registryData && (

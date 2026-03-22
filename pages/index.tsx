@@ -33,12 +33,12 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   );
   const recentlyAddedResponse = await ssrFetch(
     '/libraries',
-    { order: 'added', limit: LIMIT.toString() },
+    { order: 'added', limit: LIMIT.toString(), isMaintained: 'true' },
     ctx
   );
   const recentlyUpdatedResponse = await ssrFetch(
     '/libraries',
-    { order: 'updated', limit: LIMIT.toString() },
+    { order: 'updated', limit: LIMIT.toString(), isMaintained: 'true' },
     ctx
   );
   const popularResponse = await ssrFetch(
