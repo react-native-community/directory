@@ -100,6 +100,7 @@ export type LibraryType = LibraryDataEntryType & {
     hasCC?: boolean;
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
+    packageManager?: string;
     urls: {
       repo: string;
       homepage?: string | null;
@@ -236,6 +237,12 @@ export type StatisticResultType = {
   tvos: number;
   visionos: number;
   vegaos: number;
+  packageManager: {
+    bun: number;
+    pnpm: number;
+    npm: number;
+    yarn: number;
+  };
 };
 
 type NpmRegistryCommonData = {

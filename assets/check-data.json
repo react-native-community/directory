@@ -277,7 +277,6 @@
     "newArchitecture": "supported"
   },
   "gl-react-expo": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-pages": {
@@ -1836,7 +1835,6 @@
     "newArchitecture": "supported"
   },
   "react-native-markdown-display": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-i18next": {
@@ -2647,8 +2645,7 @@
     "newArchitecture": "untested"
   },
   "react-native-watch-connectivity": {
-    "unmaintained": true,
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-background-downloader": {
     "unmaintained": true,
@@ -3003,6 +3000,7 @@
     "newArchitecture": "untested"
   },
   "react-native-payments": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@kilohealth/rn-fitness-tracker": {
@@ -3596,6 +3594,7 @@
     "newArchitecture": "supported"
   },
   "react-native-sfsymbols": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-platforms": {
@@ -3777,6 +3776,7 @@
     "newArchitecture": "untested"
   },
   "react-native-graph": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-bignumber": {
@@ -4543,6 +4543,7 @@
     "newArchitecture": "supported"
   },
   "expo-stable-diffusion": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-bullet-graph": {
@@ -5052,7 +5053,7 @@
     "newArchitecture": "supported"
   },
   "react-native-here-explore": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@dr.pogodin/react-native-audio": {
     "newArchitecture": "supported"
@@ -5748,6 +5749,7 @@
     "newArchitecture": "untested"
   },
   "@siteed/expo-audio-ui": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@bittingz/expo-widgets": {
@@ -6674,7 +6676,6 @@
     "newArchitecture": "supported"
   },
   "gl-react-native": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-fast-squircle": {
@@ -7900,5 +7901,65 @@
   },
   "react-native-streamdown": {
     "newArchitecture": "untested"
+  },
+  "@turbopush/react-native-code-push": {
+    "newArchitecture": "supported"
+  },
+  "@expo/router-server": {
+    "newArchitecture": "supported"
+  },
+  "@expo/dom-webview": {
+    "newArchitecture": "supported"
+  },
+  "@eabdullazyanov/react-native-sms-user-consent": {
+    "newArchitecture": "untested"
+  },
+  "react-zlib-js": {
+    "newArchitecture": "untested"
+  },
+  "react-native-audio-recorder-player": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "expo-asset-utils": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "react-native-polyfill-globals": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "react-native-button": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "react-native-swipe-gestures": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "react-native-wheel-color-picker": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "sf-symbols-typescript": {
+    "newArchitecture": "untested"
+  },
+  "@expo/metro-runtime": {
+    "newArchitecture": "untested"
+  },
+  "react-native-add-calendar": {
+    "newArchitecture": "supported"
+  },
+  "react-native-interception-webview": {
+    "newArchitecture": "supported"
+  },
+  "expo-native-sheet-emojis": {
+    "newArchitecture": "supported"
+  },
+  "react-native-smooth-collapse": {
+    "newArchitecture": "supported"
+  },
+  "react-native-lumen": {
+    "newArchitecture": "supported"
   }
 }

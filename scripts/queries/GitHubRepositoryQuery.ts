@@ -4,7 +4,8 @@ const GitHubRepositoryQuery = `
     $repoName: String!,
     $packagePath: String = ".",
     $packageFilesPath: String = "HEAD:.",
-    $packageJsonPath: String = "HEAD:package.json"
+    $packageJsonPath: String = "HEAD:package.json",
+    $fetchRoot: Boolean = false
   ) {
     rateLimit {
       limit
@@ -76,6 +77,19 @@ const GitHubRepositoryQuery = `
         }
       }
       files: object(expression: $packageFilesPath) {
+        ... on Tree {
+          entries {
+            name
+            type
+          }
+        }
+      }
+      rootPackageJson: object(expression: "HEAD:package.json") @include(if: $fetchRoot) {
+        ... on Blob {
+          text
+        }
+      }
+      rootFiles: object(expression: "HEAD:") @include(if: $fetchRoot) {
         ... on Tree {
           entries {
             name

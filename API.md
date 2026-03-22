@@ -194,7 +194,13 @@ Return aggregated statistics about the library dataset, such as total counts of 
     "horizon": 3,
     "tvos": 100,
     "visionos": 32,
-    "vegaos": 55
+    "vegaos": 55,
+    "packageManager": {
+      "bun": 85,
+      "pnpm": 132,
+      "npm": 402,
+      "yarn": 1334
+    }
   }
   ```
 

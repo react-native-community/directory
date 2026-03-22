@@ -27,6 +27,12 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     tvos: 0,
     visionos: 0,
     vegaos: 0,
+    packageManager: {
+      bun: 0,
+      pnpm: 0,
+      npm: 0,
+      yarn: 0,
+    },
   };
 
   DATASET.libraries.forEach(library => {
@@ -106,6 +112,18 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.vegaos) {
       result.vegaos++;
+    }
+
+    if (library.github.packageManager) {
+      if (library.github.packageManager.includes('bun')) {
+        result.packageManager.bun++;
+      } else if (library.github.packageManager.includes('pnpm')) {
+        result.packageManager.pnpm++;
+      } else if (library.github.packageManager.includes('npm')) {
+        result.packageManager.npm++;
+      } else if (library.github.packageManager.includes('yarn')) {
+        result.packageManager.yarn++;
+      }
     }
   });
 

@@ -15,6 +15,7 @@ import {
   Module,
   NativeCode,
   NightlyTest,
+  PackageManager,
   PackageSize,
   Star,
   TypeScript,
@@ -24,7 +25,7 @@ import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/C
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import { pluralize } from '~/util/strings';
+import { formatPackageManager, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
@@ -220,7 +221,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           tooltip: 'Package is tested against nightly React Native releases.',
         }
       : null,
-    skipExamples && library.github.moduleType
+    skipExamples && github.moduleType
       ? {
           id: 'moduleType',
           icon: <Module style={iconColor} width={18} height={18} />,
@@ -262,6 +263,14 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           ),
         }
       : null,
+    skipExamples && github.packageManager
+      ? {
+          id: 'packageManager',
+          icon: <PackageManager style={iconColor} width={16} height={16} />,
+          content: <P style={paragraphStyles}>{formatPackageManager(github.packageManager)}</P>,
+          tooltip: 'Package manager',
+        }
+      : null,
   ];
 }
 
@@ -278,8 +287,8 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
                 key={id}
                 // @ts-expect-error RNW complains about 'fit-content'
                 style={{
-                  ...(i + 1 !== data.length ? tw`mb-2 min-h-[22px] overflow-hidden` : {}),
-                  ...tw`mb-0 flex-row items-center pr-[3px]`,
+                  ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
+                  ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
                   width: 'fit-content',
                 }}>
                 <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
@@ -288,7 +297,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
             );
 
             return tooltip ? (
-              <Tooltip key={id} sideOffset={2} delayDuration={100} trigger={component}>
+              <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
                 {tooltip}
               </Tooltip>
             ) : (
@@ -321,7 +330,7 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
               <Tooltip
                 key={id}
                 sideOffset={2}
-                delayDuration={100}
+                delayDuration={250}
                 trigger={<View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>}>
                 {tooltip}
               </Tooltip>
