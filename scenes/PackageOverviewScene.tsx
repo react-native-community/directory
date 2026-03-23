@@ -19,6 +19,7 @@ import MorePackagesBox from '~/components/Package/MorePackagesBox';
 import NotFound from '~/components/Package/NotFound';
 import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
+import RepositoryContributors from '~/components/Package/RepositoryContributors';
 import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
 import { type NpmRegistryVersionData, type NpmUser, type PeerDependencyData } from '~/types';
@@ -80,9 +81,10 @@ export default function PackageOverviewScene({
                 </UL>
               </>
             )}
+            {!isSmallScreen && <MorePackagesBox library={library} />}
             {!isSmallScreen && !!author && (
               <>
-                <H6Section style={tw`mt-4`}>Author</H6Section>
+                <H6Section style={tw`mt-3`}>Author</H6Section>
                 <View style={tw`items-start`}>
                   <PackageAuthor author={author} />
                 </View>
@@ -91,7 +93,7 @@ export default function PackageOverviewScene({
             {!isSmallScreen && maintainers && (
               <>
                 <H6Section style={tw`mt-3 flex gap-1.5`}>
-                  Contributors
+                  Maintainers
                   <EntityCounter count={maintainers.length} />
                 </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
@@ -103,7 +105,7 @@ export default function PackageOverviewScene({
                 </View>
               </>
             )}
-            {!isSmallScreen && <MorePackagesBox library={library} />}
+            {!isSmallScreen && <RepositoryContributors fullName={library.github.fullName} />}
           </View>
           <View style={tw`flex-0.35 gap-4`} id="metadataContainer">
             <View>
@@ -187,6 +189,7 @@ export default function PackageOverviewScene({
             />
             <DependenciesSection title="Development dependencies" data={devDependencies} />
             <DependenciesSection title="Engines" data={engines} />
+            {isSmallScreen && <MorePackagesBox library={library} />}
             {isSmallScreen && !!author && (
               <>
                 <H6Section>Author</H6Section>
@@ -198,7 +201,7 @@ export default function PackageOverviewScene({
             {isSmallScreen && maintainers && (
               <>
                 <H6Section style={tw`flex gap-1.5`}>
-                  Contributors
+                  Maintainer
                   <EntityCounter count={maintainers.length} />
                 </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
@@ -210,7 +213,7 @@ export default function PackageOverviewScene({
                 </View>
               </>
             )}
-            {isSmallScreen && <MorePackagesBox library={library} />}
+            {isSmallScreen && <RepositoryContributors fullName={library.github.fullName} />}
           </View>
         </View>
       </ContentContainer>
