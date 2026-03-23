@@ -20166,5 +20166,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/magrinj/expo-quick-look",
+    "examples": ["https://github.com/magrinj/expo-quick-look/tree/main/example"],
+    "npmPkg": "@magrinj/expo-quick-look",
+    "images": [
+      "https://raw.githubusercontent.com/magrinj/expo-quick-look/main/.github/assets/demo-ios.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
