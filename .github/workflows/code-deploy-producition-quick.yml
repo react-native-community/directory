@@ -1,5 +1,8 @@
 name: '[CODE] Deploy production website (new data only)'
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
