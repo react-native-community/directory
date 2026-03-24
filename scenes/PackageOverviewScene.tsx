@@ -14,6 +14,7 @@ import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
+import FundingSection from '~/components/Package/FundingSection';
 import MarkdownContentBox from '~/components/Package/MarkdownContentBox';
 import MorePackagesBox from '~/components/Package/MorePackagesBox';
 import NotFound from '~/components/Package/NotFound';
@@ -82,6 +83,7 @@ export default function PackageOverviewScene({
               </>
             )}
             {!isSmallScreen && <MorePackagesBox library={library} />}
+            {!isSmallScreen && <FundingSection fundingLinks={library.github.fundingLinks} />}
             {!isSmallScreen && !!author && (
               <>
                 <H6Section style={tw`mt-3`}>Author</H6Section>
@@ -190,6 +192,7 @@ export default function PackageOverviewScene({
             <DependenciesSection title="Development dependencies" data={devDependencies} />
             <DependenciesSection title="Engines" data={engines} />
             {isSmallScreen && <MorePackagesBox library={library} />}
+            {isSmallScreen && <FundingSection fundingLinks={library.github.fundingLinks} />}
             {isSmallScreen && !!author && (
               <>
                 <H6Section>Author</H6Section>
