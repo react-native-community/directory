@@ -19275,9 +19275,10 @@
     "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched-markdown",
     "examples": [
       "https://github.com/software-mansion-labs/react-native-enriched-markdown/tree/main/example"
-    ],
+    ],  
     "ios": true,
     "android": true,
+    "macos": true,
     "newArchitecture": true
   },
   {
