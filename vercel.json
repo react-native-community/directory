@@ -1,8 +1,3 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "build": {
-    "env": {
-      "GITHUB_TOKEN": "@github_token"
-    }
-  }
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
