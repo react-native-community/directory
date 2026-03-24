@@ -56,7 +56,7 @@ function formatFundPlatform({ platform, url }: LibraryFundingLink) {
       <View style={tw`max-w-full flex-row items-center gap-2.5 font-light`}>
         <Link style={tw`min-w-6 text-icon`} />
         <span>
-          {startCase(platform)} ({parsedUrl.hostname.replace('www.', '')})
+          {startCase(platform)}: {parsedUrl.hostname.replace('www.', '')}
         </span>
       </View>
     );
@@ -66,7 +66,7 @@ function formatFundPlatform({ platform, url }: LibraryFundingLink) {
     <View style={tw`max-w-full flex-row items-center gap-2.5 font-light`}>
       <Funding style={tw`min-w-6 text-icon`} />
       <span>
-        {startCase(platform)} ({parsedUrl.pathname.split('/').at(-1)})
+        {startCase(platform)}: {parsedUrl.pathname.split('/').at(-1)}
       </span>
     </View>
   );
