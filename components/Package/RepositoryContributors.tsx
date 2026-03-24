@@ -43,7 +43,7 @@ export default function RepositoryContributors({ fullName }: Props) {
   if (isLoading) {
     return (
       <>
-        <H6Section style={tw`mt-3 flex gap-1.5`}>Contributors</H6Section>
+        <H6Section style={[tw`flex gap-1.5`, !isSmallScreen && tw`mt-3`]}>Contributors</H6Section>
         <ContentLoader
           speed={2}
           width="100%"
@@ -64,7 +64,7 @@ export default function RepositoryContributors({ fullName }: Props) {
 
   return (
     <>
-      <H6Section style={tw`mt-3 flex gap-1.5`}>
+      <H6Section style={[tw`flex gap-1.5`, !isSmallScreen && tw`mt-3`]}>
         Contributors
         <EntityCounter count={hasMore ? `${LIMIT}+` : contributors.length} />
         {!isSmallScreen && hasMore && (

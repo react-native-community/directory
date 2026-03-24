@@ -221,6 +221,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
+    fundingLinks: json.fundingLinks,
     hasReadme: hasReadmeFile(json.files),
     hasChangelog: hasChangelogFile(json.files),
     hasContributing: hasContributingFile(json.files),

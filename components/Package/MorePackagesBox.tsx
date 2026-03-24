@@ -67,7 +67,7 @@ export default function MorePackagesBox({ library }: Props) {
         <ThreeDotsLoader />
       ) : (
         <>
-          <UL style={tw`m-0 mb-2 gap-2`}>
+          <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
             {data.libraries
               .filter(({ npmPkg }) => npmPkg !== library.npmPkg)
               .slice(0, LIMIT - 1)

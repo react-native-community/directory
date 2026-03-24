@@ -51,6 +51,10 @@ const GitHubRepositoryQuery = `
         url
         id
       }
+      fundingLinks {
+        platform
+        url
+      }
       repositoryTopics(first: 15) {
         nodes {
           topic {

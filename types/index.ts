@@ -122,6 +122,7 @@ export type LibraryType = LibraryDataEntryType & {
       forks: number;
       dependencies?: number;
     };
+    fundingLinks: LibraryFundingLink[];
     license: LibraryLicenseType;
   };
   npm?: {
@@ -165,6 +166,11 @@ export type LibraryDataEntryType = {
   npmPkg?: string;
   examples?: string[];
   images?: string[];
+};
+
+export type LibraryFundingLink = {
+  platform: string;
+  url: string;
 };
 
 export type APIResponseType = {
