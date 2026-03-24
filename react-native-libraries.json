@@ -20184,5 +20184,48 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/GetJobber/atlantis/tree/master/packages/components-native",
+    "npmPkg": "@jobber/components-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/indeedeng/react-native-lighthouse",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/JuanRdBO/expo-circular-reveal",
+    "examples": ["https://github.com/JuanRdBO/expo-circular-reveal/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/JuanRdBO/expo-circular-reveal/main/demo.gif",
+      "https://raw.githubusercontent.com/JuanRdBO/expo-circular-reveal/main/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/anas-asghar4831/react-native-chess-kit",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RamboWasReal/react-native-preflight",
+    "examples": ["https://github.com/RamboWasReal/react-native-preflight/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mohamed2m2018/react-native-agentic-ai",
+    "npmPkg": "@mobileai/react-native",
+    "examples": [
+      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-ai-testing",
+      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-expo-router",
+      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-react-navigation"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
