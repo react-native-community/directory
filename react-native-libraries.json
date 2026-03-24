@@ -4945,8 +4945,7 @@
     "ios": true,
     "android": true,
     "npmPkg": "react-native-inappbrowser-reborn",
-    "newArchitecture": false,
-    "alternatives": ["expo-web-browser"]
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/rafaelmotta/react-native-progress-bar-animated",
