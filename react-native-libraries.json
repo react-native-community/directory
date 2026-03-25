@@ -20258,5 +20258,22 @@
     "examples": ["https://github.com/kyrylokap/react-native-ease-ticker/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/material-color-react-native",
+    "examples": ["https://github.com/kyrylokap/react-native-ease-ticker/tree/main/example"],
+    "ios": true,
+    "android": true
+  }
+  {
+    "githubUrl": "https://github.com/RakaDoank/material-color-react-native/tree/main/package",
+    "npmPkg": "material-color-react-native",
+    "examples": ["https://github.com/RakaDoank/material-color-react-native/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "macos": true,
+    "windows": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
