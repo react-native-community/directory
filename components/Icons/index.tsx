@@ -1247,3 +1247,27 @@ export function FundingGitHub({ width = 24, height = 24, style }: IconProps) {
     </Svg>
   );
 }
+
+export function RSS({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <path
+        d="M64,40A152,152,0,0,1,216,192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
+      />
+      <path
+        d="M64,112a80,80,0,0,1,80,80"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="20"
+      />
+      <circle cx="68" cy="188" r="12" fill="currentColor" />
+    </Svg>
+  );
+}

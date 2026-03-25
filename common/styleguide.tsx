@@ -108,7 +108,10 @@ export function A({
   const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
   const linkHoverStyles = tw`decoration-primary-dark`;
 
-  if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
+  if (
+    (target === '_self' && !href.startsWith('#')) ||
+    (target !== '_blank' && href.startsWith('/'))
+  ) {
     const passedStyle = StyleSheet.flatten(style);
     return (
       <Link
