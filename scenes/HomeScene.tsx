@@ -167,12 +167,14 @@ export default function HomeScene({
           title="Just updated"
           Icon={Calendar}
           queryParams={{ order: 'updated' }}
+          rss="/rss/updated.xml"
         />
         <HomeSection
           data={recentlyAdded.libraries}
           title="Recently added"
           Icon={Plus}
           queryParams={{ order: 'added' }}
+          rss="/rss/added.xml"
         />
       </ContentContainer>
     </>

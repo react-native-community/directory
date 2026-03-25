@@ -19,7 +19,8 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

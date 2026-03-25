@@ -2,9 +2,10 @@ import dynamic from 'next/dynamic';
 import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
-import { A, H4, P } from '~/common/styleguide';
-import { type IconProps } from '~/components/Icons';
+import { A, H4, HoverEffect, P } from '~/common/styleguide';
+import { type IconProps, RSS } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
+import Tooltip from '~/components/Tooltip';
 import { type LibraryType, type Query } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
@@ -19,9 +20,17 @@ type Props = {
   Icon?: ComponentType<IconProps>;
   count?: number;
   queryParams?: Query;
+  rss?: string;
 };
 
-export default function HomeSection({ data, title, Icon, count = 8, queryParams = {} }: Props) {
+export default function HomeSection({
+  data,
+  title,
+  Icon,
+  rss,
+  count = 8,
+  queryParams = {},
+}: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
@@ -35,6 +44,18 @@ export default function HomeSection({ data, title, Icon, count = 8, queryParams 
           hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
           {title}
         </A>
+        {rss && (
+          <Tooltip
+            trigger={
+              <HoverEffect style={tw`ml-auto`}>
+                <A href={rss} target="_blank" style={tw`h-5.5`}>
+                  <RSS style={tw`text-icon`} />
+                </A>
+              </HoverEffect>
+            }>
+            RSS feed
+          </Tooltip>
+        )}
       </H4>
       <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data, count)}</View>
       <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
