@@ -146,7 +146,7 @@ async function generateLLMSFiles() {
   await fs.writeFile(LLMS_FULL_PATH, `${llmsFullContent}\n`, 'utf8');
 
   console.log(
-    `✅ Generated ${path.relative(process.cwd(), LLMS_PATH)} with ${entries.length} libraries data`
+    `✅ Generated ${path.relative(process.cwd(), LLMS_FULL_PATH)} with ${entries.length} libraries data`
   );
 }
 
