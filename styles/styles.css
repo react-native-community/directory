@@ -75,6 +75,8 @@
   --table-header-background: var(--gray-2);
   --code-block-background: var(--gray-2);
   --inline-code-background: var(--gray-2);
+
+  --quick-search-bg: #ffffff;
 }
 
 :root.dark {
@@ -113,6 +115,8 @@
   --table-header-background: var(--dark);
   --code-block-background: var(--very-dark);
   --inline-code-background: var(--gray-6);
+
+  --quick-search-bg: #111114ef;
 }
 
 *:focus-visible {
@@ -349,6 +353,23 @@ select {
   }
   40% {
     @apply scale-100 opacity-100;
+  }
+}
+
+/* QUICK SEARCH */
+
+#quick-search-results {
+  background: var(--quick-search-bg);
+  backdrop-filter: blur(6px);
+}
+
+#spinner {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }
 

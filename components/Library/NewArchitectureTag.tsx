@@ -11,9 +11,10 @@ import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
+  small?: boolean;
 };
 
-export function NewArchitectureTag({ library }: Props) {
+export function NewArchitectureTag({ library, small = false }: Props) {
   const status = getNewArchSupportStatus(library);
   const icon = getTagIcon(status);
 
@@ -38,6 +39,7 @@ export function NewArchitectureTag({ library }: Props) {
     <View>
       <Tooltip
         side="bottom"
+        sideOffset={small ? 0 : undefined}
         trigger={
           <View>
             <A href="https://reactnative.dev/architecture/overview">
@@ -49,6 +51,7 @@ export function NewArchitectureTag({ library }: Props) {
                 }
                 icon={icon}
                 tagStyle={getTagColor(status)}
+                small={small}
               />
             </A>
           </View>

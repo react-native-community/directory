@@ -1251,7 +1251,7 @@ export function FundingGitHub({ width = 24, height = 24, style }: IconProps) {
 export function RSS({ width = 24, height = 24, style }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+      <Path
         d="M64,40A152,152,0,0,1,216,192"
         fill="none"
         stroke="currentColor"
@@ -1259,7 +1259,7 @@ export function RSS({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="24"
       />
-      <path
+      <Path
         d="M64,112a80,80,0,0,1,80,80"
         fill="none"
         stroke="currentColor"
@@ -1267,7 +1267,102 @@ export function RSS({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="20"
       />
-      <circle cx="68" cy="188" r="12" fill="currentColor" />
+      <Circle cx="68" cy="188" r="12" fill="currentColor" />
+    </Svg>
+  );
+}
+
+export function Spinner({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style} id="spinner">
+      <Line
+        x1="128"
+        y1="32"
+        x2="128"
+        y2="64"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="195.88"
+        y1="60.12"
+        x2="173.25"
+        y2="82.75"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="224"
+        y1="128"
+        x2="192"
+        y2="128"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="195.88"
+        y1="195.88"
+        x2="173.25"
+        y2="173.25"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="128"
+        y1="224"
+        x2="128"
+        y2="192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="60.12"
+        y1="195.88"
+        x2="82.75"
+        y2="173.25"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="32"
+        y1="128"
+        x2="64"
+        y2="128"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="60.12"
+        y1="60.12"
+        x2="82.75"
+        y2="82.75"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
     </Svg>
   );
 }

@@ -20,7 +20,7 @@ import {
 } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
-import Search from '~/components/Search';
+import QuickSearch from '~/components/QuickSearch';
 import { type HomePageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
@@ -41,11 +41,9 @@ export default function HomeScene({
       <Navigation
         title="React Native packages registry"
         description="Browse thousands of open-source packages and find the best ones for your current or next project.">
-        <Search
+        <QuickSearch
           query={router.query}
-          total={statistic.total}
-          style={tw`w-[600px] max-w-full self-center bg-transparent`}
-          isHomePage
+          style={tw`w-[1200px] max-w-full self-center bg-transparent`}
         />
       </Navigation>
       <ContentContainer style={[tw`px-4 py-5`, isSmallScreen && tw`pt-2`]}>
