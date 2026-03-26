@@ -4,7 +4,7 @@ import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from
 import useSWR from 'swr';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Label, useLayout } from '~/common/styleguide';
+import { Caption, Label, useLayout } from '~/common/styleguide';
 import InputKeyHint from '~/components/InputKeyHint';
 import { type APIResponseType } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
@@ -123,6 +123,7 @@ export default function QuickSearch({ style }: Props) {
   const handleResultSelect = useCallback(
     async (npmPkg: string) => {
       setInputFocused(false);
+      inputRef.current?.blur();
       setActiveResultIndex(null);
       await push(urlWithQuery(`/package/${npmPkg}`));
     },
@@ -270,9 +271,9 @@ export default function QuickSearch({ style }: Props) {
               </View>
             )}
             {!hasResults && (
-              <Label style={tw`pt-4.5 pb-3.5 text-center text-secondary`}>
+              <Caption style={tw`pb-4.5 pt-5.5 text-center font-light text-secondary`}>
                 There are no results for &quot;{search}&quot; query.
-              </Label>
+              </Caption>
             )}
           </View>
         )}
