@@ -20135,7 +20135,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "newArchitectureNote": "⚠️ Library is available *ONLY* for new architecture! Old architecture isn't supported, you can try downloading and see if it works but it might break some stuff ⚠️"
   },
   {
     "githubUrl": "https://github.com/vladrozhnev/react-native-interception-webview",
