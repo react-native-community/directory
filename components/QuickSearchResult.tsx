@@ -1,8 +1,11 @@
 import { memo, useCallback } from 'react';
 import { Pressable, View } from 'react-native';
 
-import { Caption, Label, useLayout } from '~/common/styleguide';
+import { Caption, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
+import { Warning } from '~/components/Icons';
+import LibraryDescription from '~/components/Library/LibraryDescription';
+import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -41,11 +44,24 @@ function QuickSearchResult({ index, isActive, library, onHoverChange, onSelect }
         isActive && tw`bg-palette-gray2 dark:bg-palette-gray6`,
       ]}>
       <View style={tw`flex-shrink gap-0.5`}>
-        <Caption>{library.npmPkg}</Caption>
-        <Label
-          style={[tw`font-light text-secondary`, isSmallScreen && tw`max-h-12 overflow-hidden`]}>
-          {library.github.description}
-        </Label>
+        <Caption style={tw`relative top-px flex items-center gap-1`}>
+          {library.npmPkg}
+          {library.unmaintained && (
+            <Tooltip
+              trigger={
+                <View style={tw`relative top-px`}>
+                  <Warning style={tw`text-warning-dark dark:text-warning`} />
+                </View>
+              }>
+              Unmaintained
+            </Tooltip>
+          )}
+        </Caption>
+        <LibraryDescription
+          github={library.github}
+          maxLines={isSmallScreen ? 3 : undefined}
+          style={tw`text-[12px] font-light leading-snug text-secondary`}
+        />
       </View>
       <CompatibilityTags library={library} small />
     </Pressable>

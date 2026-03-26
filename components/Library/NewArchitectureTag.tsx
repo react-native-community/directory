@@ -73,7 +73,7 @@ function getTagColor(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return tw`border-[#d4ebfa] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
+      return tw`border-[#c3e3f7] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
     case NewArchSupportStatus.Unsupported:
       return tw`border-[#faebaf] bg-[#fffae8] dark:border-[#3d3206] dark:bg-[#292005]`;
     default:

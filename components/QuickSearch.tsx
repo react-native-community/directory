@@ -252,7 +252,7 @@ export default function QuickSearch({ style }: Props) {
             {hasResults && (data?.total ?? 0) > RESULTS_LIMIT && (
               <View
                 style={[
-                  tw`flex flex-row items-center gap-1.5 border-t border-default bg-palette-gray1 px-4 py-1.5 dark:bg-dark`,
+                  tw`flex flex-row items-center gap-1.5 rounded-b border-t border-default bg-palette-gray1 px-3 py-1.5 dark:bg-dark`,
                   isSmallScreen ? tw`justify-center` : tw`justify-end`,
                 ]}>
                 <Label style={tw`font-light text-palette-gray4`}>
@@ -260,7 +260,7 @@ export default function QuickSearch({ style }: Props) {
                   <span style={tw`font-medium text-primary-darker dark:text-primary`}>
                     {(data?.total ?? 0) - RESULTS_LIMIT}
                   </span>{' '}
-                  more matches
+                  more results
                   {!isSmallScreen && (
                     <>
                       , press <span style={tw`font-medium`}>Enter</span> to see all of them
