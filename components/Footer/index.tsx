@@ -1,7 +1,6 @@
 import { View } from 'react-native';
 
 import { A, P, useLayout } from '~/common/styleguide';
-import ContentContainer from '~/components/ContentContainer';
 import {
   Logo,
   PlatformAndroid,
@@ -22,7 +21,7 @@ export default function Footer() {
 
   return (
     <View style={tw`mt-1 w-full bg-palette-gray1 pb-7 pt-8 dark:bg-dark`}>
-      <ContentContainer>
+      <View style={tw`mx-auto w-full max-w-layout flex-1`}>
         <View style={tw`mx-auto mb-7 mt-1 max-w-footer flex-row flex-wrap justify-center gap-3.5`}>
           <PlatformTile
             name="Android"
@@ -98,7 +97,7 @@ export default function Footer() {
         <View style={tw`items-center pb-8 pt-12`}>
           <Logo style={tw`text-palette-gray3 dark:text-powder`} width={42} height={38} />
         </View>
-      </ContentContainer>
+      </View>
     </View>
   );
 }

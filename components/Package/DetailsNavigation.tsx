@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { View } from 'react-native';
 
 import { A, Label, useLayout } from '~/common/styleguide';
-import ContentContainer from '~/components/ContentContainer';
 import { Warning } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import NavigationTab from '~/components/NavigationTab';
@@ -29,7 +28,7 @@ export default function DetailsNavigation({ library }: Props) {
               tw`border-b border-t border-palette-gray3 bg-palette-gray1 dark:border-palette-gray6 dark:bg-dark`,
               strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
             ]}>
-            <ContentContainer
+            <View
               style={tw`flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2 text-warning-dark dark:text-warning`}>
               <Warning style={tw`size-4.5 mr-1 flex-shrink-0`} />
               <Label style={tw`text-warning-dark dark:text-warning`}>
@@ -53,11 +52,11 @@ export default function DetailsNavigation({ library }: Props) {
                   instead.
                 </Label>
               )}
-            </ContentContainer>
+            </View>
           </View>
         ) : undefined
       }>
-      <ContentContainer style={tw`flex-row gap-2 px-5`}>
+      <View style={tw`mx-auto w-full max-w-screen-layout flex-row gap-2 px-5`}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
         {!library.template && (
           <NavigationTab
@@ -67,7 +66,7 @@ export default function DetailsNavigation({ library }: Props) {
           />
         )}
         <NavigationTab title="Score" path={`/package/${library.npmPkg}/score`} />
-      </ContentContainer>
+      </View>
     </Navigation>
   );
 }

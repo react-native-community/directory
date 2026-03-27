@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { View } from 'react-native';
 
 import { A, H5, P, useLayout } from '~/common/styleguide';
-import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
@@ -18,7 +17,8 @@ export default function TopBar() {
 
   return (
     <HtmlHeader
-      style={tw`items-center justify-center gap-y-2.5 overflow-hidden bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
+      id="top-bar"
+      style={tw`top-0 w-full items-center justify-center gap-y-2.5 overflow-hidden py-3.5`}>
       <View style={tw`-mt-[1.5px] w-full max-w-layout flex-row items-center justify-between px-4`}>
         <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
           <Logo style={tw`text-primary`} width={29} height={26} />
@@ -29,11 +29,11 @@ export default function TopBar() {
           </H5>
         </View>
         <View style={[isBelowMaxWidth && tw`mr-auto`, isSmallScreen && tw`hidden`]}>
-          <ContentContainer style={tw`flex-row gap-2.5 px-4`}>
+          <View style={tw`flex-row gap-2.5 px-4`}>
             <NavigationTab title="Explore" path="/packages" />
             <NavigationTab title="Popular" />
             <NavigationTab title="Trending" />
-          </ContentContainer>
+          </View>
         </View>
         <View
           style={[
@@ -102,11 +102,11 @@ export default function TopBar() {
           </Button>
         </View>
       </View>
-      <ContentContainer style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
+      <View style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
         <NavigationTab title="Explore" path="/" />
         <NavigationTab title="Popular" />
         <NavigationTab title="Trending" />
-      </ContentContainer>
+      </View>
     </HtmlHeader>
   );
 }
