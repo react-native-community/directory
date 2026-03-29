@@ -20287,16 +20287,11 @@
     "npmPkg": "react-native-debug-logger",
     "ios": true,
     "android": true
-},
+  },
   {
-  "githubUrl": "https://github.com/MohamedYousuf2/react-native-perf-monitor-tool",
-  "npmPkg": "react-native-perf-monitor-tool",
-  "examples": [
-    "https://github.com/MohamedYousuf2/react-native-perf-monitor-tool"
-  ],
-  "ios": true,
-  "android": true,
-  "expoGo": true,
-  "dev": true
-}
+    "githubUrl": "https://github.com/MohamedYousuf2/react-native-perf-monitor-tool",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  }
 ]
