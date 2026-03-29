@@ -20289,6 +20289,12 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/MohamedYousuf2/react-native-perf-monitor-tool",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/joshstovall/platform-blocks/tree/main/packages/ui",
     "npmPkg": "@platform-blocks/ui",
     "ios": true,
