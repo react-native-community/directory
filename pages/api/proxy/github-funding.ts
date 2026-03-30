@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${process.env.CLIENT_GITHUB_TOKEN}`,
     },
     body: JSON.stringify({
       query: GitHubRepositoryFundingQuery,
