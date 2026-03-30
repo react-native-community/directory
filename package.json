@@ -27,13 +27,13 @@
     "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-picker/picker": "^2.11.4",
-    "@sentry/react": "^10.45.0",
+    "@sentry/react": "^10.46.0",
     "@visx/gradient": "^3.12.0",
     "@visx/responsive": "^3.12.0",
     "@visx/xychart": "^3.12.0",
     "crypto-js": "^4.2.0",
     "es-toolkit": "^1.45.1",
-    "expo": "55.0.8",
+    "expo": "55.0.9",
     "expo-font": "^55.0.4",
     "next": "^16.2.1",
     "node-emoji": "^2.2.0",
@@ -55,7 +55,7 @@
     "swr": "^2.4.1",
     "tailwindcss": "^3.4.19",
     "twrnc": "^4.16.0",
-    "use-debounce": "^10.1.0"
+    "use-debounce": "^10.1.1"
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
@@ -76,10 +76,10 @@
     "next-images": "^1.8.5",
     "oxfmt": "^0.42.0",
     "oxlint": "^1.57.0",
-    "oxlint-tsgolint": "^0.17.3",
+    "oxlint-tsgolint": "^0.17.4",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.2",
-    "user-agent-data-types": "^0.4.2"
+    "user-agent-data-types": "^0.4.3"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx precommit"
