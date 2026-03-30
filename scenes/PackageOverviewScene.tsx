@@ -83,7 +83,7 @@ export default function PackageOverviewScene({
               </>
             )}
             {!isSmallScreen && <MorePackagesBox library={library} />}
-            {!isSmallScreen && <FundingSection fundingLinks={library.github.fundingLinks} />}
+            {!isSmallScreen && <FundingSection fullName={library.github.fullName} />}
             {!isSmallScreen && !!author && (
               <>
                 <H6Section style={tw`mt-3`}>Author</H6Section>
@@ -192,7 +192,7 @@ export default function PackageOverviewScene({
             <DependenciesSection title="Development dependencies" data={devDependencies} />
             <DependenciesSection title="Engines" data={engines} />
             {isSmallScreen && <MorePackagesBox library={library} />}
-            {isSmallScreen && <FundingSection fundingLinks={library.github.fundingLinks} />}
+            {isSmallScreen && <FundingSection fullName={library.github.fullName} />}
             {isSmallScreen && !!author && (
               <>
                 <H6Section>Author</H6Section>

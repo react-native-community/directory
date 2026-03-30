@@ -1,21 +1,35 @@
 import { UL } from '@expo/html-elements';
 import { useMemo } from 'react';
+import useSWR from 'swr';
 
 import { H6Section, useLayout } from '~/common/styleguide';
 import FundingRow from '~/components/Package/FoundingRow';
 import { type LibraryFundingLink } from '~/types';
+import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
 type Props = {
-  fundingLinks: LibraryFundingLink[];
+  fullName: string;
 };
 
-export default function FundingSection({ fundingLinks }: Props) {
+export default function FundingSection({ fullName }: Props) {
   const { isSmallScreen } = useLayout();
 
-  const links = useMemo(() => sortFundingLinks(fundingLinks), [fundingLinks]);
+  const repoOwner = fullName.split('/')[0];
+  const repoName = fullName.replace(`${repoOwner}/`, '');
 
-  if (links.length === 0) {
+  const { data, isLoading } = useSWR(
+    `/api/proxy/github-funding?owner=${repoOwner}&name=${repoName}`,
+    (url: string) => fetch(url).then(res => res.json()),
+    {
+      dedupingInterval: TimeRange.HOUR * 1000,
+      revalidateOnFocus: false,
+    }
+  );
+
+  const links = useMemo(() => sortFundingLinks(data?.fundingLinks ?? []), [data]);
+
+  if (isLoading || links.length === 0) {
     return null;
   }
 

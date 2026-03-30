@@ -1,4 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "bun build:quick"
+  "buildCommand": "bun build:quick",
+  "build": {
+    "env": {
+      "GITHUB_TOKEN": "@github_token"
+    }
+  }
 }

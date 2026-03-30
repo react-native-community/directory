@@ -122,7 +122,6 @@ export type LibraryType = LibraryDataEntryType & {
       forks: number;
       dependencies?: number;
     };
-    fundingLinks: LibraryFundingLink[];
     license: LibraryLicenseType;
   };
   npm?: {
