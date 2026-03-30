@@ -144,7 +144,7 @@ export default function QuickSearch({ style }: Props) {
             </View>
             <TextInput
               ref={inputRef}
-              id="search"
+              id="quick-search"
               autoComplete="off"
               onKeyPress={event => {
                 if ('key' in event) {
