@@ -20303,15 +20303,14 @@
     "newArchitecture": "new-arch-only"
   },
   {
-  "githubUrl": "https://github.com/alicanov98/react-native-barcode-qr-generator",
-  "npmPkg": "react-native-barcode-qr-generator",
-  "examples": [
-    "https://github.com/alicanov98/react-native-barcode-qr-generator"
-  ],
-  "images": [
-    "https://raw.githubusercontent.com/alicanov98/react-native-barcode-qr-generator/main/images/example.png"
-  ],
-  "ios": true,
-  "android": true,
-}
+    "githubUrl": "https://github.com/alicanov98/react-native-barcode-qr-generator",
+    "examples": [
+      "https://github.com/alicanov98/react-native-barcode-qr-generator"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/alicanov98/react-native-barcode-qr-generator/main/images/example.png"
+    ],
+    "ios": true,
+    "android": true
+  }
 ]
