@@ -12491,7 +12491,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it"s not compatible with the old architecture."
   },
   {
     "githubUrl": "https://github.com/dream-horizon-org/react-native-fast-image",
@@ -13591,7 +13591,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Library is a pure C++ TurboModule and requires the new architecture to be enabled. Doesn't work on legacy architecture"
+    "newArchitectureNote": "Library is a pure C++ TurboModule and requires the new architecture to be enabled. Doesn"t work on legacy architecture"
   },
   {
     "githubUrl": "https://github.com/jhugman/uniffi-bindgen-react-native",
@@ -17561,7 +17561,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
-    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it"s not compatible with the old architecture."
   },
   {
     "githubUrl": "https://github.com/FFGlobal/expo-onboarding",
@@ -20301,5 +20301,17 @@
     "android": true,
     "web": true,
     "newArchitecture": "new-arch-only"
-  }
+  },
+  {
+  "githubUrl": "https://github.com/alicanov98/react-native-barcode-qr-generator",
+  "npmPkg": "react-native-barcode-qr-generator",
+  "examples": [
+    "https://github.com/alicanov98/react-native-barcode-qr-generator"
+  ],
+  "images": [
+    "https://raw.githubusercontent.com/alicanov98/react-native-barcode-qr-generator/main/images/example.png"
+  ],
+  "ios": true,
+  "android": true
+},
 ]
