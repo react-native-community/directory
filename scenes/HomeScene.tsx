@@ -35,7 +35,20 @@ export default function HomeScene({
 
   return (
     <>
-      <PageMeta />
+      <PageMeta>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS: Recently added libraries"
+          href="/rss/added.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS: Recently updated libraries"
+          href="/rss/updated.xml"
+        />
+      </PageMeta>
       <Navigation
         title="React Native packages registry"
         description="Browse thousands of open-source packages and find the best ones for your current or next project.">
