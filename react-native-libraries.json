@@ -20309,5 +20309,10 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/jpancotti/expo-hardware-buttons",
+    "ios": true,
+    "newArchitecture": true
   }
 ]
