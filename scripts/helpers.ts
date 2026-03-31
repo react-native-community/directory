@@ -19,7 +19,17 @@ export async function makeGraphqlQuery(query: string, variables = {}) {
       variables,
     }),
   });
-  return await result.json();
+  try {
+    return await result.json();
+  } catch (error: unknown) {
+    console.error('GitHub GraphQL response parse failed!', {
+      status: result.status,
+      statusText: result.statusText,
+      error: error instanceof Error ? error.message : String(error),
+      body: result.body,
+    });
+    throw error;
+  }
 }
 
 export async function getUpdatedUrl(url: string) {
