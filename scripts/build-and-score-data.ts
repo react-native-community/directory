@@ -34,7 +34,7 @@ const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : git
 const DATA_PATH = path.resolve('assets', 'data.json');
 const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
-const CHUNK_SIZE = 20;
+const CHUNK_SIZE = 25;
 const NPM_STATS_CHUNK_SIZE = 10;
 const SLEEP_TIME = 500;
 

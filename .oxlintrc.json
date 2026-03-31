@@ -144,6 +144,7 @@
         "ts-nocheck": true
       }
     ],
+    "typescript/consistent-indexed-object-style": ["error", "record"],
     "typescript/consistent-type-imports": [
       "error",
       {
@@ -177,7 +178,6 @@
     "typescript/unbound-method": "off",
     "unicorn/consistent-date-clone": "error",
     "unicorn/consistent-empty-array-spread": "error",
-    "unicorn/consistent-indexed-object-style": ["error", "record"],
     "unicorn/consistent-existence-index-check": "error",
     "unicorn/error-message": "error",
     "unicorn/no-anonymous-default-export": "error",
