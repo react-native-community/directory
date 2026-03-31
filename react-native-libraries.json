@@ -6447,9 +6447,13 @@
   },
   {
     "githubUrl": "https://github.com/alpha0010/react-native-file-access",
-    "examples": ["https://github.com/alpha0010/react-native-file-access/tree/master/example"],
+    "examples": [
+      "https://github.com/alpha0010/react-native-file-access/tree/master/example",
+      "https://github.com/alpha0010/react-native-file-access/tree/master/exampleMacos"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "macos": true
   },
   {
     "githubUrl": "https://github.com/christopherdro/react-native-print",
