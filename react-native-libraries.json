@@ -5218,12 +5218,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/aprock/react-native-os",
-    "ios": true,
-    "android": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/tradle/react-native-level-fs",
     "ios": true,
     "android": true
@@ -18088,7 +18082,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/tristanmanchester/react-native-dotgrid",
+    "githubUrl": "https://github.com/tristanmanchester/react-native-dotgrid/tree/main/packages/react-native-dotgrid",
     "examples": ["https://github.com/tristanmanchester/react-native-dotgrid/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/tristanmanchester/react-native-dotgrid/main/demos/wave.webp",
@@ -20213,16 +20207,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mohamed2m2018/react-native-agentic-ai",
-    "examples": [
-      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-ai-testing",
-      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-expo-router",
-      "https://github.com/mohamed2m2018/react-native-agentic-ai/tree/main/example-react-navigation"
-    ],
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/usl-dev/react-intl-phone-username-input",
     "examples": [
       "https://github.com/usl-dev/react-intl-phone-username-input/tree/main/example",
@@ -20288,7 +20272,6 @@
   },
   {
     "githubUrl": "https://github.com/alicanov98/react-native-debug-logger",
-    "npmPkg": "react-native-debug-logger",
     "ios": true,
     "android": true
   },

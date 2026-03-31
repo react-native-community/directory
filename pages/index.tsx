@@ -1,5 +1,5 @@
 import { cloneDeep } from 'es-toolkit/object';
-import { type NextPageContext } from 'next';
+import { type GetServerSidePropsContext } from 'next';
 
 import HomeScene from '~/scenes/HomeScene';
 import { type HomePageProps } from '~/types/pages';
@@ -12,13 +12,14 @@ function Index(props: HomePageProps) {
 
 const LIMIT = 8;
 
-Index.getInitialProps = async (ctx: NextPageContext) => {
-  if (ctx.res && ctx.query && Object.keys(ctx.query).length > 0) {
-    ctx.res.writeHead(302, {
-      Location: urlWithQuery('/packages', ctx.query),
-    });
-    ctx.res.end();
-    return;
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  if (Object.keys(ctx.query).length > 0) {
+    return {
+      redirect: {
+        destination: urlWithQuery('/packages', ctx.query),
+        permanent: false,
+      },
+    };
   }
 
   const mostDownloadedResponse = await ssrFetch(
@@ -56,12 +57,14 @@ Index.getInitialProps = async (ctx: NextPageContext) => {
   const statisticResponse = await ssrFetch('/libraries/statistic', {}, ctx);
 
   return {
-    mostDownloaded: await mostDownloadedResponse.json(),
-    recentlyAdded: await recentlyAddedResponse.json(),
-    recentlyUpdated: await recentlyUpdatedResponse.json(),
-    popular: await popularResponse.json(),
-    statistic: await statisticResponse.json(),
+    props: {
+      mostDownloaded: await mostDownloadedResponse.json(),
+      recentlyAdded: await recentlyAddedResponse.json(),
+      recentlyUpdated: await recentlyUpdatedResponse.json(),
+      popular: await popularResponse.json(),
+      statistic: await statisticResponse.json(),
+    },
   };
-};
+}
 
 export default Index;
