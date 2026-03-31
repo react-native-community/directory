@@ -13,6 +13,9 @@ export async function getServerSideProps(ctx: NextPageContext) {
     return { notFound: true };
   }
 
+  res.setHeader('Content-Type', 'text/xml; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+
   try {
     const response = await ssrFetch(
       '/libraries',
@@ -35,8 +38,6 @@ export async function getServerSideProps(ctx: NextPageContext) {
     res.write('Error: Cannot generate RSS feed');
   }
 
-  res.setHeader('Content-Type', 'text/xml; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
   res.end();
 
   return { props: {} };

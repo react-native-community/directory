@@ -19,16 +19,24 @@ export async function makeGraphqlQuery(query: string, variables = {}) {
       variables,
     }),
   });
-  try {
-    return await result.json();
-  } catch (error: unknown) {
-    console.error('GitHub GraphQL response parse failed!', {
+  if (result.ok) {
+    try {
+      return await result.json();
+    } catch (error: unknown) {
+      console.error('GitHub GraphQL response parse failed!', {
+        status: result.status,
+        statusText: result.statusText,
+        error: error instanceof Error ? error.message : String(error),
+      });
+      throw error;
+    }
+  } else {
+    console.error('GitHub GraphQL invalid response!', {
       status: result.status,
       statusText: result.statusText,
-      error: error instanceof Error ? error.message : String(error),
-      body: result.body,
+      body: result?.body ? await result.text() : undefined,
     });
-    throw error;
+    throw new Error(`GitHub GraphQL invalid response: ${result.status}`);
   }
 }
 
