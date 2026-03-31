@@ -15,9 +15,8 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Deploy
         shell: bash
-        run: bunx vercel --force --token "$VERCEL_TOKEN" --build-env GITHUB_TOKEN="$GH_TOKEN"
+        run: bunx vercel --force --token "$VERCEL_TOKEN"
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN_PREVIEW }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787
           VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'

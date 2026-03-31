@@ -27,9 +27,8 @@ jobs:
       - name: Deploy
         if: ${{ steps.filter.outputs.only_data_changed == 'true' }}
         shell: bash
-        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config ./vercel-quick.json --build-env GITHUB_TOKEN="$GH_TOKEN"
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config ./vercel-quick.json
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
           # https://spectrum.chat/zeit/now/solved-project-linking-and-ci-cd-pipelines~5e6eb62a-9d56-47ac-9e32-0d973a523787

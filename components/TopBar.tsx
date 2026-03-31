@@ -103,7 +103,7 @@ export default function TopBar() {
         </View>
       </View>
       <ContentContainer style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
-        <NavigationTab title="Explore" path="/" />
+        <NavigationTab title="Explore" path="/packages" />
         <NavigationTab title="Popular" />
         <NavigationTab title="Trending" />
       </ContentContainer>
