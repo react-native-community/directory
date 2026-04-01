@@ -54,7 +54,7 @@ export function getBookmarksFromCookie(cookieString?: string): string[] {
 }
 
 export function BookmarksProvider({ children }: PropsWithChildren) {
-  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set()); // oxlint-disable-line no-unnecessary-type-arguments
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
