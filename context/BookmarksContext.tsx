@@ -54,7 +54,7 @@ export function getBookmarksFromCookie(cookieString?: string): string[] {
 }
 
 export function BookmarksProvider({ children }: PropsWithChildren) {
-  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
+  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

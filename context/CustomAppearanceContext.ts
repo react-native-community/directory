@@ -4,6 +4,6 @@ export type CustomAppearanceContextType = {
   toggleTheme: () => void;
 };
 
-export default createContext<CustomAppearanceContextType>({
+export default createContext({
   toggleTheme() {},
 });

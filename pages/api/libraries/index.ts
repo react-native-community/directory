@@ -28,7 +28,7 @@ function getData(): SortedDataType {
 }
 
 const SortedData = getData();
-const ReversedSortedData = Object.entries(getData()).reduce<SortedDataType>(
+const ReversedSortedData = Object.entries(getData()).reduce(
   (accumulator, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
   {} as SortedDataType
 );

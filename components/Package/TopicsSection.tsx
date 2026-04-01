@@ -13,7 +13,7 @@ type Props = {
 const MAX_TOPICS = 16;
 
 export default function TopicsSection({ topics }: Props) {
-  const [expanded, setExpanded] = useState<boolean>(false);
+  const [expanded, setExpanded] = useState(false);
 
   if (!topics || !topics.length) {
     return null;

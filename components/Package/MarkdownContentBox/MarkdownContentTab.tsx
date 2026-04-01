@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function MarkdownContentTab({ tab, activeTab, onPress }: Props) {
-  const [isHovered, setHovered] = useState<boolean>(false);
+  const [isHovered, setHovered] = useState(false);
   const Element = onPress ? Pressable : View;
   return (
     <Element
