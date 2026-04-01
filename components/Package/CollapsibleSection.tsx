@@ -26,7 +26,7 @@ export default function CollapsibleSection({
   const sectionKey = sanitizeTitle(title);
   const key = `@ReactNativeDirectory:PackageSectionCollapsed:${sectionKey}`;
 
-  const [collapsed, setCollapsed] = useState<boolean>(Boolean(window.localStorage.getItem(key)));
+  const [collapsed, setCollapsed] = useState(Boolean(window.localStorage.getItem(key)));
 
   useEffect(() => {
     setCollapsed(window.localStorage.getItem(key) === 'true');
