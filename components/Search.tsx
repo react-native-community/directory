@@ -19,10 +19,9 @@ type Props = {
   query: Query;
   total: number;
   style?: StyleProp<ViewStyle>;
-  isHomePage?: boolean;
 };
 
-export default function Search({ query, total, style, isHomePage = false }: Props) {
+export default function Search({ query, total, style }: Props) {
   const { search, order, direction, offset, owner, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
@@ -40,19 +39,19 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
     }
   }, [search, isInputFocused]);
 
-  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
-    }
-  });
-
   useEffect(() => {
     if (isApple !== null) {
       document.addEventListener('keydown', keyDownListener, false);
       return () => document.removeEventListener('keydown', keyDownListener);
     }
   }, [isApple]);
+
+  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+      event.preventDefault();
+      inputRef.current?.focus();
+    }
+  });
 
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));
@@ -68,7 +67,7 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
         <View style={tw`w-full max-w-layout px-4`}>
           <View style={tw`flex-row items-center`}>
             <View style={tw`pointer-events-none absolute left-4`}>
-              <SearchIcon style={tw`text-white`} />
+              <SearchIcon style={isInputFocused ? tw`text-primary` : tw`text-white`} />
             </View>
             <TextInput
               ref={inputRef}
@@ -76,17 +75,6 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
               autoComplete="off"
               onKeyPress={event => {
                 if ('key' in event) {
-                  if (isHomePage && event.key === 'Enter') {
-                    event.preventDefault();
-                    void replace(
-                      urlWithQuery('/packages', {
-                        ...query,
-                        // @ts-expect-error using native input value
-                        search: inputRef.current.value,
-                        offset: undefined,
-                      })
-                    );
-                  }
                   if (
                     event.key === 'k' &&
                     (('metaKey' in event && event.metaKey) || ('ctrlKey' in event && event.ctrlKey))
@@ -112,28 +100,22 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
               }}
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
-              onChangeText={isHomePage ? undefined : typingCallback}
+              onChangeText={typingCallback}
               placeholder="Search libraries..."
-              style={tw`h-12.5 font-sans flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
+              style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
               defaultValue={search}
               placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
             />
             {!isSmallScreen && (
               <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
                 {isInputFocused ? (
-                  isHomePage ? (
-                    <InputKeyHint
-                      content={[{ label: 'press' }, { key: 'Enter' }, { label: 'to search' }]}
-                    />
-                  ) : (
-                    <InputKeyHint
-                      content={[
-                        { label: 'press' },
-                        { key: 'Esc' },
-                        { label: `to ${(search?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
-                      ]}
-                    />
-                  )
+                  <InputKeyHint
+                    content={[
+                      { label: 'press' },
+                      { key: 'Esc' },
+                      { label: `to ${(search?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
+                    ]}
+                  />
                 ) : (
                   <InputKeyHint
                     content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
@@ -142,32 +124,30 @@ export default function Search({ query, total, style, isHomePage = false }: Prop
               </View>
             )}
           </View>
-          {!isHomePage && (
-            <View
-              style={[
-                tw`mt-2 flex-row items-center justify-between`,
-                isSmallScreen && tw`flex-col items-start`,
-              ]}>
-              {total ? (
-                <P style={tw`mt-1 text-white`}>
-                  <P style={tw`font-bold text-primary`}>{total}</P>{' '}
-                  {total === 1 ? 'entry' : 'entries'}
-                </P>
-              ) : (
-                <P />
-              )}
-              <View style={[tw`mt-1.5 flex-row items-center`, isSmallScreen && tw`mt-2.5`]}>
-                <FilterButton
-                  style={tw`h-6`}
-                  query={query}
-                  onPress={() => setFilterVisible(!isFilterVisible)}
-                  onClearAllPress={handleClearAllPress}
-                  isFilterVisible={isFilterVisible}
-                />
-                <SortButton query={query} />
-              </View>
+          <View
+            style={[
+              tw`mt-2 flex-row items-center justify-between`,
+              isSmallScreen && tw`flex-col items-start`,
+            ]}>
+            {total ? (
+              <P style={tw`mt-1 text-white`}>
+                <P style={tw`font-bold text-primary`}>{total}</P>{' '}
+                {total === 1 ? 'entry' : 'entries'}
+              </P>
+            ) : (
+              <P />
+            )}
+            <View style={[tw`mt-1.5 flex-row items-center`, isSmallScreen && tw`mt-2.5`]}>
+              <FilterButton
+                style={tw`h-6`}
+                query={query}
+                onPress={() => setFilterVisible(!isFilterVisible)}
+                onClearAllPress={handleClearAllPress}
+                isFilterVisible={isFilterVisible}
+              />
+              <SortButton query={query} />
             </View>
-          )}
+          </View>
         </View>
       </View>
       {isFilterVisible && <Filters query={query} />}

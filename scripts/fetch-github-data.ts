@@ -4,6 +4,7 @@ import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
 import {
+  detectPackageManager,
   hasCCFile,
   hasChangelogFile,
   hasContributingFile,
@@ -79,6 +80,7 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
       packagePath,
       packageFilesPath: packagePath === '.' ? 'HEAD:' : `HEAD:${packagePath}`,
       packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      fetchRoot: packagePath !== '.',
     });
 
     if (result.errors) {
@@ -140,6 +142,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       json.dependenciesCount = packageJson.dependencies
         ? Object.keys(packageJson.dependencies).length
         : 0;
+      json.packageManager = packageJson.packageManager ?? undefined;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -170,6 +173,16 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       }
     } catch (error) {
       console.error(`Unable to parse ${json.name} package.json file!`);
+      console.error(error);
+    }
+  }
+
+  if (json.rootPackageJson && !json.packageManager) {
+    try {
+      const rootPackageJson = JSON.parse(json.rootPackageJson.text);
+      json.packageManager = rootPackageJson.packageManager ?? undefined;
+    } catch (error) {
+      console.error(`Unable to parse ${json.name} root package.json file!`);
       console.error(error);
     }
   }
@@ -215,5 +228,9 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
     moduleType: detectModuleType(json.files, json.pasedPackageJson),
+    packageManager:
+      json.packageManager ??
+      detectPackageManager(json.files) ??
+      detectPackageManager(json.rootFiles),
   };
 }

@@ -5,7 +5,7 @@ import { Label } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 type Props = {
-  count: number;
+  count: number | string;
   style?: StyleProp<Style>;
 };
 

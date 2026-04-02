@@ -36,7 +36,7 @@ const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 const CHUNK_SIZE = 25;
 const NPM_STATS_CHUNK_SIZE = 10;
-const SLEEP_TIME = 250;
+const SLEEP_TIME = 500;
 
 const invalidRepos: string[] = [];
 const mismatchedRepos: LibraryType[] = [];

@@ -11,9 +11,10 @@ import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
+  small?: boolean;
 };
 
-export function NewArchitectureTag({ library }: Props) {
+export function NewArchitectureTag({ library, small = false }: Props) {
   const status = getNewArchSupportStatus(library);
   const icon = getTagIcon(status);
 
@@ -38,6 +39,7 @@ export function NewArchitectureTag({ library }: Props) {
     <View>
       <Tooltip
         side="bottom"
+        sideOffset={small ? 0 : undefined}
         trigger={
           <View>
             <A href="https://reactnative.dev/architecture/overview">
@@ -49,6 +51,7 @@ export function NewArchitectureTag({ library }: Props) {
                 }
                 icon={icon}
                 tagStyle={getTagColor(status)}
+                small={small}
               />
             </A>
           </View>
@@ -70,7 +73,7 @@ function getTagColor(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return tw`border-[#d4ebfa] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
+      return tw`border-[#c3e3f7] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
     case NewArchSupportStatus.Unsupported:
       return tw`border-[#faebaf] bg-[#fffae8] dark:border-[#3d3206] dark:bg-[#292005]`;
     default:

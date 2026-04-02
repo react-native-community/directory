@@ -1127,7 +1127,7 @@ export function CautionBlockquote({ width = 24, height = 24, style }: IconProps)
 export function ImportantBlockquote({ width = 24, height = 24, style }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+      <Path
         d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
         fill="none"
         stroke="currentColor"
@@ -1135,7 +1135,7 @@ export function ImportantBlockquote({ width = 24, height = 24, style }: IconProp
         strokeLinejoin="round"
         strokeWidth="24"
       />
-      <line
+      <Line
         x1="128"
         y1="80"
         x2="128"
@@ -1147,6 +1147,222 @@ export function ImportantBlockquote({ width = 24, height = 24, style }: IconProp
         strokeWidth="24"
       />
       <circle cx="128" cy="172" r="12" fill="currentColor" />
+    </Svg>
+  );
+}
+
+export function PackageManager({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Circle
+        cx="128"
+        cy="128"
+        r="40"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M219.84,182.84l-88,48.18a8,8,0,0,1-7.68,0l-88-48.18a8,8,0,0,1-4.16-7V80.18a8,8,0,0,1,4.16-7l88-48.18a8,8,0,0,1,7.68,0l88,48.18a8,8,0,0,1,4.16,7v95.64A8,8,0,0,1,219.84,182.84Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
+      />
+    </Svg>
+  );
+}
+
+export function Funding({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Circle
+        cx="204"
+        cy="84"
+        r="28"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M176,85.29A28,28,0,1,1,192,58.71"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function FundingGitHub({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Path
+        d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M96.73,120C87,107.72,80,94.56,80,80c0-21.69,17.67-40,39.46-40A39.12,39.12,0,0,1,156,64a39.12,39.12,0,0,1,36.54-24C214.33,40,232,58.31,232,80c0,29.23-28.18,55.07-50.22,71.32"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function RSS({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <Path
+        d="M64,40A152,152,0,0,1,216,192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="24"
+      />
+      <Path
+        d="M64,112a80,80,0,0,1,80,80"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="20"
+      />
+      <Circle cx="68" cy="188" r="12" fill="currentColor" />
+    </Svg>
+  );
+}
+
+export function Spinner({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style} id="spinner">
+      <Line
+        x1="128"
+        y1="32"
+        x2="128"
+        y2="64"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="195.88"
+        y1="60.12"
+        x2="173.25"
+        y2="82.75"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="224"
+        y1="128"
+        x2="192"
+        y2="128"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="195.88"
+        y1="195.88"
+        x2="173.25"
+        y2="173.25"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="128"
+        y1="224"
+        x2="128"
+        y2="192"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="60.12"
+        y1="195.88"
+        x2="82.75"
+        y2="173.25"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="32"
+        y1="128"
+        x2="64"
+        y2="128"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Line
+        x1="60.12"
+        y1="60.12"
+        x2="82.75"
+        y2="82.75"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
     </Svg>
   );
 }

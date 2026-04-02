@@ -100,6 +100,7 @@ export type LibraryType = LibraryDataEntryType & {
     hasCC?: boolean;
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
+    packageManager?: string;
     urls: {
       repo: string;
       homepage?: string | null;
@@ -164,6 +165,11 @@ export type LibraryDataEntryType = {
   npmPkg?: string;
   examples?: string[];
   images?: string[];
+};
+
+export type LibraryFundingLink = {
+  platform: string;
+  url: string;
 };
 
 export type APIResponseType = {
@@ -236,6 +242,12 @@ export type StatisticResultType = {
   tvos: number;
   visionos: number;
   vegaos: number;
+  packageManager: {
+    bun: number;
+    pnpm: number;
+    npm: number;
+    yarn: number;
+  };
 };
 
 type NpmRegistryCommonData = {
@@ -323,4 +335,27 @@ export type NightlyProgramData = {
   ios: boolean;
   maintainersUsernames: string[];
   notes: string;
+};
+
+export type GitHubUser = {
+  avatar_url: string;
+  contributions: number;
+  events_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  gravatar_id: string;
+  html_url: string;
+  id: number;
+  login: string;
+  node_id: string;
+  organizations_url: string;
+  received_events_url: string;
+  repos_url: string;
+  site_admin: boolean;
+  starred_url: string;
+  subscriptions_url: string;
+  type: string;
+  url: string;
+  user_view_type: string;
 };

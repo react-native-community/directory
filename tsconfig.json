@@ -6,9 +6,7 @@
     "moduleResolution": "bundler",
     "target": "esnext",
     "allowJs": false,
-    "allowSyntheticDefaultImports": true,
     "verbatimModuleSyntax": true,
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "isolatedModules": true,
@@ -21,7 +19,8 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

@@ -1,6 +1,9 @@
-import { type NextPageContext } from 'next';
+import { type GetServerSidePropsContext, type NextPageContext } from 'next';
 
-export default function getApiUrl(path: string, { req }: NextPageContext) {
+export default function getApiUrl(
+  path: string,
+  { req }: NextPageContext | GetServerSidePropsContext
+) {
   if (!req && typeof window !== 'undefined') {
     return `/api${path}`;
   }

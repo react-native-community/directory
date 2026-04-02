@@ -13,7 +13,7 @@ type Props = {
 };
 
 const authorContainerStyle = tw`flex flex-row items-center gap-3 bg-transparent`;
-const labelStyle = tw`leading-[18px]`;
+const labelStyle = tw`text-[13px] leading-[18px]`;
 const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
 
 export default function PackageAuthor({ author, compact }: Props) {

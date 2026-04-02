@@ -30,15 +30,17 @@ export default function Navigation({
       {header ?? (
         <View
           style={[
-            tw`overflow-hidden bg-palette-gray6 py-10 dark:bg-dark`,
+            tw`relative z-10 bg-palette-gray6 py-10 dark:bg-dark`,
             isSmallScreen && tw`py-6`,
             style,
           ]}>
-          <Logo
-            width={580}
-            height={520}
-            style={tw`absolute left-1/2 top-[-76px] ml-[-280px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
-          />
+          <View style={tw`absolute inset-0 overflow-hidden`}>
+            <Logo
+              width={580}
+              height={520}
+              style={tw`absolute left-1/2 top-[-76px] ml-[-280px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
+            />
+          </View>
           <H1
             style={[
               tw`px-5 text-center text-[42px] leading-[54px] text-white`,
