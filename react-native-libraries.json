@@ -20306,9 +20306,7 @@
   {
     "githubUrl": "https://github.com/EvanBacon/expo-mdx/tree/main/packages/mdx",
     "npmPkg": "@bacons/mdx",
-    "examples": [
-      "https://github.com/EvanBacon/expo-mdx/tree/main/apps/demo"
-    ],
+    "examples": ["https://github.com/EvanBacon/expo-mdx/tree/main/apps/demo"],
     "ios": true,
     "android": true,
     "web": true,
