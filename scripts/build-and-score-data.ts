@@ -44,14 +44,71 @@ const mismatchedRepos: LibraryType[] = [];
 const wantedPackageName = process.argv[2];
 const missingOnly = process.argv.includes('--missing-only');
 
+function readLocalDataFile() {
+  return JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) as DataAssetType;
+}
+
+function getLibraryIdentityKeys(library: Pick<LibraryDataEntryType, 'githubUrl' | 'npmPkg'>) {
+  const npmPkg = library.npmPkg ?? library.githubUrl.split('/').at(-1);
+  const identityKeys = [
+    npmPkg ? `npm:${npmPkg.toLowerCase()}` : null,
+    `github:${library.githubUrl.toLowerCase()}`,
+  ];
+
+  return [...new Set(identityKeys.filter((key): key is string => key !== null))];
+}
+
+function mergeLibraries(...libraryLists: LibraryType[][]) {
+  const mergedLibraries: LibraryType[] = [];
+  const libraryIndexByKey = new Map<string, number>();
+
+  libraryLists.forEach(list => {
+    list.forEach(library => {
+      const identityKeys = getLibraryIdentityKeys(library);
+      const existingIndex = identityKeys.find(key => libraryIndexByKey.has(key));
+
+      if (existingIndex) {
+        const index = libraryIndexByKey.get(existingIndex)!;
+        mergedLibraries[index] = library;
+        identityKeys.forEach(key => {
+          libraryIndexByKey.set(key, index);
+        });
+        return;
+      }
+
+      const nextIndex = mergedLibraries.length;
+      mergedLibraries.push(library);
+      identityKeys.forEach(key => {
+        libraryIndexByKey.set(key, nextIndex);
+      });
+    });
+  });
+
+  return mergedLibraries;
+}
+
+function getTopicCounts(libraries: LibraryType[]) {
+  return libraries.reduce<Record<string, number>>((acc, library) => {
+    library.github.topics?.forEach(topic => {
+      acc[topic] = (acc[topic] ?? 0) + 1;
+    });
+
+    return acc;
+  }, {});
+}
+
 async function buildAndScoreData() {
   console.log('🔄️️ Fetching latest data blob from the store');
 
+  const localData = readLocalDataFile();
   const { latestData }: { latestData: DataAssetType } = await fetchLatestData();
+  const baselineLibraries = missingOnly
+    ? mergeLibraries(localData.libraries, latestData.libraries)
+    : latestData.libraries;
 
   console.log('🗂️️ Loading data from GitHub');
 
-  let data = await loadRepositoryDataAsync();
+  let data = await loadRepositoryDataAsync(baselineLibraries);
 
   data = data.filter(project => {
     if (!project.github || isEmptyOrNull(project.github.name)) {
@@ -194,9 +251,10 @@ async function buildAndScoreData() {
   let fileContent;
 
   if (missingOnly) {
+    const mergedLibraries = mergeLibraries(baselineLibraries, data);
     const content = {
-      libraries: [...libraries, ...data],
-      topics: sortTopics(topicCounts),
+      libraries: mergedLibraries,
+      topics: sortTopics(getTopicCounts(mergedLibraries)),
     };
 
     fileContent = JSON.stringify(content, null, 2);
@@ -335,24 +393,28 @@ export async function fetchGithubDataThrottled({
   return results;
 }
 
-function getMissingOnlyDataset() {
-  const { libraries } = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) as DataAssetType;
-
-  const existingGithubUrls = new Set(
-    libraries.map(lib => lib.githubUrl).filter(url => !!url && !isEmptyOrNull(url))
+function getMissingOnlyDataset(existingLibraries: LibraryType[]) {
+  const existingLibraryKeys = new Set(existingLibraries.flatMap(getLibraryIdentityKeys));
+  const missing = DATASET.filter(
+    entry => !getLibraryIdentityKeys(entry).some(key => existingLibraryKeys.has(key))
   );
-  const missing = DATASET.filter(entry => !existingGithubUrls.has(entry.githubUrl));
 
   console.log(
-    `🧩 Missing-only mode: fetching ${missing.length} of ${DATASET.length} entries not present in data file\n`
+    `🧩 Missing-only mode: fetching ${missing.length} of ${DATASET.length} entries not present in the checked-in data file or latest blob\n`
   );
 
   return missing;
 }
 
-function getDataForFetch(wantedPackage?: string) {
+function getDataForFetch({
+  existingLibraries,
+  wantedPackage,
+}: {
+  existingLibraries: LibraryType[];
+  wantedPackage?: string;
+}) {
   if (missingOnly) {
-    return getMissingOnlyDataset();
+    return getMissingOnlyDataset(existingLibraries);
   }
 
   if (wantedPackage) {
@@ -370,8 +432,11 @@ function getDataForFetch(wantedPackage?: string) {
   return DATASET;
 }
 
-async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
-  const data = getDataForFetch(wantedPackageName) as LibraryType[];
+async function loadRepositoryDataAsync(existingLibraries: LibraryType[]): Promise<LibraryType[]> {
+  const data = getDataForFetch({
+    existingLibraries,
+    wantedPackage: wantedPackageName,
+  }) as LibraryType[];
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
@@ -398,7 +463,7 @@ async function fetchLatestData() {
   if (ONLY_WRITE_LOCAL_DATA_FILE) {
     console.log('⚠️ Only writing to local data file, skipping blob store fetch');
     return {
-      latestData: JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')),
+      latestData: readLocalDataFile(),
     };
   }
 
@@ -415,7 +480,9 @@ async function fetchLatestData() {
     };
   }
 
-  return JSON.parse(fs.readFileSync(DATA_PATH).toString());
+  return {
+    latestData: readLocalDataFile(),
+  };
 }
 
 async function uploadToStore(fileContent: string) {
