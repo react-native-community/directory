@@ -20312,5 +20312,52 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/cometchat/cometchat-uikit-react-native/tree/v5/packages/ChatUiKit",
+    "npmPkg": "@cometchat/chat-uikit-react-native",
+    "examples": [
+      "https://github.com/cometchat/cometchat-uikit-react-native/tree/v5/examples/SampleApp",
+      "https://github.com/cometchat/cometchat-uikit-react-native/tree/v5/examples/SampleAppAI",
+      "https://github.com/cometchat/cometchat-uikit-react-native/tree/v5/examples/SampleAppExpo",
+      "https://github.com/cometchat/cometchat-uikit-react-native/tree/v5/examples/SampleAppWithPushNotifications"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Vadko/react-native-file-viewer-turbo",
+    "examples": ["https://github.com/Vadko/react-native-file-viewer-turbo/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/dariyd/react-native-document-scanner",
+    "npmPkg": "@dariyd/react-native-document-scanner",
+    "examples": ["https://github.com/dariyd/react-native-document-scanner/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/dariyd/react-native-document-scanner/main/assets/android_demo.gif",
+      "https://raw.githubusercontent.com/dariyd/react-native-document-scanner/main/assets/ios_demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/damix00/expo-screen-corner-radius",
+    "examples": ["https://github.com/damix00/expo-screen-corner-radius/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/codewithyasirarafath/expo-playcore-in-app-update",
+    "images": [
+      "https://raw.githubusercontent.com/codewithyasirarafath/expo-playcore-in-app-update/main/assets/immediate_flow.png"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
