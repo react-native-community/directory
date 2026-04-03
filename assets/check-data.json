@@ -673,6 +673,7 @@
     "newArchitecture": "supported"
   },
   "react-native-parallax-scroll-view": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-tabbar": {
@@ -2358,7 +2359,7 @@
     "newArchitecture": "supported"
   },
   "react-native-inappbrowser-reborn": {
-    "newArchitecture": "unsupported"
+    "newArchitecture": "supported"
   },
   "react-native-progress-bar-animated": {
     "unmaintained": true,
@@ -2550,6 +2551,7 @@
     "newArchitecture": "untested"
   },
   "react-native-ratings": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-smooth-pincode-input": {
@@ -2925,7 +2927,6 @@
     "newArchitecture": "supported"
   },
   "react-native-stylex": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-fbt": {
@@ -3019,7 +3020,7 @@
     "newArchitecture": "untested"
   },
   "react-native-blob-courier": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-pinchable": {
     "unmaintained": true,
@@ -3375,7 +3376,7 @@
     "newArchitecture": "supported"
   },
   "react-native-barcode-creator": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@mthines/react-native-font-face": {
     "unmaintained": true,
@@ -4110,7 +4111,6 @@
     "newArchitecture": "supported"
   },
   "react-native-flatboard": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@glyw/react-native-tabbed-section-list": {
@@ -4175,6 +4175,7 @@
     "newArchitecture": "supported"
   },
   "@kanelloc/react-native-animated-header-scroll-view": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-appearance-control": {
@@ -4442,7 +4443,7 @@
   "react-native-spotlight-tour": {
     "newArchitecture": "untested"
   },
-  "react-native-international-phone-number": {
+  "rn-international-phone-number": {
     "newArchitecture": "supported"
   },
   "expo-image": {
@@ -4511,7 +4512,7 @@
     "newArchitecture": "untested"
   },
   "react-native-fast-tflite": {
-    "newArchitecture": "supported"
+    "newArchitecture": "untested"
   },
   "react-native-worklets-core": {
     "newArchitecture": "supported"
@@ -4793,6 +4794,7 @@
     "newArchitecture": "untested"
   },
   "react-native-gif-player": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@extrieve_technologies/quickcapture_react_native": {
@@ -5247,6 +5249,7 @@
     "newArchitecture": "supported"
   },
   "react-native-animated-stopwatch-timer": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-fast-secure-storage": {
@@ -6274,7 +6277,6 @@
     "newArchitecture": "supported"
   },
   "geolib": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "use-debounce": {
@@ -6371,6 +6373,7 @@
     "newArchitecture": "untested"
   },
   "react-fast-memo": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "mutative": {
@@ -7948,7 +7951,7 @@
     "newArchitecture": "untested"
   },
   "react-native-add-calendar": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-interception-webview": {
     "newArchitecture": "supported"
