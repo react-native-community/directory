@@ -1,4 +1,3 @@
-import { cloneDeep } from 'es-toolkit/object';
 import { type GetServerSidePropsContext } from 'next';
 
 import HomeScene from '~/scenes/HomeScene';
@@ -7,7 +6,7 @@ import { ssrFetch } from '~/util/SSRFetch';
 import urlWithQuery from '~/util/urlWithQuery';
 
 function Index(props: HomePageProps) {
-  return <HomeScene {...cloneDeep(props)} />;
+  return <HomeScene {...props} />;
 }
 
 const LIMIT = 8;
