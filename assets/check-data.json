@@ -7964,5 +7964,65 @@
   },
   "@magrinj/expo-quick-look": {
     "newArchitecture": "supported"
+  },
+  "@siteed/audio-ui": {
+    "newArchitecture": "untested"
+  },
+  "react-native-emoji-burst": {
+    "newArchitecture": "supported"
+  },
+  "@jobber/components-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-lighthouse": {
+    "newArchitecture": "untested"
+  },
+  "expo-circular-reveal": {
+    "newArchitecture": "untested"
+  },
+  "react-native-chess-kit": {
+    "newArchitecture": "untested"
+  },
+  "react-native-preflight": {
+    "newArchitecture": "untested"
+  },
+  "react-intl-phone-username-input": {
+    "newArchitecture": "untested"
+  },
+  "react-native-effects": {
+    "newArchitecture": "untested"
+  },
+  "react-native-3d": {
+    "newArchitecture": "untested"
+  },
+  "react-native-ease-skeleton": {
+    "newArchitecture": "untested"
+  },
+  "react-native-ease-ticker": {
+    "newArchitecture": "untested"
+  },
+  "material-color-react-native": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-turbo-lnd": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-debug-logger": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-perf-monitor-tool": {
+    "newArchitecture": "supported"
+  },
+  "@platform-blocks/ui": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-barcode-qr-generator": {
+    "newArchitecture": "untested"
+  },
+  "expo-hardware-buttons": {
+    "newArchitecture": "supported"
+  },
+  "@bacons/mdx": {
+    "newArchitecture": "supported"
   }
 }
