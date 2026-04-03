@@ -1,4 +1,4 @@
-import Document, { type DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 import GoogleAnalytics from '~/components/Head/GoogleAnalytics';
 import StructuredData from '~/components/Head/StructuredData';
@@ -72,10 +72,5 @@ function DirectoryWebsite() {
     </Html>
   );
 }
-
-DirectoryWebsite.getInitialProps = async (ctx: DocumentContext) => {
-  const initialProps = await Document.getInitialProps(ctx);
-  return { ...initialProps };
-};
 
 export default DirectoryWebsite;

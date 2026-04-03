@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import { View } from 'react-native';
 
@@ -6,12 +7,24 @@ import ContentContainer from '~/components/ContentContainer';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import VersionBox from '~/components/Package/VersionBox';
-import VersionDownloadsChart from '~/components/Package/VersionDownloadsChart';
 import VersionsSection from '~/components/Package/VersionsSection';
 import PageMeta from '~/components/PageMeta';
 import { type PackageVersionsPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
+
+const VersionDownloadsChartWithLoading = dynamic(
+  () => import('~/components/Package/VersionDownloadsChart'),
+  {
+    ssr: false,
+    loading: () => (
+      <View style={tw`min-h-12 items-center justify-center`}>
+        <ThreeDotsLoader />
+      </View>
+    ),
+  }
+);
 
 export default function PackageVersionsScene({
   apiData,
@@ -68,7 +81,10 @@ export default function PackageVersionsScene({
                 </H6Section>
               </View>
               <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
-                <VersionDownloadsChart npmDownloads={npmDownloads} registryData={registryData} />
+                <VersionDownloadsChartWithLoading
+                  npmDownloads={npmDownloads}
+                  registryData={registryData}
+                />
               </View>
             </>
           ) : null}
