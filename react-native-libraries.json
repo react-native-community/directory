@@ -20359,5 +20359,19 @@
     ],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ste00martin/expo-video-compress",
+    "npmPkg": "@stefanmartin/expo-video-compress",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ste00martin/expo-video-watermark",
+    "npmPkg": "@stefanmartin/expo-video-watermark",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
