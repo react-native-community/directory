@@ -20393,7 +20393,9 @@
   {
     "githubUrl": "https://github.com/818jsy/expo-liquid-glass-native",
     "examples": ["https://github.com/818jsy/expo-liquid-glass-native/tree/main/example"],
-    "images": ["https://raw.githubusercontent.com/818jsy/expo-liquid-glass-native/refs/heads/main/assets/overlay-demo.gif"],
+    "images": [
+      "https://raw.githubusercontent.com/818jsy/expo-liquid-glass-native/refs/heads/main/assets/overlay-demo.gif"
+    ],
     "android": true
   },
   {
