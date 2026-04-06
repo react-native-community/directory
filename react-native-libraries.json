@@ -20373,5 +20373,35 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nuclearpasta/react-native-drax",
+    "examples": ["https://github.com/nuclearpasta/react-native-drax/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/marcocrupi/react-native-notify-kit/tree/main/packages/react-native",
+    "npmPkg": "react-native-notify-kit",
+    "examples": ["https://github.com/marcocrupi/react-native-notify-kit/tree/main/apps/smoke"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/818jsy/expo-liquid-glass-native",
+    "examples": ["https://github.com/818jsy/expo-liquid-glass-native/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/818jsy/expo-liquid-glass-native/refs/heads/main/assets/overlay-demo.gif"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/sabari0126/react-native-secure-network",
+    "examples": ["https://github.com/sabari0126/react-native-secure-network/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
