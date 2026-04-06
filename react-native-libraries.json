@@ -20403,5 +20403,14 @@
     "examples": ["https://github.com/sabari0126/react-native-secure-network/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/shubh73/expo-phone-number-hint",
+    "examples": ["https://github.com/shubh73/expo-phone-number-hint/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/shubh73/expo-phone-number-hint/refs/heads/main/docs/demo.gif"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
