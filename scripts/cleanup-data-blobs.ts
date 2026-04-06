@@ -13,7 +13,7 @@ async function deleteOutdatedBlobs() {
 
     await Promise.all(
       outdatedBlobs.map(async blob => {
-        await del(blob.url);
+        await del(blob.pathname);
       })
     );
 
