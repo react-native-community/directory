@@ -20405,6 +20405,13 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/efstathiosntonas/expo-native-emojis-popup",
+    "examples": ["https://github.com/efstathiosntonas/expo-native-emojis-popup/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/shubh73/expo-phone-number-hint",
     "examples": ["https://github.com/shubh73/expo-phone-number-hint/tree/main/example"],
     "images": [
