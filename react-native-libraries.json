@@ -20419,5 +20419,12 @@
     ],
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/o-svetlichnyi/expo-icloud-storage",
+    "npmPkg": "@oleg_svetlichnyi/expo-icloud-storage",
+    "examples": ["https://github.com/o-svetlichnyi/expo-icloud-storage/tree/main/example"],
+    "ios": true,
+    "configPlugin": true
   }
 ]
