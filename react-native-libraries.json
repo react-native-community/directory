@@ -20425,6 +20425,7 @@
     "npmPkg": "@oleg_svetlichnyi/expo-icloud-storage",
     "examples": ["https://github.com/o-svetlichnyi/expo-icloud-storage/tree/main/example"],
     "ios": true,
+    "newArchitecture": true,
     "configPlugin": true
   }
 ]
