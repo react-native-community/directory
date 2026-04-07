@@ -488,7 +488,7 @@ async function fetchLatestData() {
 async function uploadToStore(fileContent: string) {
   console.log('⬆️ Uploading data blob to the store');
   try {
-    await put('data.json', fileContent, { access: 'public' });
+    await put('data.json', fileContent, { access: 'public', addRandomSuffix: true });
   } catch (error) {
     if (error instanceof BlobAccessError) {
       console.error('❌ Cannot access the blob store, aborting!');
