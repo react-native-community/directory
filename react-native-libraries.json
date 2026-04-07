@@ -20403,5 +20403,12 @@
     "examples": ["https://github.com/sabari0126/react-native-secure-network/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/efstathiosntonas/expo-native-emojis-popup",
+    "examples": ["https://github.com/efstathiosntonas/expo-native-emojis-popup/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
