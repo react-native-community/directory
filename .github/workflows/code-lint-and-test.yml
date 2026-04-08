@@ -1,5 +1,8 @@
 name: '[CODE] Lint and test'
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
