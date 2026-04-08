@@ -130,10 +130,7 @@ async function generateLLMSFiles() {
   console.log(`✅ Generated ${path.relative(process.cwd(), LLMS_PATH)}`);
 
   const { libraries } = data as DataAssetType;
-
-  const entries = libraries
-    .filter(library => !library.template)
-    .map(library => formatRecord(library));
+  const entries = libraries.map(library => formatRecord(library));
 
   const llmsFullContent = [
     INTRODUCTION,

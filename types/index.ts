@@ -50,7 +50,6 @@ export type Query = {
   newArchitecture?: string;
   skipLibs?: string;
   skipTools?: string;
-  skipTemplates?: string;
   expoModule?: string;
   nitroModule?: string;
   turboModule?: string;
@@ -157,7 +156,6 @@ export type LibraryDataEntryType = {
   vegaos?: boolean | string;
   unmaintained?: boolean;
   dev?: boolean;
-  template?: boolean;
   newArchitecture?: boolean | 'new-arch-only';
   newArchitectureNote?: string;
   configPlugin?: boolean | string;

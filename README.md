@@ -63,8 +63,7 @@
   "newArchitecture": false,
   "configPlugin": false,
   "unmaintained": false,
-  "dev": false,
-  "template": false
+  "dev": false
 }
 ```
 
@@ -143,8 +142,6 @@
   **(boolean)** - signify that a library is no longer maintained. You can provide alternative or replacement libraries with the `alternatives` field, if needed.
 - #### `dev`
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
-- #### `template`
-  **(boolean)** - signify that a library is a new project template.
 - #### `configPlugin`
   **(boolean \| string \[URL to third-party config plugin\])** - Indicates if the library includes an [Expo config plugin](https://docs.expo.dev/config-plugins/introduction/). If the plugin is provided by a third party, supply the URL as a string. This field is optional and will be detected automatically if omitted.
 - #### `newArchitecture`

@@ -103,7 +103,6 @@ export function handleFilterLibraries({
   newArchitecture,
   skipLibs,
   skipTools,
-  skipTemplates,
   expoModule,
   nitroModule,
   turboModule,
@@ -136,15 +135,11 @@ export function handleFilterLibraries({
       }
     }
 
-    if (skipLibs && !library.dev && !library.template) {
+    if (skipLibs && !library.dev) {
       return false;
     }
 
     if (skipTools && library.dev) {
-      return false;
-    }
-
-    if (skipTemplates && library.template) {
       return false;
     }
 

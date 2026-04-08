@@ -55,9 +55,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
         {
           title: 'Readme' as const,
           Icon: ReadmeFile,
-          url: library?.template
-            ? getTabContentUrl(library, 'README.md')
-            : `https://unpkg.com/${packageName}/README.md`,
+          url: `https://unpkg.com/${packageName}/README.md`,
         },
         ...(library?.github?.hasChangelog
           ? [

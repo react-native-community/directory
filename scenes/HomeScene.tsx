@@ -92,9 +92,7 @@ export default function HomeScene({
               <A href={urlWithQuery('/packages', { search: 'chart' })}>Charts</A>
               <A href={urlWithQuery('/packages', { search: 'color' })}>Color</A>
               <A href={urlWithQuery('/packages', { search: 'validation' })}>Data validation</A>
-              <A href={urlWithQuery('/packages', { skipLibs: 'true', skipTemplates: 'true' })}>
-                Development Tools
-              </A>
+              <A href={urlWithQuery('/packages', { skipLibs: 'true' })}>Development Tools</A>
               <A href={urlWithQuery('/packages', { search: 'gesture' })}>Gestures</A>
               <A href={urlWithQuery('/packages', { search: 'health' })}>Health</A>
               <A href={urlWithQuery('/packages', { search: 'i18n' })}>I18n</A>
