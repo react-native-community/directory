@@ -37,15 +37,7 @@ export default function CompatibilityTags({ library, small }: Props) {
           small={small}
         />
       ) : null}
-      {library.template ? (
-        <Tag
-          label="Template"
-          tagStyle={tw`border-[#f5c6e8] bg-[#fce1f5] dark:border-[#52213e] dark:bg-[#37172e]`}
-          icon={null}
-          small={small}
-        />
-      ) : null}
-      {!library.dev && !library.template && <NewArchitectureTag library={library} small={small} />}
+      {!library.dev && <NewArchitectureTag library={library} small={small} />}
       {platforms.map(platform =>
         platform ? (
           <Tag

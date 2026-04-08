@@ -56,7 +56,7 @@ export default function PackageOverviewScene({
     <>
       <PageMeta
         title={library.npmPkg}
-        description={`See ${library.npmPkg} ${library.template ? 'template' : 'package'} detailed information and metadata`}
+        description={`See ${library.npmPkg} package detailed information and metadata`}
         path="package"
       />
       <DetailsNavigation library={library} />
@@ -118,66 +118,59 @@ export default function PackageOverviewScene({
                 <MetaData library={library} secondary skipExamples />
               </View>
             </CollapsibleSection>
-            {!library.template && (
-              <>
-                <H6Section style={tw`flex items-center justify-between`}>
-                  Downloads <Label style={tw`font-light text-secondary`}>Last month</Label>
-                </H6Section>
-                <View style={tw`gap-y-2`}>
-                  <View
-                    style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
-                    <DownloadsChart packageName={packageName} />
-                  </View>
-                  <View style={tw`flex-row flex-wrap items-center justify-between`}>
-                    <Caption style={tw`text-[13px] font-light`}>Popularity</Caption>
-                    <TrendingMark library={library} />
-                  </View>
-                </View>
-              </>
-            )}
+            <H6Section style={tw`flex items-center justify-between`}>
+              Downloads <Label style={tw`font-light text-secondary`}>Last month</Label>
+            </H6Section>
+            <View style={tw`gap-y-2`}>
+              <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
+                <DownloadsChart packageName={packageName} />
+              </View>
+              <View style={tw`flex-row flex-wrap items-center justify-between`}>
+                <Caption style={tw`text-[13px] font-light`}>Popularity</Caption>
+                <TrendingMark library={library} />
+              </View>
+            </View>
             <TopicsSection topics={library.github.topics} />
-            {!library.template && (
-              <CollapsibleSection title="Package analysis">
-                <ul
-                  style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
-                  <li>
-                    <A
-                      href={`https://node-modules.dev/grid/depth#install=${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      Node Modules Inspector
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      Bundlephobia
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://pkg-size.dev/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      pkg-size.dev
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      npmgraph
-                    </A>
-                  </li>
-                  <li>
-                    <A
-                      href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                      style={tw`text-[12px] font-light`}>
-                      Snyk Advisor
-                    </A>
-                  </li>
-                </ul>
-              </CollapsibleSection>
-            )}
+            <CollapsibleSection title="Package analysis">
+              <ul
+                style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
+                <li>
+                  <A
+                    href={`https://node-modules.dev/grid/depth#install=${library.npmPkg}`}
+                    style={tw`text-[12px] font-light`}>
+                    Node Modules Inspector
+                  </A>
+                </li>
+                <li>
+                  <A
+                    href={`https://bundlephobia.com/package/${library.npmPkg}`}
+                    style={tw`text-[12px] font-light`}>
+                    Bundlephobia
+                  </A>
+                </li>
+                <li>
+                  <A
+                    href={`https://pkg-size.dev/${library.npmPkg}`}
+                    style={tw`text-[12px] font-light`}>
+                    pkg-size.dev
+                  </A>
+                </li>
+                <li>
+                  <A
+                    href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
+                    style={tw`text-[12px] font-light`}>
+                    npmgraph
+                  </A>
+                </li>
+                <li>
+                  <A
+                    href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
+                    style={tw`text-[12px] font-light`}>
+                    Snyk Advisor
+                  </A>
+                </li>
+              </ul>
+            </CollapsibleSection>
             <DependenciesSection
               title="Dependencies"
               data={dependencies}

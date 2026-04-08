@@ -105,10 +105,6 @@ export const FILTER_TYPE: FilterParamsType[] = [
     param: 'skipTools',
     title: 'Hide development tools',
   },
-  {
-    param: 'skipTemplates',
-    title: 'Hide templates',
-  },
 ];
 
 export const FILTER_MODULE_TYPE: FilterParamsType[] = [

@@ -120,7 +120,7 @@ async function buildAndScoreData() {
 
   // Detect mismatched package and package.json content
   data.forEach(project => {
-    if (hasMismatchedPackageData(project) && !project.template) {
+    if (hasMismatchedPackageData(project)) {
       mismatchedRepos.push(project);
     }
   });
@@ -149,11 +149,9 @@ async function buildAndScoreData() {
 
   const fetchList: string[] = [];
 
-  // Filter out template entries, prepare npm-stat API chunks
+  // Prepare npm-stat API chunks
   data.forEach(project => {
-    if (!project.template) {
-      fetchList.push(project.npmPkg);
-    }
+    fetchList.push(project.npmPkg);
   });
 
   // Assemble and fetch packages data in bulk queries
@@ -520,7 +518,7 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   for (let i = 0; i < total; i++) {
     const entry = list[i];
 
-    if (!entry || entry.template) {
+    if (!entry) {
       continue;
     }
 
