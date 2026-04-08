@@ -20348,5 +20348,12 @@
     "ios": true,
     "newArchitecture": true,
     "configPlugin": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/chsdwn/react-native-video-to-audio",
+    "npmPkg": "react-native-video-to-audio",
+    "examples": ["https://github.com/chsdwn/react-native-video-to-audio/tree/main/example/src"],
+    "ios": true,
+    "newArchitecture": true
+  },
 ]
