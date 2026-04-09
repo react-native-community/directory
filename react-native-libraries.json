@@ -18355,7 +18355,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/Ganesh1110/react-native-apptext",
+    "githubUrl": "https://github.com/Ganesh1110/react-native-text-kit",
     "ios": true,
     "android": true
   },
@@ -20351,9 +20351,59 @@
   },
   {
     "githubUrl": "https://github.com/chsdwn/react-native-video-to-audio",
-    "npmPkg": "react-native-video-to-audio",
     "examples": ["https://github.com/chsdwn/react-native-video-to-audio/tree/main/example/src"],
     "ios": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/johntips/react-native-infinite-tab-view",
+    "examples": ["https://github.com/johntips/react-native-infinite-tab-view/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/chrryai/chrry",
+    "npmPkg": "@chrryai/chrry",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/chrryai/pepper",
+    "npmPkg": "@chrryai/pepper",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/steve228uk/metro-bridge",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/steve228uk/metro-mcp",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/igorzheludkov/react-native-ai-devtools",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/AdwaithAnandSR/expo-rich-input",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DivyaUnagar/react-native-pinch-viewer",
+    "examples": [
+      "https://github.com/DivyaUnagar/react-native-pinch-viewer/tree/main/react-native-pinch-viewer-example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
