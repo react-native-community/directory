@@ -8027,5 +8027,77 @@
   },
   "@bacons/mdx": {
     "newArchitecture": "supported"
+  },
+  "react-native-text-kit": {
+    "newArchitecture": "untested"
+  },
+  "@cometchat/chat-uikit-react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-file-viewer-turbo": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@dariyd/react-native-document-scanner": {
+    "newArchitecture": "supported"
+  },
+  "expo-screen-corner-radius": {
+    "newArchitecture": "supported"
+  },
+  "expo-playcore-in-app-update": {
+    "newArchitecture": "supported"
+  },
+  "@stefanmartin/expo-video-compress": {
+    "newArchitecture": "supported"
+  },
+  "@stefanmartin/expo-video-watermark": {
+    "newArchitecture": "supported"
+  },
+  "react-native-drax": {
+    "newArchitecture": "supported"
+  },
+  "react-native-notify-kit": {
+    "newArchitecture": "supported"
+  },
+  "expo-liquid-glass-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-secure-network": {
+    "newArchitecture": "supported"
+  },
+  "expo-native-emojis-popup": {
+    "newArchitecture": "supported"
+  },
+  "expo-phone-number-hint": {
+    "newArchitecture": "supported"
+  },
+  "@oleg_svetlichnyi/expo-icloud-storage": {
+    "newArchitecture": "supported"
+  },
+  "react-native-video-to-audio": {
+    "newArchitecture": "supported"
+  },
+  "react-native-infinite-tab-view": {
+    "newArchitecture": "supported"
+  },
+  "@chrryai/chrry": {
+    "newArchitecture": "untested"
+  },
+  "@chrryai/pepper": {
+    "newArchitecture": "untested"
+  },
+  "metro-bridge": {
+    "newArchitecture": "untested"
+  },
+  "metro-mcp": {
+    "newArchitecture": "untested"
+  },
+  "react-native-ai-devtools": {
+    "newArchitecture": "untested"
+  },
+  "expo-rich-input": {
+    "newArchitecture": "untested"
+  },
+  "react-native-pinch-viewer": {
+    "newArchitecture": "untested"
   }
 }
