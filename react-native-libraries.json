@@ -20405,5 +20405,30 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/fivecar/react-native-draglist",
+    "examples": ["https://github.com/fivecar/react-native-draglist/tree/main/example"],
+    "images": [
+      "https://user-images.githubusercontent.com/39933441/203197020-eb409b97-e108-4d9b-8ee4-684ae238b65b.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/cbbfcd/react-native-lightbox",
+    "npmPkg": "react-native-lightbox-v2",
+    "examples": ["https://github.com/cbbfcd/react-native-lightbox/tree/master/Example"],
+    "images": [
+      "https://cloud.githubusercontent.com/assets/378279/9074360/16eac5d6-3b09-11e5-90af-a69980e9f4be.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion/pulsar/tree/main/react-native/react-native-pulsar",
+    "examples": ["https://github.com/software-mansion/pulsar/tree/main/react-native/PulsarApp"],
+    "ios": true,
+    "android": true
   }
 ]
