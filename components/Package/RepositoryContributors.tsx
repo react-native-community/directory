@@ -31,7 +31,7 @@ export default function RepositoryContributors({ fullName }: Props) {
 
   const contributors: GitHubUser[] = useMemo(
     () =>
-      data?.sort((a: GitHubUser, b: GitHubUser) => {
+      (data ?? []).sort((a: GitHubUser, b: GitHubUser) => {
         if (a.contributions === b.contributions) {
           return a.login.localeCompare(b.login);
         }
