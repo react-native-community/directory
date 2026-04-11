@@ -20430,5 +20430,12 @@
     "examples": ["https://github.com/software-mansion/pulsar/tree/main/react-native/PulsarApp"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ntphu1808/expo-privacy-image",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
