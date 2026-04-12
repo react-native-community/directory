@@ -17564,17 +17564,9 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/rn-bridge/react-native-shortcuts",
-    "npmPkg": "@rn-bridge/react-native-shortcuts",
-    "examples": ["https://github.com/rn-bridge/react-native-shortcuts/tree/master/example"],
-    "android": true,
-    "ios": true,
-    "alternatives": ["@rn-org/react-native-shortcuts"]
-  },
-  {
-    "githubUrl": "https://github.com/rn-bridge/react-native-geofencing",
-    "npmPkg": "@rn-bridge/react-native-geofencing",
-    "examples": ["https://github.com/rn-bridge/react-native-geofencing/tree/master/example"],
+    "githubUrl": "https://github.com/rn-org/react-native-geofencing",
+    "npmPkg": "@rn-org/react-native-geofencing",
+    "examples": ["https://github.com/rn-org/react-native-geofencing/tree/master/example"],
     "android": true,
     "ios": true
   },
@@ -20428,6 +20420,13 @@
   {
     "githubUrl": "https://github.com/software-mansion/pulsar/tree/main/react-native/react-native-pulsar",
     "examples": ["https://github.com/software-mansion/pulsar/tree/main/react-native/PulsarApp"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rn-org/react-native-thread",
+    "npmPkg": "@rn-org/react-native-thread",
+    "examples": ["https://github.com/rn-org/react-native-thread/tree/master/example"],
     "ios": true,
     "android": true
   },
