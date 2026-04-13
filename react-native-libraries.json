@@ -20436,5 +20436,15 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/DimaIvashchuk/react-native-background-workers",
+    "npmPkg": "react-native-background-workers",
+    "examples": [
+      "https://github.com/DimaIvashchuk/react-native-background-workers/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
