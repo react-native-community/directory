@@ -10,7 +10,7 @@ type Props = PropsWithChildren<{
   style?: StyleProp<ViewStyle>;
 }>;
 
-export function ScoringCriterion({ children, headline, style, score = undefined }: Props) {
+export function ScoringCriterion({ children, headline, style, score }: Props) {
   const isPositiveModifier = (score ?? 0) > 0;
 
   return (

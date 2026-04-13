@@ -49,7 +49,7 @@ export async function getUpdatedUrl(url: string) {
   }
 }
 
-export function sleep(ms = 0, msMax: number | undefined = undefined) {
+export function sleep(ms = 0, msMax?: number) {
   return new Promise(r =>
     setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
   );
