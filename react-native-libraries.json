@@ -20355,20 +20355,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/chrryai/chrry",
-    "npmPkg": "@chrryai/chrry",
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
-    "githubUrl": "https://github.com/chrryai/pepper",
-    "npmPkg": "@chrryai/pepper",
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/steve228uk/metro-bridge",
     "ios": true,
     "android": true
@@ -20446,5 +20432,44 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/voltra/tree/main/packages/voltra",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/mbpictures/react-native-media-notification",
+    "examples": ["https://github.com/mbpictures/react-native-media-notification/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/martinmikesCCS/expo-beacon",
+    "examples": ["https://github.com/martinmikesCCS/expo-beacon/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/joncodeofficial/react-native-beacon-kit",
+    "examples": ["https://github.com/joncodeofficial/react-native-beacon-kit/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/CookiePawn/react-native-image-exif",
+    "examples": ["https://github.com/CookiePawn/react-native-image-exif/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/chocky335/react-native-swipeable-actions",
+    "examples": ["https://github.com/chocky335/react-native-swipeable-actions/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
