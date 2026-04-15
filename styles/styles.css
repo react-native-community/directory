@@ -726,7 +726,7 @@ select {
   td,
   th {
     border: 1px solid var(--table-border);
-    padding: 5px 8px;
+    padding: 6px 10px;
 
     &:first-child {
       border-left: 0;
@@ -745,5 +745,15 @@ select {
     + div[data-table-wrapper] {
       margin-top: 12px;
     }
+  }
+
+  .media-minimal-skin {
+    --media-border-color: transparent;
+
+    font-family: inherit;
+    outline: 1px solid var(--table-border);
+    outline-offset: 0;
+    border: 0;
+    background-color: var(--table-header-background);
   }
 }

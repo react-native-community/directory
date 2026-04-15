@@ -1,11 +1,10 @@
 import { Md } from '@m2d/react-markdown/client';
 import { capitalize } from 'es-toolkit/string';
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import useSWR from 'swr';
@@ -37,6 +36,7 @@ import tw from '~/util/tailwind';
 import MarkdownCodeBlock from './MarkdownCodeBlock';
 import MarkdownContentTab from './MarkdownContentTab';
 import MarkdownHeading from './MarkdownHeading';
+import { MarkdownVideoPlayer } from './MarkdownVideoPlayer';
 import { DEFAULT_MARKDOWN_TAB, MARKDOWN_CONTENT_QUERY_PARAM, parseMarkdownTab } from './utils';
 
 type Props = {
@@ -213,6 +213,20 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
               h6: ({ children, node }: any) => (
                 <MarkdownHeading tagName={node.tagName}>{children}</MarkdownHeading>
               ),
+              p: ({ children, node, ...props }: any) => {
+                const childrenCount = Children.count(children);
+                if (childrenCount === 1) {
+                  const element = Children.toArray(children).at(0);
+                  if (
+                    isValidElement<{ href?: string }>(element) &&
+                    isGitHubVideoAssetLink(element.props.href)
+                  ) {
+                    return <>{children}</>;
+                  }
+                }
+
+                return <p {...props}>{children}</p>;
+              },
               br: () => null,
               hr: () => null,
               a: (props: any) => {
@@ -224,10 +238,18 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                         href={`${repoUrl}/blob/HEAD/${props.href.startsWith('/') ? props.href.slice(1) : props.href}`}
                       />
                     );
+                  } else if (isGitHubVideoAssetLink(props.href)) {
+                    return <MarkdownVideoPlayer src={props.href} />;
                   }
                   return <A {...props} />;
                 }
                 return <span>{props.children}</span>;
+              },
+              video: (props: any) => {
+                if (props.src) {
+                  return <MarkdownVideoPlayer src={props.src} style={tw`mt-2`} />;
+                }
+                return null;
               },
               table: ({ children }) => {
                 return (
@@ -325,7 +347,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                 return <input type={type} {...rest} />;
               },
             }}
-            rehypePlugins={[rehypeRaw, rehypeSanitize]}
+            rehypePlugins={[rehypeRaw]}
             remarkPlugins={[remarkGfm, remarkEmoji]}>
             {data ?? undefined}
           </Md>
@@ -371,4 +393,11 @@ function getBlockquoteIcon(type: string) {
     default:
       return null;
   }
+}
+
+function isGitHubVideoAssetLink(link?: string) {
+  if (!link) {
+    return false;
+  }
+  return link.startsWith('https://github.com/user-attachments/assets/');
 }
