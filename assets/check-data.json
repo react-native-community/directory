@@ -437,6 +437,7 @@
     "newArchitecture": "supported"
   },
   "react-native-textinput-effects": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-sortable-listview": {
@@ -3747,6 +3748,7 @@
     "newArchitecture": "untested"
   },
   "@notifee/react-native": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-notifications": {
@@ -3838,6 +3840,7 @@
     "newArchitecture": "supported"
   },
   "react-native-place-picker": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@shopify/react-native-performance": {
@@ -3972,6 +3975,7 @@
     "newArchitecture": "untested"
   },
   "react-native-cloud-store": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-clocks": {
@@ -6540,6 +6544,7 @@
     "newArchitecture": "untested"
   },
   "rn-maps-clustering": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@raahimkhan23/react-native-responsive-utils": {
@@ -8077,6 +8082,7 @@
     "newArchitecture": "supported"
   },
   "react-native-infinite-tab-view": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@chrryai/chrry": {
@@ -8098,6 +8104,45 @@
     "newArchitecture": "untested"
   },
   "react-native-pinch-viewer": {
+    "newArchitecture": "supported"
+  },
+  "@rn-org/react-native-geofencing": {
+    "newArchitecture": "supported"
+  },
+  "react-native-draglist": {
+    "newArchitecture": "untested"
+  },
+  "react-native-lightbox-v2": {
+    "newArchitecture": "untested"
+  },
+  "react-native-pulsar": {
+    "newArchitecture": "supported"
+  },
+  "@rn-org/react-native-thread": {
+    "newArchitecture": "supported"
+  },
+  "expo-privacy-image": {
+    "newArchitecture": "supported"
+  },
+  "react-native-background-workers": {
+    "newArchitecture": "supported"
+  },
+  "voltra": {
+    "newArchitecture": "supported"
+  },
+  "react-native-media-notification": {
+    "newArchitecture": "supported"
+  },
+  "expo-beacon": {
+    "newArchitecture": "untested"
+  },
+  "react-native-beacon-kit": {
+    "newArchitecture": "supported"
+  },
+  "react-native-image-exif": {
+    "newArchitecture": "supported"
+  },
+  "react-native-swipeable-actions": {
     "newArchitecture": "untested"
   }
 }
