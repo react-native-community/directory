@@ -18,9 +18,9 @@ export function MarkdownVideoPlayer({ src, style }: Props) {
   return (
     <InlinePlayer.Provider>
       <Container
-        className="media-minimal-skin media-minimal-skin--video relative"
-        style={{ maxWidth: '100%', ...style }}>
-        <Video src={src} playsInline muted className="max-h-[580px]" />
+        className="media-minimal-skin media-minimal-skin--video relative mt-3 max-h-[592px] max-w-full"
+        style={style}>
+        <Video src={src} playsInline muted className="max-h-[592px]" />
         <MarkdownVideoPlayerUI />
       </Container>
     </InlinePlayer.Provider>

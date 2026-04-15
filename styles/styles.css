@@ -735,6 +735,11 @@ select {
     &:last-child {
       border-right: 0;
     }
+
+    .media-minimal-skin {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
   }
 
   th {
