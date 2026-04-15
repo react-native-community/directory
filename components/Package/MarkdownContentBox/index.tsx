@@ -247,7 +247,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
               },
               video: (props: any) => {
                 if (props.src) {
-                  return <MarkdownVideoPlayer src={props.src} style={tw`mt-2`} />;
+                  return <MarkdownVideoPlayer src={props.src} />;
                 }
                 return null;
               },
