@@ -20471,5 +20471,38 @@
     "examples": ["https://github.com/chocky335/react-native-swipeable-actions/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/OxyHQ/Bloom",
+    "npmPkg": "@oxyhq/bloom",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/JubaKitiashvili/expo-pretext",
+    "examples": ["https://github.com/JubaKitiashvili/expo-pretext/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/radughitescu/react-native-permission-handler",
+    "examples": [
+      "https://github.com/radughitescu/react-native-permission-handler/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-nano-icons/tree/main/packages/react-native-nano-icons",
+    "examples": [
+      "https://github.com/software-mansion-labs/react-native-nano-icons/tree/main/examples/BareReactNativeExample",
+      "https://github.com/software-mansion-labs/react-native-nano-icons/tree/main/examples/ExpoExample"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "configPlugin": true
   }
 ]
