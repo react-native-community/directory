@@ -68,7 +68,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
           <PackageHeader library={library} />
           <View
             id="codeBrowser"
-            style={tw`mt-2 flex max-h-[70vh] overflow-hidden rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
+            style={tw`mt-2 flex h-[70vh] overflow-hidden rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
             {isLoading && (
               <View style={tw`flex min-h-[320px] items-center justify-center`}>
                 <ThreeDotsLoader />
@@ -76,7 +76,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
             )}
             {!data && !isLoading && <P>Cannot fetch package bundle code.</P>}
             {data && !isLoading && (
-              <View style={[tw`flex max-h-[70vh] flex-row`, isSmallScreen && tw`flex-col`]}>
+              <View style={[tw`flex h-[70vh] flex-row`, isSmallScreen && tw`flex-col`]}>
                 <ScrollView
                   id="codeBrowserList"
                   style={[

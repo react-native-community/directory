@@ -21,13 +21,17 @@ type Props = {
 };
 
 const PREVIEW_DISABLED = ['tgz', 'gz'];
+const IMAGE_FILE = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
 
 export default function CodeBrowserContent({ packageName, filePath }: Props) {
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const isPreviewDisabled = PREVIEW_DISABLED.includes(fileExtension);
+  const isImageFile = IMAGE_FILE.includes(fileExtension);
 
   const { data, isLoading } = useSWR<string>(
-    !isPreviewDisabled ? `/api/proxy/unpkg?name=${packageName}&path=${filePath}` : undefined,
+    !isPreviewDisabled && !isImageFile
+      ? `/api/proxy/unpkg?name=${packageName}&path=${filePath}`
+      : undefined,
     (url: string) =>
       fetch(url).then(res => {
         if (res.status === 200) {
@@ -81,13 +85,15 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
         <DownloadFileButton filePath={filePath} packageName={packageName} />
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
-        {isPreviewDisabled ? (
+        {isImageFile && <img src={`https://unpkg.com/${packageName}/${filePath}`} alt="" />}
+        {isPreviewDisabled && (
           <View style={tw`flex flex-col items-center gap-1`}>
             <TempFileIcon style={tw`mb-2 size-20 text-icon`} />
             <P>This file cannot be previewed.</P>
             <Label style={tw`font-normal text-secondary`}>Download file to see it locally.</Label>
           </View>
-        ) : (
+        )}
+        {!isPreviewDisabled && !isImageFile && (
           <P>Cannot fetch &quot;{filePath}&quot; file content.</P>
         )}
       </View>
