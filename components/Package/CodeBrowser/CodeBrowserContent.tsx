@@ -3,11 +3,10 @@ import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
 
 import { P } from '~/common/styleguide';
-import { Button } from '~/components/Button';
-import { DownloadFileIcon } from '~/components/Icons';
+import CodeBrowserContentHeader from '~/components/Package/CodeBrowser/CodeBrowserContentHeader';
+import DownloadFileButton from '~/components/Package/CodeBrowser/DownloadFileButton';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
-import Tooltip from '~/components/Tooltip';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { TimeRange } from '~/util/datetime';
@@ -20,9 +19,14 @@ type Props = {
   filePath: string;
 };
 
+const PREVIEW_DISABLED = ['tgz', 'gz'];
+
 export default function CodeBrowserContent({ packageName, filePath }: Props) {
+  const fileExtension = filePath.split('.').at(-1) ?? 'text';
+  const isPreviewDisabled = PREVIEW_DISABLED.includes(fileExtension);
+
   const { data, isLoading } = useSWR<string>(
-    `/api/proxy/unpkg?name=${packageName}&path=${filePath}`,
+    !isPreviewDisabled ? `/api/proxy/unpkg?name=${packageName}&path=${filePath}` : undefined,
     (url: string) =>
       fetch(url).then(res => {
         if (res.status === 200) {
@@ -39,9 +43,7 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
   if (isLoading) {
     return (
       <>
-        <View style={tw`min-h-[45px] border-b border-palette-gray2 px-4 py-3 dark:border-default`}>
-          <P style={tw`font-mono mt-px font-bold`}>{filePath}</P>
-        </View>
+        <CodeBrowserContentHeader filePath={filePath} />
         <View style={tw`flex flex-1 items-center justify-center bg-white dark:bg-[#0d1117]`}>
           <ThreeDotsLoader />
         </View>
@@ -52,27 +54,9 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
   if (!isLoading && data) {
     return (
       <>
-        <View
-          style={tw`flex min-h-[45px] flex-row justify-between border-b border-palette-gray2 px-4 py-3 dark:border-default`}>
-          <P style={tw`font-mono mt-px font-bold`}>{filePath}</P>
+        <CodeBrowserContentHeader filePath={filePath}>
           <View style={tw`flex flex-row gap-3`}>
-            <Tooltip
-              sideOffset={2}
-              trigger={
-                <Button
-                  style={tw`bg-transparent`}
-                  containerStyle={tw`h-5`}
-                  href={`https://unpkg.com/${packageName}/${filePath}`}
-                  aria-label="Download file">
-                  <DownloadFileIcon
-                    height={20}
-                    width={20}
-                    style={tw`size-5 text-palette-gray4 dark:text-pewter`}
-                  />
-                </Button>
-              }>
-              Download
-            </Tooltip>
+            <DownloadFileButton filePath={filePath} packageName={packageName} />
             <CopyButton
               data={data}
               tooltip="Copy file content"
@@ -80,7 +64,7 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
               style={tw`relative right-0 top-0`}
             />
           </View>
-        </View>
+        </CodeBrowserContentHeader>
         <CodeBrowserContentHighlighter
           code={data}
           lang={filePath.split('.').at(-1) ?? 'text'}
@@ -90,5 +74,18 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
     );
   }
 
-  return <P>Cannot fetch &quot;{filePath}&quot; file content.</P>;
+  return (
+    <>
+      <CodeBrowserContentHeader filePath={filePath}>
+        <DownloadFileButton filePath={filePath} packageName={packageName} />
+      </CodeBrowserContentHeader>
+      <View style={tw`flex flex-1 items-center justify-center`}>
+        {isPreviewDisabled ? (
+          <P>This file cannot be previewed. Download file to see it locally.</P>
+        ) : (
+          <P>Cannot fetch &quot;{filePath}&quot; file content.</P>
+        )}
+      </View>
+    </>
+  );
 }
