@@ -2,7 +2,8 @@ import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
 
-import { P } from '~/common/styleguide';
+import { Label, P } from '~/common/styleguide';
+import { TempFileIcon } from '~/components/Icons';
 import CodeBrowserContentHeader from '~/components/Package/CodeBrowser/CodeBrowserContentHeader';
 import DownloadFileButton from '~/components/Package/CodeBrowser/DownloadFileButton';
 import CopyButton from '~/components/Package/CopyButton';
@@ -44,7 +45,7 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
     return (
       <>
         <CodeBrowserContentHeader filePath={filePath} />
-        <View style={tw`flex flex-1 items-center justify-center bg-white dark:bg-[#0d1117]`}>
+        <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
         </View>
       </>
@@ -81,7 +82,11 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
         {isPreviewDisabled ? (
-          <P>This file cannot be previewed. Download file to see it locally.</P>
+          <View style={tw`flex flex-col items-center gap-1`}>
+            <TempFileIcon style={tw`mb-2 size-20 text-icon`} />
+            <P>This file cannot be previewed.</P>
+            <Label style={tw`font-normal text-secondary`}>Download file to see it locally.</Label>
+          </View>
         ) : (
           <P>Cannot fetch &quot;{filePath}&quot; file content.</P>
         )}

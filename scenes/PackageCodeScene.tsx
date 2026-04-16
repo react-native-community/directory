@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import useSWR from 'swr';
 
-import { Label, P } from '~/common/styleguide';
+import { Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { FileIcon } from '~/components/Icons';
 import CodeBrowserContent from '~/components/Package/CodeBrowser/CodeBrowserContent';
@@ -17,7 +17,9 @@ import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
+  const { isSmallScreen } = useLayout();
   const [activeFile, setActiveFile] = useState<string | null>(null);
+
   const library = useMemo(
     () => apiData.libraries.find(lib => lib.npmPkg === packageName),
     [apiData.libraries, packageName]
@@ -74,11 +76,17 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
             )}
             {!data && !isLoading && <P>Cannot fetch package bundle code.</P>}
             {data && !isLoading && (
-              <View style={tw`flex max-h-[70vh] flex-row`}>
+              <View style={[tw`flex max-h-[70vh] flex-row`, isSmallScreen && tw`flex-col`]}>
                 <ScrollView
                   id="codeBrowserList"
-                  style={tw`flex-grow-0 border-r border-palette-gray2 dark:border-default`}
-                  contentContainerStyle={tw`flex-0 w-[320px] px-3 py-2`}>
+                  style={[
+                    tw`flex-grow-0 border-palette-gray2 dark:border-default`,
+                    isSmallScreen ? tw`border-b` : tw`border-r`,
+                  ]}
+                  contentContainerStyle={[
+                    tw`flex-0 px-3 py-2`,
+                    isSmallScreen ? tw`h-[320px]` : tw`w-[320px]`,
+                  ]}>
                   {sortedFiles.map(file => {
                     const cleanPath = getRelativeFilePath(file.path, data.prefix);
                     return (
@@ -98,11 +106,19 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     );
                   })}
                 </ScrollView>
-                <View style={[tw`flex flex-1`, !activeFile && tw`items-center justify-center`]}>
+                <View
+                  style={[
+                    tw`flex flex-1 bg-white dark:bg-[#0d1117]`,
+                    !activeFile && tw`items-center justify-center`,
+                    isSmallScreen && tw`min-h-[50vh]`,
+                  ]}>
                   {activeFile ? (
                     <CodeBrowserContent packageName={packageName} filePath={activeFile} />
                   ) : (
-                    <P>Select file to preview from the list on the left.</P>
+                    <View style={tw`flex flex-col items-center gap-1`}>
+                      <FileIcon style={tw`mb-2 size-20 text-icon`} />
+                      <P>Select file to preview from the list on the left.</P>
+                    </View>
                   )}
                 </View>
               </View>

@@ -783,6 +783,7 @@ select {
     max-width: 100%;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
+    line-height: 16px;
   }
 }
 
