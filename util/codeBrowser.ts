@@ -1,5 +1,61 @@
 import { type CodeBrowserTreeDirectory, type UnpkgMeta } from '~/types';
 
+export const PREVIEW_DISABLED_FILES = [
+  'a',
+  'aar',
+  'bin',
+  'dex',
+  'jar',
+  'gz',
+  'mat',
+  'rc',
+  'raw',
+  'so',
+  'strings',
+  'swiftdoc',
+  'swiftsourceinfo',
+  'tgz',
+  'ttf',
+  'xcuserstate',
+];
+export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+export const FILE_WARNINGS = [
+  {
+    message: 'This file should not be part of the bundle and can be safely ignored.',
+    fileNames: [
+      '.all-contributorsrc',
+      '.babelrc',
+      '.clang-format-ignore',
+      '.eslintrc.js',
+      '.gitattributes',
+      '.gitkeep',
+      '.gitmodules',
+      '.licence-config.yaml',
+      '.prettierignore',
+      '.travis.yml',
+      '.watchmanconfig',
+      'babel.config.js',
+      'eslint.config.cjs',
+      'eslint.config.mjs',
+      'gradlew',
+      'gradlew.bat',
+      'jest.config.js',
+      'jest-rsc.config.js',
+      'publish.gradle',
+      'prettierrc.js',
+      'proguard-rules.pro',
+      'rollup.config.js',
+      'settings.gradle',
+      'tsconfig.json',
+      'tsconfig.build.json',
+      'tsconfig.tsbuildinfo',
+      'tsup.config.ts',
+      'typedoc.json',
+    ],
+  },
+];
+
 function getRelativeFilePath(path: string, prefix?: string) {
   return prefix ? path.replace(prefix, '') : path;
 }

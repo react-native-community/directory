@@ -11,6 +11,7 @@ import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { type UnpkgMeta } from '~/types';
+import { IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
@@ -23,19 +24,16 @@ type Props = {
   fileData?: UnpkgMeta['files'][number];
 };
 
-const PREVIEW_DISABLED = ['tgz', 'gz', 'a', 'so', 'mat', 'raw'];
-const IMAGE_FILE = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-
 export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
 
-  const isTooBig = fileData?.size && fileData.size > 1024 * 1024 * 4;
-  const isPreviewDisabled = PREVIEW_DISABLED.includes(fileExtension) || isTooBig;
-  const isImageFile = IMAGE_FILE.includes(fileExtension);
+  const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);
+  const isPreviewDisabled = PREVIEW_DISABLED_FILES.includes(fileExtension) || isTooBig;
+  const isImageFile = IMAGE_FILES.includes(fileExtension);
 
   const { data, isLoading } = useSWR<string>(
     !isPreviewDisabled && !isImageFile
-      ? `/api/proxy/unpkg?name=${packageName}&path=${filePath}`
+      ? `/api/proxy/unpkg?name=${packageName}&path=${filePath.replaceAll('+', '%2B')}`
       : undefined,
     (url: string) =>
       fetch(url).then(res => {
@@ -92,12 +90,18 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
         )}
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
-        {isImageFile && <img src={`https://unpkg.com/${packageName}/${filePath}`} alt="" />}
-        {isPreviewDisabled && (
+        {isImageFile && (
+          <img
+            src={`https://unpkg.com/${packageName}/${filePath}`}
+            alt=""
+            style={tw`max-h-full max-w-full`}
+          />
+        )}
+        {!isImageFile && isPreviewDisabled && (
           <View style={tw`flex flex-col items-center gap-1`}>
             <TempFileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
             <P>
-              {isTooBig
+              {fileData?.size && isTooBig
                 ? `This file is too big (${formatBytes(fileData?.size)}), and cannot be previewed.`
                 : 'This file cannot be previewed.'}
             </P>

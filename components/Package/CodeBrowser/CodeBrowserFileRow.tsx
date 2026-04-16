@@ -4,6 +4,7 @@ import { Pressable, View } from 'react-native';
 import { Label } from '~/common/styleguide';
 import { FileIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
+import { FILE_WARNINGS } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -14,21 +15,6 @@ type Props = {
   onPress?: () => void;
 };
 
-const WARNINGS = [
-  {
-    message: 'This file should not be part of the bundle and can be safely ignored.',
-    fileNames: [
-      '.clang-format-ignore',
-      '.eslintrc.js',
-      '.licence-config.yaml',
-      '.prettierignore',
-      'tsconfig.json',
-      'tsconfig.tsbuildinfo',
-      'tsup.config.ts',
-    ],
-  },
-];
-
 export default function CodeBrowserFileRow({
   label,
   depth = 0,
@@ -37,7 +23,7 @@ export default function CodeBrowserFileRow({
   onPress,
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
-  const warning = WARNINGS.find(warn => warn.fileNames.includes(label));
+  const warning = FILE_WARNINGS.find(warn => warn.fileNames.includes(label));
 
   const Icon = useMemo(() => (isDirectory ? FolderIcon : FileIcon), [isDirectory]);
 
