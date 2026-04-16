@@ -52,11 +52,15 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const contentTabs = useMemo<MarkdownTab[]>(
     () =>
       [
-        {
-          title: 'Readme' as const,
-          Icon: ReadmeFile,
-          url: `https://unpkg.com/${packageName}/README.md`,
-        },
+        ...(packageName
+          ? [
+              {
+                title: 'Readme' as const,
+                Icon: ReadmeFile,
+                url: `/api/proxy/unpkg?name=${packageName}&path=README.md`,
+              },
+            ]
+          : []),
         ...(library?.github?.hasChangelog
           ? [
               {

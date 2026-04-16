@@ -8,7 +8,9 @@ This document describes the server-side JSON API exposed by the React Native Dir
 - [`POST /api/libraries/check`](#post-apilibrariescheck) - return metadata for a list of npm package names
 - [`GET /api/libraries/statistic`](#get-apilibrariesstatistic) - aggregated statistics about the directory dataset
 - [`GET /api/library`](#get-apilibrary) - lookup one or more libraries by npm package name (optionally `check` existence only)
+- [`GET /api/proxy/github-funding`](#get-apiproxygithub-funding) - proxy to https://api.github.com/graphql API with baked query for fetching funding data
 - [`GET /api/proxy/npm-stat`](#get-apiproxynpm-stat) - proxy to https://npm-stat.com download counts API
+- [`GET /api/proxy/unpkg`](#get-apiproxyunpkg) - proxy to https://unpkg.com/ API with redirect handling on server-side
 
 ## GET /api/libraries
 
@@ -331,6 +333,43 @@ Endpoint can optionally perform a quick `check` to return existence flag only, o
 
 ---
 
+## GET /api/proxy/github-funding
+
+Proxy to api.github.com/graphql to fetch project funding data. This endpoint uses baked query, and cannot be used to fetch other data than funding details.
+
+- Method: GET
+- Path: `/api/proxy/github-funding`
+- Query parameters:
+  - `name` - GitHub repository name (required).
+  - `owner` - GitHub repository owner (required).
+
+### Notes
+
+- It is subject to the same CORS and rate limiting policies as the original api.github.com/graphql.
+
+### Example
+
+- GET `/api/proxy/github-funding?owner=lodev09&name=react-native-true-sheet`
+
+  Response:
+
+  ```json
+  {
+    "fundingLinks": [
+      {
+        "platform": "GITHUB",
+        "url": "https://github.com/lodev09"
+      },
+      {
+        "platform": "BUY_ME_A_COFFEE",
+        "url": "https://buymeacoffee.com/lodev09"
+      }
+    ]
+  }
+  ```
+
+---
+
 ## GET /api/proxy/npm-stat
 
 Proxy to npm-stat.com to fetch download counts for the last month. This endpoint is a simple proxy and does not perform any data processing.
@@ -385,4 +424,51 @@ Proxy to npm-stat.com to fetch download counts for the last month. This endpoint
       "2026-02-16": 771778
     }
   }
+  ```
+
+---
+
+## GET /api/proxy/unpkg
+
+Proxy to unpkg.com to fetch various package file content.
+
+- Method: GET
+- Path: `/api/proxy/unpkg.com`
+- Query parameters:
+  - `name` - npm package name (required).
+  - `path` - path to wanted file from the bundle (required).
+
+### Notes
+
+- Redirects returned from unpkg.com are resolve server-side, before returning response.
+- Return will be a plain text if file content is accessible, in any other case (i.e. errors) JSON would be returned.
+
+### Example
+
+- GET `/api/proxy/unpkg?name=react-native-safe-area-context&path=README.md`
+
+  Response:
+
+  ```mdx
+  ![safearea](https://github.com/user-attachments/assets/d951efe6-4d25-4ff6-b654-7aaf4519829b)
+
+  ### About
+
+  App & Flow is a Montreal-based React Native engineering and consulting studio. We partner with the worldâ€™s top companies and are recommended by [Expo](https://expo.dev/consultants). Need a hand? Letâ€™s build together. team@appandflow.com
+
+  # react-native-safe-area-context
+
+  [![npm](https://img.shields.io/npm/v/react-native-safe-area-context)](https://www.npmjs.com/package/react-native-safe-area-context) ![Supports Android, iOS, web, macOS and Windows](https://img.shields.io/badge/platforms-android%20%7C%20ios%20%7C%20web%20%7C%20macos%20%7C%20windows-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/react-native-safe-area-context.svg)
+
+  [![JavaScript tests](https://github.com/AppAndFlow/react-native-safe-area-context/workflows/JavaScript%20tests/badge.svg)](https://github.com/AppAndFlow/react-native-safe-area-context/actions/workflows/js.yml) [![iOS build](https://github.com/AppAndFlow/react-native-safe-area-context/workflows/iOS%20build/badge.svg)](https://github.com/AppAndFlow/react-native-safe-area-context/actions/workflows/ios.yml) [![Android build](https://github.com/AppAndFlow/react-native-safe-area-context/workflows/Android%20build/badge.svg)](https://github.com/AppAndFlow/react-native-safe-area-context/actions/workflows/android.yml)
+
+  A flexible way to handle safe area, also works on Android and Web!
+
+  ## Documentation
+
+  Check out our [documentation site](https://appandflow.github.io/react-native-safe-area-context/).
+
+  ## Contributing
+
+  See the [Contributing Guide](CONTRIBUTING.md)
   ```
