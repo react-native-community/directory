@@ -90,10 +90,16 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     isSmallScreen && tw`min-h-[50vh]`,
                   ]}>
                   {activeFile ? (
-                    <CodeBrowserContent packageName={packageName} filePath={activeFile} />
+                    <CodeBrowserContent
+                      packageName={packageName}
+                      filePath={activeFile}
+                      fileData={data?.files.find(
+                        file => file.path === `${data.prefix}${activeFile}`
+                      )}
+                    />
                   ) : (
                     <View style={tw`flex flex-col items-center gap-1`}>
-                      <FileIcon style={tw`mb-2 size-20 text-icon`} />
+                      <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
                       <P>Select file to preview from the list on the left.</P>
                     </View>
                   )}

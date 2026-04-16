@@ -1,10 +1,13 @@
 export const SHIKI_OPTS = {
   langAlias: {
     gradle: 'groovy',
-    map: 'json',
-    pro: 'properties',
-    podspec: 'ruby',
-    m: 'objective-c',
     h: 'objective-c',
+    hpp: 'objective-cpp',
+    map: 'json',
+    m: 'objective-c',
+    mm: 'objective-c',
+    podspec: 'ruby',
+    pro: 'properties',
+    tsbuildinfo: 'json',
   },
 } as const;

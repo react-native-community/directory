@@ -10,7 +10,9 @@ import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
+import { type UnpkgMeta } from '~/types';
 import { TimeRange } from '~/util/datetime';
+import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
 
 import CodeBrowserContentHighlighter from './CodeBrowserContentHighlighter';
@@ -18,14 +20,17 @@ import CodeBrowserContentHighlighter from './CodeBrowserContentHighlighter';
 type Props = {
   packageName: string;
   filePath: string;
+  fileData?: UnpkgMeta['files'][number];
 };
 
-const PREVIEW_DISABLED = ['tgz', 'gz'];
+const PREVIEW_DISABLED = ['tgz', 'gz', 'a', 'so', 'mat', 'raw'];
 const IMAGE_FILE = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
 
-export default function CodeBrowserContent({ packageName, filePath }: Props) {
+export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
-  const isPreviewDisabled = PREVIEW_DISABLED.includes(fileExtension);
+
+  const isTooBig = fileData?.size && fileData.size > 1024 * 1024 * 4;
+  const isPreviewDisabled = PREVIEW_DISABLED.includes(fileExtension) || isTooBig;
   const isImageFile = IMAGE_FILE.includes(fileExtension);
 
   const { data, isLoading } = useSWR<string>(
@@ -56,7 +61,7 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
     );
   }
 
-  if (!isLoading && data) {
+  if (!isLoading && data && typeof data === 'string') {
     return (
       <>
         <CodeBrowserContentHeader filePath={filePath}>
@@ -90,8 +95,12 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
         {isImageFile && <img src={`https://unpkg.com/${packageName}/${filePath}`} alt="" />}
         {isPreviewDisabled && (
           <View style={tw`flex flex-col items-center gap-1`}>
-            <TempFileIcon style={tw`mb-2 size-20 text-icon`} />
-            <P>This file cannot be previewed.</P>
+            <TempFileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
+            <P>
+              {isTooBig
+                ? `This file is too big (${formatBytes(fileData?.size)}), and cannot be previewed.`
+                : 'This file cannot be previewed.'}
+            </P>
             <Label style={tw`font-normal text-secondary`}>Download file to see it locally.</Label>
           </View>
         )}

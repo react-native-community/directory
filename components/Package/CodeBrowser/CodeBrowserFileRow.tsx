@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import { FileIcon, FolderIcon } from '~/components/Icons';
+import { FileIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
+import Tooltip from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -13,6 +14,21 @@ type Props = {
   onPress?: () => void;
 };
 
+const WARNINGS = [
+  {
+    message: 'This file should not be part of the bundle and can be safely ignored.',
+    fileNames: [
+      '.clang-format-ignore',
+      '.eslintrc.js',
+      '.licence-config.yaml',
+      '.prettierignore',
+      'tsconfig.json',
+      'tsconfig.tsbuildinfo',
+      'tsup.config.ts',
+    ],
+  },
+];
+
 export default function CodeBrowserFileRow({
   label,
   depth = 0,
@@ -21,6 +37,9 @@ export default function CodeBrowserFileRow({
   onPress,
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
+  const warning = WARNINGS.find(warn => warn.fileNames.includes(label));
+
+  const Icon = useMemo(() => (isDirectory ? FolderIcon : FileIcon), [isDirectory]);
 
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-1 last:mb-20`,
@@ -29,20 +48,32 @@ export default function CodeBrowserFileRow({
 
   const content = (
     <>
-      {isDirectory ? (
-        <FolderIcon style={tw`size-4 shrink-0 text-icon`} />
-      ) : (
-        <FileIcon style={tw`size-4 shrink-0 text-icon`} />
-      )}
+      <Icon
+        style={[
+          tw`size-4 shrink-0 text-icon`,
+          isActive && tw`text-primary-darker dark:text-primary-dark`,
+          isDirectory && tw`text-tertiary dark:text-accented`,
+        ]}
+      />
       <Label
         style={[
-          tw`font-mono`,
-          isDirectory && tw`font-bold text-secondary`,
+          tw`font-mono select-none`,
+          isDirectory && tw`text-palette-gray5 dark:text-palette-gray4`,
           isActive && tw`text-primary-darker dark:text-primary`,
           { wordBreak: 'break-word' },
         ]}>
         {label}
       </Label>
+      {warning && (
+        <Tooltip
+          trigger={
+            <View style={tw`ml-auto`}>
+              <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+            </View>
+          }>
+          <span style={tw`text-[12px]`}>{warning.message}</span>
+        </Tooltip>
+      )}
     </>
   );
 
