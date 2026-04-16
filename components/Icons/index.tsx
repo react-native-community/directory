@@ -1522,3 +1522,26 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
     </Svg>
   );
 }
+
+export function FolderIcon({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <path
+        d="M216.89,208H39.38A7.4,7.4,0,0,1,32,200.62V80H216a8,8,0,0,1,8,8V200.89A7.11,7.11,0,0,1,216.89,208Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <path
+        d="M32,80V56a8,8,0,0,1,8-8H92.69a8,8,0,0,1,5.65,2.34L128,80"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}

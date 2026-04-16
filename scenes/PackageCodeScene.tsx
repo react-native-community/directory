@@ -6,7 +6,7 @@ import { P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { FileIcon } from '~/components/Icons';
 import CodeBrowserContent from '~/components/Package/CodeBrowser/CodeBrowserContent';
-import CodeBrowserFileRow from '~/components/Package/CodeBrowser/CodeBrowserFileRow';
+import CodeBrowserFileTree from '~/components/Package/CodeBrowser/CodeBrowserFileTree';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
@@ -14,6 +14,7 @@ import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import PageMeta from '~/components/PageMeta';
 import { type UnpkgMeta } from '~/types';
 import { type PackageCodePageProps } from '~/types/pages';
+import { buildCodeBrowserFileTree } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
@@ -35,20 +36,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     }
   );
 
-  const sortedFiles = useMemo(
-    () =>
-      [...(data?.files ?? [])].sort((a, b) => {
-        const leftPath = getRelativeFilePath(a.path, data?.prefix);
-        const rightPath = getRelativeFilePath(b.path, data?.prefix);
-        const leftIsNested = leftPath.includes('/');
-        const rightIsNested = rightPath.includes('/');
-
-        if (leftIsNested !== rightIsNested) {
-          return leftIsNested ? -1 : 1;
-        }
-
-        return leftPath.localeCompare(rightPath);
-      }),
+  const fileTree = useMemo(
+    () => buildCodeBrowserFileTree(data?.files ?? [], data?.prefix),
     [data?.files, data?.prefix]
   );
 
@@ -88,17 +77,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     tw`flex-0 py-2`,
                     isSmallScreen ? tw`h-[320px]` : tw`w-[320px]`,
                   ]}>
-                  {sortedFiles.map(file => {
-                    const cleanPath = getRelativeFilePath(file.path, data.prefix);
-                    return (
-                      <CodeBrowserFileRow
-                        key={file.path}
-                        filePath={cleanPath}
-                        onPress={() => setActiveFile(cleanPath)}
-                        isActive={cleanPath === activeFile}
-                      />
-                    );
-                  })}
+                  <CodeBrowserFileTree
+                    tree={fileTree}
+                    activeFile={activeFile}
+                    onSelectFile={setActiveFile}
+                  />
                 </ScrollView>
                 <View
                   style={[
@@ -122,8 +105,4 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       </ContentContainer>
     </>
   );
-}
-
-function getRelativeFilePath(path: string, prefix?: string) {
-  return prefix ? path.replace(prefix, '') : path;
 }

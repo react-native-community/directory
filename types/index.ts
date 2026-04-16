@@ -358,6 +358,18 @@ export type GitHubUser = {
   user_view_type: string;
 };
 
+export type CodeBrowserTreeFile = {
+  name: string;
+  path: string;
+};
+
+export type CodeBrowserTreeDirectory = {
+  name: string;
+  path: string;
+  directories: Record<string, CodeBrowserTreeDirectory>;
+  files: CodeBrowserTreeFile[];
+};
+
 export type UnpkgMeta = {
   files: {
     integrity: string;
