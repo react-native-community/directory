@@ -82,7 +82,9 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
   return (
     <>
       <CodeBrowserContentHeader filePath={filePath}>
-        <DownloadFileButton filePath={filePath} packageName={packageName} />
+        {(isPreviewDisabled || isImageFile) && (
+          <DownloadFileButton filePath={filePath} packageName={packageName} />
+        )}
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
         {isImageFile && <img src={`https://unpkg.com/${packageName}/${filePath}`} alt="" />}
@@ -94,7 +96,9 @@ export default function CodeBrowserContent({ packageName, filePath }: Props) {
           </View>
         )}
         {!isPreviewDisabled && !isImageFile && (
-          <P>Cannot fetch &quot;{filePath}&quot; file content.</P>
+          <P>
+            Cannot fetch &quot;<code>{filePath}</code>&quot; file content.
+          </P>
         )}
       </View>
     </>

@@ -35,7 +35,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
-          <PackageHeader library={library} />
+          <PackageHeader library={library} skipDescription />
           <View
             style={[
               tw`mb-3 mt-2 flex-row items-center gap-1 rounded-xl border border-palette-gray3 bg-palette-gray1 px-7 py-4 dark:border-default dark:bg-palette-gray7`,

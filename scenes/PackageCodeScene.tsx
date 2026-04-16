@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import useSWR from 'swr';
 
-import { Label, P, useLayout } from '~/common/styleguide';
+import { P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { FileIcon } from '~/components/Icons';
 import CodeBrowserContent from '~/components/Package/CodeBrowser/CodeBrowserContent';
+import CodeBrowserFileRow from '~/components/Package/CodeBrowser/CodeBrowserFileRow';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
@@ -65,12 +66,12 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
-          <PackageHeader library={library} />
+          <PackageHeader library={library} skipDescription />
           <View
             id="codeBrowser"
             style={tw`mt-2 flex h-[70vh] overflow-hidden rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
             {isLoading && (
-              <View style={tw`flex min-h-[320px] items-center justify-center`}>
+              <View style={tw`flex flex-1 items-center justify-center`}>
                 <ThreeDotsLoader />
               </View>
             )}
@@ -84,25 +85,18 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     isSmallScreen ? tw`border-b` : tw`border-r`,
                   ]}
                   contentContainerStyle={[
-                    tw`flex-0 px-3 py-2`,
+                    tw`flex-0 py-2`,
                     isSmallScreen ? tw`h-[320px]` : tw`w-[320px]`,
                   ]}>
                   {sortedFiles.map(file => {
                     const cleanPath = getRelativeFilePath(file.path, data.prefix);
                     return (
-                      <Pressable
+                      <CodeBrowserFileRow
                         key={file.path}
-                        style={tw`flex flex-row items-center gap-1.5 py-1`}
-                        onPress={() => setActiveFile(cleanPath)}>
-                        <FileIcon style={tw`size-4 shrink-0 text-icon`} />
-                        <Label
-                          style={[
-                            tw`font-mono break-words`,
-                            cleanPath === activeFile && tw`text-primary-darker dark:text-primary`,
-                          ]}>
-                          {cleanPath}
-                        </Label>
-                      </Pressable>
+                        filePath={cleanPath}
+                        onPress={() => setActiveFile(cleanPath)}
+                        isActive={cleanPath === activeFile}
+                      />
                     );
                   })}
                 </ScrollView>

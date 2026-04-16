@@ -17,9 +17,15 @@ type Props = {
   library: LibraryType;
   registryData?: NpmRegistryVersionData;
   rightSlot?: ReactNode;
+  skipDescription?: boolean;
 };
 
-export default function PackageHeader({ library, registryData, rightSlot }: Props) {
+export default function PackageHeader({
+  library,
+  registryData,
+  rightSlot,
+  skipDescription,
+}: Props) {
   const { isSmallScreen } = useLayout();
 
   const ghUsername = library.github.fullName.split('/')[0];
@@ -66,7 +72,7 @@ export default function PackageHeader({ library, registryData, rightSlot }: Prop
         {rightSlot}
       </View>
       <CompatibilityTags library={library} />
-      <LibraryDescription github={library.github} />
+      {!skipDescription && <LibraryDescription github={library.github} />}
     </>
   );
 }
