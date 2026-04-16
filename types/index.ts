@@ -357,3 +357,15 @@ export type GitHubUser = {
   url: string;
   user_view_type: string;
 };
+
+export type UnpkgMeta = {
+  files: {
+    integrity: string;
+    path: string;
+    size: number;
+    type: string;
+  }[];
+  package: string;
+  prefix: string;
+  version: string;
+};

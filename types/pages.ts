@@ -62,3 +62,11 @@ export type PackageScorePageProps = {
   };
   errorMessage?: string;
 };
+
+export type PackageCodePageProps = {
+  packageName: string;
+  apiData: {
+    libraries: LibraryType[];
+  };
+  errorMessage?: string;
+};

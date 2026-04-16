@@ -63,7 +63,7 @@ export default function PackageVersionsScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={tw`my-6 px-5 py-3`}>
+      <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} />
           {hasVersionDownloads && npmDownloads ? (
