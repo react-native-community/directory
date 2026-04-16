@@ -87,7 +87,7 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
   return (
     <>
       <CodeBrowserContentHeader filePath={filePath}>
-        {(isPreviewDisabled || isImageFile) && (
+        {(isPreviewDisabled ?? isImageFile) && (
           <DownloadFileButton filePath={filePath} packageName={packageName} />
         )}
       </CodeBrowserContentHeader>
