@@ -9,6 +9,7 @@ export const SHIKI_OPTS = {
     hpp: 'cpp',
     map: 'json',
     m: 'objective-c',
+    md: 'mdx',
     mm: 'objective-cpp',
     plist: 'xml',
     podspec: 'ruby',

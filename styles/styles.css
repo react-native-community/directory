@@ -773,6 +773,7 @@ select {
   #codeBrowserList {
     background-color: var(--table-alt-row);
     scrollbar-color: var(--icon) var(--gray-1);
+    scrollbar-gutter: stable;
   }
 
   pre {

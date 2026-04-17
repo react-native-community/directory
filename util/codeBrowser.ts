@@ -56,7 +56,7 @@ export const FILE_WARNINGS = [
   },
 ];
 
-function getRelativeFilePath(path: string, prefix?: string) {
+export function getCodeBrowserFilePath(path: string, prefix?: string) {
   return prefix ? path.replace(prefix, '') : path;
 }
 
@@ -67,7 +67,7 @@ export function buildCodeBrowserFileTree(
   const root = createCodeBrowserTreeDirectory('', '');
 
   files.forEach(file => {
-    const relativePath = getRelativeFilePath(file.path, prefix);
+    const relativePath = getCodeBrowserFilePath(file.path, prefix);
     const pathSegments = relativePath.split('/').filter(Boolean);
 
     if (pathSegments.length === 0) {
