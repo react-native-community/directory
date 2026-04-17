@@ -4,7 +4,7 @@ import { Pressable, View } from 'react-native';
 import { Label } from '~/common/styleguide';
 import { FileIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
-import { FILE_WARNINGS } from '~/util/codeBrowser';
+import { getFileWarning } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -23,7 +23,7 @@ export default function CodeBrowserFileRow({
   onPress,
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
-  const warning = FILE_WARNINGS.find(warn => warn.fileNames.includes(label));
+  const warning = isDirectory ? undefined : getFileWarning(label);
 
   const Icon = useMemo(() => (isDirectory ? FolderIcon : FileIcon), [isDirectory]);
 

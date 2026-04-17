@@ -1545,3 +1545,74 @@ export function FolderIcon({ width = 24, height = 24, style }: IconProps) {
     </Svg>
   );
 }
+
+export function ImageFileIcon({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <rect
+        x="40"
+        y="40"
+        width="176"
+        height="176"
+        rx="8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <circle
+        cx="96"
+        cy="96"
+        r="16"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <path
+        d="M56.69,216,166.34,106.34a8,8,0,0,1,11.32,0L216,144.69"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <polyline
+        points="64 88 16 128 64 168"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <polyline
+        points="192 88 240 128 192 168"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <line
+        x1="160"
+        y1="40"
+        x2="96"
+        y2="216"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}

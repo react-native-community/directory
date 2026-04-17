@@ -18,7 +18,7 @@ export const PREVIEW_DISABLED_FILES = [
   'ttf',
   'xcuserstate',
 ];
-export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
 
 export const FILE_WARNINGS = [
   {
@@ -37,27 +37,33 @@ export const FILE_WARNINGS = [
       '.travis.yml',
       '.watchmanconfig',
       'babel.config.js',
-      'eslint.config.cjs',
-      'eslint.config.mjs',
+      'eslint.config*.js',
       'gradle-wrapper.jar',
       'gradlew',
       'gradlew.bat',
-      'jest.config.js',
-      'jest-rsc.config.js',
+      'jest*.config.js',
       'publish.gradle',
       'prettierrc.js',
       'proguard-rules.pro',
       'rollup.config.js',
       'settings.gradle',
       'spotless.gradle',
-      'tsconfig.json',
-      'tsconfig.build.json',
-      'tsconfig.tsbuildinfo',
+      'tsconfig*.json',
+      '*.tsbuildinfo',
       'tsup.config.ts',
       'typedoc.json',
     ],
   },
 ];
+
+const FILE_WARNING_MATCHERS = FILE_WARNINGS.map(warning => ({
+  ...warning,
+  matchers: warning.fileNames.map(createFileWarningMatcher),
+}));
+
+export function getFileWarning(fileName: string) {
+  return FILE_WARNING_MATCHERS.find(warning => warning.matchers.some(matcher => matcher(fileName)));
+}
 
 export function getCodeBrowserFilePath(path: string, prefix?: string) {
   return prefix ? path.replace(prefix, '') : path;
@@ -108,4 +114,23 @@ function createCodeBrowserTreeDirectory(name: string, path: string): CodeBrowser
     directories: {},
     files: [],
   };
+}
+
+function createFileWarningMatcher(pattern: string) {
+  if (!pattern.includes('*')) {
+    return (fileName: string) => fileName === pattern;
+  }
+
+  const regex = new RegExp(
+    `^${pattern
+      .split('*')
+      .map(pathSegment => escapeRegularExpression(pathSegment))
+      .join('.*')}$`
+  );
+
+  return (fileName: string) => regex.test(fileName);
+}
+
+function escapeRegularExpression(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

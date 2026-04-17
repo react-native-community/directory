@@ -17,6 +17,7 @@ export const SHIKI_OPTS = {
     pro: 'properties',
     props: 'xml',
     sln: 'ini',
+    svg: 'xml',
     vcxproj: 'xml',
     tsbuildinfo: 'json',
     xcprivacy: 'xml',
