@@ -1,5 +1,7 @@
 export const SHIKI_OPTS = {
   langAlias: {
+    appxmanifest: 'xml',
+    cc: 'cpp',
     cfg: 'ini',
     cl: 'cpp',
     filters: 'xml',
@@ -7,6 +9,7 @@ export const SHIKI_OPTS = {
     gradle: 'groovy',
     h: 'objective-cpp',
     hpp: 'cpp',
+    iml: 'xml',
     map: 'json',
     m: 'objective-c',
     md: 'mdx',
@@ -19,7 +22,9 @@ export const SHIKI_OPTS = {
     sln: 'ini',
     svg: 'xml',
     vcxproj: 'xml',
+    targets: 'xml',
     tsbuildinfo: 'json',
+    xaml: 'xml',
     xcprivacy: 'xml',
     xcworkspacedata: 'xml',
   },
