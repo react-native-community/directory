@@ -6595,12 +6595,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/package",
-    "npmPkg": "react-native-vision-camera",
-    "examples": ["https://github.com/mrousavy/react-native-vision-camera/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/example.png",
-      "https://raw.githubusercontent.com/mrousavy/react-native-vision-camera/main/docs/static/img/demo.gif"
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
@@ -20517,6 +20514,36 @@
   {
     "githubUrl": "https://github.com/yzlin/react-native-alright-gallery",
     "examples": ["https://github.com/yzlin/react-native-alright-gallery/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-barcode-scanner",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-location",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-resizer",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-skia",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-worklets",
     "ios": true,
     "android": true,
     "newArchitecture": true
