@@ -124,6 +124,10 @@
   border-radius: 3px;
 }
 
+* {
+  scrollbar-width: thin;
+}
+
 html,
 body {
   background: var(--overscroll-background);
@@ -760,5 +764,38 @@ select {
     outline-offset: 0;
     border: 0;
     background-color: var(--table-header-background);
+  }
+}
+
+/* CODE BROWSER */
+
+#codeBrowser {
+  #codeBrowserList {
+    background-color: var(--table-alt-row);
+    scrollbar-color: var(--icon) var(--gray-1);
+    scrollbar-gutter: stable;
+  }
+
+  pre {
+    margin-block: 0;
+    padding: 16px;
+    overflow: auto;
+    height: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    line-height: 16px;
+  }
+}
+
+:root.dark {
+  #codeBrowser {
+    #codeBrowserList {
+      scrollbar-color: var(--icon) var(--table-alt-row);
+    }
+
+    pre {
+      scrollbar-color: var(--icon) #0d1117;
+    }
   }
 }

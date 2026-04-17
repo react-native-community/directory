@@ -60,7 +60,7 @@ export default function PackageOverviewScene({
         path="package"
       />
       <DetailsNavigation library={library} />
-      <ContentContainer style={tw`px-0 py-6`}>
+      <ContentContainer style={tw`px-0 pb-6 pt-3`}>
         <View style={[tw`flex-row gap-8 px-5 py-3`, isSmallScreen && tw`flex-col gap-5`]}>
           <View style={tw`flex-1 gap-3`}>
             <PackageHeader

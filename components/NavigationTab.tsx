@@ -8,7 +8,7 @@ import tw from '~/util/tailwind';
 type Props = {
   title: string;
   path?: string;
-  counter?: number;
+  counter?: number | string;
 };
 
 function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Props) {

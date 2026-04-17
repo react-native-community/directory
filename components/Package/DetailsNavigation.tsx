@@ -64,6 +64,7 @@ export default function DetailsNavigation({ library }: Props) {
           counter={library.npm?.versionsCount}
           path={`/package/${library.npmPkg}/versions`}
         />
+        <NavigationTab title="Code" path={`/package/${library.npmPkg}/code`} counter="BETA" />
         <NavigationTab title="Score" path={`/package/${library.npmPkg}/score`} />
       </ContentContainer>
     </Navigation>
