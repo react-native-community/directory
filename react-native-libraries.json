@@ -10595,12 +10595,6 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/howljs/react-native-auto-route",
-    "examples": ["https://github.com/howljs/react-native-auto-route/tree/main/example"],
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/neurio/react-native-local-network-permission",
     "npmPkg": "@generac/react-native-local-network-permission",
     "examples": [
@@ -20504,5 +20498,36 @@
     "android": true,
     "web": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/dpyeates/react-native-cesium",
+    "examples": ["https://github.com/dpyeates/react-native-cesium/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/dpyeates/react-native-cesium/main/example/react-native-cesium-example.jpg"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/talon2295/keychain-synced-storage",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/yzlin/react-native-alright-gallery",
+    "examples": ["https://github.com/yzlin/react-native-alright-gallery/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/packages/react-native-nitro-markdown",
+    "examples": [
+      "https://github.com/JoaoPauloCMarra/react-native-nitro-markdown/tree/main/apps/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
