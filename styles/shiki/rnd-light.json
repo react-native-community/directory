@@ -268,7 +268,12 @@
       }
     },
     {
-      "scope": ["entity.name", "meta.export.default", "meta.definition.variable"],
+      "scope": [
+        "entity.name",
+        "meta.export.default",
+        "meta.definition.variable",
+        "storage.type.annotation"
+      ],
       "settings": {
         "foreground": "#953800"
       }
@@ -276,15 +281,21 @@
     {
       "scope": [
         "punctuation.terminator.statement",
+        "punctuation.bracket",
         "punctuation.definition",
+        "punctuation.section.arguments",
+        "punctuation.section.angle-brackets",
+        "punctuation.section.block",
         "punctuation.section.embedded.begin",
         "punctuation.section.embedded.end",
         "punctuation.section.group.begin",
         "punctuation.section.group.end",
         "punctuation.section.parameters.begin",
         "punctuation.section.parameters.end",
+        "punctuation.section.parens",
+        "punctuation.section.function",
+        "punctuation.section.scope",
         "punctuation.separator",
-        "meta.block",
         "meta.brace.round",
         "meta.brace.square",
         "meta.embedded.expression",
@@ -320,13 +331,19 @@
       }
     },
     {
-      "scope": ["keyword.soft", "keyword.hard", "keyword.operator", "keyword.control"],
+      "scope": [
+        "keyword.soft",
+        "keyword.hard",
+        "keyword.operator",
+        "keyword.control",
+        "keyword.other"
+      ],
       "settings": {
         "foreground": "#cf222e"
       }
     },
     {
-      "scope": ["storage", "storage.type"],
+      "scope": ["storage", "storage.type", "storage.modifier.attribute"],
       "settings": {
         "foreground": "#cf222e"
       }
@@ -362,7 +379,7 @@
       }
     },
     {
-      "scope": "variable.other",
+      "scope": ["variable.other", "meta.function.definition"],
       "settings": {
         "foreground": "#1f2328"
       }
