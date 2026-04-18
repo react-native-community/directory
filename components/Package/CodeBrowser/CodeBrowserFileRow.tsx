@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 
-import { Label } from '~/common/styleguide';
+import { P } from '~/common/styleguide';
 import { FileIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { getFileWarning } from '~/util/codeBrowser';
@@ -28,7 +28,7 @@ export default function CodeBrowserFileRow({
   const Icon = useMemo(() => (isDirectory ? FolderIcon : FileIcon), [isDirectory]);
 
   const rowStyle = [
-    tw`flex flex-row items-center gap-1.5 px-3 py-1 last:mb-20`,
+    tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
     { paddingLeft: 12 + depth * 8 },
   ];
 
@@ -41,15 +41,15 @@ export default function CodeBrowserFileRow({
           isDirectory && tw`text-tertiary dark:text-accented`,
         ]}
       />
-      <Label
+      <P
         style={[
-          tw`font-mono select-none`,
-          isDirectory && tw`text-palette-gray5 dark:text-palette-gray4`,
+          tw`font-mono select-none text-[12px] font-light tracking-normal`,
+          isDirectory && tw`font-extralight text-palette-gray5 dark:text-palette-gray4`,
           isActive && tw`text-primary-darker dark:text-primary`,
           { wordBreak: 'break-word' },
         ]}>
         {label}
-      </Label>
+      </P>
       {warning && (
         <Tooltip
           trigger={
