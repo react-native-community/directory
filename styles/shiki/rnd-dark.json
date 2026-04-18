@@ -296,6 +296,7 @@
     {
       "scope": [
         "punctuation.terminator.statement",
+        "punctuation.accessor",
         "punctuation.bracket",
         "punctuation.definition",
         "punctuation.section.arguments",
@@ -343,7 +344,15 @@
       }
     },
     {
-      "scope": ["entity.name.tag", "support.class", "support.type", "keyword.type", "storage.type"],
+      "scope": [
+        "entity.name.tag",
+        "entity.name.type",
+        "support.class",
+        "support.type",
+        "keyword.type",
+        "storage.type.primitive",
+        "storage.type.java"
+      ],
       "settings": {
         "foreground": "#7ee787"
       }
@@ -355,28 +364,20 @@
         "keyword.control",
         "keyword.operator.new",
         "keyword.operator.expression",
+        "keyword.operator.cast",
+        "keyword.operator.sizeof",
         "keyword.other",
         "support.type.object",
         "storage",
         "storage.modifier.attribute",
-        "storage.modifier",
-        "storage.type.namespace"
+        "storage.modifier"
       ],
       "settings": {
         "foreground": "#ff7b72"
       }
     },
     {
-      "scope": [
-        "storage.modifier.package",
-        "storage.modifier.import",
-        "storage.type.js",
-        "storage.type.ts",
-        "storage.type.tsx",
-        "storage.type.function",
-        "storage.type.type",
-        "storage.type.class"
-      ],
+      "scope": ["storage.modifier.package", "storage.modifier.import"],
       "settings": {
         "foreground": "#e6edf3"
       }
@@ -388,13 +389,12 @@
       }
     },
     {
-      "scope": "support",
-      "settings": {
-        "foreground": "#79c0ff"
-      }
-    },
-    {
-      "scope": "meta.property-name",
+      "scope": [
+        "support",
+        "entity.name.type.class",
+        "meta.property-name",
+        "entity.name.type.namespace"
+      ],
       "settings": {
         "foreground": "#79c0ff"
       }
@@ -485,13 +485,7 @@
       }
     },
     {
-      "scope": "support.constant",
-      "settings": {
-        "foreground": "#79c0ff"
-      }
-    },
-    {
-      "scope": "support.variable",
+      "scope": ["support.constant", "support.variable", "support.class"],
       "settings": {
         "foreground": "#79c0ff"
       }
