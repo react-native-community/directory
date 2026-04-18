@@ -32,7 +32,7 @@ export const PREVIEW_DISABLED_FILES = [
   'xcuserstate',
 ];
 
-export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
+export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'ico'];
 
 export const FILE_WARNINGS = [
   {

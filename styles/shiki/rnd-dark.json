@@ -296,19 +296,23 @@
     {
       "scope": [
         "punctuation.terminator.statement",
+        "punctuation.accessor",
         "punctuation.bracket",
         "punctuation.definition",
         "punctuation.section.arguments",
         "punctuation.section.angle-brackets",
         "punctuation.section.block",
+        "punctuation.section.class",
+        "punctuation.section.collection-type",
         "punctuation.section.embedded.begin",
         "punctuation.section.embedded.end",
+        "punctuation.section.function",
         "punctuation.section.group.begin",
         "punctuation.section.group.end",
+        "punctuation.section.method",
         "punctuation.section.parameters.begin",
         "punctuation.section.parameters.end",
         "punctuation.section.parens",
-        "punctuation.section.function",
         "punctuation.section.scope",
         "punctuation.separator",
         "meta.brace.round",
@@ -340,7 +344,15 @@
       }
     },
     {
-      "scope": ["entity.name.tag", "support.class.component"],
+      "scope": [
+        "entity.name.tag",
+        "entity.name.type",
+        "support.class",
+        "support.type",
+        "keyword.type",
+        "storage.type.primitive",
+        "storage.type.java"
+      ],
       "settings": {
         "foreground": "#7ee787"
       }
@@ -349,22 +361,23 @@
       "scope": [
         "keyword.soft",
         "keyword.hard",
-        "keyword.operator",
         "keyword.control",
-        "keyword.other"
+        "keyword.operator.new",
+        "keyword.operator.expression",
+        "keyword.operator.cast",
+        "keyword.operator.sizeof",
+        "keyword.other",
+        "support.type.object",
+        "storage",
+        "storage.modifier.attribute",
+        "storage.modifier"
       ],
       "settings": {
         "foreground": "#ff7b72"
       }
     },
     {
-      "scope": ["storage", "storage.type", "storage.modifier.attribute"],
-      "settings": {
-        "foreground": "#ff7b72"
-      }
-    },
-    {
-      "scope": ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
+      "scope": ["storage.modifier.package", "storage.modifier.import"],
       "settings": {
         "foreground": "#e6edf3"
       }
@@ -376,13 +389,12 @@
       }
     },
     {
-      "scope": "support",
-      "settings": {
-        "foreground": "#79c0ff"
-      }
-    },
-    {
-      "scope": "meta.property-name",
+      "scope": [
+        "support",
+        "entity.name.type.class",
+        "meta.property-name",
+        "entity.name.type.namespace"
+      ],
       "settings": {
         "foreground": "#79c0ff"
       }
@@ -473,13 +485,7 @@
       }
     },
     {
-      "scope": "support.constant",
-      "settings": {
-        "foreground": "#79c0ff"
-      }
-    },
-    {
-      "scope": "support.variable",
+      "scope": ["support.constant", "support.variable", "support.class"],
       "settings": {
         "foreground": "#79c0ff"
       }
