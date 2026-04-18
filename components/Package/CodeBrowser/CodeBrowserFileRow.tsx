@@ -57,7 +57,7 @@ export default function CodeBrowserFileRow({
               <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
             </View>
           }>
-          <span style={tw`text-[12px]`}>{warning.message}</span>
+          <P style={tw`text-[12px] font-light`}>{warning.message}</P>
         </Tooltip>
       )}
     </>
