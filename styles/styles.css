@@ -24,6 +24,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
 /* TODO: refactor colors and naming */
 :root {
   --primary: #61dafb;
@@ -77,6 +84,7 @@
   --inline-code-background: var(--gray-2);
 
   --quick-search-bg: #ffffff;
+  --code-font-weight: 400;
 }
 
 :root.dark {
@@ -117,6 +125,7 @@
   --inline-code-background: var(--gray-6);
 
   --quick-search-bg: #111114ef;
+  --code-font-weight: 300;
 }
 
 *:focus-visible {
@@ -137,6 +146,13 @@ body {
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: var(--code-font-weight);
+  font-variant-ligatures: none;
 }
 
 input:focus-visible {
@@ -435,6 +451,7 @@ select {
 
     & code {
       display: inline;
+      font-weight: 500;
     }
 
     &[align='center'] img {
@@ -501,10 +518,11 @@ select {
   }
 
   code {
-    font-size: 110%;
+    font-size: 85%;
     background-color: var(--inline-code-background);
     border-radius: 4px;
     padding: 1px 4px;
+    vertical-align: text-bottom;
   }
 
   pre {
@@ -785,6 +803,7 @@ select {
     overflow-wrap: anywhere;
     white-space: pre-wrap;
     line-height: 16px;
+    font-size: 75%;
   }
 }
 

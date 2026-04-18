@@ -49,7 +49,7 @@ export default {
     },
     fontFamily: {
       sans: ['Optimistic Display', 'ui-sans-serif', 'system-ui'],
-      mono: ['monospace', 'ui-monospace'],
+      mono: ['JetBrains Mono', 'monospace', 'ui-monospace'],
     },
     backgroundColor: {
       transparent: 'transparent',
