@@ -10178,20 +10178,15 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/maplibre/maplibre-react-native",
+    "githubUrl": "https://github.com/maplibre/maplibre-react-native/tree/main/package",
     "npmPkg": "@maplibre/maplibre-react-native",
     "examples": [
       "https://github.com/maplibre/maplibre-react-native/tree/main/examples/expo-app",
       "https://github.com/maplibre/maplibre-react-native/tree/main/examples/react-native-app"
     ],
-    "images": [
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/docs/static/screenshots/index/device-android.png",
-      "https://raw.githubusercontent.com/maplibre/maplibre-react-native/main/docs/static/screenshots/index/device-ios.png"
-    ],
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "newArchitectureNote": "Supported from v10 release using the interop layer.",
     "configPlugin": true
   },
   {
