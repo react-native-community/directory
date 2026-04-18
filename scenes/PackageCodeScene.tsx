@@ -16,6 +16,8 @@ import { type UnpkgMeta } from '~/types';
 import { type PackageCodePageProps } from '~/types/pages';
 import { buildCodeBrowserFileTree, getCodeBrowserFilePath } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
+import { formatBytes } from '~/util/formatBytes';
+import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
@@ -68,6 +70,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const fileTree = useMemo(
     () => buildCodeBrowserFileTree(filteredFiles, data?.prefix),
     [filteredFiles, data?.prefix]
+  );
+
+  const totalFilesSize = useMemo(
+    () => filteredFiles.reduce((total, file) => total + (file.size ?? 0), 0),
+    [filteredFiles]
   );
 
   if (!library) {
@@ -147,19 +154,37 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                         ? tw`h-[320px] flex-grow-0 border-b`
                         : tw`w-[320px] flex-grow border-r`,
                     ]}
-                    contentContainerStyle={tw`flex-0 py-2`}>
+                    contentContainerStyle={tw`pt-2`}>
                     {filteredFiles.length > 0 ? (
-                      <CodeBrowserFileTree
-                        tree={fileTree}
-                        activeFile={activeFile}
-                        onSelectFile={setActiveFile}
-                      />
+                      <>
+                        <CodeBrowserFileTree
+                          tree={fileTree}
+                          activeFile={activeFile}
+                          onSelectFile={setActiveFile}
+                        />
+                        <View style={tw`h-2`} />
+                      </>
                     ) : (
                       <View style={tw`px-3 py-2`}>
                         <Label style={tw`text-center`}>No files match this search.</Label>
                       </View>
                     )}
                   </ScrollView>
+                  {filteredFiles.length > 0 && (
+                    <View
+                      style={[
+                        tw`relative flex min-h-[26px] flex-row items-center justify-between gap-3 border-r border-t border-palette-gray2 bg-default px-3 pb-px dark:border-default`,
+                        isSmallScreen && tw`border-r-0`,
+                      ]}>
+                      <Label style={tw`font-light text-secondary`}>
+                        <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
+                        {pluralize('file', filteredFiles.length)}
+                      </Label>
+                      <Label style={tw`font-light text-secondary`}>
+                        <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
+                      </Label>
+                    </View>
+                  )}
                 </View>
                 <View
                   style={[

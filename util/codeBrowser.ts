@@ -90,7 +90,10 @@ const FILE_WARNING_MATCHERS = FILE_WARNINGS.map(warning => ({
   matchers: warning.fileNames.map(createFileWarningMatcher),
 }));
 
-export function getFileWarning(fileName: string) {
+export function getFileWarning(fileName?: string) {
+  if (!fileName) {
+    return undefined;
+  }
   return FILE_WARNING_MATCHERS.find(warning => warning.matchers.some(matcher => matcher(fileName)));
 }
 
