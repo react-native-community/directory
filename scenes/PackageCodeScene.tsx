@@ -6,6 +6,7 @@ import { Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { FileIcon, Search as SearchIcon } from '~/components/Icons';
 import CodeBrowserContent from '~/components/Package/CodeBrowser/CodeBrowserContent';
+import CodeBrowserContentFooter from '~/components/Package/CodeBrowser/CodeBrowserContentFooter';
 import CodeBrowserFileTree from '~/components/Package/CodeBrowser/CodeBrowserFileTree';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
@@ -75,6 +76,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const totalFilesSize = useMemo(
     () => filteredFiles.reduce((total, file) => total + (file.size ?? 0), 0),
     [filteredFiles]
+  );
+
+  const activeFileData = useMemo(
+    () => data?.files.find(file => file.path === `${data.prefix}${activeFile}`),
+    [data, activeFile]
   );
 
   if (!library) {
@@ -171,19 +177,20 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     )}
                   </ScrollView>
                   {filteredFiles.length > 0 && (
-                    <View
-                      style={[
-                        tw`relative flex min-h-[26px] flex-row items-center justify-between gap-3 border-r border-t border-palette-gray2 bg-default px-3 pb-px dark:border-default`,
-                        isSmallScreen && tw`border-r-0`,
-                      ]}>
-                      <Label style={tw`font-light text-secondary`}>
-                        <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
-                        {pluralize('file', filteredFiles.length)}
-                      </Label>
-                      <Label style={tw`font-light text-secondary`}>
-                        <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
-                      </Label>
-                    </View>
+                    <CodeBrowserContentFooter
+                      style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
+                      leftSlot={
+                        <Label style={tw`font-light text-secondary`}>
+                          <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
+                          {pluralize('file', filteredFiles.length)}
+                        </Label>
+                      }
+                      rightSlot={
+                        <Label style={tw`font-light text-secondary`}>
+                          <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
+                        </Label>
+                      }
+                    />
                   )}
                 </View>
                 <View
@@ -192,13 +199,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                     activeFile ? tw`bg-white dark:bg-[#0d1117]` : tw`items-center justify-center`,
                     isSmallScreen && tw`min-h-[50vh]`,
                   ]}>
-                  {activeFile ? (
+                  {activeFile && activeFileData ? (
                     <CodeBrowserContent
                       packageName={packageName}
                       filePath={activeFile}
-                      fileData={data?.files.find(
-                        file => file.path === `${data.prefix}${activeFile}`
-                      )}
+                      fileData={activeFileData}
                     />
                   ) : (
                     <View style={tw`flex flex-col items-center gap-1 px-3`}>
