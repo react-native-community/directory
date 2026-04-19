@@ -20542,5 +20542,23 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/shubh73/expo-ruler",
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/shubh73/expo-truecaller",
+    "examples": ["https://github.com/shubh73/expo-truecaller/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/shubh73/expo-truecaller/refs/heads/main/docs/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
