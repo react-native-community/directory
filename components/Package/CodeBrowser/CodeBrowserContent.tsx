@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { type SyntheticEvent, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
 
 import { Label, P } from '~/common/styleguide';
 import { CodeIcon, ImageFileIcon, TempFileIcon } from '~/components/Icons';
-import CodeBrowserContentHeader from '~/components/Package/CodeBrowser/CodeBrowserContentHeader';
-import DownloadFileButton from '~/components/Package/CodeBrowser/DownloadFileButton';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import Tooltip from '~/components/Tooltip';
@@ -16,9 +14,13 @@ import { type UnpkgMeta } from '~/types';
 import { IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
+import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
+import CodeBrowserContentFooter from './CodeBrowserContentFooter';
+import CodeBrowserContentHeader from './CodeBrowserContentHeader';
 import CodeBrowserContentHighlighter from './CodeBrowserContentHighlighter';
+import DownloadFileButton from './DownloadFileButton';
 
 type Props = {
   packageName: string;
@@ -29,6 +31,9 @@ type Props = {
 export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const [rawPreview, setRawPreview] = useState(false);
+  const [imageData, setImageData] = useState<
+    SyntheticEvent<HTMLImageElement>['currentTarget'] | null
+  >(null);
 
   const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);
   const isPreviewDisabled = PREVIEW_DISABLED_FILES.includes(fileExtension) || isTooBig;
@@ -59,6 +64,15 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
         </View>
+        <CodeBrowserContentFooter
+          rightSlot={
+            fileData && (
+              <Label style={tw`font-light text-secondary`}>
+                <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+              </Label>
+            )
+          }
+        />
       </>
     );
   }
@@ -92,6 +106,21 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
           lang={filePath.split('.').at(-1) ?? 'text'}
           theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
         />
+        <CodeBrowserContentFooter
+          leftSlot={
+            <Label style={tw`font-light text-secondary`}>
+              <span style={tw`font-medium`}>{data.split('\n').length}</span>{' '}
+              {pluralize('line', data.split('\n').length)}
+            </Label>
+          }
+          rightSlot={
+            fileData && (
+              <Label style={tw`font-light text-secondary`}>
+                <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+              </Label>
+            )
+          }
+        />
       </>
     );
   }
@@ -121,6 +150,9 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
             src={`https://unpkg.com/${packageName}/${filePath}`}
             alt=""
             style={tw`max-h-full max-w-full`}
+            onLoad={(event: SyntheticEvent<HTMLImageElement>) => {
+              setImageData(event.currentTarget);
+            }}
           />
         )}
         {!isImageFile && isPreviewDisabled && (
@@ -136,10 +168,27 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
         )}
         {!isPreviewDisabled && !isImageFile && (
           <P>
-            Cannot fetch &quot;<code>{filePath}</code>&quot; file content.
+            Cannot fetch <code style={tw`text-[90%]`}>&quot;{filePath}&quot;</code> file content.
           </P>
         )}
       </View>
+      <CodeBrowserContentFooter
+        leftSlot={
+          isImageFile && imageData ? (
+            <Label style={tw`font-light text-secondary`}>
+              <span style={tw`font-medium`}>{imageData.naturalWidth}</span>px &times;{' '}
+              <span style={tw`font-medium`}>{imageData.naturalHeight}</span>px
+            </Label>
+          ) : undefined
+        }
+        rightSlot={
+          fileData && (
+            <Label style={tw`font-light text-secondary`}>
+              <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+            </Label>
+          )
+        }
+      />
     </>
   );
 }
