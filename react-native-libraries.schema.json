@@ -142,12 +142,6 @@
         "title": "Package is a Development Tool (should be installed as `devDependency` or used via `npx/bunx`)",
         "default": false
       },
-      "template": {
-        "$id": "#/items/properties/template",
-        "type": "boolean",
-        "title": "Entry is a project template",
-        "default": false
-      },
       "newArchitecture": {
         "$id": "#/items/properties/newArchitecture",
         "type": ["boolean", "string"],
