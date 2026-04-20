@@ -20603,5 +20603,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/vitrionbv/expo-state-mcp",
+    "npmPkg": "@vitrion/expo-state-mcp",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
