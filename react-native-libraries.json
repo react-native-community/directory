@@ -20561,5 +20561,47 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/vipin14444/react-native-fluid-bottom-bar",
+    "images": [
+      "https://raw.githubusercontent.com/vipin14444/react-native-fluid-bottom-bar/main/media/showcase.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Tafsan-Mahmud/react-native-modern-shimmer",
+    "images": [
+      "https://raw.githubusercontent.com/Tafsan-Mahmud/react-native-modern-shimmer/main/assets/android-light.gif",
+      "https://raw.githubusercontent.com/Tafsan-Mahmud/react-native-modern-shimmer/main/assets/ios-light.gif",
+      "https://raw.githubusercontent.com/Tafsan-Mahmud/react-native-modern-shimmer/main/assets/android-dark.gif",
+      "https://raw.githubusercontent.com/Tafsan-Mahmud/react-native-modern-shimmer/main/assets/ios-dark.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/adnxy/rnsec",
+    "dev": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arekkubaczkowski/expo-livekit-screen-share",
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/mashish584/react-native-cycle-text",
+    "images": [
+      "https://raw.githubusercontent.com/mashish584/react-native-cycle-text/master/media/cyclic-text.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
