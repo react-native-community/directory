@@ -33,13 +33,24 @@ export default function CodeBrowserFileTree({ tree, activeFile, onSelectFile, de
         );
       })}
       {files.map(file => (
-        <CodeBrowserFileRow
-          key={file.path}
-          label={file.name}
-          depth={depth}
-          onPress={() => onSelectFile(file.path)}
-          isActive={file.path === activeFile}
-        />
+        <View key={file.path}>
+          <CodeBrowserFileRow
+            label={file.name}
+            depth={depth}
+            onPress={() => onSelectFile(file.path)}
+            isActive={file.path === activeFile}
+          />
+          {file.nestedFiles?.map(nestedFile => (
+            <CodeBrowserFileRow
+              isNested
+              key={nestedFile.path}
+              label={nestedFile.name}
+              depth={depth + 1}
+              onPress={() => onSelectFile(nestedFile.path)}
+              isActive={nestedFile.path === activeFile}
+            />
+          ))}
+        </View>
       ))}
     </>
   );

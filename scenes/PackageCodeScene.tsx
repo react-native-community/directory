@@ -15,7 +15,11 @@ import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import PageMeta from '~/components/PageMeta';
 import { type UnpkgMeta } from '~/types';
 import { type PackageCodePageProps } from '~/types/pages';
-import { buildCodeBrowserFileTree, getCodeBrowserFilePath } from '~/util/codeBrowser';
+import {
+  buildCodeBrowserFileTree,
+  getCodeBrowserFilePath,
+  getCodeBrowserNestedFileParentPath,
+} from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
@@ -52,9 +56,49 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       return files;
     }
 
-    return files.filter(file =>
-      getCodeBrowserFilePath(file.path, data?.prefix).toLowerCase().includes(normalizedSearch)
-    );
+    const filesByPath = new Map<string, (typeof files)[number]>();
+    const relatedPaths = new Map<string, Set<string>>();
+    const matchedPaths: string[] = [];
+    const visiblePaths = new Set<string>();
+
+    for (const file of files) {
+      filesByPath.set(file.path, file);
+
+      const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
+
+      if (nestedFileParentPath) {
+        relatedPaths.set(
+          file.path,
+          (relatedPaths.get(file.path) ?? new Set()).add(nestedFileParentPath)
+        );
+        relatedPaths.set(
+          nestedFileParentPath,
+          (relatedPaths.get(nestedFileParentPath) ?? new Set()).add(file.path)
+        );
+      }
+
+      const relativePath = getCodeBrowserFilePath(file.path, data?.prefix).toLowerCase();
+
+      if (relativePath.includes(normalizedSearch)) {
+        matchedPaths.push(file.path);
+      }
+    }
+
+    const queue = [...matchedPaths];
+
+    while (queue.length > 0) {
+      const currentPath = queue.shift();
+
+      if (!currentPath || visiblePaths.has(currentPath) || !filesByPath.has(currentPath)) {
+        continue;
+      }
+
+      visiblePaths.add(currentPath);
+
+      queue.push(...(relatedPaths.get(currentPath) ?? []));
+    }
+
+    return files.filter(file => visiblePaths.has(file.path));
   }, [data?.files, data?.prefix, normalizedSearch]);
 
   const visibleFilePaths = useMemo(

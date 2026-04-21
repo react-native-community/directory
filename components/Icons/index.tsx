@@ -1616,3 +1616,26 @@ export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
     </Svg>
   );
 }
+
+export function CodeMapIcon({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <polyline
+        points="168 128 216 176 168 224"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <polyline
+        points="72 32 72 176 216 176"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
