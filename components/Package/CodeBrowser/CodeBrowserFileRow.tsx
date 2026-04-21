@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
-import { CodeMapIcon, FileIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
+import { FileIcon, FileMetadataIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { getFileWarning } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
@@ -28,7 +28,7 @@ export default function CodeBrowserFileRow({
   const warning = isDirectory ? undefined : getFileWarning(label);
 
   const Icon = useMemo(
-    () => (isDirectory ? FolderIcon : isNested ? CodeMapIcon : FileIcon),
+    () => (isDirectory ? FolderIcon : isNested ? FileMetadataIcon : FileIcon),
     [isDirectory, isNested]
   );
 

@@ -1617,7 +1617,7 @@ export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function CodeMapIcon({ width = 24, height = 24, style }: IconProps) {
+export function FileMetadataIcon({ width = 24, height = 24, style }: IconProps) {
   return (
     <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
       <polyline
