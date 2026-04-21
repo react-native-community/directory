@@ -20610,5 +20610,16 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/vladlenskiy/react-native-tdlib",
+    "examples": [
+      "https://github.com/vladlenskiy/react-native-tdlib/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/vladlenskiy/react-native-tdlib/master/docs/images/example.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
