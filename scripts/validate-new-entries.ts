@@ -157,10 +157,15 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
                 return false;
               }
             } else {
-              console.error(
-                `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
+              const localDataAlternative = libraries.find(
+                lib => lib.npmPkg === alternative || lib.githubUrl.endsWith(alternative)
               );
-              return false;
+              if (!localDataAlternative) {
+                console.error(
+                  `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
+                );
+                return false;
+              }
             }
             return true;
           });

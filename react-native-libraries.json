@@ -845,7 +845,8 @@
   {
     "githubUrl": "https://github.com/wix-incubator/react-native-autogrow-textinput",
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["react-native-ui-lib"]
   },
   {
     "githubUrl": "https://github.com/jeanpan/react-native-camera-roll-picker",
@@ -1692,7 +1693,8 @@
     "githubUrl": "https://github.com/wix-incubator/react-native-keyboard-input",
     "ios": true,
     "android": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["react-native-ui-lib"]
   },
   {
     "githubUrl": "https://github.com/kayla-tech/react-native-privacy-snapshot",
@@ -3998,9 +4000,10 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/hyochan/react-native-iap",
-    "images": [
-      "https://user-images.githubusercontent.com/27461460/52619625-87aa8a80-2ee5-11e9-9aee-6691c34408f3.gif"
+    "githubUrl": "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap",
+    "examples": [
+      "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap/example",
+      "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap/example-expo"
     ],
     "ios": true,
     "android": true,
@@ -8631,12 +8634,12 @@
     "githubUrl": "https://github.com/b0iq/react-native-place-picker",
     "examples": ["https://github.com/b0iq/react-native-place-picker/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["expo-location-picker"]
   },
   {
     "githubUrl": "https://github.com/Shopify/react-native-performance/tree/main/packages/react-native-performance",
     "npmPkg": "@shopify/react-native-performance",
-    "examples": ["https://github.com/b0iq/react-native-place-picker/tree/main/example"],
     "ios": true,
     "android": true,
     "vegaos": "@amazon-devices/shopify__react-native-performance",
@@ -15656,8 +15659,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/hyochan/expo-iap",
-    "examples": ["https://github.com/hyochan/expo-iap/tree/main/example"],
+    "githubUrl": "https://github.com/hyodotdev/openiap/tree/main/libraries/expo-iap",
+    "examples": ["https://github.com/hyodotdev/openiap/tree/main/libraries/expo-iap/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true,
@@ -17536,7 +17539,7 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion-labs/react-native-detour",
+    "githubUrl": "https://github.com/software-mansion-labs/react-native-detour/tree/main/packages/react-native-detour",
     "npmPkg": "@swmansion/react-native-detour",
     "examples": [
       "https://github.com/software-mansion-labs/react-native-detour/tree/main/examples/expo-bare",
@@ -20339,7 +20342,8 @@
     "examples": ["https://github.com/johntips/react-native-infinite-tab-view/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "alternatives": ["react-native-infinite-material-tab"]
   },
   {
     "githubUrl": "https://github.com/steve228uk/metro-bridge",
@@ -20617,6 +20621,24 @@
     "images": [
       "https://raw.githubusercontent.com/vladlenskiy/react-native-tdlib/master/docs/images/example.gif"
     ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/johntips/react-native-infinite-material-tab",
+    "examples": [
+      "https://github.com/johntips/react-native-infinite-material-tab/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/johntips/react-native-infinite-material-tab/main/assets/android.gif",
+      "https://raw.githubusercontent.com/johntips/react-native-infinite-material-tab/main/assets/ios.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/palmcode-ae/expo-location-picker",
+    "examples": ["https://github.com/palmcode-ae/expo-location-picker/tree/main/example"],
     "ios": true,
     "android": true
   }
