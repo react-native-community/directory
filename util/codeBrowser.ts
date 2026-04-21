@@ -93,6 +93,19 @@ const FILE_WARNING_MATCHERS = FILE_WARNINGS.map(warning => ({
   matchers: warning.fileNames.map(createFileWarningMatcher),
 }));
 
+const SOURCE_MAP_PARENT_EXTENSIONS = new Set([
+  'cjs',
+  'cts',
+  'js',
+  'jsx',
+  'mjs',
+  'mts',
+  'ts',
+  'tsx',
+]);
+
+const HASH_FILE_EXTENSIONS = new Set(['md5', 'sha1', 'sha3', 'sha256', 'sha512']);
+
 export function getFileWarning(fileName?: string) {
   if (!fileName) {
     return undefined;
@@ -102,6 +115,32 @@ export function getFileWarning(fileName?: string) {
 
 export function getCodeBrowserFilePath(path: string, prefix?: string) {
   return prefix ? path.replace(prefix, '') : path;
+}
+
+export function getCodeBrowserNestedFileParentPath(path: string) {
+  const nestedFileExtension = path.split('.').pop()?.toLowerCase();
+
+  if (!nestedFileExtension) {
+    return null;
+  }
+
+  const nestedFileParentPath = path.slice(0, -(nestedFileExtension.length + 1));
+
+  if (nestedFileExtension === 'map') {
+    const sourceMapParentExtension = nestedFileParentPath.split('.').pop()?.toLowerCase();
+
+    if (!sourceMapParentExtension || !SOURCE_MAP_PARENT_EXTENSIONS.has(sourceMapParentExtension)) {
+      return null;
+    }
+
+    return nestedFileParentPath;
+  }
+
+  if (HASH_FILE_EXTENSIONS.has(nestedFileExtension)) {
+    return nestedFileParentPath;
+  }
+
+  return null;
 }
 
 export function buildCodeBrowserFileTree(
@@ -139,6 +178,8 @@ export function buildCodeBrowserFileTree(
     });
   });
 
+  nestCodeBrowserSidecarFiles(root);
+
   return root;
 }
 
@@ -149,6 +190,33 @@ function createCodeBrowserTreeDirectory(name: string, path: string): CodeBrowser
     directories: {},
     files: [],
   };
+}
+
+function nestCodeBrowserSidecarFiles(directory: CodeBrowserTreeDirectory) {
+  const filesByPath = new Map(directory.files.map(file => [file.path, file]));
+  const nestedFilePaths = new Set<string>();
+
+  directory.files.forEach(file => {
+    const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
+
+    if (!nestedFileParentPath) {
+      return;
+    }
+
+    const nestedFileParent = filesByPath.get(nestedFileParentPath);
+
+    if (!nestedFileParent) {
+      return;
+    }
+
+    nestedFileParent.nestedFiles ??= [];
+    nestedFileParent.nestedFiles.push(file);
+    nestedFilePaths.add(file.path);
+  });
+
+  directory.files = directory.files.filter(file => !nestedFilePaths.has(file.path));
+
+  Object.values(directory.directories).forEach(nestCodeBrowserSidecarFiles);
 }
 
 function createFileWarningMatcher(pattern: string) {

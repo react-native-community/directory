@@ -361,6 +361,7 @@ export type GitHubUser = {
 export type CodeBrowserTreeFile = {
   name: string;
   path: string;
+  nestedFiles?: CodeBrowserTreeFile[];
 };
 
 export type CodeBrowserTreeDirectory = {
