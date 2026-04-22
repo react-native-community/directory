@@ -3519,6 +3519,12 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/microsoft/clarity-apps",
+    "npmPkg": "@microsoft/react-native-clarity",
+    "ios": true,
+    "android": true
+},
+  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-splash-screen",
     "examples": [
       "https://github.com/expo/examples/tree/master/with-splash-screen",
