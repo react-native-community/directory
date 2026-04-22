@@ -20641,5 +20641,19 @@
     "examples": ["https://github.com/palmcode-ae/expo-location-picker/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/AntarMukhopadhyaya/react-native-usage-stats",
+    "npmPkg": "@antardev/react-native-usage-stats",
+    "images": [
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo1.png",
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo2.png",
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo3.png"
+    ],
+    "android": true,
+    "ios": false,
+    "web": false,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
