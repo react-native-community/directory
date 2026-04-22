@@ -109,7 +109,7 @@ export default function Library({
             {isSmallScreen && (
               <BookmarkButton
                 bookmarkId={libName}
-                style={tw`ml-auto rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+                style={tw`-mr-1 ml-auto rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
               />
             )}
           </View>
