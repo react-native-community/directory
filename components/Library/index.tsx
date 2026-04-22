@@ -87,7 +87,7 @@ export default function Library({
         <View
           style={
             isSmallScreen
-              ? tw`flex-col justify-start gap-2 self-start`
+              ? tw`w-full flex-col justify-start gap-2 self-start`
               : tw`flex-row items-start justify-between gap-6`
           }>
           <View style={tw`flex-row items-center gap-1.5`}>
@@ -109,7 +109,7 @@ export default function Library({
             {isSmallScreen && (
               <BookmarkButton
                 bookmarkId={libName}
-                style={tw`rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+                style={tw`ml-auto rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
               />
             )}
           </View>
