@@ -52,10 +52,12 @@ export default function Library({
         skipSecondaryMetadata && tw`min-h-0`,
         library.unmaintained && tw`opacity-85`,
       ]}>
-      <BookmarkButton
-        bookmarkId={libName}
-        style={tw`absolute right-2.5 top-2.5 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
-      />
+      {!isSmallScreen && (
+        <BookmarkButton
+          bookmarkId={libName}
+          style={tw`absolute right-2.5 top-2.5 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+        />
+      )}
       <View
         style={[
           tw`flex-1 p-4 pb-3 pl-5`,
@@ -104,6 +106,12 @@ export default function Library({
                 />
               </A>
             </HoverEffect>
+            {isSmallScreen && (
+              <BookmarkButton
+                bookmarkId={libName}
+                style={tw`rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+              />
+            )}
           </View>
           {!showTrendingMark && !skipDate && !library.unmaintained && (
             <UpdatedAtView library={library} />
