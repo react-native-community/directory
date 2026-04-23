@@ -24,7 +24,7 @@ export default function DisplayModeButton({ isBrowserMaximized, toggleMaximized 
         </Pressable>
       }>
       {isBrowserMaximized ? (
-        <View style={tw`-mr-1 flex flex-row items-center gap-1.5`}>
+        <View style={[tw`flex flex-row items-center gap-1.5`, !isSmallScreen && tw`-mr-1`]}>
           <span>Minimize code browser</span>
           {!isSmallScreen && <InputKeyHint content={[{ key: 'Esc' }]} />}
         </View>
