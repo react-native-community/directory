@@ -5,7 +5,7 @@ import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
-import UpdatedAtView from '~/components/Library/UpdateAtView';
+import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
