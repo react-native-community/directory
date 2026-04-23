@@ -20,15 +20,24 @@ import tw from '~/util/tailwind';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserContentHeader from './CodeBrowserContentHeader';
 import CodeBrowserContentHighlighter from './CodeBrowserContentHighlighter';
+import DisplayModeButton from './DisplayModeButton';
 import DownloadFileButton from './DownloadFileButton';
 
 type Props = {
   packageName: string;
+  isBrowserMaximized: boolean;
+  toggleMaximized: () => void;
   filePath: string;
   fileData?: UnpkgMeta['files'][number];
 };
 
-export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
+export default function CodeBrowserContent({
+  packageName,
+  isBrowserMaximized,
+  toggleMaximized,
+  filePath,
+  fileData,
+}: Props) {
   const [rawPreview, setRawPreview] = useState(false);
   const [imageData, setImageData] = useState<
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
@@ -64,7 +73,12 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
   if (isLoading) {
     return (
       <>
-        <CodeBrowserContentHeader filePath={filePath} />
+        <CodeBrowserContentHeader filePath={filePath}>
+          <DisplayModeButton
+            isBrowserMaximized={isBrowserMaximized}
+            toggleMaximized={toggleMaximized}
+          />
+        </CodeBrowserContentHeader>
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
         </View>
@@ -102,6 +116,10 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
               tooltip="Copy file content"
               label="Copy"
               style={tw`relative right-0 top-0`}
+            />
+            <DisplayModeButton
+              isBrowserMaximized={isBrowserMaximized}
+              toggleMaximized={toggleMaximized}
             />
           </View>
         </CodeBrowserContentHeader>
@@ -146,6 +164,10 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
           {(isPreviewDisabled || isImageFile) && (
             <DownloadFileButton filePath={filePath} packageName={packageName} />
           )}
+          <DisplayModeButton
+            isBrowserMaximized={isBrowserMaximized}
+            toggleMaximized={toggleMaximized}
+          />
         </View>
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>

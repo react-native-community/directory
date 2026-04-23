@@ -14,7 +14,7 @@ export default function InputKeyHint({ content }: Props) {
       return (
         <Label
           key={`key-${entry.key}`}
-          style={tw`min-w-6 rounded-[3px] bg-palette-gray5 px-1 py-[3px] text-center tracking-[0.75px] text-tertiary dark:bg-powder dark:text-secondary`}>
+          style={tw`font-mono min-w-6 rounded-[3px] bg-palette-gray5 px-1 py-[3px] text-center tracking-[0.25px] text-tertiary dark:bg-powder dark:text-secondary`}>
           {entry.key}
         </Label>
       );

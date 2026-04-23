@@ -1,135 +1,101 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
-import useSWR from 'swr';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { View } from 'react-native';
 
-import { Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import { FileIcon, Search as SearchIcon } from '~/components/Icons';
-import CodeBrowserContent from '~/components/Package/CodeBrowser/CodeBrowserContent';
-import CodeBrowserContentFooter from '~/components/Package/CodeBrowser/CodeBrowserContentFooter';
-import CodeBrowserFileTree from '~/components/Package/CodeBrowser/CodeBrowserFileTree';
+import CodeBrowser from '~/components/Package/CodeBrowser';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
-import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import PageMeta from '~/components/PageMeta';
-import { type UnpkgMeta } from '~/types';
 import { type PackageCodePageProps } from '~/types/pages';
-import {
-  buildCodeBrowserFileTree,
-  getCodeBrowserFilePath,
-  getCodeBrowserNestedFileParentPath,
-} from '~/util/codeBrowser';
-import { TimeRange } from '~/util/datetime';
-import { formatBytes } from '~/util/formatBytes';
-import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
-export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
-  const { isSmallScreen } = useLayout();
-  const inputRef = useRef<TextInput>(null);
+const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
 
-  const [search, setSearch] = useState('');
-  const [isInputFocused, setInputFocused] = useState(false);
-  const [activeFile, setActiveFile] = useState<string | null>(null);
+export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
+  const router = useRouter();
+  const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
+
+  const [activeFile, setActiveFile] = useState<string | null>(() =>
+    window.localStorage.getItem(activeFileStorageKey)
+  );
+  const [isBrowserMaximized, setBrowserMaximized] = useState(false);
 
   const library = useMemo(
     () => apiData.libraries.find(lib => lib.npmPkg === packageName),
     [apiData.libraries, packageName]
   );
 
-  const { data, isLoading } = useSWR<UnpkgMeta>(
-    `/api/proxy/unpkg?name=${packageName}&path=?meta`,
-    (url: string) => fetch(url).then(res => res.json()),
-    {
-      dedupingInterval: TimeRange.HOUR * 1000,
-      revalidateOnFocus: false,
-    }
-  );
-
-  const normalizedSearch = useMemo(() => search.trim().toLowerCase(), [search]);
-
-  const filteredFiles = useMemo(() => {
-    const files = data?.files ?? [];
-
-    if (!normalizedSearch) {
-      return files;
+  useEffect(() => {
+    if (!isBrowserMaximized) {
+      return;
     }
 
-    const filesByPath = new Map<string, (typeof files)[number]>();
-    const relatedPaths = new Map<string, Set<string>>();
-    const matchedPaths: string[] = [];
-    const visiblePaths = new Set<string>();
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousDocumentOverflow = document.documentElement.style.overflow;
 
-    for (const file of files) {
-      filesByPath.set(file.path, file);
-
-      const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
-
-      if (nestedFileParentPath) {
-        relatedPaths.set(
-          file.path,
-          (relatedPaths.get(file.path) ?? new Set()).add(nestedFileParentPath)
-        );
-        relatedPaths.set(
-          nestedFileParentPath,
-          (relatedPaths.get(nestedFileParentPath) ?? new Set()).add(file.path)
-        );
-      }
-
-      const relativePath = getCodeBrowserFilePath(file.path, data?.prefix).toLowerCase();
-
-      if (relativePath.includes(normalizedSearch)) {
-        matchedPaths.push(file.path);
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setBrowserMaximized(false);
       }
     }
 
-    const queue = [...matchedPaths];
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
 
-    while (queue.length > 0) {
-      const currentPath = queue.shift();
-
-      if (!currentPath || visiblePaths.has(currentPath) || !filesByPath.has(currentPath)) {
-        continue;
-      }
-
-      visiblePaths.add(currentPath);
-
-      queue.push(...(relatedPaths.get(currentPath) ?? []));
-    }
-
-    return files.filter(file => visiblePaths.has(file.path));
-  }, [data?.files, data?.prefix, normalizedSearch]);
-
-  const visibleFilePaths = useMemo(
-    () => new Set(filteredFiles.map(file => getCodeBrowserFilePath(file.path, data?.prefix))),
-    [filteredFiles, data?.prefix]
-  );
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousDocumentOverflow;
+    };
+  }, [isBrowserMaximized]);
 
   useEffect(() => {
-    if (activeFile && !visibleFilePaths.has(activeFile)) {
-      setActiveFile(null);
+    setActiveFile(window.localStorage.getItem(activeFileStorageKey));
+  }, [activeFileStorageKey]);
+
+  useEffect(() => {
+    if (activeFile) {
+      window.localStorage.setItem(activeFileStorageKey, activeFile);
+    } else {
+      window.localStorage.removeItem(activeFileStorageKey);
     }
-  }, [activeFile, visibleFilePaths]);
+  }, [activeFile, activeFileStorageKey]);
 
-  const fileTree = useMemo(
-    () => buildCodeBrowserFileTree(filteredFiles, data?.prefix),
-    [filteredFiles, data?.prefix]
-  );
+  useEffect(() => {
+    function clearStoredActiveFile() {
+      window.localStorage.removeItem(activeFileStorageKey);
+    }
 
-  const totalFilesSize = useMemo(
-    () => filteredFiles.reduce((total, file) => total + (file.size ?? 0), 0),
-    [filteredFiles]
-  );
+    window.addEventListener('beforeunload', clearStoredActiveFile);
+    window.addEventListener('pagehide', clearStoredActiveFile);
+    router.events.on('routeChangeStart', clearStoredActiveFile);
 
-  const activeFileData = useMemo(
-    () => data?.files.find(file => file.path === `${data.prefix}${activeFile}`),
-    [data, activeFile]
-  );
+    return () => {
+      window.removeEventListener('beforeunload', clearStoredActiveFile);
+      window.removeEventListener('pagehide', clearStoredActiveFile);
+      router.events.off('routeChangeStart', clearStoredActiveFile);
+    };
+  }, [activeFileStorageKey, router.events]);
+
+  const browserPortalTarget = typeof document === 'undefined' ? null : document.body;
 
   if (!library) {
     return <NotFound />;
   }
+
+  const codeBrowser = (
+    <CodeBrowser
+      library={library}
+      activeFile={activeFile}
+      onSelectFile={setActiveFile}
+      isBrowserMaximized={isBrowserMaximized}
+      toggleMaximized={() => setBrowserMaximized(isMaximized => !isMaximized)}
+    />
+  );
 
   return (
     <>
@@ -140,127 +106,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       />
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
-        <View style={tw`flex-1 gap-3`}>
+        <View style={tw`relative flex-1 gap-3`}>
           <PackageHeader library={library} skipDescription />
-          <View
-            id="codeBrowser"
-            style={tw`mt-2 flex h-[70vh] overflow-hidden rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
-            {isLoading && (
-              <View style={tw`flex flex-1 items-center justify-center`}>
-                <ThreeDotsLoader />
-              </View>
-            )}
-            {!data && !isLoading && <P>Cannot fetch package bundle code.</P>}
-            {data && !isLoading && (
-              <View style={[tw`flex h-[70vh] flex-row`, isSmallScreen && tw`flex-col`]}>
-                <View>
-                  <View
-                    style={[
-                      tw`relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-default`,
-                      isSmallScreen && tw`border-r-0`,
-                    ]}>
-                    <View style={tw`pointer-events-none absolute left-3.5 top-3.5`}>
-                      <SearchIcon
-                        style={[
-                          tw`size-4`,
-                          isInputFocused
-                            ? tw`text-primary-darker dark:text-primary`
-                            : tw`text-icon`,
-                        ]}
-                      />
-                    </View>
-                    <TextInput
-                      ref={inputRef}
-                      autoComplete="off"
-                      onKeyPress={event => {
-                        if ('key' in event) {
-                          if (inputRef.current && event.key === 'Escape') {
-                            if (search) {
-                              event.preventDefault();
-                              setSearch('');
-                            } else {
-                              inputRef.current.blur();
-                            }
-                          }
-                        }
-                      }}
-                      onFocus={() => setInputFocused(true)}
-                      onBlur={() => setInputFocused(false)}
-                      onChangeText={setSearch}
-                      placeholder="Search files..."
-                      style={[
-                        tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 pl-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
-                        isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
-                      ]}
-                      value={search}
-                      placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
-                    />
-                  </View>
-                  <ScrollView
-                    id="codeBrowserList"
-                    style={[
-                      tw`border-palette-gray2 dark:border-default`,
-                      isSmallScreen
-                        ? tw`h-[320px] flex-grow-0 border-b`
-                        : tw`w-[320px] flex-grow border-r`,
-                    ]}
-                    contentContainerStyle={tw`pt-2`}>
-                    {filteredFiles.length > 0 ? (
-                      <>
-                        <CodeBrowserFileTree
-                          tree={fileTree}
-                          activeFile={activeFile}
-                          onSelectFile={setActiveFile}
-                        />
-                        <View style={tw`h-2`} />
-                      </>
-                    ) : (
-                      <View style={tw`px-3 py-2`}>
-                        <Label style={tw`text-center`}>No files match this search.</Label>
-                      </View>
-                    )}
-                  </ScrollView>
-                  {filteredFiles.length > 0 && (
-                    <CodeBrowserContentFooter
-                      style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
-                      leftSlot={
-                        <Label style={tw`font-light text-secondary`}>
-                          <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
-                          {pluralize('file', filteredFiles.length)}
-                        </Label>
-                      }
-                      rightSlot={
-                        <Label style={tw`font-light text-secondary`}>
-                          <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
-                        </Label>
-                      }
-                    />
-                  )}
-                </View>
-                <View
-                  style={[
-                    tw`flex flex-1`,
-                    activeFile ? tw`bg-white dark:bg-[#0d1117]` : tw`items-center justify-center`,
-                    isSmallScreen && tw`min-h-[50vh]`,
-                  ]}>
-                  {activeFile && activeFileData ? (
-                    <CodeBrowserContent
-                      packageName={packageName}
-                      filePath={activeFile}
-                      fileData={activeFileData}
-                    />
-                  ) : (
-                    <View style={tw`flex flex-col items-center gap-1 px-3`}>
-                      <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
-                      <P style={tw`text-center`}>
-                        Select file to preview from the list on the left.
-                      </P>
-                    </View>
-                  )}
-                </View>
-              </View>
-            )}
-          </View>
+          {isBrowserMaximized && browserPortalTarget
+            ? createPortal(codeBrowser, browserPortalTarget)
+            : codeBrowser}
         </View>
       </ContentContainer>
     </>

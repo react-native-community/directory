@@ -34,6 +34,10 @@
 - Use the [template](#new-library-entry-template) as a guide.
 - Submit a PR.
 
+> [!TIP]
+> You can also use the React Native Directory CLI to submit a library directly from the terminal. Run `bunx rn-directory submit` from the package root folder.
+> - https://github.com/Simek/rn-directory
+
 ### New library entry template
 
 > [!IMPORTANT]
