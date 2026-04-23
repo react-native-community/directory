@@ -80,7 +80,7 @@ export default function Library({
           <View
             style={[
               tw`mb-3 flex-row items-center justify-between gap-6`,
-              !isSmallScreen && tw`pr-10`,
+              !isSmallScreen && skipMetadata && tw`pr-8`,
             ]}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
