@@ -1,7 +1,7 @@
 import { Pressable, View } from 'react-native';
 
 import { useLayout } from '~/common/styleguide';
-import { MinimizeIcon } from '~/components/Icons';
+import { MaximizeIcon, MinimizeIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
 import Tooltip from '~/components/Tooltip';
 import tw from '~/util/tailwind';
@@ -14,7 +14,7 @@ type Props = {
 export default function DisplayModeButton({ isBrowserMaximized, toggleMaximized }: Props) {
   const { isSmallScreen } = useLayout();
 
-  const Icon = isBrowserMaximized ? MinimizeIcon : MinimizeIcon;
+  const Icon = isBrowserMaximized ? MinimizeIcon : MaximizeIcon;
 
   return (
     <Tooltip

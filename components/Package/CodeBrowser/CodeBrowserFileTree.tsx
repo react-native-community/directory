@@ -9,9 +9,16 @@ type Props = {
   activeFile: string | null;
   onSelectFile: (filePath: string) => void;
   depth?: number;
+  isNested?: boolean;
 };
 
-export default function CodeBrowserFileTree({ tree, activeFile, onSelectFile, depth = 0 }: Props) {
+export default function CodeBrowserFileTree({
+  tree,
+  activeFile,
+  onSelectFile,
+  depth = 0,
+  isNested = false,
+}: Props) {
   const directories = Object.values(tree.directories).sort((a, b) => a.name.localeCompare(b.name));
   const files = [...tree.files].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -39,17 +46,22 @@ export default function CodeBrowserFileTree({ tree, activeFile, onSelectFile, de
             depth={depth}
             onPress={() => onSelectFile(file.path)}
             isActive={file.path === activeFile}
+            isNested={isNested}
           />
-          {file.nestedFiles?.map(nestedFile => (
-            <CodeBrowserFileRow
-              isNested
-              key={nestedFile.path}
-              label={nestedFile.name}
+          {file.nestedFiles && (
+            <CodeBrowserFileTree
+              tree={{
+                name: '',
+                path: file.path,
+                directories: {},
+                files: file.nestedFiles,
+              }}
+              activeFile={activeFile}
+              onSelectFile={onSelectFile}
               depth={depth + 1}
-              onPress={() => onSelectFile(nestedFile.path)}
-              isActive={nestedFile.path === activeFile}
+              isNested
             />
-          ))}
+          )}
         </View>
       ))}
     </>
