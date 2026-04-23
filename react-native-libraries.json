@@ -20647,5 +20647,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AntarMukhopadhyaya/react-native-usage-stats",
+    "npmPkg": "@antardev/react-native-usage-stats",
+    "images": [
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo1.png",
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo2.png",
+      "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo3.png"
+    ],
+    "android": true,
+    "newArchitecture": true
   }
 ]
