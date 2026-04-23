@@ -4,7 +4,14 @@ import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
 
 import { Label, P } from '~/common/styleguide';
-import { CodeIcon, ImageFileIcon, TempFileIcon } from '~/components/Icons';
+import {
+  CodeIcon,
+  ImageFileIcon,
+  MaximizeIcon,
+  MinimizeIcon,
+  TempFileIcon,
+} from '~/components/Icons';
+import InputKeyHint from '~/components/InputKeyHint';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import Tooltip from '~/components/Tooltip';
@@ -24,11 +31,19 @@ import DownloadFileButton from './DownloadFileButton';
 
 type Props = {
   packageName: string;
+  isBrowserMaximized: boolean;
+  toggleMaximized: () => void;
   filePath: string;
   fileData?: UnpkgMeta['files'][number];
 };
 
-export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
+export default function CodeBrowserContent({
+  packageName,
+  isBrowserMaximized,
+  toggleMaximized,
+  filePath,
+  fileData,
+}: Props) {
   const [rawPreview, setRawPreview] = useState(false);
   const [imageData, setImageData] = useState<
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
@@ -61,10 +76,34 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
     }
   );
 
+  const maximizeBrowserButton = (
+    <Tooltip
+      trigger={
+        <Pressable onPress={toggleMaximized}>
+          {isBrowserMaximized ? (
+            <MinimizeIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+          ) : (
+            <MaximizeIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+          )}
+        </Pressable>
+      }>
+      {isBrowserMaximized ? (
+        <View style={tw`-mr-1 flex flex-row items-center gap-1.5`}>
+          <span>Minimize code browser</span>
+          <InputKeyHint content={[{ key: 'Esc' }]} />
+        </View>
+      ) : (
+        'Maximize code browser'
+      )}
+    </Tooltip>
+  );
+
   if (isLoading) {
     return (
       <>
-        <CodeBrowserContentHeader filePath={filePath} />
+        <CodeBrowserContentHeader filePath={filePath}>
+          {maximizeBrowserButton}
+        </CodeBrowserContentHeader>
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
         </View>
@@ -103,6 +142,7 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
               label="Copy"
               style={tw`relative right-0 top-0`}
             />
+            {maximizeBrowserButton}
           </View>
         </CodeBrowserContentHeader>
         <CodeBrowserContentHighlighter
@@ -146,6 +186,7 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
           {(isPreviewDisabled || isImageFile) && (
             <DownloadFileButton filePath={filePath} packageName={packageName} />
           )}
+          {maximizeBrowserButton}
         </View>
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
