@@ -2,9 +2,15 @@ import { useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
-import { FileIcon, FileMetadataIcon, FolderIcon, WarningBlockquote } from '~/components/Icons';
+import {
+  FileIcon,
+  FileMetadataIcon,
+  FolderIcon,
+  ImageFileIcon,
+  WarningBlockquote,
+} from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
-import { getFileWarning } from '~/util/codeBrowser';
+import { getFileWarning, IMAGE_FILES } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -26,11 +32,19 @@ export default function CodeBrowserFileRow({
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const warning = isDirectory ? undefined : getFileWarning(label);
+  const fileExtension = label.split('.').at(-1) ?? 'text';
+  const isImageFile = IMAGE_FILES.includes(fileExtension);
 
-  const Icon = useMemo(
-    () => (isDirectory ? FolderIcon : isNested ? FileMetadataIcon : FileIcon),
-    [isDirectory, isNested]
-  );
+  const Icon = useMemo(() => {
+    if (isDirectory) {
+      return FolderIcon;
+    } else if (isNested) {
+      return FileMetadataIcon;
+    } else if (isImageFile) {
+      return ImageFileIcon;
+    }
+    return FileIcon;
+  }, [isDirectory, isNested, isImageFile]);
 
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,

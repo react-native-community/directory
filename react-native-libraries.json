@@ -20643,6 +20643,12 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/DineshKachhot/expo-document-scanner",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/AntarMukhopadhyaya/react-native-usage-stats",
     "npmPkg": "@antardev/react-native-usage-stats",
     "images": [
@@ -20651,9 +20657,6 @@
       "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo3.png"
     ],
     "android": true,
-    "ios": false,
-    "web": false,
-    "expoGo": false,
     "newArchitecture": true
   }
 ]

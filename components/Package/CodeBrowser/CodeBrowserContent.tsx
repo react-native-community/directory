@@ -1,4 +1,4 @@
-import { type SyntheticEvent, useState } from 'react';
+import { type SyntheticEvent, useEffect, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
@@ -29,12 +29,16 @@ type Props = {
 };
 
 export default function CodeBrowserContent({ packageName, filePath, fileData }: Props) {
-  const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const [rawPreview, setRawPreview] = useState(false);
   const [imageData, setImageData] = useState<
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
   >(null);
 
+  useEffect(() => {
+    setImageData(null);
+  }, [filePath]);
+
+  const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);
   const isPreviewDisabled = PREVIEW_DISABLED_FILES.includes(fileExtension) || isTooBig;
   const isImageFile = IMAGE_FILES.includes(fileExtension);
@@ -146,14 +150,18 @@ export default function CodeBrowserContent({ packageName, filePath, fileData }: 
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>
         {isImageFile && (
-          <img
-            src={`https://unpkg.com/${packageName}/${filePath}`}
-            alt=""
-            style={tw`max-h-full max-w-full`}
-            onLoad={(event: SyntheticEvent<HTMLImageElement>) => {
-              setImageData(event.currentTarget);
-            }}
-          />
+          <>
+            <img
+              key={filePath}
+              src={`https://unpkg.com/${packageName}/${filePath}`}
+              alt={filePath}
+              style={tw`max-h-full max-w-full`}
+              onLoad={(event: SyntheticEvent<HTMLImageElement>) => {
+                setImageData(event.currentTarget);
+              }}
+            />
+            {!imageData && <ThreeDotsLoader />}
+          </>
         )}
         {!isImageFile && isPreviewDisabled && (
           <View style={tw`flex flex-col items-center gap-1`}>
