@@ -3,9 +3,11 @@ import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import {
+  Arrow,
   FileIcon,
   FileMetadataIcon,
   FolderIcon,
+  FolderOpenIcon,
   ImageFileIcon,
   WarningBlockquote,
 } from '~/components/Icons';
@@ -18,6 +20,7 @@ type Props = {
   depth?: number;
   isActive?: boolean;
   isDirectory?: boolean;
+  isCollapsed?: boolean;
   isNested?: boolean;
   onPress?: () => void;
 };
@@ -27,6 +30,7 @@ export default function CodeBrowserFileRow({
   depth = 0,
   isActive = false,
   isDirectory = false,
+  isCollapsed = false,
   isNested = false,
   onPress,
 }: Props) {
@@ -37,22 +41,37 @@ export default function CodeBrowserFileRow({
 
   const Icon = useMemo(() => {
     if (isDirectory) {
-      return FolderIcon;
+      if (isCollapsed) {
+        return FolderIcon;
+      }
+      return FolderOpenIcon;
     } else if (isNested) {
       return FileMetadataIcon;
     } else if (isImageFile) {
       return ImageFileIcon;
     }
     return FileIcon;
-  }, [isDirectory, isNested, isImageFile]);
+  }, [isDirectory, isNested, isImageFile, isCollapsed]);
 
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
+    isDirectory && tw`pl-1.5`,
     { paddingLeft: (isNested ? 6 : 10) + depth * 8 },
   ];
+  const hasTrailingContent = warning != null || isDirectory;
 
   const content = (
     <>
+      {isDirectory ? (
+        <Arrow
+          style={[
+            tw`size-2.5 shrink-0 text-palette-gray4 dark:text-palette-gray5`,
+            isCollapsed ? tw`rotate-90` : tw`rotate-270`,
+          ]}
+        />
+      ) : (
+        <View style={tw`size-2.5`} />
+      )}
       <Icon
         style={[
           tw`size-4 shrink-0 text-icon`,
@@ -72,15 +91,19 @@ export default function CodeBrowserFileRow({
         ]}>
         {label}
       </P>
-      {warning && (
-        <Tooltip
-          trigger={
-            <View style={tw`ml-auto`}>
-              <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
-            </View>
-          }>
-          <P style={tw`text-[12px] font-light`}>{warning.message}</P>
-        </Tooltip>
+      {hasTrailingContent && (
+        <View style={tw`ml-auto flex-row items-center gap-1.5`}>
+          {warning && (
+            <Tooltip
+              trigger={
+                <View>
+                  <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+                </View>
+              }>
+              <P style={tw`text-[12px] font-light`}>{warning.message}</P>
+            </Tooltip>
+          )}
+        </View>
       )}
     </>
   );

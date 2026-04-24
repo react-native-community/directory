@@ -200,9 +200,9 @@ export default function CodeBrowser({
               id="codeBrowserList"
               style={[
                 tw`border-palette-gray2 dark:border-default`,
-                !isSmallScreen && tw`w-[320px] flex-grow border-r`,
-                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[320px]`,
-                isSmallScreen && tw`h-[320px] flex-grow-0 border-b`,
+                !isSmallScreen && tw`w-[340px] flex-grow border-r`,
+                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[340px]`,
+                isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (
@@ -211,6 +211,7 @@ export default function CodeBrowser({
                     tree={fileTree}
                     activeFile={activeFile}
                     onSelectFile={onSelectFile}
+                    isSearchActive={Boolean(normalizedSearch)}
                   />
                   <View style={tw`h-2`} />
                 </>
