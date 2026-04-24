@@ -104,6 +104,12 @@ const SOURCE_MAP_PARENT_EXTENSIONS = new Set([
   'tsx',
 ]);
 
+const DECLARATION_FILE_PARENT_EXTENSIONS = new Map([
+  ['.d.cts', ['cjs']],
+  ['.d.mts', ['mjs']],
+  ['.d.ts', ['js', 'mjs', 'cjs']],
+]);
+
 const HASH_FILE_EXTENSIONS = new Set(['md5', 'sha1', 'sha3', 'sha256', 'sha512']);
 
 export function getFileWarning(fileName?: string) {
@@ -118,10 +124,26 @@ export function getCodeBrowserFilePath(path: string, prefix?: string) {
 }
 
 export function getCodeBrowserNestedFileParentPath(path: string) {
+  return getCodeBrowserNestedFileParentPaths(path)[0] ?? null;
+}
+
+export function getCodeBrowserNestedFileParentPaths(path: string) {
+  const lowerCasedPath = path.toLowerCase();
+
+  for (const [declarationFileSuffix, parentExtensions] of DECLARATION_FILE_PARENT_EXTENSIONS) {
+    if (!lowerCasedPath.endsWith(declarationFileSuffix)) {
+      continue;
+    }
+
+    const declarationFileBasePath = path.slice(0, -declarationFileSuffix.length);
+
+    return parentExtensions.map(parentExtension => `${declarationFileBasePath}.${parentExtension}`);
+  }
+
   const nestedFileExtension = path.split('.').pop()?.toLowerCase();
 
   if (!nestedFileExtension) {
-    return null;
+    return [];
   }
 
   const nestedFileParentPath = path.slice(0, -(nestedFileExtension.length + 1));
@@ -130,17 +152,17 @@ export function getCodeBrowserNestedFileParentPath(path: string) {
     const sourceMapParentExtension = nestedFileParentPath.split('.').pop()?.toLowerCase();
 
     if (!sourceMapParentExtension || !SOURCE_MAP_PARENT_EXTENSIONS.has(sourceMapParentExtension)) {
-      return null;
+      return [];
     }
 
-    return nestedFileParentPath;
+    return [nestedFileParentPath];
   }
 
   if (HASH_FILE_EXTENSIONS.has(nestedFileExtension)) {
-    return nestedFileParentPath;
+    return [nestedFileParentPath];
   }
 
-  return null;
+  return [];
 }
 
 export function buildCodeBrowserFileTree(
@@ -197,13 +219,9 @@ function nestCodeBrowserSidecarFiles(directory: CodeBrowserTreeDirectory) {
   const nestedFilePaths = new Set<string>();
 
   directory.files.forEach(file => {
-    const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
-
-    if (!nestedFileParentPath) {
-      return;
-    }
-
-    const nestedFileParent = filesByPath.get(nestedFileParentPath);
+    const nestedFileParent = getCodeBrowserNestedFileParentPaths(file.path)
+      .map(nestedFileParentPath => filesByPath.get(nestedFileParentPath))
+      .find(Boolean);
 
     if (!nestedFileParent) {
       return;

@@ -9,7 +9,7 @@ import { type LibraryType, type UnpkgMeta } from '~/types';
 import {
   buildCodeBrowserFileTree,
   getCodeBrowserFilePath,
-  getCodeBrowserNestedFileParentPath,
+  getCodeBrowserNestedFileParentPaths,
 } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
@@ -67,9 +67,7 @@ export default function CodeBrowser({
     for (const file of files) {
       filesByPath.set(file.path, file);
 
-      const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
-
-      if (nestedFileParentPath) {
+      getCodeBrowserNestedFileParentPaths(file.path).forEach(nestedFileParentPath => {
         relatedPaths.set(
           file.path,
           (relatedPaths.get(file.path) ?? new Set()).add(nestedFileParentPath)
@@ -78,7 +76,7 @@ export default function CodeBrowser({
           nestedFileParentPath,
           (relatedPaths.get(nestedFileParentPath) ?? new Set()).add(file.path)
         );
-      }
+      });
 
       const relativePath = getCodeBrowserFilePath(file.path, data?.prefix).toLowerCase();
 
