@@ -329,7 +329,8 @@
     "githubUrl": "https://github.com/vonovak/react-native-add-calendar-event",
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "alternatives": ["expo-calendar"]
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-bottom-action-sheet",
@@ -2673,7 +2674,8 @@
     "fireos": true,
     "unmaintained": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "alternatives": ["expo-audio", "expo-video"]
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-background-fetch",
@@ -3256,7 +3258,7 @@
     "fireos": true,
     "vegaos": "@amazon-devices/react-native-cookies__cookies",
     "newArchitecture": false,
-    "alternatives": ["@preeternal/react-native-cookie-manager"]
+    "alternatives": ["@preeternal/react-native-cookie-manager", "react-native-nitro-cookies"]
   },
   {
     "githubUrl": "https://github.com/souvik-ghosh/react-native-create-thumbnail",
@@ -3413,7 +3415,8 @@
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-voice/voice",
-    "configPlugin": true
+    "configPlugin": true,
+    "alternatives": ["expo-speech-recognition"]
   },
   {
     "githubUrl": "https://github.com/phamfoo/react-native-animated-spinkit",
@@ -3648,7 +3651,8 @@
   {
     "githubUrl": "https://github.com/react-native-text-input-mask/react-native-text-input-mask",
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["react-native-advanced-input-mask"]
   },
   {
     "githubUrl": "https://github.com/react-native-toolbar-android/toolbar-android",
@@ -5186,7 +5190,8 @@
     "githubUrl": "https://github.com/mvayngrib/react-native-randombytes",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "alternatives": ["react-native-get-random-values"]
   },
   {
     "githubUrl": "https://github.com/surajitsarkar19/react-native-radial-gradient",
@@ -7867,7 +7872,8 @@
       "https://user-images.githubusercontent.com/1637928/115913726-d2a97c00-a425-11eb-9c6a-6d19b974ee81.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["rn-mlkit-ocr"]
   },
   {
     "githubUrl": "https://github.com/miblanchard/react-native-slider",
@@ -10249,7 +10255,8 @@
     "npmPkg": "@ekreative/react-native-braintree",
     "examples": ["https://github.com/ekreative/react-native-braintree/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "alternatives": ["react-native-expo-braintree"]
   },
   {
     "githubUrl": "https://github.com/okwasniewski/react-native-menubar-extra",
@@ -13456,14 +13463,14 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/packages/react-native-client",
+    "githubUrl": "https://github.com/fishjam-cloud/web-client-sdk/tree/main/packages/mobile-client",
+    "npmPkg": "@fishjam-cloud/react-native-client",
     "examples": [
       "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/minimal-react-native",
       "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/audio-only",
       "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/video-player",
       "https://github.com/fishjam-cloud/mobile-client-sdk/tree/main/examples/vision-camera"
     ],
-    "npmPkg": "@fishjam-cloud/react-native-client",
     "images": [
       "https://raw.githubusercontent.com/fishjam-cloud/mobile-client-sdk/main/.github/images/fishjam-card.png"
     ],
@@ -14005,7 +14012,8 @@
     "images": ["https://raw.githubusercontent.com/deeeed/expo-audio-stream/main/docs/demo.gif"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "alternatives": ["@siteed/audio-studio"]
   },
   {
     "githubUrl": "https://github.com/deeeed/expo-audio-stream/tree/main/packages/audio-ui",
@@ -14469,8 +14477,7 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/IvanIhnatsiuk/react-native-advanced-input-mask/tree/main/package",
-    "npmPkg": "react-native-advanced-input-mask",
+    "githubUrl": "https://github.com/IvanIhnatsiuk/react-native-advanced-input-mask/tree/main/packages/react-native-advanced-input-mask",
     "examples": [
       "https://github.com/IvanIhnatsiuk/react-native-advanced-input-mask/tree/main/apps/example"
     ],
@@ -20089,7 +20096,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/JuanRdBO/expo-circular-reveal",
+    "githubUrl": "https://github.com/JuanRdBO/expo-circular-reveal/tree/main/packages/expo-circular-reveal",
     "examples": ["https://github.com/JuanRdBO/expo-circular-reveal/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/JuanRdBO/expo-circular-reveal/main/demo.gif",
@@ -20665,5 +20672,47 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/appstack-tech/react-native-appstack-sdk",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/deeeed/audiolab/tree/main/packages/audio-studio",
+    "npmPkg": "@siteed/audio-studio",
+    "images": [
+      "https://raw.githubusercontent.com/deeeed/audiolab/main/docs/android.gif",
+      "https://raw.githubusercontent.com/deeeed/audiolab/main/docs/ios.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/ahmeterenodaci/rn-mlkit-ocr",
+    "examples": ["https://github.com/ahmeterenodaci/rn-mlkit-ocr/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/echowaves/expo-masonry-layout",
+    "images": [
+      "https://raw.githubusercontent.com/echowaves/expo-masonry-layout/main/assets/simulator_screenshot_B5DA2B98-A4BA-4B8A-8917-45AE7F50F97A.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/le-ar/react-native-viewport-metrics",
+    "examples": ["https://github.com/le-ar/react-native-viewport-metrics/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Azshar/react-native-tcard",
+    "examples": ["https://github.com/Azshar/react-native-tcard/tree/master/example"],
+    "ios": true,
+    "android": true
   }
 ]
