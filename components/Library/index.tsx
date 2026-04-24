@@ -5,7 +5,7 @@ import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
-import UpdatedAtView from '~/components/Library/UpdateAtView';
+import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
@@ -77,7 +77,11 @@ export default function Library({
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={tw`mb-1 flex-row items-center justify-between gap-6 pr-8`}>
+          <View
+            style={[
+              tw`mb-3 flex-row items-center justify-between gap-6`,
+              !isSmallScreen && skipMetadata && tw`pr-8`,
+            ]}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
