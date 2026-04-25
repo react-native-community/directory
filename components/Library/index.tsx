@@ -79,7 +79,7 @@ export default function Library({
         {showTrendingMark && library.popularity && (
           <View
             style={[
-              tw`mb-3 flex-row items-center justify-between gap-6`,
+              tw`mb-0.5 flex-row items-center justify-between gap-6`,
               !isSmallScreen && skipMetadata && tw`pr-8`,
             ]}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
@@ -113,7 +113,7 @@ export default function Library({
             {isSmallScreen && (
               <BookmarkButton
                 bookmarkId={libName}
-                style={tw`-mr-1 ml-auto rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+                style={tw`-mr-1 ml-auto size-7 items-center justify-center rounded border border-palette-gray2 p-1 dark:border-palette-gray6`}
               />
             )}
           </View>

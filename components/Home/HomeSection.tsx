@@ -48,7 +48,7 @@ export default function HomeSection({
           <Tooltip
             trigger={
               <HoverEffect style={tw`ml-auto`}>
-                <A href={rss} target="_blank" style={tw`h-5.5`}>
+                <A href={rss} target="_blank" style={tw`h-5.5`} aria-label={`${title} RSS feed`}>
                   <RSS style={tw`text-icon`} />
                 </A>
               </HoverEffect>
