@@ -155,7 +155,7 @@ async function buildAndScoreData() {
   });
 
   // Assemble and fetch packages data in bulk queries
-  const bulkList = [...Array(Math.ceil(fetchList.length / NPM_STATS_CHUNK_SIZE))].map(_ =>
+  const bulkList = [...Array(Math.ceil(fetchList.length / NPM_STATS_CHUNK_SIZE))].map(() =>
     fetchList.splice(0, NPM_STATS_CHUNK_SIZE)
   );
 

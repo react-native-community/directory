@@ -11,7 +11,6 @@ import LoadingContent from '~/components/Library/LoadingContent';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
-import { type LibraryType } from '~/types';
 import { type TrendingPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
@@ -57,9 +56,9 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
           <>
             <Pagination query={query} total={total} basePath="/trending" />
             <View style={tw`mt-3`}>
-              {data.libraries.map((item: LibraryType, index: number) => (
+              {data.libraries.map(item => (
                 <LibraryWithLoading
-                  key={`list-item-${index}-${item.github.name}`}
+                  key={`list-item-${item.npmPkg}`}
                   library={item}
                   showTrendingMark
                 />

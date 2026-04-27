@@ -42,7 +42,7 @@ function validateLibrariesFormat(libraries: LibraryType[]) {
 
   if (Object.keys(errorsList).length > 0) {
     const errorDescriptions = Object.entries(errorsList).map(
-      ([npmPkg, libraryErrors], index) =>
+      ([npmPkg, libraryErrors]) =>
         `Library entry for '${npmPkg}' contains errors:\n${libraryErrors.join('\n')}`
     );
     console.error('❌ Malformed libraries found:\n' + errorDescriptions.join('\n'));

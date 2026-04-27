@@ -21,8 +21,8 @@ export default function Libraries({ libraries }: Props) {
 
   return (
     <View style={tw`pt-3`}>
-      {libraries.map((item, index) => (
-        <LibraryWithLoading key={`list-item-${index}-${item.github.name}`} library={item} />
+      {libraries.map(item => (
+        <LibraryWithLoading key={`list-item-${item.npmPkg}`} library={item} />
       ))}
     </View>
   );

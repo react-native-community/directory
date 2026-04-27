@@ -72,9 +72,9 @@ export default function HomeSection({
 function renderLibs(list: LibraryType[], count: number) {
   return list
     .splice(0, count)
-    .map((item: LibraryType, index: number) => (
+    .map(item => (
       <LibraryWithLoading
-        key={`home-item-${index}-${item.github.name}`}
+        key={`home-item-${item.npmPkg}`}
         library={item}
         skipMetadata
         skipSecondaryMetadata
