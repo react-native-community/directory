@@ -60,9 +60,9 @@ function renderLibs(list: LibraryType[]) {
   const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
-    .map((item: LibraryType, index: number) => (
+    .map(item => (
       <LibraryWithLoading
-        key={`explore-item-${index}-${item.github.name}`}
+        key={`explore-item-${item.npmPkg}`}
         library={item}
         showTrendingMark
         skipMetadata

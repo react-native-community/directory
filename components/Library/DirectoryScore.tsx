@@ -73,8 +73,8 @@ export function DirectoryScore({ score, matchingScoreModifiers, sizeMultiplier =
       </strong>
       <br />
       <ul style={tw`m-0 pl-3.5 text-[12px]`}>
-        {matchingScoreModifiers.map((mod, index) => (
-          <li key={`mod-${index}`}>{mod}</li>
+        {matchingScoreModifiers.map(mod => (
+          <li key={`mod-${mod}`}>{mod}</li>
         ))}
       </ul>
     </Tooltip>

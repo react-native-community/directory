@@ -19,7 +19,7 @@ export default function ErrorScene({ statusCode, reason }: Props) {
   return (
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
-      <Navigation header={<></>} />
+      <Navigation header={<View />} />
       <View style={tw`mb-18 mt-12 flex w-full flex-1 items-center justify-center px-6`}>
         <Image
           style={tw`mb-6 mt-12 size-[64px]`}

@@ -33,7 +33,6 @@
       "error",
       {
         "vars": "all",
-        "args": "none",
         "ignoreRestSiblings": true,
         "caughtErrors": "all",
         "caughtErrorsIgnorePattern": "^_"
@@ -77,9 +76,12 @@
     "jsx-a11y/anchor-has-content": "error",
     "jsx-a11y/anchor-is-valid": "error",
     "jsx-a11y/aria-props": "error",
+    "jsx-a11y/aria-role": "error",
     "jsx-a11y/heading-has-content": "error",
+    "jsx-a11y/html-has-lang": "error",
     "jsx-a11y/img-redundant-alt": "error",
     "jsx-a11y/label-has-associated-control": "error",
+    "jsx-a11y/no-aria-hidden-on-focusable": "error",
     "jsx-a11y/no-noninteractive-tabindex": "error",
     "jsx-a11y/no-redundant-roles": "error",
     "jsx-a11y/prefer-tag-over-role": "off",
@@ -107,8 +109,7 @@
     "nextjs/no-unwanted-polyfillio": "error",
     "promise/always-return": "error",
     "promise/no-callback-in-promise": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react/button-has-type": "error",
+    "react/exhaustive-deps": "error",
     "react/forward-ref-uses-ref": "error",
     "react/jsx-boolean-value": ["error"],
     "react/jsx-curly-brace-presence": ["error"],
@@ -123,23 +124,27 @@
     ],
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-undef": "error",
+    "react/jsx-no-useless-fragment": "error",
+    "react/no-array-index-key": "error",
     "react/no-did-mount-set-state": "error",
     "react/no-direct-mutation-state": "error",
     "react/no-redundant-should-component-update": "error",
+    "react/no-render-return-value": "error",
     "react/no-string-refs": "error",
     "react/no-this-in-sfc": "error",
     "react/no-unknown-property": "error",
     "react/no-unescaped-entities": "error",
     "react/no-will-update-set-state": "error",
+    "react/rules-of-hooks": "error",
     "react/self-closing-comp": "error",
-    "react/style-prop-object": "error",
+    "react/void-dom-elements-no-children": "error",
     "typescript/await-thenable": "error",
     "typescript/ban-ts-comment": [
       "error",
       {
         "minimumDescriptionLength": 3,
-        "ts-expect-error": "allow-with-description",
         "ts-check": false,
+        "ts-expect-error": "allow-with-description",
         "ts-ignore": true,
         "ts-nocheck": true
       }
@@ -151,6 +156,7 @@
         "fixStyle": "inline-type-imports"
       }
     ],
+    "typescript/no-array-delete": "error",
     "typescript/no-confusing-non-null-assertion": "error",
     "typescript/no-confusing-void-expression": [
       "error",
@@ -158,7 +164,12 @@
         "ignoreArrowShorthand": true
       }
     ],
+    "typescript/no-duplicate-type-constituents": "error",
     "typescript/no-extra-non-null-assertion": "error",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-for-in-array": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/no-meaningless-void-operator": "error",
     "typescript/no-misused-promises": [
       "error",
       {
@@ -167,6 +178,7 @@
     ],
     "typescript/no-restricted-types": "error",
     "typescript/no-unnecessary-boolean-literal-compare": "error",
+    "typescript/no-unnecessary-parameter-property-assignment": "error",
     "typescript/no-unnecessary-type-arguments": "error",
     "typescript/no-unnecessary-type-assertion": "error",
     "typescript/no-unnecessary-type-constraint": "error",

@@ -225,7 +225,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                     isValidElement<{ href?: string }>(element) &&
                     isGitHubVideoAssetLink(element.props.href)
                   ) {
-                    return <>{children}</>;
+                    return children;
                   }
                 }
 

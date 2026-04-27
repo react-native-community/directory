@@ -1,3 +1,5 @@
+import { View } from 'react-native';
+
 import { P } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import ContentContainer from '~/components/ContentContainer';
@@ -10,7 +12,7 @@ export default function NotFound() {
   return (
     <>
       <PageMeta title="Error" description="Nothing was found! Go back to the directory home." />
-      <Navigation header={<></>} />
+      <Navigation header={<View />} />
       <ContentContainer>
         <NotFoundContent
           header="Nothing was found! Go back to the directory home."
