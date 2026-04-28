@@ -20729,5 +20729,51 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-native/react-native-rasterized-widgets",
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AppAndFlow/react-native-transformer-text-input",
+    "examples": [
+      "https://github.com/AppAndFlow/react-native-transformer-text-input/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/material-symbols/tree/main/packages/expo-material-symbols",
+    "npmPkg": "@expo/material-symbols",
+    "examples": ["https://github.com/expo/material-symbols/tree/main/example"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/QinIndexCode/expo-lite-data-store",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/generaltranslation/gt/tree/main/packages/react-native",
+    "npmPkg": "gt-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/azizbecha/react-native-preview-url/tree/main/packages/react-native-preview-url",
+    "examples": ["https://github.com/azizbecha/react-native-preview-url/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Jmzp/react-native-smart-keyboard-view",
+    "examples": ["https://github.com/Jmzp/react-native-smart-keyboard-view/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
