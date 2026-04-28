@@ -28,7 +28,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@react-native-picker/picker": "^2.11.4",
     "@sentry/react": "^10.50.0",
-    "@videojs/react": "^10.0.0-beta.22",
+    "@videojs/react": "^10.0.0-beta.23",
     "@visx/gradient": "^3.12.0",
     "@visx/responsive": "^3.12.0",
     "@visx/xychart": "^3.12.0",
@@ -75,7 +75,7 @@
     "next-images": "^1.8.5",
     "oxfmt": "^0.47.0",
     "oxlint": "^1.62.0",
-    "oxlint-tsgolint": "^0.22.0",
+    "oxlint-tsgolint": "^0.22.1",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.3",
     "user-agent-data-types": "^0.4.3"
