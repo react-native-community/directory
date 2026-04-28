@@ -58,6 +58,7 @@ export const FILE_WARNINGS = [
       '.watchmanconfig',
       'babel.config.js',
       'eslint.config*.js',
+      'expo-module.config.json',
       'gradle-wrapper.jar',
       'gradlew',
       'gradlew.bat',

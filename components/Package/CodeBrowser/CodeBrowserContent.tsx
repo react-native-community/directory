@@ -59,14 +59,20 @@ export default function CodeBrowserContent({
       : undefined,
     (url: string) =>
       fetch(url).then(res => {
+        if (res.status >= 500) {
+          throw new Error(`Failed to fetch "${filePath}" file content: ${res.status}`);
+        }
+
         if (res.status === 200) {
           return res.text();
         }
+
         return res.json();
       }),
     {
       dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
+      shouldRetryOnError: false,
     }
   );
 
