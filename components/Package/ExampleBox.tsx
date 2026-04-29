@@ -2,7 +2,7 @@ import { LI } from '@expo/html-elements';
 import { Text, View } from 'react-native';
 
 import { A, useLayout } from '~/common/styleguide';
-import { CodeBrackets, GitHub, Snack } from '~/components/Icons';
+import { CodeBracketsIcon, GitHubIcon, SnackIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -23,10 +23,10 @@ export default function ExampleBox({ example, index }: Props) {
         ]}
         hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
         <View style={tw`flex max-w-full flex-row items-center gap-2.5`}>
-          {example.includes('github.com') && <GitHub style={tw`text-icon`} />}
-          {example.includes('snack.expo.dev') && <Snack style={tw`text-icon`} />}
+          {example.includes('github.com') && <GitHubIcon style={tw`text-icon`} />}
+          {example.includes('snack.expo.dev') && <SnackIcon style={tw`text-icon`} />}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
-            <CodeBrackets style={tw`text-icon`} />
+            <CodeBracketsIcon style={tw`text-icon`} />
           )}
           <span style={tw`font-light`}>{getExampleDescription(example)}</span>
         </View>

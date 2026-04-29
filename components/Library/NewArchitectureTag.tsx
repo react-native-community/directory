@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 
 import { A, Label } from '~/common/styleguide';
-import { Check, Question, XIcon } from '~/components/Icons';
+import { CheckIcon, QuestionIcon, XIcon } from '~/components/Icons';
 import { Tag } from '~/components/Tag';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
@@ -85,10 +85,10 @@ function getTagIcon(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return <Check style={tw`text-primary-dark`} width={12} height={12} />;
+      return <CheckIcon style={tw`size-3 text-primary-dark`} />;
     case NewArchSupportStatus.Unsupported:
-      return <XIcon style={tw`text-warning-dark dark:text-warning`} width={11} height={11} />;
+      return <XIcon style={tw`size-[11px] text-warning-dark dark:text-warning`} />;
     default:
-      return <Question style={tw`text-palette-gray4`} width={11} height={11} />;
+      return <QuestionIcon style={tw`size-[11px] text-palette-gray4`} />;
   }
 }

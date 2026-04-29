@@ -4,22 +4,22 @@ import { View } from 'react-native';
 import { A, Caption, P } from '~/common/styleguide';
 import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
 import {
-  Code,
-  ConfigPlugin,
-  Dependency,
-  Download,
-  Eye,
-  Fork,
-  Issue,
-  License,
-  Module,
-  NativeCode,
-  NightlyTest,
-  PackageManager,
-  PackageSize,
-  Star,
-  TypeScript,
-  Web,
+  ConfigPluginIcon,
+  DependencyIcon,
+  DownloadIcon,
+  ExamplesIcon,
+  EyeIcon,
+  ForkIcon,
+  IssueIcon,
+  LicenseIcon,
+  ModuleIcon,
+  NativeCodeIcon,
+  NightlyTestIcon,
+  PackageManagerIcon,
+  PackageSizeIcon,
+  StarIcon,
+  TypeScriptIcon,
+  WebIcon,
 } from '~/components/Icons';
 import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
@@ -58,7 +58,7 @@ function generateData({
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <Download style={tw`text-icon`} width={16} height={18} />,
+          icon: <DownloadIcon style={tw`h-4.5 w-4 text-icon`} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
@@ -71,7 +71,7 @@ function generateData({
       : null,
     {
       id: 'star',
-      icon: <Star style={tw`text-icon`} />,
+      icon: <StarIcon style={tw`text-icon`} />,
       content: (
         <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
           {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
@@ -81,7 +81,7 @@ function generateData({
     github.stats?.dependencies !== undefined
       ? {
           id: 'dependencies',
-          icon: <Dependency style={tw`text-icon`} />,
+          icon: <DependencyIcon style={tw`text-icon`} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
@@ -94,7 +94,7 @@ function generateData({
     npm?.size
       ? {
           id: 'size',
-          icon: <PackageSize style={tw`text-icon`} />,
+          icon: <PackageSizeIcon style={tw`text-icon`} />,
           content: (
             <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
               {`${formatBytes(npm.size)} package size`}
@@ -105,7 +105,7 @@ function generateData({
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <Fork style={tw`text-icon`} width={16} height={17} />,
+          icon: <ForkIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
@@ -117,7 +117,7 @@ function generateData({
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <Eye style={tw`text-icon`} />,
+          icon: <EyeIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
@@ -129,7 +129,7 @@ function generateData({
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <Issue style={tw`text-icon`} />,
+          icon: <IssueIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
@@ -157,7 +157,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.urls.homepage
       ? {
           id: 'web',
-          icon: <Web style={iconColor} width={16} height={16} />,
+          icon: <WebIcon style={iconColor} />,
           content: (
             <A href={github.urls.homepage} style={paragraphStyles} hoverStyle={hoverStyle}>
               Website
@@ -168,7 +168,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.license
       ? {
           id: 'license',
-          icon: <License style={iconColor} width={14} height={16} />,
+          icon: <LicenseIcon style={iconColor} />,
           content:
             github.license.name === 'Other' ? (
               <P style={paragraphStyles}>Unrecognized License</P>
@@ -182,14 +182,14 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.hasNativeCode
       ? {
           id: 'nativeCode',
-          icon: <NativeCode style={iconColor} width={16} height={16} />,
+          icon: <NativeCodeIcon style={iconColor} />,
           content: <P style={paragraphStyles}>Native code</P>,
         }
       : null,
     configPlugin
       ? {
           id: 'configPlugin',
-          icon: <ConfigPlugin style={iconColor} width={16} height={16} />,
+          icon: <ConfigPluginIcon style={iconColor} />,
           content: (
             <ConfigPluginContent
               configPlugin={configPlugin}
@@ -204,7 +204,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     nightlyProgram
       ? {
           id: 'nightlyProgram',
-          icon: <NightlyTest style={iconColor} width={18} height={18} />,
+          icon: <NightlyTestIcon style={iconColor} />,
           content: (
             <A
               href={`https://react-native-community.github.io/nightly-tests/?q=${encodeURIComponent(library.npmPkg)}`}
@@ -219,7 +219,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     skipExamples && github.moduleType
       ? {
           id: 'moduleType',
-          icon: <Module style={iconColor} width={18} height={18} />,
+          icon: <ModuleIcon style={iconColor} />,
           content: (
             <P style={paragraphStyles}>
               {
@@ -234,14 +234,14 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.hasTypes
       ? {
           id: 'types',
-          icon: <TypeScript style={iconColor} width={16} height={16} />,
+          icon: <TypeScriptIcon style={iconColor} />,
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
     !skipExamples && examples && examples.length
       ? {
           id: 'examples',
-          icon: <Code style={iconColor} width={16} height={16} />,
+          icon: <ExamplesIcon style={iconColor} />,
           content: (
             <>
               <Caption style={paragraphStyles}>Examples: </Caption>
@@ -261,7 +261,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     skipExamples && github.packageManager
       ? {
           id: 'packageManager',
-          icon: <PackageManager style={iconColor} width={16} height={16} />,
+          icon: <PackageManagerIcon style={iconColor} />,
           content: <P style={paragraphStyles}>{formatPackageManager(github.packageManager)}</P>,
           tooltip: 'Package manager',
         }

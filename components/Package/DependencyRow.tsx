@@ -5,7 +5,7 @@ import semverDiff from 'semver/functions/diff';
 import semverGt from 'semver/functions/gt';
 
 import { A, HoverEffect, Label, P, useLayout } from '~/common/styleguide';
-import { Info, Logo } from '~/components/Icons';
+import { InfoIcon, Logo } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { type PeerDependencyData } from '~/types';
 import tw from '~/util/tailwind';
@@ -71,7 +71,7 @@ export default function DependencyRow({ name, data, packageVersion }: Props) {
           <Tooltip
             trigger={
               <View>
-                <Info style={tw`-ml-0.5 -mt-px size-3 cursor-pointer text-icon`} />
+                <InfoIcon style={tw`-ml-0.5 -mt-px size-3 cursor-pointer text-icon`} />
               </View>
             }>
             Optional

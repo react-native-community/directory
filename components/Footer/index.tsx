@@ -96,7 +96,7 @@ export default function Footer() {
           </View>
         </View>
         <View style={tw`items-center pb-8 pt-12`}>
-          <Logo style={tw`text-palette-gray3 dark:text-powder`} width={42} height={38} />
+          <Logo style={tw`h-[38px] w-[42px] text-palette-gray3 dark:text-powder`} />
         </View>
       </ContentContainer>
     </View>

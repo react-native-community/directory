@@ -12,7 +12,7 @@ import urlWithQuery from '~/util/urlWithQuery';
 
 import { Filters } from './Filters';
 import { FilterButton } from './Filters/FilterButton';
-import { Search as SearchIcon } from './Icons';
+import { SearchIcon } from './Icons';
 import { SortButton } from './Sort';
 
 type Props = {

@@ -4,7 +4,7 @@ import { A, useLayout } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
-import { Info } from './Icons';
+import { InfoIcon } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
 import { Tag } from './Tag';
 import Tooltip from './Tooltip';
@@ -57,7 +57,7 @@ export default function CompatibilityTags({ library, small }: Props) {
                 style={tw`cursor-pointer items-center justify-center rounded-full`}
                 role="button"
                 aria-label="Additional information">
-                <Info style={tw`text-icon`} />
+                <InfoIcon style={tw`text-icon`} />
               </View>
             }>
             Additional information

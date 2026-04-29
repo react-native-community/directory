@@ -3,13 +3,13 @@ import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import {
-  Arrow,
+  ArrowIcon,
   FileIcon,
   FileMetadataIcon,
   FolderIcon,
   FolderOpenIcon,
   ImageFileIcon,
-  WarningBlockquote,
+  WarningBlockquoteIcon,
 } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { getFileWarning, IMAGE_FILES } from '~/util/codeBrowser';
@@ -63,7 +63,7 @@ export default function CodeBrowserFileRow({
   const content = (
     <>
       {isDirectory ? (
-        <Arrow
+        <ArrowIcon
           style={[
             tw`size-2.5 shrink-0 text-palette-gray4 dark:text-palette-gray5`,
             isCollapsed ? tw`rotate-90` : tw`rotate-270`,
@@ -97,7 +97,7 @@ export default function CodeBrowserFileRow({
             <Tooltip
               trigger={
                 <View>
-                  <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+                  <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
                 </View>
               }>
               <P style={tw`text-[12px] font-light`}>{warning.message}</P>

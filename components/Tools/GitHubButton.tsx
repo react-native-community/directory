@@ -1,6 +1,6 @@
 import { P } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import { GitHub } from '~/components/Icons';
+import { GitHubIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -13,7 +13,7 @@ export default function GitHubButton({ href }: Props) {
       openInNewTab
       href={href}
       style={tw`min-h-8 flex-row gap-1.5 bg-primary-dark px-3 text-sm`}>
-      <GitHub width={16} style={tw`text-black`} />
+      <GitHubIcon style={tw`text-black`} />
       <P style={tw`text-sm text-black`}>GitHub</P>
     </Button>
   );

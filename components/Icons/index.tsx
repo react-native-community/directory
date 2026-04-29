@@ -4,14 +4,12 @@ import { Circle, Line, Path, Polyline, Rect, Svg } from 'react-native-svg';
 import tw from '~/util/tailwind';
 
 export type IconProps = {
-  width?: number;
-  height?: number;
   style?: StyleProp<ViewStyle>;
 };
 
-export function Search({ width, height, style }: IconProps) {
+export function SearchIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" style={style}>
+    <Svg viewBox="0 0 19 19" style={[tw`size-[19px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -22,9 +20,9 @@ export function Search({ width, height, style }: IconProps) {
   );
 }
 
-export function Star({ width, height, style }: IconProps) {
+export function StarIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 20} height={height ?? 19} viewBox="0 0 20 19" style={style}>
+    <Svg viewBox="0 0 20 19" style={[tw`h-[19px] w-5`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -35,9 +33,9 @@ export function Star({ width, height, style }: IconProps) {
   );
 }
 
-export function Bookmark({ width, height, style }: IconProps) {
+export function BookmarkIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={style}>
       <Path
         d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"
         fill="currentColor"
@@ -46,9 +44,9 @@ export function Bookmark({ width, height, style }: IconProps) {
   );
 }
 
-export function BookmarkFilled({ width, height, style }: IconProps) {
+export function BookmarkFilledIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-4`, style]}>
       <Path
         d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z"
         fill="currentColor"
@@ -62,9 +60,9 @@ export function BookmarkFilled({ width, height, style }: IconProps) {
   );
 }
 
-export function Web({ width, height, style }: IconProps) {
+export function WebIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 18} height={height ?? 19} viewBox="0 0 18 19" style={style}>
+    <Svg viewBox="0 0 18 19" style={[tw`size-4`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -87,9 +85,9 @@ export function Web({ width, height, style }: IconProps) {
   );
 }
 
-export function Arrow({ width, height, style }: IconProps) {
+export function ArrowIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 9} height={height ?? 16} viewBox="0 0 9 16" style={style}>
+    <Svg viewBox="0 0 9 16" style={[tw`h-4 w-[9px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -100,9 +98,9 @@ export function Arrow({ width, height, style }: IconProps) {
   );
 }
 
-export function Calendar({ width, height, style }: IconProps) {
+export function CalendarIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 18} viewBox="0 0 16 18" style={style}>
+    <Svg viewBox="0 0 16 18" style={[tw`h-4.5 w-4`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -113,9 +111,9 @@ export function Calendar({ width, height, style }: IconProps) {
   );
 }
 
-export function Check({ width, height, style }: IconProps) {
+export function CheckIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 19} height={height ?? 13} viewBox="0 0 19 13" style={style}>
+    <Svg viewBox="0 0 19 13" style={[tw`h-[13px] w-[19px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -126,9 +124,9 @@ export function Check({ width, height, style }: IconProps) {
   );
 }
 
-export function Download({ width, height, style }: IconProps) {
+export function DownloadIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 13} height={height ?? 16} viewBox="0 0 13 16" style={style}>
+    <Svg viewBox="0 0 13 16" style={[tw`h-4 w-[13px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -139,9 +137,9 @@ export function Download({ width, height, style }: IconProps) {
   );
 }
 
-export function Filter({ width, height, style }: IconProps) {
+export function FilterIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 21} height={height ?? 18} viewBox="0 0 21 18" style={style}>
+    <Svg viewBox="0 0 21 18" style={[tw`h-4.5 w-[21px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -152,9 +150,9 @@ export function Filter({ width, height, style }: IconProps) {
   );
 }
 
-export function Issue({ width, height, style }: IconProps) {
+export function IssueIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 19} height={height ?? 19} viewBox="0 0 19 19" style={style}>
+    <Svg viewBox="0 0 19 19" style={[tw`size-[19px]`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -171,9 +169,9 @@ export function Issue({ width, height, style }: IconProps) {
   );
 }
 
-export function Eye({ width = 22, height = 19, style }: IconProps) {
+export function EyeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 22 13" style={style}>
+    <Svg viewBox="0 0 22 13" style={[tw`w-5.5 h-[19px]`, style]}>
       <Path
         d="M10.9083 1.925C15.125 1.925 18.0583 4.58333 19.3417 6.05C18.0583 7.7 15.125 10.8167 10.9083 10.8167C6.96667 10.8167 3.85 7.7 2.475 5.95833C3.75833 4.58333 6.69167 1.925 10.9083 1.925ZM11 0C4.03333 0 0 6.05 0 6.05C0 6.05 4.4 12.8333 11 12.8333C18.0583 12.8333 22 6.05 22 6.05C22 6.05 18.0583 0 11 0ZM10.9083 3.20833C9.16667 3.20833 7.7 4.675 7.7 6.41667C7.7 8.15833 9.16667 9.625 10.9083 9.625C12.65 9.625 14.1167 8.15833 14.1167 6.41667C14.1167 4.675 12.65 3.20833 10.9083 3.20833ZM10.9083 6.41667C10.45 6.875 9.71667 6.875 9.25833 6.41667C8.8 5.95833 8.8 5.225 9.25833 4.76667C9.71667 4.30833 10.45 4.30833 10.9083 4.76667C11.3667 5.225 11.3667 5.95833 10.9083 6.41667Z"
         fill="currentColor"
@@ -182,9 +180,9 @@ export function Eye({ width = 22, height = 19, style }: IconProps) {
   );
 }
 
-export function Logo({ width, height, style }: IconProps) {
+export function Logo({ style }: IconProps) {
   return (
-    <Svg width={width ?? 25} height={height ?? 22} viewBox="0 0 25 22" style={style}>
+    <Svg viewBox="0 0 25 22" style={[tw`h-5.5 w-[25px]`, style]}>
       <Path
         d="M12.029 13.03a2.334 2.334 0 002.343-2.325 2.334 2.334 0 00-2.343-2.326 2.334 2.334 0 00-2.343 2.325 2.334 2.334 0 002.343 2.326zM18.88 1.794c-.16-.74-.466-1.183-.851-1.404-.385-.22-.926-.262-1.65-.03-.725.234-1.571.723-2.485 1.46-.35.283-.708.6-1.068.947a27.206 27.206 0 012.225 2.743c1.246.114 2.424.298 3.505.54.123-.483.221-.948.293-1.391.186-1.154.19-2.125.03-2.865zM10.163 1.82c.351.283.708.6 1.068.947A27.215 27.215 0 009.007 5.51a27.564 27.564 0 00-3.506.54c-.123-.483-.22-.948-.292-1.391-.186-1.153-.19-2.125-.031-2.865.16-.74.466-1.183.85-1.403C6.415.17 6.955.128 7.68.36s1.57.722 2.484 1.459zM19.354 7.421a27.05 27.05 0 01-1.281 3.284 27.04 27.04 0 011.28 3.283c.484-.136.939-.284 1.361-.444 1.1-.417 1.95-.9 2.515-1.406.566-.507.8-.992.8-1.433 0-.442-.234-.927-.8-1.434-.565-.506-1.415-.988-2.515-1.405-.422-.16-.877-.309-1.36-.445zM15.05 15.9a27.207 27.207 0 01-2.224 2.742c.36.348.718.664 1.069.947.913.737 1.759 1.227 2.483 1.46.725.232 1.266.19 1.65-.03.386-.221.693-.665.852-1.404.16-.74.155-1.711-.031-2.864-.072-.444-.17-.909-.293-1.392a27.56 27.56 0 01-3.505.54zM9.007 15.9a27.21 27.21 0 002.224 2.742c-.36.348-.717.664-1.068.947-.913.737-1.759 1.227-2.484 1.46-.725.232-1.265.19-1.65-.03-.385-.221-.692-.665-.851-1.404-.16-.74-.155-1.711.031-2.864.071-.444.17-.909.292-1.392a27.56 27.56 0 003.506.54zM4.704 13.988c.329-1.05.758-2.155 1.28-3.283a27.043 27.043 0 01-1.28-3.284c-.483.136-.938.285-1.36.445-1.1.417-1.95.899-2.516 1.405-.565.507-.8.992-.8 1.434 0 .441.235.926.8 1.433.566.507 1.416.989 2.515 1.405.423.16.877.31 1.36.445z"
         fill="currentColor"
@@ -193,9 +191,9 @@ export function Logo({ width, height, style }: IconProps) {
   );
 }
 
-export function GitHub({ width, height, style }: IconProps) {
+export function GitHubIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 24} height={height ?? 24} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-4`, style]}>
       <Path
         fill="currentColor"
         d="M12 1.60205C5.9225 1.60205 1 6.41965 1 12.3676C1 17.1314 4.14875 21.155 8.52125 22.5815C9.07125 22.6757 9.2775 22.3527 9.2775 22.0701C9.2775 21.8144 9.26375 20.9666 9.26375 20.065C6.5 20.5629 5.785 19.4056 5.565 18.8001C5.44125 18.4906 4.905 17.5351 4.4375 17.2794C4.0525 17.0776 3.5025 16.5797 4.42375 16.5662C5.29 16.5528 5.90875 17.3467 6.115 17.6697C7.105 19.298 8.68625 18.8404 9.31875 18.5578C9.415 17.8581 9.70375 17.3871 10.02 17.1179C7.5725 16.8488 5.015 15.9203 5.015 11.8024C5.015 10.6317 5.44125 9.66278 6.1425 8.90919C6.0325 8.64005 5.6475 7.53658 6.2525 6.05631C6.2525 6.05631 7.17375 5.77372 9.2775 7.15978C10.1575 6.91756 11.0925 6.79645 12.0275 6.79645C12.9625 6.79645 13.8975 6.91756 14.7775 7.15978C16.8813 5.76026 17.8025 6.05631 17.8025 6.05631C18.4075 7.53658 18.0225 8.64005 17.9125 8.90919C18.6138 9.66278 19.04 10.6182 19.04 11.8024C19.04 15.9337 16.4688 16.8488 14.0213 17.1179C14.42 17.4544 14.7638 18.1003 14.7638 19.1096C14.7638 20.5495 14.75 21.7068 14.75 22.0701C14.75 22.3527 14.9563 22.6891 15.5063 22.5815C17.69 21.86 19.5875 20.4865 20.9318 18.6542C22.2761 16.822 22.9994 14.6233 23 12.3676C23 6.41965 18.0775 1.60205 12 1.60205Z"
@@ -204,9 +202,9 @@ export function GitHub({ width, height, style }: IconProps) {
   );
 }
 
-export function Plus({ width, height, style }: IconProps) {
+export function PlusIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" style={style}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -223,13 +221,9 @@ export function Plus({ width, height, style }: IconProps) {
   );
 }
 
-export function XIcon({ width, height, style }: IconProps) {
+export function XIcon({ style }: IconProps) {
   return (
-    <Svg
-      width={width ?? 16}
-      height={height ?? 16}
-      viewBox="0 0 16 16"
-      style={[style, tw`rotate-45`]}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style, tw`rotate-45`]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -246,9 +240,9 @@ export function XIcon({ width, height, style }: IconProps) {
   );
 }
 
-export function Question({ width, height, style }: IconProps) {
+export function QuestionIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-4`, style]}>
       <Path
         d="M9.88849 16.0515H13.0629V15.8036C13.082 13.7826 13.7398 12.858 15.2936 11.9047C17.0477 10.8561 18.144 9.42612 18.144 7.24309C18.144 4.02097 15.6368 2 11.9953 2C8.65875 2 5.95141 3.84938 5.85608 7.47188H9.24979C9.33558 5.67969 10.6321 4.82173 11.9762 4.82173C13.4347 4.82173 14.6073 5.79409 14.6073 7.29075C14.6073 8.62536 13.7207 9.54051 12.5672 10.265C10.8799 11.3136 9.90756 12.3718 9.88849 15.8036V16.0515ZM11.5567 22C12.6816 22 13.6444 21.0658 13.654 19.9028C13.6444 18.7588 12.6816 17.8246 11.5567 17.8246C10.3937 17.8246 9.44998 18.7588 9.45951 19.9028C9.44998 21.0658 10.3937 22 11.5567 22Z"
         fill="currentColor"
@@ -257,9 +251,9 @@ export function Question({ width, height, style }: IconProps) {
   );
 }
 
-export function Sort({ width, height, style }: IconProps) {
+export function SortIcon({ style }: IconProps) {
   return (
-    <Svg width={width ?? 16} height={height ?? 16} viewBox="0 0 16 16" style={style}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -270,9 +264,9 @@ export function Sort({ width, height, style }: IconProps) {
   );
 }
 
-export function Thumbnail({ width = 16, height = 16, style }: IconProps) {
+export function ThumbnailIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} style={style}>
+    <Svg style={[tw`size-4`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -290,9 +284,9 @@ export function Thumbnail({ width = 16, height = 16, style }: IconProps) {
   );
 }
 
-export function License({ width = 16, height = 18, style }: IconProps) {
+export function LicenseIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 18" style={style}>
+    <Svg viewBox="0 0 16 18" style={[tw`h-4 w-3.5`, style]}>
       <Path
         fill="currentColor"
         d="M0,0v18h16V0H0z M14,15.9H2V3.1h12C14,3.1,14,15.9,14,15.9z M12,13H4v-1h8V13z M12,10.5H4v-1h8V10.5z M12,8H4V7h8V8z"
@@ -301,9 +295,9 @@ export function License({ width = 16, height = 18, style }: IconProps) {
   );
 }
 
-export function Fork({ width = 15, height = 16, style }: IconProps) {
+export function ForkIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 15 16" style={style}>
+    <Svg viewBox="0 0 15 16" style={[tw`h-[17px] w-4`, style]}>
       <Path
         fill="currentColor"
         d="M8.5,10.8V8l4.7-5l0,2.3H15V0H9.7v1.8H12L7.5,6.5L3,1.8h2.3V0H0v5.3h1.8V3l4.7,5v2.9"
@@ -316,9 +310,9 @@ export function Fork({ width = 15, height = 16, style }: IconProps) {
   );
 }
 
-export function Code({ width = 16, height = 16, style }: IconProps) {
+export function ExamplesIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
       <Path fill="currentColor" d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
       <Path fill="currentColor" d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
       <Path fill="currentColor" d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
@@ -326,9 +320,9 @@ export function Code({ width = 16, height = 16, style }: IconProps) {
   );
 }
 
-export function Warning({ width = 17, height = 17, style }: IconProps) {
+export function WarningIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-[17px]`, style]}>
       <Path
         d="M142.41,40.22l87.46,151.87C236,202.79,228.08,216,215.46,216H40.54C27.92,216,20,202.79,26.13,192.09L113.59,40.22C119.89,29.26,136.11,29.26,142.41,40.22Z"
         fill="currentColor"
@@ -358,9 +352,9 @@ export function Warning({ width = 17, height = 17, style }: IconProps) {
   );
 }
 
-export function TypeScript({ width = 16, height = 16, style }: IconProps) {
+export function TypeScriptIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
       <Path
         fill="currentColor"
         d="M0,0v8v8h16V0H0z M9.1,8.7H7v5.9H5.6V8.7H3.5V7.4h5.6V8.7z M14.5,13.4c-0.3,0.7-0.9,1.1-1.8,1.3c-0.3,0-0.9,0-1.2,0c-0.6-0.1-1.3-0.4-1.6-0.9c-0.1-0.2-0.4-0.6-0.4-0.6l0.2-0.1l0.6-0.3l0.5-0.3l0.1,0.1c0.1,0.2,0.4,0.5,0.6,0.6c0.5,0.3,1.2,0.2,1.6-0.1c0.1-0.1,0.2-0.3,0.2-0.5c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.4-0.3-1.1-0.6c-0.8-0.4-1.2-0.6-1.5-0.9c-0.2-0.2-0.4-0.5-0.4-0.8c-0.1-0.2-0.1-0.8,0-1c0.2-0.8,0.8-1.4,1.6-1.5c0.3-0.1,0.9,0,1.2,0l0,0c0.4,0.1,0.7,0.3,1,0.6c0.1,0.2,0.4,0.4,0.4,0.5c0,0-0.7,0.5-1.1,0.8c0,0-0.1-0.2-0.1-0.2c-0.2-0.3-0.4-0.4-0.8-0.4c-0.5,0-0.8,0.2-0.8,0.6c0,0.1,0,0.2,0.1,0.3c0.1,0.2,0.3,0.4,0.9,0.6c1.1,0.5,1.6,0.8,1.9,1.3C14.7,12,14.8,12.8,14.5,13.4z"
@@ -369,9 +363,9 @@ export function TypeScript({ width = 16, height = 16, style }: IconProps) {
   );
 }
 
-export function PlatformTvOS({ width = 18, height = 18, style }: IconProps) {
+export function PlatformTvOS({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]}>
       <Path d="M3 5h18v12H3z" opacity=".3" fill="currentColor" />
       <Path
         fill="currentColor"
@@ -381,9 +375,9 @@ export function PlatformTvOS({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformMacOS({ width = 18, height = 18, style }: IconProps) {
+export function PlatformMacOS({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 32 32" style={style}>
+    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]}>
       <Path opacity="0.3" d="M4 6H28V24.439H20.5V27H11.5V24.439H4V6Z" fill="currentColor" />
       <Path
         fillRule="evenodd"
@@ -395,9 +389,9 @@ export function PlatformMacOS({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformIOS({ width = 18, height = 18, style }: IconProps) {
+export function PlatformIOS({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 32 32" style={style}>
+    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]}>
       <Path
         d="M22.5 0H9.5C7.5 0 6 1.5 6 3.5V28.5C6 30.5 7.5 32 9.5 32H22.5C24.5 32 26 30.5 26 28.5V3.5C26 1.5 24.5 0 22.5 0ZM24 28.5C24.0026 29.1545 23.2965 29.9913 22.5 30H9.5C8.72277 30.0108 8.00356 29.1706 8 28.5V3.5C8.00219 2.64538 8.78312 2.00046 9.5 2H22.5C23.2749 1.99957 24.0009 2.69315 24 3.5V28.5Z"
         fill="currentColor"
@@ -408,9 +402,9 @@ export function PlatformIOS({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformAndroid({ width = 18, height = 18, style }: IconProps) {
+export function PlatformAndroid({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]}>
       <Path
         fill="currentColor"
         d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71s-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"
@@ -419,9 +413,9 @@ export function PlatformAndroid({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformWeb({ width = 18, height = 18, style }: IconProps) {
+export function PlatformWeb({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 32 32" style={style}>
+    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]}>
       <Path opacity="0.3" d="M27 10H5V25H27V10Z" fill="currentColor" />
       <Path
         fill="currentColor"
@@ -431,9 +425,9 @@ export function PlatformWeb({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformWindows({ width = 18, height = 18, style }: IconProps) {
+export function PlatformWindows({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 32 32" style={style}>
+    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]}>
       <Path
         fill="currentColor"
         d="M0,4.5l13.1-1.8l0,12.6L0,15.5L0,4.5z M13.1,16.8l0,12.6L0,27.7l0-10.9L13.1,16.8z M14.7,2.5L32,0v15.2l-17.3,0.1L14.7,2.5z M32,17l0,15.1l-17.3-2.4l0-12.7L32,17z"
@@ -442,9 +436,9 @@ export function PlatformWindows({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformExpo({ width = 18, height = 18, style }: IconProps) {
+export function PlatformExpo({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 22" style={style}>
+    <Svg viewBox="0 0 24 22" style={[tw`size-4.5`, style]}>
       <Path
         fill="currentColor"
         d="M11.39 8.269c.19-.277.397-.312.565-.312.168 0 .447.035.637.312 1.49 2.03 3.95 6.075 5.765 9.06 1.184 1.945 2.093 3.44 2.28 3.63.7.714 1.66.269 2.218-.541.549-.797.701-1.357.701-1.954 0-.407-7.958-15.087-8.759-16.309C14.027.98 13.775.683 12.457.683h-.988c-1.315 0-1.505.297-2.276 1.472C8.392 3.377.433 18.057.433 18.463c0 .598.153 1.158.703 1.955.558.81 1.518 1.255 2.218.54.186-.19 1.095-1.684 2.279-3.63 1.815-2.984 4.267-7.029 5.758-9.06z"
@@ -453,9 +447,9 @@ export function PlatformExpo({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function PlatformVisionOS({ width = 18, height = 18, style }: IconProps) {
+export function PlatformVisionOS({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 392 222" style={style}>
+    <Svg viewBox="0 0 392 222" style={[tw`size-4.5`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -471,9 +465,9 @@ export function PlatformVisionOS({ width = 18, height = 18, style }: IconProps) 
   );
 }
 
-export function ReactLogo({ width = 18, height = 18, style }: IconProps) {
+export function ReactLogo({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 512 512" style={style}>
+    <Svg viewBox="0 0 512 512" style={[tw`size-4.5`, style]}>
       <Path
         fill="currentColor"
         d="M418.2 177.2c-5.4-1.8-10.8-3.5-16.2-5.1.9-3.7 1.7-7.4 2.5-11.1 12.3-59.6 4.2-107.5-23.1-123.3-26.3-15.1-69.2.6-112.6 38.4-4.3 3.7-8.5 7.6-12.5 11.5-2.7-2.6-5.5-5.2-8.3-7.7-45.5-40.4-91.1-57.4-118.4-41.5-26.2 15.2-34 60.3-23 116.7 1.1 5.6 2.3 11.1 3.7 16.7-6.4 1.8-12.7 3.8-18.6 5.9C38.3 196.2 0 225.4 0 255.6c0 31.2 40.8 62.5 96.3 81.5 4.5 1.5 9 3 13.6 4.3-1.5 6-2.8 11.9-4 18-10.5 55.5-2.3 99.5 23.9 114.6 27 15.6 72.4-.4 116.6-39.1 3.5-3.1 7-6.3 10.5-9.7 4.4 4.3 9 8.4 13.6 12.4 42.8 36.8 85.1 51.7 111.2 36.6 27-15.6 35.8-62.9 24.4-120.5-.9-4.4-1.9-8.9-3-13.5 3.2-.9 6.3-1.9 9.4-2.9 57.7-19.1 99.5-50 99.5-81.7 0-30.3-39.4-59.7-93.8-78.4zM282.9 92.3c37.2-32.4 71.9-45.1 87.7-36 16.9 9.7 23.4 48.9 12.8 100.4-.7 3.4-1.4 6.7-2.3 10-22.2-5-44.7-8.6-67.3-10.6-13-18.6-27.2-36.4-42.6-53.1 3.9-3.7 7.7-7.2 11.7-10.7zM167.2 307.5c5.1 8.7 10.3 17.4 15.8 25.9-15.6-1.7-31.1-4.2-46.4-7.5 4.4-14.4 9.9-29.3 16.3-44.5 4.6 8.8 9.3 17.5 14.3 26.1zm-30.3-120.3c14.4-3.2 29.7-5.8 45.6-7.8-5.3 8.3-10.5 16.8-15.4 25.4-4.9 8.5-9.7 17.2-14.2 26-6.3-14.9-11.6-29.5-16-43.6zm27.4 68.9c6.6-13.8 13.8-27.3 21.4-40.6s15.8-26.2 24.4-38.9c15-1.1 30.3-1.7 45.9-1.7s31 .6 45.9 1.7c8.5 12.6 16.6 25.5 24.3 38.7s14.9 26.7 21.7 40.4c-6.7 13.8-13.9 27.4-21.6 40.8-7.6 13.3-15.7 26.2-24.2 39-14.9 1.1-30.4 1.6-46.1 1.6s-30.9-.5-45.6-1.4c-8.7-12.7-16.9-25.7-24.6-39s-14.8-26.8-21.5-40.6zm180.6 51.2c5.1-8.8 9.9-17.7 14.6-26.7 6.4 14.5 12 29.2 16.9 44.3-15.5 3.5-31.2 6.2-47 8 5.4-8.4 10.5-17 15.5-25.6zm14.4-76.5c-4.7-8.8-9.5-17.6-14.5-26.2-4.9-8.5-10-16.9-15.3-25.2 16.1 2 31.5 4.7 45.9 8-4.6 14.8-10 29.2-16.1 43.4zM256.2 118.3c10.5 11.4 20.4 23.4 29.6 35.8-19.8-.9-39.7-.9-59.5 0 9.8-12.9 19.9-24.9 29.9-35.8zM140.2 57c16.8-9.8 54.1 4.2 93.4 39 2.5 2.2 5 4.6 7.6 7-15.5 16.7-29.8 34.5-42.9 53.1-22.6 2-45 5.5-67.2 10.4-1.3-5.1-2.4-10.3-3.5-15.5-9.4-48.4-3.2-84.9 12.6-94zm-24.5 263.6c-4.2-1.2-8.3-2.5-12.4-3.9-21.3-6.7-45.5-17.3-63-31.2-10.1-7-16.9-17.8-18.8-29.9 0-18.3 31.6-41.7 77.2-57.6 5.7-2 11.5-3.8 17.3-5.5 6.8 21.7 15 43 24.5 63.6-9.6 20.9-17.9 42.5-24.8 64.5zm116.6 98c-16.5 15.1-35.6 27.1-56.4 35.3-11.1 5.3-23.9 5.8-35.3 1.3-15.9-9.2-22.5-44.5-13.5-92 1.1-5.6 2.3-11.2 3.7-16.7 22.4 4.8 45 8.1 67.9 9.8 13.2 18.7 27.7 36.6 43.2 53.4-3.2 3.1-6.4 6.1-9.6 8.9zm24.5-24.3c-10.2-11-20.4-23.2-30.3-36.3 9.6.4 19.5.6 29.5.6 10.3 0 20.4-.2 30.4-.7-9.2 12.7-19.1 24.8-29.6 36.4zm130.7 30c-.9 12.2-6.9 23.6-16.5 31.3-15.9 9.2-49.8-2.8-86.4-34.2-4.2-3.6-8.4-7.5-12.7-11.5 15.3-16.9 29.4-34.8 42.2-53.6 22.9-1.9 45.7-5.4 68.2-10.5 1 4.1 1.9 8.2 2.7 12.2 4.9 21.6 5.7 44.1 2.5 66.3zm18.2-107.5c-2.8.9-5.6 1.8-8.5 2.6-7-21.8-15.6-43.1-25.5-63.8 9.6-20.4 17.7-41.4 24.5-62.9 5.2 1.5 10.2 3.1 15 4.7 46.6 16 79.3 39.8 79.3 58 0 19.6-34.9 44.9-84.8 61.4zm-149.7-15c25.3 0 45.8-20.5 45.8-45.8s-20.5-45.8-45.8-45.8c-25.3 0-45.8 20.5-45.8 45.8s20.5 45.8 45.8 45.8z"
@@ -482,9 +476,9 @@ export function ReactLogo({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function Info({ width = 18, height = 18, style }: IconProps) {
+export function InfoIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 19 19" style={style}>
+    <Svg viewBox="0 0 19 19" style={[tw`size-4.5`, style]}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -496,9 +490,9 @@ export function Info({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function NativeCode({ width = 18, height = 22, style }: IconProps) {
+export function NativeCodeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 18 22" style={style}>
+    <Svg viewBox="0 0 18 22" style={[tw`size-4`, style]}>
       <Path
         fill="currentColor"
         d="M0 0H12.414L18 5.586V22H0V0ZM2 2V20H16V8H10V2H2ZM12 2.414V6H15.586L12 2.414ZM8.207 11.207L6.414 13L8.207 14.793L6.793 16.207L3.586 13L6.793 9.793L8.207 11.207ZM11.207 9.793L14.414 13L11.207 16.207L9.793 14.793L11.586 13L9.793 11.207L11.207 9.793Z"
@@ -507,9 +501,9 @@ export function NativeCode({ width = 18, height = 22, style }: IconProps) {
   );
 }
 
-export function ConfigPlugin({ width = 18, height = 22, style }: IconProps) {
+export function ConfigPluginIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 16 16" style={style}>
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
       <Path
         d="M7.61738 8.04512L7.58735 8.01867C7.73476 7.48962 7.60057 6.8983 7.18477 6.48222C6.77145 6.07 6.18729 5.93498 5.66127 6.07744L6.55184 6.96801L6.31818 7.84067L5.44552 8.07406L4.5544 7.18404C4.41277 7.70978 4.54751 8.29422 4.96083 8.70754C5.39372 9.1407 6.01755 9.26773 6.56286 9.09027L6.56782 9.09523L10.2326 12.7597C10.3775 12.9044 10.5671 12.9777 10.7572 12.9777C10.9474 12.9777 11.1367 12.9044 11.2824 12.7597C11.5726 12.4707 11.5726 12.0009 11.2824 11.7096L7.61738 8.04512Z"
         fill="currentColor"
@@ -522,9 +516,9 @@ export function ConfigPlugin({ width = 18, height = 22, style }: IconProps) {
   );
 }
 
-export function PackageSize({ width = 18, height = 18, style }: IconProps) {
+export function PackageSizeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]}>
       <Path fill="currentColor" d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
       <Path
         d="M20 1.002v4.586l1.501-1.5L22.915 5.5l-3.914 3.915L15.084 5.5l1.414-1.414l1.503 1.503V1.002z"
@@ -534,9 +528,9 @@ export function PackageSize({ width = 18, height = 18, style }: IconProps) {
   );
 }
 
-export function Dependency({ width = 18, height = 20, style }: IconProps) {
+export function DependencyIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 18 20" style={style}>
+    <Svg viewBox="0 0 18 20" style={[tw`w-4.5 h-5`, style]}>
       <Path
         d="M8 17.425V10.575L2 7.1V13.95L8 17.425ZM10 17.425L16 13.95V7.1L10 10.575V17.425ZM8 19.725L1 15.7C0.683337 15.5167 0.437337 15.275 0.262004 14.975C0.0866705 14.675 -0.000662879 14.3417 3.78787e-06 13.975V6.025C3.78787e-06 5.65833 0.0876704 5.325 0.263004 5.025C0.438337 4.725 0.684004 4.48333 1 4.3L8 0.275C8.31667 0.0916668 8.65 0 9 0C9.35 0 9.68333 0.0916668 10 0.275L17 4.3C17.3167 4.48333 17.5627 4.725 17.738 5.025C17.9133 5.325 18.0007 5.65833 18 6.025V13.975C18 14.3417 17.9123 14.675 17.737 14.975C17.5617 15.275 17.316 15.5167 17 15.7L10 19.725C9.68333 19.9083 9.35 20 9 20C8.65 20 8.31667 19.9083 8 19.725ZM13 6.525L14.925 5.425L9 2L7.05 3.125L13 6.525ZM9 8.85L10.95 7.725L5.025 4.3L3.075 5.425L9 8.85Z"
         fill="currentColor"
@@ -545,9 +539,9 @@ export function Dependency({ width = 18, height = 20, style }: IconProps) {
   );
 }
 
-export function ThemeLight({ width = 24, height = 24, style }: IconProps) {
+export function ThemeLightIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-6`, style]}>
       <Path
         d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"
         fill="currentColor"
@@ -556,9 +550,9 @@ export function ThemeLight({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function ThemeDark({ width = 24, height = 24, style }: IconProps) {
+export function ThemeDarkIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-6`, style]}>
       <Path
         d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"
         fill="currentColor"
@@ -567,9 +561,9 @@ export function ThemeDark({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Tools({ width = 24, height = 24, style }: IconProps) {
+export function ToolsIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" style={style}>
+    <Svg viewBox="0 0 24 24" style={[tw`size-6`, style]}>
       <Path
         d="M14.501 2.1826C12.3317 2.70203 10.3412 4.64749 10.0265 6.55588C9.92493 7.17081 10.2516 7.60159 10.8197 7.60159C11.2884 7.60159 11.4135 7.45672 11.7829 6.48543C12.3782 4.92082 13.7886 3.86061 15.5094 3.68441C15.9876 3.63543 16.3787 3.64337 16.3787 3.70205C16.3787 3.76074 15.8518 4.29359 15.208 4.88608C13.4702 6.48515 13.092 7.52334 13.7708 8.83008C14.2353 9.72435 14.9597 10.2331 15.8749 10.3077C17.0637 10.4047 17.5348 10.1691 19.0694 8.71037L20.4518 7.39639L20.3774 8.23266C20.2857 9.26401 19.8753 10.2036 19.1438 11.0568C18.4852 11.8251 18.4541 12.3288 19.0452 12.6537C19.559 12.9359 19.9817 12.695 20.7602 11.6764C21.6906 10.4593 21.9935 9.56361 21.9999 8.012C22.0075 6.15546 21.6321 5.54957 20.4742 5.54957C20.0077 5.54957 19.8137 5.6917 18.326 7.12279C16.8616 8.53144 16.6389 8.69601 16.1971 8.69601C15.8294 8.69601 15.6298 8.60394 15.4152 8.33554C14.8635 7.64578 14.991 7.38367 16.638 5.82317C17.4717 5.03314 18.2239 4.25227 18.3094 4.08797C18.5651 3.59713 18.4881 3.11668 18.0826 2.67166C17.4829 2.01351 16.0333 1.81556 14.501 2.1826ZM3.02467 2.71092C2.77181 2.88029 2.43702 3.18836 2.28082 3.39576C1.78329 4.05624 1.9018 4.52382 3.00158 6.23932C4.2214 8.14196 4.55397 8.50668 5.25929 8.71448C5.70619 8.84622 5.90356 8.83733 6.34711 8.66591L6.88915 8.45661L8.98774 10.5257L11.0865 12.5949L10.8873 13.1421C10.327 14.6822 10.7732 15.8891 12.5188 17.5539C13.7698 18.7471 14.0907 18.8809 14.5705 18.4089C15.0465 17.9408 14.9132 17.6203 13.7538 16.4428C12.5014 15.1708 12.3451 14.9256 12.3451 14.2318C12.3451 13.3326 13.4739 12.5038 14.3967 12.7255C14.6388 12.7838 15.7322 13.7552 17.3772 15.3739C19.5481 17.5099 19.9906 18.0124 20.0676 18.4299C20.2074 19.1858 19.8155 19.8863 19.0718 20.2098C18.321 20.5365 17.9296 20.4459 17.1226 19.759C16.3943 19.1391 15.8198 19.0601 15.4825 19.5339C15.1638 19.9814 15.2063 20.1299 15.8509 20.8176C16.6638 21.6851 17.3473 22 18.4171 22C20.0227 22 21.3535 20.9273 21.685 19.3659C21.8198 18.7311 21.8068 18.4865 21.6015 17.7942C21.3699 17.0129 21.2325 16.849 18.6947 14.3279C17.2297 12.8724 15.7806 11.5513 15.4746 11.3921C14.8123 11.0472 13.4902 10.994 12.7856 11.2839L12.3221 11.4746L10.195 9.38577L8.06807 7.29707L8.28088 6.76396C8.54738 6.09677 8.35335 5.32849 7.78697 4.80851C7.17581 4.24721 4.10429 2.40312 3.78063 2.40312C3.61775 2.40312 3.27754 2.54156 3.02467 2.71092ZM5.42536 5.18211C6.17117 5.63425 6.78149 6.06818 6.78149 6.14657C6.78149 6.3422 5.9297 7.19119 5.73345 7.19119C5.60827 7.19119 4.56523 5.65572 3.79092 4.33134C3.6585 4.10507 3.58493 4.06677 5.42536 5.18211ZM5.16568 14.3391C2.28638 17.205 2.05243 17.526 2.05243 18.6142C2.05243 19.6782 2.76276 20.7949 3.76978 21.3138C4.51099 21.6958 5.80466 21.72 6.50331 21.365C6.77106 21.229 7.81952 20.309 8.83307 19.3206C10.7763 17.4256 10.9328 17.1567 10.3978 16.6305C9.88223 16.1234 9.60377 16.2736 7.76708 18.0504C6.8043 18.9819 5.86906 19.8186 5.68894 19.9098C4.86789 20.3254 3.72151 19.5508 3.72151 18.5804C3.72151 18.1249 3.92069 17.8913 6.43377 15.3993C9.26536 12.5914 9.41182 12.3775 8.86784 11.8425C8.30105 11.285 8.09325 11.4252 5.16568 14.3391Z"
         fill="currentColor"
@@ -578,9 +572,9 @@ export function Tools({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function ReadmeFile({ width = 24, height = 24, style }: IconProps) {
+export function ReadmeFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V224a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM144,144H128a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h16a36,36,0,0,0,0-72Zm0,56h-8V160h8a20,20,0,0,1,0,40Zm-40-48v56a8,8,0,0,1-16,0V177.38L74.55,196.59a8,8,0,0,1-13.1,0L48,177.38V208a8,8,0,0,1-16,0V152a8,8,0,0,1,14.55-4.59L68,178.05l21.45-30.64A8,8,0,0,1,104,152Z"
         fill="currentColor"
@@ -589,10 +583,9 @@ export function ReadmeFile({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function ChangelogFile({ width = 24, height = 24, style }: IconProps) {
+export function ChangelogFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <Rect width="256" height="256" fill="none" />
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Line
         x1="40"
         y1="64"
@@ -651,10 +644,9 @@ export function ChangelogFile({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function ContributingFile({ width = 24, height = 24, style }: IconProps) {
+export function ContributingFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <Rect width="256" height="256" fill="none" />
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Circle
         cx="84"
         cy="108"
@@ -693,10 +685,9 @@ export function ContributingFile({ width = 24, height = 24, style }: IconProps) 
   );
 }
 
-export function CCFile({ width = 24, height = 24, style }: IconProps) {
+export function CCFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <Rect width="256" height="256" fill="none" />
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Line
         x1="72"
         y1="136"
@@ -749,9 +740,9 @@ export function CCFile({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function CodeBrackets({ width = 24, height = 24, style }: IconProps) {
+export function CodeBracketsIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M80,40c-64,0,0,88-64,88,64,0,0,88,64,88"
         fill="none"
@@ -772,12 +763,10 @@ export function CodeBrackets({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Snack({ width = 24, height = 24, style }: IconProps) {
+export function SnackIcon({ style }: IconProps) {
   return (
     <Svg
-      width={width}
-      height={height}
-      style={style}
+      style={[tw`size-6`, style]}
       viewBox="0 0 32 32"
       fill="currentColor"
       stroke="currentColor"
@@ -829,9 +818,9 @@ export function Snack({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Copy({ width = 24, height = 24, style }: IconProps) {
+export function CopyIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Polyline
         points="168 168 216 168 216 40 88 40 88 88"
         fill="none"
@@ -854,9 +843,9 @@ export function Copy({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function CheckSquare({ width = 24, height = 24, style }: IconProps) {
+export function CheckSquareIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Polyline
         points="88 136 112 160 168 104"
         fill="none"
@@ -881,9 +870,9 @@ export function CheckSquare({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Link({ width = 24, height = 24, style }: IconProps) {
+export function LinkIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M141.38,64.68l11-11a46.62,46.62,0,0,1,65.94,0h0a46.62,46.62,0,0,1,0,65.94L193.94,144,183.6,154.34a46.63,46.63,0,0,1-66-.05h0A46.48,46.48,0,0,1,104,120.06"
         fill="none"
@@ -904,9 +893,9 @@ export function Link({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Verified({ width = 24, height = 24, style }: IconProps) {
+export function VerifiedIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
         fill="none"
@@ -927,9 +916,9 @@ export function Verified({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function NightlyTest({ width = 24, height = 24, style }: IconProps) {
+export function NightlyTestIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-4.5`, style]}>
       <Line
         x1="88"
         y1="32"
@@ -961,9 +950,9 @@ export function NightlyTest({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Module({ width = 24, height = 24, style }: IconProps) {
+export function ModuleIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-4.5`, style]}>
       <Rect
         x="24"
         y="72"
@@ -1011,9 +1000,9 @@ export function Module({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function NoteBlockquote({ width = 24, height = 24, style }: IconProps) {
+export function NoteBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Circle
         cx="128"
         cy="128"
@@ -1037,9 +1026,9 @@ export function NoteBlockquote({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function TipBlockquote({ width = 24, height = 24, style }: IconProps) {
+export function TipBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Line
         x1="88"
         y1="232"
@@ -1071,9 +1060,9 @@ export function TipBlockquote({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function WarningBlockquote({ width = 24, height = 24, style }: IconProps) {
+export function WarningBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M142.41,40.22l87.46,151.87C236,202.79,228.08,216,215.46,216H40.54C27.92,216,20,202.79,26.13,192.09L113.59,40.22C119.89,29.26,136.11,29.26,142.41,40.22Z"
         fill="none"
@@ -1098,9 +1087,9 @@ export function WarningBlockquote({ width = 24, height = 24, style }: IconProps)
   );
 }
 
-export function CautionBlockquote({ width = 24, height = 24, style }: IconProps) {
+export function CautionBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Line
         x1="128"
         y1="136"
@@ -1124,9 +1113,9 @@ export function CautionBlockquote({ width = 24, height = 24, style }: IconProps)
   );
 }
 
-export function ImportantBlockquote({ width = 24, height = 24, style }: IconProps) {
+export function ImportantBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
         fill="none"
@@ -1146,14 +1135,14 @@ export function ImportantBlockquote({ width = 24, height = 24, style }: IconProp
         strokeLinejoin="round"
         strokeWidth="24"
       />
-      <circle cx="128" cy="172" r="12" fill="currentColor" />
+      <Circle cx="128" cy="172" r="12" fill="currentColor" />
     </Svg>
   );
 }
 
-export function PackageManager({ width = 24, height = 24, style }: IconProps) {
+export function PackageManagerIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-4`, style]}>
       <Circle
         cx="128"
         cy="128"
@@ -1176,9 +1165,9 @@ export function PackageManager({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Funding({ width = 24, height = 24, style }: IconProps) {
+export function FundingIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Circle
         cx="204"
         cy="84"
@@ -1217,9 +1206,9 @@ export function Funding({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function FundingGitHub({ width = 24, height = 24, style }: IconProps) {
+export function FundingGitHubIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48"
         fill="none"
@@ -1248,9 +1237,9 @@ export function FundingGitHub({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function RSS({ width = 24, height = 24, style }: IconProps) {
+export function RSSIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
       <Path
         d="M64,40A152,152,0,0,1,216,192"
         fill="none"
@@ -1272,9 +1261,9 @@ export function RSS({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function Spinner({ width = 24, height = 24, style }: IconProps) {
+export function SpinnerIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style} id="spinner">
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]} id="spinner">
       <Line
         x1="128"
         y1="32"
@@ -1367,10 +1356,10 @@ export function Spinner({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function FileIcon({ width = 24, height = 24, style }: IconProps) {
+export function FileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
         fill="none"
         stroke="currentColor"
@@ -1378,7 +1367,7 @@ export function FileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="152 32 152 88 208 88"
         fill="none"
         stroke="currentColor"
@@ -1386,7 +1375,7 @@ export function FileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="96"
         y1="136"
         x2="160"
@@ -1397,7 +1386,7 @@ export function FileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="96"
         y1="168"
         x2="160"
@@ -1412,10 +1401,10 @@ export function FileIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function DownloadFileIcon({ width = 24, height = 24, style }: IconProps) {
+export function DownloadFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
         fill="none"
         stroke="currentColor"
@@ -1423,7 +1412,7 @@ export function DownloadFileIcon({ width = 24, height = 24, style }: IconProps) 
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="152 32 152 88 208 88"
         fill="none"
         stroke="currentColor"
@@ -1431,7 +1420,7 @@ export function DownloadFileIcon({ width = 24, height = 24, style }: IconProps) 
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="128"
         y1="120"
         x2="128"
@@ -1442,7 +1431,7 @@ export function DownloadFileIcon({ width = 24, height = 24, style }: IconProps) 
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="104 160 128 184 152 160"
         fill="none"
         stroke="currentColor"
@@ -1454,10 +1443,10 @@ export function DownloadFileIcon({ width = 24, height = 24, style }: IconProps) 
   );
 }
 
-export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
+export function TempFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M72,224H56a8,8,0,0,1-8-8V184"
         fill="none"
         stroke="currentColor"
@@ -1465,7 +1454,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="120 32 152 32 208 88 208 136"
         fill="none"
         stroke="currentColor"
@@ -1473,7 +1462,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <path
+      <Path
         d="M48,64V40a8,8,0,0,1,8-8H80"
         fill="none"
         stroke="currentColor"
@@ -1481,7 +1470,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="152 32 152 88 208 88"
         fill="none"
         stroke="currentColor"
@@ -1489,7 +1478,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <path
+      <Path
         d="M208,176v40a8,8,0,0,1-8,8h-8"
         fill="none"
         stroke="currentColor"
@@ -1497,7 +1486,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="48"
         y1="104"
         x2="48"
@@ -1508,7 +1497,7 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="112"
         y1="224"
         x2="152"
@@ -1523,10 +1512,10 @@ export function TempFileIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function FolderIcon({ width = 24, height = 24, style }: IconProps) {
+export function FolderIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M216.89,208H39.38A7.4,7.4,0,0,1,32,200.62V80H216a8,8,0,0,1,8,8V200.89A7.11,7.11,0,0,1,216.89,208Z"
         fill="none"
         stroke="currentColor"
@@ -1534,7 +1523,7 @@ export function FolderIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <path
+      <Path
         d="M32,80V56a8,8,0,0,1,8-8H92.69a8,8,0,0,1,5.65,2.34L128,80"
         fill="none"
         stroke="currentColor"
@@ -1546,10 +1535,10 @@ export function FolderIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function ImageFileIcon({ width = 24, height = 24, style }: IconProps) {
+export function ImageFileIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <rect
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Rect
         x="40"
         y="40"
         width="176"
@@ -1561,7 +1550,7 @@ export function ImageFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <circle
+      <Circle
         cx="96"
         cy="96"
         r="16"
@@ -1571,7 +1560,7 @@ export function ImageFileIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <path
+      <Path
         d="M56.69,216,166.34,106.34a8,8,0,0,1,11.32,0L216,144.69"
         fill="none"
         stroke="currentColor"
@@ -1583,10 +1572,10 @@ export function ImageFileIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
+export function CodeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <polyline
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Polyline
         points="64 88 16 128 64 168"
         fill="none"
         stroke="currentColor"
@@ -1594,7 +1583,7 @@ export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="192 88 240 128 192 168"
         fill="none"
         stroke="currentColor"
@@ -1602,7 +1591,7 @@ export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="160"
         y1="40"
         x2="96"
@@ -1617,10 +1606,10 @@ export function CodeIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function FileMetadataIcon({ width = 24, height = 24, style }: IconProps) {
+export function FileMetadataIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <polyline
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Polyline
         points="168 128 216 176 168 224"
         fill="none"
         stroke="currentColor"
@@ -1628,7 +1617,7 @@ export function FileMetadataIcon({ width = 24, height = 24, style }: IconProps) 
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="72 32 72 176 216 176"
         fill="none"
         stroke="currentColor"
@@ -1640,10 +1629,10 @@ export function FileMetadataIcon({ width = 24, height = 24, style }: IconProps) 
   );
 }
 
-export function MaximizeIcon({ width = 24, height = 24, style }: IconProps) {
+export function MaximizeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <polyline
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Polyline
         points="168 48 208 48 208 88"
         fill="none"
         stroke="currentColor"
@@ -1651,7 +1640,7 @@ export function MaximizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="88 208 48 208 48 168"
         fill="none"
         stroke="currentColor"
@@ -1659,7 +1648,7 @@ export function MaximizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="208 168 208 208 168 208"
         fill="none"
         stroke="currentColor"
@@ -1667,7 +1656,7 @@ export function MaximizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="48 88 48 48 88 48"
         fill="none"
         stroke="currentColor"
@@ -1679,10 +1668,10 @@ export function MaximizeIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function MinimizeIcon({ width = 24, height = 24, style }: IconProps) {
+export function MinimizeIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <polyline
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Polyline
         points="208 96 160 96 160 48"
         fill="none"
         stroke="currentColor"
@@ -1690,7 +1679,7 @@ export function MinimizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="48 160 96 160 96 208"
         fill="none"
         stroke="currentColor"
@@ -1698,7 +1687,7 @@ export function MinimizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="160 208 160 160 208 160"
         fill="none"
         stroke="currentColor"
@@ -1706,7 +1695,7 @@ export function MinimizeIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="96 48 96 96 48 96"
         fill="none"
         stroke="currentColor"
@@ -1718,10 +1707,10 @@ export function MinimizeIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function FolderOpenIcon({ width = 24, height = 24, style }: IconProps) {
+export function FolderOpenIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M32,208V64a8,8,0,0,1,8-8H93.33a8,8,0,0,1,4.8,1.6L128,80h72a8,8,0,0,1,8,8v24"
         fill="none"
         stroke="currentColor"
@@ -1729,7 +1718,7 @@ export function FolderOpenIcon({ width = 24, height = 24, style }: IconProps) {
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <path
+      <Path
         d="M32,208l30.18-90.53A8,8,0,0,1,69.77,112H232a8,8,0,0,1,7.59,10.53L211.09,208Z"
         fill="none"
         stroke="currentColor"
@@ -1741,10 +1730,10 @@ export function FolderOpenIcon({ width = 24, height = 24, style }: IconProps) {
   );
 }
 
-export function MarkdownPreviewIcon({ width = 24, height = 24, style }: IconProps) {
+export function MarkdownPreviewIcon({ style }: IconProps) {
   return (
-    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
-      <path
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
         d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
         fill="none"
         stroke="currentColor"
@@ -1752,7 +1741,7 @@ export function MarkdownPreviewIcon({ width = 24, height = 24, style }: IconProp
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <polyline
+      <Polyline
         points="152 32 152 88 208 88"
         fill="none"
         stroke="currentColor"
@@ -1760,7 +1749,7 @@ export function MarkdownPreviewIcon({ width = 24, height = 24, style }: IconProp
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <circle
+      <Circle
         cx="124"
         cy="148"
         r="28"
@@ -1770,7 +1759,7 @@ export function MarkdownPreviewIcon({ width = 24, height = 24, style }: IconProp
         strokeLinejoin="round"
         strokeWidth="16"
       />
-      <line
+      <Line
         x1="143.8"
         y1="167.8"
         x2="160"

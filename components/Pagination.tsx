@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { View, type ViewStyle } from 'react-native';
 
 import { Caption, HoverEffect } from '~/common/styleguide';
-import { Arrow } from '~/components/Icons';
+import { ArrowIcon } from '~/components/Icons';
 import SearchTag from '~/components/SearchTag';
 import { type Query } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
@@ -94,7 +94,7 @@ function BackArrow({ disabled }: ArrowButtonProps) {
         tw`size-6 rotate-180 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
         disabled && tw`opacity-50`,
       ]}>
-      <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />
+      <ArrowIcon style={tw`h-3 text-black dark:text-white`} />
     </View>
   );
 }
@@ -106,7 +106,7 @@ function ForwardArrow({ disabled }: ArrowButtonProps) {
         tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
         disabled && tw`opacity-50`,
       ]}>
-      <Arrow height={12} width={9} style={tw`text-black dark:text-white`} />
+      <ArrowIcon style={tw`h-3 text-black dark:text-white`} />
     </View>
   );
 }

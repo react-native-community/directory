@@ -9,7 +9,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
 
 import { Button } from './Button';
-import { GitHub, Logo, Plus, ThemeDark, ThemeLight, Tools } from './Icons';
+import { GitHubIcon, Logo, PlusIcon, ThemeDarkIcon, ThemeLightIcon, ToolsIcon } from './Icons';
 import Tooltip from './Tooltip';
 
 export default function TopBar() {
@@ -21,7 +21,7 @@ export default function TopBar() {
       style={tw`items-center justify-center gap-y-2.5 overflow-hidden bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
       <View style={tw`-mt-[1.5px] w-full max-w-layout flex-row items-center justify-between px-4`}>
         <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
-          <Logo style={tw`text-primary`} width={29} height={26} />
+          <Logo style={tw`h-6.5 w-[29px] text-primary`} />
           <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
             <A href="/" style={tw`ml-2 font-bold text-primary no-underline`}>
               {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
@@ -49,9 +49,9 @@ export default function TopBar() {
                   style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
                   {tw.prefixMatch('dark') ? (
-                    <ThemeLight style={tw`text-white`} />
+                    <ThemeLightIcon style={tw`text-white`} />
                   ) : (
-                    <ThemeDark style={tw`text-white`} />
+                    <ThemeDarkIcon style={tw`text-white`} />
                   )}
                 </Button>
               </View>
@@ -66,7 +66,7 @@ export default function TopBar() {
                   href="/tools"
                   style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
-                  <Tools style={tw`text-white`} />
+                  <ToolsIcon style={tw`text-white`} />
                 </Button>
               </View>
             }>
@@ -81,7 +81,7 @@ export default function TopBar() {
                   href="https://github.com/react-native-community/directory"
                   style={tw`size-8.5 bg-transparent px-1`}
                   containerStyle={tw`rounded-full`}>
-                  <GitHub style={tw`text-white`} />
+                  <GitHubIcon style={tw`size-6 text-white`} />
                 </Button>
               </View>
             }>
@@ -92,11 +92,7 @@ export default function TopBar() {
             href="https://github.com/react-native-community/directory/?tab=readme-ov-file#how-do-i-add-a-library"
             style={[tw`max-h-8.5 px-4 py-2`, isSmallScreen && tw`w-8.5`]}>
             <View style={tw`flex-row items-center gap-1`}>
-              <Plus
-                width={14}
-                height={14}
-                style={[tw`text-white`, !isSmallScreen && tw`-ml-0.5`]}
-              />
+              <PlusIcon style={[tw`size-3.5 text-white`, !isSmallScreen && tw`-ml-0.5`]} />
               {!isSmallScreen && <P style={tw`ml-1 text-white`}>Add a library</P>}
             </View>
           </Button>

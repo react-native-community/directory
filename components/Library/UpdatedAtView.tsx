@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 
 import { A } from '~/common/styleguide';
-import { Calendar } from '~/components/Icons';
+import { CalendarIcon } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
@@ -30,14 +30,13 @@ export default function UpdatedAtView({ library }: Props) {
       trigger={
         <View style={tw`flex-row items-start gap-2`} aria-label={tooltipContent} role="tooltip">
           <View>
-            <Calendar
-              style={
+            <CalendarIcon
+              style={[
+                tw`h-4 w-3.5`,
                 library.unmaintained
                   ? tw`text-warning-dark dark:text-warning`
-                  : tw`text-tertiary dark:text-pewter`
-              }
-              width={14}
-              height={16}
+                  : tw`text-tertiary dark:text-pewter`,
+              ]}
             />
           </View>
           <A

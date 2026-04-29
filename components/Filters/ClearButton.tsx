@@ -19,7 +19,7 @@ export function ClearButton({ onPress }: ClearButtonProps) {
           onPress={onPress}
           style={tw`size-6 items-center justify-center`}
           aria-label="Clear all">
-          <XIcon style={isXIconHovered ? tw`text-error` : tw`text-white`} width={12} height={12} />
+          <XIcon style={[tw`size-3`, isXIconHovered ? tw`text-error` : tw`text-white`]} />
         </Pressable>
       }>
       Clear all

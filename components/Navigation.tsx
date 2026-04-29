@@ -36,9 +36,7 @@ export default function Navigation({
           ]}>
           <View style={tw`absolute inset-0 overflow-hidden`}>
             <Logo
-              width={580}
-              height={520}
-              style={tw`absolute left-1/2 top-[-76px] ml-[-280px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
+              style={tw`absolute left-1/2 top-[-76px] ml-[-280px] h-[520px] w-[580px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
             />
           </View>
           <H1
