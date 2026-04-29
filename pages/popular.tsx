@@ -15,48 +15,63 @@ const DEFAULT_QUERY = {
 };
 
 PopularPage.getInitialProps = async (ctx: NextPageContext) => {
-  const coreResponse = await ssrFetch(
-    '/libraries',
-    { ...DEFAULT_QUERY, limit: '8', android: 'true', ios: 'true' },
-    ctx
-  );
-  const androidResponse = await ssrFetch(
-    '/libraries',
-    { ...DEFAULT_QUERY, android: 'true', ios: 'false' },
-    ctx
-  );
-  const iosResponse = await ssrFetch(
-    '/libraries',
-    { ...DEFAULT_QUERY, ios: 'true', android: 'false' },
-    ctx
-  );
-  const webResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, web: 'true' }, ctx);
-  const macosResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, macos: 'true' }, ctx);
-  const tvosResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, tvos: 'true' }, ctx);
-  const visionosResponse = await ssrFetch(
-    '/libraries',
-    { ...DEFAULT_QUERY, visionos: 'true' },
-    ctx
-  );
-  const windowsResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, windows: 'true' }, ctx);
-  const expoGoResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, expoGo: 'true' }, ctx);
-  const fireosResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, fireos: 'true' }, ctx);
-  const horizonResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, horizon: 'true' }, ctx);
-  const vegaosResponse = await ssrFetch('/libraries', { ...DEFAULT_QUERY, vegaos: 'true' }, ctx);
+  const [
+    coreResponse,
+    androidResponse,
+    iosResponse,
+    webResponse,
+    macosResponse,
+    tvosResponse,
+    visionosResponse,
+    windowsResponse,
+    expoGoResponse,
+    fireosResponse,
+    horizonResponse,
+    vegaosResponse,
+  ] = await Promise.all([
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, limit: '8', android: 'true', ios: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, android: 'true', ios: 'false' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, ios: 'true', android: 'false' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, web: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, macos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, tvos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, visionos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, windows: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, expoGo: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, fireos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, horizon: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, vegaos: 'true' }, ctx),
+  ]);
+
+  const [core, android, ios, web, macos, tvos, visionos, windows, expoGo, fireos, horizon, vegaos] =
+    await Promise.all([
+      coreResponse.json(),
+      androidResponse.json(),
+      iosResponse.json(),
+      webResponse.json(),
+      macosResponse.json(),
+      tvosResponse.json(),
+      visionosResponse.json(),
+      windowsResponse.json(),
+      expoGoResponse.json(),
+      fireosResponse.json(),
+      horizonResponse.json(),
+      vegaosResponse.json(),
+    ]);
 
   return {
-    core: await coreResponse.json(),
-    android: await androidResponse.json(),
-    ios: await iosResponse.json(),
-    web: await webResponse.json(),
-    macos: await macosResponse.json(),
-    tvos: await tvosResponse.json(),
-    visionos: await visionosResponse.json(),
-    windows: await windowsResponse.json(),
-    expoGo: await expoGoResponse.json(),
-    fireos: await fireosResponse.json(),
-    horizon: await horizonResponse.json(),
-    vegaos: await vegaosResponse.json(),
+    core,
+    android,
+    ios,
+    web,
+    macos,
+    tvos,
+    visionos,
+    windows,
+    expoGo,
+    fireos,
+    horizon,
+    vegaos,
   };
 };
 
