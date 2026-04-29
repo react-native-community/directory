@@ -10,6 +10,8 @@ const PACKAGES_TO_OPTIMIZE = [
   '@react-native-picker/picker',
   '@sentry/*',
   '@shikijs/*',
+  '@videojs/*',
+  '@visx/*',
   'node-emoji',
   'react-native',
   'react-native-safe-area-context',

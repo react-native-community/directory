@@ -9,7 +9,7 @@ import { type LibraryType, type UnpkgMeta } from '~/types';
 import {
   buildCodeBrowserFileTree,
   getCodeBrowserFilePath,
-  getCodeBrowserNestedFileParentPath,
+  getCodeBrowserNestedFileParentPaths,
 } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
@@ -67,9 +67,7 @@ export default function CodeBrowser({
     for (const file of files) {
       filesByPath.set(file.path, file);
 
-      const nestedFileParentPath = getCodeBrowserNestedFileParentPath(file.path);
-
-      if (nestedFileParentPath) {
+      getCodeBrowserNestedFileParentPaths(file.path).forEach(nestedFileParentPath => {
         relatedPaths.set(
           file.path,
           (relatedPaths.get(file.path) ?? new Set()).add(nestedFileParentPath)
@@ -78,7 +76,7 @@ export default function CodeBrowser({
           nestedFileParentPath,
           (relatedPaths.get(nestedFileParentPath) ?? new Set()).add(file.path)
         );
-      }
+      });
 
       const relativePath = getCodeBrowserFilePath(file.path, data?.prefix).toLowerCase();
 
@@ -202,9 +200,9 @@ export default function CodeBrowser({
               id="codeBrowserList"
               style={[
                 tw`border-palette-gray2 dark:border-default`,
-                !isSmallScreen && tw`w-[320px] flex-grow border-r`,
-                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[320px]`,
-                isSmallScreen && tw`h-[320px] flex-grow-0 border-b`,
+                !isSmallScreen && tw`w-[340px] flex-grow border-r`,
+                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[340px]`,
+                isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (
@@ -213,6 +211,7 @@ export default function CodeBrowser({
                     tree={fileTree}
                     activeFile={activeFile}
                     onSelectFile={onSelectFile}
+                    isSearchActive={Boolean(normalizedSearch)}
                   />
                   <View style={tw`h-2`} />
                 </>
@@ -248,6 +247,7 @@ export default function CodeBrowser({
             {activeFile && activeFileData ? (
               <CodeBrowserContent
                 packageName={library.npmPkg}
+                repoUrl={library.github.urls.repo}
                 filePath={activeFile}
                 fileData={activeFileData}
                 isBrowserMaximized={isBrowserMaximized}

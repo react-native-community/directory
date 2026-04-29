@@ -1,6 +1,7 @@
+import { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 
-import { type CodeBrowserTreeDirectory } from '~/types';
+import { type CodeBrowserTreeDirectory, type CodeBrowserTreeFile } from '~/types';
 
 import CodeBrowserFileRow from './CodeBrowserFileRow';
 
@@ -9,29 +10,36 @@ type Props = {
   activeFile: string | null;
   onSelectFile: (filePath: string) => void;
   depth?: number;
+  isNested?: boolean;
+  isSearchActive?: boolean;
 };
 
-export default function CodeBrowserFileTree({ tree, activeFile, onSelectFile, depth = 0 }: Props) {
-  const directories = Object.values(tree.directories).sort((a, b) => a.name.localeCompare(b.name));
+export default function CodeBrowserFileTree({
+  tree,
+  activeFile,
+  onSelectFile,
+  depth = 0,
+  isNested = false,
+  isSearchActive = false,
+}: Props) {
+  const directories = useMemo(
+    () => Object.values(tree.directories).sort((a, b) => a.name.localeCompare(b.name)),
+    [tree.directories]
+  );
   const files = [...tree.files].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <>
-      {directories.map(directory => {
-        const collapsedDirectory = collapseDirectoryPath(directory);
-
-        return (
-          <View key={directory.path}>
-            <CodeBrowserFileRow label={collapsedDirectory.label} depth={depth} isDirectory />
-            <CodeBrowserFileTree
-              tree={collapsedDirectory.directory}
-              activeFile={activeFile}
-              onSelectFile={onSelectFile}
-              depth={depth + 1}
-            />
-          </View>
-        );
-      })}
+      {directories.map(directory => (
+        <CodeBrowserDirectoryRow
+          key={directory.path}
+          directory={directory}
+          activeFile={activeFile}
+          onSelectFile={onSelectFile}
+          depth={depth}
+          isSearchActive={isSearchActive}
+        />
+      ))}
       {files.map(file => (
         <View key={file.path}>
           <CodeBrowserFileRow
@@ -39,39 +47,116 @@ export default function CodeBrowserFileTree({ tree, activeFile, onSelectFile, de
             depth={depth}
             onPress={() => onSelectFile(file.path)}
             isActive={file.path === activeFile}
+            isNested={isNested}
           />
-          {file.nestedFiles?.map(nestedFile => (
-            <CodeBrowserFileRow
-              isNested
-              key={nestedFile.path}
-              label={nestedFile.name}
+          {file.nestedFiles && (
+            <CodeBrowserFileTree
+              tree={{
+                name: '',
+                path: file.path,
+                directories: {},
+                files: file.nestedFiles,
+              }}
+              activeFile={activeFile}
+              onSelectFile={onSelectFile}
               depth={depth + 1}
-              onPress={() => onSelectFile(nestedFile.path)}
-              isActive={nestedFile.path === activeFile}
+              isNested
+              isSearchActive={isSearchActive}
             />
-          ))}
+          )}
         </View>
       ))}
     </>
   );
 }
 
-function collapseDirectoryPath(directory: CodeBrowserTreeDirectory) {
-  const pathSegments = [directory.name];
-  let collapsedDirectory = directory;
+type CodeBrowserDirectoryRowProps = {
+  directory: CodeBrowserTreeDirectory;
+  activeFile: string | null;
+  onSelectFile: (filePath: string) => void;
+  depth: number;
+  isSearchActive: boolean;
+};
 
-  while (
-    collapsedDirectory.files.length === 0 &&
-    Object.keys(collapsedDirectory.directories).length === 1
-  ) {
-    const [nextDirectory] = Object.values(collapsedDirectory.directories);
+function CodeBrowserDirectoryRow({
+  directory,
+  activeFile,
+  onSelectFile,
+  depth,
+  isSearchActive,
+}: CodeBrowserDirectoryRowProps) {
+  const [collapsed, setCollapsed] = useState(false);
 
-    pathSegments.push(nextDirectory.name);
-    collapsedDirectory = nextDirectory;
+  const collapsedDirectory = useMemo(() => {
+    const pathSegments = [directory.name];
+    let collapsedDirectory = directory;
+
+    while (
+      collapsedDirectory.files.length === 0 &&
+      Object.keys(collapsedDirectory.directories).length === 1
+    ) {
+      const [nextDirectory] = Object.values(collapsedDirectory.directories);
+
+      pathSegments.push(nextDirectory.name);
+      collapsedDirectory = nextDirectory;
+    }
+
+    return {
+      directory: collapsedDirectory,
+      label: pathSegments.join('/'),
+    };
+  }, [directory]);
+
+  const shouldForceExpand =
+    isSearchActive || directoryContainsFile(collapsedDirectory.directory, activeFile);
+
+  useEffect(() => {
+    if (shouldForceExpand) {
+      setCollapsed(false);
+    }
+  }, [shouldForceExpand]);
+
+  return (
+    <View>
+      <CodeBrowserFileRow
+        label={collapsedDirectory.label}
+        depth={depth}
+        isDirectory
+        isCollapsed={collapsed}
+        onPress={() => setCollapsed(currentCollapsed => !currentCollapsed)}
+      />
+      {!collapsed && (
+        <CodeBrowserFileTree
+          tree={collapsedDirectory.directory}
+          activeFile={activeFile}
+          onSelectFile={onSelectFile}
+          depth={depth + 1}
+          isSearchActive={isSearchActive}
+        />
+      )}
+    </View>
+  );
+}
+
+function directoryContainsFile(
+  directory: CodeBrowserTreeDirectory,
+  activeFile: string | null
+): boolean {
+  if (!activeFile) {
+    return false;
   }
 
-  return {
-    directory: collapsedDirectory,
-    label: pathSegments.join('/'),
-  };
+  return (
+    directory.files.some(file => fileContainsPath(file, activeFile)) ||
+    Object.values(directory.directories).some(childDirectory =>
+      directoryContainsFile(childDirectory, activeFile)
+    )
+  );
+}
+
+function fileContainsPath(file: CodeBrowserTreeFile, activeFile: string): boolean {
+  return (
+    file.path === activeFile ||
+    file.nestedFiles?.some(nestedFile => fileContainsPath(nestedFile, activeFile)) === true
+  );
 }

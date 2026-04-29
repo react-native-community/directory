@@ -45,13 +45,16 @@ export default function Navigation({
             style={[
               tw`px-5 text-center text-[42px] leading-[54px] text-white`,
               isSmallScreen && tw`text-3xl`,
+              !description && tw`pb-3`,
             ]}>
             {title}
           </H1>
-          <H2
-            style={tw`px-10 py-1 text-center text-base font-normal text-palette-gray3 dark:text-secondary`}>
-            {description}
-          </H2>
+          {description && (
+            <H2
+              style={tw`px-10 py-1 text-center text-base font-normal text-palette-gray3 dark:text-secondary`}>
+              {description}
+            </H2>
+          )}
           {children}
         </View>
       )}

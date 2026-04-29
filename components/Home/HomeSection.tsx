@@ -48,7 +48,7 @@ export default function HomeSection({
           <Tooltip
             trigger={
               <HoverEffect style={tw`ml-auto`}>
-                <A href={rss} target="_blank" style={tw`h-5.5`}>
+                <A href={rss} target="_blank" style={tw`h-5.5`} aria-label={`${title} RSS feed`}>
                   <RSS style={tw`text-icon`} />
                 </A>
               </HoverEffect>
@@ -72,9 +72,9 @@ export default function HomeSection({
 function renderLibs(list: LibraryType[], count: number) {
   return list
     .splice(0, count)
-    .map((item: LibraryType, index: number) => (
+    .map(item => (
       <LibraryWithLoading
-        key={`home-item-${index}-${item.github.name}`}
+        key={`home-item-${item.npmPkg}`}
         library={item}
         skipMetadata
         skipSecondaryMetadata

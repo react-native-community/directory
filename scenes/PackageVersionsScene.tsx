@@ -71,12 +71,13 @@ export default function PackageVersionsScene({
               <View style={tw`mt-3 gap-1`}>
                 <H6Section
                   style={[
-                    tw`flex items-center justify-between text-secondary`,
+                    tw`flex items-end justify-between text-secondary`,
                     isSmallScreen && tw`flex-col items-start gap-y-0.5`,
                   ]}>
                   Downloads by version
                   <Label style={tw`font-light text-secondary`}>
-                    Last week&ensp;·&ensp;Top downloaded versions
+                    Last week<span style={tw`text-tertiary`}>&ensp;·&ensp;</span>Top downloaded
+                    versions
                   </Label>
                 </H6Section>
               </View>

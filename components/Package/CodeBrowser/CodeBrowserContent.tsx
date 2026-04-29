@@ -4,8 +4,15 @@ import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
 
 import { Label, P } from '~/common/styleguide';
-import { CodeIcon, ImageFileIcon, TempFileIcon } from '~/components/Icons';
+import {
+  CodeIcon,
+  FileIcon,
+  ImageFileIcon,
+  MarkdownPreviewIcon,
+  TempFileIcon,
+} from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
+import MarkdownRenderer from '~/components/Package/MarkdownContentBox/MarkdownRenderer';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import Tooltip from '~/components/Tooltip';
 import rndDark from '~/styles/shiki/rnd-dark.json';
@@ -27,6 +34,7 @@ type Props = {
   packageName: string;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
+  repoUrl: string;
   filePath: string;
   fileData?: UnpkgMeta['files'][number];
 };
@@ -35,22 +43,27 @@ export default function CodeBrowserContent({
   packageName,
   isBrowserMaximized,
   toggleMaximized,
+  repoUrl,
   filePath,
   fileData,
 }: Props) {
   const [rawPreview, setRawPreview] = useState(false);
+  const [markdownPreview, setMarkdownPreview] = useState(false);
   const [imageData, setImageData] = useState<
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
   >(null);
 
   useEffect(() => {
     setImageData(null);
+    setRawPreview(false);
+    setMarkdownPreview(false);
   }, [filePath]);
 
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);
   const isPreviewDisabled = PREVIEW_DISABLED_FILES.includes(fileExtension) || isTooBig;
   const isImageFile = IMAGE_FILES.includes(fileExtension);
+  const isMarkdownFile = ['md', 'mdx'].includes(fileExtension);
   const allowRawPreview = isImageFile && filePath.endsWith('.svg');
 
   const { data, isLoading } = useSWR<string>(
@@ -59,14 +72,20 @@ export default function CodeBrowserContent({
       : undefined,
     (url: string) =>
       fetch(url).then(res => {
+        if (res.status >= 500) {
+          throw new Error(`Failed to fetch "${filePath}" file content: ${res.status}`);
+        }
+
         if (res.status === 200) {
           return res.text();
         }
+
         return res.json();
       }),
     {
       dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
+      shouldRetryOnError: false,
     }
   );
 
@@ -110,6 +129,20 @@ export default function CodeBrowserContent({
                 Show image preview
               </Tooltip>
             )}
+            {isMarkdownFile && (
+              <Tooltip
+                trigger={
+                  <Pressable onPress={() => setMarkdownPreview(previewMode => !previewMode)}>
+                    {markdownPreview ? (
+                      <FileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                    ) : (
+                      <MarkdownPreviewIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                    )}
+                  </Pressable>
+                }>
+                {markdownPreview ? 'Markdown code' : 'Markdown preview'}
+              </Tooltip>
+            )}
             <DownloadFileButton filePath={filePath} packageName={packageName} />
             <CopyButton
               data={data}
@@ -123,26 +156,39 @@ export default function CodeBrowserContent({
             />
           </View>
         </CodeBrowserContentHeader>
-        <CodeBrowserContentHighlighter
-          code={data}
-          lang={filePath.split('.').at(-1) ?? 'text'}
-          theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
-        />
-        <CodeBrowserContentFooter
-          leftSlot={
-            <Label style={tw`font-light text-secondary`}>
-              <span style={tw`font-medium`}>{data.split('\n').length}</span>{' '}
-              {pluralize('line', data.split('\n').length)}
-            </Label>
-          }
-          rightSlot={
-            fileData && (
+        {markdownPreview ? (
+          <View
+            id="markdownContentWrapper"
+            style={[
+              tw`bg-default px-6 pb-6 pt-4`,
+              { overflowY: 'auto', maxHeight: 'calc(100% - 46px)' },
+            ]}>
+            <MarkdownRenderer data={data} repoUrl={repoUrl} linkableHeaders={false} />
+          </View>
+        ) : (
+          <CodeBrowserContentHighlighter
+            code={data}
+            lang={filePath.split('.').at(-1) ?? 'text'}
+            theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
+          />
+        )}
+        {!markdownPreview && (
+          <CodeBrowserContentFooter
+            leftSlot={
               <Label style={tw`font-light text-secondary`}>
-                <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+                <span style={tw`font-medium`}>{data.split('\n').length}</span>{' '}
+                {pluralize('line', data.split('\n').length)}
               </Label>
-            )
-          }
-        />
+            }
+            rightSlot={
+              fileData && (
+                <Label style={tw`font-light text-secondary`}>
+                  <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+                </Label>
+              )
+            }
+          />
+        )}
       </>
     );
   }

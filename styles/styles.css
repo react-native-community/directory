@@ -794,6 +794,18 @@ select {
     scrollbar-gutter: stable;
   }
 
+  #markdownContentWrapper {
+    scrollbar-gutter: stable;
+
+    code {
+      font-size: 83%;
+    }
+
+    pre code {
+      font-size: 110%;
+    }
+  }
+
   pre {
     margin-block: 0;
     padding: 16px;
@@ -811,6 +823,10 @@ select {
   #codeBrowser {
     #codeBrowserList {
       scrollbar-color: var(--icon) var(--table-alt-row);
+    }
+
+    #markdownContentWrapper {
+      scrollbar-color: var(--icon) var(--background);
     }
 
     pre {

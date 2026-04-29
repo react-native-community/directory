@@ -22,47 +22,58 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     };
   }
 
-  const mostDownloadedResponse = await ssrFetch(
-    '/libraries',
-    {
-      order: 'downloads',
-      limit: LIMIT.toString(),
-      isMaintained: 'true',
-      hasNativeCode: 'true',
-    },
-    ctx
-  );
-  const recentlyAddedResponse = await ssrFetch(
-    '/libraries',
-    { order: 'added', limit: LIMIT.toString(), isMaintained: 'true' },
-    ctx
-  );
-  const recentlyUpdatedResponse = await ssrFetch(
-    '/libraries',
-    { order: 'updated', limit: LIMIT.toString(), isMaintained: 'true' },
-    ctx
-  );
-  const popularResponse = await ssrFetch(
-    '/libraries',
-    {
-      order: 'popularity',
-      limit: LIMIT.toString(),
-      isMaintained: 'true',
-      isPopular: 'true',
-      wasRecentlyUpdated: 'true',
-    },
-    ctx
-  );
+  const [
+    mostDownloadedResponse,
+    recentlyAddedResponse,
+    recentlyUpdatedResponse,
+    popularResponse,
+    statisticResponse,
+  ] = await Promise.all([
+    ssrFetch(
+      '/libraries',
+      {
+        order: 'downloads',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        hasNativeCode: 'true',
+      },
+      ctx
+    ),
+    ssrFetch('/libraries', { order: 'added', limit: LIMIT.toString(), isMaintained: 'true' }, ctx),
+    ssrFetch(
+      '/libraries',
+      { order: 'updated', limit: LIMIT.toString(), isMaintained: 'true' },
+      ctx
+    ),
+    ssrFetch(
+      '/libraries',
+      {
+        order: 'popularity',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        isPopular: 'true',
+        wasRecentlyUpdated: 'true',
+      },
+      ctx
+    ),
+    ssrFetch('/libraries/statistic', {}, ctx),
+  ]);
 
-  const statisticResponse = await ssrFetch('/libraries/statistic', {}, ctx);
+  const [mostDownloaded, recentlyAdded, recentlyUpdated, popular, statistic] = await Promise.all([
+    mostDownloadedResponse.json(),
+    recentlyAddedResponse.json(),
+    recentlyUpdatedResponse.json(),
+    popularResponse.json(),
+    statisticResponse.json(),
+  ]);
 
   return {
     props: {
-      mostDownloaded: await mostDownloadedResponse.json(),
-      recentlyAdded: await recentlyAddedResponse.json(),
-      recentlyUpdated: await recentlyUpdatedResponse.json(),
-      popular: await popularResponse.json(),
-      statistic: await statisticResponse.json(),
+      mostDownloaded,
+      recentlyAdded,
+      recentlyUpdated,
+      popular,
+      statistic,
     },
   };
 }

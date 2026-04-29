@@ -5,7 +5,7 @@ import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHub } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
-import UpdatedAtView from '~/components/Library/UpdateAtView';
+import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
@@ -77,7 +77,11 @@ export default function Library({
           </View>
         )}
         {showTrendingMark && library.popularity && (
-          <View style={tw`mb-1 flex-row items-center justify-between gap-6 pr-8`}>
+          <View
+            style={[
+              tw`mb-0.5 flex-row items-center justify-between gap-6`,
+              !isSmallScreen && skipMetadata && tw`pr-8`,
+            ]}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
@@ -109,7 +113,7 @@ export default function Library({
             {isSmallScreen && (
               <BookmarkButton
                 bookmarkId={libName}
-                style={tw`-mr-1 ml-auto rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+                style={tw`-mr-1 ml-auto size-7 items-center justify-center rounded border border-palette-gray2 p-1 dark:border-palette-gray6`}
               />
             )}
           </View>
@@ -125,8 +129,8 @@ export default function Library({
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
           <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
-            {library.images.map((image, index) => (
-              <Thumbnail key={`${image}-${index}`} url={image} />
+            {library.images.map(image => (
+              <Thumbnail key={image} url={image} />
             ))}
           </View>
         )}

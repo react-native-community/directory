@@ -7,7 +7,7 @@ import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
-import UpdatedAtView from '~/components/Library/UpdateAtView';
+import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import DependenciesSection from '~/components/Package/DependenciesSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';

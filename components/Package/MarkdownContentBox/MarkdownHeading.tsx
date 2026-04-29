@@ -7,13 +7,14 @@ import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
   tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  linkableHeaders?: boolean;
 }>;
 
-export default function MarkdownHeading({ children, tagName }: Props) {
+export default function MarkdownHeading({ children, tagName, linkableHeaders }: Props) {
   const Heading = tagName;
   const slug = typeof children === 'string' ? kebabCase(children) : undefined;
 
-  if (!slug) {
+  if (!slug || !linkableHeaders) {
     return <Heading>{children}</Heading>;
   }
 
