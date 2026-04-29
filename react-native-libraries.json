@@ -20775,5 +20775,15 @@
     "examples": ["https://github.com/Jmzp/react-native-smart-keyboard-view/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+  "githubUrl": "https://github.com/akshayambaliya/react-native-network-inspector-devtools",
+  "npmPkg": "https://www.npmjs.com/package/react-native-network-inspector-devtools",
+  "examples": [
+    "https://github.com/akshayambaliya/react-native-network-inspector-devtools/tree/main/example"
+  ],
+  "images": ["https://raw.githubusercontent.com/akshayambaliya/images/refs/heads/main/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%2018.1%20-%202026-04-10%20at%2022.08.22.png","https://raw.githubusercontent.com/akshayambaliya/images/refs/heads/main/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%2018.1%20-%202026-04-10%20at%2022.08.29.png","https://raw.githubusercontent.com/akshayambaliya/images/refs/heads/main/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%2018.1%20-%202026-04-10%20at%2022.08.54.png"],
+  "ios": true,
+  "android": true
   }
 ]
