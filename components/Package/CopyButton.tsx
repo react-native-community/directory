@@ -3,7 +3,7 @@ import { type StyleProp } from 'react-native';
 import { type Style } from 'twrnc';
 
 import { Button } from '~/components/Button';
-import { CheckSquare, Copy } from '~/components/Icons';
+import { CheckSquareIcon, CopyIcon } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
@@ -16,7 +16,7 @@ type Props = {
 
 export default function CopyButton({ data, tooltip, label, style }: Props) {
   const [copied, setCopied] = useState(false);
-  const Icon = copied ? CheckSquare : Copy;
+  const Icon = copied ? CheckSquareIcon : CopyIcon;
 
   return (
     <Tooltip

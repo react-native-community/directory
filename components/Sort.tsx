@@ -8,7 +8,7 @@ import { type Query, type QueryOrder, type QueryOrderDirection } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-import { Sort as SortIcon } from './Icons';
+import { SortIcon } from './Icons';
 import Tooltip from './Tooltip';
 
 type SortButtonProps = {

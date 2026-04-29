@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { A, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import { Warning } from '~/components/Icons';
+import { WarningIcon } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import NavigationTab from '~/components/NavigationTab';
 import { type LibraryType } from '~/types';
@@ -31,7 +31,7 @@ export default function DetailsNavigation({ library }: Props) {
             ]}>
             <ContentContainer
               style={tw`flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2 text-warning-dark dark:text-warning`}>
-              <Warning style={tw`size-4.5 mr-1 flex-shrink-0`} />
+              <WarningIcon style={tw`size-4.5 mr-1 flex-shrink-0`} />
               <Label style={tw`text-warning-dark dark:text-warning`}>
                 This library is not actively maintained.
               </Label>

@@ -4,7 +4,7 @@ import { type Style } from 'twrnc';
 
 import { H6Section } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import { Arrow } from '~/components/Icons';
+import { ArrowIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
 
 import EntityCounter from './EntityCounter';
@@ -51,7 +51,7 @@ export default function CollapsibleSection({
           style={tw`bg-palette-gray2 p-1 dark:bg-palette-gray7`}
           containerStyle={tw`mt-px`}
           aria-label={`${collapsed ? 'Expand' : 'Collapse'} section`}>
-          <Arrow style={[tw`h-3 w-4 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
+          <ArrowIcon style={[tw`h-3 w-4 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
         </Button>
       </View>
       {!collapsed && <View>{children}</View>}

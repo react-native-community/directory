@@ -4,7 +4,12 @@ import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { P } from '~/common/styleguide';
-import { CCFile, ChangelogFile, ContributingFile, ReadmeFile } from '~/components/Icons';
+import {
+  CCFileIcon,
+  ChangelogFileIcon,
+  ContributingFileIcon,
+  ReadmeFileIcon,
+} from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
@@ -33,7 +38,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           ? [
               {
                 title: 'Readme' as const,
-                Icon: ReadmeFile,
+                Icon: ReadmeFileIcon,
                 url: `/api/proxy/unpkg?name=${packageName}&path=README.md`,
               },
             ]
@@ -42,7 +47,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           ? [
               {
                 title: 'Changelog' as const,
-                Icon: ChangelogFile,
+                Icon: ChangelogFileIcon,
                 url: getTabContentUrl(library, 'CHANGELOG.md'),
               },
             ]
@@ -51,7 +56,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           ? [
               {
                 title: 'Contributing' as const,
-                Icon: ContributingFile,
+                Icon: ContributingFileIcon,
                 url: getTabContentUrl(library, 'CONTRIBUTING.md'),
               },
             ]
@@ -60,7 +65,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           ? [
               {
                 title: 'Code of Conduct' as const,
-                Icon: CCFile,
+                Icon: CCFileIcon,
                 url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
               },
             ]

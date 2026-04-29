@@ -7,7 +7,7 @@ import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
-import { Download, Star, Warning } from '~/components/Icons';
+import { DownloadIcon, StarIcon, WarningIcon } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
@@ -90,7 +90,7 @@ export default function MorePackagesBox({ library }: Props) {
                           <Tooltip
                             trigger={
                               <View>
-                                <Warning style={tw`text-warning-dark dark:text-warning`} />
+                                <WarningIcon style={tw`text-warning-dark dark:text-warning`} />
                               </View>
                             }>
                             Unmaintained
@@ -115,11 +115,11 @@ export default function MorePackagesBox({ library }: Props) {
                           isSmallScreen && tw`ml-0 mt-1`,
                         ]}>
                         <View style={tw`flex-row items-center gap-1`}>
-                          <Star style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
+                          <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
                           <span>{github.stats.stars.toLocaleString()}</span>
                         </View>
                         <View style={tw`flex-row items-center gap-1`}>
-                          <Download style={tw`text-tertiary dark:text-palette-gray5`} />
+                          <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
                           <span>{(npm?.downloads ?? 0).toLocaleString()}</span>
                         </View>
                       </View>

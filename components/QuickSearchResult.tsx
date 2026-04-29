@@ -3,7 +3,7 @@ import { Pressable, View } from 'react-native';
 
 import { Caption, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { Warning } from '~/components/Icons';
+import { WarningIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
@@ -50,7 +50,7 @@ function QuickSearchResult({ index, isActive, library, onHoverChange, onSelect }
             <Tooltip
               trigger={
                 <View style={tw`relative top-px`}>
-                  <Warning style={tw`text-warning-dark dark:text-warning`} />
+                  <WarningIcon style={tw`text-warning-dark dark:text-warning`} />
                 </View>
               }>
               Unmaintained

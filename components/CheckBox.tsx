@@ -3,7 +3,7 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import tw from '~/util/tailwind';
 
-import { Check, type IconProps } from './Icons';
+import { CheckIcon, type IconProps } from './Icons';
 
 type Props = {
   style?: StyleProp<ViewStyle>;
@@ -11,7 +11,7 @@ type Props = {
   Icon?: ComponentType<IconProps>;
 };
 
-export default function CheckBox({ style, value, Icon = Check }: Props) {
+export default function CheckBox({ style, value, Icon = CheckIcon }: Props) {
   return (
     <View
       style={[
@@ -22,7 +22,7 @@ export default function CheckBox({ style, value, Icon = Check }: Props) {
         { transition: 'border-color .33s, background-color .33s' },
         style,
       ]}>
-      {value ? <Icon width={14} height={10} style={tw`text-white dark:text-black`} /> : null}
+      {value ? <Icon style={tw`h-2.5 w-3.5 text-white dark:text-black`} /> : null}
     </View>
   );
 }

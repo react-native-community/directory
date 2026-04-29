@@ -3,7 +3,7 @@ import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
 
 import { Label, P, useLayout } from '~/common/styleguide';
-import { FileIcon, Search as SearchIcon } from '~/components/Icons';
+import { FileIcon, SearchIcon } from '~/components/Icons';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { type LibraryType, type UnpkgMeta } from '~/types';
 import {

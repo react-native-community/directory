@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import { A, HoverEffect, P, useLayout } from '~/common/styleguide';
 import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { GitHub } from '~/components/Icons';
+import { GitHubIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
@@ -60,11 +60,7 @@ export default function PackageHeader({
           )}
           <HoverEffect>
             <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
-              <GitHub
-                width={20}
-                height={20}
-                style={tw`text-palette-gray5 dark:text-palette-gray4`}
-              />
+              <GitHubIcon style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
             </A>
           </HoverEffect>
           <BookmarkButton bookmarkId={bookmarkId} style={tw`size-5`} iconStyle={tw`size-5`} />

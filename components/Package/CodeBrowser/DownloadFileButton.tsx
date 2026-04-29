@@ -18,11 +18,7 @@ export default function DownloadFileButton({ packageName, filePath }: Props) {
           containerStyle={tw`h-5`}
           href={`https://unpkg.com/${packageName}/${filePath}`}
           aria-label="Download file">
-          <DownloadFileIcon
-            height={20}
-            width={20}
-            style={tw`size-5 text-palette-gray4 dark:text-pewter`}
-          />
+          <DownloadFileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
         </Button>
       }>
       Download
