@@ -2,8 +2,8 @@ import {
   type APIResponseType,
   type LibraryType,
   type NpmPerVersionDownloads,
-  type NpmRegistryData,
   type NpmRegistryVersionData,
+  type PackageVersionsData,
   type Query,
   type StatisticResultType,
 } from '~/types';
@@ -50,7 +50,7 @@ export type PackageVersionsPageProps = {
   apiData: {
     libraries: LibraryType[];
   };
-  registryData?: NpmRegistryData;
+  registryData?: PackageVersionsData;
   npmDownloads?: NpmPerVersionDownloads;
   errorMessage?: string;
 };

@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import { type NpmPerVersionDownloads, type NpmRegistryData } from '~/types';
+import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -35,7 +35,7 @@ import VersionDownloadsChartModes from './VersionDownloadsChartModes';
 
 type Props = {
   npmDownloads: NpmPerVersionDownloads;
-  registryData: NpmRegistryData;
+  registryData: PackageVersionsData;
 };
 
 const DIST_TAG_LABEL_STYLE = {
