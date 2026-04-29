@@ -20654,6 +20654,14 @@
     "ios": true,
     "android": true,
     "web": true,
+    "newArchitecture": true,
+    "unmaintained": true
+  },
+  {
+    "githubUrl": "https://github.com/Navipro70/expo-iap-utils",
+    "ios": true,
+    "android": true,
+    "web": true,
     "newArchitecture": true
   }
 ]
