@@ -7,7 +7,7 @@ import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { SearchIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
-import { type NpmPerVersionDownloads, type NpmRegistryData } from '~/types';
+import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -17,7 +17,7 @@ import VersionBox from './VersionBox';
 const VERSIONS_TO_SHOW = 25;
 
 type Props = {
-  registryData: NpmRegistryData;
+  registryData: PackageVersionsData;
   npmDownloads?: NpmPerVersionDownloads;
 };
 

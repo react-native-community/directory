@@ -1,6 +1,6 @@
 import { clamp, sumBy } from 'es-toolkit/math';
 
-import { type NpmPerVersionDownloads, type NpmRegistryData } from '~/types';
+import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 
 import {
   type AggregatedChartMode,
@@ -30,7 +30,7 @@ export function parseChartMode(value?: string | string[]) {
 
 export function buildBaseChartSeries(
   npmDownloads: NpmPerVersionDownloads,
-  registryData: NpmRegistryData,
+  registryData: PackageVersionsData,
   versionDistTags: Record<string, string[]>
 ) {
   return Object.entries(npmDownloads.downloads)
@@ -83,7 +83,7 @@ export function getLargestSeriesLength(chartSeriesByMode: ChartSeriesByMode) {
   return Math.max(...Object.values(chartSeriesByMode).map(series => series.length), 0);
 }
 
-export function mapVersionDistTags(registryData: NpmRegistryData) {
+export function mapVersionDistTags(registryData: PackageVersionsData) {
   return Object.entries(registryData['dist-tags']).reduce<Record<string, string[]>>(
     (acc, [tag, version]) => {
       acc[version] = [...(acc[version] ?? []), tag];

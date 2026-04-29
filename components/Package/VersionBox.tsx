@@ -6,7 +6,7 @@ import { DependencyIcon, DownloadIcon, PackageSizeIcon } from '~/components/Icon
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import RelativeTime from '~/components/RelativeTime';
-import { type NpmRegistryVersionData } from '~/types';
+import { type PackageVersionData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -14,7 +14,7 @@ import tw from '~/util/tailwind';
 type Props = {
   label?: string;
   time: string;
-  versionData: NpmRegistryVersionData;
+  versionData: PackageVersionData;
   downloads?: number;
 };
 

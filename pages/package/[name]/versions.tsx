@@ -5,6 +5,7 @@ import PackageVersionsScene from '~/scenes/PackageVersionsScene';
 import { type PackageVersionsPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
+import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
 import { parseQueryParams } from '~/util/queryParams';
 import { ssrFetch } from '~/util/SSRFetch';
 
@@ -48,11 +49,13 @@ export async function getServerSideProps(ctx: NextPageContext) {
       return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
     }
 
+    const registryData = trimPackageVersionsData(await npmResponse.json());
+
     return {
       props: {
         packageName,
+        registryData,
         apiData: await apiResponse.json(),
-        registryData: await npmResponse.json(),
         npmDownloads: await npmDownloads.json(),
       },
     };
