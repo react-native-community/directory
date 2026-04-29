@@ -55,6 +55,8 @@ export default function CodeBrowserContent({
 
   useEffect(() => {
     setImageData(null);
+    setRawPreview(false);
+    setMarkdownPreview(false);
   }, [filePath]);
 
   const fileExtension = filePath.split('.').at(-1) ?? 'text';

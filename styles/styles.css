@@ -795,7 +795,6 @@ select {
   }
 
   #markdownContentWrapper {
-    scrollbar-color: var(--icon) var(--background);
     scrollbar-gutter: stable;
 
     code {
@@ -824,6 +823,10 @@ select {
   #codeBrowser {
     #codeBrowserList {
       scrollbar-color: var(--icon) var(--table-alt-row);
+    }
+
+    #markdownContentWrapper {
+      scrollbar-color: var(--icon) var(--background);
     }
 
     pre {
