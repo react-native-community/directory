@@ -72,7 +72,7 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
             <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
           </View>
         </View>
-        {versionData.dist.unpackedSize && (
+        {versionData?.dist?.unpackedSize && (
           <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
             <PackageSizeIcon style={tw`text-icon`} />
             <View>
