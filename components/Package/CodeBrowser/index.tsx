@@ -247,6 +247,7 @@ export default function CodeBrowser({
             {activeFile && activeFileData ? (
               <CodeBrowserContent
                 packageName={library.npmPkg}
+                repoUrl={library.github.urls.repo}
                 filePath={activeFile}
                 fileData={activeFileData}
                 isBrowserMaximized={isBrowserMaximized}

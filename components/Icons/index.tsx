@@ -1740,3 +1740,47 @@ export function FolderOpenIcon({ width = 24, height = 24, style }: IconProps) {
     </Svg>
   );
 }
+
+export function MarkdownPreviewIcon({ width = 24, height = 24, style }: IconProps) {
+  return (
+    <Svg width={width} height={height} viewBox="0 0 256 256" style={style}>
+      <path
+        d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <polyline
+        points="152 32 152 88 208 88"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <circle
+        cx="124"
+        cy="148"
+        r="28"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <line
+        x1="143.8"
+        y1="167.8"
+        x2="160"
+        y2="184"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
