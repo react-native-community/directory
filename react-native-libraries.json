@@ -20770,7 +20770,10 @@
     "githubUrl": "https://github.com/azizbecha/react-native-preview-url/tree/main/packages/react-native-preview-url",
     "examples": ["https://github.com/azizbecha/react-native-preview-url/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Jmzp/react-native-smart-keyboard-view",
