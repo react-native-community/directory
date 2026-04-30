@@ -20671,7 +20671,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "unmaintained": true,
+    "alternatives": ["expo-iap-utils"]
   },
   {
     "githubUrl": "https://github.com/appstack-tech/react-native-appstack-sdk",
@@ -20783,5 +20785,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Navipro70/expo-iap-utils",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
