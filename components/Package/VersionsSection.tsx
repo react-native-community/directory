@@ -5,9 +5,9 @@ import { useDebouncedCallback } from 'use-debounce';
 
 import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import { Search } from '~/components/Icons';
+import { SearchIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
-import { type NpmPerVersionDownloads, type NpmRegistryData } from '~/types';
+import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -17,7 +17,7 @@ import VersionBox from './VersionBox';
 const VERSIONS_TO_SHOW = 25;
 
 type Props = {
-  registryData: NpmRegistryData;
+  registryData: PackageVersionsData;
   npmDownloads?: NpmPerVersionDownloads;
 };
 
@@ -86,7 +86,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
         <View
           style={tw`flex-row items-center rounded-lg border-2 border-default bg-palette-gray1 dark:bg-dark`}>
           <View style={tw`pointer-events-none absolute left-4`}>
-            <Search style={tw`text-icon`} />
+            <SearchIcon style={tw`text-icon`} />
           </View>
           <TextInput
             ref={inputRef}

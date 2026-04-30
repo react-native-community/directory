@@ -2,7 +2,7 @@ import { type PropsWithChildren } from 'react';
 import { View } from 'react-native';
 
 import { P } from '~/common/styleguide';
-import { WarningBlockquote } from '~/components/Icons';
+import { WarningBlockquoteIcon } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
 import { getFileWarning } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
@@ -25,7 +25,7 @@ export default function CodeBrowserContentHeader({ filePath, children }: Props) 
           <Tooltip
             trigger={
               <View style={tw`ml-auto`}>
-                <WarningBlockquote style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+                <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
               </View>
             }>
             <P style={tw`text-[12px] font-light`}>{warning.message}</P>

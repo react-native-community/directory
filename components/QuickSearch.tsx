@@ -11,7 +11,7 @@ import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-import { Search as SearchIcon, Spinner } from './Icons';
+import { SearchIcon, SpinnerIcon } from './Icons';
 import QuickSearchResult from './QuickSearchResult';
 
 type Props = {
@@ -136,7 +136,7 @@ export default function QuickSearch({ style }: Props) {
         <View style={tw`flex-row items-center`}>
           <View style={tw`pointer-events-none absolute left-4`}>
             {isLoading ? (
-              <Spinner style={tw`-ml-0.5 text-primary`} />
+              <SpinnerIcon style={tw`-ml-0.5 text-primary`} />
             ) : (
               <SearchIcon style={isInputFocused ? tw`text-primary` : tw`text-white`} />
             )}

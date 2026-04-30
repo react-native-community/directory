@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { View } from 'react-native';
 
 import { A, Label, useLayout } from '~/common/styleguide';
-import { Warning } from '~/components/Icons';
+import { WarningIcon } from '~/components/Icons';
 import { type LibraryDataEntryType } from '~/types';
 import { strippedBackground } from '~/util/style';
 import tw from '~/util/tailwind';
@@ -25,7 +25,7 @@ export default function UnmaintainedLabel({ alternatives, block }: Props) {
           strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
         ]}>
         <View style={tw`flex-shrink flex-row gap-1.5`}>
-          <Warning style={tw`size-4 text-warning-dark dark:text-warning`} />
+          <WarningIcon style={tw`size-4 text-warning-dark dark:text-warning`} />
           <Label style={tw`text-warning-dark dark:text-warning`}>
             This library is not actively maintained.
           </Label>

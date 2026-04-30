@@ -2,7 +2,7 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import { Filter as FilterIcon } from '~/components/Icons';
+import { FilterIcon } from '~/components/Icons';
 import { type Query } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -55,9 +55,10 @@ export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress,
         <View style={tw`flex-row items-center`}>
           <View style={tw`top-px`}>
             <FilterIcon
-              style={[tw`text-white`, !isFilterVisible && isFilterCount && tw`text-primary`]}
-              width={14}
-              height={12}
+              style={[
+                tw`h-3 w-3.5 text-white`,
+                !isFilterVisible && isFilterCount && tw`text-primary`,
+              ]}
             />
           </View>
           <P style={tw`ml-1.5 select-none text-sm text-white`}>

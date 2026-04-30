@@ -4,7 +4,7 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 import { Label } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
-import { Check } from './Icons';
+import { CheckIcon } from './Icons';
 
 type Props = {
   label: string;
@@ -17,7 +17,7 @@ export function Tag({
   label,
   tagStyle,
   small,
-  icon = <Check width={12} height={8} style={tw`text-palette-gray5`} />,
+  icon = <CheckIcon style={tw`h-2 w-3 text-palette-gray5`} />,
 }: Props) {
   return (
     <View

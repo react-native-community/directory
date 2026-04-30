@@ -311,6 +311,18 @@ export type NpmRegistryVersionData = NpmRegistryCommonData & {
   _nodeVersion?: string;
 };
 
+export type PackageVersionData = Pick<
+  NpmRegistryVersionData,
+  'name' | 'version' | '_npmUser' | 'dependencies'
+> & {
+  dist?: Pick<NpmRegistryVersionData['dist'], 'unpackedSize'>;
+};
+
+export type PackageVersionsData = Pick<NpmRegistryData, 'dist-tags'> & {
+  versions: Record<string, PackageVersionData>;
+  time: Record<string, string>;
+};
+
 export type NpmUser = {
   name: string;
   email?: string;

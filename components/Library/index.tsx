@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native';
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
 import BookmarkButton from '~/components/BookmarkButton';
 import CompatibilityTags from '~/components/CompatibilityTags';
-import { GitHub } from '~/components/Icons';
+import { GitHubIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import Tooltip from '~/components/Tooltip';
@@ -103,11 +103,7 @@ export default function Library({
             </A>
             <HoverEffect>
               <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
-                <GitHub
-                  width={20}
-                  height={20}
-                  style={tw`text-palette-gray5 dark:text-palette-gray4`}
-                />
+                <GitHubIcon style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
               </A>
             </HoverEffect>
             {isSmallScreen && (

@@ -5,8 +5,8 @@ import ContentContainer from '~/components/ContentContainer';
 import HomeSection from '~/components/Home/HomeSection';
 import PlatformRow from '~/components/Home/PlatformRow';
 import {
-  Calendar,
-  Download,
+  CalendarIcon,
+  DownloadIcon,
   PlatformAndroid,
   PlatformIOS,
   PlatformMacOS,
@@ -14,8 +14,8 @@ import {
   PlatformVisionOS,
   PlatformWeb,
   PlatformWindows,
-  Plus,
-  Star,
+  PlusIcon,
+  StarIcon,
 } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
@@ -152,13 +152,13 @@ export default function HomeScene({
         <HomeSection
           data={mostDownloaded.libraries}
           title="Most downloaded"
-          Icon={Download}
+          Icon={DownloadIcon}
           queryParams={{ order: 'downloads', hasNativeCode: 'true' }}
         />
         <HomeSection
           data={popular.libraries}
           title="Popular"
-          Icon={Star}
+          Icon={StarIcon}
           queryParams={{
             order: 'popularity',
             isPopular: 'true',
@@ -169,14 +169,14 @@ export default function HomeScene({
         <HomeSection
           data={recentlyUpdated.libraries}
           title="Just updated"
-          Icon={Calendar}
+          Icon={CalendarIcon}
           queryParams={{ order: 'updated' }}
           rss="/rss/updated.xml"
         />
         <HomeSection
           data={recentlyAdded.libraries}
           title="Recently added"
-          Icon={Plus}
+          Icon={PlusIcon}
           queryParams={{ order: 'added' }}
           rss="/rss/added.xml"
         />

@@ -3,7 +3,7 @@ import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
 import { A, H4, HoverEffect, P } from '~/common/styleguide';
-import { type IconProps, RSS } from '~/components/Icons';
+import { type IconProps, RSSIcon } from '~/components/Icons';
 import LoadingContent from '~/components/Library/LoadingContent';
 import Tooltip from '~/components/Tooltip';
 import { type LibraryType, type Query } from '~/types';
@@ -49,7 +49,7 @@ export default function HomeSection({
             trigger={
               <HoverEffect style={tw`ml-auto`}>
                 <A href={rss} target="_blank" style={tw`h-5.5`} aria-label={`${title} RSS feed`}>
-                  <RSS style={tw`text-icon`} />
+                  <RSSIcon style={tw`text-icon`} />
                 </A>
               </HoverEffect>
             }>

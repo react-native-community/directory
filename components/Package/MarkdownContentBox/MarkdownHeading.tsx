@@ -2,7 +2,7 @@ import { kebabCase } from 'es-toolkit/string';
 import { type PropsWithChildren } from 'react';
 
 import { Button } from '~/components/Button';
-import { Link } from '~/components/Icons';
+import { LinkIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
@@ -28,7 +28,7 @@ export default function MarkdownHeading({ children, tagName, linkableHeaders }: 
           tw`bg-transparent`,
           ['h1', 'h2', 'h3'].includes(tagName) ? tw`mt-px size-4` : tw`size-3.5`,
         ]}>
-        <Link style={tw`text-icon`} />
+        <LinkIcon style={tw`text-icon`} />
       </Button>
     </Heading>
   );

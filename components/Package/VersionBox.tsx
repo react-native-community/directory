@@ -2,11 +2,11 @@ import SHA256 from 'crypto-js/sha256';
 import { View } from 'react-native';
 
 import { A, Caption, Label, useLayout } from '~/common/styleguide';
-import { Dependency, Download, PackageSize } from '~/components/Icons';
+import { DependencyIcon, DownloadIcon, PackageSizeIcon } from '~/components/Icons';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import RelativeTime from '~/components/RelativeTime';
-import { type NpmRegistryVersionData } from '~/types';
+import { type PackageVersionData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -14,7 +14,7 @@ import tw from '~/util/tailwind';
 type Props = {
   label?: string;
   time: string;
-  versionData: NpmRegistryVersionData;
+  versionData: PackageVersionData;
   downloads?: number;
 };
 
@@ -52,7 +52,7 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
       <View style={tw`flex-row flex-wrap gap-x-5 gap-y-1.5`}>
         {versionData.dependencies && (
           <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
-            <Dependency style={tw`text-icon`} />
+            <DependencyIcon style={tw`text-icon`} />
             <View>
               <A style={tw`font-light`} href={`${urlBase}?activeTab=dependencies`}>
                 {Object.keys(versionData.dependencies).length}
@@ -64,7 +64,7 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
           </View>
         )}
         <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[128px]`]}>
-          <Download style={tw`text-icon`} />
+          <DownloadIcon style={tw`text-icon`} />
           <View>
             <A style={tw`font-light`} href={`${urlBase}?activeTab=versions`}>
               {formatNumberToString(downloads)}
@@ -72,9 +72,9 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
             <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
           </View>
         </View>
-        {versionData.dist.unpackedSize && (
+        {versionData?.dist?.unpackedSize && (
           <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
-            <PackageSize style={tw`text-icon`} />
+            <PackageSizeIcon style={tw`text-icon`} />
             <View>
               <A style={tw`font-light`} href={`${urlBase}?activeTab=code`}>
                 {formatBytes(versionData.dist.unpackedSize)}

@@ -9,12 +9,12 @@ import remarkGfm from 'remark-gfm';
 
 import { A } from '~/common/styleguide';
 import {
-  CautionBlockquote,
-  Check,
-  ImportantBlockquote,
-  NoteBlockquote,
-  TipBlockquote,
-  WarningBlockquote,
+  CautionBlockquoteIcon,
+  CheckIcon,
+  ImportantBlockquoteIcon,
+  NoteBlockquoteIcon,
+  TipBlockquoteIcon,
+  WarningBlockquoteIcon,
 } from '~/components/Icons';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
@@ -189,7 +189,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
               <div
                 className="checkbox"
                 style={tw`m-0 box-border size-4 items-center justify-center rounded border border-solid border-palette-gray3 bg-palette-gray2 dark:border-powder dark:bg-palette-gray6`}>
-                {isChecked && <Check style={tw`size-3 text-success`} />}
+                {isChecked && <CheckIcon style={tw`size-3 text-success`} />}
               </div>
             );
           }
@@ -206,15 +206,15 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
 function getBlockquoteIcon(type: string) {
   switch (type) {
     case 'note':
-      return <NoteBlockquote style={tw`-ml-0.5 size-4`} />;
+      return <NoteBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
     case 'tip':
-      return <TipBlockquote style={tw`-ml-0.5 size-4`} />;
+      return <TipBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
     case 'warning':
-      return <WarningBlockquote style={tw`-ml-0.5 size-4`} />;
+      return <WarningBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
     case 'caution':
-      return <CautionBlockquote style={tw`-ml-0.5 size-4`} />;
+      return <CautionBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
     case 'important':
-      return <ImportantBlockquote style={tw`-ml-0.5 size-4`} />;
+      return <ImportantBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
     default:
       return null;
   }
