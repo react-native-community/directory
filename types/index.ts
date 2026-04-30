@@ -323,6 +323,10 @@ export type PackageVersionsData = Pick<NpmRegistryData, 'dist-tags'> & {
   time: Record<string, string>;
 };
 
+export type PackageVersionsOnlyData = Pick<NpmRegistryData, 'dist-tags'> & {
+  versions: string[];
+};
+
 export type NpmUser = {
   name: string;
   email?: string;

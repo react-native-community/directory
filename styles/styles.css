@@ -785,6 +785,13 @@ select {
   }
 }
 
+/* PACKAGE VERSIONS DROPDOWN */
+
+#dropdown-list {
+  scrollbar-color: var(--icon) var(--background);
+  scrollbar-gutter: stable;
+}
+
 /* CODE BROWSER */
 
 #codeBrowser {

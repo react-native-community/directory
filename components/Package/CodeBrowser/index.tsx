@@ -22,6 +22,7 @@ import CodeBrowserFileTree from './CodeBrowserFileTree';
 
 type Props = {
   library: LibraryType;
+  selectedVersion: string;
   activeFile: string | null;
   onSelectFile: (filePath: string | null) => void;
   isBrowserMaximized: boolean;
@@ -30,6 +31,7 @@ type Props = {
 
 export default function CodeBrowser({
   library,
+  selectedVersion,
   activeFile,
   onSelectFile,
   isBrowserMaximized,
@@ -42,7 +44,7 @@ export default function CodeBrowser({
   const [isInputFocused, setInputFocused] = useState(false);
 
   const { data, isLoading } = useSWR<UnpkgMeta>(
-    `/api/proxy/unpkg?name=${library.npmPkg}&path=?meta`,
+    `/api/proxy/unpkg?name=${library.npmPkg}&version=${selectedVersion}&path=?meta`,
     (url: string) => fetch(url).then(res => res.json()),
     {
       dedupingInterval: TimeRange.HOUR * 1000,
@@ -248,6 +250,7 @@ export default function CodeBrowser({
               <CodeBrowserContent
                 packageName={library.npmPkg}
                 repoUrl={library.github.urls.repo}
+                selectedVersion={selectedVersion}
                 filePath={activeFile}
                 fileData={activeFileData}
                 isBrowserMaximized={isBrowserMaximized}

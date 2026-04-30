@@ -3,8 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { View } from 'react-native';
 
+import { Label } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import CodeBrowser from '~/components/Package/CodeBrowser';
+import PackageVersionSelector from '~/components/Package/CodeBrowser/PackageVersionSelector';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
@@ -18,6 +20,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const router = useRouter();
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
 
+  const [selectedVersion, setSelectedVersion] = useState('latest');
   const [activeFile, setActiveFile] = useState<string | null>(() =>
     window.localStorage.getItem(activeFileStorageKey)
   );
@@ -89,6 +92,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
 
   const codeBrowser = (
     <CodeBrowser
+      selectedVersion={selectedVersion}
       library={library}
       activeFile={activeFile}
       onSelectFile={setActiveFile}
@@ -106,8 +110,20 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       />
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
-        <View style={tw`relative flex-1 gap-3`}>
-          <PackageHeader library={library} skipDescription />
+        <View style={tw`flex-1 gap-3`}>
+          <View style={tw`flex flex-row items-center justify-between`}>
+            <View style={tw`gap-3`}>
+              <PackageHeader library={library} skipDescription />
+            </View>
+            <View style={tw`gap-1`}>
+              <Label style={tw`px-1.5 text-secondary`}>Package version</Label>
+              <PackageVersionSelector
+                packageName={library.npmPkg}
+                selectedVersion={selectedVersion}
+                setVersion={selectedVersion => setSelectedVersion(selectedVersion)}
+              />
+            </View>
+          </View>
           {isBrowserMaximized && browserPortalTarget
             ? createPortal(codeBrowser, browserPortalTarget)
             : codeBrowser}
