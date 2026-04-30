@@ -20766,11 +20766,7 @@
   },
   {
     "githubUrl": "https://github.com/azizbecha/react-native-preview-url/tree/main/packages/react-native-preview-url",
-    "npmPkg": "react-native-preview-url",
     "examples": ["https://github.com/azizbecha/react-native-preview-url/tree/main/example"],
-    "images": [
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/63454940/476478310-ca1b0f21-0c47-4894-ae84-6c48fd5401cd.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T094232Z&X-Amz-Expires=300&X-Amz-Signature=d2cc5a85e852a66535f9d977e6409f11814e1104b2b84c3a8ca63b0ef84d232a&X-Amz-SignedHeaders=host&response-content-type=image%2Fgif"
-    ],
     "ios": true,
     "android": true,
     "web": true,
