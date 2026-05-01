@@ -20808,5 +20808,13 @@
     "npmPkg": "react-native-twitter-preview",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tetherto/qvac",
+    "npmPkg": "@qvac/sdk",
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "macos": true
   }
 ]
