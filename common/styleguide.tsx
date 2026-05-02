@@ -140,7 +140,11 @@ export function A({
         href={href}
         numberOfLines={containerStyle ? 1 : undefined}
         target={target ?? '_blank'}
-        hrefAttrs={{ target: target ?? '_blank' }}
+        rel={(target ?? '_blank') === '_blank' ? 'noopener noreferrer' : undefined}
+        hrefAttrs={{
+          target: target ?? '_blank',
+          ...((target ?? '_blank') === '_blank' ? { rel: 'noopener noreferrer' } : {}),
+        }}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
