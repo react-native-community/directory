@@ -46,6 +46,21 @@ export default function PackageVersionSelector({
     return (data?.versions ?? []).filter(v => v.includes(query));
   }, [data?.versions, debouncedSearch]);
 
+  const filteredDistTags = useMemo(() => {
+    if (!data?.['dist-tags']) {
+      return null;
+    }
+    const query = debouncedSearch.trim();
+    const entries = Object.entries(data['dist-tags']);
+    if (!query) {
+      return entries;
+    }
+    const filtered = entries.filter(
+      ([tag, version]) => tag.includes(query) || version.includes(query)
+    );
+    return filtered.length > 0 ? filtered : null;
+  }, [data, debouncedSearch]);
+
   function handleOpenChange(next: boolean) {
     setOpen(next);
     if (!next) {
@@ -103,10 +118,10 @@ export default function PackageVersionSelector({
               />
             </View>
             <ScrollView style={tw`max-h-76`} keyboardShouldPersistTaps="handled" id="dropdown-list">
-              {data?.['dist-tags'] && !debouncedSearch.trim() && (
+              {filteredDistTags && (
                 <>
                   <SelectorGroupHeader>Dist tags</SelectorGroupHeader>
-                  {Object.entries(data['dist-tags']).map(([tag, version]) => (
+                  {filteredDistTags.map(([tag, version]) => (
                     <SelectorItemHoverEffect key={tag}>
                       <View onPointerDown={() => handleSelect(tag)}>
                         <Label
@@ -120,14 +135,12 @@ export default function PackageVersionSelector({
                       </View>
                     </SelectorItemHoverEffect>
                   ))}
-                  <View style={tw`mt-1 border-b border-palette-gray2 dark:border-default`} />
+                  {filteredVersions.length > 0 && (
+                    <View style={tw`mt-1 border-b border-palette-gray2 dark:border-default`} />
+                  )}
                 </>
               )}
-              {filteredVersions.length === 0 ? (
-                <View style={tw`px-3 py-2`}>
-                  <Label style={tw`text-center font-thin text-secondary`}>No versions match</Label>
-                </View>
-              ) : (
+              {filteredVersions.length > 0 && (
                 <>
                   <SelectorGroupHeader>Versions</SelectorGroupHeader>
                   {filteredVersions.map(version => (
@@ -145,6 +158,11 @@ export default function PackageVersionSelector({
                     </SelectorItemHoverEffect>
                   ))}
                 </>
+              )}
+              {filteredVersions.length === 0 && !filteredDistTags && (
+                <View style={tw`px-3 py-2`}>
+                  <Label style={tw`text-center font-thin text-secondary`}>No versions match</Label>
+                </View>
               )}
             </ScrollView>
           </View>
