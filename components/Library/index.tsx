@@ -126,7 +126,7 @@ export default function Library({
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
           <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
             {library.images.map(image => (
-              <Thumbnail key={image} url={image} />
+              <Thumbnail key={image} url={image} name={libName} />
             ))}
           </View>
         )}
