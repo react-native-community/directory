@@ -20810,17 +20810,15 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/tetherto/qvac",
-    "npmPkg": "@qvac/sdk",
-    "ios": true,
-    "android": true,
-    "windows": true,
-    "macos": true
-  },
-  {
     "githubUrl": "https://github.com/idanlevi1/react-native-record-screen-extended",
     "npmPkg": "react-native-record-screen-extended",
     "ios": true,
     "android": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/tetherto/qvac/tree/main/packages/sdk",
+    "npmPkg": "@qvac/sdk",
+    "ios": true,
+    "android": true
+  },
 ]
