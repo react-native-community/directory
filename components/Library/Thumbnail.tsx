@@ -7,11 +7,12 @@ import tw from '~/util/tailwind';
 
 type Props = {
   url: string;
+  name: string;
 };
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
-function Thumbnail({ url }: Props) {
+function Thumbnail({ url, name }: Props) {
   const { width, height } = useWindowDimensions();
 
   const [isLoaded, setLoaded] = useState(false);
@@ -56,7 +57,7 @@ function Thumbnail({ url }: Props) {
             <img
               src={url}
               onLoad={() => setLoaded(true)}
-              alt=""
+              alt={`${name} screenshot`}
               style={{
                 ...tw`rounded`,
                 maxWidth: maxPreviewImageWidth,
