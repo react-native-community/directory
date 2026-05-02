@@ -9,7 +9,6 @@ import {
   type StyleProp,
   StyleSheet,
   useWindowDimensions,
-  type ViewStyle,
 } from 'react-native';
 import { type Style } from 'twrnc';
 
@@ -148,16 +147,27 @@ export function A({
   );
 }
 
-type HoverEffectProps = PressableProps & { style?: StyleProp<ViewStyle> };
+type HoverEffectProps = PressableProps & {
+  style?: Style;
+  hoveredStyle?: Style;
+  pressedStyle?: Style;
+};
 
-export function HoverEffect({ children, style, onPress, ...rest }: HoverEffectProps) {
+export function HoverEffect({
+  children,
+  style,
+  hoveredStyle,
+  pressedStyle,
+  onPress,
+  ...rest
+}: HoverEffectProps) {
   return (
     <Pressable
       style={({ hovered, pressed }) => [
         { transition: 'opacity 0.33s' },
-        hovered && tw`opacity-75`,
-        pressed && tw`opacity-50`,
         style,
+        hovered && (hoveredStyle ?? tw`opacity-75`),
+        pressed && (pressedStyle ?? tw`opacity-50`),
       ]}
       accessible={false}
       focusable={false}

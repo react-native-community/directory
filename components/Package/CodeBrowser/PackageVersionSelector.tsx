@@ -4,9 +4,11 @@ import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
 import { useDebounce } from 'use-debounce';
 
-import { Caption, Label } from '~/common/styleguide';
+import { Label } from '~/common/styleguide';
 import { ArrowIcon } from '~/components/Icons';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import SelectorGroupHeader from '~/components/Selector/SelectorGroupHeader';
+import SelectorItemHoverEffect from '~/components/Selector/SelectorItemHoverEffect';
 import { type PackageVersionsOnlyData } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
@@ -70,7 +72,9 @@ export default function PackageVersionSelector({
             </View>
           ) : (
             <View style={tw`flex-row items-center justify-between gap-1.5`}>
-              <Label numberOfLines={1}>{selectedVersion}</Label>
+              <Label numberOfLines={1} style={tw`select-none text-[13px]`}>
+                {selectedVersion}
+              </Label>
               <ArrowIcon
                 style={[tw`h-3 w-4 shrink-0 text-icon`, open ? tw`rotate-270` : tw`rotate-90`]}
               />
@@ -78,7 +82,6 @@ export default function PackageVersionSelector({
           )}
         </View>
       </Popover.Trigger>
-
       <Popover.Portal>
         <Popover.Content align="end" sideOffset={6}>
           <View
@@ -92,47 +95,54 @@ export default function PackageVersionSelector({
                 style={tw`px-2.5 py-1.5 text-sm text-black outline-0 dark:text-white`}
                 autoCorrect={false}
                 autoCapitalize="none"
-                placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
+                placeholderTextColor={
+                  tw.prefixMatch('dark')
+                    ? (tw`text-palette-gray5`.color as ColorValue)
+                    : (tw`text-palette-gray3`.color as ColorValue)
+                }
               />
             </View>
-            <ScrollView style={tw`max-h-64`} keyboardShouldPersistTaps="handled" id="dropdown-list">
+            <ScrollView style={tw`max-h-76`} keyboardShouldPersistTaps="handled" id="dropdown-list">
               {data?.['dist-tags'] && !debouncedSearch.trim() && (
                 <>
-                  <View style={tw`px-3 pt-2`}>
-                    <Caption style={tw`text-[11px] font-thin uppercase text-secondary`}>
-                      Dist tags
-                    </Caption>
-                  </View>
+                  <SelectorGroupHeader>Dist tags</SelectorGroupHeader>
                   {Object.entries(data['dist-tags']).map(([tag, version]) => (
-                    <View
-                      key={tag}
-                      style={tw`cursor-pointer px-3 py-1.5`}
-                      onPointerDown={() => handleSelect(version)}>
-                      <Label>{tag}</Label>
-                      <Label style={tw`text-[11px] font-thin text-secondary`}>{version}</Label>
-                    </View>
+                    <SelectorItemHoverEffect key={tag}>
+                      <View onPointerDown={() => handleSelect(tag)}>
+                        <Label
+                          style={[
+                            tw`text-[inherit]`,
+                            selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
+                          ]}>
+                          {tag}
+                        </Label>
+                        <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
+                      </View>
+                    </SelectorItemHoverEffect>
                   ))}
-                  <View style={tw`my-1 border-b border-palette-gray2 dark:border-default`} />
+                  <View style={tw`mt-1 border-b border-palette-gray2 dark:border-default`} />
                 </>
               )}
               {filteredVersions.length === 0 ? (
                 <View style={tw`px-3 py-2`}>
-                  <Label style={tw`text-center text-secondary`}>No versions match</Label>
+                  <Label style={tw`text-center font-thin text-secondary`}>No versions match</Label>
                 </View>
               ) : (
                 <>
-                  <View style={tw`px-3 pt-1`}>
-                    <Caption style={tw`text-[11px] font-thin uppercase text-secondary`}>
-                      Versions
-                    </Caption>
-                  </View>
+                  <SelectorGroupHeader>Versions</SelectorGroupHeader>
                   {filteredVersions.map(version => (
-                    <View
-                      key={version}
-                      style={tw`cursor-pointer px-3 py-1.5`}
-                      onPointerDown={() => handleSelect(version)}>
-                      <Label>{version}</Label>
-                    </View>
+                    <SelectorItemHoverEffect key={version}>
+                      <View onPointerDown={() => handleSelect(version)}>
+                        <Label
+                          style={[
+                            tw`text-[inherit]`,
+                            selectedVersion === version &&
+                              tw`text-primary-darker dark:text-primary`,
+                          ]}>
+                          {version}
+                        </Label>
+                      </View>
+                    </SelectorItemHoverEffect>
                   ))}
                 </>
               )}
