@@ -6,9 +6,10 @@ import { parseQueryParams } from '~/util/queryParams';
 const UNPKG_TIMEOUT_MS = 15_000;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { name, path } = parseQueryParams(req.query);
+  const { name, version, path } = parseQueryParams(req.query);
 
   const packageName = name ? name.toString().toLowerCase().trim() : undefined;
+  const packageVersion = version ? version.toString().toLowerCase().trim() : 'latest';
   const apiPath = path ? path.toString().trim() : undefined;
 
   res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
@@ -23,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const result = await fetch(`https://unpkg.com/${packageName}/${apiPath}`, {
+    const result = await fetch(`https://unpkg.com/${packageName}@${packageVersion}/${apiPath}`, {
       ...NEXT_10M_CACHE_HEADER,
       redirect: 'manual',
       signal: AbortSignal.timeout(UNPKG_TIMEOUT_MS),
@@ -67,7 +68,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.setHeader('Content-Type', 'application/json');
     res.statusCode = 200;
-    res.json(await result.json());
+    res.write(await result.text());
+    res.end();
   } catch (error) {
     if (error instanceof Error && error.name !== 'AbortError' && error.name !== 'TimeoutError') {
       throw error;

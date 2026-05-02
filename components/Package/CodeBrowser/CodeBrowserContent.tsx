@@ -34,6 +34,7 @@ type Props = {
   packageName: string;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
+  selectedVersion: string;
   repoUrl: string;
   filePath: string;
   fileData?: UnpkgMeta['files'][number];
@@ -43,6 +44,7 @@ export default function CodeBrowserContent({
   packageName,
   isBrowserMaximized,
   toggleMaximized,
+  selectedVersion,
   repoUrl,
   filePath,
   fileData,
@@ -68,7 +70,7 @@ export default function CodeBrowserContent({
 
   const { data, isLoading } = useSWR<string>(
     !isPreviewDisabled && (!isImageFile || (isImageFile && rawPreview))
-      ? `/api/proxy/unpkg?name=${packageName}&path=${filePath.replaceAll('+', '%2B')}`
+      ? `/api/proxy/unpkg?name=${packageName}&version=${selectedVersion}&path=${filePath.replaceAll('+', '%2B')}`
       : undefined,
     (url: string) =>
       fetch(url).then(res => {
