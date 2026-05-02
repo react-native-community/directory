@@ -48,7 +48,7 @@ export function Button({
           </View>
         </A>
       ) : (
-        <View role="button" focusable={false} style={buttonStyle} accessible={false} {...rest}>
+        <View role="button" focusable={false} style={buttonStyle} {...rest}>
           {content}
         </View>
       )}
