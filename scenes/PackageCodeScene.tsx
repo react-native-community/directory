@@ -84,8 +84,6 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     };
   }, [activeFileStorageKey, router.events]);
 
-  const browserPortalTarget = typeof document === 'undefined' ? null : document.body;
-
   if (!library) {
     return <NotFound />;
   }
@@ -124,8 +122,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
               />
             </View>
           </View>
-          {isBrowserMaximized && browserPortalTarget
-            ? createPortal(codeBrowser, browserPortalTarget)
+          {isBrowserMaximized && document.body
+            ? createPortal(codeBrowser, document.body)
             : codeBrowser}
         </View>
       </ContentContainer>

@@ -119,9 +119,9 @@ export default function CodeBrowser({
     [data?.files, data?.prefix, activeFile]
   );
 
-  const visibleFilePaths = useMemo(
-    () => new Set(filteredFiles.map(file => getCodeBrowserFilePath(file.path, data?.prefix))),
-    [filteredFiles, data?.prefix]
+  const allFilePaths = useMemo(
+    () => new Set((data?.files ?? []).map(file => getCodeBrowserFilePath(file.path, data?.prefix))),
+    [data?.files, data?.prefix]
   );
 
   useEffect(() => {
@@ -129,10 +129,10 @@ export default function CodeBrowser({
       return;
     }
 
-    if (activeFile && !visibleFilePaths.has(activeFile)) {
+    if (activeFile && !allFilePaths.has(activeFile)) {
       onSelectFile(null);
     }
-  }, [activeFile, data, onSelectFile, visibleFilePaths]);
+  }, [activeFile, allFilePaths, data, onSelectFile]);
 
   return (
     <View
