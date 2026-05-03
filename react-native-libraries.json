@@ -20820,5 +20820,16 @@
     "npmPkg": "@qvac/sdk",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Pnlvfx/react-native-context-menu",
+    "npmPkg": "@simonegauli/react-native-context-menu",
+    "examples": [""],
+    "images": [""],
+    "newArchitecture": true,
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true
   }
 ]
