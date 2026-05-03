@@ -20822,13 +20822,18 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/Pnlvfx/react-native-nitro-notification",
-    "examples": [""],
-    "images": [""],
+    "githubUrl": "https://github.com/Pnlvfx/react-native-context-menu",
+    "npmPkg": "@simonegauli/react-native-context-menu",
+    "examples": ["https://github.com/Pnlvfx/react-native-context-menu/tree/main/example"],
     "newArchitecture": true,
     "ios": true,
-    "macos": true,
-    "tvos": true,
-    "visionos": true
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/Pnlvfx/react-native-nitro-notification",
+    "examples": ["https://github.com/Pnlvfx/react-native-nitro-notification/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "tvos": true
   }
 ]
