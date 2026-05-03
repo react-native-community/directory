@@ -20423,7 +20423,6 @@
   },
   {
     "githubUrl": "https://github.com/DimaIvashchuk/react-native-background-workers",
-    "npmPkg": "react-native-background-workers",
     "examples": [
       "https://github.com/DimaIvashchuk/react-native-background-workers/tree/main/example"
     ],
@@ -20798,20 +20797,17 @@
   },
   {
     "githubUrl": "https://github.com/idanlevi1/react-native-pick-contact",
-    "npmPkg": "react-native-pick-contact",
     "ios": true,
     "android": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/idanlevi1/react-native-twitter-preview",
-    "npmPkg": "react-native-twitter-preview",
     "ios": true,
     "android": true
   },
   {
     "githubUrl": "https://github.com/idanlevi1/react-native-record-screen-extended",
-    "npmPkg": "react-native-record-screen-extended",
     "ios": true,
     "android": true
   },

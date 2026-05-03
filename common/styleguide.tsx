@@ -160,19 +160,21 @@ export function HoverEffect({
   hoveredStyle,
   pressedStyle,
   onPress,
+  focusable = false,
   ...rest
 }: HoverEffectProps) {
   return (
     <Pressable
       style={({ hovered, pressed }) => [
+        tw`-outline-offset-2`,
         { transition: 'opacity 0.33s' },
         style,
         hovered && (hoveredStyle ?? tw`opacity-75`),
         pressed && (pressedStyle ?? tw`opacity-50`),
       ]}
-      accessible={false}
-      focusable={false}
-      tabIndex={onPress ? 0 : -1}
+      accessible={focusable}
+      focusable={focusable}
+      tabIndex={onPress || focusable ? 0 : -1}
       onPress={onPress}
       {...rest}>
       {children}

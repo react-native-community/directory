@@ -67,7 +67,8 @@ export async function getServerSideProps(ctx: NextPageContext) {
         npmDownloads: await npmDownloads.json(),
       },
     };
-  } catch {
+  } catch (error) {
+    console.error(error);
     return EMPTY_PACKAGE_DATA;
   }
 }
