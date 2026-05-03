@@ -5,7 +5,6 @@ import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
 import { parseQueryParams } from '~/util/queryParams';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.warn(req.query);
   const { name, versionsOnly } = parseQueryParams(req.query);
   const packageName = name ? name.toString().toLowerCase().trim() : undefined;
   const versionsOnlyFlag = versionsOnly

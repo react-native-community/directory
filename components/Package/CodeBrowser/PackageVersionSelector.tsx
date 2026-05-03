@@ -80,6 +80,7 @@ export default function PackageVersionSelector({
     <Popover.Root open={open} onOpenChange={handleOpenChange}>
       <Popover.Trigger asChild>
         <View
+          role="button"
           style={tw`min-h-8 w-[180px] cursor-pointer justify-center overflow-hidden rounded-lg border border-palette-gray2 bg-default px-2 dark:border-default dark:bg-dark`}>
           {isLoading ? (
             <View style={tw`scale-75 text-center`}>
@@ -117,22 +118,24 @@ export default function PackageVersionSelector({
                 }
               />
             </View>
-            <ScrollView style={tw`max-h-76`} keyboardShouldPersistTaps="handled" id="dropdown-list">
+            <ScrollView
+              style={tw`max-h-76`}
+              focusable={false}
+              keyboardShouldPersistTaps="handled"
+              id="dropdown-list">
               {filteredDistTags && (
                 <>
                   <SelectorGroupHeader>Dist tags</SelectorGroupHeader>
                   {filteredDistTags.map(([tag, version]) => (
-                    <SelectorItemHoverEffect key={tag}>
-                      <View onPointerDown={() => handleSelect(tag)}>
-                        <Label
-                          style={[
-                            tw`text-[inherit]`,
-                            selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
-                          ]}>
-                          {tag}
-                        </Label>
-                        <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
-                      </View>
+                    <SelectorItemHoverEffect key={tag} onPressIn={() => handleSelect(tag)}>
+                      <Label
+                        style={[
+                          tw`text-[inherit]`,
+                          selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
+                        ]}>
+                        {tag}
+                      </Label>
+                      <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
                     </SelectorItemHoverEffect>
                   ))}
                   {filteredVersions.length > 0 && (
@@ -144,17 +147,14 @@ export default function PackageVersionSelector({
                 <>
                   <SelectorGroupHeader>Versions</SelectorGroupHeader>
                   {filteredVersions.map(version => (
-                    <SelectorItemHoverEffect key={version}>
-                      <View onPointerDown={() => handleSelect(version)}>
-                        <Label
-                          style={[
-                            tw`text-[inherit]`,
-                            selectedVersion === version &&
-                              tw`text-primary-darker dark:text-primary`,
-                          ]}>
-                          {version}
-                        </Label>
-                      </View>
+                    <SelectorItemHoverEffect key={version} onPressIn={() => handleSelect(version)}>
+                      <Label
+                        style={[
+                          tw`text-[inherit]`,
+                          selectedVersion === version && tw`text-primary-darker dark:text-primary`,
+                        ]}>
+                        {version}
+                      </Label>
                     </SelectorItemHoverEffect>
                   ))}
                 </>

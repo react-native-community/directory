@@ -8,7 +8,7 @@ export function trimPackageVersionsData(registryData: NpmRegistryData): PackageV
         version,
       };
 
-      if (dist.unpackedSize) {
+      if (dist?.unpackedSize) {
         versionData.dist = { unpackedSize: dist.unpackedSize };
       }
 
