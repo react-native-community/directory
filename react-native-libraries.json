@@ -20820,5 +20820,15 @@
     "npmPkg": "@qvac/sdk",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Pnlvfx/react-native-nitro-notification",
+    "examples": [""],
+    "images": [""],
+    "newArchitecture": true,
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "visionos": true
   }
 ]
