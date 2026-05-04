@@ -20,7 +20,7 @@ export default function LibraryDescription({ github, maxLines, style }: Props) {
         options={{
           linkWrapper: ({ children, ...rest }) => <A {...rest}>{children}</A>,
         }}>
-        {emoji.emojify(github.description)}
+        {emoji.emojify(github.description).replaceAll(/(\n)+/g, ' ')}
       </Linkify>
     </Headline>
   ) : (
