@@ -20831,5 +20831,62 @@
     "newArchitecture": true,
     "ios": true,
     "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/PayProff/react-native-store-badges",
+    "examples": ["https://github.com/PayProff/react-native-store-badges/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/ankhorage/zora",
+    "npmPkg": "@ankhorage/zora",
+    "examples": ["https://github.com/ankhorage/zora/tree/main/examples/expo-showcase"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/enhancers/react-native-whitelabel",
+    "npmPkg": "@enhancers/react-native-whitelabel",
+    "examples": ["https://github.com/enhancers/react-native-whitelabel/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/purchasely",
+    "npmPkg": "react-native-purchasely",
+    "examples": ["https://github.com/Purchasely/Purchasely-ReactNative/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/amazon",
+    "npmPkg": "@purchasely/react-native-purchasely-amazon",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/android-player",
+    "npmPkg": "@purchasely/react-native-purchasely-android-player",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/google",
+    "npmPkg": "@purchasely/react-native-purchasely-google",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/huawei",
+    "npmPkg": "@purchasely/react-native-purchasely-huawei",
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/manikagnish/expo-ui-swipe-actions",
+    "images": [
+      "https://raw.githubusercontent.com/manikagnish/expo-ui-swipe-actions/main/assets/swipe-actions.gif"
+    ],
+    "ios": true
   }
 ]
