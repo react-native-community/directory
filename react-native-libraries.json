@@ -14869,7 +14869,10 @@
     "githubUrl": "https://github.com/stallion-tech/react-native-stallion",
     "examples": ["https://github.com/stallion-tech/react-native-stallion/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/razorRun/react-native-vlc-media-player",
