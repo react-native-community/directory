@@ -14871,8 +14871,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "configPlugin": true,
-    "expoGo": true
+    "npmPkg": "react-native-stallion"
   },
   {
     "githubUrl": "https://github.com/razorRun/react-native-vlc-media-player",
