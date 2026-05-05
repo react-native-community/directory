@@ -14871,15 +14871,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "npmPkg": "react-native-stallion"
-  },
-  {
-    "githubUrl": "https://github.com/stallion-tech/expo-stallion-plugin",
-    "ios": true,
-    "android": true,
-    "newArchitecture": true,
-    "npmPkg": "expo-stallion-plugin",
-    "configPlugin": true,
+    "npmPkg": "react-native-stallion",
+    "configPlugin": "https://github.com/stallion-tech/expo-stallion-plugin",
     "expoGo": true
   },
   {
