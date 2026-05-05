@@ -20888,5 +20888,18 @@
       "https://raw.githubusercontent.com/manikagnish/expo-ui-swipe-actions/main/assets/swipe-actions.gif"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/jingjing2222/react-native-nitro-geolocation/tree/main/packages/react-native-nitro-geolocation",
+    "npmPkg": "react-native-nitro-geolocation",
+    "examples": [
+      "https://github.com/jingjing2222/react-native-nitro-geolocation/tree/main/examples/v0.81.1"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/jingjing2222/react-native-nitro-geolocation/main/demo.gif"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
