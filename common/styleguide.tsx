@@ -1,7 +1,13 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { type ComponentType, type CSSProperties, type PropsWithChildren, useState } from 'react';
+import {
+  type ComponentType,
+  type CSSProperties,
+  type PropsWithChildren,
+  type Ref,
+  useState,
+} from 'react';
 import {
   Pressable,
   type PressableProps,
@@ -91,6 +97,7 @@ type AProps = PropsWithChildren<{
   hoverStyle?: StyleProp<Style>;
   containerStyle?: CSSProperties;
   role?: Role;
+  ref?: Ref<HTMLAnchorElement>;
 }>;
 
 export function A({
@@ -101,6 +108,7 @@ export function A({
   hoverStyle,
   containerStyle,
   role,
+  ref,
   ...rest
 }: AProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -116,6 +124,7 @@ export function A({
     return (
       <Link
         {...rest}
+        ref={ref}
         href={href}
         onPointerEnter={() => setIsHovered(true)}
         onPointerLeave={() => setIsHovered(false)}
@@ -137,6 +146,7 @@ export function A({
       style={{ ...tw`contents`, ...containerStyle }}>
       <HtmlElements.A
         {...rest}
+        ref={ref as any}
         href={href}
         numberOfLines={containerStyle ? 1 : undefined}
         target={target ?? '_blank'}
@@ -167,7 +177,7 @@ export function HoverEffect({
     <Pressable
       style={({ hovered, pressed }) => [
         tw`-outline-offset-2`,
-        { transition: 'opacity 0.33s' },
+        { transition: 'all 0.33s' },
         style,
         hovered && (hoveredStyle ?? tw`opacity-75`),
         pressed && (pressedStyle ?? tw`opacity-50`),

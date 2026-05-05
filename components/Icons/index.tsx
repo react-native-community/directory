@@ -1773,3 +1773,29 @@ export function MarkdownPreviewIcon({ style }: IconProps) {
     </Svg>
   );
 }
+
+export function ArrowUpRightIcon({ style }: IconProps) {
+  return (
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Line
+        x1="64"
+        y1="192"
+        x2="192"
+        y2="64"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Polyline
+        points="88 64 192 64 192 168"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}

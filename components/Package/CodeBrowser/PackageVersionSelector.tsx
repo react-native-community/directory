@@ -4,7 +4,7 @@ import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
 import { useDebounce } from 'use-debounce';
 
-import { Label } from '~/common/styleguide';
+import { HoverEffect, Label } from '~/common/styleguide';
 import { ArrowIcon } from '~/components/Icons';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import SelectorGroupHeader from '~/components/Selector/SelectorGroupHeader';
@@ -78,30 +78,41 @@ export default function PackageVersionSelector({
 
   return (
     <Popover.Root open={open} onOpenChange={handleOpenChange}>
-      <Popover.Trigger asChild>
-        <View
-          role="button"
-          style={tw`min-h-8 w-[180px] cursor-pointer justify-center overflow-hidden rounded-lg border border-palette-gray2 bg-default px-2 dark:border-default dark:bg-dark`}>
-          {isLoading ? (
-            <View style={tw`scale-75 text-center`}>
-              <ThreeDotsLoader />
-            </View>
-          ) : (
-            <View style={tw`flex-row items-center justify-between gap-1.5`}>
-              <Label numberOfLines={1} style={tw`select-none text-[13px]`}>
-                {selectedVersion}
-              </Label>
-              <ArrowIcon
-                style={[tw`h-3 w-4 shrink-0 text-icon`, open ? tw`rotate-270` : tw`rotate-90`]}
-              />
-            </View>
-          )}
-        </View>
-      </Popover.Trigger>
-      <Popover.Portal>
-        <Popover.Content align="end" sideOffset={6}>
+      <HoverEffect
+        hoveredStyle={tw`border-palette-gray3 dark:border-[#333842]`}
+        pressedStyle={tw`opacity-100`}
+        style={tw`border-palette-gray2 dark:border-default`}>
+        <Popover.Trigger asChild>
           <View
-            style={tw`w-56 overflow-hidden rounded-lg border border-palette-gray2 bg-default shadow-lg dark:border-default`}>
+            role="button"
+            style={tw`min-h-8 w-[180px] cursor-pointer justify-center overflow-hidden rounded-lg border border-[inherit] bg-default px-2 dark:bg-dark`}>
+            {isLoading ? (
+              <View style={tw`scale-75 text-center`}>
+                <ThreeDotsLoader />
+              </View>
+            ) : (
+              <View style={tw`flex-row items-center justify-between gap-1.5`}>
+                <Label numberOfLines={1} style={tw`select-none text-[13px]`}>
+                  {selectedVersion}
+                </Label>
+                <ArrowIcon
+                  style={[
+                    tw`h-3 w-4 shrink-0 text-icon`,
+                    open
+                      ? tw`rotate-270 text-primary-darker dark:text-primary-dark`
+                      : tw`rotate-90`,
+                    { transition: 'all 0.2s' },
+                  ]}
+                />
+              </View>
+            )}
+          </View>
+        </Popover.Trigger>
+      </HoverEffect>
+      <Popover.Portal>
+        <Popover.Content align="center" sideOffset={6}>
+          <View
+            style={tw`max-w-68 min-w-32 overflow-hidden rounded-lg border-2 border-palette-gray2 bg-default shadow-lg dark:border-default`}>
             <View style={tw`border-b border-palette-gray2 dark:border-default`}>
               <TextInput
                 ref={inputRef}
@@ -119,7 +130,7 @@ export default function PackageVersionSelector({
               />
             </View>
             <ScrollView
-              style={tw`max-h-76`}
+              style={tw`max-h-76 pb-0.5`}
               focusable={false}
               keyboardShouldPersistTaps="handled"
               id="dropdown-list">
@@ -128,14 +139,16 @@ export default function PackageVersionSelector({
                   <SelectorGroupHeader>Dist tags</SelectorGroupHeader>
                   {filteredDistTags.map(([tag, version]) => (
                     <SelectorItemHoverEffect key={tag} onPressIn={() => handleSelect(tag)}>
-                      <Label
-                        style={[
-                          tw`text-[inherit]`,
-                          selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
-                        ]}>
-                        {tag}
-                      </Label>
-                      <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
+                      <View style={tw`px-2.5 py-1.5`}>
+                        <Label
+                          style={[
+                            tw`text-[inherit]`,
+                            selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
+                          ]}>
+                          {tag}
+                        </Label>
+                        <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
+                      </View>
                     </SelectorItemHoverEffect>
                   ))}
                   {filteredVersions.length > 0 && (
@@ -150,7 +163,7 @@ export default function PackageVersionSelector({
                     <SelectorItemHoverEffect key={version} onPressIn={() => handleSelect(version)}>
                       <Label
                         style={[
-                          tw`text-[inherit]`,
+                          tw`px-2.5 py-1.5 text-[inherit]`,
                           selectedVersion === version && tw`text-primary-darker dark:text-primary`,
                         ]}>
                         {version}
@@ -160,7 +173,7 @@ export default function PackageVersionSelector({
                 </>
               )}
               {filteredVersions.length === 0 && !filteredDistTags && (
-                <View style={tw`px-3 py-2`}>
+                <View style={tw`px-2.5 py-3`}>
                   <Label style={tw`text-center font-thin text-secondary`}>No versions match</Label>
                 </View>
               )}
