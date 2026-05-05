@@ -2,14 +2,15 @@ import { Header as HtmlHeader } from '@expo/html-elements';
 import { useContext } from 'react';
 import { View } from 'react-native';
 
-import { A, H5, P, useLayout } from '~/common/styleguide';
+import { A, H5, useLayout } from '~/common/styleguide';
+import AddLibrarySelector from '~/components/AddLibrarySelector';
 import ContentContainer from '~/components/ContentContainer';
 import NavigationTab from '~/components/NavigationTab';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
 
 import { Button } from './Button';
-import { GitHubIcon, Logo, PlusIcon, ThemeDarkIcon, ThemeLightIcon, ToolsIcon } from './Icons';
+import { GitHubIcon, Logo, ThemeDarkIcon, ThemeLightIcon, ToolsIcon } from './Icons';
 import Tooltip from './Tooltip';
 
 export default function TopBar() {
@@ -87,15 +88,7 @@ export default function TopBar() {
             }>
             GitHub
           </Tooltip>
-          <Button
-            openInNewTab
-            href="https://github.com/react-native-community/directory/?tab=readme-ov-file#how-do-i-add-a-library"
-            style={[tw`max-h-8.5 px-4 py-2`, isSmallScreen && tw`w-8.5`]}>
-            <View style={tw`flex-row items-center gap-1`}>
-              <PlusIcon style={[tw`size-3.5 text-white`, !isSmallScreen && tw`-ml-0.5`]} />
-              {!isSmallScreen && <P style={tw`ml-1 text-white`}>Add a library</P>}
-            </View>
-          </Button>
+          <AddLibrarySelector />
         </View>
       </View>
       <ContentContainer style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
