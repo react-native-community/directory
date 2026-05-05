@@ -41,7 +41,7 @@ export default function AddLibrarySelector() {
             firstOptionRef.current?.focus();
           }}>
           <View
-            style={tw`w-40 overflow-hidden rounded-lg border-2 border-palette-gray5 bg-palette-gray7 py-0.5 dark:border-default dark:bg-default`}>
+            style={tw`w-40 overflow-hidden rounded-lg border-2 border-secondary bg-palette-gray7 py-0.5 dark:border-default dark:bg-default`}>
             <SelectorItemHoverEffect
               focusable={false}
               hoveredStyle={tw`bg-[#2a2e36] dark:bg-palette-gray7`}>
