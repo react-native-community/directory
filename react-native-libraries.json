@@ -20905,5 +20905,13 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stallion-tech/stallion-cli",
+    "npmPkg": "stallion-cli",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true
   }
 ]
