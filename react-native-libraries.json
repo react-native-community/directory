@@ -20901,5 +20901,19 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mureyvenom/rn-fintech-ui",
+    "npmPkg": "react-native-fintech-kit",
+    "images": [
+      "https://github.com/mureyvenom/rn-fintech-ui/blob/main/assets/gifs/otpinput.gif",
+      "https://github.com/mureyvenom/rn-fintech-ui/blob/main/assets/gifs/amountinput.gif",
+      "https://github.com/mureyvenom/rn-fintech-ui/blob/main/assets/gifs/balancedisplay.gif",
+      "https://github.com/mureyvenom/rn-fintech-ui/blob/main/assets/gifs/transactioncard.png"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
