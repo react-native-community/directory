@@ -20931,9 +20931,7 @@
   {
     "githubUrl": "https://github.com/nikwebr/react-native-s3-bg-uploader",
     "npmPkg": "react-native-s3-bg-uploader",
-    "examples": [
-      "https://github.com/nikwebr/react-native-s3-bg-uploader/tree/master/example"
-    ],
+    "examples": ["https://github.com/nikwebr/react-native-s3-bg-uploader/tree/master/example"],
     "ios": true,
     "android": true,
     "web": true,
