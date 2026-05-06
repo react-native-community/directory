@@ -14869,7 +14869,11 @@
     "githubUrl": "https://github.com/stallion-tech/react-native-stallion",
     "examples": ["https://github.com/stallion-tech/react-native-stallion/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "npmPkg": "react-native-stallion",
+    "configPlugin": "https://github.com/stallion-tech/expo-stallion-plugin",
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/razorRun/react-native-vlc-media-player",
@@ -20915,5 +20919,13 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/stallion-tech/stallion-cli",
+    "npmPkg": "stallion-cli",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true
   }
 ]
