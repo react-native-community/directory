@@ -20927,5 +20927,17 @@
     "android": true,
     "expoGo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/nikwebr/react-native-s3-bg-uploader",
+    "npmPkg": "react-native-s3-bg-uploader",
+    "examples": [
+      "https://github.com/nikwebr/react-native-s3-bg-uploader/tree/master/example"
+    ],
+    "images": ["<PUBLIC URL TO RELATED IMAGE>"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
