@@ -1,10 +1,10 @@
-import { drop, take } from 'es-toolkit';
+import { drop, take } from 'es-toolkit/compat';
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
 import { getBookmarksFromCookie } from '~/context/BookmarksContext';
 import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
-import { NUM_PER_PAGE } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NUM_PER_PAGE } from '~/util/Constants';
 import { parseQueryParams } from '~/util/queryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
@@ -119,11 +119,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  // Don't cache responses with bookmarks filter since it depends on user-specific cookies
+  // Don't cache responses with bookmarks filter since it depends on user-specific cookies.
   if (parsedQuery.bookmarks) {
     res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   } else {
-    res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+    res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
   }
 
   res.json({

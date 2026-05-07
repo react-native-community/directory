@@ -1,5 +1,5 @@
 import { LI } from '@expo/html-elements';
-import { startCase } from 'es-toolkit';
+import { startCase } from 'es-toolkit/string';
 import { View } from 'react-native';
 
 import { A, Label, useLayout } from '~/common/styleguide';

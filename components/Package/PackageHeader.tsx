@@ -1,4 +1,4 @@
-import { startCase } from 'es-toolkit';
+import { startCase } from 'es-toolkit/string';
 import { type ReactNode } from 'react';
 import { View } from 'react-native';
 

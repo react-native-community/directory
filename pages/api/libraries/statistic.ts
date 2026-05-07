@@ -2,6 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
 import { type DataAssetType, type StatisticResultType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 const DATASET = data as DataAssetType;
@@ -128,7 +129,7 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
   });
 
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
   res.statusCode = 200;
 
   res.json(result);

@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import { NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
 import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
 import { parseQueryParams } from '~/util/queryParams';
 
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const versionsData = await result.json();
 
   res.statusCode = 200;
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
 
   if (versionsOnlyFlag) {
     res.json({

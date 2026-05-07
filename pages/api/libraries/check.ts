@@ -2,6 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/check-data.json';
 import { type CheckResultsType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 
 const DATASET = data as CheckResultsType;
 
@@ -23,7 +24,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   res.statusCode = 200;
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
   const result: CheckResultsType = {};
   packages.forEach(pkgName => {
     result[pkgName] = DATASET[pkgName];

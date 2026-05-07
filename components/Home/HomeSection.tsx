@@ -71,7 +71,7 @@ export default function HomeSection({
 
 function renderLibs(list: LibraryType[], count: number) {
   return list
-    .splice(0, count)
+    .slice(0, count)
     .map(item => (
       <LibraryWithLoading
         key={`home-item-${item.npmPkg}`}

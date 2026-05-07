@@ -1,4 +1,4 @@
-import { partition } from 'es-toolkit';
+import { partition } from 'es-toolkit/array';
 import { View } from 'react-native';
 
 import { A, Caption, P } from '~/common/styleguide';

@@ -1,6 +1,6 @@
 import { BlobAccessError, list, put } from '@vercel/blob';
 import { fetch } from 'bun';
-import { chunk } from 'es-toolkit';
+import { chunk } from 'es-toolkit/array';
 import fs from 'node:fs';
 import path from 'node:path';
 

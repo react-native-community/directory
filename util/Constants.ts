@@ -39,6 +39,8 @@ export const POPULAR_QUERY_BASE: Query = {
   skipTools: 'true',
 };
 
+export const DEFAULT_RESPONSE_CACHE_HEADER = `public, s-maxage=${TimeRange.HOUR}, stale-while-revalidate=${TimeRange.HOUR}`;
+
 export const NEXT_10M_CACHE_HEADER = {
   next: { revalidate: TimeRange.MINUTE * 10 },
 };
