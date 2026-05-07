@@ -2,6 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
 import { type DataAssetType, type LibraryType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { parseQueryParams } from '~/util/queryParams';
 
 const DATASET = data as DataAssetType;
@@ -15,7 +16,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   );
 
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
 
   if (!packageNames) {
     res.statusCode = 500;

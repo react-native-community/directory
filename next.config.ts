@@ -12,6 +12,8 @@ const PACKAGES_TO_OPTIMIZE = [
   '@shikijs/*',
   '@videojs/*',
   '@visx/*',
+  'es-toolkit',
+  'es-toolkit/*',
   'node-emoji',
   'react-native',
   'react-native-safe-area-context',

@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import { NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
 import { parseQueryParams } from '~/util/queryParams';
 
 const UNPKG_TIMEOUT_MS = 15_000;
@@ -11,8 +11,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const packageName = name ? name.toString().toLowerCase().trim() : undefined;
   const packageVersion = version ? version.toString().toLowerCase().trim() : 'latest';
   const apiPath = path ? path.toString().trim() : undefined;
-
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
 
   if (!packageName || !apiPath) {
     res.setHeader('Content-Type', 'application/json');
@@ -54,6 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       res.setHeader('Content-Type', 'text/plain');
+      res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
       res.statusCode = 200;
       res.write(await redirectResult.text());
       res.end();
@@ -67,6 +66,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
     res.statusCode = 200;
     res.write(await result.text());
     res.end();

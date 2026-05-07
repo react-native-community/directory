@@ -1,6 +1,7 @@
 import { type NextPageContext } from 'next';
 
 import { type APIResponseType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { generateLibrariesRss } from '~/util/rss';
 import { ssrFetch } from '~/util/SSRFetch';
 
@@ -14,7 +15,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   res.setHeader('Content-Type', 'text/xml; charset=utf-8');
-  res.setHeader('Cache-Control', 'public, s-maxage=600, stale-while-revalidate=300');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
 
   try {
     const response = await ssrFetch(

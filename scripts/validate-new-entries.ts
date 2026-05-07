@@ -1,5 +1,6 @@
 import { fetch } from 'bun';
-import { differenceWith, isEqual } from 'es-toolkit';
+import { differenceWith } from 'es-toolkit/array';
+import { isEqual } from 'es-toolkit/compat';
 
 import { type LibraryDataEntryType, type LibraryType } from '~/types';
 import { VALID_ENTRY_KEYS } from '~/util/Constants';

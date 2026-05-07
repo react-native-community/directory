@@ -1,4 +1,4 @@
-import { startCase } from 'es-toolkit';
+import { startCase } from 'es-toolkit/string';
 import { View } from 'react-native';
 
 import { A, HoverEffect } from '~/common/styleguide';

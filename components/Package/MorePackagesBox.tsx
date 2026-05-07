@@ -1,5 +1,5 @@
 import { LI, UL } from '@expo/html-elements';
-import { startCase } from 'es-toolkit';
+import { startCase } from 'es-toolkit/string';
 import { type NextPageContext } from 'next';
 import * as emoji from 'node-emoji';
 import { useMemo } from 'react';

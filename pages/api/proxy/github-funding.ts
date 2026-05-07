@@ -1,7 +1,7 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import GitHubRepositoryFundingQuery from '~/scripts/queries/GitHubRepositoryFundingQuery';
-import { NEXT_1H_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_1H_CACHE_HEADER } from '~/util/Constants';
 import { parseQueryParams } from '~/util/queryParams';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const cleanName = name ? name.toString().toLowerCase().trim() : undefined;
 
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=1800');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
 
   if (!cleanOwner || !cleanName) {
     res.statusCode = 500;
