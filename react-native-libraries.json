@@ -20929,6 +20929,15 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/nikwebr/react-native-s3-bg-uploader",
+    "npmPkg": "react-native-s3-bg-uploader",
+    "examples": ["https://github.com/nikwebr/react-native-s3-bg-uploader/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
     "githubUrl": "https://github.com/tenkaipl/react-native-select",
     "npmPkg": "@tenkaipl/react-native-select",
     "examples": ["https://snack.expo.dev/@krisix/tenkaipl-react-native-select"],
