@@ -20952,5 +20952,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/thejoaov/expo-android-tcp/tree/main/packages/android-reverse-tcp",
+    "npmPkg": "expo-reverse-tcp",
+    "examples": ["https://github.com/thejoaov/expo-android-tcp/tree/main/app/app"],
+    "android": true,
+    "configPlugin": true
   }
 ]
