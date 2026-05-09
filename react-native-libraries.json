@@ -21010,5 +21010,14 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/mathnotes-app/mobile-ink",
+    "npmPkg": "@mathnotes/mobile-ink",
+    "examples": ["https://github.com/mathnotes-app/mobile-ink/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/mathnotes-app/mobile-ink/main/docs/assets/selection-editing-demo.gif"
+    ],
+    "ios": true
   }
 ]
