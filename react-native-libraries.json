@@ -5283,7 +5283,7 @@
   },
   {
     "githubUrl": "https://github.com/benevbright/react-navigation-collapsible",
-    "examples": ["https://github.com/benevbright/react-navigation-collapsible/tree/master/example"],
+    "examples": ["https://github.com/benevbright/react-navigation-collapsible/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-default.gif",
       "https://raw.githubusercontent.com/benevbright/react-navigation-collapsible/main/docs/demo-sample-sticky.gif",
@@ -5402,7 +5402,7 @@
   {
     "githubUrl": "https://github.com/react-native-google-cast/react-native-google-cast",
     "examples": [
-      "https://github.com/react-native-google-cast/react-native-google-cast/tree/master/example"
+      "https://github.com/react-native-google-cast/react-native-google-cast/tree/main/example"
     ],
     "ios": true,
     "android": true,
@@ -7633,8 +7633,8 @@
   {
     "githubUrl": "https://github.com/numandev1/react-native-compressor",
     "examples": [
-      "https://github.com/numandev1/react-native-compressor/tree/main/example",
-      "https://github.com/numandev1/react-native-compressor/tree/main/exampleExpo"
+      "https://github.com/numandev1/react-native-compressor/tree/main/examples/bare",
+      "https://github.com/numandev1/react-native-compressor/tree/main/examples/expo"
     ],
     "ios": true,
     "android": true,
@@ -11995,7 +11995,11 @@
   },
   {
     "githubUrl": "https://github.com/razorpay/react-native-razorpay",
-    "examples": ["https://github.com/razorpay/react-native-razorpay/tree/master/example/SampleApp"],
+    "examples": [
+      "https://github.com/razorpay/react-native-razorpay/tree/master/sampleApps/Expo54Sample",
+      "https://github.com/razorpay/react-native-razorpay/tree/master/sampleApps/NewArchSample",
+      "https://github.com/razorpay/react-native-razorpay/tree/master/sampleApps/OldArchSample"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": false
@@ -16312,9 +16316,6 @@
   },
   {
     "githubUrl": "https://github.com/eds2002/react-native-screen-transitions/tree/main/packages/react-native-screen-transitions",
-    "examples": [
-      "https://github.com/eds2002/react-native-screen-transitions/tree/main/examples/expo-router-example"
-    ],
     "android": true,
     "ios": true
   },
@@ -17369,7 +17370,7 @@
   },
   {
     "githubUrl": "https://github.com/heroui-inc/heroui-native",
-    "examples": ["https://github.com/heroui-inc/heroui-native/tree/beta/example"],
+    "examples": ["https://github.com/heroui-inc/heroui-native/tree/main/example"],
     "android": true,
     "ios": true
   },
@@ -17408,7 +17409,7 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/ursnj/nayan-ui/tree/main/packages/react-native",
+    "githubUrl": "https://github.com/ursnj/nayan-ui/tree/main/packages/native",
     "npmPkg": "@nayan-ui/react-native",
     "android": true,
     "ios": true
@@ -17573,9 +17574,6 @@
   {
     "githubUrl": "https://github.com/relateddigital/react-native-related-digital/tree/master/sdk",
     "npmPkg": "react-native-related-digital",
-    "examples": [
-      "https://github.com/relateddigital/react-native-related-digital/tree/master/client"
-    ],
     "android": true,
     "ios": true
   },
@@ -19185,9 +19183,6 @@
   },
   {
     "githubUrl": "https://github.com/software-mansion-labs/react-native-enriched-markdown",
-    "examples": [
-      "https://github.com/software-mansion-labs/react-native-enriched-markdown/tree/main/example"
-    ],
     "ios": true,
     "android": true,
     "macos": true,
@@ -20175,7 +20170,7 @@
   },
   {
     "githubUrl": "https://github.com/Adoobdoob71/react-native-add-calendar",
-    "examples": ["https://github.com/Adoobdoob71/react-native-add-calendar/example"],
+    "examples": ["https://github.com/Adoobdoob71/react-native-add-calendar/tree/the_root/example"],
     "images": [
       "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/android_gif.gif",
       "https://raw.githubusercontent.com/Adoobdoob71/react-native-add-calendar/refs/heads/main/media/ios_gif.gif"
@@ -20951,9 +20946,9 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/thejoaov/expo-android-tcp/tree/main/packages/android-reverse-tcp",
+    "githubUrl": "https://github.com/thejoaov/expo-android-tcp/tree/master/packages/android-reverse-tcp",
     "npmPkg": "expo-reverse-tcp",
-    "examples": ["https://github.com/thejoaov/expo-android-tcp/tree/main/app/app"],
+    "examples": ["https://github.com/thejoaov/expo-android-tcp/tree/master/app/app"],
     "android": true,
     "configPlugin": true
   },
