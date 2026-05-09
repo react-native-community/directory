@@ -10010,6 +10010,7 @@
     "npmPkg": "@rnw-community/react-native-payments",
     "examples": [
       "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example",
+      "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example-lib",
       "https://github.com/rnw-community/rnw-community/tree/master/packages/react-native-payments-example-expo"
     ],
     "ios": true,
@@ -14871,7 +14872,6 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "npmPkg": "react-native-stallion",
     "configPlugin": "https://github.com/stallion-tech/expo-stallion-plugin",
     "expoGo": true
   },
@@ -20895,7 +20895,6 @@
   },
   {
     "githubUrl": "https://github.com/jingjing2222/react-native-nitro-geolocation/tree/main/packages/react-native-nitro-geolocation",
-    "npmPkg": "react-native-nitro-geolocation",
     "examples": [
       "https://github.com/jingjing2222/react-native-nitro-geolocation/tree/main/examples/v0.81.1"
     ],
@@ -20922,7 +20921,6 @@
   },
   {
     "githubUrl": "https://github.com/stallion-tech/stallion-cli",
-    "npmPkg": "stallion-cli",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -20930,7 +20928,6 @@
   },
   {
     "githubUrl": "https://github.com/nikwebr/react-native-s3-bg-uploader",
-    "npmPkg": "react-native-s3-bg-uploader",
     "examples": ["https://github.com/nikwebr/react-native-s3-bg-uploader/tree/master/example"],
     "ios": true,
     "android": true,
@@ -20959,5 +20956,64 @@
     "examples": ["https://github.com/thejoaov/expo-android-tcp/tree/main/app/app"],
     "android": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/Madraka/expo-numerator",
+    "examples": ["https://github.com/Madraka/expo-numerator/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/saymondamasio/expo-assistant-functions",
+    "configPlugin": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DorianMazur/react-native-screen-choreography",
+    "examples": [
+      "https://github.com/DorianMazur/react-native-screen-choreography/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/DorianMazur/react-native-screen-choreography/main/docs/demo_1.gif",
+      "https://raw.githubusercontent.com/DorianMazur/react-native-screen-choreography/main/docs/demo_2.gif",
+      "https://raw.githubusercontent.com/DorianMazur/react-native-screen-choreography/main/docs/demo_3.gif"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-swc/tree/main/packages/core",
+    "npmPkg": "@react-native-swc/core",
+    "examples": [
+      "https://github.com/oblador/react-native-swc/tree/main/examples/expo",
+      "https://github.com/oblador/react-native-swc/tree/main/examples/vanilla"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-swc/tree/main/packages/metro-plugin",
+    "npmPkg": "@react-native-swc/metro-plugin",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/oblador/react-native-swc/tree/main/packages/worklets-plugin",
+    "npmPkg": "@react-native-swc/worklets-plugin",
+    "examples": [
+      "https://github.com/oblador/react-native-swc/tree/main/examples/expo",
+      "https://github.com/oblador/react-native-swc/tree/main/examples/vanilla"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
