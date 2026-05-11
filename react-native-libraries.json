@@ -13411,14 +13411,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/AakashThakur23102000/useapihook-dexterverse",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/itsramiel/react-native-audio-playback",
     "examples": ["https://github.com/itsramiel/react-native-audio-playback/tree/main/example"],
     "ios": true,
@@ -13526,14 +13518,6 @@
     "examples": ["https://github.com/osamaqarem/drag-select/tree/main/example"],
     "ios": true,
     "android": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/AakashThakur23102000/useUtils-dexterverse",
-    "ios": true,
-    "android": true,
-    "web": true,
     "expoGo": true,
     "newArchitecture": true
   },
@@ -14155,14 +14139,6 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
-  },
-  {
-    "githubUrl": "https://github.com/AakashThakur23102000/useRealmStorage-dexterverse",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/AppZung/react-native-code-push",
