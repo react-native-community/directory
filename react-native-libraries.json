@@ -21019,5 +21019,14 @@
       "https://raw.githubusercontent.com/mathnotes-app/mobile-ink/main/docs/assets/selection-editing-demo.gif"
     ],
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/omarsdev/react-native-nitro-compass",
+    "examples": ["https://github.com/omarsdev/react-native-nitro-compass/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
