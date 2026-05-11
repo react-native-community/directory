@@ -17019,17 +17019,13 @@
   {
     "githubUrl": "https://github.com/Lomray-Software/react-native-apple-music",
     "npmPkg": "@lomray/react-native-apple-music",
-    "examples": [
-      "https://github.com/Lomray-Software/react-native-apple-music/tree/prod/example"
-    ],
+    "examples": ["https://github.com/Lomray-Software/react-native-apple-music/tree/prod/example"],
     "ios": true,
     "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Gautham495/react-native-app-clip-overlay",
-    "examples": [
-      "https://github.com/Gautham495/react-native-app-clip-overlay/example"
-    ],
+    "examples": ["https://github.com/Gautham495/react-native-app-clip-overlay/example"],
     "ios": true,
     "newArchitecture": true
   },
@@ -17039,5 +17035,14 @@
     "android": true,
     "npmPkg": "react-native-google-auth",
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/omarsdev/react-native-nitro-compass",
+    "examples": ["https://github.com/omarsdev/react-native-nitro-compass/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
