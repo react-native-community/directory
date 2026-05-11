@@ -20,6 +20,7 @@ type Props = {
 
 type ArrowButtonProps = {
   disabled?: boolean;
+  back?: boolean;
 };
 
 export default function Pagination({ query, total, style, noTags, basePath = '/packages' }: Props) {
@@ -50,7 +51,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
       )}
       <View style={[tw`flex-row items-center justify-end`, style]}>
         {backDisabled ? (
-          <BackArrow disabled />
+          <PaginationArrow back disabled />
         ) : (
           <HoverEffect>
             <Link
@@ -60,7 +61,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
               })}
               style={tw`rounded`}
               aria-label="Previous page">
-              <BackArrow />
+              <PaginationArrow back />
             </Link>
           </HoverEffect>
         )}
@@ -68,7 +69,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
           {currentPage > 0 ? currentPage : '1'} of {totalPages}
         </Caption>
         {forwardDisabled ? (
-          <ForwardArrow disabled />
+          <PaginationArrow disabled />
         ) : (
           <HoverEffect>
             <Link
@@ -78,7 +79,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
               })}
               style={tw`rounded`}
               aria-label="Next page">
-              <ForwardArrow />
+              <PaginationArrow />
             </Link>
           </HoverEffect>
         )}
@@ -87,23 +88,12 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
   );
 }
 
-function BackArrow({ disabled }: ArrowButtonProps) {
-  return (
-    <View
-      style={[
-        tw`size-6 rotate-180 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
-        disabled && tw`opacity-50`,
-      ]}>
-      <ArrowIcon style={tw`h-3 text-black dark:text-white`} />
-    </View>
-  );
-}
-
-function ForwardArrow({ disabled }: ArrowButtonProps) {
+function PaginationArrow({ disabled, back }: ArrowButtonProps) {
   return (
     <View
       style={[
         tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
+        back && tw`rotate-180`,
         disabled && tw`opacity-50`,
       ]}>
       <ArrowIcon style={tw`h-3 text-black dark:text-white`} />

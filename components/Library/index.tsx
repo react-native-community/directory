@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
@@ -23,7 +24,7 @@ type Props = {
   showTrendingMark?: boolean;
 };
 
-export default function Library({
+function Library({
   library,
   skipMetadata,
   skipDate,
@@ -150,3 +151,5 @@ export default function Library({
     </View>
   );
 }
+
+export default memo(Library);

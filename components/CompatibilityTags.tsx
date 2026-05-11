@@ -25,7 +25,7 @@ export default function CompatibilityTags({ library, small }: Props) {
     library.visionos ? 'visionOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
-  ].filter(Boolean);
+  ].filter((p): p is string => !!p);
 
   return (
     <View style={tw`max-w-full flex-row flex-wrap items-center gap-1.5`}>
@@ -38,16 +38,14 @@ export default function CompatibilityTags({ library, small }: Props) {
         />
       ) : null}
       {!library.dev && <NewArchitectureTag library={library} small={small} />}
-      {platforms.map(platform =>
-        platform ? (
-          <Tag
-            label={platform}
-            key={`${platform}-platform`}
-            tagStyle={tw`border-palette-gray2 bg-palette-gray1 dark:border-default dark:bg-dark`}
-            small={small}
-          />
-        ) : null
-      )}
+      {platforms.map(platform => (
+        <Tag
+          label={platform}
+          key={`${platform}-platform`}
+          tagStyle={tw`border-palette-gray2 bg-palette-gray1 dark:border-default dark:bg-dark`}
+          small={small}
+        />
+      ))}
       {!(small && isSmallScreen) &&
         (library.expoGo ?? library.fireos ?? library.vegaos ?? library.horizon) && (
           <Tooltip
