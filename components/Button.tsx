@@ -1,57 +1,57 @@
-import { A } from '@expo/html-elements';
-import { PropsWithChildren, useContext } from 'react';
-import { StyleSheet, TextStyle, Pressable } from 'react-native';
+import { type PropsWithChildren } from 'react';
+import { type StyleProp, type TextStyle, View, type ViewStyle } from 'react-native';
+import { type Style } from 'twrnc';
 
-import { colors, darkColors, HoverEffect, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A, HoverEffect, P } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren & {
   href?: string;
   onPress?: () => void;
   openInNewTab?: boolean;
-  style?: TextStyle | TextStyle[];
+  style?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<Style>;
 };
 
-export function Button({ children, href, onPress, style, openInNewTab, ...rest }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+export function Button({
+  children,
+  href,
+  onPress,
+  style,
+  containerStyle,
+  openInNewTab,
+  ...rest
+}: Props) {
   const isLink = !!href;
-  const linkStyle = [
-    styles.container,
-    {
-      backgroundColor: isDark ? darkColors.powder : colors.primaryDark,
-    },
+  const buttonStyle = [
+    tw`cursor-pointer select-none items-center justify-center rounded bg-primary-darker outline-offset-1 dark:bg-primary-dark`,
     style,
-  ];
+  ] as ViewStyle[];
 
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
   return (
-    <HoverEffect>
+    <HoverEffect
+      style={containerStyle}
+      onPress={isLink ? undefined : onPress}
+      tabIndex={isLink ? -1 : 0}>
       {isLink ? (
         <A
           href={href}
-          style={{ borderRadius: 4, fontFamily: 'inherit' }}
+          role="button"
+          style={[tw`font-sans rounded no-underline`, containerStyle]}
           {...(openInNewTab ? { target: '_blank' } : {})}
+          {...(href?.startsWith('#') ? { target: '_self' } : {})}
           {...rest}>
-          <Pressable focusable={false} style={linkStyle} accessible={false}>
+          <View focusable={false} style={buttonStyle} accessible={false}>
             {content}
-          </Pressable>
+          </View>
         </A>
       ) : (
-        <Pressable onPress={onPress} style={linkStyle} {...rest}>
+        <View role="button" focusable={false} style={buttonStyle} {...rest}>
           {content}
-        </Pressable>
+        </View>
       )}
     </HoverEffect>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    outlineOffset: 1,
-  },
-});

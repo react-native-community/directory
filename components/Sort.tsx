@@ -1,21 +1,86 @@
 import { Picker } from '@react-native-picker/picker';
-import Router from 'next/router';
-import { useContext, useEffect, useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
 
-import { colors, darkColors, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query, QueryOrder, QueryOrderDirection } from '~/types';
+import { P } from '~/common/styleguide';
+import { type Query, type QueryOrder, type QueryOrderDirection } from '~/types';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-import { Sort as SortIcon } from './Icons';
+import { SortIcon } from './Icons';
 import Tooltip from './Tooltip';
 
 type SortButtonProps = {
   query: Query;
 };
 
-const sorts = [
+export function SortButton({ query: { order, direction, search }, query }: SortButtonProps) {
+  const [isSortIconHovered, setIsSortIconHovered] = useState(false);
+
+  const { asPath, push } = useRouter();
+
+  const currentSortValue: QueryOrder | undefined = order;
+  const currentDirection: QueryOrderDirection | undefined = direction;
+
+  function updatePath(url: string) {
+    if (url !== asPath) {
+      void push(url);
+    }
+  }
+
+  return (
+    <View style={tw`ml-2 h-6 flex-row items-center rounded bg-accented pl-2`}>
+      <View style={tw`flex-row items-center`}>
+        <Tooltip
+          sideOffset={8}
+          trigger={
+            <Pressable
+              onHoverIn={() => setIsSortIconHovered(true)}
+              onHoverOut={() => setIsSortIconHovered(false)}
+              style={currentDirection === 'ascending' && tw`-scale-y-100`}
+              aria-label="Toggle sort direction"
+              role="button"
+              onPress={() => {
+                updatePath(
+                  urlWithQuery('/packages', {
+                    ...query,
+                    direction: currentDirection === 'ascending' ? 'descending' : 'ascending',
+                  })
+                );
+              }}>
+              <SortIcon style={isSortIconHovered ? tw`text-primary` : tw`text-white`} />
+            </Pressable>
+          }>
+          Toggle sort order
+        </Tooltip>
+        <P style={tw`ml-1.5 mr-0.5 select-none text-sm text-white`}>Sort:</P>
+      </View>
+      <View style={tw`top-px`}>
+        <Picker
+          id="sort-order"
+          aria-label="Sort order"
+          selectedValue={currentSortValue ?? (search ? 'relevance' : 'updated')}
+          style={tw`relative -top-px rounded border-0 bg-transparent text-sm font-semibold text-white`}
+          onValueChange={value => {
+            updatePath(
+              urlWithQuery('/packages', {
+                ...query,
+                order: value,
+                offset: null,
+              })
+            );
+          }}>
+          {SORTS.map(sort => (
+            <Picker.Item key={sort.param} value={sort.param} label={sort.label} />
+          ))}
+        </Picker>
+      </View>
+    </View>
+  );
+}
+
+const SORTS: { param: QueryOrder; label: string }[] = [
   {
     param: 'relevance',
     label: 'Relevance',
@@ -27,6 +92,10 @@ const sorts = [
   {
     param: 'added',
     label: 'Recently Added',
+  },
+  {
+    param: 'released',
+    label: 'Recently Released',
   },
   {
     param: 'quality',
@@ -48,139 +117,12 @@ const sorts = [
     param: 'issues',
     label: 'Issues',
   },
+  {
+    param: 'dependencies',
+    label: 'Dependencies',
+  },
+  {
+    param: 'size',
+    label: 'Bundle Size',
+  },
 ];
-
-export const SortButton = ({ query: { order, direction, offset }, query }: SortButtonProps) => {
-  const [sortValue, setSortValue] = useState<QueryOrder | undefined>(order);
-  const [sortDirection, setSortDirection] = useState<QueryOrderDirection | undefined>(direction);
-  const [paginationOffset, setPaginationOffset] = useState<number | undefined>(
-    typeof offset === 'string' ? parseInt(offset, 10) : offset
-  );
-  const [isSortIconHovered, setIsSortIconHovered] = useState(false);
-  const { isDark } = useContext(CustomAppearanceContext);
-
-  useEffect(() => {
-    const url = urlWithQuery('/', {
-      ...query,
-      order: sortValue,
-      direction: sortDirection,
-      offset: paginationOffset,
-    });
-    if (url !== Router.pathname) {
-      void Router.push(url);
-    }
-  }, [sortValue, sortDirection]);
-
-  return (
-    <View
-      style={[
-        styles.container,
-        styles.displayHorizontal,
-        { backgroundColor: isDark ? darkColors.border : colors.gray5 },
-      ]}>
-      <View style={styles.displayHorizontal}>
-        <Tooltip
-          sideOffset={8}
-          trigger={
-            <Pressable
-              onHoverIn={() => setIsSortIconHovered(true)}
-              onHoverOut={() => setIsSortIconHovered(false)}
-              style={sortDirection === 'ascending' && styles.flippedIcon}
-              aria-label="Toggle sort direction"
-              role="button"
-              onPress={() => {
-                setSortDirection(previousOrder =>
-                  previousOrder === 'ascending' ? 'descending' : 'ascending'
-                );
-                if (!sortValue) {
-                  setSortValue('relevance');
-                }
-              }}>
-              <SortIcon fill={isSortIconHovered ? colors.primary : colors.white} />
-            </Pressable>
-          }>
-          Toggle sort order
-        </Tooltip>
-        <P style={styles.title}>Sort: </P>
-      </View>
-      <View style={styles.pickerContainer}>
-        <P style={styles.title}>
-          <Picker
-            aria-label="Sort direction"
-            selectedValue={sortValue}
-            style={[
-              styles.picker,
-              {
-                fontWeight: 600,
-                backgroundColor: isDark ? darkColors.border : 'transparent',
-              },
-            ]}
-            onValueChange={value => {
-              setPaginationOffset(null);
-              setSortValue(value);
-            }}>
-            {sorts.map(sort => (
-              <Picker.Item
-                key={sort.param}
-                value={sort.param}
-                label={sort.label}
-                color={isDark ? colors.white : colors.black}
-              />
-            ))}
-          </Picker>
-          <P style={styles.arrow}>›</P>
-        </P>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.gray5,
-    height: 24,
-    marginLeft: 8,
-    paddingLeft: 8,
-    borderRadius: 4,
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  title: {
-    color: colors.white,
-    fontWeight: 400,
-    marginLeft: 6,
-    fontSize: 14,
-    userSelect: 'none',
-  },
-  arrow: {
-    color: colors.secondary,
-    fontSize: 18,
-    lineHeight: 18,
-    userSelect: 'none',
-    position: 'absolute',
-    pointerEvents: 'none',
-    right: 6,
-    top: 0,
-    transform: 'rotate(90deg)',
-  },
-  pickerContainer: {
-    top: 1,
-    left: -4,
-  },
-  picker: {
-    color: colors.white,
-    borderWidth: 0,
-    borderRadius: 2,
-    position: 'relative',
-    top: -1,
-    fontSize: 14,
-    paddingRight: 22,
-    fontFamily: 'inherit',
-    cursor: 'pointer',
-  },
-  flippedIcon: {
-    transform: 'scaleY(-1)',
-  },
-});

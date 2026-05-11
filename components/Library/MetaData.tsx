@@ -1,46 +1,56 @@
-import { useContext } from 'react';
-import { Platform, StyleSheet, View, Text } from 'react-native';
+import { partition } from 'es-toolkit/array';
+import { View } from 'react-native';
 
-import { colors, A, P, Caption, darkColors } from '~/common/styleguide';
+import { A, Caption, P } from '~/common/styleguide';
+import { FILTER_MODULE_TYPE } from '~/components/Filters/helpers';
+import {
+  ConfigPluginIcon,
+  DependencyIcon,
+  DownloadIcon,
+  ExamplesIcon,
+  EyeIcon,
+  ForkIcon,
+  IssueIcon,
+  LicenseIcon,
+  ModuleIcon,
+  NativeCodeIcon,
+  NightlyTestIcon,
+  PackageManagerIcon,
+  PackageSizeIcon,
+  StarIcon,
+  TypeScriptIcon,
+  WebIcon,
+} from '~/components/Icons';
+import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
 import Tooltip from '~/components/Tooltip';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { type LibraryType, MetadataEntryType } from '~/types';
-import { partition } from '~/util/arrays';
+import { type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import { pluralize } from '~/util/strings';
+import { formatPackageManager, pluralize } from '~/util/strings';
+import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
-import {
-  Star,
-  Download,
-  Eye,
-  Issue,
-  Web,
-  License,
-  Fork,
-  Code,
-  TypeScript,
-  NativeCode,
-  PackageSize,
-  Dependency,
-} from '../Icons';
 
 type Props = {
   library: LibraryType;
   secondary?: boolean;
+  skipExamples?: boolean;
 };
 
-function generateData(
-  { github, score, npm, npmPkg }: LibraryType,
-  isDark: boolean
-): MetadataEntryType[] {
-  const iconColor = isDark ? darkColors.pewter : colors.gray5;
+const linkStyle = tw`text-[15px] font-light -outline-offset-1`;
+
+function generateData({
+  github,
+  score,
+  npm,
+  npmPkg,
+  matchingScoreModifiers,
+}: LibraryType): MetadataEntryType[] {
   return [
     {
       id: 'score',
-      icon: <DirectoryScore score={score} />,
+      icon: <DirectoryScore score={score} matchingScoreModifiers={matchingScoreModifiers} />,
       content: (
-        <A target="_self" href="/scoring" style={styles.link}>
+        <A target="_self" href={`/package/${npmPkg}/score`} style={linkStyle}>
           Directory Score
         </A>
       ),
@@ -48,12 +58,12 @@ function generateData(
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <Download fill={iconColor} width={16} height={18} />,
+          icon: <DownloadIcon style={tw`h-4.5 w-4 text-icon`} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
-              style={styles.link}
-              containerStyle={styles.linkContainer}>
+              style={linkStyle}
+              containerStyle={{ textOverflow: 'ellipsis' }}>
               {`${npm.downloads.toLocaleString()}`} monthly downloads
             </A>
           ),
@@ -61,30 +71,32 @@ function generateData(
       : null,
     {
       id: 'star',
-      icon: <Star fill={iconColor} />,
+      icon: <StarIcon style={tw`text-icon`} />,
       content: (
-        <A href={`${github.urls.repo}/stargazers`} style={styles.link}>
-          {github.stats.stars.toLocaleString()} stars
+        <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
+          {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
         </A>
       ),
     },
-    {
-      id: 'dependencies',
-      icon: <Dependency fill={iconColor} />,
-      content: (
-        <A
-          href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
-          style={styles.link}>
-          {`${github.stats.dependencies} ${pluralize('dependency', github.stats.dependencies)}`}
-        </A>
-      ),
-    },
-    npm.size
+    github.stats?.dependencies !== undefined
+      ? {
+          id: 'dependencies',
+          icon: <DependencyIcon style={tw`text-icon`} />,
+          content: (
+            <A
+              href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
+              style={linkStyle}>
+              {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
+            </A>
+          ),
+        }
+      : null,
+    npm?.size
       ? {
           id: 'size',
-          icon: <PackageSize fill={iconColor} />,
+          icon: <PackageSizeIcon style={tw`text-icon`} />,
           content: (
-            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={styles.link}>
+            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
               {`${formatBytes(npm.size)} package size`}
             </A>
           ),
@@ -93,9 +105,9 @@ function generateData(
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <Fork fill={iconColor} width={16} height={17} />,
+          icon: <ForkIcon style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/network/members`} style={styles.link} aria-label="Forks">
+            <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
               {`${github.stats.forks.toLocaleString()}`}
             </A>
           ),
@@ -105,9 +117,9 @@ function generateData(
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <Eye fill={iconColor} />,
+          icon: <EyeIcon style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/watchers`} style={styles.link} aria-label="Watchers">
+            <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
               {`${github.stats.subscribers.toLocaleString()}`}
             </A>
           ),
@@ -117,9 +129,9 @@ function generateData(
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <Issue fill={iconColor} />,
+          icon: <IssueIcon style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/issues`} style={styles.link} aria-label="Issues">
+            <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
               {`${github.stats.issues.toLocaleString()}`}
             </A>
           ),
@@ -129,25 +141,25 @@ function generateData(
   ];
 }
 
-function generateSecondaryData({ github, examples }: LibraryType, isDark: boolean) {
-  const secondaryTextColor = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
-  const iconColor = isDark ? darkColors.pewter : colors.secondary;
-  const paragraphStyles = [styles.secondaryText, secondaryTextColor];
-  const linkStyles = [...paragraphStyles, styles.mutedLink];
-  const hoverStyle = {
-    textDecorationColor: colors.gray4,
-    color: isDark ? colors.gray3 : colors.gray5,
-  };
+function generateSecondaryData(library: LibraryType, skipExamples: boolean): MetadataEntryType[] {
+  const { github, examples, nightlyProgram } = library;
+  const configPlugin = library.configPlugin ?? library.github.configPlugin;
+
+  const iconColor = [
+    tw`text-tertiary`,
+    skipExamples && tw`text-palette-gray5`,
+    tw`dark:text-pewter`,
+  ];
+  const paragraphStyles = [tw`text-[13px] font-light`, !skipExamples && tw`text-secondary`];
+  const hoverStyle = tw`text-hover decoration-palette-gray4`;
 
   return [
     github.urls.homepage
       ? {
           id: 'web',
-          icon: <Web fill={iconColor} width={16} height={16} />,
+          icon: <WebIcon style={iconColor} />,
           content: (
-            <A href={github.urls.homepage} style={linkStyles} hoverStyle={hoverStyle}>
+            <A href={github.urls.homepage} style={paragraphStyles} hoverStyle={hoverStyle}>
               Website
             </A>
           ),
@@ -156,12 +168,12 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
     github.license
       ? {
           id: 'license',
-          icon: <License fill={iconColor} width={14} height={16} />,
+          icon: <LicenseIcon style={iconColor} />,
           content:
             github.license.name === 'Other' ? (
               <P style={paragraphStyles}>Unrecognized License</P>
             ) : (
-              <A href={github.license.url} style={linkStyles} hoverStyle={hoverStyle}>
+              <A href={github.license.url} style={paragraphStyles} hoverStyle={hoverStyle}>
                 {github.license.name}
               </A>
             ),
@@ -170,21 +182,66 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
     github.hasNativeCode
       ? {
           id: 'nativeCode',
-          icon: <NativeCode fill={iconColor} width={16} height={16} />,
+          icon: <NativeCodeIcon style={iconColor} />,
           content: <P style={paragraphStyles}>Native code</P>,
+        }
+      : null,
+    configPlugin
+      ? {
+          id: 'configPlugin',
+          icon: <ConfigPluginIcon style={iconColor} />,
+          content: (
+            <ConfigPluginContent
+              configPlugin={configPlugin}
+              hoverStyle={hoverStyle}
+              linkStyles={paragraphStyles}
+              paragraphStyles={paragraphStyles}
+            />
+          ),
+          tooltip: getConfigPluginText(configPlugin),
+        }
+      : null,
+    nightlyProgram
+      ? {
+          id: 'nightlyProgram',
+          icon: <NightlyTestIcon style={iconColor} />,
+          content: (
+            <A
+              href={`https://react-native-community.github.io/nightly-tests/?q=${encodeURIComponent(library.npmPkg)}`}
+              style={paragraphStyles}
+              hoverStyle={hoverStyle}>
+              Nightly Program
+            </A>
+          ),
+          tooltip: 'Package is tested against nightly React Native releases.',
+        }
+      : null,
+    skipExamples && github.moduleType
+      ? {
+          id: 'moduleType',
+          icon: <ModuleIcon style={iconColor} />,
+          content: (
+            <P style={paragraphStyles}>
+              {
+                FILTER_MODULE_TYPE.find(
+                  ({ param }) => param === `${library.github.moduleType}Module`
+                )?.title
+              }
+            </P>
+          ),
         }
       : null,
     github.hasTypes
       ? {
           id: 'types',
-          icon: <TypeScript fill={iconColor} width={16} height={16} />,
+          icon: <TypeScriptIcon style={iconColor} />,
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
-    examples && examples.length
+    !skipExamples && examples && examples.length
       ? {
           id: 'examples',
-          icon: <Code fill={iconColor} width={16} height={16} />,
+          icon: <ExamplesIcon style={iconColor} />,
           content: (
             <>
               <Caption style={paragraphStyles}>Examples: </Caption>
@@ -192,7 +249,7 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
                 <A
                   key={example}
                   href={example}
-                  style={[...linkStyles, styles.exampleLink]}
+                  style={[...paragraphStyles, tw`ml-0.5 mr-1 text-[13px]`]}
                   hoverStyle={hoverStyle}>
                   #{index + 1}
                 </A>
@@ -201,32 +258,51 @@ function generateSecondaryData({ github, examples }: LibraryType, isDark: boolea
           ),
         }
       : null,
+    skipExamples && github.packageManager
+      ? {
+          id: 'packageManager',
+          icon: <PackageManagerIcon style={iconColor} />,
+          content: <P style={paragraphStyles}>{formatPackageManager(github.packageManager)}</P>,
+          tooltip: 'Package manager',
+        }
+      : null,
   ];
 }
 
-export function MetaData({ library, secondary }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+export default function MetaData({ library, secondary, skipExamples = false }: Props) {
   if (secondary) {
-    const data = generateSecondaryData(library, isDark).filter(Boolean);
+    const data = generateSecondaryData(library, skipExamples).filter(Boolean);
     return (
       <>
-        {data.map(({ id, icon, content }, i) => (
-          <View
-            key={id}
-            style={[
-              styles.displayHorizontal,
-              i + 1 !== data.length ? styles.datumContainer : {},
-              styles.secondaryContainer,
-            ]}>
-            <View style={[styles.iconContainer, styles.secondaryIconContainer]}>{icon}</View>
-            {content}
-          </View>
-        ))}
+        {data
+          .filter(entry => !!entry)
+          .map(({ id, icon, content, tooltip }, i) => {
+            const component = (
+              <View
+                key={id}
+                // @ts-expect-error RNW complains about 'fit-content'
+                style={{
+                  ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
+                  ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
+                  width: 'fit-content',
+                }}>
+                <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
+                {content}
+              </View>
+            );
+
+            return tooltip ? (
+              <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
+                {tooltip}
+              </Tooltip>
+            ) : (
+              component
+            );
+          })}
       </>
     );
   } else {
-    const data = generateData(library, isDark).filter(entry => !!entry);
+    const data = generateData(library).filter(entry => !!entry);
     const [bottomData, listData] = partition<NonNullable<MetadataEntryType>>(data, ({ id }) => {
       return ['forks', 'subscribers', 'issues'].includes(id);
     });
@@ -235,23 +311,22 @@ export function MetaData({ library, secondary }: Props) {
         {listData.map(({ id, icon, content }, i) => (
           <View
             key={id}
-            style={[styles.displayHorizontal, i + 1 !== data.length ? styles.datumContainer : {}]}>
-            <View style={styles.iconContainer}>{icon}</View>
+            style={[
+              tw`flex-row items-center`,
+              i + 1 !== data.length && tw`mb-2 min-h-[22px] overflow-hidden`,
+            ]}>
+            <View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>
             {content}
           </View>
         ))}
-        <View style={[styles.displayHorizontal, styles.bottomStats]}>
+        <View style={tw`flex-row items-center gap-4`}>
           {bottomData.map(({ id, icon, content, tooltip }) => (
-            <View key={id} style={styles.displayHorizontal}>
+            <View key={id} style={tw`flex-row items-center`}>
               <Tooltip
                 key={id}
                 sideOffset={2}
-                delayDuration={100}
-                trigger={
-                  <View style={styles.iconContainer}>
-                    {icon}
-                  </View>
-                }>
+                delayDuration={250}
+                trigger={<View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>}>
                 {tooltip}
               </Tooltip>
               {content}
@@ -262,55 +337,3 @@ export function MetaData({ library, secondary }: Props) {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  datumContainer: {
-    marginBottom: 8,
-    minHeight: 22,
-    overflow: 'hidden',
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  bottomStats: {
-    gap: 16,
-  },
-  iconContainer: {
-    marginRight: 7,
-    width: 22,
-    alignItems: 'center',
-  },
-  linkContainer: {
-    display: 'contents',
-    ...Platform.select({
-      web: {
-        textOverflow: 'ellipsis',
-      },
-    }),
-  },
-  link: {
-    fontSize: 15,
-    fontWeight: 300,
-    outlineOffset: -1,
-  },
-  mutedLink: {
-    backgroundColor: 'transparent',
-  },
-  secondaryText: {
-    fontSize: 13,
-    fontWeight: 300,
-  },
-  secondaryContainer: {
-    marginBottom: 0,
-    paddingRight: 3,
-  },
-  secondaryIconContainer: {
-    marginRight: 4,
-  },
-  exampleLink: {
-    marginLeft: 2,
-    marginRight: 4,
-    fontSize: 13,
-  },
-});

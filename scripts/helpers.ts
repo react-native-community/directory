@@ -1,6 +1,6 @@
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 
@@ -19,7 +19,25 @@ export async function makeGraphqlQuery(query: string, variables = {}) {
       variables,
     }),
   });
-  return await result.json();
+  if (result.ok) {
+    try {
+      return await result.json();
+    } catch (error: unknown) {
+      console.error('GitHub GraphQL response parse failed!', {
+        status: result.status,
+        statusText: result.statusText,
+        error: error instanceof Error ? error.message : String(error),
+      });
+      throw error;
+    }
+  } else {
+    console.error('GitHub GraphQL invalid response!', {
+      status: result.status,
+      statusText: result.statusText,
+      body: result?.body ? await result.text() : undefined,
+    });
+    throw new Error(`GitHub GraphQL invalid response: ${result.status}`);
+  }
 }
 
 export async function getUpdatedUrl(url: string) {
@@ -31,23 +49,7 @@ export async function getUpdatedUrl(url: string) {
   }
 }
 
-export function parseGitHubUrl(url: string) {
-  const [, , , repoOwner, repoName, ...path] = url.split('/');
-
-  const isMonorepo = !!(path && path.length);
-  const branchName = path[1];
-  const packagePath = isMonorepo ? path.slice(2).join('/').replace('%40', '@') : '.';
-
-  return {
-    repoOwner,
-    repoName,
-    isMonorepo,
-    branchName,
-    packagePath,
-  };
-}
-
-export function sleep(ms = 0, msMax: number | undefined = undefined) {
+export function sleep(ms = 0, msMax?: number) {
   return new Promise(r =>
     setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
   );
@@ -61,20 +63,30 @@ export function fillNpmName(library: LibraryType) {
   return library;
 }
 
+const STOPWORDS = ['react-native', 'reactnative', 'react', 'native'];
+const STOPWORDS_PATTERN = new RegExp(`\\b(?:${STOPWORDS.join('|')})\\b`, 'gi');
+
 export function processTopics(topics?: string[]) {
-  return (topics ?? [])
+  if (!Array.isArray(topics)) {
+    return [];
+  }
+
+  return topics
     .map(topic =>
       topic
-        .replace(/([ _])/g, '-')
-        .replace('react-native-', '')
+        .normalize('NFKC')
         .toLowerCase()
+        .replace(/([ _])/g, '-')
+        .replace(STOPWORDS_PATTERN, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
         .trim()
     )
     .filter(topic => topic?.length);
 }
 
 function splitAndGetLastChunk(value: string, delimiter = '/') {
-  return value.split(delimiter).at(-1).toLowerCase();
+  return value.split(delimiter).at(-1)?.toLowerCase();
 }
 
 export function hasMismatchedPackageData(library: LibraryType) {
@@ -82,7 +94,7 @@ export function hasMismatchedPackageData(library: LibraryType) {
 
   if (library.github.registry && library.github.registry !== 'https://registry.npmjs.org/') {
     const registryScope = splitAndGetLastChunk(library.github.registry);
-    if (registryScope.startsWith('@')) {
+    if (registryScope?.startsWith('@')) {
       return library.github?.name.replace(`${registryScope}/`, '') !== desiredName;
     }
   }

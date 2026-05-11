@@ -1,0 +1,101 @@
+import { Header as HtmlHeader } from '@expo/html-elements';
+import { useContext } from 'react';
+import { View } from 'react-native';
+
+import { A, H5, useLayout } from '~/common/styleguide';
+import AddLibrarySelector from '~/components/AddLibrarySelector';
+import ContentContainer from '~/components/ContentContainer';
+import NavigationTab from '~/components/NavigationTab';
+import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
+
+import { Button } from './Button';
+import { GitHubIcon, Logo, ThemeDarkIcon, ThemeLightIcon, ToolsIcon } from './Icons';
+import Tooltip from './Tooltip';
+
+export default function TopBar() {
+  const { toggleTheme } = useContext(CustomAppearanceContext);
+  const { isSmallScreen, isBelowMaxWidth } = useLayout();
+
+  return (
+    <HtmlHeader
+      style={tw`items-center justify-center gap-y-2.5 overflow-hidden bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
+      <View style={tw`-mt-[1.5px] w-full max-w-layout flex-row items-center justify-between px-4`}>
+        <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
+          <Logo style={tw`h-6.5 w-[29px] text-primary`} />
+          <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
+            <A href="/" style={tw`ml-2 font-bold text-primary no-underline`}>
+              {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
+            </A>
+          </H5>
+        </View>
+        <View style={[isBelowMaxWidth && tw`mr-auto`, isSmallScreen && tw`hidden`]}>
+          <ContentContainer style={tw`flex-row gap-2.5 px-4`}>
+            <NavigationTab title="Explore" path="/packages" />
+            <NavigationTab title="Popular" />
+            <NavigationTab title="Trending" />
+          </ContentContainer>
+        </View>
+        <View
+          style={[
+            tw`flex-row items-center justify-end gap-2.5`,
+            !isBelowMaxWidth && tw`min-w-[255px]`,
+          ]}>
+          <Tooltip
+            trigger={
+              <View>
+                <Button
+                  aria-label="Toggle theme"
+                  onPress={toggleTheme}
+                  style={tw`size-8.5 bg-transparent px-1`}
+                  containerStyle={tw`rounded-full`}>
+                  {tw.prefixMatch('dark') ? (
+                    <ThemeLightIcon style={tw`text-white`} />
+                  ) : (
+                    <ThemeDarkIcon style={tw`text-white`} />
+                  )}
+                </Button>
+              </View>
+            }>
+            Toggle theme
+          </Tooltip>
+          <Tooltip
+            trigger={
+              <View>
+                <Button
+                  aria-label="Tools"
+                  href="/tools"
+                  style={tw`size-8.5 bg-transparent px-1`}
+                  containerStyle={tw`rounded-full`}>
+                  <ToolsIcon style={tw`text-white`} />
+                </Button>
+              </View>
+            }>
+            Tools
+          </Tooltip>
+          <Tooltip
+            trigger={
+              <View style={tw`mr-1`}>
+                <Button
+                  openInNewTab
+                  aria-label="GitHub repository"
+                  href="https://github.com/react-native-community/directory"
+                  style={tw`size-8.5 bg-transparent px-1`}
+                  containerStyle={tw`rounded-full`}>
+                  <GitHubIcon style={tw`size-6 text-white`} />
+                </Button>
+              </View>
+            }>
+            GitHub
+          </Tooltip>
+          <AddLibrarySelector />
+        </View>
+      </View>
+      <ContentContainer style={[tw`flex-row gap-2.5 px-4`, !isSmallScreen && tw`hidden`]}>
+        <NavigationTab title="Explore" path="/packages" />
+        <NavigationTab title="Popular" />
+        <NavigationTab title="Trending" />
+      </ContentContainer>
+    </HtmlHeader>
+  );
+}

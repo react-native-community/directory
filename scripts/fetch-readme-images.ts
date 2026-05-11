@@ -1,7 +1,7 @@
-import { Cheerio, load } from 'cheerio';
-import fetch from 'cross-fetch';
+import { fetch } from 'bun';
+import { type Cheerio, load } from 'cheerio';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { sleep } from './helpers';
 

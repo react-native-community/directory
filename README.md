@@ -5,7 +5,7 @@
     https://reactnative.directory
   </a>
 </h3>
-<p align="center">React Native Directory is a website where you can see all the libraries that are compatible with React Native.</p>
+<p align="center">React Native Directory is a website where you can browse through all the libraries that are compatible with React Native.</p>
 <p align="center">
   <a href="https://vercel.com/?utm_source=rndir&utm_campaign=oss">
     <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" />
@@ -34,6 +34,10 @@
 - Use the [template](#new-library-entry-template) as a guide.
 - Submit a PR.
 
+> [!TIP]
+> You can also use the React Native Directory CLI to submit a library directly from the terminal. Run `bunx rn-directory submit` from the package root folder.
+> - https://github.com/Simek/rn-directory
+
 ### New library entry template
 
 > [!IMPORTANT]
@@ -58,10 +62,12 @@
   "visionos": false,
   "expoGo": false,
   "fireos": false,
+  "horizon": false,
+  "vegaos": false,
+  "newArchitecture": false,
+  "configPlugin": false,
   "unmaintained": false,
-  "dev": false,
-  "template": false,
-  "newArchitecture": false
+  "dev": false
 }
 ```
 
@@ -122,13 +128,17 @@
 
 #### ✅ Compatibility
 
+> [!TIP]
+> **Any** library can be used with Expo, if you use dev clients or prebuild.
+
 - #### `expoGo`
   **(boolean)** - works with [Expo Go](https://docs.expo.dev/get-started/expo-go/) — an open-source sandbox app, without using [dev clients](https://docs.expo.dev/develop/development-builds/introduction/) or [prebuild](https://docs.expo.dev/workflow/continuous-native-generation/).
 - #### `fireos`
   **(boolean)** - works on Amazon Fire OS.
-
-> [!TIP]
-> **Any** library can be used with Expo, if you use dev clients or prebuild.
+- #### `horizon`
+  **(boolean)** - works on Meta Horizon OS.
+- #### `vegaos`
+  **(boolean|string)** - works with [Vega OS](https://developer.amazon.com/apps-and-games/vega). It can also be a string containing npm package name, if a separate/additional package is required for full support.
 
 #### 🏷️ Tags
 
@@ -136,8 +146,8 @@
   **(boolean)** - signify that a library is no longer maintained. You can provide alternative or replacement libraries with the `alternatives` field, if needed.
 - #### `dev`
   **(boolean)** - signify that a library is a development tool or is only a part of development process.
-- #### `template`
-  **(boolean)** - signify that a library is a new project template.
+- #### `configPlugin`
+  **(boolean \| string \[URL to third-party config plugin\])** - Indicates if the library includes an [Expo config plugin](https://docs.expo.dev/config-plugins/introduction/). If the plugin is provided by a third party, supply the URL as a string. This field is optional and will be detected automatically if omitted.
 - #### `newArchitecture`
   **(boolean|'new-arch-only')** - signify that a library supports both, or not, the New Architecture and the Old Architecture or only the New Architecture. Skipping the field will result in "untested" status, unless automatic support detection returned a result. You can provide additional context with the `newArchitectureNote` field, if needed.
 
@@ -170,7 +180,7 @@ You should be able to visit `localhost:3000` in your browser.
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
 - Load the `GITHUB_TOKEN` environment variable into your shell.
-- Set `ONLY_WRITE_LOCAL_DATA_FILE` to `true` in *scripts/build-and-score-data.ts* to skip fetching and updating store blob from Vercel and instead use and update the local `assets/data.json` file. 
+- Set `ONLY_WRITE_LOCAL_DATA_FILE` to `true` in *scripts/build-and-score-data.ts* to skip fetching and updating store blob from Vercel and instead use and update the local `assets/data.json` file.
 
 This command creates site data in `./assets/data.json`
 
@@ -184,44 +194,7 @@ Get a commit on `main` and it will be automatically deployed.
 
 ## I don't like your website, can I hit an API instead and build my own better stuff?
 
-Sure, go for it!
-
-```
-https://reactnative.directory/api/libraries
-```
-
-- Returns a list of all libraries in `JSON` format.
-
-<details>
-  <summary><b>More details on API queries</b></summary>
-  <br/>
-
-  ```
-  https://reactnative.directory/api/libraries?search=webgl
-  ```
-  
-  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`.
-  
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true
-  ```
-  
-  - Returns a list of all libraries in `JSON` format that have the keyword `webgl` and work with Expo Go app.
-  
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true
-  ```
-  
-  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app and Android.
-  
-  ```
-  https://reactnative.directory/api/libraries?search=webgl&expoGo=true&android=true&isPopular=true
-  ```
-  
-  - Returns a list of all libraries in `JSON` format that have the keyword `webgl`, work with Expo Go app, Android and are popular based on the scoring criterion.
-  
-  All the possible query parameters represents [`Query` type](https://github.com/react-native-community/directory/blob/main/types/index.ts#L14-L36).
-</details>
+Sure, go for it! You can read more details on the public API in the [dedicated documentation file](API.md).
 
 ## I don't like how you calculate scores.
 

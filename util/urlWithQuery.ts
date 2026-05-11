@@ -1,19 +1,12 @@
-import { Query } from '~/types';
+import { type Query } from '~/types';
 
 function toQueryString(query: Query) {
   return new URLSearchParams(query as Record<string, string>).toString();
 }
 
-export default function urlWithQuery(url: string, query: Partial<Query>) {
-  const queryWithoutEmptyParams = {};
-  Object.keys(query).forEach(key => {
-    if (query[key]) {
-      queryWithoutEmptyParams[key] = query[key];
-    }
-  });
-  if (Object.keys(queryWithoutEmptyParams).length === 0) {
-    return url;
-  } else {
-    return `${url}?${toQueryString(queryWithoutEmptyParams)}`;
-  }
+export default function urlWithQuery(url: string, query: Partial<Query> = {}): string {
+  const queryString = toQueryString(
+    Object.fromEntries(Object.entries(query).filter(([, v]) => Boolean(v)))
+  );
+  return queryString ? `${url}?${queryString}` : url;
 }

@@ -1,123 +1,77 @@
-import { useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, P } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { Query } from '~/types';
+import { P } from '~/common/styleguide';
+import { Button } from '~/components/Button';
+import { FilterIcon } from '~/components/Icons';
+import { type Query } from '~/types';
+import tw from '~/util/tailwind';
 
 import { ClearButton } from './ClearButton';
-import { FILTER_PLATFORMS, FILTER_REQUIRES_MAIN_SEARCH, FILTER_STATUS } from './helpers';
-import { Button } from '../Button';
-import { Filter as FilterIcon } from '../Icons';
+import {
+  FILTER_BOOKMARKS,
+  FILTER_COMPATIBILITY,
+  FILTER_MODULE_TYPE,
+  FILTER_PLATFORMS,
+  FILTER_REQUIRES_MAIN_SEARCH,
+  FILTER_STATUS,
+  FILTER_TYPE,
+} from './helpers';
 
-type FilterButtonProps = {
+type Props = {
   query: Query;
   onPress: () => void;
   onClearAllPress: () => void;
   isFilterVisible: boolean;
-  containerStyle?: ViewStyle;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
-export const FilterButton = ({
-  isFilterVisible,
-  query,
-  onPress,
-  onClearAllPress,
-  containerStyle,
-  style,
-}: FilterButtonProps) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-
+export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress, style }: Props) {
   const params = [
     ...FILTER_PLATFORMS.map(platform => platform.param),
-    ...FILTER_REQUIRES_MAIN_SEARCH.map(platform => platform.param),
-    ...FILTER_STATUS.map(platform => platform.param),
+    ...FILTER_REQUIRES_MAIN_SEARCH.map(filter => filter.param),
+    ...FILTER_STATUS.map(status => status.param),
+    ...FILTER_COMPATIBILITY.map(compatibility => compatibility.param),
+    ...FILTER_TYPE.map(entryType => entryType.param),
+    ...FILTER_MODULE_TYPE.map(moduleType => moduleType.param),
+    FILTER_BOOKMARKS.param,
   ];
 
   const filterCount = Object.keys(query).reduce(
-    (acc, q) => (params.includes(q) ? acc + 1 : acc),
+    (acc, q) => (params.includes(q as keyof Query) ? acc + 1 : acc),
     0
   );
   const isFilterCount = !!filterCount;
 
-  const backgroundColor = isDark ? darkColors.border : colors.gray5;
-  const borderLeftColor = isDark ? darkColors.dark : colors.gray6;
-
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View style={[tw`flex-row items-center rounded`, style]}>
       <Button
         onPress={onPress}
+        containerStyle={tw`h-full flex-grow`}
         style={[
-          styles.button,
-          { backgroundColor },
-          isFilterVisible && styles.activeButton,
-          isFilterCount && styles.leftBorderRadiusOnly,
-          style,
+          tw`h-full bg-accented px-2`,
+          isFilterVisible && tw`bg-primary-dark`,
+          isFilterCount && tw`rounded-r-none`,
         ]}>
-        <View style={styles.displayHorizontal}>
-          <View style={styles.iconContainer}>
+        <View style={tw`flex-row items-center`}>
+          <View style={tw`top-px`}>
             <FilterIcon
-              fill={isFilterVisible ? colors.gray7 : isFilterCount ? colors.primary : colors.white}
-              width={14}
-              height={12}
+              style={[
+                tw`h-3 w-3.5 text-white`,
+                !isFilterVisible && isFilterCount && tw`text-primary`,
+              ]}
             />
           </View>
-          <P style={[styles.buttonText, isFilterVisible && styles.activeButtonText]}>
+          <P style={tw`ml-1.5 select-none text-sm text-white`}>
             Filters{isFilterCount ? `: ${filterCount}` : ''}
           </P>
         </View>
       </Button>
       {filterCount > 0 && (
-        <View style={[styles.clearButtonContainer, { backgroundColor, borderLeftColor }]}>
+        <View
+          style={tw`h-full items-center justify-center rounded-r border-l border-palette-gray6 bg-accented dark:border-dark`}>
           <ClearButton onPress={onClearAllPress} />
         </View>
       )}
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 4,
-  },
-  button: {
-    height: '100%',
-    paddingHorizontal: 8,
-  },
-  activeButton: {
-    backgroundColor: colors.primary,
-  },
-  leftBorderRadiusOnly: {
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-  },
-  buttonText: {
-    fontSize: 14,
-    color: colors.white,
-    marginLeft: 6,
-    fontWeight: '500',
-    userSelect: 'none',
-  },
-  activeButtonText: {
-    color: colors.gray7,
-  },
-  iconContainer: {
-    top: 1,
-  },
-  displayHorizontal: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  clearButtonContainer: {
-    height: '100%',
-    width: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    borderLeftWidth: 1,
-  },
-});
+}

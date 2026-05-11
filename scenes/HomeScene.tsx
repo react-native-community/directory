@@ -1,0 +1,186 @@
+import { View } from 'react-native';
+
+import { A, H4, P, useLayout } from '~/common/styleguide';
+import ContentContainer from '~/components/ContentContainer';
+import HomeSection from '~/components/Home/HomeSection';
+import PlatformRow from '~/components/Home/PlatformRow';
+import {
+  CalendarIcon,
+  DownloadIcon,
+  PlatformAndroid,
+  PlatformIOS,
+  PlatformMacOS,
+  PlatformTvOS,
+  PlatformVisionOS,
+  PlatformWeb,
+  PlatformWindows,
+  PlusIcon,
+  StarIcon,
+} from '~/components/Icons';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import QuickSearch from '~/components/QuickSearch';
+import { type HomePageProps } from '~/types/pages';
+import tw from '~/util/tailwind';
+import urlWithQuery from '~/util/urlWithQuery';
+
+export default function HomeScene({
+  mostDownloaded,
+  recentlyAdded,
+  recentlyUpdated,
+  popular,
+  statistic,
+}: HomePageProps) {
+  const { isSmallScreen } = useLayout();
+
+  return (
+    <>
+      <PageMeta>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS: Recently added libraries"
+          href="/rss/added.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS: Recently updated libraries"
+          href="/rss/updated.xml"
+        />
+      </PageMeta>
+      <Navigation
+        title="React Native packages registry"
+        description="Browse thousands of open-source packages and find the best ones for your current or next project.">
+        <QuickSearch style={tw`w-[1200px] max-w-full self-center bg-transparent`} />
+      </Navigation>
+      <ContentContainer style={[tw`px-4 py-5`, isSmallScreen && tw`pt-2`]}>
+        <View style={[tw`mb-1 flex-1 flex-row gap-1`, isSmallScreen && tw`flex-col`]}>
+          <View style={tw`flex-1 px-2`}>
+            <H4
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+              Discover by platform
+            </H4>
+            <View
+              style={[
+                tw`mb-4 min-h-[194px] gap-1 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
+                isSmallScreen && tw`min-h-0`,
+              ]}>
+              <PlatformRow platform="Android" count={statistic.android} Icon={PlatformAndroid} />
+              <PlatformRow platform="iOS" count={statistic.ios} Icon={PlatformIOS} />
+              <PlatformRow platform="macOS" count={statistic.macos} Icon={PlatformMacOS} />
+              <PlatformRow platform="tvOS" count={statistic.tvos} Icon={PlatformTvOS} />
+              <PlatformRow platform="visionOS" count={statistic.visionos} Icon={PlatformVisionOS} />
+              <PlatformRow platform="Web" count={statistic.web} Icon={PlatformWeb} />
+              <PlatformRow platform="Windows" count={statistic.windows} Icon={PlatformWindows} />
+            </View>
+          </View>
+          <View style={tw`flex-1 px-2`}>
+            <H4
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+              Explore topics
+            </H4>
+            <View
+              style={[
+                tw`mb-4 min-h-[194px] flex-row flex-wrap content-center justify-center gap-x-3 gap-y-1.5 rounded-md border border-palette-gray2 px-4 pb-3 pt-2 dark:border-default`,
+                isSmallScreen && tw`min-h-0`,
+              ]}>
+              <A href={urlWithQuery('/packages', { search: 'animation' })}>Animation</A>
+              <A href={urlWithQuery('/packages', { search: 'audio' })}>Audio</A>
+              <A href={urlWithQuery('/packages', { search: 'authentication' })}>Authentication</A>
+              <A href={urlWithQuery('/packages', { search: 'camera' })}>Camera</A>
+              <A href={urlWithQuery('/packages', { search: 'chart' })}>Charts</A>
+              <A href={urlWithQuery('/packages', { search: 'color' })}>Color</A>
+              <A href={urlWithQuery('/packages', { search: 'validation' })}>Data validation</A>
+              <A href={urlWithQuery('/packages', { skipLibs: 'true' })}>Development Tools</A>
+              <A href={urlWithQuery('/packages', { search: 'gesture' })}>Gestures</A>
+              <A href={urlWithQuery('/packages', { search: 'health' })}>Health</A>
+              <A href={urlWithQuery('/packages', { search: 'i18n' })}>I18n</A>
+              <A href={urlWithQuery('/packages', { search: 'icons' })}>Icons</A>
+              <A href={urlWithQuery('/packages', { search: 'image' })}>Image</A>
+              <A href={urlWithQuery('/packages', { search: 'location' })}>Location</A>
+              <A href={urlWithQuery('/packages', { search: 'markdown' })}>Markdown</A>
+              <A href={urlWithQuery('/packages', { search: 'menu' })}>Menus</A>
+              <A href={urlWithQuery('/packages', { search: 'navigation' })}>Navigation</A>
+              <A href={urlWithQuery('/packages', { search: 'sql' })}>SQL</A>
+              <A href={urlWithQuery('/packages', { search: 'state' })}>State</A>
+              <A href={urlWithQuery('/packages', { search: 'style' })}>Styling</A>
+              <A href={urlWithQuery('/packages', { search: 'svg' })}>SVG</A>
+              <A href={urlWithQuery('/packages', { search: 'tailwind' })}>Tailwind</A>
+              <A href={urlWithQuery('/packages', { search: 'testing' })}>Testing</A>
+              <A href={urlWithQuery('/packages', { search: 'ui' })}>UI</A>
+              <A href={urlWithQuery('/packages', { search: 'utility' })}>Utilities</A>
+              <A href={urlWithQuery('/packages', { search: 'video' })}>Video</A>
+            </View>
+          </View>
+          <View style={tw`flex-1 px-2`}>
+            <H4
+              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+              Statistics
+            </H4>
+            <View
+              style={[
+                tw`mb-4 min-h-[194px] gap-1.5 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
+                isSmallScreen && tw`min-h-0`,
+              ]}>
+              <View>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                  {statistic.total.toLocaleString()}
+                </P>
+                <P style={tw`text-sm font-light text-secondary`}>packages in the directory</P>
+              </View>
+              <View>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                  {statistic.newArchitecture.toLocaleString()}{' '}
+                  <span style={tw`font-light`}>
+                    ({((statistic.newArchitecture / statistic.total) * 100).toFixed(2)}%)
+                  </span>
+                </P>
+                <P style={tw`text-sm font-light text-secondary`}>
+                  packages supporting New Architecture
+                </P>
+              </View>
+              <View>
+                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                  {statistic.downloads.toLocaleString()}
+                </P>
+                <P style={tw`text-sm font-light text-secondary`}>cumulative monthly downloads</P>
+              </View>
+            </View>
+          </View>
+        </View>
+        <HomeSection
+          data={mostDownloaded.libraries}
+          title="Most downloaded"
+          Icon={DownloadIcon}
+          queryParams={{ order: 'downloads', hasNativeCode: 'true' }}
+        />
+        <HomeSection
+          data={popular.libraries}
+          title="Popular"
+          Icon={StarIcon}
+          queryParams={{
+            order: 'popularity',
+            isPopular: 'true',
+            isMaintained: 'true',
+            wasRecentlyUpdated: 'true',
+          }}
+        />
+        <HomeSection
+          data={recentlyUpdated.libraries}
+          title="Just updated"
+          Icon={CalendarIcon}
+          queryParams={{ order: 'updated' }}
+          rss="/rss/updated.xml"
+        />
+        <HomeSection
+          data={recentlyAdded.libraries}
+          title="Recently added"
+          Icon={PlusIcon}
+          queryParams={{ order: 'added' }}
+          rss="/rss/added.xml"
+        />
+      </ContentContainer>
+    </>
+  );
+}

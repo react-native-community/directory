@@ -1,74 +1,62 @@
-import { type PropsWithChildren, useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { type PropsWithChildren, type ReactElement } from 'react';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, H1, H2 } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-
-import ContentContainer from './ContentContainer';
-import NavigationTab from './NavigationTab';
+import { H1, H2, useLayout } from '~/common/styleguide';
+import { Logo } from '~/components/Icons';
+import TopBar from '~/components/TopBar';
+import tw from '~/util/tailwind';
 
 type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
-  noHeader?: boolean;
+  header?: ReactElement;
+  subHeader?: ReactElement;
+  style?: StyleProp<ViewStyle>;
 }>;
 
-const Navigation = ({ title, description, children, noHeader = false }: NavigationProps) => {
-  const { isDark } = useContext(CustomAppearanceContext);
+export default function Navigation({
+  title,
+  description,
+  children,
+  header,
+  subHeader,
+  style,
+}: NavigationProps) {
+  const { isSmallScreen } = useLayout();
+
   return (
-    <View
-      style={{
-        backgroundColor: isDark ? darkColors.veryDark : colors.gray7,
-      }}>
-      <ContentContainer style={styles.tabsWrapper}>
-        <View style={styles.tabsContainer}>
-          <NavigationTab title="Explore" path="/" />
-          <NavigationTab title="Popular" />
-          <NavigationTab title="Trending" />
-        </View>
-      </ContentContainer>
-      {!noHeader ? (
+    <>
+      <TopBar />
+      {header ?? (
         <View
           style={[
-            styles.headerWrapper,
-            { backgroundColor: isDark ? darkColors.dark : colors.gray6 },
+            tw`relative z-10 bg-palette-gray6 py-10 dark:bg-dark`,
+            isSmallScreen && tw`py-6`,
+            style,
           ]}>
-          <H1 style={styles.header}>{title}</H1>
-          <H2 style={styles.headerDescription}>{description}</H2>
+          <View style={tw`absolute inset-0 overflow-hidden`}>
+            <Logo
+              style={tw`absolute left-1/2 top-[-76px] ml-[-280px] h-[520px] w-[580px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
+            />
+          </View>
+          <H1
+            style={[
+              tw`px-5 text-center text-[42px] leading-[54px] text-white`,
+              isSmallScreen && tw`text-3xl`,
+              !description && tw`pb-3`,
+            ]}>
+            {title}
+          </H1>
+          {description && (
+            <H2
+              style={tw`px-10 py-1 text-center text-base font-normal text-palette-gray3 dark:text-secondary`}>
+              {description}
+            </H2>
+          )}
           {children}
         </View>
-      ) : null}
-    </View>
+      )}
+      {subHeader}
+    </>
   );
-};
-
-const styles = StyleSheet.create({
-  tabsWrapper: {
-    flexDirection: 'row',
-    paddingHorizontal: 16,
-  },
-  tabsContainer: {
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
-  headerWrapper: {
-    paddingVertical: 40,
-  },
-  header: {
-    textAlign: 'center',
-    color: colors.white,
-    fontSize: 42,
-    paddingHorizontal: 20,
-  },
-  headerDescription: {
-    textAlign: 'center',
-    color: colors.pewter,
-    fontWeight: '500',
-    fontSize: 16,
-    paddingTop: 4,
-    paddingBottom: 6,
-    paddingHorizontal: 40,
-  },
-});
-
-export default Navigation;
+}

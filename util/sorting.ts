@@ -1,22 +1,4 @@
-import { LibraryType } from '~/types';
-
-export function compatibility(libraries: LibraryType[]) {
-  return libraries.sort((a, b) => {
-    const aCompat = [a.expoGo, a.ios, a.android, a.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    const bCompat = [b.expoGo, b.ios, b.android, b.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    return bCompat - aCompat;
-  });
-}
+import { type LibraryType } from '~/types';
 
 export function issues(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);
@@ -43,6 +25,17 @@ export function updated(libraries: LibraryType[]) {
   });
 }
 
+export function released(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    if (a?.npm?.latestReleaseDate && b?.npm?.latestReleaseDate) {
+      return (
+        new Date(b.npm.latestReleaseDate).getTime() - new Date(a.npm.latestReleaseDate).getTime()
+      );
+    }
+    return 0;
+  });
+}
+
 export function quality(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.score - a.score);
 }
@@ -53,10 +46,30 @@ export function popularity(libraries: LibraryType[]) {
 
 export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    if (Math.abs(a.matchScore - b.matchScore) >= 50) {
-      return b.matchScore - a.matchScore;
+    if (a.matchScore && b.matchScore) {
+      if (a.matchScore < 10 || b.matchScore < 10 || Math.abs(a.matchScore - b.matchScore) >= 40) {
+        return b.matchScore - a.matchScore;
+      }
+      return b.score - a.score;
     }
+    return 0;
+  });
+}
 
-    return b.score - a.score;
+export function dependencies(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bDependencies = b.github.stats?.dependencies ?? 0;
+    const aDependencies = a.github.stats?.dependencies ?? 0;
+
+    return bDependencies - aDependencies;
+  });
+}
+
+export function bundleSize(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bSize = b.npm?.size ?? 0;
+    const aSize = a.npm?.size ?? 0;
+
+    return bSize - aSize;
   });
 }
