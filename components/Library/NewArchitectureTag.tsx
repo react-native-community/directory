@@ -18,7 +18,7 @@ export function NewArchitectureTag({ library, small = false }: Props) {
   const status = getNewArchSupportStatus(library);
   const icon = getTagIcon(status);
 
-  const newArchitectureNote = library.newArchitectureNote && library.newArchitectureNote && (
+  const newArchitectureNote = library.newArchitectureNote && (
     <Label style={tw`my-1 flex text-white`}>{library.newArchitectureNote}</Label>
   );
 

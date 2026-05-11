@@ -1,4 +1,4 @@
-import { type FilterParamsType } from '~/types';
+import { type FilterParamsType, type Query } from '~/types';
 
 export const FILTER_PLATFORMS: FilterParamsType[] = [
   {
@@ -126,3 +126,13 @@ export const FILTER_BOOKMARKS: FilterParamsType = {
   param: 'bookmarks',
   title: 'Bookmarked',
 };
+
+export const ALL_FILTERS_PARAMS: (keyof Query)[] = [
+  ...FILTER_PLATFORMS.map(p => p.param),
+  ...FILTER_REQUIRES_MAIN_SEARCH.map(p => p.param),
+  ...FILTER_STATUS.map(p => p.param),
+  ...FILTER_COMPATIBILITY.map(p => p.param),
+  ...FILTER_TYPE.map(p => p.param),
+  ...FILTER_MODULE_TYPE.map(p => p.param),
+  FILTER_BOOKMARKS.param,
+];

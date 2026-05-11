@@ -1,4 +1,5 @@
 import { partition } from 'es-toolkit/array';
+import { memo } from 'react';
 import { View } from 'react-native';
 
 import { A, Caption, P } from '~/common/styleguide';
@@ -269,36 +270,36 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
   ];
 }
 
-export default function MetaData({ library, secondary, skipExamples = false }: Props) {
+function MetaData({ library, secondary, skipExamples = false }: Props) {
   if (secondary) {
-    const data = generateSecondaryData(library, skipExamples).filter(Boolean);
+    const data = generateSecondaryData(library, skipExamples).filter(
+      (entry): entry is NonNullable<MetadataEntryType> => !!entry
+    );
     return (
       <>
-        {data
-          .filter(entry => !!entry)
-          .map(({ id, icon, content, tooltip }, i) => {
-            const component = (
-              <View
-                key={id}
-                // @ts-expect-error RNW complains about 'fit-content'
-                style={{
-                  ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
-                  ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
-                  width: 'fit-content',
-                }}>
-                <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
-                {content}
-              </View>
-            );
+        {data.map(({ id, icon, content, tooltip }, i) => {
+          const component = (
+            <View
+              key={id}
+              // @ts-expect-error RNW complains about 'fit-content'
+              style={{
+                ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
+                ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
+                width: 'fit-content',
+              }}>
+              <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
+              {content}
+            </View>
+          );
 
-            return tooltip ? (
-              <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
-                {tooltip}
-              </Tooltip>
-            ) : (
-              component
-            );
-          })}
+          return tooltip ? (
+            <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
+              {tooltip}
+            </Tooltip>
+          ) : (
+            component
+          );
+        })}
       </>
     );
   } else {
@@ -337,3 +338,5 @@ export default function MetaData({ library, secondary, skipExamples = false }: P
     );
   }
 }
+
+export default memo(MetaData);

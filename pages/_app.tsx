@@ -1,5 +1,6 @@
 import '~/styles/styles.css';
 
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as Sentry from '@sentry/react';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
@@ -23,22 +24,24 @@ Sentry.init({
 
 function App({ pageProps, Component }: AppProps) {
   return (
-    <CustomAppearanceProvider>
-      <BookmarksProvider>
-        <SafeAreaProvider>
-          <Head>
-            <meta
-              name="viewport"
-              content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
-            />
-          </Head>
-          <main style={tw`flex flex-1 flex-col`}>
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-        </SafeAreaProvider>
-      </BookmarksProvider>
-    </CustomAppearanceProvider>
+    <TooltipPrimitive.Provider>
+      <CustomAppearanceProvider>
+        <BookmarksProvider>
+          <SafeAreaProvider>
+            <Head>
+              <meta
+                name="viewport"
+                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
+              />
+            </Head>
+            <main style={tw`flex flex-1 flex-col`}>
+              <Component {...pageProps} />
+            </main>
+            <Footer />
+          </SafeAreaProvider>
+        </BookmarksProvider>
+      </CustomAppearanceProvider>
+    </TooltipPrimitive.Provider>
   );
 }
 
