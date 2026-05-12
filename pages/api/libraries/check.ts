@@ -6,12 +6,23 @@ import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 
 const DATASET = data as CheckResultsType;
 
-// Provide library metadata for a list of npm packages
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'application/json');
   let packages: string[];
 
-  if (typeof req.body === 'string') {
+  if (req.method === 'GET') {
+    const rawPackages = req.query.packages;
+    if (!rawPackages) {
+      packages = [];
+    } else if (Array.isArray(rawPackages)) {
+      packages = rawPackages;
+    } else {
+      packages = rawPackages
+        .split(',')
+        .map(p => p.trim())
+        .filter(Boolean);
+    }
+  } else if (typeof req.body === 'string') {
     packages = JSON.parse(req.body)?.packages;
   } else {
     packages = req.body.packages;
@@ -25,10 +36,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   res.statusCode = 200;
   res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
-  const result: CheckResultsType = {};
-  packages.forEach(pkgName => {
-    result[pkgName] = DATASET[pkgName];
-  });
-
-  res.json(result);
+  res.json(Object.fromEntries(packages.map(pkgName => [pkgName, DATASET[pkgName]])));
 }
