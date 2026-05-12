@@ -15,6 +15,9 @@ type Props = {
 export default function UpdatedAtView({ library }: Props) {
   const { branchName, packagePath } = parseGitHubUrl(library.githubUrl);
   const repoUrl = library.github.urls.repo;
+  const unmaintainedStyle = library.unmaintained
+    ? tw`text-warning-dark dark:text-warning`
+    : undefined;
 
   const tooltipContent = `
     Last update (based on Git activity)
@@ -31,12 +34,7 @@ export default function UpdatedAtView({ library }: Props) {
         <View style={tw`flex-row items-start gap-2`} aria-label={tooltipContent} role="tooltip">
           <View>
             <CalendarIcon
-              style={[
-                tw`h-4 w-3.5`,
-                library.unmaintained
-                  ? tw`text-warning-dark dark:text-warning`
-                  : tw`text-tertiary dark:text-pewter`,
-              ]}
+              style={[tw`h-4 w-3.5`, unmaintainedStyle ?? tw`text-tertiary dark:text-pewter`]}
             />
           </View>
           <A
@@ -47,7 +45,7 @@ export default function UpdatedAtView({ library }: Props) {
             }
             style={[
               tw`text-[13px] font-light decoration-palette-gray3 dark:decoration-palette-gray5`,
-              library.unmaintained ? tw`text-warning-dark dark:text-warning` : tw`text-secondary`,
+              unmaintainedStyle ?? tw`text-secondary`,
             ]}
             hoverStyle={
               library.unmaintained

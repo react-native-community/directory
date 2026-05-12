@@ -7,15 +7,7 @@ import { type Query } from '~/types';
 import tw from '~/util/tailwind';
 
 import { ClearButton } from './ClearButton';
-import {
-  FILTER_BOOKMARKS,
-  FILTER_COMPATIBILITY,
-  FILTER_MODULE_TYPE,
-  FILTER_PLATFORMS,
-  FILTER_REQUIRES_MAIN_SEARCH,
-  FILTER_STATUS,
-  FILTER_TYPE,
-} from './helpers';
+import { ALL_FILTERS_PARAMS } from './helpers';
 
 type Props = {
   query: Query;
@@ -26,18 +18,8 @@ type Props = {
 };
 
 export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress, style }: Props) {
-  const params = [
-    ...FILTER_PLATFORMS.map(platform => platform.param),
-    ...FILTER_REQUIRES_MAIN_SEARCH.map(filter => filter.param),
-    ...FILTER_STATUS.map(status => status.param),
-    ...FILTER_COMPATIBILITY.map(compatibility => compatibility.param),
-    ...FILTER_TYPE.map(entryType => entryType.param),
-    ...FILTER_MODULE_TYPE.map(moduleType => moduleType.param),
-    FILTER_BOOKMARKS.param,
-  ];
-
   const filterCount = Object.keys(query).reduce(
-    (acc, q) => (params.includes(q as keyof Query) ? acc + 1 : acc),
+    (acc, q) => (ALL_FILTERS_PARAMS.includes(q as keyof Query) ? acc + 1 : acc),
     0
   );
   const isFilterCount = !!filterCount;

@@ -15,22 +15,14 @@ type Props = {
 export default function TrendingMark({ library, style, markOnly = false }: Props) {
   const { popularity = -100 } = library;
   const popularityStyles = getPopularityStyles(popularity);
+  const positionStyle = markOnly ? tw`top-[11px]` : tw`top-[7px]`;
 
   const content = (
     <>
       <View
-        style={[
-          tw`absolute h-1.5 w-8 rounded bg-palette-gray2 dark:bg-accented`,
-          markOnly ? tw`top-[11px]` : tw`top-[7px]`,
-        ]}
+        style={[tw`absolute h-1.5 w-8 rounded bg-palette-gray2 dark:bg-accented`, positionStyle]}
       />
-      <View
-        style={[
-          tw`absolute h-1.5 rounded`,
-          markOnly ? tw`top-[11px]` : tw`top-[7px]`,
-          popularityStyles,
-        ]}
-      />
+      <View style={[tw`absolute h-1.5 rounded`, positionStyle, popularityStyles]} />
       <P
         style={[
           tw`pl-10`,

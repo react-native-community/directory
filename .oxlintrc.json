@@ -14,21 +14,9 @@
   "rules": {
     "branches-sharing-code": "error",
     "curly": "error",
-    "eqeqeq": [
-      "error",
-      "always",
-      {
-        "null": "ignore"
-      }
-    ],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
     "func-style": ["error", "declaration"],
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowShortCircuit": true,
-        "enforceForJSX": true
-      }
-    ],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "enforceForJSX": true }],
     "no-unused-vars": [
       "error",
       {
@@ -42,32 +30,18 @@
     "no-useless-concat": "error",
     "no-useless-constructor": "error",
     "no-useless-return": "error",
-    "no-void": [
-      "error",
-      {
-        "allowAsStatement": true
-      }
-    ],
+    "no-void": ["error", { "allowAsStatement": true }],
     "prefer-promise-reject-errors": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "sort-imports": [
       "error",
-      {
-        "allowSeparatedGroups": true,
-        "ignoreDeclarationSort": true,
-        "ignoreCase": true
-      }
+      { "allowSeparatedGroups": true, "ignoreDeclarationSort": true, "ignoreCase": true }
     ],
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/default": "error",
     "import/namespace": "error",
-    "import/no-cycle": [
-      "error",
-      {
-        "maxDepth": 3
-      }
-    ],
+    "import/no-cycle": ["error", { "maxDepth": 3 }],
     "import/no-duplicates": "error",
     "import/no-named-as-default": "error",
     "import/no-named-as-default-member": "error",
@@ -77,6 +51,7 @@
     "jsx-a11y/anchor-is-valid": "error",
     "jsx-a11y/aria-props": "error",
     "jsx-a11y/aria-role": "error",
+    "jsx-a11y/autocomplete-valid": "error",
     "jsx-a11y/heading-has-content": "error",
     "jsx-a11y/html-has-lang": "error",
     "jsx-a11y/img-redundant-alt": "error",
@@ -84,6 +59,7 @@
     "jsx-a11y/no-aria-hidden-on-focusable": "error",
     "jsx-a11y/no-noninteractive-tabindex": "error",
     "jsx-a11y/no-redundant-roles": "error",
+    "jsx-a11y/no-static-element-interactions": "error",
     "jsx-a11y/prefer-tag-over-role": "off",
     "jsx-a11y/role-has-required-aria-props": "error",
     "nextjs/google-font-display": "error",
@@ -116,11 +92,7 @@
     "react/jsx-fragments": ["error", "syntax"],
     "react/jsx-key": [
       "error",
-      {
-        "checkFragmentShorthand": true,
-        "checkKeyMustBeforeSpread": true,
-        "warnOnDuplicates": true
-      }
+      { "checkFragmentShorthand": true, "checkKeyMustBeforeSpread": true, "warnOnDuplicates": true }
     ],
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-no-undef": "error",
@@ -150,32 +122,17 @@
       }
     ],
     "typescript/consistent-indexed-object-style": ["error", "record"],
-    "typescript/consistent-type-imports": [
-      "error",
-      {
-        "fixStyle": "inline-type-imports"
-      }
-    ],
+    "typescript/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
     "typescript/no-array-delete": "error",
     "typescript/no-confusing-non-null-assertion": "error",
-    "typescript/no-confusing-void-expression": [
-      "error",
-      {
-        "ignoreArrowShorthand": true
-      }
-    ],
+    "typescript/no-confusing-void-expression": ["error", { "ignoreArrowShorthand": true }],
     "typescript/no-duplicate-type-constituents": "error",
     "typescript/no-extra-non-null-assertion": "error",
     "typescript/no-floating-promises": "error",
     "typescript/no-for-in-array": "error",
     "typescript/no-inferrable-types": "error",
     "typescript/no-meaningless-void-operator": "error",
-    "typescript/no-misused-promises": [
-      "error",
-      {
-        "checksVoidReturn": false
-      }
-    ],
+    "typescript/no-misused-promises": ["error", { "checksVoidReturn": false }],
     "typescript/no-restricted-types": "error",
     "typescript/no-unnecessary-boolean-literal-compare": "error",
     "typescript/no-unnecessary-parameter-property-assignment": "error",

@@ -21006,6 +21006,14 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/ahmat-2000/react-native-onboarding",
+    "npmPkg": "@ahmat-2000/react-native-onboarding",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/aliresana/expo-running-kit",
     "npmPkg": "expo-running-kit",
     "examples": ["https://github.com/aliresana/expo-running-kit/tree/main/example"],
