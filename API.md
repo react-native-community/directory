@@ -5,7 +5,8 @@ This document describes the server-side JSON API exposed by the React Native Dir
 ## Summary of available endpoints
 
 - [`GET /api/libraries`](#get-apilibraries) - list and search libraries (paginated, sorted, filterable)
-- [`POST /api/libraries/check`](#post-apilibrariescheck) - return metadata for a list of npm package names
+- [`GET /api/libraries/check`](#get-apilibrariescheck) - return metadata for a list of npm package names
+- [`POST /api/libraries/check`](#post-apilibrariescheck) - (deprecated) return metadata for a list of npm package names
 - [`GET /api/libraries/statistic`](#get-apilibrariesstatistic) - aggregated statistics about the directory dataset
 - [`GET /api/library`](#get-apilibrary) - lookup one or more libraries by npm package name (optionally `check` existence only)
 - [`GET /api/proxy/github-funding`](#get-apiproxygithub-funding) - proxy to https://api.github.com/graphql API with baked query for fetching funding data
@@ -131,9 +132,38 @@ Return a list of libraries from the dataset. Supports sorting, full-text search,
   }
   ```
 
+## GET /api/libraries/check
+
+Return compatibility metadata for a list of npm package names.
+
+- Method: GET
+- Path: `/api/libraries/check`
+- Query parameters:
+  - `packages` - list of npm package names (required).
+
+### Example
+
+- GET `/api/libraries/check?packages=react-native-reanimated,expo-image`
+
+  Response:
+
+  ```json
+  {
+    "react-native-reanimated": {
+      "newArchitecture": "supported"
+    },
+    "expo-image": {
+      "newArchitecture": "supported"
+    }
+  }
+  ```
+
 ---
 
 ## POST /api/libraries/check
+
+> [!warning]
+> This endpoint is deprecated, and will be removed in the future. Use GET request instead.
 
 Return compatibility metadata for a list of npm package names. This endpoint accepts a JSON body with an array of package names and responds with metadata for each package.
 
@@ -145,7 +175,6 @@ Return compatibility metadata for a list of npm package names. This endpoint acc
 ### Notes
 
 - The request body must be a valid JSON object with a `packages` field.
-- The response includes metadata for each requested package, such as version, description, and repository URL.
 
 ### Example
 
