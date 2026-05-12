@@ -33,7 +33,7 @@ const textStyles = StyleSheet.create({
   h1: tw`text-[57.25px] font-semibold`,
   h2: tw`text-[35.5px] font-semibold`,
   h3: tw`text-[26.5px] font-semibold`,
-  h4: tw`text-[22px] tracking-tight`,
+  h4: tw`text-[22px]`,
   h5: tw`text-[20px]`,
   h6: tw`text-[18px]`,
   h6section: tw`text-[16px] tracking-tight text-secondary`,
