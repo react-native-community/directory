@@ -21019,5 +21019,12 @@
     "examples": ["https://github.com/aliresana/expo-running-kit/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/waleediqbal1717/react-native-fake-email-guard",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
