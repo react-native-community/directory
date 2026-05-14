@@ -47,6 +47,13 @@ function DirectoryWebsite() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/JetBrainsMono-Variable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         <StructuredData
           data={{
