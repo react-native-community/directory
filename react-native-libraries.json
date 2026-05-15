@@ -3907,7 +3907,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-enriched-markdown"]
   },
   {
     "githubUrl": "https://github.com/i18next/react-i18next",
