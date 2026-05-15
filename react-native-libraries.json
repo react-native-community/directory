@@ -3907,7 +3907,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/i18next/react-i18next",
