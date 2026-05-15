@@ -19,8 +19,10 @@ async function makeBaseFileQuery() {
 }
 
 const mainData = await makeBaseFileQuery();
-const mainDataWithNpmPkg = mainData.map(fillNpmName);
 const modifiedEntries = differenceWith(libraries, mainData, isEqual);
+const mainDataWithNpmPkg = mainData.map(fillNpmName);
+
+console.warn(modifiedEntries.length);
 
 if (modifiedEntries.length === 0) {
   console.log('✅ There was no data changes detected!');
