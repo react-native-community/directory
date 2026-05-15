@@ -1,6 +1,6 @@
 import { fetch } from 'bun';
 
-import { type LibraryType } from '~/types';
+import { type LibraryDataEntryType, type LibraryType } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 
@@ -55,7 +55,7 @@ export function sleep(ms = 0, msMax?: number) {
   );
 }
 
-export function fillNpmName(library: LibraryType) {
+export function fillNpmName<T extends LibraryType | LibraryDataEntryType>(library: T): T {
   if (!library.npmPkg) {
     const parts = library.githubUrl.split('/');
     library.npmPkg = parts[parts.length - 1].toLowerCase();
