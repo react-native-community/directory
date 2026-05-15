@@ -22,8 +22,6 @@ const mainData = await makeBaseFileQuery();
 const modifiedEntries = differenceWith(libraries, mainData, isEqual);
 const mainDataWithNpmPkg = mainData.map(fillNpmName);
 
-console.warn(modifiedEntries.length);
-
 if (modifiedEntries.length === 0) {
   console.log('✅ There was no data changes detected!');
   process.exit(0);
