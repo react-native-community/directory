@@ -2,7 +2,7 @@ import { fetch } from 'bun';
 import { differenceWith } from 'es-toolkit/array';
 import { isEqual } from 'es-toolkit/compat';
 
-import { type LibraryDataEntryType, type LibraryType } from '~/types';
+import { type LibraryDataEntryType } from '~/types';
 import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
 import libraries from '../react-native-libraries.json';
@@ -19,6 +19,7 @@ async function makeBaseFileQuery() {
 }
 
 const mainData = await makeBaseFileQuery();
+const mainDataWithNpmPkg = mainData.map(fillNpmName);
 const modifiedEntries = differenceWith(libraries, mainData, isEqual);
 
 if (modifiedEntries.length === 0) {
@@ -108,24 +109,16 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
 
         if (mainData.some(({ githubUrl }) => githubUrl === entryWithNpmData.githubUrl)) {
           if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
-            const existingEntryResponse = await fetch(
-              `https://reactnative.directory/api/library?name=${entryWithGitHubData.npmPkg}`
+            const existingEntry = mainDataWithNpmPkg.find(
+              lib => lib.npmPkg === entryWithGitHubData.npmPkg
             );
 
-            if (existingEntryResponse.status !== 200) {
-              console.error('Cannot fetch the modified library data from the directory.');
+            if (!existingEntry) {
+              console.error(`Cannot set alternatives for the package not listed in the directory.`);
               return false;
             }
 
-            const existingEntryJson = (await existingEntryResponse.json()) as Record<
-              string,
-              LibraryType
-            >;
-
-            if (
-              !existingEntryJson[entryWithGitHubData.npmPkg].unmaintained &&
-              existingEntryJson[entryWithGitHubData.npmPkg].newArchitecture !== false
-            ) {
+            if (!existingEntry.unmaintained && existingEntry.newArchitecture !== false) {
               console.error(
                 `Cannot set alternatives for the ${entryWithGitHubData.npmPkg} package which is not marked as unmaintained or not supporting New Architecture.`
               );
@@ -135,23 +128,10 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
         }
 
         if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
-          const alternativesDataResponse = await fetch(
-            `https://reactnative.directory/api/library?name=${entryWithGitHubData.alternatives.join(',')}`
-          );
-
-          if (alternativesDataResponse.status !== 200) {
-            console.error('Cannot check the alternative library existence in the directory.');
-            return false;
-          }
-
-          const alternativesDataJson = (await alternativesDataResponse.json()) as Record<
-            string,
-            LibraryType
-          >;
-
           const alternativesChecks = entryWithGitHubData.alternatives.map(alternative => {
-            if (alternative in alternativesDataJson) {
-              if (alternativesDataJson[alternative].unmaintained) {
+            const alternativeEntry = mainDataWithNpmPkg.find(lib => lib.npmPkg === alternative);
+            if (alternativeEntry) {
+              if (alternativeEntry.unmaintained) {
                 console.error(
                   `${alternative} is marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
                 );
