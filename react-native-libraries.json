@@ -21033,5 +21033,87 @@
     "githubUrl": "https://github.com/Talha-Yousaf/react-native-text-search",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/edwardloopez/react-native-coachmark",
+    "npmPkg": "@edwardloopez/react-native-coachmark",
+    "examples": ["https://github.com/edwardloopez/react-native-coachmark/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/edwardloopez/react-native-coachmark/main/.github/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/atomicfi/atomic-transact-react-native",
+    "npmPkg": "@atomicfi/transact-react-native",
+    "examples": ["https://github.com/atomicfi/atomic-transact-react-native/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/wheel-picker",
+    "npmPkg": "@sdcx/wheel-picker",
+    "images": [
+      "https://raw.githubusercontent.com/listenzz/react-native-troika/master/packages/wheel-picker/docs/assets/wheelpicker.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/pull-to-refresh",
+    "npmPkg": "@sdcx/pull-to-refresh",
+    "images": [
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/pull-to-refresh/docs/assets/separated.gif",
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/pull-to-refresh/docs/assets/shared.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/overlay",
+    "npmPkg": "@sdcx/overlay",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/nested-scroll",
+    "npmPkg": "@sdcx/nested-scroll",
+    "images": [
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/nested-scroll/docs/assets/sticky.gif",
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/nested-scroll/docs/assets/parallax.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/keyboard-insets",
+    "npmPkg": "@sdcx/keyboard-insets",
+    "images": [
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/keyboard-insets/docs/assets/avoiding.gif",
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/keyboard-insets/docs/assets/chat.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/bottom-sheet",
+    "npmPkg": "@sdcx/bottom-sheet",
+    "images": [
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/bottom-sheet/docs/assets/scrollview.gif",
+      "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/bottom-sheet/docs/assets/pagerview.gif"
+    ],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/nested-scroll-webview",
+    "npmPkg": "@sdcx/nested-scroll-webview",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/fe-dudu/expo-ignore-battery-optimizations",
+    "android": true
   }
 ]
