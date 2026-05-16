@@ -21115,5 +21115,14 @@
   {
     "githubUrl": "https://github.com/fe-dudu/expo-ignore-battery-optimizations",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-bluetooth",
+    "examples": ["https://github.com/munimtechnologies/munim-bluetooth/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "newArchitectureNote": "Built with Nitro Modules; the old architecture is not supported.",
+    "configPlugin": true
   }
 ]
