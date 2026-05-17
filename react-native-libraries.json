@@ -21124,5 +21124,12 @@
     "newArchitecture": "new-arch-only",
     "newArchitectureNote": "Built with Nitro Modules; the old architecture is not supported.",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/mfairley/expo-callkit-telecom",
+    "examples": ["https://github.com/mfairley/expo-callkit-telecom/tree/HEAD/example"],
+    "configPlugin": true,
+    "ios": true,
+    "android": true
   }
 ]
