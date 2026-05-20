@@ -21176,7 +21176,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/omeremreelmali/rexpo-debugger",
+    "githubUrl": "https://github.com/omeremreelmali/rexpo-debugger/tree/main/expo-agent",
+    "npmPkg": "rexpo-debugger",
     "dev": true,
     "configPlugin": true,
     "ios": true,
