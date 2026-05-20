@@ -20062,12 +20062,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/GetJobber/atlantis/tree/master/packages/components-native",
-    "npmPkg": "@jobber/components-native",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/indeedeng/react-native-lighthouse",
     "ios": true,
     "android": true
@@ -21143,6 +21137,55 @@
     "githubUrl": "https://github.com/react-native-info/react-native-agent",
     "newArchitecture": true,
     "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/core",
+    "npmPkg": "@react-native-drivekit/core",
+    "examples": [
+      "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/demo-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/driver-data",
+    "npmPkg": "@react-native-drivekit/driver-data",
+    "examples": [
+      "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/demo-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/trip-analysis",
+    "npmPkg": "@react-native-drivekit/trip-analysis",
+    "examples": [
+      "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/demo-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/trip-simulator",
+    "npmPkg": "@react-native-drivekit/trip-simulator",
+    "examples": [
+      "https://github.com/DriveQuantPublic/react-native-drivekit/tree/main/packages/demo-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/omeremreelmali/rexpo-debugger/tree/main/expo-agent",
+    "npmPkg": "rexpo-debugger",
+    "dev": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/swift-man/MaterialDesignColor/tree/main/packages/js",
+    "npmPkg": "@swift-man/material-design-color",
     "android": true
   }
 ]
