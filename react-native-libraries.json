@@ -21187,5 +21187,16 @@
     "githubUrl": "https://github.com/swift-man/MaterialDesignColor/tree/main/packages/js",
     "npmPkg": "@swift-man/material-design-color",
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bibliolabsofficial/react-native-fluffle",
+    "npmPkg": "@bibliolab/react-native-fluffle",
+    "examples": [
+      "https://github.com/bibliolabsofficial/react-native-fluffle/tree/main/src/example-app"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
