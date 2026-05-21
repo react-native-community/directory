@@ -21134,6 +21134,14 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/recognizer",
+    "npmPkg": "@clarionhq/recognizer",
+    "examples": ["https://github.com/Th4nderG0d/clarion/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/react-native-info/react-native-agent",
     "newArchitecture": true,
     "ios": true,
