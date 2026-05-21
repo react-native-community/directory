@@ -12857,7 +12857,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "unmaintained": true,
+    "alternatives": ["@bibliolab/react-native-fluffle"]
   },
   {
     "githubUrl": "https://github.com/kore-koi/react-native-media-controller",
