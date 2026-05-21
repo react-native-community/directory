@@ -12851,15 +12851,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/nativesass/nativesass",
-    "npmPkg": "native-sass",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/kore-koi/react-native-media-controller",
     "npmPkg": "@korekoi/react-native-media-controller",
     "examples": ["https://github.com/kore-koi/react-native-media-controller/tree/main/example"],
