@@ -21197,5 +21197,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/core",
+    "npmPkg": "@react-navigation/core",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
