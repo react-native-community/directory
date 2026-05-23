@@ -14,7 +14,7 @@ const originalData = [...(data as DataAssetType).libraries];
 function getData(): SortedDataType {
   return {
     updated: Sorting.updated([...originalData]),
-    added: [...originalData.reverse()],
+    added: originalData.toReversed(),
     quality: Sorting.quality([...originalData]),
     popularity: Sorting.popularity([...originalData]),
     downloads: Sorting.downloads([...originalData]),
@@ -28,22 +28,20 @@ function getData(): SortedDataType {
 }
 
 const SortedData = getData();
-const ReversedSortedData = Object.entries(getData()).reduce(
-  (accumulator, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
-  {} as SortedDataType
-);
+const ReversedSortedData = Object.fromEntries(
+  Object.entries(SortedData).map(([key, val]) => [key, [...val].reverse()])
+) as SortedDataType;
 
 const SortingKeys = Object.keys(SortedData);
 
 function getAllowedOrderString(req: NextApiRequest, querySearch?: string): QueryOrder {
-  let sortBy = querySearch ? SortingKeys.at(-1) : SortingKeys[0];
-
-  SortingKeys.forEach(sortName => {
-    if (req.query.order === sortName) {
-      sortBy = sortName;
-    }
-  });
-
+  const requestedOrder = req.query.order as string | undefined;
+  const sortBy =
+    requestedOrder && SortingKeys.includes(requestedOrder)
+      ? requestedOrder
+      : querySearch
+        ? SortingKeys.at(-1)
+        : SortingKeys[0];
   return sortBy as QueryOrder;
 }
 

@@ -66,7 +66,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
           </HoverEffect>
         )}
         <Caption style={tw`min-w-15 mx-1.5 text-center`}>
-          {currentPage > 0 ? currentPage : '1'} of {totalPages}
+          {currentPage} of {totalPages}
         </Caption>
         {forwardDisabled ? (
           <PaginationArrow disabled />
@@ -94,9 +94,9 @@ function PaginationArrow({ disabled, back }: ArrowButtonProps) {
       style={[
         tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
         back && tw`rotate-180`,
-        disabled && tw`opacity-50`,
+        disabled && tw`opacity-50 dark:opacity-40`,
       ]}>
-      <ArrowIcon style={tw`h-3 text-black dark:text-white`} />
+      <ArrowIcon style={[tw`h-3 text-black dark:text-white`, disabled && tw`text-icon`]} />
     </View>
   );
 }

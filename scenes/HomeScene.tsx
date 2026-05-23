@@ -1,3 +1,4 @@
+import { type ComponentType } from 'react';
 import { View } from 'react-native';
 
 import { A, H4, P, useLayout } from '~/common/styleguide';
@@ -7,6 +8,7 @@ import PlatformRow from '~/components/Home/PlatformRow';
 import {
   CalendarIcon,
   DownloadIcon,
+  type IconProps,
   PlatformAndroid,
   PlatformIOS,
   PlatformMacOS,
@@ -20,9 +22,55 @@ import {
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import QuickSearch from '~/components/QuickSearch';
+import { type StatisticResultType } from '~/types';
 import { type HomePageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
+
+type PlatformEntry = {
+  platform: string;
+  stat: keyof StatisticResultType;
+  Icon: ComponentType<IconProps>;
+};
+
+const PLATFORM_ROWS: PlatformEntry[] = [
+  { platform: 'Android', stat: 'android', Icon: PlatformAndroid },
+  { platform: 'iOS', stat: 'ios', Icon: PlatformIOS },
+  { platform: 'macOS', stat: 'macos', Icon: PlatformMacOS },
+  { platform: 'tvOS', stat: 'tvos', Icon: PlatformTvOS },
+  { platform: 'visionOS', stat: 'visionos', Icon: PlatformVisionOS },
+  { platform: 'Web', stat: 'web', Icon: PlatformWeb },
+  { platform: 'Windows', stat: 'windows', Icon: PlatformWindows },
+];
+
+const EXPLORE_TOPICS: { label: string; search?: string; params?: Record<string, string> }[] = [
+  { label: 'Animation', search: 'animation' },
+  { label: 'Audio', search: 'audio' },
+  { label: 'Authentication', search: 'authentication' },
+  { label: 'Camera', search: 'camera' },
+  { label: 'Charts', search: 'chart' },
+  { label: 'Color', search: 'color' },
+  { label: 'Data validation', search: 'validation' },
+  { label: 'Development Tools', params: { skipLibs: 'true' } },
+  { label: 'Gestures', search: 'gesture' },
+  { label: 'Health', search: 'health' },
+  { label: 'I18n', search: 'i18n' },
+  { label: 'Icons', search: 'icons' },
+  { label: 'Image', search: 'image' },
+  { label: 'Location', search: 'location' },
+  { label: 'Markdown', search: 'markdown' },
+  { label: 'Menus', search: 'menu' },
+  { label: 'Navigation', search: 'navigation' },
+  { label: 'SQL', search: 'sql' },
+  { label: 'State', search: 'state' },
+  { label: 'Styling', search: 'style' },
+  { label: 'SVG', search: 'svg' },
+  { label: 'Tailwind', search: 'tailwind' },
+  { label: 'Testing', search: 'testing' },
+  { label: 'UI', search: 'ui' },
+  { label: 'Utilities', search: 'utility' },
+  { label: 'Video', search: 'video' },
+];
 
 export default function HomeScene({
   mostDownloaded,
@@ -66,13 +114,14 @@ export default function HomeScene({
                 tw`mb-4 min-h-[194px] gap-1 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
-              <PlatformRow platform="Android" count={statistic.android} Icon={PlatformAndroid} />
-              <PlatformRow platform="iOS" count={statistic.ios} Icon={PlatformIOS} />
-              <PlatformRow platform="macOS" count={statistic.macos} Icon={PlatformMacOS} />
-              <PlatformRow platform="tvOS" count={statistic.tvos} Icon={PlatformTvOS} />
-              <PlatformRow platform="visionOS" count={statistic.visionos} Icon={PlatformVisionOS} />
-              <PlatformRow platform="Web" count={statistic.web} Icon={PlatformWeb} />
-              <PlatformRow platform="Windows" count={statistic.windows} Icon={PlatformWindows} />
+              {PLATFORM_ROWS.map(({ platform, stat, Icon }) => (
+                <PlatformRow
+                  key={platform}
+                  platform={platform}
+                  count={statistic[stat] as number}
+                  Icon={Icon}
+                />
+              ))}
             </View>
           </View>
           <View style={tw`flex-1 px-2`}>
@@ -85,32 +134,13 @@ export default function HomeScene({
                 tw`mb-4 min-h-[194px] flex-row flex-wrap content-center justify-center gap-x-3 gap-y-1.5 rounded-md border border-palette-gray2 px-4 pb-3 pt-2 dark:border-default`,
                 isSmallScreen && tw`min-h-0`,
               ]}>
-              <A href={urlWithQuery('/packages', { search: 'animation' })}>Animation</A>
-              <A href={urlWithQuery('/packages', { search: 'audio' })}>Audio</A>
-              <A href={urlWithQuery('/packages', { search: 'authentication' })}>Authentication</A>
-              <A href={urlWithQuery('/packages', { search: 'camera' })}>Camera</A>
-              <A href={urlWithQuery('/packages', { search: 'chart' })}>Charts</A>
-              <A href={urlWithQuery('/packages', { search: 'color' })}>Color</A>
-              <A href={urlWithQuery('/packages', { search: 'validation' })}>Data validation</A>
-              <A href={urlWithQuery('/packages', { skipLibs: 'true' })}>Development Tools</A>
-              <A href={urlWithQuery('/packages', { search: 'gesture' })}>Gestures</A>
-              <A href={urlWithQuery('/packages', { search: 'health' })}>Health</A>
-              <A href={urlWithQuery('/packages', { search: 'i18n' })}>I18n</A>
-              <A href={urlWithQuery('/packages', { search: 'icons' })}>Icons</A>
-              <A href={urlWithQuery('/packages', { search: 'image' })}>Image</A>
-              <A href={urlWithQuery('/packages', { search: 'location' })}>Location</A>
-              <A href={urlWithQuery('/packages', { search: 'markdown' })}>Markdown</A>
-              <A href={urlWithQuery('/packages', { search: 'menu' })}>Menus</A>
-              <A href={urlWithQuery('/packages', { search: 'navigation' })}>Navigation</A>
-              <A href={urlWithQuery('/packages', { search: 'sql' })}>SQL</A>
-              <A href={urlWithQuery('/packages', { search: 'state' })}>State</A>
-              <A href={urlWithQuery('/packages', { search: 'style' })}>Styling</A>
-              <A href={urlWithQuery('/packages', { search: 'svg' })}>SVG</A>
-              <A href={urlWithQuery('/packages', { search: 'tailwind' })}>Tailwind</A>
-              <A href={urlWithQuery('/packages', { search: 'testing' })}>Testing</A>
-              <A href={urlWithQuery('/packages', { search: 'ui' })}>UI</A>
-              <A href={urlWithQuery('/packages', { search: 'utility' })}>Utilities</A>
-              <A href={urlWithQuery('/packages', { search: 'video' })}>Video</A>
+              {EXPLORE_TOPICS.map(({ label, search, params }) => (
+                <A
+                  key={label}
+                  href={urlWithQuery('/packages', search ? { search } : (params ?? {}))}>
+                  {label}
+                </A>
+              ))}
             </View>
           </View>
           <View style={tw`flex-1 px-2`}>

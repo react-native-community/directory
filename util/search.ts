@@ -35,7 +35,7 @@ function calculateMatchScore(
   const cleanedUpName = npmPkg
     .replace('react-native', '')
     .replace('react', '')
-    .replaceAll(/[-/]/g, ' ')
+    .replaceAll(NPM_NAME_CLEANUP_REGEX, ' ')
     .toLowerCase()
     .trim();
 
@@ -264,9 +264,7 @@ export function handleFilterLibraries({
       return isTopicMatch;
     }
 
-    if (viewerHasTypedSearch) {
-      isSearchMatch = Boolean(library.matchScore && library.matchScore > 0);
-    }
+    isSearchMatch = Boolean(library.matchScore && library.matchScore > 0);
 
     if (!viewerHasChosenTopic) {
       return isSearchMatch;

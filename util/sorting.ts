@@ -18,22 +18,21 @@ export function downloads(libraries: LibraryType[]) {
 }
 
 export function updated(libraries: LibraryType[]) {
-  return libraries.sort((a, b) => {
-    return (
-      new Date(b.github.stats.pushedAt).getTime() - new Date(a.github.stats.pushedAt).getTime()
-    );
-  });
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: new Date(lib.github.stats.pushedAt).getTime(),
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
 }
 
 export function released(libraries: LibraryType[]) {
-  return libraries.sort((a, b) => {
-    if (a?.npm?.latestReleaseDate && b?.npm?.latestReleaseDate) {
-      return (
-        new Date(b.npm.latestReleaseDate).getTime() - new Date(a.npm.latestReleaseDate).getTime()
-      );
-    }
-    return 0;
-  });
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: lib.npm?.latestReleaseDate ? new Date(lib.npm.latestReleaseDate).getTime() : 0,
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
 }
 
 export function quality(libraries: LibraryType[]) {
