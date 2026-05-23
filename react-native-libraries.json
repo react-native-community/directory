@@ -21209,7 +21209,9 @@
   {
     "githubUrl": "https://github.com/Mak-3/featuredeck-react-native",
     "npmPkg": "@featuredeck/react-native",
-    "examples": ["https://www.featuredeck.in/#demo"],
+    "images": [
+      "https://raw.githubusercontent.com/Mak-3/featuredeck-react-native/refs/heads/main/demo.gif"
+    ],
     "ios": true,
     "android": true,
     "expoGo": true,
