@@ -21205,5 +21205,17 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Mak-3/featuredeck-react-native",
+    "npmPkg": "@featuredeck/react-native",
+    "images": [
+      "https://raw.githubusercontent.com/Mak-3/featuredeck-react-native/refs/heads/main/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
