@@ -21207,13 +21207,13 @@
     "web": true
   },
   {
-  "githubUrl": "https://github.com/Mak-3/featuredeck-react-native",
-  "npmPkg": "@featuredeck/react-native",
-  "examples": ["https://www.featuredeck.in/#demo"],
-  "ios": true,
-  "android": true,
-  "expoGo": true,
-  "web": true,
-  "newArchitecture": true
+    "githubUrl": "https://github.com/Mak-3/featuredeck-react-native",
+    "npmPkg": "@featuredeck/react-native",
+    "examples": ["https://www.featuredeck.in/#demo"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
