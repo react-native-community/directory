@@ -21221,9 +21221,7 @@
   {
     "githubUrl": "https://github.com/Blunt-ly/ble-advertiser",
     "npmPkg": "@blunt-ly/ble-advertiser",
-    "examples": [
-      "https://github.com/Blunt-ly/ble-advertiser/blob/main/README.md#example-usage"
-    ],
+    "examples": ["https://github.com/Blunt-ly/ble-advertiser/blob/main/README.md#example-usage"],
     "ios": true,
     "android": true,
     "web": false,
