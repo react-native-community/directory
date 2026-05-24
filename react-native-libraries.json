@@ -21217,5 +21217,12 @@
     "expoGo": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Blunt-ly/ble-advertiser",
+    "npmPkg": "@blunt-ly/ble-advertiser",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
