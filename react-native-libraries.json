@@ -21133,14 +21133,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/azure",
-    "npmPkg": "@clarionhq/azure",
-    "examples": ["https://github.com/Th4nderG0d/clarion/tree/main/example"],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/react-native-info/react-native-agent",
     "newArchitecture": true,
     "ios": true,
@@ -21242,6 +21234,14 @@
   {
     "githubUrl": "https://github.com/novev9/react-native-instagram-stories",
     "npmPkg": "@novev9/react-native-instagram-stories",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/azure",
+    "npmPkg": "@clarionhq/azure",
+    "examples": ["https://github.com/Th4nderG0d/clarion/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
