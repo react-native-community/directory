@@ -21223,5 +21223,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/Blunt-ly/ble-advertiser",
+    "npmPkg": "@blunt-ly/ble-advertiser",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
