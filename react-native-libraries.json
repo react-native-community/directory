@@ -21256,5 +21256,13 @@
     "githubUrl": "https://github.com/Navipro70/expo-block-store",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/novev9/react-native-2gis-maps",
+    "npmPkg": "react-native-2gis-maps",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "newArchitectureNote": "Fabric/TurboModule binding for 2GIS Mobile SDK 13.5; requires React Native 0.85+ with the New Architecture enabled."
   }
 ]
