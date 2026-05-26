@@ -9,6 +9,7 @@ import {
   hasChangelogFile,
   hasContributingFile,
   hasReadmeFile,
+  hasSecurityFile,
 } from '~/util/github/hasFiles';
 import hasNativeCode from '~/util/github/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
@@ -225,6 +226,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasChangelog: hasChangelogFile(json.files),
     hasContributing: hasContributingFile(json.files),
     hasCC: hasCCFile(json.files),
+    hasSecurity: hasSecurityFile(json.files),
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
     moduleType: detectModuleType(json.files, json.pasedPackageJson),

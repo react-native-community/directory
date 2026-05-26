@@ -1799,3 +1799,26 @@ export function ArrowUpRightIcon({ style }: IconProps) {
     </Svg>
   );
 }
+
+export function SecurityIcon({ style }: IconProps) {
+  return (
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Path
+        d="M216,112V56a8,8,0,0,0-8-8H48a8,8,0,0,0-8,8v56c0,96,88,120,88,120S216,208,216,112Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Polyline
+        points="88 136 112 160 168 104"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}

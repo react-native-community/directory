@@ -9,6 +9,7 @@ import {
   ChangelogFileIcon,
   ContributingFileIcon,
   ReadmeFileIcon,
+  SecurityIcon,
 } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
@@ -67,6 +68,15 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                 title: 'Code of Conduct' as const,
                 Icon: CCFileIcon,
                 url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
+              },
+            ]
+          : []),
+        ...(library?.github?.hasSecurity
+          ? [
+              {
+                title: 'Security' as const,
+                Icon: SecurityIcon,
+                url: getTabContentUrl(library, 'SECURITY.md'),
               },
             ]
           : []),

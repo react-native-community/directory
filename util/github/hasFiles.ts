@@ -36,6 +36,12 @@ export function hasCCFile(rootFiles: RootFiles) {
   return hasMatchingFiles(rootFiles, CC_FILE_NAMES);
 }
 
+const SECURITY_FILE_NAMES = ['security.md'];
+
+export function hasSecurityFile(rootFiles: RootFiles) {
+  return hasMatchingFiles(rootFiles, SECURITY_FILE_NAMES);
+}
+
 export function detectPackageManager(rootFiles: RootFiles) {
   // LOCKS
   if (hasMatchingFiles(rootFiles, ['bun.lock', 'bun.lockb'])) {
