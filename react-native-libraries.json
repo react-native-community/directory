@@ -21219,8 +21219,29 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/denizyesilirmak/react-native-tuner-engine",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
     "githubUrl": "https://github.com/Blunt-ly/ble-advertiser",
     "npmPkg": "@blunt-ly/ble-advertiser",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/novev9/react-native-instagram-stories",
+    "npmPkg": "@novev9/react-native-instagram-stories",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/azure",
+    "npmPkg": "@clarionhq/azure",
+    "examples": ["https://github.com/Th4nderG0d/clarion/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
