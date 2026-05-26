@@ -16,6 +16,7 @@ export const PREVIEW_DISABLED_FILES = [
   'gz',
   'mat',
   'nib',
+  'o',
   'otf',
   'pb',
   'pbd',
@@ -29,6 +30,8 @@ export const PREVIEW_DISABLED_FILES = [
   'tflite',
   'tgz',
   'ttf',
+  'woff',
+  'woff2',
   'xcuserstate',
 ];
 
@@ -52,6 +55,7 @@ export const FILE_WARNINGS = [
       '.licence-config.yaml',
       '.prettierignore',
       '.project',
+      '.release-please-manifest.json',
       '.swiftformat',
       '.swiftlint.yml',
       '.travis.yml',

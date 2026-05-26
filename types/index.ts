@@ -97,6 +97,7 @@ export type LibraryType = LibraryDataEntryType & {
     hasChangelog?: boolean;
     hasContributing?: boolean;
     hasCC?: boolean;
+    hasSecurity?: boolean;
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     packageManager?: string;
@@ -204,7 +205,12 @@ export type PeerDependencyData = {
   optional: boolean;
 };
 
-export type MarkdownTabsType = 'Readme' | 'Changelog' | 'Contributing' | 'Code of Conduct';
+export type MarkdownTabsType =
+  | 'Readme'
+  | 'Changelog'
+  | 'Contributing'
+  | 'Code of Conduct'
+  | 'Security';
 
 export type MarkdownTab = {
   title: MarkdownTabsType;
