@@ -21264,5 +21264,14 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "newArchitectureNote": "Fabric/TurboModule binding for 2GIS Mobile SDK 13.5; requires React Native 0.85+ with the New Architecture enabled."
+  },
+  {
+    "githubUrl": "https://github.com/DmytroMelnyk26/react-native-rotary-timer",
+    "examples": ["https://github.com/DmytroMelnyk26/react-native-rotary-timer/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
