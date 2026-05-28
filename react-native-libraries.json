@@ -21273,5 +21273,21 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-sensors-kit",
+    "examples": ["https://github.com/Gautham495/react-native-nitro-sensors-kit/tree/main/example"],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-pose-exercises",
+    "examples": [
+      "https://github.com/Gautham495/react-native-nitro-pose-exercises/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
