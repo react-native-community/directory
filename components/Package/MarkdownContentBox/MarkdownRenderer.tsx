@@ -117,7 +117,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           <img
             src={getReadmeAssetURL(src, repoUrl)}
             onError={(error: any) => {
-              const fallbackUrl = getReadmeAssetURL(src, repoUrl, 'master');
+              const fallbackUrl = getReadmeAssetURL(src, repoUrl, 'HEAD');
               const target = error.currentTarget;
 
               if (target.src !== fallbackUrl) {
