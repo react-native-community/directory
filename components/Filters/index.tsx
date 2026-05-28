@@ -1,7 +1,6 @@
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import FiltersSection from '~/components/Filters/FiltersSection';
-import { Tag } from '~/components/Tag';
 import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
 import tw from '~/util/tailwind';
@@ -41,12 +40,12 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
             />
           ))}
         </FiltersSection>
-        <FiltersSection title="Type">
-          {FILTER_TYPE.map(entryType => (
+        <FiltersSection title="Module type">
+          {FILTER_MODULE_TYPE.map(moduleType => (
             <ToggleLink
-              key={entryType.param}
+              key={moduleType.param}
               query={pageQuery}
-              filterParam={entryType}
+              filterParam={moduleType}
               basePath={basePath}
             />
           ))}
@@ -84,20 +83,12 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
             />
           ))}
         </FiltersSection>
-        <FiltersSection
-          title="Module type"
-          rightSlot={
-            <Tag
-              label="Experimental"
-              tagStyle={tw`min-h-5.5 -top-px ml-2 border-[#d9c8fa] bg-[#ece3fc] py-0 dark:border-[#3d2861] dark:bg-[#261a3d]`}
-              icon={null}
-            />
-          }>
-          {FILTER_MODULE_TYPE.map(moduleType => (
+        <FiltersSection title="Type">
+          {FILTER_TYPE.map(entryType => (
             <ToggleLink
-              key={moduleType.param}
+              key={entryType.param}
               query={pageQuery}
-              filterParam={moduleType}
+              filterParam={entryType}
               basePath={basePath}
             />
           ))}
