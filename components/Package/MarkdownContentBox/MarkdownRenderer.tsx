@@ -195,6 +195,12 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           }
           return <input type={type} {...rest} />;
         },
+        sub: ({ children }: any) => {
+          return <sub className="block">{children}</sub>;
+        },
+        sup: ({ children }: any) => {
+          return <sup className="block">{children}</sup>;
+        },
       }}
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm, remarkEmoji]}>
