@@ -12,6 +12,7 @@ import Tooltip from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
+import { formatNumberToString } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -120,7 +121,7 @@ export default function MorePackagesBox({ library }: Props) {
                         </View>
                         <View style={tw`flex-row items-center gap-1`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          <span>{(npm?.downloads ?? 0).toLocaleString()}</span>
+                          <span>{formatNumberToString(npm?.downloads ?? 0)}</span>
                         </View>
                       </View>
                     </View>
