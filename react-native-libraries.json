@@ -14536,7 +14536,8 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/date-fns/date-fns",
+    "githubUrl": "https://github.com/date-fns/date-fns/tree/main/pkgs/core",
+    "npmPkg": "date-fns",
     "android": true,
     "ios": true,
     "web": true,
@@ -17379,7 +17380,7 @@
   },
   {
     "githubUrl": "https://github.com/ursnj/nayan-ui/tree/main/packages/native",
-    "npmPkg": "@nayan-ui/react-native",
+    "npmPkg": "@nayan-ui/native",
     "android": true,
     "ios": true
   },
@@ -21289,6 +21290,59 @@
     ],
     "android": true,
     "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/html-elements",
+    "npmPkg": "@expo/html-elements",
+    "android": true,
+    "ios": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/facebook/react-native/tree/main/packages/normalize-color",
+    "npmPkg": "@react-native/normalize-colors",
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Malaa-tech/react-native-moyasar-apple-pay",
+    "examples": ["https://github.com/Malaa-tech/react-native-moyasar-apple-pay/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/uzlopak/react-native-web-serial-api",
+    "examples": ["https://github.com/Uzlopak/react-native-web-serial-api/tree/main/example"],
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/prakashs1117/animicons/tree/main/packages/react-native",
+    "npmPkg": "@animicons/react-native",
+    "images": [
+      "https://raw.githubusercontent.com/prakashs1117/animicons/main/assets/demo-react-native.gif"
+    ],
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mattermost/react-native-network-client",
+    "npmPkg": "@mattermost/react-native-network-client",
+    "examples": ["https://github.com/mattermost/react-native-network-client/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/assistant-ui/assistant-ui/tree/main/packages/react-native",
+    "npmPkg": "@assistant-ui/react-native",
+    "ios": true,
+    "android": true,
     "newArchitecture": true
   }
 ]
