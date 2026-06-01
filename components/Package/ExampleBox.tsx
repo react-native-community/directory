@@ -23,7 +23,7 @@ export default function ExampleBox({ example, index }: Props) {
         ]}
         hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
         <View style={tw`flex max-w-full flex-row items-center gap-2.5`}>
-          {example.includes('github.com') && <GitHubIcon style={tw`text-icon`} />}
+          {example.includes('github.com') && <GitHubIcon style={tw`size-6 text-icon`} />}
           {example.includes('snack.expo.dev') && <SnackIcon style={tw`text-icon`} />}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
             <CodeBracketsIcon style={tw`text-icon`} />
@@ -31,7 +31,10 @@ export default function ExampleBox({ example, index }: Props) {
           <span style={tw`font-light`}>{getExampleDescription(example)}</span>
         </View>
         <Text
-          style={[tw`text-2xl leading-[28px] text-icon opacity-30`, isSmallScreen && tw`hidden`]}>
+          style={[
+            tw`text-2xl tabular-nums leading-[28px] text-icon opacity-30`,
+            isSmallScreen && tw`hidden`,
+          ]}>
           #{index + 1}
         </Text>
       </A>

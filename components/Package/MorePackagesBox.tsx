@@ -117,11 +117,15 @@ export default function MorePackagesBox({ library }: Props) {
                         ]}>
                         <View style={tw`flex-row items-center gap-1`}>
                           <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
-                          <span>{github.stats.stars.toLocaleString()}</span>
+                          <span className="tabular-nums">
+                            {github.stats.stars.toLocaleString()}
+                          </span>
                         </View>
                         <View style={tw`flex-row items-center gap-1`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          <span>{formatNumberToString(npm?.downloads ?? 0)}</span>
+                          <span className="tabular-nums">
+                            {formatNumberToString(npm?.downloads ?? 0)}
+                          </span>
                         </View>
                       </View>
                     </View>

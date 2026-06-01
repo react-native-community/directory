@@ -675,6 +675,14 @@ select {
     summary {
       margin-top: 8px !important;
       cursor: pointer;
+
+      &::marker {
+        transition: color 0.2s;
+      }
+
+      &:hover::marker {
+        color: var(--icon);
+      }
     }
   }
 
