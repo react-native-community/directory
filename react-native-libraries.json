@@ -21347,7 +21347,8 @@
   },
   {
     "githubUrl": "https://github.com/rnpack/location",
-    "examples": ["https://github.com/rnpack/location/tree/HEAD/example"],
+    "npmPkg": "@rnpack/location",
+    "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
   }
