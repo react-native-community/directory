@@ -21344,5 +21344,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/rnpack/location",
+    "npmPkg": "@rnpack/location",
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
