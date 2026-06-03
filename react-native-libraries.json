@@ -1,12 +1,5 @@
 [
   {
-    "githubUrl": "https://github.com/orion-arm-ai/react-native-collapse-tabs",
-    "npmPkg": "@orionarm/react-native-collapse-tabs",
-    "ios": true,
-    "android": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/mowispace/react-native-logs",
     "ios": true,
     "android": true,
@@ -21358,5 +21351,12 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/orion-arm-ai/react-native-collapse-tabs",
+    "npmPkg": "@orionarm/react-native-collapse-tabs",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
