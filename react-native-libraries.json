@@ -21357,6 +21357,7 @@
     "npmPkg": "@orionarm/react-native-collapse-tabs",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
