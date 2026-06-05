@@ -11937,7 +11937,7 @@
   },
   {
     "githubUrl": "https://github.com/wcandillon/react-native-webgpu/tree/main/packages/webgpu",
-    "npmPkg": "react-native-wgpu",
+    "npmPkg": "react-native-webgpu",
     "examples": [
       "https://github.com/wcandillon/react-native-webgpu/tree/main/apps/example",
       "https://github.com/software-mansion-labs/typegpu-rn-examples"
@@ -11946,7 +11946,7 @@
     "android": true,
     "macos": true,
     "visionos": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/pmndrs/zustand",
