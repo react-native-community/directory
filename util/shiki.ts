@@ -1,3 +1,13 @@
+import { createHighlighter, type ThemeRegistration } from 'shiki';
+
+import rndDark from '~/styles/shiki/rnd-dark.json';
+import rndLight from '~/styles/shiki/rnd-light.json';
+
+export const inlineHighlighterInstance = createHighlighter({
+  themes: [rndDark as ThemeRegistration, rndLight as ThemeRegistration],
+  langs: ['tsx'],
+});
+
 export const SHIKI_OPTS = {
   langAlias: {
     appxmanifest: 'xml',

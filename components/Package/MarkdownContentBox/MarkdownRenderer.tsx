@@ -16,6 +16,7 @@ import {
   TipBlockquoteIcon,
   WarningBlockquoteIcon,
 } from '~/components/Icons';
+import MarkdownInlineCode from '~/components/Package/MarkdownContentBox/MarkdownInlineCode';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
@@ -137,6 +138,12 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
         ),
         source: ({ srcSet, ...rest }: any) => (
           <source srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined} {...rest} />
+        ),
+        code: ({ children }: any) => (
+          <MarkdownInlineCode
+            code={children}
+            theme={tw.prefixMatch('dark') ? 'rnd-dark' : 'rnd-light'}
+          />
         ),
         pre: ({ children }: any) => {
           const langClass = children?.props?.className;
