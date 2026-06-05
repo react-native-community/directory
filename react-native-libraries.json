@@ -13358,10 +13358,14 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/azimgd/shadowlist",
-    "examples": ["https://github.com/azimgd/shadowlist/tree/main/example"],
+    "githubUrl": "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric",
+    "npmPkg": "shadowlist",
+    "examples": [
+      "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric/example"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/skiniks/react-native-shiki-engine/tree/main/packages/react-native-shiki-engine",
@@ -21385,16 +21389,6 @@
     "githubUrl": "https://github.com/margelo/react-native-runtimes/tree/main/packages/state",
     "npmPkg": "@react-native-runtimes/state",
     "examples": ["https://github.com/margelo/react-native-runtimes/tree/main/example"],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric",
-    "npmPkg": "shadowlist",
-    "examples": [
-      "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric/example"
-    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
