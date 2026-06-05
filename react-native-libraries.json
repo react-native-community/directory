@@ -21359,5 +21359,44 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/javidmehran/react-native-simple-map",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hannojg/react-native-list/tree/main/package",
+    "npmPkg": "react-native-list",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-runtimes/tree/main/packages/core",
+    "npmPkg": "@react-native-runtimes/core",
+    "examples": ["https://github.com/margelo/react-native-runtimes/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-runtimes/tree/main/packages/state",
+    "npmPkg": "@react-native-runtimes/state",
+    "examples": ["https://github.com/margelo/react-native-runtimes/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric",
+    "npmPkg": "shadowlist",
+    "examples": [
+      "https://github.com/azimgd/shadowlist/tree/main/packages/shadowlist-fabric/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
