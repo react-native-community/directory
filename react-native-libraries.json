@@ -21392,5 +21392,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ebrimasamba/react-native-prompt",
+    "npmPkg": "@ebrimasamba/react-native-prompt",
+    "examples": ["https://github.com/ebrimasamba/react-native-prompt/tree/main/example"],
+    "images": ["https://github.com/ebrimasamba/react-native-prompt/blob/main/rnp.png"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
