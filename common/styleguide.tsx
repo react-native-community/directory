@@ -55,7 +55,7 @@ export function createTextComponent(
 ) {
   function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const elementStyle = Element?.displayName
-      ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
+      ? textStyles[Element.displayName as keyof typeof textStyles]
       : undefined;
 
     return (
