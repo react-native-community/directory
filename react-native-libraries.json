@@ -19773,7 +19773,8 @@
     "githubUrl": "https://github.com/hortemo/expo-photos",
     "npmPkg": "@hortemo/expo-photos",
     "examples": ["https://github.com/hortemo/expo-photos/tree/main/e2e"],
-    "ios": true
+    "ios": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/functionland/react-native-fula",
@@ -21401,5 +21402,58 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-billing-client",
+    "npmPkg": "@hortemo/expo-billing-client",
+    "examples": ["https://github.com/hortemo/expo-billing-client/tree/main/e2e"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-content-resolver",
+    "npmPkg": "@hortemo/expo-content-resolver",
+    "examples": ["https://github.com/hortemo/expo-content-resolver/tree/main/e2e"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-media3-transformer",
+    "npmPkg": "@hortemo/expo-media3-transformer",
+    "examples": ["https://github.com/hortemo/expo-media3-transformer/tree/main/e2e"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-storekit",
+    "npmPkg": "@hortemo/expo-storekit",
+    "examples": ["https://github.com/hortemo/expo-storekit/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/expo-transcoder",
+    "npmPkg": "@hortemo/expo-transcoder",
+    "examples": ["https://github.com/hortemo/expo-transcoder/tree/main/e2e"],
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/seeded-shuffle",
+    "npmPkg": "@hortemo/seeded-shuffle",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hortemo/semaphore",
+    "npmPkg": "@hortemo/semaphore",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
