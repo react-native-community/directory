@@ -1496,7 +1496,9 @@
     "githubUrl": "https://github.com/CharlesMangwa/react-native-simple-markdown",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-enriched-markdown"]
   },
   {
     "githubUrl": "https://github.com/gnestor/react-native-statusbar-alert",
@@ -1980,7 +1982,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "alternatives": ["react-native-enriched-markdown"]
   },
   {
     "githubUrl": "https://github.com/superdami/react-native-custom-navigation",
@@ -4641,7 +4644,9 @@
     "githubUrl": "https://github.com/TitanInvest/react-native-easy-markdown",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-enriched-markdown"]
   },
   {
     "githubUrl": "https://github.com/mkuczera/react-native-haptic-feedback",
