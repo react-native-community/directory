@@ -1,13 +1,7 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import {
-  type ComponentType,
-  type CSSProperties,
-  type PropsWithChildren,
-  type Ref,
-  useState,
-} from 'react';
+import { type ComponentType, type PropsWithChildren, type Ref, useState } from 'react';
 import {
   Pressable,
   type PressableProps,
@@ -95,7 +89,7 @@ type AProps = PropsWithChildren<{
   target?: string;
   href: string;
   hoverStyle?: StyleProp<Style>;
-  containerStyle?: CSSProperties;
+  containerStyle?: Style;
   role?: Role;
   ref?: Ref<HTMLAnchorElement>;
 }>;
