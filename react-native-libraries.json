@@ -17022,13 +17022,6 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/iymra-org/rn-toptabs",
-    "images": ["https://raw.githubusercontent.com/iymra-org/rn-toptabs/main/example.gif"],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/vijayanandof/react-native-gnss-status-checker",
     "android": true,
     "newArchitecture": true,
@@ -18348,13 +18341,6 @@
     "githubUrl": "https://github.com/l2hyunwoo/react-native-nitro-cookies/tree/main/package",
     "npmPkg": "react-native-nitro-cookies",
     "examples": ["https://github.com/l2hyunwoo/react-native-nitro-cookies/tree/main/example"],
-    "ios": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/athexweb3/react-native-libprisma/tree/master/packages/react-native-libprisma",
-    "examples": ["https://github.com/athexweb3/react-native-libprisma/tree/master/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true

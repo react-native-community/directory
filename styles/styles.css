@@ -617,6 +617,10 @@ select {
         color: #da3633;
       }
     }
+
+    + div[data-table-wrapper] {
+      margin-top: 12px;
+    }
   }
 
   ul,
@@ -692,6 +696,7 @@ select {
     overflow-x: auto;
     border-radius: 9px;
     border: 1px solid var(--table-border);
+    scrollbar-color: var(--icon) var(--background);
 
     + div[data-table-wrapper] {
       margin-top: 12px;
