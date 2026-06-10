@@ -17,7 +17,7 @@ export default function AddLibrarySelector() {
     <Popover.Root open={open} onOpenChange={state => setOpen(state)}>
       <HoverEffect>
         <Popover.Trigger asChild>
-          <View>
+          <View role="dialog">
             <View
               role="button"
               style={[

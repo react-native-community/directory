@@ -24,7 +24,7 @@ export default function ToolEntry({ name, description, githubUrl, buttons }: Pro
       <H3 style={tw`mb-1 text-xl`}>{name}</H3>
       <P style={tw`mb-3 font-light leading-[23px]`}>{description}</P>
       <View style={tw`flex-row flex-wrap gap-3`}>
-        <GitHubButton href={githubUrl} />
+        <GitHubButton href={githubUrl} name={name} />
         {buttons.map(({ label, href }) => (
           <Button
             key={label}

@@ -133,6 +133,8 @@ export function A({
     );
   }
 
+  const targetWithFallback = target ?? '_blank';
+
   return (
     <span
       onPointerEnter={() => setIsHovered(true)}
@@ -143,8 +145,8 @@ export function A({
         ref={ref as any}
         href={href}
         numberOfLines={containerStyle ? 1 : undefined}
-        target={target ?? '_blank'}
-        hrefAttrs={{ target: target ?? '_blank' }}
+        target={targetWithFallback}
+        rel={targetWithFallback === '_blank' ? 'noopener noreferrer' : undefined}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
