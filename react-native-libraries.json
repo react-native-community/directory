@@ -19157,10 +19157,6 @@
   {
     "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech/tree/gmessier-nitro-speech",
     "npmPkg": "@gmessier/nitro-speech",
-    "examples": [
-      "https://github.com/NotGeorgeMessier/nitro-speech/blob/main/docs/examples/use-recognizer.md",
-      "https://github.com/NotGeorgeMessier/nitro-speech/blob/main/docs/examples/speech-recognizer.md"
-    ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
@@ -21403,10 +21399,6 @@
   {
     "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
     "npmPkg": "react-native-nitro-speech",
-    "examples": [
-      "https://github.com/NotGeorgeMessier/nitro-speech/blob/main/docs/examples/use-recognizer.md",
-      "https://github.com/NotGeorgeMessier/nitro-speech/blob/main/docs/examples/speech-recognizer.md"
-    ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
