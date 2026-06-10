@@ -72,15 +72,16 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
   }
   try {
     const url = data.githubUrl;
-    const { isMonorepo, repoOwner, repoName, packagePath } = parseGitHubUrl(url);
+    const { isMonorepo, repoOwner, repoName, packagePath, branchName } = parseGitHubUrl(url);
     const fullName = `${repoOwner}/${repoName}`;
+    const branch = branchName ?? 'HEAD';
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
       repoName,
       packagePath,
-      packageFilesPath: packagePath === '.' ? 'HEAD:' : `HEAD:${packagePath}`,
-      packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
+      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
       fetchRoot: packagePath !== '.',
     });
 

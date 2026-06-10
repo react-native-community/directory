@@ -25,7 +25,7 @@ const USE_DEBUG_REPOS = false;
 
 // If script should only write to the local data file and not upload to the store.
 // This is useful for debugging and testing purposes.
-const ONLY_WRITE_LOCAL_DATA_FILE = false;
+const ONLY_WRITE_LOCAL_DATA_FILE = true;
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = false;
