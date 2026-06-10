@@ -21402,5 +21402,19 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gabriel-sisjr/react-native-background-location",
+    "npmPkg": "@gabriel-sisjr/react-native-background-location",
+    "examples": [
+      "https://github.com/gabriel-sisjr/react-native-background-location/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/gabriel-sisjr/react-native-background-location/main/website/static/img/tracking.gif",
+      "https://raw.githubusercontent.com/gabriel-sisjr/react-native-background-location/main/website/static/img/background.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
