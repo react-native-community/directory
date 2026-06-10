@@ -19155,7 +19155,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
+    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech/tree/gmessier-nitro-speech",
     "npmPkg": "@gmessier/nitro-speech",
     "examples": [
       "https://github.com/NotGeorgeMessier/nitro-speech/blob/main/docs/examples/use-recognizer.md",
@@ -19164,6 +19164,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
+    "unmaintained": true,
     "alternatives": ["react-native-nitro-speech"]
   },
   {
