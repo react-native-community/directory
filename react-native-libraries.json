@@ -19155,11 +19155,13 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
+    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech/tree/gmessier-nitro-speech",
     "npmPkg": "@gmessier/nitro-speech",
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only"
+    "newArchitecture": "new-arch-only",
+    "unmaintained": true,
+    "alternatives": ["react-native-nitro-speech"]
   },
   {
     "githubUrl": "https://github.com/wael-fadlallah/rn-alarm-kit",
@@ -21393,5 +21395,12 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
+    "npmPkg": "react-native-nitro-speech",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
