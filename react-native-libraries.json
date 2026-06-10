@@ -18072,7 +18072,8 @@
     "npmPkg": "@stripe/stripe-terminal-react-native",
     "examples": ["https://github.com/stripe/stripe-terminal-react-native/tree/main/example-app"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/AgoraIO-Extensions/react-native-agora",
