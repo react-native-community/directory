@@ -146,10 +146,6 @@ export function getCodeBrowserFilePath(path: string, prefix?: string) {
   return prefix ? path.replace(prefix, '') : path;
 }
 
-export function getCodeBrowserNestedFileParentPath(path: string) {
-  return getCodeBrowserNestedFileParentPaths(path)[0] ?? null;
-}
-
 export function getCodeBrowserNestedFileParentPaths(path: string) {
   const lowerCasedPath = path.toLowerCase();
 

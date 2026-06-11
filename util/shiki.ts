@@ -33,6 +33,7 @@ export const SHIKI_OPTS = {
     podspec: 'ruby',
     pom: 'xml',
     pro: 'properties',
+    proguard: 'properties',
     props: 'xml',
     sln: 'ini',
     svg: 'xml',
