@@ -15,7 +15,7 @@ export default function MarkdownInlineCode({ code, theme }: Props) {
     void inlineHighlighterInstance.then(setHighlighter);
   }, []);
 
-  if (!highlighter) {
+  if (!highlighter || typeof code !== 'string') {
     return <code>{code}</code>;
   }
 

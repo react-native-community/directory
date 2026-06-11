@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-const BLOCKQUOTE_TYPE_REGEX = /^\s*\[!([A-Z]+)]\s*/;
+const BLOCKQUOTE_TYPE_REGEX = /^\s*\[!([a-z]+)]\s*/i;
 
 type ExtractResult = {
   children: ReactNode;
