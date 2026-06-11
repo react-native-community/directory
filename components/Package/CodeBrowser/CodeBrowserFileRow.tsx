@@ -12,7 +12,7 @@ import {
   WarningBlockquoteIcon,
 } from '~/components/Icons';
 import Tooltip from '~/components/Tooltip';
-import { getFileWarning, IMAGE_FILES } from '~/util/codeBrowser';
+import { getDirectoryWarning, getFileWarning, IMAGE_FILES } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -35,7 +35,7 @@ export default function CodeBrowserFileRow({
   onPress,
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
-  const warning = isDirectory ? undefined : getFileWarning(label);
+  const warning = isDirectory ? getDirectoryWarning(label) : getFileWarning(label);
   const fileExtension = label.split('.').at(-1) ?? 'text';
   const isImageFile = IMAGE_FILES.includes(fileExtension);
 

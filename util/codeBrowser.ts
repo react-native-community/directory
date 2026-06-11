@@ -54,19 +54,23 @@ export const FILE_WARNINGS = [
       '.gitmodules',
       '.licence-config.yaml',
       '.prettierignore',
+      '.prettierrc',
       '.project',
+      '.prototools',
       '.release-please-manifest.json',
       '.swiftformat',
       '.swiftlint.yml',
       '.travis.yml',
       '.watchmanconfig',
+      '.yarnrc.yml',
       'babel.config.js',
       'eslint.config*.js',
       'expo-module.config.json',
       'gradle-wrapper.jar',
       'gradlew',
       'gradlew.bat',
-      'jest*.config.js',
+      'jest*.config.*js',
+      'jsconfig.json',
       'local.properties',
       'manifest-*makeinstall*',
       'metro.config.js',
@@ -74,7 +78,7 @@ export const FILE_WARNINGS = [
       'publish.gradle',
       '*prettierrc.js',
       'proguard-rules.pro',
-      'react-native.config.js',
+      'react-native.config.*js',
       'rollup.config.js',
       'settings.gradle',
       'spotless.gradle',
@@ -90,6 +94,13 @@ export const FILE_WARNINGS = [
       'bun.lockb',
       'package-lock.json',
     ],
+  },
+];
+
+export const DIRECTORY_WARNINGS = [
+  {
+    message: 'This directory should not be part of the bundle and can be safely ignored.',
+    fileNames: ['.github', '__tests__', '__mocks__', 'coverage'],
   },
 ];
 
@@ -122,6 +133,13 @@ export function getFileWarning(fileName?: string) {
     return undefined;
   }
   return FILE_WARNING_MATCHERS.find(warning => warning.matchers.some(matcher => matcher(fileName)));
+}
+
+export function getDirectoryWarning(directoryName?: string) {
+  if (!directoryName) {
+    return undefined;
+  }
+  return DIRECTORY_WARNINGS.find(warning => warning.fileNames.some(dir => dir === directoryName));
 }
 
 export function getCodeBrowserFilePath(path: string, prefix?: string) {
