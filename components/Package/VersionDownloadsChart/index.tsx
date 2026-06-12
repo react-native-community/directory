@@ -1,4 +1,4 @@
-import { ParentSize } from '@visx/responsive';
+import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
 import { useRouter } from 'next/router';
@@ -52,6 +52,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
     [router.query]
   );
   const [mode, setMode] = useState<ChartMode>(routeMode);
+  const { parentRef, width } = useParentSize({ debounceTime: 150 });
 
   useEffect(() => {
     setMode(currentMode => (currentMode === routeMode ? currentMode : routeMode));
@@ -99,124 +100,110 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   }
 
   return (
-    <View style={tw`w-full gap-3`}>
+    // @ts-expect-error Ref type miss-match
+    <View style={tw`w-full gap-3`} ref={parentRef}>
       <VersionDownloadsChartModes mode={mode} onModeChange={handleModeChange} />
-      <ParentSize>
-        {({ width }) => {
-          if (!width) {
-            return <View style={{ height }} />;
-          }
+      <XYChart
+        width={width}
+        height={height}
+        xScale={{ type: 'linear', domain: xDomain }}
+        yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
+        margin={{ top: 2, right: 12, bottom: 20, left: leftMargin }}>
+        <Grid
+          columns
+          rows={false}
+          lineStyle={{
+            stroke: isDark ? '#374151' : '#e5e7eb',
+            strokeOpacity: isDark ? 0.66 : 1,
+            strokeWidth: isDark ? 0.5 : 0.66,
+          }}
+        />
+        <Axis
+          orientation="bottom"
+          numTicks={5}
+          hideAxisLine
+          hideTicks
+          tickFormat={value => formatNumberToString(value)}
+          tickComponent={({ formattedValue = 'unknown', x, y }) => (
+            <text
+              x={x}
+              y={y}
+              textAnchor="middle"
+              dominantBaseline="middle"
+              style={tw`select-none tabular-nums`}
+              fill="var(--secondary)">
+              <tspan x={x} style={tw`text-[12px] font-light`}>
+                {formattedValue}
+              </tspan>
+            </text>
+          )}
+        />
+        <Axis
+          orientation="left"
+          hideAxisLine
+          hideTicks
+          numTicks={series.length}
+          tickComponent={({ formattedValue = 'unknown', x, y }) => {
+            const data = seriesByLabel[formattedValue] ?? createVersionChartEntry(formattedValue);
+            const labelX = (x ?? 0) - LABEL_TO_BAR_GAP;
 
-          return (
-            <XYChart
-              width={width}
-              height={height}
-              xScale={{ type: 'linear', domain: xDomain }}
-              yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-              margin={{ top: 2, right: 6, bottom: 20, left: leftMargin }}>
-              <Grid
-                columns
-                rows={false}
-                lineStyle={{
-                  stroke: isDark ? '#374151' : '#e5e7eb',
-                  strokeOpacity: isDark ? 0.66 : 1,
-                  strokeWidth: isDark ? 0.5 : 0.66,
-                }}
-              />
-              <Axis
-                orientation="bottom"
-                numTicks={5}
-                hideAxisLine
-                hideTicks
-                tickFormat={value => formatNumberToString(value)}
-                tickComponent={({ formattedValue = 'unknown', x, y }) => (
-                  <text
-                    x={x}
-                    y={y}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    style={tw`select-none tabular-nums`}
-                    fill="var(--secondary)">
-                    <tspan x={x} style={tw`text-[12px] font-light`}>
-                      {formattedValue}
-                    </tspan>
-                  </text>
+            return (
+              <text
+                x={labelX}
+                y={y}
+                textAnchor="end"
+                dominantBaseline="middle"
+                style={tw`select-none tabular-nums`}
+                fill={isDark ? 'var(--white)' : 'var(--black)'}>
+                <tspan
+                  x={labelX}
+                  dy={data.secondaryLabel ? '-0.44em' : '0'}
+                  style={tw`text-[12px]`}>
+                  {getPrimaryChartLabel(data)}
+                </tspan>
+                {data.secondaryLabel && (
+                  <tspan x={labelX} dy="1.2em" fill="var(--secondary)" style={DIST_TAG_LABEL_STYLE}>
+                    {data.secondaryLabel}
+                  </tspan>
                 )}
-              />
-              <Axis
-                orientation="left"
-                hideAxisLine
-                hideTicks
-                numTicks={series.length}
-                tickComponent={({ formattedValue = 'unknown', x, y }) => {
-                  const data =
-                    seriesByLabel[formattedValue] ?? createVersionChartEntry(formattedValue);
-                  const labelX = (x ?? 0) - LABEL_TO_BAR_GAP;
+              </text>
+            );
+          }}
+        />
+        <BarSeries
+          dataKey="downloads"
+          data={series}
+          xAccessor={(item: ChartData) => item.downloads}
+          yAccessor={(item: ChartData) => item.label}
+          colorAccessor={(item: ChartData) => {
+            const { kind, distTags } = item;
 
-                  return (
-                    <text
-                      x={labelX}
-                      y={y}
-                      textAnchor="end"
-                      dominantBaseline="middle"
-                      style={tw`select-none tabular-nums`}
-                      fill={isDark ? 'var(--white)' : 'var(--black)'}>
-                      <tspan
-                        x={labelX}
-                        dy={data.secondaryLabel ? '-0.44em' : '0'}
-                        style={tw`text-[12px]`}>
-                        {getPrimaryChartLabel(data)}
-                      </tspan>
-                      {data.secondaryLabel && (
-                        <tspan
-                          x={labelX}
-                          dy="1.2em"
-                          fill="var(--secondary)"
-                          style={DIST_TAG_LABEL_STYLE}>
-                          {data.secondaryLabel}
-                        </tspan>
-                      )}
-                    </text>
-                  );
-                }}
-              />
-              <BarSeries
-                dataKey="downloads"
-                data={series}
-                xAccessor={(item: ChartData) => item.downloads}
-                yAccessor={(item: ChartData) => item.label}
-                colorAccessor={(item: ChartData) => {
-                  const { kind, distTags } = item;
+            if (kind === 'other') {
+              return 'var(--pewter)';
+            }
 
-                  if (kind === 'other') {
-                    return 'var(--pewter)';
-                  }
+            if (distTags?.length) {
+              return isDark ? 'var(--primary)' : 'var(--primary-dark)';
+            }
 
-                  if (distTags?.length) {
-                    return isDark ? 'var(--primary)' : 'var(--primary-dark)';
-                  }
-
-                  return 'var(--primary-darker)';
-                }}
-                radius={3}
-                radiusAll
-              />
-              <Tooltip<ChartData>
-                showVerticalCrosshair={false}
-                showSeriesGlyphs={false}
-                offsetLeft={8}
-                offsetTop={6}
-                detectBounds
-                unstyled
-                applyPositionStyle
-                renderTooltip={({ tooltipData }) =>
-                  renderTooltipContent(tooltipData?.nearestDatum?.datum)
-                }
-              />
-            </XYChart>
-          );
-        }}
-      </ParentSize>
+            return 'var(--primary-darker)';
+          }}
+          radius={3}
+          radiusAll
+        />
+        <Tooltip<ChartData>
+          showVerticalCrosshair={false}
+          showSeriesGlyphs={false}
+          offsetLeft={8}
+          offsetTop={6}
+          detectBounds
+          unstyled
+          applyPositionStyle
+          renderTooltip={({ tooltipData }) =>
+            renderTooltipContent(tooltipData?.nearestDatum?.datum)
+          }
+        />
+      </XYChart>
     </View>
   );
 }
