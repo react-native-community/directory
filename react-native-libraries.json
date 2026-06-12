@@ -17156,9 +17156,7 @@
   {
     "githubUrl": "https://github.com/thereallo1026/expo-native-storage",
     "npmPkg": "expo-native-storage",
-    "examples": [
-      "https://github.com/thereallo1026/expo-storage-benchmark"
-    ],
+    "examples": ["https://github.com/thereallo1026/expo-storage-benchmark"],
     "images": [
       "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/andorid_100ops.png?raw=true",
       "https://github.com/Thereallo1026/expo-storage-benchmark/blob/master/images/android_1000ops.png?raw=true",
@@ -17186,7 +17184,17 @@
   {
     "githubUrl": "https://github.com/pushpender-singh-ap/react-native-otp-verify",
     "npmPkg": "@pushpendersingh/react-native-otp-verify",
-    "examples": ["https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"],
+    "examples": [
+      "https://github.com/pushpender-singh-ap/react-native-otp-verify/tree/main/example"
+    ],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pushpender-singh-ap/react-native-peer",
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
