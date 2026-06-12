@@ -21443,5 +21443,16 @@
     "examples": ["https://github.com/bhargavkanda/react-native-image-stitcher/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/thegruber/react-native-halo-menu",
+    "examples": ["https://github.com/thegruber/react-native-halo-menu/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thegruber/react-native-halo-menu/main/docs/assets/halo-menu-showcase.webp"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
