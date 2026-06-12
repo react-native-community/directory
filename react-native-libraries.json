@@ -21417,5 +21417,31 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/mrousavy/react-native-data-scanner/tree/master/packages/react-native-data-scanner",
+    "examples": ["https://github.com/mrousavy/react-native-data-scanner/tree/master/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/mrousavy/react-native-data-scanner/master/img/screenshot_ios.png",
+      "https://raw.githubusercontent.com/mrousavy/react-native-data-scanner/master/img/screenshot_android.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/brandtnewlabs/react-native-livechart/tree/main/packages/react-native-livechart",
+    "examples": ["https://github.com/brandtnewlabs/react-native-livechart/tree/main/app"],
+    "images": [
+      "https://raw.githubusercontent.com/brandtnewlabs/react-native-livechart/main/assets/images/hero.webp"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/bhargavkanda/react-native-image-stitcher",
+    "examples": ["https://github.com/bhargavkanda/react-native-image-stitcher/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
