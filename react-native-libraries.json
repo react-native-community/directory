@@ -21445,6 +21445,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/pushpender-singh-ap/react-native-peer",
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
     "githubUrl": "https://github.com/thegruber/react-native-halo-menu",
     "examples": ["https://github.com/thegruber/react-native-halo-menu/tree/main/example"],
     "images": [
