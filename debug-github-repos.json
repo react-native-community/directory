@@ -61,5 +61,25 @@
   {
     "githubUrl": "https://github.com/kazimshah39/react-native-feather-toast",
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/lottie-react-native/lottie-react-native/tree/master/packages/core",
+    "images": [
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example1.gif",
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example2.gif",
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example3.gif",
+      "https://raw.githubusercontent.com/lottie-react-native/lottie-react-native/master/docs/gifs/Example4.gif"
+    ],
+    "examples": [
+      "https://github.com/lottie-react-native/lottie-react-native/tree/master/example",
+      "https://snack.expo.dev/SJdIbHe4b"
+    ],
+    "ios": true,
+    "android": true,
+    "windows": true,
+    "fireos": true,
+    "expoGo": true,
+    "vegaos": "@amazon-devices/lottie-react-native",
+    "npmPkg": "lottie-react-native"
   }
 ]

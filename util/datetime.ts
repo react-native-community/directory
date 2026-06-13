@@ -11,7 +11,7 @@ export const TimeRange = Object.freeze({
 
 export function getTimeSinceToday(date: Date | string) {
   const updateTimeSeconds = new Date(date).getTime();
-  const currentTimeSeconds = new Date().getTime();
+  const currentTimeSeconds = Date.now();
 
   const seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
   const elapsed = seconds > 0 ? seconds : 1;
@@ -36,7 +36,7 @@ export function getTimeSinceToday(date: Date | string) {
 
 export function isLaterThan(date: Date | string, timeRange: number) {
   const updateTimeSeconds = new Date(date).getTime();
-  const currentTimeSeconds = new Date().getTime();
+  const currentTimeSeconds = Date.now();
   const seconds = Math.abs(currentTimeSeconds - updateTimeSeconds) / 1000;
   return seconds > timeRange;
 }

@@ -1,57 +1,43 @@
-import { Fragment, useContext } from 'react';
-import { StyleProp, StyleSheet, TextStyle, View } from 'react-native';
+import { Fragment } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A, Label, useLayout } from '~/common/styleguide';
+import { WarningIcon } from '~/components/Icons';
 import { type LibraryDataEntryType } from '~/types';
-
-import { Warning } from '../Icons';
+import { strippedBackground } from '~/util/style';
+import tw from '~/util/tailwind';
 
 type Props = {
   alternatives?: LibraryDataEntryType['alternatives'];
+  block?: boolean;
 };
 
-function UnmaintainedLabel({ alternatives }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
+export default function UnmaintainedLabel({ alternatives, block }: Props) {
   const { isSmallScreen } = useLayout();
 
-  const linkHoverStyle: StyleProp<TextStyle> = isDark && { color: colors.secondary };
-  const contentColor = isDark ? darkColors.secondary : colors.gray5;
-
   return (
-    <View style={styles.unmaintainedTextWrapper}>
+    <View style={tw`flex-shrink flex-row gap-1.5`}>
       <View
         style={[
-          styles.unmaintainedTextContainer,
-          {
-            flexDirection: isSmallScreen ? 'column' : 'row',
-            backgroundColor: isDark ? darkColors.dark : colors.gray1,
-            borderColor: isDark ? darkColors.border : colors.gray2,
-            // @ts-expect-error Correct, but too complex background definition
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, ${isDark ? '#18181f' : '#f0f0f0'} 20px, ${isDark ? '#18181f' : '#f0f0f0'} 40px)`,
-          },
+          tw`-ml-5 -mt-1.5 mb-1.5 mr-8 flex-shrink flex-row flex-wrap items-start gap-1 rounded-r border border-l-0 border-palette-gray3 bg-palette-gray1 py-1.5 pl-5 pr-3 dark:border-default dark:bg-dark`,
+          block && tw`ml-0 mr-0 rounded-lg rounded-r-lg border-l py-2 pl-3`,
+          isSmallScreen && tw`flex-col`,
+          strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
         ]}>
-        <View style={styles.unmaintainedTextWrapper}>
-          <Warning width={16} height={16} fill={contentColor} />
-          <Label
-            style={{
-              color: contentColor,
-            }}>
+        <View style={tw`flex-shrink flex-row gap-1.5`}>
+          <WarningIcon style={tw`size-4 text-warning-dark dark:text-warning`} />
+          <Label style={tw`text-warning-dark dark:text-warning`}>
             This library is not actively maintained.
           </Label>
         </View>
         {alternatives && alternatives.length > 0 && (
-          <Label
-            style={{
-              color: contentColor,
-            }}>
+          <Label style={tw`text-warning-dark dark:text-warning`}>
             You can use{' '}
             {alternatives.map((alternative, index) => (
               <Fragment key={alternative}>
                 <A
-                  href={`/?search=${encodeURIComponent(alternative)}`}
-                  style={{ backgroundColor: 'transparent' }}
-                  hoverStyle={linkHoverStyle}>
+                  href={`/package/${alternative}`}
+                  hoverStyle={tw`decoration-warning-dark dark:decoration-warning`}>
                   {alternative}
                 </A>
                 {index < alternatives.length - 1 && alternatives.length > 2 ? ', ' : ' '}
@@ -65,28 +51,3 @@ function UnmaintainedLabel({ alternatives }: Props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  unmaintainedTextWrapper: {
-    flexDirection: 'row',
-    gap: 6,
-    flexShrink: 1,
-  },
-  unmaintainedTextContainer: {
-    alignItems: 'flex-start',
-    marginLeft: -20,
-    marginBottom: 8,
-    paddingLeft: 20,
-    paddingRight: 12,
-    paddingVertical: 6,
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    gap: 4,
-    borderWidth: 1,
-    borderLeftWidth: 0,
-    flexShrink: 1,
-    flexWrap: 'wrap',
-  },
-});
-
-export default UnmaintainedLabel;

@@ -1,4 +1,4 @@
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 export function issues(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);
@@ -18,11 +18,21 @@ export function downloads(libraries: LibraryType[]) {
 }
 
 export function updated(libraries: LibraryType[]) {
-  return libraries.sort((a, b) => {
-    return (
-      new Date(b.github.stats.pushedAt).getTime() - new Date(a.github.stats.pushedAt).getTime()
-    );
-  });
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: new Date(lib.github.stats.pushedAt).getTime(),
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
+}
+
+export function released(libraries: LibraryType[]) {
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: lib.npm?.latestReleaseDate ? new Date(lib.npm.latestReleaseDate).getTime() : 0,
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
 }
 
 export function quality(libraries: LibraryType[]) {
@@ -36,12 +46,29 @@ export function popularity(libraries: LibraryType[]) {
 export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
     if (a.matchScore && b.matchScore) {
-      if (Math.abs(a.matchScore - b.matchScore) >= 50) {
+      if (a.matchScore < 10 || b.matchScore < 10 || Math.abs(a.matchScore - b.matchScore) >= 40) {
         return b.matchScore - a.matchScore;
       }
-
       return b.score - a.score;
     }
     return 0;
+  });
+}
+
+export function dependencies(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bDependencies = b.github.stats?.dependencies ?? 0;
+    const aDependencies = a.github.stats?.dependencies ?? 0;
+
+    return bDependencies - aDependencies;
+  });
+}
+
+export function bundleSize(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bSize = b.npm?.size ?? 0;
+    const aSize = a.npm?.size ?? 0;
+
+    return bSize - aSize;
   });
 }

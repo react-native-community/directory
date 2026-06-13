@@ -1,48 +1,34 @@
-import { ReactElement, useContext } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { type ReactElement } from 'react';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, darkColors, Label } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { Label } from '~/common/styleguide';
+import tw from '~/util/tailwind';
 
-import { Check } from './Icons';
+import { CheckIcon } from './Icons';
 
 type Props = {
   label: string;
-  tagStyle: ViewStyle;
+  tagStyle: StyleProp<ViewStyle>;
+  small?: boolean;
   icon?: ReactElement | null;
 };
 
-export const Tag = ({
+export function Tag({
   label,
   tagStyle,
-  icon = <Check width={12} height={8} fill={colors.gray5} />,
-}: Props) => {
-  const { isDark } = useContext(CustomAppearanceContext);
+  small,
+  icon = <CheckIcon style={tw`h-2 w-3 text-palette-gray5`} />,
+}: Props) {
   return (
-    <View key={label} style={[styles.tag, tagStyle]}>
-      {icon}
-      <Label
-        style={[
-          {
-            color: isDark ? darkColors.secondary : colors.black,
-          },
-        ]}>
-        {label}
-      </Label>
+    <View
+      key={label}
+      style={[
+        tw`min-h-6 select-none flex-row items-center gap-[5px] rounded border px-2 py-1`,
+        small && tw`min-h-5 px-1.5 py-0.5`,
+        tagStyle,
+      ]}>
+      {!small && icon}
+      <Label style={[tw`text-black dark:text-secondary`, small && tw`text-[11px]`]}>{label}</Label>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  tag: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 4,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    userSelect: 'none',
-    minHeight: 25.5,
-    gap: 5,
-  },
-});
+}

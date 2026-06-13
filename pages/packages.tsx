@@ -1,0 +1,54 @@
+import { type NextPageContext } from 'next';
+import { useRouter } from 'next/router';
+import { type ParsedUrlQuery } from 'node:querystring';
+
+import ContentContainer from '~/components/ContentContainer';
+import Libraries from '~/components/Libraries';
+import Navigation from '~/components/Navigation';
+import PageMeta from '~/components/PageMeta';
+import Pagination from '~/components/Pagination';
+import Search from '~/components/Search';
+import { type APIResponseType } from '~/types';
+import { NEXT_1H_CACHE_HEADER } from '~/util/Constants';
+import getApiUrl from '~/util/getApiUrl';
+import tw from '~/util/tailwind';
+import urlWithQuery from '~/util/urlWithQuery';
+
+type Props = {
+  data: APIResponseType;
+  query: ParsedUrlQuery;
+};
+
+function Index({ data, query }: Props) {
+  const router = useRouter();
+  const total = data.total ?? 0;
+
+  return (
+    <>
+      <PageMeta searchQuery={router.query?.search} />
+      <Navigation header={<Search query={router.query} total={total} />} />
+      <ContentContainer style={tw`px-4 py-3`}>
+        <Pagination query={query} total={total} />
+        <Libraries libraries={data && data.libraries} />
+        <Pagination query={query} total={total} noTags />
+      </ContentContainer>
+    </>
+  );
+}
+
+Index.getInitialProps = async (ctx: NextPageContext) => {
+  const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
+
+  // Forward cookies when making server-side requests (needed for bookmarks filter)
+  const response = await fetch(
+    url,
+    ctx.req?.headers.cookie ? { headers: { cookie: ctx.req.headers.cookie } } : NEXT_1H_CACHE_HEADER
+  );
+
+  return {
+    data: await response.json(),
+    query: ctx.query,
+  };
+};
+
+export default Index;

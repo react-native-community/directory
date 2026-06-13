@@ -1,10 +1,11 @@
-import { drop, take } from 'es-toolkit';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { drop, take } from 'es-toolkit/compat';
+import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
+import { getBookmarksFromCookie } from '~/context/BookmarksContext';
 import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
-import { NUM_PER_PAGE } from '~/util/Constants';
-import { parseQueryParams } from '~/util/parseQueryParams';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NUM_PER_PAGE } from '~/util/Constants';
+import { parseQueryParams } from '~/util/queryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
 
@@ -13,33 +14,34 @@ const originalData = [...(data as DataAssetType).libraries];
 function getData(): SortedDataType {
   return {
     updated: Sorting.updated([...originalData]),
-    added: [...originalData.reverse()],
+    added: originalData.toReversed(),
     quality: Sorting.quality([...originalData]),
     popularity: Sorting.popularity([...originalData]),
     downloads: Sorting.downloads([...originalData]),
     issues: Sorting.issues([...originalData]),
     stars: Sorting.stars([...originalData]),
     relevance: Sorting.relevance([...originalData]),
+    size: Sorting.bundleSize([...originalData]),
+    dependencies: Sorting.dependencies([...originalData]),
+    released: Sorting.released([...originalData]),
   };
 }
 
 const SortedData = getData();
-const ReversedSortedData = Object.entries(getData()).reduce<SortedDataType>(
-  (accumulator, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
-  {} as SortedDataType
-);
+const ReversedSortedData = Object.fromEntries(
+  Object.entries(SortedData).map(([key, val]) => [key, [...val].reverse()])
+) as SortedDataType;
 
 const SortingKeys = Object.keys(SortedData);
 
 function getAllowedOrderString(req: NextApiRequest, querySearch?: string): QueryOrder {
-  let sortBy = querySearch ? SortingKeys.at(-1) : SortingKeys[0];
-
-  SortingKeys.forEach(sortName => {
-    if (req.query.order === sortName) {
-      sortBy = sortName;
-    }
-  });
-
+  const requestedOrder = req.query.order as string | undefined;
+  const sortBy =
+    requestedOrder && SortingKeys.includes(requestedOrder)
+      ? requestedOrder
+      : querySearch
+        ? SortingKeys.at(-1)
+        : SortingKeys[0];
   return sortBy as QueryOrder;
 }
 
@@ -57,6 +59,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sortDirection = parsedQuery.direction ?? 'descending';
   const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
 
+  // Get bookmarks from cookie if bookmarks filter is enabled
+  const bookmarkedIds = parsedQuery.bookmarks
+    ? new Set(getBookmarksFromCookie(req.headers.cookie))
+    : null;
+
   const filteredLibraries = handleFilterLibraries({
     libraries,
     sortBy,
@@ -70,27 +77,37 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       macos: parsedQuery.macos,
       expoGo: parsedQuery.expoGo,
       fireos: parsedQuery.fireos,
+      horizon: parsedQuery.horizon,
       tvos: parsedQuery.tvos,
       visionos: parsedQuery.visionos,
+      vegaos: parsedQuery.vegaos,
     },
     hasExample: parsedQuery.hasExample,
     hasImage: parsedQuery.hasImage,
     hasTypes: parsedQuery.hasTypes,
     hasNativeCode: parsedQuery.hasNativeCode,
+    configPlugin: parsedQuery.configPlugin,
     isMaintained: parsedQuery.isMaintained,
     isPopular: parsedQuery.isPopular,
-    isRecommended: parsedQuery.isRecommended,
     wasRecentlyUpdated: parsedQuery.wasRecentlyUpdated,
     minPopularity: parsedQuery.minPopularity,
     minMonthlyDownloads: parsedQuery.minMonthlyDownloads,
     newArchitecture: parsedQuery.newArchitecture,
     skipLibs: parsedQuery.skipLibs,
     skipTools: parsedQuery.skipTools,
-    skipTemplates: parsedQuery.skipTemplates,
+    expoModule: parsedQuery.expoModule,
+    nitroModule: parsedQuery.nitroModule,
+    turboModule: parsedQuery.turboModule,
+    nightlyProgram: parsedQuery.nightlyProgram,
+    owner: parsedQuery.owner,
+    bookmarks: parsedQuery.bookmarks,
+    bookmarkedIds,
   });
 
-  const offset = parsedQuery.offset ? parseInt(parsedQuery.offset.toString(), 10) : 0;
-  const limit = parsedQuery.limit ? parseInt(parsedQuery.limit.toString(), 10) : NUM_PER_PAGE;
+  const offset = parsedQuery.offset ? Number.parseInt(parsedQuery.offset.toString(), 10) : 0;
+  const limit = parsedQuery.limit
+    ? Number.parseInt(parsedQuery.limit.toString(), 10)
+    : NUM_PER_PAGE;
 
   const relevanceSortedLibraries =
     querySearch?.length && (!parsedQuery.order || parsedQuery.order === 'relevance')
@@ -100,7 +117,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  return res.json({
+  // Don't cache responses with bookmarks filter since it depends on user-specific cookies.
+  if (parsedQuery.bookmarks) {
+    res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  } else {
+    res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
+  }
+
+  res.json({
     libraries: filteredAndPaginatedLibraries,
     total: filteredLibraries.length,
   });

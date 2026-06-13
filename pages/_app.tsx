@@ -1,15 +1,15 @@
+import '~/styles/styles.css';
+
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as Sentry from '@sentry/react';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { colors, darkColors } from '~/common/styleguide';
 import Footer from '~/components/Footer';
-import Header from '~/components/Header';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { BookmarksProvider } from '~/context/BookmarksContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
-
-import '~/styles/styles.css';
+import tw from '~/util/tailwind';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -24,42 +24,24 @@ Sentry.init({
 
 function App({ pageProps, Component }: AppProps) {
   return (
-    <CustomAppearanceProvider>
-      <CustomAppearanceContext.Consumer>
-        {context => (
-          <SafeAreaProvider
-            style={{
-              flex: 1,
-              backgroundColor: context.isDark ? darkColors.background : colors.white,
-            }}>
+    <TooltipPrimitive.Provider>
+      <CustomAppearanceProvider>
+        <BookmarksProvider>
+          <SafeAreaProvider>
             <Head>
               <meta
                 name="viewport"
-                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,viewport-fit=cover"
+                content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
               />
-              <style>
-                {`html { 
-                  background-color: ${context.isDark ? darkColors.veryDark : colors.gray7};
-                }
-                *:focus-visible {
-                  outline-color: ${colors.primaryDark};
-                }
-                .TooltipContent {
-                  background-color: ${darkColors.black};
-                  border: 1px solid ${context.isDark ? colors.gray7 : colors.gray6};
-                }
-                .TooltipContent svg {
-                  stroke: ${context.isDark ? colors.gray7 : colors.gray6};
-                }`}
-              </style>
             </Head>
-            <Header />
-            <Component {...pageProps} />
+            <main style={tw`flex flex-1 flex-col`}>
+              <Component {...pageProps} />
+            </main>
             <Footer />
           </SafeAreaProvider>
-        )}
-      </CustomAppearanceContext.Consumer>
-    </CustomAppearanceProvider>
+        </BookmarksProvider>
+      </CustomAppearanceProvider>
+    </TooltipPrimitive.Provider>
   );
 }
 

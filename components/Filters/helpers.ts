@@ -1,9 +1,4 @@
-import { Query } from '~/types';
-
-type FilterParamsType = {
-  param: keyof Query;
-  title: string;
-};
+import { type FilterParamsType, type Query } from '~/types';
 
 export const FILTER_PLATFORMS: FilterParamsType[] = [
   {
@@ -57,6 +52,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Uses native code',
   },
   {
+    param: 'configPlugin',
+    title: 'Has Expo config plugin',
+  },
+  {
     param: 'hasExample',
     title: 'Has example',
   },
@@ -67,6 +66,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
   {
     param: 'hasTypes',
     title: 'Has TypeScript types',
+  },
+  {
+    param: 'nightlyProgram',
+    title: 'Tested in Nightly Program',
   },
   {
     param: 'wasRecentlyUpdated',
@@ -83,4 +86,53 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
     param: 'fireos',
     title: 'Works with Fire OS',
   },
+  {
+    param: 'horizon',
+    title: 'Works with Meta Horizon OS',
+  },
+  {
+    param: 'vegaos',
+    title: 'Works with Vega OS',
+  },
+];
+
+export const FILTER_TYPE: FilterParamsType[] = [
+  {
+    param: 'skipLibs',
+    title: 'Hide libraries',
+  },
+  {
+    param: 'skipTools',
+    title: 'Hide development tools',
+  },
+];
+
+export const FILTER_MODULE_TYPE: FilterParamsType[] = [
+  {
+    param: 'expoModule',
+    title: 'Expo Module',
+  },
+  {
+    param: 'nitroModule',
+    title: 'Nitro Module',
+  },
+  {
+    param: 'turboModule',
+    title: 'Turbo Module',
+  },
+];
+
+export const FILTER_BOOKMARKS: FilterParamsType = {
+  param: 'bookmarks',
+  title: 'Bookmarked',
+};
+
+export const ALL_FILTERS_PARAMS: (keyof Query)[] = [
+  ...FILTER_PLATFORMS.map(p => p.param),
+  ...FILTER_REQUIRES_MAIN_SEARCH.map(p => p.param),
+  ...FILTER_STATUS.map(p => p.param),
+  ...FILTER_COMPATIBILITY.map(p => p.param),
+  ...FILTER_TYPE.map(p => p.param),
+  ...FILTER_MODULE_TYPE.map(p => p.param),
+  FILTER_BOOKMARKS.param,
 ];

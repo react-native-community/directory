@@ -9,11 +9,20 @@ const PACKAGES_TO_OPTIMIZE = [
   '@expo/html-elements',
   '@react-native-picker/picker',
   '@sentry/*',
+  '@shikijs/*',
+  '@videojs/*',
+  '@visx/*',
+  'es-toolkit',
+  'es-toolkit/*',
   'node-emoji',
   'react-native',
   'react-native-safe-area-context',
   'react-native-svg',
   'react-native-web',
+  'react-shiki',
+  'semver',
+  'shiki/*',
+  'twrnc',
 ];
 
 const withBundleAnalyzer = BundleAnalyzer({
@@ -25,19 +34,17 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   reactStrictMode: true,
   poweredByHeader: false,
   devIndicators: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  reactCompiler: true,
   images: {
     disableStaticImages: true,
   },
   transpilePackages: PACKAGES_TO_OPTIMIZE,
+  logging: {
+    browserToTerminal: true,
+  },
   experimental: {
     forceSwcTransforms: true,
     webpackBuildWorker: true,
-    browserDebugInfoInTerminal: true,
-    clientSegmentCache: true,
-    useLightningcss: true,
     optimizePackageImports: PACKAGES_TO_OPTIMIZE,
   },
   async headers() {
@@ -48,6 +55,10 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
         ],
+      },
+      {
+        source: '/fonts/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ];
   },

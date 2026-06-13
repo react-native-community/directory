@@ -1,21 +1,21 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { colors, darkColors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-import { LibraryType } from '~/types';
+import { A, useLayout } from '~/common/styleguide';
+import { type LibraryType } from '~/types';
+import tw from '~/util/tailwind';
 
-import { Info } from './Icons';
+import { InfoIcon } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
 import { Tag } from './Tag';
 import Tooltip from './Tooltip';
 
 type Props = {
   library: LibraryType;
+  small?: boolean;
 };
 
-export function CompatibilityTags({ library }: Props) {
-  const { isDark } = useContext(CustomAppearanceContext);
+export default function CompatibilityTags({ library, small }: Props) {
+  const { isSmallScreen } = useLayout();
 
   const platforms = [
     library.android ? 'Android' : null,
@@ -25,81 +25,60 @@ export function CompatibilityTags({ library }: Props) {
     library.visionos ? 'visionOS' : null,
     library.web ? 'Web' : null,
     library.windows ? 'Windows' : null,
-  ]
-    .map(platform => platform)
-    .filter(Boolean);
+  ].filter((p): p is string => !!p);
 
   return (
-    <View style={styles.container}>
+    <View style={tw`max-w-full flex-row flex-wrap items-center gap-1.5`}>
       {library.dev ? (
         <Tag
           label="Development Tool"
-          tagStyle={{
-            backgroundColor: isDark ? '#261a3d' : '#ece3fc',
-            borderColor: isDark ? '#3d2861' : '#d9c8fa',
-          }}
+          tagStyle={tw`border-[#d9c8fa] bg-[#ece3fc] dark:border-[#3d2861] dark:bg-[#261a3d]`}
           icon={null}
+          small={small}
         />
       ) : null}
-      {library.template ? (
+      {!library.dev && <NewArchitectureTag library={library} small={small} />}
+      {platforms.map(platform => (
         <Tag
-          label="Template"
-          tagStyle={{
-            backgroundColor: isDark ? '#37172e' : '#fce1f5',
-            borderColor: isDark ? '#52213e' : '#f5c6e8',
-          }}
-          icon={null}
+          label={platform}
+          key={`${platform}-platform`}
+          tagStyle={tw`border-palette-gray2 bg-palette-gray1 dark:border-default dark:bg-dark`}
+          small={small}
         />
-      ) : null}
-      {!library.dev && !library.template && <NewArchitectureTag library={library} />}
-      {platforms.map(platform =>
-        platform ? (
-          <Tag
-            label={platform}
-            key={`${platform}-platform`}
-            tagStyle={{
-              backgroundColor: isDark ? darkColors.dark : colors.gray1,
-              borderColor: isDark ? darkColors.border : colors.gray2,
-            }}
-          />
-        ) : null
-      )}
-      {(library.expoGo || library.fireos) && (
-        <Tooltip
-          side="bottom"
-          trigger={
-            <View style={styles.infoTrigger}>
-              <Info fill={isDark ? darkColors.pewter : colors.secondary} />
-            </View>
-          }>
-          Additional information
-          <br />
-          <ul style={styles.compatibilityList}>
-            {library.expoGo && <li>Works with Expo Go</li>}
-            {library.fireos && <li>Works with Fire OS</li>}
-          </ul>
-        </Tooltip>
-      )}
+      ))}
+      {!(small && isSmallScreen) &&
+        (library.expoGo ?? library.fireos ?? library.vegaos ?? library.horizon) && (
+          <Tooltip
+            side="bottom"
+            trigger={
+              <View
+                style={tw`cursor-pointer items-center justify-center rounded-full`}
+                role="button"
+                aria-label="Additional information">
+                <InfoIcon style={tw`text-icon`} />
+              </View>
+            }>
+            Additional information
+            <br />
+            <ul style={tw`m-0 pl-3.5`}>
+              {library.expoGo && <li>Works with Expo Go</li>}
+              {library.fireos && <li>Works with Fire OS</li>}
+              {library.horizon && <li>Works with Meta Horizon OS</li>}
+              {library.vegaos && typeof library.vegaos === 'boolean' && <li>Works with Vega OS</li>}
+              {library.vegaos && typeof library.vegaos === 'string' && (
+                <li>
+                  Works with Vega OS
+                  <br />
+                  <A
+                    href={`https://www.npmjs.com/package/${library.vegaos}`}
+                    style={tw`text-xs font-light text-white`}>
+                    (via dedicated support package)
+                  </A>
+                </li>
+              )}
+            </ul>
+          </Tooltip>
+        )}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: 6,
-  },
-  infoTrigger: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    minHeight: 25,
-  },
-  compatibilityList: {
-    margin: 0,
-    paddingLeft: 14,
-  },
-});
