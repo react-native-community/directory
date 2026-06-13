@@ -21443,5 +21443,13 @@
     "examples": ["https://github.com/bhargavkanda/react-native-image-stitcher/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/pushpender-singh-ap/react-native-peer",
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
