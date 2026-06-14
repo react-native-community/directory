@@ -21451,5 +21451,19 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/warlock001/react-native-smart-grid",
+    "npmPkg": "react-native-smart-grid",
+    "examples": ["https://github.com/warlock001/react-native-smart-grid/tree/main/example"],
+    "images": [
+      "https://github.com/warlock001/react-native-smart-grid/blob/main/docs/drag-drop.gif",
+      "https://github.com/warlock001/react-native-smart-grid/blob/main/docs/multi-select.gif",
+      "https://github.com/warlock001/react-native-smart-grid/blob/main/docs/resize.gif"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": false
   }
 ]
