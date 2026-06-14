@@ -54,11 +54,11 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
-        source: '/icon-*',
+        source: '/favicon:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
-        source: '/favicon.*',
+        source: '/icon-:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
     ];
