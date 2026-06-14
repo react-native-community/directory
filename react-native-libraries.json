@@ -21453,6 +21453,17 @@
     "web": true
   },
   {
+    "githubUrl": "https://github.com/thegruber/react-native-halo-menu",
+    "examples": ["https://github.com/thegruber/react-native-halo-menu/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thegruber/react-native-halo-menu/main/docs/assets/halo-menu-showcase.webp"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/warlock001/react-native-smart-grid",
     "npmPkg": "react-native-smart-grid",
     "examples": ["https://github.com/warlock001/react-native-smart-grid/tree/main/example"],
