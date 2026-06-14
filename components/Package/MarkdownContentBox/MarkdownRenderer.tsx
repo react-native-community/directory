@@ -164,6 +164,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
         },
         blockquote: ({ children }: any) => {
           const blockquoteType = extractAndStripBlockquoteType(children);
+          const Icon = blockquoteType.type ? getBlockquoteIcon(blockquoteType.type) : null;
           return (
             <blockquote
               className={blockquoteType.type}
@@ -171,9 +172,9 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
                 ...tw`text-secondary`,
                 ...(blockquoteType.type ? {} : tw`border-palette-gray4 dark:border-secondary`),
               }}>
-              {blockquoteType.type && (
+              {blockquoteType.type && Icon && (
                 <strong className="blockquote-title" style={tw`flex items-center gap-1.5`}>
-                  {getBlockquoteIcon(blockquoteType.type)}
+                  <Icon style={tw`-ml-0.5 size-4`} />
                   {capitalize(blockquoteType.type)}
                 </strong>
               )}
@@ -219,15 +220,15 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
 function getBlockquoteIcon(type: string) {
   switch (type) {
     case 'note':
-      return <NoteBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
+      return NoteBlockquoteIcon;
     case 'tip':
-      return <TipBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
+      return TipBlockquoteIcon;
     case 'warning':
-      return <WarningBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
+      return WarningBlockquoteIcon;
     case 'caution':
-      return <CautionBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
+      return CautionBlockquoteIcon;
     case 'important':
-      return <ImportantBlockquoteIcon style={tw`-ml-0.5 size-4`} />;
+      return ImportantBlockquoteIcon;
     default:
       return null;
   }
