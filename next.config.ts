@@ -54,7 +54,7 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
-        source: '/icon-*.png',
+        source: '/icon-*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
