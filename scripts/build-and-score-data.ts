@@ -1,4 +1,4 @@
-import { BlobAccessError, put } from '@vercel/blob';
+﻿import { BlobAccessError, put } from '@vercel/blob';
 import { chunk } from 'es-toolkit/array';
 import fs from 'node:fs';
 
@@ -10,6 +10,7 @@ import { type DataAssetType, type LibraryDataEntryType, type LibraryType } from 
 import { createCheckEndpointBlob, fetchLatestData, readLocalDataFile } from '~/util/blob';
 import { DATA_PATH } from '~/util/Constants';
 import { isLaterThan, TimeRange } from '~/util/datetime';
+import { backfillUnpkgReadmeFile } from '~/util/scoring';
 import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
@@ -171,6 +172,15 @@ export async function buildAndScoreData() {
   data = await fetchNightlyProgramData(data);
 
   console.log('\n⚛️ Calculating Directory Score');
+  data = await Promise.all(
+    data.map(async lib => {
+      if (!lib.npm?.hasReadme && !lib.github.hasReadme) {
+        return await backfillUnpkgReadmeFile(lib);
+      }
+      return lib;
+    })
+  );
+
   data = data.map(project => {
     try {
       return calculateDirectoryScore(project);
