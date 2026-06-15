@@ -1,17 +1,12 @@
-name: '[CODE] Deploy production website'
+name: '[CODE] Refresh data and deploy production website'
 
 permissions:
   contents: read
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - .vscode
-      - '**.md'
-      - '**.yml'
-      - react-native-libraries.json
-      - react-native-libraries.schema.json
+  schedule:
+    # Run every 3 hours - https://crontab.guru/#0_*/3_*_*_*
+    - cron: '0 */3 * * *'
 
 jobs:
   build:
@@ -25,7 +20,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Deploy
         shell: bash
-        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config ./vercel-with-data-refresh.json
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}

@@ -1,3 +1,4 @@
+import { fetch } from 'bun';
 import { type Cheerio, load } from 'cheerio';
 
 import { type LibraryType } from '~/types';
