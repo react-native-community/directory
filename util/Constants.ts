@@ -3,6 +3,9 @@ import { TimeRange } from '~/util/datetime';
 
 export const NUM_PER_PAGE = 30;
 
+export const DATA_PATH = 'assets/data.json';
+export const CHECK_DATA_PATH = 'assets/check-data.json';
+
 export const EMPTY_PACKAGE_DATA = {
   props: {},
 };

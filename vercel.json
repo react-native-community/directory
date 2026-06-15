@@ -4,5 +4,11 @@
     "env": {
       "GITHUB_TOKEN": "@github_token"
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/refresh",
+      "schedule": "0 */2 * * *"
+    }
+  ]
 }
