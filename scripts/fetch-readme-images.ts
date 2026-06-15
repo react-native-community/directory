@@ -42,7 +42,7 @@ async function scrapeImagesAsync(githubUrl: string) {
   }
 }
 
-async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
+export async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
   /**
    * @DEV
    * if images been set, or max attempt count has been reached, we skip scraping images
@@ -66,5 +66,3 @@ async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
     return await fetchReadmeImages(data, attemptsCount + 1);
   }
 }
-
-export default fetchReadmeImages;

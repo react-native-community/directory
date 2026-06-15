@@ -16,7 +16,6 @@ import { isEmptyOrNull } from '~/util/strings';
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import fetchNightlyProgramData from './fetch-nightly-program-data';
-import fetchReadmeImages from './fetch-readme-images';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -133,6 +132,7 @@ export async function buildAndScoreData() {
 
   if (SCRAPE_GH_IMAGES) {
     console.log('\n📝 Scraping images from README');
+    const { fetchReadmeImages } = await import('./fetch-readme-images');
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
