@@ -1,3 +1,5 @@
+import { fetch } from 'bun';
+
 import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data';
 
 import { REQUEST_SLEEP, sleep } from './helpers';

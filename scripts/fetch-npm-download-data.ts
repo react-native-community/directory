@@ -1,3 +1,5 @@
+import { fetch } from 'bun';
+
 import { type LibraryType } from '~/types';
 
 import { REQUEST_SLEEP, sleep } from './helpers';
