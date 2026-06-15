@@ -15,7 +15,7 @@ import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import fetchNightlyProgramData from './fetch-nightly-program-data';
+import { fetchNightlyProgramData } from './fetch-nightly-program-data';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
