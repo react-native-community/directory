@@ -1,16 +1,15 @@
-import { BlobAccessError, list, put } from '@vercel/blob';
-import { fetch } from 'bun';
+import { BlobAccessError, put } from '@vercel/blob';
 import { chunk } from 'es-toolkit/array';
 import fs from 'node:fs';
-import path from 'node:path';
 
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
 import { type DataAssetType, type LibraryDataEntryType, type LibraryType } from '~/types';
+import { createCheckEndpointBlob, fetchLatestData, readLocalDataFile } from '~/util/blob';
+import { DATA_PATH } from '~/util/Constants';
 import { isLaterThan, TimeRange } from '~/util/datetime';
-import { getNewArchSupportStatus } from '~/util/newArchStatus';
 import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
@@ -25,14 +24,12 @@ const USE_DEBUG_REPOS = false;
 
 // If script should only write to the local data file and not upload to the store.
 // This is useful for debugging and testing purposes.
-const ONLY_WRITE_LOCAL_DATA_FILE = true;
+const ONLY_WRITE_LOCAL_DATA_FILE = Boolean(process.env.USE_LOCAL_DATA_FILE);
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = false;
 
 const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
-const DATA_PATH = path.resolve('assets', 'data.json');
-const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 const CHUNK_SIZE = 25;
 const NPM_STATS_CHUNK_SIZE = 10;
@@ -43,10 +40,6 @@ const mismatchedRepos: LibraryType[] = [];
 
 const wantedPackageName = process.argv[2];
 const missingOnly = process.argv.includes('--missing-only');
-
-function readLocalDataFile() {
-  return JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')) as DataAssetType;
-}
 
 function getLibraryIdentityKeys(library: Pick<LibraryDataEntryType, 'githubUrl' | 'npmPkg'>) {
   const npmPkg = library.npmPkg ?? library.githubUrl.split('/').at(-1);
@@ -97,7 +90,7 @@ function getTopicCounts(libraries: LibraryType[]) {
   }, {});
 }
 
-async function buildAndScoreData() {
+export async function buildAndScoreData() {
   console.log('🔄️️ Fetching latest data blob from the store');
 
   const localData = readLocalDataFile();
@@ -256,7 +249,7 @@ async function buildAndScoreData() {
     };
 
     fileContent = JSON.stringify(content, null, 2);
-    createCheckEndpointData(content.libraries);
+    createCheckEndpointBlob(content.libraries);
   } else if (wantedPackageName) {
     const hasEntry = libraries.some(lib => lib.npmPkg === wantedPackageName);
     const newDataEntry = data.find(entry => entry.npmPkg === wantedPackageName);
@@ -277,7 +270,7 @@ async function buildAndScoreData() {
         };
 
     fileContent = JSON.stringify(content, null, 2);
-    createCheckEndpointData(content.libraries);
+    createCheckEndpointBlob(content.libraries);
   } else {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
@@ -325,7 +318,7 @@ async function buildAndScoreData() {
       2
     );
 
-    createCheckEndpointData(finalData);
+    createCheckEndpointBlob(finalData);
   }
 
   if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
@@ -333,20 +326,6 @@ async function buildAndScoreData() {
   }
 
   fs.writeFileSync(DATA_PATH, fileContent);
-}
-
-export function createCheckEndpointData(libraries: LibraryType[]) {
-  const checkData = Object.fromEntries(
-    libraries.map(library => [
-      library.npmPkg,
-      {
-        unmaintained: library.unmaintained,
-        newArchitecture: getNewArchSupportStatus(library),
-      },
-    ])
-  );
-
-  fs.writeFileSync(CHECK_DATA_PATH, JSON.stringify(checkData, null, 2));
 }
 
 function sortTopics(topicCounts: Record<string, number>) {
@@ -455,32 +434,6 @@ async function loadRepositoryDataAsync(existingLibraries: LibraryType[]): Promis
   await loadGitHubLicenses();
 
   return await fetchGithubDataThrottled({ data, chunkSize: CHUNK_SIZE, staggerMs: SLEEP_TIME });
-}
-
-async function fetchLatestData() {
-  if (ONLY_WRITE_LOCAL_DATA_FILE) {
-    console.log('⚠️ Only writing to local data file, skipping blob store fetch');
-    return {
-      latestData: readLocalDataFile(),
-    };
-  }
-
-  const { blobs } = await list();
-
-  if (blobs?.length > 0) {
-    const sortedBlobs = blobs.sort(
-      (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
-    );
-    const response = await fetch(sortedBlobs[0].downloadUrl);
-
-    return {
-      latestData: await response.json(),
-    };
-  }
-
-  return {
-    latestData: readLocalDataFile(),
-  };
 }
 
 async function uploadToStore(fileContent: string) {

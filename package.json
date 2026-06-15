@@ -3,11 +3,12 @@
   "type": "module",
   "scripts": {
     "start": "next dev --webpack",
-    "build": "bun data:update && bun llms:generate && next build --webpack",
+    "build": "bun data:fetch && bun llms:generate && next build --webpack",
     "build:quick": "bun data:update-missing --missing-only && bun llms:generate && next build --webpack",
     "preview": "next build --webpack && next start",
     "lint": "oxlint --type-aware && oxfmt --check",
     "lint:fix": "oxlint --type-aware --fix && oxfmt",
+    "data:fetch": "bun scripts/fetch-latest-blobs",
     "data:update": "bun scripts/build-and-score-data",
     "data:update-missing": "bun scripts/build-and-score-data --missing-only",
     "data:test": "bun scripts/validate-libraries",

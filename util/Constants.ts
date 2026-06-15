@@ -1,7 +1,12 @@
+import path from 'node:path';
+
 import { type Query, type QueryOrder } from '~/types';
 import { TimeRange } from '~/util/datetime';
 
 export const NUM_PER_PAGE = 30;
+
+export const DATA_PATH = path.resolve('assets', 'data.json');
+export const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 export const EMPTY_PACKAGE_DATA = {
   props: {},
