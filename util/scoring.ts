@@ -37,7 +37,8 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
     name: 'Has a README file',
     description: 'Libraries that have a README file included meet this criterion.',
     value: 10,
-    condition: data => data.github?.hasReadme ?? data.npm?.hasReadme ?? false,
+    condition: data =>
+      data.unpkg?.hasReadme ?? data.github?.hasReadme ?? data.npm?.hasReadme ?? false,
   },
   {
     name: 'Has a description',
@@ -154,4 +155,15 @@ export function getPopularityGrade(popularity: number) {
   } else {
     return 'Declining';
   }
+}
+
+export async function backfillUnpkgReadmeFile(lib: LibraryType) {
+  const res = await fetch(
+    `https://reactnative.directory/api/proxy/unpkg?name=${lib.npmPkg}&path=README.md`
+  );
+  if (res.status === 200) {
+    lib.unpkg = { hasReadme: true };
+    return lib;
+  }
+  return lib;
 }

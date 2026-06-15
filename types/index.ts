@@ -133,6 +133,9 @@ export type LibraryType = LibraryDataEntryType & {
     latestReleaseDate?: string;
     hasReadme?: boolean;
   };
+  unpkg?: {
+    hasReadme?: boolean;
+  };
   npmPkg: string;
   score: number;
   matchingScoreModifiers: string[];
