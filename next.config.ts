@@ -50,6 +50,13 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   async headers() {
     return [
       {
+        source: '/api/libraries',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
+        ],
+      },
+      {
         source: '/fonts/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
