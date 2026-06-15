@@ -32,8 +32,26 @@ export async function GET(request: Request) {
   try {
     await buildAndScoreData();
 
+    let deployTriggered = false;
+
+    if (process.env.VERCEL_DEPLOY_HOOK_URL) {
+      const deployResponse = await fetch(process.env.VERCEL_DEPLOY_HOOK_URL, { method: 'POST' });
+
+      if (!deployResponse.ok) {
+        console.error(
+          '[cron] failed to trigger deploy hook',
+          deployResponse.status,
+          deployResponse.statusText
+        );
+      } else {
+        deployTriggered = true;
+        console.log('[cron] deploy hook triggered successfully');
+      }
+    }
+
     return NextResponse.json({
       ok: true,
+      deployTriggered,
     });
   } catch (error) {
     console.error('[cron] refresh failed', error);
