@@ -4011,8 +4011,7 @@
   {
     "githubUrl": "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap",
     "examples": [
-      "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap/example",
-      "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap/example-expo"
+      "https://github.com/hyodotdev/openiap/tree/main/libraries/react-native-iap/example"
     ],
     "ios": true,
     "android": true,
@@ -17084,7 +17083,11 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-enriched",
+    "githubUrl": "https://github.com/software-mansion/react-native-enriched-html",
+    "examples": [
+      "https://github.com/software-mansion/react-native-enriched-html/tree/main/apps/example",
+      "https://github.com/software-mansion/react-native-enriched-html/tree/main/apps/example-web"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -21111,7 +21114,7 @@
   },
   {
     "githubUrl": "https://github.com/mfairley/expo-callkit-telecom",
-    "examples": ["https://github.com/mfairley/expo-callkit-telecom/tree/HEAD/example"],
+    "examples": ["https://github.com/mfairley/expo-callkit-telecom/tree/main/example"],
     "configPlugin": true,
     "ios": true,
     "android": true
@@ -21474,5 +21477,31 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/johnmikel/zeno-mobile-runner",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/arthnex-admin/react-native-accessibility-scanner",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/rahul-jalandhra/react-native-transferkit",
+    "examples": ["https://github.com/rahul-jalandhra/react-native-transferkit/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/whereby/sdk/tree/main/packages/react-native-sdk",
+    "npmPkg": "@whereby.com/react-native-sdk",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
