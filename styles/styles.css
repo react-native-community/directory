@@ -63,6 +63,7 @@
   --warning: #fbe679;
   --warning-light: #fef7d6;
   --warning-dark: #995e00;
+  --warning-border: #995e0044;
 
   --error: #ff5555;
   --success: #4caf50;
@@ -107,6 +108,7 @@
 
   --warning: #9a720c;
   --warning-light: #2f2304;
+  --warning-border: #9a720c44;
 
   --background: #19191f;
   --border: var(--accented);

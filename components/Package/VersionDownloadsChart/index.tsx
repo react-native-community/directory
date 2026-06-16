@@ -12,11 +12,11 @@ import { formatNumberToString, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import {
-  type AggregatedChartMode,
-  type ChartData,
-  type ChartEntryKind,
-  type ChartMode,
-  type ChartSeriesByMode,
+  type VersionsAggregatedChartMode,
+  type VersionsChartData,
+  type VersionsChartEntryKind,
+  type VersionsChartMode,
+  type VersionsChartSeriesByMode,
 } from './types';
 import {
   buildBaseChartSeries,
@@ -51,7 +51,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
     () => parseChartMode(router.query[CHART_MODE_QUERY_PARAM]),
     [router.query]
   );
-  const [mode, setMode] = useState<ChartMode>(routeMode);
+  const [mode, setMode] = useState<VersionsChartMode>(routeMode);
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
 
   useEffect(() => {
@@ -59,16 +59,16 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   }, [routeMode]);
 
   const versionDistTags = useMemo(() => mapVersionDistTags(registryData), [registryData]);
-  const baseSeries = useMemo<ChartData[]>(
+  const baseSeries = useMemo<VersionsChartData[]>(
     () => buildBaseChartSeries(npmDownloads, registryData, versionDistTags),
     [npmDownloads, registryData, versionDistTags]
   );
-  const chartSeriesByMode = useMemo<ChartSeriesByMode>(
+  const chartSeriesByMode = useMemo<VersionsChartSeriesByMode>(
     () => buildChartSeriesByMode(baseSeries),
     [baseSeries]
   );
   const series = chartSeriesByMode[mode];
-  const seriesByLabel = useMemo<Record<string, ChartData>>(
+  const seriesByLabel = useMemo<Record<string, VersionsChartData>>(
     () => keyBy(series, item => item.label),
     [series]
   );
@@ -83,10 +83,10 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   }
 
   const height = Math.max(120, getLargestSeriesLength(chartSeriesByMode) * 27 + 42);
-  const maxDownloads = Math.max(...series.map((item: ChartData) => item.downloads), 0);
+  const maxDownloads = Math.max(...series.map((item: VersionsChartData) => item.downloads), 0);
   const xDomain = maxDownloads ? [0, maxDownloads + Math.max(1, maxDownloads * 0.05)] : undefined;
 
-  function handleModeChange(nextMode: ChartMode) {
+  function handleModeChange(nextMode: VersionsChartMode) {
     if (nextMode === mode) {
       return;
     }
@@ -173,9 +173,9 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
         <BarSeries
           dataKey="downloads"
           data={series}
-          xAccessor={(item: ChartData) => item.downloads}
-          yAccessor={(item: ChartData) => item.label}
-          colorAccessor={(item: ChartData) => {
+          xAccessor={(item: VersionsChartData) => item.downloads}
+          yAccessor={(item: VersionsChartData) => item.label}
+          colorAccessor={(item: VersionsChartData) => {
             const { kind, distTags } = item;
 
             if (kind === 'other') {
@@ -191,7 +191,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
           radius={3}
           radiusAll
         />
-        <Tooltip<ChartData>
+        <Tooltip<VersionsChartData>
           showVerticalCrosshair={false}
           showSeriesGlyphs={false}
           offsetLeft={8}
@@ -208,11 +208,11 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   );
 }
 
-function isAggregatedKind(kind: ChartEntryKind): kind is AggregatedChartMode {
+function isAggregatedKind(kind: VersionsChartEntryKind): kind is VersionsAggregatedChartMode {
   return kind === 'minor' || kind === 'major';
 }
 
-function renderTooltipContent(data?: ChartData) {
+function renderTooltipContent(data?: VersionsChartData) {
   if (!data) {
     return null;
   }

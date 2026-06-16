@@ -1,15 +1,15 @@
-export type ChartMode = 'version' | 'minor' | 'major';
-export type AggregatedChartMode = Exclude<ChartMode, 'version'>;
-export type ChartEntryKind = ChartMode | 'other';
+export type VersionsChartMode = 'version' | 'minor' | 'major';
+export type VersionsAggregatedChartMode = Exclude<VersionsChartMode, 'version'>;
+export type VersionsChartEntryKind = VersionsChartMode | 'other';
 
-export type ChartData = {
+export type VersionsChartData = {
   label: string;
   secondaryLabel?: string;
   downloads: number;
   publishedAt?: string;
-  kind: ChartEntryKind;
+  kind: VersionsChartEntryKind;
   distTags?: string[];
   versionCount?: number;
 };
 
-export type ChartSeriesByMode = Record<ChartMode, ChartData[]>;
+export type VersionsChartSeriesByMode = Record<VersionsChartMode, VersionsChartData[]>;
