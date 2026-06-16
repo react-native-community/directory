@@ -69,6 +69,7 @@ export default {
 
       // TODO: temporary values, replace with proper gray palette for dark mode
       dark: 'var(--dark)',
+      'warning-opaque': 'var(--warning-border)',
       secondary: 'var(--border-secondary)',
     },
     colors: {

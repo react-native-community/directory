@@ -4,14 +4,14 @@ import { Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import tw from '~/util/tailwind';
 
-import { type ChartMode } from './types';
+import { type VersionsChartMode } from './types';
 
 type Props = {
-  mode: ChartMode;
-  onModeChange: (mode: ChartMode) => void;
+  mode: VersionsChartMode;
+  onModeChange: (mode: VersionsChartMode) => void;
 };
 
-const CHART_MODES: { key: ChartMode; label: string; shortLabel: string }[] = [
+const CHART_MODES: { key: VersionsChartMode; label: string; shortLabel: string }[] = [
   { key: 'version', label: 'All versions', shortLabel: 'All' },
   { key: 'minor', label: 'By minor', shortLabel: 'Minor' },
   { key: 'major', label: 'By major', shortLabel: 'Major' },

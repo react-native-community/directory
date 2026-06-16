@@ -3,15 +3,15 @@ import { clamp, sumBy } from 'es-toolkit/math';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 
 import {
-  type AggregatedChartMode,
-  type ChartData,
-  type ChartMode,
-  type ChartSeriesByMode,
+  type VersionsAggregatedChartMode,
+  type VersionsChartData,
+  type VersionsChartMode,
+  type VersionsChartSeriesByMode,
 } from './types';
 
 export const CHART_MODE_QUERY_PARAM = 'chartMode';
 export const CHART_MODES = ['version', 'minor', 'major'] as const;
-export const DEFAULT_CHART_MODE: ChartMode = 'version';
+export const DEFAULT_CHART_MODE: VersionsChartMode = 'version';
 export const LABEL_TO_BAR_GAP = 6;
 
 const VERSIONS_LIMIT = 12;
@@ -20,8 +20,8 @@ const OTHER_VERSION_LABEL = 'Other';
 const TEXT_MEASURE_CANVAS_ID = 'measure-canvas';
 const Y_AXIS_LABEL_WIDTH_CACHE = new Map<string, number>();
 
-export function isValidChartMode(value?: string | string[]): value is ChartMode {
-  return typeof value === 'string' && CHART_MODES.includes(value as ChartMode);
+export function isValidChartMode(value?: string | string[]): value is VersionsChartMode {
+  return typeof value === 'string' && CHART_MODES.includes(value as VersionsChartMode);
 }
 
 export function parseChartMode(value?: string | string[]) {
@@ -50,7 +50,7 @@ export function buildBaseChartSeries(
     );
 }
 
-export function buildChartSeriesByMode(baseSeries: ChartData[]): ChartSeriesByMode {
+export function buildChartSeriesByMode(baseSeries: VersionsChartData[]): VersionsChartSeriesByMode {
   return {
     version: applySeriesLimit(baseSeries, VERSIONS_LIMIT),
     minor: applySeriesLimit(aggregateSeriesBySemver(baseSeries, 'minor'), VERSIONS_LIMIT),
@@ -63,7 +63,7 @@ export function createVersionChartEntry(
   downloads = 0,
   publishedAt?: string,
   distTags?: string[]
-): ChartData {
+): VersionsChartData {
   return {
     label: version,
     secondaryLabel: getSecondaryChartLabel(version, distTags),
@@ -75,11 +75,11 @@ export function createVersionChartEntry(
   };
 }
 
-export function getPrimaryChartLabel({ label, secondaryLabel }: ChartData) {
+export function getPrimaryChartLabel({ label, secondaryLabel }: VersionsChartData) {
   return secondaryLabel ? label.split('-')[0] : label;
 }
 
-export function getLargestSeriesLength(chartSeriesByMode: ChartSeriesByMode) {
+export function getLargestSeriesLength(chartSeriesByMode: VersionsChartSeriesByMode) {
   return Math.max(...Object.values(chartSeriesByMode).map(series => series.length), 0);
 }
 
@@ -101,8 +101,8 @@ function getSecondaryChartLabel(version: string, distTags?: string[]) {
   return version.split('-').slice(1).join('-');
 }
 
-function aggregateSeriesBySemver(series: ChartData[], mode: AggregatedChartMode) {
-  const groups = new Map<string, ChartData>();
+function aggregateSeriesBySemver(series: VersionsChartData[], mode: VersionsAggregatedChartMode) {
+  const groups = new Map<string, VersionsChartData>();
 
   for (const item of series) {
     const aggregateLabel = getAggregatedSemverLabel(item.label, mode);
@@ -131,7 +131,7 @@ function aggregateSeriesBySemver(series: ChartData[], mode: AggregatedChartMode)
   return [...groups.values()].sort(compareChartEntries);
 }
 
-function applySeriesLimit(series: ChartData[], limit: number) {
+function applySeriesLimit(series: VersionsChartData[], limit: number) {
   if (series.length <= limit) {
     return [...series].reverse();
   }
@@ -156,7 +156,7 @@ function applySeriesLimit(series: ChartData[], limit: number) {
   ];
 }
 
-function compareChartEntries(left: ChartData, right: ChartData) {
+function compareChartEntries(left: VersionsChartData, right: VersionsChartData) {
   return (
     right.downloads - left.downloads ||
     (right.publishedAt ?? '').localeCompare(left.publishedAt ?? '') ||
@@ -168,7 +168,7 @@ function getLatestPublishedAt(left?: string, right?: string) {
   return (right ?? '').localeCompare(left ?? '') > 0 ? right : left;
 }
 
-function getAggregatedSemverLabel(version: string, mode: AggregatedChartMode) {
+function getAggregatedSemverLabel(version: string, mode: VersionsAggregatedChartMode) {
   const match = version.match(/^(\d+)\.(\d+)\.\d+(?:[-+].*)?$/);
 
   if (!match) {
@@ -178,7 +178,7 @@ function getAggregatedSemverLabel(version: string, mode: AggregatedChartMode) {
   return mode === 'major' ? `${match[1]}.x` : `${match[1]}.${match[2]}.x`;
 }
 
-export function getChartLeftMargin(series: ChartData[]) {
+export function getChartLeftMargin(series: VersionsChartData[]) {
   const widestLabel = Math.max(
     ...series.map(item =>
       Math.max(

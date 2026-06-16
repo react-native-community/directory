@@ -9,6 +9,7 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import VersionBox from '~/components/Package/VersionBox';
+import { VersionSizeIncreasedBanner } from '~/components/Package/VersionSizeIncreasedBanner';
 import VersionsSection from '~/components/Package/VersionsSection';
 import PageMeta from '~/components/PageMeta';
 import { type PackageVersionsPageProps } from '~/types/pages';
@@ -66,6 +67,7 @@ export default function PackageVersionsScene({
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} skipDescription />
+          <VersionSizeIncreasedBanner data={registryData} />
           {hasVersionDownloads && npmDownloads ? (
             <>
               <View style={tw`mt-3 gap-1`}>
