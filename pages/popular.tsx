@@ -26,6 +26,7 @@ PopularPage.getInitialProps = async (ctx: NextPageContext) => {
     windowsResponse,
     expoGoResponse,
     fireosResponse,
+    harmonyResponse,
     horizonResponse,
     vegaosResponse,
   ] = await Promise.all([
@@ -39,25 +40,40 @@ PopularPage.getInitialProps = async (ctx: NextPageContext) => {
     ssrFetch('/libraries', { ...DEFAULT_QUERY, windows: 'true' }, ctx),
     ssrFetch('/libraries', { ...DEFAULT_QUERY, expoGo: 'true' }, ctx),
     ssrFetch('/libraries', { ...DEFAULT_QUERY, fireos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, harmony: 'true' }, ctx),
     ssrFetch('/libraries', { ...DEFAULT_QUERY, horizon: 'true' }, ctx),
     ssrFetch('/libraries', { ...DEFAULT_QUERY, vegaos: 'true' }, ctx),
   ]);
 
-  const [core, android, ios, web, macos, tvos, visionos, windows, expoGo, fireos, horizon, vegaos] =
-    await Promise.all([
-      coreResponse.json(),
-      androidResponse.json(),
-      iosResponse.json(),
-      webResponse.json(),
-      macosResponse.json(),
-      tvosResponse.json(),
-      visionosResponse.json(),
-      windowsResponse.json(),
-      expoGoResponse.json(),
-      fireosResponse.json(),
-      horizonResponse.json(),
-      vegaosResponse.json(),
-    ]);
+  const [
+    core,
+    android,
+    ios,
+    web,
+    macos,
+    tvos,
+    visionos,
+    windows,
+    expoGo,
+    fireos,
+    harmony,
+    horizon,
+    vegaos,
+  ] = await Promise.all([
+    coreResponse.json(),
+    androidResponse.json(),
+    iosResponse.json(),
+    webResponse.json(),
+    macosResponse.json(),
+    tvosResponse.json(),
+    visionosResponse.json(),
+    windowsResponse.json(),
+    expoGoResponse.json(),
+    fireosResponse.json(),
+    harmonyResponse.json(),
+    horizonResponse.json(),
+    vegaosResponse.json(),
+  ]);
 
   return {
     core,
@@ -70,6 +86,7 @@ PopularPage.getInitialProps = async (ctx: NextPageContext) => {
     windows,
     expoGo,
     fireos,
+    harmony,
     horizon,
     vegaos,
   };

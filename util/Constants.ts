@@ -19,6 +19,7 @@ export const VALID_ENTRY_KEYS = new Set([
   'windows',
   'macos',
   'fireos',
+  'harmony',
   'horizon',
   'tvos',
   'visionos',

@@ -709,7 +709,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-snap-carousel"
   },
   {
     "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
@@ -798,7 +799,8 @@
   {
     "githubUrl": "https://github.com/chirag04/react-native-mail",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-oh-tpl/react-native-mail"
   },
   {
     "githubUrl": "https://github.com/cnjon/react-native-pdf-view",
@@ -2413,7 +2415,8 @@
     "githubUrl": "https://github.com/doomsower/react-native-modal-popover",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-ohos/react-native-modal-popover"
   },
   {
     "githubUrl": "https://github.com/doomsower/react-native-vkontakte-login",
@@ -2434,16 +2437,17 @@
   },
   {
     "githubUrl": "https://github.com/gusgard/react-native-swiper-flatlist",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "web": true,
     "examples": [
       "https://snack.expo.dev/@gusgard/react-native-swiper-flatlist",
       "https://snack.expo.dev/@gusgard/react-native-swiper-flatlist-show-next-screen",
       "https://snack.expo.dev/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data",
       "https://snack.expo.dev/@gusgard/react-native-swiper-flatlist-simple-with-children"
-    ]
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "web": true,
+    "harmony": "@react-native-ohos/react-native-swiper-flatlist"
   },
   {
     "githubUrl": "https://github.com/gusgard/react-native-grid-list",
@@ -3401,6 +3405,7 @@
   },
   {
     "githubUrl": "https://github.com/react-native-segmented-control/segmented-control",
+    "npmPkg": "@react-native-segmented-control/segmented-control",
     "images": [
       "https://user-images.githubusercontent.com/6936373/71608757-dc6ef680-2bc6-11ea-85be-aa31f25ecf36.png",
       "https://user-images.githubusercontent.com/6936373/79550655-9edd9d00-80d3-11ea-98bf-8b7c0b0798d3.png",
@@ -3410,7 +3415,7 @@
     "android": true,
     "expoGo": true,
     "web": true,
-    "npmPkg": "@react-native-segmented-control/segmented-control",
+    "harmony": "@react-native-oh-tpl/segmented-control",
     "newArchitecture": true
   },
   {
@@ -4272,6 +4277,7 @@
     "githubUrl": "https://github.com/mpiannucci/react-native-context-menu-view",
     "ios": true,
     "android": true,
+    "harmony": "@react-native-oh-tpl/react-native-context-menu-view",
     "newArchitecture": true
   },
   {
@@ -5014,7 +5020,8 @@
     "npmPkg": "react-native-sticky-parallax-header",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-sticky-parallax-header"
   },
   {
     "githubUrl": "https://github.com/brunohkbx/react-native-material-backdrop-modal",
@@ -5577,7 +5584,8 @@
       "https://github.com/pradeep1991singh/react-native-secure-key-store/tree/master/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-secure-key-store"
   },
   {
     "githubUrl": "https://github.com/rnmapbox/maps",
@@ -5599,7 +5607,8 @@
     "examples": ["https://github.com/tomekvenits/react-native-map-clustering/tree/master/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-map-clustering"
   },
   {
     "githubUrl": "https://github.com/revtel/react-native-nfc-manager",
@@ -5772,7 +5781,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-ohos/react-native-scroll-bottom-sheet"
   },
   {
     "githubUrl": "https://github.com/RafaelAugustoS/react-native-popup-ui",
@@ -6552,7 +6562,8 @@
     "githubUrl": "https://github.com/flyskywhy/react-native-gcanvas",
     "npmPkg": "@flyskywhy/react-native-gcanvas",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-gcanvas"
   },
   {
     "githubUrl": "https://github.com/microsoft/react-native-xaml/tree/main/package",
@@ -7049,7 +7060,8 @@
   {
     "githubUrl": "https://github.com/emilioicai/react-native-safe-modules",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-safe-modules"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-status-bar",
@@ -7389,7 +7401,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-ohos/rn-emoji-keyboard"
   },
   {
     "githubUrl": "https://github.com/emeraldsanto/react-native-encrypted-storage",
@@ -7950,7 +7963,8 @@
     "examples": ["https://github.com/craftzdog/react-native-quick-base64/tree/master/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "harmony": "@react-native-oh-tpl/react-native-quick-base64"
   },
   {
     "githubUrl": "https://github.com/getbouncer/react-native-cardscan",
@@ -8572,7 +8586,8 @@
     "ios": true,
     "android": true,
     "fireos": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-keyboard-controller"
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-websql",
@@ -8994,7 +9009,8 @@
   {
     "githubUrl": "https://github.com/kenjdavidson/react-native-bluetooth-classic",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-bluetooth-classic"
   },
   {
     "githubUrl": "https://github.com/XHMM/react-native-cloud-store",
@@ -11469,6 +11485,7 @@
     "examples": ["https://github.com/rive-app/rive-react-native/tree/main/example"],
     "android": true,
     "ios": true,
+    "harmony": "@react-native-ohos/rive-react-native",
     "newArchitecture": true,
     "newArchitectureNote": "Currently supported through the new renderer interop layer."
   },
@@ -20255,6 +20272,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "harmony": "@react-native-oh-tpl/react-native-drax",
     "newArchitecture": true
   },
   {
@@ -21056,7 +21074,8 @@
       "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/pull-to-refresh/docs/assets/shared.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/pull-to-refresh"
   },
   {
     "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/overlay",
@@ -21503,5 +21522,53 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/little-snow-fox/react-native-wechat-lib",
+    "examples": ["https://github.com/little-snow-fox/react-native-wechat-lib/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-wechat-lib"
+  },
+  {
+    "githubUrl": "https://github.com/mmazzarolo/react-native-dialog",
+    "examples": ["https://github.com/mmazzarolo/react-native-dialog/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-dialog"
+  },
+  {
+    "githubUrl": "https://github.com/mattermost/react-native-turbo-log",
+    "npmPkg": "@mattermost/react-native-turbo-log",
+    "examples": ["https://github.com/mattermost/react-native-turbo-log/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-turbo-log"
+  },
+  {
+    "githubUrl": "https://github.com/RoJoHub/react-native-ping",
+    "examples": ["https://github.com/RoJoHub/react-native-ping/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-ping"
+  },
+  {
+    "githubUrl": "https://github.com/chlee1001/react-native-iphone-screen-helper",
+    "ios": true,
+    "harmony": "@react-native-oh-tpl/react-native-iphone-screen-helper"
+  },
+  {
+    "githubUrl": "https://github.com/johnsonsu/react-native-sound-player",
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-oh-tpl/react-native-sound-player",
+    "unmaintained": true,
+    "alternatives": ["react-native-track-player"]
+  },
+  {
+    "githubUrl": "https://github.com/N0ku/react-native-nitro-healthkit",
+    "examples": ["https://github.com/N0ku/react-native-nitro-healthkit/tree/main/example/my-app"],
+    "ios": true,
+    "android": true
   }
 ]

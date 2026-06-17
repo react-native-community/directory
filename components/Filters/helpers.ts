@@ -87,6 +87,10 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
     title: 'Works with Fire OS',
   },
   {
+    param: 'harmony',
+    title: 'Works with HarmonyOS',
+  },
+  {
     param: 'horizon',
     title: 'Works with Meta Horizon OS',
   },

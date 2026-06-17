@@ -32,6 +32,7 @@ export type PopularPageProps = {
   windows: APIResponseType;
   expoGo: APIResponseType;
   fireos: APIResponseType;
+  harmony: APIResponseType;
   horizon: APIResponseType;
   vegaos: APIResponseType;
 };
