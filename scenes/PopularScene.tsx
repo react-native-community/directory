@@ -63,8 +63,12 @@ export default function PopularScene({
         <ExploreSection title="Windows" icon={PlatformWindows} data={windows.libraries} />
         <ExploreSection title="Expo Go" icon={PlatformExpo} data={expoGo.libraries} />
         <ExploreSection title="Fire OS" data={fireos.libraries} />
-        <ExploreSection title="HarmonyOS" data={harmony.libraries} />
-        <ExploreSection title="Meta Horizon OS" data={horizon.libraries} />
+        {harmony.libraries.length >= 2 && (
+          <ExploreSection title="HarmonyOS" data={harmony.libraries} />
+        )}
+        {horizon.libraries.length >= 2 && (
+          <ExploreSection title="Meta Horizon OS" data={horizon.libraries} />
+        )}
         <ExploreSection title="Vega OS" data={vegaos.libraries} />
       </ContentContainer>
     </>
