@@ -77,6 +77,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       macos: parsedQuery.macos,
       expoGo: parsedQuery.expoGo,
       fireos: parsedQuery.fireos,
+      harmony: parsedQuery.harmony,
       horizon: parsedQuery.horizon,
       tvos: parsedQuery.tvos,
       visionos: parsedQuery.visionos,

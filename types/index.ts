@@ -30,6 +30,7 @@ export type Query = {
   visionos?: string;
   vegaos?: string;
   horizon?: string;
+  harmony?: string;
   web?: string;
   windows?: string;
   order?: QueryOrder;
@@ -154,6 +155,7 @@ export type LibraryDataEntryType = {
   windows?: boolean;
   macos?: boolean;
   fireos?: boolean;
+  harmony?: boolean | string;
   horizon?: boolean;
   tvos?: boolean;
   visionos?: boolean;
@@ -245,6 +247,7 @@ export type StatisticResultType = {
   windows: number;
   macos: number;
   fireos: number;
+  harmony: number;
   horizon: number;
   tvos: number;
   visionos: number;

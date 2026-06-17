@@ -69,6 +69,13 @@
         "title": "Package is compatible with Amazon Fire OS",
         "default": false
       },
+      "harmony": {
+        "$id": "#/items/properties/harmony",
+        "type": ["boolean", "string"],
+        "title": "Package is compatible with HarmonyOS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
+        "default": false,
+        "examples": [true, "@react-native-ohos/react-native-wechat-lib"]
+      },
       "horizon": {
         "$id": "#/items/properties/horizon",
         "type": "boolean",

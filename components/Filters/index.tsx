@@ -12,7 +12,6 @@ import {
   FILTER_PLATFORMS,
   FILTER_REQUIRES_MAIN_SEARCH,
   FILTER_STATUS,
-  FILTER_TYPE,
 } from './helpers';
 import { ToggleLink } from './ToggleLink';
 
@@ -80,16 +79,6 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
               filterParam={compatibility}
               basePath={basePath}
               allowFalse
-            />
-          ))}
-        </FiltersSection>
-        <FiltersSection title="Type">
-          {FILTER_TYPE.map(entryType => (
-            <ToggleLink
-              key={entryType.param}
-              query={pageQuery}
-              filterParam={entryType}
-              basePath={basePath}
             />
           ))}
         </FiltersSection>

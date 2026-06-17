@@ -47,7 +47,11 @@ export default function CompatibilityTags({ library, small }: Props) {
         />
       ))}
       {!(small && isSmallScreen) &&
-        (library.expoGo ?? library.fireos ?? library.vegaos ?? library.horizon) && (
+        (library.expoGo ??
+          library.fireos ??
+          library.vegaos ??
+          library.horizon ??
+          library.harmony) && (
           <Tooltip
             side="bottom"
             trigger={
@@ -64,6 +68,20 @@ export default function CompatibilityTags({ library, small }: Props) {
               {library.expoGo && <li>Works with Expo Go</li>}
               {library.fireos && <li>Works with Fire OS</li>}
               {library.horizon && <li>Works with Meta Horizon OS</li>}
+              {library.harmony && typeof library.harmony === 'boolean' && (
+                <li>Works with HarmonyOS</li>
+              )}
+              {library.harmony && typeof library.harmony === 'string' && (
+                <li>
+                  Works with HarmonyOS
+                  <br />
+                  <A
+                    href={`https://www.npmjs.com/package/${library.harmony}`}
+                    style={tw`text-xs font-light text-white`}>
+                    (via dedicated support package)
+                  </A>
+                </li>
+              )}
               {library.vegaos && typeof library.vegaos === 'boolean' && <li>Works with Vega OS</li>}
               {library.vegaos && typeof library.vegaos === 'string' && (
                 <li>

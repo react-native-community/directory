@@ -24,6 +24,7 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     windows: 0,
     macos: 0,
     fireos: 0,
+    harmony: 0,
     horizon: 0,
     tvos: 0,
     visionos: 0,
@@ -97,6 +98,10 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.fireos) {
       result.fireos++;
+    }
+
+    if (library.harmony) {
+      result.harmony++;
     }
 
     if (library.horizon) {
