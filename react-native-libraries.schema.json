@@ -70,7 +70,7 @@
         "default": false
       },
       "harmony": {
-        "$id": "#/items/properties/vegaos",
+        "$id": "#/items/properties/harmony",
         "type": ["boolean", "string"],
         "title": "Package is compatible with HarmonyOS. Can be a boolean, or string containing the dedicated package package name from npm registry.",
         "default": false,
