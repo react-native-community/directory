@@ -757,6 +757,7 @@
     "windows": true,
     "fireos": true,
     "vegaos": "react-native-video-vega",
+    "harmony": "@react-native-ohos/react-native-video",
     "visionos": true,
     "tvos": true,
     "newArchitecture": true,
@@ -1723,7 +1724,8 @@
   {
     "githubUrl": "https://github.com/cwilsn/react-native-network-info",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-network-info"
   },
   {
     "githubUrl": "https://github.com/tradle/rn-nodeify",
@@ -2551,7 +2553,8 @@
     ],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "harmony": "@react-native-oh-tpl/react-native-date-picker"
   },
   {
     "githubUrl": "https://github.com/FriendsOfReact/react-native-gradients",
@@ -3619,7 +3622,8 @@
     "tvos": true,
     "fireos": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-ohos/react-native-safe-area-context"
   },
   {
     "githubUrl": "https://github.com/software-mansion/react-native-screens",
@@ -3656,7 +3660,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "harmony": "@react-native-ohos/react-native-pager-view"
   },
   {
     "githubUrl": "https://github.com/react-native-netinfo/react-native-netinfo",
@@ -4029,6 +4034,7 @@
     "fireos": true,
     "visionos": true,
     "vegaos": "@amazon-devices/react-native-svg",
+    "harmony": "@react-native-ohos/react-native-svg",
     "newArchitecture": true
   },
   {
@@ -4088,6 +4094,7 @@
     "android": true,
     "fireos": true,
     "vegaos": "@amazon-devices/react-native-fast-image",
+    "harmony": "@react-native-ohos/react-native-fast-image",
     "newArchitecture": false,
     "unmaintained": true,
     "alternatives": ["expo-image"]
@@ -4270,7 +4277,8 @@
     ],
     "ios": true,
     "android": true,
-    "npmPkg": "@react-native-community/audio-toolkit"
+    "npmPkg": "@react-native-community/audio-toolkit",
+    "harmony": "@react-native-ohos/audio-toolkit"
   },
   {
     "githubUrl": "https://github.com/rnc-archive/react-native-translucent-modal",
@@ -4349,7 +4357,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-autoheight-webview"
   },
   {
     "githubUrl": "https://github.com/ak1394/react-native-tts",
@@ -4680,7 +4689,8 @@
     "githubUrl": "https://github.com/mkuczera/react-native-haptic-feedback",
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "harmony": "@react-native-ohos/react-native-haptic-feedback"
   },
   {
     "githubUrl": "https://github.com/tschoffelen/react-native-map-link",
@@ -4840,7 +4850,8 @@
     ],
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "harmony": "@react-native-ohos/react-native-file-viewer"
   },
   {
     "githubUrl": "https://github.com/heyman333/react-native-responsive-fontsize",
@@ -4877,12 +4888,6 @@
     "npmPkg": "react-native-ux-cam",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/quipper/react-native-td",
-    "ios": true,
-    "android": true,
-    "unmaintained": true
   },
   {
     "githubUrl": "https://github.com/flurry/react-native-flurry-sdk",
@@ -5210,7 +5215,8 @@
     "githubUrl": "https://github.com/tradle/react-native-udp",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-ohos/react-native-udp"
   },
   {
     "githubUrl": "https://github.com/rainbow-me/react-native-shadow-stack",
@@ -6485,7 +6491,8 @@
     ],
     "ios": true,
     "android": true,
-    "macos": true
+    "macos": true,
+    "harmony": "@react-native-ohos/react-native-file-access"
   },
   {
     "githubUrl": "https://github.com/christopherdro/react-native-print",
@@ -6678,7 +6685,8 @@
     ],
     "ios": true,
     "android": true,
-    "macos": true
+    "macos": true,
+    "harmony": "@react-native-ohos/react-native-tcp-socket"
   },
   {
     "githubUrl": "https://github.com/deanhet/react-native-text-ticker",
@@ -7379,7 +7387,8 @@
     "web": true,
     "macos": true,
     "fireos": true,
-    "visionos": true
+    "visionos": true,
+    "harmony": "@react-native-oh-tpl/react-native-gesture-handler"
   },
   {
     "githubUrl": "https://github.com/react-native-toolkit/react-native-responsive-dimensions",
@@ -7464,7 +7473,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-image-viewing"
   },
   {
     "githubUrl": "https://github.com/flipkart-incubator/animation-wrapper-view",
@@ -7895,7 +7905,8 @@
       "https://raw.githubusercontent.com/rumax/react-native-PDFView/master/demo/res/android_pdf.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-view-pdf"
   },
   {
     "githubUrl": "https://github.com/rumax/react-native-PixelsCatcher",
@@ -8771,7 +8782,8 @@
     ],
     "android": true,
     "ios": true,
-    "expoGo": true
+    "expoGo": true,
+    "harmony": "@react-native-oh-tpl/react-native-gifted-charts"
   },
   {
     "githubUrl": "https://github.com/gomes042/rxn-input",
@@ -9574,7 +9586,8 @@
   {
     "githubUrl": "https://github.com/killserver/react-native-screenshot-prevent",
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-screenshot-prevent"
   },
   {
     "githubUrl": "https://github.com/andresribeiro/react-native-hyperlinks",
@@ -9978,7 +9991,8 @@
     "examples": ["https://github.com/vonovak/react-native-theme-control/tree/main/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "harmony": "@react-native-ohos/react-native-theme-control"
   },
   {
     "githubUrl": "https://github.com/movio/react-native-rsa-signer",
@@ -10020,7 +10034,8 @@
     "examples": ["https://github.com/numandev1/react-native-keys/tree/master/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "harmony": "@react-native-ohos/react-native-keys"
   },
   {
     "githubUrl": "https://github.com/Sharcoux/slider",
@@ -15818,7 +15833,8 @@
     "githubUrl": "https://github.com/wumke/react-native-exit-app",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "harmony": "@react-native-ohos/react-native-exit-app"
   },
   {
     "githubUrl": "https://github.com/dev-family/react-native-device-country",
@@ -19212,7 +19228,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/software-mansion/react-native-enriched-markdown",
+    "githubUrl": "https://github.com/software-mansion/react-native-enriched-markdown/tree/main/packages/react-native-enriched-markdown",
     "ios": true,
     "android": true,
     "macos": true,
@@ -21135,7 +21151,8 @@
       "https://raw.githubusercontent.com/sdcxtech/react-native-troika/master/packages/nested-scroll/docs/assets/parallax.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "harmony": "@react-native-oh-tpl/react-native-nested-scroll"
   },
   {
     "githubUrl": "https://github.com/listenzz/react-native-troika/tree/master/packages/keyboard-insets",
@@ -21617,9 +21634,16 @@
   },
   {
     "githubUrl": "https://github.com/TencentCloud/cos-sdk-react-native-plugin",
+    "npmPkg": "react-native-cos-sdk",
     "examples": ["https://github.com/TencentCloud/cos-sdk-react-native-plugin/tree/main/example"],
     "ios": true,
     "android": true,
     "harmony": "@react-native-ohos/react-native-cos-sdk"
+  },
+  {
+    "githubUrl": "https://github.com/deepanrajkumar/react-native-qr-decode-image-camera",
+    "ios": true,
+    "android": true,
+    "harmony": "@react-native-ohos/react-native-qr-decode-image-camera"
   }
 ]
