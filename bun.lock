@@ -60,7 +60,7 @@
         "oxfmt": "^0.55.0",
         "oxlint": "^1.70.0",
         "oxlint-tsgolint": "^0.23.0",
-        "simple-git-hooks": "^2.13.1",
+        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^6.0.3",
         "user-agent-data-types": "^0.4.3",
       },
@@ -1842,7 +1842,7 @@
 
     "signal-polyfill": ["signal-polyfill@0.2.2", "", {}, "sha512-p63Y4Er5/eMQ9RHg0M0Y64NlsQKpiu6MDdhBXpyywRuWiPywhJTpKJ1iB5K2hJEbFZ0BnDS7ZkJ+0AfTuL37Rg=="],
 
-    "simple-git-hooks": ["simple-git-hooks@2.13.1", "", { "bin": { "simple-git-hooks": "cli.js" } }, "sha512-WszCLXwT4h2k1ufIXAgsbiTOazqqevFCIncOuUBZJ91DdvWcC5+OFkluWRQPrcuSYd8fjq+o2y1QfWqYMoAToQ=="],
+    "simple-git-hooks": ["simple-git-hooks@github:toplenboren/simple-git-hooks#7625657", { "bin": "./cli.js" }, "toplenboren-simple-git-hooks-7625657", "sha512-ieh9K+1lhMSWZ4SsWAwosNmWjSyU5jafOkodU7GkGPm5nnnbIxFDAfzR9BEHBAqrnnJwrNGMTeHHsRTyi3WbhA=="],
 
     "simple-plist": ["simple-plist@1.3.1", "", { "dependencies": { "bplist-creator": "0.1.0", "bplist-parser": "0.3.1", "plist": "^3.0.5" } }, "sha512-iMSw5i0XseMnrhtIzRb7XpQEXepa9xhWxGUojHBL43SIpQuDQkh3Wpy67ZbDzZVr6EKxvwVChnVpdl8hEVLDiw=="],
 

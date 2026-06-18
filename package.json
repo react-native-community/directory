@@ -83,7 +83,7 @@
     "oxfmt": "^0.55.0",
     "oxlint": "^1.70.0",
     "oxlint-tsgolint": "^0.23.0",
-    "simple-git-hooks": "^2.13.1",
+    "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
     "typescript": "^6.0.3",
     "user-agent-data-types": "^0.4.3"
   },
