@@ -1,5 +1,8 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "start": "next dev --webpack",

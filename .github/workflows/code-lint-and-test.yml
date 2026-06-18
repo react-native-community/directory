@@ -9,6 +9,7 @@ on:
     branches: [main]
   pull_request:
     paths-ignore:
+      - packages
       - react-native-libraries.json
 
 jobs:

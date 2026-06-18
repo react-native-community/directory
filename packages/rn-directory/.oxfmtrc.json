@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "trailingComma": "es5",
+  "arrowParens": "avoid",
+  "sortPackageJson": false,
+  "sortImports": {
+    "groups": [["side_effect"], ["builtin", "external"], ["internal"], ["parent"], ["sibling"], ["index"]]
+  }
+}

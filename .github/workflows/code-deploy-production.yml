@@ -10,6 +10,7 @@ on:
       - .vscode
       - '**.md'
       - '**.yml'
+      - packages
       - react-native-libraries.json
       - react-native-libraries.schema.json
 
