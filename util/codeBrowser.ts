@@ -43,6 +43,7 @@ export const FILE_WARNINGS = [
     fileNames: [
       '*.iml',
       '*.keystore',
+      '_config.yml',
       '.all-contributorsrc',
       '.babelrc',
       '.buckconfig',
@@ -57,6 +58,7 @@ export const FILE_WARNINGS = [
       '.prettierrc',
       '.project',
       '.prototools',
+      '.releaserc.json',
       '.release-please-manifest.json',
       '.swiftformat',
       '.swiftlint.yml',
@@ -79,6 +81,7 @@ export const FILE_WARNINGS = [
       '*prettierrc.js',
       'proguard-rules.pro',
       'react-native.config.*js',
+      'renovate.json',
       'rollup.config.js',
       'settings.gradle',
       'spotless.gradle',
@@ -100,7 +103,15 @@ export const FILE_WARNINGS = [
 export const DIRECTORY_WARNINGS = [
   {
     message: 'This directory should not be part of the bundle and can be safely ignored.',
-    fileNames: ['.github', '__tests__', '__mocks__', 'coverage'],
+    fileNames: [
+      '.github',
+      '.github/workflows',
+      '.gradle',
+      '.idea',
+      '__tests__',
+      '__mocks__',
+      'coverage',
+    ],
   },
 ];
 

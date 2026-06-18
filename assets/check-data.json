@@ -8451,5 +8451,67 @@
   },
   "@ebrimasamba/react-native-prompt": {
     "newArchitecture": "supported"
+  },
+  "react-native-enriched-html": {
+    "newArchitecture": "supported"
+  },
+  "@gabriel-sisjr/react-native-background-location": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-data-scanner": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-livechart": {
+    "newArchitecture": "untested"
+  },
+  "react-native-image-stitcher": {
+    "newArchitecture": "untested"
+  },
+  "react-native-peer": {
+    "newArchitecture": "supported"
+  },
+  "react-native-halo-menu": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-smart-grid": {
+    "newArchitecture": "supported"
+  },
+  "zeno-mobile-runner": {
+    "newArchitecture": "untested"
+  },
+  "react-native-accessibility-scanner": {
+    "newArchitecture": "untested"
+  },
+  "react-native-transferkit": {
+    "newArchitecture": "supported"
+  },
+  "@whereby.com/react-native-sdk": {
+    "newArchitecture": "supported"
+  },
+  "react-native-wechat-lib": {
+    "newArchitecture": "untested"
+  },
+  "react-native-dialog": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "@mattermost/react-native-turbo-log": {
+    "newArchitecture": "supported"
+  },
+  "react-native-ping": {
+    "newArchitecture": "untested"
+  },
+  "react-native-iphone-screen-helper": {
+    "newArchitecture": "untested"
+  },
+  "react-native-sound-player": {
+    "unmaintained": true,
+    "newArchitecture": "untested"
+  },
+  "react-native-nitro-healthkit": {
+    "newArchitecture": "untested"
+  },
+  "cos-sdk-react-native-plugin": {
+    "newArchitecture": "supported"
   }
 }
