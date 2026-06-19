@@ -140,7 +140,8 @@
     "githubUrl": "https://github.com/kristerkari/pinar",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-google-photos",
@@ -229,7 +230,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/prscX/react-native-siri-wave-view",
@@ -317,7 +319,8 @@
     "githubUrl": "https://github.com/vonovak/react-native-bottom-toolbar",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/vonovak/react-navigation-props-mapper",
@@ -854,7 +857,8 @@
     "githubUrl": "https://github.com/wix-incubator/react-native-autogrow-textinput",
     "ios": true,
     "android": true,
-    "alternatives": ["react-native-ui-lib"]
+    "alternatives": ["react-native-ui-lib"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jeanpan/react-native-camera-roll-picker",
@@ -948,7 +952,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "examples": ["https://snack.expo.dev/SkRP2Ehrb"]
+    "examples": ["https://snack.expo.dev/SkRP2Ehrb"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/obipawan/react-native-hyperlink",
@@ -1068,7 +1073,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "examples": ["https://snack.expo.dev/rJpy3w3S-"]
+    "examples": ["https://snack.expo.dev/rJpy3w3S-"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/xgfe/react-native-datepicker",
@@ -1130,7 +1136,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "examples": ["https://snack.expo.dev/rkjmEd3rZ"]
+    "examples": ["https://snack.expo.dev/rkjmEd3rZ"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-form",
@@ -1293,7 +1300,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/aksonov/react-native-tabs",
@@ -1387,7 +1395,8 @@
     "githubUrl": "https://github.com/larsvinter/react-native-awesome-button",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/vault-development/react-native-svg-uri",
@@ -3341,7 +3350,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/infinitered/ignite",
@@ -3451,7 +3461,8 @@
     "examples": ["https://github.com/phamfoo/react-native-animated-spinkit/tree/master/example"],
     "images": [
       "https://raw.githubusercontent.com/phamfoo/react-native-animated-spinkit/master/demo.gif"
-    ]
+    ],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-webview/react-native-webview",
@@ -5615,7 +5626,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/pradeep1991singh/react-native-secure-key-store",
@@ -5830,7 +5842,8 @@
     "examples": ["https://github.com/RafaelAugustoS/react-native-popup-ui/tree/master/examples"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kuraydev/react-native-header-view",
@@ -5964,7 +5977,8 @@
       "https://github.com/kuraydev/react-native-apple-card-views/raw/master/assets/Screenshots/RN-Apple-Card-Views.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-apple-authentication",
@@ -6081,7 +6095,8 @@
       "https://raw.githubusercontent.com/kuraydev/react-native-bouncy-checkbox/master/assets/Screenshots/react-native-bouncy-checkbox.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gorhom/react-native-bottom-sheet",
@@ -6252,7 +6267,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/khalisafkari/react-native-sdkx",
@@ -6440,7 +6456,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-popover",
@@ -6649,7 +6666,8 @@
       "https://github.com/GetStream/react-native-bidirectional-infinite-scroll/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-mmkv/tree/main/packages/react-native-mmkv",
@@ -6740,7 +6758,8 @@
       "https://raw.githubusercontent.com/mateosilguero/consistencss/master/website/static/img/logo.png"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/DieTime/react-native-date-picker",
@@ -7156,7 +7175,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kadiraydinli/react-native-system-navigation-bar",
@@ -7643,7 +7663,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/hudl/react-native-system-bars",
@@ -7848,7 +7869,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/esthor/react-native-swipeable-list",
@@ -8542,7 +8564,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jkdrangel/react-native-switch-selector",
@@ -9358,7 +9381,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/thomas-coldwell/expo-image-editor",
@@ -9497,7 +9521,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/yuvraj24/react-native-stories-view",
@@ -9869,7 +9894,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jgillick/react-fancy-qrcode",
@@ -9885,7 +9911,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mutualmobile/react-native-barricade",
@@ -9914,7 +9941,8 @@
   {
     "githubUrl": "https://github.com/AtharvaDeolalikar/react-native-animated-bottom-drawer",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jpudysz/react-native-is-maestro",
@@ -12643,7 +12671,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation",
@@ -12826,7 +12855,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/talsec/Free-RASP-ReactNative",
@@ -14765,7 +14795,8 @@
     "githubUrl": "https://github.com/getsettalk/react-native-advanced-checkbox",
     "android": true,
     "ios": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mahdidavoodi7/bottom-sheet-stepper",
