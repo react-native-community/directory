@@ -632,7 +632,8 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
-    "examples": ["https://icons.expo.fyi"]
+    "examples": ["https://icons.expo.fyi"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/idibidiart/react-native-responsive-grid",
@@ -4010,7 +4011,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/software-mansion/react-native-svg",
@@ -4347,7 +4350,9 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
-    "npmPkg": "@fortawesome/react-native-fontawesome"
+    "npmPkg": "@fortawesome/react-native-fontawesome",
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/iou90/react-native-autoheight-webview",
@@ -8783,7 +8788,9 @@
     "android": true,
     "ios": true,
     "expoGo": true,
-    "harmony": "@react-native-oh-tpl/react-native-gifted-charts"
+    "harmony": "@react-native-oh-tpl/react-native-gifted-charts",
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gomes042/rxn-input",
@@ -10783,7 +10790,9 @@
   {
     "githubUrl": "https://github.com/ecklf/react-native-heroicons",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/unimonkiez/react-native-asset",
@@ -11607,7 +11616,8 @@
     "android": true,
     "ios": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/maitrungduc1410/react-native-loader-kit",
@@ -11708,7 +11718,8 @@
     "web": true,
     "expoGo": true,
     "tvos": true,
-    "vegaos": "@amazon-devices/react-navigation__material-top-tabs"
+    "vegaos": "@amazon-devices/react-navigation__material-top-tabs",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/drawer",
@@ -11719,7 +11730,8 @@
     "expoGo": true,
     "tvos": true,
     "vegaos": "@amazon-devices/react-navigation__drawer",
-    "harmony": "@react-native-ohos/drawer"
+    "harmony": "@react-native-ohos/drawer",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/native-stack",
@@ -11776,7 +11788,8 @@
     "tvos": true,
     "visionos": true,
     "windows": true,
-    "vegaos": "@amazon-devices/react-navigation__routers"
+    "vegaos": "@amazon-devices/react-navigation__routers",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/react-navigation/tree/main/packages/devtools",
@@ -11789,7 +11802,8 @@
     "visionos": true,
     "windows": true,
     "dev": true,
-    "vegaos": "@amazon-devices/react-navigation__devtools"
+    "vegaos": "@amazon-devices/react-navigation__devtools",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/supabase/supabase-js/tree/master/packages/core/supabase-js",
@@ -13752,7 +13766,9 @@
   {
     "githubUrl": "https://github.com/indiespirit/react-native-chart-kit",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/installations",
@@ -13846,7 +13862,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-brands-svg-icons",
@@ -13854,7 +13872,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-regular-svg-icons",
@@ -13862,7 +13882,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FortAwesome/Font-Awesome/tree/6.x/js-packages/@fortawesome/free-solid-svg-icons",
@@ -13870,7 +13892,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FilipiRafael/react-native-motion-tabs",
@@ -15773,7 +15797,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/EliteWise/react-native-ranking-leaderboard",
@@ -21287,7 +21313,9 @@
     "newArchitecture": true,
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": "@amazon-devices/react-navigation__core"
   },
   {
     "githubUrl": "https://github.com/Mak-3/featuredeck-react-native",
