@@ -18035,9 +18035,7 @@
   },
   {
     "githubUrl": "https://github.com/mCodex/react-native-sized-webview",
-    "examples": [
-      "https://github.com/mCodex/react-native-sized-webview/tree/main/example"
-    ],
+    "examples": ["https://github.com/mCodex/react-native-sized-webview/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
@@ -18049,7 +18047,9 @@
   {
     "githubUrl": "https://github.com/khokanuzzaman/react-native-zero-permission-picker",
     "npmPkg": "react-native-files-picker",
-    "examples": ["https://github.com/khokanuzzaman/react-native-zero-permission-picker/tree/main/example"],
+    "examples": [
+      "https://github.com/khokanuzzaman/react-native-zero-permission-picker/tree/main/example"
+    ],
     "images": [
       "https://raw.githubusercontent.com/khokanuzzaman/react-native-zero-permission-picker/main/docs/screenshots/example-app-main.jpeg",
       "https://raw.githubusercontent.com/khokanuzzaman/react-native-zero-permission-picker/main/docs/screenshots/selected-item.jpeg"
@@ -18072,11 +18072,14 @@
   {
     "githubUrl": "https://github.com/TheWidlarzGroup/react-native-voice-agent",
     "npmPkg": "react-native-audio-agent",
-    "examples": [
-      "https://github.com/TheWidlarzGroup/react-native-voice-agent/tree/main/example"
-    ],
+    "examples": ["https://github.com/TheWidlarzGroup/react-native-voice-agent/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/qalqi/react-native-audiosprites",
+    "examples": ["https://github.com/qalqi/react-native-audiosprites/tree/HEAD/example"],
+    "expoGo": true
   }
 ]
