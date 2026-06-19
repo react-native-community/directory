@@ -18080,6 +18080,8 @@
   {
     "githubUrl": "https://github.com/qalqi/react-native-audiosprites",
     "examples": ["https://github.com/qalqi/react-native-audiosprites/tree/HEAD/example"],
-    "expoGo": true
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
