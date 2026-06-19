@@ -21710,5 +21710,12 @@
     "examples": ["https://github.com/blazejkustra/blaze-navigation/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/qalqi/react-native-audiosprites",
+    "examples": ["https://github.com/qalqi/react-native-audiosprites/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
