@@ -1,4 +1,5 @@
-import { identity, omit, pickBy } from 'es-toolkit';
+import { identity } from 'es-toolkit/compat';
+import { omit, pickBy } from 'es-toolkit/object';
 import fs from 'node:fs';
 import path from 'node:path';
 

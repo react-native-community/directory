@@ -1,39 +1,34 @@
-import { useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { type TextStyle, View, type ViewStyle } from 'react-native';
+import { type Style } from 'twrnc';
 
-import { colors, darkColors, P, A } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A, HoverEffect, P } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
+import { getPopularityGrade } from '~/util/scoring';
+import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType | { popularity: number };
   markOnly?: boolean;
-  style?: ViewStyle;
+  style?: TextStyle | ViewStyle;
 };
 
-const TrendingMark = ({ library, style, markOnly = false }: Props) => {
-  const { isDark } = useContext(CustomAppearanceContext);
+export default function TrendingMark({ library, style, markOnly = false }: Props) {
   const { popularity = -100 } = library;
-  const popularityStyles = getPopularityStyles(popularity, markOnly);
-  const markBackgroundColor = isDark ? darkColors.border : colors.gray2;
+  const popularityStyles = getPopularityStyles(popularity);
+  const positionStyle = markOnly ? tw`top-[11px]` : tw`top-[7px]`;
 
   const content = (
     <>
       <View
-        style={[
-          styles.popularityMark,
-          styles.popularityMarkBackground,
-          { backgroundColor: markBackgroundColor, top: markOnly ? 11 : 7 },
-        ]}
+        style={[tw`absolute h-1.5 w-8 rounded bg-palette-gray2 dark:bg-accented`, positionStyle]}
       />
-      <View style={[styles.popularityMark, popularityStyles]} />
+      <View style={[tw`absolute h-1.5 rounded`, positionStyle, popularityStyles]} />
       <P
         style={[
-          styles.popularityScore,
+          tw`pl-10`,
+          markOnly ? tw`-my-px text-[15px]` : tw`my-0.5 text-xs`,
           {
             color: popularityStyles.backgroundColor,
-            marginVertical: markOnly ? -1 : 2,
-            fontSize: markOnly ? 15 : 12,
           },
         ]}>
         {getPopularityGrade(popularity)}
@@ -43,86 +38,26 @@ const TrendingMark = ({ library, style, markOnly = false }: Props) => {
   );
 
   return markOnly ? (
-    <View style={[styles.container, style]}>{content}</View>
+    <View style={[tw`mb-1`, style as ViewStyle]}>{content}</View>
   ) : (
-    <A href="/scoring" style={[styles.scoringLink, style]}>
-      {content}
-    </A>
+    <HoverEffect>
+      <A href="/scoring" style={[tw`relative flex items-start no-underline`, style as Style]}>
+        {content}
+      </A>
+    </HoverEffect>
   );
-};
-
-function getPopularityStyles(popularity: number, markOnly: boolean) {
-  const top = markOnly ? 11 : 7;
-  if (popularity > 0.5) {
-    return {
-      width: 32,
-      backgroundColor: '#fb0d9e',
-      top,
-    };
-  } else if (popularity > 0.25) {
-    return {
-      width: 24,
-      backgroundColor: '#e70a2f',
-      top,
-    };
-  } else if (popularity > 0.1) {
-    return {
-      width: 18,
-      backgroundColor: '#ff5900',
-      top,
-    };
-  } else if (popularity > 0) {
-    return {
-      width: 12,
-      backgroundColor: '#dc9a00',
-      top,
-    };
-  } else {
-    return {
-      width: 6,
-      backgroundColor: colors.gray4,
-      top,
-    };
-  }
 }
 
-function getPopularityGrade(popularity: number) {
+function getPopularityStyles(popularity: number) {
   if (popularity > 0.5) {
-    return 'HOT!';
+    return tw`w-8 bg-[#fb0d9e]`;
   } else if (popularity > 0.25) {
-    return 'Popular';
+    return tw`w-6 bg-[#e70a2f]`;
   } else if (popularity > 0.1) {
-    return 'Quite popular';
+    return tw`w-4.5 bg-[#ff5900]`;
   } else if (popularity > 0) {
-    return 'Trending';
+    return tw`w-3 bg-[#dc9a00]`;
   } else {
-    return 'Declining';
+    return tw`w-1.5 bg-palette-gray4`;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 4,
-  },
-  popularityMark: {
-    height: 6,
-    position: 'absolute',
-    borderRadius: 4,
-  },
-  popularityMarkBackground: {
-    width: 32,
-  },
-  popularityScore: {
-    paddingLeft: 40,
-    fontWeight: 700,
-  },
-  scoringLink: {
-    textDecorationLine: 'none',
-    position: 'relative',
-    backgroundColor: 'none',
-    display: 'flex',
-    alignItems: 'flex-start',
-  },
-});
-
-export default TrendingMark;

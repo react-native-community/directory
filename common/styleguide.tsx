@@ -1,91 +1,41 @@
 import * as HtmlElements from '@expo/html-elements';
 import { type TextProps } from '@expo/html-elements/build/primitives/Text';
 import Link from 'next/link';
-import { type ComponentType, type PropsWithChildren, useContext, useState } from 'react';
+import { type ComponentType, type PropsWithChildren, type Ref, useState } from 'react';
 import {
+  Pressable,
+  type PressableProps,
+  type Role,
+  type StyleProp,
   StyleSheet,
-  type TextStyle,
-  View,
   useWindowDimensions,
   type ViewStyle,
-  type StyleProp,
 } from 'react-native';
+import { type Style } from 'twrnc';
 
-import CustomAppearanceContext from '../context/CustomAppearanceContext';
+import tw from '~/util/tailwind';
 
-export const layout = {
-  maxWidth: 1200,
-};
-
-export const useLayout = () => {
+export function useLayout() {
   const { width } = useWindowDimensions();
   return {
     isSmallScreen: width < 800,
-    isBelowMaxWidth: width < layout.maxWidth,
+    isBelowMaxWidth: width < 1200,
   };
-};
-
-export const colors = {
-  primary: '#61DAFB',
-  primaryLight: '#c1f4ff',
-  primaryDark: '#39BEE2',
-  primaryHover: '#61dafb16',
-  sky: '#C6EEFB',
-  powder: '#EEFAFE',
-  pewter: '#BEC8CB',
-  gray1: '#f7f7f7',
-  gray2: '#ececec',
-  gray3: '#CFCFD5',
-  gray4: '#82889E',
-  gray5: '#505461',
-  gray6: '#24262e',
-  gray7: '#21232A',
-  black: '#242424',
-  white: '#ffffff',
-  secondary: '#afb1af',
-  warning: '#FBE679',
-  warningLight: '#FEF7D6',
-  warningDark: '#995e00',
-  error: '#ff5555',
-  success: '#4caf50',
-};
-
-export const darkColors = {
-  black: '#000',
-  background: '#19191f',
-  subHeader: '#14141a',
-  border: '#2a2e36',
-  veryDark: '#111114',
-  dark: '#14141a',
-  powder: '#262a36',
-  pewter: '#767C8E',
-  secondary: '#a2a7ab',
-  warningLight: '#2f2704',
-  warning: '#9a810c',
-  primaryDark: '#2e9ab8',
-};
-
-const baseTextStyles = {
-  color: colors.black,
-  marginVertical: 0,
-  fontWeight: '400' as const,
-  fontFamily: 'inherit',
-};
+}
 
 const textStyles = StyleSheet.create({
-  h1: { ...baseTextStyles, fontSize: 57.25, fontWeight: '600' as const },
-  h2: { ...baseTextStyles, fontSize: 35.5, fontWeight: '600' as const },
-  h3: { ...baseTextStyles, fontSize: 26.5, fontWeight: '600' as const },
-  h4: { ...baseTextStyles, fontSize: 22 },
-  h5: { ...baseTextStyles, fontSize: 20 },
-  h6: { ...baseTextStyles, fontSize: 18 },
-  headline: { ...baseTextStyles, fontSize: 16, fontWeight: '500' as const },
-  p: { ...baseTextStyles, fontSize: 16 },
-  caption: { ...baseTextStyles, fontSize: 15, lineHeight: 22 },
-  label: { ...baseTextStyles, fontSize: 12, fontWeight: '500' as const },
+  h1: tw`text-[57.25px] font-semibold`,
+  h2: tw`text-[35.5px] font-semibold`,
+  h3: tw`text-[26.5px] font-semibold`,
+  h4: tw`text-[22px]`,
+  h5: tw`text-[20px]`,
+  h6: tw`text-[18px]`,
+  h6section: tw`text-[16px] tracking-tight text-secondary`,
+  headline: tw`text-[16px] font-medium`,
+  p: tw`text-[16px]`,
+  caption: tw`text-[15px] leading-[22px] tracking-normal`,
+  label: tw`text-[12px] font-medium tracking-normal`,
 });
-
-type TextStyles = TextStyle | TextStyle[];
 
 type CustomTextProps = TextProps &
   PropsWithChildren<{
@@ -93,58 +43,82 @@ type CustomTextProps = TextProps &
     numberOfLines?: number;
   }>;
 
-const createTextComponent = (Element: ComponentType<TextProps>, textStyle?: TextStyles) => {
-  const TextComponent = ({ children, style, id, numberOfLines }: CustomTextProps) => {
-    const { isDark } = useContext(CustomAppearanceContext);
-
+export function createTextComponent(
+  Element: ComponentType<TextProps>,
+  textStyle?: StyleProp<Style>
+) {
+  function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
     const elementStyle = Element?.displayName
-      ? StyleSheet.flatten(textStyles[Element.displayName as keyof typeof textStyles])
+      ? textStyles[Element.displayName as keyof typeof textStyles]
       : undefined;
 
     return (
       <Element
         id={id}
         numberOfLines={numberOfLines}
-        style={[elementStyle, textStyle, { color: isDark ? colors.white : colors.black }, style]}>
+        style={[
+          tw`font-sans my-0 font-normal text-black dark:text-white`,
+          elementStyle as StyleProp<Style>,
+          textStyle,
+          style,
+        ]}>
         {children}
       </Element>
     );
-  };
+  }
 
   TextComponent.displayName = `TextComponent(${Element.displayName ?? Element.name ?? 'Unknown'})`;
 
   return TextComponent;
-};
+}
 
 export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
 export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
 export const H3 = createTextComponent(HtmlElements.H3, textStyles.h3);
 export const H4 = createTextComponent(HtmlElements.H4, textStyles.h4);
 export const H5 = createTextComponent(HtmlElements.H5, textStyles.h5);
+export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
+export const H6Section = createTextComponent(HtmlElements.H6, textStyles.h6section);
 export const P = createTextComponent(HtmlElements.P, textStyles.p);
 export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
 export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
 export const Label = createTextComponent(HtmlElements.P, textStyles.label);
 
 type AProps = PropsWithChildren<{
-  style?: StyleProp<TextStyle>;
+  style?: StyleProp<Style>;
   target?: string;
   href: string;
-  hoverStyle?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
+  hoverStyle?: StyleProp<Style>;
+  containerStyle?: Style;
+  role?: Role;
+  ref?: Ref<HTMLAnchorElement>;
 }>;
 
-export function A({ href, target, children, style, hoverStyle, containerStyle, ...rest }: AProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
+export function A({
+  href,
+  target,
+  children,
+  style,
+  hoverStyle,
+  containerStyle,
+  role,
+  ref,
+  ...rest
+}: AProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const linkStyles = getLinkStyles(isDark);
-  const linkHoverStyles = getLinkHoverStyles();
+  const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
+  const linkHoverStyles = tw`decoration-primary-dark`;
 
-  if ((target === '_self' && !href.startsWith('#')) || href.startsWith('/')) {
+  if (
+    (target === '_self' && !href.startsWith('#')) ||
+    (target !== '_blank' && href.startsWith('/'))
+  ) {
     const passedStyle = StyleSheet.flatten(style);
     return (
       <Link
+        {...rest}
+        ref={ref}
         href={href}
         onPointerEnter={() => setIsHovered(true)}
         onPointerLeave={() => setIsHovered(false)}
@@ -159,57 +133,57 @@ export function A({ href, target, children, style, hoverStyle, containerStyle, .
     );
   }
 
+  const targetWithFallback = target ?? '_blank';
+
   return (
-    <View
+    <span
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={containerStyle}>
+      style={{ ...tw`contents`, ...containerStyle }}>
       <HtmlElements.A
         {...rest}
+        ref={ref as any}
         href={href}
         numberOfLines={containerStyle ? 1 : undefined}
-        target={target ?? '_blank'}
-        hrefAttrs={{ target: target ?? '_blank' }}
+        target={targetWithFallback}
+        rel={targetWithFallback === '_blank' ? 'noopener noreferrer' : undefined}
         style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
         {children}
       </HtmlElements.A>
-    </View>
+    </span>
   );
 }
 
-function getLinkStyles(isDark: boolean): TextStyle {
-  return {
-    color: isDark ? colors.white : colors.black,
-    textDecorationColor: isDark ? colors.gray5 : colors.pewter,
-    textDecorationLine: 'underline',
-    fontFamily: 'inherit',
-  };
-}
+type HoverEffectProps = PressableProps & {
+  style?: StyleProp<ViewStyle>;
+  hoveredStyle?: Style;
+  pressedStyle?: Style;
+};
 
-function getLinkHoverStyles(): TextStyle {
-  return {
-    textDecorationColor: colors.primaryDark,
-  };
-}
-
-export function HoverEffect({ children }: PropsWithChildren) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-
+export function HoverEffect({
+  children,
+  style,
+  hoveredStyle,
+  pressedStyle,
+  onPress,
+  focusable = false,
+  ...rest
+}: HoverEffectProps) {
   return (
-    <View
-      style={[
-        // @ts-expect-error Transition is a valid web style property
-        { transition: 'opacity 0.33s' },
-        isHovered && { opacity: 0.8 },
-        isActive && { opacity: 0.5 },
+    <Pressable
+      style={({ hovered, pressed }) => [
+        tw`-outline-offset-2`,
+        { transition: 'all 0.33s' },
+        style,
+        hovered && (hoveredStyle ?? tw`opacity-75`),
+        pressed && (pressedStyle ?? tw`opacity-50`),
       ]}
-      onPointerEnter={() => setIsHovered(true)}
-      onPointerLeave={() => setIsHovered(false)}
-      onPointerDown={() => setIsActive(true)}
-      onPointerUp={() => setIsActive(false)}
-      accessible={false}>
+      accessible={focusable}
+      focusable={focusable}
+      tabIndex={onPress || focusable ? 0 : -1}
+      onPress={onPress}
+      {...rest}>
       {children}
-    </View>
+    </Pressable>
   );
 }

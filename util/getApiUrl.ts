@@ -1,6 +1,9 @@
-import { type NextPageContext } from 'next';
+import { type GetServerSidePropsContext, type NextPageContext } from 'next';
 
-export default function getApiUrl(path: string, { req }: NextPageContext) {
+export default function getApiUrl(
+  path: string,
+  { req }: NextPageContext | GetServerSidePropsContext
+) {
   if (!req && typeof window !== 'undefined') {
     return `/api${path}`;
   }
@@ -10,5 +13,5 @@ export default function getApiUrl(path: string, { req }: NextPageContext) {
     ? (req.headers['x-forwarded-proto'] ?? 'http')
     : window.location.protocol.slice(0, -1);
 
-  return `${proto}://${host}/api${path}`;
+  return `${Array.isArray(proto) ? proto[0] : proto}://${Array.isArray(host) ? host[0] : host}/api${path}`;
 }

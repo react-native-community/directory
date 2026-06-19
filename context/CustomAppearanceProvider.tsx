@@ -1,66 +1,65 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { type PropsWithChildren, useEffect, useState } from 'react';
-import { Appearance, View } from 'react-native';
+import { type PropsWithChildren, useEffect, useMemo, useRef } from 'react';
+import { type RnColorScheme } from 'twrnc';
 
-import CustomAppearanceContext, {
-  type CustomAppearanceContextType,
-} from './CustomAppearanceContext';
+import tw, { useAppColorScheme, useDeviceContext } from '~/util/tailwind';
+
+import CustomAppearanceContext from './CustomAppearanceContext';
 
 const appearanceStorageKey = '@ReactNativeDirectory:CustomAppearanceContext';
-const shouldRehydrate = true;
-
 const defaultState = { isDark: false };
 
-function CustomAppearanceProvider({ children }: PropsWithChildren) {
-  const colorScheme = Appearance.getColorScheme();
-  const [isDark, setIsDark] = useState(colorScheme === 'dark');
-  const [isLoaded, setLoaded] = useState(false);
+export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
+  const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
+  const colorSchemeRef = useRef<RnColorScheme>(colorScheme);
+  const initialScheme = useMemo<RnColorScheme>(
+    () => (readStoredAppearance() ? 'dark' : 'light'),
+    []
+  );
 
   useEffect(() => {
-    const rehydrateAsync = async () => {
-      try {
-        const { isDark } = await rehydrateAppearanceState();
-        setIsDark(isDark);
-      } catch {}
-      setLoaded(true);
-    };
+    applyTheme(initialScheme);
+  }, [initialScheme]);
 
-    void rehydrateAsync();
-  }, []);
+  useEffect(() => {
+    colorSchemeRef.current = colorScheme;
+  }, [colorScheme]);
 
-  if (!isLoaded) {
-    return <View />;
+  useDeviceContext(tw, {
+    observeDeviceColorSchemeChanges: false,
+    initialColorScheme: initialScheme ?? 'light',
+  });
+
+  function toggleTheme() {
+    const newTheme: RnColorScheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    setColorScheme(newTheme);
+    writeAppearanceToStore(newTheme === 'dark');
+  }
+
+  return (
+    <CustomAppearanceContext.Provider key={colorScheme} value={{ toggleTheme }}>
+      {children}
+    </CustomAppearanceContext.Provider>
+  );
+}
+
+function applyTheme(scheme: RnColorScheme) {
+  if (scheme === 'dark') {
+    document.documentElement.classList.add('dark');
   } else {
-    return (
-      <CustomAppearanceContext.Provider
-        value={{
-          isDark,
-          setIsDark: isDark => {
-            setIsDark(isDark);
-            void cacheAppearanceState({ isDark });
-          },
-        }}>
-        {children}
-      </CustomAppearanceContext.Provider>
-    );
+    document.documentElement.classList.remove('dark');
   }
 }
 
-async function cacheAppearanceState(appearance: Omit<CustomAppearanceContextType, 'setIsDark'>) {
-  await AsyncStorage.setItem(appearanceStorageKey, JSON.stringify(appearance));
-}
-
-async function rehydrateAppearanceState() {
-  if (!shouldRehydrate || !AsyncStorage) {
-    return defaultState;
-  }
-
+function readStoredAppearance(): boolean {
   try {
-    const item = await AsyncStorage.getItem(appearanceStorageKey);
-    return item ? JSON.parse(item) : null;
+    const item = window.localStorage.getItem(appearanceStorageKey);
+    return item ? (JSON.parse(item)?.isDark ?? defaultState.isDark) : defaultState.isDark;
   } catch {
-    return defaultState;
+    return defaultState.isDark;
   }
 }
 
-export default CustomAppearanceProvider;
+function writeAppearanceToStore(isDark: boolean) {
+  window.localStorage.setItem(appearanceStorageKey, JSON.stringify({ isDark }));
+}

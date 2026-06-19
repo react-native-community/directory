@@ -1,0 +1,35 @@
+import { kebabCase } from 'es-toolkit/string';
+import { type PropsWithChildren } from 'react';
+
+import { Button } from '~/components/Button';
+import { LinkIcon } from '~/components/Icons';
+import tw from '~/util/tailwind';
+
+type Props = PropsWithChildren<{
+  tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  linkableHeaders?: boolean;
+}>;
+
+export default function MarkdownHeading({ children, tagName, linkableHeaders }: Props) {
+  const Heading = tagName;
+  const slug = typeof children === 'string' ? kebabCase(children) : undefined;
+
+  if (!slug || !linkableHeaders) {
+    return <Heading>{children}</Heading>;
+  }
+
+  return (
+    <Heading id={slug}>
+      {children}
+      <Button
+        href={`#${slug}`}
+        aria-label="Link to header"
+        style={[
+          tw`bg-transparent`,
+          ['h1', 'h2', 'h3'].includes(tagName) ? tw`mt-px size-4` : tw`size-3.5`,
+        ]}>
+        <LinkIcon style={tw`text-icon`} />
+      </Button>
+    </Heading>
+  );
+}

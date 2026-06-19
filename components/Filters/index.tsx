@@ -1,209 +1,88 @@
-import { useContext } from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
-import { colors, Headline, layout, darkColors, useLayout } from '~/common/styleguide';
-import { Tag } from '~/components/Tag';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import FiltersSection from '~/components/Filters/FiltersSection';
 import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
+import tw from '~/util/tailwind';
 
-import { ToggleLink } from './ToggleLink';
 import {
+  FILTER_BOOKMARKS,
   FILTER_COMPATIBILITY,
+  FILTER_MODULE_TYPE,
   FILTER_PLATFORMS,
   FILTER_REQUIRES_MAIN_SEARCH,
   FILTER_STATUS,
-  FILTER_MODULE_TYPE,
-  FILTER_TYPE,
 } from './helpers';
+import { ToggleLink } from './ToggleLink';
 
 type FiltersProps = {
   query: Query;
-  style?: ViewStyle | ViewStyle[];
+  style?: StyleProp<ViewStyle>;
   basePath?: string;
 };
 
-export function Filters({ query, style, basePath = '/' }: FiltersProps) {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const { isSmallScreen } = useLayout();
+export function Filters({ query, style, basePath = '/packages' }: FiltersProps) {
   const pageQuery = getPageQuery(basePath, query);
-
-  const isMainSearch = basePath === '/';
-
-  const titleColor = {
-    color: isDark ? darkColors.secondary : colors.gray5,
-  };
+  const isMainSearch = basePath === '/packages';
 
   return (
-    <View
-      style={[
-        styles.wrapper,
-        {
-          backgroundColor: isDark ? darkColors.veryDark : colors.gray1,
-        },
-        style,
-      ]}>
-      <View style={styles.twoColumns}>
-        <View
-          style={[
-            styles.wrappableContainer,
-            isSmallScreen && styles.wrappableContainerSmallScreen,
-          ]}>
-          <Headline style={[styles.title, titleColor]}>Platform</Headline>
-          <View style={styles.optionsContainer}>
-            {FILTER_PLATFORMS.map(platform => (
-              <ToggleLink
-                key={platform.param}
-                query={pageQuery}
-                paramName={platform.param}
-                title={platform.title}
-                basePath={basePath}
-              />
-            ))}
-          </View>
-        </View>
-        <View
-          style={[
-            styles.wrappableContainer,
-            isSmallScreen && styles.wrappableContainerSmallScreen,
-          ]}>
-          <Headline style={[styles.title, titleColor]}>Type</Headline>
-          <View style={styles.optionsContainer}>
-            {FILTER_TYPE.map(entryType => (
-              <ToggleLink
-                key={entryType.param}
-                query={pageQuery}
-                paramName={entryType.param}
-                title={entryType.title}
-                basePath={basePath}
-              />
-            ))}
-          </View>
-        </View>
-      </View>
-      <View style={styles.container}>
-        <Headline style={[styles.title, titleColor]}>Status</Headline>
-        <View style={styles.optionsContainer}>
-          {isMainSearch &&
-            FILTER_REQUIRES_MAIN_SEARCH.map(status => (
-              <ToggleLink
-                key={status.param}
-                query={pageQuery}
-                paramName={status.param}
-                title={status.title}
-                basePath={basePath}
-              />
-            ))}
-          {FILTER_STATUS.map(status => (
+    <View style={[tw`flex-1 items-center bg-palette-gray1 py-2 dark:bg-very-dark`, style]}>
+      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
+        <FiltersSection title="Platform">
+          {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
-              key={status.param}
+              key={platform.param}
               query={pageQuery}
-              paramName={status.param}
-              title={status.title}
+              filterParam={platform}
+              basePath={basePath}
+              allowFalse
+            />
+          ))}
+        </FiltersSection>
+        <FiltersSection title="Module type">
+          {FILTER_MODULE_TYPE.map(moduleType => (
+            <ToggleLink
+              key={moduleType.param}
+              query={pageQuery}
+              filterParam={moduleType}
               basePath={basePath}
             />
           ))}
-        </View>
+        </FiltersSection>
       </View>
-      <View style={styles.twoColumns}>
-        <View
-          style={[
-            styles.wrappableContainer,
-            isSmallScreen && styles.wrappableContainerSmallScreen,
-          ]}>
-          <Headline style={[styles.title, titleColor]}>Compatibility</Headline>
-          <View style={styles.optionsContainer}>
-            {FILTER_COMPATIBILITY.map(compatibility => (
-              <ToggleLink
-                key={compatibility.param}
-                query={pageQuery}
-                paramName={compatibility.param}
-                title={compatibility.title}
-                basePath={basePath}
-              />
-            ))}
-          </View>
-        </View>
-        <View
-          style={[
-            styles.wrappableContainer,
-            isSmallScreen && styles.wrappableContainerSmallScreen,
-          ]}>
-          <Headline style={[styles.titleWithTag, titleColor]}>
-            Module type
-            <Tag
-              label="Experimental"
-              tagStyle={[
-                styles.titleTag,
-                {
-                  backgroundColor: isDark ? '#261a3d' : '#ece3fc',
-                  borderColor: isDark ? '#3d2861' : '#d9c8fa',
-                },
-              ]}
-              icon={null}
+      <FiltersSection title="Status">
+        {isMainSearch &&
+          FILTER_REQUIRES_MAIN_SEARCH.map(status => (
+            <ToggleLink
+              key={status.param}
+              query={pageQuery}
+              filterParam={status}
+              basePath={basePath}
             />
-          </Headline>
-          <View style={styles.optionsContainer}>
-            {FILTER_MODULE_TYPE.map(moduleType => (
-              <ToggleLink
-                key={moduleType.param}
-                query={pageQuery}
-                paramName={moduleType.param}
-                title={moduleType.title}
-                basePath={basePath}
-              />
-            ))}
-          </View>
-        </View>
+          ))}
+        {FILTER_STATUS.map(status => (
+          <ToggleLink
+            key={status.param}
+            query={pageQuery}
+            filterParam={status}
+            basePath={basePath}
+          />
+        ))}
+        <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
+      </FiltersSection>
+      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
+        <FiltersSection title="Compatibility">
+          {FILTER_COMPATIBILITY.map(compatibility => (
+            <ToggleLink
+              key={compatibility.param}
+              query={pageQuery}
+              filterParam={compatibility}
+              basePath={basePath}
+              allowFalse
+            />
+          ))}
+        </FiltersSection>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    paddingVertical: 8,
-    flex: 1,
-    flexGrow: 0,
-    alignItems: 'center',
-  },
-  container: {
-    width: '100%',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    maxWidth: layout.maxWidth,
-  },
-  wrappableContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    maxWidth: layout.maxWidth,
-  },
-  wrappableContainerSmallScreen: {
-    maxWidth: '100%',
-  },
-  optionsContainer: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-  },
-  title: {
-    marginBottom: 8,
-    fontWeight: 600,
-  },
-  titleWithTag: {
-    marginBottom: 6,
-    fontWeight: 600,
-  },
-  titleTag: {
-    marginLeft: 8,
-    top: -1,
-    paddingVertical: 0,
-    minHeight: 22,
-  },
-  twoColumns: {
-    width: '100%',
-    maxWidth: layout.maxWidth,
-    alignContent: 'flex-start',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-});

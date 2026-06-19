@@ -1,0 +1,29 @@
+name: '[CODE] Refresh data and deploy production website'
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    # Run every 2 hours - https://crontab.guru/#0_*/2_*_*_*
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://reactnative.directory
+    steps:
+      - uses: actions/checkout@v6
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Deploy
+        shell: bash
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --prod --local-config ./vercel-with-data-refresh.json
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
+          VERCEL_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'

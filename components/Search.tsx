@@ -1,73 +1,78 @@
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { TextInput, StyleSheet, View } from 'react-native';
+import { useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { layout, colors, P, darkColors, useLayout, Label } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { P, useLayout } from '~/common/styleguide';
+import InputKeyHint from '~/components/InputKeyHint';
 import { type Query } from '~/types';
 import isAppleDevice from '~/util/isAppleDevice';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { Filters } from './Filters';
 import { FilterButton } from './Filters/FilterButton';
-import { Search as SearchIcon } from './Icons';
+import { SearchIcon } from './Icons';
 import { SortButton } from './Sort';
 
 type Props = {
   query: Query;
   total: number;
+  style?: StyleProp<ViewStyle>;
 };
 
-const Search = ({ query, total }: Props) => {
-  const { search, order, direction, offset, ...filterParams } = query;
+export default function Search({ query, total, style }: Props) {
+  const { search, order, direction, offset, owner, ...filterParams } = query;
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
+
   const isApple = useMemo<boolean>(() => isAppleDevice(), []);
   const inputRef = useRef<TextInput>(null);
 
   const { replace } = useRouter();
   const { isSmallScreen } = useLayout();
-  const { isDark } = useContext(CustomAppearanceContext);
+
+  useEffect(() => {
+    // @ts-expect-error using native input value to clear on same-page navigation
+    if (!isInputFocused && inputRef?.current?.value && !search) {
+      inputRef.current.clear();
+    }
+  }, [search, isInputFocused]);
 
   useEffect(() => {
     if (isApple !== null) {
-      const keyDownListener = (event: KeyboardEvent) => {
-        if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-          event.preventDefault();
-          inputRef.current?.focus();
-        }
-      };
       document.addEventListener('keydown', keyDownListener, false);
       return () => document.removeEventListener('keydown', keyDownListener);
     }
   }, [isApple]);
 
+  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+      event.preventDefault();
+      inputRef.current?.focus();
+    }
+  });
+
   const typingCallback = useDebouncedCallback((text: string) => {
-    void replace(urlWithQuery('/', { ...query, search: text, offset: null }));
+    void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));
   }, 200);
 
   function handleClearAllPress() {
-    void replace(urlWithQuery('/', { search: query.search, offset: undefined }));
+    void replace(urlWithQuery('/packages', { search, offset: undefined }));
   }
 
   return (
     <>
-      <View
-        style={[
-          styles.wrapper,
-          {
-            backgroundColor: isDark ? darkColors.dark : colors.gray6,
-          },
-        ]}>
-        <View style={styles.container}>
-          <View style={styles.displayHorizontal}>
-            <View style={styles.searchIcon}>
-              <SearchIcon fill={colors.white} />
+      <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
+        <View style={tw`w-full max-w-layout px-4`}>
+          <View style={tw`flex-row items-center`}>
+            <View style={tw`pointer-events-none absolute left-4`}>
+              <SearchIcon style={isInputFocused ? tw`text-primary` : tw`text-white`} />
             </View>
             <TextInput
               ref={inputRef}
               id="search"
+              autoComplete="off"
               onKeyPress={event => {
                 if ('key' in event) {
                   if (
@@ -81,7 +86,7 @@ const Search = ({ query, total }: Props) => {
                       event.preventDefault();
                       inputRef.current.clear();
                       void replace(
-                        urlWithQuery('/', {
+                        urlWithQuery('/packages', {
                           ...query,
                           search: undefined,
                           offset: undefined,
@@ -97,78 +102,44 @@ const Search = ({ query, total }: Props) => {
               onBlur={() => setInputFocused(false)}
               onChangeText={typingCallback}
               placeholder="Search libraries..."
-              style={[
-                styles.textInput,
-                {
-                  borderColor: isDark ? darkColors.border : colors.gray5,
-                },
-              ]}
+              style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
               defaultValue={search}
-              placeholderTextColor={colors.gray4}
+              placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
             />
-            {!isSmallScreen &&
-              (isInputFocused ? (
-                <View style={styles.focusHint}>
-                  <Label style={styles.focusHintLabel}>press</Label>
-                  <Label
-                    style={[
-                      styles.focusHintKey,
-                      {
-                        backgroundColor: isDark ? darkColors.powder : colors.gray5,
-                      },
-                    ]}>
-                    Esc
-                  </Label>
-                  <Label style={styles.focusHintLabel}>
-                    to {(search?.length ?? 0) > 0 ? 'clear' : 'blur'}
-                  </Label>
-                </View>
-              ) : (
-                <View style={styles.focusHint}>
-                  <Label
-                    style={[
-                      styles.focusHintKey,
-                      {
-                        backgroundColor: isDark ? darkColors.powder : colors.gray5,
-                      },
-                    ]}>
-                    {isApple ? 'Cmd' : 'Ctrl'}
-                  </Label>
-                  <Label style={styles.focusHintLabel}>+</Label>
-                  <Label
-                    style={[
-                      styles.focusHintKey,
-                      {
-                        backgroundColor: isDark ? darkColors.powder : colors.gray5,
-                      },
-                    ]}>
-                    K
-                  </Label>
-                </View>
-              ))}
+            {!isSmallScreen && (
+              <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
+                {isInputFocused ? (
+                  <InputKeyHint
+                    content={[
+                      { label: 'press' },
+                      { key: 'Esc' },
+                      { label: `to ${(search?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
+                    ]}
+                  />
+                ) : (
+                  <InputKeyHint
+                    content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
+                  />
+                )}
+              </View>
+            )}
           </View>
           <View
             style={[
-              styles.displayHorizontal,
-              styles.resultsContainer,
-              isSmallScreen && styles.smallResultsContainer,
+              tw`mt-2 flex-row items-center justify-between`,
+              isSmallScreen && tw`flex-col items-start`,
             ]}>
             {total ? (
-              <P style={styles.totalText}>
-                <P style={styles.totalCount}>{total}</P> {total === 1 ? 'entry' : 'entries'}
+              <P style={tw`mt-1 text-white`}>
+                <P style={tw`font-bold text-primary`}>{total}</P>{' '}
+                {total === 1 ? 'entry' : 'entries'}
               </P>
             ) : (
               <P />
             )}
-            <View
-              style={[
-                styles.displayHorizontal,
-                styles.buttonsContainer,
-                isSmallScreen && { marginTop: 10 },
-              ]}>
+            <View style={[tw`mt-1.5 flex-row items-center`, isSmallScreen && tw`mt-2.5`]}>
               <FilterButton
-                containerStyle={{ height: 24 }}
-                style={{ height: 24 }}
+                style={tw`h-6`}
                 query={query}
                 onPress={() => setFilterVisible(!isFilterVisible)}
                 onClearAllPress={handleClearAllPress}
@@ -182,79 +153,4 @@ const Search = ({ query, total }: Props) => {
       {isFilterVisible && <Filters query={query} />}
     </>
   );
-};
-
-const styles = StyleSheet.create({
-  wrapper: {
-    paddingVertical: 14,
-    alignItems: 'center',
-  },
-  container: {
-    width: '100%',
-    maxWidth: layout.maxWidth,
-    paddingHorizontal: 16,
-  },
-  displayHorizontal: {
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  textInput: {
-    flex: 1,
-    height: 50,
-    borderWidth: 2,
-    borderRadius: 6,
-    padding: 16,
-    paddingLeft: 44,
-    fontSize: 20,
-    color: colors.white,
-    fontFamily: 'inherit',
-    outlineOffset: -2,
-  },
-  searchIcon: {
-    position: 'absolute',
-    left: 16,
-    pointerEvents: 'none',
-  },
-  focusHint: {
-    position: 'absolute',
-    right: 16,
-    pointerEvents: 'none',
-    flexDirection: 'row',
-    gap: 4,
-    alignItems: 'center',
-  },
-  focusHintKey: {
-    color: colors.secondary,
-    textAlign: 'center',
-    paddingVertical: 3,
-    paddingHorizontal: 4,
-    minWidth: 24,
-    borderRadius: 3,
-    letterSpacing: 0.75,
-  },
-  focusHintLabel: {
-    color: colors.gray4,
-    fontWeight: 300,
-  },
-  resultsContainer: {
-    marginTop: 8,
-    justifyContent: 'space-between',
-  },
-  smallResultsContainer: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  },
-  buttonsContainer: {
-    marginTop: 6,
-  },
-  totalCount: {
-    color: colors.primary,
-    fontWeight: 700,
-  },
-  totalText: {
-    color: colors.white,
-    marginTop: 4,
-  },
-});
-
-export default Search;
+}

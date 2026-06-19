@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { type PropsWithChildren } from 'react';
 
 const site = {
   title: 'React Native Directory',
@@ -7,14 +8,20 @@ const site = {
 
 const BASE_OG_URL = 'https://og.expo.dev/?theme=rnd';
 
-type PageMetaProps = {
+type PageMetaProps = PropsWithChildren<{
   title?: string;
   description?: string;
   path?: string;
   searchQuery?: string | string[];
-};
+}>;
 
-const PageMeta = ({ title, searchQuery, path, description = site.description }: PageMetaProps) => {
+export default function PageMeta({
+  title,
+  searchQuery,
+  path,
+  children,
+  description = site.description,
+}: PageMetaProps) {
   const pageTitle = `${title ? title + ' • ' : ''}${site.title}`;
   const parsedSearchQuery = Array.isArray(searchQuery) ? searchQuery[0] : searchQuery;
   const finalDescription = parsedSearchQuery
@@ -40,8 +47,8 @@ const PageMeta = ({ title, searchQuery, path, description = site.description }: 
       <meta name="twitter:image" content={socialImage} />
 
       <link rel="canonical" href={`https://reactnative.directory${path ? `/${path}` : ''}`} />
+
+      {children}
     </Head>
   );
-};
-
-export default PageMeta;
+}

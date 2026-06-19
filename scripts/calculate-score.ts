@@ -1,95 +1,13 @@
+import { type LibraryType } from '~/types';
+import { MAX_SCORE, MIN_SCORE, SCORING_CRITERIONS } from '~/util/scoring';
+
 /**
  * Directory Score
  */
-import { type LibraryType } from '~/types';
-
-// This is an array of modifier objects. Each modifier has a name, value, and condition.
-// The data is passed to the `condition` function, and if it returns `true`, the value is added to the
-// library score. Read more: https://reactnative.directory/scoring
-export const MODIFIERS: {
-  name: string;
-  value: number;
-  condition: (data: LibraryType) => boolean;
-}[] = [
-  {
-    name: 'Very popular',
-    value: 45,
-    condition: data => getCombinedPopularity(data) > 50000,
-  },
-  {
-    name: 'Popular',
-    value: 30,
-    condition: data => getCombinedPopularity(data) > 10000,
-  },
-  {
-    name: 'Known',
-    value: 15,
-    condition: data => getCombinedPopularity(data) > 2500,
-  },
-  {
-    name: 'Lots of open issues',
-    value: -20,
-    condition: data => data.github.stats.issues >= 50,
-  },
-  {
-    name: 'No license',
-    value: -20,
-    condition: data => data.github.license === null,
-  },
-  {
-    name: 'GPL license',
-    value: -20,
-    condition: data =>
-      data.github.license && data.github.license.key
-        ? data.github.license.key.startsWith('gpl') || data.github.license.key.startsWith('other')
-        : false,
-  },
-  {
-    name: 'Recently updated',
-    value: 10,
-    condition: data => getUpdatedDaysAgo(data) <= 45, // Roughly 1.5 month
-  },
-  {
-    name: 'Not updated recently',
-    value: -20,
-    condition: data => getUpdatedDaysAgo(data) >= 180, // Roughly 6 months
-  },
-  {
-    name: 'Not supporting New Architecture',
-    value: -10,
-    condition: data => {
-      if (data.dev || data.template || data.expoGo) {
-        return false;
-      }
-
-      if (data.newArchitecture !== undefined) {
-        return !data.newArchitecture;
-      }
-
-      return data.github.newArchitecture !== true;
-    },
-  },
-  {
-    name: 'Unmaintained',
-    value: -25,
-    condition: data => data?.unmaintained ?? false,
-  },
-];
-
-const DAY_IN_MS = 864e5;
-
-// Calculate the minimum and maximum possible scores based on the modifiers
-const minScore = MODIFIERS.reduce((currentMin, modifier) => {
-  return modifier.value < 0 ? currentMin + modifier.value : currentMin;
-}, 0);
-
-const maxScore = MODIFIERS.reduce((currentMax, modifier) => {
-  return modifier.value > 0 ? currentMax + modifier.value : currentMax;
-}, 0);
 
 export function calculateDirectoryScore(data: LibraryType) {
   // Filter the modifiers to the ones which conditions pass with the data
-  const matchingModifiers = MODIFIERS.filter(modifier => modifier.condition(data));
+  const matchingModifiers = SCORING_CRITERIONS.filter(modifier => modifier.condition(data));
 
   // Reduce the matching modifiers to find the raw score for the data
   const rawScore = matchingModifiers.reduce((currentScore, modifier) => {
@@ -98,7 +16,7 @@ export function calculateDirectoryScore(data: LibraryType) {
 
   // Scale the raw score as a percentage between the minimum and maximum possible score
   // based on the available modifiers
-  const score = Math.round(((rawScore - minScore) / (maxScore - minScore)) * 100);
+  const score = rawScore <= 0 ? 0 : Math.min(Math.max(rawScore, MIN_SCORE), MAX_SCORE);
 
   // Map the modifiers to the name so we can include that in the data
   const matchingModifierNames = matchingModifiers.map(modifier => modifier.name);
@@ -110,43 +28,28 @@ export function calculateDirectoryScore(data: LibraryType) {
   };
 }
 
-function getCombinedPopularity({ github, npm }: LibraryType) {
-  const { subscribers, forks, stars } = github.stats;
-  return subscribers * 50 + forks * 25 + stars * 10 + (npm?.downloads ?? 0) / 100;
-}
-
-function getUpdatedDaysAgo(data: LibraryType) {
-  const { updatedAt } = data.github.stats;
-  const updateDate = new Date(updatedAt).getTime();
-  const currentDate = new Date().getTime();
-
-  return (currentDate - updateDate) / DAY_IN_MS;
-}
-
 /**
  * Trending Score
  */
 
 const MIN_MONTHLY_DOWNLOADS = 1000;
-const MANY_MONTHLY_DOWNLOADS = 15000;
+const MANY_MONTHLY_DOWNLOADS = 15_000;
 const MIN_GITHUB_STARS = 25;
 const DATE_NOW = Date.now();
 const WEEK_IN_MS = 6048e5;
 
 export function calculatePopularityScore(data: LibraryType) {
-  const { npm, github, unmaintained } = data;
-
-  if (!npm?.downloads || !npm?.weekDownloads) {
+  if (!data?.npm || !data.npm?.downloads || !data.npm?.weekDownloads) {
     return {
       ...data,
       popularity: -1,
     };
   }
 
+  const { github, unmaintained } = data;
   const { createdAt, stars } = github.stats;
-  const { downloads, weekDownloads } = npm;
 
-  const popularityGain = weekDownloads / Math.floor(downloads / 4.25) / 5;
+  const popularityGain = data.npm.weekDownloads / Math.floor(data.npm.downloads / 4.25) / 5;
 
   if (!Number.isFinite(popularityGain)) {
     return {
@@ -155,14 +58,15 @@ export function calculatePopularityScore(data: LibraryType) {
     };
   }
 
-  const downloadBonus = popularityGain > 0.25 ? (downloads > MANY_MONTHLY_DOWNLOADS ? 0.25 : 0) : 0;
+  const downloadBonus =
+    popularityGain > 0.25 ? (data.npm.downloads > MANY_MONTHLY_DOWNLOADS ? 0.25 : 0) : 0;
 
-  const downloadsPenalty = downloads < MIN_MONTHLY_DOWNLOADS ? 0.75 : 0;
+  const downloadsPenalty = data.npm.downloads < MIN_MONTHLY_DOWNLOADS ? 0.75 : 0;
   const starsPenalty = stars < MIN_GITHUB_STARS ? 0.25 : 0;
   const unmaintainedPenalty = unmaintained ? 0.75 : 0;
   const freshPackagePenalty = DATE_NOW - new Date(createdAt).getTime() < WEEK_IN_MS ? 0.5 : 0;
 
-  const popularity = parseFloat(
+  const popularity = Number.parseFloat(
     (
       popularityGain -
       downloadsPenalty -

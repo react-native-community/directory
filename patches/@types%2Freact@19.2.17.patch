@@ -1,0 +1,33 @@
+diff --git a/node_modules/@types/react/.bun-tag-c0c9dbf1ab031810 b/.bun-tag-c0c9dbf1ab031810
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/index.d.ts b/index.d.ts
+index b4948e765f2a77f1e074477c3c7dbe963f7facc9..9743e01cf404e0114a0ff3501b775e1f9518527a 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -5,6 +5,7 @@
+ /// <reference path="global.d.ts" />
+ 
+ import * as CSS from "csstype";
++import type {Style} from "twrnc";
+ 
+ type NativeAnimationEvent = AnimationEvent;
+ type NativeClipboardEvent = ClipboardEvent;
+@@ -2805,7 +2806,7 @@ declare namespace React {
+         nonce?: string | undefined;
+         slot?: string | undefined;
+         spellCheck?: Booleanish | undefined;
+-        style?: CSSProperties | undefined;
++        style?: CSSProperties | Style | undefined;
+         tabIndex?: number | undefined;
+         title?: string | undefined;
+         translate?: "yes" | "no" | undefined;
+@@ -3610,7 +3611,7 @@ declare namespace React {
+         nonce?: string | undefined;
+         part?: string | undefined;
+         slot?: string | undefined;
+-        style?: CSSProperties | undefined;
++        style?: CSSProperties | Style | undefined;
+         target?: string | undefined;
+         type?: string | undefined;
+         width?: number | string | undefined;

@@ -1,21 +1,21 @@
-import { BlobAccessError, list, put } from '@vercel/blob';
-import { fetch } from 'bun';
-import { chunk } from 'es-toolkit';
+﻿import { BlobAccessError, put } from '@vercel/blob';
+import { chunk } from 'es-toolkit/array';
 import fs from 'node:fs';
-import path from 'node:path';
 
 import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { type APIResponseType, type LibraryDataEntryType, type LibraryType } from '~/types';
+import { type DataAssetType, type LibraryDataEntryType, type LibraryType } from '~/types';
+import { createCheckEndpointBlob, fetchLatestData, readLocalDataFile } from '~/util/blob';
+import { DATA_PATH } from '~/util/Constants';
 import { isLaterThan, TimeRange } from '~/util/datetime';
-import { getNewArchSupportStatus } from '~/util/newArchStatus';
+import { backfillUnpkgReadmeFile } from '~/util/scoring';
 import { isEmptyOrNull } from '~/util/strings';
 
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
-import fetchReadmeImages from './fetch-readme-images';
+import { fetchNightlyProgramData } from './fetch-nightly-program-data';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
@@ -24,31 +24,84 @@ const USE_DEBUG_REPOS = false;
 
 // If script should only write to the local data file and not upload to the store.
 // This is useful for debugging and testing purposes.
-const ONLY_WRITE_LOCAL_DATA_FILE = false;
+const ONLY_WRITE_LOCAL_DATA_FILE = Boolean(process.env.USE_LOCAL_DATA_FILE);
 
 // If script should try to scrape images from GitHub repositories.
 const SCRAPE_GH_IMAGES = false;
 
 const DATASET: LibraryDataEntryType[] = USE_DEBUG_REPOS ? debugGithubRepos : githubRepos;
-const DATA_PATH = path.resolve('assets', 'data.json');
-const CHECK_DATA_PATH = path.resolve('assets', 'check-data.json');
 
 const CHUNK_SIZE = 25;
-const SLEEP_TIME = 250;
+const NPM_STATS_CHUNK_SIZE = 10;
+const SLEEP_TIME = 500;
 
 const invalidRepos: string[] = [];
 const mismatchedRepos: LibraryType[] = [];
 
 const wantedPackageName = process.argv[2];
+const missingOnly = process.argv.includes('--missing-only');
 
-async function buildAndScoreData() {
-  console.log('⬇️️ Fetching latest data blob from the store');
+function getLibraryIdentityKeys(library: Pick<LibraryDataEntryType, 'githubUrl' | 'npmPkg'>) {
+  const npmPkg = library.npmPkg ?? library.githubUrl.split('/').at(-1);
+  const identityKeys = [
+    npmPkg ? `npm:${npmPkg.toLowerCase()}` : null,
+    `github:${library.githubUrl.toLowerCase()}`,
+  ];
 
-  const { latestData } = await fetchLatestData();
+  return [...new Set(identityKeys.filter((key): key is string => key !== null))];
+}
 
-  console.log('📦️ Loading data from GitHub');
+function mergeLibraries(...libraryLists: LibraryType[][]) {
+  const mergedLibraries: LibraryType[] = [];
+  const libraryIndexByKey = new Map<string, number>();
 
-  let data = await loadRepositoryDataAsync();
+  libraryLists.forEach(list => {
+    list.forEach(library => {
+      const identityKeys = getLibraryIdentityKeys(library);
+      const existingIndex = identityKeys.find(key => libraryIndexByKey.has(key));
+
+      if (existingIndex) {
+        const index = libraryIndexByKey.get(existingIndex)!;
+        mergedLibraries[index] = library;
+        identityKeys.forEach(key => {
+          libraryIndexByKey.set(key, index);
+        });
+        return;
+      }
+
+      const nextIndex = mergedLibraries.length;
+      mergedLibraries.push(library);
+      identityKeys.forEach(key => {
+        libraryIndexByKey.set(key, nextIndex);
+      });
+    });
+  });
+
+  return mergedLibraries;
+}
+
+function getTopicCounts(libraries: LibraryType[]) {
+  return libraries.reduce<Record<string, number>>((acc, library) => {
+    library.github.topics?.forEach(topic => {
+      acc[topic] = (acc[topic] ?? 0) + 1;
+    });
+
+    return acc;
+  }, {});
+}
+
+export async function buildAndScoreData() {
+  console.log('🔄️️ Fetching latest data blob from the store');
+
+  const localData = readLocalDataFile();
+  const { latestData }: { latestData: DataAssetType } = await fetchLatestData();
+  const baselineLibraries = missingOnly
+    ? mergeLibraries(localData.libraries, latestData.libraries)
+    : latestData.libraries;
+
+  console.log('🗂️️ Loading data from GitHub');
+
+  let data = await loadRepositoryDataAsync(baselineLibraries);
 
   data = data.filter(project => {
     if (!project.github || isEmptyOrNull(project.github.name)) {
@@ -60,7 +113,7 @@ async function buildAndScoreData() {
 
   // Detect mismatched package and package.json content
   data.forEach(project => {
-    if (hasMismatchedPackageData(project) && !project.template) {
+    if (hasMismatchedPackageData(project)) {
       mismatchedRepos.push(project);
     }
   });
@@ -79,28 +132,25 @@ async function buildAndScoreData() {
 
   if (SCRAPE_GH_IMAGES) {
     console.log('\n📝 Scraping images from README');
+    const { fetchReadmeImages } = await import('./fetch-readme-images');
     data = await Promise.all(data.map(project => fetchReadmeImages(project)));
   }
 
   console.log('\n🔖 Determining npm package names');
   data = data.map(fillNpmName);
 
-  console.log('\n⬇️ Fetching download stats from npm-stat');
+  console.log('\n⬇🔄 Fetching download stats from npm-stat');
 
   const fetchList: string[] = [];
 
-  // Filter out template entries, prepare npm-stat API chunks
-  data = data.map(project => {
-    if (!project.template) {
-      fetchList.push(project.npmPkg);
-      return project;
-    }
-    return project;
+  // Prepare npm-stat API chunks
+  data.forEach(project => {
+    fetchList.push(project.npmPkg);
   });
 
   // Assemble and fetch packages data in bulk queries
-  const bulkList = [...Array(Math.ceil(fetchList.length / CHUNK_SIZE))].map(_ =>
-    fetchList.splice(0, CHUNK_SIZE)
+  const bulkList = [...Array(Math.ceil(fetchList.length / NPM_STATS_CHUNK_SIZE))].map(() =>
+    fetchList.splice(0, NPM_STATS_CHUNK_SIZE)
   );
 
   const downloadsList = await fetchNpmStatDataSequentially(bulkList);
@@ -113,11 +163,24 @@ async function buildAndScoreData() {
     },
   }));
 
-  console.log('\n⬇️ Fetching registry data from npm');
+  console.log('\n⬇🔄 Fetching registry data from npm');
 
   data = await fetchNpmRegistryDataSequentially(data);
 
+  console.log('\n⬇🔄 Fetching nightly programme information');
+
+  data = await fetchNightlyProgramData(data);
+
   console.log('\n⚛️ Calculating Directory Score');
+  data = await Promise.all(
+    data.map(async lib => {
+      if (!lib.npm?.hasReadme && !lib.github.hasReadme) {
+        return await backfillUnpkgReadmeFile(lib);
+      }
+      return lib;
+    })
+  );
+
   data = data.map(project => {
     try {
       return calculateDirectoryScore(project);
@@ -143,7 +206,10 @@ async function buildAndScoreData() {
   });
 
   console.log('\n🏷️ Processing topics');
-  const topicCounts: Record<string, number> = {};
+
+  const { libraries, topics } = latestData;
+  const topicCounts: Record<string, number> = missingOnly ? (topics ?? {}) : {};
+
   data.forEach((project, index, projectList) => {
     let topicSearchString = '';
 
@@ -167,38 +233,54 @@ async function buildAndScoreData() {
     console.warn(
       '\n 🚨 The following repositories were unable to fetch from GitHub, they may need to be removed from react-native-libraries.json:'
     );
-    invalidRepos.forEach(repoUrl => console.warn(`- ${repoUrl}`));
+    invalidRepos.forEach(repoUrl => {
+      console.warn(`- ${repoUrl}`);
+    });
   }
 
   if (mismatchedRepos.length) {
     console.warn(
       `\n 🚨 The following projects repository URLs (${mismatchedRepos.length}) are misaligned with the package name extracted from package.json:`
     );
-    mismatchedRepos.forEach(project =>
-      console.warn(`- ${project.githubUrl}: ${project.github.name}`)
-    );
+    mismatchedRepos.forEach(project => {
+      console.warn(`- ${project.githubUrl}: ${project.github.name}`);
+    });
   }
 
   console.log('📄️ Preparing data file');
 
-  const { libraries, ...rest }: APIResponseType = latestData;
-
   let fileContent;
 
-  if (wantedPackageName) {
-    fileContent = JSON.stringify(
-      {
-        libraries: libraries.map(library => {
-          if (library.npmPkg === wantedPackageName) {
-            return data.find(entry => entry.npmPkg === wantedPackageName);
-          }
-          return library;
-        }),
-        ...rest,
-      },
-      null,
-      2
-    );
+  if (missingOnly) {
+    const mergedLibraries = mergeLibraries(baselineLibraries, data);
+    const content = {
+      libraries: mergedLibraries,
+      topics: sortTopics(getTopicCounts(mergedLibraries)),
+    };
+
+    fileContent = JSON.stringify(content, null, 2);
+    createCheckEndpointBlob(content.libraries);
+  } else if (wantedPackageName) {
+    const hasEntry = libraries.some(lib => lib.npmPkg === wantedPackageName);
+    const newDataEntry = data.find(entry => entry.npmPkg === wantedPackageName);
+
+    const content = hasEntry
+      ? {
+          libraries: libraries.map(library => {
+            if (newDataEntry && library.npmPkg === wantedPackageName) {
+              return newDataEntry;
+            }
+            return library;
+          }),
+          topics: sortTopics(topicCounts),
+        }
+      : {
+          libraries: newDataEntry ? [...libraries, newDataEntry] : libraries,
+          topics: sortTopics(topicCounts),
+        };
+
+    fileContent = JSON.stringify(content, null, 2);
+    createCheckEndpointBlob(content.libraries);
   } else {
     const existingData = libraries.map(lib => lib.npmPkg);
     const newData = data.map(lib => lib.npmPkg);
@@ -209,38 +291,44 @@ async function buildAndScoreData() {
 
     const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
 
-    const dataWithFallback: LibraryType[] = currentData.map(entry =>
-      entry.npm && Object.keys(entry.npm).length > 0
-        ? entry
-        : {
-            ...entry,
-            npm:
-              latestData.libraries.find(
-                (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
-              )?.npm ?? {},
-          }
-    );
+    const dataWithFallback: LibraryType[] = currentData.map(entry => {
+      if (entry.npm?.downloads) {
+        return entry;
+      }
+
+      const fallbackData = latestData.libraries.find(
+        (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
+      );
+
+      if (!fallbackData) {
+        return entry;
+      }
+
+      return {
+        ...entry,
+        npm: {
+          ...entry.npm,
+          downloads: fallbackData.npm?.downloads,
+          weekDownloads: fallbackData.npm?.weekDownloads,
+        },
+      };
+    });
 
     const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
     const finalData = dataWithFallback
       .filter(({ npmPkg }) => existingPackages.includes(npmPkg))
       .filter((entry: LibraryType) => validEntries.includes(entry.githubUrl));
 
-    const sortedTopicCounts = Object.fromEntries(
-      Object.entries(topicCounts).sort((a, b) => b[1] - a[1])
-    );
-
     fileContent = JSON.stringify(
       {
         libraries: finalData,
-        topics: sortedTopicCounts,
-        topicsList: Object.keys(topicCounts).sort(),
+        topics: sortTopics(topicCounts),
       },
       null,
       2
     );
 
-    createCheckEndpointData(finalData);
+    createCheckEndpointBlob(finalData);
   }
 
   if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
@@ -250,18 +338,15 @@ async function buildAndScoreData() {
   fs.writeFileSync(DATA_PATH, fileContent);
 }
 
-export function createCheckEndpointData(libraries: LibraryType[]) {
-  const checkData = Object.fromEntries(
-    libraries.map(library => [
-      library.npmPkg,
-      {
-        unmaintained: library.unmaintained,
-        newArchitecture: getNewArchSupportStatus(library),
-      },
-    ])
+function sortTopics(topicCounts: Record<string, number>) {
+  return Object.fromEntries(
+    Object.entries(topicCounts).sort(([kA, vA], [kB, vB]) => {
+      if (vA !== vB) {
+        return vB - vA;
+      }
+      return kA.localeCompare(kB);
+    })
   );
-
-  fs.writeFileSync(CHECK_DATA_PATH, JSON.stringify(checkData, null, 2));
 }
 
 export async function fetchGithubDataThrottled({
@@ -279,7 +364,6 @@ export async function fetchGithubDataThrottled({
   for (const chunk of chunks) {
     if (chunks.indexOf(chunk) > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
-      console.log(`Sleeping ${staggerMs}ms`);
       await sleep(staggerMs);
     }
 
@@ -296,7 +380,30 @@ export async function fetchGithubDataThrottled({
   return results;
 }
 
-function getDataForFetch(wantedPackage?: string) {
+function getMissingOnlyDataset(existingLibraries: LibraryType[]) {
+  const existingLibraryKeys = new Set(existingLibraries.flatMap(getLibraryIdentityKeys));
+  const missing = DATASET.filter(
+    entry => !getLibraryIdentityKeys(entry).some(key => existingLibraryKeys.has(key))
+  );
+
+  console.log(
+    `🧩 Missing-only mode: fetching ${missing.length} of ${DATASET.length} entries not present in the checked-in data file or latest blob\n`
+  );
+
+  return missing;
+}
+
+function getDataForFetch({
+  existingLibraries,
+  wantedPackage,
+}: {
+  existingLibraries: LibraryType[];
+  wantedPackage?: string;
+}) {
+  if (missingOnly) {
+    return getMissingOnlyDataset(existingLibraries);
+  }
+
   if (wantedPackage) {
     const match = DATASET.find(
       entry =>
@@ -308,11 +415,15 @@ function getDataForFetch(wantedPackage?: string) {
     }
     return [match];
   }
+
   return DATASET;
 }
 
-async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
-  const data = getDataForFetch(wantedPackageName) as LibraryType[];
+async function loadRepositoryDataAsync(existingLibraries: LibraryType[]): Promise<LibraryType[]> {
+  const data = getDataForFetch({
+    existingLibraries,
+    wantedPackage: wantedPackageName,
+  }) as LibraryType[];
 
   const { apiLimit, apiLimitRemaining, apiLimitCost } = await fetchGithubRateLimit();
 
@@ -335,34 +446,10 @@ async function loadRepositoryDataAsync(): Promise<LibraryType[]> {
   return await fetchGithubDataThrottled({ data, chunkSize: CHUNK_SIZE, staggerMs: SLEEP_TIME });
 }
 
-async function fetchLatestData() {
-  if (ONLY_WRITE_LOCAL_DATA_FILE) {
-    console.log('⚠️ Only writing to local data file, skipping blob store fetch');
-    return {
-      latestData: JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')),
-    };
-  }
-
-  const { blobs } = await list();
-
-  if (blobs?.length > 0) {
-    const sortedBlobs = blobs.sort(
-      (a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
-    );
-    const response = await fetch(sortedBlobs[0].downloadUrl);
-
-    return {
-      latestData: await response.json(),
-    };
-  }
-
-  return JSON.parse(fs.readFileSync(DATA_PATH).toString());
-}
-
 async function uploadToStore(fileContent: string) {
   console.log('⬆️ Uploading data blob to the store');
   try {
-    await put('data.json', fileContent, { access: 'public' });
+    await put('data.json', fileContent, { access: 'public', addRandomSuffix: true });
   } catch (error) {
     if (error instanceof BlobAccessError) {
       console.error('❌ Cannot access the blob store, aborting!');
@@ -379,10 +466,9 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
 
   for (const [chunkIndex, chunk] of bulkList.entries()) {
     await sleep(SLEEP_TIME);
-    console.log(`Sleeping ${SLEEP_TIME}ms`);
 
     const data = await fetchNpmStatDataBulk(chunk);
-    console.log(`${CHUNK_SIZE * (chunkIndex + 1)} of ${total} fetched`);
+    console.log(`${NPM_STATS_CHUNK_SIZE * chunkIndex + chunk.length} of ${total} fetched`);
 
     results.push(...data);
   }
@@ -392,19 +478,21 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
 async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   const total = list.length;
 
-  for (let i = 0; i < list.length; i++) {
+  for (let i = 0; i < total; i++) {
     const entry = list[i];
 
-    if (!entry || entry.template) {
+    if (!entry) {
       continue;
     }
 
     await sleep(SLEEP_TIME / 10);
-    const shouldLog = i % CHUNK_SIZE === 0;
-    shouldLog && console.log(`Sleeping ${SLEEP_TIME / 5}ms`);
+    const shouldLog = i % CHUNK_SIZE === 0 || i + 1 === total;
 
     const data = await fetchNpmRegistryData(entry);
-    shouldLog && console.log(`${CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`);
+    shouldLog &&
+      console.log(
+        `${CHUNK_SIZE > total && i !== 0 ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
+      );
 
     list[i] = data;
   }

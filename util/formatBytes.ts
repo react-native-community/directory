@@ -9,7 +9,7 @@ export function formatBytes(bytes: number, decimals = 2): string {
   const dm = Math.max(0, decimals);
   const sizeRange = Math.floor(Math.log(bytes) / Math.log(MUL));
   const value = bytes / Math.pow(MUL, sizeRange);
-  const formatted = parseFloat(value.toFixed(dm));
+  const formatted = Number.parseFloat(value.toFixed(dm));
 
   return `${formatted} ${SUFFIXES[sizeRange]}`;
 }

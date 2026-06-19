@@ -1,7 +1,7 @@
-import Document, { Html, Head, Main, NextScript, type DocumentContext } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
-import GoogleAnalytics from '~/components/GoogleAnalytics';
-import { StructuredData } from '~/components/StructuredData';
+import GoogleAnalytics from '~/components/Head/GoogleAnalytics';
+import StructuredData from '~/components/Head/StructuredData';
 
 function DirectoryWebsite() {
   return (
@@ -26,6 +26,35 @@ function DirectoryWebsite() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://reactnative.directory" />
 
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/JetBrainsMono-Variable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
         <StructuredData
           data={{
             '@context': 'https://schema.org',
@@ -36,7 +65,7 @@ function DirectoryWebsite() {
               '@type': 'SearchAction',
               target: {
                 '@type': 'EntryPoint',
-                urlTemplate: 'https://reactnative.directory/?search={search_term_string}',
+                urlTemplate: 'https://reactnative.directory/packages?search={search_term_string}',
               },
               'query-input': 'required name=search_term_string',
             },
@@ -50,10 +79,5 @@ function DirectoryWebsite() {
     </Html>
   );
 }
-
-DirectoryWebsite.getInitialProps = async (ctx: DocumentContext) => {
-  const initialProps = await Document.getInitialProps(ctx);
-  return { ...initialProps };
-};
 
 export default DirectoryWebsite;

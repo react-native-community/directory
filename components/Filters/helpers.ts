@@ -1,9 +1,4 @@
-import { type Query } from '~/types';
-
-type FilterParamsType = {
-  param: keyof Query;
-  title: string;
-};
+import { type FilterParamsType, type Query } from '~/types';
 
 export const FILTER_PLATFORMS: FilterParamsType[] = [
   {
@@ -73,6 +68,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Has TypeScript types',
   },
   {
+    param: 'nightlyProgram',
+    title: 'Tested in Nightly Program',
+  },
+  {
     param: 'wasRecentlyUpdated',
     title: 'Recently updated',
   },
@@ -86,6 +85,10 @@ export const FILTER_COMPATIBILITY: FilterParamsType[] = [
   {
     param: 'fireos',
     title: 'Works with Fire OS',
+  },
+  {
+    param: 'harmony',
+    title: 'Works with HarmonyOS',
   },
   {
     param: 'horizon',
@@ -106,10 +109,6 @@ export const FILTER_TYPE: FilterParamsType[] = [
     param: 'skipTools',
     title: 'Hide development tools',
   },
-  {
-    param: 'skipTemplates',
-    title: 'Hide templates',
-  },
 ];
 
 export const FILTER_MODULE_TYPE: FilterParamsType[] = [
@@ -125,4 +124,19 @@ export const FILTER_MODULE_TYPE: FilterParamsType[] = [
     param: 'turboModule',
     title: 'Turbo Module',
   },
+];
+
+export const FILTER_BOOKMARKS: FilterParamsType = {
+  param: 'bookmarks',
+  title: 'Bookmarked',
+};
+
+export const ALL_FILTERS_PARAMS: (keyof Query)[] = [
+  ...FILTER_PLATFORMS.map(p => p.param),
+  ...FILTER_REQUIRES_MAIN_SEARCH.map(p => p.param),
+  ...FILTER_STATUS.map(p => p.param),
+  ...FILTER_COMPATIBILITY.map(p => p.param),
+  ...FILTER_TYPE.map(p => p.param),
+  ...FILTER_MODULE_TYPE.map(p => p.param),
+  FILTER_BOOKMARKS.param,
 ];

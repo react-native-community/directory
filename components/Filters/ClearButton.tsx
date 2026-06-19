@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Pressable, type PressableProps, StyleSheet } from 'react-native';
+import { Pressable, type PressableProps } from 'react-native';
 
-import { colors } from '~/common/styleguide';
-
-import { XIcon } from '../Icons';
-import Tooltip from '../Tooltip';
+import { XIcon } from '~/components/Icons';
+import Tooltip from '~/components/Tooltip';
+import tw from '~/util/tailwind';
 
 type ClearButtonProps = Pick<PressableProps, 'onPress'>;
 
@@ -18,21 +17,12 @@ export function ClearButton({ onPress }: ClearButtonProps) {
           onHoverIn={() => setIsXIconHovered(true)}
           onHoverOut={() => setIsXIconHovered(false)}
           onPress={onPress}
-          style={styles.container}
+          style={tw`size-6 items-center justify-center`}
           aria-label="Clear all">
-          <XIcon fill={isXIconHovered ? colors.error : colors.white} width={12} height={12} />
+          <XIcon style={[tw`size-3`, isXIconHovered ? tw`text-error` : tw`text-white`]} />
         </Pressable>
       }>
       Clear all
     </Tooltip>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: 24,
-    height: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -14,7 +14,7 @@
   "protocol_handlers": [
     {
       "protocol": "web+rnd",
-      "url": "/?search=%s"
+      "url": "/packages?search=%s"
     }
   ],
   "theme_color": "#20232a",
