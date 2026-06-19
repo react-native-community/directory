@@ -3925,7 +3925,9 @@
     "examples": [
       "https://snack.expo.dev/@xcarpentier/giftedchat-playground",
       "https://reverent-bardeen-47c862.netlify.app/"
-    ]
+    ],
+    "unmaintained": true,
+    "alternatives": ["@kesha-antonov/react-native-chat"]
   },
   {
     "githubUrl": "https://github.com/shoutem/ui",
@@ -21710,5 +21712,13 @@
     "examples": ["https://github.com/blazejkustra/blaze-navigation/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-chat",
+    "npmPkg": "@kesha-antonov/react-native-chat",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
