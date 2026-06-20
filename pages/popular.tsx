@@ -1,120 +1,95 @@
-import fetch from 'cross-fetch';
-import { NextPageContext } from 'next';
-import { StyleSheet } from 'react-native';
+import { type NextPageContext } from 'next';
 
-import ContentContainer from '~/components/ContentContainer';
-import ExploreSection from '~/components/Explore/ExploreSection';
-import {
-  PlatformAndroid,
-  PlatformExpo,
-  PlatformIOS,
-  PlatformMacOS,
-  PlatformTvOS,
-  PlatformVisionOS,
-  PlatformWeb,
-  PlatformWindows,
-  ReactLogo,
-} from '~/components/Icons';
-import Navigation from '~/components/Navigation';
-import PageMeta from '~/components/PageMeta';
-import getApiUrl from '~/util/getApiUrl';
-import urlWithQuery from '~/util/urlWithQuery';
+import PopularScene from '~/scenes/PopularScene';
+import { type PopularPageProps } from '~/types/pages';
+import { POPULAR_QUERY_BASE } from '~/util/Constants';
+import { ssrFetch } from '~/util/SSRFetch';
 
-const Popular = ({ data }) => {
-  return (
-    <>
-      <PageMeta
-        title="Popular libraries"
-        description="Browse most popular recently libraries by platform"
-        path="popular"
-      />
-      <Navigation
-        title="Popular libraries"
-        description="Browse most popular recently libraries by platform."
-      />
-      <ContentContainer style={styles.container}>
-        <ExploreSection
-          title="Core platforms"
-          icon={ReactLogo}
-          data={data}
-          filter={lib => lib.android === true && lib.ios === true}
-          count={8}
-          queryParams={{ android: 'true', ios: 'true' }}
-        />
-        <ExploreSection
-          title="Android"
-          icon={PlatformAndroid}
-          data={data}
-          filter={lib => lib.android === true && !lib.ios}
-        />
-        <ExploreSection
-          title="iOS"
-          icon={PlatformIOS}
-          data={data}
-          filter={lib => lib.ios === true && !lib.android}
-        />
-        <ExploreSection
-          title="Web"
-          icon={PlatformWeb}
-          data={data}
-          filter={lib => lib.web === true}
-        />
-        <ExploreSection
-          title="macOS"
-          icon={PlatformMacOS}
-          data={data}
-          filter={lib => lib.macos === true}
-        />
-        <ExploreSection
-          title="tvOS"
-          icon={PlatformTvOS}
-          data={data}
-          filter={lib => lib.tvos === true}
-        />
-        <ExploreSection
-          title="visionOS"
-          icon={PlatformVisionOS}
-          data={data}
-          filter={lib => lib.visionos === true}
-        />
-        <ExploreSection
-          title="Windows"
-          icon={PlatformWindows}
-          data={data}
-          filter={lib => lib.windows === true}
-        />
-        <ExploreSection
-          title="Expo Go"
-          icon={PlatformExpo}
-          data={data}
-          filter={lib => lib.expoGo === true}
-        />
-        <ExploreSection title="Fire OS" data={data} filter={lib => lib.fireos === true} />
-      </ContentContainer>
-    </>
-  );
+function PopularPage(props: PopularPageProps) {
+  return <PopularScene {...props} />;
+}
+
+const DEFAULT_QUERY = {
+  ...POPULAR_QUERY_BASE,
+  limit: '4',
 };
 
-Popular.getInitialProps = async (ctx: NextPageContext) => {
-  const url = getApiUrl(
-    urlWithQuery('/libraries', { limit: 9999, minPopularity: 0, order: 'popularity' }),
-    ctx
-  );
-  const response = await fetch(url);
-  const result = await response.json();
+PopularPage.getInitialProps = async (ctx: NextPageContext) => {
+  const [
+    coreResponse,
+    androidResponse,
+    iosResponse,
+    webResponse,
+    macosResponse,
+    tvosResponse,
+    visionosResponse,
+    windowsResponse,
+    expoGoResponse,
+    fireosResponse,
+    harmonyResponse,
+    horizonResponse,
+    vegaosResponse,
+  ] = await Promise.all([
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, limit: '8', android: 'true', ios: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, android: 'true', ios: 'false' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, ios: 'true', android: 'false' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, web: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, macos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, tvos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, visionos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, windows: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, expoGo: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, fireos: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, harmony: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, horizon: 'true' }, ctx),
+    ssrFetch('/libraries', { ...DEFAULT_QUERY, vegaos: 'true' }, ctx),
+  ]);
+
+  const [
+    core,
+    android,
+    ios,
+    web,
+    macos,
+    tvos,
+    visionos,
+    windows,
+    expoGo,
+    fireos,
+    harmony,
+    horizon,
+    vegaos,
+  ] = await Promise.all([
+    coreResponse.json(),
+    androidResponse.json(),
+    iosResponse.json(),
+    webResponse.json(),
+    macosResponse.json(),
+    tvosResponse.json(),
+    visionosResponse.json(),
+    windowsResponse.json(),
+    expoGoResponse.json(),
+    fireosResponse.json(),
+    harmonyResponse.json(),
+    horizonResponse.json(),
+    vegaosResponse.json(),
+  ]);
 
   return {
-    data: result.libraries,
-    query: ctx.query,
+    core,
+    android,
+    ios,
+    web,
+    macos,
+    tvos,
+    visionos,
+    windows,
+    expoGo,
+    fireos,
+    harmony,
+    horizon,
+    vegaos,
   };
 };
 
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 12,
-    paddingHorizontal: 8,
-    paddingBottom: 12,
-  },
-});
-
-export default Popular;
+export default PopularPage;

@@ -1,28 +1,28 @@
-import { useRef } from 'react';
-import { Pressable } from 'react-native';
-import { useHover } from 'react-native-web-hooks';
+import { useState } from 'react';
+import { Pressable, type PressableProps } from 'react-native';
 
-import { colors } from '~/common/styleguide';
+import { XIcon } from '~/components/Icons';
+import Tooltip from '~/components/Tooltip';
+import tw from '~/util/tailwind';
 
-import { XIcon } from '../Icons';
-import Tooltip from '../Tooltip';
+type ClearButtonProps = Pick<PressableProps, 'onPress'>;
 
-type ClearButtonProps = {
-  onPress: () => void;
-};
-
-export const ClearButton = ({ onPress }: ClearButtonProps) => {
-  const xIconRef = useRef();
-  const isXIconHovered = useHover(xIconRef);
+export function ClearButton({ onPress }: ClearButtonProps) {
+  const [isXIconHovered, setIsXIconHovered] = useState(false);
   return (
     <Tooltip
       sideOffset={8}
       trigger={
-        <Pressable ref={xIconRef} onPress={onPress} aria-label="Clear all">
-          <XIcon fill={isXIconHovered ? colors.primary : colors.white} width={12} height={12} />
+        <Pressable
+          onHoverIn={() => setIsXIconHovered(true)}
+          onHoverOut={() => setIsXIconHovered(false)}
+          onPress={onPress}
+          style={tw`size-6 items-center justify-center`}
+          aria-label="Clear all">
+          <XIcon style={[tw`size-3`, isXIconHovered ? tw`text-error` : tw`text-white`]} />
         </Pressable>
       }>
       Clear all
     </Tooltip>
   );
-};
+}

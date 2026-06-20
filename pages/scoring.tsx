@@ -1,78 +1,39 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { H2, P, Headline, A, colors, darkColors, H3 } from '~/common/styleguide';
+import { A, Caption, H2, H3, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import TrendingMark from '~/components/Library/TrendingMark';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { ScoringCriterion } from '~/components/Score/ScoringCriterion';
+import { SCORING_CRITERIONS } from '~/util/scoring';
+import tw from '~/util/tailwind';
 
-const ScoringCriterion = ({ children, headline, score = undefined }) => {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const textStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const borderStyle = {
-    borderColor: isDark ? darkColors.border : colors.gray2,
-  };
-  const isPositiveModifier = score > 0;
-  return (
-    <View style={[styles.criterionWrapper, borderStyle]}>
-      <Headline style={[styles.criterion, textStyle]}>
-        {headline}
-        {score && (
-          <Headline
-            style={[
-              styles.criterionScore,
-              borderStyle,
-              { color: isPositiveModifier ? colors.success : colors.error },
-            ]}>
-            {isPositiveModifier ? '+' : ''}
-            {score}
-          </Headline>
-        )}
-      </Headline>
-      <P style={[styles.paragraph, { marginBottom: 0 }, textStyle]}>{children}</P>
-    </View>
-  );
-};
-
-const Scoring = () => {
-  const { isDark } = useContext(CustomAppearanceContext);
-  const textColorStyle = {
-    color: isDark ? colors.gray2 : colors.black,
-  };
-  const secondaryTextColorStyle = {
-    color: isDark ? darkColors.secondary : colors.gray4,
-  };
-
-  const calloutStyle = {
-    color: isDark ? darkColors.warning : colors.warningDark,
-    backgroundColor: isDark ? darkColors.warningLight : colors.warningLight,
-    borderLeftColor: isDark ? darkColors.warning : colors.warning,
-  };
-
+export default function Scoring() {
   return (
     <>
       <PageMeta
         title="Scoring"
         description="What are the Directory Score and Trending Score and how they are calculated"
-        path="popular"
+        path="scoring"
       />
       <Navigation
         title="Scoring"
         description="What are the Directory Score and Trending Score and how they are calculated?"
       />
-      <ContentContainer style={styles.container}>
-        <P style={[styles.paragraph, styles.callout, calloutStyle]}>
+      <ContentContainer style={tw`mt-8 px-4`}>
+        <Caption
+          style={[
+            tw`mb-4 border-l-[6px] border-warning bg-warning-light px-5 py-4 font-light leading-[24px] text-warning-dark`,
+            tw`dark:bg-warning-light dark:text-warning`,
+          ]}>
           Directory scores are subjective and are based on data that&apos;s readily available on
           GitHub and npm. They are not a perfect scores and may not reflect quality for your
           specific needs. When evaluating libraries to include in your project, review the library
           yourself to determine if it&apos;s a good fit.
-        </P>
-        <H2 style={[styles.subHeader, textColorStyle]}>Directory Score</H2>
-        <P style={[styles.paragraph, textColorStyle]}>
+        </Caption>
+        <H2 style={tw`mb-5 mt-4`}>Directory Score</H2>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
           library. A library can earn value by exhibiting &quot;good behavior criteria&quot; and can
           lose value by exhibiting &quot;bad behavior criteria&quot;. These criteria and their
@@ -83,50 +44,29 @@ const Scoring = () => {
           </A>
           .
         </P>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Directory Score is represented as a value between 0 and 100. All final scores outside
           this range will be clamped to the nearest limit.
         </P>
-        <H3 style={[styles.subHeader, textColorStyle]}>Directory Score criteria</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H3 style={tw`mb-5 mt-4`}>Directory Score criteria</H3>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The following criteria are used to calculate a library&apos;s Directory Score.
         </P>
         <ScoringCriterion headline="Combined Popularity">
           Base popularity metric measured by weighting and combining subscribers, forks, stars, and
           download counts:
-          <br />
-          <View style={styles.formula}>
-            <code>subscribers * 50 + forks * 25 + stars * 10 + downloads / 100;</code>
+          <View style={tw`mt-3 px-4`}>
+            <code>forks * 20 + stars * 10 + downloads / 50;</code>
           </View>
         </ScoringCriterion>
-        <ScoringCriterion headline="Very popular" score={45}>
-          Libraries with a Combined Popularity score of over 50,000 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Popular" score={30}>
-          Libraries with a Combined Popularity score of over 10,000 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Known" score={15}>
-          Libraries with a Combined Popularity score of over 2,500 meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Recently updated" score={10}>
-          Libraries that have been updated in the last 30 days meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Not supporting New Architecture" score={-5}>
-          Libraries that does not support New Architecture meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Not updated recently" score={-10}>
-          Libraries that have not been updated in the last 180 days meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="Lots of open issues" score={-20}>
-          Libraries with more than 75 open issues meet this criterion.
-        </ScoringCriterion>
-        <ScoringCriterion headline="No license, unrecognized license or GPL license" score={-20}>
-          Libraries without a license, libraries with non-standard license or that include the GPL
-          license meet this criterion.
-        </ScoringCriterion>
+        {SCORING_CRITERIONS.map(({ name, description, value }) => (
+          <ScoringCriterion headline={name} score={value} key={name}>
+            {description}
+          </ScoringCriterion>
+        ))}
         <br />
-        <H2 style={[styles.subHeader, textColorStyle]}>Trending Score</H2>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H2 style={tw`mb-5 mt-4`}>Trending Score</H2>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The Trending Score is the combination of multiple factors that relate to the download
           count and quality of a library. A library gets the the base score from the Popularity Gain
           criterion and can lose score by exhibiting one of bad criteria. These criteria and their
@@ -137,142 +77,65 @@ const Scoring = () => {
           </A>
           .
         </P>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           There are five levels of popularity which depends on the package final Trending Score:
-          <ul style={styles.trendingExplainers}>
+          <ul>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.5001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.5001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 50)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.2501 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.2501 }} style={tw`min-w-[164px]`} />
               (final score &gt; 25)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.1001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.1001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 10)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0.0001 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0.0001 }} style={tw`min-w-[164px]`} />
               (final score &gt; 0)
             </li>
             <li>
-              <TrendingMark markOnly library={{ popularity: 0 }} style={{ minWidth: 164 }} />
+              <TrendingMark markOnly library={{ popularity: 0 }} style={tw`min-w-[164px]`} />
               (final score =&lt; 0)
             </li>
           </ul>
         </P>
-        <H3 style={[styles.subHeader, textColorStyle]}>Trending Score criteria</H3>
-        <P style={[styles.paragraph, textColorStyle]}>
+        <H3 style={tw`mb-5 mt-4`}>Trending Score criteria</H3>
+        <P style={tw`mb-4 font-light leading-[27px]`}>
           The following criteria are used to calculate a library&apos;s final Trending Score.
         </P>
         <ScoringCriterion headline="Popularity Gain">
           A base for the final library score, it compares the monthly downloads count with weekly
           downloads count and based on those values calculates a growth ratio for the package. The
           formula used for calculating the score looks as following:
-          <br />
-          <View style={styles.formula}>
-            <code>
-              (lastWeekDownloads - Math.floor(monthlyDownloads / 4.5)) / monthlyDownloads)
-            </code>
+          <View style={tw`mt-3 px-4`}>
+            <code>(lastWeekDownloads / Math.floor(monthlyDownloads / 4.25)) / 5</code>
           </View>
-          <br />
-          <View style={[styles.sidenoteContainer]}>
-            <P style={[styles.sidenote, secondaryTextColorStyle]}>
-              The value range span can be quite wide, but most of the packages Popularity Gain value
-              fits within +/- 100 range.
-            </P>
-          </View>
+          <P style={[tw`mt-3 flex text-sm font-light text-palette-gray4 dark:text-secondary`]}>
+            The value range span can be quite wide, but most of the packages Popularity Gain value
+            fits within +/- 100 range.
+          </P>
         </ScoringCriterion>
-        <ScoringCriterion headline="Many downloads" score={+5}>
-          Libraries with more than 10,000 monthly downloads and Popularity Gain score above 0.25
+        <ScoringCriterion headline="Many downloads" score={+0.25}>
+          Libraries with more than 15,000 monthly downloads and Popularity Gain score above 0.25
           meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not many downloads" score={-0.25}>
-          Libraries with less than 500 monthly downloads meet this criterion.
+        <ScoringCriterion headline="Not many downloads" score={-0.75}>
+          Libraries with less than 1,000 monthly downloads meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="Not many followers" score={-0.1}>
+        <ScoringCriterion headline="Not many followers" score={-0.25}>
           Libraries with less than 25 starts on GitHub meet this criterion.
         </ScoringCriterion>
-        <ScoringCriterion headline="No longer maintained" score={-0.5}>
+        <ScoringCriterion headline="No longer maintained" score={-0.75}>
           Libraries that are marked with &quot;unmaintained&quot; flag meet this criterion.
         </ScoringCriterion>
         <ScoringCriterion headline="Very fresh package" score={-0.5}>
-          Libraries that first version was published less that 3 days ago meet this criterion.
+          Libraries that first version was published less that 7 days ago meet this criterion.
         </ScoringCriterion>
         <br />
       </ContentContainer>
     </>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 32,
-    paddingHorizontal: 16,
-  },
-  subHeader: {
-    marginTop: 16,
-    marginBottom: 20,
-  },
-  paragraph: {
-    fontSize: 17,
-    lineHeight: 29,
-    marginBottom: 17,
-    fontWeight: 300,
-  },
-  callout: {
-    borderLeftWidth: 8,
-    padding: 16,
-    marginBottom: 17,
-  },
-  criterionWrapper: {
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 6,
-    marginBottom: 17,
-  },
-  criterion: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 8,
-  },
-  criterionScore: {
-    // @ts-ignore
-    float: 'left',
-    marginRight: 16,
-    width: 50,
-    fontSize: 15,
-    fontWeight: '700',
-    padding: 1,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 4,
-    textAlign: 'center',
-  },
-  criterionScoreSymbol: {
-    position: 'relative',
-    top: 2,
-    left: 4,
-  },
-  formula: {
-    paddingHorizontal: 16,
-    marginTop: 12,
-  },
-  trendingExplainers: {
-    fontSize: 16,
-  },
-  sidenoteContainer: {
-    flex: 1,
-    marginTop: 12,
-  },
-  sidenote: {
-    fontSize: 15,
-    lineHeight: 25,
-    fontWeight: 300,
-  },
-});
-
-export default Scoring;
+}

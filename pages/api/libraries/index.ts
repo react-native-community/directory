@@ -1,99 +1,131 @@
-import drop from 'lodash/drop';
-import take from 'lodash/take';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { drop, take } from 'es-toolkit/compat';
+import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { Library } from '~/types';
-import { NUM_PER_PAGE } from '~/util/Constants';
+import { getBookmarksFromCookie } from '~/context/BookmarksContext';
+import { type DataAssetType, type QueryOrder, type SortedDataType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NUM_PER_PAGE } from '~/util/Constants';
+import { parseQueryParams } from '~/util/queryParams';
 import { handleFilterLibraries } from '~/util/search';
 import * as Sorting from '~/util/sorting';
 
-const originalData = [...data.libraries] as Library[];
-const getData = () => ({
-  updated: Sorting.updated([...originalData]),
-  added: [...originalData.reverse()],
-  compatibility: Sorting.compatibility([...originalData]),
-  quality: Sorting.quality([...originalData]),
-  popularity: Sorting.popularity([...originalData]),
-  downloads: Sorting.downloads([...originalData]),
-  issues: Sorting.issues([...originalData]),
-  stars: Sorting.stars([...originalData]),
-  relevance: Sorting.relevance([...originalData]),
-});
+const originalData = [...(data as DataAssetType).libraries];
+
+function getData(): SortedDataType {
+  return {
+    updated: Sorting.updated([...originalData]),
+    added: originalData.toReversed(),
+    quality: Sorting.quality([...originalData]),
+    popularity: Sorting.popularity([...originalData]),
+    downloads: Sorting.downloads([...originalData]),
+    issues: Sorting.issues([...originalData]),
+    stars: Sorting.stars([...originalData]),
+    relevance: Sorting.relevance([...originalData]),
+    size: Sorting.bundleSize([...originalData]),
+    dependencies: Sorting.dependencies([...originalData]),
+    released: Sorting.released([...originalData]),
+  };
+}
 
 const SortedData = getData();
+const ReversedSortedData = Object.fromEntries(
+  Object.entries(SortedData).map(([key, val]) => [key, [...val].reverse()])
+) as SortedDataType;
+
 const SortingKeys = Object.keys(SortedData);
 
-const ReversedSortedData = Object.entries(getData()).reduce(
-  (accumulator = {}, data) => ({ ...accumulator, [data[0]]: data[1].reverse() }),
-  {}
-);
-
-const getAllowedOrderString = (req: NextApiRequest, querySearch?: string) => {
-  let sortBy = querySearch ? SortingKeys.at(-1) : SortingKeys[0];
-
-  SortingKeys.forEach(sortName => {
-    if (req.query.order === sortName) {
-      sortBy = sortName;
-    }
-  });
-
-  return sortBy;
-};
+function getAllowedOrderString(req: NextApiRequest, querySearch?: string): QueryOrder {
+  const requestedOrder = req.query.order as string | undefined;
+  const sortBy =
+    requestedOrder && SortingKeys.includes(requestedOrder)
+      ? requestedOrder
+      : querySearch
+        ? SortingKeys.at(-1)
+        : SortingKeys[0];
+  return sortBy as QueryOrder;
+}
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
 
-  const querySearch = req.query.search
-    ? req.query.search.toString().toLowerCase().trim()
+  const parsedQuery = parseQueryParams(req.query);
+
+  const querySearch = parsedQuery.search
+    ? parsedQuery.search.toString().toLowerCase().trim()
     : undefined;
 
   const sortBy = getAllowedOrderString(req, querySearch);
-  const sortDirection = req.query.direction ?? 'descending';
+  const sortDirection = parsedQuery.direction ?? 'descending';
   const libraries = sortDirection === 'ascending' ? ReversedSortedData[sortBy] : SortedData[sortBy];
+
+  // Get bookmarks from cookie if bookmarks filter is enabled
+  const bookmarkedIds = parsedQuery.bookmarks
+    ? new Set(getBookmarksFromCookie(req.headers.cookie))
+    : null;
 
   const filteredLibraries = handleFilterLibraries({
     libraries,
     sortBy,
-    queryTopic: req.query.topic,
+    queryTopic: parsedQuery.topic,
     querySearch,
     support: {
-      ios: req.query.ios,
-      android: req.query.android,
-      web: req.query.web,
-      windows: req.query.windows,
-      macos: req.query.macos,
-      expoGo: req.query.expoGo,
-      fireos: req.query.fireos,
-      tvos: req.query.tvos,
-      visionos: req.query.visionos,
+      ios: parsedQuery.ios,
+      android: parsedQuery.android,
+      web: parsedQuery.web,
+      windows: parsedQuery.windows,
+      macos: parsedQuery.macos,
+      expoGo: parsedQuery.expoGo,
+      fireos: parsedQuery.fireos,
+      harmony: parsedQuery.harmony,
+      horizon: parsedQuery.horizon,
+      tvos: parsedQuery.tvos,
+      visionos: parsedQuery.visionos,
+      vegaos: parsedQuery.vegaos,
     },
-    hasExample: req.query.hasExample,
-    hasImage: req.query.hasImage,
-    hasTypes: req.query.hasTypes,
-    isMaintained: req.query.isMaintained,
-    isPopular: req.query.isPopular,
-    isRecommended: req.query.isRecommended,
-    wasRecentlyUpdated: req.query.wasRecentlyUpdated,
-    minPopularity: req.query.minPopularity,
-    minMonthlyDownloads: req.query.minMonthlyDownloads,
-    newArchitecture: req.query.newArchitecture,
-    skipLibs: req.query.skipLibs,
-    skipTools: req.query.skipTools,
-    skipTemplates: req.query.skipTemplates,
+    hasExample: parsedQuery.hasExample,
+    hasImage: parsedQuery.hasImage,
+    hasTypes: parsedQuery.hasTypes,
+    hasNativeCode: parsedQuery.hasNativeCode,
+    configPlugin: parsedQuery.configPlugin,
+    isMaintained: parsedQuery.isMaintained,
+    isPopular: parsedQuery.isPopular,
+    wasRecentlyUpdated: parsedQuery.wasRecentlyUpdated,
+    minPopularity: parsedQuery.minPopularity,
+    minMonthlyDownloads: parsedQuery.minMonthlyDownloads,
+    newArchitecture: parsedQuery.newArchitecture,
+    skipLibs: parsedQuery.skipLibs,
+    skipTools: parsedQuery.skipTools,
+    expoModule: parsedQuery.expoModule,
+    nitroModule: parsedQuery.nitroModule,
+    turboModule: parsedQuery.turboModule,
+    nightlyProgram: parsedQuery.nightlyProgram,
+    owner: parsedQuery.owner,
+    bookmarks: parsedQuery.bookmarks,
+    bookmarkedIds,
   });
 
-  const offset = req.query.offset ? parseInt(req.query.offset.toString(), 10) : 0;
-  const limit = req.query.limit ? parseInt(req.query.limit.toString(), 10) : NUM_PER_PAGE;
+  const offset = parsedQuery.offset ? Number.parseInt(parsedQuery.offset.toString(), 10) : 0;
+  const limit = parsedQuery.limit
+    ? Number.parseInt(parsedQuery.limit.toString(), 10)
+    : NUM_PER_PAGE;
 
   const relevanceSortedLibraries =
-    querySearch?.length && (!req.query.order || req.query.order === 'relevance')
-      ? Sorting.relevance([...filteredLibraries])
+    querySearch?.length && (!parsedQuery.order || parsedQuery.order === 'relevance')
+      ? sortDirection === 'ascending'
+        ? Sorting.relevance([...filteredLibraries]).reverse()
+        : Sorting.relevance([...filteredLibraries])
       : filteredLibraries;
   const filteredAndPaginatedLibraries = take(drop(relevanceSortedLibraries, offset), limit);
 
-  return res.json({
+  // Don't cache responses with bookmarks filter since it depends on user-specific cookies.
+  if (parsedQuery.bookmarks) {
+    res.setHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  } else {
+    res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
+  }
+
+  res.json({
     libraries: filteredAndPaginatedLibraries,
     total: filteredLibraries.length,
   });

@@ -1,25 +1,28 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import data from '~/assets/data.json';
-import { Library } from '~/types';
-import { getNewArchSupportStatus } from '~/util/newArchStatus';
+import data from '~/assets/check-data.json';
+import { type CheckResultsType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 
-// Copy data into an object that is keyed by npm package name for faster lookup
-const dataByNpmPackage = {};
-data.libraries.forEach(library => {
-  const npmPackageName = getNpmPackageName(library);
-  dataByNpmPackage[npmPackageName] = {
-    unmaintained: library.unmaintained,
-    newArchitecture: getNewArchSupportStatus(library),
-  };
-});
+const DATASET = data as CheckResultsType;
 
-// Provide library metadata for a list of npm packages
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'application/json');
   let packages: string[];
 
-  if (typeof req.body === 'string') {
+  if (req.method === 'GET') {
+    const rawPackages = req.query.packages;
+    if (!rawPackages) {
+      packages = [];
+    } else if (Array.isArray(rawPackages)) {
+      packages = rawPackages;
+    } else {
+      packages = rawPackages
+        .split(',')
+        .map(p => p.trim())
+        .filter(Boolean);
+    }
+  } else if (typeof req.body === 'string') {
     packages = JSON.parse(req.body)?.packages;
   } else {
     packages = req.body.packages;
@@ -27,19 +30,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (!packages || !Array.isArray(packages)) {
     res.statusCode = 500;
-    return res.json({ error: 'packages must be an array' });
+    res.json({ error: 'packages must be an array' });
+    return;
   }
 
   res.statusCode = 200;
-  const result = {};
-  packages.forEach(pkgName => {
-    result[pkgName] = dataByNpmPackage[pkgName];
-  });
-
-  return res.json(result);
-}
-
-// if npmPkg, use that, otherwise use the last path segment on githubUrl
-function getNpmPackageName(library: Library): string {
-  return library.npmPkg || library.githubUrl.split('/').pop();
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
+  res.json(Object.fromEntries(packages.map(pkgName => [pkgName, DATASET[pkgName]])));
 }

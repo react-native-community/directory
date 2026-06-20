@@ -1,11 +1,9 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { useContext, memo, useState } from 'react';
-import { ActivityIndicator, useWindowDimensions } from 'react-native';
+import { memo, useState } from 'react';
+import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
-import { colors, darkColors } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
-
-import { Thumbnail as ThumbnailIcon } from '../Icons';
+import { ThumbnailIcon } from '~/components/Icons';
+import tw from '~/util/tailwind';
 
 type Props = {
   url: string;
@@ -13,84 +11,63 @@ type Props = {
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
-const Thumbnail = ({ url }: Props) => {
-  const { isDark } = useContext(CustomAppearanceContext);
+function Thumbnail({ url }: Props) {
   const { width, height } = useWindowDimensions();
+
+  const [isLoaded, setLoaded] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   const maxPreviewWidth = width < GITHUB_PREVIEW_MIN_WIDTH ? width : GITHUB_PREVIEW_MIN_WIDTH;
   const maxPreviewImageWidth = maxPreviewWidth - 20;
   const maxPreviewHeight = height / 2;
   const maxImgPreviewHeight = maxPreviewHeight - 20;
 
-  const [isLoaded, setLoaded] = useState(false);
-  const [showPreview, setShowPreview] = useState(false);
-
-  const iconFill = isDark
-    ? showPreview
-      ? colors.primary
-      : darkColors.pewter
-    : showPreview
-      ? colors.primary
-      : undefined;
-
   return (
-    <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={open => setShowPreview(open)}>
+    <HoverCard.Root openDelay={0} closeDelay={0} onOpenChange={setShowPreview}>
       <HoverCard.Trigger asChild>
-        <div
-          style={{
-            marginRight: 10,
-            marginTop: 4,
-            marginBottom: 4,
-            padding: 6,
-            paddingBottom: 0,
-            minHeight: 30,
-            boxSizing: 'border-box',
-            overflow: 'hidden',
-            textAlign: 'center',
-            borderWidth: 1,
-            borderRadius: 3,
-            borderColor: isDark ? darkColors.border : colors.gray2,
-            borderStyle: 'solid',
-            cursor: isLoaded ? 'pointer' : 'progress',
-          }}>
+        <View
+          tabIndex={0}
+          style={tw`min-h-7.5 my-1 mr-2.5 box-border overflow-hidden rounded border border-palette-gray2 p-1.5 pb-0 text-center dark:border-default`}>
           {showPreview && !isLoaded ? (
-            <div style={{ width: 14, marginLeft: 1, marginRight: 1, marginTop: -2 }}>
-              <ActivityIndicator size="small" color={iconFill} />
+            <div style={tw`mx-px -mt-0.5 w-3.5`}>
+              <ActivityIndicator size="small" color={tw`text-primary-dark`.color as ColorValue} />
             </div>
           ) : (
-            <ThumbnailIcon fill={iconFill} />
+            <ThumbnailIcon
+              style={[
+                tw`text-palette-gray3 dark:text-pewter`,
+                showPreview && tw`text-primary-dark`,
+              ]}
+            />
           )}
-        </div>
+        </View>
       </HoverCard.Trigger>
       <HoverCard.Portal>
         <HoverCard.Content sideOffset={6} sticky="always">
-          <div
-            style={{
-              backgroundColor: isDark ? darkColors.black : colors.white,
-              opacity: 1,
-              padding: 10,
-              boxSizing: 'border-box',
-              maxWidth: maxPreviewWidth,
-              maxHeight: maxPreviewHeight,
-              borderRadius: 4,
-              display: showPreview && isLoaded ? 'block' : 'none',
-              boxShadow: `0 4px 6px 0 ${isDark ? '#2a2e3633' : '#00000025'}`,
-            }}>
+          <View
+            style={[
+              tw`shadow-offset-0/0.5 shadow-radius-2 box-border hidden rounded-lg bg-white p-2.5 shadow-palette-gray3 dark:bg-black dark:shadow-accented`,
+              showPreview && isLoaded && tw`flex`,
+              {
+                maxWidth: maxPreviewWidth,
+                maxHeight: maxPreviewHeight,
+              },
+            ]}>
             <img
               src={url}
               onLoad={() => setLoaded(true)}
               alt=""
               style={{
+                ...tw`rounded`,
                 maxWidth: maxPreviewImageWidth,
                 maxHeight: maxImgPreviewHeight,
-                borderRadius: 2,
               }}
             />
-          </div>
+          </View>
         </HoverCard.Content>
       </HoverCard.Portal>
     </HoverCard.Root>
   );
-};
+}
 
 export default memo(Thumbnail);

@@ -1,4 +1,6 @@
-export const FILTER_PLATFORMS = [
+import { type FilterParamsType, type Query } from '~/types';
+
+export const FILTER_PLATFORMS: FilterParamsType[] = [
   {
     param: 'android',
     title: 'Android',
@@ -29,7 +31,7 @@ export const FILTER_PLATFORMS = [
   },
 ];
 
-export const FILTER_REQUIRES_MAIN_SEARCH = [
+export const FILTER_REQUIRES_MAIN_SEARCH: FilterParamsType[] = [
   {
     param: 'isMaintained',
     title: 'Maintained',
@@ -40,10 +42,18 @@ export const FILTER_REQUIRES_MAIN_SEARCH = [
   },
 ];
 
-export const FILTER_STATUS = [
+export const FILTER_STATUS: FilterParamsType[] = [
   {
     param: 'newArchitecture',
     title: 'Supports New Architecture',
+  },
+  {
+    param: 'hasNativeCode',
+    title: 'Uses native code',
+  },
+  {
+    param: 'configPlugin',
+    title: 'Has Expo config plugin',
   },
   {
     param: 'hasExample',
@@ -58,12 +68,16 @@ export const FILTER_STATUS = [
     title: 'Has TypeScript types',
   },
   {
+    param: 'nightlyProgram',
+    title: 'Tested in Nightly Program',
+  },
+  {
     param: 'wasRecentlyUpdated',
     title: 'Recently updated',
   },
 ];
 
-export const FILTER_COMPATIBILITY = [
+export const FILTER_COMPATIBILITY: FilterParamsType[] = [
   {
     param: 'expoGo',
     title: 'Works with Expo Go',
@@ -72,4 +86,57 @@ export const FILTER_COMPATIBILITY = [
     param: 'fireos',
     title: 'Works with Fire OS',
   },
+  {
+    param: 'harmony',
+    title: 'Works with HarmonyOS',
+  },
+  {
+    param: 'horizon',
+    title: 'Works with Meta Horizon OS',
+  },
+  {
+    param: 'vegaos',
+    title: 'Works with Vega OS',
+  },
+];
+
+export const FILTER_TYPE: FilterParamsType[] = [
+  {
+    param: 'skipLibs',
+    title: 'Hide libraries',
+  },
+  {
+    param: 'skipTools',
+    title: 'Hide development tools',
+  },
+];
+
+export const FILTER_MODULE_TYPE: FilterParamsType[] = [
+  {
+    param: 'expoModule',
+    title: 'Expo Module',
+  },
+  {
+    param: 'nitroModule',
+    title: 'Nitro Module',
+  },
+  {
+    param: 'turboModule',
+    title: 'Turbo Module',
+  },
+];
+
+export const FILTER_BOOKMARKS: FilterParamsType = {
+  param: 'bookmarks',
+  title: 'Bookmarked',
+};
+
+export const ALL_FILTERS_PARAMS: (keyof Query)[] = [
+  ...FILTER_PLATFORMS.map(p => p.param),
+  ...FILTER_REQUIRES_MAIN_SEARCH.map(p => p.param),
+  ...FILTER_STATUS.map(p => p.param),
+  ...FILTER_COMPATIBILITY.map(p => p.param),
+  ...FILTER_TYPE.map(p => p.param),
+  ...FILTER_MODULE_TYPE.map(p => p.param),
+  FILTER_BOOKMARKS.param,
 ];

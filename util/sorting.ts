@@ -1,62 +1,74 @@
-import { Library } from '../types';
+import { type LibraryType } from '~/types';
 
-export function compatibility(libraries: Library[]) {
-  return libraries.sort((a, b) => {
-    const aCompat = [a.expoGo && typeof a.expoGo !== 'string', a.ios, a.android, a.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    const bCompat = [b.expoGo && typeof b.expoGo !== 'string', b.ios, b.android, b.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    return bCompat - aCompat;
-  });
-}
-
-export function issues(libraries: Library[]) {
+export function issues(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);
 }
 
-export function stars(libraries: Library[]) {
+export function stars(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.github.stats.stars - a.github.stats.stars);
 }
 
-export function downloads(libraries: Library[]) {
+export function downloads(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    const bDownloads = b.npm.downloads ? b.npm.downloads : 0;
-    const aDownloads = a.npm.downloads ? a.npm.downloads : 0;
+    const bDownloads = b.npm?.downloads ?? 0;
+    const aDownloads = a.npm?.downloads ?? 0;
 
     return bDownloads - aDownloads;
   });
 }
 
-export function updated(libraries: Library[]) {
-  return libraries.sort((a, b) => {
-    return (
-      new Date(b.github.stats.pushedAt).getTime() - new Date(a.github.stats.pushedAt).getTime()
-    );
-  });
+export function updated(libraries: LibraryType[]) {
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: new Date(lib.github.stats.pushedAt).getTime(),
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
 }
 
-export function quality(libraries: Library[]) {
+export function released(libraries: LibraryType[]) {
+  const withTimestamps = libraries.map(lib => ({
+    lib,
+    ts: lib.npm?.latestReleaseDate ? new Date(lib.npm.latestReleaseDate).getTime() : 0,
+  }));
+  withTimestamps.sort((a, b) => b.ts - a.ts);
+  return withTimestamps.map(({ lib }) => lib);
+}
+
+export function quality(libraries: LibraryType[]) {
   return libraries.sort((a, b) => b.score - a.score);
 }
 
-export function popularity(libraries: Library[]) {
-  return libraries.sort((a, b) => b.popularity - a.popularity);
+export function popularity(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => (b?.popularity ?? 0) - (a?.popularity ?? 0));
 }
 
-export function relevance(libraries: Library[]) {
+export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    if (Math.abs(a.matchScore - b.matchScore) >= 50) {
-      return b.matchScore - a.matchScore;
+    if (a.matchScore && b.matchScore) {
+      if (a.matchScore < 10 || b.matchScore < 10 || Math.abs(a.matchScore - b.matchScore) >= 40) {
+        return b.matchScore - a.matchScore;
+      }
+      return b.score - a.score;
     }
+    return 0;
+  });
+}
 
-    return b.score - a.score;
+export function dependencies(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bDependencies = b.github.stats?.dependencies ?? 0;
+    const aDependencies = a.github.stats?.dependencies ?? 0;
+
+    return bDependencies - aDependencies;
+  });
+}
+
+export function bundleSize(libraries: LibraryType[]) {
+  return libraries.sort((a, b) => {
+    const bSize = b.npm?.size ?? 0;
+    const aSize = a.npm?.size ?? 0;
+
+    return bSize - aSize;
   });
 }

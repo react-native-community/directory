@@ -1,5 +1,12 @@
 const GitHubRepositoryQuery = `
-  query ($repoOwner: String!, $repoName: String!, $packagePath: String = ".", $packageJsonPath: String = "HEAD:package.json") {
+  query (
+    $repoOwner: String!,
+    $repoName: String!,
+    $packagePath: String = ".",
+    $packageFilesPath: String = "HEAD:.",
+    $packageJsonPath: String = "HEAD:package.json",
+    $fetchRoot: Boolean = false
+  ) {
     rateLimit {
       limit
       cost
@@ -7,9 +14,12 @@ const GitHubRepositoryQuery = `
       resetAt
     }
     repository(owner: $repoOwner, name: $repoName) {
+      hasDiscussionsEnabled
       hasIssuesEnabled
-      hasWikiEnabled
+      hasProjectsEnabled
       hasSponsorshipsEnabled
+      hasWikiEnabled
+      hasVulnerabilityAlertsEnabled
       issues(states: OPEN) {
         totalCount
       }
@@ -33,6 +43,7 @@ const GitHubRepositoryQuery = `
       nameWithOwner
       isArchived
       isMirror
+      isPrivate
       licenseInfo {
         key
         name
@@ -40,16 +51,7 @@ const GitHubRepositoryQuery = `
         url
         id
       }
-      releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
-        nodes {
-          name
-          tagName
-          createdAt
-          publishedAt
-          isPrerelease
-        }
-      }
-      repositoryTopics(first: 10) {
+      repositoryTopics(first: 15) {
         nodes {
           topic {
             name
@@ -72,6 +74,27 @@ const GitHubRepositoryQuery = `
       packageJson:object(expression: $packageJsonPath) {
         ... on Blob {
           text
+        }
+      }
+      files: object(expression: $packageFilesPath) {
+        ... on Tree {
+          entries {
+            name
+            type
+          }
+        }
+      }
+      rootPackageJson: object(expression: "HEAD:package.json") @include(if: $fetchRoot) {
+        ... on Blob {
+          text
+        }
+      }
+      rootFiles: object(expression: "HEAD:") @include(if: $fetchRoot) {
+        ... on Tree {
+          entries {
+            name
+            type
+          }
         }
       }
     }

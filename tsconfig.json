@@ -1,33 +1,27 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "target": "esnext",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "allowJs": false,
+    "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "isolatedModules": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
     "paths": {
       "~/*": ["./*"]
-    }
+    },
+    "typeRoots": ["types", "node_modules/@types"],
+    "esModuleInterop": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

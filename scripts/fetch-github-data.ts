@@ -1,45 +1,47 @@
-import fetch from 'cross-fetch';
 import { config } from 'dotenv';
 
-import { processTopics, sleep, REQUEST_SLEEP } from './helpers';
+import { type LibraryLicenseType, type LibraryType } from '~/types';
+import detectModuleType from '~/util/github/detectModuleType';
+import hasConfigPlugin from '~/util/github/hasConfigPlugin';
+import {
+  detectPackageManager,
+  hasCCFile,
+  hasChangelogFile,
+  hasContributingFile,
+  hasReadmeFile,
+  hasSecurityFile,
+} from '~/util/github/hasFiles';
+import hasNativeCode from '~/util/github/hasNativeCode';
+import { parseGitHubUrl } from '~/util/parseGitHubUrl';
+
+import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config();
 
-const GRAPHQL_API = 'https://api.github.com/graphql';
-
-const AUTHORIZATION = `bearer ${process.env.CI_CHECKS_TOKEN ?? process.env.GITHUB_TOKEN}`;
-
-const licenses = {};
+const licenses: Record<string, LibraryLicenseType> = {
+  isc: {
+    id: 'isc',
+    name: 'ISC License',
+    url: 'https://www.isc.org/licenses/',
+    key: 'isc',
+    spdxId: 'ISC',
+  },
+};
 
 /**
  * Fetch licenses from GitHub to be used later to parse licenses from npm
  */
-export const loadGitHubLicenses = async () => {
+export async function loadGitHubLicenses() {
   const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
-  result.data.licenses.forEach(license => {
+  result.data.licenses.forEach((license: LibraryLicenseType) => {
     licenses[license.key] = license;
   });
-};
+}
 
-const makeGraphqlQuery = async (query: string, variables = {}) => {
-  const result = await fetch(GRAPHQL_API, {
-    method: 'POST',
-    headers: {
-      Authorization: AUTHORIZATION,
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-  return await result.json();
-};
-
-export const fetchGithubRateLimit = async () => {
+export async function fetchGithubRateLimit() {
   // Accurately fetch query rate limit and cost by making dummy request
   // https://developer.github.com/v4/guides/resource-limitations/
   const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
@@ -61,45 +63,26 @@ export const fetchGithubRateLimit = async () => {
   }
 
   return {};
-};
+}
 
-const getUpdatedUrl = async url => {
-  try {
-    const result = await fetch(url);
-    return result.url;
-  } catch {
-    return url;
-  }
-};
-
-const parseUrl = url => {
-  const [, , , repoOwner, repoName, ...path] = url.split('/');
-  const isMonorepo = !!(path && path.length);
-  const packagePath = isMonorepo ? path.slice(2).join('/') : '.';
-
-  return {
-    repoOwner,
-    repoName,
-    isMonorepo,
-    packagePath,
-  };
-};
-
-export const fetchGithubData = async (data, retries = 2) => {
+export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
   }
   try {
     const url = data.githubUrl;
-    const { isMonorepo, repoOwner, repoName, packagePath } = parseUrl(url);
+    const { isMonorepo, repoOwner, repoName, packagePath, branchName } = parseGitHubUrl(url);
     const fullName = `${repoOwner}/${repoName}`;
+    const branch = branchName ?? 'HEAD';
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
       repoName,
       packagePath,
-      packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
+      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      fetchRoot: packagePath !== '.',
     });
 
     if (result.errors) {
@@ -129,6 +112,7 @@ export const fetchGithubData = async (data, retries = 2) => {
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
+
     return {
       ...data,
       github,
@@ -138,63 +122,71 @@ export const fetchGithubData = async (data, retries = 2) => {
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     return await fetchGithubData(data, retries - 1);
   }
-};
+}
 
-const getLicenseFromPackageJson = packageJson => {
-  // Get the GitHub license spec from the npm string
+// Get the GitHub license spec from the npm string
+function getLicenseFromPackageJson(packageJson: Record<string, string | object>) {
   if (packageJson.license && typeof packageJson.license === 'string') {
     return licenses[packageJson.license.toLowerCase()];
   }
-};
+}
 
-const createRepoDataWithResponse = (json, monorepo) => {
+function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
+      json.pasedPackageJson = packageJson;
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
       json.registry = packageJson?.publishConfig?.registry ?? undefined;
+      json.dependenciesCount = packageJson.dependencies
+        ? Object.keys(packageJson.dependencies).length
+        : 0;
+      json.packageManager = packageJson.packageManager ?? undefined;
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
-        json.topics = processTopics(packageJson.keywords);
+        json.topics = [...new Set(processTopics(packageJson.keywords))];
         json.description = packageJson.description;
         json.licenseInfo = getLicenseFromPackageJson(packageJson);
       }
 
       if (!monorepo) {
-        json.topics = [
-          ...new Set([
-            ...processTopics(packageJson.keywords),
-            ...processTopics(json.repositoryTopics.nodes.map(({ topic }) => topic.name)),
-          ]),
+        const rawTopics = [
+          ...processTopics(packageJson.keywords),
+          ...processTopics(
+            json.repositoryTopics.nodes.map(({ topic }: { topic: { name: string } }) => topic.name)
+          ),
         ];
+        json.topics = [...new Set(rawTopics)];
 
-        if (!json.description) {
-          json.description = packageJson.description;
-        }
+        json.description = packageJson.description ?? json.description;
+        json.homepageUrl = packageJson.homepage ?? json.homepageUrl;
 
         if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
-          json.licenseInfo = getLicenseFromPackageJson(packageJson) || json.licenseInfo;
+          json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
         }
       }
 
       if (packageJson.types || packageJson.typings) {
         json.types = true;
       }
-    } catch (e) {
+    } catch (error) {
       console.error(`Unable to parse ${json.name} package.json file!`);
-      console.error(e);
+      console.error(error);
     }
   }
 
-  if (!monorepo) {
-    json.lastRelease =
-      json.releases && json.releases.nodes && json.releases.nodes.length
-        ? json.releases.nodes[0]
-        : undefined;
+  if (json.rootPackageJson && !json.packageManager) {
+    try {
+      const rootPackageJson = JSON.parse(json.rootPackageJson.text);
+      json.packageManager = rootPackageJson.packageManager ?? undefined;
+    } catch (error) {
+      console.error(`Unable to parse ${json.name} root package.json file!`);
+      console.error(error);
+    }
   }
 
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
@@ -202,13 +194,15 @@ const createRepoDataWithResponse = (json, monorepo) => {
   return {
     urls: {
       repo: json.url,
-      clone: `${json.url}.git`,
       homepage: json?.homepageUrl?.length > 0 ? json.homepageUrl : null,
     },
     stats: {
       hasIssues: json.hasIssuesEnabled,
       hasWiki: json.hasWikiEnabled,
       hasSponsorships: json.hasSponsorshipsEnabled,
+      hasDiscussions: json.hasDiscussionsEnabled,
+      hasProjects: json.hasProjectsEnabled,
+      hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
@@ -217,6 +211,7 @@ const createRepoDataWithResponse = (json, monorepo) => {
       issues: json.issues.totalCount,
       subscribers: json.watchers.totalCount,
       stars: json.stargazers.totalCount,
+      dependencies: json.dependenciesCount,
     },
     name: json.name,
     fullName: json.nameWithOwner,
@@ -225,9 +220,20 @@ const createRepoDataWithResponse = (json, monorepo) => {
     description: json.description,
     topics: json.topics,
     license: json.licenseInfo,
-    lastRelease: json.lastRelease,
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
+    hasReadme: hasReadmeFile(json.files),
+    hasChangelog: hasChangelogFile(json.files),
+    hasContributing: hasContributingFile(json.files),
+    hasCC: hasCCFile(json.files),
+    hasSecurity: hasSecurityFile(json.files),
+    hasNativeCode: hasNativeCode(json.files),
+    configPlugin: hasConfigPlugin(json.files),
+    moduleType: detectModuleType(json.files, json.pasedPackageJson),
+    packageManager:
+      json.packageManager ??
+      detectPackageManager(json.files) ??
+      detectPackageManager(json.rootFiles),
   };
-};
+}
