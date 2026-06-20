@@ -14250,7 +14250,7 @@
     "ios": true,
     "android": true
   },
-  { 
+  {
     "githubUrl": "https://github.com/i18next/i18next",
     "npmPkg": "i18next",
     "examples": ["https://github.com/i18next/i18next/tree/master/examples/typescript"],
@@ -14261,7 +14261,9 @@
   {
     "githubUrl": "https://github.com/PostHog/posthog-react-native-session-replay",
     "npmPkg": "posthog-react-native-session-replay",
-    "examples": ["https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"],
+    "examples": [
+      "https://github.com/PostHog/posthog-react-native-session-replay/tree/main/example"
+    ],
     "ios": true,
     "android": true
   },
@@ -14312,6 +14314,12 @@
     "npmPkg": "@supersami/rn-foreground-service",
     "examples": ["https://github.com/Raja0sama/rn-forground-service-example"],
     "images": ["https://rn-foreground.vercel.app/md.png"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-modules-jsi",
+    "newArchitecture": true,
+    "ios": true,
     "android": true
   }
 ]
