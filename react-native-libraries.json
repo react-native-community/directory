@@ -1285,7 +1285,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "npmPkg": "react-native-calendar-picker"
+    "npmPkg": "react-native-calendar-picker",
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/byteburgers/react-native-autocomplete-input/tree/main/packages/react-native-autocomplete-input",
@@ -3278,7 +3280,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-cookies/cookies",
@@ -3427,7 +3431,8 @@
     "windows": true,
     "macos": true,
     "visionos": true,
-    "npmPkg": "@react-native-clipboard/clipboard"
+    "npmPkg": "@react-native-clipboard/clipboard",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-segmented-control/segmented-control",
@@ -3442,7 +3447,9 @@
     "expoGo": true,
     "web": true,
     "harmony": "@react-native-oh-tpl/segmented-control",
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-voice/voice",
@@ -3924,7 +3931,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-chat",
@@ -5783,7 +5791,9 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jordanbyron/react-native-event-source",
@@ -10083,7 +10093,8 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/lingui/js-lingui/tree/main/packages/react",
@@ -12842,7 +12853,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/HichamELBSI/react-native-body-highlighter",
@@ -12943,7 +12956,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/ui/toast",
@@ -15205,7 +15220,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/alert-dialog",
@@ -15247,7 +15263,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/checkbox",
@@ -15261,7 +15278,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/collapsible",
@@ -15275,7 +15293,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/context-menu",
@@ -15289,7 +15308,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/dialog",
@@ -15303,7 +15323,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/dropdown-menu",
@@ -15373,7 +15394,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/popover",
@@ -15401,7 +15423,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/radio-group",
@@ -15428,7 +15451,8 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/separator",
@@ -15470,7 +15494,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/table",
@@ -15484,7 +15509,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/tabs",
@@ -15526,7 +15552,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toggle-group",
@@ -15540,7 +15567,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toolbar",
@@ -15698,7 +15726,8 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Sharcoux/navigation/tree/master/packages/react-native",
@@ -16861,7 +16890,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/TanStack/query/tree/main/packages/react-query-persist-client",
@@ -17634,7 +17665,8 @@
     "windows": true,
     "fireos": true,
     "tvos": true,
-    "visionos": true
+    "visionos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/bluesky-social/atproto/tree/main/packages/oauth/oauth-client-expo",
@@ -20498,7 +20530,9 @@
       "https://cloud.githubusercontent.com/assets/378279/9074360/16eac5d6-3b09-11e5-90af-a69980e9f4be.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/software-mansion/pulsar/tree/main/react-native/react-native-pulsar",
@@ -21444,7 +21478,9 @@
     "npmPkg": "@react-native/normalize-colors",
     "android": true,
     "ios": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Malaa-tech/react-native-moyasar-apple-pay",
