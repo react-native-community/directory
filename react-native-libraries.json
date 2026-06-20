@@ -21757,5 +21757,11 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-modules-jsi",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
