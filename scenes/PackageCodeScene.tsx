@@ -57,6 +57,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   }, [isBrowserMaximized]);
 
   useEffect(() => {
+    // oxlint-disable-next-line react/react-compiler
     setActiveFile(window.localStorage.getItem(activeFileStorageKey));
   }, [activeFileStorageKey]);
 

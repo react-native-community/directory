@@ -2,7 +2,7 @@ import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
@@ -51,12 +51,8 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
     () => parseChartMode(router.query[CHART_MODE_QUERY_PARAM]),
     [router.query]
   );
-  const [mode, setMode] = useState<VersionsChartMode>(routeMode);
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
-
-  useEffect(() => {
-    setMode(currentMode => (currentMode === routeMode ? currentMode : routeMode));
-  }, [routeMode]);
+  const [mode, setMode] = useState<VersionsChartMode>(routeMode);
 
   const versionDistTags = useMemo(() => mapVersionDistTags(registryData), [registryData]);
   const baseSeries = useMemo<VersionsChartData[]>(

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -35,14 +35,6 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   );
   const [versionSearch, setVersionSearch] = useState(routeVersionSearch);
 
-  useEffect(() => {
-    setVersionSearch(currentVersionSearch =>
-      currentVersionSearch === routeVersionSearch ? currentVersionSearch : routeVersionSearch
-    );
-  }, [routeVersionSearch]);
-
-  useEffect(() => setShowAll(false), [versionSearch]);
-
   const versions = useMemo(
     () =>
       Object.entries(registryData.versions).sort(
@@ -75,12 +67,14 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
     <>
       <H6Section style={tw`mt-3 flex items-end justify-between text-secondary`}>
         <span>Versions</span>
-        <Label style={tw`font-light text-secondary`}>
-          <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
-            {filteredVersions.length}
-          </span>{' '}
-          matching {pluralize('version', filteredVersions.length)}
-        </Label>
+        {filteredVersions.length > 0 && (
+          <Label style={tw`font-light text-secondary`}>
+            <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
+              {filteredVersions.length}
+            </span>{' '}
+            matching {pluralize('version', filteredVersions.length)}
+          </Label>
+        )}
       </H6Section>
       <View style={tw`gap-2`}>
         <View
@@ -94,8 +88,10 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
             autoComplete="off"
             value={versionSearch}
             onChangeText={text => {
-              setVersionSearch(text);
-              updateVersionSearchQuery(text.trim());
+              const normalizedQuery = text.trim();
+              setVersionSearch(normalizedQuery);
+              updateVersionSearchQuery(normalizedQuery);
+              setShowAll(false);
             }}
             onKeyPress={event => {
               if ('key' in event) {
@@ -104,6 +100,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
                     event.preventDefault();
                     inputRef.current.clear();
                     setVersionSearch('');
+                    setShowAll(true);
                     replaceQueryParam(router, 'versionSearch', undefined);
                   } else {
                     inputRef.current.blur();

@@ -94,10 +94,6 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   );
   const [activeTab, setActiveTab] = useState<MarkdownTabsType>(routeTab);
 
-  useEffect(() => {
-    setActiveTab(currentTab => (currentTab === routeTab ? currentTab : routeTab));
-  }, [routeTab]);
-
   const { data, error, isLoading } = useSWR(
     contentTabs.find(({ title }) => title === activeTab)?.url,
     (url: string) =>

@@ -16,6 +16,7 @@
     "curly": "error",
     "eqeqeq": ["error", "always", { "null": "ignore" }],
     "func-style": ["error", "declaration"],
+    "object-shorthand": "error",
     "no-unused-expressions": ["error", { "allowShortCircuit": true, "enforceForJSX": true }],
     "no-unused-vars": [
       "error",
@@ -106,7 +107,15 @@
     "react/no-this-in-sfc": "error",
     "react/no-unknown-property": "error",
     "react/no-unescaped-entities": "error",
+    "react/no-unstable-nested-components": [
+      "error",
+      {
+        "allowAsProps": true
+      }
+    ],
     "react/no-will-update-set-state": "error",
+    "react/prefer-function-component": "error",
+    "react/react-compiler": "error",
     "react/rules-of-hooks": "error",
     "react/self-closing-comp": "error",
     "react/void-dom-elements-no-children": "error",
@@ -155,6 +164,7 @@
     "unicorn/no-object-as-default-parameter": "error",
     "unicorn/no-unnecessary-array-splice-count": "error",
     "unicorn/no-useless-collection-argument": "error",
+    "unicorn/no-useless-iterator-to-array": "error",
     "unicorn/numeric-separators-style": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-array-flat": "error",

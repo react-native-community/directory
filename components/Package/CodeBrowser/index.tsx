@@ -116,7 +116,7 @@ export default function CodeBrowser({
 
   const activeFileData = useMemo(
     () => data?.files.find(file => file.path === `${data.prefix}${activeFile}`),
-    [data?.files, data?.prefix, activeFile]
+    [data, activeFile]
   );
 
   const allFilePaths = useMemo(

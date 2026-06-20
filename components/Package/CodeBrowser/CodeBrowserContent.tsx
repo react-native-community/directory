@@ -56,6 +56,7 @@ export default function CodeBrowserContent({
   >(null);
 
   useEffect(() => {
+    // oxlint-disable-next-line react/react-compiler
     setImageData(null);
     setRawPreview(false);
     setMarkdownPreview(false);

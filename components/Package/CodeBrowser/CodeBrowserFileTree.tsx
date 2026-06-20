@@ -112,6 +112,7 @@ function CodeBrowserDirectoryRow({
 
   useEffect(() => {
     if (shouldForceExpand) {
+      // oxlint-disable-next-line react/react-compiler
       setCollapsed(false);
     }
   }, [shouldForceExpand]);

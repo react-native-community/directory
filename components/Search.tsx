@@ -32,6 +32,13 @@ export default function Search({ query, total, style }: Props) {
   const { replace } = useRouter();
   const { isSmallScreen } = useLayout();
 
+  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+      event.preventDefault();
+      inputRef.current?.focus();
+    }
+  });
+
   useEffect(() => {
     // @ts-expect-error using native input value to clear on same-page navigation
     if (!isInputFocused && inputRef?.current?.value && !search) {
@@ -45,13 +52,6 @@ export default function Search({ query, total, style }: Props) {
       return () => document.removeEventListener('keydown', keyDownListener);
     }
   }, [isApple]);
-
-  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
-    }
-  });
 
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));

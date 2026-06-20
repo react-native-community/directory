@@ -4,13 +4,14 @@ import '@videojs/react/video/minimal-skin.css';
 
 import { Container } from '@videojs/react';
 import { Video } from '@videojs/react/video';
+import { type VideoHTMLAttributes } from 'react';
 import { type Style } from 'twrnc';
 
 import { InlinePlayer } from './InlinePlayer';
 import { MarkdownVideoPlayerUI } from './MarkdownVideoPlayerUI';
 
 type Props = {
-  src: string;
+  src: VideoHTMLAttributes<HTMLVideoElement>['src'];
   style?: Style;
 };
 
