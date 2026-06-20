@@ -24,7 +24,7 @@ import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import tw from '~/util/tailwind';
 
 import MarkdownCodeBlock from './MarkdownCodeBlock';
-import MarkdownHeading from './MarkdownHeading';
+import MarkdownHeading, { type MarkdownHeadingTagName } from './MarkdownHeading';
 import { MarkdownVideoPlayer } from './MarkdownVideoPlayer';
 
 type Props = {
@@ -38,33 +38,45 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
     <Md
       id="markdownContentContainer"
       components={{
-        h1: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h1: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h2: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h2: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h3: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h3: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h4: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h4: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h5: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h5: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h6: ({ children, node }: any) => (
-          <MarkdownHeading tagName={node.tagName} linkableHeaders={linkableHeaders}>
+        h6: ({ children, node }) => (
+          <MarkdownHeading
+            tagName={node.tagName as MarkdownHeadingTagName}
+            linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
@@ -100,9 +112,9 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           }
           return <span>{props.children}</span>;
         },
-        video: (props: any) => {
-          if (props.src) {
-            return <MarkdownVideoPlayer src={props.src} />;
+        video: ({ src }: any) => {
+          if (src) {
+            return <MarkdownVideoPlayer src={src} />;
           }
           return null;
         },

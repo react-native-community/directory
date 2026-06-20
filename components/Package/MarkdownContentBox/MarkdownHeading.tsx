@@ -6,9 +6,11 @@ import { LinkIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
-  tagName: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  tagName: MarkdownHeadingTagName;
   linkableHeaders?: boolean;
 }>;
+
+export type MarkdownHeadingTagName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export default function MarkdownHeading({ children, tagName, linkableHeaders }: Props) {
   const Heading = tagName;
