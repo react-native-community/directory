@@ -42,6 +42,13 @@ export default function QuickSearch({ style }: Props) {
   const hasResults = Boolean(data?.total && data.total > 0);
   const shouldShowResults = search.length > 0 && isInputFocused;
 
+  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
+      event.preventDefault();
+      inputRef.current?.focus();
+    }
+  });
+
   useEffect(() => {
     if (isApple !== null) {
       document.addEventListener('keydown', keyDownListener, false);
@@ -51,6 +58,7 @@ export default function QuickSearch({ style }: Props) {
 
   useEffect(() => {
     if (!shouldShowResults || libraries.length === 0) {
+      // oxlint-disable-next-line react/react-compiler
       setActiveResultIndex(null);
       return;
     }
@@ -59,13 +67,6 @@ export default function QuickSearch({ style }: Props) {
       setActiveResultIndex(libraries.length - 1);
     }
   }, [activeResultIndex, libraries.length, shouldShowResults]);
-
-  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
-    }
-  });
 
   const typingCallback = useDebouncedCallback((text: string) => {
     setSearch(text);

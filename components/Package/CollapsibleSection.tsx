@@ -29,6 +29,7 @@ export default function CollapsibleSection({
   const [collapsed, setCollapsed] = useState(Boolean(window.localStorage.getItem(key)));
 
   useEffect(() => {
+    // oxlint-disable-next-line react/react-compiler
     setCollapsed(window.localStorage.getItem(key) === 'true');
   }, [key]);
 

@@ -115,6 +115,7 @@
     ],
     "react/no-will-update-set-state": "error",
     "react/prefer-function-component": "error",
+    "react/react-compiler": "error",
     "react/rules-of-hooks": "error",
     "react/self-closing-comp": "error",
     "react/void-dom-elements-no-children": "error",

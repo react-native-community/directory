@@ -59,6 +59,7 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
 
   useEffect(() => {
     const bookmarks = getBookmarksFromCookie();
+    // oxlint-disable-next-line react/react-compiler
     setBookmarkedIds(new Set(bookmarks));
     setIsLoading(false);
   }, []);
