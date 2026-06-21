@@ -21853,5 +21853,11 @@
     "ios": true,
     "android": true,
     "vegaos": true
+  },
+  {
+    "githubUrl": "https://github.com/watadarkstar/react-native-nsfw-detector",
+    "newArchitecture": true,
+    "ios": true,
+    "android": false
   }
 ]
