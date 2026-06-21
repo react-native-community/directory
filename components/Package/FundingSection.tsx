@@ -1,4 +1,5 @@
 import { UL } from '@expo/html-elements';
+import { orderBy } from 'es-toolkit/array';
 import { useMemo } from 'react';
 import useSWR from 'swr';
 
@@ -46,25 +47,12 @@ export default function FundingSection({ fullName }: Props) {
 }
 
 function sortFundingLinks(links: LibraryFundingLink[]) {
-  return links.sort((a, b) => {
-    const aIsGitHub = a.platform === 'GITHUB';
-    const bIsGitHub = b.platform === 'GITHUB';
-
-    if (aIsGitHub !== bIsGitHub) {
-      return aIsGitHub ? -1 : 1;
-    }
-
-    const aIsCustom = a.platform === 'CUSTOM';
-    const bIsCustom = b.platform === 'CUSTOM';
-
-    if (aIsCustom !== bIsCustom) {
-      return aIsCustom ? 1 : -1;
-    }
-
-    if (aIsCustom && bIsCustom) {
-      return a.url.localeCompare(b.url);
-    }
-
-    return a.platform.localeCompare(b.platform);
-  });
+  return orderBy(
+    links,
+    [
+      link => (link.platform === 'GITHUB' ? 0 : link.platform === 'CUSTOM' ? 2 : 1),
+      link => (link.platform === 'CUSTOM' ? link.url : link.platform),
+    ],
+    ['asc', 'asc']
+  );
 }

@@ -1,8 +1,11 @@
+import { mapValues, pick } from 'es-toolkit/object';
+
 import { type NpmRegistryData, type PackageVersionData, type PackageVersionsData } from '~/types';
 
 export function trimPackageVersionsData(registryData: NpmRegistryData): PackageVersionsData {
-  const versions = Object.entries(registryData.versions).reduce<Record<string, PackageVersionData>>(
-    (acc, [versionKey, { name, version, dist, dependencies, _npmUser }]) => {
+  const versions = mapValues(
+    registryData.versions,
+    ({ name, version, dist, dependencies, _npmUser }) => {
       const versionData: PackageVersionData = {
         name,
         version,
@@ -27,21 +30,13 @@ export function trimPackageVersionsData(registryData: NpmRegistryData): PackageV
         };
       }
 
-      acc[versionKey] = versionData;
-
-      return acc;
-    },
-    {}
+      return versionData;
+    }
   );
-
-  const time = Object.keys(versions).reduce<Record<string, string>>((acc, version) => {
-    acc[version] = registryData.time[version];
-    return acc;
-  }, {});
 
   return {
     'dist-tags': registryData['dist-tags'],
     versions,
-    time,
+    time: pick(registryData.time, Object.keys(versions)),
   };
 }

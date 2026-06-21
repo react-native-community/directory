@@ -1,4 +1,5 @@
 import { UL } from '@expo/html-elements';
+import { sortBy } from 'es-toolkit/array';
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 import { View } from 'react-native';
@@ -23,7 +24,7 @@ import PackageHeader from '~/components/Package/PackageHeader';
 import RepositoryContributors from '~/components/Package/RepositoryContributors';
 import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
-import { type NpmRegistryVersionData, type NpmUser, type PeerDependencyData } from '~/types';
+import { type NpmRegistryVersionData, type PeerDependencyData } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 
@@ -99,11 +100,9 @@ export default function PackageOverviewScene({
                   <EntityCounter count={maintainers.length} />
                 </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
-                  {maintainers
-                    .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
-                    .map(maintainer => (
-                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
-                    ))}
+                  {sortBy(maintainers, ['name']).map(maintainer => (
+                    <PackageAuthor author={maintainer} key={maintainer.name} compact />
+                  ))}
                 </View>
               </>
             )}
@@ -201,11 +200,9 @@ export default function PackageOverviewScene({
                   <EntityCounter count={maintainers.length} />
                 </H6Section>
                 <View style={tw`flex-row flex-wrap items-start gap-2`}>
-                  {maintainers
-                    .sort((a: NpmUser, b: NpmUser) => a.name.localeCompare(b.name))
-                    .map(maintainer => (
-                      <PackageAuthor author={maintainer} key={maintainer.name} compact />
-                    ))}
+                  {sortBy(maintainers, ['name']).map(maintainer => (
+                    <PackageAuthor author={maintainer} key={maintainer.name} compact />
+                  ))}
                 </View>
               </>
             )}

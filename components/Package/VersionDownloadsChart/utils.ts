@@ -1,4 +1,6 @@
+import { groupBy } from 'es-toolkit/array';
 import { clamp, sumBy } from 'es-toolkit/math';
+import { mapValues } from 'es-toolkit/object';
 
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 
@@ -84,13 +86,12 @@ export function getLargestSeriesLength(chartSeriesByMode: VersionsChartSeriesByM
 }
 
 export function mapVersionDistTags(registryData: PackageVersionsData) {
-  return Object.entries(registryData['dist-tags']).reduce<Record<string, string[]>>(
-    (acc, [tag, version]) => {
-      acc[version] = [...(acc[version] ?? []), tag];
-      return acc;
-    },
-    {}
+  const tagsByVersion = groupBy(
+    Object.entries(registryData['dist-tags']),
+    ([, version]) => version
   );
+
+  return mapValues(tagsByVersion, tags => tags.map(([tag]) => tag));
 }
 
 function getSecondaryChartLabel(version: string, distTags?: string[]) {
