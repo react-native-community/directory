@@ -21853,5 +21853,14 @@
     "ios": true,
     "android": true,
     "vegaos": true
+  },
+  {
+    "githubUrl": "https://github.com/watadarkstar/react-native-parlant",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "examples": ["https://github.com/watadarkstar/react-native-parlant/tree/main/example"]
   }
 ]
