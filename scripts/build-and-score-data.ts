@@ -1,5 +1,5 @@
 ﻿import { BlobAccessError, put } from '@vercel/blob';
-import { chunk } from 'es-toolkit/array';
+import { chunk, compact, uniq } from 'es-toolkit/array';
 import fs from 'node:fs';
 
 import debugGithubRepos from '~/debug-github-repos.json';
@@ -48,7 +48,7 @@ function getLibraryIdentityKeys(library: Pick<LibraryDataEntryType, 'githubUrl' 
     `github:${library.githubUrl.toLowerCase()}`,
   ];
 
-  return [...new Set(identityKeys.filter((key): key is string => key !== null))];
+  return uniq(compact(identityKeys));
 }
 
 function mergeLibraries(...libraryLists: LibraryType[][]) {

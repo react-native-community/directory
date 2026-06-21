@@ -1,6 +1,7 @@
 import { LinearGradient } from '@visx/gradient';
 import { ParentSize } from '@visx/responsive';
 import { AreaSeries, type AxisScale, Tooltip, XYChart } from '@visx/xychart';
+import { maxBy } from 'es-toolkit/array';
 import { useMemo } from 'react';
 import { Text, View } from 'react-native';
 import useSWR from 'swr';
@@ -45,7 +46,7 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
       return undefined;
     }
 
-    const max = series.reduce((acc, p) => Math.max(acc, p.value), 0);
+    const max = maxBy(series, p => p.value)?.value ?? 0;
     const startPadding = Math.max(1, max * 0.15);
 
     return [0, max + startPadding];

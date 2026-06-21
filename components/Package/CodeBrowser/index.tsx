@@ -1,3 +1,4 @@
+import { sumBy } from 'es-toolkit/math';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
@@ -110,7 +111,7 @@ export default function CodeBrowser({
   );
 
   const totalFilesSize = useMemo(
-    () => filteredFiles.reduce((total, file) => total + (file.size ?? 0), 0),
+    () => sumBy(filteredFiles, file => file.size ?? 0),
     [filteredFiles]
   );
 
