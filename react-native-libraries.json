@@ -4074,7 +4074,8 @@
     ],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/JesperLekland/react-native-svg-charts",
@@ -5032,7 +5033,8 @@
     "android": true,
     "expoGo": true,
     "fireos": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/solinor/react-native-bluetooth-status",
@@ -6220,7 +6222,8 @@
     "android": true,
     "fireos": true,
     "dev": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/testfairy/react-native-testfairy",
@@ -6600,7 +6603,8 @@
     "githubUrl": "https://github.com/GetStream/flat-list-mvcp",
     "npmPkg": "@stream-io/flat-list-mvcp",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/alpha0010/react-native-file-access",
@@ -6818,7 +6822,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/smallcase/react-native-simple-biometrics",
@@ -6868,7 +6873,8 @@
     ],
     "android": true,
     "ios": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/pavelbabenko/react-native-awesome-gallery",
@@ -8135,7 +8141,8 @@
     "examples": ["https://github.com/MobileReality/react-native-select-pro/tree/master/apps/expo"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-base64",
@@ -8307,7 +8314,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FormidableLabs/react-native-owl",
@@ -9093,7 +9101,8 @@
     ],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/tony-xlh/vision-camera-dynamsoft-label-recognizer",
@@ -11682,7 +11691,8 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-insights",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-clipboard",
@@ -13180,7 +13190,8 @@
   {
     "githubUrl": "https://github.com/ctrlplusb/easy-peasy",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/pushy/pushy-react-native",
@@ -14345,7 +14356,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/expo-totp",
@@ -15215,7 +15227,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/sdk",
@@ -15646,7 +15659,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/switch",
@@ -15964,7 +15978,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/xnimorz/use-debounce",
@@ -16020,7 +16035,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/duongdev/phosphor-react-native",
@@ -16218,7 +16234,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-exit-app",
@@ -16417,7 +16434,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/theboringlok/react-native-place-autocomplete-picker",
@@ -16556,7 +16574,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/bvaughn/react-error-boundary",
@@ -16738,7 +16757,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/RakaDoank/ping-react-native/tree/main/package",
@@ -16766,7 +16786,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kazimshah39/react-native-feather-toast",
@@ -16816,7 +16837,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/alibaba/hooks",
@@ -16992,7 +17014,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kolking/react-native-page-indicator",
@@ -18099,7 +18122,8 @@
     "npmPkg": "@storybook/react-native-theming",
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/gluestack-core",
@@ -20258,7 +20282,8 @@
     "githubUrl": "https://github.com/native-html/render/tree/main/packages/transient-render-engine",
     "npmPkg": "@native-html/transient-render-engine",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/AppAndFlow/react-native-ease",
@@ -21059,7 +21084,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-native/react-native-rasterized-widgets",
