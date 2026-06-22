@@ -602,7 +602,8 @@
     "android": true,
     "expoGo": true,
     "fireos": true,
-    "examples": ["https://snack.expo.dev/SJfJguhrW"]
+    "examples": ["https://snack.expo.dev/SJfJguhrW"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/maggialejandro/react-native-calendario",
@@ -629,7 +630,8 @@
     "examples": [
       "https://snack.expo.dev/HkoXUdhr-",
       "https://github.com/wix/react-native-calendars/tree/master/example"
-    ]
+    ],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/vector-icons",
@@ -2017,7 +2019,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jeanregisser/react-native-popover",
@@ -4814,7 +4817,8 @@
       "https://snack.expo.dev/@naqvitalha/rlv-demo",
       "https://snack.expo.dev/B1GYad52b",
       "https://snack.expo.dev/@arunreddy10/19bb8e"
-    ]
+    ],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/nitaliano/react-native-mapbox-gl",
@@ -5494,7 +5498,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/xamous/react-native-smooth-pincode-input",
@@ -5626,7 +5631,8 @@
     "android": true,
     "fireos": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/n4kz/react-native-material-ripple",
@@ -6621,7 +6627,8 @@
     "web": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/lukebrandonfarrell/react-native-navigation-drawer-extension",
@@ -6964,7 +6971,9 @@
     "android": true,
     "ios": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/eveningkid/react-native-popable",
@@ -7448,7 +7457,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/a7ul/react-native-exception-handler",
@@ -8043,7 +8053,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/shirakaba/react-native-native-runtime",
@@ -8685,7 +8696,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/ammarahm-ed/react-native-admob-native-ads",
@@ -9931,7 +9944,8 @@
     "android": true,
     "web": true,
     "fireos": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/necolas/react-native-web/tree/master/packages/babel-plugin-react-native-web",
@@ -12637,7 +12651,8 @@
     "expoGo": true,
     "web": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/Azure-translator-code",
@@ -13328,7 +13343,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-utilities",
@@ -13342,7 +13358,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mdevils/html-entities",
@@ -13351,7 +13368,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/npm/node-semver",
@@ -13390,7 +13408,8 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/auth0/jwt-decode",
@@ -13398,7 +13417,8 @@
     "android": true,
     "web": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-audio-waveform",
@@ -15390,7 +15410,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/avatar",
@@ -15507,7 +15528,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/menubar",
@@ -15521,7 +15543,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/navigation-menu",
@@ -15579,7 +15602,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/select",
@@ -15607,7 +15631,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/slider",
@@ -15665,7 +15690,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toast",
@@ -15723,7 +15749,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/tooltip",
@@ -15737,7 +15764,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/hooks",
@@ -15770,7 +15798,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/types",
@@ -16199,7 +16228,8 @@
     "android": true,
     "fireos": true,
     "tvos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-tvos-keyboard",
@@ -20319,7 +20349,9 @@
     "images": ["https://naeemur.github.io/asset-bucket/rn-wheel-color-picker.gif"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/nandorojo/sf-symbols-typescript",
@@ -21986,6 +22018,20 @@
     "newArchitecture": true,
     "ios": true,
     "examples": ["https://github.com/watadarkstar/react-native-nsfw-detector/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/expo-native-safe-imports",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/expo-plugin-fastlane",
+    "expoGo": true,
+    "android": true,
+    "ios": true,
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/roshab007/react-native-expo-signed",
