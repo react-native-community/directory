@@ -22025,5 +22025,12 @@
     "android": true,
     "expoGo": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/expo-plugin-fastlane",
+    "expoGo": true,
+    "android": true,
+    "ios": true,
+    "configPlugin": true
   }
 ]
