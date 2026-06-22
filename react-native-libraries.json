@@ -22032,5 +22032,12 @@
     "android": true,
     "ios": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/react-native-expo-signed",
+    "expoGo": true,
+    "configPlugin": true,
+    "android": true,
+    "ios": true
   }
 ]
