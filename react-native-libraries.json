@@ -21989,6 +21989,8 @@
   },
   {
     "githubUrl": "https://github.com/roshab007/expo-native-safe-imports",
-    "expoGo": true
+    "expoGo": true,
+    "android":true,
+    "ios":true
   }
 ]
