@@ -22039,5 +22039,12 @@
     "configPlugin": true,
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/reacto-loader",
+    "expoGo": true,
+    "android": true,
+    "ios": true,
+    "web": true
   }
 ]
