@@ -22018,5 +22018,12 @@
     "newArchitecture": true,
     "ios": true,
     "examples": ["https://github.com/watadarkstar/react-native-nsfw-detector/tree/main/example"]
+  },
+  {
+    "githubUrl": "https://github.com/roshab007/expo-native-safe-imports",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "configPlugin": true
   }
 ]
