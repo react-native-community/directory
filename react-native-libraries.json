@@ -22115,5 +22115,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hryhoriiK97/expo-paperkit",
+    "examples": [
+      "https://github.com/hryhoriiK97/expo-paperkit/tree/main/apps/example",
+      "https://github.com/hryhoriiK97/expo-paperkit/tree/main/apps/macos-example"
+    ],
+    "ios": true,
+    "macos": true,
+    "newArchitecture": true
   }
 ]
