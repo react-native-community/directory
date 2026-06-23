@@ -22072,5 +22072,14 @@
     "android": true,
     "ios": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/Fluxlabs-tech/react-native-nitro-rtmp-publisher",
+    "examples": [
+      "https://github.com/Fluxlabs-tech/react-native-nitro-rtmp-publisher/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
