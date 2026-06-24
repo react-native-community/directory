@@ -2236,7 +2236,8 @@
     "tvos": true,
     "android": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/auth",
@@ -3056,7 +3057,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-media-library",
@@ -6828,7 +6830,9 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/GetStream/react-native-bidirectional-infinite-scroll",
@@ -8396,7 +8400,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/shipt/osmosis/tree/development/osmosis",
@@ -8736,7 +8741,8 @@
     "npmPkg": "@notifee/react-native",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wix/react-native-notifications",
@@ -10689,7 +10695,8 @@
     "npmPkg": "@baronha/ting",
     "examples": ["https://github.com/NitrogenZLab/ting/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/NitrogenZLab/react-native-photo-editor",
@@ -11763,14 +11770,17 @@
     "npmPkg": "@segment/analytics-react-native",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/segmentio/analytics-react-native/tree/master/packages/sovran",
     "npmPkg": "@segment/sovran-react-native",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/braze-inc/braze-react-native-sdk",
@@ -11796,7 +11806,8 @@
     "tvos": true,
     "expoGo": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-insights",
@@ -12868,7 +12879,8 @@
     "android": true,
     "web": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dcavalcante/react-native-sprites",
@@ -14571,7 +14583,8 @@
     "tvos": true,
     "web": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-maps",
@@ -14653,7 +14666,8 @@
     "web": true,
     "fireos": true,
     "tvos": true,
-    "visionos": true
+    "visionos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/colaquecez/expo-selectable-text",
@@ -15959,7 +15973,8 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true,
-    "dev": true
+    "dev": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/utils",
@@ -16583,7 +16598,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/theboringlok/react-native-place-autocomplete-picker",
@@ -19456,7 +19472,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/alyssadicarlo/expo-finance-kit",
@@ -19586,7 +19603,8 @@
     "examples": ["https://github.com/AsteriskZuo/react-native-rich-text-fabric/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only"
+    "newArchitecture": "new-arch-only",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/TomWq/expo-gaode-map/tree/main/packages/search",
@@ -20439,14 +20457,17 @@
     "githubUrl": "https://github.com/native-html/render/tree/main/packages/css-processor",
     "npmPkg": "@native-html/css-processor",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/native-html/render/tree/main/packages/transient-render-engine",
     "npmPkg": "@native-html/transient-render-engine",
     "ios": true,
     "android": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/AppAndFlow/react-native-ease",
@@ -20530,7 +20551,9 @@
   {
     "githubUrl": "https://github.com/glepur/react-native-swipe-gestures",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/naeemur/react-native-wheel-color-picker",
@@ -20546,7 +20569,9 @@
     "ios": true,
     "macos": true,
     "tvos": true,
-    "visionos": true
+    "visionos": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/@expo/metro-runtime",
