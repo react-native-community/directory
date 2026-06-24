@@ -552,13 +552,15 @@
     "githubUrl": "https://github.com/n4kz/react-native-pages",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/silentcloud/react-native-page-control",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/lottie-react-native/lottie-react-native/tree/master/packages/core",
@@ -732,7 +734,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "harmony": "@react-native-oh-tpl/react-native-snap-carousel"
+    "harmony": "@react-native-oh-tpl/react-native-snap-carousel",
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
@@ -1178,7 +1181,8 @@
     "githubUrl": "https://github.com/FaridSafi/react-native-gifted-form",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/testshallpass/react-native-dropdownalert",
@@ -1320,7 +1324,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/stephy/CalendarPicker",
@@ -1406,7 +1411,8 @@
     "githubUrl": "https://github.com/i6mi6/react-native-parallax-scroll-view",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/alinz/react-native-tabbar",
@@ -1897,7 +1903,8 @@
     "githubUrl": "https://github.com/seigel/pouchdb-react-native/tree/master/packages/pouchdb-react-native",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/darkrishabh/react-native-db-models",
@@ -3105,7 +3112,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-processing",
@@ -3157,7 +3165,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-sqlite",
@@ -3191,7 +3200,8 @@
     "android": true,
     "tvos": true,
     "expoGo": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo-three",
@@ -3686,7 +3696,8 @@
     "tvos": true,
     "expoGo": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/react-native-appearance",
@@ -3848,7 +3859,8 @@
     "tvos": true,
     "visionos": true,
     "harmony": "@react-native-ohos/blur",
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-async-storage/async-storage/tree/main/packages/async-storage",
@@ -5101,7 +5113,8 @@
     "githubUrl": "https://github.com/ttdung11t2/react-native-confirmation-code-input",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/StasDoskalenko/react-native-google-fit",
@@ -5129,7 +5142,8 @@
     "ios": true,
     "android": true,
     "npmPkg": "react-native-inappbrowser-reborn",
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rafaelmotta/react-native-progress-bar-animated",
@@ -5500,7 +5514,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/shahnawaz/react-native-barcode-mask",
@@ -5529,7 +5544,8 @@
     ],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-community/hooks",
@@ -7097,7 +7113,8 @@
     "android": true,
     "expoGo": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Agaweb/react-native-stripe",
@@ -7535,7 +7552,8 @@
   {
     "githubUrl": "https://github.com/timfpark/react-native-cache",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gorhom/react-native-portal",
@@ -8781,7 +8799,8 @@
     "githubUrl": "https://github.com/iamolegga/react-native-launch-arguments",
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/heyman333/react-native-animated-numbers",
@@ -8826,7 +8845,8 @@
       "https://raw.githubusercontent.com/margelo/react-native-graph/main/img/pan.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-bignumber",
@@ -11796,7 +11816,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-tracking-transparency",
@@ -12765,7 +12786,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mateoguzmana/react-native-lz4",
@@ -13186,7 +13208,8 @@
     "ios": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-moti",
@@ -13204,7 +13227,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/config",
@@ -13963,7 +13987,8 @@
     "macos": true,
     "visionos": true,
     "dev": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/nitrogen",
@@ -15211,7 +15236,8 @@
     "githubUrl": "https://github.com/Abhinandan-Kushwaha/react-native-screenshot-test",
     "android": true,
     "ios": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jagnesh/react-native-splash-view",
@@ -16259,7 +16285,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wumke/react-native-exit-app",
@@ -16812,7 +16839,8 @@
       "https://github.com/linhvovan29546/react-native-full-screen-notification-incoming-call/tree/master/expo-example"
     ],
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/eds2002/react-native-screen-transitions/tree/main/packages/react-native-screen-transitions",
@@ -18024,7 +18052,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/LottieFiles/dotlottie-react-native",
@@ -18975,7 +19004,8 @@
     "githubUrl": "https://github.com/devshojol/react-native-smart-placeholder",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wassgha/react-native-zoom-grid",
