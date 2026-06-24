@@ -691,7 +691,8 @@
     "android": true,
     "expoGo": true,
     "fireos": true,
-    "examples": ["https://snack.expo.dev/ByBCD_2r-"]
+    "examples": ["https://snack.expo.dev/ByBCD_2r-"],
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements",
@@ -1677,7 +1678,9 @@
     "android": true,
     "windows": true,
     "configPlugin": true,
-    "harmony": "@react-native-ohos/react-native-permissions"
+    "harmony": "@react-native-ohos/react-native-permissions",
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gre/react-native-view-shot",
@@ -3167,7 +3170,8 @@
     "expoGo": true,
     "vegaos": "@amazon-devices/expo-sqlite",
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-store-review",
@@ -3697,7 +3701,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-linking",
@@ -6616,7 +6622,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dominicstop/react-native-ios-popover",
@@ -7849,7 +7856,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/hudl/react-native-system-bars",
@@ -13341,7 +13349,8 @@
     "android": true,
     "fireos": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/mustapha-ghlissi/react-native-select-picker",
@@ -13453,7 +13462,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/lukeed/clsx",
@@ -13858,7 +13868,8 @@
     "web": true,
     "expoGo": true,
     "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/balthazar/react-native-zeroconf",
@@ -14149,7 +14160,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/redux",
@@ -14159,7 +14171,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/reselect",
@@ -14168,7 +14181,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/reduxjs/redux-thunk",
@@ -14471,7 +14485,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/expo-totp",
@@ -15464,7 +15479,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/googleapis/js-genai",
@@ -16107,7 +16123,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Landeed/react-native-google-places-sdk",
@@ -16130,7 +16148,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Robert27/expo-github-cache",
@@ -16147,7 +16167,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/joe-bell/cva/tree/main/packages/class-variance-authority",
@@ -16155,7 +16177,8 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/duongdev/phosphor-react-native",
@@ -16243,7 +16266,8 @@
     "android": true,
     "web": true,
     "vegaos": "@amazon-devices/expo-checkbox",
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/benjamineruvieru/react-native-pushdown-alert",
@@ -16348,7 +16372,9 @@
     "githubUrl": "https://github.com/unadlib/mutative",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/immerjs/immer",
@@ -16356,7 +16382,8 @@
     "android": true,
     "web": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/logicwind/react-native-exit-app",
@@ -16704,7 +16731,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/maheshmuttintidev/react-native-scaler",
@@ -16870,7 +16899,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/epoberezkin/fast-deep-equal",
@@ -16953,7 +16984,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/toss/es-toolkit",
@@ -16962,7 +16995,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/alibaba/hooks",
@@ -17229,7 +17263,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/gre/gl-react/tree/master/packages/gl-react-native",
@@ -18249,7 +18285,8 @@
     "ios": true,
     "android": true,
     "dev": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/gluestack-core",
