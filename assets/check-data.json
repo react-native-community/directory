@@ -8513,5 +8513,59 @@
   },
   "cos-sdk-react-native-plugin": {
     "newArchitecture": "supported"
+  },
+  "react-native-qr-decode-image-camera": {
+    "newArchitecture": "untested"
+  },
+  "@openlv/react-native": {
+    "newArchitecture": "untested"
+  },
+  "@goliapkg/sentori-react-native": {
+    "newArchitecture": "untested"
+  },
+  "@goliapkg/sentori-expo": {
+    "newArchitecture": "untested"
+  },
+  "react-native-pretty-toast": {
+    "newArchitecture": "supported"
+  },
+  "react-native-morph-view": {
+    "newArchitecture": "supported"
+  },
+  "blaze-navigation": {
+    "newArchitecture": "untested"
+  },
+  "react-native-audiosprites": {
+    "newArchitecture": "untested"
+  },
+  "@kesha-antonov/react-native-chat": {
+    "newArchitecture": "supported"
+  },
+  "expo-modules-jsi": {
+    "newArchitecture": "supported"
+  },
+  "react-native-parlant": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nsfw-detector": {
+    "newArchitecture": "supported"
+  },
+  "expo-native-safe-imports": {
+    "newArchitecture": "supported"
+  },
+  "expo-plugin-fastlane": {
+    "newArchitecture": "supported"
+  },
+  "react-native-expo-signed": {
+    "newArchitecture": "supported"
+  },
+  "reacto-loader": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-rtmp-publisher": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-paperkit": {
+    "newArchitecture": "supported"
   }
 }
