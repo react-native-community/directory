@@ -6163,7 +6163,8 @@
     ],
     "ios": true,
     "android": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/invertase/react-native-apple-authentication",
@@ -8046,7 +8047,8 @@
     "npmPkg": "@flyerhq/react-native-android-uri-path",
     "examples": ["https://github.com/flyerhq/react-native-android-uri-path/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/NitrogenZLab/react-native-multiple-image-picker",
@@ -8517,7 +8519,8 @@
     "examples": ["https://github.com/gobeyondidentity/bi-sdk-react-native/tree/main/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tony-xlh/vision-camera-dynamsoft-barcode-reader",
@@ -8554,7 +8557,9 @@
     "githubUrl": "https://github.com/Assembless/react-native-material-you",
     "npmPkg": "@assembless/react-native-material-you",
     "examples": ["https://github.com/Assembless/react-native-material-you/tree/main/example"],
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/clerk/javascript/tree/main/packages/expo",
@@ -9613,7 +9618,8 @@
     "npmPkg": "@expo/match-media",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/klazbaba/react-native-form-component",
@@ -10555,7 +10561,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/animate-react-native/marquee",
@@ -11550,7 +11557,8 @@
     "npmPkg": "@candlefinance/app-icon",
     "examples": ["https://github.com/candlefinance/app-icon/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/candlefinance/react-native-openai",
@@ -11589,7 +11597,8 @@
       "https://github.com/ExtrieveTechnologies/QuickCapture_react_native/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SectionTN/otp-input",
@@ -11639,7 +11648,8 @@
     "githubUrl": "https://github.com/dylankenneally/react-native-ssh-sftp",
     "npmPkg": "@dylankenneally/react-native-ssh-sftp",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/RichardRNStudio/react-native-slider-intro",
@@ -11857,7 +11867,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-clipboard",
@@ -12013,7 +12024,9 @@
     "npmPkg": "@batch.com/react-native-plugin",
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/@expo/fingerprint",
@@ -12874,7 +12887,8 @@
       "https://raw.githubusercontent.com/dream-horizon-org/react-native-fast-image/main/docs/assets/priority.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido/tree/main/packages/typescript",
@@ -14184,7 +14198,8 @@
     "npmPkg": "@didomi/react-native",
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/liveakshay/expo-spellchecker",
@@ -14357,7 +14372,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/yunusyavuz16/react-native-trendy",
@@ -14414,7 +14430,8 @@
     "npmPkg": "@bugsnag/react-native-performance",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/pachun/use-expo-push-notifications",
@@ -14791,7 +14808,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mhpdev-com/react-native-speech",
@@ -15255,7 +15273,8 @@
     "githubUrl": "https://github.com/BITNET-Infotech/react-native-wav-to-mp3",
     "npmPkg": "@bitnet-infotech/react-native-wav-to-mp3",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/eugenehp/react-native-uuid",
@@ -16190,7 +16209,8 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/xnimorz/use-debounce",
@@ -17021,7 +17041,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kazimshah39/react-native-feather-toast",
@@ -17366,7 +17387,8 @@
     "npmPkg": "@attarchi/react-native-lottie-splash-screen",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-mesh-gradient",
@@ -17960,7 +17982,8 @@
     "npmPkg": "@coolsoftwaretyler/cool-pdf",
     "examples": ["https://github.com/coolsoftwaretyler/cool-pdf/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/heroui-inc/heroui-native",
@@ -18614,7 +18637,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Flagsmith/flagsmith-js-client/tree/main/lib/react-native-flagsmith",
@@ -19019,7 +19043,8 @@
     "npmPkg": "@bugsnag/expo-performance",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/saadelsabahy/react-native-nitro-geocoder",
@@ -19213,7 +19238,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/hyoper/react-native-location",
@@ -20133,7 +20159,8 @@
       "https://github.com/faluciano/domino-party-game"
     ],
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/superfan-app/spotify-auth",
@@ -21286,7 +21313,8 @@
       "https://raw.githubusercontent.com/AntarMukhopadhyaya/react-native-usage-stats/main/images/demo3.png"
     ],
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Navipro70/expo-store-country",
@@ -21353,7 +21381,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-native/react-native-rasterized-widgets",
@@ -21695,7 +21724,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/atomicfi/atomic-transact-react-native",
@@ -22021,7 +22051,8 @@
     "npmPkg": "@assistant-ui/react-native",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rnpack/location",
@@ -22075,7 +22106,8 @@
     "newArchitecture": true,
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/NotGeorgeMessier/nitro-speech",
