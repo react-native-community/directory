@@ -1197,7 +1197,8 @@
     "ios": true,
     "android": true,
     "examples": ["https://github.com/expo/react-native-read-more-text/tree/master/example"],
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/instea/react-native-popup-menu",
@@ -1375,7 +1376,8 @@
     "android": true,
     "expoGo": true,
     "examples": ["https://snack.expo.dev/Bk8-1FILb"],
-    "unmaintained": true
+    "unmaintained": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Spikef/react-native-gesture-password",
@@ -3249,7 +3251,8 @@
     "githubUrl": "https://github.com/xcarpentier/rn-verifcode",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/matei-radu/react-native-in-app-browser",
@@ -5726,7 +5729,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "npmPkg": "@testing-library/react-native",
@@ -6110,7 +6114,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/rosskhanas/react-qr-code",
@@ -7070,7 +7075,8 @@
     "android": true,
     "ios": true,
     "web": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/reactrondev/react-native-web-swiper",
@@ -7132,7 +7138,8 @@
     "npmPkg": "@agaweb/react-native-stripe",
     "examples": ["https://github.com/Agaweb/react-native-stripe/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-aes-gcm-crypto",
@@ -8040,7 +8047,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/flyerhq/react-native-android-uri-path",
@@ -8159,7 +8167,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rumax/react-native-PDFView",
@@ -9193,7 +9202,8 @@
     ],
     "android": true,
     "ios": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/barthap/expo-music-picker",
@@ -10385,7 +10395,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/pcamarajr/react-native-ultimate-icons",
@@ -10722,7 +10733,8 @@
       "https://raw.githubusercontent.com/High5Apps/react-native-vis-network/main/docs/images/example-network-on-android.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/anday013/react-native-otp-entry",
@@ -11095,7 +11107,8 @@
       "https://github.com/kesha-antonov/react-native-background-downloader/tree/master/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/callstack/react-theme-provider",
@@ -11550,7 +11563,8 @@
     "npmPkg": "@candlefinance/faster-image",
     "examples": ["https://github.com/candlefinance/faster-image/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/candlefinance/app-icon",
@@ -11783,7 +11797,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "examples": ["https://github.com/dohooo/react-native-reanimated-table/tree/main/example"]
+    "examples": ["https://github.com/dohooo/react-native-reanimated-table/tree/main/example"],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Expensify/react-native-onyx",
@@ -15140,7 +15155,8 @@
     "android": true,
     "newArchitecture": true,
     "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules.",
-    "configPlugin": "https://github.com/livekit/client-sdk-react-native-expo-plugin"
+    "configPlugin": "https://github.com/livekit/client-sdk-react-native-expo-plugin",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/livekit/react-native-webrtc",
@@ -15151,7 +15167,8 @@
     "macos": true,
     "newArchitecture": true,
     "newArchitectureNote": "Currently supported through the compatibility layer for legacy native modules.",
-    "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-webrtc"
+    "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-webrtc",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/livekit/client-sdk-js",
@@ -16803,7 +16820,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/drizzle-team/drizzle-studio-expo",
@@ -17277,7 +17295,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kolking/react-native-page-indicator",
@@ -18231,7 +18250,8 @@
     "githubUrl": "https://github.com/computools/react-native-dynamic-app-icon",
     "npmPkg": "@computools/react-native-dynamic-app-icon",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Leanplum/Leanplum-ReactNative-SDK",
@@ -18628,7 +18648,8 @@
     "githubUrl": "https://github.com/jagnesh/react-native-shimmer-loader",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/adelbeke/react-native-speech-to-text",
@@ -18970,7 +18991,8 @@
   {
     "githubUrl": "https://github.com/Ganesh1110/react-native-text-kit",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/dayaki/react-native-health-kits",
@@ -20268,7 +20290,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/KwaminaWhyte/expo-esim-utils",
@@ -22327,7 +22350,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-modules-jsi",
