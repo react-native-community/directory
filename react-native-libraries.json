@@ -3532,7 +3532,8 @@
       "https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif"
     ],
     "android": true,
-    "npmPkg": "@react-native-community/progress-bar-android"
+    "npmPkg": "@react-native-community/progress-bar-android",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-progress-view/progress-view",
@@ -4312,7 +4313,8 @@
     "windows": true,
     "npmPkg": "@react-native-community/checkbox",
     "newArchitecture": false,
-    "alternatives": ["expo-checkbox"]
+    "alternatives": ["expo-checkbox"],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-google-signin/google-signin",
@@ -4433,7 +4435,8 @@
     "ios": true,
     "android": true,
     "npmPkg": "@react-native-community/audio-toolkit",
-    "harmony": "@react-native-ohos/audio-toolkit"
+    "harmony": "@react-native-ohos/audio-toolkit",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rnc-archive/react-native-translucent-modal",
@@ -9265,7 +9268,8 @@
     "ios": true,
     "android": true,
     "dev": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tony-xlh/vision-camera-dynamsoft-label-recognizer",
@@ -10734,7 +10738,8 @@
     "npmPkg": "@react-native-ml-kit/identify-languages",
     "githubUrl": "https://github.com/a7medev/react-native-ml-kit/tree/main/identify-languages",
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true
   },
   {
     "npmPkg": "@react-native-ml-kit/translate-text",
@@ -12591,7 +12596,8 @@
     "web": true,
     "expoGo": true,
     "unmaintained": true,
-    "alternatives": ["@rn-vui/base"]
+    "alternatives": ["@rn-vui/base"],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-elements/react-native-elements/tree/next/packages/themed",
@@ -12604,7 +12610,8 @@
     "web": true,
     "expoGo": true,
     "unmaintained": true,
-    "alternatives": ["@rn-vui/themed"]
+    "alternatives": ["@rn-vui/themed"],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gunnartorfis/sonner-native-toasts",
@@ -12694,7 +12701,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/flixyudh/rn-flix/tree/master/packages/snackbar",
@@ -14144,7 +14153,8 @@
       "https://i.ibb.co/WPfT696/Simulator-Screenshot-i-Phone-16-Pro-2024-12-24-at-11-07-48.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/ShivamJoker/react-native-quick-aws4",
@@ -14536,7 +14546,8 @@
     "npmPkg": "@react-native-documents/viewer",
     "examples": ["https://github.com/rnmods/react-native-document-picker/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/software-mansion-labs/react-native-css-animations",
@@ -14667,7 +14678,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/s77rt/react-native-viewshot",
@@ -15486,7 +15498,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/deepktp/react-native-vikalp-elements/tree/next/packages/themed",
@@ -15495,14 +15508,16 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/sdk",
     "npmPkg": "@rudderstack/rudder-sdk-react-native",
     "ios": true,
     "android": true,
-    "tvos": true
+    "tvos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rudderlabs/rudder-sdk-react-native/tree/develop/libs/plugins/rudder-plugin-db-encryption-react-native",
@@ -15677,7 +15692,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/aspect-ratio",
@@ -15987,7 +16003,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/toggle",
@@ -17782,7 +17799,8 @@
     "npmPkg": "@react-native-seoul/masonry-list",
     "examples": ["https://github.com/hyochan/react-native-masonry-list/tree/main/MasonryExample"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-glass-effect",
@@ -18949,7 +18967,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Fiyaz6772/react-native-fn-forms",
@@ -19946,7 +19965,8 @@
     "githubUrl": "https://github.com/seenn-io/react-native",
     "npmPkg": "@seenn/react-native",
     "ios": true,
-    "android": true
+    "android": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/testshallpass/react-native-thumbnail-selector",
