@@ -2683,7 +2683,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "npmPkg": "@nozbe/watermelondb"
+    "npmPkg": "@nozbe/watermelondb",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/tessus/react-native-version-info",
@@ -3300,14 +3301,17 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "npmPkg": "@pietile-native-kit/expandable-view"
+    "npmPkg": "@pietile-native-kit/expandable-view",
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/fade-view",
     "ios": true,
     "android": true,
     "expoGo": true,
-    "npmPkg": "@pietile-native-kit/fade-view"
+    "npmPkg": "@pietile-native-kit/fade-view",
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/pietile/pietile-native-kit/tree/master/packages/page-slider",
@@ -4479,7 +4483,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jibraniqbal666/react-native-fb-image-grid",
@@ -7216,7 +7221,9 @@
     "web": true,
     "expoGo": true,
     "windows": true,
-    "macos": true
+    "macos": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kashishgrover/react-native-see-more-inline",
@@ -7854,7 +7861,9 @@
     "githubUrl": "https://github.com/mthines/react-native-font-face",
     "npmPkg": "@mthines/react-native-font-face",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/axelra-ag/react-native-animateable-text",
@@ -8222,7 +8231,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/popshoplive/react-native-shareplay",
@@ -8278,7 +8289,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "vegaos": true
+    "vegaos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/craftzdog/react-native-quick-base64",
@@ -9473,7 +9485,9 @@
     "npmPkg": "@mindinventory/rn-top-navbar",
     "examples": ["https://github.com/Mindinventory/React-Native-top-navbar/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Mindinventory/react-native-card-animation",
@@ -9493,7 +9507,8 @@
       "https://user-images.githubusercontent.com/88423352/160379485-809a22e8-82f8-4016-aa57-0d1553f54e15.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Mindinventory/react-native-speed-view",
@@ -9510,7 +9525,8 @@
     "npmPkg": "@pusher/pusher-websocket-react-native",
     "examples": ["https://github.com/pusher/pusher-websocket-react-native/tree/master/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/nikochan2k/expo-split-pane",
@@ -11001,7 +11017,8 @@
       "https://raw.githubusercontent.com/orbital-systems/react-native-esp-idf-provisioning/master/provisioning.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/OP-Engineering/op-sqlite",
@@ -11009,7 +11026,8 @@
     "examples": ["https://github.com/OP-Engineering/op-sqlite/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Hector-Zhuang/native-wechat",
@@ -11235,7 +11253,8 @@
     "ios": true,
     "expoGo": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/andrew-levy/swiftui-react-native",
@@ -12972,7 +12991,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/callstack/react-native-bottom-tabs/tree/main/packages/react-native-bottom-tabs",
@@ -13244,7 +13264,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/EdgarJMesquita/expo-pip",
@@ -14036,7 +14057,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules",
@@ -14715,7 +14737,8 @@
   {
     "githubUrl": "https://github.com/maniac-tech/react-native-expo-read-sms",
     "npmPkg": "@maniac-tech/react-native-expo-read-sms",
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Ucekay/react-native-image-playground",
@@ -14832,7 +14855,8 @@
     "examples": ["https://github.com/mhpdev-com/react-native-speech/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/TomAtterton/expo-translate-text",
@@ -16577,7 +16601,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/codemask-labs/stan-js",
@@ -16972,7 +16997,9 @@
     "npmPkg": "@raahimkhan23/react-native-responsive-utils",
     "examples": ["https://github.com/raahimkhan/react-native-responsive-utils/tree/main/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/whitestranger7/react-native-orientation-turbo",
@@ -17848,7 +17875,8 @@
     "examples": ["https://github.com/omarsdev/react-native-contacts/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/kirillzyusko/react-native-teleport",
@@ -19000,7 +19028,8 @@
     "examples": ["https://github.com/dayaki/react-native-health-kits/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dawidzawada/bonjour-zeroconf",
@@ -19905,7 +19934,8 @@
     "examples": ["https://github.com/Preeternal/react-native-cookie-manager/tree/master/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/0xZekeA/supastash",
@@ -20281,7 +20311,8 @@
     "examples": ["https://github.com/MatthewSRC/native-springs-shaders/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/vercel-labs/json-render/tree/main/packages/react-native",
@@ -20747,7 +20778,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/nphardorworse/react-native-emoji-burst",
@@ -21550,7 +21582,8 @@
   {
     "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/android-player",
     "npmPkg": "@purchasely/react-native-purchasely-android-player",
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/google",
@@ -21965,7 +21998,8 @@
     "npmPkg": "@novev9/react-native-instagram-stories",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/azure",
@@ -22256,7 +22290,8 @@
     "examples": ["https://github.com/mattermost/react-native-turbo-log/tree/master/example"],
     "ios": true,
     "android": true,
-    "harmony": "@react-native-ohos/react-native-turbo-log"
+    "harmony": "@react-native-ohos/react-native-turbo-log",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/RoJoHub/react-native-ping",
