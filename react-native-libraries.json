@@ -22456,5 +22456,72 @@
     "ios": true,
     "macos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/OxyHQ/Bloom",
+    "npmPkg": "@oxyhq/bloom",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/gs-rumana/rn-neo",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/afonsojramos/react-native-super-calendar",
+    "images": [
+      "https://raw.githubusercontent.com/afonsojramos/react-native-super-calendar/main/.github/assets/preview.png"
+    ],
+    "examples": ["https://github.com/afonsojramos/react-native-super-calendar/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/doanhtu07/react-native-the-sheet/tree/main/packages/the-sheet",
+    "npmPkg": "@the-sheet/the-sheet",
+    "examples": ["https://github.com/doanhtu07/react-native-the-sheet/tree/main/apps/example-expo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/doanhtu07/react-native-the-sheet/tree/main/packages/universe-portal",
+    "npmPkg": "@the-sheet/universe-portal",
+    "examples": ["https://github.com/doanhtu07/react-native-the-sheet/tree/main/apps/example-expo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/doanhtu07/react-native-the-sheet/tree/main/packages/embedded-stack-navigator",
+    "npmPkg": "@the-sheet/embedded-stack-navigator",
+    "examples": ["https://github.com/doanhtu07/react-native-the-sheet/tree/main/apps/example-expo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/doanhtu07/react-native-the-sheet/tree/main/packages/flash-list-v2",
+    "npmPkg": "@the-sheet/flash-list-v2",
+    "examples": ["https://github.com/doanhtu07/react-native-the-sheet/tree/main/apps/example-expo"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/BooYeu/react-native-reanimated-viewer",
+    "examples": ["https://github.com/booyeu/react-native-reanimated-viewer/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/BooYeu/react-native-reanimated-viewer/main/example/example.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rileysay/react-native-collapsible-fluid-tabs",
+    "examples": [
+      "https://github.com/rileysay/react-native-collapsible-fluid-tabs/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
