@@ -22516,5 +22516,11 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/TomWq/react-native-splash-screen-newarch",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
