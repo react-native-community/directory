@@ -11001,7 +11001,8 @@
   {
     "githubUrl": "https://github.com/Hector-Zhuang/native-wechat",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mateoguzmana/react-native-zendesk-unified",
@@ -12421,7 +12422,8 @@
     "web": true,
     "fireos": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/faizalshap/react-native-otp-verify",
@@ -13039,7 +13041,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/grahammendick/navigation/tree/master/build/npm/navigation-react",
@@ -13056,7 +13060,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/hsjoberg/react-native-turbo-sqlite",
@@ -14887,7 +14892,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/saadqbal/react-native-notification-sounds",
@@ -15212,7 +15218,8 @@
     "windows": true,
     "fireos": true,
     "tvos": true,
-    "visionos": true
+    "visionos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/w88975/expo-click-outside",
@@ -16241,7 +16248,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/manuelbieh/geolib",
@@ -17033,7 +17042,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "npmPkg": "@aramir/react-native-barcode",
@@ -17126,7 +17136,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/sodiray/radash",
@@ -17155,7 +17167,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/antosmamanktr/react-native-letter-flatlist",
@@ -20396,7 +20410,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/suhaotian/broad-infinite-list",
