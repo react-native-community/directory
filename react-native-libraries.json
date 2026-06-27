@@ -3124,13 +3124,6 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-processing",
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-secure-store",
     "examples": ["https://docs.expo.dev/versions/latest/sdk/securestore/#usage"],
     "ios": true,
@@ -18480,11 +18473,6 @@
     "web": true
   },
   {
-    "githubUrl": "https://github.com/gluestack/gluestack-ui/tree/main/packages/ui-next-adapter",
-    "npmPkg": "@gluestack/ui-next-adapter",
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/facebook/metro/tree/main/packages/metro",
     "ios": true,
     "android": true,
@@ -21083,7 +21071,7 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/igorzheludkov/react-native-ai-devtools",
+    "githubUrl": "https://github.com/igorzheludkov/execbro",
     "ios": true,
     "android": true,
     "dev": true
