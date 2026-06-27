@@ -27,141 +27,141 @@ if (modifiedEntries.length === 0) {
   process.exit(0);
 }
 
-console.log('🚩️ Detected changes in data entries, checking!');
+console.log(`🚩️ Detected ${modifiedEntries.length} changes in data entries, validating!`);
 
 const BATCH_SIZE = 5;
-const STAGGER_MS = 1000;
-const BATCH_DELAY_MS = 3000;
+const BATCH_DELAY_MS = 2500;
 
 const checkResults = [];
 
 for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
   const batch = modifiedEntries.slice(i, i + BATCH_SIZE);
 
-  const batchResults = await Promise.all(
-    batch.map(entry =>
-      (async () => {
-        await sleep(STAGGER_MS);
+  for (const entry of batch) {
+    const entryWithNpmData = await fetchNpmDownloadData(fillNpmName(entry));
 
-        const entryWithNpmData = await fetchNpmDownloadData(fillNpmName(entry));
+    if (!entryWithNpmData.npm) {
+      console.error(
+        `Unable to fetch npm package data for ${entryWithNpmData.npmPkg} package! Please make sure that the package exist in npm registry.`
+      );
+      console.error(
+        `For the new packages recently published for the first time, npm API can return non-existing package error. The resolution here is to wait up to 24h, and then re-trigger the CI workflow.`
+      );
+      console.error(
+        `To check the current API response visit: https://api.npmjs.org/downloads/point/last-month/${entryWithNpmData.npmPkg}`
+      );
+      checkResults.push(false);
+      continue;
+    }
 
-        if (!entryWithNpmData.npm) {
-          console.error(
-            `Unable to fetch npm package data for ${entryWithNpmData.npmPkg} package! Please make sure that the package exist in npm registry.`
-          );
-          console.error(
-            `For the new packages recently published for the first time, npm API can return non-existing package error. The resolution here is to wait up to 24h, and then re-trigger the CI workflow.`
-          );
-          console.error(
-            `To check the current API response visit: https://api.npmjs.org/downloads/point/last-month/${entryWithNpmData.npmPkg}`
-          );
-          return false;
+    const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
+
+    if (!entryWithGitHubData.github) {
+      console.error(
+        `Unable to fetch data from ${entryWithGitHubData.githubUrl} repository! Make sure that repository is public, and URL is correct.`
+      );
+      checkResults.push(false);
+      continue;
+    }
+
+    if (entryWithGitHubData.github.isPrivate === true) {
+      console.error(
+        `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
+      );
+      checkResults.push(false);
+      continue;
+    }
+
+    if (!entryWithGitHubData.github.name) {
+      console.error(
+        `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} does not contains package name! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
+      );
+      checkResults.push(false);
+      continue;
+    }
+
+    if (hasMismatchedPackageData(entryWithGitHubData)) {
+      console.error(
+        `Package name extracted from 'package.json' at given GitHub repository URL differs with package name in the directory data!`
+      );
+      console.error(
+        `- Supplied package name: ${entryWithGitHubData.npmPkg ?? entryWithGitHubData.githubUrl.split('/').at(-1)}`
+      );
+      console.error(
+        `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
+      );
+      console.error(
+        `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
+      );
+
+      checkResults.push(false);
+      continue;
+    }
+
+    const invalidKeys = Object.keys(entry).filter(key => !VALID_ENTRY_KEYS.has(key));
+
+    if (invalidKeys.length > 0) {
+      console.error(
+        `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
+      );
+      checkResults.push(false);
+      continue;
+    }
+
+    if (mainData.some(({ githubUrl }) => githubUrl === entryWithNpmData.githubUrl)) {
+      if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
+        const existingEntry = mainDataWithNpmPkg.find(
+          lib => lib.npmPkg === entryWithGitHubData.npmPkg
+        );
+
+        if (!existingEntry) {
+          console.error(`Cannot set alternatives for the package not listed in the directory.`);
+          checkResults.push(false);
+          continue;
         }
 
-        const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
-
-        if (!entryWithGitHubData.github) {
+        if (!existingEntry.unmaintained && existingEntry.newArchitecture !== false) {
           console.error(
-            `Unable to fetch data from ${entryWithGitHubData.githubUrl} repository! Make sure that repository is public, and URL is correct.`
+            `Cannot set alternatives for the ${entryWithGitHubData.npmPkg} package which is not marked as unmaintained or not supporting New Architecture.`
           );
-          return false;
+          checkResults.push(false);
+          continue;
         }
+      }
+    }
 
-        if (entryWithGitHubData.github.isPrivate === true) {
-          console.error(
-            `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
-          );
-          return false;
-        }
-
-        if (!entryWithGitHubData.github.name) {
-          console.error(
-            `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} does not contains package name! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
-          );
-          return false;
-        }
-
-        if (hasMismatchedPackageData(entryWithGitHubData)) {
-          console.error(
-            `Package name extracted from 'package.json' at given GitHub repository URL differs with package name in the directory data!`
-          );
-          console.error(
-            `- Supplied package name: ${entryWithGitHubData.npmPkg ?? entryWithGitHubData.githubUrl.split('/').at(-1)}`
-          );
-          console.error(
-            `- Extracted package name: ${entryWithGitHubData.github.name ?? entryWithGitHubData.github.fullName.split('/').at(-1)}`
-          );
-          console.error(
-            `If package is a part of monorepo, 'githubUrl' must point to directory where 'package.json' for a given package resides.`
-          );
-
-          return false;
-        }
-
-        const invalidKeys = Object.keys(entry).filter(key => !VALID_ENTRY_KEYS.has(key));
-
-        if (invalidKeys.length > 0) {
-          console.error(
-            `Package entry for '${entryWithGitHubData.npmPkg}' contains invalid fields: ${invalidKeys.map(key => `'${key}'`).join(', ')}. Correct or remove the listed keys to fix the definition.`
-          );
-          return false;
-        }
-
-        if (mainData.some(({ githubUrl }) => githubUrl === entryWithNpmData.githubUrl)) {
-          if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
-            const existingEntry = mainDataWithNpmPkg.find(
-              lib => lib.npmPkg === entryWithGitHubData.npmPkg
+    if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
+      const alternativesChecks = entryWithGitHubData.alternatives.map(alternative => {
+        const alternativeEntry = mainDataWithNpmPkg.find(lib => lib.npmPkg === alternative);
+        if (alternativeEntry) {
+          if (alternativeEntry.unmaintained) {
+            console.error(
+              `${alternative} is marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
             );
-
-            if (!existingEntry) {
-              console.error(`Cannot set alternatives for the package not listed in the directory.`);
-              return false;
-            }
-
-            if (!existingEntry.unmaintained && existingEntry.newArchitecture !== false) {
-              console.error(
-                `Cannot set alternatives for the ${entryWithGitHubData.npmPkg} package which is not marked as unmaintained or not supporting New Architecture.`
-              );
-              return false;
-            }
+            return false;
           }
-        }
-
-        if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
-          const alternativesChecks = entryWithGitHubData.alternatives.map(alternative => {
-            const alternativeEntry = mainDataWithNpmPkg.find(lib => lib.npmPkg === alternative);
-            if (alternativeEntry) {
-              if (alternativeEntry.unmaintained) {
-                console.error(
-                  `${alternative} is marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
-                );
-                return false;
-              }
-            } else {
-              const localDataAlternative = libraries.find(
-                lib => lib.npmPkg === alternative || lib.githubUrl.endsWith(alternative)
-              );
-              if (!localDataAlternative) {
-                console.error(
-                  `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
-                );
-                return false;
-              }
-            }
-            return true;
-          });
-
-          if (alternativesChecks.includes(false)) {
+        } else {
+          const localDataAlternative = libraries.find(
+            lib => lib.npmPkg === alternative || lib.githubUrl.endsWith(alternative)
+          );
+          if (!localDataAlternative) {
+            console.error(
+              `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
+            );
             return false;
           }
         }
-
         return true;
-      })()
-    )
-  );
+      });
 
-  checkResults.push(...batchResults);
+      if (alternativesChecks.includes(false)) {
+        checkResults.push(false);
+        continue;
+      }
+    }
+
+    checkResults.push(true);
+  }
 
   if (i + BATCH_SIZE < modifiedEntries.length) {
     await sleep(BATCH_DELAY_MS);

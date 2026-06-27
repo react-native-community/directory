@@ -18,7 +18,7 @@ import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } 
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
-config();
+config({ quiet: true });
 
 const licenses: Record<string, LibraryLicenseType> = {
   isc: {
