@@ -18,6 +18,18 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
     const response = await fetch(url);
 
     if (response.status !== 200) {
+      // Rate limiting comes back as a 429 status (and transient outages as 5xx).
+      // fetch does not throw on these, so without this they skip the catch block
+      // below where the retry lives, and a single 429 fails the entry. Retry them
+      // with the same backoff the catch uses.
+      if ((response.status === 429 || response.status >= 500) && attemptsCount < ATTEMPTS_LIMIT) {
+        await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
+        console.log(
+          `⬇️ [NPM DOWNLOADS API] status ${response.status} for ${npmPkg}, retrying (${attemptsCount + 1})`
+        );
+        return await fetchNpmDownloadData(pkgData, attemptsCount + 1);
+      }
+
       console.error(
         `⬇️ [NPM DOWNLOADS API] npm API has returned invalid response - status ${response.status}!`
       );
