@@ -65,11 +65,23 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
     }
 
     if (entryWithGitHubData.github.isPrivate === true) {
-      console.error(
-        `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
-      );
-      checkResults.push(false);
-      continue;
+      // Some legitimately-published single-package repos keep their root
+      // `package.json` `private: true` as a publish guard (they ship a built
+      // artifact via CI). For those the extracted name still equals the package
+      // npm actually serves, so allow them past this guard. A genuine mislink to
+      // an unrelated/monorepo root has a name that differs from (or is absent
+      // for) the entry's package and is still rejected below.
+      const publishedName = entryWithNpmData.npm?.package;
+      const extractedName = entryWithGitHubData.github.name;
+      const isLegitPrivate = !!extractedName && !!publishedName && extractedName === publishedName;
+
+      if (!isLegitPrivate) {
+        console.error(
+          `Extracted 'package.json' from ${entryWithGitHubData.githubUrl} is marked as private! You might be linking to the monorepo/workspace root, instead of wanted package directory.`
+        );
+        checkResults.push(false);
+        continue;
+      }
     }
 
     if (!entryWithGitHubData.github.name) {
