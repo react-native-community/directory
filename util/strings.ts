@@ -1,3 +1,9 @@
+export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
+  notation: 'compact',
+  compactDisplay: 'short',
+  maximumFractionDigits: 2,
+});
+
 export function pluralize(word: string, count: number) {
   if (count === 1) {
     return word;
@@ -16,14 +22,6 @@ export function pluralize(word: string, count: number) {
 
 export function isEmptyOrNull(text?: string) {
   return !text || !text.trim();
-}
-
-export function formatNumberToString(quantity: number) {
-  return new Intl.NumberFormat('en-US', {
-    notation: 'compact',
-    compactDisplay: 'short',
-    maximumFractionDigits: 2,
-  }).format(quantity);
 }
 
 export function formatPackageManager(pmRaw?: string) {

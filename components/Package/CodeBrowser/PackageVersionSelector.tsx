@@ -1,5 +1,5 @@
 import * as Popover from '@radix-ui/react-popover';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
 import { useDebounce } from 'use-debounce';
@@ -38,28 +38,12 @@ export default function PackageVersionSelector({
     }
   );
 
-  const filteredVersions = useMemo(() => {
-    const query = debouncedSearch.trim();
-    if (!query) {
-      return data?.versions ?? [];
-    }
-    return (data?.versions ?? []).filter(v => v.includes(query));
-  }, [data?.versions, debouncedSearch]);
+  const query = debouncedSearch.trim();
+  const filteredVersions = !query
+    ? (data?.versions ?? [])
+    : (data?.versions ?? []).filter(v => v.includes(query));
 
-  const filteredDistTags = useMemo(() => {
-    if (!data?.['dist-tags']) {
-      return null;
-    }
-    const query = debouncedSearch.trim();
-    const entries = Object.entries(data['dist-tags']);
-    if (!query) {
-      return entries;
-    }
-    const filtered = entries.filter(
-      ([tag, version]) => tag.includes(query) || version.includes(query)
-    );
-    return filtered.length > 0 ? filtered : null;
-  }, [data, debouncedSearch]);
+  const filteredDistTags = getFilteredDistTags(data, query);
 
   function handleOpenChange(next: boolean) {
     setOpen(next);
@@ -183,4 +167,21 @@ export default function PackageVersionSelector({
       </Popover.Portal>
     </Popover.Root>
   );
+}
+
+function getFilteredDistTags(data: PackageVersionsOnlyData | undefined, query: string) {
+  if (!data?.['dist-tags']) {
+    return null;
+  }
+
+  const entries = Object.entries(data['dist-tags']);
+  if (!query) {
+    return entries;
+  }
+
+  const filtered = entries.filter(
+    ([tag, version]) => tag.includes(query) || version.includes(query)
+  );
+
+  return filtered.length > 0 ? filtered : null;
 }

@@ -1,6 +1,5 @@
 import { UL } from '@expo/html-elements';
 import { orderBy } from 'es-toolkit/array';
-import { useMemo } from 'react';
 import useSWR from 'swr';
 
 import { H6Section, useLayout } from '~/common/styleguide';
@@ -28,7 +27,7 @@ export default function FundingSection({ fullName }: Props) {
     }
   );
 
-  const links = useMemo(() => sortFundingLinks(data?.fundingLinks ?? []), [data]);
+  const links = sortFundingLinks(data?.fundingLinks ?? []);
 
   if (isLoading || links.length === 0) {
     return null;

@@ -2,7 +2,7 @@ import { View } from 'react-native';
 
 import { A } from '~/common/styleguide';
 import { CalendarIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';

@@ -1,5 +1,5 @@
 import { sumBy } from 'es-toolkit/math';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
 import useSWR from 'swr';
 
@@ -53,11 +53,11 @@ export default function CodeBrowser({
     }
   );
 
-  const normalizedSearch = useMemo(() => search.trim().toLowerCase(), [search]);
+  const normalizedSearch = search.trim().toLowerCase();
 
-  const filteredFiles = useMemo(() => {
-    const files = data?.files ?? [];
+  const files = data?.files ?? [];
 
+  const filteredFiles = (() => {
     if (!normalizedSearch) {
       return files;
     }
@@ -103,37 +103,14 @@ export default function CodeBrowser({
     }
 
     return files.filter(file => visiblePaths.has(file.path));
-  }, [data?.files, data?.prefix, normalizedSearch]);
+  })();
 
-  const fileTree = useMemo(
-    () => buildCodeBrowserFileTree(filteredFiles, data?.prefix),
-    [filteredFiles, data?.prefix]
-  );
-
-  const totalFilesSize = useMemo(
-    () => sumBy(filteredFiles, file => file.size ?? 0),
-    [filteredFiles]
-  );
-
-  const activeFileData = useMemo(
-    () => data?.files.find(file => file.path === `${data.prefix}${activeFile}`),
-    [data, activeFile]
-  );
-
-  const allFilePaths = useMemo(
-    () => new Set((data?.files ?? []).map(file => getCodeBrowserFilePath(file.path, data?.prefix))),
-    [data?.files, data?.prefix]
-  );
-
-  useEffect(() => {
-    if (!data) {
-      return;
-    }
-
-    if (activeFile && !allFilePaths.has(activeFile)) {
-      onSelectFile(null);
-    }
-  }, [activeFile, allFilePaths, data, onSelectFile]);
+  const fileTree = buildCodeBrowserFileTree(filteredFiles, data?.prefix);
+  const totalFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
+  const activeFileData = activeFile
+    ? files.find(file => file.path === `${data?.prefix}${activeFile}`)
+    : undefined;
+  const resolvedActiveFile = activeFileData ? activeFile : null;
 
   return (
     <View
@@ -212,7 +189,7 @@ export default function CodeBrowser({
                 <>
                   <CodeBrowserFileTree
                     tree={fileTree}
-                    activeFile={activeFile}
+                    activeFile={resolvedActiveFile}
                     onSelectFile={onSelectFile}
                     isSearchActive={Boolean(normalizedSearch)}
                   />
@@ -249,6 +226,7 @@ export default function CodeBrowser({
             ]}>
             {activeFile && activeFileData ? (
               <CodeBrowserContent
+                key={activeFile}
                 packageName={library.npmPkg}
                 repoUrl={library.github.urls.repo}
                 selectedVersion={selectedVersion}
@@ -258,7 +236,7 @@ export default function CodeBrowser({
                 toggleMaximized={toggleMaximized}
               />
             ) : (
-              <View style={tw`flex flex-col items-center gap-1 px-3`}>
+              <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
                 <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
                 <P style={tw`text-center`}>Select file to preview from the list on the left.</P>
               </View>

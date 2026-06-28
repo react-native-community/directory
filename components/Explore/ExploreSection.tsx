@@ -38,7 +38,9 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
           {title}
         </A>
       </H3>
-      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data)}</View>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
+        <ExploreLibrariesList list={data} />
+      </View>
       <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A
@@ -56,7 +58,9 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
   );
 }
 
-function renderLibs(list: LibraryType[]) {
+type ExploreLibrariesListProps = { list: LibraryType[] };
+
+function ExploreLibrariesList({ list }: ExploreLibrariesListProps) {
   const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)

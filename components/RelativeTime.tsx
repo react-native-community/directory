@@ -1,5 +1,5 @@
 import { Label } from '~/common/styleguide';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { getTimeSinceToday } from '~/util/datetime';
 import tw from '~/util/tailwind';
 

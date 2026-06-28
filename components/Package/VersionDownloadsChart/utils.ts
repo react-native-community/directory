@@ -129,7 +129,7 @@ function aggregateSeriesBySemver(series: VersionsChartData[], mode: VersionsAggr
     });
   }
 
-  return [...groups.values()].sort(compareChartEntries);
+  return groups.values().toArray().toSorted(compareChartEntries);
 }
 
 function applySeriesLimit(series: VersionsChartData[], limit: number) {

@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { useMemo } from 'react';
 import { View } from 'react-native';
 
 import { H6Section, Label, useLayout } from '~/common/styleguide';
@@ -35,17 +34,10 @@ export default function PackageVersionsScene({
 }: PackageVersionsPageProps) {
   const { isSmallScreen } = useLayout();
 
-  const library = useMemo(
-    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
-    [apiData.libraries, packageName]
-  );
+  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
-  const taggedVersions = useMemo(
-    () =>
-      Object.entries(registryData?.['dist-tags'] ?? {}).sort(
-        (a, b) => -registryData!.time[a[1]].localeCompare(registryData!.time[b[1]])
-      ),
-    [registryData]
+  const taggedVersions = Object.entries(registryData?.['dist-tags'] ?? {}).sort(
+    (a, b) => -registryData!.time[a[1]].localeCompare(registryData!.time[b[1]])
   );
 
   const hasVersionDownloads = Boolean(

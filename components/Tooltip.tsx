@@ -8,7 +8,13 @@ type TooltipProps = PropsWithChildren<{
   delayDuration?: TooltipPrimitive.TooltipProps['delayDuration'];
 }>;
 
-function Tooltip({ children, trigger, side, delayDuration = 0, sideOffset = 4 }: TooltipProps) {
+export function Tooltip({
+  children,
+  trigger,
+  side,
+  delayDuration = 0,
+  sideOffset = 4,
+}: TooltipProps) {
   return (
     <TooltipPrimitive.Root delayDuration={delayDuration}>
       <TooltipPrimitive.Trigger asChild>{trigger}</TooltipPrimitive.Trigger>
@@ -27,5 +33,3 @@ function Tooltip({ children, trigger, side, delayDuration = 0, sideOffset = 4 }:
     </TooltipPrimitive.Root>
   );
 }
-
-export default Tooltip;

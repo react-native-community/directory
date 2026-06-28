@@ -1,7 +1,6 @@
 import { UL } from '@expo/html-elements';
 import { sortBy } from 'es-toolkit/array';
 import dynamic from 'next/dynamic';
-import { useMemo } from 'react';
 import { View } from 'react-native';
 
 import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
@@ -42,10 +41,7 @@ export default function PackageOverviewScene({
 }: PackageOverviewPageProps) {
   const { isSmallScreen } = useLayout();
 
-  const library = useMemo(
-    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
-    [apiData.libraries, packageName]
-  );
+  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
   if (!library || !registryData) {
     return <NotFound />;

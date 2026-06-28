@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { A, Caption, Label } from '~/common/styleguide';
 import UserAvatar from '~/components/Package/UserAvatar';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type NpmUser } from '~/types';
 import tw from '~/util/tailwind';
 

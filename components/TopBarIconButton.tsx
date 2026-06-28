@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { Button } from '~/components/Button';
 import tw from '~/util/tailwind';
 
-import Tooltip from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 type Props = PropsWithChildren<{
   label: string;

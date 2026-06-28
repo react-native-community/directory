@@ -29,7 +29,7 @@ export default function CollapsibleSection({
   const [collapsed, setCollapsed] = useState(Boolean(window.localStorage.getItem(key)));
 
   useEffect(() => {
-    // oxlint-disable-next-line react/react-compiler
+    // oxlint-disable-next-line react-doctor/no-derived-state
     setCollapsed(window.localStorage.getItem(key) === 'true');
   }, [key]);
 
@@ -44,7 +44,7 @@ export default function CollapsibleSection({
       <View style={tw`flex-row items-center justify-between gap-1.5`}>
         <H6Section style={[tw`flex items-center gap-1.5`, headerStyle]}>
           {title}
-          {count && <EntityCounter count={count} />}
+          {count ? <EntityCounter count={count} /> : null}
         </H6Section>
         {!collapsed ? rightSlot : undefined}
         <Button

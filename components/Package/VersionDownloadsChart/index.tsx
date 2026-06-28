@@ -2,13 +2,13 @@ import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
 import { useRouter } from 'next/router';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Text, View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
-import { formatNumberToString, pluralize } from '~/util/strings';
+import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import {
@@ -16,7 +16,6 @@ import {
   type VersionsChartData,
   type VersionsChartEntryKind,
   type VersionsChartMode,
-  type VersionsChartSeriesByMode,
 } from './types';
 import {
   buildBaseChartSeries,
@@ -47,28 +46,16 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   const isDark = tw.prefixMatch('dark');
 
   const router = useRouter();
-  const routeMode = useMemo(
-    () => parseChartMode(router.query[CHART_MODE_QUERY_PARAM]),
-    [router.query]
-  );
+  const routeMode = parseChartMode(router.query[CHART_MODE_QUERY_PARAM]);
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const [mode, setMode] = useState<VersionsChartMode>(routeMode);
 
-  const versionDistTags = useMemo(() => mapVersionDistTags(registryData), [registryData]);
-  const baseSeries = useMemo<VersionsChartData[]>(
-    () => buildBaseChartSeries(npmDownloads, registryData, versionDistTags),
-    [npmDownloads, registryData, versionDistTags]
-  );
-  const chartSeriesByMode = useMemo<VersionsChartSeriesByMode>(
-    () => buildChartSeriesByMode(baseSeries),
-    [baseSeries]
-  );
+  const versionDistTags = mapVersionDistTags(registryData);
+  const baseSeries = buildBaseChartSeries(npmDownloads, registryData, versionDistTags);
+  const chartSeriesByMode = buildChartSeriesByMode(baseSeries);
   const series = chartSeriesByMode[mode];
-  const seriesByLabel = useMemo<Record<string, VersionsChartData>>(
-    () => keyBy(series, item => item.label),
-    [series]
-  );
-  const leftMargin = useMemo(() => getChartLeftMargin(series), [series]);
+  const seriesByLabel = keyBy(series, item => item.label);
+  const leftMargin = getChartLeftMargin(series);
 
   if (!series.length) {
     return (
@@ -119,7 +106,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
           numTicks={5}
           hideAxisLine
           hideTicks
-          tickFormat={value => formatNumberToString(value)}
+          tickFormat={value => NUMBER_FORMATTER.format(value)}
           tickComponent={({ formattedValue = 'unknown', x, y }) => (
             <text
               x={x}

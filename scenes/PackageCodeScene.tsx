@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { View } from 'react-native';
 
@@ -26,10 +26,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   );
   const [isBrowserMaximized, setBrowserMaximized] = useState(false);
 
-  const library = useMemo(
-    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
-    [apiData.libraries, packageName]
-  );
+  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
   useEffect(() => {
     if (!isBrowserMaximized) {
@@ -57,10 +54,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   }, [isBrowserMaximized]);
 
   useEffect(() => {
-    // oxlint-disable-next-line react/react-compiler
+    // oxlint-disable-next-line react-doctor/no-derived-state
     setActiveFile(window.localStorage.getItem(activeFileStorageKey));
   }, [activeFileStorageKey]);
 
+  // oxlint-disable-next-line react-doctor/no-effect-chain
   useEffect(() => {
     if (activeFile) {
       window.localStorage.setItem(activeFileStorageKey, activeFile);

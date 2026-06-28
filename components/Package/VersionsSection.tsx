@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -29,34 +29,20 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
-  const routeVersionSearch = useMemo(
-    () => parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '',
-    [router.query]
-  );
+  const routeVersionSearch = parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '';
   const [versionSearch, setVersionSearch] = useState(routeVersionSearch);
 
-  const versions = useMemo(
-    () =>
-      Object.entries(registryData.versions).sort(
-        (a, b) => -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
-      ),
-    [registryData]
+  const versions = Object.entries(registryData.versions).sort(
+    (a, b) => -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
   );
-
-  const filteredVersions = useMemo(
-    () =>
-      versionSearch
-        ? versions.filter(([version, versionData]) =>
-            [version, versionData.version].some(value =>
-              value.toLowerCase().includes(versionSearch)
-            )
-          )
-        : versions,
-    [versionSearch, versions]
-  );
-  const visibleVersions = useMemo(
-    () => filteredVersions.slice(0, shouldShowAll ? filteredVersions.length : VERSIONS_TO_SHOW),
-    [filteredVersions, shouldShowAll]
+  const filteredVersions = versionSearch
+    ? versions.filter(([version, versionData]) =>
+        [version, versionData.version].some(value => value.toLowerCase().includes(versionSearch))
+      )
+    : versions;
+  const visibleVersions = filteredVersions.slice(
+    0,
+    shouldShowAll ? filteredVersions.length : VERSIONS_TO_SHOW
   );
 
   const updateVersionSearchQuery = useDebouncedCallback((versionSearch: string) => {

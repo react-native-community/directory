@@ -8,7 +8,7 @@ import UserAvatar from '~/components/Package/UserAvatar';
 import RelativeTime from '~/components/RelativeTime';
 import { type PackageVersionData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import { formatNumberToString, pluralize } from '~/util/strings';
+import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -67,7 +67,7 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
           <DownloadIcon style={tw`text-icon`} />
           <View>
             <A style={tw`font-light`} href={`${urlBase}?activeTab=versions`}>
-              {formatNumberToString(downloads)}
+              {NUMBER_FORMATTER.format(downloads)}
             </A>
             <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
           </View>
