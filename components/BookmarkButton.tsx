@@ -2,7 +2,7 @@ import { type StyleProp, type ViewStyle } from 'react-native';
 
 import { HoverEffect } from '~/common/styleguide';
 import { BookmarkFilledIcon, BookmarkIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { useBookmarks } from '~/context/BookmarksContext';
 import tw from '~/util/tailwind';
 

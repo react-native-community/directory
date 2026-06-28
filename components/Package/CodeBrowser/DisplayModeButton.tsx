@@ -3,7 +3,7 @@ import { Pressable, View } from 'react-native';
 import { useLayout } from '~/common/styleguide';
 import { MaximizeIcon, MinimizeIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 type Props = {

@@ -7,7 +7,7 @@ import tw from '~/util/tailwind';
 import { InfoIcon } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
 import { Tag } from './Tag';
-import Tooltip from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 type Props = {
   library: LibraryType;

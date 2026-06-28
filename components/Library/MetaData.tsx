@@ -1,5 +1,4 @@
 import { partition } from 'es-toolkit/array';
-import { memo } from 'react';
 import { View } from 'react-native';
 
 import { A, Caption, P } from '~/common/styleguide';
@@ -22,9 +21,9 @@ import {
   TypeScriptIcon,
   WebIcon,
 } from '~/components/Icons';
-import { ConfigPluginContent, getConfigPluginText } from '~/components/Library/ConfigPlugin';
-import Tooltip from '~/components/Tooltip';
-import { type LibraryType, type MetadataEntryType } from '~/types';
+import { ConfigPluginContent } from '~/components/Library/ConfigPlugin';
+import { Tooltip } from '~/components/Tooltip';
+import { type LibraryDataEntryType, type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { formatPackageManager, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -339,4 +338,12 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
   }
 }
 
-export default memo(MetaData);
+export default MetaData;
+
+function getConfigPluginText(configPlugin: LibraryDataEntryType['configPlugin']) {
+  if (typeof configPlugin === 'string') {
+    return `Expo config plugin available as a separate package`;
+  } else if (configPlugin) {
+    return 'Expo config plugin included';
+  }
+}

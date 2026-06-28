@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -26,7 +26,7 @@ export default function Search({ query, total, style }: Props) {
   const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
 
-  const isApple = useMemo<boolean>(() => isAppleDevice(), []);
+  const isApple = isAppleDevice();
   const inputRef = useRef<TextInput>(null);
 
   const { replace } = useRouter();

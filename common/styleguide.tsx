@@ -43,46 +43,64 @@ type CustomTextProps = TextProps &
     numberOfLines?: number;
   }>;
 
-export function createTextComponent(
+function renderTextComponent(
   Element: ComponentType<TextProps>,
-  textStyle?: StyleProp<Style>
+  textStyle: StyleProp<Style> | undefined,
+  { children, style, id, numberOfLines }: CustomTextProps
 ) {
-  function TextComponent({ children, style, id, numberOfLines }: CustomTextProps) {
-    const elementStyle = Element?.displayName
-      ? textStyles[Element.displayName as keyof typeof textStyles]
-      : undefined;
-
-    return (
-      <Element
-        id={id}
-        numberOfLines={numberOfLines}
-        style={[
-          tw`font-sans my-0 font-normal text-black dark:text-white`,
-          elementStyle as StyleProp<Style>,
-          textStyle,
-          style,
-        ]}>
-        {children}
-      </Element>
-    );
-  }
-
-  TextComponent.displayName = `TextComponent(${Element.displayName ?? Element.name ?? 'Unknown'})`;
-
-  return TextComponent;
+  return (
+    <Element
+      id={id}
+      numberOfLines={numberOfLines}
+      style={[tw`font-sans my-0 font-normal text-black dark:text-white`, textStyle, style]}>
+      {children}
+    </Element>
+  );
 }
 
-export const H1 = createTextComponent(HtmlElements.H1, textStyles.h1);
-export const H2 = createTextComponent(HtmlElements.H2, textStyles.h2);
-export const H3 = createTextComponent(HtmlElements.H3, textStyles.h3);
-export const H4 = createTextComponent(HtmlElements.H4, textStyles.h4);
-export const H5 = createTextComponent(HtmlElements.H5, textStyles.h5);
-export const H6 = createTextComponent(HtmlElements.H6, textStyles.h6);
-export const H6Section = createTextComponent(HtmlElements.H6, textStyles.h6section);
-export const P = createTextComponent(HtmlElements.P, textStyles.p);
-export const Headline = createTextComponent(HtmlElements.P, textStyles.headline);
-export const Caption = createTextComponent(HtmlElements.P, textStyles.caption);
-export const Label = createTextComponent(HtmlElements.P, textStyles.label);
+export function H1(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H1, textStyles.h1, props);
+}
+
+export function H2(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H2, textStyles.h2, props);
+}
+
+export function H3(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H3, textStyles.h3, props);
+}
+
+export function H4(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H4, textStyles.h4, props);
+}
+
+export function H5(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H5, textStyles.h5, props);
+}
+
+export function H6(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H6, textStyles.h6, props);
+}
+
+export function H6Section(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.H6, textStyles.h6section, props);
+}
+
+export function P(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.P, textStyles.p, props);
+}
+
+export function Headline(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.P, textStyles.headline, props);
+}
+
+export function Caption(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.P, textStyles.caption, props);
+}
+
+export function Label(props: CustomTextProps) {
+  return renderTextComponent(HtmlElements.P, textStyles.label, props);
+}
 
 type AProps = PropsWithChildren<{
   style?: StyleProp<Style>;

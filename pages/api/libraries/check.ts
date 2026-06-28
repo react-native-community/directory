@@ -17,10 +17,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     } else if (Array.isArray(rawPackages)) {
       packages = rawPackages;
     } else {
-      packages = rawPackages
-        .split(',')
-        .map(p => p.trim())
-        .filter(Boolean);
+      packages = rawPackages.split(',').flatMap(pkg => {
+        const trimmed = pkg.trim();
+        return trimmed ? [trimmed] : [];
+      });
     }
   } else if (typeof req.body === 'string') {
     packages = JSON.parse(req.body)?.packages;

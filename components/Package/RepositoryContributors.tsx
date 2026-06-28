@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import ContentLoader from 'react-content-loader';
 import { View } from 'react-native';
 import useSWR from 'swr';
@@ -6,7 +5,7 @@ import useSWR from 'swr';
 import { A, H6Section, Label, useLayout } from '~/common/styleguide';
 import EntityCounter from '~/components/Package/EntityCounter';
 import UserAvatar from '~/components/Package/UserAvatar';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type GitHubUser } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { pluralize } from '~/util/strings';
@@ -20,7 +19,7 @@ const LIMIT = 38;
 
 export default function RepositoryContributors({ fullName }: Props) {
   const { isSmallScreen } = useLayout();
-  const { data, isLoading } = useSWR(
+  const { data, isLoading } = useSWR<GitHubUser[]>(
     `https://api.github.com/repos/${fullName}/contributors?per_page=${LIMIT}`,
     (url: string) => fetch(url).then(res => res.json()),
     {
@@ -29,16 +28,12 @@ export default function RepositoryContributors({ fullName }: Props) {
     }
   );
 
-  const contributors: GitHubUser[] = useMemo(
-    () =>
-      (data ?? []).sort((a: GitHubUser, b: GitHubUser) => {
-        if (a.contributions === b.contributions) {
-          return a.login.localeCompare(b.login);
-        }
-        return a.contributions < b.contributions ? 1 : -1;
-      }),
-    [data]
-  );
+  const contributors = (data ?? []).sort((a, b) => {
+    if (a.contributions === b.contributions) {
+      return a.login.localeCompare(b.login);
+    }
+    return a.contributions < b.contributions ? 1 : -1;
+  });
 
   if (isLoading) {
     return (

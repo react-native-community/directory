@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
@@ -13,7 +13,7 @@ import {
 } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
-import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
+import { type LibraryType, type MarkdownTabsType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 import tw from '~/util/tailwind';
@@ -32,66 +32,56 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const router = useRouter();
   const repoUrl = library?.github.urls.repo;
 
-  const contentTabs = useMemo<MarkdownTab[]>(
-    () =>
-      [
-        ...(packageName
-          ? [
-              {
-                title: 'Readme' as const,
-                Icon: ReadmeFileIcon,
-                url: `/api/proxy/unpkg?name=${packageName}&path=README.md`,
-              },
-            ]
-          : []),
-        ...(library?.github?.hasChangelog
-          ? [
-              {
-                title: 'Changelog' as const,
-                Icon: ChangelogFileIcon,
-                url: getTabContentUrl(library, 'CHANGELOG.md'),
-              },
-            ]
-          : []),
-        ...(library?.github?.hasContributing
-          ? [
-              {
-                title: 'Contributing' as const,
-                Icon: ContributingFileIcon,
-                url: getTabContentUrl(library, 'CONTRIBUTING.md'),
-              },
-            ]
-          : []),
-        ...(library?.github?.hasCC
-          ? [
-              {
-                title: 'Code of Conduct' as const,
-                Icon: CCFileIcon,
-                url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
-              },
-            ]
-          : []),
-        ...(library?.github?.hasSecurity
-          ? [
-              {
-                title: 'Security' as const,
-                Icon: SecurityIcon,
-                url: getTabContentUrl(library, 'SECURITY.md'),
-              },
-            ]
-          : []),
-      ].flat(),
-    [library, packageName]
-  );
+  const contentTabs = [
+    ...(packageName
+      ? [
+          {
+            title: 'Readme' as const,
+            Icon: ReadmeFileIcon,
+            url: `/api/proxy/unpkg?name=${packageName}&path=README.md`,
+          },
+        ]
+      : []),
+    ...(library?.github?.hasChangelog
+      ? [
+          {
+            title: 'Changelog' as const,
+            Icon: ChangelogFileIcon,
+            url: getTabContentUrl(library, 'CHANGELOG.md'),
+          },
+        ]
+      : []),
+    ...(library?.github?.hasContributing
+      ? [
+          {
+            title: 'Contributing' as const,
+            Icon: ContributingFileIcon,
+            url: getTabContentUrl(library, 'CONTRIBUTING.md'),
+          },
+        ]
+      : []),
+    ...(library?.github?.hasCC
+      ? [
+          {
+            title: 'Code of Conduct' as const,
+            Icon: CCFileIcon,
+            url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
+          },
+        ]
+      : []),
+    ...(library?.github?.hasSecurity
+      ? [
+          {
+            title: 'Security' as const,
+            Icon: SecurityIcon,
+            url: getTabContentUrl(library, 'SECURITY.md'),
+          },
+        ]
+      : []),
+  ].flat();
 
-  const availableTabs = useMemo<MarkdownTabsType[]>(
-    () => contentTabs.map(({ title }) => title),
-    [contentTabs]
-  );
-  const routeTab = useMemo(
-    () => parseMarkdownTab(router.query[MARKDOWN_CONTENT_QUERY_PARAM], availableTabs),
-    [availableTabs, router.query]
-  );
+  const availableTabs = contentTabs.map(({ title }) => title);
+  const routeTab = parseMarkdownTab(router.query[MARKDOWN_CONTENT_QUERY_PARAM], availableTabs);
   const [activeTab, setActiveTab] = useState<MarkdownTabsType>(routeTab);
 
   const { data, error, isLoading } = useSWR(
@@ -124,10 +114,11 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
       const element = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
 
       if (element) {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
           const top = element.getBoundingClientRect().top + window.scrollY - 12;
           window.scrollTo({ top, behavior: 'smooth' });
         }, 500);
+        return () => clearTimeout(timer);
       }
     }
   }, [noData]);

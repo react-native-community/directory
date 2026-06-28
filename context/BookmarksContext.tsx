@@ -1,4 +1,4 @@
-import { createContext, type PropsWithChildren, useContext, useEffect, useState } from 'react';
+import { createContext, type PropsWithChildren, use, useState } from 'react';
 
 import { TimeRange } from '~/util/datetime';
 
@@ -54,42 +54,33 @@ export function getBookmarksFromCookie(cookieString?: string): string[] {
 }
 
 export function BookmarksProvider({ children }: PropsWithChildren) {
-  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const bookmarks = getBookmarksFromCookie();
-    // oxlint-disable-next-line react/react-compiler
-    setBookmarkedIds(new Set(bookmarks));
-    setIsLoading(false);
-  }, []);
-
-  function checkIsBookmarked(id: string) {
-    return bookmarkedIds.has(id);
-  }
-
-  function toggleBookmark(id: string) {
-    const newSet = new Set(bookmarkedIds);
-    if (newSet.has(id)) {
-      newSet.delete(id);
-    } else {
-      newSet.add(id);
-    }
-
-    setCookie(BOOKMARK_COOKIE_NAME, JSON.stringify([...newSet]), COOKIE_MAX_AGE);
-    setBookmarkedIds(newSet);
-  }
-
-  return (
-    <BookmarksContext.Provider
-      value={{ bookmarkedIds, checkIsBookmarked, toggleBookmark, isLoading }}>
-      {children}
-    </BookmarksContext.Provider>
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(
+    () => new Set(getBookmarksFromCookie())
   );
+  const isLoading = false;
+
+  const value = {
+    bookmarkedIds,
+    checkIsBookmarked: (id: string) => bookmarkedIds.has(id),
+    toggleBookmark: (id: string) => {
+      const newSet = new Set(bookmarkedIds);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+
+      setCookie(BOOKMARK_COOKIE_NAME, JSON.stringify([...newSet]), COOKIE_MAX_AGE);
+      setBookmarkedIds(newSet);
+    },
+    isLoading,
+  };
+
+  return <BookmarksContext.Provider value={value}>{children}</BookmarksContext.Provider>;
 }
 
 export function useBookmarks() {
-  const context = useContext(BookmarksContext);
+  const context = use(BookmarksContext);
   if (!context) {
     throw new Error('useBookmarks must be used within a BookmarksProvider');
   }

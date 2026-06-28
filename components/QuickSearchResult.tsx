@@ -1,11 +1,10 @@
-import { memo, useCallback } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { Caption, useLayout } from '~/common/styleguide';
 import CompatibilityTags from '~/components/CompatibilityTags';
 import { WarningIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -20,24 +19,12 @@ type Props = {
 function QuickSearchResult({ index, isActive, library, onHoverChange, onSelect }: Props) {
   const { isSmallScreen } = useLayout();
 
-  const handleHoverIn = useCallback(() => {
-    onHoverChange(index);
-  }, [index, onHoverChange]);
-
-  const handleHoverOut = useCallback(() => {
-    onHoverChange(null);
-  }, [onHoverChange]);
-
-  const handlePress = useCallback(async () => {
-    await onSelect(library.npmPkg);
-  }, [library.npmPkg, onSelect]);
-
   return (
     <Pressable
-      onPress={handlePress}
+      onPress={async () => await onSelect(library.npmPkg)}
       onPointerDown={event => event.preventDefault()}
-      onHoverIn={handleHoverIn}
-      onHoverOut={handleHoverOut}
+      onHoverIn={() => onHoverChange(index)}
+      onHoverOut={() => onHoverChange(null)}
       style={[
         tw`max-w-full flex-row items-center justify-between gap-x-3 gap-y-1.5 py-1 pl-4 pr-3`,
         isSmallScreen && tw`flex-wrap`,
@@ -68,14 +55,4 @@ function QuickSearchResult({ index, isActive, library, onHoverChange, onSelect }
   );
 }
 
-function arePropsEqual(previousProps: Props, nextProps: Props) {
-  return (
-    previousProps.index === nextProps.index &&
-    previousProps.isActive === nextProps.isActive &&
-    previousProps.library === nextProps.library &&
-    previousProps.onHoverChange === nextProps.onHoverChange &&
-    previousProps.onSelect === nextProps.onSelect
-  );
-}
-
-export default memo(QuickSearchResult, arePropsEqual);
+export default QuickSearchResult;

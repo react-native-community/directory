@@ -1,7 +1,7 @@
 import { type ColorValue, View } from 'react-native';
 import { Circle, Path, Svg } from 'react-native-svg';
 
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { MAX_SCORE } from '~/util/scoring';
 import tw from '~/util/tailwind';

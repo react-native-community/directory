@@ -2,17 +2,16 @@ import { LI, UL } from '@expo/html-elements';
 import { startCase } from 'es-toolkit/string';
 import { type NextPageContext } from 'next';
 import * as emoji from 'node-emoji';
-import { useMemo } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { DownloadIcon, StarIcon, WarningIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import { formatNumberToString } from '~/util/strings';
+import { NUMBER_FORMATTER } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -26,7 +25,7 @@ type Props = {
 const LIMIT = 6;
 
 export default function MorePackagesBox({ library }: Props) {
-  const owner = useMemo(() => library.github.fullName.split('/')[0], [library]);
+  const owner = library.github.fullName.split('/')[0];
 
   const { isSmallScreen } = useLayout();
   const { data, isLoading } = useSWR<APIResponseType>(
@@ -118,13 +117,13 @@ export default function MorePackagesBox({ library }: Props) {
                         <View style={tw`flex-row items-center gap-1`}>
                           <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
                           <span className="tabular-nums">
-                            {github.stats.stars.toLocaleString()}
+                            {NUMBER_FORMATTER.format(github.stats.stars)}
                           </span>
                         </View>
                         <View style={tw`flex-row items-center gap-1`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
                           <span className="tabular-nums">
-                            {formatNumberToString(npm?.downloads ?? 0)}
+                            {NUMBER_FORMATTER.format(npm?.downloads ?? 0)}
                           </span>
                         </View>
                       </View>

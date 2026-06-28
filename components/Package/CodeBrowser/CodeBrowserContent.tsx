@@ -1,4 +1,4 @@
-import { type SyntheticEvent, useEffect, useState } from 'react';
+import { type SyntheticEvent, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import useSWR from 'swr';
@@ -14,7 +14,7 @@ import {
 import CopyButton from '~/components/Package/CopyButton';
 import MarkdownRenderer from '~/components/Package/MarkdownContentBox/MarkdownRenderer';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { type UnpkgMeta } from '~/types';
@@ -54,13 +54,6 @@ export default function CodeBrowserContent({
   const [imageData, setImageData] = useState<
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
   >(null);
-
-  useEffect(() => {
-    // oxlint-disable-next-line react/react-compiler
-    setImageData(null);
-    setRawPreview(false);
-    setMarkdownPreview(false);
-  }, [filePath]);
 
   const fileExtension = filePath.split('.').at(-1) ?? 'text';
   const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);

@@ -1,5 +1,5 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
 import { ThumbnailIcon } from '~/components/Icons';
@@ -70,4 +70,4 @@ function Thumbnail({ url }: Props) {
   );
 }
 
-export default memo(Thumbnail);
+export default Thumbnail;

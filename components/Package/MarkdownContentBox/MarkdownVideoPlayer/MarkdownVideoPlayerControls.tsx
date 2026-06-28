@@ -9,7 +9,7 @@ import {
 } from '@videojs/react';
 
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 
 import { PauseIcon, PlayIcon, RestartIcon, SeekIcon } from './icons';
 import { InlinePlayer } from './InlinePlayer';
