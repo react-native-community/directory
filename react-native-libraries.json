@@ -22659,5 +22659,18 @@
     "ios": true,
     "macos": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/RonRadtke/react-native-markdown-display",
+    "npmPkg": "@ronradtke/react-native-markdown-display",
+    "examples": ["https://github.com/RonRadtke/react-native-markdown-display/tree/master/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "fireos": true,
+    "horizon": true,
+    "vegaos": true
   }
 ]
