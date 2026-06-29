@@ -13121,8 +13121,9 @@
     "examples": ["https://github.com/hsjoberg/react-native-turbo-sqlite/tree/master/example"],
     "ios": true,
     "android": true,
-    "macos": true,
+    "web": true,
     "windows": true,
+    "macos": true,
     "newArchitecture": true
   },
   {
