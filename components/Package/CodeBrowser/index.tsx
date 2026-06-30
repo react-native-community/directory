@@ -1,6 +1,13 @@
 import { sumBy } from 'es-toolkit/math';
-import { useRef, useState } from 'react';
-import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import {
+  type ColorValue,
+  type NativePointerEvent,
+  type NativeSyntheticEvent,
+  ScrollView,
+  TextInput,
+  View,
+} from 'react-native';
 import useSWR from 'swr';
 
 import { Label, P, useLayout } from '~/common/styleguide';
@@ -21,6 +28,11 @@ import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
 
+const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
+const DEFAULT_FILE_TREE_WIDTH = 340;
+const MIN_FILE_TREE_WIDTH = 260;
+const MAX_FILE_TREE_WIDTH = 480;
+
 type Props = {
   library: LibraryType;
   selectedVersion: string;
@@ -40,9 +52,14 @@ export default function CodeBrowser({
 }: Props) {
   const { isSmallScreen } = useLayout();
   const inputRef = useRef<TextInput>(null);
+  const fileTreeResizeStartRef = useRef<{ startX: number; startWidth: number } | null>(null);
 
   const [search, setSearch] = useState('');
   const [isInputFocused, setInputFocused] = useState(false);
+  const [fileTreeWidth, setFileTreeWidth] = useState(() =>
+    getStoredFileTreeWidth(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX)
+  );
+  const [isFileTreeResizing, setFileTreeResizing] = useState(false);
 
   const { data, isLoading } = useSWR<UnpkgMeta>(
     `/api/proxy/unpkg?name=${library.npmPkg}&version=${selectedVersion}&path=?meta`,
@@ -52,6 +69,64 @@ export default function CodeBrowser({
       revalidateOnFocus: false,
     }
   );
+
+  useEffect(() => {
+    window.localStorage.setItem(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX, String(fileTreeWidth));
+  }, [fileTreeWidth]);
+
+  useEffect(() => {
+    if (!isFileTreeResizing) {
+      return;
+    }
+
+    function handlePointerMove(event: PointerEvent) {
+      const start = fileTreeResizeStartRef.current;
+
+      if (!start) {
+        return;
+      }
+
+      setFileTreeWidth(clampFileTreeWidth(start.startWidth + (event.clientX - start.startX)));
+    }
+
+    function endResizing() {
+      fileTreeResizeStartRef.current = null;
+      setFileTreeResizing(false);
+    }
+
+    function clampWidthToViewport() {
+      setFileTreeWidth(currentWidth => clampFileTreeWidth(currentWidth));
+    }
+
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    document.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('pointerup', endResizing);
+    document.addEventListener('pointercancel', endResizing);
+    window.addEventListener('resize', clampWidthToViewport);
+
+    return () => {
+      document.body.style.cursor = 'auto';
+      document.body.style.userSelect = 'auto';
+      document.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('pointerup', endResizing);
+      document.removeEventListener('pointercancel', endResizing);
+      window.removeEventListener('resize', clampWidthToViewport);
+    };
+  }, [isFileTreeResizing]);
+
+  function startFileTreeResize(event: NativeSyntheticEvent<NativePointerEvent>) {
+    event.preventDefault();
+
+    const clientX = event.nativeEvent.clientX;
+
+    fileTreeResizeStartRef.current = {
+      startX: clientX,
+      startWidth: fileTreeWidth,
+    };
+
+    setFileTreeResizing(true);
+  }
 
   const normalizedSearch = search.trim().toLowerCase();
 
@@ -135,7 +210,12 @@ export default function CodeBrowser({
             isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
             isSmallScreen && tw`flex-col`,
           ]}>
-          <View>
+          <View
+            style={[
+              tw`relative z-10 flex h-full flex-shrink-0`,
+              !isSmallScreen && { width: fileTreeWidth },
+              isSmallScreen && tw`w-full`,
+            ]}>
             <View
               style={[
                 tw`relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-default`,
@@ -180,9 +260,9 @@ export default function CodeBrowser({
               id="codeBrowserList"
               style={[
                 tw`border-palette-gray2 dark:border-default`,
-                !isSmallScreen && tw`w-[340px] flex-grow border-r`,
-                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[340px]`,
+                !isSmallScreen && tw`flex-1 border-r`,
                 isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
+                isFileTreeResizing && tw`pointer-events-none`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (
@@ -201,6 +281,17 @@ export default function CodeBrowser({
                 </View>
               )}
             </ScrollView>
+            {!isSmallScreen && (
+              <View
+                accessibilityRole="adjustable"
+                onPointerDown={startFileTreeResize}
+                style={[
+                  tw`absolute -right-0.5 top-0 z-10 h-full w-1 opacity-40`,
+                  { cursor: 'col-resize' },
+                  isFileTreeResizing && tw`bg-palette-gray3 dark:bg-palette-gray5`,
+                ]}
+              />
+            )}
             {filteredFiles.length > 0 && (
               <CodeBrowserContentFooter
                 style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
@@ -246,4 +337,28 @@ export default function CodeBrowser({
       )}
     </View>
   );
+}
+
+function getStoredFileTreeWidth(storageKey: string) {
+  if (typeof window === 'undefined') {
+    return DEFAULT_FILE_TREE_WIDTH;
+  }
+
+  const storedWidth = Number(window.localStorage.getItem(storageKey));
+
+  if (!Number.isFinite(storedWidth)) {
+    return DEFAULT_FILE_TREE_WIDTH;
+  }
+
+  return clampFileTreeWidth(storedWidth);
+}
+
+function clampFileTreeWidth(width: number) {
+  if (typeof window === 'undefined') {
+    return Math.max(MIN_FILE_TREE_WIDTH, width);
+  }
+
+  const maxWidth = Math.max(MIN_FILE_TREE_WIDTH, MAX_FILE_TREE_WIDTH);
+
+  return Math.min(Math.max(width, MIN_FILE_TREE_WIDTH), maxWidth);
 }
