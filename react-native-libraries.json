@@ -22743,5 +22743,12 @@
     "fireos": true,
     "horizon": true,
     "vegaos": true
+  },
+  {
+    "githubUrl": "https://github.com/PostHog/posthog-js/tree/main/packages/react-native-plugin",
+    "npmPkg": "@posthog/react-native-plugin",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
