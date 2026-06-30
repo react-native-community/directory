@@ -22749,10 +22749,6 @@
     "npmPkg": "@posthog/react-native-plugin",
     "ios": true,
     "android": true,
-    "web": false,
-    "newArchitecture": true,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false
+    "newArchitecture": true
   }
 ]
