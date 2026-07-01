@@ -1,4 +1,4 @@
-import { type Query, type QueryOrder } from '~/types';
+import { type Query } from '~/types';
 import { TimeRange } from '~/util/datetime';
 
 export const NUM_PER_PAGE = 30;
@@ -39,7 +39,7 @@ export const POPULAR_QUERY_BASE: Query = {
   minPopularity: '10',
   wasRecentlyUpdated: 'true',
   isMaintained: 'true',
-  order: 'popularity' as QueryOrder,
+  order: 'popularity',
   skipTools: 'true',
 };
 
