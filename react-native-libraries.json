@@ -984,7 +984,9 @@
     "android": true,
     "expoGo": true,
     "unmaintained": true,
-    "alternatives": ["@futurejj/react-native-checkbox"]
+    "alternatives": ["@futurejj/react-native-checkbox"],
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/react-native-loading-container",
@@ -1251,7 +1253,9 @@
     "githubUrl": "https://github.com/crazycodeboy/react-native-easy-toast",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/harshq/react-native-mentions",
@@ -1263,7 +1267,9 @@
     "githubUrl": "https://github.com/machadogj/react-native-carousel-control",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/evetstech/react-native-settings-list",
@@ -1410,7 +1416,8 @@
     "githubUrl": "https://github.com/eyaleizenberg/react-native-floating-label-text-input",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-progress-hud",
@@ -1800,7 +1807,8 @@
   },
   {
     "githubUrl": "https://github.com/Sunhat/react-native-extra-dimensions-android",
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/williambout/react-native-proximity",
@@ -1924,7 +1932,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/beefe/react-native-popup",
@@ -3616,7 +3626,8 @@
     "githubUrl": "https://github.com/react-ui-kit/expo-ui-kit",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/grapp-dev/stacks",
@@ -4481,7 +4492,8 @@
     "android": true,
     "expoGo": true,
     "windows": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jibraniqbal666/react-native-fb-image-grid",
@@ -5003,7 +5015,8 @@
     "githubUrl": "https://github.com/globocom/react-native-draftjs-render",
     "ios": true,
     "android": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/christopherdro/react-native-html-to-pdf",
@@ -6233,7 +6246,9 @@
       "https://raw.githubusercontent.com/aryella-lacerda/react-native-easy-calendar/master/docs/light-theme.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/NataliaLinnik/react-native-nested-list",
@@ -6407,7 +6422,8 @@
       "https://user-images.githubusercontent.com/3001525/75336253-c3807a00-58c5-11ea-9872-371b654c05fa.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/birkir/react-native-carplay/tree/master/packages/react-native-carplay",
@@ -7451,7 +7467,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/wcandillon/react-native-shader",
@@ -7622,7 +7639,8 @@
       "https://raw.githubusercontent.com/a7ul/react-native-exception-handler/master/screens/WITH_EH.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/ReactVision/viro",
@@ -7944,7 +7962,8 @@
     "examples": ["https://github.com/AzizAK/react-native-detector/tree/master/example"],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/yamankatby/react-native-material",
@@ -8383,7 +8402,8 @@
     "ios": true,
     "android": true,
     "configPlugin": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/henrhie/react-native-sha",
@@ -9277,7 +9297,8 @@
     "examples": ["https://github.com/thakurballary/react-native-btr-demo"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/FormidableLabs/react-native-ama/tree/main/packages/core",
@@ -9440,7 +9461,9 @@
     "examples": ["https://github.com/ouroboroscoding/react-native-snackbar/tree/main/example"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/hirbod/react-native-volume-manager",
@@ -9700,7 +9723,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/acro5piano/react-native-big-calendar",
@@ -10919,7 +10943,8 @@
     "examples": ["https://github.com/mrousavy/react-native-fast-tflite/tree/main/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-worklets-core",
@@ -11117,7 +11142,8 @@
     "examples": ["https://github.com/flixyudh/react-native-flix-snackbar/tree/main/example"],
     "ios": true,
     "android": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Splicer97/react-native-switch",
@@ -11286,7 +11312,9 @@
     "expoGo": true,
     "macos": true,
     "tvos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/xmtp/xmtp-react-native",
@@ -11542,7 +11570,9 @@
       "https://raw.githubusercontent.com/SHISME/react-native-draggable-grid/master/example.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/jkomyno/react-native-user-inactivity",
@@ -11564,7 +11594,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/meedwire/react-native-image-rotate",
@@ -11628,7 +11659,8 @@
       "https://raw.githubusercontent.com/imnapo/react-native-cn-quill/master/images/quill-editor.jpeg"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/candlefinance/react-native-purchase-kit",
@@ -12090,7 +12122,8 @@
     "githubUrl": "https://github.com/BeTomorrow/react-native-file-logger",
     "examples": ["https://github.com/BeTomorrow/react-native-file-logger/tree/master/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/okta/okta-react-native",
@@ -13606,7 +13639,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/margelo/react-native-nitro-sqlite/tree/main/package",
@@ -13861,7 +13895,8 @@
       "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-country-code-select/main/assets/sample1.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-animation-catalog",
@@ -15232,7 +15267,9 @@
     "examples": ["https://github.com/evergrace-co/react-native-audio-pro/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/i18next/i18next",
@@ -16185,7 +16222,8 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/roninoss/rn-primitives/tree/main/packages/slot",
@@ -17484,7 +17522,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mhpdev-com/react-native-haptics",
@@ -17711,7 +17750,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/elevenlabs/packages/tree/main/packages/react-native",
@@ -17884,7 +17924,9 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/callstack/liquid-glass",
@@ -19406,7 +19448,8 @@
       "https://raw.githubusercontent.com/mgcrea/react-native-jetpack-compose/main/.github/assets/demo.gif"
     ],
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mgcrea/react-native-video-frames",
@@ -19630,7 +19673,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only"
+    "newArchitecture": "new-arch-only",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-zlib",
@@ -20985,7 +21029,8 @@
       "https://raw.githubusercontent.com/JuanRdBO/expo-circular-reveal/main/demo-android.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/anas-asghar4831/react-native-chess-kit",
@@ -21599,7 +21644,9 @@
       "https://raw.githubusercontent.com/echowaves/expo-masonry-layout/main/assets/simulator_screenshot_B5DA2B98-A4BA-4B8A-8917-45AE7F50F97A.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/le-ar/react-native-viewport-metrics",
