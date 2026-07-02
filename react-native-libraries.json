@@ -22769,11 +22769,12 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/afonsojramos/react-native-super-calendar",
+    "githubUrl": "https://github.com/afonsojramos/super-calendar/tree/main/packages/native",
+    "npmPkg": "@super-calendar/native",
     "images": [
-      "https://raw.githubusercontent.com/afonsojramos/react-native-super-calendar/main/.github/assets/preview.png"
+      "https://raw.githubusercontent.com/afonsojramos/super-calendar/main/.github/assets/preview.png"
     ],
-    "examples": ["https://github.com/afonsojramos/react-native-super-calendar/tree/main/example"],
+    "examples": ["https://github.com/afonsojramos/super-calendar/tree/main/examples/native"],
     "ios": true,
     "android": true,
     "web": true
@@ -22854,6 +22855,54 @@
   {
     "githubUrl": "https://github.com/PostHog/posthog-js/tree/main/packages/react-native-plugin",
     "npmPkg": "@posthog/react-native-plugin",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/GGULBAE/react-native-image-compression-kit",
+    "examples": [
+      "https://github.com/GGULBAE/react-native-image-compression-kit/tree/master/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Ometria/ometria.react_native_sdk",
+    "npmPkg": "react-native-ometria",
+    "examples": [
+      "https://github.com/Ometria/ometria.react_native_sdk/tree/master/example",
+      "https://github.com/Ometria/ometria.react_native_sdk/tree/master/example-expo"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tenjin/tenjin-react-native-sdk",
+    "npmPkg": "react-native-tenjin",
+    "examples": ["https://github.com/tenjin/tenjin-react-native-sdk/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/janicduplessis/rn-iso",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/francesco-clementi-92/vision-camera-ocr",
+    "npmPkg": "vision-camera-ocr-plugin",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/luicfrr/react-native-vision-camera-face-detector",
+    "examples": [
+      "https://github.com/luicfrr/react-native-vision-camera-face-detector/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
