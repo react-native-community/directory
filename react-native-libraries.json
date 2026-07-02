@@ -19524,10 +19524,11 @@
   {
     "githubUrl": "https://github.com/criipto/criipto-verify-expo",
     "npmPkg": "@criipto/verify-expo",
-    "examples": ["https://github.com/criipto/criipto-verify-expo/tree/master/example"],
+    "examples": ["https://github.com/criipto/criipto-verify-expo/tree/master/examples"],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/pagopa/io-app-design-system",
