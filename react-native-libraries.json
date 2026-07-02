@@ -22941,5 +22941,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tsubotax/melta-app",
+    "examples": [
+      "https://app.melta.tsubotax.com"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
