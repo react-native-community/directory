@@ -22941,5 +22941,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jo-duchan/tapflow",
+    "npmPkg": "tapflow",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
