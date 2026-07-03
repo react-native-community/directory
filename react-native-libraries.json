@@ -471,7 +471,8 @@
     "ios": true,
     "android": true,
     "windows": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/OneSignal/react-native-onesignal",
@@ -1146,7 +1147,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/capitalone/react-native-pathjs-charts",
@@ -1196,7 +1198,9 @@
     "githubUrl": "https://github.com/instea/react-native-popup-menu",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/BugiDev/react-native-calendar-strip",
@@ -3639,7 +3643,8 @@
     "examples": [
       "https://snack.expo.dev/@seniv/react-native-notifer-example",
       "https://github.com/seniv/react-native-notifier/tree/main/example"
-    ]
+    ],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-ui-kit/expo-ui-kit",
@@ -4441,7 +4446,9 @@
     "githubUrl": "https://github.com/brh55/react-native-open-maps",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/oblador/react-native-store-review",
@@ -4601,7 +4608,8 @@
     "android": true,
     "expoGo": true,
     "windows": true,
-    "examples": ["https://github.com/rgommezz/react-native-offline/tree/master/example"]
+    "examples": ["https://github.com/rgommezz/react-native-offline/tree/master/example"],
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/ovr/react-native-status-bar-height",
@@ -4872,7 +4880,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "unmaintained": true
+    "unmaintained": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jamesisaac/react-native-background-task",
@@ -6565,7 +6574,8 @@
     "examples": ["https://github.com/hyochan/react-native-nitro-sound/tree/main/example"],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/enesozturk/rn-swipeable-panel",
@@ -7355,7 +7365,8 @@
     ],
     "ios": true,
     "android": true,
-    "harmony": "@react-native-ohos/react-native-photo-manipulator"
+    "harmony": "@react-native-ohos/react-native-photo-manipulator",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/xmartlabs/react-native-line",
@@ -8079,7 +8090,9 @@
       "https://raw.githubusercontent.com/garganurag893/react-native-phone-number-input/master/gif/Phone_Number_Input_Layout_2.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/JungHsuan/react-native-gesture-flip-card",
@@ -8527,7 +8540,9 @@
     "expoGo": true,
     "windows": true,
     "macos": true,
-    "tvos": true
+    "tvos": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/dohooo/react-native-reanimated-carousel",
@@ -8633,7 +8648,8 @@
       "https://raw.githubusercontent.com/fakeheal/react-native-pan-pinch-view/master/android.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/gobeyondidentity/bi-sdk-react-native",
@@ -9330,7 +9346,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "examples": ["https://github.com/dcangulo/react-native-outside-press/tree/main/example"]
+    "examples": ["https://github.com/dcangulo/react-native-outside-press/tree/main/example"],
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/websitebeaver/react-native-document-scanner-plugin",
@@ -9921,7 +9939,8 @@
     "githubUrl": "https://github.com/DataDog/react-native-performance-limiter",
     "examples": ["https://github.com/DataDog/react-native-performance-limiter/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/macvish/react-native-basic-carousel",
@@ -10480,7 +10499,8 @@
     "images": ["https://raw.githubusercontent.com/aidin36/react-native-pie-chart/main/preview.png"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/fracht/react-native-input-autofocus/tree/main/lib",
@@ -10628,7 +10648,8 @@
       "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_1.jpg",
       "https://github.com/Adarshshanbhag5/react-native-palette-picker/blob/main/screenshots/screenshot_MusicFumes.jpg"
     ],
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/MetaLabs-inc/react-native-vimeo-iframe",
@@ -10926,7 +10947,8 @@
     "examples": ["https://github.com/KroosX4V/react-native-orientation-manager/tree/main/example"],
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/stanleyugwu/react-native-bottom-sheet",
@@ -11291,7 +11313,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/ecklf/react-native-heroicons",
@@ -11617,7 +11641,9 @@
       "https://raw.githubusercontent.com/carsonwah/_file_hosting/master/react-native-push-notification-popup/ios-example.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/SHISME/react-native-draggable-grid",
@@ -11976,7 +12002,8 @@
     "githubUrl": "https://github.com/wxik/react-native-rich-editor",
     "npmPkg": "react-native-pell-rich-editor",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/expo/atlas/tree/main/packages/expo-atlas",
@@ -12829,7 +12856,8 @@
     "images": ["https://peyara-remote-mouse.vercel.app/press-and-hold-button.gif"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jwplayer/jwplayer-react-native",
@@ -13080,7 +13108,8 @@
     "ios": true,
     "android": true,
     "newArchitecture": true,
-    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture."
+    "newArchitectureNote": "This library is built on top of Nitro Modules, which only supports new architecture and it's not compatible with the old architecture.",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/dream-horizon-org/react-native-fast-image",
@@ -13925,7 +13954,8 @@
       "https://raw.githubusercontent.com/SimformSolutionsPvtLtd/react-native-photos-gallery/master/assets/horizontalList.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SimformSolutionsPvtLtd/react-native-images-preview",
@@ -14560,7 +14590,8 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/f-23/react-native-passkey",
@@ -14677,7 +14708,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/benjamineruvieru/rn-text-touch-highlight",
@@ -16574,7 +16606,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Charanor/react-native-highlight-overlay",
@@ -16710,7 +16743,9 @@
   {
     "githubUrl": "https://github.com/teamairship/react-native-public-ip",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/thinhkhang97/react-native-viewport-detector",
@@ -16856,7 +16891,8 @@
     "examples": ["https://github.com/kiethuynh0904/react-native-nitro-toast/tree/master/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/victorhenrion/react-native-document-picker-macos",
@@ -18207,7 +18243,8 @@
     "examples": ["https://github.com/patrickkabwe/react-native-nitro-text/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/thereallo1026/expo-native-storage",
@@ -19119,7 +19156,8 @@
     ],
     "android": true,
     "ios": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SolankiYogesh/react-native-nitro-image-colors",
@@ -19769,7 +19807,8 @@
     "githubUrl": "https://github.com/iwater/react-native-nitro-zlib",
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/iwater/react-native-nitro-net",
@@ -19912,7 +19951,9 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/liveforownhappiness/react-native-glitter",
@@ -20788,7 +20829,8 @@
     "examples": ["https://github.com/IAmTester35/react-native-nitro-sse/tree/main/example"],
     "newArchitecture": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/bluesky-social/expo-guess-language",
@@ -21214,7 +21256,9 @@
     "githubUrl": "https://github.com/MohamedYousuf2/react-native-perf-monitor-tool",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/joshstovall/platform-blocks/tree/main/packages/ui",
@@ -21324,7 +21368,8 @@
     "examples": ["https://github.com/marcocrupi/react-native-notify-kit/tree/main/apps/smoke"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/818jsy/expo-liquid-glass-native",
@@ -21406,7 +21451,8 @@
       "https://github.com/DivyaUnagar/react-native-pinch-viewer/tree/main/react-native-pinch-viewer-example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/fivecar/react-native-draglist",
@@ -21813,7 +21859,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Jmzp/react-native-smart-keyboard-view",
@@ -22556,7 +22603,8 @@
     "configPlugin": true,
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/thegruber/react-native-halo-menu",
@@ -22695,7 +22743,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/blazejkustra/react-native-morph-view",
@@ -22741,7 +22790,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "examples": ["https://github.com/watadarkstar/react-native-parlant/tree/main/example"]
+    "examples": ["https://github.com/watadarkstar/react-native-parlant/tree/main/example"],
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/watadarkstar/react-native-nsfw-detector",
