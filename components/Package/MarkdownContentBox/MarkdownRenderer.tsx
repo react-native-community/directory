@@ -16,7 +16,7 @@ import {
   TipBlockquoteIcon,
   WarningBlockquoteIcon,
 } from '~/components/Icons';
-import MarkdownInlineCode from '~/components/Package/MarkdownContentBox/MarkdownInlineCode';
+import { createSlugger } from '~/components/Package/MarkdownContentBox/utils';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
@@ -24,8 +24,9 @@ import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import tw from '~/util/tailwind';
 
 import MarkdownCodeBlock from './MarkdownCodeBlock';
-import MarkdownHeading, { type MarkdownHeadingTagName } from './MarkdownHeading';
-import { MarkdownVideoPlayer } from './MarkdownVideoPlayer';
+import MarkdownHeading from './MarkdownHeading';
+import MarkdownInlineCode from './MarkdownInlineCode';
+import MarkdownVideoPlayer from './MarkdownVideoPlayer';
 
 type Props = {
   data?: string | null;
@@ -34,49 +35,38 @@ type Props = {
 };
 
 export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true }: Props) {
+  const slugger = createSlugger();
   return (
     <Md
       id="markdownContentContainer"
       components={{
-        h1: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h1: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h2: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h2: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h3: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h3: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h4: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h4: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h5: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h5: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),
-        h6: ({ children, node }) => (
-          <MarkdownHeading
-            tagName={node.tagName as MarkdownHeadingTagName}
-            linkableHeaders={linkableHeaders}>
+        h6: ({ children, node }: any) => (
+          <MarkdownHeading node={node} slugger={slugger} linkableHeaders={linkableHeaders}>
             {children}
           </MarkdownHeading>
         ),

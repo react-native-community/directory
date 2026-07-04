@@ -1,3 +1,5 @@
+import { kebabCase } from 'es-toolkit/string';
+
 import { type MarkdownTabsType } from '~/types';
 
 export const MARKDOWN_CONTENT_QUERY_PARAM = 'tab';
@@ -22,4 +24,15 @@ export function parseMarkdownTab(
   return availableTabs.includes(DEFAULT_MARKDOWN_TAB)
     ? DEFAULT_MARKDOWN_TAB
     : (availableTabs[0] ?? DEFAULT_MARKDOWN_TAB);
+}
+
+export function createSlugger() {
+  const used = new Map<string, number>();
+
+  return function getSlug(text: string) {
+    const base = kebabCase(text);
+    const count = used.get(base) ?? 0;
+    used.set(base, count + 1);
+    return count === 0 ? base : `${base}-${count + 1}`;
+  };
 }
