@@ -15,7 +15,7 @@ type Props = {
   style?: Style;
 };
 
-export function MarkdownVideoPlayer({ src, style }: Props) {
+export default function MarkdownVideoPlayer({ src, style }: Props) {
   return (
     <InlinePlayer.Provider>
       <Container
