@@ -23078,5 +23078,20 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Hashtagsmile/react-native-quick-preview",
+    "npmPkg": "react-native-quick-preview",
+    "examples": [
+      "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/apps/expo-quick-preview-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/Hashtagsmile/react-native-quick-preview/main/demo-feed.gif",
+      "https://raw.githubusercontent.com/Hashtagsmile/react-native-quick-preview/main/demo-shop.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
