@@ -66,7 +66,8 @@
     "githubUrl": "https://github.com/Yasser-G/react-native-redux",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/wcisco17/react-native-animation-video",
@@ -761,7 +762,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "visionos": true
+    "visionos": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/PeelTechnologies/react-native-tcp",
@@ -2766,7 +2769,9 @@
     "githubUrl": "https://github.com/AndreYonadam/react-native-scrolling-images",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/hungdev/react-native-instagram-login",
@@ -3945,8 +3950,7 @@
     "macos": true,
     "npmPkg": "@react-native-picker/picker",
     "newArchitecture": true,
-    "fireos": true,
-    "vegaos": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-native-cameraroll/react-native-cameraroll",
@@ -4994,7 +4998,8 @@
     ],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/brh55/react-native-masonry",
@@ -6177,7 +6182,8 @@
     "images": ["https://iili.io/dwGw92.png"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/pmadruga/react-native-clean-project",
@@ -10099,7 +10105,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/bezenson/react-native-unicorn-modals",
@@ -11274,7 +11281,8 @@
     "examples": ["https://github.com/margelo/react-native-release-profiler/tree/main/example"],
     "ios": true,
     "android": true,
-    "dev": true
+    "dev": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/outsung/expo-dynamic-app-icon",
@@ -11400,7 +11408,8 @@
     "images": [
       "https://raw.githubusercontent.com/Richou/react-native-android-location-enabler/main/assets/android-location-enabler.gif"
     ],
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Mhp23/react-native-full-responsive",
@@ -12037,7 +12046,8 @@
     "npmPkg": "react-native-pell-rich-editor",
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/expo/atlas/tree/main/packages/expo-atlas",
@@ -16524,7 +16534,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/pmndrs/jotai",
@@ -17505,7 +17516,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/antosmamanktr/react-native-dream-toast",
@@ -17998,7 +18010,9 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/getsettalk/react-native-qr-kit/tree/main/package",
@@ -18214,8 +18228,7 @@
     "examples": ["https://github.com/omarsdev/react-native-contacts/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true,
-    "vegaos": true
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/kirillzyusko/react-native-teleport",
@@ -18584,7 +18597,8 @@
     "npmPkg": "@rn-org/react-native-geofencing",
     "examples": ["https://github.com/rn-org/react-native-geofencing/tree/master/example"],
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/relateddigital/react-native-related-digital/tree/master/sdk",
@@ -18813,7 +18827,9 @@
     "npmPkg": "@gluestack-ui/utils",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/facebook/metro/tree/main/packages/metro",
@@ -19041,8 +19057,7 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
-    "configPlugin": true,
-    "fireos": true
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/Flagsmith/flagsmith-js-client/tree/main/lib/react-native-flagsmith",
@@ -20891,7 +20906,8 @@
     "examples": ["https://github.com/bluesky-social/expo-guess-language/tree/main/example"],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/BogdanGeorgian91/react-native-icloud-kit",
@@ -22022,7 +22038,8 @@
   {
     "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/google",
     "npmPkg": "@purchasely/react-native-purchasely-google",
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Purchasely/Purchasely-ReactNative/tree/main/packages/huawei",
@@ -22046,7 +22063,8 @@
     ],
     "newArchitecture": "new-arch-only",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mureyvenom/rn-fintech-ui",
@@ -22475,7 +22493,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Gautham495/react-native-nitro-sensors-kit",
@@ -22933,7 +22952,9 @@
     "npmPkg": "@the-sheet/universe-portal",
     "examples": ["https://github.com/doanhtu07/react-native-the-sheet/tree/main/apps/example-expo"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/doanhtu07/react-native-the-sheet/tree/main/packages/embedded-stack-navigator",
