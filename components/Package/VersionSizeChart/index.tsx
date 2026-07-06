@@ -9,6 +9,7 @@ import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
 
 const RECENT_RELEASE_COUNT = 20;
+const HEIGHT = 280;
 const LATEST_BAR_GRADIENT_ID = 'version-size-chart-gradient-latest';
 const BAR_GRADIENT_ID = 'version-size-chart-gradient';
 
@@ -39,7 +40,6 @@ export default function VersionSizeChart({ registryData }: Props) {
     );
   }
 
-  const height = 280;
   const maxSize = Math.max(...series.map(item => item.size), 0);
   const yDomain = maxSize ? [0, maxSize + Math.max(1, maxSize * 0.08)] : undefined;
   const latestVersion = series.at(-1)?.label;
@@ -49,10 +49,14 @@ export default function VersionSizeChart({ registryData }: Props) {
     <View style={tw`w-full gap-3`} ref={parentRef}>
       <XYChart
         width={width}
-        height={height}
-        xScale={{ type: 'band', paddingInner: 0.24, paddingOuter: 0.15 }}
+        height={HEIGHT}
+        xScale={{
+          type: 'band',
+          paddingInner: series.length < RECENT_RELEASE_COUNT / 2 ? 0.55 : 0.24,
+          paddingOuter: series.length < RECENT_RELEASE_COUNT / 2 ? 0.4 : 0.15,
+        }}
         yScale={{ type: 'linear', domain: yDomain }}
-        margin={{ top: 6, right: 12, bottom: 48, left: 56 }}>
+        margin={{ top: 8, right: 12, bottom: 44, left: 58 }}>
         <LinearGradient
           id={BAR_GRADIENT_ID}
           from={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
