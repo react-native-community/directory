@@ -1,7 +1,7 @@
 import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import { type PackageVersionsData } from '~/types';
@@ -182,13 +182,16 @@ function renderTooltipContent(data?: VersionSizeChartData) {
   }
 
   return (
-    <Text
-      style={tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`}>
+    <View
+      style={[
+        tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`,
+        { boxShadow: '0 8px 24px #00000088' },
+      ]}>
       <span style={tw`text-[14px] font-medium tabular-nums`}>{data.label}</span>
       <span>{formatBytes(data.size)} package size</span>
       <span style={tw`text-palette-gray3 dark:text-secondary`}>
         Published {new Date(data.publishedAt).toLocaleDateString('en-US')}
       </span>
-    </Text>
+    </View>
   );
 }

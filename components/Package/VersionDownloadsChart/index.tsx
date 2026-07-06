@@ -4,7 +4,7 @@ import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
@@ -233,8 +233,11 @@ function renderTooltipContent(data?: VersionsChartData) {
   }
 
   return (
-    <Text
-      style={tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`}>
+    <View
+      style={[
+        tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`,
+        { boxShadow: '0 8px 24px #00000088' },
+      ]}>
       <span style={tw`text-[14px] font-medium tabular-nums`}>
         {data.label}
         {data.distTags?.length && (
@@ -256,6 +259,6 @@ function renderTooltipContent(data?: VersionsChartData) {
           {new Date(data.publishedAt).toLocaleDateString('en-US')}
         </span>
       ) : null}
-    </Text>
+    </View>
   );
 }
