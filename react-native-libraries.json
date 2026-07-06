@@ -23078,5 +23078,12 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/nsozturk/react-native-quick-filter",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
