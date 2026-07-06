@@ -1,9 +1,10 @@
+import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { keyBy } from 'es-toolkit/array';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
@@ -41,6 +42,9 @@ const DIST_TAG_LABEL_STYLE = {
   fontWeight: 400,
   fontSize: 10,
 };
+const TAGGED_BAR_GRADIENT_ID = 'version-downloads-chart-gradient-tagged';
+const BAR_GRADIENT_ID = 'version-downloads-chart-gradient';
+const OTHER_BAR_GRADIENT_ID = 'version-downloads-chart-other';
 
 export default function VersionDownloadsChart({ npmDownloads, registryData }: Props) {
   const isDark = tw.prefixMatch('dark');
@@ -92,13 +96,41 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
         xScale={{ type: 'linear', domain: xDomain }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
         margin={{ top: 2, right: 12, bottom: 20, left: leftMargin }}>
+        <LinearGradient
+          id={BAR_GRADIENT_ID}
+          from={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
+          to={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
+          toOpacity={1}
+          toOffset={0.75}
+          fromOpacity={isDark ? 0.25 : 0.5}
+          rotate={-90}
+        />
+        <LinearGradient
+          id={TAGGED_BAR_GRADIENT_ID}
+          from={isDark ? 'var(--primary)' : 'var(--primary-dark)'}
+          to={isDark ? 'var(--primary)' : 'var(--primary-dark)'}
+          toOpacity={1}
+          toOffset={0.75}
+          fromOpacity={isDark ? 0.25 : 0.5}
+          rotate={-90}
+        />
+        <LinearGradient
+          id={OTHER_BAR_GRADIENT_ID}
+          from="var(--pewter)"
+          to="var(--pewter)"
+          toOpacity={1}
+          toOffset={0.75}
+          fromOpacity={isDark ? 0.25 : 0.5}
+          rotate={-90}
+        />
         <Grid
           columns
           rows={false}
+          strokeDasharray="4 4"
           lineStyle={{
-            stroke: isDark ? '#374151' : '#e5e7eb',
+            stroke: isDark ? '#374151' : '#cecfd3',
             strokeOpacity: isDark ? 0.66 : 1,
-            strokeWidth: isDark ? 0.5 : 0.66,
+            strokeWidth: 0.5,
           }}
         />
         <Axis
@@ -162,14 +194,14 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
             const { kind, distTags } = item;
 
             if (kind === 'other') {
-              return 'var(--pewter)';
+              return `url(#${OTHER_BAR_GRADIENT_ID})`;
             }
 
             if (distTags?.length) {
-              return isDark ? 'var(--primary)' : 'var(--primary-dark)';
+              return `url(#${TAGGED_BAR_GRADIENT_ID})`;
             }
 
-            return 'var(--primary-darker)';
+            return `url(#${BAR_GRADIENT_ID})`;
           }}
           radius={3}
           radiusAll
@@ -201,8 +233,11 @@ function renderTooltipContent(data?: VersionsChartData) {
   }
 
   return (
-    <Text
-      style={tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`}>
+    <View
+      style={[
+        tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`,
+        { boxShadow: '0 8px 24px #00000088' },
+      ]}>
       <span style={tw`text-[14px] font-medium tabular-nums`}>
         {data.label}
         {data.distTags?.length && (
@@ -224,6 +259,6 @@ function renderTooltipContent(data?: VersionsChartData) {
           {new Date(data.publishedAt).toLocaleDateString('en-US')}
         </span>
       ) : null}
-    </Text>
+    </View>
   );
 }

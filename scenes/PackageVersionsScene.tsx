@@ -19,12 +19,21 @@ const VersionDownloadsChartWithLoading = dynamic(
   {
     ssr: false,
     loading: () => (
-      <View style={tw`min-h-12 items-center justify-center`}>
+      <View style={tw`min-h-[406px] items-center justify-center`}>
         <ThreeDotsLoader />
       </View>
     ),
   }
 );
+
+const VersionSizeChartWithLoading = dynamic(() => import('~/components/Package/VersionSizeChart'), {
+  ssr: false,
+  loading: () => (
+    <View style={tw`min-h-[280px] items-center justify-center`}>
+      <ThreeDotsLoader />
+    </View>
+  ),
+});
 
 export default function PackageVersionsScene({
   apiData,
@@ -42,6 +51,12 @@ export default function PackageVersionsScene({
 
   const hasVersionDownloads = Boolean(
     npmDownloads && Object.values(npmDownloads.downloads).some(downloads => downloads > 0)
+  );
+  const hasVersionSizes = Boolean(
+    registryData &&
+    Object.values(registryData.versions).some(
+      versionData => typeof versionData.dist?.unpackedSize === 'number'
+    )
   );
 
   if (!library || !registryData) {
@@ -80,6 +95,23 @@ export default function PackageVersionsScene({
                   npmDownloads={npmDownloads}
                   registryData={registryData}
                 />
+              </View>
+            </>
+          ) : null}
+          {hasVersionSizes ? (
+            <>
+              <View style={tw`mt-3 gap-1`}>
+                <H6Section
+                  style={[
+                    tw`flex items-end justify-between text-secondary`,
+                    isSmallScreen && tw`flex-col items-start gap-y-0.5`,
+                  ]}>
+                  Package size by version
+                  <Label style={tw`font-light text-secondary`}>Last published</Label>
+                </H6Section>
+              </View>
+              <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
+                <VersionSizeChartWithLoading registryData={registryData} />
               </View>
             </>
           ) : null}
