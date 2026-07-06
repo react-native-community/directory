@@ -1,3 +1,4 @@
+import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { Text, View } from 'react-native';
@@ -8,6 +9,8 @@ import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
 
 const RECENT_RELEASE_COUNT = 20;
+const LATEST_BAR_GRADIENT_ID = 'version-size-chart-gradient-latest';
+const BAR_GRADIENT_ID = 'version-size-chart-gradient';
 
 type VersionSizeChartData = {
   label: string;
@@ -50,13 +53,30 @@ export default function VersionSizeChart({ registryData }: Props) {
         xScale={{ type: 'band', paddingInner: 0.24, paddingOuter: 0.15 }}
         yScale={{ type: 'linear', domain: yDomain }}
         margin={{ top: 6, right: 12, bottom: 48, left: 56 }}>
+        <LinearGradient
+          id={BAR_GRADIENT_ID}
+          from={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
+          to={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
+          fromOpacity={1}
+          fromOffset={0.25}
+          toOpacity={isDark ? 0.25 : 0.5}
+        />
+        <LinearGradient
+          id={LATEST_BAR_GRADIENT_ID}
+          from={isDark ? 'var(--primary)' : 'var(--primary-dark)'}
+          to={isDark ? 'var(--primary)' : 'var(--primary-dark)'}
+          fromOpacity={1}
+          fromOffset={0.25}
+          toOpacity={isDark ? 0.25 : 0.5}
+        />
         <Grid
           rows
           columns={false}
+          strokeDasharray="4 4"
           lineStyle={{
-            stroke: isDark ? '#374151' : '#e5e7eb',
+            stroke: isDark ? '#374151' : '#cecfd3',
             strokeOpacity: isDark ? 0.66 : 1,
-            strokeWidth: isDark ? 0.5 : 0.66,
+            strokeWidth: 0.5,
           }}
         />
         <Axis
@@ -106,10 +126,8 @@ export default function VersionSizeChart({ registryData }: Props) {
           yAccessor={(item: VersionSizeChartData) => item.size}
           colorAccessor={(item: VersionSizeChartData) =>
             item.label === latestVersion
-              ? isDark
-                ? 'var(--primary)'
-                : 'var(--primary-dark)'
-              : 'var(--primary-darker)'
+              ? `url(#${LATEST_BAR_GRADIENT_ID})`
+              : `url(#${BAR_GRADIENT_ID})`
           }
           radius={4}
           radiusAll
