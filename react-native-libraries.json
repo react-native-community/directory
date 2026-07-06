@@ -23080,8 +23080,14 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/nsozturk/react-native-quick-filter",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/packages/react-native-quick-preview",
-    "npmPkg": "react-native-quick-preview",
     "examples": [
       "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/apps/expo-quick-preview-example"
     ],
