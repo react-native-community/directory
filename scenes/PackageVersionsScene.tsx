@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic';
 import { View } from 'react-native';
 
-import { H6Section, Label, useLayout } from '~/common/styleguide';
+import { H6Section } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
+import ChartSectionHeader from '~/components/Package/Charts/ChartSectionHeader';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
@@ -15,7 +16,7 @@ import { type PackageVersionsPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 
 const VersionDownloadsChartWithLoading = dynamic(
-  () => import('~/components/Package/VersionDownloadsChart'),
+  () => import('~/components/Package/Charts/VersionDownloadsChart'),
   {
     ssr: false,
     loading: () => (
@@ -26,14 +27,17 @@ const VersionDownloadsChartWithLoading = dynamic(
   }
 );
 
-const VersionSizeChartWithLoading = dynamic(() => import('~/components/Package/VersionSizeChart'), {
-  ssr: false,
-  loading: () => (
-    <View style={tw`min-h-[280px] items-center justify-center`}>
-      <ThreeDotsLoader />
-    </View>
-  ),
-});
+const VersionSizeChartWithLoading = dynamic(
+  () => import('~/components/Package/Charts/VersionSizeChart'),
+  {
+    ssr: false,
+    loading: () => (
+      <View style={tw`min-h-[280px] items-center justify-center`}>
+        <ThreeDotsLoader />
+      </View>
+    ),
+  }
+);
 
 export default function PackageVersionsScene({
   apiData,
@@ -41,10 +45,7 @@ export default function PackageVersionsScene({
   packageName,
   npmDownloads,
 }: PackageVersionsPageProps) {
-  const { isSmallScreen } = useLayout();
-
   const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
-
   const taggedVersions = Object.entries(registryData?.['dist-tags'] ?? {}).sort(
     (a, b) => -registryData!.time[a[1]].localeCompare(registryData!.time[b[1]])
   );
@@ -75,21 +76,12 @@ export default function PackageVersionsScene({
         <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} skipDescription />
           <VersionSizeIncreasedBanner data={registryData} />
-          {hasVersionDownloads && npmDownloads ? (
+          {hasVersionDownloads && npmDownloads && (
             <>
-              <View style={tw`mt-3 gap-1`}>
-                <H6Section
-                  style={[
-                    tw`flex items-end justify-between text-secondary`,
-                    isSmallScreen && tw`flex-col items-start gap-y-0.5`,
-                  ]}>
-                  Downloads by version
-                  <Label style={tw`font-light text-secondary`}>
-                    Last week<span style={tw`text-tertiary`}>&ensp;·&ensp;</span>Top downloaded
-                    versions
-                  </Label>
-                </H6Section>
-              </View>
+              <ChartSectionHeader
+                title="Downloads by version"
+                description={['Last week', 'Top downloaded']}
+              />
               <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
                 <VersionDownloadsChartWithLoading
                   npmDownloads={npmDownloads}
@@ -97,24 +89,18 @@ export default function PackageVersionsScene({
                 />
               </View>
             </>
-          ) : null}
-          {hasVersionSizes ? (
+          )}
+          {hasVersionSizes && (
             <>
-              <View style={tw`mt-3 gap-1`}>
-                <H6Section
-                  style={[
-                    tw`flex items-end justify-between text-secondary`,
-                    isSmallScreen && tw`flex-col items-start gap-y-0.5`,
-                  ]}>
-                  Package size by version
-                  <Label style={tw`font-light text-secondary`}>Last published</Label>
-                </H6Section>
-              </View>
+              <ChartSectionHeader
+                title="Package size by version"
+                description={['Last published', 'No pre-release versions']}
+              />
               <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
                 <VersionSizeChartWithLoading registryData={registryData} />
               </View>
             </>
-          ) : null}
+          )}
           <H6Section style={tw`mt-3 text-secondary`}>Tagged versions</H6Section>
           <View style={tw`gap-2`}>
             {taggedVersions.map(([label, versionData]) => (

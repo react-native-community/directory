@@ -4,20 +4,17 @@ import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
 import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
+import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
 import { type PackageVersionsData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
+
+import { type VersionSizeChartData } from './types';
 
 const RECENT_RELEASE_COUNT = 20;
 const HEIGHT = 280;
 const LATEST_BAR_GRADIENT_ID = 'version-size-chart-gradient-latest';
 const BAR_GRADIENT_ID = 'version-size-chart-gradient';
-
-type VersionSizeChartData = {
-  label: string;
-  size: number;
-  publishedAt: string;
-};
 
 type Props = {
   registryData: PackageVersionsData;
@@ -144,9 +141,23 @@ export default function VersionSizeChart({ registryData }: Props) {
           detectBounds
           unstyled
           applyPositionStyle
-          renderTooltip={({ tooltipData }) =>
-            renderTooltipContent(tooltipData?.nearestDatum?.datum)
-          }
+          renderTooltip={({ tooltipData }) => {
+            const data = tooltipData?.nearestDatum?.datum;
+
+            if (!data) {
+              return null;
+            }
+
+            return (
+              <ChartTooltip>
+                <span style={tw`text-[14px] font-medium tabular-nums`}>{data.label}</span>
+                <span>{formatBytes(data.size)} package size</span>
+                <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                  Published {new Date(data.publishedAt).toLocaleDateString('en-US')}
+                </span>
+              </ChartTooltip>
+            );
+          }}
         />
       </XYChart>
     </View>
@@ -178,24 +189,4 @@ function buildRecentVersionSizeSeries(
       size: versionData.dist!.unpackedSize!,
       publishedAt: data.time[version],
     }));
-}
-
-function renderTooltipContent(data?: VersionSizeChartData) {
-  if (!data) {
-    return null;
-  }
-
-  return (
-    <View
-      style={[
-        tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`,
-        { boxShadow: '0 8px 24px #00000088' },
-      ]}>
-      <span style={tw`text-[14px] font-medium tabular-nums`}>{data.label}</span>
-      <span>{formatBytes(data.size)} package size</span>
-      <span style={tw`text-palette-gray3 dark:text-secondary`}>
-        Published {new Date(data.publishedAt).toLocaleDateString('en-US')}
-      </span>
-    </View>
-  );
 }
