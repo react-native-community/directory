@@ -128,7 +128,9 @@
     "githubUrl": "https://github.com/alexfoxy/react-native-units",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/SudoPlz/react-native-shake-event",
@@ -442,7 +444,9 @@
     "githubUrl": "https://github.com/meinto/react-native-viewpager-carousel",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/meinto/react-native-event-listeners",
@@ -1493,7 +1497,8 @@
     "githubUrl": "https://github.com/vault-development/react-native-svg-uri",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/webraptor/react-native-deck-swiper",
@@ -1940,7 +1945,8 @@
     "githubUrl": "https://github.com/tachyons-css/react-native-style-tachyons",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/rnc-archive/react-native-google-analytics",
@@ -2751,7 +2757,8 @@
     "githubUrl": "https://github.com/tessus/react-native-version-info",
     "ios": true,
     "android": true,
-    "windows": true
+    "windows": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/doublesymmetry/react-native-track-player",
@@ -3258,8 +3265,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true,
-    "fireos": true
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-task-manager",
@@ -3674,7 +3680,8 @@
     "windows": true,
     "macos": true,
     "visionos": true,
-    "fireos": true
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/react-native-camera/react-native-camera",
@@ -4732,7 +4739,8 @@
     "githubUrl": "https://github.com/itsnubix/react-native-video-controls",
     "images": ["https://s3-us-west-2.amazonaws.com/nubix.ca/github/example.gif"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/react-navigation/redux-helpers",
@@ -4789,7 +4797,8 @@
     "githubUrl": "https://github.com/osdnk/react-native-tab-view-viewpager-adapter",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Aleksefo/react-native-webp-format",
@@ -4820,7 +4829,9 @@
     "githubUrl": "https://github.com/conorhastings/react-native-syntax-highlighter",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/wkh237/react-native-fetch-blob",
@@ -4863,7 +4874,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "web": true
+    "web": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/avishayil/react-native-user-avatar",
@@ -5087,7 +5100,8 @@
     "githubUrl": "https://github.com/saleel/react-native-super-grid",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/naoufal/react-native-activity-view",
@@ -5325,7 +5339,8 @@
     "githubUrl": "https://github.com/APSL/react-native-version-number",
     "ios": true,
     "android": true,
-    "harmony": "@react-native-oh-tpl/react-native-version-number"
+    "harmony": "@react-native-oh-tpl/react-native-version-number",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/davidohayon669/react-native-youtube",
@@ -5539,7 +5554,8 @@
     "githubUrl": "https://github.com/rainbow-me/react-native-shadow-stack",
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/wcandillon/react-native-redash",
@@ -7083,7 +7099,8 @@
     "ios": true,
     "android": true,
     "macos": true,
-    "harmony": "@react-native-ohos/react-native-tcp-socket"
+    "harmony": "@react-native-ohos/react-native-tcp-socket",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/deanhet/react-native-text-ticker",
@@ -7382,7 +7399,8 @@
     "tvos": true,
     "android": true,
     "expoGo": true,
-    "harmony": "@react-native-oh-tpl/react-native-ui-lib"
+    "harmony": "@react-native-oh-tpl/react-native-ui-lib",
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/raulpesilva/re-state",
@@ -8725,7 +8743,8 @@
     "images": ["https://i.imgur.com/5dsYg9M.gif"],
     "ios": true,
     "android": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/fakeheal/react-native-pan-pinch-view",
@@ -8913,7 +8932,8 @@
     ],
     "ios": true,
     "android": true,
-    "tvos": true
+    "tvos": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/ujjalkar/rn-status-bar",
@@ -9635,7 +9655,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/aws/amazon-ivs-react-native-player",
@@ -10080,7 +10101,8 @@
       "https://raw.githubusercontent.com/c19354837/react-native-system-setting/master/screenshot/ios.png"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/mouselangelo/react-native-actions-shortcuts",
@@ -11447,7 +11469,8 @@
       "https://github.com/kimxogus/react-native-version-check/tree/master/examples/reactnative"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/kimxogus/react-native-version-check/tree/master/packages/react-native-version-check-expo",
@@ -11757,8 +11780,7 @@
     ],
     "ios": true,
     "android": true,
-    "fireos": true,
-    "vegaos": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/jkomyno/react-native-user-inactivity",
@@ -12062,7 +12084,8 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/calintamas/react-native-toast-message",
@@ -12830,7 +12853,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/rnheroes/react-native-ruler-picker",
@@ -12847,7 +12871,8 @@
     "ios": true,
     "android": true,
     "unmaintained": true,
-    "newArchitecture": false
+    "newArchitecture": false,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/orkunkarakus/react-native-qr",
@@ -14537,7 +14562,9 @@
     "android": true,
     "web": true,
     "newArchitecture": true,
-    "expoGo": true
+    "expoGo": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/web-ridge/react-native-paper-tabs",
@@ -14849,7 +14876,9 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/oxidia/style-variance-authority",
@@ -15411,7 +15440,8 @@
       "https://user-images.githubusercontent.com/48207131/158834248-05331dd0-d294-4041-9d7b-cb72b5e75737.gif"
     ],
     "android": true,
-    "ios": true
+    "ios": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/corasan/image-compressor/tree/main/package",
@@ -17228,7 +17258,8 @@
     "githubUrl": "https://github.com/SamadK01/react-native-unilist",
     "examples": ["https://github.com/SamadK01/react-native-unilist/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SamadK01/apikit",
@@ -17889,7 +17920,9 @@
       "https://github.com/TheWidlarzGroup/react-native-video-player/tree/master/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/dream-horizon-org/d11-react-native-mqtt",
@@ -18318,7 +18351,8 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Dinesh7571/react-native-calllogs-android",
@@ -19492,8 +19526,7 @@
     "examples": ["https://github.com/dayaki/react-native-health-kits/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true,
-    "fireos": true
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/dawidzawada/bonjour-zeroconf",
@@ -19516,7 +19549,9 @@
     "githubUrl": "https://github.com/mdjastrzebski/react-native-unmount",
     "examples": ["https://github.com/mdjastrzebski/react-native-unmount/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/ICEPepsiCola/react-native-dev-lens",
@@ -20283,7 +20318,9 @@
       "https://github.com/ehtishamali042/react-native-switchery/raw/main/docs/assets/switchery-demo.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/Megane14916/react-native-draggable-masonry",
@@ -20576,7 +20613,8 @@
     "examples": ["https://github.com/pioner92/react-native-ulid-jsi/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/SudoPlz/sp-react-native-in-app-updates",
@@ -21035,7 +21073,8 @@
     "android": true,
     "web": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Rednegniw/react-native-view-recorder/tree/main/packages/react-native-view-recorder",
@@ -21621,8 +21660,7 @@
     ],
     "ios": true,
     "android": true,
-    "fireos": true,
-    "vegaos": true
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/cbbfcd/react-native-lightbox",
@@ -21953,7 +21991,8 @@
     "githubUrl": "https://github.com/le-ar/react-native-viewport-metrics",
     "examples": ["https://github.com/le-ar/react-native-viewport-metrics/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Azshar/react-native-tcard",
@@ -22315,7 +22354,9 @@
   {
     "githubUrl": "https://github.com/Talha-Yousaf/react-native-text-search",
     "ios": true,
-    "android": true
+    "android": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/edwardloopez/react-native-coachmark",
@@ -23174,7 +23215,8 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/packages/react-native-quick-preview",
