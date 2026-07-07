@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
+import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
@@ -214,9 +215,39 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
           detectBounds
           unstyled
           applyPositionStyle
-          renderTooltip={({ tooltipData }) =>
-            renderTooltipContent(tooltipData?.nearestDatum?.datum)
-          }
+          renderTooltip={({ tooltipData }) => {
+            const data = tooltipData?.nearestDatum?.datum;
+
+            if (!data) {
+              return null;
+            }
+
+            return (
+              <ChartTooltip>
+                <span style={tw`text-[14px] font-medium tabular-nums`}>
+                  {data.label}
+                  {data.distTags?.length && (
+                    <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                      {` `}• {data.distTags.join(', ')}
+                    </span>
+                  )}
+                </span>
+                <span>{data.downloads.toLocaleString()} downloads last week</span>
+                {isAggregatedKind(data.kind) && data.versionCount ? (
+                  <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} included`}</span>
+                ) : null}
+                {data.kind === 'other' && data.versionCount ? (
+                  <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} aggregated`}</span>
+                ) : null}
+                {data.publishedAt && data.kind !== 'other' ? (
+                  <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                    {isAggregatedKind(data.kind) ? 'Latest publish' : 'Published'}{' '}
+                    {new Date(data.publishedAt).toLocaleDateString('en-US')}
+                  </span>
+                ) : null}
+              </ChartTooltip>
+            );
+          }}
         />
       </XYChart>
     </View>
@@ -225,40 +256,4 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
 
 function isAggregatedKind(kind: VersionsChartEntryKind): kind is VersionsAggregatedChartMode {
   return kind === 'minor' || kind === 'major';
-}
-
-function renderTooltipContent(data?: VersionsChartData) {
-  if (!data) {
-    return null;
-  }
-
-  return (
-    <View
-      style={[
-        tw`font-sans flex flex-col gap-px rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`,
-        { boxShadow: '0 8px 24px #00000088' },
-      ]}>
-      <span style={tw`text-[14px] font-medium tabular-nums`}>
-        {data.label}
-        {data.distTags?.length && (
-          <span style={tw`text-palette-gray3 dark:text-secondary`}>
-            {` `}• {data.distTags.join(', ')}
-          </span>
-        )}
-      </span>
-      <span>{data.downloads.toLocaleString()} downloads last week</span>
-      {isAggregatedKind(data.kind) && data.versionCount ? (
-        <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} included`}</span>
-      ) : null}
-      {data.kind === 'other' && data.versionCount ? (
-        <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} aggregated`}</span>
-      ) : null}
-      {data.publishedAt && data.kind !== 'other' ? (
-        <span style={tw`text-palette-gray3 dark:text-secondary`}>
-          {isAggregatedKind(data.kind) ? 'Latest publish' : 'Published'}{' '}
-          {new Date(data.publishedAt).toLocaleDateString('en-US')}
-        </span>
-      ) : null}
-    </View>
-  );
 }
