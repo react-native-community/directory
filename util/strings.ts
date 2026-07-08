@@ -4,6 +4,13 @@ export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 2,
 });
 
+export const FULL_FRACTION_NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
+  notation: 'compact',
+  compactDisplay: 'short',
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+});
+
 export function pluralize(word: string, count: number) {
   if (count === 1) {
     return word;

@@ -8,6 +8,7 @@ import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
+import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
@@ -39,10 +40,6 @@ type Props = {
   registryData: PackageVersionsData;
 };
 
-const DIST_TAG_LABEL_STYLE = {
-  fontWeight: 400,
-  fontSize: 10,
-};
 const TAGGED_BAR_GRADIENT_ID = 'version-downloads-chart-gradient-tagged';
 const BAR_GRADIENT_ID = 'version-downloads-chart-gradient';
 const OTHER_BAR_GRADIENT_ID = 'version-downloads-chart-other';
@@ -54,6 +51,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   const routeMode = parseChartMode(router.query[CHART_MODE_QUERY_PARAM]);
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const [mode, setMode] = useState<VersionsChartMode>(routeMode);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const versionDistTags = mapVersionDistTags(registryData);
   const baseSeries = buildBaseChartSeries(npmDownloads, registryData, versionDistTags);
@@ -178,7 +176,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
                   {getPrimaryChartLabel(data)}
                 </tspan>
                 {data.secondaryLabel && (
-                  <tspan x={labelX} dy="1.2em" fill="var(--secondary)" style={DIST_TAG_LABEL_STYLE}>
+                  <tspan x={labelX} dy="1.2em" fill="var(--secondary)" style={tw`text-[10px]`}>
                     {data.secondaryLabel}
                   </tspan>
                 )}
@@ -204,8 +202,17 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
 
             return `url(#${BAR_GRADIENT_ID})`;
           }}
-          radius={3}
+          radius={4}
           radiusAll
+          onPointerMove={({ index }) => setHoveredIndex(index)}
+          onPointerOut={() => setHoveredIndex(null)}
+        />
+        <HoveredBarOutline
+          hoveredIndex={hoveredIndex}
+          series={series}
+          orientation="horizontal"
+          xAccessor={item => item.downloads}
+          yAccessor={item => item.label}
         />
         <Tooltip<VersionsChartData>
           showVerticalCrosshair={false}

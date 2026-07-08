@@ -1,10 +1,12 @@
 import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
 import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
+import { useState } from 'react';
 import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
+import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
 import { type PackageVersionsData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
@@ -23,6 +25,7 @@ type Props = {
 export default function VersionSizeChart({ registryData }: Props) {
   const isDark = tw.prefixMatch('dark');
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const series = buildRecentVersionSizeSeries(
     registryData,
@@ -93,8 +96,8 @@ export default function VersionSizeChart({ registryData }: Props) {
               dominantBaseline="middle"
               transform={`rotate(-45 ${x ?? 0} ${y ?? 0})`}
               style={tw`select-none tabular-nums`}
-              fill="var(--secondary)">
-              <tspan x={x} style={tw`text-[11px] font-light`}>
+              fill={isDark ? 'var(--white)' : 'var(--black)'}>
+              <tspan x={x + 4} style={tw`text-[11px] font-medium`}>
                 {formattedValue}
               </tspan>
             </text>
@@ -113,7 +116,7 @@ export default function VersionSizeChart({ registryData }: Props) {
               textAnchor="end"
               dominantBaseline="middle"
               style={tw`select-none tabular-nums`}
-              fill={isDark ? 'var(--white)' : 'var(--black)'}>
+              fill="var(--secondary)">
               <tspan x={(x ?? 0) - 8} style={tw`text-[12px] font-light`}>
                 {formattedValue}
               </tspan>
@@ -132,6 +135,15 @@ export default function VersionSizeChart({ registryData }: Props) {
           }
           radius={4}
           radiusAll
+          onPointerMove={({ index }) => setHoveredIndex(index)}
+          onPointerOut={() => setHoveredIndex(null)}
+        />
+        <HoveredBarOutline
+          hoveredIndex={hoveredIndex}
+          series={series}
+          orientation="vertical"
+          xAccessor={item => item.label}
+          yAccessor={item => item.size}
         />
         <Tooltip<VersionSizeChartData>
           showVerticalCrosshair={false}
