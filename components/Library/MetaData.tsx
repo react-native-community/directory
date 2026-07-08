@@ -81,7 +81,7 @@ function generateData({
     github.stats?.dependencies !== undefined
       ? {
           id: 'dependencies',
-          icon: <DependencyIcon style={tw`text-icon`} />,
+          icon: <DependencyIcon style={tw`size-5.5 text-icon`} />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}

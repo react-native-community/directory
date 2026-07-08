@@ -12,6 +12,7 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { type PackageCodePageProps } from '~/types/pages';
+import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
 const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
@@ -19,8 +20,10 @@ const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:a
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
   const router = useRouter();
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
+  const selectedVersionParam =
+    parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
 
-  const [selectedVersion, setSelectedVersion] = useState('latest');
+  const [selectedVersion, setSelectedVersion] = useState(selectedVersionParam);
   const [activeFile, setActiveFile] = useState<string | null>(() =>
     window.localStorage.getItem(activeFileStorageKey)
   );
@@ -117,7 +120,10 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
               <PackageVersionSelector
                 packageName={library.npmPkg}
                 selectedVersion={selectedVersion}
-                setVersion={selectedVersion => setSelectedVersion(selectedVersion)}
+                setVersion={selectedVersion => {
+                  setSelectedVersion(selectedVersion);
+                  replaceQueryParam(router, 'selectedVersion', selectedVersion);
+                }}
               />
             </View>
           </View>

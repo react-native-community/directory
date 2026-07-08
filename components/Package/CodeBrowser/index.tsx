@@ -118,10 +118,8 @@ export default function CodeBrowser({
   function startFileTreeResize(event: NativeSyntheticEvent<NativePointerEvent>) {
     event.preventDefault();
 
-    const clientX = event.nativeEvent.clientX;
-
     fileTreeResizeStartRef.current = {
-      startX: clientX,
+      startX: event.nativeEvent.clientX,
       startWidth: fileTreeWidth,
     };
 
@@ -173,7 +171,6 @@ export default function CodeBrowser({
       }
 
       visiblePaths.add(currentPath);
-
       queue.push(...(relatedPaths.get(currentPath) ?? []));
     }
 

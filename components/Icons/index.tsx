@@ -530,10 +530,41 @@ export function PackageSizeIcon({ style }: IconProps) {
 
 export function DependencyIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 18 20" style={[tw`w-4.5 h-5`, style]}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-5`, style]}>
+      <Line
+        x1="128"
+        y1="129.09"
+        x2="128"
+        y2="231.97"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={20}
+      />
+      <Polyline
+        points="32.7 76.92 128 129.08 223.3 76.92"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={20}
+      />
       <Path
-        d="M8 17.425V10.575L2 7.1V13.95L8 17.425ZM10 17.425L16 13.95V7.1L10 10.575V17.425ZM8 19.725L1 15.7C0.683337 15.5167 0.437337 15.275 0.262004 14.975C0.0866705 14.675 -0.000662879 14.3417 3.78787e-06 13.975V6.025C3.78787e-06 5.65833 0.0876704 5.325 0.263004 5.025C0.438337 4.725 0.684004 4.48333 1 4.3L8 0.275C8.31667 0.0916668 8.65 0 9 0C9.35 0 9.68333 0.0916668 10 0.275L17 4.3C17.3167 4.48333 17.5627 4.725 17.738 5.025C17.9133 5.325 18.0007 5.65833 18 6.025V13.975C18 14.3417 17.9123 14.675 17.737 14.975C17.5617 15.275 17.316 15.5167 17 15.7L10 19.725C9.68333 19.9083 9.35 20 9 20C8.65 20 8.31667 19.9083 8 19.725ZM13 6.525L14.925 5.425L9 2L7.05 3.125L13 6.525ZM9 8.85L10.95 7.725L5.025 4.3L3.075 5.425L9 8.85Z"
-        fill="currentColor"
+        d="M219.84,182.84l-88,48.18a8,8,0,0,1-7.68,0l-88-48.18a8,8,0,0,1-4.16-7V80.18a8,8,0,0,1,4.16-7l88-48.18a8,8,0,0,1,7.68,0l88,48.18a8,8,0,0,1,4.16,7v95.64A8,8,0,0,1,219.84,182.84Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={20}
+      />
+      <Polyline
+        points="81.56 48.31 176 100 176 152"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={20}
       />
     </Svg>
   );
@@ -1596,6 +1627,37 @@ export function CodeIcon({ style }: IconProps) {
         y1="40"
         x2="96"
         y2="216"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+    </Svg>
+  );
+}
+
+export function CodeBlockIcon({ style }: IconProps) {
+  return (
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+      <Polyline
+        points="64 32 32 64 64 96"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Polyline
+        points="104 32 136 64 104 96"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
+      />
+      <Path
+        d="M176,48h24a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V136"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"

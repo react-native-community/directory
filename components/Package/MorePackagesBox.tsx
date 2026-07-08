@@ -11,7 +11,7 @@ import { Tooltip } from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import { FULL_FRACTION_NUMBER_FORMATTER } from '~/util/strings';
+import { FULL_FRACTION_NUMBER_FORMATTER, NUMBER_FORMATTER } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -114,17 +114,13 @@ export default function MorePackagesBox({ library }: Props) {
                           tw`ml-auto flex-row gap-4 text-sm font-light leading-[14px] text-icon`,
                           isSmallScreen && tw`ml-0 mt-1`,
                         ]}>
-                        <View style={tw`flex-row items-center gap-1`}>
+                        <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
-                          <span className="tabular-nums">
-                            {FULL_FRACTION_NUMBER_FORMATTER.format(github.stats.stars)}
-                          </span>
+                          {NUMBER_FORMATTER.format(github.stats.stars)}
                         </View>
-                        <View style={tw`flex-row items-center gap-1`}>
+                        <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          <span className="tabular-nums">
-                            {FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}
-                          </span>
+                          {FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}
                         </View>
                       </View>
                     </View>
