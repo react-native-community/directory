@@ -2761,8 +2761,9 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/doublesymmetry/react-native-track-player",
-    "examples": ["https://github.com/doublesymmetry/react-native-track-player/tree/main/example"],
+    "githubUrl": "https://github.com/doublesymmetry/react-native-track-player/tree/v4",
+    "npmPkg": "react-native-track-player",
+    "examples": ["https://github.com/doublesymmetry/react-native-track-player/tree/v4/example"],
     "images": [
       "https://raw.githubusercontent.com/doublesymmetry/react-native-track-player/dev/example/screenshots/ios-app.png",
       "https://raw.githubusercontent.com/doublesymmetry/react-native-track-player/dev/example/screenshots/ios-lockscreen.png",
