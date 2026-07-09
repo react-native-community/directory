@@ -23294,5 +23294,162 @@
     "examples": ["https://github.com/venky145/RN-VideoFeed/tree/main/VideoFeedSample"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/devtools-floating-menu",
+    "npmPkg": "@buoy-gg/core",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/network",
+    "npmPkg": "@buoy-gg/network",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/storage",
+    "npmPkg": "@buoy-gg/storage",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/env-tools",
+    "npmPkg": "@buoy-gg/env",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/events",
+    "npmPkg": "@buoy-gg/events",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/console",
+    "npmPkg": "@buoy-gg/console",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/route-events",
+    "npmPkg": "@buoy-gg/route-events",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/react-query",
+    "npmPkg": "@buoy-gg/react-query",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/redux",
+    "npmPkg": "@buoy-gg/redux",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/zustand",
+    "npmPkg": "@buoy-gg/zustand",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/jotai",
+    "npmPkg": "@buoy-gg/jotai",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/highlight-updates",
+    "npmPkg": "@buoy-gg/highlight-updates",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/image-overlay",
+    "npmPkg": "@buoy-gg/image-overlay",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/impersonate",
+    "npmPkg": "@buoy-gg/impersonate",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/perf-monitor",
+    "npmPkg": "@buoy-gg/perf-monitor",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/debug-borders",
+    "npmPkg": "@buoy-gg/debug-borders",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/mcp",
+    "npmPkg": "@buoy-gg/mcp",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Buoy-gg/buoy/tree/main/packages/bottom-sheet",
+    "npmPkg": "@buoy-gg/bottom-sheet",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
