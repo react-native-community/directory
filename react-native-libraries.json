@@ -23288,5 +23288,11 @@
     "expoGo": true,
     "newArchitecture": true,
     "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/venky145/RN-VideoFeed/tree/main/rn-videofeed",
+    "examples": ["https://github.com/venky145/RN-VideoFeed/tree/main/VideoFeedSample"],
+    "ios": true,
+    "android": true
   }
 ]
