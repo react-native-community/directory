@@ -119,6 +119,7 @@ export function handleFilterLibraries({
   minPopularity,
   minMonthlyDownloads,
   newArchitecture,
+  dev,
   skipLibs,
   skipTools,
   expoModule,
@@ -158,6 +159,10 @@ export function handleFilterLibraries({
     }
 
     if (skipTools && library.dev) {
+      return false;
+    }
+
+    if (dev === 'true' && !library.dev) {
       return false;
     }
 

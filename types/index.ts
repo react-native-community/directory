@@ -33,6 +33,7 @@ export type Query = {
   harmony?: string;
   web?: string;
   windows?: string;
+  dev?: string;
   order?: QueryOrder;
   direction?: QueryOrderDirection;
   search?: string;

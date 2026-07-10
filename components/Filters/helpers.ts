@@ -75,6 +75,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     param: 'wasRecentlyUpdated',
     title: 'Recently updated',
   },
+  {
+    param: 'dev',
+    title: 'Development Tool',
+  },
 ];
 
 export const FILTER_COMPATIBILITY: FilterParamsType[] = [
