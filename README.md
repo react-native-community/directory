@@ -62,6 +62,7 @@
   "visionos": false,
   "expoGo": false,
   "fireos": false,
+  "harmony": false,
   "horizon": false,
   "vegaos": false,
   "newArchitecture": false,

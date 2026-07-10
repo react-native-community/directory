@@ -96,6 +96,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     newArchitecture: parsedQuery.newArchitecture,
     skipLibs: parsedQuery.skipLibs,
     skipTools: parsedQuery.skipTools,
+    dev: parsedQuery.dev,
     expoModule: parsedQuery.expoModule,
     nitroModule: parsedQuery.nitroModule,
     turboModule: parsedQuery.turboModule,
