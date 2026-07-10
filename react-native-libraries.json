@@ -23303,5 +23303,16 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-nitro-google-sign-in/google-signin",
+    "examples": [
+      "https://github.com/react-native-nitro-google-sign-in/google-signin/tree/HEAD/example",
+      "https://github.com/react-native-nitro-google-sign-in/google-signin/tree/HEAD/example-expo"
+    ],
+    "npmPkg": "react-native-nitro-google-signin",
+    "configPlugin": true,
+    "ios": true,
+    "android": true
   }
 ]
