@@ -23294,5 +23294,15 @@
     "examples": ["https://github.com/venky145/RN-VideoFeed/tree/main/VideoFeedSample"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/react-native-nitro-google-sign-in/google-signin",
+    "examples": [
+      "https://github.com/react-native-nitro-google-sign-in/google-signin/tree/HEAD/example",
+      "https://github.com/react-native-nitro-google-sign-in/google-signin/tree/HEAD/example-expo"
+    ],
+    "configPlugin": true,
+    "ios": true,
+    "android": true
   }
 ]
