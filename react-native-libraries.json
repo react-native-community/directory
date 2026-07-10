@@ -23294,5 +23294,14 @@
     "examples": ["https://github.com/venky145/RN-VideoFeed/tree/main/VideoFeedSample"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/deskbtm/react-native-bottom-sheet",
+    "npmPkg": "@deskbtm/react-native-bottom-sheet",
+    "examples": ["https://github.com/deskbtm/react-native-bottom-sheet/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
   }
 ]
