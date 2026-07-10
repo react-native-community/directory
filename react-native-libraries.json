@@ -23314,5 +23314,12 @@
     "configPlugin": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hamzamekk/react-native-turbo-preferences",
+    "examples": ["https://github.com/hamzamekk/react-native-turbo-preferences/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
