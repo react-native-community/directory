@@ -1,3 +1,5 @@
+import { Children, isValidElement, type PropsWithChildren, type ReactNode } from 'react';
+
 export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   notation: 'compact',
   compactDisplay: 'short',
@@ -50,4 +52,22 @@ export function formatPackageManager(pmRaw?: string) {
     }
     return 'Yarn';
   }
+}
+
+export function childrenToText(children: ReactNode): string {
+  return Children.toArray(children)
+    .map(child => {
+      if (typeof child === 'string' || typeof child === 'number') {
+        return String(child);
+      }
+
+      if (isValidElement<PropsWithChildren>(child)) {
+        return childrenToText(child.props.children);
+      }
+
+      return '';
+    })
+    .join('')
+    .replaceAll(/\./g, '')
+    .toLowerCase();
 }

@@ -2,6 +2,7 @@ import { type PropsWithChildren } from 'react';
 
 import { Button } from '~/components/Button';
 import { LinkIcon } from '~/components/Icons';
+import { childrenToText } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
@@ -31,9 +32,8 @@ type MarkdownHeadingPosition = {
 export default function MarkdownHeading({ children, slugger, node, linkableHeaders }: Props) {
   const Heading = node.tagName;
   const isCentered = node.properties.align === 'center';
-  const headingLine = node.position.start.line;
 
-  const slug = typeof children === 'string' ? slugger(children) : `heading-${headingLine}`;
+  const slug = typeof children === 'string' ? slugger(children) : slugger(childrenToText(children));
 
   if (!slug || !linkableHeaders) {
     return (
