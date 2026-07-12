@@ -23322,5 +23322,15 @@
     "configPlugin": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/sagawrr/react-native-nitro-vision-kit",
+    "examples": ["https://github.com/sagawrr/react-native-nitro-vision-kit/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/sagawrr/react-native-nitro-vision-kit/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
