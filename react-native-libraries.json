@@ -23334,9 +23334,21 @@
     "newArchitecture": "new-arch-only"
   },
   {
+    "githubUrl": "https://github.com/himanshu-lal4/react-native-tour-guide",
+    "npmPkg": "@wrack/react-native-tour-guide",
+    "examples": ["https://github.com/himanshu-lal4/react-native-tour-guide/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/himanshu-lal4/react-native-liquid-glassmorphism",
     "npmPkg": "react-native-liquid-glassmorphism",
-    "examples": ["https://github.com/himanshu-lal4/react-native-liquid-glassmorphism/tree/main/example"],
+    "examples": [
+      "https://github.com/himanshu-lal4/react-native-liquid-glassmorphism/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true,
