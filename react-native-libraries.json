@@ -23332,5 +23332,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/himanshu-lal4/react-native-liquid-glassmorphism",
+    "npmPkg": "react-native-liquid-glassmorphism",
+    "examples": ["https://github.com/himanshu-lal4/react-native-liquid-glassmorphism/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
