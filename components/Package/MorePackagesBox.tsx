@@ -116,11 +116,11 @@ export default function MorePackagesBox({ library }: Props) {
                         ]}>
                         <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
-                          {NUMBER_FORMATTER.format(github.stats.stars)}
+                          <span>{NUMBER_FORMATTER.format(github.stats.stars)}</span>
                         </View>
                         <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          {FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}
+                          <span>{FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}</span>
                         </View>
                       </View>
                     </View>
