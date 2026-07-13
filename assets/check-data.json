@@ -8567,5 +8567,95 @@
   },
   "expo-paperkit": {
     "newArchitecture": "supported"
+  },
+  "execbro": {
+    "newArchitecture": "untested"
+  },
+  "rn-neo": {
+    "newArchitecture": "untested"
+  },
+  "@super-calendar/native": {
+    "newArchitecture": "untested"
+  },
+  "@the-sheet/the-sheet": {
+    "newArchitecture": "untested"
+  },
+  "@the-sheet/universe-portal": {
+    "newArchitecture": "untested"
+  },
+  "@the-sheet/embedded-stack-navigator": {
+    "newArchitecture": "untested"
+  },
+  "@the-sheet/flash-list-v2": {
+    "newArchitecture": "untested"
+  },
+  "react-native-reanimated-viewer": {
+    "newArchitecture": "untested"
+  },
+  "react-native-collapsible-fluid-tabs": {
+    "newArchitecture": "untested"
+  },
+  "react-native-splash-screen-newarch": {
+    "newArchitecture": "supported"
+  },
+  "uws-react-native": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@ronradtke/react-native-markdown-display": {
+    "newArchitecture": "supported"
+  },
+  "@posthog/react-native-plugin": {
+    "newArchitecture": "supported"
+  },
+  "react-native-image-compression-kit": {
+    "newArchitecture": "supported"
+  },
+  "react-native-ometria": {
+    "newArchitecture": "supported"
+  },
+  "react-native-tenjin": {
+    "newArchitecture": "supported"
+  },
+  "rn-iso": {
+    "newArchitecture": "untested"
+  },
+  "vision-camera-ocr-plugin": {
+    "newArchitecture": "supported"
+  },
+  "react-native-vision-camera-face-detector": {
+    "newArchitecture": "supported"
+  },
+  "tapflow": {
+    "newArchitecture": "untested"
+  },
+  "react-native-quick-filter": {
+    "newArchitecture": "supported"
+  },
+  "react-native-quick-preview": {
+    "newArchitecture": "supported"
+  },
+  "rn-videofeed": {
+    "newArchitecture": "untested"
+  },
+  "@deskbtm/react-native-bottom-sheet": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-google-signin": {
+    "newArchitecture": "untested"
+  },
+  "react-native-turbo-preferences": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-vision-kit": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@wrack/react-native-tour-guide": {
+    "newArchitecture": "supported"
+  },
+  "react-native-liquid-glassmorphism": {
+    "newArchitecture": "supported"
+  },
+  "react-native-age-signals": {
+    "newArchitecture": "supported"
   }
 }
