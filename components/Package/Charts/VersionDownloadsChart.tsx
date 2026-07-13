@@ -6,14 +6,14 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { Label } from '~/common/styleguide';
-import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
-import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
+import { Label, useLayout } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
+import ChartTooltip from './ChartTooltip';
+import HoveredBarOutline from './HoveredBarOutline';
 import {
   type VersionsAggregatedChartMode,
   type VersionsChartData,
@@ -28,6 +28,7 @@ import {
   DEFAULT_CHART_MODE,
   getChartLeftMargin,
   getLargestSeriesLength,
+  getLatestVersionDownloadsPercentage,
   getPrimaryChartLabel,
   LABEL_TO_BAR_GAP,
   mapVersionDistTags,
@@ -46,6 +47,7 @@ const OTHER_BAR_GRADIENT_ID = 'version-downloads-chart-other';
 
 export default function VersionDownloadsChart({ npmDownloads, registryData }: Props) {
   const isDark = tw.prefixMatch('dark');
+  const { isSmallScreen } = useLayout();
 
   const router = useRouter();
   const routeMode = parseChartMode(router.query[CHART_MODE_QUERY_PARAM]);
@@ -59,6 +61,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   const series = chartSeriesByMode[mode];
   const seriesByLabel = keyBy(series, item => item.label);
   const leftMargin = getChartLeftMargin(series);
+  const downloadsPercentage = getLatestVersionDownloadsPercentage(baseSeries, registryData, mode);
 
   if (!series.length) {
     return (
@@ -88,13 +91,17 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   return (
     // @ts-expect-error Ref type miss-match
     <View style={tw`w-full gap-3`} ref={parentRef}>
-      <VersionDownloadsChartModes mode={mode} onModeChange={handleModeChange} />
+      <VersionDownloadsChartModes
+        mode={mode}
+        onModeChange={handleModeChange}
+        downloadsPercentage={downloadsPercentage}
+      />
       <XYChart
         width={width}
         height={height}
         xScale={{ type: 'linear', domain: xDomain }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-        margin={{ top: 2, right: 12, bottom: 20, left: leftMargin }}>
+        margin={{ top: 2, right: 8, bottom: 20, left: leftMargin }}>
         <LinearGradient
           id={BAR_GRADIENT_ID}
           from={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
@@ -134,7 +141,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
         />
         <Axis
           orientation="bottom"
-          numTicks={5}
+          numTicks={isSmallScreen ? 3 : 5}
           hideAxisLine
           hideTicks
           tickFormat={value => NUMBER_FORMATTER.format(value)}
