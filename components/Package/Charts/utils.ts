@@ -60,6 +60,46 @@ export function buildChartSeriesByMode(baseSeries: VersionsChartData[]): Version
   };
 }
 
+export function getLatestVersionDownloadsPercentage(
+  baseSeries: VersionsChartData[],
+  registryData: PackageVersionsData,
+  mode: VersionsChartMode
+) {
+  const totalDownloads = sumBy(baseSeries, item => item.downloads);
+
+  if (!totalDownloads) {
+    return 0;
+  }
+
+  const latestVersion = registryData['dist-tags'].latest;
+
+  if (!latestVersion) {
+    return 0;
+  }
+
+  if (mode === 'version') {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateLabel = getAggregatedSemverLabel(latestVersion, mode);
+
+  if (!latestAggregateLabel) {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateDownloads = sumBy(baseSeries, item =>
+    getAggregatedSemverLabel(item.label, mode) === latestAggregateLabel ? item.downloads : 0
+  );
+
+  return (latestAggregateDownloads / totalDownloads) * 100;
+}
+
 export function createVersionChartEntry(
   version: string,
   downloads = 0,

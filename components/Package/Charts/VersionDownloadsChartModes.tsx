@@ -9,6 +9,7 @@ import { type VersionsChartMode } from './types';
 type Props = {
   mode: VersionsChartMode;
   onModeChange: (mode: VersionsChartMode) => void;
+  downloadsPercentage: number;
 };
 
 const CHART_MODES: { key: VersionsChartMode; label: string; shortLabel: string }[] = [
@@ -17,27 +18,42 @@ const CHART_MODES: { key: VersionsChartMode; label: string; shortLabel: string }
   { key: 'major', label: 'By major', shortLabel: 'Major' },
 ];
 
-export default function VersionDownloadsChartModes({ mode, onModeChange }: Props) {
+export default function VersionDownloadsChartModes({
+  mode,
+  onModeChange,
+  downloadsPercentage,
+}: Props) {
   const { isSmallScreen } = useLayout();
   return (
-    <View style={tw`flex-row gap-2 self-start`}>
-      {CHART_MODES.map(({ key, label, shortLabel }) => (
-        <Button
-          key={key}
-          onPress={() => onModeChange(key)}
-          style={[
-            tw`border bg-default px-3 py-1.5`,
-            isSmallScreen ? tw`min-w-[62px]` : tw`min-w-[92px]`,
-            key === mode
-              ? tw`border-[#bde0f7] bg-primary-hover dark:border-[#203b4d]`
-              : tw`border-default`,
-          ]}>
-          <Label
-            style={key === mode ? tw`text-primary-darker dark:text-primary` : tw`text-secondary`}>
-            {isSmallScreen ? shortLabel : label}
-          </Label>
-        </Button>
-      ))}
+    <View style={tw`w-full flex-row items-center gap-2`}>
+      <View style={tw`flex-1 flex-row flex-wrap gap-2`}>
+        {CHART_MODES.map(({ key, label, shortLabel }) => (
+          <Button
+            key={key}
+            onPress={() => onModeChange(key)}
+            style={[
+              tw`border bg-default px-3 py-1.5`,
+              isSmallScreen ? tw`min-w-[62px]` : tw`min-w-[92px]`,
+              key === mode
+                ? tw`border-[#bde0f7] bg-primary-hover dark:border-[#203b4d]`
+                : tw`border-default`,
+            ]}>
+            <Label
+              style={key === mode ? tw`text-primary-darker dark:text-primary` : tw`text-secondary`}>
+              {isSmallScreen ? shortLabel : label}
+            </Label>
+          </Button>
+        ))}
+      </View>
+      <Label style={tw`shrink-0 text-right font-light text-secondary`}>
+        <span style={tw`font-normal text-black dark:text-white`}>
+          {downloadsPercentage.toLocaleString('en-US', {
+            maximumFractionDigits: 1,
+          })}
+          %
+        </span>{' '}
+        on latest {mode}
+      </Label>
     </View>
   );
 }

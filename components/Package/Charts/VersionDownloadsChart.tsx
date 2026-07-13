@@ -7,13 +7,13 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
-import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
+import ChartTooltip from './ChartTooltip';
+import HoveredBarOutline from './HoveredBarOutline';
 import {
   type VersionsAggregatedChartMode,
   type VersionsChartData,
@@ -28,6 +28,7 @@ import {
   DEFAULT_CHART_MODE,
   getChartLeftMargin,
   getLargestSeriesLength,
+  getLatestVersionDownloadsPercentage,
   getPrimaryChartLabel,
   LABEL_TO_BAR_GAP,
   mapVersionDistTags,
@@ -59,6 +60,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   const series = chartSeriesByMode[mode];
   const seriesByLabel = keyBy(series, item => item.label);
   const leftMargin = getChartLeftMargin(series);
+  const downloadsPercentage = getLatestVersionDownloadsPercentage(baseSeries, registryData, mode);
 
   if (!series.length) {
     return (
@@ -88,7 +90,11 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
   return (
     // @ts-expect-error Ref type miss-match
     <View style={tw`w-full gap-3`} ref={parentRef}>
-      <VersionDownloadsChartModes mode={mode} onModeChange={handleModeChange} />
+      <VersionDownloadsChartModes
+        mode={mode}
+        onModeChange={handleModeChange}
+        downloadsPercentage={downloadsPercentage}
+      />
       <XYChart
         width={width}
         height={height}
