@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { Label } from '~/common/styleguide';
+import { Label, useLayout } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParam } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
@@ -47,6 +47,7 @@ const OTHER_BAR_GRADIENT_ID = 'version-downloads-chart-other';
 
 export default function VersionDownloadsChart({ npmDownloads, registryData }: Props) {
   const isDark = tw.prefixMatch('dark');
+  const { isSmallScreen } = useLayout();
 
   const router = useRouter();
   const routeMode = parseChartMode(router.query[CHART_MODE_QUERY_PARAM]);
@@ -100,7 +101,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
         height={height}
         xScale={{ type: 'linear', domain: xDomain }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-        margin={{ top: 2, right: 12, bottom: 20, left: leftMargin }}>
+        margin={{ top: 2, right: 8, bottom: 20, left: leftMargin }}>
         <LinearGradient
           id={BAR_GRADIENT_ID}
           from={isDark ? 'var(--primary-darker)' : 'var(--primary-darker)'}
@@ -140,7 +141,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
         />
         <Axis
           orientation="bottom"
-          numTicks={5}
+          numTicks={isSmallScreen ? 3 : 5}
           hideAxisLine
           hideTicks
           tickFormat={value => NUMBER_FORMATTER.format(value)}

@@ -17,7 +17,7 @@ export const DEFAULT_CHART_MODE: VersionsChartMode = 'version';
 export const LABEL_TO_BAR_GAP = 6;
 
 const VERSIONS_LIMIT = 12;
-const MIN_YAXIS_LABEL_WIDTH = 72;
+const MIN_YAXIS_LABEL_WIDTH = 60;
 const OTHER_VERSION_LABEL = 'Other';
 const TEXT_MEASURE_CANVAS_ID = 'measure-canvas';
 const Y_AXIS_LABEL_WIDTH_CACHE = new Map<string, number>();

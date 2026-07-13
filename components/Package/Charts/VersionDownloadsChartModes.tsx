@@ -25,15 +25,15 @@ export default function VersionDownloadsChartModes({
 }: Props) {
   const { isSmallScreen } = useLayout();
   return (
-    <View style={tw`w-full flex-row items-center gap-2`}>
-      <View style={tw`flex-1 flex-row flex-wrap gap-2`}>
+    <View style={[tw`w-full flex-row items-center gap-2`, isSmallScreen && tw`flex-col`]}>
+      <View style={[tw`flex-1 flex-row flex-wrap gap-2`, isSmallScreen && tw`w-full gap-[3.3%]`]}>
         {CHART_MODES.map(({ key, label, shortLabel }) => (
           <Button
             key={key}
             onPress={() => onModeChange(key)}
+            containerStyle={isSmallScreen ? tw`min-w-[30%] flex-1` : tw`min-w-[92px]`}
             style={[
               tw`border bg-default px-3 py-1.5`,
-              isSmallScreen ? tw`min-w-[62px]` : tw`min-w-[92px]`,
               key === mode
                 ? tw`border-[#bde0f7] bg-primary-hover dark:border-[#203b4d]`
                 : tw`border-default`,
