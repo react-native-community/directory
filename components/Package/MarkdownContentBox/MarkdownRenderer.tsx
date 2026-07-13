@@ -110,10 +110,12 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           }
           return null;
         },
-        table: ({ children }) => {
+        table: ({ children, node }) => {
           return (
-            // @ts-expect-error dataSet is a valid RNW prop
-            <View dataSet={{ tableWrapper: true }}>
+            <View
+              // @ts-expect-error dataSet is a valid RNW prop
+              dataSet={{ tableWrapper: true }}
+              style={node.properties.align === 'center' ? tw`mx-auto` : undefined}>
               <table>{children}</table>
             </View>
           );
