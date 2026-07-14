@@ -23385,14 +23385,14 @@
     "ios": true,
     "android": true
   },
-{
-  "githubUrl": "https://github.com/codemagic-ci-cd/codemagic-patch/tree/main/client",
-  "npmPkg": "@codemagic/react-native-patch",
-  "examples": [
-    "https://github.com/codemagic-ci-cd/codemagic-patch/tree/main/examples/on-device-demo"
-  ],
-  "ios": true,
-  "android": true,
-  "configPlugin": true
-}
+  {
+    "githubUrl": "https://github.com/codemagic-ci-cd/codemagic-patch/tree/main/client",
+    "npmPkg": "@codemagic/react-native-patch",
+    "examples": [
+      "https://github.com/codemagic-ci-cd/codemagic-patch/tree/main/examples/on-device-demo"
+    ],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  }
 ]
