@@ -23410,5 +23410,11 @@
     "expoGo": true,
     "newArchitecture": true,
     "vegaos": true
+  },
+  {
+    "githubUrl": "https://github.com/phaelor/react-native-app-inspector",
+    "examples": ["https://github.com/phaelor/react-native-app-inspector/tree/HEAD/example"],
+    "ios": true,
+    "android": true
   }
 ]
