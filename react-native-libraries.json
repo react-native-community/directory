@@ -16040,7 +16040,8 @@
     "npmPkg": "@bsky.app/expo-image-crop-tool",
     "examples": ["https://github.com/bluesky-social/expo-image-crop-tool/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/echowaves/expo-cached-image",
