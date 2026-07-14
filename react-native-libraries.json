@@ -23394,5 +23394,20 @@
     "ios": true,
     "android": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/chhsiao1981/use-thunk",
+    "npmPkg": "@chhsiao1981/use-thunk",
+    "examples": [
+      "https://chhsiao1981.github.io/demo-use-thunk/",
+      "https://chhsiao1981.github.io/demo-use-thunk-tic-tac-toe/"
+    ],
+    "android": true,
+    "ios": true,
+    "web": true,
+    "fireos": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "vegaos": true
   }
 ]
