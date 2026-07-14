@@ -23412,6 +23412,18 @@
     "vegaos": true
   },
   {
+    "githubUrl": "https://github.com/alimirzayev/react-native-background-timer",
+    "npmPkg": "@alimirzayev/react-native-background-timer",
+    "examples": [
+      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/bare",
+      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/expo"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
     "githubUrl": "https://github.com/phaelor/react-native-app-inspector",
     "examples": ["https://github.com/phaelor/react-native-app-inspector/tree/HEAD/example"],
     "ios": true,
