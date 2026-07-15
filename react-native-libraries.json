@@ -23441,5 +23441,44 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/lugg/maps",
+    "npmPkg": "@lugg/maps",
+    "examples": [
+      "https://github.com/lugg/maps/tree/main/example/bare",
+      "https://github.com/lugg/maps/tree/main/example/expo"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/iv-stpn/react-native-telephone",
+    "examples": ["https://github.com/iv-stpn/react-native-telephone/tree/main/demo"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-age-range",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-app-integrity",
+    "npmPkg": "@expo/app-integrity",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-widgets",
+    "newArchitecture": true,
+    "ios": true
   }
 ]
