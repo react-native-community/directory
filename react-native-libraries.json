@@ -23432,7 +23432,10 @@
   {
     "githubUrl": "https://github.com/Yash-dott/nexara-nativeflow",
     "npmPkg": "@nexara/nativeflow",
-    "examples": ["https://nexara-nativeflow-docs.onrender.com"],
+    "examples": [
+      "https://github.com/Yash-dott/nexara-nativeflow/tree/main/example",
+      "https://nexara-nativeflow-docs.onrender.com"
+    ],
     "newArchitecture": true,
     "ios": true,
     "android": true,
