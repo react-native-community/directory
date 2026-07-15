@@ -214,8 +214,15 @@ select {
       border-radius: 6px;
       font-weight: 400;
       opacity: 0;
+      display: none;
+      overlay: none;
       overflow: clip;
-      transition: opacity 0.5s ease-out;
+      gap: 2px;
+      flex-direction: column;
+      transition:
+        opacity 0.25s ease,
+        display 0.25s allow-discrete,
+        overlay 0.25s allow-discrete;
       box-shadow:
         hsl(206 22% 7% / 60%) 0 10px 32px -8px,
         hsl(206 22% 7% / 40%) 0 10px 18px -12px;
@@ -223,10 +230,7 @@ select {
 
     &:open::picker(select) {
       opacity: 1;
-      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      gap: 2px;
 
       @starting-style {
         opacity: 0;
