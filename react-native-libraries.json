@@ -23428,5 +23428,18 @@
     "examples": ["https://github.com/phaelor/react-native-app-inspector/tree/HEAD/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Yash-dott/nexara-nativeflow",
+    "npmPkg": "@nexara/nativeflow",
+    "examples": [
+      "https://github.com/Yash-dott/nexara-nativeflow/tree/main/example",
+      "https://nexara-nativeflow-docs.onrender.com"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
