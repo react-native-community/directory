@@ -268,6 +268,11 @@ select {
 /* TOOLTIP */
 
 .TooltipContent {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 13px;
@@ -280,10 +285,51 @@ select {
     hsl(206 22% 7% / 40%) 0 10px 32px -8px,
     hsl(206 22% 7% / 25%) 0 10px 18px -12px;
   user-select: none;
-  animation-duration: 400ms;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
   max-width: 220px;
+
+  --tooltip-enter-x: 0;
+  --tooltip-enter-y: 2px;
+
+  &[data-side='top'] {
+    --tooltip-enter-y: 2px;
+    --tooltip-enter-x: 0;
+  }
+
+  &[data-side='bottom'] {
+    --tooltip-enter-y: -2px;
+    --tooltip-enter-x: 0;
+  }
+
+  &[data-side='left'] {
+    --tooltip-enter-x: 2px;
+    --tooltip-enter-y: 0;
+  }
+
+  &[data-side='right'] {
+    --tooltip-enter-x: -2px;
+    --tooltip-enter-y: 0;
+  }
+
+  &[data-state='delayed-open'],
+  &[data-state='instant-open'] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
+    @starting-style {
+      opacity: 0;
+      transform: translate3d(var(--tooltip-enter-x), var(--tooltip-enter-y), 0);
+    }
+  }
+
+  &.TooltipContent--closing {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(var(--tooltip-enter-x), var(--tooltip-enter-y), 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0s;
+  }
 
   svg {
     position: relative;
@@ -293,58 +339,6 @@ select {
       stroke: var(--tooltip-border);
       stroke-width: 1.5px;
     }
-  }
-}
-
-.TooltipContent[data-state='delayed-open'][data-side='top'] {
-  animation-name: slideDownAndFade;
-}
-
-.TooltipContent[data-state='delayed-open'][data-side='right'] {
-  animation-name: slideLeftAndFade;
-}
-
-.TooltipContent[data-state='delayed-open'][data-side='bottom'] {
-  animation-name: slideUpAndFade;
-}
-
-.TooltipContent[data-state='delayed-open'][data-side='left'] {
-  animation-name: slideRightAndFade;
-}
-
-@keyframes slideUpAndFade {
-  from {
-    @apply translate-y-1.5 opacity-0;
-  }
-  to {
-    @apply translate-y-0 opacity-100;
-  }
-}
-
-@keyframes slideRightAndFade {
-  from {
-    @apply -translate-x-1.5 opacity-0;
-  }
-  to {
-    @apply translate-x-0 opacity-100;
-  }
-}
-
-@keyframes slideDownAndFade {
-  from {
-    @apply -translate-y-1.5 opacity-0;
-  }
-  to {
-    @apply translate-y-0 opacity-100;
-  }
-}
-
-@keyframes slideLeftAndFade {
-  from {
-    @apply translate-x-1.5 opacity-0;
-  }
-  to {
-    @apply translate-x-0 opacity-100;
   }
 }
 

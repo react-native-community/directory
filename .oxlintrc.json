@@ -315,7 +315,6 @@
     "react-doctor/no-wide-letter-spacing": "error",
     "react-doctor/no-will-update-set-state": "error",
     "react-doctor/no-z-index-9999": "error",
-    "react-doctor/only-export-components": "error",
     "react-doctor/package-metadata-secret": "error",
     "react-doctor/path-traversal-risk": "error",
     "react-doctor/postmessage-origin-risk": "error",
