@@ -23480,5 +23480,17 @@
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-widgets",
     "newArchitecture": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/AfanasievN/react-native-device-risk-signals",
+    "examples": [
+      "https://github.com/AfanasievN/react-native-device-risk-signals/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/AfanasievN/react-native-device-risk-signals/main/docs/images/signal-bench-results.png"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
