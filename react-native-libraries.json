@@ -23482,15 +23482,13 @@
     "ios": true
   },
   {
-    "githubUrl": "https://github.com/AfanasievN/react-native-device-risk-signals",
-    "examples": [
-      "https://github.com/AfanasievN/react-native-device-risk-signals/tree/main/example"
-    ],
-    "images": [
-      "https://raw.githubusercontent.com/AfanasievN/react-native-device-risk-signals/main/docs/images/signal-bench-results.png"
-    ],
-    "newArchitecture": "new-arch-only",
+    "githubUrl": "https://github.com/stacknide/expo-cloudflared/tree/main/package",
+    "npmPkg": "expo-cloudflared",
+    "examples": ["https://github.com/stacknide/expo-cloudflared/tree/main/test/demo-app"],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
