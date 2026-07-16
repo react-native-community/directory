@@ -23492,5 +23492,15 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stacknide/expo-cloudflared/tree/main/package",
+    "npmPkg": "expo-cloudflared",
+    "examples": ["https://github.com/stacknide/expo-cloudflared/tree/main/test/demo-app"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
