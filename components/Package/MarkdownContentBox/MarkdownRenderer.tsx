@@ -153,19 +153,12 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
         ),
         pre: ({ children }: any) => {
           const langClass = children?.props?.className;
-          if (langClass) {
-            return (
-              <MarkdownCodeBlock
-                code={children.props.children}
-                theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
-                lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
-              />
-            );
-          }
           return (
-            <div style={tw`relative my-2`} className="readme-code-block">
-              <pre className="shiki">{children}</pre>
-            </div>
+            <MarkdownCodeBlock
+              code={children.props.children}
+              theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
+              lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
+            />
           );
         },
         blockquote: ({ children }: any) => {
