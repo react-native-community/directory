@@ -23502,5 +23502,17 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/aravi365/react-native-edge-glow",
+    "npmPkg": "react-native-edge-glow",
+    "images": [
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-ios.gif",
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-android.gif",
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-siri.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
