@@ -28,7 +28,8 @@ export default function CodeBrowserContentHighlighter({ code, lang, theme }: Pro
   return highlighter;
 }
 
-const URL_RE = /https?:\/\/[^\s)]+/g;
+const URL_RE = /https?:\/\/\S+/g;
+const TRAILING_PUNCTUATION_RE = /[).]+$/;
 
 export const linkifyUrlsTransformer: ShikiTransformer = {
   name: 'linkify-comment-urls',
@@ -52,8 +53,11 @@ export const linkifyUrlsTransformer: ShikiTransformer = {
     let lastIndex = 0;
 
     for (const match of matches) {
-      const url = match[0];
+      const fullMatch = match[0];
       const index = match.index ?? 0;
+
+      const trailing = fullMatch.match(TRAILING_PUNCTUATION_RE)?.[0] ?? '';
+      const url = trailing ? fullMatch.slice(0, -trailing.length) : fullMatch;
 
       if (index > lastIndex) {
         children.push({
@@ -68,7 +72,7 @@ export const linkifyUrlsTransformer: ShikiTransformer = {
         properties: {
           href: url,
           target: '_blank',
-          style: node.properties.style,
+          style: node.properties?.style ?? 'color:inherit',
           rel: 'noreferrer noopener',
         },
         children: [{ type: 'text', value: url }],
