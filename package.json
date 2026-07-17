@@ -31,7 +31,7 @@
     "@radix-ui/react-popover": "^1.1.19",
     "@radix-ui/react-tooltip": "^1.2.12",
     "@react-native-picker/picker": "^2.11.4",
-    "@sentry/react": "^10.65.0",
+    "@sentry/react": "^10.66.0",
     "@videojs/react": "^10.0.0-beta.25",
     "@visx/gradient": "^4.0.0",
     "@visx/responsive": "^4.0.0",
@@ -80,7 +80,7 @@
     "oxfmt": "^0.59.0",
     "oxlint": "^1.74.0",
     "oxlint-plugin-react-doctor": "^0.7.8",
-    "oxlint-tsgolint": "^0.24.0",
+    "oxlint-tsgolint": "^0.25.0",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.3",
     "user-agent-data-types": "^0.4.3"
