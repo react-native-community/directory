@@ -22044,7 +22044,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/ahmeterenodaci/rn-mlkit-ocr",
