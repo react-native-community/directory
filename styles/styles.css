@@ -415,6 +415,10 @@ select {
     margin-bottom: 0;
   }
 
+  div + div {
+    margin-top: 12px;
+  }
+
   section {
     margin-top: 18px;
   }
@@ -456,6 +460,18 @@ select {
 
     &[align='center'] img {
       margin: 0 auto;
+    }
+
+    [align='center'] & {
+      justify-content: center;
+      text-align: center;
+
+      &:hover {
+        a[href^='#'] {
+          position: absolute;
+          top: -8px;
+        }
+      }
     }
 
     + div {
