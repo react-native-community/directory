@@ -23545,5 +23545,14 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-nitro-godot",
+    "examples": [
+      "https://github.com/hung-yueh/react-native-nitro-godot/tree/main/examples/dungeon-dash"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
