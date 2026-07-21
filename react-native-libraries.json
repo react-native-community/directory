@@ -23492,5 +23492,11 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Doko-Demo-Doa/react-native-pdf-editor",
+    "examples": ["https://github.com/Doko-Demo-Doa/react-native-pdf-editor/tree/HEAD/example"],
+    "ios": true,
+    "android": true
   }
 ]
