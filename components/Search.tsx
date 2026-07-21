@@ -101,7 +101,7 @@ export default function Search({ query, total, style }: Props) {
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
               onChangeText={typingCallback}
-              placeholder="Search libraries..."
+              placeholder="Search libraries…"
               style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
               defaultValue={search}
               placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}

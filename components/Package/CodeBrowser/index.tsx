@@ -244,7 +244,7 @@ export default function CodeBrowser({
                 onFocus={() => setInputFocused(true)}
                 onBlur={() => setInputFocused(false)}
                 onChangeText={setSearch}
-                placeholder="Search files..."
+                placeholder="Search files…"
                 style={[
                   tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 pl-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
                   isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
