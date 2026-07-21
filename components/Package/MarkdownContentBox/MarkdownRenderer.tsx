@@ -87,7 +87,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
         br: () => null,
         hr: () => null,
         a: (props: any) => {
-          if (props.href.startsWith('#')) {
+          if (props.href?.startsWith('#')) {
             return <A {...props} target="_self" />;
           } else if (props.href && !props.href.startsWith('//')) {
             if (!props.href.startsWith('http')) {

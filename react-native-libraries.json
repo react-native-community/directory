@@ -2652,10 +2652,7 @@
     "githubUrl": "https://github.com/JimmyDaddy/react-native-image-marker",
     "ios": true,
     "android": true,
-    "examples": [
-      "https://github.com/JimmyDaddy/react-native-image-marker/tree/master/example",
-      "https://github.com/JimmyDaddy/react-native-image-marker/tree/master/expo-example"
-    ],
+    "examples": ["https://github.com/JimmyDaddy/react-native-image-marker/tree/master/example"],
     "images": [
       "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/assets/multiple_icon_markers.png",
       "https://raw.githubusercontent.com/JimmyDaddy/react-native-image-marker/master/assets/rotatetexts.png",
@@ -8340,13 +8337,6 @@
     ],
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/isnolan/react-native-idata-scanner",
-    "examples": ["https://github.com/isnolan/react-native-idata-scanner/tree/main/example"],
-    "ios": true,
-    "android": true,
-    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/Tintef/react-native-headphone-detection",
@@ -22044,7 +22034,8 @@
     ],
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/ahmeterenodaci/rn-mlkit-ocr",
@@ -22689,7 +22680,6 @@
   },
   {
     "githubUrl": "https://github.com/novev9/react-native-2gis-maps",
-    "npmPkg": "react-native-2gis-maps",
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
@@ -23238,6 +23228,10 @@
     "examples": [
       "https://github.com/GGULBAE/react-native-image-compression-kit/tree/master/example"
     ],
+    "images": [
+      "https://raw.githubusercontent.com/GGULBAE/react-native-image-compression-kit/master/website/public/demo/android/screen.png",
+      "https://raw.githubusercontent.com/GGULBAE/react-native-image-compression-kit/master/website/public/demo/ios/screen.png"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -23283,7 +23277,6 @@
   },
   {
     "githubUrl": "https://github.com/jo-duchan/tapflow",
-    "npmPkg": "tapflow",
     "ios": true,
     "android": true,
     "dev": true
@@ -23368,7 +23361,6 @@
   },
   {
     "githubUrl": "https://github.com/himanshu-lal4/react-native-liquid-glassmorphism",
-    "npmPkg": "react-native-liquid-glassmorphism",
     "examples": [
       "https://github.com/himanshu-lal4/react-native-liquid-glassmorphism/tree/main/example"
     ],
@@ -23380,7 +23372,6 @@
   },
   {
     "githubUrl": "https://github.com/shtefanilie/react-native-age-signals",
-    "npmPkg": "react-native-age-signals",
     "examples": ["https://github.com/shtefanilie/react-native-age-signals/tree/main/example"],
     "newArchitecture": true,
     "ios": true,
@@ -23492,6 +23483,77 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stacknide/expo-cloudflared/tree/main/package",
+    "npmPkg": "expo-cloudflared",
+    "examples": ["https://github.com/stacknide/expo-cloudflared/tree/main/test/demo-app"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/aravi365/react-native-edge-glow",
+    "images": [
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-ios.gif",
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-android.gif",
+      "https://raw.githubusercontent.com/aravi365/react-native-edge-glow/main/assets/edge-glow-siri.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/szymonograbek/expo-android-pedometer",
+    "examples": ["https://github.com/szymonograbek/expo-android-pedometer/tree/main/example"],
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/arcboxlabs/expo-libghostty",
+    "examples": ["https://github.com/arcboxlabs/expo-libghostty/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/V3RON/react-native-playback-controls",
+    "examples": ["https://github.com/V3RON/react-native-playback-controls/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/react-native-grab",
+    "examples": ["https://github.com/callstackincubator/react-native-grab/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/callstackincubator/rozenite/tree/main/packages/cli",
+    "npmPkg": "rozenite",
+    "images": ["https://rozenite.dev/plugin-slideshow.webp"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/YosefHayim/launch-store",
+    "ios": true,
+    "android": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-nitro-godot",
+    "examples": [
+      "https://github.com/hung-yueh/react-native-nitro-godot/tree/main/examples/dungeon-dash"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Doko-Demo-Doa/react-native-pdf-editor",

@@ -418,6 +418,7 @@
     ],
     "typescript/consistent-indexed-object-style": ["error", "record"],
     "typescript/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
+    "typescript/method-signature-style": ["error", "property"],
     "typescript/no-array-delete": "error",
     "typescript/no-confusing-non-null-assertion": "error",
     "typescript/no-confusing-void-expression": ["error", { "ignoreArrowShorthand": true }],
@@ -445,6 +446,8 @@
     "unicorn/consistent-existence-index-check": "error",
     "unicorn/error-message": "error",
     "unicorn/no-anonymous-default-export": "error",
+    "unicorn/no-array-fill-with-reference-type": "error",
+    "unicorn/no-confusing-array-with": "error",
     "unicorn/no-immediate-mutation": "error",
     "unicorn/no-length-as-slice-end": "error",
     "unicorn/no-object-as-default-parameter": "error",
@@ -464,6 +467,7 @@
     "unicorn/prefer-node-protocol": "error",
     "unicorn/prefer-number-properties": "error",
     "unicorn/prefer-regexp-test": "error",
+    "unicorn/prefer-single-call": "error",
     "unicorn/prefer-string-slice": "error",
     "unicorn/require-number-to-fixed-digits-argument": "error"
   }
