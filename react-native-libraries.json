@@ -23561,5 +23561,14 @@
     "examples": ["https://github.com/Doko-Demo-Doa/react-native-pdf-editor/tree/HEAD/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/softwhere-uz/react-native-myid",
+    "npmPkg": "@softwhere-uz/react-native-myid",
+    "examples": ["https://github.com/softwhere-uz/react-native-myid/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
