@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 
+import GitHubRepositoryCheckQuery from '~/scripts/queries/GitHubRepositoryCheckQuery';
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
@@ -65,7 +66,10 @@ export async function fetchGithubRateLimit() {
   return {};
 }
 
-export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
+export async function fetchGithubData(
+  data: LibraryType,
+  { retries = 2, check = false } = {}
+): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
@@ -76,14 +80,17 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
     const fullName = `${repoOwner}/${repoName}`;
     const branch = branchName ?? 'HEAD';
 
-    const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
-      repoOwner,
-      repoName,
-      packagePath,
-      packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
-      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
-      fetchRoot: packagePath !== '.',
-    });
+    const result = await makeGraphqlQuery(
+      check ? GitHubRepositoryCheckQuery : GitHubRepositoryQuery,
+      {
+        repoOwner,
+        repoName,
+        packagePath,
+        packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
+        packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+        fetchRoot: packagePath !== '.',
+      }
+    );
 
     if (result.errors) {
       if (result.errors[0].type === 'NOT_FOUND') {
@@ -98,17 +105,19 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
       }
 
-      console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
+      console.log(
+        `[GH] Retrying fetch for ${data.githubUrl} due to error result (attempts left: ${retries})`
+      );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1, check });
     }
 
     if (!result?.data?.repository) {
       console.log(
-        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
+        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'}, attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1, check });
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -118,9 +127,12 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
       github,
     };
   } catch (error) {
-    console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
+    console.log(
+      `[GH] Retrying fetch for ${data.githubUrl} due to an error (attempts left: ${retries})`,
+      error
+    );
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    return await fetchGithubData(data, retries - 1);
+    return await fetchGithubData(data, { retries: retries - 1, check });
   }
 }
 
@@ -207,10 +219,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,
-      forks: json.forks.totalCount,
-      issues: json.issues.totalCount,
-      subscribers: json.watchers.totalCount,
-      stars: json.stargazers.totalCount,
+      forks: json?.forks?.totalCount ?? -1,
+      issues: json?.issues?.totalCount ?? -1,
+      subscribers: json?.watchers?.totalCount ?? -1,
+      stars: json?.stargazers?.totalCount ?? -1,
       dependencies: json.dependenciesCount,
     },
     name: json.name,
