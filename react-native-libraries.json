@@ -23581,11 +23581,6 @@
     "ios": true,
     "android": true,
     "web": true,
-    "macos": true,
-    "windows": true,
-    "tvos": true,
-    "visionos": true,
-    "fireos": true,
     "newArchitecture": true
   },
   {
@@ -23598,11 +23593,6 @@
     "ios": true,
     "android": true,
     "web": true,
-    "macos": true,
-    "windows": true,
-    "tvos": true,
-    "visionos": true,
-    "fireos": true,
-    "newArchitecture": true
+    "newArchitecture": true    
   }
 ]
