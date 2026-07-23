@@ -23570,5 +23570,12 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/getonramp/onramp-sdk",
+    "npmPkg": "@onramp-sdk/react-native",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
