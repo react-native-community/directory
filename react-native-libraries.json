@@ -23581,6 +23581,7 @@
     "ios": true,
     "android": true,
     "web": true,
+    "macos": true,
     "newArchitecture": true
   },
   {
@@ -23593,6 +23594,7 @@
     "ios": true,
     "android": true,
     "web": true,
-    "newArchitecture": true    
+    "macos": true,
+    "newArchitecture": true
   }
 ]
