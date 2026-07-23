@@ -23608,5 +23608,10 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/pachun/reanimated-worklet-capture-guard",
+    "npmPkg": "@pachun/reanimated-worklet-capture-guard",
+    "dev": true
   }
 ]
