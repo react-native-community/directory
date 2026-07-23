@@ -23570,5 +23570,39 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/carbon-react-native/tree/main/packages/carbon-react-native",
+    "npmPkg": "@audira/carbon-react-native",
+    "examples": [
+      "https://rakadoank.github.io/carbon-react-native/",
+      "https://github.com/RakaDoank/carbon-react-native/tree/main/storybook/stories"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "macos": true,
+    "windows": true,
+    "tvos": true,
+    "visionos": true,
+    "fireos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/carbon-react-native/tree/main/packages/carbon-react-native-elements",
+    "npmPkg": "@audira/carbon-react-native-elements",
+    "examples": [
+      "https://rakadoank.github.io/carbon-react-native/",
+      "https://github.com/RakaDoank/carbon-react-native/tree/main/storybook/stories"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "macos": true,
+    "windows": true,
+    "tvos": true,
+    "visionos": true,
+    "fireos": true,
+    "newArchitecture": true
   }
 ]
