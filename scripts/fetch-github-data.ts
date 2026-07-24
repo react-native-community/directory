@@ -101,7 +101,7 @@ export async function fetchGithubData(
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
         if (result.errors?.type === 'FORBIDDEN' || result.errors[0]?.type === 'FORBIDDEN') {
-          return await fetchGithubData(data, { retries: -1, check });
+          return await fetchGithubData(data, { retries: -1 });
         }
       }
 
