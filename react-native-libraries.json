@@ -23572,6 +23572,58 @@
     "configPlugin": true
   },
   {
+    "githubUrl": "https://github.com/RakaDoank/carbon-react-native/tree/main/packages/carbon-react-native",
+    "npmPkg": "@audira/carbon-react-native",
+    "examples": [
+      "https://rakadoank.github.io/carbon-react-native/",
+      "https://github.com/RakaDoank/carbon-react-native/tree/main/storybook/stories"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "macos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/RakaDoank/carbon-react-native/tree/main/packages/carbon-react-native-elements",
+    "npmPkg": "@audira/carbon-react-native-elements",
+    "examples": [
+      "https://rakadoank.github.io/carbon-react-native/",
+      "https://github.com/RakaDoank/carbon-react-native/tree/main/storybook/stories"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "macos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thoughtbot/react-native-social-auth",
+    "npmPkg": "@thoughtbot/react-native-social-auth",
+    "examples": ["https://github.com/thoughtbot/react-native-social-auth/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thoughtbot/react-native-social-auth/refs/heads/main/example/assets/607211820-e04101f3-30b1-49f9-a249-562496f43061-ezgif.com-video-to-gif-converter.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/cengizemre/react-native-permission-gate",
+    "examples": ["https://github.com/cengizemre/react-native-permission-gate/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pachun/reanimated-worklet-capture-guard",
+    "npmPkg": "@pachun/reanimated-worklet-capture-guard",
+    "dev": true,
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/getonramp/onramp-sdk/tree/main/packages/sdk-react-native",
     "npmPkg": "@onramp-sdk/react-native",
     "ios": true,
