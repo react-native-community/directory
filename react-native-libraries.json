@@ -23608,5 +23608,12 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/cengizemre/react-native-permission-gate",
+    "examples": ["https://github.com/cengizemre/react-native-permission-gate/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
