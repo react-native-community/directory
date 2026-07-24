@@ -60,7 +60,8 @@ export async function fetchGithubRateLimit() {
   }
 
   if (result.errors) {
-    console.log('[GH] GraphQL API error:', result.errors);
+    console.error('[GH] GraphQL API error:', result.errors);
+    throw new Error('GitHub rate limit exceeded, aborting!');
   }
 
   return {};
@@ -103,6 +104,9 @@ export async function fetchGithubData(
         }
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
+        if (result.errors.type === 'FORBIDDEN') {
+          return await fetchGithubData(data, { retries: -1, check });
+        }
       }
 
       console.log(
