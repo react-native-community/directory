@@ -23572,7 +23572,7 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/getonramp/onramp-sdk",
+    "githubUrl": "https://github.com/getonramp/onramp-sdk/tree/main/packages/sdk-react-native",
     "npmPkg": "@onramp-sdk/react-native",
     "ios": true,
     "android": true,
