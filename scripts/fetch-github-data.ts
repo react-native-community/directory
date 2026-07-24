@@ -1,6 +1,5 @@
 import { config } from 'dotenv';
 
-import GitHubRepositoryCheckQuery from '~/scripts/queries/GitHubRepositoryCheckQuery';
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
@@ -68,7 +67,7 @@ export async function fetchGithubRateLimit() {
 
 export async function fetchGithubData(
   data: LibraryType,
-  { retries = 2, check = false } = {}
+  { retries = 2 } = {}
 ): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
@@ -80,17 +79,14 @@ export async function fetchGithubData(
     const fullName = `${repoOwner}/${repoName}`;
     const branch = branchName ?? 'HEAD';
 
-    const result = await makeGraphqlQuery(
-      check ? GitHubRepositoryCheckQuery : GitHubRepositoryQuery,
-      {
-        repoOwner,
-        repoName,
-        packagePath,
-        packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
-        packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
-        fetchRoot: packagePath !== '.',
-      }
-    );
+    const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
+      repoOwner,
+      repoName,
+      packagePath,
+      packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
+      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      fetchRoot: packagePath !== '.',
+    });
 
     if (result.errors) {
       if (result.errors[0].type === 'NOT_FOUND') {
@@ -109,7 +105,7 @@ export async function fetchGithubData(
         `[GH] Retrying fetch for ${data.githubUrl} due to error result (attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, { retries: retries - 1, check });
+      return await fetchGithubData(data, { retries: retries - 1 });
     }
 
     if (!result?.data?.repository) {
@@ -117,7 +113,7 @@ export async function fetchGithubData(
         `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'}, attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, { retries: retries - 1, check });
+      return await fetchGithubData(data, { retries: retries - 1 });
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -132,7 +128,7 @@ export async function fetchGithubData(
       error
     );
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    return await fetchGithubData(data, { retries: retries - 1, check });
+    return await fetchGithubData(data, { retries: retries - 1 });
   }
 }
 
@@ -219,10 +215,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,
-      forks: json?.forks?.totalCount ?? -1,
-      issues: json?.issues?.totalCount ?? -1,
-      subscribers: json?.watchers?.totalCount ?? -1,
-      stars: json?.stargazers?.totalCount ?? -1,
+      forks: json?.forkCount,
+      issues: json?.issues?.totalCount,
+      subscribers: json?.watchers?.totalCount,
+      stars: json?.stargazerCount,
       dependencies: json.dependenciesCount,
     },
     name: json.name,
