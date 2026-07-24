@@ -23610,8 +23610,17 @@
     "configPlugin": true
   },
   {
+    "githubUrl": "https://github.com/cengizemre/react-native-permission-gate",
+    "examples": ["https://github.com/cengizemre/react-native-permission-gate/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/pachun/reanimated-worklet-capture-guard",
     "npmPkg": "@pachun/reanimated-worklet-capture-guard",
-    "dev": true
+    "dev": true,
+    "ios": true,
+    "android": true
   }
 ]
