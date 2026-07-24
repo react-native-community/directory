@@ -94,7 +94,7 @@ export async function fetchGithubData(
     );
 
     if (result.errors) {
-      if (result.errors[0].type === 'NOT_FOUND') {
+      if (result.errors?.type === 'NOT_FOUND' || result.errors[0]?.type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
           console.warn(`[GH] Repository ${fullName} has moved to ${newUrl}`);
@@ -104,7 +104,7 @@ export async function fetchGithubData(
         }
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
-        if (result.errors.type === 'FORBIDDEN') {
+        if (result.errors?.type === 'FORBIDDEN' || result.errors[0]?.type === 'FORBIDDEN') {
           return await fetchGithubData(data, { retries: -1, check });
         }
       }
