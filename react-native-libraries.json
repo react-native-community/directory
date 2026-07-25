@@ -23621,5 +23621,12 @@
     "dev": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/d3sm/kalendar",
+    "npmPkg": "@d3sm/kalendar",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
