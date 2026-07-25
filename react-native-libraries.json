@@ -609,6 +609,15 @@
     "npmPkg": "lottie-react-native"
   },
   {
+    "githubUrl": "https://github.com/softwhere-uz/expo-yandex-mapkit",
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "examples": ["https://github.com/softwhere-uz/expo-yandex-mapkit/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/react-native-maps/react-native-maps",
     "ios": true,
     "android": true,
