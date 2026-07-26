@@ -23654,5 +23654,14 @@
     "macos": true,
     "tvos": true,
     "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/softwhere-uz/react-native-emoji-keyboard/tree/main/packages/react-native-emoji-keyboard",
+    "npmPkg": "@softwhere-uz/react-native-emoji-keyboard",
+    "examples": ["https://github.com/softwhere-uz/react-native-emoji-keyboard/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
