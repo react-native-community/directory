@@ -59,13 +59,17 @@ export async function fetchGithubRateLimit() {
   }
 
   if (result.errors) {
-    console.log('[GH] GraphQL API error:', result.errors);
+    console.error('[GH] GraphQL API error:', result.errors);
+    throw new Error('GitHub rate limit exceeded, aborting!');
   }
 
   return {};
 }
 
-export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
+export async function fetchGithubData(
+  data: LibraryType,
+  { retries = 2 } = {}
+): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
@@ -86,7 +90,7 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
     });
 
     if (result.errors) {
-      if (result.errors[0].type === 'NOT_FOUND') {
+      if (result.errors?.type === 'NOT_FOUND' || result.errors[0]?.type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
           console.warn(`[GH] Repository ${fullName} has moved to ${newUrl}`);
@@ -96,19 +100,24 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
         }
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
+        if (result.errors?.type === 'FORBIDDEN' || result.errors[0]?.type === 'FORBIDDEN') {
+          return await fetchGithubData(data, { retries: -1 });
+        }
       }
 
-      console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
+      console.log(
+        `[GH] Retrying fetch for ${data.githubUrl} due to error result (attempts left: ${retries})`
+      );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1 });
     }
 
     if (!result?.data?.repository) {
       console.log(
-        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
+        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'}, attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1 });
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -118,9 +127,12 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
       github,
     };
   } catch (error) {
-    console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
+    console.log(
+      `[GH] Retrying fetch for ${data.githubUrl} due to an error (attempts left: ${retries})`,
+      error
+    );
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    return await fetchGithubData(data, retries - 1);
+    return await fetchGithubData(data, { retries: retries - 1 });
   }
 }
 
@@ -207,10 +219,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,
-      forks: json.forks.totalCount,
-      issues: json.issues.totalCount,
-      subscribers: json.watchers.totalCount,
-      stars: json.stargazers.totalCount,
+      forks: json?.forkCount,
+      issues: json?.issues?.totalCount,
+      subscribers: json?.watchers?.totalCount,
+      stars: json?.stargazerCount,
       dependencies: json.dependenciesCount,
     },
     name: json.name,
