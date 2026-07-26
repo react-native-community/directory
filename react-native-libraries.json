@@ -23623,6 +23623,22 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/d3sm/kalendar",
+    "npmPkg": "@d3sm/kalendar",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/softwhere-uz/expo-yandex-mapkit",
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "examples": ["https://github.com/softwhere-uz/expo-yandex-mapkit/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/akashskypatel/ffmpeg-kit-extended/tree/HEAD/react-native",
     "npmPkg": "ffmpeg-kit-extended",
     "examples": [
