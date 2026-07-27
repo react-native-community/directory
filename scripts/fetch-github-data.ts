@@ -58,7 +58,7 @@ export async function fetchGithubRateLimit() {
     };
   }
 
-  if (result.errors) {
+  if (result?.errors) {
     console.error('[GH] GraphQL API error:', result.errors);
     throw new Error('GitHub rate limit exceeded, aborting!');
   }
@@ -89,7 +89,7 @@ export async function fetchGithubData(
       fetchRoot: packagePath !== '.',
     });
 
-    if (result.errors) {
+    if (result?.errors) {
       if (result.errors?.type === 'NOT_FOUND' || result.errors[0]?.type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
