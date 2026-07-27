@@ -11869,6 +11869,7 @@
   },
   {
     "githubUrl": "https://github.com/bluesky-social/react-native-uitextview",
+    "npmPkg": "@bsky.app/react-native-uitextview",
     "examples": ["https://github.com/bluesky-social/react-native-uitextview/tree/main/example"],
     "ios": true
   },
@@ -19759,13 +19760,6 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/mmpotulo28/react-native-package-checker",
-    "android": true,
-    "expoGo": true,
-    "newArchitecture": true,
-    "configPlugin": true
-  },
-  {
     "githubUrl": "https://github.com/vLaD1m1r99/expo-stream-audio",
     "ios": true,
     "android": true,
@@ -23633,7 +23627,6 @@
     "githubUrl": "https://github.com/softwhere-uz/expo-yandex-mapkit",
     "ios": true,
     "android": true,
-    "expoGo": false,
     "examples": ["https://github.com/softwhere-uz/expo-yandex-mapkit/tree/main/example"],
     "newArchitecture": true,
     "configPlugin": true
@@ -23663,5 +23656,27 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/mdjastrzebski/react-native-memory-footprint",
+    "examples": [
+      "https://github.com/mdjastrzebski/react-native-memory-footprint/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ydrea/react-native-cumquat",
+    "examples": ["https://github.com/ydrea/react-native-cumquat/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/scrollDynasty/react-native-drum-picker",
+    "examples": ["https://github.com/scrollDynasty/react-native-drum-picker/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
