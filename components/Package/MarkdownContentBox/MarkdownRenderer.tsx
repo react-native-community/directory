@@ -21,6 +21,7 @@ import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
+import { childrenToText } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import MarkdownCodeBlock from './MarkdownCodeBlock';
@@ -104,9 +105,9 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           }
           return <span>{props.children}</span>;
         },
-        video: ({ src }: any) => {
+        video: ({ src, width }: any) => {
           if (src) {
-            return <MarkdownVideoPlayer src={src} />;
+            return <MarkdownVideoPlayer src={src} style={{ width }} />;
           }
           return null;
         },
@@ -155,7 +156,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           const langClass = children?.props?.className;
           return (
             <MarkdownCodeBlock
-              code={children.props.children}
+              code={children?.props?.children ?? childrenToText(children)}
               theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
               lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
             />
