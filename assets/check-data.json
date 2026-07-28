@@ -8657,5 +8657,108 @@
   },
   "react-native-age-signals": {
     "newArchitecture": "supported"
+  },
+  "@codemagic/react-native-patch": {
+    "newArchitecture": "supported"
+  },
+  "@chhsiao1981/use-thunk": {
+    "unmaintained": true,
+    "newArchitecture": "supported"
+  },
+  "@alimirzayev/react-native-background-timer": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-app-inspector": {
+    "newArchitecture": "untested"
+  },
+  "@nexara/nativeflow": {
+    "newArchitecture": "supported"
+  },
+  "@lugg/maps": {
+    "newArchitecture": "supported"
+  },
+  "react-native-telephone": {
+    "newArchitecture": "untested"
+  },
+  "expo-age-range": {
+    "newArchitecture": "supported"
+  },
+  "@expo/app-integrity": {
+    "newArchitecture": "supported"
+  },
+  "expo-widgets": {
+    "newArchitecture": "supported"
+  },
+  "react-native-device-risk-signals": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-cloudflared": {
+    "newArchitecture": "supported"
+  },
+  "react-native-edge-glow": {
+    "newArchitecture": "supported"
+  },
+  "expo-android-pedometer": {
+    "newArchitecture": "untested"
+  },
+  "expo-libghostty": {
+    "newArchitecture": "supported"
+  },
+  "react-native-playback-controls": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-grab": {
+    "newArchitecture": "new-arch-only"
+  },
+  "rozenite": {
+    "newArchitecture": "untested"
+  },
+  "launch-store": {
+    "newArchitecture": "untested"
+  },
+  "react-native-nitro-godot": {
+    "newArchitecture": "supported"
+  },
+  "@doko/react-native-pdf-editor": {
+    "newArchitecture": "supported"
+  },
+  "@softwhere-uz/react-native-myid": {
+    "newArchitecture": "supported"
+  },
+  "@audira/carbon-react-native": {
+    "newArchitecture": "supported"
+  },
+  "@audira/carbon-react-native-elements": {
+    "newArchitecture": "supported"
+  },
+  "@thoughtbot/react-native-social-auth": {
+    "newArchitecture": "supported"
+  },
+  "react-native-permission-gate": {
+    "newArchitecture": "supported"
+  },
+  "@pachun/reanimated-worklet-capture-guard": {
+    "newArchitecture": "untested"
+  },
+  "@d3sm/kalendar": {
+    "newArchitecture": "supported"
+  },
+  "expo-yandex-mapkit": {
+    "newArchitecture": "supported"
+  },
+  "ffmpeg-kit-extended": {
+    "newArchitecture": "supported"
+  },
+  "@softwhere-uz/react-native-emoji-keyboard": {
+    "newArchitecture": "supported"
+  },
+  "react-native-memory-footprint": {
+    "newArchitecture": "supported"
+  },
+  "react-native-cumquat": {
+    "newArchitecture": "supported"
+  },
+  "react-native-drum-picker": {
+    "newArchitecture": "supported"
   }
 }
