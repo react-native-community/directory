@@ -19557,6 +19557,8 @@
     "githubUrl": "https://github.com/xerdnu/react-native-blasted-image",
     "ios": true,
     "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported via the New Architecture interop layer. Requires React Native 0.74+ when the New Architecture is enabled.",
     "fireos": true
   },
   {
