@@ -23680,5 +23680,33 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-pay/tree/main/package",
+    "npmPkg": "@gmisoftware/react-native-pay",
+    "examples": ["https://github.com/gmi-software/react-native-pay/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-better-clustering/tree/main/package",
+    "npmPkg": "react-native-better-clustering",
+    "examples": [
+      "https://github.com/gmi-software/react-native-better-clustering/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-better-maps/tree/main/package",
+    "npmPkg": "react-native-better-maps",
+    "examples": ["https://github.com/gmi-software/react-native-better-maps/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
