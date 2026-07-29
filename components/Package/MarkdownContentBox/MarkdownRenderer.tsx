@@ -36,6 +36,7 @@ type Props = {
 };
 
 export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true }: Props) {
+  const isDark = tw.prefixMatch('dark');
   const slugger = createSlugger();
   return (
     <Md
@@ -121,28 +122,41 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
             </View>
           );
         },
-        img: ({ src, alt, width, height }: any) => (
-          <img
-            src={getReadmeAssetURL(src, repoUrl)}
-            onError={(error: any) => {
-              const fallbackUrl = getReadmeAssetURL(src, repoUrl, 'HEAD');
-              const target = error.currentTarget;
+        img: ({ src, alt, width, height }: any) => {
+          const baseURL = getReadmeAssetURL(src, repoUrl);
+          return (
+            <img
+              src={baseURL}
+              onError={(error: any) => {
+                const fallbackUrl = getReadmeAssetURL(src, repoUrl, 'HEAD');
+                const target = error.currentTarget;
 
-              if (target.src !== fallbackUrl) {
-                target.onerror = null;
-                target.src = fallbackUrl;
-              } else {
-                target.style.display = 'none';
-              }
-            }}
-            alt={alt ?? ''}
-            width={width}
-            height="auto"
-            style={{
-              maxHeight: height,
-            }}
-          />
-        ),
+                if (target.src !== fallbackUrl) {
+                  target.onerror = null;
+                  target.src = fallbackUrl;
+                } else {
+                  target.style.display = 'none';
+                }
+              }}
+              alt={alt ?? ''}
+              width={width}
+              height="auto"
+              style={{
+                ...(baseURL.endsWith('#gh-dark-mode-only')
+                  ? isDark
+                    ? tw`inline`
+                    : tw`hidden`
+                  : {}),
+                ...(baseURL.endsWith('#gh-light-mode-only')
+                  ? isDark
+                    ? tw`hidden`
+                    : tw`inline`
+                  : {}),
+                maxHeight: height,
+              }}
+            />
+          );
+        },
         source: ({ srcSet, ...rest }: any) => (
           <source srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined} {...rest} />
         ),
