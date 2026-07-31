@@ -58,10 +58,10 @@ function mergeLibraries(...libraryLists: LibraryType[][]) {
   libraryLists.forEach(list => {
     list.forEach(library => {
       const identityKeys = getLibraryIdentityKeys(library);
-      const existingIndex = identityKeys.find(key => libraryIndexByKey.has(key));
+      const existingKey = identityKeys.find(key => libraryIndexByKey.has(key));
 
-      if (existingIndex) {
-        const index = libraryIndexByKey.get(existingIndex)!;
+      if (existingKey !== undefined) {
+        const index = libraryIndexByKey.get(existingKey)!;
         mergedLibraries[index] = library;
         identityKeys.forEach(key => {
           libraryIndexByKey.set(key, index);
@@ -149,9 +149,7 @@ export async function buildAndScoreData() {
   });
 
   // Assemble and fetch packages data in bulk queries
-  const bulkList = [...Array(Math.ceil(fetchList.length / NPM_STATS_CHUNK_SIZE))].map(() =>
-    fetchList.splice(0, NPM_STATS_CHUNK_SIZE)
-  );
+  const bulkList = chunk(fetchList, NPM_STATS_CHUNK_SIZE);
 
   const downloadsList = await fetchNpmStatDataSequentially(bulkList);
 
@@ -283,13 +281,15 @@ export async function buildAndScoreData() {
     createCheckEndpointBlob(content.libraries);
   } else {
     const existingData = libraries.map(lib => lib.npmPkg);
-    const newData = data.map(lib => lib.npmPkg);
-    const missingData = existingData.filter(npmPkg => !newData.includes(npmPkg));
+    const newData = new Set(data.map(lib => lib.npmPkg));
+    const missingData = existingData.filter(npmPkg => !newData.has(npmPkg));
 
-    const existingPackages = (DATASET as LibraryType[]).map(fillNpmName).map(lib => lib.npmPkg);
-    const dataToFill = missingData.filter(npmPkg => !existingPackages.includes(npmPkg));
+    const existingPackages = new Set(
+      (DATASET as LibraryType[]).map(fillNpmName).map(lib => lib.npmPkg)
+    );
+    const dataToFill = new Set(missingData.filter(npmPkg => !existingPackages.has(npmPkg)));
 
-    const currentData = [...libraries.filter(lib => dataToFill.includes(lib.npmPkg)), ...data];
+    const currentData = [...libraries.filter(lib => dataToFill.has(lib.npmPkg)), ...data];
 
     const dataWithFallback: LibraryType[] = currentData.map(entry => {
       if (entry.npm?.downloads) {
@@ -314,10 +314,10 @@ export async function buildAndScoreData() {
       };
     });
 
-    const validEntries = data.map((entry: LibraryDataEntryType) => entry.githubUrl);
+    const validEntries = new Set(data.map((entry: LibraryDataEntryType) => entry.githubUrl));
     const finalData = dataWithFallback
-      .filter(({ npmPkg }) => existingPackages.includes(npmPkg))
-      .filter((entry: LibraryType) => validEntries.includes(entry.githubUrl));
+      .filter(({ npmPkg }) => existingPackages.has(npmPkg))
+      .filter((entry: LibraryType) => validEntries.has(entry.githubUrl));
 
     fileContent = JSON.stringify(
       {
@@ -361,18 +361,18 @@ export async function fetchGithubDataThrottled({
   let results: LibraryType[] = [];
   const chunks = chunk(data, chunkSize);
 
-  for (const chunk of chunks) {
-    if (chunks.indexOf(chunk) > 0) {
+  for (const [chunkIndex, currentChunk] of chunks.entries()) {
+    if (chunkIndex > 0) {
       console.log(`${results.length} of ${data.length} fetched`);
       await sleep(staggerMs);
     }
 
-    const partialResult = await Promise.all(chunk.map(data => fetchGithubData(data)));
-    results = [...results, ...partialResult];
+    const partialResult = await Promise.all(currentChunk.map(data => fetchGithubData(data)));
+    results.push(...partialResult);
 
-    if (partialResult.length !== chunk.length) {
+    if (partialResult.length !== currentChunk.length) {
       throw new Error(
-        `Error in fetching data from GitHub... Expected ${chunk.length} results but only received ${partialResult.length}`
+        `Error in fetching data from GitHub... Expected ${currentChunk.length} results but only received ${partialResult.length}`
       );
     }
   }
