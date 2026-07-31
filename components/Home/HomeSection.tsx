@@ -1,18 +1,13 @@
-import dynamic from 'next/dynamic';
 import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
 import { A, H4, HoverEffect, P } from '~/common/styleguide';
 import { type IconProps, RSSIcon } from '~/components/Icons';
-import LoadingContent from '~/components/Library/LoadingContent';
+import { LibraryWithLoading } from '~/components/Library/LibraryWithLoading';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type Query } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
-  loading: () => <LoadingContent width="48.5%" height={210} wrapperStyle={tw`mx-[0.75%]`} />,
-});
 
 type Props = {
   data: LibraryType[];
@@ -73,6 +68,7 @@ function HomeLibrariesList({ list, count }: HomeLibrariesListProps) {
       <LibraryWithLoading
         key={`home-item-${item.npmPkg}`}
         library={item}
+        loadingVariant="home"
         skipMetadata
         skipSecondaryMetadata
         skipDate
