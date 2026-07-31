@@ -1,12 +1,16 @@
 import { useRouter } from 'next/router';
-import { useEffect, useEffectEvent, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
 import { P, useLayout } from '~/common/styleguide';
 import InputKeyHint from '~/components/InputKeyHint';
+import {
+  isSearchShortcutPressed,
+  useSearchInputFocus,
+  useSearchShortcut,
+} from '~/hooks/useSearchInput';
 import { type Query } from '~/types';
-import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -23,21 +27,14 @@ type Props = {
 
 export default function Search({ query, total, style }: Props) {
   const { search, order, direction, offset, owner, ...filterParams } = query;
-  const [isInputFocused, setInputFocused] = useState(false);
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
 
-  const isApple = isAppleDevice();
   const inputRef = useRef<TextInput>(null);
+  const isApple = useSearchShortcut(inputRef);
+  const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
   const { replace } = useRouter();
   const { isSmallScreen } = useLayout();
-
-  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
-    }
-  });
 
   useEffect(() => {
     // @ts-expect-error using native input value to clear on same-page navigation
@@ -45,13 +42,6 @@ export default function Search({ query, total, style }: Props) {
       inputRef.current.clear();
     }
   }, [search, isInputFocused]);
-
-  useEffect(() => {
-    if (isApple !== null) {
-      document.addEventListener('keydown', keyDownListener, false);
-      return () => document.removeEventListener('keydown', keyDownListener);
-    }
-  }, [isApple]);
 
   const typingCallback = useDebouncedCallback((text: string) => {
     void replace(urlWithQuery('/packages', { ...query, search: text, offset: null }));
@@ -75,10 +65,7 @@ export default function Search({ query, total, style }: Props) {
               autoComplete="off"
               onKeyPress={event => {
                 if ('key' in event) {
-                  if (
-                    event.key === 'k' &&
-                    (('metaKey' in event && event.metaKey) || ('ctrlKey' in event && event.ctrlKey))
-                  ) {
+                  if (isSearchShortcutPressed(event)) {
                     event.preventDefault();
                   }
                   if (inputRef.current && event.key === 'Escape') {
@@ -98,8 +85,8 @@ export default function Search({ query, total, style }: Props) {
                   }
                 }
               }}
-              onFocus={() => setInputFocused(true)}
-              onBlur={() => setInputFocused(false)}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
               onChangeText={typingCallback}
               placeholder="Search libraries…"
               style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}

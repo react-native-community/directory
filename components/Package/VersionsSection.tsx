@@ -7,6 +7,11 @@ import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { SearchIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
+import {
+  isSearchShortcutPressed,
+  useSearchInputFocus,
+  useSearchShortcut,
+} from '~/hooks/useSearchInput';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
@@ -26,8 +31,9 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   const { isSmallScreen } = useLayout();
 
   const [shouldShowAll, setShowAll] = useState(false);
-  const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<TextInput>(null);
+  const isApple = useSearchShortcut(inputRef);
+  const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
   const routeVersionSearch = parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '';
   const [versionSearch, setVersionSearch] = useState(routeVersionSearch);
@@ -81,12 +87,15 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
             }}
             onKeyPress={event => {
               if ('key' in event) {
+                if (isSearchShortcutPressed(event)) {
+                  event.preventDefault();
+                }
                 if (inputRef.current && event.key === 'Escape') {
                   if (versionSearch) {
                     event.preventDefault();
                     inputRef.current.clear();
                     setVersionSearch('');
-                    setShowAll(true);
+                    setShowAll(false);
                     replaceQueryParam(router, 'versionSearch', undefined);
                   } else {
                     inputRef.current.blur();
@@ -94,21 +103,25 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
                 }
               }
             }}
-            onFocus={() => setInputFocused(true)}
-            onBlur={() => setInputFocused(false)}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
             placeholder="Filter versions…"
             style={tw`h-11 flex-1 rounded-lg bg-palette-gray1 p-3 pl-11 text-base text-black dark:bg-dark dark:text-white`}
             placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
           />
           {!isSmallScreen && (
             <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
-              {isInputFocused && (
+              {isInputFocused ? (
                 <InputKeyHint
                   content={[
                     { label: 'press' },
                     { key: 'Esc' },
                     { label: `to ${(versionSearch?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
                   ]}
+                />
+              ) : (
+                <InputKeyHint
+                  content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
                 />
               )}
             </View>
