@@ -1,5 +1,4 @@
 import { UL } from '@expo/html-elements';
-import { sortBy } from 'es-toolkit/array';
 import dynamic from 'next/dynamic';
 import { View } from 'react-native';
 
@@ -9,18 +8,15 @@ import MetaData from '~/components/Library/MetaData';
 import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
+import CommunitySection from '~/components/Package/CommunitySection';
 import DependenciesSection from '~/components/Package/DependenciesSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import DownloadsChart from '~/components/Package/DownloadsChart';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
-import FundingSection from '~/components/Package/FundingSection';
 import MarkdownContentBox from '~/components/Package/MarkdownContentBox';
-import MorePackagesBox from '~/components/Package/MorePackagesBox';
 import NotFound from '~/components/Package/NotFound';
-import PackageAuthor from '~/components/Package/PackageAuthor';
 import PackageHeader from '~/components/Package/PackageHeader';
-import RepositoryContributors from '~/components/Package/RepositoryContributors';
 import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
 import { type NpmRegistryVersionData, type PeerDependencyData } from '~/types';
@@ -79,30 +75,9 @@ export default function PackageOverviewScene({
                 </UL>
               </>
             )}
-            {!isSmallScreen && <MorePackagesBox library={library} />}
-            {!isSmallScreen && <FundingSection fullName={library.github.fullName} />}
-            {!isSmallScreen && !!author && (
-              <>
-                <H6Section style={tw`mt-3`}>Author</H6Section>
-                <View style={tw`items-start`}>
-                  <PackageAuthor author={author} />
-                </View>
-              </>
+            {!isSmallScreen && (
+              <CommunitySection library={library} author={author} maintainers={maintainers} />
             )}
-            {!isSmallScreen && maintainers && (
-              <>
-                <H6Section style={tw`mt-3 flex gap-1.5`}>
-                  Maintainers
-                  <EntityCounter count={maintainers.length} />
-                </H6Section>
-                <View style={tw`flex-row flex-wrap items-start gap-2`}>
-                  {sortBy(maintainers, ['name']).map(maintainer => (
-                    <PackageAuthor author={maintainer} key={maintainer.name} compact />
-                  ))}
-                </View>
-              </>
-            )}
-            {!isSmallScreen && <RepositoryContributors fullName={library.github.fullName} />}
           </View>
           <View style={tw`flex-0.35 gap-4`} id="metadataContainer">
             <View>
@@ -179,30 +154,14 @@ export default function PackageOverviewScene({
             />
             <DependenciesSection title="Development dependencies" data={devDependencies} />
             <DependenciesSection title="Engines" data={engines} />
-            {isSmallScreen && <MorePackagesBox library={library} />}
-            {isSmallScreen && <FundingSection fullName={library.github.fullName} />}
-            {isSmallScreen && !!author && (
-              <>
-                <H6Section>Author</H6Section>
-                <View style={tw`items-start`}>
-                  <PackageAuthor author={author} />
-                </View>
-              </>
+            {isSmallScreen && (
+              <CommunitySection
+                library={library}
+                author={author}
+                maintainers={maintainers}
+                compact
+              />
             )}
-            {isSmallScreen && maintainers && (
-              <>
-                <H6Section style={tw`flex gap-1.5`}>
-                  Maintainer
-                  <EntityCounter count={maintainers.length} />
-                </H6Section>
-                <View style={tw`flex-row flex-wrap items-start gap-2`}>
-                  {sortBy(maintainers, ['name']).map(maintainer => (
-                    <PackageAuthor author={maintainer} key={maintainer.name} compact />
-                  ))}
-                </View>
-              </>
-            )}
-            {isSmallScreen && <RepositoryContributors fullName={library.github.fullName} />}
           </View>
         </View>
       </ContentContainer>
