@@ -78,7 +78,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
               {children}
             </MarkdownHeading>
           ),
-          p: ({ children, ...props }: ComponentType<'p'>) => {
+          p: ({ children, node, ...props }: ComponentType<'p'>) => {
             const childrenCount = Children.count(children);
             if (childrenCount === 1) {
               const element = Children.toArray(children).at(0);
