@@ -121,7 +121,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": "new-arch-only",
+    "newArchitecture": true,
     "newArchitectureNote": "Works used with Expo modules dependencies. Alternative dependencies are not all compatible with the New Architecture."
   },
   {
@@ -22858,7 +22858,7 @@
     "images": [
       "https://raw.githubusercontent.com/brandtnewlabs/react-native-livechart/main/assets/images/hero.webp"
     ],
-    "newArchitecture": true,
+    "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
   },
