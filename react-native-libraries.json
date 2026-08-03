@@ -23693,5 +23693,16 @@
     "android": true,
     "web": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-nitro-realtime-audio",
+    "npmPkg": "@mindinventory/react-native-nitro-realtime-audio",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-nitro-realtime-audio/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
   }
 ]
