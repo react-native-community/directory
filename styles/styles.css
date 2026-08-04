@@ -500,6 +500,10 @@ select {
       a {
         display: inline-flex;
       }
+
+      img {
+        margin: 0 auto;
+      }
     }
 
     & a {

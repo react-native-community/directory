@@ -7,6 +7,8 @@ import useSWR from 'swr';
 
 import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { DownloadIcon, StarIcon, WarningIcon } from '~/components/Icons';
+import EntityCounter from '~/components/Package/EntityCounter';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { Tooltip } from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
@@ -14,9 +16,6 @@ import getApiUrl from '~/util/getApiUrl';
 import { FULL_FRACTION_NUMBER_FORMATTER, NUMBER_FORMATTER } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-import EntityCounter from './EntityCounter';
-import ThreeDotsLoader from './ThreeDotsLoader';
 
 type Props = {
   library: LibraryType;

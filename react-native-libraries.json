@@ -22858,6 +22858,7 @@
     "images": [
       "https://raw.githubusercontent.com/brandtnewlabs/react-native-livechart/main/assets/images/hero.webp"
     ],
+    "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
   },
@@ -23680,6 +23681,48 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/zyplot/tree/main/packages/zyplot",
+    "npmPkg": "@hzblj/zyplot",
+    "examples": ["https://github.com/hzblj/zyplot/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/zyplot/main/apps/website/public/apps/kraken/light.png",
+      "https://raw.githubusercontent.com/hzblj/zyplot/main/apps/website/public/apps/revolut/light.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-nitro-realtime-audio",
+    "npmPkg": "@mindinventory/react-native-nitro-realtime-audio",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-nitro-realtime-audio/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mahdidavoodi7/expo-thinking-orbs",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/melihmuratpesmen/expo-modern-table",
+    "examples": ["https://github.com/melihmuratpesmen/expo-modern-table/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo-mobile.gif",
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   },
   {
     "githubUrl": "https://github.com/gmi-software/react-native-pay/tree/main/package",
