@@ -1,58 +1,48 @@
-import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Fragment } from 'react';
+import { View } from 'react-native';
 
-import { A, colors, darkColors, Label, useLayout } from '~/common/styleguide';
-import CustomAppearanceContext from '~/context/CustomAppearanceContext';
+import { A, Label, useLayout } from '~/common/styleguide';
+import { WarningIcon } from '~/components/Icons';
+import { type LibraryDataEntryType } from '~/types';
+import { strippedBackground } from '~/util/style';
+import tw from '~/util/tailwind';
 
-import { Warning } from '../Icons';
+type Props = {
+  alternatives?: LibraryDataEntryType['alternatives'];
+  block?: boolean;
+};
 
-const UnmaintainedLabel = ({ alternatives }) => {
-  const { isDark } = useContext(CustomAppearanceContext);
+export default function UnmaintainedLabel({ alternatives, block }: Props) {
   const { isSmallScreen } = useLayout();
 
-  const linkHoverStyle = isDark && { color: colors.secondary };
-  const contentColor = isDark ? darkColors.secondary : colors.gray5;
-
   return (
-    <View style={styles.unmaintainedTextWrapper}>
+    <View style={tw`flex-shrink flex-row gap-1.5`}>
       <View
         style={[
-          styles.unmaintainedTextContainer,
-          {
-            flexDirection: isSmallScreen ? 'column' : 'row',
-            backgroundColor: isDark ? darkColors.dark : colors.gray1,
-            borderColor: isDark ? darkColors.border : colors.gray2,
-            // @ts-expect-error
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 20px, ${isDark ? '#18181f' : '#f0f0f0'} 20px, ${isDark ? '#18181f' : '#f0f0f0'} 40px)`,
-          },
+          tw`-ml-5 -mt-1.5 mb-1.5 mr-8 flex-shrink flex-row flex-wrap items-start gap-1 rounded-r border border-l-0 border-palette-gray3 bg-palette-gray1 py-1.5 pl-5 pr-3 dark:border-default dark:bg-dark`,
+          block && tw`ml-0 mr-0 rounded-lg rounded-r-lg border-l py-2 pl-3`,
+          isSmallScreen && tw`flex-col`,
+          strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
         ]}>
-        <View style={styles.unmaintainedTextWrapper}>
-          <Warning width={16} height={16} fill={contentColor} />
-          <Label
-            style={{
-              color: contentColor,
-            }}>
+        <View style={tw`flex-shrink flex-row gap-1.5`}>
+          <WarningIcon style={tw`size-4 text-warning-dark dark:text-warning`} />
+          <Label style={tw`text-warning-dark dark:text-warning`}>
             This library is not actively maintained.
           </Label>
         </View>
         {alternatives && alternatives.length > 0 && (
-          <Label
-            style={{
-              color: contentColor,
-            }}>
+          <Label style={tw`text-warning-dark dark:text-warning`}>
             You can use{' '}
             {alternatives.map((alternative, index) => (
-              <>
+              <Fragment key={alternative}>
                 <A
-                  key={alternative}
-                  href={`/?search=${encodeURIComponent(alternative)}`}
-                  style={{ backgroundColor: 'transparent' }}
-                  hoverStyle={linkHoverStyle}>
+                  href={`/package/${alternative}`}
+                  hoverStyle={tw`decoration-warning-dark dark:decoration-warning`}>
                   {alternative}
                 </A>
                 {index < alternatives.length - 1 && alternatives.length > 2 ? ', ' : ' '}
                 {index === alternatives.length - 2 && 'or '}
-              </>
+              </Fragment>
             ))}{' '}
             instead.
           </Label>
@@ -60,26 +50,4 @@ const UnmaintainedLabel = ({ alternatives }) => {
       </View>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  unmaintainedTextWrapper: {
-    flexDirection: 'row',
-    gap: 6,
-  },
-  unmaintainedTextContainer: {
-    alignItems: 'flex-start',
-    marginLeft: -20,
-    marginBottom: 8,
-    paddingLeft: 20,
-    paddingRight: 12,
-    paddingVertical: 6,
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    gap: 4,
-    borderWidth: 1,
-    borderLeftWidth: 0,
-  },
-});
-
-export default UnmaintainedLabel;
+}

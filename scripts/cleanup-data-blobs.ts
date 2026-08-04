@@ -1,4 +1,4 @@
-import { list, del } from '@vercel/blob';
+import { del, list } from '@vercel/blob';
 
 const BLOBS_LIMIT = 3;
 
@@ -13,7 +13,7 @@ async function deleteOutdatedBlobs() {
 
     await Promise.all(
       outdatedBlobs.map(async blob => {
-        await del(blob.url);
+        await del(blob.pathname);
       })
     );
 
@@ -23,4 +23,4 @@ async function deleteOutdatedBlobs() {
   }
 }
 
-deleteOutdatedBlobs();
+await deleteOutdatedBlobs();

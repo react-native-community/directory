@@ -1,14 +1,61 @@
-import { Library } from '../types';
+import { fetch } from 'bun';
+
+import { type LibraryDataEntryType, type LibraryType } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 
-export function sleep(ms = 0, msMax = null) {
+const GRAPHQL_API = 'https://api.github.com/graphql';
+const AUTHORIZATION = `bearer ${process.env.CI_CHECKS_TOKEN ?? process.env.GITHUB_TOKEN}`;
+
+export async function makeGraphqlQuery(query: string, variables = {}) {
+  const result = await fetch(GRAPHQL_API, {
+    method: 'POST',
+    headers: {
+      Authorization: AUTHORIZATION,
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+  if (result.ok) {
+    try {
+      return await result.json();
+    } catch (error: unknown) {
+      console.error('GitHub GraphQL response parse failed!', {
+        status: result.status,
+        statusText: result.statusText,
+        error: error instanceof Error ? error.message : String(error),
+      });
+      throw error;
+    }
+  } else {
+    console.error('GitHub GraphQL invalid response!', {
+      status: result.status,
+      statusText: result.statusText,
+      body: result?.body ? await result.text() : undefined,
+    });
+    throw new Error(`GitHub GraphQL invalid response: ${result.status}`);
+  }
+}
+
+export async function getUpdatedUrl(url: string) {
+  try {
+    const result = await fetch(url);
+    return result.url;
+  } catch {
+    return url;
+  }
+}
+
+export function sleep(ms = 0, msMax?: number) {
   return new Promise(r =>
     setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
   );
 }
 
-export function fillNpmName(library: Library) {
+export function fillNpmName<T extends LibraryType | LibraryDataEntryType>(library: T): T {
   if (!library.npmPkg) {
     const parts = library.githubUrl.split('/');
     library.npmPkg = parts[parts.length - 1].toLowerCase();
@@ -16,28 +63,38 @@ export function fillNpmName(library: Library) {
   return library;
 }
 
+const STOPWORDS = ['react-native', 'reactnative', 'react', 'native'];
+const STOPWORDS_PATTERN = new RegExp(`\\b(?:${STOPWORDS.join('|')})\\b`, 'gi');
+
 export function processTopics(topics?: string[]) {
-  return (topics || [])
+  if (!Array.isArray(topics)) {
+    return [];
+  }
+
+  return topics
     .map(topic =>
       topic
-        .replace(/([ _])/g, '-')
-        .replace('react-native-', '')
+        .normalize('NFKC')
         .toLowerCase()
+        .replace(/([ _])/g, '-')
+        .replace(STOPWORDS_PATTERN, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
         .trim()
     )
     .filter(topic => topic?.length);
 }
 
 function splitAndGetLastChunk(value: string, delimiter = '/') {
-  return value.split(delimiter).at(-1).toLowerCase();
+  return value.split(delimiter).at(-1)?.toLowerCase();
 }
 
-export function hasMismatchedPackageData(library: Library) {
+export function hasMismatchedPackageData(library: LibraryType) {
   const desiredName = library.npmPkg ?? splitAndGetLastChunk(library.githubUrl);
 
   if (library.github.registry && library.github.registry !== 'https://registry.npmjs.org/') {
     const registryScope = splitAndGetLastChunk(library.github.registry);
-    if (registryScope.startsWith('@')) {
+    if (registryScope?.startsWith('@')) {
       return library.github?.name.replace(`${registryScope}/`, '') !== desiredName;
     }
   }

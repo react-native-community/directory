@@ -1,44 +1,51 @@
 import Link from 'next/link';
-import { Platform, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { View } from 'react-native';
 
-import { P, colors } from '~/common/styleguide';
+import { P } from '~/common/styleguide';
+import CheckBox from '~/components/CheckBox';
+import { XIcon } from '~/components/Icons';
+import { type FilterParamsType, type Query } from '~/types';
+import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-import { CheckBox } from '../CheckBox';
+type Props = {
+  query: Query;
+  filterParam: FilterParamsType;
+  basePath?: string;
+  allowFalse?: boolean;
+};
 
-export const ToggleLink = ({ query, paramName, title, basePath = '/' }) => {
-  const isSelected = !!query[paramName];
+export function ToggleLink({ query, filterParam, basePath = '/packages', allowFalse }: Props) {
+  const [isHovered, setHovered] = useState(false);
+  const isSelected = !!query[filterParam.param];
+  const isFalsy = allowFalse && query[filterParam.param] === 'false';
 
   return (
     <Link
       href={urlWithQuery(basePath, {
         ...query,
-        [paramName]: !isSelected,
+        [filterParam.param]: !isSelected,
         offset: null,
       })}
-      style={{ textDecoration: 'none' }}>
-      <View style={styles.link}>
-        <CheckBox value={isSelected} color={colors.primaryDark} />
-        <P style={styles.text}>{title}</P>
+      style={tw`my-1 mr-4 no-underline`}>
+      <View
+        style={tw`cursor-pointer flex-row items-center`}
+        onPointerEnter={() => setHovered(true)}
+        onPointerLeave={() => setHovered(false)}>
+        <CheckBox
+          value={isSelected}
+          style={[
+            isFalsy && tw`border-error bg-error`,
+            isHovered && tw`border-primary-dark`,
+            isHovered && isFalsy && tw`border-error`,
+          ]}
+          Icon={isFalsy ? XIcon : undefined}
+        />
+        <P style={[tw`text-sm font-light leading-[18px]`, isHovered && tw`text-hover`]}>
+          {filterParam.title}
+        </P>
       </View>
     </Link>
   );
-};
-
-const styles = StyleSheet.create({
-  link: {
-    ...Platform.select({
-      web: {
-        cursor: 'pointer',
-      },
-    }),
-    marginRight: 16,
-    marginVertical: 4,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  text: {
-    fontSize: 14,
-    fontWeight: 300,
-  },
-});
+}

@@ -1,14 +1,10 @@
-import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
-import GoogleAnalytics from '~/components/GoogleAnalytics';
+import GoogleAnalytics from '~/components/Head/GoogleAnalytics';
+import StructuredData from '~/components/Head/StructuredData';
 
-class DirectoryWebsite extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
-
-  render = () => (
+function DirectoryWebsite() {
+  return (
     <Html lang="en">
       <Head>
         <GoogleAnalytics id="G-T0F1XSEWES" />
@@ -20,12 +16,60 @@ class DirectoryWebsite extends Document {
         <link rel="icon" href="/favicon.png?v=2" type="image/png" />
         <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" sizes="any" />
 
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="/icon-180px.png" />
+        <meta name="msapplication-TileColor" content="#20232a" />
+
+        <meta name="application-name" content="React Native Directory" />
+        <meta property="og:site_name" content="React Native Directory" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reactnative.directory" />
+
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          type="image/png"
-          href="/apple-touch-icon.png"
+          rel="preload"
+          href="/fonts/Optimistic-Display-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Optimistic-Display-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/JetBrainsMono-Variable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        <StructuredData
+          data={{
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'React Native Directory',
+            url: 'https://reactnative.directory/',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: 'https://reactnative.directory/packages?search={search_term_string}',
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          }}
         />
       </Head>
       <body>

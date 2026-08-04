@@ -1,62 +1,55 @@
-import { Library } from '../types';
+import { orderBy } from 'es-toolkit/array';
 
-export function compatibility(libraries: Library[]) {
+import { type LibraryType } from '~/types';
+
+export function issues(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.github.stats.issues], ['desc']);
+}
+
+export function stars(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.github.stats.stars], ['desc']);
+}
+
+export function downloads(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.npm?.downloads ?? 0], ['desc']);
+}
+
+export function updated(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => new Date(lib.github.stats.pushedAt).getTime()], ['desc']);
+}
+
+export function released(libraries: LibraryType[]) {
+  return orderBy(
+    libraries,
+    [lib => (lib.npm?.latestReleaseDate ? new Date(lib.npm.latestReleaseDate).getTime() : 0)],
+    ['desc']
+  );
+}
+
+export function quality(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.score], ['desc']);
+}
+
+export function popularity(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib?.popularity ?? 0], ['desc']);
+}
+
+export function relevance(libraries: LibraryType[]) {
   return libraries.sort((a, b) => {
-    const aCompat = [a.expoGo && typeof a.expoGo !== 'string', a.ios, a.android, a.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    const bCompat = [b.expoGo && typeof b.expoGo !== 'string', b.ios, b.android, b.web]
-      .map(value => Number(value))
-      .reduce((total, val) => {
-        return val ? total + val : total;
-      }, 0);
-
-    return bCompat - aCompat;
-  });
-}
-
-export function issues(libraries: Library[]) {
-  return libraries.sort((a, b) => b.github.stats.issues - a.github.stats.issues);
-}
-
-export function stars(libraries: Library[]) {
-  return libraries.sort((a, b) => b.github.stats.stars - a.github.stats.stars);
-}
-
-export function downloads(libraries: Library[]) {
-  return libraries.sort((a, b) => {
-    const bDownloads = b.npm.downloads ? b.npm.downloads : 0;
-    const aDownloads = a.npm.downloads ? a.npm.downloads : 0;
-
-    return bDownloads - aDownloads;
-  });
-}
-
-export function updated(libraries: Library[]) {
-  return libraries.sort((a, b) => {
-    return (
-      new Date(b.github.stats.pushedAt).getTime() - new Date(a.github.stats.pushedAt).getTime()
-    );
-  });
-}
-
-export function quality(libraries: Library[]) {
-  return libraries.sort((a, b) => b.score - a.score);
-}
-
-export function popularity(libraries: Library[]) {
-  return libraries.sort((a, b) => b.popularity - a.popularity);
-}
-
-export function relevance(libraries: Library[]) {
-  return libraries.sort((a, b) => {
-    if (Math.abs(a.matchScore - b.matchScore) >= 50) {
-      return b.matchScore - a.matchScore;
+    if (a.matchScore && b.matchScore) {
+      if (a.matchScore < 10 || b.matchScore < 10 || Math.abs(a.matchScore - b.matchScore) >= 40) {
+        return b.matchScore - a.matchScore;
+      }
+      return b.score - a.score;
     }
-
-    return b.score - a.score;
+    return 0;
   });
+}
+
+export function dependencies(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.github.stats?.dependencies ?? 0], ['desc']);
+}
+
+export function bundleSize(libraries: LibraryType[]) {
+  return orderBy(libraries, [lib => lib.npm?.size ?? 0], ['desc']);
 }
