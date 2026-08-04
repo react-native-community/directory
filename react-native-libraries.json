@@ -11869,6 +11869,7 @@
   },
   {
     "githubUrl": "https://github.com/bluesky-social/react-native-uitextview",
+    "npmPkg": "@bsky.app/react-native-uitextview",
     "examples": ["https://github.com/bluesky-social/react-native-uitextview/tree/main/example"],
     "ios": true
   },
@@ -19556,6 +19557,8 @@
     "githubUrl": "https://github.com/xerdnu/react-native-blasted-image",
     "ios": true,
     "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported via the New Architecture interop layer. Requires React Native 0.74+ when the New Architecture is enabled.",
     "fireos": true
   },
   {
@@ -19757,13 +19760,6 @@
     "githubUrl": "https://github.com/notixit/rn-hide-home-indicator",
     "ios": true,
     "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/mmpotulo28/react-native-package-checker",
-    "android": true,
-    "expoGo": true,
-    "newArchitecture": true,
-    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/vLaD1m1r99/expo-stream-audio",
@@ -22862,6 +22858,7 @@
     "images": [
       "https://raw.githubusercontent.com/brandtnewlabs/react-native-livechart/main/assets/images/hero.webp"
     ],
+    "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
   },
@@ -23389,7 +23386,6 @@
   },
   {
     "githubUrl": "https://github.com/chhsiao1981/use-thunk",
-    "npmPkg": "@chhsiao1981/use-thunk",
     "examples": [
       "https://chhsiao1981.github.io/demo-use-thunk/",
       "https://chhsiao1981.github.io/demo-use-thunk-tic-tac-toe/"
@@ -23629,5 +23625,138 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/d3sm/kalendar",
+    "npmPkg": "@d3sm/kalendar",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/softwhere-uz/expo-yandex-mapkit",
+    "ios": true,
+    "android": true,
+    "examples": ["https://github.com/softwhere-uz/expo-yandex-mapkit/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/akashskypatel/ffmpeg-kit-extended/tree/HEAD/react-native",
+    "npmPkg": "ffmpeg-kit-extended",
+    "examples": [
+      "https://github.com/akashskypatel/ffmpeg-kit-extended/tree/HEAD/react-native/tree/HEAD/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/akashskypatel/ffmpeg-kit-extended/refs/heads/master/assets/banner_react.png",
+      "https://raw.githubusercontent.com/akashskypatel/ffmpeg-kit-extended/refs/heads/master/flutter/doc/demo.gif"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "macos": true,
+    "tvos": true,
+    "windows": true
+  },
+  {
+    "githubUrl": "https://github.com/softwhere-uz/react-native-emoji-keyboard/tree/main/packages/react-native-emoji-keyboard",
+    "npmPkg": "@softwhere-uz/react-native-emoji-keyboard",
+    "examples": ["https://github.com/softwhere-uz/react-native-emoji-keyboard/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/mdjastrzebski/react-native-memory-footprint",
+    "examples": [
+      "https://github.com/mdjastrzebski/react-native-memory-footprint/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ydrea/react-native-cumquat",
+    "examples": ["https://github.com/ydrea/react-native-cumquat/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/scrollDynasty/react-native-drum-picker",
+    "examples": ["https://github.com/scrollDynasty/react-native-drum-picker/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/zyplot/tree/main/packages/zyplot",
+    "npmPkg": "@hzblj/zyplot",
+    "examples": ["https://github.com/hzblj/zyplot/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/zyplot/main/apps/website/public/apps/kraken/light.png",
+      "https://raw.githubusercontent.com/hzblj/zyplot/main/apps/website/public/apps/revolut/light.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Mindinventory/react-native-nitro-realtime-audio",
+    "npmPkg": "@mindinventory/react-native-nitro-realtime-audio",
+    "examples": [
+      "https://github.com/Mindinventory/react-native-nitro-realtime-audio/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": false,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mahdidavoodi7/expo-thinking-orbs",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/melihmuratpesmen/expo-modern-table",
+    "examples": ["https://github.com/melihmuratpesmen/expo-modern-table/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo-mobile.gif",
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-pay/tree/main/package",
+    "npmPkg": "@gmisoftware/react-native-pay",
+    "examples": ["https://github.com/gmi-software/react-native-pay/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-better-clustering/tree/main/package",
+    "npmPkg": "react-native-better-clustering",
+    "examples": [
+      "https://github.com/gmi-software/react-native-better-clustering/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-better-maps/tree/main/package",
+    "npmPkg": "react-native-better-maps",
+    "examples": ["https://github.com/gmi-software/react-native-better-maps/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]

@@ -415,7 +415,7 @@ select {
     margin-bottom: 0;
   }
 
-  div + div {
+  > div + div {
     margin-top: 12px;
   }
 
@@ -499,6 +499,10 @@ select {
 
       a {
         display: inline-flex;
+      }
+
+      img {
+        margin: 0 auto;
       }
     }
 

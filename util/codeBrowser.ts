@@ -112,15 +112,17 @@ export const DIRECTORY_WARNINGS = [
     message: 'This directory should not be part of the bundle and can be safely ignored.',
     fileNames: [
       '.github',
-      '.github/workflows',
       '.gradle',
       '.idea',
+      '.vs',
       '__tests__',
       '__mocks__',
       'coverage',
       'docs',
       'example',
       'examples',
+      'mocks',
+      'testing',
     ],
   },
 ];
@@ -160,7 +162,25 @@ export function getDirectoryWarning(directoryName?: string) {
   if (!directoryName) {
     return undefined;
   }
-  return DIRECTORY_WARNINGS.find(warning => warning.fileNames.some(dir => dir === directoryName));
+  return DIRECTORY_WARNINGS.find(warning =>
+    warning.fileNames.some(dir => directoryMatchesWarning(directoryName, dir))
+  );
+}
+
+function directoryMatchesWarning(directoryName: string, warningDirectoryName: string) {
+  const directorySegments = directoryName.split('/').filter(Boolean);
+  const warningSegments = warningDirectoryName.split('/').filter(Boolean);
+
+  if (warningSegments.length === 0 || warningSegments.length > directorySegments.length) {
+    return false;
+  }
+
+  return directorySegments.some((_, startIndex) =>
+    warningSegments.every(
+      (warningSegment, warningSegmentIndex) =>
+        directorySegments[startIndex + warningSegmentIndex] === warningSegment
+    )
+  );
 }
 
 export function getCodeBrowserFilePath(path: string, prefix?: string) {

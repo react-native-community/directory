@@ -26,10 +26,10 @@ export function CodeBrowserFileIcon({
   const fileExtension = label.split('.').at(-1) ?? 'text';
   const isImageFile = IMAGE_FILES.includes(fileExtension);
   const style = [
-    tw`size-4 shrink-0 text-icon`,
-    isNested && tw`size-3 text-palette-gray5`,
+    tw`size-4 shrink-0 text-icon opacity-80`,
+    isNested && tw`size-3 text-palette-gray5 opacity-100`,
     isActive && tw`text-primary-darker dark:text-primary-dark`,
-    isDirectory && tw`text-tertiary dark:text-accented`,
+    isDirectory && tw`text-tertiary opacity-100 dark:text-accented`,
   ];
 
   if (isDirectory) {
