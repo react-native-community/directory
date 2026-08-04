@@ -23712,5 +23712,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/melihmuratpesmen/expo-modern-table",
+    "examples": ["https://github.com/melihmuratpesmen/expo-modern-table/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo-mobile.gif",
+      "https://raw.githubusercontent.com/melihmuratpesmen/expo-modern-table/main/docs/media/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
