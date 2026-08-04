@@ -23707,8 +23707,15 @@
     "newArchitecture": true
   },
   {
+
+    "githubUrl": "https://github.com/mahdidavoodi7/expo-thinking-orbs",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/melihmuratpesmen/expo-modern-table",
-    "npmPkg": "expo-modern-table",
     "examples": [
       "https://github.com/melihmuratpesmen/expo-modern-table/tree/main/example"
     ],
