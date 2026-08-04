@@ -23620,13 +23620,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/getonramp/onramp-sdk/tree/main/packages/sdk-react-native",
-    "npmPkg": "@onramp-sdk/react-native",
-    "ios": true,
-    "android": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/d3sm/kalendar",
     "npmPkg": "@d3sm/kalendar",
     "ios": true,
@@ -23758,5 +23751,12 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/getonramp/onramp-sdk/tree/main/packages/sdk-react-native",
+    "npmPkg": "@onramp-sdk/react-native",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
