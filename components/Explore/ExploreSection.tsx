@@ -1,19 +1,14 @@
-import dynamic from 'next/dynamic';
 import { createElement, type FunctionComponent } from 'react';
 import { View } from 'react-native';
 
 import { A, H3, P } from '~/common/styleguide';
 import { type IconProps } from '~/components/Icons';
-import LoadingContent from '~/components/Library/LoadingContent';
+import { LibraryWithLoading } from '~/components/Library/LibraryWithLoading';
 import { type LibraryType, type Query } from '~/types';
 import { POPULAR_QUERY_BASE } from '~/util/Constants';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
-  loading: () => <LoadingContent width="48.5%" height={210} wrapperStyle={tw`mx-[0.75%]`} />,
-});
 
 type Props = {
   data: LibraryType[];
@@ -23,6 +18,7 @@ type Props = {
 };
 
 const UPDATED_IN = 1000 * TimeRange.MONTH * 3;
+
 export default function ExploreSection({ data, title, icon, queryParams }: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
@@ -38,7 +34,9 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
           {title}
         </A>
       </H3>
-      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data)}</View>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
+        <ExploreLibrariesList list={data} />
+      </View>
       <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A
@@ -56,7 +54,9 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
   );
 }
 
-function renderLibs(list: LibraryType[]) {
+type ExploreLibrariesListProps = { list: LibraryType[] };
+
+function ExploreLibrariesList({ list }: ExploreLibrariesListProps) {
   const now = Date.now();
   return list
     .filter(({ github }) => now - new Date(github.stats.updatedAt).getTime() < UPDATED_IN)
@@ -64,6 +64,7 @@ function renderLibs(list: LibraryType[]) {
       <LibraryWithLoading
         key={`explore-item-${item.npmPkg}`}
         library={item}
+        loadingVariant="grid"
         showTrendingMark
         skipMetadata
       />

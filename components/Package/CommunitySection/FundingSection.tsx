@@ -1,12 +1,13 @@
 import { UL } from '@expo/html-elements';
-import { useMemo } from 'react';
+import { orderBy } from 'es-toolkit/array';
 import useSWR from 'swr';
 
 import { H6Section, useLayout } from '~/common/styleguide';
-import FundingRow from '~/components/Package/FoundingRow';
 import { type LibraryFundingLink } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
+
+import FundingRow from './FoundingRow';
 
 type Props = {
   fullName: string;
@@ -27,7 +28,7 @@ export default function FundingSection({ fullName }: Props) {
     }
   );
 
-  const links = useMemo(() => sortFundingLinks(data?.fundingLinks ?? []), [data]);
+  const links = sortFundingLinks(data?.fundingLinks ?? []);
 
   if (isLoading || links.length === 0) {
     return null;
@@ -46,25 +47,12 @@ export default function FundingSection({ fullName }: Props) {
 }
 
 function sortFundingLinks(links: LibraryFundingLink[]) {
-  return links.sort((a, b) => {
-    const aIsGitHub = a.platform === 'GITHUB';
-    const bIsGitHub = b.platform === 'GITHUB';
-
-    if (aIsGitHub !== bIsGitHub) {
-      return aIsGitHub ? -1 : 1;
-    }
-
-    const aIsCustom = a.platform === 'CUSTOM';
-    const bIsCustom = b.platform === 'CUSTOM';
-
-    if (aIsCustom !== bIsCustom) {
-      return aIsCustom ? 1 : -1;
-    }
-
-    if (aIsCustom && bIsCustom) {
-      return a.url.localeCompare(b.url);
-    }
-
-    return a.platform.localeCompare(b.platform);
-  });
+  return orderBy(
+    links,
+    [
+      link => (link.platform === 'GITHUB' ? 0 : link.platform === 'CUSTOM' ? 2 : 1),
+      link => (link.platform === 'CUSTOM' ? link.url : link.platform),
+    ],
+    ['asc', 'asc']
+  );
 }

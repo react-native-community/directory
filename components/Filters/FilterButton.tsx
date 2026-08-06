@@ -1,3 +1,4 @@
+import { intersection } from 'es-toolkit/array';
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { P } from '~/common/styleguide';
@@ -18,10 +19,7 @@ type Props = {
 };
 
 export function FilterButton({ isFilterVisible, query, onPress, onClearAllPress, style }: Props) {
-  const filterCount = Object.keys(query).reduce(
-    (acc, q) => (ALL_FILTERS_PARAMS.includes(q as keyof Query) ? acc + 1 : acc),
-    0
-  );
+  const filterCount = intersection(Object.keys(query), ALL_FILTERS_PARAMS).length;
   const isFilterCount = !!filterCount;
 
   return (

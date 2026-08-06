@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { A, Label } from '~/common/styleguide';
 import { CheckIcon, QuestionIcon, XIcon } from '~/components/Icons';
 import { Tag } from '~/components/Tag';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 import { pluralize } from '~/util/strings';

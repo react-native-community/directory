@@ -1,5 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
+import { sumBy } from 'es-toolkit/math';
+import { useEffect, useRef, useState } from 'react';
+import {
+  type ColorValue,
+  type NativePointerEvent,
+  type NativeSyntheticEvent,
+  ScrollView,
+  TextInput,
+  View,
+} from 'react-native';
 import useSWR from 'swr';
 
 import { Label, P, useLayout } from '~/common/styleguide';
@@ -20,6 +28,11 @@ import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
 
+const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
+const DEFAULT_FILE_TREE_WIDTH = 340;
+const MIN_FILE_TREE_WIDTH = 260;
+const MAX_FILE_TREE_WIDTH = 480;
+
 type Props = {
   library: LibraryType;
   selectedVersion: string;
@@ -39,9 +52,14 @@ export default function CodeBrowser({
 }: Props) {
   const { isSmallScreen } = useLayout();
   const inputRef = useRef<TextInput>(null);
+  const fileTreeResizeStartRef = useRef<{ startX: number; startWidth: number } | null>(null);
 
   const [search, setSearch] = useState('');
   const [isInputFocused, setInputFocused] = useState(false);
+  const [fileTreeWidth, setFileTreeWidth] = useState(() =>
+    getStoredFileTreeWidth(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX)
+  );
+  const [isFileTreeResizing, setFileTreeResizing] = useState(false);
 
   const { data, isLoading } = useSWR<UnpkgMeta>(
     `/api/proxy/unpkg?name=${library.npmPkg}&version=${selectedVersion}&path=?meta`,
@@ -52,11 +70,67 @@ export default function CodeBrowser({
     }
   );
 
-  const normalizedSearch = useMemo(() => search.trim().toLowerCase(), [search]);
+  useEffect(() => {
+    window.localStorage.setItem(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX, String(fileTreeWidth));
+  }, [fileTreeWidth]);
 
-  const filteredFiles = useMemo(() => {
-    const files = data?.files ?? [];
+  useEffect(() => {
+    if (!isFileTreeResizing) {
+      return;
+    }
 
+    function handlePointerMove(event: PointerEvent) {
+      const start = fileTreeResizeStartRef.current;
+
+      if (!start) {
+        return;
+      }
+
+      setFileTreeWidth(clampFileTreeWidth(start.startWidth + (event.clientX - start.startX)));
+    }
+
+    function endResizing() {
+      fileTreeResizeStartRef.current = null;
+      setFileTreeResizing(false);
+    }
+
+    function clampWidthToViewport() {
+      setFileTreeWidth(currentWidth => clampFileTreeWidth(currentWidth));
+    }
+
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    document.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('pointerup', endResizing);
+    document.addEventListener('pointercancel', endResizing);
+    window.addEventListener('resize', clampWidthToViewport);
+
+    return () => {
+      document.body.style.cursor = 'auto';
+      document.body.style.userSelect = 'auto';
+      document.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('pointerup', endResizing);
+      document.removeEventListener('pointercancel', endResizing);
+      window.removeEventListener('resize', clampWidthToViewport);
+    };
+  }, [isFileTreeResizing]);
+
+  function startFileTreeResize(event: NativeSyntheticEvent<NativePointerEvent>) {
+    event.preventDefault();
+
+    fileTreeResizeStartRef.current = {
+      startX: event.nativeEvent.clientX,
+      startWidth: fileTreeWidth,
+    };
+
+    setFileTreeResizing(true);
+  }
+
+  const normalizedSearch = search.trim().toLowerCase();
+
+  const files = data?.files ?? [];
+
+  const filteredFiles = (() => {
     if (!normalizedSearch) {
       return files;
     }
@@ -97,42 +171,18 @@ export default function CodeBrowser({
       }
 
       visiblePaths.add(currentPath);
-
       queue.push(...(relatedPaths.get(currentPath) ?? []));
     }
 
     return files.filter(file => visiblePaths.has(file.path));
-  }, [data?.files, data?.prefix, normalizedSearch]);
+  })();
 
-  const fileTree = useMemo(
-    () => buildCodeBrowserFileTree(filteredFiles, data?.prefix),
-    [filteredFiles, data?.prefix]
-  );
-
-  const totalFilesSize = useMemo(
-    () => filteredFiles.reduce((total, file) => total + (file.size ?? 0), 0),
-    [filteredFiles]
-  );
-
-  const activeFileData = useMemo(
-    () => data?.files.find(file => file.path === `${data.prefix}${activeFile}`),
-    [data?.files, data?.prefix, activeFile]
-  );
-
-  const allFilePaths = useMemo(
-    () => new Set((data?.files ?? []).map(file => getCodeBrowserFilePath(file.path, data?.prefix))),
-    [data?.files, data?.prefix]
-  );
-
-  useEffect(() => {
-    if (!data) {
-      return;
-    }
-
-    if (activeFile && !allFilePaths.has(activeFile)) {
-      onSelectFile(null);
-    }
-  }, [activeFile, allFilePaths, data, onSelectFile]);
+  const fileTree = buildCodeBrowserFileTree(filteredFiles, data?.prefix);
+  const totalFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
+  const activeFileData = activeFile
+    ? files.find(file => file.path === `${data?.prefix}${activeFile}`)
+    : undefined;
+  const resolvedActiveFile = activeFileData ? activeFile : null;
 
   return (
     <View
@@ -157,7 +207,12 @@ export default function CodeBrowser({
             isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
             isSmallScreen && tw`flex-col`,
           ]}>
-          <View>
+          <View
+            style={[
+              tw`relative z-10 flex h-full flex-shrink-0`,
+              !isSmallScreen && { width: fileTreeWidth },
+              isSmallScreen && tw`w-full`,
+            ]}>
             <View
               style={[
                 tw`relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-default`,
@@ -189,7 +244,7 @@ export default function CodeBrowser({
                 onFocus={() => setInputFocused(true)}
                 onBlur={() => setInputFocused(false)}
                 onChangeText={setSearch}
-                placeholder="Search files..."
+                placeholder="Search files…"
                 style={[
                   tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 pl-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
                   isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
@@ -202,16 +257,16 @@ export default function CodeBrowser({
               id="codeBrowserList"
               style={[
                 tw`border-palette-gray2 dark:border-default`,
-                !isSmallScreen && tw`w-[340px] flex-grow border-r`,
-                !isSmallScreen && isBrowserMaximized && tw`w-[16vw] min-w-[340px]`,
+                !isSmallScreen && tw`flex-1 border-r`,
                 isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
+                isFileTreeResizing && tw`pointer-events-none`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (
                 <>
                   <CodeBrowserFileTree
                     tree={fileTree}
-                    activeFile={activeFile}
+                    activeFile={resolvedActiveFile}
                     onSelectFile={onSelectFile}
                     isSearchActive={Boolean(normalizedSearch)}
                   />
@@ -223,6 +278,17 @@ export default function CodeBrowser({
                 </View>
               )}
             </ScrollView>
+            {!isSmallScreen && (
+              <View
+                accessibilityRole="adjustable"
+                onPointerDown={startFileTreeResize}
+                style={[
+                  tw`absolute -right-0.5 top-0 z-10 h-full w-1 opacity-40`,
+                  { cursor: 'col-resize' },
+                  isFileTreeResizing && tw`bg-palette-gray3 dark:bg-palette-gray5`,
+                ]}
+              />
+            )}
             {filteredFiles.length > 0 && (
               <CodeBrowserContentFooter
                 style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
@@ -248,6 +314,7 @@ export default function CodeBrowser({
             ]}>
             {activeFile && activeFileData ? (
               <CodeBrowserContent
+                key={activeFile}
                 packageName={library.npmPkg}
                 repoUrl={library.github.urls.repo}
                 selectedVersion={selectedVersion}
@@ -257,7 +324,7 @@ export default function CodeBrowser({
                 toggleMaximized={toggleMaximized}
               />
             ) : (
-              <View style={tw`flex flex-col items-center gap-1 px-3`}>
+              <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
                 <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
                 <P style={tw`text-center`}>Select file to preview from the list on the left.</P>
               </View>
@@ -267,4 +334,28 @@ export default function CodeBrowser({
       )}
     </View>
   );
+}
+
+function getStoredFileTreeWidth(storageKey: string) {
+  if (typeof window === 'undefined') {
+    return DEFAULT_FILE_TREE_WIDTH;
+  }
+
+  const storedWidth = Number(window.localStorage.getItem(storageKey));
+
+  if (!Number.isFinite(storedWidth)) {
+    return DEFAULT_FILE_TREE_WIDTH;
+  }
+
+  return clampFileTreeWidth(storedWidth);
+}
+
+function clampFileTreeWidth(width: number) {
+  if (typeof window === 'undefined') {
+    return Math.max(MIN_FILE_TREE_WIDTH, width);
+  }
+
+  const maxWidth = Math.max(MIN_FILE_TREE_WIDTH, MAX_FILE_TREE_WIDTH);
+
+  return Math.min(Math.max(width, MIN_FILE_TREE_WIDTH), maxWidth);
 }

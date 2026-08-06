@@ -25,13 +25,14 @@ Return a list of libraries from the dataset. Supports sorting, full-text search,
   - `search` - full-text search string (`relevance` sorting is used automatically when searching).
   - `owner` - filter by owner name.
   - `topic` - filter by topic or tag.
-  - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `expoGo`, `fireos`, `horizon`, `tvos`, `visionos`, `vegaos`.
+  - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `expoGo`, `fireos`, `harmony`, `horizon`, `tvos`, `visionos`, `vegaos`.
   - Feature filters (booleans): `hasExample`, `hasImage`, `hasTypes`, `hasNativeCode`, `configPlugin`.
   - Quality filters (booleans): `isMaintained`, `isPopular`, `wasRecentlyUpdated`.
   - Architecture filters (booleans): `newArchitecture`, `expoModule`, `nitroModule`, `turboModule`.
-  - Skip categories (booleans): `skipLibs`, `skipTools`, `skipTemplates`.
+  - Skip categories (booleans): `skipLibs`, `skipTools`.
   - Numeric filters: `minPopularity`, `minMonthlyDownloads`.
   - `nightlyProgram` - boolean flag for Nightly Program participation.
+  - `dev` - boolean flag to filter out Development Tools only.
   - `bookmarks` - when set, the server reads browser cookie bookmarks and returns only bookmarked libraries (see Notes below).
   - Pagination: `offset` (number, default `0`), `limit` (number, default `20`).
 

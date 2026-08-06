@@ -47,9 +47,7 @@ type SizeIncreaseWarning = {
   };
 };
 
-export function analyzeRecentPackageSizeIncrease(
-  data: PackageVersionsData
-): SizeIncreaseWarning | null {
+function analyzeRecentPackageSizeIncrease(data: PackageVersionsData): SizeIncreaseWarning | null {
   const versions = data.versions ?? {};
   const time = data.time ?? {};
 

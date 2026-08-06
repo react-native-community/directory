@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Platform, View } from 'react-native';
 
 import { A, HoverEffect, useLayout } from '~/common/styleguide';
@@ -7,7 +6,7 @@ import CompatibilityTags from '~/components/CompatibilityTags';
 import { GitHubIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdatedAtView';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import tw from '~/util/tailwind';
 
@@ -126,18 +125,18 @@ function Library({
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
           <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
-            {library.images.map(image => (
-              <Thumbnail key={image} url={image} />
+            {library.images.map((image, i) => (
+              <Thumbnail key={image} url={image} alt={`${library.npmPkg} screenshot ${i + 1}`} />
             ))}
           </View>
         )}
-        {!skipSecondaryMetadata && hasSecondaryMetadata ? (
+        {!skipSecondaryMetadata && hasSecondaryMetadata && (
           <View style={[tw`mt-auto w-full`, isSmallScreen && tw`relative mt-0 min-h-0`]}>
-            <View style={[tw`mt-3 flex-row flex-wrap items-center gap-2.5 gap-y-0.5`]}>
+            <View style={tw`mt-3 flex-row flex-wrap items-center gap-2.5 gap-y-0.5`}>
               <MetaData library={library} secondary />
             </View>
           </View>
-        ) : null}
+        )}
       </View>
       {skipMetadata ? null : (
         <View
@@ -152,4 +151,4 @@ function Library({
   );
 }
 
-export default memo(Library);
+export default Library;

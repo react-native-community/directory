@@ -113,7 +113,7 @@ export default function Scoring() {
           <View style={tw`mt-3 px-4`}>
             <code>(lastWeekDownloads / Math.floor(monthlyDownloads / 4.25)) / 5</code>
           </View>
-          <P style={[tw`mt-3 flex text-sm font-light text-palette-gray4 dark:text-secondary`]}>
+          <P style={tw`mt-3 flex text-sm font-light text-palette-gray4 dark:text-secondary`}>
             The value range span can be quite wide, but most of the packages Popularity Gain value
             fits within +/- 100 range.
           </P>

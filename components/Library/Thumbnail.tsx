@@ -1,5 +1,5 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
 import { ThumbnailIcon } from '~/components/Icons';
@@ -7,11 +7,12 @@ import tw from '~/util/tailwind';
 
 type Props = {
   url: string;
+  alt: string;
 };
 
 const GITHUB_PREVIEW_MIN_WIDTH = 640;
 
-function Thumbnail({ url }: Props) {
+function Thumbnail({ url, alt }: Props) {
   const { width, height } = useWindowDimensions();
 
   const [isLoaded, setLoaded] = useState(false);
@@ -56,7 +57,7 @@ function Thumbnail({ url }: Props) {
             <img
               src={url}
               onLoad={() => setLoaded(true)}
-              alt=""
+              alt={alt}
               style={{
                 ...tw`rounded`,
                 maxWidth: maxPreviewImageWidth,
@@ -70,4 +71,4 @@ function Thumbnail({ url }: Props) {
   );
 }
 
-export default memo(Thumbnail);
+export default Thumbnail;

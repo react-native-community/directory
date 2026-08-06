@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { View } from 'react-native';
 
 import { A, Caption, H6Section, useLayout } from '~/common/styleguide';
@@ -16,10 +15,7 @@ import tw from '~/util/tailwind';
 export default function PackageScoreScene({ apiData, packageName }: PackageScorePageProps) {
   const { isSmallScreen } = useLayout();
 
-  const library = useMemo(
-    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
-    [apiData.libraries, packageName]
-  );
+  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
   if (!library) {
     return <NotFound />;

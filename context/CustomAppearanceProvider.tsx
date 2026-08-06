@@ -1,4 +1,4 @@
-import { type PropsWithChildren, useEffect, useMemo, useRef } from 'react';
+import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { type RnColorScheme } from 'twrnc';
 
 import tw, { useAppColorScheme, useDeviceContext } from '~/util/tailwind';
@@ -11,10 +11,7 @@ const defaultState = { isDark: false };
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
   const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
   const colorSchemeRef = useRef<RnColorScheme>(colorScheme);
-  const initialScheme = useMemo<RnColorScheme>(
-    () => (readStoredAppearance() ? 'dark' : 'light'),
-    []
-  );
+  const initialScheme = readStoredAppearance() ? 'dark' : 'light';
 
   useEffect(() => {
     applyTheme(initialScheme);
@@ -29,15 +26,17 @@ export default function CustomAppearanceProvider({ children }: PropsWithChildren
     initialColorScheme: initialScheme ?? 'light',
   });
 
-  function toggleTheme() {
-    const newTheme: RnColorScheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme);
-    setColorScheme(newTheme);
-    writeAppearanceToStore(newTheme === 'dark');
-  }
+  const value = {
+    toggleTheme: () => {
+      const newTheme: RnColorScheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+      setColorScheme(newTheme);
+      writeAppearanceToStore(newTheme === 'dark');
+    },
+  };
 
   return (
-    <CustomAppearanceContext.Provider key={colorScheme} value={{ toggleTheme }}>
+    <CustomAppearanceContext.Provider key={colorScheme} value={value}>
       {children}
     </CustomAppearanceContext.Provider>
   );

@@ -1,5 +1,5 @@
 import { Header as HtmlHeader } from '@expo/html-elements';
-import { useContext } from 'react';
+import { use } from 'react';
 import { View } from 'react-native';
 
 import { A, H5, useLayout } from '~/common/styleguide';
@@ -12,7 +12,7 @@ import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
 
 export default function TopBar() {
-  const { toggleTheme } = useContext(CustomAppearanceContext);
+  const { toggleTheme } = use(CustomAppearanceContext);
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
   return (

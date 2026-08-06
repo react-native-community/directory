@@ -4,7 +4,7 @@ import { type Style } from 'twrnc';
 
 import { Button } from '~/components/Button';
 import { CheckSquareIcon, CopyIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 type Props = {

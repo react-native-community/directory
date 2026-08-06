@@ -1,3 +1,18 @@
+import { Children, isValidElement, type PropsWithChildren, type ReactNode } from 'react';
+
+export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
+  notation: 'compact',
+  compactDisplay: 'short',
+  maximumFractionDigits: 2,
+});
+
+export const FULL_FRACTION_NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
+  notation: 'compact',
+  compactDisplay: 'short',
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+});
+
 export function pluralize(word: string, count: number) {
   if (count === 1) {
     return word;
@@ -16,14 +31,6 @@ export function pluralize(word: string, count: number) {
 
 export function isEmptyOrNull(text?: string) {
   return !text || !text.trim();
-}
-
-export function formatNumberToString(quantity: number) {
-  return new Intl.NumberFormat('en-US', {
-    notation: 'compact',
-    compactDisplay: 'short',
-    maximumFractionDigits: 2,
-  }).format(quantity);
 }
 
 export function formatPackageManager(pmRaw?: string) {
@@ -45,4 +52,22 @@ export function formatPackageManager(pmRaw?: string) {
     }
     return 'Yarn';
   }
+}
+
+export function childrenToText(children: ReactNode): string {
+  return Children.toArray(children)
+    .map(child => {
+      if (typeof child === 'string' || typeof child === 'number') {
+        return String(child);
+      }
+
+      if (isValidElement<PropsWithChildren>(child)) {
+        return childrenToText(child.props.children);
+      }
+
+      return '';
+    })
+    .join('')
+    .replaceAll(/\./g, '')
+    .toLowerCase();
 }

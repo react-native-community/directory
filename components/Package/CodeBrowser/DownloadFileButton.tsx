@@ -1,6 +1,6 @@
 import { Button } from '~/components/Button';
 import { DownloadFileIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 type Props = {

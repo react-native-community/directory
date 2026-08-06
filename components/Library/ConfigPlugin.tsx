@@ -27,11 +27,3 @@ export function ConfigPluginContent({
   }
   return <P style={paragraphStyles}>Config plugin</P>;
 }
-
-export function getConfigPluginText(configPlugin: LibraryDataEntryType['configPlugin']) {
-  if (typeof configPlugin === 'string') {
-    return `Expo config plugin available as a separate package`;
-  } else if (configPlugin) {
-    return 'Expo config plugin included';
-  }
-}

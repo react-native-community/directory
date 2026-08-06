@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { type ColorValue, TextInput, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -7,6 +7,11 @@ import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { SearchIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
+import {
+  isSearchShortcutPressed,
+  useSearchInputFocus,
+  useSearchShortcut,
+} from '~/hooks/useSearchInput';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
@@ -26,45 +31,24 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   const { isSmallScreen } = useLayout();
 
   const [shouldShowAll, setShowAll] = useState(false);
-  const [isInputFocused, setInputFocused] = useState(false);
   const inputRef = useRef<TextInput>(null);
+  const isApple = useSearchShortcut(inputRef);
+  const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
-  const routeVersionSearch = useMemo(
-    () => parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '',
-    [router.query]
-  );
+  const routeVersionSearch = parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '';
   const [versionSearch, setVersionSearch] = useState(routeVersionSearch);
 
-  useEffect(() => {
-    setVersionSearch(currentVersionSearch =>
-      currentVersionSearch === routeVersionSearch ? currentVersionSearch : routeVersionSearch
-    );
-  }, [routeVersionSearch]);
-
-  useEffect(() => setShowAll(false), [versionSearch]);
-
-  const versions = useMemo(
-    () =>
-      Object.entries(registryData.versions).sort(
-        (a, b) => -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
-      ),
-    [registryData]
+  const versions = Object.entries(registryData.versions).sort(
+    (a, b) => -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
   );
-
-  const filteredVersions = useMemo(
-    () =>
-      versionSearch
-        ? versions.filter(([version, versionData]) =>
-            [version, versionData.version].some(value =>
-              value.toLowerCase().includes(versionSearch)
-            )
-          )
-        : versions,
-    [versionSearch, versions]
-  );
-  const visibleVersions = useMemo(
-    () => filteredVersions.slice(0, shouldShowAll ? filteredVersions.length : VERSIONS_TO_SHOW),
-    [filteredVersions, shouldShowAll]
+  const filteredVersions = versionSearch
+    ? versions.filter(([version, versionData]) =>
+        [version, versionData.version].some(value => value.toLowerCase().includes(versionSearch))
+      )
+    : versions;
+  const visibleVersions = filteredVersions.slice(
+    0,
+    shouldShowAll ? filteredVersions.length : VERSIONS_TO_SHOW
   );
 
   const updateVersionSearchQuery = useDebouncedCallback((versionSearch: string) => {
@@ -75,12 +59,14 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
     <>
       <H6Section style={tw`mt-3 flex items-end justify-between text-secondary`}>
         <span>Versions</span>
-        <Label style={tw`font-light text-secondary`}>
-          <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
-            {filteredVersions.length}
-          </span>{' '}
-          matching {pluralize('version', filteredVersions.length)}
-        </Label>
+        {filteredVersions.length > 0 && (
+          <Label style={tw`font-light text-secondary`}>
+            <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
+              {filteredVersions.length}
+            </span>{' '}
+            matching {pluralize('version', filteredVersions.length)}
+          </Label>
+        )}
       </H6Section>
       <View style={tw`gap-2`}>
         <View
@@ -94,16 +80,22 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
             autoComplete="off"
             value={versionSearch}
             onChangeText={text => {
-              setVersionSearch(text);
-              updateVersionSearchQuery(text.trim());
+              const normalizedQuery = text.trim();
+              setVersionSearch(normalizedQuery);
+              updateVersionSearchQuery(normalizedQuery);
+              setShowAll(false);
             }}
             onKeyPress={event => {
               if ('key' in event) {
+                if (isSearchShortcutPressed(event)) {
+                  event.preventDefault();
+                }
                 if (inputRef.current && event.key === 'Escape') {
                   if (versionSearch) {
                     event.preventDefault();
                     inputRef.current.clear();
                     setVersionSearch('');
+                    setShowAll(false);
                     replaceQueryParam(router, 'versionSearch', undefined);
                   } else {
                     inputRef.current.blur();
@@ -111,21 +103,25 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
                 }
               }
             }}
-            onFocus={() => setInputFocused(true)}
-            onBlur={() => setInputFocused(false)}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
             placeholder="Filter versions…"
             style={tw`h-11 flex-1 rounded-lg bg-palette-gray1 p-3 pl-11 text-base text-black dark:bg-dark dark:text-white`}
             placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
           />
           {!isSmallScreen && (
             <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
-              {isInputFocused && (
+              {isInputFocused ? (
                 <InputKeyHint
                   content={[
                     { label: 'press' },
                     { key: 'Esc' },
                     { label: `to ${(versionSearch?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
                   ]}
+                />
+              ) : (
+                <InputKeyHint
+                  content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
                 />
               )}
             </View>

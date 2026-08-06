@@ -16,7 +16,7 @@ export function ScoringCriterion({ children, headline, style, score }: Props) {
   return (
     <View style={[tw`mb-3 rounded-lg border border-default px-5 py-3.5`, style]}>
       <Headline style={tw`mb-1 flex gap-3 text-[17px] font-semibold leading-[22px]`}>
-        {score && (
+        {score ? (
           <Headline
             style={[
               tw`flex min-w-[50px] items-center justify-center rounded border border-default text-center text-[15px] font-bold`,
@@ -25,7 +25,7 @@ export function ScoringCriterion({ children, headline, style, score }: Props) {
             {isPositiveModifier ? '+' : ''}
             {score}
           </Headline>
-        )}
+        ) : null}
         {headline}
       </Headline>
       <P style={tw`font-light leading-[24px]`}>{children}</P>

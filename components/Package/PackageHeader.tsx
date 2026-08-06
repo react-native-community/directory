@@ -9,7 +9,7 @@ import { GitHubIcon } from '~/components/Icons';
 import LibraryDescription from '~/components/Library/LibraryDescription';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
 import tw from '~/util/tailwind';
 

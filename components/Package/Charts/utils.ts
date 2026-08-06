@@ -1,4 +1,6 @@
+import { groupBy } from 'es-toolkit/array';
 import { clamp, sumBy } from 'es-toolkit/math';
+import { mapValues } from 'es-toolkit/object';
 
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 
@@ -15,7 +17,7 @@ export const DEFAULT_CHART_MODE: VersionsChartMode = 'version';
 export const LABEL_TO_BAR_GAP = 6;
 
 const VERSIONS_LIMIT = 12;
-const MIN_YAXIS_LABEL_WIDTH = 72;
+const MIN_YAXIS_LABEL_WIDTH = 60;
 const OTHER_VERSION_LABEL = 'Other';
 const TEXT_MEASURE_CANVAS_ID = 'measure-canvas';
 const Y_AXIS_LABEL_WIDTH_CACHE = new Map<string, number>();
@@ -58,6 +60,46 @@ export function buildChartSeriesByMode(baseSeries: VersionsChartData[]): Version
   };
 }
 
+export function getLatestVersionDownloadsPercentage(
+  baseSeries: VersionsChartData[],
+  registryData: PackageVersionsData,
+  mode: VersionsChartMode
+) {
+  const totalDownloads = sumBy(baseSeries, item => item.downloads);
+
+  if (!totalDownloads) {
+    return 0;
+  }
+
+  const latestVersion = registryData['dist-tags'].latest;
+
+  if (!latestVersion) {
+    return 0;
+  }
+
+  if (mode === 'version') {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateLabel = getAggregatedSemverLabel(latestVersion, mode);
+
+  if (!latestAggregateLabel) {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateDownloads = sumBy(baseSeries, item =>
+    getAggregatedSemverLabel(item.label, mode) === latestAggregateLabel ? item.downloads : 0
+  );
+
+  return (latestAggregateDownloads / totalDownloads) * 100;
+}
+
 export function createVersionChartEntry(
   version: string,
   downloads = 0,
@@ -84,13 +126,12 @@ export function getLargestSeriesLength(chartSeriesByMode: VersionsChartSeriesByM
 }
 
 export function mapVersionDistTags(registryData: PackageVersionsData) {
-  return Object.entries(registryData['dist-tags']).reduce<Record<string, string[]>>(
-    (acc, [tag, version]) => {
-      acc[version] = [...(acc[version] ?? []), tag];
-      return acc;
-    },
-    {}
+  const tagsByVersion = groupBy(
+    Object.entries(registryData['dist-tags']),
+    ([, version]) => version
   );
+
+  return mapValues(tagsByVersion, tags => tags.map(([tag]) => tag));
 }
 
 function getSecondaryChartLabel(version: string, distTags?: string[]) {
@@ -128,7 +169,7 @@ function aggregateSeriesBySemver(series: VersionsChartData[], mode: VersionsAggr
     });
   }
 
-  return [...groups.values()].sort(compareChartEntries);
+  return groups.values().toArray().toSorted(compareChartEntries);
 }
 
 function applySeriesLimit(series: VersionsChartData[], limit: number) {

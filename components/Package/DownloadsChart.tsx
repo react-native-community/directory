@@ -1,7 +1,7 @@
 import { LinearGradient } from '@visx/gradient';
 import { ParentSize } from '@visx/responsive';
 import { AreaSeries, type AxisScale, Tooltip, XYChart } from '@visx/xychart';
-import { useMemo } from 'react';
+import { maxBy } from 'es-toolkit/array';
 import { Text, View } from 'react-native';
 import useSWR from 'swr';
 
@@ -35,21 +35,8 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
     }
   );
 
-  const series = useMemo(
-    () => (data && Object.keys(data).length ? mapData(data[packageName]) : null),
-    [data, packageName]
-  );
-
-  const yDomain = useMemo(() => {
-    if (!series?.length) {
-      return undefined;
-    }
-
-    const max = series.reduce((acc, p) => Math.max(acc, p.value), 0);
-    const startPadding = Math.max(1, max * 0.15);
-
-    return [0, max + startPadding];
-  }, [series]);
+  const series = data && Object.keys(data).length ? mapData(data[packageName]) : null;
+  const yDomain = getYDomain(series);
 
   return (
     <ParentSize>
@@ -132,4 +119,13 @@ function mapData(dataMap: DataMap): Point[] {
     date: new Date(date + 'T00:00:00Z'),
     value,
   }));
+}
+
+function getYDomain(series: Point[] | null) {
+  if (!series?.length) {
+    return undefined;
+  }
+
+  const max = maxBy(series, p => p.value)?.value ?? 0;
+  return [0, max + Math.max(1, max * 0.15)];
 }

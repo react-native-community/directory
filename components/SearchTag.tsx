@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { A, HoverEffect } from '~/common/styleguide';
 import { XIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 type Props = {
