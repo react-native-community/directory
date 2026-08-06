@@ -11143,8 +11143,15 @@
   {
     "githubUrl": "https://github.com/kesha-antonov/react-native-action-cable",
     "npmPkg": "@kesha-antonov/react-native-action-cable",
+    "examples": [
+      "https://github.com/kesha-antonov/react-native-action-cable/tree/master/examples/complete-chat-app",
+      "https://github.com/kesha-antonov/react-native-action-cable/tree/master/examples/apollo-graphql"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/codeherence/react-native-header",
