@@ -10754,7 +10754,6 @@
   },
   {
     "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
-    "npmPkg": "react-native-zoom-reanimated",
     "examples": ["https://github.com/kesha-antonov/react-native-zoom-reanimated/tree/main/example"],
     "ios": true,
     "android": true,
@@ -12594,11 +12593,9 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/GSTJ/react-native-magic-modal/tree/main/packages/modal",
-    "npmPkg": "react-native-magic-modal",
-    "examples": [
-      "https://github.com/GSTJ/react-native-magic-modal/tree/main/examples/kitchen-sink"
-    ],
+    "githubUrl": "https://github.com/GSTJ/magic-modal/tree/main/packages/modal",
+    "npmPkg": "magic-modal",
+    "examples": ["https://github.com/GSTJ/magic-modal/tree/main/examples/kitchen-sink"],
     "android": true,
     "ios": true
   },
@@ -23712,7 +23709,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
     "newArchitecture": true
   },
   {
@@ -23767,5 +23763,51 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/zoriya/react-native-omni",
+    "examples": ["https://github.com/zoriya/react-native-omni/tree/master/example"],
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gurdeep99/react-native-video-provider",
+    "examples": ["https://github.com/Gurdeep99/react-native-video-provider/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AHMED-ELMAKI/react-native-signal-scorer",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ZeroQool/react-native-paper-country-picker",
+    "examples": ["https://github.com/ZeroQool/react-native-paper-country-picker/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ZeroQool/react-native-paper-country-picker/main/media/demo.gif",
+      "https://raw.githubusercontent.com/ZeroQool/react-native-paper-country-picker/main/media/screenshot1.png",
+      "https://raw.githubusercontent.com/ZeroQool/react-native-paper-country-picker/main/media/screenshot2.png",
+      "https://raw.githubusercontent.com/ZeroQool/react-native-paper-country-picker/main/media/screenshot3.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/csark0812/expo-targets/tree/main/packages/expo-targets",
+    "examples": [
+      "https://github.com/csark0812/expo-targets/tree/main/examples/share",
+      "https://github.com/csark0812/expo-targets/tree/main/examples/action",
+      "https://github.com/csark0812/expo-targets/tree/main/examples/messages",
+      "https://github.com/csark0812/expo-targets/tree/main/examples/clip",
+      "https://github.com/csark0812/expo-targets/tree/main/examples/widgets"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
