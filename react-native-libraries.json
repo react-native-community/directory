@@ -10754,10 +10754,12 @@
   },
   {
     "githubUrl": "https://github.com/kesha-antonov/react-native-zoom-reanimated",
+    "npmPkg": "react-native-zoom-reanimated",
     "examples": ["https://github.com/kesha-antonov/react-native-zoom-reanimated/tree/main/example"],
     "ios": true,
     "android": true,
     "web": true,
+    "expoGo": true,
     "newArchitecture": true
   },
   {
