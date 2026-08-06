@@ -10752,10 +10752,12 @@
     "githubUrl": "https://github.com/kesha-antonov/react-native-background-downloader",
     "npmPkg": "@kesha-antonov/react-native-background-downloader",
     "examples": [
-      "https://github.com/kesha-antonov/react-native-background-downloader/tree/master/example"
+      "https://github.com/kesha-antonov/react-native-background-downloader/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/callstack/react-theme-provider",
