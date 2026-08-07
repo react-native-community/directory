@@ -23818,5 +23818,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/GFean/react-native-bundle-drop",
+    "npmPkg": "@gfean/react-native-bundle-drop",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
