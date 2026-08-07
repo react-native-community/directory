@@ -23811,5 +23811,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-leap",
+    "examples": ["https://github.com/hung-yueh/react-native-leap/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
