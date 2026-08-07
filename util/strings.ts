@@ -13,6 +13,13 @@ export const FULL_FRACTION_NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
 });
 
+export function bigNumberFormatter(value: number) {
+  if (value < 1000) {
+    return NUMBER_FORMATTER.format(value);
+  }
+  return FULL_FRACTION_NUMBER_FORMATTER.format(value);
+}
+
 export function pluralize(word: string, count: number) {
   if (count === 1) {
     return word;

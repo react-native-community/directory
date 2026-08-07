@@ -13,7 +13,7 @@ import { Tooltip } from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import { FULL_FRACTION_NUMBER_FORMATTER, NUMBER_FORMATTER } from '~/util/strings';
+import { bigNumberFormatter, NUMBER_FORMATTER } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -119,7 +119,7 @@ export default function MorePackagesBox({ library }: Props) {
                         </View>
                         <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          <span>{FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}</span>
+                          <span>{bigNumberFormatter(npm?.downloads ?? 0)}</span>
                         </View>
                       </View>
                     </View>
