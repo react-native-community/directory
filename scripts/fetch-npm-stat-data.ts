@@ -1,4 +1,5 @@
 import { fetch } from 'bun';
+import { sum } from 'es-toolkit/math';
 
 import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data';
 
@@ -82,8 +83,8 @@ function formatDownloadData(downloadData: Record<string, number>) {
   const downloadCounts = Object.values(downloadData);
 
   return {
-    downloads: downloadCounts.reduce((sum, value) => sum + value, 0),
-    weekDownloads: downloadCounts.slice(0, 6).reduce((sum, value) => sum + value, 0),
+    downloads: sum(downloadCounts),
+    weekDownloads: sum(downloadCounts.slice(0, 6)),
   };
 }
 

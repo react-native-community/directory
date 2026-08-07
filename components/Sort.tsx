@@ -9,7 +9,7 @@ import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { SortIcon } from './Icons';
-import Tooltip from './Tooltip';
+import { Tooltip } from './Tooltip';
 
 type SortButtonProps = {
   query: Query;

@@ -1,18 +1,13 @@
-import dynamic from 'next/dynamic';
 import { type ComponentType, createElement } from 'react';
 import { View } from 'react-native';
 
 import { A, H4, HoverEffect, P } from '~/common/styleguide';
 import { type IconProps, RSSIcon } from '~/components/Icons';
-import LoadingContent from '~/components/Library/LoadingContent';
-import Tooltip from '~/components/Tooltip';
+import { LibraryWithLoading } from '~/components/Library/LibraryWithLoading';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type Query } from '~/types';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
-  loading: () => <LoadingContent width="48.5%" height={210} wrapperStyle={tw`mx-[0.75%]`} />,
-});
 
 type Props = {
   data: LibraryType[];
@@ -23,14 +18,7 @@ type Props = {
   rss?: string;
 };
 
-export default function HomeSection({
-  data,
-  title,
-  Icon,
-  rss,
-  count = 8,
-  queryParams = {},
-}: Props) {
+export default function HomeSection({ data, title, Icon, rss, count = 8, queryParams }: Props) {
   const hashLink = title.replace(/\s/g, '').toLowerCase();
 
   return (
@@ -57,7 +45,9 @@ export default function HomeSection({
           </Tooltip>
         )}
       </H4>
-      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>{renderLibs(data, count)}</View>
+      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
+        <HomeLibrariesList list={data} count={count} />
+      </View>
       <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
         Want to see more? Check out other{' '}
         <A href={urlWithQuery('/packages', { ...queryParams })} target="_self">
@@ -69,13 +59,16 @@ export default function HomeSection({
   );
 }
 
-function renderLibs(list: LibraryType[], count: number) {
+type HomeLibrariesListProps = { list: LibraryType[]; count: number };
+
+function HomeLibrariesList({ list, count }: HomeLibrariesListProps) {
   return list
     .slice(0, count)
     .map(item => (
       <LibraryWithLoading
         key={`home-item-${item.npmPkg}`}
         library={item}
+        loadingVariant="home"
         skipMetadata
         skipSecondaryMetadata
         skipDate

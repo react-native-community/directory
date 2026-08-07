@@ -13,3 +13,9 @@ export type VersionsChartData = {
 };
 
 export type VersionsChartSeriesByMode = Record<VersionsChartMode, VersionsChartData[]>;
+
+export type VersionSizeChartData = {
+  label: string;
+  size: number;
+  publishedAt: string;
+};

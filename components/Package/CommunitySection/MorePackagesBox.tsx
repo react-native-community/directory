@@ -2,22 +2,20 @@ import { LI, UL } from '@expo/html-elements';
 import { startCase } from 'es-toolkit/string';
 import { type NextPageContext } from 'next';
 import * as emoji from 'node-emoji';
-import { useMemo } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
 import { DownloadIcon, StarIcon, WarningIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import EntityCounter from '~/components/Package/EntityCounter';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import { Tooltip } from '~/components/Tooltip';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import { formatNumberToString } from '~/util/strings';
+import { FULL_FRACTION_NUMBER_FORMATTER, NUMBER_FORMATTER } from '~/util/strings';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
-
-import EntityCounter from './EntityCounter';
-import ThreeDotsLoader from './ThreeDotsLoader';
 
 type Props = {
   library: LibraryType;
@@ -26,7 +24,7 @@ type Props = {
 const LIMIT = 6;
 
 export default function MorePackagesBox({ library }: Props) {
-  const owner = useMemo(() => library.github.fullName.split('/')[0], [library]);
+  const owner = library.github.fullName.split('/')[0];
 
   const { isSmallScreen } = useLayout();
   const { data, isLoading } = useSWR<APIResponseType>(
@@ -115,17 +113,13 @@ export default function MorePackagesBox({ library }: Props) {
                           tw`ml-auto flex-row gap-4 text-sm font-light leading-[14px] text-icon`,
                           isSmallScreen && tw`ml-0 mt-1`,
                         ]}>
-                        <View style={tw`flex-row items-center gap-1`}>
+                        <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <StarIcon style={tw`size-4 text-tertiary dark:text-palette-gray5`} />
-                          <span className="tabular-nums">
-                            {github.stats.stars.toLocaleString()}
-                          </span>
+                          <span>{NUMBER_FORMATTER.format(github.stats.stars)}</span>
                         </View>
-                        <View style={tw`flex-row items-center gap-1`}>
+                        <View style={tw`flex-row items-center gap-1 tabular-nums`}>
                           <DownloadIcon style={tw`text-tertiary dark:text-palette-gray5`} />
-                          <span className="tabular-nums">
-                            {formatNumberToString(npm?.downloads ?? 0)}
-                          </span>
+                          <span>{FULL_FRACTION_NUMBER_FORMATTER.format(npm?.downloads ?? 0)}</span>
                         </View>
                       </View>
                     </View>

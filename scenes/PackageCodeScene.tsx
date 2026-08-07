@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { View } from 'react-native';
 
@@ -12,6 +12,7 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { type PackageCodePageProps } from '~/types/pages';
+import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
 const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
@@ -19,17 +20,16 @@ const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:a
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
   const router = useRouter();
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
+  const selectedVersionParam =
+    parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
 
-  const [selectedVersion, setSelectedVersion] = useState('latest');
+  const [selectedVersion, setSelectedVersion] = useState(selectedVersionParam);
   const [activeFile, setActiveFile] = useState<string | null>(() =>
     window.localStorage.getItem(activeFileStorageKey)
   );
   const [isBrowserMaximized, setBrowserMaximized] = useState(false);
 
-  const library = useMemo(
-    () => apiData.libraries.find(lib => lib.npmPkg === packageName),
-    [apiData.libraries, packageName]
-  );
+  const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
 
   useEffect(() => {
     if (!isBrowserMaximized) {
@@ -57,9 +57,11 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   }, [isBrowserMaximized]);
 
   useEffect(() => {
+    // oxlint-disable-next-line react-doctor/no-derived-state
     setActiveFile(window.localStorage.getItem(activeFileStorageKey));
   }, [activeFileStorageKey]);
 
+  // oxlint-disable-next-line react-doctor/no-effect-chain
   useEffect(() => {
     if (activeFile) {
       window.localStorage.setItem(activeFileStorageKey, activeFile);
@@ -118,7 +120,10 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
               <PackageVersionSelector
                 packageName={library.npmPkg}
                 selectedVersion={selectedVersion}
-                setVersion={selectedVersion => setSelectedVersion(selectedVersion)}
+                setVersion={selectedVersion => {
+                  setSelectedVersion(selectedVersion);
+                  replaceQueryParam(router, 'selectedVersion', selectedVersion);
+                }}
               />
             </View>
           </View>

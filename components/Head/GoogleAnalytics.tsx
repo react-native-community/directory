@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 function getAnalyticsScript(id: string) {
   return `
 window.dataLayer = window.dataLayer || [];
@@ -14,8 +16,8 @@ type Props = {
 export default function GoogleAnalytics({ id }: Props) {
   return (
     <>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
-      <script dangerouslySetInnerHTML={{ __html: getAnalyticsScript(id) }} />
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
+      <Script id={id} dangerouslySetInnerHTML={{ __html: getAnalyticsScript(id) }} />
     </>
   );
 }

@@ -1,19 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
-import {
-  ArrowIcon,
-  FileIcon,
-  FileMetadataIcon,
-  FolderIcon,
-  FolderOpenIcon,
-  ImageFileIcon,
-  WarningBlockquoteIcon,
-} from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
-import { getDirectoryWarning, getFileWarning, IMAGE_FILES } from '~/util/codeBrowser';
+import { ArrowIcon, WarningBlockquoteIcon } from '~/components/Icons';
+import { Tooltip } from '~/components/Tooltip';
+import { getDirectoryWarning, getFileWarning } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
+
+import { CodeBrowserFileIcon } from './CodeBrowserFileIcon';
 
 type Props = {
   label: string;
@@ -36,22 +30,6 @@ export default function CodeBrowserFileRow({
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const warning = isDirectory ? getDirectoryWarning(label) : getFileWarning(label);
-  const fileExtension = label.split('.').at(-1) ?? 'text';
-  const isImageFile = IMAGE_FILES.includes(fileExtension);
-
-  const Icon = useMemo(() => {
-    if (isDirectory) {
-      if (isCollapsed) {
-        return FolderIcon;
-      }
-      return FolderOpenIcon;
-    } else if (isNested) {
-      return FileMetadataIcon;
-    } else if (isImageFile) {
-      return ImageFileIcon;
-    }
-    return FileIcon;
-  }, [isDirectory, isNested, isImageFile, isCollapsed]);
 
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
@@ -72,13 +50,12 @@ export default function CodeBrowserFileRow({
       ) : (
         <View style={tw`size-2.5`} />
       )}
-      <Icon
-        style={[
-          tw`size-4 shrink-0 text-icon`,
-          isNested && tw`size-3 text-palette-gray5`,
-          isActive && tw`text-primary-darker dark:text-primary-dark`,
-          isDirectory && tw`text-tertiary dark:text-accented`,
-        ]}
+      <CodeBrowserFileIcon
+        label={label}
+        isActive={isActive}
+        isDirectory={isDirectory}
+        isCollapsed={isCollapsed}
+        isNested={isNested}
       />
       <P
         style={[

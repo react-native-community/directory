@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import { WarningBlockquoteIcon } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { getFileWarning } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 

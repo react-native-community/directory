@@ -42,7 +42,7 @@ export default function ExampleBox({ example, index }: Props) {
   );
 }
 
-export function getExampleDescription(url: string) {
+function getExampleDescription(url: string) {
   if (url.includes('github.com')) {
     if (url.includes('/tree/')) {
       return `GitHub project (${url.split('/').reverse()[0]})`;

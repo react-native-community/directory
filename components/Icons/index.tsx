@@ -46,41 +46,27 @@ export function BookmarkIcon({ style }: IconProps) {
 
 export function BookmarkFilledIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-4`, style]}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-4`, style]} fill="currentColor">
       <Path
         d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z"
-        fill="currentColor"
         opacity="0.2"
       />
-      <Path
-        d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"
-        fill="currentColor"
-      />
+      <Path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z" />
     </Svg>
   );
 }
 
 export function WebIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 18 19" style={[tw`size-4`, style]}>
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.059 16.473a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2a8.744 8.744 0 100-17.487 8.744 8.744 0 000 17.487z"
-        fill="currentColor"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M10.607 15.54c.576-1.437.954-3.49.954-5.81 0-2.32-.378-4.374-.954-5.811-.289-.721-.608-1.238-.91-1.558-.302-.318-.517-.375-.638-.375-.12 0-.336.057-.637.375-.303.32-.622.837-.911 1.558-.576 1.437-.954 3.49-.954 5.81 0 2.32.378 4.374.954 5.811.289.722.608 1.238.91 1.558.302.318.517.375.638.375.12 0 .336-.057.637-.375.303-.32.622-.836.911-1.558zM9.06 18.473c1.934 0 3.502-3.914 3.502-8.743 0-4.83-1.568-8.744-3.502-8.744-1.934 0-3.502 3.915-3.502 8.744s1.568 8.743 3.502 8.743z"
-        fill="currentColor"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M1.794 6.877H16.21v1H1.794v-1zM1.794 11.877H16.21v1H1.794v-1z"
-        fill="currentColor"
-      />
+    <Svg
+      viewBox="0 0 18 19"
+      style={[tw`size-4`, style]}
+      fillRule="evenodd"
+      clipRule="evenodd"
+      fill="currentColor">
+      <Path d="M9.059 16.473a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2a8.744 8.744 0 100-17.487 8.744 8.744 0 000 17.487z" />
+      <Path d="M10.607 15.54c.576-1.437.954-3.49.954-5.81 0-2.32-.378-4.374-.954-5.811-.289-.721-.608-1.238-.91-1.558-.302-.318-.517-.375-.638-.375-.12 0-.336.057-.637.375-.303.32-.622.837-.911 1.558-.576 1.437-.954 3.49-.954 5.81 0 2.32.378 4.374.954 5.811.289.722.608 1.238.91 1.558.302.318.517.375.638.375.12 0 .336-.057.637-.375.303-.32.622-.836.911-1.558zM9.06 18.473c1.934 0 3.502-3.914 3.502-8.743 0-4.83-1.568-8.744-3.502-8.744-1.934 0-3.502 3.915-3.502 8.744s1.568 8.743 3.502 8.743z" />
+      <Path d="M1.794 6.877H16.21v1H1.794v-1zM1.794 11.877H16.21v1H1.794v-1z" />
     </Svg>
   );
 }
@@ -152,19 +138,14 @@ export function FilterIcon({ style }: IconProps) {
 
 export function IssueIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 19 19" style={[tw`size-[19px]`, style]}>
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.5 7.75C9.96413 7.75 10.4092 7.93437 10.7374 8.26256C11.0656 8.59075 11.25 9.03587 11.25 9.5C11.25 9.96413 11.0656 10.4092 10.7374 10.7374C10.4092 11.0656 9.96413 11.25 9.5 11.25C9.03587 11.25 8.59075 11.0656 8.26256 10.7374C7.93437 10.4092 7.75 9.96413 7.75 9.5C7.75 9.03587 7.93437 8.59075 8.26256 8.26256C8.59075 7.93437 9.03587 7.75 9.5 7.75Z"
-        fill="currentColor"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.49 16.277a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2A8.744 8.744 0 109.49.79a8.744 8.744 0 000 17.487z"
-        fill="currentColor"
-      />
+    <Svg
+      viewBox="0 0 19 19"
+      style={[tw`size-[19px]`, style]}
+      fillRule="evenodd"
+      clipRule="evenodd"
+      fill="currentColor">
+      <Path d="M9.5 7.75C9.96413 7.75 10.4092 7.93437 10.7374 8.26256C11.0656 8.59075 11.25 9.03587 11.25 9.5C11.25 9.96413 11.0656 10.4092 10.7374 10.7374C10.4092 11.0656 9.96413 11.25 9.5 11.25C9.03587 11.25 8.59075 11.0656 8.26256 10.7374C7.93437 10.4092 7.75 9.96413 7.75 9.5C7.75 9.03587 7.93437 8.59075 8.26256 8.26256C8.59075 7.93437 9.03587 7.75 9.5 7.75Z" />
+      <Path d="M9.49 16.277a6.744 6.744 0 100-13.487 6.744 6.744 0 000 13.487zm0 2A8.744 8.744 0 109.49.79a8.744 8.744 0 000 17.487z" />
     </Svg>
   );
 }
@@ -204,38 +185,28 @@ export function GitHubIcon({ style }: IconProps) {
 
 export function PlusIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M.114 7.12H15.57v2H.114v-2z"
-        fill="currentColor"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M6.842 15.848V.393h2v15.455h-2z"
-        fill="currentColor"
-      />
+    <Svg
+      viewBox="0 0 16 16"
+      style={[tw`size-4`, style]}
+      fillRule="evenodd"
+      clipRule="evenodd"
+      fill="currentColor">
+      <Path d="M.114 7.12H15.57v2H.114v-2z" />
+      <Path d="M6.842 15.848V.393h2v15.455h-2z" />
     </Svg>
   );
 }
 
 export function XIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style, tw`rotate-45`]}>
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M.114 7.12H15.57v2H.114v-2z"
-        fill="currentColor"
-      />
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M6.842 15.848V.393h2v15.455h-2z"
-        fill="currentColor"
-      />
+    <Svg
+      viewBox="0 0 16 16"
+      style={[tw`size-4`, style, tw`rotate-45`]}
+      fillRule="evenodd"
+      clipRule="evenodd"
+      fill="currentColor">
+      <Path d="M.114 7.12H15.57v2H.114v-2z" />
+      <Path d="M6.842 15.848V.393h2v15.455h-2z" />
     </Svg>
   );
 }
@@ -297,25 +268,19 @@ export function LicenseIcon({ style }: IconProps) {
 
 export function ForkIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 15 16" style={[tw`h-[17px] w-4`, style]}>
-      <Path
-        fill="currentColor"
-        d="M8.5,10.8V8l4.7-5l0,2.3H15V0H9.7v1.8H12L7.5,6.5L3,1.8h2.3V0H0v5.3h1.8V3l4.7,5v2.9"
-      />
-      <Path
-        fill="currentColor"
-        d="M10.7,12.8c0,1.8-1.4,3.2-3.2,3.2s-3.2-1.4-3.2-3.2s1.4-3.2,3.2-3.2S10.7,11.1,10.7,12.8z M7.5,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4S8.3,11.4,7.5,11.4z"
-      />
+    <Svg viewBox="0 0 15 16" style={[tw`h-[17px] w-4`, style]} fill="currentColor">
+      <Path d="M8.5,10.8V8l4.7-5l0,2.3H15V0H9.7v1.8H12L7.5,6.5L3,1.8h2.3V0H0v5.3h1.8V3l4.7,5v2.9" />
+      <Path d="M10.7,12.8c0,1.8-1.4,3.2-3.2,3.2s-3.2-1.4-3.2-3.2s1.4-3.2,3.2-3.2S10.7,11.1,10.7,12.8z M7.5,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4S8.3,11.4,7.5,11.4z" />
     </Svg>
   );
 }
 
 export function ExamplesIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
-      <Path fill="currentColor" d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
-      <Path fill="currentColor" d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
-      <Path fill="currentColor" d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]} fill="currentColor">
+      <Path d="M0,8l5-3.2v2L2.8,8L5,9.3v2L0,8z" />
+      <Path d="M13.2,8L11,6.7v-2L16,8l-5,3.3v-2L13.2,8z" />
+      <Path d="M7.3,13.8H5.8l3-11.5h1.5L7.3,13.8z" />
     </Svg>
   );
 }
@@ -365,25 +330,21 @@ export function TypeScriptIcon({ style }: IconProps) {
 
 export function PlatformTvOS({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]}>
-      <Path d="M3 5h18v12H3z" opacity=".3" fill="currentColor" />
-      <Path
-        fill="currentColor"
-        d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"
-      />
+    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]} fill="currentColor">
+      <Path d="M3 5h18v12H3z" opacity=".3" />
+      <Path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z" />
     </Svg>
   );
 }
 
 export function PlatformMacOS({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]}>
-      <Path opacity="0.3" d="M4 6H28V24.439H20.5V27H11.5V24.439H4V6Z" fill="currentColor" />
+    <Svg viewBox="0 0 32 32" style={[tw`size-4.5`, style]} fill="currentColor">
+      <Path opacity="0.3" d="M4 6H28V24.439H20.5V27H11.5V24.439H4V6Z" />
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M30 23.5C30 24.9667 28.9667 26 27.5 26H32C32 27.1733 31.4667 28 30 28H2C0.533333 28 0 27.1733 0 26H4.5C3.03333 26 2 24.9667 2 23.5V7.5C2 6.03333 3.5 5 4.5 5H27.5C28.5 5 30 6.03333 30 7.5V23.5ZM12 26L13 27H19L20 26H12ZM5.33333 7C4.68141 7.01656 3.97921 7.7128 4 8.5V22.5C3.99334 23.2469 4.65987 23.9831 5.33333 24H26.6667C27.3754 23.9965 28.0046 23.2237 28 22.5V8.5C28.0197 7.72884 27.3523 6.99362 26.6667 7H18.5V8L18 8.5H14L13.5 8L13.5 7H5.33333Z"
-        fill="currentColor"
       />
     </Svg>
   );
@@ -449,16 +410,14 @@ export function PlatformExpo({ style }: IconProps) {
 
 export function PlatformVisionOS({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 392 222" style={[tw`size-4.5`, style]}>
+    <Svg viewBox="0 0 392 222" style={[tw`size-4.5`, style]} fill="currentColor">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M360.71 49.8576C362.706 52.7425 363.922 54.5 365.5 54.5C398 54.5001 396.5 113 382 136C379.833 161.667 359.851 217.719 296 221.5C258.761 223.705 235.907 205.678 218.926 192.284C209.231 184.637 201.45 178.5 194 178.5C186.773 178.5 178.966 184.671 169.233 192.365C152.168 205.855 129.182 224.024 93.0227 221.815C31.0458 218.029 11.6496 161.897 9.54646 136.194C-4.52801 113.161 -5.98401 54.5776 25.5622 54.5776C27.0938 54.5776 28.2742 52.8175 30.2118 49.9285C38.7116 37.2549 61.7829 2.85439 193 0C328.184 2.85033 351.953 37.2019 360.71 49.8576ZM196 26.0001L197.201 26C254.529 25.9966 347.957 25.991 356.505 96.1585C365.274 168.142 333.328 182.604 316.309 190.308C315.494 190.677 314.714 191.03 313.974 191.373C297.771 198.89 259.797 196.886 224.354 164.312C219.966 160.637 208.152 153.288 196 153.288C183.848 153.288 172.034 160.637 167.646 164.312C132.203 196.886 94.2287 198.89 78.0262 191.373C77.2861 191.03 76.5057 190.677 75.691 190.308C58.6722 182.604 26.7261 168.142 35.4949 96.1585C44.0425 25.991 137.471 25.9966 194.799 26L196 26.0001Z"
-        fill="currentColor"
       />
       <Path
         d="M197.201 26L196 26.0001L194.799 26C137.471 25.9966 44.0425 25.991 35.4949 96.1585C26.3064 171.588 61.8238 183.856 78.0262 191.373C94.2287 198.89 132.203 196.886 167.646 164.312C172.034 160.637 183.848 153.288 196 153.288C208.152 153.288 219.966 160.637 224.354 164.312C259.797 196.886 297.771 198.89 313.974 191.373C330.176 183.856 365.694 171.588 356.505 96.1585C347.957 25.991 254.529 25.9966 197.201 26Z"
-        fill="currentColor"
         fillOpacity="0.25"
       />
     </Svg>
@@ -503,38 +462,36 @@ export function NativeCodeIcon({ style }: IconProps) {
 
 export function ConfigPluginIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]}>
-      <Path
-        d="M7.61738 8.04512L7.58735 8.01867C7.73476 7.48962 7.60057 6.8983 7.18477 6.48222C6.77145 6.07 6.18729 5.93498 5.66127 6.07744L6.55184 6.96801L6.31818 7.84067L5.44552 8.07406L4.5544 7.18404C4.41277 7.70978 4.54751 8.29422 4.96083 8.70754C5.39372 9.1407 6.01755 9.26773 6.56286 9.09027L6.56782 9.09523L10.2326 12.7597C10.3775 12.9044 10.5671 12.9777 10.7572 12.9777C10.9474 12.9777 11.1367 12.9044 11.2824 12.7597C11.5726 12.4707 11.5726 12.0009 11.2824 11.7096L7.61738 8.04512Z"
-        fill="currentColor"
-      />
-      <Path
-        d="M1.4541 0H10.4825L14.545 4.06255V16H1.4541V0ZM2.90865 1.45455V14.5455H13.0905V5.81818H8.72683V1.45455H2.90865ZM10.1814 1.75564V4.36364H12.7894L10.1814 1.75564Z"
-        fill="currentColor"
-      />
+    <Svg viewBox="0 0 16 16" style={[tw`size-4`, style]} fill="currentColor">
+      <Path d="M7.61738 8.04512L7.58735 8.01867C7.73476 7.48962 7.60057 6.8983 7.18477 6.48222C6.77145 6.07 6.18729 5.93498 5.66127 6.07744L6.55184 6.96801L6.31818 7.84067L5.44552 8.07406L4.5544 7.18404C4.41277 7.70978 4.54751 8.29422 4.96083 8.70754C5.39372 9.1407 6.01755 9.26773 6.56286 9.09027L6.56782 9.09523L10.2326 12.7597C10.3775 12.9044 10.5671 12.9777 10.7572 12.9777C10.9474 12.9777 11.1367 12.9044 11.2824 12.7597C11.5726 12.4707 11.5726 12.0009 11.2824 11.7096L7.61738 8.04512Z" />
+      <Path d="M1.4541 0H10.4825L14.545 4.06255V16H1.4541V0ZM2.90865 1.45455V14.5455H13.0905V5.81818H8.72683V1.45455H2.90865ZM10.1814 1.75564V4.36364H12.7894L10.1814 1.75564Z" />
     </Svg>
   );
 }
 
 export function PackageSizeIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]}>
-      <Path fill="currentColor" d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
-      <Path
-        d="M20 1.002v4.586l1.501-1.5L22.915 5.5l-3.914 3.915L15.084 5.5l1.414-1.414l1.503 1.503V1.002z"
-        fill="currentColor"
-      />
+    <Svg viewBox="0 0 24 24" style={[tw`size-4.5`, style]} fill="currentColor">
+      <Path d="M1 3h13v2H3v10h18v-4h2v8H1zm3 18h16v2H4z" />
+      <Path d="M20 1.002v4.586l1.501-1.5L22.915 5.5l-3.914 3.915L15.084 5.5l1.414-1.414l1.503 1.503V1.002z" />
     </Svg>
   );
 }
 
 export function DependencyIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 18 20" style={[tw`w-4.5 h-5`, style]}>
-      <Path
-        d="M8 17.425V10.575L2 7.1V13.95L8 17.425ZM10 17.425L16 13.95V7.1L10 10.575V17.425ZM8 19.725L1 15.7C0.683337 15.5167 0.437337 15.275 0.262004 14.975C0.0866705 14.675 -0.000662879 14.3417 3.78787e-06 13.975V6.025C3.78787e-06 5.65833 0.0876704 5.325 0.263004 5.025C0.438337 4.725 0.684004 4.48333 1 4.3L8 0.275C8.31667 0.0916668 8.65 0 9 0C9.35 0 9.68333 0.0916668 10 0.275L17 4.3C17.3167 4.48333 17.5627 4.725 17.738 5.025C17.9133 5.325 18.0007 5.65833 18 6.025V13.975C18 14.3417 17.9123 14.675 17.737 14.975C17.5617 15.275 17.316 15.5167 17 15.7L10 19.725C9.68333 19.9083 9.35 20 9 20C8.65 20 8.31667 19.9083 8 19.725ZM13 6.525L14.925 5.425L9 2L7.05 3.125L13 6.525ZM9 8.85L10.95 7.725L5.025 4.3L3.075 5.425L9 8.85Z"
-        fill="currentColor"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={20}>
+      <Line x1="128" y1="129.09" x2="128" y2="231.97" />
+      <Polyline points="32.7 76.92 128 129.08 223.3 76.92" />
+      <Path d="M219.84,182.84l-88,48.18a8,8,0,0,1-7.68,0l-88-48.18a8,8,0,0,1-4.16-7V80.18a8,8,0,0,1,4.16-7l88-48.18a8,8,0,0,1,7.68,0l88,48.18a8,8,0,0,1,4.16,7v95.64A8,8,0,0,1,219.84,182.84Z" />
+      <Polyline points="81.56 48.31 176 100 176 152" />
     </Svg>
   );
 }
@@ -585,180 +542,72 @@ export function ReadmeFileIcon({ style }: IconProps) {
 
 export function ChangelogFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Line
-        x1="40"
-        y1="64"
-        x2="216"
-        y2="64"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="40"
-        y1="128"
-        x2="112"
-        y2="128"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="40"
-        y1="192"
-        x2="128"
-        y2="192"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Circle
-        cx="184"
-        cy="144"
-        r="32"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="206.63"
-        y1="166.63"
-        x2="232"
-        y2="192"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Line x1="40" y1="64" x2="216" y2="64" />
+      <Line x1="40" y1="128" x2="112" y2="128" />
+      <Line x1="40" y1="192" x2="128" y2="192" />
+      <Circle cx="184" cy="144" r="32" />
+      <Line x1="206.63" y1="166.63" x2="232" y2="192" />
     </Svg>
   );
 }
 
 export function ContributingFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Circle
-        cx="84"
-        cy="108"
-        r="52"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M10.23,200a88,88,0,0,1,147.54,0"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M172,160a87.93,87.93,0,0,1,73.77,40"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M152.69,59.7A52,52,0,1,1,172,160"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Circle cx="84" cy="108" r="52" />
+      <Path d="M10.23,200a88,88,0,0,1,147.54,0" />
+      <Path d="M172,160a87.93,87.93,0,0,1,73.77,40" />
+      <Path d="M152.69,59.7A52,52,0,1,1,172,160" />
     </Svg>
   );
 }
 
 export function CCFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Line
-        x1="72"
-        y1="136"
-        x2="120"
-        y2="136"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="72"
-        y1="104"
-        x2="120"
-        y2="104"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Circle
-        cx="196"
-        cy="124"
-        r="44"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M168,192H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V90.06"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="168 157.94 168 224 196 208 224 224 224 157.94"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Line x1="72" y1="136" x2="120" y2="136" />
+      <Line x1="72" y1="104" x2="120" y2="104" />
+      <Circle cx="196" cy="124" r="44" />
+      <Path d="M168,192H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V90.06" />
+      <Polyline points="168 157.94 168 224 196 208 224 224 224 157.94" />
     </Svg>
   );
 }
 
 export function CodeBracketsIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M80,40c-64,0,0,88-64,88,64,0,0,88,64,88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M176,40c64,0,0,88,64,88-64,0,0,88-64,88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M80,40c-64,0,0,88-64,88,64,0,0,88,64,88" />
+      <Path d="M176,40c64,0,0,88,64,88-64,0,0,88-64,88" />
     </Svg>
   );
 }
@@ -820,11 +669,9 @@ export function SnackIcon({ style }: IconProps) {
 
 export function CopyIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
+    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]} fill="none" stroke="currentColor">
       <Polyline
         points="168 168 216 168 216 40 88 40 88 88"
-        fill="none"
-        stroke="currentColor"
         strokeDasharray="30 20"
         strokeWidth="12"
       />
@@ -833,8 +680,6 @@ export function CopyIcon({ style }: IconProps) {
         y="88"
         width="128"
         height="128"
-        fill="none"
-        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="16"
@@ -845,157 +690,83 @@ export function CopyIcon({ style }: IconProps) {
 
 export function CheckSquareIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Polyline
-        points="88 136 112 160 168 104"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Rect
-        x="40"
-        y="40"
-        width="176"
-        height="176"
-        rx="8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="88 136 112 160 168 104" />
+      <Rect x="40" y="40" width="176" height="176" rx="8" />
     </Svg>
   );
 }
 
 export function LinkIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M141.38,64.68l11-11a46.62,46.62,0,0,1,65.94,0h0a46.62,46.62,0,0,1,0,65.94L193.94,144,183.6,154.34a46.63,46.63,0,0,1-66-.05h0A46.48,46.48,0,0,1,104,120.06"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M114.62,191.32l-11,11a46.63,46.63,0,0,1-66-.05h0a46.63,46.63,0,0,1,.06-65.89L72.4,101.66a46.62,46.62,0,0,1,65.94,0h0A46.45,46.45,0,0,1,152,135.94"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M141.38,64.68l11-11a46.62,46.62,0,0,1,65.94,0h0a46.62,46.62,0,0,1,0,65.94L193.94,144,183.6,154.34a46.63,46.63,0,0,1-66-.05h0A46.48,46.48,0,0,1,104,120.06" />
+      <Path d="M114.62,191.32l-11,11a46.63,46.63,0,0,1-66-.05h0a46.63,46.63,0,0,1,.06-65.89L72.4,101.66a46.62,46.62,0,0,1,65.94,0h0A46.45,46.45,0,0,1,152,135.94" />
     </Svg>
   );
 }
 
 export function VerifiedIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
-      <Polyline
-        points="88 136 112 160 168 104"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="20">
+      <Path d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z" />
+      <Polyline points="88 136 112 160 168 104" />
     </Svg>
   );
 }
 
 export function NightlyTestIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-4.5`, style]}>
-      <Line
-        x1="88"
-        y1="32"
-        x2="168"
-        y2="32"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
-      <Path
-        d="M152,32V99.14l62.85,104.74A8,8,0,0,1,208,216H48a8,8,0,0,1-6.86-12.12L104,99.14V32"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
-      <Path
-        d="M71.63,153.08c13.23-2.48,32-1.41,56.37,10.92,32.25,16.33,54.75,12.91,67.5,7.65"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-4.5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="20">
+      <Line x1="88" y1="32" x2="168" y2="32" />
+      <Path d="M152,32V99.14l62.85,104.74A8,8,0,0,1,208,216H48a8,8,0,0,1-6.86-12.12L104,99.14V32" />
+      <Path d="M71.63,153.08c13.23-2.48,32-1.41,56.37,10.92,32.25,16.33,54.75,12.91,67.5,7.65" />
     </Svg>
   );
 }
 
 export function ModuleIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-4.5`, style]}>
-      <Rect
-        x="24"
-        y="72"
-        width="208"
-        height="128"
-        rx="8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
-      <Line x1="24" y1="120" x2="232" y2="120" fill="none" stroke="currentColor" strokeWidth="16" />
-      <Line
-        x1="72"
-        y1="104"
-        x2="72"
-        y2="136"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="184"
-        y1="104"
-        x2="184"
-        y2="136"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M168,72V56a16,16,0,0,0-16-16H104A16,16,0,0,0,88,56V72"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="20"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-4.5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <Rect x="24" y="72" width="208" height="128" rx="8" strokeWidth="20" />
+      <Line x1="24" y1="120" x2="232" y2="120" strokeWidth="16" />
+      <Line x1="72" y1="104" x2="72" y2="136" strokeWidth="16" />
+      <Line x1="184" y1="104" x2="184" y2="136" strokeWidth="16" />
+      <Path d="M168,72V56a16,16,0,0,0-16-16H104A16,16,0,0,0,88,56V72" strokeWidth="20" />
     </Svg>
   );
 }
@@ -1028,34 +799,17 @@ export function NoteBlockquoteIcon({ style }: IconProps) {
 
 export function TipBlockquoteIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Line
-        x1="88"
-        y1="232"
-        x2="168"
-        y2="232"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="24"
-      />
-      <Path
-        d="M78.7,167A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24a80,80,0,0,1,51.34,142.9A24.3,24.3,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6A24.11,24.11,0,0,0,78.7,167Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="24"
-      />
-      <Path
-        d="M136,56c20,3.37,36.61,20,40,40"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="24"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="24">
+      <Line x1="88" y1="232" x2="168" y2="232" />
+      <Path d="M78.7,167A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24a80,80,0,0,1,51.34,142.9A24.3,24.3,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6A24.11,24.11,0,0,0,78.7,167Z" />
+      <Path d="M136,56c20,3.37,36.61,20,40,40" />
     </Svg>
   );
 }
@@ -1142,23 +896,16 @@ export function ImportantBlockquoteIcon({ style }: IconProps) {
 
 export function PackageManagerIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-4`, style]}>
-      <Circle
-        cx="128"
-        cy="128"
-        r="40"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-4`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round">
+      <Circle cx="128" cy="128" r="40" strokeWidth="16" />
       <Path
         d="M219.84,182.84l-88,48.18a8,8,0,0,1-7.68,0l-88-48.18a8,8,0,0,1-4.16-7V80.18a8,8,0,0,1,4.16-7l88-48.18a8,8,0,0,1,7.68,0l88,48.18a8,8,0,0,1,4.16,7v95.64A8,8,0,0,1,219.84,182.84Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
         strokeWidth="24"
       />
     </Svg>
@@ -1167,72 +914,35 @@ export function PackageManagerIcon({ style }: IconProps) {
 
 export function FundingIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Circle
-        cx="204"
-        cy="84"
-        r="28"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M176,85.29A28,28,0,1,1,192,58.71"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Circle cx="204" cy="84" r="28" />
+      <Path d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48" />
+      <Path d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z" />
+      <Path d="M176,85.29A28,28,0,1,1,192,58.71" />
     </Svg>
   );
 }
 
 export function FundingGitHubIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M96.73,120C87,107.72,80,94.56,80,80c0-21.69,17.67-40,39.46-40A39.12,39.12,0,0,1,156,64a39.12,39.12,0,0,1,36.54-24C214.33,40,232,58.31,232,80c0,29.23-28.18,55.07-50.22,71.32"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M48,208H16a8,8,0,0,1-8-8V160a8,8,0,0,1,8-8H48" />
+      <Path d="M112,160h32l67-15.41a16.61,16.61,0,0,1,21,16h0a16.59,16.59,0,0,1-9.18,14.85L184,192l-64,16H48V152l25-25a24,24,0,0,1,17-7H140a20,20,0,0,1,20,20h0a20,20,0,0,1-20,20Z" />
+      <Path d="M96.73,120C87,107.72,80,94.56,80,80c0-21.69,17.67-40,39.46-40A39.12,39.12,0,0,1,156,64a39.12,39.12,0,0,1,36.54-24C214.33,40,232,58.31,232,80c0,29.23-28.18,55.07-50.22,71.32" />
     </Svg>
   );
 }
@@ -1263,562 +973,265 @@ export function RSSIcon({ style }: IconProps) {
 
 export function SpinnerIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]} id="spinner">
-      <Line
-        x1="128"
-        y1="32"
-        x2="128"
-        y2="64"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="195.88"
-        y1="60.12"
-        x2="173.25"
-        y2="82.75"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="224"
-        y1="128"
-        x2="192"
-        y2="128"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="195.88"
-        y1="195.88"
-        x2="173.25"
-        y2="173.25"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="128"
-        y1="224"
-        x2="128"
-        y2="192"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="60.12"
-        y1="195.88"
-        x2="82.75"
-        y2="173.25"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="32"
-        y1="128"
-        x2="64"
-        y2="128"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="60.12"
-        y1="60.12"
-        x2="82.75"
-        y2="82.75"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      id="spinner"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Line x1="128" y1="32" x2="128" y2="64" />
+      <Line x1="195.88" y1="60.12" x2="173.25" y2="82.75" />
+      <Line x1="224" y1="128" x2="192" y2="128" />
+      <Line x1="195.88" y1="195.88" x2="173.25" y2="173.25" />
+      <Line x1="128" y1="224" x2="128" y2="192" />
+      <Line x1="60.12" y1="195.88" x2="82.75" y2="173.25" />
+      <Line x1="32" y1="128" x2="64" y2="128" />
+      <Line x1="60.12" y1="60.12" x2="82.75" y2="82.75" />
     </Svg>
   );
 }
 
 export function FileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="152 32 152 88 208 88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="96"
-        y1="136"
-        x2="160"
-        y2="136"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="96"
-        y1="168"
-        x2="160"
-        y2="168"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
+      <Polyline points="152 32 152 88 208 88" />
+      <Line x1="96" y1="136" x2="160" y2="136" />
+      <Line x1="96" y1="168" x2="160" y2="168" />
     </Svg>
   );
 }
 
 export function DownloadFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="152 32 152 88 208 88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="128"
-        y1="120"
-        x2="128"
-        y2="184"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="104 160 128 184 152 160"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
+      <Polyline points="152 32 152 88 208 88" />
+      <Line x1="128" y1="120" x2="128" y2="184" />
+      <Polyline points="104 160 128 184 152 160" />
     </Svg>
   );
 }
 
 export function TempFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M72,224H56a8,8,0,0,1-8-8V184"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="120 32 152 32 208 88 208 136"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M48,64V40a8,8,0,0,1,8-8H80"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="152 32 152 88 208 88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M208,176v40a8,8,0,0,1-8,8h-8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="48"
-        y1="104"
-        x2="48"
-        y2="144"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="112"
-        y1="224"
-        x2="152"
-        y2="224"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M72,224H56a8,8,0,0,1-8-8V184" />
+      <Polyline points="120 32 152 32 208 88 208 136" />
+      <Path d="M48,64V40a8,8,0,0,1,8-8H80" />
+      <Polyline points="152 32 152 88 208 88" />
+      <Path d="M208,176v40a8,8,0,0,1-8,8h-8" />
+      <Line x1="48" y1="104" x2="48" y2="144" />
+      <Line x1="112" y1="224" x2="152" y2="224" />
     </Svg>
   );
 }
 
 export function FolderIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M216.89,208H39.38A7.4,7.4,0,0,1,32,200.62V80H216a8,8,0,0,1,8,8V200.89A7.11,7.11,0,0,1,216.89,208Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M32,80V56a8,8,0,0,1,8-8H92.69a8,8,0,0,1,5.65,2.34L128,80"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M216.89,208H39.38A7.4,7.4,0,0,1,32,200.62V80H216a8,8,0,0,1,8,8V200.89A7.11,7.11,0,0,1,216.89,208Z" />
+      <Path d="M32,80V56a8,8,0,0,1,8-8H92.69a8,8,0,0,1,5.65,2.34L128,80" />
     </Svg>
   );
 }
 
 export function ImageFileIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Rect
-        x="40"
-        y="40"
-        width="176"
-        height="176"
-        rx="8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Circle
-        cx="96"
-        cy="96"
-        r="16"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M56.69,216,166.34,106.34a8,8,0,0,1,11.32,0L216,144.69"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Rect x="40" y="40" width="176" height="176" rx="8" />
+      <Circle cx="96" cy="96" r="16" />
+      <Path d="M56.69,216,166.34,106.34a8,8,0,0,1,11.32,0L216,144.69" />
     </Svg>
   );
 }
 
 export function CodeIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Polyline
-        points="64 88 16 128 64 168"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="192 88 240 128 192 168"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="160"
-        y1="40"
-        x2="96"
-        y2="216"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="64 88 16 128 64 168" />
+      <Polyline points="192 88 240 128 192 168" />
+      <Line x1="160" y1="40" x2="96" y2="216" />
+    </Svg>
+  );
+}
+
+export function CodeBlockIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="64 32 32 64 64 96" />
+      <Polyline points="104 32 136 64 104 96" />
+      <Path d="M176,48h24a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V136" />
     </Svg>
   );
 }
 
 export function FileMetadataIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Polyline
-        points="168 128 216 176 168 224"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="72 32 72 176 216 176"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="168 128 216 176 168 224" />
+      <Polyline points="72 32 72 176 216 176" />
     </Svg>
   );
 }
 
 export function MaximizeIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Polyline
-        points="168 48 208 48 208 88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="88 208 48 208 48 168"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="208 168 208 208 168 208"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="48 88 48 48 88 48"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="168 48 208 48 208 88" />
+      <Polyline points="88 208 48 208 48 168" />
+      <Polyline points="208 168 208 208 168 208" />
+      <Polyline points="48 88 48 48 88 48" />
     </Svg>
   );
 }
 
 export function MinimizeIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Polyline
-        points="208 96 160 96 160 48"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="48 160 96 160 96 208"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="160 208 160 160 208 160"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="96 48 96 96 48 96"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Polyline points="208 96 160 96 160 48" />
+      <Polyline points="48 160 96 160 96 208" />
+      <Polyline points="160 208 160 160 208 160" />
+      <Polyline points="96 48 96 96 48 96" />
     </Svg>
   );
 }
 
 export function FolderOpenIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M32,208V64a8,8,0,0,1,8-8H93.33a8,8,0,0,1,4.8,1.6L128,80h72a8,8,0,0,1,8,8v24"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Path
-        d="M32,208l30.18-90.53A8,8,0,0,1,69.77,112H232a8,8,0,0,1,7.59,10.53L211.09,208Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M32,208V64a8,8,0,0,1,8-8H93.33a8,8,0,0,1,4.8,1.6L128,80h72a8,8,0,0,1,8,8v24" />
+      <Path d="M32,208l30.18-90.53A8,8,0,0,1,69.77,112H232a8,8,0,0,1,7.59,10.53L211.09,208Z" />
     </Svg>
   );
 }
 
 export function MarkdownPreviewIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="152 32 152 88 208 88"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Circle
-        cx="124"
-        cy="148"
-        r="28"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Line
-        x1="143.8"
-        y1="167.8"
-        x2="160"
-        y2="184"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
+      <Polyline points="152 32 152 88 208 88" />
+      <Circle cx="124" cy="148" r="28" />
+      <Line x1="143.8" y1="167.8" x2="160" y2="184" />
     </Svg>
   );
 }
 
 export function ArrowUpRightIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Line
-        x1="64"
-        y1="192"
-        x2="192"
-        y2="64"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="88 64 192 64 192 168"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Line x1="64" y1="192" x2="192" y2="64" />
+      <Polyline points="88 64 192 64 192 168" />
     </Svg>
   );
 }
 
 export function SecurityIcon({ style }: IconProps) {
   return (
-    <Svg viewBox="0 0 256 256" style={[tw`size-6`, style]}>
-      <Path
-        d="M216,112V56a8,8,0,0,0-8-8H48a8,8,0,0,0-8,8v56c0,96,88,120,88,120S216,208,216,112Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
-      <Polyline
-        points="88 136 112 160 168 104"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-      />
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M216,112V56a8,8,0,0,0-8-8H48a8,8,0,0,0-8,8v56c0,96,88,120,88,120S216,208,216,112Z" />
+      <Polyline points="88 136 112 160 168 104" />
     </Svg>
   );
 }

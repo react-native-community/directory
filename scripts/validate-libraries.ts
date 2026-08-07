@@ -1,3 +1,5 @@
+import { countBy, uniq } from 'es-toolkit/array';
+
 import { fillNpmName } from '~/scripts/helpers';
 import { type LibraryType } from '~/types';
 import { VALID_ENTRY_KEYS } from '~/util/Constants';
@@ -56,14 +58,10 @@ function validateDuplicateLibraries(libraries: LibraryType[]) {
   console.log('🔍️Checking for duplicate libraries');
 
   const librariesName = libraries.map(
-    library => library.npmPkg ?? library.githubUrl.split('/').at(-1)
+    library => library.npmPkg ?? library.githubUrl.split('/').at(-1) ?? ''
   );
-  const occurrences = librariesName.reduce<Record<string, number>>((acc, item) => {
-    acc[item] = (acc[item] ?? 0) + 1;
-    return acc;
-  }, {});
-
-  const duplicateLibraries = [...new Set(librariesName.filter(item => occurrences[item] !== 1))];
+  const occurrences = countBy(librariesName, item => item);
+  const duplicateLibraries = uniq(librariesName.filter(item => occurrences[item] !== 1));
 
   if (duplicateLibraries.length > 0) {
     console.error(

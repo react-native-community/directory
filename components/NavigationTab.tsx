@@ -13,7 +13,7 @@ type Props = {
 
 function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Props) {
   const router = useRouter();
-  const isActive = router.asPath.split('?')[0] === path;
+  const isActive = decodeURIComponent(router.asPath.split('?')[0]) === decodeURIComponent(path);
 
   return (
     <A

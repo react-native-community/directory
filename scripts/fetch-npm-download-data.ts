@@ -37,6 +37,7 @@ export async function fetchNpmDownloadData(pkgData: LibraryType, attemptsCount =
       ...pkgData,
       npm: {
         downloads: downloadData.downloads,
+        package: downloadData.package,
       },
     };
   } catch (error) {

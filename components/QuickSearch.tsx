@@ -1,13 +1,17 @@
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
 import useSWR from 'swr';
 import { useDebouncedCallback } from 'use-debounce';
 
 import { Caption, Label, useLayout } from '~/common/styleguide';
 import InputKeyHint from '~/components/InputKeyHint';
+import {
+  isSearchShortcutPressed,
+  useSearchInputFocus,
+  useSearchShortcut,
+} from '~/hooks/useSearchInput';
 import { type APIResponseType } from '~/types';
-import isAppleDevice from '~/util/isAppleDevice';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
@@ -21,12 +25,12 @@ type Props = {
 const RESULTS_LIMIT = 5;
 
 export default function QuickSearch({ style }: Props) {
-  const [isInputFocused, setInputFocused] = useState(false);
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
   const [search, setSearch] = useState('');
 
-  const isApple = useMemo<boolean>(() => isAppleDevice(), []);
   const inputRef = useRef<TextInput>(null);
+  const isApple = useSearchShortcut(inputRef);
+  const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
   const { push } = useRouter();
   const { isSmallScreen } = useLayout();
@@ -38,61 +42,31 @@ export default function QuickSearch({ style }: Props) {
       revalidateOnFocus: false,
     }
   );
-  const libraries = useMemo(() => data?.libraries ?? [], [data?.libraries]);
+  const libraries = data?.libraries ?? [];
   const hasResults = Boolean(data?.total && data.total > 0);
   const shouldShowResults = search.length > 0 && isInputFocused;
-
-  useEffect(() => {
-    if (isApple !== null) {
-      document.addEventListener('keydown', keyDownListener, false);
-      return () => document.removeEventListener('keydown', keyDownListener);
-    }
-  }, [isApple]);
-
-  useEffect(() => {
-    if (!shouldShowResults || libraries.length === 0) {
-      setActiveResultIndex(null);
-      return;
-    }
-
-    if (activeResultIndex !== null && activeResultIndex >= libraries.length) {
-      setActiveResultIndex(libraries.length - 1);
-    }
-  }, [activeResultIndex, libraries.length, shouldShowResults]);
-
-  const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
-    }
-  });
+  const effectiveActiveResultIndex =
+    activeResultIndex !== null && activeResultIndex < libraries.length ? activeResultIndex : null;
 
   const typingCallback = useDebouncedCallback((text: string) => {
     setSearch(text);
   }, 200);
 
-  const handleSearchChange = useCallback(
-    (text: string) => {
-      setActiveResultIndex(null);
-      typingCallback(text);
-    },
-    [typingCallback]
-  );
-
-  const handleInputFocus = useCallback(() => {
-    setInputFocused(true);
-  }, []);
-
-  const handleInputBlur = useCallback(() => {
-    setInputFocused(false);
+  function handleSearchChange(text: string) {
     setActiveResultIndex(null);
-  }, []);
+    typingCallback(text);
+  }
 
-  const handleResultHoverChange = useCallback((index: number | null) => {
+  function handleSearchInputBlur() {
+    handleInputBlur();
+    setActiveResultIndex(null);
+  }
+
+  function handleResultHoverChange(index: number | null) {
     setActiveResultIndex(index);
-  }, []);
+  }
 
-  const handleArrowDownPress = useCallback(() => {
+  function handleArrowDownPress() {
     setActiveResultIndex(currentIndex => {
       if (libraries.length === 0) {
         return null;
@@ -104,9 +78,9 @@ export default function QuickSearch({ style }: Props) {
 
       return Math.min(currentIndex + 1, libraries.length - 1);
     });
-  }, [libraries.length]);
+  }
 
-  const handleArrowUpPress = useCallback(() => {
+  function handleArrowUpPress() {
     setActiveResultIndex(currentIndex => {
       if (libraries.length === 0) {
         return null;
@@ -118,17 +92,14 @@ export default function QuickSearch({ style }: Props) {
 
       return Math.max(currentIndex - 1, 0);
     });
-  }, [libraries.length]);
+  }
 
-  const handleResultSelect = useCallback(
-    async (npmPkg: string) => {
-      setInputFocused(false);
-      inputRef.current?.blur();
-      setActiveResultIndex(null);
-      await push(urlWithQuery(`/package/${npmPkg}`));
-    },
-    [push]
-  );
+  async function handleResultSelect(npmPkg: string) {
+    handleInputBlur();
+    inputRef.current?.blur();
+    setActiveResultIndex(null);
+    await push(urlWithQuery(`/package/${npmPkg}`));
+  }
 
   return (
     <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
@@ -168,18 +139,18 @@ export default function QuickSearch({ style }: Props) {
                 if (event.key === 'Enter') {
                   event.preventDefault();
 
-                  if (activeResultIndex !== null && libraries[activeResultIndex]) {
-                    void handleResultSelect(libraries[activeResultIndex].npmPkg);
+                  if (
+                    effectiveActiveResultIndex !== null &&
+                    libraries[effectiveActiveResultIndex]
+                  ) {
+                    void handleResultSelect(libraries[effectiveActiveResultIndex].npmPkg);
                     return;
                   }
 
                   void push(urlWithQuery('/packages', { search }));
                 }
 
-                if (
-                  event.key === 'k' &&
-                  (('metaKey' in event && event.metaKey) || ('ctrlKey' in event && event.ctrlKey))
-                ) {
+                if (isSearchShortcutPressed(event)) {
                   event.preventDefault();
                 }
 
@@ -201,9 +172,9 @@ export default function QuickSearch({ style }: Props) {
               }
             }}
             onFocus={handleInputFocus}
-            onBlur={handleInputBlur}
+            onBlur={handleSearchInputBlur}
             onChangeText={handleSearchChange}
-            placeholder="Search libraries..."
+            placeholder="Search libraries…"
             style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
             placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
           />
@@ -242,7 +213,7 @@ export default function QuickSearch({ style }: Props) {
                   key={lib.npmPkg}
                   index={index}
                   library={lib}
-                  isActive={activeResultIndex === index}
+                  isActive={effectiveActiveResultIndex === index}
                   onHoverChange={handleResultHoverChange}
                   onSelect={handleResultSelect}
                 />

@@ -6,7 +6,7 @@ import semverGt from 'semver/functions/gt';
 
 import { A, HoverEffect, Label, P, useLayout } from '~/common/styleguide';
 import { InfoIcon, Logo } from '~/components/Icons';
-import Tooltip from '~/components/Tooltip';
+import { Tooltip } from '~/components/Tooltip';
 import { type PeerDependencyData } from '~/types';
 import tw from '~/util/tailwind';
 
