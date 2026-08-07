@@ -23811,5 +23811,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/boiboif/react-native-toast",
+    "npmPkg": "@boiboif/react-native-toast",
+    "examples": ["https://github.com/boiboif/react-native-toast/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
