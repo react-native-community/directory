@@ -8215,7 +8215,8 @@
     ],
     "ios": true,
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/garganurag893/react-native-phone-number-input",
