@@ -21024,6 +21024,16 @@
   {
     "githubUrl": "https://github.com/Swif7ify/react-native-earl-thermal-printer",
     "examples": ["https://github.com/Swif7ify/react-native-earl-thermal-printer/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/hero-printed-samples.png",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/receipt-cafe-sample.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/receipt-warehouse-label.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/receipt-kitchen-kot.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/table-column-sample.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/barcode-qr-sample.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/dithering-comparison.jpg",
+      "https://raw.githubusercontent.com/Swif7ify/react-native-earl-thermal-printer/main/docs/images/text-styles-strip.png"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -23808,6 +23818,20 @@
       "https://github.com/csark0812/expo-targets/tree/main/examples/clip",
       "https://github.com/csark0812/expo-targets/tree/main/examples/widgets"
     ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-leap",
+    "examples": ["https://github.com/hung-yueh/react-native-leap/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/GFean/react-native-bundle-drop",
+    "npmPkg": "@gfean/react-native-bundle-drop",
     "ios": true,
     "android": true,
     "newArchitecture": true
