@@ -4,7 +4,7 @@ export default function detectModuleType(
   rootFiles: { entries: RepositoryTreeNode[] } | null,
   packageJson: any
 ) {
-  if (!rootFiles || !rootFiles.entries.length) {
+  if (!rootFiles?.entries.length) {
     return undefined;
   }
 

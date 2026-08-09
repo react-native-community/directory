@@ -3,7 +3,7 @@ import { type RepositoryTreeNode } from '~/types';
 type RootFiles = { entries: RepositoryTreeNode[] } | null;
 
 function hasMatchingFiles(rootFiles: RootFiles, fileNames: string[]) {
-  if (!rootFiles || !rootFiles.entries.length) {
+  if (!rootFiles?.entries.length) {
     return false;
   }
 

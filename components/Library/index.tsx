@@ -40,7 +40,7 @@ function Library({
     github.urls.homepage ||
     github.newArchitecture ||
     library.newArchitecture ||
-    (library.examples && library.examples.length);
+    library.examples?.length;
 
   return (
     <View

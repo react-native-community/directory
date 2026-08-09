@@ -358,7 +358,7 @@ export async function fetchGithubDataThrottled({
   chunkSize: number;
   staggerMs: number;
 }) {
-  let results: LibraryType[] = [];
+  const results: LibraryType[] = [];
   const chunks = chunk(data, chunkSize);
 
   for (const [chunkIndex, currentChunk] of chunks.entries()) {

@@ -22,7 +22,7 @@ export function generateLibrariesRss(title: string, description: string, librari
                 .join('')
             : ''
         }
-        ${title === 'Just Updated' ? `<pubDate>${new Date(lib.github.stats.updatedAt).toUTCString()}</pubDate>` : `<guid>${`${i}-${lib.npmPkg}`}</guid>`}
+        ${title === 'Just Updated' ? `<pubDate>${new Date(lib.github.stats.updatedAt).toUTCString()}</pubDate>` : `<guid>${i}-${lib.npmPkg}</guid>`}
       </item>`
       )
       .join('')}

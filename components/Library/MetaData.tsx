@@ -64,7 +64,7 @@ function generateData({
               href={`https://www.npmjs.com/package/${npmPkg}`}
               style={linkStyle}
               containerStyle={{ textOverflow: 'ellipsis' }}>
-              {`${npm.downloads.toLocaleString()}`} monthly downloads
+              {npm.downloads.toLocaleString()} monthly downloads
             </A>
           ),
         }
@@ -108,7 +108,7 @@ function generateData({
           icon: <ForkIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
-              {`${github.stats.forks.toLocaleString()}`}
+              {github.stats.forks.toLocaleString()}
             </A>
           ),
           tooltip: 'Forks',
@@ -120,7 +120,7 @@ function generateData({
           icon: <EyeIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
-              {`${github.stats.subscribers.toLocaleString()}`}
+              {github.stats.subscribers.toLocaleString()}
             </A>
           ),
           tooltip: 'Watchers',
@@ -132,7 +132,7 @@ function generateData({
           icon: <IssueIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
-              {`${github.stats.issues.toLocaleString()}`}
+              {github.stats.issues.toLocaleString()}
             </A>
           ),
           tooltip: 'Issues',
@@ -238,7 +238,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
-    !skipExamples && examples && examples.length
+    !skipExamples && examples?.length
       ? {
           id: 'examples',
           icon: <ExamplesIcon style={iconColor} />,
