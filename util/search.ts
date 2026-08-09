@@ -175,11 +175,11 @@ export function handleFilterLibraries({
       }
     }
 
-    if (hasExample && (!library.examples?.length)) {
+    if (hasExample && !library.examples?.length) {
       return false;
     }
 
-    if (hasImage && (!library.images?.length)) {
+    if (hasImage && !library.images?.length) {
       return false;
     }
 
