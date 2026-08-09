@@ -1,13 +1,13 @@
 import { type RepositoryTreeNode } from '~/types';
 
-const NATIVE_DIRECTORIES = ['android', 'ios', 'apple', 'macos', 'windows'];
+const NATIVE_DIRECTORIES = new Set(['android', 'ios', 'apple', 'macos', 'windows']);
 
 export default function hasNativeCode(rootFiles: { entries: RepositoryTreeNode[] } | null) {
-  if (!rootFiles || !rootFiles.entries.length) {
+  if (!rootFiles?.entries.length) {
     return false;
   }
 
   return rootFiles.entries.some(
-    node => NATIVE_DIRECTORIES.includes(node.name) || node.name.endsWith('podspec')
+    node => NATIVE_DIRECTORIES.has(node.name) || node.name.endsWith('podspec')
   );
 }

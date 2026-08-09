@@ -177,7 +177,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
         json.description = packageJson.description ?? json.description;
         json.homepageUrl = packageJson.homepage ?? json.homepageUrl;
 
-        if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+        if (!json.licenseInfo || (json.licenseInfo?.key === 'other')) {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
         }
       }

@@ -19,7 +19,7 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
 
   const router = useRouter();
 
-  const total = data && data.total;
+  const total = data?.total ?? 0;
 
   function handleClearAllPress() {
     void router.replace(urlWithQuery('/trending'));

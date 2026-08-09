@@ -27,7 +27,7 @@ async function scrapeImagesAsync(githubUrl: string) {
   const $ = load(html);
   const images = $('#readme').find('img');
 
-  if (images && images.length) {
+  if (images?.length > 0) {
     const usefulImages = [];
     for (let i = 0; i <= images.length - 1; i++) {
       const image = $(images[i]);

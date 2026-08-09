@@ -37,7 +37,7 @@ export function pluralize(word: string, count: number) {
 }
 
 export function isEmptyOrNull(text?: string) {
-  return !text || !text.trim();
+  return !text?.trim();
 }
 
 export function formatPackageManager(pmRaw?: string) {

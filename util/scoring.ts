@@ -105,7 +105,7 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
       'Libraries without a license, libraries with non-standard license or that include the GPL license meet this criterion.',
     value: -20,
     condition: data => {
-      if (!data.github.license || !data.github.license.key) {
+      if (!data.github.license?.key) {
         return true;
       }
 

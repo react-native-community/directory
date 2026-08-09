@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Libraries({ libraries }: Props) {
-  if (!libraries || !libraries.length) {
+  if (!libraries?.length) {
     return <NotFoundContent />;
   }
 
