@@ -23844,5 +23844,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/annabilik/chessboard-native/tree/main/packages/chessboard-native",
+    "npmPkg": "@vibechess/chessboard-native",
+    "examples": ["https://github.com/annabilik/chessboard-native/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/annabilik/chessboard-native/main/docs/assets/nativechessboard.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
