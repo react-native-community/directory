@@ -1,5 +1,5 @@
 import { sumBy } from 'es-toolkit/math';
-import { useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import {
   type ColorValue,
   type NativePointerEvent,
@@ -37,6 +37,7 @@ type Props = {
   library: LibraryType;
   selectedVersion: string;
   activeFile: string | null;
+  header?: ReactNode;
   onSelectFile: (filePath: string | null) => void;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
@@ -46,6 +47,7 @@ export default function CodeBrowser({
   library,
   selectedVersion,
   activeFile,
+  header,
   onSelectFile,
   isBrowserMaximized,
   toggleMaximized,
@@ -188,12 +190,13 @@ export default function CodeBrowser({
     <View
       id="codeBrowser"
       style={[
-        tw`mt-2 flex overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
+        tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
         isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none` : tw`h-[70vh]`,
         isBrowserMaximized && {
           position: 'fixed',
         },
       ]}>
+      {isBrowserMaximized && header}
       {isLoading && (
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
@@ -205,6 +208,7 @@ export default function CodeBrowser({
           style={[
             tw`flex flex-row`,
             isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
+            isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
             isSmallScreen && tw`flex-col`,
           ]}>
           <View

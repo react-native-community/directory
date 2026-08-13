@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { View } from 'react-native';
 
-import { Label } from '~/common/styleguide';
+import { Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import CodeBrowser from '~/components/Package/CodeBrowser';
 import PackageVersionSelector from '~/components/Package/CodeBrowser/PackageVersionSelector';
@@ -19,6 +19,8 @@ const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:a
 
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
   const router = useRouter();
+  const { isSmallScreen } = useLayout();
+
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
   const selectedVersionParam =
     parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
@@ -90,11 +92,39 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     return <NotFound />;
   }
 
+  const headerContent = (
+    <>
+      <View style={tw`flex-1 flex-wrap gap-3`}>
+        <PackageHeader library={library} skipDescription />
+      </View>
+      <View style={tw`gap-1`}>
+        <Label style={tw`px-1.5 text-secondary`}>Package version</Label>
+        <PackageVersionSelector
+          packageName={library.npmPkg}
+          selectedVersion={selectedVersion}
+          setVersion={selectedVersion => {
+            setSelectedVersion(selectedVersion);
+            replaceQueryParam(router, 'selectedVersion', selectedVersion);
+          }}
+        />
+      </View>
+    </>
+  );
+
   const codeBrowser = (
     <CodeBrowser
       selectedVersion={selectedVersion}
       library={library}
       activeFile={activeFile}
+      header={
+        <View
+          style={[
+            tw`flex flex-row flex-wrap items-center justify-between gap-4 bg-default px-5 py-3 dark:bg-dark`,
+            isSmallScreen && tw`flex-col items-start`,
+          ]}>
+          {headerContent}
+        </View>
+      }
       onSelectFile={setActiveFile}
       isBrowserMaximized={isBrowserMaximized}
       toggleMaximized={() => setBrowserMaximized(isMaximized => !isMaximized)}
@@ -111,21 +141,12 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       <DetailsNavigation library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
-          <View style={tw`flex flex-row items-center justify-between`}>
-            <View style={tw`gap-3`}>
-              <PackageHeader library={library} skipDescription />
-            </View>
-            <View style={tw`gap-1`}>
-              <Label style={tw`px-1.5 text-secondary`}>Package version</Label>
-              <PackageVersionSelector
-                packageName={library.npmPkg}
-                selectedVersion={selectedVersion}
-                setVersion={selectedVersion => {
-                  setSelectedVersion(selectedVersion);
-                  replaceQueryParam(router, 'selectedVersion', selectedVersion);
-                }}
-              />
-            </View>
+          <View
+            style={[
+              tw`flex flex-1 flex-row flex-wrap items-center justify-between gap-4`,
+              isSmallScreen && tw`flex-col items-start`,
+            ]}>
+            {headerContent}
           </View>
           {isBrowserMaximized && document.body
             ? createPortal(codeBrowser, document.body)
