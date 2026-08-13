@@ -23863,14 +23863,11 @@
     "android": true
   },
   {
-  "githubUrl": "https://github.com/ladiyusuph/responsive-rn",
-  "npmPkg": "@ladiyusuph/responsive-rn",
-  "examples": [
-    "https://github.com/ladiyusuph/responsive-rn-helper"
-  ],
-  "images": [],
-  "ios": true,
-  "android": true,
-  "newArchitecture": true,
-}
+    "githubUrl": "https://github.com/ladiyusuph/responsive-rn",
+    "npmPkg": "@ladiyusuph/responsive-rn",
+    "examples": ["https://github.com/ladiyusuph/responsive-rn-helper"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  }
 ]
