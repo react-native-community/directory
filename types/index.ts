@@ -220,8 +220,9 @@ export type MarkdownTabsType =
 
 export type MarkdownTab = {
   title: MarkdownTabsType;
-  url: string | null;
+  url: string;
   Icon: ComponentType<IconProps>;
+  fallbackUrl?: string;
 };
 
 export type CheckResultsType = Record<
