@@ -43,7 +43,7 @@ export default function CodeBrowserContentHighlighter({
   }
 
   return (
-    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`flex-1 overflow-auto`}>
+    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`flex-1`}>
       {highlighter}
     </View>
   );

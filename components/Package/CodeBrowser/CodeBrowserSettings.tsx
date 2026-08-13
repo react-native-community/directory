@@ -1,11 +1,11 @@
 import * as Popover from '@radix-ui/react-popover';
 import { useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 
-import { Label } from '~/common/styleguide';
-import CheckBox from '~/components/CheckBox';
 import { SettingsIcon } from '~/components/Icons';
 import tw from '~/util/tailwind';
+
+import CodeBrowserSettingsCheckbox from './CodeBrowserSettingsCheckbox';
 
 export type CodeBrowserSettingsType = {
   wordWrap: boolean;
@@ -38,22 +38,16 @@ export default function CodeBrowserSettings({ settings, onChange }: Props) {
         <Popover.Content align="end" sideOffset={6} style={{ zIndex: 50 }}>
           <View
             style={tw`min-w-42 gap-0.5 rounded-lg border-2 border-palette-gray2 bg-default px-2 py-1.5 shadow-lg dark:border-default`}>
-            <Pressable
-              accessibilityRole="checkbox"
-              accessibilityState={{ checked: settings.wordWrap }}
-              onPress={() => toggleSetting('wordWrap')}
-              style={tw`flex-row items-center rounded px-1 py-1.5`}>
-              <CheckBox value={settings.wordWrap} />
-              <Label style={tw`font-light`}>Wrap long lines</Label>
-            </Pressable>
-            <Pressable
-              accessibilityRole="checkbox"
-              accessibilityState={{ checked: settings.showLineNumbers }}
-              onPress={() => toggleSetting('showLineNumbers')}
-              style={tw`flex-row items-center rounded px-1 py-1.5`}>
-              <CheckBox value={settings.showLineNumbers} />
-              <Label style={tw`font-light`}>Show line numbers</Label>
-            </Pressable>
+            <CodeBrowserSettingsCheckbox
+              label="Wrap long lines"
+              value={settings.wordWrap}
+              onChange={() => toggleSetting('wordWrap')}
+            />
+            <CodeBrowserSettingsCheckbox
+              label="Show line numbers"
+              value={settings.showLineNumbers}
+              onChange={() => toggleSetting('showLineNumbers')}
+            />
           </View>
         </Popover.Content>
       </Popover.Portal>
