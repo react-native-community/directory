@@ -8,7 +8,7 @@ import tw from '~/util/tailwind';
 import EntityCounter from '../EntityCounter';
 
 import FundingSection from './FundingSection';
-import MorePackagesBox from './MorePackagesBox';
+import MorePackagesSection from './MorePackagesSection';
 import PackageAuthor from './PackageAuthor';
 import RepositoryContributors from './RepositoryContributors';
 
@@ -22,7 +22,7 @@ type Props = {
 export default function CommunitySection({ library, author, maintainers, compact = false }: Props) {
   return (
     <>
-      <MorePackagesBox library={library} />
+      <MorePackagesSection library={library} />
       <FundingSection fullName={library.github.fullName} />
       {!!author && (
         <>

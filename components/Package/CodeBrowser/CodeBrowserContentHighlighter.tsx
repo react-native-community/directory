@@ -1,4 +1,5 @@
 import { type ShikiTransformer } from '@shikijs/types';
+import { View } from 'react-native';
 import { type Theme, useShikiHighlighter } from 'react-shiki';
 
 import { SHIKI_OPTS } from '~/util/shiki';
@@ -8,24 +9,44 @@ type Props = {
   code: string;
   lang: string;
   theme: Theme;
+  wordWrap: boolean;
+  showLineNumbers: boolean;
 };
 
-export default function CodeBrowserContentHighlighter({ code, lang, theme }: Props) {
+export default function CodeBrowserContentHighlighter({
+  code,
+  lang,
+  theme,
+  wordWrap,
+  showLineNumbers,
+}: Props) {
   const highlighter = useShikiHighlighter(code, lang, theme, {
-    showLineNumbers: true,
+    showLineNumbers,
     transformers: [linkifyUrlsTransformer],
     ...SHIKI_OPTS,
   });
 
   if (!highlighter) {
     return (
-      <pre className="shiki">
-        <code style={tw`flex pl-[29px]`}>{code}</code>
+      <pre
+        className="shiki"
+        style={wordWrap ? { whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } : undefined}>
+        <code
+          style={{
+            display: 'flex',
+            paddingLeft: showLineNumbers ? 29 : undefined,
+          }}>
+          {code}
+        </code>
       </pre>
     );
   }
 
-  return highlighter;
+  return (
+    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`flex-1`}>
+      {highlighter}
+    </View>
+  );
 }
 
 const URL_RE = /https?:\/\/\S+/g;

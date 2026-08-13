@@ -1,5 +1,5 @@
 import { sumBy } from 'es-toolkit/math';
-import { useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import {
   type ColorValue,
   type NativePointerEvent,
@@ -27,6 +27,7 @@ import tw from '~/util/tailwind';
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
+import { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 
 const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
 const DEFAULT_FILE_TREE_WIDTH = 340;
@@ -37,6 +38,9 @@ type Props = {
   library: LibraryType;
   selectedVersion: string;
   activeFile: string | null;
+  header?: ReactNode;
+  settings: CodeBrowserSettingsType;
+  onSettingsChange: (settings: CodeBrowserSettingsType) => void;
   onSelectFile: (filePath: string | null) => void;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
@@ -46,6 +50,9 @@ export default function CodeBrowser({
   library,
   selectedVersion,
   activeFile,
+  header,
+  settings,
+  onSettingsChange,
   onSelectFile,
   isBrowserMaximized,
   toggleMaximized,
@@ -188,12 +195,13 @@ export default function CodeBrowser({
     <View
       id="codeBrowser"
       style={[
-        tw`mt-2 flex overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
+        tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
         isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none` : tw`h-[70vh]`,
         isBrowserMaximized && {
           position: 'fixed',
         },
       ]}>
+      {isBrowserMaximized && header}
       {isLoading && (
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
@@ -205,6 +213,7 @@ export default function CodeBrowser({
           style={[
             tw`flex flex-row`,
             isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
+            isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
             isSmallScreen && tw`flex-col`,
           ]}>
           <View
@@ -320,6 +329,8 @@ export default function CodeBrowser({
                 selectedVersion={selectedVersion}
                 filePath={activeFile}
                 fileData={activeFileData}
+                settings={settings}
+                onSettingsChange={onSettingsChange}
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />
