@@ -27,6 +27,7 @@ import tw from '~/util/tailwind';
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
+import { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 
 const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
 const DEFAULT_FILE_TREE_WIDTH = 340;
@@ -38,6 +39,8 @@ type Props = {
   selectedVersion: string;
   activeFile: string | null;
   header?: ReactNode;
+  settings: CodeBrowserSettingsType;
+  onSettingsChange: (settings: CodeBrowserSettingsType) => void;
   onSelectFile: (filePath: string | null) => void;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
@@ -48,6 +51,8 @@ export default function CodeBrowser({
   selectedVersion,
   activeFile,
   header,
+  settings,
+  onSettingsChange,
   onSelectFile,
   isBrowserMaximized,
   toggleMaximized,
@@ -324,6 +329,8 @@ export default function CodeBrowser({
                 selectedVersion={selectedVersion}
                 filePath={activeFile}
                 fileData={activeFileData}
+                settings={settings}
+                onSettingsChange={onSettingsChange}
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />

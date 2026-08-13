@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import { Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import CodeBrowser from '~/components/Package/CodeBrowser';
+import { type CodeBrowserSettingsType } from '~/components/Package/CodeBrowser/CodeBrowserSettings';
 import PackageVersionSelector from '~/components/Package/CodeBrowser/PackageVersionSelector';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import NotFound from '~/components/Package/NotFound';
@@ -16,6 +17,11 @@ import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
 const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
+const CODE_BROWSER_SETTINGS_STORAGE_KEY = '@ReactNativeDirectory:CodeBrowser:settings';
+const DEFAULT_CODE_BROWSER_SETTINGS: CodeBrowserSettingsType = {
+  wordWrap: true,
+  showLineNumbers: true,
+};
 
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
   const router = useRouter();
@@ -26,12 +32,22 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
 
   const [selectedVersion, setSelectedVersion] = useState(selectedVersionParam);
+  const [codeBrowserSettings, setCodeBrowserSettings] = useState<CodeBrowserSettingsType>(() =>
+    readCodeBrowserSettings()
+  );
   const [activeFile, setActiveFile] = useState<string | null>(() =>
     window.localStorage.getItem(activeFileStorageKey)
   );
   const [isBrowserMaximized, setBrowserMaximized] = useState(false);
 
   const library = apiData.libraries.find(lib => lib.npmPkg === packageName);
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      CODE_BROWSER_SETTINGS_STORAGE_KEY,
+      JSON.stringify(codeBrowserSettings)
+    );
+  }, [codeBrowserSettings]);
 
   useEffect(() => {
     if (!isBrowserMaximized) {
@@ -116,6 +132,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       selectedVersion={selectedVersion}
       library={library}
       activeFile={activeFile}
+      settings={codeBrowserSettings}
+      onSettingsChange={setCodeBrowserSettings}
       header={
         <View
           style={[
@@ -155,4 +173,23 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       </ContentContainer>
     </>
   );
+}
+
+function readCodeBrowserSettings(): CodeBrowserSettingsType {
+  if (typeof window === 'undefined') {
+    return DEFAULT_CODE_BROWSER_SETTINGS;
+  }
+
+  try {
+    const storedSettings = window.localStorage.getItem(CODE_BROWSER_SETTINGS_STORAGE_KEY);
+    const parsedSettings = storedSettings ? JSON.parse(storedSettings) : undefined;
+
+    return {
+      wordWrap: parsedSettings?.wordWrap ?? DEFAULT_CODE_BROWSER_SETTINGS.wordWrap,
+      showLineNumbers:
+        parsedSettings?.showLineNumbers ?? DEFAULT_CODE_BROWSER_SETTINGS.showLineNumbers,
+    };
+  } catch {
+    return DEFAULT_CODE_BROWSER_SETTINGS;
+  }
 }
