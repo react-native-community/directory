@@ -8760,5 +8760,62 @@
   },
   "react-native-drum-picker": {
     "newArchitecture": "supported"
+  },
+  "magic-modal": {
+    "newArchitecture": "untested"
+  },
+  "@hzblj/zyplot": {
+    "newArchitecture": "supported"
+  },
+  "@mindinventory/react-native-nitro-realtime-audio": {
+    "newArchitecture": "supported"
+  },
+  "expo-thinking-orbs": {
+    "newArchitecture": "supported"
+  },
+  "expo-modern-table": {
+    "newArchitecture": "supported"
+  },
+  "@gmisoftware/react-native-pay": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-better-clustering": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-better-maps": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@onramp-sdk/react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-omni": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-video-provider": {
+    "newArchitecture": "supported"
+  },
+  "react-native-signal-scorer": {
+    "newArchitecture": "supported"
+  },
+  "react-native-paper-country-picker": {
+    "newArchitecture": "untested"
+  },
+  "expo-targets": {
+    "newArchitecture": "supported"
+  },
+  "react-native-leap": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@gfean/react-native-bundle-drop": {
+    "newArchitecture": "supported"
+  },
+  "@boiboif/react-native-toast": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@vibechess/chessboard-native": {
+    "newArchitecture": "supported"
+  },
+  "insert-affiliate-react-native-sdk": {
+    "newArchitecture": "untested"
   }
 }
