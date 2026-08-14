@@ -10,6 +10,7 @@ import CodeBrowserSettingsCheckbox from './CodeBrowserSettingsCheckbox';
 export type CodeBrowserSettingsType = {
   wordWrap: boolean;
   showLineNumbers: boolean;
+  hideMapFiles: boolean;
 };
 
 type Props = {
@@ -47,6 +48,11 @@ export default function CodeBrowserSettings({ settings, onChange }: Props) {
               label="Show line numbers"
               value={settings.showLineNumbers}
               onChange={() => toggleSetting('showLineNumbers')}
+            />
+            <CodeBrowserSettingsCheckbox
+              label="Hide map files"
+              value={settings.hideMapFiles}
+              onChange={() => toggleSetting('hideMapFiles')}
             />
           </View>
         </Popover.Content>

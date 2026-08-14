@@ -21,6 +21,7 @@ const CODE_BROWSER_SETTINGS_STORAGE_KEY = '@ReactNativeDirectory:CodeBrowser:set
 const DEFAULT_CODE_BROWSER_SETTINGS: CodeBrowserSettingsType = {
   wordWrap: true,
   showLineNumbers: true,
+  hideMapFiles: false,
 };
 
 export default function PackageCodeScene({ apiData, packageName }: PackageCodePageProps) {
@@ -188,6 +189,7 @@ function readCodeBrowserSettings(): CodeBrowserSettingsType {
       wordWrap: parsedSettings?.wordWrap ?? DEFAULT_CODE_BROWSER_SETTINGS.wordWrap,
       showLineNumbers:
         parsedSettings?.showLineNumbers ?? DEFAULT_CODE_BROWSER_SETTINGS.showLineNumbers,
+      hideMapFiles: parsedSettings?.hideMapFiles ?? DEFAULT_CODE_BROWSER_SETTINGS.hideMapFiles,
     };
   } catch {
     return DEFAULT_CODE_BROWSER_SETTINGS;
