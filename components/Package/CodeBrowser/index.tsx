@@ -4,6 +4,7 @@ import {
   type ColorValue,
   type NativePointerEvent,
   type NativeSyntheticEvent,
+  Pressable,
   ScrollView,
   TextInput,
   View,
@@ -11,8 +12,9 @@ import {
 import useSWR from 'swr';
 
 import { Label, P, useLayout } from '~/common/styleguide';
-import { FileIcon, SearchIcon } from '~/components/Icons';
+import { FileIcon, SearchIcon, XIcon } from '~/components/Icons';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type UnpkgMeta } from '~/types';
 import {
   buildCodeBrowserFileTree,
@@ -136,18 +138,21 @@ export default function CodeBrowser({
   const normalizedSearch = search.trim().toLowerCase();
 
   const files = data?.files ?? [];
+  const treeFiles = settings.hideMapFiles
+    ? files.filter(file => !file.path.toLowerCase().endsWith('.map'))
+    : files;
 
   const filteredFiles = (() => {
     if (!normalizedSearch) {
-      return files;
+      return treeFiles;
     }
 
-    const filesByPath = new Map<string, (typeof files)[number]>();
+    const filesByPath = new Map<string, (typeof treeFiles)[number]>();
     const relatedPaths = new Map<string, Set<string>>();
     const matchedPaths: string[] = [];
     const visiblePaths = new Set<string>();
 
-    for (const file of files) {
+    for (const file of treeFiles) {
       filesByPath.set(file.path, file);
 
       getCodeBrowserNestedFileParentPaths(file.path).forEach(nestedFileParentPath => {
@@ -181,11 +186,12 @@ export default function CodeBrowser({
       queue.push(...(relatedPaths.get(currentPath) ?? []));
     }
 
-    return files.filter(file => visiblePaths.has(file.path));
+    return treeFiles.filter(file => visiblePaths.has(file.path));
   })();
 
   const fileTree = buildCodeBrowserFileTree(filteredFiles, data?.prefix);
-  const totalFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
+  const totalFilesSize = sumBy(files, file => file.size ?? 0);
+  const filteredFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
   const activeFileData = activeFile
     ? files.find(file => file.path === `${data?.prefix}${activeFile}`)
     : undefined;
@@ -235,6 +241,18 @@ export default function CodeBrowser({
                   ]}
                 />
               </View>
+              {search.length > 0 && (
+                <Tooltip
+                  trigger={
+                    <Pressable
+                      style={tw`absolute right-3.5 top-3.5 p-0.5`}
+                      onPress={() => setSearch('')}>
+                      <XIcon style={tw`size-3 text-tertiary`} />
+                    </Pressable>
+                  }>
+                  Clear search value
+                </Tooltip>
+              )}
               <TextInput
                 ref={inputRef}
                 autoComplete="off"
@@ -255,7 +273,7 @@ export default function CodeBrowser({
                 onChangeText={setSearch}
                 placeholder="Search files…"
                 style={[
-                  tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 pl-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
+                  tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 px-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
                   isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
                 ]}
                 value={search}
@@ -305,11 +323,30 @@ export default function CodeBrowser({
                   <Label style={tw`font-light text-secondary`}>
                     <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
                     {pluralize('file', filteredFiles.length)}
+                    {files.length !== filteredFiles.length && (
+                      <span style={tw`opacity-80`}>
+                        &ensp;
+                        <span style={tw`text-tertiary`}>&bull;</span>
+                        &ensp;
+                        <span style={tw`font-medium`}>
+                          {files.length - filteredFiles.length}
+                        </span>{' '}
+                        hidden
+                      </span>
+                    )}
                   </Label>
                 }
                 rightSlot={
                   <Label style={tw`font-light text-secondary`}>
-                    <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
+                    <span style={tw`font-medium`}>{formatBytes(filteredFilesSize)}</span>
+                    {filteredFilesSize !== totalFilesSize && (
+                      <span style={tw`opacity-80`}>
+                        &ensp;
+                        <span style={tw`text-tertiary`}>&bull;</span>
+                        &ensp;
+                        <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span> total
+                      </span>
+                    )}
                   </Label>
                 }
               />
