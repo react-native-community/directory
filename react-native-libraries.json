@@ -23861,5 +23861,13 @@
     "npmPkg": "insert-affiliate-react-native-sdk",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ladiyusuph/responsive-rn-helper",
+    "npmPkg": "@ladiyusuph/responsive-rn",
+    "examples": ["https://github.com/ladiyusuph/responsive-rn-helper"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
