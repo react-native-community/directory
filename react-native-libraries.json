@@ -23869,5 +23869,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/invivek26/react-native-number-animation",
+    "examples": ["https://github.com/invivek26/react-native-number-animation/tree/HEAD/example"],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
