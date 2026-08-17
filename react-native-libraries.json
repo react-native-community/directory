@@ -5731,7 +5731,9 @@
     "ios": true,
     "android": true,
     "dev": true,
-    "fireos": true
+    "fireos": true,
+    "windows": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/react-native-community/hooks",
