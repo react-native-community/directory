@@ -23878,5 +23878,14 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Gautham495/react-native-nitro-better-auth-passkey",
+    "examples": [
+      "https://github.com/Gautham495/react-native-nitro-better-auth-passkey/tree/main/example"
+    ],
+    "android": true,
+    "ios": true,
+    "newArchitecture": true
   }
 ]
