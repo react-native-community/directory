@@ -13,6 +13,7 @@ import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { type PackageCodePageProps } from '~/types/pages';
+import { getStoredValue } from '~/util/localStorage';
 import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
@@ -37,7 +38,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     readCodeBrowserSettings()
   );
   const [activeFile, setActiveFile] = useState<string | null>(() =>
-    window.localStorage.getItem(activeFileStorageKey)
+    getStoredValue(activeFileStorageKey)
   );
   const [isBrowserMaximized, setBrowserMaximized] = useState(false);
 
@@ -75,12 +76,6 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     };
   }, [isBrowserMaximized]);
 
-  useEffect(() => {
-    // oxlint-disable-next-line react-doctor/no-derived-state
-    setActiveFile(window.localStorage.getItem(activeFileStorageKey));
-  }, [activeFileStorageKey]);
-
-  // oxlint-disable-next-line react-doctor/no-effect-chain
   useEffect(() => {
     if (activeFile) {
       window.localStorage.setItem(activeFileStorageKey, activeFile);
