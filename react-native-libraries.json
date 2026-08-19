@@ -23905,5 +23905,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/react-native-step-counter",
+    "npmPkg": "react-native-step-counter-newarch",
+    "examples": ["https://github.com/AndrewDongminYoo/walking-tracker"],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
