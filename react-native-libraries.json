@@ -23895,8 +23895,7 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true,
-    "newArchitectureNote": "Default MoveNet backend runs in a WebView and works on the New Architecture. Optional Apple Vision backend is iOS native builds only (not Expo Go)."
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/Movelytics/react-native-pose-estimation-light",
@@ -23905,7 +23904,6 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true,
-    "newArchitectureNote": "Default MoveNet backend runs in a WebView and works on the New Architecture. Optional Apple Vision backend is iOS native builds only (not Expo Go)."
+    "newArchitecture": true
   }
 ]
