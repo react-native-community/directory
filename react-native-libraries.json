@@ -23905,5 +23905,18 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/rn-typed-assets",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/rn-newarch-ready",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
