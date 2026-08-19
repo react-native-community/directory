@@ -23921,7 +23921,9 @@
   },
   {
     "githubUrl": "https://github.com/AndrewDongminYoo/react-native-receipt-scanner",
-    "examples": ["https://github.com/AndrewDongminYoo/react-native-receipt-scanner/tree/main/example"],
+    "examples": [
+      "https://github.com/AndrewDongminYoo/react-native-receipt-scanner/tree/main/example"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
