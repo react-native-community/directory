@@ -23891,9 +23891,7 @@
   {
     "githubUrl": "https://github.com/Movelytics/react-native-pose-estimation",
     "npmPkg": "@pose-tracker/react-native-pose-estimation",
-    "examples": [
-      "https://github.com/Movelytics/react-native-pose-estimation-demo"
-    ],
+    "examples": ["https://github.com/Movelytics/react-native-pose-estimation-demo"],
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -23903,9 +23901,7 @@
   {
     "githubUrl": "https://github.com/Movelytics/react-native-pose-estimation-light",
     "npmPkg": "@pose-tracker/react-native-pose-estimation-light",
-    "examples": [
-      "https://github.com/Movelytics/react-native-pose-estimation-light-demo"
-    ],
+    "examples": ["https://github.com/Movelytics/react-native-pose-estimation-light-demo"],
     "ios": true,
     "android": true,
     "expoGo": true,
