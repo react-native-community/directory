@@ -23918,5 +23918,30 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/react-native-receipt-scanner",
+    "examples": [
+      "https://github.com/AndrewDongminYoo/react-native-receipt-scanner/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/react-native-step-counter",
+    "npmPkg": "react-native-step-counter-newarch",
+    "examples": ["https://github.com/AndrewDongminYoo/react-native-step-counter/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AndrewDongminYoo/react-native-naver-login",
+    "npmPkg": "react-native-naver-login-turbo",
+    "examples": ["https://github.com/AndrewDongminYoo/react-native-naver-login/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
