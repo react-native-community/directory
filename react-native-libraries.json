@@ -23949,5 +23949,20 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/rajssinde/rs-native-kit-version-check",
+    "npmPkg": "@rs-native-kit/version-check",
+    "examples": [
+      "https://github.com/rajssinde/rs-native-kit-version-check/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/rajssinde/rs-native-kit-version-check/main/.github/assets/force-update-screen.png",
+      "https://raw.githubusercontent.com/rajssinde/rs-native-kit-version-check/main/.github/assets/theme-showcase.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
