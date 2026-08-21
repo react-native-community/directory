@@ -38,9 +38,9 @@
     "@visx/xychart": "^4.0.0",
     "crypto-js": "^4.2.0",
     "es-toolkit": "^1.51.0",
-    "expo": "57.0.14",
+    "expo": "57.0.15",
     "expo-font": "57.0.1",
-    "next": "^16.3.1",
+    "next": "^16.3.2",
     "node-emoji": "^2.2.0",
     "postcss": "^8.5.26",
     "react": "19.2.8",
@@ -63,8 +63,8 @@
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
-    "@next/bundle-analyzer": "^16.3.1",
-    "@types/bun": "^1.3.14",
+    "@next/bundle-analyzer": "^16.3.2",
+    "@types/bun": "^1.4.0",
     "@types/crypto-js": "^4.2.2",
     "@types/react": "^19.2.18",
     "@types/semver": "^7.8.0",
@@ -97,6 +97,6 @@
     ]
   },
   "patchedDependencies": {
-    "@types/react@19.2.17": "patches/@types%2Freact@19.2.17.patch"
+    "@types/react@19.2.18": "patches/@types%2Freact@19.2.18.patch"
   }
 }
