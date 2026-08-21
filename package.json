@@ -67,6 +67,7 @@
     "@types/bun": "^1.4.0",
     "@types/crypto-js": "^4.2.2",
     "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "@types/semver": "^7.8.0",
     "@vercel/blob": "2.8.0",
     "ajv-cli": "^5.0.0",
