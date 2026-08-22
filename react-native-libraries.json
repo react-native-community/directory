@@ -23967,5 +23967,17 @@
     "android": true,
     "configPlugin": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/kesha-antonov/react-native-cloud-sync",
+    "examples": ["https://github.com/kesha-antonov/react-native-cloud-sync/tree/main/example"],
+    "images": [
+      "https://media.githubusercontent.com/media/kesha-antonov/react-native-cloud-sync/main/assets/screenshots/sync.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
