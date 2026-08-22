@@ -23963,6 +23963,12 @@
     "newArchitecture": "new-arch-only"
   },
   {
+    "githubUrl": "https://github.com/dangerdeveloper/expo-gradle-properties",
+    "android": true,
+    "configPlugin": true,
+    "dev": true
+  },
+  {
     "githubUrl": "https://github.com/kesha-antonov/react-native-cloud-sync",
     "examples": ["https://github.com/kesha-antonov/react-native-cloud-sync/tree/main/example"],
     "images": [
