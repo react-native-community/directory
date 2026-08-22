@@ -23979,5 +23979,16 @@
     "web": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/eslamelfateh/react-native-body-parts-anatomy",
+    "images": [
+      "https://raw.githubusercontent.com/eslamelfateh/react-native-body-parts-anatomy/main/docs/preview-picker.png",
+      "https://raw.githubusercontent.com/eslamelfateh/react-native-body-parts-anatomy/main/docs/preview-readonly.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
