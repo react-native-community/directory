@@ -19026,14 +19026,18 @@
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-nitro-image/tree/main/packages/react-native-nitro-image",
+    "examples": ["https://github.com/mrousavy/react-native-nitro-image/tree/main/example"],
     "ios": true,
     "android": true,
-    "fireos": true
+    "fireos": true,
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-nitro-image/tree/main/packages/react-native-nitro-web-image",
+    "examples": ["https://github.com/mrousavy/react-native-nitro-image/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/BlixtWallet/react-native-nitro-ark/tree/master/react-native-nitro-ark",
