@@ -7105,9 +7105,7 @@
     "ios": true,
     "android": true,
     "fireos": true,
-    "newArchitecture": true,
-    "newArchitectureNote": "Currently supported through the compatibility layer for legacy view components.",
-    "configPlugin": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/dabakovich/react-native-controlled-mentions",
@@ -21883,33 +21881,48 @@
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-barcode-scanner",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+    ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-location",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+    ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-resizer",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+    ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-skia",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+    ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-worklets",
+    "examples": [
+      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+    ],
     "ios": true,
     "android": true,
-    "newArchitecture": true
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/shubh73/expo-ruler",
