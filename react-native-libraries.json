@@ -24011,5 +24011,13 @@
     "githubUrl": "https://github.com/tristanheilman/react-native-object-capture",
     "ios": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/maahibhama/PulseRN/tree/main/packages/sdk",
+    "npmPkg": "@pulse-rn/sdk",
+    "examples": ["https://github.com/maahibhama/PulseRN/tree/main/apps/example-react-native"],
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
