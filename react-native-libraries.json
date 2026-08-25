@@ -24006,5 +24006,10 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/tristanheilman/react-native-object-capture",
+    "ios": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
