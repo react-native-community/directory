@@ -24080,5 +24080,15 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/ksblazh/expo-tts-file",
+    "npmPkg": "expo-tts-file",
+    "examples": [
+      "https://github.com/ksblazh/expo-tts-file/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
