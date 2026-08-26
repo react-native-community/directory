@@ -24017,7 +24017,6 @@
     "npmPkg": "@pulse-rn/sdk",
     "examples": ["https://github.com/maahibhama/PulseRN/tree/main/apps/example-react-native"],
     "ios": true,
-    "android": true,
-    "dev": true
+    "android": true
   }
 ]
