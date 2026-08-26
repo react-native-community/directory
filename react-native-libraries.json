@@ -24080,5 +24080,13 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/AbdullahAnsarii/rn-story",
+    "examples": ["https://github.com/AbdullahAnsarii/rn-story/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/AbdullahAnsarii/rn-story/master/docs/demo.jpg"],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
