@@ -24013,6 +24013,13 @@
     "newArchitecture": "new-arch-only"
   },
   {
+    "githubUrl": "https://github.com/maahibhama/PulseRN/tree/main/packages/sdk",
+    "npmPkg": "@pulse-rn/sdk",
+    "examples": ["https://github.com/maahibhama/PulseRN/tree/main/apps/example-react-native"],
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/byrizki/rusto-rs/tree/main/packages/react-native",
     "npmPkg": "react-native-rusto",
     "newArchitecture": true,
