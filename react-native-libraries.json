@@ -24011,5 +24011,12 @@
     "githubUrl": "https://github.com/tristanheilman/react-native-object-capture",
     "ios": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/byrizki/rusto-rs/tree/main/packages/react-native",
+    "npmPkg": "react-native-rusto",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
