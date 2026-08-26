@@ -24070,5 +24070,15 @@
     "examples": ["https://github.com/sfourdrinier/unified-ble-manager/tree/main/example-expo"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mobilteknolojileri/react-native-password-intelligence",
+    "examples": [
+      "https://github.com/mobilteknolojileri/react-native-password-intelligence/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
