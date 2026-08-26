@@ -24025,5 +24025,57 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/linhnguyen-gt/react-native-phone-number-input",
+    "npmPkg": "@linhnguyen96114/react-native-phone-input",
+    "examples": [
+      "https://github.com/linhnguyen-gt/react-native-phone-number-input/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/linhnguyen-gt/react-native-phone-number-input/master/image/Phone_Number_Input_Layout_1.gif",
+      "https://raw.githubusercontent.com/linhnguyen-gt/react-native-phone-number-input/master/image/Phone_Number_Input_Layout_2.gif"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mdjastrzebski/react-native-plain-text",
+    "examples": ["https://github.com/mdjastrzebski/react-native-plain-text/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Usomnia/react-native-turbo-image-picker",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/notchip/expo-panoramic-stitcher",
+    "npmPkg": "@notchip/expo-panoramic-stitcher",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Joonhaelee/luas-rn-foreground-service",
+    "examples": ["https://github.com/Joonhaelee/luas-rn-foreground-service/tree/main/example"],
+    "npmPkg": "@luas/rn-foreground-service",
+    "newArchitecture": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ajibadedapo/expo-video-encoder",
+    "newArchitecture": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/sfourdrinier/unified-ble-manager",
+    "examples": ["https://github.com/sfourdrinier/unified-ble-manager/tree/main/example-expo"],
+    "ios": true,
+    "android": true
   }
 ]
