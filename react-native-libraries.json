@@ -2139,13 +2139,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/MichaelCereda/react-native-form-generator",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/react-native-simple-router-community/react-native-simple-router",
     "ios": true,
     "android": true,
@@ -19190,11 +19183,11 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/flexsurfer/reflex",
-    "npmPkg": "@flexsurfer/reflex",
+    "githubUrl": "https://github.com/ukladjs/uklad/tree/main/packages/core",
+    "npmPkg": "@ukladjs/core",
     "examples": [
-      "https://github.com/flexsurfer/reflex/tree/main/examples/todomvc",
-      "https://github.com/flexsurfer/einburgerungstest"
+      "https://github.com/ukladjs/uklad/tree/main/examples/todomvc",
+      "https://github.com/ukladjs/uklad/tree/main/examples/todomvc-query"
     ],
     "ios": true,
     "android": true,
@@ -23287,7 +23280,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/janicduplessis/rn-iso",
+    "githubUrl": "https://github.com/appandflow/rn-iso/tree/main/packages/rn-iso",
     "ios": true,
     "android": true,
     "dev": true
@@ -24023,6 +24016,58 @@
     "githubUrl": "https://github.com/byrizki/rusto-rs/tree/main/packages/react-native",
     "npmPkg": "react-native-rusto",
     "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/linhnguyen-gt/react-native-phone-number-input",
+    "npmPkg": "@linhnguyen96114/react-native-phone-input",
+    "examples": [
+      "https://github.com/linhnguyen-gt/react-native-phone-number-input/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/linhnguyen-gt/react-native-phone-number-input/master/image/Phone_Number_Input_Layout_1.gif",
+      "https://raw.githubusercontent.com/linhnguyen-gt/react-native-phone-number-input/master/image/Phone_Number_Input_Layout_2.gif"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/mdjastrzebski/react-native-plain-text",
+    "examples": ["https://github.com/mdjastrzebski/react-native-plain-text/tree/main/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Usomnia/react-native-turbo-image-picker",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/notchip/expo-panoramic-stitcher",
+    "npmPkg": "@notchip/expo-panoramic-stitcher",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Joonhaelee/luas-rn-foreground-service",
+    "examples": ["https://github.com/Joonhaelee/luas-rn-foreground-service/tree/main/example"],
+    "npmPkg": "@luas/rn-foreground-service",
+    "newArchitecture": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ajibadedapo/expo-video-encoder",
+    "newArchitecture": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/sfourdrinier/unified-ble-manager",
+    "examples": ["https://github.com/sfourdrinier/unified-ble-manager/tree/main/example-expo"],
     "ios": true,
     "android": true
   }
