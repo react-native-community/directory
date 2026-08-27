@@ -24095,5 +24095,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ant-design/ant-design-mobile-rn",
+    "npmPkg": "@ant-design/react-native",
+    "examples": ["https://github.com/ant-design/ant-design-mobile-rn/tree/master/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react-native",
+    "npmPkg": "@ant-design/icons-react-native",
+    "ios": true,
+    "android": true
   }
 ]
