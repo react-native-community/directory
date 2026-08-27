@@ -24082,11 +24082,16 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/AbdullahAnsarii/rn-story",
+    "examples": ["https://github.com/AbdullahAnsarii/rn-story/tree/master/example"],
+    "images": ["https://raw.githubusercontent.com/AbdullahAnsarii/rn-story/master/docs/demo.jpg"],
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
     "githubUrl": "https://github.com/ksblazh/expo-tts-file",
-    "npmPkg": "expo-tts-file",
-    "examples": [
-      "https://github.com/ksblazh/expo-tts-file/tree/main/example"
-    ],
+    "examples": ["https://github.com/ksblazh/expo-tts-file/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": true
