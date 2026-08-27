@@ -24088,5 +24088,12 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/ksblazh/expo-tts-file",
+    "examples": ["https://github.com/ksblazh/expo-tts-file/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
