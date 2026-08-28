@@ -24114,8 +24114,8 @@
   {
     "githubUrl": "https://github.com/Incognitol07/react-native-openwakeword",
     "examples": ["https://github.com/Incognitol07/react-native-openwakeword/tree/HEAD/example"],
-    "newArchitecture": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   }
 ]
