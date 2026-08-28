@@ -24110,5 +24110,12 @@
     "npmPkg": "@ant-design/icons-react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Incognitol07/react-native-openwakeword",
+    "examples": ["https://github.com/Incognitol07/react-native-openwakeword/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
