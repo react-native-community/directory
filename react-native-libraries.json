@@ -20024,7 +20024,7 @@
     "examples": ["https://github.com/msasinowski/react-native-expo-braintree/tree/main/example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true,
+    "newArchitecture": "new-arch-only",
   },
   {
     "githubUrl": "https://github.com/Swif7ify/react-native-earl-gamepad",
