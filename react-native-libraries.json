@@ -22548,6 +22548,17 @@
     "configPlugin": true
   },
   {
+    "githubUrl": "https://github.com/munimtechnologies/munim-ffmpeg",
+    "npmPkg": "munim-ffmpeg",
+    "examples": ["https://github.com/munimtechnologies/munim-ffmpeg/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": "new-arch-only",
+    "newArchitectureNote": "Built with Nitro Modules; the old architecture is not supported.",
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/mfairley/expo-callkit-telecom",
     "examples": ["https://github.com/mfairley/expo-callkit-telecom/tree/main/example"],
     "configPlugin": true,
