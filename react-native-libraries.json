@@ -22544,7 +22544,6 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only",
-    "newArchitectureNote": "Built with Nitro Modules; the old architecture is not supported.",
     "configPlugin": true
   },
   {
@@ -24117,5 +24116,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-ffmpeg",
+    "examples": ["https://github.com/munimtechnologies/munim-ffmpeg/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
