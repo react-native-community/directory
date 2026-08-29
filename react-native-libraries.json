@@ -6077,13 +6077,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-blurhash",
-    "examples": ["https://github.com/mrousavy/react-native-blurhash/tree/master/example"],
+    "githubUrl": "https://github.com/margelo/react-native-blurhash",
+    "examples": ["https://github.com/margelo/react-native-blurhash/tree/master/example"],
     "images": [
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/explanation.png",
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo.gif",
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo_ios.png",
-      "https://github.com/mrousavy/react-native-blurhash/raw/master/img/demo_android.png"
+      "https://github.com/margelo/react-native-blurhash/raw/master/img/explanation.png",
+      "https://github.com/margelo/react-native-blurhash/raw/master/img/demo.gif",
+      "https://github.com/margelo/react-native-blurhash/raw/master/img/demo_ios.png",
+      "https://github.com/margelo/react-native-blurhash/raw/master/img/demo_android.png"
     ],
     "ios": true,
     "android": true,
@@ -7081,8 +7081,8 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-mmkv/tree/main/packages/react-native-mmkv",
-    "examples": ["https://github.com/mrousavy/react-native-mmkv/tree/main/example"],
+    "githubUrl": "https://github.com/margelo/react-native-mmkv/tree/main/packages/react-native-mmkv",
+    "examples": ["https://github.com/margelo/react-native-mmkv/tree/main/example"],
     "ios": true,
     "android": true,
     "fireos": true,
@@ -7091,9 +7091,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
@@ -11163,8 +11163,8 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-fast-tflite",
-    "examples": ["https://github.com/mrousavy/react-native-fast-tflite/tree/main/example"],
+    "githubUrl": "https://github.com/margelo/react-native-fast-tflite",
+    "examples": ["https://github.com/margelo/react-native-fast-tflite/tree/main/example"],
     "ios": true,
     "android": true,
     "configPlugin": true,
@@ -14468,8 +14468,8 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules",
-    "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
+    "githubUrl": "https://github.com/margelo/nitro/tree/main/packages/react-native-nitro-modules",
+    "examples": ["https://github.com/margelo/nitro/tree/main/example"],
     "ios": true,
     "android": true,
     "tvos": true,
@@ -14479,8 +14479,8 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/nitro/tree/main/packages/nitrogen",
-    "examples": ["https://github.com/mrousavy/nitro/tree/main/example"],
+    "githubUrl": "https://github.com/margelo/nitro/tree/main/packages/nitrogen",
+    "examples": ["https://github.com/margelo/nitro/tree/main/example"],
     "ios": true,
     "android": true,
     "tvos": true,
@@ -21877,45 +21877,45 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-barcode-scanner",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera-barcode-scanner",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-location",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera-location",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-resizer",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera-resizer",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-skia",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera-skia",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
   },
   {
-    "githubUrl": "https://github.com/mrousavy/react-native-vision-camera/tree/main/packages/react-native-vision-camera-worklets",
+    "githubUrl": "https://github.com/margelo/react-native-vision-camera/tree/main/packages/react-native-vision-camera-worklets",
     "examples": [
-      "https://github.com/mrousavy/react-native-vision-camera/tree/main/apps/simple-camera"
+      "https://github.com/margelo/react-native-vision-camera/tree/main/apps/simple-camera"
     ],
     "ios": true,
     "android": true,
