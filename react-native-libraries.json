@@ -24146,5 +24146,27 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/main/packages/%40axonpack/expo-devtools",
+    "npmPkg": "@axonpack/expo-devtools",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/@axonpack/expo-devtools/tree/HEAD/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/logo.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/console-autocomplete.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/console-filters.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/console-log.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/console-repl.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/network-conditions.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/network-filters.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/expo-devtools/docs/screenshots/network-log.png"
+    ],
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
