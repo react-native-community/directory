@@ -12987,13 +12987,12 @@
   },
   {
     "githubUrl": "https://github.com/gabriel-logan/mobile-native-barcode-generator",
-    "examples": [
-      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example",
-      "https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/docs"
-    ],
+    "examples": ["https://github.com/gabriel-logan/mobile-native-barcode-generator/tree/main/example"],
     "images": [
-      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/docs/assets/example2.png"
+      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/example.jpeg",
+      "https://raw.githubusercontent.com/gabriel-logan/mobile-native-barcode-generator/main/example2.png"
     ],
+    "ios": true,
     "android": true,
     "newArchitecture": true
   },
