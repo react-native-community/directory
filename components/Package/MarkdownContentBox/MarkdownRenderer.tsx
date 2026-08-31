@@ -1,7 +1,8 @@
 import { Md } from '@m2d/react-markdown/client';
+import { type MdProps } from '@m2d/react-markdown/utils';
 import { capitalize } from 'es-toolkit/string';
 import { type Element } from 'hast';
-import { Children, type ComponentProps, isValidElement, type JSX } from 'react';
+import { Children, isValidElement, type JSX } from 'react';
 import { View } from 'react-native';
 import { type Theme } from 'react-shiki';
 import rehypeRaw from 'rehype-raw';
@@ -233,7 +234,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           sup: ({ children }: ComponentType<'sup'>) => {
             return <sup className="block">{children}</sup>;
           },
-        } as Record<string, ComponentProps<any>>
+        } as MdProps['components']
       }
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[remarkGfm, remarkEmoji]}>

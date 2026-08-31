@@ -3,9 +3,11 @@ import { type TextInput, type TextInputKeyPressEvent } from 'react-native';
 
 import isAppleDevice from '~/util/isAppleDevice';
 
-export function isSearchShortcutPressed(
-  event: TextInputKeyPressEvent & Record<'key', unknown>
-): boolean {
+export function isSearchShortcutPressed(event: TextInputKeyPressEvent & { key: unknown }): boolean {
+  if (typeof event.key !== 'string') {
+    return false;
+  }
+
   return (
     event.key === 'k' &&
     (!!('metaKey' in event && event.metaKey) || !!('ctrlKey' in event && event.ctrlKey))

@@ -284,9 +284,13 @@ export type NpmRegistryData = NpmRegistryCommonData & {
   time: Record<string, string>;
   readme?: string;
   readmeFilename?: string;
-  users?: Record<string, unknown>;
   _id?: string;
   _rev?: string;
+};
+
+type NpmRegistryExportsData = {
+  types?: string;
+  default: string;
 };
 
 export type NpmRegistryVersionData = NpmRegistryCommonData & {
@@ -309,14 +313,16 @@ export type NpmRegistryVersionData = NpmRegistryCommonData & {
   engines: {
     node: string;
   };
-  exports: Record<string, object | string>;
+  exports: Record<
+    string,
+    string | { import: NpmRegistryExportsData; require: NpmRegistryExportsData }
+  >;
   gitHead?: string;
   scripts: Record<string, string>;
   gitHooks?: Record<string, string>;
   description: string;
-  directories: Record<string, unknown>;
   dependencies?: Record<string, string>;
-  typesVersions?: Record<string, object>;
+  typesVersions?: Record<string, Record<string, string[]>>;
   devDependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;
   peerDependenciesMeta?: Record<string, { optional?: boolean }>;

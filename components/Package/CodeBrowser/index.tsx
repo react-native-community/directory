@@ -257,14 +257,12 @@ export default function CodeBrowser({
                 ref={inputRef}
                 autoComplete="off"
                 onKeyPress={event => {
-                  if ('key' in event) {
-                    if (inputRef.current && event.key === 'Escape') {
-                      if (search) {
-                        event.preventDefault();
-                        setSearch('');
-                      } else {
-                        inputRef.current.blur();
-                      }
+                  if ('key' in event && inputRef.current && event.key === 'Escape') {
+                    if (search) {
+                      event.preventDefault();
+                      setSearch('');
+                    } else {
+                      inputRef.current.blur();
                     }
                   }
                 }}
