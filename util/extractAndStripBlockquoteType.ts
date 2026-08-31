@@ -7,12 +7,17 @@ type ExtractResult = {
   type?: string;
 };
 
+type WalkResult = {
+  type: string | null;
+  cleaned: ReactNode;
+};
+
 export function extractAndStripBlockquoteType(children: ReactNode): ExtractResult {
   const { type, cleaned } = walk(children);
   return { children: cleaned, type: type?.toLowerCase() };
 }
 
-function walk(node: ReactNode): { type: string | null; cleaned: ReactNode } {
+function walk(node: ReactNode): WalkResult {
   if (node == null || typeof node === 'boolean' || typeof node === 'number') {
     return { type: null, cleaned: node };
   }

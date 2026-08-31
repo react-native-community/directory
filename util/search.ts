@@ -147,11 +147,8 @@ export function handleFilterLibraries({
     let isTopicMatch = false;
     let isSearchMatch = false;
 
-    // Filter by bookmarks if enabled
-    if (bookmarks && bookmarkedIds) {
-      if (!bookmarkedIds.has(library.npmPkg)) {
-        return false;
-      }
+    if (bookmarks && bookmarkedIds && !bookmarkedIds.has(library.npmPkg)) {
+      return false;
     }
 
     if (skipLibs && !library.dev) {

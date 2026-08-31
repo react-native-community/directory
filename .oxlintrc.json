@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["import", "jsx-a11y", "nextjs", "promise", "react", "typescript", "unicorn"],
-  "jsPlugins": [{ "name": "react-doctor", "specifier": "oxlint-plugin-react-doctor" }],
+  "jsPlugins": [
+    { "name": "golden", "specifier": "oxlint-plugin-golden" },
+    { "name": "react-doctor", "specifier": "oxlint-plugin-react-doctor" }
+  ],
   "ignorePatterns": [
     "**/.next",
     "**/.swc",
@@ -48,6 +51,16 @@
       "error",
       { "allowSeparatedGroups": true, "ignoreDeclarationSort": true, "ignoreCase": true }
     ],
+    "golden/no-chained-type-assertions": "error",
+    "golden/no-empty-object-types": "error",
+    "golden/no-known-value-widening": "error",
+    "golden/no-object-parameters": "error",
+    "golden/no-redundant-optional-undefined": "error",
+    "golden/no-unknown-parameters": "error",
+    "golden/no-unknown-returns": "error",
+    "golden/no-unknown-type-aliases": "error",
+    "golden/no-unsafe-dictionary-type": "error",
+    "golden/no-widen-then-assert": "error",
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/default": "error",
     "import/namespace": "error",

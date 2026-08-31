@@ -20,15 +20,18 @@ import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
 config({ quiet: true });
 
-const licenses: Record<string, LibraryLicenseType> = {
-  isc: {
-    id: 'isc',
-    name: 'ISC License',
-    url: 'https://www.isc.org/licenses/',
-    key: 'isc',
-    spdxId: 'ISC',
-  },
-};
+const licenses = new Map<string, LibraryLicenseType>([
+  [
+    'isc',
+    {
+      id: 'isc',
+      name: 'ISC License',
+      url: 'https://www.isc.org/licenses/',
+      key: 'isc',
+      spdxId: 'ISC',
+    },
+  ],
+]);
 
 /**
  * Fetch licenses from GitHub to be used later to parse licenses from npm
@@ -37,7 +40,7 @@ export async function loadGitHubLicenses() {
   const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
   result.data.licenses.forEach((license: LibraryLicenseType) => {
-    licenses[license.key] = license;
+    licenses.set(license.key, license);
   });
 }
 
@@ -137,9 +140,11 @@ export async function fetchGithubData(
 }
 
 // Get the GitHub license spec from the npm string
-function getLicenseFromPackageJson(packageJson: Record<string, string | object>) {
+function getLicenseFromPackageJson(
+  packageJson: Record<string, string | { type: string; url: string }>
+) {
   if (packageJson.license && typeof packageJson.license === 'string') {
-    return licenses[packageJson.license.toLowerCase()];
+    return licenses.get(packageJson.license.toLowerCase());
   }
 }
 

@@ -122,18 +122,14 @@ export default function QuickSearch({ style }: Props) {
                   return;
                 }
 
-                if (event.key === 'ArrowDown') {
-                  if (shouldShowResults && hasResults) {
-                    event.preventDefault();
-                    handleArrowDownPress();
-                  }
+                if (event.key === 'ArrowDown' && shouldShowResults && hasResults) {
+                  event.preventDefault();
+                  handleArrowDownPress();
                 }
 
-                if (event.key === 'ArrowUp') {
-                  if (shouldShowResults && hasResults) {
-                    event.preventDefault();
-                    handleArrowUpPress();
-                  }
+                if (event.key === 'ArrowUp' && shouldShowResults && hasResults) {
+                  event.preventDefault();
+                  handleArrowUpPress();
                 }
 
                 if (event.key === 'Enter') {
