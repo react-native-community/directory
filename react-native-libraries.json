@@ -24147,5 +24147,33 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/afkcodes/timbre/tree/main/packages/player",
+    "npmPkg": "@afkcodes/timbre-player",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/afkcodes/timbre/tree/main/packages/media-session",
+    "npmPkg": "@afkcodes/timbre-media-session",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/afkcodes/timbre/tree/main/packages/audio-session",
+    "npmPkg": "@afkcodes/timbre-audio-session",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/afkcodes/timbre/tree/main/packages/cast",
+    "npmPkg": "@afkcodes/timbre-cast",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
