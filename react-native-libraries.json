@@ -24191,5 +24191,14 @@
     "ios": true,
     "newArchitecture": "new-arch-only",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/vengatmacuser/react-native-inapp-inspector",
+    "examples": ["https://github.com/vengatmacuser/react-native-inapp-inspector/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true,
+    "newArchitecture": true
   }
 ]
