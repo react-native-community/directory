@@ -24176,5 +24176,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-pencilkit",
+    "examples": ["https://github.com/munimtechnologies/munim-pencilkit/tree/HEAD/example"],
+    "ios": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
