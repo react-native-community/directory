@@ -20830,13 +20830,6 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/superfan-app/spotify-auth",
-    "npmPkg": "@superfan-app/spotify-auth",
-    "android": true,
-    "ios": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/ArturKalach/react-native-a11y",
     "images": [
       "https://raw.githubusercontent.com/ArturKalach/react-native-a11y/master/.github/images/ios-reader.gif",
@@ -21536,8 +21529,8 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/joshstovall/platform-blocks/tree/main/packages/ui",
-    "npmPkg": "@platform-blocks/ui",
+    "githubUrl": "https://github.com/platform-blocks/react-ui-library/tree/main/packages/ui",
+    "npmPkg": "@platform-blocks/react-ui-library",
     "ios": true,
     "android": true,
     "web": true,
@@ -23282,7 +23275,7 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/appandflow/rn-iso/tree/main/packages/rn-iso",
+    "githubUrl": "https://github.com/appandflow/stim/tree/main/packages/stim-cli",
     "ios": true,
     "android": true,
     "dev": true
@@ -24201,5 +24194,13 @@
     "expoGo": true,
     "dev": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/platform-blocks/react-ui-library/tree/main/packages/charts",
+    "npmPkg": "@platform-blocks/charts",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
