@@ -24176,5 +24176,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-wifi",
+    "examples": ["https://github.com/munimtechnologies/munim-wifi/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
