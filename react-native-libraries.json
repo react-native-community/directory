@@ -24202,5 +24202,10 @@
     "android": true,
     "web": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/devusimple/ytdlp-react-native",
+    "newArchitecture": true,
+    "android": true
   }
 ]
