@@ -24207,5 +24207,13 @@
     "githubUrl": "https://github.com/devusimple/ytdlp-react-native",
     "newArchitecture": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/awesomemotive/pushengage-react-native",
+    "npmPkg": "@pushengage/pushengage-react-native",
+    "examples": ["https://github.com/awesomemotive/pushengage-react-native/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
