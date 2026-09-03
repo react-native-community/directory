@@ -29,6 +29,7 @@ export default function QuickSearch({ style }: Props) {
   const [search, setSearch] = useState('');
 
   const inputRef = useRef<TextInput>(null);
+  const searchRef = useRef<string>('');
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
@@ -53,6 +54,7 @@ export default function QuickSearch({ style }: Props) {
   }, 200);
 
   function handleSearchChange(text: string) {
+    searchRef.current = text;
     setActiveResultIndex(null);
     typingCallback(text);
   }
@@ -143,7 +145,7 @@ export default function QuickSearch({ style }: Props) {
                     return;
                   }
 
-                  void push(urlWithQuery('/packages', { search }));
+                  void push(urlWithQuery('/packages', { search: searchRef.current }));
                 }
 
                 if (isSearchShortcutPressed(event)) {
