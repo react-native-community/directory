@@ -162,6 +162,7 @@ export default function QuickSearch({ style }: Props) {
                   if (search) {
                     event.preventDefault();
                     inputRef.current.clear();
+                    searchRef.current = '';
                     setSearch('');
                   } else {
                     inputRef.current.blur();
