@@ -24222,11 +24222,10 @@
     "android": true,
     "newArchitecture": true
   },
-  {
-    "githubUrl": "https://github.com/armanrma7/react-native-callkit-telecom",
+  { 
+    "githubUrl": "https://github.com/armanrma7/react-native-callkit-telecom", 
     "npmPkg": "react-native-callkit-telecom",
-    "examples": [
-       "https://github.com/armanrma7/react-native-callkit-telecom/tree/main/example"
+    "examples": [ "https://github.com/armanrma7/react-native-callkit-telecom/tree/main/example"
     ],
     "ios": true,
     "android": true
