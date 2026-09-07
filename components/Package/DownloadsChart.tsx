@@ -1,7 +1,8 @@
 import { LinearGradient } from '@visx/gradient';
 import { ParentSize } from '@visx/responsive';
-import { AreaSeries, type AxisScale, Tooltip, XYChart } from '@visx/xychart';
+import { AnimatedAreaSeries, Tooltip, XYChart } from '@visx/xychart';
 import { maxBy } from 'es-toolkit/array';
+import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import useSWR from 'swr';
 
@@ -15,6 +16,7 @@ type Point = { date: Date; value: number };
 
 type Props = {
   packageName: string;
+  range: string;
   height?: number;
 };
 
@@ -25,9 +27,9 @@ const DATE_FORMAT = {
   year: '2-digit' as const,
 };
 
-export default function DownloadsChart({ packageName, height = 48 }: Props) {
+export default function DownloadsChart({ packageName, range, height = 48 }: Props) {
   const { data } = useSWR(
-    `/api/proxy/npm-stat?name=${packageName}`,
+    `/api/proxy/npm-stat?name=${packageName}&range=${range}`,
     (url: string) => fetch(url).then(res => res.json()),
     {
       dedupingInterval: TimeRange.HOUR * 1000,
@@ -35,7 +37,24 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
     }
   );
 
-  const series = data && Object.keys(data).length ? mapData(data[packageName]) : null;
+  const series =
+    data && Object.keys(data).length ? mapData(data[packageName], range === 'year') : null;
+  const [animatedSeries, setAnimatedSeries] = useState<Point[] | null>(null);
+
+  useEffect(() => {
+    const nextSeries =
+      data && Object.keys(data).length ? mapData(data[packageName], range === 'year') : null;
+    if (!nextSeries) {
+      return;
+    }
+
+    const frame = requestAnimationFrame(() => {
+      setAnimatedSeries(nextSeries.map(point => ({ ...point, value: 0 })));
+      requestAnimationFrame(() => setAnimatedSeries(nextSeries));
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [data, packageName, range]);
+
   const yDomain = getYDomain(series);
 
   return (
@@ -49,7 +68,7 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
           );
         }
 
-        if (!width || !data || !series) {
+        if (!width || !data || !series || !animatedSeries) {
           return (
             <View style={tw`h-full items-center justify-center`}>
               <ThreeDotsLoader />
@@ -71,15 +90,23 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
               fromOpacity={tw.prefixMatch('dark') ? 0.3 : 0.5}
               toOpacity={0}
             />
-            <AreaSeries<AxisScale, AxisScale, Point>
+            <AnimatedAreaSeries
               dataKey="area"
-              data={series}
+              data={animatedSeries}
               xAccessor={(p: Point) => p.date.getTime()}
               yAccessor={(p: Point) => p.value}
               fill="url(#area-gradient)"
             />
             <Tooltip<Point>
               showVerticalCrosshair
+              snapTooltipToDatumX
+              showDatumGlyph
+              glyphStyle={{
+                fill: COLOR,
+                stroke: 'white',
+                strokeWidth: 0.5,
+                r: 3,
+              }}
               verticalCrosshairStyle={{
                 stroke: COLOR,
                 strokeWidth: 0.5,
@@ -114,11 +141,31 @@ export default function DownloadsChart({ packageName, height = 48 }: Props) {
   );
 }
 
-function mapData(dataMap: DataMap): Point[] {
-  return Object.entries(dataMap).map(([date, value]) => ({
-    date: new Date(date + 'T00:00:00Z'),
+function mapData(dataMap: DataMap, aggregateByWeek: boolean): Point[] {
+  if (!aggregateByWeek) {
+    return Object.entries(dataMap).map(([date, value]) => ({
+      date: new Date(date + 'T00:00:00Z'),
+      value,
+    }));
+  }
+
+  const weeklyTotals = new Map<number, number>();
+  for (const [date, value] of Object.entries(dataMap)) {
+    const weekStart = getWeekStart(new Date(date + 'T00:00:00Z'));
+    const weekKey = weekStart.getTime();
+    weeklyTotals.set(weekKey, (weeklyTotals.get(weekKey) ?? 0) + value);
+  }
+
+  return [...weeklyTotals].map(([weekStart, value]) => ({
+    date: new Date(weekStart),
     value,
   }));
+}
+
+function getWeekStart(date: Date): Date {
+  const weekStart = new Date(date);
+  weekStart.setUTCDate(date.getUTCDate() - ((date.getUTCDay() + 6) % 7));
+  return weekStart;
 }
 
 function getYDomain(series: Point[] | null) {
