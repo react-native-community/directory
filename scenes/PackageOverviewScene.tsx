@@ -2,16 +2,15 @@ import { UL } from '@expo/html-elements';
 import dynamic from 'next/dynamic';
 import { View } from 'react-native';
 
-import { A, Caption, H6Section, Label, useLayout } from '~/common/styleguide';
+import { A, H6Section, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import MetaData from '~/components/Library/MetaData';
-import TrendingMark from '~/components/Library/TrendingMark';
 import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import CommunitySection from '~/components/Package/CommunitySection';
 import DependenciesSection from '~/components/Package/DependenciesSection';
 import DetailsNavigation from '~/components/Package/DetailsNavigation';
-import DownloadsChart from '~/components/Package/DownloadsChart';
+import DownloadsSection from '~/components/Package/DownloadsSection';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import MarkdownContentBox from '~/components/Package/MarkdownContentBox';
@@ -88,18 +87,7 @@ export default function PackageOverviewScene({
                 <MetaData library={library} secondary skipExamples />
               </View>
             </CollapsibleSection>
-            <H6Section style={tw`flex items-center justify-between`}>
-              Downloads <Label style={tw`font-light text-secondary`}>Last month</Label>
-            </H6Section>
-            <View style={tw`gap-y-2`}>
-              <View style={tw`h-[54px] gap-1.5 overflow-hidden rounded-lg border border-default`}>
-                <DownloadsChart packageName={packageName} />
-              </View>
-              <View style={tw`flex-row flex-wrap items-center justify-between`}>
-                <Caption style={tw`text-[13px] font-light`}>Popularity</Caption>
-                <TrendingMark library={library} />
-              </View>
-            </View>
+            <DownloadsSection library={library} />
             <TopicsSection topics={library.github.topics} />
             <CollapsibleSection title="Package analysis">
               <ul
