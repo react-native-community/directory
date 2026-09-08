@@ -57,7 +57,7 @@ export default function DetailsNavigation({ library }: Props) {
           </View>
         ) : undefined
       }>
-      <ContentContainer style={tw`flex-row gap-2 px-5`}>
+      <ContentContainer style={[tw`flex-row gap-2 px-5`, isSmallScreen && tw`flex-wrap`]}>
         <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
         <NavigationTab
           title="Versions"
