@@ -24227,5 +24227,18 @@
     "examples": ["https://github.com/armanrma7/react-native-callkit-telecom/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/DavidTrujillo123/orn-ui",
+    "npmPkg": "orn-ui",
+    "examples": ["https://github.com/DavidTrujillo123/orn-ui/tree/main/apps/example"],
+    "images": [
+      "https://orn-ui-docs.vercel.app/media/button.gif",
+      "https://orn-ui-docs.vercel.app/media/bottom-sheet.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
