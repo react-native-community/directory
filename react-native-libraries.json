@@ -24227,5 +24227,14 @@
     "examples": ["https://github.com/armanrma7/react-native-callkit-telecom/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Dahab-Tech/react-native-media-editor",
+    "npmPkg": "@dahab-tech/react-native-media-editor",
+    "examples": ["https://github.com/Dahab-Tech/react-native-media-editor/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": false,
+    "newArchitecture": true
   }
 ]
