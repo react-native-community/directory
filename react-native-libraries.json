@@ -24229,12 +24229,24 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/DavidTrujillo123/orn-ui/tree/main/packages/ui",
+    "npmPkg": "orn-ui",
+    "examples": ["https://github.com/DavidTrujillo123/orn-ui/tree/main/apps/example"],
+    "images": [
+      "https://orn-ui-docs.vercel.app/media/button.gif",
+      "https://orn-ui-docs.vercel.app/media/bottom-sheet.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/Dahab-Tech/react-native-media-editor",
     "npmPkg": "@dahab-tech/react-native-media-editor",
     "examples": ["https://github.com/Dahab-Tech/react-native-media-editor/tree/main/example"],
     "ios": true,
     "android": true,
-    "expoGo": false,
     "newArchitecture": true
   }
 ]
