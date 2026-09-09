@@ -24240,5 +24240,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/Dahab-Tech/react-native-media-editor",
+    "npmPkg": "@dahab-tech/react-native-media-editor",
+    "examples": ["https://github.com/Dahab-Tech/react-native-media-editor/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
