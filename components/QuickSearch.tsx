@@ -1,6 +1,13 @@
 import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
-import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
+import {
+  type ColorValue,
+  type StyleProp,
+  TextInput,
+  type TextInputInstance,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import useSWR from 'swr';
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -28,7 +35,7 @@ export default function QuickSearch({ style }: Props) {
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
   const [search, setSearch] = useState('');
 
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const searchRef = useRef<string>('');
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useRef, useState } from 'react';
-import { type ColorValue, TextInput, View } from 'react-native';
+import { type ColorValue, TextInput, type TextInputInstance, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
 import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
@@ -31,7 +31,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   const { isSmallScreen } = useLayout();
 
   const [shouldShowAll, setShowAll] = useState(false);
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 

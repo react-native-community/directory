@@ -1,6 +1,6 @@
 import * as Popover from '@radix-ui/react-popover';
 import { useRef, useState } from 'react';
-import { type ColorValue, ScrollView, TextInput, View } from 'react-native';
+import { type ColorValue, ScrollView, TextInput, type TextInputInstance, View } from 'react-native';
 import useSWR from 'swr';
 import { useDebounce } from 'use-debounce';
 
@@ -27,7 +27,7 @@ export default function PackageVersionSelector({
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [debouncedSearch] = useDebounce(search, 150);
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
 
   const { data, isLoading } = useSWR<PackageVersionsOnlyData>(
     `/api/proxy/npm-registry-versions?name=${packageName}&versionsOnly=true`,

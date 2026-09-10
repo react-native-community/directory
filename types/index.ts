@@ -1,5 +1,3 @@
-import 'expo/types/react-native-web.d.ts';
-
 import { type ComponentType, type ReactElement, type ReactNode } from 'react';
 
 import { type IconProps } from '~/components/Icons';
