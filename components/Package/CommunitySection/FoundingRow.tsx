@@ -15,7 +15,6 @@ type Props = {
 export default function FundingRow({ fund }: Props) {
   const { isSmallScreen } = useLayout();
   return (
-    // @ts-expect-error calculated width
     <LI style={!isSmallScreen && { width: 'calc(50% - 4px)' }}>
       <A
         href={correctFundLink(fund)}

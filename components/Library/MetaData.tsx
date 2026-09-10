@@ -280,7 +280,6 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
           const component = (
             <View
               key={id}
-              // @ts-expect-error RNW complains about 'fit-content'
               style={{
                 ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
                 ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,

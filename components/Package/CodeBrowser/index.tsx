@@ -7,6 +7,7 @@ import {
   Pressable,
   ScrollView,
   TextInput,
+  type TextInputInstance,
   View,
 } from 'react-native';
 import useSWR from 'swr';
@@ -60,7 +61,7 @@ export default function CodeBrowser({
   toggleMaximized,
 }: Props) {
   const { isSmallScreen } = useLayout();
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const fileTreeResizeStartRef = useRef<{ startX: number; startWidth: number } | null>(null);
 
   const [search, setSearch] = useState('');

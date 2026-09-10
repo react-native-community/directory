@@ -1,5 +1,5 @@
 import { type RefObject, useEffect, useEffectEvent, useState } from 'react';
-import { type TextInput, type TextInputKeyPressEvent } from 'react-native';
+import { type TextInputInstance, type TextInputKeyPressEvent } from 'react-native';
 
 import isAppleDevice from '~/util/isAppleDevice';
 
@@ -32,7 +32,7 @@ export function useSearchInputFocus() {
   };
 }
 
-export function useSearchShortcut(inputRef: RefObject<TextInput | null>) {
+export function useSearchShortcut(inputRef: RefObject<TextInputInstance | null>) {
   const isApple = isAppleDevice();
 
   const keyDownListener = useEffectEvent((event: KeyboardEvent) => {

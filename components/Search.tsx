@@ -1,6 +1,13 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
-import { type ColorValue, type StyleProp, TextInput, View, type ViewStyle } from 'react-native';
+import {
+  type ColorValue,
+  type StyleProp,
+  TextInput,
+  type TextInputInstance,
+  View,
+  type ViewStyle,
+} from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
 import { P, useLayout } from '~/common/styleguide';
@@ -29,7 +36,7 @@ export default function Search({ query, total, style }: Props) {
   const { search, order, direction, offset, owner, ...filterParams } = query;
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
 
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
