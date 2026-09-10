@@ -24248,5 +24248,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/ramssutharr/react-native-collapsible-tabs-native",
+    "examples": [
+      "https://github.com/ramssutharr/react-native-collapsible-tabs-native/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/ramssutharr/react-native-collapsible-tabs-native/main/docs/demo-ios.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
