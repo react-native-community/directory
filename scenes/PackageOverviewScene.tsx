@@ -9,11 +9,11 @@ import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import CommunitySection from '~/components/Package/CommunitySection';
 import DependenciesSection from '~/components/Package/DependenciesSection';
-import DetailsNavigation from '~/components/Package/DetailsNavigation';
 import DownloadsSection from '~/components/Package/DownloadsSection';
 import EntityCounter from '~/components/Package/EntityCounter';
 import ExampleBox from '~/components/Package/ExampleBox';
 import MarkdownContentBox from '~/components/Package/MarkdownContentBox';
+import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import TopicsSection from '~/components/Package/TopicsSection';
@@ -51,7 +51,7 @@ export default function PackageOverviewScene({
         description={`See ${library.npmPkg} package detailed information and metadata`}
         path="package"
       />
-      <DetailsNavigation library={library} />
+      <NavigationHeader library={library} />
       <ContentContainer style={tw`px-0 pb-6 pt-3`}>
         <View style={[tw`flex-row gap-8 px-5 py-3`, isSmallScreen && tw`flex-col gap-5`]}>
           <View style={tw`flex-1 gap-3`}>

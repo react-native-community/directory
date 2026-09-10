@@ -8,7 +8,7 @@ import ContentContainer from '~/components/ContentContainer';
 import CodeBrowser from '~/components/Package/CodeBrowser';
 import { type CodeBrowserSettingsType } from '~/components/Package/CodeBrowser/CodeBrowserSettings';
 import PackageVersionSelector from '~/components/Package/CodeBrowser/PackageVersionSelector';
-import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
@@ -152,7 +152,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
         description="See package directory score details"
         path="package"
       />
-      <DetailsNavigation library={library} />
+      <NavigationHeader library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
           <View

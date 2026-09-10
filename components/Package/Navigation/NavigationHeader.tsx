@@ -5,7 +5,7 @@ import { A, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { WarningIcon } from '~/components/Icons';
 import Navigation from '~/components/Navigation';
-import NavigationTab from '~/components/NavigationTab';
+import NavigationTabs from '~/components/Package/Navigation/NavigationTabs';
 import { type LibraryType } from '~/types';
 import { strippedBackground } from '~/util/style';
 import tw from '~/util/tailwind';
@@ -14,9 +14,20 @@ type Props = {
   library: LibraryType;
 };
 
-export default function DetailsNavigation({ library }: Props) {
+export default function NavigationHeader({ library }: Props) {
   const { isSmallScreen } = useLayout();
   const alternativesLength = library.alternatives?.length ?? 0;
+
+  const tabs = [
+    { title: 'Overview', path: `/package/${library.npmPkg}` },
+    {
+      title: 'Versions',
+      counter: library.npm?.versionsCount,
+      path: `/package/${library.npmPkg}/versions`,
+    },
+    { title: 'Code', path: `/package/${library.npmPkg}/code` },
+    { title: 'Score', path: `/package/${library.npmPkg}/score` },
+  ];
 
   return (
     <Navigation
@@ -57,15 +68,8 @@ export default function DetailsNavigation({ library }: Props) {
           </View>
         ) : undefined
       }>
-      <ContentContainer style={[tw`flex-row gap-2 px-5`, isSmallScreen && tw`flex-wrap`]}>
-        <NavigationTab title="Overview" path={`/package/${library.npmPkg}`} />
-        <NavigationTab
-          title="Versions"
-          counter={library.npm?.versionsCount}
-          path={`/package/${library.npmPkg}/versions`}
-        />
-        <NavigationTab title="Code" path={`/package/${library.npmPkg}/code`} />
-        <NavigationTab title="Score" path={`/package/${library.npmPkg}/score`} />
+      <ContentContainer style={tw`flex-row px-5`}>
+        <NavigationTabs tabs={tabs} />
       </ContentContainer>
     </Navigation>
   );
