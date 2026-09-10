@@ -24260,5 +24260,34 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-react-native",
+    "npmPkg": "@amplitude/analytics-react-native",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/plugin-session-replay-react-native",
+    "npmPkg": "@amplitude/plugin-session-replay-react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/amplitude/experiment-react-native-client",
+    "npmPkg": "@amplitude/experiment-react-native-client",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/dev-plugins/tree/main/packages/apollo-client",
+    "npmPkg": "@dev-plugins/apollo-client",
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/dev-plugins/tree/main/packages/react-navigation",
+    "npmPkg": "@dev-plugins/react-navigation",
+    "dev": true
   }
 ]
