@@ -100,6 +100,7 @@
   },
   "patchedDependencies": {
     "@types/react@19.2.18": "patches/@types%2Freact@19.3.0.patch",
-    "react-native@0.88.0-rc.0": "patches/react-native@0.88.0-rc.0.patch"
+    "react-native@0.88.0-rc.0": "patches/react-native@0.88.0-rc.0.patch",
+    "react-native-svg@15.15.5": "patches/react-native-svg@15.15.5.patch"
   }
 }

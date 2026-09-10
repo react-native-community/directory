@@ -1,0 +1,67 @@
+diff --git a/lib/commonjs/lib/resolveAssetUri.js b/lib/commonjs/lib/resolveAssetUri.js
+index 33448fb861fe981aaaae867c11d712ab2509920b..f61fbda0296103ef18c97d6a0aa610a027c4eda6 100644
+--- a/lib/commonjs/lib/resolveAssetUri.js
++++ b/lib/commonjs/lib/resolveAssetUri.js
+@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
+ });
+ exports.resolveAssetUri = resolveAssetUri;
+ var _reactNative = require("react-native");
+-var _registry = require("@react-native/assets-registry/registry");
+-// @ts-expect-error react-native/assets-registry doesn't export types.
+ 
+ const svgDataUriPattern = /^(data:image\/svg\+xml;utf8,)(.*)/;
+ 
+@@ -15,7 +13,7 @@ function resolveAssetUri(source) {
+   let src = {};
+   if (typeof source === 'number') {
+     // get the URI from the packager
+-    const asset = (0, _registry.getAssetByID)(source);
++    const asset = _reactNative.AssetRegistry.getAssetByID(source);
+     if (asset == null) {
+       throw new Error(`Image: asset with ID "${source}" could not be found. Please check the image source or packager.`);
+     }
+diff --git a/lib/module/lib/resolveAssetUri.js b/lib/module/lib/resolveAssetUri.js
+index b7f3798628c9af9e41d2a0507462459bbc73f294..06841fc2ed0272cb3913d327eed98a8e9db16d16 100644
+--- a/lib/module/lib/resolveAssetUri.js
++++ b/lib/module/lib/resolveAssetUri.js
+@@ -1,6 +1,4 @@
+-import { PixelRatio } from 'react-native';
+-// @ts-expect-error react-native/assets-registry doesn't export types.
+-import { getAssetByID } from '@react-native/assets-registry/registry';
++import { PixelRatio, AssetRegistry } from 'react-native';
+ const svgDataUriPattern = /^(data:image\/svg\+xml;utf8,)(.*)/;
+ 
+ // Based on that function: https://github.com/necolas/react-native-web/blob/54c14d64dabd175e8055e1dc92e9196c821f9b7d/packages/react-native-web/src/exports/Image/index.js#L118-L156
+@@ -8,7 +6,7 @@ export function resolveAssetUri(source) {
+   let src = {};
+   if (typeof source === 'number') {
+     // get the URI from the packager
+-    const asset = getAssetByID(source);
++    const asset = AssetRegistry.getAssetByID(source);
+     if (asset == null) {
+       throw new Error(`Image: asset with ID "${source}" could not be found. Please check the image source or packager.`);
+     }
+diff --git a/src/lib/resolveAssetUri.ts b/src/lib/resolveAssetUri.ts
+index a4f0193d309ca88da35d4f8a74a982efb1dedb16..d0c05da9ece7120f460e8a417812d4ff28a94f3e 100644
+--- a/src/lib/resolveAssetUri.ts
++++ b/src/lib/resolveAssetUri.ts
+@@ -2,9 +2,8 @@ import {
+   ImageResolvedAssetSource,
+   PixelRatio,
+   type ImageProps as RNImageProps,
++  AssetRegistry,
+ } from 'react-native';
+-// @ts-expect-error react-native/assets-registry doesn't export types.
+-import { getAssetByID } from '@react-native/assets-registry/registry';
+ 
+ export type PackagerAsset = {
+   __packager_asset: boolean;
+@@ -27,7 +26,7 @@ export function resolveAssetUri(
+   let src: Partial<ImageResolvedAssetSource> = {};
+   if (typeof source === 'number') {
+     // get the URI from the packager
+-    const asset: PackagerAsset | null = getAssetByID(source);
++    const asset: PackagerAsset | null = AssetRegistry.getAssetByID(source);
+     if (asset == null) {
+       throw new Error(
+         `Image: asset with ID "${source}" could not be found. Please check the image source or packager.`
