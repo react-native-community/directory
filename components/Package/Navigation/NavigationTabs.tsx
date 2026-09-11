@@ -45,23 +45,19 @@ export default function NavigationTabs({ tabs }: Props) {
   const isTriggerActive = activeIndex >= visible;
 
   return (
-    <View
-      ref={navigationRef}
-      style={tw`relative flex-1 overflow-hidden`}
-      onLayout={onNavigationLayout}>
+    <View ref={navigationRef} style={tw`relative flex-1`} onLayout={onNavigationLayout}>
       <View
         style={[
           tw`pointer-events-none absolute left-0 top-0 flex-row items-center opacity-0`,
-          { rowGap: TABS_GAP },
-        ]}
-        aria-hidden>
+          { columnGap: TABS_GAP },
+        ]}>
         {tabs.map((tab, index) => (
           <View key={tab.title} ref={tabRef(index)} onLayout={onTabLayout(index)}>
-            <NavigationTab {...tab} />
+            <NavigationTab {...tab} measurement />
           </View>
         ))}
         <View ref={triggerRef} onLayout={onTriggerLayout}>
-          <MoreTrigger active={false} open={false} />
+          <MoreTrigger active={false} open={false} hidden />
         </View>
       </View>
       <View
@@ -69,7 +65,7 @@ export default function NavigationTabs({ tabs }: Props) {
           tw`flex-1 flex-row items-center`,
           measuring && tw`opacity-0`,
           measuring ? tw`pointer-events-none` : tw`pointer-events-auto`,
-          { rowGap: TABS_GAP },
+          { columnGap: TABS_GAP },
         ]}>
         {tabs.slice(0, visible).map(tab => (
           <NavigationTab key={tab.title} {...tab} />
@@ -91,10 +87,10 @@ export default function NavigationTabs({ tabs }: Props) {
                 <View
                   style={tw`min-w-40 overflow-hidden rounded-lg border-2 border-palette-gray2 bg-default py-0.5 shadow-lg dark:border-default dark:bg-default`}>
                   {hiddenTabs.map((tab, index) => (
-                    <SelectorItemHoverEffect key={tab.title} onPress={() => setOpen(false)}>
+                    <SelectorItemHoverEffect key={tab.title} focusable={false}>
                       <A
                         href={tab.path}
-                        style={tw`flex-row items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 no-underline`}
+                        style={tw`flex flex-row items-center gap-2 rounded-lg px-2.5 py-1.5 no-underline`}
                         target="_self">
                         <P
                           style={[
@@ -105,7 +101,7 @@ export default function NavigationTabs({ tabs }: Props) {
                           {tab.title}
                         </P>
                         {!!tab.counter && (
-                          <EntityCounter count={tab.counter} style={tw`text-[inherit]`} />
+                          <EntityCounter count={tab.counter} style={tw`mt-0 text-[inherit]`} />
                         )}
                       </A>
                     </SelectorItemHoverEffect>
@@ -120,13 +116,18 @@ export default function NavigationTabs({ tabs }: Props) {
   );
 }
 
-function MoreTrigger({ active, open }: { active: boolean; open: boolean }) {
+type MoreTriggerProps = { active: boolean; open: boolean; hidden?: boolean };
+
+function MoreTrigger({ active, open, hidden }: MoreTriggerProps) {
   return (
-    <View style={tw`cursor-pointer flex-row items-center gap-1 px-4 pb-2 pt-1.5`}>
+    <View
+      style={tw`cursor-pointer flex-row items-center gap-1.5 px-4 pb-2 pt-1.5`}
+      aria-hidden={hidden}
+      tabIndex={hidden ? -1 : undefined}>
       <P style={[tw`text-white`, active && tw`text-primary`]}>More</P>
       <ArrowIcon
         style={[
-          tw`h-3 w-4 shrink-0`,
+          tw`mt-0.5 size-3 shrink-0`,
           active ? tw`text-primary` : tw`text-icon`,
           open ? tw`rotate-270` : tw`rotate-90`,
           { transition: 'all 0.2s' },
