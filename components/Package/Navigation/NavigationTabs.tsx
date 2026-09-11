@@ -50,8 +50,10 @@ export default function NavigationTabs({ tabs }: Props) {
       style={tw`relative flex-1 overflow-hidden`}
       onLayout={onNavigationLayout}>
       <View
-        style={tw`absolute left-0 top-0 flex-row items-center gap-[${TABS_GAP}px] opacity-0`}
-        pointerEvents="none"
+        style={[
+          tw`pointer-events-none absolute left-0 top-0 flex-row items-center opacity-0`,
+          { rowGap: TABS_GAP },
+        ]}
         aria-hidden>
         {tabs.map((tab, index) => (
           <View key={tab.title} ref={tabRef(index)} onLayout={onTabLayout(index)}>
@@ -62,14 +64,16 @@ export default function NavigationTabs({ tabs }: Props) {
           <MoreTrigger active={false} open={false} />
         </View>
       </View>
-
       <View
-        style={[tw`flex-1 flex-row items-center gap-[${TABS_GAP}px]`, measuring && tw`opacity-0`]}
-        pointerEvents={measuring ? 'none' : 'auto'}>
+        style={[
+          tw`flex-1 flex-row items-center`,
+          measuring && tw`opacity-0`,
+          measuring ? tw`pointer-events-none` : tw`pointer-events-auto`,
+          { rowGap: TABS_GAP },
+        ]}>
         {tabs.slice(0, visible).map(tab => (
           <NavigationTab key={tab.title} {...tab} />
         ))}
-
         {hiddenTabs.length > 0 && (
           <Popover.Root open={open} onOpenChange={setOpen}>
             <HoverEffect
@@ -118,7 +122,7 @@ export default function NavigationTabs({ tabs }: Props) {
 
 function MoreTrigger({ active, open }: { active: boolean; open: boolean }) {
   return (
-    <View style={tw`flex-row items-center gap-1 px-4 pb-2 pt-1.5`}>
+    <View style={tw`cursor-pointer flex-row items-center gap-1 px-4 pb-2 pt-1.5`}>
       <P style={[tw`text-white`, active && tw`text-primary`]}>More</P>
       <ArrowIcon
         style={[
