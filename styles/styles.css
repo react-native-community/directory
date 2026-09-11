@@ -547,6 +547,8 @@ select {
 
   pre {
     margin-bottom: 0;
+    overflow-x: auto;
+    scrollbar-color: var(--icon) var(--background);
 
     code {
       background-color: unset;
