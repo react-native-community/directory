@@ -416,3 +416,9 @@ export type UnpkgMeta = {
   prefix: string;
   version: string;
 };
+
+export type PackageNavigationTab = {
+  title: string;
+  path: string;
+  counter?: number | string;
+};
