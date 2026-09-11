@@ -547,6 +547,7 @@ select {
 
   pre {
     margin-bottom: 0;
+    overflow-x: auto;
 
     code {
       background-color: unset;
