@@ -1,24 +1,16 @@
-import * as Popover from '@radix-ui/react-popover';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { A, HoverEffect, P } from '~/common/styleguide';
-import { ArrowIcon } from '~/components/Icons';
 import NavigationTab from '~/components/NavigationTab';
-import EntityCounter from '~/components/Package/EntityCounter';
-import { useNavigationTabs } from '~/components/Package/Navigation/useNavigationTabs';
-import SelectorItemHoverEffect from '~/components/Selector/SelectorItemHoverEffect';
+import { type PackageNavigationTab } from '~/types';
 import tw from '~/util/tailwind';
 
-type Tab = {
-  title: string;
-  path: string;
-  counter?: number | string;
-};
+import { NavigationMobileMenu } from './NavigationMobileMenu';
+import { useNavigationTabs } from './useNavigationTabs';
 
 type Props = {
-  tabs: Tab[];
+  tabs: PackageNavigationTab[];
 };
 
 const TABS_GAP = 8;
@@ -43,23 +35,11 @@ export default function NavigationTabs({ tabs }: Props) {
 
   const hiddenTabs = tabs.slice(visible);
   const isTriggerActive = activeIndex >= visible;
+  const renderedTabs = measuring ? tabs : tabs.slice(0, visible);
+  const hasHiddenTabs = measuring || hiddenTabs.length > 0;
 
   return (
     <View ref={navigationRef} style={tw`relative flex-1`} onLayout={onNavigationLayout}>
-      <View
-        style={[
-          tw`pointer-events-none absolute left-0 top-0 flex-row items-center opacity-0`,
-          { columnGap: TABS_GAP },
-        ]}>
-        {tabs.map((tab, index) => (
-          <View key={tab.title} ref={tabRef(index)} onLayout={onTabLayout(index)}>
-            <NavigationTab {...tab} measurement />
-          </View>
-        ))}
-        <View ref={triggerRef} onLayout={onTriggerLayout}>
-          <MoreTrigger active={false} open={false} hidden />
-        </View>
-      </View>
       <View
         style={[
           tw`flex-1 flex-row items-center`,
@@ -67,72 +47,24 @@ export default function NavigationTabs({ tabs }: Props) {
           measuring ? tw`pointer-events-none` : tw`pointer-events-auto`,
           { columnGap: TABS_GAP },
         ]}>
-        {tabs.slice(0, visible).map(tab => (
-          <NavigationTab key={tab.title} {...tab} />
+        {renderedTabs.map((tab, index) => (
+          <View key={tab.title} ref={tabRef(index)} onLayout={onTabLayout(index)}>
+            <NavigationTab {...tab} measurement={measuring} />
+          </View>
         ))}
-        {hiddenTabs.length > 0 && (
-          <Popover.Root open={open} onOpenChange={setOpen}>
-            <HoverEffect
-              hoveredStyle={tw`bg-palette-gray6 dark:bg-default`}
-              pressedStyle={tw`bg-palette-gray6 dark:bg-default`}
-              style={[tw`rounded`, isTriggerActive && tw`bg-primary-hover`]}>
-              <Popover.Trigger asChild>
-                <View role="button">
-                  <MoreTrigger active={isTriggerActive} open={open} />
-                </View>
-              </Popover.Trigger>
-            </HoverEffect>
-            <Popover.Portal>
-              <Popover.Content align="end" sideOffset={6}>
-                <View
-                  style={tw`min-w-40 overflow-hidden rounded-lg border-2 border-palette-gray2 bg-default py-0.5 shadow-lg dark:border-default dark:bg-default`}>
-                  {hiddenTabs.map((tab, index) => (
-                    <SelectorItemHoverEffect key={tab.title} focusable={false}>
-                      <A
-                        href={tab.path}
-                        style={tw`flex flex-row items-center gap-2 rounded-lg px-2.5 py-1.5 no-underline`}
-                        target="_self">
-                        <P
-                          style={[
-                            tw`text-[inherit]`,
-                            visible + index === activeIndex &&
-                              tw`text-primary-darker dark:text-primary`,
-                          ]}>
-                          {tab.title}
-                        </P>
-                        {!!tab.counter && (
-                          <EntityCounter count={tab.counter} style={tw`mt-0 text-[inherit]`} />
-                        )}
-                      </A>
-                    </SelectorItemHoverEffect>
-                  ))}
-                </View>
-              </Popover.Content>
-            </Popover.Portal>
-          </Popover.Root>
+        {hasHiddenTabs && (
+          <View ref={triggerRef} onLayout={onTriggerLayout}>
+            <NavigationMobileMenu
+              activeIndex={activeIndex}
+              open={open}
+              onOpenChange={setOpen}
+              tabs={hiddenTabs}
+              visible={visible}
+              isTriggerActive={isTriggerActive}
+            />
+          </View>
         )}
       </View>
-    </View>
-  );
-}
-
-type MoreTriggerProps = { active: boolean; open: boolean; hidden?: boolean };
-
-function MoreTrigger({ active, open, hidden }: MoreTriggerProps) {
-  return (
-    <View
-      style={tw`cursor-pointer flex-row items-center gap-1.5 px-4 pb-2 pt-1.5`}
-      aria-hidden={hidden}
-      tabIndex={hidden ? -1 : undefined}>
-      <P style={[tw`text-white`, active && tw`text-primary`]}>More</P>
-      <ArrowIcon
-        style={[
-          tw`mt-0.5 size-3 shrink-0`,
-          active ? tw`text-primary` : tw`text-icon`,
-          open ? tw`rotate-270` : tw`rotate-90`,
-          { transition: 'all 0.2s' },
-        ]}
-      />
     </View>
   );
 }
