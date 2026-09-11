@@ -109,6 +109,8 @@ type AProps = PropsWithChildren<{
   hoverStyle?: StyleProp<Style>;
   containerStyle?: Style;
   role?: Role;
+  tabIndex?: number;
+  'aria-hidden'?: boolean;
   ref?: Ref<HTMLAnchorElement>;
 }>;
 

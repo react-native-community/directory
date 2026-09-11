@@ -8,7 +8,12 @@ type Props = PressableProps & {
   hoveredStyle?: Style;
 };
 
-export default function SelectorItemHoverEffect({ children, hoveredStyle, ...rest }: Props) {
+export default function SelectorItemHoverEffect({
+  children,
+  hoveredStyle,
+  focusable,
+  ...rest
+}: Props) {
   return (
     <HoverEffect
       style={[
@@ -16,7 +21,7 @@ export default function SelectorItemHoverEffect({ children, hoveredStyle, ...res
         { transition: 'background-color 0.2s' },
       ]}
       hoveredStyle={hoveredStyle ?? tw`bg-palette-gray2 dark:bg-palette-gray7`}
-      focusable
+      focusable={focusable}
       {...rest}>
       {children}
     </HoverEffect>
