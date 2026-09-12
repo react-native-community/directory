@@ -23,7 +23,8 @@ export default function Footer() {
   return (
     <View style={tw`mt-1 w-full bg-palette-gray1 pb-7 pt-8 dark:bg-dark`}>
       <ContentContainer>
-        <View style={tw`mx-auto mb-7 mt-1 max-w-footer flex-row flex-wrap justify-center gap-3.5`}>
+        <View
+          style={tw`mx-auto mb-7 mt-1 w-full flex-row flex-wrap justify-center gap-x-2 gap-y-3`}>
           <PlatformTile
             name="Android"
             pkgName="react-native"
