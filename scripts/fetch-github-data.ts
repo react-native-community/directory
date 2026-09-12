@@ -4,6 +4,7 @@ import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
 import {
+  detectLintStack,
   detectPackageManager,
   hasCCFile,
   hasChangelogFile,
@@ -252,5 +253,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       json.packageManager ??
       detectPackageManager(json.files) ??
       detectPackageManager(json.rootFiles),
+    lintTools: detectLintStack(json.files) ?? detectLintStack(json.rootFiles),
   };
 }

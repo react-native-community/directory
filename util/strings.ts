@@ -61,6 +61,26 @@ export function formatPackageManager(pmRaw?: string) {
   }
 }
 
+export function formatLintTools(lintTool?: string) {
+  if (!lintTool) {
+    return undefined;
+  }
+
+  if (lintTool === 'oxlint') {
+    return 'Oxlint';
+  } else if (lintTool === 'oxfmt') {
+    return 'Oxfmt';
+  } else if (lintTool === 'eslint') {
+    return 'ESLint';
+  } else if (lintTool === 'prettier') {
+    return 'Prettier';
+  } else if (lintTool === 'biome') {
+    return 'Biome';
+  } else {
+    return lintTool;
+  }
+}
+
 export function childrenToText(children: ReactNode): string {
   return Children.toArray(children)
     .map(child => {

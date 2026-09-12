@@ -1253,3 +1253,23 @@ export function SecurityIcon({ style }: IconProps) {
     </Svg>
   );
 }
+
+export function LintToolsIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <line x1="128" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" />
+      <line x1="128" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" />
+      <line x1="128" y1="192" x2="216" y2="192" fill="none" stroke="currentColor" />
+      <polyline points="40 64 56 80 88 48" fill="none" stroke="currentColor" strokeWidth="20" />
+      <polyline points="40 128 56 144 88 112" fill="none" stroke="currentColor" strokeWidth="20" />
+      <polyline points="40 192 56 208 88 176" fill="none" stroke="currentColor" strokeWidth="20" />
+    </Svg>
+  );
+}

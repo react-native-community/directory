@@ -101,6 +101,7 @@ export type LibraryType = LibraryDataEntryType & {
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     packageManager?: string;
+    lintTools?: string[];
     urls: {
       repo: string;
       homepage?: string | null;
