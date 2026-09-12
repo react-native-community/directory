@@ -12,6 +12,7 @@ import {
   ForkIcon,
   IssueIcon,
   LicenseIcon,
+  LintToolsIcon,
   ModuleIcon,
   NativeCodeIcon,
   NightlyTestIcon,
@@ -25,7 +26,7 @@ import { ConfigPluginContent } from '~/components/Library/ConfigPlugin';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryDataEntryType, type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import { formatPackageManager, pluralize } from '~/util/strings';
+import { formatLintTools, formatPackageManager, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
@@ -266,6 +267,16 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           tooltip: 'Package manager',
         }
       : null,
+    skipExamples && (github?.lintTools?.length ?? 0) > 0
+      ? {
+          id: 'lintTools',
+          icon: <LintToolsIcon style={iconColor} />,
+          content: (
+            <P style={paragraphStyles}>{github.lintTools?.map(formatLintTools).join(', ')}</P>
+          ),
+          tooltip: 'Lint tools',
+        }
+      : null,
   ];
 }
 
@@ -291,7 +302,7 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
           );
 
           return tooltip ? (
-            <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
+            <Tooltip key={id} sideOffset={-2} side="left" delayDuration={250} trigger={component}>
               {tooltip}
             </Tooltip>
           ) : (
