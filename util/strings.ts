@@ -61,11 +61,7 @@ export function formatPackageManager(pmRaw?: string) {
   }
 }
 
-export function formatLintTools(lintTool?: string) {
-  if (!lintTool) {
-    return undefined;
-  }
-
+export function formatLintTools(lintTool: string) {
   if (lintTool === 'oxlint') {
     return 'Oxlint';
   } else if (lintTool === 'oxfmt') {
