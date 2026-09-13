@@ -24313,5 +24313,13 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/apolyanov/impulse-ui-native/tree/main/packages/toolkit",
+    "npmPkg": "@impulse-ui-native/toolkit",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
