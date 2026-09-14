@@ -1,4 +1,4 @@
-import { type LintTool, type RepositoryTreeNode } from '~/types';
+import { type LintToolType, type RepositoryTreeNode } from '~/types';
 
 type RootFiles = { entries: RepositoryTreeNode[] } | null;
 
@@ -132,7 +132,7 @@ const COMMITLINT_CONFIG_FILE_NAMES = new Set([
 ]);
 
 export function detectLintStack(rootFiles: RootFiles) {
-  const lintTools: LintTool[] = [];
+  const lintTools: LintToolType[] = [];
   if (hasMatchingFiles(rootFiles, OXLINT_CONFIG_FILE_NAMES)) {
     lintTools.push('oxlint');
   }

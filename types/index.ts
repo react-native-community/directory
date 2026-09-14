@@ -100,8 +100,8 @@ export type LibraryType = LibraryDataEntryType & {
     hasSecurity?: boolean;
     configPlugin?: boolean;
     moduleType?: ModuleType;
-    packageManager?: string;
-    lintTools?: LintTool[];
+    packageManager?: PackageManagerType;
+    lintTools?: LintToolType[];
     urls: {
       repo: string;
       homepage?: string | null;
@@ -253,13 +253,9 @@ export type StatisticResultType = {
   tvos: number;
   visionos: number;
   vegaos: number;
-  lintTools: Record<LintTool, number>;
-  packageManager: {
-    bun: number;
-    pnpm: number;
-    npm: number;
-    yarn: number;
-  };
+  packageManager: Record<PackageManagerType, number>;
+  moduleType: Record<ModuleType, number>;
+  lintTools: Record<LintToolType, number>;
 };
 
 type NpmRegistryCommonData = {
@@ -425,6 +421,6 @@ export type PackageNavigationTab = {
   counter?: number | string;
 };
 
+export type PackageManagerType = 'bun' | 'pnpm' | 'npm' | 'yarn';
 export type ModuleType = 'expo' | 'nitro' | 'turbo';
-
-export type LintTool = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';
+export type LintToolType = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';
