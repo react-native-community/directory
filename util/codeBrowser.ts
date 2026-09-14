@@ -40,7 +40,7 @@ export const IMAGE_FILES = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'ico'];
 
 export const FILE_WARNINGS = [
   {
-    message: 'This file should not be part of the bundle and can be safely ignored.',
+    message: 'This file probably should not be part of the bundle and can be safely ignored.',
     fileNames: [
       '*.iml',
       '*.keystore',
@@ -109,7 +109,7 @@ export const FILE_WARNINGS = [
 
 export const DIRECTORY_WARNINGS = [
   {
-    message: 'This directory should not be part of the bundle and can be safely ignored.',
+    message: 'This directory probably should not be part of the bundle and can be safely ignored.',
     fileNames: [
       '.github',
       '.gradle',

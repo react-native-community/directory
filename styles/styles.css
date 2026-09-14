@@ -64,6 +64,7 @@
   --warning-light: #fef7d6;
   --warning-dark: #995e00;
   --warning-border: #995e0044;
+  --warning-dark-bg: #995e0022;
 
   --error: #ff5555;
   --success: #4caf50;
@@ -109,6 +110,7 @@
   --warning: #9a720c;
   --warning-light: #2f2304;
   --warning-border: #9a720c44;
+  --warning-dark-bg: #9a720c16;
 
   --background: #19191f;
   --border: var(--accented);
@@ -833,7 +835,6 @@ select {
   #codeBrowserList {
     background-color: var(--table-alt-row);
     scrollbar-color: var(--icon) var(--gray-1);
-    scrollbar-gutter: stable;
   }
 
   #markdownContentWrapper {
