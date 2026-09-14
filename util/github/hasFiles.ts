@@ -1,4 +1,4 @@
-import { type RepositoryTreeNode } from '~/types';
+import { type LintTool, type RepositoryTreeNode } from '~/types';
 
 type RootFiles = { entries: RepositoryTreeNode[] } | null;
 
@@ -110,9 +110,27 @@ const PRETTIER_CONFIG_FILE_NAMES = new Set([
   'prettier.config.mjs',
 ]);
 const BIOME_CONFIG_FILE_NAMES = new Set(['biome.json', 'biome.jsonc']);
+const COMMITLINT_CONFIG_FILE_NAMES = new Set([
+  '.commitlintrc',
+  '.commitlintrc.json',
+  '.commitlintrc.yaml',
+  '.commitlintrc.yml',
+  '.commitlintrc.js',
+  '.commitlintrc.cjs',
+  '.commitlintrc.mjs',
+  '.commitlintrc.ts',
+  '.commitlintrc.cts',
+  '.commitlintrc.mts',
+  'commitlint.config.js',
+  'commitlint.config.cjs',
+  'commitlint.config.mjs',
+  'commitlint.config.ts',
+  'commitlint.config.cts',
+  'commitlint.config.mts',
+]);
 
 export function detectLintStack(rootFiles: RootFiles) {
-  const lintTools = [];
+  const lintTools: LintTool[] = [];
   if (hasMatchingFiles(rootFiles, OXLINT_CONFIG_FILE_NAMES)) {
     lintTools.push('oxlint');
   }
@@ -127,6 +145,9 @@ export function detectLintStack(rootFiles: RootFiles) {
   }
   if (hasMatchingFiles(rootFiles, BIOME_CONFIG_FILE_NAMES)) {
     lintTools.push('biome');
+  }
+  if (hasMatchingFiles(rootFiles, COMMITLINT_CONFIG_FILE_NAMES)) {
+    lintTools.push('commitlint');
   }
   return lintTools;
 }

@@ -1,4 +1,5 @@
 import { config } from 'dotenv';
+import { uniq } from 'es-toolkit/array';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import detectModuleType from '~/util/github/detectModuleType';
@@ -140,13 +141,26 @@ export async function fetchGithubData(
   }
 }
 
-// Get the GitHub license spec from the npm string
 function getLicenseFromPackageJson(
   packageJson: Record<string, string | { type: string; url: string }>
 ) {
   if (packageJson.license && typeof packageJson.license === 'string') {
     return licenses.get(packageJson.license.toLowerCase());
   }
+}
+
+function getLintToolsFromPackageJson(packageJson: Record<string, string | Record<string, any>>) {
+  const lintTools = [];
+  if ('eslintConfig' in packageJson || 'eslintIgnore' in packageJson) {
+    lintTools.push('eslint');
+  }
+  if ('prettier' in packageJson) {
+    lintTools.push('prettier');
+  }
+  if ('commitlint' in packageJson) {
+    lintTools.push('commitlint');
+  }
+  return lintTools;
 }
 
 function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
@@ -182,6 +196,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
 
         json.description = packageJson.description ?? json.description;
         json.homepageUrl = packageJson.homepage ?? json.homepageUrl;
+        json.lintTools = getLintToolsFromPackageJson(packageJson);
 
         if (!json.licenseInfo || json.licenseInfo?.key === 'other') {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
@@ -253,6 +268,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       json.packageManager ??
       detectPackageManager(json.files) ??
       detectPackageManager(json.rootFiles),
-    lintTools: detectLintStack(json.files) ?? detectLintStack(json.rootFiles),
+    lintTools: uniq([
+      ...json.lintTools,
+      ...detectLintStack(json.files),
+      ...detectLintStack(json.rootFiles),
+    ]),
   };
 }
