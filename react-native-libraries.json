@@ -24322,46 +24322,5 @@
     "npmPkg": "@react-native-google-mobile-ads/facebook",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/inmobi",
-    "npmPkg": "@react-native-google-mobile-ads/inmobi",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/mintegral",
-    "npmPkg": "@react-native-google-mobile-ads/mintegral",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/moloco",
-    "npmPkg": "@react-native-google-mobile-ads/moloco",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/pangle",
-    "npmPkg": "@react-native-google-mobile-ads/pangle",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/unity",
-    "npmPkg": "@react-native-google-mobile-ads/unity",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/vungle",
-    "npmPkg": "@react-native-google-mobile-ads/vungle",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/yandex",
-    "npmPkg": "@react-native-google-mobile-ads/yandex",
-    "ios": true
   }
 ]
