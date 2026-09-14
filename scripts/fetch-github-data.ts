@@ -168,7 +168,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     try {
       const packageJson = JSON.parse(json.packageJson.text);
 
-      json.pasedPackageJson = packageJson;
       json.newArchitecture = Boolean(packageJson.codegenConfig);
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
@@ -177,6 +176,8 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
         ? Object.keys(packageJson.dependencies).length
         : 0;
       json.packageManager = packageJson.packageManager ?? undefined;
+      json.lintTools = getLintToolsFromPackageJson(packageJson);
+      json.moduleType = detectModuleType(json.files, packageJson);
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
@@ -196,7 +197,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
 
         json.description = packageJson.description ?? json.description;
         json.homepageUrl = packageJson.homepage ?? json.homepageUrl;
-        json.lintTools = getLintToolsFromPackageJson(packageJson);
 
         if (!json.licenseInfo || json.licenseInfo?.key === 'other') {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
@@ -263,7 +263,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasSecurity: hasSecurityFile(json.files) || hasSecurityFile(json.rootFiles),
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
-    moduleType: detectModuleType(json.files, json.pasedPackageJson),
+    moduleType: json.moduleType,
     packageManager:
       json.packageManager ??
       detectPackageManager(json.files) ??
@@ -272,6 +272,6 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       ...json.lintTools,
       ...detectLintStack(json.files),
       ...detectLintStack(json.rootFiles),
-    ]),
+    ]).sort((a, b) => a.localeCompare(b)),
   };
 }

@@ -99,7 +99,7 @@ export type LibraryType = LibraryDataEntryType & {
     hasCC?: boolean;
     hasSecurity?: boolean;
     configPlugin?: boolean;
-    moduleType?: 'expo' | 'nitro' | 'turbo';
+    moduleType?: ModuleType;
     packageManager?: string;
     lintTools?: LintTool[];
     urls: {
@@ -253,6 +253,7 @@ export type StatisticResultType = {
   tvos: number;
   visionos: number;
   vegaos: number;
+  lintTools: Record<LintTool, number>;
   packageManager: {
     bun: number;
     pnpm: number;
@@ -423,5 +424,7 @@ export type PackageNavigationTab = {
   path: string;
   counter?: number | string;
 };
+
+export type ModuleType = 'expo' | 'nitro' | 'turbo';
 
 export type LintTool = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';

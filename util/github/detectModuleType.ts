@@ -1,9 +1,9 @@
-import { type RepositoryTreeNode } from '~/types';
+import { type ModuleType, type RepositoryTreeNode } from '~/types';
 
 export default function detectModuleType(
   rootFiles: { entries: RepositoryTreeNode[] } | null,
   packageJson: any
-) {
+): ModuleType | undefined {
   if (!rootFiles?.entries.length) {
     return undefined;
   }

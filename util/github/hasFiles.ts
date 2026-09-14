@@ -94,6 +94,7 @@ const ESLINT_CONFIG_FILE_NAMES = new Set([
   '.eslintrc.json',
   '.eslintrc.yaml',
   '.eslintrc.yml',
+  '.eslintignore',
 ]);
 const PRETTIER_CONFIG_FILE_NAMES = new Set([
   '.prettierrc',
@@ -108,6 +109,7 @@ const PRETTIER_CONFIG_FILE_NAMES = new Set([
   'prettier.config.js',
   'prettier.config.cjs',
   'prettier.config.mjs',
+  '.prettierignore',
 ]);
 const BIOME_CONFIG_FILE_NAMES = new Set(['biome.json', 'biome.jsonc']);
 const COMMITLINT_CONFIG_FILE_NAMES = new Set([
