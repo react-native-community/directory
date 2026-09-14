@@ -34,9 +34,11 @@ export default function CodeBrowserFileRow({
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
     isDirectory && tw`pl-1.5`,
+    warning && {
+      backgroundImage: 'linear-gradient(45deg, transparent 80%, var(--warning-dark-bg) 95%)',
+    },
     { paddingLeft: (isNested ? 6 : 10) + depth * 8 },
   ];
-  const hasTrailingContent = warning != null || isDirectory;
 
   const content = (
     <>
@@ -44,6 +46,7 @@ export default function CodeBrowserFileRow({
         <ArrowIcon
           style={[
             tw`size-2.5 shrink-0 text-palette-gray4 dark:text-palette-gray5`,
+            isHovered && tw`opacity-70`,
             isCollapsed ? tw`rotate-90` : tw`rotate-270`,
           ]}
         />
@@ -68,18 +71,16 @@ export default function CodeBrowserFileRow({
         ]}>
         {label}
       </P>
-      {hasTrailingContent && (
+      {warning && (
         <View style={tw`ml-auto flex-row items-center gap-1.5`}>
-          {warning && (
-            <Tooltip
-              trigger={
-                <View>
-                  <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
-                </View>
-              }>
-              <P style={tw`text-[12px] font-light`}>{warning.message}</P>
-            </Tooltip>
-          )}
+          <Tooltip
+            trigger={
+              <View>
+                <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+              </View>
+            }>
+            <span className="text-[12px]">{warning.message}</span>
+          </Tooltip>
         </View>
       )}
     </>
