@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 
-import { Label, P } from '~/common/styleguide';
+import { P } from '~/common/styleguide';
 import { ArrowIcon, WarningBlockquoteIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
 import { getDirectoryWarning, getFileWarning } from '~/util/codeBrowser';
