@@ -1,4 +1,4 @@
-import { type LintTool, type RepositoryTreeNode } from '~/types';
+import { type LintToolType, type RepositoryTreeNode } from '~/types';
 
 type RootFiles = { entries: RepositoryTreeNode[] } | null;
 
@@ -94,6 +94,7 @@ const ESLINT_CONFIG_FILE_NAMES = new Set([
   '.eslintrc.json',
   '.eslintrc.yaml',
   '.eslintrc.yml',
+  '.eslintignore',
 ]);
 const PRETTIER_CONFIG_FILE_NAMES = new Set([
   '.prettierrc',
@@ -108,6 +109,7 @@ const PRETTIER_CONFIG_FILE_NAMES = new Set([
   'prettier.config.js',
   'prettier.config.cjs',
   'prettier.config.mjs',
+  '.prettierignore',
 ]);
 const BIOME_CONFIG_FILE_NAMES = new Set(['biome.json', 'biome.jsonc']);
 const COMMITLINT_CONFIG_FILE_NAMES = new Set([
@@ -130,7 +132,7 @@ const COMMITLINT_CONFIG_FILE_NAMES = new Set([
 ]);
 
 export function detectLintStack(rootFiles: RootFiles) {
-  const lintTools: LintTool[] = [];
+  const lintTools: LintToolType[] = [];
   if (hasMatchingFiles(rootFiles, OXLINT_CONFIG_FILE_NAMES)) {
     lintTools.push('oxlint');
   }

@@ -1,6 +1,6 @@
 import { Children, isValidElement, type PropsWithChildren, type ReactNode } from 'react';
 
-import { type LintTool } from '~/types';
+import { type LintToolType } from '~/types';
 
 export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   notation: 'compact',
@@ -63,7 +63,7 @@ export function formatPackageManager(pmRaw?: string) {
   }
 }
 
-export function formatLintTools(lintTool: LintTool) {
+export function formatLintTools(lintTool: LintToolType) {
   switch (lintTool) {
     case 'oxlint':
       return 'Oxlint';
