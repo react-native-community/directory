@@ -24310,17 +24310,5 @@
     "ios": true,
     "android": true,
     "expoGo": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/applovin",
-    "npmPkg": "@react-native-google-mobile-ads/applovin",
-    "ios": true,
-    "android": true
-  },
-  {
-    "githubUrl": "https://github.com/invertase/react-native-google-mobile-ads/tree/main/packages/facebook",
-    "npmPkg": "@react-native-google-mobile-ads/facebook",
-    "ios": true,
-    "android": true
   }
 ]
