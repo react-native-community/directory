@@ -1,5 +1,7 @@
 import { Children, isValidElement, type PropsWithChildren, type ReactNode } from 'react';
 
+import { type LintTool } from '~/types';
+
 export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   notation: 'compact',
   compactDisplay: 'short',
@@ -61,19 +63,20 @@ export function formatPackageManager(pmRaw?: string) {
   }
 }
 
-export function formatLintTools(lintTool: string) {
-  if (lintTool === 'oxlint') {
-    return 'Oxlint';
-  } else if (lintTool === 'oxfmt') {
-    return 'Oxfmt';
-  } else if (lintTool === 'eslint') {
-    return 'ESLint';
-  } else if (lintTool === 'prettier') {
-    return 'Prettier';
-  } else if (lintTool === 'biome') {
-    return 'Biome';
-  } else {
-    return lintTool;
+export function formatLintTools(lintTool: LintTool) {
+  switch (lintTool) {
+    case 'oxlint':
+      return 'Oxlint';
+    case 'oxfmt':
+      return 'Oxfmt';
+    case 'eslint':
+      return 'ESLint';
+    case 'prettier':
+      return 'Prettier';
+    case 'biome':
+      return 'Biome';
+    default:
+      return lintTool;
   }
 }
 

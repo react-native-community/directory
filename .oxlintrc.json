@@ -15,6 +15,9 @@
     "README.md",
     "next-env.d.ts"
   ],
+  "options": {
+    "reportUnusedDisableDirectives": "error"
+  },
   "rules": {
     "branches-sharing-code": "error",
     "curly": "error",
@@ -59,7 +62,6 @@
     "golden/no-unknown-parameters": "error",
     "golden/no-unknown-returns": "error",
     "golden/no-unknown-type-aliases": "error",
-    "golden/no-unsafe-dictionary-type": "error",
     "golden/no-widen-then-assert": "error",
     "import/consistent-type-specifier-style": ["error", "prefer-inline"],
     "import/default": "error",

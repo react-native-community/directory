@@ -101,7 +101,7 @@ export type LibraryType = LibraryDataEntryType & {
     configPlugin?: boolean;
     moduleType?: 'expo' | 'nitro' | 'turbo';
     packageManager?: string;
-    lintTools?: string[];
+    lintTools?: LintTool[];
     urls: {
       repo: string;
       homepage?: string | null;
@@ -423,3 +423,5 @@ export type PackageNavigationTab = {
   path: string;
   counter?: number | string;
 };
+
+export type LintTool = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';
