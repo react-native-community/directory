@@ -269,7 +269,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       detectPackageManager(json.files) ??
       detectPackageManager(json.rootFiles),
     lintTools: uniq([
-      ...json.lintTools,
+      ...(Array.isArray(json.lintTools) ? json.lintTools : []),
       ...detectLintStack(json.files),
       ...detectLintStack(json.rootFiles),
     ]).sort((a, b) => a.localeCompare(b)),
