@@ -24310,5 +24310,17 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/phucprime/react-native-image-editor",
+    "npmPkg": "@phucprime/react-native-image-editor",
+    "examples": ["https://github.com/phucprime/react-native-image-editor/tree/master/Example"],
+    "images": [
+      "https://raw.githubusercontent.com/phucprime/react-native-image-editor/master/assets/ios.gif",
+      "https://raw.githubusercontent.com/phucprime/react-native-image-editor/master/assets/android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
