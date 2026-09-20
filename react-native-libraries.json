@@ -24322,5 +24322,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/manuelrodmota/react-native-live-list",
+    "examples": ["https://github.com/manuelrodmota/react-native-live-list/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
