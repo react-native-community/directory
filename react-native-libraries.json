@@ -24330,5 +24330,11 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/maikkkko1/rollbird/tree/main/packages/react-native",
+    "npmPkg": "@rollbird/react-native",
+    "ios": true,
+    "android": true
   }
 ]
