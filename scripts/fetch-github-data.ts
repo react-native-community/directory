@@ -2,6 +2,7 @@ import { config } from 'dotenv';
 import { uniq } from 'es-toolkit/array';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
+import { isMissingPackageJsonError, MissingPackageJsonError } from '~/util/errors';
 import detectModuleType from '~/util/github/detectModuleType';
 import hasConfigPlugin from '~/util/github/hasConfigPlugin';
 import {
@@ -73,7 +74,7 @@ export async function fetchGithubRateLimit() {
 
 export async function fetchGithubData(
   data: LibraryType,
-  { retries = 2 } = {}
+  { retries = 2, throwOnMissingPackageJson = false } = {}
 ): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
@@ -106,7 +107,7 @@ export async function fetchGithubData(
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
         if (result.errors?.type === 'FORBIDDEN' || result.errors[0]?.type === 'FORBIDDEN') {
-          return await fetchGithubData(data, { retries: -1 });
+          return await fetchGithubData(data, { retries: -1, throwOnMissingPackageJson });
         }
       }
 
@@ -114,7 +115,7 @@ export async function fetchGithubData(
         `[GH] Retrying fetch for ${data.githubUrl} due to error result (attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, { retries: retries - 1 });
+      return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
     }
 
     if (!result?.data?.repository) {
@@ -122,7 +123,11 @@ export async function fetchGithubData(
         `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'}, attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, { retries: retries - 1 });
+      return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
+    }
+
+    if (throwOnMissingPackageJson && !result.data.repository.packageJson) {
+      throw new MissingPackageJsonError(data.githubUrl);
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -132,12 +137,16 @@ export async function fetchGithubData(
       github,
     };
   } catch (error) {
+    if (throwOnMissingPackageJson && error instanceof Error && isMissingPackageJsonError(error)) {
+      return Promise.reject(error);
+    }
+
     console.log(
       `[GH] Retrying fetch for ${data.githubUrl} due to an error (attempts left: ${retries})`,
       error
     );
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    return await fetchGithubData(data, { retries: retries - 1 });
+    return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
   }
 }
 
