@@ -22539,7 +22539,8 @@
     "examples": ["https://github.com/mfairley/expo-callkit-telecom/tree/main/example"],
     "configPlugin": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/Th4nderG0d/clarion/tree/main/packages/recorder",
