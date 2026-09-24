@@ -24355,5 +24355,20 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/majornutcracker-dev/react-native-selectable-text",
+    "npmPkg": "@majornutcracker/react-native-selectable-text",
+    "examples": [
+      "https://snack.expo.dev/@majornutcracker/selectabletext",
+      "https://github.com/majornutcracker-dev/react-native-selectable-text/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/majornutcracker-dev/react-native-selectable-text/raw/main/assets/ios.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
