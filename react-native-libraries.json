@@ -15243,7 +15243,8 @@
       "https://github.com/raouldandresy/react-native-momentum-carousel/tree/main/example"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/anday013/react-native-phone-entry",
@@ -24371,5 +24372,15 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/raouldandresy/react-native-nitro-sync",
+    "npmPkg": "react-native-nitro-sync",
+    "examples": [
+      "https://github.com/raouldandresy/react-native-nitro-sync/tree/main/example"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
