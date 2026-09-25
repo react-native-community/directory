@@ -21400,6 +21400,7 @@
     "images": [
       "https://raw.githubusercontent.com/magrinj/expo-quick-look/main/.github/assets/demo-ios.gif"
     ],
+    "web": true,
     "ios": true,
     "android": true,
     "newArchitecture": true,
