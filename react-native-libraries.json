@@ -24371,5 +24371,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/mz-real/react-native-responsive-hook",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
