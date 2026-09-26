@@ -24373,6 +24373,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/mz-real/react-native-responsive-hook",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/thiagobrez/react-native-arrangement-view",
     "examples": [
       "https://github.com/thiagobrez/react-native-arrangement-view/tree/main/apps/example-expo"
