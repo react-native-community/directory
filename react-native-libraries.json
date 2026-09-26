@@ -24397,5 +24397,17 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lvlrSajjad/react-native-blur-overlay",
+    "examples": [
+      "https://github.com/lvlrSajjad/react-native-blur-overlay/tree/master/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/lvlrSajjad/react-native-blur-overlay/master/docs/liquid-glass-android-vs-ios.png",
+      "https://raw.githubusercontent.com/lvlrSajjad/react-native-blur-overlay/master/docs/android-live-blur.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
