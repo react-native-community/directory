@@ -24407,5 +24407,17 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/khalid999devs/react-native-pose-detection/tree/main/packages/core",
+    "npmPkg": "react-native-pose-detection",
+    "examples": ["https://github.com/khalid999devs/react-native-pose-detection/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/khalid999devs/react-native-pose-detection/main/ss/export-frame.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
