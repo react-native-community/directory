@@ -23352,7 +23352,8 @@
     "npmPkg": "react-native-nitro-google-signin",
     "configPlugin": true,
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/hamzamekk/react-native-turbo-preferences",
