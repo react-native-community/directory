@@ -24407,5 +24407,12 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/linktrail-io/react-native",
+    "npmPkg": "linktrail-react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
