@@ -24378,5 +24378,18 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/thiagobrez/react-native-arrangement-view",
+    "examples": [
+      "https://github.com/thiagobrez/react-native-arrangement-view/tree/main/apps/example-expo"
+    ],
+    "images": [
+      "https://github.com/thiagobrez/react-native-arrangement-view/raw/main/docs/comparison/ios/half-portrait-split.jpg",
+      "https://github.com/thiagobrez/react-native-arrangement-view/raw/main/docs/comparison/android/half-portrait-split.jpg"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
