@@ -24409,6 +24409,13 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/linktrail-io/react-native",
+    "npmPkg": "linktrail-react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
     "githubUrl": "https://github.com/khalid999devs/react-native-pose-detection/tree/main/packages/core",
     "npmPkg": "react-native-pose-detection",
     "examples": ["https://github.com/khalid999devs/react-native-pose-detection/tree/main/example"],
