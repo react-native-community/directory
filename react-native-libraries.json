@@ -3410,8 +3410,14 @@
   },
   {
     "githubUrl": "https://github.com/fjmorant/react-native-nested-listview",
+    "examples": [
+      "https://github.com/fjmorant/react-native-nested-listview-examples",
+      "https://github.com/fjmorant/-react-native-nested-listview-examples-expo"
+    ],
     "ios": true,
-    "android": true
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/kirillzyusko/react-native-wifi-p2p",
