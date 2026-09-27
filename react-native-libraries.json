@@ -17089,9 +17089,7 @@
   {
     "githubUrl": "https://github.com/NIKHIL0VERMA/flixsrota-player",
     "npmPkg": "@flixsrota/player",
-    "examples": [
-      "https://github.com/NIKHIL0VERMA/flixsrota-player/tree/main/example"
-    ],
+    "examples": ["https://github.com/NIKHIL0VERMA/flixsrota-player/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/buffering.jpg",
       "https://raw.githubusercontent.com/NIKHIL0VERMA/flixsrota-player/main/assets/controls.jpg",
@@ -17101,5 +17099,12 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/getsettalk/react-native-review-prompt",
+    "examples": ["https://github.com/getsettalk/react-native-review-prompt/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
