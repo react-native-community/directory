@@ -24435,5 +24435,18 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/abtonc/klor-react",
+    "npmPkg": "@klor/react",
+    "examples": [
+      "https://github.com/abtonc/klor-react/tree/main/examples/expo",
+      "https://github.com/abtonc/klor-react/tree/main/examples/nextjs"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
