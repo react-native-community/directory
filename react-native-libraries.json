@@ -24431,10 +24431,7 @@
   },
   {
     "githubUrl": "https://github.com/raouldandresy/react-native-nitro-sync",
-    "npmPkg": "react-native-nitro-sync",
-    "examples": [
-      "https://github.com/raouldandresy/react-native-nitro-sync/tree/main/example"
-    ],
+    "examples": ["https://github.com/raouldandresy/react-native-nitro-sync/tree/main/example"],
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
