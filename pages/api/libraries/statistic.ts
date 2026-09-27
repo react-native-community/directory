@@ -1,0 +1,168 @@
+import { type NextApiRequest, type NextApiResponse } from 'next';
+
+import data from '~/assets/data.json';
+import { type DataAssetType, type StatisticResultType } from '~/types';
+import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
+import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
+
+const DATASET = data as DataAssetType;
+
+export default function handler(_: NextApiRequest, res: NextApiResponse) {
+  const result: StatisticResultType = {
+    total: 0,
+    newArchitecture: 0,
+    downloads: 0,
+    weekDownloads: 0,
+    unmaintained: 0,
+    withTypes: 0,
+    withNativeCode: 0,
+    withConfigPlugin: 0,
+    ios: 0,
+    android: 0,
+    web: 0,
+    expoGo: 0,
+    windows: 0,
+    macos: 0,
+    fireos: 0,
+    harmony: 0,
+    horizon: 0,
+    tvos: 0,
+    visionos: 0,
+    vegaos: 0,
+    packageManager: {
+      bun: 0,
+      pnpm: 0,
+      npm: 0,
+      yarn: 0,
+    },
+    moduleType: {
+      expo: 0,
+      nitro: 0,
+      turbo: 0,
+    },
+    lintTools: {
+      oxlint: 0,
+      oxfmt: 0,
+      eslint: 0,
+      prettier: 0,
+      biome: 0,
+      commitlint: 0,
+    },
+  };
+
+  DATASET.libraries.forEach(library => {
+    result.total++;
+
+    if (
+      [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(
+        getNewArchSupportStatus(library)
+      )
+    ) {
+      result.newArchitecture++;
+    }
+
+    if (library.npm?.downloads) {
+      result.downloads += library.npm.downloads;
+    }
+
+    if (library.npm?.weekDownloads) {
+      result.weekDownloads += library.npm.weekDownloads;
+    }
+
+    if (library.unmaintained === true) {
+      result.unmaintained++;
+    }
+
+    if (library.github.hasTypes) {
+      result.withTypes++;
+    }
+
+    if (library.github.hasNativeCode) {
+      result.withNativeCode++;
+    }
+
+    if (library.configPlugin || library.github.configPlugin) {
+      result.withConfigPlugin++;
+    }
+
+    if (library.ios) {
+      result.ios++;
+    }
+
+    if (library.android) {
+      result.android++;
+    }
+
+    if (library.web) {
+      result.web++;
+    }
+
+    if (library.expoGo) {
+      result.expoGo++;
+    }
+
+    if (library.windows) {
+      result.windows++;
+    }
+
+    if (library.macos) {
+      result.macos++;
+    }
+
+    if (library.fireos) {
+      result.fireos++;
+    }
+
+    if (library.harmony) {
+      result.harmony++;
+    }
+
+    if (library.horizon) {
+      result.horizon++;
+    }
+
+    if (library.tvos) {
+      result.tvos++;
+    }
+
+    if (library.visionos) {
+      result.visionos++;
+    }
+
+    if (library.vegaos) {
+      result.vegaos++;
+    }
+
+    library.github.lintTools?.forEach(tool => {
+      result.lintTools[tool]++;
+    });
+
+    if (library.github.moduleType) {
+      if (library.github.moduleType === 'expo') {
+        result.moduleType.expo++;
+      } else if (library.github.moduleType === 'nitro') {
+        result.moduleType.nitro++;
+      } else if (library.github.moduleType === 'turbo') {
+        result.moduleType.turbo++;
+      }
+    }
+
+    if (library.github.packageManager) {
+      if (library.github.packageManager.includes('bun')) {
+        result.packageManager.bun++;
+      } else if (library.github.packageManager.includes('pnpm')) {
+        result.packageManager.pnpm++;
+      } else if (library.github.packageManager.includes('npm')) {
+        result.packageManager.npm++;
+      } else if (library.github.packageManager.includes('yarn')) {
+        result.packageManager.yarn++;
+      }
+    }
+  });
+
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
+  res.statusCode = 200;
+
+  res.json(result);
+}

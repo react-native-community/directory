@@ -1,6 +1,6 @@
 import { fetch } from 'bun';
 
-import { type LibraryType } from '~/types';
+import { type LibraryDataEntryType, type LibraryType } from '~/types';
 
 export const REQUEST_SLEEP = 5000;
 
@@ -19,7 +19,25 @@ export async function makeGraphqlQuery(query: string, variables = {}) {
       variables,
     }),
   });
-  return await result.json();
+  if (result.ok) {
+    try {
+      return await result.json();
+    } catch (error: unknown) {
+      console.error('GitHub GraphQL response parse failed!', {
+        status: result.status,
+        statusText: result.statusText,
+        error: error instanceof Error ? error.message : String(error),
+      });
+      throw error;
+    }
+  } else {
+    console.error('GitHub GraphQL invalid response!', {
+      status: result.status,
+      statusText: result.statusText,
+      body: result?.body ? await result.text() : undefined,
+    });
+    throw new Error(`GitHub GraphQL invalid response: ${result.status}`);
+  }
 }
 
 export async function getUpdatedUrl(url: string) {
@@ -31,13 +49,13 @@ export async function getUpdatedUrl(url: string) {
   }
 }
 
-export function sleep(ms = 0, msMax: number | undefined = undefined) {
+export function sleep(ms = 0, msMax?: number) {
   return new Promise(r =>
     setTimeout(r, msMax ? Math.floor(Math.random() * (msMax - ms)) + ms : ms)
   );
 }
 
-export function fillNpmName(library: LibraryType) {
+export function fillNpmName<T extends LibraryType | LibraryDataEntryType>(library: T): T {
   if (!library.npmPkg) {
     const parts = library.githubUrl.split('/');
     library.npmPkg = parts[parts.length - 1].toLowerCase();
@@ -45,13 +63,23 @@ export function fillNpmName(library: LibraryType) {
   return library;
 }
 
+const STOPWORDS = ['react-native', 'reactnative', 'react', 'native'];
+const STOPWORDS_PATTERN = new RegExp(`\\b(?:${STOPWORDS.join('|')})\\b`, 'gi');
+
 export function processTopics(topics?: string[]) {
-  return (topics ?? [])
+  if (!Array.isArray(topics)) {
+    return [];
+  }
+
+  return topics
     .map(topic =>
       topic
-        .replace(/([ _])/g, '-')
-        .replace('react-native-', '')
+        .normalize('NFKC')
         .toLowerCase()
+        .replace(/([ _])/g, '-')
+        .replace(STOPWORDS_PATTERN, '')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
         .trim()
     )
     .filter(topic => topic?.length);

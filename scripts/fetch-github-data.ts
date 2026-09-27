@@ -1,24 +1,40 @@
 import { config } from 'dotenv';
+import { uniq } from 'es-toolkit/array';
 
-import { LibraryLicenseType, LibraryType } from '~/types';
-import hasNativeCode from '~/util/hasNativeCode';
+import { type LibraryLicenseType, type LibraryType } from '~/types';
+import { isMissingPackageJsonError, MissingPackageJsonError } from '~/util/errors';
+import detectModuleType from '~/util/github/detectModuleType';
+import hasConfigPlugin from '~/util/github/hasConfigPlugin';
+import {
+  detectLintStack,
+  detectPackageManager,
+  hasCCFile,
+  hasChangelogFile,
+  hasContributingFile,
+  hasReadmeFile,
+  hasSecurityFile,
+} from '~/util/github/hasFiles';
+import hasNativeCode from '~/util/github/hasNativeCode';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
-import { processTopics, sleep, REQUEST_SLEEP, makeGraphqlQuery, getUpdatedUrl } from './helpers';
+import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
 import GitHubLicensesQuery from './queries/GitHubLicensesQuery';
 import GitHubRepositoryQuery from './queries/GitHubRepositoryQuery';
 
-config();
+config({ quiet: true });
 
-const licenses: Record<string, LibraryLicenseType> = {
-  isc: {
-    id: 'isc',
-    name: 'ISC License',
-    url: 'https://www.isc.org/licenses/',
-    key: 'isc',
-    spdxId: 'ISC',
-  },
-};
+const licenses = new Map<string, LibraryLicenseType>([
+  [
+    'isc',
+    {
+      id: 'isc',
+      name: 'ISC License',
+      url: 'https://www.isc.org/licenses/',
+      key: 'isc',
+      spdxId: 'ISC',
+    },
+  ],
+]);
 
 /**
  * Fetch licenses from GitHub to be used later to parse licenses from npm
@@ -27,7 +43,7 @@ export async function loadGitHubLicenses() {
   const result = await makeGraphqlQuery(GitHubLicensesQuery);
 
   result.data.licenses.forEach((license: LibraryLicenseType) => {
-    licenses[license.key] = license;
+    licenses.set(license.key, license);
   });
 }
 
@@ -48,33 +64,39 @@ export async function fetchGithubRateLimit() {
     };
   }
 
-  if (result.errors) {
-    console.log('[GH] GraphQL API error:', result.errors);
+  if (result?.errors) {
+    console.error('[GH] GraphQL API error:', result.errors);
+    throw new Error('GitHub rate limit exceeded, aborting!');
   }
 
   return {};
 }
 
-export async function fetchGithubData(data: LibraryType, retries = 2): Promise<LibraryType> {
+export async function fetchGithubData(
+  data: LibraryType,
+  { retries = 2, throwOnMissingPackageJson = false } = {}
+): Promise<LibraryType> {
   if (retries < 0) {
     console.error(`[GH] ERROR fetching ${data.githubUrl} - OUT OF RETRIES`);
     return data;
   }
   try {
     const url = data.githubUrl;
-    const { isMonorepo, repoOwner, repoName, packagePath } = parseGitHubUrl(url);
+    const { isMonorepo, repoOwner, repoName, packagePath, branchName } = parseGitHubUrl(url);
     const fullName = `${repoOwner}/${repoName}`;
+    const branch = branchName ?? 'HEAD';
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
       repoName,
       packagePath,
-      packageFilesPath: packagePath === '.' ? 'HEAD:' : `HEAD:${packagePath}`,
-      packageJsonPath: `HEAD:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
+      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      fetchRoot: packagePath !== '.',
     });
 
-    if (result.errors) {
-      if (result.errors[0].type === 'NOT_FOUND') {
+    if (result?.errors) {
+      if (result.errors?.type === 'NOT_FOUND' || result.errors[0]?.type === 'NOT_FOUND') {
         const newUrl = await getUpdatedUrl(url);
         if (newUrl !== url) {
           console.warn(`[GH] Repository ${fullName} has moved to ${newUrl}`);
@@ -84,19 +106,28 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
         }
       } else {
         console.warn(`[GH] Data fetch error for ${fullName}`, result.errors);
+        if (result.errors?.type === 'FORBIDDEN' || result.errors[0]?.type === 'FORBIDDEN') {
+          return await fetchGithubData(data, { retries: -1, throwOnMissingPackageJson });
+        }
       }
 
-      console.log(`[GH] Retrying fetch for ${data.githubUrl} due to error result`);
+      console.log(
+        `[GH] Retrying fetch for ${data.githubUrl} due to error result (attempts left: ${retries})`
+      );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
     }
 
     if (!result?.data?.repository) {
       console.log(
-        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'})`
+        `[GH] Retrying fetch for ${data.githubUrl} due to ${result?.message?.toLowerCase() ?? 'missing data'} (status: ${result?.status ?? 'Unknown'}, attempts left: ${retries})`
       );
       await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-      return await fetchGithubData(data, retries - 1);
+      return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
+    }
+
+    if (throwOnMissingPackageJson && !result.data.repository.packageJson) {
+      throw new MissingPackageJsonError(data.githubUrl);
     }
 
     const github = createRepoDataWithResponse(result.data.repository, isMonorepo);
@@ -106,17 +137,39 @@ export async function fetchGithubData(data: LibraryType, retries = 2): Promise<L
       github,
     };
   } catch (error) {
-    console.log(`[GH] Retrying fetch for ${data.githubUrl} due to an error`, error);
+    if (throwOnMissingPackageJson && error instanceof Error && isMissingPackageJsonError(error)) {
+      return Promise.reject(error);
+    }
+
+    console.log(
+      `[GH] Retrying fetch for ${data.githubUrl} due to an error (attempts left: ${retries})`,
+      error
+    );
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
-    return await fetchGithubData(data, retries - 1);
+    return await fetchGithubData(data, { retries: retries - 1, throwOnMissingPackageJson });
   }
 }
 
-// Get the GitHub license spec from the npm string
-function getLicenseFromPackageJson(packageJson: Record<string, string | object>) {
+function getLicenseFromPackageJson(
+  packageJson: Record<string, string | { type: string; url: string }>
+) {
   if (packageJson.license && typeof packageJson.license === 'string') {
-    return licenses[packageJson.license.toLowerCase()];
+    return licenses.get(packageJson.license.toLowerCase());
   }
+}
+
+function getLintToolsFromPackageJson(packageJson: Record<string, string | Record<string, any>>) {
+  const lintTools = [];
+  if ('eslintConfig' in packageJson || 'eslintIgnore' in packageJson) {
+    lintTools.push('eslint');
+  }
+  if ('prettier' in packageJson) {
+    lintTools.push('prettier');
+  }
+  if ('commitlint' in packageJson) {
+    lintTools.push('commitlint');
+  }
+  return lintTools;
 }
 
 function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
@@ -131,29 +184,30 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       json.dependenciesCount = packageJson.dependencies
         ? Object.keys(packageJson.dependencies).length
         : 0;
+      json.packageManager = packageJson.packageManager ?? undefined;
+      json.lintTools = getLintToolsFromPackageJson(packageJson);
+      json.moduleType = detectModuleType(json.files, packageJson);
 
       if (monorepo) {
         json.homepageUrl = packageJson.homepage;
-        json.topics = processTopics(packageJson.keywords);
+        json.topics = [...new Set(processTopics(packageJson.keywords))];
         json.description = packageJson.description;
         json.licenseInfo = getLicenseFromPackageJson(packageJson);
       }
 
       if (!monorepo) {
-        json.topics = [
-          ...new Set([
-            ...processTopics(packageJson.keywords),
-            ...processTopics(
-              json.repositoryTopics.nodes.map(
-                ({ topic }: { topic: { name: string } }) => topic.name
-              )
-            ),
-          ]),
+        const rawTopics = [
+          ...processTopics(packageJson.keywords),
+          ...processTopics(
+            json.repositoryTopics.nodes.map(({ topic }: { topic: { name: string } }) => topic.name)
+          ),
         ];
+        json.topics = [...new Set(rawTopics)];
 
-        json.description ??= packageJson.description;
+        json.description = packageJson.description ?? json.description;
+        json.homepageUrl = packageJson.homepage ?? json.homepageUrl;
 
-        if (!json.licenseInfo || (json.licenseInfo && json.licenseInfo.key === 'other')) {
+        if (!json.licenseInfo || json.licenseInfo?.key === 'other') {
           json.licenseInfo = getLicenseFromPackageJson(packageJson) ?? json.licenseInfo;
         }
       }
@@ -167,11 +221,14 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     }
   }
 
-  if (!monorepo) {
-    json.lastRelease =
-      json.releases && json.releases.nodes && json.releases.nodes.length
-        ? json.releases.nodes[0]
-        : undefined;
+  if (json.rootPackageJson && !json.packageManager) {
+    try {
+      const rootPackageJson = JSON.parse(json.rootPackageJson.text);
+      json.packageManager = rootPackageJson.packageManager ?? undefined;
+    } catch (error) {
+      console.error(`Unable to parse ${json.name} root package.json file!`);
+      console.error(error);
+    }
   }
 
   const lastCommitAt = json.defaultBranchRef.target.history.nodes[0].committedDate;
@@ -186,14 +243,16 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       hasWiki: json.hasWikiEnabled,
       hasSponsorships: json.hasSponsorshipsEnabled,
       hasDiscussions: json.hasDiscussionsEnabled,
+      hasProjects: json.hasProjectsEnabled,
+      hasVulnerabilityAlerts: json.hasVulnerabilityAlertsEnabled,
       hasTopics: json.topics && json.topics.length > 0,
       updatedAt: lastCommitAt,
       createdAt: json.createdAt,
       pushedAt: lastCommitAt,
-      forks: json.forks.totalCount,
-      issues: json.issues.totalCount,
-      subscribers: json.watchers.totalCount,
-      stars: json.stargazers.totalCount,
+      forks: json?.forkCount,
+      issues: json?.issues?.totalCount,
+      subscribers: json?.watchers?.totalCount,
+      stars: json?.stargazerCount,
       dependencies: json.dependenciesCount,
     },
     name: json.name,
@@ -206,6 +265,22 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
+    hasReadme: hasReadmeFile(json.files) || hasReadmeFile(json.rootFiles),
+    hasChangelog: hasChangelogFile(json.files) || hasChangelogFile(json.rootFiles),
+    hasContributing: hasContributingFile(json.files) || hasContributingFile(json.rootFiles),
+    hasCC: hasCCFile(json.files) || hasCCFile(json.rootFiles),
+    hasSecurity: hasSecurityFile(json.files) || hasSecurityFile(json.rootFiles),
     hasNativeCode: hasNativeCode(json.files),
+    configPlugin: hasConfigPlugin(json.files),
+    moduleType: json.moduleType,
+    packageManager:
+      json.packageManager ??
+      detectPackageManager(json.files) ??
+      detectPackageManager(json.rootFiles),
+    lintTools: uniq([
+      ...(Array.isArray(json.lintTools) ? json.lintTools : []),
+      ...detectLintStack(json.files),
+      ...detectLintStack(json.rootFiles),
+    ]).sort((a, b) => a.localeCompare(b)),
   };
 }

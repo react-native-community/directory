@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["react-native-libraries.json"],
+      "url": "./react-native-libraries.schema.json"
+    }
+  ]
+}

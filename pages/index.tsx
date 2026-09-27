@@ -1,56 +1,80 @@
-import { NextPageContext } from 'next';
-import { useRouter } from 'next/router';
-import { type ParsedUrlQuery } from 'node:querystring';
-import { StyleSheet } from 'react-native';
+import { type GetServerSidePropsContext } from 'next';
 
-import ContentContainer from '~/components/ContentContainer';
-import Libraries from '~/components/Libraries';
-import Navigation from '~/components/Navigation';
-import PageMeta from '~/components/PageMeta';
-import Pagination from '~/components/Pagination';
-import Search from '~/components/Search';
-import { type APIResponseType } from '~/types';
-import getApiUrl from '~/util/getApiUrl';
+import HomeScene from '~/scenes/HomeScene';
+import { type HomePageProps } from '~/types/pages';
+import { ssrFetch } from '~/util/SSRFetch';
 import urlWithQuery from '~/util/urlWithQuery';
 
-type Props = {
-  data: APIResponseType;
-  query: ParsedUrlQuery;
-};
+function Index(props: HomePageProps) {
+  return <HomeScene {...props} />;
+}
 
-const Index = ({ data, query }: Props) => {
-  const router = useRouter();
-  const total = data.total ?? 0;
-  return (
-    <>
-      <PageMeta searchQuery={router.query?.search} />
-      <Navigation noHeader />
-      <Search query={router.query} total={total} />
-      <ContentContainer style={styles.container}>
-        <Pagination query={query} total={total} />
-        <Libraries libraries={data && data.libraries} />
-        <Pagination query={query} total={total} />
-      </ContentContainer>
-    </>
-  );
-};
+const LIMIT = 8;
 
-Index.getInitialProps = async (ctx: NextPageContext) => {
-  const url = getApiUrl(urlWithQuery('/libraries', ctx.query), ctx);
-  const response = await fetch(url);
-  const result: APIResponseType = await response.json();
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  if (Object.keys(ctx.query).length > 0) {
+    return {
+      redirect: {
+        destination: urlWithQuery('/packages', ctx.query),
+        permanent: false,
+      },
+    };
+  }
+
+  const [
+    mostDownloadedResponse,
+    recentlyAddedResponse,
+    recentlyUpdatedResponse,
+    popularResponse,
+    statisticResponse,
+  ] = await Promise.all([
+    ssrFetch(
+      '/libraries',
+      {
+        order: 'downloads',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        hasNativeCode: 'true',
+      },
+      ctx
+    ),
+    ssrFetch('/libraries', { order: 'added', limit: LIMIT.toString(), isMaintained: 'true' }, ctx),
+    ssrFetch(
+      '/libraries',
+      { order: 'updated', limit: LIMIT.toString(), isMaintained: 'true' },
+      ctx
+    ),
+    ssrFetch(
+      '/libraries',
+      {
+        order: 'popularity',
+        limit: LIMIT.toString(),
+        isMaintained: 'true',
+        isPopular: 'true',
+        wasRecentlyUpdated: 'true',
+      },
+      ctx
+    ),
+    ssrFetch('/libraries/statistic', {}, ctx),
+  ]);
+
+  const [mostDownloaded, recentlyAdded, recentlyUpdated, popular, statistic] = await Promise.all([
+    mostDownloadedResponse.json(),
+    recentlyAddedResponse.json(),
+    recentlyUpdatedResponse.json(),
+    popularResponse.json(),
+    statisticResponse.json(),
+  ]);
 
   return {
-    data: result,
-    query: ctx.query,
+    props: {
+      mostDownloaded,
+      recentlyAdded,
+      recentlyUpdated,
+      popular,
+      statistic,
+    },
   };
-};
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-});
+}
 
 export default Index;

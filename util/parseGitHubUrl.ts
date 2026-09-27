@@ -1,7 +1,7 @@
 export function parseGitHubUrl(url: string) {
   const [, , , repoOwner, repoName, ...path] = url.split('/');
 
-  const isMonorepo = !!(path && path.length);
+  const isMonorepo = path && path.length > 2;
   const branchName = path[1];
   const packagePath = isMonorepo ? path.slice(2).join('/').replace('%40', '@') : '.';
 

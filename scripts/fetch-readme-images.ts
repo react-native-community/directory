@@ -1,7 +1,7 @@
 import { fetch } from 'bun';
-import { Cheerio, load } from 'cheerio';
+import { type Cheerio, load } from 'cheerio';
 
-import { LibraryType } from '~/types';
+import { type LibraryType } from '~/types';
 
 import { sleep } from './helpers';
 
@@ -27,7 +27,7 @@ async function scrapeImagesAsync(githubUrl: string) {
   const $ = load(html);
   const images = $('#readme').find('img');
 
-  if (images && images.length) {
+  if (images?.length > 0) {
     const usefulImages = [];
     for (let i = 0; i <= images.length - 1; i++) {
       const image = $(images[i]);
@@ -43,7 +43,7 @@ async function scrapeImagesAsync(githubUrl: string) {
   }
 }
 
-async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
+export async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
   /**
    * @DEV
    * if images been set, or max attempt count has been reached, we skip scraping images
@@ -67,5 +67,3 @@ async function fetchReadmeImages(data: LibraryType, attemptsCount = 0) {
     return await fetchReadmeImages(data, attemptsCount + 1);
   }
 }
-
-export default fetchReadmeImages;

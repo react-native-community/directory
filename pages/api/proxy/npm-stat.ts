@@ -1,0 +1,51 @@
+import { type NextApiRequest, type NextApiResponse } from 'next';
+
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { TimeRange } from '~/util/datetime';
+import { parseQueryParams } from '~/util/queryParams';
+
+const VALID_TIME_RANGES = new Set(['month', 'year']);
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { name, range } = parseQueryParams(req.query);
+  const packageName = name ? name.toString().toLowerCase().trim() : undefined;
+  const timeRange = range ? range.toString().toLowerCase().trim() : 'month';
+
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
+
+  if (!packageName) {
+    res.statusCode = 500;
+    res.json({
+      error: `Invalid request. You need to specify package name via 'name' query param.`,
+    });
+    return;
+  }
+
+  if (timeRange && !VALID_TIME_RANGES.has(timeRange)) {
+    res.statusCode = 500;
+    res.json({
+      error: `Invalid request. You need to specify a valid time range ('month' or 'year') via 'range' query param.`,
+    });
+    return;
+  }
+
+  const activeTimeRange = timeRange === 'year' ? TimeRange.YEAR : TimeRange.MONTH;
+  const now = Date.now();
+  const until = new Date(now).toISOString().slice(0, 10);
+  const from = new Date(now - activeTimeRange * 1000).toISOString().slice(0, 10);
+
+  const result = await fetch(
+    `https://npm-stat.com/api/download-counts?package=${packageName}&from=${from}&until=${until}`,
+    NEXT_10M_CACHE_HEADER
+  );
+
+  if ('status' in result && result.status !== 200) {
+    res.statusCode = result.status;
+    res.json({});
+    return;
+  }
+
+  res.statusCode = 200;
+  res.json(await result.json());
+}
