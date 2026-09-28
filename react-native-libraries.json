@@ -24448,5 +24448,19 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/avas-app/agent-bridge",
+    "npmPkg": "@avasapp/agent-bridge",
+    "examples": ["https://github.com/avas-app/agent-bridge/tree/main/example"],
+    "images": [
+      "https://github.com/avas-app/agent-bridge/blob/main/example/media/demo.gif",
+      "https://github.com/avas-app/agent-bridge/blob/main/example/media/demo-x.jpg"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true
   }
 ]
