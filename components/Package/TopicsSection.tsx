@@ -15,7 +15,7 @@ const MAX_TOPICS = 16;
 export default function TopicsSection({ topics }: Props) {
   const [expanded, setExpanded] = useState(false);
 
-  if (!topics || !topics.length) {
+  if (!topics?.length) {
     return null;
   }
 

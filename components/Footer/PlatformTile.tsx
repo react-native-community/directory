@@ -20,7 +20,7 @@ export default function Platform({ name, pkgName, url, Icon }: Props) {
           style: tw`size-8 text-icon`,
         })}
         <P style={tw`mt-3`}>{name}</P>
-        <P style={tw`font-mono rounded-sm px-2 text-xs leading-loose`}>{pkgName}</P>
+        <P style={tw`font-mono rounded-sm px-2 text-[11px] leading-6 text-secondary`}>{pkgName}</P>
       </View>
     </A>
   );

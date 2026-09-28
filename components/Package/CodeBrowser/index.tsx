@@ -1,18 +1,21 @@
 import { sumBy } from 'es-toolkit/math';
-import { useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import {
   type ColorValue,
   type NativePointerEvent,
   type NativeSyntheticEvent,
+  Pressable,
   ScrollView,
   TextInput,
+  type TextInputInstance,
   View,
 } from 'react-native';
 import useSWR from 'swr';
 
 import { Label, P, useLayout } from '~/common/styleguide';
-import { FileIcon, SearchIcon } from '~/components/Icons';
+import { FileIcon, SearchIcon, XIcon } from '~/components/Icons';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type UnpkgMeta } from '~/types';
 import {
   buildCodeBrowserFileTree,
@@ -27,6 +30,7 @@ import tw from '~/util/tailwind';
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
+import { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 
 const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
 const DEFAULT_FILE_TREE_WIDTH = 340;
@@ -37,6 +41,9 @@ type Props = {
   library: LibraryType;
   selectedVersion: string;
   activeFile: string | null;
+  header?: ReactNode;
+  settings: CodeBrowserSettingsType;
+  onSettingsChange: (settings: CodeBrowserSettingsType) => void;
   onSelectFile: (filePath: string | null) => void;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
@@ -46,12 +53,15 @@ export default function CodeBrowser({
   library,
   selectedVersion,
   activeFile,
+  header,
+  settings,
+  onSettingsChange,
   onSelectFile,
   isBrowserMaximized,
   toggleMaximized,
 }: Props) {
   const { isSmallScreen } = useLayout();
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
   const fileTreeResizeStartRef = useRef<{ startX: number; startWidth: number } | null>(null);
 
   const [search, setSearch] = useState('');
@@ -129,18 +139,21 @@ export default function CodeBrowser({
   const normalizedSearch = search.trim().toLowerCase();
 
   const files = data?.files ?? [];
+  const treeFiles = settings.hideMapFiles
+    ? files.filter(file => !file.path.toLowerCase().endsWith('.map'))
+    : files;
 
   const filteredFiles = (() => {
     if (!normalizedSearch) {
-      return files;
+      return treeFiles;
     }
 
-    const filesByPath = new Map<string, (typeof files)[number]>();
+    const filesByPath = new Map<string, (typeof treeFiles)[number]>();
     const relatedPaths = new Map<string, Set<string>>();
     const matchedPaths: string[] = [];
     const visiblePaths = new Set<string>();
 
-    for (const file of files) {
+    for (const file of treeFiles) {
       filesByPath.set(file.path, file);
 
       getCodeBrowserNestedFileParentPaths(file.path).forEach(nestedFileParentPath => {
@@ -174,11 +187,12 @@ export default function CodeBrowser({
       queue.push(...(relatedPaths.get(currentPath) ?? []));
     }
 
-    return files.filter(file => visiblePaths.has(file.path));
+    return treeFiles.filter(file => visiblePaths.has(file.path));
   })();
 
   const fileTree = buildCodeBrowserFileTree(filteredFiles, data?.prefix);
-  const totalFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
+  const totalFilesSize = sumBy(files, file => file.size ?? 0);
+  const filteredFilesSize = sumBy(filteredFiles, file => file.size ?? 0);
   const activeFileData = activeFile
     ? files.find(file => file.path === `${data?.prefix}${activeFile}`)
     : undefined;
@@ -188,12 +202,13 @@ export default function CodeBrowser({
     <View
       id="codeBrowser"
       style={[
-        tw`mt-2 flex overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
+        tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
         isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none` : tw`h-[70vh]`,
         isBrowserMaximized && {
           position: 'fixed',
         },
       ]}>
+      {isBrowserMaximized && header}
       {isLoading && (
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
@@ -205,6 +220,7 @@ export default function CodeBrowser({
           style={[
             tw`flex flex-row`,
             isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
+            isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
             isSmallScreen && tw`flex-col`,
           ]}>
           <View
@@ -226,27 +242,37 @@ export default function CodeBrowser({
                   ]}
                 />
               </View>
+              {search.length > 0 && (
+                <Tooltip
+                  trigger={
+                    <Pressable
+                      style={tw`absolute right-3.5 top-3.5 p-0.5`}
+                      onPress={() => setSearch('')}>
+                      <XIcon style={tw`size-3 text-tertiary`} />
+                    </Pressable>
+                  }>
+                  Clear search value
+                </Tooltip>
+              )}
               <TextInput
                 ref={inputRef}
                 autoComplete="off"
                 onKeyPress={event => {
-                  if ('key' in event) {
-                    if (inputRef.current && event.key === 'Escape') {
-                      if (search) {
-                        event.preventDefault();
-                        setSearch('');
-                      } else {
-                        inputRef.current.blur();
-                      }
+                  if ('key' in event && inputRef.current && event.key === 'Escape') {
+                    if (search) {
+                      event.preventDefault();
+                      setSearch('');
+                    } else {
+                      inputRef.current.blur();
                     }
                   }
                 }}
                 onFocus={() => setInputFocused(true)}
                 onBlur={() => setInputFocused(false)}
                 onChangeText={setSearch}
-                placeholder="Search files..."
+                placeholder="Search files…"
                 style={[
-                  tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 pl-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
+                  tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 px-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
                   isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
                 ]}
                 value={search}
@@ -296,11 +322,30 @@ export default function CodeBrowser({
                   <Label style={tw`font-light text-secondary`}>
                     <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
                     {pluralize('file', filteredFiles.length)}
+                    {files.length !== filteredFiles.length && (
+                      <span style={tw`opacity-80`}>
+                        &ensp;
+                        <span style={tw`text-tertiary`}>&bull;</span>
+                        &ensp;
+                        <span style={tw`font-medium`}>
+                          {files.length - filteredFiles.length}
+                        </span>{' '}
+                        hidden
+                      </span>
+                    )}
                   </Label>
                 }
                 rightSlot={
                   <Label style={tw`font-light text-secondary`}>
-                    <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span>
+                    <span style={tw`font-medium`}>{formatBytes(filteredFilesSize)}</span>
+                    {filteredFilesSize !== totalFilesSize && (
+                      <span style={tw`opacity-80`}>
+                        &ensp;
+                        <span style={tw`text-tertiary`}>&bull;</span>
+                        &ensp;
+                        <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span> total
+                      </span>
+                    )}
                   </Label>
                 }
               />
@@ -320,6 +365,8 @@ export default function CodeBrowser({
                 selectedVersion={selectedVersion}
                 filePath={activeFile}
                 fileData={activeFileData}
+                settings={settings}
+                onSettingsChange={onSettingsChange}
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />

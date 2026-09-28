@@ -35,6 +35,19 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
       npm: 0,
       yarn: 0,
     },
+    moduleType: {
+      expo: 0,
+      nitro: 0,
+      turbo: 0,
+    },
+    lintTools: {
+      oxlint: 0,
+      oxfmt: 0,
+      eslint: 0,
+      prettier: 0,
+      biome: 0,
+      commitlint: 0,
+    },
   };
 
   DATASET.libraries.forEach(library => {
@@ -118,6 +131,20 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.vegaos) {
       result.vegaos++;
+    }
+
+    library.github.lintTools?.forEach(tool => {
+      result.lintTools[tool]++;
+    });
+
+    if (library.github.moduleType) {
+      if (library.github.moduleType === 'expo') {
+        result.moduleType.expo++;
+      } else if (library.github.moduleType === 'nitro') {
+        result.moduleType.nitro++;
+      } else if (library.github.moduleType === 'turbo') {
+        result.moduleType.turbo++;
+      }
     }
 
     if (library.github.packageManager) {

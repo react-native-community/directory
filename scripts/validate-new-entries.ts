@@ -4,6 +4,7 @@ import { isEqual } from 'es-toolkit/compat';
 
 import { type LibraryDataEntryType } from '~/types';
 import { VALID_ENTRY_KEYS } from '~/util/Constants';
+import { isMissingPackageJsonError } from '~/util/errors';
 
 import libraries from '../react-native-libraries.json';
 
@@ -54,7 +55,22 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
       continue;
     }
 
-    const entryWithGitHubData = await fetchGithubData(entryWithNpmData);
+    let entryWithGitHubData;
+    try {
+      entryWithGitHubData = await fetchGithubData(entryWithNpmData, {
+        throwOnMissingPackageJson: true,
+      });
+    } catch (error) {
+      if (error instanceof Error && isMissingPackageJsonError(error)) {
+        console.error(
+          `GitHub directory ${entryWithNpmData.githubUrl} does not contain a package.json file. The githubUrl must point to the package directory.`
+        );
+        checkResults.push(false);
+        continue;
+      }
+
+      throw error;
+    }
 
     if (!entryWithGitHubData.github) {
       console.error(

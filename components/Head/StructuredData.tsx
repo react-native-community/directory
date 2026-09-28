@@ -1,5 +1,7 @@
+type NestedStringOrObject = string | { [key: string]: NestedStringOrObject };
+
 type Props = {
-  data: Record<string, any>;
+  data: Record<string, NestedStringOrObject>;
 };
 
 export default function StructuredData({ data }: Props) {

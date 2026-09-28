@@ -26,12 +26,8 @@ const GitHubRepositoryQuery = `
       watchers {
         totalCount
       }
-      stargazers {
-        totalCount
-      }
-      forks {
-        totalCount
-      }
+      stargazerCount
+      forkCount
       description
       createdAt
       pushedAt

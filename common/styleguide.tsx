@@ -1,5 +1,5 @@
 import * as HtmlElements from '@expo/html-elements';
-import { type TextProps } from '@expo/html-elements/build/primitives/Text';
+import { type TextProps } from '@expo/html-elements/primitives/Text';
 import Link from 'next/link';
 import { type ComponentType, type PropsWithChildren, type Ref, useState } from 'react';
 import {
@@ -109,6 +109,8 @@ type AProps = PropsWithChildren<{
   hoverStyle?: StyleProp<Style>;
   containerStyle?: Style;
   role?: Role;
+  tabIndex?: number;
+  'aria-hidden'?: boolean;
   ref?: Ref<HTMLAnchorElement>;
 }>;
 

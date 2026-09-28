@@ -8,7 +8,7 @@
 <p align="center">React Native Directory is a website where you can browse through all the libraries that are compatible with React Native.</p>
 <p align="center">
   <a href="https://vercel.com/?utm_source=rndir&utm_campaign=oss">
-    <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" />
+    <img src="./.github/vercel_badge.svg" height="44" alt="Powered by Vercel" />
   </a>
 </p>
 

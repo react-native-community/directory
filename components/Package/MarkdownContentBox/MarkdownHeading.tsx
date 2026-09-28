@@ -1,3 +1,4 @@
+import { type Element } from 'hast';
 import { type PropsWithChildren } from 'react';
 
 import { Button } from '~/components/Button';
@@ -6,32 +7,16 @@ import { childrenToText } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
-  node: MarkdownHeadingElement;
+  node: Element;
   slugger: (text: string) => string;
   linkableHeaders?: boolean;
 }>;
 
-export type MarkdownHeadingElement = Partial<Element> & {
-  tagName: MarkdownHeadingTagName;
-  position: {
-    start: MarkdownHeadingPosition;
-    end: MarkdownHeadingPosition;
-  };
-  properties: {
-    align?: 'left' | 'center' | 'right' | 'justify';
-  };
-};
-
 type MarkdownHeadingTagName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-type MarkdownHeadingPosition = {
-  column: number;
-  line: number;
-  offset: number;
-};
 
 export default function MarkdownHeading({ children, slugger, node, linkableHeaders }: Props) {
-  const Heading = node.tagName;
-  const isCentered = node.properties.align === 'center';
+  const Heading = node.tagName as MarkdownHeadingTagName;
+  const isCentered = node.properties?.align === 'center';
 
   const slug = typeof children === 'string' ? slugger(children) : slugger(childrenToText(children));
 

@@ -9,15 +9,23 @@ type Props = {
   title: string;
   path?: string;
   counter?: number | string;
+  measurement?: boolean;
 };
 
-function NavigationTab({ title, counter, path = `/${title.toLowerCase()}` }: Props) {
+function NavigationTab({
+  title,
+  counter,
+  measurement = false,
+  path = `/${title.toLowerCase()}`,
+}: Props) {
   const router = useRouter();
   const isActive = decodeURIComponent(router.asPath.split('?')[0]) === decodeURIComponent(path);
 
   return (
     <A
       href={path}
+      tabIndex={measurement ? -1 : undefined}
+      aria-hidden={measurement}
       style={[
         tw`rounded no-underline`,
         {

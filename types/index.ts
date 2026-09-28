@@ -1,5 +1,3 @@
-import 'expo/types/react-native-web.d.ts';
-
 import { type ComponentType, type ReactElement, type ReactNode } from 'react';
 
 import { type IconProps } from '~/components/Icons';
@@ -101,8 +99,9 @@ export type LibraryType = LibraryDataEntryType & {
     hasCC?: boolean;
     hasSecurity?: boolean;
     configPlugin?: boolean;
-    moduleType?: 'expo' | 'nitro' | 'turbo';
-    packageManager?: string;
+    moduleType?: ModuleType;
+    packageManager?: PackageManagerType;
+    lintTools?: LintToolType[];
     urls: {
       repo: string;
       homepage?: string | null;
@@ -220,8 +219,9 @@ export type MarkdownTabsType =
 
 export type MarkdownTab = {
   title: MarkdownTabsType;
-  url: string | null;
+  url: string;
   Icon: ComponentType<IconProps>;
+  fallbackUrl?: string;
 };
 
 export type CheckResultsType = Record<
@@ -253,12 +253,9 @@ export type StatisticResultType = {
   tvos: number;
   visionos: number;
   vegaos: number;
-  packageManager: {
-    bun: number;
-    pnpm: number;
-    npm: number;
-    yarn: number;
-  };
+  packageManager: Record<PackageManagerType, number>;
+  moduleType: Record<ModuleType, number>;
+  lintTools: Record<LintToolType, number>;
 };
 
 type NpmRegistryCommonData = {
@@ -283,9 +280,13 @@ export type NpmRegistryData = NpmRegistryCommonData & {
   time: Record<string, string>;
   readme?: string;
   readmeFilename?: string;
-  users?: Record<string, unknown>;
   _id?: string;
   _rev?: string;
+};
+
+type NpmRegistryExportsData = {
+  types?: string;
+  default: string;
 };
 
 export type NpmRegistryVersionData = NpmRegistryCommonData & {
@@ -308,14 +309,16 @@ export type NpmRegistryVersionData = NpmRegistryCommonData & {
   engines: {
     node: string;
   };
-  exports: Record<string, object | string>;
+  exports: Record<
+    string,
+    string | { import: NpmRegistryExportsData; require: NpmRegistryExportsData }
+  >;
   gitHead?: string;
   scripts: Record<string, string>;
   gitHooks?: Record<string, string>;
   description: string;
-  directories: Record<string, unknown>;
   dependencies?: Record<string, string>;
-  typesVersions?: Record<string, object>;
+  typesVersions?: Record<string, Record<string, string[]>>;
   devDependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;
   peerDependenciesMeta?: Record<string, { optional?: boolean }>;
@@ -411,3 +414,13 @@ export type UnpkgMeta = {
   prefix: string;
   version: string;
 };
+
+export type PackageNavigationTab = {
+  title: string;
+  path: string;
+  counter?: number | string;
+};
+
+export type PackageManagerType = 'bun' | 'pnpm' | 'npm' | 'yarn';
+export type ModuleType = 'expo' | 'nitro' | 'turbo';
+export type LintToolType = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';

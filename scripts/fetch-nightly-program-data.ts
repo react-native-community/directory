@@ -10,21 +10,12 @@ export async function fetchNightlyProgramData(list: LibraryType[]) {
     NightlyProgramData
   >;
 
-  const nightlyLibraries = [
-    ...new Set([
-      ...Object.keys(nightlyData),
-      ...Object.values(nightlyData).flatMap(entry => entry.installCommand.split(' ')),
-    ]),
-  ];
+  const nightlyLibraries = new Set([
+    ...Object.keys(nightlyData),
+    ...Object.values(nightlyData).flatMap(entry => entry.installCommand.split(' ')),
+  ]);
 
-  list.map(library => {
-    if (nightlyLibraries.includes(library.npmPkg)) {
-      library.nightlyProgram = true;
-      return library;
-    }
-
-    return library;
-  });
-
-  return list;
+  return list.map(library =>
+    nightlyLibraries.has(library.npmPkg) ? { ...library, nightlyProgram: true } : library
+  );
 }

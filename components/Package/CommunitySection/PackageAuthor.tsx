@@ -84,7 +84,7 @@ export default function PackageAuthor({ author, compact }: Props) {
   }
 
   // Email
-  if (potentialHref && potentialHref.includes('@')) {
+  if (potentialHref?.includes('@')) {
     if (compact) {
       return (
         <View style={authorContainerStyle}>

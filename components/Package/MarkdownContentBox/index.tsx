@@ -13,7 +13,7 @@ import {
 } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
-import { type LibraryType, type MarkdownTabsType } from '~/types';
+import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 import tw from '~/util/tailwind';
@@ -32,7 +32,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const router = useRouter();
   const repoUrl = library?.github.urls.repo;
 
-  const contentTabs = [
+  const contentTabs: MarkdownTab[] = [
     ...(packageName
       ? [
           {
@@ -47,7 +47,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Changelog' as const,
             Icon: ChangelogFileIcon,
-            url: getTabContentUrl(library, 'CHANGELOG.md'),
+            ...getTabContentUrls(library, 'CHANGELOG.md'),
           },
         ]
       : []),
@@ -56,7 +56,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Contributing' as const,
             Icon: ContributingFileIcon,
-            url: getTabContentUrl(library, 'CONTRIBUTING.md'),
+            ...getTabContentUrls(library, 'CONTRIBUTING.md'),
           },
         ]
       : []),
@@ -65,7 +65,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Code of Conduct' as const,
             Icon: CCFileIcon,
-            url: getTabContentUrl(library, 'CODE_OF_CONDUCT.md'),
+            ...getTabContentUrls(library, 'CODE_OF_CONDUCT.md'),
           },
         ]
       : []),
@@ -74,7 +74,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Security' as const,
             Icon: SecurityIcon,
-            url: getTabContentUrl(library, 'SECURITY.md'),
+            ...getTabContentUrls(library, 'SECURITY.md'),
           },
         ]
       : []),
@@ -84,17 +84,10 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const routeTab = parseMarkdownTab(router.query[MARKDOWN_CONTENT_QUERY_PARAM], availableTabs);
   const [activeTab, setActiveTab] = useState<MarkdownTabsType>(routeTab);
 
+  const activeContentTab = contentTabs.find(({ title }) => title === activeTab);
   const { data, error, isLoading } = useSWR(
-    contentTabs.find(({ title }) => title === activeTab)?.url,
-    (url: string) =>
-      fetch(url).then(res => {
-        if (res.status === 404) {
-          return '';
-        } else if (res.status === 200) {
-          return res.text();
-        }
-        return null;
-      }),
+    activeContentTab?.url,
+    () => fetchMarkdownContent(activeContentTab?.url, activeContentTab?.fallbackUrl),
     {
       dedupingInterval: TimeRange.MINUTE * 10 * 1000,
       revalidateOnFocus: false,
@@ -198,7 +191,33 @@ function getReadmeFallbackContent(
   return null;
 }
 
-function getTabContentUrl(library: LibraryType, fileName: string) {
+async function fetchMarkdownContent(url?: string, fallbackUrl?: string) {
+  if (!url) {
+    return null;
+  }
+
+  const response = await fetch(url);
+  if (response.status === 404 && fallbackUrl) {
+    return fetchMarkdownContent(fallbackUrl);
+  } else if (response.status === 404) {
+    return '';
+  } else if (response.status === 200) {
+    return response.text();
+  }
+
+  return null;
+}
+
+function getTabContentUrls(library: LibraryType, fileName: string) {
+  const { isMonorepo } = parseGitHubUrl(library.githubUrl);
+  return {
+    url: getContentUrl(library, fileName, false),
+    fallbackUrl: isMonorepo ? getContentUrl(library, fileName, true) : undefined,
+  };
+}
+
+function getContentUrl(library: LibraryType, fileName: string, fromRoot: boolean) {
   const { packagePath, branchName } = parseGitHubUrl(library.githubUrl);
-  return `${library.github.urls.repo?.replace('github.com/', 'raw.githubusercontent.com/')}/${branchName ?? 'HEAD'}/${packagePath !== '.' ? `${packagePath}/` : ''}${fileName}`;
+  const contentPath = !fromRoot && packagePath !== '.' ? `${packagePath}/` : '';
+  return `${library.github.urls.repo?.replace('github.com/', 'raw.githubusercontent.com/')}/${branchName ?? 'HEAD'}/${contentPath}${fileName}`;
 }

@@ -15,12 +15,13 @@ async function fetchUrl(url: string) {
 
   try {
     const res = await fetch(url, { signal: controller.signal, redirect: 'manual' });
-    if (res.status !== 200) {
-      if (res.status > 300 && res.status < 400) {
-        console.warn(`⚠️ ${url} → ${res.status} (${res.headers.get('location')})`);
-      } else {
-        console.error(`❌ ${url} → ${res.status}`);
-      }
+    if (res.status === 200) {
+      return;
+    }
+    if (res.status > 300 && res.status < 400) {
+      console.warn(`⚠️ ${url} → ${res.status} (${res.headers.get('location')})`);
+    } else {
+      console.error(`❌ ${url} → ${res.status}`);
     }
   } catch (err) {
     if (err instanceof DOMException) {

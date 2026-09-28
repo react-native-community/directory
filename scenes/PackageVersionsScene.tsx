@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { H6Section } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import ChartSectionHeader from '~/components/Package/Charts/ChartSectionHeader';
-import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
@@ -71,7 +71,7 @@ export default function PackageVersionsScene({
         description={`See ${library.npmPkg} package published versions information and metadata`}
         path="package"
       />
-      <DetailsNavigation library={library} />
+      <NavigationHeader library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} skipDescription />

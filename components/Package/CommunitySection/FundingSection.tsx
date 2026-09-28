@@ -3,10 +3,11 @@ import { orderBy } from 'es-toolkit/array';
 import useSWR from 'swr';
 
 import { H6Section, useLayout } from '~/common/styleguide';
-import FundingRow from '~/components/Package/FoundingRow';
 import { type LibraryFundingLink } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import tw from '~/util/tailwind';
+
+import FundingRow from './FoundingRow';
 
 type Props = {
   fullName: string;

@@ -1,5 +1,7 @@
 import { Children, isValidElement, type PropsWithChildren, type ReactNode } from 'react';
 
+import { type LintToolType } from '~/types';
+
 export const NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   notation: 'compact',
   compactDisplay: 'short',
@@ -12,6 +14,13 @@ export const FULL_FRACTION_NUMBER_FORMATTER = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 2,
   minimumFractionDigits: 2,
 });
+
+export function bigNumberFormatter(value: number) {
+  if (value < 1000) {
+    return NUMBER_FORMATTER.format(value);
+  }
+  return FULL_FRACTION_NUMBER_FORMATTER.format(value);
+}
 
 export function pluralize(word: string, count: number) {
   if (count === 1) {
@@ -30,7 +39,7 @@ export function pluralize(word: string, count: number) {
 }
 
 export function isEmptyOrNull(text?: string) {
-  return !text || !text.trim();
+  return !text?.trim();
 }
 
 export function formatPackageManager(pmRaw?: string) {
@@ -51,6 +60,23 @@ export function formatPackageManager(pmRaw?: string) {
       return 'Yarn Berry';
     }
     return 'Yarn';
+  }
+}
+
+export function formatLintTools(lintTool: LintToolType) {
+  switch (lintTool) {
+    case 'oxlint':
+      return 'Oxlint';
+    case 'oxfmt':
+      return 'Oxfmt';
+    case 'eslint':
+      return 'ESLint';
+    case 'prettier':
+      return 'Prettier';
+    case 'biome':
+      return 'Biome';
+    default:
+      return lintTool;
   }
 }
 

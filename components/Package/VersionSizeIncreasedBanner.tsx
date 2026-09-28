@@ -22,7 +22,7 @@ export function VersionSizeIncreasedBanner({ data }: Props) {
   return (
     <View
       style={tw`mt-2 flex flex-row items-center gap-1.5 rounded-lg border border-warning-opaque bg-warning-light p-3 dark:bg-warning-light`}>
-      <WarningIcon style={tw`size-4 text-warning-dark`} />
+      <WarningIcon style={tw`size-4 shrink-0 text-warning-dark`} />
       <Label style={tw`text-warning-dark dark:text-warning`}>
         Warning: package size increased by{' '}
         <strong>{analysis.flaggedRelease.increasePercent?.toFixed(1)}%</strong> in version{' '}

@@ -1,10 +1,11 @@
-import { type PropsWithChildren, type ReactElement, useEffect, useState } from 'react';
+import { type PropsWithChildren, type ReactElement, useState } from 'react';
 import { type StyleProp, View } from 'react-native';
 import { type Style } from 'twrnc';
 
 import { H6Section } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { ArrowIcon } from '~/components/Icons';
+import { getStoredFlagValue } from '~/util/localStorage';
 import tw from '~/util/tailwind';
 
 import EntityCounter from './EntityCounter';
@@ -26,12 +27,7 @@ export default function CollapsibleSection({
   const sectionKey = sanitizeTitle(title);
   const key = `@ReactNativeDirectory:PackageSectionCollapsed:${sectionKey}`;
 
-  const [collapsed, setCollapsed] = useState(Boolean(window.localStorage.getItem(key)));
-
-  useEffect(() => {
-    // oxlint-disable-next-line react-doctor/no-derived-state
-    setCollapsed(window.localStorage.getItem(key) === 'true');
-  }, [key]);
+  const [collapsed, setCollapsed] = useState(() => getStoredFlagValue(key));
 
   async function toggleSection() {
     const nextState = !collapsed;

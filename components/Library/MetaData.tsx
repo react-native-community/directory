@@ -12,6 +12,7 @@ import {
   ForkIcon,
   IssueIcon,
   LicenseIcon,
+  LintToolsIcon,
   ModuleIcon,
   NativeCodeIcon,
   NightlyTestIcon,
@@ -25,7 +26,7 @@ import { ConfigPluginContent } from '~/components/Library/ConfigPlugin';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryDataEntryType, type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import { formatPackageManager, pluralize } from '~/util/strings';
+import { formatLintTools, formatPackageManager, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
@@ -64,7 +65,7 @@ function generateData({
               href={`https://www.npmjs.com/package/${npmPkg}`}
               style={linkStyle}
               containerStyle={{ textOverflow: 'ellipsis' }}>
-              {`${npm.downloads.toLocaleString()}`} monthly downloads
+              {npm.downloads.toLocaleString()} monthly downloads
             </A>
           ),
         }
@@ -108,7 +109,7 @@ function generateData({
           icon: <ForkIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
-              {`${github.stats.forks.toLocaleString()}`}
+              {github.stats.forks.toLocaleString()}
             </A>
           ),
           tooltip: 'Forks',
@@ -120,7 +121,7 @@ function generateData({
           icon: <EyeIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
-              {`${github.stats.subscribers.toLocaleString()}`}
+              {github.stats.subscribers.toLocaleString()}
             </A>
           ),
           tooltip: 'Watchers',
@@ -132,7 +133,7 @@ function generateData({
           icon: <IssueIcon style={tw`text-icon`} />,
           content: (
             <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
-              {`${github.stats.issues.toLocaleString()}`}
+              {github.stats.issues.toLocaleString()}
             </A>
           ),
           tooltip: 'Issues',
@@ -238,7 +239,7 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           content: <P style={paragraphStyles}>TypeScript Types</P>,
         }
       : null,
-    !skipExamples && examples && examples.length
+    !skipExamples && examples?.length
       ? {
           id: 'examples',
           icon: <ExamplesIcon style={iconColor} />,
@@ -266,6 +267,16 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           tooltip: 'Package manager',
         }
       : null,
+    skipExamples && (github?.lintTools?.length ?? 0) > 0
+      ? {
+          id: 'lintTools',
+          icon: <LintToolsIcon style={iconColor} />,
+          content: (
+            <P style={paragraphStyles}>{github.lintTools?.map(formatLintTools).join(', ')}</P>
+          ),
+          tooltip: 'Lint tools',
+        }
+      : null,
   ];
 }
 
@@ -280,7 +291,6 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
           const component = (
             <View
               key={id}
-              // @ts-expect-error RNW complains about 'fit-content'
               style={{
                 ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
                 ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
@@ -292,7 +302,7 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
           );
 
           return tooltip ? (
-            <Tooltip key={id} sideOffset={-2} delayDuration={250} trigger={component}>
+            <Tooltip key={id} sideOffset={-2} side="left" delayDuration={250} trigger={component}>
               {tooltip}
             </Tooltip>
           ) : (

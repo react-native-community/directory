@@ -20,7 +20,7 @@ export default function CodeBrowserContentFooter({
   return (
     <View
       style={[
-        tw`relative flex min-h-[26px] flex-row items-center justify-between gap-3 border-t border-palette-gray2 bg-default px-3 pb-px dark:border-default`,
+        tw`relative flex min-h-[26px] flex-row items-center justify-between gap-3 border-t border-palette-gray2 bg-default px-2.5 pb-px dark:border-default`,
         isSmallScreen && tw`border-b border-t-0`,
         style,
       ]}>

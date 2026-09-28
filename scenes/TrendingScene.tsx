@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Image, View } from 'react-native';
@@ -7,7 +6,7 @@ import { A, H4, P } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { Filters } from '~/components/Filters';
 import { FilterButton } from '~/components/Filters/FilterButton';
-import LoadingContent from '~/components/Library/LoadingContent';
+import { LibraryWithLoading } from '~/components/Library/LibraryWithLoading';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
@@ -15,16 +14,12 @@ import { type TrendingPageProps } from '~/types/pages';
 import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
-const LibraryWithLoading = dynamic(() => import('~/components/Library'), {
-  loading: () => <LoadingContent />,
-});
-
 export default function TrendingScene({ data, query }: TrendingPageProps) {
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(query).length > 3);
 
   const router = useRouter();
 
-  const total = data && data.total;
+  const total = data?.total ?? 0;
 
   function handleClearAllPress() {
     void router.replace(urlWithQuery('/trending'));

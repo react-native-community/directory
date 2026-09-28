@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { A, Caption, H6Section, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import { DirectoryScore } from '~/components/Library/DirectoryScore';
-import DetailsNavigation from '~/components/Package/DetailsNavigation';
+import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
@@ -28,7 +28,7 @@ export default function PackageScoreScene({ apiData, packageName }: PackageScore
         description="See package directory score details"
         path="package"
       />
-      <DetailsNavigation library={library} />
+      <NavigationHeader library={library} />
       <ContentContainer style={tw`my-6 px-5 pb-3`}>
         <View style={tw`flex-1 gap-3`}>
           <PackageHeader library={library} skipDescription />

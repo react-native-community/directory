@@ -17,7 +17,7 @@ export const DEFAULT_CHART_MODE: VersionsChartMode = 'version';
 export const LABEL_TO_BAR_GAP = 6;
 
 const VERSIONS_LIMIT = 12;
-const MIN_YAXIS_LABEL_WIDTH = 72;
+const MIN_YAXIS_LABEL_WIDTH = 60;
 const OTHER_VERSION_LABEL = 'Other';
 const TEXT_MEASURE_CANVAS_ID = 'measure-canvas';
 const Y_AXIS_LABEL_WIDTH_CACHE = new Map<string, number>();
@@ -58,6 +58,46 @@ export function buildChartSeriesByMode(baseSeries: VersionsChartData[]): Version
     minor: applySeriesLimit(aggregateSeriesBySemver(baseSeries, 'minor'), VERSIONS_LIMIT),
     major: applySeriesLimit(aggregateSeriesBySemver(baseSeries, 'major'), VERSIONS_LIMIT),
   };
+}
+
+export function getLatestVersionDownloadsPercentage(
+  baseSeries: VersionsChartData[],
+  registryData: PackageVersionsData,
+  mode: VersionsChartMode
+) {
+  const totalDownloads = sumBy(baseSeries, item => item.downloads);
+
+  if (!totalDownloads) {
+    return 0;
+  }
+
+  const latestVersion = registryData['dist-tags'].latest;
+
+  if (!latestVersion) {
+    return 0;
+  }
+
+  if (mode === 'version') {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateLabel = getAggregatedSemverLabel(latestVersion, mode);
+
+  if (!latestAggregateLabel) {
+    return (
+      ((baseSeries.find(item => item.label === latestVersion)?.downloads ?? 0) / totalDownloads) *
+      100
+    );
+  }
+
+  const latestAggregateDownloads = sumBy(baseSeries, item =>
+    getAggregatedSemverLabel(item.label, mode) === latestAggregateLabel ? item.downloads : 0
+  );
+
+  return (latestAggregateDownloads / totalDownloads) * 100;
 }
 
 export function createVersionChartEntry(

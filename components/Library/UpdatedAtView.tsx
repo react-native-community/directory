@@ -31,7 +31,7 @@ export default function UpdatedAtView({ library }: Props) {
     <Tooltip
       sideOffset={2}
       trigger={
-        <View style={tw`flex-row items-start gap-2`} aria-label={tooltipContent} role="tooltip">
+        <View style={tw`flex-row items-start gap-2`} role="tooltip">
           <View>
             <CalendarIcon
               style={[tw`h-4 w-3.5`, unmaintainedStyle ?? tw`text-tertiary dark:text-pewter`]}

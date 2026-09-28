@@ -147,11 +147,8 @@ export function handleFilterLibraries({
     let isTopicMatch = false;
     let isSearchMatch = false;
 
-    // Filter by bookmarks if enabled
-    if (bookmarks && bookmarkedIds) {
-      if (!bookmarkedIds.has(library.npmPkg)) {
-        return false;
-      }
+    if (bookmarks && bookmarkedIds && !bookmarkedIds.has(library.npmPkg)) {
+      return false;
     }
 
     if (skipLibs && !library.dev) {
@@ -175,11 +172,11 @@ export function handleFilterLibraries({
       }
     }
 
-    if (hasExample && (!library.examples || !library.examples.length)) {
+    if (hasExample && !library.examples?.length) {
       return false;
     }
 
-    if (hasImage && (!library.images || !library.images.length)) {
+    if (hasImage && !library.images?.length) {
       return false;
     }
 

@@ -27,6 +27,7 @@ import tw from '~/util/tailwind';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserContentHeader from './CodeBrowserContentHeader';
 import CodeBrowserContentHighlighter from './CodeBrowserContentHighlighter';
+import CodeBrowserSettings, { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 import DisplayModeButton from './DisplayModeButton';
 import DownloadFileButton from './DownloadFileButton';
 
@@ -38,6 +39,8 @@ type Props = {
   repoUrl: string;
   filePath: string;
   fileData?: UnpkgMeta['files'][number];
+  settings: CodeBrowserSettingsType;
+  onSettingsChange: (settings: CodeBrowserSettingsType) => void;
 };
 
 export default function CodeBrowserContent({
@@ -48,6 +51,8 @@ export default function CodeBrowserContent({
   repoUrl,
   filePath,
   fileData,
+  settings,
+  onSettingsChange,
 }: Props) {
   const [rawPreview, setRawPreview] = useState(false);
   const [markdownPreview, setMarkdownPreview] = useState(false);
@@ -89,10 +94,13 @@ export default function CodeBrowserContent({
     return (
       <>
         <CodeBrowserContentHeader filePath={filePath}>
-          <DisplayModeButton
-            isBrowserMaximized={isBrowserMaximized}
-            toggleMaximized={toggleMaximized}
-          />
+          <View style={tw`flex flex-row gap-3`}>
+            <DisplayModeButton
+              isBrowserMaximized={isBrowserMaximized}
+              toggleMaximized={toggleMaximized}
+            />
+            <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
+          </View>
         </CodeBrowserContentHeader>
         <View style={tw`flex flex-1 items-center justify-center`}>
           <ThreeDotsLoader />
@@ -150,6 +158,7 @@ export default function CodeBrowserContent({
               isBrowserMaximized={isBrowserMaximized}
               toggleMaximized={toggleMaximized}
             />
+            <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
           </View>
         </CodeBrowserContentHeader>
         {markdownPreview ? (
@@ -166,6 +175,8 @@ export default function CodeBrowserContent({
             code={data}
             lang={filePath.split('.').at(-1) ?? 'text'}
             theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
+            wordWrap={settings.wordWrap}
+            showLineNumbers={settings.showLineNumbers}
           />
         )}
         {!markdownPreview && (
@@ -210,6 +221,7 @@ export default function CodeBrowserContent({
             isBrowserMaximized={isBrowserMaximized}
             toggleMaximized={toggleMaximized}
           />
+          <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
         </View>
       </CodeBrowserContentHeader>
       <View style={tw`flex flex-1 items-center justify-center`}>

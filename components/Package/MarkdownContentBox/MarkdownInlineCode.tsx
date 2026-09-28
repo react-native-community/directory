@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { type Highlighter } from 'shiki';
 
 import { inlineHighlighterInstance } from '~/util/shiki';
 
 type Props = {
-  code: string;
+  code: ReactNode;
   theme: string;
 };
 

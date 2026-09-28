@@ -40,7 +40,7 @@ function Library({
     github.urls.homepage ||
     github.newArchitecture ||
     library.newArchitecture ||
-    (library.examples && library.examples.length);
+    library.examples?.length;
 
   return (
     <View
@@ -125,8 +125,8 @@ function Library({
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
           <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
-            {library.images.map(image => (
-              <Thumbnail key={image} url={image} />
+            {library.images.map((image, i) => (
+              <Thumbnail key={image} url={image} alt={`${library.npmPkg} screenshot ${i + 1}`} />
             ))}
           </View>
         )}

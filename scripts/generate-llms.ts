@@ -37,12 +37,12 @@ function extractReadmeSection(heading: string) {
   return (nextSectionIndex === -1 ? fromStart : fromStart.slice(0, nextSectionIndex)).trim();
 }
 
-const NEW_ARCHITECTURE_STATUS_LABELS: Record<NewArchSupportStatus, string> = {
+const NEW_ARCHITECTURE_STATUS_LABELS = {
   [NewArchSupportStatus.NewArchOnly]: 'Only Supports New Architecture',
   [NewArchSupportStatus.Supported]: 'Supports New Architecture',
   [NewArchSupportStatus.Unsupported]: 'Does not support New Architecture',
   [NewArchSupportStatus.Untested]: 'Untested with New Architecture',
-};
+} satisfies Record<NewArchSupportStatus, string>;
 
 function formatRecord(library: LibraryType): string {
   const platforms = getStringifiedFlags(FILTER_PLATFORMS, library);

@@ -45,6 +45,7 @@ export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer]
   experimental: {
     forceSwcTransforms: true,
     webpackBuildWorker: true,
+    useTypeScriptCli: true,
     optimizePackageImports: PACKAGES_TO_OPTIMIZE,
   },
   async headers() {
