@@ -23361,5 +23361,17 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/shtefanilie/react-native-clamshell",
+    "examples": ["https://github.com/shtefanilie/react-native-clamshell/tree/main/example"],
+    "images": [
+      "https://github.com/shtefanilie/react-native-clamshell/blob/main/docs/assets/clamshell-demo.gif?raw=true",
+      "https://github.com/shtefanilie/react-native-clamshell/blob/main/docs/assets/clamshell-demo-android.gif?raw=true"
+    ],
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true,
+    "ios": true,
+    "android": true
   }
 ]
