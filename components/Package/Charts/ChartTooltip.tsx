@@ -5,6 +5,7 @@ import tw from '~/util/tailwind';
 
 export default function ChartTooltip({ children }: PropsWithChildren) {
   const isDark = tw.prefixMatch('dark');
+
   return (
     <View
       style={[
