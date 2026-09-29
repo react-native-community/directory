@@ -24462,5 +24462,20 @@
     "android": true,
     "expoGo": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/lvlrSajjad/react-native-masonry-brick-list",
+    "examples": [
+      "https://github.com/lvlrSajjad/react-native-masonry-brick-list/tree/master/example",
+      "https://lvlrsajjad.github.io/react-native-masonry-brick-list/"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/lvlrSajjad/react-native-masonry-brick-list/master/screen.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
