@@ -24477,5 +24477,12 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/getsettalk/react-native-review-prompt",
+    "examples": ["https://github.com/getsettalk/react-native-review-prompt/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
