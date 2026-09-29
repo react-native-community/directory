@@ -24464,7 +24464,29 @@
     "dev": true
   },
   {
-    "githubUrl": "https://github.com/shtefanilie/react-native-clamshell",
+    "githubUrl": "https://github.com/lvlrSajjad/react-native-masonry-brick-list",
+    "examples": [
+      "https://github.com/lvlrSajjad/react-native-masonry-brick-list/tree/master/example",
+      "https://lvlrsajjad.github.io/react-native-masonry-brick-list/"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/lvlrSajjad/react-native-masonry-brick-list/master/screen.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/getsettalk/react-native-review-prompt",
+    "examples": ["https://github.com/getsettalk/react-native-review-prompt/tree/HEAD/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+        "githubUrl": "https://github.com/shtefanilie/react-native-clamshell",
     "examples": ["https://github.com/shtefanilie/react-native-clamshell/tree/main/example"],
     "images": [
       "https://github.com/shtefanilie/react-native-clamshell/blob/main/docs/assets/clamshell-demo.gif?raw=true",
@@ -24474,5 +24496,5 @@
     "configPlugin": true,
     "ios": true,
     "android": true
-  }
+  },
 ]
