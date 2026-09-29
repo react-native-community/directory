@@ -11,6 +11,13 @@ export type HoveredBarOutlineProps<Datum extends { label: string }> = {
   yAccessor: (item: Datum) => string | number;
 };
 
+type BandScale = {
+  (value: string): number | undefined;
+  bandwidth: () => number;
+};
+
+type ValueScale = (value: number) => number | undefined;
+
 export default function HoveredBarOutline<Datum extends { label: string }>({
   hoveredIndex,
   series,
@@ -19,67 +26,45 @@ export default function HoveredBarOutline<Datum extends { label: string }>({
   yAccessor,
 }: HoveredBarOutlineProps<Datum>) {
   const { xScale, yScale } = use(DataContext);
-
-  if (hoveredIndex === null) {
-    return null;
-  }
-
-  const datum = series[hoveredIndex];
+  const datum = hoveredIndex === null ? undefined : series[hoveredIndex];
 
   if (!datum || !xScale || !yScale) {
     return null;
   }
 
-  const isDark = tw.prefixMatch('dark');
-  const stroke = isDark ? 'var(--gray-2)' : 'var(--secondary)';
+  const vertical = orientation === 'vertical';
+  const bandScale = (vertical ? xScale : yScale) as BandScale;
+  const valueScale = (vertical ? yScale : xScale) as ValueScale;
+  const bandValue = (vertical ? xAccessor : yAccessor)(datum);
+  const value = Number((vertical ? yAccessor : xAccessor)(datum));
 
-  if (orientation === 'vertical') {
-    const bandScale = xScale as { bandwidth: () => number; (value: string): number };
-    const linearScale = yScale as (value: number) => number;
-    const x = bandScale(xAccessor(datum).toString());
-    const y = linearScale(Number.parseInt(yAccessor(datum).toString(), 10));
-    const baseline = linearScale(0);
+  const bandStart = bandScale(String(bandValue));
+  const valueEnd = valueScale(value);
+  const baseline = valueScale(0);
 
-    if (typeof x !== 'number' || typeof y !== 'number' || typeof baseline !== 'number') {
-      return null;
-    }
-
-    return (
-      <rect
-        x={x}
-        y={Math.min(y, baseline)}
-        width={bandScale.bandwidth()}
-        height={Math.abs(baseline - y)}
-        rx={4}
-        ry={4}
-        fill="none"
-        stroke={stroke}
-        strokeWidth={1}
-        pointerEvents="none"
-      />
-    );
-  }
-
-  const linearScale = xScale as (value: number) => number;
-  const bandScale = yScale as { bandwidth: () => number; (value: string): number };
-  const x = linearScale(Number.parseInt(xAccessor(datum).toString(), 10));
-  const y = bandScale(yAccessor(datum).toString());
-  const baseline = linearScale(0);
-
-  if (typeof x !== 'number' || typeof y !== 'number' || typeof baseline !== 'number') {
+  if (
+    bandStart === undefined ||
+    valueEnd === undefined ||
+    baseline === undefined ||
+    !Number.isFinite(valueEnd) ||
+    !Number.isFinite(baseline)
+  ) {
     return null;
   }
 
+  const valueStart = Math.min(valueEnd, baseline);
+  const valueSize = Math.abs(valueEnd - baseline);
+
   return (
     <rect
-      x={Math.min(x, baseline)}
-      y={y}
-      width={Math.abs(baseline - x)}
-      height={bandScale.bandwidth()}
+      x={vertical ? bandStart : valueStart}
+      y={vertical ? valueStart : bandStart}
+      width={vertical ? bandScale.bandwidth() : valueSize}
+      height={vertical ? valueSize : bandScale.bandwidth()}
       rx={4}
       ry={4}
       fill="none"
-      stroke={stroke}
+      stroke={tw.prefixMatch('dark') ? 'var(--gray-2)' : 'var(--secondary)'}
       strokeWidth={1}
       pointerEvents="none"
     />

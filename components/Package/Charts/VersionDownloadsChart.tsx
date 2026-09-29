@@ -196,9 +196,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
           data={series}
           xAccessor={(item: VersionsChartData) => item.downloads}
           yAccessor={(item: VersionsChartData) => item.label}
-          colorAccessor={(item: VersionsChartData) => {
-            const { kind, distTags } = item;
-
+          colorAccessor={({ kind, distTags }: VersionsChartData) => {
             if (kind === 'other') {
               return `url(#${OTHER_BAR_GRADIENT_ID})`;
             }
@@ -247,18 +245,18 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
                   )}
                 </span>
                 <span>{data.downloads.toLocaleString()} downloads last week</span>
-                {isAggregatedKind(data.kind) && data.versionCount ? (
+                {isAggregatedKind(data.kind) && data.versionCount && (
                   <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} included`}</span>
-                ) : null}
-                {data.kind === 'other' && data.versionCount ? (
+                )}
+                {data.kind === 'other' && data.versionCount && (
                   <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} aggregated`}</span>
-                ) : null}
-                {data.publishedAt && data.kind !== 'other' ? (
+                )}
+                {data.publishedAt && data.kind !== 'other' && (
                   <span style={tw`text-palette-gray3 dark:text-secondary`}>
                     {isAggregatedKind(data.kind) ? 'Latest publish' : 'Published'}{' '}
                     {new Date(data.publishedAt).toLocaleDateString('en-US')}
                   </span>
-                ) : null}
+                )}
               </ChartTooltip>
             );
           }}

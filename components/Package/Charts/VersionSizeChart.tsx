@@ -5,12 +5,12 @@ import { useState } from 'react';
 import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
-import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
 import { type PackageVersionsData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import tw from '~/util/tailwind';
 
+import ChartTooltip from './ChartTooltip';
+import HoveredBarOutline from './HoveredBarOutline';
 import { type VersionSizeChartData } from './types';
 
 const RECENT_RELEASE_COUNT = 20;
@@ -23,7 +23,6 @@ type Props = {
 };
 
 export default function VersionSizeChart({ registryData }: Props) {
-  const isDark = tw.prefixMatch('dark');
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -40,6 +39,7 @@ export default function VersionSizeChart({ registryData }: Props) {
     );
   }
 
+  const isDark = tw.prefixMatch('dark');
   const maxSize = Math.max(...series.map(item => item.size), 0);
   const yDomain = maxSize ? [0, maxSize + Math.max(1, maxSize * 0.08)] : undefined;
   const latestVersion = series.at(-1)?.label;
@@ -177,12 +177,12 @@ export default function VersionSizeChart({ registryData }: Props) {
 }
 
 function buildRecentVersionSizeSeries(
-  data: PackageVersionsData,
+  { versions, time }: PackageVersionsData,
   count: number
 ): VersionSizeChartData[] {
-  return Object.entries(data.versions)
+  return Object.entries(versions)
     .filter(([version, versionData]) => {
-      const publishedAt = data.time[version];
+      const publishedAt = time[version];
       const size = versionData.dist?.unpackedSize;
 
       if (version.includes('-')) {
@@ -191,14 +191,11 @@ function buildRecentVersionSizeSeries(
 
       return Boolean(publishedAt) && typeof size === 'number';
     })
-    .sort(
-      (left, right) =>
-        new Date(data.time[left[0]]).getTime() - new Date(data.time[right[0]]).getTime()
-    )
+    .sort((left, right) => new Date(time[left[0]]).getTime() - new Date(time[right[0]]).getTime())
     .slice(-count)
     .map(([version, versionData]) => ({
       label: version,
       size: versionData.dist!.unpackedSize!,
-      publishedAt: data.time[version],
+      publishedAt: time[version],
     }));
 }
