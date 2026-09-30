@@ -24507,5 +24507,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk",
+    "images": [
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-fitted-ios.png",
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-detail-ios.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
