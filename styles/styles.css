@@ -880,3 +880,9 @@ select {
     }
   }
 }
+
+/* STATISTICS */
+
+[id^='statistic-chart'] {
+  scroll-margin-top: 1.25rem;
+}

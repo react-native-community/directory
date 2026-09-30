@@ -232,6 +232,11 @@ export type CheckResultsType = Record<
   }
 >;
 
+export type StatisticBucketType = {
+  label: string;
+  count: number;
+};
+
 export type StatisticResultType = {
   total: number;
   newArchitecture: number;
@@ -256,6 +261,9 @@ export type StatisticResultType = {
   packageManager: Record<PackageManagerType, number>;
   moduleType: Record<ModuleType, number>;
   lintTools: Record<LintToolType, number>;
+  scoreBuckets: StatisticBucketType[];
+  dependencyBuckets: StatisticBucketType[];
+  bundleSizeBuckets: StatisticBucketType[];
 };
 
 type NpmRegistryCommonData = {
@@ -424,3 +432,13 @@ export type PackageNavigationTab = {
 export type PackageManagerType = 'bun' | 'pnpm' | 'npm' | 'yarn';
 export type ModuleType = 'expo' | 'nitro' | 'turbo';
 export type LintToolType = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';
+
+export type StatisticEntry = {
+  label: string;
+  count: number;
+  secondary?: boolean;
+};
+
+export type StatisticChartEntry = StatisticEntry & {
+  percentage: number;
+};

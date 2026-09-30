@@ -1,7 +1,7 @@
 import { type ComponentType } from 'react';
 import { View } from 'react-native';
 
-import { A, H4, P, useLayout } from '~/common/styleguide';
+import { A, H4, Label, P, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
 import HomeSection from '~/components/Home/HomeSection';
 import PlatformRow from '~/components/Home/PlatformRow';
@@ -145,8 +145,11 @@ export default function HomeScene({
           </View>
           <View style={tw`flex-1 px-2`}>
             <H4
-              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+              style={tw`mb-1 flex items-center justify-between gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
               Statistics
+              <A href="/stats">
+                <Label>View more</Label>
+              </A>
             </H4>
             <View
               style={[
