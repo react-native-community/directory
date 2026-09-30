@@ -24496,5 +24496,19 @@
     "configPlugin": true,
     "ios": true,
     "android": true
+  },
+      "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Bhavinpethani04/react-native-magic-tab-bar",
+    "examples": ["https://github.com/Bhavinpethani04/react-native-magic-tab-bar/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Bhavinpethani04/react-native-magic-tab-bar/main/assets/gifs/ios.gif",
+      "https://raw.githubusercontent.com/Bhavinpethani04/react-native-magic-tab-bar/main/assets/gifs/android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
+]
 ]
