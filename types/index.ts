@@ -232,6 +232,11 @@ export type CheckResultsType = Record<
   }
 >;
 
+export type StatisticBucketType = {
+  label: string;
+  count: number;
+};
+
 export type StatisticResultType = {
   total: number;
   newArchitecture: number;
@@ -256,6 +261,9 @@ export type StatisticResultType = {
   packageManager: Record<PackageManagerType, number>;
   moduleType: Record<ModuleType, number>;
   lintTools: Record<LintToolType, number>;
+  scoreBuckets: StatisticBucketType[];
+  dependencyBuckets: StatisticBucketType[];
+  bundleSizeBuckets: StatisticBucketType[];
 };
 
 type NpmRegistryCommonData = {

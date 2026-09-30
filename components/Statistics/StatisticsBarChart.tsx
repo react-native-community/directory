@@ -22,28 +22,37 @@ type ChartEntry = StatisticEntry & {
 type Props = {
   data: StatisticEntry[];
   total: number;
+  sortByValue?: boolean;
+  reverseOrder?: boolean;
 };
 
 const ROW_HEIGHT = 30;
 const MIN_HEIGHT = 120;
 
-export default function StatisticsBarChart({ data, total }: Props) {
+export default function StatisticsBarChart({
+  data,
+  total,
+  sortByValue = true,
+  reverseOrder = false,
+}: Props) {
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const { isSmallScreen } = useLayout();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isDark = tw.prefixMatch('dark');
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
-  const series: ChartEntry[] = data
-    .map(entry => ({
-      ...entry,
-      percentage: total > 0 ? (entry.count / total) * 100 : 0,
-    }))
-    .sort(
-      (left, right) =>
-        Number(right.secondary === true) - Number(left.secondary === true) ||
-        left.percentage - right.percentage
-    );
+  const entries: ChartEntry[] = data.map(entry => ({
+    ...entry,
+    percentage: total > 0 ? (entry.count / total) * 100 : 0,
+  }));
+  const orderedSeries = sortByValue
+    ? entries.sort(
+        (left, right) =>
+          Number(right.secondary === true) - Number(left.secondary === true) ||
+          left.percentage - right.percentage
+      )
+    : [...entries.filter(entry => !entry.secondary), ...entries.filter(entry => entry.secondary)];
+  const series = reverseOrder ? [...orderedSeries].reverse() : orderedSeries;
   const height = Math.max(MIN_HEIGHT, series.length * ROW_HEIGHT + 42);
   const leftMargin = isSmallScreen ? 112 : 120;
 
@@ -162,7 +171,7 @@ export default function StatisticsBarChart({ data, total }: Props) {
 
             return (
               <ChartTooltip>
-                <span style={tw`text-[15px] mb-0.5 font-medium`}>{entry.label}</span>
+                <span style={tw`mb-0.5 text-[15px] font-medium`}>{entry.label}</span>
                 <span>
                   {entry.count.toLocaleString()} libraries ({entry.percentage.toFixed(2)}%)
                 </span>

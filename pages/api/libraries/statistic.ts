@@ -1,11 +1,33 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
-import { type DataAssetType, type StatisticResultType } from '~/types';
+import { type DataAssetType, type StatisticBucketType, type StatisticResultType } from '~/types';
 import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 const DATASET = data as DataAssetType;
+
+const SCORE_BUCKET_LABELS = Array.from({ length: 10 }, (_, index) => {
+  const lower = index * 10;
+  return `${lower}-${lower + 10}`;
+});
+
+const DEPENDENCY_BUCKETS = [
+  { label: '0', min: 0, max: 0 },
+  { label: '1-5', min: 1, max: 5 },
+  { label: '6-10', min: 6, max: 10 },
+  { label: '11-25', min: 11, max: 25 },
+  { label: '26-49', min: 26, max: 49 },
+  { label: '50+', min: 50, max: Number.POSITIVE_INFINITY },
+];
+const BUNDLE_SIZE_BUCKETS = [
+  { label: '<100 kB', min: 0, max: 99_999 },
+  { label: '100-500 kB', min: 100_000, max: 499_999 },
+  { label: '500 kB-1 MB', min: 500_000, max: 999_999 },
+  { label: '1-5 MB', min: 1_000_000, max: 4_999_999 },
+  { label: '5-10 MB', min: 5_000_000, max: 9_999_999 },
+  { label: '10+ MB', min: 10_000_000, max: Number.POSITIVE_INFINITY },
+];
 
 export default function handler(_: NextApiRequest, res: NextApiResponse) {
   const result: StatisticResultType = {
@@ -48,10 +70,21 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
       biome: 0,
       commitlint: 0,
     },
+    scoreBuckets: createBuckets(SCORE_BUCKET_LABELS),
+    dependencyBuckets: createBuckets([...DEPENDENCY_BUCKETS.map(({ label }) => label), 'Unknown']),
+    bundleSizeBuckets: createBuckets([...BUNDLE_SIZE_BUCKETS.map(({ label }) => label), 'Unknown']),
   };
 
   DATASET.libraries.forEach(library => {
     result.total++;
+    const scoreBucketIndex = Math.min(Math.max(Math.floor(library.score / 10), 0), 9);
+    result.scoreBuckets[scoreBucketIndex].count++;
+    incrementRangeBucket(
+      result.dependencyBuckets,
+      DEPENDENCY_BUCKETS,
+      library.github.stats.dependencies
+    );
+    incrementRangeBucket(result.bundleSizeBuckets, BUNDLE_SIZE_BUCKETS, library.npm?.size);
 
     if (
       [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(
@@ -165,4 +198,22 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
   res.statusCode = 200;
 
   res.json(result);
+}
+
+function createBuckets(labels: string[]): StatisticBucketType[] {
+  return labels.map(label => ({ label, count: 0 }));
+}
+
+function incrementRangeBucket(
+  buckets: StatisticBucketType[],
+  ranges: { label: string; min: number; max: number }[],
+  value?: number
+) {
+  const rangeIndex =
+    typeof value === 'number' && Number.isFinite(value)
+      ? ranges.findIndex(range => value >= range.min && value <= range.max)
+      : -1;
+  const bucketIndex = rangeIndex === -1 ? buckets.length - 1 : rangeIndex;
+
+  buckets[bucketIndex].count++;
 }
