@@ -28,10 +28,13 @@ export default function StatisticsBarChart({
 }: Props) {
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const { isSmallScreen } = useLayout();
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const isDark = tw.prefixMatch('dark');
+
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
+
   const entries: StatisticChartEntry[] = data.map(entry => ({
     ...entry,
     percentage: total > 0 ? (entry.count / total) * 100 : 0,

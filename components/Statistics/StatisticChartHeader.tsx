@@ -13,6 +13,7 @@ type Props = {
 
 export default function StatisticChartHeader({ title, large = false }: Props) {
   const { isSmallScreen } = useLayout();
+
   const HeaderTag = large ? H4 : H6Section;
   const id = `statistic-chart-${kebabCase(title)}`;
 
