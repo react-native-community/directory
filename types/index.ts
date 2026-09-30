@@ -432,3 +432,13 @@ export type PackageNavigationTab = {
 export type PackageManagerType = 'bun' | 'pnpm' | 'npm' | 'yarn';
 export type ModuleType = 'expo' | 'nitro' | 'turbo';
 export type LintToolType = 'oxlint' | 'oxfmt' | 'eslint' | 'prettier' | 'biome' | 'commitlint';
+
+export type StatisticEntry = {
+  label: string;
+  count: number;
+  secondary?: boolean;
+};
+
+export type StatisticChartEntry = StatisticEntry & {
+  percentage: number;
+};

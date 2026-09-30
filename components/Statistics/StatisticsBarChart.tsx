@@ -7,17 +7,11 @@ import { View } from 'react-native';
 import { useLayout } from '~/common/styleguide';
 import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
 import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
+import { type StatisticChartEntry, type StatisticEntry } from '~/types';
 import tw from '~/util/tailwind';
 
-type StatisticEntry = {
-  label: string;
-  count: number;
-  secondary?: boolean;
-};
-
-type ChartEntry = StatisticEntry & {
-  percentage: number;
-};
+const ROW_HEIGHT = 30;
+const MIN_HEIGHT = 120;
 
 type Props = {
   data: StatisticEntry[];
@@ -25,9 +19,6 @@ type Props = {
   sortByValue?: boolean;
   reverseOrder?: boolean;
 };
-
-const ROW_HEIGHT = 30;
-const MIN_HEIGHT = 120;
 
 export default function StatisticsBarChart({
   data,
@@ -41,7 +32,7 @@ export default function StatisticsBarChart({
   const isDark = tw.prefixMatch('dark');
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
-  const entries: ChartEntry[] = data.map(entry => ({
+  const entries: StatisticChartEntry[] = data.map(entry => ({
     ...entry,
     percentage: total > 0 ? (entry.count / total) * 100 : 0,
   }));
@@ -137,9 +128,9 @@ export default function StatisticsBarChart({
         <BarSeries
           dataKey="percentage"
           data={series}
-          xAccessor={(item: ChartEntry) => item.percentage}
-          yAccessor={(item: ChartEntry) => item.label}
-          colorAccessor={(item: ChartEntry) =>
+          xAccessor={(item: StatisticChartEntry) => item.percentage}
+          yAccessor={(item: StatisticChartEntry) => item.label}
+          colorAccessor={(item: StatisticChartEntry) =>
             `url(#${item.secondary ? secondaryGradientId : gradientId})`
           }
           radius={4}
@@ -154,7 +145,7 @@ export default function StatisticsBarChart({
           xAccessor={item => item.percentage}
           yAccessor={item => item.label}
         />
-        <Tooltip<ChartEntry>
+        <Tooltip<StatisticChartEntry>
           showVerticalCrosshair={false}
           showSeriesGlyphs={false}
           offsetLeft={8}
