@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { H6Section } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import ChartSectionHeader from '~/components/Package/Charts/ChartSectionHeader';
+import ChartSectionHeader from '~/components/ChartSectionHeader';
 import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
