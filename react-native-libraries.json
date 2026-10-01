@@ -24500,5 +24500,14 @@
     "examples": ["https://github.com/huextrat/expo-inline-video/tree/main/example"],
     "ios": true,
     "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/Code-Axolot-Team/devreply-react-native",
+    "npmPkg": "@devreply/react-native",
+    "examples": ["https://github.com/Code-Axolot-Team/devreply-react-native/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
