@@ -24500,5 +24500,14 @@
     "examples": ["https://github.com/huextrat/expo-inline-video/tree/main/example"],
     "ios": true,
     "tvos": true
+  },
+  {
+  "githubUrl": "https://github.com/fsstudio-org/google-credential-manager",
+  "npmPkg": "@fsstudio-org/google-credential-manager",
+  "examples": ["https://github.com/fsstudio-org/google-credential-manager/tree/main/example"],
+  "ios": true,
+  "android": true,
+  "newArchitecture": true,
+  "configPlugin": true
   }
 ]
