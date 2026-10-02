@@ -9125,7 +9125,8 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/margelo/react-native-graph",
+    "githubUrl": "https://github.com/margelo/react-native-graph/tree/main/package",
+    "npmPkg": "react-native-graph",
     "examples": ["https://github.com/margelo/react-native-graph/tree/main/example"],
     "images": [
       "https://raw.githubusercontent.com/margelo/react-native-graph/main/img/demo.gif",
@@ -18623,12 +18624,6 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/ursnj/nayan-ui/tree/main/packages/native",
-    "npmPkg": "@nayan-ui/native",
-    "android": true,
-    "ios": true
-  },
-  {
     "githubUrl": "https://github.com/sharathchandramg/react-native-formo",
     "npmPkg": "react-native-form0",
     "android": true,
@@ -20184,7 +20179,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/NO1225/expo-media-control",
+    "githubUrl": "https://github.com/NO1225/expo-media-control/tree/main/packages/expo-media-control",
     "examples": ["https://github.com/NO1225/expo-media-control/tree/main/example"],
     "ios": true,
     "android": true,
@@ -20875,14 +20870,6 @@
     "ios": true,
     "newArchitecture": true,
     "fireos": true
-  },
-  {
-    "githubUrl": "https://github.com/factorialco/f0/tree/main/packages/react-native",
-    "npmPkg": "@factorialco/f0-react-native",
-    "android": true,
-    "ios": true,
-    "expoGo": true,
-    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/huextrat/expo-maps-routes",
@@ -23802,7 +23789,7 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/AHMED-ELMAKI/react-native-signal-scorer",
+    "githubUrl": "https://github.com/AHMED-ELMAKI/react-native-signal-scorer-lite",
     "ios": true,
     "android": true,
     "newArchitecture": true
@@ -24507,6 +24494,21 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/huextrat/expo-inline-video",
+    "examples": ["https://github.com/huextrat/expo-inline-video/tree/main/example"],
+    "ios": true,
+    "tvos": true
+  },
+  {
+    "githubUrl": "https://github.com/Code-Axolot-Team/devreply-react-native",
+    "npmPkg": "@devreply/react-native",
+    "examples": ["https://github.com/Code-Axolot-Team/devreply-react-native/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk",
