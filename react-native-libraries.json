@@ -24509,5 +24509,16 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk",
+    "examples": ["https://github.com/Halilibrahimakyz/react-native-pdf-sdk/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-fitted-ios.png",
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-detail-ios.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
