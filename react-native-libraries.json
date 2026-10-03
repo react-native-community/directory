@@ -24502,6 +24502,37 @@
     "tvos": true
   },
   {
+    "githubUrl": "https://github.com/Code-Axolot-Team/devreply-react-native",
+    "npmPkg": "@devreply/react-native",
+    "examples": ["https://github.com/Code-Axolot-Team/devreply-react-native/tree/HEAD/example"],
+
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk",
+    "examples": ["https://github.com/Halilibrahimakyz/react-native-pdf-sdk/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-fitted-ios.png",
+      "https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-detail-ios.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/scriptx-com/everframe/tree/main/packages/sdk-react-native",
+    "npmPkg": "@everframe/react-native",
+    "examples": ["https://github.com/scriptx-com/everframe/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/fsstudio-org/google-credential-manager",
     "npmPkg": "@fsstudio-org/google-credential-manager",
     "examples": ["https://github.com/fsstudio-org/google-credential-manager/tree/main/example"],

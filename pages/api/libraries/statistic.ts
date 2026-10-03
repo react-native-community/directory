@@ -16,9 +16,8 @@ const DEPENDENCY_BUCKETS = [
   { label: '0', min: 0, max: 0 },
   { label: '1-5', min: 1, max: 5 },
   { label: '6-10', min: 6, max: 10 },
-  { label: '11-25', min: 11, max: 25 },
-  { label: '26-49', min: 26, max: 49 },
-  { label: '50+', min: 50, max: Number.POSITIVE_INFINITY },
+  { label: '11-24', min: 11, max: 24 },
+  { label: '25+', min: 25, max: Number.POSITIVE_INFINITY },
 ];
 const BUNDLE_SIZE_BUCKETS = [
   { label: '<100 kB', min: 0, max: 99_999 },

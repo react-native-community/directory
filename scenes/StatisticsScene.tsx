@@ -119,15 +119,27 @@ export default function StatisticsScene({ statistic }: Props) {
           sortByValue={false}
           reverseOrder
         />
-        <H2 style={tw`mt-5 text-center`}>Development stack and tooling</H2>
+        <H2 style={tw`mt-8 text-center`}>Development stack and tooling</H2>
         <StatisticChartHeader title="Native module framework" large />
         <StatisticsBarChart data={moduleTypes} total={statistic.total} />
+        <StatisticChartHeader title="Native code used" large />
+        <StatisticsBarChart
+          data={[
+            { label: 'Yes', count: statistic.withNativeCode },
+            {
+              label: 'No',
+              count: statistic.total - statistic.withNativeCode,
+              secondary: true,
+            },
+          ]}
+          total={statistic.total}
+        />
         <StatisticChartHeader title="Package manager" large />
         <StatisticsBarChart data={packageManagers} total={statistic.total} />
         <StatisticChartHeader title="Lint tools" large />
         <StatisticsBarChart data={lintTools} total={statistic.total} />
-        <H2 style={tw`mt-5 text-center`}>Directory metadata</H2>
-        <StatisticChartHeader title="Score distribution" large />
+        <H2 style={tw`mt-8 text-center`}>Directory metadata</H2>
+        <StatisticChartHeader title="Directory score distribution" large />
         <StatisticsBarChart
           data={statistic.scoreBuckets}
           total={statistic.total}
