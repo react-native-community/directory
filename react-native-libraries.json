@@ -24530,5 +24530,15 @@
     "web": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nguyenduy1412/react-native-blur",
+    "npmPkg": "@nguyenduy1412/react-native-blur",
+    "images": [
+      "https://raw.githubusercontent.com/nguyenduy1412/react-native-blur/main/.github/assets/video-comparison.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true
   }
 ]
