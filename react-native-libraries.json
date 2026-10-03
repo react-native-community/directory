@@ -24520,5 +24520,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/scriptx-com/everframe/tree/main/packages/sdk-react-native",
+    "npmPkg": "@everframe/react-native",
+    "examples": ["https://github.com/scriptx-com/everframe/tree/main/examples/react-native"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
