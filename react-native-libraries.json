@@ -24505,6 +24505,7 @@
     "githubUrl": "https://github.com/Code-Axolot-Team/devreply-react-native",
     "npmPkg": "@devreply/react-native",
     "examples": ["https://github.com/Code-Axolot-Team/devreply-react-native/tree/HEAD/example"],
+
     "ios": true,
     "android": true,
     "newArchitecture": true,
@@ -24530,5 +24531,14 @@
     "web": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/fsstudio-org/google-credential-manager",
+    "npmPkg": "@fsstudio-org/google-credential-manager",
+    "examples": ["https://github.com/fsstudio-org/google-credential-manager/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
