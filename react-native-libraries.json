@@ -24618,5 +24618,12 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/nagarjunavs/NFCLocatorReactNative/tree/main/packages/react-native-nfc-locator",
+    "examples": ["https://github.com/nagarjunavs/NFCLocatorReactNative/tree/main/apps/tapsense"],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
