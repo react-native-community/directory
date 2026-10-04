@@ -35,6 +35,7 @@ export function trimPackageVersionsData(registryData: NpmRegistryData): PackageV
   );
 
   return {
+    name: registryData['name'],
     'dist-tags': registryData['dist-tags'],
     versions,
     time: pick(registryData.time, Object.keys(versions)),
