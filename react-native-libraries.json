@@ -24530,5 +24530,66 @@
     "web": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-device-pulse",
+    "examples": ["https://github.com/giaBaoJS/react-native-device-pulse/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-device-pulse/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-app-shortcuts",
+    "npmPkg": "@giabaojs/react-native-app-shortcuts",
+    "examples": ["https://github.com/giaBaoJS/react-native-app-shortcuts/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-app-shortcuts/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-shared-transition",
+    "examples": ["https://github.com/giaBaoJS/react-native-shared-transition/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-shared-transition/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-tipkit",
+    "npmPkg": "@giabaojs/react-native-tipkit",
+    "examples": ["https://github.com/giaBaoJS/react-native-tipkit/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-tipkit/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-image-analysis",
+    "examples": ["https://github.com/giaBaoJS/react-native-image-analysis/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-image-analysis/main/docs/assets/demo-ios.gif",
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-image-analysis/main/docs/assets/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/giaBaoJS/react-native-ios-controls",
+    "examples": ["https://github.com/giaBaoJS/react-native-ios-controls/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/giaBaoJS/react-native-ios-controls/main/docs/assets/demo.gif"
+    ],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
