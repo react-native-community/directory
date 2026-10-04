@@ -10,13 +10,17 @@ export function parseQueryParams(params: Partial<Record<string, string | string[
   );
 }
 
-export function replaceQueryParam(router: NextRouter, paramName: string, paramValue?: string) {
-  const queryParams = omit(router.query, [paramName]);
+type QueryParams = Record<string, string | undefined>;
+
+export function replaceQueryParams(router: NextRouter, params: QueryParams) {
+  const queryParams = omit(router.query, Object.keys(params));
+  const filteredParams = Object.entries(params).filter(([, value]) => Boolean(value));
+  const nextParams = Object.fromEntries(filteredParams);
 
   void router.replace(
     {
       pathname: router.pathname,
-      query: paramValue ? { ...queryParams, [paramName]: paramValue } : queryParams,
+      query: { ...queryParams, ...nextParams },
     },
     undefined,
     {

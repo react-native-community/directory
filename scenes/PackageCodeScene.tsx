@@ -14,7 +14,7 @@ import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { type PackageCodePageProps } from '~/types/pages';
 import { getStoredValue } from '~/util/localStorage';
-import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
+import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
 import tw from '~/util/tailwind';
 
 const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
@@ -116,7 +116,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
           selectedVersion={selectedVersion}
           setVersion={selectedVersion => {
             setSelectedVersion(selectedVersion);
-            replaceQueryParam(router, 'selectedVersion', selectedVersion);
+            replaceQueryParams(router, { selectedVersion });
           }}
         />
       </View>
