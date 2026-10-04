@@ -3,23 +3,24 @@ import { useRef, useState } from 'react';
 import { type ColorValue, TextInput, type TextInputInstance, View } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Caption, H6Section, Label, useLayout } from '~/common/styleguide';
-import { Button } from '~/components/Button';
+import { H6Section, Label, useLayout } from '~/common/styleguide';
 import { SearchIcon } from '~/components/Icons';
 import InputKeyHint from '~/components/InputKeyHint';
+import Pagination from '~/components/Pagination';
 import {
   isSearchShortcutPressed,
   useSearchInputFocus,
   useSearchShortcut,
 } from '~/hooks/useSearchInput';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
-import { parseQueryParams, replaceQueryParam } from '~/util/queryParams';
+import { NUM_PER_PAGE } from '~/util/Constants';
+import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
 import VersionBox from './VersionBox';
 
-const VERSIONS_TO_SHOW = 25;
+const VERSIONS_SECTION_ID = 'versions';
 
 type Props = {
   registryData: PackageVersionsData;
@@ -30,34 +31,36 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
   const router = useRouter();
   const { isSmallScreen } = useLayout();
 
-  const [shouldShowAll, setShowAll] = useState(false);
   const inputRef = useRef<TextInputInstance>(null);
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
-  const routeVersionSearch = parseQueryParams(router.query).versionSearch?.toLowerCase() ?? '';
+  const routeParams = parseQueryParams(router.query);
+  const routeVersionSearch = routeParams.versionSearch?.toLowerCase() ?? '';
   const [versionSearch, setVersionSearch] = useState(routeVersionSearch);
 
   const versions = Object.entries(registryData.versions).sort(
     (a, b) => -registryData.time[a[1].version].localeCompare(registryData.time[b[1].version])
   );
-  const filteredVersions = versionSearch
-    ? versions.filter(([version, versionData]) =>
-        [version, versionData.version].some(value => value.toLowerCase().includes(versionSearch))
-      )
-    : versions;
-  const visibleVersions = filteredVersions.slice(
-    0,
-    shouldShowAll ? filteredVersions.length : VERSIONS_TO_SHOW
+  const filteredVersions = versions.filter(([version, versionData]) =>
+    [version, versionData.version].some(value => value.toLowerCase().includes(versionSearch))
   );
 
-  const updateVersionSearchQuery = useDebouncedCallback((versionSearch: string) => {
-    replaceQueryParam(router, 'versionSearch', versionSearch);
-  }, 200);
+  function replaceVersionSearchQuery(versionSearch: string) {
+    replaceQueryParams(router, { versionSearch, offset: undefined });
+  }
+  const updateVersionSearchQuery = useDebouncedCallback(replaceVersionSearchQuery, 200);
+
+  const offset = routeParams.offset ? Number.parseInt(routeParams.offset, 10) : 0;
+  const visibleVersions = filteredVersions.slice(offset, offset + NUM_PER_PAGE);
+  const versionsQuery = { versionSearch, offset: offset.toString() };
+  const versionsPath = `/package/${registryData.name}/versions`;
 
   return (
     <>
-      <H6Section style={tw`mt-3 flex items-end justify-between text-secondary`}>
+      <H6Section
+        id={VERSIONS_SECTION_ID}
+        style={tw`mt-3 flex items-end justify-between text-secondary`}>
         <span>Versions</span>
         {filteredVersions.length > 0 && (
           <Label style={tw`font-light text-secondary`}>
@@ -83,7 +86,6 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
               const normalizedQuery = text.trim();
               setVersionSearch(normalizedQuery);
               updateVersionSearchQuery(normalizedQuery);
-              setShowAll(false);
             }}
             onKeyPress={event => {
               if ('key' in event) {
@@ -95,8 +97,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
                     event.preventDefault();
                     inputRef.current.clear();
                     setVersionSearch('');
-                    setShowAll(false);
-                    replaceQueryParam(router, 'versionSearch', undefined);
+                    replaceVersionSearchQuery('');
                   } else {
                     inputRef.current.blur();
                   }
@@ -128,6 +129,15 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
           )}
         </View>
       </View>
+      {filteredVersions.length > NUM_PER_PAGE && (
+        <Pagination
+          query={versionsQuery}
+          total={filteredVersions.length}
+          basePath={versionsPath}
+          hash={VERSIONS_SECTION_ID}
+          shallow
+        />
+      )}
       <View style={tw`gap-2`}>
         {visibleVersions.length ? (
           visibleVersions.map(([version, versionData]) => (
@@ -146,10 +156,15 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
           </View>
         )}
       </View>
-      {!shouldShowAll && filteredVersions.length > VERSIONS_TO_SHOW && (
-        <Button onPress={() => setShowAll(true)} style={tw`mx-auto mt-2 px-4 py-2`}>
-          <Caption style={tw`text-white`}>Show all versions</Caption>
-        </Button>
+      {filteredVersions.length > NUM_PER_PAGE && (
+        <Pagination
+          query={versionsQuery}
+          total={filteredVersions.length}
+          basePath={versionsPath}
+          hash={VERSIONS_SECTION_ID}
+          shallow
+          noTags
+        />
       )}
     </>
   );
