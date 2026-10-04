@@ -60,7 +60,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
     <>
       <H6Section
         id={VERSIONS_SECTION_ID}
-        style={tw`mt-3 flex items-end justify-between text-secondary`}>
+        style={[tw`mt-3 flex items-end justify-between text-secondary`, { scrollMargin: 16 }]}>
         <span>Versions</span>
         {filteredVersions.length > 0 && (
           <Label style={tw`font-light text-secondary`}>
