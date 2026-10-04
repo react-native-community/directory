@@ -24530,5 +24530,13 @@
     "web": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/prompt-agency/react-native-voice-activator",
+    "examples": ["https://github.com/prompt-agency/react-native-voice-activator/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
