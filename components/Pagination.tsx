@@ -16,6 +16,8 @@ type Props = {
   style?: ViewStyle;
   noTags?: boolean;
   basePath?: string;
+  shallow?: boolean;
+  hash?: string;
 };
 
 type ArrowButtonProps = {
@@ -23,7 +25,15 @@ type ArrowButtonProps = {
   back?: boolean;
 };
 
-export default function Pagination({ query, total, style, noTags, basePath = '/packages' }: Props) {
+export default function Pagination({
+  query,
+  total,
+  style,
+  noTags,
+  basePath = '/packages',
+  shallow,
+  hash,
+}: Props) {
   const currentOffset = query.offset ? Number.parseInt(query.offset, 10) : 0;
   const currentPage = Math.floor(currentOffset / NUM_PER_PAGE) + 1;
 
@@ -36,6 +46,7 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
   const forwardDisabled = currentPage >= totalPages;
 
   const pageQuery = getPageQuery(basePath, query);
+  const hashSuffix = hash ? `#${hash}` : '';
 
   return (
     <View style={tw`flex-row justify-between`}>
@@ -55,10 +66,11 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
         ) : (
           <HoverEffect>
             <Link
-              href={urlWithQuery(basePath, {
+              href={`${urlWithQuery(basePath, {
                 ...pageQuery,
                 offset: (currentOffset - NUM_PER_PAGE).toString(),
-              })}
+              })}${hashSuffix}`}
+              shallow={shallow}
               style={tw`rounded`}
               aria-label="Previous page">
               <PaginationArrow back />
@@ -73,10 +85,11 @@ export default function Pagination({ query, total, style, noTags, basePath = '/p
         ) : (
           <HoverEffect>
             <Link
-              href={urlWithQuery(basePath, {
+              href={`${urlWithQuery(basePath, {
                 ...pageQuery,
                 offset: (currentOffset + NUM_PER_PAGE).toString(),
-              })}
+              })}${hashSuffix}`}
+              shallow={shallow}
               style={tw`rounded`}
               aria-label="Next page">
               <PaginationArrow />

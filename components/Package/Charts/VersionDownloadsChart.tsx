@@ -8,7 +8,7 @@ import { View } from 'react-native';
 
 import { Label, useLayout } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
-import { replaceQueryParam } from '~/util/queryParams';
+import { replaceQueryParams } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
 
@@ -81,11 +81,9 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
     }
 
     setMode(nextMode);
-    replaceQueryParam(
-      router,
-      CHART_MODE_QUERY_PARAM,
-      nextMode === DEFAULT_CHART_MODE ? undefined : nextMode
-    );
+    replaceQueryParams(router, {
+      [CHART_MODE_QUERY_PARAM]: nextMode === DEFAULT_CHART_MODE ? undefined : nextMode,
+    });
   }
 
   return (

@@ -342,7 +342,7 @@ export type PackageVersionData = Pick<
   dist?: Pick<NpmRegistryVersionData['dist'], 'unpackedSize'>;
 };
 
-export type PackageVersionsData = Pick<NpmRegistryData, 'dist-tags'> & {
+export type PackageVersionsData = Pick<NpmRegistryData, 'name' | 'dist-tags'> & {
   versions: Record<string, PackageVersionData>;
   time: Record<string, string>;
 };
