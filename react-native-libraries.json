@@ -24627,5 +24627,11 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/tapapplink/tapapplink-react-native",
+    "npmPkg": "@tapapplink/react-native",
+    "ios": true,
+    "android": true
   }
 ]
