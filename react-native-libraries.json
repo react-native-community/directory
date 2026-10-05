@@ -1687,6 +1687,7 @@
     "githubUrl": "https://github.com/BranchMetrics/react-native-branch-deep-linking-attribution",
     "ios": true,
     "android": true,
+    "newArchitecture": true,
     "npmPkg": "react-native-branch",
     "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-branch"
   },
