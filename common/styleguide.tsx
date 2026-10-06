@@ -18,6 +18,7 @@ import tw from '~/util/tailwind';
 export function useLayout() {
   const { width } = useWindowDimensions();
   return {
+    isMobileScreen: width < 400,
     isSmallScreen: width < 800,
     isBelowMaxWidth: width < 1200,
   };

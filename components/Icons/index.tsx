@@ -1129,9 +1129,9 @@ export function CodeBlockIcon({ style }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="16">
-      <Polyline points="64 32 32 64 64 96" />
-      <Polyline points="104 32 136 64 104 96" />
-      <Path d="M176,48h24a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V136" />
+      <Polyline points="64 32 32 64 64 96" strokeWidth="18" />
+      <Polyline points="104 32 136 64 104 96" strokeWidth="18" />
+      <Path d="M176,48h24a8,8,0,0,1,8,8V200a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V136" opacity={0.6} />
     </Svg>
   );
 }
@@ -1312,6 +1312,29 @@ export function RobotIcon({ style }: IconProps) {
       <line x1="128" y1="56" x2="128" y2="16" fill="none" stroke="currentColor" />
       <circle cx="84" cy="108" r="12" stroke="none" fill="currentColor" />
       <circle cx="172" cy="108" r="12" stroke="none" fill="currentColor" />
+    </Svg>
+  );
+}
+
+export function PackageDownloadIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <path
+        d="M208,216H48a8,8,0,0,1-8-8V72L56,40H200l16,32V208A8,8,0,0,1,208,216Z"
+        fill="none"
+        stroke="currentColor"
+      />
+      <line x1="40" y1="72" x2="216" y2="72" fill="none" stroke="currentColor" />
+      <line x1="128" y1="40" x2="128" y2="72" fill="none" stroke="currentColor" />
+      <line x1="128" y1="104" x2="128" y2="144" fill="none" stroke="currentColor" />
+      <path d="M92 144H164L128 188Z" fill="currentColor" stroke="none" />
     </Svg>
   );
 }

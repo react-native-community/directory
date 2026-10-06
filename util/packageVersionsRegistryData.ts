@@ -11,8 +11,11 @@ export function trimPackageVersionsData(registryData: NpmRegistryData): PackageV
         version,
       };
 
-      if (dist?.unpackedSize) {
-        versionData.dist = { unpackedSize: dist.unpackedSize };
+      if (dist) {
+        versionData.dist = {
+          ...(dist.tarball && { tarball: dist.tarball }),
+          ...(dist.unpackedSize && { unpackedSize: dist.unpackedSize }),
+        };
       }
 
       if (dependencies) {
