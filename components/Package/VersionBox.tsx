@@ -2,7 +2,14 @@ import SHA256 from 'crypto-js/sha256';
 import { View } from 'react-native';
 
 import { A, Caption, Label, useLayout } from '~/common/styleguide';
-import { CodeBlockIcon, DependencyIcon, DownloadIcon, PackageSizeIcon } from '~/components/Icons';
+import { Button } from '~/components/Button';
+import {
+  CodeBlockIcon,
+  DependencyIcon,
+  DownloadIcon,
+  PackageDownloadIcon,
+  PackageSizeIcon,
+} from '~/components/Icons';
 import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import RelativeTime from '~/components/RelativeTime';
@@ -20,7 +27,7 @@ type Props = {
 };
 
 export default function VersionBox({ label, time, versionData, downloads = 0 }: Props) {
-  const { isSmallScreen } = useLayout();
+  const { isSmallScreen, isMobileScreen } = useLayout();
 
   const urlBase = `https://www.npmjs.com/package/${versionData.name}/v/${versionData.version}`;
   const publisherMetadata = versionData._npmUser?.url ?? versionData._npmUser?.email;
@@ -39,13 +46,16 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
           <Caption style={tw`text-secondary opacity-60`}>{` • `}</Caption>
           <Tooltip
             trigger={
-              <A
-                style={tw`h-[17px] text-icon`}
-                hoverStyle={tw`text-palette-gray4 dark:text-secondary`}
-                href={`/package/${versionData.name}/code?selectedVersion=${label ?? versionData.version}`}>
-                <CodeBlockIcon style={tw`size-4`} />
-              </A>
-            }>
+              <View>
+                <A
+                  style={tw`h-[17px] text-icon`}
+                  hoverStyle={tw`text-palette-gray4 dark:text-secondary`}
+                  href={`/package/${versionData.name}/code?selectedVersion=${label ?? versionData.version}`}>
+                  <CodeBlockIcon style={tw`mt-px size-4`} />
+                </A>
+              </View>
+            }
+            sideOffset={0}>
             <span style={tw`text-[12px]`}>Open this version in code browser</span>
           </Tooltip>
         </View>
@@ -62,39 +72,60 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
           {versionData._npmUser?.name ?? 'Unknown'}
         </Label>
       </View>
-      <View style={tw`flex-row flex-wrap gap-x-5 gap-y-1.5`}>
-        {versionData.dependencies && (
-          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
-            <DependencyIcon style={tw`text-icon`} />
+      <View
+        style={[
+          tw`flex-row flex-wrap items-center gap-x-5 gap-y-1.5`,
+          isSmallScreen && tw`self-start`,
+        ]}>
+        <View style={tw`flex-row flex-wrap gap-x-5 gap-y-1.5`}>
+          {versionData.dependencies && (
+            <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
+              <DependencyIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+              <View>
+                <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=dependencies`}>
+                  {Object.keys(versionData.dependencies).length}
+                </A>
+                <Label style={tw`font-light text-secondary no-underline`}>
+                  {pluralize('dependency', Object.keys(versionData.dependencies).length)}
+                </Label>
+              </View>
+            </View>
+          )}
+          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[128px]`]}>
+            <DownloadIcon style={tw`text-palette-gray4 dark:text-pewter`} />
             <View>
-              <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=dependencies`}>
-                {Object.keys(versionData.dependencies).length}
+              <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=versions`}>
+                {bigNumberFormatter(downloads)}
               </A>
-              <Label style={tw`font-light text-secondary no-underline`}>
-                {pluralize('dependency', Object.keys(versionData.dependencies).length)}
-              </Label>
+              <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
             </View>
           </View>
-        )}
-        <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[128px]`]}>
-          <DownloadIcon style={tw`text-icon`} />
-          <View>
-            <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=versions`}>
-              {bigNumberFormatter(downloads)}
-            </A>
-            <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
-          </View>
+          {versionData?.dist?.unpackedSize && (
+            <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
+              <PackageSizeIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+              <View>
+                <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=code`}>
+                  {formatBytes(versionData.dist.unpackedSize)}
+                </A>
+                <Label style={tw`font-light text-secondary`}>package size</Label>
+              </View>
+            </View>
+          )}
         </View>
-        {versionData?.dist?.unpackedSize && (
-          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
-            <PackageSizeIcon style={tw`text-icon`} />
-            <View>
-              <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=code`}>
-                {formatBytes(versionData.dist.unpackedSize)}
-              </A>
-              <Label style={tw`font-light text-secondary`}>package size</Label>
-            </View>
-          </View>
+        {versionData.dist?.tarball && !isMobileScreen && (
+          <Tooltip
+            sideOffset={0}
+            trigger={
+              <Button
+                style={tw`bg-transparent`}
+                containerStyle={tw`h-5`}
+                href={versionData.dist.tarball}
+                aria-label={`Download ${versionData.version} tarball`}>
+                <PackageDownloadIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+              </Button>
+            }>
+            Download tarball
+          </Tooltip>
         )}
       </View>
     </View>

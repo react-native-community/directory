@@ -119,10 +119,12 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
                     { key: 'Esc' },
                     { label: `to ${(versionSearch?.length ?? 0) > 0 ? 'clear' : 'blur'}` },
                   ]}
+                  variableTheme
                 />
               ) : (
                 <InputKeyHint
                   content={[{ key: isApple ? 'Cmd' : 'Ctrl' }, { label: '+' }, { key: 'K' }]}
+                  variableTheme
                 />
               )}
             </View>

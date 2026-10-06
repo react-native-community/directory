@@ -304,7 +304,7 @@ export type NpmRegistryVersionData = NpmRegistryCommonData & {
   bin: { eslint: string };
   dist: {
     shasum: string;
-    tarball: string;
+    tarball?: string;
     fileCount?: number;
     integrity?: string;
     signatures?: {
@@ -341,7 +341,7 @@ export type PackageVersionData = Pick<
   NpmRegistryVersionData,
   'name' | 'version' | '_npmUser' | 'dependencies'
 > & {
-  dist?: Pick<NpmRegistryVersionData['dist'], 'unpackedSize'>;
+  dist?: Pick<NpmRegistryVersionData['dist'], 'tarball' | 'unpackedSize'>;
 };
 
 export type PackageVersionsData = Pick<NpmRegistryData, 'name' | 'dist-tags'> & {
