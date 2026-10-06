@@ -8,6 +8,7 @@ import hasConfigPlugin from '~/util/github/hasConfigPlugin';
 import {
   detectLintStack,
   detectPackageManager,
+  hasAgentsFile,
   hasCCFile,
   hasChangelogFile,
   hasContributingFile,
@@ -265,11 +266,18 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasTypes: json.types ?? false,
     newArchitecture: json.newArchitecture,
     isArchived: json.isArchived,
-    hasReadme: hasReadmeFile(json.files) || hasReadmeFile(json.rootFiles),
-    hasChangelog: hasChangelogFile(json.files) || hasChangelogFile(json.rootFiles),
-    hasContributing: hasContributingFile(json.files) || hasContributingFile(json.rootFiles),
-    hasCC: hasCCFile(json.files) || hasCCFile(json.rootFiles),
-    hasSecurity: hasSecurityFile(json.files) || hasSecurityFile(json.rootFiles),
+    ...((hasReadmeFile(json.files) || hasReadmeFile(json.rootFiles)) && { hasReadme: true }),
+    ...((hasChangelogFile(json.files) || hasChangelogFile(json.rootFiles)) && {
+      hasChangelog: true,
+    }),
+    ...((hasContributingFile(json.files) || hasContributingFile(json.rootFiles)) && {
+      hasContributing: true,
+    }),
+    ...((hasCCFile(json.files) || hasCCFile(json.rootFiles)) && { hasCC: true }),
+    ...((hasSecurityFile(json.files) || hasSecurityFile(json.rootFiles)) && {
+      hasSecurity: true,
+    }),
+    ...((hasAgentsFile(json.files) || hasAgentsFile(json.rootFiles)) && { hasAgents: true }),
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
     moduleType: json.moduleType,

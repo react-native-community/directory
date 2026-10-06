@@ -42,6 +42,12 @@ export function hasSecurityFile(rootFiles: RootFiles) {
   return hasMatchingFiles(rootFiles, SECURITY_FILE_NAMES);
 }
 
+const AGENTS_FILE_NAMES = new Set(['agents.md']);
+
+export function hasAgentsFile(rootFiles: RootFiles) {
+  return hasMatchingFiles(rootFiles, AGENTS_FILE_NAMES);
+}
+
 export function detectPackageManager(rootFiles: RootFiles) {
   // LOCKS
   if (hasMatchingFiles(rootFiles, new Set(['bun.lock', 'bun.lockb']))) {

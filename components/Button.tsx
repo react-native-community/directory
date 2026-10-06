@@ -39,7 +39,7 @@ export function Button({
         <A
           href={href}
           role="button"
-          style={[tw`font-sans rounded no-underline`, containerStyle]}
+          style={tw`font-sans rounded no-underline`}
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...(href?.startsWith('#') ? { target: '_self' } : {})}
           {...rest}>
