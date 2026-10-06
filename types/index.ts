@@ -98,6 +98,7 @@ export type LibraryType = LibraryDataEntryType & {
     hasContributing?: boolean;
     hasCC?: boolean;
     hasSecurity?: boolean;
+    hasAgents?: boolean;
     configPlugin?: boolean;
     moduleType?: ModuleType;
     packageManager?: PackageManagerType;
@@ -215,7 +216,8 @@ export type MarkdownTabsType =
   | 'Changelog'
   | 'Contributing'
   | 'Code of Conduct'
-  | 'Security';
+  | 'Security'
+  | 'Agents';
 
 export type MarkdownTab = {
   title: MarkdownTabsType;

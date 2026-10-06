@@ -11,6 +11,7 @@ import TrustedBadge from '~/components/Package/TrustedBadge';
 import UserAvatar from '~/components/Package/UserAvatar';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
+import { getTimeSinceToday } from '~/util/datetime';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -54,7 +55,19 @@ export default function PackageHeader({
           <P style={tw`-mt-0.5 text-xl font-semibold leading-[26px]`}>{library.npmPkg}</P>
           {registryData && (
             <View style={tw`flex-row items-center gap-x-1`}>
-              <P style={tw`text-secondary`}>{registryData.version}</P>
+              {library.npm?.latestReleaseDate ? (
+                <Tooltip
+                  trigger={
+                    <View>
+                      <P style={tw`text-secondary`}>{registryData.version}</P>
+                    </View>
+                  }
+                  sideOffset={0}>
+                  Released {getTimeSinceToday(library.npm.latestReleaseDate)}
+                </Tooltip>
+              ) : (
+                <P style={tw`text-secondary`}>{registryData.version}</P>
+              )}
               {registryData._npmUser?.trustedPublisher && <TrustedBadge />}
             </View>
           )}

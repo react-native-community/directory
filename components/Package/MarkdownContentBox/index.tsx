@@ -4,15 +4,19 @@ import { View } from 'react-native';
 import useSWR from 'swr';
 
 import { P } from '~/common/styleguide';
+import { Button } from '~/components/Button';
 import {
   CCFileIcon,
   ChangelogFileIcon,
   ContributingFileIcon,
+  EditIcon,
   ReadmeFileIcon,
+  RobotIcon,
   SecurityIcon,
 } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
@@ -20,7 +24,12 @@ import tw from '~/util/tailwind';
 
 import MarkdownContentTab from './MarkdownContentTab';
 import MarkdownRenderer from './MarkdownRenderer';
-import { DEFAULT_MARKDOWN_TAB, MARKDOWN_CONTENT_QUERY_PARAM, parseMarkdownTab } from './utils';
+import {
+  DEFAULT_MARKDOWN_TAB,
+  MARKDOWN_CONTENT_QUERY_PARAM,
+  MARKDOWN_TAB_FILE_NAMES,
+  parseMarkdownTab,
+} from './utils';
 
 type Props = {
   packageName?: string;
@@ -38,7 +47,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Readme' as const,
             Icon: ReadmeFileIcon,
-            url: `/api/proxy/unpkg?name=${packageName}&path=README.md`,
+            url: `/api/proxy/unpkg?name=${packageName}&path=${MARKDOWN_TAB_FILE_NAMES.Readme}`,
           },
         ]
       : []),
@@ -47,7 +56,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Changelog' as const,
             Icon: ChangelogFileIcon,
-            ...getTabContentUrls(library, 'CHANGELOG.md'),
+            ...getTabContentUrls(library, 'Changelog'),
           },
         ]
       : []),
@@ -56,7 +65,16 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Contributing' as const,
             Icon: ContributingFileIcon,
-            ...getTabContentUrls(library, 'CONTRIBUTING.md'),
+            ...getTabContentUrls(library, 'Contributing'),
+          },
+        ]
+      : []),
+    ...(library?.github?.hasAgents
+      ? [
+          {
+            title: 'Agents' as const,
+            Icon: RobotIcon,
+            ...getTabContentUrls(library, 'Agents'),
           },
         ]
       : []),
@@ -65,7 +83,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Code of Conduct' as const,
             Icon: CCFileIcon,
-            ...getTabContentUrls(library, 'CODE_OF_CONDUCT.md'),
+            ...getTabContentUrls(library, 'Code of Conduct'),
           },
         ]
       : []),
@@ -74,7 +92,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
           {
             title: 'Security' as const,
             Icon: SecurityIcon,
-            ...getTabContentUrls(library, 'SECURITY.md'),
+            ...getTabContentUrls(library, 'Security'),
           },
         ]
       : []),
@@ -85,7 +103,11 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const [activeTab, setActiveTab] = useState<MarkdownTabsType>(routeTab);
 
   const activeContentTab = contentTabs.find(({ title }) => title === activeTab);
-  const { data, error, isLoading } = useSWR(
+  const {
+    data: markdownContent,
+    error,
+    isLoading,
+  } = useSWR(
     activeContentTab?.url,
     () => fetchMarkdownContent(activeContentTab?.url, activeContentTab?.fallbackUrl),
     {
@@ -96,11 +118,11 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
 
   const readmeFallbackContent = getReadmeFallbackContent(
     activeTab,
-    data,
+    markdownContent?.content,
     isLoading || loader,
     error
   );
-  const noData = (!data && Boolean(readmeFallbackContent)) || !repoUrl;
+  const noData = (!markdownContent?.content && Boolean(readmeFallbackContent)) || !repoUrl;
 
   useEffect(() => {
     if (!noData && window.location.hash) {
@@ -143,7 +165,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
     <View
       style={tw`my-2 rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
       <View
-        style={tw`flex-row flex-wrap items-center gap-x-2 border-b border-palette-gray2 pl-1.5 pr-4 dark:border-default`}>
+        style={tw`flex-row flex-wrap items-center gap-x-2 border-b border-palette-gray2 pl-1.5 pr-16 dark:border-default`}>
         {contentTabs.map(tab => (
           <MarkdownContentTab
             tab={tab}
@@ -152,13 +174,29 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
             key={`tab-${tab.title.toLocaleLowerCase()}`}
           />
         ))}
-        {!noData && data && (
-          <CopyButton
-            data={data}
-            tooltip={`Copy ${activeTab}`}
-            label={`Copy ${activeTab} to clipboard`}
-            style={tw`right-4`}
-          />
+        {!noData && markdownContent?.content && (
+          <>
+            <Tooltip
+              sideOffset={2}
+              trigger={
+                <Button
+                  href={getGitHubEditUrl(library, activeTab, markdownContent?.fromRoot ?? false)}
+                  openInNewTab
+                  containerStyle={tw`absolute right-12 top-3`}
+                  style={tw`bg-transparent`}
+                  aria-label="Edit this file on GitHub">
+                  <EditIcon style={[tw`size-5 text-palette-gray4 dark:text-pewter`]} />
+                </Button>
+              }>
+              Edit this file on GitHub
+            </Tooltip>
+            <CopyButton
+              data={markdownContent?.content}
+              tooltip={`Copy ${activeTab}`}
+              label={`Copy ${activeTab} to clipboard`}
+              style={tw`right-4`}
+            />
+          </>
         )}
       </View>
       <View style={tw`p-4 pt-3 font-light`}>
@@ -168,7 +206,7 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
             <P style={tw`text-center`}>{readmeFallbackContent}</P>
           </View>
         ) : (
-          <MarkdownRenderer data={data} repoUrl={repoUrl} />
+          <MarkdownRenderer data={markdownContent?.content} repoUrl={repoUrl} />
         )}
       </View>
     </View>
@@ -191,29 +229,48 @@ function getReadmeFallbackContent(
   return null;
 }
 
-async function fetchMarkdownContent(url?: string, fallbackUrl?: string) {
+type MarkdownContentResult = {
+  content: string | null;
+  fromRoot: boolean;
+};
+
+async function fetchMarkdownContent(
+  url?: string,
+  fallbackUrl?: string,
+  fromRoot = false
+): Promise<MarkdownContentResult | null> {
   if (!url) {
     return null;
   }
 
   const response = await fetch(url);
   if (response.status === 404 && fallbackUrl) {
-    return fetchMarkdownContent(fallbackUrl);
+    return fetchMarkdownContent(fallbackUrl, undefined, true);
   } else if (response.status === 404) {
-    return '';
+    return { content: '', fromRoot };
   } else if (response.status === 200) {
-    return response.text();
+    return { content: await response.text(), fromRoot };
   }
 
-  return null;
+  return { content: null, fromRoot };
 }
 
-function getTabContentUrls(library: LibraryType, fileName: string) {
+function getTabContentUrls(library: LibraryType, activeTab: MarkdownTabsType) {
   const { isMonorepo } = parseGitHubUrl(library.githubUrl);
+  const fileName = MARKDOWN_TAB_FILE_NAMES[activeTab];
   return {
     url: getContentUrl(library, fileName, false),
     fallbackUrl: isMonorepo ? getContentUrl(library, fileName, true) : undefined,
   };
+}
+
+function getGitHubEditUrl(library: LibraryType, activeTab: MarkdownTabsType, fromRoot: boolean) {
+  const { packagePath, branchName } = parseGitHubUrl(library.githubUrl);
+  const packageDirectory = fromRoot || packagePath === '.' ? '' : `${packagePath}/`;
+
+  return `${library.github.urls.repo}/blob/${branchName ?? 'HEAD'}/${packageDirectory}${
+    MARKDOWN_TAB_FILE_NAMES[activeTab]
+  }`;
 }
 
 function getContentUrl(library: LibraryType, fileName: string, fromRoot: boolean) {

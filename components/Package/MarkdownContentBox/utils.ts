@@ -3,8 +3,19 @@ import { kebabCase } from 'es-toolkit/string';
 import { type MarkdownTabsType } from '~/types';
 
 export const MARKDOWN_CONTENT_QUERY_PARAM = 'tab';
-export const MARKDOWN_TABS = ['Readme', 'Changelog', 'Contributing', 'Code of Conduct'] as const;
 export const DEFAULT_MARKDOWN_TAB: MarkdownTabsType = 'Readme';
+
+export const MARKDOWN_TAB_FILE_NAMES = {
+  Readme: 'README.md',
+  Changelog: 'CHANGELOG.md',
+  Contributing: 'CONTRIBUTING.md',
+  'Code of Conduct': 'CODE_OF_CONDUCT.md',
+  Security: 'SECURITY.md',
+  Agents: 'AGENTS.md',
+} satisfies Record<MarkdownTabsType, string>;
+export const MARKDOWN_TABS = Object.keys(MARKDOWN_TAB_FILE_NAMES) as Array<
+  keyof typeof MARKDOWN_TAB_FILE_NAMES
+>;
 
 export function isValidMarkdownTab(
   value?: string | string[],
