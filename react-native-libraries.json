@@ -24634,5 +24634,11 @@
     "npmPkg": "@tapapplink/react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/devonik/expo-saf-scan",
+    "examples": ["https://github.com/devonik/expo-saf-scan/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/devonik/expo-saf-scan/main/docs/example-app.png"],
+    "android": true
   }
 ]
