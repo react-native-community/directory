@@ -247,6 +247,7 @@ export type StatisticResultType = {
   unmaintained: number;
   withTypes: number;
   withNativeCode: number;
+  withExamples: number;
   withConfigPlugin: number;
   ios: number;
   android: number;
@@ -266,6 +267,7 @@ export type StatisticResultType = {
   scoreBuckets: StatisticBucketType[];
   dependencyBuckets: StatisticBucketType[];
   bundleSizeBuckets: StatisticBucketType[];
+  licenseBuckets: StatisticBucketType[];
 };
 
 type NpmRegistryCommonData = {

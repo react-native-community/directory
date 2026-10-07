@@ -19,16 +19,18 @@ export default function Tools() {
       <ContentContainer style={tw`my-10 gap-4 px-4`}>
         <ToolEntry
           name="React Native Directory CLI"
-          description={
-            <span>
-              Propose new entries to React Native Directory directly from your terminal. The{' '}
+          description="Propose new entries to React Native Directory directly from your terminal."
+          note={
+            <>
+              The{' '}
               <code
                 style={tw`rounded-sm bg-palette-gray2 p-0.5 px-1 text-[90%] dark:bg-palette-gray6`}>
                 rn-directory
               </code>{' '}
               CLI gathers the required information manually or automatically, creates a fork, and
-              opens a pull request on behalf of the user currently logged in to the GitHub CLI.
-            </span>
+              opens a pull request on behalf of the user currently logged in to the GitHub CLI. It
+              can also perform few checks related to your package source and configuration.
+            </>
           }
           githubUrl="https://github.com/Simek/rn-directory"
           buttons={[
@@ -100,6 +102,11 @@ export default function Tools() {
               href: 'https://open-vsx.org/extension/sandipshiwakoti/vscode-react-native-package-checker',
             },
           ]}
+        />
+        <ToolEntry
+          name="React Native Directory Neovim plugin"
+          description="Find and install packages for all of your React Native apps from inside Neovim."
+          githubUrl="https://github.com/sjwall/react-native-directory.nvim"
         />
       </ContentContainer>
     </>
