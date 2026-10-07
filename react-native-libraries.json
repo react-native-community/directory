@@ -24636,6 +24636,13 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/munimtechnologies/munim-maps/tree/main/packages/munim-maps",
+    "npmPkg": "munim-maps",
+    "examples": ["https://github.com/munimtechnologies/munim-maps/tree/HEAD/example"],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
     "githubUrl": "https://github.com/CAWRESTLER/react-native-duo",
     "npmPkg": "@cawrestler/react-native-duo",
     "examples": [
