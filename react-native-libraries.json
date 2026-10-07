@@ -24634,5 +24634,13 @@
     "npmPkg": "@tapapplink/react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-location",
+    "examples": ["https://github.com/munimtechnologies/munim-location/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
