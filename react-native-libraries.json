@@ -24634,5 +24634,12 @@
     "npmPkg": "@tapapplink/react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-maps/tree/main/packages/munim-maps",
+    "npmPkg": "munim-maps",
+    "examples": ["https://github.com/munimtechnologies/munim-maps/tree/HEAD/example"],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
