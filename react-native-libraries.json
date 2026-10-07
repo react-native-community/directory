@@ -24654,5 +24654,17 @@
     "web": true,
     "configPlugin": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/tadeumelembe/react-native-kanban-dnd",
+    "examples": [
+      "https://github.com/tadeumelembe/react-native-kanban-dnd/tree/main/example"
+    ],
+    "images": [
+      "https://github.com/tadeumelembe/react-native-kanban-dnd/raw/main/example/assets/images/kanban-dnd-demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
