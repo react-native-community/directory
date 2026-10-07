@@ -24634,5 +24634,18 @@
     "npmPkg": "@tapapplink/react-native",
     "ios": true,
     "android": true
-  }
+  },
+  {
+  "githubUrl": "https://github.com/CAWRESTLER/react-native-duo",
+  "npmPkg": "@cawrestler/react-native-duo",
+  "examples": [
+    "https://github.com/CAWRESTLER/react-native-duo/tree/main/example",
+    "https://github.com/CAWRESTLER/react-native-duo-expo-starter"
+  ],
+  "ios": true,
+  "android": true,
+  "web": true,
+  "configPlugin": true,
+  "newArchitecture": "new-arch-only"
+}
 ]
