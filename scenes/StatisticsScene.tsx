@@ -105,6 +105,27 @@ export default function StatisticsScene({ statistic }: Props) {
             },
           ]}
           total={statistic.total}
+          stackedData={[
+            {
+              label: 'Supporting',
+              entries: [
+                { label: 'Yes', count: statistic.newArchitecture - statistic.newArchitectureOnly },
+                { label: 'Only', count: statistic.newArchitectureOnly },
+              ],
+            },
+            {
+              label: 'Not supporting',
+              entries: [
+                { label: 'Unknown', count: statistic.newArchitectureUnknown, secondary: true },
+                {
+                  label: 'No',
+                  count:
+                    statistic.total - statistic.newArchitecture - statistic.newArchitectureUnknown,
+                  secondary: true,
+                },
+              ],
+            },
+          ]}
         />
         <StatisticChartHeader title="Direct dependencies count distribution" large />
         <StatisticsBarChart

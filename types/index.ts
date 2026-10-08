@@ -242,6 +242,8 @@ export type StatisticBucketType = {
 export type StatisticResultType = {
   total: number;
   newArchitecture: number;
+  newArchitectureOnly: number;
+  newArchitectureUnknown: number;
   downloads: number;
   weekDownloads: number;
   unmaintained: number;

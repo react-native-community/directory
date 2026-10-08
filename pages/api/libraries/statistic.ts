@@ -32,6 +32,8 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
   const result: StatisticResultType = {
     total: 0,
     newArchitecture: 0,
+    newArchitectureOnly: 0,
+    newArchitectureUnknown: 0,
     downloads: 0,
     weekDownloads: 0,
     unmaintained: 0,
@@ -88,12 +90,18 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     );
     incrementRangeBucket(result.bundleSizeBuckets, BUNDLE_SIZE_BUCKETS, library.npm?.size);
 
+    const newArchStatus = getNewArchSupportStatus(library);
+
     if (
-      [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(
-        getNewArchSupportStatus(library)
-      )
+      [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(newArchStatus)
     ) {
       result.newArchitecture++;
+    }
+
+    if (newArchStatus === NewArchSupportStatus.NewArchOnly) {
+      result.newArchitectureOnly++;
+    } else if (newArchStatus === NewArchSupportStatus.Untested) {
+      result.newArchitectureUnknown++;
     }
 
     if (library.npm?.downloads) {
