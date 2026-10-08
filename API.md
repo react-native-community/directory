@@ -211,6 +211,8 @@ The response also includes distribution arrays used for statistic page. Each ent
 
 `withExamples` is the number of libraries that provide at least one example. Libraries without dependency or package-size data are included in an `Unknown` bucket for the corresponding distribution. Each bucket entry has a `label` and a `count`.
 
+`newArchitecture` counts libraries that support the New Architecture, including libraries that support only the New Architecture. `newArchitectureOnly` counts that latter subset, and `newArchitectureUnknown` counts libraries whose support is untested.
+
 ### Example
 
 - GET `/api/libraries/statistic`
@@ -219,8 +221,10 @@ The response also includes distribution arrays used for statistic page. Each ent
 
   ```json
   {
-    "total": 2326,
-    "newArchitecture": 1570,
+    "total": 2736,
+    "newArchitecture": 1893,
+    "newArchitectureOnly": 75,
+    "newArchitectureUnknown": 829,
     "downloads": 7380762848,
     "weekDownloads": 1391864468,
     "unmaintained": 797,

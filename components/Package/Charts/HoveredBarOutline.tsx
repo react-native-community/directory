@@ -66,6 +66,7 @@ export default function HoveredBarOutline<Datum extends { label: string }>({
       fill="none"
       stroke={tw.prefixMatch('dark') ? 'var(--gray-2)' : 'var(--secondary)'}
       strokeWidth={1}
+      opacity={0.75}
       pointerEvents="none"
     />
   );
