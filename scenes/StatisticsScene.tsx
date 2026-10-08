@@ -141,6 +141,14 @@ export default function StatisticsScene({ statistic }: Props) {
           sortByValue={false}
           reverseOrder
         />
+        <StatisticChartHeader title="Maintenance status" large />
+        <StatisticsBarChart
+          data={[
+            { label: 'Maintained', count: statistic.total - statistic.unmaintained },
+            { label: 'Unmaintained', count: statistic.unmaintained, secondary: true },
+          ]}
+          total={statistic.total}
+        />
         <H2 style={tw`mt-8 text-center`}>Development stack and tooling</H2>
         <StatisticChartHeader title="Native module framework" large />
         <StatisticsBarChart data={moduleTypes} total={statistic.total} />

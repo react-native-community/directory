@@ -1,6 +1,15 @@
 import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
-import { Axis, BarSeries, BarStack, Grid, Tooltip, XYChart } from '@visx/xychart';
+import {
+  Annotation,
+  AnnotationLabel,
+  Axis,
+  BarSeries,
+  BarStack,
+  Grid,
+  Tooltip,
+  XYChart,
+} from '@visx/xychart';
 import { useId, useState } from 'react';
 import { View } from 'react-native';
 
@@ -97,7 +106,7 @@ export default function StatisticsBarChart({
         height={height}
         xScale={{ type: 'linear', domain: [0, 100] }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-        margin={{ top: 2, right: 20, bottom: 24, left: leftMargin }}>
+        margin={{ top: 2, right: 58, bottom: 24, left: leftMargin }}>
         <LinearGradient
           id={gradientId}
           from="var(--primary-darker)"
@@ -139,7 +148,7 @@ export default function StatisticsBarChart({
               textAnchor="middle"
               dominantBaseline="middle"
               style={tw`select-none tabular-nums`}
-              fill="var(--secondary)">
+              fill="var(--tertiary)">
               <tspan x={x} style={tw`text-[12px] font-light`}>
                 {formattedValue}
               </tspan>
@@ -209,6 +218,25 @@ export default function StatisticsBarChart({
             onPointerOut={() => setHoveredIndex(null)}
           />
         )}
+        {series.map(entry => (
+          <Annotation
+            key={entry.label}
+            datum={entry}
+            xAccessor={item => item.percentage}
+            yAccessor={item => item.label}>
+            <AnnotationLabel
+              title={`${entry.percentage.toFixed(2)}%`}
+              titleFontSize={12}
+              titleFontWeight={400}
+              horizontalAnchor="start"
+              verticalAnchor="middle"
+              showBackground={false}
+              showAnchorLine={false}
+              fontColor={isDark ? 'var(--white)' : 'var(--black)'}
+              titleProps={{ pointerEvents: 'none', opacity: 0.75, fontVariant: 'tabular-nums' }}
+            />
+          </Annotation>
+        ))}
         <HoveredBarOutline
           hoveredIndex={hoveredIndex}
           series={series}
