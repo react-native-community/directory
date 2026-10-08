@@ -819,6 +819,7 @@ select {
     outline-offset: 0;
     border: 0;
     background-color: var(--table-header-background);
+    border-radius: 12px;
   }
 }
 

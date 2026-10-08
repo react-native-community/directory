@@ -1,12 +1,13 @@
 import { BufferingIndicator, ErrorDialog } from '@videojs/react';
 
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import styles from '~/styles/markdown-video-player.module.css';
 
-import { InlinePlayer } from './InlinePlayer';
+import { usePlayer } from './InlinePlayer';
 import { MarkdownVideoPlayerControls } from './MarkdownVideoPlayerControls';
 
 export function MarkdownVideoPlayerUI() {
-  const store = InlinePlayer.usePlayer(({ canPlay }) => ({ canPlay }));
+  const store = usePlayer(({ canPlay }) => ({ canPlay }));
 
   if (!store.canPlay) {
     return (
@@ -18,23 +19,17 @@ export function MarkdownVideoPlayerUI() {
 
   return (
     <>
-      <BufferingIndicator
-        render={props => (
-          <div {...props} className="media-buffering-indicator">
-            <ThreeDotsLoader />
-          </div>
-        )}
-      />
+      <BufferingIndicator />
       <ErrorDialog.Root>
-        <ErrorDialog.Popup className="media-error">
-          <div className="media-error__dialog">
-            <div className="media-error__content">
-              <ErrorDialog.Title className="media-error__title">
+        <ErrorDialog.Popup className={styles.error}>
+          <div className={styles.errorDialog}>
+            <div>
+              <ErrorDialog.Title className={styles.errorTitle}>
                 Something went wrong.
               </ErrorDialog.Title>
-              <ErrorDialog.Description className="media-error__description" />
+              <ErrorDialog.Description className={styles.errorDescription} />
             </div>
-            <div className="media-error__actions">
+            <div className={styles.errorActions}>
               <ErrorDialog.Close className="media-button media-button--primary">
                 OK
               </ErrorDialog.Close>
