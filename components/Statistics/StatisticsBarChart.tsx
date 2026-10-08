@@ -106,7 +106,7 @@ export default function StatisticsBarChart({
         height={height}
         xScale={{ type: 'linear', domain: [0, 100] }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-        margin={{ top: 2, right: 58, bottom: 24, left: leftMargin }}>
+        margin={{ top: 2, right: 32, bottom: 24, left: leftMargin }}>
         <LinearGradient
           id={gradientId}
           from="var(--primary-darker)"
