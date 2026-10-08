@@ -24664,5 +24664,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/WarpLinkApp/warplink-react-native-sdk",
+    "npmPkg": "@warplink/react-native",
+    "ios": true,
+    "android": true
   }
 ]
