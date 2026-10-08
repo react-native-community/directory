@@ -57,43 +57,32 @@ export default function StatisticsBarChart({
       )
     : [...entries.filter(entry => !entry.secondary), ...entries.filter(entry => entry.secondary)];
   const series = reverseOrder ? [...orderedSeries].reverse() : orderedSeries;
-  const orderedStackedData = stackedData
-    ? series.flatMap(group => {
-        const stackedGroup = stackedData.find(entry => entry.label === group.label);
-        return stackedGroup ? [stackedGroup] : [];
-      })
-    : [];
+  const stackedDataByLabel = new Map((stackedData ?? []).map(group => [group.label, group]));
+  const orderedStackedData = series
+    .map(group => stackedDataByLabel.get(group.label))
+    .filter(group => group !== undefined);
 
-  const stackCategories = [
-    ...new Set((stackedData ?? []).flatMap(group => group.entries.map(entry => entry.label))),
-  ];
-
-  const stackSegmentCorners = new Map<string, { left: boolean; right: boolean }>();
-  orderedStackedData.forEach(group => {
+  const stackSeries = orderedStackedData.map((group, groupIndex) => {
     const visibleEntries = group.entries.filter(entry => entry.count > 0);
-    visibleEntries.forEach((entry, index) => {
-      const corners = stackSegmentCorners.get(entry.label) ?? { left: false, right: false };
-      stackSegmentCorners.set(entry.label, {
-        left: corners.left || index === 0,
-        right: corners.right || index === visibleEntries.length - 1,
-      });
-    });
+    return {
+      label: group.label,
+      rowIndex: series.findIndex(entry => entry.label === group.label),
+      series: visibleEntries.map((entry, entryIndex) => ({
+        dataKey: `statistics-stack-${groupIndex}-${entry.label}`,
+        data: [
+          {
+            label: group.label,
+            segmentLabel: entry.label,
+            count: entry.count,
+            secondary: entry.secondary,
+            percentage: total > 0 ? (entry.count / total) * 100 : 0,
+          },
+        ],
+        radiusLeft: entryIndex === 0,
+        radiusRight: entryIndex === visibleEntries.length - 1,
+      })),
+    };
   });
-
-  const stackSeries = stackCategories.map(category => ({
-    category,
-    dataKey: `statistics-stack-${category}`,
-    data: orderedStackedData.map(group => {
-      const entry = group.entries.find(item => item.label === category);
-      return {
-        label: group.label,
-        segmentLabel: category,
-        count: entry?.count ?? 0,
-        secondary: entry?.secondary,
-        percentage: total > 0 ? ((entry?.count ?? 0) / total) * 100 : 0,
-      };
-    }),
-  }));
 
   const height = Math.max(MIN_HEIGHT, series.length * ROW_HEIGHT + 42);
   const leftMargin = isSmallScreen ? 112 : 120;
@@ -177,31 +166,34 @@ export default function StatisticsBarChart({
           )}
         />
         {stackedData ? (
-          <BarStack
-            onPointerMove={({ index }) => setHoveredIndex(index)}
-            onPointerOut={() => setHoveredIndex(null)}>
-            {stackSeries.map(({ category, dataKey, data: stackData }) => (
-              <BarSeries
-                key={dataKey}
-                dataKey={dataKey}
-                data={stackData}
-                xAccessor={(item: ChartEntry) => item.percentage}
-                yAccessor={(item: ChartEntry) => item.label}
-                colorAccessor={(item: ChartEntry) => {
-                  if (item.segmentLabel === 'Only') {
-                    return 'var(--primary)';
-                  }
-                  if (item.segmentLabel === 'No') {
-                    return isDark ? 'var(--gray-3)' : 'var(--gray-4)';
-                  }
-                  return `url(#${item.secondary ? secondaryGradientId : gradientId})`;
-                }}
-                radius={4}
-                radiusLeft={stackSegmentCorners.get(category)?.left}
-                radiusRight={stackSegmentCorners.get(category)?.right}
-              />
-            ))}
-          </BarStack>
+          stackSeries.map(({ label, rowIndex, series: groupSeries }) => (
+            <BarStack
+              key={label}
+              onPointerMove={() => setHoveredIndex(rowIndex)}
+              onPointerOut={() => setHoveredIndex(null)}>
+              {groupSeries.map(({ dataKey, data: stackData, radiusLeft, radiusRight }) => (
+                <BarSeries
+                  key={dataKey}
+                  dataKey={dataKey}
+                  data={stackData}
+                  xAccessor={(item: ChartEntry) => item.percentage}
+                  yAccessor={(item: ChartEntry) => item.label}
+                  colorAccessor={(item: ChartEntry) => {
+                    if (item.segmentLabel === 'Only') {
+                      return 'var(--primary)';
+                    }
+                    if (item.segmentLabel === 'No') {
+                      return isDark ? 'var(--gray-3)' : 'var(--gray-4)';
+                    }
+                    return `url(#${item.secondary ? secondaryGradientId : gradientId})`;
+                  }}
+                  radius={4}
+                  radiusLeft={radiusLeft}
+                  radiusRight={radiusRight}
+                />
+              ))}
+            </BarStack>
+          ))
         ) : (
           <BarSeries
             dataKey="percentage"
