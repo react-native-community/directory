@@ -24051,8 +24051,10 @@
   },
   {
     "githubUrl": "https://github.com/ajibadedapo/expo-video-encoder",
-    "newArchitecture": true,
-    "ios": true
+    "examples": ["https://github.com/ajibadedapo/expo-video-encoder/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/sfourdrinier/unified-ble-manager",
@@ -24691,5 +24693,14 @@
     "examples": ["https://github.com/devonik/expo-saf-scan/tree/main/example"],
     "images": ["https://raw.githubusercontent.com/devonik/expo-saf-scan/main/docs/example-app.png"],
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ajibadedapo/agentfaces",
+    "examples": ["https://github.com/ajibadedapo/agentfaces/tree/main/examples/react-native-expo"],
+    "images": ["https://raw.githubusercontent.com/ajibadedapo/agentfaces/main/assets/demo.gif"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
