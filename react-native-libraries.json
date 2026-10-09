@@ -24716,5 +24716,19 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/aqeelkhokhar/react-native-highlight-text",
+    "npmPkg": "react-native-highlight-text-view",
+    "examples": [
+      "https://github.com/aqeelkhokhar/react-native-highlight-text/tree/main/example",
+      "https://github.com/aqeelkhokhar/react-native-highlight-text/tree/main/example-expo"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/aqeelkhokhar/react-native-highlight-text/main/docs/assets/hero-ios.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
