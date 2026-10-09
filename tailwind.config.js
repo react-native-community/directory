@@ -60,6 +60,7 @@ export default {
       // TODO: temporary values, replace with proper gray palette for dark mode
       dark: 'var(--dark)',
       'very-dark': 'var(--very-dark)',
+      'dark-bright': 'var(--dark-bright)',
     },
     borderColor: {
       transparent: 'transparent',

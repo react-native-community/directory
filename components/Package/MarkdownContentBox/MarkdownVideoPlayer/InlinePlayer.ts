@@ -8,7 +8,7 @@ import {
   timeFeature,
 } from '@videojs/react';
 
-export const InlinePlayer = createPlayer({
+export const { Player: InlinePlayer, usePlayer } = createPlayer({
   features: [
     sourceFeature,
     playbackFeature,

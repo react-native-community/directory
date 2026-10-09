@@ -24638,6 +24638,63 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/munimtechnologies/munim-maps/tree/main/packages/munim-maps",
+    "npmPkg": "munim-maps",
+    "examples": ["https://github.com/munimtechnologies/munim-maps/tree/HEAD/example"],
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/CAWRESTLER/react-native-duo",
+    "npmPkg": "@cawrestler/react-native-duo",
+    "examples": [
+      "https://github.com/CAWRESTLER/react-native-duo/tree/main/example",
+      "https://github.com/CAWRESTLER/react-native-duo-expo-starter"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "configPlugin": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/tadeumelembe/react-native-kanban-dnd",
+    "examples": ["https://github.com/tadeumelembe/react-native-kanban-dnd/tree/main/example"],
+    "images": [
+      "https://github.com/tadeumelembe/react-native-kanban-dnd/raw/main/example/assets/images/kanban-dnd-demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/WarpLinkApp/warplink-react-native-sdk",
+    "npmPkg": "@warplink/react-native",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/yashnandha/react-native-nitro-biometrics",
+    "examples": ["https://github.com/yashnandha/react-native-nitro-biometrics/tree/master/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/munimtechnologies/munim-location",
+    "examples": ["https://github.com/munimtechnologies/munim-location/tree/HEAD/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/devonik/expo-saf-scan",
+    "examples": ["https://github.com/devonik/expo-saf-scan/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/devonik/expo-saf-scan/main/docs/example-app.png"],
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/ajibadedapo/agentfaces",
     "examples": ["https://github.com/ajibadedapo/agentfaces/tree/main/examples/react-native-expo"],
     "images": ["https://raw.githubusercontent.com/ajibadedapo/agentfaces/main/assets/demo.gif"],

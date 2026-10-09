@@ -1,0 +1,299 @@
+/* MARKDOWN VIDEO PLAYER */
+
+.player {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-height: 592px;
+  overflow: hidden;
+}
+
+.player video {
+  display: block;
+  width: 100%;
+  max-height: 592px;
+  object-fit: contain;
+}
+
+.player a[hidden] {
+  display: none !important;
+}
+
+.player :global(.media-overlay) {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgb(0 0 0 / 55%), transparent 45%);
+}
+
+.player :global(.media-controls) {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  color: #fff;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  background: linear-gradient(to top, rgb(0 0 0 / 25%), transparent 45%);
+}
+
+.player :global(.media-controls:not([data-visible]):not(:focus-within)) {
+  opacity: 0;
+}
+
+.player :global(.media-button-group),
+.player :global(.media-time-controls) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: auto;
+}
+
+.player :global(.media-button-group) {
+  flex: 0 0 auto;
+}
+
+.player :global(.media-time-controls) {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.player :global(.media-button) {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.player :global(.media-button:hover) {
+  background: rgb(255 255 255 / 15%);
+}
+
+.player :global(.media-button:focus-visible),
+.player :global(.media-slider__thumb:focus-visible) {
+  outline: 2px solid #61dafb;
+  outline-offset: 2px;
+}
+
+.player :global(.media-button--playback-rate::after) {
+  content: attr(data-rate) ' ×';
+}
+
+.player :global(.media-button) svg {
+  width: 18px;
+  height: 18px;
+}
+
+.player :global(.media-icon__container) {
+  position: relative;
+  padding-top: 4px;
+}
+
+.player :global(.media-icon__label) {
+  right: 0;
+  bottom: 2px;
+  font-size: 75%;
+  position: absolute;
+}
+
+.player :global(.media-icon--flipped) {
+  transform: scaleX(-1);
+}
+
+.player :global(.media-icon--flipped) + :global(.media-icon__label) {
+  right: unset;
+  left: 0;
+}
+
+.player :global(.media-time-group) {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.player :global(.media-time--current) {
+  font-weight: 500;
+}
+
+.player :global(.media-time-separator),
+.player :global(.media-time--duration) {
+  opacity: 0.7;
+}
+
+.player :global(.media-slider) {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 40px;
+  height: 28px;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.player :global(.media-slider__track) {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 20%);
+}
+
+.player :global(.media-slider__buffer),
+.player :global(.media-slider__fill) {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+.player :global(.media-slider__buffer) {
+  width: var(--media-slider-buffer, 0%);
+  background: rgb(255 255 255 / 40%);
+}
+
+.player :global(.media-slider__fill) {
+  width: var(--media-slider-fill, 0%);
+  background: #fff;
+}
+
+.player :global(.media-slider__thumb) {
+  position: absolute;
+  top: 50%;
+  left: var(--media-slider-fill, 0%);
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) scale(0);
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 150ms ease;
+}
+
+.player :global(.media-slider[data-interactive] .media-slider__thumb),
+.player :global(.media-slider[data-dragging] .media-slider__thumb) {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.player :global(.media-slider[data-dragging] .media-slider__fill) {
+  width: var(--media-slider-pointer, 0%);
+}
+
+.player :global(.media-slider__preview) {
+  display: none !important;
+  position: absolute;
+  bottom: 100%;
+  left: var(--media-slider-pointer, 0%);
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 80%);
+  transform: translateX(-50%);
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+.player :global(.media-slider[data-pointing] .media-slider__preview),
+.player :global(.media-slider:focus-within .media-slider__preview) {
+  display: flex;
+}
+
+.player :global(.media-preview__thumbnail-wrapper) {
+  position: relative;
+  max-width: 140px;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.player :global(.media-preview__thumbnail-wrapper[data-hidden]) {
+  display: none;
+}
+
+.player :global(.media-preview__thumbnail) {
+  display: block;
+  max-width: 140px;
+  max-height: 80px;
+}
+
+.player :global(.media-preview__time) {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.player :global(.media-slider__preview #dots-loader) {
+  display: none;
+}
+
+.player
+  :global(.media-slider__preview .media-preview__thumbnail-wrapper[data-loading] ~ #dots-loader) {
+  display: inline-flex;
+}
+
+.player :global(.media-buffering-indicator) {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.error {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 65%);
+}
+
+.errorDialog {
+  width: min(100%, 360px);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--secondary);
+}
+
+.errorTitle {
+  font-weight: 700;
+}
+
+.errorDescription {
+  margin-top: 8px;
+}
+
+.errorActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
