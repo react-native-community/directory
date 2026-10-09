@@ -1,6 +1,15 @@
 import { LinearGradient } from '@visx/gradient';
 import { useParentSize } from '@visx/responsive';
-import { Axis, BarSeries, Grid, Tooltip, XYChart } from '@visx/xychart';
+import {
+  Annotation,
+  AnnotationLabel,
+  Axis,
+  BarSeries,
+  BarStack,
+  Grid,
+  Tooltip,
+  XYChart,
+} from '@visx/xychart';
 import { useId, useState } from 'react';
 import { View } from 'react-native';
 
@@ -18,6 +27,14 @@ type Props = {
   total: number;
   sortByValue?: boolean;
   reverseOrder?: boolean;
+  stackedData?: {
+    label: string;
+    entries: StatisticEntry[];
+  }[];
+};
+
+type ChartEntry = StatisticChartEntry & {
+  segmentLabel?: string;
 };
 
 export default function StatisticsBarChart({
@@ -25,6 +42,7 @@ export default function StatisticsBarChart({
   total,
   sortByValue = true,
   reverseOrder = false,
+  stackedData,
 }: Props) {
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const { isSmallScreen } = useLayout();
@@ -35,10 +53,11 @@ export default function StatisticsBarChart({
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
 
-  const entries: StatisticChartEntry[] = data.map(entry => ({
+  const entries: ChartEntry[] = data.map(entry => ({
     ...entry,
     percentage: total > 0 ? (entry.count / total) * 100 : 0,
   }));
+
   const orderedSeries = sortByValue
     ? entries.sort(
         (left, right) =>
@@ -47,6 +66,33 @@ export default function StatisticsBarChart({
       )
     : [...entries.filter(entry => !entry.secondary), ...entries.filter(entry => entry.secondary)];
   const series = reverseOrder ? [...orderedSeries].reverse() : orderedSeries;
+  const stackedDataByLabel = new Map((stackedData ?? []).map(group => [group.label, group]));
+  const orderedStackedData = series
+    .map(group => stackedDataByLabel.get(group.label))
+    .filter(group => group !== undefined);
+
+  const stackSeries = orderedStackedData.map((group, groupIndex) => {
+    const visibleEntries = group.entries.filter(entry => entry.count > 0);
+    return {
+      label: group.label,
+      rowIndex: series.findIndex(entry => entry.label === group.label),
+      series: visibleEntries.map((entry, entryIndex) => ({
+        dataKey: `statistics-stack-${groupIndex}-${entry.label}`,
+        data: [
+          {
+            label: group.label,
+            segmentLabel: entry.label,
+            count: entry.count,
+            secondary: entry.secondary,
+            percentage: total > 0 ? (entry.count / total) * 100 : 0,
+          },
+        ],
+        radiusLeft: entryIndex === 0,
+        radiusRight: entryIndex === visibleEntries.length - 1,
+      })),
+    };
+  });
+
   const height = Math.max(MIN_HEIGHT, series.length * ROW_HEIGHT + 42);
   const leftMargin = isSmallScreen ? 112 : 120;
 
@@ -60,7 +106,7 @@ export default function StatisticsBarChart({
         height={height}
         xScale={{ type: 'linear', domain: [0, 100] }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
-        margin={{ top: 2, right: 20, bottom: 24, left: leftMargin }}>
+        margin={{ top: 2, right: 32, bottom: 24, left: leftMargin }}>
         <LinearGradient
           id={gradientId}
           from="var(--primary-darker)"
@@ -102,7 +148,7 @@ export default function StatisticsBarChart({
               textAnchor="middle"
               dominantBaseline="middle"
               style={tw`select-none tabular-nums`}
-              fill="var(--secondary)">
+              fill="var(--tertiary)">
               <tspan x={x} style={tw`text-[12px] font-light`}>
                 {formattedValue}
               </tspan>
@@ -128,19 +174,69 @@ export default function StatisticsBarChart({
             </text>
           )}
         />
-        <BarSeries
-          dataKey="percentage"
-          data={series}
-          xAccessor={(item: StatisticChartEntry) => item.percentage}
-          yAccessor={(item: StatisticChartEntry) => item.label}
-          colorAccessor={(item: StatisticChartEntry) =>
-            `url(#${item.secondary ? secondaryGradientId : gradientId})`
-          }
-          radius={4}
-          radiusAll
-          onPointerMove={({ index }) => setHoveredIndex(index)}
-          onPointerOut={() => setHoveredIndex(null)}
-        />
+        {stackedData ? (
+          stackSeries.map(({ label, rowIndex, series: groupSeries }) => (
+            <BarStack
+              key={label}
+              onPointerMove={() => setHoveredIndex(rowIndex)}
+              onPointerOut={() => setHoveredIndex(null)}>
+              {groupSeries.map(({ dataKey, data: stackData, radiusLeft, radiusRight }) => (
+                <BarSeries
+                  key={dataKey}
+                  dataKey={dataKey}
+                  data={stackData}
+                  xAccessor={(item: ChartEntry) => item.percentage}
+                  yAccessor={(item: ChartEntry) => item.label}
+                  colorAccessor={(item: ChartEntry) => {
+                    if (item.segmentLabel === 'Only') {
+                      return 'var(--primary)';
+                    }
+                    if (item.segmentLabel === 'No') {
+                      return isDark ? 'var(--gray-3)' : 'var(--gray-4)';
+                    }
+                    return `url(#${item.secondary ? secondaryGradientId : gradientId})`;
+                  }}
+                  radius={4}
+                  radiusLeft={radiusLeft}
+                  radiusRight={radiusRight}
+                />
+              ))}
+            </BarStack>
+          ))
+        ) : (
+          <BarSeries
+            dataKey="percentage"
+            data={series}
+            xAccessor={(item: ChartEntry) => item.percentage}
+            yAccessor={(item: ChartEntry) => item.label}
+            colorAccessor={(item: ChartEntry) =>
+              `url(#${item.secondary ? secondaryGradientId : gradientId})`
+            }
+            radius={4}
+            radiusAll
+            onPointerMove={({ index }) => setHoveredIndex(index)}
+            onPointerOut={() => setHoveredIndex(null)}
+          />
+        )}
+        {series.map(entry => (
+          <Annotation
+            key={entry.label}
+            datum={entry}
+            xAccessor={item => item.percentage}
+            yAccessor={item => item.label}>
+            <AnnotationLabel
+              title={`${entry.percentage.toFixed(2)}%`}
+              titleFontSize={12}
+              titleFontWeight={400}
+              horizontalAnchor="start"
+              verticalAnchor="middle"
+              showBackground={false}
+              showAnchorLine={false}
+              fontColor={isDark ? 'var(--white)' : 'var(--black)'}
+              titleProps={{ pointerEvents: 'none', opacity: 0.75, fontVariant: 'tabular-nums' }}
+            />
+          </Annotation>
+        ))}
         <HoveredBarOutline
           hoveredIndex={hoveredIndex}
           series={series}
@@ -148,7 +244,7 @@ export default function StatisticsBarChart({
           xAccessor={item => item.percentage}
           yAccessor={item => item.label}
         />
-        <Tooltip<StatisticChartEntry>
+        <Tooltip<ChartEntry>
           showVerticalCrosshair={false}
           showSeriesGlyphs={false}
           offsetLeft={8}
@@ -165,7 +261,9 @@ export default function StatisticsBarChart({
 
             return (
               <ChartTooltip>
-                <span style={tw`mb-0.5 text-[15px] font-medium`}>{entry.label}</span>
+                <span style={tw`mb-0.5 text-[15px] font-medium`}>
+                  {entry.segmentLabel ?? entry.label}
+                </span>
                 <span>
                   {entry.count.toLocaleString()} libraries ({entry.percentage.toFixed(2)}%)
                 </span>

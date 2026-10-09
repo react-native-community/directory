@@ -1,13 +1,12 @@
 'use client';
 
-import '@videojs/react/video/minimal-skin.css';
-
 import { Container } from '@videojs/react';
 import { Video } from '@videojs/react/video';
 import { useState, type VideoHTMLAttributes } from 'react';
 import { type Style } from 'twrnc';
 
 import { P } from '~/common/styleguide';
+import styles from '~/styles/markdown-video-player.module.css';
 import tw from '~/util/tailwind';
 
 import { InlinePlayer } from './InlinePlayer';
@@ -21,9 +20,9 @@ type Props = {
 export default function MarkdownVideoPlayer({ src, style }: Props) {
   const [hasError, setHasError] = useState(false);
   return (
-    <InlinePlayer.Provider>
+    <InlinePlayer>
       <Container
-        className="media-minimal-skin media-minimal-skin--video relative mt-3 max-h-[592px] max-w-full"
+        className={`${styles.player} media-minimal-skin relative mt-3 max-h-[592px] max-w-full`}
         style={style}>
         {hasError ? (
           <P style={tw`text-center text-sm font-light leading-[150px] text-secondary`}>
@@ -42,6 +41,6 @@ export default function MarkdownVideoPlayer({ src, style }: Props) {
           </>
         )}
       </Container>
-    </InlinePlayer.Provider>
+    </InlinePlayer>
   );
 }
