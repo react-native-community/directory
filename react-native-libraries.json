@@ -24664,5 +24664,12 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/yashnandha/react-native-nitro-biometrics",
+    "examples": ["https://github.com/yashnandha/react-native-nitro-biometrics/tree/master/example"],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
   }
 ]
