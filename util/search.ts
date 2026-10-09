@@ -1,5 +1,6 @@
+import dependants from '~/assets/dependants.json';
 import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
-import { type LibraryType, type Query, type QueryFilters } from '~/types';
+import { type DependantsDataType, type LibraryType, type Query, type QueryFilters } from '~/types';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -8,6 +9,7 @@ import { isEmptyOrNull } from './strings';
 const NPM_NAME_CLEANUP_REGEX = /[-/]/g;
 const GITHUB_URL_CLEANUP_REGEX =
   /^https?:\/\/(?:www\.)?github\.com\/([^/]+\/[^/]+)(?:$|\/|\.git).*$/;
+const DEPENDANTS = dependants as DependantsDataType;
 
 const SUPPORT_PARAMS = [
   ...FILTER_PLATFORMS.map(filter => filter.param),
@@ -127,6 +129,7 @@ export function handleFilterLibraries({
   turboModule,
   nightlyProgram,
   owner,
+  dependantsOf,
   bookmarks,
   bookmarkedIds,
 }: Query & QueryFilters & { bookmarkedIds?: Set<string> | null }) {
@@ -135,6 +138,9 @@ export function handleFilterLibraries({
 
   const minPopularityValue = minPopularity && Number.parseFloat(minPopularity) / 100;
   const minMonthlyDownloadsValue = minMonthlyDownloads && Number.parseInt(minMonthlyDownloads, 10);
+  const dependantNames = dependantsOf
+    ? new Set(DEPENDANTS[dependantsOf.toLowerCase()]?.map(name => name.toLowerCase()))
+    : undefined;
 
   const processedLibraries = viewerHasTypedSearch
     ? libraries.map(library => ({
@@ -244,6 +250,10 @@ export function handleFilterLibraries({
     }
 
     if (owner && !library.githubUrl.startsWith(`https://github.com/${owner}`)) {
+      return false;
+    }
+
+    if (dependantNames && !dependantNames.has(library.npmPkg.toLowerCase())) {
       return false;
     }
 

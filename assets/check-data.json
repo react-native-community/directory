@@ -140,6 +140,7 @@
     "newArchitecture": "untested"
   },
   "react-native-tableview-simple": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-localizable": {
@@ -348,6 +349,7 @@
     "newArchitecture": "supported"
   },
   "react-native-modal-datetime-picker": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-universal-picker": {
@@ -471,7 +473,6 @@
     "newArchitecture": "untested"
   },
   "react-native-autolink": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-hyperlink": {
@@ -794,7 +795,7 @@
     "newArchitecture": "untested"
   },
   "react-native-branch": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-social-auth": {
     "unmaintained": true,
@@ -1058,13 +1059,10 @@
     "newArchitecture": "supported"
   },
   "react-native-collapsible": {
-    "newArchitecture": "supported"
-  },
-  "react-native-popover": {
     "unmaintained": true,
     "newArchitecture": "supported"
   },
-  "react-native-form-generator": {
+  "react-native-popover": {
     "unmaintained": true,
     "newArchitecture": "supported"
   },
@@ -1316,10 +1314,9 @@
     "newArchitecture": "supported"
   },
   "react-native-image-marker": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-walkthrough-tooltip": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-canvas": {
@@ -1362,6 +1359,7 @@
     "newArchitecture": "unsupported"
   },
   "react-native-hotspot": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-text-avatar": {
@@ -1499,9 +1497,6 @@
   "expo-print": {
     "newArchitecture": "supported"
   },
-  "expo-processing": {
-    "newArchitecture": "supported"
-  },
   "expo-secure-store": {
     "newArchitecture": "supported"
   },
@@ -1524,6 +1519,7 @@
     "newArchitecture": "supported"
   },
   "expo-three": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "expo-video-thumbnails": {
@@ -1575,8 +1571,7 @@
     "newArchitecture": "supported"
   },
   "react-native-nested-listview": {
-    "unmaintained": true,
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-wifi-p2p": {
     "newArchitecture": "untested"
@@ -1649,6 +1644,7 @@
     "newArchitecture": "supported"
   },
   "rn-zendesk": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@react-native-community/progress-bar-android": {
@@ -1683,6 +1679,7 @@
     "newArchitecture": "supported"
   },
   "expo-ui-kit": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@grapp/stacks": {
@@ -1765,6 +1762,7 @@
     "newArchitecture": "supported"
   },
   "@react-native-community/blur": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@react-native-async-storage/async-storage": {
@@ -1828,9 +1826,11 @@
     "newArchitecture": "supported"
   },
   "react-native-render-html": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-gifted-chat": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@shoutem/ui": {
@@ -1859,7 +1859,6 @@
     "newArchitecture": "supported"
   },
   "react-native-modal-selector": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-svg-charts": {
@@ -1948,6 +1947,7 @@
     "newArchitecture": "supported"
   },
   "react-native-console-time-polyfill": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-change-icon": {
@@ -1962,6 +1962,7 @@
     "newArchitecture": "supported"
   },
   "@react-native-community/geolocation": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@react-native-community/audio-toolkit": {
@@ -2007,6 +2008,7 @@
     "newArchitecture": "supported"
   },
   "react-native-tts": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-config": {
@@ -2077,10 +2079,10 @@
     "newArchitecture": "supported"
   },
   "react-native-flash-message": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-localization": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-photo-view-ex": {
@@ -2137,7 +2139,6 @@
     "newArchitecture": "supported"
   },
   "react-native-user-avatar": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-shimmer-placeholder": {
@@ -2164,7 +2165,6 @@
     "newArchitecture": "untested"
   },
   "react-native-swipe-list-view": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-platform-stylesheet": {
@@ -2302,10 +2302,6 @@
   "react-native-ux-cam": {
     "newArchitecture": "supported"
   },
-  "react-native-td": {
-    "unmaintained": true,
-    "newArchitecture": "untested"
-  },
   "react-native-flurry-sdk": {
     "unmaintained": true,
     "newArchitecture": "untested"
@@ -2435,7 +2431,6 @@
     "newArchitecture": "supported"
   },
   "react-native-dotenv": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-selectme": {
@@ -2534,7 +2529,7 @@
     "newArchitecture": "supported"
   },
   "react-native-restart": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@react-native-community/hooks": {
     "newArchitecture": "supported"
@@ -2805,6 +2800,7 @@
     "newArchitecture": "supported"
   },
   "react-native-week-view": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-mmkv-storage": {
@@ -2848,6 +2844,7 @@
     "newArchitecture": "untested"
   },
   "react-native-external-display": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-carplay": {
@@ -2869,7 +2866,6 @@
     "newArchitecture": "untested"
   },
   "redux-persist": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-ios-modal": {
@@ -2938,6 +2934,7 @@
     "newArchitecture": "untested"
   },
   "react-native-v8": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-bootstrap-icons": {
@@ -3034,7 +3031,7 @@
     "newArchitecture": "supported"
   },
   "react-native-vision-camera": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-controlled-mentions": {
     "newArchitecture": "supported"
@@ -3065,6 +3062,7 @@
     "newArchitecture": "supported"
   },
   "react-native-awesome-gallery": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-head-tab-view": {
@@ -3131,6 +3129,7 @@
     "newArchitecture": "untested"
   },
   "react-native-aes-gcm-crypto": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-sqlite-2": {
@@ -3162,7 +3161,6 @@
     "newArchitecture": "supported"
   },
   "react-native-lifecycle": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-blob-util": {
@@ -3197,6 +3195,7 @@
     "newArchitecture": "supported"
   },
   "react-native-floating-label-input": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-safe-modules": {
@@ -3221,7 +3220,7 @@
     "newArchitecture": "supported"
   },
   "react-native-system-navigation-bar": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-figma-squircle": {
     "newArchitecture": "supported"
@@ -3284,7 +3283,6 @@
     "newArchitecture": "untested"
   },
   "@gorhom/portal": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-exception-handler": {
@@ -3338,6 +3336,7 @@
     "newArchitecture": "supported"
   },
   "animation-wrapper-view": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@crowdlinker/react-native-pager": {
@@ -3351,6 +3350,7 @@
     "newArchitecture": "supported"
   },
   "react-native-js-tableview": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@arelstone/react-native-email-chip": {
@@ -3455,15 +3455,12 @@
     "newArchitecture": "supported"
   },
   "@th3rdwave/web-image": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-neomorph-shadows": {
     "unmaintained": true,
     "newArchitecture": "untested"
-  },
-  "react-native-idata-scanner": {
-    "unmaintained": true,
-    "newArchitecture": "supported"
   },
   "react-native-headphone-detection": {
     "unmaintained": true,
@@ -3650,6 +3647,7 @@
     "newArchitecture": "untested"
   },
   "react-native-ad": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@assembless/react-native-material-you": {
@@ -3729,6 +3727,7 @@
     "newArchitecture": "untested"
   },
   "@dimaportenko/react-native-shadow-view": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-flex-layout": {
@@ -3820,6 +3819,7 @@
     "newArchitecture": "untested"
   },
   "react-native-infinite-pager": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@appandflow/react-navigation-bottom-sheet": {
@@ -3955,7 +3955,6 @@
     "newArchitecture": "untested"
   },
   "react-native-cloud-store": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-clocks": {
@@ -4016,6 +4015,7 @@
     "newArchitecture": "supported"
   },
   "react-native-style-queries": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-autocomplete-dropdown": {
@@ -4117,6 +4117,7 @@
     "newArchitecture": "untested"
   },
   "react-native-actions-shortcuts": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@kingstinct/react-native-healthkit": {
@@ -4131,7 +4132,6 @@
     "newArchitecture": "untested"
   },
   "react-native-dropdown-picker": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-libsodium": {
@@ -4145,7 +4145,6 @@
     "newArchitecture": "supported"
   },
   "react-native-hyperlinks": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-reanimated-image-viewer": {
@@ -4185,6 +4184,7 @@
     "newArchitecture": "supported"
   },
   "@splicer97/react-native-osmdroid": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@sparkfabrik/react-native-idfa-aaid": {
@@ -4268,6 +4268,7 @@
     "newArchitecture": "untested"
   },
   "react-native-is-maestro": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-pdf-renderer": {
@@ -4278,6 +4279,7 @@
     "newArchitecture": "supported"
   },
   "@ahmedrowaihi/react-native-i18n-storage": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-code-highlighter": {
@@ -4362,7 +4364,6 @@
     "newArchitecture": "untested"
   },
   "react-native-cone-slider": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-palette-picker": {
@@ -4378,7 +4379,6 @@
     "newArchitecture": "supported"
   },
   "react-native-squish-button": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-timer-picker": {
@@ -4399,7 +4399,6 @@
     "newArchitecture": "untested"
   },
   "@animatereactnative/stagger": {
-    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@animatereactnative/marquee": {
@@ -4483,6 +4482,7 @@
     "newArchitecture": "supported"
   },
   "react-native-highlighter": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-vercel-ai": {
@@ -4510,6 +4510,7 @@
     "newArchitecture": "supported"
   },
   "react-native-theme-switch-animation": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-drop-shadow": {
@@ -4647,12 +4648,15 @@
     "newArchitecture": "untested"
   },
   "@ankipro/react-native-file-open": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@ankipro/react-native-window-resize": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-imagemin-asset-plugin": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "expo-custom-assets": {
@@ -4667,6 +4671,7 @@
     "newArchitecture": "untested"
   },
   "react-native-svg-editor": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@expensify/react-native-live-markdown": {
@@ -4684,6 +4689,7 @@
     "newArchitecture": "untested"
   },
   "react-native-reanimated-progress-steps": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-story-view": {
@@ -4728,12 +4734,12 @@
     "newArchitecture": "untested"
   },
   "@kesha-antonov/react-native-action-cable": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@codeherence/react-native-header": {
     "newArchitecture": "supported"
   },
-  "react-native-uitextview": {
+  "@bsky.app/react-native-uitextview": {
     "newArchitecture": "supported"
   },
   "react-native-sse": {
@@ -4777,9 +4783,11 @@
     "newArchitecture": "supported"
   },
   "@extrieve_technologies/quickcapture_react_native": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@sectiontn/otp-input": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-windows-hello": {
@@ -4847,6 +4855,7 @@
     "newArchitecture": "supported"
   },
   "react-native-nacl-jsi": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@segment/analytics-react-native": {
@@ -4924,9 +4933,11 @@
     "newArchitecture": "untested"
   },
   "react-native-vision-camera-text-recognition": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-vision-camera-image-labeler": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-filament": {
@@ -4978,9 +4989,10 @@
     "newArchitecture": "supported"
   },
   "rn-float-box": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
-  "react-native-magic-modal": {
+  "magic-modal": {
     "newArchitecture": "untested"
   },
   "expo-quick-actions": {
@@ -5016,9 +5028,11 @@
     "newArchitecture": "supported"
   },
   "react-native-multipurpose-calendar": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "mallaui": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@rnx-kit/align-deps": {
@@ -5028,9 +5042,11 @@
     "newArchitecture": "supported"
   },
   "@wwdrew/expo-android-shared-preferences": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@wwdrew/expo-android-account-manager": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-here-explore": {
@@ -5064,7 +5080,7 @@
     "newArchitecture": "supported"
   },
   "react-native-razorpay": {
-    "newArchitecture": "unsupported"
+    "newArchitecture": "supported"
   },
   "@customerglu/react-native-customerglu": {
     "unmaintained": true,
@@ -5111,6 +5127,7 @@
     "newArchitecture": "supported"
   },
   "expo-barcode": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@swan-io/react-native-browser": {
@@ -5148,12 +5165,15 @@
     "newArchitecture": "supported"
   },
   "react-native-typing-animated-text": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-custom-animated-accordion": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-animated-flip-card": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-flexible-grid": {
@@ -5178,6 +5198,7 @@
     "newArchitecture": "supported"
   },
   "react-native-animated-tab": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-custom-select": {
@@ -5193,6 +5214,7 @@
     "newArchitecture": "supported"
   },
   "react-native-redux-persist2": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-nitro-totp": {
@@ -5205,6 +5227,7 @@
     "newArchitecture": "supported"
   },
   "@korekoi/react-native-get-random-values": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@adobe/react-native-aepcore": {
@@ -5272,6 +5295,7 @@
     "newArchitecture": "supported"
   },
   "react-native-reactions": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "expo-notifee-plugin": {
@@ -5338,6 +5362,7 @@
     "newArchitecture": "supported"
   },
   "@korekoi/react-native-media-controller": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "react-native-ficus-ui": {
@@ -5353,7 +5378,7 @@
     "newArchitecture": "supported"
   },
   "react-native-plaid-link-sdk": {
-    "newArchitecture": "supported"
+    "newArchitecture": "untested"
   },
   "easy-peasy": {
     "newArchitecture": "untested"
@@ -5371,12 +5396,15 @@
     "newArchitecture": "supported"
   },
   "@mustapha-ghlissi/react-native-select-picker": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@mustapha-ghlissi/react-native-otp": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@mustapha-ghlissi/react-native-accordion": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-nitro-sqlite": {
@@ -5429,6 +5457,7 @@
     "newArchitecture": "untested"
   },
   "react-native-infinite-wheel-picker": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-graph-kit": {
@@ -5665,6 +5694,7 @@
     "newArchitecture": "supported"
   },
   "expo-health-connect": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "xior": {
@@ -5756,6 +5786,7 @@
     "newArchitecture": "supported"
   },
   "@s77rt/react-native-viewshot": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@s77rt/react-native-contacts": {
@@ -5802,7 +5833,7 @@
     "newArchitecture": "supported"
   },
   "react-native-momentum-carousel": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-phone-entry": {
     "newArchitecture": "supported"
@@ -5894,6 +5925,7 @@
     "newArchitecture": "untested"
   },
   "react-native-llm-mediapipe": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-bare-kit": {
@@ -5920,6 +5952,7 @@
     "newArchitecture": "supported"
   },
   "posthog-react-native-session-replay": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "rn-fade-wrapper": {
@@ -6081,7 +6114,7 @@
     "newArchitecture": "supported"
   },
   "@bsky.app/expo-image-crop-tool": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "expo-cached-image": {
     "newArchitecture": "supported"
@@ -6679,6 +6712,7 @@
     "newArchitecture": "untested"
   },
   "react-native-thermal-receipt-printer": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-vosk": {
@@ -6781,7 +6815,7 @@
   "react-native-nitro-audio-manager": {
     "newArchitecture": "supported"
   },
-  "react-native-enriched": {
+  "react-native-enriched-html": {
     "newArchitecture": "supported"
   },
   "@react-native-seoul/masonry-list": {
@@ -6899,9 +6933,6 @@
   "react-native-deepgram": {
     "newArchitecture": "supported"
   },
-  "@nayan-ui/native": {
-    "newArchitecture": "untested"
-  },
   "react-native-form0": {
     "newArchitecture": "untested"
   },
@@ -7003,7 +7034,6 @@
     "newArchitecture": "untested"
   },
   "react-native-airship": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "patch-project": {
@@ -7019,6 +7049,7 @@
     "newArchitecture": "supported"
   },
   "react-native-cookie-handler": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-nitro-sfsymbols": {
@@ -7061,17 +7092,14 @@
   "@gluestack-ui/utils": {
     "newArchitecture": "untested"
   },
-  "@gluestack/ui-next-adapter": {
-    "newArchitecture": "untested"
-  },
   "metro": {
     "newArchitecture": "untested"
   },
   "react-native-nitro-image": {
-    "newArchitecture": "untested"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-nitro-web-image": {
-    "newArchitecture": "untested"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-nitro-ark": {
     "newArchitecture": "supported"
@@ -7133,7 +7161,7 @@
   "react-native-files-picker": {
     "newArchitecture": "untested"
   },
-  "@flexsurfer/reflex": {
+  "@ukladjs/core": {
     "newArchitecture": "supported"
   },
   "react-native-audio-agent": {
@@ -7181,7 +7209,7 @@
     "newArchitecture": "untested"
   },
   "@stripe/stripe-terminal-react-native": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-agora": {
     "newArchitecture": "supported"
@@ -7260,7 +7288,7 @@
     "newArchitecture": "supported"
   },
   "react-native-blasted-image": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-authsignal": {
     "newArchitecture": "supported"
@@ -7343,9 +7371,6 @@
   "rn-hide-home-indicator": {
     "newArchitecture": "supported"
   },
-  "react-native-package-checker": {
-    "newArchitecture": "supported"
-  },
   "expo-stream-audio": {
     "newArchitecture": "supported"
   },
@@ -7371,9 +7396,10 @@
     "newArchitecture": "supported"
   },
   "@criipto/verify-expo": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@pagopa/io-app-design-system": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "@hyoper/rn-animated-modal": {
@@ -7434,7 +7460,7 @@
     "newArchitecture": "untested"
   },
   "react-native-expo-braintree": {
-    "newArchitecture": "untested"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-earl-gamepad": {
     "newArchitecture": "supported"
@@ -7545,6 +7571,7 @@
     "newArchitecture": "new-arch-only"
   },
   "expo-gaode-map-search": {
+    "unmaintained": true,
     "newArchitecture": "supported"
   },
   "@livekit/components-react": {
@@ -7581,6 +7608,7 @@
     "newArchitecture": "supported"
   },
   "@gmessier/nitro-speech": {
+    "unmaintained": true,
     "newArchitecture": "new-arch-only"
   },
   "rn-alarm-kit": {
@@ -7629,7 +7657,7 @@
     "newArchitecture": "supported"
   },
   "@luciq/react-native": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-chat-typing-indicator": {
     "newArchitecture": "supported"
@@ -7659,7 +7687,7 @@
     "newArchitecture": "supported"
   },
   "sp-react-native-in-app-updates": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-media-view": {
     "newArchitecture": "new-arch-only"
@@ -7709,9 +7737,6 @@
   "@couch-kit/host": {
     "newArchitecture": "supported"
   },
-  "@superfan-app/spotify-auth": {
-    "newArchitecture": "supported"
-  },
   "react-native-a11y": {
     "newArchitecture": "supported"
   },
@@ -7719,9 +7744,6 @@
     "newArchitecture": "supported"
   },
   "react-native-a11y-container": {
-    "newArchitecture": "supported"
-  },
-  "@factorialco/f0-react-native": {
     "newArchitecture": "supported"
   },
   "expo-maps-routes": {
@@ -7733,13 +7755,7 @@
   "expo-lux-sensor": {
     "newArchitecture": "supported"
   },
-  "@xaui/core": {
-    "newArchitecture": "supported"
-  },
   "@xaui/native": {
-    "newArchitecture": "supported"
-  },
-  "@xaui/icons": {
     "newArchitecture": "supported"
   },
   "@native-springs/shaders": {
@@ -7827,6 +7843,7 @@
     "newArchitecture": "supported"
   },
   "react-native-masked-animated-view": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-rich-modal": {
@@ -7897,7 +7914,6 @@
     "newArchitecture": "untested"
   },
   "react-native-swipe-gestures": {
-    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-wheel-color-picker": {
@@ -7938,6 +7954,7 @@
     "newArchitecture": "untested"
   },
   "react-native-preflight": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-intl-phone-username-input": {
@@ -7970,7 +7987,8 @@
   "react-native-perf-monitor-tool": {
     "newArchitecture": "supported"
   },
-  "@platform-blocks/ui": {
+  "@platform-blocks/react-ui-library": {
+    "unmaintained": true,
     "newArchitecture": "new-arch-only"
   },
   "react-native-barcode-qr-generator": {
@@ -8037,7 +8055,7 @@
   "metro-mcp": {
     "newArchitecture": "untested"
   },
-  "react-native-ai-devtools": {
+  "execbro": {
     "newArchitecture": "untested"
   },
   "expo-rich-input": {
@@ -8082,7 +8100,7 @@
   "react-native-swipeable-actions": {
     "newArchitecture": "untested"
   },
-  "@oxyhq/bloom": {
+  "@oxy.so/bloom": {
     "newArchitecture": "untested"
   },
   "expo-pretext": {
@@ -8104,19 +8122,19 @@
     "newArchitecture": "supported"
   },
   "react-native-vision-camera-barcode-scanner": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-vision-camera-location": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-vision-camera-resizer": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-vision-camera-skia": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-vision-camera-worklets": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "expo-ruler": {
     "newArchitecture": "supported"
@@ -8162,10 +8180,10 @@
     "newArchitecture": "supported"
   },
   "react-native-appstack-sdk": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@siteed/audio-studio": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "rn-mlkit-ocr": {
     "newArchitecture": "untested"
@@ -8342,7 +8360,7 @@
     "newArchitecture": "new-arch-only"
   },
   "expo-callkit-telecom": {
-    "newArchitecture": "untested"
+    "newArchitecture": "new-arch-only"
   },
   "@clarionhq/recorder": {
     "newArchitecture": "supported"
@@ -8452,8 +8470,8 @@
   "@ebrimasamba/react-native-prompt": {
     "newArchitecture": "supported"
   },
-  "react-native-enriched-html": {
-    "newArchitecture": "supported"
+  "react-native-nitro-speech": {
+    "newArchitecture": "new-arch-only"
   },
   "@gabriel-sisjr/react-native-background-location": {
     "newArchitecture": "new-arch-only"
@@ -8462,7 +8480,7 @@
     "newArchitecture": "new-arch-only"
   },
   "react-native-livechart": {
-    "newArchitecture": "untested"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-image-stitcher": {
     "newArchitecture": "untested"
@@ -8499,6 +8517,7 @@
     "newArchitecture": "supported"
   },
   "react-native-ping": {
+    "unmaintained": true,
     "newArchitecture": "untested"
   },
   "react-native-iphone-screen-helper": {
@@ -8511,7 +8530,7 @@
   "react-native-nitro-healthkit": {
     "newArchitecture": "untested"
   },
-  "cos-sdk-react-native-plugin": {
+  "react-native-cos-sdk": {
     "newArchitecture": "supported"
   },
   "react-native-qr-decode-image-camera": {
@@ -8568,9 +8587,6 @@
   "expo-paperkit": {
     "newArchitecture": "supported"
   },
-  "execbro": {
-    "newArchitecture": "untested"
-  },
   "rn-neo": {
     "newArchitecture": "untested"
   },
@@ -8616,7 +8632,7 @@
   "react-native-tenjin": {
     "newArchitecture": "supported"
   },
-  "rn-iso": {
+  "stim": {
     "newArchitecture": "untested"
   },
   "vision-camera-ocr-plugin": {
@@ -8641,7 +8657,7 @@
     "newArchitecture": "supported"
   },
   "react-native-nitro-google-signin": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "react-native-turbo-preferences": {
     "newArchitecture": "supported"
@@ -8661,21 +8677,20 @@
   "@codemagic/react-native-patch": {
     "newArchitecture": "supported"
   },
-  "@chhsiao1981/use-thunk": {
-    "unmaintained": true,
+  "use-thunk": {
     "newArchitecture": "supported"
   },
   "@alimirzayev/react-native-background-timer": {
     "newArchitecture": "new-arch-only"
   },
   "react-native-app-inspector": {
-    "newArchitecture": "untested"
+    "newArchitecture": "supported"
   },
   "@nexara/nativeflow": {
     "newArchitecture": "supported"
   },
   "@lugg/maps": {
-    "newArchitecture": "supported"
+    "newArchitecture": "new-arch-only"
   },
   "react-native-telephone": {
     "newArchitecture": "untested"
@@ -8761,9 +8776,6 @@
   "react-native-drum-picker": {
     "newArchitecture": "supported"
   },
-  "magic-modal": {
-    "newArchitecture": "untested"
-  },
   "@hzblj/zyplot": {
     "newArchitecture": "supported"
   },
@@ -8794,7 +8806,7 @@
   "react-native-video-provider": {
     "newArchitecture": "supported"
   },
-  "react-native-signal-scorer": {
+  "react-native-signal-scorer-lite": {
     "newArchitecture": "supported"
   },
   "react-native-paper-country-picker": {
@@ -8817,5 +8829,278 @@
   },
   "insert-affiliate-react-native-sdk": {
     "newArchitecture": "untested"
+  },
+  "@ladiyusuph/responsive-rn": {
+    "newArchitecture": "supported"
+  },
+  "react-native-number-animation": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-nitro-better-auth-passkey": {
+    "newArchitecture": "supported"
+  },
+  "@pose-tracker/react-native-pose-estimation": {
+    "newArchitecture": "supported"
+  },
+  "@pose-tracker/react-native-pose-estimation-light": {
+    "newArchitecture": "supported"
+  },
+  "rn-typed-assets": {
+    "newArchitecture": "supported"
+  },
+  "rn-newarch-ready": {
+    "newArchitecture": "untested"
+  },
+  "react-native-receipt-scanner": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-step-counter-newarch": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-naver-login-turbo": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@rs-native-kit/version-check": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-gradle-properties": {
+    "newArchitecture": "untested"
+  },
+  "react-native-cloud-sync": {
+    "newArchitecture": "supported"
+  },
+  "react-native-body-parts-anatomy": {
+    "newArchitecture": "supported"
+  },
+  "react-native-object-capture": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@pulse-rn/sdk": {
+    "newArchitecture": "untested"
+  },
+  "react-native-rusto": {
+    "newArchitecture": "supported"
+  },
+  "@linhnguyen96114/react-native-phone-input": {
+    "newArchitecture": "supported"
+  },
+  "react-native-plain-text": {
+    "newArchitecture": "supported"
+  },
+  "react-native-turbo-image-picker": {
+    "newArchitecture": "supported"
+  },
+  "@notchip/expo-panoramic-stitcher": {
+    "newArchitecture": "supported"
+  },
+  "@luas/rn-foreground-service": {
+    "newArchitecture": "supported"
+  },
+  "expo-video-encoder": {
+    "newArchitecture": "supported"
+  },
+  "unified-ble-manager": {
+    "newArchitecture": "supported"
+  },
+  "react-native-password-intelligence": {
+    "newArchitecture": "supported"
+  },
+  "rn-story": {
+    "newArchitecture": "supported"
+  },
+  "expo-tts-file": {
+    "newArchitecture": "supported"
+  },
+  "@ant-design/react-native": {
+    "newArchitecture": "untested"
+  },
+  "@ant-design/icons-react-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-openwakeword": {
+    "newArchitecture": "supported"
+  },
+  "munim-ffmpeg": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@axonpack/expo-devtools": {
+    "newArchitecture": "supported"
+  },
+  "@afkcodes/timbre-player": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@afkcodes/timbre-media-session": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@afkcodes/timbre-audio-session": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@afkcodes/timbre-cast": {
+    "newArchitecture": "new-arch-only"
+  },
+  "munim-wifi": {
+    "newArchitecture": "new-arch-only"
+  },
+  "munim-pencilkit": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-inapp-inspector": {
+    "newArchitecture": "supported"
+  },
+  "@platform-blocks/charts": {
+    "newArchitecture": "new-arch-only"
+  },
+  "ytdlp-react-native": {
+    "newArchitecture": "supported"
+  },
+  "@pushengage/pushengage-react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-continued-task": {
+    "newArchitecture": "supported"
+  },
+  "react-native-callkit-telecom": {
+    "newArchitecture": "supported"
+  },
+  "orn-ui": {
+    "newArchitecture": "supported"
+  },
+  "@dahab-tech/react-native-media-editor": {
+    "newArchitecture": "supported"
+  },
+  "react-native-collapsible-tabs-native": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@amplitude/analytics-react-native": {
+    "newArchitecture": "untested"
+  },
+  "@amplitude/plugin-session-replay-react-native": {
+    "newArchitecture": "untested"
+  },
+  "@amplitude/experiment-react-native-client": {
+    "newArchitecture": "supported"
+  },
+  "@dev-plugins/apollo-client": {
+    "newArchitecture": "untested"
+  },
+  "@dev-plugins/react-navigation": {
+    "newArchitecture": "untested"
+  },
+  "@nikpnevmatikos/html-renderer": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-wakeword": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@impulse-ui-native/toolkit": {
+    "newArchitecture": "supported"
+  },
+  "@phucprime/react-native-image-editor": {
+    "newArchitecture": "supported"
+  },
+  "react-native-live-list": {
+    "newArchitecture": "supported"
+  },
+  "@rollbird/react-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-nobodywho": {
+    "newArchitecture": "supported"
+  },
+  "@vijeshkr/react-native-biometric-auth": {
+    "newArchitecture": "supported"
+  },
+  "@majornutcracker/react-native-selectable-text": {
+    "newArchitecture": "supported"
+  },
+  "react-native-responsive-hook": {
+    "newArchitecture": "supported"
+  },
+  "react-native-arrangement-view": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-blur-overlay": {
+    "newArchitecture": "supported"
+  },
+  "linktrail-react-native": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-pose-detection": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-sync": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@klor/react": {
+    "newArchitecture": "supported"
+  },
+  "@avasapp/agent-bridge": {
+    "newArchitecture": "supported"
+  },
+  "react-native-masonry-brick-list": {
+    "newArchitecture": "supported"
+  },
+  "react-native-review-prompt": {
+    "newArchitecture": "supported"
+  },
+  "react-native-clamshell": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-magic-tab-bar": {
+    "newArchitecture": "supported"
+  },
+  "expo-inline-video": {
+    "newArchitecture": "untested"
+  },
+  "@devreply/react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-pdf-sdk": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@everframe/react-native": {
+    "newArchitecture": "supported"
+  },
+  "react-native-voice-activator": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-device-pulse": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@giabaojs/react-native-app-shortcuts": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-shared-transition": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@giabaojs/react-native-tipkit": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-image-analysis": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-ios-controls": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@fsstudio-org/google-credential-manager": {
+    "newArchitecture": "supported"
+  },
+  "@nguyenduy1412/react-native-blur": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nfc-locator": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@tapapplink/react-native": {
+    "newArchitecture": "untested"
+  },
+  "munim-maps": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@cawrestler/react-native-duo": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-kanban-dnd": {
+    "newArchitecture": "new-arch-only"
   }
 }

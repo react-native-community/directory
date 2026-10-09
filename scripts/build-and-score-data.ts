@@ -6,9 +6,9 @@ import debugGithubRepos from '~/debug-github-repos.json';
 import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
-import { type DataAssetType, type LibraryDataEntryType, type LibraryType } from '~/types';
+import { type DependantsDataType, type LibraryDataEntryType, type LibraryType } from '~/types';
 import { createCheckEndpointBlob, fetchLatestData, readLocalDataFile } from '~/util/blob';
-import { DATA_PATH } from '~/util/Constants';
+import { DATA_PATH, DEPENDANTS_PATH } from '~/util/Constants';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { backfillUnpkgReadmeFile } from '~/util/scoring';
 import { isEmptyOrNull } from '~/util/strings';
@@ -94,7 +94,7 @@ export async function buildAndScoreData() {
   console.log('🔄️️ Fetching latest data blob from the store');
 
   const localData = readLocalDataFile();
-  const { latestData }: { latestData: DataAssetType } = await fetchLatestData();
+  const { latestData, latestDependants } = await fetchLatestData();
   const baselineLibraries = missingOnly
     ? mergeLibraries(localData.libraries, latestData.libraries)
     : latestData.libraries;
@@ -163,7 +163,9 @@ export async function buildAndScoreData() {
 
   console.log('\n⬇🔄 Fetching registry data from npm');
 
-  data = await fetchNpmRegistryDataSequentially(data);
+  const { libraries: registryLibraries, dependencyUpdates } =
+    await fetchNpmRegistryDataSequentially(data);
+  data = registryLibraries;
 
   console.log('\n⬇🔄 Fetching nightly programme information');
 
@@ -248,9 +250,11 @@ export async function buildAndScoreData() {
   console.log('📄️ Preparing data file');
 
   let fileContent;
+  let finalLibraries: LibraryType[];
 
   if (missingOnly) {
     const mergedLibraries = mergeLibraries(baselineLibraries, data);
+    finalLibraries = mergedLibraries;
     const content = {
       libraries: mergedLibraries,
       topics: sortTopics(getTopicCounts(mergedLibraries)),
@@ -277,6 +281,7 @@ export async function buildAndScoreData() {
           topics: sortTopics(topicCounts),
         };
 
+    finalLibraries = content.libraries;
     fileContent = JSON.stringify(content, null, 2);
     createCheckEndpointBlob(content.libraries);
   } else {
@@ -319,6 +324,7 @@ export async function buildAndScoreData() {
       .filter(({ npmPkg }) => existingPackages.has(npmPkg))
       .filter((entry: LibraryType) => validEntries.has(entry.githubUrl));
 
+    finalLibraries = finalData;
     fileContent = JSON.stringify(
       {
         libraries: finalData,
@@ -331,11 +337,60 @@ export async function buildAndScoreData() {
     createCheckEndpointBlob(finalData);
   }
 
+  const dependantsData = updateDependantsData(latestDependants, finalLibraries, dependencyUpdates);
+  const dependantsContent = JSON.stringify(dependantsData, null, 2);
+
   if (!(USE_DEBUG_REPOS || ONLY_WRITE_LOCAL_DATA_FILE)) {
+    await uploadDependantsToStore(dependantsContent);
     await uploadToStore(fileContent);
   }
 
   fs.writeFileSync(DATA_PATH, fileContent);
+  fs.writeFileSync(DEPENDANTS_PATH, dependantsContent);
+}
+
+function updateDependantsData(
+  existingData: DependantsDataType,
+  libraries: LibraryType[],
+  updates: Map<string, string[]>
+): DependantsDataType {
+  const activePackages = new Set(libraries.map(({ npmPkg }) => npmPkg.toLowerCase()));
+  const updatedPackages = new Set(updates.keys());
+  const dependantsByPackage = new Map<string, Set<string>>();
+
+  Object.entries(existingData).forEach(([dependency, dependants]) => {
+    if (!activePackages.has(dependency.toLowerCase())) {
+      return;
+    }
+
+    const activeDependants = dependants.filter(
+      dependant =>
+        activePackages.has(dependant.toLowerCase()) && !updatedPackages.has(dependant.toLowerCase())
+    );
+
+    if (activeDependants.length) {
+      dependantsByPackage.set(dependency.toLowerCase(), new Set(activeDependants));
+    }
+  });
+
+  updates.forEach((dependencies, dependant) => {
+    dependencies.forEach(dependency => {
+      const key = dependency.toLowerCase();
+      if (!activePackages.has(key)) {
+        return;
+      }
+
+      const currentDependants = dependantsByPackage.get(key) ?? new Set<string>();
+      currentDependants.add(dependant);
+      dependantsByPackage.set(key, currentDependants);
+    });
+  });
+
+  return Object.fromEntries(
+    [...dependantsByPackage.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([dependency, dependants]) => [dependency, [...dependants].sort()])
+  );
 }
 
 function sortTopics(topicCounts: Record<string, number>) {
@@ -434,7 +489,9 @@ async function loadRepositoryDataAsync(existingLibraries: LibraryType[]): Promis
 
   // Error out if not enough remaining
   if (apiLimitRemaining < data.length * apiLimitCost) {
-    throw new Error('Not enough requests left on GitHub API rate limiting to proceed.');
+    throw new Error(
+      `Not enough requests left on GitHub API rate limiting to proceed. ${apiLimitRemaining} remaining, but need ${data.length * apiLimitCost}.`
+    );
   }
 
   console.info(
@@ -460,6 +517,11 @@ async function uploadToStore(fileContent: string) {
   }
 }
 
+async function uploadDependantsToStore(fileContent: string) {
+  console.log('⬆️ Uploading package dependency index to the store');
+  await put('dependants.json', fileContent, { access: 'public', addRandomSuffix: true });
+}
+
 async function fetchNpmStatDataSequentially(bulkList: string[][]) {
   const total = bulkList.flat().length;
   const results = [];
@@ -477,6 +539,7 @@ async function fetchNpmStatDataSequentially(bulkList: string[][]) {
 
 async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
   const total = list.length;
+  const dependencyUpdates = new Map<string, string[]>();
 
   for (let i = 0; i < total; i++) {
     const entry = list[i];
@@ -488,16 +551,20 @@ async function fetchNpmRegistryDataSequentially(list: LibraryType[]) {
     await sleep(SLEEP_TIME / 10);
     const shouldLog = i % CHUNK_SIZE === 0 || i + 1 === total;
 
-    const data = await fetchNpmRegistryData(entry);
+    const result = await fetchNpmRegistryData(entry);
     shouldLog &&
       console.log(
         `${CHUNK_SIZE > total && i !== 0 ? total : CHUNK_SIZE * Math.floor(i / CHUNK_SIZE)} of ${total} fetched`
       );
 
-    list[i] = data;
+    list[i] = result.library;
+
+    if (result.dependencyNames) {
+      dependencyUpdates.set(entry.npmPkg.toLowerCase(), result.dependencyNames);
+    }
   }
 
-  return list;
+  return { libraries: list, dependencyUpdates };
 }
 
 await buildAndScoreData();

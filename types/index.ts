@@ -55,6 +55,7 @@ export type Query = {
   turboModule?: string;
   nightlyProgram?: string;
   owner?: string;
+  dependantsOf?: string;
   bookmarks?: string;
 };
 
@@ -186,6 +187,8 @@ export type DataAssetType = {
   libraries: LibraryType[];
   topics: Record<string, number>;
 };
+
+export type DependantsDataType = Record<string, string[]>;
 
 export type MetadataEntryType = {
   id: string;
@@ -332,6 +335,7 @@ export type NpmRegistryVersionData = NpmRegistryCommonData & {
   gitHooks?: Record<string, string>;
   description: string;
   dependencies?: Record<string, string>;
+  optionalDependencies?: Record<string, string>;
   typesVersions?: Record<string, Record<string, string[]>>;
   devDependencies?: Record<string, string>;
   peerDependencies?: Record<string, string>;

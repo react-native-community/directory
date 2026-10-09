@@ -7,6 +7,7 @@ import tw from '~/util/tailwind';
 
 import EntityCounter from '../EntityCounter';
 
+import DependantsSection from './DependantsSection';
 import FundingSection from './FundingSection';
 import MorePackagesSection from './MorePackagesSection';
 import PackageAuthor from './PackageAuthor';
@@ -23,6 +24,7 @@ export default function CommunitySection({ library, author, maintainers, compact
   return (
     <>
       <MorePackagesSection library={library} />
+      <DependantsSection library={library} />
       <FundingSection fullName={library.github.fullName} />
       {!!author && (
         <>

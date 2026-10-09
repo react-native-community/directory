@@ -15,7 +15,7 @@ function urlForPackage(npmPkg: string) {
 export async function fetchNpmRegistryData(
   pkgData: LibraryType,
   attemptsCount = 0
-): Promise<LibraryType> {
+): Promise<{ library: LibraryType; dependencyNames?: string[] }> {
   const { npmPkg } = pkgData;
 
   try {
@@ -26,7 +26,7 @@ export async function fetchNpmRegistryData(
       console.error(
         `📦 [NPM REGISTRY API] npm API has returned invalid response - status ${response.status}!`
       );
-      return pkgData;
+      return { library: pkgData };
     }
 
     const registryData = (await response.json()) as NpmRegistryData;
@@ -35,36 +35,45 @@ export async function fetchNpmRegistryData(
       console.warn(
         `📦 [NPM REGISTRY API] ${npmPkg} doesn't exist on npm registry, add npmPkg to its entry or remove it!`
       );
-      return pkgData;
+      return { library: pkgData };
     }
 
     const latestRelease = registryData['dist-tags'].latest;
+    const latestVersionData = registryData.versions[latestRelease];
 
-    if (!latestRelease) {
+    if (!latestRelease || !latestVersionData) {
       console.warn(
         `📦 [NPM REGISTRY API] ${npmPkg} doesn't have the "latest" tag, skipping bundle size!`
       );
-      return pkgData;
+      return { library: pkgData };
     }
 
     return {
-      ...pkgData,
-      unmaintained:
-        'deprecated' in registryData.versions[latestRelease] ? true : pkgData.unmaintained,
-      npm: {
-        ...pkgData.npm,
-        size: registryData.versions[latestRelease].dist.unpackedSize,
-        versionsCount: Object.keys(registryData.versions).length,
-        latestRelease,
-        latestReleaseDate: registryData.time[latestRelease],
-        hasReadme: registryData.readmeFilename ? registryData.readmeFilename.length > 0 : false,
+      library: {
+        ...pkgData,
+        unmaintained: 'deprecated' in latestVersionData ? true : pkgData.unmaintained,
+        npm: {
+          ...pkgData.npm,
+          size: latestVersionData.dist.unpackedSize,
+          versionsCount: Object.keys(registryData.versions).length,
+          latestRelease,
+          latestReleaseDate: registryData.time[latestRelease],
+          hasReadme: registryData.readmeFilename ? registryData.readmeFilename.length > 0 : false,
+        },
       },
+      dependencyNames: [
+        ...new Set([
+          ...Object.keys(latestVersionData.dependencies ?? {}),
+          ...Object.keys(latestVersionData.optionalDependencies ?? {}),
+          ...Object.keys(latestVersionData.peerDependencies ?? {}),
+        ]),
+      ],
     };
   } catch (error) {
     if (attemptsCount >= ATTEMPTS_LIMIT) {
       console.error('📦 [NPM REGISTRY API] Looks like we have reach the npm API rate limit!');
       console.error(error);
-      return pkgData;
+      return { library: pkgData };
     }
     await sleep(REQUEST_SLEEP, REQUEST_SLEEP * 2);
     console.log(`📦 [NPM REGISTRY API] Retrying fetch for ${npmPkg} (${attemptsCount + 1})`);

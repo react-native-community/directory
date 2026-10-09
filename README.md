@@ -183,9 +183,9 @@ You should be able to visit `localhost:3000` in your browser.
 
 - Visit https://github.com/settings/developers to get your keys (don't worry about the callback URL, put whatever you want).
 - Load the `GITHUB_TOKEN` environment variable into your shell.
-- Set `ONLY_WRITE_LOCAL_DATA_FILE` to `true` in *scripts/build-and-score-data.ts* to skip fetching and updating store blob from Vercel and instead use and update the local `assets/data.json` file.
+- Set `USE_LOCAL_DATA_FILE=true` to skip fetching and updating store blobs from Vercel and instead use and update the local generated data files.
 
-This command creates site data in `./assets/data.json`
+This command creates site data in `./assets/data.json` and the separate package dependency index in `./assets/dependants.json`.
 
 ```sh
 GITHUB_TOKEN=<*> bun data:update

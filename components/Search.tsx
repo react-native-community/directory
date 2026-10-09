@@ -33,7 +33,7 @@ type Props = {
 };
 
 export default function Search({ query, total, style }: Props) {
-  const { search, order, direction, offset, owner, ...filterParams } = query;
+  const { search, order, direction, offset, owner, dependantsOf, ...filterParams } = query;
   const [isFilterVisible, setFilterVisible] = useState(Object.keys(filterParams).length > 0);
 
   const inputRef = useRef<TextInputInstance>(null);

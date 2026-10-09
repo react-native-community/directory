@@ -102,6 +102,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     turboModule: parsedQuery.turboModule,
     nightlyProgram: parsedQuery.nightlyProgram,
     owner: parsedQuery.owner,
+    dependantsOf: parsedQuery.dependantsOf,
     bookmarks: parsedQuery.bookmarks,
     bookmarkedIds,
   });
