@@ -24666,6 +24666,12 @@
     "newArchitecture": "new-arch-only"
   },
   {
+    "githubUrl": "https://github.com/WarpLinkApp/warplink-react-native-sdk",
+    "npmPkg": "@warplink/react-native",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/yashnandha/react-native-nitro-biometrics",
     "examples": ["https://github.com/yashnandha/react-native-nitro-biometrics/tree/master/example"],
     "newArchitecture": true,
