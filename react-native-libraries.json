@@ -24704,6 +24704,13 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/magrinj/hermes-intl",
+    "examples": ["https://github.com/magrinj/hermes-intl/tree/main/example"],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/the-mysterious-kid/react-native-keys-next",
     "ios": true,
     "android": true,
