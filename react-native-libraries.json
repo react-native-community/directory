@@ -24702,5 +24702,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/magrinj/hermes-intl",
+    "examples": ["https://github.com/magrinj/hermes-intl/tree/main/example"],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
