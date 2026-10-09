@@ -24702,5 +24702,12 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/the-mysterious-kid/react-native-keys-next",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
