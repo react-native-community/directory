@@ -9,6 +9,7 @@ This document describes the server-side JSON API exposed by the React Native Dir
 - [`POST /api/libraries/check`](#post-apilibrariescheck) - (deprecated) return metadata for a list of npm package names
 - [`GET /api/libraries/statistic`](#get-apilibrariesstatistic) - aggregated statistics about the directory dataset
 - [`GET /api/library`](#get-apilibrary) - lookup one or more libraries by npm package name (optionally `check` existence only)
+- [`GET /api/library/dependants`](#get-apilibrarydependants) - list directory packages that depend on an npm package
 - [`GET /api/proxy/github-funding`](#get-apiproxygithub-funding) - proxy to https://api.github.com/graphql API with baked query for fetching funding data
 - [`GET /api/proxy/npm-stat`](#get-apiproxynpm-stat) - proxy to https://npm-stat.com download counts API
 - [`GET /api/proxy/unpkg`](#get-apiproxyunpkg) - proxy to https://unpkg.com/ API with redirect handling on server-side
@@ -24,6 +25,7 @@ Return a list of libraries from the dataset. Supports sorting, full-text search,
   - `direction` - `ascending` or `descending` (default: `descending`).
   - `search` - full-text search string (`relevance` sorting is used automatically when searching).
   - `owner` - filter by owner name.
+  - `dependantsOf` - filter to directory packages that depend on the specified npm package.
   - `topic` - filter by topic or tag.
   - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `expoGo`, `fireos`, `harmony`, `horizon`, `tvos`, `visionos`, `vegaos`.
   - Feature filters (booleans): `hasExample`, `hasImage`, `hasTypes`, `hasNativeCode`, `configPlugin`.
@@ -373,6 +375,31 @@ Endpoint can optionally perform a quick `check` to return existence flag only, o
   ```json
   {
     "uniwind": "1.5.0"
+  }
+  ```
+
+---
+
+## GET /api/library/dependants
+
+Return directory packages whose latest npm release depends on the specified package. Runtime, optional, and peer dependencies are included.
+
+- Method: GET
+- Path: `/api/library/dependants`
+- Query parameters:
+  - `name` - npm package name (required).
+  - `limit` - maximum number of libraries to return (default `6`, maximum `100`).
+
+### Example
+
+- GET `/api/library/dependants?name=react-native-directory-example-no-dependants&limit=2`
+
+  Response:
+
+  ```json
+  {
+    "libraries": [],
+    "total": 0
   }
   ```
 

@@ -1,3 +1,4 @@
+import { startCase } from 'es-toolkit/string';
 import Link from 'next/link';
 import { View, type ViewStyle } from 'react-native';
 
@@ -52,7 +53,8 @@ export default function Pagination({
     <View style={tw`flex-row justify-between`}>
       {!noTags ? (
         <View>
-          {query.owner && <SearchTag title="Owner" value={query.owner} />}
+          {query.owner && <SearchTag title="Owner" value={startCase(query.owner)} />}
+          {query.dependantsOf && <SearchTag title="Depends on" value={query.dependantsOf} />}
           {query.minPopularity && (
             <SearchTag title="Minimal popularity" value={query.minPopularity} />
           )}

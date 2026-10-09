@@ -1,0 +1,3507 @@
+{
+  "@ant-design/icons-react-native": [
+    "@ant-design/react-native"
+  ],
+  "@audira/carbon-react-native-elements": [
+    "@audira/carbon-react-native"
+  ],
+  "@aws-amplify/auth": [
+    "aws-amplify"
+  ],
+  "@aws-amplify/datastore": [
+    "aws-amplify"
+  ],
+  "@aws-amplify/notifications": [
+    "aws-amplify"
+  ],
+  "@aws-amplify/react-native": [
+    "@aws-amplify/auth"
+  ],
+  "@bam.tech/react-native-image-resizer": [
+    "@sendbird/uikit-react-native",
+    "react-native-amazing-cropper"
+  ],
+  "@better-auth/expo": [
+    "expo-passkey"
+  ],
+  "@bugsnag/react-native-performance": [
+    "@bugsnag/expo-performance"
+  ],
+  "@callstack/react-theme-provider": [
+    "@linhnguyen96114/react-native-phone-input",
+    "react-native-ios-kit",
+    "react-native-paper"
+  ],
+  "@clerk/expo-passkeys": [
+    "@clerk/expo"
+  ],
+  "@craftzdog/react-native-buffer": [
+    "@matter/react-native",
+    "pouchdb-adapter-react-native-sqlite",
+    "react-native-bignumber",
+    "react-native-quick-crypto"
+  ],
+  "@datadog/mobile-react-native": [
+    "@datadog/mobile-react-native-code-push"
+  ],
+  "@dr.pogodin/react-native-fs": [
+    "@dr.pogodin/react-native-static-server",
+    "react-native-fusioncharts",
+    "react-native-netwatch",
+    "react-native-voice-activator"
+  ],
+  "@expo/dom-webview": [
+    "expo"
+  ],
+  "@expo/fingerprint": [
+    "expo",
+    "otago",
+    "stim"
+  ],
+  "@expo/html-elements": [
+    "@bacons/mdx",
+    "dripsy"
+  ],
+  "@expo/metro-runtime": [
+    "@expo/router-server",
+    "expo",
+    "expo-router"
+  ],
+  "@expo/react-native-action-sheet": [
+    "react-native-gifted-chat"
+  ],
+  "@expo/vector-icons": [
+    "@axonpack/expo-devtools",
+    "@dahab-tech/react-native-media-editor",
+    "@flixsrota/player",
+    "@react-native-blocks/core",
+    "@siteed/audio-ui",
+    "@tenkaipl/react-native-select",
+    "@wcisco17/react-native-animation-video",
+    "expo-gaode-map-navigation",
+    "expo-image-editor",
+    "galio-framework",
+    "react-native-magic-tab-bar",
+    "react-native-multipurpose-calendar",
+    "react-native-remark"
+  ],
+  "@flyerhq/react-native-keyboard-accessory-view": [
+    "@flyerhq/react-native-chat-ui"
+  ],
+  "@flyerhq/react-native-link-preview": [
+    "@flyerhq/react-native-chat-ui"
+  ],
+  "@fortawesome/fontawesome-svg-core": [
+    "@fortawesome/react-native-fontawesome"
+  ],
+  "@futurejj/react-native-checkbox": [
+    "react-native-tree-multi-select"
+  ],
+  "@gluestack-ui/utils": [
+    "@gluestack-ui/core"
+  ],
+  "@goliapkg/sentori-react-native": [
+    "@goliapkg/sentori-expo"
+  ],
+  "@gorhom/bottom-sheet": [
+    "@appandflow/react-navigation-bottom-sheet",
+    "@storybook/react-native",
+    "@storybook/react-native-ui",
+    "@vokhuyet/react-native-messy",
+    "bottom-sheet-stepper",
+    "heroui-native",
+    "react-native-bottom-sheet-stack",
+    "react-native-ficus-ui",
+    "react-native-fintech-kit"
+  ],
+  "@gorhom/portal": [
+    "@gorhom/bottom-sheet",
+    "@mobile-reality/react-native-select-pro",
+    "@storybook/react-native-ui",
+    "@storybook/react-native-ui-lite",
+    "react-native-hold-menu",
+    "react-native-relative-popup",
+    "react-native-svg-editor",
+    "react-native-tooltiplize"
+  ],
+  "@hookform/resolvers": [
+    "react-native-feedback-reporter"
+  ],
+  "@hot-updater/react-native": [
+    "@rollbird/react-native"
+  ],
+  "@iterable/react-native-sdk": [
+    "@iterable/expo-plugin"
+  ],
+  "@kesha-antonov/react-native-background-downloader": [
+    "react-native-executorch"
+  ],
+  "@legendapp/list": [
+    "@storybook/react-native-ui-lite",
+    "@super-calendar/native",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-legend-ruler-picker",
+    "react-native-streaming-message-list",
+    "react-native-zoom-grid"
+  ],
+  "@lingui/core": [
+    "@lingui/react"
+  ],
+  "@livekit/components-react": [
+    "@livekit/react-native"
+  ],
+  "@livekit/react-native": [
+    "@elevenlabs/react-native",
+    "expo-livekit-screen-share",
+    "ultravox-react-native"
+  ],
+  "@livekit/react-native-webrtc": [
+    "@elevenlabs/react-native",
+    "@livekit/react-native",
+    "expo-callkit-telecom",
+    "ultravox-react-native"
+  ],
+  "@lodev09/react-native-true-sheet": [
+    "@kesha-antonov/react-native-chat"
+  ],
+  "@miblanchard/react-native-slider": [
+    "expo-image-editor"
+  ],
+  "@native-html/css-processor": [
+    "@native-html/transient-render-engine"
+  ],
+  "@native-html/transient-render-engine": [
+    "@native-html/render",
+    "react-native-render-html"
+  ],
+  "@notifee/react-native": [
+    "react-native-fusioncharts"
+  ],
+  "@op-engineering/op-sqlite": [
+    "@powersync/react-native",
+    "drizzle-orm",
+    "pouchdb-adapter-react-native-sqlite",
+    "react-native-nitro-sync"
+  ],
+  "@openspacelabs/react-native-zoomable-view": [
+    "@sendbird/uikit-react-native",
+    "@shoutem/ui"
+  ],
+  "@posthog/react-native-plugin": [
+    "posthog-react-native"
+  ],
+  "@react-native-async-storage/async-storage": [
+    "@amplitude/analytics-react-native",
+    "@amplitude/experiment-react-native-client",
+    "@instantdb/react-native",
+    "@matter/react-native",
+    "@onramp-sdk/react-native",
+    "@segment/analytics-react-native",
+    "@segment/sovran-react-native",
+    "@sendbird/uikit-react-native",
+    "@swmansion/react-native-detour",
+    "@walletconnect/react-native-compat",
+    "insert-affiliate-react-native-sdk",
+    "keychain-synced-storage",
+    "mixpanel-react-native",
+    "posthog-react-native",
+    "react-native-apikit",
+    "react-native-azure-auth",
+    "react-native-cache",
+    "react-native-emoji-chooser",
+    "react-native-network-inspector-devtools",
+    "react-native-nfc-locator",
+    "react-native-pdf-jsi",
+    "react-native-qrcode-scanner",
+    "react-native-related-digital",
+    "react-native-ultrastore"
+  ],
+  "@react-native-blocks/core": [
+    "@react-native-blocks/blocks"
+  ],
+  "@react-native-blossom-ui/components": [
+    "@react-native-blossom-ui/dates"
+  ],
+  "@react-native-camera-roll/camera-roll": [
+    "@sendbird/uikit-react-native",
+    "react-native-fusioncharts",
+    "stream-chat-react-native"
+  ],
+  "@react-native-clipboard/clipboard": [
+    "@bhojaniasgar/react-native-otp-input",
+    "@cometchat/chat-uikit-react-native",
+    "@sendbird/uikit-react-native",
+    "insert-affiliate-react-native-sdk",
+    "react-native-inapp-inspector",
+    "react-native-netwatch",
+    "stream-chat-react-native"
+  ],
+  "@react-native-community/art": [
+    "react-native-barcode-builder",
+    "react-native-loader",
+    "react-native-neomorph-shadows"
+  ],
+  "@react-native-community/blur": [
+    "@wrack/react-native-tour-guide",
+    "react-native-svg-editor"
+  ],
+  "@react-native-community/datetimepicker": [
+    "@shoutem/ui",
+    "react-native-form0",
+    "react-native-modal-datetime-picker",
+    "react-native-wheel-pick"
+  ],
+  "@react-native-community/hooks": [
+    "react-native-chatgpt",
+    "tailwind-rn"
+  ],
+  "@react-native-community/image-editor": [
+    "react-native-amazing-cropper"
+  ],
+  "@react-native-community/netinfo": [
+    "@bugsnag/react-native-performance",
+    "@instantdb/react-native",
+    "@matter/react-native",
+    "@oxy.so/bloom",
+    "@reown/appkit-wagmi-react-native",
+    "@seenn/react-native",
+    "@sendbird/uikit-react-native",
+    "@walletconnect/react-native-compat",
+    "insert-affiliate-react-native-sdk",
+    "react-native-netwatch",
+    "react-native-offline",
+    "react-native-video-provider",
+    "supastash"
+  ],
+  "@react-native-community/push-notification-ios": [
+    "react-native-push-notification"
+  ],
+  "@react-native-community/slider": [
+    "@flixsrota/player",
+    "expo-video-player",
+    "react-native-ficus-ui",
+    "react-native-kvideo",
+    "react-native-nitro-sound"
+  ],
+  "@react-native-documents/picker": [
+    "@sendbird/uikit-react-native",
+    "stream-chat-react-native"
+  ],
+  "@react-native-drivekit/core": [
+    "@react-native-drivekit/trip-analysis"
+  ],
+  "@react-native-firebase/analytics": [
+    "@react-native-firebase/in-app-messaging",
+    "@react-native-firebase/remote-config"
+  ],
+  "@react-native-firebase/app": [
+    "@flyerhq/react-native-firebase-chat-core",
+    "@react-native-firebase/ai",
+    "@react-native-firebase/analytics",
+    "@react-native-firebase/app-check",
+    "@react-native-firebase/app-distribution",
+    "@react-native-firebase/auth",
+    "@react-native-firebase/crashlytics",
+    "@react-native-firebase/database",
+    "@react-native-firebase/firestore",
+    "@react-native-firebase/functions",
+    "@react-native-firebase/in-app-messaging",
+    "@react-native-firebase/installations",
+    "@react-native-firebase/messaging",
+    "@react-native-firebase/ml",
+    "@react-native-firebase/perf",
+    "@react-native-firebase/remote-config",
+    "@react-native-firebase/storage",
+    "react-native-related-digital"
+  ],
+  "@react-native-firebase/auth": [
+    "@flyerhq/react-native-firebase-chat-core"
+  ],
+  "@react-native-firebase/firestore": [
+    "@flyerhq/react-native-firebase-chat-core"
+  ],
+  "@react-native-firebase/messaging": [
+    "@sendbird/uikit-react-native",
+    "react-native-related-digital"
+  ],
+  "@react-native-masked-view/masked-view": [
+    "@platform-blocks/react-ui-library",
+    "@react-navigation/elements",
+    "@rn-org/react-native-annotated-text",
+    "@wrack/react-native-tour-guide",
+    "expo-router",
+    "expo-skeleton-loading",
+    "react-native-gauge",
+    "react-native-masked-animated-view",
+    "react-native-shimmer-text",
+    "react-native-skeleton-placeholder"
+  ],
+  "@react-native-menu/menu": [
+    "zeego"
+  ],
+  "@react-native-picker/picker": [
+    "@gregfrench/react-native-wheel-picker",
+    "react-native-ficus-ui",
+    "react-native-form0",
+    "react-native-phone-input",
+    "react-native-picker-select",
+    "react-native-wheel-pick"
+  ],
+  "@react-native-swc/metro-plugin": [
+    "@react-native-swc/core"
+  ],
+  "@react-native/normalize-colors": [
+    "@bacons/apple-targets",
+    "expo-system-ui",
+    "expo-targets",
+    "react-native-unistyles"
+  ],
+  "@react-navigation/bottom-tabs": [
+    "@shopify/react-native-performance-navigation-bottom-tabs",
+    "react-native-curved-bottom-bar",
+    "react-native-magic-tab-bar",
+    "react-native-motion-tabs",
+    "rn-wave-bottom-bar"
+  ],
+  "@react-navigation/core": [
+    "@dev-plugins/react-navigation",
+    "@lodev09/react-native-true-sheet",
+    "@react-navigation/native",
+    "@shopify/react-native-performance-navigation",
+    "react-navigation-redux-helpers"
+  ],
+  "@react-navigation/devtools": [
+    "@dev-plugins/react-navigation"
+  ],
+  "@react-navigation/drawer": [
+    "@shopify/react-native-performance-navigation-drawer"
+  ],
+  "@react-navigation/elements": [
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/drawer",
+    "@react-navigation/material-top-tabs",
+    "@react-navigation/native-stack",
+    "@react-navigation/stack",
+    "react-navigation-header-buttons"
+  ],
+  "@react-navigation/material-top-tabs": [
+    "react-native-animation-catalog"
+  ],
+  "@react-navigation/native": [
+    "@appandflow/react-navigation-bottom-sheet",
+    "@data-client/react",
+    "@flixsrota/player",
+    "@iterable/react-native-sdk",
+    "@onramp-sdk/react-native",
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/drawer",
+    "@react-navigation/elements",
+    "@react-navigation/material-top-tabs",
+    "@react-navigation/native-stack",
+    "@react-navigation/stack",
+    "@sentry/react-native",
+    "@shopify/react-native-performance-navigation",
+    "@shoutem/ui",
+    "posthog-react-native",
+    "react-native-animated-nav-tab-bar",
+    "react-native-animation-catalog",
+    "react-native-grab",
+    "react-native-lifecycle",
+    "react-native-magic-tab-bar",
+    "react-native-mapa",
+    "react-native-motion-tabs",
+    "react-native-orientation-manager",
+    "react-native-screen-choreography",
+    "react-native-screen-transitions",
+    "react-navigation-backhandler",
+    "react-navigation-collapsible",
+    "react-navigation-header-buttons",
+    "rn-wave-bottom-bar"
+  ],
+  "@react-navigation/native-stack": [
+    "react-native-mapa",
+    "react-native-marquee",
+    "react-native-screen-choreography"
+  ],
+  "@react-navigation/routers": [
+    "@react-navigation/core"
+  ],
+  "@react-navigation/stack": [
+    "@shopify/react-native-performance-navigation",
+    "react-navigation-collapsible"
+  ],
+  "@rn-primitives/hooks": [
+    "@rn-primitives/accordion",
+    "@rn-primitives/alert-dialog",
+    "@rn-primitives/avatar",
+    "@rn-primitives/checkbox",
+    "@rn-primitives/collapsible",
+    "@rn-primitives/context-menu",
+    "@rn-primitives/dialog",
+    "@rn-primitives/dropdown-menu",
+    "@rn-primitives/hover-card",
+    "@rn-primitives/menubar",
+    "@rn-primitives/navigation-menu",
+    "@rn-primitives/popover",
+    "@rn-primitives/select",
+    "@rn-primitives/toast",
+    "@rn-primitives/tooltip"
+  ],
+  "@rn-primitives/popover": [
+    "@rn-primitives/hover-card"
+  ],
+  "@rn-primitives/portal": [
+    "@rn-primitives/alert-dialog",
+    "@rn-primitives/context-menu",
+    "@rn-primitives/dialog",
+    "@rn-primitives/dropdown-menu",
+    "@rn-primitives/hover-card",
+    "@rn-primitives/menubar",
+    "@rn-primitives/navigation-menu",
+    "@rn-primitives/popover",
+    "@rn-primitives/select",
+    "@rn-primitives/tooltip"
+  ],
+  "@rn-primitives/slot": [
+    "@rn-primitives/accordion",
+    "@rn-primitives/alert-dialog",
+    "@rn-primitives/aspect-ratio",
+    "@rn-primitives/avatar",
+    "@rn-primitives/checkbox",
+    "@rn-primitives/collapsible",
+    "@rn-primitives/context-menu",
+    "@rn-primitives/dialog",
+    "@rn-primitives/dropdown-menu",
+    "@rn-primitives/hover-card",
+    "@rn-primitives/label",
+    "@rn-primitives/menubar",
+    "@rn-primitives/navigation-menu",
+    "@rn-primitives/popover",
+    "@rn-primitives/progress",
+    "@rn-primitives/radio-group",
+    "@rn-primitives/select",
+    "@rn-primitives/separator",
+    "@rn-primitives/slider",
+    "@rn-primitives/switch",
+    "@rn-primitives/table",
+    "@rn-primitives/tabs",
+    "@rn-primitives/toast",
+    "@rn-primitives/toggle",
+    "@rn-primitives/toggle-group",
+    "@rn-primitives/toolbar",
+    "@rn-primitives/tooltip"
+  ],
+  "@rn-primitives/types": [
+    "@rn-primitives/accordion",
+    "@rn-primitives/alert-dialog",
+    "@rn-primitives/aspect-ratio",
+    "@rn-primitives/avatar",
+    "@rn-primitives/checkbox",
+    "@rn-primitives/collapsible",
+    "@rn-primitives/context-menu",
+    "@rn-primitives/dialog",
+    "@rn-primitives/dropdown-menu",
+    "@rn-primitives/hooks",
+    "@rn-primitives/hover-card",
+    "@rn-primitives/label",
+    "@rn-primitives/menubar",
+    "@rn-primitives/navigation-menu",
+    "@rn-primitives/popover",
+    "@rn-primitives/progress",
+    "@rn-primitives/radio-group",
+    "@rn-primitives/select",
+    "@rn-primitives/separator",
+    "@rn-primitives/slider",
+    "@rn-primitives/switch",
+    "@rn-primitives/table",
+    "@rn-primitives/tabs",
+    "@rn-primitives/toast",
+    "@rn-primitives/toggle",
+    "@rn-primitives/toggle-group",
+    "@rn-primitives/toolbar",
+    "@rn-primitives/tooltip"
+  ],
+  "@rn-primitives/utils": [
+    "@rn-primitives/context-menu",
+    "@rn-primitives/dropdown-menu",
+    "@rn-primitives/menubar",
+    "@rn-primitives/navigation-menu",
+    "@rn-primitives/toggle-group",
+    "@rn-primitives/toolbar"
+  ],
+  "@rn-vui/base": [
+    "@rn-vui/themed"
+  ],
+  "@rn-vui/ratings": [
+    "@rn-vui/base"
+  ],
+  "@rneui/base": [
+    "@rneui/themed",
+    "react-native-mapa",
+    "rneui"
+  ],
+  "@rneui/themed": [
+    "react-native-mapa",
+    "rneui"
+  ],
+  "@rnmapbox/maps": [
+    "react-native-mapa"
+  ],
+  "@rudderstack/rudder-sdk-react-native": [
+    "@rudderstack/rudder-plugin-db-encryption-react-native"
+  ],
+  "@segment/sovran-react-native": [
+    "@segment/analytics-react-native"
+  ],
+  "@shopify/flash-list": [
+    "@codeherence/react-native-header",
+    "@fowusu/calendar-kit",
+    "@impulse-ui-native/toolkit",
+    "@kesha-antonov/react-native-chat",
+    "@marceloterreiro/flash-calendar",
+    "@platform-blocks/react-ui-library",
+    "@softwhere-uz/react-native-emoji-keyboard",
+    "@the-sheet/flash-list-v2",
+    "@vokhuyet/react-native-messy",
+    "expo-modern-table",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-collapsible-tab-view",
+    "react-native-ficus-ui",
+    "react-native-infinite-material-tab",
+    "react-native-infinite-tab-view",
+    "react-native-resource-calendar",
+    "react-native-story-view",
+    "react-native-tree-multi-select"
+  ],
+  "@shopify/react-native-performance": [
+    "@shopify/react-native-performance-navigation",
+    "@shopify/react-native-performance-navigation-bottom-tabs",
+    "@shopify/react-native-performance-navigation-drawer"
+  ],
+  "@shopify/react-native-performance-navigation": [
+    "@shopify/react-native-performance-navigation-bottom-tabs",
+    "@shopify/react-native-performance-navigation-drawer"
+  ],
+  "@shopify/react-native-skia": [
+    "@azzapp/react-native-skia-video",
+    "@dahab-tech/react-native-media-editor",
+    "@impulse-ui-native/toolkit",
+    "@mathnotes/mobile-ink",
+    "@siteed/audio-ui",
+    "expo-skia-charts",
+    "expo-thinking-orbs",
+    "react-native-animated-glow",
+    "react-native-clocks",
+    "react-native-dotgrid",
+    "react-native-emoji-burst",
+    "react-native-fast-confetti",
+    "react-native-fiesta",
+    "react-native-financial-charts",
+    "react-native-fluid-bottom-bar",
+    "react-native-graph-kit",
+    "react-native-inner-shadow",
+    "react-native-liquid-gauge",
+    "react-native-livechart",
+    "react-native-loader-collection",
+    "react-native-simple-line-chart",
+    "react-native-skia-list",
+    "react-native-skia-shadow",
+    "react-native-skottie",
+    "react-native-snowfall",
+    "react-native-vision-camera-skia",
+    "rn-perfect-sketch-canvas",
+    "rn-skia-sketch-canvas",
+    "victory-native"
+  ],
+  "@shopify/restyle": [
+    "react-native-fintech-kit"
+  ],
+  "@siteed/audio-studio": [
+    "@siteed/expo-audio-stream"
+  ],
+  "@storybook/react-native": [
+    "@sherlo/react-native-storybook"
+  ],
+  "@storybook/react-native-theming": [
+    "@storybook/react-native",
+    "@storybook/react-native-ui",
+    "@storybook/react-native-ui-lite"
+  ],
+  "@storybook/react-native-ui": [
+    "@storybook/react-native"
+  ],
+  "@stream-io/flat-list-mvcp": [
+    "react-native-bidirectional-infinite-scroll"
+  ],
+  "@supabase/supabase-js": [
+    "supastash",
+    "tinybase"
+  ],
+  "@tamagui/animations-moti": [
+    "@tamagui/config"
+  ],
+  "@tamagui/animations-react-native": [
+    "@tamagui/config"
+  ],
+  "@tamagui/shorthands": [
+    "@tamagui/config"
+  ],
+  "@tamagui/themes": [
+    "@tamagui/config"
+  ],
+  "@tamagui/toast": [
+    "tamagui"
+  ],
+  "@tanstack/query-persist-client-core": [
+    "@tanstack/query-async-storage-persister",
+    "@tanstack/react-query-persist-client"
+  ],
+  "@tanstack/react-query": [
+    "@tanstack/react-query-persist-client"
+  ],
+  "@testing-library/react-native": [
+    "@pachun/react-native-use-app-lifecycle",
+    "@rneui/base",
+    "expo-router",
+    "rn-selector"
+  ],
+  "@the-sheet/the-sheet": [
+    "@the-sheet/flash-list-v2"
+  ],
+  "@vokhuyet/react-native-draw-overlay": [
+    "@vokhuyet/react-native-draw-overlay"
+  ],
+  "@walletconnect/react-native-compat": [
+    "@reown/appkit-wagmi-react-native"
+  ],
+  "appcenter": [
+    "appcenter-analytics",
+    "appcenter-crashes"
+  ],
+  "apsl-react-native-button": [
+    "react-native-gifted-form"
+  ],
+  "axios": [
+    "@gfean/react-native-bundle-drop",
+    "apisauce",
+    "cross-local-storage",
+    "insert-affiliate-react-native-sdk",
+    "native-notify",
+    "react-native-apikit",
+    "react-native-debug-logger",
+    "react-native-feedback-hub",
+    "react-native-feedback-reporter",
+    "react-native-google-photos",
+    "react-native-instagram-login",
+    "react-native-mapa",
+    "react-native-network-inspector-devtools",
+    "stallion-cli",
+    "tape-cli"
+  ],
+  "better-auth": [
+    "@better-auth/expo",
+    "expo-better-auth-passkey",
+    "expo-passkey"
+  ],
+  "clevertap-react-native": [
+    "@leanplum/react-native-sdk"
+  ],
+  "clsx": [
+    "@livekit/components-react",
+    "class-variance-authority",
+    "react-native-ui-datepicker"
+  ],
+  "crypto-js": [
+    "@georstat/react-native-image-cache",
+    "expo-jwt",
+    "parse",
+    "react-native-image-cache-wrapper",
+    "react-native-keys",
+    "react-native-pdf",
+    "react-native-pdf-jsi"
+  ],
+  "css-to-react-native": [
+    "@native-html/css-processor",
+    "@ronradtke/react-native-markdown-display",
+    "react-native-code-highlighter",
+    "react-native-markdown-display",
+    "tailwind-rn"
+  ],
+  "date-fns": [
+    "@gluestack-ui/core",
+    "@quidone/react-native-wheel-picker",
+    "@sendbird/uikit-react-native",
+    "@super-calendar/native",
+    "react-native-calendar-picker",
+    "react-native-chatgpt",
+    "react-native-resource-calendar",
+    "react-native-swipe-calendar",
+    "react-native-ui-lib"
+  ],
+  "dayjs": [
+    "@ant-design/react-native",
+    "@cometchat/chat-uikit-react-native",
+    "@flyerhq/react-native-chat-ui",
+    "@glyw/react-native-tabbed-section-list",
+    "@kesha-antonov/react-native-chat",
+    "@react-native-blossom-ui/dates",
+    "@vokhuyet/react-native-messy",
+    "ahooks",
+    "react-native-big-calendar",
+    "react-native-chatty",
+    "react-native-dev-lens",
+    "react-native-easy-calendar",
+    "react-native-gifted-chat",
+    "react-native-globalize",
+    "react-native-ll-calendar",
+    "react-native-simple-weekly-calendar",
+    "react-native-ui-datepicker",
+    "redux-flipper"
+  ],
+  "drizzle-orm": [
+    "better-auth",
+    "drizzle-zod"
+  ],
+  "eventemitter3": [
+    "@kesha-antonov/react-native-action-cable",
+    "@react-native-community/audio-toolkit",
+    "@seenn/react-native",
+    "@twilio/voice-react-native-sdk",
+    "react-native-agent",
+    "react-native-agora",
+    "react-native-background-actions",
+    "react-native-chatty",
+    "react-native-db-models",
+    "react-native-mapa",
+    "react-native-nitro-http-server",
+    "react-native-nitro-net",
+    "react-native-tcp-socket"
+  ],
+  "expo": [
+    "@afkcodes/timbre-cast",
+    "@afkcodes/timbre-media-session",
+    "@antardev/react-native-usage-stats",
+    "@appandflow/expo-camera-characteristics",
+    "@atproto/oauth-client-expo",
+    "@avasapp/agent-bridge",
+    "@avasapp/react-native-otp-autofill",
+    "@axonpack/expo-devtools",
+    "@bacons/apple-targets",
+    "@beyondidentity/bi-sdk-react-native",
+    "@bittingz/expo-widgets",
+    "@blunt-ly/ble-advertiser",
+    "@bravemobile/react-native-code-push",
+    "@braze/expo-plugin",
+    "@bsky.app/expo-guess-language",
+    "@bsky.app/expo-image-crop-tool",
+    "@bsky.app/expo-scroll-edge-effect",
+    "@bugsnag/expo",
+    "@bugsnag/expo-performance",
+    "@clerk/expo",
+    "@clerk/expo-passkeys",
+    "@coolsoftwaretyler/cool-pdf",
+    "@couch-kit/host",
+    "@criipto/verify-expo",
+    "@d3sm/kalendar",
+    "@dahab-tech/react-native-media-editor",
+    "@dbkable/react-native-speech-to-text",
+    "@deskbtm/react-native-bottom-sheet",
+    "@dev-plugins/apollo-client",
+    "@dev-plugins/react-navigation",
+    "@expo/app-integrity",
+    "@expo/dom-webview",
+    "@expo/match-media",
+    "@expo/metro-runtime",
+    "@expo/router-server",
+    "@fishjam-cloud/react-native-client",
+    "@fsstudio-org/google-credential-manager",
+    "@fullstory/react-native",
+    "@generac/react-native-local-network-permission",
+    "@gfean/react-native-bundle-drop",
+    "@gmisoftware/react-native-pay",
+    "@goliapkg/sentori-expo",
+    "@hortemo/expo-photos",
+    "@hot-updater/react-native",
+    "@hzblj/zyplot",
+    "@iterable/expo-plugin",
+    "@kingstinct/react-native-activity-kit",
+    "@kishannareshpal/expo-pdf",
+    "@loqalabs/loqa-audio-bridge",
+    "@loqalabs/loqa-expo-dsp",
+    "@lugg/maps",
+    "@magrinj/expo-quick-look",
+    "@majornutcracker/react-native-selectable-text",
+    "@maplibre/maplibre-react-native",
+    "@nandorojo/galeria",
+    "@native-springs/shaders",
+    "@notchip/expo-panoramic-stitcher",
+    "@oleg_svetlichnyi/expo-icloud-storage",
+    "@orbital-systems/react-native-esp-idf-provisioning",
+    "@oxy.so/bloom",
+    "@playerdata/react-native-mcu-manager",
+    "@prisma/react-native",
+    "@react-native-ai/mlc",
+    "@react-native-community/datetimepicker",
+    "@react-native-firebase/analytics",
+    "@react-native-firebase/app",
+    "@react-native-firebase/app-check",
+    "@react-native-firebase/app-distribution",
+    "@react-native-firebase/auth",
+    "@react-native-firebase/crashlytics",
+    "@react-native-firebase/messaging",
+    "@react-native-firebase/perf",
+    "@react-native-google-signin/google-signin",
+    "@react-native-seoul/masonry-list",
+    "@reactvision/react-viro",
+    "@rnmapbox/maps",
+    "@rnw-community/react-native-payments",
+    "@roman.sytnyk/blur-app-in-recents",
+    "@sbaiahmed1/react-native-biometrics",
+    "@sentry/react-native",
+    "@siteed/audio-studio",
+    "@siteed/audio-ui",
+    "@siteed/expo-audio-stream",
+    "@situm/react-native",
+    "@softwhere-uz/react-native-myid",
+    "@stefanmartin/expo-video-compress",
+    "@stefanmartin/expo-video-watermark",
+    "@stripe/stripe-react-native",
+    "@survicate/react-native-survicate",
+    "@twilio/voice-react-native-sdk",
+    "@vonovak/react-native-theme-control",
+    "@wcisco17/react-native-animation-video",
+    "@wwdrew/expo-android-account-manager",
+    "@wwdrew/expo-android-shared-preferences",
+    "@wwdrew/expo-spotify-sdk",
+    "@xmtp/react-native-sdk",
+    "apple-health",
+    "bitmovin-player-react-native",
+    "burnt",
+    "expo-age-range",
+    "expo-alikit",
+    "expo-aliyun-oss",
+    "expo-aliyun-push",
+    "expo-alternate-app-icons",
+    "expo-android-keyboard-fix",
+    "expo-android-pedometer",
+    "expo-apple-authentication",
+    "expo-application",
+    "expo-asset",
+    "expo-assistant-functions",
+    "expo-atlas",
+    "expo-atproto-auth",
+    "expo-audio",
+    "expo-av",
+    "expo-azure-blob-storage",
+    "expo-background-fetch",
+    "expo-background-task",
+    "expo-barcode",
+    "expo-barcode-recognizer",
+    "expo-battery",
+    "expo-beacon",
+    "expo-better-auth-passkey",
+    "expo-block-store",
+    "expo-blur",
+    "expo-bonjour",
+    "expo-brightness",
+    "expo-build-properties",
+    "expo-cached-image",
+    "expo-cafebazaar-auth",
+    "expo-calendar",
+    "expo-callkit-telecom",
+    "expo-camera",
+    "expo-cellular",
+    "expo-circular-reveal",
+    "expo-click-outside",
+    "expo-clipboard",
+    "expo-constants",
+    "expo-contacts",
+    "expo-core-spotlight",
+    "expo-crypto",
+    "expo-custom-assets",
+    "expo-dev-client",
+    "expo-device",
+    "expo-document-picker",
+    "expo-drag-drop-content-view",
+    "expo-drizzle-studio-plugin",
+    "expo-dynamic-app-icon",
+    "expo-emoji-picker",
+    "expo-esim-utils",
+    "expo-file-system",
+    "expo-finance-kit",
+    "expo-font",
+    "expo-foreground-actions",
+    "expo-gaode-map",
+    "expo-gaode-map-navigation",
+    "expo-gaode-map-search",
+    "expo-gbk-converter",
+    "expo-gl",
+    "expo-glass-effect",
+    "expo-googlenearby-connection",
+    "expo-gradle-properties",
+    "expo-haptics",
+    "expo-hardware-buttons",
+    "expo-health-connect",
+    "expo-helium",
+    "expo-horizon-core",
+    "expo-horizon-location",
+    "expo-horizon-notifications",
+    "expo-iap",
+    "expo-iap-utils",
+    "expo-icloud-storage",
+    "expo-ignore-battery-optimizations",
+    "expo-image",
+    "expo-image-manipulator",
+    "expo-image-picker",
+    "expo-in-app-updates",
+    "expo-inline-video",
+    "expo-insights",
+    "expo-intent-launcher",
+    "expo-ios-visual-blur",
+    "expo-iperf",
+    "expo-keep-awake",
+    "expo-key-event",
+    "expo-libghostty",
+    "expo-libmpv",
+    "expo-libvlc-player",
+    "expo-linear-gradient",
+    "expo-liquid-glass-native",
+    "expo-liquid-glass-view",
+    "expo-lite-data-store",
+    "expo-live-activity",
+    "expo-livekit-screen-share",
+    "expo-local-authentication",
+    "expo-localization",
+    "expo-location",
+    "expo-location-picker",
+    "expo-lux-sensor",
+    "expo-mail-composer",
+    "expo-manifests",
+    "expo-maps",
+    "expo-maps-routes",
+    "expo-media-control",
+    "expo-media-library",
+    "expo-mesh-gradient",
+    "expo-mqtt",
+    "expo-music-picker",
+    "expo-native-alipay",
+    "expo-native-emojis-popup",
+    "expo-native-sheet-emojis",
+    "expo-native-storage",
+    "expo-native-wechat",
+    "expo-navigation-bar",
+    "expo-network",
+    "expo-notifee-plugin",
+    "expo-notifications",
+    "expo-numerator",
+    "expo-onboarding",
+    "expo-paperkit",
+    "expo-passkey",
+    "expo-paste-input",
+    "expo-pencilkit-ui",
+    "expo-phone-number-hint",
+    "expo-pip",
+    "expo-playcore-in-app-update",
+    "expo-pretext",
+    "expo-print",
+    "expo-privacy-image",
+    "expo-qq",
+    "expo-quick-actions",
+    "expo-resolve-url",
+    "expo-reverse-tcp",
+    "expo-rich-input",
+    "expo-roomplan",
+    "expo-router",
+    "expo-ruler",
+    "expo-running-kit",
+    "expo-screen-capture",
+    "expo-screen-corner-radius",
+    "expo-screen-orientation",
+    "expo-secure-store",
+    "expo-selectable-text",
+    "expo-sensors",
+    "expo-share-extension",
+    "expo-share-intent",
+    "expo-sharing",
+    "expo-shazamkit",
+    "expo-skoverlay",
+    "expo-sms",
+    "expo-speech",
+    "expo-speech-recognition",
+    "expo-spellchecker",
+    "expo-splash-screen",
+    "expo-sqlite",
+    "expo-squircle-view",
+    "expo-stable-diffusion",
+    "expo-status-bar",
+    "expo-store-country",
+    "expo-store-review",
+    "expo-stream-audio",
+    "expo-superwall",
+    "expo-svga",
+    "expo-symbols",
+    "expo-system-ui",
+    "expo-targets",
+    "expo-task-manager",
+    "expo-tencent-trtc",
+    "expo-testflight",
+    "expo-three",
+    "expo-totp",
+    "expo-tracking-transparency",
+    "expo-translate-text",
+    "expo-truecaller",
+    "expo-tts-file",
+    "expo-tvos-search",
+    "expo-ui-swipe-actions",
+    "expo-updates",
+    "expo-vector-search",
+    "expo-video",
+    "expo-video-encoder",
+    "expo-video-metadata",
+    "expo-video-player",
+    "expo-video-thumbnails",
+    "expo-video-thumbref",
+    "expo-watermark",
+    "expo-weather-kit",
+    "expo-web-browser",
+    "expo-wechat",
+    "expo-widgets",
+    "expo-yandex-mapkit",
+    "freerasp-react-native",
+    "jest-expo",
+    "onesignal-expo-plugin",
+    "patch-project",
+    "react-native-add-calendar-event",
+    "react-native-android-widget",
+    "react-native-app-clip",
+    "react-native-apple-image-playground",
+    "react-native-appwrite",
+    "react-native-auto-skeleton",
+    "react-native-capture-protection",
+    "react-native-cloud-storage",
+    "react-native-custom-splash",
+    "react-native-device-attest",
+    "react-native-expo-braintree",
+    "react-native-fbsdk-next",
+    "react-native-file-viewer-turbo",
+    "react-native-google-auth",
+    "react-native-google-fit",
+    "react-native-google-maps-plus",
+    "react-native-google-mobile-ads",
+    "react-native-health-connect",
+    "react-native-here-explore",
+    "react-native-hotkeys",
+    "react-native-icloud-kit",
+    "react-native-image-colors",
+    "react-native-intlayer",
+    "react-native-leap",
+    "react-native-legal",
+    "react-native-litert-lm",
+    "react-native-magic-tab-bar",
+    "react-native-moyasar-apple-pay",
+    "react-native-nano-icons",
+    "react-native-navigation-mode",
+    "react-native-nitro-auth",
+    "react-native-nitro-geolocation",
+    "react-native-nitro-google-signin",
+    "react-native-notify-kit",
+    "react-native-nsfw-detector",
+    "react-native-ometria",
+    "react-native-orientation-director",
+    "react-native-peekie",
+    "react-native-place-picker",
+    "react-native-plaid-link-sdk",
+    "react-native-pose-detection",
+    "react-native-quick-crypto",
+    "react-native-screenguard",
+    "react-native-splash-screen-newarch",
+    "react-native-svg-asset-plugin",
+    "react-native-swipeable-actions",
+    "react-native-tiktok",
+    "react-native-tuner-engine",
+    "react-native-twilio-video-webrtc",
+    "react-native-v8",
+    "react-native-vector-image",
+    "react-native-version-check-expo",
+    "react-native-view-recorder",
+    "react-native-viewport-metrics",
+    "react-native-whip-whep",
+    "reanimated-color-picker",
+    "rn-alarm-kit",
+    "rn-fade-wrapper",
+    "rn-neo",
+    "rn-pdf-reader-js",
+    "rn-watch-connect",
+    "stream-chat-expo",
+    "swiftui-react-native",
+    "tinybase",
+    "unified-ble-manager",
+    "ytdlp-react-native"
+  ],
+  "expo-apple-authentication": [
+    "@clerk/expo"
+  ],
+  "expo-application": [
+    "@swmansion/react-native-detour",
+    "@walletconnect/react-native-compat",
+    "expo-auth-session",
+    "expo-horizon-notifications",
+    "expo-notifications",
+    "expo-passkey",
+    "posthog-react-native"
+  ],
+  "expo-asset": [
+    "@appandflow/expo-image-cropping",
+    "@wcisco17/react-native-animation-video",
+    "expo",
+    "expo-2d-context",
+    "expo-asset-utils",
+    "expo-audio",
+    "expo-image-editor",
+    "expo-three",
+    "react-native-maplibre-gl-js",
+    "react-native-shine"
+  ],
+  "expo-asset-utils": [
+    "expo-pixi",
+    "expo-three"
+  ],
+  "expo-audio": [
+    "@kesha-antonov/react-native-chat",
+    "@lodev09/expo-recorder",
+    "@platform-blocks/react-ui-library",
+    "@sendbird/uikit-react-native",
+    "stream-chat-expo"
+  ],
+  "expo-auth-session": [
+    "@clerk/expo"
+  ],
+  "expo-av": [
+    "@sendbird/uikit-react-native",
+    "@wcisco17/react-native-animation-video",
+    "expo-video-player",
+    "stream-chat-expo"
+  ],
+  "expo-blur": [
+    "@oxy.so/bloom",
+    "@wcisco17/react-native-animation-video",
+    "expo-onboarding",
+    "heroui-native",
+    "react-native-halo-menu",
+    "react-native-hold-menu",
+    "react-native-nsfw-detector",
+    "react-native-pip-view"
+  ],
+  "expo-build-properties": [
+    "@qvac/sdk",
+    "expo-libmpv",
+    "pushy-expo-plugin",
+    "react-native-twilio-video-webrtc"
+  ],
+  "expo-camera": [
+    "@notchip/expo-panoramic-stitcher"
+  ],
+  "expo-checkbox": [
+    "react-native-custom-select"
+  ],
+  "expo-clipboard": [
+    "@axonpack/expo-devtools",
+    "@codearcade/expo-markdown",
+    "@sendbird/uikit-react-native",
+    "@swmansion/react-native-detour",
+    "stream-chat-expo"
+  ],
+  "expo-constants": [
+    "@better-auth/expo",
+    "@bugsnag/expo",
+    "@bugsnag/expo-performance",
+    "@clerk/expo",
+    "@expo/router-server",
+    "@swmansion/react-native-detour",
+    "@wcisco17/react-native-animation-video",
+    "expo",
+    "expo-asset",
+    "expo-auth-session",
+    "expo-azure-blob-storage",
+    "expo-horizon-notifications",
+    "expo-linking",
+    "expo-lite-data-store",
+    "expo-notifications",
+    "expo-router",
+    "expo-share-intent",
+    "expo-targets",
+    "native-notify",
+    "react-native-nitro-auth",
+    "react-native-suggester",
+    "react-native-version-check-expo",
+    "rn-pdf-reader-js"
+  ],
+  "expo-crypto": [
+    "@clerk/expo",
+    "@react-native-blocks/core",
+    "bitmovin-player-react-native",
+    "expo-auth-session",
+    "expo-lite-data-store",
+    "expo-passkey",
+    "supastash"
+  ],
+  "expo-dev-client": [
+    "expo-updates"
+  ],
+  "expo-device": [
+    "@appandflow/expo-camera-characteristics",
+    "@exponotify/sdk",
+    "@kesha-antonov/react-native-chat",
+    "@qvac/sdk",
+    "@swmansion/react-native-detour",
+    "expo-foreground-actions",
+    "expo-passkey",
+    "native-notify",
+    "posthog-react-native"
+  ],
+  "expo-document-picker": [
+    "@ankhorage/zora",
+    "@platform-blocks/react-ui-library",
+    "@sendbird/uikit-react-native",
+    "stream-chat-expo"
+  ],
+  "expo-file-system": [
+    "@appandflow/expo-image-cropping",
+    "@couch-kit/host",
+    "@notchip/expo-panoramic-stitcher",
+    "@pose-tracker/react-native-pose-estimation",
+    "@pose-tracker/react-native-pose-estimation-light",
+    "@qvac/sdk",
+    "@sendbird/uikit-react-native",
+    "@tryheliumai/paywall-sdk-react-native",
+    "expo",
+    "expo-asset-utils",
+    "expo-azure-blob-storage",
+    "expo-cached-image",
+    "expo-image-editor",
+    "expo-lite-data-store",
+    "expo-three",
+    "expo-video-metadata",
+    "posthog-react-native",
+    "react-native-appwrite",
+    "rn-pdf-reader-js",
+    "stream-chat-expo"
+  ],
+  "expo-font": [
+    "@dahab-tech/react-native-media-editor",
+    "@expo/router-server",
+    "@expo/vector-icons",
+    "@oxy.so/bloom",
+    "expo",
+    "expo-asset-utils",
+    "expo-symbols"
+  ],
+  "expo-gl": [
+    "expo-image-editor",
+    "expo-pixi",
+    "expo-three",
+    "gl-react-expo",
+    "gl-react-native"
+  ],
+  "expo-glass-effect": [
+    "@oxy.so/bloom",
+    "expo-router",
+    "react-native-magic-tab-bar"
+  ],
+  "expo-haptics": [
+    "@howljs/calendar-kit",
+    "@notchip/expo-panoramic-stitcher",
+    "@oxy.so/bloom",
+    "@platform-blocks/react-ui-library",
+    "react-native-hold-menu",
+    "react-native-magic-tab-bar",
+    "react-native-resource-calendar",
+    "stream-chat-expo"
+  ],
+  "expo-horizon-core": [
+    "expo-horizon-location",
+    "expo-horizon-notifications"
+  ],
+  "expo-image": [
+    "@blazejkustra/react-native-onboarding",
+    "@oxy.so/bloom"
+  ],
+  "expo-image-manipulator": [
+    "@appandflow/expo-image-cropping",
+    "@sendbird/uikit-react-native",
+    "expo-image-editor",
+    "stream-chat-expo"
+  ],
+  "expo-image-picker": [
+    "@ankhorage/zora",
+    "@kesha-antonov/react-native-chat",
+    "@react-native-blocks/blocks",
+    "@sendbird/uikit-react-native",
+    "expo-azure-blob-storage",
+    "stream-chat-expo"
+  ],
+  "expo-json-utils": [
+    "expo-manifests"
+  ],
+  "expo-keep-awake": [
+    "bitmovin-player-react-native",
+    "expo"
+  ],
+  "expo-linear-gradient": [
+    "@dietime/react-native-date-picker",
+    "@platform-blocks/react-ui-library",
+    "expo-skeleton-loading",
+    "react-native-gauge",
+    "react-native-gifted-charts",
+    "react-native-skeleton-content",
+    "react-native-smart-placeholder"
+  ],
+  "expo-linking": [
+    "@better-auth/expo",
+    "expo-auth-session",
+    "expo-router",
+    "expo-share-intent",
+    "react-native-preflight",
+    "react-native-ridge-navigation"
+  ],
+  "expo-live-activity": [
+    "@seenn/react-native"
+  ],
+  "expo-local-authentication": [
+    "@clerk/expo",
+    "expo-passkey"
+  ],
+  "expo-localization": [
+    "@swmansion/react-native-detour",
+    "expo-numerator",
+    "posthog-react-native",
+    "react-native-version-check-expo"
+  ],
+  "expo-location": [
+    "@teovilla/react-native-web-maps"
+  ],
+  "expo-manifests": [
+    "expo-dev-client",
+    "expo-updates"
+  ],
+  "expo-maps": [
+    "expo-maps-routes"
+  ],
+  "expo-media-library": [
+    "@sendbird/uikit-react-native",
+    "stream-chat-expo"
+  ],
+  "expo-network": [
+    "@better-auth/expo",
+    "@couch-kit/host"
+  ],
+  "expo-notifications": [
+    "@exponotify/sdk",
+    "@pachun/use-expo-push-notifications",
+    "@sendbird/uikit-react-native",
+    "expo-callkit-telecom",
+    "native-notify"
+  ],
+  "expo-router": [
+    "@expo/router-server",
+    "@oxy.so/bloom",
+    "@sentry/react-native",
+    "react-native-grab",
+    "react-native-magic-tab-bar",
+    "react-native-preflight",
+    "react-native-screen-choreography"
+  ],
+  "expo-screen-orientation": [
+    "@appandflow/react-native-magic-scroll",
+    "@expo/match-media",
+    "@flixsrota/player"
+  ],
+  "expo-secure-store": [
+    "@better-auth/expo",
+    "@clerk/expo",
+    "expo-lite-data-store",
+    "expo-passkey",
+    "react-native-apikit",
+    "react-native-chatgpt"
+  ],
+  "expo-sensors": [
+    "@notchip/expo-panoramic-stitcher",
+    "react-native-accelerometer-parallax",
+    "react-native-mapa"
+  ],
+  "expo-sharing": [
+    "stream-chat-expo"
+  ],
+  "expo-sqlite": [
+    "@vitrion/expo-state-mcp",
+    "drizzle-orm",
+    "expo-drizzle-studio-plugin",
+    "expo-lite-data-store",
+    "supastash",
+    "tinybase"
+  ],
+  "expo-status-bar": [
+    "@platform-blocks/react-ui-library",
+    "react-native-ridge-navigation"
+  ],
+  "expo-structured-headers": [
+    "expo-updates"
+  ],
+  "expo-symbols": [
+    "@oxy.so/bloom",
+    "expo-onboarding",
+    "expo-router"
+  ],
+  "expo-task-manager": [
+    "expo-background-fetch",
+    "expo-background-task"
+  ],
+  "expo-updates": [
+    "@pachun/simple-expo-update",
+    "@sentry/react-native",
+    "posthog-react-native"
+  ],
+  "expo-video": [
+    "@dahab-tech/react-native-media-editor",
+    "@kesha-antonov/react-native-chat",
+    "@oxy.so/bloom",
+    "@sendbird/uikit-react-native",
+    "rn-story",
+    "stream-chat-expo"
+  ],
+  "expo-video-thumbnails": [
+    "@sendbird/uikit-react-native"
+  ],
+  "expo-web-browser": [
+    "@atproto/oauth-client-expo",
+    "@better-auth/expo",
+    "@clerk/expo",
+    "expo-atproto-auth",
+    "expo-auth-session"
+  ],
+  "expo-widgets": [
+    "expo-targets",
+    "react-native-rasterized-widgets"
+  ],
+  "fast-deep-equal": [
+    "@breeffy/calendars",
+    "@react-navigation/core",
+    "@react-navigation/devtools",
+    "@react-navigation/native",
+    "easy-peasy",
+    "expo-router",
+    "react-native-responsive-linechart",
+    "supastash"
+  ],
+  "fast-is-equal": [
+    "react-native-tree-multi-select"
+  ],
+  "geolib": [
+    "@dev-event/react-native-maps-draw"
+  ],
+  "gl-react-expo": [
+    "gl-react-native"
+  ],
+  "gl-react-native": [
+    "react-native-gl-image-filters"
+  ],
+  "html-entities": [
+    "@cantoo/pdf-lib",
+    "@flyerhq/react-native-link-preview",
+    "@shoutem/ui",
+    "react-native-fence-html",
+    "react-native-marked",
+    "react-native-rename"
+  ],
+  "i18n-js": [
+    "react-native-i18n"
+  ],
+  "i18next": [
+    "react-i18next",
+    "react-native-dev-lens",
+    "react-native-moyasar-sdk"
+  ],
+  "immer": [
+    "@aws-amplify/datastore",
+    "@reduxjs/toolkit",
+    "@ukladjs/core",
+    "easy-peasy",
+    "react-native-url-router",
+    "react-native-xenon",
+    "zustand"
+  ],
+  "jotai": [
+    "react-native-maplibre-gl-js"
+  ],
+  "jwt-decode": [
+    "@criipto/verify-expo",
+    "@okta/okta-react-native",
+    "react-native-auth0",
+    "react-native-azure-auth"
+  ],
+  "livekit-client": [
+    "@livekit/components-react",
+    "@livekit/react-native",
+    "ultravox-react-native"
+  ],
+  "llama.rn": [
+    "@react-native-ai/llama",
+    "react-native-audio-agent"
+  ],
+  "lodash": [
+    "@10play/tentap-editor",
+    "@aws-amplify/notifications",
+    "@carlos3g/element-dropdown",
+    "@expo/ex-navigation",
+    "@glyw/react-native-tabbed-section-list",
+    "@monicon/core",
+    "@react-native-community/audio-toolkit",
+    "@sectiontn/otp-input",
+    "@shoutem/ui",
+    "@simform_solutions/react-native-audio-waveform",
+    "ahooks",
+    "detox",
+    "formik",
+    "i18n-js",
+    "jest-expo",
+    "react-native-button-component",
+    "react-native-calendars",
+    "react-native-confirmation-code-input",
+    "react-native-debugger",
+    "react-native-deck-swiper",
+    "react-native-easy-grid",
+    "react-native-element-dropdown",
+    "react-native-emoji-picker",
+    "react-native-falling-drawer",
+    "react-native-form0",
+    "react-native-gesture-detector",
+    "react-native-interactable-reanimated",
+    "react-native-keyboard-input",
+    "react-native-mapa",
+    "react-native-markdown",
+    "react-native-media-clipboard",
+    "react-native-modal-popover",
+    "react-native-multiple-select",
+    "react-native-navigation",
+    "react-native-offline",
+    "react-native-parallax",
+    "react-native-pathjs-charts",
+    "react-native-phone-input",
+    "react-native-ratings",
+    "react-native-resource-calendar",
+    "react-native-router-flux",
+    "react-native-see-more-inline",
+    "react-native-simple-markdown",
+    "react-native-sticky-table",
+    "react-native-story-view",
+    "react-native-style-tachyons",
+    "react-native-swipe-calendar",
+    "react-native-translator",
+    "react-native-twopane-navigation",
+    "react-native-ui-datepicker",
+    "react-native-ui-lib",
+    "react-native-version-check",
+    "react-native-video-controls",
+    "react-native-video-processing",
+    "react-native-web-jsonschema-form",
+    "reactxp",
+    "sharingan-rn-modal-dropdown",
+    "stallion-cli",
+    "tape-cli"
+  ],
+  "lottie-react-native": [
+    "@attarchi/react-native-lottie-splash-screen",
+    "@oxy.so/bloom",
+    "@rn-toolkit/react-native-lottie-splash-screen",
+    "@shoutem/ui"
+  ],
+  "lucide-react-native": [
+    "expo-modern-table"
+  ],
+  "luxon": [
+    "@breeffy/calendars",
+    "@breeffy/pickers",
+    "@howljs/calendar-kit"
+  ],
+  "metro": [
+    "@glyw/react-native-tabbed-section-list",
+    "@sentry/react-native",
+    "react-native-bundle-discovery",
+    "react-native-svg-asset-plugin",
+    "uniwind"
+  ],
+  "metro-bridge": [
+    "metro-mcp"
+  ],
+  "mitt": [
+    "@marceloterreiro/flash-calendar",
+    "react-native-copilot",
+    "rn-tourguide"
+  ],
+  "native-base": [
+    "react-native-form0"
+  ],
+  "nativewind": [
+    "@legendapp/motion",
+    "@nkzw/stack",
+    "@oxy.so/bloom",
+    "react-native-ease"
+  ],
+  "navigation": [
+    "navigation-react",
+    "navigation-react-native",
+    "react-native-ridge-navigation"
+  ],
+  "navigation-react": [
+    "navigation-react-native",
+    "react-native-ridge-navigation"
+  ],
+  "navigation-react-native": [
+    "react-native-ridge-navigation"
+  ],
+  "posthog-react-native-session-replay": [
+    "posthog-react-native"
+  ],
+  "react-compiler-runtime": [
+    "react-native-streaming-message-list",
+    "use-thunk"
+  ],
+  "react-error-boundary": [
+    "react-native-dev-lens"
+  ],
+  "react-freeze": [
+    "react-native-bottom-tabs",
+    "react-native-screens",
+    "react-native-ui-lib"
+  ],
+  "react-hook-form": [
+    "@hookform/resolvers",
+    "react-native-feedback-reporter"
+  ],
+  "react-i18next": [
+    "react-native-dev-lens",
+    "react-native-moyasar-sdk"
+  ],
+  "react-native-accelerometer-parallax": [
+    "react-native-accelerometer-parallax"
+  ],
+  "react-native-action-button": [
+    "react-native-form0"
+  ],
+  "react-native-actions-sheet": [
+    "@shoutem/ui",
+    "react-native-actions-sheet-picker",
+    "react-native-bottom-sheet-stack"
+  ],
+  "react-native-android-location-enabler": [
+    "react-native-form0"
+  ],
+  "react-native-animatable": [
+    "expo-image-crop",
+    "react-native-autocomplete-dropdown",
+    "react-native-falling-drawer",
+    "react-native-lock-screen",
+    "react-native-magnus",
+    "react-native-modal",
+    "react-native-search-header",
+    "react-native-smooth-pincode-input",
+    "react-native-spinner-button",
+    "react-native-star-rating",
+    "react-navigation-heavy-screen"
+  ],
+  "react-native-audio-api": [
+    "@kesha-antonov/react-native-chat",
+    "react-native-audiosprites"
+  ],
+  "react-native-audio-recorder-player": [
+    "@sendbird/uikit-react-native",
+    "react-native-audio-agent",
+    "react-native-voice-activator",
+    "stream-chat-react-native"
+  ],
+  "react-native-auto-height-image": [
+    "expo-image-crop"
+  ],
+  "react-native-background-fetch": [
+    "react-native-background-task"
+  ],
+  "react-native-background-timer": [
+    "react-native-user-inactivity"
+  ],
+  "react-native-bare-kit": [
+    "@qvac/sdk"
+  ],
+  "react-native-ble-plx": [
+    "@matter/react-native"
+  ],
+  "react-native-blob-util": [
+    "@pose-tracker/react-native-pose-estimation",
+    "@pose-tracker/react-native-pose-estimation-light",
+    "@react-native-ai/llama",
+    "react-native-executorch",
+    "react-native-pdf",
+    "react-native-pdf-jsi",
+    "stream-chat-react-native"
+  ],
+  "react-native-bouncy-checkbox": [
+    "react-native-bouncy-checkbox"
+  ],
+  "react-native-button": [
+    "react-native-gifted-form",
+    "react-native-star-rating"
+  ],
+  "react-native-camera": [
+    "react-native-qrcode-scanner"
+  ],
+  "react-native-canvas": [
+    "easyqrcode-react-native"
+  ],
+  "react-native-circular-progress": [
+    "react-native-button-component",
+    "react-native-submit-button"
+  ],
+  "react-native-code-highlighter": [
+    "@hake/react-native-markdown"
+  ],
+  "react-native-code-push": [
+    "@datadog/mobile-react-native-code-push",
+    "react-native-code-push-dev-menu"
+  ],
+  "react-native-collapsible": [
+    "@ant-design/react-native"
+  ],
+  "react-native-color-picker-ios": [
+    "react-native-svg-editor"
+  ],
+  "react-native-confirmation-code-field": [
+    "react-native-ficus-ui"
+  ],
+  "react-native-country-flag": [
+    "react-native-paper-country-picker"
+  ],
+  "react-native-country-picker-modal": [
+    "react-native-phone-entry",
+    "react-native-phone-number-input"
+  ],
+  "react-native-create-thumbnail": [
+    "@sendbird/uikit-react-native",
+    "react-native-feedback-hub"
+  ],
+  "react-native-css": [
+    "@oxy.so/bloom"
+  ],
+  "react-native-device-info": [
+    "@shoutem/ui",
+    "@swmansion/react-native-detour",
+    "insert-affiliate-react-native-sdk",
+    "posthog-react-native",
+    "react-native-check-version",
+    "react-native-debugger",
+    "react-native-executorch",
+    "react-native-onyx",
+    "sp-react-native-in-app-updates"
+  ],
+  "react-native-drawer-layout": [
+    "@react-navigation/drawer",
+    "expo-router"
+  ],
+  "react-native-dualscreeninfo": [
+    "react-native-twopane-navigation",
+    "react-native-twopaneview"
+  ],
+  "react-native-ease": [
+    "react-native-ease-skeleton",
+    "react-native-ease-ticker"
+  ],
+  "react-native-easing-gradient": [
+    "@pagopa/io-app-design-system"
+  ],
+  "react-native-easy-toast": [
+    "react-native-lock-screen"
+  ],
+  "react-native-edge-to-edge": [
+    "react-native-unistyles"
+  ],
+  "react-native-emoji-selector": [
+    "@react-native-blocks/blocks"
+  ],
+  "react-native-enriched-markdown": [
+    "react-native-streamdown"
+  ],
+  "react-native-event-listeners": [
+    "react-native-mirror"
+  ],
+  "react-native-events": [
+    "react-native-spotify-remote"
+  ],
+  "react-native-fast-image": [
+    "@freakycoder/react-native-progressive-fast-image",
+    "react-native-form0",
+    "react-native-rich-modal"
+  ],
+  "react-native-file-access": [
+    "@georstat/react-native-image-cache",
+    "@sendbird/uikit-react-native"
+  ],
+  "react-native-flex-layout": [
+    "@react-native-material/core"
+  ],
+  "react-native-flip-card": [
+    "react-native-credit-card-input"
+  ],
+  "react-native-flipper": [
+    "@shopify/react-native-performance-lists-profiler",
+    "redux-flipper"
+  ],
+  "react-native-fs": [
+    "@pose-tracker/react-native-pose-estimation",
+    "@pose-tracker/react-native-pose-estimation-light",
+    "react-native-3d-model-view",
+    "react-native-audio-agent",
+    "react-native-chunk-upload",
+    "react-native-feedback-hub",
+    "react-native-ota-hot-update",
+    "react-native-photo-upload",
+    "react-native-screenshot-test",
+    "react-native-svg-editor"
+  ],
+  "react-native-full-responsive": [
+    "@fast-base/native"
+  ],
+  "react-native-geolocation-service": [
+    "react-native-form0"
+  ],
+  "react-native-gesture-handler": [
+    "@animatereactnative/marquee",
+    "@ankhorage/zora",
+    "@ant-design/react-native",
+    "@appandflow/expo-image-cropping",
+    "@breeffy/calendars",
+    "@breeffy/pickers",
+    "@cometchat/chat-uikit-react-native",
+    "@crowdlinker/react-native-pager",
+    "@dahab-tech/react-native-media-editor",
+    "@deskbtm/react-native-bottom-sheet",
+    "@epubjs-react-native/core",
+    "@gorhom/bottom-sheet",
+    "@gorhom/paper-onboarding",
+    "@howljs/calendar-kit",
+    "@hyoper/rn-animated-modal",
+    "@impulse-ui-native/toolkit",
+    "@jetrockets/react-native-modal",
+    "@kesha-antonov/react-native-chat",
+    "@likashefqet/react-native-image-zoom",
+    "@lodev09/expo-recorder",
+    "@mathnotes/mobile-ink",
+    "@mindinventory/react-native-awesome-clock",
+    "@novev9/react-native-instagram-stories",
+    "@openspacelabs/react-native-zoomable-view",
+    "@orionarm/react-native-collapse-tabs",
+    "@osamaq/drag-select",
+    "@oxy.so/bloom",
+    "@pagopa/io-app-design-system",
+    "@rainbow-me/animated-charts",
+    "@react-native-blocks/blocks",
+    "@react-native-blocks/core",
+    "@react-navigation/drawer",
+    "@react-navigation/stack",
+    "@shopify/react-native-performance-navigation-drawer",
+    "@shoutem/ui",
+    "@showtime-xyz/tab-view",
+    "@siteed/audio-ui",
+    "@softwhere-uz/react-native-emoji-keyboard",
+    "@splicer97/react-native-switch",
+    "@storybook/react-native",
+    "@storybook/react-native-ui",
+    "@super-calendar/native",
+    "@the-sheet/flash-list-v2",
+    "@the-sheet/the-sheet",
+    "@vibechess/chessboard-native",
+    "@vokhuyet/react-native-messy",
+    "@wcisco17/react-native-animation-video",
+    "@xaui/native",
+    "bottom-sheet-stepper",
+    "expo-image-compare",
+    "expo-modern-table",
+    "expo-router",
+    "expo-skia-charts",
+    "heroui-native",
+    "magic-modal",
+    "pressto",
+    "react-native-3d",
+    "react-native-actions-sheet",
+    "react-native-actions-sheet-picker",
+    "react-native-alright-gallery",
+    "react-native-android-liquid-glass-button",
+    "react-native-android-liquid-glass-range-slider",
+    "react-native-animated-glow",
+    "react-native-animation-catalog",
+    "react-native-awesome-gallery",
+    "react-native-awesome-slider",
+    "react-native-body-parts-anatomy",
+    "react-native-bottom-sheet-stack",
+    "react-native-bread",
+    "react-native-chatty",
+    "react-native-chess-kit",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-country-code-select",
+    "react-native-cupertino-list",
+    "react-native-customizable-toast",
+    "react-native-drag-expand",
+    "react-native-draggable-flatlist",
+    "react-native-draggable-masonry",
+    "react-native-drawer-layout",
+    "react-native-drax",
+    "react-native-effects",
+    "react-native-financial-charts",
+    "react-native-fintech-kit",
+    "react-native-fluid-bottom-bar",
+    "react-native-gallery-preview",
+    "react-native-gallery-toolkit",
+    "react-native-gesture-detector",
+    "react-native-gesture-image-viewer",
+    "react-native-gifted-chat",
+    "react-native-halo-menu",
+    "react-native-head-tab-view",
+    "react-native-header-motion",
+    "react-native-hold-menu",
+    "react-native-image-preview-reanimated",
+    "react-native-images-preview",
+    "react-native-infinite-pager",
+    "react-native-interactable-reanimated",
+    "react-native-kanban-dnd",
+    "react-native-livechart",
+    "react-native-lumen",
+    "react-native-modalfy",
+    "react-native-modalize",
+    "react-native-multi-resource-timeline",
+    "react-native-notificated",
+    "react-native-notifier",
+    "react-native-pan-pinch-view",
+    "react-native-photos-gallery",
+    "react-native-pinch-viewer",
+    "react-native-pip-view",
+    "react-native-pressable-opacity",
+    "react-native-quick-filter",
+    "react-native-quick-preview",
+    "react-native-reactions",
+    "react-native-reanimated-carousel",
+    "react-native-reanimated-dnd",
+    "react-native-reanimated-image-viewer",
+    "react-native-reanimated-modal",
+    "react-native-reanimated-slider",
+    "react-native-reanimated-viewer",
+    "react-native-redash",
+    "react-native-reshuffled",
+    "react-native-resource-calendar",
+    "react-native-responsive-linechart",
+    "react-native-rotary-timer",
+    "react-native-screen-transitions",
+    "react-native-scroll-bottom-sheet",
+    "react-native-scroll-track",
+    "react-native-sheet-transitions",
+    "react-native-simple-line-chart",
+    "react-native-simple-map",
+    "react-native-skia-list",
+    "react-native-smart-grid",
+    "react-native-smooth-collapse",
+    "react-native-sortables",
+    "react-native-sticky-table",
+    "react-native-story-view",
+    "react-native-svg-editor",
+    "react-native-swappable-grid",
+    "react-native-swipe-calendar",
+    "react-native-swipe-list-view",
+    "react-native-tab-view-viewpager-adapter",
+    "react-native-trays",
+    "react-native-ui-lib",
+    "react-native-week-view",
+    "react-native-zoom-grid",
+    "react-native-zoom-reanimated",
+    "reanimated-bottom-sheet",
+    "reanimated-color-picker",
+    "rn-bounceable",
+    "rn-float-box",
+    "rn-segmented-control",
+    "rn-text-touch-highlight",
+    "rn-vertical-slider",
+    "sonner-native",
+    "victory-native"
+  ],
+  "react-native-get-random-values": [
+    "@aws-amplify/react-native",
+    "@fishjam-cloud/react-native-client",
+    "@instantdb/react-native",
+    "@openlv/react-native",
+    "@reown/appkit-wagmi-react-native",
+    "@segment/analytics-react-native",
+    "@segment/sovran-react-native",
+    "@walletconnect/react-native-compat",
+    "mixpanel-react-native",
+    "react-native-agent",
+    "react-native-polyfill-globals"
+  ],
+  "react-native-google-places-autocomplete": [
+    "react-native-gifted-form"
+  ],
+  "react-native-gradients": [
+    "react-native-spinner-button"
+  ],
+  "react-native-haptic-feedback": [
+    "@howljs/calendar-kit",
+    "@pagopa/io-app-design-system",
+    "@rainbow-me/animated-charts",
+    "@shoutem/ui",
+    "react-native-fintech-kit",
+    "react-native-sortables",
+    "react-native-svg-editor",
+    "stream-chat-react-native"
+  ],
+  "react-native-image-crop-picker": [
+    "react-native-feedback-reporter"
+  ],
+  "react-native-image-pan-zoom": [
+    "react-native-image-zoom-viewer"
+  ],
+  "react-native-image-picker": [
+    "@sendbird/uikit-react-native",
+    "@vokhuyet/react-native-messy",
+    "react-native-form0",
+    "react-native-photo-upload",
+    "react-native-svg-editor",
+    "stream-chat-react-native"
+  ],
+  "react-native-image-viewing": [
+    "@flyerhq/react-native-chat-ui"
+  ],
+  "react-native-image-zoom-viewer": [
+    "react-native-form0"
+  ],
+  "react-native-inappbrowser-reborn": [
+    "@react-keycloak/native"
+  ],
+  "react-native-indicators": [
+    "react-native-spinner-button"
+  ],
+  "react-native-infinite-pager": [
+    "react-native-swipe-calendar"
+  ],
+  "react-native-ios-context-menu": [
+    "zeego"
+  ],
+  "react-native-ios-utilities": [
+    "react-native-ios-context-menu",
+    "react-native-ios-popover",
+    "react-native-ios-visual-effect-view",
+    "zeego"
+  ],
+  "react-native-iphone-screen-helper": [
+    "react-native-flash-message"
+  ],
+  "react-native-iphone-x-helper": [
+    "expo-image-crop",
+    "react-native-keyboard-aware-scroll-view",
+    "react-native-photo-browser",
+    "react-native-responsive-fontsize",
+    "react-navigation-collapsible"
+  ],
+  "react-native-is-edge-to-edge": [
+    "@nandorojo/galeria",
+    "react-native-avoid-softinput",
+    "react-native-bootsplash",
+    "react-native-keyboard-controller",
+    "react-native-reanimated"
+  ],
+  "react-native-json-tree": [
+    "react-native-feedback-reporter",
+    "react-native-netwatch"
+  ],
+  "react-native-keyboard-controller": [
+    "@deskbtm/react-native-bottom-sheet",
+    "@kesha-antonov/react-native-chat",
+    "@oxy.so/bloom",
+    "@vokhuyet/react-native-messy",
+    "react-native-bottom-sheet-stack",
+    "react-native-gifted-chat",
+    "react-native-skia-list"
+  ],
+  "react-native-keychain": [
+    "keychain-synced-storage"
+  ],
+  "react-native-legal": [
+    "react-native-audio-agent"
+  ],
+  "react-native-lightbox-v2": [
+    "@shoutem/ui"
+  ],
+  "react-native-linear-gradient": [
+    "@pagopa/io-app-design-system",
+    "@rn-org/react-native-annotated-text",
+    "@shoutem/ui",
+    "@wrack/react-native-tour-guide",
+    "react-native-animated-linear-gradient",
+    "react-native-animation-catalog",
+    "react-native-button-component",
+    "react-native-dynamically-selected-picker",
+    "react-native-form0",
+    "react-native-gifted-charts",
+    "react-native-inapp-inspector",
+    "react-native-reanimated-skeleton",
+    "react-native-shimmer-placeholder",
+    "react-native-skeleton-content-nonexpo",
+    "react-native-skeleton-placeholder"
+  ],
+  "react-native-loading-spinner-overlay": [
+    "react-native-webbrowser"
+  ],
+  "react-native-localize": [
+    "@cometchat/chat-uikit-react-native",
+    "posthog-react-native"
+  ],
+  "react-native-logs": [
+    "react-native-maplibre-gl-js"
+  ],
+  "react-native-maps": [
+    "@siposdani87/expo-maps-polygon-editor",
+    "@teovilla/react-native-web-maps",
+    "react-native-better-clustering",
+    "react-native-map-clustering",
+    "react-native-maps-directions",
+    "react-native-maps-routes",
+    "rn-maps-clustering"
+  ],
+  "react-native-markdown-display": [
+    "@cometchat/chat-uikit-react-native"
+  ],
+  "react-native-material-ripple": [
+    "react-native-lock-screen",
+    "react-native-material-dropdown"
+  ],
+  "react-native-material-textfield": [
+    "react-native-material-dropdown"
+  ],
+  "react-native-mirror": [
+    "react-native-viewpager-carousel"
+  ],
+  "react-native-mmkv": [
+    "@atproto/oauth-client-expo",
+    "@sendbird/uikit-react-native",
+    "expo-atproto-auth",
+    "react-native-apikit",
+    "react-native-nitro-sync",
+    "react-native-ultrastore",
+    "stan-js",
+    "tinybase"
+  ],
+  "react-native-modal": [
+    "@shoutem/ui",
+    "react-native-bottom-sheet-stack",
+    "react-native-btr",
+    "react-native-ficus-ui",
+    "react-native-magnus",
+    "sharingan-rn-modal-dropdown"
+  ],
+  "react-native-modal-datetime-picker": [
+    "react-native-form0"
+  ],
+  "react-native-modal-popover": [
+    "@ant-design/react-native"
+  ],
+  "react-native-modalbox": [
+    "react-native-insta-story"
+  ],
+  "react-native-month": [
+    "react-native-calendario"
+  ],
+  "react-native-navigation": [
+    "posthog-react-native",
+    "react-native-navigation-drawer-extension",
+    "react-native-navigation-hooks"
+  ],
+  "react-native-nitro-buffer": [
+    "react-native-nitro-crypto",
+    "react-native-nitro-file-system",
+    "react-native-nitro-http-server",
+    "react-native-nitro-net"
+  ],
+  "react-native-nitro-http-server": [
+    "@couch-kit/host"
+  ],
+  "react-native-nitro-image": [
+    "react-native-nitro-web-image",
+    "react-native-vision-camera",
+    "react-native-vision-camera-barcode-scanner"
+  ],
+  "react-native-nitro-modules": [
+    "@afkcodes/timbre-audio-session",
+    "@afkcodes/timbre-cast",
+    "@afkcodes/timbre-media-session",
+    "@afkcodes/timbre-player",
+    "@clarionhq/azure",
+    "@clarionhq/recognizer",
+    "@clarionhq/recorder",
+    "@couch-kit/host",
+    "@dawidzawada/bonjour-zeroconf",
+    "@doko/react-native-pdf-editor",
+    "@flitzinteractive/react-native-nitro-html-pdf",
+    "@gmessier/nitro-speech",
+    "@gmisoftware/react-native-pay",
+    "@iternio/react-native-auto-play",
+    "@kingstinct/react-native-activity-kit",
+    "@kingstinct/react-native-healthkit",
+    "@korekoi/react-native-get-random-values",
+    "@mgcrea/react-native-swiftui",
+    "@mindinventory/react-native-nitro-realtime-audio",
+    "@react-native-runtimes/core",
+    "@react-native-runtimes/state",
+    "@renegades/react-native-tickle",
+    "@rive-app/react-native",
+    "@rs-native-kit/version-check",
+    "@sendbird/uikit-react-native",
+    "@thatkid02/react-native-pdf-viewer",
+    "expo-document-scanner",
+    "munim-bluetooth",
+    "munim-ffmpeg",
+    "munim-maps",
+    "munim-pencilkit",
+    "munim-wifi",
+    "nitrogen",
+    "react-native-add-calendar",
+    "react-native-age-signals",
+    "react-native-audio-agent",
+    "react-native-audio-recorder-player",
+    "react-native-better-clustering",
+    "react-native-better-maps",
+    "react-native-ble-nitro",
+    "react-native-bluetooth-state-manager",
+    "react-native-cesium",
+    "react-native-clamshell",
+    "react-native-compressor",
+    "react-native-continued-task",
+    "react-native-data-scanner",
+    "react-native-expo-braintree",
+    "react-native-fast-io",
+    "react-native-fast-tflite",
+    "react-native-google-maps-plus",
+    "react-native-hyper-markdown",
+    "react-native-iap",
+    "react-native-inappbrowser-nitro",
+    "react-native-leap",
+    "react-native-litert-lm",
+    "react-native-localize-date",
+    "react-native-mmkv",
+    "react-native-nitro-ark",
+    "react-native-nitro-audio-manager",
+    "react-native-nitro-auth",
+    "react-native-nitro-better-auth-passkey",
+    "react-native-nitro-buffer",
+    "react-native-nitro-cloud-uploader",
+    "react-native-nitro-compass",
+    "react-native-nitro-cookies",
+    "react-native-nitro-crypto",
+    "react-native-nitro-device-info",
+    "react-native-nitro-dns",
+    "react-native-nitro-event-kit",
+    "react-native-nitro-fetch",
+    "react-native-nitro-file-system",
+    "react-native-nitro-fs",
+    "react-native-nitro-geocoder",
+    "react-native-nitro-geolocation",
+    "react-native-nitro-godot",
+    "react-native-nitro-google-signin",
+    "react-native-nitro-google-sso",
+    "react-native-nitro-haptics",
+    "react-native-nitro-healthkit",
+    "react-native-nitro-http-server",
+    "react-native-nitro-image",
+    "react-native-nitro-image-colors",
+    "react-native-nitro-image-playground",
+    "react-native-nitro-in-app-browser",
+    "react-native-nitro-inspire-face",
+    "react-native-nitro-ios-alarm-kit",
+    "react-native-nitro-keyevent",
+    "react-native-nitro-map",
+    "react-native-nitro-markdown",
+    "react-native-nitro-media-kit",
+    "react-native-nitro-media-metadata",
+    "react-native-nitro-mlx",
+    "react-native-nitro-net",
+    "react-native-nitro-network-info",
+    "react-native-nitro-notification",
+    "react-native-nitro-ota",
+    "react-native-nitro-player",
+    "react-native-nitro-pose-exercises",
+    "react-native-nitro-rtmp-publisher",
+    "react-native-nitro-screen-recorder",
+    "react-native-nitro-scrypt",
+    "react-native-nitro-sensors-kit",
+    "react-native-nitro-sfsymbols",
+    "react-native-nitro-share-intent",
+    "react-native-nitro-skan-referrer",
+    "react-native-nitro-sound",
+    "react-native-nitro-speech",
+    "react-native-nitro-sqlite",
+    "react-native-nitro-sse",
+    "react-native-nitro-sync",
+    "react-native-nitro-text",
+    "react-native-nitro-toast",
+    "react-native-nitro-totp",
+    "react-native-nitro-udp",
+    "react-native-nitro-unzip",
+    "react-native-nitro-vision-kit",
+    "react-native-nitro-wakeword",
+    "react-native-nitro-wallpaper",
+    "react-native-nitro-web-image",
+    "react-native-nitro-zlib",
+    "react-native-ocr-fast",
+    "react-native-omni",
+    "react-native-onyx",
+    "react-native-openwakeword",
+    "react-native-pdf-sdk",
+    "react-native-play-age-range-declaration",
+    "react-native-quick-crypto",
+    "react-native-reshuffled",
+    "react-native-s3-bg-uploader",
+    "react-native-sensitive-info",
+    "react-native-shared-transition",
+    "react-native-signal-scorer-lite",
+    "react-native-sportscar",
+    "react-native-ssl-manager",
+    "react-native-superconfig",
+    "react-native-ultrastore",
+    "react-native-unistyles",
+    "react-native-variable-blur",
+    "react-native-video-to-audio",
+    "react-native-vision-camera",
+    "react-native-vision-camera-barcode-scanner",
+    "react-native-vision-camera-face-detector",
+    "react-native-vision-camera-location",
+    "react-native-vision-camera-resizer",
+    "react-native-vision-camera-worklets",
+    "react-native-voice-activator",
+    "rn-nitro-location-enabler",
+    "vision-camera-ocr-plugin"
+  ],
+  "react-native-nitro-sound": [
+    "@sendbird/uikit-react-native",
+    "stream-chat-react-native"
+  ],
+  "react-native-nitro-sqlite": [
+    "react-native-onyx",
+    "supastash"
+  ],
+  "react-native-onesignal": [
+    "onesignal-expo-plugin"
+  ],
+  "react-native-orientation-locker": [
+    "@flixsrota/player",
+    "react-native-shine"
+  ],
+  "react-native-pager-view": [
+    "@orionarm/react-native-collapse-tabs",
+    "@react-navigation/material-top-tabs",
+    "@showtime-xyz/tab-view",
+    "@vokhuyet/react-native-messy",
+    "react-native-animation-catalog",
+    "react-native-collapsible-tab-view",
+    "react-native-ficus-ui",
+    "react-native-infinite-material-tab",
+    "react-native-infinite-tab-view",
+    "react-native-paper-tabs",
+    "react-native-tab-view",
+    "react-native-url-router"
+  ],
+  "react-native-paper": [
+    "react-native-netwatch",
+    "react-native-paper-autocomplete",
+    "react-native-paper-country-picker",
+    "react-native-paper-dates",
+    "react-native-paper-tabs",
+    "sharingan-rn-modal-dropdown"
+  ],
+  "react-native-parsed-text": [
+    "@flyerhq/react-native-chat-ui",
+    "@vokhuyet/react-native-messy"
+  ],
+  "react-native-permissions": [
+    "@babylonjs/react-native",
+    "@dr.pogodin/react-native-audio",
+    "@sendbird/uikit-react-native",
+    "react-native-audio-agent",
+    "react-native-permission-gate",
+    "react-native-permission-handler",
+    "react-native-qrcode-scanner"
+  ],
+  "react-native-picker-select": [
+    "react-native-ficus-ui"
+  ],
+  "react-native-platform-touchable": [
+    "react-native-material-backdrop-modal"
+  ],
+  "react-native-polyfill-globals": [
+    "@matter/react-native"
+  ],
+  "react-native-progress": [
+    "react-native-gauge",
+    "react-native-photo-browser"
+  ],
+  "react-native-purchases": [
+    "@tryheliumai/paywall-sdk-react-native",
+    "expo-helium",
+    "react-native-purchases-ui"
+  ],
+  "react-native-quick-base64": [
+    "@craftzdog/react-native-buffer",
+    "@prisma/react-native",
+    "pouchdb-adapter-react-native-sqlite",
+    "react-native-quick-crypto"
+  ],
+  "react-native-quick-crypto": [
+    "@matter/react-native",
+    "expo-lite-data-store",
+    "react-native-quick-aws4"
+  ],
+  "react-native-quick-sqlite": [
+    "react-native-quick-websql"
+  ],
+  "react-native-radio-buttons-group": [
+    "react-native-btr"
+  ],
+  "react-native-randombytes": [
+    "react-native-crypto"
+  ],
+  "react-native-reanimated": [
+    "@ahmat-2000/react-native-onboarding",
+    "@animatereactnative/marquee",
+    "@animatereactnative/stagger",
+    "@animicons/react-native",
+    "@ankhorage/zora",
+    "@ant-design/react-native",
+    "@appandflow/expo-image-cropping",
+    "@appandflow/react-native-magic-scroll",
+    "@azzapp/react-native-skia-video",
+    "@blazejkustra/react-native-onboarding",
+    "@breeffy/calendars",
+    "@breeffy/pickers",
+    "@brijen/react-native-multistep",
+    "@codeherence/react-native-header",
+    "@crowdlinker/react-native-pager",
+    "@dahab-tech/react-native-media-editor",
+    "@deskbtm/react-native-bottom-sheet",
+    "@draftbit/ui",
+    "@edwardloopez/react-native-coachmark",
+    "@georstat/react-native-image-cache",
+    "@gorhom/bottom-sheet",
+    "@gorhom/paper-onboarding",
+    "@howljs/calendar-kit",
+    "@hyoper/rn-animated-modal",
+    "@impulse-ui-native/toolkit",
+    "@jetrockets/react-native-modal",
+    "@kesha-antonov/react-native-chat",
+    "@kolking/react-native-parallax-swiper",
+    "@likashefqet/react-native-image-zoom",
+    "@lodev09/expo-recorder",
+    "@lodev09/react-native-true-sheet",
+    "@mathnotes/mobile-ink",
+    "@mindinventory/react-native-awesome-clock",
+    "@mindinventory/react-native-card-animation",
+    "@mindinventory/react-native-tab-bar-interaction",
+    "@mustapha-ghlissi/react-native-accordion",
+    "@mustapha-ghlissi/react-native-select-picker",
+    "@novev9/react-native-instagram-stories",
+    "@openspacelabs/react-native-zoomable-view",
+    "@orionarm/react-native-collapse-tabs",
+    "@osamaq/drag-select",
+    "@oxy.so/bloom",
+    "@pachun/reanimated-worklet-capture-guard",
+    "@pagopa/io-app-design-system",
+    "@platform-blocks/charts",
+    "@platform-blocks/react-ui-library",
+    "@rainbow-me/animated-charts",
+    "@react-native-blocks/core",
+    "@react-navigation/drawer",
+    "@shopify/react-native-performance-navigation-drawer",
+    "@shopify/react-native-skia",
+    "@showtime-xyz/tab-view",
+    "@siteed/audio-ui",
+    "@softwhere-uz/react-native-emoji-keyboard",
+    "@splicer97/react-native-switch",
+    "@storybook/react-native",
+    "@storybook/react-native-ui",
+    "@super-calendar/native",
+    "@the-sheet/embedded-stack-navigator",
+    "@the-sheet/flash-list-v2",
+    "@the-sheet/the-sheet",
+    "@vega-ui/react-native",
+    "@vibechess/chessboard-native",
+    "@vokhuyet/react-native-messy",
+    "@wcisco17/react-native-animation-video",
+    "@xaui/native",
+    "bottom-sheet-stepper",
+    "expo-gl",
+    "expo-image-compare",
+    "expo-modern-table",
+    "expo-pretext",
+    "expo-router",
+    "expo-skeleton-loading",
+    "expo-skia-charts",
+    "expo-thinking-orbs",
+    "heart-switch-react-native",
+    "heroui-native",
+    "magic-modal",
+    "moti",
+    "motion-on-native",
+    "number-flow-react-native",
+    "pressto",
+    "react-native-accelerometer-parallax",
+    "react-native-actions-sheet",
+    "react-native-alert-queue",
+    "react-native-alright-gallery",
+    "react-native-android-liquid-glass-button",
+    "react-native-android-liquid-glass-range-slider",
+    "react-native-animateable-text",
+    "react-native-animated-glow",
+    "react-native-animated-observer",
+    "react-native-animated-rolling-numbers",
+    "react-native-animated-stopwatch-timer",
+    "react-native-animation-catalog",
+    "react-native-awesome-gallery",
+    "react-native-awesome-slider",
+    "react-native-better-clustering",
+    "react-native-body-parts-anatomy",
+    "react-native-bottom-sheet-stack",
+    "react-native-bread",
+    "react-native-chat-typing-indicator",
+    "react-native-chatty",
+    "react-native-checkbox-reanimated",
+    "react-native-chess-kit",
+    "react-native-clamshell",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-collapsible-tab-view",
+    "react-native-collapsible-tabs-native",
+    "react-native-country-code-select",
+    "react-native-css-animations",
+    "react-native-customizable-toast",
+    "react-native-cycle-text",
+    "react-native-dotgrid",
+    "react-native-drag-expand",
+    "react-native-draggable-flatlist",
+    "react-native-draggable-masonry",
+    "react-native-drawer-layout",
+    "react-native-drax",
+    "react-native-edge-glow",
+    "react-native-emoji-burst",
+    "react-native-fast-confetti",
+    "react-native-fiesta",
+    "react-native-financial-charts",
+    "react-native-fintech-kit",
+    "react-native-floating-label-input",
+    "react-native-fluid-bottom-bar",
+    "react-native-gallery-preview",
+    "react-native-gallery-toolkit",
+    "react-native-gesture-image-viewer",
+    "react-native-gifted-chat",
+    "react-native-graph",
+    "react-native-halo-menu",
+    "react-native-head-tab-view",
+    "react-native-header-motion",
+    "react-native-highlight-overlay",
+    "react-native-hold-menu",
+    "react-native-image-preview-reanimated",
+    "react-native-images-preview",
+    "react-native-infinite-material-tab",
+    "react-native-infinite-pager",
+    "react-native-infinite-tab-view",
+    "react-native-inner-shadow",
+    "react-native-interactable-reanimated",
+    "react-native-irano",
+    "react-native-kanban-dnd",
+    "react-native-keyboard-controller",
+    "react-native-liquid-gauge",
+    "react-native-livechart",
+    "react-native-loader-collection",
+    "react-native-lumen",
+    "react-native-magic-tab-bar",
+    "react-native-metrify",
+    "react-native-momentum-carousel",
+    "react-native-motion-tabs",
+    "react-native-multi-resource-timeline",
+    "react-native-nitro-pose-exercises",
+    "react-native-notificated",
+    "react-native-ocr-fast",
+    "react-native-pan-pinch-view",
+    "react-native-paper-autocomplete",
+    "react-native-photos-gallery",
+    "react-native-pinch-viewer",
+    "react-native-pip-view",
+    "react-native-pressable-opacity",
+    "react-native-quick-filter",
+    "react-native-quick-preview",
+    "react-native-reactions",
+    "react-native-reanimated-carousel",
+    "react-native-reanimated-dnd",
+    "react-native-reanimated-image-viewer",
+    "react-native-reanimated-modal",
+    "react-native-reanimated-skeleton",
+    "react-native-reanimated-slider",
+    "react-native-reanimated-viewer",
+    "react-native-redash",
+    "react-native-reshuffled",
+    "react-native-resource-calendar",
+    "react-native-rich-modal",
+    "react-native-rotary-timer",
+    "react-native-screen-choreography",
+    "react-native-screen-transitions",
+    "react-native-scroll-bottom-sheet",
+    "react-native-scroll-track",
+    "react-native-shared-transition",
+    "react-native-sheet-transitions",
+    "react-native-shimmer-text",
+    "react-native-shine",
+    "react-native-simple-line-chart",
+    "react-native-simple-map",
+    "react-native-skeleton-content",
+    "react-native-skeleton-content-nonexpo",
+    "react-native-skia-list",
+    "react-native-skottie",
+    "react-native-smart-grid",
+    "react-native-smooth-collapse",
+    "react-native-snowfall",
+    "react-native-sortables",
+    "react-native-sticky-parallax-header",
+    "react-native-sticky-table",
+    "react-native-story-view",
+    "react-native-streaming-message-list",
+    "react-native-svg-editor",
+    "react-native-swappable-grid",
+    "react-native-swipe-calendar",
+    "react-native-swipe-list-view",
+    "react-native-tab-view-viewpager-adapter",
+    "react-native-ticker",
+    "react-native-tooltiplize",
+    "react-native-trays",
+    "react-native-ui-lib",
+    "react-native-unicorn-modals",
+    "react-native-unistyles",
+    "react-native-viewport-metrics",
+    "react-native-vision-camera-skia",
+    "react-native-webgpu",
+    "react-native-webgpu-worklets",
+    "react-native-week-view",
+    "react-native-zoom-grid",
+    "react-native-zoom-reanimated",
+    "reacto-loader",
+    "reanimated-bottom-sheet",
+    "reanimated-collapsible-helpers",
+    "reanimated-color-picker",
+    "rn-bounceable",
+    "rn-float-box",
+    "rn-floating-input",
+    "rn-neo",
+    "rn-scroll-viewport-tracker",
+    "rn-segmented-control",
+    "rn-text-touch-highlight",
+    "rn-vertical-slider",
+    "sonner-native",
+    "victory-native",
+    "vision-camera-image-labeler"
+  ],
+  "react-native-reanimated-carousel": [
+    "@platform-blocks/react-ui-library"
+  ],
+  "react-native-reanimated-table": [
+    "react-native-marked"
+  ],
+  "react-native-record-screen": [
+    "react-native-feedback-hub"
+  ],
+  "react-native-redash": [
+    "@breeffy/calendars",
+    "@breeffy/pickers",
+    "@gorhom/paper-onboarding",
+    "@mindinventory/react-native-tab-bar-interaction",
+    "@wcisco17/react-native-animation-video",
+    "react-native-alright-gallery",
+    "react-native-resegmented-control",
+    "react-native-skeleton-content",
+    "react-native-skeleton-content-nonexpo",
+    "react-native-ui-lib"
+  ],
+  "react-native-render-html": [
+    "@shoutem/ui",
+    "rn-rich-text-editor"
+  ],
+  "react-native-responsive-dimensions": [
+    "react-native-spotlight-tour"
+  ],
+  "react-native-responsive-screen": [
+    "rn-segmented-control"
+  ],
+  "react-native-root-siblings": [
+    "@xterio-sdk/rn-auth",
+    "react-native-root-modal",
+    "react-native-root-toast"
+  ],
+  "react-native-safe-area-context": [
+    "@ahmat-2000/react-native-onboarding",
+    "@ankhorage/zora",
+    "@appandflow/expo-image-cropping",
+    "@appandflow/react-native-magic-scroll",
+    "@appandflow/react-navigation-bottom-sheet",
+    "@audira/carbon-react-native",
+    "@axonpack/expo-devtools",
+    "@blazejkustra/react-native-onboarding",
+    "@codeherence/react-native-header",
+    "@cometchat/chat-uikit-react-native",
+    "@dahab-tech/react-native-media-editor",
+    "@deskbtm/react-native-bottom-sheet",
+    "@fast-base/native",
+    "@flyerhq/react-native-keyboard-accessory-view",
+    "@gluestack-ui/core",
+    "@helpkit/helpkit-help-center-react-native",
+    "@impulse-ui-native/toolkit",
+    "@iterable/react-native-sdk",
+    "@jetrockets/react-native-modal",
+    "@kesha-antonov/react-native-chat",
+    "@linhnguyen96114/react-native-phone-input",
+    "@notchip/expo-panoramic-stitcher",
+    "@novev9/react-native-instagram-stories",
+    "@oxy.so/bloom",
+    "@pagopa/io-app-design-system",
+    "@platform-blocks/react-ui-library",
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/drawer",
+    "@react-navigation/elements",
+    "@react-navigation/material-top-tabs",
+    "@react-navigation/native-stack",
+    "@react-navigation/stack",
+    "@rn-vui/base",
+    "@rneui/base",
+    "@sendbird/uikit-react-native",
+    "@sherlo/react-native-storybook",
+    "@shoutem/ui",
+    "@softwhere-uz/react-native-emoji-keyboard",
+    "@storybook/react-native",
+    "@storybook/react-native-ui",
+    "@storybook/react-native-ui-lite",
+    "@tenkaipl/react-native-select",
+    "@the-sheet/the-sheet",
+    "@wrack/react-native-tour-guide",
+    "@xaui/native",
+    "blaze-navigation",
+    "expo-gaode-map-navigation",
+    "expo-router",
+    "galio-framework",
+    "heroui-native",
+    "native-base",
+    "orn-ui",
+    "posthog-react-native",
+    "react-native-actions-sheet",
+    "react-native-alright-gallery",
+    "react-native-animation-catalog",
+    "react-native-bottom-sheet-stack",
+    "react-native-bread",
+    "react-native-chatty",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-dream-toast",
+    "react-native-ds-chat",
+    "react-native-earl-toastify",
+    "react-native-emoji-chooser",
+    "react-native-error-boundary",
+    "react-native-fintech-kit",
+    "react-native-gallery-preview",
+    "react-native-gifted-chat",
+    "react-native-halo-menu",
+    "react-native-image-stitcher",
+    "react-native-input-select",
+    "react-native-magic-tab-bar",
+    "react-native-mapa",
+    "react-native-motion-tabs",
+    "react-native-netwatch",
+    "react-native-nitro-fs",
+    "react-native-paper",
+    "react-native-paper-dates",
+    "react-native-quick-filter",
+    "react-native-quick-preview",
+    "react-native-responsive-scalability",
+    "react-native-rooster",
+    "react-native-root-toast",
+    "react-native-safe-area-view",
+    "react-native-screen-transitions",
+    "react-native-sticky-parallax-header",
+    "react-native-svg-editor",
+    "react-native-trays",
+    "react-native-ui-lib",
+    "react-native-xenon",
+    "react-navigation-header-buttons",
+    "rn-international-phone-number",
+    "rn-story",
+    "rn-wave-bottom-bar",
+    "sonner-native"
+  ],
+  "react-native-screens": [
+    "@appandflow/react-navigation-bottom-sheet",
+    "@oxy.so/bloom",
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/drawer",
+    "@react-navigation/native-stack",
+    "@react-navigation/stack",
+    "blaze-navigation",
+    "expo-router",
+    "heroui-native",
+    "magic-modal",
+    "react-native-animated-nav-tab-bar",
+    "react-native-animation-catalog",
+    "react-native-bread",
+    "react-native-grab",
+    "react-native-mapa",
+    "react-native-motion-tabs",
+    "react-native-peekie",
+    "react-native-url-router",
+    "react-native-xenon",
+    "sonner-native"
+  ],
+  "react-native-section-list-get-item-layout": [
+    "react-native-emoji-chooser",
+    "react-native-section-alphabet-list"
+  ],
+  "react-native-sensors": [
+    "react-native-image-stitcher"
+  ],
+  "react-native-share": [
+    "react-native-feedback-reporter",
+    "react-native-fusioncharts",
+    "react-native-netwatch",
+    "stream-chat-react-native"
+  ],
+  "react-native-signature-canvas": [
+    "react-native-form0"
+  ],
+  "react-native-size-matters": [
+    "@rn-vui/base",
+    "@rneui/base",
+    "react-native-autocomplete-dropdown",
+    "react-native-lock-screen"
+  ],
+  "react-native-slider": [
+    "react-native-vlc-media-player"
+  ],
+  "react-native-snap-carousel": [
+    "react-native-image-slider-box"
+  ],
+  "react-native-sound": [
+    "react-native-audio-agent",
+    "react-native-use-sound"
+  ],
+  "react-native-spinkit": [
+    "react-native-button-component"
+  ],
+  "react-native-sqlite-storage": [
+    "supastash",
+    "tinybase"
+  ],
+  "react-native-status-bar-height": [
+    "@mindinventory/rn-top-navbar"
+  ],
+  "react-native-streamdown": [
+    "@kesha-antonov/react-native-chat"
+  ],
+  "react-native-svg": [
+    "@animicons/react-native",
+    "@ankhorage/zora",
+    "@aramir/react-native-barcode",
+    "@audira/carbon-react-native",
+    "@blazejkustra/react-native-onboarding",
+    "@breeffy/calendars",
+    "@breeffy/pickers",
+    "@brijen/react-native-multistep",
+    "@cometchat/chat-uikit-react-native",
+    "@dev-event/react-native-maps-draw",
+    "@edwardloopez/react-native-coachmark",
+    "@fluentui/react-native",
+    "@fortawesome/react-native-fontawesome",
+    "@fsstudio-org/google-credential-manager",
+    "@gluestack-ui/core",
+    "@gorhom/paper-onboarding",
+    "@iconscout/react-native-unicons",
+    "@impulse-ui-native/toolkit",
+    "@kesha-antonov/react-native-chat",
+    "@kichiyaki/react-native-barcode-generator",
+    "@mindinventory/react-native-awesome-clock",
+    "@mindinventory/react-native-speed-view",
+    "@mindinventory/react-native-tab-bar-interaction",
+    "@mosmmy/mo-icon-react-native",
+    "@novev9/react-native-instagram-stories",
+    "@oxy.so/bloom",
+    "@pagopa/io-app-design-system",
+    "@platform-blocks/charts",
+    "@platform-blocks/react-ui-library",
+    "@rainbow-me/animated-charts",
+    "@shipt/segmented-arc-for-react-native",
+    "@shoutem/ui",
+    "@storybook/react-native-ui",
+    "@svgr-iconkit/core",
+    "@thoughtbot/react-native-social-auth",
+    "@vega-ui/react-native",
+    "@vibechess/chessboard-native",
+    "@wrack/react-native-tour-guide",
+    "@xaui/native",
+    "easyqrcode-react-native",
+    "healthicons-react-native",
+    "heart-switch-react-native",
+    "heroui-native",
+    "iconoir-react-native",
+    "lucide-react-native",
+    "native-base",
+    "phosphor-react-native",
+    "posthog-react-native",
+    "react-fancy-qrcode",
+    "react-native-autocomplete-dropdown",
+    "react-native-barcode-qr-generator",
+    "react-native-body-highlighter",
+    "react-native-body-parts-anatomy",
+    "react-native-bootstrap-icons",
+    "react-native-bread",
+    "react-native-chart-kit",
+    "react-native-checkbox-reanimated",
+    "react-native-chess-kit",
+    "react-native-circular-chart",
+    "react-native-circular-progress",
+    "react-native-circular-slider",
+    "react-native-copilot",
+    "react-native-countdown-circle-timer",
+    "react-native-curved-bottom-bar",
+    "react-native-d3multiline-chart",
+    "react-native-dotgrid",
+    "react-native-edge-glow",
+    "react-native-emoji-chooser",
+    "react-native-eva-icons",
+    "react-native-feather-toast",
+    "react-native-feedback-hub",
+    "react-native-figma-squircle",
+    "react-native-gauge",
+    "react-native-gifted-charts",
+    "react-native-gradients",
+    "react-native-heroicons",
+    "react-native-highlight-overlay",
+    "react-native-inapp-inspector",
+    "react-native-irano",
+    "react-native-loader-collection",
+    "react-native-lock-screen",
+    "react-native-lumen",
+    "react-native-marked",
+    "react-native-medium-clap",
+    "react-native-metrify",
+    "react-native-moyasar-sdk",
+    "react-native-nfc-locator",
+    "react-native-nitro-auth",
+    "react-native-pathjs-charts",
+    "react-native-payment-icons",
+    "react-native-pie-chart",
+    "react-native-pip-view",
+    "react-native-press-and-hold-button",
+    "react-native-progress",
+    "react-native-pushdown-alert",
+    "react-native-qrcode-styled",
+    "react-native-qrcode-svg",
+    "react-native-radial-slider",
+    "react-native-remix-icon",
+    "react-native-resource-calendar",
+    "react-native-responsive-linechart",
+    "react-native-rotary-timer",
+    "react-native-shadow-2",
+    "react-native-simple-keypad",
+    "react-native-simple-map",
+    "react-native-spinner-button",
+    "react-native-spotlight-tour",
+    "react-native-star-rating-widget",
+    "react-native-store-badges",
+    "react-native-svg-charts",
+    "react-native-svg-editor",
+    "react-native-svg-transformer",
+    "react-native-svg-uri",
+    "react-native-ultimate-icons",
+    "react-native-video-provider",
+    "react-native-weather-chart",
+    "reacto-loader",
+    "rn-rich-text-editor",
+    "sonner-native"
+  ],
+  "react-native-svg-transformer": [
+    "@shoutem/ui",
+    "react-native-weather-chart"
+  ],
+  "react-native-svg-uri": [
+    "react-native-lock-screen"
+  ],
+  "react-native-swipe-gestures": [
+    "react-native-calendars",
+    "react-native-insta-story"
+  ],
+  "react-native-swiper": [
+    "react-native-app-intro"
+  ],
+  "react-native-system-setting": [
+    "react-native-kvideo"
+  ],
+  "react-native-tab-view": [
+    "@expo/ex-navigation",
+    "@react-navigation/material-top-tabs",
+    "@showtime-xyz/tab-view",
+    "@vokhuyet/react-native-messy",
+    "react-native-animation-catalog",
+    "react-native-ficus-ui",
+    "react-native-tab-view-viewpager-adapter"
+  ],
+  "react-native-tcp": [
+    "react-native-lan-port-scanner"
+  ],
+  "react-native-tcp-socket": [
+    "@matter/react-native",
+    "@vitrion/expo-state-mcp"
+  ],
+  "react-native-teleport": [
+    "react-native-bottom-sheet-stack",
+    "react-native-screen-choreography",
+    "react-native-screen-transitions"
+  ],
+  "react-native-text-size": [
+    "react-native-see-more-inline"
+  ],
+  "react-native-toast-message": [
+    "@shoutem/ui",
+    "react-native-ficus-ui"
+  ],
+  "react-native-tts": [
+    "react-native-audio-agent"
+  ],
+  "react-native-udp": [
+    "@matter/react-native"
+  ],
+  "react-native-unistyles": [
+    "@grapp/stacks"
+  ],
+  "react-native-url-polyfill": [
+    "@atproto/oauth-client-expo",
+    "@aws-amplify/react-native",
+    "@clerk/expo",
+    "@fishjam-cloud/react-native-client",
+    "@livekit/react-native",
+    "@openlv/react-native",
+    "@prisma/react-native",
+    "@react-native-firebase/firestore",
+    "@storybook/react-native",
+    "@walletconnect/react-native-compat",
+    "react-native-agent",
+    "react-native-moyasar-sdk",
+    "react-native-polyfill-globals",
+    "react-native-quick-aws4",
+    "react-native-xenon"
+  ],
+  "react-native-user-avatar": [
+    "react-native-js-tableview"
+  ],
+  "react-native-uuid": [
+    "@iternio/react-native-auto-play",
+    "@rnw-community/react-native-payments",
+    "react-native-chatgpt",
+    "react-native-cos-sdk"
+  ],
+  "react-native-version-check": [
+    "react-native-version-check-expo"
+  ],
+  "react-native-video": [
+    "@cometchat/chat-uikit-react-native",
+    "@sendbird/uikit-react-native",
+    "react-native-insta-story",
+    "react-native-kvideo",
+    "react-native-story-view",
+    "react-native-video-controls",
+    "react-native-video-player",
+    "stream-chat-react-native"
+  ],
+  "react-native-view-shot": [
+    "react-native-feedback-hub",
+    "react-native-screenshot-test",
+    "react-native-shine",
+    "react-native-svg-editor"
+  ],
+  "react-native-vimeo-iframe": [
+    "@shoutem/ui"
+  ],
+  "react-native-vision-camera": [
+    "@bear-block/vision-camera-ocr",
+    "@kesha-antonov/react-native-chat",
+    "@mgcrea/vision-camera-barcode-scanner",
+    "react-native-form0",
+    "react-native-image-stitcher",
+    "react-native-nitro-pose-exercises",
+    "react-native-ocr-fast",
+    "react-native-vision-camera-barcode-scanner",
+    "react-native-vision-camera-face-detector",
+    "react-native-vision-camera-location",
+    "react-native-vision-camera-resizer",
+    "react-native-vision-camera-skia",
+    "react-native-vision-camera-worklets",
+    "vision-camera-code-scanner",
+    "vision-camera-cropper",
+    "vision-camera-dynamsoft-barcode-reader",
+    "vision-camera-dynamsoft-document-normalizer",
+    "vision-camera-dynamsoft-label-recognizer",
+    "vision-camera-face-detector",
+    "vision-camera-image-labeler",
+    "vision-camera-ocr-plugin",
+    "vision-camera-zxing"
+  ],
+  "react-native-vision-camera-resizer": [
+    "react-native-nitro-pose-exercises"
+  ],
+  "react-native-vision-camera-worklets": [
+    "react-native-nitro-pose-exercises",
+    "react-native-vision-camera-skia",
+    "vision-camera-cropper"
+  ],
+  "react-native-webgpu": [
+    "react-native-effects"
+  ],
+  "react-native-webrtc": [
+    "@openlv/react-native"
+  ],
+  "react-native-webview": [
+    "@10play/tentap-editor",
+    "@avasapp/agent-bridge",
+    "@axonpack/expo-devtools",
+    "@codearcade/expo-markdown",
+    "@epubjs-react-native/core",
+    "@flixsrota/player",
+    "@helpkit/helpkit-help-center-react-native",
+    "@iterable/react-native-sdk",
+    "@majornutcracker/react-native-selectable-text",
+    "@netizen-teknologi/react-native-maps-leaflet",
+    "@openlv/react-native",
+    "@oxy.so/bloom",
+    "@pose-tracker/react-native-pose-estimation",
+    "@pose-tracker/react-native-pose-estimation-light",
+    "@sdcx/nested-scroll-webview",
+    "@shoutem/ui",
+    "@situm/react-native",
+    "@stripe/stripe-react-native",
+    "@whereby.com/react-native-sdk",
+    "@xterio-sdk/rn-auth",
+    "easyqrcode-react-native",
+    "expo",
+    "react-native-animated-blur-view",
+    "react-native-autoheight-webview",
+    "react-native-canvas",
+    "react-native-chatgpt",
+    "react-native-cn-quill",
+    "react-native-earl-gamepad",
+    "react-native-fusioncharts",
+    "react-native-instagram-login",
+    "react-native-interception-webview",
+    "react-native-maplibre-gl-js",
+    "react-native-moyasar-sdk",
+    "react-native-pell-rich-editor",
+    "react-native-react-bridge",
+    "react-native-recaptcha-that-works",
+    "react-native-signature-canvas",
+    "react-native-signature-pad",
+    "react-native-sized-webview",
+    "react-native-translator",
+    "react-native-turbolinks",
+    "react-native-twitter-preview",
+    "react-native-vimeo-bridge",
+    "react-native-vimeo-iframe",
+    "react-native-vis-network",
+    "react-native-youtube-bridge",
+    "react-native-youtube-iframe",
+    "rn-pdf-reader-js",
+    "rn-rich-text-editor"
+  ],
+  "react-native-wheel-color-picker": [
+    "react-native-svg-editor"
+  ],
+  "react-native-worklets": [
+    "@ahmat-2000/react-native-onboarding",
+    "@ankhorage/zora",
+    "@azzapp/react-native-skia-video",
+    "@codeherence/react-native-header",
+    "@dahab-tech/react-native-media-editor",
+    "@deskbtm/react-native-bottom-sheet",
+    "@expensify/react-native-live-markdown",
+    "@impulse-ui-native/toolkit",
+    "@lodev09/expo-recorder",
+    "@lodev09/react-native-true-sheet",
+    "@mathnotes/mobile-ink",
+    "@pagopa/io-app-design-system",
+    "@platform-blocks/react-ui-library",
+    "@react-native-blocks/core",
+    "@shopify/react-native-skia",
+    "@siteed/audio-ui",
+    "@super-calendar/native",
+    "@the-sheet/embedded-stack-navigator",
+    "@the-sheet/flash-list-v2",
+    "@the-sheet/the-sheet",
+    "@vibechess/chessboard-native",
+    "@xaui/native",
+    "expo-thinking-orbs",
+    "heart-switch-react-native",
+    "heroui-native",
+    "magic-modal",
+    "pressto",
+    "react-native-3d",
+    "react-native-actions-sheet",
+    "react-native-alright-gallery",
+    "react-native-audio-api",
+    "react-native-background-workers",
+    "react-native-better-clustering",
+    "react-native-bottom-sheet-stack",
+    "react-native-bread",
+    "react-native-clamshell",
+    "react-native-collapsible-fluid-tabs",
+    "react-native-cycle-text",
+    "react-native-dotgrid",
+    "react-native-effects",
+    "react-native-emoji-burst",
+    "react-native-executorch",
+    "react-native-fast-confetti",
+    "react-native-fintech-kit",
+    "react-native-fluid-bottom-bar",
+    "react-native-gallery-preview",
+    "react-native-gesture-image-viewer",
+    "react-native-halo-menu",
+    "react-native-header-motion",
+    "react-native-kanban-dnd",
+    "react-native-livechart",
+    "react-native-lumen",
+    "react-native-magic-tab-bar",
+    "react-native-multi-resource-timeline",
+    "react-native-nitro-fetch",
+    "react-native-nitro-pose-exercises",
+    "react-native-pip-view",
+    "react-native-pulsar",
+    "react-native-reanimated",
+    "react-native-reanimated-carousel",
+    "react-native-reanimated-dnd",
+    "react-native-reshuffled",
+    "react-native-resource-calendar",
+    "react-native-rich-modal",
+    "react-native-screen-choreography",
+    "react-native-screen-transitions",
+    "react-native-shine",
+    "react-native-simple-line-chart",
+    "react-native-streamdown",
+    "react-native-transformer-text-input",
+    "react-native-vision-camera-skia",
+    "react-native-vision-camera-worklets",
+    "react-native-webgpu",
+    "react-native-webgpu-worklets",
+    "rn-floating-input",
+    "rn-neo",
+    "rn-scroll-viewport-tracker",
+    "sonner-native",
+    "vision-camera-cropper"
+  ],
+  "react-native-worklets-core": [
+    "@bear-block/vision-camera-ocr",
+    "@borndotcom/react-native-godot",
+    "@mgcrea/vision-camera-barcode-scanner",
+    "react-native-filament",
+    "react-native-image-stitcher",
+    "vision-camera-dynamsoft-barcode-reader",
+    "vision-camera-dynamsoft-document-normalizer",
+    "vision-camera-dynamsoft-label-recognizer",
+    "vision-camera-zxing"
+  ],
+  "react-native-youtube-iframe": [
+    "@shoutem/ui"
+  ],
+  "react-native-zeroconf": [
+    "rexpo-debugger"
+  ],
+  "react-native-zip-archive": [
+    "react-native-3d-model-view"
+  ],
+  "react-native-zoom-reanimated": [
+    "@kesha-antonov/react-native-chat",
+    "@vokhuyet/react-native-messy",
+    "react-native-gifted-chat"
+  ],
+  "react-redux": [
+    "@expo/ex-navigation",
+    "@reduxjs/toolkit",
+    "react-native-offline",
+    "react-native-redux",
+    "react-native-redux-alert",
+    "react-native-twopane-navigation"
+  ],
+  "react-timer-mixin": [
+    "@expo/ex-navigation",
+    "react-native-carousel",
+    "react-native-custom-navigation",
+    "react-native-fade-in-image",
+    "react-native-gifted-form",
+    "react-native-menu",
+    "react-native-mock",
+    "react-native-scrollable-tab-view",
+    "react-native-viewpager"
+  ],
+  "recyclerlistview": [
+    "react-native-calendar-picker",
+    "react-native-calendar-strip",
+    "react-native-calendars",
+    "react-native-chatty",
+    "react-native-form0"
+  ],
+  "redux": [
+    "@expo/ex-navigation",
+    "@reduxjs/toolkit",
+    "easy-peasy",
+    "react-native-offline",
+    "react-native-redux",
+    "react-native-redux-alert",
+    "react-native-twopane-navigation",
+    "react-navigation-redux-helpers",
+    "react-redux",
+    "redux-flipper",
+    "redux-persist",
+    "redux-remember",
+    "redux-thunk"
+  ],
+  "redux-persist": [
+    "react-native-redux"
+  ],
+  "redux-thunk": [
+    "@reduxjs/toolkit",
+    "easy-peasy"
+  ],
+  "reselect": [
+    "@expo/ex-navigation",
+    "@reduxjs/toolkit"
+  ],
+  "rn-fetch-blob": [
+    "react-native-3d-model-view",
+    "react-native-chunk-upload",
+    "react-native-image-cache-wrapper"
+  ],
+  "rn-swipeable-panel": [
+    "rn-swipeable-panel"
+  ],
+  "scandit-react-native-datacapture-barcode": [
+    "scandit-react-native-datacapture-label"
+  ],
+  "scandit-react-native-datacapture-core": [
+    "scandit-react-native-datacapture-barcode",
+    "scandit-react-native-datacapture-id",
+    "scandit-react-native-datacapture-label",
+    "scandit-react-native-datacapture-parser"
+  ],
+  "semver": [
+    "@babylonjs/react-native",
+    "@bravemobile/react-native-code-push",
+    "@expo/fingerprint",
+    "@glyw/react-native-tabbed-section-list",
+    "@qvac/sdk",
+    "detox",
+    "expo-build-properties",
+    "expo-share-extension",
+    "otago",
+    "react-native-audio-api",
+    "react-native-code-push",
+    "react-native-reanimated",
+    "react-native-search-header",
+    "react-native-ui-lib",
+    "react-native-v8",
+    "react-native-version",
+    "react-native-version-check",
+    "react-native-worklets",
+    "rn-nodeify",
+    "sp-react-native-in-app-updates",
+    "stallion-cli"
+  ],
+  "sf-symbols-typescript": [
+    "@react-navigation/bottom-tabs",
+    "@react-navigation/native-stack",
+    "@simonegauli/react-native-context-menu",
+    "burnt",
+    "expo-image",
+    "expo-quick-actions",
+    "expo-router",
+    "expo-symbols",
+    "react-native-bottom-tabs",
+    "zeego"
+  ],
+  "sherlo": [
+    "@sherlo/react-native-storybook"
+  ],
+  "tailwind-merge": [
+    "heroui-native",
+    "react-native-ui-datepicker"
+  ],
+  "tailwindcss": [
+    "@gluestack-ui/utils",
+    "nativewind",
+    "tailwind-rn",
+    "twrnc",
+    "uniwind"
+  ],
+  "uniffi-bindgen-react-native": [
+    "loro-react-native",
+    "react-native-nobodywho"
+  ],
+  "uniwind": [
+    "react-native-ease"
+  ],
+  "use-debounce": [
+    "@appandflow/react-native-google-autocomplete",
+    "@codeherence/react-native-header"
+  ],
+  "xstate": [
+    "@xstate/react"
+  ],
+  "yup": [
+    "@hookform/resolvers",
+    "react-native-feedback-reporter"
+  ],
+  "zod": [
+    "@better-auth/expo",
+    "@everframe/react-native",
+    "@hookform/resolvers",
+    "@json-render/react-native",
+    "@mattermost/react-native-network-client",
+    "@qvac/sdk",
+    "@react-native-ai/apple",
+    "@react-native-ai/llama",
+    "@react-native-ai/mlc",
+    "@vitrion/expo-state-mcp",
+    "better-auth",
+    "bna-ui",
+    "drizzle-zod",
+    "execbro",
+    "expo-passkey",
+    "mallaui",
+    "metro-mcp",
+    "nitrogen",
+    "react-native-agent",
+    "react-native-executorch",
+    "react-native-leap",
+    "react-native-nitro-mlx",
+    "react-native-node-api",
+    "react-native-whip-whep",
+    "tapflow",
+    "tinybase"
+  ],
+  "zustand": [
+    "@featuredeck/react-native",
+    "@rn-primitives/portal",
+    "@vitrion/expo-state-mcp",
+    "expo-superwall",
+    "react-native-audio-agent",
+    "react-native-audio-pro",
+    "react-native-bottom-sheet-stack",
+    "react-native-dev-lens",
+    "react-native-resource-calendar",
+    "react-native-tree-multi-select",
+    "react-native-video-provider"
+  ]
+}
