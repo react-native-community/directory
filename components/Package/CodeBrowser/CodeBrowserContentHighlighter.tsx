@@ -94,7 +94,7 @@ export const linkifyUrlsTransformer: ShikiTransformer = {
           href: url,
           target: '_blank',
           style: node.properties?.style ?? 'color:inherit',
-          rel: 'noreferrer noopener',
+          rel: ['noreferrer', 'noopener'],
         },
         children: [{ type: 'text', value: url }],
       });

@@ -32,11 +32,14 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
   const result: StatisticResultType = {
     total: 0,
     newArchitecture: 0,
+    newArchitectureOnly: 0,
+    newArchitectureUnknown: 0,
     downloads: 0,
     weekDownloads: 0,
     unmaintained: 0,
     withTypes: 0,
     withNativeCode: 0,
+    withExamples: 0,
     withConfigPlugin: 0,
     ios: 0,
     android: 0,
@@ -72,10 +75,12 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     scoreBuckets: createBuckets(SCORE_BUCKET_LABELS),
     dependencyBuckets: createBuckets([...DEPENDENCY_BUCKETS.map(({ label }) => label), 'Unknown']),
     bundleSizeBuckets: createBuckets([...BUNDLE_SIZE_BUCKETS.map(({ label }) => label), 'Unknown']),
+    licenseBuckets: [],
   };
 
   DATASET.libraries.forEach(library => {
     result.total++;
+    incrementBucket(result.licenseBuckets, getLicenseLabel(library.github.license));
     const scoreBucketIndex = Math.min(Math.max(Math.floor(library.score / 10), 0), 9);
     result.scoreBuckets[scoreBucketIndex].count++;
     incrementRangeBucket(
@@ -85,12 +90,18 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     );
     incrementRangeBucket(result.bundleSizeBuckets, BUNDLE_SIZE_BUCKETS, library.npm?.size);
 
+    const newArchStatus = getNewArchSupportStatus(library);
+
     if (
-      [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(
-        getNewArchSupportStatus(library)
-      )
+      [NewArchSupportStatus.Supported, NewArchSupportStatus.NewArchOnly].includes(newArchStatus)
     ) {
       result.newArchitecture++;
+    }
+
+    if (newArchStatus === NewArchSupportStatus.NewArchOnly) {
+      result.newArchitectureOnly++;
+    } else if (newArchStatus === NewArchSupportStatus.Untested) {
+      result.newArchitectureUnknown++;
     }
 
     if (library.npm?.downloads) {
@@ -111,6 +122,10 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.github.hasNativeCode) {
       result.withNativeCode++;
+    }
+
+    if (library.examples?.length) {
+      result.withExamples++;
     }
 
     if (library.configPlugin || library.github.configPlugin) {
@@ -201,6 +216,26 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
 function createBuckets(labels: string[]): StatisticBucketType[] {
   return labels.map(label => ({ label, count: 0 }));
+}
+
+function incrementBucket(buckets: StatisticBucketType[], label: string) {
+  const bucket = buckets.find(entry => entry.label === label);
+
+  if (bucket) {
+    bucket.count++;
+  } else {
+    buckets.push({ label, count: 1 });
+  }
+}
+
+function getLicenseLabel(license?: DataAssetType['libraries'][number]['github']['license']) {
+  if (!license) {
+    return 'No license';
+  }
+
+  return license.key === 'other' || license.spdxId === 'NOASSERTION'
+    ? 'Other'
+    : (license.spdxId ?? license.name);
 }
 
 function incrementRangeBucket(

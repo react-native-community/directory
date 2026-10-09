@@ -78,6 +78,8 @@ export default function StatisticsScene({ statistic }: Props) {
     secondary: bucket.label === 'Unknown',
   }));
 
+  const licenseBuckets = getGroupedLicenseBuckets(statistic.licenseBuckets);
+
   return (
     <>
       <PageMeta
@@ -89,8 +91,7 @@ export default function StatisticsScene({ statistic }: Props) {
         title="Statistics"
         description="Detailed statistics for every React Native library in the directory"
       />
-      <ContentContainer style={tw`my-8 mb-16 gap-4 px-4`}>
-        <H2 style={tw`text-center`}>Libraries statistics</H2>
+      <ContentContainer style={tw`mb-16 mt-6 gap-4 px-4`}>
         <StatisticChartHeader title="Platform support" large />
         <StatisticsBarChart data={platforms} total={statistic.total} />
         <StatisticChartHeader title="New Architecture" large />
@@ -104,6 +105,27 @@ export default function StatisticsScene({ statistic }: Props) {
             },
           ]}
           total={statistic.total}
+          stackedData={[
+            {
+              label: 'Supporting',
+              entries: [
+                { label: 'Yes', count: statistic.newArchitecture - statistic.newArchitectureOnly },
+                { label: 'Only', count: statistic.newArchitectureOnly },
+              ],
+            },
+            {
+              label: 'Not supporting',
+              entries: [
+                { label: 'Unknown', count: statistic.newArchitectureUnknown, secondary: true },
+                {
+                  label: 'No',
+                  count:
+                    statistic.total - statistic.newArchitecture - statistic.newArchitectureUnknown,
+                  secondary: true,
+                },
+              ],
+            },
+          ]}
         />
         <StatisticChartHeader title="Direct dependencies count distribution" large />
         <StatisticsBarChart
@@ -118,6 +140,14 @@ export default function StatisticsScene({ statistic }: Props) {
           total={statistic.total}
           sortByValue={false}
           reverseOrder
+        />
+        <StatisticChartHeader title="Maintenance status" large />
+        <StatisticsBarChart
+          data={[
+            { label: 'Maintained', count: statistic.total - statistic.unmaintained },
+            { label: 'Unmaintained', count: statistic.unmaintained, secondary: true },
+          ]}
+          total={statistic.total}
         />
         <H2 style={tw`mt-8 text-center`}>Development stack and tooling</H2>
         <StatisticChartHeader title="Native module framework" large />
@@ -145,7 +175,40 @@ export default function StatisticsScene({ statistic }: Props) {
           total={statistic.total}
           sortByValue={false}
         />
+        <StatisticChartHeader title="License type distribution" large />
+        <StatisticsBarChart data={licenseBuckets} total={statistic.total} />
+        <StatisticChartHeader title="Library provides examples" large />
+        <StatisticsBarChart
+          data={[
+            { label: 'Yes', count: statistic.withExamples },
+            {
+              label: 'No',
+              count: statistic.total - statistic.withExamples,
+              secondary: true,
+            },
+          ]}
+          total={statistic.total}
+        />
       </ContentContainer>
     </>
   );
+}
+
+function getGroupedLicenseBuckets(
+  buckets: StatisticResultType['licenseBuckets']
+): StatisticResultType['licenseBuckets'] {
+  const otherLicenseCount = buckets
+    .filter(
+      bucket => bucket.label === 'Other' || (bucket.label !== 'No license' && bucket.count <= 5)
+    )
+    .reduce((total, bucket) => total + bucket.count, 0);
+  const groupedBuckets = buckets
+    .filter(
+      bucket => bucket.label !== 'Other' && (bucket.label === 'No license' || bucket.count > 5)
+    )
+    .map(bucket => ({ ...bucket, secondary: bucket.label === 'No license' }));
+
+  return otherLicenseCount > 0
+    ? [...groupedBuckets, { label: 'Other', count: otherLicenseCount, secondary: true }]
+    : groupedBuckets;
 }
