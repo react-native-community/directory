@@ -24003,7 +24003,7 @@
   },
   {
     "githubUrl": "https://github.com/byrizki/rusto-rs/tree/main/packages/react-native",
-    "npmPkg": "react-native-rusto",
+    "npmPkg": "@rustors/react-native",
     "newArchitecture": true,
     "ios": true,
     "android": true
