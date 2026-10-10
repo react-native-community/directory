@@ -2,7 +2,9 @@ import * as Popover from '@radix-ui/react-popover';
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { SettingsIcon } from '~/components/Icons';
+import { HoverEffect } from '~/common/styleguide';
+import { SettingsFillIcon, SettingsIcon } from '~/components/Icons';
+import { Tooltip } from '~/components/Tooltip';
 import tw from '~/util/tailwind';
 
 import CodeBrowserSettingsCheckbox from './CodeBrowserSettingsCheckbox';
@@ -21,20 +23,29 @@ type Props = {
 export default function CodeBrowserSettings({ settings, onChange }: Props) {
   const [open, setOpen] = useState(false);
 
+  const Icon = open ? SettingsFillIcon : SettingsIcon;
+
   function toggleSetting(setting: keyof CodeBrowserSettingsType) {
     onChange({ ...settings, [setting]: !settings[setting] });
   }
 
   return (
     <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>
-        <View
-          accessibilityLabel="Code browser settings"
-          accessibilityRole="button"
-          style={tw`cursor-pointer`}>
-          <SettingsIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
-        </View>
-      </Popover.Trigger>
+      <Tooltip
+        trigger={
+          <HoverEffect>
+            <Popover.Trigger asChild>
+              <View
+                accessibilityLabel="Code browser settings"
+                accessibilityRole="button"
+                style={tw`cursor-pointer`}>
+                <Icon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+              </View>
+            </Popover.Trigger>
+          </HoverEffect>
+        }>
+        Settings
+      </Tooltip>
       <Popover.Portal>
         <Popover.Content align="end" sideOffset={6} style={{ zIndex: 50 }}>
           <View

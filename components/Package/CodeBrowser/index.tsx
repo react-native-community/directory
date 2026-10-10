@@ -30,7 +30,8 @@ import tw from '~/util/tailwind';
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
-import { type CodeBrowserSettingsType } from './CodeBrowserSettings';
+import CodeBrowserSettings, { type CodeBrowserSettingsType } from './CodeBrowserSettings';
+import DisplayModeButton from './DisplayModeButton';
 
 const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
 const DEFAULT_FILE_TREE_WIDTH = 340;
@@ -203,7 +204,7 @@ export default function CodeBrowser({
       id="codeBrowser"
       style={[
         tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
-        isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none` : tw`h-[70vh]`,
+        isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none border-0` : tw`h-[70vh]`,
         isBrowserMaximized && {
           position: 'fixed',
         },
@@ -219,7 +220,7 @@ export default function CodeBrowser({
         <View
           style={[
             tw`flex flex-row`,
-            isBrowserMaximized ? tw`flex-1` : tw`h-[70vh]`,
+            isBrowserMaximized ? tw`flex-1 border-l-0` : tw`h-[70vh]`,
             isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
             isSmallScreen && tw`flex-col`,
           ]}>
@@ -274,6 +275,7 @@ export default function CodeBrowser({
                 style={[
                   tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 px-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
                   isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
+                  isBrowserMaximized && tw`rounded-tl-none`,
                 ]}
                 value={search}
                 placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
@@ -317,6 +319,7 @@ export default function CodeBrowser({
             )}
             {filteredFiles.length > 0 && (
               <CodeBrowserContentFooter
+                isBrowserMaximized={isBrowserMaximized}
                 style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
                 leftSlot={
                   <Label style={tw`font-light text-secondary`}>
@@ -354,7 +357,7 @@ export default function CodeBrowser({
           <View
             style={[
               tw`flex flex-1`,
-              activeFile ? tw`bg-white dark:bg-[#0d1117]` : tw`items-center justify-center`,
+              activeFile && tw`bg-white dark:bg-[#0d1117]`,
               isSmallScreen && !isBrowserMaximized && tw`min-h-[50vh]`,
             ]}>
             {activeFile && activeFileData ? (
@@ -371,10 +374,20 @@ export default function CodeBrowser({
                 toggleMaximized={toggleMaximized}
               />
             ) : (
-              <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
-                <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
-                <P style={tw`text-center`}>Select file to preview from the list on the left.</P>
-              </View>
+              <>
+                <View
+                  style={tw`flex min-h-[45px] flex-row items-center justify-end gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default`}>
+                  <DisplayModeButton
+                    isBrowserMaximized={isBrowserMaximized}
+                    toggleMaximized={toggleMaximized}
+                  />
+                  <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
+                </View>
+                <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
+                  <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
+                  <P style={tw`text-center`}>Select file to preview from the list on the left.</P>
+                </View>
+              </>
             )}
           </View>
         </View>
