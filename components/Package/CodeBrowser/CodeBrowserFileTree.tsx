@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { View } from 'react-native';
 
-import { type CodeBrowserTreeDirectory, type CodeBrowserTreeFile } from '~/types';
+import { type CodeBrowserTreeDirectory } from '~/types';
 
 import CodeBrowserFileRow from './CodeBrowserFileRow';
 
@@ -85,9 +85,7 @@ function CodeBrowserDirectoryRow({
   const [userCollapsed, setUserCollapsed] = useState(false);
 
   const collapsedDirectory = getCollapsedDirectory(directory);
-  const shouldForceExpand =
-    isSearchActive || directoryContainsFile(collapsedDirectory.directory, activeFile);
-  const collapsed = userCollapsed && !shouldForceExpand;
+  const collapsed = userCollapsed && !isSearchActive;
 
   return (
     <View>
@@ -108,29 +106,6 @@ function CodeBrowserDirectoryRow({
         />
       )}
     </View>
-  );
-}
-
-function directoryContainsFile(
-  directory: CodeBrowserTreeDirectory,
-  activeFile: string | null
-): boolean {
-  if (!activeFile) {
-    return false;
-  }
-
-  return (
-    directory.files.some(file => fileContainsPath(file, activeFile)) ||
-    Object.values(directory.directories).some(childDirectory =>
-      directoryContainsFile(childDirectory, activeFile)
-    )
-  );
-}
-
-function fileContainsPath(file: CodeBrowserTreeFile, activeFile: string): boolean {
-  return (
-    file.path === activeFile ||
-    file.nestedFiles?.some(nestedFile => fileContainsPath(nestedFile, activeFile)) === true
   );
 }
 
