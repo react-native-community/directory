@@ -106,6 +106,7 @@ export default function CodeBrowserContent({
           <ThreeDotsLoader />
         </View>
         <CodeBrowserContentFooter
+          isBrowserMaximized={isBrowserMaximized}
           rightSlot={
             fileData && (
               <Label style={tw`font-light text-secondary`}>
@@ -181,6 +182,7 @@ export default function CodeBrowserContent({
         )}
         {!markdownPreview && (
           <CodeBrowserContentFooter
+            isBrowserMaximized={isBrowserMaximized}
             leftSlot={
               <Label style={tw`font-light text-secondary`}>
                 <span style={tw`font-medium`}>{data.split('\n').length}</span>{' '}
@@ -257,6 +259,7 @@ export default function CodeBrowserContent({
         )}
       </View>
       <CodeBrowserContentFooter
+        isBrowserMaximized={isBrowserMaximized}
         leftSlot={
           isImageFile && imageData ? (
             <Label style={tw`font-light text-secondary`}>

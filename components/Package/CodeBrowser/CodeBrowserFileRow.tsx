@@ -79,7 +79,7 @@ export default function CodeBrowserFileRow({
                 <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
               </View>
             }>
-            <span className="text-[12px]">{warning.message}</span>
+            <span className="leading-0.5 text-[12px]">{warning.message}</span>
           </Tooltip>
         </View>
       )}

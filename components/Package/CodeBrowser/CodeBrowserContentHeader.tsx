@@ -28,7 +28,7 @@ export default function CodeBrowserContentHeader({ filePath, children }: Props) 
                 <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
               </View>
             }>
-            <P style={tw`text-[12px] font-light`}>{warning.message}</P>
+            <P style={tw`leading-0.5 text-[12px] font-light`}>{warning.message}</P>
           </Tooltip>
         )}
       </P>

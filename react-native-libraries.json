@@ -4721,12 +4721,6 @@
     "unmaintained": true
   },
   {
-    "githubUrl": "https://github.com/yorkie/react-native-wechat",
-    "ios": true,
-    "android": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/Microsoft/react-native-code-push",
     "ios": true,
     "android": true,
@@ -9307,13 +9301,9 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/Shopify/react-native-skia/tree/main/packages/skia",
-    "npmPkg": "@shopify/react-native-skia",
-    "examples": [
-      "https://github.com/Shopify/react-native-skia/tree/main/apps/example",
-      "https://github.com/Shopify/react-native-skia/tree/main/apps/headless",
-      "https://github.com/Shopify/react-native-skia/tree/main/apps/remotion"
-    ],
+    "githubUrl": "https://github.com/wcandillon/react-native-skia/tree/main/packages/skia",
+    "npmPkg": "react-native-skia",
+    "examples": ["https://github.com/wcandillon/react-native-skia/tree/main/apps/example"],
     "android": true,
     "ios": true,
     "web": true,
@@ -13685,16 +13675,6 @@
     "examples": ["https://tamagui.dev"],
     "android": true,
     "ios": true,
-    "web": true,
-    "expoGo": true,
-    "newArchitecture": true,
-    "fireos": true
-  },
-  {
-    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-moti",
-    "npmPkg": "@tamagui/animations-moti",
-    "ios": true,
-    "android": true,
     "web": true,
     "expoGo": true,
     "newArchitecture": true,
@@ -21518,8 +21498,8 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/platform-blocks/react-ui-library/tree/main/packages/ui",
-    "npmPkg": "@platform-blocks/react-ui-library",
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/ui",
+    "npmPkg": "@plocks/ui",
     "ios": true,
     "android": true,
     "web": true,
@@ -23011,13 +22991,13 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/goliajp/sentori/tree/master/sdk/react-native",
+    "githubUrl": "https://github.com/goliajp/sentori-selfhosted/tree/master/sdk/react-native",
     "npmPkg": "@goliapkg/sentori-react-native",
     "ios": true,
     "android": true
   },
   {
-    "githubUrl": "https://github.com/goliajp/sentori/tree/master/sdk/expo",
+    "githubUrl": "https://github.com/goliajp/sentori-selfhosted/tree/master/sdk/expo",
     "npmPkg": "@goliapkg/sentori-expo",
     "ios": true,
     "android": true
@@ -24193,8 +24173,8 @@
     "newArchitecture": true
   },
   {
-    "githubUrl": "https://github.com/platform-blocks/react-ui-library/tree/main/packages/charts",
-    "npmPkg": "@platform-blocks/charts",
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/charts",
+    "npmPkg": "@plocks/charts",
     "ios": true,
     "android": true,
     "web": true,
@@ -24730,6 +24710,53 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/tamagui/tamagui/tree/main/code/core/animations-reanimated",
+    "npmPkg": "@tamagui/animations-reanimated",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "fireos": true
+  },
+  {
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/emoji-picker",
+    "npmPkg": "@plocks/emoji-picker",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/carousel",
+    "npmPkg": "@plocks/carousel",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/qrcode",
+    "npmPkg": "@plocks/qrcode",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/platform-blocks/plocks/tree/main/packages/media",
+    "npmPkg": "@plocks/media",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/NO1225/expo-media-control/tree/main/packages/expo-media-control-car",
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/tadeumelembe/react-native-intl-phone",
