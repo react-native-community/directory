@@ -24776,5 +24776,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/react-native-inkpad",
+    "examples": ["https://github.com/SectionTN/react-native-inkpad/tree/main/example"],
+    "images": [
+      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-dark.png",
+      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-light.png"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
