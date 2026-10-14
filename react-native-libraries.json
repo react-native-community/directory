@@ -24797,6 +24797,17 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/azizbecha/expo-foldables",
+    "examples": ["https://github.com/azizbecha/expo-foldables/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/azizbecha/expo-foldables/refs/heads/main/.github/assets/iphone-duo.png",
+      "https://raw.githubusercontent.com/azizbecha/expo-foldables/refs/heads/main/.github/assets/pixel-fold.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-hinge",
     "ios": true,
     "android": true,
