@@ -273,6 +273,7 @@ export type StatisticResultType = {
   dependencyBuckets: StatisticBucketType[];
   bundleSizeBuckets: StatisticBucketType[];
   licenseBuckets: StatisticBucketType[];
+  topDependedOnPackages: StatisticBucketType[];
 };
 
 type NpmRegistryCommonData = {

@@ -210,6 +210,7 @@ The response also includes distribution arrays used for statistic page. Each ent
 - `dependencyBuckets` - dependency counts grouped as `0`, `1-5`, `6-10`, `11-24`, and `25+`.
 - `bundleSizeBuckets` - npm package sizes grouped as `<100 kB`, `100-500 kB`, `500 kB-1 MB`, `1-5 MB`, `5-10 MB`, and `10+ MB`, using decimal units.
 - `licenseBuckets` - libraries grouped by SPDX license identifier, with `Other` for unrecognized licenses and `No license` when no license is available.
+- `topDependedOnPackages` - up to 10 directory packages with the most dependants among other directory packages, ordered by dependant count descending. Each entry has a package-name `label` and a `count`.
 
 `withExamples` is the number of libraries that provide at least one example. Libraries without dependency or package-size data are included in an `Unknown` bucket for the corresponding distribution. Each bucket entry has a `label` and a `count`.
 
