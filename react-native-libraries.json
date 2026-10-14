@@ -24787,5 +24787,32 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-observe",
+    "examples": ["https://docs.expo.dev/versions/latest/sdk/observe/#usage"],
+    "ios": true,
+    "android": true,
+    "tvos": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-hinge",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-brownfield",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-app-intents",
+    "ios": true,
+    "macos": true,
+    "tvos": true,
+    "newArchitecture": true
   }
 ]
