@@ -27,6 +27,8 @@ type Props = {
   total: number;
   sortByValue?: boolean;
   reverseOrder?: boolean;
+  leftMargin?: number;
+  valueScale?: 'percentage' | 'count';
   stackedData?: {
     label: string;
     entries: StatisticEntry[];
@@ -35,6 +37,7 @@ type Props = {
 
 type ChartEntry = StatisticChartEntry & {
   segmentLabel?: string;
+  value: number;
 };
 
 export default function StatisticsBarChart({
@@ -42,6 +45,8 @@ export default function StatisticsBarChart({
   total,
   sortByValue = true,
   reverseOrder = false,
+  leftMargin: customLeftMargin,
+  valueScale = 'percentage',
   stackedData,
 }: Props) {
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
@@ -53,16 +58,20 @@ export default function StatisticsBarChart({
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
 
-  const entries: ChartEntry[] = data.map(entry => ({
-    ...entry,
-    percentage: total > 0 ? (entry.count / total) * 100 : 0,
-  }));
+  const entries: ChartEntry[] = data.map(entry => {
+    const percentage = total > 0 ? (entry.count / total) * 100 : 0;
+    return {
+      ...entry,
+      percentage,
+      value: valueScale === 'count' ? entry.count : percentage,
+    };
+  });
 
   const orderedSeries = sortByValue
     ? entries.sort(
         (left, right) =>
           Number(right.secondary === true) - Number(left.secondary === true) ||
-          left.percentage - right.percentage
+          (valueScale === 'count' ? left.count - right.count : left.percentage - right.percentage)
       )
     : [...entries.filter(entry => !entry.secondary), ...entries.filter(entry => entry.secondary)];
   const series = reverseOrder ? [...orderedSeries].reverse() : orderedSeries;
@@ -85,6 +94,8 @@ export default function StatisticsBarChart({
             count: entry.count,
             secondary: entry.secondary,
             percentage: total > 0 ? (entry.count / total) * 100 : 0,
+            value:
+              valueScale === 'count' ? entry.count : total > 0 ? (entry.count / total) * 100 : 0,
           },
         ],
         radiusLeft: entryIndex === 0,
@@ -94,7 +105,9 @@ export default function StatisticsBarChart({
   });
 
   const height = Math.max(MIN_HEIGHT, series.length * ROW_HEIGHT + 42);
-  const leftMargin = isSmallScreen ? 112 : 120;
+  const leftMargin = customLeftMargin ?? (isSmallScreen ? 112 : 120);
+  const maxCount = Math.max(0, ...data.map(entry => entry.count));
+  const maxValue = valueScale === 'count' ? Math.max(1, maxCount * 1.05) : 100;
 
   return (
     <View
@@ -104,7 +117,7 @@ export default function StatisticsBarChart({
       <XYChart
         width={width}
         height={height}
-        xScale={{ type: 'linear', domain: [0, 100] }}
+        xScale={{ type: 'linear', domain: [0, maxValue] }}
         yScale={{ type: 'band', paddingInner: 0.23, paddingOuter: 0.15 }}
         margin={{ top: 2, right: 32, bottom: 24, left: leftMargin }}>
         <LinearGradient
@@ -140,7 +153,11 @@ export default function StatisticsBarChart({
           numTicks={isSmallScreen ? 3 : 5}
           hideAxisLine
           hideTicks
-          tickFormat={value => `${Math.round(Number(value))}%`}
+          tickFormat={value =>
+            valueScale === 'count'
+              ? Math.round(Number(value)).toLocaleString()
+              : `${Math.round(Number(value))}%`
+          }
           tickComponent={({ formattedValue = 'unknown', x, y }) => (
             <text
               x={x}
@@ -185,7 +202,7 @@ export default function StatisticsBarChart({
                   key={dataKey}
                   dataKey={dataKey}
                   data={stackData}
-                  xAccessor={(item: ChartEntry) => item.percentage}
+                  xAccessor={(item: ChartEntry) => item.value}
                   yAccessor={(item: ChartEntry) => item.label}
                   colorAccessor={(item: ChartEntry) => {
                     if (item.segmentLabel === 'Only') {
@@ -205,9 +222,9 @@ export default function StatisticsBarChart({
           ))
         ) : (
           <BarSeries
-            dataKey="percentage"
+            dataKey="value"
             data={series}
-            xAccessor={(item: ChartEntry) => item.percentage}
+            xAccessor={(item: ChartEntry) => item.value}
             yAccessor={(item: ChartEntry) => item.label}
             colorAccessor={(item: ChartEntry) =>
               `url(#${item.secondary ? secondaryGradientId : gradientId})`
@@ -222,10 +239,14 @@ export default function StatisticsBarChart({
           <Annotation
             key={entry.label}
             datum={entry}
-            xAccessor={item => item.percentage}
+            xAccessor={item => item.value}
             yAccessor={item => item.label}>
             <AnnotationLabel
-              title={`${entry.percentage.toFixed(2)}%`}
+              title={
+                valueScale === 'count'
+                  ? entry.count.toLocaleString()
+                  : `${entry.percentage.toFixed(2)}%`
+              }
               titleFontSize={12}
               titleFontWeight={400}
               horizontalAnchor="start"
@@ -241,7 +262,7 @@ export default function StatisticsBarChart({
           hoveredIndex={hoveredIndex}
           series={series}
           orientation="horizontal"
-          xAccessor={item => item.percentage}
+          xAccessor={item => item.value}
           yAccessor={item => item.label}
         />
         <Tooltip<ChartEntry>
@@ -264,12 +285,18 @@ export default function StatisticsBarChart({
                 <span style={tw`mb-0.5 text-[15px] font-medium`}>
                   {entry.segmentLabel ?? entry.label}
                 </span>
-                <span>
-                  {entry.count.toLocaleString()} libraries ({entry.percentage.toFixed(2)}%)
-                </span>
-                <span style={tw`text-palette-gray3 dark:text-secondary`}>
-                  out of {total.toLocaleString()} total libraries
-                </span>
+                {valueScale === 'count' ? (
+                  <span>{entry.count.toLocaleString()} libraries depend on this package</span>
+                ) : (
+                  <>
+                    <span>
+                      {entry.count.toLocaleString()} libraries ({entry.percentage.toFixed(2)}%)
+                    </span>
+                    <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                      out of {total.toLocaleString()} total libraries
+                    </span>
+                  </>
+                )}
               </ChartTooltip>
             );
           }}

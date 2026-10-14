@@ -149,6 +149,14 @@ export default function StatisticsScene({ statistic }: Props) {
           ]}
           total={statistic.total}
         />
+        <H2 style={tw`mt-8 text-center`}>Package-based statistics</H2>
+        <StatisticChartHeader title="Most depended-on packages" large />
+        <StatisticsBarChart
+          data={statistic.topDependedOnPackages}
+          total={statistic.total}
+          leftMargin={220}
+          valueScale="count"
+        />
         <H2 style={tw`mt-8 text-center`}>Development stack and tooling</H2>
         <StatisticChartHeader title="Native module framework" large />
         <StatisticsBarChart data={moduleTypes} total={statistic.total} />

@@ -1,11 +1,13 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
 import data from '~/assets/data.json';
+import dependants from '~/assets/dependants.json';
 import { type DataAssetType, type StatisticBucketType, type StatisticResultType } from '~/types';
 import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 
 const DATASET = data as DataAssetType;
+const DEPENDANTS = dependants as Record<string, string[]>;
 
 const SCORE_BUCKET_LABELS = Array.from({ length: 10 }, (_, index) => {
   const lower = index * 10;
@@ -76,7 +78,10 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     dependencyBuckets: createBuckets([...DEPENDENCY_BUCKETS.map(({ label }) => label), 'Unknown']),
     bundleSizeBuckets: createBuckets([...BUNDLE_SIZE_BUCKETS.map(({ label }) => label), 'Unknown']),
     licenseBuckets: [],
+    topDependedOnPackages: [],
   };
+
+  const libraryNames = new Set(DATASET.libraries.map(library => library.npmPkg.toLowerCase()));
 
   DATASET.libraries.forEach(library => {
     result.total++;
@@ -206,6 +211,22 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
       }
     }
   });
+
+  result.topDependedOnPackages = DATASET.libraries
+    .map(library => {
+      const packageName = library.npmPkg.toLowerCase();
+      const dependants = new Set(
+        (DEPENDANTS[packageName] ?? []).filter(
+          dependant =>
+            dependant.toLowerCase() !== packageName && libraryNames.has(dependant.toLowerCase())
+        )
+      );
+
+      return { label: library.npmPkg, count: dependants.size };
+    })
+    .filter(({ count }) => count > 0)
+    .toSorted((left, right) => right.count - left.count || left.label.localeCompare(right.label))
+    .slice(0, 10);
 
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', DEFAULT_RESPONSE_CACHE_HEADER);
