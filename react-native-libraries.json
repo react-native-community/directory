@@ -24825,5 +24825,19 @@
     "macos": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/valeriobelli/react-native-use-dom/tree/main/packages/react-native-use-dom",
+    "npmPkg": "react-native-use-dom",
+    "examples": [
+      "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/bare-0.87",
+      "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/expo-57"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/valeriobelli/react-native-use-dom/main/docs/assets/native-bridge.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
