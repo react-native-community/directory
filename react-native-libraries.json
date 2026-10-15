@@ -24839,5 +24839,13 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/lucaswitch/react-native-oauth-essentials",
+    "examples": ["https://github.com/lucaswitch/react-native-oauth-essentials/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
