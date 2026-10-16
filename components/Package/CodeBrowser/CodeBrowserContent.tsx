@@ -6,10 +6,10 @@ import useSWR from 'swr';
 import { Label, P } from '~/common/styleguide';
 import {
   CodeIcon,
-  FileIcon,
   ImageFileIcon,
   MarkdownPreviewIcon,
   TempFileIcon,
+  TextFileIcon,
 } from '~/components/Icons';
 import CopyButton from '~/components/Package/CopyButton';
 import MarkdownRenderer from '~/components/Package/MarkdownContentBox/MarkdownRenderer';
@@ -139,7 +139,7 @@ export default function CodeBrowserContent({
                 trigger={
                   <Pressable onPress={() => setMarkdownPreview(previewMode => !previewMode)}>
                     {markdownPreview ? (
-                      <FileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                      <TextFileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
                     ) : (
                       <MarkdownPreviewIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
                     )}

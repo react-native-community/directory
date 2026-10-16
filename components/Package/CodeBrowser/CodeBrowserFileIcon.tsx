@@ -1,11 +1,13 @@
 import {
+  CodeFileIcon,
   FileIcon,
   FileMetadataIcon,
   FolderIcon,
   FolderOpenIcon,
   ImageFileIcon,
+  TextFileIcon,
 } from '~/components/Icons';
-import { IMAGE_FILES } from '~/util/codeBrowser';
+import { IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
 import tw from '~/util/tailwind';
 
 type Props = {
@@ -23,7 +25,7 @@ export function CodeBrowserFileIcon({
   isCollapsed = false,
   isNested = false,
 }: Props) {
-  const fileExtension = label.split('.').at(-1) ?? 'text';
+  const fileExtension = label.includes('.') ? (label.split('.').at(-1) ?? 'file') : 'file';
   const isImageFile = IMAGE_FILES.includes(fileExtension);
   const style = [
     tw`size-4 shrink-0 text-icon opacity-80`,
@@ -42,5 +44,11 @@ export function CodeBrowserFileIcon({
   } else if (isImageFile) {
     return <ImageFileIcon style={style} />;
   }
-  return <FileIcon style={style} />;
+  if (['text', 'txt', 'md', 'mdx'].includes(fileExtension)) {
+    return <TextFileIcon style={style} />;
+  } else if (['file', ...PREVIEW_DISABLED_FILES].includes(fileExtension)) {
+    return <FileIcon style={style} />;
+  }
+
+  return <CodeFileIcon style={style} />;
 }
