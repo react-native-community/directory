@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
 import { TimeRange } from '~/util/datetime';
 import { parseQueryParams } from '~/util/queryParams';
 
@@ -37,7 +37,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const result = await fetch(
     `https://npm-stat.com/api/download-counts?package=${packageName}&from=${from}&until=${until}`,
-    NEXT_10M_CACHE_HEADER
+    NEXT_15M_CACHE_HEADER
   );
 
   if ('status' in result && result.status !== 200) {
