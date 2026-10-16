@@ -385,7 +385,9 @@ export default function CodeBrowser({
                 </View>
                 <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
                   <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
-                  <P style={tw`text-center`}>Select file to preview from the list on the left.</P>
+                  <P style={tw`text-center text-secondary`}>
+                    Select file to preview from the list on the left.
+                  </P>
                 </View>
               </>
             )}
