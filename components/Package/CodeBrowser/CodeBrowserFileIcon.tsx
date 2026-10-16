@@ -25,7 +25,7 @@ export function CodeBrowserFileIcon({
   isCollapsed = false,
   isNested = false,
 }: Props) {
-  const fileExtension = label.split('.').at(-1) ?? 'file';
+  const fileExtension = label.includes('.') ? (label.split('.').at(-1) ?? 'file') : 'file';
   const isImageFile = IMAGE_FILES.includes(fileExtension);
   const style = [
     tw`size-4 shrink-0 text-icon opacity-80`,

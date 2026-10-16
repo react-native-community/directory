@@ -16,6 +16,7 @@ export const SHIKI_OPTS = {
     cc: 'cpp',
     cfg: 'ini',
     cl: 'cpp',
+    cmake: 'sh',
     ets: 'ts',
     filters: 'xml',
     flow: 'tsx',
