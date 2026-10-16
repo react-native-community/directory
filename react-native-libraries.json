@@ -24862,5 +24862,9 @@
     "web": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/otf-kit/sdk/tree/main/packages/ui-native",
+    "npmPkg": "@otfdashkit/ui-native"
   }
 ]
