@@ -30,6 +30,7 @@ export const SHIKI_OPTS = {
     mk: 'sh',
     md: 'mdx',
     mm: 'objective-cpp',
+    patch: 'diff',
     pbxproj: 'ini',
     plist: 'xml',
     podspec: 'ruby',
