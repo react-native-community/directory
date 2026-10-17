@@ -23395,18 +23395,6 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/alimirzayev/react-native-background-timer",
-    "npmPkg": "@alimirzayev/react-native-background-timer",
-    "examples": [
-      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/bare",
-      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/expo"
-    ],
-    "newArchitecture": "new-arch-only",
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/phaelor/react-native-app-inspector",
     "examples": ["https://github.com/phaelor/react-native-app-inspector/tree/HEAD/example"],
     "ios": true,
@@ -24869,5 +24857,34 @@
     "ios": true,
     "android": true,
     "web": true
+  },
+  {
+    "githubUrl": "https://github.com/appandflow/react-native-reserved-regions",
+    "examples": ["https://github.com/appandflow/react-native-reserved-regions/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jnsdrssn/lucide-uniwind",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dharmveerofficial/react-native-all-video-player",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kapilislive/react-native-esc-tsc-printer",
+    "examples": ["https://github.com/kapilislive/react-native-esc-tsc-printer/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hung-yueh/react-native-litert-lm",
+    "examples": ["https://github.com/hung-yueh/react-native-litert-lm/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
