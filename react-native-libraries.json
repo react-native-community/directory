@@ -24880,5 +24880,11 @@
     "examples": ["https://github.com/kapilislive/react-native-esc-tsc-printer/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lassiecoder/rn-build-doctor",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
