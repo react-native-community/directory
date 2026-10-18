@@ -24883,6 +24883,8 @@
   },
   {
     "githubUrl": "https://github.com/lassiecoder/rn-build-doctor",
+    "ios": true,
+    "android": true,
     "dev": true
   }
 ]
