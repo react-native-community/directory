@@ -24897,6 +24897,18 @@
     "configPlugin": true
   },
   {
+    "githubUrl": "https://github.com/BohdanShh/react-native-image-comparison",
+    "examples": ["https://github.com/BohdanShh/react-native-image-comparison/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/BohdanShh/react-native-image-comparison/main/assets/demo.gif"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/SandeepTribond/NotifySphere",
     "npmPkg": "react-native-notify-sphere",
     "examples": ["https://github.com/SandeepTribond/NotifySphere/tree/main/example"],
