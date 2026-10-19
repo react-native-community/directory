@@ -24889,6 +24889,14 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/fourlyn/apple-foundation-models",
+    "npmPkg": "@fourlyn/apple-foundation-models",
+    "examples": ["https://github.com/fourlyn/apple-foundation-models/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/SandeepTribond/NotifySphere",
     "npmPkg": "react-native-notify-sphere",
     "examples": ["https://github.com/SandeepTribond/NotifySphere/tree/main/example"],
