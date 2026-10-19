@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
 import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
 import { parseQueryParams } from '~/util/queryParams';
 
@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return;
   }
 
-  const result = await fetch(`https://registry.npmjs.org/${packageName}`, NEXT_10M_CACHE_HEADER);
+  const result = await fetch(`https://registry.npmjs.org/${packageName}`, NEXT_15M_CACHE_HEADER);
 
   if ('status' in result && result.status !== 200) {
     res.statusCode = result.status;

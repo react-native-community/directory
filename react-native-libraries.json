@@ -24769,12 +24769,13 @@
     "githubUrl": "https://github.com/SectionTN/react-native-inkpad",
     "examples": ["https://github.com/SectionTN/react-native-inkpad/tree/main/example"],
     "images": [
-      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-dark.png",
-      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-light.png"
+      "https://raw.githubusercontent.com/SectionTN/react-native-inkpad/main/.github/assets/inkpad-showcase.gif",
+      "https://raw.githubusercontent.com/SectionTN/react-native-inkpad/main/.github/assets/inkpad-web.gif"
     ],
-    "newArchitecture": "new-arch-only",
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-observe",
@@ -24886,6 +24887,14 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/fourlyn/apple-foundation-models",
+    "npmPkg": "@fourlyn/apple-foundation-models",
+    "examples": ["https://github.com/fourlyn/apple-foundation-models/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true,
+    "configPlugin": true
   },
   {
     "githubUrl": "https://github.com/BohdanShh/react-native-image-comparison",

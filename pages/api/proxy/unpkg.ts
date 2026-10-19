@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next';
 
-import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { DEFAULT_RESPONSE_CACHE_HEADER, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
 import { parseQueryParams } from '~/util/queryParams';
 
 const UNPKG_TIMEOUT_MS = 15_000;
@@ -23,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const result = await fetch(`https://unpkg.com/${packageName}@${packageVersion}/${apiPath}`, {
-      ...NEXT_10M_CACHE_HEADER,
+      ...NEXT_15M_CACHE_HEADER,
       redirect: 'manual',
       signal: AbortSignal.timeout(UNPKG_TIMEOUT_MS),
     });
@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       const redirectResult = await fetch(new URL(location, 'https://unpkg.com').toString(), {
-        ...NEXT_10M_CACHE_HEADER,
+        ...NEXT_15M_CACHE_HEADER,
         signal: AbortSignal.timeout(UNPKG_TIMEOUT_MS),
       });
 

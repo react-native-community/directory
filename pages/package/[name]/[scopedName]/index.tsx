@@ -3,7 +3,7 @@ import { type NextPageContext } from 'next';
 import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
-import { EMPTY_PACKAGE_DATA, NEXT_10M_CACHE_HEADER } from '~/util/Constants';
+import { EMPTY_PACKAGE_DATA, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/queryParams';
 import { ssrFetch } from '~/util/SSRFetch';
@@ -34,7 +34,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
   try {
     const [apiResponse, npmResponse] = await Promise.all([
       ssrFetch(`/libraries`, { search: packageName }, ctx),
-      fetch(`https://registry.npmjs.org/${packageName}/latest`, NEXT_10M_CACHE_HEADER),
+      fetch(`https://registry.npmjs.org/${packageName}/latest`, NEXT_15M_CACHE_HEADER),
     ]);
 
     if (apiResponse.status !== 200 || (npmResponse.status !== 200 && npmResponse.status !== 404)) {
