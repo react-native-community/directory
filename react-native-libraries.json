@@ -24905,6 +24905,7 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "expoGo": true
   }
 ]
