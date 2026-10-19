@@ -24887,5 +24887,13 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/fourlyn/apple-foundation-models",
+    "npmPkg": "@fourlyn/apple-foundation-models",
+    "examples": ["https://github.com/fourlyn/apple-foundation-models/tree/main/example"],
+    "ios": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
