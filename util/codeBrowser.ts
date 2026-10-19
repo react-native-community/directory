@@ -42,9 +42,12 @@ export const FILE_WARNINGS = [
   {
     message: 'This file probably should not be part of the bundle and can be safely ignored.',
     fileNames: [
+      '*.apinotes',
       '*.iml',
       '*.keystore',
-      '*.apinotes',
+      '*.lock',
+      '*.log',
+      '*.test.*',
       '_config.yml',
       '.all-contributorsrc',
       '.babelrc',
@@ -114,6 +117,9 @@ export const DIRECTORY_WARNINGS = [
       '.github',
       '.gradle',
       '.idea',
+      '.settings',
+      '.transforms',
+      '.turbo',
       '.vs',
       '__tests__',
       '__mocks__',
@@ -143,10 +149,11 @@ const SOURCE_MAP_PARENT_EXTENSIONS = new Set([
   'tsx',
 ]);
 
-const DECLARATION_FILE_PARENT_EXTENSIONS = new Map([
-  ['.d.cts', ['cjs']],
-  ['.d.mts', ['mjs']],
+const RELATED_FILE_PARENT_EXTENSIONS = new Map([
+  ['.d.cts', ['js', 'cjs']],
+  ['.d.mts', ['js', 'mjs']],
   ['.d.ts', ['js', 'mjs', 'cjs']],
+  ['.min.js', ['js']],
 ]);
 
 const HASH_FILE_EXTENSIONS = new Set(['md5', 'sha1', 'sha3', 'sha256', 'sha512']);
@@ -190,7 +197,7 @@ export function getCodeBrowserFilePath(path: string, prefix?: string) {
 export function getCodeBrowserNestedFileParentPaths(path: string) {
   const lowerCasedPath = path.toLowerCase();
 
-  for (const [declarationFileSuffix, parentExtensions] of DECLARATION_FILE_PARENT_EXTENSIONS) {
+  for (const [declarationFileSuffix, parentExtensions] of RELATED_FILE_PARENT_EXTENSIONS) {
     if (!lowerCasedPath.endsWith(declarationFileSuffix)) {
       continue;
     }

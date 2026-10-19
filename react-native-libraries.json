@@ -23395,18 +23395,6 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/alimirzayev/react-native-background-timer",
-    "npmPkg": "@alimirzayev/react-native-background-timer",
-    "examples": [
-      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/bare",
-      "https://github.com/alimirzayev/react-native-background-timer/tree/main/examples/expo"
-    ],
-    "newArchitecture": "new-arch-only",
-    "ios": true,
-    "android": true,
-    "web": true
-  },
-  {
     "githubUrl": "https://github.com/phaelor/react-native-app-inspector",
     "examples": ["https://github.com/phaelor/react-native-app-inspector/tree/HEAD/example"],
     "ios": true,
@@ -24781,12 +24769,13 @@
     "githubUrl": "https://github.com/SectionTN/react-native-inkpad",
     "examples": ["https://github.com/SectionTN/react-native-inkpad/tree/main/example"],
     "images": [
-      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-dark.png",
-      "https://github.com/SectionTN/react-native-inkpad/blob/main/.github/assets/inkpad-banner-light.png"
+      "https://raw.githubusercontent.com/SectionTN/react-native-inkpad/main/.github/assets/inkpad-showcase.gif",
+      "https://raw.githubusercontent.com/SectionTN/react-native-inkpad/main/.github/assets/inkpad-web.gif"
     ],
-    "newArchitecture": "new-arch-only",
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "newArchitecture": "new-arch-only"
   },
   {
     "githubUrl": "https://github.com/expo/expo/tree/main/packages/expo-observe",
@@ -24825,6 +24814,79 @@
     "macos": true,
     "tvos": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/valeriobelli/react-native-use-dom/tree/main/packages/react-native-use-dom",
+    "npmPkg": "react-native-use-dom",
+    "examples": [
+      "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/bare-0.87",
+      "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/expo-57"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/valeriobelli/react-native-use-dom/main/docs/assets/native-bridge.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/lucaswitch/react-native-oauth-essentials",
+    "examples": ["https://github.com/lucaswitch/react-native-oauth-essentials/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/aqeelkhokhar/react-native-layout-transfarmer",
+    "examples": [
+      "https://github.com/aqeelkhokhar/react-native-layout-transfarmer/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/aqeelkhokhar/react-native-layout-transfarmer/main/docs/assets/hero.gif",
+      "https://raw.githubusercontent.com/aqeelkhokhar/react-native-layout-transfarmer/main/docs/assets/canvas.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/otf-kit/sdk/tree/main/packages/ui-native",
+    "npmPkg": "@otfdashkit/ui-native",
+    "ios": true,
+    "android": true,
+    "web": true
+  },
+  {
+    "githubUrl": "https://github.com/appandflow/react-native-reserved-regions",
+    "examples": ["https://github.com/appandflow/react-native-reserved-regions/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/jnsdrssn/lucide-uniwind",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/dharmveerofficial/react-native-all-video-player",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/kapilislive/react-native-esc-tsc-printer",
+    "examples": ["https://github.com/kapilislive/react-native-esc-tsc-printer/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/lassiecoder/rn-build-doctor",
+    "ios": true,
+    "android": true,
+    "dev": true
   },
   {
     "githubUrl": "https://github.com/fourlyn/apple-foundation-models",

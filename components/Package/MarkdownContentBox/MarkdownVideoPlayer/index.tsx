@@ -25,7 +25,8 @@ export default function MarkdownVideoPlayer({ src, style }: Props) {
         className={`${styles.player} media-minimal-skin relative mt-3 max-h-[592px] max-w-full`}
         style={style}>
         {hasError ? (
-          <P style={tw`text-center text-sm font-light leading-[150px] text-secondary`}>
+          <P
+            style={tw`flex items-center justify-center text-sm font-light leading-[150px] text-tertiary`}>
             Unable to load video source
           </P>
         ) : (

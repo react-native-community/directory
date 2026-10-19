@@ -1048,8 +1048,42 @@ export function FileIcon({ style }: IconProps) {
       strokeWidth="16">
       <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
       <Polyline points="152 32 152 88 208 88" />
+    </Svg>
+  );
+}
+
+export function TextFileIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
+      <Polyline points="152 32 152 88 208 88" />
       <Line x1="96" y1="136" x2="160" y2="136" />
       <Line x1="96" y1="168" x2="160" y2="168" />
+    </Svg>
+  );
+}
+
+export function CodeFileIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-6`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <Path d="M200,224H56a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96l56,56V216A8,8,0,0,1,200,224Z" />
+      <Polyline points="152 32 152 88 208 88" />
+      <Polyline points="112 136 96 152 112 168" />
+      <Polyline points="144 136 160 152 144 168" />
     </Svg>
   );
 }
