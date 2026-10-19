@@ -24907,5 +24907,12 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SandeepTribond/NotifySphere",
+    "npmPkg": "react-native-notify-sphere",
+    "examples": ["https://github.com/SandeepTribond/NotifySphere/tree/main/example"],
+    "ios": true,
+    "android": true
   }
 ]
