@@ -125,16 +125,18 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   const noData = (!markdownContent?.content && Boolean(readmeFallbackContent)) || !repoUrl;
 
   useEffect(() => {
-    if (!noData && window.location.hash) {
-      const element = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (noData || !window.location.hash) {
+      return;
+    }
 
-      if (element) {
-        const timer = setTimeout(() => {
-          const top = element.getBoundingClientRect().top + window.scrollY - 12;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }, 500);
-        return () => clearTimeout(timer);
-      }
+    const element = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+
+    if (element) {
+      const timer = setTimeout(() => {
+        const top = element.getBoundingClientRect().top + window.scrollY - 12;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, 500);
+      return () => clearTimeout(timer);
     }
   }, [noData]);
 

@@ -26,13 +26,14 @@ export default function CopyButton({ data, tooltip, label, style }: Props) {
           containerStyle={[tw`absolute right-3 top-3`, style]}
           style={tw`bg-transparent`}
           onPress={async () => {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              await navigator.clipboard.writeText(data);
-              setCopied(true);
-              setTimeout(() => {
-                setCopied(false);
-              }, 1000);
+            if (!navigator.clipboard?.writeText) {
+              return;
             }
+            await navigator.clipboard.writeText(data);
+            setCopied(true);
+            setTimeout(() => {
+              setCopied(false);
+            }, 1000);
           }}
           aria-label={label}>
           <Icon
