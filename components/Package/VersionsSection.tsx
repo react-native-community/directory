@@ -88,19 +88,20 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
               updateVersionSearchQuery(normalizedQuery);
             }}
             onKeyPress={event => {
-              if ('key' in event) {
-                if (isSearchShortcutPressed(event)) {
+              if (!('key' in event)) {
+                return;
+              }
+              if (isSearchShortcutPressed(event)) {
+                event.preventDefault();
+              }
+              if (inputRef.current && event.key === 'Escape') {
+                if (versionSearch) {
                   event.preventDefault();
-                }
-                if (inputRef.current && event.key === 'Escape') {
-                  if (versionSearch) {
-                    event.preventDefault();
-                    inputRef.current.clear();
-                    setVersionSearch('');
-                    replaceVersionSearchQuery('');
-                  } else {
-                    inputRef.current.blur();
-                  }
+                  inputRef.current.clear();
+                  setVersionSearch('');
+                  replaceVersionSearchQuery('');
+                } else {
+                  inputRef.current.blur();
                 }
               }
             }}

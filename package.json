@@ -64,6 +64,7 @@
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
     "@next/bundle-analyzer": "^16.4.1",
+    "@pobammer-ts/small-rules": "^3.6.0",
     "@types/bun": "^1.4.3",
     "@types/crypto-js": "^4.2.2",
     "@types/react": "^19.3.0",
@@ -78,8 +79,8 @@
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.5",
-    "oxfmt": "^0.73.0",
-    "oxlint": "^1.88.0",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
     "oxlint-plugin-golden": "^0.1.2",
     "oxlint-plugin-react-doctor": "^0.9.18",
     "oxlint-tsgolint": "^7.0.2004",

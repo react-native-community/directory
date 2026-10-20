@@ -37,10 +37,11 @@ export function useNavigationTabs(tabs: number, gap: number) {
       setTriggerWidth(width);
     }
     tabRefs.current.forEach((tab, index) => {
-      if (tab) {
-        const { width } = tab.getBoundingClientRect();
-        updateTabWidth(index, width);
+      if (!tab) {
+        return;
       }
+      const { width } = tab.getBoundingClientRect();
+      updateTabWidth(index, width);
     });
   });
 
