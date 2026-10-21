@@ -110,7 +110,8 @@ export default function Tools() {
         />
         <ToolEntry
           name="NativeKeel"
-          description="A health check for React Native and Expo apps: upgrade blockers, store requirements, crash risks, accessibility and security, with a go/no-go upgrade readiness verdict. It reads React Native Directory data for each dependency's maintenance and New Architecture status."
+          description="A health check for React Native and Expo apps: upgrade blockers, store requirements, crash risks, accessibility and security, with a go/no-go upgrade readiness verdict."
+          note="It uses React Native Directory data to assess each dependency’s maintenance and New Architecture status."
           githubUrl="https://github.com/AlicanAkyol/nativekeel"
           buttons={[
             {
