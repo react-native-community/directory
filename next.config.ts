@@ -17,7 +17,6 @@ const PACKAGES_TO_OPTIMIZE = [
   'node-emoji',
   'react-native',
   'react-native-safe-area-context',
-  'react-native-svg',
   'react-native-web',
   'react-shiki',
   'semver',
