@@ -18724,7 +18724,8 @@
     "npmPkg": "@atproto/oauth-client-expo",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/rit3zh/expo-ios-visual-blur",
