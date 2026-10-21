@@ -32,7 +32,15 @@ export default function Scoring() {
           specific needs. When evaluating libraries to include in your project, review the library
           yourself to determine if it&apos;s a good fit.
         </Caption>
-        <H2 style={tw`mb-5 mt-4`}>Directory Score</H2>
+        <H2 style={tw`mb-5 mt-4`} id="directory-score">
+          <A
+            href="#directory-score"
+            target="_self"
+            style={tw`no-underline`}
+            hoverStyle={tw`text-palette-gray5 dark:text-palette-gray3`}>
+            Directory Score
+          </A>
+        </H2>
         <P style={tw`mb-4 font-light leading-[27px]`}>
           The Directory Score is the combination of multiple factors that relate to the quality of a
           library. A library can earn value by exhibiting &quot;good behavior criteria&quot; and can
@@ -65,7 +73,15 @@ export default function Scoring() {
           </ScoringCriterion>
         ))}
         <br />
-        <H2 style={tw`mb-5 mt-4`}>Trending Score</H2>
+        <H2 style={tw`mb-5 mt-4`} id="trending-score">
+          <A
+            href="#trending-score"
+            target="_self"
+            style={tw`no-underline`}
+            hoverStyle={tw`text-palette-gray5 dark:text-palette-gray3`}>
+            Trending Score
+          </A>
+        </H2>
         <P style={tw`mb-4 font-light leading-[27px]`}>
           The Trending Score is the combination of multiple factors that relate to the download
           count and quality of a library. A library gets the the base score from the Popularity Gain
