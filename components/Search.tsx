@@ -71,24 +71,25 @@ export default function Search({ query, total, style }: Props) {
               id="search"
               autoComplete="off"
               onKeyPress={event => {
-                if ('key' in event) {
-                  if (isSearchShortcutPressed(event)) {
+                if (!('key' in event)) {
+                  return;
+                }
+                if (isSearchShortcutPressed(event)) {
+                  event.preventDefault();
+                }
+                if (inputRef.current && event.key === 'Escape') {
+                  if (search) {
                     event.preventDefault();
-                  }
-                  if (inputRef.current && event.key === 'Escape') {
-                    if (search) {
-                      event.preventDefault();
-                      inputRef.current.clear();
-                      void replace(
-                        urlWithQuery('/packages', {
-                          ...query,
-                          search: undefined,
-                          offset: undefined,
-                        })
-                      );
-                    } else {
-                      inputRef.current.blur();
-                    }
+                    inputRef.current.clear();
+                    void replace(
+                      urlWithQuery('/packages', {
+                        ...query,
+                        search: undefined,
+                        offset: undefined,
+                      })
+                    );
+                  } else {
+                    inputRef.current.blur();
                   }
                 }
               }}

@@ -36,17 +36,19 @@ export function useSearchShortcut(inputRef: RefObject<TextInputInstance | null>)
   const isApple = isAppleDevice();
 
   const keyDownListener = useEffectEvent((event: KeyboardEvent) => {
-    if (event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey)) {
-      event.preventDefault();
-      inputRef.current?.focus();
+    if (!(event.key === 'k' && (isApple ? event.metaKey : event.ctrlKey))) {
+      return;
     }
+    event.preventDefault();
+    inputRef.current?.focus();
   });
 
   useEffect(() => {
-    if (isApple !== null) {
-      document.addEventListener('keydown', keyDownListener, false);
-      return () => document.removeEventListener('keydown', keyDownListener);
+    if (isApple === null) {
+      return;
     }
+    document.addEventListener('keydown', keyDownListener, false);
+    return () => document.removeEventListener('keydown', keyDownListener);
   }, [isApple]);
 
   return isApple;

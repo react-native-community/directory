@@ -126,54 +126,47 @@ export default function QuickSearch({ style }: Props) {
             id="quick-search"
             autoComplete="off"
             onKeyPress={event => {
-              if ('key' in event) {
-                if (typeof event.key !== 'string') {
+              if (!('key' in event)) {
+                return;
+              }
+              if (typeof event.key !== 'string') {
+                return;
+              }
+              if (event.key === 'ArrowDown' && shouldShowResults && hasResults) {
+                event.preventDefault();
+                handleArrowDownPress();
+              }
+              if (event.key === 'ArrowUp' && shouldShowResults && hasResults) {
+                event.preventDefault();
+                handleArrowUpPress();
+              }
+              if (event.key === 'Enter') {
+                event.preventDefault();
+
+                if (effectiveActiveResultIndex !== null && libraries[effectiveActiveResultIndex]) {
+                  void handleResultSelect(libraries[effectiveActiveResultIndex].npmPkg);
                   return;
                 }
 
-                if (event.key === 'ArrowDown' && shouldShowResults && hasResults) {
+                void push(urlWithQuery('/packages', { search: searchRef.current }));
+              }
+              if (isSearchShortcutPressed(event)) {
+                event.preventDefault();
+              }
+              if (inputRef.current && event.key === 'Escape') {
+                if (activeResultIndex !== null) {
                   event.preventDefault();
-                  handleArrowDownPress();
+                  setActiveResultIndex(null);
+                  return;
                 }
 
-                if (event.key === 'ArrowUp' && shouldShowResults && hasResults) {
+                if (search) {
                   event.preventDefault();
-                  handleArrowUpPress();
-                }
-
-                if (event.key === 'Enter') {
-                  event.preventDefault();
-
-                  if (
-                    effectiveActiveResultIndex !== null &&
-                    libraries[effectiveActiveResultIndex]
-                  ) {
-                    void handleResultSelect(libraries[effectiveActiveResultIndex].npmPkg);
-                    return;
-                  }
-
-                  void push(urlWithQuery('/packages', { search: searchRef.current }));
-                }
-
-                if (isSearchShortcutPressed(event)) {
-                  event.preventDefault();
-                }
-
-                if (inputRef.current && event.key === 'Escape') {
-                  if (activeResultIndex !== null) {
-                    event.preventDefault();
-                    setActiveResultIndex(null);
-                    return;
-                  }
-
-                  if (search) {
-                    event.preventDefault();
-                    inputRef.current.clear();
-                    searchRef.current = '';
-                    setSearch('');
-                  } else {
-                    inputRef.current.blur();
-                  }
+                  inputRef.current.clear();
+                  searchRef.current = '';
+                  setSearch('');
+                } else {
+                  inputRef.current.blur();
                 }
               }
             }}

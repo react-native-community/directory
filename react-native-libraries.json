@@ -24924,5 +24924,12 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/azizbecha/expo-flashlight",
+    "npmPkg": "expo-flashlight",
+    "ios": true,
+    "android": true,
+    "expoGo": false
   }
 ]
