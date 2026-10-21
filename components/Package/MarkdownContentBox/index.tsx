@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { type ComponentRef, useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 import useSWR from 'swr';
 
@@ -39,6 +39,8 @@ type Props = {
 
 export default function MarkdownContentBox({ packageName, library, loader = false }: Props) {
   const router = useRouter();
+  const markdownContentBoxRef = useRef<ComponentRef<typeof View>>(null);
+  const markdownContentHeaderRef = useRef<ComponentRef<typeof View>>(null);
   const repoUrl = library?.github.urls.repo;
 
   const contentTabs: MarkdownTab[] = [
@@ -140,12 +142,40 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
     }
   }, [noData]);
 
+  function scrollContainerToTop(smooth = false) {
+    markdownContentBoxRef.current?.measureInWindow((_x, containerTop) => {
+      window.scrollTo({
+        top: window.scrollY + containerTop,
+        behavior: smooth ? 'smooth' : undefined,
+      });
+    });
+  }
+
   function handleTabChange(nextTab: MarkdownTabsType) {
     if (nextTab === activeTab) {
+      scrollContainerToTop(true);
       return;
     }
 
     setActiveTab(nextTab);
+
+    const header = markdownContentHeaderRef.current;
+    const container = markdownContentBoxRef.current;
+
+    if (header && container) {
+      header.measureInWindow((_x, headerTop, _width, headerHeight) => {
+        container.measureInWindow((_x, containerTop, _width, containerHeight) => {
+          const isHeaderSticky =
+            Math.abs(headerTop) < 1 &&
+            containerTop < headerTop &&
+            containerTop + containerHeight > headerTop + headerHeight;
+
+          if (isHeaderSticky) {
+            scrollContainerToTop();
+          }
+        });
+      });
+    }
 
     const url = new URL(window.location.href);
 
@@ -165,9 +195,12 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
 
   return (
     <View
+      ref={markdownContentBoxRef}
       style={tw`my-2 rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
       <View
-        style={tw`flex-row flex-wrap items-center gap-x-2 border-b border-palette-gray2 pl-1.5 pr-16 dark:border-default`}>
+        ref={markdownContentHeaderRef}
+        nativeID="markdownContentHeader"
+        style={tw`flex-row flex-wrap items-center gap-x-2 rounded-t-xl border-b border-palette-gray2 pl-1.5 pr-16 dark:border-default`}>
         {contentTabs.map(tab => (
           <MarkdownContentTab
             tab={tab}
