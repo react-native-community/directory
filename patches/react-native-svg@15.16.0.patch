@@ -1,5 +1,5 @@
 diff --git a/lib/commonjs/lib/resolveAssetUri.web.js b/lib/commonjs/lib/resolveAssetUri.web.js
-index 2fca49cca64dc93819a7a9ed61bba6c96d178731..a8d3c9f1b9de939b9763465ef8bb8eb72c42de80 100644
+index 2fca49cca64dc93819a7a9ed61bba6c96d178731..5e36c939ecea57b91951a5b25c0c88079649560d 100644
 --- a/lib/commonjs/lib/resolveAssetUri.web.js
 +++ b/lib/commonjs/lib/resolveAssetUri.web.js
 @@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
@@ -8,15 +8,37 @@ index 2fca49cca64dc93819a7a9ed61bba6c96d178731..a8d3c9f1b9de939b9763465ef8bb8eb7
  var _reactNative = require("react-native");
 -var _registry = require("@react-native/assets-registry/registry");
 -// @ts-expect-error react-native/assets-registry doesn't export types.
- 
+
  const svgDataUriPattern = /^(data:image\/svg\+xml;utf8,)(.*)/;
- 
+
 @@ -15,7 +13,7 @@ function resolveAssetUri(source) {
    let src = {};
    if (typeof source === 'number') {
      // get the URI from the packager
 -    const asset = (0, _registry.getAssetByID)(source);
 +    const asset = _reactNative.AssetRegistry.getAssetByID(source);
+     if (asset == null) {
+       throw new Error(`Image: asset with ID "${source}" could not be found. Please check the image source or packager.`);
+     }
+diff --git a/lib/module/lib/resolveAssetUri.web.js b/lib/module/lib/resolveAssetUri.web.js
+index 939b783aa6805d0301b8a7220ca47231ed72bce1..01bd9f5e7c6ba0328b84ece52546dff028aa08d7 100644
+--- a/lib/module/lib/resolveAssetUri.web.js
++++ b/lib/module/lib/resolveAssetUri.web.js
+@@ -1,6 +1,5 @@
+-import { PixelRatio } from 'react-native';
+-// @ts-expect-error react-native/assets-registry doesn't export types.
+-import { getAssetByID } from '@react-native/assets-registry/registry';
++import { PixelRatio, AssetRegistry } from 'react-native';
++
+ const svgDataUriPattern = /^(data:image\/svg\+xml;utf8,)(.*)/;
+
+ // Based on that function: https://github.com/necolas/react-native-web/blob/54c14d64dabd175e8055e1dc92e9196c821f9b7d/packages/react-native-web/src/exports/Image/index.js#L118-L156
+@@ -8,7 +7,7 @@ export function resolveAssetUri(source) {
+   let src = {};
+   if (typeof source === 'number') {
+     // get the URI from the packager
+-    const asset = getAssetByID(source);
++    const asset = AssetRegistry.getAssetByID(source);
      if (asset == null) {
        throw new Error(`Image: asset with ID "${source}" could not be found. Please check the image source or packager.`);
      }
