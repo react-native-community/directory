@@ -887,3 +887,9 @@ select {
 [id^='statistic-chart'] {
   scroll-margin-top: 1.25rem;
 }
+
+/* SCORING */
+
+h2[id$='-score'] {
+  scroll-margin-top: 12px;
+}

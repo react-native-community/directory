@@ -25,7 +25,7 @@ export default function ToolEntry({ name, description, note, githubUrl, buttons 
       <H3 style={tw`mb-1 px-5 text-xl`}>{name}</H3>
       <View style={tw`mb-3.5 gap-1.5 px-5`}>
         <P style={tw`font-light leading-[23px]`}>{description}</P>
-        {note && <Caption style={tw`font-light leading-tight text-secondary`}>{note}</Caption>}
+        {note && <Caption style={tw`font-light text-secondary`}>{note}</Caption>}
       </View>
       <View
         style={tw`flex-row flex-wrap items-center gap-3 border-t border-default bg-palette-gray1 px-5 py-3 dark:bg-dark-bright`}>

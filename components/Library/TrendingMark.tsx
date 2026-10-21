@@ -41,7 +41,9 @@ export default function TrendingMark({ library, style, markOnly = false }: Props
     <View style={[tw`mb-1`, style]}>{content}</View>
   ) : (
     <HoverEffect>
-      <A href="/scoring" style={[tw`relative flex items-start no-underline`, style as Style]}>
+      <A
+        href="/scoring#trending-score"
+        style={[tw`relative flex items-start no-underline`, style as Style]}>
         {content}
       </A>
     </HoverEffect>
