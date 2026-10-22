@@ -24932,5 +24932,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
-  }
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-flash-reels",
+    "examples": ["https://github.com/thedev204/react-native-flash-reels/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-flash-reels/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
 ]
