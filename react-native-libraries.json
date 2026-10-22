@@ -24922,5 +24922,13 @@
     "ios": true,
     "android": true,
     "expoGo": false
+  },
+  {
+    "githubUrl": "https://github.com/asyntai/react-native-asyntai-ai-chatbot",
+    "examples": ["https://github.com/asyntai/react-native-asyntai-ai-chatbot/tree/main/example"],
+    "images": ["https://raw.githubusercontent.com/asyntai/react-native-asyntai-ai-chatbot/main/doc/screenshot.png"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
