@@ -1,5 +1,7 @@
 import { config } from 'dotenv';
 import { uniq } from 'es-toolkit/array';
+import semverClean from 'semver/functions/clean';
+import semverGt from 'semver/functions/gt';
 
 import { type LibraryLicenseType, type LibraryType } from '~/types';
 import { isMissingPackageJsonError, MissingPackageJsonError } from '~/util/errors';
@@ -177,8 +179,14 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
+      const CRNLType = packageJson['create-react-native-library']?.type;
+      const CRNLVersion = packageJson['create-react-native-library']?.version;
 
-      json.newArchitecture = Boolean(packageJson.codegenConfig);
+      json.newArchitecture =
+        Boolean(packageJson.codegenConfig) ||
+        (CRNLType &&
+          ['turbo-module', 'fabric-view', 'nitro-module', 'nitro-view'].includes(CRNLType)) ||
+        (CRNLVersion && semverGt(semverClean(CRNLVersion) ?? '0.0.0', '0.49.8'));
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
       json.registry = packageJson?.publishConfig?.registry ?? undefined;
