@@ -24942,5 +24942,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/VMichael1999/expo-floating-bubble-overlay",
+    "examples": ["https://github.com/VMichael1999/expo-floating-bubble-overlay/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/02-background.webp",
+      "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/03-drag-to-dismiss.webp"
+    ],
+    "android": true,
+    "configPlugin": true
   }
 ]
