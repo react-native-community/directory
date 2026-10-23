@@ -53,6 +53,7 @@ export default function StatisticsBarChart({
   const { isSmallScreen } = useLayout();
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredStackEntry, setHoveredStackEntry] = useState<ChartEntry | null>(null);
   const isDark = tw.prefixMatch('dark');
 
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
@@ -195,7 +196,14 @@ export default function StatisticsBarChart({
           stackSeries.map(({ label, rowIndex, series: groupSeries }) => (
             <BarStack
               key={label}
-              onPointerMove={() => setHoveredIndex(rowIndex)}
+              onPointerMove={({ datum, distanceX }) => {
+                if (distanceX !== 0) {
+                  return;
+                }
+
+                setHoveredIndex(rowIndex);
+                setHoveredStackEntry(datum as ChartEntry);
+              }}
               onPointerOut={() => setHoveredIndex(null)}>
               {groupSeries.map(({ dataKey, data: stackData, radiusLeft, radiusRight }) => (
                 <BarSeries
@@ -274,7 +282,7 @@ export default function StatisticsBarChart({
           unstyled
           applyPositionStyle
           renderTooltip={({ tooltipData }) => {
-            const entry = tooltipData?.nearestDatum?.datum;
+            const entry = stackedData ? hoveredStackEntry : tooltipData?.nearestDatum?.datum;
 
             if (!entry) {
               return null;
