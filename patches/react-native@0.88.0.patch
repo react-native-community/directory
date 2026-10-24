@@ -1,12 +1,12 @@
 diff --git a/types_generated/Libraries/Components/Pressable/Pressable.d.ts b/types_generated/Libraries/Components/Pressable/Pressable.d.ts
-index 544f2da9041126d736e4c405a65615803cbaf52b..f0824a90bb4c12847e348c6d179e5c922a35faf8 100644
+index c7a51cc5192b45bbe7dbaddb5e5228b121d34072..860161ef3471da82d2b8c53cd0b644eb1d012097 100644
 --- a/types_generated/Libraries/Components/Pressable/Pressable.d.ts
 +++ b/types_generated/Libraries/Components/Pressable/Pressable.d.ts
 @@ -20,6 +20,7 @@ import * as React from "react";
  export type PressableInstance = HostInstance;
  export type { PressableAndroidRippleConfig };
- export interface PressableStateCallbackType {
-+  readonly hovered: boolean;
-   readonly pressed: boolean;
- }
- type PressableBaseProps = Readonly<{
+ type PressableStateCallbackTypeCore = Readonly<{
++  hovered: boolean;
+   pressed: boolean;
+ }>;
+ export interface PressableStateCallbackType extends PressableStateCallbackTypeCore {}
