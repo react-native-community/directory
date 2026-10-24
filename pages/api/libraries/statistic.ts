@@ -15,7 +15,7 @@ const SCORE_BUCKET_LABELS = Array.from({ length: 10 }, (_, index) => {
 });
 
 const DEPENDENCY_BUCKETS = [
-  { label: '0', min: 0, max: 0 },
+  { label: 'None', min: 0, max: 0 },
   { label: '1-5', min: 1, max: 5 },
   { label: '6-10', min: 6, max: 10 },
   { label: '11-24', min: 11, max: 24 },
