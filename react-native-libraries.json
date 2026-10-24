@@ -24952,5 +24952,15 @@
     ],
     "android": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/react-native-codepad",
+    "examples": ["https://github.com/SectionTN/react-native-codepad/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/SectionTN/react-native-codepad/main/.github/assets/codepad-showcase.gif"
+    ],
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
