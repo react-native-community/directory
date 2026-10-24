@@ -395,12 +395,20 @@ select {
   }
 }
 
-/* PACKAGE STICKY CONTAINER */
+/* PACKAGE STICKY CONTAINERS */
 
 #metadataContainer {
   top: 26px;
   height: fit-content;
   position: sticky;
+}
+
+#markdownContentHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: color-mix(in srgb, var(--background), transparent 12%);
+  backdrop-filter: blur(6px);
 }
 
 /* MARKDOWN CONTENT WRAPPER */
@@ -439,7 +447,7 @@ select {
   h4,
   h5,
   h6 {
-    scroll-margin-top: 12px;
+    scroll-margin-top: 56px;
     margin-bottom: 0;
     display: flex;
     flex-wrap: wrap;
@@ -886,4 +894,10 @@ select {
 
 [id^='statistic-chart'] {
   scroll-margin-top: 1.25rem;
+}
+
+/* SCORING */
+
+h2[id$='-score'] {
+  scroll-margin-top: 12px;
 }

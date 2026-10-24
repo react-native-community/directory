@@ -108,6 +108,22 @@ export default function Tools() {
           description="Find and install packages for all of your React Native apps from inside Neovim."
           githubUrl="https://github.com/sjwall/react-native-directory.nvim"
         />
+        <ToolEntry
+          name="NativeKeel"
+          description="A health check for React Native and Expo apps: upgrade blockers, store requirements, crash risks, accessibility and security, with a go/no-go upgrade readiness verdict."
+          note="It uses React Native Directory data to assess each dependency’s maintenance and New Architecture status."
+          githubUrl="https://github.com/AlicanAkyol/nativekeel"
+          buttons={[
+            {
+              label: 'Website',
+              href: 'https://nativekeel.com',
+            },
+            {
+              label: 'npm Registry',
+              href: 'https://www.npmjs.com/package/nativekeel',
+            },
+          ]}
+        />
       </ContentContainer>
     </>
   );

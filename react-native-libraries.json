@@ -18724,7 +18724,8 @@
     "npmPkg": "@atproto/oauth-client-expo",
     "ios": true,
     "android": true,
-    "web": true
+    "web": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/rit3zh/expo-ios-visual-blur",
@@ -24931,5 +24932,35 @@
     "ios": true,
     "android": true,
     "expoGo": false
+  },
+  {
+    "githubUrl": "https://github.com/asyntai/react-native-asyntai-ai-chatbot",
+    "examples": ["https://github.com/asyntai/react-native-asyntai-ai-chatbot/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/asyntai/react-native-asyntai-ai-chatbot/main/doc/screenshot.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-flash-reels",
+    "examples": ["https://github.com/thedev204/react-native-flash-reels/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-flash-reels/main/assets/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/VMichael1999/expo-floating-bubble-overlay",
+    "examples": ["https://github.com/VMichael1999/expo-floating-bubble-overlay/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/02-background.webp",
+      "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/03-drag-to-dismiss.webp"
+    ],
+    "android": true,
+    "configPlugin": true
   }
 ]
