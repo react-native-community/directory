@@ -72,7 +72,7 @@ export function detectPackageManager(rootFiles: RootFiles) {
   return undefined;
 }
 
-const OXLINT_CONFIG_FILE_NAMES = new Set([
+export const OXLINT_CONFIG_FILE_NAMES = new Set([
   '.oxlintrc.json',
   '.oxlintrc.jsonc',
   'oxlint.config.mts',
@@ -80,7 +80,7 @@ const OXLINT_CONFIG_FILE_NAMES = new Set([
   'oxlint.config.mjs',
   'oxlint.config.js',
 ]);
-const OXFMT_CONFIG_FILE_NAMES = new Set([
+export const OXFMT_CONFIG_FILE_NAMES = new Set([
   '.oxfmtrc.json',
   '.oxfmtrc.jsonc',
   'oxfmt.config.mts',
@@ -88,7 +88,7 @@ const OXFMT_CONFIG_FILE_NAMES = new Set([
   'oxfmt.config.mjs',
   'oxfmt.config.js',
 ]);
-const ESLINT_CONFIG_FILE_NAMES = new Set([
+export const ESLINT_CONFIG_FILE_NAMES = new Set([
   'eslint.config.js',
   'eslint.config.mjs',
   'eslint.config.cjs',
@@ -102,7 +102,7 @@ const ESLINT_CONFIG_FILE_NAMES = new Set([
   '.eslintrc.yml',
   '.eslintignore',
 ]);
-const PRETTIER_CONFIG_FILE_NAMES = new Set([
+export const PRETTIER_CONFIG_FILE_NAMES = new Set([
   '.prettierrc',
   '.prettierrc.json',
   '.prettierrc.json5',
@@ -117,8 +117,8 @@ const PRETTIER_CONFIG_FILE_NAMES = new Set([
   'prettier.config.mjs',
   '.prettierignore',
 ]);
-const BIOME_CONFIG_FILE_NAMES = new Set(['biome.json', 'biome.jsonc']);
-const COMMITLINT_CONFIG_FILE_NAMES = new Set([
+export const BIOME_CONFIG_FILE_NAMES = new Set(['biome.json', 'biome.jsonc']);
+export const COMMITLINT_CONFIG_FILE_NAMES = new Set([
   '.commitlintrc',
   '.commitlintrc.json',
   '.commitlintrc.yaml',

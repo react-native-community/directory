@@ -82,7 +82,7 @@ export function MarkdownVideoPlayerControls() {
             <Time.Separator className="media-time-separator" />
             <Time.Value type="duration" className="media-time media-time--duration" />
           </Time.Group>
-          <TimeSlider.Root className="media-slider">
+          <TimeSlider.Root className="media-slider" pauseOnDrag>
             <TimeSlider.Track className="media-slider__track">
               <TimeSlider.Fill className="media-slider__fill" />
               <TimeSlider.Buffer className="media-slider__buffer" />
