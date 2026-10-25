@@ -25066,5 +25066,14 @@
     ],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nitinshukla413/react-native-nitro-html-to-pdf",
+    "examples": [
+      "https://github.com/nitinshukla413/react-native-nitro-html-to-pdf/tree/main/example"
+    ],
+    "newArchitecture": "new-arch-only",
+    "android": true,
+    "ios": true
   }
 ]
