@@ -25063,5 +25063,24 @@
     ],
     "ios": true,
     "android": true
+  },{
+    "githubUrl": "https://github.com/ZaynSaul/rn-keyboard-form",
+    "npmPkg": "@saulzayn/rn-keyboard-form",
+    "examples": ["https://github.com/ZaynSaul/rn-keyboard-form/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/ZaynSaul/rn-keyboard-form/main/docs/iphone-form.png",
+      "https://raw.githubusercontent.com/ZaynSaul/rn-keyboard-form/main/docs/android-form.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/nitinshukla413/react-native-nitro-html-to-pdf",
+    "examples": [
+      "https://github.com/nitinshukla413/react-native-nitro-html-to-pdf/tree/main/example"
+    ],
+    "newArchitecture": "new-arch-only",
+    "android": true,
+    "ios": true
   }
 ]
