@@ -1,4 +1,12 @@
 import { type CodeBrowserTreeDirectory, type UnpkgMeta } from '~/types';
+import {
+  BIOME_CONFIG_FILE_NAMES,
+  COMMITLINT_CONFIG_FILE_NAMES,
+  ESLINT_CONFIG_FILE_NAMES,
+  OXFMT_CONFIG_FILE_NAMES,
+  OXLINT_CONFIG_FILE_NAMES,
+  PRETTIER_CONFIG_FILE_NAMES,
+} from '~/util/github/hasFiles';
 
 export const PREVIEW_DISABLED_FILES = [
   'a',
@@ -53,7 +61,6 @@ export const FILE_WARNINGS = [
       '.babelrc',
       '.buckconfig',
       '.clang-format*',
-      '.eslintrc.js',
       '.env',
       '.flowconfig',
       '.gitattributes',
@@ -61,8 +68,6 @@ export const FILE_WARNINGS = [
       '.gitmodules',
       '.licence-config.yaml',
       '.nvmrc',
-      '.prettierignore',
-      '.prettierrc',
       '.project',
       '.prototools',
       '.release-it.json',
@@ -74,7 +79,6 @@ export const FILE_WARNINGS = [
       '.watchmanconfig',
       '.yarnrc.yml',
       'babel.config.js',
-      'eslint.config*.*js',
       'expo-module.config.json',
       'gradle-wrapper.jar',
       'gradlew',
@@ -86,7 +90,6 @@ export const FILE_WARNINGS = [
       'metro.config.js',
       'nitro.json',
       'publish.gradle',
-      '*prettierrc.js',
       'proguard-rules.pro',
       'react-native.config.*js',
       'renovate.json',
@@ -99,6 +102,13 @@ export const FILE_WARNINGS = [
       'tsup.config.ts',
       'turbo.json',
       'typedoc.json',
+      // DEV TOOLS CONFIG FILES
+      ...OXLINT_CONFIG_FILE_NAMES,
+      ...OXFMT_CONFIG_FILE_NAMES,
+      ...PRETTIER_CONFIG_FILE_NAMES,
+      ...ESLINT_CONFIG_FILE_NAMES,
+      ...BIOME_CONFIG_FILE_NAMES,
+      ...COMMITLINT_CONFIG_FILE_NAMES,
       // LOCK FILES
       'yarn.lock',
       'pnpm-lock.yaml',
