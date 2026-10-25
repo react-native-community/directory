@@ -22,9 +22,9 @@ jobs:
         run: bun data:validate
       - name: Test react-native-libraries.json
         run: bun data:test
+      - name: Lint react-native-libraries.json
+        run: bun oxfmt react-native-libraries.json --check
       - name: Check new entries in react-native-libraries.json
         run: bun ci:validate
         env:
           CI_CHECKS_TOKEN: ${{ github.token }}
-      - name: Lint data
-        run: bun oxfmt react-native-libraries.json --check
