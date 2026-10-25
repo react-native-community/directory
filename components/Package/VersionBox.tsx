@@ -77,7 +77,7 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
           tw`flex-row flex-wrap items-center gap-x-5 gap-y-1.5`,
           isSmallScreen && tw`self-start`,
         ]}>
-        <View style={tw`flex-row flex-wrap gap-x-5 gap-y-1.5`}>
+        <View style={tw`shrink flex-row flex-wrap gap-x-5 gap-y-1.5`}>
           {versionData.dependencies && (
             <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
               <DependencyIcon style={tw`text-palette-gray4 dark:text-pewter`} />
