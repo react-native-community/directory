@@ -24951,7 +24951,8 @@
       "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/03-drag-to-dismiss.webp"
     ],
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SectionTN/react-native-codepad",
