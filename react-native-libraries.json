@@ -24962,5 +24962,98 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/kara-ui/tree/main/packages/kara-ui",
+    "npmPkg": "@hzblj/kara-ui",
+    "examples": ["https://github.com/hzblj/kara-ui/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/kara-ui/main/apps/website/public/media/ios/light/form.webp",
+      "https://raw.githubusercontent.com/hzblj/kara-ui/main/apps/website/public/media/android/light/form.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-app-icons/tree/main/packages/expo-app-icons",
+    "npmPkg": "@hzblj/expo-app-icons",
+    "examples": ["https://github.com/hzblj/expo-app-icons/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-flags-kit/tree/main/packages/expo-flags-kit",
+    "npmPkg": "@hzblj/expo-flags-kit",
+    "examples": ["https://github.com/hzblj/expo-flags-kit/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-native-icons/tree/main/packages/expo-native-icons",
+    "npmPkg": "@hzblj/expo-native-icons",
+    "examples": ["https://github.com/hzblj/expo-native-icons/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-paypal/tree/main/packages/expo-paypal",
+    "npmPkg": "@hzblj/expo-paypal",
+    "examples": ["https://github.com/hzblj/expo-paypal/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/expo-paypal/main/media/ios/checkout-light.png",
+      "https://raw.githubusercontent.com/hzblj/expo-paypal/main/media/android/buttons-light.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-rich-haptics/tree/main/packages/expo-rich-haptics",
+    "npmPkg": "@hzblj/expo-rich-haptics",
+    "examples": ["https://github.com/hzblj/expo-rich-haptics/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-speech/tree/main/packages/expo-speech",
+    "npmPkg": "@hzblj/expo-speech",
+    "examples": ["https://github.com/hzblj/expo-speech/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/expo-speech/main/media/ios-playing.png",
+      "https://raw.githubusercontent.com/hzblj/expo-speech/main/media/android-lab.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-translation/tree/main/packages/expo-translation",
+    "npmPkg": "@hzblj/expo-translation",
+    "examples": ["https://github.com/hzblj/expo-translation/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-waveform/tree/main/packages/expo-waveform",
+    "npmPkg": "@hzblj/expo-waveform",
+    "examples": ["https://github.com/hzblj/expo-waveform/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-zoom-transition/tree/main/packages/expo-zoom-transition",
+    "npmPkg": "@hzblj/expo-zoom-transition",
+    "examples": ["https://github.com/hzblj/expo-zoom-transition/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
