@@ -25111,12 +25111,6 @@
     "newArchitecture": "new-arch-only"
   },
   {
-    "githubUrl": "https://github.com/gmanole01/react-native-nitro-node",
-    "newArchitecture": "new-arch-only",
-    "ios": true,
-    "android": true
-  },
-  {
     "githubUrl": "https://github.com/stainsmjohnson/react-native-network-lens",
     "examples": ["https://github.com/stainsmjohnson/react-native-network-lens/tree/main/example"],
     "images": [
@@ -25127,7 +25121,12 @@
     "ios": true,
     "android": true,
     "expoGo": true,
-    "newArchitecture": true,
-    "dev": true
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gmanole01/react-native-nitro-node",
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
