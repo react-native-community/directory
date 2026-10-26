@@ -25086,6 +25086,20 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/surajprasad13/react-native-alarms",
+    "examples": [
+      "https://github.com/surajprasad13/react-native-alarms/blob/main/src/screens/AlarmDemo.tsx"
+    ],
+    "images": [
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-1.png",
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-2.png",
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-3.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/codebymanan/react-native-photo-editor",
     "npmPkg": "@codebymanan/react-native-photo-editor",
     "examples": ["https://github.com/codebymanan/react-native-photo-editor/tree/main/example"],
