@@ -25087,9 +25087,7 @@
   },
   {
     "githubUrl": "https://github.com/surajprasad13/react-native-alarms",
-    "npmPkg": "react-native-alarms",
     "examples": [
-      "https://github.com/surajprasad13/react-native-alarms",
       "https://github.com/surajprasad13/react-native-alarms/blob/main/src/screens/AlarmDemo.tsx"
     ],
     "images": [
@@ -25099,19 +25097,6 @@
     ],
     "ios": true,
     "android": true,
-    "web": false,
-    "windows": false,
-    "macos": false,
-    "tvos": false,
-    "visionos": false,
-    "expoGo": false,
-    "fireos": false,
-    "harmony": false,
-    "horizon": false,
-    "vegaos": false,
-    "newArchitecture": true,
-    "configPlugin": false,
-    "unmaintained": false,
-    "dev": false
+    "newArchitecture": true
   }
 ]
