@@ -25109,5 +25109,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gmanole01/react-native-nitro-node",
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   }
 ]
