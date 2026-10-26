@@ -25115,5 +25115,19 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/stainsmjohnson/react-native-network-lens",
+    "examples": ["https://github.com/stainsmjohnson/react-native-network-lens/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-list.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-tree.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/android-tree.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true,
+    "dev": true
   }
 ]
