@@ -25084,5 +25084,20 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/elik56a/react-native-pickers",
+    "npmPkg": "@elik56a/react-native-pickers",
+    "examples": [
+      "https://github.com/elik56a/react-native-pickers/tree/master/example",
+      "https://elik56a.github.io/react-native-pickers/docs/getting-started/quick-start"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/elik56a/react-native-pickers/master/website/static/img/showcase-light.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
