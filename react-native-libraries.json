@@ -25076,5 +25076,13 @@
     "newArchitecture": "new-arch-only",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Anshkaran7/expokit/tree/main/packages/charts",
+    "npmPkg": "expo-charts",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
