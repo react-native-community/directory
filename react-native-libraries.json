@@ -25109,5 +25109,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/nuredin-kurtovic/long-ping-background-location-plugin",
+    "npmPkg": "react-native-long-ping",
+    "examples": [
+      "https://github.com/nuredin-kurtovic/long-ping-background-location-plugin/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
