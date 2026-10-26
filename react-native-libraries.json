@@ -25128,5 +25128,19 @@
     "newArchitecture": "new-arch-only",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/VMichael1999/expo-reanimated-side-menu",
+    "examples": [
+      "https://github.com/VMichael1999/expo-reanimated-side-menu/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/overlay.png",
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/cards.png",
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/rail.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
