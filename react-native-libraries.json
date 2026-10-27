@@ -18676,6 +18676,8 @@
   },
   {
     "githubUrl": "https://github.com/FFGlobal/expo-onboarding",
+    "android": true,
+    "ios": true,
     "web": true,
     "expoGo": true,
     "fireos": true,
@@ -25109,6 +25111,110 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/stainsmjohnson/react-native-network-lens",
+    "examples": ["https://github.com/stainsmjohnson/react-native-network-lens/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-list.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-tree.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/android-tree.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gmanole01/react-native-nitro-node",
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/muhammadkamran8586/react-native-media-transformer",
+    "examples": [
+      "https://github.com/muhammadkamran8586/react-native-media-transformer/tree/main/example"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/elik56a/react-native-pickers",
+    "npmPkg": "@elik56a/react-native-pickers",
+    "examples": [
+      "https://github.com/elik56a/react-native-pickers/tree/master/example",
+      "https://elik56a.github.io/react-native-pickers/docs/getting-started/quick-start"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/elik56a/react-native-pickers/master/website/static/img/showcase-light.png",
+      "https://raw.githubusercontent.com/elik56a/react-native-pickers/master/website/static/img/showcase-dark.png",
+      "https://raw.githubusercontent.com/elik56a/react-native-pickers/master/website/static/img/social-card.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/VMichael1999/expo-reanimated-side-menu",
+    "examples": ["https://github.com/VMichael1999/expo-reanimated-side-menu/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/overlay.png",
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/cards.png",
+      "https://raw.githubusercontent.com/VMichael1999/expo-reanimated-side-menu/main/docs/screenshots/rail.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/nitro-crypto/tree/main/packages/nitro-crypto",
+    "npmPkg": "@hzblj/nitro-crypto",
+    "examples": ["https://github.com/hzblj/nitro-crypto/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/nitro-crypto/main/media/ios-wallet.png",
+      "https://raw.githubusercontent.com/hzblj/nitro-crypto/main/media/android-wallet.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-vault/tree/main/packages/crypto-vault",
+    "npmPkg": "@hzblj/crypto-vault",
+    "examples": ["https://github.com/hzblj/crypto-vault/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-vault/main/media/ios-vault.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-vault/main/media/android-vault.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-recovery/tree/main/packages/crypto-recovery",
+    "npmPkg": "@hzblj/crypto-recovery",
+    "examples": ["https://github.com/hzblj/crypto-recovery/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-recovery/main/media/ios-recovery.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-recovery/main/media/android-recovery.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-airgap/tree/main/packages/crypto-airgap",
+    "npmPkg": "@hzblj/crypto-airgap",
+    "examples": ["https://github.com/hzblj/crypto-airgap/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-airgap/main/media/ios-pair.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-airgap/main/media/ios-review.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/nuredin-kurtovic/long-ping-background-location-plugin",
