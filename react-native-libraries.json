@@ -25167,5 +25167,53 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/nitro-crypto/tree/main/packages/nitro-crypto",
+    "npmPkg": "@hzblj/nitro-crypto",
+    "examples": ["https://github.com/hzblj/nitro-crypto/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/nitro-crypto/main/media/ios-wallet.png",
+      "https://raw.githubusercontent.com/hzblj/nitro-crypto/main/media/android-wallet.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-vault/tree/main/packages/crypto-vault",
+    "npmPkg": "@hzblj/crypto-vault",
+    "examples": ["https://github.com/hzblj/crypto-vault/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-vault/main/media/ios-vault.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-vault/main/media/android-vault.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-recovery/tree/main/packages/crypto-recovery",
+    "npmPkg": "@hzblj/crypto-recovery",
+    "examples": ["https://github.com/hzblj/crypto-recovery/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-recovery/main/media/ios-recovery.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-recovery/main/media/android-recovery.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-airgap/tree/main/packages/crypto-airgap",
+    "npmPkg": "@hzblj/crypto-airgap",
+    "examples": ["https://github.com/hzblj/crypto-airgap/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-airgap/main/media/ios-pair.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-airgap/main/media/ios-review.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
