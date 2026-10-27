@@ -24951,7 +24951,8 @@
       "https://raw.githubusercontent.com/VMichael1999/expo-floating-bubble-overlay/main/docs/screenshots/03-drag-to-dismiss.webp"
     ],
     "android": true,
-    "configPlugin": true
+    "configPlugin": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/SectionTN/react-native-codepad",
@@ -25075,6 +25076,58 @@
     "newArchitecture": "new-arch-only",
     "android": true,
     "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/Anshkaran7/expokit/tree/main/packages/charts",
+    "npmPkg": "expo-charts",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/surajprasad13/react-native-alarms",
+    "examples": [
+      "https://github.com/surajprasad13/react-native-alarms/blob/main/src/screens/AlarmDemo.tsx"
+    ],
+    "images": [
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-1.png",
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-2.png",
+      "https://github.com/surajprasad13/react-native-alarms/raw/main/src/assets/sample-3.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/codebymanan/react-native-photo-editor",
+    "npmPkg": "@codebymanan/react-native-photo-editor",
+    "examples": ["https://github.com/codebymanan/react-native-photo-editor/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/codebymanan/react-native-photo-editor/main/docs/images/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/stainsmjohnson/react-native-network-lens",
+    "examples": ["https://github.com/stainsmjohnson/react-native-network-lens/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-list.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/ios-tree.png",
+      "https://raw.githubusercontent.com/stainsmjohnson/react-native-network-lens/main/docs/android-tree.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/gmanole01/react-native-nitro-node",
+    "newArchitecture": "new-arch-only",
+    "ios": true,
+    "android": true
   },
   {
     "githubUrl": "https://github.com/muhammadkamran8586/react-native-media-transformer",
