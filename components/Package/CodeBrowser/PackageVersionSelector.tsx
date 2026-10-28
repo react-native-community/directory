@@ -15,7 +15,7 @@ import tw from '~/util/tailwind';
 
 type Props = {
   packageName: string;
-  selectedVersion: string;
+  selectedVersion?: string;
   setVersion: (selectedVersion: string) => void;
 };
 
@@ -76,8 +76,10 @@ export default function PackageVersionSelector({
               </View>
             ) : (
               <View style={tw`flex-row items-center justify-between gap-1.5`}>
-                <Label numberOfLines={1} style={tw`select-none text-[13px]`}>
-                  {selectedVersion}
+                <Label
+                  numberOfLines={1}
+                  style={[tw`select-none text-[13px]`, !selectedVersion && tw`text-tertiary`]}>
+                  {selectedVersion ?? 'Select version'}
                 </Label>
                 <ArrowIcon
                   style={[

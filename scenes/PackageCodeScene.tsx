@@ -1,17 +1,20 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
+import { PlusIcon, XIcon } from '~/components/Icons';
 import CodeBrowser from '~/components/Package/CodeBrowser';
 import { type CodeBrowserSettingsType } from '~/components/Package/CodeBrowser/CodeBrowserSettings';
+import CodeBrowserVersionDiff from '~/components/Package/CodeBrowser/CodeBrowserVersionDiff';
 import PackageVersionSelector from '~/components/Package/CodeBrowser/PackageVersionSelector';
 import NavigationHeader from '~/components/Package/Navigation/NavigationHeader';
 import NotFound from '~/components/Package/NotFound';
 import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
+import { Tooltip } from '~/components/Tooltip';
 import { type PackageCodePageProps } from '~/types/pages';
 import { getStoredValue } from '~/util/localStorage';
 import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
@@ -32,8 +35,10 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
   const selectedVersionParam =
     parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
+  const compareVersion = parseQueryParams(router.query).compareVersion;
 
-  const [selectedVersion, setSelectedVersion] = useState(selectedVersionParam);
+  const selectedVersion = selectedVersionParam;
+  const [isChoosingCompareVersion, setChoosingCompareVersion] = useState(false);
   const [codeBrowserSettings, setCodeBrowserSettings] = useState<CodeBrowserSettingsType>(() =>
     readCodeBrowserSettings()
   );
@@ -104,44 +109,135 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     return <NotFound />;
   }
 
-  const headerContent = (
-    <>
-      <View style={tw`flex-1 flex-wrap gap-3`}>
-        <PackageHeader library={library} skipDescription />
+  function selectVersion(version: string) {
+    replaceQueryParams(router, { selectedVersion: version });
+  }
+
+  const versionControls = compareVersion ? (
+    <View style={tw`flex-row flex-wrap items-end gap-3`}>
+      <View style={tw`gap-1`}>
+        <Label style={tw`px-1.5 text-secondary`}>From version</Label>
+        <PackageVersionSelector
+          packageName={library.npmPkg}
+          selectedVersion={selectedVersion}
+          setVersion={selectVersion}
+        />
       </View>
+      <Tooltip
+        trigger={
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => {
+              setChoosingCompareVersion(false);
+              replaceQueryParams(router, { compareVersion: undefined });
+            }}
+            style={tw`mb-1 p-1`}>
+            <XIcon style={tw`size-4 text-secondary`} />
+          </Pressable>
+        }>
+        Switch to code view
+      </Tooltip>
+      <View style={tw`gap-1`}>
+        <Label style={tw`px-1.5 text-secondary`}>To version</Label>
+        <PackageVersionSelector
+          packageName={library.npmPkg}
+          selectedVersion={compareVersion}
+          setVersion={version => replaceQueryParams(router, { compareVersion: version })}
+        />
+      </View>
+    </View>
+  ) : (
+    <View style={tw`flex-row flex-wrap items-end gap-2`}>
       <View style={tw`gap-1`}>
         <Label style={tw`px-1.5 text-secondary`}>Package version</Label>
         <PackageVersionSelector
           packageName={library.npmPkg}
           selectedVersion={selectedVersion}
-          setVersion={selectedVersion => {
-            setSelectedVersion(selectedVersion);
-            replaceQueryParams(router, { selectedVersion });
-          }}
+          setVersion={selectVersion}
         />
       </View>
-    </>
+      <Tooltip
+        trigger={
+          <Pressable
+            accessibilityLabel={
+              isChoosingCompareVersion ? 'Cancel version comparison' : 'Compare versions'
+            }
+            accessibilityRole="button"
+            onPress={() => setChoosingCompareVersion(isChoosing => !isChoosing)}
+            style={tw`mb-1 p-1`}>
+            {isChoosingCompareVersion ? (
+              <XIcon style={tw`size-4 text-secondary`} />
+            ) : (
+              <PlusIcon style={tw`size-4 text-secondary`} />
+            )}
+          </Pressable>
+        }>
+        {isChoosingCompareVersion ? 'Cancel version comparison' : 'Compare versions'}
+      </Tooltip>
+      {isChoosingCompareVersion && (
+        <View style={tw`gap-1`}>
+          <Label style={tw`px-1.5 text-secondary`}>Compare with</Label>
+          <PackageVersionSelector
+            packageName={library.npmPkg}
+            setVersion={version => {
+              setChoosingCompareVersion(false);
+              void router.push(
+                {
+                  pathname: router.pathname,
+                  query: { ...router.query, selectedVersion, compareVersion: version },
+                },
+                undefined,
+                { shallow: true, scroll: false }
+              );
+            }}
+          />
+        </View>
+      )}
+    </View>
   );
 
-  const codeBrowser = (
+  const headerContent = (
+    <>
+      <View style={tw`flex-1 flex-wrap gap-3`}>
+        <PackageHeader library={library} skipDescription />
+      </View>
+      {versionControls}
+    </>
+  );
+  const browserHeader = (
+    <View
+      style={[
+        tw`flex flex-row flex-wrap items-center justify-between gap-4 bg-default px-5 py-3 dark:bg-dark`,
+        isSmallScreen && tw`flex-col items-start`,
+      ]}>
+      {headerContent}
+    </View>
+  );
+  function toggleBrowserMaximized() {
+    setBrowserMaximized(isMaximized => !isMaximized);
+  }
+
+  const codeBrowser = compareVersion ? (
+    <CodeBrowserVersionDiff
+      key={`${selectedVersion}:${compareVersion}`}
+      packageName={library.npmPkg}
+      fromVersion={selectedVersion}
+      toVersion={compareVersion}
+      header={browserHeader}
+      isBrowserMaximized={isBrowserMaximized}
+      toggleMaximized={toggleBrowserMaximized}
+    />
+  ) : (
     <CodeBrowser
       selectedVersion={selectedVersion}
       library={library}
       activeFile={activeFile}
       settings={codeBrowserSettings}
       onSettingsChange={setCodeBrowserSettings}
-      header={
-        <View
-          style={[
-            tw`flex flex-row flex-wrap items-center justify-between gap-4 bg-default px-5 py-3 dark:bg-dark`,
-            isSmallScreen && tw`flex-col items-start`,
-          ]}>
-          {headerContent}
-        </View>
-      }
+      header={browserHeader}
       onSelectFile={setActiveFile}
       isBrowserMaximized={isBrowserMaximized}
-      toggleMaximized={() => setBrowserMaximized(isMaximized => !isMaximized)}
+      toggleMaximized={toggleBrowserMaximized}
     />
   );
 

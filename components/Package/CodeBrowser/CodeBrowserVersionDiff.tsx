@@ -1,0 +1,246 @@
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
+import { FlatList, ScrollView, View } from 'react-native';
+import useSWR from 'swr';
+
+import { Label, P, useLayout } from '~/common/styleguide';
+import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
+import { type DiffLineRowData, type UnpkgMeta } from '~/types';
+import { buildCodeBrowserFileTree, getLanguage } from '~/util/codeBrowser';
+import {
+  getChangedFiles,
+  getDiffLines,
+  getFileUrl,
+  getMetaUrl,
+  isPreviewable,
+} from '~/util/codeDiff';
+import { TimeRange } from '~/util/datetime';
+import { getStoredValue } from '~/util/localStorage';
+import { pluralize } from '~/util/strings';
+import tw from '~/util/tailwind';
+
+import { CodeBrowserDiffLine } from './CodeBrowserDiffLine';
+import CodeBrowserFileTree from './CodeBrowserFileTree';
+import CodeBrowserLayout from './CodeBrowserLayout';
+import DisplayModeButton from './DisplayModeButton';
+
+type Props = {
+  packageName: string;
+  fromVersion: string;
+  toVersion: string;
+  header?: ReactNode;
+  isBrowserMaximized: boolean;
+  toggleMaximized: () => void;
+};
+
+const FETCH_PARAMS = { dedupingInterval: TimeRange.HOUR * 1000, revalidateOnFocus: false };
+
+export default function CodeBrowserVersionDiff({
+  packageName,
+  fromVersion,
+  toVersion,
+  header,
+  isBrowserMaximized,
+  toggleMaximized,
+}: Props) {
+  const { isSmallScreen } = useLayout();
+  const activeFileStorageKey = `@ReactNativeDirectory:PackageCodeDiff:activeFile:${packageName}:${fromVersion}:${toVersion}`;
+  const [selectedPath, setSelectedPath] = useState<string | null>(() =>
+    getStoredValue(activeFileStorageKey)
+  );
+
+  useEffect(() => {
+    if (selectedPath) {
+      window.localStorage.setItem(activeFileStorageKey, selectedPath);
+    } else {
+      window.localStorage.removeItem(activeFileStorageKey);
+    }
+  }, [activeFileStorageKey, selectedPath]);
+
+  const {
+    data: fromMeta,
+    error: fromMetaError,
+    isLoading: isFromMetaLoading,
+  } = useSWR<UnpkgMeta>(
+    getMetaUrl(packageName, fromVersion),
+    (url: string) =>
+      fetch(url).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch package metadata: ${response.status}`);
+        }
+        return response.json();
+      }),
+    FETCH_PARAMS
+  );
+  const {
+    data: toMeta,
+    error: toMetaError,
+    isLoading: isToMetaLoading,
+  } = useSWR<UnpkgMeta>(
+    getMetaUrl(packageName, toVersion),
+    (url: string) =>
+      fetch(url).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch package metadata: ${response.status}`);
+        }
+        return response.json();
+      }),
+    FETCH_PARAMS
+  );
+
+  const changedFiles = useMemo(() => getChangedFiles(fromMeta, toMeta), [fromMeta, toMeta]);
+  const activePath =
+    selectedPath && changedFiles.some(file => file.path === selectedPath)
+      ? selectedPath
+      : changedFiles[0]?.path;
+  const fromFile = changedFiles.find(file => file.path === activePath)?.fromFile;
+  const toFile = changedFiles.find(file => file.path === activePath)?.toFile;
+  const canPreview =
+    activePath &&
+    isPreviewable(activePath, fromFile?.size) &&
+    isPreviewable(activePath, toFile?.size);
+
+  const fileTree = useMemo(
+    () =>
+      buildCodeBrowserFileTree(
+        changedFiles.flatMap(({ path, fromFile, toFile }) => {
+          const file = fromFile ?? toFile;
+          return file ? [{ ...file, path }] : [];
+        })
+      ),
+    [changedFiles]
+  );
+
+  const {
+    data: fromContent,
+    error: fromContentError,
+    isLoading: isFromContentLoading,
+  } = useSWR<string>(
+    canPreview && fromFile ? getFileUrl(packageName, fromVersion, activePath) : undefined,
+    (url: string) =>
+      fetch(url).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch file content: ${response.status}`);
+        }
+        return response.text();
+      }),
+    FETCH_PARAMS
+  );
+  const {
+    data: toContent,
+    error: toContentError,
+    isLoading: isToContentLoading,
+  } = useSWR<string>(
+    canPreview && toFile ? getFileUrl(packageName, toVersion, activePath) : undefined,
+    (url: string) =>
+      fetch(url).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch file content: ${response.status}`);
+        }
+        return response.text();
+      }),
+    FETCH_PARAMS
+  );
+  const diffLines = useMemo(
+    () =>
+      activePath
+        ? getDiffLines(fromContent ?? '', toContent ?? '').map(line => ({
+            ...line,
+            lang: getLanguage(activePath),
+          }))
+        : [],
+    [activePath, fromContent, toContent]
+  );
+
+  if (isFromMetaLoading || isToMetaLoading) {
+    return (
+      <View style={tw`h-[70vh] items-center justify-center`}>
+        <ThreeDotsLoader />
+      </View>
+    );
+  }
+
+  if (fromMetaError || toMetaError) {
+    return <P>Cannot fetch package version files for comparison.</P>;
+  }
+
+  return (
+    <CodeBrowserLayout
+      header={header}
+      sidebar={
+        <>
+          {changedFiles.length === 0 ? null : (
+            <View
+              style={[
+                tw`min-h-[45px] flex-row items-center border-b border-r border-palette-gray2 px-3 dark:border-default`,
+                isSmallScreen && tw`border-r-0`,
+              ]}>
+              <Label style={tw`font-medium`}>
+                {changedFiles.length} changed {pluralize('file', changedFiles.length)}
+              </Label>
+            </View>
+          )}
+          <ScrollView
+            id="codeBrowserList"
+            style={[
+              tw`border-palette-gray2 dark:border-default`,
+              !isSmallScreen && tw`flex-1 border-r`,
+              isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
+            ]}
+            contentContainerStyle={tw`pt-2`}>
+            <CodeBrowserFileTree
+              tree={fileTree}
+              activeFile={activePath ?? null}
+              onSelectFile={setSelectedPath}
+            />
+          </ScrollView>
+        </>
+      }
+      content={
+        <>
+          <View
+            style={tw`min-h-[45px] flex-row items-center justify-between gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default dark:bg-dark`}>
+            <Label style={tw`font-mono text-[13px]`}>{activePath ?? ''}</Label>
+            <DisplayModeButton
+              isBrowserMaximized={isBrowserMaximized}
+              toggleMaximized={toggleMaximized}
+            />
+          </View>
+          {activePath ? (
+            !canPreview ? (
+              <View style={tw`flex-1 items-center justify-center px-4`}>
+                <P style={tw`text-center text-secondary`}>
+                  This file is too large or cannot be previewed as text.
+                </P>
+              </View>
+            ) : fromContentError || toContentError ? (
+              <View style={tw`flex-1 items-center justify-center px-4`}>
+                <P>Cannot fetch file contents for comparison.</P>
+              </View>
+            ) : isFromContentLoading || isToContentLoading ? (
+              <View style={tw`flex-1 items-center justify-center`}>
+                <ThreeDotsLoader />
+              </View>
+            ) : (
+              <FlatList
+                data={diffLines}
+                keyExtractor={line => `${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`}
+                style={tw`flex-1`}
+                renderItem={renderDiffLine}
+              />
+            )
+          ) : (
+            <View style={tw`flex-1 items-center justify-center px-4`}>
+              <P style={tw`text-center text-secondary`}>No file changes between these versions.</P>
+            </View>
+          )}
+        </>
+      }
+      hasActiveContent={Boolean(activePath)}
+      isBrowserMaximized={isBrowserMaximized}
+    />
+  );
+}
+
+function renderDiffLine({ item }: { item: DiffLineRowData }) {
+  return <CodeBrowserDiffLine line={item} lang={item.lang} />;
+}

@@ -453,3 +453,21 @@ export type StatisticEntry = {
 export type StatisticChartEntry = StatisticEntry & {
   percentage: number;
 };
+
+export type DiffLine = {
+  type: 'added' | 'removed' | 'unchanged';
+  oldLine?: number;
+  newLine?: number;
+  text: string;
+};
+
+export type DiffLineRowData = DiffLine & {
+  lang: string;
+};
+
+export type ChangedFile = {
+  path: string;
+  fromFile?: UnpkgMeta['files'][number];
+  toFile?: UnpkgMeta['files'][number];
+  status: 'added' | 'removed' | 'modified';
+};
