@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Pressable, View } from 'react-native';
 
-import { Label, useLayout } from '~/common/styleguide';
+import { HoverEffect, Label, useLayout } from '~/common/styleguide';
 import ContentContainer from '~/components/ContentContainer';
-import { PlusIcon, XIcon } from '~/components/Icons';
+import { FileMetadataIcon, PackageCompareIcon, PackageCompareSwitchIcon } from '~/components/Icons';
 import CodeBrowser from '~/components/Package/CodeBrowser';
 import { type CodeBrowserSettingsType } from '~/components/Package/CodeBrowser/CodeBrowserSettings';
 import CodeBrowserVersionDiff from '~/components/Package/CodeBrowser/CodeBrowserVersionDiff';
@@ -109,12 +109,16 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     return <NotFound />;
   }
 
-  function selectVersion(version: string) {
+  function selectVersion(version?: string) {
     replaceQueryParams(router, { selectedVersion: version });
   }
 
+  function toggleBrowserMaximized() {
+    setBrowserMaximized(isMaximized => !isMaximized);
+  }
+
   const versionControls = compareVersion ? (
-    <View style={tw`flex-row flex-wrap items-end gap-3`}>
+    <View style={tw`flex-row flex-wrap items-end gap-2`}>
       <View style={tw`gap-1`}>
         <Label style={tw`px-1.5 text-secondary`}>From version</Label>
         <PackageVersionSelector
@@ -128,14 +132,16 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
           <Pressable
             accessibilityRole="button"
             onPress={() => {
-              setChoosingCompareVersion(false);
-              replaceQueryParams(router, { compareVersion: undefined });
+              replaceQueryParams(router, {
+                compareVersion: selectedVersion,
+                selectedVersion: compareVersion,
+              });
             }}
-            style={tw`mb-1 p-1`}>
-            <XIcon style={tw`size-4 text-secondary`} />
+            style={tw`mb-0.5 p-1`}>
+            <PackageCompareSwitchIcon style={tw`text-icon`} />
           </Pressable>
         }>
-        Switch to code view
+        Flip versions
       </Tooltip>
       <View style={tw`gap-1`}>
         <Label style={tw`px-1.5 text-secondary`}>To version</Label>
@@ -145,53 +151,100 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
           setVersion={version => replaceQueryParams(router, { compareVersion: version })}
         />
       </View>
+      <Tooltip
+        trigger={
+          <View>
+            <HoverEffect>
+              <Pressable
+                accessibilityLabel="Go back to code view"
+                accessibilityRole="button"
+                onPress={() => {
+                  setChoosingCompareVersion(false);
+                  replaceQueryParams(router, { compareVersion: undefined });
+                }}
+                style={tw`mb-0.5 p-1`}>
+                <FileMetadataIcon style={tw`size-5 text-icon`} />
+              </Pressable>
+            </HoverEffect>
+          </View>
+        }>
+        Go back to code view
+      </Tooltip>
     </View>
   ) : (
     <View style={tw`flex-row flex-wrap items-end gap-2`}>
       <View style={tw`gap-1`}>
-        <Label style={tw`px-1.5 text-secondary`}>Package version</Label>
+        <Label style={tw`px-1.5 text-secondary`}>
+          {isChoosingCompareVersion ? 'From version' : 'Package version'}
+        </Label>
         <PackageVersionSelector
           packageName={library.npmPkg}
           selectedVersion={selectedVersion}
           setVersion={selectVersion}
         />
       </View>
-      <Tooltip
-        trigger={
-          <Pressable
-            accessibilityLabel={
-              isChoosingCompareVersion ? 'Cancel version comparison' : 'Compare versions'
-            }
-            accessibilityRole="button"
-            onPress={() => setChoosingCompareVersion(isChoosing => !isChoosing)}
-            style={tw`mb-1 p-1`}>
-            {isChoosingCompareVersion ? (
-              <XIcon style={tw`size-4 text-secondary`} />
-            ) : (
-              <PlusIcon style={tw`size-4 text-secondary`} />
-            )}
-          </Pressable>
-        }>
-        {isChoosingCompareVersion ? 'Cancel version comparison' : 'Compare versions'}
-      </Tooltip>
-      {isChoosingCompareVersion && (
-        <View style={tw`gap-1`}>
-          <Label style={tw`px-1.5 text-secondary`}>Compare with</Label>
-          <PackageVersionSelector
-            packageName={library.npmPkg}
-            setVersion={version => {
-              setChoosingCompareVersion(false);
-              void router.push(
-                {
-                  pathname: router.pathname,
-                  query: { ...router.query, selectedVersion, compareVersion: version },
-                },
-                undefined,
-                { shallow: true, scroll: false }
-              );
-            }}
-          />
+      {isChoosingCompareVersion ? (
+        <View style={tw`mb-0.5 p-1`}>
+          <PackageCompareSwitchIcon style={tw`text-icon opacity-50`} />
         </View>
+      ) : (
+        <Tooltip
+          trigger={
+            <View>
+              <HoverEffect>
+                <Pressable
+                  accessibilityLabel="Compare versions"
+                  accessibilityRole="button"
+                  disabled={isChoosingCompareVersion}
+                  onPress={() => {
+                    setChoosingCompareVersion(isChoosing => !isChoosing);
+                  }}
+                  style={tw`mb-0.5 p-1`}>
+                  <PackageCompareIcon style={tw`text-icon`} />
+                </Pressable>
+              </HoverEffect>
+            </View>
+          }>
+          Compare versions
+        </Tooltip>
+      )}
+      {isChoosingCompareVersion && (
+        <>
+          <View style={tw`gap-1`}>
+            <Label style={tw`px-1.5 text-secondary`}>To version</Label>
+            <PackageVersionSelector
+              packageName={library.npmPkg}
+              setVersion={version => {
+                void router
+                  .push(
+                    {
+                      pathname: router.pathname,
+                      query: { ...router.query, selectedVersion, compareVersion: version },
+                    },
+                    undefined,
+                    { shallow: true, scroll: false }
+                  )
+                  .then(() => setChoosingCompareVersion(false));
+              }}
+            />
+          </View>
+          <Tooltip
+            trigger={
+              <View>
+                <HoverEffect>
+                  <Pressable
+                    accessibilityLabel="Go back to code view"
+                    accessibilityRole="button"
+                    onPress={() => setChoosingCompareVersion(isChoosing => !isChoosing)}
+                    style={tw`mb-0.5 p-1`}>
+                    <FileMetadataIcon style={tw`size-5 text-icon`} />
+                  </Pressable>
+                </HoverEffect>
+              </View>
+            }>
+            Go back to code view
+          </Tooltip>
+        </>
       )}
     </View>
   );
@@ -204,6 +257,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       {versionControls}
     </>
   );
+
   const browserHeader = (
     <View
       style={[
@@ -213,9 +267,6 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       {headerContent}
     </View>
   );
-  function toggleBrowserMaximized() {
-    setBrowserMaximized(isMaximized => !isMaximized);
-  }
 
   const codeBrowser = compareVersion ? (
     <CodeBrowserVersionDiff
