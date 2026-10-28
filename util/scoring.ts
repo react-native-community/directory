@@ -82,10 +82,11 @@ export const SCORING_CRITERIONS: ScoringCriterionType[] = [
   },
   {
     name: 'Has a lot of dependencies',
-    description: 'Libraries that use at least 25 or more direct dependencies meet this criterion.',
+    description:
+      'Libraries that use at least 25 or more direct dependencies, not counting packages from their own scope, meet this criterion.',
     value: -10,
     condition: data =>
-      data.github.stats.dependencies ? data.github.stats.dependencies > 25 : false,
+      (data.github.stats.dependencies ?? 0) - (data.github.stats.sameScopeDependencies ?? 0) > 25,
   },
   {
     name: 'Not supporting New Architecture',

@@ -195,10 +195,10 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
           ? `${packageJson.name.split('/')[0]}/`
           : null;
 
-      json.dependenciesCount = packageJson.dependencies
-        ? Object.keys(packageJson.dependencies).filter(dependency =>
-            packageScope ? !dependency.startsWith(packageScope) : true
-          ).length
+      const dependencies = Object.keys(packageJson.dependencies ?? {});
+      json.dependenciesCount = dependencies.length;
+      json.sameScopeDependenciesCount = packageScope
+        ? dependencies.filter(dependency => dependency.startsWith(packageScope)).length
         : 0;
       json.packageManager = packageJson.packageManager ?? undefined;
       json.lintTools = getLintToolsFromPackageJson(packageJson);
@@ -270,6 +270,9 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       subscribers: json?.watchers?.totalCount,
       stars: json?.stargazerCount,
       dependencies: json.dependenciesCount,
+      ...(json.sameScopeDependenciesCount > 0 && {
+        sameScopeDependencies: json.sameScopeDependenciesCount,
+      }),
     },
     name: json.name,
     fullName: json.nameWithOwner,
