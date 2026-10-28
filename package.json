@@ -21,7 +21,8 @@
     "ci:cleanup-blobs": "bun scripts/cleanup-data-blobs",
     "ci:validate": "bun scripts/validate-new-entries",
     "readme": "bun scripts/readme-existence.ts",
-    "precommit": "simple-git-hooks && lint-staged"
+    "precommit": "simple-git-hooks && lint-staged",
+    "pick": "bunx --package @antfu/ni nr"
   },
   "dependencies": {
     "@expo/html-elements": "58.0.3",
