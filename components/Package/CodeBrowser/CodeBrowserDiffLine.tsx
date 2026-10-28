@@ -26,21 +26,21 @@ export function CodeBrowserDiffLine({ line, lang }: Props) {
     <View
       style={[
         tw`min-h-4 flex-row items-center`,
-        line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#132a1d]`,
-        line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#2f181b]`,
+        line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#102318]`,
+        line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#281517]`,
       ]}>
       <Label
-        style={tw`font-mono w-11 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+        style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
         {line.oldLine ?? ''}
       </Label>
       <Label
-        style={tw`font-mono w-11 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+        style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
         {line.newLine ?? ''}
       </Label>
       <View style={tw`flex-1 flex-row gap-2 px-2`}>
         <Label
           style={[
-            tw`font-mono text-[12px] leading-4`,
+            tw`font-mono select-none text-[12px] leading-4 opacity-60`,
             line.type === 'added' && tw`text-success`,
             line.type === 'removed' && tw`text-error`,
           ]}>

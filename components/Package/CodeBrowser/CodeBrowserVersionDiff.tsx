@@ -88,6 +88,10 @@ export default function CodeBrowserVersionDiff({
   );
 
   const changedFiles = useMemo(() => getChangedFiles(fromMeta, toMeta), [fromMeta, toMeta]);
+  const changedFilesByPath = useMemo(
+    () => new Map(changedFiles.map(file => [file.path, file])),
+    [changedFiles]
+  );
   const activePath =
     selectedPath && changedFiles.some(file => file.path === selectedPath)
       ? selectedPath
@@ -150,6 +154,13 @@ export default function CodeBrowserVersionDiff({
         : [],
     [activePath, fromContent, toContent]
   );
+  const lineChangeCounts = useMemo(
+    () => ({
+      added: diffLines.filter(line => line.type === 'added').length,
+      removed: diffLines.filter(line => line.type === 'removed').length,
+    }),
+    [diffLines]
+  );
 
   if (isFromMetaLoading || isToMetaLoading) {
     return (
@@ -191,6 +202,7 @@ export default function CodeBrowserVersionDiff({
               tree={fileTree}
               activeFile={activePath ?? null}
               onSelectFile={setSelectedPath}
+              getFileRightSlot={getFileRightSlot}
             />
           </ScrollView>
         </>
@@ -239,6 +251,44 @@ export default function CodeBrowserVersionDiff({
       isBrowserMaximized={isBrowserMaximized}
     />
   );
+
+  function getFileRightSlot(filePath: string) {
+    const file = changedFilesByPath.get(filePath);
+
+    if (!file) {
+      return null;
+    }
+
+    if (file.status === 'added') {
+      return <Label style={tw`font-mono text-[10px] font-medium text-success`}>Added</Label>;
+    }
+
+    if (file.status === 'removed') {
+      return <Label style={tw`font-mono text-[10px] font-medium text-error`}>Removed</Label>;
+    }
+
+    if (
+      filePath === activePath &&
+      canPreview &&
+      !fromContentError &&
+      !toContentError &&
+      !isFromContentLoading &&
+      !isToContentLoading
+    ) {
+      return (
+        <View style={tw`flex-row gap-1`}>
+          <Label style={tw`font-mono text-[10px] font-medium text-success`}>
+            +{lineChangeCounts.added}
+          </Label>
+          <Label style={tw`font-mono text-[10px] font-medium text-error`}>
+            −{lineChangeCounts.removed}
+          </Label>
+        </View>
+      );
+    }
+
+    return <Label style={tw`font-mono text-[10px] text-[#f4aa34] dark:text-warning`}>⏺</Label>;
+  }
 }
 
 function renderDiffLine({ item }: { item: DiffLineRowData }) {
