@@ -17126,8 +17126,16 @@
   {
     "githubUrl": "https://github.com/anuj-kumary/react-native-toastify",
     "npmPkg": "react-native-toastify-expo",
+    "examples": [
+      "https://snack.expo.dev/@git/github.com/anuj-kumary/react-native-toastify:example",
+      "https://github.com/anuj-kumary/react-native-toastify/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/anuj-kumary/react-native-toastify/main/assets/ios-demo.gif"
+    ],
     "ios": true,
     "android": true,
+    "web": true,
     "expoGo": true,
     "newArchitecture": true
   },
