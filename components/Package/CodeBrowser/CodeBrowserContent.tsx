@@ -18,7 +18,7 @@ import { Tooltip } from '~/components/Tooltip';
 import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { type UnpkgMeta } from '~/types';
-import { IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
+import { getLanguage, IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
@@ -60,7 +60,7 @@ export default function CodeBrowserContent({
     SyntheticEvent<HTMLImageElement>['currentTarget'] | null
   >(null);
 
-  const fileExtension = filePath.split('.').at(-1) ?? 'text';
+  const fileExtension = getLanguage(filePath);
   const isTooBig = Boolean(fileData?.size && fileData.size > 1024 * 1024 * 4);
   const isPreviewDisabled = PREVIEW_DISABLED_FILES.includes(fileExtension) || isTooBig;
   const isImageFile = IMAGE_FILES.includes(fileExtension);
@@ -174,7 +174,7 @@ export default function CodeBrowserContent({
         ) : (
           <CodeBrowserContentHighlighter
             code={data}
-            lang={filePath.split('.').at(-1) ?? 'text'}
+            lang={fileExtension}
             theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
             wordWrap={settings.wordWrap}
             showLineNumbers={settings.showLineNumbers}

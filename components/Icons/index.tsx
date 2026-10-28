@@ -1342,13 +1342,9 @@ export function EditIcon({ style }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="16">
-      <path
-        d="M92.69,216H48a8,8,0,0,1-8-8V163.31a8,8,0,0,1,2.34-5.65L165.66,34.34a8,8,0,0,1,11.31,0L221.66,79a8,8,0,0,1,0,11.31L98.34,213.66A8,8,0,0,1,92.69,216Z"
-        fill="none"
-        stroke="currentColor"
-      />
-      <line x1="136" y1="64" x2="192" y2="120" fill="none" stroke="currentColor" />
-      <line x1="40.51" y1="160.51" x2="95.49" y2="215.49" fill="none" stroke="currentColor" />
+      <path d="M92.69,216H48a8,8,0,0,1-8-8V163.31a8,8,0,0,1,2.34-5.65L165.66,34.34a8,8,0,0,1,11.31,0L221.66,79a8,8,0,0,1,0,11.31L98.34,213.66A8,8,0,0,1,92.69,216Z" />
+      <line x1="136" y1="64" x2="192" y2="120" />
+      <line x1="40.51" y1="160.51" x2="95.49" y2="215.49" />
     </Svg>
   );
 }
@@ -1363,11 +1359,11 @@ export function RobotIcon({ style }: IconProps) {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="16">
-      <rect x="32" y="56" width="192" height="160" rx="24" fill="none" stroke="currentColor" />
-      <rect x="72" y="144" width="112" height="40" rx="20" fill="none" stroke="currentColor" />
-      <line x1="148" y1="144" x2="148" y2="184" fill="none" stroke="currentColor" />
-      <line x1="108" y1="144" x2="108" y2="184" fill="none" stroke="currentColor" />
-      <line x1="128" y1="56" x2="128" y2="16" fill="none" stroke="currentColor" />
+      <rect x="32" y="56" width="192" height="160" rx="24" />
+      <rect x="72" y="144" width="112" height="40" rx="20" />
+      <line x1="148" y1="144" x2="148" y2="184" />
+      <line x1="108" y1="144" x2="108" y2="184" />
+      <line x1="128" y1="56" x2="128" y2="16" />
       <circle cx="84" cy="108" r="12" stroke="none" fill="currentColor" />
       <circle cx="172" cy="108" r="12" stroke="none" fill="currentColor" />
     </Svg>
@@ -1389,10 +1385,46 @@ export function PackageDownloadIcon({ style }: IconProps) {
         fill="none"
         stroke="currentColor"
       />
-      <line x1="40" y1="72" x2="216" y2="72" fill="none" stroke="currentColor" />
-      <line x1="128" y1="40" x2="128" y2="72" fill="none" stroke="currentColor" />
-      <line x1="128" y1="104" x2="128" y2="144" fill="none" stroke="currentColor" />
+      <line x1="40" y1="72" x2="216" y2="72" />
+      <line x1="128" y1="40" x2="128" y2="72" />
+      <line x1="128" y1="104" x2="128" y2="144" />
       <path d="M92 144H164L128 188Z" fill="currentColor" stroke="none" />
+    </Svg>
+  );
+}
+
+export function PackageCompareIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <polyline points="96 184 64 216 32 184" />
+      <polyline points="224 184 192 216 160 184" />
+      <polyline points="128 24 128 72 64 136 64 216" />
+      <polyline points="128 72 192 136 192 216" />
+    </Svg>
+  );
+}
+
+export function PackageCompareSwitchIcon({ style }: IconProps) {
+  return (
+    <Svg
+      viewBox="0 0 256 256"
+      style={[tw`size-5`, style]}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16">
+      <polyline points="176 144 208 176 176 208" />
+      <line x1="48" y1="176" x2="208" y2="176" />
+      <polyline points="80 112 48 80 80 48" fill="none" />
+      <line x1="208" y1="80" x2="48" y2="80" />
     </Svg>
   );
 }

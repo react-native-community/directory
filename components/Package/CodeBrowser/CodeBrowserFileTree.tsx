@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import { View } from 'react-native';
 
 import { type CodeBrowserTreeDirectory } from '~/types';
@@ -12,6 +12,7 @@ type Props = {
   depth?: number;
   isNested?: boolean;
   isSearchActive?: boolean;
+  getFileRightSlot?: (filePath: string) => ReactNode;
 };
 
 export default function CodeBrowserFileTree({
@@ -21,6 +22,7 @@ export default function CodeBrowserFileTree({
   depth = 0,
   isNested = false,
   isSearchActive = false,
+  getFileRightSlot,
 }: Props) {
   const directories = Object.values(tree.directories).sort((a, b) => a.name.localeCompare(b.name));
   const files = tree.files.toSorted((a, b) => a.name.localeCompare(b.name));
@@ -35,6 +37,7 @@ export default function CodeBrowserFileTree({
           onSelectFile={onSelectFile}
           depth={depth}
           isSearchActive={isSearchActive}
+          getFileRightSlot={getFileRightSlot}
         />
       ))}
       {files.map(file => (
@@ -45,6 +48,7 @@ export default function CodeBrowserFileTree({
             onPress={() => onSelectFile(file.path)}
             isActive={file.path === activeFile}
             isNested={isNested}
+            rightSlot={getFileRightSlot?.(file.path)}
           />
           {file.nestedFiles && (
             <CodeBrowserFileTree
@@ -59,6 +63,7 @@ export default function CodeBrowserFileTree({
               depth={depth + 1}
               isNested
               isSearchActive={isSearchActive}
+              getFileRightSlot={getFileRightSlot}
             />
           )}
         </View>
@@ -73,6 +78,7 @@ type CodeBrowserDirectoryRowProps = {
   onSelectFile: (filePath: string) => void;
   depth: number;
   isSearchActive: boolean;
+  getFileRightSlot?: (filePath: string) => ReactNode;
 };
 
 function CodeBrowserDirectoryRow({
@@ -81,6 +87,7 @@ function CodeBrowserDirectoryRow({
   onSelectFile,
   depth,
   isSearchActive,
+  getFileRightSlot,
 }: CodeBrowserDirectoryRowProps) {
   const [userCollapsed, setUserCollapsed] = useState(false);
 
@@ -103,6 +110,7 @@ function CodeBrowserDirectoryRow({
           onSelectFile={onSelectFile}
           depth={depth + 1}
           isSearchActive={isSearchActive}
+          getFileRightSlot={getFileRightSlot}
         />
       )}
     </View>

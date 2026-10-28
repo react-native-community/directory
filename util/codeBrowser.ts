@@ -332,3 +332,7 @@ function createFileWarningMatcher(pattern: string) {
 function escapeRegularExpression(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+export function getLanguage(path: string) {
+  return path.split('.').at(-1) ?? 'text';
+}

@@ -1,9 +1,7 @@
 import { sumBy } from 'es-toolkit/math';
-import { type ReactNode, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import {
   type ColorValue,
-  type NativePointerEvent,
-  type NativeSyntheticEvent,
   Pressable,
   ScrollView,
   TextInput,
@@ -30,13 +28,9 @@ import tw from '~/util/tailwind';
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
+import CodeBrowserLayout from './CodeBrowserLayout';
 import CodeBrowserSettings, { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 import DisplayModeButton from './DisplayModeButton';
-
-const FILE_TREE_WIDTH_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
-const DEFAULT_FILE_TREE_WIDTH = 340;
-const MIN_FILE_TREE_WIDTH = 260;
-const MAX_FILE_TREE_WIDTH = 480;
 
 type Props = {
   library: LibraryType;
@@ -63,14 +57,9 @@ export default function CodeBrowser({
 }: Props) {
   const { isSmallScreen } = useLayout();
   const inputRef = useRef<TextInputInstance>(null);
-  const fileTreeResizeStartRef = useRef<{ startX: number; startWidth: number } | null>(null);
 
   const [search, setSearch] = useState('');
   const [isInputFocused, setInputFocused] = useState(false);
-  const [fileTreeWidth, setFileTreeWidth] = useState(() =>
-    getStoredFileTreeWidth(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX)
-  );
-  const [isFileTreeResizing, setFileTreeResizing] = useState(false);
 
   const { data, isLoading } = useSWR<UnpkgMeta>(
     `/api/proxy/unpkg?name=${library.npmPkg}&version=${selectedVersion}&path=?meta`,
@@ -80,62 +69,6 @@ export default function CodeBrowser({
       revalidateOnFocus: false,
     }
   );
-
-  useEffect(() => {
-    window.localStorage.setItem(FILE_TREE_WIDTH_STORAGE_KEY_PREFIX, String(fileTreeWidth));
-  }, [fileTreeWidth]);
-
-  useEffect(() => {
-    if (!isFileTreeResizing) {
-      return;
-    }
-
-    function handlePointerMove(event: PointerEvent) {
-      const start = fileTreeResizeStartRef.current;
-
-      if (!start) {
-        return;
-      }
-
-      setFileTreeWidth(clampFileTreeWidth(start.startWidth + (event.clientX - start.startX)));
-    }
-
-    function endResizing() {
-      fileTreeResizeStartRef.current = null;
-      setFileTreeResizing(false);
-    }
-
-    function clampWidthToViewport() {
-      setFileTreeWidth(currentWidth => clampFileTreeWidth(currentWidth));
-    }
-
-    document.body.style.cursor = 'col-resize';
-    document.body.style.userSelect = 'none';
-    document.addEventListener('pointermove', handlePointerMove);
-    document.addEventListener('pointerup', endResizing);
-    document.addEventListener('pointercancel', endResizing);
-    window.addEventListener('resize', clampWidthToViewport);
-
-    return () => {
-      document.body.style.cursor = 'auto';
-      document.body.style.userSelect = 'auto';
-      document.removeEventListener('pointermove', handlePointerMove);
-      document.removeEventListener('pointerup', endResizing);
-      document.removeEventListener('pointercancel', endResizing);
-      window.removeEventListener('resize', clampWidthToViewport);
-    };
-  }, [isFileTreeResizing]);
-
-  function startFileTreeResize(event: NativeSyntheticEvent<NativePointerEvent>) {
-    event.preventDefault();
-
-    fileTreeResizeStartRef.current = {
-      startX: event.nativeEvent.clientX,
-      startWidth: fileTreeWidth,
-    };
-
-    setFileTreeResizing(true);
-  }
 
   const normalizedSearch = search.trim().toLowerCase();
 
@@ -200,36 +133,11 @@ export default function CodeBrowser({
   const resolvedActiveFile = activeFileData ? activeFile : null;
 
   return (
-    <View
-      id="codeBrowser"
-      style={[
-        tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
-        isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none border-0` : tw`h-[70vh]`,
-        isBrowserMaximized && {
-          position: 'fixed',
-        },
-      ]}>
-      {isBrowserMaximized && header}
-      {isLoading && (
-        <View style={tw`flex flex-1 items-center justify-center`}>
-          <ThreeDotsLoader />
-        </View>
-      )}
-      {!data && !isLoading && <P>Cannot fetch package bundle code.</P>}
-      {data && !isLoading && (
-        <View
-          style={[
-            tw`flex flex-row`,
-            isBrowserMaximized ? tw`flex-1 border-l-0` : tw`h-[70vh]`,
-            isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
-            isSmallScreen && tw`flex-col`,
-          ]}>
-          <View
-            style={[
-              tw`relative z-10 flex h-full flex-shrink-0`,
-              !isSmallScreen && { width: fileTreeWidth },
-              isSmallScreen && tw`w-full`,
-            ]}>
+    <CodeBrowserLayout
+      header={header}
+      sidebar={
+        data && !isLoading ? (
+          <>
             <View
               style={[
                 tw`relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-default`,
@@ -287,7 +195,6 @@ export default function CodeBrowser({
                 tw`border-palette-gray2 dark:border-default`,
                 !isSmallScreen && tw`flex-1 border-r`,
                 isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
-                isFileTreeResizing && tw`pointer-events-none`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (
@@ -306,118 +213,86 @@ export default function CodeBrowser({
                 </View>
               )}
             </ScrollView>
-            {!isSmallScreen && (
-              <View
-                accessibilityRole="adjustable"
-                onPointerDown={startFileTreeResize}
-                style={[
-                  tw`absolute -right-0.5 top-0 z-10 h-full w-1 opacity-40`,
-                  { cursor: 'col-resize' },
-                  isFileTreeResizing && tw`bg-palette-gray3 dark:bg-palette-gray5`,
-                ]}
-              />
-            )}
-            {filteredFiles.length > 0 && (
-              <CodeBrowserContentFooter
-                isBrowserMaximized={isBrowserMaximized}
-                style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
-                leftSlot={
-                  <Label style={tw`font-light text-secondary`}>
-                    <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
-                    {pluralize('file', filteredFiles.length)}
-                    {files.length !== filteredFiles.length && (
-                      <span style={tw`opacity-80`}>
-                        &ensp;
-                        <span style={tw`text-tertiary`}>&bull;</span>
-                        &ensp;
-                        <span style={tw`font-medium`}>
-                          {files.length - filteredFiles.length}
-                        </span>{' '}
-                        hidden
-                      </span>
-                    )}
-                  </Label>
-                }
-                rightSlot={
-                  <Label style={tw`font-light text-secondary`}>
-                    <span style={tw`font-medium`}>{formatBytes(filteredFilesSize)}</span>
-                    {filteredFilesSize !== totalFilesSize && (
-                      <span style={tw`opacity-80`}>
-                        &ensp;
-                        <span style={tw`text-tertiary`}>&bull;</span>
-                        &ensp;
-                        <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span> total
-                      </span>
-                    )}
-                  </Label>
-                }
-              />
-            )}
+          </>
+        ) : null
+      }
+      sidebarFooter={
+        data && !isLoading && filteredFiles.length > 0 ? (
+          <CodeBrowserContentFooter
+            isBrowserMaximized={isBrowserMaximized}
+            style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
+            leftSlot={
+              <Label style={tw`font-light text-secondary`}>
+                <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
+                {pluralize('file', filteredFiles.length)}
+                {files.length !== filteredFiles.length && (
+                  <span style={tw`opacity-80`}>
+                    &ensp;
+                    <span style={tw`text-tertiary`}>&bull;</span>
+                    &ensp;
+                    <span style={tw`font-medium`}>{files.length - filteredFiles.length}</span>{' '}
+                    hidden
+                  </span>
+                )}
+              </Label>
+            }
+            rightSlot={
+              <Label style={tw`font-light text-secondary`}>
+                <span style={tw`font-medium`}>{formatBytes(filteredFilesSize)}</span>
+                {filteredFilesSize !== totalFilesSize && (
+                  <span style={tw`opacity-80`}>
+                    &ensp;
+                    <span style={tw`text-tertiary`}>&bull;</span>
+                    &ensp;
+                    <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span> total
+                  </span>
+                )}
+              </Label>
+            }
+          />
+        ) : null
+      }
+      content={
+        isLoading ? (
+          <View style={tw`flex flex-1 items-center justify-center`}>
+            <ThreeDotsLoader />
           </View>
-          <View
-            style={[
-              tw`flex flex-1`,
-              activeFile && tw`bg-white dark:bg-[#0d1117]`,
-              isSmallScreen && !isBrowserMaximized && tw`min-h-[50vh]`,
-            ]}>
-            {activeFile && activeFileData ? (
-              <CodeBrowserContent
-                key={activeFile}
-                packageName={library.npmPkg}
-                repoUrl={library.github.urls.repo}
-                selectedVersion={selectedVersion}
-                filePath={activeFile}
-                fileData={activeFileData}
-                settings={settings}
-                onSettingsChange={onSettingsChange}
+        ) : !data ? (
+          <P>Cannot fetch package bundle code.</P>
+        ) : activeFile && activeFileData ? (
+          <CodeBrowserContent
+            key={activeFile}
+            packageName={library.npmPkg}
+            repoUrl={library.github.urls.repo}
+            selectedVersion={selectedVersion}
+            filePath={activeFile}
+            fileData={activeFileData}
+            settings={settings}
+            onSettingsChange={onSettingsChange}
+            isBrowserMaximized={isBrowserMaximized}
+            toggleMaximized={toggleMaximized}
+          />
+        ) : (
+          <>
+            <View
+              style={tw`flex min-h-[45px] flex-row items-center justify-end gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default`}>
+              <DisplayModeButton
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />
-            ) : (
-              <>
-                <View
-                  style={tw`flex min-h-[45px] flex-row items-center justify-end gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default`}>
-                  <DisplayModeButton
-                    isBrowserMaximized={isBrowserMaximized}
-                    toggleMaximized={toggleMaximized}
-                  />
-                  <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
-                </View>
-                <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
-                  <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
-                  <P style={tw`text-center text-secondary`}>
-                    Select file to preview from the list on the left.
-                  </P>
-                </View>
-              </>
-            )}
-          </View>
-        </View>
-      )}
-    </View>
+              <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
+            </View>
+            <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
+              <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
+              <P style={tw`text-center text-secondary`}>
+                Select file to preview from the list on the left.
+              </P>
+            </View>
+          </>
+        )
+      }
+      hasActiveContent={Boolean(activeFile)}
+      isBrowserMaximized={isBrowserMaximized}
+    />
   );
-}
-
-function getStoredFileTreeWidth(storageKey: string) {
-  if (typeof window === 'undefined') {
-    return DEFAULT_FILE_TREE_WIDTH;
-  }
-
-  const storedWidth = Number(window.localStorage.getItem(storageKey));
-
-  if (!Number.isFinite(storedWidth)) {
-    return DEFAULT_FILE_TREE_WIDTH;
-  }
-
-  return clampFileTreeWidth(storedWidth);
-}
-
-function clampFileTreeWidth(width: number) {
-  if (typeof window === 'undefined') {
-    return Math.max(MIN_FILE_TREE_WIDTH, width);
-  }
-
-  const maxWidth = Math.max(MIN_FILE_TREE_WIDTH, MAX_FILE_TREE_WIDTH);
-
-  return Math.min(Math.max(width, MIN_FILE_TREE_WIDTH), maxWidth);
 }

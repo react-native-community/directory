@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
@@ -16,6 +16,7 @@ type Props = {
   isDirectory?: boolean;
   isCollapsed?: boolean;
   isNested?: boolean;
+  rightSlot?: ReactNode;
   onPress?: () => void;
 };
 
@@ -26,6 +27,7 @@ export default function CodeBrowserFileRow({
   isDirectory = false,
   isCollapsed = false,
   isNested = false,
+  rightSlot,
   onPress,
 }: Props) {
   const [isHovered, setIsHovered] = useState(false);
@@ -34,9 +36,10 @@ export default function CodeBrowserFileRow({
   const rowStyle = [
     tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
     isDirectory && tw`pl-1.5`,
-    warning && {
-      backgroundImage: 'linear-gradient(45deg, transparent 80%, var(--warning-dark-bg) 95%)',
-    },
+    !rightSlot &&
+      warning && {
+        backgroundImage: 'linear-gradient(45deg, transparent 80%, var(--warning-dark-bg) 95%)',
+      },
     { paddingLeft: (isNested ? 6 : 10) + depth * 8 },
   ];
 
@@ -71,16 +74,19 @@ export default function CodeBrowserFileRow({
         ]}>
         {label}
       </P>
-      {warning && (
+      {(rightSlot || warning) && (
         <View style={tw`ml-auto flex-row items-center gap-1.5`}>
-          <Tooltip
-            trigger={
-              <View>
-                <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
-              </View>
-            }>
-            <span className="leading-0.5 text-[12px]">{warning.message}</span>
-          </Tooltip>
+          {rightSlot}
+          {!rightSlot && warning && (
+            <Tooltip
+              trigger={
+                <View>
+                  <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+                </View>
+              }>
+              <span className="leading-0.5 text-[12px]">{warning.message}</span>
+            </Tooltip>
+          )}
         </View>
       )}
     </>

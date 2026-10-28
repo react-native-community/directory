@@ -846,6 +846,16 @@ select {
     scrollbar-color: var(--icon) var(--gray-1);
   }
 
+  #codeBrowserDiffList {
+    scrollbar-color: var(--icon) var(--gray-1);
+    background-color: transparent;
+    overflow-x: auto;
+
+    pre {
+      overflow: visible;
+    }
+  }
+
   #markdownContentWrapper {
     scrollbar-gutter: stable;
 
@@ -876,7 +886,8 @@ select {
 
 :root.dark {
   #codeBrowser {
-    #codeBrowserList {
+    #codeBrowserList,
+    #codeBrowserDiffList {
       scrollbar-color: var(--icon) var(--table-alt-row);
     }
 
