@@ -16,6 +16,7 @@ import PackageHeader from '~/components/Package/PackageHeader';
 import PageMeta from '~/components/PageMeta';
 import { Tooltip } from '~/components/Tooltip';
 import { type PackageCodePageProps } from '~/types/pages';
+import { getDiffActiveFileStorageKey } from '~/util/codeDiff';
 import { getStoredValue } from '~/util/localStorage';
 import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
 import tw from '~/util/tailwind';
@@ -123,6 +124,18 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       return;
     }
 
+    const diffActiveFileStorageKey = getDiffActiveFileStorageKey(
+      packageName,
+      selectedVersion,
+      version
+    );
+
+    if (activeFile) {
+      window.localStorage.setItem(diffActiveFileStorageKey, activeFile);
+    } else {
+      window.localStorage.removeItem(diffActiveFileStorageKey);
+    }
+
     void router
       .push(
         {
@@ -139,6 +152,14 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
     setChoosingCompareVersion(false);
 
     if (compareVersion) {
+      const diffActiveFile = getStoredValue(
+        getDiffActiveFileStorageKey(packageName, selectedVersion, compareVersion)
+      );
+
+      if (diffActiveFile) {
+        setActiveFile(diffActiveFile);
+      }
+
       replaceQueryParams(router, { compareVersion: undefined });
     }
   }
@@ -248,6 +269,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       packageName={library.npmPkg}
       fromVersion={selectedVersion}
       toVersion={compareVersion}
+      preferredActiveFile={activeFile ?? undefined}
+      onActiveFileChange={setActiveFile}
       header={browserHeader}
       isBrowserMaximized={isBrowserMaximized}
       toggleMaximized={toggleBrowserMaximized}

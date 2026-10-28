@@ -102,3 +102,11 @@ export function getFileUrl(packageName: string, version: string, path: string) {
   const params = new URLSearchParams({ name: packageName, version, path });
   return `/api/proxy/unpkg?${params}`;
 }
+
+export function getDiffActiveFileStorageKey(
+  packageName: string,
+  fromVersion: string,
+  toVersion: string
+) {
+  return `@ReactNativeDirectory:PackageCodeDiff:activeFile:${packageName}:${fromVersion}:${toVersion}`;
+}

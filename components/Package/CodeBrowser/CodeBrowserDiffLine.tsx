@@ -28,7 +28,7 @@ export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: P
     <View
       style={[
         tw`min-h-4 flex-row items-center`,
-        !wordWrap && tw`w-max min-w-full`,
+        !wordWrap && [tw`min-w-full`, { width: 'max-content' }],
         line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#15281d]`,
         line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#2e191b]`,
       ]}>
@@ -44,7 +44,7 @@ export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: P
           </Label>
         </>
       )}
-      <View style={tw`min-w-0 flex-1 flex-row gap-2 px-2`}>
+      <View style={tw`min-w-0 flex-1 flex-row gap-2 pl-1.5 pr-2.5`}>
         <Label
           style={[
             tw`font-mono select-none text-[12px] leading-4 opacity-60`,

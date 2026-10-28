@@ -8,6 +8,7 @@ import { type DiffLineRowData, type UnpkgMeta } from '~/types';
 import { buildCodeBrowserFileTree, getLanguage } from '~/util/codeBrowser';
 import {
   getChangedFiles,
+  getDiffActiveFileStorageKey,
   getDiffLines,
   getFileUrl,
   getMetaUrl,
@@ -28,6 +29,8 @@ type Props = {
   packageName: string;
   fromVersion: string;
   toVersion: string;
+  preferredActiveFile?: string;
+  onActiveFileChange: (filePath: string) => void;
   header?: ReactNode;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
@@ -41,6 +44,8 @@ export default function CodeBrowserVersionDiff({
   packageName,
   fromVersion,
   toVersion,
+  preferredActiveFile,
+  onActiveFileChange,
   header,
   isBrowserMaximized,
   toggleMaximized,
@@ -48,9 +53,9 @@ export default function CodeBrowserVersionDiff({
   onSettingsChange,
 }: Props) {
   const { isSmallScreen } = useLayout();
-  const activeFileStorageKey = `@ReactNativeDirectory:PackageCodeDiff:activeFile:${packageName}:${fromVersion}:${toVersion}`;
-  const [selectedPath, setSelectedPath] = useState<string | null>(() =>
-    getStoredValue(activeFileStorageKey)
+  const activeFileStorageKey = getDiffActiveFileStorageKey(packageName, fromVersion, toVersion);
+  const [selectedPath, setSelectedPath] = useState<string | null>(
+    () => getStoredValue(activeFileStorageKey) ?? preferredActiveFile ?? null
   );
 
   useEffect(() => {
@@ -102,10 +107,10 @@ export default function CodeBrowserVersionDiff({
     () => new Map(changedFiles.map(file => [file.path, file])),
     [changedFiles]
   );
-  const activePath =
-    selectedPath && changedFiles.some(file => file.path === selectedPath)
-      ? selectedPath
-      : changedFiles[0]?.path;
+  const activePath = [selectedPath, preferredActiveFile].find(
+    path => path && changedFiles.some(file => file.path === path)
+  );
+
   const fromFile = changedFiles.find(file => file.path === activePath)?.fromFile;
   const toFile = changedFiles.find(file => file.path === activePath)?.toFile;
   const canPreview =
@@ -154,6 +159,7 @@ export default function CodeBrowserVersionDiff({
       }),
     FETCH_PARAMS
   );
+
   const diffLines = useMemo(
     () =>
       activePath
@@ -171,6 +177,7 @@ export default function CodeBrowserVersionDiff({
     }),
     [diffLines]
   );
+
   const renderDiffLine = useCallback(
     ({ item }: { item: DiffLineRowData }) => (
       <CodeBrowserDiffLine
@@ -222,7 +229,7 @@ export default function CodeBrowserVersionDiff({
             <CodeBrowserFileTree
               tree={fileTree}
               activeFile={activePath ?? null}
-              onSelectFile={setSelectedPath}
+              onSelectFile={selectFile}
               getFileRightSlot={getFileRightSlot}
             />
           </ScrollView>
@@ -267,14 +274,18 @@ export default function CodeBrowserVersionDiff({
                     settings.wordWrap ? tw`w-full` : [tw`min-w-full`, { width: 'max-content' }]
                   }
                   keyExtractor={line => `${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`}
-                  style={tw`flex-1`}
+                  style={tw`flex-1 py-4`}
                   renderItem={renderDiffLine}
                 />
               </View>
             )
           ) : (
             <View style={tw`flex-1 items-center justify-center px-4`}>
-              <P style={tw`text-center text-secondary`}>No file changes between these versions.</P>
+              <P style={tw`text-center text-secondary`}>
+                {changedFiles.length > 0
+                  ? 'Select a changed file to view its diff.'
+                  : 'No file changes between these versions.'}
+              </P>
             </View>
           )}
         </>
@@ -320,5 +331,10 @@ export default function CodeBrowserVersionDiff({
     }
 
     return <Label style={tw`font-mono text-[10px] text-[#f4aa34] dark:text-warning`}>⏺</Label>;
+  }
+
+  function selectFile(filePath: string) {
+    setSelectedPath(filePath);
+    onActiveFileChange(filePath);
   }
 }
