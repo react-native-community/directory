@@ -226,6 +226,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
       header={browserHeader}
       isBrowserMaximized={isBrowserMaximized}
       toggleMaximized={toggleBrowserMaximized}
+      settings={codeBrowserSettings}
+      onSettingsChange={setCodeBrowserSettings}
     />
   ) : (
     <CodeBrowser

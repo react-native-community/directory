@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useMemo, useState } from 'react';
+import { type ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, ScrollView, View } from 'react-native';
 import useSWR from 'swr';
 
@@ -21,6 +21,7 @@ import tw from '~/util/tailwind';
 import { CodeBrowserDiffLine } from './CodeBrowserDiffLine';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
 import CodeBrowserLayout from './CodeBrowserLayout';
+import CodeBrowserSettings, { type CodeBrowserSettingsType } from './CodeBrowserSettings';
 import DisplayModeButton from './DisplayModeButton';
 
 type Props = {
@@ -30,6 +31,8 @@ type Props = {
   header?: ReactNode;
   isBrowserMaximized: boolean;
   toggleMaximized: () => void;
+  settings: CodeBrowserSettingsType;
+  onSettingsChange: (settings: CodeBrowserSettingsType) => void;
 };
 
 const FETCH_PARAMS = { dedupingInterval: TimeRange.HOUR * 1000, revalidateOnFocus: false };
@@ -41,6 +44,8 @@ export default function CodeBrowserVersionDiff({
   header,
   isBrowserMaximized,
   toggleMaximized,
+  settings,
+  onSettingsChange,
 }: Props) {
   const { isSmallScreen } = useLayout();
   const activeFileStorageKey = `@ReactNativeDirectory:PackageCodeDiff:activeFile:${packageName}:${fromVersion}:${toVersion}`;
@@ -87,7 +92,12 @@ export default function CodeBrowserVersionDiff({
     FETCH_PARAMS
   );
 
-  const changedFiles = useMemo(() => getChangedFiles(fromMeta, toMeta), [fromMeta, toMeta]);
+  const changedFiles = useMemo(() => {
+    const files = getChangedFiles(fromMeta, toMeta);
+    return settings.hideMapFiles
+      ? files.filter(file => !file.path.toLowerCase().endsWith('.map'))
+      : files;
+  }, [fromMeta, settings.hideMapFiles, toMeta]);
   const changedFilesByPath = useMemo(
     () => new Map(changedFiles.map(file => [file.path, file])),
     [changedFiles]
@@ -161,6 +171,17 @@ export default function CodeBrowserVersionDiff({
     }),
     [diffLines]
   );
+  const renderDiffLine = useCallback(
+    ({ item }: { item: DiffLineRowData }) => (
+      <CodeBrowserDiffLine
+        line={item}
+        lang={item.lang}
+        showLineNumbers={settings.showLineNumbers}
+        wordWrap={settings.wordWrap}
+      />
+    ),
+    [settings.showLineNumbers, settings.wordWrap]
+  );
 
   if (isFromMetaLoading || isToMetaLoading) {
     return (
@@ -212,10 +233,13 @@ export default function CodeBrowserVersionDiff({
           <View
             style={tw`min-h-[45px] flex-row items-center justify-between gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default dark:bg-dark`}>
             <Label style={tw`font-mono text-[13px]`}>{activePath ?? ''}</Label>
-            <DisplayModeButton
-              isBrowserMaximized={isBrowserMaximized}
-              toggleMaximized={toggleMaximized}
-            />
+            <View style={tw`flex-row gap-3`}>
+              <DisplayModeButton
+                isBrowserMaximized={isBrowserMaximized}
+                toggleMaximized={toggleMaximized}
+              />
+              <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
+            </View>
           </View>
           {activePath ? (
             !canPreview ? (
@@ -233,12 +257,20 @@ export default function CodeBrowserVersionDiff({
                 <ThreeDotsLoader />
               </View>
             ) : (
-              <FlatList
-                data={diffLines}
-                keyExtractor={line => `${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`}
-                style={tw`flex-1`}
-                renderItem={renderDiffLine}
-              />
+              <View
+                id={settings.wordWrap ? 'code-browser-word-wrap' : undefined}
+                style={tw`flex-1`}>
+                <FlatList
+                  id="codeBrowserDiffList"
+                  data={diffLines}
+                  contentContainerStyle={
+                    settings.wordWrap ? tw`w-full` : [tw`min-w-full`, { width: 'max-content' }]
+                  }
+                  keyExtractor={line => `${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`}
+                  style={tw`flex-1`}
+                  renderItem={renderDiffLine}
+                />
+              </View>
             )
           ) : (
             <View style={tw`flex-1 items-center justify-center px-4`}>
@@ -289,8 +321,4 @@ export default function CodeBrowserVersionDiff({
 
     return <Label style={tw`font-mono text-[10px] text-[#f4aa34] dark:text-warning`}>⏺</Label>;
   }
-}
-
-function renderDiffLine({ item }: { item: DiffLineRowData }) {
-  return <CodeBrowserDiffLine line={item} lang={item.lang} />;
 }

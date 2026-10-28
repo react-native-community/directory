@@ -9,35 +9,42 @@ import { type DiffLine } from '~/types';
 import { SHIKI_OPTS } from '~/util/shiki';
 import tw from '~/util/tailwind';
 
-type Props = { line: DiffLine; lang: string };
+type Props = {
+  line: DiffLine;
+  lang: string;
+  showLineNumbers: boolean;
+  wordWrap: boolean;
+};
 
-export function CodeBrowserDiffLine({ line, lang }: Props) {
-  const highlighter = useShikiHighlighter(
-    line.text || ' ',
-    lang,
-    (tw.prefixMatch('dark') ? rndDark : rndLight) as Theme,
-    {
-      ...SHIKI_OPTS,
-      transformers: [diffLineTransformer],
-    }
-  );
+export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: Props) {
+  const isDark = tw.prefixMatch('dark');
+  const theme = (isDark ? rndDark : rndLight) as Theme;
+  const highlighter = useShikiHighlighter(line.text || ' ', lang, theme, {
+    ...SHIKI_OPTS,
+    transformers: [diffLineTransformer],
+  });
 
   return (
     <View
       style={[
         tw`min-h-4 flex-row items-center`,
-        line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#102318]`,
-        line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#281517]`,
+        !wordWrap && tw`w-max min-w-full`,
+        line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#15281d]`,
+        line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#2e191b]`,
       ]}>
-      <Label
-        style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
-        {line.oldLine ?? ''}
-      </Label>
-      <Label
-        style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
-        {line.newLine ?? ''}
-      </Label>
-      <View style={tw`flex-1 flex-row gap-2 px-2`}>
+      {showLineNumbers && (
+        <>
+          <Label
+            style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+            {line.oldLine ?? ''}
+          </Label>
+          <Label
+            style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+            {line.newLine ?? ''}
+          </Label>
+        </>
+      )}
+      <View style={tw`min-w-0 flex-1 flex-row gap-2 px-2`}>
         <Label
           style={[
             tw`font-mono select-none text-[12px] leading-4 opacity-60`,
@@ -46,20 +53,14 @@ export function CodeBrowserDiffLine({ line, lang }: Props) {
           ]}>
           {line.type === 'added' ? '+' : line.type === 'removed' ? '−' : ' '}
         </Label>
-        <View style={tw`flex-1`}>
+        <View style={tw`min-w-0 flex-1`}>
           {highlighter ?? (
-            <pre
-              className="shiki"
-              style={{
-                backgroundColor: 'transparent',
-                fontSize: '75%',
-                height: 'auto',
-                lineHeight: '16px',
-                margin: 0,
-                overflow: 'visible',
-                padding: 0,
-              }}>
-              <code style={{ display: 'flex' }}>{line.text || ' '}</code>
+            <pre className="shiki" style={tw`m-0 h-auto bg-transparent p-0 text-[75%]`}>
+              <code>
+                <span className="line">
+                  <span>{line.text || ' '}</span>
+                </span>
+              </code>
             </pre>
           )}
         </View>
@@ -73,7 +74,7 @@ const diffLineTransformer: ShikiTransformer = {
   pre(node) {
     node.properties = {
       ...node.properties,
-      style: `${node.properties?.style ?? ''};background-color:transparent;padding:0;margin:0;height:auto;overflow:visible;font-size:75%;line-height:16px`,
+      style: `${node.properties?.style ?? ''};background-color:transparent;padding:0;margin:0;height:auto;font-size:75%;line-height:16px`,
     };
   },
 };
