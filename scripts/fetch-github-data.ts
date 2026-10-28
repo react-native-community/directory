@@ -190,8 +190,15 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
       json.name = packageJson.name;
       json.isPackagePrivate = packageJson.private ?? false;
       json.registry = packageJson?.publishConfig?.registry ?? undefined;
+      const packageScope =
+        typeof packageJson.name === 'string' && packageJson.name.startsWith('@')
+          ? `${packageJson.name.split('/')[0]}/`
+          : null;
+
       json.dependenciesCount = packageJson.dependencies
-        ? Object.keys(packageJson.dependencies).length
+        ? Object.keys(packageJson.dependencies).filter(dependency =>
+            packageScope ? !dependency.startsWith(packageScope) : true
+          ).length
         : 0;
       json.packageManager = packageJson.packageManager ?? undefined;
       json.lintTools = getLintToolsFromPackageJson(packageJson);
