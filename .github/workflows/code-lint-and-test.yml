@@ -26,7 +26,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: TSC
-        run: bun tsc
+        run: bun check
       - name: Lint
         run: bun lint
       - name: Build Next app
