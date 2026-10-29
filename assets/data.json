@@ -5759,7 +5759,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 9
+          "dependencies": 9,
+          "sameScopeDependencies": 2
         },
         "name": "@react-navigation/native",
         "fullName": "react-navigation/react-navigation",
@@ -8988,7 +8989,8 @@
           "issues": 204,
           "subscribers": 4,
           "stars": 992,
-          "dependencies": 24
+          "dependencies": 24,
+          "sameScopeDependencies": 1
         },
         "name": "@expo/ex-navigation",
         "fullName": "expo/ex-navigation",
@@ -28908,7 +28910,8 @@
           "issues": 272,
           "subscribers": 111,
           "stars": 11789,
-          "dependencies": 7
+          "dependencies": 7,
+          "sameScopeDependencies": 2
         },
         "name": "@nozbe/watermelondb",
         "fullName": "Nozbe/WatermelonDB",
@@ -41290,7 +41293,8 @@
           "issues": 103,
           "subscribers": 84,
           "stars": 4984,
-          "dependencies": 35
+          "dependencies": 35,
+          "sameScopeDependencies": 3
         },
         "name": "@shoutem/ui",
         "fullName": "shoutem/ui",
@@ -43582,7 +43586,8 @@
           "issues": 462,
           "subscribers": 198,
           "stars": 9552,
-          "dependencies": 7
+          "dependencies": 7,
+          "sameScopeDependencies": 2
         },
         "name": "@aws-amplify/datastore",
         "fullName": "aws-amplify/amplify-js",
@@ -52090,7 +52095,8 @@
           "issues": 115,
           "subscribers": 69,
           "stars": 1825,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 6
         },
         "name": "@sentry/react-native",
         "fullName": "getsentry/sentry-react-native",
@@ -61987,7 +61993,8 @@
           "issues": 20,
           "subscribers": 20,
           "stars": 1322,
-          "dependencies": 17
+          "dependencies": 18,
+          "sameScopeDependencies": 5
         },
         "name": "@storybook/react-native",
         "fullName": "storybookjs/react-native",
@@ -63233,7 +63240,8 @@
           "issues": 41,
           "subscribers": 32,
           "stars": 9107,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@gorhom/bottom-sheet",
         "fullName": "gorhom/react-native-bottom-sheet",
@@ -63321,7 +63329,8 @@
           "issues": 24,
           "subscribers": 3,
           "stars": 178,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@react-keycloak/native",
         "fullName": "react-keycloak/react-native-keycloak",
@@ -67983,7 +67992,8 @@
           "issues": 13,
           "subscribers": 5,
           "stars": 250,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@flyskywhy/react-native-gcanvas",
         "fullName": "flyskywhy/react-native-gcanvas",
@@ -71076,7 +71086,8 @@
           "issues": 20,
           "subscribers": 1,
           "stars": 181,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 2
         },
         "name": "@breeffy/calendars",
         "fullName": "breeffy/react-native-monorepo",
@@ -73561,7 +73572,8 @@
           "issues": 0,
           "subscribers": 2,
           "stars": 11,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@svgr-iconkit/core",
         "fullName": "svgr-iconkit/svgr-iconkit",
@@ -76551,7 +76563,8 @@
           "issues": 4,
           "subscribers": 28,
           "stars": 81,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@giphy/react-native-sdk",
         "fullName": "Giphy/giphy-react-native-sdk",
@@ -77340,7 +77353,8 @@
           "issues": 15,
           "subscribers": 15,
           "stars": 145,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@datadog/mobile-react-native",
         "fullName": "DataDog/dd-sdk-reactnative",
@@ -78413,7 +78427,8 @@
           "issues": 16,
           "subscribers": 5,
           "stars": 408,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 2
         },
         "name": "@flyerhq/react-native-chat-ui",
         "fullName": "flyerhq/react-native-chat-ui",
@@ -83683,7 +83698,8 @@
           "issues": 31,
           "subscribers": 9,
           "stars": 1763,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 3
         },
         "name": "@clerk/expo",
         "fullName": "clerk/javascript",
@@ -90444,7 +90460,8 @@
           "issues": 0,
           "subscribers": 9,
           "stars": 97,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@sendbird/uikit-react-native",
         "fullName": "sendbird/sendbird-uikit-react-native",
@@ -91119,7 +91136,8 @@
           "issues": 0,
           "subscribers": 1,
           "stars": 9,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@ouroboros/react-native-picker",
         "fullName": "ouroboroscoding/react-native-picker",
@@ -91197,7 +91215,8 @@
           "issues": 0,
           "subscribers": 1,
           "stars": 1,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@ouroboros/react-native-snackbar",
         "fullName": "ouroboroscoding/react-native-snackbar",
@@ -96432,7 +96451,8 @@
           "issues": 3,
           "subscribers": 15,
           "stars": 2037,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@data-client/react",
         "fullName": "reactive/data-client",
@@ -97488,7 +97508,8 @@
           "issues": 2,
           "subscribers": 3,
           "stars": 122,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@draftbit/ui",
         "fullName": "draftbit/react-native-jigsaw",
@@ -100282,7 +100303,8 @@
           "issues": 41,
           "subscribers": 31,
           "stars": 5907,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@lingui/react",
         "fullName": "lingui/js-lingui",
@@ -100634,7 +100656,8 @@
           "issues": 45,
           "subscribers": 3,
           "stars": 79,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 1
         },
         "name": "@rnw-community/react-native-payments",
         "fullName": "rnw-community/rnw-community",
@@ -102394,7 +102417,8 @@
           "issues": 25,
           "subscribers": 6,
           "stars": 666,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@maplibre/maplibre-react-native",
         "fullName": "maplibre/maplibre-react-native",
@@ -106199,7 +106223,8 @@
           "issues": 0,
           "subscribers": 2,
           "stars": 30,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@bugfender/rn-bugfender",
         "fullName": "bugfender/rn-bugfender",
@@ -108005,7 +108030,8 @@
           "issues": 46,
           "subscribers": 17,
           "stars": 62,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 1
         },
         "name": "@xmtp/react-native-sdk",
         "fullName": "xmtp/xmtp-react-native",
@@ -108093,7 +108119,8 @@
           "issues": 33,
           "subscribers": 14,
           "stars": 729,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 3
         },
         "name": "@powersync/react-native",
         "fullName": "powersync-ja/powersync-js",
@@ -109849,7 +109876,8 @@
           "issues": 4,
           "subscribers": 5,
           "stars": 126,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@reown/appkit-wagmi-react-native",
         "fullName": "reown-com/appkit-react-native",
@@ -112646,7 +112674,8 @@
           "issues": 3,
           "subscribers": 2,
           "stars": 64,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 1
         },
         "name": "@vokhuyet/react-native-messy",
         "fullName": "vokhuyetOz/react-native-messy",
@@ -113268,7 +113297,8 @@
           "issues": 20,
           "subscribers": 1,
           "stars": 181,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 2
         },
         "name": "@breeffy/pickers",
         "fullName": "breeffy/react-native-monorepo",
@@ -113845,7 +113875,8 @@
           "issues": 13,
           "subscribers": 7,
           "stars": 383,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@segment/analytics-react-native",
         "fullName": "segmentio/analytics-react-native",
@@ -115808,7 +115839,8 @@
           "issues": 73,
           "subscribers": 72,
           "stars": 73,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 1
         },
         "name": "@okta/okta-react-native",
         "fullName": "okta/okta-react-native",
@@ -116231,7 +116263,8 @@
           "issues": 287,
           "subscribers": 402,
           "stars": 52602,
-          "dependencies": 11
+          "dependencies": 11,
+          "sameScopeDependencies": 2
         },
         "name": "@expo/fingerprint",
         "fullName": "expo/expo",
@@ -116506,7 +116539,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/bottom-tabs",
         "fullName": "react-navigation/react-navigation",
@@ -116594,7 +116628,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/material-top-tabs",
         "fullName": "react-navigation/react-navigation",
@@ -116684,7 +116719,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/drawer",
         "fullName": "react-navigation/react-navigation",
@@ -116774,7 +116810,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/native-stack",
         "fullName": "react-navigation/react-navigation",
@@ -116863,7 +116900,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/stack",
         "fullName": "react-navigation/react-navigation",
@@ -117296,7 +117334,8 @@
           "issues": 33,
           "subscribers": 64,
           "stars": 4577,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 5
         },
         "name": "@supabase/supabase-js",
         "fullName": "supabase/supabase-js",
@@ -118665,7 +118704,8 @@
           "issues": 5,
           "subscribers": 15,
           "stars": 1737,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rnx-kit/align-deps",
         "fullName": "microsoft/rnx-kit",
@@ -119073,7 +119113,8 @@
           "issues": 6,
           "subscribers": 3,
           "stars": 64,
-          "dependencies": 2
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@dr.pogodin/react-native-audio",
         "fullName": "birdofpreyru/react-native-audio",
@@ -119245,7 +119286,8 @@
           "issues": 18,
           "subscribers": 3,
           "stars": 231,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@dr.pogodin/react-native-static-server",
         "fullName": "birdofpreyru/react-native-static-server",
@@ -119773,7 +119815,8 @@
           "issues": 58,
           "subscribers": 262,
           "stars": 50404,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@tanstack/react-query",
         "fullName": "TanStack/query",
@@ -122802,7 +122845,8 @@
           "issues": 0,
           "subscribers": 1,
           "stars": 27,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@vokhuyet/react-native-draw-overlay",
         "fullName": "vokhuyetOz/react-native-draw-overlay",
@@ -126956,7 +127000,8 @@
           "issues": 64,
           "subscribers": 48,
           "stars": 14214,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 4
         },
         "name": "@tamagui/animations-react-native",
         "fullName": "tamagui/tamagui",
@@ -127036,7 +127081,8 @@
           "issues": 64,
           "subscribers": 48,
           "stars": 14214,
-          "dependencies": 13
+          "dependencies": 10,
+          "sameScopeDependencies": 10
         },
         "name": "@tamagui/config",
         "fullName": "tamagui/tamagui",
@@ -127116,7 +127162,8 @@
           "issues": 64,
           "subscribers": 48,
           "stars": 14214,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@tamagui/shorthands",
         "fullName": "tamagui/tamagui",
@@ -127196,7 +127243,8 @@
           "issues": 64,
           "subscribers": 48,
           "stars": 14214,
-          "dependencies": 5
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@tamagui/themes",
         "fullName": "tamagui/tamagui",
@@ -127276,7 +127324,8 @@
           "issues": 64,
           "subscribers": 48,
           "stars": 14214,
-          "dependencies": 16
+          "dependencies": 16,
+          "sameScopeDependencies": 16
         },
         "name": "@tamagui/toast",
         "fullName": "tamagui/tamagui",
@@ -129753,7 +129802,8 @@
           "issues": 58,
           "subscribers": 262,
           "stars": 50404,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@tanstack/query-persist-client-core",
         "fullName": "TanStack/query",
@@ -131252,7 +131302,8 @@
           "issues": 41,
           "subscribers": 31,
           "stars": 5907,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@lingui/core",
         "fullName": "lingui/js-lingui",
@@ -131917,7 +131968,8 @@
           "issues": 47,
           "subscribers": 13,
           "stars": 1398,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@bacons/apple-targets",
         "fullName": "EvanBacon/expo-apple-targets",
@@ -132329,7 +132381,8 @@
           "issues": 6,
           "subscribers": 15,
           "stars": 906,
-          "dependencies": 12
+          "dependencies": 12,
+          "sameScopeDependencies": 3
         },
         "name": "@matter/react-native",
         "fullName": "matter-js/matter.js",
@@ -132983,7 +133036,8 @@
           "issues": 0,
           "subscribers": 3,
           "stars": 11,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 2
         },
         "name": "@fishjam-cloud/react-native-client",
         "fullName": "fishjam-cloud/web-client-sdk",
@@ -135804,7 +135858,8 @@
           "issues": 291,
           "subscribers": 1342,
           "stars": 76954,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@fortawesome/fontawesome-svg-core",
         "fullName": "FortAwesome/Font-Awesome",
@@ -135887,7 +135942,8 @@
           "issues": 291,
           "subscribers": 1342,
           "stars": 76954,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@fortawesome/free-brands-svg-icons",
         "fullName": "FortAwesome/Font-Awesome",
@@ -135964,7 +136020,8 @@
           "issues": 291,
           "subscribers": 1342,
           "stars": 76954,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@fortawesome/free-regular-svg-icons",
         "fullName": "FortAwesome/Font-Awesome",
@@ -136041,7 +136098,8 @@
           "issues": 291,
           "subscribers": 1342,
           "stars": 76954,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@fortawesome/free-solid-svg-icons",
         "fullName": "FortAwesome/Font-Awesome",
@@ -136551,7 +136609,8 @@
           "issues": 19,
           "subscribers": 8,
           "stars": 1762,
-          "dependencies": 5
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@hot-updater/react-native",
         "fullName": "gronxb/hot-updater",
@@ -136979,7 +137038,8 @@
           "issues": 7,
           "subscribers": 21,
           "stars": 19,
-          "dependencies": 15
+          "dependencies": 15,
+          "sameScopeDependencies": 14
         },
         "name": "@bugsnag/expo",
         "fullName": "bugsnag/bugsnag-expo",
@@ -137064,7 +137124,8 @@
           "issues": 55,
           "subscribers": 44,
           "stars": 894,
-          "dependencies": 12
+          "dependencies": 12,
+          "sameScopeDependencies": 11
         },
         "name": "@bugsnag/react-native",
         "fullName": "bugsnag/bugsnag-js",
@@ -137154,7 +137215,8 @@
           "issues": 3,
           "subscribers": 19,
           "stars": 11,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 4
         },
         "name": "@bugsnag/react-native-performance",
         "fullName": "bugsnag/bugsnag-js-performance",
@@ -137829,7 +137891,8 @@
           "issues": 20,
           "subscribers": 5,
           "stars": 249,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@callstack/polygen",
         "fullName": "callstackincubator/polygen",
@@ -138222,7 +138285,8 @@
           "issues": 0,
           "subscribers": 3,
           "stars": 345,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@siteed/expo-audio-stream",
         "fullName": "deeeed/audiolab",
@@ -141512,7 +141576,8 @@
           "issues": 6,
           "subscribers": 8,
           "stars": 552,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 1
         },
         "name": "@callstack/react-native-brownfield",
         "fullName": "callstack/react-native-brownfield",
@@ -144036,7 +144101,8 @@
           "issues": 18,
           "subscribers": 16,
           "stars": 290,
-          "dependencies": 11
+          "dependencies": 11,
+          "sameScopeDependencies": 2
         },
         "name": "@livekit/react-native",
         "fullName": "livekit/client-sdk-react-native",
@@ -147056,7 +147122,8 @@
           "issues": 6,
           "subscribers": 1,
           "stars": 42,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@rn-vui/base",
         "fullName": "deepktp/react-native-vikalp-elements",
@@ -148848,7 +148915,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/accordion",
         "fullName": "roninoss/rn-primitives",
@@ -148925,7 +148993,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/alert-dialog",
         "fullName": "roninoss/rn-primitives",
@@ -149002,7 +149071,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/aspect-ratio",
         "fullName": "roninoss/rn-primitives",
@@ -149079,7 +149149,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/avatar",
         "fullName": "roninoss/rn-primitives",
@@ -149156,7 +149227,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/checkbox",
         "fullName": "roninoss/rn-primitives",
@@ -149233,7 +149305,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/collapsible",
         "fullName": "roninoss/rn-primitives",
@@ -149310,7 +149383,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@rn-primitives/context-menu",
         "fullName": "roninoss/rn-primitives",
@@ -149387,7 +149461,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/dialog",
         "fullName": "roninoss/rn-primitives",
@@ -149463,7 +149538,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@rn-primitives/dropdown-menu",
         "fullName": "roninoss/rn-primitives",
@@ -149539,7 +149615,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@rn-primitives/hover-card",
         "fullName": "roninoss/rn-primitives",
@@ -149616,7 +149693,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/label",
         "fullName": "roninoss/rn-primitives",
@@ -149693,7 +149771,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@rn-primitives/menubar",
         "fullName": "roninoss/rn-primitives",
@@ -149770,7 +149849,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 4
         },
         "name": "@rn-primitives/navigation-menu",
         "fullName": "roninoss/rn-primitives",
@@ -149846,7 +149926,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/popover",
         "fullName": "roninoss/rn-primitives",
@@ -149923,7 +150004,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/progress",
         "fullName": "roninoss/rn-primitives",
@@ -150000,7 +150082,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/radio-group",
         "fullName": "roninoss/rn-primitives",
@@ -150076,7 +150159,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/select",
         "fullName": "roninoss/rn-primitives",
@@ -150153,7 +150237,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/separator",
         "fullName": "roninoss/rn-primitives",
@@ -150230,7 +150315,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/slider",
         "fullName": "roninoss/rn-primitives",
@@ -150307,7 +150393,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/switch",
         "fullName": "roninoss/rn-primitives",
@@ -150384,7 +150471,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/table",
         "fullName": "roninoss/rn-primitives",
@@ -150461,7 +150549,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/tabs",
         "fullName": "roninoss/rn-primitives",
@@ -150538,7 +150627,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/toast",
         "fullName": "roninoss/rn-primitives",
@@ -150615,7 +150705,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@rn-primitives/toggle",
         "fullName": "roninoss/rn-primitives",
@@ -150692,7 +150783,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/toggle-group",
         "fullName": "roninoss/rn-primitives",
@@ -150769,7 +150861,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/toolbar",
         "fullName": "roninoss/rn-primitives",
@@ -150846,7 +150939,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@rn-primitives/tooltip",
         "fullName": "roninoss/rn-primitives",
@@ -150922,7 +151016,8 @@
           "issues": 16,
           "subscribers": 9,
           "stars": 943,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@rn-primitives/hooks",
         "fullName": "roninoss/rn-primitives",
@@ -156934,7 +157029,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 5,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 6
         },
         "name": "@vega-ui/react-native",
         "fullName": "vega-ui/ui-react-native",
@@ -160344,7 +160440,8 @@
           "issues": 16,
           "subscribers": 39,
           "stars": 10544,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 3
         },
         "name": "@instantdb/react-native",
         "fullName": "instantdb/instant",
@@ -163527,7 +163624,8 @@
           "issues": 124,
           "subscribers": 40,
           "stars": 6710,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@tanstack/react-form",
         "fullName": "TanStack/form",
@@ -163608,7 +163706,8 @@
           "issues": 58,
           "subscribers": 262,
           "stars": 50404,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@tanstack/query-async-storage-persister",
         "fullName": "TanStack/query",
@@ -163689,7 +163788,8 @@
           "issues": 58,
           "subscribers": 262,
           "stars": 50404,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@tanstack/react-query-persist-client",
         "fullName": "TanStack/query",
@@ -165173,7 +165273,8 @@
           "issues": 43,
           "subscribers": 9,
           "stars": 102,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@twilio/voice-react-native-sdk",
         "fullName": "twilio/twilio-voice-react-native",
@@ -165421,7 +165522,8 @@
           "issues": 65,
           "subscribers": 22,
           "stars": 114,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@elevenlabs/react-native",
         "fullName": "elevenlabs/packages",
@@ -168077,7 +168179,8 @@
           "issues": 31,
           "subscribers": 9,
           "stars": 1763,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@clerk/expo-passkeys",
         "fullName": "clerk/javascript",
@@ -171606,7 +171709,8 @@
           "issues": 3,
           "subscribers": 4,
           "stars": 51,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@lottiefiles/dotlottie-react-native",
         "fullName": "LottieFiles/dotlottie-react-native",
@@ -171708,7 +171812,8 @@
           "issues": 9,
           "subscribers": 4,
           "stars": 450,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@legendapp/motion",
         "fullName": "LegendApp/legend-motion",
@@ -171791,7 +171896,8 @@
           "issues": 540,
           "subscribers": 113,
           "stars": 9677,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@atproto/oauth-client-expo",
         "fullName": "bluesky-social/atproto",
@@ -174349,7 +174455,8 @@
           "issues": 20,
           "subscribers": 20,
           "stars": 1322,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 3
         },
         "name": "@storybook/react-native-ui",
         "fullName": "storybookjs/react-native",
@@ -174430,7 +174537,8 @@
           "issues": 20,
           "subscribers": 20,
           "stars": 1322,
-          "dependencies": 7
+          "dependencies": 7,
+          "sameScopeDependencies": 3
         },
         "name": "@storybook/react-native-ui-lite",
         "fullName": "storybookjs/react-native",
@@ -179654,7 +179762,8 @@
           "issues": 0,
           "subscribers": 26,
           "stars": 55,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@fullstory/react-native",
         "fullName": "fullstorydev/fullstory-react-native",
@@ -180376,7 +180485,8 @@
           "issues": 0,
           "subscribers": 7,
           "stars": 1247,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@rpldy/native-uploady",
         "fullName": "rpldy/react-uploady",
@@ -181347,7 +181457,8 @@
           "issues": 0,
           "subscribers": 6,
           "stars": 1,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@bugsnag/expo-performance",
         "fullName": "bugsnag/bugsnag-expo-performance",
@@ -186876,7 +186987,8 @@
           "issues": 33,
           "subscribers": 14,
           "stars": 729,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@powersync/adapter-sql-js",
         "fullName": "powersync-ja/powersync-js",
@@ -188138,7 +188250,8 @@
           "issues": 14,
           "subscribers": 18,
           "stars": 465,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@livekit/components-react",
         "fullName": "livekit/components-js",
@@ -189903,7 +190016,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 1,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 1
         },
         "name": "@seenn/react-native",
         "fullName": "seenn-io/react-native",
@@ -192628,7 +192742,8 @@
           "issues": 1,
           "subscribers": 0,
           "stars": 4,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 2
         },
         "name": "@couch-kit/host",
         "fullName": "faluciano/react-native-couch-kit",
@@ -193422,7 +193537,8 @@
           "issues": 76,
           "subscribers": 60,
           "stars": 18573,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@json-render/react-native",
         "fullName": "vercel-labs/json-render",
@@ -196371,7 +196487,8 @@
           "issues": 1,
           "subscribers": 3,
           "stars": 146,
-          "dependencies": 9
+          "dependencies": 9,
+          "sameScopeDependencies": 1
         },
         "name": "@native-html/render",
         "fullName": "native-html/render",
@@ -196527,7 +196644,8 @@
           "issues": 1,
           "subscribers": 3,
           "stars": 146,
-          "dependencies": 7
+          "dependencies": 7,
+          "sameScopeDependencies": 1
         },
         "name": "@native-html/transient-render-engine",
         "fullName": "native-html/render",
@@ -197738,7 +197856,8 @@
           "issues": 287,
           "subscribers": 402,
           "stars": 52602,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@expo/metro-runtime",
         "fullName": "expo/expo",
@@ -199761,7 +199880,8 @@
           "issues": 7,
           "subscribers": 3,
           "stars": 308,
-          "dependencies": 6
+          "dependencies": 6,
+          "sameScopeDependencies": 1
         },
         "name": "@bacons/mdx",
         "fullName": "EvanBacon/expo-mdx",
@@ -199842,7 +199962,8 @@
           "issues": 0,
           "subscribers": 22,
           "stars": 914,
-          "dependencies": 7
+          "dependencies": 7,
+          "sameScopeDependencies": 1
         },
         "name": "@cometchat/chat-uikit-react-native",
         "fullName": "cometchat/cometchat-uikit-react-native",
@@ -206539,7 +206660,8 @@
           "issues": 13,
           "subscribers": 6,
           "stars": 683,
-          "dependencies": 43
+          "dependencies": 45,
+          "sameScopeDependencies": 18
         },
         "name": "@qvac/sdk",
         "fullName": "tetherto/qvac",
@@ -206923,7 +207045,8 @@
           "issues": 26,
           "subscribers": 0,
           "stars": 3,
-          "dependencies": 12
+          "dependencies": 13,
+          "sameScopeDependencies": 10
         },
         "name": "@ankhorage/zora",
         "fullName": "ankhorage/zora",
@@ -208373,7 +208496,8 @@
           "issues": 4,
           "subscribers": 2,
           "stars": 130,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 1
         },
         "name": "@react-native-swc/core",
         "fullName": "oblador/react-native-swc",
@@ -210092,7 +210216,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 0,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@clarionhq/recorder",
         "fullName": "Th4nderG0d/clarion",
@@ -210174,7 +210299,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 0,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@clarionhq/recognizer",
         "fullName": "Th4nderG0d/clarion",
@@ -210916,7 +211042,8 @@
           "issues": 799,
           "subscribers": 305,
           "stars": 24512,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 1
         },
         "name": "@react-navigation/core",
         "fullName": "react-navigation/react-navigation",
@@ -211343,7 +211470,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 0,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@clarionhq/azure",
         "fullName": "Th4nderG0d/clarion",
@@ -212434,7 +212562,8 @@
           "issues": 89,
           "subscribers": 85,
           "stars": 12447,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 3
         },
         "name": "@assistant-ui/react-native",
         "fullName": "assistant-ui/assistant-ui",
@@ -214102,7 +214231,8 @@
           "issues": 8,
           "subscribers": 6,
           "stars": 20,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 1
         },
         "name": "@whereby.com/react-native-sdk",
         "fullName": "whereby/sdk",
@@ -214894,7 +215024,8 @@
           "issues": 5,
           "subscribers": 1,
           "stars": 38,
-          "dependencies": 8
+          "dependencies": 8,
+          "sameScopeDependencies": 1
         },
         "name": "@openlv/react-native",
         "fullName": "open-lavatory/open-lavatory",
@@ -216404,7 +216535,8 @@
           "issues": 0,
           "subscribers": 2,
           "stars": 208,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@super-calendar/native",
         "fullName": "afonsojramos/super-calendar",
@@ -216736,7 +216868,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 16,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@the-sheet/flash-list-v2",
         "fullName": "doanhtu07/react-native-the-sheet",
@@ -221853,7 +221986,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 2,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 1
         },
         "name": "@hzblj/zyplot",
         "fullName": "hzblj/zyplot",
@@ -222521,7 +222655,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 1,
-          "dependencies": 2
+          "dependencies": 2,
+          "sameScopeDependencies": 2
         },
         "name": "@onramp-sdk/react-native",
         "fullName": "getonramp/onramp-sdk",
@@ -226292,7 +226427,8 @@
           "issues": 5,
           "subscribers": 0,
           "stars": 5,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 2
         },
         "name": "@axonpack/expo-devtools",
         "fullName": "axonpack/axonpack",
@@ -227947,7 +228083,8 @@
           "issues": 67,
           "subscribers": 48,
           "stars": 180,
-          "dependencies": 5
+          "dependencies": 5,
+          "sameScopeDependencies": 3
         },
         "name": "@amplitude/analytics-react-native",
         "fullName": "amplitude/Amplitude-TypeScript",
@@ -228030,7 +228167,8 @@
           "issues": 67,
           "subscribers": 48,
           "stars": 180,
-          "dependencies": 1
+          "dependencies": 1,
+          "sameScopeDependencies": 1
         },
         "name": "@amplitude/plugin-session-replay-react-native",
         "fullName": "amplitude/Amplitude-TypeScript",
@@ -228113,7 +228251,8 @@
           "issues": 6,
           "subscribers": 65,
           "stars": 8,
-          "dependencies": 4
+          "dependencies": 4,
+          "sameScopeDependencies": 2
         },
         "name": "@amplitude/experiment-react-native-client",
         "fullName": "amplitude/experiment-react-native-client",
@@ -228520,7 +228659,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 11,
-          "dependencies": 29
+          "dependencies": 34,
+          "sameScopeDependencies": 34
         },
         "name": "@impulse-ui-native/toolkit",
         "fullName": "apolyanov/impulse-ui-native",
@@ -228560,13 +228700,12 @@
         "latestReleaseDate": "2026-10-08T18:43:38.448Z",
         "hasReadme": true
       },
-      "score": 20,
+      "score": 30,
       "matchingScoreModifiers": [
         "Recently updated",
         "Has a README file",
         "Has a description",
-        "Has vulnerability alerts enabled",
-        "Has a lot of dependencies"
+        "Has vulnerability alerts enabled"
       ],
       "popularity": 0.108,
       "topicSearchString": "expo ui components design-system"
@@ -230534,7 +230673,8 @@
           "issues": 0,
           "subscribers": 0,
           "stars": 0,
-          "dependencies": 3
+          "dependencies": 3,
+          "sameScopeDependencies": 1
         },
         "name": "@everframe/react-native",
         "fullName": "scriptx-com/everframe",

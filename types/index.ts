@@ -124,6 +124,7 @@ export type LibraryType = LibraryDataEntryType & {
       stars: number;
       forks: number;
       dependencies?: number;
+      sameScopeDependencies?: number;
     };
     license: LibraryLicenseType;
   };
