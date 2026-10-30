@@ -25234,6 +25234,16 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/pe1ros/react-native-glyph-ocr",
+    "examples": ["https://github.com/pe1ros/react-native-glyph-ocr/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/pe1ros/react-native-glyph-ocr/main/docs/assets/android-photo.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
     "githubUrl": "https://github.com/hzblj/crypto-clear-sign/tree/main/packages/crypto-clear-sign",
     "npmPkg": "@hzblj/crypto-clear-sign",
     "examples": ["https://github.com/hzblj/crypto-clear-sign/tree/main/apps/example"],
