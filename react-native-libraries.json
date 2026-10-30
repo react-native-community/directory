@@ -25266,5 +25266,14 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/psingh2907/bareship/tree/main/packages/create-bareship",
+    "npmPkg": "create-bareship",
+    "images": ["https://www.praveensingh.co.in/blog/introducing-bareship/offline-sync.gif"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "dev": true
   }
 ]
