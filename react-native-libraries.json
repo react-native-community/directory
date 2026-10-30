@@ -25242,5 +25242,29 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/crypto-clear-sign/tree/main/packages/crypto-clear-sign",
+    "npmPkg": "@hzblj/crypto-clear-sign",
+    "examples": ["https://github.com/hzblj/crypto-clear-sign/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/crypto-clear-sign/main/media/ios-review.png",
+      "https://raw.githubusercontent.com/hzblj/crypto-clear-sign/main/media/android-review.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hzblj/expo-install-attribution/tree/main/packages/expo-install-attribution",
+    "npmPkg": "@hzblj/expo-install-attribution",
+    "examples": ["https://github.com/hzblj/expo-install-attribution/tree/main/apps/example"],
+    "images": [
+      "https://raw.githubusercontent.com/hzblj/expo-install-attribution/main/media/ios-attribution.png",
+      "https://raw.githubusercontent.com/hzblj/expo-install-attribution/main/media/android-attribution.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
