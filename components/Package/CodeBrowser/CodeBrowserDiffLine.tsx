@@ -29,8 +29,8 @@ export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: P
       style={[
         tw`min-h-4 flex-row items-center`,
         !wordWrap && [tw`min-w-full`, { width: 'max-content' }],
-        line.type === 'added' && tw`bg-[#eaffee] dark:bg-[#15281d]`,
-        line.type === 'removed' && tw`bg-[#fdeff0] dark:bg-[#2e191b]`,
+        line.type === 'added' && tw`bg-diff-added`,
+        line.type === 'removed' && tw`bg-diff-removed`,
       ]}>
       {showLineNumbers && (
         <>

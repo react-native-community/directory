@@ -68,6 +68,8 @@
 
   --error: #ff5555;
   --success: #4caf50;
+  --diff-added-background: #eaffee;
+  --diff-removed-background: #fdeff0;
 
   --background: #ffffff;
   --border: var(--gray-2);
@@ -111,6 +113,8 @@
   --warning-light: #2f2304;
   --warning-border: #9a720c44;
   --warning-dark-bg: #9a720c16;
+  --diff-added-background: #15281d;
+  --diff-removed-background: #2e191b;
 
   --background: #19191f;
   --border: var(--accented);

@@ -56,6 +56,8 @@ export default {
       current: 'currentColor',
       default: 'var(--background)',
       ...palette,
+      'diff-added': 'var(--diff-added-background)',
+      'diff-removed': 'var(--diff-removed-background)',
 
       // TODO: temporary values, replace with proper gray palette for dark mode
       dark: 'var(--dark)',

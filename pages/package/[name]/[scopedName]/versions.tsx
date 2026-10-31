@@ -4,11 +4,11 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageVersionsScene from '~/scenes/PackageVersionsScene';
 import { type PackageVersionsPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
+import { ssrFetch } from '~/util/fetch';
 import getApiUrl from '~/util/getApiUrl';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
 import { parseQueryParams } from '~/util/queryParams';
-import { ssrFetch } from '~/util/SSRFetch';
 import urlWithQuery from '~/util/urlWithQuery';
 
 export default function ScopedVersionsPage({

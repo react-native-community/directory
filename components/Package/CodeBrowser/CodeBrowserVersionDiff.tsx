@@ -9,12 +9,15 @@ import { buildCodeBrowserFileTree, getLanguage } from '~/util/codeBrowser';
 import {
   getChangedFiles,
   getDiffActiveFileStorageKey,
+  getDiffDisplayModeStorageKey,
+  getDiffHunksWithContext,
   getDiffLines,
   getFileUrl,
   getMetaUrl,
   isPreviewable,
 } from '~/util/codeDiff';
 import { TimeRange } from '~/util/datetime';
+import { swrJSONFetch, swrTextFetch } from '~/util/fetch';
 import { getStoredValue } from '~/util/localStorage';
 import { pluralize } from '~/util/strings';
 import tw from '~/util/tailwind';
@@ -23,6 +26,7 @@ import { CodeBrowserDiffLine } from './CodeBrowserDiffLine';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
 import CodeBrowserLayout from './CodeBrowserLayout';
 import CodeBrowserSettings, { type CodeBrowserSettingsType } from './CodeBrowserSettings';
+import DiffViewButton from './DiffViewButton';
 import DisplayModeButton from './DisplayModeButton';
 
 type Props = {
@@ -40,6 +44,17 @@ type Props = {
 
 const FETCH_PARAMS = { dedupingInterval: TimeRange.HOUR * 1000, revalidateOnFocus: false };
 
+type DiffListItem =
+  | {
+      kind: 'hunk';
+      key: string;
+      oldStart: number;
+      oldCount: number;
+      newStart: number;
+      newCount: number;
+    }
+  | { kind: 'line'; key: string; line: DiffLineRowData };
+
 export default function CodeBrowserVersionDiff({
   packageName,
   fromVersion,
@@ -54,8 +69,12 @@ export default function CodeBrowserVersionDiff({
 }: Props) {
   const { isSmallScreen } = useLayout();
   const activeFileStorageKey = getDiffActiveFileStorageKey(packageName, fromVersion, toVersion);
+  const displayModeStorageKey = getDiffDisplayModeStorageKey(packageName, fromVersion, toVersion);
   const [selectedPath, setSelectedPath] = useState<string | null>(
     () => getStoredValue(activeFileStorageKey) ?? preferredActiveFile ?? null
+  );
+  const [isFullFileView, setIsFullFileView] = useState(
+    () => getStoredValue(displayModeStorageKey) !== 'false'
   );
 
   useEffect(() => {
@@ -66,36 +85,20 @@ export default function CodeBrowserVersionDiff({
     }
   }, [activeFileStorageKey, selectedPath]);
 
+  useEffect(() => {
+    window.localStorage.setItem(displayModeStorageKey, String(isFullFileView));
+  }, [displayModeStorageKey, isFullFileView]);
+
   const {
     data: fromMeta,
     error: fromMetaError,
     isLoading: isFromMetaLoading,
-  } = useSWR<UnpkgMeta>(
-    getMetaUrl(packageName, fromVersion),
-    (url: string) =>
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch package metadata: ${response.status}`);
-        }
-        return response.json();
-      }),
-    FETCH_PARAMS
-  );
+  } = useSWR<UnpkgMeta>(getMetaUrl(packageName, fromVersion), swrJSONFetch, FETCH_PARAMS);
   const {
     data: toMeta,
     error: toMetaError,
     isLoading: isToMetaLoading,
-  } = useSWR<UnpkgMeta>(
-    getMetaUrl(packageName, toVersion),
-    (url: string) =>
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch package metadata: ${response.status}`);
-        }
-        return response.json();
-      }),
-    FETCH_PARAMS
-  );
+  } = useSWR<UnpkgMeta>(getMetaUrl(packageName, toVersion), swrJSONFetch, FETCH_PARAMS);
 
   const changedFiles = useMemo(() => {
     const files = getChangedFiles(fromMeta, toMeta);
@@ -108,11 +111,11 @@ export default function CodeBrowserVersionDiff({
     [changedFiles]
   );
   const activePath = [selectedPath, preferredActiveFile].find(
-    path => path && changedFiles.some(file => file.path === path)
+    path => path && changedFilesByPath.has(path)
   );
-
-  const fromFile = changedFiles.find(file => file.path === activePath)?.fromFile;
-  const toFile = changedFiles.find(file => file.path === activePath)?.toFile;
+  const activeFile = activePath ? changedFilesByPath.get(activePath) : undefined;
+  const fromFile = activeFile?.fromFile;
+  const toFile = activeFile?.toFile;
   const canPreview =
     activePath &&
     isPreviewable(activePath, fromFile?.size) &&
@@ -135,13 +138,7 @@ export default function CodeBrowserVersionDiff({
     isLoading: isFromContentLoading,
   } = useSWR<string>(
     canPreview && fromFile ? getFileUrl(packageName, fromVersion, activePath) : undefined,
-    (url: string) =>
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch file content: ${response.status}`);
-        }
-        return response.text();
-      }),
+    swrTextFetch,
     FETCH_PARAMS
   );
   const {
@@ -150,13 +147,7 @@ export default function CodeBrowserVersionDiff({
     isLoading: isToContentLoading,
   } = useSWR<string>(
     canPreview && toFile ? getFileUrl(packageName, toVersion, activePath) : undefined,
-    (url: string) =>
-      fetch(url).then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch file content: ${response.status}`);
-        }
-        return response.text();
-      }),
+    swrTextFetch,
     FETCH_PARAMS
   );
 
@@ -177,16 +168,50 @@ export default function CodeBrowserVersionDiff({
     }),
     [diffLines]
   );
+  const diffListItems = useMemo(() => {
+    const hunks = isFullFileView ? [] : getDiffHunksWithContext(diffLines);
+    if (hunks.length === 0) {
+      return diffLines.map(line => ({
+        kind: 'line' as const,
+        key: `line:${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`,
+        line,
+      }));
+    }
 
-  const renderDiffLine = useCallback(
-    ({ item }: { item: DiffLineRowData }) => (
-      <CodeBrowserDiffLine
-        line={item}
-        lang={item.lang}
-        showLineNumbers={settings.showLineNumbers}
-        wordWrap={settings.wordWrap}
-      />
-    ),
+    return hunks.flatMap((hunk, hunkIndex) => [
+      {
+        kind: 'hunk' as const,
+        key: `hunk:${hunk.oldStart}:${hunk.newStart}:${hunkIndex}`,
+        oldStart: hunk.oldStart,
+        oldCount: hunk.oldCount,
+        newStart: hunk.newStart,
+        newCount: hunk.newCount,
+      },
+      ...hunk.lines.map(line => ({
+        kind: 'line' as const,
+        key: `line:${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`,
+        line,
+      })),
+    ]);
+  }, [diffLines, isFullFileView]);
+
+  const renderDiffItem = useCallback(
+    ({ item }: { item: DiffListItem }) =>
+      item.kind === 'hunk' ? (
+        <DiffHunkHeader
+          oldStart={item.oldStart}
+          oldCount={item.oldCount}
+          newStart={item.newStart}
+          newCount={item.newCount}
+        />
+      ) : (
+        <CodeBrowserDiffLine
+          line={item.line}
+          lang={item.line.lang}
+          showLineNumbers={settings.showLineNumbers}
+          wordWrap={settings.wordWrap}
+        />
+      ),
     [settings.showLineNumbers, settings.wordWrap]
   );
 
@@ -245,6 +270,10 @@ export default function CodeBrowserVersionDiff({
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />
+              <DiffViewButton
+                isFullFileView={isFullFileView}
+                toggleFullFileView={() => setIsFullFileView(fullFileView => !fullFileView)}
+              />
               <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
             </View>
           </View>
@@ -269,13 +298,19 @@ export default function CodeBrowserVersionDiff({
                 style={tw`flex-1`}>
                 <FlatList
                   id="codeBrowserDiffList"
-                  data={diffLines}
+                  data={diffListItems}
                   contentContainerStyle={
                     settings.wordWrap ? tw`w-full` : [tw`min-w-full`, { width: 'max-content' }]
                   }
-                  keyExtractor={line => `${line.type}:${line.oldLine ?? ''}:${line.newLine ?? ''}`}
-                  style={tw`flex-1 py-4`}
-                  renderItem={renderDiffLine}
+                  keyExtractor={item => item.key}
+                  style={[
+                    tw`flex-1`,
+                    isFullFileView ? tw`py-4` : tw`pb-4`,
+                    activeFile?.status === 'added' && tw`bg-diff-added`,
+                    activeFile?.status === 'removed' && tw`bg-diff-removed`,
+                  ]}
+                  windowSize={5}
+                  renderItem={renderDiffItem}
                 />
               </View>
             )
@@ -337,4 +372,20 @@ export default function CodeBrowserVersionDiff({
     setSelectedPath(filePath);
     onActiveFileChange(filePath);
   }
+}
+
+function DiffHunkHeader({
+  oldStart,
+  oldCount,
+  newStart,
+  newCount,
+}: Omit<Extract<DiffListItem, { kind: 'hunk' }>, 'kind' | 'key'>) {
+  return (
+    <View
+      style={tw`min-h-7 min-w-full flex-row items-center bg-[#f6f8fa] px-3 dark:border-default dark:bg-[#161b22]`}>
+      <Label style={tw`font-mono text-[11px] text-tertiary`}>
+        {`@@ -${oldStart},${oldCount} +${newStart},${newCount} @@`}
+      </Label>
+    </View>
+  );
 }

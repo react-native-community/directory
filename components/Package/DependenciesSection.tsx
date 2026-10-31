@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import CollapsibleSection from '~/components/Package/CollapsibleSection';
 import { type PeerDependencyData } from '~/types';
 import { TimeRange } from '~/util/datetime';
+import { swrJSONFetch } from '~/util/fetch';
 
 import DependencyRow from './DependencyRow';
 
@@ -20,7 +21,7 @@ export default function DependenciesSection({ title, data, checkExistence, check
     checkExistence && !noData
       ? `/api/library?name=${Object.keys(data).join(',')}&check=${checkVersion ? 'version' : 'true'}`
       : null,
-    (url: string) => fetch(url).then(res => res.json()),
+    swrJSONFetch,
     {
       dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,

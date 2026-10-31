@@ -2,7 +2,7 @@ import { type GetServerSidePropsContext } from 'next';
 
 import StatisticsScene from '~/scenes/StatisticsScene';
 import { type StatisticResultType } from '~/types';
-import { ssrFetch } from '~/util/SSRFetch';
+import { ssrFetch } from '~/util/fetch';
 
 type StatsPageProps = {
   statistic: StatisticResultType;

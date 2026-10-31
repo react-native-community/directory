@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import { H6Section, useLayout } from '~/common/styleguide';
 import { type LibraryFundingLink } from '~/types';
 import { TimeRange } from '~/util/datetime';
+import { swrJSONFetch } from '~/util/fetch';
 import tw from '~/util/tailwind';
 
 import FundingRow from './FoundingRow';
@@ -21,7 +22,7 @@ export default function FundingSection({ fullName }: Props) {
 
   const { data, isLoading } = useSWR(
     `/api/proxy/github-funding?owner=${repoOwner}&name=${repoName}`,
-    (url: string) => fetch(url).then(res => res.json()),
+    swrJSONFetch,
     {
       dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,

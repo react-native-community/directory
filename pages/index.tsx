@@ -2,7 +2,7 @@ import { type GetServerSidePropsContext } from 'next';
 
 import HomeScene from '~/scenes/HomeScene';
 import { type HomePageProps } from '~/types/pages';
-import { ssrFetch } from '~/util/SSRFetch';
+import { ssrFetch } from '~/util/fetch';
 import urlWithQuery from '~/util/urlWithQuery';
 
 function Index(props: HomePageProps) {
