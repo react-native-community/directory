@@ -8672,16 +8672,19 @@
   },
   {
     "githubUrl": "https://github.com/dohooo/react-native-reanimated-carousel",
-    "examples": ["https://github.com/dohooo/react-native-reanimated-carousel/tree/main/example"],
+    "examples": [
+      "https://github.com/dohooo/react-native-reanimated-carousel/tree/main/example",
+      "https://rn-carousel.dev/Examples/summary"
+    ],
     "images": [
-      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/normal-horizontal.gif",
-      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/normal-vertical.gif",
-      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/parallax-horizontal.gif",
-      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/parallax-vertical.gif",
-      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/stack-horizontal-right.gif"
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/scenes/flavor-switcher.webp",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/scenes/stories-cube.webp",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/scenes/date-wheel.webp",
+      "https://raw.githubusercontent.com/dohooo/react-native-reanimated-carousel/main/assets/scenes/map-explorer.webp"
     ],
     "ios": true,
     "android": true,
+    "web": true,
     "expoGo": true,
     "fireos": true
   },
