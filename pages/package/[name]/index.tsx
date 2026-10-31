@@ -4,9 +4,9 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
+import { ssrFetch } from '~/util/fetch';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/queryParams';
-import { ssrFetch } from '~/util/SSRFetch';
 
 export default function OverviewPage({
   apiData,

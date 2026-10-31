@@ -9,6 +9,7 @@ import useSWR from 'swr';
 import { Label } from '~/common/styleguide';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { TimeRange } from '~/util/datetime';
+import { swrJSONFetch } from '~/util/fetch';
 import tw from '~/util/tailwind';
 
 type DataMap = Record<string, number>;
@@ -28,14 +29,10 @@ const DATE_FORMAT = {
 };
 
 export default function DownloadsChart({ packageName, range, height = 48 }: Props) {
-  const { data } = useSWR(
-    `/api/proxy/npm-stat?name=${packageName}&range=${range}`,
-    (url: string) => fetch(url).then(res => res.json()),
-    {
-      dedupingInterval: TimeRange.HOUR * 1000,
-      revalidateOnFocus: false,
-    }
-  );
+  const { data } = useSWR(`/api/proxy/npm-stat?name=${packageName}&range=${range}`, swrJSONFetch, {
+    dedupingInterval: TimeRange.HOUR * 1000,
+    revalidateOnFocus: false,
+  });
 
   const series =
     data && Object.keys(data).length ? mapData(data[packageName], range === 'year') : null;

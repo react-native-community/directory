@@ -4,9 +4,9 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageScoreScene from '~/scenes/PackageScoreScene';
 import { type PackageScorePageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
+import { ssrFetch } from '~/util/fetch';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/queryParams';
-import { ssrFetch } from '~/util/SSRFetch';
 
 export default function ScorePage({ apiData, packageName, errorMessage }: PackageScorePageProps) {
   if (!packageName || !apiData) {

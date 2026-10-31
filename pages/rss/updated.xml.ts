@@ -2,8 +2,8 @@ import { type NextPageContext } from 'next';
 
 import { type APIResponseType } from '~/types';
 import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
+import { ssrFetch } from '~/util/fetch';
 import { generateLibrariesRss } from '~/util/rss';
-import { ssrFetch } from '~/util/SSRFetch';
 
 const RSS_LIMIT = 20;
 

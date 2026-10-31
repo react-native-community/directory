@@ -89,6 +89,63 @@ export function getDiffLines(fromContent: string, toContent: string): DiffLine[]
   return lines;
 }
 
+export type DiffHunk<T extends DiffLine = DiffLine> = {
+  oldStart: number;
+  oldCount: number;
+  newStart: number;
+  newCount: number;
+  lines: T[];
+};
+
+export function getDiffHunksWithContext<T extends DiffLine>(
+  lines: T[],
+  contextLines = 3
+): DiffHunk<T>[] {
+  const visibleLines = new Uint8Array(lines.length);
+
+  lines.forEach((line, index) => {
+    if (line.type === 'unchanged') {
+      return;
+    }
+
+    const start = Math.max(0, index - contextLines);
+    const end = Math.min(lines.length, index + contextLines + 1);
+
+    for (let contextIndex = start; contextIndex < end; contextIndex++) {
+      visibleLines[contextIndex] = 1;
+    }
+  });
+
+  const hunks: DiffHunk<T>[] = [];
+  let index = 0;
+
+  while (index < lines.length) {
+    if (!visibleLines[index]) {
+      index++;
+      continue;
+    }
+
+    const start = index;
+    while (index < lines.length && visibleLines[index]) {
+      index++;
+    }
+
+    const hunkLines = lines.slice(start, index);
+    const oldLines = hunkLines.filter(line => line.oldLine !== undefined);
+    const newLines = hunkLines.filter(line => line.newLine !== undefined);
+
+    hunks.push({
+      oldStart: oldLines[0]?.oldLine ?? 0,
+      oldCount: oldLines.length,
+      newStart: newLines[0]?.newLine ?? 0,
+      newCount: newLines.length,
+      lines: hunkLines,
+    });
+  }
+
+  return hunks;
+}
+
 export function isPreviewable(path: string, size?: number) {
   return !PREVIEW_DISABLED_FILES.includes(getLanguage(path)) && (size ?? 0) <= 1024 * 1024;
 }
@@ -109,4 +166,12 @@ export function getDiffActiveFileStorageKey(
   toVersion: string
 ) {
   return `@ReactNativeDirectory:PackageCodeDiff:activeFile:${packageName}:${fromVersion}:${toVersion}`;
+}
+
+export function getDiffDisplayModeStorageKey(
+  packageName: string,
+  fromVersion: string,
+  toVersion: string
+) {
+  return `@ReactNativeDirectory:PackageCodeDiff:fullFileView:${packageName}:${fromVersion}:${toVersion}`;
 }

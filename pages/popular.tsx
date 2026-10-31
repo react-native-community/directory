@@ -3,7 +3,7 @@ import { type NextPageContext } from 'next';
 import PopularScene from '~/scenes/PopularScene';
 import { type PopularPageProps } from '~/types/pages';
 import { POPULAR_QUERY_BASE } from '~/util/Constants';
-import { ssrFetch } from '~/util/SSRFetch';
+import { ssrFetch } from '~/util/fetch';
 
 function PopularPage(props: PopularPageProps) {
   return <PopularScene {...props} />;

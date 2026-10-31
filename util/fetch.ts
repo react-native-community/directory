@@ -12,3 +12,21 @@ export async function ssrFetch(
 ): Promise<Response> {
   return await fetch(getApiUrl(urlWithQuery(url, query), ctx), NEXT_1H_CACHE_HEADER);
 }
+
+export function swrJSONFetch(url: string) {
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}: ${response.status}`);
+    }
+    return response.json();
+  });
+}
+
+export function swrTextFetch(url: string) {
+  return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch file from ${url}: ${response.status}`);
+    }
+    return response.text();
+  });
+}

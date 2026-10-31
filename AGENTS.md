@@ -36,7 +36,7 @@
 
 ## Data fetching and caching conventions
 
-- Internal server-side fetches should go through `ssrFetch` from `util/SSRFetch.ts` unless a page needs custom header forwarding.
+- Internal server-side fetches should go through `ssrFetch` from `util/fetch.ts` unless a page needs custom header forwarding.
 - If a page must preserve bookmark filtering on the server, forward cookies like `pages/packages.tsx` does.
 - Use cache helpers from `util/Constants.ts` for external fetches:
   - `NEXT_1H_CACHE_HEADER` for internal API fetches

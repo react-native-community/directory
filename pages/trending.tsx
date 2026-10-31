@@ -3,7 +3,7 @@ import { type NextPageContext } from 'next';
 import TrendingScene from '~/scenes/TrendingScene';
 import { type QueryOrder } from '~/types';
 import { type TrendingPageProps } from '~/types/pages';
-import { ssrFetch } from '~/util/SSRFetch';
+import { ssrFetch } from '~/util/fetch';
 
 function TrendingPage({ data, query }: TrendingPageProps) {
   return <TrendingScene data={data} query={query} />;
