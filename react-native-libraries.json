@@ -25303,5 +25303,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-bottom-tab-bar",
+    "npmPkg": "@acertijosapps/react-native-bottom-tab-bar",
+    "examples": ["https://github.com/acertijosapps/react-native-bottom-tab-bar/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/acertijosapps/react-native-bottom-tab-bar/main/docs/images/bottom-tab-bar-light.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
