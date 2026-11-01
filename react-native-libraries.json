@@ -752,7 +752,8 @@
     "expoGo": true,
     "harmony": "@react-native-oh-tpl/react-native-snap-carousel",
     "vegaos": true,
-    "fireos": true
+    "fireos": true,
+    "alternatives": ["react-native-reanimated-carousel"]
   },
   {
     "githubUrl": "https://github.com/mmazzarolo/react-native-modal-datetime-picker",
