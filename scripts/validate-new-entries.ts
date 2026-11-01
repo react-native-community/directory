@@ -12,6 +12,38 @@ import { fetchGithubData } from './fetch-github-data';
 import { fetchNpmDownloadData } from './fetch-npm-download-data';
 import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
+const unmaintainedStatusCache = new Map<string, Promise<boolean>>();
+
+async function isLibraryUnmaintained(
+  library: Pick<LibraryDataEntryType, 'unmaintained'>,
+  npmPkg: string
+): Promise<boolean> {
+  if (library.unmaintained) {
+    return true;
+  }
+
+  const normalizedNpmPkg = npmPkg.toLowerCase().trim();
+  const status =
+    unmaintainedStatusCache.get(normalizedNpmPkg) ??
+    fetch(`https://reactnative.directory/api/library?name=${encodeURIComponent(npmPkg)}`).then(
+      async response => {
+        if (!response.ok) {
+          throw new Error(
+            `Unable to check whether ${npmPkg} is unmaintained from React Native Directory API (${response.status}).`
+          );
+        }
+        const data = (await response.json()) as Record<
+          string,
+          Pick<LibraryDataEntryType, 'unmaintained'> | undefined
+        >;
+        return data[normalizedNpmPkg]?.unmaintained === true;
+      }
+    );
+  unmaintainedStatusCache.set(normalizedNpmPkg, status);
+
+  return status;
+}
+
 async function makeBaseFileQuery() {
   const result = await fetch(
     'https://raw.githubusercontent.com/react-native-community/directory/main/react-native-libraries.json'
@@ -148,7 +180,10 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
           continue;
         }
 
-        if (!existingEntry.unmaintained && existingEntry.newArchitecture !== false) {
+        if (
+          !(await isLibraryUnmaintained(existingEntry, entryWithGitHubData.npmPkg)) &&
+          existingEntry.newArchitecture !== false
+        ) {
           console.error(
             `Cannot set alternatives for the ${entryWithGitHubData.npmPkg} package which is not marked as unmaintained or not supporting New Architecture.`
           );
@@ -159,28 +194,30 @@ for (let i = 0; i < modifiedEntries.length; i += BATCH_SIZE) {
     }
 
     if (entryWithGitHubData?.alternatives && entryWithGitHubData.alternatives.length > 0) {
-      const alternativesChecks = entryWithGitHubData.alternatives.map(alternative => {
-        const alternativeEntry = mainDataWithNpmPkg.find(lib => lib.npmPkg === alternative);
-        if (alternativeEntry) {
-          if (alternativeEntry.unmaintained) {
-            console.error(
-              `${alternative} is marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
+      const alternativesChecks = await Promise.all(
+        entryWithGitHubData.alternatives.map(async alternative => {
+          const alternativeEntry = mainDataWithNpmPkg.find(lib => lib.npmPkg === alternative);
+          if (alternativeEntry) {
+            if (await isLibraryUnmaintained(alternativeEntry, alternative)) {
+              console.error(
+                `${alternative} is marked as unmaintained in the directory, so it cannot be defined as an alternative for the package.`
+              );
+              return false;
+            }
+          } else {
+            const localDataAlternative = libraries.find(
+              lib => lib.npmPkg === alternative || lib.githubUrl.endsWith(alternative)
             );
-            return false;
+            if (!localDataAlternative) {
+              console.error(
+                `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
+              );
+              return false;
+            }
           }
-        } else {
-          const localDataAlternative = libraries.find(
-            lib => lib.npmPkg === alternative || lib.githubUrl.endsWith(alternative)
-          );
-          if (!localDataAlternative) {
-            console.error(
-              `${alternative} is not listed in the directory, so it cannot be defined as an alternative for the package.`
-            );
-            return false;
-          }
-        }
-        return true;
-      });
+          return true;
+        })
+      );
 
       if (alternativesChecks.includes(false)) {
         checkResults.push(false);
