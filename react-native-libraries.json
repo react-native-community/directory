@@ -8392,7 +8392,9 @@
       "https://user-images.githubusercontent.com/10334791/27850595-62dc852e-615e-11e7-875c-57a017dbb28c.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-alpr"]
   },
   {
     "githubUrl": "https://github.com/alex-melnyk/react-native-multibar",
@@ -25319,5 +25321,16 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/parkr-app/react-native-alpr",
+    "examples": ["https://github.com/parkr-app/react-native-alpr/tree/main/example"],
+    "images": [
+      "https://alpr.parkr.app/screenshots/ios-scan-bmw-i3.webp",
+      "https://alpr.parkr.app/screenshots/ios-photo-tesla-model-s.webp",
+      "https://alpr.parkr.app/screenshots/android-scan-nissan-e-nv200.webp"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
