@@ -28,7 +28,7 @@ Return a list of libraries from the dataset. Supports sorting, full-text search,
   - `dependantsOf` - filter to directory packages that depend on the specified npm package.
   - `topic` - filter by topic or tag.
   - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `expoGo`, `fireos`, `harmony`, `horizon`, `tvos`, `visionos`, `vegaos`.
-  - Feature filters (booleans): `hasExample`, `hasImage`, `hasTypes`, `hasNativeCode`, `configPlugin`.
+  - Feature filters (booleans): `hasExample`, `hasImage`, `hasTypes`, `hasSwiftPM`, `hasNativeCode`, `configPlugin`.
   - Quality filters (booleans): `isMaintained`, `isPopular`, `wasRecentlyUpdated`.
   - Architecture filters (booleans): `newArchitecture`, `expoModule`, `nitroModule`, `turboModule`.
   - Skip categories (booleans): `skipLibs`, `skipTools`.

@@ -11576,7 +11576,8 @@
     "expoGo": true,
     "android": true,
     "web": true,
-    "fireos": true
+    "fireos": true,
+    "swiftPM": true
   },
   {
     "githubUrl": "https://github.com/andrew-levy/swiftui-react-native",
@@ -20630,7 +20631,8 @@
       "https://raw.githubusercontent.com/keiver/expo-tvos-search/refs/heads/main/screenshots/demo-05.webp"
     ],
     "tvos": true,
-    "newArchitecture": true
+    "newArchitecture": true,
+    "swiftPM": false
   },
   {
     "githubUrl": "https://github.com/TronNatthakorn/react-native-wheel-pick",
@@ -21776,7 +21778,8 @@
     "githubUrl": "https://github.com/chocky335/react-native-swipeable-actions",
     "examples": ["https://github.com/chocky335/react-native-swipeable-actions/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "swiftPM": false
   },
   {
     "githubUrl": "https://github.com/OxyHQ/Bloom",

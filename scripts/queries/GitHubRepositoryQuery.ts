@@ -5,6 +5,9 @@ const GitHubRepositoryQuery = `
     $packagePath: String = ".",
     $packageFilesPath: String = "HEAD:.",
     $packageJsonPath: String = "HEAD:package.json",
+    $packageSwiftPath: String = "HEAD:Package.swift",
+    $iosPackageSwiftPath: String = "HEAD:ios/Package.swift",
+    $reactNativeConfigPath: String = "HEAD:react-native.config.js",
     $fetchRoot: Boolean = false
   ) {
     rateLimit {
@@ -68,6 +71,21 @@ const GitHubRepositoryQuery = `
         }
       }
       packageJson:object(expression: $packageJsonPath) {
+        ... on Blob {
+          text
+        }
+      }
+      packageSwift:object(expression: $packageSwiftPath) {
+        ... on Blob {
+          text
+        }
+      }
+      iosPackageSwift:object(expression: $iosPackageSwiftPath) {
+        ... on Blob {
+          text
+        }
+      }
+      reactNativeConfig:object(expression: $reactNativeConfigPath) {
         ... on Blob {
           text
         }

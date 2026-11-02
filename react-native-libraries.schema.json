@@ -177,6 +177,12 @@
           "https://github.com/expo/config-plugins/tree/main/packages/react-native-pdf"
         ]
       },
+      "swiftPM": {
+        "$id": "#/items/properties/swiftPM",
+        "type": "boolean",
+        "title": "Package ships a Swift Package Manager manifest that React Native SwiftPM autolinking can use. Overrides automatic detection.",
+        "examples": [true, false]
+      },
       "alternatives": {
         "$id": "#/items/properties/alternatives",
         "type": "array",

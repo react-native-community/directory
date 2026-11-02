@@ -19,6 +19,7 @@ import {
   PackageManagerIcon,
   PackageSizeIcon,
   StarIcon,
+  SwiftIcon,
   TypeScriptIcon,
   WebIcon,
 } from '~/components/Icons';
@@ -27,6 +28,7 @@ import { Tooltip } from '~/components/Tooltip';
 import { type LibraryDataEntryType, type LibraryType, type MetadataEntryType } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { formatLintTools, formatPackageManager, pluralize } from '~/util/strings';
+import { getSwiftPMSupport } from '~/util/swiftPMStatus';
 import tw from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
@@ -237,6 +239,13 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
           id: 'types',
           icon: <TypeScriptIcon style={iconColor} />,
           content: <P style={paragraphStyles}>TypeScript Types</P>,
+        }
+      : null,
+    getSwiftPMSupport(library)
+      ? {
+          id: 'swiftpm',
+          icon: <SwiftIcon style={iconColor} />,
+          content: <P style={paragraphStyles}>Swift Package Manager</P>,
         }
       : null,
     !skipExamples && examples?.length

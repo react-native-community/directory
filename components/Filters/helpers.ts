@@ -68,6 +68,10 @@ export const FILTER_STATUS: FilterParamsType[] = [
     title: 'Has TypeScript types',
   },
   {
+    param: 'hasSwiftPM',
+    title: 'Supports SwiftPM',
+  },
+  {
     param: 'nightlyProgram',
     title: 'Tested in Nightly Program',
   },

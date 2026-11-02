@@ -9,7 +9,7 @@ import { VALID_ENTRY_KEYS } from '~/util/Constants';
 
 const LIBRARIES_JSON_PATH = path.join('react-native-libraries.json');
 
-const emptyPropertiesToKeep = new Set(['newArchitecture']);
+const emptyPropertiesToKeep = new Set(['newArchitecture', 'swiftPM']);
 
 function removeEmptyArray(lib: LibraryDataEntryType, key: 'examples' | 'images') {
   return lib[key] && !lib[key].length ? omit(lib, [key]) : lib;

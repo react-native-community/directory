@@ -1,6 +1,7 @@
 import dependants from '~/assets/dependants.json';
 import { FILTER_COMPATIBILITY, FILTER_PLATFORMS } from '~/components/Filters/helpers';
 import { type DependantsDataType, type LibraryType, type Query, type QueryFilters } from '~/types';
+import { getSwiftPMSupport } from '~/util/swiftPMStatus';
 
 import { getNewArchSupportStatus, NewArchSupportStatus } from './newArchStatus';
 import { relevance } from './sorting';
@@ -113,6 +114,7 @@ export function handleFilterLibraries({
   hasExample,
   hasImage,
   hasTypes,
+  hasSwiftPM,
   hasNativeCode,
   configPlugin,
   isMaintained,
@@ -187,6 +189,10 @@ export function handleFilterLibraries({
     }
 
     if (hasTypes && !library.github.hasTypes) {
+      return false;
+    }
+
+    if (hasSwiftPM && !getSwiftPMSupport(library)) {
       return false;
     }
 

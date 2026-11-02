@@ -40,6 +40,7 @@ export type Query = {
   hasExample?: string;
   hasImage?: string;
   hasTypes?: string;
+  hasSwiftPM?: string;
   hasNativeCode?: string;
   configPlugin?: string;
   isMaintained?: string;
@@ -90,6 +91,7 @@ export type LibraryType = LibraryDataEntryType & {
     registry?: string;
     topics?: string[];
     hasTypes?: boolean;
+    hasSwiftPM?: boolean;
     newArchitecture?: boolean;
     isArchived?: boolean;
     isPrivate?: boolean;
@@ -168,6 +170,7 @@ export type LibraryDataEntryType = {
   newArchitecture?: boolean | 'new-arch-only';
   newArchitectureNote?: string;
   configPlugin?: boolean | string;
+  swiftPM?: boolean;
   alternatives?: string[];
   npmPkg?: string;
   examples?: string[];
