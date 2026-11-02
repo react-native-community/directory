@@ -11986,25 +11986,6 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/SectionTN/otp-input",
-    "npmPkg": "@sectiontn/otp-input",
-    "examples": [
-      "https://github.com/SectionTN/otp-input-example",
-      "https://snack.expo.dev/@sectiontn/otptextinput-advanced-example"
-    ],
-    "images": [
-      "https://github.com/SectionTN/otp-input/blob/main/assets/screenshot_one.jpg",
-      "https://github.com/SectionTN/otp-input/blob/main/assets/advanced.gif",
-      "https://github.com/SectionTN/otp-input/blob/main/assets/web.gif"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "fireos": true,
-    "vegaos": true
-  },
-  {
     "githubUrl": "https://github.com/BartoszKlonowski/react-native-windows-hello",
     "images": [
       "https://raw.githubusercontent.com/BartoszKlonowski/react-native-windows-hello/main/.github/Resources/RNW-Hello-FullExample.gif"
@@ -25325,6 +25306,18 @@
     ],
     "ios": true,
     "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SectionTN/react-native-otpkit",
+    "examples": ["https://github.com/SectionTN/react-native-otpkit/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/SectionTN/react-native-otpkit/main/.github/assets/otpkit-showcase.gif",
+      "https://raw.githubusercontent.com/SectionTN/react-native-otpkit/main/.github/assets/otpkit-looks.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
     "expoGo": true
   }
 ]
