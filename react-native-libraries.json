@@ -25303,5 +25303,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-fold",
+    "npmPkg": "@acertijosapps/react-native-fold",
+    "examples": ["https://github.com/acertijosapps/react-native-fold/tree/main/example"],
+    "images": [
+      "https://unpkg.com/@acertijosapps/react-native-fold/media/ios-book.png",
+      "https://unpkg.com/@acertijosapps/react-native-fold/media/android-tabletop.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
