@@ -80,6 +80,7 @@
     "@wcisco17/react-native-animation-video",
     "expo-gaode-map-navigation",
     "expo-image-editor",
+    "expo-reanimated-side-menu",
     "galio-framework",
     "react-native-magic-tab-bar",
     "react-native-multipurpose-calendar",
@@ -130,6 +131,12 @@
   "@hot-updater/react-native": [
     "@rollbird/react-native"
   ],
+  "@hzblj/expo-native-icons": [
+    "@hzblj/kara-ui"
+  ],
+  "@hzblj/nitro-crypto": [
+    "@hzblj/crypto-vault"
+  ],
   "@iterable/react-native-sdk": [
     "@iterable/expo-plugin"
   ],
@@ -162,6 +169,7 @@
     "ultravox-react-native"
   ],
   "@lodev09/react-native-true-sheet": [
+    "@hzblj/kara-ui",
     "@kesha-antonov/react-native-chat"
   ],
   "@miblanchard/react-native-slider": [
@@ -175,7 +183,8 @@
     "react-native-render-html"
   ],
   "@notifee/react-native": [
-    "react-native-fusioncharts"
+    "react-native-fusioncharts",
+    "react-native-notify-sphere"
   ],
   "@op-engineering/op-sqlite": [
     "@powersync/react-native",
@@ -187,6 +196,12 @@
     "@sendbird/uikit-react-native",
     "@shoutem/ui"
   ],
+  "@plocks/ui": [
+    "@plocks/carousel",
+    "@plocks/emoji-picker",
+    "@plocks/media",
+    "@plocks/qrcode"
+  ],
   "@posthog/react-native-plugin": [
     "posthog-react-native"
   ],
@@ -196,6 +211,7 @@
     "@instantdb/react-native",
     "@matter/react-native",
     "@onramp-sdk/react-native",
+    "@plocks/ui",
     "@segment/analytics-react-native",
     "@segment/sovran-react-native",
     "@sendbird/uikit-react-native",
@@ -211,6 +227,7 @@
     "react-native-emoji-chooser",
     "react-native-network-inspector-devtools",
     "react-native-nfc-locator",
+    "react-native-notify-sphere",
     "react-native-pdf-jsi",
     "react-native-qrcode-scanner",
     "react-native-related-digital",
@@ -268,6 +285,7 @@
     "@sendbird/uikit-react-native",
     "@walletconnect/react-native-compat",
     "insert-affiliate-react-native-sdk",
+    "react-native-flash-reels",
     "react-native-netwatch",
     "react-native-offline",
     "react-native-video-provider",
@@ -312,6 +330,7 @@
     "@react-native-firebase/perf",
     "@react-native-firebase/remote-config",
     "@react-native-firebase/storage",
+    "react-native-notify-sphere",
     "react-native-related-digital"
   ],
   "@react-native-firebase/auth": [
@@ -322,10 +341,12 @@
   ],
   "@react-native-firebase/messaging": [
     "@sendbird/uikit-react-native",
+    "react-native-notify-sphere",
     "react-native-related-digital"
   ],
   "@react-native-masked-view/masked-view": [
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "@react-navigation/elements",
     "@rn-org/react-native-annotated-text",
     "@wrack/react-native-tour-guide",
@@ -352,6 +373,7 @@
   ],
   "@react-native/normalize-colors": [
     "@bacons/apple-targets",
+    "@tamagui/animations-reanimated",
     "expo-system-ui",
     "expo-targets",
     "react-native-unistyles"
@@ -402,6 +424,7 @@
     "@sentry/react-native",
     "@shopify/react-native-performance-navigation",
     "@shoutem/ui",
+    "expo-observe",
     "posthog-react-native",
     "react-native-animated-nav-tab-bar",
     "react-native-animation-catalog",
@@ -560,6 +583,7 @@
     "@kesha-antonov/react-native-chat",
     "@marceloterreiro/flash-calendar",
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "@softwhere-uz/react-native-emoji-keyboard",
     "@the-sheet/flash-list-v2",
     "@vokhuyet/react-native-messy",
@@ -567,6 +591,7 @@
     "react-native-collapsible-fluid-tabs",
     "react-native-collapsible-tab-view",
     "react-native-ficus-ui",
+    "react-native-flash-reels",
     "react-native-infinite-material-tab",
     "react-native-infinite-tab-view",
     "react-native-resource-calendar",
@@ -643,6 +668,9 @@
   "@tamagui/animations-react-native": [
     "@tamagui/config"
   ],
+  "@tamagui/config": [
+    "@otfdashkit/ui-native"
+  ],
   "@tamagui/shorthands": [
     "@tamagui/config"
   ],
@@ -695,6 +723,7 @@
     "react-native-instagram-login",
     "react-native-mapa",
     "react-native-network-inspector-devtools",
+    "react-native-notify-sphere",
     "stallion-cli",
     "tape-cli"
   ],
@@ -717,6 +746,7 @@
     "parse",
     "react-native-image-cache-wrapper",
     "react-native-keys",
+    "react-native-keys-next",
     "react-native-pdf",
     "react-native-pdf-jsi"
   ],
@@ -814,6 +844,7 @@
     "@expo/metro-runtime",
     "@expo/router-server",
     "@fishjam-cloud/react-native-client",
+    "@fourlyn/apple-foundation-models",
     "@fsstudio-org/google-credential-manager",
     "@fullstory/react-native",
     "@generac/react-native-local-network-permission",
@@ -822,6 +853,16 @@
     "@goliapkg/sentori-expo",
     "@hortemo/expo-photos",
     "@hot-updater/react-native",
+    "@hzblj/expo-app-icons",
+    "@hzblj/expo-flags-kit",
+    "@hzblj/expo-native-icons",
+    "@hzblj/expo-paypal",
+    "@hzblj/expo-rich-haptics",
+    "@hzblj/expo-speech",
+    "@hzblj/expo-translation",
+    "@hzblj/expo-waveform",
+    "@hzblj/expo-zoom-transition",
+    "@hzblj/kara-ui",
     "@hzblj/zyplot",
     "@iterable/expo-plugin",
     "@kingstinct/react-native-activity-kit",
@@ -884,6 +925,7 @@
     "expo-alternate-app-icons",
     "expo-android-keyboard-fix",
     "expo-android-pedometer",
+    "expo-app-intents",
     "expo-apple-authentication",
     "expo-application",
     "expo-asset",
@@ -904,6 +946,7 @@
     "expo-blur",
     "expo-bonjour",
     "expo-brightness",
+    "expo-brownfield",
     "expo-build-properties",
     "expo-cached-image",
     "expo-cafebazaar-auth",
@@ -929,6 +972,9 @@
     "expo-esim-utils",
     "expo-file-system",
     "expo-finance-kit",
+    "expo-flashlight",
+    "expo-floating-bubble-overlay",
+    "expo-foldables",
     "expo-font",
     "expo-foreground-actions",
     "expo-gaode-map",
@@ -943,6 +989,7 @@
     "expo-hardware-buttons",
     "expo-health-connect",
     "expo-helium",
+    "expo-hinge",
     "expo-horizon-core",
     "expo-horizon-location",
     "expo-horizon-notifications",
@@ -980,6 +1027,7 @@
     "expo-maps",
     "expo-maps-routes",
     "expo-media-control",
+    "expo-media-control-car",
     "expo-media-library",
     "expo-mesh-gradient",
     "expo-mqtt",
@@ -994,6 +1042,7 @@
     "expo-notifee-plugin",
     "expo-notifications",
     "expo-numerator",
+    "expo-observe",
     "expo-onboarding",
     "expo-paperkit",
     "expo-passkey",
@@ -1014,6 +1063,7 @@
     "expo-router",
     "expo-ruler",
     "expo-running-kit",
+    "expo-saf-scan",
     "expo-screen-capture",
     "expo-screen-corner-radius",
     "expo-screen-orientation",
@@ -1158,6 +1208,7 @@
     "expo-asset-utils",
     "expo-audio",
     "expo-image-editor",
+    "expo-reanimated-side-menu",
     "expo-three",
     "react-native-maplibre-gl-js",
     "react-native-shine"
@@ -1170,6 +1221,7 @@
     "@kesha-antonov/react-native-chat",
     "@lodev09/expo-recorder",
     "@platform-blocks/react-ui-library",
+    "@plocks/media",
     "@sendbird/uikit-react-native",
     "stream-chat-expo"
   ],
@@ -1194,6 +1246,7 @@
   ],
   "expo-build-properties": [
     "@qvac/sdk",
+    "expo-brownfield",
     "expo-libmpv",
     "pushy-expo-plugin",
     "react-native-twilio-video-webrtc"
@@ -1207,6 +1260,7 @@
   "expo-clipboard": [
     "@axonpack/expo-devtools",
     "@codearcade/expo-markdown",
+    "@plocks/ui",
     "@sendbird/uikit-react-native",
     "@swmansion/react-native-detour",
     "stream-chat-expo"
@@ -1262,6 +1316,7 @@
   "expo-document-picker": [
     "@ankhorage/zora",
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "@sendbird/uikit-react-native",
     "stream-chat-expo"
   ],
@@ -1294,6 +1349,7 @@
     "@oxy.so/bloom",
     "expo",
     "expo-asset-utils",
+    "expo-reanimated-side-menu",
     "expo-symbols"
   ],
   "expo-gl": [
@@ -1313,6 +1369,8 @@
     "@notchip/expo-panoramic-stitcher",
     "@oxy.so/bloom",
     "@platform-blocks/react-ui-library",
+    "@plocks/media",
+    "@plocks/ui",
     "react-native-hold-menu",
     "react-native-magic-tab-bar",
     "react-native-resource-calendar",
@@ -1324,6 +1382,7 @@
   ],
   "expo-image": [
     "@blazejkustra/react-native-onboarding",
+    "@hzblj/kara-ui",
     "@oxy.so/bloom"
   ],
   "expo-image-manipulator": [
@@ -1350,6 +1409,7 @@
   "expo-linear-gradient": [
     "@dietime/react-native-date-picker",
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "expo-skeleton-loading",
     "react-native-gauge",
     "react-native-gifted-charts",
@@ -1381,15 +1441,22 @@
     "@teovilla/react-native-web-maps"
   ],
   "expo-manifests": [
+    "expo-brownfield",
     "expo-dev-client",
     "expo-updates"
   ],
   "expo-maps": [
     "expo-maps-routes"
   ],
+  "expo-media-control": [
+    "expo-media-control-car"
+  ],
   "expo-media-library": [
     "@sendbird/uikit-react-native",
     "stream-chat-expo"
+  ],
+  "expo-navigation-bar": [
+    "@plocks/ui"
   ],
   "expo-network": [
     "@better-auth/expo",
@@ -1404,8 +1471,12 @@
   ],
   "expo-router": [
     "@expo/router-server",
+    "@hzblj/expo-zoom-transition",
+    "@hzblj/kara-ui",
+    "@otfdashkit/ui-native",
     "@oxy.so/bloom",
     "@sentry/react-native",
+    "expo-observe",
     "react-native-grab",
     "react-native-magic-tab-bar",
     "react-native-preflight",
@@ -1442,6 +1513,7 @@
   ],
   "expo-status-bar": [
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "react-native-ridge-navigation"
   ],
   "expo-structured-headers": [
@@ -1616,7 +1688,8 @@
     "@shoutem/ui"
   ],
   "lucide-react-native": [
-    "expo-modern-table"
+    "expo-modern-table",
+    "lucide-uniwind"
   ],
   "luxon": [
     "@breeffy/calendars",
@@ -1628,6 +1701,7 @@
     "@sentry/react-native",
     "react-native-bundle-discovery",
     "react-native-svg-asset-plugin",
+    "react-native-use-dom",
     "uniwind"
   ],
   "metro-bridge": [
@@ -1798,8 +1872,12 @@
     "react-native-check-version",
     "react-native-debugger",
     "react-native-executorch",
+    "react-native-notify-sphere",
     "react-native-onyx",
     "sp-react-native-in-app-updates"
+  ],
+  "react-native-draggable-flatlist": [
+    "@plocks/ui"
   ],
   "react-native-drawer-layout": [
     "@react-navigation/drawer",
@@ -1900,6 +1978,8 @@
     "@osamaq/drag-select",
     "@oxy.so/bloom",
     "@pagopa/io-app-design-system",
+    "@plocks/carousel",
+    "@plocks/ui",
     "@rainbow-me/animated-charts",
     "@react-native-blocks/blocks",
     "@react-native-blocks/core",
@@ -1955,6 +2035,7 @@
     "react-native-effects",
     "react-native-financial-charts",
     "react-native-fintech-kit",
+    "react-native-flash-reels",
     "react-native-fluid-bottom-bar",
     "react-native-gallery-preview",
     "react-native-gallery-toolkit",
@@ -1965,6 +2046,7 @@
     "react-native-head-tab-view",
     "react-native-header-motion",
     "react-native-hold-menu",
+    "react-native-image-comparison",
     "react-native-image-preview-reanimated",
     "react-native-images-preview",
     "react-native-infinite-pager",
@@ -2120,6 +2202,7 @@
     "@deskbtm/react-native-bottom-sheet",
     "@kesha-antonov/react-native-chat",
     "@oxy.so/bloom",
+    "@saulzayn/rn-keyboard-form",
     "@vokhuyet/react-native-messy",
     "react-native-bottom-sheet-stack",
     "react-native-gifted-chat",
@@ -2246,6 +2329,9 @@
     "@flitzinteractive/react-native-nitro-html-pdf",
     "@gmessier/nitro-speech",
     "@gmisoftware/react-native-pay",
+    "@hzblj/crypto-recovery",
+    "@hzblj/crypto-vault",
+    "@hzblj/nitro-crypto",
     "@iternio/react-native-auto-play",
     "@kingstinct/react-native-activity-kit",
     "@kingstinct/react-native-healthkit",
@@ -2262,6 +2348,7 @@
     "expo-document-scanner",
     "munim-bluetooth",
     "munim-ffmpeg",
+    "munim-location",
     "munim-maps",
     "munim-pencilkit",
     "munim-wifi",
@@ -2276,6 +2363,7 @@
     "react-native-bluetooth-state-manager",
     "react-native-cesium",
     "react-native-clamshell",
+    "react-native-codepad",
     "react-native-compressor",
     "react-native-continued-task",
     "react-native-data-scanner",
@@ -2289,11 +2377,13 @@
     "react-native-leap",
     "react-native-litert-lm",
     "react-native-localize-date",
+    "react-native-media-transformer",
     "react-native-mmkv",
     "react-native-nitro-ark",
     "react-native-nitro-audio-manager",
     "react-native-nitro-auth",
     "react-native-nitro-better-auth-passkey",
+    "react-native-nitro-biometrics",
     "react-native-nitro-buffer",
     "react-native-nitro-cloud-uploader",
     "react-native-nitro-compass",
@@ -2312,6 +2402,7 @@
     "react-native-nitro-google-sso",
     "react-native-nitro-haptics",
     "react-native-nitro-healthkit",
+    "react-native-nitro-html-to-pdf",
     "react-native-nitro-http-server",
     "react-native-nitro-image",
     "react-native-nitro-image-colors",
@@ -2327,6 +2418,7 @@
     "react-native-nitro-mlx",
     "react-native-nitro-net",
     "react-native-nitro-network-info",
+    "react-native-nitro-node",
     "react-native-nitro-notification",
     "react-native-nitro-ota",
     "react-native-nitro-player",
@@ -2370,6 +2462,7 @@
     "react-native-superconfig",
     "react-native-ultrastore",
     "react-native-unistyles",
+    "react-native-use-dom",
     "react-native-variable-blur",
     "react-native-video-to-audio",
     "react-native-vision-camera",
@@ -2495,6 +2588,7 @@
     "@gorhom/paper-onboarding",
     "@howljs/calendar-kit",
     "@hyoper/rn-animated-modal",
+    "@hzblj/kara-ui",
     "@impulse-ui-native/toolkit",
     "@jetrockets/react-native-modal",
     "@kesha-antonov/react-native-chat",
@@ -2512,14 +2606,19 @@
     "@openspacelabs/react-native-zoomable-view",
     "@orionarm/react-native-collapse-tabs",
     "@osamaq/drag-select",
+    "@otfdashkit/ui-native",
     "@oxy.so/bloom",
     "@pachun/reanimated-worklet-capture-guard",
     "@pagopa/io-app-design-system",
     "@platform-blocks/charts",
     "@platform-blocks/react-ui-library",
+    "@plocks/carousel",
+    "@plocks/charts",
+    "@plocks/ui",
     "@rainbow-me/animated-charts",
     "@react-native-blocks/core",
     "@react-navigation/drawer",
+    "@saulzayn/rn-keyboard-form",
     "@shopify/react-native-performance-navigation-drawer",
     "@shopify/react-native-skia",
     "@showtime-xyz/tab-view",
@@ -2529,6 +2628,7 @@
     "@storybook/react-native",
     "@storybook/react-native-ui",
     "@super-calendar/native",
+    "@tamagui/animations-reanimated",
     "@the-sheet/embedded-stack-navigator",
     "@the-sheet/flash-list-v2",
     "@the-sheet/the-sheet",
@@ -2539,9 +2639,12 @@
     "@xaui/native",
     "bottom-sheet-stepper",
     "expo-gl",
+    "expo-hinge",
     "expo-image-compare",
     "expo-modern-table",
+    "expo-observe",
     "expo-pretext",
+    "expo-reanimated-side-menu",
     "expo-router",
     "expo-skeleton-loading",
     "expo-skia-charts",
@@ -2595,6 +2698,7 @@
     "react-native-fiesta",
     "react-native-financial-charts",
     "react-native-fintech-kit",
+    "react-native-flash-reels",
     "react-native-floating-label-input",
     "react-native-fluid-bottom-bar",
     "react-native-gallery-preview",
@@ -2607,6 +2711,7 @@
     "react-native-header-motion",
     "react-native-highlight-overlay",
     "react-native-hold-menu",
+    "react-native-image-comparison",
     "react-native-image-preview-reanimated",
     "react-native-images-preview",
     "react-native-infinite-material-tab",
@@ -2662,6 +2767,7 @@
     "react-native-simple-map",
     "react-native-skeleton-content",
     "react-native-skeleton-content-nonexpo",
+    "react-native-skia",
     "react-native-skia-list",
     "react-native-skottie",
     "react-native-smart-grid",
@@ -2707,7 +2813,8 @@
     "vision-camera-image-labeler"
   ],
   "react-native-reanimated-carousel": [
-    "@platform-blocks/react-ui-library"
+    "@platform-blocks/react-ui-library",
+    "@plocks/carousel"
   ],
   "react-native-reanimated-table": [
     "react-native-marked"
@@ -2769,6 +2876,7 @@
     "@oxy.so/bloom",
     "@pagopa/io-app-design-system",
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "@react-navigation/bottom-tabs",
     "@react-navigation/drawer",
     "@react-navigation/elements",
@@ -2777,6 +2885,7 @@
     "@react-navigation/stack",
     "@rn-vui/base",
     "@rneui/base",
+    "@saulzayn/rn-keyboard-form",
     "@sendbird/uikit-react-native",
     "@sherlo/react-native-storybook",
     "@shoutem/ui",
@@ -2790,6 +2899,7 @@
     "@xaui/native",
     "blaze-navigation",
     "expo-gaode-map-navigation",
+    "expo-reanimated-side-menu",
     "expo-router",
     "galio-framework",
     "heroui-native",
@@ -2797,6 +2907,7 @@
     "orn-ui",
     "posthog-react-native",
     "react-native-actions-sheet",
+    "react-native-alarms",
     "react-native-alright-gallery",
     "react-native-animation-catalog",
     "react-native-bottom-sheet-stack",
@@ -2841,6 +2952,8 @@
   ],
   "react-native-screens": [
     "@appandflow/react-navigation-bottom-sheet",
+    "@hzblj/expo-zoom-transition",
+    "@hzblj/kara-ui",
     "@oxy.so/bloom",
     "@react-navigation/bottom-tabs",
     "@react-navigation/drawer",
@@ -2932,10 +3045,14 @@
     "@mindinventory/react-native-tab-bar-interaction",
     "@mosmmy/mo-icon-react-native",
     "@novev9/react-native-instagram-stories",
+    "@otfdashkit/ui-native",
     "@oxy.so/bloom",
     "@pagopa/io-app-design-system",
     "@platform-blocks/charts",
     "@platform-blocks/react-ui-library",
+    "@plocks/charts",
+    "@plocks/qrcode",
+    "@plocks/ui",
     "@rainbow-me/animated-charts",
     "@shipt/segmented-arc-for-react-native",
     "@shoutem/ui",
@@ -2946,12 +3063,15 @@
     "@vibechess/chessboard-native",
     "@wrack/react-native-tour-guide",
     "@xaui/native",
+    "agentfaces",
     "easyqrcode-react-native",
+    "expo-charts",
     "healthicons-react-native",
     "heart-switch-react-native",
     "heroui-native",
     "iconoir-react-native",
     "lucide-react-native",
+    "lucide-uniwind",
     "native-base",
     "phosphor-react-native",
     "posthog-react-native",
@@ -3113,6 +3233,7 @@
   "react-native-video": [
     "@cometchat/chat-uikit-react-native",
     "@sendbird/uikit-react-native",
+    "react-native-flash-reels",
     "react-native-insta-story",
     "react-native-kvideo",
     "react-native-story-view",
@@ -3180,6 +3301,7 @@
     "@netizen-teknologi/react-native-maps-leaflet",
     "@openlv/react-native",
     "@oxy.so/bloom",
+    "@plocks/media",
     "@pose-tracker/react-native-pose-estimation",
     "@pose-tracker/react-native-pose-estimation-light",
     "@sdcx/nested-scroll-webview",
@@ -3191,6 +3313,7 @@
     "easyqrcode-react-native",
     "expo",
     "react-native-animated-blur-view",
+    "react-native-asyntai-ai-chatbot",
     "react-native-autoheight-webview",
     "react-native-canvas",
     "react-native-chatgpt",
@@ -3235,6 +3358,7 @@
     "@mathnotes/mobile-ink",
     "@pagopa/io-app-design-system",
     "@platform-blocks/react-ui-library",
+    "@plocks/ui",
     "@react-native-blocks/core",
     "@shopify/react-native-skia",
     "@siteed/audio-ui",
@@ -3244,6 +3368,7 @@
     "@the-sheet/the-sheet",
     "@vibechess/chessboard-native",
     "@xaui/native",
+    "expo-hinge",
     "expo-thinking-orbs",
     "heart-switch-react-native",
     "heroui-native",
@@ -3266,11 +3391,13 @@
     "react-native-executorch",
     "react-native-fast-confetti",
     "react-native-fintech-kit",
+    "react-native-flash-reels",
     "react-native-fluid-bottom-bar",
     "react-native-gallery-preview",
     "react-native-gesture-image-viewer",
     "react-native-halo-menu",
     "react-native-header-motion",
+    "react-native-image-comparison",
     "react-native-kanban-dnd",
     "react-native-livechart",
     "react-native-lumen",
@@ -3290,6 +3417,7 @@
     "react-native-screen-transitions",
     "react-native-shine",
     "react-native-simple-line-chart",
+    "react-native-skia",
     "react-native-streamdown",
     "react-native-transformer-text-input",
     "react-native-vision-camera-skia",
@@ -3415,6 +3543,7 @@
     "react-native-version",
     "react-native-version-check",
     "react-native-worklets",
+    "rn-build-doctor",
     "rn-nodeify",
     "sp-react-native-in-app-updates",
     "stallion-cli"
@@ -3445,11 +3574,15 @@
     "twrnc",
     "uniwind"
   ],
+  "tamagui": [
+    "@otfdashkit/ui-native"
+  ],
   "uniffi-bindgen-react-native": [
     "loro-react-native",
     "react-native-nobodywho"
   ],
   "uniwind": [
+    "lucide-uniwind",
     "react-native-ease"
   ],
   "use-debounce": [
@@ -3466,6 +3599,7 @@
   "zod": [
     "@better-auth/expo",
     "@everframe/react-native",
+    "@fourlyn/apple-foundation-models",
     "@hookform/resolvers",
     "@json-render/react-native",
     "@mattermost/react-native-network-client",
@@ -3488,6 +3622,7 @@
     "react-native-nitro-mlx",
     "react-native-node-api",
     "react-native-whip-whep",
+    "rn-build-doctor",
     "tapflow",
     "tinybase"
   ],

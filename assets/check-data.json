@@ -9102,5 +9102,206 @@
   },
   "react-native-kanban-dnd": {
     "newArchitecture": "new-arch-only"
+  },
+  "react-native-skia": {
+    "newArchitecture": "supported"
+  },
+  "@plocks/ui": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@plocks/charts": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@warplink/react-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-nitro-biometrics": {
+    "newArchitecture": "supported"
+  },
+  "munim-location": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-saf-scan": {
+    "newArchitecture": "untested"
+  },
+  "agentfaces": {
+    "newArchitecture": "supported"
+  },
+  "hermes-intl": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-keys-next": {
+    "newArchitecture": "supported"
+  },
+  "react-native-highlight-text-view": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@tamagui/animations-reanimated": {
+    "newArchitecture": "supported"
+  },
+  "@plocks/emoji-picker": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@plocks/carousel": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@plocks/qrcode": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@plocks/media": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-media-control-car": {
+    "newArchitecture": "untested"
+  },
+  "react-native-intl-phone": {
+    "newArchitecture": "supported"
+  },
+  "react-native-intune": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-inkpad": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-observe": {
+    "newArchitecture": "supported"
+  },
+  "expo-foldables": {
+    "newArchitecture": "supported"
+  },
+  "expo-hinge": {
+    "newArchitecture": "supported"
+  },
+  "expo-brownfield": {
+    "newArchitecture": "supported"
+  },
+  "expo-app-intents": {
+    "newArchitecture": "supported"
+  },
+  "react-native-use-dom": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-oauth-essentials": {
+    "newArchitecture": "supported"
+  },
+  "react-native-layout-transfarmer": {
+    "newArchitecture": "supported"
+  },
+  "@otfdashkit/ui-native": {
+    "newArchitecture": "untested"
+  },
+  "react-native-reserved-regions": {
+    "newArchitecture": "supported"
+  },
+  "lucide-uniwind": {
+    "newArchitecture": "untested"
+  },
+  "react-native-all-video-player": {
+    "newArchitecture": "supported"
+  },
+  "react-native-esc-tsc-printer": {
+    "newArchitecture": "supported"
+  },
+  "rn-build-doctor": {
+    "newArchitecture": "untested"
+  },
+  "@fourlyn/apple-foundation-models": {
+    "newArchitecture": "supported"
+  },
+  "react-native-image-comparison": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-notify-sphere": {
+    "newArchitecture": "supported"
+  },
+  "expo-flashlight": {
+    "newArchitecture": "untested"
+  },
+  "react-native-asyntai-ai-chatbot": {
+    "newArchitecture": "supported"
+  },
+  "react-native-flash-reels": {
+    "newArchitecture": "supported"
+  },
+  "expo-floating-bubble-overlay": {
+    "newArchitecture": "supported"
+  },
+  "react-native-codepad": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@hzblj/kara-ui": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-app-icons": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-flags-kit": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-native-icons": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-paypal": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-rich-haptics": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-speech": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-translation": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-waveform": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/expo-zoom-transition": {
+    "newArchitecture": "supported"
+  },
+  "@saulzayn/rn-keyboard-form": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-html-to-pdf": {
+    "newArchitecture": "new-arch-only"
+  },
+  "expo-charts": {
+    "newArchitecture": "supported"
+  },
+  "react-native-alarms": {
+    "newArchitecture": "supported"
+  },
+  "@codebymanan/react-native-photo-editor": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-network-lens": {
+    "newArchitecture": "supported"
+  },
+  "react-native-nitro-node": {
+    "newArchitecture": "new-arch-only"
+  },
+  "react-native-media-transformer": {
+    "newArchitecture": "supported"
+  },
+  "@elik56a/react-native-pickers": {
+    "newArchitecture": "supported"
+  },
+  "expo-reanimated-side-menu": {
+    "newArchitecture": "supported"
+  },
+  "@hzblj/nitro-crypto": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@hzblj/crypto-vault": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@hzblj/crypto-recovery": {
+    "newArchitecture": "new-arch-only"
+  },
+  "@hzblj/crypto-airgap": {
+    "newArchitecture": "supported"
+  },
+  "react-native-long-ping": {
+    "newArchitecture": "supported"
   }
 }
