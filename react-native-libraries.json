@@ -25453,5 +25453,19 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/mybigday/whisper.rn",
+    "examples": ["https://github.com/mybigday/whisper.rn/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rit3zh/toastiva/tree/main/packages/toastiva",
+    "npmPkg": "toastiva",
+    "examples": ["https://github.com/rit3zh/toastiva/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
