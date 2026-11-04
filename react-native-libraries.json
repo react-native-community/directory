@@ -25381,5 +25381,15 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-silk-dropdown",
+    "examples": ["https://github.com/thedev204/react-native-silk-dropdown/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-silk-dropdown/refs/heads/main/assets/full.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
