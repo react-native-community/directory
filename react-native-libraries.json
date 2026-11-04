@@ -25338,5 +25338,16 @@
     "examples": ["https://github.com/appy-to/react-native-appy/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab",
+    "npmPkg": "@axonpack/react-native-devtools-tab",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab/example"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "dev": true
   }
 ]
