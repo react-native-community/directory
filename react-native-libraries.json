@@ -25340,6 +25340,49 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/rnmapbox/navigation",
+    "npmPkg": "@rnmapbox/navigation",
+    "examples": [
+      "https://github.com/rnmapbox/navigation/tree/main/example",
+      "https://github.com/rnmapbox/navigation/tree/main/expo-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/rnmapbox/navigation/main/assets/navigation-demo.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-text-stream/tree/master/packages/react-native-text-stream",
+    "examples": ["https://github.com/pioner92/react-native-text-stream/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-sync-tasks",
+    "examples": ["https://github.com/pioner92/react-native-sync-tasks/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-columnar",
+    "examples": ["https://github.com/pioner92/react-native-columnar/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-ultra-base64",
+    "examples": ["https://github.com/pioner92/react-native-ultra-base64/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab",
     "npmPkg": "@axonpack/react-native-devtools-tab",
     "examples": [
