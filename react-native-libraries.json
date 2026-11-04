@@ -25338,5 +25338,20 @@
     "examples": ["https://github.com/appy-to/react-native-appy/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rnmapbox/navigation",
+    "npmPkg": "@rnmapbox/navigation",
+    "examples": [
+      "https://github.com/rnmapbox/navigation/tree/main/example",
+      "https://github.com/rnmapbox/navigation/tree/main/expo-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/rnmapbox/navigation/main/assets/navigation-demo.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
   }
 ]
