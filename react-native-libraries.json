@@ -25383,6 +25383,16 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/thedev204/react-native-silk-dropdown",
+    "examples": ["https://github.com/thedev204/react-native-silk-dropdown/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-silk-dropdown/refs/heads/main/assets/full.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/preview",
     "npmPkg": "@axonpack/preview",
     "examples": [
@@ -25394,7 +25404,6 @@
     ],
     "ios": true,
     "android": true,
-    "newArchitecture": "new-arch-only",
-    "dev": true
+    "newArchitecture": "new-arch-only"
   }
 ]
