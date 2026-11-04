@@ -25353,5 +25353,33 @@
     "android": true,
     "newArchitecture": "new-arch-only",
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-text-stream/tree/main/packages/react-native-text-stream",
+    "examples": ["https://github.com/pioner92/react-native-text-stream/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-sync-tasks",
+    "examples": ["https://github.com/pioner92/react-native-sync-tasks/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-columnar",
+    "examples": ["https://github.com/pioner92/react-native-columnar/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-ultra-base64",
+    "examples": ["https://github.com/pioner92/react-native-ultra-base64/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
