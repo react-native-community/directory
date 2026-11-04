@@ -25338,5 +25338,17 @@
     "examples": ["https://github.com/appy-to/react-native-appy/tree/main/example"],
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print",
+    "npmPkg": "@axonpack/react-pretty-print",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print/example-native",
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print/example-web"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
