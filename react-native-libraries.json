@@ -25405,5 +25405,22 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/in-app-updates",
+    "npmPkg": "@axonpack/in-app-updates",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/in-app-updates/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/soft.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/forced.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/dark.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/brand.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/custom.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
