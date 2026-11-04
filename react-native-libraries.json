@@ -25439,5 +25439,19 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab",
+    "npmPkg": "@axonpack/react-native-devtools-tab",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-native-devtools-tab/docs/screenshots/database-tab.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-native-devtools-tab/docs/screenshots/counter-tab.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
