@@ -25455,6 +25455,19 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/mybigday/whisper.rn",
+    "examples": ["https://github.com/mybigday/whisper.rn/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rit3zh/toastiva/tree/main/packages/toastiva",
+    "examples": ["https://github.com/rit3zh/toastiva/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/acertijosapps/react-native-md-document",
     "npmPkg": "@acertijosapps/react-native-md-document",
     "examples": ["https://github.com/acertijosapps/react-native-md-document/tree/main/example"],
