@@ -25468,6 +25468,35 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/acertijosapps/react-native-md-document",
+    "npmPkg": "@acertijosapps/react-native-md-document",
+    "examples": ["https://github.com/acertijosapps/react-native-md-document/tree/main/example"],
+    "images": [
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/showcase-light.png",
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/book-landscape-light.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/strait-link/strait-sdk-react-native",
+    "npmPkg": "@straitlink/react-native",
+    "examples": ["https://github.com/strait-link/strait-sdk-react-native/tree/main/examples/expo"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/SagarKhengat/react-native-offline-game",
+    "images": [
+      "https://raw.githubusercontent.com/SagarKhengat/react-native-offline-game/master/docs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/BunnyWay/bunny-stream-react-native",
     "npmPkg": "@bunny.net/stream-react-native",
     "examples": [
