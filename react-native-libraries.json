@@ -25466,5 +25466,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-md-document",
+    "npmPkg": "@acertijosapps/react-native-md-document",
+    "examples": ["https://github.com/acertijosapps/react-native-md-document/tree/main/example"],
+    "images": [
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/showcase-light.png",
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/book-landscape-light.png"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
