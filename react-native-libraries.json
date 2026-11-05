@@ -25479,6 +25479,14 @@
     "android": true
   },
   {
+    "githubUrl": "https://github.com/strait-link/strait-sdk-react-native",
+    "npmPkg": "@straitlink/react-native",
+    "examples": ["https://github.com/strait-link/strait-sdk-react-native/tree/main/examples/expo"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/SagarKhengat/react-native-offline-game",
     "images": [
       "https://raw.githubusercontent.com/SagarKhengat/react-native-offline-game/master/docs/demo.gif"
