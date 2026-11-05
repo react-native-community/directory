@@ -32,7 +32,7 @@ export default function TopBarIconButton({
             href={href}
             openInNewTab={openInNewTab}
             onPress={onPress}
-            style={tw`size-8.5 bg-transparent px-1`}
+            style={tw`size-8.5 bg-transparent px-0.5`}
             containerStyle={tw`rounded-full`}>
             {children}
           </Button>
