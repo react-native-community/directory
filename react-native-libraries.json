@@ -25455,6 +25455,7 @@
     "expoGo": true
   },
   {
+
     "githubUrl": "https://github.com/mybigday/whisper.rn",
     "examples": ["https://github.com/mybigday/whisper.rn/tree/main/example"],
     "ios": true,
@@ -25465,6 +25466,15 @@
     "examples": ["https://github.com/rit3zh/toastiva/tree/main/example"],
     "ios": true,
     "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/BunnyWay/bunny-stream-react-native",
+    "npmPkg": "@bunny.net/stream-react-native",
+    "examples": [
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example",
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example-expo"
+    ],
     "newArchitecture": true
   }
 ]
