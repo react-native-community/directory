@@ -18,7 +18,7 @@ import {
   hasSecurityFile,
 } from '~/util/github/hasFiles';
 import hasNativeCode from '~/util/github/hasNativeCode';
-import hasSwiftPM, { type SwiftPMPackageJson } from '~/util/github/hasSwiftPM';
+import hasSwiftPM, { type SwiftPMConfig } from '~/util/github/hasSwiftPM';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
 import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
@@ -181,11 +181,11 @@ function getLintToolsFromPackageJson(packageJson: Record<string, string | Record
 }
 
 function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
-  let swiftPMPackageJson: SwiftPMPackageJson | undefined;
+  let swiftPMConfig: SwiftPMConfig | undefined;
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
-      swiftPMPackageJson = packageJson;
+      swiftPMConfig = packageJson?.swiftPMConfig;
       const CRNLType = packageJson['create-react-native-library']?.type;
       const CRNLVersion = packageJson['create-react-native-library']?.version;
 
@@ -306,7 +306,7 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
     hasSwiftPM: hasSwiftPM({
-      packageJson: swiftPMPackageJson,
+      swiftPMConfig,
       packageSwift: json.packageSwift?.text,
       iosPackageSwift: json.iosPackageSwift?.text,
       reactNativeConfig: json.reactNativeConfig?.text,
