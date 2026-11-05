@@ -5,21 +5,33 @@ import { View } from 'react-native';
 import { A, H5, useLayout } from '~/common/styleguide';
 import AddLibrarySelector from '~/components/AddLibrarySelector';
 import ContentContainer from '~/components/ContentContainer';
-import { GitHubIcon, Logo, ThemeDarkIcon, ThemeLightIcon, ToolsIcon } from '~/components/Icons';
+import {
+  GitHubIcon,
+  Logo,
+  SearchIcon,
+  ThemeDarkIcon,
+  ThemeLightIcon,
+  ToolsIcon,
+} from '~/components/Icons';
 import NavigationTab from '~/components/NavigationTab';
 import TopBarIconButton from '~/components/TopBarIconButton';
 import CustomAppearanceContext from '~/context/CustomAppearanceContext';
 import tw from '~/util/tailwind';
 
-export default function TopBar() {
+type Props = {
+  isSearchExpanded: boolean;
+  onSearchPress: () => void;
+};
+
+export default function TopBar({ isSearchExpanded, onSearchPress }: Props) {
   const { toggleTheme } = use(CustomAppearanceContext);
   const { isSmallScreen, isBelowMaxWidth } = useLayout();
 
   return (
     <HtmlHeader
-      style={tw`items-center justify-center gap-y-2.5 overflow-hidden bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
+      style={tw`relative z-30 items-center justify-center gap-y-2.5 bg-palette-gray7 py-3.5 dark:bg-very-dark`}>
       <View style={tw`-mt-[1.5px] w-full max-w-layout flex-row items-center justify-between px-4`}>
-        <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px]`]}>
+        <View style={[tw`flex-row items-center`, !isBelowMaxWidth && tw`min-w-[255px] pr-16`]}>
           <Logo style={tw`h-6.5 w-[29px] text-primary`} />
           <H5 style={[tw`-mt-0.5`, isBelowMaxWidth && tw`text-lg`]}>
             <A href="/" style={tw`ml-2 font-bold text-primary no-underline`}>
@@ -28,7 +40,7 @@ export default function TopBar() {
           </H5>
         </View>
         <View style={[isBelowMaxWidth && tw`mr-auto`, isSmallScreen && tw`hidden`]}>
-          <ContentContainer style={tw`flex-row gap-2.5 px-4`}>
+          <ContentContainer style={[tw`flex-row gap-2.5 px-4`, isBelowMaxWidth && tw`gap-1.5`]}>
             <NavigationTab title="Explore" path="/packages" />
             <NavigationTab title="Popular" />
             <NavigationTab title="Trending" />
@@ -36,9 +48,15 @@ export default function TopBar() {
         </View>
         <View
           style={[
-            tw`flex-row items-center justify-end gap-2.5`,
+            tw`flex-row items-center justify-end gap-2`,
             !isBelowMaxWidth && tw`min-w-[255px]`,
           ]}>
+          <TopBarIconButton
+            label={isSearchExpanded ? 'Close search' : 'Search libraries'}
+            tooltip={isSearchExpanded ? 'Close search' : 'Search libraries'}
+            onPress={onSearchPress}>
+            <SearchIcon style={tw`text-white`} />
+          </TopBarIconButton>
           <TopBarIconButton label="Toggle theme" tooltip="Toggle theme" onPress={toggleTheme}>
             {tw.prefixMatch('dark') ? (
               <ThemeLightIcon style={tw`text-white`} />

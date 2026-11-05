@@ -168,9 +168,18 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
               />
             );
           },
-          source: ({ srcSet, ...rest }: ComponentType<'source'>) => (
-            <source srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined} {...rest} />
-          ),
+          source: ({ srcSet, node, media, ...rest }: ComponentType<'source'>) => {
+            if (media?.includes('prefers-color-scheme: dark') && !isDark) {
+              return null;
+            }
+            return (
+              <source
+                {...rest}
+                srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined}
+                media={media}
+              />
+            );
+          },
           code: ({ children }: ComponentType<'code'>) => (
             <MarkdownInlineCode
               code={children}

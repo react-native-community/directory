@@ -6,6 +6,8 @@ import { CHECK_DATA_PATH, DATA_PATH, DEPENDANTS_PATH } from '~/util/Constants';
 
 import { getNewArchSupportStatus } from './newArchStatus';
 
+export const BLOB_PREFIX = process.env.BLOB_PREFIX ?? '';
+
 export async function fetchLatestData(): Promise<{
   latestData: DataAssetType;
   latestDependants: DependantsDataType;
@@ -19,8 +21,12 @@ export async function fetchLatestData(): Promise<{
   }
 
   const { blobs } = await list();
-  const latestDataBlob = getLatestBlob(blobs, 'data.json');
-  const latestDependantsBlob = getLatestBlob(blobs, 'dependants.json');
+  const latestDataBlob =
+    getLatestBlob(blobs, `${BLOB_PREFIX}data.json`) ??
+    (BLOB_PREFIX ? getLatestBlob(blobs, 'data.json') : undefined);
+  const latestDependantsBlob =
+    getLatestBlob(blobs, `${BLOB_PREFIX}dependants.json`) ??
+    (BLOB_PREFIX ? getLatestBlob(blobs, 'dependants.json') : undefined);
   const [latestData, latestDependants] = await Promise.all([
     latestDataBlob
       ? fetch(latestDataBlob.downloadUrl).then(

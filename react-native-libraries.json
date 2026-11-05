@@ -8392,7 +8392,9 @@
       "https://user-images.githubusercontent.com/10334791/27850595-62dc852e-615e-11e7-875c-57a017dbb28c.gif"
     ],
     "ios": true,
-    "android": true
+    "android": true,
+    "unmaintained": true,
+    "alternatives": ["react-native-alpr"]
   },
   {
     "githubUrl": "https://github.com/alex-melnyk/react-native-multibar",
@@ -25322,5 +25324,188 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/parkr-app/react-native-alpr",
+    "examples": ["https://github.com/parkr-app/react-native-alpr/tree/main/example"],
+    "images": [
+      "https://alpr.parkr.app/screenshots/ios-scan-bmw-i3.webp",
+      "https://alpr.parkr.app/screenshots/ios-photo-tesla-model-s.webp",
+      "https://alpr.parkr.app/screenshots/android-scan-nissan-e-nv200.webp"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/appy-to/react-native-appy",
+    "examples": ["https://github.com/appy-to/react-native-appy/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rnmapbox/navigation",
+    "npmPkg": "@rnmapbox/navigation",
+    "examples": [
+      "https://github.com/rnmapbox/navigation/tree/main/example",
+      "https://github.com/rnmapbox/navigation/tree/main/expo-example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/rnmapbox/navigation/main/assets/navigation-demo.webp"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-text-stream/tree/master/packages/react-native-text-stream",
+    "examples": ["https://github.com/pioner92/react-native-text-stream/tree/master/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-sync-tasks",
+    "examples": ["https://github.com/pioner92/react-native-sync-tasks/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-columnar",
+    "examples": ["https://github.com/pioner92/react-native-columnar/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/pioner92/react-native-ultra-base64",
+    "examples": ["https://github.com/pioner92/react-native-ultra-base64/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/thedev204/react-native-silk-dropdown",
+    "examples": ["https://github.com/thedev204/react-native-silk-dropdown/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/thedev204/react-native-silk-dropdown/refs/heads/main/assets/full.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/preview",
+    "npmPkg": "@axonpack/preview",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/preview/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/preview/docs/screenshots/list-header-servers.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/preview/docs/screenshots/list-published-previews.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/in-app-updates",
+    "npmPkg": "@axonpack/in-app-updates",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/in-app-updates/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/soft.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/forced.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/dark.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/brand.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/in-app-updates/docs/screenshots/custom.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print",
+    "npmPkg": "@axonpack/react-pretty-print",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print/example-native",
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-pretty-print/example-web"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-pretty-print/docs/screenshots/json-tree.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-pretty-print/docs/screenshots/xml-tree.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-pretty-print/docs/screenshots/code-highlight.png"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab",
+    "npmPkg": "@axonpack/react-native-devtools-tab",
+    "examples": [
+      "https://github.com/axonpack/axonpack/tree/HEAD/packages/%40axonpack/react-native-devtools-tab/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-native-devtools-tab/docs/screenshots/database-tab.png",
+      "https://raw.githubusercontent.com/axonpack/axonpack/main/packages/%40axonpack/react-native-devtools-tab/docs/screenshots/counter-tab.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/mybigday/whisper.rn",
+    "examples": ["https://github.com/mybigday/whisper.rn/tree/main/example"],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/rit3zh/toastiva/tree/main/packages/toastiva",
+    "examples": ["https://github.com/rit3zh/toastiva/tree/main/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-md-document",
+    "npmPkg": "@acertijosapps/react-native-md-document",
+    "examples": ["https://github.com/acertijosapps/react-native-md-document/tree/main/example"],
+    "images": [
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/showcase-light.png",
+      "https://unpkg.com/@acertijosapps/react-native-md-document/media/book-landscape-light.png"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/strait-link/strait-sdk-react-native",
+    "npmPkg": "@straitlink/react-native",
+    "examples": ["https://github.com/strait-link/strait-sdk-react-native/tree/main/examples/expo"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/SagarKhengat/react-native-offline-game",
+    "images": [
+      "https://raw.githubusercontent.com/SagarKhengat/react-native-offline-game/master/docs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/BunnyWay/bunny-stream-react-native",
+    "npmPkg": "@bunny.net/stream-react-native",
+    "examples": [
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example",
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example-expo"
+    ],
+    "newArchitecture": true
   }
 ]

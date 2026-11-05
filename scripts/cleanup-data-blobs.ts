@@ -7,7 +7,10 @@ async function deleteOutdatedBlobs() {
 
   const groupedBlobs = new Map<string, typeof blobs>();
   blobs.forEach(blob => {
-    const group = blob.pathname.startsWith('dependants') ? 'dependants' : 'data';
+    const isPreview = blob.pathname.startsWith('preview-');
+    const pathname = isPreview ? blob.pathname.slice('preview-'.length) : blob.pathname;
+    const type = pathname.startsWith('dependants') ? 'dependants' : 'data';
+    const group = `${isPreview ? 'preview' : 'production'}-${type}`;
     const groupBlobs = groupedBlobs.get(group) ?? [];
     groupBlobs.push(blob);
     groupedBlobs.set(group, groupBlobs);
