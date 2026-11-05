@@ -7,7 +7,12 @@ import githubRepos from '~/react-native-libraries.json';
 import { fetchNpmRegistryData } from '~/scripts/fetch-npm-registry-data';
 import { fetchNpmStatDataBulk } from '~/scripts/fetch-npm-stat-data';
 import { type DependantsDataType, type LibraryDataEntryType, type LibraryType } from '~/types';
-import { createCheckEndpointBlob, fetchLatestData, readLocalDataFile } from '~/util/blob';
+import {
+  BLOB_PREFIX,
+  createCheckEndpointBlob,
+  fetchLatestData,
+  readLocalDataFile,
+} from '~/util/blob';
 import { DATA_PATH, DEPENDANTS_PATH } from '~/util/Constants';
 import { isLaterThan, TimeRange } from '~/util/datetime';
 import { backfillUnpkgReadmeFile } from '~/util/scoring';
@@ -506,7 +511,7 @@ async function loadRepositoryDataAsync(existingLibraries: LibraryType[]): Promis
 async function uploadToStore(fileContent: string) {
   console.log('⬆️ Uploading data blob to the store');
   try {
-    await put('data.json', fileContent, { access: 'public', addRandomSuffix: true });
+    await put(`${BLOB_PREFIX}data.json`, fileContent, { access: 'public', addRandomSuffix: true });
   } catch (error) {
     if (error instanceof BlobAccessError) {
       console.error('❌ Cannot access the blob store, aborting!');
@@ -519,7 +524,10 @@ async function uploadToStore(fileContent: string) {
 
 async function uploadDependantsToStore(fileContent: string) {
   console.log('⬆️ Uploading package dependency index to the store');
-  await put('dependants.json', fileContent, { access: 'public', addRandomSuffix: true });
+  await put(`${BLOB_PREFIX}dependants.json`, fileContent, {
+    access: 'public',
+    addRandomSuffix: true,
+  });
 }
 
 async function fetchNpmStatDataSequentially(bulkList: string[][]) {
