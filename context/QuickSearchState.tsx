@@ -37,10 +37,6 @@ export function QuickSearchStateProvider({ children }: PropsWithChildren) {
       setSearchValue('');
     }
 
-    function handleRouteChangeError() {
-      setIsNavigating(false);
-    }
-
     router.events.on('beforeHistoryChange', handleBeforeHistoryChange);
     router.events.on('routeChangeComplete', handleRouteChangeComplete);
     return () => {
