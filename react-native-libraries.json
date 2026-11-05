@@ -25495,5 +25495,14 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/BunnyWay/bunny-stream-react-native",
+    "npmPkg": "@bunny.net/stream-react-native",
+    "examples": [
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example",
+      "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example-expo"
+    ],
+    "newArchitecture": true
   }
 ]
