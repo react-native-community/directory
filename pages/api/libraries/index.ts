@@ -86,6 +86,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     hasExample: parsedQuery.hasExample,
     hasImage: parsedQuery.hasImage,
     hasTypes: parsedQuery.hasTypes,
+    hasSwiftPM: parsedQuery.hasSwiftPM,
     hasNativeCode: parsedQuery.hasNativeCode,
     configPlugin: parsedQuery.configPlugin,
     isMaintained: parsedQuery.isMaintained,

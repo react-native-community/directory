@@ -18,6 +18,7 @@ import {
   hasSecurityFile,
 } from '~/util/github/hasFiles';
 import hasNativeCode from '~/util/github/hasNativeCode';
+import hasSwiftPM, { type SwiftPMConfig } from '~/util/github/hasSwiftPM';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
 
 import { getUpdatedUrl, makeGraphqlQuery, processTopics, REQUEST_SLEEP, sleep } from './helpers';
@@ -88,13 +89,17 @@ export async function fetchGithubData(
     const { isMonorepo, repoOwner, repoName, packagePath, branchName } = parseGitHubUrl(url);
     const fullName = `${repoOwner}/${repoName}`;
     const branch = branchName ?? 'HEAD';
+    const prefix = packagePath === '.' ? '' : `${packagePath}/`;
 
     const result = await makeGraphqlQuery(GitHubRepositoryQuery, {
       repoOwner,
       repoName,
       packagePath,
       packageFilesPath: packagePath === '.' ? `${branch}:` : `${branch}:${packagePath}`,
-      packageJsonPath: `${branch}:${packagePath === '.' ? '' : `${packagePath}/`}package.json`,
+      packageJsonPath: `${branch}:${prefix}package.json`,
+      packageSwiftPath: `${branch}:${prefix}Package.swift`,
+      iosPackageSwiftPath: `${branch}:${prefix}ios/Package.swift`,
+      reactNativeConfigPath: `${branch}:${prefix}react-native.config.js`,
       fetchRoot: packagePath !== '.',
     });
 
@@ -176,9 +181,11 @@ function getLintToolsFromPackageJson(packageJson: Record<string, string | Record
 }
 
 function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['github'] {
+  let swiftPMConfig: SwiftPMConfig | undefined;
   if (json.packageJson) {
     try {
       const packageJson = JSON.parse(json.packageJson.text);
+      swiftPMConfig = packageJson?.swiftPMConfig;
       const CRNLType = packageJson['create-react-native-library']?.type;
       const CRNLVersion = packageJson['create-react-native-library']?.version;
 
@@ -298,6 +305,13 @@ function createRepoDataWithResponse(json: any, monorepo: boolean): LibraryType['
     ...((hasAgentsFile(json.files) || hasAgentsFile(json.rootFiles)) && { hasAgents: true }),
     hasNativeCode: hasNativeCode(json.files),
     configPlugin: hasConfigPlugin(json.files),
+    hasSwiftPM: hasSwiftPM({
+      swiftPMConfig,
+      packageSwift: json.packageSwift?.text,
+      iosPackageSwift: json.iosPackageSwift?.text,
+      reactNativeConfig: json.reactNativeConfig?.text,
+      isExpoModule: json.moduleType === 'expo',
+    }),
     moduleType: json.moduleType,
     packageManager:
       json.packageManager ??

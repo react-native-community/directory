@@ -9,6 +9,7 @@
     "preview": "next build --webpack && next start",
     "lint": "oxlint --type-aware && oxfmt --check",
     "lint:fix": "oxlint --type-aware --fix && oxfmt",
+    "test": "bun test",
     "data:fetch": "bun scripts/fetch-latest-blobs",
     "data:update": "bun scripts/build-and-score-data",
     "data:update-missing": "bun scripts/build-and-score-data --missing-only",

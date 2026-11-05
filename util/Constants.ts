@@ -30,6 +30,7 @@ export const VALID_ENTRY_KEYS = new Set([
   'newArchitecture',
   'newArchitectureNote',
   'configPlugin',
+  'swiftPM',
   'alternatives',
   'npmPkg',
   'examples',
