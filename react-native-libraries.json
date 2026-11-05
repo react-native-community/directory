@@ -25453,5 +25453,13 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/strait-link/strait-sdk-react-native",
+    "npmPkg": "@straitlink/react-native",
+    "examples": ["https://github.com/strait-link/strait-sdk-react-native/tree/main/examples/expo"],
+    "ios": true,
+    "android": true,
+    "configPlugin": true
   }
 ]
