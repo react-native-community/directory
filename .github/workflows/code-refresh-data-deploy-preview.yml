@@ -1,0 +1,26 @@
+name: '[CODE] Refresh data and deploy preview website'
+
+on:
+  pull_request:
+    types: [labeled, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'deploy-with-data' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Deploy
+        shell: bash
+        run: bunx vercel --force --token "$VERCEL_TOKEN" --build-env BLOB_PREFIX=preview- --local-config ./vercel-with-data-refresh.json
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          VERCEL_ORG_ID: 'team_IsLEAhLb9cZj6y1Bud9XYmeK'
+          VERCEL_PROJECT_ID: 'QmecQ8hTu4DUHv6js5U8L9pJ9vp54mg1bmRLWaS5RZCyt4'
