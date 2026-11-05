@@ -1,8 +1,9 @@
-import { type PropsWithChildren, type ReactElement } from 'react';
+import { type PropsWithChildren, type ReactElement, useState } from 'react';
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { H1, H2, useLayout } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
+import QuickSearch from '~/components/QuickSearch';
 import TopBar from '~/components/TopBar';
 import tw from '~/util/tailwind';
 
@@ -23,10 +24,34 @@ export default function Navigation({
   style,
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
+  const [isSearchExpanded, setSearchExpanded] = useState(false);
+
+  function handleSearchPress() {
+    if (isSearchExpanded) {
+      setSearchExpanded(false);
+      return;
+    }
+
+    const searchInput =
+      document.getElementById('quick-search') ?? document.getElementById('search');
+    if (searchInput) {
+      searchInput.focus();
+      return;
+    }
+
+    setSearchExpanded(true);
+  }
 
   return (
     <>
-      <TopBar />
+      <TopBar isSearchExpanded={isSearchExpanded} onSearchPress={handleSearchPress} />
+      {isSearchExpanded && (
+        <QuickSearch
+          focusOnMount
+          onResultSelect={() => setSearchExpanded(false)}
+          style={tw`relative z-20 w-full self-center bg-palette-gray7 dark:bg-very-dark`}
+        />
+      )}
       {header ?? (
         <View
           style={[

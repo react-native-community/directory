@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   type ColorValue,
   type StyleProp,
@@ -26,12 +26,14 @@ import { SearchIcon, SpinnerIcon } from './Icons';
 import QuickSearchResult from './QuickSearchResult';
 
 type Props = {
+  focusOnMount?: boolean;
+  onResultSelect?: () => void;
   style?: StyleProp<ViewStyle>;
 };
 
 const RESULTS_LIMIT = 5;
 
-export default function QuickSearch({ style }: Props) {
+export default function QuickSearch({ focusOnMount = false, onResultSelect, style }: Props) {
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
   const [search, setSearch] = useState('');
 
@@ -42,6 +44,12 @@ export default function QuickSearch({ style }: Props) {
 
   const { push } = useRouter();
   const { isSmallScreen } = useLayout();
+
+  useEffect(() => {
+    if (focusOnMount) {
+      inputRef.current?.focus();
+    }
+  }, [focusOnMount]);
 
   const { data, isLoading } = useSWR<APIResponseType | undefined>(
     search.length ? `/api/libraries?search=${search}&limit=${RESULTS_LIMIT}` : undefined,
@@ -107,13 +115,14 @@ export default function QuickSearch({ style }: Props) {
     handleInputBlur();
     inputRef.current?.blur();
     setActiveResultIndex(null);
+    onResultSelect?.();
     await push(urlWithQuery(`/package/${npmPkg}`));
   }
 
   return (
     <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
       <View style={tw`relative z-20 w-full max-w-layout px-5`}>
-        <View style={tw`flex-row items-center`}>
+        <View style={tw`relative z-30 flex-row items-center`}>
           <View style={tw`pointer-events-none absolute left-4`}>
             {isLoading ? (
               <SpinnerIcon style={tw`-ml-0.5 text-primary`} />
@@ -200,52 +209,52 @@ export default function QuickSearch({ style }: Props) {
             </View>
           )}
         </View>
+        {shouldShowResults && (
+          <View
+            id="quick-search-results"
+            style={tw`absolute inset-x-5 top-[46px] z-10 rounded-b border-2 border-t-0 border-pewter shadow-xl dark:border-default`}>
+            {hasResults && (
+              <View style={tw`pb-1.5 pt-2`}>
+                {libraries.map((lib, index) => (
+                  <QuickSearchResult
+                    key={lib.npmPkg}
+                    index={index}
+                    library={lib}
+                    isActive={effectiveActiveResultIndex === index}
+                    onHoverChange={handleResultHoverChange}
+                    onSelect={handleResultSelect}
+                  />
+                ))}
+              </View>
+            )}
+            {hasResults && (data?.total ?? 0) > RESULTS_LIMIT && (
+              <View
+                style={[
+                  tw`flex flex-row items-center gap-1.5 rounded-b border-t border-default bg-palette-gray1 px-3 py-1.5 dark:bg-dark`,
+                  isSmallScreen ? tw`justify-center` : tw`justify-end`,
+                ]}>
+                <Label style={tw`font-light text-palette-gray4`}>
+                  There are{' '}
+                  <span style={tw`font-medium text-primary-darker dark:text-primary`}>
+                    {(data?.total ?? 0) - RESULTS_LIMIT}
+                  </span>{' '}
+                  more results
+                  {!isSmallScreen && (
+                    <>
+                      , press <span style={tw`font-medium`}>Enter</span> to see all of them
+                    </>
+                  )}
+                </Label>
+              </View>
+            )}
+            {!hasResults && (
+              <Caption style={tw`pb-4.5 pt-5.5 text-center font-light text-secondary`}>
+                There are no results for &quot;{search}&quot; query.
+              </Caption>
+            )}
+          </View>
+        )}
       </View>
-      {shouldShowResults && (
-        <View
-          id="quick-search-results"
-          style={tw`absolute inset-x-5 top-[60px] z-10 rounded-b border-2 border-t-0 border-pewter shadow-xl dark:border-default`}>
-          {hasResults && (
-            <View style={tw`pb-1.5 pt-2`}>
-              {libraries.map((lib, index) => (
-                <QuickSearchResult
-                  key={lib.npmPkg}
-                  index={index}
-                  library={lib}
-                  isActive={effectiveActiveResultIndex === index}
-                  onHoverChange={handleResultHoverChange}
-                  onSelect={handleResultSelect}
-                />
-              ))}
-            </View>
-          )}
-          {hasResults && (data?.total ?? 0) > RESULTS_LIMIT && (
-            <View
-              style={[
-                tw`flex flex-row items-center gap-1.5 rounded-b border-t border-default bg-palette-gray1 px-3 py-1.5 dark:bg-dark`,
-                isSmallScreen ? tw`justify-center` : tw`justify-end`,
-              ]}>
-              <Label style={tw`font-light text-palette-gray4`}>
-                There are{' '}
-                <span style={tw`font-medium text-primary-darker dark:text-primary`}>
-                  {(data?.total ?? 0) - RESULTS_LIMIT}
-                </span>{' '}
-                more results
-                {!isSmallScreen && (
-                  <>
-                    , press <span style={tw`font-medium`}>Enter</span> to see all of them
-                  </>
-                )}
-              </Label>
-            </View>
-          )}
-          {!hasResults && (
-            <Caption style={tw`pb-4.5 pt-5.5 text-center font-light text-secondary`}>
-              There are no results for &quot;{search}&quot; query.
-            </Caption>
-          )}
-        </View>
-      )}
     </View>
   );
 }
