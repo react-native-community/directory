@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import { type PropsWithChildren, type ReactElement, useEffect, useState } from 'react';
+import { type PropsWithChildren, type ReactElement } from 'react';
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { H1, H2, useLayout } from '~/common/styleguide';
 import { Logo } from '~/components/Icons';
 import QuickSearch from '~/components/QuickSearch';
 import TopBar from '~/components/TopBar';
+import { useQuickSearchState } from '~/context/QuickSearchState';
 import tw from '~/util/tailwind';
 
 type NavigationProps = PropsWithChildren<{
@@ -25,21 +25,12 @@ export default function Navigation({
   style,
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
-  const [isSearchExpanded, setSearchExpanded] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    function handleRouteChange() {
-      setSearchExpanded(false);
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => router.events.off('routeChangeComplete', handleRouteChange);
-  }, [router.events]);
+  const { isExpanded: isSearchExpanded, setIsExpanded, setSearchValue } = useQuickSearchState();
 
   function handleSearchPress() {
     if (isSearchExpanded) {
-      setSearchExpanded(false);
+      setIsExpanded(false);
+      setSearchValue('');
       return;
     }
 
@@ -50,7 +41,7 @@ export default function Navigation({
       return;
     }
 
-    setSearchExpanded(true);
+    setIsExpanded(true);
   }
 
   return (

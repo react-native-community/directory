@@ -13,6 +13,7 @@ import { useDebouncedCallback } from 'use-debounce';
 
 import { Caption, Label, useLayout } from '~/common/styleguide';
 import InputKeyHint from '~/components/InputKeyHint';
+import { useQuickSearchState } from '~/context/QuickSearchState';
 import {
   isSearchShortcutPressed,
   useSearchInputFocus,
@@ -34,10 +35,11 @@ const RESULTS_LIMIT = 5;
 
 export default function QuickSearch({ focusOnMount = false, style }: Props) {
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
-  const [search, setSearch] = useState('');
+  const { searchValue, setSearchValue } = useQuickSearchState();
+  const [search, setSearch] = useState(searchValue);
 
   const inputRef = useRef<TextInputInstance>(null);
-  const searchRef = useRef<string>('');
+  const searchRef = useRef(searchValue);
   const isApple = useSearchShortcut(inputRef);
   const { isInputFocused, handleInputFocus, handleInputBlur } = useSearchInputFocus();
 
@@ -69,6 +71,7 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
 
   function handleSearchChange(text: string) {
     searchRef.current = text;
+    setSearchValue(text);
     setActiveResultIndex(null);
     typingCallback(text);
   }
@@ -171,6 +174,7 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
                   event.preventDefault();
                   inputRef.current.clear();
                   searchRef.current = '';
+                  setSearchValue('');
                   setSearch('');
                 } else {
                   inputRef.current.blur();
@@ -180,6 +184,7 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
             onFocus={handleInputFocus}
             onBlur={handleSearchInputBlur}
             onChangeText={handleSearchChange}
+            value={searchValue}
             placeholder="Search libraries…"
             style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
             placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
