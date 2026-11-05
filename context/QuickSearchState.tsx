@@ -12,6 +12,7 @@ import {
 
 type QuickSearchState = {
   isExpanded: boolean;
+  isNavigating: boolean;
   setIsExpanded: Dispatch<SetStateAction<boolean>>;
   searchValue: string;
   setSearchValue: Dispatch<SetStateAction<string>>;
@@ -21,22 +22,36 @@ const QuickSearchStateContext = createContext<QuickSearchState | null>(null);
 
 export function QuickSearchStateProvider({ children }: PropsWithChildren) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const router = useRouter();
 
   useEffect(() => {
-    function handleRouteChange() {
+    function handleBeforeHistoryChange() {
+      setIsNavigating(true);
+    }
+
+    function handleRouteChangeComplete() {
+      setIsNavigating(false);
       setIsExpanded(false);
       setSearchValue('');
     }
 
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => router.events.off('routeChangeComplete', handleRouteChange);
+    function handleRouteChangeError() {
+      setIsNavigating(false);
+    }
+
+    router.events.on('beforeHistoryChange', handleBeforeHistoryChange);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    return () => {
+      router.events.off('beforeHistoryChange', handleBeforeHistoryChange);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
   }, [router.events]);
 
   const value = useMemo(
-    () => ({ isExpanded, setIsExpanded, searchValue, setSearchValue }),
-    [isExpanded, searchValue]
+    () => ({ isExpanded, isNavigating, setIsExpanded, searchValue, setSearchValue }),
+    [isExpanded, isNavigating, searchValue]
   );
 
   return (

@@ -25,9 +25,19 @@ export default function Navigation({
   style,
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
-  const { isExpanded: isSearchExpanded, setIsExpanded, setSearchValue } = useQuickSearchState();
+  const {
+    isExpanded: isSearchExpanded,
+    isNavigating,
+    setIsExpanded,
+    setSearchValue,
+  } = useQuickSearchState();
+  const isSearchVisible = isSearchExpanded && !isNavigating;
 
   function handleSearchPress() {
+    if (isNavigating) {
+      return;
+    }
+
     if (isSearchExpanded) {
       setIsExpanded(false);
       setSearchValue('');
@@ -46,8 +56,8 @@ export default function Navigation({
 
   return (
     <>
-      <TopBar isSearchExpanded={isSearchExpanded} onSearchPress={handleSearchPress} />
-      {isSearchExpanded && (
+      <TopBar isSearchExpanded={isSearchVisible} onSearchPress={handleSearchPress} />
+      {isSearchVisible && (
         <QuickSearch
           focusOnMount
           style={tw`relative z-20 w-full self-center bg-palette-gray7 dark:bg-very-dark`}
