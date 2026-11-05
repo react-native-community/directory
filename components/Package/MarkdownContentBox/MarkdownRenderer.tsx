@@ -168,8 +168,17 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
               />
             );
           },
-          source: ({ srcSet, ...rest }: ComponentType<'source'>) => (
-            <source srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined} {...rest} />
+          source: ({ srcSet, media, node, ...rest }: ComponentType<'source'>) => (
+            <source
+              {...rest}
+              srcSet={srcSet ? getReadmeAssetURL(srcSet, repoUrl) : undefined}
+              // README theme variants should follow the site's theme, not the OS preference.
+              media={media?.replace(
+                /^\s*\(\s*prefers-color-scheme\s*:\s*(dark|light)\s*\)\s*$/i,
+                (_, scheme: string) =>
+                  (scheme.toLowerCase() === 'dark') === isDark ? 'all' : 'not all'
+              )}
+            />
           ),
           code: ({ children }: ComponentType<'code'>) => (
             <MarkdownInlineCode
