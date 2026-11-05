@@ -27,13 +27,12 @@ import QuickSearchResult from './QuickSearchResult';
 
 type Props = {
   focusOnMount?: boolean;
-  onResultSelect?: () => void;
   style?: StyleProp<ViewStyle>;
 };
 
 const RESULTS_LIMIT = 5;
 
-export default function QuickSearch({ focusOnMount = false, onResultSelect, style }: Props) {
+export default function QuickSearch({ focusOnMount = false, style }: Props) {
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
   const [search, setSearch] = useState('');
 
@@ -115,7 +114,6 @@ export default function QuickSearch({ focusOnMount = false, onResultSelect, styl
     handleInputBlur();
     inputRef.current?.blur();
     setActiveResultIndex(null);
-    onResultSelect?.();
     await push(urlWithQuery(`/package/${npmPkg}`));
   }
 

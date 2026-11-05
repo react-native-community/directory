@@ -1,4 +1,5 @@
-import { type PropsWithChildren, type ReactElement, useState } from 'react';
+import { useRouter } from 'next/router';
+import { type PropsWithChildren, type ReactElement, useEffect, useState } from 'react';
 import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { H1, H2, useLayout } from '~/common/styleguide';
@@ -25,6 +26,16 @@ export default function Navigation({
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
   const [isSearchExpanded, setSearchExpanded] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    function handleRouteChange() {
+      setSearchExpanded(false);
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => router.events.off('routeChangeComplete', handleRouteChange);
+  }, [router.events]);
 
   function handleSearchPress() {
     if (isSearchExpanded) {
@@ -48,7 +59,6 @@ export default function Navigation({
       {isSearchExpanded && (
         <QuickSearch
           focusOnMount
-          onResultSelect={() => setSearchExpanded(false)}
           style={tw`relative z-20 w-full self-center bg-palette-gray7 dark:bg-very-dark`}
         />
       )}
