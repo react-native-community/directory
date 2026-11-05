@@ -25453,5 +25453,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/SagarKhengat/react-native-offline-game",
+    "images": [
+      "https://raw.githubusercontent.com/SagarKhengat/react-native-offline-game/master/docs/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
