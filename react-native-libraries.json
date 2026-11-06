@@ -25507,5 +25507,18 @@
       "https://github.com/BunnyWay/bunny-stream-react-native/tree/main/example-expo"
     ],
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/iamRio/react-native-multicolumn-modal-picker",
+    "examples": ["https://playground.getfores.com/"],
+    "images": [
+      "https://raw.githubusercontent.com/iamRio/react-native-multicolumn-modal-picker/main/assets/features-overview.png",
+      "https://raw.githubusercontent.com/iamRio/react-native-multicolumn-modal-picker/main/assets/singleColumnPicker.png",
+      "https://raw.githubusercontent.com/iamRio/react-native-multicolumn-modal-picker/main/assets/twoColumnSelector.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
