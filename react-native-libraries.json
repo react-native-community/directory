@@ -25463,5 +25463,20 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/hotcodepush-team/react-native-code-push",
+    "npmPkg": "@hotcodepush/react-native-code-push",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/hotcodepush-team/expo-ota-updates",
+    "npmPkg": "@hotcodepush/expo-ota-updates",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
