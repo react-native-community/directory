@@ -251,12 +251,12 @@ The response also includes distribution arrays used for statistic page. Each ent
       "bun": 145,
       "pnpm": 311,
       "npm": 544,
-      "yarn": 1391
+      "yarn": 1391,
     },
     "moduleType": {
       "expo": 329,
       "nitro": 165,
-      "turbo": 509
+      "turbo": 509,
     },
     "lintTools": {
       "oxlint": 158,
@@ -264,47 +264,47 @@ The response also includes distribution arrays used for statistic page. Each ent
       "eslint": 1690,
       "prettier": 1454,
       "biome": 109,
-      "commitlint": 760
+      "commitlint": 760,
     },
     "swiftPM": {
       "supported": 53,
-      "unsupported": 1264
+      "unsupported": 1264,
     },
     "scoreBuckets": [
       {
-          "label": "0-10",
-          "count": 1084
+        "label": "0-10",
+        "count": 1084,
       },
       // ...
     ],
     "dependencyBuckets": [
       {
-          "label": "None",
-          "count": 1700
+        "label": "None",
+        "count": 1700,
       },
       // ...
     ],
     "bundleSizeBuckets": [
       {
-          "label": "<100 kB",
-          "count": 1099
+        "label": "<100 kB",
+        "count": 1099,
       },
       // ...
     ],
     "licenseBuckets": [
       {
-          "label": "MIT",
-          "count": 2521
+        "label": "MIT",
+        "count": 2521,
       },
       // ...
     ],
     "topDependedOnPackages": [
       {
-          "label": "expo",
-          "count": 387
+        "label": "expo",
+        "count": 387,
       },
       // ...
-    ]
+    ],
   }
   ```
 
