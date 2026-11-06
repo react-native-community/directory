@@ -3,15 +3,16 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { View } from 'react-native';
 
-import { H4, H6Section, useLayout } from '~/common/styleguide';
+import { H4, H6Section, Label, useLayout } from '~/common/styleguide';
 import tw from '~/util/tailwind';
 
 type Props = {
   title: string;
+  note?: string;
   large?: boolean;
 };
 
-export default function StatisticChartHeader({ title, large = false }: Props) {
+export default function StatisticChartHeader({ title, note, large = false }: Props) {
   const { isSmallScreen } = useLayout();
 
   const HeaderTag = large ? H4 : H6Section;
@@ -35,11 +36,12 @@ export default function StatisticChartHeader({ title, large = false }: Props) {
         id={id}
         style={[
           tw`flex items-end justify-between text-secondary`,
-          isSmallScreen && tw`flex-col items-start gap-y-0.5`,
+          isSmallScreen && tw`flex-col items-start gap-y-1`,
         ]}>
         <Link href={`#${id}`} style={tw`text-secondary no-underline`}>
           {title}
         </Link>
+        {note && <Label style={tw`font-light text-secondary`}>{note}</Label>}
       </HeaderTag>
     </View>
   );

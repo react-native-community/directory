@@ -222,35 +222,89 @@ The response also includes distribution arrays used for statistic page. Each ent
 
   Response:
 
-  ```json
+  ```jsonc
   {
-    "total": 2736,
-    "newArchitecture": 1893,
-    "newArchitectureOnly": 75,
-    "newArchitectureUnknown": 829,
-    "downloads": 7380762848,
-    "weekDownloads": 1391864468,
-    "unmaintained": 797,
-    "withTypes": 1626,
-    "withNativeCode": 1123,
-    "withConfigPlugin": 243,
-    "ios": 2199,
-    "android": 2188,
-    "web": 506,
-    "expoGo": 972,
-    "windows": 67,
-    "macos": 44,
-    "fireos": 216,
-    "horizon": 3,
-    "tvos": 100,
-    "visionos": 32,
-    "vegaos": 55,
+    "total": 2822,
+    "newArchitecture": 2009,
+    "newArchitectureOnly": 109,
+    "newArchitectureUnknown": 799,
+    "downloads": 16472803107,
+    "weekDownloads": 3339408318,
+    "unmaintained": 908,
+    "withTypes": 2110,
+    "withNativeCode": 1437,
+    "withExamples": 1549,
+    "withConfigPlugin": 375,
+    "ios": 2668,
+    "android": 2654,
+    "web": 590,
+    "expoGo": 1035,
+    "windows": 73,
+    "macos": 55,
+    "fireos": 1105,
+    "harmony": 95,
+    "horizon": 4,
+    "tvos": 108,
+    "visionos": 34,
+    "vegaos": 587,
     "packageManager": {
-      "bun": 85,
-      "pnpm": 132,
-      "npm": 402,
-      "yarn": 1334
-    }
+      "bun": 145,
+      "pnpm": 311,
+      "npm": 544,
+      "yarn": 1391
+    },
+    "moduleType": {
+      "expo": 329,
+      "nitro": 165,
+      "turbo": 509
+    },
+    "lintTools": {
+      "oxlint": 158,
+      "oxfmt": 152,
+      "eslint": 1690,
+      "prettier": 1454,
+      "biome": 109,
+      "commitlint": 760
+    },
+    "swiftPM": {
+      "supported": 53,
+      "unsupported": 1264
+    },
+    "scoreBuckets": [
+      {
+          "label": "0-10",
+          "count": 1084
+      },
+      // ...
+    ],
+    "dependencyBuckets": [
+      {
+          "label": "None",
+          "count": 1700
+      },
+      // ...
+    ],
+    "bundleSizeBuckets": [
+      {
+          "label": "<100 kB",
+          "count": 1099
+      },
+      // ...
+    ],
+    "licenseBuckets": [
+      {
+          "label": "MIT",
+          "count": 2521
+      },
+      // ...
+    ],
+    "topDependedOnPackages": [
+      {
+          "label": "expo",
+          "count": 387
+      },
+      // ...
+    ]
   }
   ```
 

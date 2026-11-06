@@ -273,6 +273,10 @@ export type StatisticResultType = {
   packageManager: Record<PackageManagerType, number>;
   moduleType: Record<ModuleType, number>;
   lintTools: Record<LintToolType, number>;
+  swiftPM: {
+    supported: number;
+    unsupported: number;
+  };
   scoreBuckets: StatisticBucketType[];
   dependencyBuckets: StatisticBucketType[];
   bundleSizeBuckets: StatisticBucketType[];
