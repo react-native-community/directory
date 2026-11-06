@@ -380,19 +380,6 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/peterpme/react-native-face-pile",
-    "ios": true,
-    "android": true,
-    "expoGo": true
-  },
-  {
-    "githubUrl": "https://github.com/peterpme/react-native-asyncstorage",
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "unmaintained": true
-  },
-  {
     "githubUrl": "https://github.com/prscX/react-native-shine-button",
     "ios": true,
     "android": true
@@ -2382,14 +2369,6 @@
     "configPlugin": true
   },
   {
-    "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/ml",
-    "npmPkg": "@react-native-firebase/ml",
-    "ios": true,
-    "tvos": true,
-    "android": true,
-    "newArchitecture": true
-  },
-  {
     "githubUrl": "https://github.com/invertase/react-native-firebase/tree/main/packages/perf",
     "npmPkg": "@react-native-firebase/perf",
     "ios": true,
@@ -3686,7 +3665,7 @@
     "fireos": true
   },
   {
-    "githubUrl": "https://github.com/react-native-webview/react-native-webview",
+    "githubUrl": "https://github.com/react-native-webview/react-native-webview/tree/master/packages/react-native-webview",
     "ios": true,
     "android": true,
     "expoGo": true,
@@ -5455,7 +5434,7 @@
   {
     "githubUrl": "https://github.com/callstack/react-native-slider/tree/main/package",
     "examples": ["https://github.com/callstack/react-native-slider/tree/main/example"],
-    "npmPkg": "@react-native-community/slider",
+    "npmPkg": "@callstack/slider",
     "images": [
       "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png",
       "https://i.postimg.cc/CKdtbVqc/Screenshot-2019-03-25-at-11-26-54.png"
@@ -8703,17 +8682,6 @@
     "expoGo": true
   },
   {
-    "githubUrl": "https://github.com/shipt/osmosis/tree/development/osmosis",
-    "npmPkg": "@shipt/osmosis",
-    "examples": ["https://github.com/shipt/osmosis/tree/master/examples"],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true,
-    "vegaos": true,
-    "fireos": true
-  },
-  {
     "githubUrl": "https://github.com/FormidableLabs/react-native-owl",
     "examples": ["https://github.com/FormidableLabs/react-native-owl/tree/main/example"],
     "ios": true,
@@ -9074,17 +9042,6 @@
     "vegaos": true
   },
   {
-    "githubUrl": "https://github.com/erksch/react-native-wheely",
-    "images": [
-      "https://raw.githubusercontent.com/erksch/react-native-wheely/master/screenshots/design_5_gray.jpg",
-      "https://raw.githubusercontent.com/erksch/react-native-wheely/master/screenshots/design_5_blue.jpg"
-    ],
-    "ios": true,
-    "android": true,
-    "web": true,
-    "expoGo": true
-  },
-  {
     "githubUrl": "https://github.com/iamolegga/react-native-launch-arguments",
     "ios": true,
     "android": true,
@@ -9155,18 +9112,6 @@
     "githubUrl": "https://github.com/KjellConnelly/react-native-shared-group-preferences",
     "ios": true,
     "android": true
-  },
-  {
-    "githubUrl": "https://github.com/shipt/segmented-arc-for-react-native",
-    "npmPkg": "@shipt/segmented-arc-for-react-native",
-    "examples": ["https://github.com/shipt/segmented-arc-for-react-native/tree/master/example"],
-    "images": [
-      "https://raw.githubusercontent.com/shipt/segmented-arc-for-react-native/development/example.gif"
-    ],
-    "ios": true,
-    "android": true,
-    "expoGo": true,
-    "fireos": true
   },
   {
     "githubUrl": "https://github.com/Bur0/react-native-actions-sheet-picker",
@@ -19735,6 +19680,7 @@
   },
   {
     "githubUrl": "https://github.com/XBigTK13X/expo-libmpv",
+    "npmPkg": "@snowsuite/expo-libmpv",
     "examples": ["https://github.com/XBigTK13X/expo-libmpv/tree/master/example"],
     "android": true
   },
@@ -20567,12 +20513,6 @@
     "examples": ["https://github.com/callstackincubator/ai/tree/main/apps/expo-example"],
     "ios": true,
     "android": true,
-    "newArchitecture": true
-  },
-  {
-    "githubUrl": "https://github.com/callstackincubator/ai/tree/main/packages/mlc",
-    "npmPkg": "@react-native-ai/mlc",
-    "ios": true,
     "newArchitecture": true
   },
   {
@@ -24309,9 +24249,12 @@
     "android": true
   },
   {
-    "githubUrl": "https://github.com/nobodywho-ooo/nobodywho/tree/main/nobodywho/react-native",
+    "githubUrl": "https://github.com/nobodywho-ooo/nobodywho/tree/main/nobodywho/js",
     "npmPkg": "react-native-nobodywho",
-    "examples": ["https://github.com/nobodywho-ooo/react-native-starter-example"],
+    "examples": [
+      "https://github.com/nobodywho-ooo/react-native-starter-example",
+      "https://github.com/nobodywho-ooo/nobodywho/tree/main/nobodywho/testing-apps/react-native"
+    ],
     "images": [
       "https://raw.githubusercontent.com/nobodywho-ooo/react-native-starter-example/main/preview.png"
     ],
