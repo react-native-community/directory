@@ -5,6 +5,7 @@ import dependants from '~/assets/dependants.json';
 import { type DataAssetType, type StatisticBucketType, type StatisticResultType } from '~/types';
 import { DEFAULT_RESPONSE_CACHE_HEADER } from '~/util/Constants';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
+import { getSwiftPMSupport } from '~/util/swiftPMStatus';
 
 const DATASET = data as DataAssetType;
 const DEPENDANTS = dependants as Record<string, string[]>;
@@ -74,6 +75,10 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
       biome: 0,
       commitlint: 0,
     },
+    swiftPM: {
+      supported: 0,
+      unsupported: 0,
+    },
     scoreBuckets: createBuckets(SCORE_BUCKET_LABELS),
     dependencyBuckets: createBuckets([...DEPENDENCY_BUCKETS.map(({ label }) => label), 'Unknown']),
     bundleSizeBuckets: createBuckets([...BUNDLE_SIZE_BUCKETS.map(({ label }) => label), 'Unknown']),
@@ -139,6 +144,16 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.ios) {
       result.ios++;
+
+      const hasSwiftPMSupport = getSwiftPMSupport(library);
+
+      if (library.github.hasNativeCode) {
+        if (hasSwiftPMSupport) {
+          result.swiftPM.supported++;
+        } else {
+          result.swiftPM.unsupported++;
+        }
+      }
     }
 
     if (library.android) {

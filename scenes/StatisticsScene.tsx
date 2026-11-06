@@ -149,6 +149,22 @@ export default function StatisticsScene({ statistic }: Props) {
           ]}
           total={statistic.total}
         />
+        <StatisticChartHeader
+          title="Swift Package Manager support"
+          note="iOS libraries with native code"
+          large
+        />
+        <StatisticsBarChart
+          data={[
+            { label: 'Yes', count: statistic.swiftPM.supported },
+            {
+              label: 'No',
+              count: statistic.swiftPM.unsupported,
+              secondary: true,
+            },
+          ]}
+          total={statistic.swiftPM.unsupported + statistic.swiftPM.supported}
+        />
         <H2 style={tw`mt-8 text-center`}>Package-based statistics</H2>
         <StatisticChartHeader title="Most depended-on packages" large />
         <StatisticsBarChart

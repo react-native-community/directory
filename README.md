@@ -67,6 +67,7 @@
   "vegaos": false,
   "newArchitecture": false,
   "configPlugin": false,
+  "swiftPM": false,
   "unmaintained": false,
   "dev": false
 }
