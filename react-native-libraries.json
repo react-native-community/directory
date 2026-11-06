@@ -25478,5 +25478,32 @@
     "android": true,
     "newArchitecture": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/react",
+    "npmPkg": "@flare-engine/react",
+    "examples": [
+      "https://github.com/grzott/flare-engine/tree/main/packages/create/templates/blank",
+      "https://github.com/grzott/flare-engine/tree/main/packages/create/templates/topdown"
+    ],
+    "android": true,
+    "web": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/progression",
+    "npmPkg": "@flare-engine/progression",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/dynamics",
+    "npmPkg": "@flare-engine/dynamics",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
