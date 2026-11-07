@@ -25487,6 +25487,9 @@
       "https://github.com/grzott/flare-engine/tree/main/packages/create/templates/blank",
       "https://github.com/grzott/flare-engine/tree/main/packages/create/templates/topdown"
     ],
+    "images": [
+      "https://raw.githubusercontent.com/grzott/flare-engine/main/docs/assets/readme/showcases.gif"
+    ],
     "android": true,
     "web": true,
     "newArchitecture": true
