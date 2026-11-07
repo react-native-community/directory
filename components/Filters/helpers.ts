@@ -10,6 +10,10 @@ export const FILTER_PLATFORMS: FilterParamsType[] = [
     title: 'iOS',
   },
   {
+    param: 'linux',
+    title: 'Linux',
+  },
+  {
     param: 'macos',
     title: 'macOS',
   },

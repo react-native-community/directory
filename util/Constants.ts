@@ -19,6 +19,7 @@ export const VALID_ENTRY_KEYS = new Set([
   'expoGo',
   'windows',
   'macos',
+  'linux',
   'fireos',
   'harmony',
   'horizon',

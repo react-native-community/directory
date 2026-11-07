@@ -22,6 +22,7 @@ export type Query = {
   android?: string;
   expoGo?: string;
   ios?: string;
+  linux?: string;
   macos?: string;
   fireos?: string;
   tvos?: string;
@@ -159,6 +160,7 @@ export type LibraryDataEntryType = {
   expoGo?: boolean;
   windows?: boolean;
   macos?: boolean;
+  linux?: boolean;
   fireos?: boolean;
   harmony?: boolean | string;
   horizon?: boolean;
@@ -264,6 +266,7 @@ export type StatisticResultType = {
   expoGo: number;
   windows: number;
   macos: number;
+  linux: number;
   fireos: number;
   harmony: number;
   horizon: number;

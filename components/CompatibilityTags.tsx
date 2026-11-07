@@ -20,6 +20,7 @@ export default function CompatibilityTags({ library, small }: Props) {
   const platforms = [
     library.android ? 'Android' : null,
     library.ios ? 'iOS' : null,
+    library.linux ? 'Linux' : null,
     library.macos ? 'macOS' : null,
     library.tvos ? 'tvOS' : null,
     library.visionos ? 'visionOS' : null,
