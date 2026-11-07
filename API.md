@@ -27,7 +27,7 @@ Return a list of libraries from the dataset. Supports sorting, full-text search,
   - `owner` - filter by owner name.
   - `dependantsOf` - filter to directory packages that depend on the specified npm package.
   - `topic` - filter by topic or tag.
-  - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `expoGo`, `fireos`, `harmony`, `horizon`, `tvos`, `visionos`, `vegaos`.
+  - Platform support filters (booleans): `ios`, `android`, `web`, `windows`, `macos`, `linux`, `expoGo`, `fireos`, `harmony`, `horizon`, `tvos`, `visionos`, `vegaos`.
   - Feature filters (booleans): `hasExample`, `hasImage`, `hasTypes`, `hasSwiftPM`, `hasNativeCode`, `configPlugin`.
   - Quality filters (booleans): `isMaintained`, `isPopular`, `wasRecentlyUpdated`.
   - Architecture filters (booleans): `newArchitecture`, `expoModule`, `nitroModule`, `turboModule`.
@@ -241,6 +241,7 @@ The response also includes distribution arrays used for statistic page. Each ent
     "expoGo": 1035,
     "windows": 73,
     "macos": 55,
+    "linux": 1,
     "fireos": 1105,
     "harmony": 95,
     "horizon": 4,

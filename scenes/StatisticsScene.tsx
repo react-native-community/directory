@@ -28,6 +28,7 @@ export default function StatisticsScene({ statistic }: Props) {
   const platforms = [
     { label: 'Android', count: statistic.android },
     { label: 'iOS', count: statistic.ios },
+    { label: 'Linux', count: statistic.linux },
     { label: 'macOS', count: statistic.macos },
     { label: 'tvOS', count: statistic.tvos },
     { label: 'visionOS', count: statistic.visionos },

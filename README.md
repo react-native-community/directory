@@ -58,6 +58,7 @@
   "web": false,
   "windows": false,
   "macos": false,
+  "linux": false,
   "tvos": false,
   "visionos": false,
   "expoGo": false,
@@ -123,6 +124,8 @@
   **(boolean)** - can be used with [`react-native-windows`](https://github.com/microsoft/react-native-windows).
 - #### `macos`
   **(boolean)** - can be used with [`react-native-macos`](https://github.com/microsoft/react-native-macos).
+- #### `linux`
+  **(boolean)** - works on Linux, where the only runtime today is [`basalt-core`](https://github.com/vincentvella/basalt).
 - #### `tvos`
   **(boolean)** - can be used with [`react-native-tvos`](https://github.com/react-native-tvos/react-native-tvos).
 - #### `visionos`

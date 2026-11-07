@@ -75,6 +75,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       web: parsedQuery.web,
       windows: parsedQuery.windows,
       macos: parsedQuery.macos,
+      linux: parsedQuery.linux,
       expoGo: parsedQuery.expoGo,
       fireos: parsedQuery.fireos,
       harmony: parsedQuery.harmony,

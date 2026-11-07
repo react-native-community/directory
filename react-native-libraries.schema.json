@@ -51,6 +51,12 @@
         "title": "Package supports macOS (react-native-macos)",
         "default": false
       },
+      "linux": {
+        "$id": "#/items/properties/linux",
+        "type": "boolean",
+        "title": "Package supports Linux (e.g. with Basalt)",
+        "default": false
+      },
       "tvos": {
         "$id": "#/items/properties/tvos",
         "type": "boolean",

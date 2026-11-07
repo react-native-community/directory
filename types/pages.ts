@@ -26,6 +26,7 @@ export type PopularPageProps = {
   android: APIResponseType;
   ios: APIResponseType;
   web: APIResponseType;
+  linux: APIResponseType;
   macos: APIResponseType;
   tvos: APIResponseType;
   visionos: APIResponseType;

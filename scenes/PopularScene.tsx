@@ -21,6 +21,7 @@ export default function PopularScene({
   android,
   ios,
   web,
+  linux,
   macos,
   tvos,
   visionos,
@@ -63,6 +64,7 @@ export default function PopularScene({
         <ExploreSection title="Windows" icon={PlatformWindows} data={windows.libraries} />
         <ExploreSection title="Expo Go" icon={PlatformExpo} data={expoGo.libraries} />
         <ExploreSection title="Fire OS" data={fireos.libraries} />
+        {linux.libraries.length >= 2 && <ExploreSection title="Linux" data={linux.libraries} />}
         {harmony.libraries.length >= 2 && (
           <ExploreSection title="HarmonyOS" data={harmony.libraries} />
         )}

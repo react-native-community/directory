@@ -50,6 +50,7 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
     expoGo: 0,
     windows: 0,
     macos: 0,
+    linux: 0,
     fireos: 0,
     harmony: 0,
     horizon: 0,
@@ -194,6 +195,10 @@ export default function handler(_: NextApiRequest, res: NextApiResponse) {
 
     if (library.visionos) {
       result.visionos++;
+    }
+
+    if (library.linux) {
+      result.linux++;
     }
 
     if (library.vegaos) {
