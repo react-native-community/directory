@@ -23222,6 +23222,13 @@
     "newArchitecture": true,
     "fireos": true
   },
+    {
+    "githubUrl": "https://github.com/Mehul214/rn-build-doctor",
+    "npmPkg": "@mehul214/rn-build-doctor",
+    "android": true,
+    "ios": true,
+    "dev": true
+  },
   {
     "githubUrl": "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/packages/react-native-quick-preview",
     "examples": [
