@@ -25509,5 +25509,30 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+    {
+    "githubUrl": "https://github.com/Mehul214/react-native-flash-toast",
+    "npmPkg": "@mehul214/react-native-flash-toast",
+    "examples": [],
+    "images": [
+      "https://raw.githubusercontent.com/Mehul214/react-native-flash-toast/main/assets/demo-ios.gif",
+      "https://raw.githubusercontent.com/Mehul214/react-native-flash-toast/main/assets/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "web": true,
+    "windows": false,
+    "macos": false,
+    "tvos": false,
+    "visionos": false,
+    "expoGo": true,
+    "fireos": false,
+    "harmony": false,
+    "horizon": false,
+    "vegaos": false,
+    "newArchitecture": true,
+    "configPlugin": false,
+    "unmaintained": false,
+    "dev": false
   }
 ]
