@@ -25523,5 +25523,29 @@
     "android": true,
     "newArchitecture": true,
     "newArchitectureNote": "Legacy bridge module that runs on the New Architecture through the interop layer (tested with React Native 0.86)."
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/particles",
+    "npmPkg": "@flare-engine/particles",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/animation",
+    "npmPkg": "@flare-engine/animation",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/grzott/flare-engine/tree/main/packages/dialogue",
+    "npmPkg": "@flare-engine/dialogue",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
   }
 ]
