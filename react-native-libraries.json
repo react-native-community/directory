@@ -25509,5 +25509,19 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-in-app-store-review",
+    "npmPkg": "@acertijosapps/react-native-in-app-store-review",
+    "examples": [
+      "https://github.com/acertijosapps/react-native-in-app-store-review/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/acertijosapps/react-native-in-app-store-review/main/assets/demo.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Legacy bridge module that runs on the New Architecture through the interop layer (tested with React Native 0.86)."
   }
 ]
