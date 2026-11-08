@@ -21721,6 +21721,7 @@
     "examples": ["https://github.com/chocky335/react-native-swipeable-actions/tree/main/example"],
     "ios": true,
     "android": true,
+    "newArchitecture": "new-arch-only",
     "swiftPM": false
   },
   {
