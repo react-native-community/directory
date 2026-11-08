@@ -23222,13 +23222,6 @@
     "newArchitecture": true,
     "fireos": true
   },
-    {
-    "githubUrl": "https://github.com/Mehul214/rn-build-doctor",
-    "npmPkg": "@mehul214/rn-build-doctor",
-    "android": true,
-    "ios": true,
-    "dev": true
-  },
   {
     "githubUrl": "https://github.com/Hashtagsmile/react-native-quick-preview/tree/main/packages/react-native-quick-preview",
     "examples": [
@@ -25530,5 +25523,12 @@
     "android": true,
     "newArchitecture": true,
     "newArchitectureNote": "Legacy bridge module that runs on the New Architecture through the interop layer (tested with React Native 0.86)."
+  },
+  {
+    "githubUrl": "https://github.com/Mehul214/rn-build-doctor",
+    "npmPkg": "@mehul214/rn-build-doctor",
+    "android": true,
+    "ios": true,
+    "dev": true
   }
 ]
