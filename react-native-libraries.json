@@ -25555,5 +25555,12 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Mehul214/rn-build-doctor",
+    "npmPkg": "@mehul214/rn-build-doctor",
+    "android": true,
+    "ios": true,
+    "dev": true
   }
 ]
