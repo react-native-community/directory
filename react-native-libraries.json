@@ -25569,5 +25569,18 @@
     "android": true,
     "web": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/acertijosapps/react-native-select-horizontal",
+    "npmPkg": "@acertijosapps/react-native-select-horizontal",
+    "examples": [
+      "https://github.com/acertijosapps/react-native-select-horizontal/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/acertijosapps/react-native-select-horizontal/main/assets/preview.png"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
