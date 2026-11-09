@@ -21503,6 +21503,9 @@
   {
     "githubUrl": "https://github.com/damix00/expo-screen-corner-radius",
     "examples": ["https://github.com/damix00/expo-screen-corner-radius/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/damix00/expo-screen-corner-radius/main/docs/screenshots/showcase.png"
+    ],
     "ios": true,
     "android": true,
     "newArchitecture": true
