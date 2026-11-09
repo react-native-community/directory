@@ -33,16 +33,16 @@
     "@radix-ui/react-popover": "^1.3.1",
     "@radix-ui/react-tooltip": "^1.4.1",
     "@react-native-picker/picker": "^2.11.4",
-    "@sentry/react": "^11.10.0",
-    "@videojs/react": "10.2.0",
+    "@sentry/react": "^11.11.0",
+    "@videojs/react": "10.3.0",
     "@visx/gradient": "^4.0.0",
     "@visx/responsive": "^4.0.0",
     "@visx/xychart": "^4.0.0",
     "crypto-js": "^4.2.0",
-    "es-toolkit": "^1.53.1",
-    "expo": "58.0.22",
+    "es-toolkit": "^1.53.2",
+    "expo": "58.0.23",
     "expo-font": "58.0.11",
-    "next": "^16.4.4",
+    "next": "^16.4.5",
     "node-emoji": "^2.2.0",
     "postcss": "^8.5.32",
     "react": "19.3.1",
@@ -51,7 +51,7 @@
     "react-easy-linkify": "^1.0.8",
     "react-native": "0.88.1",
     "react-native-safe-area-context": "^5.11.1",
-    "react-native-svg": "^15.16.0",
+    "react-native-svg": "^15.16.1",
     "react-native-web": "^0.21.4",
     "react-shiki": "0.11.2",
     "rehype-raw": "^7.0.0",
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@expo/next-adapter": "^6.0.0",
-    "@next/bundle-analyzer": "^16.4.4",
+    "@next/bundle-analyzer": "^16.4.5",
     "@pobammer-ts/small-rules": "^3.11.0",
     "@types/bun": "^1.4.4",
     "@types/crypto-js": "^4.2.2",
@@ -81,11 +81,11 @@
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.5",
-    "oxfmt": "^0.76.0",
-    "oxlint": "^1.90.0",
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
     "oxlint-plugin-golden": "^0.1.2",
     "oxlint-plugin-react-doctor": "^0.9.22",
-    "oxlint-tsgolint": "^7.0.2005",
+    "oxlint-tsgolint": "^7.0.2006",
     "simple-git-hooks": "^2.14.0",
     "typescript": "^7.0.2",
     "user-agent-data-types": "^0.4.3"
@@ -103,6 +103,6 @@
   },
   "patchedDependencies": {
     "react-native@0.88.1": "patches/react-native@0.88.1.patch",
-    "react-native-svg@15.16.0": "patches/react-native-svg@15.16.0.patch"
+    "react-native-svg@15.16.1": "patches/react-native-svg@15.16.1.patch"
   }
 }
