@@ -25596,5 +25596,16 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/BohdanShh/react-native-peek-menu",
+    "examples": ["https://github.com/BohdanShh/react-native-peek-menu/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/BohdanShh/react-native-peek-menu/main/.github/demo.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
