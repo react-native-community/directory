@@ -4057,6 +4057,8 @@
     "githubUrl": "https://github.com/react-native-webrtc/react-native-webrtc",
     "ios": true,
     "android": true,
+    "newArchitecture": true,
+    "newArchitectureNote": "Supported through the interop layer for legacy native modules and views (React Native 0.82+ is New Architecture only). Known Android issue: https://github.com/react-native-webrtc/react-native-webrtc/issues/1611",
     "configPlugin": "https://github.com/expo/config-plugins/tree/main/packages/react-native-webrtc"
   },
   {
