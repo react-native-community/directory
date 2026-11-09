@@ -25557,6 +25557,20 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/Mehul214/rn-build-doctor",
+    "npmPkg": "@mehul214/rn-build-doctor",
+    "android": true,
+    "ios": true,
+    "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/Yindeish/expo-styles",
+    "ios": true,
+    "android": true,
+    "web": true,
+    "expoGo": true
+  },
+  {
     "githubUrl": "https://github.com/acertijosapps/react-native-select-horizontal",
     "npmPkg": "@acertijosapps/react-native-select-horizontal",
     "examples": [
