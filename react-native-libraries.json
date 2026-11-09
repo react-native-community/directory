@@ -25583,5 +25583,15 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/chocky335/react-native-theme-reveal",
+    "examples": ["https://github.com/chocky335/react-native-theme-reveal/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/chocky335/react-native-theme-reveal/main/docs/media/hero-star-reveal.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
