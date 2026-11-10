@@ -25646,5 +25646,11 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/ufortstephen/localize-dev",
+    "ios": true,
+    "android": true,
+    "dev": true
   }
 ]
