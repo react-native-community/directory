@@ -25644,6 +25644,7 @@
     "githubUrl": "https://github.com/kirill3333/react-native-trading-charts",
     "examples": ["https://github.com/kirill3333/react-native-trading-charts/tree/main/example"],
     "ios": true,
-    "android": true
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
