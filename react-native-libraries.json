@@ -25620,5 +25620,24 @@
     "ios": true,
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-tgfx/tree/main/packages/react-native-tgfx",
+    "examples": ["https://github.com/margelo/react-native-tgfx/tree/main/apps/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/margelo/react-native-tgfx/tree/main/packages/react-native-tgfx-vision-camera",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/nguyenphutrong/expo-accessory-setup",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
