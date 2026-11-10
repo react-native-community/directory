@@ -25609,5 +25609,16 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/FirasHmedi/afterdb",
+    "npmPkg": "@pomwik/afterdb",
+    "examples": [
+      "https://github.com/FirasHmedi/afterdb/tree/main/example",
+      "https://github.com/FirasHmedi/afterdb/tree/main/examples/expo-58"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
