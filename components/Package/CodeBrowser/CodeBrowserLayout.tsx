@@ -94,7 +94,11 @@ export default function CodeBrowserLayout({
       id="codeBrowser"
       style={[
         tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
-        isBrowserMaximized ? tw`inset-0 mt-0 flex-1 rounded-none border-0` : tw`h-[70vh]`,
+        isBrowserMaximized
+          ? tw`inset-0 mt-0 flex-1 rounded-none border-0`
+          : isSmallScreen
+            ? tw`h-[82.5vh]`
+            : tw`h-[70vh]`,
         isBrowserMaximized && {
           position: 'fixed',
         },
@@ -103,14 +107,19 @@ export default function CodeBrowserLayout({
       <View
         style={[
           tw`flex flex-row`,
-          isBrowserMaximized ? tw`flex-1 border-l-0` : tw`h-[70vh]`,
+          isBrowserMaximized
+            ? tw`flex-1 border-l-0`
+            : isSmallScreen
+              ? tw`h-[82.5vh]`
+              : tw`h-[70vh]`,
           isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
           isSmallScreen && tw`flex-col`,
         ]}>
         {sidebar != null && (
           <View
             style={[
-              tw`relative z-10 flex h-full flex-shrink-0`,
+              tw`relative z-10 flex flex-shrink-0`,
+              !isSmallScreen && tw`h-full`,
               !isSmallScreen && { width: fileTreeWidth },
               isSmallScreen && tw`w-full`,
             ]}>
@@ -135,7 +144,7 @@ export default function CodeBrowserLayout({
           style={[
             tw`flex flex-1`,
             hasActiveContent && tw`bg-white dark:bg-[#0d1117]`,
-            isSmallScreen && !isBrowserMaximized && tw`min-h-[50vh]`,
+            isSmallScreen && tw`min-h-0`,
           ]}>
           {content}
         </View>
