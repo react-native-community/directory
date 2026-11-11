@@ -25652,5 +25652,11 @@
     "ios": true,
     "android": true,
     "dev": true
+  },
+  {
+    "githubUrl": "https://github.com/equationalapplications/expo-two-way-audio",
+    "npmPkg": "@equationalapplications/expo-two-way-audio",
+    "ios": true,
+    "android": true
   }
 ]
