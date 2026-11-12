@@ -248,7 +248,7 @@ export default function CodeBrowserVersionDiff({
             style={[
               tw`border-palette-gray2 dark:border-default`,
               !isSmallScreen && tw`flex-1 border-r`,
-              isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
+              isSmallScreen && tw`h-[25vh] flex-grow-0 border-b`,
             ]}
             contentContainerStyle={tw`pt-2`}>
             <CodeBrowserFileTree
@@ -295,7 +295,7 @@ export default function CodeBrowserVersionDiff({
             ) : (
               <View
                 id={settings.wordWrap ? 'code-browser-word-wrap' : undefined}
-                style={tw`flex-1`}>
+                style={tw`min-h-0 flex-1`}>
                 <FlatList
                   id="codeBrowserDiffList"
                   data={diffListItems}

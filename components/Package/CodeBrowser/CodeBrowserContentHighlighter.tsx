@@ -28,22 +28,24 @@ export default function CodeBrowserContentHighlighter({
 
   if (!highlighter) {
     return (
-      <pre
-        className="shiki"
-        style={wordWrap ? { whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } : undefined}>
-        <code
-          style={{
-            display: 'flex',
-            paddingLeft: showLineNumbers ? 29 : undefined,
-          }}>
-          {code}
-        </code>
-      </pre>
+      <View style={tw`min-h-0 flex-1`}>
+        <pre
+          className="shiki"
+          style={wordWrap ? { whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } : undefined}>
+          <code
+            style={{
+              display: 'flex',
+              paddingLeft: showLineNumbers ? 29 : undefined,
+            }}>
+            {code}
+          </code>
+        </pre>
+      </View>
     );
   }
 
   return (
-    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`flex-1`}>
+    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`min-h-0 flex-1`}>
       {highlighter}
     </View>
   );

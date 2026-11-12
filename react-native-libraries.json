@@ -25654,6 +25654,14 @@
     "dev": true
   },
   {
+    "githubUrl": "https://github.com/Hassaan68/react-native-agent-guard",
+    "examples": ["https://github.com/Hassaan68/react-native-agent-guard/tree/main/examples"],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
+  },
+  {
     "githubUrl": "https://github.com/equationalapplications/expo-two-way-audio",
     "npmPkg": "@equationalapplications/expo-two-way-audio",
     "ios": true,

@@ -194,7 +194,7 @@ export default function CodeBrowser({
               style={[
                 tw`border-palette-gray2 dark:border-default`,
                 !isSmallScreen && tw`flex-1 border-r`,
-                isSmallScreen && tw`h-[300px] flex-grow-0 border-b`,
+                isSmallScreen && tw`h-[25vh] flex-grow-0 border-b`,
               ]}
               contentContainerStyle={tw`pt-2`}>
               {filteredFiles.length > 0 ? (

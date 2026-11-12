@@ -25,15 +25,23 @@ export default function RepositoryContributors({ fullName }: Props) {
     {
       dedupingInterval: TimeRange.HOUR * 1000,
       revalidateOnFocus: false,
+      fallbackData: [],
     }
   );
 
-  const contributors = (data ?? []).sort((a, b) => {
-    if (a.contributions === b.contributions) {
-      return a.login.localeCompare(b.login);
-    }
-    return a.contributions < b.contributions ? 1 : -1;
-  });
+  const contributors =
+    data && Array.isArray(data)
+      ? data.sort((a, b) => {
+          if (a.contributions === b.contributions) {
+            return a.login.localeCompare(b.login);
+          }
+          return a.contributions < b.contributions ? 1 : -1;
+        })
+      : [];
+
+  if (!isLoading && contributors.length === 0) {
+    return null;
+  }
 
   if (isLoading) {
     return (
