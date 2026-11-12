@@ -11,6 +11,7 @@ jobs:
   test:
     permissions:
       contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -25,6 +26,26 @@ jobs:
       - name: Lint react-native-libraries.json
         run: bun oxfmt react-native-libraries.json --check
       - name: Check new entries in react-native-libraries.json
-        run: bun ci:validate
+        id: validate
+        run: |
+          set +e
+          bun ci:validate 2>&1 | tee "$RUNNER_TEMP/ci-validate.log"
+          validate_status=${PIPESTATUS[0]}
+          if grep -Fq 'Unable to fetch npm package data' "$RUNNER_TEMP/ci-validate.log"; then
+            echo 'npm_api_failure=true' >> "$GITHUB_OUTPUT"
+          fi
+          exit "$validate_status"
         env:
           CI_CHECKS_TOKEN: ${{ github.token }}
+      - name: Comment about npm API delay
+        if: ${{ failure() && github.event_name == 'pull_request' && steps.validate.outputs.npm_api_failure == 'true' }}
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: 'The npm API may take up to 24 hours (or longer in some cases) to register a newly published package. Please rebase your PR after 24 hours, or ask a maintainer to rerun the checks workflow.'
+            });
