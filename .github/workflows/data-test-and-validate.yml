@@ -47,5 +47,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: 'The npm API may take up to 24 hours to register a newly published package. Please re-trigger this workflow in 24 hours.'
+              body: 'The npm API may take up to 24 hours (or longer in some cases) to register a newly published package. Please rebase your PR after 24 hours, or ask a maintainer to rerun the checks workflow.'
             });
