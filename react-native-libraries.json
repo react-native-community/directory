@@ -5436,7 +5436,7 @@
   {
     "githubUrl": "https://github.com/callstack/react-native-slider/tree/main/package",
     "examples": ["https://github.com/callstack/react-native-slider/tree/main/example"],
-    "npmPkg": "@react-native-community/slider",
+    "npmPkg": "@callstack/slider",
     "images": [
       "https://i.postimg.cc/dQTYzGD5/Screenshot-2019-03-25-at-11-24-59.png",
       "https://i.postimg.cc/CKdtbVqc/Screenshot-2019-03-25-at-11-26-54.png"
@@ -25661,6 +25661,29 @@
     "examples": ["https://github.com/magrinj/expo-screen-time/tree/main/example"],
     "newArchitecture": true,
     "configPlugin": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-a11y-state-patch",
+    "newArchitecture": true,
+    "ios": true
+  },
+  {
+    "githubUrl": "https://github.com/ArturKalach/react-native-is-keyboard-connected",
+    "examples": [
+      "https://github.com/ArturKalach/react-native-is-keyboard-connected/tree/develop/example"
+    ],
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/expo/explore",
+    "npmPkg": "@expo/explore",
+    "images": [
+      "https://github.com/expo/explore/blob/main/docs/screenshots/readme-screens-light.png"
+    ],
     "ios": true,
     "android": true
   }
