@@ -25655,5 +25655,13 @@
     "npmPkg": "@equationalapplications/expo-two-way-audio",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/magrinj/expo-screen-time",
+    "examples": ["https://github.com/magrinj/expo-screen-time/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true,
+    "ios": true,
+    "android": true
   }
 ]
