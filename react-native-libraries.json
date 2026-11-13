@@ -1,12 +1,13 @@
 [
   {
-    "githubUrl": "https://github.com/magrinj/expo-screen-time",
-    "examples": ["https://github.com/magrinj/expo-screen-time/tree/main/example"],
-    "newArchitecture": true,
-    "configPlugin": true,
-    "swiftPM": false,
+    "githubUrl": "https://github.com/mowispace/react-native-logs",
     "ios": true,
-    "android": true
+    "android": true,
+    "web": true,
+    "expoGo": true,
+    "dev": true,
+    "fireos": true,
+    "vegaos": true
   },
   {
     "githubUrl": "https://github.com/GregoryNative/react-native-gl-image-filters",
@@ -25652,6 +25653,14 @@
   {
     "githubUrl": "https://github.com/equationalapplications/expo-two-way-audio",
     "npmPkg": "@equationalapplications/expo-two-way-audio",
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/magrinj/expo-screen-time",
+    "examples": ["https://github.com/magrinj/expo-screen-time/tree/main/example"],
+    "newArchitecture": true,
+    "configPlugin": true,
     "ios": true,
     "android": true
   }
