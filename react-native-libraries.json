@@ -25690,9 +25690,7 @@
   {
     "githubUrl": "https://github.com/vidursaini/hailbell-react-native",
     "npmPkg": "@hailbell/react-native",
-    "examples": [
-      "https://github.com/vidursaini/hailbell-react-native/tree/main/example"
-    ],
+    "examples": ["https://github.com/vidursaini/hailbell-react-native/tree/main/example"],
     "ios": true,
     "android": true,
     "configPlugin": true
