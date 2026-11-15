@@ -25694,5 +25694,12 @@
     "ios": true,
     "android": true,
     "configPlugin": true
+  },
+  {
+    "githubUrl": "https://github.com/SIPRAL/sipral/tree/main/bindings/react-native",
+    "npmPkg": "sipral-react-native",
+    "ios": true,
+    "android": true,
+    "newArchitecture": true
   }
 ]
