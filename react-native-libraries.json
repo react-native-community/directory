@@ -25711,5 +25711,11 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/signOps-dev/signops-react-native",
+    "npmPkg": "@signops/react-native",
+    "ios": true,
+    "android": true
   }
 ]
