@@ -11175,8 +11175,10 @@
     ],
     "ios": true,
     "android": true,
+    "web": true,
     "fireos": true,
-    "vegaos": true
+    "vegaos": true,
+    "newArchitecture": true
   },
   {
     "githubUrl": "https://github.com/AppAndFlow/expo-camera-characteristics",
