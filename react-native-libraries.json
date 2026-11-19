@@ -25726,5 +25726,17 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/gustavo-em/react-native-location-confidence",
+    "examples": [
+      "https://github.com/gustavo-em/react-native-location-confidence/tree/main/example"
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/gustavo-em/react-native-location-confidence/main/docs/demo/signal-lost-vs-standing-still.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
