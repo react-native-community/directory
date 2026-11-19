@@ -101,7 +101,10 @@ export function H6(props: CustomTextProps) {
 }
 
 export function H6Section(props: CustomTextProps) {
-  return renderTextComponent(HtmlElements.H6, textStyles.h6section, props);
+  return renderTextComponent(HtmlElements.H6, textStyles.h6section, {
+    ...props,
+    style: [{ fontSize: 16 }, props.style],
+  });
 }
 
 export function P(props: CustomTextProps) {

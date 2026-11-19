@@ -34,7 +34,7 @@ export default function CodeBrowserFileRow({
   const warning = isDirectory ? getDirectoryWarning(label) : getFileWarning(label);
 
   const rowClassName = cx(
-    'flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20',
+    'flex flex-row items-center gap-1.5 px-3 py-[3px]',
     isDirectory && 'pl-1.5',
     !rightSlot &&
       warning &&

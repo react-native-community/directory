@@ -1,7 +1,11 @@
 import { type StyleProp, type ViewStyle } from 'react-native';
 import { Circle, Line, Path, Polyline, Rect, Svg } from 'react-native-svg';
 
-import { cx } from '~/util/tailwind';
+import { cx as mergeClassNames } from '~/util/tailwind';
+
+function cx(className?: string, ...defaultClassNames: string[]) {
+  return mergeClassNames(...defaultClassNames, className);
+}
 
 export type IconProps = {
   className?: string;

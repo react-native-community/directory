@@ -24,8 +24,12 @@ export function Button({
   ...rest
 }: Props) {
   const isLink = !!href;
+  const hasBackgroundClass = className
+    ?.split(/\s+/)
+    .some(className => className.replace(/^!/, '').startsWith('bg-'));
   const buttonClassName = cx(
-    'bg-primary-darker dark:bg-primary-dark cursor-pointer items-center justify-center rounded outline-offset-1 select-none',
+    !hasBackgroundClass && 'bg-primary-darker dark:bg-primary-dark',
+    'cursor-pointer items-center justify-center rounded outline-offset-1 select-none',
     className
   );
 
