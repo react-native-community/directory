@@ -16,14 +16,14 @@ const PACKAGES_TO_OPTIMIZE = [
   'es-toolkit',
   'es-toolkit/*',
   'node-emoji',
-  'react-native',
   'react-native-safe-area-context',
   'react-native-svg',
-  'react-native-web',
   'react-shiki',
   'semver',
   'shiki/*',
 ];
+
+const PACKAGES_TO_TRANSPILE = [...PACKAGES_TO_OPTIMIZE, 'react-native', 'react-native-web'];
 
 const withBundleAnalyzer = BundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -62,7 +62,7 @@ export default withPlugins(
     images: {
       disableStaticImages: true,
     },
-    transpilePackages: PACKAGES_TO_OPTIMIZE,
+    transpilePackages: PACKAGES_TO_TRANSPILE,
     logging: {
       browserToTerminal: true,
     },

@@ -50,11 +50,20 @@ function renderTextComponent(
   textStyle: string,
   { children, className, style, id, numberOfLines }: CustomTextProps
 ) {
+  const hasFontFamilyClass = className
+    ?.split(/\s+/)
+    .some(name => name === 'font-sans' || name === 'font-mono');
+
   return (
     <Element
       id={id}
       numberOfLines={numberOfLines}
-      className={cx('font-sans my-0 font-normal text-black dark:text-white', textStyle, className)}
+      className={cx(
+        !hasFontFamilyClass && 'font-sans',
+        'my-0! font-normal text-black dark:text-white',
+        textStyle,
+        className
+      )}
       style={style}>
       {children}
     </Element>
