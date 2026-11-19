@@ -25738,5 +25738,21 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/packages/react-native-spritestudio",
+    "npmPkg": "react-native-spritestudio",
+    "examples": ["https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/packages/react-native-spritestudio-ui",
+    "npmPkg": "react-native-spritestudio-ui",
+    "examples": ["https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/example"],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
