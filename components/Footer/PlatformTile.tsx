@@ -3,7 +3,6 @@ import { View } from 'react-native';
 
 import { A, P } from '~/common/styleguide';
 import { type IconProps } from '~/components/Icons';
-import tw from '~/util/tailwind';
 
 type Props = {
   name: string;
@@ -14,13 +13,13 @@ type Props = {
 
 export default function Platform({ name, pkgName, url, Icon }: Props) {
   return (
-    <A href={url} hoverStyle={tw`rounded-lg bg-palette-gray2 dark:bg-default`}>
-      <View style={tw`min-w-[160px] items-center rounded-lg px-2 py-4`}>
+    <A href={url} hoverStyle="rounded-lg bg-palette-gray2 dark:bg-default">
+      <View className="min-w-[160px] items-center rounded-lg px-2 py-4">
         {createElement(Icon, {
-          style: tw`size-8 text-icon`,
+          className: 'text-icon size-8',
         })}
-        <P style={tw`mt-3`}>{name}</P>
-        <P style={tw`font-mono rounded-sm px-2 text-[11px] leading-6 text-secondary`}>{pkgName}</P>
+        <P className="mt-3">{name}</P>
+        <P className="text-secondary rounded-sm px-2 font-mono text-[11px] leading-6">{pkgName}</P>
       </View>
     </A>
   );

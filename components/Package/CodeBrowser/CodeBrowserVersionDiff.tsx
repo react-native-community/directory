@@ -20,7 +20,7 @@ import { TimeRange } from '~/util/datetime';
 import { swrJSONFetch, swrTextFetch } from '~/util/fetch';
 import { getStoredValue } from '~/util/localStorage';
 import { pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { CodeBrowserDiffLine } from './CodeBrowserDiffLine';
 import CodeBrowserFileTree from './CodeBrowserFileTree';
@@ -217,7 +217,7 @@ export default function CodeBrowserVersionDiff({
 
   if (isFromMetaLoading || isToMetaLoading) {
     return (
-      <View style={tw`h-[70vh] items-center justify-center`}>
+      <View className="h-[70vh] items-center justify-center">
         <ThreeDotsLoader />
       </View>
     );
@@ -234,23 +234,23 @@ export default function CodeBrowserVersionDiff({
         <>
           {changedFiles.length === 0 ? null : (
             <View
-              style={[
-                tw`min-h-[45px] flex-row items-center border-b border-r border-palette-gray2 px-3 dark:border-default`,
-                isSmallScreen && tw`border-r-0`,
-              ]}>
-              <Label style={tw`font-medium`}>
+              className={cx(
+                'min-h-[45px] flex-row items-center border-b border-r border-palette-gray2 px-3 dark:border-border',
+                isSmallScreen && 'border-r-0'
+              )}>
+              <Label className="font-medium">
                 {changedFiles.length} changed {pluralize('file', changedFiles.length)}
               </Label>
             </View>
           )}
           <ScrollView
             id="codeBrowserList"
-            style={[
-              tw`border-palette-gray2 dark:border-default`,
-              !isSmallScreen && tw`flex-1 border-r`,
-              isSmallScreen && tw`h-[25vh] flex-grow-0 border-b`,
-            ]}
-            contentContainerStyle={tw`pt-2`}>
+            className={cx(
+              'border-palette-gray2 dark:border-border',
+              !isSmallScreen && 'flex-1 border-r',
+              isSmallScreen && 'h-[25vh] flex-grow-0 border-b'
+            )}
+            contentContainerStyle={{ paddingTop: 8 }}>
             <CodeBrowserFileTree
               tree={fileTree}
               activeFile={activePath ?? null}
@@ -262,10 +262,9 @@ export default function CodeBrowserVersionDiff({
       }
       content={
         <>
-          <View
-            style={tw`min-h-[45px] flex-row items-center justify-between gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default dark:bg-dark`}>
-            <Label style={tw`font-mono text-[13px]`}>{activePath ?? ''}</Label>
-            <View style={tw`flex-row gap-3`}>
+          <View className="border-palette-gray2 bg-default dark:border-border dark:bg-dark min-h-[45px] flex-row items-center justify-between gap-3 border-b px-4 py-3">
+            <Label className="font-mono text-[13px]">{activePath ?? ''}</Label>
+            <View className="flex-row gap-3">
               <DisplayModeButton
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
@@ -279,44 +278,42 @@ export default function CodeBrowserVersionDiff({
           </View>
           {activePath ? (
             !canPreview ? (
-              <View style={tw`flex-1 items-center justify-center px-4`}>
-                <P style={tw`text-center text-secondary`}>
+              <View className="flex-1 items-center justify-center px-4">
+                <P className="text-secondary text-center">
                   This file is too large or cannot be previewed as text.
                 </P>
               </View>
             ) : fromContentError || toContentError ? (
-              <View style={tw`flex-1 items-center justify-center px-4`}>
+              <View className="flex-1 items-center justify-center px-4">
                 <P>Cannot fetch file contents for comparison.</P>
               </View>
             ) : isFromContentLoading || isToContentLoading ? (
-              <View style={tw`flex-1 items-center justify-center`}>
+              <View className="flex-1 items-center justify-center">
                 <ThreeDotsLoader />
               </View>
             ) : (
               <View
                 id={settings.wordWrap ? 'code-browser-word-wrap' : undefined}
-                style={tw`min-h-0 flex-1`}>
+                className="min-h-0 flex-1">
                 <FlatList
                   id="codeBrowserDiffList"
                   data={diffListItems}
-                  contentContainerStyle={
-                    settings.wordWrap ? tw`w-full` : [tw`min-w-full`, { width: 'max-content' }]
-                  }
+                  contentContainerStyle={{ width: settings.wordWrap ? '100%' : 'max-content' }}
                   keyExtractor={item => item.key}
-                  style={[
-                    tw`flex-1`,
-                    isFullFileView ? tw`py-4` : tw`pb-4`,
-                    activeFile?.status === 'added' && tw`bg-diff-added`,
-                    activeFile?.status === 'removed' && tw`bg-diff-removed`,
-                  ]}
+                  className={cx(
+                    'flex-1',
+                    isFullFileView ? 'py-4' : 'pb-4',
+                    activeFile?.status === 'added' && 'bg-diff-added',
+                    activeFile?.status === 'removed' && 'bg-diff-removed'
+                  )}
                   windowSize={5}
                   renderItem={renderDiffItem}
                 />
               </View>
             )
           ) : (
-            <View style={tw`flex-1 items-center justify-center px-4`}>
-              <P style={tw`text-center text-secondary`}>
+            <View className="flex-1 items-center justify-center px-4">
+              <P className="text-secondary text-center">
                 {changedFiles.length > 0
                   ? 'Select a changed file to view its diff.'
                   : 'No file changes between these versions.'}
@@ -338,11 +335,11 @@ export default function CodeBrowserVersionDiff({
     }
 
     if (file.status === 'added') {
-      return <Label style={tw`font-mono text-[10px] font-medium text-success`}>Added</Label>;
+      return <Label className="text-success font-mono text-[10px] font-medium">Added</Label>;
     }
 
     if (file.status === 'removed') {
-      return <Label style={tw`font-mono text-[10px] font-medium text-error`}>Removed</Label>;
+      return <Label className="text-error font-mono text-[10px] font-medium">Removed</Label>;
     }
 
     if (
@@ -354,18 +351,18 @@ export default function CodeBrowserVersionDiff({
       !isToContentLoading
     ) {
       return (
-        <View style={tw`flex-row gap-1`}>
-          <Label style={tw`font-mono text-[10px] font-medium text-success`}>
+        <View className="flex-row gap-1">
+          <Label className="text-success font-mono text-[10px] font-medium">
             +{lineChangeCounts.added}
           </Label>
-          <Label style={tw`font-mono text-[10px] font-medium text-error`}>
+          <Label className="text-error font-mono text-[10px] font-medium">
             −{lineChangeCounts.removed}
           </Label>
         </View>
       );
     }
 
-    return <Label style={tw`font-mono text-[10px] text-[#f4aa34] dark:text-warning`}>⏺</Label>;
+    return <Label className="dark:text-warning font-mono text-[10px] text-[#f4aa34]">⏺</Label>;
   }
 
   function selectFile(filePath: string) {
@@ -381,9 +378,8 @@ function DiffHunkHeader({
   newCount,
 }: Omit<Extract<DiffListItem, { kind: 'hunk' }>, 'kind' | 'key'>) {
   return (
-    <View
-      style={tw`min-h-7 min-w-full flex-row items-center bg-[#f6f8fa] px-3 dark:border-default dark:bg-[#161b22]`}>
-      <Label style={tw`font-mono text-[11px] text-tertiary`}>
+    <View className="dark:border-border min-h-7 min-w-full flex-row items-center bg-[#f6f8fa] px-3 dark:bg-[#161b22]">
+      <Label className="text-tertiary font-mono text-[11px]">
         {`@@ -${oldStart},${oldCount} +${newStart},${newCount} @@`}
       </Label>
     </View>

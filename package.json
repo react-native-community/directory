@@ -34,6 +34,7 @@
     "@radix-ui/react-tooltip": "^1.4.1",
     "@react-native-picker/picker": "^2.11.4",
     "@sentry/react": "^11.12.0",
+    "@tailwindcss/postcss": "^4",
     "@videojs/react": "10.4.0",
     "@visx/gradient": "^4.0.0",
     "@visx/responsive": "^4.0.0",
@@ -59,8 +60,9 @@
     "remark-gfm": "^4.0.1",
     "semver": "^7.8.6",
     "swr": "^2.5.1",
-    "tailwindcss": "^3.4.19",
-    "twrnc": "^4.16.0",
+    "tailwindcss": "^4",
+    "uniwind": "1.2.7",
+    "uniwind-plugin-next": "1.4.2",
     "use-debounce": "^10.1.1"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import MorePackagesSectionRow from './MorePackagesSectionRow';
@@ -49,29 +49,29 @@ export default function DependantsSection({ library }: Props) {
 
   return (
     <>
-      <H6Section style={[tw`flex items-center gap-1.5`, !isSmallScreen && tw`mt-4`]}>
+      <H6Section className={cx('flex items-center gap-1.5', cx(!isSmallScreen && 'mt-4'))}>
         <span>
-          Packages that depend on <code style={tw`pl-px text-[90%]`}>{library.npmPkg}</code>
+          Packages that depend on <code className="pl-px text-[90%]">{library.npmPkg}</code>
         </span>
         {!isLoading && data?.total !== undefined && <EntityCounter count={data.total} />}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
-          <A href={seeAllUrl} style={tw`ml-auto`}>
-            <Label style={tw`font-light`}>See all packages</Label>
+          <A href={seeAllUrl} className="ml-auto">
+            <Label className="font-light">See all packages</Label>
           </A>
         )}
       </H6Section>
       {!data || isLoading ? (
         <ThreeDotsLoader />
       ) : (
-        <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
+        <UL className={cx('m-0 gap-2', cx(isSmallScreen && 'mb-2'))}>
           {data.libraries.map(dependant => (
             <MorePackagesSectionRow library={dependant} key={dependant.npmPkg} />
           ))}
         </UL>
       )}
       {isSmallScreen && data?.total && data.total > LIMIT && (
-        <A href={seeAllUrl} style={tw`text-center`}>
-          <Caption style={tw`font-light`}>See all packages</Caption>
+        <A href={seeAllUrl} className="text-center">
+          <Caption className="font-light">See all packages</Caption>
         </A>
       )}
     </>

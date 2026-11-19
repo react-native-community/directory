@@ -12,7 +12,7 @@ import {
   PlatformWeb,
   PlatformWindows,
 } from '~/components/Icons';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import PlatformTile from './PlatformTile';
 import VercelBanner from './VercelBanner';
@@ -21,10 +21,9 @@ export default function Footer() {
   const { isSmallScreen } = useLayout();
 
   return (
-    <View style={tw`mt-1 w-full bg-palette-gray1 pb-7 pt-8 dark:bg-dark`}>
+    <View className="bg-palette-gray1 dark:bg-dark mt-1 w-full pt-8 pb-7">
       <ContentContainer>
-        <View
-          style={tw`mx-auto mb-7 mt-1 w-full flex-row flex-wrap justify-center gap-x-2 gap-y-3`}>
+        <View className="mx-auto mt-1 mb-7 w-full flex-row flex-wrap justify-center gap-x-2 gap-y-3">
           <PlatformTile
             name="Android"
             pkgName="react-native"
@@ -68,9 +67,9 @@ export default function Footer() {
             url="https://github.com/microsoft/react-native-windows#readme"
           />
         </View>
-        <View style={[tw`mt-3 flex-row px-4`, isSmallScreen && tw`flex-col`]}>
-          <View style={[tw`flex-1 flex-col`, isSmallScreen && tw`items-center`]}>
-            <P style={tw`py-1.5 text-[13px] font-light text-secondary`}>
+        <View className={cx('mt-3 flex-row px-4', cx(isSmallScreen && 'flex-col'))}>
+          <View className={cx('flex-1 flex-col', cx(isSmallScreen && 'items-center'))}>
+            <P className="text-secondary py-1.5 text-[13px] font-light">
               Missing a library?{' '}
               <A href="https://github.com/react-native-community/react-native-directory#how-do-i-add-a-library">
                 Add it to the directory
@@ -78,26 +77,26 @@ export default function Footer() {
               .
             </P>
             <P
-              style={[
-                tw`py-1.5 text-[13px] font-light text-secondary`,
-                isSmallScreen && tw`items-center text-center`,
-              ]}>
+              className={cx(
+                'py-1.5 text-[13px] font-light text-secondary',
+                cx(isSmallScreen && 'items-center text-center')
+              )}>
               Want to learn more? Check out the{' '}
               <A href="https://reactnative.dev/docs/getting-started">official React Native docs</A>,
               and <A href="https://expo.dev">Expo</A>.
             </P>
           </View>
-          <View style={[tw`self-center`, isSmallScreen && tw`mt-6 items-center`]}>
+          <View className={cx('self-center', cx(isSmallScreen && 'mt-6 items-center'))}>
             <A
               href="https://vercel.com/?utm_source=rndir&utm_campaign=oss"
               aria-label="Vercel banner"
-              style={tw`flex`}>
+              className="flex">
               <VercelBanner />
             </A>
           </View>
         </View>
-        <View style={tw`items-center pb-8 pt-12`}>
-          <Logo style={tw`h-[38px] w-[42px] text-palette-gray3 dark:text-powder`} />
+        <View className="items-center pt-12 pb-8">
+          <Logo className="text-palette-gray3 dark:text-powder h-[38px] w-[42px]" />
         </View>
       </ContentContainer>
     </View>

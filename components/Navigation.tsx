@@ -6,13 +6,14 @@ import { Logo } from '~/components/Icons';
 import QuickSearch from '~/components/QuickSearch';
 import TopBar from '~/components/TopBar';
 import { useQuickSearchState } from '~/context/QuickSearchState';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type NavigationProps = PropsWithChildren<{
   title?: string;
   description?: string;
   header?: ReactElement;
   subHeader?: ReactElement;
+  className?: string;
   style?: StyleProp<ViewStyle>;
 }>;
 
@@ -22,6 +23,7 @@ export default function Navigation({
   children,
   header,
   subHeader,
+  className,
   style,
 }: NavigationProps) {
   const { isSmallScreen } = useLayout();
@@ -60,32 +62,30 @@ export default function Navigation({
       {isSearchVisible && (
         <QuickSearch
           focusOnMount
-          style={tw`relative z-20 w-full self-center bg-palette-gray7 dark:bg-very-dark`}
+          className="bg-palette-gray7 dark:bg-very-dark relative z-20 w-full self-center"
         />
       )}
       {header ?? (
         <View
-          style={[
-            tw`relative z-10 bg-palette-gray6 py-10 dark:bg-dark`,
-            isSmallScreen && tw`py-6`,
-            style,
-          ]}>
-          <View style={tw`absolute inset-0 overflow-hidden`}>
-            <Logo
-              style={tw`absolute left-1/2 top-[-76px] ml-[-280px] h-[520px] w-[580px] text-palette-gray5 opacity-15 dark:text-palette-gray7`}
-            />
+          className={cx(
+            'relative z-10 bg-palette-gray6 py-10 dark:bg-dark',
+            className,
+            cx(isSmallScreen && 'py-6')
+          )}
+          style={[style]}>
+          <View className="absolute inset-0 overflow-hidden">
+            <Logo className="text-palette-gray5 dark:text-palette-gray7 absolute top-[-76px] left-1/2 ml-[-280px] h-[520px] w-[580px] opacity-15" />
           </View>
           <H1
-            style={[
-              tw`px-5 text-center text-[42px] leading-[54px] text-white`,
-              isSmallScreen && tw`text-3xl`,
-              !description && tw`pb-3`,
-            ]}>
+            className={cx(
+              'px-5 text-center text-[42px] leading-[54px] text-white',
+              cx(isSmallScreen && 'text-3xl'),
+              cx(!description && 'pb-3')
+            )}>
             {title}
           </H1>
           {description && (
-            <H2
-              style={tw`px-10 py-1 text-center text-base font-normal text-palette-gray3 dark:text-secondary`}>
+            <H2 className="text-palette-gray3 dark:text-secondary px-10 py-1 text-center text-base font-normal">
               {description}
             </H2>
           )}

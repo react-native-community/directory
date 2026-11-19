@@ -9,7 +9,7 @@ import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { type APIResponseType, type LibraryType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import getApiUrl from '~/util/getApiUrl';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import MorePackagesSectionRow from './MorePackagesSectionRow';
@@ -48,14 +48,14 @@ export default function MorePackagesSection({ library }: Props) {
 
   return (
     <>
-      <H6Section style={[tw`flex items-center gap-1.5`, !isSmallScreen && tw`mt-4`]}>
+      <H6Section className={cx('flex items-center gap-1.5', cx(!isSmallScreen && 'mt-4'))}>
         More packages from {startCase(owner)}
         {!isLoading && data?.total && data.total > 0 ? (
           <EntityCounter count={data.total > LIMIT ? data.total : data.total - 1} />
         ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
-          <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>
-            <Label style={tw`font-light`}>See all packages</Label>
+          <A href={`/packages?owner=${encodeURI(owner)}`} className="ml-auto">
+            <Label className="font-light">See all packages</Label>
           </A>
         )}
       </H6Section>
@@ -63,7 +63,7 @@ export default function MorePackagesSection({ library }: Props) {
         <ThreeDotsLoader />
       ) : (
         <>
-          <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
+          <UL className={cx('m-0 gap-2', cx(isSmallScreen && 'mb-2'))}>
             {data.libraries
               .filter(({ npmPkg }) => npmPkg !== library.npmPkg)
               .slice(0, LIMIT - 1)
@@ -72,8 +72,8 @@ export default function MorePackagesSection({ library }: Props) {
               ))}
           </UL>
           {isSmallScreen && data.total > LIMIT && (
-            <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`text-center`}>
-              <Caption style={tw`font-light`}>See all packages</Caption>
+            <A href={`/packages?owner=${encodeURI(owner)}`} className="text-center">
+              <Caption className="font-light">See all packages</Caption>
             </A>
           )}
         </>

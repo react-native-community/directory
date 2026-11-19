@@ -17,7 +17,7 @@ import { useLayout } from '~/common/styleguide';
 import ChartTooltip from '~/components/Package/Charts/ChartTooltip';
 import HoveredBarOutline from '~/components/Package/Charts/HoveredBarOutline';
 import { type StatisticChartEntry, type StatisticEntry } from '~/types';
-import tw from '~/util/tailwind';
+import { useIsDark } from '~/util/tailwind';
 
 const ROW_HEIGHT = 30;
 const MIN_HEIGHT = 120;
@@ -54,7 +54,7 @@ export default function StatisticsBarChart({
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredStackEntry, setHoveredStackEntry] = useState<ChartEntry | null>(null);
-  const isDark = tw.prefixMatch('dark');
+  const isDark = useIsDark();
 
   const gradientId = `statistics-chart-gradient-${useId().replaceAll(':', '')}`;
   const secondaryGradientId = `${gradientId}-secondary`;
@@ -114,7 +114,7 @@ export default function StatisticsBarChart({
     <View
       // @ts-expect-error Ref type miss-match
       ref={parentRef}
-      style={tw`overflow-hidden rounded-lg border border-default p-3`}>
+      className="border-border overflow-hidden rounded-lg border p-3">
       <XYChart
         width={width}
         height={height}
@@ -165,9 +165,9 @@ export default function StatisticsBarChart({
               y={y}
               textAnchor="middle"
               dominantBaseline="middle"
-              style={tw`select-none tabular-nums`}
+              className="tabular-nums select-none"
               fill="var(--tertiary)">
-              <tspan x={x} style={tw`text-[12px] font-light`}>
+              <tspan x={x} className="text-[12px] font-light">
                 {formattedValue}
               </tspan>
             </text>
@@ -184,9 +184,9 @@ export default function StatisticsBarChart({
               y={y}
               textAnchor="end"
               dominantBaseline="middle"
-              style={tw`select-none`}
+              className="select-none"
               fill={isDark ? 'var(--white)' : 'var(--black)'}>
-              <tspan x={(x ?? 0) - 10} style={tw`text-[12px]`}>
+              <tspan x={(x ?? 0) - 10} className="text-[12px]">
                 {formattedValue}
               </tspan>
             </text>
@@ -290,7 +290,7 @@ export default function StatisticsBarChart({
 
             return (
               <ChartTooltip>
-                <span style={tw`mb-0.5 text-[15px] font-medium`}>
+                <span className="mb-0.5 text-[15px] font-medium">
                   {entry.segmentLabel ?? entry.label}
                 </span>
                 {valueScale === 'count' ? (
@@ -300,7 +300,7 @@ export default function StatisticsBarChart({
                     <span>
                       {entry.count.toLocaleString()} libraries ({entry.percentage.toFixed(2)}%)
                     </span>
-                    <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                    <span className="text-palette-gray3 dark:text-secondary">
                       out of {total.toLocaleString()} total libraries
                     </span>
                   </>

@@ -20,20 +20,21 @@ import {
   useSearchShortcut,
 } from '~/hooks/useSearchInput';
 import { type APIResponseType } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { SearchIcon, SpinnerIcon } from './Icons';
 import QuickSearchResult from './QuickSearchResult';
 
 type Props = {
+  className?: string;
   focusOnMount?: boolean;
   style?: StyleProp<ViewStyle>;
 };
 
 const RESULTS_LIMIT = 5;
 
-export default function QuickSearch({ focusOnMount = false, style }: Props) {
+export default function QuickSearch({ className, focusOnMount = false, style }: Props) {
   const [activeResultIndex, setActiveResultIndex] = useState<number | null>(null);
   const { searchValue, setSearchValue } = useQuickSearchState();
   const [search, setSearch] = useState(searchValue);
@@ -121,14 +122,16 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
   }
 
   return (
-    <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
-      <View style={tw`relative z-20 w-full max-w-layout px-5`}>
-        <View style={tw`relative z-30 flex-row items-center`}>
-          <View style={tw`pointer-events-none absolute left-4`}>
+    <View
+      className={cx('items-center bg-palette-gray6 py-3.5 dark:bg-dark', className)}
+      style={style}>
+      <View className="max-w-layout relative z-20 w-full px-5">
+        <View className="relative z-30 flex-row items-center">
+          <View className="pointer-events-none absolute left-4">
             {isLoading ? (
-              <SpinnerIcon style={tw`-ml-0.5 text-primary`} />
+              <SpinnerIcon className="text-primary -ml-0.5" />
             ) : (
-              <SearchIcon style={isInputFocused ? tw`text-primary` : tw`text-white`} />
+              <SearchIcon className={cx(isInputFocused ? 'text-primary' : 'text-white')} />
             )}
           </View>
           <TextInput
@@ -186,11 +189,11 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
             onChangeText={handleSearchChange}
             value={searchValue}
             placeholder="Search libraries…"
-            style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
-            placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
+            className="border-palette-gray5 bg-palette-gray6 dark:border-border dark:bg-dark flex h-12.5 flex-1 rounded-md border-2 p-4 pr-30 pl-11 font-sans text-xl text-white -outline-offset-2"
+            placeholderTextColor={'var(--gray-4)' as ColorValue}
           />
           {!isSmallScreen && (
-            <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
+            <View className="pointer-events-none absolute right-4 flex-row items-center gap-1">
               {isInputFocused ? (
                 <InputKeyHint
                   content={[
@@ -215,9 +218,9 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
         {shouldShowResults && (
           <View
             id="quick-search-results"
-            style={tw`absolute inset-x-5 top-[46px] z-10 rounded-b border-2 border-t-0 border-pewter shadow-xl dark:border-default`}>
+            className="border-pewter dark:border-border absolute inset-x-5 top-[46px] z-10 rounded-b border-2 border-t-0 shadow-xl">
             {hasResults && (
-              <View style={tw`pb-1.5 pt-2`}>
+              <View className="pt-2 pb-1.5">
                 {libraries.map((lib, index) => (
                   <QuickSearchResult
                     key={lib.npmPkg}
@@ -232,26 +235,26 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
             )}
             {hasResults && (data?.total ?? 0) > RESULTS_LIMIT && (
               <View
-                style={[
-                  tw`flex flex-row items-center gap-1.5 rounded-b border-t border-default bg-palette-gray1 px-3 py-1.5 dark:bg-dark`,
-                  isSmallScreen ? tw`justify-center` : tw`justify-end`,
-                ]}>
-                <Label style={tw`font-light text-palette-gray4`}>
+                className={cx(
+                  'flex flex-row items-center gap-1.5 rounded-b border-t border-border bg-palette-gray1 px-3 py-1.5 dark:bg-dark',
+                  cx(isSmallScreen ? 'justify-center' : 'justify-end')
+                )}>
+                <Label className="text-palette-gray4 font-light">
                   There are{' '}
-                  <span style={tw`font-medium text-primary-darker dark:text-primary`}>
+                  <span className="text-primary-darker dark:text-primary font-medium">
                     {(data?.total ?? 0) - RESULTS_LIMIT}
                   </span>{' '}
                   more results
                   {!isSmallScreen && (
                     <>
-                      , press <span style={tw`font-medium`}>Enter</span> to see all of them
+                      , press <span className="font-medium">Enter</span> to see all of them
                     </>
                   )}
                 </Label>
               </View>
             )}
             {!hasResults && (
-              <Caption style={tw`pb-4.5 pt-5.5 text-center font-light text-secondary`}>
+              <Caption className="text-secondary pt-5.5 pb-4.5 text-center font-light">
                 There are no results for &quot;{search}&quot; query.
               </Caption>
             )}

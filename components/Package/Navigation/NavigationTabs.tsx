@@ -4,7 +4,7 @@ import { View } from 'react-native';
 
 import NavigationTab from '~/components/NavigationTab';
 import { type PackageNavigationTab } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { NavigationMobileMenu } from './NavigationMobileMenu';
 import { useNavigationTabs } from './useNavigationTabs';
@@ -39,14 +39,14 @@ export default function NavigationTabs({ tabs }: Props) {
   const hasHiddenTabs = measuring || hiddenTabs.length > 0;
 
   return (
-    <View ref={navigationRef} style={tw`relative flex-1`} onLayout={onNavigationLayout}>
+    <View ref={navigationRef} className="relative flex-1" onLayout={onNavigationLayout}>
       <View
-        style={[
-          tw`flex-1 flex-row items-center`,
-          measuring && tw`opacity-0`,
-          measuring ? tw`pointer-events-none` : tw`pointer-events-auto`,
-          { columnGap: TABS_GAP },
-        ]}>
+        className={cx(
+          'flex-1 flex-row items-center',
+          cx(measuring && 'opacity-0'),
+          cx(measuring ? 'pointer-events-none' : 'pointer-events-auto')
+        )}
+        style={[{ columnGap: TABS_GAP }]}>
         {renderedTabs.map((tab, index) => (
           <View key={tab.title} ref={tabRef(index)} onLayout={onTabLayout(index)}>
             <NavigationTab {...tab} measurement={measuring} />

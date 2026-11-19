@@ -5,16 +5,14 @@ import { A, Caption, Label } from '~/common/styleguide';
 import UserAvatar from '~/components/Package/UserAvatar';
 import { Tooltip } from '~/components/Tooltip';
 import { type NpmUser } from '~/types';
-import tw from '~/util/tailwind';
-
 type Props = {
   author?: NpmUser | string;
   compact?: boolean;
 };
 
-const authorContainerStyle = tw`flex flex-row items-center gap-3 bg-transparent`;
-const labelStyle = tw`text-[13px] leading-[18px]`;
-const sublabelStyle = tw`text-[11px] font-light text-palette-gray4 dark:text-secondary`;
+const authorContainerClassName = 'flex flex-row items-center gap-3 bg-transparent';
+const labelClassName = 'text-[13px] leading-[18px]';
+const sublabelClassName = 'text-palette-gray4 dark:text-secondary text-[11px] font-light';
 
 export default function PackageAuthor({ author, compact }: Props) {
   if (!author) {
@@ -31,11 +29,11 @@ export default function PackageAuthor({ author, compact }: Props) {
 
       return (
         <View>
-          <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
+          <A href={`https://github.com/${ghUsername}`} className={authorContainerClassName}>
             <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <Caption style={labelStyle}>{ghUsername}</Caption>
-              <span style={sublabelStyle}>
+              <Caption className={labelClassName}>{ghUsername}</Caption>
+              <span className={sublabelClassName}>
                 {author
                   .replace(/\s*\(?https?:\/\/\S+\)?\s*/g, '')
                   .replace(/[<>()]/g, '')
@@ -63,11 +61,11 @@ export default function PackageAuthor({ author, compact }: Props) {
 
       return (
         <View>
-          <A href={`https://github.com/${ghUsername}`} style={authorContainerStyle}>
+          <A href={`https://github.com/${ghUsername}`} className={authorContainerClassName}>
             <UserAvatar src={`https://github.com/${ghUsername}.png`} alt={`${ghUsername} avatar`} />
             <View>
-              <Caption style={labelStyle}>{ghUsername}</Caption>
-              <span style={sublabelStyle}>{validName}</span>
+              <Caption className={labelClassName}>{ghUsername}</Caption>
+              <span className={sublabelClassName}>{validName}</span>
             </View>
           </A>
         </View>
@@ -77,7 +75,7 @@ export default function PackageAuthor({ author, compact }: Props) {
     return (
       <View>
         <A href={potentialHref} target="_blank">
-          <Caption style={labelStyle}>{author.name ?? 'Unknown'}</Caption>
+          <Caption className={labelClassName}>{author.name ?? 'Unknown'}</Caption>
         </A>
       </View>
     );
@@ -87,7 +85,7 @@ export default function PackageAuthor({ author, compact }: Props) {
   if (potentialHref?.includes('@')) {
     if (compact) {
       return (
-        <View style={authorContainerStyle}>
+        <View className={authorContainerClassName}>
           <Tooltip
             sideOffset={2}
             delayDuration={100}
@@ -98,8 +96,8 @@ export default function PackageAuthor({ author, compact }: Props) {
               />
             }>
             <View>
-              <Caption style={labelStyle}>{author.name}</Caption>
-              <span style={sublabelStyle}>{potentialHref}</span>
+              <Caption className={labelClassName}>{author.name}</Caption>
+              <span className={sublabelClassName}>{potentialHref}</span>
             </View>
           </Tooltip>
         </View>
@@ -107,14 +105,14 @@ export default function PackageAuthor({ author, compact }: Props) {
     }
 
     return (
-      <View style={authorContainerStyle}>
+      <View className={authorContainerClassName}>
         <UserAvatar
           src={`https://gravatar.com/avatar/${SHA256(potentialHref).toString()}?d=retro`}
           alt={`${author.name} avatar`}
         />
         <View>
-          <Caption style={labelStyle}>{author.name}</Caption>
-          <span style={sublabelStyle}>{potentialHref}</span>
+          <Caption className={labelClassName}>{author.name}</Caption>
+          <span className={sublabelClassName}>{potentialHref}</span>
         </View>
       </View>
     );
@@ -122,7 +120,7 @@ export default function PackageAuthor({ author, compact }: Props) {
 
   return (
     <View>
-      <Caption style={labelStyle}>{getValidName(author.name) ?? 'Unknown'}</Caption>
+      <Caption className={labelClassName}>{getValidName(author.name) ?? 'Unknown'}</Caption>
     </View>
   );
 }

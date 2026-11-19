@@ -4,7 +4,6 @@ import { A, H3, P } from '~/common/styleguide';
 import Navigation from '~/components/Navigation';
 import NotFound from '~/components/Package/NotFound';
 import PageMeta from '~/components/PageMeta';
-import tw from '~/util/tailwind';
 
 type Props = {
   statusCode: number;
@@ -20,14 +19,14 @@ export default function ErrorScene({ statusCode, reason }: Props) {
     <>
       <PageMeta title="Error" description="Uh oh, something went wrong" />
       <Navigation header={<View />} />
-      <View style={tw`mb-18 mt-12 flex w-full flex-1 items-center justify-center px-6`}>
+      <View className="mt-12 mb-18 flex w-full flex-1 items-center justify-center px-6">
         <Image
-          style={tw`mb-6 mt-12 size-[64px]`}
+          className="mt-12 mb-6 size-[64px]"
           source={require('~/assets/notfound.png')}
           alt="Error"
         />
         <H3>Uh oh, something went wrong ({statusCode})</H3>
-        <P style={tw`mt-4`}>
+        <P className="mt-4">
           {reason ?? (
             <>
               Help fix it? Submit a PR to the{' '}

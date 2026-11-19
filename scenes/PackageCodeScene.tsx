@@ -19,7 +19,7 @@ import { type PackageCodePageProps } from '~/types/pages';
 import { getDiffActiveFileStorageKey } from '~/util/codeDiff';
 import { getStoredValue } from '~/util/localStorage';
 import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 const ACTIVE_FILE_STORAGE_KEY_PREFIX = '@ReactNativeDirectory:PackageCodeScene:activeFile';
 const CODE_BROWSER_SETTINGS_STORAGE_KEY = '@ReactNativeDirectory:CodeBrowser:settings';
@@ -168,9 +168,9 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const showCompareVersionSelector = Boolean(compareVersion) || isChoosingCompareVersion;
 
   const versionControls = (
-    <View style={tw`flex-row flex-wrap items-end gap-2`}>
-      <View style={tw`gap-1`}>
-        <Label style={tw`px-1.5 text-secondary`}>
+    <View className="flex-row flex-wrap items-end gap-2">
+      <View className="gap-1">
+        <Label className="text-secondary px-1.5">
           {showCompareVersionSelector ? 'From version' : 'Package version'}
         </Label>
         <PackageVersionSelector
@@ -191,15 +191,15 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
                   selectedVersion: compareVersion,
                 });
               }}
-              style={tw`mb-0.5 p-1`}>
-              <PackageCompareSwitchIcon style={tw`text-icon`} />
+              className="mb-0.5 p-1">
+              <PackageCompareSwitchIcon className="text-icon" />
             </HoverEffect>
           }>
           Flip versions
         </Tooltip>
       ) : isSelectingCompareVersion ? (
-        <View style={tw`mb-0.5 p-1`}>
-          <PackageCompareSwitchIcon style={tw`text-icon opacity-50`} />
+        <View className="mb-0.5 p-1">
+          <PackageCompareSwitchIcon className="text-icon opacity-50" />
         </View>
       ) : (
         <Tooltip
@@ -209,16 +209,16 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
               accessibilityLabel="Compare versions"
               accessibilityRole="button"
               onPress={() => setChoosingCompareVersion(true)}
-              style={tw`mb-0.5 p-1`}>
-              <PackageCompareIcon style={tw`text-icon`} />
+              className="mb-0.5 p-1">
+              <PackageCompareIcon className="text-icon" />
             </HoverEffect>
           }>
           Compare versions
         </Tooltip>
       )}
       {showCompareVersionSelector && (
-        <View style={tw`gap-1`}>
-          <Label style={tw`px-1.5 text-secondary`}>To version</Label>
+        <View className="gap-1">
+          <Label className="text-secondary px-1.5">To version</Label>
           <PackageVersionSelector
             packageName={library.npmPkg}
             selectedVersion={compareVersion}
@@ -234,8 +234,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
               accessibilityLabel="Go back to code view"
               accessibilityRole="button"
               onPress={closeVersionComparison}
-              style={tw`mb-0.5 p-1`}>
-              <FileMetadataIcon style={tw`size-5 text-icon`} />
+              className="mb-0.5 p-1">
+              <FileMetadataIcon className="text-icon size-5" />
             </HoverEffect>
           }>
           Go back to code view
@@ -246,7 +246,7 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
 
   const headerContent = (
     <>
-      <View style={tw`flex-1 flex-wrap gap-3`}>
+      <View className="flex-1 flex-wrap gap-3">
         <PackageHeader library={library} skipDescription />
       </View>
       {versionControls}
@@ -255,10 +255,10 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
 
   const browserHeader = (
     <View
-      style={[
-        tw`flex flex-row flex-wrap items-center justify-between gap-4 bg-default px-5 py-3 dark:bg-dark`,
-        isSmallScreen && tw`flex-col items-start`,
-      ]}>
+      className={cx(
+        'flex flex-row flex-wrap items-center justify-between gap-4 bg-default px-5 py-3 dark:bg-dark',
+        cx(isSmallScreen && 'flex-col items-start')
+      )}>
       {headerContent}
     </View>
   );
@@ -299,13 +299,13 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
         path="package"
       />
       <NavigationHeader library={library} />
-      <ContentContainer style={tw`my-6 px-5 pb-3`}>
-        <View style={tw`flex-1 gap-3`}>
+      <ContentContainer className="my-6 px-5 pb-3">
+        <View className="flex-1 gap-3">
           <View
-            style={[
-              tw`flex flex-1 flex-row flex-wrap items-center justify-between gap-4`,
-              isSmallScreen && tw`flex-col items-start`,
-            ]}>
+            className={cx(
+              'flex flex-1 flex-row flex-wrap items-center justify-between gap-4',
+              cx(isSmallScreen && 'flex-col items-start')
+            )}>
             {headerContent}
           </View>
           {isBrowserMaximized && document.body

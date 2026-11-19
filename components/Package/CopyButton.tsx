@@ -1,20 +1,19 @@
 import { useState } from 'react';
-import { type StyleProp } from 'react-native';
-import { type Style } from 'twrnc';
 
 import { Button } from '~/components/Button';
 import { CheckSquareIcon, CopyIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   data: string;
   tooltip: string;
   label: string;
-  style?: StyleProp<Style>;
+  className?: string;
+  containerClassName?: string;
 };
 
-export default function CopyButton({ data, tooltip, label, style }: Props) {
+export default function CopyButton({ data, tooltip, label, className, containerClassName }: Props) {
   const [copied, setCopied] = useState(false);
   const Icon = copied ? CheckSquareIcon : CopyIcon;
 
@@ -23,8 +22,8 @@ export default function CopyButton({ data, tooltip, label, style }: Props) {
       sideOffset={2}
       trigger={
         <Button
-          containerStyle={[tw`absolute right-3 top-3`, style]}
-          style={tw`bg-transparent`}
+          containerClassName={cx('absolute right-3 top-3', containerClassName)}
+          className={cx('bg-transparent', className)}
           onPress={async () => {
             if (!navigator.clipboard?.writeText) {
               return;
@@ -37,7 +36,7 @@ export default function CopyButton({ data, tooltip, label, style }: Props) {
           }}
           aria-label={label}>
           <Icon
-            style={[tw`size-5 text-palette-gray4 dark:text-pewter`, copied && tw`text-success`]}
+            className={cx('size-5 text-palette-gray4 dark:text-pewter', copied && 'text-success')}
           />
         </Button>
       }>

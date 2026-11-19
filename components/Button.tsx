@@ -1,54 +1,55 @@
 import { type PropsWithChildren } from 'react';
-import { type StyleProp, type TextStyle, View, type ViewStyle } from 'react-native';
-import { type Style } from 'twrnc';
+import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { A, HoverEffect, P } from '~/common/styleguide';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = PropsWithChildren & {
   href?: string;
   onPress?: () => void;
   openInNewTab?: boolean;
-  style?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<Style>;
+  className?: string;
+  style?: StyleProp<ViewStyle>;
+  containerClassName?: string;
 };
 
 export function Button({
   children,
   href,
   onPress,
+  className,
   style,
-  containerStyle,
+  containerClassName,
   openInNewTab,
   ...rest
 }: Props) {
   const isLink = !!href;
-  const buttonStyle = [
-    tw`cursor-pointer select-none items-center justify-center rounded bg-primary-darker outline-offset-1 dark:bg-primary-dark`,
-    style,
-  ] as ViewStyle[];
+  const buttonClassName = cx(
+    'bg-primary-darker dark:bg-primary-dark cursor-pointer items-center justify-center rounded outline-offset-1 select-none',
+    className
+  );
 
   const content = typeof children === 'string' ? <P>{children}</P> : children;
 
   return (
     <HoverEffect
-      style={containerStyle}
+      className={containerClassName}
       onPress={isLink ? undefined : onPress}
       tabIndex={isLink ? -1 : 0}>
       {isLink ? (
         <A
           href={href}
           role="button"
-          style={tw`font-sans rounded no-underline`}
+          className="rounded font-sans no-underline"
           {...(openInNewTab ? { target: '_blank' } : {})}
           {...(href?.startsWith('#') ? { target: '_self' } : {})}
           {...rest}>
-          <View focusable={false} style={buttonStyle} accessible={false}>
+          <View focusable={false} className={buttonClassName} style={style} accessible={false}>
             {content}
           </View>
         </A>
       ) : (
-        <View role="button" focusable={false} style={buttonStyle} {...rest}>
+        <View role="button" focusable={false} className={buttonClassName} style={style} {...rest}>
           {content}
         </View>
       )}

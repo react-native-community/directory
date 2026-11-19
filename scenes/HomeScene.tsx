@@ -24,7 +24,7 @@ import PageMeta from '~/components/PageMeta';
 import QuickSearch from '~/components/QuickSearch';
 import { type StatisticResultType } from '~/types';
 import { type HomePageProps } from '~/types/pages';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type PlatformEntry = {
@@ -100,20 +100,19 @@ export default function HomeScene({
       <Navigation
         title="React Native packages registry"
         description="Browse thousands of open-source packages and find the best ones for your current or next project.">
-        <QuickSearch style={tw`w-[1200px] max-w-full self-center bg-transparent`} />
+        <QuickSearch className="w-[1200px] max-w-full self-center bg-transparent" />
       </Navigation>
-      <ContentContainer style={[tw`px-4 py-5`, isSmallScreen && tw`pt-2`]}>
-        <View style={[tw`mb-1 flex-1 flex-row gap-1`, isSmallScreen && tw`flex-col`]}>
-          <View style={tw`flex-1 px-2`}>
-            <H4
-              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+      <ContentContainer className={cx('px-4 py-5', cx(isSmallScreen && 'pt-2'))}>
+        <View className={cx('mb-1 flex-1 flex-row gap-1', cx(isSmallScreen && 'flex-col'))}>
+          <View className="flex-1 px-2">
+            <H4 className="text-secondary dark:text-pewter mb-1 flex items-center gap-3 pt-3 pb-2 font-medium">
               Discover by platform
             </H4>
             <View
-              style={[
-                tw`mb-4 min-h-[194px] gap-1 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
-                isSmallScreen && tw`min-h-0`,
-              ]}>
+              className={cx(
+                'mb-4 min-h-[194px] gap-1 rounded-md border border-palette-gray2 px-4 py-3 dark:border-border',
+                cx(isSmallScreen && 'min-h-0')
+              )}>
               {PLATFORM_ROWS.map(({ platform, stat, Icon }) => (
                 <PlatformRow
                   key={platform}
@@ -124,16 +123,15 @@ export default function HomeScene({
               ))}
             </View>
           </View>
-          <View style={tw`flex-1 px-2`}>
-            <H4
-              style={tw`mb-1 flex items-center gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+          <View className="flex-1 px-2">
+            <H4 className="text-secondary dark:text-pewter mb-1 flex items-center gap-3 pt-3 pb-2 font-medium">
               Explore topics
             </H4>
             <View
-              style={[
-                tw`mb-4 min-h-[194px] flex-row flex-wrap content-center justify-center gap-x-3 gap-y-1.5 rounded-md border border-palette-gray2 px-4 pb-3 pt-2 dark:border-default`,
-                isSmallScreen && tw`min-h-0`,
-              ]}>
+              className={cx(
+                'mb-4 min-h-[194px] flex-row flex-wrap content-center justify-center gap-x-3 gap-y-1.5 rounded-md border border-palette-gray2 px-4 pb-3 pt-2 dark:border-border',
+                cx(isSmallScreen && 'min-h-0')
+              )}>
               {EXPLORE_TOPICS.map(({ label, search, params }) => (
                 <A
                   key={label}
@@ -143,41 +141,40 @@ export default function HomeScene({
               ))}
             </View>
           </View>
-          <View style={tw`flex-1 px-2`}>
-            <H4
-              style={tw`mb-1 flex items-center justify-between gap-3 pb-2 pt-3 font-medium text-secondary dark:text-pewter`}>
+          <View className="flex-1 px-2">
+            <H4 className="text-secondary dark:text-pewter mb-1 flex items-center justify-between gap-3 pt-3 pb-2 font-medium">
               Statistics
               <A href="/stats">
                 <Label>View more</Label>
               </A>
             </H4>
             <View
-              style={[
-                tw`mb-4 min-h-[194px] gap-1.5 rounded-md border border-palette-gray2 px-4 py-3 dark:border-default`,
-                isSmallScreen && tw`min-h-0`,
-              ]}>
+              className={cx(
+                'mb-4 min-h-[194px] gap-1.5 rounded-md border border-palette-gray2 px-4 py-3 dark:border-border',
+                cx(isSmallScreen && 'min-h-0')
+              )}>
               <View>
-                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                <P className="text-primary-darker dark:text-primary text-2xl font-bold">
                   {statistic.total.toLocaleString()}
                 </P>
-                <P style={tw`text-sm font-light text-secondary`}>packages in the directory</P>
+                <P className="text-secondary text-sm font-light">packages in the directory</P>
               </View>
               <View>
-                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                <P className="text-primary-darker dark:text-primary text-2xl font-bold">
                   {statistic.newArchitecture.toLocaleString()}{' '}
-                  <span style={tw`font-light`}>
+                  <span className="font-light">
                     ({((statistic.newArchitecture / statistic.total) * 100).toFixed(2)}%)
                   </span>
                 </P>
-                <P style={tw`text-sm font-light text-secondary`}>
+                <P className="text-secondary text-sm font-light">
                   packages supporting New Architecture
                 </P>
               </View>
               <View>
-                <P style={tw`text-2xl font-bold text-primary-darker dark:text-primary`}>
+                <P className="text-primary-darker dark:text-primary text-2xl font-bold">
                   {statistic.downloads.toLocaleString()}
                 </P>
-                <P style={tw`text-sm font-light text-secondary`}>cumulative monthly downloads</P>
+                <P className="text-secondary text-sm font-light">cumulative monthly downloads</P>
               </View>
             </View>
           </View>

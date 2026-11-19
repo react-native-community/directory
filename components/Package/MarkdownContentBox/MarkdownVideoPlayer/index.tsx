@@ -2,19 +2,17 @@
 
 import { Container } from '@videojs/react';
 import { Video } from '@videojs/react/video';
-import { useState, type VideoHTMLAttributes } from 'react';
-import { type Style } from 'twrnc';
+import { type CSSProperties, useState, type VideoHTMLAttributes } from 'react';
 
 import { P } from '~/common/styleguide';
 import styles from '~/styles/markdown-video-player.module.css';
-import tw from '~/util/tailwind';
 
 import { InlinePlayer } from './InlinePlayer';
 import { MarkdownVideoPlayerUI } from './MarkdownVideoPlayerUI';
 
 type Props = {
   src: VideoHTMLAttributes<HTMLVideoElement>['src'];
-  style?: Style;
+  style?: CSSProperties;
 };
 
 export default function MarkdownVideoPlayer({ src, style }: Props) {
@@ -25,8 +23,7 @@ export default function MarkdownVideoPlayer({ src, style }: Props) {
         className={`${styles.player} media-minimal-skin relative mt-3 max-h-[592px] max-w-full`}
         style={style}>
         {hasError ? (
-          <P
-            style={tw`flex items-center justify-center text-sm font-light leading-[150px] text-tertiary`}>
+          <P className="text-tertiary flex items-center justify-center text-sm leading-[150px] font-light">
             Unable to load video source
           </P>
         ) : (

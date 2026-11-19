@@ -5,7 +5,6 @@ import { View } from 'react-native';
 import { HoverEffect } from '~/common/styleguide';
 import { SettingsFillIcon, SettingsIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
-import tw from '~/util/tailwind';
 
 import CodeBrowserSettingsCheckbox from './CodeBrowserSettingsCheckbox';
 
@@ -38,8 +37,8 @@ export default function CodeBrowserSettings({ settings, onChange }: Props) {
               <View
                 accessibilityLabel="Code browser settings"
                 accessibilityRole="button"
-                style={tw`cursor-pointer`}>
-                <Icon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                className="cursor-pointer">
+                <Icon className="text-palette-gray4 dark:text-pewter size-5" />
               </View>
             </Popover.Trigger>
           </HoverEffect>
@@ -48,8 +47,7 @@ export default function CodeBrowserSettings({ settings, onChange }: Props) {
       </Tooltip>
       <Popover.Portal>
         <Popover.Content align="end" sideOffset={6} style={{ zIndex: 50 }}>
-          <View
-            style={tw`min-w-42 gap-0.5 rounded-lg border-2 border-palette-gray2 bg-default px-2 py-1.5 shadow-lg dark:border-default`}>
+          <View className="border-palette-gray2 bg-default dark:border-border min-w-42 gap-0.5 rounded-lg border-2 px-2 py-1.5 shadow-lg">
             <CodeBrowserSettingsCheckbox
               label="Wrap long lines"
               value={settings.wordWrap}

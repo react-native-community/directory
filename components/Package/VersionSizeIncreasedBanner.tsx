@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import { Label } from '~/common/styleguide';
 import { WarningIcon } from '~/components/Icons';
 import { type PackageVersionsData } from '~/types';
-import tw from '~/util/tailwind';
 
 const RECENT_RELEASE_COUNT = 10;
 const SIZE_INCREASE_THRESHOLD = 0.5;
@@ -20,14 +19,13 @@ export function VersionSizeIncreasedBanner({ data }: Props) {
   }
 
   return (
-    <View
-      style={tw`mt-2 flex flex-row items-center gap-1.5 rounded-lg border border-warning-opaque bg-warning-light p-3 dark:bg-warning-light`}>
-      <WarningIcon style={tw`size-4 shrink-0 text-warning-dark`} />
-      <Label style={tw`text-warning-dark dark:text-warning`}>
+    <View className="border-warning-opaque bg-warning-light dark:bg-warning-light mt-2 flex flex-row items-center gap-1.5 rounded-lg border p-3">
+      <WarningIcon className="text-warning-dark size-4 shrink-0" />
+      <Label className="text-warning-dark dark:text-warning">
         Warning: package size increased by{' '}
         <strong>{analysis.flaggedRelease.increasePercent?.toFixed(1)}%</strong> in version{' '}
-        <span style={tw`font-mono`}>{analysis.flaggedRelease.version}</span> compared to{' '}
-        <span style={tw`font-mono`}>{analysis.flaggedRelease.previousVersion}</span>.
+        <span className="font-mono">{analysis.flaggedRelease.version}</span> compared to{' '}
+        <span className="font-mono">{analysis.flaggedRelease.previousVersion}</span>.
       </Label>
     </View>
   );

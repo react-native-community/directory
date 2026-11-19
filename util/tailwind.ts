@@ -1,7 +1,22 @@
-import { create } from 'twrnc';
+import { useUniwind } from 'uniwind';
 
-const tw = create(require(`../tailwind.config.js`).default);
+type ClassNameValue = string | false | null | undefined | ClassNameValue[];
 
-export { useDeviceContext, useAppColorScheme } from 'twrnc';
+export function cx(...values: ClassNameValue[]) {
+  const classes: string[] = [];
 
-export default tw;
+  function add(value: ClassNameValue) {
+    if (Array.isArray(value)) {
+      value.forEach(add);
+    } else if (value) {
+      classes.push(value);
+    }
+  }
+
+  values.forEach(add);
+  return classes.join(' ');
+}
+
+export function useIsDark() {
+  return useUniwind().theme === 'dark';
+}

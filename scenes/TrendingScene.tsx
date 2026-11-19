@@ -11,7 +11,6 @@ import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import Pagination from '~/components/Pagination';
 import { type TrendingPageProps } from '~/types/pages';
-import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 export default function TrendingScene({ data, query }: TrendingPageProps) {
@@ -35,9 +34,9 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
       <Navigation
         title="Trending libraries"
         description="See the libraries that are trending today.">
-        <View style={tw`mx-auto mt-3`}>
+        <View className="mx-auto mt-3">
           <FilterButton
-            style={tw`h-8 min-w-40`}
+            className="h-8 min-w-40"
             query={query}
             onPress={() => setFilterVisible(!isFilterVisible)}
             onClearAllPress={handleClearAllPress}
@@ -46,11 +45,11 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
         </View>
       </Navigation>
       {isFilterVisible && <Filters query={query} basePath="/trending" />}
-      <ContentContainer style={tw`px-4 py-3`}>
+      <ContentContainer className="px-4 py-3">
         {data?.libraries.length ? (
           <>
             <Pagination query={query} total={total} basePath="/trending" />
-            <View style={tw`mt-3`}>
+            <View className="mt-3">
               {data.libraries.map(item => (
                 <LibraryWithLoading
                   key={`list-item-${item.npmPkg}`}
@@ -62,12 +61,12 @@ export default function TrendingScene({ data, query }: TrendingPageProps) {
             <Pagination query={query} total={total} basePath="/trending" />
           </>
         ) : (
-          <View style={tw`mb-10 mt-6 items-center`}>
-            <Image style={tw`size-16`} source={require('~/assets/notfound.png')} alt="No results" />
+          <View className="mt-6 mb-10 items-center">
+            <Image className="size-16" source={require('~/assets/notfound.png')} alt="No results" />
             <H4>Nothing was found!</H4>
           </View>
         )}
-        <P style={tw`p-6 text-sm text-secondary`}>
+        <P className="text-secondary p-6 text-sm">
           Unfortunately that&apos;s all, what&apos;s trending now. Want to explore more libraries?
           Check out the{' '}
           <A href={urlWithQuery('/packages')} target="_self">

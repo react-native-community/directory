@@ -17,7 +17,7 @@ import { Tooltip } from '~/components/Tooltip';
 import { type PackageVersionData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
 import { bigNumberFormatter, pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   label?: string;
@@ -34,80 +34,91 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
 
   return (
     <View
-      style={[
-        tw`flex-row items-center justify-between gap-0.5 rounded-xl border border-palette-gray2 px-4 pb-2.5 pt-2 dark:border-default`,
-        isSmallScreen && tw`flex-col items-start justify-start gap-x-2 gap-y-2.5`,
-      ]}>
+      className={cx(
+        'flex-row items-center justify-between gap-0.5 rounded-xl border border-palette-gray2 px-4 pb-2.5 pt-2 dark:border-border',
+        cx(isSmallScreen && 'flex-col items-start justify-start gap-x-2 gap-y-2.5')
+      )}>
       <View>
-        <View style={tw`min-h-4 flex-row flex-wrap items-center gap-1`}>
-          {label && <Caption style={tw`tabular-nums`}>{label}</Caption>}
-          {label && <Caption style={tw`text-secondary opacity-60`}>{` • `}</Caption>}
-          <Caption style={label && tw`tabular-nums text-secondary`}>{versionData.version}</Caption>
-          <Caption style={tw`text-secondary opacity-60`}>{` • `}</Caption>
+        <View className="min-h-4 flex-row flex-wrap items-center gap-1">
+          {label && <Caption className="tabular-nums">{label}</Caption>}
+          {label && <Caption className="text-secondary opacity-60">{` • `}</Caption>}
+          <Caption className={cx(label && 'tabular-nums text-secondary')}>
+            {versionData.version}
+          </Caption>
+          <Caption className="text-secondary opacity-60">{` • `}</Caption>
           <Tooltip
             trigger={
               <View>
                 <A
-                  style={tw`h-[17px] text-icon`}
-                  hoverStyle={tw`text-palette-gray4 dark:text-secondary`}
+                  className="text-icon h-[17px]"
+                  hoverStyle="text-palette-gray4 dark:text-secondary"
                   href={`/package/${versionData.name}/code?selectedVersion=${label ?? versionData.version}`}>
-                  <CodeBlockIcon style={tw`mt-px size-4`} />
+                  <CodeBlockIcon className="mt-px size-4" />
                 </A>
               </View>
             }
             sideOffset={0}>
-            <span style={tw`text-[12px]`}>Open this version in code browser</span>
+            <span className="text-[12px]">Open this version in code browser</span>
           </Tooltip>
         </View>
-        <Label style={tw`flex min-h-4 flex-wrap items-center font-light text-secondary`}>
+        <Label className="text-secondary flex min-h-4 flex-wrap items-center font-light">
           Released <RelativeTime time={time} dateOnly /> by
-          {versionData._npmUser?.trustedPublisher && <TrustedBadge style={tw`mx-1`} />}
+          {versionData._npmUser?.trustedPublisher && <TrustedBadge className="mx-1" />}
           {publisherMetadata && !versionData._npmUser?.trustedPublisher && (
             <UserAvatar
               src={`https://gravatar.com/avatar/${SHA256(publisherMetadata).toString()}?d=retro`}
               alt={`${versionData._npmUser?.name} avatar`}
-              style={tw`relative top-px mx-1 size-3.5 border border-default`}
+              className="border-border relative top-px mx-1 size-3.5 border"
             />
           )}
           {versionData._npmUser?.name ?? 'Unknown'}
         </Label>
       </View>
       <View
-        style={[
-          tw`flex-row flex-wrap items-center gap-x-5 gap-y-1.5`,
-          isSmallScreen && tw`self-start`,
-        ]}>
-        <View style={tw`shrink flex-row flex-wrap gap-x-5 gap-y-1.5`}>
+        className={cx(
+          'flex-row flex-wrap items-center gap-x-5 gap-y-1.5',
+          cx(isSmallScreen && 'self-start')
+        )}>
+        <View className="shrink flex-row flex-wrap gap-x-5 gap-y-1.5">
           {versionData.dependencies && (
-            <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[110px]`]}>
-              <DependencyIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+            <View
+              className={cx(
+                'flex-row items-center gap-2.5',
+                cx(!isSmallScreen && 'min-w-[110px]')
+              )}>
+              <DependencyIcon className="text-palette-gray4 dark:text-pewter" />
               <View>
-                <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=dependencies`}>
+                <A className="font-light tabular-nums" href={`${urlBase}?activeTab=dependencies`}>
                   {Object.keys(versionData.dependencies).length}
                 </A>
-                <Label style={tw`font-light text-secondary no-underline`}>
+                <Label className="text-secondary font-light no-underline">
                   {pluralize('dependency', Object.keys(versionData.dependencies).length)}
                 </Label>
               </View>
             </View>
           )}
-          <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[128px]`]}>
-            <DownloadIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+          <View
+            className={cx('flex-row items-center gap-2.5', cx(!isSmallScreen && 'min-w-[128px]'))}>
+            <DownloadIcon className="text-palette-gray4 dark:text-pewter" />
             <View>
-              <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=versions`}>
+              <A className="font-light tabular-nums" href={`${urlBase}?activeTab=versions`}>
                 {bigNumberFormatter(downloads)}
               </A>
-              <Label style={tw`font-light text-secondary`}>weekly downloads</Label>
+              <Label className="text-secondary font-light">weekly downloads</Label>
             </View>
           </View>
           {versionData?.dist?.unpackedSize && (
-            <View style={[tw`flex-row items-center gap-2.5`, !isSmallScreen && tw`min-w-[100px]`]}>
-              <PackageSizeIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+            <View
+              className={cx(
+                'flex-row items-center gap-2.5',
+                cx(!isSmallScreen && 'min-w-[100px]')
+              )}>
+              <PackageSizeIcon className="text-palette-gray4 dark:text-pewter" />
               <View>
-                <A style={tw`font-light tabular-nums`} href={`${urlBase}?activeTab=code`}>
+                <A className="font-light tabular-nums" href={`${urlBase}?activeTab=code`}>
                   {formatBytes(versionData.dist.unpackedSize)}
                 </A>
-                <Label style={tw`font-light text-secondary`}>package size</Label>
+                <Label className="text-secondary font-light">package size</Label>
               </View>
             </View>
           )}
@@ -117,11 +128,11 @@ export default function VersionBox({ label, time, versionData, downloads = 0 }: 
             sideOffset={0}
             trigger={
               <Button
-                style={tw`bg-transparent`}
-                containerStyle={tw`h-5`}
+                className="bg-transparent"
+                containerClassName="h-5"
                 href={versionData.dist.tarball}
                 aria-label={`Download ${versionData.version} tarball`}>
-                <PackageDownloadIcon style={tw`text-palette-gray4 dark:text-pewter`} />
+                <PackageDownloadIcon className="text-palette-gray4 dark:text-pewter" />
               </Button>
             }>
             Download tarball

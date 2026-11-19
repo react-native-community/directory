@@ -14,7 +14,6 @@ import {
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import { type PopularPageProps } from '~/types/pages';
-import tw from '~/util/tailwind';
 
 export default function PopularScene({
   core,
@@ -42,7 +41,7 @@ export default function PopularScene({
         title="Popular libraries"
         description="Browse most popular recently libraries by platform."
       />
-      <ContentContainer style={tw`px-2 py-4`}>
+      <ContentContainer className="px-2 py-4">
         <ExploreSection title="Core platforms" icon={ReactLogo} data={core.libraries} />
         <ExploreSection
           title="Android"

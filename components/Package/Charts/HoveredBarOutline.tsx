@@ -1,7 +1,7 @@
 import { DataContext } from '@visx/xychart';
 import { use } from 'react';
 
-import tw from '~/util/tailwind';
+import { useIsDark } from '~/util/tailwind';
 
 export type HoveredBarOutlineProps<Datum extends { label: string }> = {
   hoveredIndex: number | null;
@@ -26,6 +26,7 @@ export default function HoveredBarOutline<Datum extends { label: string }>({
   yAccessor,
 }: HoveredBarOutlineProps<Datum>) {
   const { xScale, yScale } = use(DataContext);
+  const isDark = useIsDark();
   const datum = hoveredIndex === null ? undefined : series[hoveredIndex];
 
   if (!datum || !xScale || !yScale) {
@@ -64,7 +65,7 @@ export default function HoveredBarOutline<Datum extends { label: string }>({
       rx={4}
       ry={4}
       fill="none"
-      stroke={tw.prefixMatch('dark') ? 'var(--gray-2)' : 'var(--secondary)'}
+      stroke={isDark ? 'var(--gray-2)' : 'var(--secondary)'}
       strokeWidth={1}
       opacity={0.75}
       pointerEvents="none"

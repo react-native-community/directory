@@ -1,34 +1,36 @@
 import { type ReactElement } from 'react';
-import { type StyleProp, View, type ViewStyle } from 'react-native';
+import { View } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { CheckIcon } from './Icons';
 
 type Props = {
   label: string;
-  tagStyle: StyleProp<ViewStyle>;
+  tagClassName: string;
   small?: boolean;
   icon?: ReactElement | null;
 };
 
 export function Tag({
   label,
-  tagStyle,
+  tagClassName,
   small,
-  icon = <CheckIcon style={tw`h-2 w-3 text-palette-gray5`} />,
+  icon = <CheckIcon className="text-palette-gray5 h-2 w-3" />,
 }: Props) {
   return (
     <View
       key={label}
-      style={[
-        tw`min-h-6 select-none flex-row items-center gap-[5px] rounded border px-2 py-1`,
-        small && tw`min-h-5 px-1.5 py-0.5`,
-        tagStyle,
-      ]}>
+      className={cx(
+        'min-h-6 select-none flex-row items-center gap-[5px] rounded border px-2 py-1',
+        small && 'min-h-5 px-1.5 py-0.5',
+        tagClassName
+      )}>
       {!small && icon}
-      <Label style={[tw`text-black dark:text-secondary`, small && tw`text-[11px]`]}>{label}</Label>
+      <Label className={cx('text-black dark:text-secondary', cx(small && 'text-[11px]'))}>
+        {label}
+      </Label>
     </View>
   );
 }

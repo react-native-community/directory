@@ -4,6 +4,7 @@ import { type NextConfig } from 'next';
 import withPlugins from 'next-compose-plugins';
 import withFonts from 'next-fonts';
 import withImages from 'next-images';
+import { withUniwind } from 'uniwind-plugin-next';
 
 const PACKAGES_TO_OPTIMIZE = [
   '@expo/html-elements',
@@ -22,53 +23,77 @@ const PACKAGES_TO_OPTIMIZE = [
   'react-shiki',
   'semver',
   'shiki/*',
-  'twrnc',
 ];
 
 const withBundleAnalyzer = BundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-export default withPlugins([withExpo, withImages, withFonts, withBundleAnalyzer], {
-  productionBrowserSourceMaps: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-  devIndicators: false,
-  reactCompiler: true,
-  images: {
-    disableStaticImages: true,
-  },
-  transpilePackages: PACKAGES_TO_OPTIMIZE,
-  logging: {
-    browserToTerminal: true,
-  },
-  experimental: {
-    forceSwcTransforms: true,
-    webpackBuildWorker: true,
-    useTypeScriptCli: true,
-    optimizePackageImports: PACKAGES_TO_OPTIMIZE,
-  },
-  async headers() {
-    return [
-      {
-        source: '/api/libraries',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
-        ],
-      },
-      {
-        source: '/fonts/:path*',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-      {
-        source: '/favicon.:ext',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-      {
-        source: '/icon-:name.:ext',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-    ];
-  },
-} satisfies NextConfig);
+function withUniwindPlugin(config: NextConfig) {
+  function configureWebpack(
+    webpackConfig: Parameters<NonNullable<NextConfig['webpack']>>[0],
+    options: Parameters<NonNullable<NextConfig['webpack']>>[1]
+  ) {
+    const result = config.webpack?.(webpackConfig, options) ?? webpackConfig;
+    result.resolve ??= {};
+    result.resolve.mainFields = options.isServer
+      ? ['module', 'main']
+      : ['browser', 'module', 'main'];
+    return result;
+  }
+
+  return withUniwind(
+    {
+      ...config,
+      webpack: configureWebpack,
+    },
+    { cssEntryFile: './styles/styles.css' }
+  );
+}
+
+export default withPlugins(
+  [withExpo, withImages, withFonts, withBundleAnalyzer, withUniwindPlugin],
+  {
+    productionBrowserSourceMaps: true,
+    reactStrictMode: true,
+    poweredByHeader: false,
+    devIndicators: false,
+    reactCompiler: true,
+    images: {
+      disableStaticImages: true,
+    },
+    transpilePackages: PACKAGES_TO_OPTIMIZE,
+    logging: {
+      browserToTerminal: true,
+    },
+    experimental: {
+      forceSwcTransforms: true,
+      webpackBuildWorker: true,
+      useTypeScriptCli: true,
+      optimizePackageImports: PACKAGES_TO_OPTIMIZE,
+    },
+    async headers() {
+      return [
+        {
+          source: '/api/libraries',
+          headers: [
+            { key: 'Access-Control-Allow-Origin', value: '*' },
+            { key: 'Access-Control-Allow-Methods', value: 'GET,HEAD' },
+          ],
+        },
+        {
+          source: '/fonts/:path*',
+          headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+        },
+        {
+          source: '/favicon.:ext',
+          headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+        },
+        {
+          source: '/icon-:name.:ext',
+          headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+        },
+      ];
+    },
+  } satisfies NextConfig
+);

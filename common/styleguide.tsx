@@ -8,12 +8,13 @@ import {
   type Role,
   type StyleProp,
   StyleSheet,
+  type TextStyle,
   useWindowDimensions,
+  View,
   type ViewStyle,
 } from 'react-native';
-import { type Style } from 'twrnc';
 
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 export function useLayout() {
   const { width } = useWindowDimensions();
@@ -24,19 +25,19 @@ export function useLayout() {
   };
 }
 
-const textStyles = StyleSheet.create({
-  h1: tw`text-[57.25px] font-semibold`,
-  h2: tw`text-[35.5px] font-semibold`,
-  h3: tw`text-[26.5px] font-semibold`,
-  h4: tw`text-[22px]`,
-  h5: tw`text-[20px]`,
-  h6: tw`text-[18px]`,
-  h6section: tw`text-[16px] tracking-tight text-secondary`,
-  headline: tw`text-[16px] font-medium`,
-  p: tw`text-[16px]`,
-  caption: tw`text-[15px] leading-[22px] tracking-normal`,
-  label: tw`text-[12px] font-medium tracking-normal`,
-});
+const textStyles = {
+  h1: 'text-[57.25px] font-semibold',
+  h2: 'text-[35.5px] font-semibold',
+  h3: 'text-[26.5px] font-semibold',
+  h4: 'text-[22px]',
+  h5: 'text-[20px]',
+  h6: 'text-[18px]',
+  h6section: 'text-secondary text-[16px] tracking-tight',
+  headline: 'text-[16px] font-medium',
+  p: 'text-[16px]',
+  caption: 'text-[15px] leading-[22px] tracking-normal',
+  label: 'text-[12px] font-medium tracking-normal',
+};
 
 type CustomTextProps = TextProps &
   PropsWithChildren<{
@@ -46,14 +47,15 @@ type CustomTextProps = TextProps &
 
 function renderTextComponent(
   Element: ComponentType<TextProps>,
-  textStyle: StyleProp<Style> | undefined,
-  { children, style, id, numberOfLines }: CustomTextProps
+  textStyle: string,
+  { children, className, style, id, numberOfLines }: CustomTextProps
 ) {
   return (
     <Element
       id={id}
       numberOfLines={numberOfLines}
-      style={[tw`font-sans my-0 font-normal text-black dark:text-white`, textStyle, style]}>
+      className={cx('font-sans my-0 font-normal text-black dark:text-white', textStyle, className)}
+      style={style}>
       {children}
     </Element>
   );
@@ -104,11 +106,13 @@ export function Label(props: CustomTextProps) {
 }
 
 type AProps = PropsWithChildren<{
-  style?: StyleProp<Style>;
+  className?: string;
+  style?: StyleProp<TextStyle>;
   target?: string;
   href: string;
-  hoverStyle?: StyleProp<Style>;
-  containerStyle?: Style;
+  hoverStyle?: string;
+  containerStyle?: StyleProp<ViewStyle>;
+  containerClassName?: string;
   role?: Role;
   tabIndex?: number;
   'aria-hidden'?: boolean;
@@ -119,23 +123,27 @@ export function A({
   href,
   target,
   children,
+  className,
   style,
   hoverStyle,
   containerStyle,
+  containerClassName,
   role,
   ref,
   ...rest
 }: AProps) {
   const [isHovered, setIsHovered] = useState(false);
-
-  const linkStyles = tw`font-sans text-black underline decoration-pewter dark:text-white dark:decoration-palette-gray5`;
-  const linkHoverStyles = tw`decoration-primary-dark`;
+  const linkClassName = cx(
+    'decoration-pewter dark:decoration-palette-gray5 font-sans text-black underline dark:text-white',
+    className,
+    isHovered && 'decoration-primary-dark',
+    isHovered && hoverStyle
+  );
 
   if (
     (target === '_self' && !href.startsWith('#')) ||
     (target !== '_blank' && href.startsWith('/'))
   ) {
-    const passedStyle = StyleSheet.flatten(style);
     return (
       <Link
         {...rest}
@@ -143,12 +151,8 @@ export function A({
         href={href}
         onPointerEnter={() => setIsHovered(true)}
         onPointerLeave={() => setIsHovered(false)}
-        style={{
-          ...linkStyles,
-          ...(passedStyle as any),
-          ...(isHovered && linkHoverStyles),
-          ...(isHovered && hoverStyle && StyleSheet.flatten(hoverStyle)),
-        }}>
+        className={linkClassName}
+        style={StyleSheet.flatten(style) as any}>
         {children}
       </Link>
     );
@@ -157,28 +161,30 @@ export function A({
   const targetWithFallback = target ?? '_blank';
 
   return (
-    <span
+    <View
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
-      style={{ ...tw`contents`, ...containerStyle }}>
+      className={cx('contents', containerClassName)}
+      style={containerStyle}>
       <HtmlElements.A
         {...rest}
         ref={ref as any}
         href={href}
-        numberOfLines={containerStyle ? 1 : undefined}
+        numberOfLines={containerStyle || containerClassName ? 1 : undefined}
         target={targetWithFallback}
         rel={targetWithFallback === '_blank' ? 'noopener noreferrer' : undefined}
-        style={[linkStyles, isHovered && linkHoverStyles, style, isHovered && hoverStyle]}>
+        className={linkClassName}
+        style={style}>
         {children}
       </HtmlElements.A>
-    </span>
+    </View>
   );
 }
 
 type HoverEffectProps = PressableProps & {
   style?: StyleProp<ViewStyle>;
-  hoveredStyle?: Style;
-  pressedStyle?: Style;
+  hoveredStyle?: string;
+  pressedStyle?: string;
 };
 
 export function HoverEffect({
@@ -187,22 +193,44 @@ export function HoverEffect({
   hoveredStyle,
   pressedStyle,
   onPress,
+  onHoverIn,
+  onHoverOut,
+  onPressIn,
+  onPressOut,
   focusable = false,
   ...rest
 }: HoverEffectProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
+
   return (
     <Pressable
-      style={({ hovered, pressed }) => [
-        tw`-outline-offset-2`,
-        { transition: 'all 0.33s' },
-        style,
-        hovered && (hoveredStyle ?? tw`opacity-75`),
-        pressed && (pressedStyle ?? tw`opacity-50`),
-      ]}
+      className={cx(
+        '-outline-offset-2 transition-all duration-300',
+        isHovered && (hoveredStyle ?? 'opacity-75'),
+        isPressed && (pressedStyle ?? 'opacity-50')
+      )}
+      style={style}
       accessible={focusable}
       focusable={focusable}
       tabIndex={onPress || focusable ? 0 : -1}
       onPress={onPress}
+      onHoverIn={event => {
+        setIsHovered(true);
+        onHoverIn?.(event);
+      }}
+      onHoverOut={event => {
+        setIsHovered(false);
+        onHoverOut?.(event);
+      }}
+      onPressIn={event => {
+        setIsPressed(true);
+        onPressIn?.(event);
+      }}
+      onPressOut={event => {
+        setIsPressed(false);
+        onPressOut?.(event);
+      }}
       {...rest}>
       {children}
     </Pressable>

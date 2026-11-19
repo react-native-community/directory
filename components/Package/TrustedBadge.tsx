@@ -2,18 +2,18 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 
 import { VerifiedIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
-import tw from '~/util/tailwind';
 
 type Props = {
+  className?: string;
   style?: StyleProp<ViewStyle>;
 };
 
-export default function TrustedBadge({ style }: Props) {
+export default function TrustedBadge({ className, style }: Props) {
   return (
     <Tooltip
       trigger={
-        <View role="button" aria-label="Trusted publisher" style={style}>
-          <VerifiedIcon style={tw`h-[15px] w-4 text-success`} />
+        <View className={className} role="button" aria-label="Trusted publisher" style={style}>
+          <VerifiedIcon className="text-success h-[15px] w-4" />
         </View>
       }
       sideOffset={0}>

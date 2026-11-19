@@ -4,7 +4,7 @@ import { type PropsWithChildren } from 'react';
 import { Button } from '~/components/Button';
 import { LinkIcon } from '~/components/Icons';
 import { childrenToText } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = PropsWithChildren<{
   node: Element;
@@ -32,16 +32,16 @@ export default function MarkdownHeading({ children, slugger, node, linkableHeade
       <Button
         href={`#${slug}`}
         aria-label="Link to header"
-        style={[
-          tw`bg-transparent`,
-          isCentered && tw`absolute -top-2.5`,
-          node.tagName === 'h1'
-            ? tw`mt-px size-5`
-            : ['h2', 'h3'].includes(node.tagName)
-              ? tw`mt-px size-4`
-              : tw`size-3.5`,
-        ]}>
-        <LinkIcon style={[tw`text-icon`, node.tagName === 'h1' && tw`size-5`]} />
+        className={cx(
+          'bg-transparent',
+          cx(isCentered && 'absolute -top-2.5'),
+          cx(
+            node.tagName === 'h1'
+              ? 'mt-px size-5'
+              : cx(['h2', 'h3'].includes(node.tagName) ? 'mt-px size-4' : 'size-3.5')
+          )
+        )}>
+        <LinkIcon className={cx('text-icon', cx(node.tagName === 'h1' && 'size-5'))} />
       </Button>
     </Heading>
   );

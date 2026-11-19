@@ -1,8 +1,62 @@
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'uniwind';
+
+@source '../common';
+@source '../components';
+@source '../context';
+@source '../pages';
+@source '../scenes';
+
+@theme {
+  --breakpoint-small: 800px;
+  --breakpoint-layout: 1200px;
+
+  --font-sans: 'Optimistic Display', ui-sans-serif, system-ui;
+  --font-mono: 'JetBrains Mono', monospace, ui-monospace;
+
+  --container-layout: 1200px;
+  --container-footer: 960px;
+
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-darker: var(--primary-darker);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active-hover: var(--primary-active-hover);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-accented: var(--accented);
+  --color-powder: var(--powder);
+  --color-pewter: var(--pewter);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-warning-dark: var(--warning-dark);
+  --color-warning-opaque: var(--warning-border);
+  --color-palette-gray1: var(--gray-1);
+  --color-palette-gray2: var(--gray-2);
+  --color-palette-gray3: var(--gray-3);
+  --color-palette-gray4: var(--gray-4);
+  --color-palette-gray5: var(--gray-5);
+  --color-palette-gray6: var(--gray-6);
+  --color-palette-gray7: var(--gray-7);
+  --color-default: var(--background);
+  --color-diff-added: var(--diff-added-background);
+  --color-diff-removed: var(--diff-removed-background);
+  --color-dark: var(--dark);
+  --color-very-dark: var(--very-dark);
+  --color-dark-bright: var(--dark-bright);
+  --color-icon: var(--icon);
+  --color-hover: var(--hover);
+  --color-secondary-border: var(--border-secondary);
+  --color-border: var(--border);
+}
 
 @font-face {
   font-family: 'Optimistic Display';
-  src: url('/fonts/Optimistic-Display-Light.woff2') format('woff2');
+  src: url(/* webpackIgnore: true */ '/fonts/Optimistic-Display-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -10,7 +64,7 @@
 
 @font-face {
   font-family: 'Optimistic Display';
-  src: url('/fonts/Optimistic-Display-Regular.woff2') format('woff2');
+  src: url(/* webpackIgnore: true */ '/fonts/Optimistic-Display-Regular.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,7 +72,7 @@
 
 @font-face {
   font-family: 'Optimistic Display';
-  src: url('/fonts/Optimistic-Display-Bold.woff2') format('woff2');
+  src: url(/* webpackIgnore: true */ '/fonts/Optimistic-Display-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -26,7 +80,7 @@
 
 @font-face {
   font-family: 'JetBrains Mono';
-  src: url('/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  src: url(/* webpackIgnore: true */ '/fonts/JetBrainsMono-Variable.woff2') format('woff2');
   font-style: normal;
   font-display: swap;
 }
@@ -169,7 +223,7 @@ input:focus-visible {
 
 #__next,
 #__next > div {
-  @apply min-h-[100vh] bg-default;
+  @apply bg-default min-h-[100vh];
 }
 
 /* SELECT */
@@ -354,7 +408,7 @@ select {
   @apply inline-flex flex-row items-center justify-center gap-1.5;
 
   .dot {
-    @apply inline-block size-2.5 rounded-[50%] bg-palette-gray4 opacity-90 dark:bg-pewter;
+    @apply bg-palette-gray4 dark:bg-pewter inline-block size-2.5 rounded-[50%] opacity-90;
     animation: dots-bounce 1.2s infinite ease-in-out both;
 
     &:nth-child(1) {
@@ -375,10 +429,12 @@ select {
   0%,
   80%,
   100% {
-    @apply scale-0 opacity-40;
+    transform: scale(0);
+    opacity: 0.4;
   }
   40% {
-    @apply scale-100 opacity-100;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

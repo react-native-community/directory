@@ -20,7 +20,6 @@ import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type MarkdownTab, type MarkdownTabsType } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
-import tw from '~/util/tailwind';
 
 import MarkdownContentTab from './MarkdownContentTab';
 import MarkdownRenderer from './MarkdownRenderer';
@@ -196,11 +195,11 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
   return (
     <View
       ref={markdownContentBoxRef}
-      style={tw`my-2 rounded-xl border border-palette-gray2 text-black dark:border-default dark:text-white`}>
+      className="border-palette-gray2 dark:border-border my-2 rounded-xl border text-black dark:text-white">
       <View
         ref={markdownContentHeaderRef}
         nativeID="markdownContentHeader"
-        style={tw`flex-row flex-wrap items-center gap-x-2 rounded-t-xl border-b border-palette-gray2 pl-1.5 pr-16 dark:border-default`}>
+        className="border-palette-gray2 dark:border-border flex-row flex-wrap items-center gap-x-2 rounded-t-xl border-b pr-16 pl-1.5">
         {contentTabs.map(tab => (
           <MarkdownContentTab
             tab={tab}
@@ -217,10 +216,10 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
                 <Button
                   href={getGitHubEditUrl(library, activeTab, markdownContent?.fromRoot ?? false)}
                   openInNewTab
-                  containerStyle={tw`absolute right-12 top-3`}
-                  style={tw`bg-transparent`}
+                  containerClassName="absolute right-12 top-3"
+                  className="bg-transparent"
                   aria-label="Edit this file on GitHub">
-                  <EditIcon style={[tw`size-5 text-palette-gray4 dark:text-pewter`]} />
+                  <EditIcon className="text-palette-gray4 dark:text-pewter size-5" />
                 </Button>
               }>
               Edit this file on GitHub
@@ -229,16 +228,16 @@ export default function MarkdownContentBox({ packageName, library, loader = fals
               data={markdownContent?.content}
               tooltip={`Copy ${activeTab}`}
               label={`Copy ${activeTab} to clipboard`}
-              style={tw`right-4`}
+              className="right-4"
             />
           </>
         )}
       </View>
-      <View style={tw`p-4 pt-3 font-light`}>
+      <View className="p-4 pt-3 font-light">
         {noData ? (
-          <View style={tw`gap-4 py-6`}>
+          <View className="gap-4 py-6">
             {isLoading && <ThreeDotsLoader />}
-            <P style={tw`text-center`}>{readmeFallbackContent}</P>
+            <P className="text-center">{readmeFallbackContent}</P>
           </View>
         ) : (
           <MarkdownRenderer data={markdownContent?.content} repoUrl={repoUrl} />

@@ -8,7 +8,7 @@ import {
   TextFileIcon,
 } from '~/components/Icons';
 import { IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBrowser';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   label: string;
@@ -27,28 +27,28 @@ export function CodeBrowserFileIcon({
 }: Props) {
   const fileExtension = label.includes('.') ? (label.split('.').at(-1) ?? 'file') : 'file';
   const isImageFile = IMAGE_FILES.includes(fileExtension);
-  const style = [
-    tw`size-4 shrink-0 text-icon opacity-80`,
-    isNested && tw`size-3 text-palette-gray5 opacity-100`,
-    isActive && tw`text-primary-darker dark:text-primary-dark`,
-    isDirectory && tw`text-tertiary opacity-100 dark:text-accented`,
-  ];
+  const className = cx(
+    'text-icon size-4 shrink-0 opacity-80',
+    isNested && 'text-palette-gray5 size-3 opacity-100',
+    isActive && 'text-primary-darker dark:text-primary-dark',
+    isDirectory && 'text-tertiary dark:text-accented opacity-100'
+  );
 
   if (isDirectory) {
     if (isCollapsed) {
-      return <FolderIcon style={style} />;
+      return <FolderIcon className={className} />;
     }
-    return <FolderOpenIcon style={style} />;
+    return <FolderOpenIcon className={className} />;
   } else if (isNested) {
-    return <FileMetadataIcon style={style} />;
+    return <FileMetadataIcon className={className} />;
   } else if (isImageFile) {
-    return <ImageFileIcon style={style} />;
+    return <ImageFileIcon className={className} />;
   }
   if (['text', 'txt', 'md', 'mdx'].includes(fileExtension)) {
-    return <TextFileIcon style={style} />;
+    return <TextFileIcon className={className} />;
   } else if (['file', ...PREVIEW_DISABLED_FILES].includes(fileExtension)) {
-    return <FileIcon style={style} />;
+    return <FileIcon className={className} />;
   }
 
-  return <CodeFileIcon style={style} />;
+  return <CodeFileIcon className={className} />;
 }

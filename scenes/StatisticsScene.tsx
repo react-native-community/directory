@@ -9,12 +9,11 @@ import PageMeta from '~/components/PageMeta';
 import StatisticChartHeader from '~/components/Statistics/StatisticChartHeader';
 import { type LintToolType, type StatisticResultType } from '~/types';
 import { formatLintTools } from '~/util/strings';
-import tw from '~/util/tailwind';
 
 const StatisticsBarChart = dynamic(() => import('~/components/Statistics/StatisticsBarChart'), {
   ssr: false,
   loading: () => (
-    <View style={tw`min-h-[220px] items-center justify-center`}>
+    <View className="min-h-[220px] items-center justify-center">
       <ThreeDotsLoader />
     </View>
   ),
@@ -91,7 +90,7 @@ export default function StatisticsScene({ statistic }: Props) {
         title="Statistics"
         description="Detailed statistics for every React Native library in the directory"
       />
-      <ContentContainer style={tw`mb-16 mt-6 gap-4 px-4`}>
+      <ContentContainer className="mt-6 mb-16 gap-4 px-4">
         <StatisticChartHeader title="Platform support" large />
         <StatisticsBarChart data={platforms} total={statistic.total} />
         <StatisticChartHeader title="New Architecture" large />
@@ -165,7 +164,7 @@ export default function StatisticsScene({ statistic }: Props) {
           ]}
           total={statistic.swiftPM.unsupported + statistic.swiftPM.supported}
         />
-        <H2 style={tw`mt-8 text-center`}>Package-based statistics</H2>
+        <H2 className="mt-8 text-center">Package-based statistics</H2>
         <StatisticChartHeader title="Most depended-on packages" large />
         <StatisticsBarChart
           data={statistic.topDependedOnPackages}
@@ -173,7 +172,7 @@ export default function StatisticsScene({ statistic }: Props) {
           leftMargin={220}
           valueScale="count"
         />
-        <H2 style={tw`mt-8 text-center`}>Development stack and tooling</H2>
+        <H2 className="mt-8 text-center">Development stack and tooling</H2>
         <StatisticChartHeader title="Native module framework" large />
         <StatisticsBarChart data={moduleTypes} total={statistic.total} />
         <StatisticChartHeader title="Native code used" large />
@@ -192,7 +191,7 @@ export default function StatisticsScene({ statistic }: Props) {
         <StatisticsBarChart data={packageManagers} total={statistic.total} />
         <StatisticChartHeader title="Lint tools" large />
         <StatisticsBarChart data={lintTools} total={statistic.total} />
-        <H2 style={tw`mt-8 text-center`}>Directory metadata</H2>
+        <H2 className="mt-8 text-center">Directory metadata</H2>
         <StatisticChartHeader title="Directory score distribution" large />
         <StatisticsBarChart
           data={statistic.scoreBuckets}

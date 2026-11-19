@@ -10,7 +10,6 @@ import Footer from '~/components/Footer';
 import { BookmarksProvider } from '~/context/BookmarksContext';
 import CustomAppearanceProvider from '~/context/CustomAppearanceProvider';
 import { QuickSearchStateProvider } from '~/context/QuickSearchState';
-import tw from '~/util/tailwind';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -38,7 +37,7 @@ function App({ pageProps, Component }: AppProps) {
                   content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"
                 />
               </Head>
-              <main style={tw`flex flex-1 flex-col`}>
+              <main className="flex flex-1 flex-col">
                 <Component {...pageProps} />
               </main>
               <Footer />

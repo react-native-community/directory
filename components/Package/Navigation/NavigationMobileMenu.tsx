@@ -6,7 +6,7 @@ import { ArrowIcon } from '~/components/Icons';
 import EntityCounter from '~/components/Package/EntityCounter';
 import SelectorItemHoverEffect from '~/components/Selector/SelectorItemHoverEffect';
 import { type PackageNavigationTab } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type NavigationMobileMenuProps = {
   activeIndex: number;
@@ -28,20 +28,20 @@ export function NavigationMobileMenu({
   return (
     <Popover.Root open={open} onOpenChange={onOpenChange}>
       <HoverEffect
-        hoveredStyle={tw`bg-palette-gray6 dark:bg-default`}
-        pressedStyle={tw`bg-palette-gray6 dark:bg-default`}
-        style={[tw`rounded`, isTriggerActive && tw`bg-primary-hover`]}>
+        hoveredStyle="bg-palette-gray6 dark:bg-default"
+        pressedStyle="bg-palette-gray6 dark:bg-default"
+        className={cx('rounded', cx(isTriggerActive && 'bg-primary-hover'))}>
         <Popover.Trigger asChild>
           <View role="button">
-            <View style={tw`cursor-pointer flex-row items-center gap-1.5 px-4 pb-2 pt-1.5`}>
-              <P style={[tw`text-white`, isTriggerActive && tw`text-primary`]}>More</P>
+            <View className="cursor-pointer flex-row items-center gap-1.5 px-4 pt-1.5 pb-2">
+              <P className={cx('text-white', cx(isTriggerActive && 'text-primary'))}>More</P>
               <ArrowIcon
-                style={[
-                  tw`mt-0.5 size-3 shrink-0`,
-                  isTriggerActive ? tw`text-primary` : tw`text-icon`,
-                  open ? tw`rotate-270` : tw`rotate-90`,
-                  { transition: 'all 0.2s' },
-                ]}
+                className={cx(
+                  'mt-0.5 size-3 shrink-0',
+                  cx(isTriggerActive ? 'text-primary' : 'text-icon'),
+                  cx(open ? 'rotate-270' : 'rotate-90'),
+                  'transition-all duration-200'
+                )}
               />
             </View>
           </View>
@@ -49,23 +49,22 @@ export function NavigationMobileMenu({
       </HoverEffect>
       <Popover.Portal>
         <Popover.Content align="end" sideOffset={6}>
-          <View
-            style={tw`min-w-40 overflow-hidden rounded-lg border-2 border-palette-gray2 bg-default py-0.5 shadow-lg dark:border-default dark:bg-default`}>
+          <View className="border-palette-gray2 bg-default dark:border-border dark:bg-default min-w-40 overflow-hidden rounded-lg border-2 py-0.5 shadow-lg">
             {tabs.map((tab, index) => (
               <SelectorItemHoverEffect key={tab.title} focusable={false}>
                 <A
                   href={tab.path}
-                  style={tw`flex flex-row items-center gap-2 rounded-lg px-2.5 py-1.5 no-underline`}
+                  className="flex flex-row items-center gap-2 rounded-lg px-2.5 py-1.5 no-underline"
                   target="_self">
                   <P
-                    style={[
-                      tw`text-[inherit]`,
-                      visible + index === activeIndex && tw`text-primary-darker dark:text-primary`,
-                    ]}>
+                    className={cx(
+                      'text-[inherit]',
+                      cx(visible + index === activeIndex && 'text-primary-darker dark:text-primary')
+                    )}>
                     {tab.title}
                   </P>
                   {!!tab.counter && (
-                    <EntityCounter count={tab.counter} style={tw`mt-0 text-[inherit]`} />
+                    <EntityCounter count={tab.counter} className="mt-0 text-[inherit]" />
                   )}
                 </A>
               </SelectorItemHoverEffect>

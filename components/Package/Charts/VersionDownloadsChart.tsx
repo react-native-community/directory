@@ -10,7 +10,7 @@ import { Label, useLayout } from '~/common/styleguide';
 import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { replaceQueryParams } from '~/util/queryParams';
 import { NUMBER_FORMATTER, pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { useIsDark } from '~/util/tailwind';
 
 import ChartTooltip from './ChartTooltip';
 import HoveredBarOutline from './HoveredBarOutline';
@@ -46,7 +46,7 @@ const BAR_GRADIENT_ID = 'version-downloads-chart-gradient';
 const OTHER_BAR_GRADIENT_ID = 'version-downloads-chart-other';
 
 export default function VersionDownloadsChart({ npmDownloads, registryData }: Props) {
-  const isDark = tw.prefixMatch('dark');
+  const isDark = useIsDark();
   const { isSmallScreen } = useLayout();
 
   const router = useRouter();
@@ -65,8 +65,8 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
 
   if (!series.length) {
     return (
-      <View style={tw`min-h-[220px] items-center justify-center`}>
-        <Label style={tw`text-secondary`}>Download data unavailable</Label>
+      <View className="min-h-[220px] items-center justify-center">
+        <Label className="text-secondary">Download data unavailable</Label>
       </View>
     );
   }
@@ -88,7 +88,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
 
   return (
     // @ts-expect-error Ref type miss-match
-    <View style={tw`w-full gap-3`} ref={parentRef}>
+    <View className="w-full gap-3" ref={parentRef}>
       <VersionDownloadsChartModes
         mode={mode}
         onModeChange={handleModeChange}
@@ -149,9 +149,9 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
               y={y}
               textAnchor="middle"
               dominantBaseline="middle"
-              style={tw`select-none tabular-nums`}
+              className="tabular-nums select-none"
               fill="var(--secondary)">
-              <tspan x={x} style={tw`text-[12px] font-light`}>
+              <tspan x={x} className="text-[12px] font-light">
                 {formattedValue}
               </tspan>
             </text>
@@ -172,16 +172,16 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
                 y={y}
                 textAnchor="end"
                 dominantBaseline="middle"
-                style={tw`select-none tabular-nums`}
+                className="tabular-nums select-none"
                 fill={isDark ? 'var(--white)' : 'var(--black)'}>
                 <tspan
                   x={labelX}
                   dy={data.secondaryLabel ? '-0.44em' : '0'}
-                  style={tw`text-[12px]`}>
+                  className="text-[12px]">
                   {getPrimaryChartLabel(data)}
                 </tspan>
                 {data.secondaryLabel && (
-                  <tspan x={labelX} dy="1.2em" fill="var(--secondary)" style={tw`text-[10px]`}>
+                  <tspan x={labelX} dy="1.2em" fill="var(--secondary)" className="text-[10px]">
                     {data.secondaryLabel}
                   </tspan>
                 )}
@@ -234,10 +234,10 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
 
             return (
               <ChartTooltip>
-                <span style={tw`text-[14px] font-medium tabular-nums`}>
+                <span className="text-[14px] font-medium tabular-nums">
                   {data.label}
                   {data.distTags?.length && (
-                    <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                    <span className="text-palette-gray3 dark:text-secondary">
                       {` `}• {data.distTags.join(', ')}
                     </span>
                   )}
@@ -250,7 +250,7 @@ export default function VersionDownloadsChart({ npmDownloads, registryData }: Pr
                   <span>{`${data.versionCount} ${pluralize('version', data.versionCount)} aggregated`}</span>
                 )}
                 {data.publishedAt && data.kind !== 'other' && (
-                  <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                  <span className="text-palette-gray3 dark:text-secondary">
                     {isAggregatedKind(data.kind) ? 'Latest publish' : 'Published'}{' '}
                     {new Date(data.publishedAt).toLocaleDateString('en-US')}
                   </span>

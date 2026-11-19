@@ -12,7 +12,7 @@ import UserAvatar from '~/components/Package/UserAvatar';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType, type NpmRegistryVersionData } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -35,48 +35,48 @@ export default function PackageHeader({
   return (
     <>
       <View
-        style={[
-          tw`min-h-[26px] flex-row items-center justify-between`,
-          isSmallScreen && tw`flex-col items-start gap-y-2.5`,
-        ]}>
-        <View style={tw`flex-row flex-wrap items-center gap-x-2 gap-y-1`}>
+        className={cx(
+          'min-h-[26px] flex-row items-center justify-between',
+          cx(isSmallScreen && 'flex-col items-start gap-y-2.5')
+        )}>
+        <View className="flex-row flex-wrap items-center gap-x-2 gap-y-1">
           <Tooltip
             sideOffset={2}
             delayDuration={100}
             trigger={
               <UserAvatar
                 src={`https://github.com/${ghUsername}.png`}
-                style={tw`size-6 rounded-md border border-solid border-palette-gray2 dark:border-default`}
+                className="border-palette-gray2 dark:border-border size-6 rounded-md border border-solid"
                 alt={`${startCase(ghUsername)} avatar`}
               />
             }>
             {startCase(ghUsername)}
           </Tooltip>
-          <P style={tw`-mt-0.5 text-xl font-semibold leading-[26px]`}>{library.npmPkg}</P>
+          <P className="-mt-0.5 text-xl leading-[26px] font-semibold">{library.npmPkg}</P>
           {registryData && (
-            <View style={tw`flex-row items-center gap-x-1`}>
+            <View className="flex-row items-center gap-x-1">
               {library.npm?.latestReleaseDate ? (
                 <Tooltip
                   trigger={
                     <View>
-                      <P style={tw`text-secondary`}>{registryData.version}</P>
+                      <P className="text-secondary">{registryData.version}</P>
                     </View>
                   }
                   sideOffset={0}>
                   Released {getTimeSinceToday(library.npm.latestReleaseDate)}
                 </Tooltip>
               ) : (
-                <P style={tw`text-secondary`}>{registryData.version}</P>
+                <P className="text-secondary">{registryData.version}</P>
               )}
               {registryData._npmUser?.trustedPublisher && <TrustedBadge />}
             </View>
           )}
           <HoverEffect>
-            <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
-              <GitHubIcon style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
+            <A href={library.githubUrl} className="size-5" aria-label="GitHub repository">
+              <GitHubIcon className="text-palette-gray5 dark:text-palette-gray4 size-5" />
             </A>
           </HoverEffect>
-          <BookmarkButton bookmarkId={bookmarkId} style={tw`size-5`} iconStyle={tw`size-5`} />
+          <BookmarkButton bookmarkId={bookmarkId} className="size-5" iconClassName="size-5" />
         </View>
         {rightSlot}
       </View>

@@ -7,7 +7,6 @@ import { LibraryWithLoading } from '~/components/Library/LibraryWithLoading';
 import { type LibraryType, type Query } from '~/types';
 import { POPULAR_QUERY_BASE } from '~/util/Constants';
 import { TimeRange } from '~/util/datetime';
-import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -24,20 +23,20 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
 
   return (
     <>
-      <H3 style={tw`flex items-center gap-3 px-2 pb-2 pt-3`} id={hashLink}>
-        {icon && createElement(icon, { style: tw`size-7.5 mt-px text-icon` })}
+      <H3 className="flex items-center gap-3 px-2 pt-3 pb-2" id={hashLink}>
+        {icon && createElement(icon, { className: 'text-icon mt-px size-7.5' })}
         <A
           href={`#${hashLink}`}
           target="_self"
-          style={tw`text-icon no-underline`}
-          hoverStyle={tw`text-palette-gray4 dark:text-palette-gray5`}>
+          className="text-icon no-underline"
+          hoverStyle="text-palette-gray4 dark:text-palette-gray5">
           {title}
         </A>
       </H3>
-      <View style={tw`flex-1 flex-row flex-wrap pt-3`}>
+      <View className="flex-1 flex-row flex-wrap pt-3">
         <ExploreLibrariesList list={data} />
       </View>
-      <P style={tw`px-6 pb-6 pt-2 text-sm font-light text-secondary`}>
+      <P className="text-secondary px-6 pt-2 pb-6 text-sm font-light">
         Want to see more? Check out other{' '}
         <A
           href={urlWithQuery('/packages', {

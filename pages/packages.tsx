@@ -11,7 +11,6 @@ import Search from '~/components/Search';
 import { type APIResponseType } from '~/types';
 import { NEXT_1H_CACHE_HEADER } from '~/util/Constants';
 import getApiUrl from '~/util/getApiUrl';
-import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -27,7 +26,7 @@ function Index({ data, query }: Props) {
     <>
       <PageMeta searchQuery={router.query?.search} />
       <Navigation header={<Search query={router.query} total={total} />} />
-      <ContentContainer style={tw`px-4 py-3`}>
+      <ContentContainer className="px-4 py-3">
         <Pagination query={query} total={total} />
         <Libraries libraries={data && data.libraries} />
         <Pagination query={query} total={total} noTags />

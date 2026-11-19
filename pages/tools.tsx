@@ -2,7 +2,6 @@ import ContentContainer from '~/components/ContentContainer';
 import Navigation from '~/components/Navigation';
 import PageMeta from '~/components/PageMeta';
 import ToolEntry from '~/components/Tools/ToolEntry';
-import tw from '~/util/tailwind';
 
 export default function Tools() {
   return (
@@ -16,15 +15,14 @@ export default function Tools() {
         title="Tools"
         description="List of development tools, apps and websites using React Native Directory data."
       />
-      <ContentContainer style={tw`my-10 gap-4 px-4`}>
+      <ContentContainer className="my-10 gap-4 px-4">
         <ToolEntry
           name="React Native Directory CLI"
           description="Propose new entries to React Native Directory directly from your terminal."
           note={
             <>
               The{' '}
-              <code
-                style={tw`rounded-sm bg-palette-gray2 p-0.5 px-1 text-[90%] dark:bg-palette-gray6`}>
+              <code className="bg-palette-gray2 dark:bg-palette-gray6 rounded-sm p-0.5 px-1 text-[90%]">
                 rn-directory
               </code>{' '}
               CLI gathers the required information manually or automatically, creates a fork, and

@@ -1,21 +1,22 @@
-import { type StyleProp } from 'react-native';
-import { type Style } from 'twrnc';
+import { type StyleProp, type TextStyle } from 'react-native';
 
 import { Label } from '~/common/styleguide';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   count: number | string;
-  style?: StyleProp<Style>;
+  className?: string;
+  style?: StyleProp<TextStyle>;
 };
 
-export default function EntityCounter({ count, style }: Props) {
+export default function EntityCounter({ count, className, style }: Props) {
   return (
     <Label
-      style={[
-        tw`h-4.5 mt-[3px] rounded-xl bg-palette-gray2 px-1.5 py-0.5 text-[11px] tabular-nums text-[inherit] dark:bg-accented`,
-        style,
-      ]}>
+      className={cx(
+        'h-4.5 mt-[3px] rounded-xl bg-palette-gray2 px-1.5 py-0.5 text-[11px] tabular-nums text-[inherit] dark:bg-accented',
+        className
+      )}
+      style={style}>
       {count}
     </Label>
   );

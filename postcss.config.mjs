@@ -1,6 +1,7 @@
 const config = {
   plugins: {
-    tailwindcss: {},
+    'uniwind-plugin-next/postcss': {},
+    '@tailwindcss/postcss': {},
   },
 };
 

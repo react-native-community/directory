@@ -16,7 +16,7 @@ import { type NpmPerVersionDownloads, type PackageVersionsData } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { parseQueryParams, replaceQueryParams } from '~/util/queryParams';
 import { pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import VersionBox from './VersionBox';
 
@@ -60,22 +60,21 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
     <>
       <H6Section
         id={VERSIONS_SECTION_ID}
-        style={[tw`mt-3 flex items-end justify-between text-secondary`, { scrollMargin: 16 }]}>
+        className={cx('mt-3 flex items-end justify-between scroll-m-4 text-secondary')}>
         <span>Versions</span>
         {filteredVersions.length > 0 && (
-          <Label style={tw`font-light text-secondary`}>
-            <span style={tw`font-medium text-primary-darker dark:text-primary-dark`}>
+          <Label className="text-secondary font-light">
+            <span className="text-primary-darker dark:text-primary-dark font-medium">
               {filteredVersions.length}
             </span>{' '}
             matching {pluralize('version', filteredVersions.length)}
           </Label>
         )}
       </H6Section>
-      <View style={tw`gap-2`}>
-        <View
-          style={tw`flex-row items-center rounded-lg border-2 border-default bg-palette-gray1 dark:bg-dark`}>
-          <View style={tw`pointer-events-none absolute left-4`}>
-            <SearchIcon style={tw`text-icon`} />
+      <View className="gap-2">
+        <View className="border-border bg-palette-gray1 dark:bg-dark flex-row items-center rounded-lg border-2">
+          <View className="pointer-events-none absolute left-4">
+            <SearchIcon className="text-icon" />
           </View>
           <TextInput
             ref={inputRef}
@@ -108,11 +107,11 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
             onFocus={handleInputFocus}
             onBlur={handleInputBlur}
             placeholder="Filter versions…"
-            style={tw`h-11 flex-1 rounded-lg bg-palette-gray1 p-3 pl-11 text-base text-black dark:bg-dark dark:text-white`}
-            placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
+            className="bg-palette-gray1 dark:bg-dark h-11 flex-1 rounded-lg p-3 pl-11 text-base text-black dark:text-white"
+            placeholderTextColor={'var(--gray-4)' as ColorValue}
           />
           {!isSmallScreen && (
-            <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
+            <View className="pointer-events-none absolute right-4 flex-row items-center gap-1">
               {isInputFocused ? (
                 <InputKeyHint
                   content={[
@@ -141,7 +140,7 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
           shallow
         />
       )}
-      <View style={tw`gap-2`}>
+      <View className="gap-2">
         {visibleVersions.length ? (
           visibleVersions.map(([version, versionData]) => (
             <VersionBox
@@ -152,8 +151,8 @@ export default function VersionsSection({ registryData, npmDownloads }: Props) {
             />
           ))
         ) : (
-          <View style={tw`rounded-xl border border-dashed border-default px-4 py-5`}>
-            <Label style={tw`text-center text-secondary`}>
+          <View className="border-border rounded-xl border border-dashed px-4 py-5">
+            <Label className="text-secondary text-center">
               No versions match &quot;{versionSearch?.trim()}&quot; query.
             </Label>
           </View>

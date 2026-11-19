@@ -2,7 +2,6 @@ import { type PropsWithChildren } from 'react';
 import { View } from 'react-native';
 
 import { Button } from '~/components/Button';
-import tw from '~/util/tailwind';
 
 import { Tooltip } from './Tooltip';
 
@@ -32,8 +31,8 @@ export default function TopBarIconButton({
             href={href}
             openInNewTab={openInNewTab}
             onPress={onPress}
-            style={tw`size-8.5 bg-transparent px-0.5`}
-            containerStyle={tw`rounded-full`}>
+            className="size-8.5 bg-transparent px-0.5"
+            containerClassName="rounded-full">
             {children}
           </Button>
         </View>

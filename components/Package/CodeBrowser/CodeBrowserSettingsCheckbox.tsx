@@ -3,7 +3,7 @@ import { Pressable } from 'react-native';
 
 import { Label } from '~/common/styleguide';
 import CheckBox from '~/components/CheckBox';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   value: boolean;
@@ -21,9 +21,9 @@ export default function CodeBrowserSettingsCheckbox({ value, label, onChange }: 
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
       onPress={() => onChange(!value)}
-      style={tw`flex-row items-center rounded px-1 py-1.5`}>
-      <CheckBox value={value} style={isHovered ? tw`border-primary-dark` : undefined} />
-      <Label style={[tw`select-none font-light`, isHovered && tw`text-hover`]}>{label}</Label>
+      className="flex-row items-center rounded px-1 py-1.5">
+      <CheckBox value={value} className={cx(isHovered && 'border-primary-dark')} />
+      <Label className={cx('select-none font-light', cx(isHovered && 'text-hover'))}>{label}</Label>
     </Pressable>
   );
 }
