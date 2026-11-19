@@ -13,6 +13,7 @@ import {
   View,
   type ViewStyle,
 } from 'react-native';
+import { twMerge } from 'tailwind-merge';
 
 import { cx } from '~/util/tailwind';
 
@@ -53,6 +54,11 @@ function renderTextComponent(
   const hasFontFamilyClass = className
     ?.split(/\s+/)
     .some(name => name === 'font-sans' || name === 'font-mono');
+  const resolvedTextClassName = cx(textStyle, className);
+  const hasTextColorClass = resolvedTextClassName.split(/\s+/).some(className => {
+    const textUtility = className.split(':').at(-1);
+    return textUtility?.startsWith('text-') && twMerge('text-black', textUtility) === textUtility;
+  });
 
   return (
     <Element
@@ -60,9 +66,9 @@ function renderTextComponent(
       numberOfLines={numberOfLines}
       className={cx(
         !hasFontFamilyClass && 'font-sans',
-        'my-0! font-normal text-black dark:text-white',
-        textStyle,
-        className
+        'my-0! font-normal',
+        !hasTextColorClass && 'text-black dark:text-white',
+        resolvedTextClassName
       )}
       style={style}>
       {children}

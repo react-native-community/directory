@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge';
 import { useUniwind } from 'uniwind';
 
 type ClassNameValue = string | false | null | undefined | ClassNameValue[];
@@ -14,7 +15,7 @@ export function cx(...values: ClassNameValue[]) {
   }
 
   values.forEach(add);
-  return classes.join(' ');
+  return twMerge(classes.join(' '));
 }
 
 export function useIsDark() {
