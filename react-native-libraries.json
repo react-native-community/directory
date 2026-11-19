@@ -25749,5 +25749,16 @@
     "npmPkg": "@use-voltra/android-client",
     "android": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/seyedmostafahasani/react-native-splash-motion",
+    "examples": ["https://github.com/seyedmostafahasani/react-native-splash-motion/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/seyedmostafahasani/react-native-splash-motion/main/docs/demo-ios.gif",
+      "https://raw.githubusercontent.com/seyedmostafahasani/react-native-splash-motion/main/docs/demo-android.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
