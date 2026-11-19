@@ -77,6 +77,7 @@ export default function Navigation({
             <Logo className="text-palette-gray5 dark:text-palette-gray7 absolute top-[-76px] left-1/2 ml-[-280px] h-[520px] w-[580px] opacity-15" />
           </View>
           <H1
+            style={{ fontSize: isSmallScreen ? 30 : 42 }}
             className={cx(
               'px-5 text-center text-[42px] leading-[54px] text-white',
               cx(isSmallScreen && 'text-3xl'),
@@ -85,7 +86,9 @@ export default function Navigation({
             {title}
           </H1>
           {description && (
-            <H2 className="text-palette-gray3 dark:text-secondary px-10 py-1 text-center text-base font-normal">
+            <H2
+              style={{ fontSize: 16 }}
+              className="text-palette-gray3 dark:text-secondary px-10 py-1 text-center text-base font-normal!">
               {description}
             </H2>
           )}

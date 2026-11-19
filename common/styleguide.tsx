@@ -30,15 +30,24 @@ const textStyles = {
   h1: 'text-[57.25px] font-semibold',
   h2: 'text-[35.5px] font-semibold',
   h3: 'text-[26.5px] font-semibold',
-  h4: 'text-[22px]',
-  h5: 'text-[20px]',
-  h6: 'text-[18px]',
-  h6section: 'text-secondary text-[16px] tracking-tight',
+  h4: 'text-[22px] font-normal!',
+  h5: 'text-[20px] font-normal!',
+  h6: 'text-[18px] font-normal!',
+  h6section: 'text-secondary text-[16px] tracking-tight font-normal!',
   headline: 'text-[16px] font-medium',
-  p: 'text-[16px]',
-  caption: 'text-[15px] leading-[22px] tracking-normal',
+  p: 'text-[16px] font-normal!',
+  caption: 'text-[15px] leading-[22px] tracking-normal font-normal!',
   label: 'text-[12px] font-medium tracking-normal',
 };
+
+function hasTextColorClass(className?: string) {
+  return Boolean(
+    className?.split(/\s+/).some(className => {
+      const textUtility = className.split(':').at(-1);
+      return textUtility?.startsWith('text-') && twMerge('text-black', textUtility) === textUtility;
+    })
+  );
+}
 
 type CustomTextProps = TextProps &
   PropsWithChildren<{
@@ -55,10 +64,6 @@ function renderTextComponent(
     ?.split(/\s+/)
     .some(name => name === 'font-sans' || name === 'font-mono');
   const resolvedTextClassName = cx(textStyle, className);
-  const hasTextColorClass = resolvedTextClassName.split(/\s+/).some(className => {
-    const textUtility = className.split(':').at(-1);
-    return textUtility?.startsWith('text-') && twMerge('text-black', textUtility) === textUtility;
-  });
 
   return (
     <Element
@@ -66,8 +71,8 @@ function renderTextComponent(
       numberOfLines={numberOfLines}
       className={cx(
         !hasFontFamilyClass && 'font-sans',
-        'my-0! font-normal',
-        !hasTextColorClass && 'text-black dark:text-white',
+        'my-0!',
+        !hasTextColorClass(resolvedTextClassName) && 'text-black dark:text-white',
         resolvedTextClassName
       )}
       style={style}>
@@ -89,7 +94,10 @@ export function H3(props: CustomTextProps) {
 }
 
 export function H4(props: CustomTextProps) {
-  return renderTextComponent(HtmlElements.H4, textStyles.h4, props);
+  return renderTextComponent(HtmlElements.H4, textStyles.h4, {
+    ...props,
+    style: [{ fontSize: 22 }, props.style],
+  });
 }
 
 export function H5(props: CustomTextProps) {
@@ -152,7 +160,8 @@ export function A({
 }: AProps) {
   const [isHovered, setIsHovered] = useState(false);
   const linkClassName = cx(
-    'decoration-pewter dark:decoration-palette-gray5 font-sans text-black underline dark:text-white',
+    'decoration-pewter dark:decoration-palette-gray5 font-sans underline',
+    !hasTextColorClass(className) && 'text-black dark:text-white',
     className,
     isHovered && 'decoration-primary-dark',
     isHovered && hoverStyle

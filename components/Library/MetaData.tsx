@@ -314,7 +314,7 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
               key={id}
               className={cx(
                 'mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]',
-                i + 1 !== data.length && 'mb-2 overflow-hidden'
+                i + 1 !== data.length && !skipExamples && 'mb-2 overflow-hidden'
               )}
               style={{ width: 'fit-content' }}>
               <View className="mr-1 min-w-[22px] items-center">{icon}</View>

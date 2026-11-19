@@ -509,6 +509,7 @@ select {
   h4,
   h5,
   h6 {
+    font-weight: bold;
     scroll-margin-top: 56px;
     margin-bottom: 0;
     display: flex;
@@ -559,6 +560,30 @@ select {
         display: flex;
       }
     }
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  h5 {
+    font-size: 0.83em;
+  }
+
+  h6 {
+    font-size: 0.67em;
   }
 
   p {

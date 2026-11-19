@@ -34,11 +34,14 @@ export default function TopBar({ isSearchExpanded, onSearchPress }: Props) {
         <View
           className={cx('flex-row items-center', cx(!isBelowMaxWidth && 'min-w-[255px] pr-16'))}>
           <Logo className="text-primary h-6.5 w-[29px]" />
-          <H5 className={cx('-mt-0.5', cx(isBelowMaxWidth && 'text-lg'))}>
-            <A href="/" className="text-primary ml-2 font-bold no-underline">
-              {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
-            </A>
-          </H5>
+          <A
+            href="/"
+            className={cx(
+              '-mt-0.5 text-[20px] text-primary ml-2 font-bold no-underline',
+              cx(isBelowMaxWidth && 'text-[18px]')
+            )}>
+            {isBelowMaxWidth ? 'Directory' : 'React Native Directory'}
+          </A>
         </View>
         <View className={cx(cx(isBelowMaxWidth && 'mr-auto'), cx(isSmallScreen && 'hidden'))}>
           <ContentContainer
