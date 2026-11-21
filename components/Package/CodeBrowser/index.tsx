@@ -23,7 +23,7 @@ import {
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import CodeBrowserContent from './CodeBrowserContent';
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
@@ -139,25 +139,25 @@ export default function CodeBrowser({
         data && !isLoading ? (
           <>
             <View
-              style={[
-                tw`relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-default`,
-                isSmallScreen && tw`border-r-0`,
-              ]}>
-              <View style={tw`pointer-events-none absolute left-3.5 top-3.5`}>
+              className={cx(
+                'relative flex min-h-[45px] flex-row justify-between gap-3 border-b border-r border-palette-gray2 bg-default dark:border-border',
+                isSmallScreen && 'border-r-0'
+              )}>
+              <View className="pointer-events-none absolute top-3.5 left-3.5">
                 <SearchIcon
-                  style={[
-                    tw`size-4`,
-                    isInputFocused ? tw`text-primary-darker dark:text-primary` : tw`text-icon`,
-                  ]}
+                  className={cx(
+                    'size-4',
+                    isInputFocused ? 'text-primary-darker dark:text-primary' : 'text-icon'
+                  )}
                 />
               </View>
               {search.length > 0 && (
                 <Tooltip
                   trigger={
                     <Pressable
-                      style={tw`absolute right-3.5 top-3.5 p-0.5`}
+                      className="absolute top-3.5 right-3.5 p-0.5"
                       onPress={() => setSearch('')}>
-                      <XIcon style={tw`size-3 text-tertiary`} />
+                      <XIcon className="text-tertiary size-3" />
                     </Pressable>
                   }>
                   Clear search value
@@ -180,23 +180,23 @@ export default function CodeBrowser({
                 onBlur={() => setInputFocused(false)}
                 onChangeText={setSearch}
                 placeholder="Search files…"
-                style={[
-                  tw`font-sans flex h-11 flex-1 rounded-none bg-white p-1 px-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white`,
-                  isSmallScreen ? tw`rounded-t-xl` : tw`rounded-tl-xl`,
-                  isBrowserMaximized && tw`rounded-tl-none`,
-                ]}
+                className={cx(
+                  'font-sans flex h-11 flex-1 rounded-none bg-white p-1 px-10 text-sm text-black -outline-offset-2 dark:bg-dark dark:text-white',
+                  isSmallScreen ? 'rounded-t-xl' : 'rounded-tl-xl',
+                  isBrowserMaximized && 'rounded-tl-none'
+                )}
                 value={search}
-                placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
+                placeholderTextColor={'var(--gray-4)' as ColorValue}
               />
             </View>
             <ScrollView
               id="codeBrowserList"
-              style={[
-                tw`border-palette-gray2 dark:border-default`,
-                !isSmallScreen && tw`flex-1 border-r`,
-                isSmallScreen && tw`h-[25vh] flex-grow-0 border-b`,
-              ]}
-              contentContainerStyle={tw`pt-2`}>
+              className={cx(
+                'border-palette-gray2 dark:border-border',
+                !isSmallScreen && 'flex-1 border-r',
+                isSmallScreen && 'h-[25vh] flex-grow-0 border-b'
+              )}
+              contentContainerStyle={{ paddingTop: 8 }}>
               {filteredFiles.length > 0 ? (
                 <>
                   <CodeBrowserFileTree
@@ -205,11 +205,11 @@ export default function CodeBrowser({
                     onSelectFile={onSelectFile}
                     isSearchActive={Boolean(normalizedSearch)}
                   />
-                  <View style={tw`h-2`} />
+                  <View className="h-2" />
                 </>
               ) : (
-                <View style={tw`px-3 py-2`}>
-                  <Label style={tw`text-center`}>No files match this search.</Label>
+                <View className="px-3 py-2">
+                  <Label className="text-center">No files match this search.</Label>
                 </View>
               )}
             </ScrollView>
@@ -220,31 +220,31 @@ export default function CodeBrowser({
         data && !isLoading && filteredFiles.length > 0 ? (
           <CodeBrowserContentFooter
             isBrowserMaximized={isBrowserMaximized}
-            style={isSmallScreen ? tw`border-r-0` : tw`border-r`}
+            className={isSmallScreen ? 'border-r-0' : 'border-r'}
             leftSlot={
-              <Label style={tw`font-light text-secondary`}>
-                <span style={tw`font-medium`}>{filteredFiles.length}</span>{' '}
+              <Label className="text-secondary font-light">
+                <span className="font-medium">{filteredFiles.length}</span>{' '}
                 {pluralize('file', filteredFiles.length)}
                 {files.length !== filteredFiles.length && (
-                  <span style={tw`opacity-80`}>
+                  <span className="opacity-80">
                     &ensp;
-                    <span style={tw`text-tertiary`}>&bull;</span>
+                    <span className="text-tertiary">&bull;</span>
                     &ensp;
-                    <span style={tw`font-medium`}>{files.length - filteredFiles.length}</span>{' '}
+                    <span className="font-medium">{files.length - filteredFiles.length}</span>{' '}
                     hidden
                   </span>
                 )}
               </Label>
             }
             rightSlot={
-              <Label style={tw`font-light text-secondary`}>
-                <span style={tw`font-medium`}>{formatBytes(filteredFilesSize)}</span>
+              <Label className="text-secondary font-light">
+                <span className="font-medium">{formatBytes(filteredFilesSize)}</span>
                 {filteredFilesSize !== totalFilesSize && (
-                  <span style={tw`opacity-80`}>
+                  <span className="opacity-80">
                     &ensp;
-                    <span style={tw`text-tertiary`}>&bull;</span>
+                    <span className="text-tertiary">&bull;</span>
                     &ensp;
-                    <span style={tw`font-medium`}>{formatBytes(totalFilesSize)}</span> total
+                    <span className="font-medium">{formatBytes(totalFilesSize)}</span> total
                   </span>
                 )}
               </Label>
@@ -254,7 +254,7 @@ export default function CodeBrowser({
       }
       content={
         isLoading ? (
-          <View style={tw`flex flex-1 items-center justify-center`}>
+          <View className="flex flex-1 items-center justify-center">
             <ThreeDotsLoader />
           </View>
         ) : !data ? (
@@ -274,17 +274,16 @@ export default function CodeBrowser({
           />
         ) : (
           <>
-            <View
-              style={tw`flex min-h-[45px] flex-row items-center justify-end gap-3 border-b border-palette-gray2 bg-default px-4 py-3 dark:border-default`}>
+            <View className="border-palette-gray2 bg-default dark:border-border flex min-h-[45px] flex-row items-center justify-end gap-3 border-b px-4 py-3">
               <DisplayModeButton
                 isBrowserMaximized={isBrowserMaximized}
                 toggleMaximized={toggleMaximized}
               />
               <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
             </View>
-            <View style={tw`flex flex-1 flex-col items-center justify-center gap-1 px-3`}>
-              <FileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
-              <P style={tw`text-center text-secondary`}>
+            <View className="flex flex-1 flex-col items-center justify-center gap-1 px-3">
+              <FileIcon className="text-tertiary dark:text-accented mb-2 size-20" />
+              <P className="text-secondary text-center">
                 Select file to preview from the list on the left.
               </P>
             </View>

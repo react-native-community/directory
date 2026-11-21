@@ -2,7 +2,6 @@ import { View } from 'react-native';
 
 import { A, useLayout } from '~/common/styleguide';
 import { type LibraryType } from '~/types';
-import tw from '~/util/tailwind';
 
 import { InfoIcon } from './Icons';
 import { NewArchitectureTag } from './Library/NewArchitectureTag';
@@ -28,11 +27,11 @@ export default function CompatibilityTags({ library, small }: Props) {
   ].filter((p): p is string => !!p);
 
   return (
-    <View style={tw`max-w-full flex-row flex-wrap items-center gap-1.5`}>
+    <View className="max-w-full flex-row flex-wrap items-center gap-1.5">
       {library.dev ? (
         <Tag
           label="Development Tool"
-          tagStyle={tw`border-[#d9c8fa] bg-[#ece3fc] dark:border-[#3d2861] dark:bg-[#261a3d]`}
+          tagClassName="border-[#d9c8fa] bg-[#ece3fc] dark:border-[#3d2861] dark:bg-[#261a3d]"
           icon={null}
           small={small}
         />
@@ -42,7 +41,7 @@ export default function CompatibilityTags({ library, small }: Props) {
         <Tag
           label={platform}
           key={`${platform}-platform`}
-          tagStyle={tw`border-palette-gray2 bg-palette-gray1 dark:border-default dark:bg-dark`}
+          tagClassName="border-palette-gray2 bg-palette-gray1 dark:border-border dark:bg-dark"
           small={small}
         />
       ))}
@@ -56,15 +55,15 @@ export default function CompatibilityTags({ library, small }: Props) {
             side="bottom"
             trigger={
               <View
-                style={tw`cursor-pointer items-center justify-center rounded-full`}
+                className="cursor-pointer items-center justify-center rounded-full"
                 role="button"
                 aria-label="Additional information">
-                <InfoIcon style={tw`text-icon`} />
+                <InfoIcon className="text-icon" />
               </View>
             }>
             Additional information
             <br />
-            <ul style={tw`m-0 pl-3.5`}>
+            <ul className="m-0 pl-3.5">
               {library.expoGo && <li>Works with Expo Go</li>}
               {library.fireos && <li>Works with Fire OS</li>}
               {library.horizon && <li>Works with Meta Horizon OS</li>}
@@ -77,7 +76,7 @@ export default function CompatibilityTags({ library, small }: Props) {
                   <br />
                   <A
                     href={`https://www.npmjs.com/package/${library.harmony}`}
-                    style={tw`text-xs font-light text-white`}>
+                    className="text-xs font-light text-white">
                     (via dedicated support package)
                   </A>
                 </li>
@@ -89,7 +88,7 @@ export default function CompatibilityTags({ library, small }: Props) {
                   <br />
                   <A
                     href={`https://www.npmjs.com/package/${library.vegaos}`}
-                    style={tw`text-xs font-light text-white`}>
+                    className="text-xs font-light text-white">
                     (via dedicated support package)
                   </A>
                 </li>

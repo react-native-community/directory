@@ -20,7 +20,7 @@ import TopicsSection from '~/components/Package/TopicsSection';
 import PageMeta from '~/components/PageMeta';
 import { type NpmRegistryVersionData, type PeerDependencyData } from '~/types';
 import { type PackageOverviewPageProps } from '~/types/pages';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 const MarkdownContentBoxWithLoading = dynamic(
   () => import('~/components/Package/MarkdownContentBox'),
@@ -52,9 +52,9 @@ export default function PackageOverviewScene({
         path="package"
       />
       <NavigationHeader library={library} />
-      <ContentContainer style={tw`px-0 pb-6 pt-3`}>
-        <View style={[tw`flex-row gap-8 px-5 py-3`, isSmallScreen && tw`flex-col gap-5`]}>
-          <View style={tw`flex-1 gap-3`}>
+      <ContentContainer className="px-0 pt-3 pb-6">
+        <View className={cx('flex-row gap-8 px-5 py-3', cx(isSmallScreen && 'flex-col gap-5'))}>
+          <View className="flex-1 gap-3">
             <PackageHeader
               library={library}
               registryData={registryData}
@@ -63,11 +63,11 @@ export default function PackageOverviewScene({
             <MarkdownContentBoxWithLoading packageName={packageName} library={library} />
             {library.examples && library.examples.length > 0 && (
               <>
-                <H6Section style={[tw`flex gap-1.5`, !isSmallScreen && tw`mt-3`]}>
+                <H6Section className={cx('flex gap-1.5', cx(!isSmallScreen && 'mt-3'))}>
                   Code examples
                   <EntityCounter count={library.examples.length} />
                 </H6Section>
-                <UL style={[tw`m-0 gap-2`, isSmallScreen && tw`mb-2`]}>
+                <UL className={cx('m-0 gap-2', cx(isSmallScreen && 'mb-2'))}>
                   {library.examples.map((example, index) => (
                     <ExampleBox example={example} key={example} index={index} />
                   ))}
@@ -78,52 +78,51 @@ export default function PackageOverviewScene({
               <CommunitySection library={library} author={author} maintainers={maintainers} />
             )}
           </View>
-          <View style={tw`flex-0.35 gap-4`} id="metadataContainer">
+          <View className="flex-[0.35] gap-4" id="metadataContainer">
             <View>
               <MetaData library={library} />
             </View>
             <CollapsibleSection title="Additional information">
-              <View style={tw`mb-1 gap-1.5`}>
+              <View className="mb-1 gap-1.5">
                 <MetaData library={library} secondary skipExamples />
               </View>
             </CollapsibleSection>
             <DownloadsSection library={library} />
             <TopicsSection topics={library.github.topics} />
             <CollapsibleSection title="Package analysis">
-              <ul
-                style={tw`pl-4.5 m-0 gap-1.5 text-[13px] text-palette-gray4 dark:text-palette-gray5`}>
+              <ul className="text-palette-gray4 dark:text-palette-gray5 m-0 gap-1.5 pl-4.5 text-[13px]">
                 <li>
                   <A
                     href={`https://node-modules.dev/grid/depth#install=${library.npmPkg}`}
-                    style={tw`text-[12px] font-light`}>
+                    className="text-[12px] font-light">
                     Node Modules Inspector
                   </A>
                 </li>
                 <li>
                   <A
                     href={`https://bundlephobia.com/package/${library.npmPkg}`}
-                    style={tw`text-[12px] font-light`}>
+                    className="text-[12px] font-light">
                     Bundlephobia
                   </A>
                 </li>
                 <li>
                   <A
                     href={`https://pkg-size.dev/${library.npmPkg}`}
-                    style={tw`text-[12px] font-light`}>
+                    className="text-[12px] font-light">
                     pkg-size.dev
                   </A>
                 </li>
                 <li>
                   <A
                     href={`https://npmgraph.js.org/?q=${library.npmPkg}`}
-                    style={tw`text-[12px] font-light`}>
+                    className="text-[12px] font-light">
                     npmgraph
                   </A>
                 </li>
                 <li>
                   <A
                     href={`https://snyk.io/advisor/npm-package/${library.npmPkg}`}
-                    style={tw`text-[12px] font-light`}>
+                    className="text-[12px] font-light">
                     Snyk Advisor
                   </A>
                 </li>

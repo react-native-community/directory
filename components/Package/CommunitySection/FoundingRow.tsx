@@ -6,7 +6,7 @@ import { A, Label, useLayout } from '~/common/styleguide';
 import { FundingGitHubIcon, FundingIcon, LinkIcon } from '~/components/Icons';
 import UserAvatar from '~/components/Package/UserAvatar';
 import { type LibraryFundingLink } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   fund: LibraryFundingLink;
@@ -18,11 +18,11 @@ export default function FundingRow({ fund }: Props) {
     <LI style={!isSmallScreen && { width: 'calc(50% - 4px)' }}>
       <A
         href={correctFundLink(fund)}
-        style={[
-          tw`flex flex-row items-center justify-between rounded-lg border border-palette-gray2 px-4 py-2.5 no-underline dark:border-default`,
-          isSmallScreen && tw`px-3 py-2`,
-        ]}
-        hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
+        className={cx(
+          'flex flex-row items-center justify-between rounded-lg border border-palette-gray2 px-4 py-2.5 no-underline dark:border-border',
+          cx(isSmallScreen && 'px-3 py-2')
+        )}
+        hoverStyle="bg-palette-gray1 dark:bg-dark">
         {formatFundPlatform(fund)}
       </A>
     </LI>
@@ -34,26 +34,26 @@ function formatFundPlatform({ platform, url }: LibraryFundingLink) {
     const ghUsername = url.split('/').at(-1);
     return (
       <>
-        <View style={tw`flex-row items-center gap-2.5`}>
-          <FundingGitHubIcon style={tw`min-w-6 text-[#db61a2]`} />
-          <View style={tw`flex-row items-center gap-1.5`}>
+        <View className="flex-row items-center gap-2.5">
+          <FundingGitHubIcon className="min-w-6 text-[#db61a2]" />
+          <View className="flex-row items-center gap-1.5">
             <UserAvatar
               src={`https://github.com/${ghUsername}.png`}
               alt={`${ghUsername} avatar`}
-              style={tw`size-5`}
+              className="size-5"
             />
             <span>{ghUsername}</span>
           </View>
         </View>
-        <Label style={tw`font-light text-secondary`}>GitHub Sponsorship</Label>
+        <Label className="text-secondary font-light">GitHub Sponsorship</Label>
       </>
     );
   }
   if (platform === 'CUSTOM') {
     const parsedUrl = new URL(correctFundLink({ platform, url }));
     return (
-      <View style={tw`max-w-full flex-row items-center gap-2.5 font-light`}>
-        <LinkIcon style={tw`min-w-6 text-icon`} />
+      <View className="max-w-full flex-row items-center gap-2.5 font-light">
+        <LinkIcon className="text-icon min-w-6" />
         <span>
           {startCase(platform)}: {parsedUrl.hostname.replace('www.', '')}
         </span>
@@ -62,8 +62,8 @@ function formatFundPlatform({ platform, url }: LibraryFundingLink) {
   }
   const parsedUrl = new URL(url);
   return (
-    <View style={tw`max-w-full flex-row items-center gap-2.5 font-light`}>
-      <FundingIcon style={tw`min-w-6 text-icon`} />
+    <View className="max-w-full flex-row items-center gap-2.5 font-light">
+      <FundingIcon className="text-icon min-w-6" />
       <span>
         {startCase(platform)}: {parsedUrl.pathname.split('/').at(-1)}
       </span>

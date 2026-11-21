@@ -5,7 +5,7 @@ import { P } from '~/common/styleguide';
 import { ArrowIcon, WarningBlockquoteIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
 import { getDirectoryWarning, getFileWarning } from '~/util/codeBrowser';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { CodeBrowserFileIcon } from './CodeBrowserFileIcon';
 
@@ -33,28 +33,28 @@ export default function CodeBrowserFileRow({
   const [isHovered, setIsHovered] = useState(false);
   const warning = isDirectory ? getDirectoryWarning(label) : getFileWarning(label);
 
-  const rowStyle = [
-    tw`flex flex-row items-center gap-1.5 px-3 py-[3px] last:mb-20`,
-    isDirectory && tw`pl-1.5`,
+  const rowClassName = cx(
+    'flex flex-row items-center gap-1.5 px-3 py-[3px]',
+    isDirectory && 'pl-1.5',
     !rightSlot &&
-      warning && {
-        backgroundImage: 'linear-gradient(45deg, transparent 80%, var(--warning-dark-bg) 95%)',
-      },
-    { paddingLeft: (isNested ? 6 : 10) + depth * 8 },
-  ];
+      warning &&
+      'bg-[linear-gradient(45deg,_transparent_80%,_var(--warning-dark-bg)_95%)]',
+    isHovered && 'bg-palette-gray2 dark:bg-palette-gray7'
+  );
+  const rowStyle = { paddingLeft: (isNested ? 6 : 10) + depth * 8 };
 
   const content = (
     <>
       {isDirectory ? (
         <ArrowIcon
-          style={[
-            tw`size-2.5 shrink-0 text-palette-gray4 dark:text-palette-gray5`,
-            isHovered && tw`opacity-70`,
-            isCollapsed ? tw`rotate-90` : tw`rotate-270`,
-          ]}
+          className={cx(
+            'size-2.5 shrink-0 text-palette-gray4 dark:text-palette-gray5',
+            cx(isHovered && 'opacity-70'),
+            cx(isCollapsed ? 'rotate-90' : 'rotate-270')
+          )}
         />
       ) : (
-        <View style={tw`size-2.5`} />
+        <View className="size-2.5" />
       )}
       <CodeBrowserFileIcon
         label={label}
@@ -64,27 +64,29 @@ export default function CodeBrowserFileRow({
         isNested={isNested}
       />
       <P
-        style={[
-          tw`font-mono select-none text-[12px] font-light tracking-normal`,
-          isNested &&
-            tw`text-[11px] font-extralight text-palette-gray6 dark:font-thin dark:text-palette-gray3`,
-          isDirectory && tw`font-extralight text-palette-gray5 dark:text-palette-gray4`,
-          isActive && tw`text-primary-darker dark:text-primary`,
-          { wordBreak: 'break-word' },
-        ]}>
+        className={cx(
+          'font-mono select-none text-[12px] font-light tracking-normal',
+          cx(
+            isNested &&
+              'text-[11px] font-extralight text-palette-gray6 dark:font-thin dark:text-palette-gray3'
+          ),
+          cx(isDirectory && 'font-extralight text-palette-gray5 dark:text-palette-gray4'),
+          cx(isActive && 'text-primary-darker dark:text-primary'),
+          'break-words'
+        )}>
         {label}
       </P>
       {(rightSlot || warning) && (
-        <View style={tw`ml-auto flex-row items-center gap-1.5`}>
+        <View className="ml-auto flex-row items-center gap-1.5">
           {rightSlot}
           {!rightSlot && warning && (
             <Tooltip
               trigger={
                 <View>
-                  <WarningBlockquoteIcon style={tw`size-3.5 text-warning-dark dark:text-warning`} />
+                  <WarningBlockquoteIcon className="text-warning-dark dark:text-warning size-3.5" />
                 </View>
               }>
-              <span className="leading-0.5 text-[12px]">{warning.message}</span>
+              <span className="text-[12px] leading-0.5">{warning.message}</span>
             </Tooltip>
           )}
         </View>
@@ -93,12 +95,17 @@ export default function CodeBrowserFileRow({
   );
 
   if (!onPress) {
-    return <View style={rowStyle}>{content}</View>;
+    return (
+      <View className={rowClassName} style={rowStyle}>
+        {content}
+      </View>
+    );
   }
 
   return (
     <Pressable
-      style={[rowStyle, isHovered && tw`bg-palette-gray2 dark:bg-palette-gray7`]}
+      className={rowClassName}
+      style={rowStyle}
       onPress={onPress}
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}>

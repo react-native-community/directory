@@ -8,7 +8,7 @@ import Navigation from '~/components/Navigation';
 import NavigationTabs from '~/components/Package/Navigation/NavigationTabs';
 import { type LibraryType } from '~/types';
 import { strippedBackground } from '~/util/style';
-import tw from '~/util/tailwind';
+import { cx, useIsDark } from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -16,6 +16,7 @@ type Props = {
 
 export default function NavigationHeader({ library }: Props) {
   const { isSmallScreen } = useLayout();
+  const isDark = useIsDark();
   const alternativesLength = library.alternatives?.length ?? 0;
 
   const tabs = [
@@ -32,29 +33,28 @@ export default function NavigationHeader({ library }: Props) {
   return (
     <Navigation
       title="Package information"
-      style={[tw`gap-1 pb-3 pt-9`, isSmallScreen && tw`gap-1.5 pt-5`]}
+      className={cx('gap-1 pb-3 pt-9', cx(isSmallScreen && 'gap-1.5 pt-5'))}
       subHeader={
         library.unmaintained ? (
           <View
-            style={[
-              tw`border-b border-t border-palette-gray3 bg-palette-gray1 dark:border-palette-gray6 dark:bg-dark`,
-              strippedBackground(tw.prefixMatch('dark') ? 'var(--background)' : 'var(--gray-2)'),
-            ]}>
-            <ContentContainer
-              style={tw`flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2 text-warning-dark dark:text-warning`}>
-              <WarningIcon style={tw`size-4.5 mr-1 flex-shrink-0`} />
-              <Label style={tw`text-warning-dark dark:text-warning`}>
+            className={cx(
+              'border-b border-t border-palette-gray3 bg-palette-gray1 dark:border-palette-gray6 dark:bg-dark'
+            )}
+            style={strippedBackground(isDark ? 'var(--background)' : 'var(--gray-2)')}>
+            <ContentContainer className="text-warning-dark dark:text-warning flex-row flex-wrap items-center gap-x-0.5 gap-y-1 px-5 py-2">
+              <WarningIcon className="mr-1 size-4.5 flex-shrink-0" />
+              <Label className="text-warning-dark dark:text-warning">
                 This library is not actively maintained.
               </Label>
               {library.alternatives && alternativesLength > 0 && (
-                <Label style={tw`text-warning-dark dark:text-warning`}>
+                <Label className="text-warning-dark dark:text-warning">
                   You can use{' '}
                   {library.alternatives.map((alternative, index) => (
                     <Fragment key={alternative}>
                       <A
                         href={`/package/${alternative}`}
-                        style={tw`decoration-secondary dark:decoration-palette-gray5`}
-                        hoverStyle={tw`decoration-warning-dark dark:decoration-warning`}>
+                        className="decoration-secondary dark:decoration-palette-gray5"
+                        hoverStyle="decoration-warning-dark dark:decoration-warning">
                         {alternative}
                       </A>
                       {index < alternativesLength - 1 && alternativesLength > 2 ? ', ' : ' '}
@@ -68,7 +68,7 @@ export default function NavigationHeader({ library }: Props) {
           </View>
         ) : undefined
       }>
-      <ContentContainer style={tw`flex-row px-5`}>
+      <ContentContainer className="flex-row px-5">
         <NavigationTabs tabs={tabs} />
       </ContentContainer>
     </Navigation>

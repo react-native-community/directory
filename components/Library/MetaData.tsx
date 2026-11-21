@@ -29,7 +29,7 @@ import { type LibraryDataEntryType, type LibraryType, type MetadataEntryType } f
 import { formatBytes } from '~/util/formatBytes';
 import { formatLintTools, formatPackageManager, pluralize } from '~/util/strings';
 import { getSwiftPMSupport } from '~/util/swiftPMStatus';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { DirectoryScore } from './DirectoryScore';
 
@@ -39,7 +39,7 @@ type Props = {
   skipExamples?: boolean;
 };
 
-const linkStyle = tw`text-[15px] font-light -outline-offset-1`;
+const linkClassName = 'text-[15px] font-light -outline-offset-1';
 
 function generateData({
   github,
@@ -53,7 +53,7 @@ function generateData({
       id: 'score',
       icon: <DirectoryScore score={score} matchingScoreModifiers={matchingScoreModifiers} />,
       content: (
-        <A target="_self" href={`/package/${npmPkg}/score`} style={linkStyle}>
+        <A target="_self" href={`/package/${npmPkg}/score`} className={linkClassName}>
           Directory Score
         </A>
       ),
@@ -61,12 +61,12 @@ function generateData({
     npm?.downloads
       ? {
           id: 'downloads',
-          icon: <DownloadIcon style={tw`h-4.5 w-4 text-icon`} />,
+          icon: <DownloadIcon className="text-icon h-4.5 w-4" />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}`}
-              style={linkStyle}
-              containerStyle={{ textOverflow: 'ellipsis' }}>
+              className={linkClassName}
+              containerClassName="overflow-hidden text-ellipsis">
               {npm.downloads.toLocaleString()} monthly downloads
             </A>
           ),
@@ -74,9 +74,9 @@ function generateData({
       : null,
     {
       id: 'star',
-      icon: <StarIcon style={tw`text-icon`} />,
+      icon: <StarIcon className="text-icon" />,
       content: (
-        <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
+        <A href={`${github.urls.repo}/stargazers`} className={linkClassName}>
           {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
         </A>
       ),
@@ -84,11 +84,11 @@ function generateData({
     github.stats?.dependencies !== undefined
       ? {
           id: 'dependencies',
-          icon: <DependencyIcon style={tw`size-5.5 text-icon`} />,
+          icon: <DependencyIcon className="text-icon size-5.5" />,
           content: (
             <A
               href={`https://www.npmjs.com/package/${npmPkg}?activeTab=dependencies`}
-              style={linkStyle}>
+              className={linkClassName}>
               {`${github.stats.dependencies} ${pluralize('dependency', github.stats?.dependencies ?? 0)}`}
             </A>
           ),
@@ -97,9 +97,11 @@ function generateData({
     npm?.size
       ? {
           id: 'size',
-          icon: <PackageSizeIcon style={tw`text-icon`} />,
+          icon: <PackageSizeIcon className="text-icon" />,
           content: (
-            <A href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`} style={linkStyle}>
+            <A
+              href={`https://www.npmjs.com/package/${npmPkg}?activeTab=code`}
+              className={linkClassName}>
               {`${formatBytes(npm.size)} package size`}
             </A>
           ),
@@ -108,9 +110,12 @@ function generateData({
     github.stats.forks
       ? {
           id: 'forks',
-          icon: <ForkIcon style={tw`text-icon`} />,
+          icon: <ForkIcon className="text-icon" />,
           content: (
-            <A href={`${github.urls.repo}/network/members`} style={linkStyle} aria-label="Forks">
+            <A
+              href={`${github.urls.repo}/network/members`}
+              className={linkClassName}
+              aria-label="Forks">
               {github.stats.forks.toLocaleString()}
             </A>
           ),
@@ -120,9 +125,12 @@ function generateData({
     github.stats.subscribers
       ? {
           id: 'subscribers',
-          icon: <EyeIcon style={tw`text-icon`} />,
+          icon: <EyeIcon className="text-icon" />,
           content: (
-            <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
+            <A
+              href={`${github.urls.repo}/watchers`}
+              className={linkClassName}
+              aria-label="Watchers">
               {github.stats.subscribers.toLocaleString()}
             </A>
           ),
@@ -132,9 +140,9 @@ function generateData({
     github.stats.issues
       ? {
           id: 'issues',
-          icon: <IssueIcon style={tw`text-icon`} />,
+          icon: <IssueIcon className="text-icon" />,
           content: (
-            <A href={`${github.urls.repo}/issues`} style={linkStyle} aria-label="Issues">
+            <A href={`${github.urls.repo}/issues`} className={linkClassName} aria-label="Issues">
               {github.stats.issues.toLocaleString()}
             </A>
           ),
@@ -148,21 +156,21 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
   const { github, examples, nightlyProgram } = library;
   const configPlugin = library.configPlugin ?? library.github.configPlugin;
 
-  const iconColor = [
-    tw`text-tertiary`,
-    skipExamples && tw`text-palette-gray5`,
-    tw`dark:text-pewter`,
-  ];
-  const paragraphStyles = [tw`text-[13px] font-light`, !skipExamples && tw`text-secondary`];
-  const hoverStyle = tw`text-hover decoration-palette-gray4`;
+  const iconClassName = cx(
+    'text-tertiary',
+    skipExamples && 'text-palette-gray5',
+    'dark:text-pewter'
+  );
+  const paragraphClassName = cx('text-[13px] font-light', !skipExamples && 'text-secondary');
+  const hoverStyle = 'text-hover decoration-palette-gray4';
 
   return [
     github.urls.homepage
       ? {
           id: 'web',
-          icon: <WebIcon style={iconColor} />,
+          icon: <WebIcon className={iconClassName} />,
           content: (
-            <A href={github.urls.homepage} style={paragraphStyles} hoverStyle={hoverStyle}>
+            <A href={github.urls.homepage} className={paragraphClassName} hoverStyle={hoverStyle}>
               Website
             </A>
           ),
@@ -171,12 +179,12 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.license
       ? {
           id: 'license',
-          icon: <LicenseIcon style={iconColor} />,
+          icon: <LicenseIcon className={iconClassName} />,
           content:
             github.license.name === 'Other' ? (
-              <P style={paragraphStyles}>Unrecognized License</P>
+              <P className={paragraphClassName}>Unrecognized License</P>
             ) : (
-              <A href={github.license.url} style={paragraphStyles} hoverStyle={hoverStyle}>
+              <A href={github.license.url} className={paragraphClassName} hoverStyle={hoverStyle}>
                 {github.license.name}
               </A>
             ),
@@ -185,20 +193,20 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.hasNativeCode
       ? {
           id: 'nativeCode',
-          icon: <NativeCodeIcon style={iconColor} />,
-          content: <P style={paragraphStyles}>Native code</P>,
+          icon: <NativeCodeIcon className={iconClassName} />,
+          content: <P className={paragraphClassName}>Native code</P>,
         }
       : null,
     configPlugin
       ? {
           id: 'configPlugin',
-          icon: <ConfigPluginIcon style={iconColor} />,
+          icon: <ConfigPluginIcon className={iconClassName} />,
           content: (
             <ConfigPluginContent
               configPlugin={configPlugin}
               hoverStyle={hoverStyle}
-              linkStyles={paragraphStyles}
-              paragraphStyles={paragraphStyles}
+              linkClassName={paragraphClassName}
+              paragraphClassName={paragraphClassName}
             />
           ),
           tooltip: getConfigPluginText(configPlugin),
@@ -207,11 +215,11 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     nightlyProgram
       ? {
           id: 'nightlyProgram',
-          icon: <NightlyTestIcon style={iconColor} />,
+          icon: <NightlyTestIcon className={iconClassName} />,
           content: (
             <A
               href={`https://react-native-community.github.io/nightly-tests/?q=${encodeURIComponent(library.npmPkg)}`}
-              style={paragraphStyles}
+              className={paragraphClassName}
               hoverStyle={hoverStyle}>
               Nightly Program
             </A>
@@ -222,9 +230,9 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     skipExamples && github.moduleType
       ? {
           id: 'moduleType',
-          icon: <ModuleIcon style={iconColor} />,
+          icon: <ModuleIcon className={iconClassName} />,
           content: (
-            <P style={paragraphStyles}>
+            <P className={paragraphClassName}>
               {
                 FILTER_MODULE_TYPE.find(
                   ({ param }) => param === `${library.github.moduleType}Module`
@@ -237,29 +245,29 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     github.hasTypes
       ? {
           id: 'types',
-          icon: <TypeScriptIcon style={iconColor} />,
-          content: <P style={paragraphStyles}>TypeScript Types</P>,
+          icon: <TypeScriptIcon className={iconClassName} />,
+          content: <P className={paragraphClassName}>TypeScript Types</P>,
         }
       : null,
     getSwiftPMSupport(library)
       ? {
           id: 'swiftpm',
-          icon: <SwiftIcon style={iconColor} />,
-          content: <P style={paragraphStyles}>Swift Package Manager</P>,
+          icon: <SwiftIcon className={iconClassName} />,
+          content: <P className={paragraphClassName}>Swift Package Manager</P>,
         }
       : null,
     !skipExamples && examples?.length
       ? {
           id: 'examples',
-          icon: <ExamplesIcon style={iconColor} />,
+          icon: <ExamplesIcon className={iconClassName} />,
           content: (
             <>
-              <Caption style={paragraphStyles}>Examples: </Caption>
+              <Caption className={paragraphClassName}>Examples: </Caption>
               {examples.map((example, index) => (
                 <A
                   key={example}
                   href={example}
-                  style={[...paragraphStyles, tw`ml-0.5 mr-1 text-[13px]`]}
+                  className={cx('ml-0.5 mr-1 text-[13px]', paragraphClassName)}
                   hoverStyle={hoverStyle}>
                   #{index + 1}
                 </A>
@@ -271,17 +279,21 @@ function generateSecondaryData(library: LibraryType, skipExamples: boolean): Met
     skipExamples && github.packageManager
       ? {
           id: 'packageManager',
-          icon: <PackageManagerIcon style={iconColor} />,
-          content: <P style={paragraphStyles}>{formatPackageManager(github.packageManager)}</P>,
+          icon: <PackageManagerIcon className={iconClassName} />,
+          content: (
+            <P className={paragraphClassName}>{formatPackageManager(github.packageManager)}</P>
+          ),
           tooltip: 'Package manager',
         }
       : null,
     skipExamples && (github?.lintTools?.length ?? 0) > 0
       ? {
           id: 'lintTools',
-          icon: <LintToolsIcon style={iconColor} />,
+          icon: <LintToolsIcon className={iconClassName} />,
           content: (
-            <P style={paragraphStyles}>{github.lintTools?.map(formatLintTools).join(', ')}</P>
+            <P className={paragraphClassName}>
+              {github.lintTools?.map(formatLintTools).join(', ')}
+            </P>
           ),
           tooltip: 'Lint tools',
         }
@@ -300,12 +312,12 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
           const component = (
             <View
               key={id}
-              style={{
-                ...(i + 1 !== data.length ? tw`mb-2 overflow-hidden` : {}),
-                ...tw`mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]`,
-                width: 'fit-content',
-              }}>
-              <View style={tw`mr-1 min-w-[22px] items-center`}>{icon}</View>
+              className={cx(
+                'mb-0 max-h-5 min-h-5 flex-row items-center pr-[3px]',
+                i + 1 !== data.length && !skipExamples && 'mb-2 overflow-hidden'
+              )}
+              style={{ width: 'fit-content' }}>
+              <View className="mr-1 min-w-[22px] items-center">{icon}</View>
               {content}
             </View>
           );
@@ -330,22 +342,22 @@ function MetaData({ library, secondary, skipExamples = false }: Props) {
         {listData.map(({ id, icon, content }, i) => (
           <View
             key={id}
-            style={[
-              tw`flex-row items-center`,
-              i + 1 !== data.length && tw`mb-2 min-h-[22px] overflow-hidden`,
-            ]}>
-            <View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>
+            className={cx(
+              'flex-row items-center',
+              cx(i + 1 !== data.length && 'mb-2 min-h-[22px] overflow-hidden')
+            )}>
+            <View className="mr-[7px] min-w-[22px] items-center">{icon}</View>
             {content}
           </View>
         ))}
-        <View style={tw`flex-row items-center gap-4`}>
+        <View className="flex-row items-center gap-4">
           {bottomData.map(({ id, icon, content, tooltip }) => (
-            <View key={id} style={tw`flex-row items-center`}>
+            <View key={id} className="flex-row items-center">
               <Tooltip
                 key={id}
                 sideOffset={2}
                 delayDuration={250}
-                trigger={<View style={tw`mr-[7px] min-w-[22px] items-center`}>{icon}</View>}>
+                trigger={<View className="mr-[7px] min-w-[22px] items-center">{icon}</View>}>
                 {tooltip}
               </Tooltip>
               {content}

@@ -3,7 +3,7 @@ import { type StyleProp, View, type ViewStyle } from 'react-native';
 import FiltersSection from '~/components/Filters/FiltersSection';
 import { type Query } from '~/types';
 import { getPageQuery } from '~/util/search';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import {
   FILTER_BOOKMARKS,
@@ -26,8 +26,10 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
   const isMainSearch = basePath === '/packages';
 
   return (
-    <View style={[tw`flex-1 items-center bg-palette-gray1 py-2 dark:bg-very-dark`, style]}>
-      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
+    <View
+      className={cx('flex-1 items-center bg-palette-gray1 py-2 dark:bg-very-dark')}
+      style={[style]}>
+      <View className="max-w-layout w-full flex-row flex-wrap content-start">
         <FiltersSection title="Platform">
           {FILTER_PLATFORMS.map(platform => (
             <ToggleLink
@@ -70,7 +72,7 @@ export function Filters({ query, style, basePath = '/packages' }: FiltersProps) 
         ))}
         <ToggleLink query={pageQuery} filterParam={FILTER_BOOKMARKS} basePath={basePath} />
       </FiltersSection>
-      <View style={tw`w-full max-w-layout flex-row flex-wrap content-start`}>
+      <View className="max-w-layout w-full flex-row flex-wrap content-start">
         <FiltersSection title="Compatibility">
           {FILTER_COMPATIBILITY.map(compatibility => (
             <ToggleLink

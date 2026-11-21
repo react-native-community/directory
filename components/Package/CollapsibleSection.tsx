@@ -1,12 +1,11 @@
 import { type PropsWithChildren, type ReactElement, useState } from 'react';
-import { type StyleProp, View } from 'react-native';
-import { type Style } from 'twrnc';
+import { View } from 'react-native';
 
 import { H6Section } from '~/common/styleguide';
 import { Button } from '~/components/Button';
 import { ArrowIcon } from '~/components/Icons';
 import { getStoredFlagValue } from '~/util/localStorage';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import EntityCounter from './EntityCounter';
 
@@ -14,14 +13,14 @@ type Props = PropsWithChildren<{
   title: string;
   count?: number;
   rightSlot?: ReactElement;
-  headerStyle?: StyleProp<Style>;
+  headerClassName?: string;
 }>;
 
 export default function CollapsibleSection({
   title,
   count,
   rightSlot,
-  headerStyle,
+  headerClassName,
   children,
 }: Props) {
   const sectionKey = sanitizeTitle(title);
@@ -37,18 +36,20 @@ export default function CollapsibleSection({
 
   return (
     <>
-      <View style={tw`flex-row items-center justify-between gap-1.5`}>
-        <H6Section style={[tw`flex items-center gap-1.5`, headerStyle]}>
+      <View className="flex-row items-center justify-between gap-1.5">
+        <H6Section className={cx('flex items-center gap-1.5', headerClassName)}>
           {title}
           {count ? <EntityCounter count={count} /> : null}
         </H6Section>
         {!collapsed ? rightSlot : undefined}
         <Button
           onPress={toggleSection}
-          style={tw`bg-palette-gray2 p-1 dark:bg-palette-gray7`}
-          containerStyle={tw`mt-px`}
+          className="bg-palette-gray2 dark:bg-palette-gray7 p-1"
+          containerClassName="mt-px"
           aria-label={`${collapsed ? 'Expand' : 'Collapse'} section`}>
-          <ArrowIcon style={[tw`h-3 w-4 text-icon`, collapsed ? tw`rotate-90` : tw`rotate-270`]} />
+          <ArrowIcon
+            className={cx('h-3 w-4 text-icon', cx(collapsed ? 'rotate-90' : 'rotate-270'))}
+          />
         </Button>
       </View>
       {!collapsed && <View>{children}</View>}

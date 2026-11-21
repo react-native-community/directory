@@ -5,7 +5,6 @@ import { Pressable, View } from 'react-native';
 
 import { P } from '~/common/styleguide';
 import { type Query, type QueryOrder, type QueryOrderDirection } from '~/types';
-import tw from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { SortIcon } from './Icons';
@@ -30,15 +29,15 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
   }
 
   return (
-    <View style={tw`ml-2 h-6 flex-row items-center rounded bg-accented pl-2`}>
-      <View style={tw`flex-row items-center`}>
+    <View className="bg-accented ml-2 h-6 flex-row items-center rounded pl-2">
+      <View className="flex-row items-center">
         <Tooltip
           sideOffset={8}
           trigger={
             <Pressable
               onHoverIn={() => setIsSortIconHovered(true)}
               onHoverOut={() => setIsSortIconHovered(false)}
-              style={currentDirection === 'ascending' && tw`-scale-y-100`}
+              className={currentDirection === 'ascending' ? '-scale-y-100' : undefined}
               aria-label="Toggle sort direction"
               role="button"
               onPress={() => {
@@ -49,19 +48,19 @@ export function SortButton({ query: { order, direction, search }, query }: SortB
                   })
                 );
               }}>
-              <SortIcon style={isSortIconHovered ? tw`text-primary` : tw`text-white`} />
+              <SortIcon className={isSortIconHovered ? 'text-primary' : 'text-white'} />
             </Pressable>
           }>
           Toggle sort order
         </Tooltip>
-        <P style={tw`ml-1.5 mr-0.5 select-none text-sm text-white`}>Sort:</P>
+        <P className="mr-0.5 ml-1.5 text-sm text-white select-none">Sort:</P>
       </View>
-      <View style={tw`top-px`}>
+      <View className="top-px">
         <Picker
           id="sort-order"
           aria-label="Sort order"
           selectedValue={currentSortValue ?? (search ? 'relevance' : 'updated')}
-          style={tw`relative -top-px rounded border-0 bg-transparent text-sm font-semibold text-white`}
+          className="relative -top-px rounded border-0 bg-transparent text-sm font-semibold text-white"
           onValueChange={value => {
             updatePath(
               urlWithQuery('/packages', {

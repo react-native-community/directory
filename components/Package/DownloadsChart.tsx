@@ -10,7 +10,7 @@ import { Label } from '~/common/styleguide';
 import ThreeDotsLoader from '~/components/Package/ThreeDotsLoader';
 import { TimeRange } from '~/util/datetime';
 import { swrJSONFetch } from '~/util/fetch';
-import tw from '~/util/tailwind';
+import { useIsDark } from '~/util/tailwind';
 
 type DataMap = Record<string, number>;
 type Point = { date: Date; value: number };
@@ -29,6 +29,7 @@ const DATE_FORMAT = {
 };
 
 export default function DownloadsChart({ packageName, range, height = 48 }: Props) {
+  const isDark = useIsDark();
   const { data } = useSWR(`/api/proxy/npm-stat?name=${packageName}&range=${range}`, swrJSONFetch, {
     dedupingInterval: TimeRange.HOUR * 1000,
     revalidateOnFocus: false,
@@ -59,15 +60,15 @@ export default function DownloadsChart({ packageName, range, height = 48 }: Prop
       {({ width }) => {
         if (data && !Object.keys(data).length) {
           return (
-            <View style={tw`h-full items-center justify-center`}>
-              <Label style={tw`font-light text-secondary`}>Cannot fetch download data</Label>
+            <View className="h-full items-center justify-center">
+              <Label className="text-secondary font-light">Cannot fetch download data</Label>
             </View>
           );
         }
 
         if (!width || !data || !series || !animatedSeries) {
           return (
-            <View style={tw`h-full items-center justify-center`}>
+            <View className="h-full items-center justify-center">
               <ThreeDotsLoader />
             </View>
           );
@@ -84,7 +85,7 @@ export default function DownloadsChart({ packageName, range, height = 48 }: Prop
               id="area-gradient"
               from={COLOR}
               to={COLOR}
-              fromOpacity={tw.prefixMatch('dark') ? 0.3 : 0.5}
+              fromOpacity={isDark ? 0.3 : 0.5}
               toOpacity={0}
             />
             <AnimatedAreaSeries
@@ -120,9 +121,8 @@ export default function DownloadsChart({ packageName, range, height = 48 }: Prop
                   return null;
                 }
                 return (
-                  <Text
-                    style={tw`font-sans flex flex-col rounded bg-black px-2.5 py-1.5 text-xs font-light text-white dark:border dark:border-default`}>
-                    <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                  <Text className="dark:border-border flex flex-col rounded bg-black px-2.5 py-1.5 font-sans text-xs font-light text-white dark:border">
+                    <span className="text-palette-gray3 dark:text-secondary">
                       {data.date.toLocaleDateString('en-US', DATE_FORMAT)}
                       &apos;
                     </span>

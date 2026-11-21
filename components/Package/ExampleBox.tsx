@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 import { A, useLayout } from '~/common/styleguide';
 import { CodeBracketsIcon, GitHubIcon, SnackIcon } from '~/components/Icons';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   example: string;
@@ -17,24 +17,24 @@ export default function ExampleBox({ example, index }: Props) {
     <LI>
       <A
         href={example}
-        style={[
-          tw`flex flex-row items-center justify-between rounded-lg border border-palette-gray2 px-4 py-2.5 no-underline dark:border-default`,
-          isSmallScreen && tw`px-3 py-2`,
-        ]}
-        hoverStyle={tw`bg-palette-gray1 dark:bg-dark`}>
-        <View style={tw`flex max-w-full flex-row items-center gap-2.5`}>
-          {example.includes('github.com') && <GitHubIcon style={tw`size-6 text-icon`} />}
-          {example.includes('snack.expo.dev') && <SnackIcon style={tw`text-icon`} />}
+        className={cx(
+          'flex flex-row items-center justify-between rounded-lg border border-palette-gray2 px-4 py-2.5 no-underline dark:border-border',
+          cx(isSmallScreen && 'px-3 py-2')
+        )}
+        hoverStyle="bg-palette-gray1 dark:bg-dark">
+        <View className="flex max-w-full flex-row items-center gap-2.5">
+          {example.includes('github.com') && <GitHubIcon className="text-icon size-6" />}
+          {example.includes('snack.expo.dev') && <SnackIcon className="text-icon" />}
           {!example.includes('github.com') && !example.includes('snack.expo.dev') && (
-            <CodeBracketsIcon style={tw`text-icon`} />
+            <CodeBracketsIcon className="text-icon" />
           )}
-          <span style={tw`font-light`}>{getExampleDescription(example)}</span>
+          <span className="font-light">{getExampleDescription(example)}</span>
         </View>
         <Text
-          style={[
-            tw`text-2xl tabular-nums leading-[28px] text-icon opacity-30`,
-            isSmallScreen && tw`hidden`,
-          ]}>
+          className={cx(
+            'text-2xl tabular-nums leading-[28px] text-icon opacity-30',
+            cx(isSmallScreen && 'hidden')
+          )}>
           #{index + 1}
         </Text>
       </A>

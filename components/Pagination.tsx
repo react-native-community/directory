@@ -8,7 +8,7 @@ import SearchTag from '~/components/SearchTag';
 import { type Query } from '~/types';
 import { NUM_PER_PAGE } from '~/util/Constants';
 import { getPageQuery } from '~/util/search';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -50,7 +50,7 @@ export default function Pagination({
   const hashSuffix = hash ? `#${hash}` : '';
 
   return (
-    <View style={tw`flex-row justify-between`}>
+    <View className="flex-row justify-between">
       {!noTags ? (
         <View>
           {query.owner && <SearchTag title="Owner" value={startCase(query.owner)} />}
@@ -62,7 +62,7 @@ export default function Pagination({
       ) : (
         <View />
       )}
-      <View style={[tw`flex-row items-center justify-end`, style]}>
+      <View className={cx('flex-row items-center justify-end')} style={[style]}>
         {backDisabled ? (
           <PaginationArrow back disabled />
         ) : (
@@ -73,13 +73,13 @@ export default function Pagination({
                 offset: (currentOffset - NUM_PER_PAGE).toString(),
               })}${hashSuffix}`}
               shallow={shallow}
-              style={tw`rounded`}
+              className="rounded"
               aria-label="Previous page">
               <PaginationArrow back />
             </Link>
           </HoverEffect>
         )}
-        <Caption style={tw`min-w-15 mx-1.5 text-center`}>
+        <Caption className="mx-1.5 min-w-15 text-center">
           {currentPage} of {totalPages}
         </Caption>
         {forwardDisabled ? (
@@ -92,7 +92,7 @@ export default function Pagination({
                 offset: (currentOffset + NUM_PER_PAGE).toString(),
               })}${hashSuffix}`}
               shallow={shallow}
-              style={tw`rounded`}
+              className="rounded"
               aria-label="Next page">
               <PaginationArrow />
             </Link>
@@ -106,12 +106,12 @@ export default function Pagination({
 function PaginationArrow({ disabled, back }: ArrowButtonProps) {
   return (
     <View
-      style={[
-        tw`size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented`,
-        back && tw`rotate-180`,
-        disabled && tw`opacity-50 dark:opacity-40`,
-      ]}>
-      <ArrowIcon style={[tw`h-3 text-black dark:text-white`, disabled && tw`text-icon`]} />
+      className={cx(
+        'size-6 items-center justify-center rounded bg-palette-gray2 dark:bg-accented',
+        cx(back && 'rotate-180'),
+        cx(disabled && 'opacity-50 dark:opacity-40')
+      )}>
+      <ArrowIcon className={cx('h-3 text-black dark:text-white', cx(disabled && 'text-icon'))} />
     </View>
   );
 }

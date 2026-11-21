@@ -2,7 +2,7 @@ import { type Theme, useShikiHighlighter } from 'react-shiki';
 
 import CopyButton from '~/components/Package/CopyButton';
 import { SHIKI_OPTS } from '~/util/shiki';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   code: string;
@@ -17,7 +17,7 @@ export default function MarkdownCodeBlock({ code, theme, lang }: Props) {
 
   if (!highlighter) {
     return (
-      <div style={tw`relative mt-2`} className="readme-code-block">
+      <div className={cx('readme-code-block', 'relative mt-2')}>
         <pre className="shiki">
           <code>{code}</code>
         </pre>
@@ -27,7 +27,7 @@ export default function MarkdownCodeBlock({ code, theme, lang }: Props) {
   }
 
   return (
-    <div style={tw`relative mt-2`} className="readme-code-block">
+    <div className={cx('readme-code-block', 'relative mt-2')}>
       {highlighter}
       {copyButton}
     </div>

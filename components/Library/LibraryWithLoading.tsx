@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import { type ComponentProps } from 'react';
 
 import LoadingContent from '~/components/Library/LoadingContent';
-import tw from '~/util/tailwind';
 
 import type Library from './index';
 
@@ -17,11 +16,11 @@ const LazyLibrary = dynamic<ComponentProps<typeof Library>>(() => import('./inde
 });
 
 const LazyGridLibrary = dynamic<ComponentProps<typeof Library>>(() => import('./index'), {
-  loading: () => <LoadingContent width="48.5%" height={210} wrapperStyle={tw`mx-[2%]}`} />,
+  loading: () => <LoadingContent width="48.5%" height={210} wrapperClassName="mx-[2%]" />,
 });
 
 const LazyHomeLibrary = dynamic<ComponentProps<typeof Library>>(() => import('./index'), {
-  loading: () => <LoadingContent width="48.5%" height={124} wrapperStyle={tw`mx-[2%]}`} />,
+  loading: () => <LoadingContent width="48.5%" height={124} wrapperClassName="mx-[2%]" />,
 });
 
 export function LibraryWithLoading({

@@ -18,7 +18,7 @@ import {
   useSearchShortcut,
 } from '~/hooks/useSearchInput';
 import { type Query } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 import { Filters } from './Filters';
@@ -60,11 +60,11 @@ export default function Search({ query, total, style }: Props) {
 
   return (
     <>
-      <View style={[tw`items-center bg-palette-gray6 py-3.5 dark:bg-dark`, style]}>
-        <View style={tw`w-full max-w-layout px-4`}>
-          <View style={tw`flex-row items-center`}>
-            <View style={tw`pointer-events-none absolute left-4`}>
-              <SearchIcon style={isInputFocused ? tw`text-primary` : tw`text-white`} />
+      <View className={cx('items-center bg-palette-gray6 py-3.5 dark:bg-dark')} style={[style]}>
+        <View className="max-w-layout w-full px-4">
+          <View className="flex-row items-center">
+            <View className="pointer-events-none absolute left-4">
+              <SearchIcon className={cx(isInputFocused ? 'text-primary' : 'text-white')} />
             </View>
             <TextInput
               ref={inputRef}
@@ -97,12 +97,12 @@ export default function Search({ query, total, style }: Props) {
               onBlur={handleInputBlur}
               onChangeText={typingCallback}
               placeholder="Search libraries…"
-              style={tw`h-12.5 font-sans pr-30 flex flex-1 rounded-md border-2 border-palette-gray5 bg-palette-gray6 p-4 pl-11 text-xl text-white -outline-offset-2 dark:border-default dark:bg-dark`}
+              className="border-palette-gray5 bg-palette-gray6 dark:border-border dark:bg-dark flex h-12.5 flex-1 rounded-md border-2 p-4 pr-30 pl-11 font-sans text-xl text-white -outline-offset-2"
               defaultValue={search}
-              placeholderTextColor={tw`text-palette-gray4`.color as ColorValue}
+              placeholderTextColor={'var(--gray-4)' as ColorValue}
             />
             {!isSmallScreen && (
-              <View style={tw`pointer-events-none absolute right-4 flex-row items-center gap-1`}>
+              <View className="pointer-events-none absolute right-4 flex-row items-center gap-1">
                 {isInputFocused ? (
                   <InputKeyHint
                     content={[
@@ -120,21 +120,21 @@ export default function Search({ query, total, style }: Props) {
             )}
           </View>
           <View
-            style={[
-              tw`mt-2 flex-row items-center justify-between`,
-              isSmallScreen && tw`flex-col items-start`,
-            ]}>
+            className={cx(
+              'mt-2 flex-row items-center justify-between',
+              cx(isSmallScreen && 'flex-col items-start')
+            )}>
             {total ? (
-              <P style={tw`mt-1 text-white`}>
-                <P style={tw`font-bold text-primary`}>{total}</P>{' '}
+              <P className="mt-1 text-white">
+                <P className="text-primary font-bold">{total}</P>{' '}
                 {total === 1 ? 'entry' : 'entries'}
               </P>
             ) : (
               <P />
             )}
-            <View style={[tw`mt-1.5 flex-row items-center`, isSmallScreen && tw`mt-2.5`]}>
+            <View className={cx('mt-1.5 flex-row items-center', cx(isSmallScreen && 'mt-2.5'))}>
               <FilterButton
-                style={tw`h-6`}
+                className="h-6"
                 query={query}
                 onPress={() => setFilterVisible(!isFilterVisible)}
                 onClearAllPress={handleClearAllPress}

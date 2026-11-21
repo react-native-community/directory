@@ -11,7 +11,7 @@ import SelectorGroupHeader from '~/components/Selector/SelectorGroupHeader';
 import SelectorItemHoverEffect from '~/components/Selector/SelectorItemHoverEffect';
 import { type PackageVersionsOnlyData } from '~/types';
 import { TimeRange } from '~/util/datetime';
-import tw from '~/util/tailwind';
+import { cx, useIsDark } from '~/util/tailwind';
 
 type Props = {
   packageName: string;
@@ -24,6 +24,7 @@ export default function PackageVersionSelector({
   selectedVersion,
   setVersion,
 }: Props) {
+  const isDark = useIsDark();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [debouncedSearch] = useDebounce(search, 150);
@@ -63,32 +64,32 @@ export default function PackageVersionSelector({
   return (
     <Popover.Root open={open} onOpenChange={handleOpenChange}>
       <HoverEffect
-        hoveredStyle={tw`border-palette-gray3 dark:border-[#333842]`}
-        pressedStyle={tw`opacity-100`}
-        style={tw`border-palette-gray2 dark:border-default`}>
+        hoveredStyle="border-palette-gray3 dark:border-[#333842]"
+        pressedStyle="opacity-100"
+        className="border-palette-gray2 dark:border-border">
         <Popover.Trigger asChild>
           <View
             role="button"
-            style={tw`min-h-8 w-[180px] cursor-pointer justify-center overflow-hidden rounded-lg border border-[inherit] bg-default px-2 dark:bg-dark`}>
+            className="bg-default dark:bg-dark min-h-8 w-[180px] cursor-pointer justify-center overflow-hidden rounded-lg border border-[inherit] px-2">
             {isLoading ? (
-              <View style={tw`scale-75 text-center`}>
+              <View className="scale-75 text-center">
                 <ThreeDotsLoader />
               </View>
             ) : (
-              <View style={tw`flex-row items-center justify-between gap-1.5`}>
+              <View className="flex-row items-center justify-between gap-1.5">
                 <Label
                   numberOfLines={1}
-                  style={[tw`select-none text-[13px]`, !selectedVersion && tw`text-tertiary`]}>
+                  className={cx(
+                    'select-none text-[13px]',
+                    cx(!selectedVersion && 'text-tertiary')
+                  )}>
                   {selectedVersion ?? 'Select version'}
                 </Label>
                 <ArrowIcon
-                  style={[
-                    tw`h-3 w-4 shrink-0 text-icon`,
-                    open
-                      ? tw`rotate-270 text-primary-darker dark:text-primary-dark`
-                      : tw`rotate-90`,
-                    { transition: 'all 0.2s' },
-                  ]}
+                  className={cx(
+                    'h-3 w-4 shrink-0 text-icon transition-all duration-200',
+                    cx(open ? 'rotate-270 text-primary-darker dark:text-primary-dark' : 'rotate-90')
+                  )}
                 />
               </View>
             )}
@@ -97,26 +98,23 @@ export default function PackageVersionSelector({
       </HoverEffect>
       <Popover.Portal>
         <Popover.Content align="center" sideOffset={6}>
-          <View
-            style={tw`max-w-68 min-w-32 overflow-hidden rounded-lg border-2 border-palette-gray2 bg-default shadow-lg dark:border-default`}>
-            <View style={tw`border-b border-palette-gray2 dark:border-default`}>
+          <View className="border-palette-gray2 bg-default dark:border-border max-w-68 min-w-32 overflow-hidden rounded-lg border-2 shadow-lg">
+            <View className="border-palette-gray2 dark:border-border border-b">
               <TextInput
                 ref={inputRef}
                 value={search}
                 onChangeText={setSearch}
                 placeholder="Filter versions…"
-                style={tw`px-2.5 py-1.5 text-sm text-black outline-0 dark:text-white`}
+                className="px-2.5 py-1.5 text-sm text-black outline-0 dark:text-white"
                 autoCorrect={false}
                 autoCapitalize="none"
                 placeholderTextColor={
-                  tw.prefixMatch('dark')
-                    ? (tw`text-palette-gray5`.color as ColorValue)
-                    : (tw`text-palette-gray3`.color as ColorValue)
+                  isDark ? ('var(--gray-5)' as ColorValue) : ('var(--gray-3)' as ColorValue)
                 }
               />
             </View>
             <ScrollView
-              style={tw`max-h-76 pb-0.5`}
+              className="max-h-76 pb-0.5"
               focusable={false}
               keyboardShouldPersistTaps="handled"
               id="dropdown-list">
@@ -125,20 +123,20 @@ export default function PackageVersionSelector({
                   <SelectorGroupHeader>Dist tags</SelectorGroupHeader>
                   {filteredDistTags.map(([tag, version]) => (
                     <SelectorItemHoverEffect key={tag} onPressIn={() => handleSelect(tag)}>
-                      <View style={tw`px-2.5 py-1.5`}>
+                      <View className="px-2.5 py-1.5">
                         <Label
-                          style={[
-                            tw`text-[inherit]`,
-                            selectedVersion === tag && tw`text-primary-darker dark:text-primary`,
-                          ]}>
+                          className={cx(
+                            'text-[inherit]',
+                            cx(selectedVersion === tag && 'text-primary-darker dark:text-primary')
+                          )}>
                           {tag}
                         </Label>
-                        <Label style={tw`text-[10px] font-thin text-secondary`}>{version}</Label>
+                        <Label className="text-secondary text-[10px] font-thin">{version}</Label>
                       </View>
                     </SelectorItemHoverEffect>
                   ))}
                   {filteredVersions.length > 0 && (
-                    <View style={tw`mt-1 border-b border-palette-gray2 dark:border-default`} />
+                    <View className="border-palette-gray2 dark:border-border mt-1 border-b" />
                   )}
                 </>
               )}
@@ -148,10 +146,10 @@ export default function PackageVersionSelector({
                   {filteredVersions.map(version => (
                     <SelectorItemHoverEffect key={version} onPressIn={() => handleSelect(version)}>
                       <Label
-                        style={[
-                          tw`px-2.5 py-1.5 text-[inherit]`,
-                          selectedVersion === version && tw`text-primary-darker dark:text-primary`,
-                        ]}>
+                        className={cx(
+                          'px-2.5 py-1.5 text-[inherit]',
+                          cx(selectedVersion === version && 'text-primary-darker dark:text-primary')
+                        )}>
                         {version}
                       </Label>
                     </SelectorItemHoverEffect>
@@ -159,8 +157,8 @@ export default function PackageVersionSelector({
                 </>
               )}
               {filteredVersions.length === 0 && !filteredDistTags && (
-                <View style={tw`px-2.5 py-3`}>
-                  <Label style={tw`text-center font-thin text-secondary`}>No versions match</Label>
+                <View className="px-2.5 py-3">
+                  <Label className="text-secondary text-center font-thin">No versions match</Label>
                 </View>
               )}
             </ScrollView>

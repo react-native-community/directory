@@ -4,15 +4,23 @@ import { HoverEffect } from '~/common/styleguide';
 import { BookmarkFilledIcon, BookmarkIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
 import { useBookmarks } from '~/context/BookmarksContext';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type BookmarkButtonProps = {
   bookmarkId: string;
+  className?: string;
+  iconClassName?: string;
   style?: StyleProp<ViewStyle>;
   iconStyle?: StyleProp<ViewStyle>;
 };
 
-export default function BookmarkButton({ bookmarkId, style, iconStyle }: BookmarkButtonProps) {
+export default function BookmarkButton({
+  bookmarkId,
+  className,
+  iconClassName,
+  style,
+  iconStyle,
+}: BookmarkButtonProps) {
   const { checkIsBookmarked, toggleBookmark } = useBookmarks();
   const isBookmarked = checkIsBookmarked(bookmarkId);
 
@@ -23,14 +31,16 @@ export default function BookmarkButton({ bookmarkId, style, iconStyle }: Bookmar
   return (
     <Tooltip
       trigger={
-        <HoverEffect onPress={handleToggleBookmark} style={style}>
+        <HoverEffect onPress={handleToggleBookmark} className={className} style={style}>
           {isBookmarked ? (
             <BookmarkFilledIcon
-              style={[tw`size-4 text-primary-dark dark:text-primary`, iconStyle]}
+              className={cx('text-primary-dark dark:text-primary size-4', iconClassName)}
+              style={iconStyle}
             />
           ) : (
             <BookmarkIcon
-              style={[tw`size-4 text-palette-gray5 dark:text-palette-gray4`, iconStyle]}
+              className={cx('text-palette-gray5 dark:text-palette-gray4 size-4', iconClassName)}
+              style={iconStyle}
             />
           )}
         </HoverEffect>

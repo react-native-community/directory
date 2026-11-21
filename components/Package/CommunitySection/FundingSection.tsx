@@ -6,7 +6,7 @@ import { H6Section, useLayout } from '~/common/styleguide';
 import { type LibraryFundingLink } from '~/types';
 import { TimeRange } from '~/util/datetime';
 import { swrJSONFetch } from '~/util/fetch';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import FundingRow from './FoundingRow';
 
@@ -37,8 +37,8 @@ export default function FundingSection({ fullName }: Props) {
 
   return (
     <>
-      <H6Section style={[tw`flex gap-1.5`, !isSmallScreen && tw`mt-3`]}>Funding</H6Section>
-      <UL style={[tw`m-0 gap-2`, !isSmallScreen ? tw`flex-row flex-wrap` : tw`mb-2`]}>
+      <H6Section className={cx('flex gap-1.5', cx(!isSmallScreen && 'mt-3'))}>Funding</H6Section>
+      <UL className={cx('m-0 gap-2', cx(!isSmallScreen ? 'flex-row flex-wrap' : 'mb-2'))}>
         {links.map(fund => (
           <FundingRow fund={fund} key={fund.url} />
         ))}

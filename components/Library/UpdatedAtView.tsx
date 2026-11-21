@@ -6,7 +6,7 @@ import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getTimeSinceToday } from '~/util/datetime';
 import { parseGitHubUrl } from '~/util/parseGitHubUrl';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -15,9 +15,7 @@ type Props = {
 export default function UpdatedAtView({ library }: Props) {
   const { branchName, packagePath } = parseGitHubUrl(library.githubUrl);
   const repoUrl = library.github.urls.repo;
-  const unmaintainedStyle = library.unmaintained
-    ? tw`text-warning-dark dark:text-warning`
-    : undefined;
+  const unmaintainedClassName = library.unmaintained ? 'text-warning-dark dark:text-warning' : '';
 
   const tooltipContent = `
     Last update (based on Git activity)
@@ -31,10 +29,10 @@ export default function UpdatedAtView({ library }: Props) {
     <Tooltip
       sideOffset={2}
       trigger={
-        <View style={tw`flex-row items-start gap-2`} role="tooltip">
+        <View className="flex-row items-start gap-2" role="tooltip">
           <View>
             <CalendarIcon
-              style={[tw`h-4 w-3.5`, unmaintainedStyle ?? tw`text-tertiary dark:text-pewter`]}
+              className={cx('h-4 w-3.5', unmaintainedClassName || 'text-tertiary dark:text-pewter')}
             />
           </View>
           <A
@@ -43,14 +41,14 @@ export default function UpdatedAtView({ library }: Props) {
                 ? `${repoUrl}/commits`
                 : `${repoUrl}/commits/${branchName}/${packagePath}`
             }
-            style={[
-              tw`text-[13px] font-light decoration-palette-gray3 dark:decoration-palette-gray5`,
-              unmaintainedStyle ?? tw`text-secondary`,
-            ]}
+            className={cx(
+              'text-[13px] font-light decoration-palette-gray3 dark:decoration-palette-gray5',
+              unmaintainedClassName || 'text-secondary'
+            )}
             hoverStyle={
               library.unmaintained
-                ? tw`text-warning-dark decoration-warning-dark dark:text-warning dark:decoration-warning`
-                : tw`text-hover decoration-palette-gray4`
+                ? 'text-warning-dark decoration-warning-dark dark:text-warning dark:decoration-warning'
+                : 'text-hover decoration-palette-gray4'
             }>
             {getTimeSinceToday(library.github.stats.pushedAt)}
           </A>

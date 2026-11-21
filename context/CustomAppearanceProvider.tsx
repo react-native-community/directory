@@ -1,7 +1,5 @@
 import { type PropsWithChildren, useEffect, useRef } from 'react';
-import { type RnColorScheme } from 'twrnc';
-
-import tw, { useAppColorScheme, useDeviceContext } from '~/util/tailwind';
+import { Uniwind } from 'uniwind';
 
 import CustomAppearanceContext from './CustomAppearanceContext';
 
@@ -9,45 +7,27 @@ const appearanceStorageKey = '@ReactNativeDirectory:CustomAppearanceContext';
 const defaultState = { isDark: false };
 
 export default function CustomAppearanceProvider({ children }: PropsWithChildren) {
-  const [colorScheme, , setColorScheme] = useAppColorScheme(tw);
-  const colorSchemeRef = useRef<RnColorScheme>(colorScheme);
+  const colorSchemeRef = useRef<'dark' | 'light' | undefined>(undefined);
   const initialScheme = readStoredAppearance() ? 'dark' : 'light';
 
   useEffect(() => {
-    applyTheme(initialScheme);
+    Uniwind.setTheme(initialScheme);
+    colorSchemeRef.current = initialScheme;
   }, [initialScheme]);
-
-  useEffect(() => {
-    colorSchemeRef.current = colorScheme;
-  }, [colorScheme]);
-
-  useDeviceContext(tw, {
-    observeDeviceColorSchemeChanges: false,
-    initialColorScheme: initialScheme ?? 'light',
-  });
 
   const value = {
     toggleTheme: () => {
-      const newTheme: RnColorScheme = colorSchemeRef.current === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-      setColorScheme(newTheme);
+      const currentTheme = colorSchemeRef.current ?? Uniwind.currentTheme;
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      colorSchemeRef.current = newTheme;
+      Uniwind.setTheme(newTheme);
       writeAppearanceToStore(newTheme === 'dark');
     },
   };
 
   return (
-    <CustomAppearanceContext.Provider key={colorScheme} value={value}>
-      {children}
-    </CustomAppearanceContext.Provider>
+    <CustomAppearanceContext.Provider value={value}>{children}</CustomAppearanceContext.Provider>
   );
-}
-
-function applyTheme(scheme: RnColorScheme) {
-  if (scheme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
 }
 
 function readStoredAppearance(): boolean {

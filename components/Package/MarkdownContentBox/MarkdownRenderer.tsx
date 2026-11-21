@@ -24,7 +24,7 @@ import rndLight from '~/styles/shiki/rnd-light.json';
 import { extractAndStripBlockquoteType } from '~/util/extractAndStripBlockquoteType';
 import { getReadmeAssetURL } from '~/util/getReadmeAssetUrl';
 import { childrenToText } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx, useIsDark } from '~/util/tailwind';
 
 import MarkdownCodeBlock from './MarkdownCodeBlock';
 import MarkdownHeading from './MarkdownHeading';
@@ -42,7 +42,7 @@ type ComponentType<T extends keyof JSX.IntrinsicElements> = JSX.IntrinsicElement
 };
 
 export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true }: Props) {
-  const isDark = tw.prefixMatch('dark');
+  const isDark = useIsDark();
   const slugger = createSlugger();
   return (
     <Md
@@ -122,9 +122,9 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           table: ({ children, node }: ComponentType<'table'>) => {
             return (
               <View
-                // @ts-expect-error dataSet is a valid RNW prop
+                // @ts-expect-error dataSet is supported by React Native Web
                 dataSet={{ tableWrapper: true }}
-                style={node.properties.align === 'center' ? tw`mx-auto` : undefined}>
+                className={node.properties.align === 'center' ? 'mx-auto' : undefined}>
                 <table>{children}</table>
               </View>
             );
@@ -152,19 +152,11 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
                 alt={alt ?? ''}
                 width={width}
                 height="auto"
-                style={{
-                  ...(baseURL.endsWith('#gh-dark-mode-only')
-                    ? isDark
-                      ? tw`inline`
-                      : tw`hidden`
-                    : {}),
-                  ...(baseURL.endsWith('#gh-light-mode-only')
-                    ? isDark
-                      ? tw`hidden`
-                      : tw`inline`
-                    : {}),
-                  maxHeight: height,
-                }}
+                className={cx(
+                  baseURL.endsWith('#gh-dark-mode-only') && (isDark ? 'inline' : 'hidden'),
+                  baseURL.endsWith('#gh-light-mode-only') && (isDark ? 'hidden' : 'inline')
+                )}
+                style={{ maxHeight: height }}
               />
             );
           },
@@ -181,17 +173,14 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
             );
           },
           code: ({ children }: ComponentType<'code'>) => (
-            <MarkdownInlineCode
-              code={children}
-              theme={tw.prefixMatch('dark') ? 'rnd-dark' : 'rnd-light'}
-            />
+            <MarkdownInlineCode code={children} theme={isDark ? 'rnd-dark' : 'rnd-light'} />
           ),
           pre: ({ children }: any) => {
             const langClass = children?.props?.className;
             return (
               <MarkdownCodeBlock
                 code={children?.props?.children ?? childrenToText(children)}
-                theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
+                theme={(isDark ? rndDark : rndLight) as Theme}
                 lang={langClass ? (langClass.split('-')[1] ?? 'sh').toLowerCase() : 'sh'}
               />
             );
@@ -201,14 +190,14 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
             const Icon = blockquoteType.type ? getBlockquoteIcon(blockquoteType.type) : null;
             return (
               <blockquote
-                className={blockquoteType.type}
-                style={{
-                  ...tw`text-secondary`,
-                  ...(blockquoteType.type ? {} : tw`border-palette-gray4 dark:border-secondary`),
-                }}>
+                className={cx(
+                  blockquoteType.type,
+                  'text-secondary',
+                  !blockquoteType.type && 'border-palette-gray4 dark:border-secondary-border'
+                )}>
                 {blockquoteType.type && Icon && (
-                  <strong className="blockquote-title" style={tw`flex items-center gap-1.5`}>
-                    <Icon style={tw`-ml-0.5 size-4`} />
+                  <strong className="blockquote-title flex items-center gap-1.5">
+                    <Icon className="-ml-0.5 size-4" />
                     {capitalize(blockquoteType.type)}
                   </strong>
                 )}
@@ -218,8 +207,7 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
           },
           details: ({ children }: ComponentType<'details'>) => {
             return (
-              <details
-                style={tw`mt-3 rounded-xl border border-palette-gray2 pb-3 pr-4 pt-1 dark:border-default`}>
+              <details className="border-palette-gray2 dark:border-border mt-3 rounded-xl border pt-1 pr-4 pb-3">
                 {children}
               </details>
             );
@@ -229,9 +217,10 @@ export default function MarkdownRenderer({ data, repoUrl, linkableHeaders = true
               const isChecked = Boolean(checked);
               return (
                 <div
-                  className="checkbox"
-                  style={tw`m-0 box-border size-4 items-center justify-center rounded border border-solid border-palette-gray3 bg-palette-gray2 dark:border-powder dark:bg-palette-gray6`}>
-                  {isChecked && <CheckIcon style={tw`size-3 text-success`} />}
+                  className={cx(
+                    'checkbox border-palette-gray3 bg-palette-gray2 dark:border-powder dark:bg-palette-gray6 m-0 box-border size-4 items-center justify-center rounded border border-solid'
+                  )}>
+                  {isChecked && <CheckIcon className="text-success size-3" />}
                 </div>
               );
             }

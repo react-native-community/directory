@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import { A, HoverEffect } from '~/common/styleguide';
 import { XIcon } from '~/components/Icons';
 import { Tooltip } from '~/components/Tooltip';
-import tw from '~/util/tailwind';
 
 type Props = {
   title: string;
@@ -12,18 +11,16 @@ type Props = {
 
 export default function SearchTag({ title, value }: Props) {
   return (
-    <View
-      style={tw`h-full flex-row items-center rounded border border-default bg-palette-gray1 pr-1.5 text-[12px] no-underline dark:bg-dark`}>
-      <View
-        style={tw`h-full select-none justify-center border-r border-default bg-palette-gray2 pl-2.5 pr-2 text-secondary dark:bg-powder`}>
+    <View className="border-border bg-palette-gray1 dark:bg-dark h-full flex-row items-center rounded border pr-1.5 text-[12px] no-underline">
+      <View className="border-border bg-palette-gray2 text-secondary dark:bg-powder h-full justify-center border-r pr-2 pl-2.5 select-none">
         <span>{title}</span>
       </View>
       <Tooltip
         trigger={
           <HoverEffect>
-            <A href="/packages" style={tw`flex flex-row items-center gap-1.5 pl-2 no-underline`}>
+            <A href="/packages" className="flex flex-row items-center gap-1.5 pl-2 no-underline">
               {value}
-              <XIcon style={tw`w-2.5 text-error`} />
+              <XIcon className="text-error w-2.5" />
             </A>
           </HoverEffect>
         }>

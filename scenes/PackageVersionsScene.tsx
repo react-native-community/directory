@@ -13,14 +13,13 @@ import { VersionSizeIncreasedBanner } from '~/components/Package/VersionSizeIncr
 import VersionsSection from '~/components/Package/VersionsSection';
 import PageMeta from '~/components/PageMeta';
 import { type PackageVersionsPageProps } from '~/types/pages';
-import tw from '~/util/tailwind';
 
 const VersionDownloadsChartWithLoading = dynamic(
   () => import('~/components/Package/Charts/VersionDownloadsChart'),
   {
     ssr: false,
     loading: () => (
-      <View style={tw`min-h-[406px] items-center justify-center`}>
+      <View className="min-h-[406px] items-center justify-center">
         <ThreeDotsLoader />
       </View>
     ),
@@ -32,7 +31,7 @@ const VersionSizeChartWithLoading = dynamic(
   {
     ssr: false,
     loading: () => (
-      <View style={tw`min-h-[280px] items-center justify-center`}>
+      <View className="min-h-[280px] items-center justify-center">
         <ThreeDotsLoader />
       </View>
     ),
@@ -72,8 +71,8 @@ export default function PackageVersionsScene({
         path="package"
       />
       <NavigationHeader library={library} />
-      <ContentContainer style={tw`my-6 px-5 pb-3`}>
-        <View style={tw`flex-1 gap-3`}>
+      <ContentContainer className="my-6 px-5 pb-3">
+        <View className="flex-1 gap-3">
           <PackageHeader library={library} skipDescription />
           <VersionSizeIncreasedBanner data={registryData} />
           {hasVersionDownloads && npmDownloads && (
@@ -82,7 +81,7 @@ export default function PackageVersionsScene({
                 title="Downloads by version"
                 description={['Last week', 'Top downloaded']}
               />
-              <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
+              <View className="border-border overflow-hidden rounded-lg border p-3">
                 <VersionDownloadsChartWithLoading
                   npmDownloads={npmDownloads}
                   registryData={registryData}
@@ -96,13 +95,13 @@ export default function PackageVersionsScene({
                 title="Package size by version"
                 description={['Last published', 'No pre-release versions']}
               />
-              <View style={tw`overflow-hidden rounded-lg border border-default p-3`}>
+              <View className="border-border overflow-hidden rounded-lg border p-3">
                 <VersionSizeChartWithLoading registryData={registryData} />
               </View>
             </>
           )}
-          <H6Section style={tw`mt-3 text-secondary`}>Tagged versions</H6Section>
-          <View style={tw`gap-2`}>
+          <H6Section className="text-secondary mt-3">Tagged versions</H6Section>
+          <View className="gap-2">
             {taggedVersions.map(([label, versionData]) => (
               <VersionBox
                 key={label}

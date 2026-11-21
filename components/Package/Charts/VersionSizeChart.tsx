@@ -7,7 +7,7 @@ import { View } from 'react-native';
 import { Label } from '~/common/styleguide';
 import { type PackageVersionsData } from '~/types';
 import { formatBytes } from '~/util/formatBytes';
-import tw from '~/util/tailwind';
+import { useIsDark } from '~/util/tailwind';
 
 import ChartTooltip from './ChartTooltip';
 import HoveredBarOutline from './HoveredBarOutline';
@@ -25,6 +25,7 @@ type Props = {
 export default function VersionSizeChart({ registryData }: Props) {
   const { parentRef, width } = useParentSize({ debounceTime: 150 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const isDark = useIsDark();
 
   const series = buildRecentVersionSizeSeries(
     registryData,
@@ -33,20 +34,19 @@ export default function VersionSizeChart({ registryData }: Props) {
 
   if (!series.length) {
     return (
-      <View style={tw`min-h-[220px] items-center justify-center`}>
-        <Label style={tw`text-secondary`}>Size data unavailable</Label>
+      <View className="min-h-[220px] items-center justify-center">
+        <Label className="text-secondary">Size data unavailable</Label>
       </View>
     );
   }
 
-  const isDark = tw.prefixMatch('dark');
   const maxSize = Math.max(...series.map(item => item.size), 0);
   const yDomain = maxSize ? [0, maxSize + Math.max(1, maxSize * 0.08)] : undefined;
   const latestVersion = series.at(-1)?.label;
 
   return (
     // @ts-expect-error Ref type miss-match
-    <View style={tw`w-full gap-3`} ref={parentRef}>
+    <View className="w-full gap-3" ref={parentRef}>
       <XYChart
         width={width}
         height={HEIGHT}
@@ -95,9 +95,9 @@ export default function VersionSizeChart({ registryData }: Props) {
               textAnchor="end"
               dominantBaseline="middle"
               transform={`rotate(-45 ${x ?? 0} ${y ?? 0})`}
-              style={tw`select-none tabular-nums`}
+              className="tabular-nums select-none"
               fill={isDark ? 'var(--white)' : 'var(--black)'}>
-              <tspan x={x + 4} style={tw`text-[11px] font-medium`}>
+              <tspan x={x + 4} className="text-[11px] font-medium">
                 {formattedValue}
               </tspan>
             </text>
@@ -115,9 +115,9 @@ export default function VersionSizeChart({ registryData }: Props) {
               y={y}
               textAnchor="end"
               dominantBaseline="middle"
-              style={tw`select-none tabular-nums`}
+              className="tabular-nums select-none"
               fill="var(--secondary)">
-              <tspan x={(x ?? 0) - 8} style={tw`text-[12px] font-light`}>
+              <tspan x={(x ?? 0) - 8} className="text-[12px] font-light">
                 {formattedValue}
               </tspan>
             </text>
@@ -162,9 +162,9 @@ export default function VersionSizeChart({ registryData }: Props) {
 
             return (
               <ChartTooltip>
-                <span style={tw`text-[14px] font-medium tabular-nums`}>{data.label}</span>
+                <span className="text-[14px] font-medium tabular-nums">{data.label}</span>
                 <span>{formatBytes(data.size)} package size</span>
-                <span style={tw`text-palette-gray3 dark:text-secondary`}>
+                <span className="text-palette-gray3 dark:text-secondary">
                   Published {new Date(data.publishedAt).toLocaleDateString('en-US')}
                 </span>
               </ChartTooltip>

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { H6Section } from '~/common/styleguide';
 import { type LibraryType, type NpmUser } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import EntityCounter from '../EntityCounter';
 
@@ -28,19 +28,19 @@ export default function CommunitySection({ library, author, maintainers, compact
       <FundingSection fullName={library.github.fullName} />
       {!!author && (
         <>
-          <H6Section style={!compact && tw`mt-3`}>Author</H6Section>
-          <View style={tw`items-start`}>
+          <H6Section className={cx(!compact && 'mt-3')}>Author</H6Section>
+          <View className="items-start">
             <PackageAuthor author={author} />
           </View>
         </>
       )}
       {maintainers && (
         <>
-          <H6Section style={[tw`flex gap-1.5`, !compact && tw`mt-3`]}>
+          <H6Section className={cx('flex gap-1.5', cx(!compact && 'mt-3'))}>
             {compact ? 'Maintainer' : 'Maintainers'}
             <EntityCounter count={maintainers.length} />
           </H6Section>
-          <View style={tw`flex-row flex-wrap items-start gap-2`}>
+          <View className="flex-row flex-wrap items-start gap-2">
             {sortBy(maintainers, ['name']).map(maintainer => (
               <PackageAuthor author={maintainer} key={maintainer.name} compact />
             ))}

@@ -7,7 +7,7 @@ import rndDark from '~/styles/shiki/rnd-dark.json';
 import rndLight from '~/styles/shiki/rnd-light.json';
 import { type DiffLine } from '~/types';
 import { SHIKI_OPTS } from '~/util/shiki';
-import tw from '~/util/tailwind';
+import { cx, useIsDark } from '~/util/tailwind';
 
 type Props = {
   line: DiffLine;
@@ -17,7 +17,7 @@ type Props = {
 };
 
 export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: Props) {
-  const isDark = tw.prefixMatch('dark');
+  const isDark = useIsDark();
   const theme = (isDark ? rndDark : rndLight) as Theme;
   const highlighter = useShikiHighlighter(line.text || ' ', lang, theme, {
     ...SHIKI_OPTS,
@@ -26,36 +26,34 @@ export function CodeBrowserDiffLine({ line, lang, showLineNumbers, wordWrap }: P
 
   return (
     <View
-      style={[
-        tw`min-h-4 flex-row items-center`,
-        !wordWrap && [tw`min-w-full`, { width: 'max-content' }],
-        line.type === 'added' && tw`bg-diff-added`,
-        line.type === 'removed' && tw`bg-diff-removed`,
-      ]}>
+      className={cx(
+        'min-h-4 flex-row items-center',
+        cx(!wordWrap && cx('min-w-full')),
+        cx(line.type === 'added' && 'bg-diff-added'),
+        cx(line.type === 'removed' && 'bg-diff-removed')
+      )}>
       {showLineNumbers && (
         <>
-          <Label
-            style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+          <Label className="text-tertiary w-10 shrink-0 px-1 text-right font-mono text-[11px] leading-4">
             {line.oldLine ?? ''}
           </Label>
-          <Label
-            style={tw`font-mono w-10 shrink-0 px-1 text-right text-[11px] leading-4 text-tertiary`}>
+          <Label className="text-tertiary w-10 shrink-0 px-1 text-right font-mono text-[11px] leading-4">
             {line.newLine ?? ''}
           </Label>
         </>
       )}
-      <View style={tw`min-w-0 flex-1 flex-row gap-2 pl-1.5 pr-2.5`}>
+      <View className="min-w-0 flex-1 flex-row gap-2 pr-2.5 pl-1.5">
         <Label
-          style={[
-            tw`font-mono select-none text-[12px] leading-4 opacity-60`,
-            line.type === 'added' && tw`text-success`,
-            line.type === 'removed' && tw`text-error`,
-          ]}>
+          className={cx(
+            'font-mono select-none text-[12px] leading-4 opacity-60',
+            cx(line.type === 'added' && 'text-success'),
+            cx(line.type === 'removed' && 'text-error')
+          )}>
           {line.type === 'added' ? '+' : line.type === 'removed' ? '−' : ' '}
         </Label>
-        <View style={tw`min-w-0 flex-1`}>
+        <View className="min-w-0 flex-1">
           {highlighter ?? (
-            <pre className="shiki" style={tw`m-0 h-auto bg-transparent p-0 text-[75%]`}>
+            <pre className={cx('shiki', 'm-0 h-auto bg-transparent p-0 text-[75%]')}>
               <code>
                 <span className="line">
                   <span>{line.text || ' '}</span>

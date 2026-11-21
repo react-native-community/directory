@@ -2,7 +2,7 @@ import { View } from 'react-native';
 
 import { Label, useLayout } from '~/common/styleguide';
 import { Button } from '~/components/Button';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import { type VersionsChartMode } from './types';
 
@@ -25,28 +25,33 @@ export default function VersionDownloadsChartModes({
 }: Props) {
   const { isSmallScreen } = useLayout();
   return (
-    <View style={[tw`w-full flex-row items-center gap-2`, isSmallScreen && tw`flex-col`]}>
-      <View style={[tw`flex-1 flex-row flex-wrap gap-2`, isSmallScreen && tw`w-full gap-[3.3%]`]}>
+    <View className={cx('w-full flex-row items-center gap-2', cx(isSmallScreen && 'flex-col'))}>
+      <View
+        className={cx('flex-1 flex-row flex-wrap gap-2', cx(isSmallScreen && 'w-full gap-[3.3%]'))}>
         {CHART_MODES.map(({ key, label, shortLabel }) => (
           <Button
             key={key}
             onPress={() => onModeChange(key)}
-            containerStyle={isSmallScreen ? tw`min-w-[30%] flex-1` : tw`min-w-[92px]`}
-            style={[
-              tw`border bg-default px-3 py-1.5`,
-              key === mode
-                ? tw`border-[#bde0f7] bg-primary-hover dark:border-[#203b4d]`
-                : tw`border-default`,
-            ]}>
+            containerClassName={isSmallScreen ? 'min-w-[30%] flex-1' : 'min-w-[92px]'}
+            className={cx(
+              'border bg-default px-3 py-1.5',
+              cx(
+                key === mode
+                  ? 'border-[#bde0f7] bg-primary-hover dark:border-[#203b4d]'
+                  : 'border-border'
+              )
+            )}>
             <Label
-              style={key === mode ? tw`text-primary-darker dark:text-primary` : tw`text-secondary`}>
+              className={cx(
+                key === mode ? 'text-primary-darker dark:text-primary' : 'text-secondary'
+              )}>
               {isSmallScreen ? shortLabel : label}
             </Label>
           </Button>
         ))}
       </View>
-      <Label style={tw`shrink-0 text-right font-light text-secondary`}>
-        <span style={tw`font-normal text-black dark:text-white`}>
+      <Label className="text-secondary shrink-0 text-right font-light">
+        <span className="font-normal text-black dark:text-white">
           {downloadsPercentage.toLocaleString('en-US', {
             maximumFractionDigits: 1,
           })}

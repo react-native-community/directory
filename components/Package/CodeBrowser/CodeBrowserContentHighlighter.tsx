@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import { type Theme, useShikiHighlighter } from 'react-shiki';
 
 import { SHIKI_OPTS } from '~/util/shiki';
-import tw from '~/util/tailwind';
 
 type Props = {
   code: string;
@@ -28,7 +27,7 @@ export default function CodeBrowserContentHighlighter({
 
   if (!highlighter) {
     return (
-      <View style={tw`min-h-0 flex-1`}>
+      <View className="min-h-0 flex-1">
         <pre
           className="shiki"
           style={wordWrap ? { whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' } : undefined}>
@@ -45,7 +44,7 @@ export default function CodeBrowserContentHighlighter({
   }
 
   return (
-    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} style={tw`min-h-0 flex-1`}>
+    <View id={wordWrap ? 'code-browser-word-wrap' : undefined} className="min-h-0 flex-1">
       {highlighter}
     </View>
   );

@@ -8,7 +8,7 @@ import LibraryDescription from '~/components/Library/LibraryDescription';
 import UpdatedAtView from '~/components/Library/UpdatedAtView';
 import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 import MetaData from './MetaData';
 import Thumbnail from './Thumbnail';
@@ -44,44 +44,44 @@ function Library({
 
   return (
     <View
-      style={[
-        tw`relative mb-4 flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-default`,
-        isSmallScreen && tw`flex-col`,
-        skipMetadata && tw`mx-[0.75%] min-h-[206px] w-[48.5%]`,
-        skipMetadata && (isSmallScreen || isBelowMaxWidth) && tw`w-[98.5%] max-w-[98.5%]`,
-        skipSecondaryMetadata && tw`min-h-0`,
-        library.unmaintained && tw`opacity-85`,
-      ]}>
+      className={cx(
+        'relative mb-4 flex-row overflow-hidden rounded-md border border-palette-gray2 dark:border-border',
+        cx(isSmallScreen && 'flex-col'),
+        cx(skipMetadata && 'mx-[0.75%] min-h-[206px] w-[48.5%]'),
+        cx(skipMetadata && (isSmallScreen || isBelowMaxWidth) && 'w-[98.5%] max-w-[98.5%]'),
+        cx(skipSecondaryMetadata && 'min-h-0'),
+        cx(library.unmaintained && 'opacity-85')
+      )}>
       {!isSmallScreen && (
         <BookmarkButton
           bookmarkId={libName}
-          style={tw`absolute right-2.5 top-2.5 z-10 rounded border border-palette-gray2 p-1.5 dark:border-palette-gray6`}
+          className="border-palette-gray2 dark:border-palette-gray6 absolute top-2.5 right-2.5 z-10 rounded border p-1.5"
         />
       )}
       <View
-        style={[
-          tw`flex-1 p-4 pb-3 pl-5`,
-          showTrendingMark && tw`pt-3.5`,
-          isSmallScreen && tw`px-3.5 pt-2.5`,
-          showTrendingMark && isSmallScreen && tw`pb-2 pl-3.5 pr-4 pt-3.5`,
-        ]}>
+        className={cx(
+          'flex-1 p-4 pb-3 pl-5',
+          cx(showTrendingMark && 'pt-3.5'),
+          cx(isSmallScreen && 'px-3.5 pt-2.5'),
+          cx(showTrendingMark && isSmallScreen && 'pb-2 pl-3.5 pr-4 pt-3.5')
+        )}>
         {library.unmaintained && (
           <View
-            style={
+            className={cx(
               isSmallScreen
-                ? tw`mb-1.5 flex-col justify-start self-start`
-                : tw`mb-1 flex-row items-start justify-between gap-6`
-            }>
+                ? 'mb-1.5 flex-col justify-start self-start'
+                : 'mb-1 flex-row items-start justify-between gap-6'
+            )}>
             <UnmaintainedLabel alternatives={library.alternatives} />
             {!skipDate && <UpdatedAtView library={library} />}
           </View>
         )}
         {showTrendingMark && library.popularity && (
           <View
-            style={[
-              tw`mb-0.5 flex-row items-center justify-between gap-6`,
-              !isSmallScreen && skipMetadata && tw`pr-8`,
-            ]}>
+            className={cx(
+              'mb-0.5 flex-row items-center justify-between gap-6',
+              cx(!isSmallScreen && skipMetadata && 'pr-8')
+            )}>
             <Tooltip sideOffset={8} trigger={<TrendingMark library={library} />}>
               Trending Score is based on the last week to last month download rate.
             </Tooltip>
@@ -89,27 +89,27 @@ function Library({
           </View>
         )}
         <View
-          style={
+          className={cx(
             isSmallScreen
-              ? tw`w-full flex-col justify-start gap-2 self-start`
-              : tw`flex-row items-start justify-between gap-6`
-          }>
-          <View style={tw`flex-row items-center gap-1.5`}>
+              ? 'w-full flex-col justify-start gap-2 self-start'
+              : 'flex-row items-start justify-between gap-6'
+          )}>
+          <View className="flex-row items-center gap-1.5">
             <A
               href={`/package/${library.npmPkg}`}
-              style={tw`text-[19px] font-bold`}
-              hoverStyle={tw`text-hover`}>
+              className="text-[19px] font-bold"
+              hoverStyle="text-hover">
               {libName}
             </A>
             <HoverEffect>
-              <A href={library.githubUrl} style={tw`size-5`} aria-label="GitHub repository">
-                <GitHubIcon style={tw`size-5 text-palette-gray5 dark:text-palette-gray4`} />
+              <A href={library.githubUrl} className="size-5" aria-label="GitHub repository">
+                <GitHubIcon className="text-palette-gray5 dark:text-palette-gray4 size-5" />
               </A>
             </HoverEffect>
             {isSmallScreen && (
               <BookmarkButton
                 bookmarkId={libName}
-                style={tw`-mr-1 ml-auto size-7 items-center justify-center rounded border border-palette-gray2 p-1 dark:border-palette-gray6`}
+                className="border-palette-gray2 dark:border-palette-gray6 -mr-1 ml-auto size-7 items-center justify-center rounded border p-1"
               />
             )}
           </View>
@@ -117,22 +117,22 @@ function Library({
             <UpdatedAtView library={library} />
           )}
         </View>
-        <View style={tw`mt-3`}>
+        <View className="mt-3">
           <CompatibilityTags library={library} />
         </View>
-        <View style={tw`mt-3`}>
+        <View className="mt-3">
           <LibraryDescription github={library.github} maxLines={skipMetadata ? 3 : undefined} />
         </View>
         {!skipMetadata && Platform.OS === 'web' && library.images && library.images.length > 0 && (
-          <View style={tw`mt-2 flex-row flex-wrap items-center gap-x-0.5`}>
+          <View className="mt-2 flex-row flex-wrap items-center gap-x-0.5">
             {library.images.map((image, i) => (
               <Thumbnail key={image} url={image} alt={`${library.npmPkg} screenshot ${i + 1}`} />
             ))}
           </View>
         )}
         {!skipSecondaryMetadata && hasSecondaryMetadata && (
-          <View style={[tw`mt-auto w-full`, isSmallScreen && tw`relative mt-0 min-h-0`]}>
-            <View style={tw`mt-3 flex-row flex-wrap items-center gap-2.5 gap-y-0.5`}>
+          <View className={cx('mt-auto w-full', cx(isSmallScreen && 'relative mt-0 min-h-0'))}>
+            <View className="mt-3 flex-row flex-wrap items-center gap-2.5 gap-y-0.5">
               <MetaData library={library} secondary />
             </View>
           </View>
@@ -140,10 +140,10 @@ function Library({
       </View>
       {skipMetadata ? null : (
         <View
-          style={[
-            tw`flex-0.35 border-l border-palette-gray2 p-4 dark:border-default`,
-            isSmallScreen && tw`border-l-0 border-t`,
-          ]}>
+          className={cx(
+            'flex-[0.35] border-l border-palette-gray2 p-4 dark:border-border',
+            cx(isSmallScreen && 'border-l-0 border-t')
+          )}>
           <MetaData library={library} />
         </View>
       )}

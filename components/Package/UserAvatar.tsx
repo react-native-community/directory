@@ -1,19 +1,24 @@
 import { type ImgHTMLAttributes } from 'react';
 
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & {
   hideOnError?: boolean;
 };
 
-export default function UserAvatar({ src, alt, style, hideOnError = true, ...rest }: Props) {
+export default function UserAvatar({
+  src,
+  alt,
+  className,
+  style,
+  hideOnError = true,
+  ...rest
+}: Props) {
   return (
     <img
       src={src}
-      style={{
-        ...tw`size-9 rounded-full bg-palette-gray2 dark:bg-powder`,
-        ...style,
-      }}
+      className={cx('bg-palette-gray2 dark:bg-powder size-9 rounded-full', className)}
+      style={style}
       alt={alt}
       onError={hideOnError ? hideAvatarOnError : undefined}
       {...rest}

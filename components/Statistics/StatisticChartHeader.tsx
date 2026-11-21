@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 
 import { H4, H6Section, Label, useLayout } from '~/common/styleguide';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   title: string;
@@ -31,17 +31,17 @@ export default function StatisticChartHeader({ title, note, large = false }: Pro
   }, [id]);
 
   return (
-    <View style={tw`mt-3 gap-1`}>
+    <View className="mt-3 gap-1">
       <HeaderTag
         id={id}
-        style={[
-          tw`flex items-end justify-between text-secondary`,
-          isSmallScreen && tw`flex-col items-start gap-y-1`,
-        ]}>
-        <Link href={`#${id}`} style={tw`text-secondary no-underline`}>
+        className={cx(
+          'flex items-end justify-between text-secondary',
+          cx(isSmallScreen && 'flex-col items-start gap-y-1')
+        )}>
+        <Link href={`#${id}`} className="text-secondary no-underline">
           {title}
         </Link>
-        {note && <Label style={tw`font-light text-secondary`}>{note}</Label>}
+        {note && <Label className="text-secondary font-light">{note}</Label>}
       </HeaderTag>
     </View>
   );

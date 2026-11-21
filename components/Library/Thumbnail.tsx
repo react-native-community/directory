@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ActivityIndicator, type ColorValue, useWindowDimensions, View } from 'react-native';
 
 import { ThumbnailIcon } from '~/components/Icons';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 type Props = {
   url: string;
@@ -28,17 +28,17 @@ function Thumbnail({ url, alt }: Props) {
       <HoverCard.Trigger asChild>
         <View
           tabIndex={0}
-          style={tw`min-h-7.5 my-1 mr-2.5 box-border overflow-hidden rounded border border-palette-gray2 p-1.5 pb-0 text-center dark:border-default`}>
+          className="border-palette-gray2 dark:border-border my-1 mr-2.5 box-border min-h-7.5 overflow-hidden rounded border p-1.5 pb-0 text-center">
           {showPreview && !isLoaded ? (
-            <div style={tw`mx-px -mt-0.5 w-3.5`}>
-              <ActivityIndicator size="small" color={tw`text-primary-dark`.color as ColorValue} />
+            <div className="mx-px -mt-0.5 w-3.5">
+              <ActivityIndicator size="small" color={'var(--primary-dark)' as ColorValue} />
             </div>
           ) : (
             <ThumbnailIcon
-              style={[
-                tw`text-palette-gray3 dark:text-pewter`,
-                showPreview && tw`text-primary-dark`,
-              ]}
+              className={cx(
+                'text-palette-gray3 dark:text-pewter',
+                cx(showPreview && 'text-primary-dark')
+              )}
             />
           )}
         </View>
@@ -46,9 +46,11 @@ function Thumbnail({ url, alt }: Props) {
       <HoverCard.Portal>
         <HoverCard.Content sideOffset={6} sticky="always">
           <View
+            className={cx(
+              'shadow-offset-0/0.5 shadow-radius-2 box-border hidden rounded-lg bg-white p-2.5 shadow-palette-gray3 dark:bg-black dark:shadow-accented',
+              cx(showPreview && isLoaded && 'flex')
+            )}
             style={[
-              tw`shadow-offset-0/0.5 shadow-radius-2 box-border hidden rounded-lg bg-white p-2.5 shadow-palette-gray3 dark:bg-black dark:shadow-accented`,
-              showPreview && isLoaded && tw`flex`,
               {
                 maxWidth: maxPreviewWidth,
                 maxHeight: maxPreviewHeight,
@@ -58,8 +60,8 @@ function Thumbnail({ url, alt }: Props) {
               src={url}
               onLoad={() => setLoaded(true)}
               alt={alt}
+              className="rounded"
               style={{
-                ...tw`rounded`,
                 maxWidth: maxPreviewImageWidth,
                 maxHeight: maxImgPreviewHeight,
               }}

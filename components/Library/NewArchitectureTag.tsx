@@ -7,7 +7,6 @@ import { Tooltip } from '~/components/Tooltip';
 import { type LibraryType } from '~/types';
 import { getNewArchSupportStatus, NewArchSupportStatus } from '~/util/newArchStatus';
 import { pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
 
 type Props = {
   library: LibraryType;
@@ -19,7 +18,7 @@ export function NewArchitectureTag({ library, small = false }: Props) {
   const icon = getTagIcon(status);
 
   const newArchitectureNote = library.newArchitectureNote && (
-    <Label style={tw`my-1 flex text-white`}>{library.newArchitectureNote}</Label>
+    <Label className="my-1 flex text-white">{library.newArchitectureNote}</Label>
   );
 
   // Do not show alternatives in New Arch tag for unmaintained libraries since
@@ -27,7 +26,7 @@ export function NewArchitectureTag({ library, small = false }: Props) {
   const alternatives = library.alternatives &&
     library.alternatives.length > 0 &&
     !library.unmaintained && (
-      <Label style={tw`my-1 flex text-white`}>
+      <Label className="my-1 flex text-white">
         {' '}
         {pluralize('Alternative', library.alternatives.length)}
         {': '}
@@ -50,7 +49,7 @@ export function NewArchitectureTag({ library, small = false }: Props) {
                     : 'New Architecture'
                 }
                 icon={icon}
-                tagStyle={getTagColor(status)}
+                tagClassName={getTagColor(status)}
                 small={small}
               />
             </A>
@@ -69,15 +68,15 @@ export function NewArchitectureTag({ library, small = false }: Props) {
   );
 }
 
-function getTagColor(status: NewArchSupportStatus) {
+function getTagColor(status: NewArchSupportStatus): string {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return tw`border-[#c3e3f7] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]`;
+      return 'border-[#c3e3f7] bg-[#edf6fc] dark:border-[#203b4d] dark:bg-[#142733]';
     case NewArchSupportStatus.Unsupported:
-      return tw`border-[#faebaf] bg-[#fffae8] dark:border-[#3d3206] dark:bg-[#292005]`;
+      return 'border-[#faebaf] bg-[#fffae8] dark:border-[#3d3206] dark:bg-[#292005]';
     default:
-      return tw`border-dashed border-palette-gray2 dark:border-default`;
+      return 'border-palette-gray2 dark:border-border border-dashed';
   }
 }
 
@@ -85,10 +84,10 @@ function getTagIcon(status: NewArchSupportStatus) {
   switch (status) {
     case NewArchSupportStatus.NewArchOnly:
     case NewArchSupportStatus.Supported:
-      return <CheckIcon style={tw`size-3 text-primary-dark`} />;
+      return <CheckIcon className="text-primary-dark size-3" />;
     case NewArchSupportStatus.Unsupported:
-      return <XIcon style={tw`size-[11px] text-warning-dark dark:text-warning`} />;
+      return <XIcon className="text-warning-dark dark:text-warning size-[11px]" />;
     default:
-      return <QuestionIcon style={tw`size-[11px] text-palette-gray4`} />;
+      return <QuestionIcon className="text-palette-gray4 size-[11px]" />;
   }
 }

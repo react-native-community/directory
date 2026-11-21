@@ -1,7 +1,6 @@
 import { Label } from '~/common/styleguide';
 import { Tooltip } from '~/components/Tooltip';
 import { getTimeSinceToday } from '~/util/datetime';
-import tw from '~/util/tailwind';
 
 type Props = {
   time: string;
@@ -14,7 +13,7 @@ export default function RelativeTime({ time, dateOnly }: Props) {
       trigger={<time dateTime={time}>{getTimeSinceToday(time)}</time>}
       sideOffset={0}
       delayDuration={500}>
-      <Label style={tw`font-light text-white`}>
+      <Label className="font-light text-white">
         {dateOnly
           ? new Date(time).toLocaleDateString('en-US')
           : new Date(time).toLocaleString('en-US')}

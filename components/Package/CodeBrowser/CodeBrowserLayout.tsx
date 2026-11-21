@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { type NativePointerEvent, type NativeSyntheticEvent, View } from 'react-native';
 
 import { useLayout } from '~/common/styleguide';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 
 const FILE_TREE_WIDTH_STORAGE_KEY = '@ReactNativeDirectory:CodeBrowser:fileTreeWidth';
 const DEFAULT_FILE_TREE_WIDTH = 340;
@@ -92,60 +92,55 @@ export default function CodeBrowserLayout({
   return (
     <View
       id="codeBrowser"
-      style={[
-        tw`mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-default dark:bg-dark dark:text-white`,
-        isBrowserMaximized
-          ? tw`inset-0 mt-0 flex-1 rounded-none border-0`
-          : isSmallScreen
-            ? tw`h-[82.5vh]`
-            : tw`h-[70vh]`,
-        isBrowserMaximized && {
-          position: 'fixed',
-        },
-      ]}>
+      className={cx(
+        'mt-2 flex gap-1 overflow-hidden rounded-xl border border-palette-gray2 bg-default text-black dark:border-border dark:bg-dark dark:text-white',
+        cx(
+          isBrowserMaximized
+            ? 'fixed inset-0 mt-0 flex-1 rounded-none border-0'
+            : cx(isSmallScreen ? 'h-[82.5vh]' : 'h-[70vh]')
+        )
+      )}>
       {isBrowserMaximized && header}
       <View
-        style={[
-          tw`flex flex-row`,
-          isBrowserMaximized
-            ? tw`flex-1 border-l-0`
-            : isSmallScreen
-              ? tw`h-[82.5vh]`
-              : tw`h-[70vh]`,
-          isBrowserMaximized && !!header && tw`border border-palette-gray2 dark:border-default`,
-          isSmallScreen && tw`flex-col`,
-        ]}>
+        className={cx(
+          'flex flex-row',
+          cx(
+            isBrowserMaximized ? 'flex-1 border-l-0' : cx(isSmallScreen ? 'h-[82.5vh]' : 'h-[70vh]')
+          ),
+          cx(isBrowserMaximized && !!header && 'border border-palette-gray2 dark:border-border'),
+          cx(isSmallScreen && 'flex-col')
+        )}>
         {sidebar != null && (
           <View
-            style={[
-              tw`relative z-10 flex flex-shrink-0`,
-              !isSmallScreen && tw`h-full`,
-              !isSmallScreen && { width: fileTreeWidth },
-              isSmallScreen && tw`w-full`,
-            ]}>
-            <View style={[tw`flex-1`, isFileTreeResizing && tw`pointer-events-none`]}>
+            className={cx(
+              'relative z-10 flex flex-shrink-0',
+              cx(!isSmallScreen && 'h-full'),
+              cx(isSmallScreen && 'w-full')
+            )}
+            style={[!isSmallScreen && { width: fileTreeWidth }]}>
+            <View className={cx('flex-1', cx(isFileTreeResizing && 'pointer-events-none'))}>
               {sidebar}
             </View>
             {!isSmallScreen && (
               <View
                 accessibilityRole="adjustable"
                 onPointerDown={startFileTreeResize}
-                style={[
-                  tw`absolute -right-0.5 top-0 z-10 h-full w-1 opacity-40`,
-                  { cursor: 'col-resize' },
-                  isFileTreeResizing && tw`bg-palette-gray3 dark:bg-palette-gray5`,
-                ]}
+                className={cx(
+                  'absolute -right-0.5 top-0 z-10 h-full w-1 opacity-40',
+                  cx(isFileTreeResizing && 'bg-palette-gray3 dark:bg-palette-gray5'),
+                  'cursor-col-resize'
+                )}
               />
             )}
             {sidebarFooter}
           </View>
         )}
         <View
-          style={[
-            tw`flex flex-1`,
-            hasActiveContent && tw`bg-white dark:bg-[#0d1117]`,
-            isSmallScreen && tw`min-h-0`,
-          ]}>
+          className={cx(
+            'flex flex-1',
+            cx(hasActiveContent && 'bg-white dark:bg-[#0d1117]'),
+            cx(isSmallScreen && 'min-h-0')
+          )}>
           {content}
         </View>
       </View>

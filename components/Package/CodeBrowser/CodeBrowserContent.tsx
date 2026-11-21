@@ -22,7 +22,7 @@ import { getLanguage, IMAGE_FILES, PREVIEW_DISABLED_FILES } from '~/util/codeBro
 import { TimeRange } from '~/util/datetime';
 import { formatBytes } from '~/util/formatBytes';
 import { pluralize } from '~/util/strings';
-import tw from '~/util/tailwind';
+import { cx, useIsDark } from '~/util/tailwind';
 
 import CodeBrowserContentFooter from './CodeBrowserContentFooter';
 import CodeBrowserContentHeader from './CodeBrowserContentHeader';
@@ -54,6 +54,7 @@ export default function CodeBrowserContent({
   settings,
   onSettingsChange,
 }: Props) {
+  const isDark = useIsDark();
   const [rawPreview, setRawPreview] = useState(false);
   const [markdownPreview, setMarkdownPreview] = useState(false);
   const [imageData, setImageData] = useState<
@@ -94,7 +95,7 @@ export default function CodeBrowserContent({
     return (
       <>
         <CodeBrowserContentHeader filePath={filePath}>
-          <View style={tw`flex flex-row gap-3`}>
+          <View className="flex flex-row gap-3">
             <DisplayModeButton
               isBrowserMaximized={isBrowserMaximized}
               toggleMaximized={toggleMaximized}
@@ -102,15 +103,15 @@ export default function CodeBrowserContent({
             <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
           </View>
         </CodeBrowserContentHeader>
-        <View style={tw`flex flex-1 items-center justify-center`}>
+        <View className="flex flex-1 items-center justify-center">
           <ThreeDotsLoader />
         </View>
         <CodeBrowserContentFooter
           isBrowserMaximized={isBrowserMaximized}
           rightSlot={
             fileData && (
-              <Label style={tw`font-light text-secondary`}>
-                <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+              <Label className="text-secondary font-light">
+                <span className="font-medium">{formatBytes(fileData.size)}</span>
               </Label>
             )
           }
@@ -123,12 +124,12 @@ export default function CodeBrowserContent({
     return (
       <>
         <CodeBrowserContentHeader filePath={filePath}>
-          <View style={tw`flex flex-row gap-3`}>
+          <View className="flex flex-row gap-3">
             {allowRawPreview && (
               <Tooltip
                 trigger={
                   <Pressable onPress={() => setRawPreview(false)}>
-                    <ImageFileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                    <ImageFileIcon className="text-palette-gray4 dark:text-pewter size-5" />
                   </Pressable>
                 }>
                 Show image preview
@@ -139,9 +140,9 @@ export default function CodeBrowserContent({
                 trigger={
                   <Pressable onPress={() => setMarkdownPreview(previewMode => !previewMode)}>
                     {markdownPreview ? (
-                      <TextFileIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                      <TextFileIcon className="text-palette-gray4 dark:text-pewter size-5" />
                     ) : (
-                      <MarkdownPreviewIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                      <MarkdownPreviewIcon className="text-palette-gray4 dark:text-pewter size-5" />
                     )}
                   </Pressable>
                 }>
@@ -153,7 +154,7 @@ export default function CodeBrowserContent({
               data={data}
               tooltip="Copy file content"
               label="Copy"
-              style={tw`relative right-0 top-0`}
+              className="relative top-0 right-0"
             />
             <DisplayModeButton
               isBrowserMaximized={isBrowserMaximized}
@@ -165,17 +166,14 @@ export default function CodeBrowserContent({
         {markdownPreview ? (
           <View
             id="markdownContentWrapper"
-            style={[
-              tw`bg-default px-6 pb-6 pt-4`,
-              { overflowY: 'auto', maxHeight: 'calc(100% - 46px)' },
-            ]}>
+            className={cx('bg-default max-h-[calc(100%-46px)] overflow-y-auto px-6 pb-6 pt-4')}>
             <MarkdownRenderer data={data} repoUrl={repoUrl} linkableHeaders={false} />
           </View>
         ) : (
           <CodeBrowserContentHighlighter
             code={data}
             lang={fileExtension}
-            theme={(tw.prefixMatch('dark') ? rndDark : rndLight) as Theme}
+            theme={(isDark ? rndDark : rndLight) as Theme}
             wordWrap={settings.wordWrap}
             showLineNumbers={settings.showLineNumbers}
           />
@@ -184,15 +182,15 @@ export default function CodeBrowserContent({
           <CodeBrowserContentFooter
             isBrowserMaximized={isBrowserMaximized}
             leftSlot={
-              <Label style={tw`font-light text-secondary`}>
-                <span style={tw`font-medium`}>{data.split('\n').length}</span>{' '}
+              <Label className="text-secondary font-light">
+                <span className="font-medium">{data.split('\n').length}</span>{' '}
                 {pluralize('line', data.split('\n').length)}
               </Label>
             }
             rightSlot={
               fileData && (
-                <Label style={tw`font-light text-secondary`}>
-                  <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+                <Label className="text-secondary font-light">
+                  <span className="font-medium">{formatBytes(fileData.size)}</span>
                 </Label>
               )
             }
@@ -205,12 +203,12 @@ export default function CodeBrowserContent({
   return (
     <>
       <CodeBrowserContentHeader filePath={filePath}>
-        <View style={tw`flex flex-row gap-3`}>
+        <View className="flex flex-row gap-3">
           {allowRawPreview && !rawPreview && (
             <Tooltip
               trigger={
                 <Pressable onPress={() => setRawPreview(true)}>
-                  <CodeIcon style={tw`size-5 text-palette-gray4 dark:text-pewter`} />
+                  <CodeIcon className="text-palette-gray4 dark:text-pewter size-5" />
                 </Pressable>
               }>
               Show code
@@ -226,14 +224,14 @@ export default function CodeBrowserContent({
           <CodeBrowserSettings settings={settings} onChange={onSettingsChange} />
         </View>
       </CodeBrowserContentHeader>
-      <View style={tw`flex flex-1 items-center justify-center`}>
+      <View className="flex flex-1 items-center justify-center">
         {isImageFile && (
           <>
             <img
               key={filePath}
               src={`https://unpkg.com/${packageName}/${filePath}`}
               alt={filePath}
-              style={tw`max-h-full max-w-full`}
+              className="max-h-full max-w-full"
               onLoad={(event: SyntheticEvent<HTMLImageElement>) => {
                 setImageData(event.currentTarget);
               }}
@@ -242,19 +240,19 @@ export default function CodeBrowserContent({
           </>
         )}
         {!isImageFile && isPreviewDisabled && (
-          <View style={tw`flex flex-col items-center gap-1`}>
-            <TempFileIcon style={tw`mb-2 size-20 text-tertiary dark:text-accented`} />
+          <View className="flex flex-col items-center gap-1">
+            <TempFileIcon className="text-tertiary dark:text-accented mb-2 size-20" />
             <P>
               {fileData?.size && isTooBig
                 ? `This file is too big (${formatBytes(fileData?.size)}), and cannot be previewed.`
                 : 'This file cannot be previewed.'}
             </P>
-            <Label style={tw`font-normal text-secondary`}>Download file to see it locally.</Label>
+            <Label className="text-secondary font-normal">Download file to see it locally.</Label>
           </View>
         )}
         {!isPreviewDisabled && !isImageFile && (
           <P>
-            Cannot fetch <code style={tw`text-[90%]`}>&quot;{filePath}&quot;</code> file content.
+            Cannot fetch <code className="text-[90%]">&quot;{filePath}&quot;</code> file content.
           </P>
         )}
       </View>
@@ -262,16 +260,16 @@ export default function CodeBrowserContent({
         isBrowserMaximized={isBrowserMaximized}
         leftSlot={
           isImageFile && imageData ? (
-            <Label style={tw`font-light text-secondary`}>
-              <span style={tw`font-medium`}>{imageData.naturalWidth}</span>px &times;{' '}
-              <span style={tw`font-medium`}>{imageData.naturalHeight}</span>px
+            <Label className="text-secondary font-light">
+              <span className="font-medium">{imageData.naturalWidth}</span>px &times;{' '}
+              <span className="font-medium">{imageData.naturalHeight}</span>px
             </Label>
           ) : undefined
         }
         rightSlot={
           fileData && (
-            <Label style={tw`font-light text-secondary`}>
-              <span style={tw`font-medium`}>{formatBytes(fileData.size)}</span>
+            <Label className="text-secondary font-light">
+              <span className="font-medium">{formatBytes(fileData.size)}</span>
             </Label>
           )
         }

@@ -6,7 +6,7 @@ import { P } from '~/common/styleguide';
 import CheckBox from '~/components/CheckBox';
 import { XIcon } from '~/components/Icons';
 import { type FilterParamsType, type Query } from '~/types';
-import tw from '~/util/tailwind';
+import { cx } from '~/util/tailwind';
 import urlWithQuery from '~/util/urlWithQuery';
 
 type Props = {
@@ -28,21 +28,21 @@ export function ToggleLink({ query, filterParam, basePath = '/packages', allowFa
         [filterParam.param]: !isSelected,
         offset: null,
       })}
-      style={tw`my-1 mr-4 no-underline`}>
+      className="my-1 mr-4 no-underline">
       <View
-        style={tw`cursor-pointer flex-row items-center`}
+        className="cursor-pointer flex-row items-center"
         onPointerEnter={() => setHovered(true)}
         onPointerLeave={() => setHovered(false)}>
         <CheckBox
           value={isSelected}
-          style={[
-            isFalsy && tw`border-error bg-error`,
-            isHovered && tw`border-primary-dark`,
-            isHovered && isFalsy && tw`border-error`,
-          ]}
+          className={cx(
+            cx(isFalsy && 'border-error bg-error'),
+            cx(isHovered && 'border-primary-dark'),
+            cx(isHovered && isFalsy && 'border-error')
+          )}
           Icon={isFalsy ? XIcon : undefined}
         />
-        <P style={[tw`text-sm font-light leading-[18px]`, isHovered && tw`text-hover`]}>
+        <P className={cx('text-sm font-light leading-[18px]', cx(isHovered && 'text-hover'))}>
           {filterParam.title}
         </P>
       </View>
