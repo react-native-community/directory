@@ -25788,5 +25788,12 @@
     "npmPkg": "react-native-gleapsdk",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/Dual-Ninja-LLC/metricraven-react-native",
+    "npmPkg": "@metricraven/react-native",
+    "ios": true,
+    "android": true,
+    "expoGo": true
   }
 ]
