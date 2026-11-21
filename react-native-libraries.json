@@ -25762,5 +25762,25 @@
     "ios": true,
     "android": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AnishSapre/native-glass-button",
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AnishSapre/native-segmented-control",
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AnishSapre/native-slider",
+    "ios": true,
+    "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/AnishSapre/native-tab-bar",
+    "ios": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
