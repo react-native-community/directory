@@ -25782,5 +25782,11 @@
     "githubUrl": "https://github.com/AnishSapre/native-tab-bar",
     "ios": true,
     "newArchitecture": "new-arch-only"
+  },
+  {
+    "githubUrl": "https://github.com/GleapSDK/ReactNative-SDK",
+    "npmPkg": "react-native-gleapsdk",
+    "ios": true,
+    "android": true
   }
 ]
