@@ -25795,5 +25795,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/gmi-software/react-native-better-pdf/tree/main/package",
+    "npmPkg": "react-native-better-pdf",
+    "examples": ["https://github.com/gmi-software/react-native-better-pdf/tree/main/example"],
+    "images": [
+      "https://raw.githubusercontent.com/gmi-software/react-native-better-pdf/main/assets/montage.gif"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only"
   }
 ]
