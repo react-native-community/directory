@@ -25811,9 +25811,7 @@
     "githubUrl": "https://github.com/2ve2/hilal",
     "npmPkg": "react-native-hilal",
     "examples": ["https://github.com/2ve2/hilal/tree/main/example"],
-    "images": [
-      "https://raw.githubusercontent.com/2ve2/hilal/main/docs/assets/demo.gif"
-    ],
+    "images": ["https://raw.githubusercontent.com/2ve2/hilal/main/docs/assets/demo.gif"],
     "ios": true,
     "android": true,
     "web": true,
