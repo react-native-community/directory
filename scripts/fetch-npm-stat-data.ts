@@ -84,7 +84,7 @@ function formatDownloadData(downloadData: Record<string, number>) {
 
   return {
     downloads: sum(downloadCounts),
-    weekDownloads: sum(downloadCounts.slice(0, 6)),
+    weekDownloads: sum(downloadCounts.slice(-7)),
   };
 }
 
