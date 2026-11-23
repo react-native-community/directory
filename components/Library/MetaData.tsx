@@ -76,9 +76,9 @@ function generateData({
       id: 'star',
       icon: <StarIcon style={tw`text-icon`} />,
       content: (
-        <A href={`${github.urls.repo}/stargazers`} style={linkStyle}>
+        <P style={tw`text-[15px] font-light`}>
           {github.stats.stars.toLocaleString()} {pluralize('star', github.stats.stars)}
-        </A>
+        </P>
       ),
     },
     github.stats?.dependencies !== undefined
@@ -122,9 +122,9 @@ function generateData({
           id: 'subscribers',
           icon: <EyeIcon style={tw`text-icon`} />,
           content: (
-            <A href={`${github.urls.repo}/watchers`} style={linkStyle} aria-label="Watchers">
+            <P style={tw`text-[15px] font-light`} aria-label="Watchers">
               {github.stats.subscribers.toLocaleString()}
-            </A>
+            </P>
           ),
           tooltip: 'Watchers',
         }
