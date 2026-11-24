@@ -25820,7 +25820,10 @@
   {
     "githubUrl": "https://github.com/siyo-ch/expo-stacked-sheets/tree/main/packages/stacked-sheets",
     "npmPkg": "expo-stacked-sheets",
-    "examples": ["https://github.com/siyo-ch/expo-stacked-sheets"],
+    "examples": [
+      "https://github.com/siyo-ch/expo-stacked-sheets",
+      "https://snack.expo.dev/qGk1n9NXS3PwXTsShAxbf?platform=mydevice"
+    ],
     "images": [
       "https://raw.githubusercontent.com/siyo-ch/expo-stacked-sheets/main/assets/demo/notes-demo-cover.jpg"
     ],
