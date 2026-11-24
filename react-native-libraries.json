@@ -25827,5 +25827,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/Janis-ai/janis/tree/master/packages/mobile",
+    "npmPkg": "janis-mobile",
+    "examples": [
+      "https://github.com/Janis-ai/janis/tree/master/apps/mobile"
+    ],
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "newArchitecture": true
   }
 ]
