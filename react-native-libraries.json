@@ -25827,5 +25827,16 @@
     "ios": true,
     "android": true,
     "expoGo": true
+  },
+  {
+    "githubUrl": "https://github.com/amirazerani-gif/expo-starter-pack",
+    "npmPkg": "@amirgazerani/expo-starter-pack",
+    "images": [
+      "https://raw.githubusercontent.com/amirazerani-gif/expo-starter-pack/main/docs/assets/preview.png"
+    ],
+    "ios": true,
+    "android": true,
+    "newArchitecture": "new-arch-only",
+    "template": true
   }
 ]
