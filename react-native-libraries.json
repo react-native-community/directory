@@ -25833,5 +25833,13 @@
     "newArchitecture": true,
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/burakkacmaz/expo-text-selectable",
+    "images": [
+      "https://raw.githubusercontent.com/burakkacmaz/expo-text-selectable/063421a/docs/ios-selection.gif"
+    ],
+    "ios": true,
+    "android": true
   }
 ]
