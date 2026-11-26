@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { name, version, path } = parseQueryParams(req.query);
 
   const packageName = name ? name.toString().toLowerCase().trim() : undefined;
-  const packageVersion = version ? version.toString().toLowerCase().trim() : 'latest';
+  const packageVersion = version ? version.toString().trim() : 'latest';
   const apiPath = path ? path.toString().trim() : undefined;
 
   if (!packageName || !apiPath) {

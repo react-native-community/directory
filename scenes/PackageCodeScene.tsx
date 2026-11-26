@@ -34,8 +34,8 @@ export default function PackageCodeScene({ apiData, packageName }: PackageCodePa
   const { isSmallScreen } = useLayout();
 
   const activeFileStorageKey = `${ACTIVE_FILE_STORAGE_KEY_PREFIX}:${packageName}`;
-  const selectedVersionParam =
-    parseQueryParams(router.query).selectedVersion?.toLowerCase() ?? 'latest';
+  // Versions are case-sensitive, e.g. `1.1.2-TEST.1`, so the param can't be lowercased
+  const selectedVersionParam = parseQueryParams(router.query).selectedVersion ?? 'latest';
   const compareVersion = parseQueryParams(router.query).compareVersion;
 
   const selectedVersion = selectedVersionParam;

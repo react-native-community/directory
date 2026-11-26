@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { type StyleProp, type ViewStyle } from 'react-native';
 
 import { HoverEffect } from '~/common/styleguide';
@@ -14,10 +15,18 @@ type BookmarkButtonProps = {
 
 export default function BookmarkButton({ bookmarkId, style, iconStyle }: BookmarkButtonProps) {
   const { checkIsBookmarked, toggleBookmark } = useBookmarks();
+  const [hasSaveFailed, setSaveFailed] = useState(false);
   const isBookmarked = checkIsBookmarked(bookmarkId);
 
   function handleToggleBookmark() {
-    toggleBookmark(bookmarkId);
+    setSaveFailed(!toggleBookmark(bookmarkId));
+  }
+
+  function getTooltipContent() {
+    if (hasSaveFailed) {
+      return 'Bookmarks limit reached, remove some bookmarks to add more';
+    }
+    return isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks';
   }
 
   return (
@@ -35,7 +44,7 @@ export default function BookmarkButton({ bookmarkId, style, iconStyle }: Bookmar
           )}
         </HoverEffect>
       }>
-      {isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
+      {getTooltipContent()}
     </Tooltip>
   );
 }

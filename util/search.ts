@@ -105,6 +105,17 @@ function calculateMatchScore(
   }
 }
 
+/**
+ * Match the whole owner name (so `expo` doesn't match `exponotify`), case-insensitively,
+ * against the owner from the entry GitHub URL and the current owner reported by GitHub.
+ */
+function isOwnedBy({ githubUrl, github }: LibraryType, owner: string) {
+  const ownerName = owner.toLowerCase();
+  const libraryOwners = [githubUrl.split('/')[3], github.fullName?.split('/')[0]];
+
+  return libraryOwners.some(libraryOwner => libraryOwner?.toLowerCase() === ownerName);
+}
+
 export function handleFilterLibraries({
   libraries,
   sortBy,
@@ -255,7 +266,7 @@ export function handleFilterLibraries({
       return false;
     }
 
-    if (owner && !library.githubUrl.startsWith(`https://github.com/${owner}`)) {
+    if (owner && !isOwnedBy(library, owner)) {
       return false;
     }
 

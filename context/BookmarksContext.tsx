@@ -8,7 +8,8 @@ const COOKIE_MAX_AGE = TimeRange.YEAR;
 type BookmarksContextType = {
   bookmarkedIds: Set<string>;
   checkIsBookmarked: (id: string) => boolean;
-  toggleBookmark: (id: string) => void;
+  /** Returns `false` when the change could not be saved, e.g. bookmarks cookie size limit was hit. */
+  toggleBookmark: (id: string) => boolean;
   isLoading: boolean;
 };
 
@@ -27,6 +28,16 @@ function setCookie(name: string, value: string, maxAge: number) {
     return;
   }
   document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=${maxAge}; SameSite=Lax`;
+}
+
+/**
+ * Save bookmarks to the cookie and check that the browser has stored it. Browsers silently
+ * ignore cookies over the size limit (about 4 KB), which is reached with around 120 bookmarks.
+ */
+export function saveBookmarksToCookie(ids: Set<string>): boolean {
+  const serializedIds = JSON.stringify([...ids]);
+  setCookie(BOOKMARK_COOKIE_NAME, serializedIds, COOKIE_MAX_AGE);
+  return getCookie(BOOKMARK_COOKIE_NAME) === serializedIds;
 }
 
 export function getBookmarksFromCookie(cookieString?: string): string[] {
@@ -70,8 +81,12 @@ export function BookmarksProvider({ children }: PropsWithChildren) {
         newSet.add(id);
       }
 
-      setCookie(BOOKMARK_COOKIE_NAME, JSON.stringify([...newSet]), COOKIE_MAX_AGE);
+      if (!saveBookmarksToCookie(newSet)) {
+        return false;
+      }
+
       setBookmarkedIds(newSet);
+      return true;
     },
     isLoading,
   };

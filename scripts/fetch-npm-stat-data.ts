@@ -7,6 +7,8 @@ import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 const REQUEST_TIMEOUT = 5000;
+const DAY_IN_MS = 864e5;
+const DOWNLOADS_PERIOD_DAYS = 30;
 
 export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount = 0) {
   try {
@@ -89,17 +91,14 @@ function formatDownloadData(downloadData: Record<string, number>) {
 }
 
 function formattedDate(date: Date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-
-  return `${year}-${month}-${day}`;
+  return date.toISOString().slice(0, 10);
 }
 
 function urlForPackages(packagesList: string) {
-  const now = new Date();
-  const fromDate = new Date(now);
-  fromDate.setMonth(fromDate.getMonth() - 1);
+  // Use a fixed period of full days, matching the npm downloads API `last-month` period,
+  // so the monthly downloads (and the Trending Score) don't depend on the current month length
+  const untilDate = new Date(Date.now() - DAY_IN_MS);
+  const fromDate = new Date(untilDate.getTime() - (DOWNLOADS_PERIOD_DAYS - 1) * DAY_IN_MS);
 
-  return `https://npm-stat.com/api/download-counts?package=${packagesList}&from=${formattedDate(fromDate)}&until=${formattedDate(now)}`;
+  return `https://npm-stat.com/api/download-counts?package=${packagesList}&from=${formattedDate(fromDate)}&until=${formattedDate(untilDate)}`;
 }
