@@ -25841,5 +25841,13 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/solutionforest/AndroidHealthConnect",
+    "npmPkg": "@solutionforest/android-health-connect",
+    "examples": ["https://github.com/solutionforest/AndroidHealthConnect/tree/main/example"],
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
   }
 ]
