@@ -91,10 +91,10 @@
     "user-agent-data-types": "^0.4.3"
   },
   "simple-git-hooks": {
-    "pre-commit": "bunx precommit"
+    "pre-commit": "bun run precommit"
   },
   "lint-staged": {
-    "*.{mjs,ts,tsx,json,yml}": [
+    "*.{mjs,ts,tsx}": [
       "oxlint --type-aware --fix"
     ],
     "react-native-libraries.json": [
