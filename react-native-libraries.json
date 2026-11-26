@@ -24530,7 +24530,6 @@
   },
   {
     "githubUrl": "https://github.com/munimtechnologies/munim-maps/tree/main/packages/munim-maps",
-    "npmPkg": "munim-maps",
     "examples": ["https://github.com/munimtechnologies/munim-maps/tree/HEAD/example"],
     "ios": true,
     "newArchitecture": "new-arch-only"
@@ -24740,7 +24739,6 @@
   },
   {
     "githubUrl": "https://github.com/valeriobelli/react-native-use-dom/tree/main/packages/react-native-use-dom",
-    "npmPkg": "react-native-use-dom",
     "examples": [
       "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/bare-0.87",
       "https://github.com/valeriobelli/react-native-use-dom/tree/main/examples/expo-57"
@@ -24828,10 +24826,8 @@
   },
   {
     "githubUrl": "https://github.com/azizbecha/expo-flashlight",
-    "npmPkg": "expo-flashlight",
     "ios": true,
-    "android": true,
-    "expoGo": false
+    "android": true
   },
   {
     "githubUrl": "https://github.com/asyntai/react-native-asyntai-ai-chatbot",
@@ -25712,7 +25708,6 @@
   },
   {
     "githubUrl": "https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/packages/react-native-spritestudio",
-    "npmPkg": "react-native-spritestudio",
     "examples": ["https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/example"],
     "ios": true,
     "android": true,
@@ -25720,7 +25715,6 @@
   },
   {
     "githubUrl": "https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/packages/react-native-spritestudio-ui",
-    "npmPkg": "react-native-spritestudio-ui",
     "examples": ["https://github.com/cri-middleware/SSPlayerForReactNative/tree/develop/example"],
     "ios": true,
     "android": true,
