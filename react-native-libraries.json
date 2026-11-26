@@ -25841,5 +25841,11 @@
     "android": true,
     "expoGo": true,
     "newArchitecture": true
+  },
+  {
+    "githubUrl": "https://github.com/linkhopp/react-native-sdk",
+    "npmPkg": "linkhopp-react-native",
+    "ios": true,
+    "android": true
   }
 ]
