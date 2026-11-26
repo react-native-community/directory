@@ -277,15 +277,12 @@ export function handleFilterLibraries({
       }
     }
 
-    if (minPopularityValue && minMonthlyDownloadsValue) {
-      return (
-        (library?.popularity ?? 0) >= minPopularityValue &&
-        (library.npm?.downloads ?? 0) >= minMonthlyDownloadsValue
-      );
-    } else if (minPopularityValue) {
-      return (library?.popularity ?? 0) >= minPopularityValue;
-    } else if (minMonthlyDownloadsValue) {
-      return (library.npm?.downloads ?? 0) >= minMonthlyDownloadsValue;
+    if (minPopularityValue && (library?.popularity ?? 0) < minPopularityValue) {
+      return false;
+    }
+
+    if (minMonthlyDownloadsValue && (library.npm?.downloads ?? 0) < minMonthlyDownloadsValue) {
+      return false;
     }
 
     if (!viewerHasChosenTopic && !viewerHasTypedSearch) {

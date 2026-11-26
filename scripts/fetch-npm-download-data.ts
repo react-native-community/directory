@@ -73,7 +73,7 @@ export async function fallbackFetchNpmDownloadData(name: string) {
       return { name, npm: null };
     }
 
-    const weeklyUrl = urlForPackage(name);
+    const weeklyUrl = urlForPackage(name, 'week');
     const weeklyResponse = await fetch(weeklyUrl);
 
     if (weeklyResponse.status !== 200) {

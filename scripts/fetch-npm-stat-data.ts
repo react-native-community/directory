@@ -46,7 +46,7 @@ export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount =
         const singleDownloadData = await singleResponse.json();
         const singlePkgData = singleDownloadData[name];
 
-        if (singlePkgData && Object.keys(singlePkgData).length <= 0) {
+        if (!singlePkgData || Object.keys(singlePkgData).length === 0) {
           console.error(
             `📊 [npm-stat] ${name} doesn't not return downloads data in single request, falling back to npm downloads API!`
           );
