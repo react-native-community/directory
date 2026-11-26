@@ -25829,6 +25829,12 @@
     "expoGo": true
   },
   {
+    "githubUrl": "https://github.com/aravi365/react-native-foldable-kit",
+    "newArchitecture": true,
+    "ios": true,
+    "android": true
+  },
+  {
     "githubUrl": "https://github.com/Janis-ai/janis-mobile",
     "examples": ["https://github.com/Janis-ai/janis-mobile/tree/main/example"],
     "ios": true,
