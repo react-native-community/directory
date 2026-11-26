@@ -14,7 +14,7 @@ type Props = {
   data: LibraryType[];
   title: string;
   icon?: FunctionComponent<IconProps>;
-  queryParams?: Query;
+  queryParams: Query;
 };
 
 const UPDATED_IN = 1000 * TimeRange.MONTH * 3;
@@ -41,7 +41,6 @@ export default function ExploreSection({ data, title, icon, queryParams }: Props
         Want to see more? Check out other{' '}
         <A
           href={urlWithQuery('/packages', {
-            [title.toLowerCase()]: true,
             ...queryParams,
             ...POPULAR_QUERY_BASE,
           })}

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import semverClean from 'semver/functions/clean';
 import semverDiff from 'semver/functions/diff';
 import semverGt from 'semver/functions/gt';
+import semverValid from 'semver/functions/valid';
 
 import { A, HoverEffect, Label, P, useLayout } from '~/common/styleguide';
 import { InfoIcon, Logo } from '~/components/Icons';
@@ -112,7 +113,8 @@ function getVersionLabel(version: string, latestVersion?: string): ReactNode {
     ));
   }
 
-  if (latestVersion) {
+  // The directory API returns `unknown` when the latest version is not known
+  if (latestVersion && semverValid(latestVersion)) {
     const cleanVersion = semverClean(version.replace(/^[~^]/, ''));
 
     if (!cleanVersion || semverGt(cleanVersion, latestVersion)) {

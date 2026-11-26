@@ -4,7 +4,7 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageOverviewScene from '~/scenes/PackageOverviewScene';
 import { type PackageOverviewPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
-import { ssrFetch } from '~/util/fetch';
+import { ssrFetchPackageData } from '~/util/fetch';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/queryParams';
 
@@ -32,19 +32,19 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   try {
-    const [apiResponse, npmResponse] = await Promise.all([
-      ssrFetch(`/libraries`, { search: packageName }, ctx),
+    const [apiResult, npmResponse] = await Promise.all([
+      ssrFetchPackageData(packageName, ctx),
       fetch(`https://registry.npmjs.org/${packageName}/latest`, NEXT_15M_CACHE_HEADER),
     ]);
 
-    if (apiResponse.status !== 200 || (npmResponse.status !== 200 && npmResponse.status !== 404)) {
-      return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
+    if (apiResult.status !== 200 || (npmResponse.status !== 200 && npmResponse.status !== 404)) {
+      return getPackagePageErrorProps(packageName, apiResult.status, npmResponse.status);
     }
 
     return {
       props: {
         packageName,
-        apiData: await apiResponse.json(),
+        apiData: apiResult.apiData,
         registryData: await npmResponse.json(),
       },
     };

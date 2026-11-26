@@ -3,6 +3,7 @@ import { type GetServerSidePropsContext } from 'next';
 import HomeScene from '~/scenes/HomeScene';
 import { type HomePageProps } from '~/types/pages';
 import { ssrFetch } from '~/util/fetch';
+import { hasDirectoryQueryParams } from '~/util/queryParams';
 import urlWithQuery from '~/util/urlWithQuery';
 
 function Index(props: HomePageProps) {
@@ -12,7 +13,7 @@ function Index(props: HomePageProps) {
 const LIMIT = 8;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  if (Object.keys(ctx.query).length > 0) {
+  if (hasDirectoryQueryParams(ctx.query)) {
     return {
       redirect: {
         destination: urlWithQuery('/packages', ctx.query),
