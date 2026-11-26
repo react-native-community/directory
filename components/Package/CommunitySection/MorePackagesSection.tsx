@@ -51,7 +51,7 @@ export default function MorePackagesSection({ library }: Props) {
       <H6Section style={[tw`flex items-center gap-1.5`, !isSmallScreen && tw`mt-4`]}>
         More packages from {startCase(owner)}
         {!isLoading && data?.total && data.total > 0 ? (
-          <EntityCounter count={data.total - 1} />
+          <EntityCounter count={data.total > LIMIT ? data.total : data.total - 1} />
         ) : null}
         {!isSmallScreen && data?.total && data.total > LIMIT && (
           <A href={`/packages?owner=${encodeURI(owner)}`} style={tw`ml-auto`}>

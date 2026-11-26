@@ -250,7 +250,7 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
                 </Label>
               </View>
             )}
-            {!hasResults && !isLoading && data && (
+            {!hasResults && (
               <Caption style={tw`pb-4.5 pt-5.5 text-center font-light text-secondary`}>
                 There are no results for &quot;{search}&quot; query.
               </Caption>

@@ -2,13 +2,12 @@ import { fetch } from 'bun';
 import { sum } from 'es-toolkit/math';
 
 import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data';
+import { TimeRange } from '~/util/datetime';
 
 import { REQUEST_SLEEP, sleep } from './helpers';
 
 const ATTEMPTS_LIMIT = 2;
 const REQUEST_TIMEOUT = 5000;
-const DAY_IN_MS = 864e5;
-const DOWNLOADS_PERIOD_DAYS = 30;
 
 export async function fetchNpmStatDataBulk(namesArray: string[], attemptsCount = 0) {
   try {
@@ -95,10 +94,11 @@ function formattedDate(date: Date) {
 }
 
 function urlForPackages(packagesList: string) {
-  // Use a fixed period of full days, matching the npm downloads API `last-month` period,
+  // Use 30 full days ending yesterday, the same period as the npm downloads API `last-month`,
   // so the monthly downloads (and the Trending Score) don't depend on the current month length
-  const untilDate = new Date(Date.now() - DAY_IN_MS);
-  const fromDate = new Date(untilDate.getTime() - (DOWNLOADS_PERIOD_DAYS - 1) * DAY_IN_MS);
+  const now = Date.now();
+  const fromDate = new Date(now - TimeRange.MONTH * 1000);
+  const untilDate = new Date(now - TimeRange.DAY * 1000);
 
   return `https://npm-stat.com/api/download-counts?package=${packagesList}&from=${formattedDate(fromDate)}&until=${formattedDate(untilDate)}`;
 }
