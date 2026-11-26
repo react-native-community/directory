@@ -17,6 +17,7 @@
     "next-env.d.ts"
   ],
   "options": {
+    "typeAware": true,
     "reportUnusedDisableDirectives": "error"
   },
   "rules": {
