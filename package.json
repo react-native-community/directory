@@ -22,7 +22,7 @@
     "ci:cleanup-blobs": "bun scripts/cleanup-data-blobs",
     "ci:validate": "bun scripts/validate-new-entries",
     "readme": "bun scripts/readme-existence.ts",
-    "precommit": "simple-git-hooks && lint-staged",
+    "precommit": "simple-git-hooks && lint-staged --concurrent false",
     "pick": "bunx --package @antfu/ni nr"
   },
   "dependencies": {
@@ -91,11 +91,12 @@
     "user-agent-data-types": "^0.4.3"
   },
   "simple-git-hooks": {
-    "pre-commit": "bunx precommit"
+    "pre-commit": "bun run precommit"
   },
   "lint-staged": {
     "*.{mjs,ts,tsx,json,yml}": [
-      "oxlint --type-aware --fix"
+      "oxlint --type-aware --fix --no-error-on-unmatched-pattern",
+      "oxfmt --no-error-on-unmatched-pattern"
     ],
     "react-native-libraries.json": [
       "bun libraries:cleanup"
