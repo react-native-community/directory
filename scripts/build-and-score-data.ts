@@ -271,20 +271,22 @@ export async function buildAndScoreData() {
     const hasEntry = libraries.some(lib => lib.npmPkg === wantedPackageName);
     const newDataEntry = data.find(entry => entry.npmPkg === wantedPackageName);
 
-    const content = hasEntry
-      ? {
-          libraries: libraries.map(library => {
-            if (newDataEntry && library.npmPkg === wantedPackageName) {
-              return newDataEntry;
-            }
-            return library;
-          }),
-          topics: sortTopics(topicCounts),
-        }
-      : {
-          libraries: newDataEntry ? [...libraries, newDataEntry] : libraries,
-          topics: sortTopics(topicCounts),
-        };
+    const updatedLibraries = hasEntry
+      ? libraries.map(library => {
+          if (newDataEntry && library.npmPkg === wantedPackageName) {
+            return newDataEntry;
+          }
+          return library;
+        })
+      : newDataEntry
+        ? [...libraries, newDataEntry]
+        : libraries;
+
+    // Count topics across all libraries, not only the single refreshed package
+    const content = {
+      libraries: updatedLibraries,
+      topics: sortTopics(getTopicCounts(updatedLibraries)),
+    };
 
     finalLibraries = content.libraries;
     fileContent = JSON.stringify(content, null, 2);
