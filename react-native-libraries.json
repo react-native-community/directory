@@ -25843,6 +25843,22 @@
     "newArchitecture": true
   },
   {
+    "githubUrl": "https://github.com/burakkacmaz/expo-text-selectable",
+    "images": [
+      "https://raw.githubusercontent.com/burakkacmaz/expo-text-selectable/063421a/docs/ios-selection.gif"
+    ],
+    "ios": true,
+    "android": true
+  },
+  {
+    "githubUrl": "https://github.com/solutionforest/AndroidHealthConnect",
+    "npmPkg": "@solutionforest/android-health-connect",
+    "examples": ["https://github.com/solutionforest/AndroidHealthConnect/tree/main/example"],
+    "android": true,
+    "newArchitecture": true,
+    "configPlugin": true
+  },
+  {
     "githubUrl": "https://github.com/linkhopp/react-native-sdk",
     "npmPkg": "linkhopp-react-native",
     "ios": true,
