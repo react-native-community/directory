@@ -2,6 +2,7 @@ import { fetch } from 'bun';
 import { sum } from 'es-toolkit/math';
 
 import { fallbackFetchNpmDownloadData } from '~/scripts/fetch-npm-download-data';
+import { TimeRange } from '~/util/datetime';
 
 import { REQUEST_SLEEP, sleep } from './helpers';
 
@@ -89,17 +90,15 @@ function formatDownloadData(downloadData: Record<string, number>) {
 }
 
 function formattedDate(date: Date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-
-  return `${year}-${month}-${day}`;
+  return date.toISOString().slice(0, 10);
 }
 
 function urlForPackages(packagesList: string) {
-  const now = new Date();
-  const fromDate = new Date(now);
-  fromDate.setMonth(fromDate.getMonth() - 1);
+  // Use 30 full days ending yesterday, the same period as the npm downloads API `last-month`,
+  // so the monthly downloads (and the Trending Score) don't depend on the current month length
+  const now = Date.now();
+  const fromDate = new Date(now - TimeRange.MONTH * 1000);
+  const untilDate = new Date(now - TimeRange.DAY * 1000);
 
-  return `https://npm-stat.com/api/download-counts?package=${packagesList}&from=${formattedDate(fromDate)}&until=${formattedDate(now)}`;
+  return `https://npm-stat.com/api/download-counts?package=${packagesList}&from=${formattedDate(fromDate)}&until=${formattedDate(untilDate)}`;
 }
