@@ -282,7 +282,6 @@ export async function buildAndScoreData() {
         ? [...libraries, newDataEntry]
         : libraries;
 
-    // Count topics across all libraries, not only the single refreshed package
     const content = {
       libraries: updatedLibraries,
       topics: sortTopics(getTopicCounts(updatedLibraries)),
