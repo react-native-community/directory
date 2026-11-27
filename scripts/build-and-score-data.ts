@@ -21,7 +21,7 @@ import { isEmptyOrNull } from '~/util/strings';
 import { calculateDirectoryScore, calculatePopularityScore } from './calculate-score';
 import { fetchGithubData, fetchGithubRateLimit, loadGitHubLicenses } from './fetch-github-data';
 import { fetchNightlyProgramData } from './fetch-nightly-program-data';
-import { fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
+import { fillNpmDownloads, fillNpmName, hasMismatchedPackageData, sleep } from './helpers';
 
 // Uses debug-github-repos.json instead, so we have less repositories to crunch
 // each time we run the script
@@ -158,12 +158,17 @@ export async function buildAndScoreData() {
 
   const downloadsList = await fetchNpmStatDataSequentially(bulkList);
 
-  // Fill npm data from bulk queries
+  // Fill npm data from bulk queries, falling back to the previous download counts when npm-stat
+  // has failed, so that Directory and Trending scores are calculated with the same data we store
+  const downloadsByName = new Map(downloadsList.map(entry => [entry.name, entry.npm]));
+  const previousLibrariesByName = new Map(latestData.libraries.map(lib => [lib.npmPkg, lib]));
+
   data = data.map(project => ({
     ...project,
-    npm: {
-      ...(downloadsList.find(entry => entry.name === project.npmPkg)?.npm ?? project.npm),
-    },
+    npm: fillNpmDownloads(
+      downloadsByName.get(project.npmPkg) ?? project.npm,
+      previousLibrariesByName.get(project.npmPkg)?.npm
+    ),
   }));
 
   console.log('\n⬇🔄 Fetching registry data from npm');
@@ -301,31 +306,8 @@ export async function buildAndScoreData() {
 
     const currentData = [...libraries.filter(lib => dataToFill.has(lib.npmPkg)), ...data];
 
-    const dataWithFallback: LibraryType[] = currentData.map(entry => {
-      if (entry.npm?.downloads) {
-        return entry;
-      }
-
-      const fallbackData = latestData.libraries.find(
-        (prevEntry: LibraryType) => entry.npmPkg === prevEntry.npmPkg
-      );
-
-      if (!fallbackData) {
-        return entry;
-      }
-
-      return {
-        ...entry,
-        npm: {
-          ...entry.npm,
-          downloads: fallbackData.npm?.downloads,
-          weekDownloads: fallbackData.npm?.weekDownloads,
-        },
-      };
-    });
-
     const validEntries = new Set(data.map((entry: LibraryDataEntryType) => entry.githubUrl));
-    const finalData = dataWithFallback
+    const finalData = currentData
       .filter(({ npmPkg }) => existingPackages.has(npmPkg))
       .filter((entry: LibraryType) => validEntries.has(entry.githubUrl));
 

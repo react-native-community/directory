@@ -55,6 +55,24 @@ export function sleep(ms = 0, msMax?: number) {
   );
 }
 
+/**
+ * Use the previous download counts when the fresh ones are missing (e.g. npm-stat request failed),
+ * so the scores are calculated with the same download counts which end up in the data file.
+ */
+export function fillNpmDownloads(
+  npmData?: LibraryType['npm'] | null,
+  previousNpmData?: LibraryType['npm']
+): NonNullable<LibraryType['npm']> {
+  const npm: NonNullable<LibraryType['npm']> = { ...npmData };
+
+  if (!npm.downloads && previousNpmData?.downloads) {
+    npm.downloads = previousNpmData.downloads;
+    npm.weekDownloads = previousNpmData.weekDownloads;
+  }
+
+  return npm;
+}
+
 export function fillNpmName<T extends LibraryType | LibraryDataEntryType>(library: T): T {
   if (!library.npmPkg) {
     const parts = library.githubUrl.split('/');
