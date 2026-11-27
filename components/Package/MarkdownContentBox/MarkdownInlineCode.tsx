@@ -8,6 +8,11 @@ type Props = {
   theme: string;
 };
 
+/**
+ * Members are tokenized as labels or ternaries, highlight them instead
+ */
+const MEMBER_REGEX = /^[A-Za-z_$][\w$]*(?:\?(?=[:(<]|$)|:\s)/;
+
 export default function MarkdownInlineCode({ code, theme }: Props) {
   const [highlighter, setHighlighter] = useState<Highlighter | null>(null);
 
@@ -22,6 +27,7 @@ export default function MarkdownInlineCode({ code, theme }: Props) {
   const tokens = highlighter.codeToTokens(code, {
     lang: 'tsx',
     theme,
+    grammarContextCode: MEMBER_REGEX.test(code) ? 'type _ = {' : undefined,
   });
 
   const line = tokens.tokens[0] ?? [];
