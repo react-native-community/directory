@@ -36,7 +36,7 @@ function handleCheck(libraries: LibraryType[], name: string, check?: string) {
   switch (check) {
     case 'version':
       const lib = libraries.find(library => (name === library.npmPkg ? library : undefined));
-      return lib ? (lib.npm?.latestRelease ?? 'unknown') : undefined;
+      return lib ? (lib.npm?.latestRelease ?? true) : undefined;
     case 'true':
       return libraries.some(library => name === library.npmPkg);
     default:

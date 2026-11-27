@@ -324,7 +324,7 @@ Endpoint can optionally perform a quick `check` to return existence flag only, o
 ### Notes
 
 - If `check` is `true`, the response includes only information about existence for the specified package(s).
-- If `check` is `version`, the response includes only information about existence for the specified package(s), returning the latest version if package exists.
+- If `check` is `version`, the response includes only information about existence for the specified package(s), returning the latest version if package exists, or `true` if the latest version is not known.
 - If `check` is `false` or not provided, the response includes full library data.
 
 ### Example
