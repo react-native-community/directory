@@ -6,6 +6,8 @@ type TooltipProps = PropsWithChildren<{
   sideOffset?: TooltipPrimitive.TooltipContentProps['sideOffset'];
   side?: TooltipPrimitive.TooltipContentProps['side'];
   delayDuration?: TooltipPrimitive.TooltipProps['delayDuration'];
+  /** Open the tooltip and keep it open, even when the trigger is pressed, until it's unset. */
+  forceOpen?: boolean;
 }>;
 
 export function Tooltip({
@@ -14,9 +16,12 @@ export function Tooltip({
   side,
   delayDuration = 0,
   sideOffset = 4,
+  forceOpen = false,
 }: TooltipProps) {
   const [open, setOpen] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const [wasForceOpen, setWasForceOpen] = useState(forceOpen);
+  const isClosing = isExiting && !forceOpen;
 
   function handleOpenChange(nextOpen: boolean) {
     if (nextOpen) {
@@ -28,11 +33,17 @@ export function Tooltip({
   }
 
   function handleTransitionEnd(event: TransitionEvent<HTMLDivElement>) {
-    if (!isExiting || event.target !== event.currentTarget || event.propertyName !== 'opacity') {
+    if (!isClosing || event.target !== event.currentTarget || event.propertyName !== 'opacity') {
       return;
     }
     setIsExiting(false);
     setOpen(false);
+  }
+
+  // Open or close the tooltip when `forceOpen` changes
+  if (forceOpen !== wasForceOpen) {
+    setWasForceOpen(forceOpen);
+    handleOpenChange(forceOpen);
   }
 
   return (
@@ -43,7 +54,7 @@ export function Tooltip({
       <TooltipPrimitive.Trigger asChild>{trigger}</TooltipPrimitive.Trigger>
       <TooltipPrimitive.Portal>
         <TooltipPrimitive.Content
-          className={`TooltipContent${isExiting ? ' TooltipContent--closing' : ''}`}
+          className={`TooltipContent${isClosing ? ' TooltipContent--closing' : ''}`}
           sideOffset={sideOffset}
           side={side}
           onTransitionEnd={handleTransitionEnd}>
