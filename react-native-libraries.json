@@ -25857,5 +25857,13 @@
     "npmPkg": "linkhopp-react-native",
     "ios": true,
     "android": true
+  },
+  {
+    "githubUrl": "https://github.com/LogBrewCo/sdk/tree/main/js/logbrew-react-native",
+    "npmPkg": "@logbrew/react-native",
+    "ios": true,
+    "android": true,
+    "expoGo": true,
+    "configPlugin": true
   }
 ]
