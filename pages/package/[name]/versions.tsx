@@ -4,7 +4,7 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageVersionsScene from '~/scenes/PackageVersionsScene';
 import { type PackageVersionsPageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA, NEXT_15M_CACHE_HEADER } from '~/util/Constants';
-import { ssrFetch } from '~/util/fetch';
+import { ssrFetchPackageData } from '~/util/fetch';
 import getApiUrl from '~/util/getApiUrl';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { trimPackageVersionsData } from '~/util/packageVersionsRegistryData';
@@ -41,8 +41,8 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   try {
-    const [apiResponse, npmResponse, npmDownloads] = await Promise.all([
-      ssrFetch(`/libraries`, { search: packageName }, ctx),
+    const [apiResult, npmResponse, npmDownloads] = await Promise.all([
+      ssrFetchPackageData(packageName, ctx),
       fetch(
         getApiUrl(urlWithQuery(`/proxy/npm-registry-versions/?name=${packageName}`), ctx),
         NEXT_15M_CACHE_HEADER
@@ -50,8 +50,8 @@ export async function getServerSideProps(ctx: NextPageContext) {
       fetch(`https://api.npmjs.org/versions/${packageName}/last-week`, NEXT_15M_CACHE_HEADER),
     ]);
 
-    if (apiResponse.status !== 200 || npmResponse.status !== 200) {
-      return getPackagePageErrorProps(packageName, apiResponse.status, npmResponse.status);
+    if (apiResult.status !== 200 || npmResponse.status !== 200) {
+      return getPackagePageErrorProps(packageName, apiResult.status, npmResponse.status);
     }
 
     const registryData = trimPackageVersionsData(await npmResponse.json());
@@ -60,7 +60,7 @@ export async function getServerSideProps(ctx: NextPageContext) {
       props: {
         packageName,
         registryData,
-        apiData: await apiResponse.json(),
+        apiData: apiResult.apiData,
         npmDownloads: await npmDownloads.json(),
       },
     };

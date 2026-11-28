@@ -4,7 +4,7 @@ import ErrorScene from '~/scenes/ErrorScene';
 import PackageScoreScene from '~/scenes/PackageScoreScene';
 import { type PackageScorePageProps } from '~/types/pages';
 import { EMPTY_PACKAGE_DATA } from '~/util/Constants';
-import { ssrFetch } from '~/util/fetch';
+import { ssrFetchPackageData } from '~/util/fetch';
 import { getPackagePageErrorProps } from '~/util/getPackagePageErrorProps';
 import { parseQueryParams } from '~/util/queryParams';
 
@@ -25,16 +25,16 @@ export async function getServerSideProps(ctx: NextPageContext) {
   }
 
   try {
-    const apiResponse = await ssrFetch(`/libraries`, { search: packageName }, ctx);
+    const apiResult = await ssrFetchPackageData(packageName, ctx);
 
-    if (apiResponse.status !== 200) {
-      return getPackagePageErrorProps(packageName, apiResponse.status);
+    if (apiResult.status !== 200) {
+      return getPackagePageErrorProps(packageName, apiResult.status);
     }
 
     return {
       props: {
         packageName,
-        apiData: await apiResponse.json(),
+        apiData: apiResult.apiData,
       },
     };
   } catch {

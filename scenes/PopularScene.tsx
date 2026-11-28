@@ -43,33 +43,76 @@ export default function PopularScene({
         description="Browse most popular recently libraries by platform."
       />
       <ContentContainer style={tw`px-2 py-4`}>
-        <ExploreSection title="Core platforms" icon={ReactLogo} data={core.libraries} />
+        <ExploreSection
+          title="Core platforms"
+          icon={ReactLogo}
+          data={core.libraries}
+          queryParams={{ android: 'true', ios: 'true' }}
+        />
         <ExploreSection
           title="Android"
           icon={PlatformAndroid}
           data={android.libraries}
-          queryParams={{ ios: 'false' }}
+          queryParams={{ android: 'true', ios: 'false' }}
         />
         <ExploreSection
           title="iOS"
           icon={PlatformIOS}
           data={ios.libraries}
-          queryParams={{ android: 'false' }}
+          queryParams={{ ios: 'true', android: 'false' }}
         />
-        <ExploreSection title="Web" icon={PlatformWeb} data={web.libraries} />
-        <ExploreSection title="macOS" icon={PlatformMacOS} data={macos.libraries} />
-        <ExploreSection title="tvOS" icon={PlatformTvOS} data={tvos.libraries} />
-        <ExploreSection title="visionOS" icon={PlatformVisionOS} data={visionos.libraries} />
-        <ExploreSection title="Windows" icon={PlatformWindows} data={windows.libraries} />
-        <ExploreSection title="Expo Go" icon={PlatformExpo} data={expoGo.libraries} />
-        <ExploreSection title="Fire OS" data={fireos.libraries} />
+        <ExploreSection
+          title="Web"
+          icon={PlatformWeb}
+          data={web.libraries}
+          queryParams={{ web: 'true' }}
+        />
+        <ExploreSection
+          title="macOS"
+          icon={PlatformMacOS}
+          data={macos.libraries}
+          queryParams={{ macos: 'true' }}
+        />
+        <ExploreSection
+          title="tvOS"
+          icon={PlatformTvOS}
+          data={tvos.libraries}
+          queryParams={{ tvos: 'true' }}
+        />
+        <ExploreSection
+          title="visionOS"
+          icon={PlatformVisionOS}
+          data={visionos.libraries}
+          queryParams={{ visionos: 'true' }}
+        />
+        <ExploreSection
+          title="Windows"
+          icon={PlatformWindows}
+          data={windows.libraries}
+          queryParams={{ windows: 'true' }}
+        />
+        <ExploreSection
+          title="Expo Go"
+          icon={PlatformExpo}
+          data={expoGo.libraries}
+          queryParams={{ expoGo: 'true' }}
+        />
+        <ExploreSection title="Fire OS" data={fireos.libraries} queryParams={{ fireos: 'true' }} />
         {harmony.libraries.length >= 2 && (
-          <ExploreSection title="HarmonyOS" data={harmony.libraries} />
+          <ExploreSection
+            title="HarmonyOS"
+            data={harmony.libraries}
+            queryParams={{ harmony: 'true' }}
+          />
         )}
         {horizon.libraries.length >= 2 && (
-          <ExploreSection title="Meta Horizon OS" data={horizon.libraries} />
+          <ExploreSection
+            title="Meta Horizon OS"
+            data={horizon.libraries}
+            queryParams={{ horizon: 'true' }}
+          />
         )}
-        <ExploreSection title="Vega OS" data={vegaos.libraries} />
+        <ExploreSection title="Vega OS" data={vegaos.libraries} queryParams={{ vegaos: 'true' }} />
       </ContentContainer>
     </>
   );

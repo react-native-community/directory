@@ -53,7 +53,9 @@ export default function QuickSearch({ focusOnMount = false, style }: Props) {
   }, [focusOnMount]);
 
   const { data, isLoading } = useSWR<APIResponseType | undefined>(
-    search.length ? `/api/libraries?search=${search}&limit=${RESULTS_LIMIT}` : undefined,
+    search.length
+      ? urlWithQuery('/api/libraries', { search, limit: RESULTS_LIMIT.toString() })
+      : undefined,
     (url: string) => fetch(url).then(res => res.json()),
     {
       revalidateOnFocus: false,
